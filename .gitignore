@@ -1,0 +1,22 @@
+node_modules
+*.crx
+*.pem
+.DS_Store
+._*
+*.zip
+
+# VSCode files
+.vscode/*
+*.code-workspace
+
+# Files generated bu VSCode Counter 
+.VSCodeCounter/*
+
+# Local History for Visual Studio Code
+.history/
+
+# ignore the test results for unit tests - only need to track ref results
+unit_tests/*/*/test
+
+browser_variants/firefox/*
+!browser_variants/firefox/manifest.json
