@@ -1,17 +1,18 @@
-# README file for WikiTreeSourcer
+# README file for the wikitree-sourcer project
 
 This is the development project for the WikiTree Sourcer browser extension.
 
 More info on the extension is on the WikiTree Free Space Page here: https://www.wikitree.com/wiki/Space:WikiTree_Sourcer
 
-The top level folder is wikitree-sourcer. This includes the unit tests and other files
+The top level folder is can be named whetever you like but wikitree-sourcer is the convention.
+This folder includes the unit tests and other files
 that are not part of the shipping extension.
 
 The sub-folder "extension" is the extension itself.
 
 ## Development environment
 
-The extension is being developed using VSCode on Mac. 
+The extension is being developed by Rob using VSCode on Mac but any editor and platform that supports javascript development can be used. 
 
 git and github are used for version control.
 
