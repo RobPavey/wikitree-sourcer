@@ -1,0 +1,71 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "John R Smith"
+  },
+  "personGender": "male",
+  "registrationDistrict": "132-7",
+  "eventDate": {
+    "yearString": "1939"
+  },
+  "birthDate": {
+    "dateString": "21 Sep 1935"
+  },
+  "maritalStatus": "single",
+  "eventPlace": {
+    "placeString": "29, Enfield, Middlesex, England"
+  },
+  "occupation": "Under School Age",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "James Smith",
+      "age": "37",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027084&indiv=try"
+    },
+    {
+      "name": "Ellen E Smith",
+      "age": "38",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027085&indiv=try"
+    },
+    {
+      "isClosed": true
+    },
+    {
+      "isClosed": true
+    },
+    {
+      "name": "Jessie L Smith",
+      "age": "8",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027088&indiv=try"
+    },
+    {
+      "isClosed": true
+    },
+    {
+      "name": "John R Smith",
+      "age": "4",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "male",
+      "occupation": "Under School Age",
+      "birthDate": "21 Sep 1935"
+    },
+    {
+      "name": "Joyce V Smith",
+      "age": "5",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027091&indiv=try"
+    }
+  ],
+  "collectionData": {
+    "id": "61596",
+    "schedule": "126",
+    "borough": "Enfield"
+  },
+  "hasValidData": true
+}

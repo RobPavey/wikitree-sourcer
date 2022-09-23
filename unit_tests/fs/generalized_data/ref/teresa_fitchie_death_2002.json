@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Teresa Carole Ann Fitchie"
+  },
+  "deathDate": {
+    "dateString": "23 Jul 2002",
+    "yearString": "2002"
+  },
+  "eventDate": {
+    "dateString": "23 Jul 2002",
+    "yearString": "2002"
+  },
+  "eventPlace": {
+    "placeString": "Canterbury, Kent, England, United Kingdom"
+  },
+  "collectionData": {
+    "id": "3665073"
+  },
+  "hasValidData": true
+}

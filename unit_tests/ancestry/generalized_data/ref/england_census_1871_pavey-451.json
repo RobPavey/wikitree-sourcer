@@ -1,0 +1,74 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Henry A G Pavey"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "St Pancras, London, England"
+  },
+  "registrationDistrict": "Pancras",
+  "birthDate": {
+    "yearString": "1871",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "St Pancras Middlesex England"
+  },
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "ageAtEvent": "1/12",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Harry A Pavey",
+      "age": "20",
+      "relationship": "head",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=4576311&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Amelia E Pavey",
+      "age": "21",
+      "relationship": "wife",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=4576312&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Henry A G Pavey",
+      "age": "1/12",
+      "relationship": "son",
+      "isSelected": true,
+      "gender": "male",
+      "birthPlace": "St Pancras Middlesex England",
+      "birthYear": "1871"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Harry A Pavey"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Amelia E Pavey"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "7619",
+    "page": "20",
+    "folio": "13",
+    "piece": "240",
+    "county": "London"
+  },
+  "hasValidData": true
+}

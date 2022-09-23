@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Probate",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Violet A McConchie"
+  },
+  "deathDate": {
+    "dateString": "12 Oct 1974"
+  },
+  "eventDate": {
+    "dateString": "3 Dec 1974"
+  },
+  "deathPlace": {
+    "placeString": "Preston"
+  },
+  "occupation": "Widow",
+  "lastNameAtDeath": "McConchie",
+  "collectionData": {
+    "id": "61315"
+  },
+  "hasValidData": true
+}

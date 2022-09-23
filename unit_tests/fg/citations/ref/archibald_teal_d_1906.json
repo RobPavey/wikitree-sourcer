@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|142850482}} (accessed 6 May 2021)<br/>\nMemorial page for Archibald W. A. “Archie” Teal (5 Oct 1894-25 Jan 1906), citing Greenlawn Cemetery, Milford, Clermont County, Ohio, USA (plot: Section 8, lot 240); Maintained by Kathy McCoy Pfeiffer (contributor 49139528).<br/>\n''\"Son of William & Adah\"''.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Archibald was mentioned on a memorial in Greenlawn Cemetery, Milford, Clermont County, Ohio, USA with a death date of 25 Jan 1906.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|142850482}} (accessed 6 May 2021)<br/>\nMemorial page for Archibald W. A. “Archie” Teal (5 Oct 1894-25 Jan 1906), citing Greenlawn Cemetery, Milford, Clermont County, Ohio, USA (plot: Section 8, lot 240); Maintained by Kathy McCoy Pfeiffer (contributor 49139528).<br/>\n''\"Son of William & Adah\"''.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>{{FindAGrave|142850482}} (accessed 6 May 2021)<br/>Memorial page for Archibald W. A. “Archie” Teal (5 Oct 1894-25 Jan 1906), citing Greenlawn Cemetery, Milford, Clermont County, Ohio, USA (plot: Section 8, lot 240); Maintained by Kathy McCoy Pfeiffer (contributor 49139528).<br/>''\"Son of William & Adah\"''.",
+    "type": "source"
+  }
+}

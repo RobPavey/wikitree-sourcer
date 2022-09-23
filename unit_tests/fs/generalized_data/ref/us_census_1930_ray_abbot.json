@@ -1,0 +1,117 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Ray Abbott"
+  },
+  "birthDate": {
+    "dateString": "1918",
+    "yearString": "1918"
+  },
+  "birthPlace": {
+    "placeString": "Kentucky"
+  },
+  "eventDate": {
+    "dateString": "1930",
+    "yearString": "1930"
+  },
+  "eventPlace": {
+    "placeString": "District 3, Pulaski, Kentucky, United States"
+  },
+  "ageAtEvent": "12",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William P Abbott",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "57",
+      "birthYear": "1873",
+      "birthPlace": "Kentucky"
+    },
+    {
+      "name": "Martha Abbott",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "55",
+      "birthYear": "1875",
+      "birthPlace": "Kentucky"
+    },
+    {
+      "name": "Avery Abbott",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "22",
+      "birthYear": "1908",
+      "birthPlace": "Kentucky"
+    },
+    {
+      "name": "Elmer Abbott",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "20",
+      "birthYear": "1910",
+      "birthPlace": "Kentucky"
+    },
+    {
+      "name": "Lula Abbott",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "18",
+      "birthYear": "1912",
+      "birthPlace": "Kentucky"
+    },
+    {
+      "name": "Anna Abbott",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "15",
+      "birthYear": "1915",
+      "birthPlace": "Kentucky"
+    },
+    {
+      "name": "Ray Abbott",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "12",
+      "birthYear": "1918",
+      "birthPlace": "Kentucky",
+      "isSelected": true
+    }
+  ],
+  "maritalStatus": "single",
+  "relationshipToHead": "son",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William P Abbott"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Martha Abbott"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1810731"
+  },
+  "hasValidData": true
+}

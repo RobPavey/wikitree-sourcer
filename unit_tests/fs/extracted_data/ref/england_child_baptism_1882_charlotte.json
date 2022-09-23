@@ -1,0 +1,33 @@
+{
+  "recordData": {
+    "Name": "Charlotte"
+  },
+  "eventDateOriginal": "28 May 1882",
+  "eventDate": "28 May 1882",
+  "eventYear": "1882",
+  "eventPlaceOriginal": "Enfield, Middlesex, England, United Kingdom",
+  "eventPlace": "Enfield, Middlesex, England, United Kingdom",
+  "fullName": "Charlotte",
+  "givenName": "Charlotte",
+  "gender": "female",
+  "relatedPersonFactType": "Christening",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Charles Plume",
+  "relatedPersonGivenName": "Charles",
+  "relatedPersonSurname": "Plume",
+  "relatedPersonGender": "male",
+  "referenceData": {
+    "digitalFilmNumber": "007568829",
+    "filmNumber": "2214171",
+    "packetLetter": "A",
+    "recordNumber": "879"
+  },
+  "fsImageNumber": "00070",
+  "collectionTitle": "England Births and Christenings, 1538-1975",
+  "fsCollectionId": "1473014",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9WJ3-L5P",
+  "citation": "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:N1N6-6JS : 22 March 2020), Charlotte in entry for Charles Plume, 1882.",
+  "sourceTitleForPerson": "Charlotte in entry for Charles Plume, \"England Births and Christenings, 1538-1975\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:N1N6-6JS",
+  "pageType": "record"
+}

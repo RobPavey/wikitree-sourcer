@@ -1,0 +1,25 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1778&h=150522689&indiv=try&o_vc=Record:OtherRecord&rhSource=1778",
+  "pageType": "record",
+  "dbId": "1778",
+  "recordId": "150522689",
+  "ancestryTemplate": "{{Ancestry Record|1778|150522689}}",
+  "domain": "com",
+  "titleName": "Saml Walt Peck",
+  "titleCollection": "Australia, Birth Index, 1788-1922",
+  "recordData": {
+    "Name": "Saml Walt Peck",
+    "Gender": "Male",
+    "Spouse": "Ann Hill",
+    "Child": "Myrtle Frances Peck",
+    "Registration Number": "14292"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=AusBirthIndex&indiv=try&h=300522689",
+    "Child": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=AusBirthIndex&indiv=try&h=522689"
+  },
+  "sourceCitation": "Federation Index. Victoria 1889-1901",
+  "sourceInformation": "Ancestry.com. Australia, Birth Index, 1788-1922 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Compiled from publicly available sources.",
+  "originalData": "Compiled from publicly available sources.",
+  "sourceDescription": "Vital records—records of births, marriage, and death—are the basic building blocks of family history research, and this database features some of the most comprehensive indexes available of historical Australian birth records. These indexes were created by Australian registrar's offices after civil registration of births, marriages, and deaths became law in the mid-19th century. Learn more..."
+}

@@ -1,0 +1,106 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/10410782:7163?tid=&pid=&queryId=5cd807e56b157c5368ce218360c2c866&_phsrc=Vww4236&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "7163",
+  "recordId": "10410782",
+  "ancestryTemplate": "{{Ancestry Record|7163|10410782}}",
+  "domain": "com",
+  "titleName": "Paul Potter",
+  "titleCollection": "1870 United States Federal Census",
+  "recordData": {
+    "Name": "Paul Potter",
+    "Age in 1870": "48",
+    "Birth Date": "abt 1822",
+    "Birthplace": "Tennessee",
+    "Dwelling Number": "118",
+    "Home in 1870": "District 15, Jefferson, Tennessee",
+    "Race": "White",
+    "Gender": "Male",
+    "Post Office": "Witts Foundry",
+    "Occupation": "Farm Laborer",
+    "Cannot Write": "Yes",
+    "Male Citizen Over 21": "Yes",
+    "Personal Estate Value": "213",
+    "Inferred Spouse": "Isabella Potter",
+    "Inferred Children": "Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter",
+    "Household Members<br/>Age": "Paul Potter 48<br/>Isabella Potter 43<br/>Virginia Potter<br/>Benjamin Potter 19<br/>Angeline Potter 17<br/>Patience C Potter 15<br/>Robert Potter 13<br/>Mary E Potter 11<br/>Sarah E Potter 6"
+  },
+  "linkData": {
+    "Inferred Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=4680742&indiv=try&viewrecord=1&r=an",
+    "Inferred Children": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288333&indiv=try&viewrecord=1&r=an"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Members": "Paul Potter",
+        "Age": "48"
+      },
+      {
+        "Household Members": "Isabella Potter",
+        "dbId": "7163",
+        "recordId": "4680742",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=4680742&indiv=try",
+        "Age": "43"
+      },
+      {
+        "Household Members": "Virginia Potter",
+        "dbId": "7163",
+        "recordId": "7288333",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288333&indiv=try",
+        "Age": ""
+      },
+      {
+        "Household Members": "Benjamin Potter",
+        "dbId": "7163",
+        "recordId": "7288331",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288331&indiv=try",
+        "Age": "19"
+      },
+      {
+        "Household Members": "Angeline Potter",
+        "dbId": "7163",
+        "recordId": "7288330",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288330&indiv=try",
+        "Age": "17"
+      },
+      {
+        "Household Members": "Patience C Potter",
+        "dbId": "7163",
+        "recordId": "7288332",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288332&indiv=try",
+        "Age": "15"
+      },
+      {
+        "Household Members": "Robert Potter",
+        "dbId": "7163",
+        "recordId": "12027028",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=12027028&indiv=try",
+        "Age": "13"
+      },
+      {
+        "Household Members": "Mary E Potter",
+        "dbId": "7163",
+        "recordId": "10410781",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=10410781&indiv=try",
+        "Age": "11"
+      },
+      {
+        "Household Members": "Sarah E Potter",
+        "dbId": "7163",
+        "recordId": "12027029",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=12027029&indiv=try",
+        "Age": "6"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7163/images/4276883_00489?pid=10410782&usePUB=true&_phsrc=Vww4236&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "7163",
+  "imageRecordId": "4276883_00489",
+  "sourceCitation": "Year: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A",
+  "sourceInformation": "Ancestry.com. 1870 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2009. Images reproduced by FamilySearch. Original data: 1870 U.S. census, population schedules. NARA microfilm publication M593, 1,761 rolls. Washington, D.C.: National Archives and Records Administration, n.d.Minnesota census schedules for 1870. NARA microfilm publication T132, 13 rolls. Washington, D.C.: National Archives and Records Administration, n.d.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1870 United States Federal Census, the Ninth Census of the United States. Census takers recorded many details including each person's name, age at last birthday, sex, color; birthplace, occupation, and more. No relationships were shown between members of a household. Additionally, the names of those listed on the population schedule are linked to actual images of the 1870 Federal Census. Learn more..."
+}

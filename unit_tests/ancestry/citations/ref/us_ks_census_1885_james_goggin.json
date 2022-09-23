@@ -1,0 +1,82 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>{{Ancestry Record|1088|76967}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>\nJames Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>\nJames Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>James Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>\nName: James Goggin; Census Date: 1 Mar 1885; Residence County: Davis; Residence State: Kansas; Locality: Jefferson; Birth Place: Kansas; Family Number: 51; Marital Status: Single; Gender: Male; Age: 10; Birth Year: abt 1875; Race: White; <br/>Household Member(s) Age:<br/>Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>\nName: James Goggin; Census Date: 1 Mar 1885; Residence County: Davis; Residence State: Kansas; Locality: Jefferson; Birth Place: Kansas; Family Number: 51; Marital Status: Single; Gender: Male; Age: 10; Birth Year: abt 1875; Race: White; <br/>Household Member(s) Age:<br/>Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>Name: James Goggin; Census Date: 1 Mar 1885; Residence County: Davis; Residence State: Kansas; Locality: Jefferson; Birth Place: Kansas; Family Number: 51; Marital Status: Single; Gender: Male; Age: 10; Birth Year: abt 1875; Race: White; <br/>Household Member(s) Age:<br/>Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Goggin\n|-\n| Census Date || 1 Mar 1885\n|-\n| Residence County || Davis\n|-\n| Residence State || Kansas\n|-\n| Locality || Jefferson\n|-\n| Birth Place || Kansas\n|-\n| Family Number || 51\n|-\n| Marital Status || Single\n|-\n| Gender || Male\n|-\n| Age || 10\n|-\n| Birth Year || abt 1875\n|-\n| Race || White\n|-\n| Household Member(s)<br/>Age || Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Goggin\n|-\n| Census Date || 1 Mar 1885\n|-\n| Residence County || Davis\n|-\n| Residence State || Kansas\n|-\n| Locality || Jefferson\n|-\n| Birth Place || Kansas\n|-\n| Family Number || 51\n|-\n| Marital Status || Single\n|-\n| Gender || Male\n|-\n| Age || 10\n|-\n| Birth Year || abt 1875\n|-\n| Race || White\n|-\n| Household Member(s)<br/>Age || Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>Name: James Goggin; Census Date: 1 Mar 1885; Residence County: Davis; Residence State: Kansas; Locality: Jefferson; Birth Place: Kansas; Family Number: 51; Marital Status: Single; Gender: Male; Age: 10; Birth Year: abt 1875; Race: White; <br/>Household Member(s) Age:<br/>Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), James Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), James Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), James Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1885 Census'':\n\"Kansas, U.S., State Census Collection, 1855-1925\", database, \nKansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13, \n({{Ancestry Record|1088|76967}} : accessed 6 May 2021), \nName: James Goggin; Census Date: 1 Mar 1885; Residence County: Davis; Residence State: Kansas; Locality: Jefferson; Birth Place: Kansas; Family Number: 51; Marital Status: Single; Gender: Male; Age: 10; Birth Year: abt 1875; Race: White; Household Member(s) Age: Thomas Goggin 31, Beffy Goggin 30, James Goggin 10, Michael Goggin 5, Thomas Goggin 3, Katy Goggin 8, Anna Goggin 6, July Goggin 5 M.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\n''1885 Census'':\n\"Kansas, U.S., State Census Collection, 1855-1925\", database, \nKansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13, \n({{Ancestry Record|1088|76967}} : accessed 6 May 2021), \nName: James Goggin; Census Date: 1 Mar 1885; Residence County: Davis; Residence State: Kansas; Locality: Jefferson; Birth Place: Kansas; Family Number: 51; Marital Status: Single; Gender: Male; Age: 10; Birth Year: abt 1875; Race: White; Household Member(s) Age: Thomas Goggin 31, Beffy Goggin 30, James Goggin 10, Michael Goggin 5, Thomas Goggin 3, Katy Goggin 8, Anna Goggin 6, July Goggin 5 M.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1885 Census'': \"Kansas, U.S., State Census Collection, 1855-1925\", database, Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), Name: James Goggin; Census Date: 1 Mar 1885; Residence County: Davis; Residence State: Kansas; Locality: Jefferson; Birth Place: Kansas; Family Number: 51; Marital Status: Single; Gender: Male; Age: 10; Birth Year: abt 1875; Race: White; Household Member(s) Age: Thomas Goggin 31, Beffy Goggin 30, James Goggin 10, Michael Goggin 5, Thomas Goggin 3, Katy Goggin 8, Anna Goggin 6, July Goggin 5 M.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "In the 1885 census, he, aged 10, was in Jefferson, Davis, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Goggin\n|-\n| Census Date || 1 Mar 1885\n|-\n| Residence County || Davis\n|-\n| Residence State || Kansas\n|-\n| Locality || Jefferson\n|-\n| Birth Place || Kansas\n|-\n| Family Number || 51\n|-\n| Marital Status || Single\n|-\n| Gender || Male\n|-\n| Age || 10\n|-\n| Birth Year || abt 1875\n|-\n| Race || White\n|-\n| Household Member(s)<br/>Age || Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "In 1885 James was in Jefferson, Davis, Kansas. He was 10 years old.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Goggin\n|-\n| Census Date || 1 Mar 1885\n|-\n| Residence County || Davis\n|-\n| Residence State || Kansas\n|-\n| Locality || Jefferson\n|-\n| Birth Place || Kansas\n|-\n| Family Number || 51\n|-\n| Marital Status || Single\n|-\n| Gender || Male\n|-\n| Age || 10\n|-\n| Birth Year || abt 1875\n|-\n| Race || White\n|-\n| Household Member(s)<br/>Age || Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

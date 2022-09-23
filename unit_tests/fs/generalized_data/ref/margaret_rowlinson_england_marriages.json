@@ -1,0 +1,36 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Margaret Rowlinson"
+  },
+  "eventDate": {
+    "dateString": "28 Oct 1855",
+    "yearString": "1855"
+  },
+  "eventPlace": {
+    "placeString": "Padgate, Lancashire, England, United Kingdom"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Joseph Walmsley",
+        "lastName": "Walmsley",
+        "forenames": "Joseph"
+      },
+      "marriageDate": {
+        "dateString": "28 Oct 1855",
+        "yearString": "1855"
+      },
+      "marriagePlace": {
+        "placeString": "Padgate, Lancashire, England, United Kingdom"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1473015"
+  },
+  "hasValidData": true
+}

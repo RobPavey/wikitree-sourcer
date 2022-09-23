@@ -1,0 +1,55 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "More",
+    "forenames": "Mary E"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "54 Hilldrop Crescent, Holloway, Islington, Islington, London, England",
+    "streetAddress": "54 Hilldrop Crescent, Holloway, Islington"
+  },
+  "birthDate": {
+    "yearString": "1872",
+    "qualifier": 1,
+    "dateString": "01 Nov 1872"
+  },
+  "eventDate": {
+    "yearString": "1939"
+  },
+  "occupation": "Unpaid Domestic Duties",
+  "maritalStatus": "widowed",
+  "householdArrayFields": [
+    "name",
+    "maritalStatus",
+    "gender",
+    "birthDate",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "isSelected": true,
+      "name": "Mary E More",
+      "maritalStatus": "widowed",
+      "gender": "female",
+      "birthDate": "01 Nov 1872",
+      "occupation": "Unpaid Domestic Duties"
+    },
+    {
+      "name": "Maisie C More",
+      "maritalStatus": "single",
+      "gender": "female",
+      "birthDate": "11 Sep 1900",
+      "occupation": "Commercial Traveller Ladies Clothing"
+    }
+  ],
+  "collectionData": {
+    "id": "1939 Register",
+    "piece": "0261B",
+    "schedule": "176"
+  },
+  "hasValidData": true
+}

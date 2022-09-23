@@ -1,0 +1,65 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Albert",
+    "middleNames": "Edward John",
+    "lastName": "Spencer"
+  },
+  "lastNameAtBirth": "Spencer",
+  "lastNameAtDeath": "Spencer",
+  "mothersMaidenName": "Baring",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "23 May 1892",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "9 Jun 1975",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Queen Street, Mayfair, London, England,"
+  },
+  "deathPlace": {
+    "placeString": "Northamptonshire, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Charles Robert Spencer",
+        "lastName": "Spencer",
+        "forenames": "Charles Robert"
+      },
+      "lastNameAtBirth": "Spencer",
+      "lastNameAtDeath": "Spencer"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Margaret",
+        "lastName": "Baring",
+        "name": "Margaret Baring"
+      },
+      "lastNameAtBirth": "Baring",
+      "lastNameAtDeath": "Spencer"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Cynthia Elinor Beatrix",
+        "lastName": "Hamilton",
+        "name": "Cynthia Elinor Beatrix Hamilton"
+      },
+      "lastNameAtBirth": "Hamilton",
+      "lastNameAtDeath": "Spencer",
+      "marriageDate": {
+        "dateString": "26 Feb 1919"
+      },
+      "marriagePlace": {
+        "placeString": "St. James's Church, Piccadilly, London, England"
+      }
+    }
+  ],
+  "hasValidData": true
+}

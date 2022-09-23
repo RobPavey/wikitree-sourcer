@@ -1,0 +1,20 @@
+{
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "sourceOfData": "fmp",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Louisa Sarah Owen"
+  },
+  "eventPlace": {
+    "country": "England & Wales",
+    "placeString": "England & Wales"
+  },
+  "eventDate": {
+    "yearString": "1893"
+  },
+  "collectionData": {
+    "id": "Divorce Index"
+  },
+  "hasValidData": true
+}

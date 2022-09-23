@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "19 Jun 1871"
+  },
+  "eventPlace": {
+    "placeString": "Carlton North, Melbourne City, Victoria, Australia",
+    "streetAddress": "Melbourne General Cemetery"
+  },
+  "name": {
+    "name": "Thomas Reed"
+  },
+  "lastNameAtDeath": "Reed",
+  "deathDate": {
+    "dateString": "19 Jun 1871"
+  },
+  "ageAtDeath": "75",
+  "birthDate": {
+    "dateString": "20 Jun 1795"
+  },
+  "birthPlace": {
+    "placeString": "London Borough of Barnet, Greater London, England"
+  },
+  "hasValidData": true
+}

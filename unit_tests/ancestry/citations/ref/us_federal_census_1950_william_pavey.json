@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1950 census William (age 28) was the married head of household in Millington, Shelby, Tennessee, USA.<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1950 Census''': \"1950 United States Federal Census\"<br/>United States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)<br/>\nWilliam Pavey (28), married head of household in Millington, Shelby, Tennessee, USA. Born in Michigan.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1950 census William (age 28) was the married head of household in Millington, Shelby, Tennessee, USA.<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)<br/>\nWilliam Pavey (28), married head of household in Millington, Shelby, Tennessee, USA. Born in Michigan.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1950 Census''': \"1950 United States Federal Census\"<br/>United States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)<br/>William Pavey (28), married head of household in Millington, Shelby, Tennessee, USA. Born in Michigan.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)<br/>\nName: William Pavey; Age: 28; Birth Date: abt 1922; Gender: Male; Birth Place: Michigan; Marital Status: Mar; Relation to Head of House: Head; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee, USA; Dwelling Number: 158; <br/>Household Members Age Relationship:<br/>William Pavey 28 Head<br/>Martha Pavey 29 Wife<br/>Patricia Ann Pavey 5 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1950 census William (age 28) was the married head of household in Millington, Shelby, Tennessee, USA.<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)<br/>\nName: William Pavey; Age: 28; Birth Date: abt 1922; Gender: Male; Birth Place: Michigan; Marital Status: Mar; Relation to Head of House: Head; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee, USA; Dwelling Number: 158; <br/>Household Members Age Relationship:<br/>William Pavey 28 Head<br/>Martha Pavey 29 Wife<br/>Patricia Ann Pavey 5 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1950 Census''': \"1950 United States Federal Census\"<br/>United States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)<br/>Name: William Pavey; Age: 28; Birth Date: abt 1922; Gender: Male; Birth Place: Michigan; Marital Status: Mar; Relation to Head of House: Head; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee, USA; Dwelling Number: 158; <br/>Household Members Age Relationship:<br/>William Pavey 28 Head<br/>Martha Pavey 29 Wife<br/>Patricia Ann Pavey 5 Daughter.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Pavey\n|-\n| Age || 28\n|-\n| Birth Date || abt 1922\n|-\n| Gender || Male\n|-\n| Birth Place || Michigan\n|-\n| Marital Status || Mar\n|-\n| Relation to Head of House || Head\n|-\n| Residence Date || 1950\n|-\n| Home in 1950 || Millington, Shelby, Tennessee, USA\n|-\n| Dwelling Number || 158\n|-\n| Household Members<br/>Age<br/>Relationship || William Pavey 28 Head<br/>Martha Pavey 29 Wife<br/>Patricia Ann Pavey 5 Daughter\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1950 census William (age 28) was the married head of household in Millington, Shelby, Tennessee, USA.<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Pavey\n|-\n| Age || 28\n|-\n| Birth Date || abt 1922\n|-\n| Gender || Male\n|-\n| Birth Place || Michigan\n|-\n| Marital Status || Mar\n|-\n| Relation to Head of House || Head\n|-\n| Residence Date || 1950\n|-\n| Home in 1950 || Millington, Shelby, Tennessee, USA\n|-\n| Dwelling Number || 158\n|-\n| Household Members<br/>Age<br/>Relationship || William Pavey 28 Head<br/>Martha Pavey 29 Wife<br/>Patricia Ann Pavey 5 Daughter\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1950 Census''': \"1950 United States Federal Census\"<br/>United States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)<br/>Name: William Pavey; Age: 28; Birth Date: abt 1922; Gender: Male; Birth Place: Michigan; Marital Status: Mar; Relation to Head of House: Head; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee, USA; Dwelling Number: 158; <br/>Household Members Age Relationship:<br/>William Pavey 28 Head<br/>Martha Pavey 29 Wife<br/>Patricia Ann Pavey 5 Daughter.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1950 United States Federal Census,\" database, ({{Ancestry Record|62308|106947163}} : accessed 6 May 2021), William Pavey (28), married head of household in Millington, Shelby, Tennessee, USA. Born in Michigan; citing United States of America, Bureau of the Census, Washington, D.C., Seventeenth Census of the United States, 1950, Record Group Records of the Bureau of the Census, 1790-2007, Record Group Number 29, Residence Date 1950, Home in 1950 Millington, Shelby, Tennessee, Roll 3661, Sheet Number 14, Enumeration District 79-4A.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1950 census William (age 28) was the married head of household in Millington, Shelby, Tennessee, USA.<ref>\"1950 United States Federal Census,\" database, ({{Ancestry Record|62308|106947163}} : accessed 6 May 2021), William Pavey (28), married head of household in Millington, Shelby, Tennessee, USA. Born in Michigan; citing United States of America, Bureau of the Census, Washington, D.C., Seventeenth Census of the United States, 1950, Record Group Records of the Bureau of the Census, 1790-2007, Record Group Number 29, Residence Date 1950, Home in 1950 Millington, Shelby, Tennessee, Roll 3661, Sheet Number 14, Enumeration District 79-4A.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1950 United States Federal Census,\" database, ({{Ancestry Record|62308|106947163}} : accessed 6 May 2021), William Pavey (28), married head of household in Millington, Shelby, Tennessee, USA. Born in Michigan; citing United States of America, Bureau of the Census, Washington, D.C., Seventeenth Census of the United States, 1950, Record Group Records of the Bureau of the Census, 1790-2007, Record Group Number 29, Residence Date 1950, Home in 1950 Millington, Shelby, Tennessee, Roll 3661, Sheet Number 14, Enumeration District 79-4A.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1950 Census'':\n\"1950 United States Federal Census\", database, \nUnited States of America, Bureau of the Census, Washington, D.C., Seventeenth Census of the United States, 1950, Record Group Records of the Bureau of the Census, 1790-2007, Record Group Number 29, Residence Date 1950, Home in 1950 Millington, Shelby, Tennessee, Roll 3661, Sheet Number 14, Enumeration District 79-4A, \n({{Ancestry Record|62308|106947163}} : accessed 6 May 2021), \nName: William Pavey; Age: 28; Birth Date: abt 1922; Gender: Male; Birth Place: Michigan; Marital Status: Mar; Relation to Head of House: Head; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee, USA; Dwelling Number: 158; Household Members Age Relationship: William Pavey 28 Head, Martha Pavey 29 Wife, Patricia Ann Pavey 5 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1950 census William (age 28) was the married head of household in Millington, Shelby, Tennessee, USA.<ref>\n''1950 Census'':\n\"1950 United States Federal Census\", database, \nUnited States of America, Bureau of the Census, Washington, D.C., Seventeenth Census of the United States, 1950, Record Group Records of the Bureau of the Census, 1790-2007, Record Group Number 29, Residence Date 1950, Home in 1950 Millington, Shelby, Tennessee, Roll 3661, Sheet Number 14, Enumeration District 79-4A, \n({{Ancestry Record|62308|106947163}} : accessed 6 May 2021), \nName: William Pavey; Age: 28; Birth Date: abt 1922; Gender: Male; Birth Place: Michigan; Marital Status: Mar; Relation to Head of House: Head; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee, USA; Dwelling Number: 158; Household Members Age Relationship: William Pavey 28 Head, Martha Pavey 29 Wife, Patricia Ann Pavey 5 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1950 Census'': \"1950 United States Federal Census\", database, United States of America, Bureau of the Census, Washington, D.C., Seventeenth Census of the United States, 1950, Record Group Records of the Bureau of the Census, 1790-2007, Record Group Number 29, Residence Date 1950, Home in 1950 Millington, Shelby, Tennessee, Roll 3661, Sheet Number 14, Enumeration District 79-4A, ({{Ancestry Record|62308|106947163}} : accessed 6 May 2021), Name: William Pavey; Age: 28; Birth Date: abt 1922; Gender: Male; Birth Place: Michigan; Marital Status: Mar; Relation to Head of House: Head; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee, USA; Dwelling Number: 158; Household Members Age Relationship: William Pavey 28 Head, Martha Pavey 29 Wife, Patricia Ann Pavey 5 Daughter.",
+    "type": "source"
+  }
+}

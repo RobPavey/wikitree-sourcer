@@ -1,0 +1,31 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/132041:7734?tid=&pid=&queryId=c33626252dce21f5ecab3696b52ac556&_phsrc=Vww4224&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "7734",
+  "recordId": "132041",
+  "ancestryTemplate": "{{Ancestry Record|7734|132041}}",
+  "domain": "com",
+  "titleName": "Willm Johnson",
+  "titleCollection": "1820 United States Federal Census",
+  "recordData": {
+    "Name": "Willm Johnson [William Johnson]",
+    "Home in 1820 (City, County, State)": "Blue Hill, Hancock, Maine",
+    "Enumeration Date": "August 7, 1820",
+    "Free White Persons - Males - Under 10": "1",
+    "Free White Persons - Males - 26 thru 44": "1",
+    "Free White Persons - Females - 16 thru 25": "1",
+    "Free White Persons - Females - 26 thru 44": "1",
+    "Number of Persons - Engaged in Agriculture": "1",
+    "Free White Persons - Under 16": "1",
+    "Free White Persons - Over 25": "2",
+    "Total Free White Persons": "4",
+    "Total All Persons - White, Slaves, Colored, Other": "4"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7734/images/4433471_00007?pid=132041&usePUB=true&_phsrc=Vww4224&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "7734",
+  "imageRecordId": "4433471_00007",
+  "sourceCitation": "1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7",
+  "sourceInformation": "Ancestry.com. 1820 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Images reproduced by FamilySearch. Original data: Fourth Census of the United States, 1820. (NARA microfilm publication M33, 142 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "originalData": "Fourth Census of the United States, 1820. (NARA microfilm publication M33, 142 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "sourceDescription": "This database details those persons enumerated in the 1820 United States Federal Census, the Fourth Census of the United States. In addition, the names of those listed on the population schedule are linked to the actual images of the 1820 Federal Census. Enumerators of the 1820 census were asked to include the following categories in the census: name of head of household, number of free white males and females, number of other free persons except Indians, number of slaves, town or district and county of residence. Learn more..."
+}

@@ -1,0 +1,14 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "first_name": "William",
+      "last_name": "Handford",
+      "search_query_fuzzy": true,
+      "start_year": 1840,
+      "end_year": 1846,
+      "search_query_sex": "M",
+      "search_query_birth_chapman_codes": "DEV"
+    }
+  }
+}

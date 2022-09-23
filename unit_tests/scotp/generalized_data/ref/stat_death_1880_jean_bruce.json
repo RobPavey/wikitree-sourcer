@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Bruce",
+    "forenames": "Jean"
+  },
+  "eventDate": {
+    "yearString": "1880"
+  },
+  "registrationDistrict": "Lintrathen",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Angus",
+    "placeString": "Lintrathen, Angus, Scotland"
+  },
+  "lastNameAtDeath": "Bruce",
+  "ageAtDeath": "70",
+  "deathPlace": {
+    "country": "Scotland",
+    "county": "Angus",
+    "placeString": "Lintrathen, Angus, Scotland"
+  },
+  "deathDate": {
+    "yearString": "1880"
+  },
+  "hasValidData": true
+}

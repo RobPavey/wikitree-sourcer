@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Andrew Chiswell"
+  },
+  "eventDate": {
+    "yearString": "2005"
+  },
+  "registrationDistrict": "Lerwick",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Lerwick, Scotland"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Harrison"
+      },
+      "marriageDate": {
+        "yearString": "2005"
+      },
+      "marriagePlace": {
+        "country": "Scotland",
+        "placeString": "Lerwick, Scotland"
+      }
+    }
+  ],
+  "hasValidData": true
+}

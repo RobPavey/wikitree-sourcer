@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Status || Relation || Occupation || Birth Place\n|-\n| Paul Potter ||  || 56 ||  || Head ||  || \n|-\n| '''Isabelle Potter''' || '''F''' || '''56''' || '''Married''' || '''Wife''' || '''Keeping House''' || '''North Carolina'''\n|-\n| Robert Potter ||  || 21 ||  || Son ||  || \n|-\n| Sarah Potter ||  || 16 ||  || Daughter ||  || \n|-\n| Virginia Bryant ||  || 29 ||  || Daughter ||  || \n|-\n| Samuel Bryant ||  || 7 ||  || Grandson ||  || \n|-\n| Ida Bryant ||  || 3 ||  || Granddaughter ||  || \n|}"
+  }
+}

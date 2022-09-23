@@ -1,0 +1,92 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Harry R R Easey"
+  },
+  "birthDate": {
+    "dateString": "1853",
+    "yearString": "1853"
+  },
+  "birthPlace": {
+    "placeString": "Plymouth, Devon"
+  },
+  "eventDate": {
+    "dateString": "1861",
+    "yearString": "1861"
+  },
+  "eventPlace": {
+    "placeString": "St Pancras, Middlesex, England, United Kingdom"
+  },
+  "registrationDistrict": "Pancras",
+  "ageAtEvent": "8",
+  "occupation": "Scholar",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William H H Easey",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "54",
+      "birthYear": "1807",
+      "occupation": "Cabinet Maker",
+      "birthPlace": "Plymouth, Devon"
+    },
+    {
+      "name": "Charles A A Easey",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "18",
+      "birthYear": "1843",
+      "occupation": "Turner In Ward",
+      "birthPlace": "Plymouth, Devon"
+    },
+    {
+      "name": "Fanny F F Easey",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "12",
+      "birthYear": "1849",
+      "occupation": "Scholar",
+      "birthPlace": "Plymouth, Devon"
+    },
+    {
+      "name": "Harry R R Easey",
+      "relationship": "son",
+      "gender": "male",
+      "age": "8",
+      "birthYear": "1853",
+      "occupation": "Scholar",
+      "birthPlace": "Plymouth, Devon",
+      "isSelected": true
+    }
+  ],
+  "relationshipToHead": "son",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William H H Easey"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1493747",
+    "page": "11",
+    "piece": "122",
+    "folio": "40"
+  },
+  "hasValidData": true
+}

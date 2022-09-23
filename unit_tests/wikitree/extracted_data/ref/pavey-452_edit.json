@@ -1,0 +1,39 @@
+{
+  "hasValidData": true,
+  "firstNames": "Mary",
+  "prefNames": "Mary",
+  "middleNames": "Elizabeth Maisie",
+  "lnab": "Pavey",
+  "currentLastName": "More",
+  "mothersMaidenName": "Littlemore",
+  "birthDate": "1 Nov 1872",
+  "birthDateStatus": "none",
+  "deathDate": "Sep 1950",
+  "deathDateStatus": "none",
+  "birthLocation": "St Pancras, London, England",
+  "deathLocation": "Hendon, Middlesex, England",
+  "personGender": "Female",
+  "spouses": [
+    {
+      "name": "Francis Cyril More",
+      "wikiId": "More-785",
+      "marriageString": "4 Sep 1898 Pancras",
+      "marriageDate": "4 Sep 1898",
+      "marriagePlace": "Pancras"
+    }
+  ],
+  "url": "https://www.wikitree.com/index.php?title=Special:EditPerson&u=27023019",
+  "currentTabText": "Edit",
+  "pageType": "edit",
+  "parents": {
+    "father": {
+      "name": "Harry Alfred Pavey",
+      "wikiId": "Pavey-342"
+    },
+    "mother": {
+      "name": "Amelia Elizabeth (Littlemore) Pavey",
+      "wikiId": "Littlemore-13"
+    }
+  },
+  "wikiId": "Pavey-452"
+}

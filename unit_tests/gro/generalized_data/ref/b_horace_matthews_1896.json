@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1896",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Matthews",
+    "forenames": "Horace Charles"
+  },
+  "lastNameAtBirth": "Matthews",
+  "birthDate": {
+    "yearString": "1896",
+    "quarter": 3
+  },
+  "mothersMaidenName": "Munt",
+  "personGender": "male",
+  "registrationDistrict": "St Saviour Southwark London",
+  "collectionData": {
+    "id": "births",
+    "volume": "01D",
+    "page": "118"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,28 @@
+{
+  "url": "https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv=1&dbid=61187&h=93209492",
+  "pageType": "record",
+  "dbId": "61187",
+  "recordId": "93209492",
+  "ancestryTemplate": "{{Ancestry Record|61187|93209492}}",
+  "domain": "co.uk",
+  "titleName": "Agnes Longe",
+  "titleCollection": "Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812",
+  "recordData": {
+    "Name": "Agnes Longe",
+    "Event Type": "Marriage",
+    "Marriage or Bann Date": "26 Aug 1566",
+    "Marriage or Bann Place": "Trowbridge, St James, Wiltshire, England",
+    "Parish as it Appears": "Trowbridge",
+    "Spouse": "William Yerbery"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.co.uk/cgi-bin/sse.dll?viewrecord=1&r=5538&db=WiltshireEarlyParish&indiv=try&h=3209492"
+  },
+  "imageUrl": "https://www.ancestry.co.uk/imageviewer/collections/61187/images/49102_83024005549_0001-00057?pid=93209492&backurl=https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv%3D1%26dbid%3D61187%26h%3D93209492&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "61187",
+  "imageRecordId": "49102_83024005549_0001-00057",
+  "sourceCitation": "Wiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809",
+  "sourceInformation": "Ancestry.com. Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2017. Original data: Wiltshire Church of England Parish Registers, Wiltshire and Swindon History Centre, Chippenham, Wiltshire, England.",
+  "originalData": "Wiltshire Church of England Parish Registers, Wiltshire and Swindon History Centre, Chippenham, Wiltshire, England.",
+  "sourceDescription": "This collection contains images of Church of England baptism, marriage, and burial records for the years 1538–1812 from the county of Wiltshire, England. Learn more..."
+}

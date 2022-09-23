@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "Norman"
+  },
+  "eventDate": {
+    "yearString": "1858"
+  },
+  "registrationDistrict": "Greenock Old or West",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Renfrewshire",
+    "placeString": "Greenock Old or West, Renfrewshire, Scotland"
+  },
+  "lastNameAtDeath": "Fraser",
+  "mothersMaidenName": "Robertson",
+  "ageAtDeath": "0",
+  "deathPlace": {
+    "country": "Scotland",
+    "county": "Renfrewshire",
+    "placeString": "Greenock Old or West, Renfrewshire, Scotland"
+  },
+  "deathDate": {
+    "yearString": "1858"
+  },
+  "hasValidData": true
+}

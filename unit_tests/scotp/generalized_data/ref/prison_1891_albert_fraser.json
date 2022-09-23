@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "CriminalRegister",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "Albert Attwood"
+  },
+  "eventDate": {
+    "yearString": "1891"
+  },
+  "ageAtEvent": "20",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Perth Prison, Scotland"
+  },
+  "birthPlace": {
+    "placeString": "Glasgow"
+  },
+  "hasValidData": true
+}

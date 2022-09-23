@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/686307572:62226?tid=&pid=&queryId=fb8fd94e57b84ebb42d63eedfb7d7fd2&_phsrc=XJK6813&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "62226",
+  "recordId": "686307572",
+  "ancestryTemplate": "{{Ancestry Record|62226|686307572}}",
+  "domain": "com",
+  "titleName": "Sandra Bowman",
+  "titleCollection": "Canada, Newspapers.com Obituary Index, 1800s-current",
+  "recordData": {
+    "Name": "Sandra Bowman [Sandra Baldner]",
+    "Gender": "Female",
+    "Newspaper Title": "Times Colonist",
+    "Father": "Leslie A. Baldner"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62226&h=648692355&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceCitation": "Times Colonist; Publication Date: 11 Sep 2007; Publication Place: Victoria, British Columbia, Canada; URL: https://www.newspapers.com/image/509779772/?article=97a3d993-b86d-4f0d-93e4-d03a97ce9ecd&focus=0.04148726,0.6093247,0.23496296,0.7456217&xid=3355",
+  "sourceInformation": "Ancestry.com. Canada, Newspapers.com Obituary Index, 1800s-current [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc. Original data: See newspaper information provided with each entry.",
+  "originalData": "See newspaper information provided with each entry.",
+  "sourceDescription": "This database consists of facts extracted from obituaries found on Newspapers.com™ dating from the early 1800’s to current. Learn more..."
+}

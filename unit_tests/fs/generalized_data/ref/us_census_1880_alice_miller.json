@@ -1,0 +1,110 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Alice Miller"
+  },
+  "birthDate": {
+    "dateString": "1855",
+    "yearString": "1855"
+  },
+  "birthPlace": {
+    "placeString": "Indiana, United States"
+  },
+  "eventDate": {
+    "dateString": "1880",
+    "yearString": "1880"
+  },
+  "eventPlace": {
+    "placeString": "Madison Township, Tipton, Indiana, United States"
+  },
+  "ageAtEvent": "25",
+  "occupation": "Keeping House",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William Miller",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "31",
+      "birthYear": "1849",
+      "occupation": "Farmer",
+      "birthPlace": "Indiana, United States"
+    },
+    {
+      "name": "Alice Miller",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "25",
+      "birthYear": "1855",
+      "occupation": "Keeping House",
+      "birthPlace": "Indiana, United States",
+      "isSelected": true
+    },
+    {
+      "name": "Alonzo Miller",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "8",
+      "birthYear": "1872",
+      "birthPlace": "Indiana, United States"
+    },
+    {
+      "name": "Charley Miller",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "6",
+      "birthYear": "1874",
+      "birthPlace": "Indiana, United States"
+    },
+    {
+      "name": "James Miller",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "4",
+      "birthYear": "1876",
+      "birthPlace": "Indiana, United States"
+    },
+    {
+      "name": "Arnold Miller",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "1",
+      "birthYear": "1879",
+      "birthPlace": "Indiana, United States"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "spouses": [
+    {
+      "name": {
+        "name": "William Miller"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1417683",
+    "volume": "1"
+  },
+  "hasValidData": true
+}

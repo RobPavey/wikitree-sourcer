@@ -1,0 +1,42 @@
+{
+  "recordData": {
+    "Name": "David Hunter",
+    "Christening Date": "22 Nov 1854",
+    "Christening Place": "St Nicholas, Aberdeen, Aberdeenshire, Scotland, United Kingdom",
+    "Birth Date": "1 Nov 1854"
+  },
+  "fullName": "David Hunter",
+  "givenName": "David",
+  "surname": "Hunter",
+  "gender": "male",
+  "factType": "Christening",
+  "eventDateOriginal": "22 Nov 1854",
+  "eventDate": "22 Nov 1854",
+  "eventYear": "1854",
+  "eventPlaceOriginal": "St Nicholas, Aberdeen, Aberdeenshire, Scotland, United Kingdom",
+  "eventPlace": "St Nicholas, Aberdeen, Aberdeenshire, Scotland, United Kingdom",
+  "birthDateOriginal": "1 Nov 1854",
+  "birthDate": "1 11 1854",
+  "birthYear": "1854",
+  "father": {
+    "fullName": "Alexander Hunter",
+    "givenName": "Alexander",
+    "surname": "Hunter"
+  },
+  "mother": {
+    "fullName": "Ann Christie",
+    "givenName": "Ann",
+    "surname": "Christie"
+  },
+  "fsCollectionId": "1771030",
+  "referenceData": {
+    "digitalFilmNumber": "8",
+    "filmNumber": "991204"
+  },
+  "collectionTitle": "Scotland Births and Baptisms, 1564-1950",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MBZC-SY3",
+  "citation": "\"Scotland Births and Baptisms, 1564-1950\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:XBQC-X9Q : 16 September 2021), David Hunter, 1854.",
+  "sourceTitleForPerson": "David Hunter, \"Scotland Births and Baptisms, 1564-1950\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:XBQC-X9Q",
+  "pageType": "record"
+}

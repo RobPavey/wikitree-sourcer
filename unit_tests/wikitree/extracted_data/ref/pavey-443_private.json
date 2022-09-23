@@ -1,0 +1,47 @@
+{
+  "hasValidData": true,
+  "firstNames": "Isabella",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Pavey",
+  "currentLastName": "Magenis",
+  "mothersMaidenName": "Ellacott",
+  "birthDate": "Jul 1840",
+  "birthDateStatus": "none",
+  "deathDate": "24 Sep 1914",
+  "deathDateStatus": "none",
+  "birthLocation": "East Stonehouse, Devon, England, United Kingdom",
+  "deathLocation": "Auckland, Auckland, New Zealand",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Richardson-24806",
+      "name": "Frederick Richardson",
+      "marriageString": "31 Jan 1864 in Parish Chapel, St Pancras, England",
+      "marriageDate": "31 Jan 1864",
+      "marriagePlace": "Parish Chapel, St Pancras, England"
+    },
+    {
+      "wikiId": "Magenis-15",
+      "name": "John Smith Magenis",
+      "marriageString": "9 Sep 1872 in St. Mary Battersea, Surrey, England",
+      "marriageDate": "9 Sep 1872",
+      "marriagePlace": "St. Mary Battersea, Surrey, England"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Pavey-443",
+  "currentTabText": "Profile (private view)",
+  "pageType": "private",
+  "wikiId": "Pavey-443",
+  "name": "Isabella (Pavey) Magenis",
+  "parents": {
+    "father": {
+      "wikiId": "Pavey-343",
+      "name": "William Henry Pavey"
+    },
+    "mother": {
+      "wikiId": "Ellacott-59",
+      "name": "Elizabeth (Ellacott) Pavey"
+    }
+  }
+}

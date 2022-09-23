@@ -1,0 +1,37 @@
+{
+  "recordData": {
+    "Name": "Charles W. Pavy",
+    "Military Service Date": "from 1861 to 1865",
+    "Military Service Place": "Indiana, United States",
+    "Miitary Beginning Rank": "Private",
+    "Military Company": "B",
+    "Miitary Final Rank": "Private",
+    "Miitary Side": "Union",
+    "Miitary Unit": "140th Regiment, Indiana Infantry",
+    "Misc Note": "Original filed under Charles W./Pavey_"
+  },
+  "fullName": "Charles W. Pavy",
+  "givenName": "Charles W.",
+  "surname": "Pavy",
+  "factType": "MilitaryService",
+  "eventDateOriginal": "from 1861 to 1865",
+  "eventDate": "1861-1865",
+  "eventYear": "1861-1865",
+  "eventPlaceOriginal": "Indiana, United States",
+  "eventPlace": "Indiana, United States",
+  "referenceData": {
+    "externalFilmNumber": "59",
+    "externalPublicationNumber": "M540",
+    "externalPublicationTitle": "Index to Compiled Service Records of Volunteer Union Soldiers Who Served in Organizations From the State of Indiana.",
+    "filmNumber": "881780",
+    "packetLetter": "A",
+    "recordNumber": "143"
+  },
+  "fsCollectionId": "1910717",
+  "collectionTitle": "United States Civil War Soldiers Index, 1861-1865",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:1GSL-VJG",
+  "citation": "\"United States Civil War Soldiers Index, 1861-1865\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:FSR5-DJ4 : 25 August 2021), Charles W. Pavey, 1861-1865.",
+  "sourceTitleForPerson": "Charles W. Pavy, \"United States Civil War Soldiers Index, 1861-1865\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:FSR5-DJ4",
+  "pageType": "record"
+}

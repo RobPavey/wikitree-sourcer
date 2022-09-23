@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1986",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Partington",
+    "forenames": "Samuel John"
+  },
+  "lastNameAtBirth": "Partington",
+  "birthDate": {
+    "yearString": "1986",
+    "quarter": 3
+  },
+  "personGender": "male",
+  "registrationDistrict": "Oxford",
+  "collectionData": {
+    "id": "births",
+    "volume": "20",
+    "page": "3367"
+  },
+  "hasValidData": true
+}

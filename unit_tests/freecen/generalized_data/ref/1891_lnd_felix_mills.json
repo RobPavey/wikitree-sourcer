@@ -1,0 +1,120 @@
+{
+  "sourceOfData": "freecen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventPlace": {
+    "placeString": "9 Courthope Road, St Pancras, Pancras, London (City), England",
+    "streetAddress": "9 Courthope Road"
+  },
+  "registrationDistrict": "Pancras",
+  "eventDate": {
+    "yearString": "1891"
+  },
+  "name": {
+    "lastName": "Mills",
+    "forenames": "Felix"
+  },
+  "ageAtEvent": "37",
+  "birthPlace": {
+    "placeString": "Bury, Lancashire, England"
+  },
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "personGender": "male",
+  "occupation": "Collectrparochialrates (employee)",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Felix Mills",
+      "birthPlace": "Bury, Lancashire",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "37",
+      "occupation": "Collectrparochialrates (employee)",
+      "isSelected": true
+    },
+    {
+      "name": "Frances M. Mills",
+      "birthPlace": "Norwood, Surrey",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "39"
+    },
+    {
+      "name": "Katherine E. Mills",
+      "birthPlace": "St Pancras, London (City)",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "12"
+    },
+    {
+      "name": "Alfred J. Mills",
+      "birthPlace": "St Pancras, London (City)",
+      "relationship": "son",
+      "maritalStatus": "",
+      "gender": "male",
+      "age": "10"
+    },
+    {
+      "name": "Frances M. Mills",
+      "birthPlace": "St Pancras, London (City)",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "7"
+    },
+    {
+      "name": "Bertha C. Mills",
+      "birthPlace": "St Pancras, London (City)",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "3"
+    },
+    {
+      "name": "Gertrude Mills",
+      "birthPlace": "St Pancras, London (City)",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "1"
+    },
+    {
+      "name": "George Nicholson",
+      "birthPlace": "St Pancras, London (City)",
+      "relationship": "visitor",
+      "maritalStatus": "",
+      "gender": "male",
+      "age": "13",
+      "occupation": "Auctioneers Clerk (employee)"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Frances M Mills"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1891",
+    "piece": "137",
+    "folio": "143",
+    "page": "14",
+    "schedule": "104"
+  },
+  "hasValidData": true
+}

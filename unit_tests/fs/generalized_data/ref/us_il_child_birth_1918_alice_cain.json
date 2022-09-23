@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": "Henry Green",
+  "primaryPersonGender": "male",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Alice Cain"
+  },
+  "birthDate": {
+    "dateString": "1896",
+    "yearString": "1896"
+  },
+  "birthPlace": {
+    "placeString": "Baltimore, Maryland"
+  },
+  "eventDate": {
+    "dateString": "4 Jun 1918",
+    "yearString": "1918"
+  },
+  "eventPlace": {
+    "placeString": "Chicago, Cook, Illinois, United States"
+  },
+  "ageAtEvent": "22",
+  "collectionData": {
+    "id": "1462519"
+  },
+  "hasValidData": true
+}

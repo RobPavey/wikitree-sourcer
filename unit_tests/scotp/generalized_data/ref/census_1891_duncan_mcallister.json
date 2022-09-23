@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "McAllister",
+    "forenames": "Duncan McN"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1891"
+  },
+  "ageAtEvent": "38",
+  "registrationDistrict": "St George",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Midlothian",
+    "placeString": "St George, Midlothian, Scotland"
+  },
+  "collectionData": {
+    "id": "census1891",
+    "registrationNumber": "685/1",
+    "enumerationDistrict": "75",
+    "page": "3"
+  },
+  "hasValidData": true
+}

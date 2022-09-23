@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Elizabeth Cullington"
+  },
+  "birthDate": {
+    "dateString": "1844",
+    "yearString": "1844"
+  },
+  "eventDate": {
+    "dateString": "27 Aug 1849",
+    "yearString": "1849"
+  },
+  "eventPlace": {
+    "placeString": "Norwich, Norfolk, England"
+  },
+  "ageAtEvent": "5",
+  "collectionData": {
+    "id": "1823613"
+  },
+  "hasValidData": true
+}

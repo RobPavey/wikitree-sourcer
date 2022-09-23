@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Mackenzie",
+    "forenames": "John Mc Leod"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "ageAtEvent": "2",
+  "registrationDistrict": "St Nicholas",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Aberdeenshire",
+    "placeString": "St Nicholas, Aberdeenshire, Scotland"
+  },
+  "collectionData": {
+    "id": "census1881",
+    "registrationNumber": "168/1",
+    "enumerationDistrict": "59",
+    "page": "19"
+  },
+  "hasValidData": true
+}

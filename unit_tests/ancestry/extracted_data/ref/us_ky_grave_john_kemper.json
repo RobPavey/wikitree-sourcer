@@ -1,0 +1,19 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/29540:4110",
+  "pageType": "record",
+  "dbId": "4110",
+  "recordId": "29540",
+  "ancestryTemplate": "{{Ancestry Record|4110|29540}}",
+  "domain": "com",
+  "titleName": "John Kemper",
+  "titleCollection": "Abstract of Graves of Revolutionary Patriots",
+  "recordData": {
+    "Name": "John Kemper",
+    "Cemetery": "Dix River Bapt Ch Cem",
+    "Location": "nr Lancaster, Garrard Co KY 72"
+  },
+  "sourceCitation": "Abstract of Graves of Revolutionary Patriots; Volume: 2",
+  "sourceInformation": "Hatcher, Patricia Law. Abstract of Graves of Revolutionary Patriots [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 1999. Original data: Hatcher, Patricia Law. Abstract of Graves of Revolutionary Patriots. Vol. 1-4. Dallas, TX, USA: Pioneer Heritage Press, 1987.",
+  "originalData": "Hatcher, Patricia Law. Abstract of Graves of Revolutionary Patriots. Vol. 1-4. Dallas, TX, USA: Pioneer Heritage Press, 1987.",
+  "sourceDescription": "Collection of abstracts of Revolutionary War patriot graves found between 1900-87 Learn more..."
+}

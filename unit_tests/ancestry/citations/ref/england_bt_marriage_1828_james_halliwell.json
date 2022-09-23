@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>\nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>\n{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "James married Martha Drinkwater on 17 February 1828 in Grappenhall, Cheshire, England.<ref>\n'''Marriage''':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>\nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>\n{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>\nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>\n{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)<br/>\nJames Halliwell marriage to Martha Drinkwater on 17 Feb 1828 in Grappenhall, Cheshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "James married Martha Drinkwater on 17 February 1828 in Grappenhall, Cheshire, England.<ref>\n'''Marriage''':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>\nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>\n{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)<br/>\nJames Halliwell marriage to Martha Drinkwater on 17 Feb 1828 in Grappenhall, Cheshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)<br/>James Halliwell marriage to Martha Drinkwater on 17 Feb 1828 in Grappenhall, Cheshire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>\nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>\n{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)<br/>\nName: James Halliwell; Gender: Male; Birth Place: of Grappenhall; Marriage Date: 17 Feb 1828; Marriage Place: Grappenhall, Cheshire, England; Spouse: Martha Drinkwater.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "James married Martha Drinkwater on 17 February 1828 in Grappenhall, Cheshire, England.<ref>\n'''Marriage''':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>\nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>\n{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)<br/>\nName: James Halliwell; Gender: Male; Birth Place: of Grappenhall; Marriage Date: 17 Feb 1828; Marriage Place: Grappenhall, Cheshire, England; Spouse: Martha Drinkwater.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)<br/>Name: James Halliwell; Gender: Male; Birth Place: of Grappenhall; Marriage Date: 17 Feb 1828; Marriage Place: Grappenhall, Cheshire, England; Spouse: Martha Drinkwater.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>\nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>\n{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Halliwell\n|-\n| Gender || Male\n|-\n| Birth Place || of Grappenhall\n|-\n| Marriage Date || 17 Feb 1828\n|-\n| Marriage Place || Grappenhall, Cheshire, England\n|-\n| Spouse || Martha Drinkwater\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "James married Martha Drinkwater on 17 February 1828 in Grappenhall, Cheshire, England.<ref>\n'''Marriage''':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>\nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>\n{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Halliwell\n|-\n| Gender || Male\n|-\n| Birth Place || of Grappenhall\n|-\n| Marriage Date || 17 Feb 1828\n|-\n| Marriage Place || Grappenhall, Cheshire, England\n|-\n| Spouse || Martha Drinkwater\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Cheshire, England, Select Bishop's Transcripts, 1576-1933\"<br/>England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1655824<br/>{{Ancestry Record|60496|3995291}} (accessed 6 May 2021)<br/>Name: James Halliwell; Gender: Male; Birth Place: of Grappenhall; Marriage Date: 17 Feb 1828; Marriage Place: Grappenhall, Cheshire, England; Spouse: Martha Drinkwater.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Cheshire, England, Select Bishop's Transcripts, 1576-1933,\" database, ({{Ancestry Record|60496|3995291}} : accessed 6 May 2021), James Halliwell marriage to Martha Drinkwater on 17 Feb 1828 in Grappenhall, Cheshire, England; citing England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah FamilySearch, 2013, FHL Film Number 1655824.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "James married Martha Drinkwater on 17 February 1828 in Grappenhall, Cheshire, England.<ref>\"Cheshire, England, Select Bishop's Transcripts, 1576-1933,\" database, ({{Ancestry Record|60496|3995291}} : accessed 6 May 2021), James Halliwell marriage to Martha Drinkwater on 17 Feb 1828 in Grappenhall, Cheshire, England; citing England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah FamilySearch, 2013, FHL Film Number 1655824.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Cheshire, England, Select Bishop's Transcripts, 1576-1933,\" database, ({{Ancestry Record|60496|3995291}} : accessed 6 May 2021), James Halliwell marriage to Martha Drinkwater on 17 Feb 1828 in Grappenhall, Cheshire, England; citing England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah FamilySearch, 2013, FHL Film Number 1655824.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage'':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\", database, \nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah FamilySearch, 2013, FHL Film Number 1655824, \n({{Ancestry Record|60496|3995291}} : accessed 6 May 2021), \nName: James Halliwell; Gender: Male; Birth Place: of Grappenhall; Marriage Date: 17 Feb 1828; Marriage Place: Grappenhall, Cheshire, England; Spouse: Martha Drinkwater.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "James married Martha Drinkwater on 17 February 1828 in Grappenhall, Cheshire, England.<ref>\n''Marriage'':\n\"Cheshire, England, Select Bishop's Transcripts, 1576-1933\", database, \nEngland, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah FamilySearch, 2013, FHL Film Number 1655824, \n({{Ancestry Record|60496|3995291}} : accessed 6 May 2021), \nName: James Halliwell; Gender: Male; Birth Place: of Grappenhall; Marriage Date: 17 Feb 1828; Marriage Place: Grappenhall, Cheshire, England; Spouse: Martha Drinkwater.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage'': \"Cheshire, England, Select Bishop's Transcripts, 1576-1933\", database, England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah FamilySearch, 2013, FHL Film Number 1655824, ({{Ancestry Record|60496|3995291}} : accessed 6 May 2021), Name: James Halliwell; Gender: Male; Birth Place: of Grappenhall; Marriage Date: 17 Feb 1828; Marriage Place: Grappenhall, Cheshire, England; Spouse: Martha Drinkwater.",
+    "type": "source"
+  }
+}

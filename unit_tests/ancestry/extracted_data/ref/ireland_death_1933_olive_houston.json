@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/6407416:2534",
+  "pageType": "record",
+  "dbId": "2534",
+  "recordId": "6407416",
+  "ancestryTemplate": "{{Ancestry Record|2534|6407416}}",
+  "domain": "com",
+  "titleName": "Olive M M Houston",
+  "titleCollection": "Ireland, Civil Registration Deaths Index, 1864-1958",
+  "recordData": {
+    "Name": "Olive M M Houston",
+    "Estimated Birth Year": "abt 1894",
+    "Date of Registration": "1933 Jan-Feb-Mar",
+    "Death Age": "39",
+    "Registration district": "Dublin South",
+    "Volume": "2",
+    "Page": "384",
+    "FHL Film Number": "101739"
+  },
+  "sourceInformation": "Ancestry.com. Ireland, Civil Registration Deaths Index, 1864-1958 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: “Ireland, Civil Registration Indexes 1845–1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\".",
+  "originalData": "“Ireland, Civil Registration Indexes 1845–1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\".",
+  "sourceDescription": "This database contains an index extracted from an index of deaths registered in Ireland. Learn more..."
+}

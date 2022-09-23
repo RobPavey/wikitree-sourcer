@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1884",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Littlemore",
+    "forenames": "Harry Dew"
+  },
+  "lastNameAtDeath": "Littlemore",
+  "deathDate": {
+    "yearString": "1884",
+    "quarter": 3
+  },
+  "ageAtDeath": 2,
+  "personGender": "male",
+  "registrationDistrict": "Kingston On Thames",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "02A",
+    "page": "195"
+  },
+  "hasValidData": true
+}

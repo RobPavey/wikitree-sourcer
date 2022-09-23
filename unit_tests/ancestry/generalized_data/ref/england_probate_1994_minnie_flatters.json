@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Probate",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Minnie Mary Matilda Flatters"
+  },
+  "deathDate": {
+    "dateString": "4 May 1994"
+  },
+  "eventDate": {
+    "dateString": "11 Jul 1994"
+  },
+  "eventPlace": {
+    "placeString": "Leeds"
+  },
+  "deathPlace": {
+    "placeString": "Billinghay Lincolnshire"
+  },
+  "lastNameAtDeath": "Flatters",
+  "collectionData": {
+    "id": "1904"
+  },
+  "hasValidData": true
+}

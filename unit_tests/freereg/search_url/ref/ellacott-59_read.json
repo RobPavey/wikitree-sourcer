@@ -1,0 +1,14 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "start_year": 1802,
+      "end_year": 1809,
+      "ba": true,
+      "first_name": "Elizabeth",
+      "last_name": "Ellacott",
+      "search_query_fuzzy": true,
+      "search_query_chapman_codes": "DEV"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "recordType": "PassengerList",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Honor Buckley"
+  },
+  "personGender": "female",
+  "departurePlace": "Liverpool, England",
+  "arrivalDate": "1 Dec 1854",
+  "arrivalPlace": "Boston, Massachusetts, USA",
+  "eventDate": {
+    "dateString": "1 Dec 1854"
+  },
+  "eventPlace": {
+    "placeString": "Boston, Massachusetts, USA"
+  },
+  "shipName": "Chariot of Fame",
+  "ageAtEvent": "17",
+  "collectionData": {
+    "id": "8745"
+  },
+  "hasValidData": true
+}

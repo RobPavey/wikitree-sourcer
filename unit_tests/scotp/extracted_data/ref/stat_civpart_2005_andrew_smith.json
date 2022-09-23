@@ -1,0 +1,33 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-civilpartnerships&surname=Smith&surname_so=exact&forename_so=starts&psurname_so=exact&from_year=2005&to_year=2005&record_type=civilpartnership",
+  "success": true,
+  "numResultsOnPage": 4,
+  "recordData": {
+    "Surname": "SMITH",
+    "Forename": "ANDREW CHISWELL",
+    "Partner Surname": "HARRISON",
+    "Year": "2005",
+    "RD/EntryNumber": "118/ 1",
+    "RD Name": "Lerwick"
+  },
+  "imageLink": "",
+  "pageHeader": "Statutory registers - Civil partnerships",
+  "searchCriteria": {
+    "Surname": "Smith",
+    "Surname Option": "Exact",
+    "From_year": "2005",
+    "To_year": "2005"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "statutory",
+    "dl_rec": "statutory-civilpartnerships",
+    "surname": "Smith",
+    "surname_so": "exact",
+    "forename_so": "starts",
+    "psurname_so": "exact",
+    "from_year": "2005",
+    "to_year": "2005",
+    "record_type": "civilpartnership"
+  }
+}

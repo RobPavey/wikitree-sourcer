@@ -1,0 +1,21 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/4102834:61861",
+  "pageType": "record",
+  "dbId": "61861",
+  "recordId": "4102834",
+  "ancestryTemplate": "{{Ancestry Record|61861|4102834}}",
+  "domain": "com",
+  "titleName": "George Michael Leonard",
+  "titleCollection": "U.S., Veterans Administration Master Index, 1917-1940",
+  "recordData": {
+    "Name": "George Michael Leonard",
+    "Record Type": "Military Service",
+    "Birth Date": "3 Mar 1892",
+    "Military Date": "18 Jan 1919",
+    "Residence Place": "Buffalo, N Y",
+    "Death Date": "28 Jun 1952"
+  },
+  "sourceInformation": "Ancestry.com. U.S., Veterans Administration Master Index, 1917-1940 [database on-line]. Lehi, UT. USA: Ancestry.com Operations, Inc., 2019. Original data: United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019. Veterans Administration Master Index, 1917 - 9/16/1940. NAI 76193916. Record Group 15: Records of the Department of Veterans Affairs, 1773 - 2007. National Archives at St. Louis, St. Louis, Missouri, U.S.A.",
+  "originalData": "United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019.",
+  "sourceDescription": "This collection contains a card index created by the Veterans Bureau (Veterans Administration) of veterans who served between World War I and earlier wars and who made (or whose heirs made) claims for benefits between 1917-1940 Learn more..."
+}

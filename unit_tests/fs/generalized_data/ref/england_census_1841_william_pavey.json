@@ -1,0 +1,132 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "William Pavey"
+  },
+  "birthDate": {
+    "dateString": "1807-1811",
+    "yearString": "1807-1811"
+  },
+  "birthPlace": {
+    "placeString": "Devon"
+  },
+  "eventDate": {
+    "dateString": "1841"
+  },
+  "eventPlace": {
+    "placeString": "East Stonehouse, Devon, England, United Kingdom",
+    "streetAddress": "Union St"
+  },
+  "registrationDistrict": "East Stonehouse",
+  "ageAtEvent": "30",
+  "householdArrayFields": [
+    "name",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William Pavey",
+      "gender": "male",
+      "age": "30",
+      "birthYear": "1807-1811",
+      "birthPlace": "Devon",
+      "isSelected": true
+    },
+    {
+      "name": "Elizabeth Pavey",
+      "gender": "female",
+      "age": "30",
+      "birthYear": "1807-1811",
+      "birthPlace": "Devon"
+    },
+    {
+      "name": "Elizabeth Pavey",
+      "gender": "female",
+      "age": "11",
+      "birthYear": "1830",
+      "birthPlace": "Devon"
+    },
+    {
+      "name": "William Pavey",
+      "gender": "male",
+      "age": "9",
+      "birthYear": "1832",
+      "birthPlace": "Devon"
+    },
+    {
+      "name": "Fredrick Pavey",
+      "gender": "male",
+      "age": "7",
+      "birthYear": "1834",
+      "birthPlace": "Devon"
+    },
+    {
+      "name": "Jemima Pavey",
+      "gender": "female",
+      "age": "6",
+      "birthYear": "1835",
+      "birthPlace": "Devon"
+    },
+    {
+      "name": "John Pavey",
+      "gender": "male",
+      "age": "4",
+      "birthYear": "1837",
+      "birthPlace": "Devon"
+    },
+    {
+      "name": "Marianne Pavey",
+      "gender": "female",
+      "age": "3",
+      "birthYear": "1838",
+      "birthPlace": "Devon"
+    },
+    {
+      "name": "Isabella Pavey",
+      "gender": "female",
+      "age": "1",
+      "birthYear": "1840",
+      "birthPlace": "Devon"
+    },
+    {
+      "name": "Charles Baker",
+      "gender": "male",
+      "age": "40",
+      "birthYear": "1797-1801"
+    },
+    {
+      "name": "Mary Baker",
+      "gender": "female",
+      "age": "25",
+      "birthYear": "1812-1816",
+      "birthPlace": "Ireland"
+    },
+    {
+      "name": "Martha Tancred",
+      "gender": "female",
+      "age": "20",
+      "birthYear": "1817-1821",
+      "birthPlace": "Ireland"
+    },
+    {
+      "name": "Mary Metherell",
+      "gender": "female",
+      "age": "40",
+      "birthYear": "1797-1801",
+      "birthPlace": "Devon"
+    }
+  ],
+  "collectionData": {
+    "id": "1493745",
+    "page": "37",
+    "piece": "276",
+    "folio": "21"
+  },
+  "hasValidData": true
+}

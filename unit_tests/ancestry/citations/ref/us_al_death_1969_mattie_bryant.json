@@ -1,0 +1,86 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Mattie, daughter of Elias Whiteside & Sarah Oldham, died (age 87) on 12 March 1969 in Birmingham, Jefferson, Alabama.<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death''': \"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>FHL Film Number: 1992707<br/>{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)<br/>\nMattie W Bryant death 12 Mar 1969 (age 87), daughter of Elias Whiteside & Sarah Oldham, in Birmingham, Jefferson, Alabama.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Mattie, daughter of Elias Whiteside & Sarah Oldham, died (age 87) on 12 March 1969 in Birmingham, Jefferson, Alabama.<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)<br/>\nMattie W Bryant death 12 Mar 1969 (age 87), daughter of Elias Whiteside & Sarah Oldham, in Birmingham, Jefferson, Alabama.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death''': \"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>FHL Film Number: 1992707<br/>{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)<br/>Mattie W Bryant death 12 Mar 1969 (age 87), daughter of Elias Whiteside & Sarah Oldham, in Birmingham, Jefferson, Alabama.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)<br/>\nName: Mattie W Bryant [Mattie W Whiteside]; Birth Date: abt 1882; Death Date: 12 Mar 1969; Death Place: Birmingham, Jefferson, Alabama; Death Age: 87; Gender: Female; Father Name: Elias Whiteside; Mother Name: Sarah Oldham.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Mattie, daughter of Elias Whiteside & Sarah Oldham, died (age 87) on 12 March 1969 in Birmingham, Jefferson, Alabama.<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)<br/>\nName: Mattie W Bryant [Mattie W Whiteside]; Birth Date: abt 1882; Death Date: 12 Mar 1969; Death Place: Birmingham, Jefferson, Alabama; Death Age: 87; Gender: Female; Father Name: Elias Whiteside; Mother Name: Sarah Oldham.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death''': \"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>FHL Film Number: 1992707<br/>{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)<br/>Name: Mattie W Bryant [Mattie W Whiteside]; Birth Date: abt 1882; Death Date: 12 Mar 1969; Death Place: Birmingham, Jefferson, Alabama; Death Age: 87; Gender: Female; Father Name: Elias Whiteside; Mother Name: Sarah Oldham.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mattie W Bryant [Mattie W Whiteside]\n|-\n| Birth Date || abt 1882\n|-\n| Death Date || 12 Mar 1969\n|-\n| Death Place || Birmingham, Jefferson, Alabama\n|-\n| Death Age || 87\n|-\n| Gender || Female\n|-\n| Father Name || Elias Whiteside\n|-\n| Mother Name || Sarah Oldham\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Mattie, daughter of Elias Whiteside & Sarah Oldham, died (age 87) on 12 March 1969 in Birmingham, Jefferson, Alabama.<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mattie W Bryant [Mattie W Whiteside]\n|-\n| Birth Date || abt 1882\n|-\n| Death Date || 12 Mar 1969\n|-\n| Death Place || Birmingham, Jefferson, Alabama\n|-\n| Death Age || 87\n|-\n| Gender || Female\n|-\n| Father Name || Elias Whiteside\n|-\n| Mother Name || Sarah Oldham\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death''': \"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>FHL Film Number: 1992707<br/>{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)<br/>Name: Mattie W Bryant [Mattie W Whiteside]; Birth Date: abt 1882; Death Date: 12 Mar 1969; Death Place: Birmingham, Jefferson, Alabama; Death Age: 87; Gender: Female; Father Name: Elias Whiteside; Mother Name: Sarah Oldham.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Alabama, U.S., Deaths and Burials Index, 1881-1974,\" database, ({{Ancestry Record|2543|1504470}} : accessed 6 May 2021), Mattie W Bryant death 12 Mar 1969 (age 87), daughter of Elias Whiteside & Sarah Oldham, in Birmingham, Jefferson, Alabama; citing FHL Film Number 1992707.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Mattie, daughter of Elias Whiteside & Sarah Oldham, died (age 87) on 12 March 1969 in Birmingham, Jefferson, Alabama.<ref>\"Alabama, U.S., Deaths and Burials Index, 1881-1974,\" database, ({{Ancestry Record|2543|1504470}} : accessed 6 May 2021), Mattie W Bryant death 12 Mar 1969 (age 87), daughter of Elias Whiteside & Sarah Oldham, in Birmingham, Jefferson, Alabama; citing FHL Film Number 1992707.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Alabama, U.S., Deaths and Burials Index, 1881-1974,\" database, ({{Ancestry Record|2543|1504470}} : accessed 6 May 2021), Mattie W Bryant death 12 Mar 1969 (age 87), daughter of Elias Whiteside & Sarah Oldham, in Birmingham, Jefferson, Alabama; citing FHL Film Number 1992707.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death'':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\", database, \nFHL Film Number 1992707, \n({{Ancestry Record|2543|1504470}} : accessed 6 May 2021), \nName: Mattie W Bryant [Mattie W Whiteside]; Birth Date: abt 1882; Death Date: 12 Mar 1969; Death Place: Birmingham, Jefferson, Alabama; Death Age: 87; Gender: Female; Father Name: Elias Whiteside; Mother Name: Sarah Oldham.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Mattie, daughter of Elias Whiteside & Sarah Oldham, died (age 87) on 12 March 1969 in Birmingham, Jefferson, Alabama.<ref>\n''Death'':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\", database, \nFHL Film Number 1992707, \n({{Ancestry Record|2543|1504470}} : accessed 6 May 2021), \nName: Mattie W Bryant [Mattie W Whiteside]; Birth Date: abt 1882; Death Date: 12 Mar 1969; Death Place: Birmingham, Jefferson, Alabama; Death Age: 87; Gender: Female; Father Name: Elias Whiteside; Mother Name: Sarah Oldham.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death'': \"Alabama, U.S., Deaths and Burials Index, 1881-1974\", database, FHL Film Number 1992707, ({{Ancestry Record|2543|1504470}} : accessed 6 May 2021), Name: Mattie W Bryant [Mattie W Whiteside]; Birth Date: abt 1882; Death Date: 12 Mar 1969; Death Place: Birmingham, Jefferson, Alabama; Death Age: 87; Gender: Female; Father Name: Elias Whiteside; Mother Name: Sarah Oldham.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "She, daughter of Elias Whiteside & Sarah Oldham, died, aged 87, on 12 March 1969 in Birmingham, Jefferson, Alabama.<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mattie W Bryant [Mattie W Whiteside]\n|-\n| Birth Date || abt 1882\n|-\n| Death Date || 12 Mar 1969\n|-\n| Death Place || Birmingham, Jefferson, Alabama\n|-\n| Death Age || 87\n|-\n| Gender || Female\n|-\n| Father Name || Elias Whiteside\n|-\n| Mother Name || Sarah Oldham\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "Mattie W Bryant died on 12 March 1969 in Birmingham, Jefferson, Alabama. She was 87 years old. She was the daughter of Elias Whiteside & Sarah Oldham.<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mattie W Bryant [Mattie W Whiteside]\n|-\n| Birth Date || abt 1882\n|-\n| Death Date || 12 Mar 1969\n|-\n| Death Place || Birmingham, Jefferson, Alabama\n|-\n| Death Age || 87\n|-\n| Gender || Female\n|-\n| Father Name || Elias Whiteside\n|-\n| Mother Name || Sarah Oldham\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_3_narrative": {
+    "citation": "Mattie W, the daughter of Elias Whiteside and Sarah Oldham, died on 12 March 1969 in Birmingham, Jefferson, Alabama.<ref>\n'''Death''':\n\"Alabama, U.S., Deaths and Burials Index, 1881-1974\"<br/>\nFHL Film Number: 1992707<br/>\n{{Ancestry Record|2543|1504470}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mattie W Bryant [Mattie W Whiteside]\n|-\n| Birth Date || abt 1882\n|-\n| Death Date || 12 Mar 1969\n|-\n| Death Place || Birmingham, Jefferson, Alabama\n|-\n| Death Age || 87\n|-\n| Gender || Female\n|-\n| Father Name || Elias Whiteside\n|-\n| Mother Name || Sarah Oldham\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

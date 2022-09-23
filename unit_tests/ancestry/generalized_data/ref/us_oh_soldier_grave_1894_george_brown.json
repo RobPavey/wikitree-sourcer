@@ -1,0 +1,27 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "George W Brown"
+  },
+  "eventDate": {
+    "dateString": "13 Jun 1861"
+  },
+  "birthDate": {
+    "dateString": "15 Nov 1815"
+  },
+  "deathDate": {
+    "dateString": "21 Nov 1894"
+  },
+  "eventPlace": {
+    "placeString": "Center Twp"
+  },
+  "dischargeDate": "16 Aug 1862",
+  "rank": "Private",
+  "militaryBranch": "Army",
+  "collectionData": {
+    "id": "61438"
+  },
+  "hasValidData": true
+}

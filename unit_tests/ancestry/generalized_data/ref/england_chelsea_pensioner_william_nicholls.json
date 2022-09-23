@@ -1,0 +1,21 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William Henry Nicholls"
+  },
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1881"
+  },
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "serviceNumber": "20529",
+  "unit": "??furmae??",
+  "collectionData": {
+    "id": "61068"
+  },
+  "hasValidData": true
+}

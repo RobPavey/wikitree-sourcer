@@ -1,0 +1,29 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Teresa Carole-ann Fitchie"
+  },
+  "eventPlace": {
+    "county": "Kent"
+  },
+  "eventDate": {
+    "dateString": "Jul 2002",
+    "quarter": 3
+  },
+  "registrationDistrict": "Ashford With Shepway",
+  "deathDate": {
+    "dateString": "Jul 2002",
+    "quarter": 3
+  },
+  "lastNameAtDeath": "Fitchie",
+  "ageAtDeath": "62",
+  "birthDate": {
+    "dateString": "13 Jul 1940"
+  },
+  "collectionData": {
+    "id": "7579"
+  },
+  "hasValidData": true
+}

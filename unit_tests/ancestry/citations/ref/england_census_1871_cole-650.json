@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1871 census Sophia (age 30) was the wife of William Handford in Penstone, Colebrooke, Devon, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)<br/>\nSophia Handford (30), wife, in household of William Handford (27) in Penstone, Colebrooke in Crediton registration district in Devon, England. Born in Atherington Devon England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1871 census Sophia (age 30) was the wife of William Handford in Penstone, Colebrooke, Devon, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)<br/>\nSophia Handford (30), wife, in household of William Handford (27) in Penstone, Colebrooke in Crediton registration district in Devon, England. Born in Atherington Devon England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)<br/>Sophia Handford (30), wife, in household of William Handford (27) in Penstone, Colebrooke in Crediton registration district in Devon, England. Born in Atherington Devon England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)<br/>\nName: Sophia Handford; Age: 30; Estimated Birth Year: 1841; Relation: Wife; Gender: Female; Where born: Atherington Devon England; Civil parish: Colebrooke; Town: Penstone; County/Island: Devon; Country: England; Registration district: Crediton; Sub-registration district: Crediton; <br/>Household Members Age Relationship:<br/>William Handford 27 Head<br/>Sophia Handford 30 Wife<br/>William Handford 7 Son<br/>Mary Handford 5 Daughter<br/>Marino Handford 3 Daughter<br/>Luca Handford 1/12 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1871 census Sophia (age 30) was the wife of William Handford in Penstone, Colebrooke, Devon, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)<br/>\nName: Sophia Handford; Age: 30; Estimated Birth Year: 1841; Relation: Wife; Gender: Female; Where born: Atherington Devon England; Civil parish: Colebrooke; Town: Penstone; County/Island: Devon; Country: England; Registration district: Crediton; Sub-registration district: Crediton; <br/>Household Members Age Relationship:<br/>William Handford 27 Head<br/>Sophia Handford 30 Wife<br/>William Handford 7 Son<br/>Mary Handford 5 Daughter<br/>Marino Handford 3 Daughter<br/>Luca Handford 1/12 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)<br/>Name: Sophia Handford; Age: 30; Estimated Birth Year: 1841; Relation: Wife; Gender: Female; Where born: Atherington Devon England; Civil parish: Colebrooke; Town: Penstone; County/Island: Devon; Country: England; Registration district: Crediton; Sub-registration district: Crediton; <br/>Household Members Age Relationship:<br/>William Handford 27 Head<br/>Sophia Handford 30 Wife<br/>William Handford 7 Son<br/>Mary Handford 5 Daughter<br/>Marino Handford 3 Daughter<br/>Luca Handford 1/12 Daughter.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Sophia Handford\n|-\n| Age || 30\n|-\n| Estimated Birth Year || 1841\n|-\n| Relation || Wife\n|-\n| Gender || Female\n|-\n| Where born || Atherington Devon England\n|-\n| Civil parish || Colebrooke\n|-\n| Town || Penstone\n|-\n| County/Island || Devon\n|-\n| Country || England\n|-\n| Registration district || Crediton\n|-\n| Sub-registration district || Crediton\n|-\n| Household Members<br/>Age<br/>Relationship || William Handford 27 Head<br/>Sophia Handford 30 Wife<br/>William Handford 7 Son<br/>Mary Handford 5 Daughter<br/>Marino Handford 3 Daughter<br/>Luca Handford 1/12 Daughter\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1871 census Sophia (age 30) was the wife of William Handford in Penstone, Colebrooke, Devon, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Sophia Handford\n|-\n| Age || 30\n|-\n| Estimated Birth Year || 1841\n|-\n| Relation || Wife\n|-\n| Gender || Female\n|-\n| Where born || Atherington Devon England\n|-\n| Civil parish || Colebrooke\n|-\n| Town || Penstone\n|-\n| County/Island || Devon\n|-\n| Country || England\n|-\n| Registration district || Crediton\n|-\n| Sub-registration district || Crediton\n|-\n| Household Members<br/>Age<br/>Relationship || William Handford 27 Head<br/>Sophia Handford 30 Wife<br/>William Handford 7 Son<br/>Mary Handford 5 Daughter<br/>Marino Handford 3 Daughter<br/>Luca Handford 1/12 Daughter\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)<br/>Name: Sophia Handford; Age: 30; Estimated Birth Year: 1841; Relation: Wife; Gender: Female; Where born: Atherington Devon England; Civil parish: Colebrooke; Town: Penstone; County/Island: Devon; Country: England; Registration district: Crediton; Sub-registration district: Crediton; <br/>Household Members Age Relationship:<br/>William Handford 27 Head<br/>Sophia Handford 30 Wife<br/>William Handford 7 Son<br/>Mary Handford 5 Daughter<br/>Marino Handford 3 Daughter<br/>Luca Handford 1/12 Daughter.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1871 England Census,\" database, ({{Ancestry Record|7619|11291260}} : accessed 6 May 2021), Sophia Handford (30), wife, in household of William Handford (27) in Penstone, Colebrooke in Crediton registration district in Devon, England. Born in Atherington Devon England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2162, Folio 92, Page 10, GSU roll 832042, ED, institution, or vessel 12, Household schedule number 51.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1871 census Sophia (age 30) was the wife of William Handford in Penstone, Colebrooke, Devon, England.<ref>\"1871 England Census,\" database, ({{Ancestry Record|7619|11291260}} : accessed 6 May 2021), Sophia Handford (30), wife, in household of William Handford (27) in Penstone, Colebrooke in Crediton registration district in Devon, England. Born in Atherington Devon England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2162, Folio 92, Page 10, GSU roll 832042, ED, institution, or vessel 12, Household schedule number 51.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1871 England Census,\" database, ({{Ancestry Record|7619|11291260}} : accessed 6 May 2021), Sophia Handford (30), wife, in household of William Handford (27) in Penstone, Colebrooke in Crediton registration district in Devon, England. Born in Atherington Devon England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2162, Folio 92, Page 10, GSU roll 832042, ED, institution, or vessel 12, Household schedule number 51.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1871 Census'':\n\"1871 England Census\", database, \nThe National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2162, Folio 92, Page 10, GSU roll 832042, ED, institution, or vessel 12, Household schedule number 51, \n({{Ancestry Record|7619|11291260}} : accessed 6 May 2021), \nName: Sophia Handford; Age: 30; Estimated Birth Year: 1841; Relation: Wife; Gender: Female; Where born: Atherington Devon England; Civil parish: Colebrooke; Town: Penstone; County/Island: Devon; Country: England; Registration district: Crediton; Sub-registration district: Crediton; Household Members Age Relationship: William Handford 27 Head, Sophia Handford 30 Wife, William Handford 7 Son, Mary Handford 5 Daughter, Marino Handford 3 Daughter, Luca Handford 1/12 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1871 census Sophia (age 30) was the wife of William Handford in Penstone, Colebrooke, Devon, England.<ref>\n''1871 Census'':\n\"1871 England Census\", database, \nThe National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2162, Folio 92, Page 10, GSU roll 832042, ED, institution, or vessel 12, Household schedule number 51, \n({{Ancestry Record|7619|11291260}} : accessed 6 May 2021), \nName: Sophia Handford; Age: 30; Estimated Birth Year: 1841; Relation: Wife; Gender: Female; Where born: Atherington Devon England; Civil parish: Colebrooke; Town: Penstone; County/Island: Devon; Country: England; Registration district: Crediton; Sub-registration district: Crediton; Household Members Age Relationship: William Handford 27 Head, Sophia Handford 30 Wife, William Handford 7 Son, Mary Handford 5 Daughter, Marino Handford 3 Daughter, Luca Handford 1/12 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1871 Census'': \"1871 England Census\", database, The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2162, Folio 92, Page 10, GSU roll 832042, ED, institution, or vessel 12, Household schedule number 51, ({{Ancestry Record|7619|11291260}} : accessed 6 May 2021), Name: Sophia Handford; Age: 30; Estimated Birth Year: 1841; Relation: Wife; Gender: Female; Where born: Atherington Devon England; Civil parish: Colebrooke; Town: Penstone; County/Island: Devon; Country: England; Registration district: Crediton; Sub-registration district: Crediton; Household Members Age Relationship: William Handford 27 Head, Sophia Handford 30 Wife, William Handford 7 Son, Mary Handford 5 Daughter, Marino Handford 3 Daughter, Luca Handford 1/12 Daughter.",
+    "type": "source"
+  }
+}

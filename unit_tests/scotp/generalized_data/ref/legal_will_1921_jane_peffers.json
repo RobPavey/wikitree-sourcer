@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Peffers",
+    "forenames": "Jane"
+  },
+  "eventDate": {
+    "dateString": "14 June 1921"
+  },
+  "courtName": "Edinburgh Sheriff Court",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Edinburgh",
+    "placeString": "Edinburgh, Scotland"
+  },
+  "testateOrIntestate": "testate",
+  "recordSubtype": "AdditionalInventory",
+  "deathDate": {
+    "dateString": "6 April 1921"
+  },
+  "grantedDate": "25 June 1921",
+  "hasValidData": true
+}

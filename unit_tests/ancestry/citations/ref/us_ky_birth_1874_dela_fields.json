@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Dela, daughter of Lewis Fields & Angeline Slans, was born on 31 January 1874 in Martin, Kentucky, USA.<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth''': \"Kentucky, U.S., Birth Records, 1847-1911\"<br/>Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>{{Ancestry Record|1213|69475}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)<br/>\nDela Fields born on 31 Jan 1874, daughter of Lewis Fields & Angeline Slans, in Martin, Kentucky, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Dela, daughter of Lewis Fields & Angeline Slans, was born on 31 January 1874 in Martin, Kentucky, USA.<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)<br/>\nDela Fields born on 31 Jan 1874, daughter of Lewis Fields & Angeline Slans, in Martin, Kentucky, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth''': \"Kentucky, U.S., Birth Records, 1847-1911\"<br/>Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>{{Ancestry Record|1213|69475}} (accessed 6 May 2021)<br/>Dela Fields born on 31 Jan 1874, daughter of Lewis Fields & Angeline Slans, in Martin, Kentucky, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)<br/>\nName: Dela Fields; Birth Date: 31 Jan 1874; Birth Place: Martin, Kentucky, USA; Ethnicity: White; Gender: Female; Father: Lewis Fields; Mother: Angeline Slans.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Dela, daughter of Lewis Fields & Angeline Slans, was born on 31 January 1874 in Martin, Kentucky, USA.<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)<br/>\nName: Dela Fields; Birth Date: 31 Jan 1874; Birth Place: Martin, Kentucky, USA; Ethnicity: White; Gender: Female; Father: Lewis Fields; Mother: Angeline Slans.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth''': \"Kentucky, U.S., Birth Records, 1847-1911\"<br/>Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>{{Ancestry Record|1213|69475}} (accessed 6 May 2021)<br/>Name: Dela Fields; Birth Date: 31 Jan 1874; Birth Place: Martin, Kentucky, USA; Ethnicity: White; Gender: Female; Father: Lewis Fields; Mother: Angeline Slans.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Dela Fields\n|-\n| Birth Date || 31 Jan 1874\n|-\n| Birth Place || Martin, Kentucky, USA\n|-\n| Ethnicity || White\n|-\n| Gender || Female\n|-\n| Father || Lewis Fields\n|-\n| Mother || Angeline Slans\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Dela, daughter of Lewis Fields & Angeline Slans, was born on 31 January 1874 in Martin, Kentucky, USA.<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Dela Fields\n|-\n| Birth Date || 31 Jan 1874\n|-\n| Birth Place || Martin, Kentucky, USA\n|-\n| Ethnicity || White\n|-\n| Gender || Female\n|-\n| Father || Lewis Fields\n|-\n| Mother || Angeline Slans\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth''': \"Kentucky, U.S., Birth Records, 1847-1911\"<br/>Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>{{Ancestry Record|1213|69475}} (accessed 6 May 2021)<br/>Name: Dela Fields; Birth Date: 31 Jan 1874; Birth Place: Martin, Kentucky, USA; Ethnicity: White; Gender: Female; Father: Lewis Fields; Mother: Angeline Slans.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Kentucky, U.S., Birth Records, 1847-1911,\" database, ({{Ancestry Record|1213|69475}} : accessed 6 May 2021), Dela Fields born on 31 Jan 1874, daughter of Lewis Fields & Angeline Slans, in Martin, Kentucky, USA; citing Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Dela, daughter of Lewis Fields & Angeline Slans, was born on 31 January 1874 in Martin, Kentucky, USA.<ref>\"Kentucky, U.S., Birth Records, 1847-1911,\" database, ({{Ancestry Record|1213|69475}} : accessed 6 May 2021), Dela Fields born on 31 Jan 1874, daughter of Lewis Fields & Angeline Slans, in Martin, Kentucky, USA; citing Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Kentucky, U.S., Birth Records, 1847-1911,\" database, ({{Ancestry Record|1213|69475}} : accessed 6 May 2021), Dela Fields born on 31 Jan 1874, daughter of Lewis Fields & Angeline Slans, in Martin, Kentucky, USA; citing Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Birth'':\n\"Kentucky, U.S., Birth Records, 1847-1911\", database, \nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky, \n({{Ancestry Record|1213|69475}} : accessed 6 May 2021), \nName: Dela Fields; Birth Date: 31 Jan 1874; Birth Place: Martin, Kentucky, USA; Ethnicity: White; Gender: Female; Father: Lewis Fields; Mother: Angeline Slans.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Dela, daughter of Lewis Fields & Angeline Slans, was born on 31 January 1874 in Martin, Kentucky, USA.<ref>\n''Birth'':\n\"Kentucky, U.S., Birth Records, 1847-1911\", database, \nKentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky, \n({{Ancestry Record|1213|69475}} : accessed 6 May 2021), \nName: Dela Fields; Birth Date: 31 Jan 1874; Birth Place: Martin, Kentucky, USA; Ethnicity: White; Gender: Female; Father: Lewis Fields; Mother: Angeline Slans.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Birth'': \"Kentucky, U.S., Birth Records, 1847-1911\", database, Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky, ({{Ancestry Record|1213|69475}} : accessed 6 May 2021), Name: Dela Fields; Birth Date: 31 Jan 1874; Birth Place: Martin, Kentucky, USA; Ethnicity: White; Gender: Female; Father: Lewis Fields; Mother: Angeline Slans.",
+    "type": "source"
+  }
+}

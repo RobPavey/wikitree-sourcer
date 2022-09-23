@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/46470693:2495",
+  "pageType": "record",
+  "dbId": "2495",
+  "recordId": "46470693",
+  "ancestryTemplate": "{{Ancestry Record|2495|46470693}}",
+  "domain": "com",
+  "titleName": "Increase Sumner",
+  "titleCollection": "Massachusetts, U.S., Town and Vital Records, 1620-1988",
+  "recordData": {
+    "Name": "Increase Sumner",
+    "Event Type": "Birth",
+    "Birth Date": "23 Feb 1642",
+    "Birth Place": "Dorchester, Massachusetts",
+    "Father Name": "William Sumner",
+    "Mother Name": "Mary"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2495/images/40400_274760-00014?pid=46470693&usePUB=true&usePUBJs=true",
+  "imageDbId": "2495",
+  "imageRecordId": "40400_274760-00014",
+  "sourceInformation": "Ancestry.com. Massachusetts, U.S., Town and Vital Records, 1620-1988 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: Town and City Clerks of Massachusetts. Massachusetts Vital and Town Records. Provo, UT: Holbrook Research Institute (Jay and Delene Holbrook).",
+  "originalData": "Town and City Clerks of Massachusetts. Massachusetts Vital and Town Records. Provo, UT: Holbrook Research Institute (Jay and Delene Holbrook).",
+  "sourceDescription": "Did your own founding fathers marry, die, buy a house, rent a pew, or own a dog in the Bay State? Here’s your chance to find out. Learn more..."
+}

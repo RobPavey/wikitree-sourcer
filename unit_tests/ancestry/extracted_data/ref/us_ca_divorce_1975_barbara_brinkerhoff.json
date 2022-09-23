@@ -1,0 +1,22 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/3806392:1141",
+  "pageType": "record",
+  "dbId": "1141",
+  "recordId": "3806392",
+  "ancestryTemplate": "{{Ancestry Record|1141|3806392}}",
+  "domain": "com",
+  "titleName": "Barbara J Brinkerhoff",
+  "titleCollection": "California, U.S., Divorce Index, 1966-1984",
+  "recordData": {
+    "Name": "Barbara J Brinkerhoff",
+    "Spouse Name": "Robert A Johnson",
+    "Location": "Los Angeles",
+    "Date": "Jun 1976"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1141/images/vdvusaca1966_0048_14_o-0210?pid=3806392&usePUB=true&usePUBJs=true",
+  "imageDbId": "1141",
+  "imageRecordId": "vdvusaca1966_0048_14_o-0210",
+  "sourceInformation": "Ancestry.com. California, U.S., Divorce Index, 1966-1984 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2007. Original data: State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California.",
+  "originalData": "State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California.",
+  "sourceDescription": "This database is an index to over 3.5 million divorces that were filed in California (U.S.A.) from 1966-1984. Information that may be found in this database includes spouses' names, divorce date, and divorce county or city. Learn more..."
+}

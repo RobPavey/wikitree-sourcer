@@ -1,0 +1,26 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": "Ethel D Blackshear",
+  "primaryPersonGender": "female",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Sally Knight"
+  },
+  "eventPlace": {
+    "placeString": "Wayne, Indiana, United States"
+  },
+  "spouses": [
+    {
+      "marriagePlace": {
+        "placeString": "Wayne, Indiana, United States"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1410397"
+  },
+  "hasValidData": true
+}

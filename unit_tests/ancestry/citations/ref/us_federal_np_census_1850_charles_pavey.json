@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "C was enumerated in a non-population schedule on 26 August 1850 in Coldwater, Branch, Michigan, USA.<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1850 Non-population Census''': \"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>Census Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)<br/>\nName: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "C was enumerated in a non-population schedule on 26 August 1850 in Coldwater, Branch, Michigan, USA.<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)<br/>\nName: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1850 Non-population Census''': \"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>Census Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)<br/>Name: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)<br/>\nName: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "C was enumerated in a non-population schedule on 26 August 1850 in Coldwater, Branch, Michigan, USA.<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)<br/>\nName: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1850 Non-population Census''': \"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>Census Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)<br/>Name: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || C Pasey\n|-\n| Enumeration Date || 26 Aug 1850\n|-\n| Place || Coldwater, Branch, Michigan, USA\n|-\n| Schedule Type || Agriculture\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "C was enumerated in a non-population schedule on 26 August 1850 in Coldwater, Branch, Michigan, USA.<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || C Pasey\n|-\n| Enumeration Date || 26 Aug 1850\n|-\n| Place || Coldwater, Branch, Michigan, USA\n|-\n| Schedule Type || Agriculture\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1850 Non-population Census''': \"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>Census Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)<br/>Name: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880,\" database, ({{Ancestry Record|1276|4001446}} : accessed 6 May 2021), Name C Pasey, Enumeration Date 26 Aug 1850, Place Coldwater, Branch, Michigan, USA, Schedule Type Agriculture; citing Census Year 1850, Census Place Coldwater, Branch, Michigan, Archive Collection Number T1164, Roll 1, Page 195, Line 40, Schedule Type Agriculture.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "C was enumerated in a non-population schedule on 26 August 1850 in Coldwater, Branch, Michigan, USA.<ref>\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880,\" database, ({{Ancestry Record|1276|4001446}} : accessed 6 May 2021), Name C Pasey, Enumeration Date 26 Aug 1850, Place Coldwater, Branch, Michigan, USA, Schedule Type Agriculture; citing Census Year 1850, Census Place Coldwater, Branch, Michigan, Archive Collection Number T1164, Roll 1, Page 195, Line 40, Schedule Type Agriculture.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Selected Federal Census Non-Population Schedules, 1850-1880,\" database, ({{Ancestry Record|1276|4001446}} : accessed 6 May 2021), Name C Pasey, Enumeration Date 26 Aug 1850, Place Coldwater, Branch, Michigan, USA, Schedule Type Agriculture; citing Census Year 1850, Census Place Coldwater, Branch, Michigan, Archive Collection Number T1164, Roll 1, Page 195, Line 40, Schedule Type Agriculture.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1850 Non-population Census'':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\", database, \nCensus Year 1850, Census Place Coldwater, Branch, Michigan, Archive Collection Number T1164, Roll 1, Page 195, Line 40, Schedule Type Agriculture, \n({{Ancestry Record|1276|4001446}} : accessed 6 May 2021), \nName: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "C was enumerated in a non-population schedule on 26 August 1850 in Coldwater, Branch, Michigan, USA.<ref>\n''1850 Non-population Census'':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\", database, \nCensus Year 1850, Census Place Coldwater, Branch, Michigan, Archive Collection Number T1164, Roll 1, Page 195, Line 40, Schedule Type Agriculture, \n({{Ancestry Record|1276|4001446}} : accessed 6 May 2021), \nName: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1850 Non-population Census'': \"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\", database, Census Year 1850, Census Place Coldwater, Branch, Michigan, Archive Collection Number T1164, Roll 1, Page 195, Line 40, Schedule Type Agriculture, ({{Ancestry Record|1276|4001446}} : accessed 6 May 2021), Name: C Pasey; Enumeration Date: 26 Aug 1850; Place: Coldwater, Branch, Michigan, USA; Schedule Type: Agriculture.",
+    "type": "source"
+  }
+}

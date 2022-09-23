@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Alice, child of Thomas W Lloyd & Emma Folkes, died (age 85) in about 1970 in Brunswick, Victoria.<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death''': \"Australia, Death Index, 1787-1985\"<br/>Death Index Victoria 1921-1985; Registration Number: 11307<br/>{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)<br/>\nAlice Armstrong death about 1970 (age 85), child of Thomas W Lloyd & Emma Folkes, in Brunswick, Victoria.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Alice, child of Thomas W Lloyd & Emma Folkes, died (age 85) in about 1970 in Brunswick, Victoria.<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)<br/>\nAlice Armstrong death about 1970 (age 85), child of Thomas W Lloyd & Emma Folkes, in Brunswick, Victoria.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death''': \"Australia, Death Index, 1787-1985\"<br/>Death Index Victoria 1921-1985; Registration Number: 11307<br/>{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)<br/>Alice Armstrong death about 1970 (age 85), child of Thomas W Lloyd & Emma Folkes, in Brunswick, Victoria.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)<br/>\nName: Alice Armstrong; Death Age: 85; Birth Date: abt 1885; Death Date: Abt 1970; Death Place: Brunswick, Victoria; Registration Date: 1970; Registration Place: Australia; Father: Thomas W Lloyd; Mother: Emma Folkes.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Alice, child of Thomas W Lloyd & Emma Folkes, died (age 85) in about 1970 in Brunswick, Victoria.<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)<br/>\nName: Alice Armstrong; Death Age: 85; Birth Date: abt 1885; Death Date: Abt 1970; Death Place: Brunswick, Victoria; Registration Date: 1970; Registration Place: Australia; Father: Thomas W Lloyd; Mother: Emma Folkes.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death''': \"Australia, Death Index, 1787-1985\"<br/>Death Index Victoria 1921-1985; Registration Number: 11307<br/>{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)<br/>Name: Alice Armstrong; Death Age: 85; Birth Date: abt 1885; Death Date: Abt 1970; Death Place: Brunswick, Victoria; Registration Date: 1970; Registration Place: Australia; Father: Thomas W Lloyd; Mother: Emma Folkes.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Alice Armstrong\n|-\n| Death Age || 85\n|-\n| Birth Date || abt 1885\n|-\n| Death Date || Abt 1970\n|-\n| Death Place || Brunswick, Victoria\n|-\n| Registration Date || 1970\n|-\n| Registration Place || Australia\n|-\n| Father || Thomas W Lloyd\n|-\n| Mother || Emma Folkes\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Alice, child of Thomas W Lloyd & Emma Folkes, died (age 85) in about 1970 in Brunswick, Victoria.<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Alice Armstrong\n|-\n| Death Age || 85\n|-\n| Birth Date || abt 1885\n|-\n| Death Date || Abt 1970\n|-\n| Death Place || Brunswick, Victoria\n|-\n| Registration Date || 1970\n|-\n| Registration Place || Australia\n|-\n| Father || Thomas W Lloyd\n|-\n| Mother || Emma Folkes\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death''': \"Australia, Death Index, 1787-1985\"<br/>Death Index Victoria 1921-1985; Registration Number: 11307<br/>{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)<br/>Name: Alice Armstrong; Death Age: 85; Birth Date: abt 1885; Death Date: Abt 1970; Death Place: Brunswick, Victoria; Registration Date: 1970; Registration Place: Australia; Father: Thomas W Lloyd; Mother: Emma Folkes.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Australia, Death Index, 1787-1985,\" database, ({{Ancestry Record|1779|1732471}} : accessed 6 May 2021), Alice Armstrong death about 1970 (age 85), child of Thomas W Lloyd & Emma Folkes, in Brunswick, Victoria; citing Death Index Victoria 1921-1985, Registration Number 11307.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Alice, child of Thomas W Lloyd & Emma Folkes, died (age 85) in about 1970 in Brunswick, Victoria.<ref>\"Australia, Death Index, 1787-1985,\" database, ({{Ancestry Record|1779|1732471}} : accessed 6 May 2021), Alice Armstrong death about 1970 (age 85), child of Thomas W Lloyd & Emma Folkes, in Brunswick, Victoria; citing Death Index Victoria 1921-1985, Registration Number 11307.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Australia, Death Index, 1787-1985,\" database, ({{Ancestry Record|1779|1732471}} : accessed 6 May 2021), Alice Armstrong death about 1970 (age 85), child of Thomas W Lloyd & Emma Folkes, in Brunswick, Victoria; citing Death Index Victoria 1921-1985, Registration Number 11307.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death'':\n\"Australia, Death Index, 1787-1985\", database, \nDeath Index Victoria 1921-1985, Registration Number 11307, \n({{Ancestry Record|1779|1732471}} : accessed 6 May 2021), \nName: Alice Armstrong; Death Age: 85; Birth Date: abt 1885; Death Date: Abt 1970; Death Place: Brunswick, Victoria; Registration Date: 1970; Registration Place: Australia; Father: Thomas W Lloyd; Mother: Emma Folkes.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Alice, child of Thomas W Lloyd & Emma Folkes, died (age 85) in about 1970 in Brunswick, Victoria.<ref>\n''Death'':\n\"Australia, Death Index, 1787-1985\", database, \nDeath Index Victoria 1921-1985, Registration Number 11307, \n({{Ancestry Record|1779|1732471}} : accessed 6 May 2021), \nName: Alice Armstrong; Death Age: 85; Birth Date: abt 1885; Death Date: Abt 1970; Death Place: Brunswick, Victoria; Registration Date: 1970; Registration Place: Australia; Father: Thomas W Lloyd; Mother: Emma Folkes.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death'': \"Australia, Death Index, 1787-1985\", database, Death Index Victoria 1921-1985, Registration Number 11307, ({{Ancestry Record|1779|1732471}} : accessed 6 May 2021), Name: Alice Armstrong; Death Age: 85; Birth Date: abt 1885; Death Date: Abt 1970; Death Place: Brunswick, Victoria; Registration Date: 1970; Registration Place: Australia; Father: Thomas W Lloyd; Mother: Emma Folkes.",
+    "type": "source"
+  }
+}

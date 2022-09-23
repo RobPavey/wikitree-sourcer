@@ -1,0 +1,18 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Mical Taylor"
+  },
+  "eventDate": {
+    "yearString": "1800"
+  },
+  "eventPlace": {
+    "placeString": "Cambridge, Middlesex, Massachusetts"
+  },
+  "collectionData": {
+    "id": "7590"
+  },
+  "hasValidData": true
+}

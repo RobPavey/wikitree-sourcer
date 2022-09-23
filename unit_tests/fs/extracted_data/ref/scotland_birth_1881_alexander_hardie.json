@@ -1,0 +1,43 @@
+{
+  "recordData": {
+    "Name": "Alexander Hardie",
+    "Birth Date": "10 Jan 1881",
+    "Birth Place": "Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom"
+  },
+  "fullName": "Alexander Hardie",
+  "givenName": "Alexander",
+  "surname": "Hardie",
+  "gender": "male",
+  "factType": "Birth",
+  "eventDateOriginal": "10 Jan 1881",
+  "eventDate": "10 Jan 1881",
+  "eventYear": "1881",
+  "eventPlaceOriginal": "Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom",
+  "eventPlace": "Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom",
+  "birthDateOriginal": "10 Jan 1881",
+  "birthDate": "10 Jan 1881",
+  "birthYear": "1881",
+  "father": {
+    "fullName": "Gordon Hardie",
+    "givenName": "Gordon",
+    "surname": "Hardie"
+  },
+  "mother": {
+    "fullName": "Mary Grant",
+    "givenName": "Mary",
+    "surname": "Grant"
+  },
+  "referenceData": {
+    "filmNumber": "232685",
+    "packetLetter": "A",
+    "recordNumber": "190"
+  },
+  "fsImageNumber": "00064",
+  "collectionTitle": "Scotland Births and Baptisms, 1564-1950",
+  "fsCollectionId": "1771030",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MBHC-Z9L",
+  "citation": "\"Scotland Births and Baptisms, 1564-1950\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XTXN-PTY : 12 February 2020), Alexander Hardie, 1881.",
+  "sourceTitleForPerson": "Alexander Hardie, \"Scotland Births and Baptisms, 1564-1950\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:XTXN-PTY",
+  "pageType": "record"
+}

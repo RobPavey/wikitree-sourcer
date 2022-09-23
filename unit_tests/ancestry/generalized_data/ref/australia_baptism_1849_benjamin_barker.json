@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Benjamin Barker"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "30 Nov 1847"
+  },
+  "eventDate": {
+    "dateString": "21 May 1849"
+  },
+  "eventPlace": {
+    "placeString": "St Saviour, Goulburn, New South Wales, Australia"
+  },
+  "birthPlace": {
+    "placeString": "St Saviour, Goulburn, New South Wales, Australia"
+  },
+  "lastNameAtBirth": "Barker",
+  "ageAtEvent": "1",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Benjamin Barker"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "9776"
+  },
+  "hasValidData": true
+}

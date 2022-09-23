@@ -1,0 +1,38 @@
+{
+  "recordData": {
+    "Name": "Ann Brian",
+    "Marriage Date": "25 Dec 1799",
+    "Religion": "Anglican",
+    "Residence Place": "Great Casterton",
+    "Marriage Banns Date": "1799",
+    "Marriage Banns Place": "Great Casterton with Pickworth, Rutland, England, United Kingdom",
+    "Source Record Nbr": "GBPRS/LEICS/BANNS/00119979/2",
+    "Source Reference": "DE2343/3"
+  },
+  "fullName": "Ann Brian",
+  "givenName": "Ann",
+  "surname": "Brian",
+  "eventDateOriginal": "1799",
+  "eventDate": "1799",
+  "eventYear": "1799",
+  "eventPlaceOriginal": "Great Casterton with Pickworth, Rutland, England, United Kingdom",
+  "eventPlace": "Great Casterton with Pickworth, Rutland, England, United Kingdom",
+  "eventPlaceL2": "Rutland",
+  "eventPlaceL1": "England",
+  "factType": "MarriageBanns",
+  "spouseFullName": "John Skellet",
+  "spouseGivenName": "John",
+  "spouseSurname": "Skellet",
+  "fsCollectionId": "2821293",
+  "referenceData": {
+    "digitalFilmNumber": "102302752"
+  },
+  "fsImageNumber": "00039",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-CSHR-P92R-N",
+  "collectionTitle": "England, Rutland Parish Registers, 1538-1991",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QRHT-NY38",
+  "citation": "\"England, Rutland Parish Registers, 1538-1991,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QGLH-FW1Z : 23 July 2019), Ann Brian and John Skellet, 1799; from \"Rutland Parish Records,\" database and images, <i>FindMyPast</i> (https://www.findmypast.com : 2017); citing , DE2343/3, Marriage Banns, Great Casterton with Pickworth, Rutland, England, United Kingdom, The Record Office for Leicestershire, Leicester & Rutland, Leicester, UK.",
+  "sourceTitleForPerson": "Ann Brian, \"England, Rutland Parish Registers, 1538-1991\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QGLH-FW1Z",
+  "pageType": "record"
+}

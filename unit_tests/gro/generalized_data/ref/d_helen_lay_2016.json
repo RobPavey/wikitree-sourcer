@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "2016",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Lay",
+    "forenames": "Helen Rose-marie"
+  },
+  "lastNameAtDeath": "Lay",
+  "deathDate": {
+    "yearString": "2016",
+    "quarter": 2
+  },
+  "birthDate": {
+    "yearString": "1939"
+  },
+  "personGender": "female",
+  "registrationDistrict": "Plymouth",
+  "collectionData": {
+    "id": "deaths"
+  },
+  "hasValidData": true
+}

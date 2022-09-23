@@ -1,0 +1,78 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Paul Potter"
+  },
+  "personGender": "male",
+  "birthPlace": {
+    "placeString": "Tennessee"
+  },
+  "eventDate": {
+    "yearString": "1870"
+  },
+  "eventPlace": {
+    "placeString": "District 15, Jefferson, Tennessee"
+  },
+  "occupation": "Farm Laborer",
+  "ageAtEvent": "48",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Paul Potter",
+      "age": "48",
+      "isSelected": true,
+      "gender": "male",
+      "occupation": "Farm Laborer",
+      "birthDate": "abt 1822",
+      "birthPlace": "Tennessee"
+    },
+    {
+      "name": "Isabella Potter",
+      "age": "43",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=4680742&indiv=try"
+    },
+    {
+      "name": "Virginia Potter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288333&indiv=try"
+    },
+    {
+      "name": "Benjamin Potter",
+      "age": "19",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288331&indiv=try"
+    },
+    {
+      "name": "Angeline Potter",
+      "age": "17",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288330&indiv=try"
+    },
+    {
+      "name": "Patience C Potter",
+      "age": "15",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288332&indiv=try"
+    },
+    {
+      "name": "Robert Potter",
+      "age": "13",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=12027028&indiv=try"
+    },
+    {
+      "name": "Mary E Potter",
+      "age": "11",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=10410781&indiv=try"
+    },
+    {
+      "name": "Sarah E Potter",
+      "age": "6",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=12027029&indiv=try"
+    }
+  ],
+  "collectionData": {
+    "id": "7163"
+  },
+  "hasValidData": true
+}

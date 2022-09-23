@@ -1,0 +1,28 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Blanche Amelia Chaplin"
+  },
+  "eventPlace": {
+    "county": "London",
+    "placeString": "Pancras, London"
+  },
+  "eventDate": {
+    "yearString": "1867",
+    "quarter": 3
+  },
+  "registrationDistrict": "Pancras",
+  "birthDate": {
+    "yearString": "1867",
+    "quarter": 3
+  },
+  "lastNameAtBirth": "Chaplin",
+  "collectionData": {
+    "id": "8912",
+    "volume": "1b",
+    "page": "164"
+  },
+  "hasValidData": true
+}

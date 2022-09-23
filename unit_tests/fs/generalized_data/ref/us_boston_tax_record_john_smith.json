@@ -1,0 +1,15 @@
+{
+  "sourceType": "record",
+  "recordType": "Tax",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "John Smith"
+  },
+  "eventPlace": {
+    "placeString": "Boston, Suffolk, Massachusetts, United States"
+  },
+  "collectionData": {
+    "id": "2125599"
+  },
+  "hasValidData": true
+}

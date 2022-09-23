@@ -1,0 +1,47 @@
+{
+  "url": "https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541/julia-loughrey-francis-patrick-smith-marriage-kent-rochester-1894-09-01?locale=en",
+  "success": true,
+  "recordType": "marriage",
+  "recordData": {
+    "County": "Kent",
+    "Place": "Rochester",
+    "Church name": "St Nicholas of Myra",
+    "Register type": "Parish Register",
+    "Register entry number": "3",
+    "Marriage date": "01 Sep 1894",
+    "Groom forename": "Francis Patrick",
+    "Groom surname": "SMITH",
+    "Groom age": "32",
+    "Groom condition": "bachelor",
+    "Groom occupation": "R.N. Petty Officer (First Class)",
+    "Groom abode": "3, Pump Lane",
+    "Bride forename": "Julia",
+    "Bride surname": "LOUGHREY",
+    "Bride age": "30",
+    "Bride condition": "widow",
+    "Bride occupation": "-",
+    "Bride abode": "3, Pump Lane",
+    "Groom father forename": "Frederick John",
+    "Groom father surname": "SMITH",
+    "Groom father occupation": "Smith",
+    "Bride father forename": "John",
+    "Bride father surname": "BENTLEY",
+    "Bride father occupation": "Policeman",
+    "Witness1": "William Rielly SMITH",
+    "Witness2": "Martha STEWART",
+    "Notes": "-",
+    "Transcribed by": "Rae",
+    "File line number": "3"
+  },
+  "ambiguousPerson": true,
+  "ambiguousPersonArray": [
+    {
+      "name": "Francis Patrick SMITH (groom)",
+      "id": "groom"
+    },
+    {
+      "name": "Julia LOUGHREY (bride)",
+      "id": "bride"
+    }
+  ]
+}

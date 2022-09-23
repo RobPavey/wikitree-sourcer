@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Arthur R Cowling"
+  },
+  "eventDate": {
+    "dateString": "1937",
+    "yearString": "1937",
+    "quarter": 2
+  },
+  "eventPlace": {
+    "placeString": "Hull, Yorkshire, England"
+  },
+  "registrationDistrict": "Hull",
+  "spouses": [
+    {
+      "name": {
+        "name": "Florence K Penter",
+        "lastName": "Penter"
+      },
+      "marriageDate": {
+        "dateString": "1937",
+        "yearString": "1937",
+        "quarter": 2
+      },
+      "marriagePlace": {
+        "placeString": "Hull, Yorkshire, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "2285732",
+    "volume": "9D",
+    "page": "519"
+  },
+  "hasValidData": true
+}

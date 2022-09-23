@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1867",
+    "quarter": 4
+  },
+  "name": {
+    "lastName": "Cox",
+    "forenames": "William Robert"
+  },
+  "lastNameAtBirth": "Cox",
+  "birthDate": {
+    "yearString": "1867",
+    "quarter": 4
+  },
+  "mothersMaidenName": "Porter",
+  "personGender": "male",
+  "registrationDistrict": "Newport",
+  "collectionData": {
+    "id": "births",
+    "volume": "11A",
+    "page": "170"
+  },
+  "hasValidData": true
+}

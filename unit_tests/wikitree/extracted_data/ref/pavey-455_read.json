@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Amelia",
+  "prefNames": "",
+  "middleNames": "Annie",
+  "lnab": "Pavey",
+  "currentLastName": "Pavey",
+  "mothersMaidenName": "Littlemore",
+  "birthDate": "4 Jun 1879",
+  "birthDateStatus": "none",
+  "deathDate": "10 Aug 1958",
+  "deathDateStatus": "none",
+  "birthLocation": "Kentish Town, London, England",
+  "deathLocation": "Edmonton, Middlesex, England",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Wilson-78436",
+      "name": "Arthur Wilson",
+      "marriageString": "1900 in Pancras, Middlesex, England, United Kingdom",
+      "marriageDate": "1900",
+      "marriagePlace": "Pancras, Middlesex, England, United Kingdom"
+    }
+  ],
+  "url": "https://www.wikitree.com/index.php?title=Pavey-455&public=1",
+  "currentTabText": "Profile (private view)",
+  "pageType": "private",
+  "wikiId": "Pavey-455",
+  "name": "Amelia Annie Pavey",
+  "parents": {
+    "father": {
+      "wikiId": "Pavey-342",
+      "name": "Harry Alfred Pavey"
+    },
+    "mother": {
+      "wikiId": "Littlemore-13",
+      "name": "Amelia Elizabeth (Littlemore) Pavey"
+    }
+  }
+}

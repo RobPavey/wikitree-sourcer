@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "name": {
+    "lastName": "Taylor",
+    "forenames": "Dorothy Jane"
+  },
+  "eventDate": {
+    "yearString": "2009"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Simm"
+      },
+      "marriageDate": "31 October 2006"
+    }
+  ],
+  "courtName": "Ayr",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Ayr",
+    "placeString": "Ayr, Scotland"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Allen Eugene Kellogg"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "12 Feb 1937"
+  },
+  "deathDate": {
+    "dateString": "11 Nov 2012"
+  },
+  "eventDate": {
+    "dateString": "16 Nov"
+  },
+  "lastNameAtDeath": "Kellogg",
+  "collectionData": {
+    "id": "2190"
+  },
+  "hasValidData": true
+}

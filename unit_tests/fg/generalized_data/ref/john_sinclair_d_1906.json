@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "16 May 1906"
+  },
+  "eventPlace": {
+    "placeString": "Tallangatta, Towong Shire, Victoria, Australia",
+    "streetAddress": "Tallangatta Cemetery"
+  },
+  "name": {
+    "name": "John Thomas “Thomas Stirling” Sinclair"
+  },
+  "lastNameAtDeath": "Sinclair",
+  "deathDate": {
+    "dateString": "16 May 1906"
+  },
+  "ageAtDeath": "72",
+  "birthDate": {
+    "dateString": "16 Feb 1834"
+  },
+  "birthPlace": {
+    "placeString": "Midlothian, Scotland"
+  },
+  "hasValidData": true
+}

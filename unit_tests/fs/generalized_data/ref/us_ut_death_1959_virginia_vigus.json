@@ -1,0 +1,54 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Virginia Reynolds Vigus"
+  },
+  "birthDate": {
+    "dateString": "1923",
+    "yearString": "1923"
+  },
+  "deathDate": {
+    "dateString": "28 Aug 1959",
+    "yearString": "1959"
+  },
+  "eventDate": {
+    "dateString": "28 Aug 1959",
+    "yearString": "1959"
+  },
+  "eventPlace": {
+    "placeString": "Salt Lake City, Salt Lake, Utah, United States"
+  },
+  "ageAtDeath": "36",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Ward W Reynolds",
+        "forenames": "Ward W",
+        "lastName": "Reynolds"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Laverna Harris",
+        "forenames": "Laverna",
+        "lastName": "Harris"
+      }
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Raymond Vigus",
+        "lastName": "Vigus",
+        "forenames": "Raymond"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1747615"
+  },
+  "hasValidData": true
+}

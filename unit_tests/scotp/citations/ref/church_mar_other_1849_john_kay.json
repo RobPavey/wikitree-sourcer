@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "John married Margaret Kay on 21 May 1840 in Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Other Church Registers - Marriages\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJohn Cunningham Erskine Or Kay marriage to Margaret Kay on 21 May 1840 in Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "John married Margaret Kay on 21 May 1840 in Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJohn Cunningham Erskine Or Kay marriage to Margaret Kay on 21 May 1840 in Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Other Church Registers - Marriages\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)<br/>John Cunningham Erskine Or Kay marriage to Margaret Kay on 21 May 1840 in Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: ERSKINE or KAY; Forename: JOHN CUNNINGHAM; Spouse Surname: KAY; Spouse Forename: MARGARET; Marriage Date: 21 MAY 1840; Parish/ Congregation Name: LEITH RELIEF.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "John married Margaret Kay on 21 May 1840 in Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: ERSKINE or KAY; Forename: JOHN CUNNINGHAM; Spouse Surname: KAY; Spouse Forename: MARGARET; Marriage Date: 21 MAY 1840; Parish/ Congregation Name: LEITH RELIEF.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Other Church Registers - Marriages\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: ERSKINE or KAY; Forename: JOHN CUNNINGHAM; Spouse Surname: KAY; Spouse Forename: MARGARET; Marriage Date: 21 MAY 1840; Parish/ Congregation Name: LEITH RELIEF.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || ERSKINE or KAY\n|-\n| Forename || JOHN CUNNINGHAM\n|-\n| Spouse Surname || KAY\n|-\n| Spouse Forename || MARGARET\n|-\n| Marriage Date || 21 MAY 1840\n|-\n| Parish/ Congregation Name || LEITH RELIEF\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "John married Margaret Kay on 21 May 1840 in Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || ERSKINE or KAY\n|-\n| Forename || JOHN CUNNINGHAM\n|-\n| Spouse Surname || KAY\n|-\n| Spouse Forename || MARGARET\n|-\n| Marriage Date || 21 MAY 1840\n|-\n| Parish/ Congregation Name || LEITH RELIEF\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Other Church Registers - Marriages\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=ERSKINE%20OR%20KAY&forename=JOHN%20CUNNINGHAM&from_year=1840&to_year=1840&congregation%5B0%5D=LEITH%20RELIEF ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: ERSKINE or KAY; Forename: JOHN CUNNINGHAM; Spouse Surname: KAY; Spouse Forename: MARGARET; Marriage Date: 21 MAY 1840; Parish/ Congregation Name: LEITH RELIEF.",
+    "type": "source"
+  }
+}

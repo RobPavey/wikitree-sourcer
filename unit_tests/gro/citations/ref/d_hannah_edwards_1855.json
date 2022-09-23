@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1855&range=0&surname=EDWARDS&age=47&agerange=0&forename1=HANNAH&gender=F&quarter=D&district=OF%20DEVIZES%20IN%20THE%20COUNTY%20OF%20WILTS&volume=05A&page=58 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nEdwards, Hannah (Age at death: 47).<br/>\n''GRO Reference:'' 1855 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/devizes.html Of Devizes in the County of Wilts] Volume 05A Page 58.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Hannah's death (age 47) was registered in the Oct-Nov-Dec quarter of 1855 in the Devizes in the County of Wilts district.<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1855&range=0&surname=EDWARDS&age=47&agerange=0&forename1=HANNAH&gender=F&quarter=D&district=OF%20DEVIZES%20IN%20THE%20COUNTY%20OF%20WILTS&volume=05A&page=58 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nEdwards, Hannah (Age at death: 47).<br/>\n''GRO Reference:'' 1855 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/devizes.html Of Devizes in the County of Wilts] Volume 05A Page 58.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1855&range=0&surname=EDWARDS&age=47&agerange=0&forename1=HANNAH&gender=F&quarter=D&district=OF%20DEVIZES%20IN%20THE%20COUNTY%20OF%20WILTS&volume=05A&page=58 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>Edwards, Hannah (Age at death: 47).<br/>''GRO Reference:'' 1855 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/devizes.html Of Devizes in the County of Wilts] Volume 05A Page 58.",
+    "type": "source"
+  }
+}

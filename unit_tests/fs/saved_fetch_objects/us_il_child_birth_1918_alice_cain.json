@@ -1,0 +1,792 @@
+{
+  "id" : "r_251952890",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MZ89-JK2?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MZ89-JK2?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MZ89-JK2"
+    }
+  },
+  "description" : "#sd_p_11787491315",
+  "persons" : [ {
+    "id" : "p_11787491313",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/N7S6-GJ3?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/MZ89-JK2?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJ3" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Henry Green",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Henry",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Henry"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Henry"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Green",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Green"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Green"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Henry/Green"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Henry Green"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "04 Jun 1918",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "4 Jun 1918"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "04 Jun 1918"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "Jun"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "04"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1918"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Chicago, Cook, Illinois, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Chicago"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Chicago, Cook, Illinois, United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_4",
+            "text" : "Chicago"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_3",
+            "text" : "Cook"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_2",
+            "text" : "Illinois"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_1",
+            "text" : "United States"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Birth"
+        } ]
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/facts/EventRegistration",
+      "place" : {
+        "original" : ", Cook, Illinois",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_REG_PLACE",
+            "text" : ", Cook, Illinois"
+          } ]
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "p_11787491314",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/N7S6-GJQ?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/MZ89-JK2?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJQ" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Henry Green",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Henry",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Henry"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Henry"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Green",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Green"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Green"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "Henry/Green"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Henry Green"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1896",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_BIR_YEAR_EST",
+            "text" : "1896"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Baltimore, Maryland",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_BIR_PLACE",
+            "text" : "Baltimore, Maryland"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_FTHR_AGE_ORIG",
+        "text" : "22"
+      }, {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_FTHR_AGE",
+        "text" : "22"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/AgeForm",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_FTHR_AGE_FORM",
+        "text" : "22"
+      } ]
+    } ]
+  }, {
+    "id" : "p_11787491315",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/N7S6-GJ7?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/MZ89-JK2?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJ7" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Alice Cain",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Alice",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Alice"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Alice"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Cain",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Cain"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Cain"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "Alice/Cain"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Alice Cain"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1896",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_BIR_YEAR_EST",
+            "text" : "1896"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Baltimore, Maryland",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_BIR_PLACE",
+            "text" : "Baltimore, Maryland"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_MTHR_AGE",
+        "text" : "22"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/AgeExp",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_MTHR_AGE_EXP",
+        "text" : "22 years"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/AgeForm",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_MTHR_AGE_FORM",
+        "text" : "22"
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/J1X1-2MW",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_11787491314",
+      "resourceId" : "p_11787491314"
+    },
+    "person2" : {
+      "resource" : "#p_11787491315",
+      "resourceId" : "p_11787491315"
+    }
+  }, {
+    "id" : "MM9.1.6/J1X1-2M4",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_11787491314",
+      "resourceId" : "p_11787491314"
+    },
+    "person2" : {
+      "resource" : "#p_11787491313",
+      "resourceId" : "p_11787491313"
+    }
+  }, {
+    "id" : "MM9.1.6/J1X1-2MH",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_11787491315",
+      "resourceId" : "p_11787491315"
+    },
+    "person2" : {
+      "resource" : "#p_11787491313",
+      "resourceId" : "p_11787491313"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1462519",
+    "about" : "https://api.familysearch.org/platform/records/collections/1462519",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223326487,
+    "modified" : 1658155412013,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Cook, Illinois, United States",
+        "description" : "#place_1-14-250"
+      },
+      "temporal" : {
+        "original" : "1871/1949",
+        "formal" : "1871/1949"
+      },
+      "recordType" : "http://gedcomx.org/Birth"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Illinois, Cook County, Birth Certificates, 1871-1949"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1462519" ]
+    }
+  }, {
+    "id" : "src_r_251952890",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:MZ89-JK2",
+    "componentOf" : {
+      "description" : "#sd_c_1462519"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1392689461364,
+    "modified" : 1658155412013,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Chicago, Cook, Illinois, United States"
+      },
+      "temporal" : {
+        "original" : "04 Jun 1918"
+      },
+      "recordType" : "http://gedcomx.org/Birth"
+    } ],
+    "citations" : [ {
+      "value" : "\"Illinois, Cook County, Birth Certificates, 1871-1949,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:MZ89-JK2 : 18 May 2016), Entry for Henry Green, 04 Jun 1918; Chicago, Cook, Illinois, United States, reference/certificate 17602, Cook County Clerk, Cook County Courthouse, Chicago; FHL microfilm 1,308,830."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Henry Green, \"Illinois, Cook County, Birth Certificates, 1871-1949\""
+    } ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/831696022" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:MZ89-JK2" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1462519?arkName=1:2:MZ89-JK2"
+    }
+  }, {
+    "id" : "sd_p_11787491313",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJ3",
+    "componentOf" : {
+      "description" : "#src_r_251952890"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Illinois, Cook County, Birth Certificates, 1871-1949,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:N7S6-GJ3 : 18 May 2016), Henry Green, 04 Jun 1918; Chicago, Cook, Illinois, United States, reference/certificate 17602, Cook County Clerk, Cook County Courthouse, Chicago; FHL microfilm 1,308,830."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Henry Green, \"Illinois, Cook County, Birth Certificates, 1871-1949\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJ3" ]
+    }
+  }, {
+    "id" : "sd_p_11787491314",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJQ",
+    "componentOf" : {
+      "description" : "#src_r_251952890"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Illinois, Cook County, Birth Certificates, 1871-1949,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:N7S6-GJQ : 18 May 2016), Henry Green in entry for Henry Green, 04 Jun 1918; Chicago, Cook, Illinois, United States, reference/certificate 17602, Cook County Clerk, Cook County Courthouse, Chicago; FHL microfilm 1,308,830."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Henry Green in entry for Henry Green, \"Illinois, Cook County, Birth Certificates, 1871-1949\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJQ" ]
+    }
+  }, {
+    "id" : "sd_p_11787491315",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJ7",
+    "componentOf" : {
+      "description" : "#src_r_251952890"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Illinois, Cook County, Birth Certificates, 1871-1949,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:N7S6-GJ7 : 18 May 2016), Alice Cain in entry for Henry Green, 04 Jun 1918; Chicago, Cook, Illinois, United States, reference/certificate 17602, Cook County Clerk, Cook County Courthouse, Chicago; FHL microfilm 1,308,830."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Alice Cain in entry for Henry Green, \"Illinois, Cook County, Birth Certificates, 1871-1949\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJ7" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1-14-250",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/250?context=1-14" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/FolderImageSequence",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FOLDER_IMAGE_SEQ",
+      "text" : "118"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_ID",
+      "text" : "/004402535/004402535_00118.jpg"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/Folder",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FOLDER",
+      "text" : "004402535"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel1Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_1_TYPE",
+      "text" : "Country"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel2Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_2_TYPE",
+      "text" : "State"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel3Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_3_TYPE",
+      "text" : "County"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel4Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_4_TYPE",
+      "text" : "City"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtApproved",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_APPROVED",
+      "text" : "Y"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "580659"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Cook, Illinois, United States"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "1462519"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DasVerify",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DAS_VERIFY",
+      "text" : "03-JUL-14"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "004402535"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "1308830"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "00118"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsImsImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMS_IMAGE_ID",
+      "text" : "004402535_00118"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PacketLetter",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PACKET_LTR",
+      "text" : "A"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "08-0417"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "Certificates-Part 5"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "004402535_00118"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "FS_RECORD_NBR_ORIG",
+      "text" : "118"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_004402535_00118_00000_0000831696022"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "C05512-2"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "831696022"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceCertificateNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_CERTIFICATE_NBR",
+      "text" : "17602"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "17"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "34987"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

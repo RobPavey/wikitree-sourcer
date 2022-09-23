@@ -1,0 +1,21 @@
+{
+  "sourceType": "record",
+  "recordType": "ElectoralRegister",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Wallbutton",
+    "forenames": "Robert"
+  },
+  "eventPlace": {
+    "country": "New Zealand",
+    "placeString": "Avenue road Foxton, Manawatu, New Zealand"
+  },
+  "eventDate": {
+    "yearString": "1874-75"
+  },
+  "collectionData": {
+    "id": "New Zealand Electoral Rolls"
+  },
+  "hasValidData": true
+}

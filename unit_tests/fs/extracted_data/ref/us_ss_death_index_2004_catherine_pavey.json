@@ -1,0 +1,31 @@
+{
+  "recordData": {
+    "Name": "Catherine V Pavey",
+    "Death Date": "01 Sep 2004",
+    "Last Residence": "Columbus, Bartholomew, Indiana",
+    "Birth Date": "08 Nov 1921",
+    "Age": "83",
+    "Zip Code Of Last Residence": "47201",
+    "Death Date Verification": "01 Sep 2004 verified by family",
+    "Place Of Issuance": "Indiana"
+  },
+  "fullName": "Catherine V Pavey",
+  "givenName": "Catherine V",
+  "surname": "Pavey",
+  "factType": "Death",
+  "eventDateOriginal": "01 Sep 2004",
+  "eventDate": "09012004",
+  "eventPlaceOriginal": "Columbus, Bartholomew, Indiana",
+  "deathDateOriginal": "01 Sep 2004",
+  "deathDate": "09012004",
+  "birthDateOriginal": "08 Nov 1921",
+  "birthDate": "11081921",
+  "age": "83",
+  "collectionTitle": "United States Social Security Death Index",
+  "fsCollectionId": "1202535",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:DD5L-S6Z",
+  "citation": "\"United States Social Security Death Index,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:VMSB-3WR : 11 January 2021), Catherine V Pavey, 01 Sep 2004; citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).",
+  "sourceTitleForPerson": "Catherine V Pavey, \"United States Social Security Death Index\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:VMSB-3WR",
+  "pageType": "record"
+}

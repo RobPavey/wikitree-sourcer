@@ -1,0 +1,29 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1213&h=69475&indiv=try&o_vc=Record:OtherRecord&rhSource=60525",
+  "pageType": "record",
+  "dbId": "1213",
+  "recordId": "69475",
+  "ancestryTemplate": "{{Ancestry Record|1213|69475}}",
+  "domain": "com",
+  "titleName": "Dela Fields",
+  "titleCollection": "Kentucky, U.S., Birth Records, 1847-1911",
+  "recordData": {
+    "Name": "Dela Fields",
+    "Birth Date": "31 Jan 1874",
+    "Birth Place": "Martin, Kentucky, USA",
+    "Ethnicity": "White",
+    "Gender": "Female",
+    "Father": "Lewis Fields",
+    "Mother": "Angeline Slans"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=KYbirths&indiv=try&h=150069475",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=KYbirths&indiv=try&h=300069475"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1213/images/KYVR_994048-0231?pid=69475&backurl=https://search.ancestry.com/cgi-bin/sse.dll?dbid%3D1213%26h%3D69475%26indiv%3Dtry%26o_vc%3DRecord:OtherRecord%26rhSource%3D60525&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "1213",
+  "imageRecordId": "KYVR_994048-0231",
+  "sourceInformation": "Ancestry.com. Kentucky, U.S., Birth Records, 1847-1911 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2007. Original data: Kentucky. Kentucky Birth, Marriage and Death Records – Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky.",
+  "originalData": "Kentucky. Kentucky Birth, Marriage and Death Records – Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky.",
+  "sourceDescription": "This database contains county birth records from Kentucky for the years 1852-1910. Information available in these records includes: name of child, gender, race, birth date, birth place, parents' names, parents' birthplaces, and parents' ages. Learn more..."
+}

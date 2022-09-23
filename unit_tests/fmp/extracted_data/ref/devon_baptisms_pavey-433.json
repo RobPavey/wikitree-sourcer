@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "url": "https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1",
+  "subDomain": "www",
+  "domain": "findmypast.co.uk",
+  "urlPath": "transcript",
+  "urlParameters": "id=GBPRS%2FB%2F31067794%2F1",
+  "heading": "Frederick Archibald Pavey in 1833",
+  "collection": "Devon Baptisms",
+  "place": "Plymouth, St Andrew, Devon, England",
+  "personGender": "male",
+  "recordData": {
+    "First name(s)": "Frederick Archibald",
+    "Last name": "Pavey",
+    "Birth year": "1833",
+    "Birth date": "? ? 1833",
+    "Baptism year": "1833",
+    "Baptism date": "25 Dec 1833",
+    "Denomination": "Anglican",
+    "Baptism place": "Plymouth, St Andrew",
+    "Father's first name(s)": "William Henry",
+    "Mother's first name(s)": "Elizabeth",
+    "County": "Devon",
+    "Archive": "Plymouth & West Devon Record Office",
+    "Archive reference": "358/12",
+    "Record set": "Devon Baptisms",
+    "Category": "Birth, Marriage, Death & Parish Records",
+    "Subcategory": "Parish Baptisms",
+    "Collections from": "England, Great Britain"
+  },
+  "imageUrl": "https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1"
+}

@@ -1,0 +1,31 @@
+{
+  "recordData": {
+    "Name": "John W Smith",
+    "Death Date": "01 Oct 2002",
+    "Last Residence": "Newton, Georgia",
+    "Birth Date": "29 Apr 1930",
+    "Age": "72",
+    "Zip Code Of Last Residence": "30014",
+    "Death Date Verification": "01 Oct 2002 verified by family",
+    "Place Of Issuance": "Georgia"
+  },
+  "fullName": "John W Smith",
+  "givenName": "John W",
+  "surname": "Smith",
+  "factType": "Death",
+  "eventDateOriginal": "01 Oct 2002",
+  "eventDate": "10012002",
+  "eventPlaceOriginal": "Newton, Georgia",
+  "deathDateOriginal": "01 Oct 2002",
+  "deathDate": "10012002",
+  "birthDateOriginal": "29 Apr 1930",
+  "birthDate": "04291930",
+  "age": "72",
+  "collectionTitle": "United States Social Security Death Index",
+  "fsCollectionId": "1202535",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:7G1D-HMM",
+  "citation": "\"United States Social Security Death Index,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:J17L-RJH : 8 January 2021), John W Smith, 01 Oct 2002; citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).",
+  "sourceTitleForPerson": "John W Smith, \"United States Social Security Death Index\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:J17L-RJH",
+  "pageType": "record"
+}

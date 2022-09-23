@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting enumeration district , sheet , NARA microfilm publication T9 (Washington, D.C.: National Archives and Records Administration, n.d.), FHL microfilm .<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller in household of William Miller, Madison Township, Tipton, Indiana, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "In the 1880 census Alice (age 25), Keeping House, was the wife of William Miller in Madison Township, Tipton, Indiana, United States.<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting enumeration district , sheet , NARA microfilm publication T9 (Washington, D.C.: National Archives and Records Administration, n.d.), FHL microfilm .<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller in household of William Miller, Madison Township, Tipton, Indiana, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''1880 Census''': \"United States Census, 1880\"<br/>citing enumeration district , sheet , NARA microfilm publication T9 (Washington, D.C.: National Archives and Records Administration, n.d.), FHL microfilm .<br/>{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>Alice Miller in household of William Miller, Madison Township, Tipton, Indiana, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller (25), wife, Keeping House, in household of William Miller (31) in Madison Township, Tipton, Indiana, United States. Born in Indiana, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "In the 1880 census Alice (age 25), Keeping House, was the wife of William Miller in Madison Township, Tipton, Indiana, United States.<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller (25), wife, Keeping House, in household of William Miller (31) in Madison Township, Tipton, Indiana, United States. Born in Indiana, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''1880 Census''': \"United States Census, 1880\"<br/>citing Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>Alice Miller (25), wife, Keeping House, in household of William Miller (31) in Madison Township, Tipton, Indiana, United States. Born in Indiana, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nName: Alice Miller; Census Date: 1880; Census Place: Madison Township, Tipton, Indiana, United States; Ethnicity: American; Marital Status: Married; Occupation: Keeping House; Race: White; Birth Date: 1855; Birth Place: Indiana, United States; Age: 25; Relationship To Head: Wife; Source Person Nbr: 1.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "In the 1880 census Alice (age 25), Keeping House, was the wife of William Miller in Madison Township, Tipton, Indiana, United States.<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nName: Alice Miller; Census Date: 1880; Census Place: Madison Township, Tipton, Indiana, United States; Ethnicity: American; Marital Status: Married; Occupation: Keeping House; Race: White; Birth Date: 1855; Birth Place: Indiana, United States; Age: 25; Relationship To Head: Wife; Source Person Nbr: 1.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''1880 Census''': \"United States Census, 1880\"<br/>citing Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>Name: Alice Miller; Census Date: 1880; Census Place: Madison Township, Tipton, Indiana, United States; Ethnicity: American; Marital Status: Married; Occupation: Keeping House; Race: White; Birth Date: 1855; Birth Place: Indiana, United States; Age: 25; Relationship To Head: Wife; Source Person Nbr: 1.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307\n{| border=\"1\"\n| Name || Alice Miller\n|-\n| Census Date || 1880\n|-\n| Census Place || Madison Township, Tipton, Indiana, United States\n|-\n| Ethnicity || American\n|-\n| Marital Status || Married\n|-\n| Occupation || Keeping House\n|-\n| Race || White\n|-\n| Birth Date || 1855\n|-\n| Birth Place || Indiana, United States\n|-\n| Age || 25\n|-\n| Relationship To Head || Wife\n|-\n| Source Person Nbr || 1\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "In the 1880 census Alice (age 25), Keeping House, was the wife of William Miller in Madison Township, Tipton, Indiana, United States.<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307\n{| border=\"1\"\n| Name || Alice Miller\n|-\n| Census Date || 1880\n|-\n| Census Place || Madison Township, Tipton, Indiana, United States\n|-\n| Ethnicity || American\n|-\n| Marital Status || Married\n|-\n| Occupation || Keeping House\n|-\n| Race || White\n|-\n| Birth Date || 1855\n|-\n| Birth Place || Indiana, United States\n|-\n| Age || 25\n|-\n| Relationship To Head || Wife\n|-\n| Source Person Nbr || 1\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''1880 Census''': \"United States Census, 1880\"<br/>citing Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>Name: Alice Miller; Census Date: 1880; Census Place: Madison Township, Tipton, Indiana, United States; Ethnicity: American; Marital Status: Married; Occupation: Keeping House; Race: White; Birth Date: 1855; Birth Place: Indiana, United States; Age: 25; Relationship To Head: Wife; Source Person Nbr: 1.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller in household of William Miller, Madison Township, Tipton, Indiana, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "In the 1880 census Alice (age 25), Keeping House, was the wife of William Miller in Madison Township, Tipton, Indiana, United States.<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller in household of William Miller, Madison Township, Tipton, Indiana, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''1880 Census''': \"United States Census, 1880\"<br/>citing Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>Alice Miller in household of William Miller, Madison Township, Tipton, Indiana, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "In the 1880 census Alice (age 25), Keeping House, was the wife of William Miller in Madison Township, Tipton, Indiana, United States.<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''1880 Census''': \"United States Census, 1880\"<br/>citing Volume: 1; Affiliate Publication Number: T9; Affiliate Film Number: 0315; Affiliate Line Number: 00091; FHL microfilm: 1254315; Record number: 13980298;<br/>{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting enumeration district , sheet , NARA microfilm publication T9 (Washington, D.C.: National Archives and Records Administration, n.d.), FHL microfilm .<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller (25), wife, Keeping House, in household of William Miller (31) in Madison Township, Tipton, Indiana, United States. Born in Indiana, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "In the 1880 census Alice (age 25), Keeping House, was the wife of William Miller in Madison Township, Tipton, Indiana, United States.<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting enumeration district , sheet , NARA microfilm publication T9 (Washington, D.C.: National Archives and Records Administration, n.d.), FHL microfilm .<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller (25), wife, Keeping House, in household of William Miller (31) in Madison Township, Tipton, Indiana, United States. Born in Indiana, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''1880 Census''': \"United States Census, 1880\"<br/>citing enumeration district , sheet , NARA microfilm publication T9 (Washington, D.C.: National Archives and Records Administration, n.d.), FHL microfilm .<br/>{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>Alice Miller (25), wife, Keeping House, in household of William Miller (31) in Madison Township, Tipton, Indiana, United States. Born in Indiana, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting enumeration district , sheet , NARA microfilm publication T9 (Washington, D.C.: National Archives and Records Administration, n.d.), FHL microfilm .<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller in household of William Miller, Madison Township, Tipton, Indiana, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "In the 1880 census Alice (age 25), Keeping House, was the wife of William Miller in Madison Township, Tipton, Indiana, United States.<ref>\n'''1880 Census''':\n\"United States Census, 1880\"<br/>\nciting enumeration district , sheet , NARA microfilm publication T9 (Washington, D.C.: National Archives and Records Administration, n.d.), FHL microfilm .<br/>\n{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>\nAlice Miller in household of William Miller, Madison Township, Tipton, Indiana, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''1880 Census''': \"United States Census, 1880\"<br/>citing enumeration district , sheet , NARA microfilm publication T9 (Washington, D.C.: National Archives and Records Administration, n.d.), FHL microfilm .<br/>{{FamilySearch Record|MHSV-QLY}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9YY2-3HVP}} Image number 00307<br/>Alice Miller in household of William Miller, Madison Township, Tipton, Indiana, United States.",
+    "type": "source"
+  }
+}

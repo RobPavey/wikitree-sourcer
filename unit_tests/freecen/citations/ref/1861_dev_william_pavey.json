@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1861 census William (age 73), Sawyer, was the married head of household in Village, Stockland, Chardstock, Devon, England.<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1861 Census''': \"1861 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)<br/>\nWilliam Pavey (73), married, Sawyer, head of household in Village, Stockland in Chardstock registration district in Devon, England. Born in Stockland, Devon, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1861 census William (age 73), Sawyer, was the married head of household in Village, Stockland, Chardstock, Devon, England.<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)<br/>\nWilliam Pavey (73), married, Sawyer, head of household in Village, Stockland in Chardstock registration district in Devon, England. Born in Stockland, Devon, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1861 Census''': \"1861 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)<br/>William Pavey (73), married, Sawyer, head of household in Village, Stockland in Chardstock registration district in Devon, England. Born in Stockland, Devon, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1861; County: Devon (DEV); District: Chardstock; Civil Parish: Stockland; Ecclesiastical Parish: Stockland; Piece: 1372; Enumeration District: 5d; Folio: 60; Page: 21; Schedule: 112; House or Street Name: Village.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1861 census William (age 73), Sawyer, was the married head of household in Village, Stockland, Chardstock, Devon, England.<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1861; County: Devon (DEV); District: Chardstock; Civil Parish: Stockland; Ecclesiastical Parish: Stockland; Piece: 1372; Enumeration District: 5d; Folio: 60; Page: 21; Schedule: 112; House or Street Name: Village.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1861 Census''': \"1861 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1861; County: Devon (DEV); District: Chardstock; Civil Parish: Stockland; Ecclesiastical Parish: Stockland; Piece: 1372; Enumeration District: 5d; Folio: 60; Page: 21; Schedule: 112; House or Street Name: Village.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1861\n|-\n| County || Devon (DEV)\n|-\n| District || Chardstock\n|-\n| Civil Parish || Stockland\n|-\n| Ecclesiastical Parish || Stockland\n|-\n| Piece || 1372\n|-\n| Enumeration District || 5d\n|-\n| Folio || 60\n|-\n| Page || 21\n|-\n| Schedule || 112\n|-\n| House Number || \n|-\n| House or Street Name || Village\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1861 census William (age 73), Sawyer, was the married head of household in Village, Stockland, Chardstock, Devon, England.<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1861\n|-\n| County || Devon (DEV)\n|-\n| District || Chardstock\n|-\n| Civil Parish || Stockland\n|-\n| Ecclesiastical Parish || Stockland\n|-\n| Piece || 1372\n|-\n| Enumeration District || 5d\n|-\n| Folio || 60\n|-\n| Page || 21\n|-\n| Schedule || 112\n|-\n| House Number || \n|-\n| House or Street Name || Village\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1861 Census''': \"1861 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1861; County: Devon (DEV); District: Chardstock; Civil Parish: Stockland; Ecclesiastical Parish: Stockland; Piece: 1372; Enumeration District: 5d; Folio: 60; Page: 21; Schedule: 112; House or Street Name: Village.",
+    "type": "source"
+  }
+}

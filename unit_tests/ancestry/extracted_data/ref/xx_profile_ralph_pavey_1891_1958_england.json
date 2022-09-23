@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
+  "pageType": "personFacts",
+  "titleName": "Ralph Edgar Pavey",
+  "birthDate": "9 JUL 1891",
+  "birthPlace": "Kentish Town, London, England",
+  "deathDate": "8 SEP 1958",
+  "deathPlace": "Marylebone, London, England",
+  "gender": "Male",
+  "marriages": [
+    {
+      "date": "15 Feb 1914",
+      "place": "Holy Trinity, Lambeth, England",
+      "spouseName": "Clara Ethel Risley"
+    },
+    {
+      "date": "Sep 1944",
+      "place": "Hendon, Middlesex",
+      "spouseName": "Elsie Sarah Chambers"
+    }
+  ],
+  "fatherName": "Harry Alfred Pavey",
+  "motherName": "Amelia Elizabeth Littlemore"
+}

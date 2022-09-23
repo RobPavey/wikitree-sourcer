@@ -1,0 +1,27 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "John Smith"
+  },
+  "birthDate": {
+    "dateString": "22 Mar 1880",
+    "yearString": "1880"
+  },
+  "birthPlace": {
+    "placeString": "United States"
+  },
+  "eventDate": {
+    "dateString": "1917-1918",
+    "yearString": "1917-1918"
+  },
+  "eventPlace": {
+    "placeString": "Surry, Virginia, United States"
+  },
+  "collectionData": {
+    "id": "1968530"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,25 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/982098692:61843?tid=&pid=&queryId=c04479f2cec3171a504df07c4a358fb4&_phsrc=ywU8200&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "61843",
+  "recordId": "982098692",
+  "ancestryTemplate": "{{Ancestry Record|61843|982098692}}",
+  "domain": "com",
+  "titleName": "John P Gardner",
+  "titleCollection": "U.S., Newspapers.com Obituary Index, 1800s-current",
+  "recordData": {
+    "Name": "John P Gardner",
+    "Gender": "Male",
+    "Death Age": "40",
+    "Birth Date": "abt 1861",
+    "Residence Place": "Bakersfield",
+    "Death Date": "Abt 1901",
+    "Death Place": "Bakersfield Kern County",
+    "Obituary Date": "14 Oct 1901",
+    "Obituary Place": "Placerville, California, USA"
+  },
+  "sourceCitation": "The Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355",
+  "sourceInformation": "Ancestry.com. U.S., Newspapers.com Obituary Index, 1800s-current [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2019. Original data: See newspaper information provided with each entry.",
+  "originalData": "See newspaper information provided with each entry.",
+  "sourceDescription": "This database consists of facts extracted from obituaries found on Newspapers.com™ dating from the early 1800’s to current. Learn more..."
+}

@@ -1,0 +1,95 @@
+{
+  "sourceOfData": "freecen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventPlace": {
+    "placeString": "Kent Street, Cheddar, Axbridge, Somerset, England",
+    "streetAddress": "Kent Street"
+  },
+  "registrationDistrict": "Axbridge",
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Eliza"
+  },
+  "ageAtEvent": "38",
+  "birthPlace": {
+    "placeString": "Yatton, Somerset, England"
+  },
+  "relationshipToHead": "wife",
+  "maritalStatus": "married",
+  "personGender": "female",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "John Pavey",
+      "birthPlace": "Cheddar, Somerset",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "39",
+      "occupation": "Carpenter"
+    },
+    {
+      "name": "Eliza Pavey",
+      "birthPlace": "Yatton, Somerset",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "38",
+      "isSelected": true
+    },
+    {
+      "name": "George Pavey",
+      "birthPlace": "Yatton, Somerset",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "18",
+      "occupation": "Farmer 18 Acres"
+    },
+    {
+      "name": "Mary A Pavey",
+      "birthPlace": "Cheddar, Somerset",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "16"
+    },
+    {
+      "name": "Maria Pavey",
+      "birthPlace": "Cheddar, Somerset",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "3"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "John Pavey"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1851",
+    "piece": "1937",
+    "folio": "166",
+    "page": "3",
+    "schedule": "12"
+  },
+  "hasValidData": true
+}

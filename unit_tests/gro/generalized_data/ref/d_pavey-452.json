@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1950",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "More",
+    "forenames": "Mary Elizabeth"
+  },
+  "lastNameAtDeath": "More",
+  "deathDate": {
+    "yearString": "1950",
+    "quarter": 3
+  },
+  "ageAtDeath": 77,
+  "personGender": "female",
+  "registrationDistrict": "Hendon",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "05E",
+    "page": "408"
+  },
+  "hasValidData": true
+}

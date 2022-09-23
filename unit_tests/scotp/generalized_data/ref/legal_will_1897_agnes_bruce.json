@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Bruce",
+    "forenames": "Agnes"
+  },
+  "eventDate": {
+    "dateString": "31 December 1897"
+  },
+  "courtName": "Edinburgh Sheriff Court",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Edinburgh",
+    "placeString": "Edinburgh, Scotland"
+  },
+  "testateOrIntestate": "testate",
+  "recordSubtype": "Probate",
+  "deathDate": {
+    "dateString": "2 August 1897"
+  },
+  "hasValidData": true
+}

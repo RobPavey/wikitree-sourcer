@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford, 1913.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford, 1913.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England.<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>William Handford, 1913.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford death registered Jan-Feb-Mar 1913 in Middlesbrough (age 69).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford death registered Jan-Feb-Mar 1913 in Middlesbrough (age 69).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>William Handford death registered Jan-Feb-Mar 1913 in Middlesbrough (age 69).",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nName: William Handford; Death Date: 1913; Death Place: Middlesbrough, Yorkshire, England; Birth Date: 1844; Age: 69; Event Type: Death; Registration Quarter: Jan-Feb-Mar; Registration Date: 1913; Event District Reg: Middlesbrough.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nName: William Handford; Death Date: 1913; Death Place: Middlesbrough, Yorkshire, England; Birth Date: 1844; Age: 69; Event Type: Death; Registration Quarter: Jan-Feb-Mar; Registration Date: 1913; Event District Reg: Middlesbrough.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>Name: William Handford; Death Date: 1913; Death Place: Middlesbrough, Yorkshire, England; Birth Date: 1844; Age: 69; Event Type: Death; Registration Quarter: Jan-Feb-Mar; Registration Date: 1913; Event District Reg: Middlesbrough.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Handford\n|-\n| Death Date || 1913\n|-\n| Death Place || Middlesbrough, Yorkshire, England\n|-\n| Birth Date || 1844\n|-\n| Age || 69\n|-\n| Event Type || Death\n|-\n| Registration Quarter || Jan-Feb-Mar\n|-\n| Registration Date || 1913\n|-\n| Event District Reg || Middlesbrough\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Handford\n|-\n| Death Date || 1913\n|-\n| Death Place || Middlesbrough, Yorkshire, England\n|-\n| Birth Date || 1844\n|-\n| Age || 69\n|-\n| Event Type || Death\n|-\n| Registration Quarter || Jan-Feb-Mar\n|-\n| Registration Date || 1913\n|-\n| Event District Reg || Middlesbrough\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>Name: William Handford; Death Date: 1913; Death Place: Middlesbrough, Yorkshire, England; Birth Date: 1844; Age: 69; Event Type: Death; Registration Quarter: Jan-Feb-Mar; Registration Date: 1913; Event District Reg: Middlesbrough.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford, 1913.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford, 1913.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>William Handford, 1913.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710;<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford death registered Jan-Feb-Mar 1913 in Middlesbrough (age 69).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford death registered Jan-Feb-Mar 1913 in Middlesbrough (age 69).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England.<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>William Handford death registered Jan-Feb-Mar 1913 in Middlesbrough (age 69).",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford, 1913.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>\nWilliam Handford, 1913.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England.<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)<br/>William Handford, 1913.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "hasValidData": true,
+  "firstNames": "Betsy",
+  "prefNames": "",
+  "middleNames": "Ann",
+  "lnab": "Pavey",
+  "currentLastName": "Norton",
+  "mothersMaidenName": "Holmes",
+  "birthDate": "17 Dec 1830",
+  "birthDateStatus": "none",
+  "deathDate": "4 Feb 1885",
+  "deathDateStatus": "none",
+  "birthLocation": "North Curry, Somerset, England, United Kingdom",
+  "deathLocation": "Bakersfield, Kern, California, USA",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Gardiner-4070",
+      "name": "George Bentley Gardiner",
+      "marriageString": "16 Mar 1851 in Branch, Michigan, USA",
+      "marriageDate": "16 Mar 1851",
+      "marriagePlace": "Branch, Michigan, USA"
+    },
+    {
+      "wikiId": "Norton-8707",
+      "name": "David E Norton",
+      "marriageString": "1872 in Del Norte, California",
+      "marriageDate": "1872",
+      "marriagePlace": "Del Norte, California"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Pavey-507",
+  "currentTabText": "Profile (private view)",
+  "pageType": "private",
+  "wikiId": "Pavey-507",
+  "name": "Betsy Ann (Pavey) Norton",
+  "parents": {
+    "father": {
+      "wikiId": "Pavey-505",
+      "name": "Charles Pavey"
+    },
+    "mother": {
+      "wikiId": "Holmes-15500",
+      "name": "Amelia (Holmes) Pavey"
+    }
+  }
+}

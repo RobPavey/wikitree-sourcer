@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Victoria died (age 82) on 20 July 1971 in Santa Barbara.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1940-1997\"<br/>Place: Santa Barbara; Date: 20 Jul 1971<br/>{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)<br/>\nVictoria C Lopez death 20 Jul 1971 (born 26 Sep 1888) in Santa Barbara.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Victoria died (age 82) on 20 July 1971 in Santa Barbara.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)<br/>\nVictoria C Lopez death 20 Jul 1971 (born 26 Sep 1888) in Santa Barbara.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1940-1997\"<br/>Place: Santa Barbara; Date: 20 Jul 1971<br/>{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)<br/>Victoria C Lopez death 20 Jul 1971 (born 26 Sep 1888) in Santa Barbara.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)<br/>\nName: Victoria C Lopez; Gender: Female; Birth Date: 26 Sep 1888; Birth Place: California; Death Date: 20 Jul 1971; Death Place: Santa Barbara.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Victoria died (age 82) on 20 July 1971 in Santa Barbara.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)<br/>\nName: Victoria C Lopez; Gender: Female; Birth Date: 26 Sep 1888; Birth Place: California; Death Date: 20 Jul 1971; Death Place: Santa Barbara.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1940-1997\"<br/>Place: Santa Barbara; Date: 20 Jul 1971<br/>{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)<br/>Name: Victoria C Lopez; Gender: Female; Birth Date: 26 Sep 1888; Birth Place: California; Death Date: 20 Jul 1971; Death Place: Santa Barbara.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Victoria C Lopez\n|-\n| Gender || Female\n|-\n| Birth Date || 26 Sep 1888\n|-\n| Birth Place || California\n|-\n| Death Date || 20 Jul 1971\n|-\n| Death Place || Santa Barbara\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Victoria died (age 82) on 20 July 1971 in Santa Barbara.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Victoria C Lopez\n|-\n| Gender || Female\n|-\n| Birth Date || 26 Sep 1888\n|-\n| Birth Place || California\n|-\n| Death Date || 20 Jul 1971\n|-\n| Death Place || Santa Barbara\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1940-1997\"<br/>Place: Santa Barbara; Date: 20 Jul 1971<br/>{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)<br/>Name: Victoria C Lopez; Gender: Female; Birth Date: 26 Sep 1888; Birth Place: California; Death Date: 20 Jul 1971; Death Place: Santa Barbara.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"California, U.S., Death Index, 1940-1997,\" database, ({{Ancestry Record|5180|4405640}} : accessed 6 May 2021), Victoria C Lopez death 20 Jul 1971 (born 26 Sep 1888) in Santa Barbara; citing Place Santa Barbara, Date 20 Jul 1971.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Victoria died (age 82) on 20 July 1971 in Santa Barbara.<ref>\"California, U.S., Death Index, 1940-1997,\" database, ({{Ancestry Record|5180|4405640}} : accessed 6 May 2021), Victoria C Lopez death 20 Jul 1971 (born 26 Sep 1888) in Santa Barbara; citing Place Santa Barbara, Date 20 Jul 1971.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"California, U.S., Death Index, 1940-1997,\" database, ({{Ancestry Record|5180|4405640}} : accessed 6 May 2021), Victoria C Lopez death 20 Jul 1971 (born 26 Sep 1888) in Santa Barbara; citing Place Santa Barbara, Date 20 Jul 1971.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death'':\n\"California, U.S., Death Index, 1940-1997\", database, \nPlace Santa Barbara, Date 20 Jul 1971, \n({{Ancestry Record|5180|4405640}} : accessed 6 May 2021), \nName: Victoria C Lopez; Gender: Female; Birth Date: 26 Sep 1888; Birth Place: California; Death Date: 20 Jul 1971; Death Place: Santa Barbara.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Victoria died (age 82) on 20 July 1971 in Santa Barbara.<ref>\n''Death'':\n\"California, U.S., Death Index, 1940-1997\", database, \nPlace Santa Barbara, Date 20 Jul 1971, \n({{Ancestry Record|5180|4405640}} : accessed 6 May 2021), \nName: Victoria C Lopez; Gender: Female; Birth Date: 26 Sep 1888; Birth Place: California; Death Date: 20 Jul 1971; Death Place: Santa Barbara.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death'': \"California, U.S., Death Index, 1940-1997\", database, Place Santa Barbara, Date 20 Jul 1971, ({{Ancestry Record|5180|4405640}} : accessed 6 May 2021), Name: Victoria C Lopez; Gender: Female; Birth Date: 26 Sep 1888; Birth Place: California; Death Date: 20 Jul 1971; Death Place: Santa Barbara.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "start_year": 1868,
+      "end_year": 1874,
+      "ba": true,
+      "first_name": "Harry Alfred George",
+      "last_name": "Pavey",
+      "search_query_fuzzy": true,
+      "search_query_chapman_codes": "MDX"
+    }
+  }
+}

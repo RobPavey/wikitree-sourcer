@@ -1,0 +1,33 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=General-9280&h=125735",
+  "pageType": "record",
+  "dbId": "General-9280",
+  "recordId": "125735",
+  "ancestryTemplate": "{{Ancestry Record|General-9280|125735}}",
+  "domain": "com",
+  "titleName": "Harold Baker",
+  "titleCollection": "Virginia, U.S., Divorce Records, 1918-2014",
+  "recordData": {
+    "Name": "Harold Baker",
+    "Gender": "Male",
+    "Race": "White",
+    "Divorce Age": "41",
+    "Birth Date": "abt 1915",
+    "Marriage Date": "6 Feb 1943",
+    "Divorce Date": "11 Apr 1956",
+    "Divorce Place": "Hampton, Virginia, USA",
+    "Spouse": "Carolyn Waugh Baker",
+    "Certificate Number": "1956001718",
+    "Number of Children": "5"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=General-9280&indiv=try&h=2071220"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/9280/images/43071_162028006071_0335-00220?pid=125735&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26db%3DGeneral-9280%26h%3D125735&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "9280",
+  "imageRecordId": "43071_162028006071_0335-00220",
+  "sourceCitation": "Virginia Department of Health; Richmond, Virginia; Virginia Divorce Records, 1918-2014",
+  "sourceInformation": "Ancestry.com. Virginia, U.S., Divorce Records, 1918-2014 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2015. Original data: Virginia Divorce Records, 1918–2014. Virginia Department of Health, Richmond, Virginia.",
+  "originalData": "Virginia Divorce Records, 1918–2014. Virginia Department of Health, Richmond, Virginia.",
+  "sourceDescription": "Sometimes marriages don’t work out—and you may be able to find out why in these Virginia divorce records. Learn more..."
+}

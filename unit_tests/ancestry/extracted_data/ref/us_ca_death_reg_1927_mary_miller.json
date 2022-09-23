@@ -1,0 +1,23 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=5187&h=1511274&clickref=1100lii9YCCc%2C1100lii9YCCc&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
+  "pageType": "record",
+  "dbId": "5187",
+  "recordId": "1511274",
+  "ancestryTemplate": "{{Ancestry Record|5187|1511274}}",
+  "domain": "com",
+  "titleName": "Mary E Miller",
+  "titleCollection": "California, U.S., Death Index, 1905-1939",
+  "recordData": {
+    "Name": "Mary E Miller",
+    "Birth Year": "abt 1856",
+    "Death Date": "10 Dec 1927",
+    "Age at Death": "71",
+    "Death Place": "Kern, California, USA"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/5187/images/41547_B138955-00330?pid=1511274&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26db%3D5187%26h%3D1511274%26clickref%3D1100lii9YCCc%252C1100lii9YCCc%26adref%3D%26o_xid%3D01011l4xx5%26o_lid%3D01011l4xx5%26o_sch%3DAffiliate%252BExternal&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "5187",
+  "imageRecordId": "41547_B138955-00330",
+  "sourceInformation": "Ancestry.com. California, U.S., Death Index, 1905-1939 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2013. Original data: California Department of Health and Welfare. California Vital Records-Vitalsearch (www.vitalsearch-worldwide.com). The Vitalsearch Company Worldwide, Inc., Pleasanton, California.",
+  "originalData": "California Department of Health and Welfare. California Vital Records-Vitalsearch (www.vitalsearch-worldwide.com). The Vitalsearch Company Worldwide, Inc., Pleasanton, California.",
+  "sourceDescription": "This index is the first step in your quest to locate your ancestor’s California death record, 1905–1939 (which can lead to your next step: birth and other records). Learn more..."
+}

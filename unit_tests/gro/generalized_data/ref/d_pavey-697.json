@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1992",
+    "quarter": 4
+  },
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Ralph Alan"
+  },
+  "lastNameAtDeath": "Pavey",
+  "deathDate": {
+    "yearString": "1992",
+    "quarter": 4
+  },
+  "birthDate": {
+    "yearString": "1914"
+  },
+  "personGender": "male",
+  "registrationDistrict": "Thanet",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "16",
+    "page": "1892"
+  },
+  "hasValidData": true
+}

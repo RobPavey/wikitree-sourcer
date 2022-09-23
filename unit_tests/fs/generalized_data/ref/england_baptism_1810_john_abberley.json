@@ -1,0 +1,34 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "John Abberley"
+  },
+  "eventDate": {
+    "dateString": "9 Dec 1810",
+    "yearString": "1810"
+  },
+  "eventPlace": {
+    "placeString": "Newborough, Staffordshire, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Abberley",
+        "forenames": "John",
+        "lastName": "Abberley"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Sarah",
+        "forenames": "Sarah"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2364451"
+  },
+  "hasValidData": true
+}

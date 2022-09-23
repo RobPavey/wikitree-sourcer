@@ -1,0 +1,28 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1494711:8058",
+  "pageType": "record",
+  "dbId": "8058",
+  "recordId": "1494711",
+  "ancestryTemplate": "{{Ancestry Record|8058|1494711}}",
+  "domain": "com",
+  "titleName": "Joshua Laymon",
+  "titleCollection": "1830 United States Federal Census",
+  "recordData": {
+    "Name": "Joshua Laymon",
+    "Home in 1830 (City, County, State)": "Pomfret, Chautauqua, New York",
+    "Free White Persons - Males - Under 5": "3",
+    "Free White Persons - Males - 20 thru 29": "1",
+    "Free White Persons - Females - 20 thru 29": "1",
+    "Free White Persons - Under 20": "3",
+    "Free White Persons - 20 thru 49": "2",
+    "Total Free White Persons": "5",
+    "Total - All Persons (Free White, Slaves, Free Colored)": "5"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8058/images/4410671_00821?pid=1494711&usePUB=true&usePUBJs=true",
+  "imageDbId": "8058",
+  "imageRecordId": "4410671_00821",
+  "sourceCitation": "Year: 1830; Census Place: Pomfret, Chautauqua, New York; Series: M19; Roll: 86; Family History Library Film: 0017146",
+  "sourceInformation": "Ancestry.com. 1830 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Images reproduced by FamilySearch. Original data: Fifth Census of the United States, 1830. (NARA microfilm publication M19, 201 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "originalData": "Fifth Census of the United States, 1830. (NARA microfilm publication M19, 201 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "sourceDescription": "This database details those persons enumerated in the 1830 United States Federal Census, the Fifth Census of the United States. In addition, the names of those listed on the population schedule are linked to the actual images of the 1830 Federal Census. Enumerators of the 1830 census were asked to include the following categories in the census: name of head of household, number of free white males and females, number of other free persons, names of slave owners and number of slaves, number of foreigners, and town or district and county of residence. Learn more..."
+}

@@ -1,0 +1,38 @@
+{
+  "recordData": {
+    "Name": "James Ridout"
+  },
+  "fullName": "James Ridout",
+  "givenName": "James",
+  "surname": "Ridout",
+  "gender": "male",
+  "eventDateOriginal": "24 Sep 1852",
+  "eventDate": "24 Sep 1852",
+  "eventYear": "1852",
+  "eventPlaceOriginal": "Sturminster Newton, Dorset, England, United Kingdom",
+  "eventPlace": "Sturminster Newton, Dorset, England, United Kingdom",
+  "eventPlaceL2": "Dorset",
+  "eventPlaceL1": "England",
+  "relatedPersonFactType": "Marriage",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "James Ridout",
+  "relatedPersonGivenName": "James",
+  "relatedPersonSurname": "Ridout",
+  "relatedPersonGender": "male",
+  "relatedPersonSpouseFullName": "Eliza Tapper",
+  "relatedPersonSpouseGivenName": "Eliza",
+  "relatedPersonSpouseSurname": "Tapper",
+  "fsCollectionId": "1910806",
+  "referenceData": {
+    "digitalFilmNumber": "004729300",
+    "filmNumber": "002427577"
+  },
+  "fsImageNumber": "00751",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:939L-SL93-13",
+  "collectionTitle": "England, Dorset, Parish Registers, 1538-2001",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QKSX-6QNX",
+  "citation": "\"England, Dorset, Parish Registers, 1538-2001\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QJDC-577Y : 2 June 2020), James Ridout in entry for James Ridout and Eliza Tapper, 1852.",
+  "sourceTitleForPerson": "James Ridout in entry for James Ridout and Eliza Tapper, \"England, Dorset, Parish Registers, 1538-2001\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QJDC-577Y",
+  "pageType": "record"
+}

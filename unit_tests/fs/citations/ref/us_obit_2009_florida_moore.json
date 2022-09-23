@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting <i>Jonesboro Sun, The</i>, born-digital text.<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nFlorida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Florida was mentioned in the obituary of her husband James Clifford Moore on 8 October 2009 in Arkansas, United States.<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting <i>Jonesboro Sun, The</i>, born-digital text.<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nFlorida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Obituary of husband James Clifford Moore''': \"United States, GenealogyBank Obituaries, 1980-2014\"<br/>citing <i>Jonesboro Sun, The</i>, born-digital text.<br/>{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>Florida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nName: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Florida was mentioned in the obituary of her husband James Clifford Moore on 8 October 2009 in Arkansas, United States.<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nName: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Obituary of husband James Clifford Moore''': \"United States, GenealogyBank Obituaries, 1980-2014\"<br/>citing FHL microfilm: 101977316;<br/>{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>Name: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nName: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Florida was mentioned in the obituary of her husband James Clifford Moore on 8 October 2009 in Arkansas, United States.<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nName: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Obituary of husband James Clifford Moore''': \"United States, GenealogyBank Obituaries, 1980-2014\"<br/>citing FHL microfilm: 101977316;<br/>{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>Name: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512\n{| border=\"1\"\n| Name || Florida Tucker Moore\n|-\n| Source Newspaper || Jonesboro Sun, The\n|-\n| Event Type || Obituary\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Florida was mentioned in the obituary of her husband James Clifford Moore on 8 October 2009 in Arkansas, United States.<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512\n{| border=\"1\"\n| Name || Florida Tucker Moore\n|-\n| Source Newspaper || Jonesboro Sun, The\n|-\n| Event Type || Obituary\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Obituary of husband James Clifford Moore''': \"United States, GenealogyBank Obituaries, 1980-2014\"<br/>citing FHL microfilm: 101977316;<br/>{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>Name: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nFlorida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Florida was mentioned in the obituary of her husband James Clifford Moore on 8 October 2009 in Arkansas, United States.<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nFlorida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Obituary of husband James Clifford Moore''': \"United States, GenealogyBank Obituaries, 1980-2014\"<br/>citing FHL microfilm: 101977316;<br/>{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>Florida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Florida was mentioned in the obituary of her husband James Clifford Moore on 8 October 2009 in Arkansas, United States.<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting FHL microfilm: 101977316;<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Obituary of husband James Clifford Moore''': \"United States, GenealogyBank Obituaries, 1980-2014\"<br/>citing FHL microfilm: 101977316;<br/>{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting <i>Jonesboro Sun, The</i>, born-digital text.<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nName: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Florida was mentioned in the obituary of her husband James Clifford Moore on 8 October 2009 in Arkansas, United States.<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting <i>Jonesboro Sun, The</i>, born-digital text.<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nName: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Obituary of husband James Clifford Moore''': \"United States, GenealogyBank Obituaries, 1980-2014\"<br/>citing <i>Jonesboro Sun, The</i>, born-digital text.<br/>{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>Name: Florida Tucker Moore; Source Newspaper: Jonesboro Sun, The; Event Type: Obituary.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting <i>Jonesboro Sun, The</i>, born-digital text.<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nFlorida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Florida was mentioned in the obituary of her husband James Clifford Moore on 8 October 2009 in Arkansas, United States.<ref>\n'''Obituary of husband James Clifford Moore''':\n\"United States, GenealogyBank Obituaries, 1980-2014\"<br/>\nciting <i>Jonesboro Sun, The</i>, born-digital text.<br/>\n{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>\nFlorida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Obituary of husband James Clifford Moore''': \"United States, GenealogyBank Obituaries, 1980-2014\"<br/>citing <i>Jonesboro Sun, The</i>, born-digital text.<br/>{{FamilySearch Record|QKLP-Y42H}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}} Image number 00512<br/>Florida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009.",
+    "type": "source"
+  }
+}

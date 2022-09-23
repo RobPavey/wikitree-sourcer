@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>\n[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1911 census Elizabeth (age 69) was the wife of Richard Taylor in Luxborough, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>\n[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>\n[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)<br/>\nElizabeth Taylor (69), wife, in household of Richard Taylor (70) in Luxborough in Williton registration district in Somerset, England. Born in Withycombe, Somerset, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1911 census Elizabeth (age 69) was the wife of Richard Taylor in Luxborough, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>\n[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)<br/>\nElizabeth Taylor (69), wife, in household of Richard Taylor (70) in Luxborough in Williton registration district in Somerset, England. Born in Withycombe, Somerset, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)<br/>Elizabeth Taylor (69), wife, in household of Richard Taylor (70) in Luxborough in Williton registration district in Somerset, England. Born in Withycombe, Somerset, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>\n[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus Year: 1911; County: Somerset (SOM); Census District: Williton; Enumeration District: 9; Civil Parish: Luxborough; Ecclesiastical Parish: Cutcombe St John With Luxborough St Mary; Where Census Taken: Luxborough; Piece: RG14_14131; Ward: -; Constituency: Western Or Wellington Division Of Somerset; Dwelling Number: 16.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1911 census Elizabeth (age 69) was the wife of Richard Taylor in Luxborough, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>\n[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus Year: 1911; County: Somerset (SOM); Census District: Williton; Enumeration District: 9; Civil Parish: Luxborough; Ecclesiastical Parish: Cutcombe St John With Luxborough St Mary; Where Census Taken: Luxborough; Piece: RG14_14131; Ward: -; Constituency: Western Or Wellington Division Of Somerset; Dwelling Number: 16.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)<br/>Census Year: 1911; County: Somerset (SOM); Census District: Williton; Enumeration District: 9; Civil Parish: Luxborough; Ecclesiastical Parish: Cutcombe St John With Luxborough St Mary; Where Census Taken: Luxborough; Piece: RG14_14131; Ward: -; Constituency: Western Or Wellington Division Of Somerset; Dwelling Number: 16.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>\n[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census Year || 1911\n|-\n| County || Somerset (SOM)\n|-\n| Census District || Williton\n|-\n| Enumeration District || 9\n|-\n| Civil Parish || Luxborough\n|-\n| Ecclesiastical Parish || Cutcombe St John With Luxborough St Mary\n|-\n| Where Census Taken || Luxborough\n|-\n| Piece || RG14_14131\n|-\n| Ward || -\n|-\n| Constituency || Western Or Wellington Division Of Somerset\n|-\n| Folio || \n|-\n| Page || \n|-\n| Dwelling Number || 16\n|-\n| Schedule || \n|-\n| House Number || \n|-\n| House or Street Name || \n|-\n| Rooms || \n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1911 census Elizabeth (age 69) was the wife of Richard Taylor in Luxborough, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>\n[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census Year || 1911\n|-\n| County || Somerset (SOM)\n|-\n| Census District || Williton\n|-\n| Enumeration District || 9\n|-\n| Civil Parish || Luxborough\n|-\n| Ecclesiastical Parish || Cutcombe St John With Luxborough St Mary\n|-\n| Where Census Taken || Luxborough\n|-\n| Piece || RG14_14131\n|-\n| Ward || -\n|-\n| Constituency || Western Or Wellington Division Of Somerset\n|-\n| Folio || \n|-\n| Page || \n|-\n| Dwelling Number || 16\n|-\n| Schedule || \n|-\n| House Number || \n|-\n| House or Street Name || \n|-\n| Rooms || \n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14131<br/>[https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0 FreeCen Transcription] (accessed 6 May 2021)<br/>Census Year: 1911; County: Somerset (SOM); Census District: Williton; Enumeration District: 9; Civil Parish: Luxborough; Ecclesiastical Parish: Cutcombe St John With Luxborough St Mary; Where Census Taken: Luxborough; Piece: RG14_14131; Ward: -; Constituency: Western Or Wellington Division Of Somerset; Dwelling Number: 16.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "1876"
+  },
+  "eventPlace": {
+    "placeString": "Shelby Center, Orleans County, New York, USA",
+    "streetAddress": "Shelby Center Cemetery"
+  },
+  "name": {
+    "name": "Elizabeth Singleton Bates"
+  },
+  "lastNameAtDeath": "Bates",
+  "deathDate": {
+    "dateString": "1876"
+  },
+  "ageAtDeath": "41–42",
+  "birthDate": {
+    "dateString": "1834"
+  },
+  "hasValidData": true
+}

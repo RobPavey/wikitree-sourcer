@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1790 census Claborn was in Franklin County, Georgia.<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1790 Census''': \"U.S., Census Reconstructed Records, 1660-1820\"<br/>Document: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>{{Ancestry Record|2234|111792}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)<br/>\nClaborn Cawthon in Franklin County, Georgia.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1790 census Claborn was in Franklin County, Georgia.<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)<br/>\nClaborn Cawthon in Franklin County, Georgia.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1790 Census''': \"U.S., Census Reconstructed Records, 1660-1820\"<br/>Document: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>{{Ancestry Record|2234|111792}} (accessed 6 May 2021)<br/>Claborn Cawthon in Franklin County, Georgia.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)<br/>\nName: Claborn Cawthon; Gender: M (Male); State: Georgia; County: Franklin County; Residence Year: 1790; Household Remarks: Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1790 census Claborn was in Franklin County, Georgia.<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)<br/>\nName: Claborn Cawthon; Gender: M (Male); State: Georgia; County: Franklin County; Residence Year: 1790; Household Remarks: Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1790 Census''': \"U.S., Census Reconstructed Records, 1660-1820\"<br/>Document: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>{{Ancestry Record|2234|111792}} (accessed 6 May 2021)<br/>Name: Claborn Cawthon; Gender: M (Male); State: Georgia; County: Franklin County; Residence Year: 1790; Household Remarks: Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Claborn Cawthon\n|-\n| Gender || M (Male)\n|-\n| State || Georgia\n|-\n| County || Franklin County\n|-\n| Residence Year || 1790\n|-\n| Household Remarks || Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1790 census Claborn was in Franklin County, Georgia.<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Claborn Cawthon\n|-\n| Gender || M (Male)\n|-\n| State || Georgia\n|-\n| County || Franklin County\n|-\n| Residence Year || 1790\n|-\n| Household Remarks || Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1790 Census''': \"U.S., Census Reconstructed Records, 1660-1820\"<br/>Document: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>{{Ancestry Record|2234|111792}} (accessed 6 May 2021)<br/>Name: Claborn Cawthon; Gender: M (Male); State: Georgia; County: Franklin County; Residence Year: 1790; Household Remarks: Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Census Reconstructed Records, 1660-1820,\" database, ({{Ancestry Record|2234|111792}} : accessed 6 May 2021), Claborn Cawthon in Franklin County, Georgia; citing Document Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia], Call Number Box 42, Folder 2, Page Number 2, Family Number 7.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1790 census Claborn was in Franklin County, Georgia.<ref>\"U.S., Census Reconstructed Records, 1660-1820,\" database, ({{Ancestry Record|2234|111792}} : accessed 6 May 2021), Claborn Cawthon in Franklin County, Georgia; citing Document Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia], Call Number Box 42, Folder 2, Page Number 2, Family Number 7.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Census Reconstructed Records, 1660-1820,\" database, ({{Ancestry Record|2234|111792}} : accessed 6 May 2021), Claborn Cawthon in Franklin County, Georgia; citing Document Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia], Call Number Box 42, Folder 2, Page Number 2, Family Number 7.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1790 Census'':\n\"U.S., Census Reconstructed Records, 1660-1820\", database, \nDocument Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia], Call Number Box 42, Folder 2, Page Number 2, Family Number 7, \n({{Ancestry Record|2234|111792}} : accessed 6 May 2021), \nName: Claborn Cawthon; Gender: M (Male); State: Georgia; County: Franklin County; Residence Year: 1790; Household Remarks: Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1790 census Claborn was in Franklin County, Georgia.<ref>\n''1790 Census'':\n\"U.S., Census Reconstructed Records, 1660-1820\", database, \nDocument Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia], Call Number Box 42, Folder 2, Page Number 2, Family Number 7, \n({{Ancestry Record|2234|111792}} : accessed 6 May 2021), \nName: Claborn Cawthon; Gender: M (Male); State: Georgia; County: Franklin County; Residence Year: 1790; Household Remarks: Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1790 Census'': \"U.S., Census Reconstructed Records, 1660-1820\", database, Document Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia], Call Number Box 42, Folder 2, Page Number 2, Family Number 7, ({{Ancestry Record|2234|111792}} : accessed 6 May 2021), Name: Claborn Cawthon; Gender: M (Male); State: Georgia; County: Franklin County; Residence Year: 1790; Household Remarks: Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t.",
+    "type": "source"
+  }
+}

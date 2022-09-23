@@ -1,0 +1,111 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Robert C Stanton"
+  },
+  "birthDate": {
+    "dateString": "1941",
+    "yearString": "1941"
+  },
+  "birthPlace": {
+    "placeString": "Oregon"
+  },
+  "eventDate": {
+    "dateString": "12 Apr 1950",
+    "yearString": "1950"
+  },
+  "eventPlace": {
+    "placeString": "Swisshome, Lane, Oregon, United States"
+  },
+  "ageAtEvent": "9",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Donald M Stanton",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "33 years",
+      "birthYear": "1917",
+      "occupation": "Faller",
+      "birthPlace": "Montana"
+    },
+    {
+      "name": "Marguerite E Stanton",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "29 years",
+      "birthYear": "1921",
+      "birthPlace": "Nebraska"
+    },
+    {
+      "name": "Robert C Stanton",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "9 years",
+      "birthYear": "1941",
+      "birthPlace": "Oregon",
+      "isSelected": true
+    },
+    {
+      "name": "Diana M Stanton",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "8 years",
+      "birthYear": "1942",
+      "birthPlace": "California"
+    },
+    {
+      "name": "Sharon L Stanton",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "3 years",
+      "birthYear": "1947",
+      "birthPlace": "Oregon"
+    },
+    {
+      "name": "Edwin B Stanton",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "2 years",
+      "birthYear": "1948",
+      "birthPlace": "Oregon"
+    }
+  ],
+  "maritalStatus": "single",
+  "relationshipToHead": "son",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Donald M Stanton"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Marguerite E Stanton"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "4464515",
+    "page": "94"
+  },
+  "hasValidData": true
+}

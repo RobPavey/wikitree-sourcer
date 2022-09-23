@@ -1,0 +1,102 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"England & Wales, Christening Index, 1530-1980\"<br/>Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)<br/>\nAgnes Woodhouse baptism on 17 Dec 1837 (born 16 Dec 1837), daughter of George Woodhouse & Mary Hunt, in Hemsby, Norfolk, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)<br/>\nAgnes Woodhouse baptism on 17 Dec 1837 (born 16 Dec 1837), daughter of George Woodhouse & Mary Hunt, in Hemsby, Norfolk, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"England & Wales, Christening Index, 1530-1980\"<br/>Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)<br/>Agnes Woodhouse baptism on 17 Dec 1837 (born 16 Dec 1837), daughter of George Woodhouse & Mary Hunt, in Hemsby, Norfolk, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)<br/>\nName: Agnes Woodhouse; Gender: Female; Christening Age: 0; Birth Date: 16 Dec 1837; Christening Date: 17 Dec 1837; Christening Place: Hemsby, Norfolk, England; Father: George Woodhouse; Mother: Mary Hunt.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)<br/>\nName: Agnes Woodhouse; Gender: Female; Christening Age: 0; Birth Date: 16 Dec 1837; Christening Date: 17 Dec 1837; Christening Place: Hemsby, Norfolk, England; Father: George Woodhouse; Mother: Mary Hunt.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"England & Wales, Christening Index, 1530-1980\"<br/>Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)<br/>Name: Agnes Woodhouse; Gender: Female; Christening Age: 0; Birth Date: 16 Dec 1837; Christening Date: 17 Dec 1837; Christening Place: Hemsby, Norfolk, England; Father: George Woodhouse; Mother: Mary Hunt.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Woodhouse\n|-\n| Gender || Female\n|-\n| Christening Age || 0\n|-\n| Birth Date || 16 Dec 1837\n|-\n| Christening Date || 17 Dec 1837\n|-\n| Christening Place || Hemsby, Norfolk, England\n|-\n| Father || George Woodhouse\n|-\n| Mother || Mary Hunt\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Woodhouse\n|-\n| Gender || Female\n|-\n| Christening Age || 0\n|-\n| Birth Date || 16 Dec 1837\n|-\n| Christening Date || 17 Dec 1837\n|-\n| Christening Place || Hemsby, Norfolk, England\n|-\n| Father || George Woodhouse\n|-\n| Mother || Mary Hunt\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"England & Wales, Christening Index, 1530-1980\"<br/>Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)<br/>Name: Agnes Woodhouse; Gender: Female; Christening Age: 0; Birth Date: 16 Dec 1837; Christening Date: 17 Dec 1837; Christening Place: Hemsby, Norfolk, England; Father: George Woodhouse; Mother: Mary Hunt.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"England & Wales, Christening Index, 1530-1980,\" database, ({{Ancestry Record|1351|2249655|uk}} : accessed 6 May 2021), Agnes Woodhouse baptism on 17 Dec 1837 (born 16 Dec 1837), daughter of George Woodhouse & Mary Hunt, in Hemsby, Norfolk, England; citing Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England.<ref>\"England & Wales, Christening Index, 1530-1980,\" database, ({{Ancestry Record|1351|2249655|uk}} : accessed 6 May 2021), Agnes Woodhouse baptism on 17 Dec 1837 (born 16 Dec 1837), daughter of George Woodhouse & Mary Hunt, in Hemsby, Norfolk, England; citing Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"England & Wales, Christening Index, 1530-1980,\" database, ({{Ancestry Record|1351|2249655|uk}} : accessed 6 May 2021), Agnes Woodhouse baptism on 17 Dec 1837 (born 16 Dec 1837), daughter of George Woodhouse & Mary Hunt, in Hemsby, Norfolk, England; citing Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Baptism'':\n\"England & Wales, Christening Index, 1530-1980\", database, \nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition, \n({{Ancestry Record|1351|2249655|uk}} : accessed 6 May 2021), \nName: Agnes Woodhouse; Gender: Female; Christening Age: 0; Birth Date: 16 Dec 1837; Christening Date: 17 Dec 1837; Christening Place: Hemsby, Norfolk, England; Father: George Woodhouse; Mother: Mary Hunt.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England.<ref>\n''Baptism'':\n\"England & Wales, Christening Index, 1530-1980\", database, \nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition, \n({{Ancestry Record|1351|2249655|uk}} : accessed 6 May 2021), \nName: Agnes Woodhouse; Gender: Female; Christening Age: 0; Birth Date: 16 Dec 1837; Christening Date: 17 Dec 1837; Christening Place: Hemsby, Norfolk, England; Father: George Woodhouse; Mother: Mary Hunt.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Baptism'': \"England & Wales, Christening Index, 1530-1980\", database, Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition, ({{Ancestry Record|1351|2249655|uk}} : accessed 6 May 2021), Name: Agnes Woodhouse; Gender: Female; Christening Age: 0; Birth Date: 16 Dec 1837; Christening Date: 17 Dec 1837; Christening Place: Hemsby, Norfolk, England; Father: George Woodhouse; Mother: Mary Hunt.",
+    "type": "source"
+  },
+  "narrative_forenames_narrative": {
+    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Woodhouse\n|-\n| Gender || Female\n|-\n| Christening Age || 0\n|-\n| Birth Date || 16 Dec 1837\n|-\n| Christening Date || 17 Dec 1837\n|-\n| Christening Place || Hemsby, Norfolk, England\n|-\n| Father || George Woodhouse\n|-\n| Mother || Mary Hunt\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_fullName_narrative": {
+    "citation": "Agnes Woodhouse, daughter of George Woodhouse & Mary Hunt, was born on 16 Dec 1837 and baptised on 17 Dec 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Woodhouse\n|-\n| Gender || Female\n|-\n| Christening Age || 0\n|-\n| Birth Date || 16 Dec 1837\n|-\n| Christening Date || 17 Dec 1837\n|-\n| Christening Place || Hemsby, Norfolk, England\n|-\n| Father || George Woodhouse\n|-\n| Mother || Mary Hunt\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_pronoun_narrative": {
+    "citation": "She, daughter of George Woodhouse & Mary Hunt, was born on the 16th of December 1837 and baptised on the 17th of December 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Woodhouse\n|-\n| Gender || Female\n|-\n| Christening Age || 0\n|-\n| Birth Date || 16 Dec 1837\n|-\n| Christening Date || 17 Dec 1837\n|-\n| Christening Place || Hemsby, Norfolk, England\n|-\n| Father || George Woodhouse\n|-\n| Mother || Mary Hunt\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_noParentage_narrative": {
+    "citation": "Agnes was born on December 16, 1837; baptised on December 17, 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Woodhouse\n|-\n| Gender || Female\n|-\n| Christening Age || 0\n|-\n| Birth Date || 16 Dec 1837\n|-\n| Christening Date || 17 Dec 1837\n|-\n| Christening Place || Hemsby, Norfolk, England\n|-\n| Father || George Woodhouse\n|-\n| Mother || Mary Hunt\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_parentageFormat_narrative": {
+    "citation": "Agnes, the daughter of George Woodhouse & Mary Hunt, was born on December 16th, 1837 and baptised on December 17th, 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Woodhouse\n|-\n| Gender || Female\n|-\n| Christening Age || 0\n|-\n| Birth Date || 16 Dec 1837\n|-\n| Christening Date || 17 Dec 1837\n|-\n| Christening Place || Hemsby, Norfolk, England\n|-\n| Father || George Woodhouse\n|-\n| Mother || Mary Hunt\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_parentageSeparate_narrative": {
+    "citation": "Agnes was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England. She was the daughter of George Woodhouse and Mary Hunt.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Woodhouse\n|-\n| Gender || Female\n|-\n| Christening Age || 0\n|-\n| Birth Date || 16 Dec 1837\n|-\n| Christening Date || 17 Dec 1837\n|-\n| Christening Place || Hemsby, Norfolk, England\n|-\n| Father || George Woodhouse\n|-\n| Mother || Mary Hunt\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_dateFormatCountryNth_narrative": {
+    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on the 16th of December 1837 and baptised on the 17th of December 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nGenealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Woodhouse\n|-\n| Gender || Female\n|-\n| Christening Age || 0\n|-\n| Birth Date || 16 Dec 1837\n|-\n| Christening Date || 17 Dec 1837\n|-\n| Christening Place || Hemsby, Norfolk, England\n|-\n| Father || George Woodhouse\n|-\n| Mother || Mary Hunt\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

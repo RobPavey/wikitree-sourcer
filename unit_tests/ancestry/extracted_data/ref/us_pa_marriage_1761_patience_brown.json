@@ -1,0 +1,45 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=7830&h=19685&ssrc=pt&tid=151196245&pid=232150076925&usePUB=true&_gl=1*gdg05q*_ga*NTcwNzMwNTUuMTUwNzc2NTI2Ng..*_ga_4QT8FMEX30*MTY1NzM5NjM3NC4yNzUuMS4xNjU3Mzk2Mzg1LjA",
+  "pageType": "record",
+  "dbId": "7830",
+  "recordId": "19685",
+  "ancestryTemplate": "{{Ancestry Record|7830|19685}}",
+  "domain": "com",
+  "titleName": "Patience Brown",
+  "titleCollection": "Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881",
+  "recordData": {
+    "Name": "Patience Brown",
+    "Event": "Marriage",
+    "Marriage Date": "17 Nov 1761",
+    "Marriage Place": "Lancaster Co., PA",
+    "Church": "St. James Episcopal Church, Lancaster Co., PA",
+    "Role": "Bride",
+    "Remark": "License.",
+    "Household Members": "Patience Brown Bride<br/>William Morrison Groom"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Role"
+    ],
+    "members": [
+      {
+        "Name": "Patience Brown",
+        "dbId": "pennchurch_ga",
+        "recordId": "19685",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=pennchurch_ga&indiv=try&h=19685",
+        "Role": "Bride"
+      },
+      {
+        "Name": "William Morrison",
+        "dbId": "pennchurch_ga",
+        "recordId": "113500",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=pennchurch_ga&indiv=try&h=113500",
+        "Role": "Groom"
+      }
+    ]
+  },
+  "sourceInformation": "Ancestry.com. Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2004. Original data: Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library.",
+  "originalData": "Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library.",
+  "sourceDescription": "This database contains information on almost 180,000 individuals found in the records of more than fifty Pennsylvania (U.S.A.) churches. These churches are located in Adams, Berks, and Lancaster counties. Information that may be found in this data set includes name of individual, date of event, event type, record ID, relation to principal individual in the record, location, and name of church. Learn more..."
+}

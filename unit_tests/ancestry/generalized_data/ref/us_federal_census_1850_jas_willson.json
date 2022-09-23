@@ -1,0 +1,88 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Jas Willson"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "yearString": "1803",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Geor"
+  },
+  "eventDate": {
+    "yearString": "1850"
+  },
+  "eventPlace": {
+    "placeString": "Walker, Texas, USA"
+  },
+  "occupation": "Farmer",
+  "ageAtEvent": "47",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Jas Willson",
+      "age": "47",
+      "isSelected": true,
+      "gender": "male",
+      "occupation": "Farmer",
+      "birthPlace": "Geor",
+      "birthYear": "abt 1803"
+    },
+    {
+      "name": "Katharine Willson",
+      "age": "40",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085067&indiv=try"
+    },
+    {
+      "name": "Abner Willson",
+      "age": "22",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085068&indiv=try"
+    },
+    {
+      "name": "John Willson",
+      "age": "17",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085069&indiv=try"
+    },
+    {
+      "name": "Sam Willson",
+      "age": "13",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085070&indiv=try"
+    },
+    {
+      "name": "Caroline Willson",
+      "age": "12",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085071&indiv=try"
+    },
+    {
+      "name": "Nancy Willson",
+      "age": "11",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085072&indiv=try"
+    },
+    {
+      "name": "Frances Willson",
+      "age": "8",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085073&indiv=try"
+    },
+    {
+      "name": "Katharine Willson",
+      "age": "4",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085074&indiv=try"
+    },
+    {
+      "name": "Cirus Willson",
+      "age": "2",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085075&indiv=try"
+    }
+  ],
+  "collectionData": {
+    "id": "8054"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Joseph Golden"
+  },
+  "birthDate": {
+    "dateString": "1829",
+    "yearString": "1829"
+  },
+  "eventDate": {
+    "dateString": "21 Jul 1865",
+    "yearString": "1865"
+  },
+  "eventPlace": {
+    "placeString": "Minstead, Hampshire, England, United Kingdom"
+  },
+  "ageAtEvent": "36",
+  "collectionData": {
+    "id": "2640059"
+  },
+  "hasValidData": true
+}

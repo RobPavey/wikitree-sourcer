@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "lastName": "NATTRASS",
+  "forenames": "MARGARET",
+  "firstName": "MARGARET",
+  "birthYear": 1892,
+  "recordType": "newer",
+  "eventYear": 1989,
+  "eventQuarter": 1,
+  "eventQuarterLetter": "M",
+  "registrationDistrict": "OKEHAMPTON",
+  "registrationDistrictCode": "4151",
+  "referenceVolume": "21",
+  "referencePage": "1664",
+  "personGender": "female",
+  "deathYear": 1989,
+  "deathQuarter": 1,
+  "eventType": "death"
+}

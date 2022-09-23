@@ -1,0 +1,95 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Esther Pavey"
+  },
+  "birthDate": {
+    "dateString": "1842",
+    "yearString": "1842"
+  },
+  "birthPlace": {
+    "placeString": "London, Middlesex, England"
+  },
+  "eventDate": {
+    "dateString": "1881"
+  },
+  "eventPlace": {
+    "placeString": "Camberwell, London,Surrey, England",
+    "streetAddress": "Albany Rd"
+  },
+  "registrationDistrict": "Camberwell",
+  "ageAtEvent": "39",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Charles A Pavey",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "38",
+      "birthYear": "1843",
+      "occupation": "Picture Frame Maker Employing 1 Lad",
+      "birthPlace": "Plymouth, Devon, England"
+    },
+    {
+      "name": "Esther Pavey",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "39",
+      "birthYear": "1842",
+      "birthPlace": "London, Middlesex, England",
+      "isSelected": true
+    },
+    {
+      "name": "Elizabeth Pavey",
+      "relationship": "mother",
+      "maritalStatus": "widowed",
+      "gender": "female",
+      "age": "78",
+      "birthYear": "1803",
+      "occupation": "Annuitant",
+      "birthPlace": "Plymouth, Devon, England"
+    },
+    {
+      "name": "Sidney H Harper",
+      "relationship": "nephew",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "18",
+      "birthYear": "1863",
+      "occupation": "Picture Frame Maker",
+      "birthPlace": "Kentish Town, Middlesex, England"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "spouses": [
+    {
+      "name": {
+        "name": "Charles A Pavey"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "2562194",
+    "page": "72",
+    "piece": "693",
+    "folio": "71"
+  },
+  "hasValidData": true
+}

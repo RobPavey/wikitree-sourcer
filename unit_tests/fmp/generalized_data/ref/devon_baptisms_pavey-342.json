@@ -1,0 +1,40 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Harry Alfred"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Plymouth, St Andrew, Devon, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "William Henry"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Elizabeth"
+      }
+    }
+  },
+  "eventDate": {
+    "dateString": "23 Mar 1855",
+    "yearString": "1855"
+  },
+  "birthDate": {
+    "dateString": "18 Jul 1852",
+    "yearString": "1852"
+  },
+  "lastNameAtBirth": "Pavey",
+  "collectionData": {
+    "id": "Devon Baptisms",
+    "page": "143"
+  },
+  "hasValidData": true
+}

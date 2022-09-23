@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Philip A Carson"
+  },
+  "eventDate": {
+    "dateString": "22 Jun 1953"
+  },
+  "eventPlace": {
+    "placeString": "Carroll, Arkansas, USA"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Violet M Crook"
+      },
+      "marriageDate": {
+        "dateString": "22 Jun 1953"
+      },
+      "marriagePlace": {
+        "placeString": "Carroll, Arkansas, USA"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "61775"
+  },
+  "hasValidData": true
+}

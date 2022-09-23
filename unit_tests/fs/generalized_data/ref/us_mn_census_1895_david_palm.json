@@ -1,0 +1,98 @@
+{
+  "sourceType": "record",
+  "recordType": "Residence",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "David Palm"
+  },
+  "birthDate": {
+    "dateString": "1887"
+  },
+  "birthPlace": {
+    "placeString": "Minnesota"
+  },
+  "eventDate": {
+    "dateString": "1895"
+  },
+  "eventPlace": {
+    "placeString": "Township 160N, Range 40W, Roseau, Minnesota"
+  },
+  "ageAtEvent": "8y",
+  "householdArrayFields": [
+    "name",
+    "gender",
+    "age",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Louis Palm",
+      "gender": "male",
+      "age": "40y",
+      "birthDate": "1855",
+      "birthPlace": "Sweden"
+    },
+    {
+      "name": "Inga Palm",
+      "gender": "female",
+      "age": "40y",
+      "birthDate": "1855",
+      "birthPlace": "Sweden"
+    },
+    {
+      "name": "Mary Palm",
+      "gender": "female",
+      "age": "16y",
+      "birthDate": "1879",
+      "birthPlace": "Sweden"
+    },
+    {
+      "name": "Willie Palm",
+      "gender": "male",
+      "age": "12y",
+      "birthDate": "1883",
+      "birthPlace": "Minnesota"
+    },
+    {
+      "name": "Sam Palm",
+      "gender": "male",
+      "age": "10y",
+      "birthDate": "1885",
+      "birthPlace": "Minnesota"
+    },
+    {
+      "name": "David Palm",
+      "gender": "male",
+      "age": "8y",
+      "birthDate": "1887",
+      "birthPlace": "Minnesota",
+      "isSelected": true
+    },
+    {
+      "name": "Andrew Palm",
+      "gender": "male",
+      "age": "5y",
+      "birthDate": "1890",
+      "birthPlace": "Minnesota"
+    },
+    {
+      "name": "Peter Palm",
+      "gender": "male",
+      "age": "3y",
+      "birthDate": "1892",
+      "birthPlace": "Minnesota"
+    },
+    {
+      "name": "Louis Palm",
+      "gender": "male",
+      "age": "1y",
+      "birthDate": "1894",
+      "birthPlace": "Minnesota"
+    }
+  ],
+  "collectionData": {
+    "id": "1503031"
+  },
+  "hasValidData": true
+}

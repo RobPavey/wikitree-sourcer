@@ -1,0 +1,42 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Maria Josephina Johanna Hartmann"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "25 Jun 1840"
+  },
+  "eventDate": {
+    "dateString": "28 Jun 1840"
+  },
+  "deathDate": {
+    "dateString": "7 Jul 1840"
+  },
+  "eventPlace": {
+    "placeString": "Augsburg, Bayern, Germany"
+  },
+  "birthPlace": {
+    "placeString": "Augsburg, Bayern, Germany"
+  },
+  "lastNameAtBirth": "Hartmann",
+  "ageAtEvent": "0",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Heinrich Hartmann"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Regina Rosine Burger"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "9866"
+  },
+  "hasValidData": true
+}

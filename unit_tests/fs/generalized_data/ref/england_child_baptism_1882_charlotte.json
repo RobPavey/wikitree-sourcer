@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": "Charles Plume",
+  "primaryPersonGender": "male",
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Charlotte"
+  },
+  "eventDate": {
+    "dateString": "28 May 1882",
+    "yearString": "1882"
+  },
+  "eventPlace": {
+    "placeString": "Enfield, Middlesex, England, United Kingdom"
+  },
+  "collectionData": {
+    "id": "1473014"
+  },
+  "hasValidData": true
+}

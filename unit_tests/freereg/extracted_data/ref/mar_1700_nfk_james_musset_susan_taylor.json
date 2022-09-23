@@ -1,0 +1,28 @@
+{
+  "url": "https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b/susan-taylor-james-musset-marriage-norfolk-gunthorpe-1700-?locale=en",
+  "success": true,
+  "recordType": "marriage",
+  "recordData": {
+    "County": "Norfolk",
+    "Place": "Gunthorpe",
+    "Church name": "St Mary",
+    "Register type": "Other Transcript",
+    "Marriage date": "1700",
+    "Groom forename": "James",
+    "Groom surname": "MUSSET",
+    "Bride forename": "Susan",
+    "Bride surname": "TAYLOR",
+    "File line number": "704"
+  },
+  "ambiguousPerson": true,
+  "ambiguousPersonArray": [
+    {
+      "name": "James MUSSET (groom)",
+      "id": "groom"
+    },
+    {
+      "name": "Susan TAYLOR (bride)",
+      "id": "bride"
+    }
+  ]
+}

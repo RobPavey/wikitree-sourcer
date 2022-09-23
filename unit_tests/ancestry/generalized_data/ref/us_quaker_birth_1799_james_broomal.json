@@ -1,0 +1,37 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "James Broomal"
+  },
+  "eventDate": {
+    "dateString": "18 Oct 1799"
+  },
+  "birthDate": {
+    "dateString": "18 Oct 1799"
+  },
+  "birthPlace": {
+    "placeString": "Chester, Pennsylvania"
+  },
+  "eventPlace": {
+    "placeString": "Chester, Pennsylvania"
+  },
+  "lastNameAtBirth": "Broomal",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Isaac Broomal"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Lydia Broomal"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2189"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Maria Bradbeer"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1915"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "John Edward Bradbeer"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "divorcerecords"
+  },
+  "hasValidData": true
+}

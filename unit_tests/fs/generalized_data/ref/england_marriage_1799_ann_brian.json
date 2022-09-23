@@ -1,0 +1,35 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Ann Brian"
+  },
+  "eventDate": {
+    "dateString": "1799",
+    "yearString": "1799"
+  },
+  "eventPlace": {
+    "placeString": "Great Casterton with Pickworth, Rutland, England, United Kingdom"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "John Skellet",
+        "lastName": "Skellet",
+        "forenames": "John"
+      },
+      "marriageDate": {
+        "dateString": "25 Dec 1799"
+      },
+      "marriagePlace": {
+        "placeString": "Great Casterton with Pickworth, Rutland, England, United Kingdom"
+      }
+    }
+  ],
+  "marriageDate": "25 Dec 1799",
+  "collectionData": {
+    "id": "2821293"
+  },
+  "hasValidData": true
+}

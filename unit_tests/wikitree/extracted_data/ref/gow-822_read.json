@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Winifred",
+  "prefNames": "",
+  "middleNames": "Agnes",
+  "lnab": "Gow",
+  "currentLastName": "Phillips",
+  "mothersMaidenName": "Holmes",
+  "birthDate": "19 Sep 1895",
+  "birthDateStatus": "none",
+  "deathDate": "1989",
+  "deathDateStatus": "none",
+  "birthLocation": "Greenock, Renfrewshire, Scotland, United Kingdom",
+  "deathLocation": "Edinburgh, Scotland, United Kingdom",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Phillips-42675",
+      "name": "Alexander Roy H Phillips",
+      "marriageString": "1923 in Greenock, Renfrewshire, Scotland, United Kingdom",
+      "marriageDate": "1923",
+      "marriagePlace": "Greenock, Renfrewshire, Scotland, United Kingdom"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Gow-822",
+  "currentTabText": "Winifred (Gow) Phillips's Profile",
+  "pageType": "read",
+  "wikiId": "Gow-822",
+  "name": "Winifred Agnes (Gow) Phillips",
+  "parents": {
+    "father": {
+      "wikiId": "Gow-821",
+      "name": "William Gow"
+    },
+    "mother": {
+      "wikiId": "Holmes-19780",
+      "name": "Jane (Holmes) Gow"
+    }
+  }
+}

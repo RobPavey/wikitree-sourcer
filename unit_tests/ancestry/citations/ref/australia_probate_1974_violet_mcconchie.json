@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>\nPublic Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>\n{{Ancestry Record|61315|462110}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Violet died on 12 October 1974 in Preston and their estate passed probate on 3 December 1974.<ref>\n'''Probate''':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>\nPublic Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>\n{{Ancestry Record|61315|462110}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Probate''': \"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>Public Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>{{Ancestry Record|61315|462110}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>\nPublic Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>\n{{Ancestry Record|61315|462110}} (accessed 6 May 2021)<br/>\nViolet A McConchie probate on 3 Dec 1974. Died 12 Oct 1974 in Preston. Occupation: Widow.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Violet died on 12 October 1974 in Preston and their estate passed probate on 3 December 1974.<ref>\n'''Probate''':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>\nPublic Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>\n{{Ancestry Record|61315|462110}} (accessed 6 May 2021)<br/>\nViolet A McConchie probate on 3 Dec 1974. Died 12 Oct 1974 in Preston. Occupation: Widow.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Probate''': \"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>Public Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>{{Ancestry Record|61315|462110}} (accessed 6 May 2021)<br/>Violet A McConchie probate on 3 Dec 1974. Died 12 Oct 1974 in Preston. Occupation: Widow.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>\nPublic Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>\n{{Ancestry Record|61315|462110}} (accessed 6 May 2021)<br/>\nName: Violet A McConchie; Death Date: 12 Oct 1974; Death Place: Preston; Occupation: Widow; Grant Date: 3 Dec 1974; Grant: LA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Violet died on 12 October 1974 in Preston and their estate passed probate on 3 December 1974.<ref>\n'''Probate''':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>\nPublic Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>\n{{Ancestry Record|61315|462110}} (accessed 6 May 2021)<br/>\nName: Violet A McConchie; Death Date: 12 Oct 1974; Death Place: Preston; Occupation: Widow; Grant Date: 3 Dec 1974; Grant: LA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Probate''': \"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>Public Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>{{Ancestry Record|61315|462110}} (accessed 6 May 2021)<br/>Name: Violet A McConchie; Death Date: 12 Oct 1974; Death Place: Preston; Occupation: Widow; Grant Date: 3 Dec 1974; Grant: LA.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>\nPublic Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>\n{{Ancestry Record|61315|462110}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Violet A McConchie\n|-\n| Death Date || 12 Oct 1974\n|-\n| Death Place || Preston\n|-\n| Occupation || Widow\n|-\n| Grant Date || 3 Dec 1974\n|-\n| Grant || LA\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Violet died on 12 October 1974 in Preston and their estate passed probate on 3 December 1974.<ref>\n'''Probate''':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>\nPublic Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>\n{{Ancestry Record|61315|462110}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Violet A McConchie\n|-\n| Death Date || 12 Oct 1974\n|-\n| Death Place || Preston\n|-\n| Occupation || Widow\n|-\n| Grant Date || 3 Dec 1974\n|-\n| Grant || LA\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Probate''': \"Victoria, Australia, Wills and Probate Records, 1841-2009\"<br/>Public Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591<br/>{{Ancestry Record|61315|462110}} (accessed 6 May 2021)<br/>Name: Violet A McConchie; Death Date: 12 Oct 1974; Death Place: Preston; Occupation: Widow; Grant Date: 3 Dec 1974; Grant: LA.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Victoria, Australia, Wills and Probate Records, 1841-2009,\" database, ({{Ancestry Record|61315|462110}} : accessed 6 May 2021), Violet A McConchie probate on 3 Dec 1974. Died 12 Oct 1974 in Preston. Occupation: Widow; citing Public Record Office Victoria, North Melbourne, Victoria, Victorian Wills, Probate and Administration Records 1841-1925, Series VPRS 7591.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Violet died on 12 October 1974 in Preston and their estate passed probate on 3 December 1974.<ref>\"Victoria, Australia, Wills and Probate Records, 1841-2009,\" database, ({{Ancestry Record|61315|462110}} : accessed 6 May 2021), Violet A McConchie probate on 3 Dec 1974. Died 12 Oct 1974 in Preston. Occupation: Widow; citing Public Record Office Victoria, North Melbourne, Victoria, Victorian Wills, Probate and Administration Records 1841-1925, Series VPRS 7591.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Victoria, Australia, Wills and Probate Records, 1841-2009,\" database, ({{Ancestry Record|61315|462110}} : accessed 6 May 2021), Violet A McConchie probate on 3 Dec 1974. Died 12 Oct 1974 in Preston. Occupation: Widow; citing Public Record Office Victoria, North Melbourne, Victoria, Victorian Wills, Probate and Administration Records 1841-1925, Series VPRS 7591.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Probate'':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\", database, \nPublic Record Office Victoria, North Melbourne, Victoria, Victorian Wills, Probate and Administration Records 1841-1925, Series VPRS 7591, \n({{Ancestry Record|61315|462110}} : accessed 6 May 2021), \nName: Violet A McConchie; Death Date: 12 Oct 1974; Death Place: Preston; Occupation: Widow; Grant Date: 3 Dec 1974; Grant: LA.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Violet died on 12 October 1974 in Preston and their estate passed probate on 3 December 1974.<ref>\n''Probate'':\n\"Victoria, Australia, Wills and Probate Records, 1841-2009\", database, \nPublic Record Office Victoria, North Melbourne, Victoria, Victorian Wills, Probate and Administration Records 1841-1925, Series VPRS 7591, \n({{Ancestry Record|61315|462110}} : accessed 6 May 2021), \nName: Violet A McConchie; Death Date: 12 Oct 1974; Death Place: Preston; Occupation: Widow; Grant Date: 3 Dec 1974; Grant: LA.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Probate'': \"Victoria, Australia, Wills and Probate Records, 1841-2009\", database, Public Record Office Victoria, North Melbourne, Victoria, Victorian Wills, Probate and Administration Records 1841-1925, Series VPRS 7591, ({{Ancestry Record|61315|462110}} : accessed 6 May 2021), Name: Violet A McConchie; Death Date: 12 Oct 1974; Death Place: Preston; Occupation: Widow; Grant Date: 3 Dec 1974; Grant: LA.",
+    "type": "source"
+  }
+}

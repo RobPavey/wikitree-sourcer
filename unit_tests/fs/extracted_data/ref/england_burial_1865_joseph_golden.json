@@ -1,0 +1,37 @@
+{
+  "recordData": {
+    "Name": "Joseph Golden",
+    "Burial Date": "21 Jul 1865",
+    "Burial Place": "Minstead, Hampshire, England, United Kingdom",
+    "Birth Date": "1829",
+    "Age": "36",
+    "Id": "651505",
+    "Event Place Sup": "Minstead,Hampshire,England, Parish Church of Minstead, Minstead, Hampshire, England",
+    "Event Place Year Range": "1781-1867"
+  },
+  "fullName": "Joseph Golden",
+  "givenName": "Joseph",
+  "surname": "Golden",
+  "factType": "Burial",
+  "eventDateOriginal": "21 Jul 1865",
+  "eventDate": "21 Jul 1865",
+  "eventYear": "1865",
+  "eventPlaceOriginal": "Minstead, Hampshire, England, United Kingdom",
+  "eventPlace": "Minstead, Hampshire, England, United Kingdom",
+  "birthDateOriginal": "1829",
+  "birthYear": "1829",
+  "age": "36",
+  "fsCollectionId": "2640059",
+  "referenceData": {
+    "digitalFilmNumber": "007455885",
+    "filmNumber": "001596211"
+  },
+  "fsImageNumber": "00090",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3QSQ-G9ZW-BHCK",
+  "collectionTitle": "England, Hampshire Bishop's Transcripts 1680-1892",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7",
+  "citation": "\"England, Hampshire Bishop's Transcripts 1680-1892,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QLYW-5F4G : 16 March 2018), Joseph Golden, 21 Jul 1865; citing Burial, Minstead, Hampshire, England, United Kingdom, Lancashire Record Office and Hampshire Record Office, United Kingdom.",
+  "sourceTitleForPerson": "Joseph Golden, \"England, Hampshire Bishop's Transcripts 1680-1892\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QLYW-5F4G",
+  "pageType": "record"
+}

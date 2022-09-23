@@ -1,0 +1,19 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Cecil Henry Druce"
+  },
+  "deathDate": {
+    "dateString": "7 Sep 1916"
+  },
+  "serviceNumber": "21816",
+  "rank": "Pte",
+  "unit": "Royal Irish Fusiliers",
+  "nextOfKin": "Cecil Henry. Druce.<br/>Rosina Salmon Mother",
+  "collectionData": {
+    "id": "61588"
+  },
+  "hasValidData": true
+}

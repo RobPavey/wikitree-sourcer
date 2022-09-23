@@ -1,0 +1,25 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61648&h=250322&clickref=1011lvVHaKEk%2C1011lvVHaKEk&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
+  "pageType": "record",
+  "dbId": "61648",
+  "recordId": "250322",
+  "ancestryTemplate": "{{Ancestry Record|61648|250322}}",
+  "domain": "com",
+  "titleName": "Alice Lloyd",
+  "titleCollection": "Victoria, Australia, Birth Index, 1837-1917",
+  "recordData": {
+    "Name": "Alice Lloyd",
+    "Birth Registration Date": "1885",
+    "Birth Registration Place": "Victoria, Australia",
+    "Father": "Thomas William Lloyd",
+    "Mother Maiden Name": "Folkes",
+    "Reference Number": "4275"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=VictoriaBirthRecords&indiv=try&h=15250322"
+  },
+  "sourceCitation": "The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records",
+  "sourceInformation": "Ancestry.com. Victoria, Australia, Birth Index, 1837-1917 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2018. Original data: Victoria, Australia, Birth Index, 1837-1917. The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia.",
+  "originalData": "Victoria, Australia, Birth Index, 1837-1917. The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia.",
+  "sourceDescription": "This collection contains a birth index for the Australian state of Victoria. Learn more..."
+}

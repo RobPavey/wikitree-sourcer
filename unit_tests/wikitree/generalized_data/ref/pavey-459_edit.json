@@ -1,0 +1,66 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Ralph",
+    "middleNames": "Edgar",
+    "prefNames": "Ralph",
+    "lastName": "Pavey"
+  },
+  "lastNameAtBirth": "Pavey",
+  "lastNameAtDeath": "Pavey",
+  "mothersMaidenName": "Littlemore",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "9 Jul 1891",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "8 Sep 1958",
+    "qualifier": 1
+  },
+  "birthPlace": {
+    "placeString": "Kentish Town, London, England, United Kingdom"
+  },
+  "deathPlace": {
+    "placeString": "Marylebone, Middlesex, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Harry Alfred Pavey",
+        "lastName": "Pavey",
+        "forenames": "Harry Alfred"
+      },
+      "lastNameAtBirth": "Pavey",
+      "lastNameAtDeath": "Pavey"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Amelia Elizabeth",
+        "lastName": "Littlemore",
+        "name": "Amelia Elizabeth Littlemore"
+      },
+      "lastNameAtBirth": "Littlemore",
+      "lastNameAtDeath": "Pavey"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Elsie Sarah",
+        "lastName": "Chambers",
+        "name": "Elsie Sarah Chambers"
+      },
+      "lastNameAtBirth": "Chambers",
+      "lastNameAtDeath": "Pavey",
+      "marriageDate": {
+        "dateString": "Sep 1944"
+      },
+      "marriagePlace": {
+        "placeString": "Hendon, Middlesex"
+      }
+    }
+  ],
+  "hasValidData": true
+}

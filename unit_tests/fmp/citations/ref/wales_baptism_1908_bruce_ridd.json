@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Glamorganshire Baptisms\"<br/>\nPage: 189<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Bruce, child of James & Sarah Jane, was born on 3 December 1907 and baptised on 22 January 1908 in Swansea, St Mark, Glamorganshire, Wales.<ref>\n'''Baptism''':\n\"Glamorganshire Baptisms\"<br/>\nPage: 189<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"Glamorganshire Baptisms\"<br/>Page: 189<br/>[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Glamorganshire Baptisms\"<br/>\nPage: 189<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nBruce Charles Ridd baptism on 22 Jan 1908 (born 3 Dec 1907), child of James & Sarah Jane, in Swansea, St Mark, Glamorganshire, Wales.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Bruce, child of James & Sarah Jane, was born on 3 December 1907 and baptised on 22 January 1908 in Swansea, St Mark, Glamorganshire, Wales.<ref>\n'''Baptism''':\n\"Glamorganshire Baptisms\"<br/>\nPage: 189<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nBruce Charles Ridd baptism on 22 Jan 1908 (born 3 Dec 1907), child of James & Sarah Jane, in Swansea, St Mark, Glamorganshire, Wales.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"Glamorganshire Baptisms\"<br/>Page: 189<br/>[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)<br/>Bruce Charles Ridd baptism on 22 Jan 1908 (born 3 Dec 1907), child of James & Sarah Jane, in Swansea, St Mark, Glamorganshire, Wales.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Glamorganshire Baptisms\"<br/>\nPage: 189<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Bruce Charles; Last name: Ridd; Birth date: 03 Dec 1907; Baptism date: 22 Jan 1908; Place: Swansea, St Mark; County: Glamorganshire; Country: Wales; Father's first name(s): James; Mother's first name(s): Sarah Jane.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Bruce, child of James & Sarah Jane, was born on 3 December 1907 and baptised on 22 January 1908 in Swansea, St Mark, Glamorganshire, Wales.<ref>\n'''Baptism''':\n\"Glamorganshire Baptisms\"<br/>\nPage: 189<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Bruce Charles; Last name: Ridd; Birth date: 03 Dec 1907; Baptism date: 22 Jan 1908; Place: Swansea, St Mark; County: Glamorganshire; Country: Wales; Father's first name(s): James; Mother's first name(s): Sarah Jane.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"Glamorganshire Baptisms\"<br/>Page: 189<br/>[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Bruce Charles; Last name: Ridd; Birth date: 03 Dec 1907; Baptism date: 22 Jan 1908; Place: Swansea, St Mark; County: Glamorganshire; Country: Wales; Father's first name(s): James; Mother's first name(s): Sarah Jane.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Glamorganshire Baptisms\"<br/>\nPage: 189<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Bruce Charles\n|-\n| Last name || Ridd\n|-\n| Birth date || 03 Dec 1907\n|-\n| Baptism date || 22 Jan 1908\n|-\n| Place || Swansea, St Mark\n|-\n| County || Glamorganshire\n|-\n| Country || Wales\n|-\n| Father's first name(s) || James\n|-\n| Mother's first name(s) || Sarah Jane\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Bruce, child of James & Sarah Jane, was born on 3 December 1907 and baptised on 22 January 1908 in Swansea, St Mark, Glamorganshire, Wales.<ref>\n'''Baptism''':\n\"Glamorganshire Baptisms\"<br/>\nPage: 189<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Bruce Charles\n|-\n| Last name || Ridd\n|-\n| Birth date || 03 Dec 1907\n|-\n| Baptism date || 22 Jan 1908\n|-\n| Place || Swansea, St Mark\n|-\n| County || Glamorganshire\n|-\n| Country || Wales\n|-\n| Father's first name(s) || James\n|-\n| Mother's first name(s) || Sarah Jane\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"Glamorganshire Baptisms\"<br/>Page: 189<br/>[https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Image] - [https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Bruce Charles; Last name: Ridd; Birth date: 03 Dec 1907; Baptism date: 22 Jan 1908; Place: Swansea, St Mark; County: Glamorganshire; Country: Wales; Father's first name(s): James; Mother's first name(s): Sarah Jane.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Elizabeth",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Ellacott",
+  "currentLastName": "Pavey",
+  "mothersMaidenName": "Lidstone",
+  "birthDate": "8 Jan 1808",
+  "birthDateStatus": "before",
+  "deathDate": "2 Sep 1885",
+  "deathDateStatus": "none",
+  "birthLocation": "Plymouth, Devon, England",
+  "deathLocation": "Camberwell, London",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Pavey-343",
+      "name": "William Henry Pavey",
+      "marriageString": "7 Oct 1829 in Maker, Devon, England, United Kingdom",
+      "marriageDate": "7 Oct 1829",
+      "marriagePlace": "Maker, Devon, England, United Kingdom"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Ellacott-59",
+  "currentTabText": "Elizabeth (Ellacott) Pavey's Profile",
+  "pageType": "read",
+  "wikiId": "Ellacott-59",
+  "name": "Elizabeth (Ellacott) Pavey",
+  "parents": {
+    "father": {
+      "wikiId": "Ellacott-73",
+      "name": "William Ellacott"
+    },
+    "mother": {
+      "wikiId": "Lidstone-236",
+      "name": "Jemima (Lidstone) Ellacott"
+    }
+  }
+}

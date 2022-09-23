@@ -1,0 +1,122 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "William Huffstetler"
+  },
+  "birthDate": {
+    "dateString": "1897",
+    "yearString": "1897"
+  },
+  "birthPlace": {
+    "placeString": "Texas"
+  },
+  "eventDate": {
+    "dateString": "1940"
+  },
+  "eventPlace": {
+    "placeString": "Justice Precinct 1, San Saba, Texas, United States"
+  },
+  "ageAtEvent": "43",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William Huffstetler",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "43",
+      "birthYear": "1897",
+      "birthPlace": "Texas",
+      "isSelected": true
+    },
+    {
+      "name": "Georgia Huffstetler",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "42",
+      "birthYear": "1898",
+      "birthPlace": "Texas"
+    },
+    {
+      "name": "Zola Huffstetler",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "16",
+      "birthYear": "1924",
+      "birthPlace": "Texas"
+    },
+    {
+      "name": "Quincy Huffstetler",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "14",
+      "birthYear": "1926",
+      "birthPlace": "Texas"
+    },
+    {
+      "name": "Bettie Joe Huffstetler",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "6",
+      "birthYear": "1934",
+      "birthPlace": "Texas"
+    },
+    {
+      "name": "Billie Jean Huffstetler",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "6",
+      "birthYear": "1934",
+      "birthPlace": "Texas"
+    },
+    {
+      "name": "Garland Davis",
+      "relationship": "stepson",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "19",
+      "birthYear": "1921",
+      "birthPlace": "Texas"
+    },
+    {
+      "name": "Reed Davis",
+      "relationship": "stepson",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "10",
+      "birthYear": "1930",
+      "birthPlace": "Texas"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "spouses": [
+    {
+      "name": {
+        "name": "Georgia Huffstetler"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "2000219"
+  },
+  "hasValidData": true
+}

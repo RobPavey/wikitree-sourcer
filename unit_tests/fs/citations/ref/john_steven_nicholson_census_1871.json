@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson in entry for William Nicholson, 1871.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson in entry for William Nicholson, 1871.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>John Steven Nicholson in entry for William Nicholson, 1871.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson (0) son in household of William Nicholson (40) in Warrington, Lancashire, England, United Kingdom. Born in Warrington, Lancashire.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson (0) son in household of William Nicholson (40) in Warrington, Lancashire, England, United Kingdom. Born in Warrington, Lancashire.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>John Steven Nicholson (0) son in household of William Nicholson (40) in Warrington, Lancashire, England, United Kingdom. Born in Warrington, Lancashire.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nName: John Steven Nicholson; Census Date: 1871; Census Place: Warrington, Lancashire, England, United Kingdom; Birth Place: Warrington, Lancashire; Age: 0; Relationship To Head: Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nName: John Steven Nicholson; Census Date: 1871; Census Place: Warrington, Lancashire, England, United Kingdom; Birth Place: Warrington, Lancashire; Age: 0; Relationship To Head: Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>Name: John Steven Nicholson; Census Date: 1871; Census Place: Warrington, Lancashire, England, United Kingdom; Birth Place: Warrington, Lancashire; Age: 0; Relationship To Head: Son.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)\n{| border=\"1\"\n| Name || John Steven Nicholson\n|-\n| Census Date || 1871\n|-\n| Census Place || Warrington, Lancashire, England, United Kingdom\n|-\n| Birth Place || Warrington, Lancashire\n|-\n| Age || 0\n|-\n| Relationship To Head || Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)\n{| border=\"1\"\n| Name || John Steven Nicholson\n|-\n| Census Date || 1871\n|-\n| Census Place || Warrington, Lancashire, England, United Kingdom\n|-\n| Birth Place || Warrington, Lancashire\n|-\n| Age || 0\n|-\n| Relationship To Head || Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>Name: John Steven Nicholson; Census Date: 1871; Census Place: Warrington, Lancashire, England, United Kingdom; Birth Place: Warrington, Lancashire; Age: 0; Relationship To Head: Son.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson in entry for William Nicholson, 1871.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson in entry for William Nicholson, 1871.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>John Steven Nicholson in entry for William Nicholson, 1871.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required).",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson (0) son in household of William Nicholson (40) in Warrington, Lancashire, England, United Kingdom. Born in Warrington, Lancashire.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson (0) son in household of William Nicholson (40) in Warrington, Lancashire, England, United Kingdom. Born in Warrington, Lancashire.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>John Steven Nicholson (0) son in household of William Nicholson (40) in Warrington, Lancashire, England, United Kingdom. Born in Warrington, Lancashire.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson in entry for William Nicholson, 1871.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>\nJohn Steven Nicholson in entry for William Nicholson, 1871.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBC/1871/3907/0156 FindMyPast Image] (subscription required)<br/>John Steven Nicholson in entry for William Nicholson, 1871.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Moore",
+    "forenames": "John"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Fareham, Hampshire, England"
+  },
+  "eventDate": {
+    "dateString": "09 Jun 1870",
+    "yearString": "1870"
+  },
+  "birthDate": {
+    "yearString": "1811"
+  },
+  "deathDate": {
+    "yearString": "1870"
+  },
+  "ageAtDeath": "59",
+  "lastNameAtDeath": "Moore",
+  "collectionData": {
+    "id": "Hampshire, Portsmouth Burials"
+  },
+  "hasValidData": true
+}

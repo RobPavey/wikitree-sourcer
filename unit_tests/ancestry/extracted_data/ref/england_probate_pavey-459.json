@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/17893479:1904",
+  "pageType": "record",
+  "dbId": "1904",
+  "recordId": "17893479",
+  "ancestryTemplate": "{{Ancestry Record|1904|17893479}}",
+  "domain": "com",
+  "titleName": "Ralph Edgar Pavey",
+  "titleCollection": "England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995",
+  "recordData": {
+    "Name": "Ralph Edgar Pavey",
+    "Death Date": "8 Sep 1958",
+    "Death Place": "London, England",
+    "Probate Date": "13 Oct 1958",
+    "Probate Registry": "London, England"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1904/images/32858_605905_2357-00211?pid=17893479&usePUB=true&usePUBJs=true",
+  "imageDbId": "1904",
+  "imageRecordId": "32858_605905_2357-00211",
+  "sourceInformation": "Ancestry.com. England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England. London, England © Crown copyright.",
+  "originalData": "Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England. London, England © Crown copyright.",
+  "sourceDescription": "This is a directory of probates for England and Wales. Volumes in this collection cover years 1858 to 1995. Learn more..."
+}

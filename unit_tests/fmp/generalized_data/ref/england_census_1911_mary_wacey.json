@@ -1,0 +1,108 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Wacey",
+    "forenames": "Mary Ann"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Bircham Tofts, Norfolk, England",
+    "streetAddress": "Bircham Tofts"
+  },
+  "registrationDistrict": "Docking",
+  "birthDate": {
+    "yearString": "1851",
+    "qualifier": 2
+  },
+  "ageAtEvent": "60",
+  "birthPlace": {
+    "placeString": "Lexham Norfolk"
+  },
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "John Matthew Wacey",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "55",
+      "birthYear": "1856",
+      "occupation": "Praction engine driver",
+      "birthPlace": "Gt Bircham Norfolk"
+    },
+    {
+      "isSelected": true,
+      "name": "Mary Ann Wacey",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "60",
+      "birthYear": "1851",
+      "birthPlace": "Lexham Norfolk"
+    },
+    {
+      "name": "John Henry Wacey",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "25",
+      "birthYear": "1886",
+      "occupation": "Coal carter",
+      "birthPlace": "Bircham Tofts Norfolk"
+    },
+    {
+      "name": "Eva Wacey",
+      "relationship": "niece",
+      "gender": "female",
+      "age": "8",
+      "birthYear": "1903",
+      "birthPlace": "Bircham Tofts Norfolk"
+    },
+    {
+      "name": "Ann Gage",
+      "relationship": "boarder",
+      "maritalStatus": "widowed",
+      "gender": "female",
+      "age": "91",
+      "birthYear": "1820",
+      "occupation": "Pensioner old age",
+      "birthPlace": "Bircham Tofts Norfolk"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "John Matthew Wacey"
+      },
+      "marriageDate": {
+        "yearString": "1888"
+      },
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1911 Census For England & Wales",
+    "archiveSeries": "RG14",
+    "districtNumber": "234",
+    "piece": "11601",
+    "schedule": "49"
+  },
+  "hasValidData": true
+}

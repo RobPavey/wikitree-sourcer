@@ -1,0 +1,28 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William Saville"
+  },
+  "birthDate": {
+    "qualifier": 4,
+    "dateString": "1995"
+  },
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "personGender": "male",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Mark Powis Saville"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Fiona L Kirby"
+      }
+    }
+  },
+  "hasValidData": true
+}

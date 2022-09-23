@@ -1,0 +1,80 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Harold",
+    "middleNames": "Edington",
+    "lastName": "Dickens"
+  },
+  "lastNameAtBirth": "Dickens",
+  "lastNameAtDeath": "Dickens",
+  "mothersMaidenName": "Maggs",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "23 Sep 1893",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "4 Oct 1985",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Pill, Somerset, England, United Kingdom"
+  },
+  "deathPlace": {
+    "placeString": "Bury St Edmunds, Suffolk, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John William Edington Dickens",
+        "lastName": "Dickens",
+        "forenames": "John William Edington"
+      },
+      "lastNameAtBirth": "Dickens",
+      "lastNameAtDeath": "Dickens"
+    },
+    "mother": {
+      "name": {
+        "name": "Rebecca Maggs",
+        "lastName": "Maggs",
+        "forenames": "Rebecca"
+      },
+      "lastNameAtBirth": "Maggs",
+      "lastNameAtDeath": "Maggs"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Louisa Annie Black",
+        "lastName": "Black",
+        "forenames": "Louisa Annie"
+      },
+      "lastNameAtBirth": "Black",
+      "lastNameAtDeath": "Black",
+      "marriageDate": {
+        "dateString": "21 Sep 1922"
+      },
+      "marriagePlace": {
+        "placeString": "Murree, Bengal, India"
+      }
+    },
+    {
+      "name": {
+        "name": "Margaret Lea Taylor",
+        "lastName": "Taylor",
+        "forenames": "Margaret Lea"
+      },
+      "lastNameAtBirth": "Taylor",
+      "lastNameAtDeath": "Taylor",
+      "marriageDate": {
+        "dateString": "10 Sep 1955"
+      },
+      "marriagePlace": {
+        "placeString": "Loughborough, Leicestershire"
+      }
+    }
+  ],
+  "hasValidData": true
+}

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1861 census John (age 3) was the son of Susanha Lago in Bromley St Leonard, Middlesex, England.<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1861 Census''': \"1861 England Census\"<br/>Class: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)<br/>\nJohn Lago (3) son in household of Susanha Lago (28) in Bromley St Leonard in Poplar registration district in Middlesex, England. Born in Bromley, Middlesex, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1861 census John (age 3) was the son of Susanha Lago in Bromley St Leonard, Middlesex, England.<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)<br/>\nJohn Lago (3) son in household of Susanha Lago (28) in Bromley St Leonard in Poplar registration district in Middlesex, England. Born in Bromley, Middlesex, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1861 Census''': \"1861 England Census\"<br/>Class: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)<br/>John Lago (3) son in household of Susanha Lago (28) in Bromley St Leonard in Poplar registration district in Middlesex, England. Born in Bromley, Middlesex, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)<br/>\nName: John Lago [Jago]; Age: 3; Estimated Birth Year: 1858; Relation: Son; Mother's Name: Susanha Lago; Gender: Male; Where born: Bromley, Middlesex, England; Civil parish: Bromley St Leonard; County/Island: Middlesex; Country: England; Registration district: Poplar; Sub-registration district: Bow; <br/>Household Members Age Relationship:<br/>Susanha Lago 28 Wife<br/>Emma Lago 5 Daughter<br/>John Lago 3 Son<br/>Waller Lago 3/12 Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1861 census John (age 3) was the son of Susanha Lago in Bromley St Leonard, Middlesex, England.<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)<br/>\nName: John Lago [Jago]; Age: 3; Estimated Birth Year: 1858; Relation: Son; Mother's Name: Susanha Lago; Gender: Male; Where born: Bromley, Middlesex, England; Civil parish: Bromley St Leonard; County/Island: Middlesex; Country: England; Registration district: Poplar; Sub-registration district: Bow; <br/>Household Members Age Relationship:<br/>Susanha Lago 28 Wife<br/>Emma Lago 5 Daughter<br/>John Lago 3 Son<br/>Waller Lago 3/12 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1861 Census''': \"1861 England Census\"<br/>Class: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)<br/>Name: John Lago [Jago]; Age: 3; Estimated Birth Year: 1858; Relation: Son; Mother's Name: Susanha Lago; Gender: Male; Where born: Bromley, Middlesex, England; Civil parish: Bromley St Leonard; County/Island: Middlesex; Country: England; Registration district: Poplar; Sub-registration district: Bow; <br/>Household Members Age Relationship:<br/>Susanha Lago 28 Wife<br/>Emma Lago 5 Daughter<br/>John Lago 3 Son<br/>Waller Lago 3/12 Son.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Lago [Jago]\n|-\n| Age || 3\n|-\n| Estimated Birth Year || 1858\n|-\n| Relation || Son\n|-\n| Mother's Name || Susanha Lago\n|-\n| Gender || Male\n|-\n| Where born || Bromley, Middlesex, England\n|-\n| Civil parish || Bromley St Leonard\n|-\n| County/Island || Middlesex\n|-\n| Country || England\n|-\n| Registration district || Poplar\n|-\n| Sub-registration district || Bow\n|-\n| Household Members<br/>Age<br/>Relationship || Susanha Lago 28 Wife<br/>Emma Lago 5 Daughter<br/>John Lago 3 Son<br/>Waller Lago 3/12 Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1861 census John (age 3) was the son of Susanha Lago in Bromley St Leonard, Middlesex, England.<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Lago [Jago]\n|-\n| Age || 3\n|-\n| Estimated Birth Year || 1858\n|-\n| Relation || Son\n|-\n| Mother's Name || Susanha Lago\n|-\n| Gender || Male\n|-\n| Where born || Bromley, Middlesex, England\n|-\n| Civil parish || Bromley St Leonard\n|-\n| County/Island || Middlesex\n|-\n| Country || England\n|-\n| Registration district || Poplar\n|-\n| Sub-registration district || Bow\n|-\n| Household Members<br/>Age<br/>Relationship || Susanha Lago 28 Wife<br/>Emma Lago 5 Daughter<br/>John Lago 3 Son<br/>Waller Lago 3/12 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1861 Census''': \"1861 England Census\"<br/>Class: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)<br/>Name: John Lago [Jago]; Age: 3; Estimated Birth Year: 1858; Relation: Son; Mother's Name: Susanha Lago; Gender: Male; Where born: Bromley, Middlesex, England; Civil parish: Bromley St Leonard; County/Island: Middlesex; Country: England; Registration district: Poplar; Sub-registration district: Bow; <br/>Household Members Age Relationship:<br/>Susanha Lago 28 Wife<br/>Emma Lago 5 Daughter<br/>John Lago 3 Son<br/>Waller Lago 3/12 Son.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1861 England Census,\" database, ({{Ancestry Record|8767|5941797}} : accessed 6 May 2021), John Lago (3) son in household of Susanha Lago (28) in Bromley St Leonard in Poplar registration district in Middlesex, England. Born in Bromley, Middlesex, England; citing Class RG 9, Piece 300, Folio 96, Page 37, GSU roll 542610, ED, institution, or vessel 4, Household schedule number 32.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1861 census John (age 3) was the son of Susanha Lago in Bromley St Leonard, Middlesex, England.<ref>\"1861 England Census,\" database, ({{Ancestry Record|8767|5941797}} : accessed 6 May 2021), John Lago (3) son in household of Susanha Lago (28) in Bromley St Leonard in Poplar registration district in Middlesex, England. Born in Bromley, Middlesex, England; citing Class RG 9, Piece 300, Folio 96, Page 37, GSU roll 542610, ED, institution, or vessel 4, Household schedule number 32.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1861 England Census,\" database, ({{Ancestry Record|8767|5941797}} : accessed 6 May 2021), John Lago (3) son in household of Susanha Lago (28) in Bromley St Leonard in Poplar registration district in Middlesex, England. Born in Bromley, Middlesex, England; citing Class RG 9, Piece 300, Folio 96, Page 37, GSU roll 542610, ED, institution, or vessel 4, Household schedule number 32.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1861 Census'':\n\"1861 England Census\", database, \nClass RG 9, Piece 300, Folio 96, Page 37, GSU roll 542610, ED, institution, or vessel 4, Household schedule number 32, \n({{Ancestry Record|8767|5941797}} : accessed 6 May 2021), \nName: John Lago [Jago]; Age: 3; Estimated Birth Year: 1858; Relation: Son; Mother's Name: Susanha Lago; Gender: Male; Where born: Bromley, Middlesex, England; Civil parish: Bromley St Leonard; County/Island: Middlesex; Country: England; Registration district: Poplar; Sub-registration district: Bow; Household Members Age Relationship: Susanha Lago 28 Wife, Emma Lago 5 Daughter, John Lago 3 Son, Waller Lago 3/12 Son.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1861 census John (age 3) was the son of Susanha Lago in Bromley St Leonard, Middlesex, England.<ref>\n''1861 Census'':\n\"1861 England Census\", database, \nClass RG 9, Piece 300, Folio 96, Page 37, GSU roll 542610, ED, institution, or vessel 4, Household schedule number 32, \n({{Ancestry Record|8767|5941797}} : accessed 6 May 2021), \nName: John Lago [Jago]; Age: 3; Estimated Birth Year: 1858; Relation: Son; Mother's Name: Susanha Lago; Gender: Male; Where born: Bromley, Middlesex, England; Civil parish: Bromley St Leonard; County/Island: Middlesex; Country: England; Registration district: Poplar; Sub-registration district: Bow; Household Members Age Relationship: Susanha Lago 28 Wife, Emma Lago 5 Daughter, John Lago 3 Son, Waller Lago 3/12 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1861 Census'': \"1861 England Census\", database, Class RG 9, Piece 300, Folio 96, Page 37, GSU roll 542610, ED, institution, or vessel 4, Household schedule number 32, ({{Ancestry Record|8767|5941797}} : accessed 6 May 2021), Name: John Lago [Jago]; Age: 3; Estimated Birth Year: 1858; Relation: Son; Mother's Name: Susanha Lago; Gender: Male; Where born: Bromley, Middlesex, England; Civil parish: Bromley St Leonard; County/Island: Middlesex; Country: England; Registration district: Poplar; Sub-registration district: Bow; Household Members Age Relationship: Susanha Lago 28 Wife, Emma Lago 5 Daughter, John Lago 3 Son, Waller Lago 3/12 Son.",
+    "type": "source"
+  }
+}

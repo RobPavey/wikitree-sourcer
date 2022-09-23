@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Jacobus, son of Francisci Walker, was baptised on 31 July 1582 in Sheffield, Yorkshire, West Riding, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Yorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)<br/>\nJacobus Walker baptism on 31 Jul 1582, son of Francisci Walker, in Sheffield, Yorkshire, West Riding, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Jacobus, son of Francisci Walker, was baptised on 31 July 1582 in Sheffield, Yorkshire, West Riding, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)<br/>\nJacobus Walker baptism on 31 Jul 1582, son of Francisci Walker, in Sheffield, Yorkshire, West Riding, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Yorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)<br/>Jacobus Walker baptism on 31 Jul 1582, son of Francisci Walker, in Sheffield, Yorkshire, West Riding, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Yorkshire, West Riding; Place: Sheffield; Church name: St Peter and St Paul; Register type: Other Transcript; Baptism date: 31 Jul 1582; Person forename: Jacobus; Person sex: M; Father forename: Francisci; Father surname: WALKER; Transcribed by: John Hissett; Credit: Yorkshire Parish Register Society. Hunter Archaeological Society..\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Jacobus, son of Francisci Walker, was baptised on 31 July 1582 in Sheffield, Yorkshire, West Riding, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Yorkshire, West Riding; Place: Sheffield; Church name: St Peter and St Paul; Register type: Other Transcript; Baptism date: 31 Jul 1582; Person forename: Jacobus; Person sex: M; Father forename: Francisci; Father surname: WALKER; Transcribed by: John Hissett; Credit: Yorkshire Parish Register Society. Hunter Archaeological Society..\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Yorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)<br/>County: Yorkshire, West Riding; Place: Sheffield; Church name: St Peter and St Paul; Register type: Other Transcript; Baptism date: 31 Jul 1582; Person forename: Jacobus; Person sex: M; Father forename: Francisci; Father surname: WALKER; Transcribed by: John Hissett; Credit: Yorkshire Parish Register Society. Hunter Archaeological Society..",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Yorkshire, West Riding\n|-\n| Place || Sheffield\n|-\n| Church name || St Peter and St Paul\n|-\n| Register type || Other Transcript\n|-\n| Baptism date || 31 Jul 1582\n|-\n| Person forename || Jacobus\n|-\n| Person sex || M\n|-\n| Father forename || Francisci\n|-\n| Father surname || WALKER\n|-\n| Transcribed by || John Hissett\n|-\n| Credit || Yorkshire Parish Register Society. Hunter Archaeological Society.\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Jacobus, son of Francisci Walker, was baptised on 31 July 1582 in Sheffield, Yorkshire, West Riding, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Yorkshire, West Riding\n|-\n| Place || Sheffield\n|-\n| Church name || St Peter and St Paul\n|-\n| Register type || Other Transcript\n|-\n| Baptism date || 31 Jul 1582\n|-\n| Person forename || Jacobus\n|-\n| Person sex || M\n|-\n| Father forename || Francisci\n|-\n| Father surname || WALKER\n|-\n| Transcribed by || John Hissett\n|-\n| Credit || Yorkshire Parish Register Society. Hunter Archaeological Society.\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Yorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)<br/>County: Yorkshire, West Riding; Place: Sheffield; Church name: St Peter and St Paul; Register type: Other Transcript; Baptism date: 31 Jul 1582; Person forename: Jacobus; Person sex: M; Father forename: Francisci; Father surname: WALKER; Transcribed by: John Hissett; Credit: Yorkshire Parish Register Society. Hunter Archaeological Society..",
+    "type": "source"
+  }
+}

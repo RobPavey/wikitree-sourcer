@@ -1,0 +1,31 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=61195&h=75954&tid=&pid=&queryId=cfeed3144371c2b73aec117cb890838b&usePUB=true&_phsrc=XJK1014&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "61195",
+  "recordId": "75954",
+  "ancestryTemplate": "{{Ancestry Record|61195|75954}}",
+  "domain": "com",
+  "titleName": "Robert Best",
+  "titleCollection": "Connecticut, U.S., Federal Naturalization Records, 1790-1996",
+  "recordData": {
+    "Name": "Robert Best",
+    "Petition Age": "44",
+    "Record Type": "Petition",
+    "Birth Date": "30 Oct 1873",
+    "Birth Place": "Cape Broyle New Fonndland",
+    "Arrival Date": "22 Aug 1907",
+    "Arrival Place": "New York New York",
+    "Petition Date": "14 Sep 1918",
+    "Petition Place": "Waterbury, Connecticut, USA",
+    "Spouse": "Alice"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=NaraNatsConnecticut&indiv=try&h=900075954"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/61195/images/007765581_00402?pid=75954&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D61195%26h%3D75954%26tid%3D%26pid%3D%26queryId%3Dcfeed3144371c2b73aec117cb890838b%26usePUB%3Dtrue%26_phsrc%3DXJK1014%26_phstart%3DsuccessSource&treeid=&personid=&hintid=&queryId=cfeed3144371c2b73aec117cb890838b&usePUB=true&_phsrc=XJK1014&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "61195",
+  "imageRecordId": "007765581_00402",
+  "sourceCitation": "National Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21",
+  "sourceInformation": "Ancestry.com. Connecticut, U.S., Federal Naturalization Records, 1790-1996 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2016. Original data: Naturalization Records. National Archives at Boston, Waltham, Massachusetts. A full list of sources can be found here.",
+  "sourceDescription": "This database consists of naturalization records for Connecticut from U.S. District Courts. Learn more..."
+}

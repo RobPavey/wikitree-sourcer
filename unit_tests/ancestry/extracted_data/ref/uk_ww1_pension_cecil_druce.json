@@ -1,0 +1,25 @@
+{
+  "url": "https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv=1&db=61588&h=21143847",
+  "pageType": "record",
+  "dbId": "61588",
+  "recordId": "21143847",
+  "ancestryTemplate": "{{Ancestry Record|61588|21143847}}",
+  "domain": "co.uk",
+  "titleName": "Cecil Henry. Druce.",
+  "titleCollection": "UK, World War I Pension Ledgers and Index Cards, 1914-1923",
+  "recordData": {
+    "Name": "Cecil Henry. Druce.",
+    "Rank": "Pte",
+    "Record Type": "Card",
+    "Death Date": "7 Sep 1916",
+    "Service Number": "21816",
+    "Corps, Regiment or Unit": "Royal Irish Fusiliers",
+    "Title": "WWI Pension Record Cards and Ledgers",
+    "Description": "Other Ranks Died Driver A-Ducklers WH",
+    "Next of Kin": "Cecil Henry. Druce.<br/>Rosina Salmon Mother"
+  },
+  "sourceCitation": "Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC",
+  "sourceInformation": "Ancestry.com. UK, World War I Pension Ledgers and Index Cards, 1914-1923 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2018. Original data: World War One Pension Records, The Western Front Association, England.",
+  "originalData": "World War One Pension Records, The Western Front Association, England.",
+  "sourceDescription": "This collection comprises records of pensions for those who were injured or killed fighting in World War One. Details are provided for the soldiers themselves as well as widows and other dependents. Learn more..."
+}

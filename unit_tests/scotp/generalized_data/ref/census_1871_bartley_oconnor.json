@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "O'Connor",
+    "forenames": "Bartley"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "ageAtEvent": "28",
+  "registrationDistrict": "Shipping - Merchant Navy",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Shipping - Merchant Navy, Scotland"
+  },
+  "collectionData": {
+    "id": "census1871",
+    "registrationNumber": "903/S",
+    "enumerationDistrict": "1",
+    "page": "16"
+  },
+  "hasValidData": true
+}

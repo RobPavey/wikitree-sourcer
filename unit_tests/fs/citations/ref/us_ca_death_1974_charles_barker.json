@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker, 24 May 1974.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker, 24 May 1974.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>Charles F Barker, 24 May 1974.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker death 24 May 1974 (born 23 Feb 1901) in San Diego, California, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker death 24 May 1974 (born 23 Feb 1901) in San Diego, California, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>Charles F Barker death 24 May 1974 (born 23 Feb 1901) in San Diego, California, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nName: Charles F Barker; Death Date: 24 May 1974; Death Place: San Diego, California, United States; Birth Date: 23 Feb 1901; Birth Place: Nebraska; Event Type: Death; Original Name First: CHARLES; Original Name Middle: F.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nName: Charles F Barker; Death Date: 24 May 1974; Death Place: San Diego, California, United States; Birth Date: 23 Feb 1901; Birth Place: Nebraska; Event Type: Death; Original Name First: CHARLES; Original Name Middle: F.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>Name: Charles F Barker; Death Date: 24 May 1974; Death Place: San Diego, California, United States; Birth Date: 23 Feb 1901; Birth Place: Nebraska; Event Type: Death; Original Name First: CHARLES; Original Name Middle: F.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Charles F Barker\n|-\n| Death Date || 24 May 1974\n|-\n| Death Place || San Diego, California, United States\n|-\n| Birth Date || 23 Feb 1901\n|-\n| Birth Place || Nebraska\n|-\n| Event Type || Death\n|-\n| Original Name First || CHARLES\n|-\n| Original Name Middle || F\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Charles F Barker\n|-\n| Death Date || 24 May 1974\n|-\n| Death Place || San Diego, California, United States\n|-\n| Birth Date || 23 Feb 1901\n|-\n| Birth Place || Nebraska\n|-\n| Event Type || Death\n|-\n| Original Name First || CHARLES\n|-\n| Original Name Middle || F\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>Name: Charles F Barker; Death Date: 24 May 1974; Death Place: San Diego, California, United States; Birth Date: 23 Feb 1901; Birth Place: Nebraska; Event Type: Death; Original Name First: CHARLES; Original Name Middle: F.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker, 24 May 1974.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker, 24 May 1974.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>Charles F Barker, 24 May 1974.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker death 24 May 1974 (born 23 Feb 1901) in San Diego, California, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker death 24 May 1974 (born 23 Feb 1901) in San Diego, California, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>Charles F Barker death 24 May 1974 (born 23 Feb 1901) in San Diego, California, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker, 24 May 1974.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>\nCharles F Barker, 24 May 1974.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)<br/>Charles F Barker, 24 May 1974.",
+    "type": "source"
+  }
+}

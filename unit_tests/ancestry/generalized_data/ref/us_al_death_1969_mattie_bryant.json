@@ -1,0 +1,40 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Mattie W Bryant"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "12 Mar 1969"
+  },
+  "deathDate": {
+    "dateString": "12 Mar 1969"
+  },
+  "eventPlace": {
+    "placeString": "Birmingham, Jefferson, Alabama"
+  },
+  "lastNameAtDeath": "Bryant",
+  "ageAtDeath": "87",
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1882"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Elias Whiteside"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Sarah Oldham"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2543"
+  },
+  "hasValidData": true
+}

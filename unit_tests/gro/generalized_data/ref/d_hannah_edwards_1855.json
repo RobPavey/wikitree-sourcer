@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1855",
+    "quarter": 4
+  },
+  "name": {
+    "lastName": "Edwards",
+    "forenames": "Hannah"
+  },
+  "lastNameAtDeath": "Edwards",
+  "deathDate": {
+    "yearString": "1855",
+    "quarter": 4
+  },
+  "ageAtDeath": 47,
+  "personGender": "female",
+  "registrationDistrict": "Devizes in the County of Wilts",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "05A",
+    "page": "58"
+  },
+  "hasValidData": true
+}

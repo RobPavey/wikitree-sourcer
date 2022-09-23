@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "DeathOrBurial",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "Helen"
+  },
+  "eventDate": {
+    "dateString": "11 July 1842"
+  },
+  "causeOfDeath": "Rheumatic Fever",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Fife",
+    "placeString": "Dunfermline, Fife, Scotland",
+    "streetAddress": "St Margaret's United Secession"
+  },
+  "deathPlace": {
+    "country": "Scotland",
+    "county": "Fife",
+    "placeString": "Dunfermline, Fife, Scotland",
+    "streetAddress": "St Margaret's United Secession"
+  },
+  "hasValidData": true
+}

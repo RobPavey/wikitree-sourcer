@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"South Australia Births 1842-1928\"<br/>\nRegistration Number: 962/552<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Raymond, son of Henry James Stewart Barltrope & Beatrice Francis, was born on 22 July 1915 in Brompton, Hindmarsh, South Australia, Australia.<ref>\n'''Birth Registration''':\n\"South Australia Births 1842-1928\"<br/>\nRegistration Number: 962/552<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth Registration''': \"South Australia Births 1842-1928\"<br/>Registration Number: 962/552<br/>[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"South Australia Births 1842-1928\"<br/>\nRegistration Number: 962/552<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nRaymond Douglas Barltrope birth 22 Jul 1915 in Brompton, Hindmarsh, South Australia, Australia, son of Henry James Stewart Barltrope & Beatrice Francis.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Raymond, son of Henry James Stewart Barltrope & Beatrice Francis, was born on 22 July 1915 in Brompton, Hindmarsh, South Australia, Australia.<ref>\n'''Birth Registration''':\n\"South Australia Births 1842-1928\"<br/>\nRegistration Number: 962/552<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nRaymond Douglas Barltrope birth 22 Jul 1915 in Brompton, Hindmarsh, South Australia, Australia, son of Henry James Stewart Barltrope & Beatrice Francis.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth Registration''': \"South Australia Births 1842-1928\"<br/>Registration Number: 962/552<br/>[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)<br/>Raymond Douglas Barltrope birth 22 Jul 1915 in Brompton, Hindmarsh, South Australia, Australia, son of Henry James Stewart Barltrope & Beatrice Francis.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"South Australia Births 1842-1928\"<br/>\nRegistration Number: 962/552<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Raymond Douglas; Last name: Barltrope; Gender: Male; Birth date: 22 Jul 1915; Place: Brompton; District: Hindmarsh; State: South Australia; Country: Australia; Father's first name(s): Henry James Stewart; Father's last name: Barltrope; Mother's first name(s): Beatrice; Mother's last name: Francis; Registration number: 962/552.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Raymond, son of Henry James Stewart Barltrope & Beatrice Francis, was born on 22 July 1915 in Brompton, Hindmarsh, South Australia, Australia.<ref>\n'''Birth Registration''':\n\"South Australia Births 1842-1928\"<br/>\nRegistration Number: 962/552<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Raymond Douglas; Last name: Barltrope; Gender: Male; Birth date: 22 Jul 1915; Place: Brompton; District: Hindmarsh; State: South Australia; Country: Australia; Father's first name(s): Henry James Stewart; Father's last name: Barltrope; Mother's first name(s): Beatrice; Mother's last name: Francis; Registration number: 962/552.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth Registration''': \"South Australia Births 1842-1928\"<br/>Registration Number: 962/552<br/>[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Raymond Douglas; Last name: Barltrope; Gender: Male; Birth date: 22 Jul 1915; Place: Brompton; District: Hindmarsh; State: South Australia; Country: Australia; Father's first name(s): Henry James Stewart; Father's last name: Barltrope; Mother's first name(s): Beatrice; Mother's last name: Francis; Registration number: 962/552.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"South Australia Births 1842-1928\"<br/>\nRegistration Number: 962/552<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Raymond Douglas\n|-\n| Last name || Barltrope\n|-\n| Gender || Male\n|-\n| Birth date || 22 Jul 1915\n|-\n| Place || Brompton\n|-\n| District || Hindmarsh\n|-\n| State || South Australia\n|-\n| Country || Australia\n|-\n| Father's first name(s) || Henry James Stewart\n|-\n| Father's last name || Barltrope\n|-\n| Mother's first name(s) || Beatrice\n|-\n| Mother's last name || Francis\n|-\n| Registration number || 962/552\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Raymond, son of Henry James Stewart Barltrope & Beatrice Francis, was born on 22 July 1915 in Brompton, Hindmarsh, South Australia, Australia.<ref>\n'''Birth Registration''':\n\"South Australia Births 1842-1928\"<br/>\nRegistration Number: 962/552<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Raymond Douglas\n|-\n| Last name || Barltrope\n|-\n| Gender || Male\n|-\n| Birth date || 22 Jul 1915\n|-\n| Place || Brompton\n|-\n| District || Hindmarsh\n|-\n| State || South Australia\n|-\n| Country || Australia\n|-\n| Father's first name(s) || Henry James Stewart\n|-\n| Father's last name || Barltrope\n|-\n| Mother's first name(s) || Beatrice\n|-\n| Mother's last name || Francis\n|-\n| Registration number || 962/552\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth Registration''': \"South Australia Births 1842-1928\"<br/>Registration Number: 962/552<br/>[https://www.findmypast.co.uk/transcript?id=ANZ%2FAU%2FSA%2FBMD%2FB%2F0000594453 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Raymond Douglas; Last name: Barltrope; Gender: Male; Birth date: 22 Jul 1915; Place: Brompton; District: Hindmarsh; State: South Australia; Country: Australia; Father's first name(s): Henry James Stewart; Father's last name: Barltrope; Mother's first name(s): Beatrice; Mother's last name: Francis; Registration number: 962/552.",
+    "type": "source"
+  }
+}

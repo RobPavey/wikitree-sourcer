@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>\n{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1841 census Ann (age 23) was in Braunton, Devon, England.<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>\n{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1841 Census''': \"1841 England Census\"<br/>Class: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>\n{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)<br/>\nAnn Axland (23) in Braunton in Barnstaple registration district in Devon, England. Born in Devon, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1841 census Ann (age 23) was in Braunton, Devon, England.<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>\n{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)<br/>\nAnn Axland (23) in Braunton in Barnstaple registration district in Devon, England. Born in Devon, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1841 Census''': \"1841 England Census\"<br/>Class: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)<br/>Ann Axland (23) in Braunton in Barnstaple registration district in Devon, England. Born in Devon, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>\n{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)<br/>\nName: Ann Axland [Ann Ackland]; Age: 23; Estimated Birth Year: abt 1818; Gender: Female; Where born: Devon, England; Civil Parish: Braunton; Hundred: Braunton; County/Island: Devon; Country: England; Registration District: Barnstaple; Sub-registration District: Braunton; <br/>Household Members:<br/>Ann Axland 23.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1841 census Ann (age 23) was in Braunton, Devon, England.<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>\n{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)<br/>\nName: Ann Axland [Ann Ackland]; Age: 23; Estimated Birth Year: abt 1818; Gender: Female; Where born: Devon, England; Civil Parish: Braunton; Hundred: Braunton; County/Island: Devon; Country: England; Registration District: Barnstaple; Sub-registration District: Braunton; <br/>Household Members:<br/>Ann Axland 23.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1841 Census''': \"1841 England Census\"<br/>Class: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)<br/>Name: Ann Axland [Ann Ackland]; Age: 23; Estimated Birth Year: abt 1818; Gender: Female; Where born: Devon, England; Civil Parish: Braunton; Hundred: Braunton; County/Island: Devon; Country: England; Registration District: Barnstaple; Sub-registration District: Braunton; <br/>Household Members:<br/>Ann Axland 23.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>\n{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Ann Axland [Ann Ackland]\n|-\n| Age || 23\n|-\n| Estimated Birth Year || abt 1818\n|-\n| Gender || Female\n|-\n| Where born || Devon, England\n|-\n| Civil Parish || Braunton\n|-\n| Hundred || Braunton\n|-\n| County/Island || Devon\n|-\n| Country || England\n|-\n| Registration District || Barnstaple\n|-\n| Sub-registration District || Braunton\n|-\n| Household Members || Ann Axland 23\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1841 census Ann (age 23) was in Braunton, Devon, England.<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>\n{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Ann Axland [Ann Ackland]\n|-\n| Age || 23\n|-\n| Estimated Birth Year || abt 1818\n|-\n| Gender || Female\n|-\n| Where born || Devon, England\n|-\n| Civil Parish || Braunton\n|-\n| Hundred || Braunton\n|-\n| County/Island || Devon\n|-\n| Country || England\n|-\n| Registration District || Barnstaple\n|-\n| Sub-registration District || Braunton\n|-\n| Household Members || Ann Axland 23\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1841 Census''': \"1841 England Census\"<br/>Class: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303<br/>{{Ancestry Record|8978|16161242}} (accessed 6 May 2021)<br/>Name: Ann Axland [Ann Ackland]; Age: 23; Estimated Birth Year: abt 1818; Gender: Female; Where born: Devon, England; Civil Parish: Braunton; Hundred: Braunton; County/Island: Devon; Country: England; Registration District: Barnstaple; Sub-registration District: Braunton; <br/>Household Members:<br/>Ann Axland 23.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1841 England Census,\" database, ({{Ancestry Record|8978|16161242}} : accessed 6 May 2021), Ann Axland (23) in Braunton in Barnstaple registration district in Devon, England. Born in Devon, England; citing Class HO107, Piece 203, Book 21, Civil Parish Braunton, County Devon, Enumeration District 10, Folio 6, Page 6, Line 5, GSU roll 241303.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1841 census Ann (age 23) was in Braunton, Devon, England.<ref>\"1841 England Census,\" database, ({{Ancestry Record|8978|16161242}} : accessed 6 May 2021), Ann Axland (23) in Braunton in Barnstaple registration district in Devon, England. Born in Devon, England; citing Class HO107, Piece 203, Book 21, Civil Parish Braunton, County Devon, Enumeration District 10, Folio 6, Page 6, Line 5, GSU roll 241303.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1841 England Census,\" database, ({{Ancestry Record|8978|16161242}} : accessed 6 May 2021), Ann Axland (23) in Braunton in Barnstaple registration district in Devon, England. Born in Devon, England; citing Class HO107, Piece 203, Book 21, Civil Parish Braunton, County Devon, Enumeration District 10, Folio 6, Page 6, Line 5, GSU roll 241303.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1841 Census'':\n\"1841 England Census\", database, \nClass HO107, Piece 203, Book 21, Civil Parish Braunton, County Devon, Enumeration District 10, Folio 6, Page 6, Line 5, GSU roll 241303, \n({{Ancestry Record|8978|16161242}} : accessed 6 May 2021), \nName: Ann Axland [Ann Ackland]; Age: 23; Estimated Birth Year: abt 1818; Gender: Female; Where born: Devon, England; Civil Parish: Braunton; Hundred: Braunton; County/Island: Devon; Country: England; Registration District: Barnstaple; Sub-registration District: Braunton; Household Members: Ann Axland 23.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1841 census Ann (age 23) was in Braunton, Devon, England.<ref>\n''1841 Census'':\n\"1841 England Census\", database, \nClass HO107, Piece 203, Book 21, Civil Parish Braunton, County Devon, Enumeration District 10, Folio 6, Page 6, Line 5, GSU roll 241303, \n({{Ancestry Record|8978|16161242}} : accessed 6 May 2021), \nName: Ann Axland [Ann Ackland]; Age: 23; Estimated Birth Year: abt 1818; Gender: Female; Where born: Devon, England; Civil Parish: Braunton; Hundred: Braunton; County/Island: Devon; Country: England; Registration District: Barnstaple; Sub-registration District: Braunton; Household Members: Ann Axland 23.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1841 Census'': \"1841 England Census\", database, Class HO107, Piece 203, Book 21, Civil Parish Braunton, County Devon, Enumeration District 10, Folio 6, Page 6, Line 5, GSU roll 241303, ({{Ancestry Record|8978|16161242}} : accessed 6 May 2021), Name: Ann Axland [Ann Ackland]; Age: 23; Estimated Birth Year: abt 1818; Gender: Female; Where born: Devon, England; Civil Parish: Braunton; Hundred: Braunton; County/Island: Devon; Country: England; Registration District: Barnstaple; Sub-registration District: Braunton; Household Members: Ann Axland 23.",
+    "type": "source"
+  }
+}

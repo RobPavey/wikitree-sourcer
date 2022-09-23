@@ -1,0 +1,9 @@
+{
+  "sourceType": "record",
+  "recordType": "Tax",
+  "sourceOfData": "ancestry",
+  "collectionData": {
+    "id": "60104"
+  },
+  "hasValidData": true
+}

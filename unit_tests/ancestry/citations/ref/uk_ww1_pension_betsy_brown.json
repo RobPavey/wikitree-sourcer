@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>\n{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Betsy was in a military record in Ferryton Montrose. N. B.<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>\n{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Military''': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>\n{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)<br/>\nName: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Betsy was in a military record in Ferryton Montrose. N. B.<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>\n{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)<br/>\nName: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Military''': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)<br/>Name: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>\n{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)<br/>\nName: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Betsy was in a military record in Ferryton Montrose. N. B.<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>\n{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)<br/>\nName: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Military''': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)<br/>Name: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>\n{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Betsy Brown\n|-\n| Gender || Female\n|-\n| Birth Date || 21 Apr 1884\n|-\n| Residence Place || Ferryton Montrose. N. B\n|-\n| Relation to Soldier || Widow\n|-\n| Title || WWI Pension Record Cards and Ledgers\n|-\n| Description || Other Ranks Died Brown GO-Brown J\n|-\n| Next of Kin || James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Betsy was in a military record in Ferryton Montrose. N. B.<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>\n{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Betsy Brown\n|-\n| Gender || Female\n|-\n| Birth Date || 21 Apr 1884\n|-\n| Residence Place || Ferryton Montrose. N. B\n|-\n| Relation to Soldier || Widow\n|-\n| Title || WWI Pension Record Cards and Ledgers\n|-\n| Description || Other Ranks Died Brown GO-Brown J\n|-\n| Next of Kin || James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Military''': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO<br/>{{Ancestry Record|61588|111790356}} (accessed 6 May 2021)<br/>Name: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"UK, World War I Pension Ledgers and Index Cards, 1914-1923,\" database, ({{Ancestry Record|61588|111790356}} : accessed 6 May 2021), Name Betsy Brown, Gender Female, Birth Date 21 Apr 1884, Residence Place Ferryton Montrose. N. B, Relation to Soldier Widow, Title WWI Pension Record Cards and Ledgers, Description Other Ranks Died Brown GO-Brown J, Next of Kin James. Brown, Betsy Brown Widow, John B. Brown Child, Robert Stephen Brown Children, James McPherson Children; citing Western Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 031/0122/BRO-BRO.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Betsy was in a military record in Ferryton Montrose. N. B.<ref>\"UK, World War I Pension Ledgers and Index Cards, 1914-1923,\" database, ({{Ancestry Record|61588|111790356}} : accessed 6 May 2021), Name Betsy Brown, Gender Female, Birth Date 21 Apr 1884, Residence Place Ferryton Montrose. N. B, Relation to Soldier Widow, Title WWI Pension Record Cards and Ledgers, Description Other Ranks Died Brown GO-Brown J, Next of Kin James. Brown, Betsy Brown Widow, John B. Brown Child, Robert Stephen Brown Children, James McPherson Children; citing Western Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 031/0122/BRO-BRO.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"UK, World War I Pension Ledgers and Index Cards, 1914-1923,\" database, ({{Ancestry Record|61588|111790356}} : accessed 6 May 2021), Name Betsy Brown, Gender Female, Birth Date 21 Apr 1884, Residence Place Ferryton Montrose. N. B, Relation to Soldier Widow, Title WWI Pension Record Cards and Ledgers, Description Other Ranks Died Brown GO-Brown J, Next of Kin James. Brown, Betsy Brown Widow, John B. Brown Child, Robert Stephen Brown Children, James McPherson Children; citing Western Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 031/0122/BRO-BRO.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Military'':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\", database, \nWestern Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 031/0122/BRO-BRO, \n({{Ancestry Record|61588|111790356}} : accessed 6 May 2021), \nName: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown, Betsy Brown Widow, John B. Brown Child, Robert Stephen Brown Children, James McPherson Children.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Betsy was in a military record in Ferryton Montrose. N. B.<ref>\n''Military'':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\", database, \nWestern Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 031/0122/BRO-BRO, \n({{Ancestry Record|61588|111790356}} : accessed 6 May 2021), \nName: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown, Betsy Brown Widow, John B. Brown Child, Robert Stephen Brown Children, James McPherson Children.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Military'': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\", database, Western Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 031/0122/BRO-BRO, ({{Ancestry Record|61588|111790356}} : accessed 6 May 2021), Name: Betsy Brown; Gender: Female; Birth Date: 21 Apr 1884; Residence Place: Ferryton Montrose. N. B; Relation to Soldier: Widow; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Brown GO-Brown J; Next of Kin: James. Brown, Betsy Brown Widow, John B. Brown Child, Robert Stephen Brown Children, James McPherson Children.",
+    "type": "source"
+  }
+}

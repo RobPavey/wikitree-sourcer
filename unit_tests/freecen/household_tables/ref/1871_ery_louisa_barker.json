@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Hauston Barker || Head || Married || M || 26 || Ag Labourer || Acklam, Yorkshire\n|-\n| '''Louisa Barker''' || '''Wife''' || '''Married''' || '''F''' || '''21''' ||  || '''Stockton Forest, Yorkshire'''\n|-\n| Mary Barker || Daughter ||  || F || 1 ||  || Scoreby, Yorkshire\n|-\n| William Barker || Son ||  || M || 4m ||  || Scoreby, Yorkshire\n|}"
+  }
+}

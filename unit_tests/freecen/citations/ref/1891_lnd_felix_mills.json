@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1891 census Felix (age 37), Collectrparochialrates (employee), was the married head of household at 9 Courthope Road, St Pancras, Pancras, London (City), England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1891 Census''': \"1891 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)<br/>\nFelix Mills (37), married, Collectrparochialrates (employee), head of household at 9 Courthope Road, St Pancras in Pancras registration district in London, England. Born in Bury, Lancashire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1891 census Felix (age 37), Collectrparochialrates (employee), was the married head of household at 9 Courthope Road, St Pancras, Pancras, London (City), England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)<br/>\nFelix Mills (37), married, Collectrparochialrates (employee), head of household at 9 Courthope Road, St Pancras in Pancras registration district in London, England. Born in Bury, Lancashire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1891 Census''': \"1891 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)<br/>Felix Mills (37), married, Collectrparochialrates (employee), head of household at 9 Courthope Road, St Pancras in Pancras registration district in London, England. Born in Bury, Lancashire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1891; County: London (City) (LND); District: Pancras; Civil Parish: St Pancras; Ecclesiastical Parish: St Martin; Piece: 137; Enumeration District: 33; Folio: 143; Page: 14; Schedule: 104; House Number: 9; House or Street Name: Courthope Road.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1891 census Felix (age 37), Collectrparochialrates (employee), was the married head of household at 9 Courthope Road, St Pancras, Pancras, London (City), England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1891; County: London (City) (LND); District: Pancras; Civil Parish: St Pancras; Ecclesiastical Parish: St Martin; Piece: 137; Enumeration District: 33; Folio: 143; Page: 14; Schedule: 104; House Number: 9; House or Street Name: Courthope Road.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1891 Census''': \"1891 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1891; County: London (City) (LND); District: Pancras; Civil Parish: St Pancras; Ecclesiastical Parish: St Martin; Piece: 137; Enumeration District: 33; Folio: 143; Page: 14; Schedule: 104; House Number: 9; House or Street Name: Courthope Road.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1891\n|-\n| County || London (City) (LND)\n|-\n| District || Pancras\n|-\n| Civil Parish || St Pancras\n|-\n| Ecclesiastical Parish || St Martin\n|-\n| Piece || 137\n|-\n| Enumeration District || 33\n|-\n| Folio || 143\n|-\n| Page || 14\n|-\n| Schedule || 104\n|-\n| House Number || 9\n|-\n| House or Street Name || Courthope Road\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1891 census Felix (age 37), Collectrparochialrates (employee), was the married head of household at 9 Courthope Road, St Pancras, Pancras, London (City), England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1891\n|-\n| County || London (City) (LND)\n|-\n| District || Pancras\n|-\n| Civil Parish || St Pancras\n|-\n| Ecclesiastical Parish || St Martin\n|-\n| Piece || 137\n|-\n| Enumeration District || 33\n|-\n| Folio || 143\n|-\n| Page || 14\n|-\n| Schedule || 104\n|-\n| House Number || 9\n|-\n| House or Street Name || Courthope Road\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1891 Census''': \"1891 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1891; County: London (City) (LND); District: Pancras; Civil Parish: St Pancras; Ecclesiastical Parish: St Martin; Piece: 137; Enumeration District: 33; Folio: 143; Page: 14; Schedule: 104; House Number: 9; House or Street Name: Courthope Road.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Status || Sex || Birth Date || Occupation\n|-\n| John E G Day || Married || M || 11 Aug 1898 || Nevedone Labr (Heavy Worker)\n|-\n| '''Ellen Day''' || '''Married''' || '''F''' || '''10 Dec 1899''' || '''Unpaid Domestic Duties'''\n|- bgcolor=#d0d0d0\n| ''Closed Record'' ||  ||  ||  || \n|}"
+  }
+}

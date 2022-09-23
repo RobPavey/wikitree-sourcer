@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1071978:9841",
+  "pageType": "record",
+  "dbId": "9841",
+  "recordId": "1071978",
+  "ancestryTemplate": "{{Ancestry Record|9841|1071978}}",
+  "domain": "com",
+  "titleName": "Samuel Pavey",
+  "titleCollection": "England, Select Births and Christenings, 1538-1975",
+  "recordData": {
+    "Name": "Samuel Pavey",
+    "Gender": "Male",
+    "Spouse": "Jane",
+    "Child": "Leonard Pavey"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9841&h=1071977&indiv=try&viewrecord=1&r=an",
+    "Child": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9841&h=1071979&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceInformation": "Ancestry.com. England, Select Births and Christenings, 1538-1975 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: England, Births and Christenings, 1538-1975. Salt Lake City, Utah: FamilySearch, 2013.",
+  "originalData": "England, Births and Christenings, 1538-1975. Salt Lake City, Utah: FamilySearch, 2013.",
+  "sourceDescription": "This collection includes birth and christening records from England. Learn more..."
+}

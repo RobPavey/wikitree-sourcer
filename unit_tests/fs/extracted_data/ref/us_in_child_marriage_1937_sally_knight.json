@@ -1,0 +1,33 @@
+{
+  "recordData": {
+    "Name": "Sally Knight",
+    "Images Count": "1"
+  },
+  "fullName": "Sally Knight",
+  "givenName": "Sally",
+  "surname": "Knight",
+  "gender": "female",
+  "eventPlaceOriginal": "Wayne, Indiana, United States",
+  "eventPlace": "Wayne, Indiana, United States",
+  "eventPlaceL2": "Wayne",
+  "eventPlaceL1": "United States",
+  "relatedPersonFactType": "MarriageRegistration",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Ethel D Blackshear",
+  "relatedPersonGivenName": "Ethel D",
+  "relatedPersonSurname": "Blackshear",
+  "relatedPersonGender": "female",
+  "fsCollectionId": "1410397",
+  "referenceData": {
+    "digitalFilmNumber": "007030260",
+    "filmNumber": "001846503"
+  },
+  "fsImageNumber": "00470",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3QS7-897W-Z461",
+  "collectionTitle": "Indiana Marriages, 1811-2019",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:99QG-K3W7",
+  "citation": "\"Indiana Marriages, 1811-2019,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:27K9-9K9 : 18 October 2021), Sally Knight in entry for Oscar Johnson and Ethel D Blackshear, ; citing Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.",
+  "sourceTitleForPerson": "Sally Knight in entry for Oscar Johnson and Ethel D Blackshear, \"Indiana Marriages, 1811-2019\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:27K9-9K9",
+  "pageType": "record"
+}

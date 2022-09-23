@@ -1,0 +1,57 @@
+{
+  "recordData": {
+    "Name": "Virginia Reynolds Vigus",
+    "Death Date": "28 Aug 1959",
+    "Death Place": "Salt Lake City, Salt Lake, Utah, United States",
+    "Birth Date": "1923",
+    "Marital Status": "Married",
+    "Age": "36",
+    "Source Certificate Nbr": "59 18 1754"
+  },
+  "fullName": "Virginia Reynolds Vigus",
+  "givenName": "Virginia Reynolds",
+  "surname": "Vigus",
+  "gender": "female",
+  "factType": "Death",
+  "eventDateOriginal": "28 Aug 1959",
+  "eventDate": "28 Aug 1959",
+  "eventYear": "1959",
+  "eventPlaceOriginal": "Salt Lake City, Salt Lake, Utah, United States",
+  "eventPlace": "Salt Lake City, Salt Lake, Utah, United States",
+  "eventPlaceL3": "Salt Lake",
+  "eventPlaceL2": "Salt Lake",
+  "eventPlaceL1": "United States",
+  "deathDateOriginal": "28 Aug 1959",
+  "deathDate": "28 Aug 1959",
+  "deathYear": "1959",
+  "deathMonth": "Aug",
+  "birthDateOriginal": "1923",
+  "birthYear": "1923",
+  "age": "36",
+  "spouseFullName": "Raymond Vigus",
+  "spouseGivenName": "Raymond",
+  "spouseSurname": "Vigus",
+  "father": {
+    "fullName": "Ward W Reynolds",
+    "givenName": "Ward W",
+    "surname": "Reynolds"
+  },
+  "mother": {
+    "fullName": "Laverna Harris",
+    "givenName": "Laverna",
+    "surname": "Harris"
+  },
+  "fsCollectionId": "1747615",
+  "referenceData": {
+    "digitalFilmNumber": "101152037",
+    "filmNumber": "101152037"
+  },
+  "fsImageNumber": "00009",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-C9T2-WSNS-B",
+  "collectionTitle": "Utah Death Certificates, 1904-1965",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS",
+  "citation": "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKDV-CZRZ : 3 March 2021), Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm.",
+  "sourceTitleForPerson": "Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRZ",
+  "pageType": "record"
+}

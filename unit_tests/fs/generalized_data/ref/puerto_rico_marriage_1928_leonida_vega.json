@@ -1,0 +1,35 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Leonida Loracuente Vega"
+  },
+  "eventPlace": {
+    "placeString": "Ponce, Puerto Rico"
+  },
+  "ageAtEvent": "21",
+  "spouses": [
+    {
+      "name": {
+        "name": "Juan Robles Rivera",
+        "lastName": "Robles Rivera",
+        "forenames": "Juan"
+      },
+      "age": "21",
+      "marriagePlace": {
+        "placeString": "Ponce, Puerto Rico"
+      },
+      "marriageDate": {
+        "dateString": "16 Abr 1928"
+      }
+    }
+  ],
+  "marriageDate": "16 Abr 1928",
+  "collectionData": {
+    "id": "1682798",
+    "volume": "Matrimonios 1921-1928, t. 30-36"
+  },
+  "hasValidData": true
+}

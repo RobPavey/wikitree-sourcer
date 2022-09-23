@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Abstract of Graves of Revolutionary Patriots\"<br/>\nAbstract of Graves of Revolutionary Patriots; Volume: 2<br/>\n{{Ancestry Record|4110|29540}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "John was buried in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72.<ref>\n'''Burial''':\n\"Abstract of Graves of Revolutionary Patriots\"<br/>\nAbstract of Graves of Revolutionary Patriots; Volume: 2<br/>\n{{Ancestry Record|4110|29540}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Burial''': \"Abstract of Graves of Revolutionary Patriots\"<br/>Abstract of Graves of Revolutionary Patriots; Volume: 2<br/>{{Ancestry Record|4110|29540}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Abstract of Graves of Revolutionary Patriots\"<br/>\nAbstract of Graves of Revolutionary Patriots; Volume: 2<br/>\n{{Ancestry Record|4110|29540}} (accessed 6 May 2021)<br/>\nJohn Kemper burial in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "John was buried in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72.<ref>\n'''Burial''':\n\"Abstract of Graves of Revolutionary Patriots\"<br/>\nAbstract of Graves of Revolutionary Patriots; Volume: 2<br/>\n{{Ancestry Record|4110|29540}} (accessed 6 May 2021)<br/>\nJohn Kemper burial in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Burial''': \"Abstract of Graves of Revolutionary Patriots\"<br/>Abstract of Graves of Revolutionary Patriots; Volume: 2<br/>{{Ancestry Record|4110|29540}} (accessed 6 May 2021)<br/>John Kemper burial in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Abstract of Graves of Revolutionary Patriots\"<br/>\nAbstract of Graves of Revolutionary Patriots; Volume: 2<br/>\n{{Ancestry Record|4110|29540}} (accessed 6 May 2021)<br/>\nName: John Kemper; Cemetery: Dix River Bapt Ch Cem; Location: nr Lancaster, Garrard Co KY 72.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "John was buried in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72.<ref>\n'''Burial''':\n\"Abstract of Graves of Revolutionary Patriots\"<br/>\nAbstract of Graves of Revolutionary Patriots; Volume: 2<br/>\n{{Ancestry Record|4110|29540}} (accessed 6 May 2021)<br/>\nName: John Kemper; Cemetery: Dix River Bapt Ch Cem; Location: nr Lancaster, Garrard Co KY 72.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Burial''': \"Abstract of Graves of Revolutionary Patriots\"<br/>Abstract of Graves of Revolutionary Patriots; Volume: 2<br/>{{Ancestry Record|4110|29540}} (accessed 6 May 2021)<br/>Name: John Kemper; Cemetery: Dix River Bapt Ch Cem; Location: nr Lancaster, Garrard Co KY 72.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Abstract of Graves of Revolutionary Patriots\"<br/>\nAbstract of Graves of Revolutionary Patriots; Volume: 2<br/>\n{{Ancestry Record|4110|29540}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Kemper\n|-\n| Cemetery || Dix River Bapt Ch Cem\n|-\n| Location || nr Lancaster, Garrard Co KY 72\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "John was buried in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72.<ref>\n'''Burial''':\n\"Abstract of Graves of Revolutionary Patriots\"<br/>\nAbstract of Graves of Revolutionary Patriots; Volume: 2<br/>\n{{Ancestry Record|4110|29540}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Kemper\n|-\n| Cemetery || Dix River Bapt Ch Cem\n|-\n| Location || nr Lancaster, Garrard Co KY 72\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Burial''': \"Abstract of Graves of Revolutionary Patriots\"<br/>Abstract of Graves of Revolutionary Patriots; Volume: 2<br/>{{Ancestry Record|4110|29540}} (accessed 6 May 2021)<br/>Name: John Kemper; Cemetery: Dix River Bapt Ch Cem; Location: nr Lancaster, Garrard Co KY 72.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Abstract of Graves of Revolutionary Patriots,\" database, ({{Ancestry Record|4110|29540}} : accessed 6 May 2021), John Kemper burial in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72; citing Abstract of Graves of Revolutionary Patriots, Volume 2.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "John was buried in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72.<ref>\"Abstract of Graves of Revolutionary Patriots,\" database, ({{Ancestry Record|4110|29540}} : accessed 6 May 2021), John Kemper burial in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72; citing Abstract of Graves of Revolutionary Patriots, Volume 2.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Abstract of Graves of Revolutionary Patriots,\" database, ({{Ancestry Record|4110|29540}} : accessed 6 May 2021), John Kemper burial in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72; citing Abstract of Graves of Revolutionary Patriots, Volume 2.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Burial'':\n\"Abstract of Graves of Revolutionary Patriots\", database, \nAbstract of Graves of Revolutionary Patriots, Volume 2, \n({{Ancestry Record|4110|29540}} : accessed 6 May 2021), \nName: John Kemper; Cemetery: Dix River Bapt Ch Cem; Location: nr Lancaster, Garrard Co KY 72.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "John was buried in Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72.<ref>\n''Burial'':\n\"Abstract of Graves of Revolutionary Patriots\", database, \nAbstract of Graves of Revolutionary Patriots, Volume 2, \n({{Ancestry Record|4110|29540}} : accessed 6 May 2021), \nName: John Kemper; Cemetery: Dix River Bapt Ch Cem; Location: nr Lancaster, Garrard Co KY 72.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Burial'': \"Abstract of Graves of Revolutionary Patriots\", database, Abstract of Graves of Revolutionary Patriots, Volume 2, ({{Ancestry Record|4110|29540}} : accessed 6 May 2021), Name: John Kemper; Cemetery: Dix River Bapt Ch Cem; Location: nr Lancaster, Garrard Co KY 72.",
+    "type": "source"
+  }
+}

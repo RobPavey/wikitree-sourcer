@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>{{Ancestry Record|1088|187423}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>\nM A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>\nM A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>M A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>\nName: M A Jones; Census Date: 1 Mar 1885; Residence County: Cowley; Residence State: Kansas; Locality: Richland; Birth Place: Ind Carolina; Family Number: 24; Marital Status: Married; Gender: Female; Age: 34; Birth Year: abt 1851; Race: White; <br/>Household Member(s) Age:<br/>R C Jones 35<br/>M A Jones 34<br/>Rosa Jones 13<br/>J E Jones 11<br/>J M Jones 9<br/>G M Jones 6m.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>\nName: M A Jones; Census Date: 1 Mar 1885; Residence County: Cowley; Residence State: Kansas; Locality: Richland; Birth Place: Ind Carolina; Family Number: 24; Marital Status: Married; Gender: Female; Age: 34; Birth Year: abt 1851; Race: White; <br/>Household Member(s) Age:<br/>R C Jones 35<br/>M A Jones 34<br/>Rosa Jones 13<br/>J E Jones 11<br/>J M Jones 9<br/>G M Jones 6m.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>Name: M A Jones; Census Date: 1 Mar 1885; Residence County: Cowley; Residence State: Kansas; Locality: Richland; Birth Place: Ind Carolina; Family Number: 24; Marital Status: Married; Gender: Female; Age: 34; Birth Year: abt 1851; Race: White; <br/>Household Member(s) Age:<br/>R C Jones 35<br/>M A Jones 34<br/>Rosa Jones 13<br/>J E Jones 11<br/>J M Jones 9<br/>G M Jones 6m.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || M A Jones\n|-\n| Census Date || 1 Mar 1885\n|-\n| Residence County || Cowley\n|-\n| Residence State || Kansas\n|-\n| Locality || Richland\n|-\n| Birth Place || Ind Carolina\n|-\n| Family Number || 24\n|-\n| Marital Status || Married\n|-\n| Gender || Female\n|-\n| Age || 34\n|-\n| Birth Year || abt 1851\n|-\n| Race || White\n|-\n| Household Member(s)<br/>Age || R C Jones 35<br/>M A Jones 34<br/>Rosa Jones 13<br/>J E Jones 11<br/>J M Jones 9<br/>G M Jones 6m\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || M A Jones\n|-\n| Census Date || 1 Mar 1885\n|-\n| Residence County || Cowley\n|-\n| Residence State || Kansas\n|-\n| Locality || Richland\n|-\n| Birth Place || Ind Carolina\n|-\n| Family Number || 24\n|-\n| Marital Status || Married\n|-\n| Gender || Female\n|-\n| Age || 34\n|-\n| Birth Year || abt 1851\n|-\n| Race || White\n|-\n| Household Member(s)<br/>Age || R C Jones 35<br/>M A Jones 34<br/>Rosa Jones 13<br/>J E Jones 11<br/>J M Jones 9<br/>G M Jones 6m\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>Name: M A Jones; Census Date: 1 Mar 1885; Residence County: Cowley; Residence State: Kansas; Locality: Richland; Birth Place: Ind Carolina; Family Number: 24; Marital Status: Married; Gender: Female; Age: 34; Birth Year: abt 1851; Race: White; <br/>Household Member(s) Age:<br/>R C Jones 35<br/>M A Jones 34<br/>Rosa Jones 13<br/>J E Jones 11<br/>J M Jones 9<br/>G M Jones 6m.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), M A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), M A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), M A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1885 Census'':\n\"Kansas, U.S., State Census Collection, 1855-1925\", database, \nKansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11, \n({{Ancestry Record|1088|187423}} : accessed 6 May 2021), \nName: M A Jones; Census Date: 1 Mar 1885; Residence County: Cowley; Residence State: Kansas; Locality: Richland; Birth Place: Ind Carolina; Family Number: 24; Marital Status: Married; Gender: Female; Age: 34; Birth Year: abt 1851; Race: White; Household Member(s) Age: R C Jones 35, M A Jones 34, Rosa Jones 13, J E Jones 11, J M Jones 9, G M Jones 6m.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\n''1885 Census'':\n\"Kansas, U.S., State Census Collection, 1855-1925\", database, \nKansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11, \n({{Ancestry Record|1088|187423}} : accessed 6 May 2021), \nName: M A Jones; Census Date: 1 Mar 1885; Residence County: Cowley; Residence State: Kansas; Locality: Richland; Birth Place: Ind Carolina; Family Number: 24; Marital Status: Married; Gender: Female; Age: 34; Birth Year: abt 1851; Race: White; Household Member(s) Age: R C Jones 35, M A Jones 34, Rosa Jones 13, J E Jones 11, J M Jones 9, G M Jones 6m.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1885 Census'': \"Kansas, U.S., State Census Collection, 1855-1925\", database, Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), Name: M A Jones; Census Date: 1 Mar 1885; Residence County: Cowley; Residence State: Kansas; Locality: Richland; Birth Place: Ind Carolina; Family Number: 24; Marital Status: Married; Gender: Female; Age: 34; Birth Year: abt 1851; Race: White; Household Member(s) Age: R C Jones 35, M A Jones 34, Rosa Jones 13, J E Jones 11, J M Jones 9, G M Jones 6m.",
+    "type": "source"
+  }
+}

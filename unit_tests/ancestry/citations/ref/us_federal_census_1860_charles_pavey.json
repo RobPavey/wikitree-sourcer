@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1860 Census''':\n\"1860 United States Federal Census\"<br/>\nYear: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>\n{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1860 census Charles (age 53), Farmer, was in El Dorado, El Dorado, California.<ref>\n'''1860 Census''':\n\"1860 United States Federal Census\"<br/>\nYear: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>\n{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1860 Census''': \"1860 United States Federal Census\"<br/>Year: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1860 Census''':\n\"1860 United States Federal Census\"<br/>\nYear: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>\n{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)<br/>\nCharles Pavey (53), Farmer, in El Dorado, El Dorado, California. Born in England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1860 census Charles (age 53), Farmer, was in El Dorado, El Dorado, California.<ref>\n'''1860 Census''':\n\"1860 United States Federal Census\"<br/>\nYear: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>\n{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)<br/>\nCharles Pavey (53), Farmer, in El Dorado, El Dorado, California. Born in England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1860 Census''': \"1860 United States Federal Census\"<br/>Year: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)<br/>Charles Pavey (53), Farmer, in El Dorado, El Dorado, California. Born in England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1860 Census''':\n\"1860 United States Federal Census\"<br/>\nYear: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>\n{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)<br/>\nName: Charles Pavey; Age: 53; Birth Year: abt 1807; Gender: Male; Birth Place: England; Home in 1860: El Dorado, El Dorado, California; Post Office: El Dorado; Dwelling Number: 1984; Family Number: 1984; Occupation: Farmer; Real Estate Value: 5000; Personal Estate Value: 200; Married Within Year: Yes; <br/>Household Members Age:<br/>Charles Pavey 53<br/>Amelia Pavey 49<br/>Geo Pavey 19<br/>Charles Pavey 9.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1860 census Charles (age 53), Farmer, was in El Dorado, El Dorado, California.<ref>\n'''1860 Census''':\n\"1860 United States Federal Census\"<br/>\nYear: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>\n{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)<br/>\nName: Charles Pavey; Age: 53; Birth Year: abt 1807; Gender: Male; Birth Place: England; Home in 1860: El Dorado, El Dorado, California; Post Office: El Dorado; Dwelling Number: 1984; Family Number: 1984; Occupation: Farmer; Real Estate Value: 5000; Personal Estate Value: 200; Married Within Year: Yes; <br/>Household Members Age:<br/>Charles Pavey 53<br/>Amelia Pavey 49<br/>Geo Pavey 19<br/>Charles Pavey 9.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1860 Census''': \"1860 United States Federal Census\"<br/>Year: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)<br/>Name: Charles Pavey; Age: 53; Birth Year: abt 1807; Gender: Male; Birth Place: England; Home in 1860: El Dorado, El Dorado, California; Post Office: El Dorado; Dwelling Number: 1984; Family Number: 1984; Occupation: Farmer; Real Estate Value: 5000; Personal Estate Value: 200; Married Within Year: Yes; <br/>Household Members Age:<br/>Charles Pavey 53<br/>Amelia Pavey 49<br/>Geo Pavey 19<br/>Charles Pavey 9.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1860 Census''':\n\"1860 United States Federal Census\"<br/>\nYear: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>\n{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Charles Pavey\n|-\n| Age || 53\n|-\n| Birth Year || abt 1807\n|-\n| Gender || Male\n|-\n| Birth Place || England\n|-\n| Home in 1860 || El Dorado, El Dorado, California\n|-\n| Post Office || El Dorado\n|-\n| Dwelling Number || 1984\n|-\n| Family Number || 1984\n|-\n| Occupation || Farmer\n|-\n| Real Estate Value || 5000\n|-\n| Personal Estate Value || 200\n|-\n| Married Within Year || Yes\n|-\n| Household Members<br/>Age || Charles Pavey 53<br/>Amelia Pavey 49<br/>Geo Pavey 19<br/>Charles Pavey 9\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1860 census Charles (age 53), Farmer, was in El Dorado, El Dorado, California.<ref>\n'''1860 Census''':\n\"1860 United States Federal Census\"<br/>\nYear: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>\n{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Charles Pavey\n|-\n| Age || 53\n|-\n| Birth Year || abt 1807\n|-\n| Gender || Male\n|-\n| Birth Place || England\n|-\n| Home in 1860 || El Dorado, El Dorado, California\n|-\n| Post Office || El Dorado\n|-\n| Dwelling Number || 1984\n|-\n| Family Number || 1984\n|-\n| Occupation || Farmer\n|-\n| Real Estate Value || 5000\n|-\n| Personal Estate Value || 200\n|-\n| Married Within Year || Yes\n|-\n| Household Members<br/>Age || Charles Pavey 53<br/>Amelia Pavey 49<br/>Geo Pavey 19<br/>Charles Pavey 9\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1860 Census''': \"1860 United States Federal Census\"<br/>Year: 1860; Census Place: El Dorado, El Dorado, California; Page: 943<br/>{{Ancestry Record|7667|10119823}} (accessed 6 May 2021)<br/>Name: Charles Pavey; Age: 53; Birth Year: abt 1807; Gender: Male; Birth Place: England; Home in 1860: El Dorado, El Dorado, California; Post Office: El Dorado; Dwelling Number: 1984; Family Number: 1984; Occupation: Farmer; Real Estate Value: 5000; Personal Estate Value: 200; Married Within Year: Yes; <br/>Household Members Age:<br/>Charles Pavey 53<br/>Amelia Pavey 49<br/>Geo Pavey 19<br/>Charles Pavey 9.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1860 United States Federal Census,\" database, ({{Ancestry Record|7667|10119823}} : accessed 6 May 2021), Charles Pavey (53), Farmer, in El Dorado, El Dorado, California. Born in England; citing Year 1860, Census Place El Dorado, El Dorado, California, Page 943.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1860 census Charles (age 53), Farmer, was in El Dorado, El Dorado, California.<ref>\"1860 United States Federal Census,\" database, ({{Ancestry Record|7667|10119823}} : accessed 6 May 2021), Charles Pavey (53), Farmer, in El Dorado, El Dorado, California. Born in England; citing Year 1860, Census Place El Dorado, El Dorado, California, Page 943.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1860 United States Federal Census,\" database, ({{Ancestry Record|7667|10119823}} : accessed 6 May 2021), Charles Pavey (53), Farmer, in El Dorado, El Dorado, California. Born in England; citing Year 1860, Census Place El Dorado, El Dorado, California, Page 943.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1860 Census'':\n\"1860 United States Federal Census\", database, \nYear 1860, Census Place El Dorado, El Dorado, California, Page 943, \n({{Ancestry Record|7667|10119823}} : accessed 6 May 2021), \nName: Charles Pavey; Age: 53; Birth Year: abt 1807; Gender: Male; Birth Place: England; Home in 1860: El Dorado, El Dorado, California; Post Office: El Dorado; Dwelling Number: 1984; Family Number: 1984; Occupation: Farmer; Real Estate Value: 5000; Personal Estate Value: 200; Married Within Year: Yes; Household Members Age: Charles Pavey 53, Amelia Pavey 49, Geo Pavey 19, Charles Pavey 9.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1860 census Charles (age 53), Farmer, was in El Dorado, El Dorado, California.<ref>\n''1860 Census'':\n\"1860 United States Federal Census\", database, \nYear 1860, Census Place El Dorado, El Dorado, California, Page 943, \n({{Ancestry Record|7667|10119823}} : accessed 6 May 2021), \nName: Charles Pavey; Age: 53; Birth Year: abt 1807; Gender: Male; Birth Place: England; Home in 1860: El Dorado, El Dorado, California; Post Office: El Dorado; Dwelling Number: 1984; Family Number: 1984; Occupation: Farmer; Real Estate Value: 5000; Personal Estate Value: 200; Married Within Year: Yes; Household Members Age: Charles Pavey 53, Amelia Pavey 49, Geo Pavey 19, Charles Pavey 9.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1860 Census'': \"1860 United States Federal Census\", database, Year 1860, Census Place El Dorado, El Dorado, California, Page 943, ({{Ancestry Record|7667|10119823}} : accessed 6 May 2021), Name: Charles Pavey; Age: 53; Birth Year: abt 1807; Gender: Male; Birth Place: England; Home in 1860: El Dorado, El Dorado, California; Post Office: El Dorado; Dwelling Number: 1984; Family Number: 1984; Occupation: Farmer; Real Estate Value: 5000; Personal Estate Value: 200; Married Within Year: Yes; Household Members Age: Charles Pavey 53, Amelia Pavey 49, Geo Pavey 19, Charles Pavey 9.",
+    "type": "source"
+  }
+}

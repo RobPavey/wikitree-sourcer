@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Probate",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Blake",
+    "forenames": "Charles"
+  },
+  "eventDate": {
+    "dateString": "1795",
+    "yearString": "1795"
+  },
+  "residencePlace": {
+    "placeString": "Liverpool, Lancashire, England"
+  },
+  "lastNameAtDeath": "Blake",
+  "occupation": "Mariner",
+  "collectionData": {
+    "id": "Lancashire Wills & Probate 1457-1858"
+  },
+  "hasValidData": true
+}

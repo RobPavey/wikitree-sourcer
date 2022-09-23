@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "lastName": "HARKUS",
+  "forenames": "EIRA LILIAN",
+  "firstName": "EIRA",
+  "middleNames": "LILIAN",
+  "birthYear": 1911,
+  "recordType": "newer",
+  "eventYear": 2004,
+  "eventQuarter": 3,
+  "eventQuarterLetter": "S",
+  "registrationDistrict": "VALE OF GLAMORGAN/BRO MORGANNWG",
+  "registrationDistrictCode": "8911B",
+  "referenceRegister": "B25A",
+  "entryNumber": "14",
+  "personGender": "female",
+  "deathYear": 2004,
+  "deathQuarter": 3,
+  "eventType": "death"
+}

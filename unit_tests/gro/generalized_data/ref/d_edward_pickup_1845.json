@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1845",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Pickup",
+    "forenames": "Edward"
+  },
+  "lastNameAtDeath": "Pickup",
+  "deathDate": {
+    "yearString": "1845",
+    "quarter": 2
+  },
+  "ageAtDeath": 51,
+  "personGender": "male",
+  "registrationDistrict": "St Olave's Union, Southwark",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "04",
+    "page": "315"
+  },
+  "hasValidData": true
+}

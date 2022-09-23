@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Archbald Saunders"
+  },
+  "eventDate": {
+    "dateString": "22 Apr 1764",
+    "yearString": "1764"
+  },
+  "eventPlace": {
+    "placeString": "Applegarth Town, Dumfriesshire, Scotland"
+  },
+  "spouses": [
+    {
+      "marriageDate": {
+        "dateString": "22 Apr 1764"
+      },
+      "marriagePlace": {
+        "placeString": "Applegarth Town, Dumfriesshire, Scotland"
+      }
+    }
+  ],
+  "marriageDate": "22 Apr 1764",
+  "collectionData": {
+    "id": "1771074"
+  },
+  "hasValidData": true
+}

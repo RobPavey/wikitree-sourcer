@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1842&range=0&surname=VICKERS&age=59&agerange=0&forename1=FRANCES&gender=F&quarter=J&district=BASFORD%20UNION%20COUNTIES%20OF%20NOTTINGHAM%20DERBY&volume=15&page=294 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nVickers, Frances (Age at death: 59).<br/>\n''GRO Reference:'' 1842 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/basford.html Basford Union Counties of Nottingham Derby] Volume 15 Page 294.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Frances's death (age 59) was registered in the Apr-May-Jun quarter of 1842 in the Basford Union Counties of Nottingham Derby district.<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1842&range=0&surname=VICKERS&age=59&agerange=0&forename1=FRANCES&gender=F&quarter=J&district=BASFORD%20UNION%20COUNTIES%20OF%20NOTTINGHAM%20DERBY&volume=15&page=294 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nVickers, Frances (Age at death: 59).<br/>\n''GRO Reference:'' 1842 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/basford.html Basford Union Counties of Nottingham Derby] Volume 15 Page 294.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1842&range=0&surname=VICKERS&age=59&agerange=0&forename1=FRANCES&gender=F&quarter=J&district=BASFORD%20UNION%20COUNTIES%20OF%20NOTTINGHAM%20DERBY&volume=15&page=294 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>Vickers, Frances (Age at death: 59).<br/>''GRO Reference:'' 1842 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/basford.html Basford Union Counties of Nottingham Derby] Volume 15 Page 294.",
+    "type": "source"
+  }
+}

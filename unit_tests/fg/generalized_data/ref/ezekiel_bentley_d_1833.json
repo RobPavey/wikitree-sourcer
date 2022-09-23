@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "24 Feb 1833"
+  },
+  "eventPlace": {
+    "placeString": "Shelby Center, Orleans County, New York, USA",
+    "streetAddress": "Shelby Center Cemetery"
+  },
+  "name": {
+    "name": "Ezekiel Bentley"
+  },
+  "lastNameAtDeath": "Bentley",
+  "deathDate": {
+    "dateString": "24 Feb 1833"
+  },
+  "ageAtDeath": "81–82",
+  "birthDate": {
+    "dateString": "1751"
+  },
+  "hasValidData": true
+}

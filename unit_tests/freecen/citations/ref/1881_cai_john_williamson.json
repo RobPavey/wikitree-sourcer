@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1881 census John (age 50), Farmer 20 Acres 15 Arable, was the married head of household in Halkirk, Caithness, Scotland.<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1881 Census''': \"1881 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)<br/>\nJohn Williamson (50), married, Farmer 20 Acres 15 Arable, head of household in Halkirk registration district in Caithness, Scotland. Born in Halkirk, Caithness, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1881 census John (age 50), Farmer 20 Acres 15 Arable, was the married head of household in Halkirk, Caithness, Scotland.<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)<br/>\nJohn Williamson (50), married, Farmer 20 Acres 15 Arable, head of household in Halkirk registration district in Caithness, Scotland. Born in Halkirk, Caithness, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1881 Census''': \"1881 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)<br/>John Williamson (50), married, Farmer 20 Acres 15 Arable, head of household in Halkirk registration district in Caithness, Scotland. Born in Halkirk, Caithness, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1881; County: Caithness (CAI); District: Halkirk; Civil Parish: Halkirk; Ecclesiastical Parish: Halkirk; Piece: 37; Enumeration District: 5; Folio: 0; Page: 1; Schedule: 2; House or Street Name: -.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1881 census John (age 50), Farmer 20 Acres 15 Arable, was the married head of household in Halkirk, Caithness, Scotland.<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1881; County: Caithness (CAI); District: Halkirk; Civil Parish: Halkirk; Ecclesiastical Parish: Halkirk; Piece: 37; Enumeration District: 5; Folio: 0; Page: 1; Schedule: 2; House or Street Name: -.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1881 Census''': \"1881 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1881; County: Caithness (CAI); District: Halkirk; Civil Parish: Halkirk; Ecclesiastical Parish: Halkirk; Piece: 37; Enumeration District: 5; Folio: 0; Page: 1; Schedule: 2; House or Street Name: -.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1881\n|-\n| County || Caithness (CAI)\n|-\n| District || Halkirk\n|-\n| Civil Parish || Halkirk\n|-\n| Ecclesiastical Parish || Halkirk\n|-\n| Piece || 37\n|-\n| Enumeration District || 5\n|-\n| Folio || 0\n|-\n| Page || 1\n|-\n| Schedule || 2\n|-\n| House Number || \n|-\n| House or Street Name || -\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1881 census John (age 50), Farmer 20 Acres 15 Arable, was the married head of household in Halkirk, Caithness, Scotland.<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1881\n|-\n| County || Caithness (CAI)\n|-\n| District || Halkirk\n|-\n| Civil Parish || Halkirk\n|-\n| Ecclesiastical Parish || Halkirk\n|-\n| Piece || 37\n|-\n| Enumeration District || 5\n|-\n| Folio || 0\n|-\n| Page || 1\n|-\n| Schedule || 2\n|-\n| House Number || \n|-\n| House or Street Name || -\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1881 Census''': \"1881 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1881; County: Caithness (CAI); District: Halkirk; Civil Parish: Halkirk; Ecclesiastical Parish: Halkirk; Piece: 37; Enumeration District: 5; Folio: 0; Page: 1; Schedule: 2; House or Street Name: -.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1939 register John (age 3), Under School Age, was at 29, Enfield, Middlesex, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)<br/>\nJohn R Smith (born 21 Sep 1935), single, Under School Age, at 29, Enfield, Middlesex, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1939 register John (age 3), Under School Age, was at 29, Enfield, Middlesex, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)<br/>\nJohn R Smith (born 21 Sep 1935), single, Under School Age, at 29, Enfield, Middlesex, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)<br/>John R Smith (born 21 Sep 1935), single, Under School Age, at 29, Enfield, Middlesex, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)<br/>\nName: John R Smith; Gender: Male; Marital Status: Single; Birth Date: 21 Sep 1935; Residence Date: 1939; Address: 29; Residence Place: Enfield, Middlesex, England; Occupation: Under School Age; Enumeration District: Beci; Borough: Enfield; Registration district: 132-7; Inferred Father: James Smith; Inferred Mother: Ellen E Smith; <br/>Household Members Age:<br/>James Smith 37<br/>Ellen E Smith 38<br/>This record is officially closed.<br/>This record is officially closed.<br/>Jessie L Smith 8<br/>This record is officially closed.<br/>John R Smith 4<br/>Joyce V Smith 5.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1939 register John (age 3), Under School Age, was at 29, Enfield, Middlesex, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)<br/>\nName: John R Smith; Gender: Male; Marital Status: Single; Birth Date: 21 Sep 1935; Residence Date: 1939; Address: 29; Residence Place: Enfield, Middlesex, England; Occupation: Under School Age; Enumeration District: Beci; Borough: Enfield; Registration district: 132-7; Inferred Father: James Smith; Inferred Mother: Ellen E Smith; <br/>Household Members Age:<br/>James Smith 37<br/>Ellen E Smith 38<br/>This record is officially closed.<br/>This record is officially closed.<br/>Jessie L Smith 8<br/>This record is officially closed.<br/>John R Smith 4<br/>Joyce V Smith 5.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)<br/>Name: John R Smith; Gender: Male; Marital Status: Single; Birth Date: 21 Sep 1935; Residence Date: 1939; Address: 29; Residence Place: Enfield, Middlesex, England; Occupation: Under School Age; Enumeration District: Beci; Borough: Enfield; Registration district: 132-7; Inferred Father: James Smith; Inferred Mother: Ellen E Smith; <br/>Household Members Age:<br/>James Smith 37<br/>Ellen E Smith 38<br/>This record is officially closed.<br/>This record is officially closed.<br/>Jessie L Smith 8<br/>This record is officially closed.<br/>John R Smith 4<br/>Joyce V Smith 5.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John R Smith\n|-\n| Gender || Male\n|-\n| Marital Status || Single\n|-\n| Birth Date || 21 Sep 1935\n|-\n| Residence Date || 1939\n|-\n| Address || 29\n|-\n| Residence Place || Enfield, Middlesex, England\n|-\n| Occupation || Under School Age\n|-\n| Enumeration District || Beci\n|-\n| Borough || Enfield\n|-\n| Registration district || 132-7\n|-\n| Inferred Father || James Smith\n|-\n| Inferred Mother || Ellen E Smith\n|-\n| Household Members<br/>Age || James Smith 37<br/>Ellen E Smith 38<br/>This record is officially closed.<br/>This record is officially closed.<br/>Jessie L Smith 8<br/>This record is officially closed.<br/>John R Smith 4<br/>Joyce V Smith 5\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1939 register John (age 3), Under School Age, was at 29, Enfield, Middlesex, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John R Smith\n|-\n| Gender || Male\n|-\n| Marital Status || Single\n|-\n| Birth Date || 21 Sep 1935\n|-\n| Residence Date || 1939\n|-\n| Address || 29\n|-\n| Residence Place || Enfield, Middlesex, England\n|-\n| Occupation || Under School Age\n|-\n| Enumeration District || Beci\n|-\n| Borough || Enfield\n|-\n| Registration district || 132-7\n|-\n| Inferred Father || James Smith\n|-\n| Inferred Mother || Ellen E Smith\n|-\n| Household Members<br/>Age || James Smith 37<br/>Ellen E Smith 38<br/>This record is officially closed.<br/>This record is officially closed.<br/>Jessie L Smith 8<br/>This record is officially closed.<br/>John R Smith 4<br/>Joyce V Smith 5\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)<br/>Name: John R Smith; Gender: Male; Marital Status: Single; Birth Date: 21 Sep 1935; Residence Date: 1939; Address: 29; Residence Place: Enfield, Middlesex, England; Occupation: Under School Age; Enumeration District: Beci; Borough: Enfield; Registration district: 132-7; Inferred Father: James Smith; Inferred Mother: Ellen E Smith; <br/>Household Members Age:<br/>James Smith 37<br/>Ellen E Smith 38<br/>This record is officially closed.<br/>This record is officially closed.<br/>Jessie L Smith 8<br/>This record is officially closed.<br/>John R Smith 4<br/>Joyce V Smith 5.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1939 England and Wales Register,\" database, ({{Ancestry Record|61596|10027090}} : accessed 6 May 2021), John R Smith (born 21 Sep 1935), single, Under School Age, at 29, Enfield, Middlesex, England; citing The National Archives, Kew, London, England, 1939 Register, Reference Rg 101/750h, Line Number 32, Schedule Number 126, Sub Schedule Number 7.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1939 register John (age 3), Under School Age, was at 29, Enfield, Middlesex, England.<ref>\"1939 England and Wales Register,\" database, ({{Ancestry Record|61596|10027090}} : accessed 6 May 2021), John R Smith (born 21 Sep 1935), single, Under School Age, at 29, Enfield, Middlesex, England; citing The National Archives, Kew, London, England, 1939 Register, Reference Rg 101/750h, Line Number 32, Schedule Number 126, Sub Schedule Number 7.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1939 England and Wales Register,\" database, ({{Ancestry Record|61596|10027090}} : accessed 6 May 2021), John R Smith (born 21 Sep 1935), single, Under School Age, at 29, Enfield, Middlesex, England; citing The National Archives, Kew, London, England, 1939 Register, Reference Rg 101/750h, Line Number 32, Schedule Number 126, Sub Schedule Number 7.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1939 Register'':\n\"1939 England and Wales Register\", database, \nThe National Archives, Kew, London, England, 1939 Register, Reference Rg 101/750h, Line Number 32, Schedule Number 126, Sub Schedule Number 7, \n({{Ancestry Record|61596|10027090}} : accessed 6 May 2021), \nName: John R Smith; Gender: Male; Marital Status: Single; Birth Date: 21 Sep 1935; Residence Date: 1939; Address: 29; Residence Place: Enfield, Middlesex, England; Occupation: Under School Age; Enumeration District: Beci; Borough: Enfield; Registration district: 132-7; Inferred Father: James Smith; Inferred Mother: Ellen E Smith; Household Members Age: James Smith 37, Ellen E Smith 38, This record is officially closed., This record is officially closed., Jessie L Smith 8, This record is officially closed., John R Smith 4, Joyce V Smith 5.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1939 register John (age 3), Under School Age, was at 29, Enfield, Middlesex, England.<ref>\n''1939 Register'':\n\"1939 England and Wales Register\", database, \nThe National Archives, Kew, London, England, 1939 Register, Reference Rg 101/750h, Line Number 32, Schedule Number 126, Sub Schedule Number 7, \n({{Ancestry Record|61596|10027090}} : accessed 6 May 2021), \nName: John R Smith; Gender: Male; Marital Status: Single; Birth Date: 21 Sep 1935; Residence Date: 1939; Address: 29; Residence Place: Enfield, Middlesex, England; Occupation: Under School Age; Enumeration District: Beci; Borough: Enfield; Registration district: 132-7; Inferred Father: James Smith; Inferred Mother: Ellen E Smith; Household Members Age: James Smith 37, Ellen E Smith 38, This record is officially closed., This record is officially closed., Jessie L Smith 8, This record is officially closed., John R Smith 4, Joyce V Smith 5.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1939 Register'': \"1939 England and Wales Register\", database, The National Archives, Kew, London, England, 1939 Register, Reference Rg 101/750h, Line Number 32, Schedule Number 126, Sub Schedule Number 7, ({{Ancestry Record|61596|10027090}} : accessed 6 May 2021), Name: John R Smith; Gender: Male; Marital Status: Single; Birth Date: 21 Sep 1935; Residence Date: 1939; Address: 29; Residence Place: Enfield, Middlesex, England; Occupation: Under School Age; Enumeration District: Beci; Borough: Enfield; Registration district: 132-7; Inferred Father: James Smith; Inferred Mother: Ellen E Smith; Household Members Age: James Smith 37, Ellen E Smith 38, This record is officially closed., This record is officially closed., Jessie L Smith 8, This record is officially closed., John R Smith 4, Joyce V Smith 5.",
+    "type": "source"
+  }
+}

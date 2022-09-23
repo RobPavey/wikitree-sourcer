@@ -1,0 +1,125 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Joseph Moore"
+  },
+  "birthDate": {
+    "dateString": "1888",
+    "yearString": "1888"
+  },
+  "birthPlace": {
+    "placeString": "Belfast"
+  },
+  "eventDate": {
+    "dateString": "1911",
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "Street, County Longford, Ireland"
+  },
+  "ageAtEvent": "23",
+  "occupation": "Salesman Book Trade",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Jacob Moore",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "52",
+      "birthYear": "1859",
+      "occupation": "Joiner",
+      "birthPlace": "Co Antrim"
+    },
+    {
+      "name": "Margaret Moore",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "59",
+      "birthYear": "1852",
+      "birthPlace": "Belfast City"
+    },
+    {
+      "name": "Henritta Moore",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "24",
+      "birthYear": "1887",
+      "occupation": "Boot Fitter",
+      "birthPlace": "Belfast"
+    },
+    {
+      "name": "Joseph Moore",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "23",
+      "birthYear": "1888",
+      "occupation": "Salesman Book Trade",
+      "birthPlace": "Belfast",
+      "isSelected": true
+    },
+    {
+      "name": "Mary Jane Moore",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "21",
+      "birthYear": "1890",
+      "occupation": "Lady Infant",
+      "birthPlace": "Belfast"
+    },
+    {
+      "name": "Margaret Anne Moore",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "19",
+      "birthYear": "1892",
+      "occupation": "Linen Drawer in",
+      "birthPlace": "Belfast"
+    },
+    {
+      "name": "Eliza Jane Smyth",
+      "relationship": "sister-in-law",
+      "maritalStatus": "widowed",
+      "gender": "female",
+      "age": "61",
+      "birthYear": "1850",
+      "occupation": "Linen Drawer in",
+      "birthPlace": "Belfast"
+    }
+  ],
+  "maritalStatus": "single",
+  "relationshipToHead": "son",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Jacob Moore"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Margaret Moore"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2854327"
+  },
+  "hasValidData": true
+}

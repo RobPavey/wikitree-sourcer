@@ -1,0 +1,47 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Mary E More"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1939"
+  },
+  "birthDate": {
+    "dateString": "1 Nov 1871"
+  },
+  "maritalStatus": "widowed",
+  "eventPlace": {
+    "placeString": "54 Hilldrop Cresent, Islington, London, England"
+  },
+  "occupation": "Unpaid Domestic Duties",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Mary E More",
+      "age": "68",
+      "isSelected": true,
+      "maritalStatus": "widowed",
+      "gender": "female",
+      "occupation": "Unpaid Domestic Duties",
+      "birthDate": "1 Nov 1871"
+    },
+    {
+      "name": "Maisie C More",
+      "age": "39",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=7205481&indiv=try"
+    }
+  ],
+  "collectionData": {
+    "id": "61596",
+    "schedule": "176",
+    "borough": "Islington"
+  },
+  "hasValidData": true
+}

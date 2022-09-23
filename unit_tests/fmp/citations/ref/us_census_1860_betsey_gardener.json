@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1860 Census''':\n\"US Census 1860\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1860 census Betsey (age 30) was in El Dorado, California, El Dorado, California.<ref>\n'''1860 Census''':\n\"US Census 1860\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1860 Census''': \"US Census 1860\"<br/>[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1860 Census''':\n\"US Census 1860\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nBetsey Gardener (30) in El Dorado, California, El Dorado, California. Born in Eng.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1860 census Betsey (age 30) was in El Dorado, California, El Dorado, California.<ref>\n'''1860 Census''':\n\"US Census 1860\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nBetsey Gardener (30) in El Dorado, California, El Dorado, California. Born in Eng.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1860 Census''': \"US Census 1860\"<br/>[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)<br/>Betsey Gardener (30) in El Dorado, California, El Dorado, California. Born in Eng.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1860 Census''':\n\"US Census 1860\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nLocation: El Dorado, California; First name(s): Betsey; City/township: El Dorado; Last name: Gardener; County: El Dorado; Gender: Female; State: California; Age: 30; NARA series: M653; Birth year: 1830; Birth place: Eng; Residence: , El Dorado, California.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1860 census Betsey (age 30) was in El Dorado, California, El Dorado, California.<ref>\n'''1860 Census''':\n\"US Census 1860\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nLocation: El Dorado, California; First name(s): Betsey; City/township: El Dorado; Last name: Gardener; County: El Dorado; Gender: Female; State: California; Age: 30; NARA series: M653; Birth year: 1830; Birth place: Eng; Residence: , El Dorado, California.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1860 Census''': \"US Census 1860\"<br/>[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)<br/>Location: El Dorado, California; First name(s): Betsey; City/township: El Dorado; Last name: Gardener; County: El Dorado; Gender: Female; State: California; Age: 30; NARA series: M653; Birth year: 1830; Birth place: Eng; Residence: , El Dorado, California.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1860 Census''':\n\"US Census 1860\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Additional keywords || -\n|-\n| Location || El Dorado, California\n|-\n| First name(s) || Betsey\n|-\n| City/township || El Dorado\n|-\n| Last name || Gardener\n|-\n| County || El Dorado\n|-\n| Gender || Female\n|-\n| State || California\n|-\n| Age || 30\n|-\n| NARA series || M653\n|-\n| Birth year || 1830\n|-\n| Birth place || Eng\n|-\n| Race || -\n|-\n| Residence || , El Dorado, California\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1860 census Betsey (age 30) was in El Dorado, California, El Dorado, California.<ref>\n'''1860 Census''':\n\"US Census 1860\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Additional keywords || -\n|-\n| Location || El Dorado, California\n|-\n| First name(s) || Betsey\n|-\n| City/township || El Dorado\n|-\n| Last name || Gardener\n|-\n| County || El Dorado\n|-\n| Gender || Female\n|-\n| State || California\n|-\n| Age || 30\n|-\n| NARA series || M653\n|-\n| Birth year || 1830\n|-\n| Birth place || Eng\n|-\n| Race || -\n|-\n| Residence || , El Dorado, California\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1860 Census''': \"US Census 1860\"<br/>[https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703 FindMyPast Transcription] (accessed 6 May 2021)<br/>Location: El Dorado, California; First name(s): Betsey; City/township: El Dorado; Last name: Gardener; County: El Dorado; Gender: Female; State: California; Age: 30; NARA series: M653; Birth year: 1830; Birth place: Eng; Residence: , El Dorado, California.",
+    "type": "source"
+  }
+}

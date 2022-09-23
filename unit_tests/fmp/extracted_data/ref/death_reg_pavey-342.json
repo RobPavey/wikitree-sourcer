@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "url": "https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005",
+  "subDomain": "www",
+  "domain": "findmypast.co.uk",
+  "urlPath": "transcript",
+  "urlParameters": "id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005",
+  "heading": "Harry A Pavey in 1914",
+  "collection": "England & Wales Deaths 1837-2007",
+  "place": "Hampstead, London, England",
+  "personGender": "male",
+  "recordData": {
+    "First name(s)": "Harry A",
+    "Last name": "Pavey",
+    "Gender": "Male",
+    "Birth day": "-",
+    "Birth month": "-",
+    "Birth year": "1854",
+    "Age": "60",
+    "Death quarter": "1",
+    "Death year": "1914",
+    "District": "Hampstead",
+    "County": "London",
+    "Volume": "1A",
+    "Page": "813",
+    "Country": "England",
+    "Record set": "England & Wales Deaths 1837-2007",
+    "Category": "Birth, Marriage, Death & Parish Records",
+    "Subcategory": "Civil Deaths & Burials",
+    "Collections from": "Great Britain, England"
+  },
+  "imageUrl": "https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005"
+}

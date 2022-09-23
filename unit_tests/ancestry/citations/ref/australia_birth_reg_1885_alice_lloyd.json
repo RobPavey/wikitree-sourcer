@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Alice, child of Thomas William Lloyd, was born in Victoria, Australia.<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth Registration''': \"Victoria, Australia, Birth Index, 1837-1917\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>{{Ancestry Record|61648|250322}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)<br/>\nAlice Lloyd birth in Victoria, Australia, child of Thomas William Lloyd, mother's maiden name Folkes.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Alice, child of Thomas William Lloyd, was born in Victoria, Australia.<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)<br/>\nAlice Lloyd birth in Victoria, Australia, child of Thomas William Lloyd, mother's maiden name Folkes.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth Registration''': \"Victoria, Australia, Birth Index, 1837-1917\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>{{Ancestry Record|61648|250322}} (accessed 6 May 2021)<br/>Alice Lloyd birth in Victoria, Australia, child of Thomas William Lloyd, mother's maiden name Folkes.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)<br/>\nName: Alice Lloyd; Birth Registration Date: 1885; Birth Registration Place: Victoria, Australia; Father: Thomas William Lloyd; Mother Maiden Name: Folkes.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Alice, child of Thomas William Lloyd, was born in Victoria, Australia.<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)<br/>\nName: Alice Lloyd; Birth Registration Date: 1885; Birth Registration Place: Victoria, Australia; Father: Thomas William Lloyd; Mother Maiden Name: Folkes.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth Registration''': \"Victoria, Australia, Birth Index, 1837-1917\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>{{Ancestry Record|61648|250322}} (accessed 6 May 2021)<br/>Name: Alice Lloyd; Birth Registration Date: 1885; Birth Registration Place: Victoria, Australia; Father: Thomas William Lloyd; Mother Maiden Name: Folkes.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Alice Lloyd\n|-\n| Birth Registration Date || 1885\n|-\n| Birth Registration Place || Victoria, Australia\n|-\n| Father || Thomas William Lloyd\n|-\n| Mother Maiden Name || Folkes\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Alice, child of Thomas William Lloyd, was born in Victoria, Australia.<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Alice Lloyd\n|-\n| Birth Registration Date || 1885\n|-\n| Birth Registration Place || Victoria, Australia\n|-\n| Father || Thomas William Lloyd\n|-\n| Mother Maiden Name || Folkes\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth Registration''': \"Victoria, Australia, Birth Index, 1837-1917\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>{{Ancestry Record|61648|250322}} (accessed 6 May 2021)<br/>Name: Alice Lloyd; Birth Registration Date: 1885; Birth Registration Place: Victoria, Australia; Father: Thomas William Lloyd; Mother Maiden Name: Folkes.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Victoria, Australia, Birth Index, 1837-1917,\" database, ({{Ancestry Record|61648|250322}} : accessed 6 May 2021), Alice Lloyd birth in Victoria, Australia, child of Thomas William Lloyd, mother's maiden name Folkes; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Birth Records, Reference Number 4275.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Alice, child of Thomas William Lloyd, was born in Victoria, Australia.<ref>\"Victoria, Australia, Birth Index, 1837-1917,\" database, ({{Ancestry Record|61648|250322}} : accessed 6 May 2021), Alice Lloyd birth in Victoria, Australia, child of Thomas William Lloyd, mother's maiden name Folkes; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Birth Records, Reference Number 4275.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Victoria, Australia, Birth Index, 1837-1917,\" database, ({{Ancestry Record|61648|250322}} : accessed 6 May 2021), Alice Lloyd birth in Victoria, Australia, child of Thomas William Lloyd, mother's maiden name Folkes; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Birth Records, Reference Number 4275.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Birth Registration'':\n\"Victoria, Australia, Birth Index, 1837-1917\", database, \nThe Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Birth Records, Reference Number 4275, \n({{Ancestry Record|61648|250322}} : accessed 6 May 2021), \nName: Alice Lloyd; Birth Registration Date: 1885; Birth Registration Place: Victoria, Australia; Father: Thomas William Lloyd; Mother Maiden Name: Folkes.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Alice, child of Thomas William Lloyd, was born in Victoria, Australia.<ref>\n''Birth Registration'':\n\"Victoria, Australia, Birth Index, 1837-1917\", database, \nThe Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Birth Records, Reference Number 4275, \n({{Ancestry Record|61648|250322}} : accessed 6 May 2021), \nName: Alice Lloyd; Birth Registration Date: 1885; Birth Registration Place: Victoria, Australia; Father: Thomas William Lloyd; Mother Maiden Name: Folkes.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Birth Registration'': \"Victoria, Australia, Birth Index, 1837-1917\", database, The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Birth Records, Reference Number 4275, ({{Ancestry Record|61648|250322}} : accessed 6 May 2021), Name: Alice Lloyd; Birth Registration Date: 1885; Birth Registration Place: Victoria, Australia; Father: Thomas William Lloyd; Mother Maiden Name: Folkes.",
+    "type": "source"
+  }
+}

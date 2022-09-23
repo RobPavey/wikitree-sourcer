@@ -1,0 +1,40 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Connor",
+    "forenames": "Peter"
+  },
+  "eventDate": {
+    "dateString": "16 March 1854"
+  },
+  "birthDate": {
+    "dateString": "23 February 1854"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Lanarkshire",
+    "placeString": "Airdrie, Lanarkshire, Scotland",
+    "streetAddress": "Wellwynd Associate"
+  },
+  "birthPlace": {
+    "country": "Scotland",
+    "county": "Lanarkshire",
+    "placeString": "Airdrie, Lanarkshire, Scotland",
+    "streetAddress": "Wellwynd Associate"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Peter Conner"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Jean Sneddon"
+      }
+    }
+  },
+  "hasValidData": true
+}

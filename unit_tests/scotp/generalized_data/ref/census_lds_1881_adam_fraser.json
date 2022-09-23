@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "Adam G"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "ageAtEvent": "1",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Sandsting & Aitsting, Zetland, Scotland",
+    "streetAddress": "Fogrigarth"
+  },
+  "collectionData": {
+    "id": "census1881"
+  },
+  "hasValidData": true
+}

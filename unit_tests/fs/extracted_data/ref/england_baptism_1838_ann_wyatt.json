@@ -1,0 +1,56 @@
+{
+  "recordData": {
+    "Name": "Ann Wyatt",
+    "Christening Date": "29 Apr 1838",
+    "Christening Place": ", Witton-cum-Twambrooks, Cheshire, England",
+    "Birth Date": "24 Mar 1838",
+    "Residence Date": "29 Apr 1838",
+    "Residence Place": ", Witton-cum-Twambrooks, Cheshire, England",
+    "Event Type": "Christening",
+    "Multi Record Type": "Christening",
+    "Numeric Image Nbr": "441",
+    "Template": "ICHR",
+    "Wp City Town": "Witton-cum-Twambrooks",
+    "Wp Province": "Cheshire"
+  },
+  "fullName": "Ann Wyatt",
+  "givenName": "Ann",
+  "surname": "Wyatt",
+  "gender": "female",
+  "factType": "Christening",
+  "eventDateOriginal": "29 Apr 1838",
+  "eventDate": "29 Apr 1838",
+  "eventYear": "1838",
+  "eventPlaceOriginal": ", Witton-cum-Twambrooks, Cheshire, England",
+  "eventPlace": "Witton-cum-Twambrooks, Cheshire, England",
+  "eventPlaceL3": "Witton-cum-Twambrooks",
+  "eventPlaceL2": "Cheshire",
+  "eventPlaceL1": "England",
+  "birthDateOriginal": "24 Mar 1838",
+  "birthDate": "24 Mar 1838",
+  "birthYear": "1838",
+  "father": {
+    "fullName": "Thomas Wyatt",
+    "givenName": "Thomas",
+    "surname": "Wyatt"
+  },
+  "mother": {
+    "fullName": "Sarah",
+    "givenName": "Sarah"
+  },
+  "referenceData": {
+    "digitalFilmNumber": "004018913",
+    "filmNumber": "2094417",
+    "imageNumber": "00441",
+    "packetLetter": "A",
+    "recordNumber": "950",
+    "referenceId": "item 3"
+  },
+  "collectionTitle": "England, Cheshire Parish Registers, 1538-2000",
+  "fsCollectionId": "1614792",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9X2Z-7QH",
+  "citation": "\"England, Cheshire Parish Registers, 1538-2000,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:F3VH-9VV : 7 December 2017), Ann Wyatt, 29 Apr 1838, Christening; citing item 3, , Witton-cum-Twambrooks, Cheshire, England, Record Office, Chester; FHL microfilm 2,094,417.",
+  "sourceTitleForPerson": "Ann Wyatt, \"England, Cheshire Parish Registers, 1538-2000\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:F3VH-9VV",
+  "pageType": "record"
+}

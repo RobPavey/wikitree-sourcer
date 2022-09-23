@@ -1,0 +1,89 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Caroline Risbry"
+  },
+  "personGender": "female",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "64 Farrar Street, Linthorpe, Yorkshire, England",
+    "streetAddress": "64 Farrar Street"
+  },
+  "registrationDistrict": "Middlesbrough",
+  "birthDate": {
+    "yearString": "1848",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Plymouth, Devon, England"
+  },
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "ageAtEvent": "33",
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "John Risbry",
+      "age": "37",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496740"
+    },
+    {
+      "name": "Caroline Risbry",
+      "age": "33",
+      "isSelected": true,
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "birthPlace": "Plymouth, Devon, England",
+      "birthYear": "abt 1848",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496682"
+    },
+    {
+      "name": "George Risbry",
+      "age": "12",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496741"
+    },
+    {
+      "name": "Elizabeth Risbry",
+      "age": "10",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496791"
+    },
+    {
+      "name": "John R. Risbry",
+      "age": "8",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496719"
+    },
+    {
+      "name": "Rachel Risbry",
+      "age": "4",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496605"
+    },
+    {
+      "name": "Amelia Risbry",
+      "age": "2",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496653"
+    },
+    {
+      "name": "Alfred Moore",
+      "age": "36",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496827"
+    }
+  ],
+  "collectionData": {
+    "id": "7572",
+    "page": "27",
+    "folio": "17",
+    "piece": "4854",
+    "parish": "Linthorpe",
+    "county": "Yorkshire"
+  },
+  "hasValidData": true
+}

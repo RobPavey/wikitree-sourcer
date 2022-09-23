@@ -1,0 +1,29 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8510&h=17179&tid=&pid=&queryId=61ee16f934cc220dd3206fb1c54fbced&usePUB=true&_phsrc=XJK1011&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "8510",
+  "recordId": "17179",
+  "ancestryTemplate": "{{Ancestry Record|8510|17179}}",
+  "domain": "com",
+  "titleName": "Honora Buckley",
+  "titleCollection": "Ontario, Canada, County Marriage Registers, 1858-1869",
+  "recordData": {
+    "Name": "Honora Buckley",
+    "Age": "22",
+    "Birth Place": "Ireland",
+    "Residence": "Port Hope",
+    "Spouse Name": "William Waller",
+    "Spouse Age": "24",
+    "Spouse Birth Place": "England",
+    "Spouse Residence": "Cobourg",
+    "Marriage Date": "8 Dec 1859",
+    "Father Name": "Michael Buckley",
+    "Mother Name": "Bridget Buckley",
+    "Spouse Father Name": "Henry Waller",
+    "Spouse Mother Name": "Ann Waller",
+    "County": "Northumberland and Durham",
+    "Microfilm Roll": "1030061"
+  },
+  "sourceInformation": "Ontario, Canada, County Marriage Registers, 1858-1869 [database on-line].",
+  "sourceDescription": "Learn more..."
+}

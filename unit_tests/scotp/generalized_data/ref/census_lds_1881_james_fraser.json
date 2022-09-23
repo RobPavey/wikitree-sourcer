@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "James"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "ageAtEvent": "27",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Govan, Lanark, Scotland",
+    "streetAddress": "14 Apsley Place"
+  },
+  "collectionData": {
+    "id": "census1881"
+  },
+  "hasValidData": true
+}

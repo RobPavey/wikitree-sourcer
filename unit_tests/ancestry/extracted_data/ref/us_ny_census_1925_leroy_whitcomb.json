@@ -1,0 +1,87 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/24992583:2704",
+  "pageType": "record",
+  "dbId": "2704",
+  "recordId": "24992583",
+  "ancestryTemplate": "{{Ancestry Record|2704|24992583}}",
+  "domain": "com",
+  "titleName": "Leroy A Whitcomb",
+  "titleCollection": "New York, U.S., State Census, 1925",
+  "recordData": {
+    "Name": "Leroy A Whitcomb [Leroy A Gleason]",
+    "Gender": "Male",
+    "Color or Race": "White",
+    "Age": "43",
+    "Birth Date": "abt 1882",
+    "Birth Place": "USA",
+    "Residence Date": "1925",
+    "House Number": "202",
+    "Residence Place": "Schenectady Ward 02, Schenectady",
+    "Relationship": "Head",
+    "Assembly District": "02",
+    "Line Number": "46",
+    "Page number": "21",
+    "Household Members<br/>Age<br/>Relationship": "Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "Robert E Whitcomb",
+        "dbId": "2704",
+        "recordId": "24992593",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992593&indiv=try&viewrecord=1&r=an",
+        "Age": "2",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Leroy A Whitcomb",
+        "Age": "43",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Hazel Whitcomb",
+        "dbId": "2704",
+        "recordId": "24992585",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992585&indiv=try&viewrecord=1&r=an",
+        "Age": "32",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "William T Whitcomb",
+        "dbId": "2704",
+        "recordId": "24992587",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992587&indiv=try&viewrecord=1&r=an",
+        "Age": "13",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "John H Whitcomb",
+        "dbId": "2704",
+        "recordId": "24992588",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992588&indiv=try&viewrecord=1&r=an",
+        "Age": "8",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Leroy A Whitcomb",
+        "dbId": "2704",
+        "recordId": "24992590",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992590&indiv=try&viewrecord=1&r=an",
+        "Age": "5",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2704/images/32849_b094353-00325?pid=24992583&usePUB=true&usePUBJs=true",
+  "imageDbId": "2704",
+  "imageRecordId": "32849_b094353-00325",
+  "sourceCitation": "New York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21",
+  "sourceInformation": "Ancestry.com. New York, U.S., State Census, 1925 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2012. Original data: State population census schedules, 1925. Albany, New York: New York State Archives.",
+  "originalData": "State population census schedules, 1925. Albany, New York: New York State Archives.",
+  "sourceDescription": "This database contains an index and images of the 1925 New York state census. Learn more..."
+}

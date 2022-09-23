@@ -1,0 +1,73 @@
+{
+  "url": "https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a/william-pavey-1861-devon-chardstock-1788-?locale=en",
+  "success": true,
+  "censusDetails": {
+    "Census": "1861",
+    "County": "Devon (DEV)",
+    "District": "Chardstock",
+    "Civil Parish": "Stockland",
+    "Ecclesiastical Parish": "Stockland",
+    "Piece": "1372",
+    "Enumeration District": "5d",
+    "Folio": "60",
+    "Page": "21",
+    "Schedule": "112",
+    "House Number": "",
+    "House or Street Name": "Village"
+  },
+  "householdHeadings": [
+    "Surname",
+    "Forenames",
+    "Relationship",
+    "Marital Status",
+    "Sex",
+    "Age",
+    "Occupation",
+    "Birth County",
+    "Birth Place",
+    "Disability",
+    "Notes"
+  ],
+  "householdMembers": [
+    {
+      "Surname": "PAVEY",
+      "isSelected": true,
+      "Forenames": "William",
+      "Relationship": "Head",
+      "Marital Status": "M",
+      "Sex": "M",
+      "Age": "73",
+      "Occupation": "Sawyer",
+      "Birth County": "Devon",
+      "Birth Place": "Stockland",
+      "Disability": "",
+      "Notes": ""
+    },
+    {
+      "Surname": "PAVEY",
+      "Forenames": "Mary",
+      "Relationship": "Wife",
+      "Marital Status": "M",
+      "Sex": "F",
+      "Age": "68",
+      "Occupation": "Washerwoman",
+      "Birth County": "Devon",
+      "Birth Place": "Membury",
+      "Disability": "",
+      "Notes": ""
+    },
+    {
+      "Surname": "PAVEY",
+      "Forenames": "James",
+      "Relationship": "Son",
+      "Marital Status": "U",
+      "Sex": "M",
+      "Age": "34",
+      "Occupation": "Sawyer",
+      "Birth County": "Devon",
+      "Birth Place": "Stockland",
+      "Disability": "",
+      "Notes": ""
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1850",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Antell",
+    "forenames": "Elizabeth"
+  },
+  "lastNameAtDeath": "Antell",
+  "deathDate": {
+    "yearString": "1850",
+    "quarter": 2
+  },
+  "ageAtDeath": 44,
+  "personGender": "female",
+  "registrationDistrict": "Stalbridge",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "08",
+    "page": "77"
+  },
+  "hasValidData": true
+}

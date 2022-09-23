@@ -1,0 +1,26 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Victoria C Lopez"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "20 Jul 1971"
+  },
+  "deathDate": {
+    "dateString": "20 Jul 1971"
+  },
+  "eventPlace": {
+    "placeString": "Santa Barbara"
+  },
+  "lastNameAtDeath": "Lopez",
+  "birthDate": {
+    "dateString": "26 Sep 1888"
+  },
+  "collectionData": {
+    "id": "5180"
+  },
+  "hasValidData": true
+}

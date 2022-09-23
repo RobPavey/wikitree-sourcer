@@ -1,0 +1,12 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Samuel Shields"
+  },
+  "collectionData": {
+    "id": "1222"
+  },
+  "hasValidData": true
+}

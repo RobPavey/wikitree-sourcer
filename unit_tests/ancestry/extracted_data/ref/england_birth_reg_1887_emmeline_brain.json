@@ -1,0 +1,24 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8912&h=33557671&indiv=try&o_vc=Record:OtherRecord&rhSource=8913",
+  "pageType": "record",
+  "dbId": "8912",
+  "recordId": "33557671",
+  "ancestryTemplate": "{{Ancestry Record|8912|33557671}}",
+  "domain": "com",
+  "titleName": "Emmeline May Brain",
+  "titleCollection": "England & Wales, Civil Registration Birth Index, 1837-1915",
+  "recordData": {
+    "Name": "Emmeline May Brain",
+    "Registration Date": "1887",
+    "Quarter of the Year": "Apr-May-Jun",
+    "Registration Place": "Tamworth, Staffordshire, England",
+    "Volume": "6b",
+    "Page": "470"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8912/images/ONS_B18872AZ-0353?pid=33557671&backurl=https://search.ancestry.com/cgi-bin/sse.dll?dbid%3D8912%26h%3D33557671%26indiv%3Dtry%26o_vc%3DRecord:OtherRecord%26rhSource%3D8913&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "8912",
+  "imageRecordId": "ONS_B18872AZ-0353",
+  "sourceInformation": "FreeBMD. England & Wales, Civil Registration Birth Index, 1837-1915 [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2006. Original data: General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Database Copyright © 1998-2003 Graham Hart, Ben Laurie, Camilla von Massenbach and David Mayall.",
+  "originalData": "General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Database Copyright © 1998-2003 Graham Hart, Ben Laurie, Camilla von Massenbach and David Mayall.",
+  "sourceDescription": "This database is a searchable, digitized version of the indices of civil registrations in England and Wales, reported quarterly to the General Register Office (GRO) in London. This index spans the years between 1837 and 1915. Learn more..."
+}

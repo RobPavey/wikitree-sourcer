@@ -1,0 +1,36 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Rosalie Muirhead"
+  },
+  "eventPlace": {
+    "county": "London"
+  },
+  "eventDate": {
+    "yearString": "1903",
+    "quarter": 3
+  },
+  "registrationDistrict": "Hampstead",
+  "spouses": [
+    {
+      "name": {
+        "name": "Frank Noel Keen"
+      },
+      "marriageDate": {
+        "yearString": "1903",
+        "quarter": 3
+      },
+      "marriagePlace": {
+        "county": "London"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "8913",
+    "volume": "1a",
+    "page": "1601"
+  },
+  "hasValidData": true
+}

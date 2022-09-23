@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1861 census James (age 31), Stone Cutter, was the head of household at 20 Maitland St, Glasgow Barony, Lanarkshire.<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1861 Census''': \"1861 Scotland Census\"<br/>Parish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>{{Ancestry Record|1080|165755}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)<br/>\nJames Fraser (31), Stone Cutter, head of household at 20 Maitland St, Glasgow Barony, Lanarkshire in Milton registration district. Born in Elgin.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1861 census James (age 31), Stone Cutter, was the head of household at 20 Maitland St, Glasgow Barony, Lanarkshire.<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)<br/>\nJames Fraser (31), Stone Cutter, head of household at 20 Maitland St, Glasgow Barony, Lanarkshire in Milton registration district. Born in Elgin.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1861 Census''': \"1861 Scotland Census\"<br/>Parish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>{{Ancestry Record|1080|165755}} (accessed 6 May 2021)<br/>James Fraser (31), Stone Cutter, head of household at 20 Maitland St, Glasgow Barony, Lanarkshire in Milton registration district. Born in Elgin.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)<br/>\nName: James Fraser; Age: 31; Estimated Birth Year: abt 1830; Relationship: Head; Spouse's Name: Elizabeth Fraser; Gender: Male; Where born: Elgin; Registration district: Milton; Civil parish: Glasgow Barony; County: Lanarkshire; Address: 20 Maitland St; Occupation: Stone Cutter; ED: 3; <br/>Household Members Age Relationship:<br/>James Fraser 31 Head<br/>Elizabeth Fraser 29 Wife<br/>Robert Fraser 2 Son<br/>Ann Fraser 4 Mo Daughter<br/>Hellen Kerr 20 Sister-in-law.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1861 census James (age 31), Stone Cutter, was the head of household at 20 Maitland St, Glasgow Barony, Lanarkshire.<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)<br/>\nName: James Fraser; Age: 31; Estimated Birth Year: abt 1830; Relationship: Head; Spouse's Name: Elizabeth Fraser; Gender: Male; Where born: Elgin; Registration district: Milton; Civil parish: Glasgow Barony; County: Lanarkshire; Address: 20 Maitland St; Occupation: Stone Cutter; ED: 3; <br/>Household Members Age Relationship:<br/>James Fraser 31 Head<br/>Elizabeth Fraser 29 Wife<br/>Robert Fraser 2 Son<br/>Ann Fraser 4 Mo Daughter<br/>Hellen Kerr 20 Sister-in-law.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1861 Census''': \"1861 Scotland Census\"<br/>Parish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>{{Ancestry Record|1080|165755}} (accessed 6 May 2021)<br/>Name: James Fraser; Age: 31; Estimated Birth Year: abt 1830; Relationship: Head; Spouse's Name: Elizabeth Fraser; Gender: Male; Where born: Elgin; Registration district: Milton; Civil parish: Glasgow Barony; County: Lanarkshire; Address: 20 Maitland St; Occupation: Stone Cutter; ED: 3; <br/>Household Members Age Relationship:<br/>James Fraser 31 Head<br/>Elizabeth Fraser 29 Wife<br/>Robert Fraser 2 Son<br/>Ann Fraser 4 Mo Daughter<br/>Hellen Kerr 20 Sister-in-law.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Fraser\n|-\n| Age || 31\n|-\n| Estimated Birth Year || abt 1830\n|-\n| Relationship || Head\n|-\n| Spouse's Name || Elizabeth Fraser\n|-\n| Gender || Male\n|-\n| Where born || Elgin\n|-\n| Registration district || Milton\n|-\n| Civil parish || Glasgow Barony\n|-\n| County || Lanarkshire\n|-\n| Address || 20 Maitland St\n|-\n| Occupation || Stone Cutter\n|-\n| ED || 3\n|-\n| Household Members<br/>Age<br/>Relationship || James Fraser 31 Head<br/>Elizabeth Fraser 29 Wife<br/>Robert Fraser 2 Son<br/>Ann Fraser 4 Mo Daughter<br/>Hellen Kerr 20 Sister-in-law\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1861 census James (age 31), Stone Cutter, was the head of household at 20 Maitland St, Glasgow Barony, Lanarkshire.<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Fraser\n|-\n| Age || 31\n|-\n| Estimated Birth Year || abt 1830\n|-\n| Relationship || Head\n|-\n| Spouse's Name || Elizabeth Fraser\n|-\n| Gender || Male\n|-\n| Where born || Elgin\n|-\n| Registration district || Milton\n|-\n| Civil parish || Glasgow Barony\n|-\n| County || Lanarkshire\n|-\n| Address || 20 Maitland St\n|-\n| Occupation || Stone Cutter\n|-\n| ED || 3\n|-\n| Household Members<br/>Age<br/>Relationship || James Fraser 31 Head<br/>Elizabeth Fraser 29 Wife<br/>Robert Fraser 2 Son<br/>Ann Fraser 4 Mo Daughter<br/>Hellen Kerr 20 Sister-in-law\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1861 Census''': \"1861 Scotland Census\"<br/>Parish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69; Roll: CSSCT1861_106<br/>{{Ancestry Record|1080|165755}} (accessed 6 May 2021)<br/>Name: James Fraser; Age: 31; Estimated Birth Year: abt 1830; Relationship: Head; Spouse's Name: Elizabeth Fraser; Gender: Male; Where born: Elgin; Registration district: Milton; Civil parish: Glasgow Barony; County: Lanarkshire; Address: 20 Maitland St; Occupation: Stone Cutter; ED: 3; <br/>Household Members Age Relationship:<br/>James Fraser 31 Head<br/>Elizabeth Fraser 29 Wife<br/>Robert Fraser 2 Son<br/>Ann Fraser 4 Mo Daughter<br/>Hellen Kerr 20 Sister-in-law.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1861 Scotland Census,\" database, ({{Ancestry Record|1080|165755}} : accessed 6 May 2021), James Fraser (31), Stone Cutter, head of household at 20 Maitland St, Glasgow Barony, Lanarkshire in Milton registration district. Born in Elgin; citing Parish Glasgow Barony, ED 3, Page 14, Line 17, Roll CSSCT1861_106, Registration Number 644/7, Household schedule number 69, Roll CSSCT1861_106.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1861 census James (age 31), Stone Cutter, was the head of household at 20 Maitland St, Glasgow Barony, Lanarkshire.<ref>\"1861 Scotland Census,\" database, ({{Ancestry Record|1080|165755}} : accessed 6 May 2021), James Fraser (31), Stone Cutter, head of household at 20 Maitland St, Glasgow Barony, Lanarkshire in Milton registration district. Born in Elgin; citing Parish Glasgow Barony, ED 3, Page 14, Line 17, Roll CSSCT1861_106, Registration Number 644/7, Household schedule number 69, Roll CSSCT1861_106.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1861 Scotland Census,\" database, ({{Ancestry Record|1080|165755}} : accessed 6 May 2021), James Fraser (31), Stone Cutter, head of household at 20 Maitland St, Glasgow Barony, Lanarkshire in Milton registration district. Born in Elgin; citing Parish Glasgow Barony, ED 3, Page 14, Line 17, Roll CSSCT1861_106, Registration Number 644/7, Household schedule number 69, Roll CSSCT1861_106.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1861 Census'':\n\"1861 Scotland Census\", database, \nParish Glasgow Barony, ED 3, Page 14, Line 17, Roll CSSCT1861_106, Registration Number 644/7, Household schedule number 69, Roll CSSCT1861_106, \n({{Ancestry Record|1080|165755}} : accessed 6 May 2021), \nName: James Fraser; Age: 31; Estimated Birth Year: abt 1830; Relationship: Head; Spouse's Name: Elizabeth Fraser; Gender: Male; Where born: Elgin; Registration district: Milton; Civil parish: Glasgow Barony; County: Lanarkshire; Address: 20 Maitland St; Occupation: Stone Cutter; ED: 3; Household Members Age Relationship: James Fraser 31 Head, Elizabeth Fraser 29 Wife, Robert Fraser 2 Son, Ann Fraser 4 Mo Daughter, Hellen Kerr 20 Sister-in-law.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1861 census James (age 31), Stone Cutter, was the head of household at 20 Maitland St, Glasgow Barony, Lanarkshire.<ref>\n''1861 Census'':\n\"1861 Scotland Census\", database, \nParish Glasgow Barony, ED 3, Page 14, Line 17, Roll CSSCT1861_106, Registration Number 644/7, Household schedule number 69, Roll CSSCT1861_106, \n({{Ancestry Record|1080|165755}} : accessed 6 May 2021), \nName: James Fraser; Age: 31; Estimated Birth Year: abt 1830; Relationship: Head; Spouse's Name: Elizabeth Fraser; Gender: Male; Where born: Elgin; Registration district: Milton; Civil parish: Glasgow Barony; County: Lanarkshire; Address: 20 Maitland St; Occupation: Stone Cutter; ED: 3; Household Members Age Relationship: James Fraser 31 Head, Elizabeth Fraser 29 Wife, Robert Fraser 2 Son, Ann Fraser 4 Mo Daughter, Hellen Kerr 20 Sister-in-law.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1861 Census'': \"1861 Scotland Census\", database, Parish Glasgow Barony, ED 3, Page 14, Line 17, Roll CSSCT1861_106, Registration Number 644/7, Household schedule number 69, Roll CSSCT1861_106, ({{Ancestry Record|1080|165755}} : accessed 6 May 2021), Name: James Fraser; Age: 31; Estimated Birth Year: abt 1830; Relationship: Head; Spouse's Name: Elizabeth Fraser; Gender: Male; Where born: Elgin; Registration district: Milton; Civil parish: Glasgow Barony; County: Lanarkshire; Address: 20 Maitland St; Occupation: Stone Cutter; ED: 3; Household Members Age Relationship: James Fraser 31 Head, Elizabeth Fraser 29 Wife, Robert Fraser 2 Son, Ann Fraser 4 Mo Daughter, Hellen Kerr 20 Sister-in-law.",
+    "type": "source"
+  }
+}

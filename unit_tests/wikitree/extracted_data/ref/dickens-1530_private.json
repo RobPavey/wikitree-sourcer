@@ -1,0 +1,47 @@
+{
+  "hasValidData": true,
+  "firstNames": "Harold",
+  "prefNames": "",
+  "middleNames": "Edington",
+  "lnab": "Dickens",
+  "currentLastName": "Dickens",
+  "mothersMaidenName": "Maggs",
+  "birthDate": "23 Sep 1893",
+  "birthDateStatus": "none",
+  "deathDate": "4 Oct 1985",
+  "deathDateStatus": "none",
+  "birthLocation": "Pill, Somerset, England, United Kingdom",
+  "deathLocation": "Bury St Edmunds, Suffolk, England, United Kingdom",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Black-16695",
+      "name": "Louisa Annie Black",
+      "marriageString": "21 Sep 1922 in Murree, Bengal, India",
+      "marriageDate": "21 Sep 1922",
+      "marriagePlace": "Murree, Bengal, India"
+    },
+    {
+      "wikiId": "Taylor-70521",
+      "name": "Margaret Lea Taylor",
+      "marriageString": "10 Sep 1955 in Loughborough, Leicestershire",
+      "marriageDate": "10 Sep 1955",
+      "marriagePlace": "Loughborough, Leicestershire"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Dickens-1530",
+  "currentTabText": "Profile (private view)",
+  "pageType": "private",
+  "wikiId": "Dickens-1530",
+  "name": "Harold Edington Dickens",
+  "parents": {
+    "father": {
+      "wikiId": "Dickens-1532",
+      "name": "John William Edington Dickens"
+    },
+    "mother": {
+      "wikiId": "Maggs-269",
+      "name": "Rebecca Maggs"
+    }
+  }
+}

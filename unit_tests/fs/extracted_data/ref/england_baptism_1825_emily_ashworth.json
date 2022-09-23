@@ -1,0 +1,41 @@
+{
+  "recordData": {
+    "Name": "Emily Mary Anne Ashworth",
+    "Christening Date": "25 Aug 1825",
+    "Christening Place": "South Stoneham, Hampshire, England"
+  },
+  "fullName": "Emily Mary Anne Ashworth",
+  "givenName": "Emily Mary Anne",
+  "surname": "Ashworth",
+  "gender": "female",
+  "factType": "Christening",
+  "eventDateOriginal": "25 Aug 1825",
+  "eventDate": "25 Aug 1825",
+  "eventYear": "1825",
+  "eventPlaceOriginal": "South Stoneham, Hampshire, England",
+  "eventPlaceL2": "Hampshire",
+  "eventPlaceL1": "England",
+  "father": {
+    "fullName": "Charles Ashworth",
+    "givenName": "Charles",
+    "surname": "Ashworth"
+  },
+  "mother": {
+    "fullName": "Mary Anne Ashworth",
+    "givenName": "Mary Anne",
+    "surname": "Ashworth"
+  },
+  "fsCollectionId": "2556014",
+  "referenceData": {
+    "digitalFilmNumber": "008069671",
+    "recordNumber": "8"
+  },
+  "fsImageNumber": "00409",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-CSNW-41LX",
+  "collectionTitle": "England, Hampshire Parish Registers, 1538-1980",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QT9X-WPKT",
+  "citation": "\"England, Hampshire Parish Registers, 1538-1980,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPRD-KN2W : 13 February 2021), Emily Mary Anne Ashworth, 25 Aug 1825; citing Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .",
+  "sourceTitleForPerson": "Emily Mary Anne Ashworth, \"England, Hampshire Parish Registers, 1538-1980\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QPRD-KN2W",
+  "pageType": "record"
+}

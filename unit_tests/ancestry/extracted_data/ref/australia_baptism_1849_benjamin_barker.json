@@ -1,0 +1,30 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1160277:9776?tid=172368945&pid=392248068900&hid=1047611145333",
+  "pageType": "record",
+  "dbId": "9776",
+  "recordId": "1160277",
+  "ancestryTemplate": "{{Ancestry Record|9776|1160277}}",
+  "domain": "com",
+  "titleName": "Benjamin Barker",
+  "titleCollection": "Australia, Births and Baptisms, 1792-1981",
+  "recordData": {
+    "Name": "Benjamin Barker",
+    "Gender": "Male",
+    "Baptism Age": "1",
+    "Birth Date": "30 Nov 1847",
+    "Baptism Date": "21 May 1849",
+    "Baptism Place": "St Saviour, Goulburn, New South Wales, Australia",
+    "Residence Date": "1847",
+    "Residence Place": "New South Wales, Australia",
+    "Father": "Benjamin Barker",
+    "Mother": "Mary",
+    "FHL Film Number": "993935"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9776&h=1160275&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9776&h=1160276&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceInformation": "Ancestry.com. Australia, Births and Baptisms, 1792-1981 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: Australia, Births and Baptisms, 1792-1981. Salt Lake City, Utah: FamilySearch, 2013.",
+  "originalData": "Australia, Births and Baptisms, 1792-1981. Salt Lake City, Utah: FamilySearch, 2013.",
+  "sourceDescription": "This is a collection of births and baptisms from Australia, New South Wales, Queensland, South Australia, Tasmania, Victoria and Western Australia. This index is not complete for any particular place, region or time period. Learn more..."
+}

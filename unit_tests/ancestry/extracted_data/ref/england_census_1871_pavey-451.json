@@ -1,0 +1,67 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/4576313:7619",
+  "pageType": "record",
+  "dbId": "7619",
+  "recordId": "4576313",
+  "ancestryTemplate": "{{Ancestry Record|7619|4576313}}",
+  "domain": "com",
+  "titleName": "Henry A G Pavey",
+  "titleCollection": "1871 England Census",
+  "recordData": {
+    "Name": "Henry A G Pavey",
+    "Age": "1/12",
+    "Estimated Birth Year": "1871",
+    "Relation": "Son",
+    "Gender": "Male",
+    "Where born": "St Pancras Middlesex England",
+    "Civil parish": "St Pancras",
+    "Ecclesiastical parish": "Holy Trinity",
+    "County/Island": "London",
+    "Country": "England",
+    "Registration district": "Pancras",
+    "Sub-registration district": "Kentish Town",
+    "ED, institution, or vessel": "18a",
+    "Household schedule number": "122",
+    "Piece": "240",
+    "Folio": "13",
+    "Page number": "20",
+    "Household Members<br/>Age<br/>Relationship": "Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "Harry A Pavey",
+        "dbId": "7619",
+        "recordId": "4576311",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=4576311&indiv=try&viewrecord=1&r=an",
+        "Age": "20",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Amelia E Pavey",
+        "dbId": "7619",
+        "recordId": "4576312",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=4576312&indiv=try&viewrecord=1&r=an",
+        "Age": "21",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "Henry A G Pavey",
+        "Age": "1/12",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7619/images/LNDRG10_239_242-0052?pid=4576313&usePUB=true&usePUBJs=true",
+  "imageDbId": "7619",
+  "imageRecordId": "LNDRG10_239_242-0052",
+  "sourceCitation": "The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907",
+  "sourceInformation": "Ancestry.com. 1871 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2004. Original data: Census Returns of England and Wales, 1871. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1871. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1871. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1871. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1871 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1871 England Census. Learn more..."
+}

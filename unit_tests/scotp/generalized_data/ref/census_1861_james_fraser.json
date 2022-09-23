@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "James"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1861"
+  },
+  "ageAtEvent": "31",
+  "registrationDistrict": "Milton",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Lanarkshire",
+    "placeString": "Milton, Lanarkshire, Scotland"
+  },
+  "collectionData": {
+    "id": "census1861",
+    "registrationNumber": "644/7",
+    "enumerationDistrict": "3",
+    "page": "14"
+  },
+  "hasValidData": true
+}

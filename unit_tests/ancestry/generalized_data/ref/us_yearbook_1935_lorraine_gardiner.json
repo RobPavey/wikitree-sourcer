@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "recordType": "SchoolRecords",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Lorraine Gardiner"
+  },
+  "eventDate": {
+    "dateString": "1935"
+  },
+  "birthDate": {
+    "qualifier": 2,
+    "yearString": "1919"
+  },
+  "eventPlace": {
+    "placeString": "Bakersfield, California"
+  },
+  "schoolName": "Kern County Union High School",
+  "ageAtEvent": "Abt 16",
+  "collectionData": {
+    "id": "1265"
+  },
+  "hasValidData": true
+}

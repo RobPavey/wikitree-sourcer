@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "role": "Spouse",
+  "primaryPerson": "James Clifford Moore",
+  "primaryPersonGender": "male",
+  "recordType": "Obituary",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Florida Tucker Moore"
+  },
+  "eventDate": {
+    "dateString": "8 Oct 2009",
+    "yearString": "2009"
+  },
+  "eventPlace": {
+    "placeString": "Arkansas, United States"
+  },
+  "collectionData": {
+    "id": "2333694"
+  },
+  "hasValidData": true
+}

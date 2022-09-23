@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1850 census Jas (age 47), Farmer, was in Walker, Texas, USA.<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1850 Census''': \"1850 United States Federal Census\"<br/>Year: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)<br/>\nJas Willson (47), Farmer, in Walker, Texas, USA. Born in Geor.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1850 census Jas (age 47), Farmer, was in Walker, Texas, USA.<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)<br/>\nJas Willson (47), Farmer, in Walker, Texas, USA. Born in Geor.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1850 Census''': \"1850 United States Federal Census\"<br/>Year: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)<br/>Jas Willson (47), Farmer, in Walker, Texas, USA. Born in Geor.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)<br/>\nName: Jas Willson [James] [James Wilson] [Wilson]; Gender: Male; Race: White; Age: 47; Birth Year: abt 1803; Birthplace: Geor; Home in 1850: Walker, Texas, USA; Occupation: Farmer; Industry: Agriculture; Real Estate: 1200; Dwelling Number: 154; Family Number: 154; <br/>Household Members Age:<br/>Jas Willson 47<br/>Katharine Willson 40<br/>Abner Willson 22<br/>John Willson 17<br/>Sam Willson 13<br/>Caroline Willson 12<br/>Nancy Willson 11<br/>Frances Willson 8<br/>Katharine Willson 4<br/>Cirus Willson 2.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1850 census Jas (age 47), Farmer, was in Walker, Texas, USA.<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)<br/>\nName: Jas Willson [James] [James Wilson] [Wilson]; Gender: Male; Race: White; Age: 47; Birth Year: abt 1803; Birthplace: Geor; Home in 1850: Walker, Texas, USA; Occupation: Farmer; Industry: Agriculture; Real Estate: 1200; Dwelling Number: 154; Family Number: 154; <br/>Household Members Age:<br/>Jas Willson 47<br/>Katharine Willson 40<br/>Abner Willson 22<br/>John Willson 17<br/>Sam Willson 13<br/>Caroline Willson 12<br/>Nancy Willson 11<br/>Frances Willson 8<br/>Katharine Willson 4<br/>Cirus Willson 2.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1850 Census''': \"1850 United States Federal Census\"<br/>Year: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)<br/>Name: Jas Willson [James] [James Wilson] [Wilson]; Gender: Male; Race: White; Age: 47; Birth Year: abt 1803; Birthplace: Geor; Home in 1850: Walker, Texas, USA; Occupation: Farmer; Industry: Agriculture; Real Estate: 1200; Dwelling Number: 154; Family Number: 154; <br/>Household Members Age:<br/>Jas Willson 47<br/>Katharine Willson 40<br/>Abner Willson 22<br/>John Willson 17<br/>Sam Willson 13<br/>Caroline Willson 12<br/>Nancy Willson 11<br/>Frances Willson 8<br/>Katharine Willson 4<br/>Cirus Willson 2.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Jas Willson [James] [James Wilson] [Wilson]\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Age || 47\n|-\n| Birth Year || abt 1803\n|-\n| Birthplace || Geor\n|-\n| Home in 1850 || Walker, Texas, USA\n|-\n| Occupation || Farmer\n|-\n| Industry || Agriculture\n|-\n| Real Estate || 1200\n|-\n| Dwelling Number || 154\n|-\n| Family Number || 154\n|-\n| Household Members<br/>Age || Jas Willson 47<br/>Katharine Willson 40<br/>Abner Willson 22<br/>John Willson 17<br/>Sam Willson 13<br/>Caroline Willson 12<br/>Nancy Willson 11<br/>Frances Willson 8<br/>Katharine Willson 4<br/>Cirus Willson 2\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1850 census Jas (age 47), Farmer, was in Walker, Texas, USA.<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Jas Willson [James] [James Wilson] [Wilson]\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Age || 47\n|-\n| Birth Year || abt 1803\n|-\n| Birthplace || Geor\n|-\n| Home in 1850 || Walker, Texas, USA\n|-\n| Occupation || Farmer\n|-\n| Industry || Agriculture\n|-\n| Real Estate || 1200\n|-\n| Dwelling Number || 154\n|-\n| Family Number || 154\n|-\n| Household Members<br/>Age || Jas Willson 47<br/>Katharine Willson 40<br/>Abner Willson 22<br/>John Willson 17<br/>Sam Willson 13<br/>Caroline Willson 12<br/>Nancy Willson 11<br/>Frances Willson 8<br/>Katharine Willson 4<br/>Cirus Willson 2\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1850 Census''': \"1850 United States Federal Census\"<br/>Year: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)<br/>Name: Jas Willson [James] [James Wilson] [Wilson]; Gender: Male; Race: White; Age: 47; Birth Year: abt 1803; Birthplace: Geor; Home in 1850: Walker, Texas, USA; Occupation: Farmer; Industry: Agriculture; Real Estate: 1200; Dwelling Number: 154; Family Number: 154; <br/>Household Members Age:<br/>Jas Willson 47<br/>Katharine Willson 40<br/>Abner Willson 22<br/>John Willson 17<br/>Sam Willson 13<br/>Caroline Willson 12<br/>Nancy Willson 11<br/>Frances Willson 8<br/>Katharine Willson 4<br/>Cirus Willson 2.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1850 United States Federal Census,\" database, ({{Ancestry Record|8054|1085066}} : accessed 6 May 2021), Jas Willson (47), Farmer, in Walker, Texas, USA. Born in Geor; citing Year 1850, Census Place Walker, Texas, Roll 916, Page 261a, Line Number 25.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1850 census Jas (age 47), Farmer, was in Walker, Texas, USA.<ref>\"1850 United States Federal Census,\" database, ({{Ancestry Record|8054|1085066}} : accessed 6 May 2021), Jas Willson (47), Farmer, in Walker, Texas, USA. Born in Geor; citing Year 1850, Census Place Walker, Texas, Roll 916, Page 261a, Line Number 25.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1850 United States Federal Census,\" database, ({{Ancestry Record|8054|1085066}} : accessed 6 May 2021), Jas Willson (47), Farmer, in Walker, Texas, USA. Born in Geor; citing Year 1850, Census Place Walker, Texas, Roll 916, Page 261a, Line Number 25.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1850 Census'':\n\"1850 United States Federal Census\", database, \nYear 1850, Census Place Walker, Texas, Roll 916, Page 261a, Line Number 25, \n({{Ancestry Record|8054|1085066}} : accessed 6 May 2021), \nName: Jas Willson [James] [James Wilson] [Wilson]; Gender: Male; Race: White; Age: 47; Birth Year: abt 1803; Birthplace: Geor; Home in 1850: Walker, Texas, USA; Occupation: Farmer; Industry: Agriculture; Real Estate: 1200; Dwelling Number: 154; Family Number: 154; Household Members Age: Jas Willson 47, Katharine Willson 40, Abner Willson 22, John Willson 17, Sam Willson 13, Caroline Willson 12, Nancy Willson 11, Frances Willson 8, Katharine Willson 4, Cirus Willson 2.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1850 census Jas (age 47), Farmer, was in Walker, Texas, USA.<ref>\n''1850 Census'':\n\"1850 United States Federal Census\", database, \nYear 1850, Census Place Walker, Texas, Roll 916, Page 261a, Line Number 25, \n({{Ancestry Record|8054|1085066}} : accessed 6 May 2021), \nName: Jas Willson [James] [James Wilson] [Wilson]; Gender: Male; Race: White; Age: 47; Birth Year: abt 1803; Birthplace: Geor; Home in 1850: Walker, Texas, USA; Occupation: Farmer; Industry: Agriculture; Real Estate: 1200; Dwelling Number: 154; Family Number: 154; Household Members Age: Jas Willson 47, Katharine Willson 40, Abner Willson 22, John Willson 17, Sam Willson 13, Caroline Willson 12, Nancy Willson 11, Frances Willson 8, Katharine Willson 4, Cirus Willson 2.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1850 Census'': \"1850 United States Federal Census\", database, Year 1850, Census Place Walker, Texas, Roll 916, Page 261a, Line Number 25, ({{Ancestry Record|8054|1085066}} : accessed 6 May 2021), Name: Jas Willson [James] [James Wilson] [Wilson]; Gender: Male; Race: White; Age: 47; Birth Year: abt 1803; Birthplace: Geor; Home in 1850: Walker, Texas, USA; Occupation: Farmer; Industry: Agriculture; Real Estate: 1200; Dwelling Number: 154; Family Number: 154; Household Members Age: Jas Willson 47, Katharine Willson 40, Abner Willson 22, John Willson 17, Sam Willson 13, Caroline Willson 12, Nancy Willson 11, Frances Willson 8, Katharine Willson 4, Cirus Willson 2.",
+    "type": "source"
+  }
+}

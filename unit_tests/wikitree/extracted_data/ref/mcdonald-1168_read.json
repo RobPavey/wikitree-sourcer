@@ -1,0 +1,30 @@
+{
+  "hasValidData": true,
+  "firstNames": "Elizabeth",
+  "prefNames": "",
+  "middleNames": "Brown",
+  "lnab": "McDonald",
+  "currentLastName": "Almand",
+  "mothersMaidenName": "",
+  "birthDate": "20 Nov 1869",
+  "birthDateStatus": "none",
+  "deathDate": "24 Dec 1961",
+  "deathDateStatus": "none",
+  "birthLocation": "Newton County, Georgia",
+  "deathLocation": "Fulton County, Georgia",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Almand-77",
+      "name": "Henry Pryor Almand Jr.",
+      "marriageString": "5 Nov 1892 in Rockdale, Georgia, United States",
+      "marriageDate": "5 Nov 1892",
+      "marriagePlace": "Rockdale, Georgia, United States"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/McDonald-1168",
+  "currentTabText": "Lizzie (McDonald) Almand's Profile",
+  "pageType": "read",
+  "wikiId": "McDonald-1168",
+  "name": "Elizabeth Brown (McDonald) Almand"
+}

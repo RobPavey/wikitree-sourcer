@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Lorraine was at school in 1935 in Bakersfield, California.<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1935 School Yearbook''': \"U.S., School Yearbooks, 1900-1999\"<br/>\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)<br/>\nName: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Lorraine was at school in 1935 in Bakersfield, California.<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)<br/>\nName: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1935 School Yearbook''': \"U.S., School Yearbooks, 1900-1999\"<br/>\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)<br/>Name: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)<br/>\nName: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Lorraine was at school in 1935 in Bakersfield, California.<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)<br/>\nName: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1935 School Yearbook''': \"U.S., School Yearbooks, 1900-1999\"<br/>\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)<br/>Name: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Lorraine Gardiner\n|-\n| Estimated Age || Abt 16\n|-\n| Birth Year || abt 1919\n|-\n| Yearbook Date || 1935\n|-\n| School || Kern County Union High School\n|-\n| School Location || Bakersfield, California\n|-\n| Yearbook Title || The Oracle 1935\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Lorraine was at school in 1935 in Bakersfield, California.<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Lorraine Gardiner\n|-\n| Estimated Age || Abt 16\n|-\n| Birth Year || abt 1919\n|-\n| Yearbook Date || 1935\n|-\n| School || Kern County Union High School\n|-\n| School Location || Bakersfield, California\n|-\n| Yearbook Title || The Oracle 1935\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1935 School Yearbook''': \"U.S., School Yearbooks, 1900-1999\"<br/>\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)<br/>Name: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., School Yearbooks, 1900-1999,\" database, ({{Ancestry Record|1265|90610650}} : accessed 6 May 2021), Name Lorraine Gardiner, Estimated Age Abt 16, Birth Year abt 1919, Yearbook Date 1935, School Kern County Union High School, School Location Bakersfield, California, Yearbook Title The Oracle 1935; citing \"U.S., School Yearbooks, 1880-2012\", School Name Kern County Union High School, Year 1935.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Lorraine was at school in 1935 in Bakersfield, California.<ref>\"U.S., School Yearbooks, 1900-1999,\" database, ({{Ancestry Record|1265|90610650}} : accessed 6 May 2021), Name Lorraine Gardiner, Estimated Age Abt 16, Birth Year abt 1919, Yearbook Date 1935, School Kern County Union High School, School Location Bakersfield, California, Yearbook Title The Oracle 1935; citing \"U.S., School Yearbooks, 1880-2012\", School Name Kern County Union High School, Year 1935.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., School Yearbooks, 1900-1999,\" database, ({{Ancestry Record|1265|90610650}} : accessed 6 May 2021), Name Lorraine Gardiner, Estimated Age Abt 16, Birth Year abt 1919, Yearbook Date 1935, School Kern County Union High School, School Location Bakersfield, California, Yearbook Title The Oracle 1935; citing \"U.S., School Yearbooks, 1880-2012\", School Name Kern County Union High School, Year 1935.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1935 School Yearbook'':\n\"U.S., School Yearbooks, 1900-1999\", database, \n\"U.S., School Yearbooks, 1880-2012\", School Name Kern County Union High School, Year 1935, \n({{Ancestry Record|1265|90610650}} : accessed 6 May 2021), \nName: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Lorraine was at school in 1935 in Bakersfield, California.<ref>\n''1935 School Yearbook'':\n\"U.S., School Yearbooks, 1900-1999\", database, \n\"U.S., School Yearbooks, 1880-2012\", School Name Kern County Union High School, Year 1935, \n({{Ancestry Record|1265|90610650}} : accessed 6 May 2021), \nName: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1935 School Yearbook'': \"U.S., School Yearbooks, 1900-1999\", database, \"U.S., School Yearbooks, 1880-2012\", School Name Kern County Union High School, Year 1935, ({{Ancestry Record|1265|90610650}} : accessed 6 May 2021), Name: Lorraine Gardiner; Estimated Age: Abt 16; Birth Year: abt 1919; Yearbook Date: 1935; School: Kern County Union High School; School Location: Bakersfield, California; Yearbook Title: The Oracle 1935.",
+    "type": "source"
+  }
+}

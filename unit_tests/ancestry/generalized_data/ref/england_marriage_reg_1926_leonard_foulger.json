@@ -1,0 +1,36 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Leonard J Foulger"
+  },
+  "eventPlace": {
+    "county": "Middlesex"
+  },
+  "eventDate": {
+    "dateString": "Jul 1926",
+    "quarter": 3
+  },
+  "registrationDistrict": "Brentford",
+  "spouses": [
+    {
+      "name": {
+        "name": "Kathleen Broghan"
+      },
+      "marriageDate": {
+        "dateString": "Jul 1926",
+        "quarter": 3
+      },
+      "marriagePlace": {
+        "county": "Middlesex"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "8753",
+    "volume": "3a",
+    "page": "554"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,3882 @@
+{
+  "id" : "r_22238011995",
+  "lang" : "en",
+  "attribution" : {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+      "resourceId" : "cis.user.MMM9-W8P1"
+    },
+    "modified" : 1384089315033,
+    "created" : 1384089315033
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MFQ-ZSWF?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MFQ-ZSWF?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MFQ-ZSWF"
+    }
+  },
+  "description" : "#sd_p_14038004201",
+  "persons" : [ {
+    "id" : "p_14038001800",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "83a5ac57-e55f-4984-b82b-99cc7cc7bf98",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "cba70d4c-3dfd-4ecf-8685-ac9393f9c821",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "cba70d4c-3dfd-4ecf-8685-ac9393f9c821",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1610302279492,
+            "created" : 1610302279492
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K42R-1PZ?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MFQ-ZSWF?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1622355813" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K42R-1PZ" ]
+    },
+    "names" : [ {
+      "id" : "801a4909-9d8b-4cc0-9995-03e3aed3a120",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Carl Schei",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Schei",
+          "fields" : [ {
+            "id" : "057ffc41-09f0-4ce8-a72e-cc5bff481378",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "2d5361c4-09c6-4d48-b380-e96ffb405d96",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Schei"
+            }, {
+              "id" : "2d5361c4-09c6-4d48-b380-e96ffb405d96",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610302279465,
+                "created" : 1610302279465
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Schei"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Carl",
+          "fields" : [ {
+            "id" : "8c5d1ce6-673e-4455-85f2-b96336094ae9",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "3ff7f758-0a4a-4bbf-9780-4f0f43bce051",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Carl"
+            }, {
+              "id" : "3ff7f758-0a4a-4bbf-9780-4f0f43bce051",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610302279465,
+                "created" : 1610302279465
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Carl"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "7785dd2f-5841-4930-99c3-e965d4f0b129",
+          "type" : "http://gedcomx.org/Name",
+          "sources" : [ ],
+          "values" : [ {
+            "id" : "935b1767-612b-4d0c-a42a-27a1b1671440",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610302279455,
+              "created" : 1610302279455
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Carl Schei"
+          }, {
+            "id" : "935b1767-612b-4d0c-a42a-27a1b1671440",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610302279465,
+              "created" : 1610302279465
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Carl Schei"
+          } ]
+        } ]
+      } ]
+    }, {
+      "id" : "801a4909-9d8b-4cc0-9995-03e3aed3a120",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Schei",
+          "fields" : [ {
+            "id" : "057ffc41-09f0-4ce8-a72e-cc5bff481378",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "2d5361c4-09c6-4d48-b380-e96ffb405d96",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Schei"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Carl",
+          "fields" : [ {
+            "id" : "8c5d1ce6-673e-4455-85f2-b96336094ae9",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "3ff7f758-0a4a-4bbf-9780-4f0f43bce051",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Carl"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Ethnicity",
+      "value" : "American",
+      "fields" : [ {
+        "id" : "25fafcf9-a49c-4545-bf17-f47873472bf8",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Ethnicity",
+        "values" : [ {
+          "id" : "28df094f-e84d-40c0-9049-167745a1a0db",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_ETHNICITY_ORIG",
+          "text" : "American"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Married",
+      "fields" : [ {
+        "id" : "ffb42f0e-2f85-4f7f-a867-3e62aa65b08e",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "7fe4839b-9e7e-4688-996f-6a9179f24256",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "7fe4839b-9e7e-4688-996f-6a9179f24256",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Married"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "576017e1-4d51-469b-9fb9-deb76cfd3aee",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "0bc77d1b-fe96-4410-8d20-b38390b0f9dc",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        }, {
+          "id" : "0bc77d1b-fe96-4410-8d20-b38390b0f9dc",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_RACE_OR_COLOR",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "id" : "cc9c2710-13b1-4bbb-b4ad-990496f590f2",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "cb620550-7707-4cd0-9714-232e3ec27d28",
+        "original" : "1905",
+        "fields" : [ {
+          "id" : "d927ba92-1f13-489b-b185-154b85534661",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "58bca50f-bb26-478f-b27a-322f9b722eaf",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1905"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "8e007ce8-4c58-46c4-885d-3f10b8c99965",
+        "original" : "Michigan",
+        "fields" : [ {
+          "id" : "57d7fc32-93fe-4411-8f99-186e36a1c1db",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "b16f29b4-6825-4424-b322-15822b06d178",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Michigan"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "f4a87dd0-90a8-422f-b60b-afb99448fa02",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "id" : "f0d7690b-1b8a-415f-8e91-54043c941793",
+        "original" : "1935",
+        "fields" : [ {
+          "id" : "c0d333e4-dfb0-483a-a3d0-f9f3f70f7cd1",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "032550aa-f245-428b-90e4-7a98def5003f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_DATE_ORIG",
+            "text" : "1935"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "fc4301d0-e765-4a37-8860-f0df6760bc98",
+        "original" : "Same House",
+        "fields" : [ {
+          "id" : "ef912a7e-44c5-4aed-a15d-e782e31ea2d9",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "9afb5fb8-5883-4628-aa58-4b4c72c9eeb9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_CITY_ORIG",
+            "text" : "Same House"
+          }, {
+            "id" : "9afb5fb8-5883-4628-aa58-4b4c72c9eeb9",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_CITY",
+            "text" : "Same House"
+          } ]
+        }, {
+          "id" : "675eef6c-1599-425c-aa80-67c304130f78",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "b167bb87-cde3-4bac-ad0e-775d37c135ea",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Same House, ,"
+          }, {
+            "id" : "b167bb87-cde3-4bac-ad0e-775d37c135ea",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_PLACE",
+            "text" : "Same House"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "bfcf26dc-be4c-4bb9-9718-246cb32c790d",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "713127f5-ca90-4c12-a3bc-b669f9f7f8e8",
+        "original" : "1940",
+        "fields" : [ {
+          "id" : "a478884f-0f04-43fa-8ec2-135a914ca1a9",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "e9472999-67b3-400b-a84c-38c224990dc0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "a5ee6c0a-d3da-4022-bf0a-4927956dab07",
+        "original" : "Kingsford, Dickinson, Michigan, United States",
+        "description" : "#place_5446988",
+        "fields" : [ {
+          "id" : "a5ec8372-bbda-4101-927d-7423ad7bc6b7",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "fe93ca4c-9185-4379-8201-b9dfe4bb3f16",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Dickinson"
+          }, {
+            "id" : "fe93ca4c-9185-4379-8201-b9dfe4bb3f16",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Dickinson"
+          } ]
+        }, {
+          "id" : "8c2f2298-f12d-444f-aed9-ebd54cf970dc",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/DistrictDescription",
+          "values" : [ {
+            "id" : "f1a76a19-ddc5-4b9e-b23a-68b8e3c5b5cc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_DESCRIPTION_ORIG",
+            "text" : "Breitung Township, Kingsford Village bounded by (N) Breitung Av; (E) city limits; (S) city limits; (W) Balsam"
+          } ]
+        }, {
+          "id" : "bfd8b541-e9d3-4a42-be79-cbf0022519c8",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "80da12cc-d642-470b-8b30-0f1aebaa4efb",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1610302280936,
+              "created" : 1610302280936
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Michigan, Dickinson, Breitung Township, Kingsford"
+          }, {
+            "id" : "80da12cc-d642-470b-8b30-0f1aebaa4efb",
+            "confidence" : "http://confidence/88",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1610302280939,
+              "created" : 1610302280939
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Kingsford, Dickinson, Michigan, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5446988",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1024, 1015",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "280bfc2d-95ec-4b71-9658-1a4e0b3da1c7",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "5aa3ae03-62d8-4ebe-a8c8-9f867848bd77",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Michigan"
+          }, {
+            "id" : "5aa3ae03-62d8-4ebe-a8c8-9f867848bd77",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE",
+            "text" : "Michigan"
+          } ]
+        }, {
+          "id" : "1e414834-c456-45dc-9587-ac33df9c5ac7",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrictNbr",
+          "values" : [ {
+            "id" : "ea123faf-4afc-4f8d-8a00-5c7a9c3e4e84",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_NBR_ORIG",
+            "text" : "22-4 Breitung Township, Kingsford Village bounded by (N) Breitung Av; (E) city limits; (S) city limits; (W) Balsam"
+          } ]
+        }, {
+          "id" : "eff32b9c-8e9b-40f7-b8a6-ff2fd74c39df",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Township",
+          "values" : [ {
+            "id" : "12ebc6bc-080c-4a5b-9dd2-63bb988e5731",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWNSHIP_ORIG",
+            "text" : "Breitung Township, Kingsford"
+          }, {
+            "id" : "12ebc6bc-080c-4a5b-9dd2-63bb988e5731",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_TOWNSHIP",
+            "text" : "Breitung Township, Kingsford"
+          } ]
+        }, {
+          "id" : "8e3d5f40-262c-4786-8612-9ade135ea48b",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "b17bec41-8413-4ae3-a092-c53a76b4b9ee",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "682a4ea4-5dc5-4dc0-8755-c4155f611c0f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "fe3d773e-e30a-438a-9377-5daaa70f31f5",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "22-4"
+          } ]
+        }, {
+          "id" : "1fb14b3d-9327-408c-9350-1c9186a2d17f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/MinorCivilDivision",
+          "values" : [ {
+            "id" : "8893cf09-14cb-4d91-a711-52c13d44a736",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DIVISION_CIVIL_MINOR_ORIG",
+            "text" : "Breitung Township"
+          } ]
+        }, {
+          "id" : "e91014f8-21a9-4272-abaf-0ca8afcf9878",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "6f7e2553-4c38-4cc0-a870-59fdb87d128d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Kingsford"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "aba2657e-a4a2-430b-8e79-2582957fa726",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "ad6e86ff-3980-4c0e-b745-dfe2c7a4bc15",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "fe16797e-11ab-41a8-9803-29e7e3f050f7",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "d356bf30-b133-4e64-b87e-fdee9a6b2764",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "HEAD"
+      } ]
+    }, {
+      "id" : "2dca52c0-8257-4f14-a3cd-547a6a91bea0",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/RecordId",
+      "values" : [ {
+        "id" : "5e4b62a7-7098-44ce-b466-99fd298937f0",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_ID",
+        "text" : "005461583_00134_22"
+      } ]
+    }, {
+      "id" : "dc9e73a0-578f-425e-b382-5fa0d4b37453",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "ad096cdb-5420-4207-95ad-6148d4968381",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "63"
+      } ]
+    }, {
+      "id" : "29513b26-e860-4e7d-8e62-a1da46f58da1",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdId",
+      "values" : [ {
+        "id" : "b4a4ed31-d31d-4f92-a733-f69b60286eb2",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_HOUSEHOLD_ID",
+        "text" : "358"
+      } ]
+    }, {
+      "id" : "43b0f4b8-cbe9-42e0-aa2a-a4bc19f7c442",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetLtr",
+      "values" : [ {
+        "id" : "fc469ac3-3472-4149-a7ec-13c0a4e7f8e0",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_LTR_ORIG",
+        "text" : "B"
+      } ]
+    }, {
+      "id" : "13aefcb3-0574-4724-8ad8-31eab7ac9d0c",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetNbr",
+      "values" : [ {
+        "id" : "6c8a3e77-8898-41d0-b197-2b5529fcdfc5",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_NBR_ORIG",
+        "text" : "15"
+      } ]
+    }, {
+      "id" : "81f4746b-2b4f-40be-ae96-0f01cc0d4b57",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "90b1642a-41ac-478b-8129-adf0c519e130",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Head"
+      }, {
+        "id" : "90b1642a-41ac-478b-8129-adf0c519e130",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Head"
+      } ]
+    }, {
+      "id" : "34de8b4f-6cb2-4e9b-b5c7-65c8b4d00375",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/ExtData",
+      "values" : [ {
+        "id" : "4ad77c05-d149-44d8-8686-41af75a6f636",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_DATA_ORIG",
+        "text" : "{\"FOLDER\":\"005461583\"}"
+      } ]
+    }, {
+      "id" : "191eb8cc-4472-4056-8277-f9bed9a9bda2",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "055d2b72-3385-4699-a15d-b248b19db32d",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "35"
+      }, {
+        "id" : "055d2b72-3385-4699-a15d-b248b19db32d",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "35"
+      } ],
+      "qualifiers" : [ {
+        "value" : "8827859f-c470-48cd-8489-0aaf8781cfbc",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Carl Schei",
+      "gender" : "Male",
+      "birthDate" : "1905",
+      "birthPlace" : "Michigan"
+    }
+  }, {
+    "id" : "p_14038004201",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "f49310bb-1893-41db-bfde-42f006be3051",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "bcd408cb-c6bc-4aa5-9da8-d7daa0b33bdd",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "bcd408cb-c6bc-4aa5-9da8-d7daa0b33bdd",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1610302279720,
+            "created" : 1610302279720
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K42T-S68?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MFQ-ZSWF?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1622361446" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K42T-S68" ]
+    },
+    "names" : [ {
+      "id" : "8c7d387d-d4c5-4bd1-aafb-901233a8364e",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Linnea Schei",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Schei",
+          "fields" : [ {
+            "id" : "abada8f7-4b81-4227-a195-ba3f355de052",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "b7c9dcf1-5f99-47be-81f3-4feebe24c62f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Schei"
+            }, {
+              "id" : "b7c9dcf1-5f99-47be-81f3-4feebe24c62f",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610302279471,
+                "created" : 1610302279471
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Schei"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Linnea",
+          "fields" : [ {
+            "id" : "01c37e5b-d39a-460d-b250-437a9a6f6f97",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "78af3065-f24d-412b-a556-cef2248ce2a1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Linnea"
+            }, {
+              "id" : "78af3065-f24d-412b-a556-cef2248ce2a1",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610302279471,
+                "created" : 1610302279471
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Linnea"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "16681f18-7b33-4cea-8a01-af00a8ee47a9",
+          "type" : "http://gedcomx.org/Name",
+          "sources" : [ ],
+          "values" : [ {
+            "id" : "637ddfac-2589-46e4-b219-1fe9be18e848",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610302279465,
+              "created" : 1610302279465
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Linnea Schei"
+          }, {
+            "id" : "637ddfac-2589-46e4-b219-1fe9be18e848",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610302279471,
+              "created" : 1610302279471
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Linnea Schei"
+          } ]
+        } ]
+      } ]
+    }, {
+      "id" : "8c7d387d-d4c5-4bd1-aafb-901233a8364e",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Schei",
+          "fields" : [ {
+            "id" : "abada8f7-4b81-4227-a195-ba3f355de052",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "b7c9dcf1-5f99-47be-81f3-4feebe24c62f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Schei"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Linnea",
+          "fields" : [ {
+            "id" : "01c37e5b-d39a-460d-b250-437a9a6f6f97",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "78af3065-f24d-412b-a556-cef2248ce2a1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Linnea"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "b82fa5f9-6393-4e59-a689-de8e3b6bdce2",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "5856842c-4eb5-4597-a48c-ad37e9ff322c",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        }, {
+          "id" : "5856842c-4eb5-4597-a48c-ad37e9ff322c",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_RACE_OR_COLOR",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Married",
+      "fields" : [ {
+        "id" : "01ef2593-c14f-4686-8cfd-9fc33ffd8d9e",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "79d265a5-2f7b-4ec8-a126-5c2106cf395a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "79d265a5-2f7b-4ec8-a126-5c2106cf395a",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Married"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Ethnicity",
+      "value" : "American",
+      "fields" : [ {
+        "id" : "38e98924-5e25-44d9-85b9-2eb3497dcc55",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Ethnicity",
+        "values" : [ {
+          "id" : "39f2ca1d-9f7c-46db-9f92-64505745af4a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_ETHNICITY_ORIG",
+          "text" : "American"
+        } ]
+      } ]
+    }, {
+      "id" : "c9428055-c411-47eb-a97a-4341b41d7e3b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "02b58ca2-fe26-417d-8c48-106fa5a2c9cc",
+        "original" : "1908",
+        "fields" : [ {
+          "id" : "2b8e60fa-6a8a-4ddd-8e16-9a5848e5bd13",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "5559f310-0dd1-44bb-b4ff-555fa8bab379",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1908"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "302506b7-7233-449b-b4ae-835109bba557",
+        "original" : "Sweden",
+        "fields" : [ {
+          "id" : "28a9dd2c-a300-494d-9ec9-ef679cb05836",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "95f78812-df5f-41ab-b852-0a8e6ecfb61e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Sweden"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "41639195-5435-4ec1-a497-9af183fa41c7",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "464db6d5-96ff-4dbe-87b7-010c0b96e246",
+        "original" : "1940",
+        "fields" : [ {
+          "id" : "1fde2fe9-1dff-472a-9eea-e5572820ab6d",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "5c598e1f-cb64-4766-ad7b-d9754ff85e8a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "d048b3d4-bf03-4d0a-ba17-d013067e2f37",
+        "original" : "Kingsford, Dickinson, Michigan, United States",
+        "fields" : [ {
+          "id" : "8079838e-5bee-4659-8e85-17a9bccb9600",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrictNbr",
+          "values" : [ {
+            "id" : "9bced8f1-6f2d-45b4-bca6-da0cd560eaed",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_NBR_ORIG",
+            "text" : "22-4 Breitung Township, Kingsford Village bounded by (N) Breitung Av; (E) city limits; (S) city limits; (W) Balsam"
+          } ]
+        }, {
+          "id" : "093e1a94-a456-41ba-b5c0-ba52ce7bc0e7",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "407f3775-5a40-41ad-97d6-4bec2e460821",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "22-4"
+          } ]
+        }, {
+          "id" : "3c46ac77-1c17-477e-908e-83ac94cbde38",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "14b8704c-47ca-4387-8f9d-bfadbfa32f87",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1610302280939,
+              "created" : 1610302280939
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Michigan, Dickinson, Breitung Township, Kingsford"
+          }, {
+            "id" : "14b8704c-47ca-4387-8f9d-bfadbfa32f87",
+            "confidence" : "http://confidence/88",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1610302280944,
+              "created" : 1610302280944
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Kingsford, Dickinson, Michigan, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5446988",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1024, 1015",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "abb18233-98f9-4c58-9136-67eed2ebaee6",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "b8cf0fa1-c39a-49b5-9ccd-0bef16da1bb0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Kingsford"
+          } ]
+        }, {
+          "id" : "bd4e343d-307b-4cda-b52c-49a4963fbfb5",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/DistrictDescription",
+          "values" : [ {
+            "id" : "370053bd-0a12-4d95-ac89-552600ae629b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_DESCRIPTION_ORIG",
+            "text" : "Breitung Township, Kingsford Village bounded by (N) Breitung Av; (E) city limits; (S) city limits; (W) Balsam"
+          } ]
+        }, {
+          "id" : "a2f8bcb2-fbd3-42b6-8659-07573970b88a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "74cafd85-da3a-4756-951d-ee4d8c3d4883",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "014caef0-60f5-481b-9fe1-228938f9cf84",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Township",
+          "values" : [ {
+            "id" : "ed08835b-de2b-4fa2-b2ac-92944d621865",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWNSHIP_ORIG",
+            "text" : "Breitung Township, Kingsford"
+          }, {
+            "id" : "ed08835b-de2b-4fa2-b2ac-92944d621865",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_TOWNSHIP",
+            "text" : "Breitung Township, Kingsford"
+          } ]
+        }, {
+          "id" : "3254a2e6-d2f4-4a03-b516-32dc8ca9d594",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "5accb6fb-294d-45e4-8230-0d33d0f59b14",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Dickinson"
+          }, {
+            "id" : "5accb6fb-294d-45e4-8230-0d33d0f59b14",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Dickinson"
+          } ]
+        }, {
+          "id" : "2a951342-bbdf-48df-91ab-1c28cb3a76ff",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "ce86f805-7611-4266-bd2c-cc92a8505a74",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Michigan"
+          }, {
+            "id" : "ce86f805-7611-4266-bd2c-cc92a8505a74",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE",
+            "text" : "Michigan"
+          } ]
+        }, {
+          "id" : "a1b7a34c-f464-4efb-b6ab-50de79c3477f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/MinorCivilDivision",
+          "values" : [ {
+            "id" : "6c7a18d6-f363-4735-89d2-11936467ad04",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DIVISION_CIVIL_MINOR_ORIG",
+            "text" : "Breitung Township"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "2ee68396-2bf0-4fef-938f-a7ab02032e5f",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "7e78cad8-9b26-456e-b474-d831f29aaa91",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "992a28e8-119c-4fa9-b71b-89145c6fce32",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "id" : "4d4fa9ae-2ab9-4bc0-8b69-62a732857c69",
+        "original" : "1935",
+        "fields" : [ {
+          "id" : "5de8f1fb-d765-474d-b9dc-5c23b04804f1",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "186fb7d6-d1a8-41e2-958b-c3660f88b86d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_DATE_ORIG",
+            "text" : "1935"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "5aa2421a-52d2-419f-8fc7-aedfaf1707ff",
+        "original" : "Same House",
+        "fields" : [ {
+          "id" : "f4ebe152-b333-44fa-ab42-4e33cf7851e1",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "cad6dd0b-7214-424b-b656-c21c4329f3f9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Same House, ,"
+          }, {
+            "id" : "cad6dd0b-7214-424b-b656-c21c4329f3f9",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_PLACE",
+            "text" : "Same House"
+          } ]
+        }, {
+          "id" : "4d690d51-644f-4abc-9b03-47ff7dde98aa",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "d84a74ba-8722-421e-a3fb-3c2c5cf694e4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_CITY_ORIG",
+            "text" : "Same House"
+          }, {
+            "id" : "d84a74ba-8722-421e-a3fb-3c2c5cf694e4",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_CITY",
+            "text" : "Same House"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "52531f41-afea-4c24-8414-3a8ff7aeb04e",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/RecordId",
+      "values" : [ {
+        "id" : "1e0637ba-4377-490b-b779-b6d7a383c125",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_ID",
+        "text" : "005461583_00134_23"
+      } ]
+    }, {
+      "id" : "06c06c88-1406-475b-97f1-8759d1a44f14",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetNbr",
+      "values" : [ {
+        "id" : "09f2fc43-26f5-4506-a377-259bc08e8dbc",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_NBR_ORIG",
+        "text" : "15"
+      } ]
+    }, {
+      "id" : "55184b4d-2466-4da7-b68a-52001b9fe425",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "64ce779b-7248-41be-9b83-6c1046fd1af7",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "64"
+      } ]
+    }, {
+      "id" : "b0fe0998-c2d0-477d-a9f7-96c3bb60750d",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdId",
+      "values" : [ {
+        "id" : "88c0a9f0-3cd4-445e-bb4b-3e24d3fe2d58",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_HOUSEHOLD_ID",
+        "text" : "358"
+      } ]
+    }, {
+      "id" : "27aac6a0-ffad-4a03-b03c-e453ea25e35f",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetLtr",
+      "values" : [ {
+        "id" : "13483caa-6a7f-4714-a159-f058950e3b33",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_LTR_ORIG",
+        "text" : "B"
+      } ]
+    }, {
+      "id" : "edb93fa2-d484-471f-b233-8413102f0350",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/FsUnsupported",
+      "values" : [ {
+        "id" : "dd66b073-5e17-4378-8ce3-7f9d81440005",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNSUPPORTED",
+        "text" : "{\"LANGUAGE\":\"en\"}"
+      } ]
+    }, {
+      "id" : "0a1cd6dd-2d64-4053-b8c9-8e44658c80f6",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "ca8d074f-eae8-49e5-a091-d1e0b1e8166a",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Wife"
+      }, {
+        "id" : "ca8d074f-eae8-49e5-a091-d1e0b1e8166a",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Wife"
+      } ]
+    }, {
+      "id" : "94c5cce7-70ba-470b-b1d9-f0e704ec2d0b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "13b1a845-72ec-4d8c-b8e2-7c1a01c08201",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "WIFE"
+      } ]
+    }, {
+      "id" : "bf9a1a74-eaae-4405-a9c9-9b63d8e6423d",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "a3f5aa01-c63c-4300-9ffb-ff631a439c78",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "32"
+      }, {
+        "id" : "a3f5aa01-c63c-4300-9ffb-ff631a439c78",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "32"
+      } ],
+      "qualifiers" : [ {
+        "value" : "7db9516b-914e-4671-be38-fda14549533b",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Linnea Schei",
+      "gender" : "Female",
+      "birthDate" : "1908",
+      "birthPlace" : "Sweden"
+    }
+  }, {
+    "id" : "p_14038004202",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "97abcdf0-9009-4e4e-a1e4-0a7b388364a4",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "b2e913c4-55a9-46f6-919b-261986b932ab",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "b2e913c4-55a9-46f6-919b-261986b932ab",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1610302280491,
+            "created" : 1610302280491
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K42T-S6D?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MFQ-ZSWF?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1622363206" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K42T-S6D" ]
+    },
+    "names" : [ {
+      "id" : "38c1cb6a-08e5-42a0-ae8f-2950d6008c06",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Carol Jean Schei",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Schei",
+          "fields" : [ {
+            "id" : "6475f8f9-4304-422d-8356-02bbabc26f51",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "c9cbc3f6-3322-4394-ace3-a5b5d21084ac",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Schei"
+            }, {
+              "id" : "c9cbc3f6-3322-4394-ace3-a5b5d21084ac",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610302279477,
+                "created" : 1610302279477
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Schei"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Carol Jean",
+          "fields" : [ {
+            "id" : "76d91b4c-b28b-4529-b4cf-54aff86e542d",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "dac06fb4-62f4-4490-9e31-91e77ec746ea",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Carol Jean"
+            }, {
+              "id" : "dac06fb4-62f4-4490-9e31-91e77ec746ea",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610302279477,
+                "created" : 1610302279477
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Carol Jean"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "f71b2560-6f41-4015-ae0a-d7b3aed45d39",
+          "type" : "http://gedcomx.org/Name",
+          "sources" : [ ],
+          "values" : [ {
+            "id" : "d759f472-e425-43ae-8b56-6dfd7d6aea52",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610302279471,
+              "created" : 1610302279471
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Carol Jean Schei"
+          }, {
+            "id" : "d759f472-e425-43ae-8b56-6dfd7d6aea52",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610302279477,
+              "created" : 1610302279477
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Carol Jean Schei"
+          } ]
+        } ]
+      } ]
+    }, {
+      "id" : "38c1cb6a-08e5-42a0-ae8f-2950d6008c06",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Schei",
+          "fields" : [ {
+            "id" : "6475f8f9-4304-422d-8356-02bbabc26f51",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "c9cbc3f6-3322-4394-ace3-a5b5d21084ac",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Schei"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Carol Jean",
+          "fields" : [ {
+            "id" : "76d91b4c-b28b-4529-b4cf-54aff86e542d",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "dac06fb4-62f4-4490-9e31-91e77ec746ea",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Carol Jean"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "65a75401-33fe-4bd4-9456-5248304be37a",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "3e54c6ec-b616-453c-896f-863f584c8714",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        }, {
+          "id" : "3e54c6ec-b616-453c-896f-863f584c8714",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_RACE_OR_COLOR",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Ethnicity",
+      "value" : "American",
+      "fields" : [ {
+        "id" : "37de00a8-0fa8-4c13-83cd-473bdba78fa6",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Ethnicity",
+        "values" : [ {
+          "id" : "d4b6d3b0-4b2d-4988-afef-81f81273716a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_ETHNICITY_ORIG",
+          "text" : "American"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Single",
+      "fields" : [ {
+        "id" : "95817eb4-d527-4cd4-941c-4aa7df26279a",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "f88c4650-a54c-499c-aa2d-50eb04cbb6ec",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "S"
+        }, {
+          "id" : "f88c4650-a54c-499c-aa2d-50eb04cbb6ec",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Single"
+        } ]
+      } ]
+    }, {
+      "id" : "aeacf8fb-666d-45d3-9208-5750450e985c",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "38a0d7dd-a027-4345-9691-9b875e8a81d4",
+        "original" : "1940",
+        "fields" : [ {
+          "id" : "99134f1b-57f8-4a51-9dca-b667d32a079d",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "df0073d0-bd19-423d-a000-5540d8907c28",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "c579b314-205c-46f6-9123-d113c499c8aa",
+        "original" : "Kingsford, Dickinson, Michigan, United States",
+        "fields" : [ {
+          "id" : "8d47bfb5-175d-48f9-a712-fcbdff8ab79e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "78929ad4-04bb-4c2b-810c-8875fb3f33eb",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Kingsford"
+          } ]
+        }, {
+          "id" : "390286b5-3cff-4cd2-8ab0-a8a976dc961a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "9701d2fa-b207-4357-801b-a8a104dac684",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "cd577756-1dd7-4a04-9ad5-5fb6214fcecc",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Township",
+          "values" : [ {
+            "id" : "2c6c46de-e5fb-49d1-a3db-fe1037f0acbc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWNSHIP_ORIG",
+            "text" : "Breitung Township, Kingsford"
+          }, {
+            "id" : "2c6c46de-e5fb-49d1-a3db-fe1037f0acbc",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_TOWNSHIP",
+            "text" : "Breitung Township, Kingsford"
+          } ]
+        }, {
+          "id" : "a9832c09-d8ee-4b0b-bd34-790f19ce18b0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrictNbr",
+          "values" : [ {
+            "id" : "38703092-1e82-476c-a64a-975d5e5dc8dc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_NBR_ORIG",
+            "text" : "22-4 Breitung Township, Kingsford Village bounded by (N) Breitung Av; (E) city limits; (S) city limits; (W) Balsam"
+          } ]
+        }, {
+          "id" : "1572c1ac-b077-4197-bc98-010b2ab760fe",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "22129231-e694-45da-8713-7cdb4de5c6dc",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1610302280944,
+              "created" : 1610302280944
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Michigan, Dickinson, Breitung Township, Kingsford"
+          }, {
+            "id" : "22129231-e694-45da-8713-7cdb4de5c6dc",
+            "confidence" : "http://confidence/88",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1610302280948,
+              "created" : 1610302280948
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Kingsford, Dickinson, Michigan, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5446988",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1024, 1015",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "5a783542-f43e-440a-bfb3-ed9502e31118",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "d496c668-2757-4cd0-8ce2-0f1b241620c2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "22-4"
+          } ]
+        }, {
+          "id" : "f24b0bd4-9996-4bd2-9934-d95fcfb82747",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/MinorCivilDivision",
+          "values" : [ {
+            "id" : "7cc6f95a-0541-463d-93b1-056c59fbfe1f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DIVISION_CIVIL_MINOR_ORIG",
+            "text" : "Breitung Township"
+          } ]
+        }, {
+          "id" : "1d74c7d1-55ef-4e49-994d-442c4f1fb2da",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "47d85808-590d-44b3-8980-1b0b2b59c027",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Michigan"
+          }, {
+            "id" : "47d85808-590d-44b3-8980-1b0b2b59c027",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE",
+            "text" : "Michigan"
+          } ]
+        }, {
+          "id" : "8c432cb0-edd2-4a30-8acd-1c0f7a846adb",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "b006e9da-9d06-4d2a-84aa-d78ece388585",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Dickinson"
+          }, {
+            "id" : "b006e9da-9d06-4d2a-84aa-d78ece388585",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Dickinson"
+          } ]
+        }, {
+          "id" : "f54fce33-53c9-4a6d-9fac-243c54294f92",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/DistrictDescription",
+          "values" : [ {
+            "id" : "e966b4cb-0680-4ea7-b334-66835fe0dc40",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_DESCRIPTION_ORIG",
+            "text" : "Breitung Township, Kingsford Village bounded by (N) Breitung Av; (E) city limits; (S) city limits; (W) Balsam"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "14a43635-92d7-4fcd-ba94-497e350e4763",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "51be82ba-0780-44a9-8f66-3a4d08b5fbfa",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "eb34e1ec-b389-4786-8872-af3330fb2ae1",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "5b75ac7e-f10a-4cbe-aa90-dc743a278e1b",
+        "original" : "1927",
+        "fields" : [ {
+          "id" : "92ab3b22-170d-43fd-b5c4-a28a2f2d2ea3",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "5cb33577-b52c-4c6e-9cf4-de14c26cb006",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1927"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "f8c39afd-00bf-4c39-9632-0d45ab80e023",
+        "original" : "Michigan",
+        "fields" : [ {
+          "id" : "3ee1f019-256e-44d2-b220-ef437d8a2d1c",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "07150966-15e9-4753-8db6-520898475ef3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Michigan"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "026f46cb-e21e-44fb-8875-fb5af1cdfaf7",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "id" : "0ee9a08b-966d-47b9-be07-8e6a3ed1fb4b",
+        "original" : "1935",
+        "fields" : [ {
+          "id" : "59d4449a-13be-48a9-9a55-0d4cb49c111e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "602e0ec4-1093-4adc-96b6-85fec504dac3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_DATE_ORIG",
+            "text" : "1935"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "d613224f-dee4-458b-b122-3b1d85a6e4df",
+        "original" : "Same House",
+        "fields" : [ {
+          "id" : "a401a67e-1335-4be1-be0b-611c976af57a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "de6671ca-b355-41dd-8cb7-26cf5b99a164",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Same House, ,"
+          }, {
+            "id" : "de6671ca-b355-41dd-8cb7-26cf5b99a164",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_PLACE",
+            "text" : "Same House"
+          } ]
+        }, {
+          "id" : "7271a192-6191-4ff4-b83c-b75f04168283",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "df2a0789-2161-433e-97e4-e7eae4ed2e4f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_CITY_ORIG",
+            "text" : "Same House"
+          }, {
+            "id" : "df2a0789-2161-433e-97e4-e7eae4ed2e4f",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_CITY",
+            "text" : "Same House"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "cfd71331-1dd9-4df4-bc5d-488485d3a16c",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdId",
+      "values" : [ {
+        "id" : "de7cb4a1-a2f5-4c55-8189-a1c247384688",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_HOUSEHOLD_ID",
+        "text" : "358"
+      } ]
+    }, {
+      "id" : "ad6f8d19-b80c-41ba-8285-140d62889c23",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/RecordId",
+      "values" : [ {
+        "id" : "86aff412-f0ef-48eb-8773-ac27f775732d",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_ID",
+        "text" : "005461583_00134_24"
+      } ]
+    }, {
+      "id" : "5e7ae4bd-0ae5-4e21-9405-fba2e3b464ed",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetNbr",
+      "values" : [ {
+        "id" : "3ebed215-e7a4-4708-804d-5f50219475e3",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_NBR_ORIG",
+        "text" : "15"
+      } ]
+    }, {
+      "id" : "95ccc4d1-d7ba-46ed-a67f-6a52516833e2",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/ExtData",
+      "values" : [ {
+        "id" : "f89af1e4-96e8-441f-a8e7-5596e4d22f27",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_DATA_ORIG",
+        "text" : "{\"PR_RACE_OR_COLOR_CSS\":\"White\"}"
+      } ]
+    }, {
+      "id" : "803d490a-8247-412f-9dcb-33885922e0eb",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "e7f2c670-123c-4e32-bca4-dc37625dd7f1",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "DAU"
+      } ]
+    }, {
+      "id" : "d0870e08-9540-48cc-b399-4be00363d805",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "d0c799c3-82ea-42d8-aa5f-9c7d66e56afd",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      }, {
+        "id" : "d0c799c3-82ea-42d8-aa5f-9c7d66e56afd",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Daughter"
+      } ]
+    }, {
+      "id" : "8805f536-70b2-456a-9261-f5917d028799",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "4ddc3b00-771a-4c7a-95b7-2d1bf3bafdd1",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "65"
+      } ]
+    }, {
+      "id" : "4bd12f94-7dc7-4bfa-a382-5492de518be9",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetLtr",
+      "values" : [ {
+        "id" : "3d1cda75-688a-440b-ace9-24a2f66e9e23",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_LTR_ORIG",
+        "text" : "B"
+      } ]
+    }, {
+      "id" : "ec25a8cf-c065-40b6-8ff4-9e41a728446b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "6b0232f6-5b1e-47b0-93f9-ba808eaa8df7",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "13"
+      }, {
+        "id" : "6b0232f6-5b1e-47b0-93f9-ba808eaa8df7",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "13"
+      } ],
+      "qualifiers" : [ {
+        "value" : "9ff6c3bd-c5dc-4e4a-abb4-a17700bddcde",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Carol Jean Schei",
+      "gender" : "Female",
+      "birthDate" : "1927",
+      "birthPlace" : "Michigan"
+    }
+  }, {
+    "id" : "p_14038004203",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "6c6c3439-e58a-4b5a-86ca-f7c26962ed41",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "ddfbc282-ca61-4b05-9620-42d15a821589",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "ddfbc282-ca61-4b05-9620-42d15a821589",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1610302280935,
+            "created" : 1610302280935
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K42T-S66?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MFQ-ZSWF?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1622369097" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K42T-S66" ]
+    },
+    "names" : [ {
+      "id" : "4943f090-834d-4e10-8fbb-6790a0068495",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Clarice Ann Schei",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Schei",
+          "fields" : [ {
+            "id" : "f315f316-4007-44b6-a187-5aead301f559",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "02525246-39ef-4975-8368-dea6de1de734",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Schei"
+            }, {
+              "id" : "02525246-39ef-4975-8368-dea6de1de734",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610302279485,
+                "created" : 1610302279485
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Schei"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Clarice Ann",
+          "fields" : [ {
+            "id" : "ee7d313d-9c03-487c-863f-feac91b31721",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "3035de84-f10d-4b84-940a-d40ec839d4ed",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Clarice Ann"
+            }, {
+              "id" : "3035de84-f10d-4b84-940a-d40ec839d4ed",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610302279485,
+                "created" : 1610302279485
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Clarice Ann"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "a887ec38-a9e7-4001-944d-be734374d6b7",
+          "type" : "http://gedcomx.org/Name",
+          "sources" : [ ],
+          "values" : [ {
+            "id" : "195c3264-3978-455c-abd3-6a1a5e572447",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610302279477,
+              "created" : 1610302279477
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Clarice Ann Schei"
+          }, {
+            "id" : "195c3264-3978-455c-abd3-6a1a5e572447",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610302279485,
+              "created" : 1610302279485
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Clarice Ann Schei"
+          } ]
+        } ]
+      } ]
+    }, {
+      "id" : "4943f090-834d-4e10-8fbb-6790a0068495",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Schei",
+          "fields" : [ {
+            "id" : "f315f316-4007-44b6-a187-5aead301f559",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "02525246-39ef-4975-8368-dea6de1de734",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Schei"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Clarice Ann",
+          "fields" : [ {
+            "id" : "ee7d313d-9c03-487c-863f-feac91b31721",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "3035de84-f10d-4b84-940a-d40ec839d4ed",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Clarice Ann"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Single",
+      "fields" : [ {
+        "id" : "1e242913-471a-4c80-a104-60323e8ab9f8",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "06b326ab-78b5-4771-937e-64cf417e668c",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "S"
+        }, {
+          "id" : "06b326ab-78b5-4771-937e-64cf417e668c",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Single"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "d6d57a66-9eaf-4d94-8805-177dffe99e05",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "3988a399-dee5-4c85-a827-1d9d8ac0b2b6",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        }, {
+          "id" : "3988a399-dee5-4c85-a827-1d9d8ac0b2b6",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_RACE_OR_COLOR",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Ethnicity",
+      "value" : "American",
+      "fields" : [ {
+        "id" : "74e9ed0f-a199-46db-8610-d8908079a788",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://gedcomx.org/Ethnicity",
+        "values" : [ {
+          "id" : "9f51e7ce-2ff1-4561-9fb4-9534b88d2b1d",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_ETHNICITY_ORIG",
+          "text" : "American"
+        } ]
+      } ]
+    }, {
+      "id" : "a83d3c2d-d77c-4b9d-b606-23f6a5333159",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "8a9aa30a-66f6-4233-9dd2-92beb2c2aa7a",
+        "original" : "1932",
+        "fields" : [ {
+          "id" : "37c9d7ed-62b4-4f9c-a3a8-9a6bd634639a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "86c2045b-1375-430b-a2ad-e85403374ea9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1932"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "ca40646a-ea5f-473b-b059-09e2f036c43c",
+        "original" : "Michigan",
+        "fields" : [ {
+          "id" : "8002fa3b-e3ea-4e66-8938-67a8d4383700",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "9da82531-b07b-4b3a-9a4d-8eee376f0810",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Michigan"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "9c572512-e063-4e23-b6ae-211a6e820e20",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "id" : "0c4499b2-8333-42f0-9017-854fb9d4958d",
+        "original" : "1935",
+        "fields" : [ {
+          "id" : "5bedfbae-9c3e-48bc-b018-6b6640b58b04",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "10dede89-dc63-4a92-836c-0cdd291a7c48",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_DATE_ORIG",
+            "text" : "1935"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "930b0a4d-2bd3-4b00-b464-5b149f15d6fa",
+        "original" : "Same House",
+        "fields" : [ {
+          "id" : "e5fbd79b-2b68-4cb0-8edd-e003d062b180",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "dfe78677-c26e-448b-9762-b2cdfc696160",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_CITY_ORIG",
+            "text" : "Same House"
+          }, {
+            "id" : "dfe78677-c26e-448b-9762-b2cdfc696160",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_CITY",
+            "text" : "Same House"
+          } ]
+        }, {
+          "id" : "e9e875f9-e975-4eda-b249-56d773a2ed09",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "fe8d232d-8a22-41cc-b406-30caa4a49819",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Same House, ,"
+          }, {
+            "id" : "fe8d232d-8a22-41cc-b406-30caa4a49819",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_PLACE",
+            "text" : "Same House"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "2bfc012a-9352-473e-8ea5-8760cca28a46",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "90b7a74c-147d-4132-801c-67cb64ad4404",
+        "original" : "1940",
+        "fields" : [ {
+          "id" : "903d64ae-01dc-4724-95a1-c98a1489be7a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "f924f7dd-0f36-417e-a4ac-5983ccfb5f02",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "b4db3066-b644-4364-ba61-1120b8fc9ec6",
+        "original" : "Kingsford, Dickinson, Michigan, United States",
+        "fields" : [ {
+          "id" : "1390aa6a-3657-4f3b-ac11-971a77042a5d",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "a9b26898-ff6a-4088-9718-c85f3bf57ef3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Kingsford"
+          } ]
+        }, {
+          "id" : "6d16e625-1610-45e6-ae79-97b782d72f40",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Township",
+          "values" : [ {
+            "id" : "9e51bff0-8249-4642-a6da-76a230f27b5c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWNSHIP_ORIG",
+            "text" : "Breitung Township, Kingsford"
+          }, {
+            "id" : "9e51bff0-8249-4642-a6da-76a230f27b5c",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_TOWNSHIP",
+            "text" : "Breitung Township, Kingsford"
+          } ]
+        }, {
+          "id" : "2807c3bd-3a5d-494c-a928-646216056191",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "3595a217-218f-4042-bec1-e4d2f310a4df",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Michigan"
+          }, {
+            "id" : "3595a217-218f-4042-bec1-e4d2f310a4df",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE",
+            "text" : "Michigan"
+          } ]
+        }, {
+          "id" : "3aa030e1-f398-46b3-a1b8-7c9a34e1ea4e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/MinorCivilDivision",
+          "values" : [ {
+            "id" : "0da41f88-f06d-4758-a441-a990b4615e69",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DIVISION_CIVIL_MINOR_ORIG",
+            "text" : "Breitung Township"
+          } ]
+        }, {
+          "id" : "eaa977ae-cae2-438f-9391-e2487a768239",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrictNbr",
+          "values" : [ {
+            "id" : "c477e340-37f3-4d02-952b-467afee9f6e4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_NBR_ORIG",
+            "text" : "22-4 Breitung Township, Kingsford Village bounded by (N) Breitung Av; (E) city limits; (S) city limits; (W) Balsam"
+          } ]
+        }, {
+          "id" : "bb77a352-0c36-4a90-9183-2ba0b526afe4",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://familysearch.org/types/fields/DistrictDescription",
+          "values" : [ {
+            "id" : "87ee2223-d1b2-4f83-99a9-1b5dadfefe92",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_DESCRIPTION_ORIG",
+            "text" : "Breitung Township, Kingsford Village bounded by (N) Breitung Av; (E) city limits; (S) city limits; (W) Balsam"
+          } ]
+        }, {
+          "id" : "2dc4acf6-ef9e-4172-8cad-039508d5c97c",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "f5e0035e-cabb-4cfa-904d-253badb7c15a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "6d63cad3-23ef-4c65-a293-0c2246b623d9",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "b39d6d9a-4a10-437b-9a8f-7c46f4ac3c78",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "22-4"
+          } ]
+        }, {
+          "id" : "20c651d9-49c1-4dfa-a756-b1b676e2c344",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "e573723e-7e43-469e-ae7a-9411f6eed6dd",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1610302280948,
+              "created" : 1610302280948
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Michigan, Dickinson, Breitung Township, Kingsford"
+          }, {
+            "id" : "e573723e-7e43-469e-ae7a-9411f6eed6dd",
+            "confidence" : "http://confidence/88",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1610302280952,
+              "created" : 1610302280952
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Kingsford, Dickinson, Michigan, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5446988",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1024, 1015",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "5ad6e706-0239-4cf5-9a1b-4a13593466b8",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+              "resourceId" : "cis.user.MMM9-W8P1"
+            },
+            "modified" : 1642613454911,
+            "created" : 1642613454911
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "ddf1ed6f-728c-4c8f-ab20-e811987b3643",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Dickinson"
+          }, {
+            "id" : "ddf1ed6f-728c-4c8f-ab20-e811987b3643",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Dickinson"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "0721a2fa-cb89-4266-aac1-fb2c8414a4c5",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+            "resourceId" : "cis.user.MMM9-W8P1"
+          },
+          "modified" : 1642613454911,
+          "created" : 1642613454911
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "38626875-a907-40b5-8c6f-5db6646a60c6",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "e3c1456a-ba84-481a-b369-41acadb3229b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "e7a87093-64c8-47d5-a552-0a190e61c171",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      }, {
+        "id" : "e7a87093-64c8-47d5-a552-0a190e61c171",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Daughter"
+      } ]
+    }, {
+      "id" : "f6e3c85e-5508-42f7-86c1-16ce066c482d",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "5c155b31-e6f6-4079-959d-33ef7e04b38f",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "66"
+      } ]
+    }, {
+      "id" : "ccb9012a-2ca8-4bdd-a5f8-b863e1d8d870",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/RecordId",
+      "values" : [ {
+        "id" : "b1b9e11f-36a6-4c3a-9c99-6f8714cdd9e4",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_ID",
+        "text" : "005461583_00134_25"
+      } ]
+    }, {
+      "id" : "76e51843-6844-4ecc-b2eb-6174b848ea5e",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetLtr",
+      "values" : [ {
+        "id" : "196d29c7-3844-4b11-8e02-1ace560c9519",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_LTR_ORIG",
+        "text" : "B"
+      } ]
+    }, {
+      "id" : "3919bcb5-a46b-4a4e-9c8a-8ea36923ab7e",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/FsUnsupported",
+      "values" : [ {
+        "id" : "8e77aea5-64d6-4c63-8bb2-72a24a47f867",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNSUPPORTED",
+        "text" : "{\"FOLDER_IMAGE_SEQ\":\"134\"}"
+      } ]
+    }, {
+      "id" : "8c093e3d-ddca-4854-9c2d-1a5631928922",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "9e20b652-bc19-4fbf-858e-4b9078c3e38c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "DAU"
+      } ]
+    }, {
+      "id" : "c9bacb94-a0b9-476e-bca9-68d945cab8ec",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdId",
+      "values" : [ {
+        "id" : "cfa45330-d24e-4008-8206-9c4fa4a6d669",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_HOUSEHOLD_ID",
+        "text" : "358"
+      } ]
+    }, {
+      "id" : "13b90b12-d88f-492c-b137-0592ac81c791",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetNbr",
+      "values" : [ {
+        "id" : "266bc600-42e7-46b9-99b4-3c191371cd21",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_NBR_ORIG",
+        "text" : "15"
+      } ]
+    }, {
+      "id" : "8b6a12cc-4b71-43e6-820b-ddb412efe79b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+          "resourceId" : "cis.user.MMM9-W8P1"
+        },
+        "modified" : 1642613454911,
+        "created" : 1642613454911
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "b20fc50a-9c13-44df-b813-4ce294fef2f9",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "8"
+      }, {
+        "id" : "b20fc50a-9c13-44df-b813-4ce294fef2f9",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "8"
+      } ],
+      "qualifiers" : [ {
+        "value" : "b67ddf3f-69e2-4e68-b664-d8dc4e9b6ea9",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Clarice Ann Schei",
+      "gender" : "Female",
+      "birthDate" : "1932",
+      "birthPlace" : "Michigan"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "dbca668b-e89a-4980-8612-7427089b8165",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14038004201",
+      "resourceId" : "p_14038004201"
+    },
+    "person2" : {
+      "resource" : "#p_14038004203",
+      "resourceId" : "p_14038004203"
+    }
+  }, {
+    "id" : "b2fb3ccc-ac69-4d10-a237-7d54f3d4806b",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14038004201",
+      "resourceId" : "p_14038004201"
+    },
+    "person2" : {
+      "resource" : "#p_14038004202",
+      "resourceId" : "p_14038004202"
+    }
+  }, {
+    "id" : "3714bccf-838e-400f-a41a-70b8163be11d",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_14038001800",
+      "resourceId" : "p_14038001800"
+    },
+    "person2" : {
+      "resource" : "#p_14038004201",
+      "resourceId" : "p_14038004201"
+    }
+  }, {
+    "id" : "19d1a329-2658-45ac-b860-2ab9db5d63a7",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14038001800",
+      "resourceId" : "p_14038001800"
+    },
+    "person2" : {
+      "resource" : "#p_14038004202",
+      "resourceId" : "p_14038004202"
+    }
+  }, {
+    "id" : "7adf37ce-b861-4a20-aede-d4b791ca535c",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14038001800",
+      "resourceId" : "p_14038001800"
+    },
+    "person2" : {
+      "resource" : "#p_14038004203",
+      "resourceId" : "p_14038004203"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_22238011995",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MFQ-ZSWF",
+    "componentOf" : {
+      "description" : "#sd_c_2000219",
+      "descriptionId" : "sd_c_2000219"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1384089315033,
+    "modified" : 1642613454911,
+    "coverage" : [ {
+      "spatial" : {
+        "id" : "b4db3066-b644-4364-ba61-1120b8fc9ec6",
+        "original" : "Kingsford, Dickinson, Michigan, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/5446988"
+      },
+      "temporal" : {
+        "original" : "1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Household of <Unknown>, \"United States Census, 1940\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MFQ-ZSWF" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2000219?arkName=1:2:9MFQ-ZSWF"
+    }
+  }, {
+    "id" : "sd_c_2000219",
+    "about" : "https://api.familysearch.org/platform/records/collections/2000219",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "United States",
+        "description" : "#place_1"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    }, {
+      "spatial" : {
+        "original" : "Puerto Rico",
+        "description" : "#place_5931730"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    }, {
+      "spatial" : {
+        "original" : "American Samoa",
+        "description" : "#place_5931727"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    }, {
+      "spatial" : {
+        "original" : "Virgin Islands",
+        "description" : "#place_5931733"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    }, {
+      "spatial" : {
+        "original" : "Guam",
+        "description" : "#place_5931728"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "United States Census, 1940"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2000219" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QS7-89M1-N7TS",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QS7-89M1-N7TS" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2000219?arkName=3:1:3QS7-89M1-N7TS"
+    }
+  }, {
+    "id" : "sd_p_14038004201",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K42T-S68",
+    "componentOf" : {
+      "description" : "#src_r_22238011995",
+      "descriptionId" : "src_r_22238011995"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "<Unknown>, \"United States Census, 1940\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1622361446" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K42T-S68" ]
+    }
+  }, {
+    "id" : "sd_p_14038004202",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K42T-S6D",
+    "componentOf" : {
+      "description" : "#src_r_22238011995",
+      "descriptionId" : "src_r_22238011995"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "<Unknown>, \"United States Census, 1940\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1622363206" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K42T-S6D" ]
+    }
+  }, {
+    "id" : "sd_p_14038004203",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K42T-S66",
+    "componentOf" : {
+      "description" : "#src_r_22238011995",
+      "descriptionId" : "src_r_22238011995"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "<Unknown>, \"United States Census, 1940\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1622369097" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K42T-S66" ]
+    }
+  }, {
+    "id" : "sd_p_14038001800",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K42R-1PZ",
+    "componentOf" : {
+      "description" : "#src_r_22238011995",
+      "descriptionId" : "src_r_22238011995"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "<Unknown>, \"United States Census, 1940\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1622355813" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K42R-1PZ" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/5446988",
+      "resourceId" : "place_5446988"
+    }
+  } ],
+  "fields" : [ {
+    "id" : "65e42235-3f83-43a4-9019-5da1997d48ae",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/ExtPubNbr",
+    "values" : [ {
+      "id" : "3e965061-996f-4286-a626-360c67be86c2",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_PUB_NBR_ORIG",
+      "text" : "T627"
+    } ]
+  }, {
+    "id" : "e68413b8-5b2c-4709-86e9-51ca6bd2035b",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/ImsCtlFileId",
+    "values" : [ {
+      "id" : "d9000dfb-8512-45a1-8a84-71b184b9bd1c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMS_CTL_FILE_ID",
+      "text" : "681166"
+    } ]
+  }, {
+    "id" : "20825c0c-4138-434a-90da-456af8727e32",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "b376917f-4f79-4a36-8304-d87c07c385df",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "04e4b177-f695-438c-ad3b-cfed4a954a40",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "f1d3b8ce-b1c4-49b5-aa52-70dcfad95ea7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "6d9cc19f-da60-47d6-8e71-4620bf4abf4e",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "6b5d79cb-8734-4152-8b85-33b49718d1ac",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "United States 1940 Census - FSI"
+    } ]
+  }, {
+    "id" : "8a57294c-7cd0-4e2f-925b-ea31599ff799",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "cd1e97bf-c44a-4417-8e8f-61bebfef5feb",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "Michigan 1"
+    } ]
+  }, {
+    "id" : "9216bff6-b610-491c-adcc-2f5703e2b26b",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "3fc687c5-4130-4abe-bf1f-dc80d65269f8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_005461583_00134_022_001622355813"
+    } ]
+  }, {
+    "id" : "87982976-45c9-42cd-b3ac-5d07a31b35a5",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "d190a4af-c050-4c45-8383-da6099a042d9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Michigan, United States"
+    } ]
+  }, {
+    "id" : "c4249aaa-d7c8-4d86-9939-1f01ce6b687e",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "id" : "c344cdb7-a164-4bb7-8e1f-81c0a7fa4faf",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "005461583"
+    } ]
+  }, {
+    "id" : "f503e0b5-d0a2-4e41-bc3a-303b284e12bb",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "3edc3bc2-636b-4fa2-8667-43de9362022b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "6160"
+    } ]
+  }, {
+    "id" : "b4761094-6823-4482-b481-a2fd5da9e3f5",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "40848207-d639-4b9b-b7aa-509c4dab5770",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "861e2717-5e27-4dad-8b5e-eea4316977be",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-W8P1",
+        "resourceId" : "cis.user.MMM9-W8P1"
+      },
+      "modified" : 1642613454911,
+      "created" : 1642613454911
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "f0c024f3-7658-4bea-a993-d3fdfeb026e3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "12-0002"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsViewerRii",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "text" : "true"
+    } ]
+  } ],
+  "additionalAttribution" : [ {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMQ-L81Q"
+    },
+    "modified" : 1384089315033,
+    "created" : 1384089315033
+  }, {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMM-N9G5"
+    },
+    "modified" : 1384089315033,
+    "created" : 1384089315033
+  } ]
+}

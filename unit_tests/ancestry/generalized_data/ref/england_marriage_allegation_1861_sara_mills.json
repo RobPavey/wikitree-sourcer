@@ -1,0 +1,37 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Sara Elizabeth Mills"
+  },
+  "eventPlace": {
+    "county": "Gloucestershire",
+    "placeString": "Bromley, St Leonard, Gloucestershire"
+  },
+  "eventDate": {
+    "dateString": "11 Oct 1861"
+  },
+  "ageAtEvent": "21",
+  "spouses": [
+    {
+      "name": {
+        "name": "Leonard Greenham Star"
+      },
+      "marriageDate": {
+        "dateString": "11 Oct 1861"
+      },
+      "marriagePlace": {
+        "county": "Gloucestershire",
+        "placeString": "Bromley, St Leonard, Gloucestershire"
+      },
+      "age": "21"
+    }
+  ],
+  "collectionData": {
+    "id": "2056",
+    "parish": "Bromley, St Leonard",
+    "county": "Gloucestershire"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Dela Fields"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "31 Jan 1874"
+  },
+  "birthDate": {
+    "dateString": "31 Jan 1874"
+  },
+  "birthPlace": {
+    "placeString": "Martin, Kentucky, USA"
+  },
+  "eventPlace": {
+    "placeString": "Martin, Kentucky, USA"
+  },
+  "lastNameAtBirth": "Fields",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Lewis Fields"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Angeline Slans"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1213"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,26 @@
+{
+  "sourceType": "record",
+  "recordType": "PassportApplication",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Edward Digby Baltzell"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "2 Nov 1914"
+  },
+  "eventPlace": {
+    "placeString": "Philadelphia, Pennsylvania"
+  },
+  "birthDate": {
+    "dateString": "27 Aug 1885"
+  },
+  "birthPlace": {
+    "placeString": "Fox Chase, Philadelphia, Pennsylvania"
+  },
+  "ageAtEvent": "29",
+  "collectionData": {
+    "id": "1174"
+  },
+  "hasValidData": true
+}

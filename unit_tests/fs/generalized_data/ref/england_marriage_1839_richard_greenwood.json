@@ -1,0 +1,34 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Richard Greenwood"
+  },
+  "eventDate": {
+    "dateString": "1839",
+    "yearString": "1839",
+    "quarter": 3
+  },
+  "eventPlace": {
+    "placeString": "Huntingdon, Huntingdonshire, England"
+  },
+  "registrationDistrict": "Huntingdon",
+  "spouses": [
+    {
+      "marriageDate": {
+        "dateString": "1839"
+      },
+      "marriagePlace": {
+        "placeString": "Huntingdon, Huntingdonshire, England"
+      }
+    }
+  ],
+  "marriageDate": "1839",
+  "collectionData": {
+    "id": "2285732",
+    "volume": "14",
+    "page": "228"
+  },
+  "hasValidData": true
+}

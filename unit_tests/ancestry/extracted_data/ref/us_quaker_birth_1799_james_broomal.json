@@ -1,0 +1,33 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=2189&h=2035846&tid=&pid=&queryId=ae62831b1c51360241ee065f6ff77d67&usePUB=true&_phsrc=XJK468&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "2189",
+  "recordId": "2035846",
+  "ancestryTemplate": "{{Ancestry Record|2189|2035846}}",
+  "domain": "com",
+  "titleName": "James Broomal",
+  "titleCollection": "U.S., Quaker Meeting Records, 1681-1935",
+  "recordData": {
+    "Name": "James Broomal",
+    "Event Type": "Birth",
+    "Birth Date": "18 Oct 1799",
+    "Birth Date on Image": "18 Tenth 1799",
+    "Birth Place": "Chester, Pennsylvania",
+    "Father": "Isaac Broomal",
+    "Mother": "Lydia Broomal",
+    "Monthly Meeting": "London Grove Monthly Meeting",
+    "Yearly Meeting": "Philadelphia Yearly Meeting",
+    "Meeting State": "Pennsylvania",
+    "Meeting County": "Chester"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=QuakerMeetMins&indiv=try&h=12035846",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=QuakerMeetMins&indiv=try&h=22035846"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2189/images/31906_284014-00032?pid=2035846&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D2189%26h%3D2035846%26tid%3D%26pid%3D%26queryId%3Dae62831b1c51360241ee065f6ff77d67%26usePUB%3Dtrue%26_phsrc%3DXJK468%26_phstart%3DsuccessSource&treeid=&personid=&hintid=&queryId=ae62831b1c51360241ee065f6ff77d67&usePUB=true&_phsrc=XJK468&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "2189",
+  "imageRecordId": "31906_284014-00032",
+  "sourceCitation": "Swarthmore College; Swarthmore, Pennsylvania",
+  "sourceInformation": "Ancestry.com. U.S., Quaker Meeting Records, 1681-1935 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: Swarthmore, Quaker Meeting Records. Friends Historical Library, Swarthmore College, Swarthmore, Pennsylvania.North Carolina Yearly Meeting Minutes. Hege Friends Historical Library, Guilford College, Greensboro, North Carolina.Indiana Yearly Meeting Minutes. Earlham College Friends Collection & College Archives, Richmond, Indiana.Haverford, Quaker Meeting Records. Haverford College, Haverford, Pennsylvania.",
+  "sourceDescription": "This collection of Quaker meeting and vital records is one of the first of its kind. These records from monthly meetings have been brought together to form the most extensive searchable online database. Learn more..."
+}

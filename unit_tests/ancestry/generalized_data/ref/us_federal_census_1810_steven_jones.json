@@ -1,0 +1,15 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Steven Jones"
+  },
+  "eventDate": {
+    "yearString": "1810"
+  },
+  "collectionData": {
+    "id": "7613"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,21 @@
+{
+  "sourceType": "record",
+  "recordType": "Residence",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Carol Sharp Kohler"
+  },
+  "eventDate": {
+    "dateString": "1993"
+  },
+  "eventPlace": {
+    "placeString": "Rochester, NY"
+  },
+  "birthDate": {
+    "dateString": "7 Jun 1948"
+  },
+  "collectionData": {
+    "id": "1788"
+  },
+  "hasValidData": true
+}

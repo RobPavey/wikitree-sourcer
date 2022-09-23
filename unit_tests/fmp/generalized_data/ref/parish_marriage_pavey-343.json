@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "William Henry"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Maker, Cornwall, England"
+  },
+  "eventDate": {
+    "dateString": "07 Oct 1829",
+    "yearString": "1829"
+  },
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "Elizabeth",
+        "lastName": "Ellacott"
+      },
+      "marriageDate": {
+        "dateString": "07 Oct 1829",
+        "yearString": "1829"
+      },
+      "marriagePlace": {
+        "country": "England",
+        "placeString": "Maker, Cornwall, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "England Marriages 1538-1973"
+  },
+  "hasValidData": true
+}

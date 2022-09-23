@@ -1,0 +1,86 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Linnea Schei"
+  },
+  "birthDate": {
+    "dateString": "1908",
+    "yearString": "1908"
+  },
+  "birthPlace": {
+    "placeString": "Sweden"
+  },
+  "eventDate": {
+    "dateString": "1940"
+  },
+  "eventPlace": {
+    "placeString": "Kingsford, Dickinson, Michigan, United States"
+  },
+  "ageAtEvent": "32",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Carl Schei",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "35",
+      "birthYear": "1905",
+      "birthPlace": "Michigan"
+    },
+    {
+      "name": "Linnea Schei",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "32",
+      "birthYear": "1908",
+      "birthPlace": "Sweden",
+      "isSelected": true
+    },
+    {
+      "name": "Carol Jean Schei",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "13",
+      "birthYear": "1927",
+      "birthPlace": "Michigan"
+    },
+    {
+      "name": "Clarice Ann Schei",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "8",
+      "birthYear": "1932",
+      "birthPlace": "Michigan"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "spouses": [
+    {
+      "name": {
+        "name": "Carl Schei"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "2000219"
+  },
+  "hasValidData": true
+}

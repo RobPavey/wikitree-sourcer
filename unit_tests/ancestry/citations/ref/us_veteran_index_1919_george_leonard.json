@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Military''':\n\"U.S., Veterans Administration Master Index, 1917-1940\"<br/>\nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>\n{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "George was in the military and died on 28 June 1952 in Buffalo, N Y.<ref>\n'''Military''':\n\"U.S., Veterans Administration Master Index, 1917-1940\"<br/>\nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>\n{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Military''': \"U.S., Veterans Administration Master Index, 1917-1940\"<br/>United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Military''':\n\"U.S., Veterans Administration Master Index, 1917-1940\"<br/>\nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>\n{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)<br/>\nName: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "George was in the military and died on 28 June 1952 in Buffalo, N Y.<ref>\n'''Military''':\n\"U.S., Veterans Administration Master Index, 1917-1940\"<br/>\nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>\n{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)<br/>\nName: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Military''': \"U.S., Veterans Administration Master Index, 1917-1940\"<br/>United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)<br/>Name: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Military''':\n\"U.S., Veterans Administration Master Index, 1917-1940\"<br/>\nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>\n{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)<br/>\nName: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "George was in the military and died on 28 June 1952 in Buffalo, N Y.<ref>\n'''Military''':\n\"U.S., Veterans Administration Master Index, 1917-1940\"<br/>\nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>\n{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)<br/>\nName: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Military''': \"U.S., Veterans Administration Master Index, 1917-1940\"<br/>United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)<br/>Name: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Military''':\n\"U.S., Veterans Administration Master Index, 1917-1940\"<br/>\nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>\n{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || George Michael Leonard\n|-\n| Record Type || Military Service\n|-\n| Birth Date || 3 Mar 1892\n|-\n| Military Date || 18 Jan 1919\n|-\n| Residence Place || Buffalo, N Y\n|-\n| Death Date || 28 Jun 1952\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "George was in the military and died on 28 June 1952 in Buffalo, N Y.<ref>\n'''Military''':\n\"U.S., Veterans Administration Master Index, 1917-1940\"<br/>\nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>\n{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || George Michael Leonard\n|-\n| Record Type || Military Service\n|-\n| Birth Date || 3 Mar 1892\n|-\n| Military Date || 18 Jan 1919\n|-\n| Residence Place || Buffalo, N Y\n|-\n| Death Date || 28 Jun 1952\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Military''': \"U.S., Veterans Administration Master Index, 1917-1940\"<br/>United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah: FamilySearch, 2019<br/>{{Ancestry Record|61861|4102834}} (accessed 6 May 2021)<br/>Name: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Veterans Administration Master Index, 1917-1940,\" database, ({{Ancestry Record|61861|4102834}} : accessed 6 May 2021), Name George Michael Leonard, Record Type Military Service, Birth Date 3 Mar 1892, Military Date 18 Jan 1919, Residence Place Buffalo, N Y, Death Date 28 Jun 1952; citing United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah FamilySearch, 2019.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "George was in the military and died on 28 June 1952 in Buffalo, N Y.<ref>\"U.S., Veterans Administration Master Index, 1917-1940,\" database, ({{Ancestry Record|61861|4102834}} : accessed 6 May 2021), Name George Michael Leonard, Record Type Military Service, Birth Date 3 Mar 1892, Military Date 18 Jan 1919, Residence Place Buffalo, N Y, Death Date 28 Jun 1952; citing United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah FamilySearch, 2019.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Veterans Administration Master Index, 1917-1940,\" database, ({{Ancestry Record|61861|4102834}} : accessed 6 May 2021), Name George Michael Leonard, Record Type Military Service, Birth Date 3 Mar 1892, Military Date 18 Jan 1919, Residence Place Buffalo, N Y, Death Date 28 Jun 1952; citing United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah FamilySearch, 2019.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Military'':\n\"U.S., Veterans Administration Master Index, 1917-1940\", database, \nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah FamilySearch, 2019, \n({{Ancestry Record|61861|4102834}} : accessed 6 May 2021), \nName: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "George was in the military and died on 28 June 1952 in Buffalo, N Y.<ref>\n''Military'':\n\"U.S., Veterans Administration Master Index, 1917-1940\", database, \nUnited States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah FamilySearch, 2019, \n({{Ancestry Record|61861|4102834}} : accessed 6 May 2021), \nName: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Military'': \"U.S., Veterans Administration Master Index, 1917-1940\", database, United States, Veterans Administration Master Index, 1917-1940. Salt Lake City, Utah FamilySearch, 2019, ({{Ancestry Record|61861|4102834}} : accessed 6 May 2021), Name: George Michael Leonard; Record Type: Military Service; Birth Date: 3 Mar 1892; Military Date: 18 Jan 1919; Residence Place: Buffalo, N Y; Death Date: 28 Jun 1952.",
+    "type": "source"
+  }
+}

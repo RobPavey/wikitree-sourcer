@@ -1,0 +1,40 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "David Hunter"
+  },
+  "birthDate": {
+    "dateString": "1 Nov 1854",
+    "yearString": "1854"
+  },
+  "eventDate": {
+    "dateString": "22 Nov 1854",
+    "yearString": "1854"
+  },
+  "eventPlace": {
+    "placeString": "St Nicholas, Aberdeen, Aberdeenshire, Scotland, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Alexander Hunter",
+        "forenames": "Alexander",
+        "lastName": "Hunter"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ann Christie",
+        "forenames": "Ann",
+        "lastName": "Christie"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1771030"
+  },
+  "hasValidData": true
+}

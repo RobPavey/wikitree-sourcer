@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Hollums"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "17 Jul 1912"
+  },
+  "birthDate": {
+    "dateString": "17 Jul 1912"
+  },
+  "birthPlace": {
+    "placeString": "Floydada, Floyd, Texas, USA"
+  },
+  "eventPlace": {
+    "placeString": "Floydada, Floyd, Texas, USA"
+  },
+  "lastNameAtBirth": "Hollums",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "J A Hollums"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Maude Duncan"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2275"
+  },
+  "hasValidData": true
+}

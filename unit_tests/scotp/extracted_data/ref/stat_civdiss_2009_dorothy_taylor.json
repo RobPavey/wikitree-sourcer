@@ -1,0 +1,35 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-dissolutions&surname=Taylor&surname_so=exact&forename_so=starts&psurname_so=exact&from_year=2007&to_year=2015&record_type=dissolutions",
+  "success": true,
+  "numResultsOnPage": 3,
+  "recordData": {
+    "Surname": "TAYLOR",
+    "Forename": "DOROTHY JANE",
+    "Partner Surname": "SIMM",
+    "Dissolution Year": "2009",
+    "Civil Partnership Date": "31/10/2006",
+    "Court Code": "9704",
+    "Serial Number": "30",
+    "Court": "Ayr"
+  },
+  "imageLink": "",
+  "pageHeader": "Statutory registers - Dissolutions",
+  "searchCriteria": {
+    "Surname": "Taylor",
+    "Surname Option": "Exact",
+    "From_year": "2007",
+    "To_year": "2015"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "statutory",
+    "dl_rec": "statutory-dissolutions",
+    "surname": "Taylor",
+    "surname_so": "exact",
+    "forename_so": "starts",
+    "psurname_so": "exact",
+    "from_year": "2007",
+    "to_year": "2015",
+    "record_type": "dissolutions"
+  }
+}

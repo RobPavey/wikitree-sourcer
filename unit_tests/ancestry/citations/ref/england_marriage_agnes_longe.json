@@ -1,0 +1,78 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>\nWiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>\n{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Agnes married William Yerbery on 26 August 1566 in Trowbridge, St James, Wiltshire, England.<ref>\n'''Marriage''':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>\nWiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>\n{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>Wiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>\nWiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>\n{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)<br/>\nAgnes Longe marriage to William Yerbery on 26 Aug 1566 in Trowbridge, St James, Wiltshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Agnes married William Yerbery on 26 August 1566 in Trowbridge, St James, Wiltshire, England.<ref>\n'''Marriage''':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>\nWiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>\n{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)<br/>\nAgnes Longe marriage to William Yerbery on 26 Aug 1566 in Trowbridge, St James, Wiltshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>Wiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)<br/>Agnes Longe marriage to William Yerbery on 26 Aug 1566 in Trowbridge, St James, Wiltshire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>\nWiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>\n{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)<br/>\nName: Agnes Longe; Event Type: Marriage; Marriage or Bann Date: 26 Aug 1566; Marriage or Bann Place: Trowbridge, St James, Wiltshire, England; Spouse: William Yerbery.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Agnes married William Yerbery on 26 August 1566 in Trowbridge, St James, Wiltshire, England.<ref>\n'''Marriage''':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>\nWiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>\n{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)<br/>\nName: Agnes Longe; Event Type: Marriage; Marriage or Bann Date: 26 Aug 1566; Marriage or Bann Place: Trowbridge, St James, Wiltshire, England; Spouse: William Yerbery.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>Wiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)<br/>Name: Agnes Longe; Event Type: Marriage; Marriage or Bann Date: 26 Aug 1566; Marriage or Bann Place: Trowbridge, St James, Wiltshire, England; Spouse: William Yerbery.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>\nWiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>\n{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Longe\n|-\n| Event Type || Marriage\n|-\n| Marriage or Bann Date || 26 Aug 1566\n|-\n| Marriage or Bann Place || Trowbridge, St James, Wiltshire, England\n|-\n| Parish as it Appears || Trowbridge\n|-\n| Spouse || William Yerbery\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Agnes married William Yerbery on 26 August 1566 in Trowbridge, St James, Wiltshire, England.<ref>\n'''Marriage''':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>\nWiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>\n{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Longe\n|-\n| Event Type || Marriage\n|-\n| Marriage or Bann Date || 26 Aug 1566\n|-\n| Marriage or Bann Place || Trowbridge, St James, Wiltshire, England\n|-\n| Parish as it Appears || Trowbridge\n|-\n| Spouse || William Yerbery\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>Wiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)<br/>Name: Agnes Longe; Event Type: Marriage; Marriage or Bann Date: 26 Aug 1566; Marriage or Bann Place: Trowbridge, St James, Wiltshire, England; Spouse: William Yerbery.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812,\" database, ({{Ancestry Record|61187|93209492|uk}} : accessed 6 May 2021), Agnes Longe marriage to William Yerbery on 26 Aug 1566 in Trowbridge, St James, Wiltshire, England; citing Wiltshire and Swindon History Centre, Chippenham, Wiltshire, England, Wiltshire Church of England Parish Registers, Reference Number 1/809.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Agnes married William Yerbery on 26 August 1566 in Trowbridge, St James, Wiltshire, England.<ref>\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812,\" database, ({{Ancestry Record|61187|93209492|uk}} : accessed 6 May 2021), Agnes Longe marriage to William Yerbery on 26 Aug 1566 in Trowbridge, St James, Wiltshire, England; citing Wiltshire and Swindon History Centre, Chippenham, Wiltshire, England, Wiltshire Church of England Parish Registers, Reference Number 1/809.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812,\" database, ({{Ancestry Record|61187|93209492|uk}} : accessed 6 May 2021), Agnes Longe marriage to William Yerbery on 26 Aug 1566 in Trowbridge, St James, Wiltshire, England; citing Wiltshire and Swindon History Centre, Chippenham, Wiltshire, England, Wiltshire Church of England Parish Registers, Reference Number 1/809.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage'':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\", database, \nWiltshire and Swindon History Centre, Chippenham, Wiltshire, England, Wiltshire Church of England Parish Registers, Reference Number 1/809, \n({{Ancestry Record|61187|93209492|uk}} : accessed 6 May 2021), \nName: Agnes Longe; Event Type: Marriage; Marriage or Bann Date: 26 Aug 1566; Marriage or Bann Place: Trowbridge, St James, Wiltshire, England; Spouse: William Yerbery.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Agnes married William Yerbery on 26 August 1566 in Trowbridge, St James, Wiltshire, England.<ref>\n''Marriage'':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\", database, \nWiltshire and Swindon History Centre, Chippenham, Wiltshire, England, Wiltshire Church of England Parish Registers, Reference Number 1/809, \n({{Ancestry Record|61187|93209492|uk}} : accessed 6 May 2021), \nName: Agnes Longe; Event Type: Marriage; Marriage or Bann Date: 26 Aug 1566; Marriage or Bann Place: Trowbridge, St James, Wiltshire, England; Spouse: William Yerbery.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage'': \"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\", database, Wiltshire and Swindon History Centre, Chippenham, Wiltshire, England, Wiltshire Church of England Parish Registers, Reference Number 1/809, ({{Ancestry Record|61187|93209492|uk}} : accessed 6 May 2021), Name: Agnes Longe; Event Type: Marriage; Marriage or Bann Date: 26 Aug 1566; Marriage or Bann Place: Trowbridge, St James, Wiltshire, England; Spouse: William Yerbery.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "Agnes married William Yerbery on 26 August 1566 at St James' church, Trowbridge, Wiltshire, England.<ref>\n'''Marriage''':\n\"Wiltshire, England, Church of England Baptisms, Marriages and Burials, 1538-1812\"<br/>\nWiltshire and Swindon History Centre; Chippenham, Wiltshire, England; Wiltshire Church of England Parish Registers; Reference Number: 1/809<br/>\n{{Ancestry Record|61187|93209492|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Agnes Longe\n|-\n| Event Type || Marriage\n|-\n| Marriage or Bann Date || 26 Aug 1566\n|-\n| Marriage or Bann Place || Trowbridge, St James, Wiltshire, England\n|-\n| Parish as it Appears || Trowbridge\n|-\n| Spouse || William Yerbery\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

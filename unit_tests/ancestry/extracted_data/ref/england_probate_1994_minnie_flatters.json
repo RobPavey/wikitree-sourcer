@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.co.uk/discoveryui-content/view/24194132:1904",
+  "pageType": "record",
+  "dbId": "1904",
+  "recordId": "24194132",
+  "ancestryTemplate": "{{Ancestry Record|1904|24194132}}",
+  "domain": "co.uk",
+  "titleName": "Minnie Mary Matilda Flatters",
+  "titleCollection": "England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995",
+  "recordData": {
+    "Name": "Minnie Mary Matilda Flatters",
+    "Death Date": "4 May 1994",
+    "Death Place": "Billinghay Lincolnshire",
+    "Probate Date": "11 Jul 1994",
+    "Probate Registry": "Leeds"
+  },
+  "imageUrl": "https://www.ancestry.co.uk/imageviewer/collections/1904/images/46452_B294775-00006?pid=24194132&usePUB=true&usePUBJs=true",
+  "imageDbId": "1904",
+  "imageRecordId": "46452_B294775-00006",
+  "sourceInformation": "Ancestry.com. England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England. London, England © Crown copyright.",
+  "originalData": "Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England. London, England © Crown copyright.",
+  "sourceDescription": "This is a directory of probates for England and Wales. Volumes in this collection cover years 1858 to 1995. Learn more..."
+}

@@ -1,0 +1,30 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Ellaway",
+    "forenames": "Isaac R"
+  },
+  "eventPlace": {
+    "country": "Wales",
+    "placeString": "Chepstow, Monmouthshire, Wales"
+  },
+  "registrationDistrict": "Chepstow",
+  "eventDate": {
+    "dateString": "1939",
+    "quarter": "4"
+  },
+  "deathDate": {
+    "dateString": "1939"
+  },
+  "lastNameAtDeath": "Ellaway",
+  "ageAtDeath": "67",
+  "collectionData": {
+    "id": "England & Wales Deaths 1837-2007",
+    "volume": "11A",
+    "page": "1"
+  },
+  "hasValidData": true
+}

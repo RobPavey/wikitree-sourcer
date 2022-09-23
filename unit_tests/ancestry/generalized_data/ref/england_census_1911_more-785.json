@@ -1,0 +1,67 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Francis Cyril More"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "15 Tytherton Road, Holloway N, Islington, England",
+    "streetAddress": "15 Tytherton Road, Holloway N"
+  },
+  "birthDate": {
+    "yearString": "1875",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Metfield, Suffolk, England"
+  },
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "occupation": "Surgical Scientific Instrument Maker",
+  "ageAtEvent": "36",
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Francis Cyril More",
+      "age": "36",
+      "isSelected": true,
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "occupation": "Surgical Scientific Instrument Maker",
+      "birthPlace": "Metfield, Suffolk, England",
+      "birthYear": "abt 1875",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51208"
+    },
+    {
+      "name": "Mary Elizabeth More",
+      "age": "38",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51209"
+    },
+    {
+      "name": "Maisie Constance More",
+      "age": "10",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51206"
+    },
+    {
+      "name": "Ellaline Hannah More",
+      "age": "9",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51207"
+    }
+  ],
+  "collectionData": {
+    "id": "2352",
+    "piece": "789",
+    "parish": "Islington"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,26 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": "Charles Homer Peavy",
+  "primaryPersonGender": "male",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Charles W Peavy"
+  },
+  "birthPlace": {
+    "placeString": "Ga."
+  },
+  "eventDate": {
+    "dateString": "23 Apr 1938",
+    "yearString": "1938"
+  },
+  "eventPlace": {
+    "placeString": "Hillsborough, Florida, United States"
+  },
+  "collectionData": {
+    "id": "1595003"
+  },
+  "hasValidData": true
+}

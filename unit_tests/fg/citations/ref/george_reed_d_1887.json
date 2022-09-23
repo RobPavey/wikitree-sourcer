@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (no image)<br/>\n{{FindAGrave|221989091}} (accessed 6 May 2021)<br/>\nMemorial page for George German Reed (19 Jan 1887-14 Sep 1887), citing Brompton Cemetery, West Brompton, Royal Borough of Kensington and Chelsea, Greater London, England (plot: K, 141.0, 24.3); Maintained by woowoo (contributor 49949980).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "George was mentioned on a memorial in Brompton Cemetery, West Brompton, Royal Borough of Kensington and Chelsea, Greater London, England with a death date of 14 Sep 1887.<ref>\n'''Memorial''':\nFind a Grave (no image)<br/>\n{{FindAGrave|221989091}} (accessed 6 May 2021)<br/>\nMemorial page for George German Reed (19 Jan 1887-14 Sep 1887), citing Brompton Cemetery, West Brompton, Royal Borough of Kensington and Chelsea, Greater London, England (plot: K, 141.0, 24.3); Maintained by woowoo (contributor 49949980).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': Find a Grave (no image)<br/>{{FindAGrave|221989091}} (accessed 6 May 2021)<br/>Memorial page for George German Reed (19 Jan 1887-14 Sep 1887), citing Brompton Cemetery, West Brompton, Royal Borough of Kensington and Chelsea, Greater London, England (plot: K, 141.0, 24.3); Maintained by woowoo (contributor 49949980).",
+    "type": "source"
+  }
+}

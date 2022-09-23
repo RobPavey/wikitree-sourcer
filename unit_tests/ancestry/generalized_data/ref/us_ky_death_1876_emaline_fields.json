@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Emaline Fields"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "15 Sep 1876"
+  },
+  "deathDate": {
+    "dateString": "15 Sep 1876"
+  },
+  "eventPlace": {
+    "placeString": "Martin, Kentucky, USA"
+  },
+  "residencePlace": {
+    "placeString": "Martin, Kentucky, USA"
+  },
+  "lastNameAtDeath": "Fields",
+  "lastNameAtBirth": "Slans",
+  "ageAtDeath": "25",
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1851"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Noah Slans"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1222"
+  },
+  "hasValidData": true
+}

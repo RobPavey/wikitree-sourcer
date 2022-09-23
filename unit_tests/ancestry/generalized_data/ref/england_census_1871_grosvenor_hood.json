@@ -1,0 +1,140 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Grosvenor Hood"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "St George Hanover Square, London, England"
+  },
+  "registrationDistrict": "St George Hanover Square",
+  "birthDate": {
+    "yearString": "1869",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "London England"
+  },
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "ageAtEvent": "2",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Francis W Hood",
+      "age": "32",
+      "relationship": "head",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856672&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Edith Hood",
+      "age": "23",
+      "relationship": "wife",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856673&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Mabel Hood",
+      "age": "4",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856674&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Grosvenor Hood",
+      "age": "2",
+      "relationship": "son",
+      "isSelected": true,
+      "gender": "male",
+      "birthPlace": "London England",
+      "birthYear": "1869"
+    },
+    {
+      "name": "Horace Hood",
+      "age": "6/12",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856676&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "John Jackman",
+      "age": "47",
+      "relationship": "servant",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856677&indiv=try"
+    },
+    {
+      "name": "Thomas Roberts",
+      "age": "27",
+      "relationship": "servant",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856678&indiv=try"
+    },
+    {
+      "name": "Mary Cameron",
+      "age": "43",
+      "relationship": "servant",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856679&indiv=try"
+    },
+    {
+      "name": "Mary A Yeomans",
+      "age": "44",
+      "relationship": "servant",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856680&indiv=try"
+    },
+    {
+      "name": "Eliza L Locke",
+      "age": "27",
+      "relationship": "servant",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856681&indiv=try"
+    },
+    {
+      "name": "E A Collett",
+      "age": "25",
+      "relationship": "servant",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856682&indiv=try"
+    },
+    {
+      "name": "Amelia Whiles",
+      "age": "19",
+      "relationship": "servant",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856683&indiv=try"
+    },
+    {
+      "name": "Anne H Fisher",
+      "age": "23",
+      "relationship": "servant",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856684&indiv=try"
+    },
+    {
+      "name": "Jessie Ross",
+      "age": "23",
+      "relationship": "servant",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=10856685&indiv=try"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Francis W Hood"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Edith Hood"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "7619",
+    "page": "31",
+    "folio": "94",
+    "piece": "101",
+    "county": "London"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,46 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&surname=Thomson&surname_so=exact&forename=James&forename_so=exact&other_surname_so=exact&mmsurname_so=exact&from_year=1917&to_year=1917&age_from=19&age_to=21&birth_year_range=1&county=MINOR%20RECORDS&record_type=stat_deaths",
+  "success": true,
+  "numResultsOnPage": 24,
+  "recordData": {
+    "Surname": "THOMSON",
+    "Forename": "JAMES",
+    "Age at death": "19",
+    "Mother's Maiden Name": "",
+    "Year": "1917",
+    "Ref": "117/AF 203",
+    "RD Name": "Service Returns"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_stat_deaths/7006739?return_row=0",
+  "pageHeader": "Statutory registers - Deaths",
+  "searchCriteria": {
+    "Surname": "Thomson",
+    "Surname Option": "Exact",
+    "Forename": "James",
+    "Forename Option": "Exact",
+    "From_year": "1917",
+    "To_year": "1917",
+    "Age_from": "19",
+    "Age_to": "21",
+    "Birth_year_range": "1",
+    "County": "MINOR RECORDS"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "statutory",
+    "dl_rec": "statutory-deaths",
+    "surname": "Thomson",
+    "surname_so": "exact",
+    "forename": "James",
+    "forename_so": "exact",
+    "other_surname_so": "exact",
+    "mmsurname_so": "exact",
+    "from_year": "1917",
+    "to_year": "1917",
+    "age_from": "19",
+    "age_to": "21",
+    "birth_year_range": "1",
+    "county": "MINOR RECORDS",
+    "record_type": "stat_deaths"
+  }
+}

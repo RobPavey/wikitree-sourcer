@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1862",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Watkins",
+    "forenames": "Alfred Henry"
+  },
+  "lastNameAtBirth": "Watkins",
+  "birthDate": {
+    "yearString": "1862",
+    "quarter": 3
+  },
+  "mothersMaidenName": "Bill",
+  "personGender": "male",
+  "registrationDistrict": "Abergavenny 578",
+  "collectionData": {
+    "id": "births",
+    "volume": "11A",
+    "page": "47"
+  },
+  "hasValidData": true
+}

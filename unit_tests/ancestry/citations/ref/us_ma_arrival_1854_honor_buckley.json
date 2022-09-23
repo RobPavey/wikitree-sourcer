@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Honor arrived on the ship Chariot of Fame on 1 December 1854 in Boston, Massachusetts, USA having departed from Liverpool, England<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Passenger List''': \"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>The National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)<br/>\nName: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Honor arrived on the ship Chariot of Fame on 1 December 1854 in Boston, Massachusetts, USA having departed from Liverpool, England<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)<br/>\nName: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Passenger List''': \"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>The National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)<br/>Name: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)<br/>\nName: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Honor arrived on the ship Chariot of Fame on 1 December 1854 in Boston, Massachusetts, USA having departed from Liverpool, England<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)<br/>\nName: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Passenger List''': \"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>The National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)<br/>Name: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Honor Buckley\n|-\n| Gender || Female\n|-\n| Age || 17\n|-\n| Birth Date || abt 1837\n|-\n| Departure Place || Liverpool, England\n|-\n| Arrival Date || 1 Dec 1854\n|-\n| Arrival Place || Boston, Massachusetts, USA\n|-\n| Ship || Chariot of Fame\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Honor arrived on the ship Chariot of Fame on 1 December 1854 in Boston, Massachusetts, USA having departed from Liverpool, England<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Honor Buckley\n|-\n| Gender || Female\n|-\n| Age || 17\n|-\n| Birth Date || abt 1837\n|-\n| Departure Place || Liverpool, England\n|-\n| Arrival Date || 1 Dec 1854\n|-\n| Arrival Place || Boston, Massachusetts, USA\n|-\n| Ship || Chariot of Fame\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Passenger List''': \"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>The National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)<br/>Name: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963,\" database, ({{Ancestry Record|8745|3941667}} : accessed 6 May 2021), Name Honor Buckley, Gender Female, Age 17, Birth Date abt 1837, Departure Place Liverpool, England, Arrival Date 1 Dec 1854, Arrival Place Boston, Massachusetts, USA, Ship Chariot of Fame; citing The National Archives at Washington, D.C., Washington, D.C., Series Title Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891, Record Group Title Records of the U.S. Customs Service, Record Group Number 36, Series Number M277, NARA Roll Number 049.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Honor arrived on the ship Chariot of Fame on 1 December 1854 in Boston, Massachusetts, USA having departed from Liverpool, England<ref>\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963,\" database, ({{Ancestry Record|8745|3941667}} : accessed 6 May 2021), Name Honor Buckley, Gender Female, Age 17, Birth Date abt 1837, Departure Place Liverpool, England, Arrival Date 1 Dec 1854, Arrival Place Boston, Massachusetts, USA, Ship Chariot of Fame; citing The National Archives at Washington, D.C., Washington, D.C., Series Title Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891, Record Group Title Records of the U.S. Customs Service, Record Group Number 36, Series Number M277, NARA Roll Number 049.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963,\" database, ({{Ancestry Record|8745|3941667}} : accessed 6 May 2021), Name Honor Buckley, Gender Female, Age 17, Birth Date abt 1837, Departure Place Liverpool, England, Arrival Date 1 Dec 1854, Arrival Place Boston, Massachusetts, USA, Ship Chariot of Fame; citing The National Archives at Washington, D.C., Washington, D.C., Series Title Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891, Record Group Title Records of the U.S. Customs Service, Record Group Number 36, Series Number M277, NARA Roll Number 049.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Passenger List'':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\", database, \nThe National Archives at Washington, D.C., Washington, D.C., Series Title Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891, Record Group Title Records of the U.S. Customs Service, Record Group Number 36, Series Number M277, NARA Roll Number 049, \n({{Ancestry Record|8745|3941667}} : accessed 6 May 2021), \nName: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Honor arrived on the ship Chariot of Fame on 1 December 1854 in Boston, Massachusetts, USA having departed from Liverpool, England<ref>\n''Passenger List'':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\", database, \nThe National Archives at Washington, D.C., Washington, D.C., Series Title Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891, Record Group Title Records of the U.S. Customs Service, Record Group Number 36, Series Number M277, NARA Roll Number 049, \n({{Ancestry Record|8745|3941667}} : accessed 6 May 2021), \nName: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Passenger List'': \"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\", database, The National Archives at Washington, D.C., Washington, D.C., Series Title Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891, Record Group Title Records of the U.S. Customs Service, Record Group Number 36, Series Number M277, NARA Roll Number 049, ({{Ancestry Record|8745|3941667}} : accessed 6 May 2021), Name: Honor Buckley; Gender: Female; Age: 17; Birth Date: abt 1837; Departure Place: Liverpool, England; Arrival Date: 1 Dec 1854; Arrival Place: Boston, Massachusetts, USA; Ship: Chariot of Fame.",
+    "type": "source"
+  }
+}

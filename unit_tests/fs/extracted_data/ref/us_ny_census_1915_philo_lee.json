@@ -1,0 +1,139 @@
+{
+  "recordData": {
+    "Name": "Philo Lee, Jr",
+    "Census Date": "1915",
+    "Census Place": "Hempstead, Nassau, New York, United States",
+    "Birth Date": "1903",
+    "Age": "12",
+    "Cnt Years In Us": "12",
+    "Relationship To Head": "Son",
+    "Source House Nbr": "30"
+  },
+  "eventDateOriginal": "1915",
+  "eventDate": "1915",
+  "eventYear": "1915",
+  "eventPlaceOriginal": "Hempstead, Nassau, New York, United States",
+  "eventPlace": "Hempstead, Nassau, New York, United States",
+  "eventPlaceL2": "Nassau",
+  "eventPlaceL1": "United States",
+  "fullName": "Philo Lee, Jr",
+  "givenName": "Philo",
+  "surname": "Lee",
+  "gender": "male",
+  "factType": "Census",
+  "birthDateOriginal": "1903",
+  "birthYear": "1903",
+  "age": "12",
+  "externalImageId": "32848_B094051-00469",
+  "referenceData": {
+    "sourceLineNbr": "40",
+    "sourcePageNbr": "01"
+  },
+  "household": {
+    "headings": [
+      "fullName",
+      "givenName",
+      "surname",
+      "relationship",
+      "maritalStatus",
+      "gender",
+      "age",
+      "occupation",
+      "birthDateOriginal",
+      "birthYear",
+      "birthPlaceOriginal",
+      "birthPlace"
+    ],
+    "members": [
+      {
+        "fullName": "Phila Lee",
+        "givenName": "Phila",
+        "surname": "Lee",
+        "gender": "male",
+        "birthDateOriginal": "1867",
+        "birthYear": "1867",
+        "age": "48",
+        "relationship": "Head"
+      },
+      {
+        "fullName": "Clelie Lee",
+        "givenName": "Clelie",
+        "surname": "Lee",
+        "gender": "female",
+        "birthDateOriginal": "1870",
+        "birthYear": "1870",
+        "age": "45",
+        "relationship": "Wife"
+      },
+      {
+        "fullName": "Anna Lee",
+        "givenName": "Anna",
+        "surname": "Lee",
+        "gender": "female",
+        "birthDateOriginal": "1892",
+        "birthYear": "1892",
+        "age": "23",
+        "relationship": "Daughter"
+      },
+      {
+        "fullName": "Carrie Lee",
+        "givenName": "Carrie",
+        "surname": "Lee",
+        "gender": "female",
+        "birthDateOriginal": "1894",
+        "birthYear": "1894",
+        "age": "21",
+        "relationship": "Daughter"
+      },
+      {
+        "fullName": "Marie Lee",
+        "givenName": "Marie",
+        "surname": "Lee",
+        "gender": "female",
+        "birthDateOriginal": "1896",
+        "birthYear": "1896",
+        "age": "19",
+        "relationship": "Daughter"
+      },
+      {
+        "fullName": "Henrietta Lee",
+        "givenName": "Henrietta",
+        "surname": "Lee",
+        "gender": "female",
+        "birthDateOriginal": "1898",
+        "birthYear": "1898",
+        "age": "17",
+        "relationship": "Daughter"
+      },
+      {
+        "isSelected": true,
+        "fullName": "Philo Lee, Jr",
+        "givenName": "Philo",
+        "surname": "Lee",
+        "gender": "male",
+        "birthDateOriginal": "1903",
+        "birthYear": "1903",
+        "age": "12",
+        "relationship": "Son"
+      },
+      {
+        "fullName": "William Kirk",
+        "givenName": "William",
+        "surname": "Kirk",
+        "gender": "male",
+        "birthDateOriginal": "1860",
+        "birthYear": "1860",
+        "age": "55",
+        "relationship": "Boarder"
+      }
+    ]
+  },
+  "fsCollectionId": "1937454",
+  "collectionTitle": "New York State Census, 1915",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9MD5-157N",
+  "citation": "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K9V2-YCS : 2 June 2022), Philo Lee, Jr in entry for Phila Lee, 1915.",
+  "sourceTitleForPerson": "Philo Lee, Jr in household of Phila Lee, \"New York State Census, 1915\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCS",
+  "externalImageUrl": "http://search.ancestry.com/iexec?htx=View&r=an&dbid=2703&iid=32848_B094051-00469",
+  "pageType": "record"
+}

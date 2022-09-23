@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/86808578/person/260052341589/facts",
+  "pageType": "personFacts",
+  "titleName": "Clement More",
+  "birthDate": "1833",
+  "birthPlace": "Metfield, Suffolk, England",
+  "deathDate": "ABT 1905",
+  "deathPlace": "London, England, United Kingdom",
+  "gender": "Male",
+  "marriages": [
+    {
+      "date": "October 1861",
+      "place": "Marylebone, London, United Kingdom"
+    },
+    {
+      "date": "14 Nov 1861",
+      "place": "Trinity Church, Marylebone, Middlesex, England",
+      "spouseName": "Louisa Maria Laver"
+    }
+  ],
+  "fatherName": "John More",
+  "motherName": "Mary More"
+}

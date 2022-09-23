@@ -1,0 +1,30 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "first_name": "Caroline",
+      "last_name": "Risbry",
+      "search_query_fuzzy": true,
+      "start_year": 1842,
+      "end_year": 1854,
+      "search_query_marital_status": "M",
+      "search_query_sex": "F",
+      "search_query_birth_chapman_codes": "DEV"
+    }
+  },
+  "same_collection": {
+    "fieldData": {
+      "utf8": true,
+      "search_query_record_type": "1881",
+      "first_name": "Caroline",
+      "last_name": "Risbry",
+      "search_query_fuzzy": true,
+      "start_year": 1848,
+      "end_year": 1848,
+      "search_query_marital_status": "M",
+      "search_query_sex": "F",
+      "search_query_birth_chapman_codes": "DEV",
+      "search_query_chapman_codes": "YKS"
+    }
+  }
+}

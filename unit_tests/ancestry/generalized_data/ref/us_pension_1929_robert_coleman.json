@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Robert William Coleman"
+  },
+  "deathDate": {
+    "dateString": "12 Jul 1915"
+  },
+  "eventPlace": {
+    "placeString": "Burleson, Texas"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Mrs N E Coleman"
+      },
+      "marriageDate": {
+        "dateString": "10 Jun 1866"
+      },
+      "marriagePlace": {
+        "placeString": "Monroe, Mississippi"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1677"
+  },
+  "hasValidData": true
+}

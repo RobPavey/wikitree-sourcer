@@ -1,0 +1,29 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "birthDate": {
+    "dateString": "2 Oct 1768",
+    "yearString": "1768"
+  },
+  "eventDate": {
+    "dateString": "2 Oct 1768",
+    "yearString": "1768"
+  },
+  "eventPlace": {
+    "placeString": "Simsbury, Hartford, Connecticut Colony"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Joel Cornish",
+        "forenames": "Joel",
+        "lastName": "Cornish"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2843390"
+  },
+  "hasValidData": true
+}

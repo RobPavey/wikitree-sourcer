@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "2004",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Harkus",
+    "forenames": "Eira Lilian"
+  },
+  "lastNameAtDeath": "Harkus",
+  "deathDate": {
+    "yearString": "2004",
+    "quarter": 3
+  },
+  "birthDate": {
+    "yearString": "1911"
+  },
+  "personGender": "female",
+  "registrationDistrict": "Vale of Glamorgan/bro Morgannwg",
+  "collectionData": {
+    "id": "deaths"
+  },
+  "hasValidData": true
+}

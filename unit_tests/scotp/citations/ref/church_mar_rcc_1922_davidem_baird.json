@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Davidem married Elisabeth Mcgregor on or after 29 November 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Catholic Parish Registers - Marriages\"<br/>National Records of Scotland, Parish: Airdrie, St Margaret's<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nDavidem Baird Or McGregor marriage to Elisabeth McGregor on or after 29 Nov 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Davidem married Elisabeth Mcgregor on or after 29 November 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nDavidem Baird Or McGregor marriage to Elisabeth McGregor on or after 29 Nov 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Catholic Parish Registers - Marriages\"<br/>National Records of Scotland, Parish: Airdrie, St Margaret's<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)<br/>Davidem Baird Or McGregor marriage to Elisabeth McGregor on or after 29 Nov 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: BAIRD or MCGREGOR; Forename: DAVIDEM; Spouse Surname: MCGREGOR; Spouse forename: ELISABETH; Date: 29/11/1922; Parish: Airdrie, St Margaret's.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Davidem married Elisabeth Mcgregor on or after 29 November 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: BAIRD or MCGREGOR; Forename: DAVIDEM; Spouse Surname: MCGREGOR; Spouse forename: ELISABETH; Date: 29/11/1922; Parish: Airdrie, St Margaret's.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Catholic Parish Registers - Marriages\"<br/>National Records of Scotland, Parish: Airdrie, St Margaret's<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: BAIRD or MCGREGOR; Forename: DAVIDEM; Spouse Surname: MCGREGOR; Spouse forename: ELISABETH; Date: 29/11/1922; Parish: Airdrie, St Margaret's.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BAIRD or MCGREGOR\n|-\n| Forename || DAVIDEM\n|-\n| Spouse Surname || MCGREGOR\n|-\n| Spouse forename || ELISABETH\n|-\n| Date || 29/11/1922\n|-\n| Parish || Airdrie, St Margaret's\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Davidem married Elisabeth Mcgregor on or after 29 November 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BAIRD or MCGREGOR\n|-\n| Forename || DAVIDEM\n|-\n| Spouse Surname || MCGREGOR\n|-\n| Spouse forename || ELISABETH\n|-\n| Date || 29/11/1922\n|-\n| Parish || Airdrie, St Margaret's\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Catholic Parish Registers - Marriages\"<br/>National Records of Scotland, Parish: Airdrie, St Margaret's<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=BAIRD%20OR%20MCGREGOR&forename=DAVIDEM&from_year=1922&to_year=1922&spouse_surname=MCGREGOR&spouse_forename=ELISABETH&mp_code%5B0%5D=MP&mp_no%5B0%5D=1&parish_title%5B0%5D=AIRDRIE%2C%20ST%20MARGARET'S ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: BAIRD or MCGREGOR; Forename: DAVIDEM; Spouse Surname: MCGREGOR; Spouse forename: ELISABETH; Date: 29/11/1922; Parish: Airdrie, St Margaret's.",
+    "type": "source"
+  }
+}

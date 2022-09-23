@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "McGregor"
+  },
+  "eventDate": {
+    "dateString": "31 December 1654"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Stirlingshire",
+    "placeString": "Buchanan, Stirlingshire, Scotland"
+  },
+  "recordSubtype": "MarriageOrBanns",
+  "collectionData": {
+    "frameNumber": "269"
+  },
+  "hasValidData": true
+}

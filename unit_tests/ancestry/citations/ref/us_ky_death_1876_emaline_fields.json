@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nKentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>\n{{Ancestry Record|1222|210223}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Emaline, daughter of Noah Slans, died (age 25) on 15 September 1876 in Martin, Kentucky, USA.<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nKentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>\n{{Ancestry Record|1222|210223}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death''': \"Kentucky, U.S., Death Records, 1852-1965\"<br/>Kentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>{{Ancestry Record|1222|210223}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nKentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>\n{{Ancestry Record|1222|210223}} (accessed 6 May 2021)<br/>\nEmaline Fields death 15 Sep 1876 (age 25), daughter of Noah Slans, in Martin, Kentucky, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Emaline, daughter of Noah Slans, died (age 25) on 15 September 1876 in Martin, Kentucky, USA.<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nKentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>\n{{Ancestry Record|1222|210223}} (accessed 6 May 2021)<br/>\nEmaline Fields death 15 Sep 1876 (age 25), daughter of Noah Slans, in Martin, Kentucky, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death''': \"Kentucky, U.S., Death Records, 1852-1965\"<br/>Kentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>{{Ancestry Record|1222|210223}} (accessed 6 May 2021)<br/>Emaline Fields death 15 Sep 1876 (age 25), daughter of Noah Slans, in Martin, Kentucky, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nKentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>\n{{Ancestry Record|1222|210223}} (accessed 6 May 2021)<br/>\nName: Emaline Fields [Anceline Fields] [Anceline Sloas]; Maiden Name: Slans; Gender: Female; Race: White; Death Age: 25; Birth Date: abt 1851; Residence Place: Martin, Kentucky, USA; Death Date: 15 Sep 1876; Death Place: Martin, Kentucky, USA; Father: Noah Slans.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Emaline, daughter of Noah Slans, died (age 25) on 15 September 1876 in Martin, Kentucky, USA.<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nKentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>\n{{Ancestry Record|1222|210223}} (accessed 6 May 2021)<br/>\nName: Emaline Fields [Anceline Fields] [Anceline Sloas]; Maiden Name: Slans; Gender: Female; Race: White; Death Age: 25; Birth Date: abt 1851; Residence Place: Martin, Kentucky, USA; Death Date: 15 Sep 1876; Death Place: Martin, Kentucky, USA; Father: Noah Slans.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death''': \"Kentucky, U.S., Death Records, 1852-1965\"<br/>Kentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>{{Ancestry Record|1222|210223}} (accessed 6 May 2021)<br/>Name: Emaline Fields [Anceline Fields] [Anceline Sloas]; Maiden Name: Slans; Gender: Female; Race: White; Death Age: 25; Birth Date: abt 1851; Residence Place: Martin, Kentucky, USA; Death Date: 15 Sep 1876; Death Place: Martin, Kentucky, USA; Father: Noah Slans.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nKentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>\n{{Ancestry Record|1222|210223}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emaline Fields [Anceline Fields] [Anceline Sloas]\n|-\n| Maiden Name || Slans\n|-\n| Gender || Female\n|-\n| Race || White\n|-\n| Death Age || 25\n|-\n| Birth Date || abt 1851\n|-\n| Residence Place || Martin, Kentucky, USA\n|-\n| Death Date || 15 Sep 1876\n|-\n| Death Place || Martin, Kentucky, USA\n|-\n| Father || Noah Slans\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Emaline, daughter of Noah Slans, died (age 25) on 15 September 1876 in Martin, Kentucky, USA.<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nKentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>\n{{Ancestry Record|1222|210223}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emaline Fields [Anceline Fields] [Anceline Sloas]\n|-\n| Maiden Name || Slans\n|-\n| Gender || Female\n|-\n| Race || White\n|-\n| Death Age || 25\n|-\n| Birth Date || abt 1851\n|-\n| Residence Place || Martin, Kentucky, USA\n|-\n| Death Date || 15 Sep 1876\n|-\n| Death Place || Martin, Kentucky, USA\n|-\n| Father || Noah Slans\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death''': \"Kentucky, U.S., Death Records, 1852-1965\"<br/>Kentucky Department for Libraries and Archives; Frankfort, Kentucky<br/>{{Ancestry Record|1222|210223}} (accessed 6 May 2021)<br/>Name: Emaline Fields [Anceline Fields] [Anceline Sloas]; Maiden Name: Slans; Gender: Female; Race: White; Death Age: 25; Birth Date: abt 1851; Residence Place: Martin, Kentucky, USA; Death Date: 15 Sep 1876; Death Place: Martin, Kentucky, USA; Father: Noah Slans.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Kentucky, U.S., Death Records, 1852-1965,\" database, ({{Ancestry Record|1222|210223}} : accessed 6 May 2021), Emaline Fields death 15 Sep 1876 (age 25), daughter of Noah Slans, in Martin, Kentucky, USA; citing Kentucky Department for Libraries and Archives, Frankfort, Kentucky.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Emaline, daughter of Noah Slans, died (age 25) on 15 September 1876 in Martin, Kentucky, USA.<ref>\"Kentucky, U.S., Death Records, 1852-1965,\" database, ({{Ancestry Record|1222|210223}} : accessed 6 May 2021), Emaline Fields death 15 Sep 1876 (age 25), daughter of Noah Slans, in Martin, Kentucky, USA; citing Kentucky Department for Libraries and Archives, Frankfort, Kentucky.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Kentucky, U.S., Death Records, 1852-1965,\" database, ({{Ancestry Record|1222|210223}} : accessed 6 May 2021), Emaline Fields death 15 Sep 1876 (age 25), daughter of Noah Slans, in Martin, Kentucky, USA; citing Kentucky Department for Libraries and Archives, Frankfort, Kentucky.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death'':\n\"Kentucky, U.S., Death Records, 1852-1965\", database, \nKentucky Department for Libraries and Archives, Frankfort, Kentucky, \n({{Ancestry Record|1222|210223}} : accessed 6 May 2021), \nName: Emaline Fields [Anceline Fields] [Anceline Sloas]; Maiden Name: Slans; Gender: Female; Race: White; Death Age: 25; Birth Date: abt 1851; Residence Place: Martin, Kentucky, USA; Death Date: 15 Sep 1876; Death Place: Martin, Kentucky, USA; Father: Noah Slans.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Emaline, daughter of Noah Slans, died (age 25) on 15 September 1876 in Martin, Kentucky, USA.<ref>\n''Death'':\n\"Kentucky, U.S., Death Records, 1852-1965\", database, \nKentucky Department for Libraries and Archives, Frankfort, Kentucky, \n({{Ancestry Record|1222|210223}} : accessed 6 May 2021), \nName: Emaline Fields [Anceline Fields] [Anceline Sloas]; Maiden Name: Slans; Gender: Female; Race: White; Death Age: 25; Birth Date: abt 1851; Residence Place: Martin, Kentucky, USA; Death Date: 15 Sep 1876; Death Place: Martin, Kentucky, USA; Father: Noah Slans.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death'': \"Kentucky, U.S., Death Records, 1852-1965\", database, Kentucky Department for Libraries and Archives, Frankfort, Kentucky, ({{Ancestry Record|1222|210223}} : accessed 6 May 2021), Name: Emaline Fields [Anceline Fields] [Anceline Sloas]; Maiden Name: Slans; Gender: Female; Race: White; Death Age: 25; Birth Date: abt 1851; Residence Place: Martin, Kentucky, USA; Death Date: 15 Sep 1876; Death Place: Martin, Kentucky, USA; Father: Noah Slans.",
+    "type": "source"
+  }
+}

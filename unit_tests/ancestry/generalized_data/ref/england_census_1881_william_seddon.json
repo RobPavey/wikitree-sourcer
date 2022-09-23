@@ -1,0 +1,84 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William Seddon"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "9 Mount Pleasant, Salford, Lancashire, England",
+    "streetAddress": "9 Mount Pleasant"
+  },
+  "registrationDistrict": "Salford",
+  "birthDate": {
+    "yearString": "1866",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Warrington"
+  },
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "occupation": "Pattern Maker (Artz)",
+  "ageAtEvent": "15",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "George Seddon",
+      "age": "38",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10603014"
+    },
+    {
+      "name": "Hannah Seddon",
+      "age": "40",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10602892"
+    },
+    {
+      "name": "Richard Seddon",
+      "age": "17",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10602941"
+    },
+    {
+      "name": "William Seddon",
+      "age": "15",
+      "isSelected": true,
+      "relationship": "son",
+      "gender": "male",
+      "occupation": "Pattern Maker (Artz)",
+      "birthPlace": "Warrington",
+      "birthYear": "abt 1866",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10602933"
+    },
+    {
+      "name": "Alice Seddon",
+      "age": "8",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10602840"
+    },
+    {
+      "name": "Mary Ann Seddon",
+      "age": "5",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10603039"
+    },
+    {
+      "name": "Mary Hensall",
+      "age": "40",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10603015"
+    }
+  ],
+  "collectionData": {
+    "id": "7572",
+    "page": "32",
+    "folio": "44",
+    "piece": "3965",
+    "parish": "Salford",
+    "county": "Lancashire"
+  },
+  "hasValidData": true
+}

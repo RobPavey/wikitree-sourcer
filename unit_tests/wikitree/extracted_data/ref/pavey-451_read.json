@@ -1,0 +1,32 @@
+{
+  "hasValidData": true,
+  "firstNames": "Harry",
+  "prefNames": "",
+  "middleNames": "Alfred George",
+  "lnab": "Pavey",
+  "currentLastName": "Pavey",
+  "mothersMaidenName": "Littlemore",
+  "birthDate": "Apr 1871",
+  "birthDateStatus": "none",
+  "deathDate": "Oct 1872",
+  "deathDateStatus": "none",
+  "birthLocation": "St Pancras, Middlesex, England",
+  "deathLocation": "St Pancras, Middlesex, England",
+  "personGender": "male",
+  "spouses": [],
+  "url": "https://www.wikitree.com/index.php?title=Pavey-451&public=1",
+  "currentTabText": "Harry Pavey's Profile",
+  "pageType": "read",
+  "wikiId": "Pavey-451",
+  "name": "Harry Alfred George Pavey",
+  "parents": {
+    "father": {
+      "wikiId": "Pavey-342",
+      "name": "Harry Alfred Pavey"
+    },
+    "mother": {
+      "wikiId": "Littlemore-13",
+      "name": "Amelia Elizabeth (Littlemore) Pavey"
+    }
+  }
+}

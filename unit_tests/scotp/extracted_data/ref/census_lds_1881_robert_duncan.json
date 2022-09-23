@@ -1,0 +1,38 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?page=20&search_type=people&dl_cat=census&surname=Duncan&surname_so=exact&forename=Robert&forename_so=starts&sex=M&record_type=census_lds&year%5B0%5D=1881_LDS",
+  "success": true,
+  "numResultsOnPage": 4,
+  "recordData": {
+    "Surname": "DUNCAN",
+    "Forename": "Robert",
+    "Year": "1881",
+    "Gender": "M",
+    "Age": "38",
+    "Ref": "816525",
+    "Address": "Dwelling: Cluden Cottages",
+    "Census Place": "Irongray, Kircudbright, Scotland",
+    "Birth place": "Carlaverock, Dumfries, Scotland"
+  },
+  "imageLink": "",
+  "pageHeader": "Census returns - Census 1881 (LDS)",
+  "searchCriteria": {
+    "Surname": "Duncan",
+    "Surname Option": "Exact",
+    "Forename": "Robert",
+    "Forename Option": "Starts",
+    "Gender": "M",
+    "Year": "1881_LDS"
+  },
+  "urlQuery": {
+    "page": "20",
+    "search_type": "people",
+    "dl_cat": "census",
+    "surname": "Duncan",
+    "surname_so": "exact",
+    "forename": "Robert",
+    "forename_so": "starts",
+    "sex": "M",
+    "record_type": "census_lds",
+    "year[0]": "1881_LDS"
+  }
+}

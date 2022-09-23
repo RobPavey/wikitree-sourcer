@@ -1,0 +1,33 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/41128:61798",
+  "pageType": "record",
+  "dbId": "61798",
+  "recordId": "41128",
+  "ancestryTemplate": "{{Ancestry Record|61798|41128}}",
+  "domain": "com",
+  "titleName": "Leland L. Thatcher",
+  "titleCollection": "Colorado, Select County Death Records, 1986-2017",
+  "recordData": {
+    "Name": "Leland L. Thatcher",
+    "Gender": "Male",
+    "Race": "White",
+    "Age": "82",
+    "Birth Date": "29 Mar 1923",
+    "Birth Place": "Winona, Minnesota",
+    "Death Date": "2 Jan 2006",
+    "Death Place": "Littleton, Arapahoe, Colorado, USA",
+    "Father": "Leland Lincoln Thatcher",
+    "Mother": "Iva Thatcher",
+    "Spouse": "Margarita Martha Sandelman",
+    "Certificate Number": "2006000091"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61798&h=60041128&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61798&h=75041128&indiv=try&viewrecord=1&r=an",
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61798&h=45041128&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceCitation": "Denver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015",
+  "sourceInformation": "Ancestry.com. Colorado, Select County Death Records, 1986-2017 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2020. Original data: Colorado State Archives. Death Records. Denver, CO, USA.",
+  "originalData": "Colorado State Archives. Death Records. Denver, CO, USA.",
+  "sourceDescription": "This collection consists of county death records from various counties in Colorado from 1986-2017. Learn more..."
+}

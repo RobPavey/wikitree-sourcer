@@ -1,0 +1,91 @@
+{
+  "recordData": {
+    "Name": "Ellen Day",
+    "Census Date": "29 Sep 1939",
+    "Census Place": "West Ham, Essex, England, United Kingdom",
+    "Birth Date": "10 Dec 1899",
+    "Marital Status": "Married",
+    "Occupation": "Unpaid Domestic Duties",
+    "Age": "40",
+    "Source Reference": "RG101/1041C/011/15",
+    "Source Schedule Nbr": "137",
+    "Source Sub Schedule Nbr": "2"
+  },
+  "eventDateOriginal": "29 Sep 1939",
+  "eventDate": "29 Sep 1939",
+  "eventYear": "1939",
+  "eventPlaceOriginal": "West Ham, Essex, England, United Kingdom",
+  "eventPlace": "West Ham, Essex, England, United Kingdom",
+  "registrationDistrict": "West Ham C.B.",
+  "eventPlaceL2": "Essex",
+  "eventPlaceL1": "England",
+  "fullName": "Ellen Day",
+  "givenName": "Ellen",
+  "surname": "Day",
+  "gender": "female",
+  "factType": "Census",
+  "birthDateOriginal": "10 Dec 1899",
+  "birthDate": "10 Dec 1899",
+  "birthYear": "1899",
+  "age": "40",
+  "externalImageId": "TNA%2FR39%2F1041%2F1041C%2F011%2F15",
+  "referenceData": {
+    "sourceEntryNbr": "011",
+    "sourceLineNbr": "15",
+    "digitalFilmNumber": "DI0001004"
+  },
+  "household": {
+    "headings": [
+      "fullName",
+      "givenName",
+      "surname",
+      "relationship",
+      "maritalStatus",
+      "gender",
+      "age",
+      "occupation",
+      "birthDateOriginal",
+      "birthYear",
+      "birthPlaceOriginal",
+      "birthPlace"
+    ],
+    "members": [
+      {
+        "fullName": "John E G Day",
+        "givenName": "John E G",
+        "surname": "Day",
+        "gender": "male",
+        "birthDateOriginal": "11 Aug 1898",
+        "birthDate": "11 Aug 1898",
+        "birthYear": "1898",
+        "maritalStatus": "Married",
+        "occupation": "Nevedone Labr (Heavy Worker)",
+        "age": "41"
+      },
+      {
+        "isSelected": true,
+        "fullName": "Ellen Day",
+        "givenName": "Ellen",
+        "surname": "Day",
+        "gender": "female",
+        "birthDateOriginal": "10 Dec 1899",
+        "birthDate": "10 Dec 1899",
+        "birthYear": "1899",
+        "maritalStatus": "Married",
+        "occupation": "Unpaid Domestic Duties",
+        "age": "40"
+      },
+      {
+        "isClosed": true
+      }
+    ]
+  },
+  "fsCollectionId": "2836130",
+  "collectionTitle": "England and Wales National Register, 1939",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:7CT3-YS2M",
+  "citation": "\"England and Wales National Register, 1939,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:728V-TTT2 : 15 April 2019), Ellen Day in entry for John E G Day, 29 Sep 1939; from \"General Register Office: National Registration: 1939 Register,\" database, <i>FindMyPast</i> (https://www.findmypast.com : 2017); citing Census, West Ham, Essex, England, United Kingdom, RG 101, The National Archives, Kew, England; FHL microfilm .",
+  "sourceTitleForPerson": "Ellen Day in household of John E G Day, \"England and Wales National Register, 1939\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:728V-TTT2",
+  "externalImageUrl": "https://search.findmypast.co.uk/record?id=TNA%2FR39%2F1041%2F1041C%2F011%2F14",
+  "pageType": "record"
+}

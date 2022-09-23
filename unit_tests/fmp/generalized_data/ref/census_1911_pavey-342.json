@@ -1,0 +1,100 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Harry Alfred"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "110 Highgate Hill Upper Holloway N, Islington, London & Middlesex, England",
+    "streetAddress": "110 Highgate Hill Upper Holloway N"
+  },
+  "registrationDistrict": "Islington",
+  "birthDate": {
+    "yearString": "1853",
+    "qualifier": 2
+  },
+  "ageAtEvent": "58",
+  "birthPlace": {
+    "placeString": "Plymouth Devon"
+  },
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "occupation": "Picture frame maker",
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "isSelected": true,
+      "name": "Harry Alfred Pavey",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "58",
+      "birthYear": "1853",
+      "occupation": "Picture frame maker",
+      "birthPlace": "Plymouth Devon"
+    },
+    {
+      "name": "Amelia Elizabeth Pavey",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "60",
+      "birthYear": "1851",
+      "birthPlace": "London Camden Town"
+    },
+    {
+      "name": "Harry Alfred Pavey",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "33",
+      "birthYear": "1878",
+      "occupation": "Ships steward",
+      "birthPlace": "London Kentish Town"
+    },
+    {
+      "name": "Ralph Edgar Pavey",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "19",
+      "birthYear": "1892",
+      "occupation": "Wharehouse assistant",
+      "birthPlace": "London Kentish Town"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Amelia Elizabeth Pavey"
+      },
+      "marriageDate": {
+        "yearString": "1871"
+      },
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1911 Census For England & Wales",
+    "districtNumber": "10",
+    "piece": "802",
+    "schedule": "198"
+  },
+  "hasValidData": true
+}

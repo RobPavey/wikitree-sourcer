@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>\n{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Cecil was in the military and died on 7 September 1916. They were in the Royal Irish Fusiliers (service number 21816).<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>\n{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Military''': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>\n{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)<br/>\nName: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce.<br/>Rosina Salmon Mother.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Cecil was in the military and died on 7 September 1916. They were in the Royal Irish Fusiliers (service number 21816).<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>\n{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)<br/>\nName: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce.<br/>Rosina Salmon Mother.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Military''': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)<br/>Name: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce.<br/>Rosina Salmon Mother.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>\n{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)<br/>\nName: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce.<br/>Rosina Salmon Mother.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Cecil was in the military and died on 7 September 1916. They were in the Royal Irish Fusiliers (service number 21816).<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>\n{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)<br/>\nName: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce.<br/>Rosina Salmon Mother.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Military''': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)<br/>Name: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce.<br/>Rosina Salmon Mother.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>\n{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Cecil Henry. Druce.\n|-\n| Rank || Pte\n|-\n| Record Type || Card\n|-\n| Death Date || 7 Sep 1916\n|-\n| Service Number || 21816\n|-\n| Corps, Regiment or Unit || Royal Irish Fusiliers\n|-\n| Title || WWI Pension Record Cards and Ledgers\n|-\n| Description || Other Ranks Died Driver A-Ducklers WH\n|-\n| Next of Kin || Cecil Henry. Druce.<br/>Rosina Salmon Mother\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Cecil was in the military and died on 7 September 1916. They were in the Royal Irish Fusiliers (service number 21816).<ref>\n'''Military''':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>\nWestern Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>\n{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Cecil Henry. Druce.\n|-\n| Rank || Pte\n|-\n| Record Type || Card\n|-\n| Death Date || 7 Sep 1916\n|-\n| Service Number || 21816\n|-\n| Corps, Regiment or Unit || Royal Irish Fusiliers\n|-\n| Title || WWI Pension Record Cards and Ledgers\n|-\n| Description || Other Ranks Died Driver A-Ducklers WH\n|-\n| Next of Kin || Cecil Henry. Druce.<br/>Rosina Salmon Mother\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Military''': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\"<br/>Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 063/0278/DRI-DUC<br/>{{Ancestry Record|61588|21143847|uk}} (accessed 6 May 2021)<br/>Name: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce.<br/>Rosina Salmon Mother.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"UK, World War I Pension Ledgers and Index Cards, 1914-1923,\" database, ({{Ancestry Record|61588|21143847|uk}} : accessed 6 May 2021), Name Cecil Henry. Druce., Rank Pte, Record Type Card, Death Date 7 Sep 1916, Service Number 21816, Corps, Regiment or Unit Royal Irish Fusiliers, Title WWI Pension Record Cards and Ledgers, Description Other Ranks Died Driver A-Ducklers WH, Next of Kin Cecil Henry. Druce., Rosina Salmon Mother; citing Western Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 063/0278/DRI-DUC.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Cecil was in the military and died on 7 September 1916. They were in the Royal Irish Fusiliers (service number 21816).<ref>\"UK, World War I Pension Ledgers and Index Cards, 1914-1923,\" database, ({{Ancestry Record|61588|21143847|uk}} : accessed 6 May 2021), Name Cecil Henry. Druce., Rank Pte, Record Type Card, Death Date 7 Sep 1916, Service Number 21816, Corps, Regiment or Unit Royal Irish Fusiliers, Title WWI Pension Record Cards and Ledgers, Description Other Ranks Died Driver A-Ducklers WH, Next of Kin Cecil Henry. Druce., Rosina Salmon Mother; citing Western Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 063/0278/DRI-DUC.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"UK, World War I Pension Ledgers and Index Cards, 1914-1923,\" database, ({{Ancestry Record|61588|21143847|uk}} : accessed 6 May 2021), Name Cecil Henry. Druce., Rank Pte, Record Type Card, Death Date 7 Sep 1916, Service Number 21816, Corps, Regiment or Unit Royal Irish Fusiliers, Title WWI Pension Record Cards and Ledgers, Description Other Ranks Died Driver A-Ducklers WH, Next of Kin Cecil Henry. Druce., Rosina Salmon Mother; citing Western Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 063/0278/DRI-DUC.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Military'':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\", database, \nWestern Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 063/0278/DRI-DUC, \n({{Ancestry Record|61588|21143847|uk}} : accessed 6 May 2021), \nName: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce., Rosina Salmon Mother.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Cecil was in the military and died on 7 September 1916. They were in the Royal Irish Fusiliers (service number 21816).<ref>\n''Military'':\n\"UK, World War I Pension Ledgers and Index Cards, 1914-1923\", database, \nWestern Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 063/0278/DRI-DUC, \n({{Ancestry Record|61588|21143847|uk}} : accessed 6 May 2021), \nName: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce., Rosina Salmon Mother.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Military'': \"UK, World War I Pension Ledgers and Index Cards, 1914-1923\", database, Western Front Association, London, England, WWI Pension Record Cards and Ledgers, Reference 063/0278/DRI-DUC, ({{Ancestry Record|61588|21143847|uk}} : accessed 6 May 2021), Name: Cecil Henry. Druce.; Rank: Pte; Record Type: Card; Death Date: 7 Sep 1916; Service Number: 21816; Corps, Regiment or Unit: Royal Irish Fusiliers; Title: WWI Pension Record Cards and Ledgers; Description: Other Ranks Died Driver A-Ducklers WH; Next of Kin: Cecil Henry. Druce., Rosina Salmon Mother.",
+    "type": "source"
+  }
+}

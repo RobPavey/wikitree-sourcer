@@ -1,0 +1,90 @@
+{
+  "success": true,
+  "url": "https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703",
+  "subDomain": "www",
+  "domain": "findmypast.co.uk",
+  "urlPath": "transcript",
+  "urlParameters": "id=USC%2F1860%2F0000634121703",
+  "heading": "Betsey Gardener in 1860",
+  "collection": "US Census 1860",
+  "place": "El Dorado, California, United States",
+  "personGender": "female",
+  "recordData": {
+    "Additional keywords": "-",
+    "Location": "El Dorado, California",
+    "First name(s)": "Betsey",
+    "City/township": "El Dorado",
+    "Last name": "Gardener",
+    "County": "El Dorado",
+    "Gender": "Female",
+    "State": "California",
+    "Age": "30",
+    "NARA series": "M653",
+    "Birth year": "1830",
+    "Record set": "Us Census 1860",
+    "Birth place": "Eng",
+    "Category": "Census, land & surveys",
+    "Race": "-",
+    "Subcategory": "Census",
+    "Residence": ", El Dorado, California",
+    "Collections from": "Americas, United States"
+  },
+  "household": {
+    "headings": [
+      "Last name",
+      "Gender",
+      "Age",
+      "First name(s)",
+      "Birth year",
+      "Birth place"
+    ],
+    "members": [
+      {
+        "isSelected": false,
+        "Last name": "Gardener",
+        "Gender": "Male",
+        "Age": "43",
+        "First name(s)": "G B",
+        "Birth year": "1817",
+        "Birth place": "R I"
+      },
+      {
+        "isSelected": true,
+        "Last name": "Gardener",
+        "Gender": "Female",
+        "Age": "30",
+        "First name(s)": "Betsey",
+        "Birth year": "1830",
+        "Birth place": "Eng"
+      },
+      {
+        "isSelected": false,
+        "Last name": "Gardener",
+        "Gender": "Female",
+        "Age": "4",
+        "First name(s)": "Mary",
+        "Birth year": "1856",
+        "Birth place": "Cal"
+      },
+      {
+        "isSelected": false,
+        "Last name": "Gardener",
+        "Gender": "Male",
+        "Age": "2",
+        "First name(s)": "Joseph",
+        "Birth year": "1858",
+        "Birth place": "Cal"
+      },
+      {
+        "isSelected": false,
+        "Last name": "Pavey",
+        "Gender": "Female",
+        "Age": "12",
+        "First name(s)": "Burnice",
+        "Birth year": "1848",
+        "Birth place": "Mich"
+      }
+    ]
+  },
+  "imageUrl": "https://search.findmypast.co.uk/record?id=USC%2F1860%2F005165629%2F00331&parentid=USC%2F1860%2F0000634121703"
+}

@@ -1,0 +1,19 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "John Kemper"
+  },
+  "eventPlace": {
+    "placeString": "Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72"
+  },
+  "deathPlace": {
+    "placeString": "Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72"
+  },
+  "lastNameAtDeath": "Kemper",
+  "collectionData": {
+    "id": "4110"
+  },
+  "hasValidData": true
+}

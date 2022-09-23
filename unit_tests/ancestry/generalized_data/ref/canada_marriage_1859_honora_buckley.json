@@ -1,0 +1,47 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Honora Buckley"
+  },
+  "eventPlace": {
+    "county": "Northumberland and Durham",
+    "placeString": "Northumberland and Durham"
+  },
+  "eventDate": {
+    "dateString": "8 Dec 1859"
+  },
+  "ageAtEvent": "22",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Michael Buckley"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Bridget Buckley"
+      }
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "William Waller"
+      },
+      "marriageDate": {
+        "dateString": "8 Dec 1859"
+      },
+      "marriagePlace": {
+        "county": "Northumberland and Durham",
+        "placeString": "Northumberland and Durham"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "8510",
+    "county": "Northumberland and Durham"
+  },
+  "hasValidData": true
+}

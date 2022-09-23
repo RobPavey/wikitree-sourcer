@@ -1,0 +1,29 @@
+{
+  "sourceType": "record",
+  "recordType": "Probate",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Maton",
+    "forenames": "Alfred"
+  },
+  "eventDate": {
+    "dateString": "28 Feb 1941",
+    "yearString": "1941"
+  },
+  "deathDate": {
+    "dateString": "20 Jan 1941",
+    "yearString": "1941"
+  },
+  "residencePlace": {
+    "placeString": "Southampton, Hampshire, England"
+  },
+  "eventPlace": {
+    "placeString": "Llandudno"
+  },
+  "lastNameAtDeath": "Maton",
+  "collectionData": {
+    "id": "England & Wales Government Probate Death Index 1858-2019"
+  },
+  "hasValidData": true
+}

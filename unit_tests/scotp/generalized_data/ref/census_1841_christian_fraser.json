@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "Christian"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1841"
+  },
+  "ageAtEvent": "5",
+  "registrationDistrict": "Kintore",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Aberdeenshire",
+    "placeString": "Kintore, Aberdeenshire, Scotland"
+  },
+  "collectionData": {
+    "id": "census1841",
+    "registrationNumber": "213",
+    "enumerationDistrict": "1",
+    "page": "5"
+  },
+  "hasValidData": true
+}

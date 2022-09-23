@@ -1,0 +1,26 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Mary Francis Taylor Volentine"
+  },
+  "birthDate": {
+    "dateString": "13 Jan 1839",
+    "yearString": "1839"
+  },
+  "deathDate": {
+    "dateString": "23 Sep 1898"
+  },
+  "eventDate": {
+    "dateString": "1898",
+    "yearString": "1898"
+  },
+  "eventPlace": {
+    "placeString": "Peter Pender, Franklin, Arkansas, United States of America"
+  },
+  "collectionData": {
+    "id": "2221801"
+  },
+  "hasValidData": true
+}

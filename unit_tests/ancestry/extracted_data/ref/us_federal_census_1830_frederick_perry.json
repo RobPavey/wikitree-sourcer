@@ -1,0 +1,31 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1691734:8058?tid=&pid=&queryId=8f5294ba66fde6fa4a52109fd8927ea8&_phsrc=Vww4227&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "8058",
+  "recordId": "1691734",
+  "ancestryTemplate": "{{Ancestry Record|8058|1691734}}",
+  "domain": "com",
+  "titleName": "Frederick Perry",
+  "titleCollection": "1830 United States Federal Census",
+  "recordData": {
+    "Name": "Frederick Perry",
+    "Home in 1830 (City, County, State)": "Saybrook, Middlesex, Connecticut",
+    "Free White Persons - Males - Under 5": "2",
+    "Free White Persons - Males - 5 thru 9": "1",
+    "Free White Persons - Males - 20 thru 29": "1",
+    "Free White Persons - Males - 30 thru 39": "1",
+    "Free White Persons - Females - 5 thru 9": "2",
+    "Free White Persons - Females - 30 thru 39": "1",
+    "Free White Persons - Under 20": "5",
+    "Free White Persons - 20 thru 49": "3",
+    "Total Free White Persons": "8",
+    "Total - All Persons (Free White, Slaves, Free Colored)": "8"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8058/images/4409519_00324?pid=1691734&usePUB=true&_phsrc=Vww4227&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "8058",
+  "imageRecordId": "4409519_00324",
+  "sourceCitation": "Year: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801",
+  "sourceInformation": "Ancestry.com. 1830 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Images reproduced by FamilySearch. Original data: Fifth Census of the United States, 1830. (NARA microfilm publication M19, 201 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "originalData": "Fifth Census of the United States, 1830. (NARA microfilm publication M19, 201 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "sourceDescription": "This database details those persons enumerated in the 1830 United States Federal Census, the Fifth Census of the United States. In addition, the names of those listed on the population schedule are linked to the actual images of the 1830 Federal Census. Enumerators of the 1830 census were asked to include the following categories in the census: name of head of household, number of free white males and females, number of other free persons, names of slave owners and number of slaves, number of foreigners, and town or district and county of residence. Learn more..."
+}

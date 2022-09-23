@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders, 1764.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders, 1764.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>Archbald Saunders, 1764.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders marriage on 22 Apr 1764 in Applegarth Town, Dumfriesshire, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders marriage on 22 Apr 1764 in Applegarth Town, Dumfriesshire, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>Archbald Saunders marriage on 22 Apr 1764 in Applegarth Town, Dumfriesshire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nName: Archbald Saunders; Marriage Date: 22 Apr 1764; Marriage Place: Applegarth Town, Dumfriesshire, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nName: Archbald Saunders; Marriage Date: 22 Apr 1764; Marriage Place: Applegarth Town, Dumfriesshire, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>Name: Archbald Saunders; Marriage Date: 22 Apr 1764; Marriage Place: Applegarth Town, Dumfriesshire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Archbald Saunders\n|-\n| Marriage Date || 22 Apr 1764\n|-\n| Marriage Place || Applegarth Town, Dumfriesshire, Scotland\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Archbald Saunders\n|-\n| Marriage Date || 22 Apr 1764\n|-\n| Marriage Place || Applegarth Town, Dumfriesshire, Scotland\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>Name: Archbald Saunders; Marriage Date: 22 Apr 1764; Marriage Place: Applegarth Town, Dumfriesshire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders, 1764.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders, 1764.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>Archbald Saunders, 1764.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders marriage on 22 Apr 1764 in Applegarth Town, Dumfriesshire, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders marriage on 22 Apr 1764 in Applegarth Town, Dumfriesshire, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>Archbald Saunders marriage on 22 Apr 1764 in Applegarth Town, Dumfriesshire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders, 1764.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>\nArchbald Saunders, 1764.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)<br/>Archbald Saunders, 1764.",
+    "type": "source"
+  }
+}

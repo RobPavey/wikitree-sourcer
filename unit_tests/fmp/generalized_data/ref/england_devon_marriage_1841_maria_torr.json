@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Torr",
+    "forenames": "Maria"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Tavistock, Devon, England"
+  },
+  "eventDate": {
+    "dateString": "02 May 1841",
+    "yearString": "1841"
+  },
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "John",
+        "lastName": "Giles"
+      },
+      "marriageDate": {
+        "dateString": "02 May 1841",
+        "yearString": "1841"
+      },
+      "marriagePlace": {
+        "country": "England",
+        "placeString": "Tavistock, Devon, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "Devon Marriages And Banns"
+  },
+  "hasValidData": true
+}

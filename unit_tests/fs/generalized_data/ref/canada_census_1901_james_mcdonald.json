@@ -1,0 +1,151 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "James Mcdonald"
+  },
+  "birthDate": {
+    "dateString": "1856",
+    "yearString": "1856"
+  },
+  "birthPlace": {
+    "placeString": "Ontario"
+  },
+  "eventDate": {
+    "dateString": "31 Mar 1901",
+    "yearString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "Toronto (east/est) (city/cité), Ontario, Canada"
+  },
+  "ageAtEvent": "45",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "James Mcdonald",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "45",
+      "birthYear": "1856",
+      "birthPlace": "Ontario",
+      "isSelected": true
+    },
+    {
+      "name": "Catharine J Mcdonald",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "39",
+      "birthYear": "1862",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "Hattie Mcdonald",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "23",
+      "birthYear": "1878",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "Sarah M Mcdonald",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "20",
+      "birthYear": "1881",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "Ethel M Mcdonald",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "18",
+      "birthYear": "1883",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "Violet E Mcdonald",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "15",
+      "birthYear": "1886",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "William A Mcdonald",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "14",
+      "birthYear": "1887",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "James L Mcdonald",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "10",
+      "birthYear": "1891",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "Raymond C Mcdonald",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "7",
+      "birthYear": "1894",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "Ross M Mcdonald",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "5",
+      "birthYear": "1896",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "Irvine C Mcdonald",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "1",
+      "birthYear": "1900",
+      "birthPlace": "Ontario"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "spouses": [
+    {
+      "name": {
+        "name": "Catharine J Mcdonald"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1584557",
+    "page": "5"
+  },
+  "hasValidData": true
+}

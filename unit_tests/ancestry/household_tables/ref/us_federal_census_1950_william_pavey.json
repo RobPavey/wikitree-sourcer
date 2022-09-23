@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Status || Relation || Occupation || Birth Place\n|-\n| '''William Pavey''' || '''M''' || '''28''' || '''Married''' || '''Head''' ||  || '''Michigan'''\n|-\n| Martha Pavey ||  || 29 ||  || Wife ||  || \n|-\n| Patricia Ann Pavey ||  || 5 ||  || Daughter ||  || \n|}"
+  }
+}

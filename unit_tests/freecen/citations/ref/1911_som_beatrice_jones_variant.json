@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1911 census Beatrice (age 32), Private Means, was the married boarder of Mary Tarr at 23 Blenheim Gardens, Minehead, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)<br/>\nBeatrice Florence Jones (32), married boarder, Private Means, in household of Mary Tarr (71) at 23 Blenheim Gardens, Minehead in Williton registration district in Somerset, England. Born in Handsworth, Staffordshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1911 census Beatrice (age 32), Private Means, was the married boarder of Mary Tarr at 23 Blenheim Gardens, Minehead, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)<br/>\nBeatrice Florence Jones (32), married boarder, Private Means, in household of Mary Tarr (71) at 23 Blenheim Gardens, Minehead in Williton registration district in Somerset, England. Born in Handsworth, Staffordshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)<br/>Beatrice Florence Jones (32), married boarder, Private Means, in household of Mary Tarr (71) at 23 Blenheim Gardens, Minehead in Williton registration district in Somerset, England. Born in Handsworth, Staffordshire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus Year: 1911; County: Somerset (SOM); Census District: Williton; Enumeration District: 1; Civil Parish: Minehead; Ecclesiastical Parish: Minehead St Michael And All Angels; Where Census Taken: Minehead; Piece: RG14_14114; Ward: -; Constituency: Western Division Of Somerset; Dwelling Number: 96; Schedule: 96; House Number: 23; House or Street Name: Blenheim Gardens; Rooms: 7.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1911 census Beatrice (age 32), Private Means, was the married boarder of Mary Tarr at 23 Blenheim Gardens, Minehead, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus Year: 1911; County: Somerset (SOM); Census District: Williton; Enumeration District: 1; Civil Parish: Minehead; Ecclesiastical Parish: Minehead St Michael And All Angels; Where Census Taken: Minehead; Piece: RG14_14114; Ward: -; Constituency: Western Division Of Somerset; Dwelling Number: 96; Schedule: 96; House Number: 23; House or Street Name: Blenheim Gardens; Rooms: 7.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)<br/>Census Year: 1911; County: Somerset (SOM); Census District: Williton; Enumeration District: 1; Civil Parish: Minehead; Ecclesiastical Parish: Minehead St Michael And All Angels; Where Census Taken: Minehead; Piece: RG14_14114; Ward: -; Constituency: Western Division Of Somerset; Dwelling Number: 96; Schedule: 96; House Number: 23; House or Street Name: Blenheim Gardens; Rooms: 7.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census Year || 1911\n|-\n| County || Somerset (SOM)\n|-\n| Census District || Williton\n|-\n| Enumeration District || 1\n|-\n| Civil Parish || Minehead\n|-\n| Ecclesiastical Parish || Minehead St Michael And All Angels\n|-\n| Where Census Taken || Minehead\n|-\n| Piece || RG14_14114\n|-\n| Ward || -\n|-\n| Constituency || Western Division Of Somerset\n|-\n| Page || \n|-\n| Dwelling Number || 96\n|-\n| Schedule || 96\n|-\n| House Number || 23\n|-\n| House or Street Name || Blenheim Gardens\n|-\n| Rooms || 7\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1911 census Beatrice (age 32), Private Means, was the married boarder of Mary Tarr at 23 Blenheim Gardens, Minehead, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census Year || 1911\n|-\n| County || Somerset (SOM)\n|-\n| Census District || Williton\n|-\n| Enumeration District || 1\n|-\n| Civil Parish || Minehead\n|-\n| Ecclesiastical Parish || Minehead St Michael And All Angels\n|-\n| Where Census Taken || Minehead\n|-\n| Piece || RG14_14114\n|-\n| Ward || -\n|-\n| Constituency || Western Division Of Somerset\n|-\n| Page || \n|-\n| Dwelling Number || 96\n|-\n| Schedule || 96\n|-\n| House Number || 23\n|-\n| House or Street Name || Blenheim Gardens\n|-\n| Rooms || 7\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)<br/>Census Year: 1911; County: Somerset (SOM); Census District: Williton; Enumeration District: 1; Civil Parish: Minehead; Ecclesiastical Parish: Minehead St Michael And All Angels; Where Census Taken: Minehead; Piece: RG14_14114; Ward: -; Constituency: Western Division Of Somerset; Dwelling Number: 96; Schedule: 96; House Number: 23; House or Street Name: Blenheim Gardens; Rooms: 7.",
+    "type": "source"
+  }
+}

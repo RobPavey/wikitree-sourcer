@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>\n{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1871 census Rebacca (age 55) was the wife of Charles Darby in West Bromwich, Staffordshire, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>\n{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>\n{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)<br/>\nRebacca Darby (55), wife, in household of Charles Darby (57) in West Bromwich registration district in Staffordshire, England. Born in Ashburton, Herefordshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1871 census Rebacca (age 55) was the wife of Charles Darby in West Bromwich, Staffordshire, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>\n{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)<br/>\nRebacca Darby (55), wife, in household of Charles Darby (57) in West Bromwich registration district in Staffordshire, England. Born in Ashburton, Herefordshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)<br/>Rebacca Darby (55), wife, in household of Charles Darby (57) in West Bromwich registration district in Staffordshire, England. Born in Ashburton, Herefordshire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>\n{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)<br/>\nName: Rebacca Darby; Age: 55; Estimated Birth Year: 1816; Relation: Wife; Gender: Female; Where born: Ashburton, Herefordshire, England; Civil parish: West Bromwich; Ecclesiastical parish: Christchurch; Town: West Bromwich; County/Island: Staffordshire; Country: England; Registration district: West Bromwich; Sub-registration district: West Bromwich South West; <br/>Household Members Age Relationship:<br/>Charles Darby 57 Head<br/>Rebacca Darby 55 Wife<br/>Joseph Darby 31 Son<br/>Leah Darby 23 Daughter<br/>Emily Darby 16 Daughter<br/>Adaliade Darby 12 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1871 census Rebacca (age 55) was the wife of Charles Darby in West Bromwich, Staffordshire, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>\n{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)<br/>\nName: Rebacca Darby; Age: 55; Estimated Birth Year: 1816; Relation: Wife; Gender: Female; Where born: Ashburton, Herefordshire, England; Civil parish: West Bromwich; Ecclesiastical parish: Christchurch; Town: West Bromwich; County/Island: Staffordshire; Country: England; Registration district: West Bromwich; Sub-registration district: West Bromwich South West; <br/>Household Members Age Relationship:<br/>Charles Darby 57 Head<br/>Rebacca Darby 55 Wife<br/>Joseph Darby 31 Son<br/>Leah Darby 23 Daughter<br/>Emily Darby 16 Daughter<br/>Adaliade Darby 12 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)<br/>Name: Rebacca Darby; Age: 55; Estimated Birth Year: 1816; Relation: Wife; Gender: Female; Where born: Ashburton, Herefordshire, England; Civil parish: West Bromwich; Ecclesiastical parish: Christchurch; Town: West Bromwich; County/Island: Staffordshire; Country: England; Registration district: West Bromwich; Sub-registration district: West Bromwich South West; <br/>Household Members Age Relationship:<br/>Charles Darby 57 Head<br/>Rebacca Darby 55 Wife<br/>Joseph Darby 31 Son<br/>Leah Darby 23 Daughter<br/>Emily Darby 16 Daughter<br/>Adaliade Darby 12 Daughter.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>\n{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Rebacca Darby\n|-\n| Age || 55\n|-\n| Estimated Birth Year || 1816\n|-\n| Relation || Wife\n|-\n| Gender || Female\n|-\n| Where born || Ashburton, Herefordshire, England\n|-\n| Civil parish || West Bromwich\n|-\n| Ecclesiastical parish || Christchurch\n|-\n| Town || West Bromwich\n|-\n| County/Island || Staffordshire\n|-\n| Country || England\n|-\n| Registration district || West Bromwich\n|-\n| Sub-registration district || West Bromwich South West\n|-\n| Household Members<br/>Age<br/>Relationship || Charles Darby 57 Head<br/>Rebacca Darby 55 Wife<br/>Joseph Darby 31 Son<br/>Leah Darby 23 Daughter<br/>Emily Darby 16 Daughter<br/>Adaliade Darby 12 Daughter\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1871 census Rebacca (age 55) was the wife of Charles Darby in West Bromwich, Staffordshire, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>\n{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Rebacca Darby\n|-\n| Age || 55\n|-\n| Estimated Birth Year || 1816\n|-\n| Relation || Wife\n|-\n| Gender || Female\n|-\n| Where born || Ashburton, Herefordshire, England\n|-\n| Civil parish || West Bromwich\n|-\n| Ecclesiastical parish || Christchurch\n|-\n| Town || West Bromwich\n|-\n| County/Island || Staffordshire\n|-\n| Country || England\n|-\n| Registration district || West Bromwich\n|-\n| Sub-registration district || West Bromwich South West\n|-\n| Household Members<br/>Age<br/>Relationship || Charles Darby 57 Head<br/>Rebacca Darby 55 Wife<br/>Joseph Darby 31 Son<br/>Leah Darby 23 Daughter<br/>Emily Darby 16 Daughter<br/>Adaliade Darby 12 Daughter\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865; ED, institution, or vessel: 14; Household schedule number: 64<br/>{{Ancestry Record|7619|2477121}} (accessed 6 May 2021)<br/>Name: Rebacca Darby; Age: 55; Estimated Birth Year: 1816; Relation: Wife; Gender: Female; Where born: Ashburton, Herefordshire, England; Civil parish: West Bromwich; Ecclesiastical parish: Christchurch; Town: West Bromwich; County/Island: Staffordshire; Country: England; Registration district: West Bromwich; Sub-registration district: West Bromwich South West; <br/>Household Members Age Relationship:<br/>Charles Darby 57 Head<br/>Rebacca Darby 55 Wife<br/>Joseph Darby 31 Son<br/>Leah Darby 23 Daughter<br/>Emily Darby 16 Daughter<br/>Adaliade Darby 12 Daughter.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1871 England Census,\" database, ({{Ancestry Record|7619|2477121}} : accessed 6 May 2021), Rebacca Darby (55), wife, in household of Charles Darby (57) in West Bromwich registration district in Staffordshire, England. Born in Ashburton, Herefordshire, England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2980, Folio 51, Page 13, GSU roll 838865, ED, institution, or vessel 14, Household schedule number 64.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1871 census Rebacca (age 55) was the wife of Charles Darby in West Bromwich, Staffordshire, England.<ref>\"1871 England Census,\" database, ({{Ancestry Record|7619|2477121}} : accessed 6 May 2021), Rebacca Darby (55), wife, in household of Charles Darby (57) in West Bromwich registration district in Staffordshire, England. Born in Ashburton, Herefordshire, England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2980, Folio 51, Page 13, GSU roll 838865, ED, institution, or vessel 14, Household schedule number 64.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1871 England Census,\" database, ({{Ancestry Record|7619|2477121}} : accessed 6 May 2021), Rebacca Darby (55), wife, in household of Charles Darby (57) in West Bromwich registration district in Staffordshire, England. Born in Ashburton, Herefordshire, England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2980, Folio 51, Page 13, GSU roll 838865, ED, institution, or vessel 14, Household schedule number 64.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1871 Census'':\n\"1871 England Census\", database, \nThe National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2980, Folio 51, Page 13, GSU roll 838865, ED, institution, or vessel 14, Household schedule number 64, \n({{Ancestry Record|7619|2477121}} : accessed 6 May 2021), \nName: Rebacca Darby; Age: 55; Estimated Birth Year: 1816; Relation: Wife; Gender: Female; Where born: Ashburton, Herefordshire, England; Civil parish: West Bromwich; Ecclesiastical parish: Christchurch; Town: West Bromwich; County/Island: Staffordshire; Country: England; Registration district: West Bromwich; Sub-registration district: West Bromwich South West; Household Members Age Relationship: Charles Darby 57 Head, Rebacca Darby 55 Wife, Joseph Darby 31 Son, Leah Darby 23 Daughter, Emily Darby 16 Daughter, Adaliade Darby 12 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1871 census Rebacca (age 55) was the wife of Charles Darby in West Bromwich, Staffordshire, England.<ref>\n''1871 Census'':\n\"1871 England Census\", database, \nThe National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2980, Folio 51, Page 13, GSU roll 838865, ED, institution, or vessel 14, Household schedule number 64, \n({{Ancestry Record|7619|2477121}} : accessed 6 May 2021), \nName: Rebacca Darby; Age: 55; Estimated Birth Year: 1816; Relation: Wife; Gender: Female; Where born: Ashburton, Herefordshire, England; Civil parish: West Bromwich; Ecclesiastical parish: Christchurch; Town: West Bromwich; County/Island: Staffordshire; Country: England; Registration district: West Bromwich; Sub-registration district: West Bromwich South West; Household Members Age Relationship: Charles Darby 57 Head, Rebacca Darby 55 Wife, Joseph Darby 31 Son, Leah Darby 23 Daughter, Emily Darby 16 Daughter, Adaliade Darby 12 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1871 Census'': \"1871 England Census\", database, The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 2980, Folio 51, Page 13, GSU roll 838865, ED, institution, or vessel 14, Household schedule number 64, ({{Ancestry Record|7619|2477121}} : accessed 6 May 2021), Name: Rebacca Darby; Age: 55; Estimated Birth Year: 1816; Relation: Wife; Gender: Female; Where born: Ashburton, Herefordshire, England; Civil parish: West Bromwich; Ecclesiastical parish: Christchurch; Town: West Bromwich; County/Island: Staffordshire; Country: England; Registration district: West Bromwich; Sub-registration district: West Bromwich South West; Household Members Age Relationship: Charles Darby 57 Head, Rebacca Darby 55 Wife, Joseph Darby 31 Son, Leah Darby 23 Daughter, Emily Darby 16 Daughter, Adaliade Darby 12 Daughter.",
+    "type": "source"
+  }
+}

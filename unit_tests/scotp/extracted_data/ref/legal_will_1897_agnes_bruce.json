@@ -1,0 +1,40 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-wills-testaments&record_type=wills_testaments&surname=Bruce&surname_so=exact&forename=Agnes&forename_so=exact&from_year=1897&to_year=1897&description=of%203%20Haldane%20Terrace%2C%20Newcastle-upon-Tyne%2C%20widow&ref=SC70%2F6%2F68",
+  "success": true,
+  "numResultsOnPage": 2,
+  "recordData": {
+    "Surname": "Bruce",
+    "Forename": "Agnes",
+    "Date": "31/12/1897",
+    "Description": "Widow, 3 Haldane Terrace, City and County of Newcastle upon Tyne, d. 02/08/1897 at Haldane Terrace aforesaid, testate",
+    "Type": "Note of Probate",
+    "Court": "Edinburgh Sheriff Court Wills ",
+    "Reference Number": "SC70/4/302"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_wills_testaments/106484?image=1&return_row=0",
+  "pageHeader": "Legal records - Wills and testaments",
+  "searchCriteria": {
+    "Surname": "Bruce",
+    "Surname Option": "Exact",
+    "Forename": "Agnes",
+    "Forename Option": "Exact",
+    "From_year": "1897",
+    "To_year": "1897",
+    "Description": "Of 3 Haldane Terrace, Newcastle-upon-Tyne, Widow",
+    "Ref": "SC70/6/68"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "legal",
+    "dl_rec": "legal-wills-testaments",
+    "record_type": "wills_testaments",
+    "surname": "Bruce",
+    "surname_so": "exact",
+    "forename": "Agnes",
+    "forename_so": "exact",
+    "from_year": "1897",
+    "to_year": "1897",
+    "description": "of 3 Haldane Terrace%2C Newcastle-upon-Tyne%2C widow",
+    "ref": "SC70%2F6%2F68"
+  }
+}

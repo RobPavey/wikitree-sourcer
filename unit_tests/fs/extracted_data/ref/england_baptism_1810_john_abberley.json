@@ -1,0 +1,42 @@
+{
+  "recordData": {
+    "Name": "John Abberley",
+    "Baptism Date": "9 Dec 1810",
+    "Baptism Place": "Newborough, Staffordshire, England, United Kingdom"
+  },
+  "fullName": "John Abberley",
+  "givenName": "John",
+  "surname": "Abberley",
+  "factType": "Baptism",
+  "eventDateOriginal": "9 Dec 1810",
+  "eventDate": "9 Dec 1810",
+  "eventYear": "1810",
+  "eventPlaceOriginal": "Newborough, Staffordshire, England, United Kingdom",
+  "eventPlace": "Newborough, Staffordshire, England, United Kingdom",
+  "eventPlaceL2": "Staffordshire",
+  "eventPlaceL1": "England",
+  "father": {
+    "fullName": "John Abberley",
+    "givenName": "John",
+    "surname": "Abberley"
+  },
+  "mother": {
+    "fullName": "Sarah",
+    "givenName": "Sarah"
+  },
+  "referenceData": {
+    "externalFilmNumber": "GBPRS/STAFF/BAP/874711",
+    "digitalFilmNumber": "007566683",
+    "filmNumber": "007566683"
+  },
+  "externalImageId": "D3608/1/4",
+  "fsCollectionId": "2364451",
+  "fsImageNumber": "02262",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3QS7-L96J-QQ5H",
+  "collectionTitle": "England, Staffordshire, Church Records, 1538-1944",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QP91-KBTX",
+  "citation": "\"England, Staffordshire, Church Records, 1538-1944,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QL3G-Z9Z6 : 8 July 2020), John Abberley, 9 Dec 1810; citing Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.",
+  "sourceTitleForPerson": "John Abberley, \"England, Staffordshire, Church Records, 1538-1944\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QL3G-Z9Z6",
+  "pageType": "record"
+}

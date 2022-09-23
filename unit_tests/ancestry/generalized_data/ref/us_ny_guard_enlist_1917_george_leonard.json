@@ -1,0 +1,22 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "George M Leonard"
+  },
+  "eventDate": {
+    "dateString": "26 Apr 1917"
+  },
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1892"
+  },
+  "eventPlace": {
+    "placeString": "New York, USA"
+  },
+  "collectionData": {
+    "id": "2878"
+  },
+  "hasValidData": true
+}

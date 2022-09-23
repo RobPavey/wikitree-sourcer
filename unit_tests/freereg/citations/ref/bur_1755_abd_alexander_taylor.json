@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Alexander was buried on 30 August 1755 in Strichen, Aberdeenshire.<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Burial''': \"FreeReg UK Parish Register database\"<br/>Aberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)<br/>\nAlexander Taylor burial on 30 Aug 1755 in Strichen, Aberdeenshire.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Alexander was buried on 30 August 1755 in Strichen, Aberdeenshire.<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)<br/>\nAlexander Taylor burial on 30 Aug 1755 in Strichen, Aberdeenshire.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Burial''': \"FreeReg UK Parish Register database\"<br/>Aberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)<br/>Alexander Taylor burial on 30 Aug 1755 in Strichen, Aberdeenshire.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Aberdeenshire; Place: Strichen; Church name: Parish Church; Register type: Unspecified; Burial date: 30 Aug 1755; Burial person forename: Alexander; Burial person surname: TAYLOR; Burial person abode: Bougenjon; Transcribed by: Lesley King.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Alexander was buried on 30 August 1755 in Strichen, Aberdeenshire.<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Aberdeenshire; Place: Strichen; Church name: Parish Church; Register type: Unspecified; Burial date: 30 Aug 1755; Burial person forename: Alexander; Burial person surname: TAYLOR; Burial person abode: Bougenjon; Transcribed by: Lesley King.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Burial''': \"FreeReg UK Parish Register database\"<br/>Aberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)<br/>County: Aberdeenshire; Place: Strichen; Church name: Parish Church; Register type: Unspecified; Burial date: 30 Aug 1755; Burial person forename: Alexander; Burial person surname: TAYLOR; Burial person abode: Bougenjon; Transcribed by: Lesley King.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Aberdeenshire\n|-\n| Place || Strichen\n|-\n| Church name || Parish Church\n|-\n| Register type || Unspecified\n|-\n| Burial date || 30 Aug 1755\n|-\n| Burial person forename || Alexander\n|-\n| Burial person surname || TAYLOR\n|-\n| Burial person abode || Bougenjon\n|-\n| Transcribed by || Lesley King\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Alexander was buried on 30 August 1755 in Strichen, Aberdeenshire.<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Aberdeenshire\n|-\n| Place || Strichen\n|-\n| Church name || Parish Church\n|-\n| Register type || Unspecified\n|-\n| Burial date || 30 Aug 1755\n|-\n| Burial person forename || Alexander\n|-\n| Burial person surname || TAYLOR\n|-\n| Burial person abode || Bougenjon\n|-\n| Transcribed by || Lesley King\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Burial''': \"FreeReg UK Parish Register database\"<br/>Aberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)<br/>County: Aberdeenshire; Place: Strichen; Church name: Parish Church; Register type: Unspecified; Burial date: 30 Aug 1755; Burial person forename: Alexander; Burial person surname: TAYLOR; Burial person abode: Bougenjon; Transcribed by: Lesley King.",
+    "type": "source"
+  }
+}

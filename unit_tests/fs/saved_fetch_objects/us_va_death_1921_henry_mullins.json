@@ -1,0 +1,838 @@
+{
+  "id" : "r_102234830897",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q247-RWNJ?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q247-RWNJ?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q247-RWNJ"
+    }
+  },
+  "description" : "#sd_p_101213966006",
+  "persons" : [ {
+    "id" : "p_101213966006",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/QVR7-FDWT?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/Q247-RWNJ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWT" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Henry Mullins",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Henry",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Henry"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Henry"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Mullins",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Mullins"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Mullins"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Henry Mullins"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "07 Jan 1921",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "7 Jan 1921"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "07 Jan 1921"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "Jan"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "7"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1921"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1921"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Roberson, Wise, Virginia, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Roberson, Wise, Virginia, United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Roberson"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_CITY",
+            "text" : "Roberson"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_4",
+            "text" : "Roberson"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Wise County"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Wise"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_3",
+            "text" : "Wise"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_2",
+            "text" : "Virginia"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_1",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://familysearch.org/types/fields/StateOrCountry",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE_COUNTRY",
+            "text" : "Virginia"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Death"
+        } ]
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/facts/EventRegistration",
+      "date" : {
+        "original" : "09 Jan 1921",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_REG_DATE",
+            "text" : "09 Jan 1921"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_REG_MONTH",
+            "text" : "Jan"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_REG_DAY",
+            "text" : "9"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_REG_YEAR",
+            "text" : "1921"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "18 Feb 1825",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "18 Feb 1825"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "18 Feb 1825"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_MONTH",
+            "text" : "Feb"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DAY",
+            "text" : "18"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1825"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1825"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        }, {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_RACE_OR_COLOR",
+          "text" : "White"
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "95"
+      }, {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "95"
+      } ]
+    } ]
+  }, {
+    "id" : "p_101213966007",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/QVR7-FDWY?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/Q247-RWNJ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWY" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Sheard Mullins",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Sheard",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Sheard"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Sheard"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Mullins",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Mullins"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Mullins"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Sheard Mullins"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_101213966008",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/QVR7-FDWB?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/Q247-RWNJ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWB" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Polly Roberts",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Polly",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Polly"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Polly"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Roberts",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Roberts"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Roberts"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Polly Roberts"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/ZQ14-VPW",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_101213966007",
+      "resourceId" : "p_101213966007"
+    },
+    "person2" : {
+      "resource" : "#p_101213966008",
+      "resourceId" : "p_101213966008"
+    }
+  }, {
+    "id" : "MM9.1.6/ZQ14-VP4",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_101213966007",
+      "resourceId" : "p_101213966007"
+    },
+    "person2" : {
+      "resource" : "#p_101213966006",
+      "resourceId" : "p_101213966006"
+    }
+  }, {
+    "id" : "MM9.1.6/ZQ14-VPH",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_101213966008",
+      "resourceId" : "p_101213966008"
+    },
+    "person2" : {
+      "resource" : "#p_101213966006",
+      "resourceId" : "p_101213966006"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_2377565",
+    "about" : "https://api.familysearch.org/platform/records/collections/2377565",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1418915977498,
+    "modified" : 1637565476772,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Virginia, United States",
+        "description" : "#place_1-46"
+      },
+      "temporal" : {
+        "original" : "1912/1987",
+        "formal" : "1912/1987"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Virginia, Death Certificates, 1912-1987"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2377565" ]
+    }
+  }, {
+    "id" : "src_r_102234830897",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:Q247-RWNJ",
+    "componentOf" : {
+      "description" : "#sd_c_2377565"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1420839294851,
+    "modified" : 1637565476772,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Roberson, Wise, Virginia, United States"
+      },
+      "temporal" : {
+        "original" : "07 Jan 1921"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Virginia, Death Certificates, 1912-1987,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:Q247-RWNJ : 16 August 2019), Entry for Henry Mullins, 07 Jan 1921; from \"Virginia, Marriage Records, 1700-1850,\" database and images, <i>Ancestry</i> (http://www.ancestry.com : 2012); citing Roberson, Wise, Virginia, United States, entry #, Virginia Department of Health, Richmond."
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Henry Mullins, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/12392920846" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:Q247-RWNJ" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2377565?arkName=1:2:Q247-RWNJ"
+    }
+  }, {
+    "id" : "sd_p_101213966006",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWT",
+    "componentOf" : {
+      "description" : "#src_r_102234830897"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Virginia, Death Certificates, 1912-1987,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QVR7-FDWT : 16 August 2019), Henry Mullins, 07 Jan 1921; from \"Virginia, Marriage Records, 1700-1850,\" database and images, <i>Ancestry</i> (http://www.ancestry.com : 2012); citing Roberson, Wise, Virginia, United States, entry #, Virginia Department of Health, Richmond."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Henry Mullins, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWT" ]
+    }
+  }, {
+    "id" : "sd_p_101213966007",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWY",
+    "componentOf" : {
+      "description" : "#src_r_102234830897"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Virginia, Death Certificates, 1912-1987,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QVR7-FDWY : 16 August 2019), Sheard Mullins in entry for Henry Mullins, 07 Jan 1921; from \"Virginia, Marriage Records, 1700-1850,\" database and images, <i>Ancestry</i> (http://www.ancestry.com : 2012); citing Roberson, Wise, Virginia, United States, entry #, Virginia Department of Health, Richmond."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Sheard Mullins in entry for Henry Mullins, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWY" ]
+    }
+  }, {
+    "id" : "sd_p_101213966008",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWB",
+    "componentOf" : {
+      "description" : "#src_r_102234830897"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Virginia, Death Certificates, 1912-1987,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QVR7-FDWB : 16 August 2019), Polly Roberts in entry for Henry Mullins, 07 Jan 1921; from \"Virginia, Marriage Records, 1700-1850,\" database and images, <i>Ancestry</i> (http://www.ancestry.com : 2012); citing Roberson, Wise, Virginia, United States, entry #, Virginia Department of Health, Richmond."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Polly Roberts in entry for Henry Mullins, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWB" ]
+    }
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QS7-89GL-5LHG?cc=2377565",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QS7-89GL-5LHG?cc=2377565" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2377565?arkName=3:1:3QS7-89GL-5LHG"
+    }
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1-46",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/46?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/FolderImageSequence",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FOLDER_IMAGE_SEQ",
+      "text" : "631"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_ID",
+      "text" : "/100786026/100786026_00631.jpg"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/Folder",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FOLDER",
+      "text" : "100786026"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel1Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_1_TYPE",
+      "text" : "Country"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel2Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_2_TYPE",
+      "text" : "State"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel3Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_3_TYPE",
+      "text" : "County"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel4Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_4_TYPE",
+      "text" : "City"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExternalImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_IMAGE_ID",
+      "text" : "43004_162028006053_0100-00630.j2k"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Virginia, United States"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "2377565"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DasVerify",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DAS_VERIFY",
+      "text" : "22-DEC-14"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "100786026"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageApid",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_APID",
+      "text" : "TH-1961-47454-19162-38"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "00631"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageArk",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_ARK",
+      "text" : "https://familysearch.org/ark:/61903/3:1:3QS7-89GL-5LHG"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsImsImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMS_IMAGE_ID",
+      "text" : "100786026_00631"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "14-0822"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "14-0822: null - Virginia, Death Records, 1913-1954-FSI/DB: cartertp1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "100786026_00631"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_100786026_00631_00000_0012392920846"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Virginia, Death Records, 1913-1954-FSI/DB"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "12392920846"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceCertificateNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_CERTIFICATE_NBR",
+      "text" : "2362"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceRegNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_REG_NBR",
+      "text" : "973"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "9"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "26377"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

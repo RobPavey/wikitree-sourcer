@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1842",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Vickers",
+    "forenames": "Frances"
+  },
+  "lastNameAtDeath": "Vickers",
+  "deathDate": {
+    "yearString": "1842",
+    "quarter": 2
+  },
+  "ageAtDeath": 59,
+  "personGender": "female",
+  "registrationDistrict": "Basford Union Counties of Nottingham Derby",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "15",
+    "page": "294"
+  },
+  "hasValidData": true
+}

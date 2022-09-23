@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1876",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Buckland",
+    "forenames": "Edwin Francis"
+  },
+  "lastNameAtBirth": "Buckland",
+  "birthDate": {
+    "yearString": "1876",
+    "quarter": 2
+  },
+  "mothersMaidenName": "Spiller",
+  "personGender": "male",
+  "registrationDistrict": "St Saviours Surrey",
+  "collectionData": {
+    "id": "births",
+    "volume": "01D",
+    "page": "121"
+  },
+  "hasValidData": true
+}

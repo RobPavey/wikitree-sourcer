@@ -1,0 +1,37 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Parker Adelbert Childs"
+  },
+  "eventDate": {
+    "dateString": "4 Mar 1873",
+    "yearString": "1873"
+  },
+  "eventPlace": {
+    "placeString": "Springville, Utah, Utah, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Joannah Elizabeth Coats",
+        "lastName": "Coats",
+        "forenames": "Joannah Elizabeth"
+      },
+      "marriageDate": {
+        "dateString": "4 Mar 1873"
+      },
+      "marriagePlace": {
+        "placeString": "Springville, Utah, Utah, United States"
+      }
+    }
+  ],
+  "marriageDate": "4 Mar 1873",
+  "collectionData": {
+    "id": "1854302",
+    "page": "371"
+  },
+  "hasValidData": true
+}

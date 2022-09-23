@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nJohn Laird Jenkins, 04 Oct 1863.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nJohn Laird Jenkins, 04 Oct 1863.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>John Laird Jenkins, 04 Oct 1863.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nName: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nName: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>Name: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nName: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nName: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>Name: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660\n{| border=\"1\"\n| Name || John Laird Jenkins\n|-\n| Immigration Date || 04 Oct 1863\n|-\n| Immigration Place || Deseret, United States\n|-\n| Birth Date || 17 Jan 1844\n|-\n| Death Date || 22 May 1905\n|-\n| Emigration Date || 10 Aug 1863\n|-\n| Sort Bir Date || 17 Jan 1844\n|-\n| Sort Dea Date || 22 May 1905\n|-\n| Company Name || Thomas E. Ricks Company\n|-\n| Event Place Sup || Utah, United States\n|-\n| Event Place Year Range || 1847-1868\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660\n{| border=\"1\"\n| Name || John Laird Jenkins\n|-\n| Immigration Date || 04 Oct 1863\n|-\n| Immigration Place || Deseret, United States\n|-\n| Birth Date || 17 Jan 1844\n|-\n| Death Date || 22 May 1905\n|-\n| Emigration Date || 10 Aug 1863\n|-\n| Sort Bir Date || 17 Jan 1844\n|-\n| Sort Dea Date || 22 May 1905\n|-\n| Company Name || Thomas E. Ricks Company\n|-\n| Event Place Sup || Utah, United States\n|-\n| Event Place Year Range || 1847-1868\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>Name: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nJohn Laird Jenkins, 04 Oct 1863.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nJohn Laird Jenkins, 04 Oct 1863.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>John Laird Jenkins, 04 Oct 1863.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nName: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nName: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>Name: John Laird Jenkins; Immigration Date: 04 Oct 1863; Immigration Place: Deseret, United States; Birth Date: 17 Jan 1844; Death Date: 22 May 1905; Emigration Date: 10 Aug 1863; Sort Bir Date: 17 Jan 1844; Sort Dea Date: 22 May 1905; Company Name: Thomas E. Ricks Company; Event Place Sup: Utah, United States; Event Place Year Range: 1847-1868.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nJohn Laird Jenkins, 04 Oct 1863.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>\nJohn Laird Jenkins, 04 Oct 1863.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660<br/>John Laird Jenkins, 04 Oct 1863.",
+    "type": "source"
+  }
+}

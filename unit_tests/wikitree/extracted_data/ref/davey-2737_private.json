@@ -1,0 +1,38 @@
+{
+  "hasValidData": true,
+  "firstNames": "Leonard",
+  "prefNames": "",
+  "middleNames": "Nethercott O'Connor",
+  "lnab": "Davey",
+  "currentLastName": "Davey",
+  "mothersMaidenName": "Nethercott",
+  "birthDate": "Jan 1841",
+  "birthDateStatus": "none",
+  "deathDate": "21 May 1907",
+  "deathDateStatus": "none",
+  "birthLocation": "Taunton, Somerset, England, United Kingdom",
+  "deathLocation": "Claybury, Essex, England, United Kingdom",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Perry-18601",
+      "name": "Emma Mary Ann Perry",
+      "marriageString": ""
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Davey-2737",
+  "currentTabText": "Profile (private view)",
+  "pageType": "private",
+  "wikiId": "Davey-2737",
+  "name": "Leonard Nethercott O'Connor Davey",
+  "parents": {
+    "father": {
+      "wikiId": "Davey-2736",
+      "name": "Job Davey"
+    },
+    "mother": {
+      "wikiId": "Nethercott-81",
+      "name": "Mary Nethercott"
+    }
+  }
+}

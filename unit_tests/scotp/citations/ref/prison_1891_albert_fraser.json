@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Albert was in a criminal register in 1891 in Perth Prison, Scotland.<ref>\n'''Criminal Register''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Criminal Register''': \"Prison Registers\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Second surname: -----; Forename: ALBERT ATTWOOD; Has alias/other name(s): YES; Age: 20; Where born: GLASGOW; Year admitted: 1891; Prison: PERTH PRISON.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Albert was in a criminal register in 1891 in Perth Prison, Scotland.<ref>\n'''Criminal Register''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Second surname: -----; Forename: ALBERT ATTWOOD; Has alias/other name(s): YES; Age: 20; Where born: GLASGOW; Year admitted: 1891; Prison: PERTH PRISON.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Criminal Register''': \"Prison Registers\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: FRASER; Second surname: -----; Forename: ALBERT ATTWOOD; Has alias/other name(s): YES; Age: 20; Where born: GLASGOW; Year admitted: 1891; Prison: PERTH PRISON.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Second surname: -----; Forename: ALBERT ATTWOOD; Has alias/other name(s): YES; Age: 20; Where born: GLASGOW; Year admitted: 1891; Prison: PERTH PRISON.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Albert was in a criminal register in 1891 in Perth Prison, Scotland.<ref>\n'''Criminal Register''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Second surname: -----; Forename: ALBERT ATTWOOD; Has alias/other name(s): YES; Age: 20; Where born: GLASGOW; Year admitted: 1891; Prison: PERTH PRISON.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Criminal Register''': \"Prison Registers\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: FRASER; Second surname: -----; Forename: ALBERT ATTWOOD; Has alias/other name(s): YES; Age: 20; Where born: GLASGOW; Year admitted: 1891; Prison: PERTH PRISON.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Second surname || -----\n|-\n| Forename || ALBERT ATTWOOD\n|-\n| Has alias/other name(s) || YES\n|-\n| Age || 20\n|-\n| Where born || GLASGOW\n|-\n| Year admitted || 1891\n|-\n| Prison || PERTH PRISON\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Albert was in a criminal register in 1891 in Perth Prison, Scotland.<ref>\n'''Criminal Register''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Second surname || -----\n|-\n| Forename || ALBERT ATTWOOD\n|-\n| Has alias/other name(s) || YES\n|-\n| Age || 20\n|-\n| Where born || GLASGOW\n|-\n| Year admitted || 1891\n|-\n| Prison || PERTH PRISON\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Criminal Register''': \"Prison Registers\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&surname=FRASER&forename=ALBERT%20ATTWOOD&from_year=1891&to_year=1891 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: FRASER; Second surname: -----; Forename: ALBERT ATTWOOD; Has alias/other name(s): YES; Age: 20; Where born: GLASGOW; Year admitted: 1891; Prison: PERTH PRISON.",
+    "type": "source"
+  }
+}

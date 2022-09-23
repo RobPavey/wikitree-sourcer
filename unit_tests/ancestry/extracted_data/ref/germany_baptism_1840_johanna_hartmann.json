@@ -1,0 +1,31 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/68166661:9866",
+  "pageType": "record",
+  "dbId": "9866",
+  "recordId": "68166661",
+  "ancestryTemplate": "{{Ancestry Record|9866|68166661}}",
+  "domain": "com",
+  "titleName": "Maria Josephina Johanna Hartmann",
+  "titleCollection": "Germany, Select Births and Baptisms, 1558-1898",
+  "recordData": {
+    "Name": "Maria Josephina Johanna Hartmann",
+    "Gender": "Female",
+    "Baptism Age": "0",
+    "Death Age": "0",
+    "Birth Date": "25. Jun 1840 (25 Jun 1840)",
+    "Baptism Date": "28. Jun 1840 (28 Jun 1840)",
+    "Baptism Place": "Augsburg, Bayern, Germany",
+    "Residence Place": "Augsburg, Bayern, Germany",
+    "Death Date": "7. Jul 1840 (7 Jul 1840)",
+    "Father": "Heinrich Hartmann",
+    "Mother": "Regina Rosine Burger",
+    "FHL Film Number": "580394"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9866&h=68166660&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9866&h=68166659&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceInformation": "Ancestry.com. Germany, Select Births and Baptisms, 1558-1898 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: Germany, Births and Baptisms, 1558-1898. Salt Lake City, Utah: FamilySearch, 2013.",
+  "originalData": "Germany, Births and Baptisms, 1558-1898. Salt Lake City, Utah: FamilySearch, 2013.",
+  "sourceDescription": "This collection includes birth and baptism records from Germany. Learn more..."
+}

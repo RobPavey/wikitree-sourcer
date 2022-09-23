@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/6446850:2221",
+  "pageType": "record",
+  "dbId": "2221",
+  "recordId": "6446850",
+  "ancestryTemplate": "{{Ancestry Record|2221|6446850}}",
+  "domain": "com",
+  "titleName": "William Henry Pavey",
+  "titleCollection": "California, U.S., Voter Registers, 1866-1898",
+  "recordData": {
+    "Name": "William Henry Pavey",
+    "Age": "38",
+    "Birth Year": "abt 1830",
+    "Birth Place": "England",
+    "Residence Year": "1868",
+    "Residence Place": "El Dorado, California, USA"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2221/images/32421_227306-00085?pid=6446850&usePUB=true&usePUBJs=true",
+  "imageDbId": "2221",
+  "imageRecordId": "32421_227306-00085",
+  "sourceCitation": "California State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460",
+  "sourceInformation": "Ancestry.com. California, U.S., Voter Registers, 1866-1898 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: Great Registers, 1866–1898. Microfilm, 185 rolls. California State Library, Sacramento, California.",
+  "sourceDescription": "The printed copies of the California Great Registers making up this database were compiled at the county level by district, as required by an 1866 law, and list names of eligible voters in California. Learn more..."
+}

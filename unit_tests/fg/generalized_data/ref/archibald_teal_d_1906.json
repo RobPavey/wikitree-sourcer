@@ -1,0 +1,28 @@
+
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "25 Jan 1906"
+  },
+  "eventPlace": {
+    "placeString": "Milford, Clermont County, Ohio, USA",
+    "streetAddress": "Greenlawn Cemetery"
+  },
+  "name": {
+    "name": "Archibald W A “Archie” Teal"
+  },
+  "lastNameAtDeath": "Teal",
+  "deathDate": {
+    "dateString": "25 Jan 1906"
+  },
+  "ageAtDeath": "11",
+  "birthDate": {
+    "dateString": "5 Oct 1894"
+  },
+  "birthPlace": {
+    "placeString": "Union Township, Clermont County, Ohio, USA"
+  },
+  "hasValidData": true
+}

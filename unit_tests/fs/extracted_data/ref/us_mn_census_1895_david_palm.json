@@ -1,0 +1,156 @@
+{
+  "recordData": {
+    "Name": "David Palm",
+    "Race": "W",
+    "Birth Date": "1887",
+    "Birth Place": "Minnesota",
+    "Residence Date": "1895",
+    "Residence Place": "Township 160N, Range 40W, Roseau, Minnesota",
+    "Age": "8y",
+    "Estimated Birth Year": "1887",
+    "Page": "2",
+    "Age In Years": "8",
+    "Census County": "Roseau",
+    "Display Race Or Color": "White",
+    "Ethnicity Std": "American",
+    "Race Std": "White",
+    "Record Place": ", Roseau, Minnesota, United States"
+  },
+  "eventDateOriginal": "1895",
+  "eventDate": "1895",
+  "eventPlaceOriginal": "Township 160N, Range 40W, Roseau, Minnesota",
+  "fullName": "David Palm",
+  "givenName": "David",
+  "surname": "Palm",
+  "gender": "male",
+  "birthDateOriginal": "1887",
+  "birthDate": "1887",
+  "birthPlace": "Minnesota",
+  "factType": "Residence",
+  "age": "8y",
+  "referenceData": {
+    "lineNumber": "35",
+    "filmNumber": "000565806",
+    "digitalFilmNumber": "4360316",
+    "imageNumber": "00806",
+    "packetLetter": "A",
+    "recordNumber": "31577"
+  },
+  "household": {
+    "headings": [
+      "fullName",
+      "givenName",
+      "surname",
+      "relationship",
+      "maritalStatus",
+      "gender",
+      "age",
+      "occupation",
+      "birthDateOriginal",
+      "birthYear",
+      "birthPlaceOriginal",
+      "birthPlace"
+    ],
+    "members": [
+      {
+        "fullName": "Louis Palm",
+        "givenName": "Louis",
+        "surname": "Palm",
+        "gender": "male",
+        "birthDateOriginal": "1855",
+        "birthDate": "1855",
+        "birthPlaceOriginal": "Sweden",
+        "age": "40y"
+      },
+      {
+        "fullName": "Inga Palm",
+        "givenName": "Inga",
+        "surname": "Palm",
+        "gender": "female",
+        "birthDateOriginal": "1855",
+        "birthDate": "1855",
+        "birthPlaceOriginal": "Sweden",
+        "age": "40y"
+      },
+      {
+        "fullName": "Mary Palm",
+        "givenName": "Mary",
+        "surname": "Palm",
+        "gender": "female",
+        "birthDateOriginal": "1879",
+        "birthDate": "1879",
+        "birthPlaceOriginal": "Sweden",
+        "age": "16y"
+      },
+      {
+        "fullName": "Willie Palm",
+        "givenName": "Willie",
+        "surname": "Palm",
+        "gender": "male",
+        "birthDateOriginal": "1883",
+        "birthDate": "1883",
+        "birthPlaceOriginal": "Minnesota",
+        "age": "12y"
+      },
+      {
+        "fullName": "Sam Palm",
+        "givenName": "Sam",
+        "surname": "Palm",
+        "gender": "male",
+        "birthDateOriginal": "1885",
+        "birthDate": "1885",
+        "birthPlaceOriginal": "Minnesota",
+        "age": "10y"
+      },
+      {
+        "isSelected": true,
+        "fullName": "David Palm",
+        "givenName": "David",
+        "surname": "Palm",
+        "gender": "male",
+        "birthDateOriginal": "1887",
+        "birthDate": "1887",
+        "birthPlaceOriginal": "Minnesota",
+        "age": "8y"
+      },
+      {
+        "fullName": "Andrew Palm",
+        "givenName": "Andrew",
+        "surname": "Palm",
+        "gender": "male",
+        "birthDateOriginal": "1890",
+        "birthDate": "1890",
+        "birthPlaceOriginal": "Minnesota",
+        "age": "5y"
+      },
+      {
+        "fullName": "Peter Palm",
+        "givenName": "Peter",
+        "surname": "Palm",
+        "gender": "male",
+        "birthDateOriginal": "1892",
+        "birthDate": "1892",
+        "birthPlaceOriginal": "Minnesota",
+        "age": "3y"
+      },
+      {
+        "fullName": "Louis Palm",
+        "givenName": "Louis",
+        "surname": "Palm",
+        "gender": "male",
+        "birthDateOriginal": "1894",
+        "birthDate": "1894",
+        "birthPlaceOriginal": "Minnesota",
+        "age": "1y"
+      }
+    ]
+  },
+  "collectionTitle": "Minnesota State Census, 1895",
+  "fsCollectionId": "1503031",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9VS6-JM2",
+  "citation": "\"Minnesota State Census, 1895,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:MQ6G-CR3 : 22 February 2021), David Palm in household of Louis Palm, Township 160N, Range 40W, Roseau, Minnesota; citing p. 2, line 35, State Library and Records Service, St.Paul; FHL microfilm 565,806.",
+  "sourceTitleForPerson": "David Palm in household of Louis Palm, \"Minnesota State Census, 1895\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-CR3",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:S3HT-DZ43-FFP",
+  "pageType": "record"
+}

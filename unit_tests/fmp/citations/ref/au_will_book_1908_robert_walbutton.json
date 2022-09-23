@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Will''':\n\"New South Wales Will Books 1800-1952\"<br/>\n[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Robert died on 3 August 1908 residing in Granville NSW.<ref>\n'''Will''':\n\"New South Wales Will Books 1800-1952\"<br/>\n[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Will''': \"New South Wales Will Books 1800-1952\"<br/>[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Will''':\n\"New South Wales Will Books 1800-1952\"<br/>\n[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nWill of Robert Walbutton of Granville NSW. Died 3 Aug 1908. Occupation: Laborer.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Robert died on 3 August 1908 residing in Granville NSW.<ref>\n'''Will''':\n\"New South Wales Will Books 1800-1952\"<br/>\n[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nWill of Robert Walbutton of Granville NSW. Died 3 Aug 1908. Occupation: Laborer.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Will''': \"New South Wales Will Books 1800-1952\"<br/>[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)<br/>Will of Robert Walbutton of Granville NSW. Died 3 Aug 1908. Occupation: Laborer.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Will''':\n\"New South Wales Will Books 1800-1952\"<br/>\n[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Robert; Last name: Walbutton; Death date: 03 Aug 1908; Occupation: Laborer; Residence: Granville NSW; Instrument: Will; Will number: 43872.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Robert died on 3 August 1908 residing in Granville NSW.<ref>\n'''Will''':\n\"New South Wales Will Books 1800-1952\"<br/>\n[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Robert; Last name: Walbutton; Death date: 03 Aug 1908; Occupation: Laborer; Residence: Granville NSW; Instrument: Will; Will number: 43872.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Will''': \"New South Wales Will Books 1800-1952\"<br/>[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Robert; Last name: Walbutton; Death date: 03 Aug 1908; Occupation: Laborer; Residence: Granville NSW; Instrument: Will; Will number: 43872.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Will''':\n\"New South Wales Will Books 1800-1952\"<br/>\n[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Robert\n|-\n| Last name || Walbutton\n|-\n| Death date || 03 Aug 1908\n|-\n| Occupation || Laborer\n|-\n| Residence || Granville NSW\n|-\n| Instrument || Will\n|-\n| Will number || 43872\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Robert died on 3 August 1908 residing in Granville NSW.<ref>\n'''Will''':\n\"New South Wales Will Books 1800-1952\"<br/>\n[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Robert\n|-\n| Last name || Walbutton\n|-\n| Death date || 03 Aug 1908\n|-\n| Occupation || Laborer\n|-\n| Residence || Granville NSW\n|-\n| Instrument || Will\n|-\n| Will number || 43872\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Will''': \"New South Wales Will Books 1800-1952\"<br/>[https://search.findmypast.co.uk/record?id=ANZ%2FBMD%2FNSWWILLS%2F4136%2F00377&parentid=ANZ%2FNSWWILLS%2F563548 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=ANZ%2FNSWWILLS%2F563548 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Robert; Last name: Walbutton; Death date: 03 Aug 1908; Occupation: Laborer; Residence: Granville NSW; Instrument: Will; Will number: 43872.",
+    "type": "source"
+  }
+}

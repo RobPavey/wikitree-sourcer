@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "Ruth"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "3 December 1860"
+  },
+  "ageAtDeath": "0",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Lanarkshire",
+    "placeString": "Glasgow, Lanarkshire, Scotland",
+    "streetAddress": "Old Dalbeth Cemetery"
+  },
+  "hasValidData": true
+}

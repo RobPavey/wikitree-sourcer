@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson, 1834.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Margaret, daughter of Joseph Rowlinson & Ann, was baptised on 18 May 1834 in Warrington, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson, 1834.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>Margaret Rowlinson, 1834.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson baptism on 18 May 1834, daughter of Joseph Rowlinson & Ann, in Warrington, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Margaret, daughter of Joseph Rowlinson & Ann, was baptised on 18 May 1834 in Warrington, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson baptism on 18 May 1834, daughter of Joseph Rowlinson & Ann, in Warrington, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>Margaret Rowlinson baptism on 18 May 1834, daughter of Joseph Rowlinson & Ann, in Warrington, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nName: Margaret Rowlinson; Christening Date: 18 May 1834; Christening Place: Warrington, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Margaret, daughter of Joseph Rowlinson & Ann, was baptised on 18 May 1834 in Warrington, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nName: Margaret Rowlinson; Christening Date: 18 May 1834; Christening Place: Warrington, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>Name: Margaret Rowlinson; Christening Date: 18 May 1834; Christening Place: Warrington, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Margaret Rowlinson\n|-\n| Christening Date || 18 May 1834\n|-\n| Christening Place || Warrington, Lancashire, England, United Kingdom\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Margaret, daughter of Joseph Rowlinson & Ann, was baptised on 18 May 1834 in Warrington, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Margaret Rowlinson\n|-\n| Christening Date || 18 May 1834\n|-\n| Christening Place || Warrington, Lancashire, England, United Kingdom\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>Name: Margaret Rowlinson; Christening Date: 18 May 1834; Christening Place: Warrington, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson, 1834.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Margaret, daughter of Joseph Rowlinson & Ann, was baptised on 18 May 1834 in Warrington, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson, 1834.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>Margaret Rowlinson, 1834.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Margaret, daughter of Joseph Rowlinson & Ann, was baptised on 18 May 1834 in Warrington, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson baptism on 18 May 1834, daughter of Joseph Rowlinson & Ann, in Warrington, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Margaret, daughter of Joseph Rowlinson & Ann, was baptised on 18 May 1834 in Warrington, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson baptism on 18 May 1834, daughter of Joseph Rowlinson & Ann, in Warrington, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>Margaret Rowlinson baptism on 18 May 1834, daughter of Joseph Rowlinson & Ann, in Warrington, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson, 1834.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Margaret, daughter of Joseph Rowlinson & Ann, was baptised on 18 May 1834 in Warrington, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson, 1834.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|J33C-SH7}} (accessed 6 May 2021)<br/>Margaret Rowlinson, 1834.",
+    "type": "source"
+  }
+}

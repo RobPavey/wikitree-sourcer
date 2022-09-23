@@ -1,0 +1,27 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/90102600:1788?tid=&pid=&queryId=3f2875963e8fdb060b90dbdfee3bc52b&_phsrc=THy458&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "1788",
+  "recordId": "90102600",
+  "ancestryTemplate": "{{Ancestry Record|1788|90102600}}",
+  "domain": "com",
+  "titleName": "Carol Sharp Kohler",
+  "titleCollection": "U.S., Public Records Index, 1950-1993, Volume 1",
+  "recordData": {
+    "Name": "Carol Sharp Kohler [Carol Bonnewell]",
+    "Birth Date": "7 Jun 1948",
+    "Residence Date": "1993",
+    "Phone Number": "647-1932",
+    "Address": "143 Leopard St # 9d",
+    "Residence": "Rochester, NY",
+    "Postal Code": "14615-3105",
+    "Second Residence Date": "1993",
+    "Second Phone Number": "647-1932",
+    "Second Address": "143 Leopard St # 9d",
+    "Second Residence": "Rochester, NY",
+    "Second Postal Code": "14615-3105"
+  },
+  "sourceInformation": "Ancestry.com. U.S., Public Records Index, 1950-1993, Volume 1 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings.",
+  "originalData": "Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings.",
+  "sourceDescription": "The U.S. Public Records Index contains more than 400 million public records of individuals who lived in the United States between 1950 and 1993. Learn more..."
+}

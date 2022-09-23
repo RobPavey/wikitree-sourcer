@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Thomson",
+    "forenames": "Agnes"
+  },
+  "eventDate": {
+    "dateString": "12 July 1920"
+  },
+  "courtName": "Aberdeen Sheriff Court",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Aberdeen",
+    "placeString": "Aberdeen, Scotland"
+  },
+  "testateOrIntestate": "intestate",
+  "recordSubtype": "AdditionalInventory",
+  "deathDate": {
+    "dateString": "6 January 1916"
+  },
+  "originalConfirmationGrantedDate": "21 February 1916",
+  "hasValidData": true
+}

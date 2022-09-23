@@ -1,0 +1,34 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Jane Linnett"
+  },
+  "eventDate": {
+    "dateString": "20 May 1821"
+  },
+  "eventPlace": {
+    "placeString": "Essex, England"
+  },
+  "birthPlace": {
+    "placeString": "Essex, England"
+  },
+  "lastNameAtBirth": "Linnett",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Samuel Linnett"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Allice Linnett"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "61699"
+  },
+  "hasValidData": true
+}

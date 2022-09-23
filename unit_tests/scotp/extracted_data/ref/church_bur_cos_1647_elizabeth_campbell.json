@@ -1,0 +1,53 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=D&record_type%5B0%5D=opr_deaths&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-deaths-burials&surname=Campbell&surname_so=exact&forename_so=starts&parent_names=colny&parent_names_so=starts&sex=F&from_year=1600&to_year=1650&county=DUNBARTON&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches&rd_real_name%5B0%5D=DUMBARTON%20LANDWARD%20OR%20DUMBARTON%20BURGH%20OR%20DUMBARTON&rd_display_name%5B0%5D=DUMBARTON%20LANDWARD%7CDUMBARTON%20BURGH%7CDUMBARTON_DUMBARTON&rd_label%5B0%5D=DUMBARTON&rd_name%5B0%5D=DUMBARTON%20LANDWARD%20OR%20DUMBARTON%20BURGH%20OR%20DUMBARTON",
+  "success": true,
+  "numResultsOnPage": 1,
+  "recordData": {
+    "Surname": "CAMPBELL",
+    "Forename": "ELIZABETH",
+    "Parents/ Other Details": "COLNY CAMPBELL",
+    "Age": "",
+    "Gender": "F",
+    "Date": "08/03/1647",
+    "Parish Number": "496/ ",
+    "Ref": "50 16",
+    "Parish": "Dumbarton"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_opr_records/7015128?image=16&return_row=0",
+  "pageHeader": "Church registers - Old Parish Registers Deaths and burials",
+  "searchCriteria": {
+    "Event": "D",
+    "Church_type": "Old Parish Registers",
+    "Surname": "Campbell",
+    "Surname Option": "Exact",
+    "Parent_names": "Colny",
+    "Parent_names Option": "Starts",
+    "Gender": "F",
+    "From_year": "1600",
+    "To_year": "1650",
+    "County": "DUNBARTON",
+    "RD": "DUMBARTON"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "event": "D",
+    "record_type[0]": "opr_deaths",
+    "church_type": "Old Parish Registers",
+    "dl_cat": "church",
+    "dl_rec": "church-deaths-burials",
+    "surname": "Campbell",
+    "surname_so": "exact",
+    "forename_so": "starts",
+    "parent_names": "colny",
+    "parent_names_so": "starts",
+    "sex": "F",
+    "from_year": "1600",
+    "to_year": "1650",
+    "county": "DUNBARTON",
+    "record": "Church of Scotland (old parish registers) Roman Catholic Church Other churches",
+    "rd_real_name[0]": "DUMBARTON LANDWARD OR DUMBARTON BURGH OR DUMBARTON",
+    "rd_display_name[0]": "DUMBARTON LANDWARD|DUMBARTON BURGH|DUMBARTON_DUMBARTON",
+    "rd_label[0]": "DUMBARTON",
+    "rd_name[0]": "DUMBARTON LANDWARD OR DUMBARTON BURGH OR DUMBARTON"
+  }
+}

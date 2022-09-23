@@ -1,0 +1,22 @@
+{
+  "sourceType": "record",
+  "role": "Spouse",
+  "primaryPerson": "Henry John Eneboe",
+  "primaryPersonGender": "male",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Jennie Eggn Eneboe"
+  },
+  "eventDate": {
+    "dateString": "20 May 1955",
+    "yearString": "1955"
+  },
+  "eventPlace": {
+    "placeString": "Rochester, Olmsted, Minnesota, United States"
+  },
+  "collectionData": {
+    "id": "3398461"
+  },
+  "hasValidData": true
+}

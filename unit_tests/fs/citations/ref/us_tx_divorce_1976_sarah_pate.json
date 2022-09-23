@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\nciting Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nJohn T Pate and Sarah E Pate, 09 Jun 1976.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Sarah was in a divorce record on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\nciting Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nJohn T Pate and Sarah E Pate, 09 Jun 1976.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>citing Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>John T Pate and Sarah E Pate, 09 Jun 1976.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nSarah E Pate divorce on 9 Jun 1976 in Lubbock, Texas, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Sarah was in a divorce record on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nSarah E Pate divorce on 9 Jun 1976 in Lubbock, Texas, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>Sarah E Pate divorce on 9 Jun 1976 in Lubbock, Texas, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nName: Sarah E Pate; Birth Date: 1949; Age: 27; Divorce Date: 09 Jun 1976; Divorce Place: Lubbock, Texas, United States; Marriage Date: 14 Feb 1976; Children Under18: 0; Event Type: Divorce; Spouse Sex Code: Female.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Sarah was in a divorce record on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nName: Sarah E Pate; Birth Date: 1949; Age: 27; Divorce Date: 09 Jun 1976; Divorce Place: Lubbock, Texas, United States; Marriage Date: 14 Feb 1976; Children Under18: 0; Event Type: Divorce; Spouse Sex Code: Female.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>Name: Sarah E Pate; Birth Date: 1949; Age: 27; Divorce Date: 09 Jun 1976; Divorce Place: Lubbock, Texas, United States; Marriage Date: 14 Feb 1976; Children Under18: 0; Event Type: Divorce; Spouse Sex Code: Female.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Sarah E Pate\n|-\n| Birth Date || 1949\n|-\n| Age || 27\n|-\n| Divorce Date || 09 Jun 1976\n|-\n| Divorce Place || Lubbock, Texas, United States\n|-\n| Marriage Date || 14 Feb 1976\n|-\n| Children Under18 || 0\n|-\n| Event Type || Divorce\n|-\n| Spouse Sex Code || Female\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Sarah was in a divorce record on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Sarah E Pate\n|-\n| Birth Date || 1949\n|-\n| Age || 27\n|-\n| Divorce Date || 09 Jun 1976\n|-\n| Divorce Place || Lubbock, Texas, United States\n|-\n| Marriage Date || 14 Feb 1976\n|-\n| Children Under18 || 0\n|-\n| Event Type || Divorce\n|-\n| Spouse Sex Code || Female\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>Name: Sarah E Pate; Birth Date: 1949; Age: 27; Divorce Date: 09 Jun 1976; Divorce Place: Lubbock, Texas, United States; Marriage Date: 14 Feb 1976; Children Under18: 0; Event Type: Divorce; Spouse Sex Code: Female.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nJohn T Pate and Sarah E Pate, 09 Jun 1976.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Sarah was in a divorce record on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nJohn T Pate and Sarah E Pate, 09 Jun 1976.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>John T Pate and Sarah E Pate, 09 Jun 1976.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Sarah was in a divorce record on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\nciting Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nSarah E Pate divorce on 9 Jun 1976 in Lubbock, Texas, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Sarah was in a divorce record on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\nciting Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nSarah E Pate divorce on 9 Jun 1976 in Lubbock, Texas, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>citing Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>Sarah E Pate divorce on 9 Jun 1976 in Lubbock, Texas, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\nciting Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nJohn T Pate and Sarah E Pate, 09 Jun 1976.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Sarah was in a divorce record on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\nciting Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>\nJohn T Pate and Sarah E Pate, 09 Jun 1976.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>citing Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)<br/>John T Pate and Sarah E Pate, 09 Jun 1976.",
+    "type": "source"
+  }
+}

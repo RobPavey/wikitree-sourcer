@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Peffers",
+    "forenames": "Alexander"
+  },
+  "eventDate": {
+    "dateString": "22 April 1873"
+  },
+  "courtName": "Haddington Sheriff Court",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Haddington, Scotland"
+  },
+  "testateOrIntestate": "",
+  "recordSubtype": "Testament",
+  "hasValidData": true
+}

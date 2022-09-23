@@ -1,0 +1,82 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1925 census Leroy (age 43) was the head of household in Schenectady Ward 02, Schenectady.<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1925 Census''': \"New York, U.S., State Census, 1925\"<br/>New York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)<br/>\nLeroy A Whitcomb (43) head of household in Schenectady Ward 02, Schenectady. Born in USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1925 census Leroy (age 43) was the head of household in Schenectady Ward 02, Schenectady.<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)<br/>\nLeroy A Whitcomb (43) head of household in Schenectady Ward 02, Schenectady. Born in USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1925 Census''': \"New York, U.S., State Census, 1925\"<br/>New York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)<br/>Leroy A Whitcomb (43) head of household in Schenectady Ward 02, Schenectady. Born in USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)<br/>\nName: Leroy A Whitcomb [Leroy A Gleason]; Gender: Male; Color or Race: White; Age: 43; Birth Date: abt 1882; Birth Place: USA; Residence Date: 1925; House Number: 202; Residence Place: Schenectady Ward 02, Schenectady; Relationship: Head; Assembly District: 02; <br/>Household Members Age Relationship:<br/>Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1925 census Leroy (age 43) was the head of household in Schenectady Ward 02, Schenectady.<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)<br/>\nName: Leroy A Whitcomb [Leroy A Gleason]; Gender: Male; Color or Race: White; Age: 43; Birth Date: abt 1882; Birth Place: USA; Residence Date: 1925; House Number: 202; Residence Place: Schenectady Ward 02, Schenectady; Relationship: Head; Assembly District: 02; <br/>Household Members Age Relationship:<br/>Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1925 Census''': \"New York, U.S., State Census, 1925\"<br/>New York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)<br/>Name: Leroy A Whitcomb [Leroy A Gleason]; Gender: Male; Color or Race: White; Age: 43; Birth Date: abt 1882; Birth Place: USA; Residence Date: 1925; House Number: 202; Residence Place: Schenectady Ward 02, Schenectady; Relationship: Head; Assembly District: 02; <br/>Household Members Age Relationship:<br/>Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leroy A Whitcomb [Leroy A Gleason]\n|-\n| Gender || Male\n|-\n| Color or Race || White\n|-\n| Age || 43\n|-\n| Birth Date || abt 1882\n|-\n| Birth Place || USA\n|-\n| Residence Date || 1925\n|-\n| House Number || 202\n|-\n| Residence Place || Schenectady Ward 02, Schenectady\n|-\n| Relationship || Head\n|-\n| Assembly District || 02\n|-\n| Household Members<br/>Age<br/>Relationship || Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1925 census Leroy (age 43) was the head of household in Schenectady Ward 02, Schenectady.<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leroy A Whitcomb [Leroy A Gleason]\n|-\n| Gender || Male\n|-\n| Color or Race || White\n|-\n| Age || 43\n|-\n| Birth Date || abt 1882\n|-\n| Birth Place || USA\n|-\n| Residence Date || 1925\n|-\n| House Number || 202\n|-\n| Residence Place || Schenectady Ward 02, Schenectady\n|-\n| Relationship || Head\n|-\n| Assembly District || 02\n|-\n| Household Members<br/>Age<br/>Relationship || Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1925 Census''': \"New York, U.S., State Census, 1925\"<br/>New York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)<br/>Name: Leroy A Whitcomb [Leroy A Gleason]; Gender: Male; Color or Race: White; Age: 43; Birth Date: abt 1882; Birth Place: USA; Residence Date: 1925; House Number: 202; Residence Place: Schenectady Ward 02, Schenectady; Relationship: Head; Assembly District: 02; <br/>Household Members Age Relationship:<br/>Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"New York, U.S., State Census, 1925,\" database, ({{Ancestry Record|2704|24992583}} : accessed 6 May 2021), Leroy A Whitcomb (43) head of household in Schenectady Ward 02, Schenectady. Born in USA; citing New York State Archives, Albany, New York, State Population Census Schedules, 1925, Election District 01, Assembly District 02, City Schenectady Ward 02, County Schenectady, Page 21, Line Number 46.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1925 census Leroy (age 43) was the head of household in Schenectady Ward 02, Schenectady.<ref>\"New York, U.S., State Census, 1925,\" database, ({{Ancestry Record|2704|24992583}} : accessed 6 May 2021), Leroy A Whitcomb (43) head of household in Schenectady Ward 02, Schenectady. Born in USA; citing New York State Archives, Albany, New York, State Population Census Schedules, 1925, Election District 01, Assembly District 02, City Schenectady Ward 02, County Schenectady, Page 21, Line Number 46.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"New York, U.S., State Census, 1925,\" database, ({{Ancestry Record|2704|24992583}} : accessed 6 May 2021), Leroy A Whitcomb (43) head of household in Schenectady Ward 02, Schenectady. Born in USA; citing New York State Archives, Albany, New York, State Population Census Schedules, 1925, Election District 01, Assembly District 02, City Schenectady Ward 02, County Schenectady, Page 21, Line Number 46.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1925 Census'':\n\"New York, U.S., State Census, 1925\", database, \nNew York State Archives, Albany, New York, State Population Census Schedules, 1925, Election District 01, Assembly District 02, City Schenectady Ward 02, County Schenectady, Page 21, Line Number 46, \n({{Ancestry Record|2704|24992583}} : accessed 6 May 2021), \nName: Leroy A Whitcomb [Leroy A Gleason]; Gender: Male; Color or Race: White; Age: 43; Birth Date: abt 1882; Birth Place: USA; Residence Date: 1925; House Number: 202; Residence Place: Schenectady Ward 02, Schenectady; Relationship: Head; Assembly District: 02; Household Members Age Relationship: Robert E Whitcomb 2 Son, Leroy A Whitcomb 43 Head, Hazel Whitcomb 32 Wife, William T Whitcomb 13 Son, John H Whitcomb 8 Son, Leroy A Whitcomb 5 Son.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1925 census Leroy (age 43) was the head of household in Schenectady Ward 02, Schenectady.<ref>\n''1925 Census'':\n\"New York, U.S., State Census, 1925\", database, \nNew York State Archives, Albany, New York, State Population Census Schedules, 1925, Election District 01, Assembly District 02, City Schenectady Ward 02, County Schenectady, Page 21, Line Number 46, \n({{Ancestry Record|2704|24992583}} : accessed 6 May 2021), \nName: Leroy A Whitcomb [Leroy A Gleason]; Gender: Male; Color or Race: White; Age: 43; Birth Date: abt 1882; Birth Place: USA; Residence Date: 1925; House Number: 202; Residence Place: Schenectady Ward 02, Schenectady; Relationship: Head; Assembly District: 02; Household Members Age Relationship: Robert E Whitcomb 2 Son, Leroy A Whitcomb 43 Head, Hazel Whitcomb 32 Wife, William T Whitcomb 13 Son, John H Whitcomb 8 Son, Leroy A Whitcomb 5 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1925 Census'': \"New York, U.S., State Census, 1925\", database, New York State Archives, Albany, New York, State Population Census Schedules, 1925, Election District 01, Assembly District 02, City Schenectady Ward 02, County Schenectady, Page 21, Line Number 46, ({{Ancestry Record|2704|24992583}} : accessed 6 May 2021), Name: Leroy A Whitcomb [Leroy A Gleason]; Gender: Male; Color or Race: White; Age: 43; Birth Date: abt 1882; Birth Place: USA; Residence Date: 1925; House Number: 202; Residence Place: Schenectady Ward 02, Schenectady; Relationship: Head; Assembly District: 02; Household Members Age Relationship: Robert E Whitcomb 2 Son, Leroy A Whitcomb 43 Head, Hazel Whitcomb 32 Wife, William T Whitcomb 13 Son, John H Whitcomb 8 Son, Leroy A Whitcomb 5 Son.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "In the 1925 census, he, aged 43, was enumerated with his wife and 4 sons in Schenectady Ward 02, Schenectady.<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leroy A Whitcomb [Leroy A Gleason]\n|-\n| Gender || Male\n|-\n| Color or Race || White\n|-\n| Age || 43\n|-\n| Birth Date || abt 1882\n|-\n| Birth Place || USA\n|-\n| Residence Date || 1925\n|-\n| House Number || 202\n|-\n| Residence Place || Schenectady Ward 02, Schenectady\n|-\n| Relationship || Head\n|-\n| Assembly District || 02\n|-\n| Household Members<br/>Age<br/>Relationship || Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "In 1925 Leroy was the head of household in Schenectady Ward 02, Schenectady. He was 43 years old.<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leroy A Whitcomb [Leroy A Gleason]\n|-\n| Gender || Male\n|-\n| Color or Race || White\n|-\n| Age || 43\n|-\n| Birth Date || abt 1882\n|-\n| Birth Place || USA\n|-\n| Residence Date || 1925\n|-\n| House Number || 202\n|-\n| Residence Place || Schenectady Ward 02, Schenectady\n|-\n| Relationship || Head\n|-\n| Assembly District || 02\n|-\n| Household Members<br/>Age<br/>Relationship || Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

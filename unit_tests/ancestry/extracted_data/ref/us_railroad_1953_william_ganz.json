@@ -1,0 +1,31 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/15511:6944",
+  "pageType": "record",
+  "dbId": "6944",
+  "recordId": "15511",
+  "ancestryTemplate": "{{Ancestry Record|6944|15511}}",
+  "domain": "com",
+  "titleName": "William Ganz",
+  "titleCollection": "U.S., Chicago and North Western Railroad Employment Records, 1935-1970",
+  "recordData": {
+    "Name": "William Ganz",
+    "Gender": "Male",
+    "Race": "White",
+    "Birth Date": "16 Jun 1926",
+    "Birth Place": "Oil City, Pennsylvania",
+    "Father": "Joseph Ganz",
+    "Mother": "Amy Leonard",
+    "Hire Date": "Jul 1953",
+    "Record Date": "abt 1952",
+    "Record Place": "Buffalo, New York",
+    "Occupation": "Ex Gang Laborer"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6944&h=150015511&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6944&h=300015511&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceCitation": "Chicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications",
+  "sourceInformation": "Ancestry.com. U.S., Chicago and North Western Railroad Employment Records, 1935-1970 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2015. This collection was indexed by Ancestry World Archives Project contributors. Original data: Chicago and North Western Railroad Employee Records. Chicago & North Western Historical Society, Berwyn, Illinois. Chicago, St. Paul, Minneapolis & Omaha Railway Employee Records. Chicago & North Western Historical Society, Berwyn, Illinois.",
+  "originalData": "Chicago and North Western Railroad Employee Records. Chicago & North Western Historical Society, Berwyn, Illinois.",
+  "sourceDescription": "This collection features railroad employee records from the Chicago & North Western Railroad and the Chicago, St. Paul, Minneapolis & Omaha Railway. Learn more..."
+}

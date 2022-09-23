@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881\"<br/>\nNational Records of Scotland, Ref: 168/1 59/ 19<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1881 census John (age 2) was in St Nicholas, Aberdeenshire, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881\"<br/>\nNational Records of Scotland, Ref: 168/1 59/ 19<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881\"<br/>National Records of Scotland, Ref: 168/1 59/ 19<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881\"<br/>\nNational Records of Scotland, Ref: 168/1 59/ 19<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJohn Mc Leod Mackenzie (2) in St Nicholas registration district in Aberdeenshire, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1881 census John (age 2) was in St Nicholas, Aberdeenshire, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881\"<br/>\nNational Records of Scotland, Ref: 168/1 59/ 19<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJohn Mc Leod Mackenzie (2) in St Nicholas registration district in Aberdeenshire, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881\"<br/>National Records of Scotland, Ref: 168/1 59/ 19<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)<br/>John Mc Leod Mackenzie (2) in St Nicholas registration district in Aberdeenshire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881\"<br/>\nNational Records of Scotland, Ref: 168/1 59/ 19<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: MACKENZIE; Forename: JOHN MC LEOD; Year: 1881; Gender: M; Age at Census: 2; RD Name: St Nicholas; County/ City: Aberdeen.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1881 census John (age 2) was in St Nicholas, Aberdeenshire, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881\"<br/>\nNational Records of Scotland, Ref: 168/1 59/ 19<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: MACKENZIE; Forename: JOHN MC LEOD; Year: 1881; Gender: M; Age at Census: 2; RD Name: St Nicholas; County/ City: Aberdeen.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881\"<br/>National Records of Scotland, Ref: 168/1 59/ 19<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: MACKENZIE; Forename: JOHN MC LEOD; Year: 1881; Gender: M; Age at Census: 2; RD Name: St Nicholas; County/ City: Aberdeen.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881\"<br/>\nNational Records of Scotland, Ref: 168/1 59/ 19<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || MACKENZIE\n|-\n| Forename || JOHN MC LEOD\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age at Census || 2\n|-\n| RD Name || St Nicholas\n|-\n| County/ City || Aberdeen\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1881 census John (age 2) was in St Nicholas, Aberdeenshire, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881\"<br/>\nNational Records of Scotland, Ref: 168/1 59/ 19<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || MACKENZIE\n|-\n| Forename || JOHN MC LEOD\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age at Census || 2\n|-\n| RD Name || St Nicholas\n|-\n| County/ City || Aberdeen\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881\"<br/>National Records of Scotland, Ref: 168/1 59/ 19<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=MACKENZIE&forename=JOHN%20MC%20LEOD&year%5B0%5D=1881&sex=M&age_from=2&age_to=2&county=Aberdeen&rd_real_name%5B0%5D=ST%20NICHOLAS&rd_display_name%5B0%5D=ST%20NICHOLAS_ST%20NICHOLAS&rdno%5B0%5D=%20&ref=168%2F1%2059%2F%2019 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: MACKENZIE; Forename: JOHN MC LEOD; Year: 1881; Gender: M; Age at Census: 2; RD Name: St Nicholas; County/ City: Aberdeen.",
+    "type": "source"
+  }
+}

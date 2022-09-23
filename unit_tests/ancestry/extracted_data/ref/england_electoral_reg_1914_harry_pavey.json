@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/54921469:1795",
+  "pageType": "record",
+  "dbId": "1795",
+  "recordId": "54921469",
+  "ancestryTemplate": "{{Ancestry Record|1795|54921469}}",
+  "domain": "com",
+  "titleName": "Harry Alfred Pavey",
+  "titleCollection": "London, England, Electoral Registers, 1832-1965",
+  "recordData": {
+    "Name": "Harry Alfred Pavey",
+    "Electoral Date": "1914",
+    "Street Address": "110 Highgate hill",
+    "Ward or Division/Constituency": "Islington North",
+    "County or Borough": "Islington, England"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1795/images/40020_214113-01564?pid=54921469&usePUB=true&usePUBJs=true",
+  "imageDbId": "1795",
+  "imageRecordId": "40020_214113-01564",
+  "sourceCitation": "London Metropolitan Archives; London, England; Electoral Registers",
+  "sourceInformation": "Ancestry.com. London, England, Electoral Registers, 1832-1965 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Electoral Registers. London, England: London Metropolitan Archives. Images produced by permission of the City of London Corporation Libraries, Archives and Guildhall Art Gallery Department. The City of London gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the City of London, Guildhall, PO Box 270, London EC2P 2EJ. Infringement of the above condition may result in legal action.",
+  "originalData": "Electoral Registers. London, England: London Metropolitan Archives.",
+  "sourceDescription": "This database contains selected annual lists of names and residences of people in London who were eligible to vote in elections. Learn more..."
+}

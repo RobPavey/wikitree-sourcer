@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1914",
+    "quarter": 1
+  },
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Harry Alfred"
+  },
+  "lastNameAtDeath": "Pavey",
+  "deathDate": {
+    "yearString": "1914",
+    "quarter": 1
+  },
+  "ageAtDeath": 60,
+  "personGender": "male",
+  "registrationDistrict": "Hampstead",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "01A",
+    "page": "813"
+  },
+  "hasValidData": true
+}

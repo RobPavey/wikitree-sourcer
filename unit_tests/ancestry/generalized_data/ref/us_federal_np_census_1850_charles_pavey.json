@@ -1,0 +1,18 @@
+{
+  "sourceType": "record",
+  "recordType": "NonpopulationCensus",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "C Pasey"
+  },
+  "eventDate": {
+    "dateString": "26 Aug 1850"
+  },
+  "eventPlace": {
+    "placeString": "Coldwater, Branch, Michigan, USA"
+  },
+  "collectionData": {
+    "id": "1276"
+  },
+  "hasValidData": true
+}

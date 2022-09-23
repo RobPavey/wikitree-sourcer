@@ -1,0 +1,26 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Amelia Matilda McCarthy"
+  },
+  "deathDate": {
+    "qualifier": 2,
+    "dateString": "1923"
+  },
+  "eventDate": {
+    "dateString": "30 Oct 1923"
+  },
+  "eventPlace": {
+    "placeString": "Newham, London, England"
+  },
+  "deathPlace": {
+    "placeString": "Newham, London, England"
+  },
+  "lastNameAtDeath": "McCarthy",
+  "collectionData": {
+    "id": "70845"
+  },
+  "hasValidData": true
+}

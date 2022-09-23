@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "James Conrad",
+    "lastName": "Harrington"
+  },
+  "lastNameAtBirth": "Harrington",
+  "lastNameAtDeath": "Harrington",
+  "mothersMaidenName": "",
+  "birthDate": {
+    "dateString": "1925",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "2005",
+    "qualifier": 0
+  },
+  "spouses": [],
+  "hasValidData": true
+}

@@ -1,0 +1,30 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/568306:7613?tid=&pid=&queryId=235d8024cb84330d080e141d11b7a416&_phsrc=Vww4220&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "7613",
+  "recordId": "568306",
+  "ancestryTemplate": "{{Ancestry Record|7613|568306}}",
+  "domain": "com",
+  "titleName": "Steven Jones",
+  "titleCollection": "1810 United States Federal Census",
+  "recordData": {
+    "Name": "Steven Jones",
+    "": "Abbeville, Abbeville, South Carolina",
+    "Free White Persons - Males - Under 10": "1",
+    "Free White Persons - Males - 10 thru 15": "1",
+    "Free White Persons - Males - 26 thru 44": "1",
+    "Free White Persons - Females - Under 10": "4",
+    "Free White Persons - Females - 10 thru 15": "1",
+    "Free White Persons - Females - 26 thru 44": "1",
+    "Number of Household Members Under 16": "7",
+    "Number of Household Members Over 25": "2",
+    "Number of Household Members": "9"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7613/images/4185992_00044?pid=568306&usePUB=true&_phsrc=Vww4220&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "7613",
+  "imageRecordId": "4185992_00044",
+  "sourceCitation": "Year: 1810; Census Place: Abbeville, Abbeville, South Carolina; Roll: 60; Page: 76; Image: 00044; Family History Library Film: 0181419",
+  "sourceInformation": "Ancestry.com. 1810 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Images reproduced by FamilySearch. Original data: Third Census of the United States, 1810. (NARA microfilm publication M252, 71 rolls). Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "originalData": "Third Census of the United States, 1810. (NARA microfilm publication M252, 71 rolls). Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "sourceDescription": "This database details those persons enumerated in the 1810 United States Federal Census, the Third Census of the United States. In addition, the names of those listed on the population schedule are linked to the actual images of the 1810 Federal Census. Enumerators of the 1810 census were asked to include the following categories in the census: name of head of household, number of free white males and females, number of other free persons except Indians, number of slaves, town or district and county of residence. Learn more..."
+}

@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "BirthOrBaptism",
+  "name": {
+    "lastName": "Faichney",
+    "forenames": "Catherine"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "8 August 1850"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Perthshire",
+    "placeString": "Dunblane, Perthshire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Faichney"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Margaret Sharp"
+      }
+    }
+  },
+  "collectionData": {
+    "pageNumber": "72"
+  },
+  "hasValidData": true
+}

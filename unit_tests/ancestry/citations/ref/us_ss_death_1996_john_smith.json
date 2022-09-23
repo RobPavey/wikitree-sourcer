@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "John died (age 77) on 30 August 1996 residing at 92562, Murrieta, Riverside, California, USA.<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death''': \"U.S., Social Security Death Index, 1935-2014\"<br/>Social Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)<br/>\nJohn E De Smith death 30 Aug 1996 (born 19 Aug 1919) residing at 92562, Murrieta, Riverside, California, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "John died (age 77) on 30 August 1996 residing at 92562, Murrieta, Riverside, California, USA.<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)<br/>\nJohn E De Smith death 30 Aug 1996 (born 19 Aug 1919) residing at 92562, Murrieta, Riverside, California, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death''': \"U.S., Social Security Death Index, 1935-2014\"<br/>Social Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)<br/>John E De Smith death 30 Aug 1996 (born 19 Aug 1919) residing at 92562, Murrieta, Riverside, California, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)<br/>\nName: John E. De Smith; Social Security Number: 555-24-8430; Birth Date: 19 Aug 1919; Issue Year: Before 1951; Issue State: California; Last Residence: 92562, Murrieta, Riverside, California, USA; Death Date: 30 Aug 1996.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "John died (age 77) on 30 August 1996 residing at 92562, Murrieta, Riverside, California, USA.<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)<br/>\nName: John E. De Smith; Social Security Number: 555-24-8430; Birth Date: 19 Aug 1919; Issue Year: Before 1951; Issue State: California; Last Residence: 92562, Murrieta, Riverside, California, USA; Death Date: 30 Aug 1996.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death''': \"U.S., Social Security Death Index, 1935-2014\"<br/>Social Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)<br/>Name: John E. De Smith; Social Security Number: 555-24-8430; Birth Date: 19 Aug 1919; Issue Year: Before 1951; Issue State: California; Last Residence: 92562, Murrieta, Riverside, California, USA; Death Date: 30 Aug 1996.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John E. De Smith\n|-\n| Social Security Number || 555-24-8430\n|-\n| Birth Date || 19 Aug 1919\n|-\n| Issue Year || Before 1951\n|-\n| Issue State || California\n|-\n| Last Residence || 92562, Murrieta, Riverside, California, USA\n|-\n| Death Date || 30 Aug 1996\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "John died (age 77) on 30 August 1996 residing at 92562, Murrieta, Riverside, California, USA.<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John E. De Smith\n|-\n| Social Security Number || 555-24-8430\n|-\n| Birth Date || 19 Aug 1919\n|-\n| Issue Year || Before 1951\n|-\n| Issue State || California\n|-\n| Last Residence || 92562, Murrieta, Riverside, California, USA\n|-\n| Death Date || 30 Aug 1996\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death''': \"U.S., Social Security Death Index, 1935-2014\"<br/>Social Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)<br/>Name: John E. De Smith; Social Security Number: 555-24-8430; Birth Date: 19 Aug 1919; Issue Year: Before 1951; Issue State: California; Last Residence: 92562, Murrieta, Riverside, California, USA; Death Date: 30 Aug 1996.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Social Security Death Index, 1935-2014,\" database, ({{Ancestry Record|3693|14641755}} : accessed 6 May 2021), John E De Smith death 30 Aug 1996 (born 19 Aug 1919) residing at 92562, Murrieta, Riverside, California, USA; citing Social Security Administration, Washington D.C., USA, Social Security Death Index, Master File.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "John died (age 77) on 30 August 1996 residing at 92562, Murrieta, Riverside, California, USA.<ref>\"U.S., Social Security Death Index, 1935-2014,\" database, ({{Ancestry Record|3693|14641755}} : accessed 6 May 2021), John E De Smith death 30 Aug 1996 (born 19 Aug 1919) residing at 92562, Murrieta, Riverside, California, USA; citing Social Security Administration, Washington D.C., USA, Social Security Death Index, Master File.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Social Security Death Index, 1935-2014,\" database, ({{Ancestry Record|3693|14641755}} : accessed 6 May 2021), John E De Smith death 30 Aug 1996 (born 19 Aug 1919) residing at 92562, Murrieta, Riverside, California, USA; citing Social Security Administration, Washington D.C., USA, Social Security Death Index, Master File.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death'':\n\"U.S., Social Security Death Index, 1935-2014\", database, \nSocial Security Administration, Washington D.C., USA, Social Security Death Index, Master File, \n({{Ancestry Record|3693|14641755}} : accessed 6 May 2021), \nName: John E. De Smith; Social Security Number: 555-24-8430; Birth Date: 19 Aug 1919; Issue Year: Before 1951; Issue State: California; Last Residence: 92562, Murrieta, Riverside, California, USA; Death Date: 30 Aug 1996.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "John died (age 77) on 30 August 1996 residing at 92562, Murrieta, Riverside, California, USA.<ref>\n''Death'':\n\"U.S., Social Security Death Index, 1935-2014\", database, \nSocial Security Administration, Washington D.C., USA, Social Security Death Index, Master File, \n({{Ancestry Record|3693|14641755}} : accessed 6 May 2021), \nName: John E. De Smith; Social Security Number: 555-24-8430; Birth Date: 19 Aug 1919; Issue Year: Before 1951; Issue State: California; Last Residence: 92562, Murrieta, Riverside, California, USA; Death Date: 30 Aug 1996.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death'': \"U.S., Social Security Death Index, 1935-2014\", database, Social Security Administration, Washington D.C., USA, Social Security Death Index, Master File, ({{Ancestry Record|3693|14641755}} : accessed 6 May 2021), Name: John E. De Smith; Social Security Number: 555-24-8430; Birth Date: 19 Aug 1919; Issue Year: Before 1951; Issue State: California; Last Residence: 92562, Murrieta, Riverside, California, USA; Death Date: 30 Aug 1996.",
+    "type": "source"
+  }
+}

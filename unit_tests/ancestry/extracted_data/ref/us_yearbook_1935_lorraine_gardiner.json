@@ -1,0 +1,26 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/90610650:1265",
+  "pageType": "record",
+  "dbId": "1265",
+  "recordId": "90610650",
+  "ancestryTemplate": "{{Ancestry Record|1265|90610650}}",
+  "domain": "com",
+  "titleName": "Lorraine Gardiner",
+  "titleCollection": "U.S., School Yearbooks, 1900-1999",
+  "recordData": {
+    "Name": "Lorraine Gardiner",
+    "Estimated Age": "Abt 16",
+    "Birth Year": "abt 1919",
+    "Yearbook Date": "1935",
+    "School": "Kern County Union High School",
+    "School Location": "Bakersfield, California",
+    "Yearbook Title": "The Oracle 1935"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1265/images/ybk_oracle1935-0058?pid=90610650&usePUB=true&usePUBJs=true",
+  "imageDbId": "1265",
+  "imageRecordId": "ybk_oracle1935-0058",
+  "sourceCitation": "\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935",
+  "sourceInformation": "Ancestry.com. U.S., School Yearbooks, 1900-1999 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Various school yearbooks from across the United States.",
+  "originalData": "Various school yearbooks from across the United States.",
+  "sourceDescription": "This database is a collection of middle school, junior high, high school, and college yearbooks from across the United States. While yearbooks may not provide information about the vital events that are usually associated with genealogical research, they do provide other information about individuals' lives. This information helps place people in historical context as well as provides detail that helps turn individuals, sometimes only known by names and dates, into actual people. Learn more..."
+}

@@ -1,0 +1,26 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/3016:60711?_phsrc=AhC1933&_phstart=successSource&gsln=Smith&ml_rpos=1&queryId=8ce96c644c56cd6236dfcda0600cf76b",
+  "pageType": "record",
+  "dbId": "60711",
+  "recordId": "3016",
+  "ancestryTemplate": "{{Ancestry Record|60711|3016}}",
+  "domain": "com",
+  "titleName": "Abraham Smith",
+  "titleCollection": "Victoria, Australia, Index to Naturalisation Certificates, 1851-1928",
+  "recordData": {
+    "Name": "Abraham Smith",
+    "Age": "50",
+    "Birth Year": "abt 1836",
+    "Certificate Date": "2 Mar 1886",
+    "Naturalisation Place": "Victoria, Australia",
+    "Native Place": "Poland",
+    "Certificate Number": "4598"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/60711/images/44441_346526-03015?pid=3016&usePUB=true&_phsrc=AhC1933&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "60711",
+  "imageRecordId": "44441_346526-03015",
+  "sourceCitation": "VPRS: 4396; Series Description: Index to Naturalisation Certificates, 1851-1900; Reel Number: 4",
+  "sourceInformation": "Ancestry.com. Victoria, Australia, Index to Naturalisation Certificates, 1851-1928 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2015. Original data: Chief Secretary's Department. Index to Naturalization Certificates (1851–1922), VPRS 4396. Public Record Office Victoria, North Melbourne, Victoria, Australia.",
+  "originalData": "Chief Secretary's Department. Index to Naturalization Certificates (1851–1922), VPRS 4396. Public Record Office Victoria, North Melbourne, Victoria, Australia.",
+  "sourceDescription": "This collection includes images of a card index to naturalisation certificates issued to non-British subjects in Victoria, Australia. Learn more..."
+}

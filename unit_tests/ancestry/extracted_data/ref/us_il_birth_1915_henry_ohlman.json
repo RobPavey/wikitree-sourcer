@@ -1,0 +1,31 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/38163:62361",
+  "pageType": "record",
+  "dbId": "62361",
+  "recordId": "38163",
+  "ancestryTemplate": "{{Ancestry Record|62361|38163}}",
+  "domain": "com",
+  "titleName": "Henry M Ohlman",
+  "titleCollection": "Peoria County, Illinois, U.S., Births 1878-1915",
+  "recordData": {
+    "Name": "Henry M Ohlman",
+    "Gender": "Male",
+    "Race": "White",
+    "Birth Date": "7 Feb 1915",
+    "Birth Place": "Chillicothe, Illinois",
+    "Father": "Harry A Ohlman",
+    "Mother": "Ethel W Ohlman",
+    "Certificate Number": "288"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62361&h=150038163&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62361&h=300038163&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/62361/images/birth_1912-1915_register_j_300-349-00324?pid=38163&usePUB=true&usePUBJs=true",
+  "imageDbId": "62361",
+  "imageRecordId": "birth_1912-1915_register_j_300-349-00324",
+  "sourceCitation": "Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915",
+  "sourceInformation": "Peoria County, Illinois, U.S., Births 1878-1915 [database on-line]. Lehi, UT, USA: Acestry.com Operations, Inc, 2021. Original data: Peoria County Births, 1878-1915. Peoria, IL, USA: Peoria County Courthouse.",
+  "originalData": "Peoria County Births, 1878-1915. Peoria, IL, USA: Peoria County Courthouse.",
+  "sourceDescription": "This collection contains county birth registries for people who were born between 1878 and 1915 in Peoria, County Illinois. Learn more..."
+}

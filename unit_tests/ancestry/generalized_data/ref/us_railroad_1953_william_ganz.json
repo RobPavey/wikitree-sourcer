@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Employment",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William Ganz"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "Jul 1953"
+  },
+  "eventPlace": {
+    "placeString": "Buffalo, New York"
+  },
+  "birthDate": {
+    "dateString": "16 Jun 1926"
+  },
+  "birthPlace": {
+    "placeString": "Oil City, Pennsylvania"
+  },
+  "collectionData": {
+    "id": "6944"
+  },
+  "hasValidData": true
+}

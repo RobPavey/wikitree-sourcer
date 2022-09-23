@@ -1,0 +1,60 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/106947163:62308?_phsrc=Vww4195&_phstart=successSource&gsln=Pavey&ml_rpos=1&queryId=a49f2cd14190e5fbda1183dad6292633",
+  "pageType": "record",
+  "dbId": "62308",
+  "recordId": "106947163",
+  "ancestryTemplate": "{{Ancestry Record|62308|106947163}}",
+  "domain": "com",
+  "titleName": "William Pavey",
+  "titleCollection": "1950 United States Federal Census",
+  "recordData": {
+    "Name": "William Pavey",
+    "Age": "28",
+    "Birth Date": "abt 1922",
+    "Gender": "Male",
+    "Birth Place": "Michigan",
+    "Marital Status": "Mar",
+    "Relation to Head of House": "Head",
+    "Residence Date": "1950",
+    "Home in 1950": "Millington, Shelby, Tennessee, USA",
+    "Dwelling Number": "158",
+    "Household Members<br/>Age<br/>Relationship": "William Pavey 28 Head<br/>Martha Pavey 29 Wife<br/>Patricia Ann Pavey 5 Daughter"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "William Pavey",
+        "Age": "28",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Martha Pavey",
+        "dbId": "62308",
+        "recordId": "106947164",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62308&h=106947164&indiv=try&viewrecord=1&r=an",
+        "Age": "29",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "Patricia Ann Pavey",
+        "dbId": "62308",
+        "recordId": "106947165",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62308&h=106947165&indiv=try&viewrecord=1&r=an",
+        "Age": "5",
+        "Relationship": "Daughter"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/62308/images/43290879-Tennessee-137162-0015?pid=106947163&usePUB=true&_phsrc=Vww4195&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "62308",
+  "imageRecordId": "43290879-Tennessee-137162-0015",
+  "sourceCitation": "United States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A",
+  "sourceInformation": "Ancestry.com. 1950 United States Federal Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2022. Original data: Department of Commerce. Bureau of the Census. 1913-1/1/1972. Population Schedules for the 1950 Census, 1950 - 1950. Washington, DC: National Archives at Washington, DC. Population Schedules for the 1950 Census, 1950 - 1950. NAID: 43290879. Records of the Bureau of the Census, 1790 - 2007, Record Group 29. National Archives at Washington, DC., Washington, DC.",
+  "originalData": "Department of Commerce. Bureau of the Census. 1913-1/1/1972. Population Schedules for the 1950 Census, 1950 - 1950. Washington, DC: National Archives at Washington, DC.",
+  "sourceDescription": "A U.S. census record is only available to the general public 72 years after Census Day. This census may help you discover more about how the Great Depression, World War II, and the start of the Baby Boom affected your family. Learn more..."
+}

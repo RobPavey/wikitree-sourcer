@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"England & Wales, Civil Divorce Records, 1858-1918\"<br/>\nThe National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>\n{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Maria was divorced from John Edward Bradbeer in 1915.<ref>\n'''Divorce''':\n\"England & Wales, Civil Divorce Records, 1858-1918\"<br/>\nThe National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>\n{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Divorce''': \"England & Wales, Civil Divorce Records, 1858-1918\"<br/>The National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"England & Wales, Civil Divorce Records, 1858-1918\"<br/>\nThe National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>\n{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)<br/>\nMaria Bradbeer divorce from John Edward Bradbeer in 1915.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Maria was divorced from John Edward Bradbeer in 1915.<ref>\n'''Divorce''':\n\"England & Wales, Civil Divorce Records, 1858-1918\"<br/>\nThe National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>\n{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)<br/>\nMaria Bradbeer divorce from John Edward Bradbeer in 1915.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Divorce''': \"England & Wales, Civil Divorce Records, 1858-1918\"<br/>The National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)<br/>Maria Bradbeer divorce from John Edward Bradbeer in 1915.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"England & Wales, Civil Divorce Records, 1858-1918\"<br/>\nThe National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>\n{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)<br/>\nName: Maria Bradbeer; Gender: Female; Record Type: Divorce; Type: Wife's petition for divorce [WD]; Petition Date: 1915; Spouse: John Edward Bradbeer; Divorce Court File Number: 6573.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Maria was divorced from John Edward Bradbeer in 1915.<ref>\n'''Divorce''':\n\"England & Wales, Civil Divorce Records, 1858-1918\"<br/>\nThe National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>\n{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)<br/>\nName: Maria Bradbeer; Gender: Female; Record Type: Divorce; Type: Wife's petition for divorce [WD]; Petition Date: 1915; Spouse: John Edward Bradbeer; Divorce Court File Number: 6573.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Divorce''': \"England & Wales, Civil Divorce Records, 1858-1918\"<br/>The National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)<br/>Name: Maria Bradbeer; Gender: Female; Record Type: Divorce; Type: Wife's petition for divorce [WD]; Petition Date: 1915; Spouse: John Edward Bradbeer; Divorce Court File Number: 6573.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"England & Wales, Civil Divorce Records, 1858-1918\"<br/>\nThe National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>\n{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Maria Bradbeer\n|-\n| Gender || Female\n|-\n| Record Type || Divorce\n|-\n| Type || Wife's petition for divorce [WD]\n|-\n| Petition Date || 1915\n|-\n| Spouse || John Edward Bradbeer\n|-\n| Divorce Court File Number || 6573\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Maria was divorced from John Edward Bradbeer in 1915.<ref>\n'''Divorce''':\n\"England & Wales, Civil Divorce Records, 1858-1918\"<br/>\nThe National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>\n{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Maria Bradbeer\n|-\n| Gender || Female\n|-\n| Record Type || Divorce\n|-\n| Type || Wife's petition for divorce [WD]\n|-\n| Petition Date || 1915\n|-\n| Spouse || John Edward Bradbeer\n|-\n| Divorce Court File Number || 6573\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Divorce''': \"England & Wales, Civil Divorce Records, 1858-1918\"<br/>The National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573<br/>{{Ancestry Record|divorcerecords|160744}} (accessed 6 May 2021)<br/>Name: Maria Bradbeer; Gender: Female; Record Type: Divorce; Type: Wife's petition for divorce [WD]; Petition Date: 1915; Spouse: John Edward Bradbeer; Divorce Court File Number: 6573.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"England & Wales, Civil Divorce Records, 1858-1918,\" database, ({{Ancestry Record|divorcerecords|160744}} : accessed 6 May 2021), Maria Bradbeer divorce from John Edward Bradbeer in 1915; citing The National Archives, Kew, Surrey, England, Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature Divorce and Matrimonial Causes Files, J 77, Reference Number J 77/1202/6573.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Maria was divorced from John Edward Bradbeer in 1915.<ref>\"England & Wales, Civil Divorce Records, 1858-1918,\" database, ({{Ancestry Record|divorcerecords|160744}} : accessed 6 May 2021), Maria Bradbeer divorce from John Edward Bradbeer in 1915; citing The National Archives, Kew, Surrey, England, Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature Divorce and Matrimonial Causes Files, J 77, Reference Number J 77/1202/6573.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"England & Wales, Civil Divorce Records, 1858-1918,\" database, ({{Ancestry Record|divorcerecords|160744}} : accessed 6 May 2021), Maria Bradbeer divorce from John Edward Bradbeer in 1915; citing The National Archives, Kew, Surrey, England, Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature Divorce and Matrimonial Causes Files, J 77, Reference Number J 77/1202/6573.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Divorce'':\n\"England & Wales, Civil Divorce Records, 1858-1918\", database, \nThe National Archives, Kew, Surrey, England, Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature Divorce and Matrimonial Causes Files, J 77, Reference Number J 77/1202/6573, \n({{Ancestry Record|divorcerecords|160744}} : accessed 6 May 2021), \nName: Maria Bradbeer; Gender: Female; Record Type: Divorce; Type: Wife's petition for divorce [WD]; Petition Date: 1915; Spouse: John Edward Bradbeer; Divorce Court File Number: 6573.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Maria was divorced from John Edward Bradbeer in 1915.<ref>\n''Divorce'':\n\"England & Wales, Civil Divorce Records, 1858-1918\", database, \nThe National Archives, Kew, Surrey, England, Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature Divorce and Matrimonial Causes Files, J 77, Reference Number J 77/1202/6573, \n({{Ancestry Record|divorcerecords|160744}} : accessed 6 May 2021), \nName: Maria Bradbeer; Gender: Female; Record Type: Divorce; Type: Wife's petition for divorce [WD]; Petition Date: 1915; Spouse: John Edward Bradbeer; Divorce Court File Number: 6573.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Divorce'': \"England & Wales, Civil Divorce Records, 1858-1918\", database, The National Archives, Kew, Surrey, England, Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature Divorce and Matrimonial Causes Files, J 77, Reference Number J 77/1202/6573, ({{Ancestry Record|divorcerecords|160744}} : accessed 6 May 2021), Name: Maria Bradbeer; Gender: Female; Record Type: Divorce; Type: Wife's petition for divorce [WD]; Petition Date: 1915; Spouse: John Edward Bradbeer; Divorce Court File Number: 6573.",
+    "type": "source"
+  }
+}

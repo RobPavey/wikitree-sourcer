@@ -1,0 +1,108 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1085066:8054?tid=&pid=&queryId=00a36368cbf257b0571bfae477ca79b6&_phsrc=Vww4232&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "8054",
+  "recordId": "1085066",
+  "ancestryTemplate": "{{Ancestry Record|8054|1085066}}",
+  "domain": "com",
+  "titleName": "Jas Willson",
+  "titleCollection": "1850 United States Federal Census",
+  "recordData": {
+    "Name": "Jas Willson [James] [James Wilson] [Wilson]",
+    "Gender": "Male",
+    "Race": "White",
+    "Age": "47",
+    "Birth Year": "abt 1803",
+    "Birthplace": "Geor",
+    "Home in 1850": "Walker, Texas, USA",
+    "Occupation": "Farmer",
+    "Industry": "Agriculture",
+    "Real Estate": "1200",
+    "Line Number": "25",
+    "Dwelling Number": "154",
+    "Family Number": "154",
+    "Household Members<br/>Age": "Jas Willson 47<br/>Katharine Willson 40<br/>Abner Willson 22<br/>John Willson 17<br/>Sam Willson 13<br/>Caroline Willson 12<br/>Nancy Willson 11<br/>Frances Willson 8<br/>Katharine Willson 4<br/>Cirus Willson 2"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Members": "Jas Willson",
+        "Age": "47"
+      },
+      {
+        "Household Members": "Katharine Willson",
+        "dbId": "8054",
+        "recordId": "1085067",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085067&indiv=try",
+        "Age": "40"
+      },
+      {
+        "Household Members": "Abner Willson",
+        "dbId": "8054",
+        "recordId": "1085068",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085068&indiv=try",
+        "Age": "22"
+      },
+      {
+        "Household Members": "John Willson",
+        "dbId": "8054",
+        "recordId": "1085069",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085069&indiv=try",
+        "Age": "17"
+      },
+      {
+        "Household Members": "Sam Willson",
+        "dbId": "8054",
+        "recordId": "1085070",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085070&indiv=try",
+        "Age": "13"
+      },
+      {
+        "Household Members": "Caroline Willson",
+        "dbId": "8054",
+        "recordId": "1085071",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085071&indiv=try",
+        "Age": "12"
+      },
+      {
+        "Household Members": "Nancy Willson",
+        "dbId": "8054",
+        "recordId": "1085072",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085072&indiv=try",
+        "Age": "11"
+      },
+      {
+        "Household Members": "Frances Willson",
+        "dbId": "8054",
+        "recordId": "1085073",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085073&indiv=try",
+        "Age": "8"
+      },
+      {
+        "Household Members": "Katharine Willson",
+        "dbId": "8054",
+        "recordId": "1085074",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085074&indiv=try",
+        "Age": "4"
+      },
+      {
+        "Household Members": "Cirus Willson",
+        "dbId": "8054",
+        "recordId": "1085075",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085075&indiv=try",
+        "Age": "2"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8054/images/4206183_00160?pid=1085066&usePUB=true&_phsrc=Vww4232&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "8054",
+  "imageRecordId": "4206183_00160",
+  "sourceCitation": "Year: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a",
+  "sourceInformation": "Ancestry.com. 1850 United States Federal Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2009. Images reproduced by FamilySearch. Original data: Seventh Census of the United States, 1850; (National Archives Microfilm Publication M432, 1009 rolls); Records of the Bureau of the Census, Record Group 29; National Archives, Washington, D.C.",
+  "originalData": "Seventh Census of the United States, 1850; (National Archives Microfilm Publication M432, 1009 rolls); Records of the Bureau of the Census, Record Group 29; National Archives, Washington, D.C.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1850 United States Federal Census, the Seventh Census of the United States. Census takers recorded many details including each person's name, age as of the census day, sex, color; birthplace, occupation of males over age fifteen, and more. No relationships were shown between members of a household. Additionally, the names of those listed on the population schedule are linked to actual images of the 1850 Federal Census. Learn more..."
+}

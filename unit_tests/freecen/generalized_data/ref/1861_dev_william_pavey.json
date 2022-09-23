@@ -1,0 +1,81 @@
+{
+  "sourceOfData": "freecen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventPlace": {
+    "placeString": "Village, Stockland, Chardstock, Devon, England",
+    "streetAddress": "Village"
+  },
+  "registrationDistrict": "Chardstock",
+  "eventDate": {
+    "yearString": "1861"
+  },
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "William"
+  },
+  "ageAtEvent": "73",
+  "birthPlace": {
+    "placeString": "Stockland, Devon, England"
+  },
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "personGender": "male",
+  "occupation": "Sawyer",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William Pavey",
+      "birthPlace": "Stockland, Devon",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "73",
+      "occupation": "Sawyer",
+      "isSelected": true
+    },
+    {
+      "name": "Mary Pavey",
+      "birthPlace": "Membury, Devon",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "68",
+      "occupation": "Washerwoman"
+    },
+    {
+      "name": "James Pavey",
+      "birthPlace": "Stockland, Devon",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "34",
+      "occupation": "Sawyer"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Mary Pavey"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1861",
+    "piece": "1372",
+    "folio": "60",
+    "page": "21",
+    "schedule": "112"
+  },
+  "hasValidData": true
+}

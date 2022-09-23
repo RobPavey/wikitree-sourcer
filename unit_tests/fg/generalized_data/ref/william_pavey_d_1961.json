@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "14 Apr 1961"
+  },
+  "eventPlace": {
+    "placeString": "Hillsdale, Hillsdale County, Michigan, USA",
+    "streetAddress": "Oak Grove Cemetery"
+  },
+  "name": {
+    "name": "William Henry Pavey"
+  },
+  "lastNameAtDeath": "Pavey",
+  "deathDate": {
+    "dateString": "14 Apr 1961"
+  },
+  "ageAtDeath": "85",
+  "birthDate": {
+    "dateString": "1 Dec 1875"
+  },
+  "birthPlace": {
+    "placeString": "Middlesex, Middlesex County, Ontario, Canada"
+  },
+  "hasValidData": true
+}

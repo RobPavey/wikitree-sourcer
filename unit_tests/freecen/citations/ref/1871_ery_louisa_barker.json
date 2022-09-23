@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>\n[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1871 census Louisa (age 21) was the wife of Hauston Barker in Scoreby W Stamford Bridge West, Scoreby Wth Stamford, York, Yorkshire, East Riding, England.<ref>\n'''1871 Census''':\n\"1871 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>\n[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1871 Census''': \"1871 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>\n[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)<br/>\nLouisa Barker (21), wife, in household of Hauston Barker (26) in Scoreby W Stamford Bridge West, Scoreby Wth Stamford in York registration district in Yorkshire, East Riding, England. Born in Stockton Forest, Yorkshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1871 census Louisa (age 21) was the wife of Hauston Barker in Scoreby W Stamford Bridge West, Scoreby Wth Stamford, York, Yorkshire, East Riding, England.<ref>\n'''1871 Census''':\n\"1871 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>\n[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)<br/>\nLouisa Barker (21), wife, in household of Hauston Barker (26) in Scoreby W Stamford Bridge West, Scoreby Wth Stamford in York registration district in Yorkshire, East Riding, England. Born in Stockton Forest, Yorkshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1871 Census''': \"1871 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)<br/>Louisa Barker (21), wife, in household of Hauston Barker (26) in Scoreby W Stamford Bridge West, Scoreby Wth Stamford in York registration district in Yorkshire, East Riding, England. Born in Stockton Forest, Yorkshire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>\n[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1871; County: Yorkshire, East Riding (ERY); District: York; Civil Parish: Scoreby Wth Stamford; Ecclesiastical Parish: Scoreby Wth Stamford; Piece: 4755; Enumeration District: 2; Folio: 63; Page: 15; Schedule: 56; House or Street Name: Scoreby W Stamford Bridge West.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1871 census Louisa (age 21) was the wife of Hauston Barker in Scoreby W Stamford Bridge West, Scoreby Wth Stamford, York, Yorkshire, East Riding, England.<ref>\n'''1871 Census''':\n\"1871 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>\n[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1871; County: Yorkshire, East Riding (ERY); District: York; Civil Parish: Scoreby Wth Stamford; Ecclesiastical Parish: Scoreby Wth Stamford; Piece: 4755; Enumeration District: 2; Folio: 63; Page: 15; Schedule: 56; House or Street Name: Scoreby W Stamford Bridge West.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1871 Census''': \"1871 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1871; County: Yorkshire, East Riding (ERY); District: York; Civil Parish: Scoreby Wth Stamford; Ecclesiastical Parish: Scoreby Wth Stamford; Piece: 4755; Enumeration District: 2; Folio: 63; Page: 15; Schedule: 56; House or Street Name: Scoreby W Stamford Bridge West.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>\n[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1871\n|-\n| County || Yorkshire, East Riding (ERY)\n|-\n| District || York\n|-\n| Civil Parish || Scoreby Wth Stamford\n|-\n| Ecclesiastical Parish || Scoreby Wth Stamford\n|-\n| Piece || 4755\n|-\n| Enumeration District || 2\n|-\n| Folio || 63\n|-\n| Page || 15\n|-\n| Schedule || 56\n|-\n| House Number || \n|-\n| House or Street Name || Scoreby W Stamford Bridge West\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1871 census Louisa (age 21) was the wife of Hauston Barker in Scoreby W Stamford Bridge West, Scoreby Wth Stamford, York, Yorkshire, East Riding, England.<ref>\n'''1871 Census''':\n\"1871 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>\n[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1871\n|-\n| County || Yorkshire, East Riding (ERY)\n|-\n| District || York\n|-\n| Civil Parish || Scoreby Wth Stamford\n|-\n| Ecclesiastical Parish || Scoreby Wth Stamford\n|-\n| Piece || 4755\n|-\n| Enumeration District || 2\n|-\n| Folio || 63\n|-\n| Page || 15\n|-\n| Schedule || 56\n|-\n| House Number || \n|-\n| House or Street Name || Scoreby W Stamford Bridge West\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1871 Census''': \"1871 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13335 RG 10]; Piece: 4755; Folio: 63; Page: 15; Schedule: 56<br/>[https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0 FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1871; County: Yorkshire, East Riding (ERY); District: York; Civil Parish: Scoreby Wth Stamford; Ecclesiastical Parish: Scoreby Wth Stamford; Piece: 4755; Enumeration District: 2; Folio: 63; Page: 15; Schedule: 56; House or Street Name: Scoreby W Stamford Bridge West.",
+    "type": "source"
+  }
+}

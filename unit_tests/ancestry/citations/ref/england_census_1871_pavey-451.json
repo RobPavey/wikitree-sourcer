@@ -1,0 +1,102 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1871 census Henry (age 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)<br/>\nHenry A G Pavey (1/12) son in household of Harry A Pavey (20) in St Pancras in Pancras registration district in London, England. Born in St Pancras Middlesex England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1871 census Henry (age 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)<br/>\nHenry A G Pavey (1/12) son in household of Harry A Pavey (20) in St Pancras in Pancras registration district in London, England. Born in St Pancras Middlesex England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)<br/>Henry A G Pavey (1/12) son in household of Harry A Pavey (20) in St Pancras in Pancras registration district in London, England. Born in St Pancras Middlesex England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)<br/>\nName: Henry A G Pavey; Age: 1/12; Estimated Birth Year: 1871; Relation: Son; Gender: Male; Where born: St Pancras Middlesex England; Civil parish: St Pancras; Ecclesiastical parish: Holy Trinity; County/Island: London; Country: England; Registration district: Pancras; Sub-registration district: Kentish Town; <br/>Household Members Age Relationship:<br/>Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1871 census Henry (age 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)<br/>\nName: Henry A G Pavey; Age: 1/12; Estimated Birth Year: 1871; Relation: Son; Gender: Male; Where born: St Pancras Middlesex England; Civil parish: St Pancras; Ecclesiastical parish: Holy Trinity; County/Island: London; Country: England; Registration district: Pancras; Sub-registration district: Kentish Town; <br/>Household Members Age Relationship:<br/>Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)<br/>Name: Henry A G Pavey; Age: 1/12; Estimated Birth Year: 1871; Relation: Son; Gender: Male; Where born: St Pancras Middlesex England; Civil parish: St Pancras; Ecclesiastical parish: Holy Trinity; County/Island: London; Country: England; Registration district: Pancras; Sub-registration district: Kentish Town; <br/>Household Members Age Relationship:<br/>Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry A G Pavey\n|-\n| Age || 1/12\n|-\n| Estimated Birth Year || 1871\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || St Pancras Middlesex England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || Holy Trinity\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || Pancras\n|-\n| Sub-registration district || Kentish Town\n|-\n| Household Members<br/>Age<br/>Relationship || Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1871 census Henry (age 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry A G Pavey\n|-\n| Age || 1/12\n|-\n| Estimated Birth Year || 1871\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || St Pancras Middlesex England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || Holy Trinity\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || Pancras\n|-\n| Sub-registration district || Kentish Town\n|-\n| Household Members<br/>Age<br/>Relationship || Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)<br/>Name: Henry A G Pavey; Age: 1/12; Estimated Birth Year: 1871; Relation: Son; Gender: Male; Where born: St Pancras Middlesex England; Civil parish: St Pancras; Ecclesiastical parish: Holy Trinity; County/Island: London; Country: England; Registration district: Pancras; Sub-registration district: Kentish Town; <br/>Household Members Age Relationship:<br/>Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1871 England Census,\" database, ({{Ancestry Record|7619|4576313}} : accessed 6 May 2021), Henry A G Pavey (1/12) son in household of Harry A Pavey (20) in St Pancras in Pancras registration district in London, England. Born in St Pancras Middlesex England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 240, Folio 13, Page 20, GSU roll 824907, ED, institution, or vessel 18a, Household schedule number 122.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1871 census Henry (age 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\"1871 England Census,\" database, ({{Ancestry Record|7619|4576313}} : accessed 6 May 2021), Henry A G Pavey (1/12) son in household of Harry A Pavey (20) in St Pancras in Pancras registration district in London, England. Born in St Pancras Middlesex England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 240, Folio 13, Page 20, GSU roll 824907, ED, institution, or vessel 18a, Household schedule number 122.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1871 England Census,\" database, ({{Ancestry Record|7619|4576313}} : accessed 6 May 2021), Henry A G Pavey (1/12) son in household of Harry A Pavey (20) in St Pancras in Pancras registration district in London, England. Born in St Pancras Middlesex England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 240, Folio 13, Page 20, GSU roll 824907, ED, institution, or vessel 18a, Household schedule number 122.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1871 Census'':\n\"1871 England Census\", database, \nThe National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 240, Folio 13, Page 20, GSU roll 824907, ED, institution, or vessel 18a, Household schedule number 122, \n({{Ancestry Record|7619|4576313}} : accessed 6 May 2021), \nName: Henry A G Pavey; Age: 1/12; Estimated Birth Year: 1871; Relation: Son; Gender: Male; Where born: St Pancras Middlesex England; Civil parish: St Pancras; Ecclesiastical parish: Holy Trinity; County/Island: London; Country: England; Registration district: Pancras; Sub-registration district: Kentish Town; Household Members Age Relationship: Harry A Pavey 20 Head, Amelia E Pavey 21 Wife, Henry A G Pavey 1/12 Son.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1871 census Henry (age 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\n''1871 Census'':\n\"1871 England Census\", database, \nThe National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 240, Folio 13, Page 20, GSU roll 824907, ED, institution, or vessel 18a, Household schedule number 122, \n({{Ancestry Record|7619|4576313}} : accessed 6 May 2021), \nName: Henry A G Pavey; Age: 1/12; Estimated Birth Year: 1871; Relation: Son; Gender: Male; Where born: St Pancras Middlesex England; Civil parish: St Pancras; Ecclesiastical parish: Holy Trinity; County/Island: London; Country: England; Registration district: Pancras; Sub-registration district: Kentish Town; Household Members Age Relationship: Harry A Pavey 20 Head, Amelia E Pavey 21 Wife, Henry A G Pavey 1/12 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1871 Census'': \"1871 England Census\", database, The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 240, Folio 13, Page 20, GSU roll 824907, ED, institution, or vessel 18a, Household schedule number 122, ({{Ancestry Record|7619|4576313}} : accessed 6 May 2021), Name: Henry A G Pavey; Age: 1/12; Estimated Birth Year: 1871; Relation: Son; Gender: Male; Where born: St Pancras Middlesex England; Civil parish: St Pancras; Ecclesiastical parish: Holy Trinity; County/Island: London; Country: England; Registration district: Pancras; Sub-registration district: Kentish Town; Household Members Age Relationship: Harry A Pavey 20 Head, Amelia E Pavey 21 Wife, Henry A G Pavey 1/12 Son.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "In the 1871 Census of England, Henry (age 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry A G Pavey\n|-\n| Age || 1/12\n|-\n| Estimated Birth Year || 1871\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || St Pancras Middlesex England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || Holy Trinity\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || Pancras\n|-\n| Sub-registration district || Kentish Town\n|-\n| Household Members<br/>Age<br/>Relationship || Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "In 1871 Henry, age 1 month, was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry A G Pavey\n|-\n| Age || 1/12\n|-\n| Estimated Birth Year || 1871\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || St Pancras Middlesex England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || Holy Trinity\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || Pancras\n|-\n| Sub-registration district || Kentish Town\n|-\n| Household Members<br/>Age<br/>Relationship || Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_3_narrative": {
+    "citation": "On 2 April 1871 Henry age 1 month was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry A G Pavey\n|-\n| Age || 1/12\n|-\n| Estimated Birth Year || 1871\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || St Pancras Middlesex England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || Holy Trinity\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || Pancras\n|-\n| Sub-registration district || Kentish Town\n|-\n| Household Members<br/>Age<br/>Relationship || Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_4_narrative": {
+    "citation": "In 1871 Henry (aged 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry A G Pavey\n|-\n| Age || 1/12\n|-\n| Estimated Birth Year || 1871\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || St Pancras Middlesex England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || Holy Trinity\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || Pancras\n|-\n| Sub-registration district || Kentish Town\n|-\n| Household Members<br/>Age<br/>Relationship || Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_5_narrative": {
+    "citation": "In 1871 Henry, aged 1 month, was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry A G Pavey\n|-\n| Age || 1/12\n|-\n| Estimated Birth Year || 1871\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || St Pancras Middlesex England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || Holy Trinity\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || Pancras\n|-\n| Sub-registration district || Kentish Town\n|-\n| Household Members<br/>Age<br/>Relationship || Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_6_narrative": {
+    "citation": "In 1871 Henry aged 1 month was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry A G Pavey\n|-\n| Age || 1/12\n|-\n| Estimated Birth Year || 1871\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || St Pancras Middlesex England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || Holy Trinity\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || Pancras\n|-\n| Sub-registration district || Kentish Town\n|-\n| Household Members<br/>Age<br/>Relationship || Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_7_narrative": {
+    "citation": "In 1871 Henry was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry A G Pavey\n|-\n| Age || 1/12\n|-\n| Estimated Birth Year || 1871\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || St Pancras Middlesex England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || Holy Trinity\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || Pancras\n|-\n| Sub-registration district || Kentish Town\n|-\n| Household Members<br/>Age<br/>Relationship || Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

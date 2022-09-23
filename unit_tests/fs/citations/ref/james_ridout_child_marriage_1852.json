@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout in entry for James Ridout and Eliza Tapper, 1852.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout in entry for James Ridout and Eliza Tapper, 1852.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>James Ridout in entry for James Ridout and Eliza Tapper, 1852.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout's son James Ridout marriage to Eliza Tapper on 24 Sep 1852 in Sturminster Newton, Dorset, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout's son James Ridout marriage to Eliza Tapper on 24 Sep 1852 in Sturminster Newton, Dorset, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>James Ridout's son James Ridout marriage to Eliza Tapper on 24 Sep 1852 in Sturminster Newton, Dorset, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nName: James Ridout.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nName: James Ridout.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>Name: James Ridout.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751\n{| border=\"1\"\n| Name || James Ridout\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751\n{| border=\"1\"\n| Name || James Ridout\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>Name: James Ridout.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout in entry for James Ridout and Eliza Tapper, 1852.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout in entry for James Ridout and Eliza Tapper, 1852.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>James Ridout in entry for James Ridout and Eliza Tapper, 1852.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout's son James Ridout marriage to Eliza Tapper on 24 Sep 1852 in Sturminster Newton, Dorset, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout's son James Ridout marriage to Eliza Tapper on 24 Sep 1852 in Sturminster Newton, Dorset, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>James Ridout's son James Ridout marriage to Eliza Tapper on 24 Sep 1852 in Sturminster Newton, Dorset, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout in entry for James Ridout and Eliza Tapper, 1852.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nJames Ridout in entry for James Ridout and Eliza Tapper, 1852.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>James Ridout in entry for James Ridout and Eliza Tapper, 1852.",
+    "type": "source"
+  }
+}

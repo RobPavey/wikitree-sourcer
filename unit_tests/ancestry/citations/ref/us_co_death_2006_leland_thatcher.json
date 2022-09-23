@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Colorado, Select County Death Records, 1986-2017\"<br/>\nDenver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>\n{{Ancestry Record|61798|41128}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Leland, son of Leland Lincoln Thatcher & Iva Thatcher, died (age 82) on 2 January 2006 in Littleton, Arapahoe, Colorado, USA.<ref>\n'''Death''':\n\"Colorado, Select County Death Records, 1986-2017\"<br/>\nDenver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>\n{{Ancestry Record|61798|41128}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death''': \"Colorado, Select County Death Records, 1986-2017\"<br/>Denver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>{{Ancestry Record|61798|41128}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Colorado, Select County Death Records, 1986-2017\"<br/>\nDenver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>\n{{Ancestry Record|61798|41128}} (accessed 6 May 2021)<br/>\nLeland L Thatcher death 2 Jan 2006 (born 29 Mar 1923), son of Leland Lincoln Thatcher & Iva Thatcher, in Littleton, Arapahoe, Colorado, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Leland, son of Leland Lincoln Thatcher & Iva Thatcher, died (age 82) on 2 January 2006 in Littleton, Arapahoe, Colorado, USA.<ref>\n'''Death''':\n\"Colorado, Select County Death Records, 1986-2017\"<br/>\nDenver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>\n{{Ancestry Record|61798|41128}} (accessed 6 May 2021)<br/>\nLeland L Thatcher death 2 Jan 2006 (born 29 Mar 1923), son of Leland Lincoln Thatcher & Iva Thatcher, in Littleton, Arapahoe, Colorado, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death''': \"Colorado, Select County Death Records, 1986-2017\"<br/>Denver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>{{Ancestry Record|61798|41128}} (accessed 6 May 2021)<br/>Leland L Thatcher death 2 Jan 2006 (born 29 Mar 1923), son of Leland Lincoln Thatcher & Iva Thatcher, in Littleton, Arapahoe, Colorado, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Colorado, Select County Death Records, 1986-2017\"<br/>\nDenver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>\n{{Ancestry Record|61798|41128}} (accessed 6 May 2021)<br/>\nName: Leland L. Thatcher; Gender: Male; Race: White; Age: 82; Birth Date: 29 Mar 1923; Birth Place: Winona, Minnesota; Death Date: 2 Jan 2006; Death Place: Littleton, Arapahoe, Colorado, USA; Father: Leland Lincoln Thatcher; Mother: Iva Thatcher; Spouse: Margarita Martha Sandelman; Certificate Number: 2006000091.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Leland, son of Leland Lincoln Thatcher & Iva Thatcher, died (age 82) on 2 January 2006 in Littleton, Arapahoe, Colorado, USA.<ref>\n'''Death''':\n\"Colorado, Select County Death Records, 1986-2017\"<br/>\nDenver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>\n{{Ancestry Record|61798|41128}} (accessed 6 May 2021)<br/>\nName: Leland L. Thatcher; Gender: Male; Race: White; Age: 82; Birth Date: 29 Mar 1923; Birth Place: Winona, Minnesota; Death Date: 2 Jan 2006; Death Place: Littleton, Arapahoe, Colorado, USA; Father: Leland Lincoln Thatcher; Mother: Iva Thatcher; Spouse: Margarita Martha Sandelman; Certificate Number: 2006000091.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death''': \"Colorado, Select County Death Records, 1986-2017\"<br/>Denver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>{{Ancestry Record|61798|41128}} (accessed 6 May 2021)<br/>Name: Leland L. Thatcher; Gender: Male; Race: White; Age: 82; Birth Date: 29 Mar 1923; Birth Place: Winona, Minnesota; Death Date: 2 Jan 2006; Death Place: Littleton, Arapahoe, Colorado, USA; Father: Leland Lincoln Thatcher; Mother: Iva Thatcher; Spouse: Margarita Martha Sandelman; Certificate Number: 2006000091.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Colorado, Select County Death Records, 1986-2017\"<br/>\nDenver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>\n{{Ancestry Record|61798|41128}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leland L. Thatcher\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Age || 82\n|-\n| Birth Date || 29 Mar 1923\n|-\n| Birth Place || Winona, Minnesota\n|-\n| Death Date || 2 Jan 2006\n|-\n| Death Place || Littleton, Arapahoe, Colorado, USA\n|-\n| Father || Leland Lincoln Thatcher\n|-\n| Mother || Iva Thatcher\n|-\n| Spouse || Margarita Martha Sandelman\n|-\n| Certificate Number || 2006000091\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Leland, son of Leland Lincoln Thatcher & Iva Thatcher, died (age 82) on 2 January 2006 in Littleton, Arapahoe, Colorado, USA.<ref>\n'''Death''':\n\"Colorado, Select County Death Records, 1986-2017\"<br/>\nDenver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>\n{{Ancestry Record|61798|41128}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leland L. Thatcher\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Age || 82\n|-\n| Birth Date || 29 Mar 1923\n|-\n| Birth Place || Winona, Minnesota\n|-\n| Death Date || 2 Jan 2006\n|-\n| Death Place || Littleton, Arapahoe, Colorado, USA\n|-\n| Father || Leland Lincoln Thatcher\n|-\n| Mother || Iva Thatcher\n|-\n| Spouse || Margarita Martha Sandelman\n|-\n| Certificate Number || 2006000091\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death''': \"Colorado, Select County Death Records, 1986-2017\"<br/>Denver County Clerk and Recorder's Office; Denver, Colorado; Denver County Deaths, 1986-2017; Year: 2015<br/>{{Ancestry Record|61798|41128}} (accessed 6 May 2021)<br/>Name: Leland L. Thatcher; Gender: Male; Race: White; Age: 82; Birth Date: 29 Mar 1923; Birth Place: Winona, Minnesota; Death Date: 2 Jan 2006; Death Place: Littleton, Arapahoe, Colorado, USA; Father: Leland Lincoln Thatcher; Mother: Iva Thatcher; Spouse: Margarita Martha Sandelman; Certificate Number: 2006000091.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Colorado, Select County Death Records, 1986-2017,\" database, ({{Ancestry Record|61798|41128}} : accessed 6 May 2021), Leland L Thatcher death 2 Jan 2006 (born 29 Mar 1923), son of Leland Lincoln Thatcher & Iva Thatcher, in Littleton, Arapahoe, Colorado, USA; citing Denver County Clerk and Recorder's Office, Denver, Colorado, Denver County Deaths, 1986-2017, Year 2015.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Leland, son of Leland Lincoln Thatcher & Iva Thatcher, died (age 82) on 2 January 2006 in Littleton, Arapahoe, Colorado, USA.<ref>\"Colorado, Select County Death Records, 1986-2017,\" database, ({{Ancestry Record|61798|41128}} : accessed 6 May 2021), Leland L Thatcher death 2 Jan 2006 (born 29 Mar 1923), son of Leland Lincoln Thatcher & Iva Thatcher, in Littleton, Arapahoe, Colorado, USA; citing Denver County Clerk and Recorder's Office, Denver, Colorado, Denver County Deaths, 1986-2017, Year 2015.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Colorado, Select County Death Records, 1986-2017,\" database, ({{Ancestry Record|61798|41128}} : accessed 6 May 2021), Leland L Thatcher death 2 Jan 2006 (born 29 Mar 1923), son of Leland Lincoln Thatcher & Iva Thatcher, in Littleton, Arapahoe, Colorado, USA; citing Denver County Clerk and Recorder's Office, Denver, Colorado, Denver County Deaths, 1986-2017, Year 2015.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death'':\n\"Colorado, Select County Death Records, 1986-2017\", database, \nDenver County Clerk and Recorder's Office, Denver, Colorado, Denver County Deaths, 1986-2017, Year 2015, \n({{Ancestry Record|61798|41128}} : accessed 6 May 2021), \nName: Leland L. Thatcher; Gender: Male; Race: White; Age: 82; Birth Date: 29 Mar 1923; Birth Place: Winona, Minnesota; Death Date: 2 Jan 2006; Death Place: Littleton, Arapahoe, Colorado, USA; Father: Leland Lincoln Thatcher; Mother: Iva Thatcher; Spouse: Margarita Martha Sandelman; Certificate Number: 2006000091.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Leland, son of Leland Lincoln Thatcher & Iva Thatcher, died (age 82) on 2 January 2006 in Littleton, Arapahoe, Colorado, USA.<ref>\n''Death'':\n\"Colorado, Select County Death Records, 1986-2017\", database, \nDenver County Clerk and Recorder's Office, Denver, Colorado, Denver County Deaths, 1986-2017, Year 2015, \n({{Ancestry Record|61798|41128}} : accessed 6 May 2021), \nName: Leland L. Thatcher; Gender: Male; Race: White; Age: 82; Birth Date: 29 Mar 1923; Birth Place: Winona, Minnesota; Death Date: 2 Jan 2006; Death Place: Littleton, Arapahoe, Colorado, USA; Father: Leland Lincoln Thatcher; Mother: Iva Thatcher; Spouse: Margarita Martha Sandelman; Certificate Number: 2006000091.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death'': \"Colorado, Select County Death Records, 1986-2017\", database, Denver County Clerk and Recorder's Office, Denver, Colorado, Denver County Deaths, 1986-2017, Year 2015, ({{Ancestry Record|61798|41128}} : accessed 6 May 2021), Name: Leland L. Thatcher; Gender: Male; Race: White; Age: 82; Birth Date: 29 Mar 1923; Birth Place: Winona, Minnesota; Death Date: 2 Jan 2006; Death Place: Littleton, Arapahoe, Colorado, USA; Father: Leland Lincoln Thatcher; Mother: Iva Thatcher; Spouse: Margarita Martha Sandelman; Certificate Number: 2006000091.",
+    "type": "source"
+  }
+}

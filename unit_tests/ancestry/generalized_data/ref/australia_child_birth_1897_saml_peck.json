@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "role": "Parent",
+  "primaryPerson": "Myrtle Frances Peck",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Saml Walt Peck"
+  },
+  "personGender": "male",
+  "lastNameAtBirth": "Peck",
+  "spouses": [
+    {
+      "name": {
+        "name": "Ann Hill"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1778"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Taylor",
+    "forenames": "John"
+  },
+  "eventDate": {
+    "yearString": "1863"
+  },
+  "registrationDistrict": "Tradeston",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Glasgow, Lanarkshire",
+    "placeString": "Tradeston, Glasgow, Lanarkshire, Scotland"
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Jessie Ann Corn",
+        "lastName": "Ferguson"
+      },
+      "marriageDate": {
+        "yearString": "1863"
+      },
+      "marriagePlace": {
+        "country": "Scotland",
+        "county": "Glasgow, Lanarkshire",
+        "placeString": "Tradeston, Glasgow, Lanarkshire, Scotland"
+      }
+    }
+  ],
+  "hasValidData": true
+}

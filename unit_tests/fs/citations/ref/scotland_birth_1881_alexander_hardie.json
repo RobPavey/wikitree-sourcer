@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nAlexander Hardie, 1881.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nAlexander Hardie, 1881.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Birth Registration''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing UK General Register Office.<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>Alexander Hardie, 1881.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nName: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nName: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Birth Registration''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing UK General Register Office.<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>Name: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nName: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nName: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Birth Registration''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing UK General Register Office.<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>Name: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Alexander Hardie\n|-\n| Birth Date || 10 Jan 1881\n|-\n| Birth Place || Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Alexander Hardie\n|-\n| Birth Date || 10 Jan 1881\n|-\n| Birth Place || Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Birth Registration''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing UK General Register Office.<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>Name: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nAlexander Hardie, 1881.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nAlexander Hardie, 1881.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Birth Registration''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing UK General Register Office.<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>Alexander Hardie, 1881.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Birth Registration''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing UK General Register Office.<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nName: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nName: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Birth Registration''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing UK General Register Office.<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>Name: Alexander Hardie; Birth Date: 10 Jan 1881; Birth Place: Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nAlexander Hardie, 1881.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth Registration''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting UK General Register Office.<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>\nAlexander Hardie, 1881.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Birth Registration''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing UK General Register Office.<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)<br/>Alexander Hardie, 1881.",
+    "type": "source"
+  }
+}

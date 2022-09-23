@@ -1,0 +1,28 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/264074:61208",
+  "pageType": "record",
+  "dbId": "61208",
+  "recordId": "264074",
+  "ancestryTemplate": "{{Ancestry Record|61208|264074}}",
+  "domain": "com",
+  "titleName": "George Simpson",
+  "titleCollection": "Rhode Island, U.S., State and Federal Naturalization Records, 1802-1945",
+  "recordData": {
+    "Name": "George Simpson",
+    "Declaration Age": "30",
+    "Birth Date": "15 Aug 1881",
+    "Birth Place": "Glasgow, Scotland",
+    "Record Type": "Declaration",
+    "Arrival Date": "12 Feb 1891",
+    "Arrival Place": "New York City, New York",
+    "Declaration Date": "3 Nov 1911",
+    "Declaration Place": "Rhode Island, USA",
+    "Declaration Number": "7162"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/61208/images/007766132_01066?pid=264074&usePUB=true&usePUBJs=true",
+  "imageDbId": "61208",
+  "imageRecordId": "007766132_01066",
+  "sourceCitation": "National Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 2/1842 - Ca. 1991; NAI Number: 3432872; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21",
+  "sourceInformation": "Ancestry.com. Rhode Island, U.S., State and Federal Naturalization Records, 1802-1945 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2016. Original data: Naturalization Records. National Archives at Boston, Waltham, Massachusetts. A full list of sources can be found here.",
+  "sourceDescription": "This database consists of naturalization records for Rhode Island from U.S. District Courts, as well as from the Immigration and Naturalization Service. The INS records are copies of the originals, compiled from various federal, state, and local courts by the Works Progress Administration (WPA) during World War II. Learn more..."
+}

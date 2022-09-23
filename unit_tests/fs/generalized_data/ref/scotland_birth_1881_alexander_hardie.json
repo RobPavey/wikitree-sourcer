@@ -1,0 +1,40 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Alexander Hardie"
+  },
+  "birthDate": {
+    "dateString": "10 Jan 1881",
+    "yearString": "1881"
+  },
+  "eventDate": {
+    "dateString": "10 Jan 1881",
+    "yearString": "1881"
+  },
+  "eventPlace": {
+    "placeString": "Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Gordon Hardie",
+        "forenames": "Gordon",
+        "lastName": "Hardie"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Grant",
+        "forenames": "Mary",
+        "lastName": "Grant"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1771030"
+  },
+  "hasValidData": true
+}

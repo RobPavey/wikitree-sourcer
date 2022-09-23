@@ -1,0 +1,101 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Eliza Pother"
+  },
+  "birthDate": {
+    "dateString": "1865",
+    "yearString": "1865"
+  },
+  "birthPlace": {
+    "placeString": "Wood Norton Nfk"
+  },
+  "eventDate": {
+    "dateString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "Wood Norton, Norfolk, England, United Kingdom"
+  },
+  "registrationDistrict": "Aylsham",
+  "ageAtEvent": "46",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Rossanna Mitchell",
+      "relationship": "head",
+      "maritalStatus": "widowed",
+      "gender": "female",
+      "age": "74",
+      "birthYear": "1837",
+      "occupation": "Farmer",
+      "birthPlace": "Hindolvestone Nfk"
+    },
+    {
+      "name": "Eliza Pother",
+      "relationship": "daughter",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "46",
+      "birthYear": "1865",
+      "birthPlace": "Wood Norton Nfk",
+      "isSelected": true
+    },
+    {
+      "name": "John William Pother",
+      "relationship": "son-in-law",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "37",
+      "birthYear": "1874",
+      "occupation": "Gardener Domestic",
+      "birthPlace": "Bodham Nfk"
+    },
+    {
+      "name": "Leonard Mitchell",
+      "relationship": "grandson",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "13",
+      "birthYear": "1898",
+      "birthPlace": "Wood Norton Nfk"
+    },
+    {
+      "name": "Mark O Newman",
+      "relationship": "servant",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "49",
+      "birthYear": "1862",
+      "occupation": "Farm Labourer",
+      "birthPlace": "Sculthorpe Nfk"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "daughter",
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Rossanna Mitchell"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1921547",
+    "page": "1",
+    "schedule": "156",
+    "folio": "315"
+  },
+  "hasValidData": true
+}

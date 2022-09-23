@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Patience married William Morrison on 17 November 1761 in Lancaster Co., PA.<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>{{Ancestry Record|7830|19685}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)<br/>\nPatience Brown marriage to William Morrison on 17 Nov 1761 in Lancaster Co., PA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Patience married William Morrison on 17 November 1761 in Lancaster Co., PA.<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)<br/>\nPatience Brown marriage to William Morrison on 17 Nov 1761 in Lancaster Co., PA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>{{Ancestry Record|7830|19685}} (accessed 6 May 2021)<br/>Patience Brown marriage to William Morrison on 17 Nov 1761 in Lancaster Co., PA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)<br/>\nName: Patience Brown; Event: Marriage; Marriage Date: 17 Nov 1761; Marriage Place: Lancaster Co., PA; Church: St. James Episcopal Church, Lancaster Co., PA; Role: Bride; Remark: License.; <br/>Household Members:<br/>Patience Brown Bride<br/>William Morrison Groom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Patience married William Morrison on 17 November 1761 in Lancaster Co., PA.<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)<br/>\nName: Patience Brown; Event: Marriage; Marriage Date: 17 Nov 1761; Marriage Place: Lancaster Co., PA; Church: St. James Episcopal Church, Lancaster Co., PA; Role: Bride; Remark: License.; <br/>Household Members:<br/>Patience Brown Bride<br/>William Morrison Groom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>{{Ancestry Record|7830|19685}} (accessed 6 May 2021)<br/>Name: Patience Brown; Event: Marriage; Marriage Date: 17 Nov 1761; Marriage Place: Lancaster Co., PA; Church: St. James Episcopal Church, Lancaster Co., PA; Role: Bride; Remark: License.; <br/>Household Members:<br/>Patience Brown Bride<br/>William Morrison Groom.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Patience Brown\n|-\n| Event || Marriage\n|-\n| Marriage Date || 17 Nov 1761\n|-\n| Marriage Place || Lancaster Co., PA\n|-\n| Church || St. James Episcopal Church, Lancaster Co., PA\n|-\n| Role || Bride\n|-\n| Remark || License.\n|-\n| Household Members || Patience Brown Bride<br/>William Morrison Groom\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Patience married William Morrison on 17 November 1761 in Lancaster Co., PA.<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Patience Brown\n|-\n| Event || Marriage\n|-\n| Marriage Date || 17 Nov 1761\n|-\n| Marriage Place || Lancaster Co., PA\n|-\n| Church || St. James Episcopal Church, Lancaster Co., PA\n|-\n| Role || Bride\n|-\n| Remark || License.\n|-\n| Household Members || Patience Brown Bride<br/>William Morrison Groom\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>{{Ancestry Record|7830|19685}} (accessed 6 May 2021)<br/>Name: Patience Brown; Event: Marriage; Marriage Date: 17 Nov 1761; Marriage Place: Lancaster Co., PA; Church: St. James Episcopal Church, Lancaster Co., PA; Role: Bride; Remark: License.; <br/>Household Members:<br/>Patience Brown Bride<br/>William Morrison Groom.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881,\" database, ({{Ancestry Record|7830|19685}} : accessed 6 May 2021), Patience Brown marriage to William Morrison on 17 Nov 1761 in Lancaster Co., PA; citing Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Patience married William Morrison on 17 November 1761 in Lancaster Co., PA.<ref>\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881,\" database, ({{Ancestry Record|7830|19685}} : accessed 6 May 2021), Patience Brown marriage to William Morrison on 17 Nov 1761 in Lancaster Co., PA; citing Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881,\" database, ({{Ancestry Record|7830|19685}} : accessed 6 May 2021), Patience Brown marriage to William Morrison on 17 Nov 1761 in Lancaster Co., PA; citing Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage'':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\", database, \nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library, \n({{Ancestry Record|7830|19685}} : accessed 6 May 2021), \nName: Patience Brown; Event: Marriage; Marriage Date: 17 Nov 1761; Marriage Place: Lancaster Co., PA; Church: St. James Episcopal Church, Lancaster Co., PA; Role: Bride; Remark: License.; Household Members: Patience Brown Bride, William Morrison Groom.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Patience married William Morrison on 17 November 1761 in Lancaster Co., PA.<ref>\n''Marriage'':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\", database, \nExtracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library, \n({{Ancestry Record|7830|19685}} : accessed 6 May 2021), \nName: Patience Brown; Event: Marriage; Marriage Date: 17 Nov 1761; Marriage Place: Lancaster Co., PA; Church: St. James Episcopal Church, Lancaster Co., PA; Role: Bride; Remark: License.; Household Members: Patience Brown Bride, William Morrison Groom.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage'': \"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\", database, Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library, ({{Ancestry Record|7830|19685}} : accessed 6 May 2021), Name: Patience Brown; Event: Marriage; Marriage Date: 17 Nov 1761; Marriage Place: Lancaster Co., PA; Church: St. James Episcopal Church, Lancaster Co., PA; Role: Bride; Remark: License.; Household Members: Patience Brown Bride, William Morrison Groom.",
+    "type": "source"
+  }
+}

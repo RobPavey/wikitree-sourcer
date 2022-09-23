@@ -1,0 +1,30 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Charles F Barker"
+  },
+  "birthDate": {
+    "dateString": "23 Feb 1901"
+  },
+  "birthPlace": {
+    "placeString": "Nebraska"
+  },
+  "deathDate": {
+    "dateString": "24 May 1974",
+    "yearString": "1974"
+  },
+  "eventDate": {
+    "dateString": "24 May 1974",
+    "yearString": "1974"
+  },
+  "eventPlace": {
+    "placeString": "San Diego, California, United States"
+  },
+  "collectionData": {
+    "id": "2015582"
+  },
+  "hasValidData": true
+}

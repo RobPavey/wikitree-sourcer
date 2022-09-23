@@ -1,0 +1,34 @@
+{
+  "recordData": {
+    "Name": "Margaret Rowlinson",
+    "Marriage Notice Date": "28 Oct 1855",
+    "Marriage Notice Place": "Padgate, Lancashire, England, United Kingdom"
+  },
+  "fullName": "Margaret Rowlinson",
+  "givenName": "Margaret",
+  "surname": "Rowlinson",
+  "gender": "female",
+  "eventDateOriginal": "28 Oct 1855",
+  "eventDate": "28 Oct 1855",
+  "eventYear": "1855",
+  "eventPlaceOriginal": "Padgate, Lancashire, England, United Kingdom",
+  "eventPlace": "Padgate, Lancashire, England, United Kingdom",
+  "factType": "MarriageNotice",
+  "spouseFullName": "Joseph Walmsley",
+  "spouseGivenName": "Joseph",
+  "spouseSurname": "Walmsley",
+  "referenceData": {
+    "digitalFilmNumber": "004027888",
+    "filmNumber": "2068609",
+    "packetLetter": "A",
+    "recordNumber": "97"
+  },
+  "fsImageNumber": "00728",
+  "collectionTitle": "England Marriages, 1538–1973  ",
+  "fsCollectionId": "1473015",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94",
+  "citation": "\"England Marriages, 1538–1973  \", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NN5C-1XR : 13 March 2020), Margaret Rowlinson in entry for Joseph Walmsley, 1855.",
+  "sourceTitleForPerson": "Margaret Rowlinson in entry for Joseph Walmsley, \"England Marriages, 1538–1973  \"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:NN5C-1XR",
+  "pageType": "record"
+}

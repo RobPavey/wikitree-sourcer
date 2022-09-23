@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Carol was recorded as a resident in 1993 in Rochester, NY.<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Residence''': \"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)<br/>\nName: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Carol was recorded as a resident in 1993 in Rochester, NY.<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)<br/>\nName: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Residence''': \"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)<br/>Name: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)<br/>\nName: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Carol was recorded as a resident in 1993 in Rochester, NY.<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)<br/>\nName: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Residence''': \"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)<br/>Name: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Carol Sharp Kohler [Carol Bonnewell]\n|-\n| Birth Date || 7 Jun 1948\n|-\n| Residence Date || 1993\n|-\n| Phone Number || 647-1932\n|-\n| Address || 143 Leopard St # 9d\n|-\n| Residence || Rochester, NY\n|-\n| Postal Code || 14615-3105\n|-\n| Second Residence Date || 1993\n|-\n| Second Phone Number || 647-1932\n|-\n| Second Address || 143 Leopard St # 9d\n|-\n| Second Residence || Rochester, NY\n|-\n| Second Postal Code || 14615-3105\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Carol was recorded as a resident in 1993 in Rochester, NY.<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Carol Sharp Kohler [Carol Bonnewell]\n|-\n| Birth Date || 7 Jun 1948\n|-\n| Residence Date || 1993\n|-\n| Phone Number || 647-1932\n|-\n| Address || 143 Leopard St # 9d\n|-\n| Residence || Rochester, NY\n|-\n| Postal Code || 14615-3105\n|-\n| Second Residence Date || 1993\n|-\n| Second Phone Number || 647-1932\n|-\n| Second Address || 143 Leopard St # 9d\n|-\n| Second Residence || Rochester, NY\n|-\n| Second Postal Code || 14615-3105\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Residence''': \"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)<br/>Name: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Public Records Index, 1950-1993, Volume 1,\" database, ({{Ancestry Record|1788|90102600}} : accessed 6 May 2021), Name Carol Sharp Kohler [Carol Bonnewell], Birth Date 7 Jun 1948, Residence Date 1993, Phone Number 647-1932, Address 143 Leopard St # 9d, Residence Rochester, NY, Postal Code 14615-3105, Second Residence Date 1993, Second Phone Number 647-1932, Second Address 143 Leopard St # 9d, Second Residence Rochester, NY, Second Postal Code 14615-3105; citing Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Carol was recorded as a resident in 1993 in Rochester, NY.<ref>\"U.S., Public Records Index, 1950-1993, Volume 1,\" database, ({{Ancestry Record|1788|90102600}} : accessed 6 May 2021), Name Carol Sharp Kohler [Carol Bonnewell], Birth Date 7 Jun 1948, Residence Date 1993, Phone Number 647-1932, Address 143 Leopard St # 9d, Residence Rochester, NY, Postal Code 14615-3105, Second Residence Date 1993, Second Phone Number 647-1932, Second Address 143 Leopard St # 9d, Second Residence Rochester, NY, Second Postal Code 14615-3105; citing Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Public Records Index, 1950-1993, Volume 1,\" database, ({{Ancestry Record|1788|90102600}} : accessed 6 May 2021), Name Carol Sharp Kohler [Carol Bonnewell], Birth Date 7 Jun 1948, Residence Date 1993, Phone Number 647-1932, Address 143 Leopard St # 9d, Residence Rochester, NY, Postal Code 14615-3105, Second Residence Date 1993, Second Phone Number 647-1932, Second Address 143 Leopard St # 9d, Second Residence Rochester, NY, Second Postal Code 14615-3105; citing Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Residence'':\n\"U.S., Public Records Index, 1950-1993, Volume 1\", database, \nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings, \n({{Ancestry Record|1788|90102600}} : accessed 6 May 2021), \nName: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Carol was recorded as a resident in 1993 in Rochester, NY.<ref>\n''Residence'':\n\"U.S., Public Records Index, 1950-1993, Volume 1\", database, \nVoter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings, \n({{Ancestry Record|1788|90102600}} : accessed 6 May 2021), \nName: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Residence'': \"U.S., Public Records Index, 1950-1993, Volume 1\", database, Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings, ({{Ancestry Record|1788|90102600}} : accessed 6 May 2021), Name: Carol Sharp Kohler [Carol Bonnewell]; Birth Date: 7 Jun 1948; Residence Date: 1993; Phone Number: 647-1932; Address: 143 Leopard St # 9d; Residence: Rochester, NY; Postal Code: 14615-3105; Second Residence Date: 1993; Second Phone Number: 647-1932; Second Address: 143 Leopard St # 9d; Second Residence: Rochester, NY; Second Postal Code: 14615-3105.",
+    "type": "source"
+  }
+}

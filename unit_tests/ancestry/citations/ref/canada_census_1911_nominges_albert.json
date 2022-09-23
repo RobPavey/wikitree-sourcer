@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1911 census Nominiges (age 29), Labourer, was the married head of household in Newport Point, Quebec.<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of Canada\"<br/>Year: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>{{Ancestry Record|8947|442578}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)<br/>\nNominiges Albert (29), married, Labourer, head of household in Newport Point, Quebec. Born in Quebec.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1911 census Nominiges (age 29), Labourer, was the married head of household in Newport Point, Quebec.<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)<br/>\nNominiges Albert (29), married, Labourer, head of household in Newport Point, Quebec. Born in Quebec.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of Canada\"<br/>Year: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>{{Ancestry Record|8947|442578}} (accessed 6 May 2021)<br/>Nominiges Albert (29), married, Labourer, head of household in Newport Point, Quebec. Born in Quebec.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)<br/>\nName: Nominiges Albert; Gender: Male; Marital status: Married; Race or Tribe: French; Nationality: Canadian; Age: 29; Birth Date: Jun 1881; Birth Place: Quebec; Census Year: 1911; Relation to Head of House: Head; Dwelling No.: 74; Province: Quebec; District: Gaspé; District Number: 159; Sub-District: 35 - Newport; Sub-District Number: 35; Place of Habitation: Newport Point; Religion: Roman Catholic; Occupation: Labourer; Employer: No; Employee: No; Works at: Lumber Mill; Weeks Employed: 40; Hours/Week: 60; Earnings: 360; Can Read: no; Can Write: no; Language: F; Family Number: 75; <br/>Household Members:<br/>Nominiges Albert 29<br/>Jennie Albert 24<br/>Domingue Albert 5<br/>Joseph Albert 3<br/>Pauline Albert 2<br/>Christine Albert 55.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1911 census Nominiges (age 29), Labourer, was the married head of household in Newport Point, Quebec.<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)<br/>\nName: Nominiges Albert; Gender: Male; Marital status: Married; Race or Tribe: French; Nationality: Canadian; Age: 29; Birth Date: Jun 1881; Birth Place: Quebec; Census Year: 1911; Relation to Head of House: Head; Dwelling No.: 74; Province: Quebec; District: Gaspé; District Number: 159; Sub-District: 35 - Newport; Sub-District Number: 35; Place of Habitation: Newport Point; Religion: Roman Catholic; Occupation: Labourer; Employer: No; Employee: No; Works at: Lumber Mill; Weeks Employed: 40; Hours/Week: 60; Earnings: 360; Can Read: no; Can Write: no; Language: F; Family Number: 75; <br/>Household Members:<br/>Nominiges Albert 29<br/>Jennie Albert 24<br/>Domingue Albert 5<br/>Joseph Albert 3<br/>Pauline Albert 2<br/>Christine Albert 55.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of Canada\"<br/>Year: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>{{Ancestry Record|8947|442578}} (accessed 6 May 2021)<br/>Name: Nominiges Albert; Gender: Male; Marital status: Married; Race or Tribe: French; Nationality: Canadian; Age: 29; Birth Date: Jun 1881; Birth Place: Quebec; Census Year: 1911; Relation to Head of House: Head; Dwelling No.: 74; Province: Quebec; District: Gaspé; District Number: 159; Sub-District: 35 - Newport; Sub-District Number: 35; Place of Habitation: Newport Point; Religion: Roman Catholic; Occupation: Labourer; Employer: No; Employee: No; Works at: Lumber Mill; Weeks Employed: 40; Hours/Week: 60; Earnings: 360; Can Read: no; Can Write: no; Language: F; Family Number: 75; <br/>Household Members:<br/>Nominiges Albert 29<br/>Jennie Albert 24<br/>Domingue Albert 5<br/>Joseph Albert 3<br/>Pauline Albert 2<br/>Christine Albert 55.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Nominiges Albert\n|-\n| Gender || Male\n|-\n| Marital status || Married\n|-\n| Race or Tribe || French\n|-\n| Nationality || Canadian\n|-\n| Age || 29\n|-\n| Birth Date || Jun 1881\n|-\n| Birth Place || Quebec\n|-\n| Census Year || 1911\n|-\n| Relation to Head of House || Head\n|-\n| Dwelling No. || 74\n|-\n| Province || Quebec\n|-\n| District || Gaspé\n|-\n| District Number || 159\n|-\n| Sub-District || 35 - Newport\n|-\n| Sub-District Number || 35\n|-\n| Place of Habitation || Newport Point\n|-\n| Religion || Roman Catholic\n|-\n| Occupation || Labourer\n|-\n| Employer || No\n|-\n| Employee || No\n|-\n| Works at || Lumber Mill\n|-\n| Weeks Employed || 40\n|-\n| Hours/Week || 60\n|-\n| Earnings || 360\n|-\n| Can Read || no\n|-\n| Can Write || no\n|-\n| Language || F\n|-\n| Family Number || 75\n|-\n| Household Members || Nominiges Albert 29<br/>Jennie Albert 24<br/>Domingue Albert 5<br/>Joseph Albert 3<br/>Pauline Albert 2<br/>Christine Albert 55\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1911 census Nominiges (age 29), Labourer, was the married head of household in Newport Point, Quebec.<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Nominiges Albert\n|-\n| Gender || Male\n|-\n| Marital status || Married\n|-\n| Race or Tribe || French\n|-\n| Nationality || Canadian\n|-\n| Age || 29\n|-\n| Birth Date || Jun 1881\n|-\n| Birth Place || Quebec\n|-\n| Census Year || 1911\n|-\n| Relation to Head of House || Head\n|-\n| Dwelling No. || 74\n|-\n| Province || Quebec\n|-\n| District || Gaspé\n|-\n| District Number || 159\n|-\n| Sub-District || 35 - Newport\n|-\n| Sub-District Number || 35\n|-\n| Place of Habitation || Newport Point\n|-\n| Religion || Roman Catholic\n|-\n| Occupation || Labourer\n|-\n| Employer || No\n|-\n| Employee || No\n|-\n| Works at || Lumber Mill\n|-\n| Weeks Employed || 40\n|-\n| Hours/Week || 60\n|-\n| Earnings || 360\n|-\n| Can Read || no\n|-\n| Can Write || no\n|-\n| Language || F\n|-\n| Family Number || 75\n|-\n| Household Members || Nominiges Albert 29<br/>Jennie Albert 24<br/>Domingue Albert 5<br/>Joseph Albert 3<br/>Pauline Albert 2<br/>Christine Albert 55\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of Canada\"<br/>Year: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>{{Ancestry Record|8947|442578}} (accessed 6 May 2021)<br/>Name: Nominiges Albert; Gender: Male; Marital status: Married; Race or Tribe: French; Nationality: Canadian; Age: 29; Birth Date: Jun 1881; Birth Place: Quebec; Census Year: 1911; Relation to Head of House: Head; Dwelling No.: 74; Province: Quebec; District: Gaspé; District Number: 159; Sub-District: 35 - Newport; Sub-District Number: 35; Place of Habitation: Newport Point; Religion: Roman Catholic; Occupation: Labourer; Employer: No; Employee: No; Works at: Lumber Mill; Weeks Employed: 40; Hours/Week: 60; Earnings: 360; Can Read: no; Can Write: no; Language: F; Family Number: 75; <br/>Household Members:<br/>Nominiges Albert 29<br/>Jennie Albert 24<br/>Domingue Albert 5<br/>Joseph Albert 3<br/>Pauline Albert 2<br/>Christine Albert 55.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1911 Census of Canada,\" database, ({{Ancestry Record|8947|442578}} : accessed 6 May 2021), Nominiges Albert (29), married, Labourer, head of household in Newport Point, Quebec. Born in Quebec; citing Year 1911, Census Place 35 - Newport, Gaspé, Quebec, Page 9, Family No 75.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1911 census Nominiges (age 29), Labourer, was the married head of household in Newport Point, Quebec.<ref>\"1911 Census of Canada,\" database, ({{Ancestry Record|8947|442578}} : accessed 6 May 2021), Nominiges Albert (29), married, Labourer, head of household in Newport Point, Quebec. Born in Quebec; citing Year 1911, Census Place 35 - Newport, Gaspé, Quebec, Page 9, Family No 75.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1911 Census of Canada,\" database, ({{Ancestry Record|8947|442578}} : accessed 6 May 2021), Nominiges Albert (29), married, Labourer, head of household in Newport Point, Quebec. Born in Quebec; citing Year 1911, Census Place 35 - Newport, Gaspé, Quebec, Page 9, Family No 75.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1911 Census'':\n\"1911 Census of Canada\", database, \nYear 1911, Census Place 35 - Newport, Gaspé, Quebec, Page 9, Family No 75, \n({{Ancestry Record|8947|442578}} : accessed 6 May 2021), \nName: Nominiges Albert; Gender: Male; Marital status: Married; Race or Tribe: French; Nationality: Canadian; Age: 29; Birth Date: Jun 1881; Birth Place: Quebec; Census Year: 1911; Relation to Head of House: Head; Dwelling No.: 74; Province: Quebec; District: Gaspé; District Number: 159; Sub-District: 35 - Newport; Sub-District Number: 35; Place of Habitation: Newport Point; Religion: Roman Catholic; Occupation: Labourer; Employer: No; Employee: No; Works at: Lumber Mill; Weeks Employed: 40; Hours/Week: 60; Earnings: 360; Can Read: no; Can Write: no; Language: F; Family Number: 75; Household Members: Nominiges Albert 29, Jennie Albert 24, Domingue Albert 5, Joseph Albert 3, Pauline Albert 2, Christine Albert 55.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1911 census Nominiges (age 29), Labourer, was the married head of household in Newport Point, Quebec.<ref>\n''1911 Census'':\n\"1911 Census of Canada\", database, \nYear 1911, Census Place 35 - Newport, Gaspé, Quebec, Page 9, Family No 75, \n({{Ancestry Record|8947|442578}} : accessed 6 May 2021), \nName: Nominiges Albert; Gender: Male; Marital status: Married; Race or Tribe: French; Nationality: Canadian; Age: 29; Birth Date: Jun 1881; Birth Place: Quebec; Census Year: 1911; Relation to Head of House: Head; Dwelling No.: 74; Province: Quebec; District: Gaspé; District Number: 159; Sub-District: 35 - Newport; Sub-District Number: 35; Place of Habitation: Newport Point; Religion: Roman Catholic; Occupation: Labourer; Employer: No; Employee: No; Works at: Lumber Mill; Weeks Employed: 40; Hours/Week: 60; Earnings: 360; Can Read: no; Can Write: no; Language: F; Family Number: 75; Household Members: Nominiges Albert 29, Jennie Albert 24, Domingue Albert 5, Joseph Albert 3, Pauline Albert 2, Christine Albert 55.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1911 Census'': \"1911 Census of Canada\", database, Year 1911, Census Place 35 - Newport, Gaspé, Quebec, Page 9, Family No 75, ({{Ancestry Record|8947|442578}} : accessed 6 May 2021), Name: Nominiges Albert; Gender: Male; Marital status: Married; Race or Tribe: French; Nationality: Canadian; Age: 29; Birth Date: Jun 1881; Birth Place: Quebec; Census Year: 1911; Relation to Head of House: Head; Dwelling No.: 74; Province: Quebec; District: Gaspé; District Number: 159; Sub-District: 35 - Newport; Sub-District Number: 35; Place of Habitation: Newport Point; Religion: Roman Catholic; Occupation: Labourer; Employer: No; Employee: No; Works at: Lumber Mill; Weeks Employed: 40; Hours/Week: 60; Earnings: 360; Can Read: no; Can Write: no; Language: F; Family Number: 75; Household Members: Nominiges Albert 29, Jennie Albert 24, Domingue Albert 5, Joseph Albert 3, Pauline Albert 2, Christine Albert 55.",
+    "type": "source"
+  }
+}

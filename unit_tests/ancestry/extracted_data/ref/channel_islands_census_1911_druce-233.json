@@ -1,0 +1,89 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/188915:2355?tid=&pid=&queryId=2030d8a7bbdcfb9eecb95cad68efd69a&_phsrc=ywU8110&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "2355",
+  "recordId": "188915",
+  "ancestryTemplate": "{{Ancestry Record|2355|188915}}",
+  "domain": "com",
+  "titleName": "Cecil Henry Druce",
+  "titleCollection": "1911 Channel Islands Census",
+  "recordData": {
+    "Name": "Cecil Henry Druce",
+    "Age in 1911": "14",
+    "Estimated Birth Year": "abt 1897",
+    "Relation to Head": "Brother-in-law",
+    "Gender": "Male",
+    "Civil parish": "St Peter Port",
+    "County/Island": "Guernsey",
+    "Country": "Channel Islands",
+    "Street Address": "Sutherland House Victoria Terrace St Peter Port",
+    "Registration district": "Guernsey",
+    "Registration District Number": "636",
+    "Sub-registration district": "St Peter Port",
+    "ED, institution, or vessel": "3/2",
+    "Household schedule number": "185",
+    "Piece": "34787",
+    "Household Members<br/>Age<br/>Relationship": "Walter John Salmon 30 Head<br/>Roseline Augustus Salmon 25 Wife<br/>Lillian May Salmon 5 Daughter<br/>Walter William John Salmon 3 Son<br/>April Henry Salmon 2 Son<br/>Cecil Henry Druce 14 Brother-in-law"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "Walter John Salmon",
+        "dbId": "2355",
+        "recordId": "188910",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2355&h=188910&indiv=try&viewrecord=1&r=an",
+        "Age": "30",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Roseline Augustus Salmon",
+        "dbId": "2355",
+        "recordId": "188911",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2355&h=188911&indiv=try&viewrecord=1&r=an",
+        "Age": "25",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "Lillian May Salmon",
+        "dbId": "2355",
+        "recordId": "188912",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2355&h=188912&indiv=try&viewrecord=1&r=an",
+        "Age": "5",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Walter William John Salmon",
+        "dbId": "2355",
+        "recordId": "188913",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2355&h=188913&indiv=try&viewrecord=1&r=an",
+        "Age": "3",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "April Henry Salmon",
+        "dbId": "2355",
+        "recordId": "188914",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2355&h=188914&indiv=try&viewrecord=1&r=an",
+        "Age": "2",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Cecil Henry Druce",
+        "Age": "14",
+        "Relationship": "Brother-in-law"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2355/images/rg14_34787_0379_11?pid=188915&usePUB=true&_phsrc=ywU8110&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "2355",
+  "imageRecordId": "rg14_34787_0379_11",
+  "sourceCitation": "Class: RG14; Piece: 34787; Schedule Number: 185",
+  "sourceInformation": "Ancestry.com. 1911 Channel Islands Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: Census Returns of England and Wales, 1911. Kew, Surrey, England: The National Archives of the UK (TNA), 1911. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1911. Kew, Surrey, England: The National Archives of the UK (TNA), 1911.",
+  "sourceDescription": "This database includes householders’ forms from the 1911 Census of the Channel Islands. Information found on the householders forms include: name, relationship to head of family, age at last birthday, sex, marriage details (including number of children), occupation, birthplace, nationality, and postal address. Learn more..."
+}

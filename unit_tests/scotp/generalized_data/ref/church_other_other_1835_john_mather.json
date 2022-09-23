@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "OtherChurchEvent",
+  "name": {
+    "lastName": "Mather",
+    "forenames": "John"
+  },
+  "eventDate": {
+    "dateString": "June 1835"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Scotland",
+    "streetAddress": "Dunbar United Presbyterian"
+  },
+  "hasValidData": true
+}

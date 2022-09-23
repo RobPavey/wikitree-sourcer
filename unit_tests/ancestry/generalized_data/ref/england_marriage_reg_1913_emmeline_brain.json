@@ -1,0 +1,34 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Emmeline M Brain"
+  },
+  "eventPlace": {
+    "county": "Staffordshire"
+  },
+  "eventDate": {
+    "yearString": "1913",
+    "quarter": 2
+  },
+  "registrationDistrict": "Tamworth",
+  "spouses": [
+    {
+      "name": {},
+      "marriageDate": {
+        "yearString": "1913",
+        "quarter": 2
+      },
+      "marriagePlace": {
+        "county": "Staffordshire"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "8913",
+    "volume": "6b",
+    "page": "725"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "url": "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile",
+  "subDomain": "tree",
+  "domain": "findmypast.co.uk",
+  "urlPath": "#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile",
+  "urlTreeId": "918c5b61-df62-4dec-b840-31cad3d86bf9",
+  "urlProfileId": "1181964933",
+  "givenName": "John",
+  "surname": "Kimberlin",
+  "birthYear": "1800",
+  "birthPlace": "Atherstone, Warwickshire, England",
+  "deathYear": "1871",
+  "deathPlace": "Mancetter, Warwickshire, England",
+  "fatherName": "Thomas Kimberlin",
+  "motherName": "Sarah Mousley",
+  "birthDate": "22 Sep 1800",
+  "spouses": [
+    {
+      "name": "Elizabeth Smith",
+      "marriageDate": "27 Aug 1822",
+      "marriagePlace": "Coventry, St John the Baptist, Warwickshire, England"
+    },
+    {
+      "name": "Ann Hubbard",
+      "marriageDate": "6 Nov 1843",
+      "marriagePlace": "Grendon, Warwickshire, England"
+    }
+  ],
+  "deathDate": "16 Jan 1871"
+}

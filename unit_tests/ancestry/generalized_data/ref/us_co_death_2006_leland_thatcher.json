@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Leland L Thatcher"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "2 Jan 2006"
+  },
+  "deathDate": {
+    "dateString": "2 Jan 2006"
+  },
+  "eventPlace": {
+    "placeString": "Littleton, Arapahoe, Colorado, USA"
+  },
+  "lastNameAtDeath": "Thatcher",
+  "ageAtDeath": "82",
+  "birthDate": {
+    "dateString": "29 Mar 1923"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Leland Lincoln Thatcher"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Iva Thatcher"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "61798"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,21 @@
+{
+  "url": "https://www.ancestry.co.uk/discoveryui-content/view/1712038:70845?ssrc=pt&tid=172368945&pid=392239251049",
+  "pageType": "record",
+  "dbId": "70845",
+  "recordId": "1712038",
+  "ancestryTemplate": "{{Ancestry Record|70845|1712038}}",
+  "domain": "co.uk",
+  "titleName": "Amelia Matilda McCarthy",
+  "titleCollection": "Web: UK, Burial and Cremation Index, 1576-2014",
+  "recordData": {
+    "Name": "Amelia Matilda McCarthy",
+    "Death Date": "abt 1923",
+    "Burial or Cremation Date": "30 Oct 1923",
+    "Burial or Cremation Place": "Newham, London, England",
+    "URL": "https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783"
+  },
+  "sourceCitation": "Deceased Online; United Kingdom; Deceased Online Burial Indexes",
+  "sourceInformation": "Ancestry.com. Web: UK, Burial and Cremation Index, 1576-2014 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2016. Original data: The central database for UK burials and cremations. Deceased Online. https://www.deceasedonline.com/: accessed 18 July 2016.",
+  "originalData": "The central database for UK burials and cremations. Deceased Online. https://www.deceasedonline.com/: accessed 18 July 2016.",
+  "sourceDescription": "All data in this third-party database was obtained from the source’s website. Ancestry.com does not support or make corrections or changes to the original database. To learn more about these records, please refer to the source’s website. Learn more..."
+}

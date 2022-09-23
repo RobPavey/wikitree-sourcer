@@ -1,0 +1,35 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=mackenzie&surname_so=exact&forename=john%20mc%20leod&forename_so=starts&second_person_forename_so=exact&record_type=census&year%5B0%5D=1881",
+  "success": true,
+  "numResultsOnPage": 1,
+  "recordData": {
+    "Surname": "MACKENZIE",
+    "Forename": "JOHN MC LEOD",
+    "Year": "1881",
+    "Gender": "M",
+    "Age at Census": "2",
+    "Ref": "168/1 59/ 19",
+    "RD Name": "St Nicholas",
+    "County/ City": "Aberdeen"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_census/16629611?image=19&return_row=0",
+  "pageHeader": "Census returns - Census",
+  "searchCriteria": {
+    "Surname": "Mackenzie",
+    "Surname Option": "Exact",
+    "Forename": "John Mc Leod",
+    "Forename Option": "Starts",
+    "Year": "1881"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "census",
+    "surname": "mackenzie",
+    "surname_so": "exact",
+    "forename": "john mc leod",
+    "forename_so": "starts",
+    "second_person_forename_so": "exact",
+    "record_type": "census",
+    "year[0]": "1881"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Isabella",
+    "lastName": "Pavey"
+  },
+  "lastNameAtBirth": "Pavey",
+  "lastNameAtDeath": "Magenis",
+  "mothersMaidenName": "Ellacott",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "Jul 1840",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "24 Sep 1914",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "East Stonehouse, Devon, England, United Kingdom"
+  },
+  "deathPlace": {
+    "placeString": "Auckland, Auckland, New Zealand"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Henry Pavey",
+        "lastName": "Pavey",
+        "forenames": "William Henry"
+      },
+      "lastNameAtBirth": "Pavey",
+      "lastNameAtDeath": "Pavey"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Elizabeth",
+        "lastName": "Ellacott",
+        "name": "Elizabeth Ellacott"
+      },
+      "lastNameAtBirth": "Ellacott",
+      "lastNameAtDeath": "Pavey"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Frederick Richardson",
+        "lastName": "Richardson",
+        "forenames": "Frederick"
+      },
+      "lastNameAtBirth": "Richardson",
+      "lastNameAtDeath": "Richardson",
+      "marriageDate": {
+        "dateString": "31 Jan 1864"
+      },
+      "marriagePlace": {
+        "placeString": "Parish Chapel, St Pancras, England"
+      }
+    },
+    {
+      "name": {
+        "name": "John Smith Magenis",
+        "lastName": "Magenis",
+        "forenames": "John Smith"
+      },
+      "lastNameAtBirth": "Magenis",
+      "lastNameAtDeath": "Magenis",
+      "marriageDate": {
+        "dateString": "9 Sep 1872"
+      },
+      "marriagePlace": {
+        "placeString": "St. Mary Battersea, Surrey, England"
+      }
+    }
+  ],
+  "hasValidData": true
+}

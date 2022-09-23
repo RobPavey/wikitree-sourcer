@@ -1,0 +1,27 @@
+{
+  "sourceType": "record",
+  "recordType": "Naturalization",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Robert Best"
+  },
+  "eventDate": {
+    "dateString": "14 Sep 1918"
+  },
+  "eventPlace": {
+    "placeString": "Waterbury, Connecticut, USA"
+  },
+  "ageAtEvent": "44",
+  "birthDate": {
+    "dateString": "30 Oct 1873"
+  },
+  "birthPlace": {
+    "placeString": "Cape Broyle New Fonndland"
+  },
+  "arrivalDate": "22 Aug 1907",
+  "arrivalPlace": "New York New York",
+  "collectionData": {
+    "id": "61195"
+  },
+  "hasValidData": true
+}

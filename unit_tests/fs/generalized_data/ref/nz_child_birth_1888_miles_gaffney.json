@@ -1,0 +1,22 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": "Catherine Lucy Gaffney",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Miles Gaffney"
+  },
+  "eventDate": {
+    "dateString": "1888",
+    "yearString": "1888"
+  },
+  "eventPlace": {
+    "placeString": "New Zealand"
+  },
+  "collectionData": {
+    "id": "2697870"
+  },
+  "hasValidData": true
+}

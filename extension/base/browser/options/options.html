@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="options.css">
+    <title>WikiTree Sourcer user options</title>
+  </head>
+  <body>
+
+    <h2>WikiTree Sourcer user options</h2>
+    <div class="tabbedArea">
+      <div class="tabs">
+        <button class="tab" id="search-tab">Search</button>
+        <button class="tab" id="citation-tab">Citation</button>
+        <button class="tab" id="narrative-tab">Narrative</button>
+        <button class="tab" id="table-tab">Household Table</button>
+        <button class="tab" id="addPerson-tab">Add Person</button>
+      </div>
+      <div class="panels">
+        <div class="panel" id="search-panel"></div>
+        <div class="panel" id="citation-panel"></div>
+        <div class="panel" id="narrative-panel"></div>
+        <div class="panel" id="table-panel"></div>
+        <div class="panel" id="addPerson-panel"></div>
+      </div>
+    </div>
+
+    <br/>
+    <div align="center">
+      <div id="status"></div>
+      <button id="save" class="saveButton">Save changes (all tabs)</button>
+    </div>
+
+    <script type="module" src="options.mjs"></script>
+  </body>
+</html>

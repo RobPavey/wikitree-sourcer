@@ -1,0 +1,22 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61597&h=81131",
+  "pageType": "record",
+  "dbId": "61597",
+  "recordId": "81131",
+  "ancestryTemplate": "{{Ancestry Record|61597|81131}}",
+  "domain": "com",
+  "titleName": "D Holle",
+  "titleCollection": "U.S., Railroad Retirement Pension Index, 1934-1987",
+  "recordData": {
+    "Name": "D Holle [Dallas C Holler]",
+    "Birth Date": "Aug 1879",
+    "Death Date": "Jul 1973",
+    "Claim ID": "A267087",
+    "SSN": "702121645",
+    "Industry": "Railroad"
+  },
+  "sourceCitation": "The National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184",
+  "sourceInformation": "Ancestry.com. U.S., Railroad Retirement Pension Index, 1934-1987 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2017. Original data: Records of the Railroad Retirement Board, 1934-1987. Record Group 184. The National Archives at Atlanta, Morrow, Georgia.",
+  "originalData": "Records of the Railroad Retirement Board, 1934-1987. Record Group 184. The National Archives at Atlanta, Morrow, Georgia.",
+  "sourceDescription": "Have a relative that worked for a railroad? Find out more about their life in this collection! Learn more..."
+}

@@ -1,0 +1,19 @@
+{
+  "sourceType": "record",
+  "recordType": "ElectoralRegister",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "George Dougald Stemm"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1936"
+  },
+  "eventPlace": {
+    "placeString": "Chinchilla, Maranoa, Queensland, Australia"
+  },
+  "collectionData": {
+    "id": "1207"
+  },
+  "hasValidData": true
+}

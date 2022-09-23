@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Pension''':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>\nThe National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>\n{{Ancestry Record|61597|81131}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "D was in a pension record in July 1973.<ref>\n'''Pension''':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>\nThe National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>\n{{Ancestry Record|61597|81131}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Pension''': \"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>The National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>{{Ancestry Record|61597|81131}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Pension''':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>\nThe National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>\n{{Ancestry Record|61597|81131}} (accessed 6 May 2021)<br/>\nName: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "D was in a pension record in July 1973.<ref>\n'''Pension''':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>\nThe National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>\n{{Ancestry Record|61597|81131}} (accessed 6 May 2021)<br/>\nName: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Pension''': \"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>The National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>{{Ancestry Record|61597|81131}} (accessed 6 May 2021)<br/>Name: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Pension''':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>\nThe National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>\n{{Ancestry Record|61597|81131}} (accessed 6 May 2021)<br/>\nName: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "D was in a pension record in July 1973.<ref>\n'''Pension''':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>\nThe National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>\n{{Ancestry Record|61597|81131}} (accessed 6 May 2021)<br/>\nName: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Pension''': \"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>The National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>{{Ancestry Record|61597|81131}} (accessed 6 May 2021)<br/>Name: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Pension''':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>\nThe National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>\n{{Ancestry Record|61597|81131}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || D Holle [Dallas C Holler]\n|-\n| Birth Date || Aug 1879\n|-\n| Death Date || Jul 1973\n|-\n| Claim ID || A267087\n|-\n| Industry || Railroad\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "D was in a pension record in July 1973.<ref>\n'''Pension''':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>\nThe National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>\n{{Ancestry Record|61597|81131}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || D Holle [Dallas C Holler]\n|-\n| Birth Date || Aug 1879\n|-\n| Death Date || Jul 1973\n|-\n| Claim ID || A267087\n|-\n| Industry || Railroad\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Pension''': \"U.S., Railroad Retirement Pension Index, 1934-1987\"<br/>The National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184<br/>{{Ancestry Record|61597|81131}} (accessed 6 May 2021)<br/>Name: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Railroad Retirement Pension Index, 1934-1987,\" database, ({{Ancestry Record|61597|81131}} : accessed 6 May 2021), Name D Holle [Dallas C Holler], Birth Date Aug 1879, Death Date Jul 1973, Claim ID A267087, Industry Railroad; citing The National Archives at Atlanta, Morrow, Georgia, Records of the Railroad Retirement Board, 1934 - 1987, Record Group Number 184.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "D was in a pension record in July 1973.<ref>\"U.S., Railroad Retirement Pension Index, 1934-1987,\" database, ({{Ancestry Record|61597|81131}} : accessed 6 May 2021), Name D Holle [Dallas C Holler], Birth Date Aug 1879, Death Date Jul 1973, Claim ID A267087, Industry Railroad; citing The National Archives at Atlanta, Morrow, Georgia, Records of the Railroad Retirement Board, 1934 - 1987, Record Group Number 184.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Railroad Retirement Pension Index, 1934-1987,\" database, ({{Ancestry Record|61597|81131}} : accessed 6 May 2021), Name D Holle [Dallas C Holler], Birth Date Aug 1879, Death Date Jul 1973, Claim ID A267087, Industry Railroad; citing The National Archives at Atlanta, Morrow, Georgia, Records of the Railroad Retirement Board, 1934 - 1987, Record Group Number 184.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Pension'':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\", database, \nThe National Archives at Atlanta, Morrow, Georgia, Records of the Railroad Retirement Board, 1934 - 1987, Record Group Number 184, \n({{Ancestry Record|61597|81131}} : accessed 6 May 2021), \nName: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "D was in a pension record in July 1973.<ref>\n''Pension'':\n\"U.S., Railroad Retirement Pension Index, 1934-1987\", database, \nThe National Archives at Atlanta, Morrow, Georgia, Records of the Railroad Retirement Board, 1934 - 1987, Record Group Number 184, \n({{Ancestry Record|61597|81131}} : accessed 6 May 2021), \nName: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Pension'': \"U.S., Railroad Retirement Pension Index, 1934-1987\", database, The National Archives at Atlanta, Morrow, Georgia, Records of the Railroad Retirement Board, 1934 - 1987, Record Group Number 184, ({{Ancestry Record|61597|81131}} : accessed 6 May 2021), Name: D Holle [Dallas C Holler]; Birth Date: Aug 1879; Death Date: Jul 1973; Claim ID: A267087; Industry: Railroad.",
+    "type": "source"
+  }
+}

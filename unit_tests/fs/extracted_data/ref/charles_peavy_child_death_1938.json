@@ -1,0 +1,37 @@
+{
+  "recordData": {
+    "Name": "Charles W. Peavy",
+    "Birth Place": "Ga.",
+    "Cemetery Name": "Thonotosassa"
+  },
+  "eventDateOriginal": "23 Apr 1938",
+  "eventDate": "23 Apr 1938",
+  "eventYear": "1938",
+  "eventPlaceOriginal": "Hillsborough, Florida, United States",
+  "eventPlace": "Hillsborough, Florida, United States",
+  "fullName": "Charles W. Peavy",
+  "givenName": "Charles W.",
+  "surname": "Peavy",
+  "gender": "male",
+  "birthPlace": "Ga.",
+  "relatedPersonFactType": "Death",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Charles Homer Peavy",
+  "relatedPersonGivenName": "Charles Homer",
+  "relatedPersonSurname": "Peavy",
+  "relatedPersonGender": "male",
+  "fsCollectionId": "1595003",
+  "referenceData": {
+    "digitalFilmNumber": "4031584",
+    "filmNumber": "2115035",
+    "recordNumber": "289"
+  },
+  "fsImageNumber": "2459",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:S3HY-6LC9-V9R",
+  "collectionTitle": "Florida Deaths, 1877-1939",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MZDD-268",
+  "citation": "\"Florida Deaths, 1877-1939\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:FPWZ-8BN : 23 February 2021), Charles W. Peavy in entry for Charles Homer Peavy, 1938.",
+  "sourceTitleForPerson": "Charles W. Peavy in entry for Charles Homer Peavy, \"Florida Deaths, 1877-1939\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:FPWZ-8BN",
+  "pageType": "record"
+}

@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "Agnes"
+  },
+  "eventDate": {
+    "dateString": "18 April 1910"
+  },
+  "courtName": "Glasgow Sheriff Court",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Glasgow",
+    "placeString": "Glasgow, Scotland"
+  },
+  "testateOrIntestate": "testate",
+  "recordSubtype": "Inventory",
+  "deathDate": {
+    "dateString": "27 December 1909"
+  },
+  "hasValidData": true
+}

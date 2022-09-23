@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": "Ann Cameron",
+  "primaryPersonGender": "female",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Donald Cameron"
+  },
+  "eventDate": {
+    "dateString": "15 Jul 1874",
+    "yearString": "1874"
+  },
+  "eventPlace": {
+    "placeString": "Osprey, Grey, Ontario, Canada"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Neil Mclean",
+        "lastName": "Mclean",
+        "forenames": "Neil"
+      },
+      "marriageDate": {
+        "dateString": "15 Jul 1874",
+        "yearString": "1874"
+      },
+      "marriagePlace": {
+        "placeString": "Osprey, Grey, Ontario, Canada"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1784216"
+  },
+  "hasValidData": true
+}

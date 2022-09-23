@@ -1,0 +1,28 @@
+{
+  "sourceType": "record",
+  "recordType": "Immigration",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "John Laird Jenkins"
+  },
+  "birthDate": {
+    "dateString": "17 January 1844",
+    "yearString": "1844"
+  },
+  "deathDate": {
+    "dateString": "22 May 1905",
+    "yearString": "1905"
+  },
+  "eventDate": {
+    "dateString": "4 Oct 1863",
+    "yearString": "1863"
+  },
+  "eventPlace": {
+    "placeString": "Deseret, United States"
+  },
+  "collectionData": {
+    "id": "2517340"
+  },
+  "hasValidData": true
+}

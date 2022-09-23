@@ -1,0 +1,2356 @@
+{
+  "id" : "r_22106548295",
+  "lang" : "en",
+  "attribution" : {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+      "resourceId" : "cis.user.MMMS-MGSW"
+    },
+    "modified" : 1384043005434,
+    "created" : 1384043005434
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MCG-9967?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MCG-9967?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MCG-9967"
+    }
+  },
+  "description" : "#sd_p_13754543516",
+  "persons" : [ {
+    "id" : "p_13754543516",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "def49df8-9fba-4d8a-94f8-e1d5c6e39ee2",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "23f3635d-77c8-4412-b54a-c413e55a81b1",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "23f3635d-77c8-4412-b54a-c413e55a81b1",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Gender?version=1.0.2"
+            },
+            "modified" : 1661313260177,
+            "created" : 1661313260177
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/VTMY-N3T?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MCG-9967?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1431228002" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VTMY-N3T" ]
+    },
+    "names" : [ {
+      "id" : "2d0c7cf4-7221-4a20-818e-61eb7643f9d5",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Arlesta M Elliott",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Elliott",
+          "fields" : [ {
+            "id" : "f2d9b027-2362-4c7f-8d5e-1364bdaffe57",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "8e7b6cda-be8a-4ddc-90e1-ee44b8fe9f36",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Elliott"
+            }, {
+              "id" : "8e7b6cda-be8a-4ddc-90e1-ee44b8fe9f36",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Elliott",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Arlesta M",
+          "fields" : [ {
+            "id" : "cd0cec3c-3479-4bda-81fd-fb009be93c6f",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ {
+              "description" : "#sd_da1",
+              "descriptionId" : "sd_da1",
+              "qualifiers" : [ {
+                "value" : "0.175355,0.643750,0.222092,0.657659",
+                "name" : "http://gedcomx.org/RectangleRegion"
+              } ]
+            } ],
+            "values" : [ {
+              "id" : "f8a6fbeb-37e9-420d-8317-6773c8cfd0dc",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Arlesta M"
+            }, {
+              "id" : "f8a6fbeb-37e9-420d-8317-6773c8cfd0dc",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Arlesta M",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "76cd51fc-61f6-48c4-b972-c77d97b122a1",
+          "type" : "http://gedcomx.org/Name",
+          "sources" : [ ],
+          "values" : [ {
+            "id" : "2920db27-1209-4501-8751-e84f10b9074e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Arlesta M Elliott"
+          }, {
+            "id" : "2920db27-1209-4501-8751-e84f10b9074e",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Arlesta M Elliott",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "id" : "2d0c7cf4-7221-4a20-818e-61eb7643f9d5",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Arleita M Elliott",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Elliott",
+          "fields" : [ {
+            "id" : "f2d9b027-2362-4c7f-8d5e-1364bdaffe57",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "8e7b6cda-be8a-4ddc-90e1-ee44b8fe9f36",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Elliott"
+            }, {
+              "id" : "8e7b6cda-be8a-4ddc-90e1-ee44b8fe9f36",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                },
+                "modified" : 1661313260177,
+                "created" : 1661313260177
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Elliott",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Arleita M",
+          "fields" : [ {
+            "id" : "cd0cec3c-3479-4bda-81fd-fb009be93c6f",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ {
+              "description" : "#sd_da1",
+              "descriptionId" : "sd_da1",
+              "qualifiers" : [ {
+                "value" : "0.175355,0.643750,0.222092,0.657659",
+                "name" : "http://gedcomx.org/RectangleRegion"
+              } ]
+            } ],
+            "values" : [ {
+              "id" : "fca2c971-53d2-43fd-b042-3227b5897566",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMW-N8QH",
+                  "resourceId" : "cis.user.MMMW-N8QH"
+                },
+                "modified" : 1661313260177,
+                "created" : 1661313260177,
+                "changeMessageResource" : "http://familysearch.org/types/reasons/127538"
+              },
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Arleita M"
+            }, {
+              "id" : "fca2c971-53d2-43fd-b042-3227b5897566",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                },
+                "modified" : 1661313260177,
+                "created" : 1661313260177
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Arleita M",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "4b16a908-3fc6-4a49-95f5-73215f9760e3",
+          "type" : "http://gedcomx.org/Name",
+          "sources" : [ ],
+          "values" : [ {
+            "id" : "69117e7f-fd53-4e98-b7ff-7f9541ffb97c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              },
+              "modified" : 1661313260177,
+              "created" : 1661313260177
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Arleita M Elliott"
+          }, {
+            "id" : "69117e7f-fd53-4e98-b7ff-7f9541ffb97c",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              },
+              "modified" : 1661313260177,
+              "created" : 1661313260177
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Arleita M Elliott",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "f52a5dc5-4d23-4637-81c7-c56973d43d89",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "a81280c8-bdf9-40ec-bec7-6bcf5e78b924",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        }, {
+          "id" : "a81280c8-bdf9-40ec-bec7-6bcf5e78b924",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_RACE_OR_COLOR",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Married",
+      "fields" : [ {
+        "id" : "dd3c3a2f-5078-4104-a9bd-30f39a4bc876",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "4269b36c-f12d-4c1e-83a5-a935249b0159",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "4269b36c-f12d-4c1e-83a5-a935249b0159",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Married"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Ethnicity",
+      "value" : "American",
+      "fields" : [ {
+        "id" : "bd59337b-770b-455b-9d6d-f1bd8dc7d37e",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://gedcomx.org/Ethnicity",
+        "values" : [ {
+          "id" : "63b6bcac-2c9a-4a7a-8081-993673741558",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_ETHNICITY_ORIG",
+          "text" : "American"
+        } ]
+      } ]
+    }, {
+      "id" : "1daa7f28-1ad9-4436-badc-195ca512c5fe",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "ec733462-5cb8-4780-b16b-48607aadc382",
+        "original" : "1940",
+        "formal" : "+1940",
+        "fields" : [ {
+          "id" : "03576c7d-2404-49a5-a519-96f967da82aa",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "8826af52-8794-478e-b55c-36ae71a42e9e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "8826af52-8794-478e-b55c-36ae71a42e9e",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1940",
+            "resource" : "+1940",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "7fbabec0-021c-4bda-ac37-4a371278cbd4",
+        "original" : "Whitefield, Coos, New Hampshire, United States",
+        "description" : "#place_4577126",
+        "fields" : [ {
+          "id" : "6d447a4a-b2ad-449e-88f6-66a672c363bd",
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "b5b150ab-6c4d-41ed-a673-1309298346e8",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1661313260177,
+              "created" : 1661313260177
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Whitefield Town, Whitefield Town, Whitefield, 4-73, Coos, New Hampshire, United States"
+          }, {
+            "id" : "b5b150ab-6c4d-41ed-a673-1309298346e8",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=91&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1661313260177,
+              "created" : 1661313260177
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Whitefield, Coos, New Hampshire, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4577126",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=DC,CLE,TC&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "6ba2d980-e99f-4715-920f-d17afb266807",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "ccbc2a19-587e-4b69-b5d6-02dabba9064d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Whitefield"
+          } ]
+        }, {
+          "id" : "250e7185-9227-4edb-a675-b21d18f43a41",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "6fa444cf-8a02-49d2-8d7b-230497be851d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "4-73"
+          } ]
+        }, {
+          "id" : "35a86fa1-54cf-4fca-b48f-7d3eed03573c",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrictNbr",
+          "values" : [ {
+            "id" : "3ac2e94b-6690-4a77-ba8f-04f36f9d9da5",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_NBR_ORIG",
+            "text" : "4-73 Whitefield Town E of a line beginning where U.S. Highway 3 Crosses Northern town line, then Southerly along center of U.S. Highway 3 to High St, then along center of High St to Union St, then along center of Union St to U.S. Highway 3, and then along center of U.S. Highway 3 to southern town line; Morrison Hospital, Whitefield (part)"
+          } ]
+        }, {
+          "id" : "a5af04c9-0783-413d-a452-b35719ba6fac",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://familysearch.org/types/fields/MinorCivilDivision",
+          "values" : [ {
+            "id" : "90c71f37-bf5d-4998-a1cd-edb5dd8c7c65",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DIVISION_CIVIL_MINOR_ORIG",
+            "text" : "Whitefield Town"
+          } ]
+        }, {
+          "id" : "077fa04c-0476-475c-9099-8bcf0bc9f987",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://familysearch.org/types/fields/DistrictDescription",
+          "values" : [ {
+            "id" : "40fa1e7d-9285-46f4-8d99-34d31ea2b159",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_DESCRIPTION_ORIG",
+            "text" : "Whitefield Town E of a line beginning where U.S. Highway 3 Crosses Northern town line, then Southerly along center of U.S. Highway 3 to High St, then along center of High St to Union St, then along center of Union St to U.S. Highway 3, and then along center of U.S. Highway 3 to southern town line; Morrison Hospital, Whitefield (part)"
+          } ]
+        }, {
+          "id" : "a7c6bc05-6a44-4bde-9ca4-0adee59d655a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "95c98db8-e870-47fb-8d50-321b55a1b568",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "f5c7ee69-c680-4a0f-b724-949736d4c016",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "4d37e0b2-eee8-4a8b-8592-0da3bf3ec566",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New Hampshire"
+          }, {
+            "id" : "4d37e0b2-eee8-4a8b-8592-0da3bf3ec566",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE",
+            "text" : "New Hampshire"
+          } ]
+        }, {
+          "id" : "149181d7-d698-4612-8d2a-d479e907e7c0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Township",
+          "values" : [ {
+            "id" : "213bc57b-fb2c-4124-8ab2-c908912f6a86",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWNSHIP_ORIG",
+            "text" : "Whitefield Town"
+          }, {
+            "id" : "213bc57b-fb2c-4124-8ab2-c908912f6a86",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_TOWNSHIP",
+            "text" : "Whitefield Town"
+          } ]
+        }, {
+          "id" : "1a70e127-f1cb-44a7-a25b-442da6ab5652",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "7e3bbfe3-f1ef-47d6-be33-2fd6836d3f1f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Coos"
+          }, {
+            "id" : "7e3bbfe3-f1ef-47d6-be33-2fd6836d3f1f",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Coos"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "3415b5e9-f0f3-4529-be3c-222844dd4b3e",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "bc0fd090-1f58-4a15-8d7b-827d26d6f6c5",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "d9de19fa-aa80-4457-b70b-611481144f56",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "id" : "f6643749-e1b8-4b88-9f8c-1a97d2ec99ff",
+        "original" : "1935",
+        "formal" : "+1935",
+        "fields" : [ {
+          "id" : "261ca13c-5d25-4a0f-8956-98de367baea5",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "b18ed0fc-06cc-4af6-a5ad-109b83501b0f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_DATE_ORIG",
+            "text" : "1935"
+          }, {
+            "id" : "b18ed0fc-06cc-4af6-a5ad-109b83501b0f",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_DATE",
+            "text" : "1935",
+            "resource" : "+1935",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "196fd566-19d8-4ef4-af10-b1cd7a1d8c5b",
+        "original" : "Same Place",
+        "fields" : [ {
+          "id" : "e933ca59-5aa3-4ff1-b611-8b2ad75849b5",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "f0ca24f6-42fe-483e-98bc-106c067ef519",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1661313260177,
+              "created" : 1661313260177
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Same Place"
+          }, {
+            "id" : "f0ca24f6-42fe-483e-98bc-106c067ef519",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_PLACE",
+            "text" : "Same Place"
+          } ]
+        }, {
+          "id" : "62850841-fda5-40fa-8b51-b25772fcfb0e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "b9923acc-da24-4460-998f-7a60c8be7494",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_CITY_ORIG",
+            "text" : "Same Place"
+          }, {
+            "id" : "b9923acc-da24-4460-998f-7a60c8be7494",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_CITY",
+            "text" : "Same Place"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "537e277c-6fe4-4eca-a733-ef1c2273fbf3",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "f4d859fc-f7a4-4124-9ec2-e905a7ea5bec",
+        "original" : "1912",
+        "formal" : "+1912",
+        "fields" : [ {
+          "id" : "8d72f00d-1da5-4ab6-8188-feb7cbafc9ef",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "68a764ab-962b-43bd-915d-1a12ac10fd2d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1912"
+          }, {
+            "id" : "68a764ab-962b-43bd-915d-1a12ac10fd2d",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1912",
+            "resource" : "+1912",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "3a8a3131-250c-4ccf-ab7a-f38777b639bc",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "bd923060-e23e-447e-9d42-c289d2a0671e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1912"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "3df9ba7d-45f6-4119-87b1-058e90c2a29d",
+        "original" : "New Hampshire",
+        "fields" : [ {
+          "id" : "e54c7e3a-f503-4f57-af7b-9d5c321d5573",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "9b14afc6-26b6-4ef0-847f-ca9c63787775",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "New Hampshire"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "79261b84-7c8b-4003-8a20-850171da98c2",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetLtr",
+      "values" : [ {
+        "id" : "d4013842-f60c-4193-9d02-97f9d6acf207",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_LTR_ORIG",
+        "text" : "B"
+      } ]
+    }, {
+      "id" : "b9a2e4d8-b15b-4d98-8102-3076567e3550",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetNbr",
+      "values" : [ {
+        "id" : "b5a5655f-44e8-417b-b154-c980271c231b",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_NBR_ORIG",
+        "text" : "1"
+      } ]
+    }, {
+      "id" : "2ad2d9e3-9d5b-4a81-bb07-9381ba3820eb",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/RecordId",
+      "values" : [ {
+        "id" : "65420c8a-1750-496f-b319-27f566a23e54",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_ID",
+        "text" : "005454901_01199_30"
+      } ]
+    }, {
+      "id" : "052d86eb-e923-4d1a-abe0-3d1ee83431a8",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdId",
+      "values" : [ {
+        "id" : "3c5c3d0f-b84a-4ed1-bf3a-d808439eff06",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_HOUSEHOLD_ID",
+        "text" : "23"
+      } ]
+    }, {
+      "id" : "ce963a91-db46-484e-840f-032551c22c09",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "0f7237de-15a4-4e75-bdb1-14155a258b67",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "71"
+      } ]
+    }, {
+      "id" : "db024a0e-6d45-49f9-88dd-aa83939e98fb",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "3627ae40-f031-4cab-a66a-0046ac984316",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "WIFE"
+      } ]
+    }, {
+      "id" : "4127e4f0-f1e3-448e-8d40-c303de137916",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/ExtData",
+      "values" : [ {
+        "id" : "6d0aca8e-06e4-4906-bc60-1c9e467f5382",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_DATA_ORIG",
+        "text" : "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3QS7-L9MT-36RW\"}"
+      } ]
+    }, {
+      "id" : "9e0cf48a-5783-4e2c-ae0f-b03ad0885433",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "bdbd50c0-caad-47fc-9265-bd5a3442b24f",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "28"
+      }, {
+        "id" : "bdbd50c0-caad-47fc-9265-bd5a3442b24f",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "28"
+      }, {
+        "id" : "bdbd50c0-caad-47fc-9265-bd5a3442b24f",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1661313260177,
+          "created" : 1661313260177
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "28 years",
+        "resource" : "P28Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
+      } ],
+      "qualifiers" : [ {
+        "value" : "67f1dd3f-bbfd-441f-a13d-4defee93773b",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Arleita M Elliott",
+      "gender" : "Female",
+      "birthDate" : "1912",
+      "birthPlace" : "New Hampshire"
+    }
+  }, {
+    "id" : "p_13754543515",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "a3a5c81b-095c-40b0-ba55-3e3381c97fb0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "c6d111e0-eb9e-4dd4-b5fa-9b0a43e33e57",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "c6d111e0-eb9e-4dd4-b5fa-9b0a43e33e57",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Gender?version=1.0.2"
+            },
+            "modified" : 1661313260177,
+            "created" : 1661313260177
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/VTMY-N3R?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MCG-9967?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1431651801" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VTMY-N3R" ]
+    },
+    "names" : [ {
+      "id" : "d5e5ca3b-2ad6-4fb8-a521-bd594e78fde1",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Charles W Elliott, Jr",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Suffix",
+          "value" : "Jr",
+          "fields" : [ {
+            "id" : "60c3a803-ce29-45f4-87ee-d9836c0b2f4f",
+            "type" : "http://gedcomx.org/Suffix",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "a0e0dca9-1dfd-411c-be61-96258d56ae97",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SUF_ORIG",
+              "text" : "Jr"
+            }, {
+              "id" : "a0e0dca9-1dfd-411c-be61-96258d56ae97",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SUF",
+              "text" : "Jr",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FLS&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Elliott",
+          "fields" : [ {
+            "id" : "086c0d42-1eb5-4203-bb71-5361b2800b09",
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "f03d7dba-df26-4b87-a450-67d3776f4863",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Elliott"
+            }, {
+              "id" : "f03d7dba-df26-4b87-a450-67d3776f4863",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Elliott",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FLS&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Charles W",
+          "fields" : [ {
+            "id" : "0a1ca764-ccb5-43cb-9cdb-28f187b3420c",
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ ],
+            "values" : [ {
+              "id" : "d22f5978-6ce3-4603-bc96-3af23b464ddb",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Charles W"
+            }, {
+              "id" : "d22f5978-6ce3-4603-bc96-3af23b464ddb",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Charles W",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FLS&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "241e9a60-cc6d-486c-a44b-5e9ee61584ce",
+          "type" : "http://gedcomx.org/Name",
+          "sources" : [ ],
+          "values" : [ {
+            "id" : "b7d13644-822c-47ca-8d64-1ea724c91e86",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Charles W Elliott, Jr"
+          }, {
+            "id" : "b7d13644-822c-47ca-8d64-1ea724c91e86",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Charles W Elliott, Jr",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FLS&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "ca48896e-9c75-4009-8526-cde677c88902",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "2dcefaeb-ae66-4ff7-8cdc-7c6b10502da4",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        }, {
+          "id" : "2dcefaeb-ae66-4ff7-8cdc-7c6b10502da4",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_RACE_OR_COLOR",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Married",
+      "fields" : [ {
+        "id" : "2e85c337-ea5d-4669-af48-31d3d5d8bc3a",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "6de59027-25f1-4c44-9df6-f191deaabdaa",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "6de59027-25f1-4c44-9df6-f191deaabdaa",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Married"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Ethnicity",
+      "value" : "American",
+      "fields" : [ {
+        "id" : "e8bf6529-24ac-4e58-b966-44d5bae70e18",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://gedcomx.org/Ethnicity",
+        "values" : [ {
+          "id" : "0d5149c8-17a0-4e83-9689-3e654bf56ad1",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_ETHNICITY_ORIG",
+          "text" : "American"
+        } ]
+      } ]
+    }, {
+      "id" : "13f2a476-5892-48f8-b7d0-5b489ec17aa7",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "204cdeda-0525-4776-815c-4194d1e23b2d",
+        "original" : "1913",
+        "formal" : "+1913",
+        "fields" : [ {
+          "id" : "3ff12f02-8ef5-4f5c-8af9-cd4a2b77f210",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "a41197fb-08ea-4a16-81d1-d4a9d9389585",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1913"
+          } ]
+        }, {
+          "id" : "3e80c911-2c2d-4dd8-852b-0c5b2802c348",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "03c73b8e-cc0c-4e5e-8f98-538306b8b14b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1913"
+          }, {
+            "id" : "03c73b8e-cc0c-4e5e-8f98-538306b8b14b",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1913",
+            "resource" : "+1913",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "2770d420-97e2-43b4-9095-f726311e6da1",
+        "original" : "New Hampshire",
+        "fields" : [ {
+          "id" : "86e721a0-ff2f-4fd0-a3a3-6c24e806fd97",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "6da11558-300f-4ab0-acfc-71c5801efea6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "New Hampshire"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "d340e9cf-f43e-40b1-9b8a-d326bb837788",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "7db1a1fe-abe1-4091-81c5-f69332b7611d",
+        "original" : "1940",
+        "formal" : "+1940",
+        "fields" : [ {
+          "id" : "a6aeaf37-f3f4-4f79-b1b8-711f23cd5e78",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "2be06d17-df14-4cac-9ea1-74abc4776fcc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "2be06d17-df14-4cac-9ea1-74abc4776fcc",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1940",
+            "resource" : "+1940",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "ffd67480-2da7-4707-a2da-a0d4fdbfbbea",
+        "original" : "Whitefield, Coos, New Hampshire, United States",
+        "fields" : [ {
+          "id" : "ccec1a5e-392f-4128-b8d1-b1daa545a9e0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://familysearch.org/types/fields/DistrictDescription",
+          "values" : [ {
+            "id" : "0ff80cfa-9a63-4dc8-af8e-bdffbdbe126c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_DESCRIPTION_ORIG",
+            "text" : "Whitefield Town E of a line beginning where U.S. Highway 3 Crosses Northern town line, then Southerly along center of U.S. Highway 3 to High St, then along center of High St to Union St, then along center of Union St to U.S. Highway 3, and then along center of U.S. Highway 3 to southern town line; Morrison Hospital, Whitefield (part)"
+          } ]
+        }, {
+          "id" : "c5dd9795-d6fd-453d-8bd2-b555ee199671",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "0017c30b-db79-4f81-a8ee-c590272393f9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "4-73"
+          } ]
+        }, {
+          "id" : "92eda8bc-36bd-49f7-ad90-d6c1684123f2",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "f0b99f96-3e2d-4c5c-a4a2-a974720c8f72",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Coos"
+          }, {
+            "id" : "f0b99f96-3e2d-4c5c-a4a2-a974720c8f72",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Coos"
+          } ]
+        }, {
+          "id" : "02acf656-1bc7-4306-ade5-1b4545cbda2b",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrictNbr",
+          "values" : [ {
+            "id" : "4f5a5642-37ee-42e2-97d8-6075921e832c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_NBR_ORIG",
+            "text" : "4-73 Whitefield Town E of a line beginning where U.S. Highway 3 Crosses Northern town line, then Southerly along center of U.S. Highway 3 to High St, then along center of High St to Union St, then along center of Union St to U.S. Highway 3, and then along center of U.S. Highway 3 to southern town line; Morrison Hospital, Whitefield (part)"
+          } ]
+        }, {
+          "id" : "16bac844-76c5-4160-96f4-2119ed28153b",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "f552720b-0253-4371-9e61-7d214b6b6310",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New Hampshire"
+          }, {
+            "id" : "f552720b-0253-4371-9e61-7d214b6b6310",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE",
+            "text" : "New Hampshire"
+          } ]
+        }, {
+          "id" : "5d4403dc-f8e3-4db9-a837-67cf64fd891f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://familysearch.org/types/fields/MinorCivilDivision",
+          "values" : [ {
+            "id" : "837614fd-c397-4556-aed6-1b4fa3b2c7a0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DIVISION_CIVIL_MINOR_ORIG",
+            "text" : "Whitefield Town"
+          } ]
+        }, {
+          "id" : "fa740681-d8e2-4c9b-95dc-43fb8ff47521",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "8d798a20-3e63-477e-8e81-34b10c434195",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Whitefield"
+          } ]
+        }, {
+          "id" : "687edb21-4ade-4e15-acc7-740d2bd27e9a",
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "7414d7f5-5646-48d6-af7d-4108f6f6cfa8",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1661313260177,
+              "created" : 1661313260177
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Whitefield Town, Whitefield Town, Whitefield, 4-73, Coos, New Hampshire, United States"
+          }, {
+            "id" : "7414d7f5-5646-48d6-af7d-4108f6f6cfa8",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=91&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1661313260177,
+              "created" : 1661313260177
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Whitefield, Coos, New Hampshire, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4577126",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=DC,CLE,TC&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "10f9a4c2-2330-457c-96f7-2daa8b613bf9",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Township",
+          "values" : [ {
+            "id" : "3077d870-2625-4ae5-84a8-4d70fb7719ac",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWNSHIP_ORIG",
+            "text" : "Whitefield Town"
+          }, {
+            "id" : "3077d870-2625-4ae5-84a8-4d70fb7719ac",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_TOWNSHIP",
+            "text" : "Whitefield Town"
+          } ]
+        }, {
+          "id" : "89bd231b-f8b4-4513-9ea1-6ed1efa774fb",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "6f49c3c1-690b-40c0-b9e0-32f5b5108b8f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "0de27ce8-7760-433c-b195-a69ceff9492b",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+            "resourceId" : "cis.user.MMMS-MGSW"
+          },
+          "modified" : 1640191837436,
+          "created" : 1640191837436
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "0eaf11c0-42ad-46a7-a6fe-afb58118672e",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "0712e7fd-0f0b-47c1-9b8d-a86c128ef8d3",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "id" : "29917e0c-9fe9-4a8d-adc4-de5d8714400d",
+        "original" : "1935",
+        "formal" : "+1935",
+        "fields" : [ {
+          "id" : "e4fde4ad-e596-48fd-b1fe-23ac6aba22a5",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "cfb018c7-ff01-4a86-8c65-b3d808d5579f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_DATE_ORIG",
+            "text" : "1935"
+          }, {
+            "id" : "cfb018c7-ff01-4a86-8c65-b3d808d5579f",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_DATE",
+            "text" : "1935",
+            "resource" : "+1935",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "4beb5990-5351-433d-9031-94f12eea646b",
+        "original" : "Same Place",
+        "fields" : [ {
+          "id" : "01106971-5b7a-4d08-bb07-8ed578753461",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "7add1b1f-d1b0-49a7-946a-40a106a9671e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1661313260177,
+              "created" : 1661313260177
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Same Place"
+          }, {
+            "id" : "7add1b1f-d1b0-49a7-946a-40a106a9671e",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_PLACE",
+            "text" : "Same Place"
+          } ]
+        }, {
+          "id" : "7182dce0-15af-4f17-bbc4-2f1bf52c04c4",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+              "resourceId" : "cis.user.MMMS-MGSW"
+            },
+            "modified" : 1640191837436,
+            "created" : 1640191837436
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "84edad58-6bef-4f2d-89f4-be6915c193e6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_CITY_ORIG",
+            "text" : "Same Place"
+          }, {
+            "id" : "84edad58-6bef-4f2d-89f4-be6915c193e6",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_CITY",
+            "text" : "Same Place"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "24060b54-6a9b-48c2-8083-59de58ef02cb",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/ExtData",
+      "values" : [ {
+        "id" : "73c36e5a-d7da-49d0-a47e-26584d8a3b65",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_DATA_ORIG",
+        "text" : "{\"FOLDER\":\"005454901\"}"
+      } ]
+    }, {
+      "id" : "e04f8d3b-2171-481f-b45c-08938502fd2b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdId",
+      "values" : [ {
+        "id" : "5eb223d5-4164-47f0-9628-ae802cd61e3b",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_HOUSEHOLD_ID",
+        "text" : "23"
+      } ]
+    }, {
+      "id" : "ee830555-eef0-4122-8285-e800be83a1ac",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "787dffea-7e68-4e9a-ab01-6fd267f166b0",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "70"
+      } ]
+    }, {
+      "id" : "9eba9b5e-3e1d-4a11-a458-8e8e500933c0",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/RecordId",
+      "values" : [ {
+        "id" : "a4533592-0d62-4acc-a64d-3cdc7a6387ce",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_ID",
+        "text" : "005454901_01199_29"
+      } ]
+    }, {
+      "id" : "befdce3e-e183-4e69-ad49-49d67e0653ea",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetLtr",
+      "values" : [ {
+        "id" : "e87d23f2-040d-4078-a3c2-71390bbba123",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_LTR_ORIG",
+        "text" : "B"
+      } ]
+    }, {
+      "id" : "e4c9d0cd-6af7-42f9-ac73-b9b651ece84a",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetNbr",
+      "values" : [ {
+        "id" : "40b157ed-b355-4e8f-8ccb-ef822d435ca1",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_NBR_ORIG",
+        "text" : "1"
+      } ]
+    }, {
+      "id" : "7e01df9b-95b6-4fed-8939-8fc5e874c229",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "01ac3b60-f2c1-40dd-9a9f-a0ddd0129fa9",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Head"
+      }, {
+        "id" : "01ac3b60-f2c1-40dd-9a9f-a0ddd0129fa9",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Head"
+      } ]
+    }, {
+      "id" : "12de5b6b-0ee4-44b5-a350-8d503ff145a2",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+          "resourceId" : "cis.user.MMMS-MGSW"
+        },
+        "modified" : 1640191837436,
+        "created" : 1640191837436
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "ac166259-ebed-4682-b266-27123bf27baa",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "27"
+      }, {
+        "id" : "ac166259-ebed-4682-b266-27123bf27baa",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "27"
+      }, {
+        "id" : "ac166259-ebed-4682-b266-27123bf27baa",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1661313260177,
+          "created" : 1661313260177
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "27 years",
+        "resource" : "P27Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
+      } ],
+      "qualifiers" : [ {
+        "value" : "3987d1de-9039-484b-b082-60db91134f69",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Charles W Elliott, Jr",
+      "gender" : "Male",
+      "birthDate" : "1913",
+      "birthPlace" : "New Hampshire"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "6b8b575c-a07e-4bef-81d5-6300c2acd3c0",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_13754543515",
+      "resourceId" : "p_13754543515"
+    },
+    "person2" : {
+      "resource" : "#p_13754543516",
+      "resourceId" : "p_13754543516"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_22106548295",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MCG-9967",
+    "componentOf" : {
+      "description" : "#sd_c_2000219",
+      "descriptionId" : "sd_c_2000219"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1384043005434,
+    "modified" : 1661313260177,
+    "coverage" : [ {
+      "spatial" : {
+        "id" : "ffd67480-2da7-4707-a2da-a0d4fdbfbbea",
+        "original" : "Whitefield, Coos, New Hampshire, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/4577126"
+      },
+      "temporal" : {
+        "original" : "1940",
+        "formal" : "+1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Household of Arleita M Elliott, \"United States Census, 1940\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MCG-9967" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2000219?arkName=1:2:9MCG-9967"
+    }
+  }, {
+    "id" : "sd_c_2000219",
+    "about" : "https://api.familysearch.org/platform/records/collections/2000219",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "United States",
+        "description" : "#place_1"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    }, {
+      "spatial" : {
+        "original" : "Puerto Rico",
+        "description" : "#place_5931730"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    }, {
+      "spatial" : {
+        "original" : "American Samoa",
+        "description" : "#place_5931727"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    }, {
+      "spatial" : {
+        "original" : "Virgin Islands",
+        "description" : "#place_5931733"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    }, {
+      "spatial" : {
+        "original" : "Guam",
+        "description" : "#place_5931728"
+      },
+      "temporal" : {
+        "original" : "1940/1940",
+        "formal" : "1940/1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "United States Census, 1940"
+    }, {
+      "lang" : "fr",
+      "value" : "Recensement des États-Unis, 1940"
+    }, {
+      "lang" : "th",
+      "value" : "สํามะโนประชากรสหรัฐ, ปี 1940"
+    }, {
+      "lang" : "to",
+      "value" : "Tohi Kakai ʻa e ʻIunaiteti Siteití, 1940"
+    }, {
+      "lang" : "sm",
+      "value" : "Điều Tra Dân Số Hoa Kỳ, năm 1940"
+    }, {
+      "lang" : "vi",
+      "value" : "Điều Tra Dân Số Hoa Kỳ, năm 1940"
+    }, {
+      "lang" : "de",
+      "value" : "Volkszählung der Vereinigten Staaten 1940"
+    }, {
+      "lang" : "uk",
+      "value" : "США, перепис населення, 1940 р."
+    }, {
+      "lang" : "cs",
+      "value" : "Sčítání lidu v USA, 1940"
+    }, {
+      "lang" : "tl",
+      "value" : "Census ng United States, 1940"
+    }, {
+      "lang" : "mg",
+      "value" : "Etazonia fanisam-bahoaka, 1940"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2000219" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QS7-L9MT-36RW",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QS7-L9MT-36RW" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2000219?arkName=3:1:3QS7-L9MT-36RW"
+    }
+  }, {
+    "id" : "sd_p_13754543516",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VTMY-N3T",
+    "componentOf" : {
+      "description" : "#src_r_22106548295",
+      "descriptionId" : "src_r_22106548295"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Arleita M Elliott, \"United States Census, 1940\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1431228002" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VTMY-N3T" ]
+    }
+  }, {
+    "id" : "sd_p_13754543515",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VTMY-N3R",
+    "componentOf" : {
+      "description" : "#src_r_22106548295",
+      "descriptionId" : "src_r_22106548295"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Charles W Elliott, Jr, \"United States Census, 1940\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1431651801" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VTMY-N3R" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/4577126",
+      "resourceId" : "place_4577126"
+    }
+  } ],
+  "fields" : [ {
+    "id" : "eaa6f221-8dce-4ffa-8073-43f26306a978",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "e23db1e0-2806-46d5-89c2-740930542830",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "d585987a-f278-404c-b96a-e95d0bec1561",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "43e2362b-0e94-4642-a9e8-719c2115deee",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "United States 1940 Census - FSI"
+    } ]
+  }, {
+    "id" : "37328070-0b10-4bfb-bb4e-33ed2942ebc6",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/ExtPubNbr",
+    "values" : [ {
+      "id" : "880e8cec-f807-44c4-b09a-c77963681ab1",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_PUB_NBR_ORIG",
+      "text" : "T627"
+    } ]
+  }, {
+    "id" : "06dc2ec5-caff-43c5-a647-8b19192f0020",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "61c1cd22-105c-462a-842d-d24cef0e56c3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "d03d0661-b442-4e1b-b30e-367d1ab8546f",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "b48f46f3-2cec-481c-8fb5-b54d812b115f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "6085"
+    } ]
+  }, {
+    "id" : "c9e0cf3e-f7fd-4df5-8c26-160da45ce748",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "id" : "7db836f5-3be2-4d22-bbf1-c8ab194d6eb9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "005454901"
+    } ]
+  }, {
+    "id" : "564e3967-5733-43e2-a0df-0ddd085b3b86",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "62480d7c-c4ef-46ec-940b-ab219bf8242e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "New Hampshire"
+    } ]
+  }, {
+    "id" : "9bc24124-abdb-469d-9e3b-eb5b2e3fae36",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "9e67b21f-0b39-4804-a998-22e29f9017b3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "50223f8e-fcc2-46b5-abfc-65cf447a319d",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "593a1b17-5433-4c1d-b101-e2476e10933a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_005454901_01199_029_001431651801"
+    } ]
+  }, {
+    "id" : "71f8de27-a508-4e1e-b1fa-282dd62abace",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "ef7c23b0-c811-4ca2-843b-66f3e53702e9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "United States"
+    } ]
+  }, {
+    "id" : "906d72a7-1a4d-477d-8419-6cd8930eab58",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "cbd94f80-26b2-4aa6-badd-6755a9e5ce02",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "12-0002"
+    } ]
+  }, {
+    "id" : "793c04fe-1adc-42b9-914c-48671bdf0520",
+    "attribution" : {
+      "contributor" : {
+        "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-MGSW",
+        "resourceId" : "cis.user.MMMS-MGSW"
+      },
+      "modified" : 1640191837436,
+      "created" : 1640191837436
+    },
+    "type" : "http://familysearch.org/types/fields/ImsCtlFileId",
+    "values" : [ {
+      "id" : "cb996208-0c09-4f4d-a7db-d7735db9f0f8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMS_CTL_FILE_ID",
+      "text" : "679552"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsViewerRii",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "text" : "true"
+    } ]
+  } ],
+  "additionalAttribution" : [ {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-NKYF"
+    },
+    "modified" : 1384043005434,
+    "created" : 1384043005434
+  }, {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM3-TVFR"
+    },
+    "modified" : 1384043005434,
+    "created" : 1384043005434
+  } ]
+}

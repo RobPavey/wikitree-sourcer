@@ -1,0 +1,41 @@
+{
+  "recordData": {
+    "Name": "Elizabeth Cullington",
+    "Burial Date": "27 Aug 1849",
+    "Burial Place": "Norwich, Norfolk, England",
+    "Birth Date": "1844",
+    "Age": "5",
+    "Event Type": "Burial"
+  },
+  "fullName": "Elizabeth Cullington",
+  "givenName": "Elizabeth",
+  "surname": "Cullington",
+  "gender": "female",
+  "factType": "Burial",
+  "eventDateOriginal": "27 Aug 1849",
+  "eventDate": "27 Aug 1849",
+  "eventYear": "1849",
+  "eventPlaceOriginal": "Norwich, Norfolk, England",
+  "eventPlace": "Norwich, Norfolk, England",
+  "eventPlaceL3": "Norwich",
+  "eventPlaceL2": "Norfolk",
+  "eventPlaceL1": "England",
+  "birthDateOriginal": "1844",
+  "birthYear": "1844",
+  "age": "5",
+  "referenceData": {
+    "digitalFilmNumber": "004143448",
+    "filmNumber": "1526560",
+    "recordNumber": "616",
+    "imageNumber": "1560",
+    "packetLetter": "C"
+  },
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:939F-RXKT-R",
+  "collectionTitle": "England, Norfolk Bishop's Transcripts, 1685-1941",
+  "fsCollectionId": "1823613",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28",
+  "citation": "\"England, Norfolk Bishop's Transcripts, 1685-1941,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:27CB-J49 : 17 February 2021), Elizabeth Cullington, 27 Aug 1849; citing Burial, Norwich, Norfolk, England, Record Office, Central Library, Norwich; FHL microfilm 1,526,560.",
+  "sourceTitleForPerson": "Elizabeth Cullington, \"England, Norfolk Bishop's Transcripts, 1685-1941\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:27CB-J49",
+  "pageType": "record"
+}

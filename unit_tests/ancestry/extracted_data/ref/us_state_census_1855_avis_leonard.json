@@ -1,0 +1,79 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=4472&h=2609994&tid=&pid=&queryId=2195c7429d02e5defc0596882e89c665&usePUB=true&_phsrc=XJK399&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "4472",
+  "recordId": "2609994",
+  "ancestryTemplate": "{{Ancestry Record|4472|2609994}}",
+  "domain": "com",
+  "titleName": "Avis Leonard",
+  "titleCollection": "Massachusetts, U.S., State Census, 1855",
+  "recordData": {
+    "Name": "Avis Leonard",
+    "Gender": "Female",
+    "Birth Year": "abt 1786",
+    "Birth Place": "Massachusetts",
+    "Residence": "Canton, Norfolk, Massachusetts, USA",
+    "Enumeration Year": "1855",
+    "Age": "69",
+    "Household Number": "186",
+    "Reel Number": "19",
+    "Volume Number": "26",
+    "Household Members": "Avis Leonard 69<br/>Nathaniel W Baker 41<br/>Almira Baker 40<br/>Almira L Baker 17<br/>Miliesa F Baker 15<br/>Mary E Baker 4"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Name": "Avis Leonard",
+        "dbId": "MACensus",
+        "recordId": "2609994",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609994",
+        "Age": "69"
+      },
+      {
+        "Name": "Nathaniel W Baker",
+        "dbId": "MACensus",
+        "recordId": "2609995",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609995",
+        "Age": "41"
+      },
+      {
+        "Name": "Almira Baker",
+        "dbId": "MACensus",
+        "recordId": "2609996",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609996",
+        "Age": "40"
+      },
+      {
+        "Name": "Almira L Baker",
+        "dbId": "MACensus",
+        "recordId": "2609997",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609997",
+        "Age": "17"
+      },
+      {
+        "Name": "Miliesa F Baker",
+        "dbId": "MACensus",
+        "recordId": "2609998",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609998",
+        "Age": "15"
+      },
+      {
+        "Name": "Mary E Baker",
+        "dbId": "MACensus",
+        "recordId": "2609999",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609999",
+        "Age": "4"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/4472/images/41265_307607-00235?pid=2609994&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D4472%26h%3D2609994%26tid%3D%26pid%3D%26queryId%3D2195c7429d02e5defc0596882e89c665%26usePUB%3Dtrue%26_phsrc%3DXJK399%26_phstart%3DsuccessSource&treeid=&personid=&hintid=&queryId=2195c7429d02e5defc0596882e89c665&usePUB=true&_phsrc=XJK399&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "4472",
+  "imageRecordId": "41265_307607-00235",
+  "sourceInformation": "Ancestry.com. Massachusetts, U.S., State Census, 1855 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: Massachusetts. 1855–1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts.",
+  "originalData": "Massachusetts. 1855–1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts.",
+  "sourceDescription": "What’s the next best thing to a U.S. federal census? A state census taken five years later, like this Massachusetts state census from 1855. Learn more..."
+}

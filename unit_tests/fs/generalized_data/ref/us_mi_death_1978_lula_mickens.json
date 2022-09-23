@@ -1,0 +1,28 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Lula Mickens"
+  },
+  "birthDate": {
+    "dateString": "11 May 87",
+    "yearString": "87"
+  },
+  "deathDate": {
+    "dateString": "1 February 1978",
+    "yearString": "1978"
+  },
+  "eventDate": {
+    "dateString": "1 Feb 1978",
+    "yearString": "1978"
+  },
+  "eventPlace": {
+    "placeString": "Battle Creek, Calhoun, Michigan"
+  },
+  "collectionData": {
+    "id": "1949333"
+  },
+  "hasValidData": true
+}

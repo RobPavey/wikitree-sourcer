@@ -1,0 +1,103 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "John Steven Nicholson"
+  },
+  "birthPlace": {
+    "placeString": "Warrington, Lancashire"
+  },
+  "eventDate": {
+    "dateString": "1871",
+    "yearString": "1871"
+  },
+  "eventPlace": {
+    "placeString": "Warrington, Lancashire, England, United Kingdom"
+  },
+  "ageAtEvent": "0",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William Nicholson",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "40",
+      "birthYear": "1831",
+      "occupation": "Flagger & Slater",
+      "birthPlace": "Warrington, Lancashire"
+    },
+    {
+      "name": "Jane Nicholson",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "39",
+      "birthYear": "1832",
+      "birthPlace": "Warrington, Lancashire"
+    },
+    {
+      "name": "James Nicholson",
+      "relationship": "son",
+      "gender": "male",
+      "age": "18",
+      "birthYear": "1853",
+      "occupation": "Flagger & Slater",
+      "birthPlace": "Warrington, Lancashire"
+    },
+    {
+      "name": "William Nicholson",
+      "relationship": "son",
+      "gender": "male",
+      "age": "14",
+      "birthYear": "1857",
+      "occupation": "Glass House Labourer",
+      "birthPlace": "Warrington, Lancashire"
+    },
+    {
+      "name": "Ann Jane Nicholson",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "5",
+      "birthYear": "1866",
+      "occupation": "Scholar",
+      "birthPlace": "Warrington, Lancashire"
+    },
+    {
+      "name": "John Steven Nicholson",
+      "relationship": "son",
+      "gender": "male",
+      "age": "0",
+      "birthPlace": "Warrington, Lancashire",
+      "isSelected": true
+    }
+  ],
+  "relationshipToHead": "son",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Nicholson"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Jane Nicholson"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1538354"
+  },
+  "hasValidData": true
+}

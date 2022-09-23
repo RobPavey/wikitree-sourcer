@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "James, child of Isaac Broomal & Lydia Broomal, was born on 18 October 1799 in Chester, Pennsylvania.<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth''': \"U.S., Quaker Meeting Records, 1681-1935\"<br/>Swarthmore College; Swarthmore, Pennsylvania<br/>{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)<br/>\nJames Broomal born on 18 Oct 1799, child of Isaac Broomal & Lydia Broomal, in Chester, Pennsylvania.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "James, child of Isaac Broomal & Lydia Broomal, was born on 18 October 1799 in Chester, Pennsylvania.<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)<br/>\nJames Broomal born on 18 Oct 1799, child of Isaac Broomal & Lydia Broomal, in Chester, Pennsylvania.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth''': \"U.S., Quaker Meeting Records, 1681-1935\"<br/>Swarthmore College; Swarthmore, Pennsylvania<br/>{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)<br/>James Broomal born on 18 Oct 1799, child of Isaac Broomal & Lydia Broomal, in Chester, Pennsylvania.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)<br/>\nName: James Broomal; Event Type: Birth; Birth Date: 18 Oct 1799; Birth Date on Image: 18 Tenth 1799; Birth Place: Chester, Pennsylvania; Father: Isaac Broomal; Mother: Lydia Broomal; Monthly Meeting: London Grove Monthly Meeting; Yearly Meeting: Philadelphia Yearly Meeting; Meeting State: Pennsylvania; Meeting County: Chester.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "James, child of Isaac Broomal & Lydia Broomal, was born on 18 October 1799 in Chester, Pennsylvania.<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)<br/>\nName: James Broomal; Event Type: Birth; Birth Date: 18 Oct 1799; Birth Date on Image: 18 Tenth 1799; Birth Place: Chester, Pennsylvania; Father: Isaac Broomal; Mother: Lydia Broomal; Monthly Meeting: London Grove Monthly Meeting; Yearly Meeting: Philadelphia Yearly Meeting; Meeting State: Pennsylvania; Meeting County: Chester.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth''': \"U.S., Quaker Meeting Records, 1681-1935\"<br/>Swarthmore College; Swarthmore, Pennsylvania<br/>{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)<br/>Name: James Broomal; Event Type: Birth; Birth Date: 18 Oct 1799; Birth Date on Image: 18 Tenth 1799; Birth Place: Chester, Pennsylvania; Father: Isaac Broomal; Mother: Lydia Broomal; Monthly Meeting: London Grove Monthly Meeting; Yearly Meeting: Philadelphia Yearly Meeting; Meeting State: Pennsylvania; Meeting County: Chester.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Broomal\n|-\n| Event Type || Birth\n|-\n| Birth Date || 18 Oct 1799\n|-\n| Birth Date on Image || 18 Tenth 1799\n|-\n| Birth Place || Chester, Pennsylvania\n|-\n| Father || Isaac Broomal\n|-\n| Mother || Lydia Broomal\n|-\n| Monthly Meeting || London Grove Monthly Meeting\n|-\n| Yearly Meeting || Philadelphia Yearly Meeting\n|-\n| Meeting State || Pennsylvania\n|-\n| Meeting County || Chester\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "James, child of Isaac Broomal & Lydia Broomal, was born on 18 October 1799 in Chester, Pennsylvania.<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Broomal\n|-\n| Event Type || Birth\n|-\n| Birth Date || 18 Oct 1799\n|-\n| Birth Date on Image || 18 Tenth 1799\n|-\n| Birth Place || Chester, Pennsylvania\n|-\n| Father || Isaac Broomal\n|-\n| Mother || Lydia Broomal\n|-\n| Monthly Meeting || London Grove Monthly Meeting\n|-\n| Yearly Meeting || Philadelphia Yearly Meeting\n|-\n| Meeting State || Pennsylvania\n|-\n| Meeting County || Chester\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth''': \"U.S., Quaker Meeting Records, 1681-1935\"<br/>Swarthmore College; Swarthmore, Pennsylvania<br/>{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)<br/>Name: James Broomal; Event Type: Birth; Birth Date: 18 Oct 1799; Birth Date on Image: 18 Tenth 1799; Birth Place: Chester, Pennsylvania; Father: Isaac Broomal; Mother: Lydia Broomal; Monthly Meeting: London Grove Monthly Meeting; Yearly Meeting: Philadelphia Yearly Meeting; Meeting State: Pennsylvania; Meeting County: Chester.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Quaker Meeting Records, 1681-1935,\" database, ({{Ancestry Record|2189|2035846}} : accessed 6 May 2021), James Broomal born on 18 Oct 1799, child of Isaac Broomal & Lydia Broomal, in Chester, Pennsylvania; citing Swarthmore College, Swarthmore, Pennsylvania.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "James, child of Isaac Broomal & Lydia Broomal, was born on 18 October 1799 in Chester, Pennsylvania.<ref>\"U.S., Quaker Meeting Records, 1681-1935,\" database, ({{Ancestry Record|2189|2035846}} : accessed 6 May 2021), James Broomal born on 18 Oct 1799, child of Isaac Broomal & Lydia Broomal, in Chester, Pennsylvania; citing Swarthmore College, Swarthmore, Pennsylvania.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Quaker Meeting Records, 1681-1935,\" database, ({{Ancestry Record|2189|2035846}} : accessed 6 May 2021), James Broomal born on 18 Oct 1799, child of Isaac Broomal & Lydia Broomal, in Chester, Pennsylvania; citing Swarthmore College, Swarthmore, Pennsylvania.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Birth'':\n\"U.S., Quaker Meeting Records, 1681-1935\", database, \nSwarthmore College, Swarthmore, Pennsylvania, \n({{Ancestry Record|2189|2035846}} : accessed 6 May 2021), \nName: James Broomal; Event Type: Birth; Birth Date: 18 Oct 1799; Birth Date on Image: 18 Tenth 1799; Birth Place: Chester, Pennsylvania; Father: Isaac Broomal; Mother: Lydia Broomal; Monthly Meeting: London Grove Monthly Meeting; Yearly Meeting: Philadelphia Yearly Meeting; Meeting State: Pennsylvania; Meeting County: Chester.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "James, child of Isaac Broomal & Lydia Broomal, was born on 18 October 1799 in Chester, Pennsylvania.<ref>\n''Birth'':\n\"U.S., Quaker Meeting Records, 1681-1935\", database, \nSwarthmore College, Swarthmore, Pennsylvania, \n({{Ancestry Record|2189|2035846}} : accessed 6 May 2021), \nName: James Broomal; Event Type: Birth; Birth Date: 18 Oct 1799; Birth Date on Image: 18 Tenth 1799; Birth Place: Chester, Pennsylvania; Father: Isaac Broomal; Mother: Lydia Broomal; Monthly Meeting: London Grove Monthly Meeting; Yearly Meeting: Philadelphia Yearly Meeting; Meeting State: Pennsylvania; Meeting County: Chester.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Birth'': \"U.S., Quaker Meeting Records, 1681-1935\", database, Swarthmore College, Swarthmore, Pennsylvania, ({{Ancestry Record|2189|2035846}} : accessed 6 May 2021), Name: James Broomal; Event Type: Birth; Birth Date: 18 Oct 1799; Birth Date on Image: 18 Tenth 1799; Birth Place: Chester, Pennsylvania; Father: Isaac Broomal; Mother: Lydia Broomal; Monthly Meeting: London Grove Monthly Meeting; Yearly Meeting: Philadelphia Yearly Meeting; Meeting State: Pennsylvania; Meeting County: Chester.",
+    "type": "source"
+  }
+}

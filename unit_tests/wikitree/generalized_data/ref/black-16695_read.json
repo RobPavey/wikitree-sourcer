@@ -1,0 +1,65 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Louisa",
+    "middleNames": "Annie",
+    "lastName": "Black"
+  },
+  "lastNameAtBirth": "Black",
+  "lastNameAtDeath": "Black",
+  "mothersMaidenName": "Taylor",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "5 Nov 1886",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "24 Jul 1953",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Aberdeen, Aberdeenshire, Scotland"
+  },
+  "deathPlace": {
+    "placeString": "Bangor, Caernarfonshire, Wales, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Robert Black",
+        "lastName": "Black",
+        "forenames": "Robert"
+      },
+      "lastNameAtBirth": "Black",
+      "lastNameAtDeath": "Black"
+    },
+    "mother": {
+      "name": {
+        "name": "Annie Lawrence Taylor",
+        "lastName": "Taylor",
+        "forenames": "Annie Lawrence"
+      },
+      "lastNameAtBirth": "Taylor",
+      "lastNameAtDeath": "Taylor"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Harold Edington Dickens",
+        "lastName": "Dickens",
+        "forenames": "Harold Edington"
+      },
+      "lastNameAtBirth": "Dickens",
+      "lastNameAtDeath": "Dickens",
+      "marriageDate": {
+        "dateString": "21 Sep 1922"
+      },
+      "marriagePlace": {
+        "placeString": "Murree, Bengal, India"
+      }
+    }
+  ],
+  "hasValidData": true
+}

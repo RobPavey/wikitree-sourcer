@@ -1,0 +1,156 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Flaningan",
+    "forenames": "Catherine"
+  },
+  "eventPlace": {
+    "country": "Wales",
+    "placeString": "Whitmore Street, St Marys, Cardiff, Glamorganshire, Wales"
+  },
+  "registrationDistrict": "Cardiff",
+  "birthDate": {
+    "yearString": "1843",
+    "qualifier": 2
+  },
+  "ageAtEvent": "8",
+  "birthPlace": {
+    "placeString": "Wales"
+  },
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "occupation": "At home",
+  "maritalStatus": "single",
+  "relationshipToHead": "daughter",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Samuel Crawed",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "40",
+      "birthYear": "1811",
+      "occupation": "Labourer on dock"
+    },
+    {
+      "name": "Mary Crawed",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "40",
+      "birthYear": "1811",
+      "occupation": "Labourer on dock wife"
+    },
+    {
+      "name": "Eliza Jones",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "18",
+      "birthYear": "1833",
+      "occupation": "Dress maker",
+      "birthPlace": "City, Herefordshire, England"
+    },
+    {
+      "name": "Caroline Jones",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "12",
+      "birthYear": "1839",
+      "occupation": "At school",
+      "birthPlace": "City, Herefordshire, England"
+    },
+    {
+      "name": "Sarah Jones",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "19",
+      "birthYear": "1832",
+      "occupation": "Servant of place",
+      "birthPlace": "City, Herefordshire, England"
+    },
+    {
+      "name": "John Rogers",
+      "relationship": "lodger",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "15",
+      "birthYear": "1836",
+      "occupation": "Labourer (dock)",
+      "birthPlace": "Bristol, Gloucestershire, England"
+    },
+    {
+      "name": "Michael Flaningan",
+      "relationship": "lodger",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "40",
+      "birthYear": "1811",
+      "occupation": "Labourer (dock)",
+      "birthPlace": "Ireland"
+    },
+    {
+      "name": "Julia Flaningan",
+      "relationship": "lodger",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "38",
+      "birthYear": "1813",
+      "occupation": "Cap maker",
+      "birthPlace": "Ireland"
+    },
+    {
+      "isSelected": true,
+      "name": "Catherine Flaningan",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "8",
+      "birthYear": "1843",
+      "occupation": "At home",
+      "birthPlace": "Cardiff, Glamorgan, Wales"
+    },
+    {
+      "name": "Peter Marks",
+      "relationship": "lodger",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "30",
+      "birthYear": "1821",
+      "occupation": "Painter",
+      "birthPlace": "Cheltenham, Gloucestershire, England"
+    },
+    {
+      "name": "John Smith",
+      "relationship": "lodger",
+      "maritalStatus": "single",
+      "gender": "male",
+      "occupation": "Painter",
+      "birthPlace": "Essex, England"
+    }
+  ],
+  "collectionData": {
+    "id": "1851 England, Wales & Scotland Census",
+    "page": "9",
+    "piece": "2455",
+    "folio": "260",
+    "schedule": "19"
+  },
+  "hasValidData": true
+}

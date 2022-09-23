@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/2135557:1207",
+  "pageType": "record",
+  "dbId": "1207",
+  "recordId": "2135557",
+  "ancestryTemplate": "{{Ancestry Record|1207|2135557}}",
+  "domain": "com",
+  "titleName": "George Dougald Stemm",
+  "titleCollection": "Australia, Electoral Rolls, 1903-1980",
+  "recordData": {
+    "Name": "George Dougald Stemm",
+    "Gender": "Male",
+    "Electoral Date": "1936",
+    "Electoral Place": "Chinchilla, Maranoa, Queensland, Australia"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1207/images/RDAUS1901_100333__060-00044?pid=2135557&usePUB=true&usePUBJs=true",
+  "imageDbId": "1207",
+  "imageRecordId": "RDAUS1901_100333__060-00044",
+  "sourceCitation": "Australian Electoral Commission; Canberra, Australia; Electoral Rolls",
+  "sourceInformation": "Ancestry.com. Australia, Electoral Rolls, 1903-1980 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Australian Electoral Commission. [Electoral roll].",
+  "originalData": "Australian Electoral Commission. [Electoral roll].",
+  "sourceDescription": "This database contains selected Australian electoral rolls, with the exception of South Australia, that run from 1903-1980. Electoral rolls were compiled by each state during election years to determine the number and names of individuals eligible to vote. Information listed in electoral rolls usually includes: name of voter, gender, address, and occupation. Learn more..."
+}

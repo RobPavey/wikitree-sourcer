@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1891",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Bayford",
+    "forenames": "Ethel Daisy"
+  },
+  "lastNameAtBirth": "Bayford",
+  "birthDate": {
+    "yearString": "1891",
+    "quarter": 3
+  },
+  "mothersMaidenName": "Peeks",
+  "personGender": "female",
+  "registrationDistrict": "Christchurch, Hants",
+  "collectionData": {
+    "id": "births",
+    "volume": "02B",
+    "page": "655"
+  },
+  "hasValidData": true
+}

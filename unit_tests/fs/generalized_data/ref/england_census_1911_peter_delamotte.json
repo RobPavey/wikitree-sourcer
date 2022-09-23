@@ -1,0 +1,93 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Peter William Delamotte"
+  },
+  "birthDate": {
+    "dateString": "1849",
+    "yearString": "1849"
+  },
+  "birthPlace": {
+    "placeString": "Swanage, Dorsetshire"
+  },
+  "eventDate": {
+    "dateString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "Staines, Middlesex, England, United Kingdom"
+  },
+  "ageAtEvent": "62",
+  "occupation": "Stesgron",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Peter William Delamotte",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "62",
+      "birthYear": "1849",
+      "occupation": "Stesgron",
+      "birthPlace": "Swanage, Dorsetshire",
+      "isSelected": true
+    },
+    {
+      "name": "Julia Augusta Delamotte",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "54",
+      "birthYear": "1857",
+      "birthPlace": "Ipswich, Suffolk"
+    },
+    {
+      "name": "Marjorie Glady Cobble Delamotte",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "24",
+      "birthYear": "1887",
+      "birthPlace": "Staines, Middlesex"
+    },
+    {
+      "name": "Frances Margaret Hawkers",
+      "relationship": "servant",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "30",
+      "birthYear": "1881",
+      "occupation": "General Servant Domestic",
+      "birthPlace": "Worldham, Hampshire"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "spouses": [
+    {
+      "name": {
+        "name": "Julia Augusta Delamotte"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1921547",
+    "page": "1",
+    "schedule": "13",
+    "folio": "25"
+  },
+  "hasValidData": true
+}

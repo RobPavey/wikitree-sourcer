@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Louisa",
+  "prefNames": "",
+  "middleNames": "Annie",
+  "lnab": "Black",
+  "currentLastName": "Black",
+  "mothersMaidenName": "Taylor",
+  "birthDate": "5 Nov 1886",
+  "birthDateStatus": "none",
+  "deathDate": "24 Jul 1953",
+  "deathDateStatus": "none",
+  "birthLocation": "Aberdeen, Aberdeenshire, Scotland",
+  "deathLocation": "Bangor, Caernarfonshire, Wales, United Kingdom",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Dickens-1530",
+      "name": "Harold Edington Dickens",
+      "marriageString": "21 Sep 1922 in Murree, Bengal, India",
+      "marriageDate": "21 Sep 1922",
+      "marriagePlace": "Murree, Bengal, India"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Black-16695",
+  "currentTabText": "Profile (private view)",
+  "pageType": "private",
+  "wikiId": "Black-16695",
+  "name": "Louisa Annie Black",
+  "parents": {
+    "father": {
+      "wikiId": "Black-16696",
+      "name": "Robert Black"
+    },
+    "mother": {
+      "wikiId": "Taylor-70522",
+      "name": "Annie Lawrence Taylor"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Alice Armstrong"
+  },
+  "eventDate": {
+    "dateString": "Abt 1970"
+  },
+  "deathDate": {
+    "qualifier": 2,
+    "dateString": "1970"
+  },
+  "eventPlace": {
+    "placeString": "Brunswick, Victoria"
+  },
+  "lastNameAtDeath": "Armstrong",
+  "ageAtDeath": "85",
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1885"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Thomas W Lloyd"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Emma Folkes"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1779"
+  },
+  "hasValidData": true
+}

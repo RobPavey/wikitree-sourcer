@@ -1,0 +1,32 @@
+{
+  "sourceType": "record",
+  "recordType": "Obituary",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "John P Gardner"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1861"
+  },
+  "deathDate": {
+    "qualifier": 2,
+    "dateString": "1901"
+  },
+  "deathPlace": {
+    "placeString": "Bakersfield Kern County"
+  },
+  "eventDate": {
+    "dateString": "14 Oct 1901"
+  },
+  "eventPlace": {
+    "placeString": "Placerville, California, USA"
+  },
+  "lastNameAtDeath": "Gardner",
+  "ageAtDeath": "40",
+  "collectionData": {
+    "id": "61843"
+  },
+  "hasValidData": true
+}

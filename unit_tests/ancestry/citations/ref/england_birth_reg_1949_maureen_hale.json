@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Maureen's birth was registered in the Apr-May-Jun quarter of 1949 in the Brentwood district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>General Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)<br/>\nMaureen L Hale birth registered Apr-May-Jun 1949 in Brentwood, mother's maiden name Burton.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Maureen's birth was registered in the Apr-May-Jun quarter of 1949 in the Brentwood district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)<br/>\nMaureen L Hale birth registered Apr-May-Jun 1949 in Brentwood, mother's maiden name Burton.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>General Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)<br/>Maureen L Hale birth registered Apr-May-Jun 1949 in Brentwood, mother's maiden name Burton.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)<br/>\nName: Maureen L Hale; Registration Date: Apr 1949 [May 1949] [Jun 1949]; Registration Quarter: Apr-May-Jun; Registration District: Brentwood; Inferred County: Essex; Mother's Maiden Name: Burton.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Maureen's birth was registered in the Apr-May-Jun quarter of 1949 in the Brentwood district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)<br/>\nName: Maureen L Hale; Registration Date: Apr 1949 [May 1949] [Jun 1949]; Registration Quarter: Apr-May-Jun; Registration District: Brentwood; Inferred County: Essex; Mother's Maiden Name: Burton.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>General Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)<br/>Name: Maureen L Hale; Registration Date: Apr 1949 [May 1949] [Jun 1949]; Registration Quarter: Apr-May-Jun; Registration District: Brentwood; Inferred County: Essex; Mother's Maiden Name: Burton.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Maureen L Hale\n|-\n| Registration Date || Apr 1949 [May 1949] [Jun 1949]\n|-\n| Registration Quarter || Apr-May-Jun\n|-\n| Registration District || Brentwood\n|-\n| Inferred County || Essex\n|-\n| Mother's Maiden Name || Burton\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Maureen's birth was registered in the Apr-May-Jun quarter of 1949 in the Brentwood district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Maureen L Hale\n|-\n| Registration Date || Apr 1949 [May 1949] [Jun 1949]\n|-\n| Registration Quarter || Apr-May-Jun\n|-\n| Registration District || Brentwood\n|-\n| Inferred County || Essex\n|-\n| Mother's Maiden Name || Burton\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>General Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)<br/>Name: Maureen L Hale; Registration Date: Apr 1949 [May 1949] [Jun 1949]; Registration Quarter: Apr-May-Jun; Registration District: Brentwood; Inferred County: Essex; Mother's Maiden Name: Burton.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"England & Wales, Civil Registration Birth Index, 1916-2007,\" database, ({{Ancestry Record|8782|22191988}} : accessed 6 May 2021), Maureen L Hale birth registered Apr-May-Jun 1949 in Brentwood, mother's maiden name Burton; citing General Register Office, United Kingdom, Reference Volume 4a, Page 550, Volume Number 4a.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Maureen's birth was registered in the Apr-May-Jun quarter of 1949 in the Brentwood district.<ref>\"England & Wales, Civil Registration Birth Index, 1916-2007,\" database, ({{Ancestry Record|8782|22191988}} : accessed 6 May 2021), Maureen L Hale birth registered Apr-May-Jun 1949 in Brentwood, mother's maiden name Burton; citing General Register Office, United Kingdom, Reference Volume 4a, Page 550, Volume Number 4a.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"England & Wales, Civil Registration Birth Index, 1916-2007,\" database, ({{Ancestry Record|8782|22191988}} : accessed 6 May 2021), Maureen L Hale birth registered Apr-May-Jun 1949 in Brentwood, mother's maiden name Burton; citing General Register Office, United Kingdom, Reference Volume 4a, Page 550, Volume Number 4a.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Birth Registration'':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\", database, \nGeneral Register Office, United Kingdom, Reference Volume 4a, Page 550, Volume Number 4a, \n({{Ancestry Record|8782|22191988}} : accessed 6 May 2021), \nName: Maureen L Hale; Registration Date: Apr 1949 [May 1949] [Jun 1949]; Registration Quarter: Apr-May-Jun; Registration District: Brentwood; Inferred County: Essex; Mother's Maiden Name: Burton.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Maureen's birth was registered in the Apr-May-Jun quarter of 1949 in the Brentwood district.<ref>\n''Birth Registration'':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\", database, \nGeneral Register Office, United Kingdom, Reference Volume 4a, Page 550, Volume Number 4a, \n({{Ancestry Record|8782|22191988}} : accessed 6 May 2021), \nName: Maureen L Hale; Registration Date: Apr 1949 [May 1949] [Jun 1949]; Registration Quarter: Apr-May-Jun; Registration District: Brentwood; Inferred County: Essex; Mother's Maiden Name: Burton.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Birth Registration'': \"England & Wales, Civil Registration Birth Index, 1916-2007\", database, General Register Office, United Kingdom, Reference Volume 4a, Page 550, Volume Number 4a, ({{Ancestry Record|8782|22191988}} : accessed 6 May 2021), Name: Maureen L Hale; Registration Date: Apr 1949 [May 1949] [Jun 1949]; Registration Quarter: Apr-May-Jun; Registration District: Brentwood; Inferred County: Essex; Mother's Maiden Name: Burton.",
+    "type": "source"
+  }
+}

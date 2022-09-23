@@ -1,0 +1,55 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "White (Howard)",
+    "forenames": "Rosemary M"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Danehurst, Godstone, Godstone R.D., Surrey, England",
+    "streetAddress": "Danehurst, Godstone"
+  },
+  "birthDate": {
+    "yearString": "1915",
+    "qualifier": 1,
+    "dateString": "09 Jun 1915"
+  },
+  "eventDate": {
+    "yearString": "1939"
+  },
+  "occupation": "Unemployed",
+  "maritalStatus": "single",
+  "householdArrayFields": [
+    "name",
+    "maritalStatus",
+    "gender",
+    "birthDate",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "isSelected": true,
+      "name": "Rosemary M White (Howard)",
+      "maritalStatus": "single",
+      "gender": "female",
+      "birthDate": "09 Jun 1915",
+      "occupation": "Unemployed"
+    },
+    {
+      "name": "Jesse Buckland",
+      "maritalStatus": "single",
+      "gender": "male",
+      "birthDate": "07 Apr 1891",
+      "occupation": "General Labourer"
+    }
+  ],
+  "collectionData": {
+    "id": "1939 Register",
+    "piece": "1946D",
+    "schedule": "214"
+  },
+  "hasValidData": true
+}

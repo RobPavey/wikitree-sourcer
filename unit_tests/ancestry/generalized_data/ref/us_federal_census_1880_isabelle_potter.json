@@ -1,0 +1,89 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Isabelle Potter"
+  },
+  "personGender": "female",
+  "birthPlace": {
+    "placeString": "North Carolina"
+  },
+  "eventDate": {
+    "yearString": "1880"
+  },
+  "eventPlace": {
+    "placeString": "Hartmans, Hamblen, Tennessee, USA"
+  },
+  "occupation": "Keeping House",
+  "ageAtEvent": "56",
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Paul Potter",
+      "age": "56",
+      "relationship": "head",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=10577746&indiv=try"
+    },
+    {
+      "name": "Isabelle Potter",
+      "age": "56",
+      "relationship": "wife",
+      "isSelected": true,
+      "maritalStatus": "married",
+      "gender": "female",
+      "occupation": "Keeping House",
+      "birthDate": "Abt 1824",
+      "birthPlace": "North Carolina"
+    },
+    {
+      "name": "Robert Potter",
+      "age": "21",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=15756440&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Sarah Potter",
+      "age": "16",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=15756419&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Virginia Bryant",
+      "age": "29",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=41660766&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Samuel Bryant",
+      "age": "7",
+      "relationship": "grandson",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=10577828&indiv=try"
+    },
+    {
+      "name": "Ida Bryant",
+      "age": "3",
+      "relationship": "granddaughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=10577867&indiv=try"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Paul Potter"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "6742"
+  },
+  "hasValidData": true
+}

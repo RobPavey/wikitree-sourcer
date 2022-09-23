@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/7162:2878",
+  "pageType": "record",
+  "dbId": "2878",
+  "recordId": "7162",
+  "ancestryTemplate": "{{Ancestry Record|2878|7162}}",
+  "domain": "com",
+  "titleName": "George M Leonard",
+  "titleCollection": "New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917",
+  "recordData": {
+    "Name": "George M Leonard",
+    "Birth Date": "abt 1892",
+    "Birth Place": "Buffalo, New York",
+    "Enlistment Date": "26 Apr 1917",
+    "Age at enlistment": "25",
+    "Enlistment Place": "New York, USA"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2878/images/40654_420302988_0230-01069?pid=7162&usePUB=true&usePUBJs=true",
+  "imageDbId": "2878",
+  "imageRecordId": "40654_420302988_0230-01069",
+  "sourceInformation": "Ancestry.com. New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2013. Original data: 1889–1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York.",
+  "originalData": "1889–1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York.",
+  "sourceDescription": "Did your great-grandpa march with the 74th New York? Learn more..."
+}

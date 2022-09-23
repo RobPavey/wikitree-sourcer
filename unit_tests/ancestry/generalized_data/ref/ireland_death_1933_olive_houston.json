@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Olive M M Houston"
+  },
+  "eventDate": {
+    "yearString": "1933",
+    "quarter": 1
+  },
+  "registrationDistrict": "Dublin South",
+  "deathDate": {
+    "yearString": "1933",
+    "quarter": 1
+  },
+  "lastNameAtDeath": "Houston",
+  "ageAtDeath": "39",
+  "collectionData": {
+    "id": "2534",
+    "volume": "2",
+    "page": "384"
+  },
+  "hasValidData": true
+}

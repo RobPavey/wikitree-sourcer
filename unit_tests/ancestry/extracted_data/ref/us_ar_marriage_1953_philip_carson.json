@@ -1,0 +1,32 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61775&h=1236093",
+  "pageType": "record",
+  "dbId": "61775",
+  "recordId": "1236093",
+  "ancestryTemplate": "{{Ancestry Record|61775|1236093}}",
+  "domain": "com",
+  "titleName": "Mr Philip A Carson",
+  "titleCollection": "Arkansas, Marriage Certificates, 1917-1969",
+  "recordData": {
+    "Name": "Mr Philip A Carson",
+    "Race": "American",
+    "Marriage License Age": "46",
+    "Record Type": "MarriageLicense",
+    "Birth Date": "abt 1907",
+    "Marriage License Date": "22 Jun 1953",
+    "Marriage License Place": "Arkansas, USA",
+    "Marriage Place": "Carroll, Arkansas, USA",
+    "Spouse": "Violet M Crook",
+    "Certificate Number": "3634"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=ArkansasMarriages&indiv=try&h=91236093"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/61775/images/61775_01_00698-03655?pid=1236093&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26db%3D61775%26h%3D1236093&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "61775",
+  "imageRecordId": "61775_01_00698-03655",
+  "sourceCitation": "Arkansas Department of Vital Records; Little Rock, Arkansas; Marriage Certificates; Year: 1953; Film: #1",
+  "sourceInformation": "Ancestry.com. Arkansas, Marriage Certificates, 1917-1969 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2019. Original data: Arkansas Department of Vital Records. Marriage Certificates. Little Rock, AR, USA.",
+  "originalData": "Arkansas Department of Vital Records. Marriage Certificates. Little Rock, AR, USA.",
+  "sourceDescription": "This collection contains marriage certificates from the state of Arkansasthat took place between the years of 1917 and 1969. Learn more..."
+}

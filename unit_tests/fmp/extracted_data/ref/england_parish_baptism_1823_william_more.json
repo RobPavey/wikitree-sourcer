@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "url": "https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F220095549%2F1",
+  "subDomain": "www",
+  "domain": "findmypast.co.uk",
+  "urlPath": "transcript",
+  "urlParameters": "id=GBPRS%2FB%2F220095549%2F1",
+  "heading": "William George More in 1823",
+  "collection": "Suffolk Baptism Index 1538-1911",
+  "place": "Fressingfield, St Peter & St Paul",
+  "personGender": "male",
+  "recordData": {
+    "First name(s)": "William George",
+    "Last name": "More",
+    "Birth year": "1823",
+    "Baptism year": "1823",
+    "Baptism date": "02 Feb 1823",
+    "Parish": "Fressingfield, St Peter & St Paul",
+    "Place": "Fressingfield",
+    "County": "Suffolk",
+    "Country": "England",
+    "Relationship": "Son",
+    "Father's first name(s)": "John",
+    "Father's occupation": "Farmer",
+    "Mothers first name(s)": "Mary",
+    "Source": "Suffolk Baptism Index (Part 3)",
+    "Entry number": "20287",
+    "Record set": "Suffolk Baptism Index 1538-1911",
+    "Category": "Birth, Marriage, Death & Parish Records",
+    "Subcategory": "Parish Baptisms",
+    "Collections from": "England, Great Britain"
+  }
+}

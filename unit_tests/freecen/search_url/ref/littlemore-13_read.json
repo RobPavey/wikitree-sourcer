@@ -1,0 +1,14 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "first_name": "Amelia Elizabeth",
+      "last_name": "Littlemore",
+      "search_query_fuzzy": true,
+      "start_year": 1846,
+      "end_year": 1852,
+      "search_query_sex": "F",
+      "search_query_birth_chapman_codes": "MDX"
+    }
+  }
+}

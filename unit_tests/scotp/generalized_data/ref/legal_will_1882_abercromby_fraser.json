@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "Abercromby"
+  },
+  "eventDate": {
+    "dateString": "30 May 1882"
+  },
+  "courtName": "Aberdeen Sheriff Court",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Aberdeen",
+    "placeString": "Aberdeen, Scotland"
+  },
+  "testateOrIntestate": "intestate",
+  "recordSubtype": "Inventory",
+  "deathDate": {
+    "dateString": "11 May 1882"
+  },
+  "hasValidData": true
+}

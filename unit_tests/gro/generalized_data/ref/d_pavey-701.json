@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1995",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Derek"
+  },
+  "lastNameAtDeath": "Pavey",
+  "deathDate": {
+    "yearString": "1995",
+    "quarter": 3
+  },
+  "birthDate": {
+    "yearString": "1927"
+  },
+  "personGender": "male",
+  "registrationDistrict": "Eastbourne",
+  "collectionData": {
+    "id": "deaths"
+  },
+  "hasValidData": true
+}

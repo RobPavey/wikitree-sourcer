@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales Birth Index\"<br/>\n[https://www.freebmd.org.uk/cgi/information.pl?cite=UcJ7P%2BNbpxj3aGc9g0sHDg&scan=1 FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nCalvert, Florence.<br/>\n''GRO Reference:'' 1902 Jan-Feb-Mar in Easington Volume 10a Page 479.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Florence's birth was registered in the Jan-Feb-Mar quarter of 1902 in the Easington district.<ref>\n'''Birth Registration''':\n\"England & Wales Birth Index\"<br/>\n[https://www.freebmd.org.uk/cgi/information.pl?cite=UcJ7P%2BNbpxj3aGc9g0sHDg&scan=1 FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nCalvert, Florence.<br/>\n''GRO Reference:'' 1902 Jan-Feb-Mar in Easington Volume 10a Page 479.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales Birth Index\"<br/>[https://www.freebmd.org.uk/cgi/information.pl?cite=UcJ7P%2BNbpxj3aGc9g0sHDg&scan=1 FreeBMD Entry Information] (accessed 6 May 2021)<br/>Calvert, Florence.<br/>\n''GRO Reference:'' 1902 Jan-Feb-Mar in Easington Volume 10a Page 479.",
+    "type": "source"
+  }
+}

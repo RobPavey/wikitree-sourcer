@@ -1,0 +1,83 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=4721&h=2697241&indiv=try&o_vc=Record:OtherRecord&rhSource=2469",
+  "pageType": "record",
+  "dbId": "4721",
+  "recordId": "2697241",
+  "ancestryTemplate": "{{Ancestry Record|4721|2697241}}",
+  "domain": "com",
+  "titleName": "Mary F Hughes",
+  "titleCollection": "Rhode Island, U.S., State Censuses, 1865-1935",
+  "recordData": {
+    "Name": "Mary F Hughes",
+    "Birth Date": "abt 1867",
+    "Birth Place": "Rhode Island",
+    "Gender": "Female",
+    "Age": "58",
+    "Relationship": "Head",
+    "Enumeration Year": "1925",
+    "Township": "Newport Ward 4",
+    "County": "Newport",
+    "Enumeration District or Census Tract": "57",
+    "Line Number": "11",
+    "Household Number": "244",
+    "Volume Number": "17",
+    "Page Number": "27",
+    "Household Members": "Mary F Hughes 58<br/>Agnes M Fay 23<br/>Mary Fay 2<br/>Thomas T Hughes 21<br/>William T Hughes 17<br/>Charles T Fay 25"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Name": "Mary F Hughes",
+        "dbId": "RICensus",
+        "recordId": "2697241",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697241",
+        "Age": "58"
+      },
+      {
+        "Name": "Agnes M Fay",
+        "dbId": "RICensus",
+        "recordId": "2697242",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697242",
+        "Age": "23"
+      },
+      {
+        "Name": "Mary Fay",
+        "dbId": "RICensus",
+        "recordId": "2697243",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697243",
+        "Age": "2"
+      },
+      {
+        "Name": "Thomas T Hughes",
+        "dbId": "RICensus",
+        "recordId": "2697244",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697244",
+        "Age": "21"
+      },
+      {
+        "Name": "William T Hughes",
+        "dbId": "RICensus",
+        "recordId": "2697245",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697245",
+        "Age": "17"
+      },
+      {
+        "Name": "Charles T Fay",
+        "dbId": "RICensus",
+        "recordId": "2697246",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697246",
+        "Age": "25"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/4721/images/41271_316048-00548?pid=2697241&backurl=https://search.ancestry.com/cgi-bin/sse.dll?dbid%3D4721%26h%3D2697241%26indiv%3Dtry%26o_vc%3DRecord:OtherRecord%26rhSource%3D2469&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "4721",
+  "imageRecordId": "41271_316048-00548",
+  "sourceInformation": "Ancestry.com. Rhode Island, U.S., State Censuses, 1865-1935 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2013. Original data: Rhode Island State Census, 1865. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts.Rhode Island State Census, 1875. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts.Rhode Island State Census, 1885. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts.Rhode Island State Census, 1915. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts.Rhode Island State Census, 1925. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts.Rhode Island State Census, 1935. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts.",
+  "originalData": "Rhode Island State Census, 1865. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts.",
+  "sourceDescription": "State censuses, like these six censuses from Rhode Island, are a great way to gain insights into your family in the years between federal censuses. Learn more..."
+}

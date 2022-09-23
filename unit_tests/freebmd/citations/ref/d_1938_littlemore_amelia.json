@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Death Index\"<br/>\n[https://www.freebmd.org.uk/cgi/information.pl?cite=r%2BTR0lyWnwMHak8jSNonaA&scan=1 FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nPavey, Amelia E. (Age at death: 88).<br/>\n''GRO Reference:'' 1938 Jan-Feb-Mar in Leek Volume 6b Page 327.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Amelia's death (age 88) was registered in the Jan-Feb-Mar quarter of 1938 in the Leek district.<ref>\n'''Death Registration''':\n\"England & Wales Death Index\"<br/>\n[https://www.freebmd.org.uk/cgi/information.pl?cite=r%2BTR0lyWnwMHak8jSNonaA&scan=1 FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nPavey, Amelia E. (Age at death: 88).<br/>\n''GRO Reference:'' 1938 Jan-Feb-Mar in Leek Volume 6b Page 327.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Death Index\"<br/>[https://www.freebmd.org.uk/cgi/information.pl?cite=r%2BTR0lyWnwMHak8jSNonaA&scan=1 FreeBMD Entry Information] (accessed 6 May 2021)<br/>Pavey, Amelia E. (Age at death: 88).<br/>\n''GRO Reference:'' 1938 Jan-Feb-Mar in Leek Volume 6b Page 327.",
+    "type": "source"
+  }
+}

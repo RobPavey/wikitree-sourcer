@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>\n{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1891 census Blanche (age 22) was the wife of Thomas Radcliffe in London, St Pancras, London, England.<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>\n{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1891 Census''': \"1891 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>\n{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)<br/>\nBlanche A Radcliffe (22), wife, in household of Thomas Radcliffe (26) in London, St Pancras in Pancras registration district in London, England. Born in Kentish Town, London, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1891 census Blanche (age 22) was the wife of Thomas Radcliffe in London, St Pancras, London, England.<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>\n{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)<br/>\nBlanche A Radcliffe (22), wife, in household of Thomas Radcliffe (26) in London, St Pancras in Pancras registration district in London, England. Born in Kentish Town, London, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1891 Census''': \"1891 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)<br/>Blanche A Radcliffe (22), wife, in household of Thomas Radcliffe (26) in London, St Pancras in Pancras registration district in London, England. Born in Kentish Town, London, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>\n{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)<br/>\nName: Blanche A Radcliffe; Gender: Female; Age: 22; Relationship: Wife; Birth Year: 1869; Spouse: Thomas Radcliffe; Child: George L Radcliffe Reginald S Radcliffe; Birth Place: Kentish Town, London, England; Civil parish: St Pancras; Ecclesiastical parish: St Benet and All Saints; Residence Place: London, St Pancras, London, England; Registration district: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 54; <br/>Household Members Age Relationship:<br/>Thomas Radcliffe 26 Head<br/>Blanche A Radcliffe 22 Wife<br/>George L Radcliffe 4 Son<br/>Reginald S Radcliffe 3 Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1891 census Blanche (age 22) was the wife of Thomas Radcliffe in London, St Pancras, London, England.<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>\n{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)<br/>\nName: Blanche A Radcliffe; Gender: Female; Age: 22; Relationship: Wife; Birth Year: 1869; Spouse: Thomas Radcliffe; Child: George L Radcliffe Reginald S Radcliffe; Birth Place: Kentish Town, London, England; Civil parish: St Pancras; Ecclesiastical parish: St Benet and All Saints; Residence Place: London, St Pancras, London, England; Registration district: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 54; <br/>Household Members Age Relationship:<br/>Thomas Radcliffe 26 Head<br/>Blanche A Radcliffe 22 Wife<br/>George L Radcliffe 4 Son<br/>Reginald S Radcliffe 3 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1891 Census''': \"1891 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)<br/>Name: Blanche A Radcliffe; Gender: Female; Age: 22; Relationship: Wife; Birth Year: 1869; Spouse: Thomas Radcliffe; Child: George L Radcliffe Reginald S Radcliffe; Birth Place: Kentish Town, London, England; Civil parish: St Pancras; Ecclesiastical parish: St Benet and All Saints; Residence Place: London, St Pancras, London, England; Registration district: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 54; <br/>Household Members Age Relationship:<br/>Thomas Radcliffe 26 Head<br/>Blanche A Radcliffe 22 Wife<br/>George L Radcliffe 4 Son<br/>Reginald S Radcliffe 3 Son.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>\n{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Blanche A Radcliffe\n|-\n| Gender || Female\n|-\n| Age || 22\n|-\n| Relationship || Wife\n|-\n| Birth Year || 1869\n|-\n| Spouse || Thomas Radcliffe\n|-\n| Child || George L Radcliffe Reginald S Radcliffe\n|-\n| Birth Place || Kentish Town, London, England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || St Benet and All Saints\n|-\n| Residence Place || London, St Pancras, London, England\n|-\n| Registration district || Pancras\n|-\n| Sub registration district || Kentish Town\n|-\n| ED, Institution or Vessel || 54\n|-\n| Household Members<br/>Age<br/>Relationship || Thomas Radcliffe 26 Head<br/>Blanche A Radcliffe 22 Wife<br/>George L Radcliffe 4 Son<br/>Reginald S Radcliffe 3 Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1891 census Blanche (age 22) was the wife of Thomas Radcliffe in London, St Pancras, London, England.<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>\n{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Blanche A Radcliffe\n|-\n| Gender || Female\n|-\n| Age || 22\n|-\n| Relationship || Wife\n|-\n| Birth Year || 1869\n|-\n| Spouse || Thomas Radcliffe\n|-\n| Child || George L Radcliffe Reginald S Radcliffe\n|-\n| Birth Place || Kentish Town, London, England\n|-\n| Civil parish || St Pancras\n|-\n| Ecclesiastical parish || St Benet and All Saints\n|-\n| Residence Place || London, St Pancras, London, England\n|-\n| Registration district || Pancras\n|-\n| Sub registration district || Kentish Town\n|-\n| ED, Institution or Vessel || 54\n|-\n| Household Members<br/>Age<br/>Relationship || Thomas Radcliffe 26 Head<br/>Blanche A Radcliffe 22 Wife<br/>George L Radcliffe 4 Son<br/>Reginald S Radcliffe 3 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1891 Census''': \"1891 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250<br/>{{Ancestry Record|6598|7866657}} (accessed 6 May 2021)<br/>Name: Blanche A Radcliffe; Gender: Female; Age: 22; Relationship: Wife; Birth Year: 1869; Spouse: Thomas Radcliffe; Child: George L Radcliffe Reginald S Radcliffe; Birth Place: Kentish Town, London, England; Civil parish: St Pancras; Ecclesiastical parish: St Benet and All Saints; Residence Place: London, St Pancras, London, England; Registration district: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 54; <br/>Household Members Age Relationship:<br/>Thomas Radcliffe 26 Head<br/>Blanche A Radcliffe 22 Wife<br/>George L Radcliffe 4 Son<br/>Reginald S Radcliffe 3 Son.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1891 England Census,\" database, ({{Ancestry Record|6598|7866657}} : accessed 6 May 2021), Blanche A Radcliffe (22), wife, in household of Thomas Radcliffe (26) in London, St Pancras in Pancras registration district in London, England. Born in Kentish Town, London, England; citing The National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 140, Folio 159, Page 22, GSU roll 6095250.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1891 census Blanche (age 22) was the wife of Thomas Radcliffe in London, St Pancras, London, England.<ref>\"1891 England Census,\" database, ({{Ancestry Record|6598|7866657}} : accessed 6 May 2021), Blanche A Radcliffe (22), wife, in household of Thomas Radcliffe (26) in London, St Pancras in Pancras registration district in London, England. Born in Kentish Town, London, England; citing The National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 140, Folio 159, Page 22, GSU roll 6095250.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1891 England Census,\" database, ({{Ancestry Record|6598|7866657}} : accessed 6 May 2021), Blanche A Radcliffe (22), wife, in household of Thomas Radcliffe (26) in London, St Pancras in Pancras registration district in London, England. Born in Kentish Town, London, England; citing The National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 140, Folio 159, Page 22, GSU roll 6095250.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1891 Census'':\n\"1891 England Census\", database, \nThe National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 140, Folio 159, Page 22, GSU roll 6095250, \n({{Ancestry Record|6598|7866657}} : accessed 6 May 2021), \nName: Blanche A Radcliffe; Gender: Female; Age: 22; Relationship: Wife; Birth Year: 1869; Spouse: Thomas Radcliffe; Child: George L Radcliffe Reginald S Radcliffe; Birth Place: Kentish Town, London, England; Civil parish: St Pancras; Ecclesiastical parish: St Benet and All Saints; Residence Place: London, St Pancras, London, England; Registration district: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 54; Household Members Age Relationship: Thomas Radcliffe 26 Head, Blanche A Radcliffe 22 Wife, George L Radcliffe 4 Son, Reginald S Radcliffe 3 Son.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1891 census Blanche (age 22) was the wife of Thomas Radcliffe in London, St Pancras, London, England.<ref>\n''1891 Census'':\n\"1891 England Census\", database, \nThe National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 140, Folio 159, Page 22, GSU roll 6095250, \n({{Ancestry Record|6598|7866657}} : accessed 6 May 2021), \nName: Blanche A Radcliffe; Gender: Female; Age: 22; Relationship: Wife; Birth Year: 1869; Spouse: Thomas Radcliffe; Child: George L Radcliffe Reginald S Radcliffe; Birth Place: Kentish Town, London, England; Civil parish: St Pancras; Ecclesiastical parish: St Benet and All Saints; Residence Place: London, St Pancras, London, England; Registration district: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 54; Household Members Age Relationship: Thomas Radcliffe 26 Head, Blanche A Radcliffe 22 Wife, George L Radcliffe 4 Son, Reginald S Radcliffe 3 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1891 Census'': \"1891 England Census\", database, The National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 140, Folio 159, Page 22, GSU roll 6095250, ({{Ancestry Record|6598|7866657}} : accessed 6 May 2021), Name: Blanche A Radcliffe; Gender: Female; Age: 22; Relationship: Wife; Birth Year: 1869; Spouse: Thomas Radcliffe; Child: George L Radcliffe Reginald S Radcliffe; Birth Place: Kentish Town, London, England; Civil parish: St Pancras; Ecclesiastical parish: St Benet and All Saints; Residence Place: London, St Pancras, London, England; Registration district: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 54; Household Members Age Relationship: Thomas Radcliffe 26 Head, Blanche A Radcliffe 22 Wife, George L Radcliffe 4 Son, Reginald S Radcliffe 3 Son.",
+    "type": "source"
+  }
+}

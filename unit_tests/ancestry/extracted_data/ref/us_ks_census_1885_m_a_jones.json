@@ -1,0 +1,78 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/187423:1088",
+  "pageType": "record",
+  "dbId": "1088",
+  "recordId": "187423",
+  "ancestryTemplate": "{{Ancestry Record|1088|187423}}",
+  "domain": "com",
+  "titleName": "M A Jones",
+  "titleCollection": "Kansas, U.S., State Census Collection, 1855-1925",
+  "recordData": {
+    "Name": "M A Jones",
+    "Census Date": "1 Mar 1885",
+    "Residence County": "Cowley",
+    "Residence State": "Kansas",
+    "Locality": "Richland",
+    "Birth Place": "Ind Carolina",
+    "Family Number": "24",
+    "Marital Status": "Married",
+    "Gender": "Female",
+    "Age": "34",
+    "Birth Year": "abt 1851",
+    "Race": "White",
+    "Household Member(s)<br/>Age": "R C Jones 35<br/>M A Jones 34<br/>Rosa Jones 13<br/>J E Jones 11<br/>J M Jones 9<br/>G M Jones 6m"
+  },
+  "household": {
+    "headings": [
+      "Household Member(s)",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Member(s)": "R C Jones",
+        "dbId": "1088",
+        "recordId": "187422",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187422&indiv=try",
+        "Age": "35"
+      },
+      {
+        "Household Member(s)": "M A Jones",
+        "Age": "34"
+      },
+      {
+        "Household Member(s)": "Rosa Jones",
+        "dbId": "1088",
+        "recordId": "187424",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187424&indiv=try",
+        "Age": "13"
+      },
+      {
+        "Household Member(s)": "J E Jones",
+        "dbId": "1088",
+        "recordId": "187425",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187425&indiv=try",
+        "Age": "11"
+      },
+      {
+        "Household Member(s)": "J M Jones",
+        "dbId": "1088",
+        "recordId": "187426",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187426&indiv=try",
+        "Age": "9"
+      },
+      {
+        "Household Member(s)": "G M Jones",
+        "dbId": "1088",
+        "recordId": "187427",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187427&indiv=try",
+        "Age": "6m"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1088/images/ks1885_30-0008?pid=187423&usePUB=true&usePUBJs=true",
+  "imageDbId": "1088",
+  "imageRecordId": "ks1885_30-0008",
+  "sourceCitation": "Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11",
+  "sourceInformation": "Ancestry.com. Kansas, U.S., State Census Collection, 1855-1925 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2009. Original data: 1855 Kansas Territory Census. Microfilm reel K-1. Kansas State Historical Society.1856, 1857, and 1858 Kansas Territory Censuses. Microfilm reel K-1. Kansas State Historical Society.1859 Kansas Territory Census. Microfilm reel K-1. Kansas State Historical Society.1865 Kansas State Census. Microfilm reels K-1 – K-8. Kansas State Historical Society.1875 Kansas State Census. Microfilm reels K-1 – K-20. Kansas State Historical Society.1885 Kansas State Census. Microfilm reels K-1 – K-146. Kansas State Historical Society.1895 Kansas State Census. Microfilm reels K-1 – K-169. Kansas State Historical Society.1905 Kansas State Census. Microfilm reels K-1 - K-181. Kansas State Historical Society.1915 Kansas State Census. Microfilm reels K-1 – K-271. Kansas State Historical Society.1925 Kansas State Census. Microfilm reels K-1 – K-177. Kansas State Historical Society.",
+  "sourceDescription": "This database contains state censuses for Kansas from 1855-1925. Information available in this database includes: name, age, gender, race, relationship to head of household, birthplace, marital status, and place of enumeration. Additional information about an individual may be listed on the original record. Learn more..."
+}

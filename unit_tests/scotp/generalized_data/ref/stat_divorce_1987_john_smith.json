@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "eventDate": {
+    "yearString": "1987"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Pollock"
+      },
+      "marriageDate": "24 February 1962"
+    }
+  ],
+  "courtName": "Hamilton",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Hamilton, Scotland"
+  },
+  "hasValidData": true
+}

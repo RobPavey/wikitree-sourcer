@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Devon Marriages And Banns\"<br/>\nArchive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Emily (age 23), daughter of James Spiller, married John Trivet (age 23) on 23 April 1856 in Kilmington, Devon, England.<ref>\n'''Marriage''':\n\"Devon Marriages And Banns\"<br/>\nArchive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Devon Marriages And Banns\"<br/>Archive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Devon Marriages And Banns\"<br/>\nArchive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nEmily Spiller (23) marriage to John Trivet (23) on 23 Apr 1856 in Kilmington, Devon, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Emily (age 23), daughter of James Spiller, married John Trivet (age 23) on 23 April 1856 in Kilmington, Devon, England.<ref>\n'''Marriage''':\n\"Devon Marriages And Banns\"<br/>\nArchive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nEmily Spiller (23) marriage to John Trivet (23) on 23 Apr 1856 in Kilmington, Devon, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Devon Marriages And Banns\"<br/>Archive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)<br/>Emily Spiller (23) marriage to John Trivet (23) on 23 Apr 1856 in Kilmington, Devon, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Devon Marriages And Banns\"<br/>\nArchive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Emily; Last name: Spiller; Birth year: 1833; Age: 23; Marriage date: 23 Apr 1856; Place: Kilmington; Denomination: Anglican; Residence: Kilmington; Father's first name: James; Father's last name: Spiller; Spouse's first name(s): John; Spouse's last name: Trivet; Spouse birth year: 1833; Spouse's age: 23; Spouse's residence: Kilmington; Spouse's father's first name(s): James; Spouse's father's last name: Trivet; County: Devon; Country: England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Emily (age 23), daughter of James Spiller, married John Trivet (age 23) on 23 April 1856 in Kilmington, Devon, England.<ref>\n'''Marriage''':\n\"Devon Marriages And Banns\"<br/>\nArchive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Emily; Last name: Spiller; Birth year: 1833; Age: 23; Marriage date: 23 Apr 1856; Place: Kilmington; Denomination: Anglican; Residence: Kilmington; Father's first name: James; Father's last name: Spiller; Spouse's first name(s): John; Spouse's last name: Trivet; Spouse birth year: 1833; Spouse's age: 23; Spouse's residence: Kilmington; Spouse's father's first name(s): James; Spouse's father's last name: Trivet; County: Devon; Country: England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Devon Marriages And Banns\"<br/>Archive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Emily; Last name: Spiller; Birth year: 1833; Age: 23; Marriage date: 23 Apr 1856; Place: Kilmington; Denomination: Anglican; Residence: Kilmington; Father's first name: James; Father's last name: Spiller; Spouse's first name(s): John; Spouse's last name: Trivet; Spouse birth year: 1833; Spouse's age: 23; Spouse's residence: Kilmington; Spouse's father's first name(s): James; Spouse's father's last name: Trivet; County: Devon; Country: England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Devon Marriages And Banns\"<br/>\nArchive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Emily\n|-\n| Last name || Spiller\n|-\n| Birth year || 1833\n|-\n| Age || 23\n|-\n| Marriage date || 23 Apr 1856\n|-\n| Place || Kilmington\n|-\n| Denomination || Anglican\n|-\n| Residence || Kilmington\n|-\n| Father's first name || James\n|-\n| Father's last name || Spiller\n|-\n| Spouse's first name(s) || John\n|-\n| Spouse's last name || Trivet\n|-\n| Spouse birth year || 1833\n|-\n| Spouse's age || 23\n|-\n| Spouse's residence || Kilmington\n|-\n| Spouse's father's first name(s) || James\n|-\n| Spouse's father's last name || Trivet\n|-\n| County || Devon\n|-\n| Country || England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Emily (age 23), daughter of James Spiller, married John Trivet (age 23) on 23 April 1856 in Kilmington, Devon, England.<ref>\n'''Marriage''':\n\"Devon Marriages And Banns\"<br/>\nArchive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Emily\n|-\n| Last name || Spiller\n|-\n| Birth year || 1833\n|-\n| Age || 23\n|-\n| Marriage date || 23 Apr 1856\n|-\n| Place || Kilmington\n|-\n| Denomination || Anglican\n|-\n| Residence || Kilmington\n|-\n| Father's first name || James\n|-\n| Father's last name || Spiller\n|-\n| Spouse's first name(s) || John\n|-\n| Spouse's last name || Trivet\n|-\n| Spouse birth year || 1833\n|-\n| Spouse's age || 23\n|-\n| Spouse's residence || Kilmington\n|-\n| Spouse's father's first name(s) || James\n|-\n| Spouse's father's last name || Trivet\n|-\n| County || Devon\n|-\n| Country || England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Devon Marriages And Banns\"<br/>Archive: South West Heritage Trust; Reference: 3047A/PR/1/9<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FDEV%2F007120182%2F00032&parentid=GBPRS%2FDEV%2FMAR%2F122154%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS/DEV/MAR/122154/2 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Emily; Last name: Spiller; Birth year: 1833; Age: 23; Marriage date: 23 Apr 1856; Place: Kilmington; Denomination: Anglican; Residence: Kilmington; Father's first name: James; Father's last name: Spiller; Spouse's first name(s): John; Spouse's last name: Trivet; Spouse birth year: 1833; Spouse's age: 23; Spouse's residence: Kilmington; Spouse's father's first name(s): James; Spouse's father's last name: Trivet; County: Devon; Country: England.",
+    "type": "source"
+  }
+}

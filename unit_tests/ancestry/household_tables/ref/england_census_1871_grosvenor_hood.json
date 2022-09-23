@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Francis W Hood || Head ||  ||  || 32 ||  || \n|-\n| Edith Hood || Wife ||  ||  || 23 ||  || \n|-\n| Mabel Hood || Daughter ||  ||  || 4 ||  || \n|-\n| '''Grosvenor Hood''' || '''Son''' ||  || '''M''' || '''2''' ||  || '''London England'''\n|-\n| Horace Hood || Son ||  ||  || 6/12 ||  || \n|-\n| John Jackman || Servant ||  ||  || 47 ||  || \n|-\n| Thomas Roberts || Servant ||  ||  || 27 ||  || \n|-\n| Mary Cameron || Servant ||  ||  || 43 ||  || \n|-\n| Mary A Yeomans || Servant ||  ||  || 44 ||  || \n|-\n| Eliza L Locke || Servant ||  ||  || 27 ||  || \n|-\n| E A Collett || Servant ||  ||  || 25 ||  || \n|-\n| Amelia Whiles || Servant ||  ||  || 19 ||  || \n|-\n| Anne H Fisher || Servant ||  ||  || 23 ||  || \n|-\n| Jessie Ross || Servant ||  ||  || 23 ||  || \n|}"
+  }
+}

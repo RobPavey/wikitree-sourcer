@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nEdward Digby Baltzell, 1914.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Edward applied for a passport in 1914.<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nEdward Digby Baltzell, 1914.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''1914 Passport Application''': \"United States Passport Applications, 1795-1925\"<br/>citing Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).<br/>{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>Edward Digby Baltzell, 1914.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nName: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Edward applied for a passport in 1914.<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nName: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''1914 Passport Application''': \"United States Passport Applications, 1795-1925\"<br/>citing Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>Name: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nName: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Edward applied for a passport in 1914.<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nName: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''1914 Passport Application''': \"United States Passport Applications, 1795-1925\"<br/>citing Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>Name: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106\n{| border=\"1\"\n| Name || Edward Digby Baltzell\n|-\n| Passport Application Date || 1914\n|-\n| Birth Date || 27 Aug 1885\n|-\n| Birth Place || Pennsylvania\n|-\n| Age || 29\n|-\n| Source Certificate Nbr || 43563\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Edward applied for a passport in 1914.<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106\n{| border=\"1\"\n| Name || Edward Digby Baltzell\n|-\n| Passport Application Date || 1914\n|-\n| Birth Date || 27 Aug 1885\n|-\n| Birth Place || Pennsylvania\n|-\n| Age || 29\n|-\n| Source Certificate Nbr || 43563\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''1914 Passport Application''': \"United States Passport Applications, 1795-1925\"<br/>citing Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>Name: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nEdward Digby Baltzell, 1914.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Edward applied for a passport in 1914.<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nEdward Digby Baltzell, 1914.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''1914 Passport Application''': \"United States Passport Applications, 1795-1925\"<br/>citing Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>Edward Digby Baltzell, 1914.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Edward applied for a passport in 1914.<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''1914 Passport Application''': \"United States Passport Applications, 1795-1925\"<br/>citing Affiliate Publication Title: Passport Applications, January 2, 1906 - March 31, 1925; Affiliate Publication Number: M1490; Affiliate Film Number: 226; FHL microfilm: 1514005;<br/>{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nName: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Edward applied for a passport in 1914.<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nName: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''1914 Passport Application''': \"United States Passport Applications, 1795-1925\"<br/>citing Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).<br/>{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>Name: Edward Digby Baltzell; Passport Application Date: 1914; Birth Date: 27 Aug 1885; Birth Place: Pennsylvania; Age: 29; Source Certificate Nbr: 43563.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nEdward Digby Baltzell, 1914.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Edward applied for a passport in 1914.<ref>\n'''1914 Passport Application''':\n\"United States Passport Applications, 1795-1925\"<br/>\nciting Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).<br/>\n{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>\nEdward Digby Baltzell, 1914.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''1914 Passport Application''': \"United States Passport Applications, 1795-1925\"<br/>citing Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).<br/>{{FamilySearch Record|QVJP-4T6V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9X7-C97G-T}} Image number 00106<br/>Edward Digby Baltzell, 1914.",
+    "type": "source"
+  }
+}

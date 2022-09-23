@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3a; Page: 554<br/>\n{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Leonard's marriage to Kathleen Broghan was registered in the Jul-Aug-Sep quarter of 1926 in the Brentford district.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3a; Page: 554<br/>\n{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>General Register Office; United Kingdom; Volume: 3a; Page: 554<br/>{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3a; Page: 554<br/>\n{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)<br/>\nLeonard J Foulger marriage to Kathleen Broghan registered Jul-Aug-Sep 1926 in Brentford.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Leonard's marriage to Kathleen Broghan was registered in the Jul-Aug-Sep quarter of 1926 in the Brentford district.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3a; Page: 554<br/>\n{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)<br/>\nLeonard J Foulger marriage to Kathleen Broghan registered Jul-Aug-Sep 1926 in Brentford.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>General Register Office; United Kingdom; Volume: 3a; Page: 554<br/>{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)<br/>Leonard J Foulger marriage to Kathleen Broghan registered Jul-Aug-Sep 1926 in Brentford.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3a; Page: 554<br/>\n{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)<br/>\nName: Leonard J Foulger [Leonard James Foulger]; Registration Date: Jul 1926 [Aug 1926] [Sep 1926]; Registration Quarter: Jul-Aug-Sep; Registration District: Brentford; Inferred County: Middlesex; Spouse: Kathleen Broghan.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Leonard's marriage to Kathleen Broghan was registered in the Jul-Aug-Sep quarter of 1926 in the Brentford district.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3a; Page: 554<br/>\n{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)<br/>\nName: Leonard J Foulger [Leonard James Foulger]; Registration Date: Jul 1926 [Aug 1926] [Sep 1926]; Registration Quarter: Jul-Aug-Sep; Registration District: Brentford; Inferred County: Middlesex; Spouse: Kathleen Broghan.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>General Register Office; United Kingdom; Volume: 3a; Page: 554<br/>{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)<br/>Name: Leonard J Foulger [Leonard James Foulger]; Registration Date: Jul 1926 [Aug 1926] [Sep 1926]; Registration Quarter: Jul-Aug-Sep; Registration District: Brentford; Inferred County: Middlesex; Spouse: Kathleen Broghan.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3a; Page: 554<br/>\n{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leonard J Foulger [Leonard James Foulger]\n|-\n| Registration Date || Jul 1926 [Aug 1926] [Sep 1926]\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Registration District || Brentford\n|-\n| Inferred County || Middlesex\n|-\n| Spouse || Kathleen Broghan\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Leonard's marriage to Kathleen Broghan was registered in the Jul-Aug-Sep quarter of 1926 in the Brentford district.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3a; Page: 554<br/>\n{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leonard J Foulger [Leonard James Foulger]\n|-\n| Registration Date || Jul 1926 [Aug 1926] [Sep 1926]\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Registration District || Brentford\n|-\n| Inferred County || Middlesex\n|-\n| Spouse || Kathleen Broghan\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales, Civil Registration Marriage Index, 1916-2005\"<br/>General Register Office; United Kingdom; Volume: 3a; Page: 554<br/>{{Ancestry Record|8753|62060982}} (accessed 6 May 2021)<br/>Name: Leonard J Foulger [Leonard James Foulger]; Registration Date: Jul 1926 [Aug 1926] [Sep 1926]; Registration Quarter: Jul-Aug-Sep; Registration District: Brentford; Inferred County: Middlesex; Spouse: Kathleen Broghan.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"England & Wales, Civil Registration Marriage Index, 1916-2005,\" database, ({{Ancestry Record|8753|62060982}} : accessed 6 May 2021), Leonard J Foulger marriage to Kathleen Broghan registered Jul-Aug-Sep 1926 in Brentford; citing General Register Office, United Kingdom, Volume 3a, Page 554.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Leonard's marriage to Kathleen Broghan was registered in the Jul-Aug-Sep quarter of 1926 in the Brentford district.<ref>\"England & Wales, Civil Registration Marriage Index, 1916-2005,\" database, ({{Ancestry Record|8753|62060982}} : accessed 6 May 2021), Leonard J Foulger marriage to Kathleen Broghan registered Jul-Aug-Sep 1926 in Brentford; citing General Register Office, United Kingdom, Volume 3a, Page 554.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"England & Wales, Civil Registration Marriage Index, 1916-2005,\" database, ({{Ancestry Record|8753|62060982}} : accessed 6 May 2021), Leonard J Foulger marriage to Kathleen Broghan registered Jul-Aug-Sep 1926 in Brentford; citing General Register Office, United Kingdom, Volume 3a, Page 554.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage Registration'':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\", database, \nGeneral Register Office, United Kingdom, Volume 3a, Page 554, \n({{Ancestry Record|8753|62060982}} : accessed 6 May 2021), \nName: Leonard J Foulger [Leonard James Foulger]; Registration Date: Jul 1926 [Aug 1926] [Sep 1926]; Registration Quarter: Jul-Aug-Sep; Registration District: Brentford; Inferred County: Middlesex; Spouse: Kathleen Broghan.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Leonard's marriage to Kathleen Broghan was registered in the Jul-Aug-Sep quarter of 1926 in the Brentford district.<ref>\n''Marriage Registration'':\n\"England & Wales, Civil Registration Marriage Index, 1916-2005\", database, \nGeneral Register Office, United Kingdom, Volume 3a, Page 554, \n({{Ancestry Record|8753|62060982}} : accessed 6 May 2021), \nName: Leonard J Foulger [Leonard James Foulger]; Registration Date: Jul 1926 [Aug 1926] [Sep 1926]; Registration Quarter: Jul-Aug-Sep; Registration District: Brentford; Inferred County: Middlesex; Spouse: Kathleen Broghan.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage Registration'': \"England & Wales, Civil Registration Marriage Index, 1916-2005\", database, General Register Office, United Kingdom, Volume 3a, Page 554, ({{Ancestry Record|8753|62060982}} : accessed 6 May 2021), Name: Leonard J Foulger [Leonard James Foulger]; Registration Date: Jul 1926 [Aug 1926] [Sep 1926]; Registration Quarter: Jul-Aug-Sep; Registration District: Brentford; Inferred County: Middlesex; Spouse: Kathleen Broghan.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "sourceType": "record",
+  "recordType": "Employment",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "John",
+    "forenames": "Ivor"
+  },
+  "eventPlace": {
+    "country": "Wales",
+    "placeString": "Cardiff, Cardiff, Glamorganshire, Wales"
+  },
+  "eventDate": {
+    "yearString": "1917"
+  },
+  "collectionData": {
+    "id": "Teachers' Registration Council Registers 1914-1948"
+  },
+  "hasValidData": true
+}

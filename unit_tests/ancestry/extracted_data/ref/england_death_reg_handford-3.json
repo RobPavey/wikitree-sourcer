@@ -1,0 +1,27 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8914&h=14602608&tid=&pid=&queryId=3cb07e6ff167de79091b215fd9c16cf3&usePUB=true&_phsrc=ywU7466&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "8914",
+  "recordId": "14602608",
+  "ancestryTemplate": "{{Ancestry Record|8914|14602608}}",
+  "domain": "com",
+  "titleName": "William Handford",
+  "titleCollection": "England & Wales, Civil Registration Death Index, 1837-1915",
+  "recordData": {
+    "Name": "William Handford",
+    "Age": "69",
+    "Estimated Birth Year": "abt 1844",
+    "Registration Quarter": "Jan-Feb-Mar",
+    "Death Registration Place": "Middlesbrough, Yorkshire North Riding, United Kingdom",
+    "Death Date": "Mar 1913",
+    "Inferred Death Place": "Yorkshire North Riding, United Kingdom",
+    "Volume": "9d",
+    "Page": "710"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8914/images/ONS_D19131AZ-0463?pid=14602608&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D8914%26h%3D14602608%26tid%3D%26pid%3D%26queryId%3D3cb07e6ff167de79091b215fd9c16cf3%26usePUB%3Dtrue%26_phsrc%3DywU7466%26_phstart%3DsuccessSource&treeid=&personid=&hintid=&queryId=3cb07e6ff167de79091b215fd9c16cf3&usePUB=true&_phsrc=ywU7466&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "8914",
+  "imageRecordId": "ONS_D19131AZ-0463",
+  "sourceInformation": "FreeBMD. England & Wales, Civil Registration Death Index, 1837-1915 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2006. Original data: General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Database Copyright © 1998-2003 Graham Hart, Ben Laurie, Camilla von Massenbach and David Mayall.",
+  "originalData": "General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Database Copyright © 1998-2003 Graham Hart, Ben Laurie, Camilla von Massenbach and David Mayall.",
+  "sourceDescription": "This database is a searchable, digitized version of the indices of civil registrations in England and Wales, reported quarterly to the General Register Office (GRO) in London. This index spans the years between 1837 and 1915. You need the information found in an original index to request a copy of a death certificate for the individual referenced. Learn more..."
+}

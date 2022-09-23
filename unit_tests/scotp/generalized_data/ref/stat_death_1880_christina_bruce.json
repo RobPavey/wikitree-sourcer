@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Bruce",
+    "forenames": "Christina"
+  },
+  "eventDate": {
+    "yearString": "1880"
+  },
+  "registrationDistrict": "St Andrew (Dundee)",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "St Andrew (Dundee), Scotland"
+  },
+  "lastNameAtDeath": "Bruce",
+  "mothersMaidenName": "Anderson",
+  "ageAtDeath": "41",
+  "deathPlace": {
+    "country": "Scotland",
+    "placeString": "St Andrew (Dundee), Scotland"
+  },
+  "deathDate": {
+    "yearString": "1880"
+  },
+  "hasValidData": true
+}

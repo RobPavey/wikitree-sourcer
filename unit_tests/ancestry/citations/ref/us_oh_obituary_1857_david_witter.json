@@ -1,0 +1,86 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "David was in an obituary. David died (age 71) on 29 May 1857 in Pike County, Illinois, USA.<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Obituary''': \"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>Rutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)<br/>\nName: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "David was in an obituary. David died (age 71) on 29 May 1857 in Pike County, Illinois, USA.<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)<br/>\nName: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Obituary''': \"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>Rutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)<br/>Name: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)<br/>\nName: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "David was in an obituary. David died (age 71) on 29 May 1857 in Pike County, Illinois, USA.<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)<br/>\nName: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Obituary''': \"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>Rutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)<br/>Name: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || David Witter\n|-\n| Death Age || 71\n|-\n| Birth Date || abt 1786\n|-\n| Death Date || 29 May 1857\n|-\n| Death Place || Pike County, Illinois, USA\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "David was in an obituary. David died (age 71) on 29 May 1857 in Pike County, Illinois, USA.<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || David Witter\n|-\n| Death Age || 71\n|-\n| Birth Date || abt 1786\n|-\n| Death Date || 29 May 1857\n|-\n| Death Place || Pike County, Illinois, USA\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Obituary''': \"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>Rutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)<br/>Name: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016,\" database, ({{Ancestry Record|1671|2089834}} : accessed 6 May 2021), Name David Witter, Death Age 71, Birth Date abt 1786, Death Date 29 May 1857, Death Place Pike County, Illinois, USA; citing Rutherford B. Hayes Presidential Center, Spiegel Grove, Fremont, Ohio, Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011, Newspaper Information Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "David was in an obituary. David died (age 71) on 29 May 1857 in Pike County, Illinois, USA.<ref>\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016,\" database, ({{Ancestry Record|1671|2089834}} : accessed 6 May 2021), Name David Witter, Death Age 71, Birth Date abt 1786, Death Date 29 May 1857, Death Place Pike County, Illinois, USA; citing Rutherford B. Hayes Presidential Center, Spiegel Grove, Fremont, Ohio, Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011, Newspaper Information Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016,\" database, ({{Ancestry Record|1671|2089834}} : accessed 6 May 2021), Name David Witter, Death Age 71, Birth Date abt 1786, Death Date 29 May 1857, Death Place Pike County, Illinois, USA; citing Rutherford B. Hayes Presidential Center, Spiegel Grove, Fremont, Ohio, Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011, Newspaper Information Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Obituary'':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\", database, \nRutherford B. Hayes Presidential Center, Spiegel Grove, Fremont, Ohio, Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011, Newspaper Information Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892, \n({{Ancestry Record|1671|2089834}} : accessed 6 May 2021), \nName: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "David was in an obituary. David died (age 71) on 29 May 1857 in Pike County, Illinois, USA.<ref>\n''Obituary'':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\", database, \nRutherford B. Hayes Presidential Center, Spiegel Grove, Fremont, Ohio, Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011, Newspaper Information Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892, \n({{Ancestry Record|1671|2089834}} : accessed 6 May 2021), \nName: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Obituary'': \"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\", database, Rutherford B. Hayes Presidential Center, Spiegel Grove, Fremont, Ohio, Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011, Newspaper Information Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892, ({{Ancestry Record|1671|2089834}} : accessed 6 May 2021), Name: David Witter; Death Age: 71; Birth Date: abt 1786; Death Date: 29 May 1857; Death Place: Pike County, Illinois, USA.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "David was in an obituary. David died, aged 71, on 29 May 1857 in Pike County, Illinois, USA.<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || David Witter\n|-\n| Death Age || 71\n|-\n| Birth Date || abt 1786\n|-\n| Death Date || 29 May 1857\n|-\n| Death Place || Pike County, Illinois, USA\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "David Witter was in an obituary. David died on 29 May 1857 in Pike County, Illinois, USA.<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || David Witter\n|-\n| Death Age || 71\n|-\n| Birth Date || abt 1786\n|-\n| Death Date || 29 May 1857\n|-\n| Death Place || Pike County, Illinois, USA\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_3_narrative": {
+    "citation": "David was in an obituary. David died on 29 May 1857 in Pike County, Illinois, USA. They were 71 years old.<ref>\n'''Obituary''':\n\"Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016\"<br/>\nRutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011; Newspaper Information: Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892<br/>\n{{Ancestry Record|1671|2089834}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || David Witter\n|-\n| Death Age || 71\n|-\n| Birth Date || abt 1786\n|-\n| Death Date || 29 May 1857\n|-\n| Death Place || Pike County, Illinois, USA\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

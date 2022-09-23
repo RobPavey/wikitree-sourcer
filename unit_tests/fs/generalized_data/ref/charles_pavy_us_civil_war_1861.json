@@ -1,0 +1,19 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Charles W Pavy"
+  },
+  "eventDate": {
+    "dateString": "1861-1865",
+    "yearString": "1861-1865"
+  },
+  "eventPlace": {
+    "placeString": "Indiana, United States"
+  },
+  "collectionData": {
+    "id": "1910717"
+  },
+  "hasValidData": true
+}

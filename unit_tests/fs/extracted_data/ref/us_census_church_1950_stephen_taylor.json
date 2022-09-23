@@ -1,0 +1,141 @@
+{
+  "recordData": {
+    "Name": "Stephen Eyring Taylor",
+    "Census Date": "1950",
+    "Birth Date": "1939",
+    "Birth Place": "Snow Flake, Arizona",
+    "Relationship To Head": "Son"
+  },
+  "eventDateOriginal": "1950",
+  "eventDate": "1950",
+  "eventYear": "1950",
+  "fullName": "Stephen Eyring Taylor",
+  "givenName": "Stephen Eyring",
+  "surname": "Taylor",
+  "gender": "male",
+  "factType": "Census",
+  "birthDateOriginal": "1939",
+  "birthDate": "1939",
+  "birthYear": "1939",
+  "birthPlace": "Snow Flake, Arizona",
+  "household": {
+    "headings": [
+      "fullName",
+      "givenName",
+      "surname",
+      "relationship",
+      "maritalStatus",
+      "gender",
+      "age",
+      "occupation",
+      "birthDateOriginal",
+      "birthYear",
+      "birthPlaceOriginal",
+      "birthPlace"
+    ],
+    "members": [
+      {
+        "fullName": "John Golden Taylor",
+        "givenName": "John Golden",
+        "surname": "Taylor",
+        "gender": "male",
+        "birthDateOriginal": "1912",
+        "birthDate": "1912",
+        "birthYear": "1912",
+        "birthPlaceOriginal": "Aetna, Alberta, Canada",
+        "relationship": "Head"
+      },
+      {
+        "fullName": "Ethel Eyring Taylor",
+        "givenName": "Ethel",
+        "surname": "Eyring Taylor",
+        "gender": "female",
+        "birthDateOriginal": "1916",
+        "birthDate": "1916",
+        "birthYear": "1916",
+        "birthPlaceOriginal": "Pima, Arizona",
+        "relationship": "Wife"
+      },
+      {
+        "fullName": "Janis Taylor",
+        "givenName": "Janis",
+        "surname": "Taylor",
+        "gender": "female",
+        "birthDateOriginal": "1937",
+        "birthDate": "1937",
+        "birthYear": "1937",
+        "birthPlaceOriginal": "Portland, Oregon",
+        "relationship": "Daughter"
+      },
+      {
+        "isSelected": true,
+        "fullName": "Stephen Eyring Taylor",
+        "givenName": "Stephen Eyring",
+        "surname": "Taylor",
+        "gender": "male",
+        "birthDateOriginal": "1939",
+        "birthDate": "1939",
+        "birthYear": "1939",
+        "birthPlaceOriginal": "Snow Flake, Arizona",
+        "relationship": "Son"
+      },
+      {
+        "fullName": "Susan Taylor",
+        "givenName": "Susan",
+        "surname": "Taylor",
+        "gender": "female",
+        "birthDateOriginal": "1941",
+        "birthDate": "1941",
+        "birthYear": "1941",
+        "birthPlaceOriginal": "Snow Flake, Arizona",
+        "relationship": "Daughter"
+      },
+      {
+        "fullName": "Emily Kay Taylor",
+        "givenName": "Emily Kay",
+        "surname": "Taylor",
+        "gender": "female",
+        "birthDateOriginal": "1943",
+        "birthDate": "1943",
+        "birthYear": "1943",
+        "birthPlaceOriginal": "Provo, Utah",
+        "relationship": "Daughter"
+      },
+      {
+        "fullName": "John Eyring Taylor",
+        "givenName": "John Eyring",
+        "surname": "Taylor",
+        "gender": "male",
+        "birthDateOriginal": "1945",
+        "birthDate": "1945",
+        "birthYear": "1945",
+        "birthPlaceOriginal": "Provo, Utah",
+        "relationship": "Son"
+      },
+      {
+        "fullName": "Jeffery Maxwell Taylor",
+        "givenName": "Jeffery Maxwell",
+        "surname": "Taylor",
+        "gender": "male",
+        "birthDateOriginal": "1949",
+        "birthDate": "1949",
+        "birthYear": "1949",
+        "birthPlaceOriginal": "Provo, Utah",
+        "relationship": "Son"
+      }
+    ]
+  },
+  "fsCollectionId": "3438701",
+  "referenceData": {
+    "digitalFilmNumber": "008434468",
+    "recordNumber": "0"
+  },
+  "fsImageNumber": "01787",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-CS1Y-LQGY-N",
+  "collectionTitle": "The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:4SFJ-KJPZ",
+  "citation": "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:ZY42-D8N2 : 25 August 2021), Stephen Eyring Taylor in entry for John Golden Taylor, 1950.",
+  "sourceTitleForPerson": "Stephen Eyring Taylor in household of John Golden Taylor, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:ZY42-D8N2",
+  "pageType": "record"
+}

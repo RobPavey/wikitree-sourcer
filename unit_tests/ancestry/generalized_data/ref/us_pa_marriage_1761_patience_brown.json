@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Patience Brown"
+  },
+  "eventDate": {
+    "dateString": "17 Nov 1761"
+  },
+  "eventPlace": {
+    "placeString": "Lancaster Co., PA"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "William Morrison"
+      },
+      "marriageDate": {
+        "dateString": "17 Nov 1761"
+      },
+      "marriagePlace": {
+        "placeString": "Lancaster Co., PA"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "7830"
+  },
+  "hasValidData": true
+}

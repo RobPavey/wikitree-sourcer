@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "url": "https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1",
+  "subDomain": "search",
+  "domain": "findmypast.co.uk",
+  "urlPath": "record",
+  "urlParameters": "id=GBPRS/B/871892573/1",
+  "recordData": {
+    "First name(s)": "Bruce Charles",
+    "Last name": "Ridd",
+    "Birth year": "1907",
+    "Birth date": "03 Dec 1907",
+    "Baptism year": "1908",
+    "Baptism date": "22 Jan 1908",
+    "Place": "Swansea, St Mark",
+    "County": "Glamorganshire",
+    "Country": "Wales",
+    "Father's first name(s)": "James",
+    "Mother's first name(s)": "Sarah Jane",
+    "Page": "189",
+    "Record set": "Glamorganshire Baptisms",
+    "Category": "Birth, Marriage, Death & Parish Records",
+    "Subcategory": "Parish Baptisms",
+    "Collections from": "Wales, Great Britain"
+  },
+  "collection": "Glamorganshire Baptisms",
+  "imageUrl": "https://search.findmypast.co.uk/record?id=gbprs%2fwal%2f4266264%2f00191&parentid=gbprs%2fb%2f871892573%2f1"
+}

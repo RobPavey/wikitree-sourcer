@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Sarah E Pate"
+  },
+  "birthDate": {
+    "dateString": "1949",
+    "yearString": "1949"
+  },
+  "eventDate": {
+    "dateString": "9 Jun 1976",
+    "yearString": "1976"
+  },
+  "eventPlace": {
+    "placeString": "Lubbock, Texas, United States"
+  },
+  "ageAtEvent": "27",
+  "collectionData": {
+    "id": "2038378"
+  },
+  "hasValidData": true
+}

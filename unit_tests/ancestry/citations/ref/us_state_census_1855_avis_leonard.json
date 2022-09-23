@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1855 census Avis (age 69) was in Canton, Norfolk, Massachusetts, USA.<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1855 Census''': \"Massachusetts, U.S., State Census, 1855\"<br/>Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)<br/>\nAvis Leonard (69) in Canton, Norfolk, Massachusetts, USA. Born in Massachusetts.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1855 census Avis (age 69) was in Canton, Norfolk, Massachusetts, USA.<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)<br/>\nAvis Leonard (69) in Canton, Norfolk, Massachusetts, USA. Born in Massachusetts.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1855 Census''': \"Massachusetts, U.S., State Census, 1855\"<br/>Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)<br/>Avis Leonard (69) in Canton, Norfolk, Massachusetts, USA. Born in Massachusetts.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)<br/>\nName: Avis Leonard; Gender: Female; Birth Year: abt 1786; Birth Place: Massachusetts; Residence: Canton, Norfolk, Massachusetts, USA; Enumeration Year: 1855; Age: 69; <br/>Household Members:<br/>Avis Leonard 69<br/>Nathaniel W Baker 41<br/>Almira Baker 40<br/>Almira L Baker 17<br/>Miliesa F Baker 15<br/>Mary E Baker 4.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1855 census Avis (age 69) was in Canton, Norfolk, Massachusetts, USA.<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)<br/>\nName: Avis Leonard; Gender: Female; Birth Year: abt 1786; Birth Place: Massachusetts; Residence: Canton, Norfolk, Massachusetts, USA; Enumeration Year: 1855; Age: 69; <br/>Household Members:<br/>Avis Leonard 69<br/>Nathaniel W Baker 41<br/>Almira Baker 40<br/>Almira L Baker 17<br/>Miliesa F Baker 15<br/>Mary E Baker 4.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1855 Census''': \"Massachusetts, U.S., State Census, 1855\"<br/>Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)<br/>Name: Avis Leonard; Gender: Female; Birth Year: abt 1786; Birth Place: Massachusetts; Residence: Canton, Norfolk, Massachusetts, USA; Enumeration Year: 1855; Age: 69; <br/>Household Members:<br/>Avis Leonard 69<br/>Nathaniel W Baker 41<br/>Almira Baker 40<br/>Almira L Baker 17<br/>Miliesa F Baker 15<br/>Mary E Baker 4.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Avis Leonard\n|-\n| Gender || Female\n|-\n| Birth Year || abt 1786\n|-\n| Birth Place || Massachusetts\n|-\n| Residence || Canton, Norfolk, Massachusetts, USA\n|-\n| Enumeration Year || 1855\n|-\n| Age || 69\n|-\n| Household Members || Avis Leonard 69<br/>Nathaniel W Baker 41<br/>Almira Baker 40<br/>Almira L Baker 17<br/>Miliesa F Baker 15<br/>Mary E Baker 4\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1855 census Avis (age 69) was in Canton, Norfolk, Massachusetts, USA.<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Avis Leonard\n|-\n| Gender || Female\n|-\n| Birth Year || abt 1786\n|-\n| Birth Place || Massachusetts\n|-\n| Residence || Canton, Norfolk, Massachusetts, USA\n|-\n| Enumeration Year || 1855\n|-\n| Age || 69\n|-\n| Household Members || Avis Leonard 69<br/>Nathaniel W Baker 41<br/>Almira Baker 40<br/>Almira L Baker 17<br/>Miliesa F Baker 15<br/>Mary E Baker 4\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1855 Census''': \"Massachusetts, U.S., State Census, 1855\"<br/>Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)<br/>Name: Avis Leonard; Gender: Female; Birth Year: abt 1786; Birth Place: Massachusetts; Residence: Canton, Norfolk, Massachusetts, USA; Enumeration Year: 1855; Age: 69; <br/>Household Members:<br/>Avis Leonard 69<br/>Nathaniel W Baker 41<br/>Almira Baker 40<br/>Almira L Baker 17<br/>Miliesa F Baker 15<br/>Mary E Baker 4.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Massachusetts, U.S., State Census, 1855,\" database, ({{Ancestry Record|4472|2609994}} : accessed 6 May 2021), Avis Leonard (69) in Canton, Norfolk, Massachusetts, USA. Born in Massachusetts; citing Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts, Household Number 186, Reel Number 19, Volume Number 26.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1855 census Avis (age 69) was in Canton, Norfolk, Massachusetts, USA.<ref>\"Massachusetts, U.S., State Census, 1855,\" database, ({{Ancestry Record|4472|2609994}} : accessed 6 May 2021), Avis Leonard (69) in Canton, Norfolk, Massachusetts, USA. Born in Massachusetts; citing Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts, Household Number 186, Reel Number 19, Volume Number 26.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Massachusetts, U.S., State Census, 1855,\" database, ({{Ancestry Record|4472|2609994}} : accessed 6 May 2021), Avis Leonard (69) in Canton, Norfolk, Massachusetts, USA. Born in Massachusetts; citing Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts, Household Number 186, Reel Number 19, Volume Number 26.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1855 Census'':\n\"Massachusetts, U.S., State Census, 1855\", database, \nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts, Household Number 186, Reel Number 19, Volume Number 26, \n({{Ancestry Record|4472|2609994}} : accessed 6 May 2021), \nName: Avis Leonard; Gender: Female; Birth Year: abt 1786; Birth Place: Massachusetts; Residence: Canton, Norfolk, Massachusetts, USA; Enumeration Year: 1855; Age: 69; Household Members: Avis Leonard 69, Nathaniel W Baker 41, Almira Baker 40, Almira L Baker 17, Miliesa F Baker 15, Mary E Baker 4.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1855 census Avis (age 69) was in Canton, Norfolk, Massachusetts, USA.<ref>\n''1855 Census'':\n\"Massachusetts, U.S., State Census, 1855\", database, \nMassachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts, Household Number 186, Reel Number 19, Volume Number 26, \n({{Ancestry Record|4472|2609994}} : accessed 6 May 2021), \nName: Avis Leonard; Gender: Female; Birth Year: abt 1786; Birth Place: Massachusetts; Residence: Canton, Norfolk, Massachusetts, USA; Enumeration Year: 1855; Age: 69; Household Members: Avis Leonard 69, Nathaniel W Baker 41, Almira Baker 40, Almira L Baker 17, Miliesa F Baker 15, Mary E Baker 4.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1855 Census'': \"Massachusetts, U.S., State Census, 1855\", database, Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts, Household Number 186, Reel Number 19, Volume Number 26, ({{Ancestry Record|4472|2609994}} : accessed 6 May 2021), Name: Avis Leonard; Gender: Female; Birth Year: abt 1786; Birth Place: Massachusetts; Residence: Canton, Norfolk, Massachusetts, USA; Enumeration Year: 1855; Age: 69; Household Members: Avis Leonard 69, Nathaniel W Baker 41, Almira Baker 40, Almira L Baker 17, Miliesa F Baker 15, Mary E Baker 4.",
+    "type": "source"
+  }
+}

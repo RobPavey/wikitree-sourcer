@@ -1,0 +1,32 @@
+{
+  "recordData": {
+    "Name": "Miles Gaffney",
+    "Ui Source Flag": "I-TABLE 2017_11_14;Previously Published"
+  },
+  "eventDateOriginal": "1888",
+  "eventDate": "1888",
+  "eventYear": "1888",
+  "eventPlaceOriginal": "New Zealand",
+  "eventPlace": "New Zealand",
+  "fullName": "Miles Gaffney",
+  "givenName": "Miles",
+  "surname": "Gaffney",
+  "gender": "male",
+  "relatedPersonFactType": "Birth",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Catherine Lucy Gaffney",
+  "relatedPersonGivenName": "Catherine Lucy",
+  "relatedPersonSurname": "Gaffney",
+  "externalImageId": "%3Dbirths",
+  "fsCollectionId": "2697870",
+  "referenceData": {
+    "sourceRegNbr": "1888/8036"
+  },
+  "collectionTitle": "New Zealand, Civil Records Indexes, 1800-1966",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39",
+  "citation": "\"New Zealand, Civil Records Indexes, 1800-1966,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q24K-ZSB8 : 27 November 2017), Miles Gaffney in entry for Catherine Lucy Gaffney, 1888; citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.",
+  "sourceTitleForPerson": "Miles Gaffney in entry for Catherine Lucy Gaffney, \"New Zealand, Civil Records Indexes, 1800-1966\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB8",
+  "digitalArtifact": "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths",
+  "pageType": "record"
+}

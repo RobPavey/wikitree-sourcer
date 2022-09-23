@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Bruce",
+    "forenames": "Catherine"
+  },
+  "eventDate": {
+    "dateString": "23 February 1892"
+  },
+  "courtName": "Wick Sheriff Court",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Wick, Scotland"
+  },
+  "testateOrIntestate": "testate",
+  "recordSubtype": "AdditionalInventory",
+  "deathDate": {
+    "dateString": "2 March 1888"
+  },
+  "grantedDate": "20 January 1894",
+  "hasValidData": true
+}

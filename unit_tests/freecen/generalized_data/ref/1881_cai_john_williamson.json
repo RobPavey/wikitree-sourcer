@@ -1,0 +1,152 @@
+{
+  "sourceOfData": "freecen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventPlace": {
+    "placeString": "Halkirk, Caithness, Scotland"
+  },
+  "registrationDistrict": "Halkirk",
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "name": {
+    "lastName": "Williamson",
+    "forenames": "John"
+  },
+  "ageAtEvent": "50",
+  "birthPlace": {
+    "placeString": "Halkirk, Caithness, Scotland"
+  },
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "personGender": "male",
+  "occupation": "Farmer 20 Acres 15 Arable",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "John Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "50",
+      "occupation": "Farmer 20 Acres 15 Arable",
+      "isSelected": true
+    },
+    {
+      "name": "Sinclair Williamson",
+      "birthPlace": "Watten, Caithness",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "40",
+      "occupation": "-"
+    },
+    {
+      "name": "Alexander Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "16",
+      "occupation": "Scholar"
+    },
+    {
+      "name": "George Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "son",
+      "maritalStatus": "",
+      "gender": "male",
+      "age": "14",
+      "occupation": "Scholar"
+    },
+    {
+      "name": "James Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "son",
+      "maritalStatus": "",
+      "gender": "male",
+      "age": "10",
+      "occupation": "Scholar"
+    },
+    {
+      "name": "Anne Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "19",
+      "occupation": "Student (Orig: Scholar)"
+    },
+    {
+      "name": "Elizabeth Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "12",
+      "occupation": "Scholar"
+    },
+    {
+      "name": "Christina Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "8",
+      "occupation": "Scholar"
+    },
+    {
+      "name": "Jane Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "3",
+      "occupation": "-"
+    },
+    {
+      "name": "Isabella Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "6m",
+      "occupation": "-"
+    },
+    {
+      "name": "George Williamson",
+      "birthPlace": "Halkirk, Caithness",
+      "relationship": "brother",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "54",
+      "occupation": "Pensioner From Police"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Sinclair Williamson"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1881",
+    "piece": "37",
+    "folio": "0",
+    "page": "1",
+    "schedule": "2"
+  },
+  "hasValidData": true
+}

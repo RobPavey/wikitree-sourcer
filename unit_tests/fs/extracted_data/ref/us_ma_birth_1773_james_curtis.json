@@ -1,0 +1,45 @@
+{
+  "recordData": {
+    "Name": "James Curtis",
+    "Birth Date": "25 Nov 1773",
+    "Birth Place": "Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America"
+  },
+  "fullName": "James Curtis",
+  "givenName": "James",
+  "surname": "Curtis",
+  "gender": "male",
+  "factType": "Birth",
+  "eventDateOriginal": "25 Nov 1773",
+  "eventDate": "25 Nov 1773",
+  "eventYear": "1773",
+  "eventPlaceOriginal": "Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America",
+  "eventPlace": "Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America",
+  "birthDateOriginal": "25 Nov 1773",
+  "birthDate": "25 Nov 1773",
+  "birthYear": "1773",
+  "father": {
+    "fullName": "William Curtis",
+    "givenName": "William",
+    "surname": "Curtis"
+  },
+  "mother": {
+    "fullName": "Hannah",
+    "givenName": "Hannah"
+  },
+  "fsCollectionId": "2061550",
+  "referenceData": {
+    "digitalFilmNumber": "007009252",
+    "filmNumber": "416335",
+    "packetLetter": "H",
+    "recordNumber": "123",
+    "sourcePageNbr": "v 2 p 83"
+  },
+  "fsImageNumber": "00047",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3QS7-L979-Q94W-1",
+  "collectionTitle": "Massachusetts, Town Clerk, Vital and Town Records, 1626-2001",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1",
+  "citation": "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:F46D-1HS : 20 May 2022), James Curtis, 25 Nov 1773; citing Birth, Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009252.",
+  "sourceTitleForPerson": "James Curtis, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:F46D-1HS",
+  "pageType": "record"
+}

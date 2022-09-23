@@ -1,0 +1,27 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8782&h=22191988&tid=172368945&pid=392241408802&hid=1048116409333&_gl=1*9eek4q*_ga*NTE3MDQyOTk1LjE2NTY5NDk1Nzk.*_ga_4QT8FMEX30*MTY1Njk2OTIyOC4zLjEuMTY1Njk2OTYwNS4w",
+  "pageType": "record",
+  "dbId": "8782",
+  "recordId": "22191988",
+  "ancestryTemplate": "{{Ancestry Record|8782|22191988}}",
+  "domain": "com",
+  "titleName": "Maureen L Hale",
+  "titleCollection": "England & Wales, Civil Registration Birth Index, 1916-2007",
+  "recordData": {
+    "Name": "Maureen L Hale",
+    "Registration Date": "Apr 1949 [May 1949] [Jun 1949]",
+    "Registration Quarter": "Apr-May-Jun",
+    "Registration District": "Brentwood",
+    "Inferred County": "Essex",
+    "Mother's Maiden Name": "Burton",
+    "Volume Number": "4a",
+    "Page Number": "550"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8782/images/ons_b19492az-0580?pid=22191988&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D8782%26h%3D22191988%26tid%3D172368945%26pid%3D392241408802%26hid%3D1048116409333%26_gl%3D1*9eek4q*_ga*NTE3MDQyOTk1LjE2NTY5NDk1Nzk.*_ga_4QT8FMEX30*MTY1Njk2OTIyOC4zLjEuMTY1Njk2OTYwNS4w&treeid=172368945&personid=392241408802&hintid=1048116409333&usePUB=true&usePUBJs=true",
+  "imageDbId": "8782",
+  "imageRecordId": "ons_b19492az-0580",
+  "sourceCitation": "General Register Office; United Kingdom; Reference: Volume 4a, Page 550",
+  "sourceInformation": "Ancestry.com. England & Wales, Civil Registration Birth Index, 1916-2007 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2008. Original data: General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer, or reproduce records without the prior permission of ONS. Indexes created by the General Register Office, in London, England.",
+  "originalData": "General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office.",
+  "sourceDescription": "This database is a searchable, digitized version of the indices of civil registrations in England and Wales, reported quarterly to the General Register Office (GRO) in London. This index spans the years between 1916 and 2007. You need the information found in an original index to request a copy of a birth certificate for the individual referenced. Learn more..."
+}

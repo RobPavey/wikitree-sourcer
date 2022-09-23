@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting enumeration district (ED) ED 13, sheet 5A, line 18, family 104, NARA microfilm publication T626 (Washington D.C.: National Archives and Records Administration, 2002), roll 776; FHL microfilm 2,340,511.<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay William in household of P Abbot William, District 3, Pulaski, Kentucky, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "In the 1930 census Ray (age 12) was the son of William P Abbott in District 3, Pulaski, Kentucky, United States.<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting enumeration district (ED) ED 13, sheet 5A, line 18, family 104, NARA microfilm publication T626 (Washington D.C.: National Archives and Records Administration, 2002), roll 776; FHL microfilm 2,340,511.<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay William in household of P Abbot William, District 3, Pulaski, Kentucky, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''1930 Census''': \"United States Census, 1930\"<br/>citing enumeration district (ED) ED 13, sheet 5A, line 18, family 104, NARA microfilm publication T626 (Washington D.C.: National Archives and Records Administration, 2002), roll 776; FHL microfilm 2,340,511.<br/>{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>Ray William in household of P Abbot William, District 3, Pulaski, Kentucky, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay Abbott (12), single son, in household of William P Abbott (57) in District 3, Pulaski, Kentucky, United States. Born in Kentucky.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "In the 1930 census Ray (age 12) was the son of William P Abbott in District 3, Pulaski, Kentucky, United States.<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay Abbott (12), single son, in household of William P Abbott (57) in District 3, Pulaski, Kentucky, United States. Born in Kentucky.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''1930 Census''': \"United States Census, 1930\"<br/>citing Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>Ray Abbott (12), single son, in household of William P Abbott (57) in District 3, Pulaski, Kentucky, United States. Born in Kentucky.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nName: Ray Abbott; Census Date: 1930; Census Place: District 3, Pulaski, Kentucky, United States; Birth Date: 1918; Birth Place: Kentucky; Marital Status: Single; Race: White; Age: 12; Relationship To Head: Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "In the 1930 census Ray (age 12) was the son of William P Abbott in District 3, Pulaski, Kentucky, United States.<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nName: Ray Abbott; Census Date: 1930; Census Place: District 3, Pulaski, Kentucky, United States; Birth Date: 1918; Birth Place: Kentucky; Marital Status: Single; Race: White; Age: 12; Relationship To Head: Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''1930 Census''': \"United States Census, 1930\"<br/>citing Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>Name: Ray Abbott; Census Date: 1930; Census Place: District 3, Pulaski, Kentucky, United States; Birth Date: 1918; Birth Place: Kentucky; Marital Status: Single; Race: White; Age: 12; Relationship To Head: Son.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776\n{| border=\"1\"\n| Name || Ray Abbott\n|-\n| Census Date || 1930\n|-\n| Census Place || District 3, Pulaski, Kentucky, United States\n|-\n| Birth Date || 1918\n|-\n| Birth Place || Kentucky\n|-\n| Marital Status || Single\n|-\n| Race || White\n|-\n| Age || 12\n|-\n| Relationship To Head || Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "In the 1930 census Ray (age 12) was the son of William P Abbott in District 3, Pulaski, Kentucky, United States.<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776\n{| border=\"1\"\n| Name || Ray Abbott\n|-\n| Census Date || 1930\n|-\n| Census Place || District 3, Pulaski, Kentucky, United States\n|-\n| Birth Date || 1918\n|-\n| Birth Place || Kentucky\n|-\n| Marital Status || Single\n|-\n| Race || White\n|-\n| Age || 12\n|-\n| Relationship To Head || Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''1930 Census''': \"United States Census, 1930\"<br/>citing Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>Name: Ray Abbott; Census Date: 1930; Census Place: District 3, Pulaski, Kentucky, United States; Birth Date: 1918; Birth Place: Kentucky; Marital Status: Single; Race: White; Age: 12; Relationship To Head: Son.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay William in household of P Abbot William, District 3, Pulaski, Kentucky, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "In the 1930 census Ray (age 12) was the son of William P Abbott in District 3, Pulaski, Kentucky, United States.<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay William in household of P Abbot William, District 3, Pulaski, Kentucky, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''1930 Census''': \"United States Census, 1930\"<br/>citing Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>Ray William in household of P Abbot William, District 3, Pulaski, Kentucky, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "In the 1930 census Ray (age 12) was the son of William P Abbott in District 3, Pulaski, Kentucky, United States.<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''1930 Census''': \"United States Census, 1930\"<br/>citing Affiliate Publication Number: T626; Affiliate Film Number: 776; Line: 18; FHL microfilm: 2340511; Record number: 36985;<br/>{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9R42-G67}} Image number 00776.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting enumeration district (ED) ED 13, sheet 5A, line 18, family 104, NARA microfilm publication T626 (Washington D.C.: National Archives and Records Administration, 2002), roll 776; FHL microfilm 2,340,511.<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay Abbott (12), single son, in household of William P Abbott (57) in District 3, Pulaski, Kentucky, United States. Born in Kentucky.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "In the 1930 census Ray (age 12) was the son of William P Abbott in District 3, Pulaski, Kentucky, United States.<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting enumeration district (ED) ED 13, sheet 5A, line 18, family 104, NARA microfilm publication T626 (Washington D.C.: National Archives and Records Administration, 2002), roll 776; FHL microfilm 2,340,511.<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay Abbott (12), single son, in household of William P Abbott (57) in District 3, Pulaski, Kentucky, United States. Born in Kentucky.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''1930 Census''': \"United States Census, 1930\"<br/>citing enumeration district (ED) ED 13, sheet 5A, line 18, family 104, NARA microfilm publication T626 (Washington D.C.: National Archives and Records Administration, 2002), roll 776; FHL microfilm 2,340,511.<br/>{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>Ray Abbott (12), single son, in household of William P Abbott (57) in District 3, Pulaski, Kentucky, United States. Born in Kentucky.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting enumeration district (ED) ED 13, sheet 5A, line 18, family 104, NARA microfilm publication T626 (Washington D.C.: National Archives and Records Administration, 2002), roll 776; FHL microfilm 2,340,511.<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay William in household of P Abbot William, District 3, Pulaski, Kentucky, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "In the 1930 census Ray (age 12) was the son of William P Abbott in District 3, Pulaski, Kentucky, United States.<ref>\n'''1930 Census''':\n\"United States Census, 1930\"<br/>\nciting enumeration district (ED) ED 13, sheet 5A, line 18, family 104, NARA microfilm publication T626 (Washington D.C.: National Archives and Records Administration, 2002), roll 776; FHL microfilm 2,340,511.<br/>\n{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>\nRay William in household of P Abbot William, District 3, Pulaski, Kentucky, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''1930 Census''': \"United States Census, 1930\"<br/>citing enumeration district (ED) ED 13, sheet 5A, line 18, family 104, NARA microfilm publication T626 (Washington D.C.: National Archives and Records Administration, 2002), roll 776; FHL microfilm 2,340,511.<br/>{{FamilySearch Record|XMFP-N32}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9R42-G67}} Image number 00776<br/>Ray William in household of P Abbot William, District 3, Pulaski, Kentucky, United States.",
+    "type": "source"
+  }
+}

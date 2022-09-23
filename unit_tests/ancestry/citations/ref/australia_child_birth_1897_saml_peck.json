@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth of child Myrtle Frances Peck''':\n\"Australia, Birth Index, 1788-1922\"<br/>\nFederation Index. Victoria 1889-1901; Registration Number: 14292<br/>\n{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Saml and Ann Hill's child Myrtle Frances Peck was born.<ref>\n'''Birth of child Myrtle Frances Peck''':\n\"Australia, Birth Index, 1788-1922\"<br/>\nFederation Index. Victoria 1889-1901; Registration Number: 14292<br/>\n{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth of child Myrtle Frances Peck''': \"Australia, Birth Index, 1788-1922\"<br/>Federation Index. Victoria 1889-1901; Registration Number: 14292<br/>{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth of child Myrtle Frances Peck''':\n\"Australia, Birth Index, 1788-1922\"<br/>\nFederation Index. Victoria 1889-1901; Registration Number: 14292<br/>\n{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)<br/>\nMyrtle Frances Peck born to Saml Walt Peck and Ann Hill.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Saml and Ann Hill's child Myrtle Frances Peck was born.<ref>\n'''Birth of child Myrtle Frances Peck''':\n\"Australia, Birth Index, 1788-1922\"<br/>\nFederation Index. Victoria 1889-1901; Registration Number: 14292<br/>\n{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)<br/>\nMyrtle Frances Peck born to Saml Walt Peck and Ann Hill.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth of child Myrtle Frances Peck''': \"Australia, Birth Index, 1788-1922\"<br/>Federation Index. Victoria 1889-1901; Registration Number: 14292<br/>{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)<br/>Myrtle Frances Peck born to Saml Walt Peck and Ann Hill.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth of child Myrtle Frances Peck''':\n\"Australia, Birth Index, 1788-1922\"<br/>\nFederation Index. Victoria 1889-1901; Registration Number: 14292<br/>\n{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)<br/>\nName: Saml Walt Peck; Gender: Male; Spouse: Ann Hill; Child: Myrtle Frances Peck.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Saml and Ann Hill's child Myrtle Frances Peck was born.<ref>\n'''Birth of child Myrtle Frances Peck''':\n\"Australia, Birth Index, 1788-1922\"<br/>\nFederation Index. Victoria 1889-1901; Registration Number: 14292<br/>\n{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)<br/>\nName: Saml Walt Peck; Gender: Male; Spouse: Ann Hill; Child: Myrtle Frances Peck.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth of child Myrtle Frances Peck''': \"Australia, Birth Index, 1788-1922\"<br/>Federation Index. Victoria 1889-1901; Registration Number: 14292<br/>{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)<br/>Name: Saml Walt Peck; Gender: Male; Spouse: Ann Hill; Child: Myrtle Frances Peck.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth of child Myrtle Frances Peck''':\n\"Australia, Birth Index, 1788-1922\"<br/>\nFederation Index. Victoria 1889-1901; Registration Number: 14292<br/>\n{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Saml Walt Peck\n|-\n| Gender || Male\n|-\n| Spouse || Ann Hill\n|-\n| Child || Myrtle Frances Peck\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Saml and Ann Hill's child Myrtle Frances Peck was born.<ref>\n'''Birth of child Myrtle Frances Peck''':\n\"Australia, Birth Index, 1788-1922\"<br/>\nFederation Index. Victoria 1889-1901; Registration Number: 14292<br/>\n{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Saml Walt Peck\n|-\n| Gender || Male\n|-\n| Spouse || Ann Hill\n|-\n| Child || Myrtle Frances Peck\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth of child Myrtle Frances Peck''': \"Australia, Birth Index, 1788-1922\"<br/>Federation Index. Victoria 1889-1901; Registration Number: 14292<br/>{{Ancestry Record|1778|150522689}} (accessed 6 May 2021)<br/>Name: Saml Walt Peck; Gender: Male; Spouse: Ann Hill; Child: Myrtle Frances Peck.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Australia, Birth Index, 1788-1922,\" database, ({{Ancestry Record|1778|150522689}} : accessed 6 May 2021), Myrtle Frances Peck born to Saml Walt Peck and Ann Hill; citing Federation Index. Victoria 1889-1901, Registration Number 14292.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Saml and Ann Hill's child Myrtle Frances Peck was born.<ref>\"Australia, Birth Index, 1788-1922,\" database, ({{Ancestry Record|1778|150522689}} : accessed 6 May 2021), Myrtle Frances Peck born to Saml Walt Peck and Ann Hill; citing Federation Index. Victoria 1889-1901, Registration Number 14292.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Australia, Birth Index, 1788-1922,\" database, ({{Ancestry Record|1778|150522689}} : accessed 6 May 2021), Myrtle Frances Peck born to Saml Walt Peck and Ann Hill; citing Federation Index. Victoria 1889-1901, Registration Number 14292.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Birth of child Myrtle Frances Peck'':\n\"Australia, Birth Index, 1788-1922\", database, \nFederation Index. Victoria 1889-1901, Registration Number 14292, \n({{Ancestry Record|1778|150522689}} : accessed 6 May 2021), \nName: Saml Walt Peck; Gender: Male; Spouse: Ann Hill; Child: Myrtle Frances Peck.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Saml and Ann Hill's child Myrtle Frances Peck was born.<ref>\n''Birth of child Myrtle Frances Peck'':\n\"Australia, Birth Index, 1788-1922\", database, \nFederation Index. Victoria 1889-1901, Registration Number 14292, \n({{Ancestry Record|1778|150522689}} : accessed 6 May 2021), \nName: Saml Walt Peck; Gender: Male; Spouse: Ann Hill; Child: Myrtle Frances Peck.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Birth of child Myrtle Frances Peck'': \"Australia, Birth Index, 1788-1922\", database, Federation Index. Victoria 1889-1901, Registration Number 14292, ({{Ancestry Record|1778|150522689}} : accessed 6 May 2021), Name: Saml Walt Peck; Gender: Male; Spouse: Ann Hill; Child: Myrtle Frances Peck.",
+    "type": "source"
+  }
+}

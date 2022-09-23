@@ -1,0 +1,35 @@
+{
+  "recordData": {
+    "Name": "Leonida Loracuente Vega",
+    "Age": "21",
+    "Marriage Registration Place": "Ponce, Puerto Rico",
+    "Marriage Date": "16 Abr 1928",
+    "Marriage Date (Original)": "16 Apr 1928"
+  },
+  "fullName": "Leonida Loracuente Vega",
+  "givenName": "Leonida",
+  "surname": "Loracuente Vega",
+  "gender": "female",
+  "age": "21",
+  "eventPlaceOriginal": "Ponce, Puerto Rico",
+  "eventPlace": "Ponce, Puerto Rico",
+  "eventPlaceL1": "Puerto Rico",
+  "factType": "MarriageRegistration",
+  "spouseFullName": "Juan Robles Rivera",
+  "spouseGivenName": "Juan",
+  "spouseSurname": "Robles Rivera",
+  "spouseAge": "21",
+  "fsCollectionId": "1682798",
+  "referenceData": {
+    "digitalFilmNumber": "004537305",
+    "sourceVolume": "Matrimonios 1921-1928, t. 30-36"
+  },
+  "fsImageNumber": "01939",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:939Z-RGVY-V",
+  "collectionTitle": "Puerto Rico, Civil Registration, 1805-2001",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5",
+  "citation": "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9 : 18 December 2020), Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta.",
+  "sourceTitleForPerson": "Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9",
+  "pageType": "record"
+}

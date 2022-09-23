@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Petition''':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>\nNational Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>\n{{Ancestry Record|61195|75954}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Robert was in a naturalization record on 14 September 1918 in Waterbury, Connecticut, USA.<ref>\n'''Petition''':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>\nNational Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>\n{{Ancestry Record|61195|75954}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Petition''': \"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>National Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>{{Ancestry Record|61195|75954}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Petition''':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>\nNational Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>\n{{Ancestry Record|61195|75954}} (accessed 6 May 2021)<br/>\nName: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Robert was in a naturalization record on 14 September 1918 in Waterbury, Connecticut, USA.<ref>\n'''Petition''':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>\nNational Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>\n{{Ancestry Record|61195|75954}} (accessed 6 May 2021)<br/>\nName: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Petition''': \"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>National Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>{{Ancestry Record|61195|75954}} (accessed 6 May 2021)<br/>Name: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Petition''':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>\nNational Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>\n{{Ancestry Record|61195|75954}} (accessed 6 May 2021)<br/>\nName: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Robert was in a naturalization record on 14 September 1918 in Waterbury, Connecticut, USA.<ref>\n'''Petition''':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>\nNational Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>\n{{Ancestry Record|61195|75954}} (accessed 6 May 2021)<br/>\nName: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Petition''': \"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>National Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>{{Ancestry Record|61195|75954}} (accessed 6 May 2021)<br/>Name: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Petition''':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>\nNational Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>\n{{Ancestry Record|61195|75954}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Robert Best\n|-\n| Petition Age || 44\n|-\n| Record Type || Petition\n|-\n| Birth Date || 30 Oct 1873\n|-\n| Birth Place || Cape Broyle New Fonndland\n|-\n| Arrival Date || 22 Aug 1907\n|-\n| Arrival Place || New York New York\n|-\n| Petition Date || 14 Sep 1918\n|-\n| Petition Place || Waterbury, Connecticut, USA\n|-\n| Spouse || Alice\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Robert was in a naturalization record on 14 September 1918 in Waterbury, Connecticut, USA.<ref>\n'''Petition''':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>\nNational Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>\n{{Ancestry Record|61195|75954}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Robert Best\n|-\n| Petition Age || 44\n|-\n| Record Type || Petition\n|-\n| Birth Date || 30 Oct 1873\n|-\n| Birth Place || Cape Broyle New Fonndland\n|-\n| Arrival Date || 22 Aug 1907\n|-\n| Arrival Place || New York New York\n|-\n| Petition Date || 14 Sep 1918\n|-\n| Petition Place || Waterbury, Connecticut, USA\n|-\n| Spouse || Alice\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Petition''': \"Connecticut, U.S., Federal Naturalization Records, 1790-1996\"<br/>National Archives At Boston; Waltham, Massachusetts; ARC Title: Petitions and Records of Naturalization, 1906 - 1972; NAI Number: 6920565; Record Group Title: Records of District Courts of the United States, 1685-2009; Record Group Number: Rg 21<br/>{{Ancestry Record|61195|75954}} (accessed 6 May 2021)<br/>Name: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Connecticut, U.S., Federal Naturalization Records, 1790-1996,\" database, ({{Ancestry Record|61195|75954}} : accessed 6 May 2021), Name Robert Best, Petition Age 44, Record Type Petition, Birth Date 30 Oct 1873, Birth Place Cape Broyle New Fonndland, Arrival Date 22 Aug 1907, Arrival Place New York New York, Petition Date 14 Sep 1918, Petition Place Waterbury, Connecticut, USA, Spouse Alice; citing National Archives At Boston, Waltham, Massachusetts, ARC Title Petitions and Records of Naturalization, 1906 - 1972, NAI Number 6920565, Record Group Title Records of District Courts of the United States, 1685-2009, Record Group Number Rg 21.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Robert was in a naturalization record on 14 September 1918 in Waterbury, Connecticut, USA.<ref>\"Connecticut, U.S., Federal Naturalization Records, 1790-1996,\" database, ({{Ancestry Record|61195|75954}} : accessed 6 May 2021), Name Robert Best, Petition Age 44, Record Type Petition, Birth Date 30 Oct 1873, Birth Place Cape Broyle New Fonndland, Arrival Date 22 Aug 1907, Arrival Place New York New York, Petition Date 14 Sep 1918, Petition Place Waterbury, Connecticut, USA, Spouse Alice; citing National Archives At Boston, Waltham, Massachusetts, ARC Title Petitions and Records of Naturalization, 1906 - 1972, NAI Number 6920565, Record Group Title Records of District Courts of the United States, 1685-2009, Record Group Number Rg 21.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Connecticut, U.S., Federal Naturalization Records, 1790-1996,\" database, ({{Ancestry Record|61195|75954}} : accessed 6 May 2021), Name Robert Best, Petition Age 44, Record Type Petition, Birth Date 30 Oct 1873, Birth Place Cape Broyle New Fonndland, Arrival Date 22 Aug 1907, Arrival Place New York New York, Petition Date 14 Sep 1918, Petition Place Waterbury, Connecticut, USA, Spouse Alice; citing National Archives At Boston, Waltham, Massachusetts, ARC Title Petitions and Records of Naturalization, 1906 - 1972, NAI Number 6920565, Record Group Title Records of District Courts of the United States, 1685-2009, Record Group Number Rg 21.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Petition'':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\", database, \nNational Archives At Boston, Waltham, Massachusetts, ARC Title Petitions and Records of Naturalization, 1906 - 1972, NAI Number 6920565, Record Group Title Records of District Courts of the United States, 1685-2009, Record Group Number Rg 21, \n({{Ancestry Record|61195|75954}} : accessed 6 May 2021), \nName: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Robert was in a naturalization record on 14 September 1918 in Waterbury, Connecticut, USA.<ref>\n''Petition'':\n\"Connecticut, U.S., Federal Naturalization Records, 1790-1996\", database, \nNational Archives At Boston, Waltham, Massachusetts, ARC Title Petitions and Records of Naturalization, 1906 - 1972, NAI Number 6920565, Record Group Title Records of District Courts of the United States, 1685-2009, Record Group Number Rg 21, \n({{Ancestry Record|61195|75954}} : accessed 6 May 2021), \nName: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Petition'': \"Connecticut, U.S., Federal Naturalization Records, 1790-1996\", database, National Archives At Boston, Waltham, Massachusetts, ARC Title Petitions and Records of Naturalization, 1906 - 1972, NAI Number 6920565, Record Group Title Records of District Courts of the United States, 1685-2009, Record Group Number Rg 21, ({{Ancestry Record|61195|75954}} : accessed 6 May 2021), Name: Robert Best; Petition Age: 44; Record Type: Petition; Birth Date: 30 Oct 1873; Birth Place: Cape Broyle New Fonndland; Arrival Date: 22 Aug 1907; Arrival Place: New York New York; Petition Date: 14 Sep 1918; Petition Place: Waterbury, Connecticut, USA; Spouse: Alice.",
+    "type": "source"
+  }
+}

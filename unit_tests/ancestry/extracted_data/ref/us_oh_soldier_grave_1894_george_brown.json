@@ -1,0 +1,26 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=61438&h=53309&tid=78595359&pid=48386985802&queryId=8e22799f5ce973848aac42d75a574505&usePUB=true&_phsrc=RKt47&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "61438",
+  "recordId": "53309",
+  "ancestryTemplate": "{{Ancestry Record|61438|53309}}",
+  "domain": "com",
+  "titleName": "George W. Brown",
+  "titleCollection": "Ohio, U.S., Soldier Grave Registrations, 1804-1958",
+  "recordData": {
+    "Name": "George W. Brown",
+    "Birth Date": "15 Nov 1815",
+    "Birth Place": "New York",
+    "Enlistment Date": "13 Jun 1861",
+    "Discharge Date": "16 Aug 1862",
+    "Death Date": "21 Nov 1894",
+    "Death Place": "Center Twp",
+    "Burial Place": "Olive, Ohio, USA",
+    "Cemetery": "Olive",
+    "Rank": "Private",
+    "Branch of Service": "Army"
+  },
+  "sourceInformation": "Ancestry.com. Ohio, U.S., Soldier Grave Registrations, 1804-1958 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2017. Original data: Graves Registration Cards Collection, Ohio History Connection, Columbus, Ohio.",
+  "originalData": "Graves Registration Cards Collection, Ohio History Connection, Columbus, Ohio.",
+  "sourceDescription": "This database contains grave registration cards for soldiers from Ohio who served int he armed forces, mainly from the time of the War of 1812 up through the 1950s. Learn more..."
+}

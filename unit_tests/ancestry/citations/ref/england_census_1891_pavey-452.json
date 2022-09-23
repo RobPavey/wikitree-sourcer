@@ -1,0 +1,86 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1891 census Mary (age 18) was the daughter of Harry A Pavey in Kentish Town, St Pancras, London, England.<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1891 Census''': \"1891 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)<br/>\nMary E Pavey (18) daughter in household of Harry A Pavey (38) in Kentish Town, St Pancras in Pancras registration district in London, England. Born in St Pancras, London, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1891 census Mary (age 18) was the daughter of Harry A Pavey in Kentish Town, St Pancras, London, England.<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)<br/>\nMary E Pavey (18) daughter in household of Harry A Pavey (38) in Kentish Town, St Pancras in Pancras registration district in London, England. Born in St Pancras, London, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1891 Census''': \"1891 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)<br/>Mary E Pavey (18) daughter in household of Harry A Pavey (38) in Kentish Town, St Pancras in Pancras registration district in London, England. Born in St Pancras, London, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)<br/>\nName: Mary E Pavey; Gender: Female; Age: 18; Relationship: Daughter; Birth Year: 1873; Father: Harry A Pavey; Mother: Amelia Pavey; Birth Place: St Pancras, London, England; Civil Parish: St Pancras; Ecclesiastical parish: St Barnabus; Residence Place: Kentish Town, St Pancras, London, England; Registration District: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 35; <br/>Household Members:<br/>Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1891 census Mary (age 18) was the daughter of Harry A Pavey in Kentish Town, St Pancras, London, England.<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)<br/>\nName: Mary E Pavey; Gender: Female; Age: 18; Relationship: Daughter; Birth Year: 1873; Father: Harry A Pavey; Mother: Amelia Pavey; Birth Place: St Pancras, London, England; Civil Parish: St Pancras; Ecclesiastical parish: St Barnabus; Residence Place: Kentish Town, St Pancras, London, England; Registration District: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 35; <br/>Household Members:<br/>Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1891 Census''': \"1891 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)<br/>Name: Mary E Pavey; Gender: Female; Age: 18; Relationship: Daughter; Birth Year: 1873; Father: Harry A Pavey; Mother: Amelia Pavey; Birth Place: St Pancras, London, England; Civil Parish: St Pancras; Ecclesiastical parish: St Barnabus; Residence Place: Kentish Town, St Pancras, London, England; Registration District: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 35; <br/>Household Members:<br/>Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Pavey\n|-\n| Gender || Female\n|-\n| Age || 18\n|-\n| Relationship || Daughter\n|-\n| Birth Year || 1873\n|-\n| Father || Harry A Pavey\n|-\n| Mother || Amelia Pavey\n|-\n| Birth Place || St Pancras, London, England\n|-\n| Civil Parish || St Pancras\n|-\n| Ecclesiastical parish || St Barnabus\n|-\n| Residence Place || Kentish Town, St Pancras, London, England\n|-\n| Registration District || Pancras\n|-\n| Sub registration district || Kentish Town\n|-\n| ED, Institution or Vessel || 35\n|-\n| Household Members || Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1891 census Mary (age 18) was the daughter of Harry A Pavey in Kentish Town, St Pancras, London, England.<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Pavey\n|-\n| Gender || Female\n|-\n| Age || 18\n|-\n| Relationship || Daughter\n|-\n| Birth Year || 1873\n|-\n| Father || Harry A Pavey\n|-\n| Mother || Amelia Pavey\n|-\n| Birth Place || St Pancras, London, England\n|-\n| Civil Parish || St Pancras\n|-\n| Ecclesiastical parish || St Barnabus\n|-\n| Residence Place || Kentish Town, St Pancras, London, England\n|-\n| Registration District || Pancras\n|-\n| Sub registration district || Kentish Town\n|-\n| ED, Institution or Vessel || 35\n|-\n| Household Members || Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1891 Census''': \"1891 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>{{Ancestry Record|6598|11301719}} (accessed 6 May 2021)<br/>Name: Mary E Pavey; Gender: Female; Age: 18; Relationship: Daughter; Birth Year: 1873; Father: Harry A Pavey; Mother: Amelia Pavey; Birth Place: St Pancras, London, England; Civil Parish: St Pancras; Ecclesiastical parish: St Barnabus; Residence Place: Kentish Town, St Pancras, London, England; Registration District: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 35; <br/>Household Members:<br/>Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1891 England Census,\" database, ({{Ancestry Record|6598|11301719}} : accessed 6 May 2021), Mary E Pavey (18) daughter in household of Harry A Pavey (38) in Kentish Town, St Pancras in Pancras registration district in London, England. Born in St Pancras, London, England; citing The National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 137, Folio 192, Page 19, GSU roll 6095247.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1891 census Mary (age 18) was the daughter of Harry A Pavey in Kentish Town, St Pancras, London, England.<ref>\"1891 England Census,\" database, ({{Ancestry Record|6598|11301719}} : accessed 6 May 2021), Mary E Pavey (18) daughter in household of Harry A Pavey (38) in Kentish Town, St Pancras in Pancras registration district in London, England. Born in St Pancras, London, England; citing The National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 137, Folio 192, Page 19, GSU roll 6095247.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1891 England Census,\" database, ({{Ancestry Record|6598|11301719}} : accessed 6 May 2021), Mary E Pavey (18) daughter in household of Harry A Pavey (38) in Kentish Town, St Pancras in Pancras registration district in London, England. Born in St Pancras, London, England; citing The National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 137, Folio 192, Page 19, GSU roll 6095247.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1891 Census'':\n\"1891 England Census\", database, \nThe National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 137, Folio 192, Page 19, GSU roll 6095247, \n({{Ancestry Record|6598|11301719}} : accessed 6 May 2021), \nName: Mary E Pavey; Gender: Female; Age: 18; Relationship: Daughter; Birth Year: 1873; Father: Harry A Pavey; Mother: Amelia Pavey; Birth Place: St Pancras, London, England; Civil Parish: St Pancras; Ecclesiastical parish: St Barnabus; Residence Place: Kentish Town, St Pancras, London, England; Registration District: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 35; Household Members: Harry A Pavey 38, Amelia Pavey 40, Mary E Pavey 18, Harry A Pavey 13, Amelia A Pavey 11, Charles D Pavey 7, Arthur E Pavey 6, Harold G Pavey 3.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1891 census Mary (age 18) was the daughter of Harry A Pavey in Kentish Town, St Pancras, London, England.<ref>\n''1891 Census'':\n\"1891 England Census\", database, \nThe National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 137, Folio 192, Page 19, GSU roll 6095247, \n({{Ancestry Record|6598|11301719}} : accessed 6 May 2021), \nName: Mary E Pavey; Gender: Female; Age: 18; Relationship: Daughter; Birth Year: 1873; Father: Harry A Pavey; Mother: Amelia Pavey; Birth Place: St Pancras, London, England; Civil Parish: St Pancras; Ecclesiastical parish: St Barnabus; Residence Place: Kentish Town, St Pancras, London, England; Registration District: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 35; Household Members: Harry A Pavey 38, Amelia Pavey 40, Mary E Pavey 18, Harry A Pavey 13, Amelia A Pavey 11, Charles D Pavey 7, Arthur E Pavey 6, Harold G Pavey 3.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1891 Census'': \"1891 England Census\", database, The National Archives of the UK (TNA), Kew, Surrey, England, Census Returns of England and Wales, 1891, Class RG12, Piece 137, Folio 192, Page 19, GSU roll 6095247, ({{Ancestry Record|6598|11301719}} : accessed 6 May 2021), Name: Mary E Pavey; Gender: Female; Age: 18; Relationship: Daughter; Birth Year: 1873; Father: Harry A Pavey; Mother: Amelia Pavey; Birth Place: St Pancras, London, England; Civil Parish: St Pancras; Ecclesiastical parish: St Barnabus; Residence Place: Kentish Town, St Pancras, London, England; Registration District: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 35; Household Members: Harry A Pavey 38, Amelia Pavey 40, Mary E Pavey 18, Harry A Pavey 13, Amelia A Pavey 11, Charles D Pavey 7, Arthur E Pavey 6, Harold G Pavey 3.",
+    "type": "source"
+  },
+  "domain_au_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719|au}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Pavey\n|-\n| Gender || Female\n|-\n| Age || 18\n|-\n| Relationship || Daughter\n|-\n| Birth Year || 1873\n|-\n| Father || Harry A Pavey\n|-\n| Mother || Amelia Pavey\n|-\n| Birth Place || St Pancras, London, England\n|-\n| Civil Parish || St Pancras\n|-\n| Ecclesiastical parish || St Barnabus\n|-\n| Residence Place || Kentish Town, St Pancras, London, England\n|-\n| Registration District || Pancras\n|-\n| Sub registration district || Kentish Town\n|-\n| ED, Institution or Vessel || 35\n|-\n| Household Members || Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3\n|}\n</ref>",
+    "type": "inline"
+  },
+  "domain_au_narrative": {
+    "citation": "In the 1891 census Mary (age 18) was the daughter of Harry A Pavey in Kentish Town, St Pancras, London, England.<ref>\n'''1891 Census''':\n\"1891 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>\n{{Ancestry Record|6598|11301719|au}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Pavey\n|-\n| Gender || Female\n|-\n| Age || 18\n|-\n| Relationship || Daughter\n|-\n| Birth Year || 1873\n|-\n| Father || Harry A Pavey\n|-\n| Mother || Amelia Pavey\n|-\n| Birth Place || St Pancras, London, England\n|-\n| Civil Parish || St Pancras\n|-\n| Ecclesiastical parish || St Barnabus\n|-\n| Residence Place || Kentish Town, St Pancras, London, England\n|-\n| Registration District || Pancras\n|-\n| Sub registration district || Kentish Town\n|-\n| ED, Institution or Vessel || 35\n|-\n| Household Members || Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "domain_au_source": {
+    "citation": "* '''1891 Census''': \"1891 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247<br/>{{Ancestry Record|6598|11301719|au}} (accessed 6 May 2021)<br/>Name: Mary E Pavey; Gender: Female; Age: 18; Relationship: Daughter; Birth Year: 1873; Father: Harry A Pavey; Mother: Amelia Pavey; Birth Place: St Pancras, London, England; Civil Parish: St Pancras; Ecclesiastical parish: St Barnabus; Residence Place: Kentish Town, St Pancras, London, England; Registration District: Pancras; Sub registration district: Kentish Town; ED, Institution or Vessel: 35; <br/>Household Members:<br/>Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3.",
+    "type": "source"
+  }
+}

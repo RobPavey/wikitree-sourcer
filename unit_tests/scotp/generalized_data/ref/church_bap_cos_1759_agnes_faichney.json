@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "BirthOrBaptism",
+  "name": {
+    "lastName": "Faichney",
+    "forenames": "Agnes"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "16 July 1759"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Perthshire",
+    "placeString": "Muthill, Perthshire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Faichney"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Jean Boyd"
+      }
+    }
+  },
+  "collectionData": {
+    "frameNumber": "217"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1868 Voter Register''':\n\"California, U.S., Voter Registers, 1866-1898\"<br/>\nCalifornia State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>\n{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "William was registered to vote in 1868 in El Dorado, California, USA.<ref>\n'''1868 Voter Register''':\n\"California, U.S., Voter Registers, 1866-1898\"<br/>\nCalifornia State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>\n{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1868 Voter Register''': \"California, U.S., Voter Registers, 1866-1898\"<br/>California State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1868 Voter Register''':\n\"California, U.S., Voter Registers, 1866-1898\"<br/>\nCalifornia State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>\n{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)<br/>\nName: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "William was registered to vote in 1868 in El Dorado, California, USA.<ref>\n'''1868 Voter Register''':\n\"California, U.S., Voter Registers, 1866-1898\"<br/>\nCalifornia State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>\n{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)<br/>\nName: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1868 Voter Register''': \"California, U.S., Voter Registers, 1866-1898\"<br/>California State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)<br/>Name: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1868 Voter Register''':\n\"California, U.S., Voter Registers, 1866-1898\"<br/>\nCalifornia State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>\n{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)<br/>\nName: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "William was registered to vote in 1868 in El Dorado, California, USA.<ref>\n'''1868 Voter Register''':\n\"California, U.S., Voter Registers, 1866-1898\"<br/>\nCalifornia State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>\n{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)<br/>\nName: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1868 Voter Register''': \"California, U.S., Voter Registers, 1866-1898\"<br/>California State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)<br/>Name: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1868 Voter Register''':\n\"California, U.S., Voter Registers, 1866-1898\"<br/>\nCalifornia State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>\n{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Henry Pavey\n|-\n| Age || 38\n|-\n| Birth Year || abt 1830\n|-\n| Birth Place || England\n|-\n| Residence Year || 1868\n|-\n| Residence Place || El Dorado, California, USA\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "William was registered to vote in 1868 in El Dorado, California, USA.<ref>\n'''1868 Voter Register''':\n\"California, U.S., Voter Registers, 1866-1898\"<br/>\nCalifornia State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>\n{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Henry Pavey\n|-\n| Age || 38\n|-\n| Birth Year || abt 1830\n|-\n| Birth Place || England\n|-\n| Residence Year || 1868\n|-\n| Residence Place || El Dorado, California, USA\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1868 Voter Register''': \"California, U.S., Voter Registers, 1866-1898\"<br/>California State Library; Sacramento, California; Great Registers, 1866-1898; Collection Number: 4-2A; CSL Roll Number: 12; FHL Roll Number: 976460<br/>{{Ancestry Record|2221|6446850}} (accessed 6 May 2021)<br/>Name: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"California, U.S., Voter Registers, 1866-1898,\" database, ({{Ancestry Record|2221|6446850}} : accessed 6 May 2021), Name William Henry Pavey, Age 38, Birth Year abt 1830, Birth Place England, Residence Year 1868, Residence Place El Dorado, California, USA; citing California State Library, Sacramento, California, Great Registers, 1866-1898, Collection Number 4-2A, CSL Roll Number 12, FHL Roll Number 976460.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "William was registered to vote in 1868 in El Dorado, California, USA.<ref>\"California, U.S., Voter Registers, 1866-1898,\" database, ({{Ancestry Record|2221|6446850}} : accessed 6 May 2021), Name William Henry Pavey, Age 38, Birth Year abt 1830, Birth Place England, Residence Year 1868, Residence Place El Dorado, California, USA; citing California State Library, Sacramento, California, Great Registers, 1866-1898, Collection Number 4-2A, CSL Roll Number 12, FHL Roll Number 976460.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"California, U.S., Voter Registers, 1866-1898,\" database, ({{Ancestry Record|2221|6446850}} : accessed 6 May 2021), Name William Henry Pavey, Age 38, Birth Year abt 1830, Birth Place England, Residence Year 1868, Residence Place El Dorado, California, USA; citing California State Library, Sacramento, California, Great Registers, 1866-1898, Collection Number 4-2A, CSL Roll Number 12, FHL Roll Number 976460.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1868 Voter Register'':\n\"California, U.S., Voter Registers, 1866-1898\", database, \nCalifornia State Library, Sacramento, California, Great Registers, 1866-1898, Collection Number 4-2A, CSL Roll Number 12, FHL Roll Number 976460, \n({{Ancestry Record|2221|6446850}} : accessed 6 May 2021), \nName: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "William was registered to vote in 1868 in El Dorado, California, USA.<ref>\n''1868 Voter Register'':\n\"California, U.S., Voter Registers, 1866-1898\", database, \nCalifornia State Library, Sacramento, California, Great Registers, 1866-1898, Collection Number 4-2A, CSL Roll Number 12, FHL Roll Number 976460, \n({{Ancestry Record|2221|6446850}} : accessed 6 May 2021), \nName: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1868 Voter Register'': \"California, U.S., Voter Registers, 1866-1898\", database, California State Library, Sacramento, California, Great Registers, 1866-1898, Collection Number 4-2A, CSL Roll Number 12, FHL Roll Number 976460, ({{Ancestry Record|2221|6446850}} : accessed 6 May 2021), Name: William Henry Pavey; Age: 38; Birth Year: abt 1830; Birth Place: England; Residence Year: 1868; Residence Place: El Dorado, California, USA.",
+    "type": "source"
+  }
+}

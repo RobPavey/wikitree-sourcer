@@ -1,0 +1,66 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Harry",
+    "middleNames": "Alfred",
+    "prefNames": "Harry",
+    "lastName": "Pavey"
+  },
+  "lastNameAtBirth": "Pavey",
+  "lastNameAtDeath": "Pavey",
+  "mothersMaidenName": "Ellacott",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "18 Jul 1852",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "5 Jan 1914",
+    "qualifier": 1
+  },
+  "birthPlace": {
+    "placeString": "Plymouth, Devonshire, England"
+  },
+  "deathPlace": {
+    "placeString": "Hampstead, Greater London, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Henry Pavey",
+        "lastName": "Pavey",
+        "forenames": "William Henry"
+      },
+      "lastNameAtBirth": "Pavey",
+      "lastNameAtDeath": "Pavey"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Elizabeth",
+        "lastName": "Ellacott",
+        "name": "Elizabeth Ellacott"
+      },
+      "lastNameAtBirth": "Ellacott",
+      "lastNameAtDeath": "Pavey"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Amelia Elizabeth",
+        "lastName": "Littlemore",
+        "name": "Amelia Elizabeth Littlemore"
+      },
+      "lastNameAtBirth": "Littlemore",
+      "lastNameAtDeath": "Pavey",
+      "marriageDate": {
+        "dateString": "Oct 1890"
+      },
+      "marriagePlace": {
+        "placeString": "Pancras, Middlesex, England, United Kingdom"
+      }
+    }
+  ],
+  "hasValidData": true
+}

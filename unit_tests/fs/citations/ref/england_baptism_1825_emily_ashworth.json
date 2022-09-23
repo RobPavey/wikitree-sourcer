@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\nciting Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth, 25 Aug 1825.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Emily, daughter of Charles Ashworth & Mary Anne Ashworth, was baptised on 25 August 1825 in South Stoneham, Hampshire, England.<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\nciting Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth, 25 Aug 1825.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England, Hampshire Parish Registers, 1538-1980\"<br/>citing Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .<br/>{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>Emily Mary Anne Ashworth, 25 Aug 1825.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth baptism on 25 Aug 1825, daughter of Charles Ashworth & Mary Anne Ashworth, in South Stoneham, Hampshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Emily, daughter of Charles Ashworth & Mary Anne Ashworth, was baptised on 25 August 1825 in South Stoneham, Hampshire, England.<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth baptism on 25 Aug 1825, daughter of Charles Ashworth & Mary Anne Ashworth, in South Stoneham, Hampshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Baptism''': \"England, Hampshire Parish Registers, 1538-1980\"<br/>{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>Emily Mary Anne Ashworth baptism on 25 Aug 1825, daughter of Charles Ashworth & Mary Anne Ashworth, in South Stoneham, Hampshire, England.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nName: Emily Mary Anne Ashworth; Christening Date: 25 Aug 1825; Christening Place: South Stoneham, Hampshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Emily, daughter of Charles Ashworth & Mary Anne Ashworth, was baptised on 25 August 1825 in South Stoneham, Hampshire, England.<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nName: Emily Mary Anne Ashworth; Christening Date: 25 Aug 1825; Christening Place: South Stoneham, Hampshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Baptism''': \"England, Hampshire Parish Registers, 1538-1980\"<br/>{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>Name: Emily Mary Anne Ashworth; Christening Date: 25 Aug 1825; Christening Place: South Stoneham, Hampshire, England.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409\n{| border=\"1\"\n| Name || Emily Mary Anne Ashworth\n|-\n| Christening Date || 25 Aug 1825\n|-\n| Christening Place || South Stoneham, Hampshire, England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Emily, daughter of Charles Ashworth & Mary Anne Ashworth, was baptised on 25 August 1825 in South Stoneham, Hampshire, England.<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409\n{| border=\"1\"\n| Name || Emily Mary Anne Ashworth\n|-\n| Christening Date || 25 Aug 1825\n|-\n| Christening Place || South Stoneham, Hampshire, England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Baptism''': \"England, Hampshire Parish Registers, 1538-1980\"<br/>{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>Name: Emily Mary Anne Ashworth; Christening Date: 25 Aug 1825; Christening Place: South Stoneham, Hampshire, England.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth, 25 Aug 1825.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Emily, daughter of Charles Ashworth & Mary Anne Ashworth, was baptised on 25 August 1825 in South Stoneham, Hampshire, England.<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth, 25 Aug 1825.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England, Hampshire Parish Registers, 1538-1980\"<br/>{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>Emily Mary Anne Ashworth, 25 Aug 1825.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Emily, daughter of Charles Ashworth & Mary Anne Ashworth, was baptised on 25 August 1825 in South Stoneham, Hampshire, England.<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Baptism''': \"England, Hampshire Parish Registers, 1538-1980\"<br/>{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\nciting Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth baptism on 25 Aug 1825, daughter of Charles Ashworth & Mary Anne Ashworth, in South Stoneham, Hampshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Emily, daughter of Charles Ashworth & Mary Anne Ashworth, was baptised on 25 August 1825 in South Stoneham, Hampshire, England.<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\nciting Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth baptism on 25 Aug 1825, daughter of Charles Ashworth & Mary Anne Ashworth, in South Stoneham, Hampshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Baptism''': \"England, Hampshire Parish Registers, 1538-1980\"<br/>citing Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .<br/>{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>Emily Mary Anne Ashworth baptism on 25 Aug 1825, daughter of Charles Ashworth & Mary Anne Ashworth, in South Stoneham, Hampshire, England.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\nciting Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth, 25 Aug 1825.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Emily, daughter of Charles Ashworth & Mary Anne Ashworth, was baptised on 25 August 1825 in South Stoneham, Hampshire, England.<ref>\n'''Baptism''':\n\"England, Hampshire Parish Registers, 1538-1980\"<br/>\nciting Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .<br/>\n{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>\nEmily Mary Anne Ashworth, 25 Aug 1825.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England, Hampshire Parish Registers, 1538-1980\"<br/>citing Christening, , Lancashire Record Office and Hampshire Record Office, England; FHL microfilm .<br/>{{FamilySearch Record|QPRD-KN2W}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSNW-41LX}} Image number 00409<br/>Emily Mary Anne Ashworth, 25 Aug 1825.",
+    "type": "source"
+  }
+}

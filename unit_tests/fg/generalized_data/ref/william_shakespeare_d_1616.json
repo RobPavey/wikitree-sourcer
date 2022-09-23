@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "23 Apr 1616"
+  },
+  "eventPlace": {
+    "placeString": "Westminster, City of Westminster, Greater London, England",
+    "streetAddress": "Westminster Abbey"
+  },
+  "name": {
+    "name": "William Shakespeare"
+  },
+  "lastNameAtDeath": "Shakespeare",
+  "deathDate": {
+    "dateString": "23 Apr 1616"
+  },
+  "ageAtDeath": "52",
+  "birthDate": {
+    "dateString": "23 Apr 1564"
+  },
+  "birthPlace": {
+    "placeString": "Stratford-upon-Avon, Stratford-on-Avon District, Warwickshire, England"
+  },
+  "hasValidData": true
+}

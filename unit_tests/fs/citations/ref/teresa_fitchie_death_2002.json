@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nMs Teresa Carole Ann Fitchie, 2002.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nMs Teresa Carole Ann Fitchie, 2002.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>Ms Teresa Carole Ann Fitchie, 2002.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nTeresa Carole Ann Fitchie death 23 Jul 2002 in Canterbury, Kent, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nTeresa Carole Ann Fitchie death 23 Jul 2002 in Canterbury, Kent, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>Teresa Carole Ann Fitchie death 23 Jul 2002 in Canterbury, Kent, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nName: Ms Teresa Carole Ann Fitchie; Death Date: 23 Jul 2002; Death Place: Canterbury, Kent, England, United Kingdom; Residence Place: CT4 6.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nName: Ms Teresa Carole Ann Fitchie; Death Date: 23 Jul 2002; Death Place: Canterbury, Kent, England, United Kingdom; Residence Place: CT4 6.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>Name: Ms Teresa Carole Ann Fitchie; Death Date: 23 Jul 2002; Death Place: Canterbury, Kent, England, United Kingdom; Residence Place: CT4 6.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Ms Teresa Carole Ann Fitchie\n|-\n| Death Date || 23 Jul 2002\n|-\n| Death Place || Canterbury, Kent, England, United Kingdom\n|-\n| Residence Place || CT4 6\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Ms Teresa Carole Ann Fitchie\n|-\n| Death Date || 23 Jul 2002\n|-\n| Death Place || Canterbury, Kent, England, United Kingdom\n|-\n| Residence Place || CT4 6\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>Name: Ms Teresa Carole Ann Fitchie; Death Date: 23 Jul 2002; Death Place: Canterbury, Kent, England, United Kingdom; Residence Place: CT4 6.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nMs Teresa Carole Ann Fitchie, 2002.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nMs Teresa Carole Ann Fitchie, 2002.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>Ms Teresa Carole Ann Fitchie, 2002.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nTeresa Carole Ann Fitchie death 23 Jul 2002 in Canterbury, Kent, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nTeresa Carole Ann Fitchie death 23 Jul 2002 in Canterbury, Kent, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>Teresa Carole Ann Fitchie death 23 Jul 2002 in Canterbury, Kent, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nMs Teresa Carole Ann Fitchie, 2002.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>\nMs Teresa Carole Ann Fitchie, 2002.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)<br/>Ms Teresa Carole Ann Fitchie, 2002.",
+    "type": "source"
+  }
+}

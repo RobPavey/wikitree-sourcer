@@ -1,0 +1,75 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/5941797:8767?ssrc=pt&tid=118975788&pid=400176376493&clickref=1100lw3b8Ahw%2C1100lw3b8Ahw&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
+  "pageType": "record",
+  "dbId": "8767",
+  "recordId": "5941797",
+  "ancestryTemplate": "{{Ancestry Record|8767|5941797}}",
+  "domain": "com",
+  "titleName": "John Lago",
+  "titleCollection": "1861 England Census",
+  "recordData": {
+    "Name": "John Lago [Jago]",
+    "Age": "3",
+    "Estimated Birth Year": "1858",
+    "Relation": "Son",
+    "Mother's Name": "Susanha Lago",
+    "Gender": "Male",
+    "Where born": "Bromley, Middlesex, England",
+    "Civil parish": "Bromley St Leonard",
+    "County/Island": "Middlesex",
+    "Country": "England",
+    "Registration district": "Poplar",
+    "Sub-registration district": "Bow",
+    "ED, institution, or vessel": "4",
+    "Household schedule number": "32",
+    "Piece": "300",
+    "Folio": "96",
+    "Page number": "37",
+    "Household Members<br/>Age<br/>Relationship": "Susanha Lago 28 Wife<br/>Emma Lago 5 Daughter<br/>John Lago 3 Son<br/>Waller Lago 3/12 Son"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "Susanha Lago",
+        "dbId": "8767",
+        "recordId": "5941795",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8767&h=5941795&indiv=try&viewrecord=1&r=an",
+        "Age": "28",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "Emma Lago",
+        "dbId": "8767",
+        "recordId": "5941796",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8767&h=5941796&indiv=try&viewrecord=1&r=an",
+        "Age": "5",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "John Lago",
+        "Age": "3",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Waller Lago",
+        "dbId": "8767",
+        "recordId": "5941798",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8767&h=5941798&indiv=try&viewrecord=1&r=an",
+        "Age": "3/12",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8767/images/MDXRG9_298_302-0522?pid=5941797&treeid=118975788&personid=400176376493&usePUB=true&usePUBJs=true",
+  "imageDbId": "8767",
+  "imageRecordId": "MDXRG9_298_302-0522",
+  "sourceCitation": "Class: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610",
+  "sourceInformation": "Ancestry.com. 1861 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2005. Original data: Census Returns of England and Wales, 1861. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1861. Data imaged from The National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1861. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1861. Data imaged from The National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1861 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1861 England Census. Learn more..."
+}

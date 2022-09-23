@@ -1,0 +1,52 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/7205480:61596",
+  "pageType": "record",
+  "dbId": "61596",
+  "recordId": "7205480",
+  "ancestryTemplate": "{{Ancestry Record|61596|7205480}}",
+  "domain": "com",
+  "titleName": "Mary E More",
+  "titleCollection": "1939 England and Wales Register",
+  "recordData": {
+    "Name": "Mary E More",
+    "Gender": "Female",
+    "Marital Status": "Widowed",
+    "Birth Date": "1 Nov 1871",
+    "Residence Date": "1939",
+    "Address": "54 Hilldrop Cresent",
+    "Residence Place": "Islington, London, England",
+    "Occupation": "Unpaid Domestic Duties",
+    "Line Number": "18",
+    "Schedule Number": "176",
+    "Sub Schedule Number": "1",
+    "Enumeration District": "ALBP",
+    "Borough": "Islington",
+    "Household Members<br/>Age": "Mary E More 68<br/>Maisie C More 39"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Members": "Mary E More",
+        "Age": "68"
+      },
+      {
+        "Household Members": "Maisie C More",
+        "dbId": "61596",
+        "recordId": "7205481",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=7205481&indiv=try",
+        "Age": "39"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/61596/images/tna_r39_0261_0261b_008?pid=7205480&usePUB=true&usePUBJs=true",
+  "imageDbId": "61596",
+  "imageRecordId": "tna_r39_0261_0261b_008",
+  "sourceCitation": "The National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B",
+  "sourceInformation": "Ancestry.com. 1939 England and Wales Register [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2018. Original data: Crown copyright images reproduced by courtesy of TNA, London England. 1939 Register (Series RG101), The National Archives, Kew, London, England. The National Archives give no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives Image Library, Kew, Richmond, Surrey TW9 4DU, Tel: 020 8392 5225. Fax: 020 8392 5266.",
+  "originalData": "Crown copyright images reproduced by courtesy of TNA, London England. 1939 Register (Series RG101), The National Archives, Kew, London, England. The National Archives give no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives Image Library, Kew, Richmond, Surrey TW9 4DU, Tel: 020 8392 5225. Fax: 020 8392 5266.",
+  "sourceDescription": "The 1939 England and Wales Register, taken on 29th September, provides details of an estimated 40 million people residing in the country at the time. Learn more..."
+}

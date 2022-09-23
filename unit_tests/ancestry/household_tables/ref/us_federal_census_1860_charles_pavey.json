@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Occupation || Birth Place\n|-\n| '''Charles Pavey''' || '''M''' || '''53''' || '''Farmer''' || '''England'''\n|-\n| Amelia Pavey ||  || 49 ||  || \n|-\n| Geo Pavey ||  || 19 ||  || \n|-\n| Charles Pavey ||  || 9 ||  || \n|}"
+  }
+}

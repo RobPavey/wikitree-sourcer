@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1841 census Zachariah (age 80), Pauper, was at Axminster Union Workhouse, Axminster, Devon, England.<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1841 Census''': \"1841 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)<br/>\nZachariah Pavey (80), Pauper, at Axminster Union Workhouse in Axminster registration district in Devon, England. Born in Devon, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1841 census Zachariah (age 80), Pauper, was at Axminster Union Workhouse, Axminster, Devon, England.<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)<br/>\nZachariah Pavey (80), Pauper, at Axminster Union Workhouse in Axminster registration district in Devon, England. Born in Devon, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1841 Census''': \"1841 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)<br/>Zachariah Pavey (80), Pauper, at Axminster Union Workhouse in Axminster registration district in Devon, England. Born in Devon, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1841; County: Devon (DEV); District: Axminster; Civil Parish: Axminster; Piece: 200; Enumeration District: 03; Folio: 2; Page: 1; House or Street Name: Axminster Union Workhouse.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1841 census Zachariah (age 80), Pauper, was at Axminster Union Workhouse, Axminster, Devon, England.<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1841; County: Devon (DEV); District: Axminster; Civil Parish: Axminster; Piece: 200; Enumeration District: 03; Folio: 2; Page: 1; House or Street Name: Axminster Union Workhouse.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1841 Census''': \"1841 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1841; County: Devon (DEV); District: Axminster; Civil Parish: Axminster; Piece: 200; Enumeration District: 03; Folio: 2; Page: 1; House or Street Name: Axminster Union Workhouse.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1841\n|-\n| County || Devon (DEV)\n|-\n| District || Axminster\n|-\n| Civil Parish || Axminster\n|-\n| Piece || 200\n|-\n| Enumeration District || 03\n|-\n| Folio || 2\n|-\n| Page || 1\n|-\n| House Number || \n|-\n| House or Street Name || Axminster Union Workhouse\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1841 census Zachariah (age 80), Pauper, was at Axminster Union Workhouse, Axminster, Devon, England.<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1841\n|-\n| County || Devon (DEV)\n|-\n| District || Axminster\n|-\n| Civil Parish || Axminster\n|-\n| Piece || 200\n|-\n| Enumeration District || 03\n|-\n| Folio || 2\n|-\n| Page || 1\n|-\n| House Number || \n|-\n| House or Street Name || Axminster Union Workhouse\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1841 Census''': \"1841 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1841; County: Devon (DEV); District: Axminster; Civil Parish: Axminster; Piece: 200; Enumeration District: 03; Folio: 2; Page: 1; House or Street Name: Axminster Union Workhouse.",
+    "type": "source"
+  }
+}

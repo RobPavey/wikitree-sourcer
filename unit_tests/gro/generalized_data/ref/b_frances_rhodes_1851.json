@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1851",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Rhodes",
+    "forenames": "Frances Mary"
+  },
+  "lastNameAtBirth": "Rhodes",
+  "birthDate": {
+    "yearString": "1851",
+    "quarter": 3
+  },
+  "mothersMaidenName": "Bamford",
+  "personGender": "female",
+  "registrationDistrict": "Chesterfield Union in the County of Derby",
+  "collectionData": {
+    "id": "births",
+    "volume": "19",
+    "page": "523"
+  },
+  "hasValidData": true
+}

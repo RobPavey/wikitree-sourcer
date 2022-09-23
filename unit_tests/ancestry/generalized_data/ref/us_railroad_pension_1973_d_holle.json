@@ -1,0 +1,18 @@
+{
+  "sourceType": "record",
+  "recordType": "Pension",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "D Holle"
+  },
+  "eventDate": {
+    "dateString": "Jul 1973"
+  },
+  "birthDate": {
+    "dateString": "Aug 1879"
+  },
+  "collectionData": {
+    "id": "61597"
+  },
+  "hasValidData": true
+}

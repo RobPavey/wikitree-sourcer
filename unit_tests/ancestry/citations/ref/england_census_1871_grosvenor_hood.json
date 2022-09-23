@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>\n{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1871 census Grosvenor (age 2) was the son of Francis W Hood in St George Hanover Square, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>\n{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>\n{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)<br/>\nGrosvenor Hood (2) son in household of Francis W Hood (32) in St George Hanover Square registration district in London, England. Born in London England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1871 census Grosvenor (age 2) was the son of Francis W Hood in St George Hanover Square, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>\n{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)<br/>\nGrosvenor Hood (2) son in household of Francis W Hood (32) in St George Hanover Square registration district in London, England. Born in London England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)<br/>Grosvenor Hood (2) son in household of Francis W Hood (32) in St George Hanover Square registration district in London, England. Born in London England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>\n{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)<br/>\nName: Grosvenor Hood; Age: 2; Estimated Birth Year: 1869; Relation: Son; Gender: Male; Where born: London England; Civil parish: St George Hanover Square; County/Island: London; Country: England; Registration district: St George Hanover Square; Sub-registration district: Mayfair; <br/>Household Members Age Relationship:<br/>Francis W Hood 32 Head<br/>Edith Hood 23 Wife<br/>Mabel Hood 4 Daughter<br/>Grosvenor Hood 2 Son<br/>Horace Hood 6/12 Son<br/>John Jackman 47 Servant<br/>Thomas Roberts 27 Servant<br/>Mary Cameron 43 Servant<br/>Mary A Yeomans 44 Servant<br/>Eliza L Locke 27 Servant<br/>E A Collett 25 Servant<br/>Amelia Whiles 19 Servant<br/>Anne H Fisher 23 Servant<br/>Jessie Ross 23 Servant.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1871 census Grosvenor (age 2) was the son of Francis W Hood in St George Hanover Square, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>\n{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)<br/>\nName: Grosvenor Hood; Age: 2; Estimated Birth Year: 1869; Relation: Son; Gender: Male; Where born: London England; Civil parish: St George Hanover Square; County/Island: London; Country: England; Registration district: St George Hanover Square; Sub-registration district: Mayfair; <br/>Household Members Age Relationship:<br/>Francis W Hood 32 Head<br/>Edith Hood 23 Wife<br/>Mabel Hood 4 Daughter<br/>Grosvenor Hood 2 Son<br/>Horace Hood 6/12 Son<br/>John Jackman 47 Servant<br/>Thomas Roberts 27 Servant<br/>Mary Cameron 43 Servant<br/>Mary A Yeomans 44 Servant<br/>Eliza L Locke 27 Servant<br/>E A Collett 25 Servant<br/>Amelia Whiles 19 Servant<br/>Anne H Fisher 23 Servant<br/>Jessie Ross 23 Servant.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)<br/>Name: Grosvenor Hood; Age: 2; Estimated Birth Year: 1869; Relation: Son; Gender: Male; Where born: London England; Civil parish: St George Hanover Square; County/Island: London; Country: England; Registration district: St George Hanover Square; Sub-registration district: Mayfair; <br/>Household Members Age Relationship:<br/>Francis W Hood 32 Head<br/>Edith Hood 23 Wife<br/>Mabel Hood 4 Daughter<br/>Grosvenor Hood 2 Son<br/>Horace Hood 6/12 Son<br/>John Jackman 47 Servant<br/>Thomas Roberts 27 Servant<br/>Mary Cameron 43 Servant<br/>Mary A Yeomans 44 Servant<br/>Eliza L Locke 27 Servant<br/>E A Collett 25 Servant<br/>Amelia Whiles 19 Servant<br/>Anne H Fisher 23 Servant<br/>Jessie Ross 23 Servant.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>\n{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Grosvenor Hood\n|-\n| Age || 2\n|-\n| Estimated Birth Year || 1869\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || London England\n|-\n| Civil parish || St George Hanover Square\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || St George Hanover Square\n|-\n| Sub-registration district || Mayfair\n|-\n| Household Members<br/>Age<br/>Relationship || Francis W Hood 32 Head<br/>Edith Hood 23 Wife<br/>Mabel Hood 4 Daughter<br/>Grosvenor Hood 2 Son<br/>Horace Hood 6/12 Son<br/>John Jackman 47 Servant<br/>Thomas Roberts 27 Servant<br/>Mary Cameron 43 Servant<br/>Mary A Yeomans 44 Servant<br/>Eliza L Locke 27 Servant<br/>E A Collett 25 Servant<br/>Amelia Whiles 19 Servant<br/>Anne H Fisher 23 Servant<br/>Jessie Ross 23 Servant\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1871 census Grosvenor (age 2) was the son of Francis W Hood in St George Hanover Square, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>\n{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Grosvenor Hood\n|-\n| Age || 2\n|-\n| Estimated Birth Year || 1869\n|-\n| Relation || Son\n|-\n| Gender || Male\n|-\n| Where born || London England\n|-\n| Civil parish || St George Hanover Square\n|-\n| County/Island || London\n|-\n| Country || England\n|-\n| Registration district || St George Hanover Square\n|-\n| Sub-registration district || Mayfair\n|-\n| Household Members<br/>Age<br/>Relationship || Francis W Hood 32 Head<br/>Edith Hood 23 Wife<br/>Mabel Hood 4 Daughter<br/>Grosvenor Hood 2 Son<br/>Horace Hood 6/12 Son<br/>John Jackman 47 Servant<br/>Thomas Roberts 27 Servant<br/>Mary Cameron 43 Servant<br/>Mary A Yeomans 44 Servant<br/>Eliza L Locke 27 Servant<br/>E A Collett 25 Servant<br/>Amelia Whiles 19 Servant<br/>Anne H Fisher 23 Servant<br/>Jessie Ross 23 Servant\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 101; Folio: 94; Page: 31; GSU roll: 838762; ED, institution, or vessel: 7<br/>{{Ancestry Record|7619|10856675}} (accessed 6 May 2021)<br/>Name: Grosvenor Hood; Age: 2; Estimated Birth Year: 1869; Relation: Son; Gender: Male; Where born: London England; Civil parish: St George Hanover Square; County/Island: London; Country: England; Registration district: St George Hanover Square; Sub-registration district: Mayfair; <br/>Household Members Age Relationship:<br/>Francis W Hood 32 Head<br/>Edith Hood 23 Wife<br/>Mabel Hood 4 Daughter<br/>Grosvenor Hood 2 Son<br/>Horace Hood 6/12 Son<br/>John Jackman 47 Servant<br/>Thomas Roberts 27 Servant<br/>Mary Cameron 43 Servant<br/>Mary A Yeomans 44 Servant<br/>Eliza L Locke 27 Servant<br/>E A Collett 25 Servant<br/>Amelia Whiles 19 Servant<br/>Anne H Fisher 23 Servant<br/>Jessie Ross 23 Servant.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1871 England Census,\" database, ({{Ancestry Record|7619|10856675}} : accessed 6 May 2021), Grosvenor Hood (2) son in household of Francis W Hood (32) in St George Hanover Square registration district in London, England. Born in London England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 101, Folio 94, Page 31, GSU roll 838762, ED, institution, or vessel 7.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1871 census Grosvenor (age 2) was the son of Francis W Hood in St George Hanover Square, London, England.<ref>\"1871 England Census,\" database, ({{Ancestry Record|7619|10856675}} : accessed 6 May 2021), Grosvenor Hood (2) son in household of Francis W Hood (32) in St George Hanover Square registration district in London, England. Born in London England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 101, Folio 94, Page 31, GSU roll 838762, ED, institution, or vessel 7.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1871 England Census,\" database, ({{Ancestry Record|7619|10856675}} : accessed 6 May 2021), Grosvenor Hood (2) son in household of Francis W Hood (32) in St George Hanover Square registration district in London, England. Born in London England; citing The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 101, Folio 94, Page 31, GSU roll 838762, ED, institution, or vessel 7.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1871 Census'':\n\"1871 England Census\", database, \nThe National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 101, Folio 94, Page 31, GSU roll 838762, ED, institution, or vessel 7, \n({{Ancestry Record|7619|10856675}} : accessed 6 May 2021), \nName: Grosvenor Hood; Age: 2; Estimated Birth Year: 1869; Relation: Son; Gender: Male; Where born: London England; Civil parish: St George Hanover Square; County/Island: London; Country: England; Registration district: St George Hanover Square; Sub-registration district: Mayfair; Household Members Age Relationship: Francis W Hood 32 Head, Edith Hood 23 Wife, Mabel Hood 4 Daughter, Grosvenor Hood 2 Son, Horace Hood 6/12 Son, John Jackman 47 Servant, Thomas Roberts 27 Servant, Mary Cameron 43 Servant, Mary A Yeomans 44 Servant, Eliza L Locke 27 Servant, E A Collett 25 Servant, Amelia Whiles 19 Servant, Anne H Fisher 23 Servant, Jessie Ross 23 Servant.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1871 census Grosvenor (age 2) was the son of Francis W Hood in St George Hanover Square, London, England.<ref>\n''1871 Census'':\n\"1871 England Census\", database, \nThe National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 101, Folio 94, Page 31, GSU roll 838762, ED, institution, or vessel 7, \n({{Ancestry Record|7619|10856675}} : accessed 6 May 2021), \nName: Grosvenor Hood; Age: 2; Estimated Birth Year: 1869; Relation: Son; Gender: Male; Where born: London England; Civil parish: St George Hanover Square; County/Island: London; Country: England; Registration district: St George Hanover Square; Sub-registration district: Mayfair; Household Members Age Relationship: Francis W Hood 32 Head, Edith Hood 23 Wife, Mabel Hood 4 Daughter, Grosvenor Hood 2 Son, Horace Hood 6/12 Son, John Jackman 47 Servant, Thomas Roberts 27 Servant, Mary Cameron 43 Servant, Mary A Yeomans 44 Servant, Eliza L Locke 27 Servant, E A Collett 25 Servant, Amelia Whiles 19 Servant, Anne H Fisher 23 Servant, Jessie Ross 23 Servant.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1871 Census'': \"1871 England Census\", database, The National Archives, Kew, London, England, 1871 England Census, Class RG10, Piece 101, Folio 94, Page 31, GSU roll 838762, ED, institution, or vessel 7, ({{Ancestry Record|7619|10856675}} : accessed 6 May 2021), Name: Grosvenor Hood; Age: 2; Estimated Birth Year: 1869; Relation: Son; Gender: Male; Where born: London England; Civil parish: St George Hanover Square; County/Island: London; Country: England; Registration district: St George Hanover Square; Sub-registration district: Mayfair; Household Members Age Relationship: Francis W Hood 32 Head, Edith Hood 23 Wife, Mabel Hood 4 Daughter, Grosvenor Hood 2 Son, Horace Hood 6/12 Son, John Jackman 47 Servant, Thomas Roberts 27 Servant, Mary Cameron 43 Servant, Mary A Yeomans 44 Servant, Eliza L Locke 27 Servant, E A Collett 25 Servant, Amelia Whiles 19 Servant, Anne H Fisher 23 Servant, Jessie Ross 23 Servant.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "sourceType": "record",
+  "recordType": "CriminalRegister",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Jas Toomer"
+  },
+  "eventDate": {
+    "dateString": "7 Feb 1831"
+  },
+  "eventPlace": {
+    "placeString": "Portsmouth"
+  },
+  "ageAtEvent": "35",
+  "collectionData": {
+    "id": "1989"
+  },
+  "hasValidData": true
+}

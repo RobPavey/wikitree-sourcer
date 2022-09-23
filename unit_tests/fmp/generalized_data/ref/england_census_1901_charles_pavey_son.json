@@ -1,0 +1,100 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Charles D"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Book Assembly House, 318, Kentish Tower Road, St Pancras, London & Middlesex, England"
+  },
+  "registrationDistrict": "St Pancras",
+  "birthDate": {
+    "yearString": "1884",
+    "qualifier": 2
+  },
+  "ageAtEvent": "17",
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "occupation": "Waiter",
+  "maritalStatus": "single",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Harry Alf Pavey",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "59",
+      "birthYear": "1842",
+      "occupation": "Picture frame maker",
+      "birthPlace": "Plymouth, Devon, England"
+    },
+    {
+      "name": "Amelia E Pavey",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "50",
+      "birthYear": "1851",
+      "birthPlace": "London, Middlesex, England"
+    },
+    {
+      "isSelected": true,
+      "name": "Charles D Pavey",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "17",
+      "birthYear": "1884",
+      "occupation": "Waiter",
+      "birthPlace": "London, Middlesex, England"
+    },
+    {
+      "name": "Ralph E Pavey",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "9",
+      "birthYear": "1892",
+      "birthPlace": "London, Middlesex, England"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Harry Alf Pavey"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Amelia E Pavey"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1901 England, Wales & Scotland Census",
+    "page": "38",
+    "piece": "157",
+    "folio": "47",
+    "schedule": "261"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,99 @@
+{
+  "url": "https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1/eliza-pavey-1851-somerset-axbridge-1813-?locale=en",
+  "success": true,
+  "censusDetails": {
+    "Census": "1851",
+    "County": "Somerset (SOM)",
+    "District": "Axbridge",
+    "Civil Parish": "Cheddar",
+    "Ecclesiastical Parish": "-",
+    "Piece": "1937",
+    "Enumeration District": "8a",
+    "Folio": "166",
+    "Page": "3",
+    "Schedule": "12",
+    "House Number": "",
+    "House or Street Name": "Kent Street"
+  },
+  "householdHeadings": [
+    "Surname",
+    "Forenames",
+    "Relationship",
+    "Marital Status",
+    "Sex",
+    "Age",
+    "Occupation",
+    "Birth County",
+    "Birth Place",
+    "Disability",
+    "Notes"
+  ],
+  "householdMembers": [
+    {
+      "Surname": "PAVEY",
+      "Forenames": "John",
+      "Relationship": "Head",
+      "Marital Status": "M",
+      "Sex": "M",
+      "Age": "39",
+      "Occupation": "Carpenter",
+      "Birth County": "Somerset",
+      "Birth Place": "Cheddar",
+      "Disability": "",
+      "Notes": ""
+    },
+    {
+      "Surname": "PAVEY",
+      "isSelected": true,
+      "Forenames": "Eliza",
+      "Relationship": "Wife",
+      "Marital Status": "M",
+      "Sex": "F",
+      "Age": "38",
+      "Occupation": "",
+      "Birth County": "Somerset",
+      "Birth Place": "Yatton",
+      "Disability": "",
+      "Notes": ""
+    },
+    {
+      "Surname": "PAVEY",
+      "Forenames": "George",
+      "Relationship": "Son",
+      "Marital Status": "U",
+      "Sex": "M",
+      "Age": "18",
+      "Occupation": "Farmer 18 Acres",
+      "Birth County": "Somerset",
+      "Birth Place": "Yatton",
+      "Disability": "",
+      "Notes": ""
+    },
+    {
+      "Surname": "PAVEY",
+      "Forenames": "Mary A",
+      "Relationship": "Dau",
+      "Marital Status": "U",
+      "Sex": "F",
+      "Age": "16",
+      "Occupation": "",
+      "Birth County": "Somerset",
+      "Birth Place": "Cheddar",
+      "Disability": "",
+      "Notes": ""
+    },
+    {
+      "Surname": "PAVEY",
+      "Forenames": "Maria",
+      "Relationship": "Dau",
+      "Marital Status": "-",
+      "Sex": "F",
+      "Age": "3",
+      "Occupation": "",
+      "Birth County": "Somerset",
+      "Birth Place": "Cheddar",
+      "Disability": "",
+      "Notes": ""
+    }
+  ]
+}

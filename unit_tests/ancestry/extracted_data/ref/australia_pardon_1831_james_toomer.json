@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/40472:1657",
+  "pageType": "record",
+  "dbId": "1657",
+  "recordId": "40472",
+  "ancestryTemplate": "{{Ancestry Record|1657|40472}}",
+  "domain": "com",
+  "titleName": "James Toomer",
+  "titleCollection": "New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870",
+  "recordData": {
+    "Name": "James Toomer",
+    "Birth Year": "1795",
+    "Origin Place": "Wiltshire",
+    "Arrival Year": "1831",
+    "Vessel Name": "Eleanor",
+    "Record Type": "Conditional"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1657/images/41797_329193-00430?pid=40472&usePUB=true&usePUBJs=true",
+  "imageDbId": "1657",
+  "imageRecordId": "41797_329193-00430",
+  "sourceCitation": "State Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250",
+  "sourceInformation": "Ancestry.com. New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2009. Original data: New South Wales Government. Copies of returns of Absolute and Conditional Pardons granted. Series 1165. State Records Reel 774, copy of 4/4492. State Records Authority of New South Wales, Kingswood, New South Wales, Australia. New South Wales Government. Registers of Conditional Pardons. Series 1170. State Records Reel 774. State Records Authority of New South Wales, Kingswood, New South Wales, Australia. New South Wales Government. Register of convicts recommended for Conditional Pardons. Series 1173. State Records Reel 797-798, copy of 4/4478-80. State Records Authority of New South Wales, Kingswood, New South Wales, Australia. New South Wales Government. Alphabetical registers of pardons. Series 1174. State Records Reel 798, copy of 6/884. State Records Authority of New South Wales, Kingswood, New South Wales, Australia. New South Wales Government. Registers of Absolute Pardons. Series 1177. State Records Reel 800, copy of 4/4486-88. State Records Authority of New South Wales, Kingswood, New South Wales, Australia. New South Wales Government. Registers of recommendations for Absolute Pardons. Series 1179. State Records Reel 800, copy of 4/4489-90. State Records Authority of New South Wales, Kingswood, New South Wales, Australia. New South Wales Government. Copies of Conditional Pardons Registered. Series 1172. Reels 775-796, 3037. State Records Authority of New South Wales, Kingswood, New South Wales, Australia. New South Wales Government. Card Index to Letters Received, Colonial Secretary. Reel 1250. State Records Authority of New South Wales, Kingswood, New South Wales, Australia. © the Crown in right of the State of New South Wales and is used under licence with the permission of the State Records Authority. The State of New South Wales gives no warranty regarding the data's accuracy, completeness, currency or suitability for any particular purpose.",
+  "sourceDescription": "This data collection contains registers of conditional and absolute pardons granted to convicts between 1788 and 1867. The registers recorded information about the convict such as: name, ship and date of arrival, trial date and place, conviction date and place, pardon date, offence, and physical description. Learn more..."
+}

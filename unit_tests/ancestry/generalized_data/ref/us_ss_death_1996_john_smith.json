@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "John E De Smith"
+  },
+  "eventDate": {
+    "dateString": "30 Aug 1996"
+  },
+  "deathDate": {
+    "dateString": "30 Aug 1996"
+  },
+  "residencePlace": {
+    "placeString": "92562, Murrieta, Riverside, California, USA"
+  },
+  "lastNameAtDeath": "Smith",
+  "birthDate": {
+    "dateString": "19 Aug 1919"
+  },
+  "collectionData": {
+    "id": "3693"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,42 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Nellie E Drake"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "29 Apr 1947"
+  },
+  "deathDate": {
+    "dateString": "29 Apr 1947"
+  },
+  "eventPlace": {
+    "placeString": "Hamilton, Hamilton, Texas, USA"
+  },
+  "residencePlace": {
+    "placeString": "Hamilton, Hamilton, Texas, USA"
+  },
+  "lastNameAtDeath": "Drake",
+  "ageAtDeath": "82",
+  "birthDate": {
+    "dateString": "1 Mar 1865"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Carlas Putnam"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Lurna Pennie"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2272"
+  },
+  "hasValidData": true
+}

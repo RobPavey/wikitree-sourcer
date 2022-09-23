@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Erskine Or Kay",
+    "forenames": "John Cunningham"
+  },
+  "eventDate": {
+    "dateString": "21 May 1840"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Scotland"
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Margaret",
+        "lastName": "Kay"
+      },
+      "marriageDate": {
+        "dateString": "21 May 1840"
+      },
+      "marriagePlace": {
+        "country": "Scotland",
+        "placeString": "Scotland"
+      }
+    }
+  ],
+  "hasValidData": true
+}

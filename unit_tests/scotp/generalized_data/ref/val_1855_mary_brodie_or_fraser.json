@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "ValuationRoll",
+  "name": {
+    "lastName": "Brodie Or Fraser",
+    "forenames": "Mary"
+  },
+  "eventDate": {
+    "yearString": "1855"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Ardersier, Scotland"
+  },
+  "hasValidData": true
+}

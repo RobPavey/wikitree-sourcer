@@ -1,0 +1,39 @@
+{
+  "recordData": {
+    "Name": "Arthur R Cowling",
+    "Marriage Registration Date": "1937",
+    "Marriage Registration Place": "Hull, Yorkshire, England",
+    "Registration Date": "1937",
+    "Registration Quarter": "Apr-May-Jun",
+    "Other On Page Name1": "Florence K Penter"
+  },
+  "fullName": "Arthur R Cowling",
+  "givenName": "Arthur R",
+  "surname": "Cowling",
+  "eventDateOriginal": "1937",
+  "eventDate": "1937",
+  "eventYear": "1937",
+  "eventPlaceOriginal": "Hull, Yorkshire, England",
+  "eventPlace": "Hull, Yorkshire, England",
+  "registrationDistrict": "Hull",
+  "eventPlaceL3": "Hull",
+  "eventPlaceL2": "Yorkshire",
+  "eventPlaceL1": "England",
+  "factType": "MarriageRegistration",
+  "spouseFullName": "Penter",
+  "spouseSurname": "Penter",
+  "registrationDate": "1937",
+  "registrationQuarter": "Apr-May-Jun",
+  "referenceData": {
+    "externalLineNumber": "70",
+    "sourcePageNbr": "519",
+    "sourceVolume": "9D"
+  },
+  "fsCollectionId": "2285732",
+  "collectionTitle": "England and Wales Marriage Registration Index, 1837-2005",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ",
+  "citation": "\"England and Wales Marriage Registration Index, 1837-2005,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QV8X-7L1V : 8 October 2014), Arthur R Cowling and null, 1937; from \"England & Wales Marriages, 1837-2005,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.",
+  "sourceTitleForPerson": "Arthur R Cowling, \"England and Wales Marriage Registration Index, 1837-2005\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1V",
+  "pageType": "record"
+}

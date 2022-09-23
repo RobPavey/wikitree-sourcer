@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 1A; Page: 813<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Harry's death (age 60) was registered in the Jan-Feb-Mar quarter of 1914 in the Hampstead district.<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 1A; Page: 813<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Deaths 1837-2007\"<br/>Volume: 1A; Page: 813<br/>[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 1A; Page: 813<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nHarry A Pavey death registered Jan-Feb-Mar 1914 in Hampstead (age 60).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Harry's death (age 60) was registered in the Jan-Feb-Mar quarter of 1914 in the Hampstead district.<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 1A; Page: 813<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nHarry A Pavey death registered Jan-Feb-Mar 1914 in Hampstead (age 60).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Deaths 1837-2007\"<br/>Volume: 1A; Page: 813<br/>[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)<br/>Harry A Pavey death registered Jan-Feb-Mar 1914 in Hampstead (age 60).",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 1A; Page: 813<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Harry A; Last name: Pavey; Gender: Male; Birth year: 1854; Age: 60; Death quarter: 1; Death year: 1914; District: Hampstead; County: London; Volume: 1A; Country: England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Harry's death (age 60) was registered in the Jan-Feb-Mar quarter of 1914 in the Hampstead district.<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 1A; Page: 813<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Harry A; Last name: Pavey; Gender: Male; Birth year: 1854; Age: 60; Death quarter: 1; Death year: 1914; District: Hampstead; County: London; Volume: 1A; Country: England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Deaths 1837-2007\"<br/>Volume: 1A; Page: 813<br/>[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Harry A; Last name: Pavey; Gender: Male; Birth year: 1854; Age: 60; Death quarter: 1; Death year: 1914; District: Hampstead; County: London; Volume: 1A; Country: England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 1A; Page: 813<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Harry A\n|-\n| Last name || Pavey\n|-\n| Gender || Male\n|-\n| Birth day || -\n|-\n| Birth month || -\n|-\n| Birth year || 1854\n|-\n| Age || 60\n|-\n| Death quarter || 1\n|-\n| Death year || 1914\n|-\n| District || Hampstead\n|-\n| County || London\n|-\n| Volume || 1A\n|-\n| Country || England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Harry's death (age 60) was registered in the Jan-Feb-Mar quarter of 1914 in the Hampstead district.<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 1A; Page: 813<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Harry A\n|-\n| Last name || Pavey\n|-\n| Gender || Male\n|-\n| Birth day || -\n|-\n| Birth month || -\n|-\n| Birth year || 1854\n|-\n| Age || 60\n|-\n| Death quarter || 1\n|-\n| Death year || 1914\n|-\n| District || Hampstead\n|-\n| County || London\n|-\n| Volume || 1A\n|-\n| Country || England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Deaths 1837-2007\"<br/>Volume: 1A; Page: 813<br/>[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845&parentid=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Harry A; Last name: Pavey; Gender: Male; Birth year: 1854; Age: 60; Death quarter: 1; Death year: 1914; District: Hampstead; County: London; Volume: 1A; Country: England.",
+    "type": "source"
+  }
+}

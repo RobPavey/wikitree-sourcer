@@ -1,0 +1,27 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Emmeline May Brain"
+  },
+  "eventDate": {
+    "dateString": "1887",
+    "quarter": 2
+  },
+  "birthDate": {
+    "dateString": "1887",
+    "quarter": 2
+  },
+  "registrationDistrict": "Tamworth",
+  "eventPlace": {
+    "placeString": "Tamworth, Staffordshire, England"
+  },
+  "lastNameAtBirth": "Brain",
+  "collectionData": {
+    "id": "8912",
+    "volume": "6b",
+    "page": "470"
+  },
+  "hasValidData": true
+}

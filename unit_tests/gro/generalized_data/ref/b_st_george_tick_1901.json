@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1901",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Tick",
+    "forenames": "St George"
+  },
+  "lastNameAtBirth": "Tick",
+  "birthDate": {
+    "yearString": "1901",
+    "quarter": 2
+  },
+  "mothersMaidenName": "Cornwall",
+  "personGender": "male",
+  "registrationDistrict": "Medway",
+  "collectionData": {
+    "id": "births",
+    "volume": "02A",
+    "page": "678"
+  },
+  "hasValidData": true
+}

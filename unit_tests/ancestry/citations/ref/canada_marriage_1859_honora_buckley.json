@@ -1,0 +1,82 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>{{Ancestry Record|8510|17179}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>\nHonora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>\nHonora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>Honora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>\nName: Honora Buckley; Age: 22; Birth Place: Ireland; Residence: Port Hope; Spouse Name: William Waller; Spouse Age: 24; Spouse Birth Place: England; Spouse Residence: Cobourg; Marriage Date: 8 Dec 1859; Father Name: Michael Buckley; Mother Name: Bridget Buckley; Spouse Father Name: Henry Waller; Spouse Mother Name: Ann Waller; County: Northumberland and Durham; Microfilm Roll: 1030061.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>\nName: Honora Buckley; Age: 22; Birth Place: Ireland; Residence: Port Hope; Spouse Name: William Waller; Spouse Age: 24; Spouse Birth Place: England; Spouse Residence: Cobourg; Marriage Date: 8 Dec 1859; Father Name: Michael Buckley; Mother Name: Bridget Buckley; Spouse Father Name: Henry Waller; Spouse Mother Name: Ann Waller; County: Northumberland and Durham; Microfilm Roll: 1030061.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>Name: Honora Buckley; Age: 22; Birth Place: Ireland; Residence: Port Hope; Spouse Name: William Waller; Spouse Age: 24; Spouse Birth Place: England; Spouse Residence: Cobourg; Marriage Date: 8 Dec 1859; Father Name: Michael Buckley; Mother Name: Bridget Buckley; Spouse Father Name: Henry Waller; Spouse Mother Name: Ann Waller; County: Northumberland and Durham; Microfilm Roll: 1030061.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Honora Buckley\n|-\n| Age || 22\n|-\n| Birth Place || Ireland\n|-\n| Residence || Port Hope\n|-\n| Spouse Name || William Waller\n|-\n| Spouse Age || 24\n|-\n| Spouse Birth Place || England\n|-\n| Spouse Residence || Cobourg\n|-\n| Marriage Date || 8 Dec 1859\n|-\n| Father Name || Michael Buckley\n|-\n| Mother Name || Bridget Buckley\n|-\n| Spouse Father Name || Henry Waller\n|-\n| Spouse Mother Name || Ann Waller\n|-\n| County || Northumberland and Durham\n|-\n| Microfilm Roll || 1030061\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Honora Buckley\n|-\n| Age || 22\n|-\n| Birth Place || Ireland\n|-\n| Residence || Port Hope\n|-\n| Spouse Name || William Waller\n|-\n| Spouse Age || 24\n|-\n| Spouse Birth Place || England\n|-\n| Spouse Residence || Cobourg\n|-\n| Marriage Date || 8 Dec 1859\n|-\n| Father Name || Michael Buckley\n|-\n| Mother Name || Bridget Buckley\n|-\n| Spouse Father Name || Henry Waller\n|-\n| Spouse Mother Name || Ann Waller\n|-\n| County || Northumberland and Durham\n|-\n| Microfilm Roll || 1030061\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>Name: Honora Buckley; Age: 22; Birth Place: Ireland; Residence: Port Hope; Spouse Name: William Waller; Spouse Age: 24; Spouse Birth Place: England; Spouse Residence: Cobourg; Marriage Date: 8 Dec 1859; Father Name: Michael Buckley; Mother Name: Bridget Buckley; Spouse Father Name: Henry Waller; Spouse Mother Name: Ann Waller; County: Northumberland and Durham; Microfilm Roll: 1030061.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Ontario, Canada, County Marriage Registers, 1858-1869,\" database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Honora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\"Ontario, Canada, County Marriage Registers, 1858-1869,\" database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Honora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Ontario, Canada, County Marriage Registers, 1858-1869,\" database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Honora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage'':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\", database, \n({{Ancestry Record|8510|17179}} : accessed 6 May 2021), \nName: Honora Buckley; Age: 22; Birth Place: Ireland; Residence: Port Hope; Spouse Name: William Waller; Spouse Age: 24; Spouse Birth Place: England; Spouse Residence: Cobourg; Marriage Date: 8 Dec 1859; Father Name: Michael Buckley; Mother Name: Bridget Buckley; Spouse Father Name: Henry Waller; Spouse Mother Name: Ann Waller; County: Northumberland and Durham; Microfilm Roll: 1030061.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n''Marriage'':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\", database, \n({{Ancestry Record|8510|17179}} : accessed 6 May 2021), \nName: Honora Buckley; Age: 22; Birth Place: Ireland; Residence: Port Hope; Spouse Name: William Waller; Spouse Age: 24; Spouse Birth Place: England; Spouse Residence: Cobourg; Marriage Date: 8 Dec 1859; Father Name: Michael Buckley; Mother Name: Bridget Buckley; Spouse Father Name: Henry Waller; Spouse Mother Name: Ann Waller; County: Northumberland and Durham; Microfilm Roll: 1030061.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage'': \"Ontario, Canada, County Marriage Registers, 1858-1869\", database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Name: Honora Buckley; Age: 22; Birth Place: Ireland; Residence: Port Hope; Spouse Name: William Waller; Spouse Age: 24; Spouse Birth Place: England; Spouse Residence: Cobourg; Marriage Date: 8 Dec 1859; Father Name: Michael Buckley; Mother Name: Bridget Buckley; Spouse Father Name: Henry Waller; Spouse Mother Name: Ann Waller; County: Northumberland and Durham; Microfilm Roll: 1030061.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "Honora, aged 22, the child of Michael Buckley and Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Honora Buckley\n|-\n| Age || 22\n|-\n| Birth Place || Ireland\n|-\n| Residence || Port Hope\n|-\n| Spouse Name || William Waller\n|-\n| Spouse Age || 24\n|-\n| Spouse Birth Place || England\n|-\n| Spouse Residence || Cobourg\n|-\n| Marriage Date || 8 Dec 1859\n|-\n| Father Name || Michael Buckley\n|-\n| Mother Name || Bridget Buckley\n|-\n| Spouse Father Name || Henry Waller\n|-\n| Spouse Mother Name || Ann Waller\n|-\n| County || Northumberland and Durham\n|-\n| Microfilm Roll || 1030061\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "Honora Buckley age 22 married William Waller on 8 Dec 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Honora Buckley\n|-\n| Age || 22\n|-\n| Birth Place || Ireland\n|-\n| Residence || Port Hope\n|-\n| Spouse Name || William Waller\n|-\n| Spouse Age || 24\n|-\n| Spouse Birth Place || England\n|-\n| Spouse Residence || Cobourg\n|-\n| Marriage Date || 8 Dec 1859\n|-\n| Father Name || Michael Buckley\n|-\n| Mother Name || Bridget Buckley\n|-\n| Spouse Father Name || Henry Waller\n|-\n| Spouse Mother Name || Ann Waller\n|-\n| County || Northumberland and Durham\n|-\n| Microfilm Roll || 1030061\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

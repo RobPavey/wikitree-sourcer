@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Agnes Longe"
+  },
+  "eventDate": {
+    "dateString": "26 Aug 1566"
+  },
+  "eventPlace": {
+    "placeString": "Trowbridge, St James, Wiltshire, England"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "William Yerbery"
+      },
+      "marriageDate": {
+        "dateString": "26 Aug 1566"
+      },
+      "marriagePlace": {
+        "placeString": "Trowbridge, St James, Wiltshire, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "61187"
+  },
+  "hasValidData": true
+}

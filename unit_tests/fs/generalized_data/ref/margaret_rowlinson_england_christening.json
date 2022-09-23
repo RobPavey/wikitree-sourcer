@@ -1,0 +1,35 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Margaret Rowlinson"
+  },
+  "eventDate": {
+    "dateString": "18 May 1834",
+    "yearString": "1834"
+  },
+  "eventPlace": {
+    "placeString": "Warrington, Lancashire, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Joseph Rowlinson",
+        "forenames": "Joseph",
+        "lastName": "Rowlinson"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ann",
+        "forenames": "Ann"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1473014"
+  },
+  "hasValidData": true
+}

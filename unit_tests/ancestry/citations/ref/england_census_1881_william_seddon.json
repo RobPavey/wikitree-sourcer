@@ -1,0 +1,78 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>\n{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1881 census William (age 15), Pattern Maker (Artz), was the son of George Seddon at 9 Mount Pleasant, Salford, Lancashire, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>\n{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>\n{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)<br/>\nWilliam Seddon (15) son, Pattern Maker (Artz), in household of George Seddon (38) at 9 Mount Pleasant in Salford registration district in Lancashire, England. Born in Warrington.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1881 census William (age 15), Pattern Maker (Artz), was the son of George Seddon at 9 Mount Pleasant, Salford, Lancashire, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>\n{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)<br/>\nWilliam Seddon (15) son, Pattern Maker (Artz), in household of George Seddon (38) at 9 Mount Pleasant in Salford registration district in Lancashire, England. Born in Warrington.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)<br/>William Seddon (15) son, Pattern Maker (Artz), in household of George Seddon (38) at 9 Mount Pleasant in Salford registration district in Lancashire, England. Born in Warrington.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>\n{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)<br/>\nName: William Seddon; Age: 15; Estimated Birth Year: abt 1866; Relationship to Head: Son; Father: George Seddon; Mother: Hannah Seddon; Gender: Male; Where born: Warrington; Civil Parish: Salford; County/Island: Lancashire; Country: England; Street Address: 9 Mount Pleasant; Occupation: Pattern Maker (Artz); Registration District: Salford; Sub registration district: Regent Road; <br/>Household Members:<br/>George Seddon 38<br/>Hannah Seddon 40<br/>Richard Seddon 17<br/>William Seddon 15<br/>Alice Seddon 8<br/>Mary Ann Seddon 5<br/>Mary Hensall 40.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1881 census William (age 15), Pattern Maker (Artz), was the son of George Seddon at 9 Mount Pleasant, Salford, Lancashire, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>\n{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)<br/>\nName: William Seddon; Age: 15; Estimated Birth Year: abt 1866; Relationship to Head: Son; Father: George Seddon; Mother: Hannah Seddon; Gender: Male; Where born: Warrington; Civil Parish: Salford; County/Island: Lancashire; Country: England; Street Address: 9 Mount Pleasant; Occupation: Pattern Maker (Artz); Registration District: Salford; Sub registration district: Regent Road; <br/>Household Members:<br/>George Seddon 38<br/>Hannah Seddon 40<br/>Richard Seddon 17<br/>William Seddon 15<br/>Alice Seddon 8<br/>Mary Ann Seddon 5<br/>Mary Hensall 40.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)<br/>Name: William Seddon; Age: 15; Estimated Birth Year: abt 1866; Relationship to Head: Son; Father: George Seddon; Mother: Hannah Seddon; Gender: Male; Where born: Warrington; Civil Parish: Salford; County/Island: Lancashire; Country: England; Street Address: 9 Mount Pleasant; Occupation: Pattern Maker (Artz); Registration District: Salford; Sub registration district: Regent Road; <br/>Household Members:<br/>George Seddon 38<br/>Hannah Seddon 40<br/>Richard Seddon 17<br/>William Seddon 15<br/>Alice Seddon 8<br/>Mary Ann Seddon 5<br/>Mary Hensall 40.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>\n{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Seddon\n|-\n| Age || 15\n|-\n| Estimated Birth Year || abt 1866\n|-\n| Relationship to Head || Son\n|-\n| Father || George Seddon\n|-\n| Mother || Hannah Seddon\n|-\n| Gender || Male\n|-\n| Where born || Warrington\n|-\n| Civil Parish || Salford\n|-\n| County/Island || Lancashire\n|-\n| Country || England\n|-\n| Street Address || 9 Mount Pleasant\n|-\n| Occupation || Pattern Maker (Artz)\n|-\n| Registration District || Salford\n|-\n| Sub registration district || Regent Road\n|-\n| Household Members || George Seddon 38<br/>Hannah Seddon 40<br/>Richard Seddon 17<br/>William Seddon 15<br/>Alice Seddon 8<br/>Mary Ann Seddon 5<br/>Mary Hensall 40\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1881 census William (age 15), Pattern Maker (Artz), was the son of George Seddon at 9 Mount Pleasant, Salford, Lancashire, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>\n{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Seddon\n|-\n| Age || 15\n|-\n| Estimated Birth Year || abt 1866\n|-\n| Relationship to Head || Son\n|-\n| Father || George Seddon\n|-\n| Mother || Hannah Seddon\n|-\n| Gender || Male\n|-\n| Where born || Warrington\n|-\n| Civil Parish || Salford\n|-\n| County/Island || Lancashire\n|-\n| Country || England\n|-\n| Street Address || 9 Mount Pleasant\n|-\n| Occupation || Pattern Maker (Artz)\n|-\n| Registration District || Salford\n|-\n| Sub registration district || Regent Road\n|-\n| Household Members || George Seddon 38<br/>Hannah Seddon 40<br/>Richard Seddon 17<br/>William Seddon 15<br/>Alice Seddon 8<br/>Mary Ann Seddon 5<br/>Mary Hensall 40\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)<br/>Name: William Seddon; Age: 15; Estimated Birth Year: abt 1866; Relationship to Head: Son; Father: George Seddon; Mother: Hannah Seddon; Gender: Male; Where born: Warrington; Civil Parish: Salford; County/Island: Lancashire; Country: England; Street Address: 9 Mount Pleasant; Occupation: Pattern Maker (Artz); Registration District: Salford; Sub registration district: Regent Road; <br/>Household Members:<br/>George Seddon 38<br/>Hannah Seddon 40<br/>Richard Seddon 17<br/>William Seddon 15<br/>Alice Seddon 8<br/>Mary Ann Seddon 5<br/>Mary Hensall 40.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1881 England Census,\" database, ({{Ancestry Record|7572|10602933}} : accessed 6 May 2021), William Seddon (15) son, Pattern Maker (Artz), in household of George Seddon (38) at 9 Mount Pleasant in Salford registration district in Lancashire, England. Born in Warrington; citing Class RG11, Piece 3965, Folio 44, Page 32, GSU roll 1341947, ED, institution, or vessel 9.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1881 census William (age 15), Pattern Maker (Artz), was the son of George Seddon at 9 Mount Pleasant, Salford, Lancashire, England.<ref>\"1881 England Census,\" database, ({{Ancestry Record|7572|10602933}} : accessed 6 May 2021), William Seddon (15) son, Pattern Maker (Artz), in household of George Seddon (38) at 9 Mount Pleasant in Salford registration district in Lancashire, England. Born in Warrington; citing Class RG11, Piece 3965, Folio 44, Page 32, GSU roll 1341947, ED, institution, or vessel 9.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1881 England Census,\" database, ({{Ancestry Record|7572|10602933}} : accessed 6 May 2021), William Seddon (15) son, Pattern Maker (Artz), in household of George Seddon (38) at 9 Mount Pleasant in Salford registration district in Lancashire, England. Born in Warrington; citing Class RG11, Piece 3965, Folio 44, Page 32, GSU roll 1341947, ED, institution, or vessel 9.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1881 Census'':\n\"1881 England Census\", database, \nClass RG11, Piece 3965, Folio 44, Page 32, GSU roll 1341947, ED, institution, or vessel 9, \n({{Ancestry Record|7572|10602933}} : accessed 6 May 2021), \nName: William Seddon; Age: 15; Estimated Birth Year: abt 1866; Relationship to Head: Son; Father: George Seddon; Mother: Hannah Seddon; Gender: Male; Where born: Warrington; Civil Parish: Salford; County/Island: Lancashire; Country: England; Street Address: 9 Mount Pleasant; Occupation: Pattern Maker (Artz); Registration District: Salford; Sub registration district: Regent Road; Household Members: George Seddon 38, Hannah Seddon 40, Richard Seddon 17, William Seddon 15, Alice Seddon 8, Mary Ann Seddon 5, Mary Hensall 40.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1881 census William (age 15), Pattern Maker (Artz), was the son of George Seddon at 9 Mount Pleasant, Salford, Lancashire, England.<ref>\n''1881 Census'':\n\"1881 England Census\", database, \nClass RG11, Piece 3965, Folio 44, Page 32, GSU roll 1341947, ED, institution, or vessel 9, \n({{Ancestry Record|7572|10602933}} : accessed 6 May 2021), \nName: William Seddon; Age: 15; Estimated Birth Year: abt 1866; Relationship to Head: Son; Father: George Seddon; Mother: Hannah Seddon; Gender: Male; Where born: Warrington; Civil Parish: Salford; County/Island: Lancashire; Country: England; Street Address: 9 Mount Pleasant; Occupation: Pattern Maker (Artz); Registration District: Salford; Sub registration district: Regent Road; Household Members: George Seddon 38, Hannah Seddon 40, Richard Seddon 17, William Seddon 15, Alice Seddon 8, Mary Ann Seddon 5, Mary Hensall 40.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1881 Census'': \"1881 England Census\", database, Class RG11, Piece 3965, Folio 44, Page 32, GSU roll 1341947, ED, institution, or vessel 9, ({{Ancestry Record|7572|10602933}} : accessed 6 May 2021), Name: William Seddon; Age: 15; Estimated Birth Year: abt 1866; Relationship to Head: Son; Father: George Seddon; Mother: Hannah Seddon; Gender: Male; Where born: Warrington; Civil Parish: Salford; County/Island: Lancashire; Country: England; Street Address: 9 Mount Pleasant; Occupation: Pattern Maker (Artz); Registration District: Salford; Sub registration district: Regent Road; Household Members: George Seddon 38, Hannah Seddon 40, Richard Seddon 17, William Seddon 15, Alice Seddon 8, Mary Ann Seddon 5, Mary Hensall 40.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "In 1881, William was enumerated as a son in the household of George Seddon at 9 Mount Pleasant, Salford, Lancashire, England. He was a Pattern Maker (Artz).<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947; ED, institution, or vessel: 9<br/>\n{{Ancestry Record|7572|10602933}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Seddon\n|-\n| Age || 15\n|-\n| Estimated Birth Year || abt 1866\n|-\n| Relationship to Head || Son\n|-\n| Father || George Seddon\n|-\n| Mother || Hannah Seddon\n|-\n| Gender || Male\n|-\n| Where born || Warrington\n|-\n| Civil Parish || Salford\n|-\n| County/Island || Lancashire\n|-\n| Country || England\n|-\n| Street Address || 9 Mount Pleasant\n|-\n| Occupation || Pattern Maker (Artz)\n|-\n| Registration District || Salford\n|-\n| Sub registration district || Regent Road\n|-\n| Household Members || George Seddon 38<br/>Hannah Seddon 40<br/>Richard Seddon 17<br/>William Seddon 15<br/>Alice Seddon 8<br/>Mary Ann Seddon 5<br/>Mary Hensall 40\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

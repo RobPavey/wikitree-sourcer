@@ -1,0 +1,25 @@
+{
+  "recordData": {
+    "Name": "John Smith",
+    "Tax Assessment Place": "Boston, Suffolk, Massachusetts, United States"
+  },
+  "fullName": "John Smith",
+  "givenName": "John",
+  "surname": "Smith",
+  "factType": "TaxAssessment",
+  "eventPlaceOriginal": "Boston, Suffolk, Massachusetts, United States",
+  "eventPlace": "Boston, Suffolk, Massachusetts, United States",
+  "fsCollectionId": "2125599",
+  "referenceData": {
+    "digitalFilmNumber": "100075615",
+    "recordNumber": "5"
+  },
+  "fsImageNumber": "00069",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3QS7-99DF-19RJ",
+  "collectionTitle": "Massachusetts, Boston Tax Records, 1822-1918",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2",
+  "citation": "\"Massachusetts, Boston Tax Records, 1822-1918\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z : 4 December 2020), John Smith, .",
+  "sourceTitleForPerson": "John Smith, \"Massachusetts, Boston Tax Records, 1822-1918\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z",
+  "pageType": "record"
+}

@@ -1,0 +1,45 @@
+{
+  "recordData": {
+    "Name": "Pearl Jennie Agar",
+    "Birth Date": "17 Mar 1897",
+    "Birth Place": "Evergreen Township, Sanilac, Michigan",
+    "Birth Year": "1897"
+  },
+  "fullName": "Pearl Jennie Agar",
+  "givenName": "Pearl Jennie",
+  "surname": "Agar",
+  "gender": "female",
+  "factType": "Birth",
+  "eventDateOriginal": "17 Mar 1897",
+  "eventDate": "17 Mar 1897",
+  "eventPlaceOriginal": "Evergreen Township, Sanilac, Michigan",
+  "birthDateOriginal": "17 Mar 1897",
+  "birthDate": "17 Mar 1897",
+  "birthPlace": "Evergreen Township, Sanilac, Michigan",
+  "father": {
+    "fullName": "Robert Agar",
+    "givenName": "Robert",
+    "surname": "Agar"
+  },
+  "mother": {
+    "fullName": "Mary Agar",
+    "givenName": "Mary",
+    "surname": "Agar"
+  },
+  "referenceData": {
+    "digitalFilmNumber": "4207534",
+    "filmNumber": "2322715",
+    "imageNumber": "52",
+    "packetLetter": "C",
+    "recordNumber": "28",
+    "referenceId": "item 1 p 171 rn 787"
+  },
+  "collectionTitle": "Michigan Births, 1867-1902",
+  "fsCollectionId": "1459684",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY",
+  "citation": "\"Michigan Births, 1867-1902,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NQXX-QLZ : 20 February 2021), Pearl Jennie Agar, 17 Mar 1897; citing item 1 p 171 rn 787, Evergreen Township, Sanilac, Michigan, Department of Vital Records, Lansing; FHL microfilm 2,322,715.",
+  "sourceTitleForPerson": "Pearl Jennie Agar, \"Michigan Births, 1867-1902\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLZ",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:S3HT-6737-3CW",
+  "pageType": "record"
+}

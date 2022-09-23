@@ -1,0 +1,101 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=7572&h=26496682&clickref=1100lh4Tvjw5%2C1100lh4Tvjw5&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
+  "pageType": "record",
+  "dbId": "7572",
+  "recordId": "26496682",
+  "ancestryTemplate": "{{Ancestry Record|7572|26496682}}",
+  "domain": "com",
+  "titleName": "Caroline Risbry",
+  "titleCollection": "1881 England Census",
+  "recordData": {
+    "Name": "Caroline Risbry",
+    "Age": "33",
+    "Estimated Birth Year": "abt 1848",
+    "Relationship to Head": "Wife",
+    "Spouse": "John Risbry",
+    "Gender": "Female",
+    "Where born": "Plymouth, Devon, England",
+    "Civil Parish": "Linthorpe",
+    "County/Island": "Yorkshire",
+    "Country": "England",
+    "Street Address": "64 Farrar Street",
+    "Marital status": "Married",
+    "Registration District": "Middlesbrough",
+    "ED, institution, or vessel": "39",
+    "Piece": "4854",
+    "Folio": "17",
+    "Page Number": "27",
+    "Household Members": "John Risbry 37<br/>Caroline Risbry 33<br/>George Risbry 12<br/>Elizabeth Risbry 10<br/>John R. Risbry 8<br/>Rachel Risbry 4<br/>Amelia Risbry 2<br/>Alfred Moore 36"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Name": "John Risbry",
+        "dbId": "uki1881",
+        "recordId": "26496740",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496740",
+        "Age": "37"
+      },
+      {
+        "Name": "Caroline Risbry",
+        "dbId": "uki1881",
+        "recordId": "26496682",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496682",
+        "Age": "33"
+      },
+      {
+        "Name": "George Risbry",
+        "dbId": "uki1881",
+        "recordId": "26496741",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496741",
+        "Age": "12"
+      },
+      {
+        "Name": "Elizabeth Risbry",
+        "dbId": "uki1881",
+        "recordId": "26496791",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496791",
+        "Age": "10"
+      },
+      {
+        "Name": "John R. Risbry",
+        "dbId": "uki1881",
+        "recordId": "26496719",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496719",
+        "Age": "8"
+      },
+      {
+        "Name": "Rachel Risbry",
+        "dbId": "uki1881",
+        "recordId": "26496605",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496605",
+        "Age": "4"
+      },
+      {
+        "Name": "Amelia Risbry",
+        "dbId": "uki1881",
+        "recordId": "26496653",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496653",
+        "Age": "2"
+      },
+      {
+        "Name": "Alfred Moore",
+        "dbId": "uki1881",
+        "recordId": "26496827",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496827",
+        "Age": "36"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7572/images/NRYRG11_4852_4857-0394?pid=26496682&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26db%3D7572%26h%3D26496682%26clickref%3D1100lh4Tvjw5%252C1100lh4Tvjw5%26adref%3D%26o_xid%3D01011l4xx5%26o_lid%3D01011l4xx5%26o_sch%3DAffiliate%252BExternal&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "7572",
+  "imageRecordId": "NRYRG11_4852_4857-0394",
+  "sourceCitation": "Class: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169",
+  "sourceInformation": "Ancestry.com and The Church of Jesus Christ of Latter-day Saints. 1881 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2004. 1881 British Isles Census Index provided by The Church of Jesus Christ of Latter-day Saints © Copyright 1999 Intellectual Reserve, Inc. All rights reserved. All use is subject to the limited use license and other terms and conditions applicable to this site. Appreciation is expressed to The Church of Jesus Christ of Latter-day Saints for providing the 1881 England and Wales Census Index. Original data: Census Returns of England and Wales, 1881. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1881. Images © Crown copyright. Images reproduced by courtesy of The National Archives, London, England. The National Archives give no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives Image Library, Kew, Richmond, Surrey TW9 4DU, Tel: 020 8392 5225 Fax: 020 8392 5266.",
+  "originalData": "Census Returns of England and Wales, 1881. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1881.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1881 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1881 England Census. Learn more..."
+}

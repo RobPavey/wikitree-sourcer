@@ -1,0 +1,26 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": "Mary Denning",
+  "primaryPersonGender": "female",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Charles Pavey"
+  },
+  "birthPlace": {
+    "placeString": "Indiana"
+  },
+  "eventDate": {
+    "dateString": "7 Mar 1937",
+    "yearString": "1937"
+  },
+  "eventPlace": {
+    "placeString": "Anderson, Hamilton, Ohio"
+  },
+  "collectionData": {
+    "id": "1307272"
+  },
+  "hasValidData": true
+}

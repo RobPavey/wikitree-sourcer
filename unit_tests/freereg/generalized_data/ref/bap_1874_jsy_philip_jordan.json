@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "freereg",
+  "sourceType": "record",
+  "eventPlace": {
+    "placeString": "St Helier, Jersey"
+  },
+  "recordType": "Baptism",
+  "eventDate": {
+    "dateString": "14 Jun 1874"
+  },
+  "birthDate": {
+    "dateString": "25 Feb 1674"
+  },
+  "birthPlace": {
+    "placeString": "St Helier, Jersey"
+  },
+  "lastNameAtBirth": "Jordan",
+  "name": {
+    "lastName": "Jordan",
+    "forenames": "Philip John Marett"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Robert Edward Jordan"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Ann Marrett"
+      }
+    }
+  },
+  "hasValidData": true
+}

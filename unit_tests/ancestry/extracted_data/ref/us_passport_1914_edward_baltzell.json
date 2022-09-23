@@ -1,0 +1,32 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/486408:1174?tid=&pid=&queryId=8f5add16a11ea5de69a2c8e717cc6e4e&_phsrc=lQX2683&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "1174",
+  "recordId": "486408",
+  "ancestryTemplate": "{{Ancestry Record|1174|486408}}",
+  "domain": "com",
+  "titleName": "Edward Digby Baltzell",
+  "titleCollection": "U.S., Passport Applications, 1795-1925",
+  "recordData": {
+    "Name": "Edward Digby Baltzell",
+    "Gender": "Male",
+    "Age": "29",
+    "Birth Date": "27 Aug 1885",
+    "Birth Place": "Fox Chase, Philadelphia, Pennsylvania",
+    "Residence Place": "Philadelphia, Pennsylvania",
+    "Passport Issue Date": "2 Nov 1914",
+    "Spouse": "Caroline Dukring Baltzell",
+    "Has Photo": "No",
+    "Certificate Number": "43563"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1174&h=450486408&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1174/images/USM1490_226-0105?pid=486408&usePUB=true&_phsrc=lQX2683&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "1174",
+  "imageRecordId": "USM1490_226-0105",
+  "sourceCitation": "National Archives and Records Administration (NARA); Washington D.C.; Roll #: 226; Volume #: Roll 0226 - Certificates: 43480-44333, 02 Nov 1914-20 Nov 1914",
+  "sourceInformation": "Ancestry.com. U.S., Passport Applications, 1795-1925 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2007. Original data: Selected Passports. National Archives, Washington, D.C.A full list of sources can be found here.",
+  "originalData": "Selected Passports. National Archives, Washington, D.C.",
+  "sourceDescription": "This is a collection of American passport applications that includes passport applications from 1795-1925, passport amendment and extension applications from 1912-1925, and a register of passport applications that cover most of the same years Passport applications often include information regarding an applicant's family status, date and place of birth, residence, naturalization (if foreign-born), and other biographical information. Twentieth-century applications often include marriage and family information as well as dates, places, and names of ships used for travel. Learn more..."
+}

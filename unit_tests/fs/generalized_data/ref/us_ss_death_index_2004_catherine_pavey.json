@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Catherine V Pavey"
+  },
+  "birthDate": {
+    "dateString": "08 Nov 1921"
+  },
+  "deathDate": {
+    "dateString": "01 Sep 2004"
+  },
+  "eventDate": {
+    "dateString": "01 Sep 2004"
+  },
+  "residencePlace": {
+    "placeString": "Columbus, Bartholomew, Indiana"
+  },
+  "ageAtDeath": "83",
+  "collectionData": {
+    "id": "1202535"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,25 @@
+{
+  "url": "https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv=1&dbid=7579&h=13080918&ssrc=pt&tid=172368945&pid=392239251050&usePUB=true",
+  "pageType": "record",
+  "dbId": "7579",
+  "recordId": "13080918",
+  "ancestryTemplate": "{{Ancestry Record|7579|13080918}}",
+  "domain": "co.uk",
+  "titleName": "Teresa Carole-ann Fitchie",
+  "titleCollection": "England & Wales, Civil Registration Death Index, 1916-2007",
+  "recordData": {
+    "Name": "Teresa Carole-ann Fitchie",
+    "Death Age": "62",
+    "Birth Date": "13 Jul 1940",
+    "Registration Date": "Jul 2002",
+    "Registration District": "Ashford With Shepway",
+    "Inferred County": "Kent",
+    "Register Number": "AS11B",
+    "District and Subdistrict": "5581B",
+    "Entry Number": "170"
+  },
+  "sourceCitation": "General Register Office; United Kingdom",
+  "sourceInformation": "Ancestry.com. England & Wales, Civil Registration Death Index, 1916-2007 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc., 2007. Original data: General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Indexes created by the General Register Office, in London, England.",
+  "originalData": "General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Indexes created by the General Register Office, in London, England.",
+  "sourceDescription": "This database is a searchable, digitized version of the indices of civil registrations in England and Wales, reported quarterly to the General Register Office (GRO) in London. This index spans the years between 1916 and 2007. You need the information found in an original index to request a copy of a death certificate for the individual referenced. Learn more..."
+}

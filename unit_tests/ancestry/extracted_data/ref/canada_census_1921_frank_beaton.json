@@ -1,0 +1,122 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/8614064:8991",
+  "pageType": "record",
+  "dbId": "8991",
+  "recordId": "8614064",
+  "ancestryTemplate": "{{Ancestry Record|8991|8614064}}",
+  "domain": "com",
+  "titleName": "Frank W Beaton",
+  "titleCollection": "1921 Census of Canada",
+  "recordData": {
+    "Name": "Frank W Beaton",
+    "Gender": "Male",
+    "Racial or Tribal Origin": "Scotch (Scotish)",
+    "Nationality": "Canada",
+    "Marital Status": "Married",
+    "Age": "57",
+    "Birth Year": "abt 1864",
+    "Birth Place": "Scotland",
+    "Year of Immigration": "1883",
+    "Residence Date": "1 Jun 1921",
+    "House Number": "50",
+    "Residence Street or Township": "Tp 83 R 18 M 6",
+    "Residence District": "Cariboo",
+    "Residence Province or Territory": "British Columbia",
+    "Residence Country": "Canada",
+    "Relation to Head of House": "Head",
+    "Spouse's Name": "Emma S Beaton",
+    "Father Birth Place": "Scotland",
+    "Mother Birth Place": "Scotland",
+    "Can Speak English?": "Yes",
+    "Can Speak French?": "No",
+    "Religion": "Presbyterian",
+    "Can Read?": "Yes",
+    "Can Write?": "Yes",
+    "Occupation": "Doctor [Factor for HBC]",
+    "Employment Type": "Wage Earner",
+    "Income": "1350",
+    "Out of Work?": "No",
+    "Duration of Unemployment": "0-0",
+    "Duration of Unemployment (Illness)": "0",
+    "Enumeration District": "14",
+    "Sub-District Number": "61",
+    "Home Owned or Rented": "Rented",
+    "Class of House": "Single House",
+    "Materials of Construction": "Wood",
+    "Number of Rooms": "4",
+    "Enumerator": "Alwin Holland",
+    "District Description": "All that territory east of the line between Ranges 20 and 21 and North of the line between Townships 80 and 81 within the Peace River Block excepting Townships 81 and 82 in Ranges 14 and 15. Including - South Pine Mill Camp, Peace river, Gold Dredge Cmp. and Charlie Lake Mill Camp, Fort St. John",
+    "Line Number": "1",
+    "Family Number": "50",
+    "Household Members<br/>Age<br/>Relationship": "Frank W Beaton 57 Head<br/>Emma S Beaton 56 Wife<br/>Margaret Beaton 21 Daughter<br/>Frank Beaton 16 Son<br/>Duncan Beaton 15 Son<br/>Frederick Beaton 13 Son<br/>William Beaton 11 Son"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "Frank W Beaton",
+        "Age": "57",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Emma S Beaton",
+        "dbId": "8991",
+        "recordId": "8614065",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8991&h=8614065&indiv=try&viewrecord=1&r=an",
+        "Age": "56",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "Margaret Beaton",
+        "dbId": "8991",
+        "recordId": "8614066",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8991&h=8614066&indiv=try&viewrecord=1&r=an",
+        "Age": "21",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Frank Beaton",
+        "dbId": "8991",
+        "recordId": "8614067",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8991&h=8614067&indiv=try&viewrecord=1&r=an",
+        "Age": "16",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Duncan Beaton",
+        "dbId": "8991",
+        "recordId": "8614068",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8991&h=8614068&indiv=try&viewrecord=1&r=an",
+        "Age": "15",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Frederick Beaton",
+        "dbId": "8991",
+        "recordId": "8614069",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8991&h=8614069&indiv=try&viewrecord=1&r=an",
+        "Age": "13",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "William Beaton",
+        "dbId": "8991",
+        "recordId": "8614070",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8991&h=8614070&indiv=try&viewrecord=1&r=an",
+        "Age": "11",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8991/images/1921_013-E002869202?pid=8614064&usePUB=true&usePUBJs=true",
+  "imageDbId": "8991",
+  "imageRecordId": "1921_013-E002869202",
+  "sourceCitation": "Reference Number: RG 31; Folder Number: 13; Census Place: 13, Cariboo, British Columbia; Page Number: 3",
+  "sourceInformation": "Ancestry.com. 1921 Census of Canada [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2013. Original data: Library and Archives Canada. Sixth Census of Canada, 1921. Ottawa, Ontario, Canada: Library and Archives Canada, 2013. Series RG31. Statistics Canada Fonds.Images are reproduced with the permission of Library and Archives Canada.",
+  "originalData": "Library and Archives Canada. Sixth Census of Canada, 1921. Ottawa, Ontario, Canada: Library and Archives Canada, 2013. Series RG31. Statistics Canada Fonds.Images are reproduced with the permission of Library and Archives Canada.",
+  "sourceDescription": "Find your Ancestors in the 1921 Canadian Census. Canada added 1,581,840 new residents between 1911 and 1921. The Prairie Provinces were the big gainers, with Alberta and Saskatchewan each growing by more than 50 percent. Learn more..."
+}

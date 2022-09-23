@@ -1,0 +1,18 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Willm Johnson"
+  },
+  "eventDate": {
+    "dateString": "August 7, 1820"
+  },
+  "eventPlace": {
+    "placeString": "Blue Hill, Hancock, Maine"
+  },
+  "collectionData": {
+    "id": "7734"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Fraser"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "ageAtEvent": "80",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Inverness, Inverness, Scotland",
+    "streetAddress": "36 Argyle St"
+  },
+  "collectionData": {
+    "id": "census1881"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,490 @@
+{
+  "id" : "r_102084938337",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q29M-PK4Y?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q29M-PK4Y?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q29M-PK4Y"
+    }
+  },
+  "description" : "#sd_p_101059491237",
+  "persons" : [ {
+    "id" : "p_101059491237",
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/QVV5-53JY?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/Q29M-PK4Y?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVV5-53JY" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Mary Francis Taylor Volentine",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Mary Francis",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "bc6e88c1-4ef4-44f9-82dd-82957bd863fe",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Mary Francis"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Taylor Volentine",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Maiden",
+            "values" : [ {
+              "id" : "3ea6b031-ad43-4306-bf26-099b15d410c9",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_MAID_ORIG",
+              "text" : "Taylor"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "02f9c7f9-17cd-4a06-b886-f1fa76cf3a5a",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Volentine"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "144caa16-f8e3-4368-aa4e-6f03062baf5b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Mary Francis Taylor Volentine"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Burial",
+      "date" : {
+        "original" : "1898",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "d3815f53-843c-4dd5-b247-886d65dbc8d4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1898"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "db860128-013b-4f65-b3a0-09b186e3d8e2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Sep"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "a6b5ffaf-6177-4295-8bb9-86495625ee74",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "23"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "dcd9c780-a84b-4696-8448-8447ef184a28",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1898"
+          }, {
+            "id" : "65d31d15-75ab-489f-8503-c3bbd257bd75",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1898"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Peter Pender, Franklin, Arkansas, United States of America",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "4cff1542-b011-4257-b5d3-9ee47e6e0ca3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Peter Pender, Franklin, Arkansas, United States of America"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Cemetery",
+          "values" : [ {
+            "id" : "0083be73-efa4-4fec-b091-2cf7a3f376ba",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CEMETERY_ORIG",
+            "text" : "Lowes Creek Cemetery"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "1d7b531a-261e-4819-a6cf-301d162d0b43",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Peter Pender"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "80227574-a111-4362-8aab-fadf13a71f53",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States of America"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "1c955633-99e7-44f7-ae0d-6c3354e99e36",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Franklin"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "e8a37805-7e4c-4d5a-afa4-ec789a3fad60",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Arkansas"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "c1f01669-1e18-4cde-ada7-ef480d769129",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Burial"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "13 Jan 1839",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "d75be41a-34b2-4502-b2f6-e48797463913",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "13 Jan 1839"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "227c0911-1ba5-40ce-a1e1-381220a3b2d7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "Jan"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "cac042c2-da5d-4436-bc4a-cb4011c99662",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "13"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "2e00b6d3-5f69-4cdf-badb-53d23f725039",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1839"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "23 Sep 1898",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "1117a56c-db6a-4616-a0b8-493e61e01ca9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_DATE_ORIG",
+            "text" : "23 Sep 1898"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://familysearch.org/types/fields/AgeYears",
+      "values" : [ {
+        "id" : "72c4eee5-8db1-48b2-b4f7-8c4fd367a0f9",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE_YEARS_EST",
+        "text" : "59"
+      } ]
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_2221801",
+    "about" : "https://api.familysearch.org/platform/records/collections/2221801",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223823371,
+    "modified" : 1661533048200,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "World",
+        "description" : "#place_6371060"
+      },
+      "temporal" : {
+        "original" : "1500/2013",
+        "formal" : "1500/2013"
+      },
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Find A Grave Index"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2221801" ]
+    }
+  }, {
+    "id" : "src_r_102084938337",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:Q29M-PK4Y",
+    "componentOf" : {
+      "description" : "#sd_c_2221801"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1415943672357,
+    "modified" : 1661533048200,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Peter Pender, Franklin, Arkansas, United States of America"
+      },
+      "temporal" : {
+        "original" : "1898",
+        "formal" : "+1898"
+      },
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "citations" : [ {
+      "value" : "\"Find A Grave Index,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:Q29M-PK4Y : 20 May 2020), Entry for Mary Francis Taylor Volentine, 1898; Burial, , ; citing record ID , <i>Find a Grave</i>, http://www.findagrave.com."
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Mary Francis Taylor Volentine, \"Find A Grave Index\""
+    } ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1002845433803" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:Q29M-PK4Y" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2221801?arkName=1:2:Q29M-PK4Y"
+    }
+  }, {
+    "id" : "sd_p_101059491237",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVV5-53JY",
+    "componentOf" : {
+      "description" : "#src_r_102084938337"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Find A Grave Index,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVV5-53JY : 20 May 2020), Mary Francis Taylor Volentine, 1898; Burial, , ; citing record ID , <i>Find a Grave</i>, http://www.findagrave.com."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Mary Francis Taylor Volentine, \"Find A Grave Index\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVV5-53JY" ]
+    }
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=30569834",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=30569834" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2221801"
+    }
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.findagrave.com" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_6371060",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/6371060" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/ExternalImageId",
+    "values" : [ {
+      "id" : "23eb82f5-77d1-42ee-bb65-d6c03da0b536",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_IMAGE_ID_ORIG",
+      "text" : "30569834"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtRecordId",
+    "values" : [ {
+      "id" : "0b71a8a2-d410-4874-b71d-56a3ad300d98",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_RECORD_ID_ORIG",
+      "text" : "30569834"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "edf10dd9-9feb-40c8-a190-ed24e626e1e1",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "2221801"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "3dc802b6-cbd3-467a-a546-97459ae8b86b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "b12996b4-dab0-4c6d-880d-02dad0c43ae2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "13-0804"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "bdf0a7bc-fb1a-4dcb-918d-71c61b918e83",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "2015-NOV Update"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "aa0ae3fb-c966-411d-9420-a4648bc10054",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "U533_A625_P361_L226_V453_M616_00000000000030569834_00000001002845433803"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "e444b2b9-a391-4335-9cac-ae4cdf5fe1c9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "1002845433803"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "8d08233e-246d-414d-947a-411dca50c9b3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"ext_url\": \"http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=30569834&ref=3rdParty\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "3c1d1b59-39de-441b-801f-7c0c8342c22b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PhotoIncludedFlag",
+    "values" : [ {
+      "id" : "32209d32-3441-430d-bf5f-d0ad152d9bde",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "MISC_FLAG_PHOTO_INCLUDED_ORIG",
+      "text" : "Y",
+      "qualifiers" : [ {
+        "value" : "MISC",
+        "name" : "http://familysearch.org/types/qualifiers/Info"
+      } ]
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/MiscNote",
+    "values" : [ {
+      "id" : "9fb454aa-e9cc-423a-9047-8e1c260989c1",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "NOTE_MISC_ORIG",
+      "text" : "Contains Biography",
+      "qualifiers" : [ {
+        "value" : "MISC",
+        "name" : "http://familysearch.org/types/qualifiers/Info"
+      } ]
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "4"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "56270"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

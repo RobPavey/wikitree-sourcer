@@ -1,0 +1,42 @@
+{
+  "recordData": {
+    "Name": "Florida Tucker Moore",
+    "Source Newspaper": "Jonesboro Sun, The",
+    "Event Type": "Obituary"
+  },
+  "eventDateOriginal": "08 Oct 2009",
+  "eventDate": "8 Oct 2009",
+  "eventYear": "2009",
+  "eventPlaceOriginal": "Arkansas, United States",
+  "eventPlace": "Arkansas, United States",
+  "eventPlaceL2": "Arkansas",
+  "eventPlaceL1": "United States",
+  "fullName": "Florida Tucker Moore",
+  "givenName": "Florida Tucker",
+  "surname": "Moore",
+  "gender": "female",
+  "factType": "Marriage",
+  "spouseFullName": "James Clifford Moore",
+  "spouseGivenName": "James Clifford",
+  "spouseSurname": "Moore",
+  "spouseAge": "81",
+  "relatedPersonFactType": "Obituary",
+  "relationshipToFactPerson": "Spouse",
+  "relatedPersonFullName": "James Clifford Moore",
+  "relatedPersonGivenName": "James Clifford",
+  "relatedPersonSurname": "Moore",
+  "relatedPersonGender": "male",
+  "fsImageNumber": "00512",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-CSZ8-Y9QH-J",
+  "fsCollectionId": "2333694",
+  "referenceData": {
+    "filmNumber": "101977316",
+    "digitalFilmNumber": "101977316"
+  },
+  "collectionTitle": "United States, GenealogyBank Obituaries, 1980-2014",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:Q2TS-LJC1",
+  "citation": "\"United States, GenealogyBank Obituaries, 1980-2014,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKLP-Y42H : accessed 7 March 2022), Florida Tucker Moore in entry for James Clifford Moore, Arkansas, United States, 08 Oct 2009; from \"Recent Newspaper Obituaries (1977 - Today),\" database, <i>GenealogyBank.com</i> (http://www.genealogybank.com : 2014); citing <i>Jonesboro Sun, The</i>, born-digital text.",
+  "sourceTitleForPerson": "Florida Tucker Moore in entry for James Clifford Moore, \"United States, GenealogyBank Obituaries, 1980-2014\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QKLP-Y42H",
+  "pageType": "record"
+}

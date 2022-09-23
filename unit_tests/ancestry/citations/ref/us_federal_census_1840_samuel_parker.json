@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1840 census Samuel was in Gaines, Orleans, New York.<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1840 Census''': \"1840 United States Federal Census\"<br/>Year: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)<br/>\nSamuel Parker in Gaines, Orleans, New York.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1840 census Samuel was in Gaines, Orleans, New York.<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)<br/>\nSamuel Parker in Gaines, Orleans, New York.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1840 Census''': \"1840 United States Federal Census\"<br/>Year: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)<br/>Samuel Parker in Gaines, Orleans, New York.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)<br/>\nName: Samuel Parker [Samul Parker]; Home in 1840 (City, County, State): Gaines, Orleans, New York; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 40 thru 49: 1; Free White Persons - Females - Under 5: 1; Free White Persons - Females - 15 thru 19: 1; Free White Persons - Females - 20 thru 29: 1; Free White Persons - Under 20: 3; Free White Persons - 20 thru 49: 3; Total Free White Persons: 6; Total All Persons - Free White, Free Colored, Slaves: 6.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1840 census Samuel was in Gaines, Orleans, New York.<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)<br/>\nName: Samuel Parker [Samul Parker]; Home in 1840 (City, County, State): Gaines, Orleans, New York; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 40 thru 49: 1; Free White Persons - Females - Under 5: 1; Free White Persons - Females - 15 thru 19: 1; Free White Persons - Females - 20 thru 29: 1; Free White Persons - Under 20: 3; Free White Persons - 20 thru 49: 3; Total Free White Persons: 6; Total All Persons - Free White, Free Colored, Slaves: 6.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1840 Census''': \"1840 United States Federal Census\"<br/>Year: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)<br/>Name: Samuel Parker [Samul Parker]; Home in 1840 (City, County, State): Gaines, Orleans, New York; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 40 thru 49: 1; Free White Persons - Females - Under 5: 1; Free White Persons - Females - 15 thru 19: 1; Free White Persons - Females - 20 thru 29: 1; Free White Persons - Under 20: 3; Free White Persons - 20 thru 49: 3; Total Free White Persons: 6; Total All Persons - Free White, Free Colored, Slaves: 6.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Samuel Parker [Samul Parker]\n|-\n| Home in 1840 (City, County, State) || Gaines, Orleans, New York\n|-\n| Free White Persons - Males - 5 thru 9 || 1\n|-\n| Free White Persons - Males - 20 thru 29 || 1\n|-\n| Free White Persons - Males - 40 thru 49 || 1\n|-\n| Free White Persons - Females - Under 5 || 1\n|-\n| Free White Persons - Females - 15 thru 19 || 1\n|-\n| Free White Persons - Females - 20 thru 29 || 1\n|-\n| Free White Persons - Under 20 || 3\n|-\n| Free White Persons - 20 thru 49 || 3\n|-\n| Total Free White Persons || 6\n|-\n| Total All Persons - Free White, Free Colored, Slaves || 6\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1840 census Samuel was in Gaines, Orleans, New York.<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Samuel Parker [Samul Parker]\n|-\n| Home in 1840 (City, County, State) || Gaines, Orleans, New York\n|-\n| Free White Persons - Males - 5 thru 9 || 1\n|-\n| Free White Persons - Males - 20 thru 29 || 1\n|-\n| Free White Persons - Males - 40 thru 49 || 1\n|-\n| Free White Persons - Females - Under 5 || 1\n|-\n| Free White Persons - Females - 15 thru 19 || 1\n|-\n| Free White Persons - Females - 20 thru 29 || 1\n|-\n| Free White Persons - Under 20 || 3\n|-\n| Free White Persons - 20 thru 49 || 3\n|-\n| Total Free White Persons || 6\n|-\n| Total All Persons - Free White, Free Colored, Slaves || 6\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1840 Census''': \"1840 United States Federal Census\"<br/>Year: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)<br/>Name: Samuel Parker [Samul Parker]; Home in 1840 (City, County, State): Gaines, Orleans, New York; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 40 thru 49: 1; Free White Persons - Females - Under 5: 1; Free White Persons - Females - 15 thru 19: 1; Free White Persons - Females - 20 thru 29: 1; Free White Persons - Under 20: 3; Free White Persons - 20 thru 49: 3; Total Free White Persons: 6; Total All Persons - Free White, Free Colored, Slaves: 6.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1840 United States Federal Census,\" database, ({{Ancestry Record|8057|2464636}} : accessed 6 May 2021), Samuel Parker in Gaines, Orleans, New York; citing Year 1840, Census Place Gaines, Orleans, New York, Roll 321, Page 372, Family History Library Film 0017201.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1840 census Samuel was in Gaines, Orleans, New York.<ref>\"1840 United States Federal Census,\" database, ({{Ancestry Record|8057|2464636}} : accessed 6 May 2021), Samuel Parker in Gaines, Orleans, New York; citing Year 1840, Census Place Gaines, Orleans, New York, Roll 321, Page 372, Family History Library Film 0017201.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1840 United States Federal Census,\" database, ({{Ancestry Record|8057|2464636}} : accessed 6 May 2021), Samuel Parker in Gaines, Orleans, New York; citing Year 1840, Census Place Gaines, Orleans, New York, Roll 321, Page 372, Family History Library Film 0017201.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1840 Census'':\n\"1840 United States Federal Census\", database, \nYear 1840, Census Place Gaines, Orleans, New York, Roll 321, Page 372, Family History Library Film 0017201, \n({{Ancestry Record|8057|2464636}} : accessed 6 May 2021), \nName: Samuel Parker [Samul Parker]; Home in 1840 (City, County, State): Gaines, Orleans, New York; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 40 thru 49: 1; Free White Persons - Females - Under 5: 1; Free White Persons - Females - 15 thru 19: 1; Free White Persons - Females - 20 thru 29: 1; Free White Persons - Under 20: 3; Free White Persons - 20 thru 49: 3; Total Free White Persons: 6; Total All Persons - Free White, Free Colored, Slaves: 6.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1840 census Samuel was in Gaines, Orleans, New York.<ref>\n''1840 Census'':\n\"1840 United States Federal Census\", database, \nYear 1840, Census Place Gaines, Orleans, New York, Roll 321, Page 372, Family History Library Film 0017201, \n({{Ancestry Record|8057|2464636}} : accessed 6 May 2021), \nName: Samuel Parker [Samul Parker]; Home in 1840 (City, County, State): Gaines, Orleans, New York; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 40 thru 49: 1; Free White Persons - Females - Under 5: 1; Free White Persons - Females - 15 thru 19: 1; Free White Persons - Females - 20 thru 29: 1; Free White Persons - Under 20: 3; Free White Persons - 20 thru 49: 3; Total Free White Persons: 6; Total All Persons - Free White, Free Colored, Slaves: 6.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1840 Census'': \"1840 United States Federal Census\", database, Year 1840, Census Place Gaines, Orleans, New York, Roll 321, Page 372, Family History Library Film 0017201, ({{Ancestry Record|8057|2464636}} : accessed 6 May 2021), Name: Samuel Parker [Samul Parker]; Home in 1840 (City, County, State): Gaines, Orleans, New York; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 40 thru 49: 1; Free White Persons - Females - Under 5: 1; Free White Persons - Females - 15 thru 19: 1; Free White Persons - Females - 20 thru 29: 1; Free White Persons - Under 20: 3; Free White Persons - 20 thru 49: 3; Total Free White Persons: 6; Total All Persons - Free White, Free Colored, Slaves: 6.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/169250:7590?tid=&pid=&queryId=6115b2551ae4535b44ea2de98ec0b9d6&_phsrc=Vww4217&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "7590",
+  "recordId": "169250",
+  "ancestryTemplate": "{{Ancestry Record|7590|169250}}",
+  "domain": "com",
+  "titleName": "Mical Taylor",
+  "titleCollection": "1800 United States Federal Census",
+  "recordData": {
+    "Name": "Mical Taylor",
+    "Home in 1800 (City, County, State)": "Cambridge, Middlesex, Massachusetts",
+    "Free White Persons - Males - Under 10": "1",
+    "Free White Persons - Males - 26 thru 44": "1",
+    "Free White Persons - Males - 45 and over": "1",
+    "Free White Persons - Females - 26 thru 44": "1",
+    "Number of Household Members Under 16": "1",
+    "Number of Household Members Over 25": "3",
+    "Number of Household Members": "4"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7590/images/4440848_00238?pid=169250&usePUB=true&_phsrc=Vww4217&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "7590",
+  "imageRecordId": "4440848_00238",
+  "sourceCitation": "Year: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615",
+  "sourceInformation": "Ancestry.com. 1800 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2010. Images reproduced by FamilySearch. Original data: Second Census of the United States, 1800. NARA microfilm publication M32 (52 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C. Second Census of the United States, 1800: Population Schedules, Washington County, Territory Northwest of the River Ohio; and Population Census, 1803: Washington County, Ohio. NARA microfilm publication M1804 (1 roll).",
+  "originalData": "Second Census of the United States, 1800. NARA microfilm publication M32 (52 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "sourceDescription": "This database details those persons enumerated in the 1800 United States Federal Census, the Second Census of the United States. In addition, the names of those listed on the population schedule are linked to the actual images of the 1800 Federal Census. Enumerators of the 1800 census were asked to include the following categories in the census: name of head of household, number of free white males and females, number of other free persons except Indians, number of slaves, town or district and county of residence. Learn more..."
+}

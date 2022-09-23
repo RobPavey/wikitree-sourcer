@@ -1,0 +1,34 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William Handford"
+  },
+  "eventPlace": {
+    "county": "Devon"
+  },
+  "eventDate": {
+    "yearString": "1864",
+    "quarter": 4
+  },
+  "registrationDistrict": "Torrington",
+  "spouses": [
+    {
+      "name": {},
+      "marriageDate": {
+        "yearString": "1864",
+        "quarter": 4
+      },
+      "marriagePlace": {
+        "county": "Devon"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "8913",
+    "volume": "5b",
+    "page": "877"
+  },
+  "hasValidData": true
+}

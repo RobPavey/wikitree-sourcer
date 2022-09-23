@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1872",
+    "quarter": 4
+  },
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Mary Elizabeth"
+  },
+  "lastNameAtBirth": "Pavey",
+  "birthDate": {
+    "yearString": "1872",
+    "quarter": 4
+  },
+  "mothersMaidenName": "Littlemore",
+  "personGender": "female",
+  "registrationDistrict": "St Pancras",
+  "collectionData": {
+    "id": "births",
+    "volume": "01B",
+    "page": "182"
+  },
+  "hasValidData": true
+}

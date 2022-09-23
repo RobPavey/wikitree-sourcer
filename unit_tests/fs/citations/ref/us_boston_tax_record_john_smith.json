@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nJohn Smith, .\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "John was in a tax record in Boston, Suffolk, Massachusetts, United States.<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nJohn Smith, .\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Tax Record''': \"Massachusetts, Boston Tax Records, 1822-1918\"<br/>citing Record number: 5;<br/>{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>John Smith, .",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nName: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "John was in a tax record in Boston, Suffolk, Massachusetts, United States.<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nName: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Tax Record''': \"Massachusetts, Boston Tax Records, 1822-1918\"<br/>citing Record number: 5;<br/>{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>Name: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nName: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "John was in a tax record in Boston, Suffolk, Massachusetts, United States.<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nName: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Tax Record''': \"Massachusetts, Boston Tax Records, 1822-1918\"<br/>citing Record number: 5;<br/>{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>Name: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069\n{| border=\"1\"\n| Name || John Smith\n|-\n| Tax Assessment Place || Boston, Suffolk, Massachusetts, United States\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "John was in a tax record in Boston, Suffolk, Massachusetts, United States.<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069\n{| border=\"1\"\n| Name || John Smith\n|-\n| Tax Assessment Place || Boston, Suffolk, Massachusetts, United States\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Tax Record''': \"Massachusetts, Boston Tax Records, 1822-1918\"<br/>citing Record number: 5;<br/>{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>Name: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nJohn Smith, .\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "John was in a tax record in Boston, Suffolk, Massachusetts, United States.<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nJohn Smith, .\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Tax Record''': \"Massachusetts, Boston Tax Records, 1822-1918\"<br/>citing Record number: 5;<br/>{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>John Smith, .",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "John was in a tax record in Boston, Suffolk, Massachusetts, United States.<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Tax Record''': \"Massachusetts, Boston Tax Records, 1822-1918\"<br/>citing Record number: 5;<br/>{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nName: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "John was in a tax record in Boston, Suffolk, Massachusetts, United States.<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nName: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Tax Record''': \"Massachusetts, Boston Tax Records, 1822-1918\"<br/>citing Record number: 5;<br/>{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>Name: John Smith; Tax Assessment Place: Boston, Suffolk, Massachusetts, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nJohn Smith, .\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "John was in a tax record in Boston, Suffolk, Massachusetts, United States.<ref>\n'''Tax Record''':\n\"Massachusetts, Boston Tax Records, 1822-1918\"<br/>\nciting Record number: 5;<br/>\n{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>\nJohn Smith, .\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Tax Record''': \"Massachusetts, Boston Tax Records, 1822-1918\"<br/>citing Record number: 5;<br/>{{FamilySearch Record|DDX3-TT6Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-99DF-19RJ}} Image number 00069<br/>John Smith, .",
+    "type": "source"
+  }
+}

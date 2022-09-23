@@ -1,0 +1,23 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=2543&h=1504470",
+  "pageType": "record",
+  "dbId": "2543",
+  "recordId": "1504470",
+  "ancestryTemplate": "{{Ancestry Record|2543|1504470}}",
+  "domain": "com",
+  "titleName": "Mattie W Bryant",
+  "titleCollection": "Alabama, U.S., Deaths and Burials Index, 1881-1974",
+  "recordData": {
+    "Name": "Mattie W Bryant [Mattie W Whiteside]",
+    "Birth Date": "abt 1882",
+    "Death Date": "12 Mar 1969",
+    "Death Place": "Birmingham, Jefferson, Alabama",
+    "Death Age": "87",
+    "Gender": "Female",
+    "Father Name": "Elias Whiteside",
+    "Mother Name": "Sarah Oldham",
+    "FHL Film Number": "1992707"
+  },
+  "sourceInformation": "Ancestry.com. Alabama, U.S., Deaths and Burials Index, 1881-1974 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: \"Alabama Deaths and Burials, 1881–1952.\" Index. FamilySearch, Salt Lake City, Utah, 2009, 2010. Index entries derived from digital copies of original and compiled records.",
+  "sourceDescription": "This database is an index extracted from more than 100,000 death and burial records from Alabama. Learn more..."
+}

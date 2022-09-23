@@ -1,0 +1,37 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Increase Sumner"
+  },
+  "eventDate": {
+    "dateString": "23 Feb 1642"
+  },
+  "birthDate": {
+    "dateString": "23 Feb 1642"
+  },
+  "birthPlace": {
+    "placeString": "Dorchester, Massachusetts"
+  },
+  "eventPlace": {
+    "placeString": "Dorchester, Massachusetts"
+  },
+  "lastNameAtBirth": "Sumner",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Sumner"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2495"
+  },
+  "hasValidData": true
+}

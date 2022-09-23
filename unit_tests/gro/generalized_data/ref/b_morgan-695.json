@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1891",
+    "quarter": 1
+  },
+  "name": {
+    "lastName": "Morgan",
+    "forenames": "Margaret"
+  },
+  "lastNameAtBirth": "Morgan",
+  "birthDate": {
+    "yearString": "1891",
+    "quarter": 1
+  },
+  "mothersMaidenName": "Jones",
+  "personGender": "female",
+  "registrationDistrict": "Merthyr Tydfil",
+  "collectionData": {
+    "id": "births",
+    "volume": "11A",
+    "page": "647"
+  },
+  "hasValidData": true
+}

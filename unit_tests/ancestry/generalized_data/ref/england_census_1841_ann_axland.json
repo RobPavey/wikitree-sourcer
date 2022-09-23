@@ -1,0 +1,49 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Ann Axland"
+  },
+  "personGender": "female",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Braunton, Devon, England"
+  },
+  "registrationDistrict": "Barnstaple",
+  "birthDate": {
+    "yearString": "1818",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Devon, England"
+  },
+  "eventDate": {
+    "yearString": "1841"
+  },
+  "ageAtEvent": "23",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Ann Axland",
+      "age": "23",
+      "isSelected": true,
+      "gender": "female",
+      "birthPlace": "Devon, England",
+      "birthYear": "abt 1818",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1841&indiv=try&h=16161242"
+    }
+  ],
+  "collectionData": {
+    "id": "8978",
+    "page": "6",
+    "folio": "6",
+    "piece": "203",
+    "parish": "Braunton",
+    "county": "Devon"
+  },
+  "hasValidData": true
+}

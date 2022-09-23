@@ -1,0 +1,75 @@
+{
+  "success": true,
+  "url": "https://www.findmypast.co.uk/transcript?id=TNA%2FR39%2F0261%2F0261B%2F008%2F18",
+  "subDomain": "www",
+  "domain": "findmypast.co.uk",
+  "urlPath": "transcript",
+  "urlParameters": "id=TNA%2FR39%2F0261%2F0261B%2F008%2F18",
+  "heading": "Mary E More in 1939",
+  "collection": "1939 Register",
+  "place": "54 Hilldrop Crescent, Holloway, Islington, Islington, London, England",
+  "personGender": "female",
+  "recordData": {
+    "First name(s)": "Mary E",
+    "Last name(s)": "More",
+    "DOB": "01 Nov 1872",
+    "Birth day": "1",
+    "Country": "England",
+    "Archive reference": "RG101/0261B/008/18",
+    "Piece number": "0261B",
+    "Item number": "8",
+    "Line number": "18",
+    "Category": "Census, land & surveys",
+    "Subcategory": "Census",
+    "Collections from": "Great Britain, England",
+    "Schedule Sub Number": "1",
+    "Borough / District": "Islington",
+    "County": "London",
+    "Birth month": "11",
+    "Birth year": "1872",
+    "Sex": "Female",
+    "Marital status": "Widowed",
+    "Occupation": "Unpaid Domestic Duties",
+    "Address": "54 Hilldrop Crescent, Holloway, Islington",
+    "Place": "Islington",
+    "E. D. letter code": "ALBP",
+    "Schedule": "176"
+  },
+  "household": {
+    "headings": [
+      "First name(s)",
+      "Last name(s)",
+      "DOB",
+      "Sex",
+      "Occupation",
+      "Marital status",
+      "Schedule",
+      "Schedule Sub Number"
+    ],
+    "members": [
+      {
+        "isSelected": true,
+        "First name(s)": "Mary E",
+        "Last name(s)": "More",
+        "DOB": "01 Nov 1872",
+        "Sex": "Female",
+        "Occupation": "Unpaid Domestic Duties",
+        "Marital status": "Widowed",
+        "Schedule": "176",
+        "Schedule Sub Number": "1"
+      },
+      {
+        "isSelected": false,
+        "First name(s)": "Maisie C",
+        "Last name(s)": "More",
+        "DOB": "11 Sep 1900",
+        "Sex": "Female",
+        "Occupation": "Commercial Traveller Ladies Clothing",
+        "Marital status": "Single",
+        "Schedule": "176",
+        "Schedule Sub Number": "2"
+      }
+    ]
+  },
+  "imageUrl": "https://search.findmypast.co.uk/record?id=TNA%2FR39%2F0261%2F0261B%2F008&parentid=TNA%2FR39%2F0261%2F0261B%2F008%2F18"
+}

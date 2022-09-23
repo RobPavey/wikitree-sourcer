@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith, 01 Oct 2002.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "John died (age 72) on 1 October 2002 residing in Newton, Georgia.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith, 01 Oct 2002.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>John W Smith, 01 Oct 2002.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith death 1 Oct 2002 (born 29 Apr 1930) residing in Newton, Georgia.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "John died (age 72) on 1 October 2002 residing in Newton, Georgia.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith death 1 Oct 2002 (born 29 Apr 1930) residing in Newton, Georgia.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>John W Smith death 1 Oct 2002 (born 29 Apr 1930) residing in Newton, Georgia.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nName: John W Smith; Death Date: 01 Oct 2002; Last Residence: Newton, Georgia; Birth Date: 29 Apr 1930; Age: 72; Zip Code Of Last Residence: 30014; Death Date Verification: 01 Oct 2002 verified by family; Place Of Issuance: Georgia.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "John died (age 72) on 1 October 2002 residing in Newton, Georgia.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nName: John W Smith; Death Date: 01 Oct 2002; Last Residence: Newton, Georgia; Birth Date: 29 Apr 1930; Age: 72; Zip Code Of Last Residence: 30014; Death Date Verification: 01 Oct 2002 verified by family; Place Of Issuance: Georgia.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>Name: John W Smith; Death Date: 01 Oct 2002; Last Residence: Newton, Georgia; Birth Date: 29 Apr 1930; Age: 72; Zip Code Of Last Residence: 30014; Death Date Verification: 01 Oct 2002 verified by family; Place Of Issuance: Georgia.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John W Smith\n|-\n| Death Date || 01 Oct 2002\n|-\n| Last Residence || Newton, Georgia\n|-\n| Birth Date || 29 Apr 1930\n|-\n| Age || 72\n|-\n| Zip Code Of Last Residence || 30014\n|-\n| Death Date Verification || 01 Oct 2002 verified by family\n|-\n| Place Of Issuance || Georgia\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "John died (age 72) on 1 October 2002 residing in Newton, Georgia.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John W Smith\n|-\n| Death Date || 01 Oct 2002\n|-\n| Last Residence || Newton, Georgia\n|-\n| Birth Date || 29 Apr 1930\n|-\n| Age || 72\n|-\n| Zip Code Of Last Residence || 30014\n|-\n| Death Date Verification || 01 Oct 2002 verified by family\n|-\n| Place Of Issuance || Georgia\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>Name: John W Smith; Death Date: 01 Oct 2002; Last Residence: Newton, Georgia; Birth Date: 29 Apr 1930; Age: 72; Zip Code Of Last Residence: 30014; Death Date Verification: 01 Oct 2002 verified by family; Place Of Issuance: Georgia.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith, 01 Oct 2002.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "John died (age 72) on 1 October 2002 residing in Newton, Georgia.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith, 01 Oct 2002.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>John W Smith, 01 Oct 2002.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "John died (age 72) on 1 October 2002 residing in Newton, Georgia.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith death 1 Oct 2002 (born 29 Apr 1930) residing in Newton, Georgia.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "John died (age 72) on 1 October 2002 residing in Newton, Georgia.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith death 1 Oct 2002 (born 29 Apr 1930) residing in Newton, Georgia.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>John W Smith death 1 Oct 2002 (born 29 Apr 1930) residing in Newton, Georgia.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith, 01 Oct 2002.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "John died (age 72) on 1 October 2002 residing in Newton, Georgia.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>\nJohn W Smith, 01 Oct 2002.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>{{FamilySearch Record|J17L-RJH}} (accessed 6 May 2021)<br/>John W Smith, 01 Oct 2002.",
+    "type": "source"
+  }
+}

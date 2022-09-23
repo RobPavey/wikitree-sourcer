@@ -1,0 +1,30 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/688871:2056",
+  "pageType": "record",
+  "dbId": "2056",
+  "recordId": "688871",
+  "ancestryTemplate": "{{Ancestry Record|2056|688871}}",
+  "domain": "com",
+  "titleName": "Sara Elizabeth Mills",
+  "titleCollection": "London and Surrey, England, Marriage Bonds and Allegations, 1597-1921",
+  "recordData": {
+    "Name": "Sara Elizabeth Mills",
+    "Age": "21",
+    "Birth Year": "abt 1840",
+    "Event Date": "11 Oct 1861",
+    "Parish": "Bromley, St Leonard",
+    "County": "Gloucestershire",
+    "Spouse's Name": "Leonard Greenham Star",
+    "Spouse's Age": "21",
+    "Spouse's Parish": "Clifton",
+    "Spouse's County": "Gloucestershire",
+    "Event Type": "Allegation",
+    "Reference Number": "MS10091/238"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2056/images/32515_1831101456_0085-00223?pid=688871&usePUB=true&usePUBJs=true",
+  "imageDbId": "2056",
+  "imageRecordId": "32515_1831101456_0085-00223",
+  "sourceInformation": "Ancestry.com. London and Surrey, England, Marriage Bonds and Allegations, 1597-1921 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: Marriage Bonds and Allegations. London, England: London Metropolitan Archives. Surrey Marriage Bonds and Allegations records held by the London Metropolitan Archives, London, England.Images produced by permission of the City of London Corporation Libraries, Archives. The City of London gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the City of London, Guildhall, PO Box 270, London EC2P 2EJ. Infringement of the above condition may result in legal action.",
+  "originalData": "Marriage Bonds and Allegations. London, England: London Metropolitan Archives.",
+  "sourceDescription": "This database contains marriage allegations and bonds made when applying for a marriage license in parishes in London and Surrey, England. Learn more..."
+}

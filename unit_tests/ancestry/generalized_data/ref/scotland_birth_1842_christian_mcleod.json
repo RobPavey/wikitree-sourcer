@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Christian Mcleod"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "25 Aug 1842"
+  },
+  "birthDate": {
+    "dateString": "25 Aug 1842"
+  },
+  "birthPlace": {
+    "placeString": "Rayne, Aberdeen, Scotland"
+  },
+  "eventPlace": {
+    "placeString": "Rayne, Aberdeen, Scotland"
+  },
+  "lastNameAtBirth": "Mcleod",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Mcleod"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Helen White"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "60143"
+  },
+  "hasValidData": true
+}

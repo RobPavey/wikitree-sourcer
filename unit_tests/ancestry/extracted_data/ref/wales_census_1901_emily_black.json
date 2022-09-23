@@ -1,0 +1,66 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=7815&h=33333435&ssrc=pt&tid=86808578&pid=46576577645&usePUB=true",
+  "pageType": "record",
+  "dbId": "7815",
+  "recordId": "33333435",
+  "ancestryTemplate": "{{Ancestry Record|7815|33333435}}",
+  "domain": "com",
+  "titleName": "Emily Black",
+  "titleCollection": "1901 Wales Census",
+  "recordData": {
+    "Name": "Emily Black",
+    "Age in 1901": "74",
+    "Estimated Birth Year": "abt 1827",
+    "Relation": "Mother",
+    "Gender": "Female",
+    "Where Born": "Birmingham, Worcestershire, England",
+    "Civil Parish": "Llandrillo yn Rhos",
+    "Ecclesiastical parish": "Colwyn Bay",
+    "County/Island": "Caernarvonshire",
+    "Country": "Wales",
+    "Registration District": "Conway",
+    "Sub-registration District": "Creuddyn",
+    "ED, institution, or vessel": "14",
+    "Household Schedule Number": "285",
+    "Piece": "5290",
+    "Folio": "28",
+    "Page Number": "47",
+    "Household Members": "Emily Kimberlin 46<br/>Emily Black 74<br/>William Brain 19"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Name": "Emily Kimberlin",
+        "dbId": "uki1901wales",
+        "recordId": "33333434",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1901wales&indiv=try&h=33333434",
+        "Age": "46"
+      },
+      {
+        "Name": "Emily Black",
+        "dbId": "uki1901wales",
+        "recordId": "33333435",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1901wales&indiv=try&h=33333435",
+        "Age": "74"
+      },
+      {
+        "Name": "William Brain",
+        "dbId": "uki1901wales",
+        "recordId": "33333436",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1901wales&indiv=try&h=33333436",
+        "Age": "19"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7815/images/CAERG13_5290_5293-0056?pid=33333435&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D7815%26h%3D33333435%26ssrc%3Dpt%26tid%3D86808578%26pid%3D46576577645%26usePUB%3Dtrue&ssrc=pt&treeid=86808578&personid=46576577645&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "7815",
+  "imageRecordId": "CAERG13_5290_5293-0056",
+  "sourceCitation": "Class: RG13; Piece: 5290; Folio: 28; Page: 47",
+  "sourceInformation": "Ancestry.com. 1901 Wales Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2005. Original data: Census Returns of England and Wales, 1901. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1901. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1901. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1901. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database contains an every name index to the 1901 Wales Census with links to images of the original census returns. Information available in this database includes: name, age, estimated birth year, relationship to head of household. Learn more..."
+}

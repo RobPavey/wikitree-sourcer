@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "PassportApplication",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Edward Digby Baltzell"
+  },
+  "birthDate": {
+    "dateString": "27 Aug 1885",
+    "yearString": "1885"
+  },
+  "birthPlace": {
+    "placeString": "Pennsylvania"
+  },
+  "eventDate": {
+    "dateString": "1914",
+    "yearString": "1914"
+  },
+  "ageAtEvent": "29",
+  "collectionData": {
+    "id": "2185145"
+  },
+  "hasValidData": true
+}

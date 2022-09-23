@@ -1,0 +1,104 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/10027090:61596",
+  "pageType": "record",
+  "dbId": "61596",
+  "recordId": "10027090",
+  "ancestryTemplate": "{{Ancestry Record|61596|10027090}}",
+  "domain": "com",
+  "titleName": "John R Smith",
+  "titleCollection": "1939 England and Wales Register",
+  "recordData": {
+    "Name": "John R Smith",
+    "Gender": "Male",
+    "Marital Status": "Single",
+    "Birth Date": "21 Sep 1935",
+    "Residence Date": "1939",
+    "Address": "29",
+    "Residence Place": "Enfield, Middlesex, England",
+    "Occupation": "Under School Age",
+    "Line Number": "32",
+    "Schedule Number": "126",
+    "Sub Schedule Number": "7",
+    "Enumeration District": "Beci",
+    "Borough": "Enfield",
+    "Registration district": "132-7",
+    "Inferred Father": "James Smith",
+    "Inferred Mother": "Ellen E Smith",
+    "Household Members<br/>Age": "James Smith 37<br/>Ellen E Smith 38<br/>This record is officially closed.<br/>This record is officially closed.<br/>Jessie L Smith 8<br/>This record is officially closed.<br/>John R Smith 4<br/>Joyce V Smith 5"
+  },
+  "linkData": {
+    "Inferred Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027084&indiv=try&viewrecord=1&r=an",
+    "Inferred Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027085&indiv=try&viewrecord=1&r=an"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Members": "James Smith",
+        "dbId": "61596",
+        "recordId": "10027084",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027084&indiv=try",
+        "Age": "37"
+      },
+      {
+        "Household Members": "Ellen E Smith",
+        "dbId": "61596",
+        "recordId": "10027085",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027085&indiv=try",
+        "Age": "38"
+      },
+      {
+        "isClosed": true,
+        "Household Members": "Closed Record",
+        "dbId": "61596",
+        "recordId": "10027086",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027086&indiv=try",
+        "Age": ""
+      },
+      {
+        "isClosed": true,
+        "Household Members": "Closed Record",
+        "dbId": "61596",
+        "recordId": "10027087",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027087&indiv=try",
+        "Age": ""
+      },
+      {
+        "Household Members": "Jessie L Smith",
+        "dbId": "61596",
+        "recordId": "10027088",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027088&indiv=try",
+        "Age": "8"
+      },
+      {
+        "isClosed": true,
+        "Household Members": "Closed Record",
+        "dbId": "61596",
+        "recordId": "10027089",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027089&indiv=try",
+        "Age": ""
+      },
+      {
+        "Household Members": "John R Smith",
+        "Age": "4"
+      },
+      {
+        "Household Members": "Joyce V Smith",
+        "dbId": "61596",
+        "recordId": "10027091",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027091&indiv=try",
+        "Age": "5"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/61596/images/tna_r39_0750_0750h_010?pid=10027090&usePUB=true&usePUBJs=true",
+  "imageDbId": "61596",
+  "imageRecordId": "tna_r39_0750_0750h_010",
+  "sourceCitation": "The National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h",
+  "sourceInformation": "Ancestry.com. 1939 England and Wales Register [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2018. Original data: Crown copyright images reproduced by courtesy of TNA, London England. 1939 Register (Series RG101), The National Archives, Kew, London, England. The National Archives give no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives Image Library, Kew, Richmond, Surrey TW9 4DU, Tel: 020 8392 5225. Fax: 020 8392 5266.",
+  "originalData": "Crown copyright images reproduced by courtesy of TNA, London England. 1939 Register (Series RG101), The National Archives, Kew, London, England. The National Archives give no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives Image Library, Kew, Richmond, Surrey TW9 4DU, Tel: 020 8392 5225. Fax: 020 8392 5266.",
+  "sourceDescription": "The 1939 England and Wales Register, taken on 29th September, provides details of an estimated 40 million people residing in the country at the time. Learn more..."
+}

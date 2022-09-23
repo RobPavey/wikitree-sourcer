@@ -1,0 +1,104 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=6598&h=11301719&clickref=1011lhuMFmjB%2C1011lhuMFmjB&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
+  "pageType": "record",
+  "dbId": "6598",
+  "recordId": "11301719",
+  "ancestryTemplate": "{{Ancestry Record|6598|11301719}}",
+  "domain": "com",
+  "titleName": "Mary E Pavey",
+  "titleCollection": "1891 England Census",
+  "recordData": {
+    "Name": "Mary E Pavey",
+    "Gender": "Female",
+    "Age": "18",
+    "Relationship": "Daughter",
+    "Birth Year": "1873",
+    "Father": "Harry A Pavey",
+    "Mother": "Amelia Pavey",
+    "Birth Place": "St Pancras, London, England",
+    "Civil Parish": "St Pancras",
+    "Ecclesiastical parish": "St Barnabus",
+    "Residence Place": "Kentish Town, St Pancras, London, England",
+    "Registration District": "Pancras",
+    "Sub registration district": "Kentish Town",
+    "ED, Institution or Vessel": "35",
+    "Piece": "137",
+    "Folio": "192",
+    "Household Members": "Harry A Pavey 38<br/>Amelia Pavey 40<br/>Mary E Pavey 18<br/>Harry A Pavey 13<br/>Amelia A Pavey 11<br/>Charles D Pavey 7<br/>Arthur E Pavey 6<br/>Harold G Pavey 3"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=uki1891&indiv=try&h=11301717",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=uki1891&indiv=try&h=11301718"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Name": "Harry A Pavey",
+        "dbId": "uki1891",
+        "recordId": "11301717",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301717",
+        "Age": "38"
+      },
+      {
+        "Name": "Amelia Pavey",
+        "dbId": "uki1891",
+        "recordId": "11301718",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301718",
+        "Age": "40"
+      },
+      {
+        "Name": "Mary E Pavey",
+        "dbId": "uki1891",
+        "recordId": "11301719",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301719",
+        "Age": "18"
+      },
+      {
+        "Name": "Harry A Pavey",
+        "dbId": "uki1891",
+        "recordId": "11301720",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301720",
+        "Age": "13"
+      },
+      {
+        "Name": "Amelia A Pavey",
+        "dbId": "uki1891",
+        "recordId": "11301721",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301721",
+        "Age": "11"
+      },
+      {
+        "Name": "Charles D Pavey",
+        "dbId": "uki1891",
+        "recordId": "11301722",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301722",
+        "Age": "7"
+      },
+      {
+        "Name": "Arthur E Pavey",
+        "dbId": "uki1891",
+        "recordId": "11301723",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301723",
+        "Age": "6"
+      },
+      {
+        "Name": "Harold G Pavey",
+        "dbId": "uki1891",
+        "recordId": "11301724",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301724",
+        "Age": "3"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/6598/images/LNDRG12_136_137-0719?pid=11301719&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26db%3D6598%26h%3D11301719%26clickref%3D1011lhuMFmjB%252C1011lhuMFmjB%26adref%3D%26o_xid%3D01011l4xx5%26o_lid%3D01011l4xx5%26o_sch%3DAffiliate%252BExternal&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "6598",
+  "imageRecordId": "LNDRG12_136_137-0719",
+  "sourceCitation": "The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 137; Folio: 192; Page: 19; GSU roll: 6095247",
+  "sourceInformation": "Ancestry.com. 1891 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2005. Original data: Census Returns of England and Wales, 1891. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1891. Data imaged from The National Archives, London, England. 2,131 rolls. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1891. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1891.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1891 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1891 England Census. Learn more..."
+}

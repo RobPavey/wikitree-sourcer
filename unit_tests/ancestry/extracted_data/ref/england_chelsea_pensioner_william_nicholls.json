@@ -1,0 +1,24 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=61068&h=825575&tid=&pid=&queryId=d105456679ffb7a432e3f0e2d8c91fdc&usePUB=true&_phsrc=ywU8090&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "61068",
+  "recordId": "825575",
+  "ancestryTemplate": "{{Ancestry Record|61068|825575}}",
+  "domain": "com",
+  "titleName": "",
+  "titleCollection": "UK, Royal Hospital Chelsea Pensioner Soldier Service Records, 1760-1920",
+  "recordData": {
+    "Name": "William Henry Nicholls",
+    "Enlistment Age": "20",
+    "Birth Date": "abt 1881",
+    "Birth Place": "W?? Middlesex",
+    "Enlistment Year": "1901",
+    "Regiment": "??furmae??",
+    "Regimental Number": "20529",
+    "Attestation Paper": "Yes"
+  },
+  "sourceCitation": "The National Archives; Kew, London, England; Royal Hospital Chelsea: Soldiers Service Documents; Reference Number: WO 97",
+  "sourceInformation": "Ancestry.com. UK, Royal Hospital Chelsea Pensioner Soldier Service Records, 1760-1920 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2016. Original data: WO 97, Pieces 1278-4287 (various pieces within range). The National Archives of the UK, Kew, Surrey, England.",
+  "originalData": "WO 97, Pieces 1278-4287 (various pieces within range). The National Archives of the UK, Kew, Surrey, England.",
+  "sourceDescription": "This collection comprises service documents of soldiers (but not officers) who either became in-or-out-pensioners of the Royal Hospital Chelsea. Learn more..."
+}

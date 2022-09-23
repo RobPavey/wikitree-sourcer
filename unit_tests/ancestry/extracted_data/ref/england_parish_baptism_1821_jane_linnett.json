@@ -1,0 +1,26 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=61699&h=4177362&tid=&pid=&queryId=a1b054f56bbaba50955e509591129d4b&usePUB=true&_phsrc=ULN1037&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "61699",
+  "recordId": "4177362",
+  "ancestryTemplate": "{{Ancestry Record|61699|4177362}}",
+  "domain": "com",
+  "titleName": "Jane Linnett",
+  "titleCollection": "Essex, England, Church of England Births and Baptisms, 1813-1918",
+  "recordData": {
+    "Name": "Jane Linnett",
+    "Baptism Date": "20 May 1821",
+    "Baptism Place": "Essex, England",
+    "Father": "Samuel Linnett",
+    "Mother": "Allice Linnett",
+    "Source Description": "Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=EssexBaptisms&indiv=try&h=19177362",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=EssexBaptisms&indiv=try&h=34177362"
+  },
+  "sourceCitation": "Essex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers",
+  "sourceInformation": "Ancestry.com. Essex, England, Church of England Births and Baptisms, 1813-1918 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2019. Original data: Essex Church of England Parish Registers, Essex County Council, Chelmsford, Essex, England.",
+  "originalData": "Essex Church of England Parish Registers, Essex County Council, Chelmsford, Essex, England.",
+  "sourceDescription": "This collection contains indexes of Church of England baptism records for the years 1813–1918 from the county of Essex, England. Learn more..."
+}

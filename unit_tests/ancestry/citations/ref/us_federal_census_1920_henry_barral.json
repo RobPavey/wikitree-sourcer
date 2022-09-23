@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1920 Census''':\n\"1920 United States Federal Census\"<br/>\nYear: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>\n{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1920 census Henry (age 12) was the son of Pio Barral in Manhattan Assembly District 15, New York, New York.<ref>\n'''1920 Census''':\n\"1920 United States Federal Census\"<br/>\nYear: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>\n{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1920 Census''': \"1920 United States Federal Census\"<br/>Year: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1920 Census''':\n\"1920 United States Federal Census\"<br/>\nYear: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>\n{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)<br/>\nHenry P Barral (12), single son, in household of Pio Barral (42) in Manhattan Assembly District 15, New York, New York. Born in New York.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1920 census Henry (age 12) was the son of Pio Barral in Manhattan Assembly District 15, New York, New York.<ref>\n'''1920 Census''':\n\"1920 United States Federal Census\"<br/>\nYear: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>\n{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)<br/>\nHenry P Barral (12), single son, in household of Pio Barral (42) in Manhattan Assembly District 15, New York, New York. Born in New York.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1920 Census''': \"1920 United States Federal Census\"<br/>Year: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)<br/>Henry P Barral (12), single son, in household of Pio Barral (42) in Manhattan Assembly District 15, New York, New York. Born in New York.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1920 Census''':\n\"1920 United States Federal Census\"<br/>\nYear: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>\n{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)<br/>\nName: Henry P Barral; Age: 12; Birth Year: abt 1908; Birthplace: New York; Home in 1920: Manhattan Assembly District 15, New York, New York; Street: East 89th St; Residence Date: 1920; Race: White; Gender: Female; Relation to Head of House: Son; Marital Status: Single; Father's Name: Pio Barral; Father's Birthplace: London; Mother's Name: Wihlemena Barral; Mother's Birthplace: Pennsylvania; Native Tongue: English; Able to Speak English: Yes; Occupation: None; Attended School: yes; Able to read: Yes; Able to Write: Yes; <br/>Household Members Age Relationship:<br/>Pio Barral 42 Head<br/>Wihlemena Barral 29 Wife<br/>Charlotte Barral 16 Daughter<br/>Henry P Barral 12 Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1920 census Henry (age 12) was the son of Pio Barral in Manhattan Assembly District 15, New York, New York.<ref>\n'''1920 Census''':\n\"1920 United States Federal Census\"<br/>\nYear: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>\n{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)<br/>\nName: Henry P Barral; Age: 12; Birth Year: abt 1908; Birthplace: New York; Home in 1920: Manhattan Assembly District 15, New York, New York; Street: East 89th St; Residence Date: 1920; Race: White; Gender: Female; Relation to Head of House: Son; Marital Status: Single; Father's Name: Pio Barral; Father's Birthplace: London; Mother's Name: Wihlemena Barral; Mother's Birthplace: Pennsylvania; Native Tongue: English; Able to Speak English: Yes; Occupation: None; Attended School: yes; Able to read: Yes; Able to Write: Yes; <br/>Household Members Age Relationship:<br/>Pio Barral 42 Head<br/>Wihlemena Barral 29 Wife<br/>Charlotte Barral 16 Daughter<br/>Henry P Barral 12 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1920 Census''': \"1920 United States Federal Census\"<br/>Year: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)<br/>Name: Henry P Barral; Age: 12; Birth Year: abt 1908; Birthplace: New York; Home in 1920: Manhattan Assembly District 15, New York, New York; Street: East 89th St; Residence Date: 1920; Race: White; Gender: Female; Relation to Head of House: Son; Marital Status: Single; Father's Name: Pio Barral; Father's Birthplace: London; Mother's Name: Wihlemena Barral; Mother's Birthplace: Pennsylvania; Native Tongue: English; Able to Speak English: Yes; Occupation: None; Attended School: yes; Able to read: Yes; Able to Write: Yes; <br/>Household Members Age Relationship:<br/>Pio Barral 42 Head<br/>Wihlemena Barral 29 Wife<br/>Charlotte Barral 16 Daughter<br/>Henry P Barral 12 Son.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1920 Census''':\n\"1920 United States Federal Census\"<br/>\nYear: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>\n{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry P Barral\n|-\n| Age || 12\n|-\n| Birth Year || abt 1908\n|-\n| Birthplace || New York\n|-\n| Home in 1920 || Manhattan Assembly District 15, New York, New York\n|-\n| Street || East 89th St\n|-\n| Residence Date || 1920\n|-\n| Race || White\n|-\n| Gender || Female\n|-\n| Relation to Head of House || Son\n|-\n| Marital Status || Single\n|-\n| Father's Name || Pio Barral\n|-\n| Father's Birthplace || London\n|-\n| Mother's Name || Wihlemena Barral\n|-\n| Mother's Birthplace || Pennsylvania\n|-\n| Native Tongue || English\n|-\n| Able to Speak English || Yes\n|-\n| Occupation || None\n|-\n| Attended School || yes\n|-\n| Able to read || Yes\n|-\n| Able to Write || Yes\n|-\n| Household Members<br/>Age<br/>Relationship || Pio Barral 42 Head<br/>Wihlemena Barral 29 Wife<br/>Charlotte Barral 16 Daughter<br/>Henry P Barral 12 Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1920 census Henry (age 12) was the son of Pio Barral in Manhattan Assembly District 15, New York, New York.<ref>\n'''1920 Census''':\n\"1920 United States Federal Census\"<br/>\nYear: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>\n{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry P Barral\n|-\n| Age || 12\n|-\n| Birth Year || abt 1908\n|-\n| Birthplace || New York\n|-\n| Home in 1920 || Manhattan Assembly District 15, New York, New York\n|-\n| Street || East 89th St\n|-\n| Residence Date || 1920\n|-\n| Race || White\n|-\n| Gender || Female\n|-\n| Relation to Head of House || Son\n|-\n| Marital Status || Single\n|-\n| Father's Name || Pio Barral\n|-\n| Father's Birthplace || London\n|-\n| Mother's Name || Wihlemena Barral\n|-\n| Mother's Birthplace || Pennsylvania\n|-\n| Native Tongue || English\n|-\n| Able to Speak English || Yes\n|-\n| Occupation || None\n|-\n| Attended School || yes\n|-\n| Able to read || Yes\n|-\n| Able to Write || Yes\n|-\n| Household Members<br/>Age<br/>Relationship || Pio Barral 42 Head<br/>Wihlemena Barral 29 Wife<br/>Charlotte Barral 16 Daughter<br/>Henry P Barral 12 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1920 Census''': \"1920 United States Federal Census\"<br/>Year: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095<br/>{{Ancestry Record|6061|41984770}} (accessed 6 May 2021)<br/>Name: Henry P Barral; Age: 12; Birth Year: abt 1908; Birthplace: New York; Home in 1920: Manhattan Assembly District 15, New York, New York; Street: East 89th St; Residence Date: 1920; Race: White; Gender: Female; Relation to Head of House: Son; Marital Status: Single; Father's Name: Pio Barral; Father's Birthplace: London; Mother's Name: Wihlemena Barral; Mother's Birthplace: Pennsylvania; Native Tongue: English; Able to Speak English: Yes; Occupation: None; Attended School: yes; Able to read: Yes; Able to Write: Yes; <br/>Household Members Age Relationship:<br/>Pio Barral 42 Head<br/>Wihlemena Barral 29 Wife<br/>Charlotte Barral 16 Daughter<br/>Henry P Barral 12 Son.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1920 United States Federal Census,\" database, ({{Ancestry Record|6061|41984770}} : accessed 6 May 2021), Henry P Barral (12), single son, in household of Pio Barral (42) in Manhattan Assembly District 15, New York, New York. Born in New York; citing Year 1920, Census Place Manhattan Assembly District 15, New York, New York, Roll T625_1213, Page 35B, Enumeration District 1095.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1920 census Henry (age 12) was the son of Pio Barral in Manhattan Assembly District 15, New York, New York.<ref>\"1920 United States Federal Census,\" database, ({{Ancestry Record|6061|41984770}} : accessed 6 May 2021), Henry P Barral (12), single son, in household of Pio Barral (42) in Manhattan Assembly District 15, New York, New York. Born in New York; citing Year 1920, Census Place Manhattan Assembly District 15, New York, New York, Roll T625_1213, Page 35B, Enumeration District 1095.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1920 United States Federal Census,\" database, ({{Ancestry Record|6061|41984770}} : accessed 6 May 2021), Henry P Barral (12), single son, in household of Pio Barral (42) in Manhattan Assembly District 15, New York, New York. Born in New York; citing Year 1920, Census Place Manhattan Assembly District 15, New York, New York, Roll T625_1213, Page 35B, Enumeration District 1095.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1920 Census'':\n\"1920 United States Federal Census\", database, \nYear 1920, Census Place Manhattan Assembly District 15, New York, New York, Roll T625_1213, Page 35B, Enumeration District 1095, \n({{Ancestry Record|6061|41984770}} : accessed 6 May 2021), \nName: Henry P Barral; Age: 12; Birth Year: abt 1908; Birthplace: New York; Home in 1920: Manhattan Assembly District 15, New York, New York; Street: East 89th St; Residence Date: 1920; Race: White; Gender: Female; Relation to Head of House: Son; Marital Status: Single; Father's Name: Pio Barral; Father's Birthplace: London; Mother's Name: Wihlemena Barral; Mother's Birthplace: Pennsylvania; Native Tongue: English; Able to Speak English: Yes; Occupation: None; Attended School: yes; Able to read: Yes; Able to Write: Yes; Household Members Age Relationship: Pio Barral 42 Head, Wihlemena Barral 29 Wife, Charlotte Barral 16 Daughter, Henry P Barral 12 Son.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1920 census Henry (age 12) was the son of Pio Barral in Manhattan Assembly District 15, New York, New York.<ref>\n''1920 Census'':\n\"1920 United States Federal Census\", database, \nYear 1920, Census Place Manhattan Assembly District 15, New York, New York, Roll T625_1213, Page 35B, Enumeration District 1095, \n({{Ancestry Record|6061|41984770}} : accessed 6 May 2021), \nName: Henry P Barral; Age: 12; Birth Year: abt 1908; Birthplace: New York; Home in 1920: Manhattan Assembly District 15, New York, New York; Street: East 89th St; Residence Date: 1920; Race: White; Gender: Female; Relation to Head of House: Son; Marital Status: Single; Father's Name: Pio Barral; Father's Birthplace: London; Mother's Name: Wihlemena Barral; Mother's Birthplace: Pennsylvania; Native Tongue: English; Able to Speak English: Yes; Occupation: None; Attended School: yes; Able to read: Yes; Able to Write: Yes; Household Members Age Relationship: Pio Barral 42 Head, Wihlemena Barral 29 Wife, Charlotte Barral 16 Daughter, Henry P Barral 12 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1920 Census'': \"1920 United States Federal Census\", database, Year 1920, Census Place Manhattan Assembly District 15, New York, New York, Roll T625_1213, Page 35B, Enumeration District 1095, ({{Ancestry Record|6061|41984770}} : accessed 6 May 2021), Name: Henry P Barral; Age: 12; Birth Year: abt 1908; Birthplace: New York; Home in 1920: Manhattan Assembly District 15, New York, New York; Street: East 89th St; Residence Date: 1920; Race: White; Gender: Female; Relation to Head of House: Son; Marital Status: Single; Father's Name: Pio Barral; Father's Birthplace: London; Mother's Name: Wihlemena Barral; Mother's Birthplace: Pennsylvania; Native Tongue: English; Able to Speak English: Yes; Occupation: None; Attended School: yes; Able to read: Yes; Able to Write: Yes; Household Members Age Relationship: Pio Barral 42 Head, Wihlemena Barral 29 Wife, Charlotte Barral 16 Daughter, Henry P Barral 12 Son.",
+    "type": "source"
+  }
+}

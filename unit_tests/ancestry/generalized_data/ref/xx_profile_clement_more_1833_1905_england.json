@@ -1,0 +1,56 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Clement More"
+  },
+  "birthDate": {
+    "dateString": "1833"
+  },
+  "birthPlace": {
+    "placeString": "Metfield, Suffolk, England"
+  },
+  "deathDate": {
+    "qualifier": 2,
+    "dateString": "1905"
+  },
+  "deathPlace": {
+    "placeString": "London, England, United Kingdom"
+  },
+  "personGender": "male",
+  "spouses": [
+    {
+      "name": {},
+      "marriageDate": {
+        "dateString": "October 1861"
+      },
+      "marriagePlace": {
+        "placeString": "Marylebone, London, United Kingdom"
+      }
+    },
+    {
+      "name": {
+        "name": "Louisa Maria Laver"
+      },
+      "marriageDate": {
+        "dateString": "14 Nov 1861"
+      },
+      "marriagePlace": {
+        "placeString": "Trinity Church, Marylebone, Middlesex, England"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John More"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary More"
+      }
+    }
+  },
+  "hasValidData": true
+}

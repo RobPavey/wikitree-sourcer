@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "DeathOrBurial",
+  "name": {
+    "lastName": "Campbell",
+    "forenames": "Elizabeth"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "8 March 1647"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Dunbartonshire",
+    "placeString": "Dumbarton, Dunbartonshire, Scotland"
+  },
+  "hasValidData": true
+}

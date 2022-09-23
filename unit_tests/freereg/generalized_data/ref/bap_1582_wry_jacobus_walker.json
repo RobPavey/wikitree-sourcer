@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "freereg",
+  "sourceType": "record",
+  "eventPlace": {
+    "placeString": "Sheffield, Yorkshire, West Riding, England"
+  },
+  "recordType": "Baptism",
+  "eventDate": {
+    "dateString": "31 Jul 1582"
+  },
+  "birthPlace": {
+    "placeString": "Sheffield, Yorkshire, West Riding, England"
+  },
+  "lastNameAtBirth": "Walker",
+  "name": {
+    "lastName": "Walker",
+    "forenames": "Jacobus"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Francisci Walker"
+      }
+    }
+  },
+  "personGender": "male",
+  "hasValidData": true
+}

@@ -1,0 +1,78 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/7866657:6598?_phsrc=ywU8188&_phstart=successSource&gsfn=Blanche+Amelia&gsln=Radcliffe&ml_rpos=1&queryId=47f46742e730e73a9fca2c081ec3a0df",
+  "pageType": "record",
+  "dbId": "6598",
+  "recordId": "7866657",
+  "ancestryTemplate": "{{Ancestry Record|6598|7866657}}",
+  "domain": "com",
+  "titleName": "Blanche A Radcliffe",
+  "titleCollection": "1891 England Census",
+  "recordData": {
+    "Name": "Blanche A Radcliffe",
+    "Gender": "Female",
+    "Age": "22",
+    "Relationship": "Wife",
+    "Birth Year": "1869",
+    "Spouse": "Thomas Radcliffe",
+    "Child": "George L Radcliffe Reginald S Radcliffe",
+    "Birth Place": "Kentish Town, London, England",
+    "Civil parish": "St Pancras",
+    "Ecclesiastical parish": "St Benet and All Saints",
+    "Residence Place": "London, St Pancras, London, England",
+    "Registration district": "Pancras",
+    "Sub registration district": "Kentish Town",
+    "ED, Institution or Vessel": "54",
+    "Piece": "140",
+    "Folio": "159",
+    "Household Members<br/>Age<br/>Relationship": "Thomas Radcliffe 26 Head<br/>Blanche A Radcliffe 22 Wife<br/>George L Radcliffe 4 Son<br/>Reginald S Radcliffe 3 Son"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6598&h=7866656&indiv=try&viewrecord=1&r=an",
+    "Child": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6598&h=7866658&indiv=try&viewrecord=1&r=an"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "Thomas Radcliffe",
+        "dbId": "6598",
+        "recordId": "7866656",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6598&h=7866656&indiv=try&viewrecord=1&r=an",
+        "Age": "26",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Blanche A Radcliffe",
+        "Age": "22",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "George L Radcliffe",
+        "dbId": "6598",
+        "recordId": "7866658",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6598&h=7866658&indiv=try&viewrecord=1&r=an",
+        "Age": "4",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Reginald S Radcliffe",
+        "dbId": "6598",
+        "recordId": "7866659",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6598&h=7866659&indiv=try&viewrecord=1&r=an",
+        "Age": "3",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/6598/images/LNDRG12_140_141-0322?pid=7866657&usePUB=true&_phsrc=ywU8188&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "6598",
+  "imageRecordId": "LNDRG12_140_141-0322",
+  "sourceCitation": "The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1891; Class: RG12; Piece: 140; Folio: 159; Page: 22; GSU roll: 6095250",
+  "sourceInformation": "Ancestry.com. 1891 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2005. Original data: Census Returns of England and Wales, 1891. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1891. Data imaged from The National Archives, London, England. 2,131 rolls. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1891. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1891.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1891 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1891 England Census. Learn more..."
+}

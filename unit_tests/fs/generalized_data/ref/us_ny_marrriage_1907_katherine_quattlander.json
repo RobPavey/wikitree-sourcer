@@ -1,0 +1,57 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Katharine Quattlander"
+  },
+  "birthDate": {
+    "dateString": "1884",
+    "yearString": "1884"
+  },
+  "eventDate": {
+    "dateString": "21 Feb 1907",
+    "yearString": "1907"
+  },
+  "eventPlace": {
+    "placeString": "Manhattan, New York City, New York, United States"
+  },
+  "ageAtEvent": "23",
+  "spouses": [
+    {
+      "name": {
+        "name": "Edward J Dehent",
+        "lastName": "Dehent",
+        "forenames": "Edward J"
+      },
+      "age": "22",
+      "marriageDate": {
+        "dateString": "21 Feb 1907"
+      },
+      "marriagePlace": {
+        "placeString": "Manhattan, New York City, New York, United States"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Quattlander",
+        "forenames": "John",
+        "lastName": "Quattlander"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Katharine",
+        "forenames": "Katharine"
+      }
+    }
+  },
+  "marriageDate": "21 Feb 1907",
+  "collectionData": {
+    "id": "2143225"
+  },
+  "hasValidData": true
+}

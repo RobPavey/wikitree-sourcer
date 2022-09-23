@@ -1,0 +1,30 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Harry A"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Hampstead, London, England"
+  },
+  "registrationDistrict": "Hampstead",
+  "eventDate": {
+    "dateString": "1914",
+    "quarter": "1"
+  },
+  "deathDate": {
+    "dateString": "1914"
+  },
+  "lastNameAtDeath": "Pavey",
+  "ageAtDeath": "60",
+  "collectionData": {
+    "id": "England & Wales Deaths 1837-2007",
+    "volume": "1A",
+    "page": "813"
+  },
+  "hasValidData": true
+}

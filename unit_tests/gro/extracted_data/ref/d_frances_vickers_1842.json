@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "lastName": "VICKERS",
+  "forenames": "FRANCES",
+  "firstName": "FRANCES",
+  "ageAtDeath": 59,
+  "recordType": "older",
+  "eventYear": 1842,
+  "eventQuarterLetter": "J",
+  "eventQuarter": 2,
+  "registrationDistrict": "BASFORD UNION COUNTIES OF NOTTINGHAM DERBY",
+  "referenceVolume": "15",
+  "referencePage": "294",
+  "personGender": "female",
+  "deathYear": 1842,
+  "deathQuarter": 2,
+  "eventType": "death"
+}

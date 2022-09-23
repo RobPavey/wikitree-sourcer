@@ -1,0 +1,66 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/10119823:7667",
+  "pageType": "record",
+  "dbId": "7667",
+  "recordId": "10119823",
+  "ancestryTemplate": "{{Ancestry Record|7667|10119823}}",
+  "domain": "com",
+  "titleName": "Charles Pavey",
+  "titleCollection": "1860 United States Federal Census",
+  "recordData": {
+    "Name": "Charles Pavey",
+    "Age": "53",
+    "Birth Year": "abt 1807",
+    "Gender": "Male",
+    "Birth Place": "England",
+    "Home in 1860": "El Dorado, El Dorado, California",
+    "Post Office": "El Dorado",
+    "Dwelling Number": "1984",
+    "Family Number": "1984",
+    "Occupation": "Farmer",
+    "Real Estate Value": "5000",
+    "Personal Estate Value": "200",
+    "Married Within Year": "Yes",
+    "Household Members<br/>Age": "Charles Pavey 53<br/>Amelia Pavey 49<br/>Geo Pavey 19<br/>Charles Pavey 9"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Members": "Charles Pavey",
+        "Age": "53"
+      },
+      {
+        "Household Members": "Amelia Pavey",
+        "dbId": "7667",
+        "recordId": "10119824",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7667&h=10119824&indiv=try",
+        "Age": "49"
+      },
+      {
+        "Household Members": "Geo Pavey",
+        "dbId": "7667",
+        "recordId": "10119825",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7667&h=10119825&indiv=try",
+        "Age": "19"
+      },
+      {
+        "Household Members": "Charles Pavey",
+        "dbId": "7667",
+        "recordId": "10119826",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7667&h=10119826&indiv=try",
+        "Age": "9"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7667/images/4211317_00325?pid=10119823&usePUB=true&usePUBJs=true",
+  "imageDbId": "7667",
+  "imageRecordId": "4211317_00325",
+  "sourceCitation": "Year: 1860; Census Place: El Dorado, El Dorado, California; Page: 943",
+  "sourceInformation": "Ancestry.com. 1860 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2009. Images reproduced by FamilySearch. Original data: 1860 U.S. census, population schedule. NARA microfilm publication M653, 1,438 rolls. Washington, D.C.: National Archives and Records Administration, n.d.",
+  "originalData": "1860 U.S. census, population schedule. NARA microfilm publication M653, 1,438 rolls. Washington, D.C.: National Archives and Records Administration, n.d.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1860 United States Federal Census, the Eighth Census of the United States. Census takers recorded many details including each person's name, age as of the census day, sex, color; birthplace, occupation of males over age fifteen, and more. No relationships were shown between members of a household. Additionally, the names of those listed on the population schedule are linked to actual images of the 1860 Federal Census. Learn more..."
+}

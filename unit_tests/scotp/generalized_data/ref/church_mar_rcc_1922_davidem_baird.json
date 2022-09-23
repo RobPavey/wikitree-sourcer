@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Baird Or McGregor",
+    "forenames": "Davidem"
+  },
+  "recordSubtype": "MarriageOrBanns",
+  "eventDate": {
+    "dateString": "29 November 1922"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Lanarkshire",
+    "placeString": "Airdrie, Lanarkshire, Scotland",
+    "streetAddress": "St Margaret's"
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Elisabeth",
+        "lastName": "McGregor"
+      },
+      "marriageDate": {
+        "dateString": "29 November 1922"
+      },
+      "marriagePlace": {
+        "country": "Scotland",
+        "county": "Lanarkshire",
+        "placeString": "Airdrie, Lanarkshire, Scotland",
+        "streetAddress": "St Margaret's"
+      }
+    }
+  ],
+  "hasValidData": true
+}

@@ -1,0 +1,40 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-wills-testaments&record_type=wills_testaments&surname=Bruce&surname_so=exact&forename=Catherine&forename_so=exact&from_year=1892&to_year=1892&court%5B0%5D=Wick%20Sheriff%20Court%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&description=Breadalbane%20Terrace%2C%20Pulteneytown%2C%20d.%2002%2F03%2F1888%20at%20Pulteneytown%2C%20testate",
+  "success": true,
+  "numResultsOnPage": 1,
+  "recordData": {
+    "Surname": "Bruce",
+    "Forename": "Catherine",
+    "Date": "23/2/1892",
+    "Description": "Breadalbane Terrace, Pulteneytown, d. 02/03/1888 at Pulteneytown, testate",
+    "Type": "Confirmation ad omissa granted 20/01/1894",
+    "Court": "Wick Sheriff Court ",
+    "Reference Number": "SC14/40/14"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_wills_testaments/106857?image=1&return_row=0",
+  "pageHeader": "Legal records - Wills and testaments",
+  "searchCriteria": {
+    "Surname": "Bruce",
+    "Surname Option": "Exact",
+    "Forename": "Catherine",
+    "Forename Option": "Exact",
+    "From_year": "1892",
+    "To_year": "1892",
+    "Court": "Wick Sheriff Court                                ",
+    "Description": "Breadalbane Terrace, Pulteneytown, D. 02/03/1888 At Pulteneytown, Testate"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "legal",
+    "dl_rec": "legal-wills-testaments",
+    "record_type": "wills_testaments",
+    "surname": "Bruce",
+    "surname_so": "exact",
+    "forename": "Catherine",
+    "forename_so": "exact",
+    "from_year": "1892",
+    "to_year": "1892",
+    "court[0]": "Wick Sheriff Court                                ",
+    "description": "Breadalbane Terrace%2C Pulteneytown%2C d. 02%2F03%2F1888 at Pulteneytown%2C testate"
+  }
+}

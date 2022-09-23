@@ -1,0 +1,68 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Avis Leonard"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "yearString": "1786",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Massachusetts"
+  },
+  "eventDate": {
+    "yearString": "1855"
+  },
+  "eventPlace": {
+    "placeString": "Canton, Norfolk, Massachusetts, USA"
+  },
+  "ageAtEvent": "69",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Avis Leonard",
+      "age": "69",
+      "isSelected": true,
+      "gender": "female",
+      "birthPlace": "Massachusetts",
+      "birthYear": "abt 1786",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609994"
+    },
+    {
+      "name": "Nathaniel W Baker",
+      "age": "41",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609995"
+    },
+    {
+      "name": "Almira Baker",
+      "age": "40",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609996"
+    },
+    {
+      "name": "Almira L Baker",
+      "age": "17",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609997"
+    },
+    {
+      "name": "Miliesa F Baker",
+      "age": "15",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609998"
+    },
+    {
+      "name": "Mary E Baker",
+      "age": "4",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609999"
+    }
+  ],
+  "collectionData": {
+    "id": "4472",
+    "volume": "26"
+  },
+  "hasValidData": true
+}

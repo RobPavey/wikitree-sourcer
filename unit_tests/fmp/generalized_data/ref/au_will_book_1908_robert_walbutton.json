@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "recordType": "Will",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Walbutton",
+    "forenames": "Robert"
+  },
+  "deathDate": {
+    "dateString": "03 Aug 1908",
+    "yearString": "1908"
+  },
+  "recordSubtype": "Probate",
+  "residencePlace": {
+    "placeString": "Granville NSW"
+  },
+  "lastNameAtDeath": "Walbutton",
+  "occupation": "Laborer",
+  "collectionData": {
+    "id": "New South Wales Will Books 1800-1952"
+  },
+  "hasValidData": true
+}

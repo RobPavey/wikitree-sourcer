@@ -1,0 +1,33 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Sarah Knight"
+  },
+  "deathDate": {
+    "dateString": "6 Nov 1713",
+    "yearString": "1713"
+  },
+  "eventDate": {
+    "dateString": "6 Nov 1713",
+    "yearString": "1713"
+  },
+  "eventPlace": {
+    "placeString": "Charlestown, Boston, Suffolk, Massachusetts, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "John",
+        "forenames": "John"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "2061550",
+    "page": "590"
+  },
+  "hasValidData": true
+}

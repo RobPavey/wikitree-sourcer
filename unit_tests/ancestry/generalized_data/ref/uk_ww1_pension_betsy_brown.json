@@ -1,0 +1,20 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Betsy Brown"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "21 Apr 1884"
+  },
+  "eventPlace": {
+    "placeString": "Ferryton Montrose. N. B"
+  },
+  "nextOfKin": "James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children",
+  "collectionData": {
+    "id": "61588"
+  },
+  "hasValidData": true
+}

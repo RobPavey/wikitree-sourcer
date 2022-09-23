@@ -1,0 +1,25 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/14121139:60143",
+  "pageType": "record",
+  "dbId": "60143",
+  "recordId": "14121139",
+  "ancestryTemplate": "{{Ancestry Record|60143|14121139}}",
+  "domain": "com",
+  "titleName": "Christian Mcleod",
+  "titleCollection": "Scotland, Select Births and Baptisms, 1564-1950",
+  "recordData": {
+    "Name": "Christian Mcleod",
+    "Gender": "Female",
+    "Birth Date": "25 Aug 1842",
+    "Birth Place": "Rayne,Aberdeen,Scotland",
+    "Father": "William Mcleod",
+    "Mother": "Helen White"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=60143&h=14121140&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=60143&h=14121141&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceInformation": "Ancestry.com. Scotland, Select Births and Baptisms, 1564-1950 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013.",
+  "originalData": "Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013.",
+  "sourceDescription": "This collection includes birth and baptism records from Scotland. Learn more..."
+}

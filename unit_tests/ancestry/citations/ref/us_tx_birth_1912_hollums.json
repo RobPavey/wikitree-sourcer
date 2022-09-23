@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Texas, U.S., Birth Certificates, 1903-1932\"<br/>\n{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Hollums, son of J A Hollums & Maude Duncan, was born on 17 July 1912 in Floydada, Floyd, Texas, USA.<ref>\n'''Birth''':\n\"Texas, U.S., Birth Certificates, 1903-1932\"<br/>\n{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth''': \"Texas, U.S., Birth Certificates, 1903-1932\"<br/>{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Texas, U.S., Birth Certificates, 1903-1932\"<br/>\n{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)<br/>\nHollums born on 17 Jul 1912, son of J A Hollums & Maude Duncan, in Floydada, Floyd, Texas, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Hollums, son of J A Hollums & Maude Duncan, was born on 17 July 1912 in Floydada, Floyd, Texas, USA.<ref>\n'''Birth''':\n\"Texas, U.S., Birth Certificates, 1903-1932\"<br/>\n{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)<br/>\nHollums born on 17 Jul 1912, son of J A Hollums & Maude Duncan, in Floydada, Floyd, Texas, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth''': \"Texas, U.S., Birth Certificates, 1903-1932\"<br/>{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)<br/>Hollums born on 17 Jul 1912, son of J A Hollums & Maude Duncan, in Floydada, Floyd, Texas, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Texas, U.S., Birth Certificates, 1903-1932\"<br/>\n{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)<br/>\nName: Hollums; Birth Date: 17 Jul 1912; Gender: Male; Birth Place: Floydada, Floyd, Texas, USA; Father: J A Hollums; Mother: Maude Duncan; Mother Residence: Floydada.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Hollums, son of J A Hollums & Maude Duncan, was born on 17 July 1912 in Floydada, Floyd, Texas, USA.<ref>\n'''Birth''':\n\"Texas, U.S., Birth Certificates, 1903-1932\"<br/>\n{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)<br/>\nName: Hollums; Birth Date: 17 Jul 1912; Gender: Male; Birth Place: Floydada, Floyd, Texas, USA; Father: J A Hollums; Mother: Maude Duncan; Mother Residence: Floydada.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth''': \"Texas, U.S., Birth Certificates, 1903-1932\"<br/>{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)<br/>Name: Hollums; Birth Date: 17 Jul 1912; Gender: Male; Birth Place: Floydada, Floyd, Texas, USA; Father: J A Hollums; Mother: Maude Duncan; Mother Residence: Floydada.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Texas, U.S., Birth Certificates, 1903-1932\"<br/>\n{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Hollums\n|-\n| Birth Date || 17 Jul 1912\n|-\n| Gender || Male\n|-\n| Birth Place || Floydada, Floyd, Texas, USA\n|-\n| Father || J A Hollums\n|-\n| Mother || Maude Duncan\n|-\n| Mother Residence || Floydada\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Hollums, son of J A Hollums & Maude Duncan, was born on 17 July 1912 in Floydada, Floyd, Texas, USA.<ref>\n'''Birth''':\n\"Texas, U.S., Birth Certificates, 1903-1932\"<br/>\n{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Hollums\n|-\n| Birth Date || 17 Jul 1912\n|-\n| Gender || Male\n|-\n| Birth Place || Floydada, Floyd, Texas, USA\n|-\n| Father || J A Hollums\n|-\n| Mother || Maude Duncan\n|-\n| Mother Residence || Floydada\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth''': \"Texas, U.S., Birth Certificates, 1903-1932\"<br/>{{Ancestry Record|2275|1350244}} (accessed 6 May 2021)<br/>Name: Hollums; Birth Date: 17 Jul 1912; Gender: Male; Birth Place: Floydada, Floyd, Texas, USA; Father: J A Hollums; Mother: Maude Duncan; Mother Residence: Floydada.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Texas, U.S., Birth Certificates, 1903-1932,\" database, ({{Ancestry Record|2275|1350244}} : accessed 6 May 2021), Hollums born on 17 Jul 1912, son of J A Hollums & Maude Duncan, in Floydada, Floyd, Texas, USA.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Hollums, son of J A Hollums & Maude Duncan, was born on 17 July 1912 in Floydada, Floyd, Texas, USA.<ref>\"Texas, U.S., Birth Certificates, 1903-1932,\" database, ({{Ancestry Record|2275|1350244}} : accessed 6 May 2021), Hollums born on 17 Jul 1912, son of J A Hollums & Maude Duncan, in Floydada, Floyd, Texas, USA.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Texas, U.S., Birth Certificates, 1903-1932,\" database, ({{Ancestry Record|2275|1350244}} : accessed 6 May 2021), Hollums born on 17 Jul 1912, son of J A Hollums & Maude Duncan, in Floydada, Floyd, Texas, USA.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Birth'':\n\"Texas, U.S., Birth Certificates, 1903-1932\", database, \n({{Ancestry Record|2275|1350244}} : accessed 6 May 2021), \nName: Hollums; Birth Date: 17 Jul 1912; Gender: Male; Birth Place: Floydada, Floyd, Texas, USA; Father: J A Hollums; Mother: Maude Duncan; Mother Residence: Floydada.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Hollums, son of J A Hollums & Maude Duncan, was born on 17 July 1912 in Floydada, Floyd, Texas, USA.<ref>\n''Birth'':\n\"Texas, U.S., Birth Certificates, 1903-1932\", database, \n({{Ancestry Record|2275|1350244}} : accessed 6 May 2021), \nName: Hollums; Birth Date: 17 Jul 1912; Gender: Male; Birth Place: Floydada, Floyd, Texas, USA; Father: J A Hollums; Mother: Maude Duncan; Mother Residence: Floydada.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Birth'': \"Texas, U.S., Birth Certificates, 1903-1932\", database, ({{Ancestry Record|2275|1350244}} : accessed 6 May 2021), Name: Hollums; Birth Date: 17 Jul 1912; Gender: Male; Birth Place: Floydada, Floyd, Texas, USA; Father: J A Hollums; Mother: Maude Duncan; Mother Residence: Floydada.",
+    "type": "source"
+  }
+}

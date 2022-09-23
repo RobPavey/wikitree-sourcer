@@ -1,0 +1,32 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-wills-testaments&surname=Fraser&surname_so=exact&forename=Abercromby&forename_so=exact&record_type=wills_testaments",
+  "success": true,
+  "numResultsOnPage": 1,
+  "recordData": {
+    "Surname": "Fraser",
+    "Forename": "Abercromby",
+    "Date": "30/5/1882",
+    "Description": "chief steward on the steamship \"Morna\" of Leith, residing at 65 Cotton Street, Aberdeen, d. 11/05/1882 at sea, intestate, spouse of Isabella Napier or Fraser",
+    "Type": "Extract Inventory",
+    "Court": "Aberdeen Sheriff Court Inventories ",
+    "Reference Number": "SC1/36/90"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_wills_testaments/294614?image=1&return_row=0",
+  "pageHeader": "Legal records - Wills and testaments",
+  "searchCriteria": {
+    "Surname": "Fraser",
+    "Surname Option": "Exact",
+    "Forename": "Abercromby",
+    "Forename Option": "Exact"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "legal",
+    "dl_rec": "legal-wills-testaments",
+    "surname": "Fraser",
+    "surname_so": "exact",
+    "forename": "Abercromby",
+    "forename_so": "exact",
+    "record_type": "wills_testaments"
+  }
+}

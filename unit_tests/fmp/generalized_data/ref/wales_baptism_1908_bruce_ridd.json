@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fmp",
+  "name": {
+    "lastName": "Ridd",
+    "forenames": "Bruce Charles"
+  },
+  "eventPlace": {
+    "country": "Wales",
+    "placeString": "Swansea, St Mark, Glamorganshire, Wales"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "James"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Sarah Jane"
+      }
+    }
+  },
+  "eventDate": {
+    "dateString": "22 Jan 1908",
+    "yearString": "1908"
+  },
+  "birthDate": {
+    "dateString": "03 Dec 1907",
+    "yearString": "1907"
+  },
+  "lastNameAtBirth": "Ridd",
+  "collectionData": {
+    "id": "Glamorganshire Baptisms",
+    "page": "189"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,28 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=7579&h=40560790",
+  "pageType": "record",
+  "dbId": "7579",
+  "recordId": "40560790",
+  "ancestryTemplate": "{{Ancestry Record|7579|40560790}}",
+  "domain": "com",
+  "titleName": "Louisa Noble",
+  "titleCollection": "England & Wales, Civil Registration Death Index, 1916-2007",
+  "recordData": {
+    "Name": "Louisa Noble",
+    "Death Age": "89",
+    "Birth Date": "23 Jul 1882",
+    "Registration Date": "Jul 1971 [Aug 1971] [Sep 1971]",
+    "Registration Quarter": "Jul-Aug-Sep",
+    "Registration District": "Nottingham",
+    "Inferred County": "Nottinghamshire",
+    "Volume": "3c",
+    "Page": "976"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7579/images/ons_d19713az-0782?pid=40560790&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26db%3D7579%26h%3D40560790&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "7579",
+  "imageRecordId": "ons_d19713az-0782",
+  "sourceCitation": "General Register Office; United Kingdom; Volume: 3c; Page: 976",
+  "sourceInformation": "Ancestry.com. England & Wales, Civil Registration Death Index, 1916-2007 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc., 2007. Original data: General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Indexes created by the General Register Office, in London, England.",
+  "originalData": "General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Indexes created by the General Register Office, in London, England.",
+  "sourceDescription": "This database is a searchable, digitized version of the indices of civil registrations in England and Wales, reported quarterly to the General Register Office (GRO) in London. This index spans the years between 1916 and 2007. You need the information found in an original index to request a copy of a death certificate for the individual referenced. Learn more..."
+}

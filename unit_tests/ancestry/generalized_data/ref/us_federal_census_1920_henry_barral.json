@@ -1,0 +1,77 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Henry P Barral"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "yearString": "1908",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "New York"
+  },
+  "eventDate": {
+    "dateString": "1920"
+  },
+  "eventPlace": {
+    "placeString": "Manhattan Assembly District 15, New York, New York"
+  },
+  "ageAtEvent": "12",
+  "maritalStatus": "single",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Pio Barral",
+      "age": "42",
+      "relationship": "head",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6061&h=41984767&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Wihlemena Barral",
+      "age": "29",
+      "relationship": "wife",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6061&h=41984768&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Charlotte Barral",
+      "age": "16",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6061&h=41984769&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Henry P Barral",
+      "age": "12",
+      "relationship": "son",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "female",
+      "occupation": "None",
+      "birthPlace": "New York",
+      "birthYear": "abt 1908"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Pio Barral"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Wihlemena Barral"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "6061"
+  },
+  "hasValidData": true
+}

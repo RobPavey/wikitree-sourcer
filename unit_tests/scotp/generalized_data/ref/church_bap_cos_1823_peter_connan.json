@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "BirthOrBaptism",
+  "name": {
+    "lastName": "Connan",
+    "forenames": "Peter"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1 June 1823"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Perthshire",
+    "placeString": "Monzie, Perthshire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Connan"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary McGregor"
+      }
+    }
+  },
+  "hasValidData": true
+}

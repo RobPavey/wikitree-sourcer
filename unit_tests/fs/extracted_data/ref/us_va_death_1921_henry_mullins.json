@@ -1,0 +1,57 @@
+{
+  "recordData": {
+    "Name": "Henry Mullins",
+    "Death Date": "07 Jan 1921",
+    "Death Place": "Roberson, Wise, Virginia, United States",
+    "Event Registration Date": "09 Jan 1921",
+    "Birth Date": "18 Feb 1825",
+    "Race": "White",
+    "Age": "95",
+    "Source Certificate Nbr": "2362"
+  },
+  "fullName": "Henry Mullins",
+  "givenName": "Henry",
+  "surname": "Mullins",
+  "gender": "male",
+  "factType": "Death",
+  "eventDateOriginal": "07 Jan 1921",
+  "eventDate": "7 Jan 1921",
+  "eventYear": "1921",
+  "eventPlaceOriginal": "Roberson, Wise, Virginia, United States",
+  "eventPlace": "Roberson, Wise, Virginia, United States",
+  "eventPlaceL3": "Wise",
+  "eventPlaceL2": "Wise County",
+  "eventPlaceL1": "United States",
+  "deathDateOriginal": "07 Jan 1921",
+  "deathDate": "7 Jan 1921",
+  "deathYear": "1921",
+  "deathMonth": "Jan",
+  "birthDateOriginal": "18 Feb 1825",
+  "birthDate": "18 Feb 1825",
+  "birthYear": "1825",
+  "age": "95",
+  "father": {
+    "fullName": "Sheard Mullins",
+    "givenName": "Sheard",
+    "surname": "Mullins"
+  },
+  "mother": {
+    "fullName": "Polly Roberts",
+    "givenName": "Polly",
+    "surname": "Roberts"
+  },
+  "externalImageId": "43004_162028006053_0100-00630.j2k",
+  "fsCollectionId": "2377565",
+  "referenceData": {
+    "digitalFilmNumber": "100786026",
+    "sourceRegNbr": "973"
+  },
+  "fsImageNumber": "00631",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3QS7-89GL-5LHG",
+  "collectionTitle": "Virginia, Death Certificates, 1912-1987",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:Q247-RWNJ",
+  "citation": "\"Virginia, Death Certificates, 1912-1987,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QVR7-FDWT : 16 August 2019), Henry Mullins, 07 Jan 1921; from \"Virginia, Marriage Records, 1700-1850,\" database and images, <i>Ancestry</i> (http://www.ancestry.com : 2012); citing Roberson, Wise, Virginia, United States, entry #, Virginia Department of Health, Richmond.",
+  "sourceTitleForPerson": "Henry Mullins, \"Virginia, Death Certificates, 1912-1987\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWT",
+  "pageType": "record"
+}

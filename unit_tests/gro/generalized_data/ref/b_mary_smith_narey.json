@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1892",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Mary"
+  },
+  "lastNameAtBirth": "Smith",
+  "birthDate": {
+    "yearString": "1892",
+    "quarter": 2
+  },
+  "mothersMaidenName": "Narey",
+  "personGender": "female",
+  "registrationDistrict": "Ashton-under-lyne",
+  "collectionData": {
+    "id": "births",
+    "volume": "08D",
+    "page": "483"
+  },
+  "hasValidData": true
+}

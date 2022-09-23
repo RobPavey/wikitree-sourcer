@@ -1,0 +1,24 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61588&h=111790356",
+  "pageType": "record",
+  "dbId": "61588",
+  "recordId": "111790356",
+  "ancestryTemplate": "{{Ancestry Record|61588|111790356}}",
+  "domain": "com",
+  "titleName": "Betsy Brown",
+  "titleCollection": "UK, World War I Pension Ledgers and Index Cards, 1914-1923",
+  "recordData": {
+    "Name": "Betsy Brown",
+    "Gender": "Female",
+    "Birth Date": "21 Apr 1884",
+    "Residence Place": "Ferryton Montrose. N. B",
+    "Relation to Soldier": "Widow",
+    "Title": "WWI Pension Record Cards and Ledgers",
+    "Description": "Other Ranks Died Brown GO-Brown J",
+    "Next of Kin": "James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children"
+  },
+  "sourceCitation": "Western Front Association; London, England; WWI Pension Record Cards and Ledgers; Reference: 031/0122/BRO-BRO",
+  "sourceInformation": "Ancestry.com. UK, World War I Pension Ledgers and Index Cards, 1914-1923 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2018. Original data: World War One Pension Records, The Western Front Association, England.",
+  "originalData": "World War One Pension Records, The Western Front Association, England.",
+  "sourceDescription": "This collection comprises records of pensions for those who were injured or killed fighting in World War One. Details are provided for the soldiers themselves as well as widows and other dependents. Learn more..."
+}

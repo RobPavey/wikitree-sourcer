@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages 1538-1973\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "William married Elizabeth Ellacott on 7 October 1829 in Maker, Cornwall, England.<ref>\n'''Marriage''':\n\"England Marriages 1538-1973\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"England Marriages 1538-1973\"<br/>[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages 1538-1973\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nWilliam Henry Pavey marriage to Elizabeth Ellacott on 7 Oct 1829 in Maker, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "William married Elizabeth Ellacott on 7 October 1829 in Maker, Cornwall, England.<ref>\n'''Marriage''':\n\"England Marriages 1538-1973\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nWilliam Henry Pavey marriage to Elizabeth Ellacott on 7 Oct 1829 in Maker, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"England Marriages 1538-1973\"<br/>[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)<br/>William Henry Pavey marriage to Elizabeth Ellacott on 7 Oct 1829 in Maker, Cornwall, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages 1538-1973\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): William Henry; Last name: Pavey; Marriage date: 07 Oct 1829; Marriage place: Maker; Spouse's first name(s): Elizabeth; Spouse's last name: Ellacott; County: Cornwall; Country: England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "William married Elizabeth Ellacott on 7 October 1829 in Maker, Cornwall, England.<ref>\n'''Marriage''':\n\"England Marriages 1538-1973\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): William Henry; Last name: Pavey; Marriage date: 07 Oct 1829; Marriage place: Maker; Spouse's first name(s): Elizabeth; Spouse's last name: Ellacott; County: Cornwall; Country: England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"England Marriages 1538-1973\"<br/>[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): William Henry; Last name: Pavey; Marriage date: 07 Oct 1829; Marriage place: Maker; Spouse's first name(s): Elizabeth; Spouse's last name: Ellacott; County: Cornwall; Country: England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages 1538-1973\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || William Henry\n|-\n| Last name || Pavey\n|-\n| Name note || -\n|-\n| Marriage date || 07 Oct 1829\n|-\n| Marriage place || Maker\n|-\n| Spouse's first name(s) || Elizabeth\n|-\n| Spouse's last name || Ellacott\n|-\n| Spouse's age || -\n|-\n| County || Cornwall\n|-\n| Country || England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "William married Elizabeth Ellacott on 7 October 1829 in Maker, Cornwall, England.<ref>\n'''Marriage''':\n\"England Marriages 1538-1973\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || William Henry\n|-\n| Last name || Pavey\n|-\n| Name note || -\n|-\n| Marriage date || 07 Oct 1829\n|-\n| Marriage place || Maker\n|-\n| Spouse's first name(s) || Elizabeth\n|-\n| Spouse's last name || Ellacott\n|-\n| Spouse's age || -\n|-\n| County || Cornwall\n|-\n| Country || England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"England Marriages 1538-1973\"<br/>[https://www.findmypast.co.uk/transcript?id=R_858111454 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): William Henry; Last name: Pavey; Marriage date: 07 Oct 1829; Marriage place: Maker; Spouse's first name(s): Elizabeth; Spouse's last name: Ellacott; County: Cornwall; Country: England.",
+    "type": "source"
+  }
+}

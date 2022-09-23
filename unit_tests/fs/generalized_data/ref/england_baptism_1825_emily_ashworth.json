@@ -1,0 +1,36 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Emily Mary Anne Ashworth"
+  },
+  "eventDate": {
+    "dateString": "25 Aug 1825",
+    "yearString": "1825"
+  },
+  "eventPlace": {
+    "placeString": "South Stoneham, Hampshire, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Charles Ashworth",
+        "forenames": "Charles",
+        "lastName": "Ashworth"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Anne Ashworth",
+        "forenames": "Mary Anne",
+        "lastName": "Ashworth"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2556014"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,50 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Elizabeth was mentioned on a memorial in Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>Memorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).",
+    "type": "source"
+  },
+  "accessedDate_none_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}}<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "type": "inline"
+  },
+  "accessedDate_none_narrative": {
+    "citation": "Elizabeth was mentioned on a memorial in Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}}<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "type": "narrative"
+  },
+  "accessedDate_none_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>{{FindAGrave|45398821}}<br/>Memorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).",
+    "type": "source"
+  },
+  "accessedDate_parenAfterLink_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "type": "inline"
+  },
+  "accessedDate_parenAfterLink_narrative": {
+    "citation": "Elizabeth was mentioned on a memorial in Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "type": "narrative"
+  },
+  "accessedDate_parenAfterLink_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>Memorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).",
+    "type": "source"
+  },
+  "accessedDate_parenBeforeLink_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n({{FindAGrave|45398821}} : accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "type": "inline"
+  },
+  "accessedDate_parenBeforeLink_narrative": {
+    "citation": "Elizabeth was mentioned on a memorial in Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n({{FindAGrave|45398821}} : accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "type": "narrative"
+  },
+  "accessedDate_parenBeforeLink_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>({{FindAGrave|45398821}} : accessed 6 May 2021)<br/>Memorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).",
+    "type": "source"
+  }
+}

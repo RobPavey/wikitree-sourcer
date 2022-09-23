@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight in entry for Oscar Johnson and Ethel D Blackshear.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight in entry for Oscar Johnson and Ethel D Blackshear.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Sally Knight in entry for Oscar Johnson and Ethel D Blackshear.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight child marriage in Wayne, Indiana, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight child marriage in Wayne, Indiana, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing FHL microfilm: 001846503;<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Sally Knight child marriage in Wayne, Indiana, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nName: Sally Knight; Images Count: 1.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nName: Sally Knight; Images Count: 1.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing FHL microfilm: 001846503;<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Name: Sally Knight; Images Count: 1.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470\n{| border=\"1\"\n| Name || Sally Knight\n|-\n| Images Count || 1\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470\n{| border=\"1\"\n| Name || Sally Knight\n|-\n| Images Count || 1\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing FHL microfilm: 001846503;<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Name: Sally Knight; Images Count: 1.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight in entry for Oscar Johnson and Ethel D Blackshear.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight in entry for Oscar Johnson and Ethel D Blackshear.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing FHL microfilm: 001846503;<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Sally Knight in entry for Oscar Johnson and Ethel D Blackshear.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting FHL microfilm: 001846503;<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing FHL microfilm: 001846503;<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight child marriage in Wayne, Indiana, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight child marriage in Wayne, Indiana, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Sally Knight child marriage in Wayne, Indiana, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight in entry for Oscar Johnson and Ethel D Blackshear.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nSally Knight in entry for Oscar Johnson and Ethel D Blackshear.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing Wayne, Indiana, United States, Marriage Registration, Indiana Commission on Public Records, Indianapolis; FHL microfilm 007030260.<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Sally Knight in entry for Oscar Johnson and Ethel D Blackshear.",
+    "type": "source"
+  }
+}

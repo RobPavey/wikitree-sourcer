@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "White",
+    "forenames": "Agnes"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "29 March 1839"
+  },
+  "birthDate": {
+    "dateString": "24 January 1839"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Renfrewshire",
+    "placeString": "Paisley, Renfrewshire, Scotland",
+    "streetAddress": "St Mirin's"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Alexander White"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Saragh McDonnol"
+      }
+    }
+  },
+  "hasValidData": true
+}

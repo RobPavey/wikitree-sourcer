@@ -1,0 +1,58 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Charles Pavey"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "yearString": "1807",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "eventDate": {
+    "yearString": "1860"
+  },
+  "eventPlace": {
+    "placeString": "El Dorado, El Dorado, California"
+  },
+  "occupation": "Farmer",
+  "ageAtEvent": "53",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Charles Pavey",
+      "age": "53",
+      "isSelected": true,
+      "gender": "male",
+      "occupation": "Farmer",
+      "birthPlace": "England",
+      "birthYear": "abt 1807"
+    },
+    {
+      "name": "Amelia Pavey",
+      "age": "49",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7667&h=10119824&indiv=try"
+    },
+    {
+      "name": "Geo Pavey",
+      "age": "19",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7667&h=10119825&indiv=try"
+    },
+    {
+      "name": "Charles Pavey",
+      "age": "9",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7667&h=10119826&indiv=try"
+    }
+  ],
+  "collectionData": {
+    "id": "7667"
+  },
+  "hasValidData": true
+}

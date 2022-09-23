@@ -1,0 +1,8 @@
+{
+  "std": {
+    "url": "https://www.familysearch.org/search/record/results?count=20&q.sex=Female&q.givenName=Caroline&q.surname=Risbry&q.birthLikePlace=Plymouth%2C%20Devon%2C%20England&q.birthLikeDate.from=1841&q.birthLikeDate.to=1855&q.residencePlace=64%20Farrar%20Street%2C%20Linthorpe%2C%20Yorkshire%2C%20England&q.residenceDate.from=1877&q.residenceDate.to=1885&q.recordCountry=England"
+  },
+  "same_collection": {
+    "url": "https://www.familysearch.org/search/record/results?count=20&f.collectionId=2562194&q.sex=Female&q.givenName=Caroline&q.surname=Risbry&q.birthLikePlace=Plymouth%2C%20Devon%2C%20England&q.birthLikeDate.from=1846&q.birthLikeDate.to=1850&q.residencePlace=64%20Farrar%20Street%2C%20Linthorpe%2C%20Yorkshire%2C%20England&q.residenceDate.from=1879&q.residenceDate.to=1883&q.relationshipToHead=Wife"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/4001446:1276",
+  "pageType": "record",
+  "dbId": "1276",
+  "recordId": "4001446",
+  "ancestryTemplate": "{{Ancestry Record|1276|4001446}}",
+  "domain": "com",
+  "titleName": "C Pasey",
+  "titleCollection": "U.S., Selected Federal Census Non-Population Schedules, 1850-1880",
+  "recordData": {
+    "Name": "C Pasey",
+    "Enumeration Date": "26 Aug 1850",
+    "Place": "Coldwater, Branch, Michigan, USA",
+    "Schedule Type": "Agriculture",
+    "OS Page": "195",
+    "Line Number": "40"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1276/images/t1164_1-00204?pid=4001446&usePUB=true&usePUBJs=true",
+  "imageDbId": "1276",
+  "imageRecordId": "t1164_1-00204",
+  "sourceCitation": "Census Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture",
+  "sourceInformation": "Ancestry.com. U.S., Selected Federal Census Non-Population Schedules, 1850-1880 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: View all sources.",
+  "originalData": "View all sources.",
+  "sourceDescription": "This database contains U.S. federal non-population schedules from 1850-1880 for the following states: California, Georgia, Illinois, Iowa, Kansas, Maine, Massachusetts, Michigan, Nebraska, New York, North Carolina, South Carolina, Texas, Virginia, and Washington Territory. Additional states will be added in the future. Non-population schedules contained in this database include: agriculture, industry/manufacturers, social statistics, and supplemental schedules. Learn more..."
+}

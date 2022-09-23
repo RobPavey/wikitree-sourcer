@@ -1,0 +1,80 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/165755:1080?_phsrc=AhC28&_phstart=successSource&gsfn=James&gsln=Fraser&ml_rpos=1&queryId=ac9ef1c2767e23287bf156e33da8ee3c",
+  "pageType": "record",
+  "dbId": "1080",
+  "recordId": "165755",
+  "ancestryTemplate": "{{Ancestry Record|1080|165755}}",
+  "domain": "com",
+  "titleName": "James Fraser",
+  "titleCollection": "1861 Scotland Census",
+  "recordData": {
+    "Name": "James Fraser",
+    "Age": "31",
+    "Estimated Birth Year": "abt 1830",
+    "Relationship": "Head",
+    "Spouse's Name": "Elizabeth Fraser",
+    "Gender": "Male",
+    "Where born": "Elgin",
+    "Registration Number": "644/7",
+    "Registration district": "Milton",
+    "Civil parish": "Glasgow Barony",
+    "County": "Lanarkshire",
+    "Address": "20 Maitland St",
+    "Occupation": "Stone Cutter",
+    "ED": "3",
+    "Household schedule number": "69",
+    "Line": "17",
+    "Roll": "CSSCT1861_106",
+    "Household Members<br/>Age<br/>Relationship": "James Fraser 31 Head<br/>Elizabeth Fraser 29 Wife<br/>Robert Fraser 2 Son<br/>Ann Fraser 4 Mo Daughter<br/>Hellen Kerr 20 Sister-in-law"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "James Fraser",
+        "Age": "31",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Elizabeth Fraser",
+        "dbId": "1080",
+        "recordId": "165756",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1080&h=165756&indiv=try&viewrecord=1&r=an",
+        "Age": "29",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "Robert Fraser",
+        "dbId": "1080",
+        "recordId": "165757",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1080&h=165757&indiv=try&viewrecord=1&r=an",
+        "Age": "2",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Ann Fraser",
+        "dbId": "1080",
+        "recordId": "165758",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1080&h=165758&indiv=try&viewrecord=1&r=an",
+        "Age": "4 Mo",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Hellen Kerr",
+        "dbId": "1080",
+        "recordId": "165759",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1080&h=165759&indiv=try",
+        "Age": "20",
+        "Relationship": "Sister-in-law"
+      }
+    ]
+  },
+  "sourceCitation": "Parish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106",
+  "sourceInformation": "Ancestry.com. 1861 Scotland Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2006. Original data: Scotland. 1861 Scotland Census. Reels 1-150. General Register Office for Scotland, Edinburgh, Scotland.",
+  "originalData": "Scotland. 1861 Scotland Census. Reels 1-150. General Register Office for Scotland, Edinburgh, Scotland.",
+  "sourceDescription": "The 1861 Census for Scotland was taken on the night of 7/8 April 1861. The following information was requested: place, name, relationship to head of family, marital status, age, gender, profession, birthplace, and whether blind, deaf, and dumb. Learn more..."
+}

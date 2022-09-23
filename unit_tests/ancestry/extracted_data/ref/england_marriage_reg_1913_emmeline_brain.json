@@ -1,0 +1,27 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=8913&h=3291674",
+  "pageType": "record",
+  "dbId": "8913",
+  "recordId": "3291674",
+  "ancestryTemplate": "{{Ancestry Record|8913|3291674}}",
+  "domain": "com",
+  "titleName": "Emmeline M Brain",
+  "titleCollection": "England & Wales, Civil Registration Marriage Index, 1837-1915",
+  "recordData": {
+    "Name": "Emmeline M Brain",
+    "Spouse Surname": "Pavey",
+    "Registration Year": "1913",
+    "Registration Quarter": "Apr-May-Jun",
+    "Registration District": "Tamworth",
+    "Inferred County": "Staffordshire",
+    "Volume": "6b",
+    "Page": "725",
+    "Records on Page": "Robert F Bishop<br/>Emmeline M Brain<br/>May B Hodkinson<br/>Arthur E Pavey"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8913/images/ONS_M19132AZ-0107?pid=3291674&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26db%3D8913%26h%3D3291674&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "8913",
+  "imageRecordId": "ONS_M19132AZ-0107",
+  "sourceInformation": "FreeBMD. England & Wales, Civil Registration Marriage Index, 1837-1915 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2006. Original data: General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Database Copyright © 1998-2003 Graham Hart, Ben Laurie, Camilla von Massenbach and David Mayall.",
+  "originalData": "General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Database Copyright © 1998-2003 Graham Hart, Ben Laurie, Camilla von Massenbach and David Mayall.",
+  "sourceDescription": "This database is a searchable, digitized version of the indices of civil registrations in England and Wales, reported quarterly to the General Register Office (GRO) in London. This index spans the years between 1837 and 1915. You need the information found in an original index to request a copy of a marriage certificate for the individual referenced. Learn more..."
+}

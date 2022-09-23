@@ -1,0 +1,45 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Fraser&surname_so=exact&forename=James&forename_so=starts&sex=M&age_from=27&age_to=27&census_place=Lanark&birthplace=Elgin&record_type=census_lds&year%5B0%5D=1881_LDS",
+  "success": true,
+  "numResultsOnPage": 1,
+  "recordData": {
+    "Surname": "FRASER",
+    "Forename": "James",
+    "Year": "1881",
+    "Gender": "M",
+    "Age": "27",
+    "Ref": "525913",
+    "Address": "Dwelling: 14 Apsley Place",
+    "Census Place": "Govan, Lanark, Scotland",
+    "Birth place": "Fochabers, Elgin, Scotland"
+  },
+  "imageLink": "",
+  "pageHeader": "Census returns - Census 1881 (LDS)",
+  "searchCriteria": {
+    "Surname": "Fraser",
+    "Surname Option": "Exact",
+    "Forename": "James",
+    "Forename Option": "Starts",
+    "Gender": "M",
+    "Age_from": "27",
+    "Age_to": "27",
+    "Census_place": "Lanark",
+    "Birthplace": "Elgin",
+    "Year": "1881_LDS"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "census",
+    "surname": "Fraser",
+    "surname_so": "exact",
+    "forename": "James",
+    "forename_so": "starts",
+    "sex": "M",
+    "age_from": "27",
+    "age_to": "27",
+    "census_place": "Lanark",
+    "birthplace": "Elgin",
+    "record_type": "census_lds",
+    "year[0]": "1881_LDS"
+  }
+}

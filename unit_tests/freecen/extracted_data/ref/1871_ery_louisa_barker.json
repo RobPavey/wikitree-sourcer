@@ -1,0 +1,86 @@
+{
+  "url": "https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0/louisa-barker-1871-yorkshire-east-riding-york-1850-?locale=en",
+  "success": true,
+  "censusDetails": {
+    "Census": "1871",
+    "County": "Yorkshire, East Riding (ERY)",
+    "District": "York",
+    "Civil Parish": "Scoreby Wth Stamford",
+    "Ecclesiastical Parish": "Scoreby Wth Stamford",
+    "Piece": "4755",
+    "Enumeration District": "2",
+    "Folio": "63",
+    "Page": "15",
+    "Schedule": "56",
+    "House Number": "",
+    "House or Street Name": "Scoreby W Stamford Bridge West"
+  },
+  "householdHeadings": [
+    "Surname",
+    "Forenames",
+    "Relationship",
+    "Marital Status",
+    "Sex",
+    "Age",
+    "Occupation",
+    "Birth County",
+    "Birth Place",
+    "Disability",
+    "Notes"
+  ],
+  "householdMembers": [
+    {
+      "Surname": "BARKER",
+      "Forenames": "Hauston",
+      "Relationship": "Head",
+      "Marital Status": "M",
+      "Sex": "M",
+      "Age": "26",
+      "Occupation": "Ag Labourer",
+      "Birth County": "Yorkshire",
+      "Birth Place": "Acklam",
+      "Disability": "",
+      "Notes": ""
+    },
+    {
+      "Surname": "BARKER",
+      "isSelected": true,
+      "Forenames": "Louisa",
+      "Relationship": "Wife",
+      "Marital Status": "M",
+      "Sex": "F",
+      "Age": "21",
+      "Occupation": "",
+      "Birth County": "Yorkshire",
+      "Birth Place": "Stockton Forest",
+      "Disability": "",
+      "Notes": ""
+    },
+    {
+      "Surname": "BARKER",
+      "Forenames": "Mary",
+      "Relationship": "Dau",
+      "Marital Status": "-",
+      "Sex": "F",
+      "Age": "1",
+      "Occupation": "",
+      "Birth County": "Yorkshire",
+      "Birth Place": "Scoreby",
+      "Disability": "",
+      "Notes": ""
+    },
+    {
+      "Surname": "BARKER",
+      "Forenames": "William",
+      "Relationship": "Son",
+      "Marital Status": "-",
+      "Sex": "M",
+      "Age": "4m",
+      "Occupation": "",
+      "Birth County": "Yorkshire",
+      "Birth Place": "Scoreby",
+      "Disability": "",
+      "Notes": ""
+    }
+  ]
+}

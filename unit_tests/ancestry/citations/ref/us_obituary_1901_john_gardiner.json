@@ -1,0 +1,86 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "John was in an obituary on 14 October 1901 in Placerville, California, USA. He died (age 40) in about 1901 in Bakersfield Kern County.<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Obituary''': \"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>The Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)<br/>\nName: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "John was in an obituary on 14 October 1901 in Placerville, California, USA. He died (age 40) in about 1901 in Bakersfield Kern County.<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)<br/>\nName: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Obituary''': \"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>The Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)<br/>Name: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)<br/>\nName: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "John was in an obituary on 14 October 1901 in Placerville, California, USA. He died (age 40) in about 1901 in Bakersfield Kern County.<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)<br/>\nName: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Obituary''': \"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>The Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)<br/>Name: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John P Gardner\n|-\n| Gender || Male\n|-\n| Death Age || 40\n|-\n| Birth Date || abt 1861\n|-\n| Residence Place || Bakersfield\n|-\n| Death Date || Abt 1901\n|-\n| Death Place || Bakersfield Kern County\n|-\n| Obituary Date || 14 Oct 1901\n|-\n| Obituary Place || Placerville, California, USA\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "John was in an obituary on 14 October 1901 in Placerville, California, USA. He died (age 40) in about 1901 in Bakersfield Kern County.<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John P Gardner\n|-\n| Gender || Male\n|-\n| Death Age || 40\n|-\n| Birth Date || abt 1861\n|-\n| Residence Place || Bakersfield\n|-\n| Death Date || Abt 1901\n|-\n| Death Place || Bakersfield Kern County\n|-\n| Obituary Date || 14 Oct 1901\n|-\n| Obituary Place || Placerville, California, USA\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Obituary''': \"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>The Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)<br/>Name: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Newspapers.com Obituary Index, 1800s-current,\" database, ({{Ancestry Record|61843|982098692}} : accessed 6 May 2021), Name John P Gardner, Gender Male, Death Age 40, Birth Date abt 1861, Residence Place Bakersfield, Death Date Abt 1901, Death Place Bakersfield Kern County, Obituary Date 14 Oct 1901, Obituary Place Placerville, California, USA; citing The Placerville Nugget, Publication Date 14 Oct 1901, Publication Place Placerville, California, USA, URL https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "John was in an obituary on 14 October 1901 in Placerville, California, USA. He died (age 40) in about 1901 in Bakersfield Kern County.<ref>\"U.S., Newspapers.com Obituary Index, 1800s-current,\" database, ({{Ancestry Record|61843|982098692}} : accessed 6 May 2021), Name John P Gardner, Gender Male, Death Age 40, Birth Date abt 1861, Residence Place Bakersfield, Death Date Abt 1901, Death Place Bakersfield Kern County, Obituary Date 14 Oct 1901, Obituary Place Placerville, California, USA; citing The Placerville Nugget, Publication Date 14 Oct 1901, Publication Place Placerville, California, USA, URL https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Newspapers.com Obituary Index, 1800s-current,\" database, ({{Ancestry Record|61843|982098692}} : accessed 6 May 2021), Name John P Gardner, Gender Male, Death Age 40, Birth Date abt 1861, Residence Place Bakersfield, Death Date Abt 1901, Death Place Bakersfield Kern County, Obituary Date 14 Oct 1901, Obituary Place Placerville, California, USA; citing The Placerville Nugget, Publication Date 14 Oct 1901, Publication Place Placerville, California, USA, URL https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Obituary'':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\", database, \nThe Placerville Nugget, Publication Date 14 Oct 1901, Publication Place Placerville, California, USA, URL https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355, \n({{Ancestry Record|61843|982098692}} : accessed 6 May 2021), \nName: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "John was in an obituary on 14 October 1901 in Placerville, California, USA. He died (age 40) in about 1901 in Bakersfield Kern County.<ref>\n''Obituary'':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\", database, \nThe Placerville Nugget, Publication Date 14 Oct 1901, Publication Place Placerville, California, USA, URL https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355, \n({{Ancestry Record|61843|982098692}} : accessed 6 May 2021), \nName: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Obituary'': \"U.S., Newspapers.com Obituary Index, 1800s-current\", database, The Placerville Nugget, Publication Date 14 Oct 1901, Publication Place Placerville, California, USA, URL https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355, ({{Ancestry Record|61843|982098692}} : accessed 6 May 2021), Name: John P Gardner; Gender: Male; Death Age: 40; Birth Date: abt 1861; Residence Place: Bakersfield; Death Date: Abt 1901; Death Place: Bakersfield Kern County; Obituary Date: 14 Oct 1901; Obituary Place: Placerville, California, USA.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "He was in an obituary on 14 October 1901 in Placerville, California, USA. He died, aged 40, in about 1901 in Bakersfield Kern County.<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John P Gardner\n|-\n| Gender || Male\n|-\n| Death Age || 40\n|-\n| Birth Date || abt 1861\n|-\n| Residence Place || Bakersfield\n|-\n| Death Date || Abt 1901\n|-\n| Death Place || Bakersfield Kern County\n|-\n| Obituary Date || 14 Oct 1901\n|-\n| Obituary Place || Placerville, California, USA\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "John P Gardner was in an obituary on 14 October 1901 in Placerville, California, USA. He died in about 1901 in Bakersfield Kern County.<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John P Gardner\n|-\n| Gender || Male\n|-\n| Death Age || 40\n|-\n| Birth Date || abt 1861\n|-\n| Residence Place || Bakersfield\n|-\n| Death Date || Abt 1901\n|-\n| Death Place || Bakersfield Kern County\n|-\n| Obituary Date || 14 Oct 1901\n|-\n| Obituary Place || Placerville, California, USA\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_3_narrative": {
+    "citation": "John P was in an obituary on 14 October 1901 in Placerville, California, USA. He died in about 1901 in Bakersfield Kern County. He was 40 years old.<ref>\n'''Obituary''':\n\"U.S., Newspapers.com Obituary Index, 1800s-current\"<br/>\nThe Placerville Nugget; Publication Date: 14 Oct 1901; Publication Place: Placerville, California, USA; URL: https://www.newspapers.com/image/697438738/?article=df390432-0b10-4417-81b2-703c100575a3&focus=0.2323534,0.54028296,0.4063923,0.68609303&xid=3355<br/>\n{{Ancestry Record|61843|982098692}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John P Gardner\n|-\n| Gender || Male\n|-\n| Death Age || 40\n|-\n| Birth Date || abt 1861\n|-\n| Residence Place || Bakersfield\n|-\n| Death Date || Abt 1901\n|-\n| Death Place || Bakersfield Kern County\n|-\n| Obituary Date || 14 Oct 1901\n|-\n| Obituary Place || Placerville, California, USA\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

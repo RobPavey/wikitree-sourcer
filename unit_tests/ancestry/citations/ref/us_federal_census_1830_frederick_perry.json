@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>\n{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1830 census Frederick was in Saybrook, Middlesex, Connecticut.<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>\n{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1830 Census''': \"1830 United States Federal Census\"<br/>Year: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>\n{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)<br/>\nFrederick Perry in Saybrook, Middlesex, Connecticut.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1830 census Frederick was in Saybrook, Middlesex, Connecticut.<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>\n{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)<br/>\nFrederick Perry in Saybrook, Middlesex, Connecticut.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1830 Census''': \"1830 United States Federal Census\"<br/>Year: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)<br/>Frederick Perry in Saybrook, Middlesex, Connecticut.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>\n{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)<br/>\nName: Frederick Perry; Home in 1830 (City, County, State): Saybrook, Middlesex, Connecticut; Free White Persons - Males - Under 5: 2; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 30 thru 39: 1; Free White Persons - Females - 5 thru 9: 2; Free White Persons - Females - 30 thru 39: 1; Free White Persons - Under 20: 5; Free White Persons - 20 thru 49: 3; Total Free White Persons: 8; Total - All Persons (Free White, Slaves, Free Colored): 8.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1830 census Frederick was in Saybrook, Middlesex, Connecticut.<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>\n{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)<br/>\nName: Frederick Perry; Home in 1830 (City, County, State): Saybrook, Middlesex, Connecticut; Free White Persons - Males - Under 5: 2; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 30 thru 39: 1; Free White Persons - Females - 5 thru 9: 2; Free White Persons - Females - 30 thru 39: 1; Free White Persons - Under 20: 5; Free White Persons - 20 thru 49: 3; Total Free White Persons: 8; Total - All Persons (Free White, Slaves, Free Colored): 8.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1830 Census''': \"1830 United States Federal Census\"<br/>Year: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)<br/>Name: Frederick Perry; Home in 1830 (City, County, State): Saybrook, Middlesex, Connecticut; Free White Persons - Males - Under 5: 2; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 30 thru 39: 1; Free White Persons - Females - 5 thru 9: 2; Free White Persons - Females - 30 thru 39: 1; Free White Persons - Under 20: 5; Free White Persons - 20 thru 49: 3; Total Free White Persons: 8; Total - All Persons (Free White, Slaves, Free Colored): 8.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>\n{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Frederick Perry\n|-\n| Home in 1830 (City, County, State) || Saybrook, Middlesex, Connecticut\n|-\n| Free White Persons - Males - Under 5 || 2\n|-\n| Free White Persons - Males - 5 thru 9 || 1\n|-\n| Free White Persons - Males - 20 thru 29 || 1\n|-\n| Free White Persons - Males - 30 thru 39 || 1\n|-\n| Free White Persons - Females - 5 thru 9 || 2\n|-\n| Free White Persons - Females - 30 thru 39 || 1\n|-\n| Free White Persons - Under 20 || 5\n|-\n| Free White Persons - 20 thru 49 || 3\n|-\n| Total Free White Persons || 8\n|-\n| Total - All Persons (Free White, Slaves, Free Colored) || 8\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1830 census Frederick was in Saybrook, Middlesex, Connecticut.<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>\n{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Frederick Perry\n|-\n| Home in 1830 (City, County, State) || Saybrook, Middlesex, Connecticut\n|-\n| Free White Persons - Males - Under 5 || 2\n|-\n| Free White Persons - Males - 5 thru 9 || 1\n|-\n| Free White Persons - Males - 20 thru 29 || 1\n|-\n| Free White Persons - Males - 30 thru 39 || 1\n|-\n| Free White Persons - Females - 5 thru 9 || 2\n|-\n| Free White Persons - Females - 30 thru 39 || 1\n|-\n| Free White Persons - Under 20 || 5\n|-\n| Free White Persons - 20 thru 49 || 3\n|-\n| Total Free White Persons || 8\n|-\n| Total - All Persons (Free White, Slaves, Free Colored) || 8\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1830 Census''': \"1830 United States Federal Census\"<br/>Year: 1830; Census Place: Saybrook, Middlesex, Connecticut; Series: M19; Roll: 8; Page: 162; Family History Library Film: 0002801<br/>{{Ancestry Record|8058|1691734}} (accessed 6 May 2021)<br/>Name: Frederick Perry; Home in 1830 (City, County, State): Saybrook, Middlesex, Connecticut; Free White Persons - Males - Under 5: 2; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 30 thru 39: 1; Free White Persons - Females - 5 thru 9: 2; Free White Persons - Females - 30 thru 39: 1; Free White Persons - Under 20: 5; Free White Persons - 20 thru 49: 3; Total Free White Persons: 8; Total - All Persons (Free White, Slaves, Free Colored): 8.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1830 United States Federal Census,\" database, ({{Ancestry Record|8058|1691734}} : accessed 6 May 2021), Frederick Perry in Saybrook, Middlesex, Connecticut; citing Year 1830, Census Place Saybrook, Middlesex, Connecticut, Series M19, Roll 8, Page 162, Family History Library Film 0002801.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1830 census Frederick was in Saybrook, Middlesex, Connecticut.<ref>\"1830 United States Federal Census,\" database, ({{Ancestry Record|8058|1691734}} : accessed 6 May 2021), Frederick Perry in Saybrook, Middlesex, Connecticut; citing Year 1830, Census Place Saybrook, Middlesex, Connecticut, Series M19, Roll 8, Page 162, Family History Library Film 0002801.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1830 United States Federal Census,\" database, ({{Ancestry Record|8058|1691734}} : accessed 6 May 2021), Frederick Perry in Saybrook, Middlesex, Connecticut; citing Year 1830, Census Place Saybrook, Middlesex, Connecticut, Series M19, Roll 8, Page 162, Family History Library Film 0002801.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1830 Census'':\n\"1830 United States Federal Census\", database, \nYear 1830, Census Place Saybrook, Middlesex, Connecticut, Series M19, Roll 8, Page 162, Family History Library Film 0002801, \n({{Ancestry Record|8058|1691734}} : accessed 6 May 2021), \nName: Frederick Perry; Home in 1830 (City, County, State): Saybrook, Middlesex, Connecticut; Free White Persons - Males - Under 5: 2; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 30 thru 39: 1; Free White Persons - Females - 5 thru 9: 2; Free White Persons - Females - 30 thru 39: 1; Free White Persons - Under 20: 5; Free White Persons - 20 thru 49: 3; Total Free White Persons: 8; Total - All Persons (Free White, Slaves, Free Colored): 8.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1830 census Frederick was in Saybrook, Middlesex, Connecticut.<ref>\n''1830 Census'':\n\"1830 United States Federal Census\", database, \nYear 1830, Census Place Saybrook, Middlesex, Connecticut, Series M19, Roll 8, Page 162, Family History Library Film 0002801, \n({{Ancestry Record|8058|1691734}} : accessed 6 May 2021), \nName: Frederick Perry; Home in 1830 (City, County, State): Saybrook, Middlesex, Connecticut; Free White Persons - Males - Under 5: 2; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 30 thru 39: 1; Free White Persons - Females - 5 thru 9: 2; Free White Persons - Females - 30 thru 39: 1; Free White Persons - Under 20: 5; Free White Persons - 20 thru 49: 3; Total Free White Persons: 8; Total - All Persons (Free White, Slaves, Free Colored): 8.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1830 Census'': \"1830 United States Federal Census\", database, Year 1830, Census Place Saybrook, Middlesex, Connecticut, Series M19, Roll 8, Page 162, Family History Library Film 0002801, ({{Ancestry Record|8058|1691734}} : accessed 6 May 2021), Name: Frederick Perry; Home in 1830 (City, County, State): Saybrook, Middlesex, Connecticut; Free White Persons - Males - Under 5: 2; Free White Persons - Males - 5 thru 9: 1; Free White Persons - Males - 20 thru 29: 1; Free White Persons - Males - 30 thru 39: 1; Free White Persons - Females - 5 thru 9: 2; Free White Persons - Females - 30 thru 39: 1; Free White Persons - Under 20: 5; Free White Persons - 20 thru 49: 3; Total Free White Persons: 8; Total - All Persons (Free White, Slaves, Free Colored): 8.",
+    "type": "source"
+  }
+}

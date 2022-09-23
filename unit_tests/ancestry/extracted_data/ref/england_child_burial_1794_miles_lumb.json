@@ -1,0 +1,26 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/604340115:2256",
+  "pageType": "record",
+  "dbId": "2256",
+  "recordId": "604340115",
+  "ancestryTemplate": "{{Ancestry Record|2256|604340115}}",
+  "domain": "com",
+  "titleName": "Miles Lumb",
+  "titleCollection": "West Yorkshire, England, Church of England Baptisms, Marriages and Burials, 1512-1812",
+  "recordData": {
+    "Name": "Miles Lumb",
+    "Gender": "Male",
+    "Parish as it Appears": "Huddersfield, St Peter",
+    "Child": "Michl Lumb"
+  },
+  "linkData": {
+    "Child": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2256&h=4340115&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2256/images/32355_248911-00139?pid=604340115&usePUB=true&usePUBJs=true",
+  "imageDbId": "2256",
+  "imageRecordId": "32355_248911-00139",
+  "sourceCitation": "West Yorkshire Archive Service; Wakefield, Yorkshire, England; Yorkshire Parish Records; New Reference Number: WDP32/4",
+  "sourceInformation": "Ancestry.com. West Yorkshire, England, Church of England Baptisms, Marriages and Burials, 1512-1812 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: Yorkshire Parish Records. Leeds, England: West Yorkshire Archive Service.",
+  "originalData": "Yorkshire Parish Records. Leeds, England: West Yorkshire Archive Service.",
+  "sourceDescription": "This data collection contains images of Church of England baptism, marriage, and burial records in registers from parishes in the West Yorkshire area of England for the years 1512–1812. Learn more..."
+}

@@ -1,0 +1,40 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "James Curtis"
+  },
+  "birthDate": {
+    "dateString": "25 Nov 1773",
+    "yearString": "1773"
+  },
+  "eventDate": {
+    "dateString": "25 Nov 1773",
+    "yearString": "1773"
+  },
+  "eventPlace": {
+    "placeString": "Plymouth, Plymouth, Massachusetts Bay Colony"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Curtis",
+        "forenames": "William",
+        "lastName": "Curtis"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Hannah",
+        "forenames": "Hannah"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2061550",
+    "page": "v 2 p 83"
+  },
+  "hasValidData": true
+}

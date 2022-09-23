@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nNational Records of Scotland, Ref: 644/7 3/ 14<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1861 census James (age 31) was in Milton, Lanarkshire, Scotland.<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nNational Records of Scotland, Ref: 644/7 3/ 14<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1861 Census''': \"Scotland Census, 1861\"<br/>National Records of Scotland, Ref: 644/7 3/ 14<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nNational Records of Scotland, Ref: 644/7 3/ 14<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJames Fraser (31) in Milton registration district in Lanarkshire, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1861 census James (age 31) was in Milton, Lanarkshire, Scotland.<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nNational Records of Scotland, Ref: 644/7 3/ 14<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJames Fraser (31) in Milton registration district in Lanarkshire, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1861 Census''': \"Scotland Census, 1861\"<br/>National Records of Scotland, Ref: 644/7 3/ 14<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)<br/>James Fraser (31) in Milton registration district in Lanarkshire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nNational Records of Scotland, Ref: 644/7 3/ 14<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: JAMES; Year: 1861; Gender: M; Age at Census: 31; RD Name: Milton; County/ City: Lanark.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1861 census James (age 31) was in Milton, Lanarkshire, Scotland.<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nNational Records of Scotland, Ref: 644/7 3/ 14<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: JAMES; Year: 1861; Gender: M; Age at Census: 31; RD Name: Milton; County/ City: Lanark.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1861 Census''': \"Scotland Census, 1861\"<br/>National Records of Scotland, Ref: 644/7 3/ 14<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: JAMES; Year: 1861; Gender: M; Age at Census: 31; RD Name: Milton; County/ City: Lanark.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nNational Records of Scotland, Ref: 644/7 3/ 14<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || JAMES\n|-\n| Year || 1861\n|-\n| Gender || M\n|-\n| Age at Census || 31\n|-\n| RD Name || Milton\n|-\n| County/ City || Lanark\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1861 census James (age 31) was in Milton, Lanarkshire, Scotland.<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nNational Records of Scotland, Ref: 644/7 3/ 14<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || JAMES\n|-\n| Year || 1861\n|-\n| Gender || M\n|-\n| Age at Census || 31\n|-\n| RD Name || Milton\n|-\n| County/ City || Lanark\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1861 Census''': \"Scotland Census, 1861\"<br/>National Records of Scotland, Ref: 644/7 3/ 14<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=FRASER&forename=JAMES&year%5B0%5D=1861&sex=M&age_from=31&age_to=31&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20&ref=644%2F7%203%2F%2014 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: JAMES; Year: 1861; Gender: M; Age at Census: 31; RD Name: Milton; County/ City: Lanark.",
+    "type": "source"
+  }
+}

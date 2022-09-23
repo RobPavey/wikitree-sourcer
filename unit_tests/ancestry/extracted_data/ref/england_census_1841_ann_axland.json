@@ -1,0 +1,50 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8978&h=16161242&tid=&pid=&queryId=1452d1df2d23a3ad7af1da515159f4bf&usePUB=true&_phsrc=ywU8297&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "8978",
+  "recordId": "16161242",
+  "ancestryTemplate": "{{Ancestry Record|8978|16161242}}",
+  "domain": "com",
+  "titleName": "Ann Axland",
+  "titleCollection": "1841 England Census",
+  "recordData": {
+    "Name": "Ann Axland [Ann Ackland]",
+    "Age": "23",
+    "Estimated Birth Year": "abt 1818",
+    "Gender": "Female",
+    "Where born": "Devon, England",
+    "Civil Parish": "Braunton",
+    "Hundred": "Braunton",
+    "County/Island": "Devon",
+    "Country": "England",
+    "Registration District": "Barnstaple",
+    "Sub-registration District": "Braunton",
+    "Piece": "203",
+    "Book": "21",
+    "Folio": "6",
+    "Page Number": "6",
+    "Household Members": "Ann Axland 23"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Name": "Ann Axland",
+        "dbId": "uki1841",
+        "recordId": "16161242",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1841&indiv=try&h=16161242",
+        "Age": "23"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8978/images/DEVCHO107_202_204-0490?pid=16161242&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D8978%26h%3D16161242%26tid%3D%26pid%3D%26queryId%3D1452d1df2d23a3ad7af1da515159f4bf%26usePUB%3Dtrue%26_phsrc%3DywU8297%26_phstart%3DsuccessSource&treeid=&personid=&hintid=&queryId=1452d1df2d23a3ad7af1da515159f4bf&usePUB=true&_phsrc=ywU8297&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "8978",
+  "imageRecordId": "DEVCHO107_202_204-0490",
+  "sourceCitation": "Class: HO107; Piece: 203; Book: 21; Civil Parish: Braunton; County: Devon; Enumeration District: 10; Folio: 6; Page: 6; Line: 5; GSU roll: 241303",
+  "sourceInformation": "Ancestry.com. 1841 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc, 2010. Original data: Census Returns of England and Wales, 1841. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1841. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1841. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1841. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database will detail those persons enumerated in the 1841 Census of England and is an every-name index. In addition, the names of those listed on the population schedule are linked to the actual images of the 1841 Census, reproduced by courtesy of The National Archives, London, England. There are 15,000 records accessible through this database. Learn more..."
+}

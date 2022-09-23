@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Barbara was divorced from Robert A Johnson in June 1976 in Los Angeles.<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Divorce''': \"California, U.S., Divorce Index, 1966-1984\"<br/>State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)<br/>\nBarbara J Brinkerhoff divorce from Robert A Johnson in Jun 1976 in Los Angeles.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Barbara was divorced from Robert A Johnson in June 1976 in Los Angeles.<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)<br/>\nBarbara J Brinkerhoff divorce from Robert A Johnson in Jun 1976 in Los Angeles.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Divorce''': \"California, U.S., Divorce Index, 1966-1984\"<br/>State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)<br/>Barbara J Brinkerhoff divorce from Robert A Johnson in Jun 1976 in Los Angeles.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)<br/>\nName: Barbara J Brinkerhoff; Spouse Name: Robert A Johnson; Location: Los Angeles; Date: Jun 1976.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Barbara was divorced from Robert A Johnson in June 1976 in Los Angeles.<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)<br/>\nName: Barbara J Brinkerhoff; Spouse Name: Robert A Johnson; Location: Los Angeles; Date: Jun 1976.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Divorce''': \"California, U.S., Divorce Index, 1966-1984\"<br/>State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)<br/>Name: Barbara J Brinkerhoff; Spouse Name: Robert A Johnson; Location: Los Angeles; Date: Jun 1976.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Barbara J Brinkerhoff\n|-\n| Spouse Name || Robert A Johnson\n|-\n| Location || Los Angeles\n|-\n| Date || Jun 1976\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Barbara was divorced from Robert A Johnson in June 1976 in Los Angeles.<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Barbara J Brinkerhoff\n|-\n| Spouse Name || Robert A Johnson\n|-\n| Location || Los Angeles\n|-\n| Date || Jun 1976\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Divorce''': \"California, U.S., Divorce Index, 1966-1984\"<br/>State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)<br/>Name: Barbara J Brinkerhoff; Spouse Name: Robert A Johnson; Location: Los Angeles; Date: Jun 1976.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"California, U.S., Divorce Index, 1966-1984,\" database, ({{Ancestry Record|1141|3806392}} : accessed 6 May 2021), Barbara J Brinkerhoff divorce from Robert A Johnson in Jun 1976 in Los Angeles; citing State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Barbara was divorced from Robert A Johnson in June 1976 in Los Angeles.<ref>\"California, U.S., Divorce Index, 1966-1984,\" database, ({{Ancestry Record|1141|3806392}} : accessed 6 May 2021), Barbara J Brinkerhoff divorce from Robert A Johnson in Jun 1976 in Los Angeles; citing State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"California, U.S., Divorce Index, 1966-1984,\" database, ({{Ancestry Record|1141|3806392}} : accessed 6 May 2021), Barbara J Brinkerhoff divorce from Robert A Johnson in Jun 1976 in Los Angeles; citing State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Divorce'':\n\"California, U.S., Divorce Index, 1966-1984\", database, \nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California, \n({{Ancestry Record|1141|3806392}} : accessed 6 May 2021), \nName: Barbara J Brinkerhoff; Spouse Name: Robert A Johnson; Location: Los Angeles; Date: Jun 1976.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Barbara was divorced from Robert A Johnson in June 1976 in Los Angeles.<ref>\n''Divorce'':\n\"California, U.S., Divorce Index, 1966-1984\", database, \nState of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California, \n({{Ancestry Record|1141|3806392}} : accessed 6 May 2021), \nName: Barbara J Brinkerhoff; Spouse Name: Robert A Johnson; Location: Los Angeles; Date: Jun 1976.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Divorce'': \"California, U.S., Divorce Index, 1966-1984\", database, State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California, ({{Ancestry Record|1141|3806392}} : accessed 6 May 2021), Name: Barbara J Brinkerhoff; Spouse Name: Robert A Johnson; Location: Los Angeles; Date: Jun 1976.",
+    "type": "source"
+  }
+}

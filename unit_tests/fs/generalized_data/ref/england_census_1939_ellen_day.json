@@ -1,0 +1,60 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Ellen Day"
+  },
+  "birthDate": {
+    "dateString": "10 Dec 1899",
+    "yearString": "1899"
+  },
+  "eventDate": {
+    "dateString": "29 Sep 1939",
+    "yearString": "1939"
+  },
+  "eventPlace": {
+    "placeString": "West Ham, Essex, England, United Kingdom"
+  },
+  "registrationDistrict": "West Ham C.B.",
+  "ageAtEvent": "40",
+  "occupation": "Unpaid Domestic Duties",
+  "householdArrayFields": [
+    "name",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "John E G Day",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "41",
+      "birthYear": "1898",
+      "birthDate": "11 Aug 1898",
+      "occupation": "Nevedone Labr (Heavy Worker)"
+    },
+    {
+      "name": "Ellen Day",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "40",
+      "birthYear": "1899",
+      "birthDate": "10 Dec 1899",
+      "occupation": "Unpaid Domestic Duties",
+      "isSelected": true
+    },
+    {
+      "isClosed": true
+    }
+  ],
+  "maritalStatus": "married",
+  "collectionData": {
+    "id": "2836130"
+  },
+  "hasValidData": true
+}

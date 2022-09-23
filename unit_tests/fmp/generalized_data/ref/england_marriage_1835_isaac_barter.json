@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Barter",
+    "forenames": "Isaac"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Barton Stacey, Hampshire, England"
+  },
+  "eventDate": {
+    "dateString": "30 Aug 1835",
+    "yearString": "1835"
+  },
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "Fanny",
+        "lastName": "Mack"
+      },
+      "marriageDate": {
+        "dateString": "30 Aug 1835",
+        "yearString": "1835"
+      },
+      "marriagePlace": {
+        "country": "England",
+        "placeString": "Barton Stacey, Hampshire, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "Hampshire Marriages"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,38 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "start_year": 1890,
+      "end_year": 1896,
+      "ba": true,
+      "first_name": "Harold Edington",
+      "last_name": "Dickens",
+      "search_query_fuzzy": true,
+      "search_query_chapman_codes": "SOM"
+    }
+  },
+  "marriage": {
+    "fieldData": {
+      "utf8": true,
+      "start_year": 1904,
+      "end_year": 1988,
+      "ma": true,
+      "first_name": "Harold Edington",
+      "last_name": "Dickens",
+      "search_query_fuzzy": true,
+      "search_query_chapman_codes": "SOM"
+    }
+  },
+  "burial": {
+    "fieldData": {
+      "utf8": true,
+      "start_year": 1982,
+      "end_year": 1988,
+      "bu": true,
+      "first_name": "Harold Edington",
+      "last_name": "Dickens",
+      "search_query_fuzzy": true,
+      "search_query_chapman_codes": "SFK"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Littlemore",
+    "forenames": "Moses"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Davenham, Cheshire, England"
+  },
+  "eventDate": {
+    "dateString": "19 Feb 1799",
+    "yearString": "1799"
+  },
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "Mary",
+        "lastName": "Lamb"
+      },
+      "marriageDate": {
+        "dateString": "19 Feb 1799",
+        "yearString": "1799"
+      },
+      "marriagePlace": {
+        "country": "England",
+        "placeString": "Davenham, Cheshire, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "Cheshire Diocese Of Chester Parish Marriages 1538-1910"
+  },
+  "hasValidData": true
+}

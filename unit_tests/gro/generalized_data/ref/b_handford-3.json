@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1843",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Handford",
+    "forenames": "William"
+  },
+  "lastNameAtBirth": "Handford",
+  "birthDate": {
+    "yearString": "1843",
+    "quarter": 3
+  },
+  "mothersMaidenName": "Dunster",
+  "personGender": "male",
+  "registrationDistrict": "Torrington Union",
+  "collectionData": {
+    "id": "births",
+    "volume": "10",
+    "page": "277"
+  },
+  "hasValidData": true
+}

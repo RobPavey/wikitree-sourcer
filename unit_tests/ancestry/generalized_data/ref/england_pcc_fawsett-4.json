@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "recordType": "Will",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Richard Fawssett"
+  },
+  "deathDate": {
+    "qualifier": 2,
+    "yearString": "1781"
+  },
+  "eventDate": {
+    "dateString": "12 Nov 1781"
+  },
+  "recordSubtype": "Probate",
+  "deathPlace": {
+    "placeString": "Castle Rising, Norfolk, England"
+  },
+  "lastNameAtDeath": "Fawssett",
+  "collectionData": {
+    "id": "5111"
+  },
+  "hasValidData": true
+}

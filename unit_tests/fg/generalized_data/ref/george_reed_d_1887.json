@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "14 Sep 1887"
+  },
+  "eventPlace": {
+    "placeString": "West Brompton, Royal Borough of Kensington and Chelsea, Greater London, England",
+    "streetAddress": "Brompton Cemetery"
+  },
+  "name": {
+    "name": "George German Reed"
+  },
+  "lastNameAtDeath": "Reed",
+  "deathDate": {
+    "dateString": "14 Sep 1887"
+  },
+  "ageAtDeath": "7 months",
+  "birthDate": {
+    "dateString": "19 Jan 1887"
+  },
+  "birthPlace": {
+    "placeString": "Chelsea Harbour, London Borough of Hammersmith and Fulham, Greater London, England"
+  },
+  "hasValidData": true
+}

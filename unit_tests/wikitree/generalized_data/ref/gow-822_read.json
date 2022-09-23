@@ -1,0 +1,65 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Winifred",
+    "middleNames": "Agnes",
+    "lastName": "Gow"
+  },
+  "lastNameAtBirth": "Gow",
+  "lastNameAtDeath": "Phillips",
+  "mothersMaidenName": "Holmes",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "19 Sep 1895",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "1989",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Greenock, Renfrewshire, Scotland, United Kingdom"
+  },
+  "deathPlace": {
+    "placeString": "Edinburgh, Scotland, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Gow",
+        "lastName": "Gow",
+        "forenames": "William"
+      },
+      "lastNameAtBirth": "Gow",
+      "lastNameAtDeath": "Gow"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Jane",
+        "lastName": "Holmes",
+        "name": "Jane Holmes"
+      },
+      "lastNameAtBirth": "Holmes",
+      "lastNameAtDeath": "Gow"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Alexander Roy H Phillips",
+        "lastName": "Phillips",
+        "forenames": "Alexander Roy H"
+      },
+      "lastNameAtBirth": "Phillips",
+      "lastNameAtDeath": "Phillips",
+      "marriageDate": {
+        "dateString": "1923"
+      },
+      "marriagePlace": {
+        "placeString": "Greenock, Renfrewshire, Scotland, United Kingdom"
+      }
+    }
+  ],
+  "hasValidData": true
+}

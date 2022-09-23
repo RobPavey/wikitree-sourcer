@@ -1,0 +1,25 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=60496&h=3995291",
+  "pageType": "record",
+  "dbId": "60496",
+  "recordId": "3995291",
+  "ancestryTemplate": "{{Ancestry Record|60496|3995291}}",
+  "domain": "com",
+  "titleName": "James Halliwell",
+  "titleCollection": "Cheshire, England, Select Bishop's Transcripts, 1576-1933",
+  "recordData": {
+    "Name": "James Halliwell",
+    "Gender": "Male",
+    "Birth Place": "of Grappenhall",
+    "Marriage Date": "17 Feb 1828",
+    "Marriage Place": "Grappenhall, Cheshire, England",
+    "Spouse": "Martha Drinkwater",
+    "FHL Film Number": "1655824"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=General-60496&indiv=try&h=3995290"
+  },
+  "sourceInformation": "Ancestry.com. Cheshire, England, Select Bishop's Transcripts, 1576-1933 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013.",
+  "originalData": "England, Cheshire Bishop's Transcripts, 1576-1933. Salt Lake City, Utah: FamilySearch, 2013.",
+  "sourceDescription": "This collection includes christening, marriage, and burial entries from Cheshire, England bishop’s transcript parish registers. Learn more..."
+}

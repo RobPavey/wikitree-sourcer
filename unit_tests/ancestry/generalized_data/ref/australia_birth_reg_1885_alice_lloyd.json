@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Alice Lloyd"
+  },
+  "registrationDistrict": "Victoria",
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "lastNameAtBirth": "Lloyd",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Thomas William Lloyd"
+      }
+    }
+  },
+  "mothersMaidenName": "Folkes",
+  "collectionData": {
+    "id": "61648"
+  },
+  "hasValidData": true
+}

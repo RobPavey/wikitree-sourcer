@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Campbell",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "ageAtEvent": "22",
+  "registrationDistrict": "Ballachulish and Corran Of Ardgour",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Argyll",
+    "placeString": "Ballachulish and Corran Of Ardgour, Argyll, Scotland"
+  },
+  "collectionData": {
+    "id": "census1851",
+    "registrationNumber": "506",
+    "enumerationDistrict": "6",
+    "page": "14"
+  },
+  "hasValidData": true
+}

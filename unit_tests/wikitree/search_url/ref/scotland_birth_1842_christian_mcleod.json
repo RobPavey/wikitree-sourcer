@@ -1,0 +1,30 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "simpleIdFields": {
+        "wpFirst": "Christian",
+        "wpLast": "Mcleod"
+      },
+      "simpleNameFields": {
+        "wpBirthDate": "25 Aug 1842",
+        "birth_location": "Rayne, Aberdeen, Scotland",
+        "father_first_name": "William",
+        "father_last_name": "Mcleod",
+        "mother_first_name": "Helen",
+        "mother_last_name": "White"
+      },
+      "radioFields": [
+        {
+          "name": "gender",
+          "value": "Female"
+        },
+        {
+          "name": "date_spread",
+          "value": "2"
+        }
+      ],
+      "options": {}
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "George was registered to vote in 1936 in Chinchilla, Maranoa, Queensland, Australia.<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1936 Electoral Register''': \"Australia, Electoral Rolls, 1903-1980\"<br/>Australian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)<br/>\nName: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "George was registered to vote in 1936 in Chinchilla, Maranoa, Queensland, Australia.<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)<br/>\nName: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1936 Electoral Register''': \"Australia, Electoral Rolls, 1903-1980\"<br/>Australian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)<br/>Name: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)<br/>\nName: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "George was registered to vote in 1936 in Chinchilla, Maranoa, Queensland, Australia.<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)<br/>\nName: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1936 Electoral Register''': \"Australia, Electoral Rolls, 1903-1980\"<br/>Australian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)<br/>Name: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || George Dougald Stemm\n|-\n| Gender || Male\n|-\n| Electoral Date || 1936\n|-\n| Electoral Place || Chinchilla, Maranoa, Queensland, Australia\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "George was registered to vote in 1936 in Chinchilla, Maranoa, Queensland, Australia.<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || George Dougald Stemm\n|-\n| Gender || Male\n|-\n| Electoral Date || 1936\n|-\n| Electoral Place || Chinchilla, Maranoa, Queensland, Australia\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1936 Electoral Register''': \"Australia, Electoral Rolls, 1903-1980\"<br/>Australian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)<br/>Name: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Australia, Electoral Rolls, 1903-1980,\" database, ({{Ancestry Record|1207|2135557}} : accessed 6 May 2021), Name George Dougald Stemm, Gender Male, Electoral Date 1936, Electoral Place Chinchilla, Maranoa, Queensland, Australia; citing Australian Electoral Commission, Canberra, Australia, Electoral Rolls.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "George was registered to vote in 1936 in Chinchilla, Maranoa, Queensland, Australia.<ref>\"Australia, Electoral Rolls, 1903-1980,\" database, ({{Ancestry Record|1207|2135557}} : accessed 6 May 2021), Name George Dougald Stemm, Gender Male, Electoral Date 1936, Electoral Place Chinchilla, Maranoa, Queensland, Australia; citing Australian Electoral Commission, Canberra, Australia, Electoral Rolls.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Australia, Electoral Rolls, 1903-1980,\" database, ({{Ancestry Record|1207|2135557}} : accessed 6 May 2021), Name George Dougald Stemm, Gender Male, Electoral Date 1936, Electoral Place Chinchilla, Maranoa, Queensland, Australia; citing Australian Electoral Commission, Canberra, Australia, Electoral Rolls.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1936 Electoral Register'':\n\"Australia, Electoral Rolls, 1903-1980\", database, \nAustralian Electoral Commission, Canberra, Australia, Electoral Rolls, \n({{Ancestry Record|1207|2135557}} : accessed 6 May 2021), \nName: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "George was registered to vote in 1936 in Chinchilla, Maranoa, Queensland, Australia.<ref>\n''1936 Electoral Register'':\n\"Australia, Electoral Rolls, 1903-1980\", database, \nAustralian Electoral Commission, Canberra, Australia, Electoral Rolls, \n({{Ancestry Record|1207|2135557}} : accessed 6 May 2021), \nName: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1936 Electoral Register'': \"Australia, Electoral Rolls, 1903-1980\", database, Australian Electoral Commission, Canberra, Australia, Electoral Rolls, ({{Ancestry Record|1207|2135557}} : accessed 6 May 2021), Name: George Dougald Stemm; Gender: Male; Electoral Date: 1936; Electoral Place: Chinchilla, Maranoa, Queensland, Australia.",
+    "type": "source"
+  }
+}

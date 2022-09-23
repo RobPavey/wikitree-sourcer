@@ -1,0 +1,29 @@
+{
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Harold Baker"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "11 Apr 1956"
+  },
+  "eventPlace": {
+    "placeString": "Hampton, Virginia, USA"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Carolyn Waugh Baker"
+      },
+      "marriageDate": {
+        "dateString": "6 Feb 1943"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "General-9280"
+  },
+  "hasValidData": true
+}

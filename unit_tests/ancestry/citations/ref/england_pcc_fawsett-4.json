@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Will''':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>\nThe National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>\n{{Ancestry Record|5111|413359}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Richard died in about 1781 in Castle Rising, Norfolk, England. Their will passed probate on 12 November 1781.<ref>\n'''Will''':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>\nThe National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>\n{{Ancestry Record|5111|413359}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Will''': \"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>The National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>{{Ancestry Record|5111|413359}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Will''':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>\nThe National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>\n{{Ancestry Record|5111|413359}} (accessed 6 May 2021)<br/>\nWill of Richard Fawssett, granted probate on 12 Nov 1781. Died about 1781 in Castle Rising, Norfolk, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Richard died in about 1781 in Castle Rising, Norfolk, England. Their will passed probate on 12 November 1781.<ref>\n'''Will''':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>\nThe National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>\n{{Ancestry Record|5111|413359}} (accessed 6 May 2021)<br/>\nWill of Richard Fawssett, granted probate on 12 Nov 1781. Died about 1781 in Castle Rising, Norfolk, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Will''': \"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>The National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>{{Ancestry Record|5111|413359}} (accessed 6 May 2021)<br/>Will of Richard Fawssett, granted probate on 12 Nov 1781. Died about 1781 in Castle Rising, Norfolk, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Will''':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>\nThe National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>\n{{Ancestry Record|5111|413359}} (accessed 6 May 2021)<br/>\nName: Richard Fawssett; Residence: Castle Rising, Norfolk, England; Probate Date: 12 Nov 1781; Death Year: Abt 1781.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Richard died in about 1781 in Castle Rising, Norfolk, England. Their will passed probate on 12 November 1781.<ref>\n'''Will''':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>\nThe National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>\n{{Ancestry Record|5111|413359}} (accessed 6 May 2021)<br/>\nName: Richard Fawssett; Residence: Castle Rising, Norfolk, England; Probate Date: 12 Nov 1781; Death Year: Abt 1781.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Will''': \"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>The National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>{{Ancestry Record|5111|413359}} (accessed 6 May 2021)<br/>Name: Richard Fawssett; Residence: Castle Rising, Norfolk, England; Probate Date: 12 Nov 1781; Death Year: Abt 1781.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Will''':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>\nThe National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>\n{{Ancestry Record|5111|413359}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Richard Fawssett\n|-\n| Residence || Castle Rising, Norfolk, England\n|-\n| Probate Date || 12 Nov 1781\n|-\n| Death Year || Abt 1781\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Richard died in about 1781 in Castle Rising, Norfolk, England. Their will passed probate on 12 November 1781.<ref>\n'''Will''':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>\nThe National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>\n{{Ancestry Record|5111|413359}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Richard Fawssett\n|-\n| Residence || Castle Rising, Norfolk, England\n|-\n| Probate Date || 12 Nov 1781\n|-\n| Death Year || Abt 1781\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Will''': \"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\"<br/>The National Archives; Kew, Surrey, England; Records of the Prerogative Court of Canterbury, Series PROB 11; Class: PROB 11; Piece: 1083<br/>{{Ancestry Record|5111|413359}} (accessed 6 May 2021)<br/>Name: Richard Fawssett; Residence: Castle Rising, Norfolk, England; Probate Date: 12 Nov 1781; Death Year: Abt 1781.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858,\" database, ({{Ancestry Record|5111|413359}} : accessed 6 May 2021), Will of Richard Fawssett, granted probate on 12 Nov 1781. Died about 1781 in Castle Rising, Norfolk, England; citing The National Archives, Kew, Surrey, England, Records of the Prerogative Court of Canterbury, Series PROB 11, Class PROB 11, Piece 1083.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Richard died in about 1781 in Castle Rising, Norfolk, England. Their will passed probate on 12 November 1781.<ref>\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858,\" database, ({{Ancestry Record|5111|413359}} : accessed 6 May 2021), Will of Richard Fawssett, granted probate on 12 Nov 1781. Died about 1781 in Castle Rising, Norfolk, England; citing The National Archives, Kew, Surrey, England, Records of the Prerogative Court of Canterbury, Series PROB 11, Class PROB 11, Piece 1083.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858,\" database, ({{Ancestry Record|5111|413359}} : accessed 6 May 2021), Will of Richard Fawssett, granted probate on 12 Nov 1781. Died about 1781 in Castle Rising, Norfolk, England; citing The National Archives, Kew, Surrey, England, Records of the Prerogative Court of Canterbury, Series PROB 11, Class PROB 11, Piece 1083.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Will'':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\", database, \nThe National Archives, Kew, Surrey, England, Records of the Prerogative Court of Canterbury, Series PROB 11, Class PROB 11, Piece 1083, \n({{Ancestry Record|5111|413359}} : accessed 6 May 2021), \nName: Richard Fawssett; Residence: Castle Rising, Norfolk, England; Probate Date: 12 Nov 1781; Death Year: Abt 1781.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Richard died in about 1781 in Castle Rising, Norfolk, England. Their will passed probate on 12 November 1781.<ref>\n''Will'':\n\"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\", database, \nThe National Archives, Kew, Surrey, England, Records of the Prerogative Court of Canterbury, Series PROB 11, Class PROB 11, Piece 1083, \n({{Ancestry Record|5111|413359}} : accessed 6 May 2021), \nName: Richard Fawssett; Residence: Castle Rising, Norfolk, England; Probate Date: 12 Nov 1781; Death Year: Abt 1781.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Will'': \"England & Wales, Prerogative Court of Canterbury Wills, 1384-1858\", database, The National Archives, Kew, Surrey, England, Records of the Prerogative Court of Canterbury, Series PROB 11, Class PROB 11, Piece 1083, ({{Ancestry Record|5111|413359}} : accessed 6 May 2021), Name: Richard Fawssett; Residence: Castle Rising, Norfolk, England; Probate Date: 12 Nov 1781; Death Year: Abt 1781.",
+    "type": "source"
+  }
+}

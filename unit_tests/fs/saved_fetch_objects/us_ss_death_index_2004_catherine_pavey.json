@@ -1,0 +1,296 @@
+{
+  "id" : "r_9059609200",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:DD5L-S6Z?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:DD5L-S6Z?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:DD5L-S6Z"
+    }
+  },
+  "description" : "#sd_p_13124378905",
+  "persons" : [ {
+    "id" : "p_13124378905",
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/VMSB-3WR?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/DD5L-S6Z?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VMSB-3WR" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Catherine V Pavey",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Catherine V",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "CATHERINE"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "MIDDLE_NAME_ORIG",
+              "text" : "V"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Catherine"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "MIDDLE_NAME",
+              "text" : "V"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Pavey",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "PAVEY"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Pavey"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Catherine V Pavey"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "01 Sep 2004",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "DEATH_DATE_ORIG",
+            "text" : "09012004"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "DEATH_DATE_STD",
+            "text" : "01 Sep 2004"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Columbus, Bartholomew, Indiana",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "LAST_RESIDENCE",
+            "text" : "Columbus, Bartholomew, Indiana"
+          } ]
+        } ]
+      },
+      "primary" : true
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "08 Nov 1921",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "BIRTH_DATE_ORIG",
+            "text" : "11081921"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "BIRTH_DATE_STD",
+            "text" : "08 Nov 1921"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "DEATH_AGE",
+        "text" : "83"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/VerifyOrProofCode",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "VERIFY_OR_PROOF_CODE",
+        "text" : "V"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ZipCodeOfLastResidence",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "ZIP_CODE_LAST_RESIDENCE",
+        "text" : "47201"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/DeathDateVerification",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "DEATH_DATE_VERIFICATION",
+        "text" : "01 Sep 2004 verified by family"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/PlaceOfIssuance",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "STATE_OF_ISSUANCE",
+        "text" : "Indiana"
+      } ]
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1202535",
+    "about" : "https://api.familysearch.org/platform/records/collections/1202535",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223693266,
+    "modified" : 1611602785280,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "United States of America",
+        "description" : "#place_1"
+      },
+      "temporal" : {
+        "original" : "1875/2014",
+        "formal" : "1875/2014"
+      },
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "United States Social Security Death Index"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1202535" ]
+    }
+  }, {
+    "id" : "src_r_9059609200",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:DD5L-S6Z",
+    "componentOf" : {
+      "description" : "#sd_c_1202535"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1392069170935,
+    "modified" : 1611602785280,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Columbus, Bartholomew, Indiana"
+      },
+      "temporal" : {
+        "original" : "01 Sep 2004"
+      },
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "citations" : [ {
+      "value" : "\"United States Social Security Death Index,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:DD5L-S6Z : 11 January 2021), Catherine V Pavey, 01 Sep 2004; citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing)."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Catherine V Pavey, \"United States Social Security Death Index\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:DD5L-S6Z" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1202535?arkName=1:2:DD5L-S6Z"
+    }
+  }, {
+    "id" : "sd_p_13124378905",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VMSB-3WR",
+    "componentOf" : {
+      "description" : "#src_r_9059609200"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"United States Social Security Death Index,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:VMSB-3WR : 11 January 2021), Catherine V Pavey, 01 Sep 2004; citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing)."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Catherine V Pavey, \"United States Social Security Death Index\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VMSB-3WR" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "18177"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "collection:00000000000000001260,easyId:SSDI:316147258"
+    } ]
+  } ]
+}

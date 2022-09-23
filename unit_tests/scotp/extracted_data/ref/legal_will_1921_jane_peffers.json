@@ -1,0 +1,36 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-wills-testaments&surname=Peffers&surname_so=exact&forename=Jane&forename_so=exact&from_year=1920&to_year=1923&record_type=wills_testaments",
+  "success": true,
+  "numResultsOnPage": 3,
+  "recordData": {
+    "Surname": "Peffers",
+    "Forename": "Jane",
+    "Date": "14/6/1921",
+    "Description": "or Wilson 266 Bonnington Road, Leith, widow, d. 06/04/1921 at Leith, testate.",
+    "Type": "Eik granted 25/06/ to above Executors.",
+    "Court": "Edinburgh Sheriff Court Inventories ",
+    "Reference Number": "SC70/1/665"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_wills_testaments/707544?image=1&return_row=0",
+  "pageHeader": "Legal records - Wills and testaments",
+  "searchCriteria": {
+    "Surname": "Peffers",
+    "Surname Option": "Exact",
+    "Forename": "Jane",
+    "Forename Option": "Exact",
+    "From_year": "1920",
+    "To_year": "1923"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "legal",
+    "dl_rec": "legal-wills-testaments",
+    "surname": "Peffers",
+    "surname_so": "exact",
+    "forename": "Jane",
+    "forename_so": "exact",
+    "from_year": "1920",
+    "to_year": "1923",
+    "record_type": "wills_testaments"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "sourceOfData": "freecen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventPlace": {
+    "placeString": "Launceston, Cornwall, England"
+  },
+  "registrationDistrict": "Launceston",
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "name": {
+    "lastName": "Jonas",
+    "forenames": "Elizabeth S"
+  },
+  "ageAtEvent": "20",
+  "birthPlace": {
+    "placeString": "Lewannick, Cornwall, England"
+  },
+  "relationshipToHead": "servant",
+  "maritalStatus": "single",
+  "personGender": "female",
+  "occupation": "Cook Domestic",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William T Pethick",
+      "birthPlace": "Devonport, Devon",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "35",
+      "occupation": "Grocer Shopkeeper"
+    },
+    {
+      "name": "Florence J Pethick",
+      "birthPlace": "Devonport, Devon",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "29"
+    },
+    {
+      "name": "Marjorie Q Pethick",
+      "birthPlace": "Devonport, Devon",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "5"
+    },
+    {
+      "name": "Arthur T Pethick",
+      "birthPlace": "Devonport, Devon",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "4"
+    },
+    {
+      "name": "Milly E Pethick",
+      "birthPlace": "Devonport, Devon",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "3"
+    },
+    {
+      "name": "Florence J Pethick",
+      "birthPlace": "Devonport, Devon",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "1"
+    },
+    {
+      "name": "Nathaniel H Reed",
+      "birthPlace": "Lewannick, Cornwall",
+      "relationship": "boarder",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "22",
+      "occupation": "Grocers Assistant"
+    },
+    {
+      "name": "Samuel J Buckler",
+      "birthPlace": "Brixham, Devon",
+      "relationship": "boarder",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "19",
+      "occupation": "Grocers Assistant"
+    },
+    {
+      "name": "Claude H Matthews",
+      "birthPlace": "Tresmeer, Cornwall",
+      "relationship": "boarder",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "17",
+      "occupation": "Grocers Apprentice"
+    },
+    {
+      "name": "Robert Jonas",
+      "birthPlace": "St Stephens, Cornwall",
+      "relationship": "boarder",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "15",
+      "occupation": "Grocers Apprentice"
+    },
+    {
+      "name": "Elizabeth S Jonas",
+      "birthPlace": "Lewannick, Cornwall",
+      "relationship": "servant",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "20",
+      "occupation": "Cook Domestic",
+      "isSelected": true
+    },
+    {
+      "name": "Beatrice A Alford",
+      "birthPlace": "Milton Abbot, Devon",
+      "relationship": "servant",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "20",
+      "occupation": "Housemaid Domestic"
+    },
+    {
+      "name": "Rosina M Drew",
+      "birthPlace": "St Ive, Cornwall",
+      "relationship": "servant",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "20",
+      "occupation": "Nurse Domestic"
+    }
+  ],
+  "collectionData": {
+    "id": "1901",
+    "piece": "RG13_2183",
+    "folio": "6",
+    "page": "3"
+  },
+  "hasValidData": true
+}

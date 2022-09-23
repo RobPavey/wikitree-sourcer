@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Ann Wyatt"
+  },
+  "birthDate": {
+    "dateString": "24 Mar 1838",
+    "yearString": "1838"
+  },
+  "eventDate": {
+    "dateString": "29 Apr 1838",
+    "yearString": "1838"
+  },
+  "eventPlace": {
+    "placeString": "Witton-cum-Twambrooks, Cheshire, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Thomas Wyatt",
+        "forenames": "Thomas",
+        "lastName": "Wyatt"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Sarah",
+        "forenames": "Sarah"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1614792"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,969 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B881D544270E748700F218CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D543270E748700F218CF /* AppDelegate.swift */; };
+		B881D546270E748700F218CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D545270E748700F218CF /* SceneDelegate.swift */; };
+		B881D549270E748700F218CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B881D547270E748700F218CF /* LaunchScreen.storyboard */; };
+		B881D54C270E748700F218CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B881D54A270E748700F218CF /* Main.storyboard */; };
+		B881D555270E748700F218CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D554270E748700F218CF /* AppDelegate.swift */; };
+		B881D558270E748700F218CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B881D556270E748700F218CF /* Main.storyboard */; };
+		B881D560270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B881D55F270E748700F218CF /* WikiTree Sourcer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B881D56A270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B881D569270E748700F218CF /* WikiTree Sourcer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B881D570270E748700F218CF /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = B881D533270E748400F218CF /* Main.html */; };
+		B881D571270E748700F218CF /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = B881D533270E748400F218CF /* Main.html */; };
+		B881D572270E748700F218CF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B881D535270E748400F218CF /* Icon.png */; };
+		B881D573270E748700F218CF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B881D535270E748400F218CF /* Icon.png */; };
+		B881D574270E748700F218CF /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = B881D536270E748400F218CF /* Style.css */; };
+		B881D575270E748700F218CF /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = B881D536270E748400F218CF /* Style.css */; };
+		B881D576270E748700F218CF /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = B881D537270E748400F218CF /* Script.js */; };
+		B881D577270E748700F218CF /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = B881D537270E748400F218CF /* Script.js */; };
+		B881D578270E748700F218CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D538270E748400F218CF /* ViewController.swift */; };
+		B881D579270E748700F218CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D538270E748400F218CF /* ViewController.swift */; };
+		B881D57A270E748700F218CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B881D539270E748700F218CF /* Assets.xcassets */; };
+		B881D57B270E748700F218CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B881D539270E748700F218CF /* Assets.xcassets */; };
+		B881D57C270E748700F218CF /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D53B270E748700F218CF /* SafariWebExtensionHandler.swift */; };
+		B881D57D270E748700F218CF /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D53B270E748700F218CF /* SafariWebExtensionHandler.swift */; };
+		B89CDDB3271756F600ADA220 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B89CDD94271756F500ADA220 /* images */; };
+		B89CDDB4271756F600ADA220 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B89CDD94271756F500ADA220 /* images */; };
+		B89CDDB5271756F600ADA220 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B89CDD94271756F500ADA220 /* images */; };
+		B89CDDB6271756F600ADA220 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B89CDD94271756F500ADA220 /* images */; };
+		B8B9A78027F63672008D90DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B8B9A77F27F63672008D90DE /* manifest.json */; };
+		B8B9A78127F63672008D90DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B8B9A77F27F63672008D90DE /* manifest.json */; };
+		B8B9A78227F63672008D90DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B8B9A77F27F63672008D90DE /* manifest.json */; };
+		B8B9A78327F63672008D90DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B8B9A77F27F63672008D90DE /* manifest.json */; };
+		B8E484AA28026B5D0027CE35 /* base in Resources */ = {isa = PBXBuildFile; fileRef = B8E484A928026B5D0027CE35 /* base */; };
+		B8E484AB28026B5D0027CE35 /* base in Resources */ = {isa = PBXBuildFile; fileRef = B8E484A928026B5D0027CE35 /* base */; };
+		B8E484AC28026B5D0027CE35 /* base in Resources */ = {isa = PBXBuildFile; fileRef = B8E484A928026B5D0027CE35 /* base */; };
+		B8E484AD28026B5D0027CE35 /* base in Resources */ = {isa = PBXBuildFile; fileRef = B8E484A928026B5D0027CE35 /* base */; };
+		B8E484AF28026B830027CE35 /* site in Resources */ = {isa = PBXBuildFile; fileRef = B8E484AE28026B830027CE35 /* site */; };
+		B8E484B028026B830027CE35 /* site in Resources */ = {isa = PBXBuildFile; fileRef = B8E484AE28026B830027CE35 /* site */; };
+		B8E484B128026B830027CE35 /* site in Resources */ = {isa = PBXBuildFile; fileRef = B8E484AE28026B830027CE35 /* site */; };
+		B8E484B228026B830027CE35 /* site in Resources */ = {isa = PBXBuildFile; fileRef = B8E484AE28026B830027CE35 /* site */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B881D561270E748700F218CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B881D52D270E748400F218CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B881D55E270E748700F218CF;
+			remoteInfo = "WikiTree Sourcer Extension (iOS)";
+		};
+		B881D56B270E748700F218CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B881D52D270E748400F218CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B881D568270E748700F218CF;
+			remoteInfo = "WikiTree Sourcer Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B881D583270E748700F218CF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B881D560270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D58A270E748700F218CF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B881D56A270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B881D534270E748400F218CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		B881D535270E748400F218CF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B881D536270E748400F218CF /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		B881D537270E748400F218CF /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		B881D538270E748400F218CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B881D539270E748700F218CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B881D53B270E748700F218CF /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		B881D540270E748700F218CF /* WikiTree Sourcer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WikiTree Sourcer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B881D543270E748700F218CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B881D545270E748700F218CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B881D548270E748700F218CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B881D54B270E748700F218CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B881D54D270E748700F218CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B881D552270E748700F218CF /* WikiTree Sourcer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WikiTree Sourcer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B881D554270E748700F218CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B881D557270E748700F218CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B881D559270E748700F218CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B881D55A270E748700F218CF /* WikiTree Sourcer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WikiTree Sourcer.entitlements"; sourceTree = "<group>"; };
+		B881D55F270E748700F218CF /* WikiTree Sourcer Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WikiTree Sourcer Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B881D564270E748700F218CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B881D569270E748700F218CF /* WikiTree Sourcer Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WikiTree Sourcer Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B881D56E270E748700F218CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B881D56F270E748700F218CF /* WikiTree Sourcer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WikiTree Sourcer.entitlements"; sourceTree = "<group>"; };
+		B89CDD94271756F500ADA220 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../../../../extension/images; sourceTree = "<group>"; };
+		B8B9A77F27F63672008D90DE /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = ../../manifest.json; sourceTree = "<group>"; };
+		B8E484A928026B5D0027CE35 /* base */ = {isa = PBXFileReference; lastKnownFileType = folder; name = base; path = ../../../../extension/base; sourceTree = "<group>"; };
+		B8E484AE28026B830027CE35 /* site */ = {isa = PBXFileReference; lastKnownFileType = folder; name = site; path = ../../../../extension/site; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B881D53D270E748700F218CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D54F270E748700F218CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D55C270E748700F218CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D566270E748700F218CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B881D52C270E748400F218CF = {
+			isa = PBXGroup;
+			children = (
+				B881D531270E748400F218CF /* Shared (App) */,
+				B881D53A270E748700F218CF /* Shared (Extension) */,
+				B881D542270E748700F218CF /* iOS (App) */,
+				B881D553270E748700F218CF /* macOS (App) */,
+				B881D563270E748700F218CF /* iOS (Extension) */,
+				B881D56D270E748700F218CF /* macOS (Extension) */,
+				B881D541270E748700F218CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B881D531270E748400F218CF /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				B881D538270E748400F218CF /* ViewController.swift */,
+				B881D539270E748700F218CF /* Assets.xcassets */,
+				B881D532270E748400F218CF /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		B881D532270E748400F218CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B881D533270E748400F218CF /* Main.html */,
+				B881D535270E748400F218CF /* Icon.png */,
+				B881D536270E748400F218CF /* Style.css */,
+				B881D537270E748400F218CF /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B881D53A270E748700F218CF /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				B881D58E270E748900F218CF /* Resources */,
+				B881D53B270E748700F218CF /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		B881D541270E748700F218CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B881D540270E748700F218CF /* WikiTree Sourcer.app */,
+				B881D552270E748700F218CF /* WikiTree Sourcer.app */,
+				B881D55F270E748700F218CF /* WikiTree Sourcer Extension.appex */,
+				B881D569270E748700F218CF /* WikiTree Sourcer Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B881D542270E748700F218CF /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				B881D543270E748700F218CF /* AppDelegate.swift */,
+				B881D545270E748700F218CF /* SceneDelegate.swift */,
+				B881D547270E748700F218CF /* LaunchScreen.storyboard */,
+				B881D54A270E748700F218CF /* Main.storyboard */,
+				B881D54D270E748700F218CF /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		B881D553270E748700F218CF /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				B881D554270E748700F218CF /* AppDelegate.swift */,
+				B881D556270E748700F218CF /* Main.storyboard */,
+				B881D559270E748700F218CF /* Info.plist */,
+				B881D55A270E748700F218CF /* WikiTree Sourcer.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		B881D563270E748700F218CF /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				B881D564270E748700F218CF /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		B881D56D270E748700F218CF /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				B881D56E270E748700F218CF /* Info.plist */,
+				B881D56F270E748700F218CF /* WikiTree Sourcer.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		B881D58E270E748900F218CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8E484AE28026B830027CE35 /* site */,
+				B8E484A928026B5D0027CE35 /* base */,
+				B89CDD94271756F500ADA220 /* images */,
+				B8B9A77F27F63672008D90DE /* manifest.json */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B881D53F270E748700F218CF /* WikiTree Sourcer (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B881D584270E748700F218CF /* Build configuration list for PBXNativeTarget "WikiTree Sourcer (iOS)" */;
+			buildPhases = (
+				B881D53C270E748700F218CF /* Sources */,
+				B881D53D270E748700F218CF /* Frameworks */,
+				B881D53E270E748700F218CF /* Resources */,
+				B881D583270E748700F218CF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B881D562270E748700F218CF /* PBXTargetDependency */,
+			);
+			name = "WikiTree Sourcer (iOS)";
+			productName = "WikiTree Sourcer (iOS)";
+			productReference = B881D540270E748700F218CF /* WikiTree Sourcer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B881D551270E748700F218CF /* WikiTree Sourcer (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B881D58B270E748700F218CF /* Build configuration list for PBXNativeTarget "WikiTree Sourcer (macOS)" */;
+			buildPhases = (
+				B881D54E270E748700F218CF /* Sources */,
+				B881D54F270E748700F218CF /* Frameworks */,
+				B881D550270E748700F218CF /* Resources */,
+				B881D58A270E748700F218CF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B881D56C270E748700F218CF /* PBXTargetDependency */,
+			);
+			name = "WikiTree Sourcer (macOS)";
+			productName = "WikiTree Sourcer (macOS)";
+			productReference = B881D552270E748700F218CF /* WikiTree Sourcer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B881D55E270E748700F218CF /* WikiTree Sourcer Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B881D580270E748700F218CF /* Build configuration list for PBXNativeTarget "WikiTree Sourcer Extension (iOS)" */;
+			buildPhases = (
+				B881D55B270E748700F218CF /* Sources */,
+				B881D55C270E748700F218CF /* Frameworks */,
+				B881D55D270E748700F218CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WikiTree Sourcer Extension (iOS)";
+			productName = "WikiTree Sourcer Extension (iOS)";
+			productReference = B881D55F270E748700F218CF /* WikiTree Sourcer Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B881D568270E748700F218CF /* WikiTree Sourcer Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B881D587270E748700F218CF /* Build configuration list for PBXNativeTarget "WikiTree Sourcer Extension (macOS)" */;
+			buildPhases = (
+				B881D565270E748700F218CF /* Sources */,
+				B881D566270E748700F218CF /* Frameworks */,
+				B881D567270E748700F218CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WikiTree Sourcer Extension (macOS)";
+			productName = "WikiTree Sourcer Extension (macOS)";
+			productReference = B881D569270E748700F218CF /* WikiTree Sourcer Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B881D52D270E748400F218CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					B881D53F270E748700F218CF = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					B881D551270E748700F218CF = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					B881D55E270E748700F218CF = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					B881D568270E748700F218CF = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = B881D530270E748400F218CF /* Build configuration list for PBXProject "WikiTree Sourcer" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B881D52C270E748400F218CF;
+			productRefGroup = B881D541270E748700F218CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B881D53F270E748700F218CF /* WikiTree Sourcer (iOS) */,
+				B881D551270E748700F218CF /* WikiTree Sourcer (macOS) */,
+				B881D55E270E748700F218CF /* WikiTree Sourcer Extension (iOS) */,
+				B881D568270E748700F218CF /* WikiTree Sourcer Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B881D53E270E748700F218CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B881D572270E748700F218CF /* Icon.png in Resources */,
+				B881D549270E748700F218CF /* LaunchScreen.storyboard in Resources */,
+				B881D570270E748700F218CF /* Main.html in Resources */,
+				B8B9A78027F63672008D90DE /* manifest.json in Resources */,
+				B8E484AA28026B5D0027CE35 /* base in Resources */,
+				B881D576270E748700F218CF /* Script.js in Resources */,
+				B881D57A270E748700F218CF /* Assets.xcassets in Resources */,
+				B881D54C270E748700F218CF /* Main.storyboard in Resources */,
+				B881D574270E748700F218CF /* Style.css in Resources */,
+				B89CDDB3271756F600ADA220 /* images in Resources */,
+				B8E484AF28026B830027CE35 /* site in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D550270E748700F218CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89CDDB4271756F600ADA220 /* images in Resources */,
+				B8E484B028026B830027CE35 /* site in Resources */,
+				B8E484AB28026B5D0027CE35 /* base in Resources */,
+				B881D573270E748700F218CF /* Icon.png in Resources */,
+				B881D575270E748700F218CF /* Style.css in Resources */,
+				B881D558270E748700F218CF /* Main.storyboard in Resources */,
+				B8B9A78127F63672008D90DE /* manifest.json in Resources */,
+				B881D577270E748700F218CF /* Script.js in Resources */,
+				B881D57B270E748700F218CF /* Assets.xcassets in Resources */,
+				B881D571270E748700F218CF /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D55D270E748700F218CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8B9A78227F63672008D90DE /* manifest.json in Resources */,
+				B8E484B128026B830027CE35 /* site in Resources */,
+				B89CDDB5271756F600ADA220 /* images in Resources */,
+				B8E484AC28026B5D0027CE35 /* base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D567270E748700F218CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8B9A78327F63672008D90DE /* manifest.json in Resources */,
+				B8E484B228026B830027CE35 /* site in Resources */,
+				B89CDDB6271756F600ADA220 /* images in Resources */,
+				B8E484AD28026B5D0027CE35 /* base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B881D53C270E748700F218CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B881D578270E748700F218CF /* ViewController.swift in Sources */,
+				B881D544270E748700F218CF /* AppDelegate.swift in Sources */,
+				B881D546270E748700F218CF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D54E270E748700F218CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B881D579270E748700F218CF /* ViewController.swift in Sources */,
+				B881D555270E748700F218CF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D55B270E748700F218CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B881D57C270E748700F218CF /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B881D565270E748700F218CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B881D57D270E748700F218CF /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B881D562270E748700F218CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B881D55E270E748700F218CF /* WikiTree Sourcer Extension (iOS) */;
+			targetProxy = B881D561270E748700F218CF /* PBXContainerItemProxy */;
+		};
+		B881D56C270E748700F218CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B881D568270E748700F218CF /* WikiTree Sourcer Extension (macOS) */;
+			targetProxy = B881D56B270E748700F218CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B881D533270E748400F218CF /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B881D534270E748400F218CF /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		B881D547270E748700F218CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B881D548270E748700F218CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B881D54A270E748700F218CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B881D54B270E748700F218CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B881D556270E748700F218CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B881D557270E748700F218CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B881D57E270E748700F218CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B881D57F270E748700F218CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		B881D581270E748700F218CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 976MR27Z6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WikiTree Sourcer Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.3.5;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RobPaveySoftware.WikiTree-Sourcer.Extension";
+				PRODUCT_NAME = "WikiTree Sourcer Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B881D582270E748700F218CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 976MR27Z6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WikiTree Sourcer Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.3.5;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RobPaveySoftware.WikiTree-Sourcer.Extension";
+				PRODUCT_NAME = "WikiTree Sourcer Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B881D585270E748700F218CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 976MR27Z6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WikiTree Sourcer";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.5;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RobPaveySoftware.WikiTree-Sourcer";
+				PRODUCT_NAME = "WikiTree Sourcer";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B881D586270E748700F218CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 976MR27Z6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WikiTree Sourcer";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3.5;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RobPaveySoftware.WikiTree-Sourcer";
+				PRODUCT_NAME = "WikiTree Sourcer";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B881D588270E748700F218CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/WikiTree Sourcer.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 976MR27Z6Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WikiTree Sourcer Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.3.5;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RobPaveySoftware.WikiTree-Sourcer.Extension";
+				PRODUCT_NAME = "WikiTree Sourcer Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B881D589270E748700F218CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/WikiTree Sourcer.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 976MR27Z6Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WikiTree Sourcer Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.3.5;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RobPaveySoftware.WikiTree-Sourcer.Extension";
+				PRODUCT_NAME = "WikiTree Sourcer Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B881D58C270E748700F218CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/WikiTree Sourcer.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 976MR27Z6Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WikiTree Sourcer";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.3.5;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RobPaveySoftware.WikiTree-Sourcer";
+				PRODUCT_NAME = "WikiTree Sourcer";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B881D58D270E748700F218CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/WikiTree Sourcer.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 976MR27Z6Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WikiTree Sourcer";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.3.5;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RobPaveySoftware.WikiTree-Sourcer";
+				PRODUCT_NAME = "WikiTree Sourcer";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B881D530270E748400F218CF /* Build configuration list for PBXProject "WikiTree Sourcer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B881D57E270E748700F218CF /* Debug */,
+				B881D57F270E748700F218CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B881D580270E748700F218CF /* Build configuration list for PBXNativeTarget "WikiTree Sourcer Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B881D581270E748700F218CF /* Debug */,
+				B881D582270E748700F218CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B881D584270E748700F218CF /* Build configuration list for PBXNativeTarget "WikiTree Sourcer (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B881D585270E748700F218CF /* Debug */,
+				B881D586270E748700F218CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B881D587270E748700F218CF /* Build configuration list for PBXNativeTarget "WikiTree Sourcer Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B881D588270E748700F218CF /* Debug */,
+				B881D589270E748700F218CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B881D58B270E748700F218CF /* Build configuration list for PBXNativeTarget "WikiTree Sourcer (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B881D58C270E748700F218CF /* Debug */,
+				B881D58D270E748700F218CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B881D52D270E748400F218CF /* Project object */;
+}

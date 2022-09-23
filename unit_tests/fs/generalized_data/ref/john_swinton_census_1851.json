@@ -1,0 +1,169 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "John Swinton"
+  },
+  "birthDate": {
+    "dateString": "1795",
+    "yearString": "1795"
+  },
+  "birthPlace": {
+    "placeString": "Appleton, Cheshire"
+  },
+  "eventDate": {
+    "dateString": "1851"
+  },
+  "eventPlace": {
+    "placeString": "Marston, Cheshire, England"
+  },
+  "registrationDistrict": "Northwich",
+  "ageAtEvent": "56",
+  "occupation": "Farmer Of 123 Acres",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "John Swinton",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "56",
+      "birthYear": "1795",
+      "occupation": "Farmer Of 123 Acres",
+      "birthPlace": "Appleton, Cheshire",
+      "isSelected": true
+    },
+    {
+      "name": "Ann Swinton",
+      "relationship": "wife",
+      "gender": "female",
+      "age": "45",
+      "birthYear": "1806",
+      "birthPlace": "Whitley, Cheshire"
+    },
+    {
+      "name": "Thomas Swinton",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "22",
+      "birthYear": "1829",
+      "birthPlace": "Whitley, Cheshire"
+    },
+    {
+      "name": "John Swinton",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "20",
+      "birthYear": "1831",
+      "birthPlace": "Whitley, Cheshire"
+    },
+    {
+      "name": "Joseph Swinton",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "18",
+      "birthYear": "1833",
+      "birthPlace": "Comberbach, Cheshire"
+    },
+    {
+      "name": "Ann Swinton",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "10",
+      "birthYear": "1841",
+      "birthPlace": "Comberbach, Cheshire"
+    },
+    {
+      "name": "Jane Swinton",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "8",
+      "birthYear": "1843",
+      "birthPlace": "Marston, Cheshire"
+    },
+    {
+      "name": "Elizabeth Swinton",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "6",
+      "birthYear": "1845",
+      "birthPlace": "Marston, Cheshire"
+    },
+    {
+      "name": "John Collins",
+      "relationship": "servant",
+      "gender": "male",
+      "age": "19",
+      "birthYear": "1832",
+      "occupation": "Labourer",
+      "birthPlace": "Ireland"
+    },
+    {
+      "name": "John Lane",
+      "relationship": "servant",
+      "gender": "male",
+      "age": "54",
+      "birthYear": "1797",
+      "occupation": "Labourer",
+      "birthPlace": "Ireland"
+    },
+    {
+      "name": "Margaret Read",
+      "relationship": "niece",
+      "gender": "female",
+      "age": "5",
+      "birthYear": "1846",
+      "birthPlace": "Warrington, Lancashire"
+    },
+    {
+      "name": "Katharine Carr",
+      "relationship": "servant",
+      "gender": "female",
+      "age": "22",
+      "birthYear": "1829",
+      "birthPlace": "Ireland"
+    },
+    {
+      "name": "Mikel Gennings",
+      "relationship": "servant",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "29",
+      "birthYear": "1822",
+      "occupation": "Labourer",
+      "birthPlace": "Ireland"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "spouses": [
+    {
+      "name": {
+        "name": "Ann Swinton"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "2563939",
+    "page": "22",
+    "piece": "2165",
+    "folio": "278"
+  },
+  "hasValidData": true
+}

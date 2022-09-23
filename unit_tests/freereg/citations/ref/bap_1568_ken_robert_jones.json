@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Robert, son of Rychard Jones, was baptised on 13 June 1568 in Warehorne, Kent, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Kent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)<br/>\nRobert Jones baptism on 13 Jun 1568, son of Rychard Jones, in Warehorne, Kent, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Robert, son of Rychard Jones, was baptised on 13 June 1568 in Warehorne, Kent, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)<br/>\nRobert Jones baptism on 13 Jun 1568, son of Rychard Jones, in Warehorne, Kent, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Kent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)<br/>Robert Jones baptism on 13 Jun 1568, son of Rychard Jones, in Warehorne, Kent, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Kent; Place: Warehorne; Church name: St Matthew; Register type: Archdeacon's Transcript; Baptism date: 13 Jun 1568; Person forename: Robert; Person sex: M; Father forename: Rychard; Father surname: JONES; Transcribed by: Robert Chown.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Robert, son of Rychard Jones, was baptised on 13 June 1568 in Warehorne, Kent, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Kent; Place: Warehorne; Church name: St Matthew; Register type: Archdeacon's Transcript; Baptism date: 13 Jun 1568; Person forename: Robert; Person sex: M; Father forename: Rychard; Father surname: JONES; Transcribed by: Robert Chown.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Kent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)<br/>County: Kent; Place: Warehorne; Church name: St Matthew; Register type: Archdeacon's Transcript; Baptism date: 13 Jun 1568; Person forename: Robert; Person sex: M; Father forename: Rychard; Father surname: JONES; Transcribed by: Robert Chown.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Kent\n|-\n| Place || Warehorne\n|-\n| Church name || St Matthew\n|-\n| Register type || Archdeacon's Transcript\n|-\n| Baptism date || 13 Jun 1568\n|-\n| Person forename || Robert\n|-\n| Person sex || M\n|-\n| Father forename || Rychard\n|-\n| Father surname || JONES\n|-\n| Transcribed by || Robert Chown\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Robert, son of Rychard Jones, was baptised on 13 June 1568 in Warehorne, Kent, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Kent\n|-\n| Place || Warehorne\n|-\n| Church name || St Matthew\n|-\n| Register type || Archdeacon's Transcript\n|-\n| Baptism date || 13 Jun 1568\n|-\n| Person forename || Robert\n|-\n| Person sex || M\n|-\n| Father forename || Rychard\n|-\n| Father surname || JONES\n|-\n| Transcribed by || Robert Chown\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Kent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)<br/>County: Kent; Place: Warehorne; Church name: St Matthew; Register type: Archdeacon's Transcript; Baptism date: 13 Jun 1568; Person forename: Robert; Person sex: M; Father forename: Rychard; Father surname: JONES; Transcribed by: Robert Chown.",
+    "type": "source"
+  }
+}

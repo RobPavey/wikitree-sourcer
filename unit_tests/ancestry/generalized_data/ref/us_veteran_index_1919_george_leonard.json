@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "George Michael Leonard"
+  },
+  "eventDate": {
+    "dateString": "18 Jan 1919"
+  },
+  "birthDate": {
+    "dateString": "3 Mar 1892"
+  },
+  "deathDate": {
+    "dateString": "28 Jun 1952"
+  },
+  "eventPlace": {
+    "placeString": "Buffalo, N Y"
+  },
+  "collectionData": {
+    "id": "61861"
+  },
+  "hasValidData": true
+}

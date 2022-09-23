@@ -1,0 +1,78 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "James Goggin"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "yearString": "1875",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Kansas"
+  },
+  "eventDate": {
+    "dateString": "1 Mar 1885"
+  },
+  "eventPlace": {
+    "placeString": "Jefferson, Davis, Kansas"
+  },
+  "ageAtEvent": "10",
+  "maritalStatus": "single",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Thomas Goggin",
+      "age": "31",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76965&indiv=try"
+    },
+    {
+      "name": "Beffy Goggin",
+      "age": "30",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76966&indiv=try"
+    },
+    {
+      "name": "James Goggin",
+      "age": "10",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "male",
+      "birthPlace": "Kansas",
+      "birthYear": "abt 1875"
+    },
+    {
+      "name": "Michael Goggin",
+      "age": "5",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76968&indiv=try"
+    },
+    {
+      "name": "Thomas Goggin",
+      "age": "3",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76969&indiv=try"
+    },
+    {
+      "name": "Katy Goggin",
+      "age": "8",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76970&indiv=try"
+    },
+    {
+      "name": "Anna Goggin",
+      "age": "6",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76971&indiv=try"
+    },
+    {
+      "name": "July Goggin",
+      "age": "5 M",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76972&indiv=try"
+    }
+  ],
+  "collectionData": {
+    "id": "1088"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,84 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Elizabeth Taylor"
+  },
+  "birthDate": {
+    "dateString": "1842",
+    "yearString": "1842"
+  },
+  "birthPlace": {
+    "placeString": "Withycombe, Somersetshire"
+  },
+  "eventDate": {
+    "dateString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "Luxborough, Somerset, England, United Kingdom"
+  },
+  "registrationDistrict": "Williton",
+  "ageAtEvent": "69",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Richard Taylor",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "70",
+      "birthYear": "1841",
+      "occupation": "Farm Labourer",
+      "birthPlace": "Luxborough, Somersetshire"
+    },
+    {
+      "name": "Elizabeth Taylor",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "69",
+      "birthYear": "1842",
+      "birthPlace": "Withycombe, Somersetshire",
+      "isSelected": true
+    },
+    {
+      "name": "Edward Taylor",
+      "gender": "male",
+      "age": "6",
+      "birthYear": "1905",
+      "occupation": "School",
+      "birthPlace": "Williton, Somersetshire"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "spouses": [
+    {
+      "name": {
+        "name": "Richard Taylor"
+      },
+      "marriageDate": {
+        "yearString": "1864"
+      },
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1921547",
+    "page": "1",
+    "schedule": "16",
+    "folio": "31"
+  },
+  "hasValidData": true
+}

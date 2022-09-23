@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cornwall Marriages\"<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Edward married Ann Stribley on 8 April 1708 in Colan, Cornwall, England.<ref>\n'''Marriage''':\n\"Cornwall Marriages\"<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Cornwall Marriages\"<br/>[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cornwall Marriages\"<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nEdward Bettison marriage to Ann STRIBLEY on 8 Apr 1708 in Colan, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Edward married Ann Stribley on 8 April 1708 in Colan, Cornwall, England.<ref>\n'''Marriage''':\n\"Cornwall Marriages\"<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nEdward Bettison marriage to Ann STRIBLEY on 8 Apr 1708 in Colan, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Cornwall Marriages\"<br/>[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>Edward Bettison marriage to Ann STRIBLEY on 8 Apr 1708 in Colan, Cornwall, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cornwall Marriages\"<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Edward; Last name: Bettison; Marriage date: 8 Apr 1708; Parish: Colan; Place: Colan; Groom's first name(s): Edward; Groom's last name: BETTISON; Bride's first name(s): Ann; Bride's last name: STRIBLEY; County: Cornwall; Country: England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Edward married Ann Stribley on 8 April 1708 in Colan, Cornwall, England.<ref>\n'''Marriage''':\n\"Cornwall Marriages\"<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Edward; Last name: Bettison; Marriage date: 8 Apr 1708; Parish: Colan; Place: Colan; Groom's first name(s): Edward; Groom's last name: BETTISON; Bride's first name(s): Ann; Bride's last name: STRIBLEY; County: Cornwall; Country: England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Cornwall Marriages\"<br/>[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Edward; Last name: Bettison; Marriage date: 8 Apr 1708; Parish: Colan; Place: Colan; Groom's first name(s): Edward; Groom's last name: BETTISON; Bride's first name(s): Ann; Bride's last name: STRIBLEY; County: Cornwall; Country: England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cornwall Marriages\"<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Edward\n|-\n| Last name || Bettison\n|-\n| Birth year || -\n|-\n| Marriage date || 8 Apr 1708\n|-\n| Parish || Colan\n|-\n| Place || Colan\n|-\n| Groom's first name(s) || Edward\n|-\n| Groom's last name || BETTISON\n|-\n| Bride's first name(s) || Ann\n|-\n| Bride's last name || STRIBLEY\n|-\n| County || Cornwall\n|-\n| Country || England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Edward married Ann Stribley on 8 April 1708 in Colan, Cornwall, England.<ref>\n'''Marriage''':\n\"Cornwall Marriages\"<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Edward\n|-\n| Last name || Bettison\n|-\n| Birth year || -\n|-\n| Marriage date || 8 Apr 1708\n|-\n| Parish || Colan\n|-\n| Place || Colan\n|-\n| Groom's first name(s) || Edward\n|-\n| Groom's last name || BETTISON\n|-\n| Bride's first name(s) || Ann\n|-\n| Bride's last name || STRIBLEY\n|-\n| County || Cornwall\n|-\n| Country || England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Cornwall Marriages\"<br/>[https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F959021462%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Edward; Last name: Bettison; Marriage date: 8 Apr 1708; Parish: Colan; Place: Colan; Groom's first name(s): Edward; Groom's last name: BETTISON; Bride's first name(s): Ann; Bride's last name: STRIBLEY; County: Cornwall; Country: England.",
+    "type": "source"
+  }
+}

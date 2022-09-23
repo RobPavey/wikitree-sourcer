@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling and null, 1937.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling and null, 1937.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>Arthur R Cowling and null, 1937.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling marriage to Florence K Penter registered Apr-May-Jun 1937 in Hull.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling marriage to Florence K Penter registered Apr-May-Jun 1937 in Hull.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>Arthur R Cowling marriage to Florence K Penter registered Apr-May-Jun 1937 in Hull.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nName: Arthur R Cowling; Marriage Registration Date: 1937; Marriage Registration Place: Hull, Yorkshire, England; Registration Date: 1937; Registration Quarter: Apr-May-Jun; Other On Page Name1: Florence K Penter.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nName: Arthur R Cowling; Marriage Registration Date: 1937; Marriage Registration Place: Hull, Yorkshire, England; Registration Date: 1937; Registration Quarter: Apr-May-Jun; Other On Page Name1: Florence K Penter.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>Name: Arthur R Cowling; Marriage Registration Date: 1937; Marriage Registration Place: Hull, Yorkshire, England; Registration Date: 1937; Registration Quarter: Apr-May-Jun; Other On Page Name1: Florence K Penter.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Arthur R Cowling\n|-\n| Marriage Registration Date || 1937\n|-\n| Marriage Registration Place || Hull, Yorkshire, England\n|-\n| Registration Date || 1937\n|-\n| Registration Quarter || Apr-May-Jun\n|-\n| Other On Page Name1 || Florence K Penter\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Arthur R Cowling\n|-\n| Marriage Registration Date || 1937\n|-\n| Marriage Registration Place || Hull, Yorkshire, England\n|-\n| Registration Date || 1937\n|-\n| Registration Quarter || Apr-May-Jun\n|-\n| Other On Page Name1 || Florence K Penter\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>Name: Arthur R Cowling; Marriage Registration Date: 1937; Marriage Registration Place: Hull, Yorkshire, England; Registration Date: 1937; Registration Quarter: Apr-May-Jun; Other On Page Name1: Florence K Penter.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling and null, 1937.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling and null, 1937.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>Arthur R Cowling and null, 1937.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Hull; Volume: 9D; Page: 519;<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling marriage to Florence K Penter registered Apr-May-Jun 1937 in Hull.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling marriage to Florence K Penter registered Apr-May-Jun 1937 in Hull.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>Arthur R Cowling marriage to Florence K Penter registered Apr-May-Jun 1937 in Hull.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling and null, 1937.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>\nArthur R Cowling and null, 1937.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)<br/>Arthur R Cowling and null, 1937.",
+    "type": "source"
+  }
+}

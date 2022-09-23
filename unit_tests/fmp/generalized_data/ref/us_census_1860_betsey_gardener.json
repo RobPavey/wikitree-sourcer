@@ -1,0 +1,73 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Gardener",
+    "forenames": "Betsey"
+  },
+  "eventPlace": {
+    "placeString": "El Dorado, California, El Dorado, California"
+  },
+  "birthDate": {
+    "yearString": "1830",
+    "qualifier": 2
+  },
+  "ageAtEvent": "30",
+  "birthPlace": {
+    "placeString": "Eng"
+  },
+  "eventDate": {
+    "yearString": "1860"
+  },
+  "householdArrayFields": [
+    "name",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "G B Gardener",
+      "gender": "male",
+      "age": "43",
+      "birthYear": "1817",
+      "birthPlace": "R I"
+    },
+    {
+      "isSelected": true,
+      "name": "Betsey Gardener",
+      "gender": "female",
+      "age": "30",
+      "birthYear": "1830",
+      "birthPlace": "Eng"
+    },
+    {
+      "name": "Mary Gardener",
+      "gender": "female",
+      "age": "4",
+      "birthYear": "1856",
+      "birthPlace": "Cal"
+    },
+    {
+      "name": "Joseph Gardener",
+      "gender": "male",
+      "age": "2",
+      "birthYear": "1858",
+      "birthPlace": "Cal"
+    },
+    {
+      "name": "Burnice Pavey",
+      "gender": "female",
+      "age": "12",
+      "birthYear": "1848",
+      "birthPlace": "Mich"
+    }
+  ],
+  "collectionData": {
+    "id": "US Census 1860"
+  },
+  "hasValidData": true
+}

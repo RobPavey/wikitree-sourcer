@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William L Carson"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "5 Jun 1947"
+  },
+  "birthDate": {
+    "dateString": "21 Dec 1929"
+  },
+  "deathDate": {
+    "dateString": "3 May 2005"
+  },
+  "dischargeDate": "9 May 1949",
+  "militaryBranch": "NAVY",
+  "collectionData": {
+    "id": "2441",
+    "page": "1"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,21 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Claborn Cawthon"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "county": "Franklin County",
+    "placeString": "Franklin County, Georgia"
+  },
+  "eventDate": {
+    "yearString": "1790"
+  },
+  "collectionData": {
+    "id": "2234",
+    "county": "Franklin County"
+  },
+  "hasValidData": true
+}

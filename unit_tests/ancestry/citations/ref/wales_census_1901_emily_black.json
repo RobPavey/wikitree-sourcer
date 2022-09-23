@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1901 census Emily (age 74) was the mother of Emily Kimberlin in Llandrillo yn Rhos, Caernarvonshire, Wales.<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1901 Census''': \"1901 Wales Census\"<br/>Class: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)<br/>\nEmily Black (74) mother in household of Emily Kimberlin (46) in Llandrillo yn Rhos in Conway registration district in Caernarvonshire, Wales. Born in Birmingham, Worcestershire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1901 census Emily (age 74) was the mother of Emily Kimberlin in Llandrillo yn Rhos, Caernarvonshire, Wales.<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)<br/>\nEmily Black (74) mother in household of Emily Kimberlin (46) in Llandrillo yn Rhos in Conway registration district in Caernarvonshire, Wales. Born in Birmingham, Worcestershire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1901 Census''': \"1901 Wales Census\"<br/>Class: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)<br/>Emily Black (74) mother in household of Emily Kimberlin (46) in Llandrillo yn Rhos in Conway registration district in Caernarvonshire, Wales. Born in Birmingham, Worcestershire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)<br/>\nName: Emily Black; Age in 1901: 74; Estimated Birth Year: abt 1827; Relation: Mother; Gender: Female; Where Born: Birmingham, Worcestershire, England; Civil Parish: Llandrillo yn Rhos; Ecclesiastical parish: Colwyn Bay; County/Island: Caernarvonshire; Country: Wales; Registration District: Conway; Sub-registration District: Creuddyn; <br/>Household Members:<br/>Emily Kimberlin 46<br/>Emily Black 74<br/>William Brain 19.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1901 census Emily (age 74) was the mother of Emily Kimberlin in Llandrillo yn Rhos, Caernarvonshire, Wales.<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)<br/>\nName: Emily Black; Age in 1901: 74; Estimated Birth Year: abt 1827; Relation: Mother; Gender: Female; Where Born: Birmingham, Worcestershire, England; Civil Parish: Llandrillo yn Rhos; Ecclesiastical parish: Colwyn Bay; County/Island: Caernarvonshire; Country: Wales; Registration District: Conway; Sub-registration District: Creuddyn; <br/>Household Members:<br/>Emily Kimberlin 46<br/>Emily Black 74<br/>William Brain 19.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1901 Census''': \"1901 Wales Census\"<br/>Class: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)<br/>Name: Emily Black; Age in 1901: 74; Estimated Birth Year: abt 1827; Relation: Mother; Gender: Female; Where Born: Birmingham, Worcestershire, England; Civil Parish: Llandrillo yn Rhos; Ecclesiastical parish: Colwyn Bay; County/Island: Caernarvonshire; Country: Wales; Registration District: Conway; Sub-registration District: Creuddyn; <br/>Household Members:<br/>Emily Kimberlin 46<br/>Emily Black 74<br/>William Brain 19.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emily Black\n|-\n| Age in 1901 || 74\n|-\n| Estimated Birth Year || abt 1827\n|-\n| Relation || Mother\n|-\n| Gender || Female\n|-\n| Where Born || Birmingham, Worcestershire, England\n|-\n| Civil Parish || Llandrillo yn Rhos\n|-\n| Ecclesiastical parish || Colwyn Bay\n|-\n| County/Island || Caernarvonshire\n|-\n| Country || Wales\n|-\n| Registration District || Conway\n|-\n| Sub-registration District || Creuddyn\n|-\n| Household Members || Emily Kimberlin 46<br/>Emily Black 74<br/>William Brain 19\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1901 census Emily (age 74) was the mother of Emily Kimberlin in Llandrillo yn Rhos, Caernarvonshire, Wales.<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emily Black\n|-\n| Age in 1901 || 74\n|-\n| Estimated Birth Year || abt 1827\n|-\n| Relation || Mother\n|-\n| Gender || Female\n|-\n| Where Born || Birmingham, Worcestershire, England\n|-\n| Civil Parish || Llandrillo yn Rhos\n|-\n| Ecclesiastical parish || Colwyn Bay\n|-\n| County/Island || Caernarvonshire\n|-\n| Country || Wales\n|-\n| Registration District || Conway\n|-\n| Sub-registration District || Creuddyn\n|-\n| Household Members || Emily Kimberlin 46<br/>Emily Black 74<br/>William Brain 19\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1901 Census''': \"1901 Wales Census\"<br/>Class: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)<br/>Name: Emily Black; Age in 1901: 74; Estimated Birth Year: abt 1827; Relation: Mother; Gender: Female; Where Born: Birmingham, Worcestershire, England; Civil Parish: Llandrillo yn Rhos; Ecclesiastical parish: Colwyn Bay; County/Island: Caernarvonshire; Country: Wales; Registration District: Conway; Sub-registration District: Creuddyn; <br/>Household Members:<br/>Emily Kimberlin 46<br/>Emily Black 74<br/>William Brain 19.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1901 Wales Census,\" database, ({{Ancestry Record|7815|33333435}} : accessed 6 May 2021), Emily Black (74) mother in household of Emily Kimberlin (46) in Llandrillo yn Rhos in Conway registration district in Caernarvonshire, Wales. Born in Birmingham, Worcestershire, England; citing Class RG13, Piece 5290, Folio 28, Page 47, ED, institution, or vessel 14, Household Schedule Number 285.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1901 census Emily (age 74) was the mother of Emily Kimberlin in Llandrillo yn Rhos, Caernarvonshire, Wales.<ref>\"1901 Wales Census,\" database, ({{Ancestry Record|7815|33333435}} : accessed 6 May 2021), Emily Black (74) mother in household of Emily Kimberlin (46) in Llandrillo yn Rhos in Conway registration district in Caernarvonshire, Wales. Born in Birmingham, Worcestershire, England; citing Class RG13, Piece 5290, Folio 28, Page 47, ED, institution, or vessel 14, Household Schedule Number 285.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1901 Wales Census,\" database, ({{Ancestry Record|7815|33333435}} : accessed 6 May 2021), Emily Black (74) mother in household of Emily Kimberlin (46) in Llandrillo yn Rhos in Conway registration district in Caernarvonshire, Wales. Born in Birmingham, Worcestershire, England; citing Class RG13, Piece 5290, Folio 28, Page 47, ED, institution, or vessel 14, Household Schedule Number 285.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1901 Census'':\n\"1901 Wales Census\", database, \nClass RG13, Piece 5290, Folio 28, Page 47, ED, institution, or vessel 14, Household Schedule Number 285, \n({{Ancestry Record|7815|33333435}} : accessed 6 May 2021), \nName: Emily Black; Age in 1901: 74; Estimated Birth Year: abt 1827; Relation: Mother; Gender: Female; Where Born: Birmingham, Worcestershire, England; Civil Parish: Llandrillo yn Rhos; Ecclesiastical parish: Colwyn Bay; County/Island: Caernarvonshire; Country: Wales; Registration District: Conway; Sub-registration District: Creuddyn; Household Members: Emily Kimberlin 46, Emily Black 74, William Brain 19.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1901 census Emily (age 74) was the mother of Emily Kimberlin in Llandrillo yn Rhos, Caernarvonshire, Wales.<ref>\n''1901 Census'':\n\"1901 Wales Census\", database, \nClass RG13, Piece 5290, Folio 28, Page 47, ED, institution, or vessel 14, Household Schedule Number 285, \n({{Ancestry Record|7815|33333435}} : accessed 6 May 2021), \nName: Emily Black; Age in 1901: 74; Estimated Birth Year: abt 1827; Relation: Mother; Gender: Female; Where Born: Birmingham, Worcestershire, England; Civil Parish: Llandrillo yn Rhos; Ecclesiastical parish: Colwyn Bay; County/Island: Caernarvonshire; Country: Wales; Registration District: Conway; Sub-registration District: Creuddyn; Household Members: Emily Kimberlin 46, Emily Black 74, William Brain 19.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1901 Census'': \"1901 Wales Census\", database, Class RG13, Piece 5290, Folio 28, Page 47, ED, institution, or vessel 14, Household Schedule Number 285, ({{Ancestry Record|7815|33333435}} : accessed 6 May 2021), Name: Emily Black; Age in 1901: 74; Estimated Birth Year: abt 1827; Relation: Mother; Gender: Female; Where Born: Birmingham, Worcestershire, England; Civil Parish: Llandrillo yn Rhos; Ecclesiastical parish: Colwyn Bay; County/Island: Caernarvonshire; Country: Wales; Registration District: Conway; Sub-registration District: Creuddyn; Household Members: Emily Kimberlin 46, Emily Black 74, William Brain 19.",
+    "type": "source"
+  }
+}

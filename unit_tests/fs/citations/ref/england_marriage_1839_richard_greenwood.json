@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1839, quarter 3, vol. 14, p. 228, Huntingdon, Huntingdonshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood, 1839.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Richard's marriage was registered in the Jul-Aug-Sep quarter of 1839 in the Huntingdon district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1839, quarter 3, vol. 14, p. 228, Huntingdon, Huntingdonshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood, 1839.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing 1839, quarter 3, vol. 14, p. 228, Huntingdon, Huntingdonshire, England, General Register Office, Southport, England.<br/>{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>Richard Greenwood, 1839.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood marriage registered Jul-Aug-Sep 1839 in Huntingdon.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Richard's marriage was registered in the Jul-Aug-Sep quarter of 1839 in the Huntingdon district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood marriage registered Jul-Aug-Sep 1839 in Huntingdon.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>Richard Greenwood marriage registered Jul-Aug-Sep 1839 in Huntingdon.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nName: Richard Greenwood; Marriage Date: 1839; Marriage Place: Huntingdon, Huntingdonshire, England; Registration Date: 1839; Event District Reg: Huntingdon; Event Type: Marriage; Registration Quarter: Jul-Aug-Sep; Other On Page Name1: George Hammond; Other On Page Name2: Mary Markham; Other On Page Name3: Elizabeth Maycock; Other On Page Name4: John Pain; Other On Page Name5: Mary Ray.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Richard's marriage was registered in the Jul-Aug-Sep quarter of 1839 in the Huntingdon district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nName: Richard Greenwood; Marriage Date: 1839; Marriage Place: Huntingdon, Huntingdonshire, England; Registration Date: 1839; Event District Reg: Huntingdon; Event Type: Marriage; Registration Quarter: Jul-Aug-Sep; Other On Page Name1: George Hammond; Other On Page Name2: Mary Markham; Other On Page Name3: Elizabeth Maycock; Other On Page Name4: John Pain; Other On Page Name5: Mary Ray.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>Name: Richard Greenwood; Marriage Date: 1839; Marriage Place: Huntingdon, Huntingdonshire, England; Registration Date: 1839; Event District Reg: Huntingdon; Event Type: Marriage; Registration Quarter: Jul-Aug-Sep; Other On Page Name1: George Hammond; Other On Page Name2: Mary Markham; Other On Page Name3: Elizabeth Maycock; Other On Page Name4: John Pain; Other On Page Name5: Mary Ray.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Richard Greenwood\n|-\n| Marriage Date || 1839\n|-\n| Marriage Place || Huntingdon, Huntingdonshire, England\n|-\n| Registration Date || 1839\n|-\n| Event District Reg || Huntingdon\n|-\n| Event Type || Marriage\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Other On Page Name1 || George Hammond\n|-\n| Other On Page Name2 || Mary Markham\n|-\n| Other On Page Name3 || Elizabeth Maycock\n|-\n| Other On Page Name4 || John Pain\n|-\n| Other On Page Name5 || Mary Ray\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Richard's marriage was registered in the Jul-Aug-Sep quarter of 1839 in the Huntingdon district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Richard Greenwood\n|-\n| Marriage Date || 1839\n|-\n| Marriage Place || Huntingdon, Huntingdonshire, England\n|-\n| Registration Date || 1839\n|-\n| Event District Reg || Huntingdon\n|-\n| Event Type || Marriage\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Other On Page Name1 || George Hammond\n|-\n| Other On Page Name2 || Mary Markham\n|-\n| Other On Page Name3 || Elizabeth Maycock\n|-\n| Other On Page Name4 || John Pain\n|-\n| Other On Page Name5 || Mary Ray\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>Name: Richard Greenwood; Marriage Date: 1839; Marriage Place: Huntingdon, Huntingdonshire, England; Registration Date: 1839; Event District Reg: Huntingdon; Event Type: Marriage; Registration Quarter: Jul-Aug-Sep; Other On Page Name1: George Hammond; Other On Page Name2: Mary Markham; Other On Page Name3: Elizabeth Maycock; Other On Page Name4: John Pain; Other On Page Name5: Mary Ray.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood, 1839.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Richard's marriage was registered in the Jul-Aug-Sep quarter of 1839 in the Huntingdon district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood, 1839.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>Richard Greenwood, 1839.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Richard's marriage was registered in the Jul-Aug-Sep quarter of 1839 in the Huntingdon district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Huntingdon; Volume: 14; Page: 228;<br/>{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1839, quarter 3, vol. 14, p. 228, Huntingdon, Huntingdonshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood marriage registered Jul-Aug-Sep 1839 in Huntingdon.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Richard's marriage was registered in the Jul-Aug-Sep quarter of 1839 in the Huntingdon district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1839, quarter 3, vol. 14, p. 228, Huntingdon, Huntingdonshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood marriage registered Jul-Aug-Sep 1839 in Huntingdon.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing 1839, quarter 3, vol. 14, p. 228, Huntingdon, Huntingdonshire, England, General Register Office, Southport, England.<br/>{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>Richard Greenwood marriage registered Jul-Aug-Sep 1839 in Huntingdon.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1839, quarter 3, vol. 14, p. 228, Huntingdon, Huntingdonshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood, 1839.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Richard's marriage was registered in the Jul-Aug-Sep quarter of 1839 in the Huntingdon district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting 1839, quarter 3, vol. 14, p. 228, Huntingdon, Huntingdonshire, England, General Register Office, Southport, England.<br/>\n{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>\nRichard Greenwood, 1839.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing 1839, quarter 3, vol. 14, p. 228, Huntingdon, Huntingdonshire, England, General Register Office, Southport, England.<br/>{{FamilySearch Record|2DCB-21Q}} (accessed 6 May 2021)<br/>Richard Greenwood, 1839.",
+    "type": "source"
+  }
+}

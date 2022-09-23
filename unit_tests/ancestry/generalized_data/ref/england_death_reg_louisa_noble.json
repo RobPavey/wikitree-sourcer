@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Louisa Noble"
+  },
+  "eventPlace": {
+    "county": "Nottinghamshire"
+  },
+  "eventDate": {
+    "dateString": "Jul 1971",
+    "quarter": 3
+  },
+  "registrationDistrict": "Nottingham",
+  "deathDate": {
+    "dateString": "Jul 1971",
+    "quarter": 3
+  },
+  "lastNameAtDeath": "Noble",
+  "ageAtDeath": "89",
+  "birthDate": {
+    "dateString": "23 Jul 1882"
+  },
+  "collectionData": {
+    "id": "7579",
+    "volume": "3c",
+    "page": "976"
+  },
+  "hasValidData": true
+}

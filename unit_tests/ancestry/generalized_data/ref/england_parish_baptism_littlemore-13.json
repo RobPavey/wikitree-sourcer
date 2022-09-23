@@ -1,0 +1,35 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Amelia Elizabeth Littlemore"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "14 Jun 1850"
+  },
+  "eventPlace": {
+    "placeString": "Old St Pancras, St Pancras, Camden, England"
+  },
+  "birthPlace": {
+    "placeString": "Old St Pancras, St Pancras, Camden, England"
+  },
+  "lastNameAtBirth": "Littlemore",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Littlemore"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Littlemore"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1558"
+  },
+  "hasValidData": true
+}

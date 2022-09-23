@@ -1,0 +1,33 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "More",
+    "forenames": "William George"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Fressingfield, St Peter & St Paul, Suffolk, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "John"
+      }
+    }
+  },
+  "eventDate": {
+    "dateString": "02 Feb 1823",
+    "yearString": "1823"
+  },
+  "birthDate": {
+    "yearString": "1823"
+  },
+  "lastNameAtBirth": "More",
+  "collectionData": {
+    "id": "Suffolk Baptism Index 1538-1911"
+  },
+  "hasValidData": true
+}

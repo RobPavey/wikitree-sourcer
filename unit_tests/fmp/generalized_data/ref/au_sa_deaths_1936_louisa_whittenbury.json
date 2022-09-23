@@ -1,0 +1,28 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Whittenbury",
+    "forenames": "Louisa Maria"
+  },
+  "eventPlace": {
+    "country": "Australia",
+    "placeString": "Norwood, South Australia, Australia"
+  },
+  "registrationDistrict": "Norwood",
+  "deathDate": {
+    "dateString": "19 Oct 1936"
+  },
+  "eventDate": {
+    "dateString": "19 Oct 1936"
+  },
+  "lastNameAtDeath": "Whittenbury",
+  "ageAtDeath": "68",
+  "collectionData": {
+    "id": "South Australia Deaths 1842-1972",
+    "registrationNumber": "584/4454"
+  },
+  "hasValidData": true
+}

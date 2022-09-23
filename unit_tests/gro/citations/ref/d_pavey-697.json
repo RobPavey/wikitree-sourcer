@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1992&range=0&surname=PAVEY&forename1=RALPH&forename2=ALAN&gender=M&month=16&district=THANET&volume=16&page=1892 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nPavey, Ralph Alan (Year of birth: 1914).<br/>\n''GRO Reference:'' 1992 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/thanet.html Thanet] (5751B) Volume 16 Page 1892 Entry Number 250.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ralph's death (age 78) was registered in the Oct-Nov-Dec quarter of 1992 in the Thanet district.<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1992&range=0&surname=PAVEY&forename1=RALPH&forename2=ALAN&gender=M&month=16&district=THANET&volume=16&page=1892 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nPavey, Ralph Alan (Year of birth: 1914).<br/>\n''GRO Reference:'' 1992 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/thanet.html Thanet] (5751B) Volume 16 Page 1892 Entry Number 250.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1992&range=0&surname=PAVEY&forename1=RALPH&forename2=ALAN&gender=M&month=16&district=THANET&volume=16&page=1892 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>Pavey, Ralph Alan (Year of birth: 1914).<br/>''GRO Reference:'' 1992 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/thanet.html Thanet] (5751B) Volume 16 Page 1892 Entry Number 250.",
+    "type": "source"
+  }
+}

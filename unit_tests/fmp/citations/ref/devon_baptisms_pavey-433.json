@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Devon Baptisms\"<br/>\nArchive: Plymouth & West Devon Record Office; Reference: 358/12<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Frederick, son of William Henry & Elizabeth, was born in 1833 and baptised on 25 December 1833 in Plymouth, St Andrew, Devon, England.<ref>\n'''Baptism''':\n\"Devon Baptisms\"<br/>\nArchive: Plymouth & West Devon Record Office; Reference: 358/12<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"Devon Baptisms\"<br/>Archive: Plymouth & West Devon Record Office; Reference: 358/12<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Devon Baptisms\"<br/>\nArchive: Plymouth & West Devon Record Office; Reference: 358/12<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFrederick Archibald Pavey baptism on 25 Dec 1833 (born 1833), son of William Henry & Elizabeth, in Plymouth, St Andrew, Devon, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Frederick, son of William Henry & Elizabeth, was born in 1833 and baptised on 25 December 1833 in Plymouth, St Andrew, Devon, England.<ref>\n'''Baptism''':\n\"Devon Baptisms\"<br/>\nArchive: Plymouth & West Devon Record Office; Reference: 358/12<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFrederick Archibald Pavey baptism on 25 Dec 1833 (born 1833), son of William Henry & Elizabeth, in Plymouth, St Andrew, Devon, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"Devon Baptisms\"<br/>Archive: Plymouth & West Devon Record Office; Reference: 358/12<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>Frederick Archibald Pavey baptism on 25 Dec 1833 (born 1833), son of William Henry & Elizabeth, in Plymouth, St Andrew, Devon, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Devon Baptisms\"<br/>\nArchive: Plymouth & West Devon Record Office; Reference: 358/12<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Frederick Archibald; Last name: Pavey; Birth date: ? ? 1833; Baptism date: 25 Dec 1833; Denomination: Anglican; Baptism place: Plymouth, St Andrew; Father's first name(s): William Henry; Mother's first name(s): Elizabeth; County: Devon.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Frederick, son of William Henry & Elizabeth, was born in 1833 and baptised on 25 December 1833 in Plymouth, St Andrew, Devon, England.<ref>\n'''Baptism''':\n\"Devon Baptisms\"<br/>\nArchive: Plymouth & West Devon Record Office; Reference: 358/12<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Frederick Archibald; Last name: Pavey; Birth date: ? ? 1833; Baptism date: 25 Dec 1833; Denomination: Anglican; Baptism place: Plymouth, St Andrew; Father's first name(s): William Henry; Mother's first name(s): Elizabeth; County: Devon.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"Devon Baptisms\"<br/>Archive: Plymouth & West Devon Record Office; Reference: 358/12<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Frederick Archibald; Last name: Pavey; Birth date: ? ? 1833; Baptism date: 25 Dec 1833; Denomination: Anglican; Baptism place: Plymouth, St Andrew; Father's first name(s): William Henry; Mother's first name(s): Elizabeth; County: Devon.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Devon Baptisms\"<br/>\nArchive: Plymouth & West Devon Record Office; Reference: 358/12<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Frederick Archibald\n|-\n| Last name || Pavey\n|-\n| Birth date || ? ? 1833\n|-\n| Baptism date || 25 Dec 1833\n|-\n| Denomination || Anglican\n|-\n| Baptism place || Plymouth, St Andrew\n|-\n| Father's first name(s) || William Henry\n|-\n| Mother's first name(s) || Elizabeth\n|-\n| County || Devon\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Frederick, son of William Henry & Elizabeth, was born in 1833 and baptised on 25 December 1833 in Plymouth, St Andrew, Devon, England.<ref>\n'''Baptism''':\n\"Devon Baptisms\"<br/>\nArchive: Plymouth & West Devon Record Office; Reference: 358/12<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Frederick Archibald\n|-\n| Last name || Pavey\n|-\n| Birth date || ? ? 1833\n|-\n| Baptism date || 25 Dec 1833\n|-\n| Denomination || Anglican\n|-\n| Baptism place || Plymouth, St Andrew\n|-\n| Father's first name(s) || William Henry\n|-\n| Mother's first name(s) || Elizabeth\n|-\n| County || Devon\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"Devon Baptisms\"<br/>Archive: Plymouth & West Devon Record Office; Reference: 358/12<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FPLY%2F004634283%2F00227&parentid=GBPRS%2FB%2F31067794%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31067794%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Frederick Archibald; Last name: Pavey; Birth date: ? ? 1833; Baptism date: 25 Dec 1833; Denomination: Anglican; Baptism place: Plymouth, St Andrew; Father's first name(s): William Henry; Mother's first name(s): Elizabeth; County: Devon.",
+    "type": "source"
+  }
+}

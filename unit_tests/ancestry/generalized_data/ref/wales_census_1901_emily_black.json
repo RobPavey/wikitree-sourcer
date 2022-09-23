@@ -1,0 +1,62 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Emily Black"
+  },
+  "personGender": "female",
+  "eventPlace": {
+    "country": "Wales",
+    "placeString": "Llandrillo yn Rhos, Caernarvonshire, Wales"
+  },
+  "registrationDistrict": "Conway",
+  "birthDate": {
+    "yearString": "1827",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Birmingham, Worcestershire, England"
+  },
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "ageAtEvent": "74",
+  "relationshipToHead": "mother",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Emily Kimberlin",
+      "age": "46",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1901wales&indiv=try&h=33333434"
+    },
+    {
+      "name": "Emily Black",
+      "age": "74",
+      "isSelected": true,
+      "relationship": "mother",
+      "gender": "female",
+      "birthPlace": "Birmingham, Worcestershire, England",
+      "birthYear": "abt 1827",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1901wales&indiv=try&h=33333435"
+    },
+    {
+      "name": "William Brain",
+      "age": "19",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1901wales&indiv=try&h=33333436"
+    }
+  ],
+  "collectionData": {
+    "id": "7815",
+    "page": "47",
+    "folio": "28",
+    "piece": "5290",
+    "schedule": "285",
+    "parish": "Llandrillo yn Rhos",
+    "county": "Caernarvonshire"
+  },
+  "hasValidData": true
+}

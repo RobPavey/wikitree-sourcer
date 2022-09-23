@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "lastName": "PAVEY",
+  "forenames": "RALPH ALAN",
+  "firstName": "RALPH",
+  "middleNames": "ALAN",
+  "birthYear": 1914,
+  "recordType": "newer",
+  "eventYear": 1992,
+  "eventQuarter": 4,
+  "eventQuarterLetter": "D",
+  "registrationDistrict": "THANET",
+  "registrationDistrictCode": "5751B",
+  "referenceVolume": "16",
+  "referencePage": "1892",
+  "entryNumber": "250",
+  "personGender": "male",
+  "deathYear": 1992,
+  "deathQuarter": 4,
+  "eventType": "death"
+}

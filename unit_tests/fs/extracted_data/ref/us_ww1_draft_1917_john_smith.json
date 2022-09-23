@@ -1,0 +1,43 @@
+{
+  "recordData": {
+    "Name": "John Smith",
+    "Military Draft Registration Date": "1917-1918",
+    "Military Draft Registration Place": "Surry, Virginia, United States",
+    "Birth Date": "22 Mar 1880",
+    "Birth Place": ", , United States",
+    "Citizenship Place": "United States",
+    "Source Draft Board": "Surrey County; A-Z"
+  },
+  "fullName": "John Smith",
+  "givenName": "John",
+  "surname": "Smith",
+  "gender": "male",
+  "factType": "MilitaryDraftRegistration",
+  "eventDateOriginal": "1917-1918",
+  "eventDate": "1917-1918",
+  "eventYear": "1917-1918",
+  "eventPlaceOriginal": "Surry, Virginia, United States",
+  "eventPlace": "Surry, Virginia, United States",
+  "eventPlaceL3": "Surrey County",
+  "eventPlaceL2": "Virginia",
+  "eventPlaceL1": "United States",
+  "birthDateOriginal": "22 Mar 1880",
+  "birthDate": "22 Mar 1880",
+  "birthYear": "1880",
+  "birthPlace": "United States",
+  "referenceData": {
+    "externalPublicationNumber": "M1509",
+    "externalPublicationTitle": "World War I Selective Service System Draft Registration Cards",
+    "digitalFilmNumber": "005153914",
+    "filmNumber": "1991280"
+  },
+  "fsCollectionId": "1968530",
+  "fsImageNumber": "02539",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:33SQ-GYBK-9SM6",
+  "collectionTitle": "United States World War I Draft Registration Cards, 1917-1918",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT",
+  "citation": "\"United States World War I Draft Registration Cards, 1917-1918\", database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:K6Z6-RVT : 23 February 2021), John Smith, 1917-1918.",
+  "sourceTitleForPerson": "John Smith, \"United States World War I Draft Registration Cards, 1917-1918\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:K6Z6-RVT",
+  "pageType": "record"
+}

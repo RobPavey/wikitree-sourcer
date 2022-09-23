@@ -1,0 +1,65 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Christian",
+    "middleNames": "Johnston",
+    "lastName": "Peffers"
+  },
+  "lastNameAtBirth": "Peffers",
+  "lastNameAtDeath": "Milne",
+  "mothersMaidenName": "Blamire",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "20 Mar 1869",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "2 Oct 1943",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Kirriemuir, Angus, Scotland, United Kingdom"
+  },
+  "deathPlace": {
+    "placeString": "Manchester, Lancashire, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Andrew Peffers",
+        "lastName": "Peffers",
+        "forenames": "Andrew"
+      },
+      "lastNameAtBirth": "Peffers",
+      "lastNameAtDeath": "Peffers"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Jessie",
+        "lastName": "Blamire",
+        "name": "Jessie Blamire"
+      },
+      "lastNameAtBirth": "Blamire",
+      "lastNameAtDeath": "Peffers"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "John Milne",
+        "lastName": "Milne",
+        "forenames": "John"
+      },
+      "lastNameAtBirth": "Milne",
+      "lastNameAtDeath": "Milne",
+      "marriageDate": {
+        "dateString": "13 Jul 1892"
+      },
+      "marriagePlace": {
+        "placeString": "Dundee, Forfarshire, Scotland"
+      }
+    }
+  ],
+  "hasValidData": true
+}

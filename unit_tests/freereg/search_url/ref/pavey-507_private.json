@@ -1,0 +1,14 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "start_year": 1827,
+      "end_year": 1833,
+      "ba": true,
+      "first_name": "Betsy Ann",
+      "last_name": "Pavey",
+      "search_query_fuzzy": true,
+      "search_query_chapman_codes": "SOM"
+    }
+  }
+}

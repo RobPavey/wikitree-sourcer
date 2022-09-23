@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Bettison",
+    "forenames": "Edward"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Colan, Cornwall, England"
+  },
+  "eventDate": {
+    "dateString": "8 Apr 1708",
+    "yearString": "1708"
+  },
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "Ann",
+        "lastName": "STRIBLEY"
+      },
+      "marriageDate": {
+        "dateString": "8 Apr 1708",
+        "yearString": "1708"
+      },
+      "marriagePlace": {
+        "country": "England",
+        "placeString": "Colan, Cornwall, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "Cornwall Marriages"
+  },
+  "hasValidData": true
+}

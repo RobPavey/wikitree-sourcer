@@ -1,0 +1,80 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Leroy A Whitcomb"
+  },
+  "personGender": "male",
+  "birthPlace": {
+    "placeString": "USA"
+  },
+  "eventDate": {
+    "dateString": "1925"
+  },
+  "eventPlace": {
+    "placeString": "Schenectady Ward 02, Schenectady"
+  },
+  "ageAtEvent": "43",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Robert E Whitcomb",
+      "age": "2",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992593&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Leroy A Whitcomb",
+      "age": "43",
+      "relationship": "head",
+      "isSelected": true,
+      "gender": "male",
+      "birthDate": "abt 1882",
+      "birthPlace": "USA"
+    },
+    {
+      "name": "Hazel Whitcomb",
+      "age": "32",
+      "relationship": "wife",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992585&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "William T Whitcomb",
+      "age": "13",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992587&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "John H Whitcomb",
+      "age": "8",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992588&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Leroy A Whitcomb",
+      "age": "5",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2704&h=24992590&indiv=try&viewrecord=1&r=an"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Hazel Whitcomb"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "2704",
+    "page": "21"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,18 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Samuel Parker"
+  },
+  "eventDate": {
+    "yearString": "1840"
+  },
+  "eventPlace": {
+    "placeString": "Gaines, Orleans, New York"
+  },
+  "collectionData": {
+    "id": "8057"
+  },
+  "hasValidData": true
+}

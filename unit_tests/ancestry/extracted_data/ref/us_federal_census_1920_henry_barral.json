@@ -1,0 +1,79 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/41984770:6061",
+  "pageType": "record",
+  "dbId": "6061",
+  "recordId": "41984770",
+  "ancestryTemplate": "{{Ancestry Record|6061|41984770}}",
+  "domain": "com",
+  "titleName": "Henry P Barral",
+  "titleCollection": "1920 United States Federal Census",
+  "recordData": {
+    "Name": "Henry P Barral",
+    "Age": "12",
+    "Birth Year": "abt 1908",
+    "Birthplace": "New York",
+    "Home in 1920": "Manhattan Assembly District 15, New York, New York",
+    "Street": "East 89th St",
+    "Residence Date": "1920",
+    "Race": "White",
+    "Gender": "Female",
+    "Relation to Head of House": "Son",
+    "Marital Status": "Single",
+    "Father's Name": "Pio Barral",
+    "Father's Birthplace": "London",
+    "Mother's Name": "Wihlemena Barral",
+    "Mother's Birthplace": "Pennsylvania",
+    "Native Tongue": "English",
+    "Able to Speak English": "Yes",
+    "Occupation": "None",
+    "Attended School": "yes",
+    "Able to read": "Yes",
+    "Able to Write": "Yes",
+    "Household Members<br/>Age<br/>Relationship": "Pio Barral 42 Head<br/>Wihlemena Barral 29 Wife<br/>Charlotte Barral 16 Daughter<br/>Henry P Barral 12 Son"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "Pio Barral",
+        "dbId": "6061",
+        "recordId": "41984767",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6061&h=41984767&indiv=try&viewrecord=1&r=an",
+        "Age": "42",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Wihlemena Barral",
+        "dbId": "6061",
+        "recordId": "41984768",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6061&h=41984768&indiv=try&viewrecord=1&r=an",
+        "Age": "29",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "Charlotte Barral",
+        "dbId": "6061",
+        "recordId": "41984769",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6061&h=41984769&indiv=try&viewrecord=1&r=an",
+        "Age": "16",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Henry P Barral",
+        "Age": "12",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/6061/images/4313936-01090?pid=41984770&usePUB=true&usePUBJs=true",
+  "imageDbId": "6061",
+  "imageRecordId": "4313936-01090",
+  "sourceCitation": "Year: 1920; Census Place: Manhattan Assembly District 15, New York, New York; Roll: T625_1213; Page: 35B; Enumeration District: 1095",
+  "sourceInformation": "Ancestry.com. 1920 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Images reproduced by FamilySearch. Original data: Fourteenth Census of the United States, 1920. (NARA microfilm publication T625, 2076 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C. For details on the contents of the film numbers, visit the following NARA web page: NARA. Note: Enumeration Districts 819-839 are on roll 323 (Chicago City).",
+  "originalData": "Fourteenth Census of the United States, 1920. (NARA microfilm publication T625, 2076 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C. For details on the contents of the film numbers, visit the following NARA web page: NARA. Note: Enumeration Districts 819-839 are on roll 323 (Chicago City).",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1920 United States Federal Census, the Fourteenth Census of the United States. It includes all states and territories, as well as Military and Naval Forces, the Virgin Islands, Puerto Rico, American Samoa, Guam, and the Panama Canal Zone. The census provides many details about individuals and families including: name, gender, age, birthplace, year of immigration, mother tongue, and parents’ birthplaces. In addition, the names of those listed on the population schedule are linked to actual images of the 1920 Federal Census. Learn more..."
+}

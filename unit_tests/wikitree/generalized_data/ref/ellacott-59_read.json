@@ -1,0 +1,64 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Elizabeth",
+    "lastName": "Ellacott"
+  },
+  "lastNameAtBirth": "Ellacott",
+  "lastNameAtDeath": "Pavey",
+  "mothersMaidenName": "Lidstone",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "8 Jan 1808",
+    "qualifier": 3
+  },
+  "deathDate": {
+    "dateString": "2 Sep 1885",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Plymouth, Devon, England"
+  },
+  "deathPlace": {
+    "placeString": "Camberwell, London"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Ellacott",
+        "lastName": "Ellacott",
+        "forenames": "William"
+      },
+      "lastNameAtBirth": "Ellacott",
+      "lastNameAtDeath": "Ellacott"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Jemima",
+        "lastName": "Lidstone",
+        "name": "Jemima Lidstone"
+      },
+      "lastNameAtBirth": "Lidstone",
+      "lastNameAtDeath": "Ellacott"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "William Henry Pavey",
+        "lastName": "Pavey",
+        "forenames": "William Henry"
+      },
+      "lastNameAtBirth": "Pavey",
+      "lastNameAtDeath": "Pavey",
+      "marriageDate": {
+        "dateString": "7 Oct 1829"
+      },
+      "marriagePlace": {
+        "placeString": "Maker, Devon, England, United Kingdom"
+      }
+    }
+  ],
+  "hasValidData": true
+}

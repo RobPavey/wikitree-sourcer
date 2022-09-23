@@ -1,0 +1,39 @@
+{
+  "recordData": {
+    "Name": "Sarah Knight",
+    "Death Date": "6 Nov 1713",
+    "Death Place": "Charlestown, Boston, Suffolk, Massachusetts, United States"
+  },
+  "fullName": "Sarah Knight",
+  "givenName": "Sarah",
+  "surname": "Knight",
+  "gender": "female",
+  "factType": "Death",
+  "eventDateOriginal": "6 Nov 1713",
+  "eventDate": "6 Nov 1713",
+  "eventYear": "1713",
+  "eventPlaceOriginal": "Charlestown, Boston, Suffolk, Massachusetts, United States",
+  "eventPlace": "Charlestown, Boston, Suffolk, Massachusetts, United States",
+  "deathDateOriginal": "6 Nov 1713",
+  "deathDate": "6 Nov 1713",
+  "deathYear": "1713",
+  "deathMonth": "11",
+  "spouseFullName": "John",
+  "spouseGivenName": "John",
+  "fsCollectionId": "2061550",
+  "referenceData": {
+    "digitalFilmNumber": "007009468",
+    "filmNumber": "740995",
+    "packetLetter": "A",
+    "recordNumber": "2041",
+    "sourcePageNbr": "590"
+  },
+  "fsImageNumber": "00187",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3QSQ-G97M-59JG-T",
+  "collectionTitle": "Massachusetts, Town Clerk, Vital and Town Records, 1626-2001",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MDRF-4C9",
+  "citation": "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:FH24-9QT : 20 May 2022), Sarah Knight, 6 Nov 1713; citing Death, Charlestown, Boston, Suffolk, Massachusetts, United States, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009468.",
+  "sourceTitleForPerson": "Sarah Knight, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:FH24-9QT",
+  "pageType": "record"
+}

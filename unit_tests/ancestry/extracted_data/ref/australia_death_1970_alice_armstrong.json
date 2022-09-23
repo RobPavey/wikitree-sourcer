@@ -1,0 +1,30 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=1779&h=1732471",
+  "pageType": "record",
+  "dbId": "1779",
+  "recordId": "1732471",
+  "ancestryTemplate": "{{Ancestry Record|1779|1732471}}",
+  "domain": "com",
+  "titleName": "Alice Armstrong",
+  "titleCollection": "Australia, Death Index, 1787-1985",
+  "recordData": {
+    "Name": "Alice Armstrong",
+    "Death Age": "85",
+    "Birth Date": "abt 1885",
+    "Death Date": "Abt 1970",
+    "Death Place": "Brunswick, Victoria",
+    "Registration Date": "1970",
+    "Registration Place": "Australia",
+    "Father": "Thomas W Lloyd",
+    "Mother": "Emma Folkes",
+    "Registration Number": "11307"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=AusDeathIndex&indiv=try&h=61732471",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=AusDeathIndex&indiv=try&h=76732471"
+  },
+  "sourceCitation": "Death Index Victoria 1921-1985",
+  "sourceInformation": "Ancestry.com. Australia, Death Index, 1787-1985 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Compiled from publicly available sources.",
+  "originalData": "Compiled from publicly available sources.",
+  "sourceDescription": "Vital records—records of births, marriage, and death—are the basic building blocks of family history research, and this database features some of the most comprehensive indexes available of historical Australian death records. These indexes were created by Australian registrar's offices after civil registration of births, marriages, and deaths became law in the mid 19th century. Learn more..."
+}

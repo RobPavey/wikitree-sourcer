@@ -1,0 +1,23 @@
+{
+  "std": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&from_year=1890&to_year=1900&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F&county=RENFREW"
+  },
+  "rc_baptism": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=crbirths_baptism&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-births-baptisms&from_year=1890&to_year=1900&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F&parent_names=Jane%20Holmes&parent_names_so=soundex&county=RENFREW&mp_code%5B0%5D=MP&mp_no%5B0%5D=6&parish_title%5B0%5D=GREENOCK%2C%20ST%20MARY'S"
+  },
+  "stat_death": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&record_type=stat_deaths&from_year=1984&to_year=1994&birth_year=1895&birth_year_range=1&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F&county=EDINBURGH%20CITY"
+  },
+  "stat_marriage": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-marriages&record_type=stat_marriages&from_year=1918&to_year=1928&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F&spsurname=Phillips&spsurname_so=soundex&spforename=Alexander&spforename_so=soundex&county=RENFREW"
+  },
+  "stat_marriage_no_spouse": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-marriages&record_type=stat_marriages&from_year=1910&to_year=1989&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F"
+  },
+  "valuation": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&year%5B0%5D=1895&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex"
+  },
+  "prison": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&from_year=1895&to_year=1921&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F"
+  }
+}

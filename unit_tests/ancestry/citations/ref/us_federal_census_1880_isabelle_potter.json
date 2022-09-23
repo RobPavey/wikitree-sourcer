@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1880 census Isabelle (age 56), Keeping House, was the wife of Paul Potter in Hartmans, Hamblen, Tennessee, USA.<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1880 Census''': \"1880 United States Federal Census\"<br/>Year: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)<br/>\nIsabelle Potter (56), wife, Keeping House, in household of Paul Potter (56) in Hartmans, Hamblen, Tennessee, USA. Born in North Carolina.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1880 census Isabelle (age 56), Keeping House, was the wife of Paul Potter in Hartmans, Hamblen, Tennessee, USA.<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)<br/>\nIsabelle Potter (56), wife, Keeping House, in household of Paul Potter (56) in Hartmans, Hamblen, Tennessee, USA. Born in North Carolina.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1880 Census''': \"1880 United States Federal Census\"<br/>Year: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)<br/>Isabelle Potter (56), wife, Keeping House, in household of Paul Potter (56) in Hartmans, Hamblen, Tennessee, USA. Born in North Carolina.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)<br/>\nName: Isabelle Potter; Age: 56; Birth Date: Abt 1824; Birthplace: North Carolina; Home in 1880: Hartmans, Hamblen, Tennessee, USA; Dwelling Number: 274; Race: White; Gender: Female; Relation to Head of House: Wife; Marital Status: Married; Spouse's Name: Paul Potter; Father's Birthplace: North Carolina; Mother's Birthplace: North Carolina; Occupation: Keeping House; Cannot Read: Yes; Cannot Write: Yes; <br/>Household Members Age Relationship:<br/>Paul Potter 56 Self (Head)<br/>Isabelle Potter 56 Wife<br/>Robert Potter 21 Son<br/>Sarah Potter 16 Daughter<br/>Virginia Bryant 29 Daughter<br/>Samuel Bryant 7 Grandson<br/>Ida Bryant 3 Granddaughter.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1880 census Isabelle (age 56), Keeping House, was the wife of Paul Potter in Hartmans, Hamblen, Tennessee, USA.<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)<br/>\nName: Isabelle Potter; Age: 56; Birth Date: Abt 1824; Birthplace: North Carolina; Home in 1880: Hartmans, Hamblen, Tennessee, USA; Dwelling Number: 274; Race: White; Gender: Female; Relation to Head of House: Wife; Marital Status: Married; Spouse's Name: Paul Potter; Father's Birthplace: North Carolina; Mother's Birthplace: North Carolina; Occupation: Keeping House; Cannot Read: Yes; Cannot Write: Yes; <br/>Household Members Age Relationship:<br/>Paul Potter 56 Self (Head)<br/>Isabelle Potter 56 Wife<br/>Robert Potter 21 Son<br/>Sarah Potter 16 Daughter<br/>Virginia Bryant 29 Daughter<br/>Samuel Bryant 7 Grandson<br/>Ida Bryant 3 Granddaughter.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1880 Census''': \"1880 United States Federal Census\"<br/>Year: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)<br/>Name: Isabelle Potter; Age: 56; Birth Date: Abt 1824; Birthplace: North Carolina; Home in 1880: Hartmans, Hamblen, Tennessee, USA; Dwelling Number: 274; Race: White; Gender: Female; Relation to Head of House: Wife; Marital Status: Married; Spouse's Name: Paul Potter; Father's Birthplace: North Carolina; Mother's Birthplace: North Carolina; Occupation: Keeping House; Cannot Read: Yes; Cannot Write: Yes; <br/>Household Members Age Relationship:<br/>Paul Potter 56 Self (Head)<br/>Isabelle Potter 56 Wife<br/>Robert Potter 21 Son<br/>Sarah Potter 16 Daughter<br/>Virginia Bryant 29 Daughter<br/>Samuel Bryant 7 Grandson<br/>Ida Bryant 3 Granddaughter.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Isabelle Potter\n|-\n| Age || 56\n|-\n| Birth Date || Abt 1824\n|-\n| Birthplace || North Carolina\n|-\n| Home in 1880 || Hartmans, Hamblen, Tennessee, USA\n|-\n| Dwelling Number || 274\n|-\n| Race || White\n|-\n| Gender || Female\n|-\n| Relation to Head of House || Wife\n|-\n| Marital Status || Married\n|-\n| Spouse's Name || Paul Potter\n|-\n| Father's Birthplace || North Carolina\n|-\n| Mother's Birthplace || North Carolina\n|-\n| Occupation || Keeping House\n|-\n| Cannot Read || Yes\n|-\n| Cannot Write || Yes\n|-\n| Household Members<br/>Age<br/>Relationship || Paul Potter 56 Self (Head)<br/>Isabelle Potter 56 Wife<br/>Robert Potter 21 Son<br/>Sarah Potter 16 Daughter<br/>Virginia Bryant 29 Daughter<br/>Samuel Bryant 7 Grandson<br/>Ida Bryant 3 Granddaughter\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1880 census Isabelle (age 56), Keeping House, was the wife of Paul Potter in Hartmans, Hamblen, Tennessee, USA.<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Isabelle Potter\n|-\n| Age || 56\n|-\n| Birth Date || Abt 1824\n|-\n| Birthplace || North Carolina\n|-\n| Home in 1880 || Hartmans, Hamblen, Tennessee, USA\n|-\n| Dwelling Number || 274\n|-\n| Race || White\n|-\n| Gender || Female\n|-\n| Relation to Head of House || Wife\n|-\n| Marital Status || Married\n|-\n| Spouse's Name || Paul Potter\n|-\n| Father's Birthplace || North Carolina\n|-\n| Mother's Birthplace || North Carolina\n|-\n| Occupation || Keeping House\n|-\n| Cannot Read || Yes\n|-\n| Cannot Write || Yes\n|-\n| Household Members<br/>Age<br/>Relationship || Paul Potter 56 Self (Head)<br/>Isabelle Potter 56 Wife<br/>Robert Potter 21 Son<br/>Sarah Potter 16 Daughter<br/>Virginia Bryant 29 Daughter<br/>Samuel Bryant 7 Grandson<br/>Ida Bryant 3 Granddaughter\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1880 Census''': \"1880 United States Federal Census\"<br/>Year: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)<br/>Name: Isabelle Potter; Age: 56; Birth Date: Abt 1824; Birthplace: North Carolina; Home in 1880: Hartmans, Hamblen, Tennessee, USA; Dwelling Number: 274; Race: White; Gender: Female; Relation to Head of House: Wife; Marital Status: Married; Spouse's Name: Paul Potter; Father's Birthplace: North Carolina; Mother's Birthplace: North Carolina; Occupation: Keeping House; Cannot Read: Yes; Cannot Write: Yes; <br/>Household Members Age Relationship:<br/>Paul Potter 56 Self (Head)<br/>Isabelle Potter 56 Wife<br/>Robert Potter 21 Son<br/>Sarah Potter 16 Daughter<br/>Virginia Bryant 29 Daughter<br/>Samuel Bryant 7 Grandson<br/>Ida Bryant 3 Granddaughter.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1880 United States Federal Census,\" database, ({{Ancestry Record|6742|10577665}} : accessed 6 May 2021), Isabelle Potter (56), wife, Keeping House, in household of Paul Potter (56) in Hartmans, Hamblen, Tennessee, USA. Born in North Carolina; citing Year 1880, Census Place Hartmans, Hamblen, Tennessee, Roll 1258, Page 423D, Enumeration District 074.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1880 census Isabelle (age 56), Keeping House, was the wife of Paul Potter in Hartmans, Hamblen, Tennessee, USA.<ref>\"1880 United States Federal Census,\" database, ({{Ancestry Record|6742|10577665}} : accessed 6 May 2021), Isabelle Potter (56), wife, Keeping House, in household of Paul Potter (56) in Hartmans, Hamblen, Tennessee, USA. Born in North Carolina; citing Year 1880, Census Place Hartmans, Hamblen, Tennessee, Roll 1258, Page 423D, Enumeration District 074.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1880 United States Federal Census,\" database, ({{Ancestry Record|6742|10577665}} : accessed 6 May 2021), Isabelle Potter (56), wife, Keeping House, in household of Paul Potter (56) in Hartmans, Hamblen, Tennessee, USA. Born in North Carolina; citing Year 1880, Census Place Hartmans, Hamblen, Tennessee, Roll 1258, Page 423D, Enumeration District 074.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1880 Census'':\n\"1880 United States Federal Census\", database, \nYear 1880, Census Place Hartmans, Hamblen, Tennessee, Roll 1258, Page 423D, Enumeration District 074, \n({{Ancestry Record|6742|10577665}} : accessed 6 May 2021), \nName: Isabelle Potter; Age: 56; Birth Date: Abt 1824; Birthplace: North Carolina; Home in 1880: Hartmans, Hamblen, Tennessee, USA; Dwelling Number: 274; Race: White; Gender: Female; Relation to Head of House: Wife; Marital Status: Married; Spouse's Name: Paul Potter; Father's Birthplace: North Carolina; Mother's Birthplace: North Carolina; Occupation: Keeping House; Cannot Read: Yes; Cannot Write: Yes; Household Members Age Relationship: Paul Potter 56 Self (Head), Isabelle Potter 56 Wife, Robert Potter 21 Son, Sarah Potter 16 Daughter, Virginia Bryant 29 Daughter, Samuel Bryant 7 Grandson, Ida Bryant 3 Granddaughter.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1880 census Isabelle (age 56), Keeping House, was the wife of Paul Potter in Hartmans, Hamblen, Tennessee, USA.<ref>\n''1880 Census'':\n\"1880 United States Federal Census\", database, \nYear 1880, Census Place Hartmans, Hamblen, Tennessee, Roll 1258, Page 423D, Enumeration District 074, \n({{Ancestry Record|6742|10577665}} : accessed 6 May 2021), \nName: Isabelle Potter; Age: 56; Birth Date: Abt 1824; Birthplace: North Carolina; Home in 1880: Hartmans, Hamblen, Tennessee, USA; Dwelling Number: 274; Race: White; Gender: Female; Relation to Head of House: Wife; Marital Status: Married; Spouse's Name: Paul Potter; Father's Birthplace: North Carolina; Mother's Birthplace: North Carolina; Occupation: Keeping House; Cannot Read: Yes; Cannot Write: Yes; Household Members Age Relationship: Paul Potter 56 Self (Head), Isabelle Potter 56 Wife, Robert Potter 21 Son, Sarah Potter 16 Daughter, Virginia Bryant 29 Daughter, Samuel Bryant 7 Grandson, Ida Bryant 3 Granddaughter.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1880 Census'': \"1880 United States Federal Census\", database, Year 1880, Census Place Hartmans, Hamblen, Tennessee, Roll 1258, Page 423D, Enumeration District 074, ({{Ancestry Record|6742|10577665}} : accessed 6 May 2021), Name: Isabelle Potter; Age: 56; Birth Date: Abt 1824; Birthplace: North Carolina; Home in 1880: Hartmans, Hamblen, Tennessee, USA; Dwelling Number: 274; Race: White; Gender: Female; Relation to Head of House: Wife; Marital Status: Married; Spouse's Name: Paul Potter; Father's Birthplace: North Carolina; Mother's Birthplace: North Carolina; Occupation: Keeping House; Cannot Read: Yes; Cannot Write: Yes; Household Members Age Relationship: Paul Potter 56 Self (Head), Isabelle Potter 56 Wife, Robert Potter 21 Son, Sarah Potter 16 Daughter, Virginia Bryant 29 Daughter, Samuel Bryant 7 Grandson, Ida Bryant 3 Granddaughter.",
+    "type": "source"
+  }
+}

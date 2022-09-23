@@ -1,0 +1,41 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Pearl Jennie Agar"
+  },
+  "birthDate": {
+    "dateString": "17 Mar 1897"
+  },
+  "birthPlace": {
+    "placeString": "Evergreen Township, Sanilac, Michigan"
+  },
+  "eventDate": {
+    "dateString": "17 Mar 1897"
+  },
+  "eventPlace": {
+    "placeString": "Evergreen Township, Sanilac, Michigan"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Robert Agar",
+        "forenames": "Robert",
+        "lastName": "Agar"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Agar",
+        "forenames": "Mary",
+        "lastName": "Agar"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1459684"
+  },
+  "hasValidData": true
+}

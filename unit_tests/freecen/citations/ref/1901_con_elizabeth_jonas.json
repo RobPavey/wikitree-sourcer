@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>\n[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1901 census Elizabeth (age 20), Cook Domestic, was the single servant of William T Pethick in Launceston, Cornwall, England.<ref>\n'''1901 Census''':\n\"1901 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>\n[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>\n[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)<br/>\nElizabeth S Jonas (20), single servant, Cook Domestic, in household of William T Pethick (35) in Launceston registration district in Cornwall, England. Born in Lewannick, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1901 census Elizabeth (age 20), Cook Domestic, was the single servant of William T Pethick in Launceston, Cornwall, England.<ref>\n'''1901 Census''':\n\"1901 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>\n[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)<br/>\nElizabeth S Jonas (20), single servant, Cook Domestic, in household of William T Pethick (35) in Launceston registration district in Cornwall, England. Born in Lewannick, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)<br/>Elizabeth S Jonas (20), single servant, Cook Domestic, in household of William T Pethick (35) in Launceston registration district in Cornwall, England. Born in Lewannick, Cornwall, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>\n[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus Year: 1901; County: Cornwall (CON); Census District: Launceston; Enumeration District: 1; Civil Parish: St Mary Magdalene; Ecclesiastical Parish: Launceston St Mary Magdalene; Where Census Taken: Launceston; Piece: RG13_2183; Ward: -; Constituency: North Eastern Or Launceston Division Of Cornwall; Folio: 6; Page: 3; Dwelling Number: 21.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1901 census Elizabeth (age 20), Cook Domestic, was the single servant of William T Pethick in Launceston, Cornwall, England.<ref>\n'''1901 Census''':\n\"1901 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>\n[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus Year: 1901; County: Cornwall (CON); Census District: Launceston; Enumeration District: 1; Civil Parish: St Mary Magdalene; Ecclesiastical Parish: Launceston St Mary Magdalene; Where Census Taken: Launceston; Piece: RG13_2183; Ward: -; Constituency: North Eastern Or Launceston Division Of Cornwall; Folio: 6; Page: 3; Dwelling Number: 21.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)<br/>Census Year: 1901; County: Cornwall (CON); Census District: Launceston; Enumeration District: 1; Civil Parish: St Mary Magdalene; Ecclesiastical Parish: Launceston St Mary Magdalene; Where Census Taken: Launceston; Piece: RG13_2183; Ward: -; Constituency: North Eastern Or Launceston Division Of Cornwall; Folio: 6; Page: 3; Dwelling Number: 21.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>\n[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census Year || 1901\n|-\n| County || Cornwall (CON)\n|-\n| Census District || Launceston\n|-\n| Enumeration District || 1\n|-\n| Civil Parish || St Mary Magdalene\n|-\n| Ecclesiastical Parish || Launceston St Mary Magdalene\n|-\n| Where Census Taken || Launceston\n|-\n| Piece || RG13_2183\n|-\n| Ward || -\n|-\n| Constituency || North Eastern Or Launceston Division Of Cornwall\n|-\n| Folio || 6\n|-\n| Page || 3\n|-\n| Dwelling Number || 21\n|-\n| Schedule || \n|-\n| House Number || \n|-\n| House or Street Name || \n|-\n| Rooms || \n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1901 census Elizabeth (age 20), Cook Domestic, was the single servant of William T Pethick in Launceston, Cornwall, England.<ref>\n'''1901 Census''':\n\"1901 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>\n[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census Year || 1901\n|-\n| County || Cornwall (CON)\n|-\n| Census District || Launceston\n|-\n| Enumeration District || 1\n|-\n| Civil Parish || St Mary Magdalene\n|-\n| Ecclesiastical Parish || Launceston St Mary Magdalene\n|-\n| Where Census Taken || Launceston\n|-\n| Piece || RG13_2183\n|-\n| Ward || -\n|-\n| Constituency || North Eastern Or Launceston Division Of Cornwall\n|-\n| Folio || 6\n|-\n| Page || 3\n|-\n| Dwelling Number || 21\n|-\n| Schedule || \n|-\n| House Number || \n|-\n| House or Street Name || \n|-\n| Rooms || \n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13338 RG 13]; Piece: 2183; Folio: 6; Page: 3<br/>[https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5 FreeCen Transcription] (accessed 6 May 2021)<br/>Census Year: 1901; County: Cornwall (CON); Census District: Launceston; Enumeration District: 1; Civil Parish: St Mary Magdalene; Ecclesiastical Parish: Launceston St Mary Magdalene; Where Census Taken: Launceston; Piece: RG13_2183; Ward: -; Constituency: North Eastern Or Launceston Division Of Cornwall; Folio: 6; Page: 3; Dwelling Number: 21.",
+    "type": "source"
+  }
+}

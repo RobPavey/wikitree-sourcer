@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "lastName": "EDWARDS",
+  "forenames": "HANNAH",
+  "firstName": "HANNAH",
+  "ageAtDeath": 47,
+  "recordType": "older",
+  "eventYear": 1855,
+  "eventQuarterLetter": "D",
+  "eventQuarter": 4,
+  "registrationDistrict": "OF DEVIZES IN THE COUNTY OF WILTS",
+  "referenceVolume": "05A",
+  "referencePage": "58",
+  "personGender": "female",
+  "deathYear": 1855,
+  "deathQuarter": 4,
+  "eventType": "death"
+}

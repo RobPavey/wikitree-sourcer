@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1870 census Paul (age 48), Farm Laborer, was in District 15, Jefferson, Tennessee.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)<br/>\nPaul Potter (48), Farm Laborer, in District 15, Jefferson, Tennessee. Born in Tennessee.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1870 census Paul (age 48), Farm Laborer, was in District 15, Jefferson, Tennessee.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)<br/>\nPaul Potter (48), Farm Laborer, in District 15, Jefferson, Tennessee. Born in Tennessee.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)<br/>Paul Potter (48), Farm Laborer, in District 15, Jefferson, Tennessee. Born in Tennessee.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)<br/>\nName: Paul Potter; Age in 1870: 48; Birth Date: abt 1822; Birthplace: Tennessee; Dwelling Number: 118; Home in 1870: District 15, Jefferson, Tennessee; Race: White; Gender: Male; Post Office: Witts Foundry; Occupation: Farm Laborer; Cannot Write: Yes; Male Citizen Over 21: Yes; Personal Estate Value: 213; Inferred Spouse: Isabella Potter; Inferred Children: Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter; <br/>Household Members Age:<br/>Paul Potter 48<br/>Isabella Potter 43<br/>Virginia Potter<br/>Benjamin Potter 19<br/>Angeline Potter 17<br/>Patience C Potter 15<br/>Robert Potter 13<br/>Mary E Potter 11<br/>Sarah E Potter 6.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1870 census Paul (age 48), Farm Laborer, was in District 15, Jefferson, Tennessee.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)<br/>\nName: Paul Potter; Age in 1870: 48; Birth Date: abt 1822; Birthplace: Tennessee; Dwelling Number: 118; Home in 1870: District 15, Jefferson, Tennessee; Race: White; Gender: Male; Post Office: Witts Foundry; Occupation: Farm Laborer; Cannot Write: Yes; Male Citizen Over 21: Yes; Personal Estate Value: 213; Inferred Spouse: Isabella Potter; Inferred Children: Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter; <br/>Household Members Age:<br/>Paul Potter 48<br/>Isabella Potter 43<br/>Virginia Potter<br/>Benjamin Potter 19<br/>Angeline Potter 17<br/>Patience C Potter 15<br/>Robert Potter 13<br/>Mary E Potter 11<br/>Sarah E Potter 6.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)<br/>Name: Paul Potter; Age in 1870: 48; Birth Date: abt 1822; Birthplace: Tennessee; Dwelling Number: 118; Home in 1870: District 15, Jefferson, Tennessee; Race: White; Gender: Male; Post Office: Witts Foundry; Occupation: Farm Laborer; Cannot Write: Yes; Male Citizen Over 21: Yes; Personal Estate Value: 213; Inferred Spouse: Isabella Potter; Inferred Children: Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter; <br/>Household Members Age:<br/>Paul Potter 48<br/>Isabella Potter 43<br/>Virginia Potter<br/>Benjamin Potter 19<br/>Angeline Potter 17<br/>Patience C Potter 15<br/>Robert Potter 13<br/>Mary E Potter 11<br/>Sarah E Potter 6.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Paul Potter\n|-\n| Age in 1870 || 48\n|-\n| Birth Date || abt 1822\n|-\n| Birthplace || Tennessee\n|-\n| Dwelling Number || 118\n|-\n| Home in 1870 || District 15, Jefferson, Tennessee\n|-\n| Race || White\n|-\n| Gender || Male\n|-\n| Post Office || Witts Foundry\n|-\n| Occupation || Farm Laborer\n|-\n| Cannot Write || Yes\n|-\n| Male Citizen Over 21 || Yes\n|-\n| Personal Estate Value || 213\n|-\n| Inferred Spouse || Isabella Potter\n|-\n| Inferred Children || Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter\n|-\n| Household Members<br/>Age || Paul Potter 48<br/>Isabella Potter 43<br/>Virginia Potter<br/>Benjamin Potter 19<br/>Angeline Potter 17<br/>Patience C Potter 15<br/>Robert Potter 13<br/>Mary E Potter 11<br/>Sarah E Potter 6\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1870 census Paul (age 48), Farm Laborer, was in District 15, Jefferson, Tennessee.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Paul Potter\n|-\n| Age in 1870 || 48\n|-\n| Birth Date || abt 1822\n|-\n| Birthplace || Tennessee\n|-\n| Dwelling Number || 118\n|-\n| Home in 1870 || District 15, Jefferson, Tennessee\n|-\n| Race || White\n|-\n| Gender || Male\n|-\n| Post Office || Witts Foundry\n|-\n| Occupation || Farm Laborer\n|-\n| Cannot Write || Yes\n|-\n| Male Citizen Over 21 || Yes\n|-\n| Personal Estate Value || 213\n|-\n| Inferred Spouse || Isabella Potter\n|-\n| Inferred Children || Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter\n|-\n| Household Members<br/>Age || Paul Potter 48<br/>Isabella Potter 43<br/>Virginia Potter<br/>Benjamin Potter 19<br/>Angeline Potter 17<br/>Patience C Potter 15<br/>Robert Potter 13<br/>Mary E Potter 11<br/>Sarah E Potter 6\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)<br/>Name: Paul Potter; Age in 1870: 48; Birth Date: abt 1822; Birthplace: Tennessee; Dwelling Number: 118; Home in 1870: District 15, Jefferson, Tennessee; Race: White; Gender: Male; Post Office: Witts Foundry; Occupation: Farm Laborer; Cannot Write: Yes; Male Citizen Over 21: Yes; Personal Estate Value: 213; Inferred Spouse: Isabella Potter; Inferred Children: Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter; <br/>Household Members Age:<br/>Paul Potter 48<br/>Isabella Potter 43<br/>Virginia Potter<br/>Benjamin Potter 19<br/>Angeline Potter 17<br/>Patience C Potter 15<br/>Robert Potter 13<br/>Mary E Potter 11<br/>Sarah E Potter 6.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1870 United States Federal Census,\" database, ({{Ancestry Record|7163|10410782}} : accessed 6 May 2021), Paul Potter (48), Farm Laborer, in District 15, Jefferson, Tennessee. Born in Tennessee; citing Year 1870, Census Place District 15, Jefferson, Tennessee, Roll M593_1540, Page 537A.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1870 census Paul (age 48), Farm Laborer, was in District 15, Jefferson, Tennessee.<ref>\"1870 United States Federal Census,\" database, ({{Ancestry Record|7163|10410782}} : accessed 6 May 2021), Paul Potter (48), Farm Laborer, in District 15, Jefferson, Tennessee. Born in Tennessee; citing Year 1870, Census Place District 15, Jefferson, Tennessee, Roll M593_1540, Page 537A.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1870 United States Federal Census,\" database, ({{Ancestry Record|7163|10410782}} : accessed 6 May 2021), Paul Potter (48), Farm Laborer, in District 15, Jefferson, Tennessee. Born in Tennessee; citing Year 1870, Census Place District 15, Jefferson, Tennessee, Roll M593_1540, Page 537A.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1870 Census'':\n\"1870 United States Federal Census\", database, \nYear 1870, Census Place District 15, Jefferson, Tennessee, Roll M593_1540, Page 537A, \n({{Ancestry Record|7163|10410782}} : accessed 6 May 2021), \nName: Paul Potter; Age in 1870: 48; Birth Date: abt 1822; Birthplace: Tennessee; Dwelling Number: 118; Home in 1870: District 15, Jefferson, Tennessee; Race: White; Gender: Male; Post Office: Witts Foundry; Occupation: Farm Laborer; Cannot Write: Yes; Male Citizen Over 21: Yes; Personal Estate Value: 213; Inferred Spouse: Isabella Potter; Inferred Children: Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter; Household Members Age: Paul Potter 48, Isabella Potter 43, Virginia Potter, Benjamin Potter 19, Angeline Potter 17, Patience C Potter 15, Robert Potter 13, Mary E Potter 11, Sarah E Potter 6.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1870 census Paul (age 48), Farm Laborer, was in District 15, Jefferson, Tennessee.<ref>\n''1870 Census'':\n\"1870 United States Federal Census\", database, \nYear 1870, Census Place District 15, Jefferson, Tennessee, Roll M593_1540, Page 537A, \n({{Ancestry Record|7163|10410782}} : accessed 6 May 2021), \nName: Paul Potter; Age in 1870: 48; Birth Date: abt 1822; Birthplace: Tennessee; Dwelling Number: 118; Home in 1870: District 15, Jefferson, Tennessee; Race: White; Gender: Male; Post Office: Witts Foundry; Occupation: Farm Laborer; Cannot Write: Yes; Male Citizen Over 21: Yes; Personal Estate Value: 213; Inferred Spouse: Isabella Potter; Inferred Children: Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter; Household Members Age: Paul Potter 48, Isabella Potter 43, Virginia Potter, Benjamin Potter 19, Angeline Potter 17, Patience C Potter 15, Robert Potter 13, Mary E Potter 11, Sarah E Potter 6.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1870 Census'': \"1870 United States Federal Census\", database, Year 1870, Census Place District 15, Jefferson, Tennessee, Roll M593_1540, Page 537A, ({{Ancestry Record|7163|10410782}} : accessed 6 May 2021), Name: Paul Potter; Age in 1870: 48; Birth Date: abt 1822; Birthplace: Tennessee; Dwelling Number: 118; Home in 1870: District 15, Jefferson, Tennessee; Race: White; Gender: Male; Post Office: Witts Foundry; Occupation: Farm Laborer; Cannot Write: Yes; Male Citizen Over 21: Yes; Personal Estate Value: 213; Inferred Spouse: Isabella Potter; Inferred Children: Virginia Potter Benjamin Potter Angeline Potter Patience C Potter Robert Potter Mary E Potter Sarah E Potter; Household Members Age: Paul Potter 48, Isabella Potter 43, Virginia Potter, Benjamin Potter 19, Angeline Potter 17, Patience C Potter 15, Robert Potter 13, Mary E Potter 11, Sarah E Potter 6.",
+    "type": "source"
+  }
+}

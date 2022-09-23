@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>\nHome Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>\n{{Ancestry Record|1989|219120}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Jas was in a criminal register on 7 February 1831 in Portsmouth.<ref>\n'''Criminal Register''':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>\nHome Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>\n{{Ancestry Record|1989|219120}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Criminal Register''': \"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>Home Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>{{Ancestry Record|1989|219120}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>\nHome Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>\n{{Ancestry Record|1989|219120}} (accessed 6 May 2021)<br/>\nName: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Jas was in a criminal register on 7 February 1831 in Portsmouth.<ref>\n'''Criminal Register''':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>\nHome Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>\n{{Ancestry Record|1989|219120}} (accessed 6 May 2021)<br/>\nName: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Criminal Register''': \"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>Home Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>{{Ancestry Record|1989|219120}} (accessed 6 May 2021)<br/>Name: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>\nHome Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>\n{{Ancestry Record|1989|219120}} (accessed 6 May 2021)<br/>\nName: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Jas was in a criminal register on 7 February 1831 in Portsmouth.<ref>\n'''Criminal Register''':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>\nHome Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>\n{{Ancestry Record|1989|219120}} (accessed 6 May 2021)<br/>\nName: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Criminal Register''': \"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>Home Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>{{Ancestry Record|1989|219120}} (accessed 6 May 2021)<br/>Name: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>\nHome Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>\n{{Ancestry Record|1989|219120}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Jas Toomer\n|-\n| Age || 35\n|-\n| Estimated Birth Year || abt 1796\n|-\n| Date Received || 7 Feb 1831\n|-\n| Ship || Hardy\n|-\n| Place Moored || Portsmouth\n|-\n| Date Convicted || 27 Dec 1830\n|-\n| Place Convicted || New Sarum\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Jas was in a criminal register on 7 February 1831 in Portsmouth.<ref>\n'''Criminal Register''':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>\nHome Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>\n{{Ancestry Record|1989|219120}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Jas Toomer\n|-\n| Age || 35\n|-\n| Estimated Birth Year || abt 1796\n|-\n| Date Received || 7 Feb 1831\n|-\n| Ship || Hardy\n|-\n| Place Moored || Portsmouth\n|-\n| Date Convicted || 27 Dec 1830\n|-\n| Place Convicted || New Sarum\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Criminal Register''': \"UK, Prison Hulk Registers and Letter Books, 1802-1849\"<br/>Home Office: Convict Prison Hulks: Registers and Letter Books; Class: HO9; Piece: 9<br/>{{Ancestry Record|1989|219120}} (accessed 6 May 2021)<br/>Name: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"UK, Prison Hulk Registers and Letter Books, 1802-1849,\" database, ({{Ancestry Record|1989|219120}} : accessed 6 May 2021), Name Jas Toomer, Age 35, Estimated Birth Year abt 1796, Date Received 7 Feb 1831, Ship Hardy, Place Moored Portsmouth, Date Convicted 27 Dec 1830, Place Convicted New Sarum; citing Home Office Convict Prison Hulks Registers and Letter Books, Class HO9, Piece 9.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Jas was in a criminal register on 7 February 1831 in Portsmouth.<ref>\"UK, Prison Hulk Registers and Letter Books, 1802-1849,\" database, ({{Ancestry Record|1989|219120}} : accessed 6 May 2021), Name Jas Toomer, Age 35, Estimated Birth Year abt 1796, Date Received 7 Feb 1831, Ship Hardy, Place Moored Portsmouth, Date Convicted 27 Dec 1830, Place Convicted New Sarum; citing Home Office Convict Prison Hulks Registers and Letter Books, Class HO9, Piece 9.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"UK, Prison Hulk Registers and Letter Books, 1802-1849,\" database, ({{Ancestry Record|1989|219120}} : accessed 6 May 2021), Name Jas Toomer, Age 35, Estimated Birth Year abt 1796, Date Received 7 Feb 1831, Ship Hardy, Place Moored Portsmouth, Date Convicted 27 Dec 1830, Place Convicted New Sarum; citing Home Office Convict Prison Hulks Registers and Letter Books, Class HO9, Piece 9.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Criminal Register'':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\", database, \nHome Office Convict Prison Hulks Registers and Letter Books, Class HO9, Piece 9, \n({{Ancestry Record|1989|219120}} : accessed 6 May 2021), \nName: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Jas was in a criminal register on 7 February 1831 in Portsmouth.<ref>\n''Criminal Register'':\n\"UK, Prison Hulk Registers and Letter Books, 1802-1849\", database, \nHome Office Convict Prison Hulks Registers and Letter Books, Class HO9, Piece 9, \n({{Ancestry Record|1989|219120}} : accessed 6 May 2021), \nName: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Criminal Register'': \"UK, Prison Hulk Registers and Letter Books, 1802-1849\", database, Home Office Convict Prison Hulks Registers and Letter Books, Class HO9, Piece 9, ({{Ancestry Record|1989|219120}} : accessed 6 May 2021), Name: Jas Toomer; Age: 35; Estimated Birth Year: abt 1796; Date Received: 7 Feb 1831; Ship: Hardy; Place Moored: Portsmouth; Date Convicted: 27 Dec 1830; Place Convicted: New Sarum.",
+    "type": "source"
+  }
+}

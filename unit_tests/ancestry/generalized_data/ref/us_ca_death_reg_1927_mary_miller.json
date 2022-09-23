@@ -1,0 +1,27 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Mary E Miller"
+  },
+  "eventDate": {
+    "dateString": "10 Dec 1927"
+  },
+  "deathDate": {
+    "dateString": "10 Dec 1927"
+  },
+  "eventPlace": {
+    "placeString": "Kern, California, USA"
+  },
+  "lastNameAtDeath": "Miller",
+  "ageAtDeath": "71",
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1856"
+  },
+  "collectionData": {
+    "id": "5187"
+  },
+  "hasValidData": true
+}

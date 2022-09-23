@@ -1,0 +1,126 @@
+{
+  "sourceOfData": "freecen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventPlace": {
+    "placeString": "13 Looe Street, Plymouth Charles, Plymouth, Devon, England",
+    "streetAddress": "13 Looe Street"
+  },
+  "registrationDistrict": "Plymouth",
+  "eventDate": {
+    "yearString": "1891"
+  },
+  "name": {
+    "lastName": "Hockridge",
+    "forenames": "Louisa"
+  },
+  "ageAtEvent": "15",
+  "birthPlace": {
+    "placeString": "Oreston, Devon, England"
+  },
+  "relationshipToHead": "daughter",
+  "maritalStatus": "single",
+  "personGender": "female",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Samuel Hockridge",
+      "birthPlace": "Tavistock, Devon",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "61",
+      "occupation": "General Labourer (employee)"
+    },
+    {
+      "name": "Mary Hockridge",
+      "birthPlace": "Marystowe, Devon",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "55"
+    },
+    {
+      "name": "Charles Hockridge",
+      "birthPlace": "Tavistock, Devon",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "27",
+      "occupation": "Drapers Porter (employee)"
+    },
+    {
+      "name": "Samuel Hockridge",
+      "birthPlace": "Oreston, Devon",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "22",
+      "occupation": "Baker (employee)"
+    },
+    {
+      "name": "Emma Hockridge",
+      "birthPlace": "Oreston, Devon",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "20",
+      "occupation": "General Servant"
+    },
+    {
+      "name": "Richard Hockridge",
+      "birthPlace": "Oreston, Devon",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "17",
+      "occupation": "General Labourer (employee)"
+    },
+    {
+      "name": "Louisa Hockridge",
+      "birthPlace": "Oreston, Devon",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "15",
+      "isSelected": true
+    },
+    {
+      "name": "Annie Hockridge",
+      "birthPlace": "Plymouth, Devon",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "10",
+      "occupation": "Scholar"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Samuel Hockridge"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Hockridge"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1891",
+    "piece": "1729",
+    "folio": "31",
+    "page": "55",
+    "schedule": "421"
+  },
+  "hasValidData": true
+}

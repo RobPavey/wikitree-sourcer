@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Sarah Higham"
+  },
+  "eventDate": {
+    "dateString": "26 Feb 1825"
+  },
+  "eventPlace": {
+    "placeString": "Whittlebury, Northamptonshire, England"
+  },
+  "deathPlace": {
+    "placeString": "Whittlebury, Northamptonshire, England"
+  },
+  "lastNameAtDeath": "Higham",
+  "ageAtDeath": "80",
+  "collectionData": {
+    "id": "9201"
+  },
+  "hasValidData": true
+}

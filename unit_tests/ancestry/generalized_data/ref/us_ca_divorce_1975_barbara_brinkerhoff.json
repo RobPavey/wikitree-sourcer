@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Barbara J Brinkerhoff"
+  },
+  "eventDate": {
+    "dateString": "Jun 1976"
+  },
+  "eventPlace": {
+    "placeString": "Los Angeles"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Robert A Johnson"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1141"
+  },
+  "hasValidData": true
+}

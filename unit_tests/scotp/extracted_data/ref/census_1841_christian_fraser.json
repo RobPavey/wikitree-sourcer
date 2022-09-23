@@ -1,0 +1,34 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Fraser&surname_so=exact&forename_so=starts&second_person_forename_so=exact&record_type=census&year%5B0%5D=1841",
+  "success": true,
+  "numResultsOnPage": 25,
+  "recordData": {
+    "Surname": "FRASER",
+    "Forename": "CHRISTIAN",
+    "Year": "1841",
+    "Gender": "F",
+    "Age at Census": "5",
+    "Ref": "213/ 1/ 5",
+    "RD Name": "Kintore",
+    "County/ City": "Aberdeen"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_census/4711804?image=5&return_row=0",
+  "pageHeader": "Census returns - Census",
+  "searchCriteria": {
+    "Surname": "Fraser",
+    "Surname Option": "Exact",
+    "Forename": "Christian",
+    "Forename Option": "Starts",
+    "Year": "1841"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "census",
+    "surname": "Fraser",
+    "surname_so": "exact",
+    "forename_so": "starts",
+    "second_person_forename_so": "exact",
+    "record_type": "census",
+    "year[0]": "1841"
+  }
+}

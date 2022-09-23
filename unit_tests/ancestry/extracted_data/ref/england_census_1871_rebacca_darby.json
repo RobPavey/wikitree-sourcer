@@ -1,0 +1,92 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/2477121:7619",
+  "pageType": "record",
+  "dbId": "7619",
+  "recordId": "2477121",
+  "ancestryTemplate": "{{Ancestry Record|7619|2477121}}",
+  "domain": "com",
+  "titleName": "Rebacca Darby",
+  "titleCollection": "1871 England Census",
+  "recordData": {
+    "Name": "Rebacca Darby",
+    "Age": "55",
+    "Estimated Birth Year": "1816",
+    "Relation": "Wife",
+    "Gender": "Female",
+    "Where born": "Ashburton, Herefordshire, England",
+    "Civil parish": "West Bromwich",
+    "Ecclesiastical parish": "Christchurch",
+    "Town": "West Bromwich",
+    "County/Island": "Staffordshire",
+    "Country": "England",
+    "Registration district": "West Bromwich",
+    "Sub-registration district": "West Bromwich South West",
+    "ED, institution, or vessel": "14",
+    "Household schedule number": "64",
+    "Piece": "2980",
+    "Folio": "51",
+    "Page number": "13",
+    "Household Members<br/>Age<br/>Relationship": "Charles Darby 57 Head<br/>Rebacca Darby 55 Wife<br/>Joseph Darby 31 Son<br/>Leah Darby 23 Daughter<br/>Emily Darby 16 Daughter<br/>Adaliade Darby 12 Daughter"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "Charles Darby",
+        "dbId": "7619",
+        "recordId": "2477119",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=2477119&indiv=try&viewrecord=1&r=an",
+        "Age": "57",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Rebacca Darby",
+        "Age": "55",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "Joseph Darby",
+        "dbId": "7619",
+        "recordId": "2477123",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=2477123&indiv=try&viewrecord=1&r=an",
+        "Age": "31",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Leah Darby",
+        "dbId": "7619",
+        "recordId": "2477125",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=2477125&indiv=try&viewrecord=1&r=an",
+        "Age": "23",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Emily Darby",
+        "dbId": "7619",
+        "recordId": "2477127",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=2477127&indiv=try&viewrecord=1&r=an",
+        "Age": "16",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Adaliade Darby",
+        "dbId": "7619",
+        "recordId": "2477129",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=2477129&indiv=try&viewrecord=1&r=an",
+        "Age": "12",
+        "Relationship": "Daughter"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7619/images/STSRG10_2978_2981-0467?pid=2477121&usePUB=true&usePUBJs=true",
+  "imageDbId": "7619",
+  "imageRecordId": "STSRG10_2978_2981-0467",
+  "sourceCitation": "The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2980; Folio: 51; Page: 13; GSU roll: 838865",
+  "sourceInformation": "Ancestry.com. 1871 England Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2004. Original data: Census Returns of England and Wales, 1871. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1871. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1871. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1871. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1871 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1871 England Census. Learn more..."
+}

@@ -1,0 +1,74 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Blanche A Radcliffe"
+  },
+  "personGender": "female",
+  "registrationDistrict": "Pancras",
+  "birthDate": {
+    "yearString": "1869",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Kentish Town, London, England"
+  },
+  "eventDate": {
+    "yearString": "1891"
+  },
+  "eventPlace": {
+    "placeString": "London, St Pancras, London, England"
+  },
+  "ageAtEvent": "22",
+  "relationshipToHead": "wife",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Thomas Radcliffe",
+      "age": "26",
+      "relationship": "head",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6598&h=7866656&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Blanche A Radcliffe",
+      "age": "22",
+      "relationship": "wife",
+      "isSelected": true,
+      "gender": "female",
+      "birthPlace": "Kentish Town, London, England",
+      "birthYear": "1869"
+    },
+    {
+      "name": "George L Radcliffe",
+      "age": "4",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6598&h=7866658&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Reginald S Radcliffe",
+      "age": "3",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6598&h=7866659&indiv=try&viewrecord=1&r=an"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Thomas Radcliffe"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "6598",
+    "folio": "159",
+    "piece": "140"
+  },
+  "hasValidData": true
+}

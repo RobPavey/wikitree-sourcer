@@ -1,0 +1,36 @@
+{
+  "recordData": {
+    "Name": "Parker Adelbert Childs",
+    "Marriage Date": "4 Mar 1873",
+    "Marriage Place": "Springville, Utah, Utah, United States",
+    "Marriage Id": "242974",
+    "Source Volume Nbr": "5",
+    "Misc Note": "Source: LDS Genealogical Surveys (FHL 1,059,455)",
+    "Event Place Year Range": "1858-1912"
+  },
+  "fullName": "Parker Adelbert Childs",
+  "givenName": "Parker Adelbert",
+  "surname": "Childs",
+  "gender": "male",
+  "eventDateOriginal": "4 Mar 1873",
+  "eventDate": "4 Mar 1873",
+  "eventYear": "1873",
+  "eventPlaceOriginal": "Springville, Utah, Utah, United States",
+  "eventPlace": "Springville, Utah, Utah, United States",
+  "eventPlaceL2": "Utah",
+  "eventPlaceL1": "United States",
+  "factType": "Marriage",
+  "spouseFullName": "Joannah Elizabeth Coats",
+  "spouseGivenName": "Joannah Elizabeth",
+  "spouseSurname": "Coats",
+  "referenceData": {
+    "sourcePageNbr": "371"
+  },
+  "fsCollectionId": "1854302",
+  "collectionTitle": "United States Western States Marriage Index",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6",
+  "citation": "\"United States Western States Marriage Index\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XZJC-SH7 : 19 October 2018), Parker Adelbert Childs and Joannah Elizabeth Coats, 1873.",
+  "sourceTitleForPerson": "Parker Adelbert Childs, \"United States Western States Marriage Index\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:XZJC-SH7",
+  "pageType": "record"
+}

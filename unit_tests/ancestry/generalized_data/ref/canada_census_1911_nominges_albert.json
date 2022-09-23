@@ -1,0 +1,70 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Nominiges Albert"
+  },
+  "personGender": "male",
+  "birthPlace": {
+    "placeString": "Quebec"
+  },
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "Newport Point, Quebec"
+  },
+  "occupation": "Labourer",
+  "ageAtEvent": "29",
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Nominiges Albert",
+      "age": "29",
+      "isSelected": true,
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "occupation": "Labourer",
+      "birthDate": "Jun 1881",
+      "birthPlace": "Quebec",
+      "employer": "No",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442578"
+    },
+    {
+      "name": "Jennie Albert",
+      "age": "24",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442579"
+    },
+    {
+      "name": "Domingue Albert",
+      "age": "5",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442580"
+    },
+    {
+      "name": "Joseph Albert",
+      "age": "3",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442581"
+    },
+    {
+      "name": "Pauline Albert",
+      "age": "2",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442582"
+    },
+    {
+      "name": "Christine Albert",
+      "age": "55",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442583"
+    }
+  ],
+  "collectionData": {
+    "id": "8947"
+  },
+  "hasValidData": true
+}

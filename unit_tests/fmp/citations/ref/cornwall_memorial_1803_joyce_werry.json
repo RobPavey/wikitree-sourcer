@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Cornwall Memorial Inscriptions\"<br/>\nReference: 206<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Joyce (age 77) died on 20 February 1803 and was buried in Pelynt, Cornwall, England.<ref>\n'''Burial''':\n\"Cornwall Memorial Inscriptions\"<br/>\nReference: 206<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Burial''': \"Cornwall Memorial Inscriptions\"<br/>Reference: 206<br/>[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Cornwall Memorial Inscriptions\"<br/>\nReference: 206<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nJoyce Werry burial (died on 20 Feb 1803 at age 77) in Pelynt, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Joyce (age 77) died on 20 February 1803 and was buried in Pelynt, Cornwall, England.<ref>\n'''Burial''':\n\"Cornwall Memorial Inscriptions\"<br/>\nReference: 206<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nJoyce Werry burial (died on 20 Feb 1803 at age 77) in Pelynt, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Burial''': \"Cornwall Memorial Inscriptions\"<br/>Reference: 206<br/>[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>Joyce Werry burial (died on 20 Feb 1803 at age 77) in Pelynt, Cornwall, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Cornwall Memorial Inscriptions\"<br/>\nReference: 206<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Joyce; Last name: Werry; Age: 77; Birth year: 1726; Death date: 20 Feb 1803; Place: Pelynt; Burial ground: Parish Church; County: Cornwall; Country: England; Card or location number: Card.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Joyce (age 77) died on 20 February 1803 and was buried in Pelynt, Cornwall, England.<ref>\n'''Burial''':\n\"Cornwall Memorial Inscriptions\"<br/>\nReference: 206<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Joyce; Last name: Werry; Age: 77; Birth year: 1726; Death date: 20 Feb 1803; Place: Pelynt; Burial ground: Parish Church; County: Cornwall; Country: England; Card or location number: Card.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Burial''': \"Cornwall Memorial Inscriptions\"<br/>Reference: 206<br/>[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Joyce; Last name: Werry; Age: 77; Birth year: 1726; Death date: 20 Feb 1803; Place: Pelynt; Burial ground: Parish Church; County: Cornwall; Country: England; Card or location number: Card.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Cornwall Memorial Inscriptions\"<br/>\nReference: 206<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Joyce\n|-\n| Last name || Werry\n|-\n| Age || 77\n|-\n| Birth year || 1726\n|-\n| Death date || 20 Feb 1803\n|-\n| Place || Pelynt\n|-\n| Burial ground || Parish Church\n|-\n| County || Cornwall\n|-\n| Country || England\n|-\n| Card or location number || Card\n|-\n| Post nominal || -\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Joyce (age 77) died on 20 February 1803 and was buried in Pelynt, Cornwall, England.<ref>\n'''Burial''':\n\"Cornwall Memorial Inscriptions\"<br/>\nReference: 206<br/>\n[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Joyce\n|-\n| Last name || Werry\n|-\n| Age || 77\n|-\n| Birth year || 1726\n|-\n| Death date || 20 Feb 1803\n|-\n| Place || Pelynt\n|-\n| Burial ground || Parish Church\n|-\n| County || Cornwall\n|-\n| Country || England\n|-\n| Card or location number || Card\n|-\n| Post nominal || -\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Burial''': \"Cornwall Memorial Inscriptions\"<br/>Reference: 206<br/>[https://www.findmypast.co.uk/transcript?id=GBPRS%2FD%2F77171415%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Joyce; Last name: Werry; Age: 77; Birth year: 1726; Death date: 20 Feb 1803; Place: Pelynt; Burial ground: Parish Church; County: Cornwall; Country: England; Card or location number: Card.",
+    "type": "source"
+  }
+}

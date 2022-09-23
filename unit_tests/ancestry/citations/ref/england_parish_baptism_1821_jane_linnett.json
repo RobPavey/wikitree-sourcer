@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>\nEssex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>\n{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Jane, child of Samuel Linnett & Allice Linnett, was baptised on 20 May 1821 in Essex, England.<ref>\n'''Baptism''':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>\nEssex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>\n{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>Essex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>\nEssex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>\n{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)<br/>\nJane Linnett baptism on 20 May 1821, child of Samuel Linnett & Allice Linnett, in Essex, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Jane, child of Samuel Linnett & Allice Linnett, was baptised on 20 May 1821 in Essex, England.<ref>\n'''Baptism''':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>\nEssex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>\n{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)<br/>\nJane Linnett baptism on 20 May 1821, child of Samuel Linnett & Allice Linnett, in Essex, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>Essex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)<br/>Jane Linnett baptism on 20 May 1821, child of Samuel Linnett & Allice Linnett, in Essex, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>\nEssex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>\n{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)<br/>\nName: Jane Linnett; Baptism Date: 20 May 1821; Baptism Place: Essex, England; Father: Samuel Linnett; Mother: Allice Linnett; Source Description: Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Jane, child of Samuel Linnett & Allice Linnett, was baptised on 20 May 1821 in Essex, England.<ref>\n'''Baptism''':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>\nEssex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>\n{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)<br/>\nName: Jane Linnett; Baptism Date: 20 May 1821; Baptism Place: Essex, England; Father: Samuel Linnett; Mother: Allice Linnett; Source Description: Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>Essex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)<br/>Name: Jane Linnett; Baptism Date: 20 May 1821; Baptism Place: Essex, England; Father: Samuel Linnett; Mother: Allice Linnett; Source Description: Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>\nEssex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>\n{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Jane Linnett\n|-\n| Baptism Date || 20 May 1821\n|-\n| Baptism Place || Essex, England\n|-\n| Father || Samuel Linnett\n|-\n| Mother || Allice Linnett\n|-\n| Source Description || Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Jane, child of Samuel Linnett & Allice Linnett, was baptised on 20 May 1821 in Essex, England.<ref>\n'''Baptism''':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>\nEssex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>\n{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Jane Linnett\n|-\n| Baptism Date || 20 May 1821\n|-\n| Baptism Place || Essex, England\n|-\n| Father || Samuel Linnett\n|-\n| Mother || Allice Linnett\n|-\n| Source Description || Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"Essex, England, Church of England Births and Baptisms, 1813-1918\"<br/>Essex Record Office; Chelmsford, Essex, England; Essex Church of England Parish Registers<br/>{{Ancestry Record|61699|4177362}} (accessed 6 May 2021)<br/>Name: Jane Linnett; Baptism Date: 20 May 1821; Baptism Place: Essex, England; Father: Samuel Linnett; Mother: Allice Linnett; Source Description: Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Essex, England, Church of England Births and Baptisms, 1813-1918,\" database, ({{Ancestry Record|61699|4177362}} : accessed 6 May 2021), Jane Linnett baptism on 20 May 1821, child of Samuel Linnett & Allice Linnett, in Essex, England; citing Essex Record Office, Chelmsford, Essex, England, Essex Church of England Parish Registers.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Jane, child of Samuel Linnett & Allice Linnett, was baptised on 20 May 1821 in Essex, England.<ref>\"Essex, England, Church of England Births and Baptisms, 1813-1918,\" database, ({{Ancestry Record|61699|4177362}} : accessed 6 May 2021), Jane Linnett baptism on 20 May 1821, child of Samuel Linnett & Allice Linnett, in Essex, England; citing Essex Record Office, Chelmsford, Essex, England, Essex Church of England Parish Registers.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Essex, England, Church of England Births and Baptisms, 1813-1918,\" database, ({{Ancestry Record|61699|4177362}} : accessed 6 May 2021), Jane Linnett baptism on 20 May 1821, child of Samuel Linnett & Allice Linnett, in Essex, England; citing Essex Record Office, Chelmsford, Essex, England, Essex Church of England Parish Registers.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Baptism'':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\", database, \nEssex Record Office, Chelmsford, Essex, England, Essex Church of England Parish Registers, \n({{Ancestry Record|61699|4177362}} : accessed 6 May 2021), \nName: Jane Linnett; Baptism Date: 20 May 1821; Baptism Place: Essex, England; Father: Samuel Linnett; Mother: Allice Linnett; Source Description: Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Jane, child of Samuel Linnett & Allice Linnett, was baptised on 20 May 1821 in Essex, England.<ref>\n''Baptism'':\n\"Essex, England, Church of England Births and Baptisms, 1813-1918\", database, \nEssex Record Office, Chelmsford, Essex, England, Essex Church of England Parish Registers, \n({{Ancestry Record|61699|4177362}} : accessed 6 May 2021), \nName: Jane Linnett; Baptism Date: 20 May 1821; Baptism Place: Essex, England; Father: Samuel Linnett; Mother: Allice Linnett; Source Description: Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Baptism'': \"Essex, England, Church of England Births and Baptisms, 1813-1918\", database, Essex Record Office, Chelmsford, Essex, England, Essex Church of England Parish Registers, ({{Ancestry Record|61699|4177362}} : accessed 6 May 2021), Name: Jane Linnett; Baptism Date: 20 May 1821; Baptism Place: Essex, England; Father: Samuel Linnett; Mother: Allice Linnett; Source Description: Baptism Register; Service of Church: Registers of Baptisms, Marriages and Burials; Incumbent; High Ongar, St Mary the Virgin; Parish Records;1813-1834.",
+    "type": "source"
+  }
+}

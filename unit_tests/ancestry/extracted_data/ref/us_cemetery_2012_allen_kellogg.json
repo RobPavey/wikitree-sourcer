@@ -1,0 +1,37 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/500681718:2190?ssrc=pt&tid=69302672&pid=402372721267",
+  "pageType": "record",
+  "dbId": "2190",
+  "recordId": "500681718",
+  "ancestryTemplate": "{{Ancestry Record|2190|500681718}}",
+  "domain": "com",
+  "titleName": "Allen Eugene Kellogg",
+  "titleCollection": "U.S., Cemetery and Funeral Home Collection, 1847-Current",
+  "recordData": {
+    "Name": "Allen Eugene Kellogg",
+    "Gender": "Male",
+    "Death Age": "75",
+    "Birth Date": "12 Feb 1937",
+    "Birth Place": "Burke, South Dakota",
+    "Marriage Date": "21 Apr 1956",
+    "Residence Place": "St. Lawrence, SD",
+    "Death Date": "11 Nov 2012",
+    "Burial Date": "16 Nov",
+    "Father": "Francis Kellogg",
+    "Mother": "Mildred Kellogg",
+    "Spouse": "Jo Ann McElroy",
+    "Child": "Cindy Goodrich Kevin",
+    "Siblings": "Beverly Mackey Donald Ernest LeRoy"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2190&h=156217719&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2190&h=226564839&indiv=try&viewrecord=1&r=an",
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2190&h=53399048&indiv=try&viewrecord=1&r=an",
+    "Child": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2190&h=232731355&indiv=try&viewrecord=1&r=an",
+    "Siblings": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2190&h=120258503&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceCitation": "Luce Funeral Home ~ Luze Funeral Home ~ Reck Funeral Home; Publication Place: Gettysburg, South Dakota, USA; URL: https://www.meaningfulfunerals.net/home/index.cfm/obituaries/view/fh_id/10936/id/2920451",
+  "sourceInformation": "Ancestry.com. U.S., Cemetery and Funeral Home Collection, 1847-Current [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2011. Original data: See source information provided with each entry.",
+  "originalData": "See source information provided with each entry.",
+  "sourceDescription": "This database is a compilation of cemetery and funeral home data published in U.S. newspapers, funeral homes and collected from various online sources. Learn more..."
+}

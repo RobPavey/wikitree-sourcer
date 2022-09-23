@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Divorce Index\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Louisa was in a divorce record in 1893 in England & Wales.<ref>\n'''Divorce''':\n\"Divorce Index\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Divorce''': \"Divorce Index\"<br/>[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Divorce Index\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nLouisa Sarah Owen Smith divorce in 1893 in England & Wales.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Louisa was in a divorce record in 1893 in England & Wales.<ref>\n'''Divorce''':\n\"Divorce Index\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nLouisa Sarah Owen Smith divorce in 1893 in England & Wales.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Divorce''': \"Divorce Index\"<br/>[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)<br/>Louisa Sarah Owen Smith divorce in 1893 in England & Wales.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Divorce Index\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Louisa Sarah Owen; Last name: Smith; Petition year: 1893; Party number: 1; Country: England & Wales.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Louisa was in a divorce record in 1893 in England & Wales.<ref>\n'''Divorce''':\n\"Divorce Index\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Louisa Sarah Owen; Last name: Smith; Petition year: 1893; Party number: 1; Country: England & Wales.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Divorce''': \"Divorce Index\"<br/>[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Louisa Sarah Owen; Last name: Smith; Petition year: 1893; Party number: 1; Country: England & Wales.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Divorce Index\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Louisa Sarah Owen\n|-\n| Last name || Smith\n|-\n| Title || -\n|-\n| Petition year || 1893\n|-\n| Party number || 1\n|-\n| Country || England & Wales\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Louisa was in a divorce record in 1893 in England & Wales.<ref>\n'''Divorce''':\n\"Divorce Index\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Louisa Sarah Owen\n|-\n| Last name || Smith\n|-\n| Title || -\n|-\n| Petition year || 1893\n|-\n| Party number || 1\n|-\n| Country || England & Wales\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Divorce''': \"Divorce Index\"<br/>[https://search.findmypast.co.uk/record?id=GBOR%2FDIV%2FJ7846%2F00195&parentid=GBOR%2FDIV%2F364111 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Louisa Sarah Owen; Last name: Smith; Petition year: 1893; Party number: 1; Country: England & Wales.",
+    "type": "source"
+  }
+}

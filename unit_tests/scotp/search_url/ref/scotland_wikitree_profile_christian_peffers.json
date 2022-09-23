@@ -1,0 +1,11 @@
+{
+  "std": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&from_year=1864&to_year=1874&surname=Peffers&surname_so=soundex&forename=Christian%20Johns&forename_so=soundex&sex=F&county=ANGUS"
+  },
+  "stat_marriage": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-marriages&record_type=stat_marriages&from_year=1887&to_year=1897&surname=Peffers&surname_so=soundex&forename=Christian%20Johns&forename_so=soundex&sex=F&spsurname=Milne&spsurname_so=soundex&spforename=John&spforename_so=soundex&county=ANGUS"
+  },
+  "wills_testaments": {
+    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-wills-testaments&record_type=wills_testaments&from_year=1925&to_year=1925&surname=Milne&surname_so=soundex&forename=Christian%20Johnston&forename_so=soundex"
+  }
+}

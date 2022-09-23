@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Littlemore",
+    "forenames": "Amelia Elizabeth"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "St Pancras, London, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "John",
+        "lastName": "Littlemore"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Mary"
+      }
+    }
+  },
+  "eventDate": {
+    "dateString": "14 Jun 1850",
+    "yearString": "1850"
+  },
+  "birthDate": {
+    "yearString": "1849"
+  },
+  "lastNameAtBirth": "Littlemore",
+  "collectionData": {
+    "id": "England Births & Baptisms 1538-1975"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,105 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Philo Lee, Jr"
+  },
+  "birthDate": {
+    "dateString": "1903",
+    "yearString": "1903"
+  },
+  "eventDate": {
+    "dateString": "1915",
+    "yearString": "1915"
+  },
+  "eventPlace": {
+    "placeString": "Hempstead, Nassau, New York, United States"
+  },
+  "ageAtEvent": "12",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "age",
+    "birthYear"
+  ],
+  "householdArray": [
+    {
+      "name": "Phila Lee",
+      "relationship": "head",
+      "gender": "male",
+      "age": "48",
+      "birthYear": "1867"
+    },
+    {
+      "name": "Clelie Lee",
+      "relationship": "wife",
+      "gender": "female",
+      "age": "45",
+      "birthYear": "1870"
+    },
+    {
+      "name": "Anna Lee",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "23",
+      "birthYear": "1892"
+    },
+    {
+      "name": "Carrie Lee",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "21",
+      "birthYear": "1894"
+    },
+    {
+      "name": "Marie Lee",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "19",
+      "birthYear": "1896"
+    },
+    {
+      "name": "Henrietta Lee",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "17",
+      "birthYear": "1898"
+    },
+    {
+      "name": "Philo Lee, Jr",
+      "relationship": "son",
+      "gender": "male",
+      "age": "12",
+      "birthYear": "1903",
+      "isSelected": true
+    },
+    {
+      "name": "William Kirk",
+      "relationship": "boarder",
+      "gender": "male",
+      "age": "55",
+      "birthYear": "1860"
+    }
+  ],
+  "relationshipToHead": "son",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Phila Lee"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Clelie Lee"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1937454",
+    "page": "01"
+  },
+  "hasValidData": true
+}

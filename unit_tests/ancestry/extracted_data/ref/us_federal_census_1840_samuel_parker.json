@@ -1,0 +1,31 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/2464636:8057?tid=&pid=&queryId=baa4333e86dd5aab853e75d6460dcd46&_phsrc=Vww4230&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "8057",
+  "recordId": "2464636",
+  "ancestryTemplate": "{{Ancestry Record|8057|2464636}}",
+  "domain": "com",
+  "titleName": "Samuel Parker",
+  "titleCollection": "1840 United States Federal Census",
+  "recordData": {
+    "Name": "Samuel Parker [Samul Parker]",
+    "Home in 1840 (City, County, State)": "Gaines, Orleans, New York",
+    "Free White Persons - Males - 5 thru 9": "1",
+    "Free White Persons - Males - 20 thru 29": "1",
+    "Free White Persons - Males - 40 thru 49": "1",
+    "Free White Persons - Females - Under 5": "1",
+    "Free White Persons - Females - 15 thru 19": "1",
+    "Free White Persons - Females - 20 thru 29": "1",
+    "Free White Persons - Under 20": "3",
+    "Free White Persons - 20 thru 49": "3",
+    "Total Free White Persons": "6",
+    "Total All Persons - Free White, Free Colored, Slaves": "6"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8057/images/4410632_00751?pid=2464636&usePUB=true&_phsrc=Vww4230&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "8057",
+  "imageRecordId": "4410632_00751",
+  "sourceCitation": "Year: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201",
+  "sourceInformation": "Ancestry.com. 1840 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Images reproduced by FamilySearch. Original data: Sixth Census of the United States, 1840. (NARA microfilm publication M704, 580 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "originalData": "Sixth Census of the United States, 1840. (NARA microfilm publication M704, 580 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "sourceDescription": "This database details those persons enumerated in the 1840 United States Federal Census, the Sixth Census of the United States. In addition, the names of those listed on the population schedule are linked to the actual images of the 1840 Federal Census. Enumerators of the 1840 census were asked to include the following categories in the census: name of head of household, number of free white males and females, number of other free persons, names of slave owners and number of slaves, number of foreigners, and town or district and county of residence. Learn more..."
+}

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>\n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>\n{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Olive's death (age 39) was registered in the Jan-Feb-Mar quarter of 1933 in the Dublin South district.<ref>\n'''Death Registration''':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>\n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>\n{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death Registration''': \"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>\n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>\n{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)<br/>\nOlive M M Houston death 1933 (age 39) in the Dublin South district.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Olive's death (age 39) was registered in the Jan-Feb-Mar quarter of 1933 in the Dublin South district.<ref>\n'''Death Registration''':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>\n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>\n{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)<br/>\nOlive M M Houston death 1933 (age 39) in the Dublin South district.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death Registration''': \"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)<br/>Olive M M Houston death 1933 (age 39) in the Dublin South district.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>\n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>\n{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)<br/>\nName: Olive M M Houston; Estimated Birth Year: abt 1894; Date of Registration: 1933 Jan-Feb-Mar; Death Age: 39; Registration district: Dublin South.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Olive's death (age 39) was registered in the Jan-Feb-Mar quarter of 1933 in the Dublin South district.<ref>\n'''Death Registration''':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>\n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>\n{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)<br/>\nName: Olive M M Houston; Estimated Birth Year: abt 1894; Date of Registration: 1933 Jan-Feb-Mar; Death Age: 39; Registration district: Dublin South.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death Registration''': \"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)<br/>Name: Olive M M Houston; Estimated Birth Year: abt 1894; Date of Registration: 1933 Jan-Feb-Mar; Death Age: 39; Registration district: Dublin South.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>\n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>\n{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Olive M M Houston\n|-\n| Estimated Birth Year || abt 1894\n|-\n| Date of Registration || 1933 Jan-Feb-Mar\n|-\n| Death Age || 39\n|-\n| Registration district || Dublin South\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Olive's death (age 39) was registered in the Jan-Feb-Mar quarter of 1933 in the Dublin South district.<ref>\n'''Death Registration''':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>\n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>\n{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Olive M M Houston\n|-\n| Estimated Birth Year || abt 1894\n|-\n| Date of Registration || 1933 Jan-Feb-Mar\n|-\n| Death Age || 39\n|-\n| Registration district || Dublin South\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death Registration''': \"Ireland, Civil Registration Deaths Index, 1864-1958\"<br/>“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\"; Volume: 2; Page: 384; FHL Film Number: 101739<br/>{{Ancestry Record|2534|6407416}} (accessed 6 May 2021)<br/>Name: Olive M M Houston; Estimated Birth Year: abt 1894; Date of Registration: 1933 Jan-Feb-Mar; Death Age: 39; Registration district: Dublin South.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Ireland, Civil Registration Deaths Index, 1864-1958,\" database, ({{Ancestry Record|2534|6407416}} : accessed 6 May 2021), Olive M M Houston death 1933 (age 39) in the Dublin South district; citing “Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\", Volume 2, Page 384, FHL Film Number 101739.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Olive's death (age 39) was registered in the Jan-Feb-Mar quarter of 1933 in the Dublin South district.<ref>\"Ireland, Civil Registration Deaths Index, 1864-1958,\" database, ({{Ancestry Record|2534|6407416}} : accessed 6 May 2021), Olive M M Houston death 1933 (age 39) in the Dublin South district; citing “Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\", Volume 2, Page 384, FHL Film Number 101739.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Ireland, Civil Registration Deaths Index, 1864-1958,\" database, ({{Ancestry Record|2534|6407416}} : accessed 6 May 2021), Olive M M Houston death 1933 (age 39) in the Dublin South district; citing “Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\", Volume 2, Page 384, FHL Film Number 101739.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death Registration'':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\", database, \n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\", Volume 2, Page 384, FHL Film Number 101739, \n({{Ancestry Record|2534|6407416}} : accessed 6 May 2021), \nName: Olive M M Houston; Estimated Birth Year: abt 1894; Date of Registration: 1933 Jan-Feb-Mar; Death Age: 39; Registration district: Dublin South.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Olive's death (age 39) was registered in the Jan-Feb-Mar quarter of 1933 in the Dublin South district.<ref>\n''Death Registration'':\n\"Ireland, Civil Registration Deaths Index, 1864-1958\", database, \n“Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\", Volume 2, Page 384, FHL Film Number 101739, \n({{Ancestry Record|2534|6407416}} : accessed 6 May 2021), \nName: Olive M M Houston; Estimated Birth Year: abt 1894; Date of Registration: 1933 Jan-Feb-Mar; Death Age: 39; Registration district: Dublin South.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death Registration'': \"Ireland, Civil Registration Deaths Index, 1864-1958\", database, “Ireland, Civil Registration Indexes 1845-1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Deaths in Ireland with Index to Deaths.\", Volume 2, Page 384, FHL Film Number 101739, ({{Ancestry Record|2534|6407416}} : accessed 6 May 2021), Name: Olive M M Houston; Estimated Birth Year: abt 1894; Date of Registration: 1933 Jan-Feb-Mar; Death Age: 39; Registration district: Dublin South.",
+    "type": "source"
+  }
+}

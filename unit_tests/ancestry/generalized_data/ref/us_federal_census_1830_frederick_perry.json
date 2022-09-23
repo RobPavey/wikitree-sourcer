@@ -1,0 +1,18 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Frederick Perry"
+  },
+  "eventDate": {
+    "yearString": "1830"
+  },
+  "eventPlace": {
+    "placeString": "Saybrook, Middlesex, Connecticut"
+  },
+  "collectionData": {
+    "id": "8058"
+  },
+  "hasValidData": true
+}

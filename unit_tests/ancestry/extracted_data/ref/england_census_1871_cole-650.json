@@ -1,0 +1,91 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/11291260:7619",
+  "pageType": "record",
+  "dbId": "7619",
+  "recordId": "11291260",
+  "ancestryTemplate": "{{Ancestry Record|7619|11291260}}",
+  "domain": "com",
+  "titleName": "Sophia Handford",
+  "titleCollection": "1871 England Census",
+  "recordData": {
+    "Name": "Sophia Handford",
+    "Age": "30",
+    "Estimated Birth Year": "1841",
+    "Relation": "Wife",
+    "Gender": "Female",
+    "Where born": "Atherington Devon England",
+    "Civil parish": "Colebrooke",
+    "Town": "Penstone",
+    "County/Island": "Devon",
+    "Country": "England",
+    "Registration district": "Crediton",
+    "Sub-registration district": "Crediton",
+    "ED, institution, or vessel": "12",
+    "Household schedule number": "51",
+    "Piece": "2162",
+    "Folio": "92",
+    "Page number": "10",
+    "Household Members<br/>Age<br/>Relationship": "William Handford 27 Head<br/>Sophia Handford 30 Wife<br/>William Handford 7 Son<br/>Mary Handford 5 Daughter<br/>Marino Handford 3 Daughter<br/>Luca Handford 1/12 Daughter"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "William Handford",
+        "dbId": "7619",
+        "recordId": "11291259",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291259&indiv=try&viewrecord=1&r=an",
+        "Age": "27",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members": "Sophia Handford",
+        "Age": "30",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "William Handford",
+        "dbId": "7619",
+        "recordId": "11291261",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291261&indiv=try&viewrecord=1&r=an",
+        "Age": "7",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Mary Handford",
+        "dbId": "7619",
+        "recordId": "11291262",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291262&indiv=try&viewrecord=1&r=an",
+        "Age": "5",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Marino Handford",
+        "dbId": "7619",
+        "recordId": "11291263",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291263&indiv=try&viewrecord=1&r=an",
+        "Age": "3",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Luca Handford",
+        "dbId": "7619",
+        "recordId": "11291264",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291264&indiv=try&viewrecord=1&r=an",
+        "Age": "1/12",
+        "Relationship": "Daughter"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7619/images/DEVRG10_2159_2163-0514?pid=11291260&backurl=http://www.ancestry.com/discoveryui-content/view/11291260:7619&usePUB=true&usePUBJs=true",
+  "imageDbId": "7619",
+  "imageRecordId": "DEVRG10_2159_2163-0514",
+  "sourceCitation": "The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042",
+  "sourceInformation": "Ancestry.com. 1871 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2004. Original data: Census Returns of England and Wales, 1871. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1871. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1871. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1871. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1871 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1871 England Census. Learn more..."
+}

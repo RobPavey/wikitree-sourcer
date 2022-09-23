@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1350244:2275?ssrc=pt&tid=50462224&pid=13068854942",
+  "pageType": "record",
+  "dbId": "2275",
+  "recordId": "1350244",
+  "ancestryTemplate": "{{Ancestry Record|2275|1350244}}",
+  "domain": "com",
+  "titleName": "Hollums",
+  "titleCollection": "Texas, U.S., Birth Certificates, 1903-1932",
+  "recordData": {
+    "Name": "Hollums",
+    "Birth Date": "17 Jul 1912",
+    "Gender": "Male",
+    "Birth Place": "Floydada, Floyd, Texas, USA",
+    "Father": "J A Hollums",
+    "Mother": "Maude Duncan",
+    "Mother Residence": "Floydada"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2275/images/33153_B061362-04293?pid=1350244&treeid=50462224&personid=13068854942&usePUB=true&usePUBJs=true",
+  "imageDbId": "2275",
+  "imageRecordId": "33153_B061362-04293",
+  "sourceInformation": "Ancestry.com. Texas, U.S., Birth Certificates, 1903-1932 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2013. Original data: Texas Department of State Health Services. Texas Birth Certificates, 1903–1932. iArchives, Orem, Utah.",
+  "sourceDescription": "This database contains birth certificates from the Texas Department of State Health Services, for the years 1903–1932. Some amendments to certificates of birth are included as well. Learn more..."
+}

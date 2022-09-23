@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Albert",
+  "prefNames": "",
+  "middleNames": "Edward John",
+  "lnab": "Spencer",
+  "currentLastName": "Spencer",
+  "mothersMaidenName": "Baring",
+  "birthDate": "23 May 1892",
+  "birthDateStatus": "none",
+  "deathDate": "9 Jun 1975",
+  "deathDateStatus": "none",
+  "birthLocation": "Queen Street, Mayfair, London, England,",
+  "deathLocation": "Northamptonshire, England, United Kingdom",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Hamilton-1000",
+      "name": "Cynthia Elinor Beatrix (Hamilton) Spencer DCVO OBE",
+      "marriageString": "26 Feb 1919 in St. James's Church, Piccadilly, London, England",
+      "marriageDate": "26 Feb 1919",
+      "marriagePlace": "St. James's Church, Piccadilly, London, England"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Spencer-1038",
+  "currentTabText": "Albert Spencer FSA FRSA's Profile",
+  "pageType": "read",
+  "wikiId": "Spencer-1038",
+  "name": "Albert Edward John Spencer FSA FRSA",
+  "parents": {
+    "father": {
+      "wikiId": "Spencer-2114",
+      "name": "Charles Robert Spencer"
+    },
+    "mother": {
+      "wikiId": "Baring-4",
+      "name": "Margaret (Baring) Spencer"
+    }
+  }
+}

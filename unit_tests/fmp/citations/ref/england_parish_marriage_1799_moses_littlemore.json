@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>\nReference: item 3 p 53<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Moses married Mary Lamb on 19 February 1799 in Davenham, Cheshire, England.<ref>\n'''Marriage''':\n\"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>\nReference: item 3 p 53<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>Reference: item 3 p 53<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>\nReference: item 3 p 53<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nMoses Littlemore marriage to Mary Lamb on 19 Feb 1799 in Davenham, Cheshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Moses married Mary Lamb on 19 February 1799 in Davenham, Cheshire, England.<ref>\n'''Marriage''':\n\"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>\nReference: item 3 p 53<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nMoses Littlemore marriage to Mary Lamb on 19 Feb 1799 in Davenham, Cheshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>Reference: item 3 p 53<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>Moses Littlemore marriage to Mary Lamb on 19 Feb 1799 in Davenham, Cheshire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>\nReference: item 3 p 53<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Moses; Last name: Littlemore; Marriage date: 19 Feb 1799; Marriage place: Davenham; Spouse's first name(s): Mary; Spouse's last name: Lamb; City or town: Davenham; County: Cheshire; Country: England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Moses married Mary Lamb on 19 February 1799 in Davenham, Cheshire, England.<ref>\n'''Marriage''':\n\"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>\nReference: item 3 p 53<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Moses; Last name: Littlemore; Marriage date: 19 Feb 1799; Marriage place: Davenham; Spouse's first name(s): Mary; Spouse's last name: Lamb; City or town: Davenham; County: Cheshire; Country: England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>Reference: item 3 p 53<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Moses; Last name: Littlemore; Marriage date: 19 Feb 1799; Marriage place: Davenham; Spouse's first name(s): Mary; Spouse's last name: Lamb; City or town: Davenham; County: Cheshire; Country: England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>\nReference: item 3 p 53<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Moses\n|-\n| Last name || Littlemore\n|-\n| Marriage date || 19 Feb 1799\n|-\n| Marriage place || Davenham\n|-\n| Spouse's first name(s) || Mary\n|-\n| Spouse's last name || Lamb\n|-\n| City or town || Davenham\n|-\n| County || Cheshire\n|-\n| Country || England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Moses married Mary Lamb on 19 February 1799 in Davenham, Cheshire, England.<ref>\n'''Marriage''':\n\"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>\nReference: item 3 p 53<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Moses\n|-\n| Last name || Littlemore\n|-\n| Marriage date || 19 Feb 1799\n|-\n| Marriage place || Davenham\n|-\n| Spouse's first name(s) || Mary\n|-\n| Spouse's last name || Lamb\n|-\n| City or town || Davenham\n|-\n| County || Cheshire\n|-\n| Country || England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Cheshire Diocese Of Chester Parish Marriages 1538-1910\"<br/>Reference: item 3 p 53<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4018369%2F00223&parentid=GBPRS%2FM%2F770409281%2F1 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F770409281%2F1 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Moses; Last name: Littlemore; Marriage date: 19 Feb 1799; Marriage place: Davenham; Spouse's first name(s): Mary; Spouse's last name: Lamb; City or town: Davenham; County: Cheshire; Country: England.",
+    "type": "source"
+  }
+}

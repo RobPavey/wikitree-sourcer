@@ -1,0 +1,68 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "M A Jones"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "yearString": "1851",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Ind Carolina"
+  },
+  "eventDate": {
+    "dateString": "1 Mar 1885"
+  },
+  "eventPlace": {
+    "placeString": "Richland, Cowley, Kansas"
+  },
+  "ageAtEvent": "34",
+  "maritalStatus": "married",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "R C Jones",
+      "age": "35",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187422&indiv=try"
+    },
+    {
+      "name": "M A Jones",
+      "age": "34",
+      "isSelected": true,
+      "maritalStatus": "married",
+      "gender": "female",
+      "birthPlace": "Ind Carolina",
+      "birthYear": "abt 1851"
+    },
+    {
+      "name": "Rosa Jones",
+      "age": "13",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187424&indiv=try"
+    },
+    {
+      "name": "J E Jones",
+      "age": "11",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187425&indiv=try"
+    },
+    {
+      "name": "J M Jones",
+      "age": "9",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187426&indiv=try"
+    },
+    {
+      "name": "G M Jones",
+      "age": "6m",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187427&indiv=try"
+    }
+  ],
+  "collectionData": {
+    "id": "1088"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1820 census Willm was in Blue Hill, Hancock, Maine.<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1820 Census''': \"1820 United States Federal Census\"<br/>1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>{{Ancestry Record|7734|132041}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)<br/>\nWillm Johnson in Blue Hill, Hancock, Maine.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1820 census Willm was in Blue Hill, Hancock, Maine.<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)<br/>\nWillm Johnson in Blue Hill, Hancock, Maine.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1820 Census''': \"1820 United States Federal Census\"<br/>1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>{{Ancestry Record|7734|132041}} (accessed 6 May 2021)<br/>Willm Johnson in Blue Hill, Hancock, Maine.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)<br/>\nName: Willm Johnson [William Johnson]; Home in 1820 (City, County, State): Blue Hill, Hancock, Maine; Enumeration Date: August 7, 1820; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Females - 16 thru 25: 1; Free White Persons - Females - 26 thru 44: 1; Number of Persons - Engaged in Agriculture: 1; Free White Persons - Under 16: 1; Free White Persons - Over 25: 2; Total Free White Persons: 4; Total All Persons - White, Slaves, Colored, Other: 4.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1820 census Willm was in Blue Hill, Hancock, Maine.<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)<br/>\nName: Willm Johnson [William Johnson]; Home in 1820 (City, County, State): Blue Hill, Hancock, Maine; Enumeration Date: August 7, 1820; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Females - 16 thru 25: 1; Free White Persons - Females - 26 thru 44: 1; Number of Persons - Engaged in Agriculture: 1; Free White Persons - Under 16: 1; Free White Persons - Over 25: 2; Total Free White Persons: 4; Total All Persons - White, Slaves, Colored, Other: 4.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1820 Census''': \"1820 United States Federal Census\"<br/>1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>{{Ancestry Record|7734|132041}} (accessed 6 May 2021)<br/>Name: Willm Johnson [William Johnson]; Home in 1820 (City, County, State): Blue Hill, Hancock, Maine; Enumeration Date: August 7, 1820; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Females - 16 thru 25: 1; Free White Persons - Females - 26 thru 44: 1; Number of Persons - Engaged in Agriculture: 1; Free White Persons - Under 16: 1; Free White Persons - Over 25: 2; Total Free White Persons: 4; Total All Persons - White, Slaves, Colored, Other: 4.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Willm Johnson [William Johnson]\n|-\n| Home in 1820 (City, County, State) || Blue Hill, Hancock, Maine\n|-\n| Enumeration Date || August 7, 1820\n|-\n| Free White Persons - Males - Under 10 || 1\n|-\n| Free White Persons - Males - 26 thru 44 || 1\n|-\n| Free White Persons - Females - 16 thru 25 || 1\n|-\n| Free White Persons - Females - 26 thru 44 || 1\n|-\n| Number of Persons - Engaged in Agriculture || 1\n|-\n| Free White Persons - Under 16 || 1\n|-\n| Free White Persons - Over 25 || 2\n|-\n| Total Free White Persons || 4\n|-\n| Total All Persons - White, Slaves, Colored, Other || 4\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1820 census Willm was in Blue Hill, Hancock, Maine.<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Willm Johnson [William Johnson]\n|-\n| Home in 1820 (City, County, State) || Blue Hill, Hancock, Maine\n|-\n| Enumeration Date || August 7, 1820\n|-\n| Free White Persons - Males - Under 10 || 1\n|-\n| Free White Persons - Males - 26 thru 44 || 1\n|-\n| Free White Persons - Females - 16 thru 25 || 1\n|-\n| Free White Persons - Females - 26 thru 44 || 1\n|-\n| Number of Persons - Engaged in Agriculture || 1\n|-\n| Free White Persons - Under 16 || 1\n|-\n| Free White Persons - Over 25 || 2\n|-\n| Total Free White Persons || 4\n|-\n| Total All Persons - White, Slaves, Colored, Other || 4\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1820 Census''': \"1820 United States Federal Census\"<br/>1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>{{Ancestry Record|7734|132041}} (accessed 6 May 2021)<br/>Name: Willm Johnson [William Johnson]; Home in 1820 (City, County, State): Blue Hill, Hancock, Maine; Enumeration Date: August 7, 1820; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Females - 16 thru 25: 1; Free White Persons - Females - 26 thru 44: 1; Number of Persons - Engaged in Agriculture: 1; Free White Persons - Under 16: 1; Free White Persons - Over 25: 2; Total Free White Persons: 4; Total All Persons - White, Slaves, Colored, Other: 4.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1820 United States Federal Census,\" database, ({{Ancestry Record|7734|132041}} : accessed 6 May 2021), Willm Johnson in Blue Hill, Hancock, Maine; citing 1820 U S Census, Census Place Blue Hill, Hancock, Maine, Page 583, NARA Roll M33_34, Image 7.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1820 census Willm was in Blue Hill, Hancock, Maine.<ref>\"1820 United States Federal Census,\" database, ({{Ancestry Record|7734|132041}} : accessed 6 May 2021), Willm Johnson in Blue Hill, Hancock, Maine; citing 1820 U S Census, Census Place Blue Hill, Hancock, Maine, Page 583, NARA Roll M33_34, Image 7.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1820 United States Federal Census,\" database, ({{Ancestry Record|7734|132041}} : accessed 6 May 2021), Willm Johnson in Blue Hill, Hancock, Maine; citing 1820 U S Census, Census Place Blue Hill, Hancock, Maine, Page 583, NARA Roll M33_34, Image 7.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1820 Census'':\n\"1820 United States Federal Census\", database, \n1820 U S Census, Census Place Blue Hill, Hancock, Maine, Page 583, NARA Roll M33_34, Image 7, \n({{Ancestry Record|7734|132041}} : accessed 6 May 2021), \nName: Willm Johnson [William Johnson]; Home in 1820 (City, County, State): Blue Hill, Hancock, Maine; Enumeration Date: August 7, 1820; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Females - 16 thru 25: 1; Free White Persons - Females - 26 thru 44: 1; Number of Persons - Engaged in Agriculture: 1; Free White Persons - Under 16: 1; Free White Persons - Over 25: 2; Total Free White Persons: 4; Total All Persons - White, Slaves, Colored, Other: 4.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1820 census Willm was in Blue Hill, Hancock, Maine.<ref>\n''1820 Census'':\n\"1820 United States Federal Census\", database, \n1820 U S Census, Census Place Blue Hill, Hancock, Maine, Page 583, NARA Roll M33_34, Image 7, \n({{Ancestry Record|7734|132041}} : accessed 6 May 2021), \nName: Willm Johnson [William Johnson]; Home in 1820 (City, County, State): Blue Hill, Hancock, Maine; Enumeration Date: August 7, 1820; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Females - 16 thru 25: 1; Free White Persons - Females - 26 thru 44: 1; Number of Persons - Engaged in Agriculture: 1; Free White Persons - Under 16: 1; Free White Persons - Over 25: 2; Total Free White Persons: 4; Total All Persons - White, Slaves, Colored, Other: 4.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1820 Census'': \"1820 United States Federal Census\", database, 1820 U S Census, Census Place Blue Hill, Hancock, Maine, Page 583, NARA Roll M33_34, Image 7, ({{Ancestry Record|7734|132041}} : accessed 6 May 2021), Name: Willm Johnson [William Johnson]; Home in 1820 (City, County, State): Blue Hill, Hancock, Maine; Enumeration Date: August 7, 1820; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Females - 16 thru 25: 1; Free White Persons - Females - 26 thru 44: 1; Number of Persons - Engaged in Agriculture: 1; Free White Persons - Under 16: 1; Free White Persons - Over 25: 2; Total Free White Persons: 4; Total All Persons - White, Slaves, Colored, Other: 4.",
+    "type": "source"
+  }
+}

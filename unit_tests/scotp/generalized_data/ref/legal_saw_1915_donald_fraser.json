@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "Donald"
+  },
+  "eventDate": {
+    "dateString": "16 May 1915"
+  },
+  "deathDate": {
+    "dateString": "16 May 1915"
+  },
+  "deathPlace": {
+    "placeString": "No 11 General Hospital, Boulogne, France"
+  },
+  "serviceNumber": "8878",
+  "militaryRegiment": "Queen's Own Cameron Highlanders",
+  "hasValidData": true
+}

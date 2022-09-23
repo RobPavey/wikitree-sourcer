@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nNorfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>\n[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "James married Susan Taylor in 1700 in Gunthorpe, Norfolk, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nNorfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>\n[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Norfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nNorfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>\n[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)<br/>\nJames Musset marriage to Susan Taylor in 1700 in Gunthorpe, Norfolk, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "James married Susan Taylor in 1700 in Gunthorpe, Norfolk, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nNorfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>\n[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)<br/>\nJames Musset marriage to Susan Taylor in 1700 in Gunthorpe, Norfolk, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Norfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)<br/>James Musset marriage to Susan Taylor in 1700 in Gunthorpe, Norfolk, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nNorfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>\n[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Norfolk; Place: Gunthorpe; Church name: St Mary; Register type: Other Transcript; Marriage date: 1700; Groom forename: James; Groom surname: MUSSET; Bride forename: Susan; Bride surname: TAYLOR.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "James married Susan Taylor in 1700 in Gunthorpe, Norfolk, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nNorfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>\n[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Norfolk; Place: Gunthorpe; Church name: St Mary; Register type: Other Transcript; Marriage date: 1700; Groom forename: James; Groom surname: MUSSET; Bride forename: Susan; Bride surname: TAYLOR.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Norfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)<br/>County: Norfolk; Place: Gunthorpe; Church name: St Mary; Register type: Other Transcript; Marriage date: 1700; Groom forename: James; Groom surname: MUSSET; Bride forename: Susan; Bride surname: TAYLOR.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nNorfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>\n[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Norfolk\n|-\n| Place || Gunthorpe\n|-\n| Church name || St Mary\n|-\n| Register type || Other Transcript\n|-\n| Marriage date || 1700\n|-\n| Groom forename || James\n|-\n| Groom surname || MUSSET\n|-\n| Bride forename || Susan\n|-\n| Bride surname || TAYLOR\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "James married Susan Taylor in 1700 in Gunthorpe, Norfolk, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nNorfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>\n[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Norfolk\n|-\n| Place || Gunthorpe\n|-\n| Church name || St Mary\n|-\n| Register type || Other Transcript\n|-\n| Marriage date || 1700\n|-\n| Groom forename || James\n|-\n| Groom surname || MUSSET\n|-\n| Bride forename || Susan\n|-\n| Bride surname || TAYLOR\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Norfolk; Gunthorpe; St Mary; Other Transcript; File line number: 704<br/>[https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b FreeReg Transcription] (accessed 6 May 2021)<br/>County: Norfolk; Place: Gunthorpe; Church name: St Mary; Register type: Other Transcript; Marriage date: 1700; Groom forename: James; Groom surname: MUSSET; Bride forename: Susan; Bride surname: TAYLOR.",
+    "type": "source"
+  }
+}

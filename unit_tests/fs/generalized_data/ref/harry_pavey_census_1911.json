@@ -1,0 +1,96 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Harry Pavey"
+  },
+  "birthDate": {
+    "dateString": "1853",
+    "yearString": "1853"
+  },
+  "birthPlace": {
+    "placeString": "Plymouth, Devonshire"
+  },
+  "eventDate": {
+    "dateString": "1911",
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "Islington, London, England, United Kingdom"
+  },
+  "registrationDistrict": "Islington",
+  "ageAtEvent": "58",
+  "occupation": "Picture Frame Maker",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Harry Pavey",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "58",
+      "birthYear": "1853",
+      "occupation": "Picture Frame Maker",
+      "birthPlace": "Plymouth, Devonshire",
+      "isSelected": true
+    },
+    {
+      "name": "Amelia Pavey",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "60",
+      "birthYear": "1851",
+      "birthPlace": "London Camden Town, London"
+    },
+    {
+      "name": "Harry Pavey",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "33",
+      "birthYear": "1878",
+      "occupation": "Ships Steward",
+      "birthPlace": "London Ish Town, Kent"
+    },
+    {
+      "name": "Ralph Pavey",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "19",
+      "birthYear": "1892",
+      "occupation": "Wharehouse Assistant",
+      "birthPlace": "London Ish Town, Kent"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "spouses": [
+    {
+      "name": {
+        "name": "Amelia Pavey"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1921547",
+    "page": "1",
+    "schedule": "198",
+    "folio": "395"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,59 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Leonard",
+    "middleNames": "Nethercott O'Connor",
+    "lastName": "Davey"
+  },
+  "lastNameAtBirth": "Davey",
+  "lastNameAtDeath": "Davey",
+  "mothersMaidenName": "Nethercott",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "Jan 1841",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "21 May 1907",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Taunton, Somerset, England, United Kingdom"
+  },
+  "deathPlace": {
+    "placeString": "Claybury, Essex, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Job Davey",
+        "lastName": "Davey",
+        "forenames": "Job"
+      },
+      "lastNameAtBirth": "Davey",
+      "lastNameAtDeath": "Davey"
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Nethercott",
+        "lastName": "Nethercott",
+        "forenames": "Mary"
+      },
+      "lastNameAtBirth": "Nethercott",
+      "lastNameAtDeath": "Nethercott"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Emma Mary Ann Perry",
+        "lastName": "Perry",
+        "forenames": "Emma Mary Ann"
+      },
+      "lastNameAtBirth": "Perry",
+      "lastNameAtDeath": "Perry"
+    }
+  ],
+  "hasValidData": true
+}

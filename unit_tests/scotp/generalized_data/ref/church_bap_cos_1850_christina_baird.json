@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "BirthOrBaptism",
+  "name": {
+    "lastName": "Baird",
+    "forenames": "Christina"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "25 October 1850"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Roxburghshire",
+    "placeString": "Roberton, Roxburghshire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Robert Baird"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Helen Elliot"
+      }
+    }
+  },
+  "collectionData": {
+    "frameNumber": "544"
+  },
+  "hasValidData": true
+}

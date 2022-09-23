@@ -1,0 +1,71 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51208",
+  "pageType": "record",
+  "dbId": "1911England",
+  "recordId": "51208",
+  "ancestryTemplate": "{{Ancestry Record|1911England|51208}}",
+  "domain": "com",
+  "titleName": "Francis Cyril More",
+  "titleCollection": "1911 England Census",
+  "recordData": {
+    "Name": "Francis Cyril More",
+    "Age in 1911": "36",
+    "Estimated Birth Year": "abt 1875",
+    "Relation to Head": "Head",
+    "Gender": "Male",
+    "Birth Place": "Metfield, Suffolk, England",
+    "Civil Parish": "Islington",
+    "Country": "England",
+    "Street Address": "15 Tytherton Road, Holloway N",
+    "Marital status": "Married",
+    "Occupation": "Surgical Scientific Instrument Maker",
+    "Registration District Number": "10",
+    "Sub-registration District": "Tufnell",
+    "ED, institution, or vessel": "14",
+    "Piece": "789",
+    "Household Members": "Francis Cyril More 36<br/>Mary Elizabeth More 38<br/>Maisie Constance More 10<br/>Ellaline Hannah More 9"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Name": "Francis Cyril More",
+        "dbId": "1911England",
+        "recordId": "51208",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51208",
+        "Age": "36"
+      },
+      {
+        "Name": "Mary Elizabeth More",
+        "dbId": "1911England",
+        "recordId": "51209",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51209",
+        "Age": "38"
+      },
+      {
+        "Name": "Maisie Constance More",
+        "dbId": "1911England",
+        "recordId": "51206",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51206",
+        "Age": "10"
+      },
+      {
+        "Name": "Ellaline Hannah More",
+        "dbId": "1911England",
+        "recordId": "51207",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51207",
+        "Age": "9"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2352/images/rg14_00789_0021_03?pid=51208&backurl=https://search.ancestry.com/cgi-bin/sse.dll?db%3D1911England%26indiv%3Dtry%26h%3D51208&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "2352",
+  "imageRecordId": "rg14_00789_0021_03",
+  "sourceCitation": "The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1911",
+  "sourceInformation": "Ancestry.com. 1911 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: Census Returns of England and Wales, 1911. Kew, Surrey, England: The National Archives of the UK (TNA) Series RG14, 1911. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1911. Kew, Surrey, England: The National Archives of the UK (TNA) Series RG14, 1911.",
+  "sourceDescription": "This database includes householders’ forms from the 1911 Census of England. Information found on the householder's forms include: name, relationship to head of family, age at last birthday, sex, marriage details (including number of children), occupation, birthplace, nationality, and postal address. Learn more..."
+}

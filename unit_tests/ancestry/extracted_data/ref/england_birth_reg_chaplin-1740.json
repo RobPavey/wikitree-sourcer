@@ -1,0 +1,25 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8912&h=37047757&tid=&pid=&queryId=8210154b464e9c6948ce68f1f4d12893&usePUB=true&_phsrc=ywU7512&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "8912",
+  "recordId": "37047757",
+  "ancestryTemplate": "{{Ancestry Record|8912|37047757}}",
+  "domain": "com",
+  "titleName": "Blanche Amelia Chaplin",
+  "titleCollection": "England & Wales, Civil Registration Birth Index, 1837-1915",
+  "recordData": {
+    "Name": "Blanche Amelia Chaplin",
+    "Registration Year": "1867",
+    "Registration Quarter": "Jul-Aug-Sep",
+    "Registration District": "Pancras",
+    "Inferred County": "London",
+    "Volume": "1b",
+    "Page": "164"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8912/images/ONS_B18674AZ-0047?pid=37047757&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D8912%26h%3D37047757%26tid%3D%26pid%3D%26queryId%3D8210154b464e9c6948ce68f1f4d12893%26usePUB%3Dtrue%26_phsrc%3DywU7512%26_phstart%3DsuccessSource&treeid=&personid=&hintid=&queryId=8210154b464e9c6948ce68f1f4d12893&usePUB=true&_phsrc=ywU7512&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "8912",
+  "imageRecordId": "ONS_B18674AZ-0047",
+  "sourceInformation": "FreeBMD. England & Wales, Civil Registration Birth Index, 1837-1915 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2006. Original data: General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Database Copyright © 1998-2003 Graham Hart, Ben Laurie, Camilla von Massenbach and David Mayall.",
+  "originalData": "General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Database Copyright © 1998-2003 Graham Hart, Ben Laurie, Camilla von Massenbach and David Mayall.",
+  "sourceDescription": "This database is a searchable, digitized version of the indices of civil registrations in England and Wales, reported quarterly to the General Register Office (GRO) in London. This index spans the years between 1837 and 1915. Learn more..."
+}

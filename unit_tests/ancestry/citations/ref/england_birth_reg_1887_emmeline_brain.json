@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>\n{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Emmeline's birth was registered in the Apr-May-Jun quarter of 1887 in the Tamworth district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>\n{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>\n{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)<br/>\nEmmeline May Brain birth registered Apr-May-Jun 1887 in Tamworth.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Emmeline's birth was registered in the Apr-May-Jun quarter of 1887 in the Tamworth district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>\n{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)<br/>\nEmmeline May Brain birth registered Apr-May-Jun 1887 in Tamworth.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)<br/>Emmeline May Brain birth registered Apr-May-Jun 1887 in Tamworth.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>\n{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)<br/>\nName: Emmeline May Brain; Registration Date: 1887; Quarter of the Year: Apr-May-Jun; Registration Place: Tamworth, Staffordshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Emmeline's birth was registered in the Apr-May-Jun quarter of 1887 in the Tamworth district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>\n{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)<br/>\nName: Emmeline May Brain; Registration Date: 1887; Quarter of the Year: Apr-May-Jun; Registration Place: Tamworth, Staffordshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)<br/>Name: Emmeline May Brain; Registration Date: 1887; Quarter of the Year: Apr-May-Jun; Registration Place: Tamworth, Staffordshire, England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>\n{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emmeline May Brain\n|-\n| Registration Date || 1887\n|-\n| Quarter of the Year || Apr-May-Jun\n|-\n| Registration Place || Tamworth, Staffordshire, England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Emmeline's birth was registered in the Apr-May-Jun quarter of 1887 in the Tamworth district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>\n{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emmeline May Brain\n|-\n| Registration Date || 1887\n|-\n| Quarter of the Year || Apr-May-Jun\n|-\n| Registration Place || Tamworth, Staffordshire, England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 470<br/>{{Ancestry Record|8912|33557671}} (accessed 6 May 2021)<br/>Name: Emmeline May Brain; Registration Date: 1887; Quarter of the Year: Apr-May-Jun; Registration Place: Tamworth, Staffordshire, England.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"England & Wales, Civil Registration Birth Index, 1837-1915,\" database, ({{Ancestry Record|8912|33557671}} : accessed 6 May 2021), Emmeline May Brain birth registered Apr-May-Jun 1887 in Tamworth; citing England and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 470.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Emmeline's birth was registered in the Apr-May-Jun quarter of 1887 in the Tamworth district.<ref>\"England & Wales, Civil Registration Birth Index, 1837-1915,\" database, ({{Ancestry Record|8912|33557671}} : accessed 6 May 2021), Emmeline May Brain birth registered Apr-May-Jun 1887 in Tamworth; citing England and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 470.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"England & Wales, Civil Registration Birth Index, 1837-1915,\" database, ({{Ancestry Record|8912|33557671}} : accessed 6 May 2021), Emmeline May Brain birth registered Apr-May-Jun 1887 in Tamworth; citing England and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 470.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Birth Registration'':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\", database, \nEngland and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 470, \n({{Ancestry Record|8912|33557671}} : accessed 6 May 2021), \nName: Emmeline May Brain; Registration Date: 1887; Quarter of the Year: Apr-May-Jun; Registration Place: Tamworth, Staffordshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Emmeline's birth was registered in the Apr-May-Jun quarter of 1887 in the Tamworth district.<ref>\n''Birth Registration'':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\", database, \nEngland and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 470, \n({{Ancestry Record|8912|33557671}} : accessed 6 May 2021), \nName: Emmeline May Brain; Registration Date: 1887; Quarter of the Year: Apr-May-Jun; Registration Place: Tamworth, Staffordshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Birth Registration'': \"England & Wales, Civil Registration Birth Index, 1837-1915\", database, England and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 470, ({{Ancestry Record|8912|33557671}} : accessed 6 May 2021), Name: Emmeline May Brain; Registration Date: 1887; Quarter of the Year: Apr-May-Jun; Registration Place: Tamworth, Staffordshire, England.",
+    "type": "source"
+  }
+}

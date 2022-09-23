@@ -1,0 +1,99 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8947&h=442578&ssrc=pt&tid=160114497&pid=412193732194&usePUB=true",
+  "pageType": "record",
+  "dbId": "8947",
+  "recordId": "442578",
+  "ancestryTemplate": "{{Ancestry Record|8947|442578}}",
+  "domain": "com",
+  "titleName": "Nominiges Albert",
+  "titleCollection": "1911 Census of Canada",
+  "recordData": {
+    "Name": "Nominiges Albert",
+    "Gender": "Male",
+    "Marital status": "Married",
+    "Race or Tribe": "French",
+    "Nationality": "Canadian",
+    "Age": "29",
+    "Birth Date": "Jun 1881",
+    "Birth Place": "Quebec",
+    "Census Year": "1911",
+    "Relation to Head of House": "Head",
+    "Dwelling No.": "74",
+    "Province": "Quebec",
+    "District": "Gaspé",
+    "District Number": "159",
+    "Sub-District": "35 - Newport",
+    "Sub-District Number": "35",
+    "Place of Habitation": "Newport Point",
+    "Religion": "Roman Catholic",
+    "Occupation": "Labourer",
+    "Employer": "No",
+    "Employee": "No",
+    "Works at": "Lumber Mill",
+    "Weeks Employed": "40",
+    "Hours/Week": "60",
+    "Earnings": "360",
+    "Can Read": "no",
+    "Can Write": "no",
+    "Language": "F",
+    "Family Number": "75",
+    "Household Members": "Nominiges Albert 29<br/>Jennie Albert 24<br/>Domingue Albert 5<br/>Joseph Albert 3<br/>Pauline Albert 2<br/>Christine Albert 55"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Name": "Nominiges Albert",
+        "dbId": "1911Canada",
+        "recordId": "442578",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442578",
+        "Age": "29"
+      },
+      {
+        "Name": "Jennie Albert",
+        "dbId": "1911Canada",
+        "recordId": "442579",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442579",
+        "Age": "24"
+      },
+      {
+        "Name": "Domingue Albert",
+        "dbId": "1911Canada",
+        "recordId": "442580",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442580",
+        "Age": "5"
+      },
+      {
+        "Name": "Joseph Albert",
+        "dbId": "1911Canada",
+        "recordId": "442581",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442581",
+        "Age": "3"
+      },
+      {
+        "Name": "Pauline Albert",
+        "dbId": "1911Canada",
+        "recordId": "442582",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442582",
+        "Age": "2"
+      },
+      {
+        "Name": "Christine Albert",
+        "dbId": "1911Canada",
+        "recordId": "442583",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442583",
+        "Age": "55"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8947/images/e083_e002053662?pid=442578&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D8947%26h%3D442578%26ssrc%3Dpt%26tid%3D160114497%26pid%3D412193732194%26usePUB%3Dtrue&ssrc=pt&treeid=160114497&personid=412193732194&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "8947",
+  "imageRecordId": "e083_e002053662",
+  "sourceCitation": "Year: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75",
+  "sourceInformation": "Ancestry.com. 1911 Census of Canada [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2006. Original data: Library and Archives Canada. Census of Canada, 1911. Ottawa, Ontario, Canada: Library and Archives Canada, 2007. http://www.bac-lac.gc.ca/eng/census/1911/Pages/about-census.aspx. Series RG31-C-1. Statistics Canada Fonds. Microfilm reels T-20326 to T-20460.Images are reproduced with the permission of Library and Archives Canada.",
+  "originalData": "Library and Archives Canada. Census of Canada, 1911. Ottawa, Ontario, Canada: Library and Archives Canada, 2007. http://www.bac-lac.gc.ca/eng/census/1911/Pages/about-census.aspx. Series RG31-C-1. Statistics Canada Fonds. Microfilm reels T-20326 to T-20460.Images are reproduced with the permission of Library and Archives Canada.",
+  "sourceDescription": "This fifth census of Canada covers the nine provinces and two territories of Canada as of 1911: Alberta, British Columbia, Manitoba, New Brunswick, Nova Scotia, Ontario, Prince Edward Island, Quebec, Saskatchewan, the Yukon Territory, and the Northwest Territories. The census provides many details about individuals and families including: name, gender, age, birthplace, year of immigration, nationality, and origin. The names of those listed in the census are linked to actual images of the 1911 Census. Learn more..."
+}

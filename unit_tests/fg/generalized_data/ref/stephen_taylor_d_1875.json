@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "Mar 1875"
+  },
+  "eventPlace": {
+    "placeString": "Newdigate, Mole Valley District, Surrey, England",
+    "streetAddress": "St Peter Churchyard"
+  },
+  "name": {
+    "name": "Stephen Taylor"
+  },
+  "lastNameAtDeath": "Taylor",
+  "deathDate": {
+    "dateString": "Mar 1875"
+  },
+  "ageAtDeath": "71–72",
+  "birthDate": {
+    "dateString": "1803"
+  },
+  "hasValidData": true
+}

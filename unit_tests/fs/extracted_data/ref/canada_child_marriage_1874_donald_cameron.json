@@ -1,0 +1,39 @@
+{
+  "recordData": {
+    "Name": "Donald Cameron"
+  },
+  "fullName": "Donald Cameron",
+  "givenName": "Donald",
+  "surname": "Cameron",
+  "gender": "male",
+  "eventDateOriginal": "15 Jul 1874",
+  "eventDate": "15 Jul 1874",
+  "eventYear": "1874",
+  "eventPlaceOriginal": "Osprey, Grey, Ontario, Canada",
+  "eventPlace": "Osprey, Grey, Ontario, Canada",
+  "eventPlaceL3": "Grey",
+  "eventPlaceL2": "Grey",
+  "eventPlaceL1": "Canada",
+  "relatedPersonFactType": "Marriage",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Ann Cameron",
+  "relatedPersonGivenName": "Ann",
+  "relatedPersonSurname": "Cameron",
+  "relatedPersonGender": "female",
+  "relatedPersonSpouseFullName": "Neil Mclean",
+  "relatedPersonSpouseGivenName": "Neil",
+  "relatedPersonSpouseSurname": "Mclean",
+  "fsCollectionId": "1784216",
+  "referenceData": {
+    "digitalFilmNumber": "004529109",
+    "filmNumber": "1862892"
+  },
+  "fsImageNumber": "00465",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:9Q97-Y39L-C6M",
+  "collectionTitle": "Canada, Ontario Marriages, 1869-1927",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:1SL3-3ZM",
+  "citation": "\"Canada, Ontario Marriages, 1869-1927,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:FMN3-4Z6 : 8 March 2021), Donald Cameron in entry for Neil Mclean and Ann Cameron, 15 Jul 1874; citing registration , Osprey, Grey, Ontario, Canada, Archives of Ontario, Toronto; FHL microfilm 1,862,892.",
+  "sourceTitleForPerson": "Donald Cameron in entry for Neil Mclean and Ann Cameron, \"Canada, Ontario Marriages, 1869-1927\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:FMN3-4Z6",
+  "pageType": "record"
+}

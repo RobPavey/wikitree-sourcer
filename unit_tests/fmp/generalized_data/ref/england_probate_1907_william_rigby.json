@@ -1,0 +1,30 @@
+{
+  "sourceType": "record",
+  "recordType": "Probate",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Rigby",
+    "forenames": "William Bradshaw"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "London"
+  },
+  "eventDate": {
+    "dateString": "14 Oct 1907",
+    "yearString": "1907"
+  },
+  "deathDate": {
+    "dateString": "03 Sep 1907",
+    "yearString": "1907"
+  },
+  "residencePlace": {
+    "placeString": "Manchester, Lancashire, England"
+  },
+  "lastNameAtDeath": "Rigby",
+  "collectionData": {
+    "id": "England & Wales Government Probate Death Index 1858-2019"
+  },
+  "hasValidData": true
+}

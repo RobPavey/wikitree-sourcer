@@ -1,0 +1,135 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Martha Wallace"
+  },
+  "birthDate": {
+    "dateString": "1892",
+    "yearString": "1892"
+  },
+  "birthPlace": {
+    "placeString": "Alabama"
+  },
+  "eventDate": {
+    "dateString": "1910",
+    "yearString": "1910"
+  },
+  "eventPlace": {
+    "placeString": "Howells Cove, Talladega, Alabama, United States"
+  },
+  "ageAtEvent": "18",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "John G Wallace",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "64",
+      "birthYear": "1846",
+      "birthPlace": "Alabama"
+    },
+    {
+      "name": "Emma Wallace",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "44",
+      "birthYear": "1866",
+      "birthPlace": "Alabama"
+    },
+    {
+      "name": "Ginnie Wallace",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "20",
+      "birthYear": "1890",
+      "birthPlace": "Alabama"
+    },
+    {
+      "name": "Martha Wallace",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "18",
+      "birthYear": "1892",
+      "birthPlace": "Alabama",
+      "isSelected": true
+    },
+    {
+      "name": "Carry B Wallace",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "15",
+      "birthYear": "1895",
+      "birthPlace": "Alabama"
+    },
+    {
+      "name": "Dolly Wallace",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "13",
+      "birthYear": "1897",
+      "birthPlace": "Alabama"
+    },
+    {
+      "name": "Pauline Wallace",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "9",
+      "birthYear": "1901",
+      "birthPlace": "Alabama"
+    },
+    {
+      "name": "Robert Wallace",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "6",
+      "birthYear": "1904",
+      "birthPlace": "Alabama"
+    },
+    {
+      "name": "Robert S Wilson",
+      "relationship": "hired man",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "25",
+      "birthYear": "1885",
+      "birthPlace": "Alabama"
+    }
+  ],
+  "maritalStatus": "single",
+  "relationshipToHead": "daughter",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John G Wallace"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Emma Wallace"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1727033"
+  },
+  "hasValidData": true
+}

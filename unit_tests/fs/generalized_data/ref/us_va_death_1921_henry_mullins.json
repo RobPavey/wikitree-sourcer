@@ -1,0 +1,45 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Henry Mullins"
+  },
+  "birthDate": {
+    "dateString": "18 Feb 1825",
+    "yearString": "1825"
+  },
+  "deathDate": {
+    "dateString": "7 Jan 1921",
+    "yearString": "1921"
+  },
+  "eventDate": {
+    "dateString": "7 Jan 1921",
+    "yearString": "1921"
+  },
+  "eventPlace": {
+    "placeString": "Roberson, Wise, Virginia, United States"
+  },
+  "ageAtDeath": "95",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Sheard Mullins",
+        "forenames": "Sheard",
+        "lastName": "Mullins"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Polly Roberts",
+        "forenames": "Polly",
+        "lastName": "Roberts"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2377565"
+  },
+  "hasValidData": true
+}

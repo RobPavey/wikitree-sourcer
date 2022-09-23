@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1874-75 Electoral Register''':\n\"New Zealand Electoral Rolls\"<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Robert was registered to vote in 1874-1875 in Avenue road Foxton, Manawatu, New Zealand.<ref>\n'''1874-75 Electoral Register''':\n\"New Zealand Electoral Rolls\"<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1874-75 Electoral Register''': \"New Zealand Electoral Rolls\"<br/>[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1874-75 Electoral Register''':\n\"New Zealand Electoral Rolls\"<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Robert; Last name: Wallbutton; Number: 374; Electoral year: 1874-75; Qualification: leasehold; Residence: Avenue road Foxton; Land description: House and six acres No; Electorate: Manawatu; Country: New Zealand.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Robert was registered to vote in 1874-1875 in Avenue road Foxton, Manawatu, New Zealand.<ref>\n'''1874-75 Electoral Register''':\n\"New Zealand Electoral Rolls\"<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Robert; Last name: Wallbutton; Number: 374; Electoral year: 1874-75; Qualification: leasehold; Residence: Avenue road Foxton; Land description: House and six acres No; Electorate: Manawatu; Country: New Zealand.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1874-75 Electoral Register''': \"New Zealand Electoral Rolls\"<br/>[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Robert; Last name: Wallbutton; Number: 374; Electoral year: 1874-75; Qualification: leasehold; Residence: Avenue road Foxton; Land description: House and six acres No; Electorate: Manawatu; Country: New Zealand.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1874-75 Electoral Register''':\n\"New Zealand Electoral Rolls\"<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Robert; Last name: Wallbutton; Number: 374; Electoral year: 1874-75; Qualification: leasehold; Residence: Avenue road Foxton; Land description: House and six acres No; Electorate: Manawatu; Country: New Zealand.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Robert was registered to vote in 1874-1875 in Avenue road Foxton, Manawatu, New Zealand.<ref>\n'''1874-75 Electoral Register''':\n\"New Zealand Electoral Rolls\"<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Robert; Last name: Wallbutton; Number: 374; Electoral year: 1874-75; Qualification: leasehold; Residence: Avenue road Foxton; Land description: House and six acres No; Electorate: Manawatu; Country: New Zealand.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1874-75 Electoral Register''': \"New Zealand Electoral Rolls\"<br/>[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Robert; Last name: Wallbutton; Number: 374; Electoral year: 1874-75; Qualification: leasehold; Residence: Avenue road Foxton; Land description: House and six acres No; Electorate: Manawatu; Country: New Zealand.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1874-75 Electoral Register''':\n\"New Zealand Electoral Rolls\"<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Robert\n|-\n| Last name || Wallbutton\n|-\n| Number || 374\n|-\n| Electoral year || 1874-75\n|-\n| Qualification || leasehold\n|-\n| Residence || Avenue road Foxton\n|-\n| Land description || House and six acres No\n|-\n| Electorate || Manawatu\n|-\n| Country || New Zealand\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Robert was registered to vote in 1874-1875 in Avenue road Foxton, Manawatu, New Zealand.<ref>\n'''1874-75 Electoral Register''':\n\"New Zealand Electoral Rolls\"<br/>\n[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Robert\n|-\n| Last name || Wallbutton\n|-\n| Number || 374\n|-\n| Electoral year || 1874-75\n|-\n| Qualification || leasehold\n|-\n| Residence || Avenue road Foxton\n|-\n| Land description || House and six acres No\n|-\n| Electorate || Manawatu\n|-\n| Country || New Zealand\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1874-75 Electoral Register''': \"New Zealand Electoral Rolls\"<br/>[https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Robert; Last name: Wallbutton; Number: 374; Electoral year: 1874-75; Qualification: leasehold; Residence: Avenue road Foxton; Land description: House and six acres No; Electorate: Manawatu; Country: New Zealand.",
+    "type": "source"
+  }
+}

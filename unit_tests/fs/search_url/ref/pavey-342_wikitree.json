@@ -1,0 +1,8 @@
+{
+  "std": {
+    "url": "https://www.familysearch.org/search/record/results?count=20&q.sex=Male&q.givenName=Harry%20Alfred&q.surname=Pavey&q.birthLikePlace=Plymouth%2C%20Devonshire%2C%20England&q.birthLikeDate.from=1850&q.birthLikeDate.to=1854&q.deathLikePlace=Hampstead%2C%20Greater%20London%2C%20England&q.deathLikeDate.from=1912&q.deathLikeDate.to=1916&q.marriageLikePlace=Pancras%2C%20Middlesex%2C%20England%2C%20United%20Kingdom&q.marriageLikeDate.from=1886&q.marriageLikeDate.to=1894&q.spouseGivenName=Amelia%20Elizabeth&q.spouseSurname=Littlemore&q.recordCountry=England"
+  },
+  "specified_collection": {
+    "url": "https://www.familysearch.org/search/record/results?count=20&f.collectionId=1538354&q.sex=Male&q.givenName=Harry%20Alfred&q.surname=Pavey&q.birthLikePlace=Plymouth%2C%20Devonshire%2C%20England&q.birthLikeDate.from=1850&q.birthLikeDate.to=1854&q.deathLikePlace=Hampstead%2C%20Greater%20London%2C%20England&q.deathLikeDate.from=1912&q.deathLikeDate.to=1916&q.marriageLikePlace=Pancras%2C%20Middlesex%2C%20England%2C%20United%20Kingdom&q.marriageLikeDate.from=1886&q.marriageLikeDate.to=1894&q.spouseGivenName=Amelia%20Elizabeth"
+  }
+}

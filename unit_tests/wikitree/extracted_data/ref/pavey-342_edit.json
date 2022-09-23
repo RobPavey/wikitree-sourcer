@@ -1,0 +1,39 @@
+{
+  "hasValidData": true,
+  "firstNames": "Harry",
+  "prefNames": "Harry",
+  "middleNames": "Alfred",
+  "lnab": "Pavey",
+  "currentLastName": "Pavey",
+  "mothersMaidenName": "Ellacott",
+  "birthDate": "18 Jul 1852",
+  "birthDateStatus": "certain",
+  "deathDate": "5 Jan 1914",
+  "deathDateStatus": "certain",
+  "birthLocation": "Plymouth, Devonshire, England",
+  "deathLocation": "Hampstead, Greater London, England",
+  "personGender": "Male",
+  "spouses": [
+    {
+      "name": "Amelia Elizabeth (Littlemore) Pavey",
+      "wikiId": "Littlemore-13",
+      "marriageString": "Oct 1890 Pancras, Middlesex, England, United Kingdom",
+      "marriageDate": "Oct 1890",
+      "marriagePlace": "Pancras, Middlesex, England, United Kingdom"
+    }
+  ],
+  "url": "https://www.wikitree.com/index.php?title=Special:EditPerson&u=22280837",
+  "currentTabText": "Edit",
+  "pageType": "edit",
+  "parents": {
+    "father": {
+      "name": "William Henry Pavey",
+      "wikiId": "Pavey-343"
+    },
+    "mother": {
+      "name": "Elizabeth (Ellacott) Pavey",
+      "wikiId": "Ellacott-59"
+    }
+  },
+  "wikiId": "Pavey-342"
+}

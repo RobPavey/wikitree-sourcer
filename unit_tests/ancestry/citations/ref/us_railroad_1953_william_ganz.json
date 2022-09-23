@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Employment''':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>\nChicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>\n{{Ancestry Record|6944|15511}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "William was employed in July 1953 in Buffalo, New York.<ref>\n'''Employment''':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>\nChicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>\n{{Ancestry Record|6944|15511}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Employment''': \"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>Chicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>{{Ancestry Record|6944|15511}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Employment''':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>\nChicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>\n{{Ancestry Record|6944|15511}} (accessed 6 May 2021)<br/>\nName: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "William was employed in July 1953 in Buffalo, New York.<ref>\n'''Employment''':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>\nChicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>\n{{Ancestry Record|6944|15511}} (accessed 6 May 2021)<br/>\nName: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Employment''': \"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>Chicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>{{Ancestry Record|6944|15511}} (accessed 6 May 2021)<br/>Name: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Employment''':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>\nChicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>\n{{Ancestry Record|6944|15511}} (accessed 6 May 2021)<br/>\nName: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "William was employed in July 1953 in Buffalo, New York.<ref>\n'''Employment''':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>\nChicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>\n{{Ancestry Record|6944|15511}} (accessed 6 May 2021)<br/>\nName: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Employment''': \"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>Chicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>{{Ancestry Record|6944|15511}} (accessed 6 May 2021)<br/>Name: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Employment''':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>\nChicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>\n{{Ancestry Record|6944|15511}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Ganz\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 16 Jun 1926\n|-\n| Birth Place || Oil City, Pennsylvania\n|-\n| Father || Joseph Ganz\n|-\n| Mother || Amy Leonard\n|-\n| Hire Date || Jul 1953\n|-\n| Record Date || abt 1952\n|-\n| Record Place || Buffalo, New York\n|-\n| Occupation || Ex Gang Laborer\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "William was employed in July 1953 in Buffalo, New York.<ref>\n'''Employment''':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>\nChicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>\n{{Ancestry Record|6944|15511}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Ganz\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 16 Jun 1926\n|-\n| Birth Place || Oil City, Pennsylvania\n|-\n| Father || Joseph Ganz\n|-\n| Mother || Amy Leonard\n|-\n| Hire Date || Jul 1953\n|-\n| Record Date || abt 1952\n|-\n| Record Place || Buffalo, New York\n|-\n| Occupation || Ex Gang Laborer\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Employment''': \"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\"<br/>Chicago & North Western Historical Society; Berwyn, Illinois; CNW Social Security Applications<br/>{{Ancestry Record|6944|15511}} (accessed 6 May 2021)<br/>Name: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970,\" database, ({{Ancestry Record|6944|15511}} : accessed 6 May 2021), Name William Ganz, Gender Male, Race White, Birth Date 16 Jun 1926, Birth Place Oil City, Pennsylvania, Father Joseph Ganz, Mother Amy Leonard, Hire Date Jul 1953, Record Date abt 1952, Record Place Buffalo, New York, Occupation Ex Gang Laborer; citing Chicago & North Western Historical Society, Berwyn, Illinois, CNW Social Security Applications.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "William was employed in July 1953 in Buffalo, New York.<ref>\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970,\" database, ({{Ancestry Record|6944|15511}} : accessed 6 May 2021), Name William Ganz, Gender Male, Race White, Birth Date 16 Jun 1926, Birth Place Oil City, Pennsylvania, Father Joseph Ganz, Mother Amy Leonard, Hire Date Jul 1953, Record Date abt 1952, Record Place Buffalo, New York, Occupation Ex Gang Laborer; citing Chicago & North Western Historical Society, Berwyn, Illinois, CNW Social Security Applications.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Chicago and North Western Railroad Employment Records, 1935-1970,\" database, ({{Ancestry Record|6944|15511}} : accessed 6 May 2021), Name William Ganz, Gender Male, Race White, Birth Date 16 Jun 1926, Birth Place Oil City, Pennsylvania, Father Joseph Ganz, Mother Amy Leonard, Hire Date Jul 1953, Record Date abt 1952, Record Place Buffalo, New York, Occupation Ex Gang Laborer; citing Chicago & North Western Historical Society, Berwyn, Illinois, CNW Social Security Applications.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Employment'':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\", database, \nChicago & North Western Historical Society, Berwyn, Illinois, CNW Social Security Applications, \n({{Ancestry Record|6944|15511}} : accessed 6 May 2021), \nName: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "William was employed in July 1953 in Buffalo, New York.<ref>\n''Employment'':\n\"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\", database, \nChicago & North Western Historical Society, Berwyn, Illinois, CNW Social Security Applications, \n({{Ancestry Record|6944|15511}} : accessed 6 May 2021), \nName: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Employment'': \"U.S., Chicago and North Western Railroad Employment Records, 1935-1970\", database, Chicago & North Western Historical Society, Berwyn, Illinois, CNW Social Security Applications, ({{Ancestry Record|6944|15511}} : accessed 6 May 2021), Name: William Ganz; Gender: Male; Race: White; Birth Date: 16 Jun 1926; Birth Place: Oil City, Pennsylvania; Father: Joseph Ganz; Mother: Amy Leonard; Hire Date: Jul 1953; Record Date: abt 1952; Record Place: Buffalo, New York; Occupation: Ex Gang Laborer.",
+    "type": "source"
+  }
+}

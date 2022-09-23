@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Elizabeth, child of John Pavey & Sarah, was baptised on 28 September 1713 in Dursley, Gloucestershire, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Gloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)<br/>\nElizabeth Pavey baptism on 28 Sep 1713, child of John Pavey & Sarah, in Dursley, Gloucestershire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Elizabeth, child of John Pavey & Sarah, was baptised on 28 September 1713 in Dursley, Gloucestershire, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)<br/>\nElizabeth Pavey baptism on 28 Sep 1713, child of John Pavey & Sarah, in Dursley, Gloucestershire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Gloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)<br/>Elizabeth Pavey baptism on 28 Sep 1713, child of John Pavey & Sarah, in Dursley, Gloucestershire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Gloucestershire; Place: Dursley; Church name: St James; Register type: Unspecified; Baptism date: 28 Sep 1713; Person forename: Elizabeth; Father forename: John; Mother forename: Sarah; Father surname: PAVEY; Transcribed by: Jim Heath.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Elizabeth, child of John Pavey & Sarah, was baptised on 28 September 1713 in Dursley, Gloucestershire, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Gloucestershire; Place: Dursley; Church name: St James; Register type: Unspecified; Baptism date: 28 Sep 1713; Person forename: Elizabeth; Father forename: John; Mother forename: Sarah; Father surname: PAVEY; Transcribed by: Jim Heath.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Gloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)<br/>County: Gloucestershire; Place: Dursley; Church name: St James; Register type: Unspecified; Baptism date: 28 Sep 1713; Person forename: Elizabeth; Father forename: John; Mother forename: Sarah; Father surname: PAVEY; Transcribed by: Jim Heath.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Gloucestershire\n|-\n| Place || Dursley\n|-\n| Church name || St James\n|-\n| Register type || Unspecified\n|-\n| Baptism date || 28 Sep 1713\n|-\n| Person forename || Elizabeth\n|-\n| Father forename || John\n|-\n| Mother forename || Sarah\n|-\n| Father surname || PAVEY\n|-\n| Transcribed by || Jim Heath\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Elizabeth, child of John Pavey & Sarah, was baptised on 28 September 1713 in Dursley, Gloucestershire, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Gloucestershire\n|-\n| Place || Dursley\n|-\n| Church name || St James\n|-\n| Register type || Unspecified\n|-\n| Baptism date || 28 Sep 1713\n|-\n| Person forename || Elizabeth\n|-\n| Father forename || John\n|-\n| Mother forename || Sarah\n|-\n| Father surname || PAVEY\n|-\n| Transcribed by || Jim Heath\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Gloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)<br/>County: Gloucestershire; Place: Dursley; Church name: St James; Register type: Unspecified; Baptism date: 28 Sep 1713; Person forename: Elizabeth; Father forename: John; Mother forename: Sarah; Father surname: PAVEY; Transcribed by: Jim Heath.",
+    "type": "source"
+  }
+}

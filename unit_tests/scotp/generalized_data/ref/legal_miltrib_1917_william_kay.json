@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "lastName": "Kay",
+    "forenames": "William Hodgson Hetherington"
+  },
+  "eventDate": {
+    "dateString": "9 March 1917"
+  },
+  "courtName": "Haddington",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Haddington, Scotland"
+  },
+  "hasValidData": true
+}

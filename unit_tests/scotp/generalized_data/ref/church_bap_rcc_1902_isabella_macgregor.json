@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "MacGregor",
+    "forenames": "Isabella"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "6 July 1902"
+  },
+  "birthDate": {
+    "dateString": "1 July 1902"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Renfrewshire",
+    "placeString": "Paisley, Renfrewshire, Scotland",
+    "streetAddress": "St Mirin's"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Alexander MacGregor"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Ellen McGuldrick"
+      }
+    }
+  },
+  "hasValidData": true
+}

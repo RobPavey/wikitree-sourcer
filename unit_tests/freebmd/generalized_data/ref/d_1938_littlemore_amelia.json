@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "freebmd",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1938",
+    "quarter": 1
+  },
+  "name": {
+    "lastName": "PAVEY",
+    "forenames": "Amelia E"
+  },
+  "lastNameAtDeath": "PAVEY",
+  "deathDate": {
+    "yearString": "1938",
+    "quarter": 1
+  },
+  "ageAtDeath": "88",
+  "registrationDistrict": "Leek",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "6b",
+    "page": "327"
+  },
+  "hasValidData": true
+}

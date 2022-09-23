@@ -1,0 +1,21 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/462110:61315?tid=172368945&pid=392239251991&hid=1047564774518",
+  "pageType": "record",
+  "dbId": "61315",
+  "recordId": "462110",
+  "ancestryTemplate": "{{Ancestry Record|61315|462110}}",
+  "domain": "com",
+  "titleName": "Violet A McConchie",
+  "titleCollection": "Victoria, Australia, Wills and Probate Records, 1841-2009",
+  "recordData": {
+    "Name": "Violet A McConchie",
+    "Death Date": "12 Oct 1974",
+    "Death Place": "Preston",
+    "Occupation": "Widow",
+    "Grant Date": "3 Dec 1974",
+    "Grant": "LA"
+  },
+  "sourceCitation": "Public Record Office Victoria; North Melbourne, Victoria; Victorian Wills, Probate and Administration Records 1841-1925; Series: VPRS 7591",
+  "sourceInformation": "Ancestry.com. Victoria, Australia, Wills and Probate Records, 1841-2009 [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc., 2016. Original data: Wills and Probate Records. VPRS 28 (Probates) and VPRS 7591 (Wills). Public Record Office Victoria, North Melbourne, Victoria. Wills and Probate material on this website is licensed under the Creative Commons Attribution 4.0 International License with all existing terms and copyrights.",
+  "sourceDescription": "This collection is comprised of Wills and Probates between 1841-2009 from the Public Record Office of Victoria. Learn more..."
+}

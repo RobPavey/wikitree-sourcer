@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "McGregor",
+    "forenames": "Christane"
+  },
+  "eventDate": {
+    "dateString": "2 July 1668"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Stirlingshire",
+    "placeString": "Buchanan, Stirlingshire, Scotland"
+  },
+  "recordSubtype": "MarriageOrBanns",
+  "spouses": [
+    {
+      "name": {
+        "name": "Robert Wright"
+      },
+      "marriageDate": {
+        "dateString": "2 July 1668"
+      },
+      "marriagePlace": {
+        "country": "Scotland",
+        "county": "Stirlingshire",
+        "placeString": "Buchanan, Stirlingshire, Scotland"
+      }
+    }
+  ],
+  "collectionData": {
+    "frameNumber": "285"
+  },
+  "hasValidData": true
+}

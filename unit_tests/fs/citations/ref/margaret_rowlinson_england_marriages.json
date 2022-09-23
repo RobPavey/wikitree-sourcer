@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson in entry for Joseph Walmsley, 1855.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson in entry for Joseph Walmsley, 1855.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>Margaret Rowlinson in entry for Joseph Walmsley, 1855.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson marriage to Joseph Walmsley on 28 Oct 1855 in Padgate, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson marriage to Joseph Walmsley on 28 Oct 1855 in Padgate, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>Margaret Rowlinson marriage to Joseph Walmsley on 28 Oct 1855 in Padgate, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nName: Margaret Rowlinson; Marriage Notice Date: 28 Oct 1855; Marriage Notice Place: Padgate, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nName: Margaret Rowlinson; Marriage Notice Date: 28 Oct 1855; Marriage Notice Place: Padgate, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>Name: Margaret Rowlinson; Marriage Notice Date: 28 Oct 1855; Marriage Notice Place: Padgate, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Margaret Rowlinson\n|-\n| Marriage Notice Date || 28 Oct 1855\n|-\n| Marriage Notice Place || Padgate, Lancashire, England, United Kingdom\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Margaret Rowlinson\n|-\n| Marriage Notice Date || 28 Oct 1855\n|-\n| Marriage Notice Place || Padgate, Lancashire, England, United Kingdom\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>Name: Margaret Rowlinson; Marriage Notice Date: 28 Oct 1855; Marriage Notice Place: Padgate, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson in entry for Joseph Walmsley, 1855.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson in entry for Joseph Walmsley, 1855.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>Margaret Rowlinson in entry for Joseph Walmsley, 1855.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson marriage to Joseph Walmsley on 28 Oct 1855 in Padgate, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson marriage to Joseph Walmsley on 28 Oct 1855 in Padgate, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>Margaret Rowlinson marriage to Joseph Walmsley on 28 Oct 1855 in Padgate, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson in entry for Joseph Walmsley, 1855.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>\nMargaret Rowlinson in entry for Joseph Walmsley, 1855.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)<br/>Margaret Rowlinson in entry for Joseph Walmsley, 1855.",
+    "type": "source"
+  }
+}

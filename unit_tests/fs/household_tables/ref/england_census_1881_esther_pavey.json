@@ -1,0 +1,62 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "heading_none": {
+    "tableString": "{| border=\"1\"\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "heading_plain": {
+    "tableString": "{| border=\"1\"\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "heading_bgGreen": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "heading_boldCentered": {
+    "tableString": "{| border=\"1\"\n! Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "heading_bgGreenBoldCentered": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n! Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "selected_plain": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| Esther Pavey || Wife || Married || F || 39 ||  || London, Middlesex, England\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "selected_bgYellowRow": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|- bgcolor=#ffffb3\n| Esther Pavey || Wife || Married || F || 39 ||  || London, Middlesex, England\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "selected_boldRow": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "selected_boldCenteredRow": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n! Esther Pavey || Wife || Married || F || 39 ||  || London, Middlesex, England\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "selected_boldName": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || Wife || Married || F || 39 ||  || London, Middlesex, England\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "selected_bgYellowBoldRow": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|- bgcolor=#ffffb3\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "selected_bgYellowBoldCenteredRow": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|- bgcolor=#ffffb3\n! Esther Pavey || Wife || Married || F || 39 ||  || London, Middlesex, England\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "selected_bgYellowBoldName": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|- bgcolor=#ffffb3\n| '''Esther Pavey''' || Wife || Married || F || 39 ||  || London, Middlesex, England\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "caption_titlePlace": {
+    "tableString": "{| border=\"1\"\n|+ 1881 Census of England and Wales: Camberwell, London,Surrey, England\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "caption_titlePlaceNoCountry": {
+    "tableString": "{| border=\"1\"\n|+ 1881 Census of England and Wales: Camberwell, London,Surrey\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "caption_datePlace": {
+    "tableString": "{| border=\"1\"\n|+ 3 Apr 1881: Camberwell, London,Surrey, England\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "caption_datePlaceNoCountry": {
+    "tableString": "{| border=\"1\"\n|+ 3 Apr 1881: Camberwell, London,Surrey\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Charles A Pavey || Head || Married || M || 38 || Picture Frame Maker Employing 1 Lad || Plymouth, Devon, England\n|-\n| '''Esther Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''39''' ||  || '''London, Middlesex, England'''\n|-\n| Elizabeth Pavey || Mother || Widowed || F || 78 || Annuitant || Plymouth, Devon, England\n|-\n| Sidney H Harper || Nephew || Unmarried || M || 18 || Picture Frame Maker || Kentish Town, Middlesex, England\n|}"
+  },
+  "list_default": {
+    "tableString": ":: Charles A Pavey    Head    Married    M    38    Picture Frame Maker Employing 1 Lad    Plymouth, Devon, England\n:: Esther Pavey    Wife    Married    F    39        London, Middlesex, England\n:: Elizabeth Pavey    Mother    Widowed    F    78    Annuitant    Plymouth, Devon, England\n:: Sidney H Harper    Nephew    Unmarried    M    18    Picture Frame Maker    Kentish Town, Middlesex, England"
+  },
+  "sentence_default": {
+    "tableString": "Charles A Pavey 38, wife Esther Pavey 39, mother Elizabeth Pavey 78, nephew Sidney H Harper 18."
+  }
+}

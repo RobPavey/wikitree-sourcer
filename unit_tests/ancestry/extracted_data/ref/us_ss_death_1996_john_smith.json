@@ -1,0 +1,23 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=3693&h=14641755&tid=&pid=&queryId=cd43f15d15cbf13e87f4dc4888f499dc&usePUB=true&_phsrc=Vww4090&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "3693",
+  "recordId": "14641755",
+  "ancestryTemplate": "{{Ancestry Record|3693|14641755}}",
+  "domain": "com",
+  "titleName": "John E. De Smith",
+  "titleCollection": "U.S., Social Security Death Index, 1935-2014",
+  "recordData": {
+    "Name": "John E. De Smith",
+    "Social Security Number": "555-24-8430",
+    "Birth Date": "19 Aug 1919",
+    "Issue Year": "Before 1951",
+    "Issue State": "California",
+    "Last Residence": "92562, Murrieta, Riverside, California, USA",
+    "Death Date": "30 Aug 1996"
+  },
+  "sourceCitation": "Social Security Administration; Washington D.C., USA; Social Security Death Index, Master File",
+  "sourceInformation": "Ancestry.com. U.S., Social Security Death Index, 1935-2014 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2014. Original data: Social Security Administration. Social Security Death Index, Master File. Social Security Administration.",
+  "originalData": "Social Security Administration. Social Security Death Index, Master File. Social Security Administration.",
+  "sourceDescription": "The Social Security Administration Death Master File contains information on millions of deceased individuals with United States social security numbers whose deaths were reported to the Social Security Administration. Birth years for the individuals listed range from 1875 to last year. Information in these records includes name, birth date, death date, and last known residence. Learn more..."
+}

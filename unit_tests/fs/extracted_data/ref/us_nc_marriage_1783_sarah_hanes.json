@@ -1,0 +1,34 @@
+{
+  "recordData": {
+    "Name": "Sarah Hanes",
+    "Marriage Notice Date": "1783",
+    "Marriage Notice Place": "North Carolina, United States",
+    "Event Place Parent Jur": "1",
+    "Misc Note": "Page 8 on index"
+  },
+  "fullName": "Sarah Hanes",
+  "givenName": "Sarah",
+  "surname": "Hanes",
+  "gender": "female",
+  "eventDateOriginal": "1783",
+  "eventDate": "1783",
+  "eventYear": "1783",
+  "eventPlaceOriginal": "North Carolina, United States",
+  "eventPlace": "North Carolina, United States",
+  "factType": "MarriageNotice",
+  "fsCollectionId": "1726957",
+  "referenceData": {
+    "digitalFilmNumber": "004364068",
+    "filmNumber": "000422158",
+    "packetLetter": "G",
+    "recordNumber": "128"
+  },
+  "fsImageNumber": "00214",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:S3HT-XXX7-HZK",
+  "collectionTitle": "North Carolina, County Marriages, 1762-1979 ",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QGFM-8N19",
+  "citation": "\"North Carolina, County Marriages, 1762-1979 ,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q2R1-ZVMS : 11 March 2018), Sarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783; citing North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.",
+  "sourceTitleForPerson": "Sarah Hanes, \"North Carolina, County Marriages, 1762-1979 \"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:Q2R1-ZVMS",
+  "pageType": "record"
+}

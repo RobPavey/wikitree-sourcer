@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Francis (age 32) married Julia Loughrey (age 30) on 1 September 1894 in Rochester, Kent, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Kent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)<br/>\nFrancis Patrick Smith (32) marriage to Julia Loughrey (30) on 1 Sep 1894 in Rochester, Kent, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Francis (age 32) married Julia Loughrey (age 30) on 1 September 1894 in Rochester, Kent, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)<br/>\nFrancis Patrick Smith (32) marriage to Julia Loughrey (30) on 1 Sep 1894 in Rochester, Kent, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Kent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)<br/>Francis Patrick Smith (32) marriage to Julia Loughrey (30) on 1 Sep 1894 in Rochester, Kent, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Kent; Place: Rochester; Church name: St Nicholas of Myra; Register type: Parish Register; Register entry number: 3; Marriage date: 01 Sep 1894; Groom forename: Francis Patrick; Groom surname: SMITH; Groom age: 32; Groom condition: bachelor; Groom occupation: R.N. Petty Officer (First Class); Groom abode: 3, Pump Lane; Bride forename: Julia; Bride surname: LOUGHREY; Bride age: 30; Bride condition: widow; Bride occupation: -; Bride abode: 3, Pump Lane; Groom father forename: Frederick John; Groom father surname: SMITH; Groom father occupation: Smith; Bride father forename: John; Bride father surname: BENTLEY; Bride father occupation: Policeman; Witness1: William Rielly SMITH; Witness2: Martha STEWART; Notes: -; Transcribed by: Rae.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Francis (age 32) married Julia Loughrey (age 30) on 1 September 1894 in Rochester, Kent, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Kent; Place: Rochester; Church name: St Nicholas of Myra; Register type: Parish Register; Register entry number: 3; Marriage date: 01 Sep 1894; Groom forename: Francis Patrick; Groom surname: SMITH; Groom age: 32; Groom condition: bachelor; Groom occupation: R.N. Petty Officer (First Class); Groom abode: 3, Pump Lane; Bride forename: Julia; Bride surname: LOUGHREY; Bride age: 30; Bride condition: widow; Bride occupation: -; Bride abode: 3, Pump Lane; Groom father forename: Frederick John; Groom father surname: SMITH; Groom father occupation: Smith; Bride father forename: John; Bride father surname: BENTLEY; Bride father occupation: Policeman; Witness1: William Rielly SMITH; Witness2: Martha STEWART; Notes: -; Transcribed by: Rae.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Kent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)<br/>County: Kent; Place: Rochester; Church name: St Nicholas of Myra; Register type: Parish Register; Register entry number: 3; Marriage date: 01 Sep 1894; Groom forename: Francis Patrick; Groom surname: SMITH; Groom age: 32; Groom condition: bachelor; Groom occupation: R.N. Petty Officer (First Class); Groom abode: 3, Pump Lane; Bride forename: Julia; Bride surname: LOUGHREY; Bride age: 30; Bride condition: widow; Bride occupation: -; Bride abode: 3, Pump Lane; Groom father forename: Frederick John; Groom father surname: SMITH; Groom father occupation: Smith; Bride father forename: John; Bride father surname: BENTLEY; Bride father occupation: Policeman; Witness1: William Rielly SMITH; Witness2: Martha STEWART; Notes: -; Transcribed by: Rae.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Kent\n|-\n| Place || Rochester\n|-\n| Church name || St Nicholas of Myra\n|-\n| Register type || Parish Register\n|-\n| Register entry number || 3\n|-\n| Marriage date || 01 Sep 1894\n|-\n| Groom forename || Francis Patrick\n|-\n| Groom surname || SMITH\n|-\n| Groom age || 32\n|-\n| Groom condition || bachelor\n|-\n| Groom occupation || R.N. Petty Officer (First Class)\n|-\n| Groom abode || 3, Pump Lane\n|-\n| Bride forename || Julia\n|-\n| Bride surname || LOUGHREY\n|-\n| Bride age || 30\n|-\n| Bride condition || widow\n|-\n| Bride occupation || -\n|-\n| Bride abode || 3, Pump Lane\n|-\n| Groom father forename || Frederick John\n|-\n| Groom father surname || SMITH\n|-\n| Groom father occupation || Smith\n|-\n| Bride father forename || John\n|-\n| Bride father surname || BENTLEY\n|-\n| Bride father occupation || Policeman\n|-\n| Witness1 || William Rielly SMITH\n|-\n| Witness2 || Martha STEWART\n|-\n| Notes || -\n|-\n| Transcribed by || Rae\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Francis (age 32) married Julia Loughrey (age 30) on 1 September 1894 in Rochester, Kent, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Kent\n|-\n| Place || Rochester\n|-\n| Church name || St Nicholas of Myra\n|-\n| Register type || Parish Register\n|-\n| Register entry number || 3\n|-\n| Marriage date || 01 Sep 1894\n|-\n| Groom forename || Francis Patrick\n|-\n| Groom surname || SMITH\n|-\n| Groom age || 32\n|-\n| Groom condition || bachelor\n|-\n| Groom occupation || R.N. Petty Officer (First Class)\n|-\n| Groom abode || 3, Pump Lane\n|-\n| Bride forename || Julia\n|-\n| Bride surname || LOUGHREY\n|-\n| Bride age || 30\n|-\n| Bride condition || widow\n|-\n| Bride occupation || -\n|-\n| Bride abode || 3, Pump Lane\n|-\n| Groom father forename || Frederick John\n|-\n| Groom father surname || SMITH\n|-\n| Groom father occupation || Smith\n|-\n| Bride father forename || John\n|-\n| Bride father surname || BENTLEY\n|-\n| Bride father occupation || Policeman\n|-\n| Witness1 || William Rielly SMITH\n|-\n| Witness2 || Martha STEWART\n|-\n| Notes || -\n|-\n| Transcribed by || Rae\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Kent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)<br/>County: Kent; Place: Rochester; Church name: St Nicholas of Myra; Register type: Parish Register; Register entry number: 3; Marriage date: 01 Sep 1894; Groom forename: Francis Patrick; Groom surname: SMITH; Groom age: 32; Groom condition: bachelor; Groom occupation: R.N. Petty Officer (First Class); Groom abode: 3, Pump Lane; Bride forename: Julia; Bride surname: LOUGHREY; Bride age: 30; Bride condition: widow; Bride occupation: -; Bride abode: 3, Pump Lane; Groom father forename: Frederick John; Groom father surname: SMITH; Groom father occupation: Smith; Bride father forename: John; Bride father surname: BENTLEY; Bride father occupation: Policeman; Witness1: William Rielly SMITH; Witness2: Martha STEWART; Notes: -; Transcribed by: Rae.",
+    "type": "source"
+  }
+}

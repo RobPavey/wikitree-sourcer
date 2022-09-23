@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Status || Sex || Birth Date || Occupation\n|-\n| James Smith ||  ||  ||  || \n|-\n| Ellen E Smith ||  ||  ||  || \n|- bgcolor=#d0d0d0\n| ''Closed Record'' ||  ||  ||  || \n|- bgcolor=#d0d0d0\n| ''Closed Record'' ||  ||  ||  || \n|-\n| Jessie L Smith ||  ||  ||  || \n|- bgcolor=#d0d0d0\n| ''Closed Record'' ||  ||  ||  || \n|-\n| '''John R Smith''' || '''Single''' || '''M''' || '''21 Sep 1935''' || '''Under School Age'''\n|-\n| Joyce V Smith ||  ||  ||  || \n|}"
+  }
+}

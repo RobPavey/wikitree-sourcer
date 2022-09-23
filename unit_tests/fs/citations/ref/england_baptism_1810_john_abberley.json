@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\nciting Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley, 9 Dec 1810.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "John, child of John Abberley & Sarah, was baptised on 9 December 1810 in Newborough, Staffordshire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\nciting Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley, 9 Dec 1810.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England, Staffordshire, Church Records, 1538-1944\"<br/>citing Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.<br/>{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>John Abberley, 9 Dec 1810.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley baptism on 9 Dec 1810, child of John Abberley & Sarah, in Newborough, Staffordshire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "John, child of John Abberley & Sarah, was baptised on 9 December 1810 in Newborough, Staffordshire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley baptism on 9 Dec 1810, child of John Abberley & Sarah, in Newborough, Staffordshire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Baptism''': \"England, Staffordshire, Church Records, 1538-1944\"<br/>{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>John Abberley baptism on 9 Dec 1810, child of John Abberley & Sarah, in Newborough, Staffordshire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nName: John Abberley; Baptism Date: 9 Dec 1810; Baptism Place: Newborough, Staffordshire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "John, child of John Abberley & Sarah, was baptised on 9 December 1810 in Newborough, Staffordshire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nName: John Abberley; Baptism Date: 9 Dec 1810; Baptism Place: Newborough, Staffordshire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Baptism''': \"England, Staffordshire, Church Records, 1538-1944\"<br/>{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>Name: John Abberley; Baptism Date: 9 Dec 1810; Baptism Place: Newborough, Staffordshire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262\n{| border=\"1\"\n| Name || John Abberley\n|-\n| Baptism Date || 9 Dec 1810\n|-\n| Baptism Place || Newborough, Staffordshire, England, United Kingdom\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "John, child of John Abberley & Sarah, was baptised on 9 December 1810 in Newborough, Staffordshire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262\n{| border=\"1\"\n| Name || John Abberley\n|-\n| Baptism Date || 9 Dec 1810\n|-\n| Baptism Place || Newborough, Staffordshire, England, United Kingdom\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Baptism''': \"England, Staffordshire, Church Records, 1538-1944\"<br/>{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>Name: John Abberley; Baptism Date: 9 Dec 1810; Baptism Place: Newborough, Staffordshire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley, 9 Dec 1810.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "John, child of John Abberley & Sarah, was baptised on 9 December 1810 in Newborough, Staffordshire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley, 9 Dec 1810.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England, Staffordshire, Church Records, 1538-1944\"<br/>{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>John Abberley, 9 Dec 1810.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "John, child of John Abberley & Sarah, was baptised on 9 December 1810 in Newborough, Staffordshire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Baptism''': \"England, Staffordshire, Church Records, 1538-1944\"<br/>{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\nciting Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley baptism on 9 Dec 1810, child of John Abberley & Sarah, in Newborough, Staffordshire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "John, child of John Abberley & Sarah, was baptised on 9 December 1810 in Newborough, Staffordshire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\nciting Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley baptism on 9 Dec 1810, child of John Abberley & Sarah, in Newborough, Staffordshire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Baptism''': \"England, Staffordshire, Church Records, 1538-1944\"<br/>citing Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.<br/>{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>John Abberley baptism on 9 Dec 1810, child of John Abberley & Sarah, in Newborough, Staffordshire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\nciting Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley, 9 Dec 1810.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "John, child of John Abberley & Sarah, was baptised on 9 December 1810 in Newborough, Staffordshire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Staffordshire, Church Records, 1538-1944\"<br/>\nciting Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.<br/>\n{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>\nJohn Abberley, 9 Dec 1810.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England, Staffordshire, Church Records, 1538-1944\"<br/>citing Baptism, Newborough, Staffordshire, England, United Kingdom, Staffordshire & Stoke on Trent Archive Service, Stafford; FHL microfilm 7,566,683.<br/>{{FamilySearch Record|QL3G-Z9Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-L96J-QQ5H}} Image number 02262<br/>John Abberley, 9 Dec 1810.",
+    "type": "source"
+  }
+}

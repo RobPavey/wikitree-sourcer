@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Employment''':\n\"Teachers' Registration Council Registers 1914-1948\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Ivor was employed in 1917 in Cardiff, Cardiff, Glamorganshire, Wales.<ref>\n'''Employment''':\n\"Teachers' Registration Council Registers 1914-1948\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Employment''': \"Teachers' Registration Council Registers 1914-1948\"<br/>[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Employment''':\n\"Teachers' Registration Council Registers 1914-1948\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Ivor; Last name: John; Sex: Male; Residence: Cardiff; First position year: 1899; Registration year: 1917; Entry type: 0; Place: Cardiff; County: Glamorganshire; Country: Wales.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Ivor was employed in 1917 in Cardiff, Cardiff, Glamorganshire, Wales.<ref>\n'''Employment''':\n\"Teachers' Registration Council Registers 1914-1948\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Ivor; Last name: John; Sex: Male; Residence: Cardiff; First position year: 1899; Registration year: 1917; Entry type: 0; Place: Cardiff; County: Glamorganshire; Country: Wales.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Employment''': \"Teachers' Registration Council Registers 1914-1948\"<br/>[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Ivor; Last name: John; Sex: Male; Residence: Cardiff; First position year: 1899; Registration year: 1917; Entry type: 0; Place: Cardiff; County: Glamorganshire; Country: Wales.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Employment''':\n\"Teachers' Registration Council Registers 1914-1948\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Ivor; Last name: John; Sex: Male; Residence: Cardiff; First position year: 1899; Registration year: 1917; Entry type: 0; Place: Cardiff; County: Glamorganshire; Country: Wales.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Ivor was employed in 1917 in Cardiff, Cardiff, Glamorganshire, Wales.<ref>\n'''Employment''':\n\"Teachers' Registration Council Registers 1914-1948\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Ivor; Last name: John; Sex: Male; Residence: Cardiff; First position year: 1899; Registration year: 1917; Entry type: 0; Place: Cardiff; County: Glamorganshire; Country: Wales.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Employment''': \"Teachers' Registration Council Registers 1914-1948\"<br/>[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Ivor; Last name: John; Sex: Male; Residence: Cardiff; First position year: 1899; Registration year: 1917; Entry type: 0; Place: Cardiff; County: Glamorganshire; Country: Wales.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Employment''':\n\"Teachers' Registration Council Registers 1914-1948\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Ivor\n|-\n| Last name || John\n|-\n| Sex || Male\n|-\n| Residence || Cardiff\n|-\n| First position year || 1899\n|-\n| Registration year || 1917\n|-\n| Entry type || 0\n|-\n| Place || Cardiff\n|-\n| County || Glamorganshire\n|-\n| Country || Wales\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Ivor was employed in 1917 in Cardiff, Cardiff, Glamorganshire, Wales.<ref>\n'''Employment''':\n\"Teachers' Registration Council Registers 1914-1948\"<br/>\n[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Ivor\n|-\n| Last name || John\n|-\n| Sex || Male\n|-\n| Residence || Cardiff\n|-\n| First position year || 1899\n|-\n| Registration year || 1917\n|-\n| Entry type || 0\n|-\n| Place || Cardiff\n|-\n| County || Glamorganshire\n|-\n| Country || Wales\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Employment''': \"Teachers' Registration Council Registers 1914-1948\"<br/>[https://search.findmypast.co.uk/record?id=GBOR%2FTCHIX%2FJEG-JOHNSON%2F0412&parentid=GBOR%2FTCHIX%2F45336 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBOR%2FTCHIX%2F45336 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Ivor; Last name: John; Sex: Male; Residence: Cardiff; First position year: 1899; Registration year: 1917; Entry type: 0; Place: Cardiff; County: Glamorganshire; Country: Wales.",
+    "type": "source"
+  }
+}

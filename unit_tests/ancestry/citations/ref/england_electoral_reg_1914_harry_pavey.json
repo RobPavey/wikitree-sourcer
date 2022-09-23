@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Harry was registered to vote in 1914 at 110 Highgate hill, Islington North, Islington, England.<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1914 Electoral Register''': \"London, England, Electoral Registers, 1832-1965\"<br/>London Metropolitan Archives; London, England; Electoral Registers<br/>{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)<br/>\nName: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Harry was registered to vote in 1914 at 110 Highgate hill, Islington North, Islington, England.<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)<br/>\nName: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1914 Electoral Register''': \"London, England, Electoral Registers, 1832-1965\"<br/>London Metropolitan Archives; London, England; Electoral Registers<br/>{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)<br/>Name: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)<br/>\nName: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Harry was registered to vote in 1914 at 110 Highgate hill, Islington North, Islington, England.<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)<br/>\nName: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1914 Electoral Register''': \"London, England, Electoral Registers, 1832-1965\"<br/>London Metropolitan Archives; London, England; Electoral Registers<br/>{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)<br/>Name: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Harry Alfred Pavey\n|-\n| Electoral Date || 1914\n|-\n| Street Address || 110 Highgate hill\n|-\n| Ward or Division/Constituency || Islington North\n|-\n| County or Borough || Islington, England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Harry was registered to vote in 1914 at 110 Highgate hill, Islington North, Islington, England.<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Harry Alfred Pavey\n|-\n| Electoral Date || 1914\n|-\n| Street Address || 110 Highgate hill\n|-\n| Ward or Division/Constituency || Islington North\n|-\n| County or Borough || Islington, England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1914 Electoral Register''': \"London, England, Electoral Registers, 1832-1965\"<br/>London Metropolitan Archives; London, England; Electoral Registers<br/>{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)<br/>Name: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"London, England, Electoral Registers, 1832-1965,\" database, ({{Ancestry Record|1795|54921469}} : accessed 6 May 2021), Name Harry Alfred Pavey, Electoral Date 1914, Street Address 110 Highgate hill, Ward or Division/Constituency Islington North, County or Borough Islington, England; citing London Metropolitan Archives, London, England, Electoral Registers.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Harry was registered to vote in 1914 at 110 Highgate hill, Islington North, Islington, England.<ref>\"London, England, Electoral Registers, 1832-1965,\" database, ({{Ancestry Record|1795|54921469}} : accessed 6 May 2021), Name Harry Alfred Pavey, Electoral Date 1914, Street Address 110 Highgate hill, Ward or Division/Constituency Islington North, County or Borough Islington, England; citing London Metropolitan Archives, London, England, Electoral Registers.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"London, England, Electoral Registers, 1832-1965,\" database, ({{Ancestry Record|1795|54921469}} : accessed 6 May 2021), Name Harry Alfred Pavey, Electoral Date 1914, Street Address 110 Highgate hill, Ward or Division/Constituency Islington North, County or Borough Islington, England; citing London Metropolitan Archives, London, England, Electoral Registers.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1914 Electoral Register'':\n\"London, England, Electoral Registers, 1832-1965\", database, \nLondon Metropolitan Archives, London, England, Electoral Registers, \n({{Ancestry Record|1795|54921469}} : accessed 6 May 2021), \nName: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Harry was registered to vote in 1914 at 110 Highgate hill, Islington North, Islington, England.<ref>\n''1914 Electoral Register'':\n\"London, England, Electoral Registers, 1832-1965\", database, \nLondon Metropolitan Archives, London, England, Electoral Registers, \n({{Ancestry Record|1795|54921469}} : accessed 6 May 2021), \nName: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1914 Electoral Register'': \"London, England, Electoral Registers, 1832-1965\", database, London Metropolitan Archives, London, England, Electoral Registers, ({{Ancestry Record|1795|54921469}} : accessed 6 May 2021), Name: Harry Alfred Pavey; Electoral Date: 1914; Street Address: 110 Highgate hill; Ward or Division/Constituency: Islington North; County or Borough: Islington, England.",
+    "type": "source"
+  }
+}

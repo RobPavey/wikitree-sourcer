@@ -1,0 +1,30 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=poor-relief&dl_rec=poor-relief-hie&surname=Black&surname_so=exact&forename_so=starts&record_type=hie",
+  "success": true,
+  "numResultsOnPage": 3,
+  "recordData": {
+    "Surname": "BLACK",
+    "Forename": "WILLIAM",
+    "Shipname": "DERRY CASTLE",
+    "Departure Date": "01/10/1854",
+    "Departure Port": "LIVERPOOL",
+    "Arrival Port": "PORTLAND BAY",
+    "Residence": "LAW FORT WILLIAM",
+    "County": "INVERNESS"
+  },
+  "imageLink": "",
+  "pageHeader": "Poor relief and migration records - Highlands and Island Emigration",
+  "searchCriteria": {
+    "Surname": "Black",
+    "Surname Option": "Exact"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "poor-relief",
+    "dl_rec": "poor-relief-hie",
+    "surname": "Black",
+    "surname_so": "exact",
+    "forename_so": "starts",
+    "record_type": "hie"
+  }
+}

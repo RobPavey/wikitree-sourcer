@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Charles",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Kimberlin",
+  "currentLastName": "Kimberlin",
+  "mothersMaidenName": "Smith",
+  "birthDate": "15 Dec 1825",
+  "birthDateStatus": "none",
+  "deathDate": "18 Apr 1860",
+  "deathDateStatus": "none",
+  "birthLocation": "Atherstone, Warwickshire, England",
+  "deathLocation": "",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Mason-14228",
+      "name": "Emily (Mason) Black",
+      "marriageString": "26 Apr 1851 in Aston, Birmingham",
+      "marriageDate": "26 Apr 1851",
+      "marriagePlace": "Aston, Birmingham"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Kimberlin-117",
+  "currentTabText": "",
+  "pageType": "loggedOut",
+  "wikiId": "Kimberlin-117",
+  "name": "Charles Kimberlin",
+  "parents": {
+    "father": {
+      "wikiId": "Kimberlin-118",
+      "name": "John Kimberlin"
+    },
+    "mother": {
+      "wikiId": "Smith-179102",
+      "name": "Elizabeth (Smith) Kimberlin"
+    }
+  }
+}

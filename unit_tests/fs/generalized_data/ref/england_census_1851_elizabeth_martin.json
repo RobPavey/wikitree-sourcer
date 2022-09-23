@@ -1,0 +1,127 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Elizabeth Martin"
+  },
+  "birthDate": {
+    "dateString": "1813",
+    "yearString": "1813"
+  },
+  "birthPlace": {
+    "placeString": "Liverpool, Lancashire"
+  },
+  "eventDate": {
+    "dateString": "1851"
+  },
+  "eventPlace": {
+    "placeString": "Liverpool, Lancashire, England",
+    "streetAddress": "Chancer Street"
+  },
+  "registrationDistrict": "Liverpool",
+  "ageAtEvent": "38",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "John Martin",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "occupation": "Joiner",
+      "birthPlace": "Liverpool, Lancashire"
+    },
+    {
+      "name": "Elizabeth Martin",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "38",
+      "birthYear": "1813",
+      "birthPlace": "Liverpool, Lancashire",
+      "isSelected": true
+    },
+    {
+      "name": "Jos Martin",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "12",
+      "birthYear": "1839",
+      "birthPlace": "Bolton, Lancashire"
+    },
+    {
+      "name": "Matildia Martin",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "10",
+      "birthYear": "1841",
+      "birthPlace": "Liverpool, Lancashire"
+    },
+    {
+      "name": "Elizabeth Martin",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "8",
+      "birthYear": "1843",
+      "birthPlace": "Liverpool, Lancashire"
+    },
+    {
+      "name": "John Martin",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "6",
+      "birthYear": "1845",
+      "birthPlace": "Liverpool, Lancashire"
+    },
+    {
+      "name": "Mary Elen Newton",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "3",
+      "birthYear": "1848",
+      "birthPlace": "Liverpool, Lancashire"
+    },
+    {
+      "name": "Isaac Rinder Martin",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "1",
+      "birthYear": "1850",
+      "birthPlace": "Liverpool, Lancashire"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "spouses": [
+    {
+      "name": {
+        "name": "John Martin"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "2563939",
+    "page": "53",
+    "piece": "2176",
+    "folio": "122"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,22 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=1671&h=2089834&tid=&pid=&queryId=19e575cdf12c6f09b8b5bd713ca5e6d0&usePUB=true&_phsrc=XJK3973&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "1671",
+  "recordId": "2089834",
+  "ancestryTemplate": "{{Ancestry Record|1671|2089834}}",
+  "domain": "com",
+  "titleName": "David Witter",
+  "titleCollection": "Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016",
+  "recordData": {
+    "Name": "David Witter",
+    "Death Age": "71",
+    "Birth Date": "abt 1786",
+    "Death Date": "29 May 1857",
+    "Death Place": "Pike County, Illinois, USA",
+    "Newspaper Information": "Newspaper: Marysville Tribune, Newspaper Date: 15 Jul 1857, Newspaper Page: 2 Column: 5; Repository: Marysville Public Library; Years Available: 1853-1892"
+  },
+  "sourceCitation": "Rutherford B. Hayes Presidential Center; Spiegel Grove, Fremont, Ohio; Rutherford B. Hayes Presidential Center Ohio Obituary Index, 1830s to 2011",
+  "sourceInformation": "Ancestry.com. Ohio, U.S., Rutherford B. Hayes Presidential Center Obituary Index, 1810s-2016 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Hayes Presidential Center Obituary Indexers and Volunteers. “Ohio Obituary Index.” Database. Rutherford B. Hayes Presidential Center. http://index.rbhayes.org/hayes/index/ : 2009.",
+  "originalData": "Hayes Presidential Center Obituary Indexers and Volunteers. “Ohio Obituary Index.” Database. Rutherford B. Hayes Presidential Center. http://index.rbhayes.org/hayes/index/ : 2009.",
+  "sourceDescription": "This data collection is an index to over 2.85 million obituaries in Ohio newspapers from the 1810s to 2016. It has been compiled from various record sources such as newspapers, obituaries, and local government offices by Rutherford B. Hayes Presidential Center Library staff and volunteers. Information listed includes: name of deceased, age, death date and place, parents' names, spouse name, etc. Learn more..."
+}

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>\nState Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>\n{{Ancestry Record|1657|40472}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "James was in a criminal register in 1831.<ref>\n'''Criminal Register''':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>\nState Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>\n{{Ancestry Record|1657|40472}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Criminal Register''': \"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>State Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>{{Ancestry Record|1657|40472}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>\nState Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>\n{{Ancestry Record|1657|40472}} (accessed 6 May 2021)<br/>\nName: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "James was in a criminal register in 1831.<ref>\n'''Criminal Register''':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>\nState Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>\n{{Ancestry Record|1657|40472}} (accessed 6 May 2021)<br/>\nName: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Criminal Register''': \"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>State Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>{{Ancestry Record|1657|40472}} (accessed 6 May 2021)<br/>Name: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>\nState Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>\n{{Ancestry Record|1657|40472}} (accessed 6 May 2021)<br/>\nName: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "James was in a criminal register in 1831.<ref>\n'''Criminal Register''':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>\nState Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>\n{{Ancestry Record|1657|40472}} (accessed 6 May 2021)<br/>\nName: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Criminal Register''': \"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>State Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>{{Ancestry Record|1657|40472}} (accessed 6 May 2021)<br/>Name: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Criminal Register''':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>\nState Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>\n{{Ancestry Record|1657|40472}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Toomer\n|-\n| Birth Year || 1795\n|-\n| Origin Place || Wiltshire\n|-\n| Arrival Year || 1831\n|-\n| Vessel Name || Eleanor\n|-\n| Record Type || Conditional\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "James was in a criminal register in 1831.<ref>\n'''Criminal Register''':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>\nState Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>\n{{Ancestry Record|1657|40472}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Toomer\n|-\n| Birth Year || 1795\n|-\n| Origin Place || Wiltshire\n|-\n| Arrival Year || 1831\n|-\n| Vessel Name || Eleanor\n|-\n| Record Type || Conditional\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Criminal Register''': \"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\"<br/>State Records Authority of New South Wales; Kingswood, New South Wales, Australia; Card Index to Letters Received, Colonial Secretary; Reel Number: 772; Roll Number: 1250<br/>{{Ancestry Record|1657|40472}} (accessed 6 May 2021)<br/>Name: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870,\" database, ({{Ancestry Record|1657|40472}} : accessed 6 May 2021), Name James Toomer, Birth Year 1795, Origin Place Wiltshire, Arrival Year 1831, Vessel Name Eleanor, Record Type Conditional; citing State Records Authority of New South Wales, Kingswood, New South Wales, Australia, Card Index to Letters Received, Colonial Secretary, Reel Number 772, Roll Number 1250.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "James was in a criminal register in 1831.<ref>\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870,\" database, ({{Ancestry Record|1657|40472}} : accessed 6 May 2021), Name James Toomer, Birth Year 1795, Origin Place Wiltshire, Arrival Year 1831, Vessel Name Eleanor, Record Type Conditional; citing State Records Authority of New South Wales, Kingswood, New South Wales, Australia, Card Index to Letters Received, Colonial Secretary, Reel Number 772, Roll Number 1250.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870,\" database, ({{Ancestry Record|1657|40472}} : accessed 6 May 2021), Name James Toomer, Birth Year 1795, Origin Place Wiltshire, Arrival Year 1831, Vessel Name Eleanor, Record Type Conditional; citing State Records Authority of New South Wales, Kingswood, New South Wales, Australia, Card Index to Letters Received, Colonial Secretary, Reel Number 772, Roll Number 1250.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Criminal Register'':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\", database, \nState Records Authority of New South Wales, Kingswood, New South Wales, Australia, Card Index to Letters Received, Colonial Secretary, Reel Number 772, Roll Number 1250, \n({{Ancestry Record|1657|40472}} : accessed 6 May 2021), \nName: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "James was in a criminal register in 1831.<ref>\n''Criminal Register'':\n\"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\", database, \nState Records Authority of New South Wales, Kingswood, New South Wales, Australia, Card Index to Letters Received, Colonial Secretary, Reel Number 772, Roll Number 1250, \n({{Ancestry Record|1657|40472}} : accessed 6 May 2021), \nName: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Criminal Register'': \"New South Wales, Australia, Convict Registers of Conditional and Absolute Pardons, 1788-1870\", database, State Records Authority of New South Wales, Kingswood, New South Wales, Australia, Card Index to Letters Received, Colonial Secretary, Reel Number 772, Roll Number 1250, ({{Ancestry Record|1657|40472}} : accessed 6 May 2021), Name: James Toomer; Birth Year: 1795; Origin Place: Wiltshire; Arrival Year: 1831; Vessel Name: Eleanor; Record Type: Conditional.",
+    "type": "source"
+  }
+}

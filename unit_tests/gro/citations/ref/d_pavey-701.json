@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1995&range=0&surname=PAVEY&forename1=DEREK&gender=M&month=15&district=EASTBOURNE&reg=A63E GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nPavey, Derek (Year of birth: 1927).<br/>\n''GRO Reference:'' 1995 Jul-Aug-Sep in [https://www.ukbmd.org.uk/reg/districts/eastbourne.html Eastbourne] (4541A) Reg A63E Entry Number 122.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Derek's death (age 68) was registered in the Jul-Aug-Sep quarter of 1995 in the Eastbourne district.<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1995&range=0&surname=PAVEY&forename1=DEREK&gender=M&month=15&district=EASTBOURNE&reg=A63E GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nPavey, Derek (Year of birth: 1927).<br/>\n''GRO Reference:'' 1995 Jul-Aug-Sep in [https://www.ukbmd.org.uk/reg/districts/eastbourne.html Eastbourne] (4541A) Reg A63E Entry Number 122.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=1995&range=0&surname=PAVEY&forename1=DEREK&gender=M&month=15&district=EASTBOURNE&reg=A63E GRO Online Indexes - Death] (accessed 6 May 2021)<br/>Pavey, Derek (Year of birth: 1927).<br/>''GRO Reference:'' 1995 Jul-Aug-Sep in [https://www.ukbmd.org.uk/reg/districts/eastbourne.html Eastbourne] (4541A) Reg A63E Entry Number 122.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Collins",
+    "forenames": "Leslie Charles"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Suffolk, England"
+  },
+  "registrationDistrict": "Deben",
+  "eventDate": {
+    "dateString": "1997",
+    "quarter": "3"
+  },
+  "deathDate": {
+    "dateString": "1997"
+  },
+  "lastNameAtDeath": "Collins",
+  "birthDate": {
+    "dateString": "4 Jul 1924"
+  },
+  "collectionData": {
+    "id": "England & Wales Deaths 1837-2007"
+  },
+  "hasValidData": true
+}

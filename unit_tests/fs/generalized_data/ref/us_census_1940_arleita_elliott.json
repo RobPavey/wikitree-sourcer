@@ -1,0 +1,59 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Arleita M Elliott"
+  },
+  "birthDate": {
+    "dateString": "1912",
+    "yearString": "1912"
+  },
+  "birthPlace": {
+    "placeString": "New Hampshire"
+  },
+  "eventDate": {
+    "dateString": "1940"
+  },
+  "eventPlace": {
+    "placeString": "Whitefield, Coos, New Hampshire, United States"
+  },
+  "ageAtEvent": "28",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Arleita M Elliott",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "28",
+      "birthYear": "1912",
+      "birthPlace": "New Hampshire",
+      "isSelected": true
+    },
+    {
+      "name": "Charles W Elliott, Jr",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "27",
+      "birthYear": "1913",
+      "birthPlace": "New Hampshire"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "collectionData": {
+    "id": "2000219"
+  },
+  "hasValidData": true
+}

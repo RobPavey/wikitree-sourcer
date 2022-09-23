@@ -1,0 +1,26 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "first_name": "Harold Edington",
+      "last_name": "Dickens",
+      "search_query_fuzzy": true,
+      "start_year": 1890,
+      "end_year": 1896,
+      "search_query_sex": "M",
+      "search_query_birth_chapman_codes": "SOM"
+    }
+  },
+  "specified_collection": {
+    "fieldData": {
+      "utf8": true,
+      "first_name": "Harold Edington",
+      "last_name": "Dickens",
+      "search_query_fuzzy": true,
+      "start_year": 1890,
+      "end_year": 1896,
+      "search_query_sex": "M",
+      "search_query_birth_chapman_codes": "SOM"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "freereg",
+  "sourceType": "record",
+  "eventPlace": {
+    "placeString": "Warehorne, Kent, England"
+  },
+  "recordType": "Baptism",
+  "eventDate": {
+    "dateString": "13 Jun 1568"
+  },
+  "birthPlace": {
+    "placeString": "Warehorne, Kent, England"
+  },
+  "lastNameAtBirth": "Jones",
+  "name": {
+    "lastName": "Jones",
+    "forenames": "Robert"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Rychard Jones"
+      }
+    }
+  },
+  "personGender": "male",
+  "hasValidData": true
+}

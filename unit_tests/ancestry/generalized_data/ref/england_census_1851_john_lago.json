@@ -1,0 +1,68 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "John Lago"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Bromley St Leonard, Middlesex, England"
+  },
+  "registrationDistrict": "Poplar",
+  "birthDate": {
+    "yearString": "1858",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Bromley, Middlesex, England"
+  },
+  "eventDate": {
+    "yearString": "1861"
+  },
+  "ageAtEvent": "3",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Susanha Lago",
+      "age": "28",
+      "relationship": "wife",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8767&h=5941795&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Emma Lago",
+      "age": "5",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8767&h=5941796&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "John Lago",
+      "age": "3",
+      "relationship": "son",
+      "isSelected": true,
+      "gender": "male",
+      "birthPlace": "Bromley, Middlesex, England",
+      "birthYear": "1858"
+    },
+    {
+      "name": "Waller Lago",
+      "age": "3/12",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8767&h=5941798&indiv=try&viewrecord=1&r=an"
+    }
+  ],
+  "collectionData": {
+    "id": "8767",
+    "page": "37",
+    "folio": "96",
+    "piece": "300",
+    "county": "Middlesex"
+  },
+  "hasValidData": true
+}

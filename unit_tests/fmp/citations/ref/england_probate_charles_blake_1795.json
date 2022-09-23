@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Lancashire Wills & Probate 1457-1858\"<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Charles's estate passed probate in 1795. His last residence was Liverpool, Lancashire, England.<ref>\n'''Probate''':\n\"Lancashire Wills & Probate 1457-1858\"<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Probate''': \"Lancashire Wills & Probate 1457-1858\"<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Lancashire Wills & Probate 1457-1858\"<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nCharles Blake probate in 1795. Residence Liverpool, Lancashire, England. Occupation: Mariner.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Charles's estate passed probate in 1795. His last residence was Liverpool, Lancashire, England.<ref>\n'''Probate''':\n\"Lancashire Wills & Probate 1457-1858\"<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nCharles Blake probate in 1795. Residence Liverpool, Lancashire, England. Occupation: Mariner.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Probate''': \"Lancashire Wills & Probate 1457-1858\"<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)<br/>Charles Blake probate in 1795. Residence Liverpool, Lancashire, England. Occupation: Mariner.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Lancashire Wills & Probate 1457-1858\"<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Charles; Last name: Blake; Year: 1795; Date: 1795; Occupation: Mariner; Residence: Liverpool; County: Lancashire; Country: England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Charles's estate passed probate in 1795. His last residence was Liverpool, Lancashire, England.<ref>\n'''Probate''':\n\"Lancashire Wills & Probate 1457-1858\"<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Charles; Last name: Blake; Year: 1795; Date: 1795; Occupation: Mariner; Residence: Liverpool; County: Lancashire; Country: England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Probate''': \"Lancashire Wills & Probate 1457-1858\"<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Charles; Last name: Blake; Year: 1795; Date: 1795; Occupation: Mariner; Residence: Liverpool; County: Lancashire; Country: England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Lancashire Wills & Probate 1457-1858\"<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Charles\n|-\n| Last name || Blake\n|-\n| Year || 1795\n|-\n| Date || 1795\n|-\n| Occupation || Mariner\n|-\n| Residence || Liverpool\n|-\n| County || Lancashire\n|-\n| Country || England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Charles's estate passed probate in 1795. His last residence was Liverpool, Lancashire, England.<ref>\n'''Probate''':\n\"Lancashire Wills & Probate 1457-1858\"<br/>\n[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Charles\n|-\n| Last name || Blake\n|-\n| Year || 1795\n|-\n| Date || 1795\n|-\n| Occupation || Mariner\n|-\n| Residence || Liverpool\n|-\n| County || Lancashire\n|-\n| Country || England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Probate''': \"Lancashire Wills & Probate 1457-1858\"<br/>[https://search.findmypast.co.uk/record?id=GBPRS%2FCHS%2F4011967%2F00057&parentid=GBPRS%2FCHS%2F748133659 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FCHS%2F748133659 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Charles; Last name: Blake; Year: 1795; Date: 1795; Occupation: Mariner; Residence: Liverpool; County: Lancashire; Country: England.",
+    "type": "source"
+  }
+}

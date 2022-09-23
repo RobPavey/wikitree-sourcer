@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "DeathOrBurial",
+  "name": {
+    "lastName": "Bruce",
+    "forenames": "Margt"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "19 January 1846"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Fife",
+    "placeString": "Cupar, Fife, Scotland"
+  },
+  "ageAtDeath": "0",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Bruce"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Margaret Manson"
+      }
+    }
+  },
+  "hasValidData": true
+}

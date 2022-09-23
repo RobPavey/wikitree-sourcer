@@ -1,0 +1,57 @@
+{
+  "name": {
+    "lastName": "Kimberlin",
+    "forenames": "John"
+  },
+  "birthDate": {
+    "yearString": "1800",
+    "dateString": "22 Sep 1800"
+  },
+  "birthPlace": {
+    "placeString": "Atherstone, Warwickshire, England"
+  },
+  "deathDate": {
+    "yearString": "1871",
+    "dateString": "16 Jan 1871"
+  },
+  "deathPlace": {
+    "placeString": "Mancetter, Warwickshire, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Thomas Kimberlin"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Sarah Mousley"
+      }
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Elizabeth Smith"
+      },
+      "marriageDate": {
+        "dateString": "27 Aug 1822"
+      },
+      "marriagePlace": {
+        "placeString": "Coventry, St John the Baptist, Warwickshire, England"
+      }
+    },
+    {
+      "name": {
+        "name": "Ann Hubbard"
+      },
+      "marriageDate": {
+        "dateString": "6 Nov 1843"
+      },
+      "marriagePlace": {
+        "placeString": "Grendon, Warwickshire, England"
+      }
+    }
+  ],
+  "hasValidData": true
+}

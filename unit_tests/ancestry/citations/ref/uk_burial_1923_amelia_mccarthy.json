@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>\nDeceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>\n{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Amelia died in about 1923 and was buried on 30 October 1923 in Newham, London, England.<ref>\n'''Burial''':\n\"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>\nDeceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>\n{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Burial''': \"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>Deceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>\nDeceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>\n{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)<br/>\nAmelia Matilda McCarthy burial (died in about 1923) on 30 Oct 1923 in Newham, London, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Amelia died in about 1923 and was buried on 30 October 1923 in Newham, London, England.<ref>\n'''Burial''':\n\"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>\nDeceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>\n{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)<br/>\nAmelia Matilda McCarthy burial (died in about 1923) on 30 Oct 1923 in Newham, London, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Burial''': \"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>Deceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)<br/>Amelia Matilda McCarthy burial (died in about 1923) on 30 Oct 1923 in Newham, London, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>\nDeceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>\n{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)<br/>\nName: Amelia Matilda McCarthy; Death Date: abt 1923; Burial or Cremation Date: 30 Oct 1923; Burial or Cremation Place: Newham, London, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Amelia died in about 1923 and was buried on 30 October 1923 in Newham, London, England.<ref>\n'''Burial''':\n\"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>\nDeceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>\n{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)<br/>\nName: Amelia Matilda McCarthy; Death Date: abt 1923; Burial or Cremation Date: 30 Oct 1923; Burial or Cremation Place: Newham, London, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Burial''': \"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>Deceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)<br/>Name: Amelia Matilda McCarthy; Death Date: abt 1923; Burial or Cremation Date: 30 Oct 1923; Burial or Cremation Place: Newham, London, England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>\nDeceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>\n{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Amelia Matilda McCarthy\n|-\n| Death Date || abt 1923\n|-\n| Burial or Cremation Date || 30 Oct 1923\n|-\n| Burial or Cremation Place || Newham, London, England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Amelia died in about 1923 and was buried on 30 October 1923 in Newham, London, England.<ref>\n'''Burial''':\n\"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>\nDeceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>\n{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Amelia Matilda McCarthy\n|-\n| Death Date || abt 1923\n|-\n| Burial or Cremation Date || 30 Oct 1923\n|-\n| Burial or Cremation Place || Newham, London, England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Burial''': \"Web: UK, Burial and Cremation Index, 1576-2014\"<br/>Deceased Online; United Kingdom; Deceased Online Burial Indexes; URL: https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783<br/>{{Ancestry Record|70845|1712038|uk}} (accessed 6 May 2021)<br/>Name: Amelia Matilda McCarthy; Death Date: abt 1923; Burial or Cremation Date: 30 Oct 1923; Burial or Cremation Place: Newham, London, England.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Web: UK, Burial and Cremation Index, 1576-2014,\" database, ({{Ancestry Record|70845|1712038|uk}} : accessed 6 May 2021), Amelia Matilda McCarthy burial (died in about 1923) on 30 Oct 1923 in Newham, London, England; citing Deceased Online, United Kingdom, Deceased Online Burial Indexes, URL https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Amelia died in about 1923 and was buried on 30 October 1923 in Newham, London, England.<ref>\"Web: UK, Burial and Cremation Index, 1576-2014,\" database, ({{Ancestry Record|70845|1712038|uk}} : accessed 6 May 2021), Amelia Matilda McCarthy burial (died in about 1923) on 30 Oct 1923 in Newham, London, England; citing Deceased Online, United Kingdom, Deceased Online Burial Indexes, URL https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Web: UK, Burial and Cremation Index, 1576-2014,\" database, ({{Ancestry Record|70845|1712038|uk}} : accessed 6 May 2021), Amelia Matilda McCarthy burial (died in about 1923) on 30 Oct 1923 in Newham, London, England; citing Deceased Online, United Kingdom, Deceased Online Burial Indexes, URL https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Burial'':\n\"Web: UK, Burial and Cremation Index, 1576-2014\", database, \nDeceased Online, United Kingdom, Deceased Online Burial Indexes, URL https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783, \n({{Ancestry Record|70845|1712038|uk}} : accessed 6 May 2021), \nName: Amelia Matilda McCarthy; Death Date: abt 1923; Burial or Cremation Date: 30 Oct 1923; Burial or Cremation Place: Newham, London, England.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Amelia died in about 1923 and was buried on 30 October 1923 in Newham, London, England.<ref>\n''Burial'':\n\"Web: UK, Burial and Cremation Index, 1576-2014\", database, \nDeceased Online, United Kingdom, Deceased Online Burial Indexes, URL https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783, \n({{Ancestry Record|70845|1712038|uk}} : accessed 6 May 2021), \nName: Amelia Matilda McCarthy; Death Date: abt 1923; Burial or Cremation Date: 30 Oct 1923; Burial or Cremation Place: Newham, London, England.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Burial'': \"Web: UK, Burial and Cremation Index, 1576-2014\", database, Deceased Online, United Kingdom, Deceased Online Burial Indexes, URL https://www.deceasedonline.com/servlet/GSDOSearch?DetsView=Summary&src=ext&fileid=5031783, ({{Ancestry Record|70845|1712038|uk}} : accessed 6 May 2021), Name: Amelia Matilda McCarthy; Death Date: abt 1923; Burial or Cremation Date: 30 Oct 1923; Burial or Cremation Place: Newham, London, England.",
+    "type": "source"
+  }
+}

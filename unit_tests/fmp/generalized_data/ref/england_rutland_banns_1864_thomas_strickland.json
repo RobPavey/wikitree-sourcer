@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Ley",
+    "forenames": "Thomas Strickland"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Tinwell, Rutland, England"
+  },
+  "eventDate": {
+    "dateString": "20 Nov 1864",
+    "yearString": "1864"
+  },
+  "recordSubtype": "Banns",
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "Elenor",
+        "lastName": "Bailey"
+      },
+      "marriageDate": {
+        "dateString": "20 Nov 1864",
+        "yearString": "1864"
+      },
+      "marriagePlace": {
+        "country": "England",
+        "placeString": "Tinwell, Rutland, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "Rutland Banns"
+  },
+  "hasValidData": true
+}

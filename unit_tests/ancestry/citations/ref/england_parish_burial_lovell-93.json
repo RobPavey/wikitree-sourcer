@@ -1,0 +1,86 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Sarah (age 80) was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Burial''': \"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>Northamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>{{Ancestry Record|9201|797866}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)<br/>\nSarah Higham burial (died age 80) on 26 Feb 1825 in Whittlebury, Northamptonshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Sarah (age 80) was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)<br/>\nSarah Higham burial (died age 80) on 26 Feb 1825 in Whittlebury, Northamptonshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Burial''': \"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>Northamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>{{Ancestry Record|9201|797866}} (accessed 6 May 2021)<br/>Sarah Higham burial (died age 80) on 26 Feb 1825 in Whittlebury, Northamptonshire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)<br/>\nName: Sarah Higham; Age: 80; Birth Year: abt 1745; Burial Date: 26 Feb 1825; Burial Place: Whittlebury, Northamptonshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Sarah (age 80) was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)<br/>\nName: Sarah Higham; Age: 80; Birth Year: abt 1745; Burial Date: 26 Feb 1825; Burial Place: Whittlebury, Northamptonshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Burial''': \"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>Northamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>{{Ancestry Record|9201|797866}} (accessed 6 May 2021)<br/>Name: Sarah Higham; Age: 80; Birth Year: abt 1745; Burial Date: 26 Feb 1825; Burial Place: Whittlebury, Northamptonshire, England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Sarah Higham\n|-\n| Age || 80\n|-\n| Birth Year || abt 1745\n|-\n| Burial Date || 26 Feb 1825\n|-\n| Burial Place || Whittlebury, Northamptonshire, England\n|-\n| Parish as it Appears || Whittlebury and Silverstone\n|-\n| Register Type || Parish Registers\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Sarah (age 80) was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Sarah Higham\n|-\n| Age || 80\n|-\n| Birth Year || abt 1745\n|-\n| Burial Date || 26 Feb 1825\n|-\n| Burial Place || Whittlebury, Northamptonshire, England\n|-\n| Parish as it Appears || Whittlebury and Silverstone\n|-\n| Register Type || Parish Registers\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Burial''': \"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>Northamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>{{Ancestry Record|9201|797866}} (accessed 6 May 2021)<br/>Name: Sarah Higham; Age: 80; Birth Year: abt 1745; Burial Date: 26 Feb 1825; Burial Place: Whittlebury, Northamptonshire, England.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Northamptonshire, England, Church of England Burials, 1813-1912,\" database, ({{Ancestry Record|9201|797866}} : accessed 6 May 2021), Sarah Higham burial (died age 80) on 26 Feb 1825 in Whittlebury, Northamptonshire, England; citing Northamptonshire Record Office, Northampton, England, Register Type Parish Registers, Reference Numbers 363P/10.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Sarah (age 80) was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\"Northamptonshire, England, Church of England Burials, 1813-1912,\" database, ({{Ancestry Record|9201|797866}} : accessed 6 May 2021), Sarah Higham burial (died age 80) on 26 Feb 1825 in Whittlebury, Northamptonshire, England; citing Northamptonshire Record Office, Northampton, England, Register Type Parish Registers, Reference Numbers 363P/10.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Northamptonshire, England, Church of England Burials, 1813-1912,\" database, ({{Ancestry Record|9201|797866}} : accessed 6 May 2021), Sarah Higham burial (died age 80) on 26 Feb 1825 in Whittlebury, Northamptonshire, England; citing Northamptonshire Record Office, Northampton, England, Register Type Parish Registers, Reference Numbers 363P/10.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Burial'':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\", database, \nNorthamptonshire Record Office, Northampton, England, Register Type Parish Registers, Reference Numbers 363P/10, \n({{Ancestry Record|9201|797866}} : accessed 6 May 2021), \nName: Sarah Higham; Age: 80; Birth Year: abt 1745; Burial Date: 26 Feb 1825; Burial Place: Whittlebury, Northamptonshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Sarah (age 80) was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\n''Burial'':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\", database, \nNorthamptonshire Record Office, Northampton, England, Register Type Parish Registers, Reference Numbers 363P/10, \n({{Ancestry Record|9201|797866}} : accessed 6 May 2021), \nName: Sarah Higham; Age: 80; Birth Year: abt 1745; Burial Date: 26 Feb 1825; Burial Place: Whittlebury, Northamptonshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Burial'': \"Northamptonshire, England, Church of England Burials, 1813-1912\", database, Northamptonshire Record Office, Northampton, England, Register Type Parish Registers, Reference Numbers 363P/10, ({{Ancestry Record|9201|797866}} : accessed 6 May 2021), Name: Sarah Higham; Age: 80; Birth Year: abt 1745; Burial Date: 26 Feb 1825; Burial Place: Whittlebury, Northamptonshire, England.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "Sarah, aged 80, was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Sarah Higham\n|-\n| Age || 80\n|-\n| Birth Year || abt 1745\n|-\n| Burial Date || 26 Feb 1825\n|-\n| Burial Place || Whittlebury, Northamptonshire, England\n|-\n| Parish as it Appears || Whittlebury and Silverstone\n|-\n| Register Type || Parish Registers\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "Sarah Higham was buried on 26 February 1825 in Whittlebury, Northamptonshire, England. They were 80 years old.<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Sarah Higham\n|-\n| Age || 80\n|-\n| Birth Year || abt 1745\n|-\n| Burial Date || 26 Feb 1825\n|-\n| Burial Place || Whittlebury, Northamptonshire, England\n|-\n| Parish as it Appears || Whittlebury and Silverstone\n|-\n| Register Type || Parish Registers\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_3_narrative": {
+    "citation": "Sarah was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Sarah Higham\n|-\n| Age || 80\n|-\n| Birth Year || abt 1745\n|-\n| Burial Date || 26 Feb 1825\n|-\n| Burial Place || Whittlebury, Northamptonshire, England\n|-\n| Parish as it Appears || Whittlebury and Silverstone\n|-\n| Register Type || Parish Registers\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=9201&h=797866&tid=&pid=&queryId=9d2a963c864aa43d55b6d554fee39040&usePUB=true&_phsrc=ywU6427&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "9201",
+  "recordId": "797866",
+  "ancestryTemplate": "{{Ancestry Record|9201|797866}}",
+  "domain": "com",
+  "titleName": "Sarah Higham",
+  "titleCollection": "Northamptonshire, England, Church of England Burials, 1813-1912",
+  "recordData": {
+    "Name": "Sarah Higham",
+    "Age": "80",
+    "Birth Year": "abt 1745",
+    "Burial Date": "26 Feb 1825",
+    "Burial Place": "Whittlebury, Northamptonshire, England",
+    "Parish as it Appears": "Whittlebury and Silverstone",
+    "Register Type": "Parish Registers"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/9201/images/42672_340200__0001-00041?pid=797866&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D9201%26h%3D797866%26tid%3D%26pid%3D%26queryId%3D9d2a963c864aa43d55b6d554fee39040%26usePUB%3Dtrue%26_phsrc%3DywU6427%26_phstart%3DsuccessSource&treeid=&personid=&hintid=&queryId=9d2a963c864aa43d55b6d554fee39040&usePUB=true&_phsrc=ywU6427&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "9201",
+  "imageRecordId": "42672_340200__0001-00041",
+  "sourceCitation": "Northamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10",
+  "sourceInformation": "Ancestry.com. Northamptonshire, England, Church of England Burials, 1813-1912 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: Northamptonshire Anglican Parish Registers and Bishop’s Transcripts. Textual records. Northamptonshire Record Office, Northampton, England.",
+  "originalData": "Northamptonshire Anglican Parish Registers and Bishop’s Transcripts. Textual records. Northamptonshire Record Office, Northampton, England.",
+  "sourceDescription": "This collection contains images of Church of England burial records for the years 1813–1912 from various parishes in Northamptonshire, England. Learn more..."
+}

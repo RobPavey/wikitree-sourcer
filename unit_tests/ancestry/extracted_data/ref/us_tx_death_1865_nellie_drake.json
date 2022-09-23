@@ -1,0 +1,34 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/23886198:2272",
+  "pageType": "record",
+  "dbId": "2272",
+  "recordId": "23886198",
+  "ancestryTemplate": "{{Ancestry Record|2272|23886198}}",
+  "domain": "com",
+  "titleName": "Mrs Nellie E Drake",
+  "titleCollection": "Texas, U.S., Death Certificates, 1903-1982",
+  "recordData": {
+    "Name": "Mrs Nellie E Drake [Mrs Nellie E Putnam]",
+    "Gender": "Female",
+    "Race": "White",
+    "Age": "82",
+    "Birth Date": "1 Mar 1865",
+    "Birth Place": "Illinois",
+    "Residence": "Hamilton, Hamilton, Texas, USA",
+    "Death Date": "29 Apr 1947",
+    "Death Place": "Hamilton, Hamilton, Texas, USA",
+    "Father": "Carlas Putnam",
+    "Mother": "Lurna Pennie"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2272&h=83886198&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2272&h=773886198&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2272/images/40394_b062306-00163?pid=23886198&usePUB=true&usePUBJs=true",
+  "imageDbId": "2272",
+  "imageRecordId": "40394_b062306-00163",
+  "sourceCitation": "Texas Department of State Health Services; Austin Texas, USA",
+  "sourceInformation": "Ancestry.com. Texas, U.S., Death Certificates, 1903-1982 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2013. Original data: Texas Department of State Health Services. Texas Death Certificates, 1903–1982. Austin, Texas, USA.",
+  "originalData": "Texas Department of State Health Services. Texas Death Certificates, 1903–1982. Austin, Texas, USA.",
+  "sourceDescription": "This database contains death certificates from the Texas Department of State Health Services, for the years 1903–1982. Some related documents—such as reports of death, amendments to certificate of death, disinterment permits, and notices of removal—are included as well. Learn more..."
+}

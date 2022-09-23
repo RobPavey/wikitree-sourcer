@@ -1,0 +1,83 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Mary E Pavey"
+  },
+  "personGender": "female",
+  "registrationDistrict": "Pancras",
+  "birthDate": {
+    "yearString": "1873",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "St Pancras, London, England"
+  },
+  "eventDate": {
+    "yearString": "1891"
+  },
+  "eventPlace": {
+    "placeString": "Kentish Town, St Pancras, London, England"
+  },
+  "ageAtEvent": "18",
+  "relationshipToHead": "daughter",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Harry A Pavey",
+      "age": "38",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301717"
+    },
+    {
+      "name": "Amelia Pavey",
+      "age": "40",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301718"
+    },
+    {
+      "name": "Mary E Pavey",
+      "age": "18",
+      "isSelected": true,
+      "relationship": "daughter",
+      "gender": "female",
+      "birthPlace": "St Pancras, London, England",
+      "birthYear": "1873",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301719"
+    },
+    {
+      "name": "Harry A Pavey",
+      "age": "13",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301720"
+    },
+    {
+      "name": "Amelia A Pavey",
+      "age": "11",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301721"
+    },
+    {
+      "name": "Charles D Pavey",
+      "age": "7",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301722"
+    },
+    {
+      "name": "Arthur E Pavey",
+      "age": "6",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301723"
+    },
+    {
+      "name": "Harold G Pavey",
+      "age": "3",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301724"
+    }
+  ],
+  "collectionData": {
+    "id": "6598",
+    "folio": "192",
+    "piece": "137",
+    "parish": "St Pancras"
+  },
+  "hasValidData": true
+}

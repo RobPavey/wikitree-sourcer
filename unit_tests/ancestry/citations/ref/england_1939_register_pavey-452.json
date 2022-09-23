@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>\n{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1939 register Mary (age 67), Unpaid Domestic Duties, was the widowed head of household at 54 Hilldrop Cresent, Islington, London, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>\n{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>\n{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)<br/>\nMary E More (born 1 Nov 1871), widowed, Unpaid Domestic Duties, at 54 Hilldrop Cresent, Islington, London, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1939 register Mary (age 67), Unpaid Domestic Duties, was the widowed head of household at 54 Hilldrop Cresent, Islington, London, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>\n{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)<br/>\nMary E More (born 1 Nov 1871), widowed, Unpaid Domestic Duties, at 54 Hilldrop Cresent, Islington, London, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)<br/>Mary E More (born 1 Nov 1871), widowed, Unpaid Domestic Duties, at 54 Hilldrop Cresent, Islington, London, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>\n{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)<br/>\nName: Mary E More; Gender: Female; Marital Status: Widowed; Birth Date: 1 Nov 1871; Residence Date: 1939; Address: 54 Hilldrop Cresent; Residence Place: Islington, London, England; Occupation: Unpaid Domestic Duties; Enumeration District: ALBP; Borough: Islington; <br/>Household Members Age:<br/>Mary E More 68<br/>Maisie C More 39.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1939 register Mary (age 67), Unpaid Domestic Duties, was the widowed head of household at 54 Hilldrop Cresent, Islington, London, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>\n{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)<br/>\nName: Mary E More; Gender: Female; Marital Status: Widowed; Birth Date: 1 Nov 1871; Residence Date: 1939; Address: 54 Hilldrop Cresent; Residence Place: Islington, London, England; Occupation: Unpaid Domestic Duties; Enumeration District: ALBP; Borough: Islington; <br/>Household Members Age:<br/>Mary E More 68<br/>Maisie C More 39.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)<br/>Name: Mary E More; Gender: Female; Marital Status: Widowed; Birth Date: 1 Nov 1871; Residence Date: 1939; Address: 54 Hilldrop Cresent; Residence Place: Islington, London, England; Occupation: Unpaid Domestic Duties; Enumeration District: ALBP; Borough: Islington; <br/>Household Members Age:<br/>Mary E More 68<br/>Maisie C More 39.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>\n{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E More\n|-\n| Gender || Female\n|-\n| Marital Status || Widowed\n|-\n| Birth Date || 1 Nov 1871\n|-\n| Residence Date || 1939\n|-\n| Address || 54 Hilldrop Cresent\n|-\n| Residence Place || Islington, London, England\n|-\n| Occupation || Unpaid Domestic Duties\n|-\n| Enumeration District || ALBP\n|-\n| Borough || Islington\n|-\n| Household Members<br/>Age || Mary E More 68<br/>Maisie C More 39\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1939 register Mary (age 67), Unpaid Domestic Duties, was the widowed head of household at 54 Hilldrop Cresent, Islington, London, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>\n{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E More\n|-\n| Gender || Female\n|-\n| Marital Status || Widowed\n|-\n| Birth Date || 1 Nov 1871\n|-\n| Residence Date || 1939\n|-\n| Address || 54 Hilldrop Cresent\n|-\n| Residence Place || Islington, London, England\n|-\n| Occupation || Unpaid Domestic Duties\n|-\n| Enumeration District || ALBP\n|-\n| Borough || Islington\n|-\n| Household Members<br/>Age || Mary E More 68<br/>Maisie C More 39\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: RG 101/261B; Line Number: 18; Schedule Number: 176; Sub Schedule Number: 1<br/>{{Ancestry Record|61596|7205480}} (accessed 6 May 2021)<br/>Name: Mary E More; Gender: Female; Marital Status: Widowed; Birth Date: 1 Nov 1871; Residence Date: 1939; Address: 54 Hilldrop Cresent; Residence Place: Islington, London, England; Occupation: Unpaid Domestic Duties; Enumeration District: ALBP; Borough: Islington; <br/>Household Members Age:<br/>Mary E More 68<br/>Maisie C More 39.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1939 England and Wales Register,\" database, ({{Ancestry Record|61596|7205480}} : accessed 6 May 2021), Mary E More (born 1 Nov 1871), widowed, Unpaid Domestic Duties, at 54 Hilldrop Cresent, Islington, London, England; citing The National Archives, Kew, London, England, 1939 Register, Reference RG 101/261B, Line Number 18, Schedule Number 176, Sub Schedule Number 1.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1939 register Mary (age 67), Unpaid Domestic Duties, was the widowed head of household at 54 Hilldrop Cresent, Islington, London, England.<ref>\"1939 England and Wales Register,\" database, ({{Ancestry Record|61596|7205480}} : accessed 6 May 2021), Mary E More (born 1 Nov 1871), widowed, Unpaid Domestic Duties, at 54 Hilldrop Cresent, Islington, London, England; citing The National Archives, Kew, London, England, 1939 Register, Reference RG 101/261B, Line Number 18, Schedule Number 176, Sub Schedule Number 1.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1939 England and Wales Register,\" database, ({{Ancestry Record|61596|7205480}} : accessed 6 May 2021), Mary E More (born 1 Nov 1871), widowed, Unpaid Domestic Duties, at 54 Hilldrop Cresent, Islington, London, England; citing The National Archives, Kew, London, England, 1939 Register, Reference RG 101/261B, Line Number 18, Schedule Number 176, Sub Schedule Number 1.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1939 Register'':\n\"1939 England and Wales Register\", database, \nThe National Archives, Kew, London, England, 1939 Register, Reference RG 101/261B, Line Number 18, Schedule Number 176, Sub Schedule Number 1, \n({{Ancestry Record|61596|7205480}} : accessed 6 May 2021), \nName: Mary E More; Gender: Female; Marital Status: Widowed; Birth Date: 1 Nov 1871; Residence Date: 1939; Address: 54 Hilldrop Cresent; Residence Place: Islington, London, England; Occupation: Unpaid Domestic Duties; Enumeration District: ALBP; Borough: Islington; Household Members Age: Mary E More 68, Maisie C More 39.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1939 register Mary (age 67), Unpaid Domestic Duties, was the widowed head of household at 54 Hilldrop Cresent, Islington, London, England.<ref>\n''1939 Register'':\n\"1939 England and Wales Register\", database, \nThe National Archives, Kew, London, England, 1939 Register, Reference RG 101/261B, Line Number 18, Schedule Number 176, Sub Schedule Number 1, \n({{Ancestry Record|61596|7205480}} : accessed 6 May 2021), \nName: Mary E More; Gender: Female; Marital Status: Widowed; Birth Date: 1 Nov 1871; Residence Date: 1939; Address: 54 Hilldrop Cresent; Residence Place: Islington, London, England; Occupation: Unpaid Domestic Duties; Enumeration District: ALBP; Borough: Islington; Household Members Age: Mary E More 68, Maisie C More 39.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1939 Register'': \"1939 England and Wales Register\", database, The National Archives, Kew, London, England, 1939 Register, Reference RG 101/261B, Line Number 18, Schedule Number 176, Sub Schedule Number 1, ({{Ancestry Record|61596|7205480}} : accessed 6 May 2021), Name: Mary E More; Gender: Female; Marital Status: Widowed; Birth Date: 1 Nov 1871; Residence Date: 1939; Address: 54 Hilldrop Cresent; Residence Place: Islington, London, England; Occupation: Unpaid Domestic Duties; Enumeration District: ALBP; Borough: Islington; Household Members Age: Mary E More 68, Maisie C More 39.",
+    "type": "source"
+  }
+}

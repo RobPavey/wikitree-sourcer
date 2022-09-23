@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Alexander",
+    "forenames": "Bessie"
+  },
+  "eventDate": {
+    "dateString": "27 May 1584"
+  },
+  "courtName": "Edinburgh Commissary Court",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Edinburgh",
+    "placeString": "Edinburgh, Scotland"
+  },
+  "testateOrIntestate": "",
+  "recordSubtype": "Testament",
+  "hasValidData": true
+}

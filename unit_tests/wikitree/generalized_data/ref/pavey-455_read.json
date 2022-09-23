@@ -1,0 +1,65 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Amelia",
+    "middleNames": "Annie",
+    "lastName": "Pavey"
+  },
+  "lastNameAtBirth": "Pavey",
+  "lastNameAtDeath": "Pavey",
+  "mothersMaidenName": "Littlemore",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "4 Jun 1879",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "10 Aug 1958",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Kentish Town, London, England"
+  },
+  "deathPlace": {
+    "placeString": "Edmonton, Middlesex, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Harry Alfred Pavey",
+        "lastName": "Pavey",
+        "forenames": "Harry Alfred"
+      },
+      "lastNameAtBirth": "Pavey",
+      "lastNameAtDeath": "Pavey"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Amelia Elizabeth",
+        "lastName": "Littlemore",
+        "name": "Amelia Elizabeth Littlemore"
+      },
+      "lastNameAtBirth": "Littlemore",
+      "lastNameAtDeath": "Pavey"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Arthur Wilson",
+        "lastName": "Wilson",
+        "forenames": "Arthur"
+      },
+      "lastNameAtBirth": "Wilson",
+      "lastNameAtDeath": "Wilson",
+      "marriageDate": {
+        "dateString": "1900"
+      },
+      "marriagePlace": {
+        "placeString": "Pancras, Middlesex, England, United Kingdom"
+      }
+    }
+  ],
+  "hasValidData": true
+}

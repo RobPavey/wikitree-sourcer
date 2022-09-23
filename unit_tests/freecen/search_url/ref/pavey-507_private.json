@@ -1,0 +1,27 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "first_name": "Betsy Ann",
+      "last_name": "Pavey",
+      "search_query_fuzzy": true,
+      "start_year": 1827,
+      "end_year": 1833,
+      "search_query_sex": "F",
+      "search_query_birth_chapman_codes": "SOM"
+    }
+  },
+  "specified_collection": {
+    "fieldData": {
+      "utf8": true,
+      "search_query_record_type": "1851",
+      "first_name": "Betsy Ann",
+      "last_name": "Gardiner",
+      "search_query_fuzzy": true,
+      "start_year": 1827,
+      "end_year": 1833,
+      "search_query_sex": "F",
+      "search_query_birth_chapman_codes": "SOM"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Philip, child of Robert Edward Jordan & Mary Ann Marrett, was born on 25 February 1674 and baptised on 14 June 1874 in St Helier, Jersey.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Jersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)<br/>\nPhilip John Marett Jordan baptism on 14 Jun 1874 (born 25 Feb 1674), child of Robert Edward Jordan & Mary Ann Marrett, in St Helier, Jersey.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Philip, child of Robert Edward Jordan & Mary Ann Marrett, was born on 25 February 1674 and baptised on 14 June 1874 in St Helier, Jersey.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)<br/>\nPhilip John Marett Jordan baptism on 14 Jun 1874 (born 25 Feb 1674), child of Robert Edward Jordan & Mary Ann Marrett, in St Helier, Jersey.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Jersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)<br/>Philip John Marett Jordan baptism on 14 Jun 1874 (born 25 Feb 1674), child of Robert Edward Jordan & Mary Ann Marrett, in St Helier, Jersey.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Jersey; Place: St Helier; Church name: Blank; Register type: Unspecified; Birth date: 25 Feb 1674; Baptism date: 14 Jun 1874; Person forename: Philip John Marett; Father forename: Robert Edward; Mother forename: Mary Ann; Father surname: JORDAN; Mother surname: MARRETT; Father occupation: Coachman; Notes: Godp: John Anley; Elizabeth Esther Selous; Transcribed by: Bob Wilkins.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Philip, child of Robert Edward Jordan & Mary Ann Marrett, was born on 25 February 1674 and baptised on 14 June 1874 in St Helier, Jersey.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)<br/>\nCounty: Jersey; Place: St Helier; Church name: Blank; Register type: Unspecified; Birth date: 25 Feb 1674; Baptism date: 14 Jun 1874; Person forename: Philip John Marett; Father forename: Robert Edward; Mother forename: Mary Ann; Father surname: JORDAN; Mother surname: MARRETT; Father occupation: Coachman; Notes: Godp: John Anley; Elizabeth Esther Selous; Transcribed by: Bob Wilkins.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Jersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)<br/>County: Jersey; Place: St Helier; Church name: Blank; Register type: Unspecified; Birth date: 25 Feb 1674; Baptism date: 14 Jun 1874; Person forename: Philip John Marett; Father forename: Robert Edward; Mother forename: Mary Ann; Father surname: JORDAN; Mother surname: MARRETT; Father occupation: Coachman; Notes: Godp: John Anley; Elizabeth Esther Selous; Transcribed by: Bob Wilkins.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Jersey\n|-\n| Place || St Helier\n|-\n| Church name || Blank\n|-\n| Register type || Unspecified\n|-\n| Birth date || 25 Feb 1674\n|-\n| Baptism date || 14 Jun 1874\n|-\n| Person forename || Philip John Marett\n|-\n| Father forename || Robert Edward\n|-\n| Mother forename || Mary Ann\n|-\n| Father surname || JORDAN\n|-\n| Mother surname || MARRETT\n|-\n| Father occupation || Coachman\n|-\n| Notes || Godp: John Anley; Elizabeth Esther Selous\n|-\n| Transcribed by || Bob Wilkins\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Philip, child of Robert Edward Jordan & Mary Ann Marrett, was born on 25 February 1674 and baptised on 14 June 1874 in St Helier, Jersey.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| County || Jersey\n|-\n| Place || St Helier\n|-\n| Church name || Blank\n|-\n| Register type || Unspecified\n|-\n| Birth date || 25 Feb 1674\n|-\n| Baptism date || 14 Jun 1874\n|-\n| Person forename || Philip John Marett\n|-\n| Father forename || Robert Edward\n|-\n| Mother forename || Mary Ann\n|-\n| Father surname || JORDAN\n|-\n| Mother surname || MARRETT\n|-\n| Father occupation || Coachman\n|-\n| Notes || Godp: John Anley; Elizabeth Esther Selous\n|-\n| Transcribed by || Bob Wilkins\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Jersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)<br/>County: Jersey; Place: St Helier; Church name: Blank; Register type: Unspecified; Birth date: 25 Feb 1674; Baptism date: 14 Jun 1874; Person forename: Philip John Marett; Father forename: Robert Edward; Mother forename: Mary Ann; Father surname: JORDAN; Mother surname: MARRETT; Father occupation: Coachman; Notes: Godp: John Anley; Elizabeth Esther Selous; Transcribed by: Bob Wilkins.",
+    "type": "source"
+  }
+}

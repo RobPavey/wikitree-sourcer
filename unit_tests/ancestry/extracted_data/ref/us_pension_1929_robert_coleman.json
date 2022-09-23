@@ -1,0 +1,29 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1382783:1677",
+  "pageType": "record",
+  "dbId": "1677",
+  "recordId": "1382783",
+  "ancestryTemplate": "{{Ancestry Record|1677|1382783}}",
+  "domain": "com",
+  "titleName": "Robert William Coleman",
+  "titleCollection": "Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958",
+  "recordData": {
+    "Name": "Robert William Coleman",
+    "Application Date": "14 May 1929",
+    "Application Place": "Burleson",
+    "Spouse": "Mrs N E Coleman",
+    "Marriage Date": "10 Jun 1866",
+    "Marriage Place": "Monroe, Mississippi",
+    "Death Date": "12 Jul 1915",
+    "Death Place": "Burleson, Texas",
+    "Pension File Number": "45642",
+    "Application Type": "Widow"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1677/images/32241_1220701439_1914-00212?pid=1382783&usePUB=true&usePUBJs=true",
+  "imageDbId": "1677",
+  "imageRecordId": "32241_1220701439_1914-00212",
+  "sourceCitation": "Texas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929",
+  "sourceInformation": "Ancestry.com. Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Texas, Confederate Pension Applications, 1899-1975. Vol. 1–646 & 1–283. Austin, Texas: Texas State Library and Archives Commission. Confederate Pension Rolls, Veterans and Widows. Richmond, Virginia: Library of VirginiaConfederate Pension Applications, 1880-1940. Montgomery, Alabama: Alabama Department of Archives and History.",
+  "originalData": "Texas, Confederate Pension Applications, 1899-1975. Vol. 1–646 & 1–283. Austin, Texas: Texas State Library and Archives Commission.",
+  "sourceDescription": "Pension records for the soldiers or their widows who served in the Confederate Army during the Civil War are contained in this index. Information that may be found includes names, counties of residence, approved pension numbers, rejected pension numbers, etc. Learn more..."
+}

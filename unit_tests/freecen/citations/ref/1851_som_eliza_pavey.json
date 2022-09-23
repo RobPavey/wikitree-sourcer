@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>\n[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1851 census Eliza (age 38) was the wife of John Pavey on Kent Street, Cheddar, Axbridge, Somerset, England.<ref>\n'''1851 Census''':\n\"1851 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>\n[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1851 Census''': \"1851 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>\n[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)<br/>\nEliza Pavey (38), wife, in household of John Pavey (39) on Kent Street, Cheddar in Axbridge registration district in Somerset, England. Born in Yatton, Somerset, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1851 census Eliza (age 38) was the wife of John Pavey on Kent Street, Cheddar, Axbridge, Somerset, England.<ref>\n'''1851 Census''':\n\"1851 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>\n[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)<br/>\nEliza Pavey (38), wife, in household of John Pavey (39) on Kent Street, Cheddar in Axbridge registration district in Somerset, England. Born in Yatton, Somerset, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1851 Census''': \"1851 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)<br/>Eliza Pavey (38), wife, in household of John Pavey (39) on Kent Street, Cheddar in Axbridge registration district in Somerset, England. Born in Yatton, Somerset, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>\n[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1851; County: Somerset (SOM); District: Axbridge; Civil Parish: Cheddar; Ecclesiastical Parish: -; Piece: 1937; Enumeration District: 8a; Folio: 166; Page: 3; Schedule: 12; House or Street Name: Kent Street.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1851 census Eliza (age 38) was the wife of John Pavey on Kent Street, Cheddar, Axbridge, Somerset, England.<ref>\n'''1851 Census''':\n\"1851 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>\n[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1851; County: Somerset (SOM); District: Axbridge; Civil Parish: Cheddar; Ecclesiastical Parish: -; Piece: 1937; Enumeration District: 8a; Folio: 166; Page: 3; Schedule: 12; House or Street Name: Kent Street.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1851 Census''': \"1851 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1851; County: Somerset (SOM); District: Axbridge; Civil Parish: Cheddar; Ecclesiastical Parish: -; Piece: 1937; Enumeration District: 8a; Folio: 166; Page: 3; Schedule: 12; House or Street Name: Kent Street.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>\n[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1851\n|-\n| County || Somerset (SOM)\n|-\n| District || Axbridge\n|-\n| Civil Parish || Cheddar\n|-\n| Ecclesiastical Parish || -\n|-\n| Piece || 1937\n|-\n| Enumeration District || 8a\n|-\n| Folio || 166\n|-\n| Page || 3\n|-\n| Schedule || 12\n|-\n| House Number || \n|-\n| House or Street Name || Kent Street\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1851 census Eliza (age 38) was the wife of John Pavey on Kent Street, Cheddar, Axbridge, Somerset, England.<ref>\n'''1851 Census''':\n\"1851 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>\n[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1851\n|-\n| County || Somerset (SOM)\n|-\n| District || Axbridge\n|-\n| Civil Parish || Cheddar\n|-\n| Ecclesiastical Parish || -\n|-\n| Piece || 1937\n|-\n| Enumeration District || 8a\n|-\n| Folio || 166\n|-\n| Page || 3\n|-\n| Schedule || 12\n|-\n| House Number || \n|-\n| House or Street Name || Kent Street\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1851 Census''': \"1851 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 1937; Folio: 166; Page: 3; Schedule: 12<br/>[https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1 FreeCen Transcription] (accessed 6 May 2021)<br/>Census: 1851; County: Somerset (SOM); District: Axbridge; Civil Parish: Cheddar; Ecclesiastical Parish: -; Piece: 1937; Enumeration District: 8a; Folio: 166; Page: 3; Schedule: 12; House or Street Name: Kent Street.",
+    "type": "source"
+  }
+}

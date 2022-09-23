@@ -1,0 +1,43 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Martha",
+    "lastName": "Winbush"
+  },
+  "lastNameAtBirth": "Winbush",
+  "lastNameAtDeath": "Winbush",
+  "mothersMaidenName": "",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "1770",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "1849",
+    "qualifier": 0
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Mullins",
+        "lastName": "Mullins",
+        "forenames": "William"
+      },
+      "lastNameAtBirth": "Mullins",
+      "lastNameAtDeath": "Mullins"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Jesse Powell",
+        "lastName": "Powell",
+        "forenames": "Jesse"
+      },
+      "lastNameAtBirth": "Powell",
+      "lastNameAtDeath": "Powell"
+    }
+  ],
+  "hasValidData": true
+}

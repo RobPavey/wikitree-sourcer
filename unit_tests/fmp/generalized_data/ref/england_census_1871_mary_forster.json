@@ -1,0 +1,95 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Forster",
+    "forenames": "Mary Ann"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Toll Bar New Street, Haydock, Warrington, Lancashire, England"
+  },
+  "registrationDistrict": "Warrington",
+  "birthDate": {
+    "yearString": "1837",
+    "qualifier": 2
+  },
+  "ageAtEvent": "34",
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "relationshipToHead": "wife",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "John Forster",
+      "relationship": "head",
+      "gender": "male",
+      "age": "23",
+      "birthYear": "1848",
+      "birthPlace": "Lancashire, England"
+    },
+    {
+      "isSelected": true,
+      "name": "Mary Ann Forster",
+      "relationship": "wife",
+      "gender": "female",
+      "age": "34",
+      "birthYear": "1837",
+      "birthPlace": "Lancashire, England"
+    },
+    {
+      "name": "Jonathan Lester",
+      "relationship": "son",
+      "gender": "male",
+      "age": "8",
+      "birthYear": "1863",
+      "birthPlace": "Lancashire, England"
+    },
+    {
+      "name": "Ellen Forster",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "4",
+      "birthYear": "1867",
+      "birthPlace": "Lancashire, England"
+    },
+    {
+      "name": "James Forster",
+      "relationship": "son",
+      "gender": "male",
+      "age": "3",
+      "birthYear": "1868",
+      "birthPlace": "Lancashire, England"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "John Forster"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1871 England, Wales & Scotland Census",
+    "page": "16",
+    "piece": "3900",
+    "folio": "109",
+    "schedule": "70"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,33 @@
+{
+  "recordData": {
+    "Birth Date": "2 Oct 1768",
+    "Birth Place": "Simsbury, Hartford, Connecticut Colony, British Colonial America"
+  },
+  "factType": "Birth",
+  "eventDateOriginal": "2 Oct 1768",
+  "eventDate": "2 Oct 1768",
+  "eventYear": "1768",
+  "eventPlaceOriginal": "Simsbury, Hartford, Connecticut Colony, British Colonial America",
+  "eventPlace": "Simsbury, Hartford, Connecticut Colony, British Colonial America",
+  "birthDateOriginal": "2 Oct 1768",
+  "birthDate": "2 Oct 1768",
+  "birthYear": "1768",
+  "father": {
+    "fullName": "Joel Cornish",
+    "givenName": "Joel",
+    "surname": "Cornish"
+  },
+  "fsCollectionId": "2843390",
+  "referenceData": {
+    "digitalFilmNumber": "008272228",
+    "recordNumber": "0"
+  },
+  "fsImageNumber": "04969",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-CS56-6WL1-6",
+  "collectionTitle": "Connecticut, Vital Records, Prior to 1850",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR",
+  "citation": "\"Connecticut, Vital Records, Prior to 1850,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP : 15 April 2022), MM9.1.1/QP7Z-TGYP:, 2 Oct 1768; citing Birth, Simsbury, Hartford, Connecticut Colony, British Colonial America, Compiled by Lucius A. and Lucius B. Barbour, housed at State Library, Hartford, Connecticut; FHL microfilm 008272228.",
+  "sourceTitleForPerson": "<Unknown>, \"Connecticut, Vital Records, Prior to 1850\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP",
+  "pageType": "record"
+}

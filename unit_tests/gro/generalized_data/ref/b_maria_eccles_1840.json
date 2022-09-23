@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1840",
+    "quarter": 1
+  },
+  "name": {
+    "lastName": "Eccles",
+    "forenames": "Maria"
+  },
+  "lastNameAtBirth": "Eccles",
+  "birthDate": {
+    "yearString": "1840",
+    "quarter": 1
+  },
+  "mothersMaidenName": "Rhodehouse",
+  "personGender": "female",
+  "registrationDistrict": "York in the City and County of York",
+  "collectionData": {
+    "id": "births",
+    "volume": "23",
+    "page": "663"
+  },
+  "hasValidData": true
+}

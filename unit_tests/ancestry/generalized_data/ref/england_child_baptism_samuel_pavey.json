@@ -1,0 +1,16 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthOrBaptism",
+  "role": "Parent",
+  "primaryPerson": "Leonard Pavey",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Samuel Pavey"
+  },
+  "personGender": "male",
+  "lastNameAtBirth": "Pavey",
+  "collectionData": {
+    "id": "9841"
+  },
+  "hasValidData": true
+}

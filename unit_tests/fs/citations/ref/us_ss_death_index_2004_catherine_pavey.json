@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey, 01 Sep 2004.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey, 01 Sep 2004.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>Catherine V Pavey, 01 Sep 2004.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey death 1 Sep 2004 (born 08 Nov 1921) residing in Columbus, Bartholomew, Indiana.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey death 1 Sep 2004 (born 08 Nov 1921) residing in Columbus, Bartholomew, Indiana.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>Catherine V Pavey death 1 Sep 2004 (born 08 Nov 1921) residing in Columbus, Bartholomew, Indiana.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nName: Catherine V Pavey; Death Date: 01 Sep 2004; Last Residence: Columbus, Bartholomew, Indiana; Birth Date: 08 Nov 1921; Age: 83; Zip Code Of Last Residence: 47201; Death Date Verification: 01 Sep 2004 verified by family; Place Of Issuance: Indiana.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nName: Catherine V Pavey; Death Date: 01 Sep 2004; Last Residence: Columbus, Bartholomew, Indiana; Birth Date: 08 Nov 1921; Age: 83; Zip Code Of Last Residence: 47201; Death Date Verification: 01 Sep 2004 verified by family; Place Of Issuance: Indiana.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>Name: Catherine V Pavey; Death Date: 01 Sep 2004; Last Residence: Columbus, Bartholomew, Indiana; Birth Date: 08 Nov 1921; Age: 83; Zip Code Of Last Residence: 47201; Death Date Verification: 01 Sep 2004 verified by family; Place Of Issuance: Indiana.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Catherine V Pavey\n|-\n| Death Date || 01 Sep 2004\n|-\n| Last Residence || Columbus, Bartholomew, Indiana\n|-\n| Birth Date || 08 Nov 1921\n|-\n| Age || 83\n|-\n| Zip Code Of Last Residence || 47201\n|-\n| Death Date Verification || 01 Sep 2004 verified by family\n|-\n| Place Of Issuance || Indiana\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Catherine V Pavey\n|-\n| Death Date || 01 Sep 2004\n|-\n| Last Residence || Columbus, Bartholomew, Indiana\n|-\n| Birth Date || 08 Nov 1921\n|-\n| Age || 83\n|-\n| Zip Code Of Last Residence || 47201\n|-\n| Death Date Verification || 01 Sep 2004 verified by family\n|-\n| Place Of Issuance || Indiana\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>Name: Catherine V Pavey; Death Date: 01 Sep 2004; Last Residence: Columbus, Bartholomew, Indiana; Birth Date: 08 Nov 1921; Age: 83; Zip Code Of Last Residence: 47201; Death Date Verification: 01 Sep 2004 verified by family; Place Of Issuance: Indiana.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey, 01 Sep 2004.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey, 01 Sep 2004.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>Catherine V Pavey, 01 Sep 2004.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey death 1 Sep 2004 (born 08 Nov 1921) residing in Columbus, Bartholomew, Indiana.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey death 1 Sep 2004 (born 08 Nov 1921) residing in Columbus, Bartholomew, Indiana.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>Catherine V Pavey death 1 Sep 2004 (born 08 Nov 1921) residing in Columbus, Bartholomew, Indiana.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey, 01 Sep 2004.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\nciting U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>\nCatherine V Pavey, 01 Sep 2004.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing).<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)<br/>Catherine V Pavey, 01 Sep 2004.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "sourceType": "record",
+  "recordType": "Naturalization",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Abraham Smith"
+  },
+  "eventDate": {
+    "dateString": "2 Mar 1886"
+  },
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "ageAtEvent": "50",
+  "nativePlace": "Poland",
+  "collectionData": {
+    "id": "60711"
+  },
+  "hasValidData": true
+}

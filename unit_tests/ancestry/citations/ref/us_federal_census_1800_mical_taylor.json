@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1800 census Mical was in Cambridge, Middlesex, Massachusetts.<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1800 Census''': \"1800 United States Federal Census\"<br/>Year: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>{{Ancestry Record|7590|169250}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)<br/>\nMical Taylor in Cambridge, Middlesex, Massachusetts.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1800 census Mical was in Cambridge, Middlesex, Massachusetts.<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)<br/>\nMical Taylor in Cambridge, Middlesex, Massachusetts.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1800 Census''': \"1800 United States Federal Census\"<br/>Year: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>{{Ancestry Record|7590|169250}} (accessed 6 May 2021)<br/>Mical Taylor in Cambridge, Middlesex, Massachusetts.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)<br/>\nName: Mical Taylor; Home in 1800 (City, County, State): Cambridge, Middlesex, Massachusetts; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Males - 45 and over: 1; Free White Persons - Females - 26 thru 44: 1; Number of Household Members Under 16: 1; Number of Household Members Over 25: 3; Number of Household Members: 4.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1800 census Mical was in Cambridge, Middlesex, Massachusetts.<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)<br/>\nName: Mical Taylor; Home in 1800 (City, County, State): Cambridge, Middlesex, Massachusetts; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Males - 45 and over: 1; Free White Persons - Females - 26 thru 44: 1; Number of Household Members Under 16: 1; Number of Household Members Over 25: 3; Number of Household Members: 4.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1800 Census''': \"1800 United States Federal Census\"<br/>Year: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>{{Ancestry Record|7590|169250}} (accessed 6 May 2021)<br/>Name: Mical Taylor; Home in 1800 (City, County, State): Cambridge, Middlesex, Massachusetts; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Males - 45 and over: 1; Free White Persons - Females - 26 thru 44: 1; Number of Household Members Under 16: 1; Number of Household Members Over 25: 3; Number of Household Members: 4.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mical Taylor\n|-\n| Home in 1800 (City, County, State) || Cambridge, Middlesex, Massachusetts\n|-\n| Free White Persons - Males - Under 10 || 1\n|-\n| Free White Persons - Males - 26 thru 44 || 1\n|-\n| Free White Persons - Males - 45 and over || 1\n|-\n| Free White Persons - Females - 26 thru 44 || 1\n|-\n| Number of Household Members Under 16 || 1\n|-\n| Number of Household Members Over 25 || 3\n|-\n| Number of Household Members || 4\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1800 census Mical was in Cambridge, Middlesex, Massachusetts.<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mical Taylor\n|-\n| Home in 1800 (City, County, State) || Cambridge, Middlesex, Massachusetts\n|-\n| Free White Persons - Males - Under 10 || 1\n|-\n| Free White Persons - Males - 26 thru 44 || 1\n|-\n| Free White Persons - Males - 45 and over || 1\n|-\n| Free White Persons - Females - 26 thru 44 || 1\n|-\n| Number of Household Members Under 16 || 1\n|-\n| Number of Household Members Over 25 || 3\n|-\n| Number of Household Members || 4\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1800 Census''': \"1800 United States Federal Census\"<br/>Year: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>{{Ancestry Record|7590|169250}} (accessed 6 May 2021)<br/>Name: Mical Taylor; Home in 1800 (City, County, State): Cambridge, Middlesex, Massachusetts; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Males - 45 and over: 1; Free White Persons - Females - 26 thru 44: 1; Number of Household Members Under 16: 1; Number of Household Members Over 25: 3; Number of Household Members: 4.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1800 United States Federal Census,\" database, ({{Ancestry Record|7590|169250}} : accessed 6 May 2021), Mical Taylor in Cambridge, Middlesex, Massachusetts; citing Year 1800, Census Place Cambridge, Middlesex, Massachusetts, Series M32, Roll 17, Page 855, Image 238, Family History Library Film 205615.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1800 census Mical was in Cambridge, Middlesex, Massachusetts.<ref>\"1800 United States Federal Census,\" database, ({{Ancestry Record|7590|169250}} : accessed 6 May 2021), Mical Taylor in Cambridge, Middlesex, Massachusetts; citing Year 1800, Census Place Cambridge, Middlesex, Massachusetts, Series M32, Roll 17, Page 855, Image 238, Family History Library Film 205615.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1800 United States Federal Census,\" database, ({{Ancestry Record|7590|169250}} : accessed 6 May 2021), Mical Taylor in Cambridge, Middlesex, Massachusetts; citing Year 1800, Census Place Cambridge, Middlesex, Massachusetts, Series M32, Roll 17, Page 855, Image 238, Family History Library Film 205615.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1800 Census'':\n\"1800 United States Federal Census\", database, \nYear 1800, Census Place Cambridge, Middlesex, Massachusetts, Series M32, Roll 17, Page 855, Image 238, Family History Library Film 205615, \n({{Ancestry Record|7590|169250}} : accessed 6 May 2021), \nName: Mical Taylor; Home in 1800 (City, County, State): Cambridge, Middlesex, Massachusetts; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Males - 45 and over: 1; Free White Persons - Females - 26 thru 44: 1; Number of Household Members Under 16: 1; Number of Household Members Over 25: 3; Number of Household Members: 4.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1800 census Mical was in Cambridge, Middlesex, Massachusetts.<ref>\n''1800 Census'':\n\"1800 United States Federal Census\", database, \nYear 1800, Census Place Cambridge, Middlesex, Massachusetts, Series M32, Roll 17, Page 855, Image 238, Family History Library Film 205615, \n({{Ancestry Record|7590|169250}} : accessed 6 May 2021), \nName: Mical Taylor; Home in 1800 (City, County, State): Cambridge, Middlesex, Massachusetts; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Males - 45 and over: 1; Free White Persons - Females - 26 thru 44: 1; Number of Household Members Under 16: 1; Number of Household Members Over 25: 3; Number of Household Members: 4.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1800 Census'': \"1800 United States Federal Census\", database, Year 1800, Census Place Cambridge, Middlesex, Massachusetts, Series M32, Roll 17, Page 855, Image 238, Family History Library Film 205615, ({{Ancestry Record|7590|169250}} : accessed 6 May 2021), Name: Mical Taylor; Home in 1800 (City, County, State): Cambridge, Middlesex, Massachusetts; Free White Persons - Males - Under 10: 1; Free White Persons - Males - 26 thru 44: 1; Free White Persons - Males - 45 and over: 1; Free White Persons - Females - 26 thru 44: 1; Number of Household Members Under 16: 1; Number of Household Members Over 25: 3; Number of Household Members: 4.",
+    "type": "source"
+  }
+}

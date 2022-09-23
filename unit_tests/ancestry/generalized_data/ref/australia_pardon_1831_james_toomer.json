@@ -1,0 +1,15 @@
+{
+  "sourceType": "record",
+  "recordType": "CriminalRegister",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "James Toomer"
+  },
+  "eventDate": {
+    "dateString": "1831"
+  },
+  "collectionData": {
+    "id": "1657"
+  },
+  "hasValidData": true
+}

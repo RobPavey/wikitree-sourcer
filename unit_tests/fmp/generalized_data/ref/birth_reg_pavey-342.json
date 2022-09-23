@@ -1,0 +1,30 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Harry Alfred"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Plymouth, Devon, England"
+  },
+  "registrationDistrict": "Plymouth",
+  "eventDate": {
+    "yearString": "1852",
+    "quarter": "3"
+  },
+  "birthDate": {
+    "yearString": "1852"
+  },
+  "mothersMaidenName": "Ellacott",
+  "lastNameAtBirth": "Pavey",
+  "collectionData": {
+    "id": "England & Wales Births 1837-2006",
+    "volume": "5B",
+    "page": "238"
+  },
+  "hasValidData": true
+}

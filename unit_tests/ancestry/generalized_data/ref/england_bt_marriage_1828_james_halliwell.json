@@ -1,0 +1,32 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "James Halliwell"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "17 Feb 1828"
+  },
+  "eventPlace": {
+    "placeString": "Grappenhall, Cheshire, England"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Martha Drinkwater"
+      },
+      "marriageDate": {
+        "dateString": "17 Feb 1828"
+      },
+      "marriagePlace": {
+        "placeString": "Grappenhall, Cheshire, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "60496"
+  },
+  "hasValidData": true
+}

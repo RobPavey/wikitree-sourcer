@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "recordType": "Obituary",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "David Witter"
+  },
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1786"
+  },
+  "deathDate": {
+    "dateString": "29 May 1857"
+  },
+  "deathPlace": {
+    "placeString": "Pike County, Illinois, USA"
+  },
+  "lastNameAtDeath": "Witter",
+  "ageAtDeath": "71",
+  "collectionData": {
+    "id": "1671"
+  },
+  "hasValidData": true
+}

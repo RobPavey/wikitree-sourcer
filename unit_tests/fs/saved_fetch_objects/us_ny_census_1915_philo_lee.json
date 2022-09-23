@@ -1,0 +1,3150 @@
+{
+  "id" : "r_22181844766",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MD5-157N?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MD5-157N?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MD5-157N"
+    }
+  },
+  "description" : "#sd_p_13890444572",
+  "persons" : [ {
+    "id" : "p_13890444566",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "77338a62-b568-433f-b48d-d9ee9c43e84d",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male"
+        }, {
+          "id" : "e3fceba1-7ca8-43b6-be06-5624c6de5108",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1606427842526
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K9V2-YHT?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MD5-157N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHT" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Phila Lee",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Phila",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "cbc9a1a1-c814-4f82-a18c-4530c73bb8c7",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Phila"
+            }, {
+              "id" : "ce2917b8-a768-44fd-bb53-3f8547b141ac",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976007
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Phila"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Lee",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "982ba87c-d186-4fe0-8542-354b0be92319",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Lee"
+            }, {
+              "id" : "efe4f31c-aa92-430c-a2ee-55a86aa26c97",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976007
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Lee"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "52516641-f5ac-4fe7-96c8-924d74332c3e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976001
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Phila Lee"
+          }, {
+            "id" : "5f56516a-557e-4721-aa53-a312d9b8826e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976007
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Phila Lee"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1915",
+        "formal" : "+1915",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "9085ba51-952e-4908-9f93-e77804763601",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "20f82bd7-b210-469a-9254-a1ae6ed095ab",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606427842517
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1915",
+            "resource" : "+1915"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "e9bc908a-7891-4053-9312-fc34d8b53049",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "5c2ed7b4-793e-43c2-87c5-67cc6a99857f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606427842517
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1915"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Hempstead, Nassau, New York, United States",
+        "description" : "#place_4608326",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "4358e113-2318-4130-93a7-fd6ba1159e79",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30, Nassau, New York, United States"
+          }, {
+            "id" : "469462a8-9495-44b0-9f55-e3999a1ef573",
+            "confidence" : "http://confidence/85",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1606427842533
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Hempstead, Nassau, New York, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4608326",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1015, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "d3b4f015-5f4e-48c3-bf45-f05d31673dfa",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "6696dcdb-fe02-47bc-a4d9-8a1918f153df",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "93a3524e-9752-4a7a-8020-ae30b7bc1bed",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Nassau"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "0e666bf5-cc48-4251-b8e1-93600e6dc2be",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New York"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "32241b27-b39f-45eb-92eb-ef6b2f42f3f7",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1867",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "93cf7b15-60dc-427f-9ea3-ae831c8847fe",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1867"
+          }, {
+            "id" : "a106f672-5ae8-4976-9684-a7c956886405",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1867"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "c6a296b0-bfba-4d7b-a804-1c0172fb955c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "48"
+      }, {
+        "id" : "c610c8b6-392f-4f32-b129-9b3893b6ded0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1654130976011
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "48",
+        "resource" : "P48Y"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ExternalImageId",
+      "values" : [ {
+        "id" : "4e3f4420-96c4-4d15-88ac-fe2a0dd26914",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_IMAGE_ID_ORIG",
+        "text" : "32848_B094051-00469"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CntYearsInUs",
+      "values" : [ {
+        "id" : "e6f5df9a-bfa5-4252-a08c-7ef5d0ac7581",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_CNT_YEARS_IN_US_ORIG",
+        "text" : "48"
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "55831eed-fa04-4691-9725-96b640e0c659",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Head"
+      }, {
+        "id" : "5b265452-f8dc-4229-909e-950594ee7da8",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Head"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceHouseNbr",
+      "values" : [ {
+        "id" : "87545545-d5b5-4e5f-9da4-25f70ef56250",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_HOUSE_NBR_ORIG",
+        "text" : "30"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "4ad72971-9fbc-4d77-8caa-529ca1495821",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "34"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourcePage",
+      "values" : [ {
+        "id" : "c1985bf3-0793-4ce6-801f-b63bc815150b",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_ORIG",
+        "text" : "01"
+      } ]
+    } ]
+  }, {
+    "id" : "p_13890444567",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "c37a8a54-cf0a-4f94-9e2d-88fa07aa13f6",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female"
+        }, {
+          "id" : "dbd037d5-1df8-44e2-8ea8-ea6e170f47fe",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1606425063719
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K9V2-YHY?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MD5-157N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHY" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Clelie Lee",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Clelie",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "4c93fc5f-13a4-4854-a7fa-55c542dcce24",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Clelie"
+            }, {
+              "id" : "a2f5e8e8-8299-422d-b62a-22b7220ffabe",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976051
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Clelie"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Lee",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "5cd93011-c4cd-4be9-8ea5-2315bb081d3a",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Lee"
+            }, {
+              "id" : "53f42a5b-468b-4cde-b5af-4d088895fdc9",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976051
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Lee"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "80439343-5f15-4127-a312-ac99ee870aa8",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976045
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Clelie Lee"
+          }, {
+            "id" : "4d8ee643-402b-4cd5-98c0-82f2c52148f0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976051
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Clelie Lee"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1915",
+        "formal" : "+1915",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "c7ddbecd-7678-478d-a14f-e096b8634c66",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "5bab1bd8-dc3a-4649-8f2d-9f958b84dc07",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425063644
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1915",
+            "resource" : "+1915"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "bf125804-2cd8-4c9e-894a-c49057a17d30",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "5e4b8c93-477d-4528-a25d-f3edcec33c39",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425063644
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1915"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Hempstead, Nassau, New York, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "87aa2f87-f034-43b7-8c57-9520a3ab2453",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30, Nassau, New York, United States"
+          }, {
+            "id" : "734fea73-894a-4a3c-8769-399e0417b8f2",
+            "confidence" : "http://confidence/85",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1606425063731
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Hempstead, Nassau, New York, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4608326",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1015, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "4e1b7904-f0b0-4e15-883e-dce444861b34",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "e674c86d-dd77-4b93-a4f7-c937103488a9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "f09115cd-c24b-486f-9727-9c54e792e08e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Nassau"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "83d03939-9b3e-47ec-88b8-814d9239a00e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New York"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "aee6010a-3a40-4bf5-9d89-40d93658b056",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1870",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "b4d43ba6-ddb2-4448-bf8b-793997371cc8",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1870"
+          }, {
+            "id" : "2e04c307-0bef-494b-8df0-54d0acc2dbba",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1870"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "1dde77e4-ca54-41db-bd5a-ee0b6273f09d",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "45"
+      }, {
+        "id" : "b512e7cc-a2c8-483c-8817-075aba70a1d2",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1654130976072
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "45",
+        "resource" : "P45Y"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ExternalImageId",
+      "values" : [ {
+        "id" : "3c160a4e-fa89-4b75-be90-24d6f06f3b61",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_IMAGE_ID_ORIG",
+        "text" : "32848_B094051-00469"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CntYearsInUs",
+      "values" : [ {
+        "id" : "5f710308-b27e-4f10-9de4-ed6bd8c34c2d",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_CNT_YEARS_IN_US_ORIG",
+        "text" : "45"
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "364cc9d5-4bab-47b9-ba88-2426620cc024",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Wife"
+      }, {
+        "id" : "6dd12c44-273a-43c7-8767-d21887b69384",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Wife"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceHouseNbr",
+      "values" : [ {
+        "id" : "1a0cb4de-bdc9-43a7-92ce-d3ef98f59860",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_HOUSE_NBR_ORIG",
+        "text" : "30"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "607d29d0-7044-4aad-b043-44529f1c164f",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "35"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourcePage",
+      "values" : [ {
+        "id" : "184413d6-f67c-4182-82f1-284a90845d9e",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_ORIG",
+        "text" : "01"
+      } ]
+    } ]
+  }, {
+    "id" : "p_13890444568",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "4cab5a65-984c-4b29-a721-b45933cc5e2a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female"
+        }, {
+          "id" : "e00ac849-79fd-4836-b2d6-ec68c34606e3",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1606425063840
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K9V2-YHB?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MD5-157N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHB" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Anna Lee",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Anna",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "93b0c062-65fc-4735-b60f-70c12edfa650",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Anna"
+            }, {
+              "id" : "75347509-0aed-480e-b522-94bbc60143c9",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976111
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Anna"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Lee",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "b265d22c-f490-4a04-a535-f97db5f16ed7",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Lee"
+            }, {
+              "id" : "7e1ab06d-33f6-4169-a5c6-0f39d719ba88",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976111
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Lee"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "5d566449-3b2a-4fb2-aaae-3eacb20b47fa",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976106
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Anna Lee"
+          }, {
+            "id" : "f3ba4b8b-fcca-405b-aa19-1d58db033f86",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976111
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Anna Lee"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1915",
+        "formal" : "+1915",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "0c943d0b-8997-4e80-9184-d8734d11d0d4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "9047c808-87da-4aa2-9d81-076c77c7edd0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425063773
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1915",
+            "resource" : "+1915"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "5826c665-72d7-441d-aedd-cf17cf9633be",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "961380cf-1061-4dea-b0b4-905180e62b97",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425063773
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1915"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Hempstead, Nassau, New York, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "83078ee2-6a73-4186-944f-f0e449b37fc8",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30, Nassau, New York, United States"
+          }, {
+            "id" : "5a6bf846-4e89-4e45-aaaf-0538e29daae7",
+            "confidence" : "http://confidence/85",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1606425063849
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Hempstead, Nassau, New York, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4608326",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1015, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "63ece790-bd43-4a5d-a48b-cf996a336c1b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "e88136b5-3fcf-40a5-ba42-13296ba6eb48",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "9c1ca063-7e4a-4aca-b39d-793f0100b751",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Nassau"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "4fabd7aa-acb6-4d2b-a46f-5f1e8b055080",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New York"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "0fdb58ac-d72b-4581-a4b2-b0d8b6dcc8fd",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1892",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "67deb547-4583-4749-bbea-800242538a73",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1892"
+          }, {
+            "id" : "879e0ae2-6968-40c5-9bcc-3114fd9bd06d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1892"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "8b617be2-5533-4cf4-8e69-a1f717f42fe8",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "23"
+      }, {
+        "id" : "66f174fb-d51d-4928-9a03-e677bcf0c09f",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1654130976113
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "23",
+        "resource" : "P23Y"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ExternalImageId",
+      "values" : [ {
+        "id" : "40eb9981-f68f-46c0-8d02-a8a0255a1620",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_IMAGE_ID_ORIG",
+        "text" : "32848_B094051-00469"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CntYearsInUs",
+      "values" : [ {
+        "id" : "f921d445-57ec-40fe-a6a6-c83b78854f54",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_CNT_YEARS_IN_US_ORIG",
+        "text" : "23"
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "008ba030-00c6-4552-a344-dc5bbfe5791c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      }, {
+        "id" : "89c7c161-b2e6-42ea-9111-5f1243f0d38d",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Daughter"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceHouseNbr",
+      "values" : [ {
+        "id" : "7250899e-e802-4d61-b6e2-37d19bdb3f17",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_HOUSE_NBR_ORIG",
+        "text" : "30"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "f217bcd1-4a67-45b3-8bea-9937d5034140",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "36"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourcePage",
+      "values" : [ {
+        "id" : "0818cd08-6952-4c7e-8aaa-bbc0019ea083",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_ORIG",
+        "text" : "01"
+      } ]
+    } ]
+  }, {
+    "id" : "p_13890444569",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "2d647cf0-6b8e-4cec-af43-4b83ff556a3a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female"
+        }, {
+          "id" : "bfad7d70-ba6c-43c8-8033-c8748c0f1168",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1606425064359
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K9V2-YH1?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MD5-157N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YH1" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Carrie Lee",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Carrie",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "23696d74-e068-4939-bc10-2efb9250f9c1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Carrie"
+            }, {
+              "id" : "c3884904-92ee-4f7b-93a0-65223bcced36",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976159
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Carrie"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Lee",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "8f9adfd7-ad6d-4368-89ac-aec262323f2e",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Lee"
+            }, {
+              "id" : "5ffa9eb1-1b21-4998-abd8-8e1be67d44b5",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976159
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Lee"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "f2a030c2-72df-42dd-8584-84015ed5164b",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976153
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Carrie Lee"
+          }, {
+            "id" : "a16e8e9f-daeb-4465-9207-98aa51e83844",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976159
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Carrie Lee"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1915",
+        "formal" : "+1915",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "c59fbb88-97e7-4b3b-901a-41f26f16c9d2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "d47b7622-72dc-407d-bd3d-38f620c34d02",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425063878
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1915",
+            "resource" : "+1915"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "a920f470-2861-4161-ab90-19fd1ad7535c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "3468273c-f32f-4c62-bdb0-6741de2048ae",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425063878
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1915"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Hempstead, Nassau, New York, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "3daf47b8-776e-4205-99a4-fbf05d5b4564",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30, Nassau, New York, United States"
+          }, {
+            "id" : "fc7cf8f3-44cf-4add-a7d7-fec63fc2a9b6",
+            "confidence" : "http://confidence/85",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1606425064389
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Hempstead, Nassau, New York, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4608326",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1015, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "f85c2e26-7ae8-4462-bb55-a13b400b0ade",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "95b93817-d20d-4f4a-bb3c-03d82e0e104b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "f985c8a9-4bb9-41ba-a7a6-e513fc2506c2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Nassau"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "e23c9722-a3f2-4ea6-95df-ca30d37f90d9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New York"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "9cfece2c-591e-4877-a177-06e51a1d4c03",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1894",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "c26588c7-07e8-4196-a7db-c2b9cccd8482",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1894"
+          }, {
+            "id" : "d38db2d3-e99b-4940-8e8e-8896960f323c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1894"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "be2c2dff-eb31-4129-a260-3acda1ace566",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "21"
+      }, {
+        "id" : "dc9b27b4-15b3-4145-b69d-94af5395b981",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1654130976161
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "21",
+        "resource" : "P21Y"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ExternalImageId",
+      "values" : [ {
+        "id" : "f4d57a5f-4bb0-416a-8cda-35bd84b32cfd",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_IMAGE_ID_ORIG",
+        "text" : "32848_B094051-00469"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CntYearsInUs",
+      "values" : [ {
+        "id" : "49e57e3d-b073-4b14-af6f-f4a230d6fabb",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_CNT_YEARS_IN_US_ORIG",
+        "text" : "21"
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "72939d94-a46a-4fca-9499-6b22f479a7c2",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      }, {
+        "id" : "dfcaed2b-0488-4880-890d-5e672c4f29d0",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Daughter"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceHouseNbr",
+      "values" : [ {
+        "id" : "645509a3-9110-4cbb-84f8-10e317c63733",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_HOUSE_NBR_ORIG",
+        "text" : "30"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "b411c818-c0d1-4171-908f-81c0ddde6755",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "37"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourcePage",
+      "values" : [ {
+        "id" : "d48f716a-685c-4c9b-84cb-47e65d129d34",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_ORIG",
+        "text" : "01"
+      } ]
+    } ]
+  }, {
+    "id" : "p_13890444570",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "8e862a8e-a610-4d7e-8cc0-f3e8da607abf",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female"
+        }, {
+          "id" : "270445d4-0bfa-452f-9249-97f6f0b474e4",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1606425064500
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K9V2-YCM?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MD5-157N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCM" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Marie Lee",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Marie",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "3b586d47-4d2b-4f0a-b9ea-b9186983863d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Marie"
+            }, {
+              "id" : "922d02d6-fddf-40e4-a91d-85453e956d19",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976200
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Marie"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Lee",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "3e605683-e588-4ab2-afb7-33a1f72fba22",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Lee"
+            }, {
+              "id" : "0d947982-4cbb-4c2f-bf0e-9915a68af949",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976200
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Lee"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "ce2ef463-7fc7-45d7-8b23-7659f1140d6a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976191
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Marie Lee"
+          }, {
+            "id" : "649b9578-936c-414d-bfc7-adeded05ad12",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976200
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Marie Lee"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1915",
+        "formal" : "+1915",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "b76c4f1d-2a26-4680-96d7-7bb947c8ffa0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "08a28136-fdd8-430a-8faa-68c87400d462",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425064431
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1915",
+            "resource" : "+1915"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "325d4fa8-f5ac-40a3-94e1-00fad058ba4d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "f8536d28-1395-4ee0-afcb-236944c229f1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425064431
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1915"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Hempstead, Nassau, New York, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "ab0a2353-03b0-4c71-919c-4506b0ec63dc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30, Nassau, New York, United States"
+          }, {
+            "id" : "e9224bf9-9c0d-4890-bbb6-d18077ccbee6",
+            "confidence" : "http://confidence/85",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1606425064510
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Hempstead, Nassau, New York, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4608326",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1015, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "28871e13-12da-4099-84a0-b9539146dd50",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "655e4d2c-bbc4-40ab-8f55-1a1ae278f445",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "8c4183fd-848e-42a9-b2f8-a43bda835a89",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Nassau"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "805b7adf-37b3-4650-a162-5fbb9b22335e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New York"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "59126196-e812-479b-a63c-99a842563a68",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1896",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "c424e50d-969e-4d78-a794-99be423ddbdc",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1896"
+          }, {
+            "id" : "531e08d2-2fff-450f-9384-9bd04cb4c1f7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1896"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "1759e376-6f2f-41ce-8510-c41d3165e0f5",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "19"
+      }, {
+        "id" : "92ae746d-bc44-4a06-921a-de1f291c6993",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1654130976202
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "19",
+        "resource" : "P19Y"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ExternalImageId",
+      "values" : [ {
+        "id" : "a46976d0-3570-408f-860f-979fe61d954f",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_IMAGE_ID_ORIG",
+        "text" : "32848_B094051-00469"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CntYearsInUs",
+      "values" : [ {
+        "id" : "459c45c4-4468-4b5e-9ca9-7701977a2f88",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_CNT_YEARS_IN_US_ORIG",
+        "text" : "19"
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "3c828af8-b4fc-4435-a771-8b8c560bc25b",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      }, {
+        "id" : "87e0907d-aa1b-4418-8baf-5e8cb2580115",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Daughter"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceHouseNbr",
+      "values" : [ {
+        "id" : "c8251152-bb88-4d44-b53e-1985140850fd",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_HOUSE_NBR_ORIG",
+        "text" : "30"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "1b1b6b09-6d9f-49bf-9de1-dc7c32bf15e0",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "38"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourcePage",
+      "values" : [ {
+        "id" : "8dfa09a6-04a5-435c-a209-698319e560d2",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_ORIG",
+        "text" : "01"
+      } ]
+    } ]
+  }, {
+    "id" : "p_13890444571",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "2438b6b5-b150-4adb-ab14-7faaf2f63d34",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female"
+        }, {
+          "id" : "6af5a7e0-0e14-4957-80a0-9d1e42e005e3",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1606425064579
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K9V2-YC9?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MD5-157N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YC9" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Henrietta Lee",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Henrietta",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "7f86004a-7e2c-4c88-acff-f99efe986153",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Henrietta"
+            }, {
+              "id" : "8bc16851-64c6-4ef4-8484-f36c65e82165",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976241
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Henrietta"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Lee",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "c494a0c9-eedb-4ccb-a47a-b9b5976fd8f1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Lee"
+            }, {
+              "id" : "2debfbc4-1dc7-4303-bddb-1c6f9967b16e",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976241
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Lee"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "cf6e7265-8ddb-445f-b6e1-053ed255de76",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976236
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Henrietta Lee"
+          }, {
+            "id" : "1a2ef9f9-2e0c-4382-82fb-d02e25305926",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976241
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Henrietta Lee"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1915",
+        "formal" : "+1915",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "8c5e816f-9fef-4fc8-9e30-7ba4dd0954cf",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "d3f4b6ab-9ac7-43a0-91db-648bd79e540e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425064543
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1915",
+            "resource" : "+1915"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "18208964-713e-4d62-8ac4-86b31cd85647",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "32d0b454-9c6c-431f-9267-44ff99c5fe6e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425064543
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1915"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Hempstead, Nassau, New York, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "5a6116ac-573e-41b9-a327-4ae5a371dded",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30, Nassau, New York, United States"
+          }, {
+            "id" : "dbf1dc5b-72e6-4d38-8e34-e705ffb56da4",
+            "confidence" : "http://confidence/85",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1606425064584
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Hempstead, Nassau, New York, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4608326",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1015, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "4fa6c80b-7204-4591-b661-d407fe33dbef",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "0e8b9ed3-6cd3-423d-848a-b7bc46e3df3f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "9e846d1f-432e-45fb-9290-c776f54f80a2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Nassau"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "c3d8eb3f-dacd-40da-b151-7ae8c800ec12",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New York"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "9bb173ab-ffa7-4eff-a5d6-962ad979d2ff",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1898",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "e460d50a-8a37-4e8e-a916-e78abc7a7082",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1898"
+          }, {
+            "id" : "75a60725-71fd-4426-957a-3e5e03ee48a4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1898"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "c4453e26-05ed-488d-9cc0-efc1f21f2be1",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "17"
+      }, {
+        "id" : "e65ea79a-7b47-4a21-bfb6-fc347f093ea8",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1654130976244
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "17",
+        "resource" : "P17Y"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ExternalImageId",
+      "values" : [ {
+        "id" : "2c97bbc7-7943-4f06-8b0d-b6dfbeefe5a0",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_IMAGE_ID_ORIG",
+        "text" : "32848_B094051-00469"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CntYearsInUs",
+      "values" : [ {
+        "id" : "11dcb9c9-e145-4562-8cf0-2e7c8f4546cb",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_CNT_YEARS_IN_US_ORIG",
+        "text" : "17"
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "cde96f50-3739-4f81-8de0-b336974f9d44",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      }, {
+        "id" : "88e3fc76-20af-4b0a-9931-6c65c74646d8",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Daughter"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceHouseNbr",
+      "values" : [ {
+        "id" : "d656b4ba-f9e2-42ae-96d3-499abab73c5c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_HOUSE_NBR_ORIG",
+        "text" : "30"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "37040052-4afe-4f4d-be6b-d0ab1a120d73",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "39"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourcePage",
+      "values" : [ {
+        "id" : "24b5e5f2-4d41-48d6-aa27-ace04099c3ce",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_ORIG",
+        "text" : "01"
+      } ]
+    } ]
+  }, {
+    "id" : "p_13890444572",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "f9b2fe5c-5de3-4a29-bb69-3ae9f69b537c",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male"
+        }, {
+          "id" : "a79b4577-060b-4004-b9d5-ac588a780076",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1606425064617
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K9V2-YCS?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MD5-157N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCS" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Philo Lee, Jr",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Philo",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "f836a795-4614-4686-a442-24908d8481d2",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Philo"
+            }, {
+              "id" : "6c0ed49f-16fd-493f-964f-789677f46a02",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976288
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Philo"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Suffix",
+          "value" : "Jr",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Suffix",
+            "values" : [ {
+              "id" : "458ac003-9d38-4f76-aba0-2c7ac9900fdb",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SUF_ORIG",
+              "text" : "Jr"
+            }, {
+              "id" : "6ef5310d-bdb8-4685-981c-d3fbb3f9a784",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976288
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SUF",
+              "text" : "Jr"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Lee",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "fece4066-a7cd-4720-96b1-89704fae1507",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Lee"
+            }, {
+              "id" : "5086832a-0b40-4ed5-a5ce-f8d9ef1be1b8",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976288
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Lee"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "306735e6-5c4d-47fe-aa59-fd0e26beac90",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976279
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Philo Lee, Jr"
+          }, {
+            "id" : "4240d087-82f2-41ba-b22b-e1a18a351959",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976288
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Philo Lee, Jr"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1915",
+        "formal" : "+1915",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "b9da6249-c55a-4bb1-9787-1c4aad4b2c4d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "9d9e3e8a-b14c-4f01-9173-c0669301213a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425064604
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1915",
+            "resource" : "+1915"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "36bf3f5b-4f93-4963-80fc-4ad80d35b692",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "847cd964-5790-431f-812d-25e5f7b5d917",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425064604
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1915"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Hempstead, Nassau, New York, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "e00c728c-033a-4b9e-be50-2017cc7ae659",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30, Nassau, New York, United States"
+          }, {
+            "id" : "5a220895-e189-452d-ab6d-c4b145107add",
+            "confidence" : "http://confidence/85",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1606425064622
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Hempstead, Nassau, New York, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4608326",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1015, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "2b56afd9-2155-4494-924d-82da6a1afc64",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "f65610d9-e7f2-4871-9daa-72118f2f7851",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "cbf43254-56a8-468f-a8fd-bf8d44e7bef3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Nassau"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "c0761003-91d4-4873-b587-a6ec1279596a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New York"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "fb49ca03-45ad-49e6-a9c9-c2e52ec15545",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1903",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "b23e62fd-ec8d-4d75-bc5e-eaf6d8a89ddf",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1903"
+          }, {
+            "id" : "8e0d66db-3458-4250-8b16-972d6e53bf96",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1903"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "09a2eb04-8844-4ed8-993a-502c704fdbe3",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "12"
+      }, {
+        "id" : "1b14ef49-9a13-4a64-950e-a2a7431d2038",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1654130976292
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "12",
+        "resource" : "P12Y"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ExternalImageId",
+      "values" : [ {
+        "id" : "d1854eab-d1af-4e9a-9631-f1dca32e2637",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_IMAGE_ID_ORIG",
+        "text" : "32848_B094051-00469"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CntYearsInUs",
+      "values" : [ {
+        "id" : "0040d9c7-4b31-4a47-b303-f4c61b6c61db",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_CNT_YEARS_IN_US_ORIG",
+        "text" : "12"
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "7e204422-b0f9-4dc7-80c3-61dafd86393f",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Son"
+      }, {
+        "id" : "94361bc7-8bff-47bc-ba72-71879a6f8ead",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Son"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceHouseNbr",
+      "values" : [ {
+        "id" : "ce13bee2-932f-4731-81d3-f0358280a993",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_HOUSE_NBR_ORIG",
+        "text" : "30"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "2db01f83-337b-4c5c-bc74-56a0b1c53bbe",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "40"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourcePage",
+      "values" : [ {
+        "id" : "8b062d6e-32e9-4f4b-b90d-985f9f073f75",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_ORIG",
+        "text" : "01"
+      } ]
+    } ]
+  }, {
+    "id" : "p_13890444573",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "ac23f812-de7e-49ea-aed5-929e427ba0ed",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male"
+        }, {
+          "id" : "9139eed6-7892-4b79-a9e9-35537843f18e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1606425064642
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/K9V2-YC3?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/9MD5-157N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YC3" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "William Kirk",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "a873b5cc-6f5f-4b8c-bc22-9162a5aca88d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "William"
+            }, {
+              "id" : "5c65fd15-10fe-44e3-8b16-6fe20fe6e13d",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976310
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "William"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Kirk",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "49c1fc6f-1649-4c76-b831-7319c2ebaee5",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Kirk"
+            }, {
+              "id" : "b0ca0270-f9bc-4424-beab-de455a3ec73e",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1654130976310
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Kirk"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "e4837be3-29d9-4236-80d4-9c63333b811a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976304
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "William Kirk"
+          }, {
+            "id" : "7ab55145-8e4e-4f16-aa10-d7ebbec86b4e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1654130976310
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "William Kirk"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1915",
+        "formal" : "+1915",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "03ffee2e-2e01-4acd-9846-e911e8e13577",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "5ee75312-b60e-419e-8c1c-c98354b886b6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425064633
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1915",
+            "resource" : "+1915"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "1ae9e5f0-d503-4820-b227-52a4e153a3c9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1915"
+          }, {
+            "id" : "55c9efc4-86c3-43fe-831c-d1d05acc0429",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1606425064633
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1915"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Hempstead, Nassau, New York, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "062e34b4-4612-47b4-87d8-e79c71a1764e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30, Nassau, New York, United States"
+          }, {
+            "id" : "6f594ee8-7d5f-4d6f-af85-903952c8b97c",
+            "confidence" : "http://confidence/85",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1606425064649
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Hempstead, Nassau, New York, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4608326",
+            "qualifiers" : [ {
+              "value" : "1020, 1013, 1015, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "eddeccc4-0ff6-4333-ad29-3f659805b251",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Hempstead, A.D. 01, E.D. 30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "0015f929-e7df-4fb3-bdc9-73d422239049",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "c8b8dca8-b7aa-460f-8dc2-0371022fd29f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Nassau"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "128f6d50-efd5-4790-8798-1847a439c52a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "New York"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "d76f51b9-b6b7-4a81-a990-745941d3056f",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1860",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "16b969fa-ba83-4ea5-9884-fb918e0874f0",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1860"
+          }, {
+            "id" : "4d3791b9-d13e-4cd7-baf2-2af61a8fa131",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1860"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "88128d87-03fd-4434-b70f-db28fbba706e",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "55"
+      }, {
+        "id" : "db82f331-78a0-4444-ba6d-08f752bc4674",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1654130976313
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "55",
+        "resource" : "P55Y"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ExternalImageId",
+      "values" : [ {
+        "id" : "a6cdbea2-d8c3-4e1c-9fe2-dfe5e8afa490",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_IMAGE_ID_ORIG",
+        "text" : "32848_B094051-00469"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CntYearsInUs",
+      "values" : [ {
+        "id" : "a47af76b-6f44-4b26-9a94-da642814f79c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_CNT_YEARS_IN_US_ORIG",
+        "text" : "55"
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "3d52f4ff-dcac-4c2a-8d06-7a8dafcfefcb",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Boarder"
+      }, {
+        "id" : "95c8e620-6e2a-4da5-9af3-a02a8c63b088",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
+        "text" : "Boarder"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceHouseNbr",
+      "values" : [ {
+        "id" : "5965658c-124f-47aa-9d13-b0e3a8a065f7",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_HOUSE_NBR_ORIG",
+        "text" : "30"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "values" : [ {
+        "id" : "8d309b25-15c7-451c-817d-bbd89e7a5946",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "41"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourcePage",
+      "values" : [ {
+        "id" : "439ddbf3-b0c1-4ae4-9931-e969107ed69c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_ORIG",
+        "text" : "01"
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/G85T-9D68",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_13890444566",
+      "resourceId" : "p_13890444566"
+    },
+    "person2" : {
+      "resource" : "#p_13890444567",
+      "resourceId" : "p_13890444567"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-9DNL",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444566",
+      "resourceId" : "p_13890444566"
+    },
+    "person2" : {
+      "resource" : "#p_13890444568",
+      "resourceId" : "p_13890444568"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-9D29",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444566",
+      "resourceId" : "p_13890444566"
+    },
+    "person2" : {
+      "resource" : "#p_13890444569",
+      "resourceId" : "p_13890444569"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-9DP8",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444566",
+      "resourceId" : "p_13890444566"
+    },
+    "person2" : {
+      "resource" : "#p_13890444570",
+      "resourceId" : "p_13890444570"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-9DTL",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444566",
+      "resourceId" : "p_13890444566"
+    },
+    "person2" : {
+      "resource" : "#p_13890444571",
+      "resourceId" : "p_13890444571"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-96M9",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444566",
+      "resourceId" : "p_13890444566"
+    },
+    "person2" : {
+      "resource" : "#p_13890444572",
+      "resourceId" : "p_13890444572"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-9638",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444567",
+      "resourceId" : "p_13890444567"
+    },
+    "person2" : {
+      "resource" : "#p_13890444568",
+      "resourceId" : "p_13890444568"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-96WL",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444567",
+      "resourceId" : "p_13890444567"
+    },
+    "person2" : {
+      "resource" : "#p_13890444569",
+      "resourceId" : "p_13890444569"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-96Z9",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444567",
+      "resourceId" : "p_13890444567"
+    },
+    "person2" : {
+      "resource" : "#p_13890444570",
+      "resourceId" : "p_13890444570"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-9668",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444567",
+      "resourceId" : "p_13890444567"
+    },
+    "person2" : {
+      "resource" : "#p_13890444571",
+      "resourceId" : "p_13890444571"
+    }
+  }, {
+    "id" : "MM9.1.6/G85T-96NL",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13890444567",
+      "resourceId" : "p_13890444567"
+    },
+    "person2" : {
+      "resource" : "#p_13890444572",
+      "resourceId" : "p_13890444572"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1937454",
+    "about" : "https://api.familysearch.org/platform/records/collections/1937454",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223461113,
+    "modified" : 1658155722189,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "New York, United States",
+        "description" : "#place_1-22"
+      },
+      "temporal" : {
+        "original" : "1915/1915",
+        "formal" : "1915/1915"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "New York State Census, 1915"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1937454" ]
+    }
+  }, {
+    "id" : "src_r_22181844766",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MD5-157N",
+    "componentOf" : {
+      "description" : "#sd_c_1937454"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1383794836569,
+    "modified" : 1658155722189,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Hempstead, Nassau, New York, United States"
+      },
+      "temporal" : {
+        "original" : "1915",
+        "formal" : "+1915"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "citations" : [ {
+      "value" : "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:9MD5-157N : 2 June 2022), Household of Phila Lee, 1915."
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Household of Phila Lee, \"New York State Census, 1915\""
+    } ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1001096833344" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MD5-157N" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1937454?arkName=1:2:9MD5-157N"
+    }
+  }, {
+    "id" : "sd_p_13890444566",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHT",
+    "componentOf" : {
+      "description" : "#src_r_22181844766"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K9V2-YHT : 2 June 2022), Phila Lee, 1915."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Phila Lee, \"New York State Census, 1915\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHT" ]
+    }
+  }, {
+    "id" : "sd_p_13890444567",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHY",
+    "componentOf" : {
+      "description" : "#src_r_22181844766"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K9V2-YHY : 2 June 2022), Clelie Lee in entry for Phila Lee, 1915."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Clelie Lee in household of Phila Lee, \"New York State Census, 1915\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHY" ]
+    }
+  }, {
+    "id" : "sd_p_13890444568",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHB",
+    "componentOf" : {
+      "description" : "#src_r_22181844766"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K9V2-YHB : 2 June 2022), Anna Lee in entry for Phila Lee, 1915."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Anna Lee in household of Phila Lee, \"New York State Census, 1915\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHB" ]
+    }
+  }, {
+    "id" : "sd_p_13890444569",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K9V2-YH1",
+    "componentOf" : {
+      "description" : "#src_r_22181844766"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K9V2-YH1 : 2 June 2022), Carrie Lee in entry for Phila Lee, 1915."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Carrie Lee in household of Phila Lee, \"New York State Census, 1915\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YH1" ]
+    }
+  }, {
+    "id" : "sd_p_13890444570",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCM",
+    "componentOf" : {
+      "description" : "#src_r_22181844766"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K9V2-YCM : 2 June 2022), Marie Lee in entry for Phila Lee, 1915."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Marie Lee in household of Phila Lee, \"New York State Census, 1915\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCM" ]
+    }
+  }, {
+    "id" : "sd_p_13890444571",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K9V2-YC9",
+    "componentOf" : {
+      "description" : "#src_r_22181844766"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K9V2-YC9 : 2 June 2022), Henrietta Lee in entry for Phila Lee, 1915."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Henrietta Lee in household of Phila Lee, \"New York State Census, 1915\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YC9" ]
+    }
+  }, {
+    "id" : "sd_p_13890444572",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCS",
+    "componentOf" : {
+      "description" : "#src_r_22181844766"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K9V2-YCS : 2 June 2022), Philo Lee, Jr in entry for Phila Lee, 1915."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Philo Lee, Jr in household of Phila Lee, \"New York State Census, 1915\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCS" ]
+    }
+  }, {
+    "id" : "sd_p_13890444573",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K9V2-YC3",
+    "componentOf" : {
+      "description" : "#src_r_22181844766"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New York State Census, 1915\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K9V2-YC3 : 2 June 2022), William Kirk in entry for Phila Lee, 1915."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "William Kirk in household of Phila Lee, \"New York State Census, 1915\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K9V2-YC3" ]
+    }
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "http://search.ancestry.com/iexec?htx=View&r=an&dbid=2703&iid=32848_B094051-00469",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "http://search.ancestry.com/iexec?htx=View&r=an&dbid=2703&iid=32848_B094051-00469" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1937454"
+    }
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "search.ancestry.com" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/4608326",
+      "resourceId" : "place_4608326"
+    }
+  }, {
+    "id" : "place_1-22",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/22?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "14dab4ad-9dfd-4752-9f87-a2af9bbda028",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "1937454"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsHouseholdId",
+    "values" : [ {
+      "id" : "8c7a7dac-3e5c-4265-8193-c8c295f5ecff",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_HOUSEHOLD_ID",
+      "text" : "1152972"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageId",
+    "values" : [ {
+      "id" : "e70f088e-9886-4834-8ec5-94d163c4b4e6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_ID",
+      "text" : "32848_B094051-00469"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "703c8dd8-0e6f-4e78-8134-601c83db01ba",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "9d9ae921-699b-4430-af4d-a477c82b0cd7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "32848_NY1915Part2_UTF8txt"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "60381f75-774d-4a68-a5a2-4efd0bc02872",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "32848_B094051-00469_0000001_0034_1001096833344"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "088add7c-9e31-43cc-b94e-3819c99f6d48",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "1001096833344"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "3fb4551f-6fcb-4e67-9bd1-10138494dd5f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "31"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "68769"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

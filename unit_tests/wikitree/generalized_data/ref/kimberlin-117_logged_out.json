@@ -1,0 +1,61 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Charles",
+    "lastName": "Kimberlin"
+  },
+  "lastNameAtBirth": "Kimberlin",
+  "lastNameAtDeath": "Kimberlin",
+  "mothersMaidenName": "Smith",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "15 Dec 1825",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "18 Apr 1860",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Atherstone, Warwickshire, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Kimberlin",
+        "lastName": "Kimberlin",
+        "forenames": "John"
+      },
+      "lastNameAtBirth": "Kimberlin",
+      "lastNameAtDeath": "Kimberlin"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Elizabeth",
+        "lastName": "Smith",
+        "name": "Elizabeth Smith"
+      },
+      "lastNameAtBirth": "Smith",
+      "lastNameAtDeath": "Kimberlin"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Emily",
+        "lastName": "Mason",
+        "name": "Emily Mason"
+      },
+      "lastNameAtBirth": "Mason",
+      "lastNameAtDeath": "Black",
+      "marriageDate": {
+        "dateString": "26 Apr 1851"
+      },
+      "marriagePlace": {
+        "placeString": "Aston, Birmingham"
+      }
+    }
+  ],
+  "hasValidData": true
+}

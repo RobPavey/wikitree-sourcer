@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Bruce",
+    "forenames": "Agnes"
+  },
+  "eventDate": {
+    "dateString": "31 December 1897"
+  },
+  "courtName": "non-Scottish Court",
+  "eventPlace": {
+    "placeString": "a non-Scottish court"
+  },
+  "testateOrIntestate": "",
+  "recordSubtype": "Probate",
+  "hasValidData": true
+}

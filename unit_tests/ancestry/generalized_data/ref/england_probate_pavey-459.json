@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Probate",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Ralph Edgar Pavey"
+  },
+  "deathDate": {
+    "dateString": "8 Sep 1958"
+  },
+  "eventDate": {
+    "dateString": "13 Oct 1958"
+  },
+  "eventPlace": {
+    "placeString": "London, England"
+  },
+  "deathPlace": {
+    "placeString": "London, England"
+  },
+  "lastNameAtDeath": "Pavey",
+  "collectionData": {
+    "id": "1904"
+  },
+  "hasValidData": true
+}

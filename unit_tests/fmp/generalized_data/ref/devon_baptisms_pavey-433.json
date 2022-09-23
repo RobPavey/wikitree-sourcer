@@ -1,0 +1,37 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Frederick Archibald"
+  },
+  "eventPlace": {
+    "placeString": "Plymouth, St Andrew, Devon, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "William Henry"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Elizabeth"
+      }
+    }
+  },
+  "eventDate": {
+    "dateString": "25 Dec 1833",
+    "yearString": "1833"
+  },
+  "birthDate": {
+    "yearString": "1833"
+  },
+  "lastNameAtBirth": "Pavey",
+  "collectionData": {
+    "id": "Devon Baptisms"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,221 @@
+{
+  "name": "WikiTree Sourcer",
+  "version": "1.3.5",
+  "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
+  "permissions": ["storage", "contextMenus", "scripting", "management"],
+  "host_permissions": [
+    "*://www.wikitree.com/*",
+    "*://*.ancestry.com/*",
+    "*://*.ancestry.co.uk/*",
+    "*://*.ancestry.ca/*",
+    "*://*.ancestry.com.au/*",
+    "*://*.ancestry.de/*",
+    "*://*.ancestry.it/*",
+    "*://*.ancestry.fr/*",
+    "*://*.ancestry.se/*",
+    "*://*.ancestry.mx/*",
+    "*://*.ancestrylibrary.com/*",
+    "*://*.ancestrylibraryedition.co.uk/*",
+    "*://*.ancestrylibrary.ca/*",
+    "*://*.ancestrylibrary.com.au/*",
+    "*://*.findmypast.com/*",
+    "*://*.findmypast.co.uk/*",
+    "*://*.findmypast.ie/*",
+    "*://*.findmypast.com.au/*",
+    "*://www.findagrave.com/*",
+    "*://www.familysearch.org/*",
+    "*://www.freebmd.org.uk/*",
+    "*://www.freecen.org.uk/*",
+    "*://www.freereg.org.uk/*",
+    "*://www.gro.gov.uk/gro/content/certificates/*",
+    "*://www.scotlandspeople.gov.uk/*"
+  ],
+  "background": {
+    "service_worker": "base/browser/background/background_chrome.mjs",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "base/browser/popup/popup.html",
+    "default_icon": {
+      "16": "images/wts_inactive_16.png",
+      "32": "images/wts_inactive_32.png",
+      "48": "images/wts_inactive_48.png",
+      "128": "images/wts_inactive_128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.wikitree.com/*"],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/wikitree/browser/wikitree_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.ancestry.com/*",
+        "*://*.ancestry.co.uk/*",
+        "*://*.ancestry.ca/*",
+        "*://*.ancestry.com.au/*",
+        "*://*.ancestry.de/*",
+        "*://*.ancestry.it/*",
+        "*://*.ancestry.fr/*",
+        "*://*.ancestry.se/*",
+        "*://*.ancestry.mx/*",
+        "*://*.ancestrylibrary.com/*",
+        "*://*.ancestrylibraryedition.co.uk/*",
+        "*://*.ancestrylibrary.ca/*",
+        "*://*.ancestrylibrary.com.au/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/ancestry/browser/ancestry_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.findmypast.com/*",
+        "*://*.findmypast.co.uk/*",
+        "*://*.findmypast.ie/*",
+        "*://*.findmypast.com.au/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/fmp/browser/fmp_content.js"
+      ]
+    },
+    {
+      "matches": ["*://www.findagrave.com/*"],
+      "run_at": "document_end",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/fg/browser/fg_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://www.familysearch.org/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/fs/browser/fs_content.js"
+      ]
+    },
+    {
+      "matches": ["*://www.freebmd.org.uk/*"],
+      "run_at": "document_end",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/freebmd/browser/freebmd_content.js"
+      ]
+    },
+    {
+      "matches": ["*://www.freecen.org.uk/*"],
+      "run_at": "document_end",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/freecen/browser/freecen_content.js"
+      ]
+    },
+    {
+      "matches": ["*://www.freereg.org.uk/*"],
+      "run_at": "document_end",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/freereg/browser/freereg_content.js"
+      ]
+    },
+    {
+      "matches": ["*://www.gro.gov.uk/gro/content/certificates/*"],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/gro/browser/gro_content.js"
+      ]
+    },
+    {
+      "matches": ["*://www.scotlandspeople.gov.uk/*"],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/scotp/browser/scotp_content.js"
+      ]
+    }
+  ],
+  "options_ui": {
+    "page": "base/browser/options/options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "images/wikitree_sourcer16.png",
+    "32": "images/wikitree_sourcer32.png",
+    "48": "images/wikitree_sourcer48.png",
+    "128": "images/wikitree_sourcer128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["site/wikitree/core/wikitree_extract_data.mjs"],
+      "matches": ["*://www.wikitree.com/*"]
+    },
+    {
+      "resources": ["site/ancestry/core/ancestry_extract_data.mjs"],
+      "matches": [
+        "*://*.ancestry.com/*",
+        "*://*.ancestry.co.uk/*",
+        "*://*.ancestry.ca/*",
+        "*://*.ancestry.com.au/*",
+        "*://*.ancestry.de/*",
+        "*://*.ancestry.it/*",
+        "*://*.ancestry.fr/*",
+        "*://*.ancestry.se/*",
+        "*://*.ancestry.mx/*",
+        "*://*.ancestrylibrary.com/*",
+        "*://*.ancestrylibraryedition.co.uk/*",
+        "*://*.ancestrylibrary.ca/*",
+        "*://*.ancestrylibrary.com.au/*"
+      ]
+    },
+    {
+      "resources": ["site/fg/core/fg_extract_data.mjs"],
+      "matches": ["*://www.findagrave.com/*"]
+    },
+    {
+      "resources": ["site/fmp/core/fmp_extract_data.mjs"],
+      "matches": [
+        "*://*.findmypast.com/*",
+        "*://*.findmypast.co.uk/*",
+        "*://*.findmypast.ie/*",
+        "*://*.findmypast.com.au/*"
+      ]
+    },
+    {
+      "resources": ["site/freebmd/core/freebmd_extract_data.mjs"],
+      "matches": ["*://www.freebmd.org.uk/*"]
+    },
+    {
+      "resources": ["site/freecen/core/freecen_extract_data.mjs"],
+      "matches": ["*://www.freecen.org.uk/*"]
+    },
+    {
+      "resources": ["site/freereg/core/freereg_extract_data.mjs"],
+      "matches": ["*://www.freereg.org.uk/*"]
+    },
+    {
+      "resources": ["site/fs/core/fs_extract_data.mjs"],
+      "matches": ["*://www.familysearch.org/*"]
+    },
+    {
+      "resources": ["site/gro/core/gro_extract_data.mjs"],
+      "matches": ["*://www.gro.gov.uk/*"]
+    },
+    {
+      "resources": ["site/scotp/core/scotp_extract_data.mjs"],
+      "matches": ["*://www.scotlandspeople.gov.uk/*"]
+    }
+  ],
+  "manifest_version": 3
+}

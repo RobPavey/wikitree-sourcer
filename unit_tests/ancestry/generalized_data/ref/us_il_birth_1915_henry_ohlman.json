@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Henry M Ohlman"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "7 Feb 1915"
+  },
+  "birthDate": {
+    "dateString": "7 Feb 1915"
+  },
+  "birthPlace": {
+    "placeString": "Chillicothe, Illinois"
+  },
+  "eventPlace": {
+    "placeString": "Chillicothe, Illinois"
+  },
+  "lastNameAtBirth": "Ohlman",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Harry A Ohlman"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ethel W Ohlman"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "62361"
+  },
+  "hasValidData": true
+}

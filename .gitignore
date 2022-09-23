@@ -4,6 +4,7 @@ node_modules
 .DS_Store
 ._*
 *.zip
+.DS_Store
 
 # VSCode files
 .vscode/*
@@ -17,6 +18,9 @@ node_modules
 
 # ignore the test results for unit tests - only need to track ref results
 unit_tests/*/*/test
+
+# XCode related files
+xcuserdata/
 
 browser_variants/firefox/*
 !browser_variants/firefox/manifest.json

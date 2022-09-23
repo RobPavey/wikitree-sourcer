@@ -1,0 +1,39 @@
+{
+  "recordData": {
+    "Name": "Sarah E Pate",
+    "Birth Date": "1949",
+    "Age": "27",
+    "Divorce Date": "09 Jun 1976",
+    "Divorce Place": "Lubbock, Texas, United States",
+    "Marriage Date": "14 Feb 1976",
+    "Children Under18": "0",
+    "Event Type": "Divorce",
+    "Spouse Sex Code": "Female"
+  },
+  "fullName": "Sarah E Pate",
+  "givenName": "Sarah E",
+  "surname": "Pate",
+  "gender": "female",
+  "birthDateOriginal": "1949",
+  "birthYear": "1949",
+  "age": "27",
+  "eventDateOriginal": "09 Jun 1976",
+  "eventDate": "9 Jun 1976",
+  "eventYear": "1976",
+  "eventPlaceOriginal": "Lubbock, Texas, United States",
+  "eventPlace": "Lubbock, Texas, United States",
+  "factType": "Divorce",
+  "eventCountry": "United States",
+  "eventCounty": "Lubbock",
+  "eventState": "Texas",
+  "referenceData": {
+    "fileNumber": "035474"
+  },
+  "collectionTitle": "Texas Divorce Index, 1968-2010",
+  "fsCollectionId": "2038378",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9MZX-W4SX",
+  "citation": "\"Texas Divorce Index, 1968-2010,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:VYX9-KBH : 12 December 2014), John T Pate and Sarah E Pate, 09 Jun 1976; from \"Texas, Divorce Index, 1968-2011,\" database, <i>Ancestry</i> (http://www.ancestry.com : 2005); citing Lubbock, Texas, United States, certificate number 035474, Texas Department of State Health Services.",
+  "sourceTitleForPerson": "Sarah E Pate, \"Texas Divorce Index, 1968-2010\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:VYX9-KBH",
+  "pageType": "record"
+}

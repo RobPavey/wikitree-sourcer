@@ -1,0 +1,31 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1579851:1558",
+  "pageType": "record",
+  "dbId": "1558",
+  "recordId": "1579851",
+  "ancestryTemplate": "{{Ancestry Record|1558|1579851}}",
+  "domain": "com",
+  "titleName": "Amelia Elizabeth Littlemore",
+  "titleCollection": "London, England, Church of England Births and Baptisms, 1813-1920",
+  "recordData": {
+    "Name": "Amelia Elizabeth Littlemore",
+    "Gender": "Female",
+    "Record Type": "Baptism",
+    "Baptism Date": "14 Jun 1850",
+    "Baptism Place": "Old St Pancras, St Pancras, Camden, England",
+    "Father": "John Littlemore",
+    "Mother": "Mary Littlemore",
+    "Register Type": "Parish Register"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1558&h=151579851&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1558&h=301579851&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1558/images/31280_194999-00237?pid=1579851&usePUB=true&usePUBJs=true",
+  "imageDbId": "1558",
+  "imageRecordId": "31280_194999-00237",
+  "sourceCitation": "London Metropolitan Archives; London, England; London Church of England Parish Registers; Reference Number: P90/PAN1/027",
+  "sourceInformation": "Ancestry.com. London, England, Church of England Births and Baptisms, 1813-1920 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Board of Guardian Records and Church of England Parish Registers. London Metropolitan Archives, London. Images produced by permission of the City of London Corporation. The City of London gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to London Metropolitan Archives, 40 Northampton Road, London EC1R 0HB. Email - ask.lma@cityoflondon.gov.uk. Infringement of the above condition may result in legal action.",
+  "originalData": "Board of Guardian Records and Church of England Parish Registers. London Metropolitan Archives, London.",
+  "sourceDescription": "This data collection consists of baptism records from over 10,000 Church of England parish registers (including Bishop’s Transcripts) in the Greater London area. These are taken from the registers held at London Metropolitan Archives as well as those formerly at Guildhall Manuscripts Section. It also includes registers of births and baptisms that occurred in workhouses operated by the Boards of Guardians. Learn more..."
+}

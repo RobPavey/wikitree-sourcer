@@ -1,0 +1,82 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Emmeline's marriage was registered in the Apr-May-Jun quarter of 1913 in the Tamworth district.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)<br/>\nEmmeline M Brain marriage registered Apr-May-Jun 1913 in Tamworth.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Emmeline's marriage was registered in the Apr-May-Jun quarter of 1913 in the Tamworth district.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)<br/>\nEmmeline M Brain marriage registered Apr-May-Jun 1913 in Tamworth.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)<br/>Emmeline M Brain marriage registered Apr-May-Jun 1913 in Tamworth.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)<br/>\nName: Emmeline M Brain; Spouse Surname: Pavey; Registration Year: 1913; Registration Quarter: Apr-May-Jun; Registration District: Tamworth; Inferred County: Staffordshire; Records on Page: Robert F Bishop<br/>Emmeline M Brain<br/>May B Hodkinson<br/>Arthur E Pavey.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Emmeline's marriage was registered in the Apr-May-Jun quarter of 1913 in the Tamworth district.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)<br/>\nName: Emmeline M Brain; Spouse Surname: Pavey; Registration Year: 1913; Registration Quarter: Apr-May-Jun; Registration District: Tamworth; Inferred County: Staffordshire; Records on Page: Robert F Bishop<br/>Emmeline M Brain<br/>May B Hodkinson<br/>Arthur E Pavey.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)<br/>Name: Emmeline M Brain; Spouse Surname: Pavey; Registration Year: 1913; Registration Quarter: Apr-May-Jun; Registration District: Tamworth; Inferred County: Staffordshire; Records on Page: Robert F Bishop<br/>Emmeline M Brain<br/>May B Hodkinson<br/>Arthur E Pavey.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emmeline M Brain\n|-\n| Spouse Surname || Pavey\n|-\n| Registration Year || 1913\n|-\n| Registration Quarter || Apr-May-Jun\n|-\n| Registration District || Tamworth\n|-\n| Inferred County || Staffordshire\n|-\n| Records on Page || Robert F Bishop<br/>Emmeline M Brain<br/>May B Hodkinson<br/>Arthur E Pavey\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Emmeline's marriage was registered in the Apr-May-Jun quarter of 1913 in the Tamworth district.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emmeline M Brain\n|-\n| Spouse Surname || Pavey\n|-\n| Registration Year || 1913\n|-\n| Registration Quarter || Apr-May-Jun\n|-\n| Registration District || Tamworth\n|-\n| Inferred County || Staffordshire\n|-\n| Records on Page || Robert F Bishop<br/>Emmeline M Brain<br/>May B Hodkinson<br/>Arthur E Pavey\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)<br/>Name: Emmeline M Brain; Spouse Surname: Pavey; Registration Year: 1913; Registration Quarter: Apr-May-Jun; Registration District: Tamworth; Inferred County: Staffordshire; Records on Page: Robert F Bishop<br/>Emmeline M Brain<br/>May B Hodkinson<br/>Arthur E Pavey.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"England & Wales, Civil Registration Marriage Index, 1837-1915,\" database, ({{Ancestry Record|8913|3291674}} : accessed 6 May 2021), Emmeline M Brain marriage registered Apr-May-Jun 1913 in Tamworth; citing England and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 725.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Emmeline's marriage was registered in the Apr-May-Jun quarter of 1913 in the Tamworth district.<ref>\"England & Wales, Civil Registration Marriage Index, 1837-1915,\" database, ({{Ancestry Record|8913|3291674}} : accessed 6 May 2021), Emmeline M Brain marriage registered Apr-May-Jun 1913 in Tamworth; citing England and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 725.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"England & Wales, Civil Registration Marriage Index, 1837-1915,\" database, ({{Ancestry Record|8913|3291674}} : accessed 6 May 2021), Emmeline M Brain marriage registered Apr-May-Jun 1913 in Tamworth; citing England and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 725.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage Registration'':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\", database, \nEngland and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 725, \n({{Ancestry Record|8913|3291674}} : accessed 6 May 2021), \nName: Emmeline M Brain; Spouse Surname: Pavey; Registration Year: 1913; Registration Quarter: Apr-May-Jun; Registration District: Tamworth; Inferred County: Staffordshire; Records on Page: Robert F Bishop, Emmeline M Brain, May B Hodkinson, Arthur E Pavey.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Emmeline's marriage was registered in the Apr-May-Jun quarter of 1913 in the Tamworth district.<ref>\n''Marriage Registration'':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\", database, \nEngland and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 725, \n({{Ancestry Record|8913|3291674}} : accessed 6 May 2021), \nName: Emmeline M Brain; Spouse Surname: Pavey; Registration Year: 1913; Registration Quarter: Apr-May-Jun; Registration District: Tamworth; Inferred County: Staffordshire; Records on Page: Robert F Bishop, Emmeline M Brain, May B Hodkinson, Arthur E Pavey.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage Registration'': \"England & Wales, Civil Registration Marriage Index, 1837-1915\", database, England and Wales Civil Registration Indexes. London, England General Register Office, Volume 6b, Page 725, ({{Ancestry Record|8913|3291674}} : accessed 6 May 2021), Name: Emmeline M Brain; Spouse Surname: Pavey; Registration Year: 1913; Registration Quarter: Apr-May-Jun; Registration District: Tamworth; Inferred County: Staffordshire; Records on Page: Robert F Bishop, Emmeline M Brain, May B Hodkinson, Arthur E Pavey.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "Emmeline M married in 1913. The marriage was registered in Tamworth, Staffordshire.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emmeline M Brain\n|-\n| Spouse Surname || Pavey\n|-\n| Registration Year || 1913\n|-\n| Registration Quarter || Apr-May-Jun\n|-\n| Registration District || Tamworth\n|-\n| Inferred County || Staffordshire\n|-\n| Records on Page || Robert F Bishop<br/>Emmeline M Brain<br/>May B Hodkinson<br/>Arthur E Pavey\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "Emmeline M Brain married in 1913. The marriage was registered in the Apr-May-Jun quarter of 1913 in Tamworth.<ref>\n'''Marriage Registration''':\n\"England & Wales, Civil Registration Marriage Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 6b; Page: 725<br/>\n{{Ancestry Record|8913|3291674}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Emmeline M Brain\n|-\n| Spouse Surname || Pavey\n|-\n| Registration Year || 1913\n|-\n| Registration Quarter || Apr-May-Jun\n|-\n| Registration District || Tamworth\n|-\n| Inferred County || Staffordshire\n|-\n| Records on Page || Robert F Bishop<br/>Emmeline M Brain<br/>May B Hodkinson<br/>Arthur E Pavey\n|}\n</ref>",
+    "type": "narrative"
+  }
+}

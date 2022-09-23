@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Black",
+    "forenames": "Louisa Annie"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1886"
+  },
+  "registrationDistrict": "Aberdeen Old Machar",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Aberdeenshire",
+    "placeString": "Aberdeen Old Machar, Aberdeenshire, Scotland"
+  },
+  "lastNameAtBirth": "Black",
+  "birthPlace": {
+    "country": "Scotland",
+    "county": "Aberdeenshire",
+    "placeString": "Aberdeen Old Machar, Aberdeenshire, Scotland"
+  },
+  "birthDate": {
+    "yearString": "1886"
+  },
+  "hasValidData": true
+}

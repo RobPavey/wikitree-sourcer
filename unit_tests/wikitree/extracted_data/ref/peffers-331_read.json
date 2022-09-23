@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Christian",
+  "prefNames": "",
+  "middleNames": "Johnston",
+  "lnab": "Peffers",
+  "currentLastName": "Milne",
+  "mothersMaidenName": "Blamire",
+  "birthDate": "20 Mar 1869",
+  "birthDateStatus": "none",
+  "deathDate": "2 Oct 1943",
+  "deathDateStatus": "none",
+  "birthLocation": "Kirriemuir, Angus, Scotland, United Kingdom",
+  "deathLocation": "Manchester, Lancashire, England, United Kingdom",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Milne-2946",
+      "name": "John Milne",
+      "marriageString": "13 Jul 1892 in Dundee, Forfarshire, Scotland",
+      "marriageDate": "13 Jul 1892",
+      "marriagePlace": "Dundee, Forfarshire, Scotland"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Peffers-331",
+  "currentTabText": "Christian (Peffers) Milne's Profile",
+  "pageType": "read",
+  "wikiId": "Peffers-331",
+  "name": "Christian Johnston (Peffers) Milne",
+  "parents": {
+    "father": {
+      "wikiId": "Peffers-302",
+      "name": "Andrew Peffers"
+    },
+    "mother": {
+      "wikiId": "Blamire-40",
+      "name": "Jessie (Blamire) Peffers"
+    }
+  }
+}

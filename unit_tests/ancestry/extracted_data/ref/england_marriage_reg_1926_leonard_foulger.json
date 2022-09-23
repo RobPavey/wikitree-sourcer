@@ -1,0 +1,30 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8753&h=62060982&tid=&pid=&queryId=1b01eb2d3732c5b1f808cd7f527cb609",
+  "pageType": "record",
+  "dbId": "8753",
+  "recordId": "62060982",
+  "ancestryTemplate": "{{Ancestry Record|8753|62060982}}",
+  "domain": "com",
+  "titleName": "Leonard J Foulger",
+  "titleCollection": "England & Wales, Civil Registration Marriage Index, 1916-2005",
+  "recordData": {
+    "Name": "Leonard J Foulger [Leonard James Foulger]",
+    "Registration Date": "Jul 1926 [Aug 1926] [Sep 1926]",
+    "Registration Quarter": "Jul-Aug-Sep",
+    "Registration District": "Brentford",
+    "Inferred County": "Middlesex",
+    "Spouse": "Kathleen Broghan",
+    "Volume Number": "3a",
+    "Page Number": "554"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=ONSmarriage1984&indiv=try&h=62041889"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8753/images/ons_m19263az-0414?pid=62060982&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D8753%26h%3D62060982%26tid%3D%26pid%3D%26queryId%3D1b01eb2d3732c5b1f808cd7f527cb609&treeid=&personid=&hintid=&queryId=1b01eb2d3732c5b1f808cd7f527cb609&usePUB=true&usePUBJs=true",
+  "imageDbId": "8753",
+  "imageRecordId": "ons_m19263az-0414",
+  "sourceCitation": "General Register Office; United Kingdom; Volume: 3a; Page: 554",
+  "sourceInformation": "Ancestry.com. England & Wales, Civil Registration Marriage Index, 1916-2005 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc, 2010. Original data: General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Indexes created by the General Register Office, in London, England.",
+  "originalData": "General Register Office. England and Wales Civil Registration Indexes. London, England: General Register Office. © Crown copyright. Published by permission of the Controller of HMSO and the Office for National Statistics. You must not copy on, transfer or reproduce records without the prior permission of ONS. Indexes created by the General Register Office, in London, England.",
+  "sourceDescription": "This database is a searchable, digitized version of the indices of civil registrations in England and Wales, reported quarterly to the General Register Office (GRO) in London. This index spans the years between 1916 and 2005. You need the information found in an original index to request a copy of a marriage certificate for the individual referenced. Learn more..."
+}

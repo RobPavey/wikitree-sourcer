@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>\n{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1881 census Caroline (age 33) was the wife of John Risbry at 64 Farrar Street, Linthorpe, Yorkshire, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>\n{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>\n{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)<br/>\nCaroline Risbry (33), wife, in household of John Risbry (37) at 64 Farrar Street, Linthorpe in Middlesbrough registration district in Yorkshire, England. Born in Plymouth, Devon, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1881 census Caroline (age 33) was the wife of John Risbry at 64 Farrar Street, Linthorpe, Yorkshire, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>\n{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)<br/>\nCaroline Risbry (33), wife, in household of John Risbry (37) at 64 Farrar Street, Linthorpe in Middlesbrough registration district in Yorkshire, England. Born in Plymouth, Devon, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)<br/>Caroline Risbry (33), wife, in household of John Risbry (37) at 64 Farrar Street, Linthorpe in Middlesbrough registration district in Yorkshire, England. Born in Plymouth, Devon, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>\n{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)<br/>\nName: Caroline Risbry; Age: 33; Estimated Birth Year: abt 1848; Relationship to Head: Wife; Spouse: John Risbry; Gender: Female; Where born: Plymouth, Devon, England; Civil Parish: Linthorpe; County/Island: Yorkshire; Country: England; Street Address: 64 Farrar Street; Marital status: Married; Registration District: Middlesbrough; <br/>Household Members:<br/>John Risbry 37<br/>Caroline Risbry 33<br/>George Risbry 12<br/>Elizabeth Risbry 10<br/>John R. Risbry 8<br/>Rachel Risbry 4<br/>Amelia Risbry 2<br/>Alfred Moore 36.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1881 census Caroline (age 33) was the wife of John Risbry at 64 Farrar Street, Linthorpe, Yorkshire, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>\n{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)<br/>\nName: Caroline Risbry; Age: 33; Estimated Birth Year: abt 1848; Relationship to Head: Wife; Spouse: John Risbry; Gender: Female; Where born: Plymouth, Devon, England; Civil Parish: Linthorpe; County/Island: Yorkshire; Country: England; Street Address: 64 Farrar Street; Marital status: Married; Registration District: Middlesbrough; <br/>Household Members:<br/>John Risbry 37<br/>Caroline Risbry 33<br/>George Risbry 12<br/>Elizabeth Risbry 10<br/>John R. Risbry 8<br/>Rachel Risbry 4<br/>Amelia Risbry 2<br/>Alfred Moore 36.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)<br/>Name: Caroline Risbry; Age: 33; Estimated Birth Year: abt 1848; Relationship to Head: Wife; Spouse: John Risbry; Gender: Female; Where born: Plymouth, Devon, England; Civil Parish: Linthorpe; County/Island: Yorkshire; Country: England; Street Address: 64 Farrar Street; Marital status: Married; Registration District: Middlesbrough; <br/>Household Members:<br/>John Risbry 37<br/>Caroline Risbry 33<br/>George Risbry 12<br/>Elizabeth Risbry 10<br/>John R. Risbry 8<br/>Rachel Risbry 4<br/>Amelia Risbry 2<br/>Alfred Moore 36.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>\n{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Caroline Risbry\n|-\n| Age || 33\n|-\n| Estimated Birth Year || abt 1848\n|-\n| Relationship to Head || Wife\n|-\n| Spouse || John Risbry\n|-\n| Gender || Female\n|-\n| Where born || Plymouth, Devon, England\n|-\n| Civil Parish || Linthorpe\n|-\n| County/Island || Yorkshire\n|-\n| Country || England\n|-\n| Street Address || 64 Farrar Street\n|-\n| Marital status || Married\n|-\n| Registration District || Middlesbrough\n|-\n| Household Members || John Risbry 37<br/>Caroline Risbry 33<br/>George Risbry 12<br/>Elizabeth Risbry 10<br/>John R. Risbry 8<br/>Rachel Risbry 4<br/>Amelia Risbry 2<br/>Alfred Moore 36\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1881 census Caroline (age 33) was the wife of John Risbry at 64 Farrar Street, Linthorpe, Yorkshire, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>\n{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Caroline Risbry\n|-\n| Age || 33\n|-\n| Estimated Birth Year || abt 1848\n|-\n| Relationship to Head || Wife\n|-\n| Spouse || John Risbry\n|-\n| Gender || Female\n|-\n| Where born || Plymouth, Devon, England\n|-\n| Civil Parish || Linthorpe\n|-\n| County/Island || Yorkshire\n|-\n| Country || England\n|-\n| Street Address || 64 Farrar Street\n|-\n| Marital status || Married\n|-\n| Registration District || Middlesbrough\n|-\n| Household Members || John Risbry 37<br/>Caroline Risbry 33<br/>George Risbry 12<br/>Elizabeth Risbry 10<br/>John R. Risbry 8<br/>Rachel Risbry 4<br/>Amelia Risbry 2<br/>Alfred Moore 36\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 4854; Folio: 17; Page: 27; GSU roll: 1342169; ED, institution, or vessel: 39<br/>{{Ancestry Record|7572|26496682}} (accessed 6 May 2021)<br/>Name: Caroline Risbry; Age: 33; Estimated Birth Year: abt 1848; Relationship to Head: Wife; Spouse: John Risbry; Gender: Female; Where born: Plymouth, Devon, England; Civil Parish: Linthorpe; County/Island: Yorkshire; Country: England; Street Address: 64 Farrar Street; Marital status: Married; Registration District: Middlesbrough; <br/>Household Members:<br/>John Risbry 37<br/>Caroline Risbry 33<br/>George Risbry 12<br/>Elizabeth Risbry 10<br/>John R. Risbry 8<br/>Rachel Risbry 4<br/>Amelia Risbry 2<br/>Alfred Moore 36.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1881 England Census,\" database, ({{Ancestry Record|7572|26496682}} : accessed 6 May 2021), Caroline Risbry (33), wife, in household of John Risbry (37) at 64 Farrar Street, Linthorpe in Middlesbrough registration district in Yorkshire, England. Born in Plymouth, Devon, England; citing Class RG11, Piece 4854, Folio 17, Page 27, GSU roll 1342169, ED, institution, or vessel 39.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1881 census Caroline (age 33) was the wife of John Risbry at 64 Farrar Street, Linthorpe, Yorkshire, England.<ref>\"1881 England Census,\" database, ({{Ancestry Record|7572|26496682}} : accessed 6 May 2021), Caroline Risbry (33), wife, in household of John Risbry (37) at 64 Farrar Street, Linthorpe in Middlesbrough registration district in Yorkshire, England. Born in Plymouth, Devon, England; citing Class RG11, Piece 4854, Folio 17, Page 27, GSU roll 1342169, ED, institution, or vessel 39.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1881 England Census,\" database, ({{Ancestry Record|7572|26496682}} : accessed 6 May 2021), Caroline Risbry (33), wife, in household of John Risbry (37) at 64 Farrar Street, Linthorpe in Middlesbrough registration district in Yorkshire, England. Born in Plymouth, Devon, England; citing Class RG11, Piece 4854, Folio 17, Page 27, GSU roll 1342169, ED, institution, or vessel 39.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1881 Census'':\n\"1881 England Census\", database, \nClass RG11, Piece 4854, Folio 17, Page 27, GSU roll 1342169, ED, institution, or vessel 39, \n({{Ancestry Record|7572|26496682}} : accessed 6 May 2021), \nName: Caroline Risbry; Age: 33; Estimated Birth Year: abt 1848; Relationship to Head: Wife; Spouse: John Risbry; Gender: Female; Where born: Plymouth, Devon, England; Civil Parish: Linthorpe; County/Island: Yorkshire; Country: England; Street Address: 64 Farrar Street; Marital status: Married; Registration District: Middlesbrough; Household Members: John Risbry 37, Caroline Risbry 33, George Risbry 12, Elizabeth Risbry 10, John R. Risbry 8, Rachel Risbry 4, Amelia Risbry 2, Alfred Moore 36.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1881 census Caroline (age 33) was the wife of John Risbry at 64 Farrar Street, Linthorpe, Yorkshire, England.<ref>\n''1881 Census'':\n\"1881 England Census\", database, \nClass RG11, Piece 4854, Folio 17, Page 27, GSU roll 1342169, ED, institution, or vessel 39, \n({{Ancestry Record|7572|26496682}} : accessed 6 May 2021), \nName: Caroline Risbry; Age: 33; Estimated Birth Year: abt 1848; Relationship to Head: Wife; Spouse: John Risbry; Gender: Female; Where born: Plymouth, Devon, England; Civil Parish: Linthorpe; County/Island: Yorkshire; Country: England; Street Address: 64 Farrar Street; Marital status: Married; Registration District: Middlesbrough; Household Members: John Risbry 37, Caroline Risbry 33, George Risbry 12, Elizabeth Risbry 10, John R. Risbry 8, Rachel Risbry 4, Amelia Risbry 2, Alfred Moore 36.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1881 Census'': \"1881 England Census\", database, Class RG11, Piece 4854, Folio 17, Page 27, GSU roll 1342169, ED, institution, or vessel 39, ({{Ancestry Record|7572|26496682}} : accessed 6 May 2021), Name: Caroline Risbry; Age: 33; Estimated Birth Year: abt 1848; Relationship to Head: Wife; Spouse: John Risbry; Gender: Female; Where born: Plymouth, Devon, England; Civil Parish: Linthorpe; County/Island: Yorkshire; Country: England; Street Address: 64 Farrar Street; Marital status: Married; Registration District: Middlesbrough; Household Members: John Risbry 37, Caroline Risbry 33, George Risbry 12, Elizabeth Risbry 10, John R. Risbry 8, Rachel Risbry 4, Amelia Risbry 2, Alfred Moore 36.",
+    "type": "source"
+  }
+}

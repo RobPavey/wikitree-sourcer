@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Military''':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>\nTexas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>\n{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Robert was in the military and died on 12 July 1915 in Burleson, Texas.<ref>\n'''Military''':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>\nTexas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>\n{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Military''': \"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>Texas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Military''':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>\nTexas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>\n{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)<br/>\nName: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Robert was in the military and died on 12 July 1915 in Burleson, Texas.<ref>\n'''Military''':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>\nTexas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>\n{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)<br/>\nName: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Military''': \"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>Texas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)<br/>Name: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Military''':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>\nTexas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>\n{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)<br/>\nName: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Robert was in the military and died on 12 July 1915 in Burleson, Texas.<ref>\n'''Military''':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>\nTexas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>\n{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)<br/>\nName: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Military''': \"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>Texas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)<br/>Name: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Military''':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>\nTexas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>\n{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Robert William Coleman\n|-\n| Application Date || 14 May 1929\n|-\n| Application Place || Burleson\n|-\n| Spouse || Mrs N E Coleman\n|-\n| Marriage Date || 10 Jun 1866\n|-\n| Marriage Place || Monroe, Mississippi\n|-\n| Death Date || 12 Jul 1915\n|-\n| Death Place || Burleson, Texas\n|-\n| Pension File Number || 45642\n|-\n| Application Type || Widow\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Robert was in the military and died on 12 July 1915 in Burleson, Texas.<ref>\n'''Military''':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>\nTexas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>\n{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Robert William Coleman\n|-\n| Application Date || 14 May 1929\n|-\n| Application Place || Burleson\n|-\n| Spouse || Mrs N E Coleman\n|-\n| Marriage Date || 10 Jun 1866\n|-\n| Marriage Place || Monroe, Mississippi\n|-\n| Death Date || 12 Jul 1915\n|-\n| Death Place || Burleson, Texas\n|-\n| Pension File Number || 45642\n|-\n| Application Type || Widow\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Military''': \"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\"<br/>Texas State Library and Archives Commission; Austin, Texas; Confederate Pension Applications, 1899-1975; Collection #: CPA16526; Roll #: 2442; Roll Description: Pension File Nos. 04480 to 45660, Application Years 1915 to 1929<br/>{{Ancestry Record|1677|1382783}} (accessed 6 May 2021)<br/>Name: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958,\" database, ({{Ancestry Record|1677|1382783}} : accessed 6 May 2021), Name Robert William Coleman, Application Date 14 May 1929, Application Place Burleson, Spouse Mrs N E Coleman, Marriage Date 10 Jun 1866, Marriage Place Monroe, Mississippi, Death Date 12 Jul 1915, Death Place Burleson, Texas, Pension File Number 45642, Application Type Widow; citing Texas State Library and Archives Commission, Austin, Texas, Confederate Pension Applications, 1899-1975, Collection # CPA16526, Roll # 2442, Roll Description Pension File Nos. 04480 to 45660, Application Years 1915 to 1929.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Robert was in the military and died on 12 July 1915 in Burleson, Texas.<ref>\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958,\" database, ({{Ancestry Record|1677|1382783}} : accessed 6 May 2021), Name Robert William Coleman, Application Date 14 May 1929, Application Place Burleson, Spouse Mrs N E Coleman, Marriage Date 10 Jun 1866, Marriage Place Monroe, Mississippi, Death Date 12 Jul 1915, Death Place Burleson, Texas, Pension File Number 45642, Application Type Widow; citing Texas State Library and Archives Commission, Austin, Texas, Confederate Pension Applications, 1899-1975, Collection # CPA16526, Roll # 2442, Roll Description Pension File Nos. 04480 to 45660, Application Years 1915 to 1929.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958,\" database, ({{Ancestry Record|1677|1382783}} : accessed 6 May 2021), Name Robert William Coleman, Application Date 14 May 1929, Application Place Burleson, Spouse Mrs N E Coleman, Marriage Date 10 Jun 1866, Marriage Place Monroe, Mississippi, Death Date 12 Jul 1915, Death Place Burleson, Texas, Pension File Number 45642, Application Type Widow; citing Texas State Library and Archives Commission, Austin, Texas, Confederate Pension Applications, 1899-1975, Collection # CPA16526, Roll # 2442, Roll Description Pension File Nos. 04480 to 45660, Application Years 1915 to 1929.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Military'':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\", database, \nTexas State Library and Archives Commission, Austin, Texas, Confederate Pension Applications, 1899-1975, Collection # CPA16526, Roll # 2442, Roll Description Pension File Nos. 04480 to 45660, Application Years 1915 to 1929, \n({{Ancestry Record|1677|1382783}} : accessed 6 May 2021), \nName: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Robert was in the military and died on 12 July 1915 in Burleson, Texas.<ref>\n''Military'':\n\"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\", database, \nTexas State Library and Archives Commission, Austin, Texas, Confederate Pension Applications, 1899-1975, Collection # CPA16526, Roll # 2442, Roll Description Pension File Nos. 04480 to 45660, Application Years 1915 to 1929, \n({{Ancestry Record|1677|1382783}} : accessed 6 May 2021), \nName: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Military'': \"Alabama, Texas and Virginia, U.S., Confederate Pensions, 1884-1958\", database, Texas State Library and Archives Commission, Austin, Texas, Confederate Pension Applications, 1899-1975, Collection # CPA16526, Roll # 2442, Roll Description Pension File Nos. 04480 to 45660, Application Years 1915 to 1929, ({{Ancestry Record|1677|1382783}} : accessed 6 May 2021), Name: Robert William Coleman; Application Date: 14 May 1929; Application Place: Burleson; Spouse: Mrs N E Coleman; Marriage Date: 10 Jun 1866; Marriage Place: Monroe, Mississippi; Death Date: 12 Jul 1915; Death Place: Burleson, Texas; Pension File Number: 45642; Application Type: Widow.",
+    "type": "source"
+  }
+}

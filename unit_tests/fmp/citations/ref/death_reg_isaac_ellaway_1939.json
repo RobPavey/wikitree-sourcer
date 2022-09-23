@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 11A; Page: 1<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Isaac's death (age 67) was registered in the Oct-Nov-Dec quarter of 1939 in the Chepstow district.<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 11A; Page: 1<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Deaths 1837-2007\"<br/>Volume: 11A; Page: 1<br/>[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 11A; Page: 1<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nIsaac R Ellaway death registered Oct-Nov-Dec 1939 in Chepstow (age 67).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Isaac's death (age 67) was registered in the Oct-Nov-Dec quarter of 1939 in the Chepstow district.<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 11A; Page: 1<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nIsaac R Ellaway death registered Oct-Nov-Dec 1939 in Chepstow (age 67).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Deaths 1837-2007\"<br/>Volume: 11A; Page: 1<br/>[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)<br/>Isaac R Ellaway death registered Oct-Nov-Dec 1939 in Chepstow (age 67).",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 11A; Page: 1<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Isaac R; Last name: Ellaway; Gender: Male; Birth year: 1872; Age: 67; Death quarter: 4; Death year: 1939; District: Chepstow; County: Monmouthshire; Volume: 11A; Country: Wales.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Isaac's death (age 67) was registered in the Oct-Nov-Dec quarter of 1939 in the Chepstow district.<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 11A; Page: 1<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Isaac R; Last name: Ellaway; Gender: Male; Birth year: 1872; Age: 67; Death quarter: 4; Death year: 1939; District: Chepstow; County: Monmouthshire; Volume: 11A; Country: Wales.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Deaths 1837-2007\"<br/>Volume: 11A; Page: 1<br/>[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Isaac R; Last name: Ellaway; Gender: Male; Birth year: 1872; Age: 67; Death quarter: 4; Death year: 1939; District: Chepstow; County: Monmouthshire; Volume: 11A; Country: Wales.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 11A; Page: 1<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Isaac R\n|-\n| Last name || Ellaway\n|-\n| Gender || Male\n|-\n| Birth day || -\n|-\n| Birth month || -\n|-\n| Birth year || 1872\n|-\n| Age || 67\n|-\n| Death quarter || 4\n|-\n| Death year || 1939\n|-\n| District || Chepstow\n|-\n| County || Monmouthshire\n|-\n| Volume || 11A\n|-\n| Country || Wales\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Isaac's death (age 67) was registered in the Oct-Nov-Dec quarter of 1939 in the Chepstow district.<ref>\n'''Death Registration''':\n\"England & Wales Deaths 1837-2007\"<br/>\nVolume: 11A; Page: 1<br/>\n[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Isaac R\n|-\n| Last name || Ellaway\n|-\n| Gender || Male\n|-\n| Birth day || -\n|-\n| Birth month || -\n|-\n| Birth year || 1872\n|-\n| Age || 67\n|-\n| Death quarter || 4\n|-\n| Death year || 1939\n|-\n| District || Chepstow\n|-\n| County || Monmouthshire\n|-\n| Volume || 11A\n|-\n| Country || Wales\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Deaths 1837-2007\"<br/>Volume: 11A; Page: 1<br/>[https://search.findmypast.co.uk/record?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273&parentid=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1939%2F4%2FAZ%2F000273%2F035 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Isaac R; Last name: Ellaway; Gender: Male; Birth year: 1872; Age: 67; Death quarter: 4; Death year: 1939; District: Chepstow; County: Monmouthshire; Volume: 11A; Country: Wales.",
+    "type": "source"
+  }
+}

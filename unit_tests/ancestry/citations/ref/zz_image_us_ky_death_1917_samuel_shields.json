@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>\nAncestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>\nSamuel Shields.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>\nAncestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>\nSamuel Shields.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death''': \"Kentucky, U.S., Death Records, 1852-1965\"<br/>Death Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>Samuel Shields.",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>\nAncestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>\nSamuel Shields.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>\nAncestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>\nSamuel Shields.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death''': \"Kentucky, U.S., Death Records, 1852-1965\"<br/>Death Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>Samuel Shields.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>\nAncestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>\nSamuel Shields.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>\nAncestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>\nSamuel Shields.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death''': \"Kentucky, U.S., Death Records, 1852-1965\"<br/>Death Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>Samuel Shields.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>\nAncestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>\nSamuel Shields.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "<ref>\n'''Death''':\n\"Kentucky, U.S., Death Records, 1852-1965\"<br/>\nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>\nAncestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>\nSamuel Shields.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death''': \"Kentucky, U.S., Death Records, 1852-1965\"<br/>Death Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309<br/>Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} (accessed 6 May 2021)<br/>Samuel Shields.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Kentucky, U.S., Death Records, 1852-1965,\" database with images, (Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} : accessed 6 May 2021), Samuel Shields; citing Death Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "<ref>\"Kentucky, U.S., Death Records, 1852-1965,\" database with images, (Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} : accessed 6 May 2021), Samuel Shields; citing Death Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Kentucky, U.S., Death Records, 1852-1965,\" database with images, (Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} : accessed 6 May 2021), Samuel Shields; citing Death Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death'':\n\"Kentucky, U.S., Death Records, 1852-1965\", database with images, \nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309, \n(Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} : accessed 6 May 2021), \nSamuel Shields.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "<ref>\n''Death'':\n\"Kentucky, U.S., Death Records, 1852-1965\", database with images, \nDeath Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309, \n(Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} : accessed 6 May 2021), \nSamuel Shields.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death'': \"Kentucky, U.S., Death Records, 1852-1965\", database with images, Death Certificates, 1911-1965 > 1917 > Film 7016193: All Counties > image 864 of 3309, (Ancestry {{Ancestry Image|1222|KYVR_7016193-0864}} : accessed 6 May 2021), Samuel Shields.",
+    "type": "source"
+  }
+}

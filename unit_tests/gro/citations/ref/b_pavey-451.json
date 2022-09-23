@@ -1,0 +1,74 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nPavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>\n''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Harry's birth was registered in the Apr-May-Jun quarter of 1871 in the Saint Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nPavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>\n''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Pavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.",
+    "type": "source"
+  },
+  "no_brs_or_nls_inline": {
+    "citation": "<ref>'''Birth Registration''': \"England & Wales General Register Office\", [https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021), Pavey, Harry Alfred George (Mother's maiden name: Littlemore). ''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.</ref>",
+    "type": "inline"
+  },
+  "no_brs_or_nls_narrative": {
+    "citation": "Harry's birth was registered in the Apr-May-Jun quarter of 1871 in the Saint Pancras district.<ref>'''Birth Registration''': \"England & Wales General Register Office\", [https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021), Pavey, Harry Alfred George (Mother's maiden name: Littlemore). ''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.</ref>",
+    "type": "narrative"
+  },
+  "no_brs_or_nls_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\", [https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021), Pavey, Harry Alfred George (Mother's maiden name: Littlemore). ''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.",
+    "type": "source"
+  },
+  "no_brs_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\", \n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021), \nPavey, Harry Alfred George (Mother's maiden name: Littlemore). \n''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.\n</ref>",
+    "type": "inline"
+  },
+  "no_brs_narrative": {
+    "citation": "Harry's birth was registered in the Apr-May-Jun quarter of 1871 in the Saint Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\", \n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021), \nPavey, Harry Alfred George (Mother's maiden name: Littlemore). \n''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.\n</ref>",
+    "type": "narrative"
+  },
+  "no_brs_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\", [https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021), Pavey, Harry Alfred George (Mother's maiden name: Littlemore). ''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.",
+    "type": "source"
+  },
+  "no_nls_inline": {
+    "citation": "<ref>'''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Pavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.</ref>",
+    "type": "inline"
+  },
+  "no_nls_narrative": {
+    "citation": "Harry's birth was registered in the Apr-May-Jun quarter of 1871 in the Saint Pancras district.<ref>'''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Pavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.</ref>",
+    "type": "narrative"
+  },
+  "no_nls_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Pavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.",
+    "type": "source"
+  },
+  "no_ref_nls_inline": {
+    "citation": "<ref>'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nPavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>\n''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.</ref>",
+    "type": "inline"
+  },
+  "no_ref_nls_narrative": {
+    "citation": "Harry's birth was registered in the Apr-May-Jun quarter of 1871 in the Saint Pancras district.<ref>'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nPavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>\n''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.</ref>",
+    "type": "narrative"
+  },
+  "no_ref_nls_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Pavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.",
+    "type": "source"
+  },
+  "no_body_nls_inline": {
+    "citation": "<ref>\n'''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Pavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.\n</ref>",
+    "type": "inline"
+  },
+  "no_body_nls_narrative": {
+    "citation": "Harry's birth was registered in the Apr-May-Jun quarter of 1871 in the Saint Pancras district.<ref>\n'''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Pavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.\n</ref>",
+    "type": "narrative"
+  },
+  "no_body_nls_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1871&range=0&surname=PAVEY&motherssurname=LITTLEMORE&forename1=HARRY&forename2=ALFRED&gender=M&quarter=J&district=SAINT%20PANCRAS&volume=01B&page=142 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Pavey, Harry Alfred George (Mother's maiden name: Littlemore).<br/>''GRO Reference:'' 1871 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/st%20pancras.html Saint Pancras] Volume 01B Page 142.",
+    "type": "source"
+  }
+}

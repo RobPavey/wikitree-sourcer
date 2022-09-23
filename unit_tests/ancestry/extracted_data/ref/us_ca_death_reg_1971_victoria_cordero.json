@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/4405640:5180?ssrc=pt&tid=170661751&pid=192252043318",
+  "pageType": "record",
+  "dbId": "5180",
+  "recordId": "4405640",
+  "ancestryTemplate": "{{Ancestry Record|5180|4405640}}",
+  "domain": "com",
+  "titleName": "Victoria C Lopez",
+  "titleCollection": "California, U.S., Death Index, 1940-1997",
+  "recordData": {
+    "Name": "Victoria C Lopez",
+    "Social Security #": "551248789",
+    "Gender": "Female",
+    "Birth Date": "26 Sep 1888",
+    "Birth Place": "California",
+    "Death Date": "20 Jul 1971",
+    "Death Place": "Santa Barbara"
+  },
+  "sourceCitation": "Place: Santa Barbara; Date: 20 Jul 1971; Social Security: 551248789",
+  "sourceInformation": "Ancestry.com. California, U.S., Death Index, 1940-1997 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2000. Original data: State of California. California Death Index, 1940-1997. Sacramento, CA, USA: State of California Department of Health Services, Center for Health Statistics.",
+  "originalData": "State of California. California Death Index, 1940-1997. Sacramento, CA, USA: State of California Department of Health Services, Center for Health Statistics.",
+  "sourceDescription": "This database is an index to the death records in State of California, USA, from 1940 through 1997. The database provides such valuable information as first, last and middle names of the descendants, birth dates, mother's maiden name, father's last name, sex, birth place, death place, residence at time of death, death date, social security number (when available), and the age of the individual when they died. Learn more..."
+}

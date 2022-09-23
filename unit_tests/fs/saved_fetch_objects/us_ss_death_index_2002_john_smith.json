@@ -1,0 +1,296 @@
+{
+  "id" : "r_4203421200",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:7G1D-HMM?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:7G1D-HMM?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:7G1D-HMM"
+    }
+  },
+  "description" : "#sd_p_13102340018",
+  "persons" : [ {
+    "id" : "p_13102340018",
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/J17L-RJH?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/7G1D-HMM?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:J17L-RJH" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "John W Smith",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "John W",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "John"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "MIDDLE_NAME_ORIG",
+              "text" : "W"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "John"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "MIDDLE_NAME",
+              "text" : "W"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Smith",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Smith"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Smith"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "John W Smith"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "01 Oct 2002",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "DEATH_DATE_ORIG",
+            "text" : "10012002"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "DEATH_DATE_STD",
+            "text" : "01 Oct 2002"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Newton, Georgia",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "LAST_RESIDENCE",
+            "text" : "Newton, Georgia"
+          } ]
+        } ]
+      },
+      "primary" : true
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "29 Apr 1930",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "BIRTH_DATE_ORIG",
+            "text" : "04291930"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "BIRTH_DATE_STD",
+            "text" : "29 Apr 1930"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "DEATH_AGE",
+        "text" : "72"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/VerifyOrProofCode",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "VERIFY_OR_PROOF_CODE",
+        "text" : "V"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ZipCodeOfLastResidence",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "ZIP_CODE_LAST_RESIDENCE",
+        "text" : "30014"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/DeathDateVerification",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "DEATH_DATE_VERIFICATION",
+        "text" : "01 Oct 2002 verified by family"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/PlaceOfIssuance",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "STATE_OF_ISSUANCE",
+        "text" : "Georgia"
+      } ]
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1202535",
+    "about" : "https://api.familysearch.org/platform/records/collections/1202535",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223693266,
+    "modified" : 1658154822867,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "United States of America",
+        "description" : "#place_1"
+      },
+      "temporal" : {
+        "original" : "1875/2014",
+        "formal" : "1875/2014"
+      },
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "United States Social Security Death Index"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1202535" ]
+    }
+  }, {
+    "id" : "src_r_4203421200",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:7G1D-HMM",
+    "componentOf" : {
+      "description" : "#sd_c_1202535"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1392092601099,
+    "modified" : 1658154822867,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Newton, Georgia"
+      },
+      "temporal" : {
+        "original" : "01 Oct 2002"
+      },
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "citations" : [ {
+      "value" : "\"United States Social Security Death Index,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:7G1D-HMM : 8 January 2021), John W Smith, 01 Oct 2002; citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing)."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for John W Smith, \"United States Social Security Death Index\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:7G1D-HMM" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1202535?arkName=1:2:7G1D-HMM"
+    }
+  }, {
+    "id" : "sd_p_13102340018",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:J17L-RJH",
+    "componentOf" : {
+      "description" : "#src_r_4203421200"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"United States Social Security Death Index,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:J17L-RJH : 8 January 2021), John W Smith, 01 Oct 2002; citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing)."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "John W Smith, \"United States Social Security Death Index\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:J17L-RJH" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "18207"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "collection:00000000000000001260,easyId:SSDI:260503472"
+    } ]
+  } ]
+}

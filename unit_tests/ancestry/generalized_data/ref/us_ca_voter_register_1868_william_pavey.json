@@ -1,0 +1,22 @@
+{
+  "sourceType": "record",
+  "recordType": "ElectoralRegister",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William Henry Pavey"
+  },
+  "eventDate": {
+    "yearString": "1868"
+  },
+  "eventPlace": {
+    "placeString": "El Dorado, California, USA"
+  },
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "ageAtEvent": "38",
+  "collectionData": {
+    "id": "2221"
+  },
+  "hasValidData": true
+}

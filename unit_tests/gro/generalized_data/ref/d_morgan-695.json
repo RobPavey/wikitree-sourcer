@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1989",
+    "quarter": 1
+  },
+  "name": {
+    "lastName": "Nattrass",
+    "forenames": "Margaret"
+  },
+  "lastNameAtDeath": "Nattrass",
+  "deathDate": {
+    "yearString": "1989",
+    "quarter": 1
+  },
+  "birthDate": {
+    "yearString": "1892"
+  },
+  "personGender": "female",
+  "registrationDistrict": "Okehampton",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "21",
+    "page": "1664"
+  },
+  "hasValidData": true
+}

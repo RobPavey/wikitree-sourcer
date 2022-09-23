@@ -1,0 +1,11 @@
+{
+  "std": {
+    "url": "https://www.familysearch.org/search/record/results?count=20&q.givenName=William&q.surname=Handford&q.birthLikeDate.from=1837&q.birthLikeDate.to=1851&q.deathLikePlace=Middlesbrough%2C%20Yorkshire%20North%20Riding%2C%20United%20Kingdom&q.deathLikeDate.from=1911&q.deathLikeDate.to=1915"
+  },
+  "same_collection": {
+    "url": "https://www.familysearch.org/search/record/results?count=20&f.collectionId=2285341&q.givenName=William&q.surname=Handford&q.birthLikeDate.from=1842&q.birthLikeDate.to=1846&q.deathLikePlace=Middlesbrough%2C%20Yorkshire%20North%20Riding%2C%20United%20Kingdom&q.deathLikeDate.from=1911&q.deathLikeDate.to=1915"
+  },
+  "specified_collection": {
+    "url": "https://www.familysearch.org/search/record/results?count=20&f.collectionId=2285341&q.givenName=William&q.surname=Handford&q.birthLikeDate.from=1837&q.birthLikeDate.to=1851&q.deathLikePlace=Middlesbrough%2C%20Yorkshire%20North%20Riding%2C%20United%20Kingdom&q.deathLikeDate.from=1911&q.deathLikeDate.to=1915"
+  }
+}

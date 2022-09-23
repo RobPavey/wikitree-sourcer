@@ -1,0 +1,220 @@
+body {
+  /* width: 350px; Now set programatically based on platform */
+  height: auto;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-size: 14px; 
+  margin: 0;
+  padding: 0;
+}
+ul.list {
+  list-style-type: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
+}
+ul.list li {
+  padding: 0px;
+  margin: 0px;
+}
+nav.menu {
+  padding: 5px 0px; /* we want a bit of extra padding above top item and below bottom one */
+}
+button.menuButton {
+  padding: 5px 10px;
+  margin: 0;
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+button.menuButton:hover, button.menuButton:focus {
+  color: black;
+  background-color: #E1F0B4;
+  /* font-weight: bold; */
+}
+.menuButtonSubtitle {
+  padding-left: 10px;
+  display: inline-block;
+}
+.largeEditBox {
+  /* 10px for 2 margins and 2 px for border of 1 and 4 px for padding of 2 */
+  width: calc(100% - 16px);
+  height: 400px;
+  margin: 5px;
+  border: 1px solid black;
+  padding: 2px;
+  resize: none;
+}
+.largeEditBoxLabel {
+  margin: 2px;
+  padding: 2px;
+}
+.messageIcon {
+  display: inline-block;
+  padding: 10px;
+  margin: 0px;
+}
+.messageLabel {
+  display: inline-block;
+  padding: 10px;
+  margin: 0px;
+}
+/* used for the support submenu */
+div.messageParagraph {
+  display: inline-block;
+  padding: 10px;
+  margin: 0px;
+}
+button.linkButton {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* The three below are used to display and icon and some labels in columns side by side */
+.messageRowDiv:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.messageColumnDiv {
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.messageIconDiv {
+  width: 10%;
+}
+.messageLabelDiv {
+  width: 90%;
+}
+.messageIconInDiv {
+  display: block;
+  margin: 0px;
+}
+.messageLabelInDiv {
+  display: block;
+  margin: 0px;
+}
+/* The three below are used to display menu items with a submenu link on right */
+ul.list li.menuItemWithSubMenu {
+  padding: 0px;
+  margin: 0px;
+}
+ul.list .menuLeftDiv:hover, ul.list .menuLeftDiv:focus {
+  color: black;
+  background-color: #E1F0B4;
+  /* font-weight: bold; */
+}
+ul.list .menuRightDiv:hover, ul.list .menuRightDiv:focus {
+  color: black;
+  background-color: #E1F0B4;
+  /* font-weight: bold; */
+}
+.menuRowDiv:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.menuColumnDiv {
+  float: left;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.menuLeftDiv {
+  width: 90%;
+}
+.menuRightDiv {
+  width: 10%;
+}
+li.dividerAbove {
+  border-top: 1px solid #bbb;
+}
+li.dividerBelow {
+  border-bottom: 1px solid #bbb;
+}
+.yellowBackground {
+  background-color: #ffe270;
+}
+.dialogHeading {
+  padding: 10px;
+  margin: 0px;
+}
+.dialogInput {
+  padding: 10px;
+  margin: 0px;
+}
+.dialogSelector {
+  padding: 0px;
+  margin-left: 10px;
+}
+.dialogTextInput {
+  padding: 0px;
+  margin-left: 10px;
+  width: 90%;
+}
+.dialogButton {
+  padding: 10px;
+  margin: 5px;
+  /*display: block;*/
+  border: 0;
+  border-radius: 4px;
+  background-color: #25422D;
+  color: white;
+  transition-duration: 0.4s;
+}
+.dialogButton:hover {
+  background-color: #8EC641;
+}
+.dialogButton:active {
+  background-color: #8EC641;
+  border: 4;
+}
+.flex-parent {
+  display: flex;
+}
+.jc-center {
+  justify-content: center;
+}
+.searchWarningMessage {
+  display: inline-block;
+  padding: 5px 5px;
+  font-style: italic;
+  color: red;
+}
+/* for search menu filter submenu */
+.searchFilterCheckbox {
+  margin: 5px;
+}
+.searchFilterYearInput {
+  margin: 5px 0px;
+  width: 60px;
+}
+.searchFilterYear {
+  margin: 5px 10px;
+}
+.searchFilterCountriesInput {
+  margin: 5px 0px;
+}
+.searchFilterCountries {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 5px 5px 10px;
+}
+.searchFilterComment {
+  margin: 5px 20px;
+  font-style: italic;
+}
+.searchFilterExcludedSiteHeader {
+  margin: 5px 10px;
+}
+.searchFilterExcludedSite {
+  margin: 5px 20px;
+  font-style: italic;
+}
+.searchFilterContainer {
+  padding: 10px 0px;
+  margin: 0px;
+}

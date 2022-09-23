@@ -1,0 +1,30 @@
+{
+  "hasValidData": true,
+  "firstNames": "William",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Handford",
+  "currentLastName": "Handford",
+  "mothersMaidenName": "",
+  "birthDate": "Sep 1843",
+  "birthDateStatus": "about",
+  "deathDate": "Mar 1913",
+  "deathDateStatus": "none",
+  "birthLocation": "High Bickington, Devon, England",
+  "deathLocation": "Middlesbrough, Yorkshire, England",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Cole-650",
+      "name": "Sophia (Cole) Handford",
+      "marriageString": "about 5 Dec 1864 in High Bickington, Devon, England, United Kingdom",
+      "marriageDate": "about 5 Dec 1864",
+      "marriagePlace": "High Bickington, Devon, England, United Kingdom"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Handford-3",
+  "currentTabText": "William Handford's Profile",
+  "pageType": "read",
+  "wikiId": "Handford-3",
+  "name": "William Handford"
+}

@@ -1,0 +1,57 @@
+{
+  "recordData": {
+    "Name": "Jacob S Swartz",
+    "Race": "White",
+    "Death Date": "26 Sep 1948",
+    "Birth Date": "17 Jun 1868",
+    "Birth Place": "Union County, Penn",
+    "Age": "80",
+    "Event Type": "Death"
+  },
+  "fullName": "Jacob S Swartz",
+  "givenName": "Jacob S",
+  "surname": "Swartz",
+  "gender": "male",
+  "factType": "Death",
+  "eventDateOriginal": "26 Sep 1948",
+  "eventDate": "26 Sep 1948",
+  "eventYear": "1948",
+  "deathDateOriginal": "26 Sep 1948",
+  "deathDate": "26 Sep 1948",
+  "deathYear": "1948",
+  "birthDateOriginal": "17 Jun 1868",
+  "birthDate": "17 Jun 1868",
+  "birthYear": "1868",
+  "birthPlace": "Union County, Penn",
+  "age": "80",
+  "spouseFullName": "Ethel Davis Swartz",
+  "spouseGivenName": "Ethel Davis",
+  "spouseSurname": "Swartz",
+  "father": {
+    "fullName": "Jacob Swartz",
+    "givenName": "Jacob",
+    "surname": "Swartz"
+  },
+  "mother": {
+    "fullName": "Magdalena",
+    "givenName": "Magdalena"
+  },
+  "referenceData": {
+    "digitalFilmNumber": "004109115",
+    "filmNumber": "2246536",
+    "imageNumber": "00157",
+    "packetLetter": "A",
+    "recordNumber": "151",
+    "referenceId": "certificate"
+  },
+  "eventCity": "Harrison Twp",
+  "eventCounty": "Logan",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:S3HY-63B7-YCY",
+  "collectionTitle": "Ohio Deaths, 1908-1953",
+  "fsCollectionId": "1307272",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7",
+  "citation": "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B : 8 March 2021), Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536.",
+  "sourceTitleForPerson": "Jacob S Swartz, \"Ohio Deaths, 1908-1953\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B",
+  "pageType": "record"
+}

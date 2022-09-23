@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "freebmd",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1902",
+    "quarter": 1
+  },
+  "name": {
+    "lastName": "Calvert",
+    "forenames": "Florence"
+  },
+  "lastNameAtBirth": "Calvert",
+  "birthDate": {
+    "yearString": "1902",
+    "quarter": 1
+  },
+  "registrationDistrict": "Easington",
+  "collectionData": {
+    "id": "births",
+    "volume": "10a",
+    "page": "479"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,92 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/76967:1088",
+  "pageType": "record",
+  "dbId": "1088",
+  "recordId": "76967",
+  "ancestryTemplate": "{{Ancestry Record|1088|76967}}",
+  "domain": "com",
+  "titleName": "James Goggin",
+  "titleCollection": "Kansas, U.S., State Census Collection, 1855-1925",
+  "recordData": {
+    "Name": "James Goggin",
+    "Census Date": "1 Mar 1885",
+    "Residence County": "Davis",
+    "Residence State": "Kansas",
+    "Locality": "Jefferson",
+    "Birth Place": "Kansas",
+    "Family Number": "51",
+    "Marital Status": "Single",
+    "Gender": "Male",
+    "Age": "10",
+    "Birth Year": "abt 1875",
+    "Race": "White",
+    "Household Member(s)<br/>Age": "Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M"
+  },
+  "household": {
+    "headings": [
+      "Household Member(s)",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Member(s)": "Thomas Goggin",
+        "dbId": "1088",
+        "recordId": "76965",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76965&indiv=try",
+        "Age": "31"
+      },
+      {
+        "Household Member(s)": "Beffy Goggin",
+        "dbId": "1088",
+        "recordId": "76966",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76966&indiv=try",
+        "Age": "30"
+      },
+      {
+        "Household Member(s)": "James Goggin",
+        "Age": "10"
+      },
+      {
+        "Household Member(s)": "Michael Goggin",
+        "dbId": "1088",
+        "recordId": "76968",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76968&indiv=try",
+        "Age": "5"
+      },
+      {
+        "Household Member(s)": "Thomas Goggin",
+        "dbId": "1088",
+        "recordId": "76969",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76969&indiv=try",
+        "Age": "3"
+      },
+      {
+        "Household Member(s)": "Katy Goggin",
+        "dbId": "1088",
+        "recordId": "76970",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76970&indiv=try",
+        "Age": "8"
+      },
+      {
+        "Household Member(s)": "Anna Goggin",
+        "dbId": "1088",
+        "recordId": "76971",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76971&indiv=try",
+        "Age": "6"
+      },
+      {
+        "Household Member(s)": "July Goggin",
+        "dbId": "1088",
+        "recordId": "76972",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=76972&indiv=try",
+        "Age": "5 M"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1088/images/ks1885_34-0302?pid=76967&usePUB=true&usePUBJs=true",
+  "imageDbId": "1088",
+  "imageRecordId": "ks1885_34-0302",
+  "sourceCitation": "Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13",
+  "sourceInformation": "Ancestry.com. Kansas, U.S., State Census Collection, 1855-1925 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2009. Original data: 1855 Kansas Territory Census. Microfilm reel K-1. Kansas State Historical Society.1856, 1857, and 1858 Kansas Territory Censuses. Microfilm reel K-1. Kansas State Historical Society.1859 Kansas Territory Census. Microfilm reel K-1. Kansas State Historical Society.1865 Kansas State Census. Microfilm reels K-1 – K-8. Kansas State Historical Society.1875 Kansas State Census. Microfilm reels K-1 – K-20. Kansas State Historical Society.1885 Kansas State Census. Microfilm reels K-1 – K-146. Kansas State Historical Society.1895 Kansas State Census. Microfilm reels K-1 – K-169. Kansas State Historical Society.1905 Kansas State Census. Microfilm reels K-1 - K-181. Kansas State Historical Society.1915 Kansas State Census. Microfilm reels K-1 – K-271. Kansas State Historical Society.1925 Kansas State Census. Microfilm reels K-1 – K-177. Kansas State Historical Society.",
+  "sourceDescription": "This database contains state censuses for Kansas from 1855-1925. Information available in this database includes: name, age, gender, race, relationship to head of household, birthplace, marital status, and place of enumeration. Additional information about an individual may be listed on the original record. Learn more..."
+}

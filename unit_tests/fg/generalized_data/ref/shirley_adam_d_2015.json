@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "9 Jun 2015"
+  },
+  "eventPlace": {
+    "placeString": "Clearview, Port Adelaide Enfield City, South Australia, Australia",
+    "streetAddress": "Enfield Memorial Park"
+  },
+  "name": {
+    "name": "Shirley Beveridge Shakespeare Adam"
+  },
+  "lastNameAtDeath": "Adam",
+  "deathDate": {
+    "dateString": "9 Jun 2015"
+  },
+  "ageAtDeath": "95–96",
+  "birthDate": {
+    "dateString": "1919"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "lastName": "LITTLEMORE",
+  "forenames": "HARRY DEW",
+  "firstName": "HARRY",
+  "middleNames": "DEW",
+  "ageAtDeath": 2,
+  "recordType": "older",
+  "eventYear": 1884,
+  "eventQuarterLetter": "S",
+  "eventQuarter": 3,
+  "registrationDistrict": "KINGSTON ON THAMES",
+  "referenceVolume": "02A",
+  "referencePage": "195",
+  "personGender": "male",
+  "deathYear": 1884,
+  "deathQuarter": 3,
+  "eventType": "death"
+}

@@ -1,0 +1,34 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&surname=Fraser&surname_so=exact&forename=Mary&forename_so=starts&record_type=valuation_rolls&year%5B0%5D=1855",
+  "success": true,
+  "numResultsOnPage": 15,
+  "recordData": {
+    "Surname": "BRODIE OR FRASER",
+    "Forename": "MARY",
+    "Title": "",
+    "Status": "Proprietor Occupier",
+    "Place": "DWELLING HOUSE IN CAMPBELLTOUN",
+    "Parish": "ARDERSIER",
+    "Year": "1855",
+    "Reference Number": "VR010300001-"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_valuation_rolls/44231078?image=14&return_row=0",
+  "pageHeader": "Valuation Rolls",
+  "searchCriteria": {
+    "Surname": "Fraser",
+    "Surname Option": "Exact",
+    "Forename": "Mary",
+    "Forename Option": "Starts",
+    "Year": "1855"
+  },
+  "urlQuery": {
+    "search_type": "people",
+    "dl_cat": "valuation",
+    "surname": "Fraser",
+    "surname_so": "exact",
+    "forename": "Mary",
+    "forename_so": "starts",
+    "record_type": "valuation_rolls",
+    "year[0]": "1855"
+  }
+}

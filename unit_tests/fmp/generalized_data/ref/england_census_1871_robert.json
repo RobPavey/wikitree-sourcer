@@ -1,0 +1,85 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "forenames": "Robert"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Weymouth Weymouth Arms, Newington, St Saviour Southwark, London & Surrey, England"
+  },
+  "registrationDistrict": "St Saviour Southwark",
+  "birthDate": {
+    "yearString": "1846",
+    "qualifier": 2
+  },
+  "ageAtEvent": "25",
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "relationshipToHead": "servant",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "George Mack",
+      "relationship": "head",
+      "gender": "male",
+      "age": "36",
+      "birthYear": "1835",
+      "birthPlace": "Norfolk, England"
+    },
+    {
+      "name": "Cath A Mack",
+      "relationship": "wife",
+      "gender": "female",
+      "age": "41",
+      "birthYear": "1830",
+      "birthPlace": "Middlesex, England"
+    },
+    {
+      "name": "James Abbey",
+      "relationship": "servant",
+      "gender": "male",
+      "age": "25",
+      "birthYear": "1846",
+      "birthPlace": "Middlesex, England"
+    },
+    {
+      "isSelected": true,
+      "name": "Robert",
+      "relationship": "servant",
+      "gender": "male",
+      "age": "25",
+      "birthYear": "1846",
+      "birthPlace": "Surrey, England"
+    },
+    {
+      "name": "Mary G",
+      "relationship": "servant",
+      "gender": "female",
+      "age": "25",
+      "birthYear": "1846",
+      "birthPlace": "Middlesex, England"
+    }
+  ],
+  "collectionData": {
+    "id": "1871 England, Wales & Scotland Census",
+    "page": "27",
+    "piece": "623",
+    "folio": "17",
+    "schedule": "156"
+  },
+  "hasValidData": true
+}

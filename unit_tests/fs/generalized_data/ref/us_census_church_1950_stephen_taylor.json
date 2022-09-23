@@ -1,0 +1,103 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Stephen Eyring Taylor"
+  },
+  "birthDate": {
+    "dateString": "1939",
+    "yearString": "1939"
+  },
+  "birthPlace": {
+    "placeString": "Snow Flake, Arizona"
+  },
+  "eventDate": {
+    "dateString": "1950",
+    "yearString": "1950"
+  },
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "John Golden Taylor",
+      "relationship": "head",
+      "gender": "male",
+      "birthYear": "1912",
+      "birthPlace": "Aetna, Alberta, Canada"
+    },
+    {
+      "name": "Ethel Eyring Taylor",
+      "relationship": "wife",
+      "gender": "female",
+      "birthYear": "1916",
+      "birthPlace": "Pima, Arizona"
+    },
+    {
+      "name": "Janis Taylor",
+      "relationship": "daughter",
+      "gender": "female",
+      "birthYear": "1937",
+      "birthPlace": "Portland, Oregon"
+    },
+    {
+      "name": "Stephen Eyring Taylor",
+      "relationship": "son",
+      "gender": "male",
+      "birthYear": "1939",
+      "birthPlace": "Snow Flake, Arizona",
+      "isSelected": true
+    },
+    {
+      "name": "Susan Taylor",
+      "relationship": "daughter",
+      "gender": "female",
+      "birthYear": "1941",
+      "birthPlace": "Snow Flake, Arizona"
+    },
+    {
+      "name": "Emily Kay Taylor",
+      "relationship": "daughter",
+      "gender": "female",
+      "birthYear": "1943",
+      "birthPlace": "Provo, Utah"
+    },
+    {
+      "name": "John Eyring Taylor",
+      "relationship": "son",
+      "gender": "male",
+      "birthYear": "1945",
+      "birthPlace": "Provo, Utah"
+    },
+    {
+      "name": "Jeffery Maxwell Taylor",
+      "relationship": "son",
+      "gender": "male",
+      "birthYear": "1949",
+      "birthPlace": "Provo, Utah"
+    }
+  ],
+  "relationshipToHead": "son",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Golden Taylor"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ethel Eyring Taylor"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "3438701"
+  },
+  "hasValidData": true
+}

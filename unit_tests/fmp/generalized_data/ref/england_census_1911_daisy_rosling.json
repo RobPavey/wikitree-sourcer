@@ -1,0 +1,75 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Rosling",
+    "forenames": "Daisy"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "24D Bell St Bdg Edgware Road W, St Marylebone, London & Middlesex, England",
+    "streetAddress": "24d Bell St Bdg Edgware Road W"
+  },
+  "registrationDistrict": "Marylebone",
+  "birthDate": {
+    "yearString": "1908",
+    "qualifier": 2
+  },
+  "ageAtEvent": "3",
+  "birthPlace": {
+    "placeString": "Marylebone"
+  },
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "relationshipToHead": "grandchild",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Emma Rosling",
+      "relationship": "widow",
+      "maritalStatus": "widowed",
+      "gender": "female",
+      "age": "75",
+      "birthYear": "1836",
+      "occupation": "Private means",
+      "birthPlace": "Lambeth"
+    },
+    {
+      "name": "Lily Rosling",
+      "relationship": "grandchild",
+      "gender": "female",
+      "age": "10",
+      "birthYear": "1901",
+      "occupation": "School",
+      "birthPlace": "Paddington"
+    },
+    {
+      "isSelected": true,
+      "name": "Daisy Rosling",
+      "relationship": "grandchild",
+      "gender": "female",
+      "age": "3",
+      "birthYear": "1908",
+      "birthPlace": "Marylebone"
+    }
+  ],
+  "collectionData": {
+    "id": "1911 Census For England & Wales",
+    "districtNumber": "7",
+    "piece": "566",
+    "schedule": "87"
+  },
+  "hasValidData": true
+}

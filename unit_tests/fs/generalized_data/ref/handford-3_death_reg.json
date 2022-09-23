@@ -1,0 +1,32 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "William Handford"
+  },
+  "birthDate": {
+    "dateString": "1844",
+    "yearString": "1844"
+  },
+  "deathDate": {
+    "dateString": "1913",
+    "yearString": "1913"
+  },
+  "eventDate": {
+    "dateString": "1913",
+    "yearString": "1913",
+    "quarter": 1
+  },
+  "eventPlace": {
+    "placeString": "Middlesbrough, Yorkshire, England"
+  },
+  "registrationDistrict": "Middlesbrough",
+  "ageAtDeath": "69",
+  "collectionData": {
+    "id": "2285341",
+    "volume": "9D",
+    "page": "710"
+  },
+  "hasValidData": true
+}

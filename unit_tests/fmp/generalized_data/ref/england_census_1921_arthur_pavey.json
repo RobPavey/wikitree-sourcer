@@ -1,0 +1,94 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Arthur"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Lorne Villa Lichfield, St Michael, Staffordshire, England",
+    "streetAddress": "Lorne Villa Lichfield"
+  },
+  "registrationDistrict": "Lichfield",
+  "birthDate": {
+    "yearString": "1885",
+    "qualifier": 2
+  },
+  "ageAtEvent": "36",
+  "birthPlace": {
+    "placeString": "London, Middlesex, England"
+  },
+  "eventDate": {
+    "yearString": "1921"
+  },
+  "occupation": "Theological Student",
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "isSelected": true,
+      "name": "Arthur Pavey",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "36",
+      "birthYear": "1885",
+      "occupation": "Theological Student",
+      "birthPlace": "London, Middlesex, England"
+    },
+    {
+      "name": "Emmeline Pavey",
+      "relationship": "wife",
+      "gender": "female",
+      "age": "34",
+      "birthYear": "1887",
+      "occupation": "Home Duties",
+      "birthPlace": "Wilnecote, Warwickshire, England"
+    },
+    {
+      "name": "Reginald Pavey",
+      "relationship": "son",
+      "gender": "male",
+      "age": "6",
+      "birthYear": "1915",
+      "birthPlace": "Birmingham, Warwickshire, England"
+    },
+    {
+      "name": "Margaret Pavey",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "1",
+      "birthYear": "1920",
+      "birthPlace": "Birmingham, Warwickshire, England"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Emmeline Pavey"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1921 Census Of England & Wales",
+    "archiveSeries": "RG 15",
+    "districtNumber": "367",
+    "piece": "12939"
+  },
+  "hasValidData": true
+}

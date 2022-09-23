@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Ada Lucretia Kirby"
+  },
+  "birthDate": {
+    "dateString": "1867"
+  },
+  "deathDate": {
+    "dateString": "1931"
+  },
+  "eventPlace": {
+    "placeString": "Providence, Providence County, Rhode Island, United States of America"
+  },
+  "deathPlace": {
+    "placeString": "Providence, Providence County, Rhode Island, United States of America"
+  },
+  "lastNameAtDeath": "Kirby",
+  "collectionData": {
+    "id": "60525"
+  },
+  "hasValidData": true
+}

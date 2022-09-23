@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3c; Page: 976<br/>\n{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Louisa's death (age 89) was registered in the Jul-Aug-Sep quarter of 1971 in the Nottingham district.<ref>\n'''Death Registration''':\n\"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3c; Page: 976<br/>\n{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death Registration''': \"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>General Register Office; United Kingdom; Volume: 3c; Page: 976<br/>{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3c; Page: 976<br/>\n{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)<br/>\nLouisa Noble death registered Jul-Aug-Sep 1971 in Nottingham (born 23 Jul 1882).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Louisa's death (age 89) was registered in the Jul-Aug-Sep quarter of 1971 in the Nottingham district.<ref>\n'''Death Registration''':\n\"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3c; Page: 976<br/>\n{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)<br/>\nLouisa Noble death registered Jul-Aug-Sep 1971 in Nottingham (born 23 Jul 1882).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death Registration''': \"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>General Register Office; United Kingdom; Volume: 3c; Page: 976<br/>{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)<br/>Louisa Noble death registered Jul-Aug-Sep 1971 in Nottingham (born 23 Jul 1882).",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3c; Page: 976<br/>\n{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)<br/>\nName: Louisa Noble; Death Age: 89; Birth Date: 23 Jul 1882; Registration Date: Jul 1971 [Aug 1971] [Sep 1971]; Registration Quarter: Jul-Aug-Sep; Registration District: Nottingham; Inferred County: Nottinghamshire.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Louisa's death (age 89) was registered in the Jul-Aug-Sep quarter of 1971 in the Nottingham district.<ref>\n'''Death Registration''':\n\"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3c; Page: 976<br/>\n{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)<br/>\nName: Louisa Noble; Death Age: 89; Birth Date: 23 Jul 1882; Registration Date: Jul 1971 [Aug 1971] [Sep 1971]; Registration Quarter: Jul-Aug-Sep; Registration District: Nottingham; Inferred County: Nottinghamshire.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death Registration''': \"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>General Register Office; United Kingdom; Volume: 3c; Page: 976<br/>{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)<br/>Name: Louisa Noble; Death Age: 89; Birth Date: 23 Jul 1882; Registration Date: Jul 1971 [Aug 1971] [Sep 1971]; Registration Quarter: Jul-Aug-Sep; Registration District: Nottingham; Inferred County: Nottinghamshire.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3c; Page: 976<br/>\n{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Louisa Noble\n|-\n| Death Age || 89\n|-\n| Birth Date || 23 Jul 1882\n|-\n| Registration Date || Jul 1971 [Aug 1971] [Sep 1971]\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Registration District || Nottingham\n|-\n| Inferred County || Nottinghamshire\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Louisa's death (age 89) was registered in the Jul-Aug-Sep quarter of 1971 in the Nottingham district.<ref>\n'''Death Registration''':\n\"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Volume: 3c; Page: 976<br/>\n{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Louisa Noble\n|-\n| Death Age || 89\n|-\n| Birth Date || 23 Jul 1882\n|-\n| Registration Date || Jul 1971 [Aug 1971] [Sep 1971]\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Registration District || Nottingham\n|-\n| Inferred County || Nottinghamshire\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death Registration''': \"England & Wales, Civil Registration Death Index, 1916-2007\"<br/>General Register Office; United Kingdom; Volume: 3c; Page: 976<br/>{{Ancestry Record|7579|40560790}} (accessed 6 May 2021)<br/>Name: Louisa Noble; Death Age: 89; Birth Date: 23 Jul 1882; Registration Date: Jul 1971 [Aug 1971] [Sep 1971]; Registration Quarter: Jul-Aug-Sep; Registration District: Nottingham; Inferred County: Nottinghamshire.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"England & Wales, Civil Registration Death Index, 1916-2007,\" database, ({{Ancestry Record|7579|40560790}} : accessed 6 May 2021), Louisa Noble death registered Jul-Aug-Sep 1971 in Nottingham (born 23 Jul 1882); citing General Register Office, United Kingdom, Volume 3c, Page 976.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Louisa's death (age 89) was registered in the Jul-Aug-Sep quarter of 1971 in the Nottingham district.<ref>\"England & Wales, Civil Registration Death Index, 1916-2007,\" database, ({{Ancestry Record|7579|40560790}} : accessed 6 May 2021), Louisa Noble death registered Jul-Aug-Sep 1971 in Nottingham (born 23 Jul 1882); citing General Register Office, United Kingdom, Volume 3c, Page 976.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"England & Wales, Civil Registration Death Index, 1916-2007,\" database, ({{Ancestry Record|7579|40560790}} : accessed 6 May 2021), Louisa Noble death registered Jul-Aug-Sep 1971 in Nottingham (born 23 Jul 1882); citing General Register Office, United Kingdom, Volume 3c, Page 976.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death Registration'':\n\"England & Wales, Civil Registration Death Index, 1916-2007\", database, \nGeneral Register Office, United Kingdom, Volume 3c, Page 976, \n({{Ancestry Record|7579|40560790}} : accessed 6 May 2021), \nName: Louisa Noble; Death Age: 89; Birth Date: 23 Jul 1882; Registration Date: Jul 1971 [Aug 1971] [Sep 1971]; Registration Quarter: Jul-Aug-Sep; Registration District: Nottingham; Inferred County: Nottinghamshire.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Louisa's death (age 89) was registered in the Jul-Aug-Sep quarter of 1971 in the Nottingham district.<ref>\n''Death Registration'':\n\"England & Wales, Civil Registration Death Index, 1916-2007\", database, \nGeneral Register Office, United Kingdom, Volume 3c, Page 976, \n({{Ancestry Record|7579|40560790}} : accessed 6 May 2021), \nName: Louisa Noble; Death Age: 89; Birth Date: 23 Jul 1882; Registration Date: Jul 1971 [Aug 1971] [Sep 1971]; Registration Quarter: Jul-Aug-Sep; Registration District: Nottingham; Inferred County: Nottinghamshire.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death Registration'': \"England & Wales, Civil Registration Death Index, 1916-2007\", database, General Register Office, United Kingdom, Volume 3c, Page 976, ({{Ancestry Record|7579|40560790}} : accessed 6 May 2021), Name: Louisa Noble; Death Age: 89; Birth Date: 23 Jul 1882; Registration Date: Jul 1971 [Aug 1971] [Sep 1971]; Registration Quarter: Jul-Aug-Sep; Registration District: Nottingham; Inferred County: Nottinghamshire.",
+    "type": "source"
+  }
+}

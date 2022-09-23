@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1986&range=0&surname=PARTINGTON&forename1=SAMUEL&forename2=JOHN&gender=M&month=15&district=OXFORD&volume=20&page=3367 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nPartington, Samuel John.<br/>\n''GRO Reference:'' 1986 Jul-Aug-Sep in [https://www.ukbmd.org.uk/reg/districts/oxford.html Oxford] (7021C) Volume 20 Page 3367.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Samuel's birth was registered in the Jul-Aug-Sep quarter of 1986 in the Oxford district.<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1986&range=0&surname=PARTINGTON&forename1=SAMUEL&forename2=JOHN&gender=M&month=15&district=OXFORD&volume=20&page=3367 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nPartington, Samuel John.<br/>\n''GRO Reference:'' 1986 Jul-Aug-Sep in [https://www.ukbmd.org.uk/reg/districts/oxford.html Oxford] (7021C) Volume 20 Page 3367.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1986&range=0&surname=PARTINGTON&forename1=SAMUEL&forename2=JOHN&gender=M&month=15&district=OXFORD&volume=20&page=3367 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Partington, Samuel John.<br/>''GRO Reference:'' 1986 Jul-Aug-Sep in [https://www.ukbmd.org.uk/reg/districts/oxford.html Oxford] (7021C) Volume 20 Page 3367.",
+    "type": "source"
+  }
+}

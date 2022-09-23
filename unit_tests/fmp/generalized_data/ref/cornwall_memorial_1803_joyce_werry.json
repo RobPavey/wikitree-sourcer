@@ -1,0 +1,27 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Werry",
+    "forenames": "Joyce"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Pelynt, Cornwall, England"
+  },
+  "birthDate": {
+    "yearString": "1726"
+  },
+  "deathDate": {
+    "dateString": "20 Feb 1803",
+    "yearString": "1803"
+  },
+  "ageAtDeath": "77",
+  "lastNameAtDeath": "Werry",
+  "collectionData": {
+    "id": "Cornwall Memorial Inscriptions"
+  },
+  "hasValidData": true
+}

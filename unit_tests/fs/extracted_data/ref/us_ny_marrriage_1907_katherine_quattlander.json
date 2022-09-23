@@ -1,0 +1,48 @@
+{
+  "recordData": {
+    "Name": "Katharine Quattlander",
+    "Birth Date": "1884",
+    "Age": "23",
+    "Marriage Date": "21 Feb 1907",
+    "Marriage Place": "Manhattan, New York City, New York, United States"
+  },
+  "fullName": "Katharine Quattlander",
+  "givenName": "Katharine",
+  "surname": "Quattlander",
+  "gender": "female",
+  "birthDateOriginal": "1884",
+  "birthYear": "1884",
+  "age": "23",
+  "eventDateOriginal": "21 Feb 1907",
+  "eventDate": "21 Feb 1907",
+  "eventYear": "1907",
+  "eventPlaceOriginal": "Manhattan, New York City, New York, United States",
+  "eventPlace": "Manhattan, New York City, New York, United States",
+  "factType": "Marriage",
+  "spouseFullName": "Edward J Dehent",
+  "spouseGivenName": "Edward J",
+  "spouseSurname": "Dehent",
+  "spouseAge": "22",
+  "father": {
+    "fullName": "John Quattlander",
+    "givenName": "John",
+    "surname": "Quattlander"
+  },
+  "mother": {
+    "fullName": "Katharine",
+    "givenName": "Katharine"
+  },
+  "fsCollectionId": "2143225",
+  "referenceData": {
+    "digitalFilmNumber": "007653739",
+    "filmNumber": "001558688"
+  },
+  "fsImageNumber": "01020",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-C95N-KSXZ-H",
+  "collectionTitle": "New York, New York City Marriage Records, 1829-1938",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QL7C-7GL9",
+  "citation": "\"New York, New York City Marriage Records, 1829-1938\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q2C2-Y95H : 16 August 2022), Edward J Dehent and Katharine Quattlander, 1907.",
+  "sourceTitleForPerson": "Katharine Quattlander, \"New York, New York City Marriage Records, 1829-1938\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:Q2C2-Y95H",
+  "pageType": "record"
+}

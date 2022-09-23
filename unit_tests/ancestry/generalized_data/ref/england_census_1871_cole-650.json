@@ -1,0 +1,89 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Sophia Handford"
+  },
+  "personGender": "female",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Penstone, Colebrooke, Devon, England"
+  },
+  "registrationDistrict": "Crediton",
+  "birthDate": {
+    "yearString": "1841",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Atherington Devon England"
+  },
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "ageAtEvent": "30",
+  "relationshipToHead": "wife",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "William Handford",
+      "age": "27",
+      "relationship": "head",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291259&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Sophia Handford",
+      "age": "30",
+      "relationship": "wife",
+      "isSelected": true,
+      "gender": "female",
+      "birthPlace": "Atherington Devon England",
+      "birthYear": "1841"
+    },
+    {
+      "name": "William Handford",
+      "age": "7",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291261&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Mary Handford",
+      "age": "5",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291262&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Marino Handford",
+      "age": "3",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291263&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Luca Handford",
+      "age": "1/12",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7619&h=11291264&indiv=try&viewrecord=1&r=an"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "William Handford"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "7619",
+    "page": "10",
+    "folio": "92",
+    "piece": "2162",
+    "county": "Devon"
+  },
+  "hasValidData": true
+}

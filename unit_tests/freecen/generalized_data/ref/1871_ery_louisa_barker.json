@@ -1,0 +1,86 @@
+{
+  "sourceOfData": "freecen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventPlace": {
+    "placeString": "Scoreby W Stamford Bridge West, Scoreby Wth Stamford, York, Yorkshire, East Riding, England",
+    "streetAddress": "Scoreby W Stamford Bridge West"
+  },
+  "registrationDistrict": "York",
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "name": {
+    "lastName": "Barker",
+    "forenames": "Louisa"
+  },
+  "ageAtEvent": "21",
+  "birthPlace": {
+    "placeString": "Stockton Forest, Yorkshire, England"
+  },
+  "relationshipToHead": "wife",
+  "maritalStatus": "married",
+  "personGender": "female",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Hauston Barker",
+      "birthPlace": "Acklam, Yorkshire",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "26",
+      "occupation": "Ag Labourer"
+    },
+    {
+      "name": "Louisa Barker",
+      "birthPlace": "Stockton Forest, Yorkshire",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "21",
+      "isSelected": true
+    },
+    {
+      "name": "Mary Barker",
+      "birthPlace": "Scoreby, Yorkshire",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "gender": "female",
+      "age": "1"
+    },
+    {
+      "name": "William Barker",
+      "birthPlace": "Scoreby, Yorkshire",
+      "relationship": "son",
+      "maritalStatus": "",
+      "gender": "male",
+      "age": "4m"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Hauston Barker"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1871",
+    "piece": "4755",
+    "folio": "63",
+    "page": "15",
+    "schedule": "56"
+  },
+  "hasValidData": true
+}

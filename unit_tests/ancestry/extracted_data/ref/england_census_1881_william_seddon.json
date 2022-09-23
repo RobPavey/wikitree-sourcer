@@ -1,0 +1,96 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=7572&h=10602933&tid=&pid=&queryId=918527b36e360d9cd105c91de4316714&usePUB=true&_phsrc=RTj20886&_phstart=successSource&_gl=1*1p0bvpw*_ga*MTg1ODgzOTg5Ny4xNjQ3OTQ3OTE4*_ga_4QT8FMEX30*MTY1NTMyNjgxMy4yNzUuMS4xNjU1MzM2MzU2LjA.",
+  "pageType": "record",
+  "dbId": "7572",
+  "recordId": "10602933",
+  "ancestryTemplate": "{{Ancestry Record|7572|10602933}}",
+  "domain": "com",
+  "titleName": "William Seddon",
+  "titleCollection": "1881 England Census",
+  "recordData": {
+    "Name": "William Seddon",
+    "Age": "15",
+    "Estimated Birth Year": "abt 1866",
+    "Relationship to Head": "Son",
+    "Father": "George Seddon",
+    "Mother": "Hannah Seddon",
+    "Gender": "Male",
+    "Where born": "Warrington",
+    "Civil Parish": "Salford",
+    "County/Island": "Lancashire",
+    "Country": "England",
+    "Street Address": "9 Mount Pleasant",
+    "Occupation": "Pattern Maker (Artz)",
+    "Registration District": "Salford",
+    "Sub registration district": "Regent Road",
+    "ED, institution, or vessel": "9",
+    "Piece": "3965",
+    "Folio": "44",
+    "Page Number": "32",
+    "Household Members": "George Seddon 38<br/>Hannah Seddon 40<br/>Richard Seddon 17<br/>William Seddon 15<br/>Alice Seddon 8<br/>Mary Ann Seddon 5<br/>Mary Hensall 40"
+  },
+  "household": {
+    "headings": [
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Name": "George Seddon",
+        "dbId": "uki1881",
+        "recordId": "10603014",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10603014",
+        "Age": "38"
+      },
+      {
+        "Name": "Hannah Seddon",
+        "dbId": "uki1881",
+        "recordId": "10602892",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10602892",
+        "Age": "40"
+      },
+      {
+        "Name": "Richard Seddon",
+        "dbId": "uki1881",
+        "recordId": "10602941",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10602941",
+        "Age": "17"
+      },
+      {
+        "Name": "William Seddon",
+        "dbId": "uki1881",
+        "recordId": "10602933",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10602933",
+        "Age": "15"
+      },
+      {
+        "Name": "Alice Seddon",
+        "dbId": "uki1881",
+        "recordId": "10602840",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10602840",
+        "Age": "8"
+      },
+      {
+        "Name": "Mary Ann Seddon",
+        "dbId": "uki1881",
+        "recordId": "10603039",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10603039",
+        "Age": "5"
+      },
+      {
+        "Name": "Mary Hensall",
+        "dbId": "uki1881",
+        "recordId": "10603015",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=10603015",
+        "Age": "40"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7572/images/LANRG11_3965_3969-0092?pid=10602933&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26dbid%3D7572%26h%3D10602933%26tid%3D%26pid%3D%26queryId%3D918527b36e360d9cd105c91de4316714%26usePUB%3Dtrue%26_phsrc%3DRTj20886%26_phstart%3DsuccessSource%26_gl%3D1*1p0bvpw*_ga*MTg1ODgzOTg5Ny4xNjQ3OTQ3OTE4*_ga_4QT8FMEX30*MTY1NTMyNjgxMy4yNzUuMS4xNjU1MzM2MzU2LjA.&treeid=&personid=&hintid=&queryId=918527b36e360d9cd105c91de4316714&usePUB=true&_phsrc=RTj20886&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "7572",
+  "imageRecordId": "LANRG11_3965_3969-0092",
+  "sourceCitation": "Class: RG11; Piece: 3965; Folio: 44; Page: 32; GSU roll: 1341947",
+  "sourceInformation": "Ancestry.com and The Church of Jesus Christ of Latter-day Saints. 1881 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2004. 1881 British Isles Census Index provided by The Church of Jesus Christ of Latter-day Saints © Copyright 1999 Intellectual Reserve, Inc. All rights reserved. All use is subject to the limited use license and other terms and conditions applicable to this site. Appreciation is expressed to The Church of Jesus Christ of Latter-day Saints for providing the 1881 England and Wales Census Index. Original data: Census Returns of England and Wales, 1881. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1881. Images © Crown copyright. Images reproduced by courtesy of The National Archives, London, England. The National Archives give no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives Image Library, Kew, Richmond, Surrey TW9 4DU, Tel: 020 8392 5225 Fax: 020 8392 5266.",
+  "originalData": "Census Returns of England and Wales, 1881. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1881.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1881 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1881 England Census. Learn more..."
+}

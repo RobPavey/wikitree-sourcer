@@ -1,0 +1,69 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Mary F Hughes"
+  },
+  "personGender": "female",
+  "eventPlace": {
+    "county": "Newport",
+    "placeString": "Newport"
+  },
+  "birthPlace": {
+    "placeString": "Rhode Island"
+  },
+  "eventDate": {
+    "yearString": "1925"
+  },
+  "ageAtEvent": "58",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Mary F Hughes",
+      "age": "58",
+      "isSelected": true,
+      "relationship": "head",
+      "gender": "female",
+      "birthDate": "abt 1867",
+      "birthPlace": "Rhode Island",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697241"
+    },
+    {
+      "name": "Agnes M Fay",
+      "age": "23",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697242"
+    },
+    {
+      "name": "Mary Fay",
+      "age": "2",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697243"
+    },
+    {
+      "name": "Thomas T Hughes",
+      "age": "21",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697244"
+    },
+    {
+      "name": "William T Hughes",
+      "age": "17",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697245"
+    },
+    {
+      "name": "Charles T Fay",
+      "age": "25",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697246"
+    }
+  ],
+  "collectionData": {
+    "id": "4721",
+    "volume": "17",
+    "page": "27",
+    "county": "Newport"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,63 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William Pavey"
+  },
+  "personGender": "male",
+  "birthPlace": {
+    "placeString": "Michigan"
+  },
+  "eventDate": {
+    "dateString": "1950"
+  },
+  "eventPlace": {
+    "placeString": "Millington, Shelby, Tennessee, USA"
+  },
+  "ageAtEvent": "28",
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "William Pavey",
+      "age": "28",
+      "relationship": "head",
+      "isSelected": true,
+      "maritalStatus": "married",
+      "gender": "male",
+      "birthDate": "abt 1922",
+      "birthPlace": "Michigan"
+    },
+    {
+      "name": "Martha Pavey",
+      "age": "29",
+      "relationship": "wife",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62308&h=106947164&indiv=try&viewrecord=1&r=an"
+    },
+    {
+      "name": "Patricia Ann Pavey",
+      "age": "5",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62308&h=106947165&indiv=try&viewrecord=1&r=an"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Martha Pavey"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "62308"
+  },
+  "hasValidData": true
+}

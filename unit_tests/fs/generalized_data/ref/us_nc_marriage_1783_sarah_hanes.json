@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Sarah Hanes"
+  },
+  "eventDate": {
+    "dateString": "1783",
+    "yearString": "1783"
+  },
+  "eventPlace": {
+    "placeString": "North Carolina, United States"
+  },
+  "spouses": [
+    {
+      "marriageDate": {
+        "dateString": "1783",
+        "yearString": "1783"
+      },
+      "marriagePlace": {
+        "placeString": "North Carolina, United States"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1726957"
+  },
+  "hasValidData": true
+}

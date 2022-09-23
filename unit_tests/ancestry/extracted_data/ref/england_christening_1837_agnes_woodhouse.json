@@ -1,0 +1,27 @@
+{
+  "url": "https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv=1&dbid=1351&h=2249655&tid=172368945&pid=392333730623&hid=1048044804201",
+  "pageType": "record",
+  "dbId": "1351",
+  "recordId": "2249655",
+  "ancestryTemplate": "{{Ancestry Record|1351|2249655}}",
+  "domain": "co.uk",
+  "titleName": "Agnes Woodhouse",
+  "titleCollection": "England & Wales, Christening Index, 1530-1980",
+  "recordData": {
+    "Name": "Agnes Woodhouse",
+    "Gender": "Female",
+    "Christening Age": "0",
+    "Birth Date": "16 Dec 1837",
+    "Christening Date": "17 Dec 1837",
+    "Christening Place": "Hemsby, Norfolk, England",
+    "Father": "George Woodhouse",
+    "Mother": "Mary Hunt"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.co.uk/cgi-bin/sse.dll?viewrecord=1&r=5538&db=bivri_EnglandBirth&indiv=try&h=152249655",
+    "Mother": "https://search.ancestry.co.uk/cgi-bin/sse.dll?viewrecord=1&r=5538&db=bivri_EnglandBirth&indiv=try&h=302249655"
+  },
+  "sourceInformation": "Ancestry.com. England & Wales, Christening Index, 1530-1980 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2008. Original data: Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition. Salt Lake City, Utah: Intellectual Reserve, copyright 2002. Used by permission.",
+  "originalData": "Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition. Salt Lake City, Utah: Intellectual Reserve, copyright 2002. Used by permission.",
+  "sourceDescription": "This database contains information extracted from birth and christening records from various counties in England and Wales. The records date from 1530 to 1906. The records included in this database do not represent all localities in England and Wales and for any given area, coverage (both records within a year and total year range) may not be complete. Some parishes and counties are more complete than others. Learn more..."
+}

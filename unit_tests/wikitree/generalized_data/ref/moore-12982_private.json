@@ -1,0 +1,51 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Scott",
+    "lastName": "Moore"
+  },
+  "lastNameAtBirth": "Moore",
+  "lastNameAtDeath": "Moore",
+  "mothersMaidenName": "",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "1968",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Alabama"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Bobby Moore",
+        "lastName": "Moore",
+        "forenames": "Bobby"
+      },
+      "lastNameAtBirth": "Moore",
+      "lastNameAtDeath": "Moore"
+    },
+    "mother": {
+      "name": {
+        "name": "Janis Moore",
+        "lastName": "Moore",
+        "forenames": "Janis"
+      },
+      "lastNameAtBirth": "Moore",
+      "lastNameAtDeath": "Moore"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Dawn Moore",
+        "lastName": "Moore",
+        "forenames": "Dawn"
+      },
+      "lastNameAtBirth": "Moore",
+      "lastNameAtDeath": "Moore"
+    }
+  ],
+  "hasValidData": true
+}

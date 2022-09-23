@@ -1,0 +1,27 @@
+{
+  "sourceType": "record",
+  "recordType": "Naturalization",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "George Simpson"
+  },
+  "eventDate": {
+    "dateString": "3 Nov 1911"
+  },
+  "eventPlace": {
+    "placeString": "Rhode Island, USA"
+  },
+  "ageAtEvent": "30",
+  "birthDate": {
+    "dateString": "15 Aug 1881"
+  },
+  "birthPlace": {
+    "placeString": "Glasgow, Scotland"
+  },
+  "arrivalDate": "12 Feb 1891",
+  "arrivalPlace": "New York City, New York",
+  "collectionData": {
+    "id": "61208"
+  },
+  "hasValidData": true
+}

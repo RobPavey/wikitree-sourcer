@@ -1,0 +1,50 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Austin",
+    "forenames": "Maria Louisa"
+  },
+  "eventPlace": {
+    "country": "Australia",
+    "placeString": "Res of Benjamin Whittenbury Athelstone, Norwood, South Australia, Australia"
+  },
+  "registrationDistrict": "Norwood",
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "John",
+        "lastName": "Austin"
+      }
+    }
+  },
+  "eventDate": {
+    "dateString": "06 Dec 1887",
+    "yearString": "1887"
+  },
+  "ageAtEvent": "19",
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "Benjamin Forbes",
+        "lastName": "Whittenbury"
+      },
+      "marriageDate": {
+        "dateString": "06 Dec 1887",
+        "yearString": "1887"
+      },
+      "marriagePlace": {
+        "country": "Australia",
+        "placeString": "Res of Benjamin Whittenbury Athelstone, Norwood, South Australia, Australia"
+      },
+      "fatherName": "Benjamin Whittenbury"
+    }
+  ],
+  "collectionData": {
+    "id": "South Australia Marriages 1842-1937",
+    "registrationNumber": "153/1161"
+  },
+  "hasValidData": true
+}

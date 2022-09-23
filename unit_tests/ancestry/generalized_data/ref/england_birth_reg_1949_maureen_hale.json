@@ -1,0 +1,29 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Maureen L Hale"
+  },
+  "eventPlace": {
+    "county": "Essex",
+    "placeString": "Brentwood, Essex"
+  },
+  "eventDate": {
+    "dateString": "Apr 1949",
+    "quarter": 2
+  },
+  "registrationDistrict": "Brentwood",
+  "birthDate": {
+    "dateString": "Apr 1949",
+    "quarter": 2
+  },
+  "lastNameAtBirth": "Hale",
+  "mothersMaidenName": "Burton",
+  "collectionData": {
+    "id": "8782",
+    "volume": "4a",
+    "page": "550"
+  },
+  "hasValidData": true
+}

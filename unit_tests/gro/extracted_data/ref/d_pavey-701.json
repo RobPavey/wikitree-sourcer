@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "lastName": "PAVEY",
+  "forenames": "DEREK",
+  "firstName": "DEREK",
+  "birthYear": 1927,
+  "recordType": "newer",
+  "eventYear": 1995,
+  "eventQuarter": 3,
+  "eventQuarterLetter": "S",
+  "registrationDistrict": "EASTBOURNE",
+  "registrationDistrictCode": "4541A",
+  "referenceRegister": "A63E",
+  "entryNumber": "122",
+  "personGender": "male",
+  "deathYear": 1995,
+  "deathQuarter": 3,
+  "eventType": "death"
+}

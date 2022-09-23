@@ -1,0 +1,98 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/10577665:6742",
+  "pageType": "record",
+  "dbId": "6742",
+  "recordId": "10577665",
+  "ancestryTemplate": "{{Ancestry Record|6742|10577665}}",
+  "domain": "com",
+  "titleName": "Isabelle Potter",
+  "titleCollection": "1880 United States Federal Census",
+  "recordData": {
+    "Name": "Isabelle Potter",
+    "Age": "56",
+    "Birth Date": "Abt 1824",
+    "Birthplace": "North Carolina",
+    "Home in 1880": "Hartmans, Hamblen, Tennessee, USA",
+    "Dwelling Number": "274",
+    "Race": "White",
+    "Gender": "Female",
+    "Relation to Head of House": "Wife",
+    "Marital Status": "Married",
+    "Spouse's Name": "Paul Potter",
+    "Father's Birthplace": "North Carolina",
+    "Mother's Birthplace": "North Carolina",
+    "Occupation": "Keeping House",
+    "Cannot Read": "Yes",
+    "Cannot Write": "Yes",
+    "Household Members<br/>Age<br/>Relationship": "Paul Potter 56 Self (Head)<br/>Isabelle Potter 56 Wife<br/>Robert Potter 21 Son<br/>Sarah Potter 16 Daughter<br/>Virginia Bryant 29 Daughter<br/>Samuel Bryant 7 Grandson<br/>Ida Bryant 3 Granddaughter"
+  },
+  "household": {
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members": "Paul Potter",
+        "dbId": "6742",
+        "recordId": "10577746",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=10577746&indiv=try",
+        "Age": "56",
+        "Relationship": "Self (Head)"
+      },
+      {
+        "Household Members": "Isabelle Potter",
+        "Age": "56",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members": "Robert Potter",
+        "dbId": "6742",
+        "recordId": "15756440",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=15756440&indiv=try&viewrecord=1&r=an",
+        "Age": "21",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members": "Sarah Potter",
+        "dbId": "6742",
+        "recordId": "15756419",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=15756419&indiv=try&viewrecord=1&r=an",
+        "Age": "16",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Virginia Bryant",
+        "dbId": "6742",
+        "recordId": "41660766",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=41660766&indiv=try&viewrecord=1&r=an",
+        "Age": "29",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members": "Samuel Bryant",
+        "dbId": "6742",
+        "recordId": "10577828",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=10577828&indiv=try",
+        "Age": "7",
+        "Relationship": "Grandson"
+      },
+      {
+        "Household Members": "Ida Bryant",
+        "dbId": "6742",
+        "recordId": "10577867",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6742&h=10577867&indiv=try",
+        "Age": "3",
+        "Relationship": "Granddaughter"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/6742/images/4244588-00854?pid=10577665&usePUB=true&usePUBJs=true",
+  "imageDbId": "6742",
+  "imageRecordId": "4244588-00854",
+  "sourceCitation": "Year: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074",
+  "sourceInformation": "Ancestry.com and The Church of Jesus Christ of Latter-day Saints. 1880 United States Federal Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2010. 1880 U.S. Census Index provided by The Church of Jesus Christ of Latter-day Saints © Copyright 1999 Intellectual Reserve, Inc. All rights reserved. All use is subject to the limited use license and other terms and conditions applicable to this site. Original data: Tenth Census of the United States, 1880. (NARA microfilm publication T9, 1,454 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "originalData": "Tenth Census of the United States, 1880. (NARA microfilm publication T9, 1,454 rolls). Records of the Bureau of the Census, Record Group 29. National Archives, Washington, D.C.",
+  "sourceDescription": "This database is an index to 50 million individuals enumerated in the 1880 United States Federal Census. Census takers recorded many details including each person's name, address, occupation, relationship to the head of household, race, sex, age at last birthday, marital status, place of birth, parents’ place of birth. Additionally, the names of those listed on the population schedule are linked to actual images of the 1880 Federal Census. Learn more..."
+}

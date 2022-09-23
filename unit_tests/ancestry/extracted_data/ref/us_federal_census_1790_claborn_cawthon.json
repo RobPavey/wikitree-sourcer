@@ -1,0 +1,22 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/111792:2234",
+  "pageType": "record",
+  "dbId": "2234",
+  "recordId": "111792",
+  "ancestryTemplate": "{{Ancestry Record|2234|111792}}",
+  "domain": "com",
+  "titleName": "Claborn Cawthon",
+  "titleCollection": "U.S., Census Reconstructed Records, 1660-1820",
+  "recordData": {
+    "Name": "Claborn Cawthon",
+    "Gender": "M (Male)",
+    "State": "Georgia",
+    "County": "Franklin County",
+    "Residence Year": "1790",
+    "Household Remarks": "Name on a petition, 5 Mar 1790, to the Governor from citizens of Franklin County complaining that four men of their county met in South Carolina and recommended to the Governor the field officers of t"
+  },
+  "sourceCitation": "Document: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7",
+  "sourceInformation": "Ancestry.com. U.S., Census Reconstructed Records, 1660-1820 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: Census Publishing. State Census Records. West Jordan, Utah: Census Publishing, 2003-2009.",
+  "originalData": "Census Publishing. State Census Records. West Jordan, Utah: Census Publishing, 2003-2009.",
+  "sourceDescription": "Records in this database come from Census Publishing’s efforts to both restore or re-create missing pieces of early censuses and actually create decennial “census” records for the years prior to 1790. They extract their information from sources such as not limited to: tax lists, legislative petitions, voter's lists, state and federal land records, and military lists. Learn more..."
+}

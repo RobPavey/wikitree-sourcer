@@ -1,0 +1,56 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Jacob S Swartz"
+  },
+  "birthDate": {
+    "dateString": "17 Jun 1868",
+    "yearString": "1868"
+  },
+  "birthPlace": {
+    "placeString": "Union County, Penn"
+  },
+  "deathDate": {
+    "dateString": "26 Sep 1948",
+    "yearString": "1948"
+  },
+  "eventDate": {
+    "dateString": "26 Sep 1948",
+    "yearString": "1948"
+  },
+  "eventPlace": {
+    "placeString": "Harrison Twp, Logan"
+  },
+  "ageAtDeath": "80",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Jacob Swartz",
+        "forenames": "Jacob",
+        "lastName": "Swartz"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Magdalena",
+        "forenames": "Magdalena"
+      }
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Ethel Davis Swartz",
+        "lastName": "Swartz",
+        "forenames": "Ethel Davis"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1307272"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Agnes Woodhouse"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "16 Dec 1837"
+  },
+  "eventDate": {
+    "dateString": "17 Dec 1837"
+  },
+  "eventPlace": {
+    "placeString": "Hemsby, Norfolk, England"
+  },
+  "birthPlace": {
+    "placeString": "Hemsby, Norfolk, England"
+  },
+  "lastNameAtBirth": "Woodhouse",
+  "ageAtEvent": "0",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "George Woodhouse"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Hunt"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1351"
+  },
+  "hasValidData": true
+}

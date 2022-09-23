@@ -1,0 +1,39 @@
+{
+  "recordData": {
+    "Name": "Charles Pavey",
+    "Birth Place": ", , Indiana",
+    "Event Type": "Death"
+  },
+  "eventDateOriginal": "07 Mar 1937",
+  "eventDate": "7 Mar 1937",
+  "eventYear": "1937",
+  "eventPlaceOriginal": "Anderson, Hamilton, Ohio",
+  "eventPlace": "Anderson, Hamilton, Ohio",
+  "fullName": "Charles Pavey",
+  "givenName": "Charles",
+  "surname": "Pavey",
+  "gender": "male",
+  "birthPlace": "Indiana",
+  "relatedPersonFactType": "Death",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Mary Denning",
+  "relatedPersonGivenName": "Mary",
+  "relatedPersonSurname": "Denning",
+  "relatedPersonGender": "female",
+  "referenceData": {
+    "digitalFilmNumber": "004020737",
+    "filmNumber": "2023493",
+    "imageNumber": "01180",
+    "packetLetter": "F",
+    "recordNumber": "117",
+    "referenceId": "fn 18817"
+  },
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:33S7-9P2P-9D2F",
+  "collectionTitle": "Ohio Deaths, 1908-1953",
+  "fsCollectionId": "1307272",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MSG4-QG7",
+  "citation": "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XZDY-NH9 : 8 March 2021), Charles Pavey in entry for Mary Denning, 07 Mar 1937; citing Anderson, Hamilton, Ohio, reference fn 18817; FHL microfilm 2,023,493.",
+  "sourceTitleForPerson": "Charles Pavey in entry for Mary Denning, \"Ohio Deaths, 1908-1953\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:XZDY-NH9",
+  "pageType": "record"
+}

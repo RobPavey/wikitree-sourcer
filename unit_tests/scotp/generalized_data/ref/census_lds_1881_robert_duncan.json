@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Duncan",
+    "forenames": "Robert"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "ageAtEvent": "38",
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Irongray, Kircudbright, Scotland",
+    "streetAddress": "Cluden Cottages"
+  },
+  "collectionData": {
+    "id": "census1881"
+  },
+  "hasValidData": true
+}

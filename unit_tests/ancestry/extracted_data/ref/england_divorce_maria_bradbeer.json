@@ -1,0 +1,28 @@
+{
+  "url": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=divorcerecords&indiv=try&h=160744",
+  "pageType": "record",
+  "dbId": "divorcerecords",
+  "recordId": "160744",
+  "ancestryTemplate": "{{Ancestry Record|divorcerecords|160744}}",
+  "domain": "com",
+  "titleName": "Maria Bradbeer",
+  "titleCollection": "England & Wales, Civil Divorce Records, 1858-1918",
+  "recordData": {
+    "Name": "Maria Bradbeer",
+    "Gender": "Female",
+    "Record Type": "Divorce",
+    "Type": "Wife's petition for divorce [WD]",
+    "Petition Date": "1915",
+    "Spouse": "John Edward Bradbeer",
+    "Divorce Court File Number": "6573"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=divorcerecords&indiv=try&h=900160744"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2465/images/41354_626640_10307-00000?pid=160744&backurl=https://search.ancestry.com/cgi-bin/sse.dll?viewrecord%3D1%26r%3Dan%26db%3Ddivorcerecords%26indiv%3Dtry%26h%3D160744&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
+  "imageDbId": "2465",
+  "imageRecordId": "41354_626640_10307-00000",
+  "sourceCitation": "The National Archives; Kew, Surrey, England; Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, J 77; Reference Number: J 77/1202/6573",
+  "sourceInformation": "Ancestry.com. England & Wales, Civil Divorce Records, 1858-1918 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2012. Original data: Court for Divorce and Matrimonial Causes, later Supreme Court of Judicature: Divorce and Matrimonial Causes Files, 1858–2002. J 77. Records of the Family Division and predecessors. Records of the Supreme Court of Judicature and related courts. The National Archives, Kew, Surrey, England.Images reproduced by courtesy of The National Archives, London, England.",
+  "sourceDescription": "The gloves come off in these divorce records, as petitioners make their case for dissolving marital unions in the U.K. from 1858-1916. Learn more..."
+}

@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting PRO HO 107, The National Archives, Kew, Surrey.<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey, East Stonehouse, Devon, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting PRO HO 107, The National Archives, Kew, Surrey.<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey, East Stonehouse, Devon, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing PRO HO 107, The National Archives, Kew, Surrey.<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>William Pavey, East Stonehouse, Devon, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey (30) in East Stonehouse registration district in Devon, England. Born in Devon.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey (30) in East Stonehouse registration district in Devon, England. Born in Devon.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>William Pavey (30) in East Stonehouse registration district in Devon, England. Born in Devon.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nName: William Pavey; Census Date: 1841; Census Place: East Stonehouse, Devon, England, United Kingdom; Residence Place: Union St; Birth Date: 1807-1811; Birth Place: Devon; Age: 30.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nName: William Pavey; Census Date: 1841; Census Place: East Stonehouse, Devon, England, United Kingdom; Residence Place: Union St; Birth Date: 1807-1811; Birth Place: Devon; Age: 30.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>Name: William Pavey; Census Date: 1841; Census Place: East Stonehouse, Devon, England, United Kingdom; Residence Place: Union St; Birth Date: 1807-1811; Birth Place: Devon; Age: 30.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)\n{| border=\"1\"\n| Name || William Pavey\n|-\n| Census Date || 1841\n|-\n| Census Place || East Stonehouse, Devon, England, United Kingdom\n|-\n| Residence Place || Union St\n|-\n| Birth Date || 1807-1811\n|-\n| Birth Place || Devon\n|-\n| Age || 30\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)\n{| border=\"1\"\n| Name || William Pavey\n|-\n| Census Date || 1841\n|-\n| Census Place || East Stonehouse, Devon, England, United Kingdom\n|-\n| Residence Place || Union St\n|-\n| Birth Date || 1807-1811\n|-\n| Birth Place || Devon\n|-\n| Age || 30\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>Name: William Pavey; Census Date: 1841; Census Place: East Stonehouse, Devon, England, United Kingdom; Residence Place: Union St; Birth Date: 1807-1811; Birth Place: Devon; Age: 30.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey, East Stonehouse, Devon, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey, East Stonehouse, Devon, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>William Pavey, East Stonehouse, Devon, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 12;<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required).",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting PRO HO 107, The National Archives, Kew, Surrey.<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey (30) in East Stonehouse registration district in Devon, England. Born in Devon.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting PRO HO 107, The National Archives, Kew, Surrey.<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey (30) in East Stonehouse registration district in Devon, England. Born in Devon.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing PRO HO 107, The National Archives, Kew, Surrey.<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>William Pavey (30) in East Stonehouse registration district in Devon, England. Born in Devon.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting PRO HO 107, The National Archives, Kew, Surrey.<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey, East Stonehouse, Devon, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting PRO HO 107, The National Archives, Kew, Surrey.<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>\nWilliam Pavey, East Stonehouse, Devon, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing PRO HO 107, The National Archives, Kew, Surrey.<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record?id=GBC/1841/0276/0192&parentid=GBC/1841/0000933308 FindMyPast Image] (subscription required)<br/>William Pavey, East Stonehouse, Devon, England, United Kingdom.",
+    "type": "source"
+  }
+}

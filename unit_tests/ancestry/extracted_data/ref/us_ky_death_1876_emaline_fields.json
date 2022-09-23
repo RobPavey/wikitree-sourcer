@@ -1,0 +1,31 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/210223:1222",
+  "pageType": "record",
+  "dbId": "1222",
+  "recordId": "210223",
+  "ancestryTemplate": "{{Ancestry Record|1222|210223}}",
+  "domain": "com",
+  "titleName": "Emaline Fields",
+  "titleCollection": "Kentucky, U.S., Death Records, 1852-1965",
+  "recordData": {
+    "Name": "Emaline Fields [Anceline Fields] [Anceline Sloas]",
+    "Maiden Name": "Slans",
+    "Gender": "Female",
+    "Race": "White",
+    "Death Age": "25",
+    "Birth Date": "abt 1851",
+    "Residence Place": "Martin, Kentucky, USA",
+    "Death Date": "15 Sep 1876",
+    "Death Place": "Martin, Kentucky, USA",
+    "Father": "Noah Slans"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1222&h=600210223&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1222/images/KYVR_994048-0284?pid=210223&usePUB=true&usePUBJs=true",
+  "imageDbId": "1222",
+  "imageRecordId": "KYVR_994048-0284",
+  "sourceCitation": "Kentucky Department for Libraries and Archives; Frankfort, Kentucky",
+  "sourceInformation": "Ancestry.com. Kentucky, U.S., Death Records, 1852-1965 [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2007. Original data: Kentucky. Kentucky Birth, Marriage and Death Records – Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky.Kentucky. Birth and Death Records: Covington, Lexington, Louisville, and Newport – Microfilm (before 1911). Microfilm rolls #7007125-7007131, 7011804-7011813, 7012974-7013570, 7015456-7015462. Kentucky Department for Libraries and Archives, Frankfort, Kentucky.Kentucky. Vital Statistics Original Death Certificates – Microfilm (1911-1964). Microfilm rolls #7016130-7041803. Kentucky Department for Libraries and Archives, Frankfort, Kentucky.",
+  "sourceDescription": "This database contains various types of death records from the U.S. state of Kentucky from 1852-1965. Information available on these records can include: name of deceased, race, age at time of death, gender, death date and place, birth date and place, and parents' names. Learn more..."
+}

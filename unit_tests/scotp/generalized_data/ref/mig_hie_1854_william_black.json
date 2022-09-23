@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Immigration",
+  "name": {
+    "lastName": "Black",
+    "forenames": "William"
+  },
+  "eventDate": {
+    "dateString": "1 October 1854"
+  },
+  "shipName": "Derry Castle",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Inverness-shire",
+    "placeString": "Law Fort William, Inverness-shire, Scotland"
+  },
+  "hasValidData": true
+}

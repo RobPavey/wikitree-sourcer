@@ -1,0 +1,41 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Barltrope",
+    "forenames": "Raymond Douglas"
+  },
+  "eventPlace": {
+    "country": "Australia",
+    "placeString": "Brompton, Hindmarsh, South Australia, Australia"
+  },
+  "registrationDistrict": "Hindmarsh",
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "Henry James Stewart",
+        "lastName": "Barltrope"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Beatrice",
+        "lastName": "Francis"
+      }
+    }
+  },
+  "birthDate": {
+    "dateString": "22 Jul 1915"
+  },
+  "eventDate": {
+    "dateString": "22 Jul 1915"
+  },
+  "lastNameAtBirth": "Barltrope",
+  "collectionData": {
+    "id": "South Australia Births 1842-1928",
+    "registrationNumber": "962/552"
+  },
+  "hasValidData": true
+}
