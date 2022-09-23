@@ -1,4 +1,4 @@
-# Setup guide for contributors to WikiTreeSourcer
+# Setup guide for contributors to the wikitree-sourcer project
 
 ## Initial setup
 
