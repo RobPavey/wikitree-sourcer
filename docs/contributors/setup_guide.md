@@ -38,7 +38,7 @@ You will get a lot of messages but towards the end you should see a line like th
 
 In the terminal window with the current directory set to the project folder enter this command:
 
-`node runtest.js`
+`node scripts/run_test.js`
 
 This runs all of the unit tests. There are parameters to limit it by site and type of test.
 
@@ -48,7 +48,7 @@ If everything worked, the last line of the output should be:
 
 If you get lots of errors try running it on a subset of tests like this:
 
-`node runtest.js fg extract`
+`node scripts/run_test.js fg extract`
 
 so that you can more easily see the errors.
 

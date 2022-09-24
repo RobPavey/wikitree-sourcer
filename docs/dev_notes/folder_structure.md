@@ -12,6 +12,7 @@ The code is broken up into modules. It is separated in several ways:
 
 - extension: contains the code that is published as the extension (this is the Chrome version)
 - browser_variants: contains the small number of files that are different for the firefox and safari versions
+- scripts: contains javascript files to be run in node.js to perform dev tasks
 - unit_tests: contains both the code to run regression tests plus the input files and reference files for the tests
 - docs: contains documentation files
 - resources: contains images used for creating icons and screenshots used when publishing

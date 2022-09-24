@@ -41,9 +41,9 @@ The is a subfolder under unit_tests for each site.
 
 ### Add the unit tests site folder
 
-Look at one of the existing ones as an example. There is a top_level file `<site>_test.mjs that runs the test. You should follow the pattern of the existing tests with a separate .mjs file for each type of test.
+Look at one of the existing ones as an example. There is a main file `<site>_test.mjs that runs the test. You should follow the pattern of the existing tests with a separate .mjs file for each type of test.
 
-### Add the site to run_test.js
+### Add the site to scripts/run_test.js
 
 All that is needed is to add one import. This will register the site for testing.
 
