@@ -1,6 +1,6 @@
 {
   "sourceType": "record",
-  "recordType": "BirthRegistration",
+  "recordType": "Birth",
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {

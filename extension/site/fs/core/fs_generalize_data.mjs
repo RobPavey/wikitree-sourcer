@@ -33,10 +33,13 @@ const factTypeToRecordType = [
   },
   {
     type: "Birth",
-    defaultRT: RT.BirthRegistration,
+    defaultRT: RT.Birth,
     titleMatches: [
-      {recordType: RT.BirthRegistration, matches: ["England and Wales Birth Registration Index"]},
-      {recordType: RT.Baptism, matches: ["Christenings"]},
+      {recordType: RT.BirthRegistration, matches: ["England and Wales Birth Registration Index", "New Zealand, Civil Records Indexes"]},
+    ],
+    recordDataMatches: [
+      {recordType: RT.BirthRegistration, matches: ["Registration Number"]},
+      {recordType: RT.BirthRegistration, matches: ["Baptism Date", "Christening Date"]},
     ],
   },
   {
@@ -173,7 +176,7 @@ function determineRecordType(extractedData) {
   //console.log("in determineRecordType, factType is");
   //console.log(extractedData.factType);
 
-  function lookup(factType, collectionTitle, table) {
+  function lookup(factType, collectionTitle, recordData, table) {
     for (let obj of table) {
       if (factType == obj.type) {
         if (obj.titleMatches) {
@@ -181,6 +184,16 @@ function determineRecordType(extractedData) {
             for (let match of titleMatch.matches) {
               if (collectionTitle.includes(match)) {
                 let recordType = titleMatch.recordType;
+                return recordType;
+              }
+            }
+          }
+        }
+        if (recordData && obj.recordDataMatches) {
+          for (let recordDataMatch of obj.recordDataMatches) {
+            for (let match of recordDataMatch.matches) {
+              if (recordData.hasOwnProperty(match)) {
+                let recordType = recordDataMatch.recordType;
                 return recordType;
               }
             }
@@ -195,27 +208,27 @@ function determineRecordType(extractedData) {
   }
 
   let sourceTitle = extractedData.sourceTitleForPerson;
+  let recordData = extractedData.recordData;
 
   // If there is a relatedPersonFactType that implies that it is
   // the fact type of the primary fact
   if (extractedData.relatedPersonFactType) {
-    let recordType = lookup(extractedData.relatedPersonFactType, sourceTitle, factTypeToRecordType);
+    let recordType = lookup(extractedData.relatedPersonFactType, sourceTitle, recordData, factTypeToRecordType);
     if (recordType != undefined) {
       return recordType;
     }
   }
 
   if (extractedData.factType) {
-    let recordType = lookup(extractedData.factType, sourceTitle, factTypeToRecordType);
+    let recordType = lookup(extractedData.factType, sourceTitle, recordData, factTypeToRecordType);
     if (recordType != undefined) {
       return recordType;
     }
   }
 
-  let recordData = extractedData.recordData;
   if (recordData && recordData["Source Record Type"]) {
     let sourceRecordType = recordData["Source Record Type"];
-    let recordType = lookup(sourceRecordType, sourceTitle, sourceRecordTypeToRecordType);
+    let recordType = lookup(sourceRecordType, sourceTitle, recordData, sourceRecordTypeToRecordType);
     if (recordType != undefined) {
       return recordType;
     }

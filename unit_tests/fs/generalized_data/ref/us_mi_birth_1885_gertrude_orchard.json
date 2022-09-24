@@ -1,0 +1,40 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Gertrude May Orchard"
+  },
+  "birthDate": {
+    "dateString": "16 Oct 1885",
+    "yearString": "1885"
+  },
+  "eventDate": {
+    "dateString": "16 Oct 1885",
+    "yearString": "1885"
+  },
+  "eventPlace": {
+    "placeString": "Elk Township, Sanilac, Michigan, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Orchard",
+        "forenames": "William",
+        "lastName": "Orchard"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ann Orchard",
+        "forenames": "Ann",
+        "lastName": "Orchard"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1675348"
+  },
+  "hasValidData": true
+}

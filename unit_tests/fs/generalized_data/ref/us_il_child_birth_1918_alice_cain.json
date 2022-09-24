@@ -3,7 +3,7 @@
   "role": "Parent",
   "primaryPerson": "Henry Green",
   "primaryPersonGender": "male",
-  "recordType": "BirthRegistration",
+  "recordType": "Birth",
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {

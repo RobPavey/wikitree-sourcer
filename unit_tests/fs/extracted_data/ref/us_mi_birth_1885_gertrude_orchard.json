@@ -1,0 +1,41 @@
+{
+  "recordData": {
+    "Name": "Gertrude May Orchard",
+    "Birth Date": "16 Oct 1885",
+    "Birth Place": "Elk Township, Sanilac, Michigan, United States"
+  },
+  "fullName": "Gertrude May Orchard",
+  "givenName": "Gertrude May",
+  "surname": "Orchard",
+  "gender": "female",
+  "factType": "Birth",
+  "eventDateOriginal": "16 Oct 1885",
+  "eventDate": "16 Oct 1885",
+  "eventYear": "1885",
+  "eventPlaceOriginal": "Elk Township, Sanilac, Michigan, United States",
+  "eventPlace": "Elk Township, Sanilac, Michigan, United States",
+  "birthDateOriginal": "16 Oct 1885",
+  "birthDate": "16 Oct 1885",
+  "birthYear": "1885",
+  "father": {
+    "fullName": "William Orchard",
+    "givenName": "William",
+    "surname": "Orchard"
+  },
+  "mother": {
+    "fullName": "Ann Orchard",
+    "givenName": "Ann",
+    "surname": "Orchard"
+  },
+  "referenceData": {
+    "digitalFilmNumber": "005191148",
+    "filmNumber": "979465"
+  },
+  "collectionTitle": "Michigan Births and Christenings, 1775-1995",
+  "fsCollectionId": "1675348",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MRVR-YVZ",
+  "citation": "\"Michigan Births and Christenings, 1775-1995\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:F4P5-QX7 : 17 January 2020), Gertrude May Orchard, 1885.",
+  "sourceTitleForPerson": "Gertrude May Orchard, \"Michigan Births and Christenings, 1775-1995\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:F4P5-QX7",
+  "pageType": "record"
+}

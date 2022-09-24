@@ -260,6 +260,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:FH24-9QT",
   },
   {
+    caseName: "us_mi_birth_1885_gertrude_orchard",
+    url: "https://www.familysearch.org/ark:/61903/1:1:F4P5-QX7",
+  },
+  {
     caseName: "us_mi_birth_1897_pearl_agar",
     url: "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLZ",
   },

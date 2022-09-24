@@ -1,6 +1,6 @@
 {
   "sourceType": "record",
-  "recordType": "BirthRegistration",
+  "recordType": "Birth",
   "sourceOfData": "fs",
   "birthDate": {
     "dateString": "2 Oct 1768",

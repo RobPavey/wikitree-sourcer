@@ -560,9 +560,9 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
       }
     }
 
-    if (!addedPlace && wtsPlace && data.recordType == RT.BirthRegistration && !data.registrationDistrict) {
-      // coming from a birth registration and the place name should be a district
-      // somtimes the place string is something like:
+    if (!addedPlace && wtsPlace && (data.recordType == RT.BirthRegistration || data.recordType == RT.Birth) && !data.registrationDistrict) {
+      // coming from a birth registration or birth and the place name should be a district
+      // sometimes the place string is something like:
       // "Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom"
       // and inferTown will get "Edinburgh" but we want "Saint George"
       let firstCommaIndex = wtsPlace.placeString.indexOf(",");
