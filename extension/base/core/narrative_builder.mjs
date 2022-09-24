@@ -1226,7 +1226,7 @@ class NarrativeBuilder {
       this.narrative += " " + this.getPlaceWithPreposition(place);
     }
     if (deathDate) {
-      this.narrative += " with a death date of " + deathDate;
+      this.narrative += " with a death date of " + this.formatDate(deathDate, false);
     }
     this.narrative += ".";
   }
@@ -1883,7 +1883,7 @@ class NarrativeBuilder {
     else if (gd.recordSubtype == "Testament") {
       if (gd.originalConfirmationGrantedDate) {
         this.narrative = "Confirmation was originally granted on " + possessiveName + " estate";
-        this.narrative +=" on " + gd.originalConfirmationGrantedDate;
+        this.narrative += " " + this.formatDate(gd.originalConfirmationGrantedDate, true);
         this.narrative += " and an additional confirmation was granted";
       }
       else {
@@ -1893,7 +1893,7 @@ class NarrativeBuilder {
     else if (gd.recordSubtype == "Inventory" || gd.recordSubtype == "AdditionalInventory") {
       this.narrative = "Confirmation was granted on " + possessiveName + " estate";
       if (gd.originalConfirmationGrantedDate) {
-        this.narrative +=" on " + gd.originalConfirmationGrantedDate;
+        this.narrative +=" " + this.formatDate(gd.originalConfirmationGrantedDate, true);
         this.narrative += " and an additional inventory was granted";
       }
     }
@@ -1907,10 +1907,10 @@ class NarrativeBuilder {
 
     if (gd.recordSubtype == "AdditionalInventory") {
       if (gd.grantedDate) {
-        this.narrative += ", additional inventory granted on " + gd.grantedDate;
+        this.narrative += ", additional inventory granted on " + this.formatDate(gd.grantedDate, false);
       }
       else if (gd.givenUpDate) {
-        this.narrative += ", additional inventory given up on " + gd.givenUpDate;
+        this.narrative += ", additional inventory given up on " + this.formatDate(gd.givenUpDate, false);
       }
     }
 
