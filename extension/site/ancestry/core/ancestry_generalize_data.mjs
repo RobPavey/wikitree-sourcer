@@ -355,9 +355,10 @@ function determineRoleGivenRecordType(extractedData, result) {
   let recordType = result.recordType;
 
   if (recordType == RT.Baptism || recordType == RT.Birth || recordType == RT.BirthOrBaptism) {
-    // if there is a date etc then this is likely a record for this person not a 
-    // child or spouse
-    let value = getCleanValueForRecordDataList(extractedData, ["Birth Date", "Baptism Date", "Christening Date"]);
+    // if there is a baptism date etc then this is likely a record for this person not a 
+    // child or spouse. There could be a birth date though - for the parent of the child
+    // e.g.: https://www.ancestry.com/discoveryui-content/view/300065623:8703?ssrc=pt&tid=180320731&pid=412419830925
+    let value = getCleanValueForRecordDataList(extractedData, ["Baptism Date", "Christening Date"]);
     if (!value) {
       if (extractedData.recordData["Child"]) {
         // some family records have all parents and children of the primary person
@@ -1962,10 +1963,14 @@ function regeneralizeDataWithLinkedRecords(input) {
         //console.log("regeneralizeDataWithLinkedRecords, primaryLinkedRecord generalizedData is:");
         //console.log(generalizedData);
 
-        if (!result.eventPlace && generalizedData.eventPlace) {
+        // even if we have an event date and place the one from the linked record should be better.
+        // For example the parent in a child birt record can have a birth place which has been
+        // interpreted as the event place incorrectly e.g.:
+        // https://www.ancestry.com/discoveryui-content/view/300065623:8703
+        if (generalizedData.eventPlace) {
           result.eventPlace = generalizedData.eventPlace;
         }
-        if (!result.eventDate && generalizedData.eventDate) {
+        if (generalizedData.eventDate) {
           result.eventDate = generalizedData.eventDate;
         }
 
