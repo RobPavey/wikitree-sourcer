@@ -141,7 +141,7 @@ async function setupAncestrySearchSubMenu(data, backFunction) {
   await addAncestrySameRecordMenuItem(menu, data);
   addAncestrySearchCollectionsMenuItem(menu, data, backToHereFunction);
   addAncestryTreesMenuItem(menu, data);
-  await addAncestrySearchWithParametersMenuItem(menu, data, backToHereFunction);
+  addAncestrySearchWithParametersMenuItem(menu, data, backToHereFunction);
 
   endMainMenu(menu);
 }

@@ -103,17 +103,6 @@ function doesUrlMatchPattern(urlParts, patternParts) {
 
 function determineSiteNameForTab(activeTab){
 
-  const matchToSiteName = {
-    "*://www.wikitree.com/*": "wikitree",
-    "*://*.ancestry.com/*": "ancestry",
-    "*://*.findmypast.com/*": "fmp",
-    "*://www.findagrave.com/*": "fg",
-    "*://www.familysearch.org/*": "fs",
-    "*://www.freebmd.org.uk/*": "freebmd",
-    "*://www.freecen.org.uk/*": "freecen",
-    "*://www.gro.gov.uk/gro/content/certificates/*": "gro",
-  }
-
   let manifest = chrome.runtime.getManifest();
 
   // Note: the url and pendingUrl properties will be ignored unless the extsnion has the "tabs" permission

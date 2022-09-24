@@ -63,7 +63,7 @@ This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any mo
 
 ### Add some lines under "host_permissions"
 
-To be honest I forget why this is needed and whether it is needed on all three platforms (Chrome, Safari, Firefox). I think it is related to the code that reloads the content scripts when the extension is installed or re-enabled.
+To be honest I forget why this is needed and whether it is needed on all three platforms (Chrome, Safari, Firefox). I think it is related to the code that reloads the content scripts when the extension is installed or re-enabled. This code is only needed on Chrome since the other platforms do it automatically. But there may be a reason why adding the sites here is needed on the other platforms to.
 
 
 
