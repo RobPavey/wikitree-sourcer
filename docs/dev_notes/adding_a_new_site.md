@@ -36,6 +36,17 @@ The only javascript code in the extension that has to be modified for each site 
 
 ## Create the unit tests site folder
 
+The unit tests are run locally to check that changes have not changed the output of build_search_url, build_citation etc.
+The is a subfolder under unit_tests for each site.
+
+### Add the unit tests site folder
+
+Look at one of the existing ones as an example. There is a top_level file `<site>_test.mjs that runs the test. You should follow the pattern of the existing tests with a separate .mjs file for each type of test.
+
+### Add the site to run_test.js
+
+All that is needed is to add one import. This will register the site for testing.
+
 ## Add the site to the manifest.json file(s)
 
 In order for the popup to work on your site you need to add the site to the manifest files. Because there are three different manifest files (for Chrome, Firefox and Safari) the same changes need to made to each one.
