@@ -460,6 +460,13 @@ function extractDataForPersonPage(document, result) {
 
   let personPageElement = document.querySelector("fs-person-page");
   if (personPageElement && personPageElement.shadowRoot) {
+
+    // there are two places to get the person's name, one in header and one in vitals
+    let personElement = personPageElement.shadowRoot.querySelector("div.person-header-container > fs-tree-person");
+    if (personElement) {
+      extractNamesFromFsTreePerson(personElement, result);
+    }
+
     let detailsElement = personPageElement.shadowRoot.querySelector("#pages > fs-tree-person-details");
 
     if (detailsElement && detailsElement.shadowRoot) {
@@ -502,7 +509,10 @@ function extractDataForPersonPage(document, result) {
                       let nameElement = cardSection.querySelector("div.display-name");
                       if (nameElement) {
                         let name = nameElement.textContent;
-                        result.fullName = name;
+                        // we may already have name from header
+                        if (!result.fullName) {
+                          result.fullName = name;
+                        }
                       }
                     }
                     else if (conclusionType == "GENDER") {

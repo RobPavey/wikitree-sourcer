@@ -297,18 +297,6 @@ function determineRecordTypeAndRole(extractedData, result) {
   result.recordType = recordType;
 }
 
-function monthStrToNum(monthStr) {
-  const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-  for (let i = 0; i < months.length; ++i) {
-    if (monthStr.startsWith(months[i])) {
-      return i+1;
-    }
-  }
-
-  return 0;
-}
-
 function cleanOccupation(text) {
   let newText = text;
   if (text && /^[^a-z]+$/.test(text)) {
@@ -692,6 +680,9 @@ function generalizeDataForPerson(data, result) {
       resultObject.name.forenames = dataObject.givenName;
     }
   }
+
+  // we will already have set fullName but try to get the fornames and last names
+  setName(data, result);
 
   if (data.spouses) {
     result.spouses = [];
