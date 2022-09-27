@@ -127,16 +127,26 @@ async function checkForPendingSearch() {
             }
           }
 
-          // try to submit form
           //console.log("checkForPendingSearch: found formElement:");
           //console.log(formElement);
 
-          // Now hide the form so that the use doesn't try to use it.
-          formElement.style.display = "none";
+          // Now hide most of the page so that the use doesn't try to use it.
+          let contentElement = document.getElementById("content");
+          if (contentElement) {
+            //console.log("checkForPendingSearch: found contentElement:");
+            //console.log(contentElement);
 
-          const titleElement = document.querySelector("#content h1.title");
-          if (titleElement) {
+            let topDivElement = contentElement.querySelector("div.sixteen.columns");
+            if (topDivElement) {
+              //console.log("checkForPendingSearch: found topDivElement:");
+              //console.log(topDivElement);
+
+              topDivElement.style.display = "none";
+            }
+
+            let titleElement = document.createElement("h1");
             titleElement.innerText = "Performing WikiTree Sourcer search...";
+            contentElement.appendChild(titleElement);
           }
 
           // now submit the form to do the search
