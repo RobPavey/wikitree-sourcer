@@ -179,7 +179,7 @@ function determineRecordType(extractedData) {
   function lookup(factType, collectionTitle, recordData, table) {
     for (let obj of table) {
       if (factType == obj.type) {
-        if (obj.titleMatches) {
+        if (obj.titleMatches && collectionTitle) {
           for (let titleMatch of obj.titleMatches) {
             for (let match of titleMatch.matches) {
               if (collectionTitle.includes(match)) {

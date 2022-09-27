@@ -375,11 +375,21 @@ const imageRegressionData = [
 
 const personRegressionData = [
   {
-    // Note: I had to remove lots of style sheet stuff to get it to extract.
-    // Even then it doesn't get any useful data - maybe because of shadow roots
-    caseName: "xx_profile_ellen_mccormick_1857_1887_us",
-    url: "https://www.familysearch.org/tree/person/details/GD11-SH7",
+    caseName: "xx_profile_pinkney_lyles_1886_1916",
+    url: "https://www.familysearch.org/tree/person/details/G6DP-4WD",
+    fetchType: "person",
   },
+  {
+    caseName: "xx_profile_sarah_moats_1854_1946",
+    url: "https://www.familysearch.org/tree/person/details/MQWP-4VQ",
+    fetchType: "person",
+  },
+  {
+    caseName: "xx_profile_william_lyles_1856_1931",
+    url: "https://www.familysearch.org/tree/person/details/G8S8-5FJ",
+    fetchType: "person",
+  },
+
 ];
 
 const optionVariants = [
@@ -450,9 +460,8 @@ async function runTests(testManager) {
   await runGeneralizeDataTests("fs", generalizeData, imageRegressionData, testManager);
   await runBuildCitationTests("fs", buildCitation, buildHouseholdTable, imageRegressionData, testManager, optionVariants);
 
-  await runExtractDataTests("fs", extractData, personRegressionData, testManager);
+  await runExtractDataTests("fs", extractDataFromFetch, personRegressionData, testManager);
   await runGeneralizeDataTests("fs", generalizeData, personRegressionData, testManager);
-  await runBuildCitationTests("fs", buildCitation, buildHouseholdTable, personRegressionData, testManager, optionVariants);
 }
 
 export { runTests };

@@ -1,0 +1,31 @@
+{
+  "fullName": "Pinkney Francis Lyles",
+  "givenName": "Pinkney Francis",
+  "surname": "Lyles",
+  "gender": "male",
+  "birthDateOriginal": "1886",
+  "birthPlaceOriginal": "Mount Airy, Carroll, Maryland, United States",
+  "deathDateOriginal": "28 March 1916",
+  "spouses": [
+    {
+      "fullName": "Anna Rachael Johnson",
+      "givenName": "Anna Rachael",
+      "surname": "Johnson",
+      "marriageDateOriginal": "31 Jan 1915",
+      "marriageDate": "31 January 1915",
+      "marriagePlaceOriginal": "Gettysburg, Adams, Pennsylvania, United States",
+      "marriagePlace": "Gettysburg, Adams, Pennsylvania, United States"
+    }
+  ],
+  "father": {
+    "fullName": "Rev William Oscar Lyles",
+    "givenName": "William Oscar",
+    "surname": "Lyles"
+  },
+  "mother": {
+    "fullName": "Hannah J. Taylor",
+    "givenName": "Hannah J.",
+    "surname": "Taylor"
+  },
+  "pageType": "person"
+}

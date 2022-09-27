@@ -26,6 +26,8 @@ async function doFetch() {
 
   //console.log('doFetch, document.location is: ' + document.location);
 
+  let fetchType = "record";
+
   let fetchUrl = document.location.href;
   //console.log('doFetch, fetchUrl is: ' + fetchUrl);
 
@@ -64,7 +66,8 @@ async function doFetch() {
 
     // API URL looks like this: https://api.familysearch.org/platform/tree/persons/K2F9-F5Z
     if (personId) {
-      fetchUrl = "https://api.familysearch.org/platform/tree/persons/" + personId;
+      fetchUrl = "https://www.familysearch.org/platform/tree/persons/" + personId + "?relatives";
+      fetchType = "person";
     }
   }
 
@@ -122,7 +125,7 @@ async function doFetch() {
     //console.log("dataObj is:");
     //console.log(dataObj);
 
-    return {success: true, dataObj: dataObj};
+    return {success: true, dataObj: dataObj, fetchType: fetchType};
   }
   catch (error) {
     console.log("fetch failed, error is:");
@@ -131,7 +134,7 @@ async function doFetch() {
   }
 }
 
-async function extractDataFromFetchAndRespond(document, dataObj, options, sendResponse) {
+async function extractDataFromFetchAndRespond(document, dataObj, fetchType,  options, sendResponse) {
 
   //console.log('extractDataFromFetchAndRespond entered');
 
@@ -157,7 +160,7 @@ async function extractDataFromFetchAndRespond(document, dataObj, options, sendRe
   }
 
   // Extract the data.
-  let extractedData = loadedExtractDataModule.extractDataFromFetch(document, dataObj, options);
+  let extractedData = loadedExtractDataModule.extractDataFromFetch(document, dataObj, fetchType, options);
 
   // respond with the type of content and the extracted data
   sendResponse({success: true, contentType: "fs", extractedData: extractedData});
@@ -168,7 +171,7 @@ async function doFetchAndSendResponse(sendResponse, options) {
 
   if (result.success) {
     // Extract the data.
-    extractDataFromFetchAndRespond(document, result.dataObj, options, sendResponse);
+    extractDataFromFetchAndRespond(document, result.dataObj, result.fetchType, options, sendResponse);
   }
   else {
     if (result.errorCondition == "NotJSON") {
@@ -220,6 +223,9 @@ function shouldUseFetch() {
 
       if (!location.href.startsWith("https://www.familysearch.org/tree/person/details/")) {
         useFetch = true;
+      }
+      else {
+        useFetch = true;  // as of 26 Sep 2022 we have switched to API for person page
       }
     }
   }

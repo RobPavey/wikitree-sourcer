@@ -1,0 +1,42 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Sarah A. Moats",
+    "lastName": "Moats",
+    "forenames": "Sarah A."
+  },
+  "birthDate": {
+    "dateString": "23 July 1854"
+  },
+  "deathDate": {
+    "dateString": "30 April 1946"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "William Smith",
+        "lastName": "Smith",
+        "forenames": "William"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Henry Moats",
+        "lastName": "Moats",
+        "forenames": "John Henry"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Anna Bloom",
+        "lastName": "Bloom",
+        "forenames": "Anna"
+      }
+    }
+  },
+  "hasValidData": true
+}

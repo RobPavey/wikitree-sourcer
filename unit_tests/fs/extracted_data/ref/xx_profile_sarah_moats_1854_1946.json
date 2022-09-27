@@ -1,0 +1,26 @@
+{
+  "fullName": "Sarah A. Moats",
+  "givenName": "Sarah A.",
+  "surname": "Moats",
+  "gender": "female",
+  "birthDateOriginal": "23 July 1854",
+  "deathDateOriginal": "30 April 1946",
+  "spouses": [
+    {
+      "fullName": "William Smith",
+      "givenName": "William",
+      "surname": "Smith"
+    }
+  ],
+  "father": {
+    "fullName": "John Henry Moats",
+    "givenName": "John Henry",
+    "surname": "Moats"
+  },
+  "mother": {
+    "fullName": "Anna Bloom",
+    "givenName": "Anna",
+    "surname": "Bloom"
+  },
+  "pageType": "person"
+}

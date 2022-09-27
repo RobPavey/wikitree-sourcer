@@ -1,0 +1,51 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Pinkney Francis Lyles",
+    "lastName": "Lyles",
+    "forenames": "Pinkney Francis"
+  },
+  "birthDate": {
+    "dateString": "1886"
+  },
+  "birthPlace": {
+    "placeString": "Mount Airy, Carroll, Maryland, United States"
+  },
+  "deathDate": {
+    "dateString": "28 March 1916"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Anna Rachael Johnson",
+        "lastName": "Johnson",
+        "forenames": "Anna Rachael"
+      },
+      "marriageDate": {
+        "dateString": "31 January 1915"
+      },
+      "marriagePlace": {
+        "placeString": "Gettysburg, Adams, Pennsylvania, United States"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Rev William Oscar Lyles",
+        "lastName": "Lyles",
+        "forenames": "William Oscar"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Hannah J. Taylor",
+        "lastName": "Taylor",
+        "forenames": "Hannah J."
+      }
+    }
+  },
+  "hasValidData": true
+}

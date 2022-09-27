@@ -1,0 +1,35 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Rev William Oscar Lyles",
+    "lastName": "Lyles",
+    "forenames": "William Oscar"
+  },
+  "birthDate": {
+    "dateString": "8 February 1856"
+  },
+  "birthPlace": {
+    "placeString": "Maryland, United States"
+  },
+  "deathDate": {
+    "dateString": "19 July 1931"
+  },
+  "deathPlace": {
+    "placeString": "Taylorsville, Carroll, Maryland, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Hannah J. Taylor",
+        "lastName": "Taylor",
+        "forenames": "Hannah J."
+      },
+      "marriageDate": {
+        "dateString": "about 1878"
+      }
+    }
+  ],
+  "hasValidData": true
+}

@@ -57,6 +57,10 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     let result = undefined;
 
     let pageFile = testData.pageFile;
+    let fetchType = testData.fetchType;
+    if (!fetchType) {
+      fetchType = "record";
+    }
     
     if (!pageFile) {
       let testPageFile = "./unit_tests/" + siteName + "/saved_pages/" + testData.caseName + ".html";
@@ -98,7 +102,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       }
 
       try {
-        result = extractDataFunction(undefined, fetchObj, testManager.options);
+        result = extractDataFunction(undefined, fetchObj, fetchType, testManager.options);
       } catch (e) {
         console.log('Error:', e.stack);
         logger.logError(testData, "Exception occurred");
@@ -137,7 +141,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       }
 
       try {
-        result = extractDataFunction(undefined, fetchObj, testManager.options);
+        result = extractDataFunction(undefined, fetchObj, fetchType, testManager.options);
       } catch (e) {
         console.log('Error:', e.stack);
         logger.logError(testData, "Exception occurred");

@@ -1,0 +1,21 @@
+{
+  "fullName": "Rev William Oscar Lyles",
+  "prefix": "Rev",
+  "givenName": "William Oscar",
+  "surname": "Lyles",
+  "gender": "male",
+  "birthDateOriginal": "8 February 1856",
+  "birthPlaceOriginal": "Maryland, United States",
+  "deathDateOriginal": "19 July 1931",
+  "deathPlaceOriginal": "Taylorsville, Carroll, Maryland, United States",
+  "spouses": [
+    {
+      "fullName": "Hannah J. Taylor",
+      "givenName": "Hannah J.",
+      "surname": "Taylor",
+      "marriageDateOriginal": "about 1878",
+      "marriageDate": "about 1878"
+    }
+  ],
+  "pageType": "person"
+}

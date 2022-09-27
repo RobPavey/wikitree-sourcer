@@ -1795,25 +1795,23 @@ function getFactTypeFromRecordType(recordType) {
   return factType;
 }
 
-function setEventDateAndPlaceForFactIfPrimary(result, fact) {
-  if (fact.primary) {
-    if (fact.date) {
-      if (fact.date.original) {
-        result.eventDateOriginal = fact.date.original;
-      }
-      setFieldFromDate(fact.date, "/Date", "EVENT_DATE", result, "eventDate");
-      setFieldFromDate(fact.date, "/Year", "EVENT_YEAR", result, "eventYear");
+function setEventDateAndPlaceForFact(result, fact) {
+  if (fact.date) {
+    if (fact.date.original) {
+      result.eventDateOriginal = fact.date.original;
     }
-    if (fact.place) {
-      if (fact.place.original) {
-        result.eventPlaceOriginal = fact.place.original;
-      }
-      setFieldFromPlace(fact.place, "", "EVENT_PLACE", result, "eventPlace");
-      setFieldFromPlace(fact.place, "/RegistrationDistrict", "", result, "registrationDistrict");
-      setFieldFromPlace(fact.place, "", "EVENT_PLACE_LEVEL_3", result, "eventPlaceL3");
-      setFieldFromPlace(fact.place, "/County", "EVENT_PLACE_LEVEL_2", result, "eventPlaceL2");
-      setFieldFromPlace(fact.place, "/Country", "EVENT_PLACE_LEVEL_1", result, "eventPlaceL1");
+    setFieldFromDate(fact.date, "/Date", "EVENT_DATE", result, "eventDate");
+    setFieldFromDate(fact.date, "/Year", "EVENT_YEAR", result, "eventYear");
+  }
+  if (fact.place) {
+    if (fact.place.original) {
+      result.eventPlaceOriginal = fact.place.original;
     }
+    setFieldFromPlace(fact.place, "", "EVENT_PLACE", result, "eventPlace");
+    setFieldFromPlace(fact.place, "/RegistrationDistrict", "", result, "registrationDistrict");
+    setFieldFromPlace(fact.place, "", "EVENT_PLACE_LEVEL_3", result, "eventPlaceL3");
+    setFieldFromPlace(fact.place, "/County", "EVENT_PLACE_LEVEL_2", result, "eventPlaceL2");
+    setFieldFromPlace(fact.place, "/Country", "EVENT_PLACE_LEVEL_1", result, "eventPlaceL1");
   }
 }
 
@@ -1926,11 +1924,15 @@ function getPrimaryNameForm(person) {
   let nameArray = person.names;
   if (nameArray && nameArray.length > 0) {
     for (let name of nameArray) {
-      let nameType = name.type; // this always seems to be "http://gedcomx.org/BirthName"
-      for (let nameForm of name.nameForms) {
-        if (nameForm.parts) {
-          nameForms.push(nameForm);
-          break;
+       // this usually seems to be "http://gedcomx.org/BirthName" but can also be
+       // "http://gedcomx.org/AlsoKnownAs" which we ignore
+      let nameType = name.type;
+      if (nameType == "http://gedcomx.org/BirthName") {
+        for (let nameForm of name.nameForms) {
+          if (nameForm.parts) {
+            nameForms.push(nameForm);
+            break;
+          }
         }
       }
     }
@@ -2015,7 +2017,314 @@ function getPrimaryNameForm(person) {
   return lastNameForm;
 }
 
-function extractDataFromFetch(document, dataObj, options) {
+function getNameForPersonObj(person, result) {
+  let nameForm = getPrimaryNameForm(person);
+  if (nameForm) {
+    if (nameForm.fullText) {
+      result.fullName = nameForm.fullText;
+    }
+    if (nameForm.parts) {
+      for (let part of nameForm.parts) {
+        if (part.value) {
+          if (part.type.endsWith("Given")) {
+            result.givenName = part.value;
+          }
+          else if (part.type.endsWith("Surname")) {
+            result.surname = part.value;
+          }
+          else if (part.type.endsWith("Prefix")) {
+            result.prefix = part.value;
+          }
+          else if (part.type.endsWith("Suffix")) {
+            result.suffix = part.value;
+          }
+        }
+      }
+    }
+  }
+}
+
+function getGenderForPersonObj(person, result) {
+  // get gender
+  if (person.gender) {
+    if (person.gender.type.endsWith("/Male")) {
+      result.gender = "male";
+    }
+    else if (person.gender.type.endsWith("/Female")) {
+      result.gender = "female";
+    }
+  }
+}
+
+function processRecordDataFactsForPersonObj(person, result) {
+  // check the facts of this primary person for this persons vitals
+  if (person.facts) {
+    for (let fact of person.facts) {
+      // the fact contains the place etc
+      // it gets complicated when there is more than one person.
+      // .principal seems to be whether they are one of the people being recorded
+      // In a census all the people in the household are principals
+      // In a birth registration the child is a principal and the mother is not
+      if (fact.type) {
+        let factType = getFactType(fact);
+        if (fact.primary) {
+          result.factType = factType;
+          setEventDateAndPlaceForFact(result, fact);
+        }
+
+        //console.log("factType is " + factType);
+        if (factType == "Birth") {
+          //console.log("type is birth");
+          if (fact.date) {
+            if (fact.date.original) {
+              result.birthDateOriginal = fact.date.original;
+            }
+            setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE_EST", result, "birthDate");
+            setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR_EST", result, "birthYear");
+          }
+          if (fact.place) {
+            setFieldFromPlaceWithLabels(fact.place,
+              ["PR_BIR_PLACE", "PR_BIR_PLACE_ORIG",
+               "PR_BIRTH_PLACE", "PR_BIRTH_PLACE_ORIG",
+               "BIRTH_PLACE", "BIRTH_PLACE_ORIG", ],
+              result, "birthPlace");
+            if (!result.birthPlace && !person.principal) {
+              // this birth information about a non-principal. e.g. the birth place of father
+              // in a child's birth or death record. The label could be something like:
+              // PR_FTHR_BIRTH_PLACE
+              setFieldFromPlace(fact.place, "", "", result, "birthPlace");
+            }
+          }
+        }
+        else if (factType == "Death") {
+          if (fact.date) {
+            if (fact.date.original) {
+              result.deathDateOriginal = fact.date.original;
+            }
+            setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE", result, "deathDate");
+            if (!result.deathDate) {
+              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_EST", result, "deathDate");
+            }
+            if (!result.deathDate) {
+              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_ORIG", result, "deathDate");
+            }
+            setFieldFromDate(fact.date, "/Year", "PR_DEA_YEAR_EST", result, "deathYear");
+            setFieldFromDate(fact.date, "/Month", "PR_DEA_MONTH", result, "deathMonth");
+          }
+          if (fact.place) {
+            setFieldFromPlace(fact.place, "", "PR_DEA_PLACE", result, "deathPlace");
+          }
+        }
+        else if (factType == "Residence" || factType == "Census") {
+          if (fact.place) {
+            setFieldFromPlace(fact.place, "", "NOTE_PR_RES_PLACE", result, "residence");
+          }
+        }
+
+        // build up record data that could be included in a data table
+        addRecordDataForFact(result, fact, factType);
+      }
+    }
+  }
+}
+
+function processPersonPageFactsForPersonObj(person, result) {
+  // check the facts of this primary person for this persons vitals
+  if (person.facts) {
+    for (let fact of person.facts) {
+      // the fact contains the place etc
+      // it gets complicated when there is more than one person.
+      // .principal seems to be whether they are one of the people being recorded
+      // In a census all the people in the household are principals
+      // In a birth registration the child is a principal and the mother is not
+      if (fact.type) {
+        let factType = getFactType(fact);
+
+        //console.log("factType is " + factType);
+        if (factType == "Birth") {
+          //console.log("type is birth");
+          if (fact.date) {
+            if (fact.date.original) {
+              result.birthDateOriginal = fact.date.original;
+            }
+            setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE_EST", result, "birthDate");
+            setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR_EST", result, "birthYear");
+          }
+          if (fact.place) {
+            if (fact.place.original) {
+              result.birthPlaceOriginal = fact.place.original;
+            }
+            setFieldFromPlaceWithLabels(fact.place,
+              ["PR_BIR_PLACE", "PR_BIR_PLACE_ORIG",
+               "PR_BIRTH_PLACE", "PR_BIRTH_PLACE_ORIG",
+               "BIRTH_PLACE", "BIRTH_PLACE_ORIG", ],
+              result, "birthPlace");
+          }
+        }
+        else if (factType == "Death") {
+          if (fact.date) {
+            if (fact.date.original) {
+              result.deathDateOriginal = fact.date.original;
+            }
+            setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE", result, "deathDate");
+            if (!result.deathDate) {
+              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_EST", result, "deathDate");
+            }
+            if (!result.deathDate) {
+              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_ORIG", result, "deathDate");
+            }
+            setFieldFromDate(fact.date, "/Year", "PR_DEA_YEAR_EST", result, "deathYear");
+            setFieldFromDate(fact.date, "/Month", "PR_DEA_MONTH", result, "deathMonth");
+          }
+          if (fact.place) {
+            if (fact.place.original) {
+              result.deathPlaceOriginal = fact.place.original;
+            }
+            setFieldFromPlace(fact.place, "", "PR_DEA_PLACE", result, "deathPlace");
+          }
+        }
+      }
+    }
+  }
+}
+
+function addParentFromPerson(otherPerson, result) {
+  // look for their name
+  let parent = {};
+  let nameForm = getPrimaryNameForm(otherPerson);
+  if (nameForm) {
+    parent.fullName = nameForm.fullText;
+    if (nameForm.parts) {
+      for (let part of nameForm.parts) {
+        if (part.type.endsWith("Given")) {
+          parent.givenName = part.value;
+        }
+        else if (part.type.endsWith("Surname")) {
+          parent.surname = part.value;
+        }
+      }
+    }
+  }
+
+  if (otherPerson.gender) {
+    if (otherPerson.gender.type.endsWith("/Male")) {
+      // it is the father
+      result.father = parent;
+    }
+    else if (otherPerson.gender.type.endsWith("/Female")) {
+      result.mother = parent;
+    }
+  }
+}
+
+function extractPersonDataFromFetch(document, dataObj, options) {
+
+  let result = {};
+
+  if (document) {
+    result.url = document.URL;
+  }
+
+  // there could be many people in this data, the description is one way to find out which
+  // is the one that is being focused on
+  let description = dataObj.description;
+
+  if (!description) {
+    // this could be an image page which is not handled currently
+    return result;
+  }
+
+  // For a person page the descript will be something like: "#SD-G8S8-5FJ" meaning the personId is:
+  // "G8S8-5FJ"
+  let personId = description.replace(/^\#SD\-/, "");
+
+  if (!dataObj.persons || dataObj.persons.length < 1) {
+    return result;
+  }
+
+  let person = dataObj.persons[0];
+
+  if (person.id != personId) {
+    return result;
+  }
+
+  getNameForPersonObj(person, result);
+  getGenderForPersonObj(person, result);
+  processPersonPageFactsForPersonObj(person, result);
+
+  // now look for relationships for spouse and parents
+  if (dataObj.relationships) {
+    for (let relationship of dataObj.relationships) {
+      let otherPersonId = "";
+      let type = relationship.type;
+      if (relationship.person1.resourceId == personId) {
+        otherPersonId = relationship.person2.resourceId;
+      }
+      else if (relationship.person2.resourceId == personId) {
+        otherPersonId = relationship.person1.resourceId;
+      }
+
+      if (otherPersonId) {
+        let otherPerson = findPersonById(dataObj, otherPersonId);
+
+        if (type == "http://gedcomx.org/Couple") {
+          let spouse = {};
+          getNameForPersonObj(otherPerson, spouse);
+
+          if (relationship.facts) {
+            for (let fact of relationship.facts) {
+              if (fact.type == "http://gedcomx.org/Marriage") {
+                if (fact.date) {
+                  if (fact.date.original) {
+                    spouse.marriageDateOriginal = fact.date.original;
+                  }
+                  if (fact.date.normalized) {
+                    for (let normDate of fact.date.normalized) {
+                      if (normDate.value && normDate.lang == "en") {
+                        spouse.marriageDate = normDate.value;
+                        break;
+                      }
+                    }
+                  }
+                }
+                if (fact.place) {
+                  if (fact.place.original) {
+                    spouse.marriagePlaceOriginal = fact.place.original;
+                  }
+                  if (fact.place.normalized) {
+                    for (let normPlace of fact.place.normalized) {
+                      if (normPlace.value && normPlace.lang == "en") {
+                        spouse.marriagePlace = normPlace.value;
+                        break;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          if (!result.spouses) {
+            result.spouses = [];
+          }
+          result.spouses.push(spouse);
+        }
+        else if (type == "http://gedcomx.org/ParentChild") {
+          if (relationship.person2.resourceId == personId) {
+            // this person is the child
+            addParentFromPerson(otherPerson, result);
+          }
+        }
+
+      }
+    }
+  }
+
+  result.pageType = "person";
+  return result;
+}
+
+function extractDataFromFetch(document, dataObj, fetchType, options) {
 
   usedLabelIds = {};
 
@@ -2023,6 +2332,10 @@ function extractDataFromFetch(document, dataObj, options) {
 
   if (document) {
     result.url = document.URL;
+  }
+
+  if (fetchType == "person") {
+    return extractPersonDataFromFetch(document, dataObj, options);
   }
 
   // there could be many people in this data, the description is one way to find out which
@@ -2049,107 +2362,13 @@ function extractDataFromFetch(document, dataObj, options) {
 
       if (person.id == personId) {
         // this is the person that the page is about
+        getNameForPersonObj(person, result);
+        if (result.fullName) {
+          result.recordData["Name"] = result.fullName;
+        }  
 
-        // look for their name
-        let nameForm = getPrimaryNameForm(person);
-        if (nameForm) {
-          if (nameForm.fullText) {
-            result.fullName = nameForm.fullText;
-          }
-          if (nameForm.parts) {
-            for (let part of nameForm.parts) {
-              if (part.type.endsWith("Given")) {
-                result.givenName = part.value;
-              }
-              else if (part.type.endsWith("Surname")) {
-                result.surname = part.value;
-              }
-            }
-          }
-          if (result.fullName) {
-            result.recordData["Name"] = result.fullName;
-          }
-        }
-
-        // get gender
-        if (person.gender) {
-          if (person.gender.type.endsWith("/Male")) {
-            result.gender = "male";
-          }
-          else if (person.gender.type.endsWith("/Female")) {
-            result.gender = "female";
-          }
-        }
-
-        // check the facts of this primary person for this persons vitals
-        if (person.facts) {
-          for (let fact of person.facts) {
-            // the fact contains the place etc
-            // it gets complicated when there is more than one person.
-            // .principal seems to be whether they are one of the people being recorded
-            // In a census all the people in the household are principals
-            // In a birth registration the child is a principal and the mother is not
-            if (fact.type) {
-              let factType = getFactType(fact);
-              if (fact.primary) {
-                result.factType = factType;
-                setEventDateAndPlaceForFactIfPrimary(result, fact);
-              }
-    
-              //console.log("factType is " + factType);
-              if (factType == "Birth") {
-                //console.log("type is birth");
-                if (fact.date) {
-                  if (fact.date.original) {
-                    result.birthDateOriginal = fact.date.original;
-                  }
-                  setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE_EST", result, "birthDate");
-                  setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR_EST", result, "birthYear");
-                }
-                if (fact.place) {
-                  setFieldFromPlaceWithLabels(fact.place,
-                    ["PR_BIR_PLACE", "PR_BIR_PLACE_ORIG",
-                     "PR_BIRTH_PLACE", "PR_BIRTH_PLACE_ORIG",
-                     "BIRTH_PLACE", "BIRTH_PLACE_ORIG", ],
-                    result, "birthPlace");
-                  if (!result.birthPlace && !person.principal) {
-                    // this birth information about a non-principal. e.g. the birth place of father
-                    // in a child's birth or death record. The label could be something like:
-                    // PR_FTHR_BIRTH_PLACE
-                    setFieldFromPlace(fact.place, "", "", result, "birthPlace");
-                  }
-                }
-              }
-              else if (factType == "Death") {
-                if (fact.date) {
-                  if (fact.date.original) {
-                    result.deathDateOriginal = fact.date.original;
-                  }
-                  setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE", result, "deathDate");
-                  if (!result.deathDate) {
-                    setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_EST", result, "deathDate");
-                  }
-                  if (!result.deathDate) {
-                    setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_ORIG", result, "deathDate");
-                  }
-                  setFieldFromDate(fact.date, "/Year", "PR_DEA_YEAR_EST", result, "deathYear");
-                  setFieldFromDate(fact.date, "/Month", "PR_DEA_MONTH", result, "deathMonth");
-                }
-                if (fact.place) {
-                  setFieldFromPlace(fact.place, "", "PR_DEA_PLACE", result, "deathPlace");
-                }
-              }
-              else if (factType == "Residence" || factType == "Census") {
-                if (fact.place) {
-                  setFieldFromPlace(fact.place, "", "NOTE_PR_RES_PLACE", result, "residence");
-                }
-              }
-
-              // build up record data that could be included in a data table
-              addRecordDataForFact(result, fact, factType);
-            }
-          }
-        }
+        getGenderForPersonObj(person, result);
+        processRecordDataFactsForPersonObj(person, result);
 
         // check the fields associated with this person
         if (person.fields) {
@@ -2166,9 +2385,9 @@ function extractDataFromFetch(document, dataObj, options) {
           // In a birth registration the child is a principal and the mother is not
           if (fact.type) {
             let factType = getFactType(fact);
-            setEventDateAndPlaceForFactIfPrimary(result, fact);
 
             if (fact.primary) {
+              setEventDateAndPlaceForFact(result, fact);
 
               if (person.principal) {
                 if (person.id == personId) {
@@ -2204,7 +2423,10 @@ function extractDataFromFetch(document, dataObj, options) {
         for (let fact of relationship.facts) {
           if (fact.type && !result.factType) {
             let factType = getFactType(fact);
-            setEventDateAndPlaceForFactIfPrimary(result, fact);
+
+            if (fact.primary) {
+              setEventDateAndPlaceForFact(result, fact);
+            }
 
             // if one of the people in this fact is the selected person
             if (relationship.person1.resourceId == personId || relationship.person2.resourceId == personId) {
@@ -2288,32 +2510,7 @@ function extractDataFromFetch(document, dataObj, options) {
               let relationType = relationship.type;
               if (relationType.endsWith("/ParentChild")) {
                 // other person is either father or mother
-                // look for their name
-                let parent = {};
-                let nameForm = getPrimaryNameForm(otherPerson);
-                if (nameForm) {
-                  parent.fullName = nameForm.fullText;
-                  if (nameForm.parts) {
-                    for (let part of nameForm.parts) {
-                      if (part.type.endsWith("Given")) {
-                        parent.givenName = part.value;
-                      }
-                      else if (part.type.endsWith("Surname")) {
-                        parent.surname = part.value;
-                      }
-                    }
-                  }
-                }
-                
-                if (otherPerson.gender) {
-                  if (otherPerson.gender.type.endsWith("/Male")) {
-                    // it is the father
-                    result.father = parent;
-                  }
-                  else if (otherPerson.gender.type.endsWith("/Female")) {
-                    result.mother = parent;
-                  }
-                }
+                addParentFromPerson(otherPerson, result);
               }
               else if (relationType.endsWith("/Couple")) {
                 // other person is spouse
