@@ -5,7 +5,8 @@
   "name": {
     "name": "Rev William Oscar Lyles",
     "lastName": "Lyles",
-    "forenames": "William Oscar"
+    "forenames": "William Oscar",
+    "prefix": "Rev"
   },
   "birthDate": {
     "dateString": "8 February 1856"

@@ -418,12 +418,16 @@ function generalizeDataGivenRecordType(data, result) {
         setFieldIfDefined(father.name, "name", data.father.fullName);
         setFieldIfDefined(father.name, "forenames", data.father.givenName);
         setFieldIfDefined(father.name, "lastName", data.father.surname);
+        setFieldIfDefined(father.name, "prefix", data.father.prefix);
+        setFieldIfDefined(father.name, "suffix", data.father.suffix);
       }
       if (data.mother) {
         let mother = result.addMother();
         setFieldIfDefined(mother.name, "name", data.mother.fullName);
         setFieldIfDefined(mother.name, "forenames", data.mother.givenName);
         setFieldIfDefined(mother.name, "lastName", data.mother.surname);
+        setFieldIfDefined(mother.name, "prefix", data.mother.prefix);
+        setFieldIfDefined(mother.name, "suffix", data.mother.suffix);
       }
   
       // spouse can be specified on a death record for example
@@ -440,6 +444,12 @@ function generalizeDataGivenRecordType(data, result) {
         }
         if (data.spouseGivenName) {
           resultSpouse.name.forenames = data.spouseGivenName;
+        }
+        if (data.spousePrefix) {
+          resultSpouse.name.prefix = data.spousePrefix;
+        }
+        if (data.spouseSuffix) {
+          resultSpouse.name.suffix = data.spouseSuffix;
         }
         if (data.spouseAge) {
           resultSpouse.age = data.spouseAge;
@@ -458,12 +468,16 @@ function generalizeDataGivenRecordType(data, result) {
         setFieldIfDefined(father.name, "name", data.father.fullName);
         setFieldIfDefined(father.name, "forenames", data.father.givenName);
         setFieldIfDefined(father.name, "lastName", data.father.surname);
+        setFieldIfDefined(father.name, "prefix", data.father.prefix);
+        setFieldIfDefined(father.name, "suffix", data.father.suffix);
       }
       if (data.mother) {
         let mother = result.addMother();
         setFieldIfDefined(mother.name, "name", data.mother.fullName);
         setFieldIfDefined(mother.name, "forenames", data.mother.givenName);
         setFieldIfDefined(mother.name, "lastName", data.mother.surname);
+        setFieldIfDefined(mother.name, "prefix", data.mother.prefix);
+        setFieldIfDefined(mother.name, "suffix", data.mother.suffix);
       }
     }
 
@@ -479,7 +493,13 @@ function generalizeDataGivenRecordType(data, result) {
       if (data.spouseGivenName) {
         resultSpouse.name.forenames = data.spouseGivenName;
       }
-      if (data.spouseAge) {
+      if (data.spousePrefix) {
+        resultSpouse.name.prefix = data.spousePrefix;
+      }
+      if (data.spouseSuffix) {
+        resultSpouse.name.suffix = data.spouseSuffix;
+      }
+    if (data.spouseAge) {
         resultSpouse.age = data.spouseAge;
       }
     }
@@ -550,6 +570,12 @@ function generalizeDataGivenRecordType(data, result) {
       }
       if (data.spouseGivenName) {
         resultSpouse.name.forenames = data.spouseGivenName;
+      }
+      if (data.spousePrefix) {
+        resultSpouse.name.prefix = data.spousePrefix;
+      }
+      if (data.spouseSuffix) {
+        resultSpouse.name.suffix = data.spouseSuffix;
       }
       if (data.spouseAge) {
         resultSpouse.age = data.spouseAge;
@@ -678,6 +704,12 @@ function generalizeDataForPerson(data, result) {
     }
     if (dataObject.givenName) {
       resultObject.name.forenames = dataObject.givenName;
+    }
+    if (dataObject.prefix) {
+      resultObject.name.prefix = dataObject.prefix;
+    }
+    if (dataObject.suffix) {
+      resultObject.name.suffix = dataObject.suffix;
     }
   }
 

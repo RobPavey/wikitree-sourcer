@@ -1036,6 +1036,19 @@ class WtsName {
       return WTS_String.getWordsBeforeLastWord(this.name);
     }
   }
+
+  inferPrefix() {
+    if (this.prefix) {
+      return this.prefix;
+    }
+  }
+
+  inferSuffix() {
+    if (this.suffix) {
+      return this.suffix;
+    }
+  }
+
 }
 
 class GeneralizedData {
@@ -1821,6 +1834,26 @@ class GeneralizedData {
     }
   
     return this.inferLastName();
+  }
+
+  inferPrefix() {
+    let prefix = "";
+    
+    if (this.name) {
+      prefix = this.name.inferPrefix();
+    }
+  
+    return prefix;
+  }
+
+  inferSuffix() {
+    let suffix = "";
+    
+    if (this.name) {
+      suffix = this.name.inferSuffix();
+    }
+  
+    return suffix;
   }
 
   inferBirthDateObj() {

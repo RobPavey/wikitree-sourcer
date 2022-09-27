@@ -233,6 +233,9 @@ function getWikiTreeEditFamilyData(data, personGd, citationObject) {
     result.firstName = personGd.inferForenames();
   }
 
+  result.prefix = personGd.inferPrefix();
+  result.suffix = personGd.inferSuffix();
+
   result.lnab = personGd.inferLastNameAtBirth();
 
   let cln = personGd.inferLastNameAtDeath();
