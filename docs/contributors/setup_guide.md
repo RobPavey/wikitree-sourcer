@@ -4,6 +4,12 @@
 
 To get set up with building and running the unit tests locally you will need to clone the repository and install node.js
 
+### Install git on your machine
+
+There are some instructions here: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+I recommend VSCode as a dev environment. Here are some notes on using git in vscode: https://www.jcchouinard.com/install-git-in-vscode/
+
 ### Clone the repository
 
 There are some instructions here: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository but they seem somewhat out of date. This all you need to do:
