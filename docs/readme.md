@@ -1,6 +1,6 @@
 # README file for the wikitree-sourcer project
 
-This is the development project for the WikiTree Sourcer browser extension.
+This is the development project for the WikiTree Sourcer browser extension. WikiTree Sourcer helps contributors to wikitree.com search for sources and cite them, thus saving a lot of time and manual typing. It also helps create household tables and in adding new profiles to wikitree from other web sites.
 
 More info on the extension is on the WikiTree Free Space Page here: https://www.wikitree.com/wiki/Space:WikiTree_Sourcer
 
