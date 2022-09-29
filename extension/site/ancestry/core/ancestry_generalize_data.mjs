@@ -791,7 +791,7 @@ function generalizeDataGivenRecordType(data, result) {
       result.setEventPlace(eventPlace);
     }
     else {
-      let eventPlace = getCleanValueForRecordDataList(data, ["Death Place", "Residence Place"]);
+      let eventPlace = getCleanValueForRecordDataList(data, ["Death Place", "Death County", "Residence Place"]);
       result.setEventPlace(eventPlace);
     }
 
@@ -816,7 +816,7 @@ function generalizeDataGivenRecordType(data, result) {
       result.deathDate = result.eventDate;
     }
 
-    let eventPlace = getCleanValueForRecordDataList(data, ["Death Place", "Death Country", "State"]);
+    let eventPlace = getCleanValueForRecordDataList(data, ["Death Place", "Death County", "Death Country", "State"]);
     result.setEventPlace(eventPlace);
 
     let residencePlace = getCleanValueForRecordDataList(data,
@@ -1280,7 +1280,7 @@ function generalizeDataGivenRecordType(data, result) {
     // child or spouse
     let birthDate = getCleanValueForRecordDataList(data, ["Birth Date"], "date");
     let deathDate = getCleanValueForRecordDataList(data, ["Death Date",], "date");
-    let deathPlace = getCleanValueForRecordDataList(data, ["Death Place",]);
+    let deathPlace = getCleanValueForRecordDataList(data, ["Death Place", "Death County", ]);
     let eventDate = getCleanValueForRecordDataList(data, ["Obituary Date", "Date", "Newspaper Date"], "date");
     let eventPlace = getCleanValueForRecordDataList(data, ["Obituary Place", "Newspaper Place", "Place"]);
 
@@ -1320,7 +1320,7 @@ function generalizeDataGivenRecordType(data, result) {
     if (eventPlace) {
       result.setEventPlace(eventPlace);
     }
-    let deathPlace = getCleanValueForRecordDataList(data, ["Residence", "Death Place"]);
+    let deathPlace = getCleanValueForRecordDataList(data, ["Residence", "Death Place", "Death County", ]);
     if (deathPlace) {
       result.setDeathPlace(deathPlace);
     }
@@ -1584,7 +1584,7 @@ function generalizeDataGivenRecordType(data, result) {
       ["Obituary Place", "Event Place", "Place", "Location", "Residence", "Residence Place", "Residence Location",
       "Military Enlistment Place", "Departure Place" , "Arrival Place", "Appointed Place", "Death Place",
       "Warrant Location", "Last Residence Place", "Issue Port", "Post Office Location", "Record Place",
-      "Place Moored", "Electoral Place", ]);
+      "Place Moored", "Electoral Place", "Death County", ]);
 
     if (!eventPlace) {
       if (true) {
