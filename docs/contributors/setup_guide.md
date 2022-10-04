@@ -32,7 +32,7 @@ This will also install "npm" (the package manager) which you will need.
 
 ### Install the node packages
 
-This should be done automatically if you are in the project folder and enter this command:
+This is done using npm. Change directory to the project folder (the folder that contains the `extensions` and `scripts` folders) and type this command:
 
 `npm install`
 
