@@ -39,6 +39,7 @@ function getUkbmdDistrictPageUrl(district) {
     "ashtonunderlyne": "ashton under lyne",
     "bangor and beaumaris": "bangor",
     "barrow in furness": "barrow-in-furness",
+    "barrow on soar": "barrow upon soar",
     "berwick upon tweed": "berwick",
     "bootle": "bootle1",
     "bootle cumberland": "bootle1",
@@ -47,6 +48,7 @@ function getUkbmdDistrictPageUrl(district) {
     "bradford and north bierley yorkshire": "bradford",
     "bradford yorkshire": "bradford",
     "bradford wilts": "bradford on avon",
+    "bridgend and cowbridge": "bridgend",
     "brighthelmston": "brighton",
     "bristol barton regis": "barton regis", // could be date specific?
     "bucklow altrincham": "bucklow",
@@ -54,6 +56,7 @@ function getUkbmdDistrictPageUrl(district) {
     "bury bury and lancashire": "bury", // transcription error?
     "bury bury and lancaster": "bury",
     "castle": "castle ward",
+    "chapel en le firth": "chapel-en-le-frith", // transcription error
     "chapel en le frith": "chapel-en-le-frith",
     "chapel on le frith": "chapel-en-le-frith",
     "chapelenlefrith": "chapel-en-le-frith",
@@ -68,6 +71,7 @@ function getUkbmdDistrictPageUrl(district) {
     "eastgrinsted": "east grinstead",
     "ecclesall burlow": "ecclesall bierlow", // transcription error?
     "foleshill and sowe": "foleshill",
+    "gainsburgh": "gainsborough",  // transcription error?
     "gravesend milton": "gravesend",
     "gravesend and milton": "gravesend",
     "gravesend and melton": "gravesend", // transcription error?
@@ -96,6 +100,7 @@ function getUkbmdDistrictPageUrl(district) {
     "mitford and launditch": "mitford",
     "mutford and lothingland": "mutford",
     "nantmel and rhayader": "rhayader",
+    "rhayader and nantinel": "rhayader",    // transcription error?
     "neath port talbot": "neath-port-talbot", // should be "neath" before 1996 (e.g. Walters-9901)
     "newcastle on tyne": "newcastle upon tyne",
     "newcastle on tyne and northumberland": "newcastle upon tyne",
