@@ -332,7 +332,9 @@ async function createNewSite() {
     }
   }
 
-  console.log("siteName is: " + parameters.siteName);
+  console.log("Creating new site folders/files.");
+  console.log("  siteName is '" + parameters.siteName + "'");
+  console.log("  siteDisplayName is '" + parameters.siteDisplayName + "'");
 
   // do some sanity checks
   if (!checkParameters(parameters)) {
