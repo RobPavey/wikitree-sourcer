@@ -58,5 +58,11 @@
   },
   "sentence_default": {
     "tableString": "Charles A Pavey 38, wife Esther Pavey 39, mother Elizabeth Pavey 78, nephew Sidney H Harper 18."
+  },
+  "sentence_included_and": {
+    "tableString": "The household included Charles A Pavey 38, wife Esther Pavey 39, mother Elizabeth Pavey 78 and nephew Sidney H Harper 18."
+  },
+  "sentence_enumerated": {
+    "tableString": "The household was enumerated as Charles A Pavey, Esther Pavey, Elizabeth Pavey, and Sidney H Harper."
   }
 }
