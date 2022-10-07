@@ -137,6 +137,10 @@ const regressionData = [
     caseName: "us_census_1880_alice_miller",
   },
   {
+    // https://www.familysearch.org/ark:/61903/1:1:VB3M-FG7
+    caseName: "us_census_1940_addie_bullock",
+  },
+  {
     // https://www.familysearch.org/ark:/61903/1:1:K438-8WS
     caseName: "us_census_1940_william_huffstetler",
   },

@@ -2773,11 +2773,61 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
           "RelationshipToHeadCode": "relationship",
           "RelationshipToHead": "relationship",
           "Relationship": "relationship",
+          "SourceSheetNbr": "sheetNumber",
+          "SourceLineNbr": "lineNumber",
         };
         extractFields(member, person.fields, personFieldsMap);
       }
 
       result.household.members.push(member);
+    }
+
+    // The members can be in a different order to how they appear in the census
+    // I have only seen this in the US 1940 Federal Census. E.g. us_census_1940_addie_bullock
+    // if we have line numbers we can reorder them
+    let hasLineNumbers = true;
+    for (let member of result.household.members) {
+      if (!member.lineNumber) {
+        hasLineNumbers = false;
+        break;
+      }
+      if (isNaN(Number(member.lineNumber))) {
+        hasLineNumbers = false;
+        break;
+      }
+    }
+    let hasSheetNumbers = true;
+    for (let member of result.household.members) {
+      if (!member.sheetNumber) {
+        hasSheetNumbers = false;
+        break;
+      }
+      if (isNaN(Number(member.sheetNumber))) {
+        hasSheetNumbers = false;
+        break;
+      }
+    }
+
+    if (hasLineNumbers && hasSheetNumbers) {
+      // sort by line number
+      result.household.members.sort(function (a,b) {
+        let sheetDiff = Number(a.sheetNumber) - Number(b.sheetNumber);
+        let lineDiff = Number(a.lineNumber) - Number(b.lineNumber);
+        if (sheetDiff === 0) {
+          return lineDiff;
+        }
+        return sheetDiff;
+      });
+    }
+    else if (hasLineNumbers) {
+      // sort by line number
+      result.household.members.sort((a,b) => (Number(a.lineNumber) > Number(b.lineNumber)) ? 1 : -1);
+    }
+
+    // now remove any line numbers as we don't need them in the extracted data
+    for (let member of result.household.members) {
+      delete member.lineNumber;
+      delete member.sheetNumber;
     }
   }
 

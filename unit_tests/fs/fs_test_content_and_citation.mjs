@@ -216,6 +216,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:XMFP-N32",
   },
   {
+    caseName: "us_census_1940_addie_bullock",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VB3M-FG7",
+  },
+  {
     caseName: "us_census_1940_arleita_elliott",
     url: "https://www.familysearch.org/ark:/61903/1:1:VTMY-N3T?from=lynx1UIV8&treeref=GF66-ZS5",
   },
