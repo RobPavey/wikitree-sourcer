@@ -271,6 +271,34 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FDEV%2FBANNS%2F86127%2F2",
   },
   {
+    caseName: "england_leics_marriage_1844_jane_cox",
+    url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2",
+    optionVariants: [
+      {
+        variantName: "narrative_1", 
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_marriage_ageFormat: "commasAge",
+        },
+      },
+      {
+        variantName: "narrative_2", 
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_marriage_ageFormat: "plainAged",
+          
+        },
+      },
+      {
+        variantName: "narrative_3", 
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_marriage_includeAge: "inSeparateSentence",
+        },
+      },
+    ],
+  },
+  {
     caseName: "england_parish_baptism_1823_william_more",
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F220095549%2F1",
   },

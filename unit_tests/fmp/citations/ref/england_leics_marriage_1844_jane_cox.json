@@ -1,0 +1,62 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Jane (of full age), daughter of Francis Cox, married Thomas Burdett (of full age) on 28 November 1844 in Leicestershire, England.<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Leicestershire Marriages\"<br/>Archive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nJane Cox (of full age) marriage to Thomas Burdett (of full age) on 28 Nov 1844 in Leicestershire, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Jane (of full age), daughter of Francis Cox, married Thomas Burdett (of full age) on 28 November 1844 in Leicestershire, England.<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nJane Cox (of full age) marriage to Thomas Burdett (of full age) on 28 Nov 1844 in Leicestershire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Leicestershire Marriages\"<br/>Archive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>Jane Cox (of full age) marriage to Thomas Burdett (of full age) on 28 Nov 1844 in Leicestershire, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Jane; Last name: Cox; Age: of Full Age; Residence: Goadby; Father's first name(s): Francis; Father's last name: Cox; Marriage date: 28 Nov 1844; Spouse's first name(s): Thomas; Spouse's last name: Burdett; Spouse's age: of Full Age; Spouse's residence: Nosley Hall; Spouse's father's first name(s): Thomas; Spouse's father's last name: Burdett; Denomination: Anglican; Place: Goadby; County: Leicestershire; Country: England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Jane (of full age), daughter of Francis Cox, married Thomas Burdett (of full age) on 28 November 1844 in Leicestershire, England.<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Jane; Last name: Cox; Age: of Full Age; Residence: Goadby; Father's first name(s): Francis; Father's last name: Cox; Marriage date: 28 Nov 1844; Spouse's first name(s): Thomas; Spouse's last name: Burdett; Spouse's age: of Full Age; Spouse's residence: Nosley Hall; Spouse's father's first name(s): Thomas; Spouse's father's last name: Burdett; Denomination: Anglican; Place: Goadby; County: Leicestershire; Country: England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Leicestershire Marriages\"<br/>Archive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Jane; Last name: Cox; Age: of Full Age; Residence: Goadby; Father's first name(s): Francis; Father's last name: Cox; Marriage date: 28 Nov 1844; Spouse's first name(s): Thomas; Spouse's last name: Burdett; Spouse's age: of Full Age; Spouse's residence: Nosley Hall; Spouse's father's first name(s): Thomas; Spouse's father's last name: Burdett; Denomination: Anglican; Place: Goadby; County: Leicestershire; Country: England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Jane\n|-\n| Last name || Cox\n|-\n| Age || of Full Age\n|-\n| Birth year || -\n|-\n| Residence || Goadby\n|-\n| Father's first name(s) || Francis\n|-\n| Father's last name || Cox\n|-\n| Marriage date || 28 Nov 1844\n|-\n| Spouse's first name(s) || Thomas\n|-\n| Spouse's last name || Burdett\n|-\n| Spouse's age || of Full Age\n|-\n| Spouse's residence || Nosley Hall\n|-\n| Spouse's father's first name(s) || Thomas\n|-\n| Spouse's father's last name || Burdett\n|-\n| Denomination || Anglican\n|-\n| Place || Goadby\n|-\n| County || Leicestershire\n|-\n| Country || England\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Jane (of full age), daughter of Francis Cox, married Thomas Burdett (of full age) on 28 November 1844 in Leicestershire, England.<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Jane\n|-\n| Last name || Cox\n|-\n| Age || of Full Age\n|-\n| Birth year || -\n|-\n| Residence || Goadby\n|-\n| Father's first name(s) || Francis\n|-\n| Father's last name || Cox\n|-\n| Marriage date || 28 Nov 1844\n|-\n| Spouse's first name(s) || Thomas\n|-\n| Spouse's last name || Burdett\n|-\n| Spouse's age || of Full Age\n|-\n| Spouse's residence || Nosley Hall\n|-\n| Spouse's father's first name(s) || Thomas\n|-\n| Spouse's father's last name || Burdett\n|-\n| Denomination || Anglican\n|-\n| Place || Goadby\n|-\n| County || Leicestershire\n|-\n| Country || England\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Leicestershire Marriages\"<br/>Archive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Jane; Last name: Cox; Age: of Full Age; Residence: Goadby; Father's first name(s): Francis; Father's last name: Cox; Marriage date: 28 Nov 1844; Spouse's first name(s): Thomas; Spouse's last name: Burdett; Spouse's age: of Full Age; Spouse's residence: Nosley Hall; Spouse's father's first name(s): Thomas; Spouse's father's last name: Burdett; Denomination: Anglican; Place: Goadby; County: Leicestershire; Country: England.",
+    "type": "source"
+  },
+  "narrative_1_narrative": {
+    "citation": "Jane, of full age, daughter of Francis Cox, married Thomas Burdett, of full age, on 28 November 1844 in Leicestershire, England.<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nJane Cox (of full age) marriage to Thomas Burdett (of full age) on 28 Nov 1844 in Leicestershire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_2_narrative": {
+    "citation": "Jane of full age, daughter of Francis Cox, married Thomas Burdett of full age on 28 November 1844 in Leicestershire, England.<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nJane Cox (of full age) marriage to Thomas Burdett (of full age) on 28 Nov 1844 in Leicestershire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "narrative_3_narrative": {
+    "citation": "Jane, daughter of Francis Cox, married Thomas Burdett on 28 November 1844 in Leicestershire, England. She was of full age.<ref>\n'''Marriage''':\n\"Leicestershire Marriages\"<br/>\nArchive: Record Office for Leicestershire, Leicester & Rutland; Reference: DE6088/2<br/>\n[https://search.findmypast.co.uk/record?id=S2%2FGBPRS%2FLEICS%2F102302699%2F00011&parentid=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nJane Cox (of full age) marriage to Thomas Burdett (of full age) on 28 Nov 1844 in Leicestershire, England.\n</ref>",
+    "type": "narrative"
+  }
+}

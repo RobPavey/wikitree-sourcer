@@ -553,30 +553,53 @@ class NarrativeBuilder {
 
   addAgePartForMainSentence(age) {
     if (age) {
+      let includeAgeText = true;
+      if (typeof(age) == 'string' && age.toLowerCase().indexOf("age") != -1) {
+        // it could be something like "of Full Age"
+        includeAgeText = false;
+        age = age.toLowerCase();
+      }
+  
       let format = this.getSubcatOption("ageFormat");
-      if (format == "parensAge") {
-        this.narrative += " (age " + age + ")";
-      }
-      else if (format == "commasAge") {
-        if (!this.narrative.endsWith(",")) {
-          this.narrative += ",";
+      if (includeAgeText) {
+        if (format == "parensAge") {
+          this.narrative += " (age " + age + ")";
         }
-        this.narrative += " age " + age + ",";
-      }
-      else if (format == "plainAge") {
-        this.narrative += " age " + age;
-      }
-      else if (format == "parensAged") {
-        this.narrative += " (aged " + age + ")";
-      }
-      else if (format == "commasAged") {
-        if (!this.narrative.endsWith(",")) {
-          this.narrative += ",";
+        else if (format == "commasAge") {
+          if (!this.narrative.endsWith(",")) {
+            this.narrative += ",";
+          }
+          this.narrative += " age " + age + ",";
         }
-        this.narrative += " aged " + age + ",";
+        else if (format == "plainAge") {
+          this.narrative += " age " + age;
+        }
+        else if (format == "parensAged") {
+          this.narrative += " (aged " + age + ")";
+        }
+        else if (format == "commasAged") {
+          if (!this.narrative.endsWith(",")) {
+            this.narrative += ",";
+          }
+          this.narrative += " aged " + age + ",";
+        }
+        else if (format == "plainAged") {
+          this.narrative += " aged " + age;
+        }
       }
-      else if (format == "plainAged") {
-        this.narrative += " aged " + age;
+      else {
+        if (format == "parensAge" || format == "parensAged") {
+          this.narrative += " (" + age + ")";
+        }
+        else if (format == "commasAge" || format == "commasAged") {
+          if (!this.narrative.endsWith(",")) {
+            this.narrative += ",";
+          }
+          this.narrative += " " + age + ",";
+        }
+        else if (format == "plainAge" || format == "plainAged") {
+          this.narrative += " " + age;
+        }
       }
     }
   }
@@ -591,7 +614,16 @@ class NarrativeBuilder {
     if (this.getSubcatOption("includeAge") == "inSeparateSentence") {
       if (age) {
         this.narrative += " " + this.getPronounAndPastTenseInitialCaps() + " ";
-        this.narrative += age + " years old";
+
+        if (age.search(/[^0-9]/) != -1) {
+          // the age has non numerical characters, it could be something like "of Full Age"
+          let lcAge = age.toLowerCase();
+          this.narrative += lcAge;
+        }
+        else {
+          this.narrative += age + " years old";
+        }
+
         this.narrative += "."
       }
     }
