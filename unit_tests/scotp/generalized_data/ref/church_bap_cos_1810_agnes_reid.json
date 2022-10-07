@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "BirthOrBaptism",
+  "name": {
+    "lastName": "Reid",
+    "forenames": "Agnes"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "28 February 1810"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Ayrshire",
+    "placeString": "Kirkmichael, Ayrshire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Reid"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Jane Gemmel"
+      }
+    }
+  },
+  "collectionData": {
+    "frameNumber": "282"
+  },
+  "hasValidData": true
+}
