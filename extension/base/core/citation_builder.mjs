@@ -369,10 +369,16 @@ class CitationBuilder {
     if (this.householdTableString) {
       if (autoTableOpt == "withinRefOrSource") {
         let tableFormat = this.options.table_general_format;
-        if (!(this.type == "source" && (tableFormat == "table" || tableFormat == "list"))) {
+        // we used to disallow having a table or list format household if this is a "source" type
+        // However, people do want to use the :: style list format in a source
+        // Maybe we should just allow whetever they want?
+        //if (!(this.type == "source" && (tableFormat == "table" || tableFormat == "list"))) {
           if (!citation.endsWith("\n")) {
             if (this.type == "source") {
-              if (this.options.citation_general_addBreaksWithinBody) {
+              if (tableFormat == "table" || tableFormat == "list") {
+                citation += "\n";
+              }
+              else if (this.options.citation_general_addBreaksWithinBody) {
                 citation += "<br/>";
               }
               else {
@@ -395,7 +401,7 @@ class CitationBuilder {
           if (tableFormat != "sentence" || this.options.citation_general_addNewlinesWithinRefs) {
             citation += "\n";
           }
-        }
+        //}
       }
     }
 
