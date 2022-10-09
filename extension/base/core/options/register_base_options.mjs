@@ -912,6 +912,13 @@ const addPersonGeneralOptionsGroup = {
       unitTestValue: false,
     },  
     {
+      optionName: "includeProfileLink",
+      type: "checkbox",
+      label: "Add a link/template to the source profile in sources if filling from a profile",
+      defaultValue: false,
+      unitTestValue: false,
+    },  
+    {
       optionName: "generateIntro",
       type: "select",
       label: "Create an intro in the biography (Notes) field",

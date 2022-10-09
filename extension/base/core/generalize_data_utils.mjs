@@ -1817,7 +1817,19 @@ class GeneralizedData {
               let diff = WTS_Date.getDaysBetweenParsedDates(lastMarriageDate, marriageParsedDate);
               if (diff > 0) {
                 lastMarriageDate = marriageParsedDate;
-                lastSpouseLastName = getSpouseLnab(spouse);
+                let spouseLnab = getSpouseLnab(spouse);
+                if (spouseLnab) {
+                  lastSpouseLastName = spouseLnab;
+                }
+                else {
+                  // sometimes an Ancestry profile might have multiple marriages, some with no spouse name
+                  // If this is close to last marriage ignore it as it probably referes to the same one
+                  // (if could be generated from the "years married" in the 1911 census for example)
+                  // Otherwise count it and set name to blank
+                  if (diff > 380) {
+                    lastSpouseLastName = "";
+                  }
+                }
               }
             }
           }
