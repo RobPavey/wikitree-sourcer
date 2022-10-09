@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Newspaper''':\n\"Newspapers.com\"<br/>\nhttps://www.newspapers.com/image/41871820/?terms=Elizabeth%20Bates&match=1 (accessed 6 May 2021)<br/>\nMentioned in Pittsburgh Post-Gazette 05 Jun 1999, Sat, page 44.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "<ref>\n'''Newspaper''':\n\"Newspapers.com\"<br/>\nhttps://www.newspapers.com/image/41871820/?terms=Elizabeth%20Bates&match=1 (accessed 6 May 2021)<br/>\nMentioned in Pittsburgh Post-Gazette 05 Jun 1999, Sat, page 44.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Newspaper''': \"Newspapers.com\"<br/>https://www.newspapers.com/image/41871820/?terms=Elizabeth%20Bates&match=1 (accessed 6 May 2021)<br/>Mentioned in Pittsburgh Post-Gazette 05 Jun 1999, Sat, page 44.",
+    "type": "source"
+  }
+}
