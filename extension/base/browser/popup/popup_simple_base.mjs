@@ -61,7 +61,7 @@ async function simplePopupBuildCitation(data) {
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
     // console.log("simplePopupBuildCitation, waiting another 10ms")
-    setTimeout(function() { simplePopupBuildCitation(data); }, 10 );
+    setTimeout(function () { simplePopupBuildCitation(data); }, 10);
     return;
   }
 
@@ -70,7 +70,7 @@ async function simplePopupBuildCitation(data) {
   let householdTableString = buildHouseholdTableString(data.extractedData, data.generalizedData,
     data.type, simplePopupFunctions.buildHouseholdTableFunction);
 
-  doAsyncActionWithCatch("Building Citation", data, async function() {
+  doAsyncActionWithCatch("Building Citation", data, async function () {
     const input = {
       extractedData: data.extractedData,
       generalizedData: data.generalizedData,
@@ -96,7 +96,7 @@ async function simplePopupBuildHouseholdTable(data) {
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
     // console.log("simplePopupBuildHouseholdTable, waiting another 10ms")
-    setTimeout(function() { simplePopupBuildHouseholdTable(data); }, 10 );
+    setTimeout(function () { simplePopupBuildHouseholdTable(data); }, 10);
     return;
   }
 
@@ -105,7 +105,7 @@ async function simplePopupBuildHouseholdTable(data) {
   let citationObject = buildCitationObjectForTable(data.extractedData, data.generalizedData,
     undefined, simplePopupFunctions.buildCitationFunction);
 
-  doAsyncActionWithCatch("Building table", data, async function() {
+  doAsyncActionWithCatch("Building table", data, async function () {
     const input = {
       extractedData: data.extractedData,
       generalizedData: data.generalizedData,
@@ -129,7 +129,7 @@ function addBuildHouseholdTableMenuItem(menu, data) {
   let objectArray = data.generalizedData.householdArray;
 
   if (fieldNames && objectArray) {
-    addMenuItem(menu, "Build Household Table", function(element) {
+    addMenuItem(menu, "Build Household Table", function (element) {
       displayMessage("Building table...");
       simplePopupBuildHouseholdTable(data);
     });
@@ -145,7 +145,7 @@ function addBuildHouseholdTableMenuItem(menu, data) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupSimplePopupMenu(input) {
-  let backFunction = function() { setupSimplePopupMenu(input); };
+  let backFunction = function () { setupSimplePopupMenu(input); };
 
   let extractedData = input.extractedData;
 
@@ -163,9 +163,9 @@ async function setupSimplePopupMenu(input) {
   // get generalized data
   if (!input.generalizeDataFunction) {
     openExceptionPage("Error during creating popup menu for content.",
-     "generalizeDataFunction missing", undefined, true);
+      "generalizeDataFunction missing", undefined, true);
   }
-  let generalizedData = input.generalizeDataFunction({extractedData: extractedData});
+  let generalizedData = input.generalizeDataFunction({ extractedData: extractedData });
 
   //console.log("setupSimplePopupMenu, generalizedData is:");
   //console.log(generalizedData);
@@ -181,15 +181,17 @@ async function setupSimplePopupMenu(input) {
 
   simplePopupFunctions.buildCitationFunction = input.buildCitationFunction;
   simplePopupFunctions.buildHouseholdTableFunction = input.buildHouseholdTableFunction;
-  
+
   // do async prefetches
   loadDataCache();
 
   let menu = beginMainMenu();
 
-  await addSearchMenus(menu, data, backFunction, input.siteNameToExcludeFromSearch);
+  if (input.doNotIncludeSearch != true) {
+    await addSearchMenus(menu, data, backFunction, input.siteNameToExcludeFromSearch);
+    addMenuDivider(menu);
+  }
 
-  addMenuDivider(menu);
   if (input.buildCitationFunction) {
     addBuildCitationMenuItems(menu, data, simplePopupBuildCitation, backFunction);
   }

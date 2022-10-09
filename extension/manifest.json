@@ -2,7 +2,12 @@
   "name": "WikiTree Sourcer",
   "version": "1.3.5",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
-  "permissions": ["storage", "contextMenus", "scripting", "management"],
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "scripting",
+    "management"
+  ],
   "host_permissions": [
     "*://www.wikitree.com/*",
     "*://*.ancestry.com/*",
@@ -28,7 +33,8 @@
     "*://www.freecen.org.uk/*",
     "*://www.freereg.org.uk/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
-    "*://www.scotlandspeople.gov.uk/*"
+    "*://www.scotlandspeople.gov.uk/*",
+    "*://*.newspapers.com/*"
   ],
   "background": {
     "service_worker": "base/browser/background/background_chrome.mjs",
@@ -45,7 +51,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://www.wikitree.com/*"],
+      "matches": [
+        "*://www.wikitree.com/*"
+      ],
       "run_at": "document_idle",
       "js": [
         "base/browser/content/content_common.js",
@@ -88,7 +96,9 @@
       ]
     },
     {
-      "matches": ["*://www.findagrave.com/*"],
+      "matches": [
+        "*://www.findagrave.com/*"
+      ],
       "run_at": "document_end",
       "js": [
         "base/browser/content/content_common.js",
@@ -106,7 +116,9 @@
       ]
     },
     {
-      "matches": ["*://www.freebmd.org.uk/*"],
+      "matches": [
+        "*://www.freebmd.org.uk/*"
+      ],
       "run_at": "document_end",
       "js": [
         "base/browser/content/content_common.js",
@@ -114,7 +126,9 @@
       ]
     },
     {
-      "matches": ["*://www.freecen.org.uk/*"],
+      "matches": [
+        "*://www.freecen.org.uk/*"
+      ],
       "run_at": "document_end",
       "js": [
         "base/browser/content/content_common.js",
@@ -122,7 +136,9 @@
       ]
     },
     {
-      "matches": ["*://www.freereg.org.uk/*"],
+      "matches": [
+        "*://www.freereg.org.uk/*"
+      ],
       "run_at": "document_end",
       "js": [
         "base/browser/content/content_common.js",
@@ -130,7 +146,9 @@
       ]
     },
     {
-      "matches": ["*://www.gro.gov.uk/gro/content/certificates/*"],
+      "matches": [
+        "*://www.gro.gov.uk/gro/content/certificates/*"
+      ],
       "run_at": "document_idle",
       "js": [
         "base/browser/content/content_common.js",
@@ -138,7 +156,19 @@
       ]
     },
     {
-      "matches": ["*://www.scotlandspeople.gov.uk/*"],
+      "matches": [
+        "*://www.newspapers.com/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/np/browser/np_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://www.scotlandspeople.gov.uk/*"
+      ],
       "run_at": "document_idle",
       "js": [
         "base/browser/content/content_common.js",
@@ -158,11 +188,17 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["site/wikitree/core/wikitree_extract_data.mjs"],
-      "matches": ["*://www.wikitree.com/*"]
+      "resources": [
+        "site/wikitree/core/wikitree_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.wikitree.com/*"
+      ]
     },
     {
-      "resources": ["site/ancestry/core/ancestry_extract_data.mjs"],
+      "resources": [
+        "site/ancestry/core/ancestry_extract_data.mjs"
+      ],
       "matches": [
         "*://*.ancestry.com/*",
         "*://*.ancestry.co.uk/*",
@@ -180,11 +216,17 @@
       ]
     },
     {
-      "resources": ["site/fg/core/fg_extract_data.mjs"],
-      "matches": ["*://www.findagrave.com/*"]
+      "resources": [
+        "site/fg/core/fg_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.findagrave.com/*"
+      ]
     },
     {
-      "resources": ["site/fmp/core/fmp_extract_data.mjs"],
+      "resources": [
+        "site/fmp/core/fmp_extract_data.mjs"
+      ],
       "matches": [
         "*://*.findmypast.com/*",
         "*://*.findmypast.co.uk/*",
@@ -193,28 +235,60 @@
       ]
     },
     {
-      "resources": ["site/freebmd/core/freebmd_extract_data.mjs"],
-      "matches": ["*://www.freebmd.org.uk/*"]
+      "resources": [
+        "site/freebmd/core/freebmd_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.freebmd.org.uk/*"
+      ]
     },
     {
-      "resources": ["site/freecen/core/freecen_extract_data.mjs"],
-      "matches": ["*://www.freecen.org.uk/*"]
+      "resources": [
+        "site/freecen/core/freecen_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.freecen.org.uk/*"
+      ]
     },
     {
-      "resources": ["site/freereg/core/freereg_extract_data.mjs"],
-      "matches": ["*://www.freereg.org.uk/*"]
+      "resources": [
+        "site/freereg/core/freereg_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.freereg.org.uk/*"
+      ]
     },
     {
-      "resources": ["site/fs/core/fs_extract_data.mjs"],
-      "matches": ["*://www.familysearch.org/*"]
+      "resources": [
+        "site/fs/core/fs_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.familysearch.org/*"
+      ]
     },
     {
-      "resources": ["site/gro/core/gro_extract_data.mjs"],
-      "matches": ["*://www.gro.gov.uk/*"]
+      "resources": [
+        "site/gro/core/gro_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.gro.gov.uk/*"
+      ]
     },
     {
-      "resources": ["site/scotp/core/scotp_extract_data.mjs"],
-      "matches": ["*://www.scotlandspeople.gov.uk/*"]
+      "resources": [
+        "site/np/core/np_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.newspapers.com/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/scotp/core/scotp_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.scotlandspeople.gov.uk/*"
+      ]
     }
   ],
   "manifest_version": 3
