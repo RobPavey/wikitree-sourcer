@@ -33,8 +33,8 @@
     "*://www.freecen.org.uk/*",
     "*://www.freereg.org.uk/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
-    "*://www.scotlandspeople.gov.uk/*",
-    "*://*.newspapers.com/*"
+    "*://*.newspapers.com/image/*",
+    "*://www.scotlandspeople.gov.uk/*"
   ],
   "background": {
     "service_worker": "base/browser/background/background_chrome.mjs",
@@ -157,7 +157,7 @@
     },
     {
       "matches": [
-        "*://www.newspapers.com/*"
+        "*://www.newspapers.com/image/*"
       ],
       "run_at": "document_end",
       "js": [

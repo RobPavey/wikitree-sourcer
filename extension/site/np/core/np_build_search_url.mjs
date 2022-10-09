@@ -31,7 +31,8 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new NpUriBuilder;
 
-  builder.addSearchParameter("query", data.inferFirstName() ?? "" + " " + data.inferMiddleName() ?? "" + " " + data.inferLastName() ?? "")
+  console.log(data.inferLastName())
+  builder.addSearchParameter("query", (data.inferFirstName() ?? "") + " " + (data.inferMiddleName() ?? "") + " " + (data.inferLastName() ?? ""))
 
   let birthYear = data.inferBirthYear()
   let deathYear = data.inferDeathYear()

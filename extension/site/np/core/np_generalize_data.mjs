@@ -22,25 +22,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
-import { initPopup } from "/base/browser/popup/popup_init.mjs";
-import { buildCitation } from "../core/np_build_citation.mjs";
-import { generalizeData } from "../core/np_generalize_data.mjs";
+import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
 
-async function setupNpPopupMenu(extractedData) {
+function generalizeData(input) {
 
-  let input = {
-    extractedData: extractedData,
-    extractFailedMessage: "It looks like a Newspapers.com page but not an article page.",
-    generalizeFailedMessage: "It looks like a Newspapers.com page but does not contain the required data.",
-    generalizeDataFunction: generalizeData,
-    buildCitationFunction: buildCitation,
-    siteNameToExcludeFromSearch: "np",
-    //not going to show search for newspapers.com - it doesn't really make sense
-    //what would we search for? and is anyone really wanting to search ancestry/fmp from a newspapers.com article?
-    doNotIncludeSearch: true
-  };
-  setupSimplePopupMenu(input);
+  let data = input.extractedData;
+
+  let result = new GeneralizedData;
+
+  result.sourceOfData = "np";
+
+  if (!data.success) {
+    return result; //the extract failed
+  }
+
+  result.sourceType = "record";
+
+  // should we use a collection to allow search for same record on Ancestry?
+
+  result.hasValidData = true;
+
+  return result;
 }
 
-initPopup("np", setupNpPopupMenu);
+export { generalizeData, GeneralizedData, dateQualifiers };
