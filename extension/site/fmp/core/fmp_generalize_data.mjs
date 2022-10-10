@@ -671,8 +671,6 @@ function generalizeDataGivenRecordType(data, result) {
       }
     }
     
-    result.setFieldIfValueExists("ageAtEvent", getCleanRecordDataValue(data, "Age"));
-
     let spouseLastName = getRecordDataValueForList(data, ["Spouse's last name", "Spouse's last name(s)"]);
     let spouseFirstNames = getRecordDataValueForList(data, ["Spouse's first name(s)", "Spouse's first name"]);
 
@@ -688,7 +686,70 @@ function generalizeDataGivenRecordType(data, result) {
       }
     }
 
+    let age = getRecordDataValueForList(data, ["Age"]);
     let spouseAge = getRecordDataValueForList(data, ["Spouse's age"]);
+    // sometimes it says "Groom's age" or "Bride's age" instead
+    if (!spouseAge || !age) {
+      if (data.personGender == "male") {
+        if (!age) {
+          age = getRecordDataValueForList(data, ["Groom's age"]);
+        }
+        if (!spouseAge) {
+          spouseAge = getRecordDataValueForList(data, ["Bride's age"]);
+        }
+      }
+      else if (data.personGender == "female") {
+        if (!age) {
+          age = getRecordDataValueForList(data, ["Bride's age"]);
+        }
+        if (!spouseAge) {
+          spouseAge = getRecordDataValueForList(data, ["Groom's age"]);
+        }
+      }
+    }
+    result.setFieldIfValueExists("ageAtEvent", age);
+
+    // sometimes it says "Groom's father's last name" or "Bride's father's last name" etc
+    // In which case we will not have the parents yet
+
+    let groomFatherFirstName = getRecordDataValueForList(data, ["Groom's father's first name(s)", "Groom's father's first name"]);
+    let groomFatherLastName = getRecordDataValueForList(data, ["Groom's father's last name(s)", "Groom's father's last name"]);
+    let brideFatherFirstName = getRecordDataValueForList(data, ["Bride's father's first name(s)", "Bride's father's first name"]);
+    let brideFatherLastName = getRecordDataValueForList(data, ["Bride's father's last name(s)", "Bride's father's last name"]);
+
+    if (groomFatherFirstName || groomFatherLastName || brideFatherFirstName || brideFatherLastName) {
+      if (!result.parents || !result.parents.father) {
+        let father = result.father ?? result.addFather();
+
+        if (data.personGender == "male") {
+          father.name.setFirstNames(groomFatherFirstName);
+          father.name.setLastName(groomFatherLastName);
+        }
+        else {
+          father.name.setFirstNames(brideFatherFirstName);
+          father.name.setLastName(brideFatherLastName);
+        }
+      }
+    }
+
+    let groomMotherFirstName = getRecordDataValueForList(data, ["Groom's mother's first name(s)", "Groom's mother's first name"]);
+    let groomMotherLastName = getRecordDataValueForList(data, ["Groom's mother's last name(s)", "Groom's mother's last name"]);
+    let brideMotherFirstName = getRecordDataValueForList(data, ["Bride's mother's first name(s)", "Bride's mother's first name"]);
+    let brideMotherLastName = getRecordDataValueForList(data, ["Bride's mother's last name(s)", "Bride's mother's last name"]);
+    if (groomMotherFirstName || groomMotherLastName || brideMotherFirstName || brideMotherLastName) {
+      if (!result.parents || !result.parents.mother) {
+        let mother = result.mother ?? result.addMother();
+
+        if (data.personGender == "male") {
+          mother.name.setFirstNames(groomMotherFirstName);
+          mother.name.setLastName(groomMotherLastName);
+        }
+        else {
+          mother.name.setFirstNames(brideMotherFirstName);
+          mother.name.setLastName(brideMotherLastName);
+        }
+      }
+    }
 
     if (spouseLastName || result.eventDate) {
       let name = new WtsName();
@@ -708,6 +769,36 @@ function generalizeDataGivenRecordType(data, result) {
       let spouseFatherLastName = getRecordDataValueForList(data, ["Spouse's father's last name(s)", "Spouse's father's last name"]);
       if (spouseFatherFirstName && spouseFatherLastName) {
         spouse.fatherName = spouseFatherFirstName + " " + spouseFatherLastName;
+      }
+      else {
+        if (data.personGender == "male") {
+          if (brideFatherFirstName && brideFatherLastName) {
+            spouse.fatherName = brideFatherFirstName + " " + brideFatherLastName;
+          }
+        }
+        else {
+          if (groomFatherFirstName && groomFatherLastName) {
+            spouse.fatherName = groomFatherFirstName + " " + groomFatherLastName;
+          }
+        }
+      }
+
+      let spouseMotherFirstName = getRecordDataValueForList(data, ["Spouse's mother's first name(s)", "Spouse's mother's first name"]);
+      let spouseMotherLastName = getRecordDataValueForList(data, ["Spouse's mother's last name(s)", "Spouse's mother's last name"]);
+      if (spouseMotherFirstName && spouseMotherLastName) {
+        spouse.motherName = spouseMotherFirstName + " " + spouseMotherLastName;
+      }
+      else {
+        if (data.personGender == "male") {
+          if (brideMotherFirstName && brideMotherLastName) {
+            spouse.motherName = brideMotherFirstName + " " + brideMotherLastName;
+          }
+        }
+        else {
+          if (groomMotherFirstName && groomMotherLastName) {
+            spouse.motherName = groomMotherFirstName + " " + groomMotherLastName;
+          }
+        }
       }
 
       result.spouses = [ spouse ];
