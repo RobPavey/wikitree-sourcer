@@ -12,6 +12,8 @@ I recommend VSCode as a dev environment. Here are some notes on using git in vsc
 
 ### Clone the repository
 
+Actually, the prefered way is now to create a fork.
+
 There are some instructions here: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository but they seem somewhat out of date. This all you need to do:
 
 In a terminal window (Mac) or command window (PC) change directory to where you want to put your development folder. NOTE: you can use the terminal window in vscode also.
