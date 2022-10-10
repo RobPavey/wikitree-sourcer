@@ -1,0 +1,49 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Cox",
+    "forenames": "Jane"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Leicestershire, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "Francis",
+        "lastName": "Cox"
+      }
+    }
+  },
+  "eventDate": {
+    "dateString": "28 Nov 1844",
+    "yearString": "1844"
+  },
+  "ageAtEvent": "of Full Age",
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "Thomas",
+        "lastName": "Burdett"
+      },
+      "marriageDate": {
+        "dateString": "28 Nov 1844",
+        "yearString": "1844"
+      },
+      "marriagePlace": {
+        "country": "England",
+        "placeString": "Leicestershire, England"
+      },
+      "age": "of Full Age",
+      "fatherName": "Thomas Burdett"
+    }
+  ],
+  "collectionData": {
+    "id": "Leicestershire Marriages"
+  },
+  "hasValidData": true
+}

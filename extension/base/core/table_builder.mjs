@@ -311,21 +311,34 @@ class TableBuilder {
       return "";
     }
 
+    let preampleOpt = this.options.table_sentence_preamble;
+    if (preampleOpt == "included") {
+      sentenceString += "The household included";
+    }
+    else if (preampleOpt == "consisted") {
+      sentenceString += "The household consisted of";
+    }
+    else if (preampleOpt == "enumerated") {
+      sentenceString += "The household was enumerated as";
+    }
 
+    let lastPunctOpt = this.options.table_sentence_lastItemPunctuation;
 
-    for (let person of this.personArray) {
-
+    for (let personIndex = 0; personIndex < this.personArray.length; personIndex++) {
+      let person = this.personArray[personIndex];
 
       if (person.isClosed) {
         sentenceString += "Closed Record";
       }
       else {
-        let relationship = person.relationship;
-        if (relationship && relationship != "head") {
-          if (sentenceString) {
-            sentenceString += " ";
+        if (this.options.table_sentence_includeRelationship) {
+          let relationship = person.relationship;
+          if (relationship && relationship != "head") {
+            if (sentenceString) {
+              sentenceString += " ";
+            }
+            sentenceString += relationship;
           }
-          sentenceString += relationship;
         }
 
         let name = person.name;
@@ -337,17 +350,30 @@ class TableBuilder {
         }
         sentenceString += name;
 
-        let age = person.age;
-        if (age) {
-          sentenceString += " " + age;
+        if (this.options.table_sentence_includeAge) {
+          let age = person.age;
+          if (age) {
+            sentenceString += " " + age;
+          }
         }
       }
 
-      sentenceString += `,`;
+      if (personIndex == this.personArray.length-2) {
+        // this is the punctuation before the final person
+        if (lastPunctOpt == "comma" || lastPunctOpt == "commaAnd") {
+          sentenceString += `,`;
+        }
+        if (lastPunctOpt == "and" || lastPunctOpt == "commaAnd") {
+          sentenceString += ` and`;
+        }
+      }
+      else if (personIndex == this.personArray.length-1) {
+        // this is the final person, no punctuation needed
+      }
+      else {
+        sentenceString += `,`;
+      }
     }
-
-    // remove traling comma
-    sentenceString = sentenceString.replace(/\,$/g, "");
 
     sentenceString += ".";
 

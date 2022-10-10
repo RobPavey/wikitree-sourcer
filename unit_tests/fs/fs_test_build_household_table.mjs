@@ -109,6 +109,24 @@ const regressionData = [
         variantName: "sentence_default", 
         optionOverrides: { table_general_format: "sentence"},
       },
+      {
+        variantName: "sentence_included_and", 
+        optionOverrides: {
+          table_general_format: "sentence",
+          table_sentence_preamble: "included",
+          table_sentence_lastItemPunctuation: "and",
+        },
+      },
+      {
+        variantName: "sentence_enumerated", 
+        optionOverrides: {
+          table_general_format: "sentence",
+          table_sentence_preamble: "enumerated",
+          table_sentence_lastItemPunctuation: "commaAnd",
+          table_sentence_includeRelationship: false,
+          table_sentence_includeAge: false,
+        },
+      },
     ],
   },
   { // https://www.familysearch.org/ark:/61903/1:1:728V-TTT2
@@ -117,6 +135,10 @@ const regressionData = [
   {
     // https://www.familysearch.org/ark:/61903/1:1:MHSV-QLY
     caseName: "us_census_1880_alice_miller",
+  },
+  {
+    // https://www.familysearch.org/ark:/61903/1:1:VB3M-FG7
+    caseName: "us_census_1940_addie_bullock",
   },
   {
     // https://www.familysearch.org/ark:/61903/1:1:K438-8WS

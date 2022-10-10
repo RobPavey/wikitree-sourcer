@@ -210,22 +210,17 @@ function shouldUseFetch() {
 
   let useFetch = false;
 
-  let main = document.querySelector("#main");
-  if (main) {
-    //console.log("shouldUseFetch, main found");
-    if (main.getAttribute("aria-label") == "Main Content") {
-      //console.log("shouldUseFetch, aria-label of Main Content found");
+  if (location.href.startsWith("https://www.familysearch.org/tree/person/details/")) {
+    useFetch = true;
+  }
+  else {
+    let main = document.querySelector("#main");
+    if (main) {
+      //console.log("shouldUseFetch, main found");
+      if (main.getAttribute("aria-label") == "Main Content") {
+        //console.log("shouldUseFetch, aria-label of Main Content found");
 
-      // it could be a person page. URL would be of form:
-      // https://www.familysearch.org/tree/person/details/K2F9-F5Z
-      // We do not want to use fetch for a person page
-      //console.log("shouldUseFetch, location.href = " + location.href);
-
-      if (!location.href.startsWith("https://www.familysearch.org/tree/person/details/")) {
         useFetch = true;
-      }
-      else {
-        useFetch = true;  // as of 26 Sep 2022 we have switched to API for person page
       }
     }
   }

@@ -847,6 +847,53 @@ const tableListOptionsGroup = {
   ],
 }
 
+const tableSentenceOptionsGroup = {
+  category: "table",
+  subcategory: "sentence",
+  tab: "table",
+  subsection: "general",
+  subheading: "sentence",
+  options: [
+    {
+      optionName: "preamble",
+      type: "select",
+      label: "Preamble",
+      values: [
+        { value: "none", text: "None" },
+        { value: "included", text: "The household included" },
+        { value: "consisted", text: "The household consisted of" },
+        { value: "enumerated", text: "The household was enumerated as" },
+      ],
+      defaultValue: "none",
+    },
+    {
+      optionName: "includeRelationship",
+      type: "checkbox",
+      label: "Include relationship for each person (if known)",
+      defaultValue: true,
+      unitTestValue: true,
+    },  
+    {
+      optionName: "includeAge",
+      type: "checkbox",
+      label: "Include age for each person (if known)",
+      defaultValue: true,
+      unitTestValue: true,
+    },  
+    {
+      optionName: "lastItemPunctuation",
+      type: "select",
+      label: "Last member punctuation",
+      values: [
+        { value: "comma", text: "', '" },
+        { value: "and", text: "' and '" },
+        { value: "commaAnd", text: "', and '" },
+      ],
+      defaultValue: "comma",
+    },
+  ],
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Add Person options groups
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -861,6 +908,13 @@ const addPersonGeneralOptionsGroup = {
       optionName: "includeCitation",
       type: "checkbox",
       label: "Fill citation in appropriate field if filling from a citation",
+      defaultValue: false,
+      unitTestValue: false,
+    },  
+    {
+      optionName: "includeProfileLink",
+      type: "checkbox",
+      label: "Add a link/template to the source profile in sources if filling from a profile",
       defaultValue: false,
       unitTestValue: false,
     },  
@@ -930,6 +984,7 @@ registerSubsectionForOptions("narrative", "obituary", "Obituary");
 registerSubsectionForOptions("table", "general", "General");
 registerSubheadingForOptions("table", "general", "table", "When using a table");
 registerSubheadingForOptions("table", "general", "list", "When using a list");
+registerSubheadingForOptions("table", "general", "sentence", "When using a sentence");
 
 registerSubsectionForOptions("addPerson", "general", "General");
 
@@ -958,5 +1013,6 @@ registerOptionsGroup(narrativeObituaryOptionsGroup);
 registerOptionsGroup(tableGeneralOptionsGroup);
 registerOptionsGroup(tableTableOptionsGroup);
 registerOptionsGroup(tableListOptionsGroup);
+registerOptionsGroup(tableSentenceOptionsGroup);
 
 registerOptionsGroup(addPersonGeneralOptionsGroup);

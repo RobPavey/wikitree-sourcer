@@ -1,0 +1,87 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Addie Bullock"
+  },
+  "birthDate": {
+    "dateString": "1909",
+    "yearString": "1909"
+  },
+  "birthPlace": {
+    "placeString": "Mississippi"
+  },
+  "eventDate": {
+    "dateString": "1940",
+    "yearString": "1940"
+  },
+  "eventPlace": {
+    "placeString": "Pearl, Rankin, Mississippi, United States"
+  },
+  "ageAtEvent": "31",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Addie Bullock",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "31",
+      "birthYear": "1909",
+      "birthPlace": "Mississippi",
+      "isSelected": true
+    },
+    {
+      "name": "Hazel Bullock",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "12",
+      "birthYear": "1928",
+      "birthPlace": "Mississippi"
+    },
+    {
+      "name": "Mavis Bullock",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "10",
+      "birthYear": "1930",
+      "birthPlace": "Mississippi"
+    },
+    {
+      "name": "Emma Gene Bullock",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "7",
+      "birthYear": "1933",
+      "birthPlace": "Mississippi"
+    },
+    {
+      "name": "Ivanora Bullock",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "5",
+      "birthYear": "1935",
+      "birthPlace": "Mississippi"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "collectionData": {
+    "id": "2000219"
+  },
+  "hasValidData": true
+}

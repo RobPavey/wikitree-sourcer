@@ -31,6 +31,15 @@
   ],
   "householdArray": [
     {
+      "name": "Charles W Elliott, Jr",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "27",
+      "birthYear": "1913",
+      "birthPlace": "New Hampshire"
+    },
+    {
       "name": "Arleita M Elliott",
       "relationship": "wife",
       "maritalStatus": "married",
@@ -39,19 +48,19 @@
       "birthYear": "1912",
       "birthPlace": "New Hampshire",
       "isSelected": true
-    },
-    {
-      "name": "Charles W Elliott, Jr",
-      "relationship": "head",
-      "maritalStatus": "married",
-      "gender": "male",
-      "age": "27",
-      "birthYear": "1913",
-      "birthPlace": "New Hampshire"
     }
   ],
   "maritalStatus": "married",
   "relationshipToHead": "wife",
+  "spouses": [
+    {
+      "name": {
+        "name": "Charles W Elliott, Jr"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
   "collectionData": {
     "id": "2000219"
   },

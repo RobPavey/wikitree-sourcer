@@ -53,6 +53,10 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=BMD%2FB%2F1852%2F3%2FIS%2F000879%2F027",
   },
   {
+    caseName: "british_india_marriage_1881_albert_woods",
+    url: "https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FM%2F69318%2F1",
+  },
+  {
     caseName: "census_1911_pavey-342",
     url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1911%2FRG14%2F00802%2F0395%2F1",
   },
@@ -269,6 +273,34 @@ const regressionData = [
   {
     caseName: "england_devon_marriage_1841_maria_torr",
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FDEV%2FBANNS%2F86127%2F2",
+  },
+  {
+    caseName: "england_leics_marriage_1844_jane_cox",
+    url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2",
+    optionVariants: [
+      {
+        variantName: "narrative_1", 
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_marriage_ageFormat: "commasAge",
+        },
+      },
+      {
+        variantName: "narrative_2", 
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_marriage_ageFormat: "plainAged",
+          
+        },
+      },
+      {
+        variantName: "narrative_3", 
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_marriage_includeAge: "inSeparateSentence",
+        },
+      },
+    ],
   },
   {
     caseName: "england_parish_baptism_1823_william_more",

@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "BirthOrBaptism",
+  "name": {
+    "lastName": "Reid",
+    "forenames": "Thomas"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "8 June 1813"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Ayrshire",
+    "placeString": "Kirkmichael, Ayrshire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Reid"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Jane Gemmill"
+      }
+    }
+  },
+  "collectionData": {
+    "frameNumber": "299"
+  },
+  "hasValidData": true
+}

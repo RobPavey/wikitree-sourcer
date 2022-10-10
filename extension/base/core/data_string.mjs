@@ -53,6 +53,16 @@ function cleanDateObj(dateObj) {
   return "";
 }
 
+function cleanAge(age) {
+  let result = age;
+  if (result) {
+    if (typeof(result) == 'string') {
+      result = result.toLowerCase();
+    }
+  }
+  return result;
+}
+
 function getDateWithPreposition(dateObj, prepSuffix = "") {
   if (dateObj) {
     return dateObj.getDataStringFormat(true, prepSuffix);
@@ -115,7 +125,7 @@ function getUkCensusString(gd, options) {
 
   let dataString = getFullName(gd);
 
-  let age = gd.ageAtEvent;
+  let age = cleanAge(gd.ageAtEvent);
   let maritalStatus = gd.maritalStatus;
   let relationshipToHead = gd.relationshipToHead;
 
@@ -177,7 +187,7 @@ function getUkCensusString(gd, options) {
     if (gd.householdArray && gd.householdArray.length > 0) {
       let headIndex = getHeadOfHouseholdIndex(gd.householdArray);
       let headName = gd.householdArray[headIndex].name;
-      let headAge = gd.householdArray[headIndex].age;
+      let headAge = cleanAge(gd.householdArray[headIndex].age);
       
       if (headName) {
         dataString += " in household of ";
@@ -305,7 +315,7 @@ function getOtherCensusString(gd, options) {
 
   let dataString = getFullName(gd);
 
-  let age = gd.ageAtEvent;
+  let age = cleanAge(gd.ageAtEvent);
   let maritalStatus = gd.maritalStatus;
   let relationshipToHead = gd.relationshipToHead;
   
@@ -350,7 +360,7 @@ function getOtherCensusString(gd, options) {
     if (gd.householdArray && gd.householdArray.length > 0) {
       let headIndex = getHeadOfHouseholdIndex(gd.householdArray);
       let headName = gd.householdArray[headIndex].name;
-      let headAge = gd.householdArray[headIndex].age;
+      let headAge = cleanAge(gd.householdArray[headIndex].age);
       
       if (headName) {
         dataString += " in household of ";
@@ -474,12 +484,12 @@ function getUkRegistrationString(gd, options, type) {
       bornOrAgeText = "born " + cleanDateObj(birthDate);
     }
     else {
-      let age = gd.ageAtDeath;
+      let age = cleanAge(gd.ageAtDeath);
       if (!age) {
-        age = gd.age;
+        age = cleanAge(gd.age);
       }
       if (!age) {
-        age = gd.ageAtEvent;
+        age = cleanAge(gd.ageAtEvent);
       }
       if (age) {
         bornOrAgeText = "age " + age;
@@ -638,7 +648,7 @@ function getDeathRegistrationString(gd, options) {
     dataString += " " + cleanDateObj(deathDate);
   }
 
-  let age = gd.ageAtDeath;
+  let age = cleanAge(gd.ageAtDeath);
   if (age) {
     dataString += " (age " + age + ")";
   }
@@ -664,7 +674,7 @@ function getMarriageRegistrationString(gd, options) {
   // generic marriage reg
   let dataString = getFullName(gd);
 
-  let age = gd.ageAtEvent;
+  let age = cleanAge(gd.ageAtEvent);
   if (age) {
     dataString += " (" + age + ")";
   }
@@ -681,7 +691,7 @@ function getMarriageRegistrationString(gd, options) {
       let spouseName = spouse.name.inferFullName();
       dataString += " to " + spouseName;
 
-      let spouseAge = spouse.age;
+      let spouseAge = cleanAge(spouse.age);
       if (spouseAge) {
         dataString += " (" + spouseAge + ")";
       }
@@ -813,7 +823,7 @@ function getDeathString(gd, options) {
     dataString += " (born " + gd.birthDate.dateString + ")";
   }
   else {
-    let age = gd.ageAtDeath;
+    let age = cleanAge(gd.ageAtDeath);
     if (age) {
       dataString += " (age " + age + ")";
     }
@@ -955,7 +965,7 @@ function getMarriageString(gd, options) {
       dataString += " " + gd.primaryPerson;
     }
 
-    let age = gd.primaryPersonAge;
+    let age = cleanAge(gd.primaryPersonAge);
     if (age) {
       dataString += " (" + age + ")";
     }
@@ -963,7 +973,7 @@ function getMarriageString(gd, options) {
   else {
     dataString += getFullName(gd);
 
-    let age = gd.ageAtEvent;
+    let age = cleanAge(gd.ageAtEvent);
     if (age) {
       dataString += " (" + age + ")";
     }
@@ -975,7 +985,7 @@ function getMarriageString(gd, options) {
     let spouseName = gd.spouses[0].name.inferFullName();
     dataString += " to " + spouseName;
 
-    let spouseAge = gd.spouses[0].age;
+    let spouseAge = cleanAge(gd.spouses[0].age);
     if (spouseAge) {
       dataString += " (" + spouseAge + ")";
     }
@@ -1056,9 +1066,9 @@ function getBurialString(gd, options) {
   }
 
   let deathDate = gd.inferDeathDateObj();
-  let age = gd.ageAtDeath;
+  let age = cleanAge(gd.ageAtDeath);
   if (!age) {
-    age = gd.ageAtEvent;
+    age = cleanAge(gd.ageAtEvent);
   }
   if (deathDate && age) {
     dataString += " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
@@ -1092,7 +1102,7 @@ function getCremationString(gd, options) {
   dataString += " cremation";
 
   let deathDate = gd.inferDeathDateObj();
-  let age = gd.ageAtDeath;
+  let age = cleanAge(gd.ageAtDeath);
   if (deathDate && age) {
     dataString += " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
   }

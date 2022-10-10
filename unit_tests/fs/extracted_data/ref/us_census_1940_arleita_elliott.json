@@ -55,6 +55,19 @@
     ],
     "members": [
       {
+        "fullName": "Charles W Elliott, Jr",
+        "surname": "Elliott",
+        "givenName": "Charles W",
+        "gender": "male",
+        "maritalStatus": "Married",
+        "birthDateOriginal": "1913",
+        "birthDate": "1913",
+        "birthYear": "1913",
+        "birthPlaceOriginal": "New Hampshire",
+        "relationship": "Head",
+        "age": "27"
+      },
+      {
         "isSelected": true,
         "fullName": "Arleita M Elliott",
         "surname": "Elliott",
@@ -67,19 +80,6 @@
         "birthPlaceOriginal": "New Hampshire",
         "relationship": "WIFE",
         "age": "28"
-      },
-      {
-        "fullName": "Charles W Elliott, Jr",
-        "surname": "Elliott",
-        "givenName": "Charles W",
-        "gender": "male",
-        "maritalStatus": "Married",
-        "birthDateOriginal": "1913",
-        "birthDate": "1913",
-        "birthYear": "1913",
-        "birthPlaceOriginal": "New Hampshire",
-        "relationship": "Head",
-        "age": "27"
       }
     ]
   },

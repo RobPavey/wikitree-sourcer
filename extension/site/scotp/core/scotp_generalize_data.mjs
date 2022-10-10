@@ -251,11 +251,22 @@ function getCountyNameFromRegistrationDistrict(data, rdName, eventYear) {
   }
 
   if (!countyName) {
-    const parish = getParishData(rdName, eventYear);
-    if(parish.length >= 1) { 
-      const county = getCountyDisplayName(parish[0].county);
-      if(county){
-        countyName = county.display_county;
+    const parishes = getParishData(rdName, eventYear);
+    if(parishes.length >= 1) { 
+      for (let parish of parishes) {
+        if (parish.rdNo == rdNumber) {
+          const county = getCountyDisplayName(parish.county);
+          if (county) {
+            countyName = county.display_county;
+            break;
+          }
+        }
+      }
+      if (!countyName && parishes.length == 1) {
+        const county = getCountyDisplayName(parishes[0].county);
+        if (county) {
+          countyName = county.display_county;
+        }
       }
     }
   }
@@ -308,11 +319,26 @@ function getCountyNameFromOprParish(data, townName, eventYear) {
     }
   }
   else {
-    const parish = getParishData(townName, eventYear);
-    if(parish.length >= 1) { 
-      const county = getCountyDisplayName(parish[0].county);
-      if(county){
-        countyName = county.display_county;
+    const parishes = getParishData(townName, eventYear);
+    if(parishes.length >= 1) { 
+      let parishNumber = data.recordData["Parish Number"];
+      if (parishNumber) {
+        parishNumber = parishNumber.trim(); // often has space on end
+      }
+      for (let parish of parishes) {
+        if (parish.rdNo == parishNumber) {
+          const county = getCountyDisplayName(parish.county);
+          if (county) {
+            countyName = county.display_county;
+            break;
+          }
+        }
+      }
+      if (!countyName && parishes.length == 1) {
+        const county = getCountyDisplayName(parishes[0].county);
+        if (county) {
+          countyName = county.display_county;
+        }
       }
     }
   }

@@ -88,7 +88,7 @@ function convertTimestampDiffToText(timeStamp) {
   return timeText;
 }
 
-function getWikiTreeEditFamilyData(data, personGd, citationObject) {
+function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
   // this input is:
   // data: the extracted data from the current page
   // personData: the stored person data which is extractedData and generalizedData (not as objects)
@@ -111,6 +111,7 @@ function getWikiTreeEditFamilyData(data, personGd, citationObject) {
 
   function getPageParents(relationship) {
     let parents = {};
+    parents.genderKnown = false;
     if (relationship == "child") {
       let pageParent1Name = data.extractedData.familyMemberName; // we don't actually know gender
       let pageParent2Name = data.extractedData.familyMemberSpouseName;
@@ -141,8 +142,13 @@ function getWikiTreeEditFamilyData(data, personGd, citationObject) {
           parents.fatherWikiId = pageParent2WikiId;
           parents.motherName = pageParent1Name;
           parents.motherWikiId = pageParent1WikiId;
+          parents.genderKnown = true;
         }
         else {
+          if (!parent1HasParen && parent2HasParen) {
+            parents.genderKnown = true;
+          }
+
           parents.fatherName = pageParent1Name;
           parents.fatherWikiId = pageParent1WikiId;
           parents.motherName = pageParent2Name;
@@ -153,6 +159,7 @@ function getWikiTreeEditFamilyData(data, personGd, citationObject) {
         if (parent1HasParen) {
           parents.motherName = pageParent1Name;
           parents.motherWikiId = pageParent1WikiId;
+          parents.genderKnown = true;
         }
         else {
           parents.fatherName = pageParent1Name;
@@ -177,11 +184,13 @@ function getWikiTreeEditFamilyData(data, personGd, citationObject) {
       if (fatherName) {
         parents.fatherName = fatherName;
         parents.fatherWikiId = fatherWikiId;
+        parents.genderKnown = true;
       }
 
       if (motherName) {
         parents.motherName = motherName;
         parents.motherWikiId = motherWikiId;
+        parents.genderKnown = true;
       }
     }
     return parents;
@@ -367,6 +376,19 @@ function getWikiTreeEditFamilyData(data, personGd, citationObject) {
       let dataParents = personGd.inferParentNamesForDataString();
       fatherName = dataParents.fatherName;
       motherName = dataParents.motherName;
+      // the page parents can have the father and mother the wrong way round
+      if (!pageParents.genderKnown) {
+        if (pageParents.fatherName != dataParents.fatherName) {
+          if (pageParents.motherName == dataParents.fatherName) {
+            let swapName = pageParents.motherName;
+            let swapWikiId = pageParents.motherWikiId;
+            pageParents.motherName = pageParents.fatherName;
+            pageParents.motherWikiId = pageParents.fatherWikiId;
+            pageParents.fatherName = swapName;
+            pageParents.fatherWikiId = swapWikiId;
+          }
+        }
+      }
       if (pageParents.fatherName) {
         fatherName = pageParents.fatherName;
         fatherWikiId = pageParents.fatherWikiId;
@@ -453,15 +475,84 @@ function getWikiTreeEditFamilyData(data, personGd, citationObject) {
     }
   }
 
+  // optionally add a "See also:" link to the person profile
+  if (personGd.sourceType == "profile" && options.addPerson_general_includeProfileLink) {
+    const url = personEd.url;
+    let linkString = "";
+    if (url) {
+      if (personGd.sourceOfData == "ancestry") {
+        // e.g. "https://www.ancestry.com/family-tree/person/tree/86808578/person/260133535006/facts"
+        // becomes: {{Ancestry Tree|86808578|260133535006}}
+        const treePrefix = "/family-tree/person/tree/";
+        const personPrefix = "/person/";
+        let treePrefixIndex = url.indexOf(treePrefix);
+        if (treePrefixIndex != -1) {
+          let treeIndex = treePrefixIndex + treePrefix.length;
+          let personPrefixIndex = url.indexOf(personPrefix, treeIndex);
+          if (personPrefixIndex != -1) {
+            let tree = url.substring(treeIndex, personPrefixIndex);
+            let personIndex = personPrefixIndex + personPrefix.length;
+            let personEndIndex = url.indexOf("/", personIndex);
+            if (personEndIndex != -1) {
+              let person = url.substring(personIndex, personEndIndex);
+              linkString = "{{Ancestry Tree|" + tree + "|" + person + "}}";
+            }
+          }
+        }
+        else {
+          linkString = "[" + url + "Ancestry profile]";
+        }
+      }
+      else if (personGd.sourceOfData == "fs") {
+        // https://www.familysearch.org/tree/person/details/L5ZC-N31
+        // {{FamilySearch|L5ZC-N31}}
+        const treePrefix = "/tree/person/details/";
+        let treePrefixIndex = url.indexOf(treePrefix);
+        if (treePrefixIndex != -1) {
+          let treeIndex = treePrefixIndex + treePrefix.length;
+          let endIndex = url.indexOf("/", treeIndex);
+          if (endIndex == -1) {
+            endIndex = url.indexOf("?", treeIndex);
+          }
+          if (endIndex == -1) {
+            endIndex = url.length;
+          }
+          let personId = url.substring(treeIndex, endIndex);
+          linkString = "{{FamilySearch|" + personId + "}}";
+        }
+        else {
+          linkString = "[" + url + "FamilySearch profile]";
+        }
+      }
+      else if (personGd.sourceOfData == "fmp") {
+        // Currently we only support pages like this: 
+        // https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964996/profile
+        // Ideally the extract would work on pages like this too:
+        // https://www.findmypast.co.uk/search-family-tree/transcript?id=1518223580&ref=30EB72DD-C6FD-4B08-90BF-94A6335344D2
+        linkString = "[" + url + "FindMyPast profile]";
+      }
+
+      if (linkString) {
+        if (!result.sources) {
+          result.sources = "";
+        }
+        else {
+          result.sources += "\n";
+        }
+        result.sources += linkString;
+      }
+    }
+  }
+
   //console.log("getWikiTreeEditFamilyData, result is: ");
   //console.log(result);
 
   return result;
 }
 
-async function setFieldsFromPersonData(data, personGd, tabId, citationObject) {
+async function setFieldsFromPersonData(data, personEd, personGd, tabId, citationObject) {
 
-  let wtPersonData = getWikiTreeEditFamilyData(data, personGd, citationObject);
+  let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
 
   // send a message to content script
   try {
@@ -541,7 +632,7 @@ async function addSetFieldsFromPersonDataMenuItem(menu, data, tabId) {
     }
 
     addMenuItemWithSubtitle(menu, menuText, function(element) {
-      setFieldsFromPersonData(data, gd, tabId);
+      setFieldsFromPersonData(data, personData.extractedData, gd, tabId);
     }, subtitleText);
   }
 }
@@ -587,7 +678,7 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId) {
       subtitleText += "\nSaved " + timeText + " ago";
     }
     addMenuItemWithSubtitle(menu, menuText, function(element) {
-      setFieldsFromPersonData(data, gd, tabId, citationObject);
+      setFieldsFromPersonData(data, citationObject.extractedData, gd, tabId, citationObject);
     }, subtitleText);
   }
 }

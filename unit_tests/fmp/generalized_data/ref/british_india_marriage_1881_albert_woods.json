@@ -1,0 +1,47 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Woods",
+    "forenames": "Albert William"
+  },
+  "eventPlace": {
+    "placeString": "Lahore, Bengal"
+  },
+  "eventDate": {
+    "dateString": "25 Apr 1881",
+    "yearString": "1881"
+  },
+  "ageAtEvent": "30",
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "Roger",
+        "lastName": "Woods"
+      }
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "Sarah Emmaline",
+        "lastName": "Newberry"
+      },
+      "marriageDate": {
+        "dateString": "25 Apr 1881",
+        "yearString": "1881"
+      },
+      "marriagePlace": {
+        "placeString": "Lahore, Bengal"
+      },
+      "age": "16",
+      "fatherName": "William Newberry"
+    }
+  ],
+  "collectionData": {
+    "id": "British India Office Marriages"
+  },
+  "hasValidData": true
+}
