@@ -27,8 +27,8 @@ import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_util
 
 const regressionData = [
   {
-    caseName: "elizabeth_bates",
-    inputPath: "np/generalized_data/ref/elizabeth_bates",
+    caseName: "pavey",
+    inputPath: "np/generalized_data/ref/pavey",
   }
 ];
 

@@ -30,8 +30,8 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    caseName: "elizabeth_bates",
-    url: "https://www.newspapers.com/image/41871820/?terms=Elizabeth%20Bates&match=1"
+    caseName: "pavey",
+    url: "https://www.newspapers.com/search?=undefined&query=William%20%20Pavey&dr_year=1791-1872"
   },
 
 ];
