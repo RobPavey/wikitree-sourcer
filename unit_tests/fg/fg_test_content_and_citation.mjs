@@ -35,57 +35,6 @@ const regressionData = [
     caseName: "archibald_teal_d_1906",
     url: "https://www.findagrave.com/memorial/142850482/archibald-w_a-teal"
   },
-  {
-    caseName: "elizabeth_singleton_bates_d_1876",
-    url: "https://www.findagrave.com/memorial/45398821/elizabeth-bates",
-    optionVariants: [
-      {
-        variantName: "accessedDate_none", 
-        optionOverrides: {citation_general_addAccessedDate: "none",},
-      },
-      {
-        variantName: "accessedDate_parenAfterLink", 
-        optionOverrides: {citation_general_addAccessedDate: "parenAfterLink",},
-      },
-      {
-        variantName: "accessedDate_parenBeforeLink", 
-        optionOverrides: {citation_general_addAccessedDate: "parenBeforeLink",},
-      },
-    ],
-  },
-  {
-    caseName: "ezekiel_bentley_d_1833",
-    url: "https://www.findagrave.com/memorial/39114638/ezekiel-bentley"
-  },
-  {
-    caseName: "george_reed_d_1887",
-    url: "https://www.findagrave.com/memorial/221989091/george-german-reed"
-  },
-  { // has long inscription
-    caseName: "john_sinclair_d_1906",
-    url: "https://www.findagrave.com/memorial/148814973/john-thomas-sinclair"
-  },
-  {
-    // cremation. Still has a "BURIAL" field.
-    caseName: "shirley_adam_d_2015",
-    url: "https://www.findagrave.com/memorial/158706349/shirley-beveridge-adam"
-  },
-  {
-    caseName: "stephen_taylor_d_1875",
-    url: "https://www.findagrave.com/memorial/133987073/stephen-taylor"
-  },
-  {
-    caseName: "thomas_reed_d_1871",
-    url: "https://www.findagrave.com/memorial/195078570/thomas-reed"
-  },
-  {
-    caseName: "william_pavey_d_1961",
-    url: "https://www.findagrave.com/memorial/115176143/william-henry-pavey"
-  },
-  {
-    caseName: "william_shakespeare_d_1616",
-    url: "https://www.findagrave.com/memorial/87136641/william-shakespeare"
-  },
 ];
 
 async function runTests(testManager) {
