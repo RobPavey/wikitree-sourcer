@@ -46,7 +46,6 @@ function convertDateToWtpSearchFormat(dateString) {
 }
 
 function addToQueryString(queryString, fieldName, fieldValue) {
-
   if (fieldName) {
     if (queryString) {
       queryString += " ";
@@ -66,7 +65,6 @@ function addToQueryString(queryString, fieldName, fieldValue) {
 }
 
 function buildSearchUrl(input) {
-
   //console.log("buildSearchData, input is:");
   //console.log(input);
 
@@ -116,8 +114,7 @@ function buildSearchUrl(input) {
   let birthPlace = "";
   if (parameters) {
     birthPlace = parameters.birthPlace;
-  }
-  else {
+  } else {
     birthPlace = data.inferBirthPlace();
   }
   if (birthPlace) {
@@ -128,8 +125,7 @@ function buildSearchUrl(input) {
   let deathPlace = "";
   if (parameters) {
     deathPlace = parameters.deathPlace;
-  }
-  else {
+  } else {
     deathPlace = data.inferDeathPlace();
   }
   if (deathPlace) {
@@ -139,14 +135,14 @@ function buildSearchUrl(input) {
 
   builder.addSearchParameter("Query", query);
   builder.addSearchParameter("render", "1");
-  
+
   let url = builder.getUri();
 
   //console.log("URL is " + url);
 
   var result = {
-    'url' : url,
-  }
+    url: url,
+  };
 
   return result;
 }

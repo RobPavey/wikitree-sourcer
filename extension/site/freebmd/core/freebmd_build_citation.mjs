@@ -27,17 +27,16 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 //import { FBMD } from "./freebmd_utils.mjs";
 
 function buildFreebmdUrl(data, builder) {
-
   // could provide option to use a search style URL but don't see any reason to so far
   return data.citationUrl;
 }
 
 function getQuarterName(data) {
   const quarterNames = {
-    "Mar": "Jan-Feb-Mar",
-    "Jun": "Apr-May-Jun",
-    "Sep": "Jul-Aug-Sep",
-    "Dec": "Oct-Nov-Dec"
+    Mar: "Jan-Feb-Mar",
+    Jun: "Apr-May-Jun",
+    Sep: "Jul-Aug-Sep",
+    Dec: "Oct-Nov-Dec",
   };
 
   if (data.eventQuarter != undefined && data.eventQuarter != "") {
@@ -53,7 +52,7 @@ function getQuarterName(data) {
 
 function getCorrectlyCasedName(name, options) {
   if (options.citation_freebmd_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name)
+    name = WTS_String.toInitialCaps(name);
   }
   return name;
 }
@@ -82,26 +81,26 @@ function getRegistrationDistrict(data, options) {
 }
 
 function buildCoreCitation(data, runDate, builder) {
-
   const titleText = {
     birth: "Birth",
     marriage: "Marriage",
     death: "Death",
-  }
+  };
 
   let options = builder.getOptions();
 
-  builder.sourceTitle = "England & Wales " + titleText[data.eventType] + " Index";
+  builder.sourceTitle =
+    "England & Wales " + titleText[data.eventType] + " Index";
 
   builder.sourceReference = data.sourceCitation;
-
 
   var freebmdUrl = buildFreebmdUrl(data, builder);
 
   let recordLink = "[" + freebmdUrl + " FreeBMD Entry Information]";
   builder.recordLinkOrTemplate = recordLink;
 
-  let dataString = getLastName(data, options) + ", " + getGivenNames(data, options);
+  let dataString =
+    getLastName(data, options) + ", " + getGivenNames(data, options);
   if (data.eventType == "birth") {
     if (data.mothersMaidenName != undefined && data.mothersMaidenName != "") {
       dataString += " (Mother's maiden name: ";
@@ -111,13 +110,11 @@ function buildCoreCitation(data, runDate, builder) {
       }
       dataString += mmn + ")";
     }
-  }
-  else if (data.eventType == "death") {
+  } else if (data.eventType == "death") {
     if (data.ageAtDeath) {
       dataString += " (Age at death: ";
       dataString += data.ageAtDeath + ")";
-    }
-    else if (data.birthDate) {
+    } else if (data.birthDate) {
       dataString += " (Date of birth: ";
       dataString += data.birthDate + ")";
     }
@@ -128,8 +125,7 @@ function buildCoreCitation(data, runDate, builder) {
 
   if (options.citation_general_addBreaksWithinBody) {
     dataString += "<br/>";
-  }
-  else {
+  } else {
     dataString += " ";
   }
   if (options.citation_general_addNewlinesWithinBody) {
@@ -138,8 +134,7 @@ function buildCoreCitation(data, runDate, builder) {
 
   if (options.citation_freebmd_referenceInItalics) {
     dataString += "''GRO Reference:'' ";
-  }
-  else {
+  } else {
     dataString += "GRO Reference: ";
   }
 
@@ -147,26 +142,30 @@ function buildCoreCitation(data, runDate, builder) {
 
   // temp - disable district link
   if (false && options.citation_freebmd_useDistrictUrl) {
-    dataString += "[" + FBMD.getDistrictPageUrl(data.registrationDistrict) + " " + getRegistrationDistrict(data, options) + "]";
-  }
-  else {
+    dataString +=
+      "[" +
+      FBMD.getDistrictPageUrl(data.registrationDistrict) +
+      " " +
+      getRegistrationDistrict(data, options) +
+      "]";
+  } else {
     dataString += getRegistrationDistrict(data, options);
   }
 
   if (data.referenceVolume != undefined && data.referenceVolume != "") {
-    dataString += " Volume " + data.referenceVolume + " Page " + data.referencePage + ".";
+    dataString +=
+      " Volume " + data.referenceVolume + " Page " + data.referencePage + ".";
   }
 
   builder.dataString = dataString;
 }
 
 function buildCitation(input) {
-
   const data = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
 
@@ -199,7 +198,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

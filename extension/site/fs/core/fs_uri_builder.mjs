@@ -64,12 +64,10 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 // &m.defaultFacets=on&m.queryRequireDefault=on&m.facetNestCollectionInCategory=on&count=20&offset=0
 
 class FsUriBuilder {
-
   constructor(type) {
     if (type == "tree") {
       this.uri = "https://www.familysearch.org/search/tree/results?count=20";
-    }
-    else {
+    } else {
       this.uri = "https://www.familysearch.org/search/record/results?count=20";
     }
     this.searchTermAdded = true;
@@ -83,8 +81,7 @@ class FsUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
@@ -99,8 +96,7 @@ class FsUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
   }
@@ -110,9 +106,8 @@ class FsUriBuilder {
     if (this.titleMap.has(title)) {
       let count = this.titleMap.get(title);
       uniqueTitle = title + "." + count;
-      this.titleMap.set(title, count+1);
-    }
-    else {
+      this.titleMap.set(title, count + 1);
+    } else {
       this.titleMap.set(title, 1);
     }
 
@@ -123,7 +118,10 @@ class FsUriBuilder {
     if (location != undefined && location != "") {
       var fullTitle = "q." + title + "Place";
       var uniqueTitle = this.makeUniqueTitle(fullTitle);
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(location));
+      this.addSearchParameter(
+        uniqueTitle,
+        WTS_String.removeExtendedAsciiCharacters(location)
+      );
     }
   }
 
@@ -131,7 +129,10 @@ class FsUriBuilder {
     if (year != undefined && year != "") {
       var fullTitle = "q." + title + "Date.from";
       var uniqueTitle = this.makeUniqueTitle(fullTitle);
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(year));
+      this.addSearchParameter(
+        uniqueTitle,
+        WTS_String.removeExtendedAsciiCharacters(year)
+      );
     }
   }
 
@@ -139,7 +140,10 @@ class FsUriBuilder {
     if (year != undefined && year != "") {
       var fullTitle = "q." + title + "Date.to";
       var uniqueTitle = this.makeUniqueTitle(fullTitle);
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(year));
+      this.addSearchParameter(
+        uniqueTitle,
+        WTS_String.removeExtendedAsciiCharacters(year)
+      );
     }
   }
 
@@ -157,7 +161,10 @@ class FsUriBuilder {
       string += names.trim();
     }
     if (string != "") {
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(
+        uniqueTitle,
+        WTS_String.removeExtendedAsciiCharacters(string)
+      );
     }
   }
 
@@ -173,11 +180,9 @@ class FsUriBuilder {
   addGender(gender) {
     if (gender == "male") {
       gender = "Male";
-    }
-    else if (gender == "female") {
+    } else if (gender == "female") {
       gender = "Female";
-    }
-    else {
+    } else {
       return;
     }
     this.addSearchParameter("q.sex", gender);
@@ -195,18 +200,18 @@ class FsUriBuilder {
 
   addFather(forenames, lastName) {
     // &q.fatherGivenName=Ernest&q.fatherSurname=Bloggs
-    this.addNameParameter("q.fatherGivenName", forenames)
-    this.addNameParameter("q.fatherSurname", lastName)
+    this.addNameParameter("q.fatherGivenName", forenames);
+    this.addNameParameter("q.fatherSurname", lastName);
   }
 
   addMother(forenames, lastName) {
-    this.addNameParameter("q.motherGivenName", forenames)
-    this.addNameParameter("q.motherSurname", lastName)
+    this.addNameParameter("q.motherGivenName", forenames);
+    this.addNameParameter("q.motherSurname", lastName);
   }
 
   addSpouse(forenames, lastName) {
-    this.addNameParameter("q.spouseGivenName", forenames)
-    this.addNameParameter("q.spouseSurname", lastName)
+    this.addNameParameter("q.spouseGivenName", forenames);
+    this.addNameParameter("q.spouseSurname", lastName);
   }
 
   addMarriage(yearRange, location) {

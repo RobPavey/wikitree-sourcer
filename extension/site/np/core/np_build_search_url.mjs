@@ -25,23 +25,29 @@ SOFTWARE.
 import { NpUriBuilder } from "./np_uri_builder.mjs";
 
 function buildSearchUrl(buildUrlInput) {
-
   const data = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
 
-  var builder = new NpUriBuilder;
+  var builder = new NpUriBuilder();
 
-  console.log(data.inferLastName())
-  builder.addSearchParameter("query", (data.inferFirstName() ?? "") + " " + (data.inferMiddleName() ?? "") + " " + (data.inferLastName() ?? ""))
+  console.log(data.inferLastName());
+  builder.addSearchParameter(
+    "query",
+    (data.inferFirstName() ?? "") +
+      " " +
+      (data.inferMiddleName() ?? "") +
+      " " +
+      (data.inferLastName() ?? "")
+  );
 
-  let birthYear = data.inferBirthYear()
-  let deathYear = data.inferDeathYear()
+  let birthYear = data.inferBirthYear();
+  let deathYear = data.inferDeathYear();
   if (birthYear && deathYear) {
-    builder.addSearchParameter("dr_year", birthYear + "-" + deathYear)
+    builder.addSearchParameter("dr_year", birthYear + "-" + deathYear);
   } else if (birthYear) {
-    builder.addSearchParameter("dr_year", birthYear + "-" + (birthYear + 80))
+    builder.addSearchParameter("dr_year", birthYear + "-" + (birthYear + 80));
   } else if (deathYear) {
-    builder.addSearchParameter("dr_year", (deathYear - 80) + "-" + deathYear)
+    builder.addSearchParameter("dr_year", deathYear - 80 + "-" + deathYear);
   }
 
   const url = builder.getUri();
@@ -49,8 +55,8 @@ function buildSearchUrl(buildUrlInput) {
   //console.log("URL is " + url);
 
   var result = {
-    'url': url,
-  }
+    url: url,
+  };
 
   return result;
 }

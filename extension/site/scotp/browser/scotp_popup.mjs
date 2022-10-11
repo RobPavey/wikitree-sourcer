@@ -28,11 +28,12 @@ import { generalizeData } from "../core/scotp_generalize_data.mjs";
 import { buildCitation } from "../core/scotp_build_citation.mjs";
 
 async function setupScotpPopupMenu(extractedData) {
-
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a ScotlandsPeople page but not a person search results page.",
-    generalizeFailedMessage: "It looks like a ScotlandsPeople page but does not contain the required person data.",
+    extractFailedMessage:
+      "It looks like a ScotlandsPeople page but not a person search results page.",
+    generalizeFailedMessage:
+      "It looks like a ScotlandsPeople page but does not contain the required person data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "scotp",

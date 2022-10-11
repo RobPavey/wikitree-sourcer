@@ -34,38 +34,32 @@ import {
 async function getLatestPersonData() {
   return new Promise((resolve, reject) => {
     try {
-      chrome.storage.local.get(
-        ["latestPersonData"],
-        function (value) {
-            resolve(value.latestPersonData);
-        });
-    }
-    catch (ex) {
+      chrome.storage.local.get(["latestPersonData"], function (value) {
+        resolve(value.latestPersonData);
+      });
+    } catch (ex) {
       reject(ex);
     }
   });
 }
 
 function savePersonData(data) {
-
   data.timeStamp = Date.now();
 
-  chrome.storage.local.set({latestPersonData: data}, function() {
-    console.log('latestPersonData is set to');
+  chrome.storage.local.set({ latestPersonData: data }, function () {
+    console.log("latestPersonData is set to");
     console.log(data);
 
     let message1 = "Person Data saved to local storage.";
     let message2 = "";
-    displayMessageWithIconThenClosePopup("check", message1, message2); 
+    displayMessageWithIconThenClosePopup("check", message1, message2);
   });
 }
 
 function addSavePersonDataMenuItem(menu, data) {
-  addMenuItem(menu, "Save Person Data", function(element) {
+  addMenuItem(menu, "Save Person Data", function (element) {
     savePersonData(data);
   });
 }
 
-export {
-  addSavePersonDataMenuItem, getLatestPersonData,
-}
+export { addSavePersonDataMenuItem, getLatestPersonData };

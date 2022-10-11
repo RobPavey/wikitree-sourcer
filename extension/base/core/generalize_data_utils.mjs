@@ -35,12 +35,11 @@ const dateQualifiers = {
   EXACT: 1,
   ABOUT: 2,
   BEFORE: 3,
-  AFTER: 4
-}
+  AFTER: 4,
+};
 
 const GD = {
-
-  extractYearStringFromDateString: function(date) {
+  extractYearStringFromDateString: function (date) {
     var result = undefined;
     if (date != undefined && date != "") {
       const year = date.replace(/^.*(\d\d\d\d)$/, "$1");
@@ -51,7 +50,7 @@ const GD = {
     return result;
   },
 
-  extractYearNumFromDateString: function(date) {
+  extractYearNumFromDateString: function (date) {
     var result = 0;
     let yearString = extractYearStringFromDateString(date);
     if (yearString) {
@@ -64,7 +63,7 @@ const GD = {
     return result;
   },
 
-  standardizeGender: function(string) {
+  standardizeGender: function (string) {
     if (!string) {
       return "";
     }
@@ -83,8 +82,8 @@ const GD = {
     }
     return "";
   },
-  
-  standardizeMaritalStatus: function(string) {
+
+  standardizeMaritalStatus: function (string) {
     if (!string) {
       return "";
     }
@@ -92,8 +91,15 @@ const GD = {
     if (lc == "married" || lc == "m" || lc.startsWith("mar")) {
       return "married";
     }
-    if (lc == "single" || lc == "s" || lc == "unmarried" || lc == "u"
-     || lc.startsWith("unm") || lc.startsWith("sin") || lc.startsWith("nev")) {
+    if (
+      lc == "single" ||
+      lc == "s" ||
+      lc == "unmarried" ||
+      lc == "u" ||
+      lc.startsWith("unm") ||
+      lc.startsWith("sin") ||
+      lc.startsWith("nev")
+    ) {
       return "single";
     }
     if (lc == "widowed" || lc == "w" || lc == "wd" || lc.startsWith("wid")) {
@@ -109,164 +115,168 @@ const GD = {
     return "";
   },
 
-  standardizeRelationshipToHead: function(string) {
+  standardizeRelationshipToHead: function (string) {
     if (!string) {
       return "";
     }
 
     const exactMap = {
-      "head": "head",
-      "husband": "husband",
-      "husbnd": "husband",
-      "self": "head",
+      head: "head",
+      husband: "husband",
+      husbnd: "husband",
+      self: "head",
       "self (head)": "head",
-      "wife": "wife",
-      "w": "wife",
+      wife: "wife",
+      w: "wife",
       // children
-      "son": "son",
-      "s": "son",
-      "daughter": "daughter",
-      "dau": "daughter",
-      "d": "daughter",
+      son: "son",
+      s: "son",
+      daughter: "daughter",
+      dau: "daughter",
+      d: "daughter",
       // step children
-      "stepdaughter": "stepdaughter",
+      stepdaughter: "stepdaughter",
       "step-daughter": "stepdaughter",
       "step daughter": "stepdaughter",
       "step-dau": "stepdaughter",
       "step dau": "stepdaughter",
-      "stepdau": "stepdaughter",
-      "stpdau": "stepdaughter",
+      stepdau: "stepdaughter",
+      stpdau: "stepdaughter",
       "step-d": "stepdaughter",
       "step d": "stepdaughter",
 
-      "stepson": "stepson",
+      stepson: "stepson",
       "step-son": "stepson",
       "step son": "stepson",
-      "stpson": "stepson",
+      stpson: "stepson",
       "step-s": "stepson",
       "step s": "stepson",
 
       "step-child": "stepchild",
       "step child": "stepchild",
-      "stepchild": "stepchild",
+      stepchild: "stepchild",
       // in-law children
       "daughter-in-law": "daughter-in-law",
       "dau-in-law": "daughter-in-law",
-      "daulaw": "daughter-in-law",
+      daulaw: "daughter-in-law",
       "son-in-law": "son-in-law",
-      "sonlaw": "son-in-law",
+      sonlaw: "son-in-law",
 
       // grandchildren
-      "grandchild": "grandchild",
-      "granddaughter": "granddaughter",
-      "grndau": "granddaughter",
-      "grandson": "grandson",
-      "grnson": "grandson",
+      grandchild: "grandchild",
+      granddaughter: "granddaughter",
+      grndau: "granddaughter",
+      grandson: "grandson",
+      grnson: "grandson",
       // parents
-      "father": "father",
-      "mother": "mother",
+      father: "father",
+      mother: "mother",
       // in-law parents
       "father-in-law": "father-in-law",
       "fa-law": "father-in-law",
       "mother-in-law": "mother-in-law",
       "ma-law": "mother-in-law",
       // step parents
-      "stepfather": "stepfather",
+      stepfather: "stepfather",
       "step-father": "stepfather",
-      "stpdad": "stepfather",
-      "steppa": "stepfather",
-      "stppa": "stepfather",
-      "stepmother": "stepmother",
+      stpdad: "stepfather",
+      steppa: "stepfather",
+      stppa: "stepfather",
+      stepmother: "stepmother",
       "step-mother": "stepmother",
-      "stpmum": "stepmother",
-      "stepma": "stepmother",
-      "stpma": "stepmother",
+      stpmum: "stepmother",
+      stepma: "stepmother",
+      stpma: "stepmother",
       // grandparents
-      "grandfather": "grandfather",
-      "granpa": "grandfather",
-      "grandmother": "grandmother",
-      "granma": "grandmother",
+      grandfather: "grandfather",
+      granpa: "grandfather",
+      grandmother: "grandmother",
+      granma: "grandmother",
 
       // siblings
-      "brother": "brother",
-      "brothr": "brother",
-      "sister": "sister",
+      brother: "brother",
+      brothr: "brother",
+      sister: "sister",
       "brother-in-law": "brother-in-law",
       "brother in law": "brother-in-law",
-      "brolaw": "brother-in-law",
+      brolaw: "brother-in-law",
       "half brother": "half brother",
-      "hlfbro": "half brother",
+      hlfbro: "half brother",
       "half sister": "half sister",
-      "hlfsis": "half sister",
+      hlfsis: "half sister",
       "sister-in-law": "sister-in-law",
       "sister in law": "sister-in-law",
-      "sislaw": "sister-in-law",
-      "stepbrother": "stepbrother",
+      sislaw: "sister-in-law",
+      stepbrother: "stepbrother",
       "step-brother": "stepbrother",
-      "stpbro": "stepbrother",
-      "stepsister": "stepsister",
+      stpbro: "stepbrother",
+      stepsister: "stepsister",
       "step-sister": "stepsister",
-      "stpsis": "stepsister",
+      stpsis: "stepsister",
       // other family
-      "aunt": "aunt",
-      "cousin": "cousin",
+      aunt: "aunt",
+      cousin: "cousin",
       "great aunt": "great aunt",
-      "gtaunt": "great aunt",
+      gtaunt: "great aunt",
       "great uncle": "great uncle",
-      "gtuncl": "great uncle",
-      "niece": "niece",
-      "nephew": "nephew",
-      "uncle": "uncle",
+      gtuncl: "great uncle",
+      niece: "niece",
+      nephew: "nephew",
+      uncle: "uncle",
       // other relationships
-      "apprentice": "apprentice",
-      "appren": "apprentice",
-      "assistant": "assistant",
-      "asstnt": "assistant",
-      "boarder": "boarder",
-      "boardr": "boarder",
-      "governess": "governess",
-      "gvrnss": "governess",
-      "inmate": "inmate",
-      "lodger": "lodger",
-      "mistress": "mistress",
-      "mstres": "mistress",
+      apprentice: "apprentice",
+      appren: "apprentice",
+      assistant: "assistant",
+      asstnt: "assistant",
+      boarder: "boarder",
+      boardr: "boarder",
+      governess: "governess",
+      gvrnss: "governess",
+      inmate: "inmate",
+      lodger: "lodger",
+      mistress: "mistress",
+      mstres: "mistress",
       "nurse child": "nurse child",
       "nrs-ch": "nurse child",
-      "patient": "patient",
-      "ptient": "patient",
-      "prisoner": "prisoner",
-      "prisnr": "prisoner",
-      "pupil": "pupil",
-      "relative": "relative",
-      "reltiv": "relative",
-      "scholar": "scholar",
-      "servant": "servant",
-      "servnt": "servant",
-      "serv": "servant",
-      "stranger": "stranger",
-      "strngr": "stranger",
-      "traveller": "traveller",
-      "trvelr": "traveller",
-      "visitor": "visitor",
-      "visitr": "visitor",
+      patient: "patient",
+      ptient: "patient",
+      prisoner: "prisoner",
+      prisnr: "prisoner",
+      pupil: "pupil",
+      relative: "relative",
+      reltiv: "relative",
+      scholar: "scholar",
+      servant: "servant",
+      servnt: "servant",
+      serv: "servant",
+      stranger: "stranger",
+      strngr: "stranger",
+      traveller: "traveller",
+      trvelr: "traveller",
+      visitor: "visitor",
+      visitr: "visitor",
 
       "wife's daughter": "wife's daughter",
       "wife's dau": "wife's daughter",
-      "wifdau": "wife's daughter",
+      wifdau: "wife's daughter",
       "wife's mother": "wife's mother",
       "wif-ma": "wife's mother",
       "wife's son": "wife's son",
-      "wifson": "wife's son",
+      wifson: "wife's son",
     };
 
     // allows for transcription errors also (like "Mead" for head)
     const fuzzyList = [
-      { standard: "head", starts: [ "head", "mead" ], notContains: ["master"]  },
+      { standard: "head", starts: ["head", "mead"], notContains: ["master"] },
 
       // these more fuzzy ones should come last
-      { standard: "daughter", starts: [ "dau" ], notContains: ["step", "law", "-", " "] },
-      { standard: "step-daughter", starts: [ "dau" ], andContains: ["step"] },
-      { standard: "step-daughter", starts: [ "step" ], andContains: ["dau"] },
+      {
+        standard: "daughter",
+        starts: ["dau"],
+        notContains: ["step", "law", "-", " "],
+      },
+      { standard: "step-daughter", starts: ["dau"], andContains: ["step"] },
+      { standard: "step-daughter", starts: ["step"], andContains: ["dau"] },
     ];
 
     let lc = string.toLowerCase();
@@ -275,7 +285,7 @@ const GD = {
     if (exactValue) {
       return exactValue;
     }
-    
+
     let match = "";
     for (let fuzzy of fuzzyList) {
       if (fuzzy.starts) {
@@ -317,9 +327,9 @@ const GD = {
     return lc;
   },
 
-  standardizeOccupation: function(string) {
+  standardizeOccupation: function (string) {
     // we could handle all the abbreviations here: https://www.freecen.org.uk/cms/information-for-transcribers/abbreviations
-    
+
     if (!string) {
       return "";
     }
@@ -335,8 +345,10 @@ const GD = {
     if (lastOpenParenIndex != -1) {
       let closeParenIndex = string.indexOf(")", lastOpenParenIndex);
       if (closeParenIndex != -1) {
-        let parenString = string.substring(lastOpenParenIndex+1, closeParenIndex).trim();
-        let remainderString = string.substring(closeParenIndex+1).trim();
+        let parenString = string
+          .substring(lastOpenParenIndex + 1, closeParenIndex)
+          .trim();
+        let remainderString = string.substring(closeParenIndex + 1).trim();
         parenString = parenString.toLowerCase();
         let match = parenMap[parenString];
         if (match) {
@@ -351,9 +363,7 @@ const GD = {
 
     return newValue;
   },
-
 };
-
 
 class WtsDate {
   constructor() {
@@ -399,7 +409,6 @@ class WtsDate {
   }
 
   setDateAndQualifierFromString(dateString, isYearString) {
-
     const prefixes = [
       { prefix: "about", qualifier: dateQualifiers.ABOUT },
       { prefix: "abt", qualifier: dateQualifiers.ABOUT },
@@ -407,7 +416,7 @@ class WtsDate {
       { prefix: "aft", qualifier: dateQualifiers.AFTER },
       { prefix: "before", qualifier: dateQualifiers.BEFORE }, // must come before bef
       { prefix: "bef", qualifier: dateQualifiers.BEFORE },
-    ]
+    ];
 
     let qualifier = dateQualifiers.NONE;
     let lcDateString = dateString.toLowerCase();
@@ -415,8 +424,7 @@ class WtsDate {
     if (lcDateString == "deceased") {
       dateString = "";
       qualifier = dateQualifiers.ABOUT;
-    }
-    else {
+    } else {
       for (let prefixEntry of prefixes) {
         if (lcDateString.startsWith(prefixEntry.prefix)) {
           qualifier = prefixEntry.qualifier;
@@ -435,8 +443,7 @@ class WtsDate {
 
     if (isYearString) {
       this.yearString = dateString;
-    }
-    else {
+    } else {
       this.dateString = dateString;
     }
   }
@@ -459,7 +466,12 @@ class WtsDate {
     return prep + dateString;
   }
 
-  getFormattedStringForCitationOrNarrative(format, highlightOption, addPreposition, prepSuffix = "") {
+  getFormattedStringForCitationOrNarrative(
+    format,
+    highlightOption,
+    addPreposition,
+    prepSuffix = ""
+  ) {
     let dateString = this.getDateString();
     let qualifier = this.qualifier;
 
@@ -475,29 +487,23 @@ class WtsDate {
           preposition += " " + prepSuffix;
         }
         return this.getQualifiedDateString(dateString, qualifier, preposition);
-      }
-      else {
+      } else {
         return this.getQualifiedDateString(dateString, qualifier);
       }
     }
-  
+
     let newString = "";
     if (format == "short") {
       newString = WTS_Date.getStdShortFormDateString(parsedDate);
-    }
-    else if (format == "long") {
+    } else if (format == "long") {
       newString = WTS_Date.getStdLongFormDateString(parsedDate);
-    }
-    else if (format == "theNth") {
+    } else if (format == "theNth") {
       newString = WTS_Date.getStdNthFormDateString(parsedDate);
-    }
-    else if (format == "monthComma") {
+    } else if (format == "monthComma") {
       newString = WTS_Date.getUsLongFormDateString(parsedDate);
-    }
-    else if (format == "monthCommaNth") {
+    } else if (format == "monthCommaNth") {
       newString = WTS_Date.getUsNthFormDateString(parsedDate);
-    }
-    else {
+    } else {
       console.log("unknown date format: " + format);
       newString = WTS_Date.getStdLongFormDateString(parsedDate);
     }
@@ -512,7 +518,7 @@ class WtsDate {
     if (prepSuffix) {
       preposition += " " + prepSuffix;
     }
-  
+
     if (!addPreposition) {
       preposition = "";
     }
@@ -521,11 +527,21 @@ class WtsDate {
   }
 
   getNarrativeFormat(format, highlightOption, addPreposition, prepSuffix = "") {
-    return this.getFormattedStringForCitationOrNarrative(format, highlightOption, addPreposition, prepSuffix);
+    return this.getFormattedStringForCitationOrNarrative(
+      format,
+      highlightOption,
+      addPreposition,
+      prepSuffix
+    );
   }
 
   getDataStringFormat(addPreposition, prepSuffix = "") {
-    return this.getFormattedStringForCitationOrNarrative("short", "none", addPreposition, prepSuffix);
+    return this.getFormattedStringForCitationOrNarrative(
+      "short",
+      "none",
+      addPreposition,
+      prepSuffix
+    );
   }
 }
 
@@ -554,7 +570,7 @@ class WtsPlace {
   }
 
   separatePlaceIntoParts() {
-    // it can be hard to get the county from the string. 
+    // it can be hard to get the county from the string.
     let country = undefined;
     let placeNameMinusCountry = this.placeString;
 
@@ -581,30 +597,43 @@ class WtsPlace {
     let possibleCountyName = undefined;
     let lastCommaIndex = placeNameMinusCountry.lastIndexOf(",");
     if (lastCommaIndex != -1) {
-      possibleCountyName = placeNameMinusCountry.substring(lastCommaIndex + 1).trim();
-      placeNameMinusCounty = placeNameMinusCountry.substring(0, lastCommaIndex).trim();
-    }
-    else {
+      possibleCountyName = placeNameMinusCountry
+        .substring(lastCommaIndex + 1)
+        .trim();
+      placeNameMinusCounty = placeNameMinusCountry
+        .substring(0, lastCommaIndex)
+        .trim();
+    } else {
       possibleCountyName = placeNameMinusCountry;
     }
 
     result.localPlace = placeNameMinusCountry;
     if (country) {
-      let stdCountyName = CD.standardizeCountyNameForCountry(possibleCountyName, country);
+      let stdCountyName = CD.standardizeCountyNameForCountry(
+        possibleCountyName,
+        country
+      );
       if (stdCountyName) {
         result.county = stdCountyName;
         result.localPlace = placeNameMinusCounty;
-      }
-      else if (possibleCountyName) {
+      } else if (possibleCountyName) {
         // it is possible that the county name has a comma in in like "Yorkshire, East Riding"
         let lastCommaIndex = placeNameMinusCounty.lastIndexOf(",");
         if (lastCommaIndex != -1) {
-          let possibleExtraCountyName = placeNameMinusCounty.substring(lastCommaIndex + 1).trim();
+          let possibleExtraCountyName = placeNameMinusCounty
+            .substring(lastCommaIndex + 1)
+            .trim();
           if (possibleExtraCountyName) {
-            let combinedName = possibleExtraCountyName + ", " + possibleCountyName;
-            stdCountyName = CD.standardizeCountyNameForCountry(combinedName, country);
+            let combinedName =
+              possibleExtraCountyName + ", " + possibleCountyName;
+            stdCountyName = CD.standardizeCountyNameForCountry(
+              combinedName,
+              country
+            );
             if (stdCountyName) {
-              placeNameMinusCounty = placeNameMinusCounty.substring(0, lastCommaIndex).trim();
+              placeNameMinusCounty = placeNameMinusCounty
+                .substring(0, lastCommaIndex)
+                .trim();
               result.county = stdCountyName;
               result.localPlace = placeNameMinusCounty;
             }
@@ -625,7 +654,7 @@ class WtsPlace {
       return "";
     }
 
-    // it can be hard to get the county from the string. 
+    // it can be hard to get the county from the string.
     let country = undefined;
     let placeNameMinusCountry = this.placeString;
 
@@ -643,13 +672,15 @@ class WtsPlace {
     let lastCommaIndex = placeNameMinusCountry.lastIndexOf(",");
     if (lastCommaIndex != -1) {
       countyName = placeNameMinusCountry.substring(lastCommaIndex + 1).trim();
-    }
-    else {
+    } else {
       countyName = placeNameMinusCountry;
     }
 
     if (country) {
-      let stdCountyName = CD.standardizeCountyNameForCountry(countyName, country);
+      let stdCountyName = CD.standardizeCountyNameForCountry(
+        countyName,
+        country
+      );
       if (stdCountyName) {
         return stdCountyName;
       }
@@ -677,14 +708,18 @@ class WtsPlace {
     let lastCommaIndex = placeNameMinusCountry.lastIndexOf(",");
     if (lastCommaIndex != -1) {
       countyName = placeNameMinusCountry.substring(lastCommaIndex + 1).trim();
-      placeNameMinusCounty = placeNameMinusCountry.substring(0, lastCommaIndex).trim();
-    }
-    else {
+      placeNameMinusCounty = placeNameMinusCountry
+        .substring(0, lastCommaIndex)
+        .trim();
+    } else {
       countyName = placeNameMinusCountry;
     }
 
     if (country) {
-      let stdCountyName = CD.standardizeCountyNameForCountry(countyName, country);
+      let stdCountyName = CD.standardizeCountyNameForCountry(
+        countyName,
+        country
+      );
       if (!stdCountyName) {
         // the county is not recognized, so it could be the twon name
         placeNameMinusCounty = placeNameMinusCountry;
@@ -697,8 +732,7 @@ class WtsPlace {
       lastCommaIndex = placeNameMinusCounty.lastIndexOf(",");
       if (lastCommaIndex != -1) {
         townName = placeNameMinusCounty.substring(lastCommaIndex + 1).trim();
-      }
-      else {
+      } else {
         townName = placeNameMinusCounty;
       }
     }
@@ -733,20 +767,20 @@ class WtsPlace {
       if (thisCounty == otherCounty) {
         let place = thisCounty;
         if (thisCountry) {
-          place += ", " + thisCountry.country.stdName;          
+          place += ", " + thisCountry.country.stdName;
         }
         if (otherCountry) {
-          place += ", " + otherCountry.country.stdName;          
+          place += ", " + otherCountry.country.stdName;
         }
         return place;
       }
     }
 
     if (thisCountry) {
-      return thisCountry.country.stdName;          
+      return thisCountry.country.stdName;
     }
     if (otherCountry) {
-      return otherCountry.country.stdName;          
+      return otherCountry.country.stdName;
     }
 
     // would could also find the first difference in strings starting from end.
@@ -806,8 +840,7 @@ class WtsName {
       if (wordCount < 3) {
         return name;
       }
-    }
-    else {
+    } else {
       if (wordCount < 2) {
         return name;
       }
@@ -815,7 +848,7 @@ class WtsName {
 
     let firstWord = WTS_String.getFirstWord(name);
 
-    const titles = [ "mr", "mrs", "miss", "ms"];
+    const titles = ["mr", "mrs", "miss", "ms"];
     let lcFirstWord = firstWord.toLowerCase();
     if (titles.includes(lcFirstWord)) {
       // remove the title
@@ -900,23 +933,27 @@ class WtsName {
       return this.name;
     }
 
-    if (this.middleName || this.firstName || this.middleNames || this.firstNames || this.forenames || this.lastName) {
+    if (
+      this.middleName ||
+      this.firstName ||
+      this.middleNames ||
+      this.firstNames ||
+      this.forenames ||
+      this.lastName
+    ) {
       let name = "";
       if (this.forenames) {
         name = this.forenames;
-      }
-      else {
+      } else {
         if (this.firstNames) {
           name = this.firstNames;
-        }
-        else if (this.firstName) {
+        } else if (this.firstName) {
           name = this.firstName;
         }
 
         if (this.middleNames) {
           name += " " + this.middleNames;
-        }
-        else if (this.middleName) {
+        } else if (this.middleName) {
           name += " " + this.middleName;
         }
       }
@@ -1016,18 +1053,21 @@ class WtsName {
     if (this.forenames) {
       return this.forenames;
     }
-    if (this.middleName || this.firstName || this.middleNames || this.firstNames) {
+    if (
+      this.middleName ||
+      this.firstName ||
+      this.middleNames ||
+      this.firstNames
+    ) {
       let forenames = "";
       if (this.firstNames) {
         forenames = this.firstNames;
-      }
-      else if (this.firstName) {
+      } else if (this.firstName) {
         forenames = this.firstName;
       }
       if (this.middleNames) {
         forenames += " " + this.middleNames;
-      }
-      else if (this.middleName) {
+      } else if (this.middleName) {
         forenames += " " + this.middleName;
       }
       return forenames;
@@ -1048,15 +1088,13 @@ class WtsName {
       return this.suffix;
     }
   }
-
 }
 
 class GeneralizedData {
   constructor() {
     // NOTE: Adding a new field here will likely invalidate all generalize test data
     // so we don't actually initialize an fields here.
-    // The only fields set are ones that come from the record/profile 
-
+    // The only fields set are ones that come from the record/profile
     // Supported fields are:
     // hasValidData : not sure if we need it - used in popup to determine whether to show menu items
     // sourceOfData : must be one of the supported site names
@@ -1091,20 +1129,24 @@ class GeneralizedData {
     for (let key of keys) {
       if (key == "eventDate" || key == "birthDate" || key == "deathDate") {
         classObj[key] = WtsDate.createFromPlainObject(obj[key]);
-      }
-      else if (key == "name") {
+      } else if (key == "name") {
         classObj[key] = WtsName.createFromPlainObject(obj[key]);
-      }
-      else if (key == "birthPlace" || key == "deathPlace" || key == "eventPlace" || key == "residencePlace") {
+      } else if (
+        key == "birthPlace" ||
+        key == "deathPlace" ||
+        key == "eventPlace" ||
+        key == "residencePlace"
+      ) {
         classObj[key] = WtsPlace.createFromPlainObject(obj[key]);
-      }
-      else if (key == "parents") {
+      } else if (key == "parents") {
         classObj[key] = {};
         if (obj.parents.father) {
           let father = obj.parents.father;
           classObj[key].father = {};
           if (father.name) {
-            classObj[key].father.name = WtsName.createFromPlainObject(father.name);
+            classObj[key].father.name = WtsName.createFromPlainObject(
+              father.name
+            );
           }
           if (father.lastNameAtBirth) {
             classObj[key].father.lastNameAtBirth = father.lastNameAtBirth;
@@ -1117,7 +1159,9 @@ class GeneralizedData {
           let mother = obj.parents.mother;
           classObj[key].mother = {};
           if (mother.name) {
-            classObj[key].mother.name = WtsName.createFromPlainObject(mother.name);
+            classObj[key].mother.name = WtsName.createFromPlainObject(
+              mother.name
+            );
           }
           if (mother.lastNameAtBirth) {
             classObj[key].mother.lastNameAtBirth = mother.lastNameAtBirth;
@@ -1126,8 +1170,7 @@ class GeneralizedData {
             classObj[key].mother.lastNameAtDeath = mother.lastNameAtDeath;
           }
         }
-      }
-      else if (key == "spouses") {
+      } else if (key == "spouses") {
         classObj[key] = [];
         for (let spouse of obj.spouses) {
           let newSpouse = {};
@@ -1141,18 +1184,21 @@ class GeneralizedData {
             newSpouse.lastNameAtBirth = spouse.lastNameAtBirth;
           }
           if (spouse.marriageDate) {
-            newSpouse.marriageDate = WtsDate.createFromPlainObject(spouse.marriageDate);
+            newSpouse.marriageDate = WtsDate.createFromPlainObject(
+              spouse.marriageDate
+            );
           }
           if (spouse.marriagePlace) {
-            newSpouse.marriagePlace = WtsPlace.createFromPlainObject(spouse.marriagePlace);
+            newSpouse.marriagePlace = WtsPlace.createFromPlainObject(
+              spouse.marriagePlace
+            );
           }
           if (spouse.age) {
             newSpouse.age = spouse.age;
           }
           classObj[key].push(newSpouse);
         }
-      }
-      else {
+      } else {
         classObj[key] = obj[key];
       }
     }
@@ -1161,22 +1207,38 @@ class GeneralizedData {
   }
 
   static makeDateStringFromDate(date) {
-    const monthStrings = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
-  
-    const dateString = "" + date.getUTCDate() + " " + monthStrings[date.getUTCMonth()] + " " + date.getUTCFullYear();
-  
+    const monthStrings = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const dateString =
+      "" +
+      date.getUTCDate() +
+      " " +
+      monthStrings[date.getUTCMonth()] +
+      " " +
+      date.getUTCFullYear();
+
     return dateString;
   }
-  
-  static getAgeAtDate(birthDate, otherDate) {
 
+  static getAgeAtDate(birthDate, otherDate) {
     let years = WTS_Date.getWholeYearsBetweenDateStrings(birthDate, otherDate);
     return years;
   }
-  
-  static getSubtractAgeFromDate(dateString, age) {
 
+  static getSubtractAgeFromDate(dateString, age) {
     let parsedDate = WTS_Date.parseDateString(dateString);
     if (!parsedDate.isValid) {
       return dateString;
@@ -1195,7 +1257,7 @@ class GeneralizedData {
     // we assume that the full name has all white space replaced with single spaces and is trimmed
     let firstSpaceIndex = nameParts.forenames.indexOf(" ");
     if (firstSpaceIndex == -1) {
-      // no spaces, 
+      // no spaces,
       nameParts.firstName = nameParts.forenames;
       return;
     }
@@ -1205,10 +1267,12 @@ class GeneralizedData {
 
     firstSpaceIndex = nameParts.middleNames.indexOf(" ");
     if (firstSpaceIndex != -1) {
-      // no spaces, 
-      nameParts.middleName = nameParts.middleNames.substring(0, firstSpaceIndex);
-    }
-    else {
+      // no spaces,
+      nameParts.middleName = nameParts.middleNames.substring(
+        0,
+        firstSpaceIndex
+      );
+    } else {
       nameParts.middleName = nameParts.middleNames;
     }
   }
@@ -1221,7 +1285,7 @@ class GeneralizedData {
     // we assume that the full name has all white space replaced with single spaces and is trimmed
     let lastSpaceIndex = nameParts.fullName.lastIndexOf(" ");
     if (lastSpaceIndex == -1) {
-      // no spaces, 
+      // no spaces,
       nameParts.lastName = nameParts.fullName;
       return nameParts;
     }
@@ -1231,7 +1295,7 @@ class GeneralizedData {
 
     this.extractNamePartsFromForeNames(nameParts);
 
-    return 
+    return;
   }
 
   extractNamesFromForeNames() {
@@ -1241,7 +1305,7 @@ class GeneralizedData {
   extractNamesFromFullName() {
     this.extractNamePartsFromFullName(this.name);
     this.eventLastName = this.lastName;
-    delete this.lastName;  // for the GeneralizedData itself we use eventLastName rather than lastName
+    delete this.lastName; // for the GeneralizedData itself we use eventLastName rather than lastName
   }
 
   createNameIfNeeded() {
@@ -1364,7 +1428,7 @@ class GeneralizedData {
   }
 
   setEventQuarter(value) {
-    if (typeof value !== 'undefined') {
+    if (typeof value !== "undefined") {
       this.createEventDateIfNeeded();
       this.eventDate.quarter = value;
     }
@@ -1417,28 +1481,28 @@ class GeneralizedData {
   }
 
   setPersonGender(value) {
-    value = GD.standardizeGender(value)
+    value = GD.standardizeGender(value);
     if (value) {
       this.personGender = value;
     }
   }
 
   setMaritalStatus(value) {
-    value = GD.standardizeMaritalStatus(value)
+    value = GD.standardizeMaritalStatus(value);
     if (value) {
       this.maritalStatus = value;
     }
   }
 
   setRelationshipToHead(value) {
-    value = GD.standardizeRelationshipToHead(value)
+    value = GD.standardizeRelationshipToHead(value);
     if (value) {
       this.relationshipToHead = value;
     }
   }
 
   setOccupation(value) {
-    value = GD.standardizeOccupation(value)
+    value = GD.standardizeOccupation(value);
     if (value) {
       this.occupation = value;
     }
@@ -1492,7 +1556,6 @@ class GeneralizedData {
   }
 
   addSpouseOrParentsForSelectedHouseholdMember() {
-
     let members = this.householdArray;
     if (!members || members.length <= 1) {
       return;
@@ -1534,7 +1597,9 @@ class GeneralizedData {
             // could there be more than one member with relationship of wife?
             // seems like an error but could happen. Might be safest to check this wife member comes
             // immediately after this person.
-            let thisIndex = this.householdArray.findIndex(function(element) { return element.isSelected; });
+            let thisIndex = this.householdArray.findIndex(function (element) {
+              return element.isSelected;
+            });
             let wifeIndex = this.householdArray.indexOf(wife);
 
             if (thisIndex != -1 && wifeIndex == thisIndex + 1) {
@@ -1547,8 +1612,7 @@ class GeneralizedData {
 
         addParentWithRelationship("father", addFather);
         addParentWithRelationship("mother", addMother);
-      }
-      else if (this.relationshipToHead == "wife") {
+      } else if (this.relationshipToHead == "wife") {
         // look for spouse
         if (!this.maritalStatus || this.maritalStatus == "married") {
           let head = findHouseholdMemberByRelationship("head");
@@ -1556,7 +1620,9 @@ class GeneralizedData {
             // could there be more than one member with relationship of head or wife?
             // seems like an error but could happen. Might be safest to check this wife member comes
             // immediately after the head person.
-            let thisIndex = this.householdArray.findIndex(function(element) { return element.isSelected; });
+            let thisIndex = this.householdArray.findIndex(function (element) {
+              return element.isSelected;
+            });
             let headIndex = this.householdArray.indexOf(head);
 
             if (headIndex != -1 && thisIndex == headIndex + 1) {
@@ -1569,8 +1635,10 @@ class GeneralizedData {
 
         addParentWithRelationship("father-in-law", addFather);
         addParentWithRelationship("mother-in-law", addMother);
-      }
-      else if (this.relationshipToHead == "son" || this.relationshipToHead == "daughter") {
+      } else if (
+        this.relationshipToHead == "son" ||
+        this.relationshipToHead == "daughter"
+      ) {
         // we have to be careful, see https://www.findmypast.co.uk/transcript?id=GBC/1851/0016942518&expand=true
         // for an example of a daughter who is not related to the head
         // If there are any non-family members before this person in the household then don't add parents.
@@ -1594,21 +1662,27 @@ class GeneralizedData {
             if (head.gender == "male") {
               addParentWithRelationship("head", addFather);
 
-              let headIndex = this.householdArray.findIndex(function(element) { return element.relationship == "head"; });
-              let wifeIndex = this.householdArray.findIndex(function(element) { return element.relationship == "wife"; });
+              let headIndex = this.householdArray.findIndex(function (element) {
+                return element.relationship == "head";
+              });
+              let wifeIndex = this.householdArray.findIndex(function (element) {
+                return element.relationship == "wife";
+              });
               if (wifeIndex != -1 && wifeIndex == headIndex + 1) {
                 addParentWithRelationship("wife", addMother);
               }
-            }
-            else if (head.gender == "female") {
+            } else if (head.gender == "female") {
               addParentWithRelationship("head", addMother);
-            }
-            else {
+            } else {
               // some census transcriptions (e.g. Ancestry) do not have the gender.
               // In household tables it digs deeper to get this.
               // We can't assume which the head is - father or mother - unless there is a wife.
-              let headIndex = this.householdArray.findIndex(function(element) { return element.relationship == "head"; });
-              let wifeIndex = this.householdArray.findIndex(function(element) { return element.relationship == "wife"; });
+              let headIndex = this.householdArray.findIndex(function (element) {
+                return element.relationship == "head";
+              });
+              let wifeIndex = this.householdArray.findIndex(function (element) {
+                return element.relationship == "wife";
+              });
               if (wifeIndex != -1 && wifeIndex == headIndex + 1) {
                 addParentWithRelationship("head", addFather);
                 addParentWithRelationship("wife", addMother);
@@ -1616,9 +1690,18 @@ class GeneralizedData {
             }
           }
         }
-      }
-      else if (this.relationshipToHead == "wife's son" || this.relationshipToHead == "wife's daughter") {
-        let closeFamilyRelationships = ["head", "wife", "son", "daughter", "wife's son", "wife's daughter"];
+      } else if (
+        this.relationshipToHead == "wife's son" ||
+        this.relationshipToHead == "wife's daughter"
+      ) {
+        let closeFamilyRelationships = [
+          "head",
+          "wife",
+          "son",
+          "daughter",
+          "wife's son",
+          "wife's daughter",
+        ];
         let isFamilyMember = true;
         for (let member of members) {
           if (member.isSelected) {
@@ -1633,8 +1716,12 @@ class GeneralizedData {
         if (isFamilyMember) {
           let head = findHouseholdMemberByRelationship("head");
           if (head && head.gender == "male") {
-            let headIndex = this.householdArray.findIndex(function(element) { return element.relationship == "head"; });
-            let wifeIndex = this.householdArray.findIndex(function(element) { return element.relationship == "wife"; });
+            let headIndex = this.householdArray.findIndex(function (element) {
+              return element.relationship == "head";
+            });
+            let wifeIndex = this.householdArray.findIndex(function (element) {
+              return element.relationship == "wife";
+            });
             if (wifeIndex != -1 && wifeIndex == headIndex + 1) {
               addParentWithRelationship("wife", addMother);
             }
@@ -1647,7 +1734,7 @@ class GeneralizedData {
   // return an array of last names
   inferPersonLastNamesArray(person) {
     var lastNames = [];
-    
+
     if (person.lastNameAtBirth) {
       lastNames.push(person.lastNameAtBirth);
     }
@@ -1672,7 +1759,7 @@ class GeneralizedData {
         }
       }
     }
-  
+
     return lastNames;
   }
 
@@ -1690,78 +1777,78 @@ class GeneralizedData {
         }
         lastNames += name;
       }
-    }  
+    }
     return lastNames;
   }
 
   // return a string of space separated forenames
   inferForenames() {
     let forenames = "";
-    
+
     if (this.name) {
       forenames = this.name.inferForenames();
     }
-  
+
     return forenames;
   }
 
   inferFullName() {
     let fullName = "";
-    
+
     if (this.name) {
       fullName = this.name.inferFullName();
     }
-  
+
     return fullName;
   }
-  
+
   inferFirstName() {
     let firstName = "";
-    
+
     if (this.name) {
       firstName = this.name.inferFirstName();
     }
-  
+
     return firstName;
   }
 
   inferSecondForename() {
     let secondForename = "";
-    
+
     if (this.name) {
       secondForename = this.name.inferSecondForename();
     }
-  
+
     return secondForename;
   }
 
   inferMiddleName() {
     let middleName = "";
-    
+
     if (this.name) {
       middleName = this.name.inferMiddleName();
     }
-  
+
     return middleName;
   }
 
   inferMiddleNames() {
     let middleNames = "";
-    
+
     if (this.name) {
       middleNames = this.name.inferMiddleNames();
     }
-  
+
     return middleNames;
   }
 
   inferLastName() {
     let lastName = "";
-    
+
     if (this.name) {
       return this.name.inferLastName();
     }
-    
+
     if (this.lastNameAtBirth) {
       return this.lastNameAtBirth;
     }
@@ -1785,7 +1872,6 @@ class GeneralizedData {
   }
 
   inferLastNameAtDeath() {
-
     function getSpouseLnab(spouse) {
       if (spouse.lastNameAtBirth) {
         return spouse.lastNameAtBirth;
@@ -1797,11 +1883,19 @@ class GeneralizedData {
 
     // this is a woman and had spouses it may be that the CLN has not been set to husband's name
     let lnabAndLnadPresentAndDifferent = false;
-    if (this.lastNameAtDeath && this.lastNameAtBirth && this.lastNameAtDeath != this.lastNameAtBirth) {
+    if (
+      this.lastNameAtDeath &&
+      this.lastNameAtBirth &&
+      this.lastNameAtDeath != this.lastNameAtBirth
+    ) {
       lnabAndLnadPresentAndDifferent = true;
     }
 
-    if (this.personGender == "female" && this.spouses && !lnabAndLnadPresentAndDifferent) {
+    if (
+      this.personGender == "female" &&
+      this.spouses &&
+      !lnabAndLnadPresentAndDifferent
+    ) {
       let lastSpouseLastName = "";
       let lastMarriageDate = undefined;
       for (let spouse of this.spouses) {
@@ -1812,16 +1906,17 @@ class GeneralizedData {
             if (!lastMarriageDate) {
               lastMarriageDate = marriageParsedDate;
               lastSpouseLastName = getSpouseLnab(spouse);
-            }
-            else {
-              let diff = WTS_Date.getDaysBetweenParsedDates(lastMarriageDate, marriageParsedDate);
+            } else {
+              let diff = WTS_Date.getDaysBetweenParsedDates(
+                lastMarriageDate,
+                marriageParsedDate
+              );
               if (diff > 0) {
                 lastMarriageDate = marriageParsedDate;
                 let spouseLnab = getSpouseLnab(spouse);
                 if (spouseLnab) {
                   lastSpouseLastName = spouseLnab;
-                }
-                else {
+                } else {
                   // sometimes an Ancestry profile might have multiple marriages, some with no spouse name
                   // If this is close to last marriage ignore it as it probably referes to the same one
                   // (if could be generated from the "years married" in the 1911 census for example)
@@ -1844,27 +1939,27 @@ class GeneralizedData {
     if (this.lastNameAtDeath) {
       return this.lastNameAtDeath;
     }
-  
+
     return this.inferLastName();
   }
 
   inferPrefix() {
     let prefix = "";
-    
+
     if (this.name) {
       prefix = this.name.inferPrefix();
     }
-  
+
     return prefix;
   }
 
   inferSuffix() {
     let suffix = "";
-    
+
     if (this.name) {
       suffix = this.name.inferSuffix();
     }
-  
+
     return suffix;
   }
 
@@ -1876,7 +1971,10 @@ class GeneralizedData {
       if (this.ageAtDeath) {
         let deathDateString = this.deathDate.getDateString();
 
-        let dateString = GeneralizedData.getSubtractAgeFromDate(deathDateString, this.ageAtDeath);
+        let dateString = GeneralizedData.getSubtractAgeFromDate(
+          deathDateString,
+          this.ageAtDeath
+        );
         let yearString = WTS_String.getLastWord(dateString);
         let dateObj = new WtsDate();
         dateObj.yearString = yearString;
@@ -1885,13 +1983,19 @@ class GeneralizedData {
       }
     }
     if (this.eventDate && !this.role) {
-      if (this.recordType == RT.BirthRegistration || this.recordType == RT.Birth) {
+      if (
+        this.recordType == RT.BirthRegistration ||
+        this.recordType == RT.Birth
+      ) {
         return this.eventDate;
       }
     }
     if (this.eventDate && this.ageAtEvent) {
       let eventDateString = this.eventDate.getDateString();
-      let dateString = GeneralizedData.getSubtractAgeFromDate(eventDateString, this.ageAtEvent);
+      let dateString = GeneralizedData.getSubtractAgeFromDate(
+        eventDateString,
+        this.ageAtEvent
+      );
       let yearString = WTS_String.getLastWord(dateString);
       let dateObj = new WtsDate();
       dateObj.yearString = yearString;
@@ -1926,7 +2030,10 @@ class GeneralizedData {
       return this.deathDate;
     }
     if (this.eventDate && !this.role) {
-      if ((this.recordType == RT.Death || this.recordType == RT.DeathRegistration)) {
+      if (
+        this.recordType == RT.Death ||
+        this.recordType == RT.DeathRegistration
+      ) {
         return this.eventDate;
       }
     }
@@ -1956,17 +2063,14 @@ class GeneralizedData {
   inferBirthPlace() {
     if (this.birthPlace) {
       return this.birthPlace.placeString;
-    }
-    else if (this.recordType == RT.BirthRegistration) {
+    } else if (this.recordType == RT.BirthRegistration) {
       // An eventPlace can contain the county/country so is prefered to a registrationDistrict
       if (this.eventPlace) {
         return this.eventPlace.placeString;
-      }
-      else if (this.registrationDistrict) {
+      } else if (this.registrationDistrict) {
         return this.registrationDistrict;
       }
-    }
-    else if (this.recordType == RT.Baptism || this.recordType == RT.Birth) {
+    } else if (this.recordType == RT.Baptism || this.recordType == RT.Birth) {
       if (this.eventPlace && !this.role) {
         return this.eventPlace.placeString;
       }
@@ -1977,8 +2081,11 @@ class GeneralizedData {
     let birthPlace = undefined;
     if (this.birthPlace) {
       birthPlace = this.birthPlace;
-    }
-    else if (this.recordType == RT.BirthRegistration || this.recordType == RT.Baptism || this.recordType == RT.Birth) {
+    } else if (
+      this.recordType == RT.BirthRegistration ||
+      this.recordType == RT.Baptism ||
+      this.recordType == RT.Birth
+    ) {
       if (this.eventPlace && !this.role) {
         birthPlace = this.eventPlace;
       }
@@ -1994,13 +2101,14 @@ class GeneralizedData {
   inferDeathPlace() {
     if (this.deathPlace) {
       return this.deathPlace.placeString;
-    }
-    else if (this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
+    } else if (
+      this.recordType == RT.Death ||
+      this.recordType == RT.DeathRegistration
+    ) {
       // An eventPlace can contain the county/country so is prefered to a registrationDistrict
       if (this.eventPlace && !this.role) {
         return this.eventPlace.placeString;
-      }
-      else if (this.registrationDistrict) {
+      } else if (this.registrationDistrict) {
         return this.registrationDistrict;
       }
     }
@@ -2010,8 +2118,11 @@ class GeneralizedData {
     let deathPlace = undefined;
     if (this.deathPlace) {
       deathPlace = this.deathPlace;
-    }
-    else if (this.recordType == RT.DeathRegistration || this.recordType == RT.Burial || this.recordType == RT.Death) {
+    } else if (
+      this.recordType == RT.DeathRegistration ||
+      this.recordType == RT.Burial ||
+      this.recordType == RT.Death
+    ) {
       if (this.eventPlace && !this.role) {
         deathPlace = this.eventPlace;
       }
@@ -2102,13 +2213,16 @@ class GeneralizedData {
     if (this.eventPlace) {
       let place = this.eventPlace.placeString;
       let streetAddress = this.eventPlace.streetAddress;
-      if (streetAddress && place && !place.toLowerCase().startsWith(streetAddress.toLowerCase())) {
+      if (
+        streetAddress &&
+        place &&
+        !place.toLowerCase().startsWith(streetAddress.toLowerCase())
+      ) {
         place = streetAddress + ", " + place;
       }
       return place;
     }
   }
-  
 
   inferAgeAtDeath() {
     if (this.ageAtDeath) {
@@ -2117,7 +2231,7 @@ class GeneralizedData {
 
     let birthDateString = this.inferBirthDate();
     let deathDateString = this.inferDeathDate();
-    
+
     if (birthDateString && deathDateString) {
       return GeneralizedData.getAgeAtDate(birthDateString, deathDateString);
     }
@@ -2130,14 +2244,17 @@ class GeneralizedData {
       return this.ageAtEvent;
     }
 
-    if (this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
+    if (
+      this.recordType == RT.Death ||
+      this.recordType == RT.DeathRegistration
+    ) {
       if (this.ageAtDeath) {
         return this.ageAtDeath;
       }
 
       let birthDateString = this.inferBirthDate();
       let deathDateString = this.inferDeathDate();
-      
+
       if (birthDateString && deathDateString) {
         return GeneralizedData.getAgeAtDate(birthDateString, deathDateString);
       }
@@ -2146,11 +2263,10 @@ class GeneralizedData {
     return undefined;
   }
 
-
   inferCountries() {
     //console.log("inferCountries, this is:");
     //console.log(this);
-    
+
     let placeNames = [];
 
     let birthPlace = this.inferBirthPlace();
@@ -2175,7 +2291,10 @@ class GeneralizedData {
 
     // Collection
     if (this.collectionData) {
-      let collection = RC.findCollection(this.sourceOfData, this.collectionData.id);
+      let collection = RC.findCollection(
+        this.sourceOfData,
+        this.collectionData.id
+      );
       let country = RC.getCountryFromCollection(collection);
       if (country) {
         placeNames.push(country);
@@ -2212,7 +2331,10 @@ class GeneralizedData {
 
     // Collection
     if (this.collectionData) {
-      let collection = RC.findCollection(this.sourceOfData, this.collectionData.id);
+      let collection = RC.findCollection(
+        this.sourceOfData,
+        this.collectionData.id
+      );
       let country = RC.getCountryFromCollection(collection);
       if (country) {
         placeNames.push(country);
@@ -2244,7 +2366,11 @@ class GeneralizedData {
     return eventCounty;
   }
 
-  inferLastNameGivenParametersAndCollection(parameters, collection, allowMultiple = false) {
+  inferLastNameGivenParametersAndCollection(
+    parameters,
+    collection,
+    allowMultiple = false
+  ) {
     let lastNamesArray = this.inferPersonLastNamesArray(this);
     if (lastNamesArray.length < 1) {
       return "";
@@ -2260,12 +2386,14 @@ class GeneralizedData {
     if (collection) {
       if (collection.isDeath && this.lastNameAtDeath) {
         return this.lastNameAtDeath;
-      }
-      else if (collection.isBirth && this.lastNameAtBirth) {
+      } else if (collection.isBirth && this.lastNameAtBirth) {
         return this.lastNameAtBirth;
       }
 
-      if (collection.dates && (collection.dates.year || collection.dates.exactDate)) {
+      if (
+        collection.dates &&
+        (collection.dates.year || collection.dates.exactDate)
+      ) {
         // this collection is for a specific year
         if (this.personGender == "female" && this.spouses) {
           let targetDate = collection.dates.exactDate;
@@ -2279,7 +2407,10 @@ class GeneralizedData {
             if (spouse.marriageDate) {
               let marriageDate = spouse.marriageDate.getDateString();
               let marriageParsedDate = WTS_Date.parseDateString(marriageDate);
-              let diff = WTS_Date.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
+              let diff = WTS_Date.getDaysBetweenParsedDates(
+                marriageParsedDate,
+                targetParsedDate
+              );
               if (diff >= 0) {
                 let howClose = diff;
                 if (!bestMatchName || howClose <= howCloseIsBestMatch) {
@@ -2292,8 +2423,7 @@ class GeneralizedData {
 
           if (bestMatchName) {
             return bestMatchName;
-          }
-          else if (this.lastNameAtBirth) {
+          } else if (this.lastNameAtBirth) {
             // there are some marriages and this collection seems to be before all of them
             return this.lastNameAtBirth;
           }
@@ -2324,12 +2454,14 @@ class GeneralizedData {
     if (collection) {
       if (collection.isDeath && this.lastNameAtDeath) {
         return [this.lastNameAtDeath];
-      }
-      else if (collection.isBirth && this.lastNameAtBirth) {
+      } else if (collection.isBirth && this.lastNameAtBirth) {
         return [this.lastNameAtBirth];
       }
 
-      if (collection.dates && (collection.dates.year || collection.dates.exactDate)) {
+      if (
+        collection.dates &&
+        (collection.dates.year || collection.dates.exactDate)
+      ) {
         // this collection is for a specific year
         if (this.personGender == "female" && this.spouses) {
           let targetDate = collection.dates.exactDate;
@@ -2343,7 +2475,10 @@ class GeneralizedData {
             if (spouse.marriageDate) {
               let marriageDate = spouse.marriageDate.getDateString();
               let marriageParsedDate = WTS_Date.parseDateString(marriageDate);
-              let diff = WTS_Date.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
+              let diff = WTS_Date.getDaysBetweenParsedDates(
+                marriageParsedDate,
+                targetParsedDate
+              );
               if (diff >= 0) {
                 let howClose = diff;
                 if (!bestMatchName || howClose <= howCloseIsBestMatch) {
@@ -2356,8 +2491,7 @@ class GeneralizedData {
 
           if (bestMatchName) {
             return [bestMatchName];
-          }
-          else if (this.lastNameAtBirth) {
+          } else if (this.lastNameAtBirth) {
             // there are some marriages and this collection seems to be before all of them
             return [this.lastNameAtBirth];
           }
@@ -2376,41 +2510,34 @@ class GeneralizedData {
         if (this.primaryPersonGender) {
           if (this.primaryPersonGender == "male") {
             relationship = "son";
-          }
-          else if (this.primaryPersonGender == "female") {
+          } else if (this.primaryPersonGender == "female") {
             relationship = "daughter";
           }
         }
-      }
-      else if (this.role == Role.Child) {
+      } else if (this.role == Role.Child) {
         relationship = "parent";
         if (this.primaryPersonGender) {
           if (this.primaryPersonGender == "male") {
             relationship = "father";
-          }
-          else if (this.primaryPersonGender == "female") {
+          } else if (this.primaryPersonGender == "female") {
             relationship = "mother";
           }
         }
-      }
-      else if (this.role == Role.Spouse) {
+      } else if (this.role == Role.Spouse) {
         relationship = "spouse";
         if (this.primaryPersonGender) {
           if (this.primaryPersonGender == "male") {
             relationship = "husband";
-          }
-          else if (this.primaryPersonGender == "female") {
+          } else if (this.primaryPersonGender == "female") {
             relationship = "wife";
           }
         }
-      }
-      else if (this.role == Role.Sibling) {
+      } else if (this.role == Role.Sibling) {
         relationship = "sibling";
         if (this.primaryPersonGender) {
           if (this.primaryPersonGender == "male") {
             relationship = "brother";
-          }
-          else if (this.primaryPersonGender == "female") {
+          } else if (this.primaryPersonGender == "female") {
             relationship = "sister";
           }
         }
@@ -2419,9 +2546,7 @@ class GeneralizedData {
     return relationship;
   }
 
-
   getRefTitle(collectionTitle, overrideTable) {
-
     //console.log("generalised_data_utils getRefTitle, this is:");
     //console.log(this);
 
@@ -2434,11 +2559,11 @@ class GeneralizedData {
         type: RT.Unclassified,
         defaultTitle: "Unclassified",
       },
-      { 
+      {
         type: RT.BirthRegistration,
         defaultTitle: "Birth Registration",
       },
-      { 
+      {
         type: RT.Birth,
         defaultTitle: "Birth",
       },
@@ -2474,12 +2599,10 @@ class GeneralizedData {
         type: RT.Marriage,
         defaultTitle: "Marriage",
         titleMatches: [
-          {title: "Marriage Banns", matches: ["Marriage Banns"]},
-          {title: "Marriage Bond", matches: ["Marriage Bond"]},
+          { title: "Marriage Banns", matches: ["Marriage Banns"] },
+          { title: "Marriage Bond", matches: ["Marriage Bond"] },
         ],
-        subtypes: [
-          {title: "Marriage Banns", subtype: RecordSubtype.Banns},
-        ],
+        subtypes: [{ title: "Marriage Banns", subtype: RecordSubtype.Banns }],
       },
       {
         type: RT.BirthOrBaptism,
@@ -2504,7 +2627,7 @@ class GeneralizedData {
         defaultTitle: "Electoral Register",
         addYear: true,
         titleMatches: [
-          {title: "Voter Register", matches: ["Voter Register"]},
+          { title: "Voter Register", matches: ["Voter Register"] },
         ],
       },
       {
@@ -2523,8 +2646,7 @@ class GeneralizedData {
         type: RT.Memorial,
         defaultTitle: "Memorial",
       },
-  
-  
+
       {
         type: RT.CriminalRegister,
         defaultTitle: "Criminal Register",
@@ -2595,7 +2717,7 @@ class GeneralizedData {
         defaultTitle: "School Records",
         addYear: true,
         titleMatches: [
-          {title: "School Yearbook", matches: ["School Yearbook"]},
+          { title: "School Yearbook", matches: ["School Yearbook"] },
         ],
       },
       {
@@ -2647,7 +2769,7 @@ class GeneralizedData {
         defaultTitle: "Other Church Event",
       },
     ];
-  
+
     function lookup(gd, collectionTitle, table) {
       for (let obj of table) {
         if (gd.recordType == obj.type) {
@@ -2697,13 +2819,13 @@ class GeneralizedData {
         }
       }
     }
-  
+
     let refTitle = undefined;
 
     if (this.overrideRefTitle) {
       refTitle = this.overrideRefTitle;
     }
-  
+
     if (!refTitle && overrideTable) {
       refTitle = lookup(this, collectionTitle, overrideTable);
     }
@@ -2723,7 +2845,7 @@ class GeneralizedData {
         refTitle += " " + this.primaryPerson;
       }
     }
-  
+
     return refTitle;
   }
 
@@ -2734,12 +2856,11 @@ class GeneralizedData {
         return true;
       }
     }
-  
+
     return false;
   }
 
   inferParentNamesForDataString() {
-
     // we used to only use the forenames if the last names were the same, this can be confusing for an example
     // like: https://www.ancestry.com/discoveryui-content/view/12946595:60143
     // Where the mother has a middle name (possibly maiden name) that looks like a surname.
@@ -2756,18 +2877,18 @@ class GeneralizedData {
         motherName = this.parents.mother.name.inferFullName();
       }
     }
-    
-    return { fatherName: fatherName, motherName: motherName};
+
+    return { fatherName: fatherName, motherName: motherName };
   }
 
   setDatesUsingQualifierAndYearNum(dates, yearNum, dateQualifier) {
     if (!yearNum) {
       return;
     }
-  
+
     var fromYear = yearNum;
     var toYear = yearNum;
-  
+
     switch (dateQualifier) {
       case dateQualifiers.NONE:
         fromYear = yearNum - 2;
@@ -2790,12 +2911,12 @@ class GeneralizedData {
         toYear = yearNum + 5;
         break;
     }
-  
+
     // add an extra 1 year either side because the target records that we are searching for
     // can have inaccuracies
     fromYear = fromYear - 1;
     toYear = toYear + 1;
-  
+
     dates.startYear = fromYear;
     dates.endYear = toYear;
   }
@@ -2804,15 +2925,15 @@ class GeneralizedData {
     if (!yearString || yearString == "") {
       return;
     }
-  
+
     let yearNum = WTS_Date.getYearNumFromYearString(yearString);
     if (!yearNum) {
       return;
     }
-  
+
     var fromYear = yearNum;
     var toYear = yearNum;
-  
+
     switch (dateQualifier) {
       case dateQualifiers.NONE:
         fromYear = yearNum - 2;
@@ -2835,18 +2956,21 @@ class GeneralizedData {
         toYear = yearNum + 5;
         break;
     }
-  
+
     // add an extra 1 year either side because the target records that we are searching for
     // can have inaccuracies
     fromYear = fromYear - 1;
     toYear = toYear + 1;
-  
+
     dates.startYear = fromYear;
     dates.endYear = toYear;
   }
 
-  couldPersonHaveBeenBornInDateRange(startYear, endYear, maxLifeSpan = possibleLifeSpan) {
-
+  couldPersonHaveBeenBornInDateRange(
+    startYear,
+    endYear,
+    maxLifeSpan = possibleLifeSpan
+  ) {
     if (!startYear) {
       startYear = 0;
     }
@@ -2856,27 +2980,35 @@ class GeneralizedData {
 
     let birthYearNum = WTS_Date.getYearNumFromYearString(this.inferBirthYear());
     if (birthYearNum) {
-      return (birthYearNum >= startYear && birthYearNum <= endYear);
+      return birthYearNum >= startYear && birthYearNum <= endYear;
     }
-  
+
     let deathYearNum = WTS_Date.getYearNumFromYearString(this.inferDeathYear());
     if (deathYearNum) {
       let lastestBirthYearNum = deathYearNum;
       let earliestBirthYearNum = deathYearNum - maxLifeSpan;
-      return lastestBirthYearNum >= startYear && earliestBirthYearNum <= endYear;
+      return (
+        lastestBirthYearNum >= startYear && earliestBirthYearNum <= endYear
+      );
     }
-  
+
     let eventYearNum = WTS_Date.getYearNumFromYearString(this.inferEventYear());
     if (eventYearNum) {
       let lastestBirthYearNum = eventYearNum + maxLifeSpan;
       let earliestBirthYearNum = eventYearNum - maxLifeSpan;
-      return lastestBirthYearNum >= startYear && earliestBirthYearNum <= endYear;
+      return (
+        lastestBirthYearNum >= startYear && earliestBirthYearNum <= endYear
+      );
     }
-  
-    return true;  // if we don't know the birth year then it could be in range
+
+    return true; // if we don't know the birth year then it could be in range
   }
 
-  couldPersonHaveMarriedInDateRange(startYear, endYear, maxLifeSpan = possibleLifeSpan) {
+  couldPersonHaveMarriedInDateRange(
+    startYear,
+    endYear,
+    maxLifeSpan = possibleLifeSpan
+  ) {
     if (!startYear) {
       startYear = 0;
     }
@@ -2896,30 +3028,34 @@ class GeneralizedData {
       //console.log("couldPersonHaveMarriedInDateRange: ageAtDeath < 14");
       return false;
     }
-  
+
     if (birthYearNum && deathYearNum) {
-      return deathYearNum >= startYear+16 && birthYearNum <= endYear-16;
+      return deathYearNum >= startYear + 16 && birthYearNum <= endYear - 16;
+    } else if (birthYearNum) {
+      return birthYearNum <= endYear - 16;
+    } else if (deathYearNum) {
+      return deathYearNum >= startYear + 16;
     }
-    else if (birthYearNum) {
-      return birthYearNum <= endYear-16;
-    }
-    else if (deathYearNum) {
-      return deathYearNum >= startYear+16;
-    }
-  
+
     let eventYearNum = WTS_Date.getYearNumFromYearString(this.inferEventYear());
     //console.log("couldPersonHaveMarriedInDateRange: eventYearNum is: " + eventYearNum);
 
     if (eventYearNum) {
       let lastestDeathYearNum = eventYearNum + maxLifeSpan;
       let earliestBirthYearNum = eventYearNum - maxLifeSpan;
-      return lastestDeathYearNum >= startYear && earliestBirthYearNum <= endYear;
+      return (
+        lastestDeathYearNum >= startYear && earliestBirthYearNum <= endYear
+      );
     }
-  
-    return true;  // if we don't know the birth or death year then it could be in range
+
+    return true; // if we don't know the birth or death year then it could be in range
   }
 
-  couldPersonHaveDiedInDateRange(startYear, endYear, maxLifespan = possibleLifeSpan) {
+  couldPersonHaveDiedInDateRange(
+    startYear,
+    endYear,
+    maxLifespan = possibleLifeSpan
+  ) {
     if (!startYear) {
       startYear = 0;
     }
@@ -2931,25 +3067,33 @@ class GeneralizedData {
     if (deathYearNum) {
       return deathYearNum >= startYear && deathYearNum <= endYear;
     }
-  
+
     let birthYearNum = WTS_Date.getYearNumFromYearString(this.inferBirthYear());
     if (birthYearNum) {
       let lastestDeathYearNum = birthYearNum + maxLifespan;
       let earliestDeathYearNum = birthYearNum;
-      return lastestDeathYearNum >= startYear && earliestDeathYearNum <= endYear;
+      return (
+        lastestDeathYearNum >= startYear && earliestDeathYearNum <= endYear
+      );
     }
-  
+
     let eventYearNum = WTS_Date.getYearNumFromYearString(this.inferEventYear());
     if (eventYearNum) {
       let lastestDeathYearNum = eventYearNum + maxLifespan;
       let earliestDeathYearNum = eventYearNum - maxLifespan;
-      return lastestDeathYearNum >= startYear && earliestDeathYearNum <= endYear;
+      return (
+        lastestDeathYearNum >= startYear && earliestDeathYearNum <= endYear
+      );
     }
-  
-    return true;  // if we don't know the death year then it could be in range
+
+    return true; // if we don't know the death year then it could be in range
   }
 
-  couldPersonHaveLivedInDateRange(startYear, endYear, maxLifespan = possibleLifeSpan) {
+  couldPersonHaveLivedInDateRange(
+    startYear,
+    endYear,
+    maxLifespan = possibleLifeSpan
+  ) {
     if (!startYear) {
       startYear = 0;
     }
@@ -2965,24 +3109,24 @@ class GeneralizedData {
 
     if (birthYearNum && deathYearNum) {
       return deathYearNum >= startYear && birthYearNum <= endYear;
-    }
-    else if (birthYearNum) {
+    } else if (birthYearNum) {
       return birthYearNum <= endYear;
-    }
-    else if (deathYearNum) {
+    } else if (deathYearNum) {
       return deathYearNum >= startYear;
     }
-  
+
     let eventYearNum = WTS_Date.getYearNumFromYearString(this.inferEventYear());
     //console.log("couldPersonHaveLivedInDateRange: eventYearNum is: " + eventYearNum);
 
     if (eventYearNum) {
       let lastestDeathYearNum = eventYearNum + maxLifespan;
       let earliestBirthYearNum = eventYearNum - maxLifespan;
-      return lastestDeathYearNum >= startYear && earliestBirthYearNum <= endYear;
+      return (
+        lastestDeathYearNum >= startYear && earliestBirthYearNum <= endYear
+      );
     }
-  
-    return true;  // if we don't know the birth or death year then it could be in range
+
+    return true; // if we don't know the birth or death year then it could be in range
   }
 
   inferPossibleLifeYearRange(maxLifespan = possibleLifeSpan) {
@@ -3007,16 +3151,13 @@ class GeneralizedData {
 
       if (deathYearNum) {
         range.endYear = deathYearNum;
-      }
-      else {
+      } else {
         range.endYear = birthYearNum + maxLifespan;
       }
-    }
-    else if (deathYearNum && deathYearNum > maxLifespan) {
+    } else if (deathYearNum && deathYearNum > maxLifespan) {
       range.startYear = deathYearNum - maxLifespan;
       range.endYear = deathYearNum;
-    }
-    else if (eventYearNum) {
+    } else if (eventYearNum) {
       range.startYear = eventYearNum - maxLifespan;
       range.endYear = eventYearNum + maxLifespan;
     }
@@ -3027,9 +3168,8 @@ class GeneralizedData {
 
     return range;
   }
-  
-  didPersonLiveInCountryList(searchCountryArray) {
 
+  didPersonLiveInCountryList(searchCountryArray) {
     let countryArray = this.inferCountries();
 
     //console.log("didPersonLiveInCountryList: searchCountryArray is: ");
@@ -3039,9 +3179,7 @@ class GeneralizedData {
 
     if (countryArray.length > 0) {
       for (let country of countryArray) {
-
         for (let searchCountry of searchCountryArray) {
-
           if (country == searchCountry || CD.isPartOf(country, searchCountry)) {
             return true;
           }
@@ -3061,8 +3199,7 @@ class GeneralizedData {
         // In UK the term Unmarried was used until it was replace with single in 1891
         term = "unmarried";
       }
-    }
-    else if (this.isRecordInCountry("United States")) {
+    } else if (this.isRecordInCountry("United States")) {
       let eventYear = this.inferEventYear();
       let yearNum = parseInt(eventYear);
       if (!isNaN(yearNum) && yearNum == 1950) {
@@ -3084,33 +3221,38 @@ class GeneralizedData {
     return false;
   }
 
-
-  getNarrativeDateFormat(dateObj, format, highlightOption, addPreposition, prepSuffix = "") {
-
+  getNarrativeDateFormat(
+    dateObj,
+    format,
+    highlightOption,
+    addPreposition,
+    prepSuffix = ""
+  ) {
     let newFormat = format;
     if (format == "country" || format == "countryNth") {
       let countryArray = this.inferCountries();
       if (countryArray.length == 1 && countryArray[0] == "United States") {
         if (format == "country") {
           newFormat = "monthComma";
-        }
-        else {
+        } else {
           newFormat = "monthCommaNth";
         }
-      }
-      else {
+      } else {
         if (format == "country") {
           newFormat = "long";
-        }
-        else {
+        } else {
           newFormat = "theNth";
         }
       }
     }
 
-    return dateObj.getNarrativeFormat(newFormat, highlightOption, addPreposition, prepSuffix);
+    return dateObj.getNarrativeFormat(
+      newFormat,
+      highlightOption,
+      addPreposition,
+      prepSuffix
+    );
   }
-  
 }
 
 export { GeneralizedData, GD, WtsName, WtsDate, WtsPlace, dateQualifiers, RT };

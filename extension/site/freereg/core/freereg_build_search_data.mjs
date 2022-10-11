@@ -26,31 +26,32 @@ import { WTS_Date } from "../../../base/core/wts_date.mjs";
 import { countyNameToCountyCode } from "../../freecen/core/freecen_chapman_codes.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
-
-function addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier, fieldData) {
+function addStartAndEndYearFromEventYear(
+  data,
+  options,
+  eventYear,
+  dateQualifier,
+  fieldData
+) {
   // compute the start and end birth dates
   let optYearRange = options.search_freereg_yearRange;
   if (optYearRange != "none") {
     let startAndEndDates = {
       startYear: undefined,
       endYear: undefined,
-    }
+    };
 
     if (optYearRange == "auto") {
       data.setDatesUsingQualifier(startAndEndDates, eventYear, dateQualifier);
-    }
-    else {
+    } else {
       let range = 2;
       if (optYearRange == "exact") {
         range = 0;
-      }
-      else if (optYearRange == "2") {
+      } else if (optYearRange == "2") {
         range = 2;
-      }
-      else if (optYearRange == "5") {
+      } else if (optYearRange == "5") {
         range = 5;
-      }
-      else if (optYearRange == "10") {
+      } else if (optYearRange == "10") {
         range = 10;
       }
       let yearNum = WTS_Date.getYearNumFromYearString(eventYear);
@@ -68,7 +69,12 @@ function addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier
   }
 }
 
-function addStartAndEndYearFromBirthAndDeath(data, options, fieldData, startOffset) {
+function addStartAndEndYearFromBirthAndDeath(
+  data,
+  options,
+  fieldData,
+  startOffset
+) {
   // compute the start and end birth dates
   let optYearRange = options.search_freereg_yearRange;
   if (optYearRange != "none") {
@@ -82,32 +88,37 @@ function addStartAndEndYearFromBirthAndDeath(data, options, fieldData, startOffs
       let birthStartAndEndDates = {
         startYear: undefined,
         endYear: undefined,
-      }
+      };
       let deathStartAndEndDates = {
         startYear: undefined,
         endYear: undefined,
-      }
+      };
 
-      data.setDatesUsingQualifierAndYearNum(birthStartAndEndDates, startAndEndDates.startYear, birthDateQualifier);
-      data.setDatesUsingQualifierAndYearNum(deathStartAndEndDates, startAndEndDates.endYear, deathDateQualifier);
-      startAndEndDates.startYear = birthStartAndEndDates.startYear + startOffset;
+      data.setDatesUsingQualifierAndYearNum(
+        birthStartAndEndDates,
+        startAndEndDates.startYear,
+        birthDateQualifier
+      );
+      data.setDatesUsingQualifierAndYearNum(
+        deathStartAndEndDates,
+        startAndEndDates.endYear,
+        deathDateQualifier
+      );
+      startAndEndDates.startYear =
+        birthStartAndEndDates.startYear + startOffset;
       startAndEndDates.endYear = deathStartAndEndDates.endYear;
-    }
-    else {
+    } else {
       let startYearNum = startAndEndDates.startYear + startOffset;
       let endYearNum = startAndEndDates.endYear;
-  
+
       let range = 2;
       if (optYearRange == "exact") {
         range = 0;
-      }
-      else if (optYearRange == "2") {
+      } else if (optYearRange == "2") {
         range = 2;
-      }
-      else if (optYearRange == "5") {
+      } else if (optYearRange == "5") {
         range = 5;
-      }
-      else if (optYearRange == "10") {
+      } else if (optYearRange == "10") {
         range = 10;
       }
       if (yearNum) {
@@ -126,7 +137,6 @@ function addStartAndEndYearFromBirthAndDeath(data, options, fieldData, startOffs
 }
 
 function buildSearchData(input) {
-
   //console.log("buildSearchData, input is:");
   //console.log(input);
 
@@ -134,7 +144,7 @@ function buildSearchData(input) {
   const options = input.options;
 
   let fieldData = {
-    "utf8": true,
+    utf8: true,
   };
 
   let parameters = undefined;
@@ -150,8 +160,7 @@ function buildSearchData(input) {
       if (parameters.subcategory != "allCounties") {
         countyCode = parameters.subcategory;
       }
-    }
-    else {
+    } else {
       type = input.typeOfSearch.toLowerCase();
     }
   }
@@ -166,26 +175,35 @@ function buildSearchData(input) {
     eventYear = data.inferBirthYear();
     dateQualifier = data.inferBirthDateQualifier();
     county = data.inferBirthCounty();
-    addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier, fieldData);
+    addStartAndEndYearFromEventYear(
+      data,
+      options,
+      eventYear,
+      dateQualifier,
+      fieldData
+    );
     fieldData["ba"] = true;
-  }
-  else if (type == "burial") {
+  } else if (type == "burial") {
     lastName = data.inferLastNameAtDeath();
     eventYear = data.inferDeathYear();
     dateQualifier = data.inferDeathDateQualifier();
     county = data.inferDeathCounty();
-    addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier, fieldData);
+    addStartAndEndYearFromEventYear(
+      data,
+      options,
+      eventYear,
+      dateQualifier,
+      fieldData
+    );
     fieldData["bu"] = true;
-  }
-  else if (type == "marriage") {
+  } else if (type == "marriage") {
     addStartAndEndYearFromBirthAndDeath(data, options, fieldData, 14);
     county = data.inferBirthCounty();
     if (!county) {
       county = data.inferDeathCounty();
     }
     fieldData["ma"] = true;
-  }
-  else if (type == "all") {
+  } else if (type == "all") {
     addStartAndEndYearFromBirthAndDeath(data, options, fieldData, 0);
     county = data.inferBirthCounty();
     if (!county) {
@@ -208,8 +226,7 @@ function buildSearchData(input) {
     if (lastNamesArray.length > 0) {
       if (lastNamesArray.length == 1) {
         lastName = lastNamesArray[0];
-      }
-      else if (lastNamesArray.length > parameters.lastNameIndex) {
+      } else if (lastNamesArray.length > parameters.lastNameIndex) {
         lastName = lastNamesArray[parameters.lastNameIndex];
       }
     }
@@ -224,8 +241,7 @@ function buildSearchData(input) {
 
   if (countyCode) {
     fieldData["search_query_chapman_codes"] = countyCode;
-  }
-  else {
+  } else {
     let optCounty = options.search_freereg_includeCounty;
     if (optCounty) {
       if (county) {
@@ -241,8 +257,8 @@ function buildSearchData(input) {
   //console.log(fieldData);
 
   var result = {
-    'fieldData' : fieldData,
-  }
+    fieldData: fieldData,
+  };
 
   return result;
 }

@@ -81,7 +81,7 @@ const RT = {
 const RecordSubtype = {
   Banns: `Banns`,
   MarriageOrBanns: `MarriageOrBanns`,
-}
+};
 
 const Role = {
   Primary: `Primary`,
@@ -90,6 +90,6 @@ const Role = {
   Sibling: `Sibling`,
   Spouse: `Spouse`,
   Witness: `Witness`,
-}
+};
 
 export { RT, RecordSubtype, Role };

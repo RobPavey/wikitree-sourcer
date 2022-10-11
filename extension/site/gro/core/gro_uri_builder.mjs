@@ -25,9 +25,9 @@ SOFTWARE.
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 class GroUriBuilder {
-
   constructor() {
-    this.uri = "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp";
+    this.uri =
+      "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp";
     this.searchTermAdded = false;
   }
 
@@ -38,8 +38,7 @@ class GroUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
@@ -54,8 +53,7 @@ class GroUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
   }
@@ -65,21 +63,33 @@ class GroUriBuilder {
   }
 
   addFirstForename(string) {
-    this.addSearchParameter("forename1", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(
+      "forename1",
+      WTS_String.removeExtendedAsciiCharacters(string)
+    );
   }
 
   addSecondForename(string) {
     let forename2 = WTS_String.getFirstWord(string);
-    this.addSearchParameter("forename2", WTS_String.removeExtendedAsciiCharacters(forename2));
+    this.addSearchParameter(
+      "forename2",
+      WTS_String.removeExtendedAsciiCharacters(forename2)
+    );
   }
 
   addSurname(string) {
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(
+      "surname",
+      WTS_String.removeExtendedAsciiCharacters(string)
+    );
   }
 
   addMothersSurname(string) {
     if (string != "-") {
-      this.addSearchParameter("motherssurname", WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(
+        "motherssurname",
+        WTS_String.removeExtendedAsciiCharacters(string)
+      );
     }
   }
 

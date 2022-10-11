@@ -25,7 +25,6 @@ SOFTWARE.
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 class FreebmdUriBuilder {
-
   constructor() {
     this.uri = "https://www.freebmd.org.uk/cgi/search.pl";
     this.searchTermAdded = false;
@@ -38,8 +37,7 @@ class FreebmdUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
@@ -54,8 +52,7 @@ class FreebmdUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
   }
@@ -65,19 +62,31 @@ class FreebmdUriBuilder {
   }
 
   addSurname(string) {
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(
+      "surname",
+      WTS_String.removeExtendedAsciiCharacters(string)
+    );
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("given", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(
+      "given",
+      WTS_String.removeExtendedAsciiCharacters(string)
+    );
   }
 
   addOtherSurname(string) {
-    this.addSearchParameter("s_surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(
+      "s_surname",
+      WTS_String.removeExtendedAsciiCharacters(string)
+    );
   }
 
   addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(
+      "s_given",
+      WTS_String.removeExtendedAsciiCharacters(string)
+    );
   }
 
   addStartYear(string) {

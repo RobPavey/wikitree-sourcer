@@ -82,9 +82,7 @@ function fixupLocation(location) {
 import { RC } from "../../../base/core/record_collections.mjs";
 
 class AncestryUriBuilder {
-
   constructor(collectionId, category, subcategory, options) {
-
     if (collectionId) {
       this.collection = RC.findCollection("ancestry", collectionId);
     }
@@ -98,14 +96,11 @@ class AncestryUriBuilder {
 
     if (collectionId) {
       this.uri = uriBase + "collections/" + collectionId + "/";
-    }
-    else if (subcategory && subcategory != "all") {
+    } else if (subcategory && subcategory != "all") {
       this.uri = uriBase + "categories/" + subcategory + "/";
-    }
-    else if (category && category != "all") {
+    } else if (category && category != "all") {
       this.uri = uriBase + "categories/" + category + "/";
-    }
-    else {
+    } else {
       this.uri = uriBase;
     }
     this.searchTermAdded = false;
@@ -130,14 +125,18 @@ class AncestryUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
 
   addSearchParameter(parameter, value, exact = false) {
-    if (parameter == undefined || parameter == "" || value == undefined || value == "") {
+    if (
+      parameter == undefined ||
+      parameter == "" ||
+      value == undefined ||
+      value == ""
+    ) {
       return;
     }
 
@@ -149,8 +148,7 @@ class AncestryUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
 
@@ -166,8 +164,7 @@ class AncestryUriBuilder {
       count++;
       uniqueTitle = title + count;
       this.titleMap.set(title, count);
-    }
-    else {
+    } else {
       this.titleMap.set(title, 1);
     }
 
@@ -185,7 +182,10 @@ class AncestryUriBuilder {
       string += fixupLocation(location);
     }
     if (string != "") {
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(
+        uniqueTitle,
+        WTS_String.removeExtendedAsciiCharacters(string)
+      );
     }
   }
 
@@ -200,13 +200,15 @@ class AncestryUriBuilder {
       name += lastName.trim().replace(/\s+/g, "+");
     }
     if (name != "") {
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(name));
+      this.addSearchParameter(
+        uniqueTitle,
+        WTS_String.removeExtendedAsciiCharacters(name)
+      );
     }
   }
 
-
   addName(forenames, lastName) {
-    this.addPersonName("name", forenames, lastName)
+    this.addPersonName("name", forenames, lastName);
   }
 
   addBirth(year, location) {
@@ -226,15 +228,15 @@ class AncestryUriBuilder {
   }
 
   addFather(forenames, lastName) {
-    this.addPersonName("father", forenames, lastName)
+    this.addPersonName("father", forenames, lastName);
   }
 
   addMother(forenames, lastName) {
-    this.addPersonName("mother", forenames, lastName)
+    this.addPersonName("mother", forenames, lastName);
   }
 
   addSpouse(forenames, lastName) {
-    this.addPersonName("spouse", forenames, lastName)
+    this.addPersonName("spouse", forenames, lastName);
   }
 
   addGenderMale() {
@@ -250,33 +252,51 @@ class AncestryUriBuilder {
   }
 
   addVolume(volume) {
-    let queryName = this.getSearchQueryNameFromCollection("volume", "f-SourceVolumeNumber");
+    let queryName = this.getSearchQueryNameFromCollection(
+      "volume",
+      "f-SourceVolumeNumber"
+    );
     this.addSearchParameter(queryName, volume);
   }
 
   addPage(page) {
-    let queryName = this.getSearchQueryNameFromCollection("page", "f-SourcePageNumber");
+    let queryName = this.getSearchQueryNameFromCollection(
+      "page",
+      "f-SourcePageNumber"
+    );
     this.addSearchParameter(queryName, page);
   }
 
   addFolio(folio) {
-    let queryName = this.getSearchQueryNameFromCollection("folio", "f-SourceFolioNumber");
+    let queryName = this.getSearchQueryNameFromCollection(
+      "folio",
+      "f-SourceFolioNumber"
+    );
     this.addSearchParameter(queryName, folio, true);
   }
 
   addPiece(piece) {
-    let queryName = this.getSearchQueryNameFromCollection("piece", "f-SourcePieceNumber");
+    let queryName = this.getSearchQueryNameFromCollection(
+      "piece",
+      "f-SourcePieceNumber"
+    );
     this.addSearchParameter(queryName, piece, true);
   }
 
   addSchedule(schedule) {
-    let queryName = this.getSearchQueryNameFromCollection("schedule", "f-Famnum");
+    let queryName = this.getSearchQueryNameFromCollection(
+      "schedule",
+      "f-Famnum"
+    );
     this.addSearchParameter(queryName, schedule);
   }
 
   addRegistrationNumber(registrationNumber) {
     if (registrationNumber) {
-      let queryName = this.getSearchQueryNameFromCollection("registrationNumber", "");
+      let queryName = this.getSearchQueryNameFromCollection(
+        "registrationNumber",
+        ""
+      );
       if (queryName) {
         this.addSearchParameter(queryName, registrationNumber);
         this.addSearchParameter(queryName + "_x", "1"); // set as exact
@@ -301,7 +321,10 @@ class AncestryUriBuilder {
         defaultName = "f-Notes";
       }
     }
-    let queryName = this.getSearchQueryNameFromCollection("district", defaultName);
+    let queryName = this.getSearchQueryNameFromCollection(
+      "district",
+      defaultName
+    );
     this.addSearchParameter(queryName, district);
   }
 

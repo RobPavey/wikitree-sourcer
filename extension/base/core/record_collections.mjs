@@ -24,29 +24,69 @@ SOFTWARE.
 
 import { CD } from "./country_data.mjs";
 
-const houseTableColumnsUk1841 = [ "name", "gender", "age", "occupation", "birthPlace"];
+const houseTableColumnsUk1841 = [
+  "name",
+  "gender",
+  "age",
+  "occupation",
+  "birthPlace",
+];
 const houseTableColumnsUk1851to1911 = [
-  "name", "relationship", "maritalStatus", "gender", "age", "birthYear", "occupation", "birthPlace"];
+  "name",
+  "relationship",
+  "maritalStatus",
+  "gender",
+  "age",
+  "birthYear",
+  "occupation",
+  "birthPlace",
+];
 
-  const householdTableColumnsUsFederal1850 = [ "name", "gender", "age", "occupation", "birthPlace"];
-  const householdTableColumnsUsFederalPre1880 = [ "name", "gender", "age", "maritalStatus", "occupation", "birthPlace"];
-  const householdTableColumnsUsFederalPost1880 = [ "name", "gender", "age", "maritalStatus", "relationship", "occupation", "birthPlace"];
+const householdTableColumnsUsFederal1850 = [
+  "name",
+  "gender",
+  "age",
+  "occupation",
+  "birthPlace",
+];
+const householdTableColumnsUsFederalPre1880 = [
+  "name",
+  "gender",
+  "age",
+  "maritalStatus",
+  "occupation",
+  "birthPlace",
+];
+const householdTableColumnsUsFederalPost1880 = [
+  "name",
+  "gender",
+  "age",
+  "maritalStatus",
+  "relationship",
+  "occupation",
+  "birthPlace",
+];
 
 const RecordCollectionData = [
-
   // England & Wales BMD
   {
     wtsId: "EnglandAndWalesBirthReg",
     title: "England & Wales, Civil Registration Birth Index",
     country: "England and Wales",
     isBirth: true,
-    sites : {
-      fs: { id: "2285338", dates: { from: 1837, to: 2008 }, searchTerms: { gender: false }},
-      fmp: { id: "England & Wales Births 1837-2006", dates: { from: 1837, to: 2006 },
-        searchQueryFields: { volume: "", page: "", },
+    sites: {
+      fs: {
+        id: "2285338",
+        dates: { from: 1837, to: 2008 },
+        searchTerms: { gender: false },
       },
-      gro: { id: "births", dates: { from: 1837, to: 2019 }, },
-      freebmd: { id: "births", dates: { from: 1837, to: 1992 }, },
+      fmp: {
+        id: "England & Wales Births 1837-2006",
+        dates: { from: 1837, to: 2006 },
+        searchQueryFields: { volume: "", page: "" },
+      },
+      gro: { id: "births", dates: { from: 1837, to: 2019 } },
+      freebmd: { id: "births", dates: { from: 1837, to: 1992 } },
     },
   },
   {
@@ -55,9 +95,11 @@ const RecordCollectionData = [
     title: "England & Wales, Civil Registration Birth Index 1837-1915",
     country: "England and Wales",
     isDeath: true,
-    sites : {
+    sites: {
       ancestry: {
-        id: "8912", altId: "freebmdbirth", dates: { from: 1837, to: 1915 },
+        id: "8912",
+        altId: "freebmdbirth",
+        dates: { from: 1837, to: 1915 },
       },
     },
   },
@@ -67,8 +109,8 @@ const RecordCollectionData = [
     title: "England & Wales, Civil Registration Birth Index 1916-2007",
     country: "England and Wales",
     isDeath: true,
-    sites : {
-      ancestry: { id: "8782", dates: { from: 1916, to: 2007 }, },
+    sites: {
+      ancestry: { id: "8782", dates: { from: 1916, to: 2007 } },
     },
   },
   {
@@ -76,10 +118,13 @@ const RecordCollectionData = [
     title: "England & Wales, Civil Registration Marriage Index",
     country: "England and Wales",
     isMarriage: true,
-    sites : {
-      fs: { id: "2285732", dates: { from: 1837, to: 2008 },},
-      fmp: { id: "England & Wales Marriages 1837-2005", dates: { from: 1837, to: 2005 }, },
-      freebmd: { id: "marriages", dates: { from: 1837, to: 1992 }, },
+    sites: {
+      fs: { id: "2285732", dates: { from: 1837, to: 2008 } },
+      fmp: {
+        id: "England & Wales Marriages 1837-2005",
+        dates: { from: 1837, to: 2005 },
+      },
+      freebmd: { id: "marriages", dates: { from: 1837, to: 1992 } },
     },
   },
   {
@@ -88,10 +133,12 @@ const RecordCollectionData = [
     title: "England & Wales, Civil Registration Marriage Index 1837-1915",
     country: "England and Wales",
     isDeath: true,
-    sites : {
+    sites: {
       ancestry: {
-        id: "8913", altId: "FreeBMDMarriage", dates: { from: 1837, to: 1915 },
-        searchQueryFields: { volume: "f-F00056EC", page: "f-F0005906"},
+        id: "8913",
+        altId: "FreeBMDMarriage",
+        dates: { from: 1837, to: 1915 },
+        searchQueryFields: { volume: "f-F00056EC", page: "f-F0005906" },
       },
     },
   },
@@ -101,9 +148,11 @@ const RecordCollectionData = [
     title: "England & Wales, Civil Registration Marriage Index 1916-2007",
     country: "England and Wales",
     isDeath: true,
-    sites : {
+    sites: {
       ancestry: {
-        id: "8753", altId: "ONSmarriage1984", dates: { from: 1916, to: 2005 },
+        id: "8753",
+        altId: "ONSmarriage1984",
+        dates: { from: 1916, to: 2005 },
       },
     },
   },
@@ -112,13 +161,15 @@ const RecordCollectionData = [
     title: "England & Wales, Civil Registration Death Index",
     country: "England and Wales",
     isDeath: true,
-    sites : {
-      fs: { id: "2285341", dates: { from: 1837, to: 2008 },},
-      fmp: { id: "England & Wales Deaths 1837-2007", dates: { from: 1837, to: 2007 },
-        searchQueryFields: { volume: "", page: "", },
+    sites: {
+      fs: { id: "2285341", dates: { from: 1837, to: 2008 } },
+      fmp: {
+        id: "England & Wales Deaths 1837-2007",
+        dates: { from: 1837, to: 2007 },
+        searchQueryFields: { volume: "", page: "" },
       },
-      gro: { id: "deaths", dates: { from: 1837, to: 2019 },  },
-      freebmd: { id: "deaths", dates: { from: 1837, to: 1992 }, },
+      gro: { id: "deaths", dates: { from: 1837, to: 2019 } },
+      freebmd: { id: "deaths", dates: { from: 1837, to: 1992 } },
     },
   },
   {
@@ -127,9 +178,11 @@ const RecordCollectionData = [
     title: "England & Wales, Civil Registration Death Index 1837-1915",
     country: "England and Wales",
     isDeath: true,
-    sites : {
-      ancestry: { id: "8914", dates: { from: 1837, to: 1915 },
-        searchQueryFields: { volume: "", page: ""},
+    sites: {
+      ancestry: {
+        id: "8914",
+        dates: { from: 1837, to: 1915 },
+        searchQueryFields: { volume: "", page: "" },
       },
     },
   },
@@ -139,8 +192,8 @@ const RecordCollectionData = [
     title: "England & Wales, Civil Registration Death Index 1916-2007",
     country: "England and Wales",
     isDeath: true,
-    sites : {
-      ancestry: { id: "7579", dates: { from: 1916, to: 2007 }, },
+    sites: {
+      ancestry: { id: "7579", dates: { from: 1916, to: 2007 } },
     },
   },
 
@@ -151,9 +204,12 @@ const RecordCollectionData = [
     country: "United Kingdom",
     dates: { year: 1841, exactDate: "6 Jun 1841" },
     householdTableColumns: houseTableColumnsUk1841,
-    sites : {
-      fmp: { id: "1841 England, Wales & Scotland Census", title: "1841 England, Wales & Scotland Census" },
-      freecen: { id: "1841", title: "1841 England, Scotland and Wales census"}
+    sites: {
+      fmp: {
+        id: "1841 England, Wales & Scotland Census",
+        title: "1841 England, Wales & Scotland Census",
+      },
+      freecen: { id: "1841", title: "1841 England, Scotland and Wales census" },
     },
   },
   {
@@ -162,9 +218,12 @@ const RecordCollectionData = [
     country: "United Kingdom",
     dates: { year: 1851, exactDate: "30 Mar 1851" },
     householdTableColumns: houseTableColumnsUk1851to1911,
-    sites : {
-      fmp: { id: "1851 England, Wales & Scotland Census", title: "1851 England, Wales & Scotland Census" },
-      freecen: { id: "1851", title: "1851 England, Scotland and Wales census"}
+    sites: {
+      fmp: {
+        id: "1851 England, Wales & Scotland Census",
+        title: "1851 England, Wales & Scotland Census",
+      },
+      freecen: { id: "1851", title: "1851 England, Scotland and Wales census" },
     },
   },
   {
@@ -173,9 +232,12 @@ const RecordCollectionData = [
     country: "United Kingdom",
     dates: { year: 1861, exactDate: "7 Apr 1861" },
     householdTableColumns: houseTableColumnsUk1851to1911,
-    sites : {
-      fmp: { id: "1861 England, Wales & Scotland Census", title: "1861 England, Wales & Scotland Census" },
-      freecen: { id: "1861", title: "1861 England, Scotland and Wales census"}
+    sites: {
+      fmp: {
+        id: "1861 England, Wales & Scotland Census",
+        title: "1861 England, Wales & Scotland Census",
+      },
+      freecen: { id: "1861", title: "1861 England, Scotland and Wales census" },
     },
   },
   {
@@ -184,9 +246,12 @@ const RecordCollectionData = [
     country: "United Kingdom",
     dates: { year: 1871, exactDate: "2 Apr 1871" },
     householdTableColumns: houseTableColumnsUk1851to1911,
-    sites : {
-      fmp: { id: "1871 England, Wales & Scotland Census", title: "1871 England, Wales & Scotland Census" },
-      freecen: { id: "1871", title: "1871 England, Scotland and Wales census"}
+    sites: {
+      fmp: {
+        id: "1871 England, Wales & Scotland Census",
+        title: "1871 England, Wales & Scotland Census",
+      },
+      freecen: { id: "1871", title: "1871 England, Scotland and Wales census" },
     },
   },
   {
@@ -195,9 +260,12 @@ const RecordCollectionData = [
     country: "United Kingdom",
     dates: { year: 1881, exactDate: "3 Apr 1881" },
     householdTableColumns: houseTableColumnsUk1851to1911,
-    sites : {
-      fmp: { id: "1881 England, Wales & Scotland Census", title: "1881 England, Wales & Scotland Census" },
-      freecen: { id: "1881", title: "1881 England, Scotland and Wales census"}
+    sites: {
+      fmp: {
+        id: "1881 England, Wales & Scotland Census",
+        title: "1881 England, Wales & Scotland Census",
+      },
+      freecen: { id: "1881", title: "1881 England, Scotland and Wales census" },
     },
   },
   {
@@ -206,9 +274,12 @@ const RecordCollectionData = [
     country: "United Kingdom",
     dates: { year: 1891, exactDate: "5 Apr 1891" },
     householdTableColumns: houseTableColumnsUk1851to1911,
-    sites : {
-      fmp: { id: "1891 England, Wales & Scotland Census", title: "1891 England, Wales & Scotland Census" },
-      freecen: { id: "1891", title: "1891 England, Scotland and Wales census"}
+    sites: {
+      fmp: {
+        id: "1891 England, Wales & Scotland Census",
+        title: "1891 England, Wales & Scotland Census",
+      },
+      freecen: { id: "1891", title: "1891 England, Scotland and Wales census" },
     },
   },
   {
@@ -217,9 +288,12 @@ const RecordCollectionData = [
     country: "United Kingdom",
     dates: { year: 1901, exactDate: "31 Mar 1901" },
     householdTableColumns: houseTableColumnsUk1851to1911,
-    sites : {
-      fmp: { id: "1901 England, Wales & Scotland Census", title: "1901 England, Wales & Scotland Census" },
-      freecen: { id: "1901", title: "1901 England, Scotland and Wales census"}
+    sites: {
+      fmp: {
+        id: "1901 England, Wales & Scotland Census",
+        title: "1901 England, Wales & Scotland Census",
+      },
+      freecen: { id: "1901", title: "1901 England, Scotland and Wales census" },
     },
   },
   {
@@ -236,7 +310,7 @@ const RecordCollectionData = [
     title: "1841 Census of England and Wales",
     country: "England and Wales",
     dates: { year: 1841, exactDate: "6 Jun 1841" },
-    sites : {
+    sites: {
       fs: { id: "1493745", title: "England and Wales Census, 1841" },
     },
   },
@@ -246,7 +320,7 @@ const RecordCollectionData = [
     title: "1851 Census of England and Wales",
     country: "England and Wales",
     dates: { year: 1851, exactDate: "30 Mar 1851" },
-    sites : {
+    sites: {
       fs: { id: "2563939", title: "England and Wales Census, 1851" },
     },
   },
@@ -256,7 +330,7 @@ const RecordCollectionData = [
     title: "1861 Census of England and Wales",
     country: "England and Wales",
     dates: { year: 1861, exactDate: "7 Apr 1861" },
-    sites : {
+    sites: {
       fs: { id: "1493747", title: "England and Wales Census, 1861" },
     },
   },
@@ -266,7 +340,7 @@ const RecordCollectionData = [
     title: "1871 Census of England and Wales",
     country: "England and Wales",
     dates: { year: 1871, exactDate: "2 Apr 1871" },
-    sites : {
+    sites: {
       fs: { id: "1538354", title: "England and Wales Census, 1871" },
     },
   },
@@ -276,7 +350,7 @@ const RecordCollectionData = [
     title: "1881 Census of England and Wales",
     country: "England and Wales",
     dates: { year: 1881, exactDate: "3 Apr 1881" },
-    sites : {
+    sites: {
       fs: { id: "2562194", title: "England and Wales Census, 1881" },
     },
   },
@@ -286,7 +360,7 @@ const RecordCollectionData = [
     title: "1891 Census of England and Wales",
     country: "England and Wales",
     dates: { year: 1891, exactDate: "5 Apr 1891" },
-    sites : {
+    sites: {
       fs: { id: "1865747", title: "England and Wales Census, 1891" },
     },
   },
@@ -296,7 +370,7 @@ const RecordCollectionData = [
     title: "1901 Census of England and Wales",
     country: "England and Wales",
     dates: { year: 1901, exactDate: "31 Mar 1901" },
-    sites : {
+    sites: {
       fs: { id: "1888129", title: "England and Wales Census, 1901" },
     },
   },
@@ -307,13 +381,14 @@ const RecordCollectionData = [
     country: "England and Wales",
     dates: { year: 1911, exactDate: "2 Apr 1911" },
     householdTableColumns: houseTableColumnsUk1851to1911,
-    sites : {
+    sites: {
       fs: { id: "1921547", title: "England and Wales Census, 1911" },
       fmp: {
-        id: "1911 Census For England & Wales", title: "1911 Census For England & Wales",
-        searchQueryFields: { maritalStatus: "condition", },
+        id: "1911 Census For England & Wales",
+        title: "1911 Census For England & Wales",
+        searchQueryFields: { maritalStatus: "condition" },
       },
-      freecen: { id: "1911", title: "1911 England and Wales census"},
+      freecen: { id: "1911", title: "1911 England and Wales census" },
     },
   },
   {
@@ -322,11 +397,25 @@ const RecordCollectionData = [
     country: "England and Wales",
     dates: { year: 1921 },
     householdTableColumns: [
-      "name", "relationship", "gender", "maritalStatus", "age", "birthYear", "birthPlace", "occupation", "employer" ],
-    sites : {
+      "name",
+      "relationship",
+      "gender",
+      "maritalStatus",
+      "age",
+      "birthYear",
+      "birthPlace",
+      "occupation",
+      "employer",
+    ],
+    sites: {
       fmp: {
-        id: "1921 Census Of England & Wales", title: "1921 Census Of England & Wales",
-        searchQueryFields: { maritalStatus: "maritalstatus", occupation: "occupationtext", birthPlace: "whereborntext"},
+        id: "1921 Census Of England & Wales",
+        title: "1921 Census Of England & Wales",
+        searchQueryFields: {
+          maritalStatus: "maritalstatus",
+          occupation: "occupationtext",
+          birthPlace: "whereborntext",
+        },
       },
     },
   },
@@ -337,11 +426,19 @@ const RecordCollectionData = [
     title: "1841 Census of England",
     country: "England",
     dates: { year: 1841, exactDate: "6 Jun 1841" },
-    sites : {
+    sites: {
       ancestry: {
-        id: "8978", altId: "uki1841", title: "1841 England Census",
-        searchQueryFields: { piece: "f-F0003039", folio: "f-F000303A", page: "f-F00032DB",
-          book: "f-F0002996", district: "f-F000303D", subDistrict: "f-F000303E"},
+        id: "8978",
+        altId: "uki1841",
+        title: "1841 England Census",
+        searchQueryFields: {
+          piece: "f-F0003039",
+          folio: "f-F000303A",
+          page: "f-F00032DB",
+          book: "f-F0002996",
+          district: "f-F000303D",
+          subDistrict: "f-F000303E",
+        },
       },
     },
   },
@@ -351,11 +448,21 @@ const RecordCollectionData = [
     title: "1851 Census of England",
     country: "England",
     dates: { year: 1851, exactDate: "30 Mar 1851" },
-    sites : {
-      ancestry: { id: "8860", altId: "uki1851", title: "1851 England Census",
-        searchQueryFields: { piece: "f-F0005C4F", folio: "f-F0005E11", page: "f-F0005906",
-          schedule: "f-F0006867", district: "f-F0005DFD", subDistrict: "f-F0006301",
-          eccPar: "f-F0005DFB", enumDistrict: "f-F0005DFC"},
+    sites: {
+      ancestry: {
+        id: "8860",
+        altId: "uki1851",
+        title: "1851 England Census",
+        searchQueryFields: {
+          piece: "f-F0005C4F",
+          folio: "f-F0005E11",
+          page: "f-F0005906",
+          schedule: "f-F0006867",
+          district: "f-F0005DFD",
+          subDistrict: "f-F0006301",
+          eccPar: "f-F0005DFB",
+          enumDistrict: "f-F0005DFC",
+        },
       },
     },
   },
@@ -365,10 +472,16 @@ const RecordCollectionData = [
     title: "1861 Census of England",
     country: "England",
     dates: { year: 1861, exactDate: "7 Apr 1861" },
-    sites : {
+    sites: {
       ancestry: {
-        id: "8767", altId: "uki1861", title: "1861 England Census",
-        searchQueryFields: { piece: "f-F0007B87", folio: "f-F0007B88", page: "f-F000597C"},
+        id: "8767",
+        altId: "uki1861",
+        title: "1861 England Census",
+        searchQueryFields: {
+          piece: "f-F0007B87",
+          folio: "f-F0007B88",
+          page: "f-F000597C",
+        },
       },
     },
   },
@@ -378,7 +491,7 @@ const RecordCollectionData = [
     title: "1871 Census of England",
     country: "England",
     dates: { year: 1871, exactDate: "2 Apr 1871" },
-    sites : {
+    sites: {
       // tested and default piece, folio and page work
       ancestry: { id: "7619", altId: "uki1871", title: "1871 England Census" },
     },
@@ -389,11 +502,19 @@ const RecordCollectionData = [
     title: "1881 Census of England",
     country: "England",
     dates: { year: 1881, exactDate: "3 Apr 1881" },
-    sites : {
+    sites: {
       ancestry: {
-        id: "7572", altId: "uki1881", title: "1881 England Census",
-        searchQueryFields: { piece: "f-F800686D", folio: "f-F0005E11", page: "f-F0005906",
-        district: "f-F000925D", subDistrict: "f-F00079A7", enumDistrict: "f-F0005DFC"},
+        id: "7572",
+        altId: "uki1881",
+        title: "1881 England Census",
+        searchQueryFields: {
+          piece: "f-F800686D",
+          folio: "f-F0005E11",
+          page: "f-F0005906",
+          district: "f-F000925D",
+          subDistrict: "f-F00079A7",
+          enumDistrict: "f-F0005DFC",
+        },
       },
     },
   },
@@ -403,7 +524,7 @@ const RecordCollectionData = [
     title: "1891 Census of England",
     country: "England",
     dates: { year: 1891, exactDate: "5 Apr 1891" },
-    sites : {
+    sites: {
       ancestry: { id: "6598", altId: "uki1891", title: "1891 England Census" },
     },
   },
@@ -413,13 +534,21 @@ const RecordCollectionData = [
     title: "1901 Census of England",
     country: "England",
     dates: { year: 1901, exactDate: "31 Mar 1901" },
-    sites : {
+    sites: {
       ancestry: {
-        id: "7814", altId: "uki1901", title: "1901 England Census",
-        searchQueryFields: { piece: "f-F0005C4F", folio: "f-F0005E11", page: "f-F0005906",
+        id: "7814",
+        altId: "uki1901",
+        title: "1901 England Census",
+        searchQueryFields: {
+          piece: "f-F0005C4F",
+          folio: "f-F0005E11",
+          page: "f-F0005906",
           schedule: "f-F0006867",
-          district: "f-F0007AD6", subDistrict: "f-F00079A7", enumDistrict: "f-F0005DFC"},
-     },
+          district: "f-F0007AD6",
+          subDistrict: "f-F00079A7",
+          enumDistrict: "f-F0005DFC",
+        },
+      },
     },
   },
   {
@@ -428,8 +557,12 @@ const RecordCollectionData = [
     title: "1911 Census of England",
     country: "England",
     dates: { year: 1911, exactDate: "2 Apr 1911" },
-    sites : {
-      ancestry: { id: "2352", altId: "1911England", title: "1911 England Census", },
+    sites: {
+      ancestry: {
+        id: "2352",
+        altId: "1911England",
+        title: "1911 England Census",
+      },
     },
   },
   // Wales Census
@@ -439,7 +572,7 @@ const RecordCollectionData = [
     title: "1841 Census of Wales",
     country: "Wales",
     dates: { year: 1841, exactDate: "6 Jun 1841" },
-    sites : {
+    sites: {
       ancestry: { id: "8979", altId: "uki1841wales" },
     },
   },
@@ -449,7 +582,7 @@ const RecordCollectionData = [
     title: "1851 Census of Wales",
     country: "Wales",
     dates: { year: 1851, exactDate: "30 Mar 1851" },
-    sites : {
+    sites: {
       ancestry: { id: "8861", altId: "uki1851wales" },
     },
   },
@@ -459,7 +592,7 @@ const RecordCollectionData = [
     title: "1861 Census of Wales",
     country: "Wales",
     dates: { year: 1861, exactDate: "7 Apr 1861" },
-    sites : {
+    sites: {
       ancestry: { id: "8768", altId: "uki1861wales" },
     },
   },
@@ -469,7 +602,7 @@ const RecordCollectionData = [
     title: "1871 Census of Wales",
     country: "Wales",
     dates: { year: 1871, exactDate: "2 Apr 1871" },
-    sites : {
+    sites: {
       ancestry: { id: "7618", altId: "uki1871wales" },
     },
   },
@@ -479,7 +612,7 @@ const RecordCollectionData = [
     title: "1881 Census of Wales",
     country: "Wales",
     dates: { year: 1881, exactDate: "3 Apr 1881" },
-    sites : {
+    sites: {
       ancestry: { id: "8059", altId: "uki1881wales" },
     },
   },
@@ -489,7 +622,7 @@ const RecordCollectionData = [
     title: "1891 Census of Wales",
     country: "Wales",
     dates: { year: 1891, exactDate: "5 Apr 1891" },
-    sites : {
+    sites: {
       ancestry: { id: "6897", altId: "uki1891wales" },
     },
   },
@@ -499,7 +632,7 @@ const RecordCollectionData = [
     title: "1901 Census of Wales",
     country: "Wales",
     dates: { year: 1901, exactDate: "31 Mar 1901" },
-    sites : {
+    sites: {
       ancestry: { id: "7815", altId: "uki1901wales" },
     },
   },
@@ -509,7 +642,7 @@ const RecordCollectionData = [
     title: "1911 Census of Wales",
     country: "Wales",
     dates: { year: 1911, exactDate: "2 Apr 1911" },
-    sites : {
+    sites: {
       ancestry: { id: "2353", altId: "1911Wales" },
     },
   },
@@ -520,10 +653,10 @@ const RecordCollectionData = [
     title: "1841 Census of Scotland",
     country: "Scotland",
     dates: { year: 1841, exactDate: "6 Jun 1841" },
-    sites : {
+    sites: {
       ancestry: {
         id: "1004",
-        searchQueryFields: { district: "", registrationNumber: "f-F0003968" },  // no Page or ED supported
+        searchQueryFields: { district: "", registrationNumber: "f-F0003968" }, // no Page or ED supported
       },
       scotp: { id: "census1841" },
     },
@@ -534,11 +667,15 @@ const RecordCollectionData = [
     title: "1851 Census of Scotland",
     country: "Scotland",
     dates: { year: 1851, exactDate: "30 Mar 1851" },
-    sites : {
+    sites: {
       ancestry: {
         id: "1076",
-        searchQueryFields: { district: "", enumDistrict: "f-F0005DFC", registrationNumber: "f-F0007E02",
-          page: "f-F8007E01", },
+        searchQueryFields: {
+          district: "",
+          enumDistrict: "f-F0005DFC",
+          registrationNumber: "f-F0007E02",
+          page: "f-F8007E01",
+        },
       },
       scotp: { id: "census1851" },
     },
@@ -549,10 +686,14 @@ const RecordCollectionData = [
     title: "1861 Census of Scotland",
     country: "Scotland",
     dates: { year: 1861, exactDate: "7 Apr 1861" },
-    sites : {
+    sites: {
       ancestry: {
         id: "1080",
-        searchQueryFields: { district: "f-F0003B8A",  enumDistrict: "f-F00032ED", registrationNumber: "f-F0003B89" },
+        searchQueryFields: {
+          district: "f-F0003B8A",
+          enumDistrict: "f-F00032ED",
+          registrationNumber: "f-F0003B89",
+        },
       },
       scotp: { id: "census1861" },
     },
@@ -563,10 +704,14 @@ const RecordCollectionData = [
     title: "1871 Census of Scotland",
     country: "Scotland",
     dates: { year: 1871, exactDate: "2 Apr 1871" },
-    sites : {
+    sites: {
       ancestry: {
         id: "1104",
-        searchQueryFields: { district: "f-F0003B8A",  enumDistrict: "f-F00032ED", registrationNumber: "f-F0003B89" },
+        searchQueryFields: {
+          district: "f-F0003B8A",
+          enumDistrict: "f-F00032ED",
+          registrationNumber: "f-F0003B89",
+        },
       },
       scotp: { id: "census1871" },
     },
@@ -577,10 +722,14 @@ const RecordCollectionData = [
     title: "1881 Census of Scotland",
     country: "Scotland",
     dates: { year: 1881, exactDate: "3 Apr 1881" },
-    sites : {
+    sites: {
       ancestry: {
         id: "1119",
-        searchQueryFields: { district: "f-F0003B8A",  enumDistrict: "f-F00032ED", registrationNumber: "f-F0003B89" },
+        searchQueryFields: {
+          district: "f-F0003B8A",
+          enumDistrict: "f-F00032ED",
+          registrationNumber: "f-F0003B89",
+        },
       },
       scotp: { id: "census1881" },
     },
@@ -591,10 +740,14 @@ const RecordCollectionData = [
     title: "1891 Census of Scotland",
     country: "Scotland",
     dates: { year: 1891, exactDate: "5 Apr 1891" },
-    sites : {
+    sites: {
       ancestry: {
         id: "1108",
-        searchQueryFields: { district: "f-F0003B8A",  enumDistrict: "f-F00032ED", registrationNumber: "f-F0003B89" },
+        searchQueryFields: {
+          district: "f-F0003B8A",
+          enumDistrict: "f-F00032ED",
+          registrationNumber: "f-F0003B89",
+        },
       },
       scotp: { id: "census1891" },
     },
@@ -605,10 +758,14 @@ const RecordCollectionData = [
     title: "1901 Census of Scotland",
     country: "Scotland",
     dates: { year: 1901, exactDate: "31 Mar 1901" },
-    sites : {
+    sites: {
       ancestry: {
         id: "1101",
-        searchQueryFields: { district: "f-F0003B8A",  enumDistrict: "f-F00032ED", registrationNumber: "f-F0003B89" },
+        searchQueryFields: {
+          district: "f-F0003B8A",
+          enumDistrict: "f-F00032ED",
+          registrationNumber: "f-F0003B89",
+        },
       },
       scotp: { id: "census1901" },
     },
@@ -619,7 +776,7 @@ const RecordCollectionData = [
     title: "1901 Census of Scotland",
     country: "Scotland",
     dates: { year: 1901, exactDate: "31 Mar 1901" },
-    sites : {
+    sites: {
       scotp: { id: "census1911" },
     },
   },
@@ -629,11 +786,18 @@ const RecordCollectionData = [
     title: "1939 England and Wales Register",
     country: "England and Wales",
     dates: { year: 1939 },
-    householdTableColumns: [ "name", "maritalStatus", "gender", "birthDate", "occupation"],
-    sites : {
+    householdTableColumns: [
+      "name",
+      "maritalStatus",
+      "gender",
+      "birthDate",
+      "occupation",
+    ],
+    sites: {
       ancestry: { id: "61596" },
-      fmp: { id: "1939 Register",
-        searchQueryFields: { maritalStatus: "maritalstatus", },
+      fmp: {
+        id: "1939 Register",
+        searchQueryFields: { maritalStatus: "maritalstatus" },
       },
       fs: { id: "2836130", title: "England and Wales National Register, 1939" },
     },
@@ -643,8 +807,8 @@ const RecordCollectionData = [
     wtsId: "EnglandAndWalesProbate",
     title: "England & Wales, National Probate Calendar, 1858-1995",
     country: "England and Wales",
-    sites : {
-      ancestry: { id: "1904", dates: { from: 1858, to: 1995 }, },
+    sites: {
+      ancestry: { id: "1904", dates: { from: 1858, to: 1995 } },
     },
   },
   // British Phone Books
@@ -652,8 +816,8 @@ const RecordCollectionData = [
     wtsId: "BritishPhoneBooks",
     title: "British Phone Books, 1880-1984",
     country: "United Kingdom",
-    sites : {
-      ancestry: { id: "1025", dates: { from: 1880, to: 1984 }, },
+    sites: {
+      ancestry: { id: "1025", dates: { from: 1880, to: 1984 } },
     },
   },
 
@@ -667,10 +831,10 @@ const RecordCollectionData = [
     title: "1790 United States Federal Census",
     country: "United States",
     dates: { year: 1790, exactDate: "2 Aug 1790" },
-    sites : {
-      fs: { id: "1803959"},
+    sites: {
+      fs: { id: "1803959" },
       ancestry: { id: "5058" },
-      fmp: { id: "US Census 1790"},
+      fmp: { id: "US Census 1790" },
     },
   },
   {
@@ -678,10 +842,10 @@ const RecordCollectionData = [
     title: "1800 United States Federal Census",
     country: "United States",
     dates: { year: 1800, exactDate: "4 Aug 1800" },
-    sites : {
-      fs: { id: "1804228"},
+    sites: {
+      fs: { id: "1804228" },
       ancestry: { id: "7590" },
-      fmp: { id: "US Census 1800"},
+      fmp: { id: "US Census 1800" },
     },
   },
   {
@@ -689,10 +853,10 @@ const RecordCollectionData = [
     title: "1810 United States Federal Census",
     country: "United States",
     dates: { year: 1810, exactDate: "6 Aug 1810" },
-    sites : {
-      fs: { id: "1803765"},
+    sites: {
+      fs: { id: "1803765" },
       ancestry: { id: "7613" },
-      fmp: { id: "US Census 1810"},
+      fmp: { id: "US Census 1810" },
     },
   },
   {
@@ -700,10 +864,10 @@ const RecordCollectionData = [
     title: "1820 United States Federal Census",
     country: "United States",
     dates: { year: 1820, exactDate: "7 Aug 1820" },
-    sites : {
-      fs: { id: "1803955"},
+    sites: {
+      fs: { id: "1803955" },
       ancestry: { id: "7734" },
-      fmp: { id: "US Census 1820"},
+      fmp: { id: "US Census 1820" },
     },
   },
   {
@@ -711,10 +875,10 @@ const RecordCollectionData = [
     title: "1830 United States Federal Census",
     country: "United States",
     dates: { year: 1830, exactDate: "1 Jun 1830" },
-    sites : {
-      fs: { id: "1803958"},
+    sites: {
+      fs: { id: "1803958" },
       ancestry: { id: "8058" },
-      fmp: { id: "US Census 1830"},
+      fmp: { id: "US Census 1830" },
     },
   },
   {
@@ -722,10 +886,10 @@ const RecordCollectionData = [
     title: "1840 United States Federal Census",
     country: "United States",
     dates: { year: 1840, exactDate: "1 Jun 1840" },
-    sites : {
-      fs: { id: "1786457"},
+    sites: {
+      fs: { id: "1786457" },
       ancestry: { id: "8057" },
-      fmp: { id: "US Census 1840"},
+      fmp: { id: "US Census 1840" },
     },
   },
   {
@@ -734,10 +898,10 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1850, exactDate: "1 Jun 1850" },
     householdTableColumns: householdTableColumnsUsFederal1850,
-    sites : {
-      fs: { id: "1401638"},
+    sites: {
+      fs: { id: "1401638" },
       ancestry: { id: "8054" },
-      fmp: { id: "US Census 1850"},
+      fmp: { id: "US Census 1850" },
     },
   },
   {
@@ -746,10 +910,10 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1860, exactDate: "1 Jun 1860" },
     householdTableColumns: householdTableColumnsUsFederal1850,
-    sites : {
-      fs: { id: "1473181"},
+    sites: {
+      fs: { id: "1473181" },
       ancestry: { id: "7667" },
-      fmp: { id: "US Census 1860"},
+      fmp: { id: "US Census 1860" },
     },
   },
   {
@@ -758,10 +922,10 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1870, exactDate: "1 Jun 1870" },
     householdTableColumns: householdTableColumnsUsFederal1850,
-    sites : {
-      fs: { id: "1438024"},
+    sites: {
+      fs: { id: "1438024" },
       ancestry: { id: "7163" },
-      fmp: { id: "US Census 1870"},
+      fmp: { id: "US Census 1870" },
     },
   },
   {
@@ -770,10 +934,10 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1880, exactDate: "1 Jun 1880" },
     householdTableColumns: householdTableColumnsUsFederalPost1880,
-    sites : {
-      fs: { id: "1417683"},
+    sites: {
+      fs: { id: "1417683" },
       ancestry: { id: "6742" },
-      fmp: { id: "US Census 1880"},
+      fmp: { id: "US Census 1880" },
     },
   },
   {
@@ -782,10 +946,13 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1890, exactDate: "2 Jun 1890" },
     householdTableColumns: householdTableColumnsUsFederalPost1880,
-    sites : {
-      fs: { id: "1610551"},
-      ancestry: { id: "5445", title: "1890 United States Federal Census Fragment", },
-      fmp: { id: "US Census 1890"},
+    sites: {
+      fs: { id: "1610551" },
+      ancestry: {
+        id: "5445",
+        title: "1890 United States Federal Census Fragment",
+      },
+      fmp: { id: "US Census 1890" },
     },
   },
   {
@@ -794,10 +961,10 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1900, exactDate: "1 Jun 1900" },
     householdTableColumns: householdTableColumnsUsFederalPost1880,
-    sites : {
-      fs: { id: "1325221"},
+    sites: {
+      fs: { id: "1325221" },
       ancestry: { id: "7602" },
-      fmp: { id: "US Census 1900"},
+      fmp: { id: "US Census 1900" },
     },
   },
   {
@@ -806,10 +973,10 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1910, exactDate: "15 Apr 1910" },
     householdTableColumns: householdTableColumnsUsFederalPost1880,
-    sites : {
-      fs: { id: "1727033"},
+    sites: {
+      fs: { id: "1727033" },
       ancestry: { id: "7884" },
-      fmp: { id: "US Census 1910"},
+      fmp: { id: "US Census 1910" },
     },
   },
   {
@@ -818,10 +985,10 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1920, exactDate: "1 Jan 1920" },
     householdTableColumns: householdTableColumnsUsFederalPost1880,
-    sites : {
-      fs: { id: "1488411"},
+    sites: {
+      fs: { id: "1488411" },
       ancestry: { id: "6061" },
-      fmp: { id: "US Census 1920"},
+      fmp: { id: "US Census 1920" },
     },
   },
   {
@@ -830,10 +997,10 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1930, exactDate: "2 Apr 1930" },
     householdTableColumns: householdTableColumnsUsFederalPost1880,
-    sites : {
-      fs: { id: "1810731"},
+    sites: {
+      fs: { id: "1810731" },
       ancestry: { id: "6224" },
-      fmp: { id: "US Census 1930"},
+      fmp: { id: "US Census 1930" },
     },
   },
   {
@@ -842,10 +1009,10 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1940, exactDate: "1 Apr 1940" },
     householdTableColumns: householdTableColumnsUsFederalPost1880,
-    sites : {
-      fs: { id: "2000219"},
+    sites: {
+      fs: { id: "2000219" },
       ancestry: { id: "2442" },
-      fmp: { id: "US Census 1940"},
+      fmp: { id: "US Census 1940" },
     },
   },
   {
@@ -854,9 +1021,9 @@ const RecordCollectionData = [
     country: "United States",
     dates: { year: 1950, exactDate: "1 Apr 1950" },
     householdTableColumns: householdTableColumnsUsFederalPost1880,
-    sites : {
+    sites: {
       ancestry: { id: "62308" },
-      fs: { id: "4464515"},
+      fs: { id: "4464515" },
       // fmp: { id: "US Census 1950"}, // Not yet transcribed on FMP (as of 31 Aug 2022)
     },
   },
@@ -871,10 +1038,10 @@ const RecordCollectionData = [
     title: "1851 Census of Canada",
     country: "Canada",
     dates: { year: 1851 },
-    sites : {
-      fs: { id: "1325192"},
+    sites: {
+      fs: { id: "1325192" },
       ancestry: { id: "1061", aldId: "1851Canada" },
-      fmp: { id: "Canada Census 1851"},
+      fmp: { id: "Canada Census 1851" },
     },
   },
   {
@@ -882,10 +1049,10 @@ const RecordCollectionData = [
     title: "1861 Census of Canada",
     country: "Canada",
     dates: { year: 1861 },
-    sites : {
+    sites: {
       // fs: { id: "2143998"}, (seems to be per state)
       ancestry: { id: "1570" },
-      fmp: { id: "Canada Census 1861"},
+      fmp: { id: "Canada Census 1861" },
     },
   },
   {
@@ -893,10 +1060,10 @@ const RecordCollectionData = [
     title: "1871 Census of Canada",
     country: "Canada",
     dates: { year: 1871 },
-    sites : {
-      fs: { id: "1551612"},
+    sites: {
+      fs: { id: "1551612" },
       ancestry: { id: "1578" },
-      fmp: { id: "Canada Census 1871"},
+      fmp: { id: "Canada Census 1871" },
     },
   },
   {
@@ -904,10 +1071,10 @@ const RecordCollectionData = [
     title: "1881 Census of Canada",
     country: "Canada",
     dates: { year: 1881 },
-    sites : {
-      fs: { id: "1804541"},
+    sites: {
+      fs: { id: "1804541" },
       ancestry: { id: "1577", altId: "1881Canada" },
-      fmp: { id: "Canada Census 1881"},
+      fmp: { id: "Canada Census 1881" },
     },
   },
   {
@@ -915,10 +1082,10 @@ const RecordCollectionData = [
     title: "1891 Census of Canada",
     country: "Canada",
     dates: { year: 1891 },
-    sites : {
-      fs: { id: "1583536"},
+    sites: {
+      fs: { id: "1583536" },
       ancestry: { id: "1274" },
-      fmp: { id: "Canada Census 1891"},
+      fmp: { id: "Canada Census 1891" },
     },
   },
   {
@@ -926,13 +1093,22 @@ const RecordCollectionData = [
     title: "1901 Census of Canada",
     country: "Canada",
     dates: { year: 1901 },
-    householdTableColumns: [ "name", "gender", "age", "relationship", "maritalStatus", "birthDate", "birthPlace", "occupation"],
-    sites : {
-      fs: { id: "1584557"},
+    householdTableColumns: [
+      "name",
+      "gender",
+      "age",
+      "relationship",
+      "maritalStatus",
+      "birthDate",
+      "birthPlace",
+      "occupation",
+    ],
+    sites: {
+      fs: { id: "1584557" },
       ancestry: { id: "8826" },
       fmp: {
         id: "Canada Census 1901",
-        searchQueryFields: { maritalstatus: "maritalstatus", },
+        searchQueryFields: { maritalstatus: "maritalstatus" },
       },
     },
   },
@@ -941,11 +1117,20 @@ const RecordCollectionData = [
     title: "1911 Census of Canada",
     country: "Canada",
     dates: { year: 1911 },
-    householdTableColumns: [ "name", "gender", "age", "relationship", "maritalStatus", "birthDate", "birthPlace", "occupation"],
-    sites : {
-      fs: { id: "2143998"},
+    householdTableColumns: [
+      "name",
+      "gender",
+      "age",
+      "relationship",
+      "maritalStatus",
+      "birthDate",
+      "birthPlace",
+      "occupation",
+    ],
+    sites: {
+      fs: { id: "2143998" },
       ancestry: { id: "8947" },
-      fmp: { id: "Canada Census 1911"},
+      fmp: { id: "Canada Census 1911" },
     },
   },
   {
@@ -953,36 +1138,52 @@ const RecordCollectionData = [
     title: "1921 Census of Canada",
     country: "Canada",
     dates: { year: 1921 },
-    householdTableColumns: [ "name", "gender", "age", "relationship", "maritalStatus", "birthPlace", "occupation"],
-    sites : {
+    householdTableColumns: [
+      "name",
+      "gender",
+      "age",
+      "relationship",
+      "maritalStatus",
+      "birthPlace",
+      "occupation",
+    ],
+    sites: {
       ancestry: { id: "8991" },
     },
   },
 ];
 
 const RC = {
-  findCollection: function(siteName, collectionId) {
+  findCollection: function (siteName, collectionId) {
     for (let collection of RecordCollectionData) {
-      if (collection.sites && collection.sites[siteName] && collection.sites[siteName].id == collectionId) {
+      if (
+        collection.sites &&
+        collection.sites[siteName] &&
+        collection.sites[siteName].id == collectionId
+      ) {
         return collection;
       }
     }
   },
-  findCollectionByAltId: function(siteName, altCollectionId) {
+  findCollectionByAltId: function (siteName, altCollectionId) {
     for (let collection of RecordCollectionData) {
-      if (collection.sites && collection.sites[siteName] && collection.sites[siteName].altId == altCollectionId) {
+      if (
+        collection.sites &&
+        collection.sites[siteName] &&
+        collection.sites[siteName].altId == altCollectionId
+      ) {
         return collection;
       }
     }
   },
-  findCollectionByWtsId: function(collectionId) {
+  findCollectionByWtsId: function (collectionId) {
     for (let collection of RecordCollectionData) {
       if (collection.wtsId == collectionId) {
         return collection;
       }
     }
   },
-  getCollectionsThatThisCollectionIsPartOf: function(collection) {
+  getCollectionsThatThisCollectionIsPartOf: function (collection) {
     let result = [];
     if (collection.partOf) {
       for (let owningCollectionWtsId of collection.partOf) {
@@ -990,19 +1191,23 @@ const RC = {
         if (owningCollection) {
           result.push(owningCollection);
 
-          let parentCollections = RC.getCollectionsThatThisCollectionIsPartOf(owningCollection);
+          let parentCollections =
+            RC.getCollectionsThatThisCollectionIsPartOf(owningCollection);
           for (let parentCollection of parentCollections) {
             result.push(parentCollection);
           }
-        }
-        else {
-          console.log("Error: owningCollectionWtsId of '" + owningCollectionWtsId + "' was not found")
+        } else {
+          console.log(
+            "Error: owningCollectionWtsId of '" +
+              owningCollectionWtsId +
+              "' was not found"
+          );
         }
       }
     }
     return result;
   },
-  getCollectionsThatArePartOfThisCollection: function(collection) {
+  getCollectionsThatArePartOfThisCollection: function (collection) {
     let result = [];
 
     function doesCollectionOwnCollection(parentCollection, childCollection) {
@@ -1012,7 +1217,9 @@ const RC = {
           if (owningCollectionWtsId == parentWtsId) {
             return true;
           }
-          let owningCollection = RC.findCollectionByWtsId(owningCollectionWtsId);
+          let owningCollection = RC.findCollectionByWtsId(
+            owningCollectionWtsId
+          );
           if (doesCollectionOwnCollection(parentCollection, owningCollection)) {
             return true;
           }
@@ -1028,42 +1235,64 @@ const RC = {
     }
     return result;
   },
-  mapCollectionId: function(sourceSiteName, sourceCollectionId, targetSiteName, sourceCountry, eventYearString) {
+  mapCollectionId: function (
+    sourceSiteName,
+    sourceCollectionId,
+    targetSiteName,
+    sourceCountry,
+    eventYearString
+  ) {
     let eventYear = parseInt(eventYearString);
     if (isNaN(eventYear)) {
-      eventYear = undefined;;
+      eventYear = undefined;
     }
 
-    let sourceCollection = RC.findCollection(sourceSiteName, sourceCollectionId);
-    let targetCollectionId = RC.getSiteIdFromCollection(sourceCollection, targetSiteName);
+    let sourceCollection = RC.findCollection(
+      sourceSiteName,
+      sourceCollectionId
+    );
+    let targetCollectionId = RC.getSiteIdFromCollection(
+      sourceCollection,
+      targetSiteName
+    );
     if (!targetCollectionId && sourceCollection) {
       // sometimes collections don't map exactly, the source collection could be part of a collection
-      let owningCollections = RC.getCollectionsThatThisCollectionIsPartOf(sourceCollection);
+      let owningCollections =
+        RC.getCollectionsThatThisCollectionIsPartOf(sourceCollection);
       for (let owningCollection of owningCollections) {
-        let owningTargetCollectionId = RC.getSiteIdFromCollection(owningCollection, targetSiteName);
+        let owningTargetCollectionId = RC.getSiteIdFromCollection(
+          owningCollection,
+          targetSiteName
+        );
         if (owningTargetCollectionId) {
           return owningTargetCollectionId;
         }
       }
       // or other collections could be part of the source collection
       let bestMatchCollection = undefined;
-      let ownedCollections = RC.getCollectionsThatArePartOfThisCollection(sourceCollection);
+      let ownedCollections =
+        RC.getCollectionsThatArePartOfThisCollection(sourceCollection);
       for (let ownedCollection of ownedCollections) {
         // Note there could be several collections that are part of this collection
         // we should use country as a guide
-        let ownedTargetCollectionId = RC.getSiteIdFromCollection(ownedCollection, targetSiteName);
+        let ownedTargetCollectionId = RC.getSiteIdFromCollection(
+          ownedCollection,
+          targetSiteName
+        );
         if (ownedTargetCollectionId) {
           if (eventYear && ownedCollection.sites) {
             let siteCollection = ownedCollection.sites[targetSiteName];
-            let collDates = RC.getCollectionDates(ownedCollection, siteCollection);
+            let collDates = RC.getCollectionDates(
+              ownedCollection,
+              siteCollection
+            );
 
             let isYearInRange = false;
             if (collDates.from && collDates.to) {
               if (eventYear >= collDates.from && eventYear <= collDates.to) {
                 isYearInRange = true;
               }
-            }
-            else if (collDates.year && collDates.year == eventYear) {
+            } else if (collDates.year && collDates.year == eventYear) {
               isYearInRange = true;
             }
 
@@ -1071,23 +1300,19 @@ const RC = {
             if (sourceCountry) {
               if (ownedCollection.country == sourceCountry) {
                 isCountryOK = true;
-              }
-              else if (CD.isPartOf(sourceCountry, ownedCollection.country)) {
+              } else if (CD.isPartOf(sourceCountry, ownedCollection.country)) {
+                isCountryOK = true;
+              } else if (CD.isPartOf(ownedCollection.country, sourceCountry)) {
                 isCountryOK = true;
               }
-              else if (CD.isPartOf(ownedCollection.country, sourceCountry)) {
-                isCountryOK = true;
-              }
-            }
-            else {
+            } else {
               isCountryOK = true;
             }
 
             if (isYearInRange && isCountryOK) {
               return ownedTargetCollectionId;
             }
-          }
-          else if (ownedCollection.country == sourceCountry) {
+          } else if (ownedCollection.country == sourceCountry) {
             return ownedTargetCollectionId;
           }
 
@@ -1097,23 +1322,26 @@ const RC = {
         }
       }
       if (bestMatchCollection) {
-        let bestMatchCollectionId = RC.getSiteIdFromCollection(bestMatchCollection, targetSiteName);
+        let bestMatchCollectionId = RC.getSiteIdFromCollection(
+          bestMatchCollection,
+          targetSiteName
+        );
         targetCollectionId = bestMatchCollectionId;
       }
     }
     return targetCollectionId;
   },
-  getSiteIdFromCollection: function(collection, site) {
+  getSiteIdFromCollection: function (collection, site) {
     if (collection && collection.sites && collection.sites[site]) {
       return collection.sites[site].id;
     }
   },
-  getCountryFromCollection: function(collection) {
+  getCountryFromCollection: function (collection) {
     if (collection) {
       return collection.country;
     }
   },
-  getCollectionDates: function(collection, siteCollection) {
+  getCollectionDates: function (collection, siteCollection) {
     let collDates = siteCollection.dates;
     if (!collDates) {
       collDates = collection.dates;
@@ -1121,8 +1349,7 @@ const RC = {
         //console.log("return false, no dates");
         return false;
       }
-    }
-    else if (collection.dates) {
+    } else if (collection.dates) {
       // there is a dates field in both this sites collection data and in the whole collection
       // we should combine them using the site one as priority
       for (const [key, value] of Object.entries(collection.dates)) {
@@ -1134,7 +1361,11 @@ const RC = {
 
     return collDates;
   },
-  areSourceDatesInCollectionRange: function(sourceDates, collection, siteCollection) {
+  areSourceDatesInCollectionRange: function (
+    sourceDates,
+    collection,
+    siteCollection
+  ) {
     let lifeSpan = 120;
     if (sourceDates.maxLifespan) {
       lifeSpan = sourceDates.maxLifespan;
@@ -1157,8 +1388,7 @@ const RC = {
     if (!minSourceYear) {
       if (deathYear) {
         minSourceYear = deathYear - lifeSpan;
-      }
-      else {
+      } else {
         minSourceYear = eventYear - lifeSpan;
       }
     }
@@ -1167,8 +1397,7 @@ const RC = {
     if (!maxSourceYear) {
       if (birthYear) {
         maxSourceYear = birthYear + lifeSpan;
-      }
-      else {
+      } else {
         maxSourceYear = eventYear + lifeSpan;
       }
     }
@@ -1177,7 +1406,7 @@ const RC = {
       // must have from and to years
       let fromYear = collDates.from;
       let toYear = collDates.to;
-      let isInRange = (birthYear+1 >= fromYear && birthYear <= toYear);
+      let isInRange = birthYear + 1 >= fromYear && birthYear <= toYear;
       //console.log("return (a) : " + isInRange);
       return isInRange;
     }
@@ -1186,29 +1415,29 @@ const RC = {
       // must have from and to years
       let fromYear = collDates.from;
       let toYear = collDates.to;
-      let isInRange = (deathYear+1 >= fromYear && deathYear <= toYear);
+      let isInRange = deathYear + 1 >= fromYear && deathYear <= toYear;
       //console.log("return (b) : " + isInRange);
       return isInRange;
     }
 
     if (collDates.year) {
       let collYear = collDates.year;
-      let isInRange = (collYear+2 >= minSourceYear) && (collYear-2 <= maxSourceYear);
+      let isInRange =
+        collYear + 2 >= minSourceYear && collYear - 2 <= maxSourceYear;
       //console.log("return (c) : " + isInRange);
       return isInRange;
-    }
-    else {
+    } else {
       // must have from and to years
       let fromYear = collDates.from;
       let toYear = collDates.to;
-      let isInRange = (maxSourceYear >= fromYear) && (minSourceYear <= toYear);
+      let isInRange = maxSourceYear >= fromYear && minSourceYear <= toYear;
       //console.log("return (d) : " + isInRange);
       return isInRange;
     }
 
     return false;
   },
-  areAnyCountriesInCollectionRange: function(countryArray, collection) {
+  areAnyCountriesInCollectionRange: function (countryArray, collection) {
     if (!countryArray) {
       //console.log("areAnyCountriesInCollectionRange, no countries")
       return false;
@@ -1221,7 +1450,11 @@ const RC = {
     let collCountry = collection.country;
 
     for (let country of countryArray) {
-      if (country == collCountry || CD.isPartOf(country, collCountry) || CD.isPartOf(collCountry, country)) {
+      if (
+        country == collCountry ||
+        CD.isPartOf(country, collCountry) ||
+        CD.isPartOf(collCountry, country)
+      ) {
         //console.log("return true, country = " + country);
         return true;
       }
@@ -1230,14 +1463,28 @@ const RC = {
     //console.log("return false");
     return false;
   },
-  findCollectionsForSiteWithinDateRangeAndCountries: function(siteName, dates, countryArray) {
+  findCollectionsForSiteWithinDateRangeAndCountries: function (
+    siteName,
+    dates,
+    countryArray
+  ) {
     let collectionArray = [];
     for (let collection of RecordCollectionData) {
       if (collection.sites) {
         let siteCollection = collection.sites[siteName];
         if (siteCollection) {
-          if (RC.areSourceDatesInCollectionRange(dates, collection, siteCollection)) {
-            if (!countryArray || countryArray.length == 0 || RC.areAnyCountriesInCollectionRange(countryArray, collection)) {
+          if (
+            RC.areSourceDatesInCollectionRange(
+              dates,
+              collection,
+              siteCollection
+            )
+          ) {
+            if (
+              !countryArray ||
+              countryArray.length == 0 ||
+              RC.areAnyCountriesInCollectionRange(countryArray, collection)
+            ) {
               collectionArray.push(collection);
             }
           }
@@ -1246,7 +1493,7 @@ const RC = {
     }
     return collectionArray;
   },
-  getFieldFromCollectionOrOwningCollections: function(collection, fieldName) {
+  getFieldFromCollectionOrOwningCollections: function (collection, fieldName) {
     if (collection[fieldName] != undefined) {
       return collection[fieldName];
     }
@@ -1254,7 +1501,10 @@ const RC = {
     if (collection.partOf && collection.partOf.length > 0) {
       for (let owningCollectionWtsId of collection.partOf) {
         let owningCollection = RC.findCollectionByWtsId(owningCollectionWtsId);
-        let fieldValue = RC.getFieldFromCollectionOrOwningCollections(owningCollection, fieldName);
+        let fieldValue = RC.getFieldFromCollectionOrOwningCollections(
+          owningCollection,
+          fieldName
+        );
         if (fieldValue != undefined) {
           return fieldValue;
         }
@@ -1263,7 +1513,6 @@ const RC = {
 
     return undefined;
   },
-
-}
+};
 
 export { RC };

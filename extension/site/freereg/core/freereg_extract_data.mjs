@@ -33,7 +33,6 @@ function cleanText(inputText) {
 }
 
 function getRecordDataValueForKeys(result, keys) {
-
   for (let key of keys) {
     let value = result.recordData[key];
     if (value) {
@@ -43,23 +42,19 @@ function getRecordDataValueForKeys(result, keys) {
 }
 
 function buildFullName(result, forenameKeys, surnameKeys) {
-
   let forename = getRecordDataValueForKeys(result, forenameKeys);
   let surname = getRecordDataValueForKeys(result, surnameKeys);
 
   if (forename && surname) {
     return forename + " " + surname;
-  }
-  else if (surname) {
+  } else if (surname) {
     return surname;
-  }
-  else if (forename) {
+  } else if (forename) {
     return forename;
   }
 }
 
 function convertTableToObjectProperties(tableNode, tableObject) {
-
   let headerNodes = tableNode.querySelectorAll("thead > tr > th");
 
   // Not sure if this ever happens - it does on FreeCen
@@ -97,14 +92,14 @@ function convertTableToObjectProperties(tableNode, tableObject) {
 }
 
 function extractData(document, url) {
-
-  var result = {
-  };
+  var result = {};
   result.url = url;
 
   result.success = false;
 
-  const tables = document.querySelectorAll("main.site__content table.table--bordered");
+  const tables = document.querySelectorAll(
+    "main.site__content table.table--bordered"
+  );
 
   if (tables.length != 1) {
     return result;
@@ -130,14 +125,24 @@ function extractData(document, url) {
   // build a simple object from table
   let tableObject = {};
   if (!convertTableToObjectProperties(tableNode, tableObject)) {
-    console.log("freereg: extractData: convertTableToObjectProperties on tableNode failed");
+    console.log(
+      "freereg: extractData: convertTableToObjectProperties on tableNode failed"
+    );
     return result;
   }
   result.recordData = tableObject;
 
   if (result.recordType == "marriage") {
-    let groomName = buildFullName(result, ["Groom forename"], ["Groom surname"]);
-    let brideName = buildFullName(result, ["Bride forename"], ["Bride surname"]);
+    let groomName = buildFullName(
+      result,
+      ["Groom forename"],
+      ["Groom surname"]
+    );
+    let brideName = buildFullName(
+      result,
+      ["Bride forename"],
+      ["Bride surname"]
+    );
 
     if (groomName && brideName) {
       result.ambiguousPerson = true;

@@ -25,41 +25,40 @@ SOFTWARE.
 import { countyMap } from "../../freecen/core/freecen_chapman_codes.mjs";
 
 const categories = [
-  { value: "baptism", text: "Baptisms", },
-  { value: "marriage", text: "Marriages", },
-  { value: "burial", text: "Burials", },
-  { value: "all", text: "All Types", },
+  { value: "baptism", text: "Baptisms" },
+  { value: "marriage", text: "Marriages" },
+  { value: "burial", text: "Burials" },
+  { value: "all", text: "All Types" },
 ];
 
 const collections = [];
 
 const FreeregData = {
-
-  includeCategories : function(generalizedData, parameters) {
+  includeCategories: function (generalizedData, parameters) {
     return true;
   },
 
-  includeSubcategories : function(generalizedData, parameters) {
+  includeSubcategories: function (generalizedData, parameters) {
     return true;
   },
 
-  includeCollections : function(generalizedData, parameters) {
+  includeCollections: function (generalizedData, parameters) {
     return false;
   },
 
-  includeSpouses : function(generalizedData, parameters) {
+  includeSpouses: function (generalizedData, parameters) {
     return false;
   },
 
-  includeParents : function(generalizedData, parameters) {
+  includeParents: function (generalizedData, parameters) {
     return false;
   },
 
-  getCategories : function(generalizedData, parameters, options) {
+  getCategories: function (generalizedData, parameters, options) {
     return categories;
   },
 
-  getSubcategories : function(generalizedData, parameters, options) {
+  getSubcategories: function (generalizedData, parameters, options) {
     // this gets the counties
     let counties = [];
     counties.push({ value: "allCounties", text: "All counties" });
@@ -74,31 +73,39 @@ const FreeregData = {
     return counties;
   },
 
-  getCollections : function(generalizedData, parameters, options) {
+  getCollections: function (generalizedData, parameters, options) {
     return collections;
   },
 
-  setDefaultSearchParameters: function(generalizedData, parameters, options) {
+  setDefaultSearchParameters: function (generalizedData, parameters, options) {
     parameters.subcategory = "allCounties";
   },
 
-  getCategorySelectorLabel: function(gd, parameters) {
+  getCategorySelectorLabel: function (gd, parameters) {
     return "Choose type of search: ";
   },
 
-  getSubcategorySelectorLabel: function(gd, parameters) {
+  getSubcategorySelectorLabel: function (gd, parameters) {
     return "Choose county to search: ";
   },
 
-  updateParametersOnCategoryChange: function(generalizedData, parameters, options) {
-  },
+  updateParametersOnCategoryChange: function (
+    generalizedData,
+    parameters,
+    options
+  ) {},
 
-  updateParametersOnSubcategoryChange: function(generalizedData, parameters, options) {
-  },
+  updateParametersOnSubcategoryChange: function (
+    generalizedData,
+    parameters,
+    options
+  ) {},
 
-  updateParametersOnCollectionChange: function(generalizedData, parameters, options) {
-  },
-
-}
+  updateParametersOnCollectionChange: function (
+    generalizedData,
+    parameters,
+    options
+  ) {},
+};
 
 export { FreeregData };

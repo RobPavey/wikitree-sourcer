@@ -22,8 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon) {
-
+function handleContentLoadedMessage(
+  request,
+  sender,
+  sendResponse,
+  setPopup,
+  setIcon
+) {
   //console.log("WikiTree Sourcer, background script, received contentLoaded message");
 
   //console.log("WikiTree Sourcer, background script, sender.tab.id is: " + sender.tab.id + ", siteName is: " + request.siteName);
@@ -36,23 +41,22 @@ function handleContentLoadedMessage(request, sender, sendResponse, setPopup, set
 
   if (request.prefersDark) {
     setIcon(tab, {
-      '16': "/images/wts_active_dark_16.png",
-      '32': "/images/wts_active_dark_32.png",
-      '48': "/images/wts_active_dark_48.png",
+      16: "/images/wts_active_dark_16.png",
+      32: "/images/wts_active_dark_32.png",
+      48: "/images/wts_active_dark_48.png",
     });
-  }
-  else {
+  } else {
     setIcon(tab, {
-      '16': "/images/wts_active_light_16.png",
-      '32': "/images/wts_active_light_32.png",
-      '48': "/images/wts_active_light_48.png",
+      16: "/images/wts_active_light_16.png",
+      32: "/images/wts_active_light_32.png",
+      48: "/images/wts_active_light_48.png",
     });
   }
 
   //chrome.action.setBadgeText({ tabId: tab, text: "WT"});
   //chrome.action.setBadgeBackgroundColor({ tabId: tab, color: "#8FC642"});
 
-  let response = { success: true, popupName: popupName, tab: tab};
+  let response = { success: true, popupName: popupName, tab: tab };
   //console.log("WikiTree Sourcer, background script, sending response to contentLoaded message:");
   //console.log(response);
   sendResponse(response);

@@ -36,7 +36,10 @@ function openAncestryLink(link, options) {
     }
     //console.log("openAncestryLink, realLinkIndex is: " + realLinkIndex);
     if (realLinkIndex != -1) {
-      let domainEndIndex = link.indexOf("/", realLinkIndex + linkStartText.length);
+      let domainEndIndex = link.indexOf(
+        "/",
+        realLinkIndex + linkStartText.length
+      );
       if (domainEndIndex != -1) {
         let linkStart = link.substring(realLinkIndex, domainEndIndex);
         // linkStart = https://search.ancestry.com for example
@@ -55,18 +58,19 @@ function openAncestryLink(link, options) {
               //console.log("openAncestryLink, new link is: " + newLink);
             }
           }
-
         }
       }
     }
-  }
-  else {
+  } else {
     // could of form:
     // https://www.ancestry.co.uk/discoveryui-content/view/19270862:1623?tid=&pid=&queryId=126e8ebdb5f54d54f60534d57389787f&_phsrc=Vww4&_phstart=successSource
     // or:
     // https://search.ancestry.co.uk/cgi-bin/sse.dll?db=uki1861&indiv=try&h=19053031
 
-    let domain = link.replace(/^https?\:\/\/[^\.]+\.(ancestry[^\/]+)\/.*/, "$1");
+    let domain = link.replace(
+      /^https?\:\/\/[^\.]+\.(ancestry[^\/]+)\/.*/,
+      "$1"
+    );
     //console.log("openAncestryLink, domain is: " + domain);
     if (domain && domain != link) {
       let desiredDomain = options.search_ancestry_domain;
@@ -86,7 +90,10 @@ function openAncestryLink(link, options) {
 }
 
 function openFmpLink(link, options) {
-  let domain = link.replace(/^https?\:\/\/[^\.]+\.(findmypast[^\/]+)\/.*/, "$1");
+  let domain = link.replace(
+    /^https?\:\/\/[^\.]+\.(findmypast[^\/]+)\/.*/,
+    "$1"
+  );
   //console.log("openFmpLink, domain is: " + domain);
   if (domain && domain != link) {
     let desiredDomain = options.search_fmp_domain;
@@ -120,22 +127,16 @@ function openLink(info) {
   let link = info.linkUrl;
   if (link) {
     //console.log("openLink, orig link is: " + link);
-  
+
     if (link.includes("ancestry")) {
-      callFunctionWithStoredOptions(
-        function(options) {
-          openAncestryLink(link, options);
-        }
-      );
-    }
-    else if (link.includes("findmypast")) {
-      callFunctionWithStoredOptions(
-        function(options) {
-          openFmpLink(link, options);
-        }
-      );
-    }
-    else {
+      callFunctionWithStoredOptions(function (options) {
+        openAncestryLink(link, options);
+      });
+    } else if (link.includes("findmypast")) {
+      callFunctionWithStoredOptions(function (options) {
+        openFmpLink(link, options);
+      });
+    } else {
       // open unchanged link
       chrome.tabs.create({ url: link });
     }
@@ -153,30 +154,54 @@ function openAncestryTemplate(text, options) {
   let link = "";
 
   if (text.includes("Ancestry Record")) {
-    // {{Ancestry Record|1989|219120}} 
-    let dbId = text.replace(/\{\{Ancestry Record\|([^|]+)\|[^}]+[^|}]*\}\}/, "$1");
-    let recordId = text.replace(/\{\{Ancestry Record\|[^|]+\|([^|}]+)[^}]*\}\}/, "$1");
+    // {{Ancestry Record|1989|219120}}
+    let dbId = text.replace(
+      /\{\{Ancestry Record\|([^|]+)\|[^}]+[^|}]*\}\}/,
+      "$1"
+    );
+    let recordId = text.replace(
+      /\{\{Ancestry Record\|[^|]+\|([^|}]+)[^}]*\}\}/,
+      "$1"
+    );
     if (dbId && dbId != text && recordId && recordId != text) {
       // https://www.ancestry.com/discoveryui-content/view/219120:1989
-      link = "https://www." + desiredDomain + "/discoveryui-content/view/" + recordId + ":" + dbId;
+      link =
+        "https://www." +
+        desiredDomain +
+        "/discoveryui-content/view/" +
+        recordId +
+        ":" +
+        dbId;
     }
-  }
-  else if (text.includes("Ancestry Image")) {
+  } else if (text.includes("Ancestry Image")) {
     // {{Ancestry Image|1234|5678}}
-    let num1 = text.replace(/\{\{Ancestry Image\|([^|]+)\|[^|}]+[^}]*\}\}/, "$1");
-    let num2 = text.replace(/\{\{Ancestry Image\|[^|]+\|([^|}]+)[^}]*\}\}/, "$1");
+    let num1 = text.replace(
+      /\{\{Ancestry Image\|([^|]+)\|[^|}]+[^}]*\}\}/,
+      "$1"
+    );
+    let num2 = text.replace(
+      /\{\{Ancestry Image\|[^|]+\|([^|}]+)[^}]*\}\}/,
+      "$1"
+    );
     if (num1 && num1 != text && num2 && num2 != text) {
       // https://www.ancestry.com/interactive/1234/5678
-      link = "https://www." + desiredDomain + "/interactive/" + num1 + "/" + num2;
+      link =
+        "https://www." + desiredDomain + "/interactive/" + num1 + "/" + num2;
     }
-  }
-  else if (text.includes("Ancestry Sharing")) {
+  } else if (text.includes("Ancestry Sharing")) {
     // {{Ancestry Sharing|26032935|f25069}}
-    let num1 = text.replace(/\{\{Ancestry Sharing\|([^|]+)\|[^}|]+[^}]*\}\}/, "$1");
-    let num2 = text.replace(/\{\{Ancestry Sharing\|[^|]+\|([^}|]+)[^}]*\}\}/, "$1");
+    let num1 = text.replace(
+      /\{\{Ancestry Sharing\|([^|]+)\|[^}|]+[^}]*\}\}/,
+      "$1"
+    );
+    let num2 = text.replace(
+      /\{\{Ancestry Sharing\|[^|]+\|([^}|]+)[^}]*\}\}/,
+      "$1"
+    );
     if (num1 && num1 != text && num2 && num2 != text) {
       // https://www.ancestry.com/sharing/26032935?h=f25069
-      link = "https://www." + desiredDomain + "/sharing//" + num1 + "?h=" + num2;
+      link =
+        "https://www." + desiredDomain + "/sharing//" + num1 + "?h=" + num2;
     }
   }
 
@@ -197,8 +222,7 @@ function openFamilySearchTemplate(text) {
       // https://www.familysearch.org/ark:/61903/1:1:XHLN-69H
       link = "https://www.familysearch.org/ark:/61903/1:1:" + id;
     }
-  }
-  else if (text.includes("FamilySearch Image")) {
+  } else if (text.includes("FamilySearch Image")) {
     // {{FamilySearch Image|33S7-9BSH-9W9B}}
     let id = text.replace(/\{\{FamilySearch Image\|([^}|]+)[^}]*\}\}/, "$1");
     if (id && id != text) {
@@ -242,24 +266,19 @@ function openTemplate(info) {
   let templateEndIndex = text.indexOf("}}", templateStartIndex);
   if (templateEndIndex == -1) return;
 
-  text = text.substring(templateStartIndex, templateEndIndex+2);
+  text = text.substring(templateStartIndex, templateEndIndex + 2);
 
   //console.log("openTemplate, template is: " + text);
 
   if (text.includes("Ancestry")) {
-    callFunctionWithStoredOptions(
-      function(options) {
-        openAncestryTemplate(text, options);
-      }
-    );
-  }
-  else if (text.includes("FamilySearch")) {
+    callFunctionWithStoredOptions(function (options) {
+      openAncestryTemplate(text, options);
+    });
+  } else if (text.includes("FamilySearch")) {
     openFamilySearchTemplate(text);
-  }
-  else if (text.includes("FindAGrave")) {
+  } else if (text.includes("FindAGrave")) {
     openFindAGraveTemplate(text);
-  }
-  else {
+  } else {
     // open unchanged link
     chrome.tabs.create({ url: text });
   }
@@ -285,7 +304,6 @@ function openSelectionText(info) {
 
     chrome.tabs.create({ url: link });
   }
-
 }
 
 function contextClick(info, tab) {
@@ -298,12 +316,10 @@ function contextClick(info, tab) {
   if (info.menuItemId == "openLink") {
     if (info.linkUrl) {
       openLink(info);
-    }
-    else if (info.selectionText) {
+    } else if (info.selectionText) {
       openSelectionText(info);
     }
   }
-
 }
 
 function setupContextMenu() {
@@ -315,8 +331,8 @@ function setupContextMenu() {
 
   chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({
-      title: title, 
-      contexts:["link", "selection"], 
+      title: title,
+      contexts: ["link", "selection"],
       id: "openLink",
     });
   });

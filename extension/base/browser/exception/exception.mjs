@@ -33,7 +33,7 @@ async function updatePage(request) {
 
   let reportElement = document.getElementById("requestReport");
   if (!requestReport) {
-    reportElement.style.display = 'none';
+    reportElement.style.display = "none";
   }
 
   let descriptionElement = document.getElementById("description");
@@ -60,13 +60,11 @@ async function updatePage(request) {
         if (inputDataElement) {
           inputDataElement.innerText = inputText;
         }
-      }
-      else {
-        inputDataDiv.style.display = 'none';
+      } else {
+        inputDataDiv.style.display = "none";
       }
     }
-  }
-  catch (e) {}
+  } catch (e) {}
 
   try {
     if (browser && browser.runtime.getBrowserInfo) {
@@ -78,8 +76,7 @@ async function updatePage(request) {
         browserInfoElement.innerText = message;
       }
     }
-  }
-  catch (e) {}
+  } catch (e) {}
 
   try {
     let manifest = chrome.runtime.getManifest();
@@ -87,15 +84,15 @@ async function updatePage(request) {
       let version = manifest.version;
       if (version) {
         let versionMessage = "The extension version is " + version;
-  
-        let extensionVersionElement = document.getElementById("extensionVersion");
+
+        let extensionVersionElement =
+          document.getElementById("extensionVersion");
         if (extensionVersionElement) {
           extensionVersionElement.innerText = versionMessage;
         }
       }
     }
-  }
-  catch (e) {}
+  } catch (e) {}
 
   try {
     let userAgentString = window.navigator.userAgent;
@@ -104,18 +101,16 @@ async function updatePage(request) {
       let message = "User Agent Info\n" + userAgentString;
       userAgentElement.innerText = message;
     }
-  }
-  catch (e) {}
+  } catch (e) {}
 }
 
-// Listen for messages 
+// Listen for messages
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-
   console.log("exception.js received a message. Request is:");
   console.log(request);
 
   if (request.type == "exception") {
-    sendResponse({success: true}); // do this to let the caller we received message
+    sendResponse({ success: true }); // do this to let the caller we received message
 
     updatePage(request);
   }

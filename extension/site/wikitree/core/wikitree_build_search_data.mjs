@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 function buildSearchData(input) {
-
   //console.log("buildSearchData, input is:");
   //console.log(input);
 
@@ -37,7 +36,7 @@ function buildSearchData(input) {
   }
 
   let fieldData = {
-    "utf8": true,
+    utf8: true,
     simpleIdFields: {},
     simpleNameFields: {},
     radioFields: [],
@@ -49,7 +48,10 @@ function buildSearchData(input) {
     fieldData.simpleIdFields["wpFirst"] = firstName;
   }
 
-  let lastName = data.inferLastNameGivenParametersAndCollection(parameters, undefined);
+  let lastName = data.inferLastNameGivenParametersAndCollection(
+    parameters,
+    undefined
+  );
   if (lastName) {
     fieldData.simpleIdFields["wpLast"] = lastName;
   }
@@ -67,8 +69,7 @@ function buildSearchData(input) {
   let birthPlace = "";
   if (parameters) {
     birthPlace = parameters.birthPlace;
-  }
-  else {
+  } else {
     birthPlace = data.inferBirthPlace();
   }
   if (birthPlace) {
@@ -78,8 +79,7 @@ function buildSearchData(input) {
   let deathPlace = "";
   if (parameters) {
     deathPlace = parameters.deathPlace;
-  }
-  else {
+  } else {
     deathPlace = data.inferDeathPlace();
   }
   if (deathPlace) {
@@ -119,10 +119,9 @@ function buildSearchData(input) {
   let sex = data.personGender;
   if (sex && sex != "-") {
     if (sex == "male") {
-      fieldData.radioFields.push({name: "gender", value: "Male"});
-    }
-    else if (sex == "female") {
-      fieldData.radioFields.push({name: "gender", value: "Female"});
+      fieldData.radioFields.push({ name: "gender", value: "Male" });
+    } else if (sex == "female") {
+      fieldData.radioFields.push({ name: "gender", value: "Female" });
     }
   }
 
@@ -131,30 +130,25 @@ function buildSearchData(input) {
     if (dateExactness == "auto") {
       if (data.sourceOfData == "wikitree") {
         dateExactness = "exactDate";
-      }
-      else {
+      } else {
         dateExactness = "2";
       }
     }
     let value = "";
     if (dateExactness == "exactDate") {
       value = "-1";
-    }
-    else if (dateExactness == "exactYear") {
+    } else if (dateExactness == "exactYear") {
       value = "0";
-    }
-    else if (dateExactness == "2") {
+    } else if (dateExactness == "2") {
       value = "2";
-    }
-    else if (dateExactness == "12") {
+    } else if (dateExactness == "12") {
       value = "12";
-    }
-    else if (dateExactness == "30") {
+    } else if (dateExactness == "30") {
       value = "30";
     }
 
     if (value) {
-      fieldData.radioFields.push({name: "date_spread", value: value});
+      fieldData.radioFields.push({ name: "date_spread", value: value });
     }
   }
 
@@ -167,8 +161,8 @@ function buildSearchData(input) {
   //console.log(fieldData);
 
   var result = {
-    'fieldData' : fieldData,
-  }
+    fieldData: fieldData,
+  };
 
   return result;
 }

@@ -50,7 +50,7 @@ const searchOptionsGroup = {
         { value: 10, text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
     {
       optionName: "deathYearExactness",
       type: "select",
@@ -65,7 +65,7 @@ const searchOptionsGroup = {
         { value: 10, text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
     {
       optionName: "marriageYearExactness",
       type: "select",
@@ -80,7 +80,7 @@ const searchOptionsGroup = {
         { value: 10, text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
     {
       optionName: "residenceYearExactness",
       type: "select",
@@ -95,9 +95,9 @@ const searchOptionsGroup = {
         { value: 10, text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
   ],
-}
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -111,45 +111,63 @@ const citationOptionsGroup = {
       label: "Build source reference",
       values: [
         { value: "record", text: "From record data" },
-        { value: "fsCitationShort", text: "Reuse & abbreviate reference from citation on FamilySearch page" },
-        { value: "fsCitationLong", text: "Reuse full reference from citation on FamilySearch page" },
+        {
+          value: "fsCitationShort",
+          text: "Reuse & abbreviate reference from citation on FamilySearch page",
+        },
+        {
+          value: "fsCitationLong",
+          text: "Reuse full reference from citation on FamilySearch page",
+        },
       ],
       defaultValue: "fsCitationShort",
-    },  
+    },
     {
       optionName: "dataStyle",
       type: "select",
       label: "Include record data at end of citation as",
       values: [
         { value: "none", text: "Do not include data" },
-        { value: "string", text: "Sentence (fall back to list if no sentence)" },
+        {
+          value: "string",
+          text: "Sentence (fall back to list if no sentence)",
+        },
         { value: "list", text: "List of field names/values" },
         { value: "table", text: "Table of field names/values" },
-        { value: "fsCitation", text: "Reuse parts of the citation on the FamilySearch page" },
+        {
+          value: "fsCitation",
+          text: "Reuse parts of the citation on the FamilySearch page",
+        },
       ],
       defaultValue: "string",
       unitTestValue: "fsCitation",
-    },  
+    },
     {
       optionName: "includeExternalImageLink",
       type: "checkbox",
       label: "Include a link to an external image if available",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "subscriptionRequired",
       type: "select",
       label: "Indicate that a subscription is required with FMP link",
       values: [
         { value: "none", text: "Do not add any such indication" },
-        { value: "subscriptionRequired", text: "Include the text \"subscription required\"" },
-        { value: "requiresSubscription", text: "Include the text \"requires subscription\"" },
-        { value: "dollar", text: "Include the text \"$\"" },
-        { value: "paywall", text: "Include the text \"paywall\"" },
+        {
+          value: "subscriptionRequired",
+          text: 'Include the text "subscription required"',
+        },
+        {
+          value: "requiresSubscription",
+          text: 'Include the text "requires subscription"',
+        },
+        { value: "dollar", text: 'Include the text "$"' },
+        { value: "paywall", text: 'Include the text "paywall"' },
       ],
       defaultValue: "none",
-      unitTestValue: "subscriptionRequired"
-    },  
+      unitTestValue: "subscriptionRequired",
+    },
   ],
 };
 

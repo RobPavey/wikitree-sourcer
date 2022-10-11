@@ -25,7 +25,7 @@ SOFTWARE.
 import {
   registerSubsectionForOptions,
   registerSubheadingForOptions,
-  registerOptionsGroup
+  registerOptionsGroup,
 } from "./options_registry.mjs";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,23 +47,26 @@ const searchOptionsGroup = {
     {
       optionName: "popup_showSameSite",
       type: "checkbox",
-      label: "On the popup show a search menu item for the site that you are currently on",
+      label:
+        "On the popup show a search menu item for the site that you are currently on",
       defaultValue: true,
     },
     {
       optionName: "popup_maxSearchItemsInTopMenu",
       type: "number",
-      label: "Maximum number of search menu items to show on top-level popup (0 means just show search submenu)",
+      label:
+        "Maximum number of search menu items to show on top-level popup (0 means just show search submenu)",
       defaultValue: 8,
     },
     {
       optionName: "maxLifespan",
       type: "number",
-      label: "Maximum lifespan to consider when building search date/age ranges",
+      label:
+        "Maximum lifespan to consider when building search date/age ranges",
       defaultValue: 120,
     },
   ],
-}
+};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Citation options groups
@@ -78,7 +81,8 @@ const citationOptionsGroup = {
     {
       optionName: "meaningfulNames",
       type: "select",
-      label: "Add a label at the start of each reference (this shows up in the \"Sources\" section)",
+      label:
+        'Add a label at the start of each reference (this shows up in the "Sources" section)',
       values: [
         { value: "none", text: "None" },
         { value: "normal", text: "In normal text" },
@@ -86,81 +90,108 @@ const citationOptionsGroup = {
         { value: "italic", text: "In italic text" },
       ],
       defaultValue: "bold",
-    },  
+    },
     {
       optionName: "commaInsideQuotes",
       type: "checkbox",
-      label: "Put commas inside quotation marks (old US typographical convention) [EE style]",
+      label:
+        "Put commas inside quotation marks (old US typographical convention) [EE style]",
       defaultValue: false,
-    },  
+    },
     {
       optionName: "addEeItemType",
       type: "checkbox",
-      label: "Add \"database\" or \"database with images\" after the database/collection title [EE style]",
+      label:
+        'Add "database" or "database with images" after the database/collection title [EE style]',
       defaultValue: false,
-    },  
+    },
     {
       optionName: "referencePosition",
       type: "select",
       label: "Place the source reference data",
       values: [
-        { value: "afterSourceTitle", text: "After the database/collection title" },
-        { value: "atEnd", text: "At the end of the citation (disables data table) [EE Style]" },
+        {
+          value: "afterSourceTitle",
+          text: "After the database/collection title",
+        },
+        {
+          value: "atEnd",
+          text: "At the end of the citation (disables data table) [EE Style]",
+        },
       ],
       defaultValue: "afterSourceTitle",
-    },  
+    },
     {
       optionName: "addAccessedDate",
       type: "select",
       label: "Add an accessed date to citation",
       values: [
         { value: "none", text: "None" },
-        { value: "parenAfterLink", text: "In form '<link> (accessed 15 June 2022)'" },
-        { value: "parenBeforeLink", text: "In form '(<link> : accessed 15 June 2022)' [EE style]" },
+        {
+          value: "parenAfterLink",
+          text: "In form '<link> (accessed 15 June 2022)'",
+        },
+        {
+          value: "parenBeforeLink",
+          text: "In form '(<link> : accessed 15 June 2022)' [EE style]",
+        },
       ],
       defaultValue: "parenAfterLink",
-    },  
+    },
     {
       optionName: "sourceReferenceSeparator",
       type: "select",
       label: "Separators to use between parts of the source reference data",
       values: [
-        { value: "semicolon", text: "Semi-colon (and colon if key/value pair) (; Page: 2)" },
-        { value: "commaColon", text: "Comma and (and colon if key/value pair) (, Page: 2)" },
+        {
+          value: "semicolon",
+          text: "Semi-colon (and colon if key/value pair) (; Page: 2)",
+        },
+        {
+          value: "commaColon",
+          text: "Comma and (and colon if key/value pair) (, Page: 2)",
+        },
         { value: "commaSpace", text: "Comma only (, Page 2) [EE style?]" },
-        { value: "siteStyle", text: "Follow the style of the site being cited (if any, else semi-colon)" },
+        {
+          value: "siteStyle",
+          text: "Follow the style of the site being cited (if any, else semi-colon)",
+        },
       ],
       defaultValue: "semicolon",
-    },  
+    },
     {
       optionName: "dataListSeparator",
       type: "select",
-      label: "Separators to use for key/value pairs in data list (if list used rather than sentence or table)",
+      label:
+        "Separators to use for key/value pairs in data list (if list used rather than sentence or table)",
       values: [
         { value: "semicolon", text: "Semi-colon and colon (; Age: 20)" },
         { value: "commaColon", text: "Comma and colon (, Age: 20)" },
         { value: "commaSpace", text: "Comma only (, Age 20) [EE style?]" },
       ],
       defaultValue: "semicolon",
-    },  
+    },
     {
       optionName: "addNewlinesWithinRefs",
       type: "checkbox",
-      label: "Add newlines after the <ref> and before the </ref> (for readability in edit mode, no effect in read mode)",
+      label:
+        "Add newlines after the <ref> and before the </ref> (for readability in edit mode, no effect in read mode)",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "addNewlinesWithinBody",
       type: "checkbox",
-      label: "Add newlines within the citation between sections (for readability in edit mode, no effect in read mode)",
+      label:
+        "Add newlines within the citation between sections (for readability in edit mode, no effect in read mode)",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "addBreaksWithinBody",
       type: "checkbox",
-      label: "Add <br/>s within the citation between sections (for readability in read mode)",
+      label:
+        "Add <br/>s within the citation between sections (for readability in read mode)",
       defaultValue: true,
-    },  
+    },
   ],
 };
 
@@ -183,19 +214,25 @@ const narrativeOptionsGroup = {
         { value: "en_us", text: "US English" },
       ],
       defaultValue: "en_uk",
-    },  
+    },
     {
       optionName: "nameOrPronoun",
       type: "select",
       label: "Name/pronoun to use in narrative events",
       values: [
-        { value: "firstName", text: "First name (single word), if not known use last name" },
+        {
+          value: "firstName",
+          text: "First name (single word), if not known use last name",
+        },
         { value: "forenames", text: "Forenames, if not known use last name" },
         { value: "fullName", text: "Full name" },
-        { value: "pronoun", text: "Pronoun (he/she), if not known use first name" },
+        {
+          value: "pronoun",
+          text: "Pronoun (he/she), if not known use first name",
+        },
       ],
       defaultValue: "firstName",
-    },  
+    },
     {
       optionName: "country",
       type: "select",
@@ -207,7 +244,7 @@ const narrativeOptionsGroup = {
       ],
       defaultValue: "standard",
       unitTestValue: "full",
-    },  
+    },
     {
       optionName: "dateFormat",
       type: "select",
@@ -215,14 +252,29 @@ const narrativeOptionsGroup = {
       values: [
         { value: "long", text: "dd Month yyyy (e.g. '12 September 1845')" },
         { value: "short", text: "dd Mmm yyyy (e.g. '12 Sep 1845')" },
-        { value: "theNth", text: "the ddth of Month yyyy (e.g. 'the 12th of September 1845')" },
-        { value: "monthComma", text: "Month dd, yyyy (e.g. 'September 12, 1845')" },
-        { value: "monthCommaNth", text: "Month ddth, yyyy (e.g. 'September 12th, 1845')" },
-        { value: "country", text: "Country specific (e.g. 'September 12, 1845' in US, '12 September 1845' elsewhere)" },
-        { value: "countryNth", text: "Country specific, long (e.g. 'September 12th, 1845' in US, 'the 12th of September 1845' elsewhere)" },
+        {
+          value: "theNth",
+          text: "the ddth of Month yyyy (e.g. 'the 12th of September 1845')",
+        },
+        {
+          value: "monthComma",
+          text: "Month dd, yyyy (e.g. 'September 12, 1845')",
+        },
+        {
+          value: "monthCommaNth",
+          text: "Month ddth, yyyy (e.g. 'September 12th, 1845')",
+        },
+        {
+          value: "country",
+          text: "Country specific (e.g. 'September 12, 1845' in US, '12 September 1845' elsewhere)",
+        },
+        {
+          value: "countryNth",
+          text: "Country specific, long (e.g. 'September 12th, 1845' in US, 'the 12th of September 1845' elsewhere)",
+        },
       ],
       defaultValue: "long",
-    },  
+    },
     {
       optionName: "dateHighlight",
       type: "select",
@@ -233,7 +285,7 @@ const narrativeOptionsGroup = {
         { value: "italic", text: "Italic" },
       ],
       defaultValue: "none",
-    },  
+    },
     {
       optionName: "parentsUseAmpOrAnd",
       type: "select",
@@ -243,44 +295,57 @@ const narrativeOptionsGroup = {
         { value: "and", text: " and " },
       ],
       defaultValue: "amp",
-    },  
+    },
     {
       optionName: "occupationFormat",
       type: "select",
       label: "Case/format to use for occupations",
       values: [
-        { value: "keepCase", text: "Keep case from record (with some cleanup)" },
+        {
+          value: "keepCase",
+          text: "Keep case from record (with some cleanup)",
+        },
         { value: "titleCase", text: "Title Case (e.g. 'Coal Miner')" },
         { value: "lowerCase", text: "Lower Case (e.g. 'coal miner')" },
       ],
       defaultValue: "keepCase",
-    },  
+    },
     {
       optionName: "placeChurchFirst",
       type: "select",
-      label: "Attempt to put church name before town name (for certain sites and countries)",
+      label:
+        "Attempt to put church name before town name (for certain sites and countries)",
       values: [
         { value: "no", text: "No" },
         { value: "yes", text: "Yes" },
       ],
       defaultValue: "no",
-    },  
+    },
   ],
-}
+};
 
 const narrativeRecordTypeNameOrPronounOption = {
   optionName: "nameOrPronoun",
   type: "select",
   label: "Name/pronoun to use in narrative events",
   values: [
-    { value: "default", text: "Use default specified in the 'General' subsection" },
-    { value: "firstName", text: "First name (single word), if not known use last name" },
+    {
+      value: "default",
+      text: "Use default specified in the 'General' subsection",
+    },
+    {
+      value: "firstName",
+      text: "First name (single word), if not known use last name",
+    },
     { value: "forenames", text: "Forenames, if not known use last name" },
     { value: "fullName", text: "Full name" },
-    { value: "pronoun", text: "Pronoun (he/she), if gender not known use first name" },
+    {
+      value: "pronoun",
+      text: "Pronoun (he/she), if gender not known use first name",
+    },
   ],
   defaultValue: "default",
-}
+};
 
 const narrativeIncludeParentageOption = {
   optionName: "includeParentage",
@@ -292,19 +357,26 @@ const narrativeIncludeParentageOption = {
     { value: "inSeparateSentence", text: "In a separate following sentence" },
   ],
   defaultValue: "inMainSentence",
-}
+};
 
 const narrativeParentageFormatOption = {
   optionName: "parentageFormat",
   type: "select",
   label: "Parentage format if in main sentence",
   values: [
-    { value: "twoCommas", text: ", <son/daughter/child> of <parentName1>[ & <parentName2>]," },
-    { value: "theTwoCommas", text: ", the <son/daughter/child> of <parentName1>[ & <parentName2>]," },
+    {
+      value: "twoCommas",
+      text: ", <son/daughter/child> of <parentName1>[ & <parentName2>],",
+    },
+    {
+      value: "theTwoCommas",
+      text: ", the <son/daughter/child> of <parentName1>[ & <parentName2>],",
+    },
   ],
   defaultValue: "twoCommas",
-  comment: "NOTE: [square brackets] in options above denote optional parts that are only present if that data is known.",
-}
+  comment:
+    "NOTE: [square brackets] in options above denote optional parts that are only present if that data is known.",
+};
 
 const narrativeRegistrationDistrictFormatOption = {
   optionName: "regDistrictFormat",
@@ -316,7 +388,7 @@ const narrativeRegistrationDistrictFormatOption = {
     { value: "districtCounty", text: "<district name>[, <county name>]" },
   ],
   defaultValue: "theDistrict",
-}
+};
 
 const narrativeIncludeAgeOption = {
   optionName: "includeAge",
@@ -328,7 +400,7 @@ const narrativeIncludeAgeOption = {
     { value: "inSeparateSentence", text: "In a separate following sentence" },
   ],
   defaultValue: "inMainSentence",
-}
+};
 
 const narrativeAgeFormatOption = {
   optionName: "ageFormat",
@@ -343,7 +415,7 @@ const narrativeAgeFormatOption = {
     { value: "plainAged", text: " aged <age>" },
   ],
   defaultValue: "parensAge",
-}
+};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Record type specific narrative options groups
@@ -358,17 +430,15 @@ const narrativeBirthOptionsGroup = {
     narrativeIncludeParentageOption,
     narrativeParentageFormatOption,
   ],
-}
+};
 
 const narrativeBirthRegOptionsGroup = {
   category: "narrative",
   subcategory: "birthReg",
   tab: "narrative",
   subsection: "birthReg",
-  options: [
-    narrativeRecordTypeNameOrPronounOption,
-  ],
-}
+  options: [narrativeRecordTypeNameOrPronounOption],
+};
 
 const narrativeBirthRegEvtOptionsGroup = {
   category: "narrative",
@@ -382,14 +452,17 @@ const narrativeBirthRegEvtOptionsGroup = {
       type: "select",
       label: "Sentence structure",
       values: [
-        { value: "oneSentence", text: "<name/pronoun> was born <date> <place>." },
+        {
+          value: "oneSentence",
+          text: "<name/pronoun> was born <date> <place>.",
+        },
       ],
       defaultValue: "oneSentence",
     },
     narrativeIncludeParentageOption,
     narrativeParentageFormatOption,
   ],
-}
+};
 
 const narrativeBirthRegRegOptionsGroup = {
   category: "narrative",
@@ -403,15 +476,24 @@ const narrativeBirthRegRegOptionsGroup = {
       type: "select",
       label: "Sentence structure",
       values: [
-        { value: "oneSentence", text: "<possessive name/pronoun> birth was registered <date> in <place>." },
-        { value: "twoSentences", text: "<name/pronoun> was born <date>. <possessive pronoun> birth was registered in <place>." },
-        { value: "twoSentencesDate", text: "<name/pronoun> was born <date>. <possessive pronoun> birth was registered <date> in <place>." },
+        {
+          value: "oneSentence",
+          text: "<possessive name/pronoun> birth was registered <date> in <place>.",
+        },
+        {
+          value: "twoSentences",
+          text: "<name/pronoun> was born <date>. <possessive pronoun> birth was registered in <place>.",
+        },
+        {
+          value: "twoSentencesDate",
+          text: "<name/pronoun> was born <date>. <possessive pronoun> birth was registered <date> in <place>.",
+        },
       ],
       defaultValue: "oneSentence",
     },
     narrativeRegistrationDistrictFormatOption,
   ],
-}
+};
 
 const narrativeBaptismOptionsGroup = {
   category: "narrative",
@@ -425,8 +507,14 @@ const narrativeBaptismOptionsGroup = {
       type: "select",
       label: "Sentence structure",
       values: [
-        { value: "parentsBornAndBap", text: "<name/pronoun>[<parentage>] was[ born on <date> and] baptised on <date> in <place>." },
-        { value: "parentsBornSemiBap", text: "<name/pronoun>[<parentage>] was[ born on <date>;] baptised on <date> in <place>." },
+        {
+          value: "parentsBornAndBap",
+          text: "<name/pronoun>[<parentage>] was[ born on <date> and] baptised on <date> in <place>.",
+        },
+        {
+          value: "parentsBornSemiBap",
+          text: "<name/pronoun>[<parentage>] was[ born on <date>;] baptised on <date> in <place>.",
+        },
       ],
       defaultValue: "parentsBornAndBap",
     },
@@ -437,15 +525,15 @@ const narrativeBaptismOptionsGroup = {
       type: "checkbox",
       label: "Include birth date if known",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "includeDeathDate",
       type: "checkbox",
       label: "Include death date if known",
       defaultValue: true,
-    },  
+    },
   ],
-}
+};
 
 const narrativeBirthOrBaptismOptionsGroup = {
   category: "narrative",
@@ -457,7 +545,7 @@ const narrativeBirthOrBaptismOptionsGroup = {
     narrativeIncludeParentageOption,
     narrativeParentageFormatOption,
   ],
-}
+};
 
 const narrativeMarriageOptionsGroup = {
   category: "narrative",
@@ -471,7 +559,7 @@ const narrativeMarriageOptionsGroup = {
     narrativeIncludeAgeOption,
     narrativeAgeFormatOption,
   ],
-}
+};
 
 const narrativeMarriageRegOptionsGroup = {
   category: "narrative",
@@ -485,7 +573,7 @@ const narrativeMarriageRegOptionsGroup = {
     narrativeIncludeAgeOption,
     narrativeAgeFormatOption,
   ],
-}
+};
 
 const narrativeMarriageRegEvtOptionsGroup = {
   category: "narrative",
@@ -499,12 +587,15 @@ const narrativeMarriageRegEvtOptionsGroup = {
       type: "select",
       label: "Sentence structure",
       values: [
-        { value: "oneSentence", text: "<name/pronoun> married[ <spouse>] <date> <place>." },
+        {
+          value: "oneSentence",
+          text: "<name/pronoun> married[ <spouse>] <date> <place>.",
+        },
       ],
       defaultValue: "oneSentence",
     },
   ],
-}
+};
 
 const narrativeMarriageRegRegOptionsGroup = {
   category: "narrative",
@@ -518,15 +609,24 @@ const narrativeMarriageRegRegOptionsGroup = {
       type: "select",
       label: "Sentence structure",
       values: [
-        { value: "oneSentence", text: "<name/pronoun> marriage[ to <spouse>] was registered <date> in <place>." },
-        { value: "twoSentences", text: "<name/pronoun> married[ <spouse>] <year(s)>. Their marriage was registered in <place>." },
-        { value: "twoSentencesDate", text: "<name/pronoun> married[ <spouse>] <year(s)>. Their marriage was registered <date> in <place>." },
+        {
+          value: "oneSentence",
+          text: "<name/pronoun> marriage[ to <spouse>] was registered <date> in <place>.",
+        },
+        {
+          value: "twoSentences",
+          text: "<name/pronoun> married[ <spouse>] <year(s)>. Their marriage was registered in <place>.",
+        },
+        {
+          value: "twoSentencesDate",
+          text: "<name/pronoun> married[ <spouse>] <year(s)>. Their marriage was registered <date> in <place>.",
+        },
       ],
       defaultValue: "oneSentence",
     },
     narrativeRegistrationDistrictFormatOption,
   ],
-}
+};
 
 const narrativeDeathOptionsGroup = {
   category: "narrative",
@@ -540,11 +640,11 @@ const narrativeDeathOptionsGroup = {
     narrativeIncludeAgeOption,
     narrativeAgeFormatOption,
   ],
-}
+};
 
 const narrativeDeathRegOptionsGroup = {
   category: "narrative",
-  subcategory: "deathReg",  // abbreviated to keep storage size of options down
+  subcategory: "deathReg", // abbreviated to keep storage size of options down
   tab: "narrative",
   subsection: "deathReg",
   options: [
@@ -552,11 +652,11 @@ const narrativeDeathRegOptionsGroup = {
     narrativeIncludeAgeOption,
     narrativeAgeFormatOption,
   ],
-}
+};
 
 const narrativeDeathRegEvtOptionsGroup = {
   category: "narrative",
-  subcategory: "deathRegEvt",  // abbreviated to keep storage size of options down
+  subcategory: "deathRegEvt", // abbreviated to keep storage size of options down
   tab: "narrative",
   subsection: "deathReg",
   subheading: "evt",
@@ -573,11 +673,11 @@ const narrativeDeathRegEvtOptionsGroup = {
     narrativeIncludeParentageOption,
     narrativeParentageFormatOption,
   ],
-}
+};
 
 const narrativeDeathRegRegOptionsGroup = {
   category: "narrative",
-  subcategory: "deathRegReg",  // abbreviated to keep storage size of options down
+  subcategory: "deathRegReg", // abbreviated to keep storage size of options down
   tab: "narrative",
   subsection: "deathReg",
   subheading: "reg",
@@ -587,15 +687,24 @@ const narrativeDeathRegRegOptionsGroup = {
       type: "select",
       label: "Sentence structure",
       values: [
-        { value: "oneSentence", text: "<possessive name/pronoun> death was registered <date> in <place>." },
-        { value: "twoSentences", text: "<name/pronoun> died <date>. <possessive pronoun> death was registered in <place>." },
-        { value: "twoSentencesDate", text: "<name/pronoun> died <date>. <possessive pronoun> death was registered <date> in <place>." },
+        {
+          value: "oneSentence",
+          text: "<possessive name/pronoun> death was registered <date> in <place>.",
+        },
+        {
+          value: "twoSentences",
+          text: "<name/pronoun> died <date>. <possessive pronoun> death was registered in <place>.",
+        },
+        {
+          value: "twoSentencesDate",
+          text: "<name/pronoun> died <date>. <possessive pronoun> death was registered <date> in <place>.",
+        },
       ],
       defaultValue: "oneSentence",
     },
     narrativeRegistrationDistrictFormatOption,
   ],
-}
+};
 
 const narrativeBurialOptionsGroup = {
   category: "narrative",
@@ -609,7 +718,7 @@ const narrativeBurialOptionsGroup = {
     narrativeIncludeAgeOption,
     narrativeAgeFormatOption,
   ],
-}
+};
 
 const narrativeObituaryOptionsGroup = {
   category: "narrative",
@@ -623,7 +732,7 @@ const narrativeObituaryOptionsGroup = {
     narrativeIncludeAgeOption,
     narrativeAgeFormatOption,
   ],
-}
+};
 
 const narrativeCensusOptionsGroup = {
   category: "narrative",
@@ -637,8 +746,14 @@ const narrativeCensusOptionsGroup = {
       type: "select",
       label: "Main sentence structure",
       values: [
-        { value: "noComma", text: "<census/date part> <name/pronoun>[ <agePart>][, <occupation>,] <was part> [<household part>] <in/on/at> <place>" },
-        { value: "comma", text: "<census/date part>, <name/pronoun>[ <agePart>][, <occupation>,] <was part> [<household part>] <in/on/at> <place>" },
+        {
+          value: "noComma",
+          text: "<census/date part> <name/pronoun>[ <agePart>][, <occupation>,] <was part> [<household part>] <in/on/at> <place>",
+        },
+        {
+          value: "comma",
+          text: "<census/date part>, <name/pronoun>[ <agePart>][, <occupation>,] <was part> [<household part>] <in/on/at> <place>",
+        },
       ],
       defaultValue: "noComma",
     },
@@ -663,8 +778,14 @@ const narrativeCensusOptionsGroup = {
       values: [
         { value: "no", text: "No" },
         { value: "inMainSentence", text: "In the main sentence" },
-        { value: "inSeparateSentence", text: "In a separate following sentence" },
-        { value: "inSeparateSentenceHead", text: "In a separate following sentence. If no occupation give head's" },
+        {
+          value: "inSeparateSentence",
+          text: "In a separate following sentence",
+        },
+        {
+          value: "inSeparateSentenceHead",
+          text: "In a separate following sentence. If no occupation give head's",
+        },
       ],
       defaultValue: "inMainSentence",
     },
@@ -686,7 +807,10 @@ const narrativeCensusOptionsGroup = {
       values: [
         { value: "no", text: "No" },
         { value: "inMainSentence", text: "In the main sentence" },
-        { value: "inSeparateSentence", text: "In a separate following sentence" },
+        {
+          value: "inSeparateSentence",
+          text: "In a separate following sentence",
+        },
       ],
       defaultValue: "inMainSentence",
     },
@@ -701,7 +825,7 @@ const narrativeCensusOptionsGroup = {
       defaultValue: "relationship",
     },
   ],
-}
+};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Household Table options groups
@@ -719,10 +843,22 @@ const tableGeneralOptionsGroup = {
       label: "Automatically add household table in census citations",
       values: [
         { value: "none", text: "No" },
-        { value: "afterRef", text: "After the ref (so it shows up in the biography)" },
-        { value: "afterRefBlankLine", text: "After the ref with a blank line preceding it (so it shows up in the biography)" },
-        { value: "withinRefOrSource", text: "Within the ref or source (so it shows up in sources section)" },
-        { value: "citationInTableCaption", text: "Instead include the citation ref in the household table caption (requires caption option)" },
+        {
+          value: "afterRef",
+          text: "After the ref (so it shows up in the biography)",
+        },
+        {
+          value: "afterRefBlankLine",
+          text: "After the ref with a blank line preceding it (so it shows up in the biography)",
+        },
+        {
+          value: "withinRefOrSource",
+          text: "Within the ref or source (so it shows up in sources section)",
+        },
+        {
+          value: "citationInTableCaption",
+          text: "Instead include the citation ref in the household table caption (requires caption option)",
+        },
       ],
       defaultValue: "none",
     },
@@ -736,9 +872,9 @@ const tableGeneralOptionsGroup = {
         { value: "sentence", text: "Sentence" },
       ],
       defaultValue: "table",
-    },  
+    },
   ],
-}
+};
 
 const tableTableOptionsGroup = {
   category: "table",
@@ -754,9 +890,15 @@ const tableTableOptionsGroup = {
       values: [
         { value: "none", text: "No heading row" },
         { value: "plain", text: "Heading row with no highlight" },
-        { value: "bgGreen", text: "Heading row with *heading* background color" },
+        {
+          value: "bgGreen",
+          text: "Heading row with *heading* background color",
+        },
         { value: "boldCentered", text: "Heading row with bold centered text" },
-        { value: "bgGreenBoldCentered", text: "Heading row with *heading* background color and bold centered text" },
+        {
+          value: "bgGreenBoldCentered",
+          text: "Heading row with *heading* background color and bold centered text",
+        },
       ],
       defaultValue: "bgGreen",
     },
@@ -767,12 +909,27 @@ const tableTableOptionsGroup = {
       values: [
         { value: "plain", text: "No highlight for selected person" },
         { value: "boldRow", text: "Selected person row in bold text" },
-        { value: "boldCenteredRow", text: "Selected person row in bold centered text" },
+        {
+          value: "boldCenteredRow",
+          text: "Selected person row in bold centered text",
+        },
         { value: "boldName", text: "Selected person name in bold text" },
-        { value: "bgYellowRow", text: "Selected person row with *selected* background color" },
-        { value: "bgYellowBoldRow", text: "Selected person row with *selected* background color and bold text" },
-        { value: "bgYellowBoldCenteredRow", text: "Selected person row with *selected* background color and bold centered text" },
-        { value: "bgYellowBoldName", text: "Selected person row with *selected* background color and name in bold text" },
+        {
+          value: "bgYellowRow",
+          text: "Selected person row with *selected* background color",
+        },
+        {
+          value: "bgYellowBoldRow",
+          text: "Selected person row with *selected* background color and bold text",
+        },
+        {
+          value: "bgYellowBoldCenteredRow",
+          text: "Selected person row with *selected* background color and bold centered text",
+        },
+        {
+          value: "bgYellowBoldName",
+          text: "Selected person row with *selected* background color and name in bold text",
+        },
       ],
       defaultValue: "boldRow",
     },
@@ -781,32 +938,32 @@ const tableTableOptionsGroup = {
       type: "color",
       label: "Background color for heading row (if chosen above)",
       defaultValue: "#E1F0B4",
-    },  
+    },
     {
       optionName: "selectedColor",
       type: "color",
       label: "Background color for selected person row (if chosen above)",
       defaultValue: "#ffffb3",
-    },  
+    },
     {
       optionName: "closedColor",
       type: "color",
       label: "Background color for closed record row",
       defaultValue: "#d0d0d0",
-    },  
+    },
     {
       optionName: "border",
       type: "checkbox",
       label: "Include a border around the table",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "padding",
       type: "checkbox",
       label: "Include padding in the table cells",
       defaultValue: true,
       unitTestValue: false,
-    },  
+    },
     {
       optionName: "caption",
       type: "select",
@@ -814,14 +971,20 @@ const tableTableOptionsGroup = {
       values: [
         { value: "none", text: "No caption" },
         { value: "titlePlace", text: "<collection title>: <full place>" },
-        { value: "titlePlaceNoCountry", text: "<collection title>: <full place without country>" },
+        {
+          value: "titlePlaceNoCountry",
+          text: "<collection title>: <full place without country>",
+        },
         { value: "datePlace", text: "<date of event>: <full place>" },
-        { value: "datePlaceNoCountry", text: "<date of event>: <full place without country>" },
+        {
+          value: "datePlaceNoCountry",
+          text: "<date of event>: <full place without country>",
+        },
       ],
       defaultValue: "none",
     },
   ],
-}
+};
 
 const tableListOptionsGroup = {
   category: "table",
@@ -845,7 +1008,7 @@ const tableListOptionsGroup = {
       defaultValue: "indented2",
     },
   ],
-}
+};
 
 const tableSentenceOptionsGroup = {
   category: "table",
@@ -872,14 +1035,14 @@ const tableSentenceOptionsGroup = {
       label: "Include relationship for each person (if known)",
       defaultValue: true,
       unitTestValue: true,
-    },  
+    },
     {
       optionName: "includeAge",
       type: "checkbox",
       label: "Include age for each person (if known)",
       defaultValue: true,
       unitTestValue: true,
-    },  
+    },
     {
       optionName: "lastItemPunctuation",
       type: "select",
@@ -892,7 +1055,7 @@ const tableSentenceOptionsGroup = {
       defaultValue: "comma",
     },
   ],
-}
+};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Add Person options groups
@@ -910,23 +1073,33 @@ const addPersonGeneralOptionsGroup = {
       label: "Fill citation in appropriate field if filling from a citation",
       defaultValue: false,
       unitTestValue: false,
-    },  
+    },
     {
       optionName: "includeProfileLink",
       type: "checkbox",
-      label: "Add a link/template to the source profile in sources if filling from a profile",
+      label:
+        "Add a link/template to the source profile in sources if filling from a profile",
       defaultValue: false,
       unitTestValue: false,
-    },  
+    },
     {
       optionName: "generateIntro",
       type: "select",
       label: "Create an intro in the biography (Notes) field",
       values: [
         { value: "none", text: "No" },
-        { value: "fromSavedData", text: "Yes, with parent info based on the saved data only" },
-        { value: "fromPageData", text: "Yes, with parent info based on the links on Edit Family page only" },
-        { value: "fromBoth", text: "Yes, with parent info based on all available information" },
+        {
+          value: "fromSavedData",
+          text: "Yes, with parent info based on the saved data only",
+        },
+        {
+          value: "fromPageData",
+          text: "Yes, with parent info based on the links on Edit Family page only",
+        },
+        {
+          value: "fromBoth",
+          text: "Yes, with parent info based on all available information",
+        },
       ],
       defaultValue: "none",
     },
@@ -936,7 +1109,7 @@ const addPersonGeneralOptionsGroup = {
       label: "Include WikiTree person links in intro if available",
       defaultValue: false,
       unitTestValue: false,
-    },  
+    },
     {
       optionName: "splitForenames",
       type: "select",
@@ -947,16 +1120,17 @@ const addPersonGeneralOptionsGroup = {
         { value: "countrySpecific", text: "Only for certain countries" },
       ],
       defaultValue: "countrySpecific",
-    },  
+    },
     {
       optionName: "addDiedYoung",
       type: "checkbox",
-      label: "Include Died Young sticker if person died aged 15 or less and no known spouse",
+      label:
+        "Include Died Young sticker if person died aged 15 or less and no known spouse",
       defaultValue: false,
       unitTestValue: false,
-    },  
+    },
   ],
-}
+};
 
 registerSubsectionForOptions("search", "general", "General");
 
@@ -967,24 +1141,63 @@ registerSubsectionForOptions("narrative", "baptism", "Baptism");
 registerSubsectionForOptions("narrative", "birth", "Birth");
 registerSubsectionForOptions("narrative", "birthOrBaptism", "Birth or Baptism");
 registerSubsectionForOptions("narrative", "birthReg", "Birth Registration");
-registerSubheadingForOptions("narrative", "birthReg", "evt", "When date and place are for birth event");
-registerSubheadingForOptions("narrative", "birthReg", "reg", "When date and place are for registration, not birth");
+registerSubheadingForOptions(
+  "narrative",
+  "birthReg",
+  "evt",
+  "When date and place are for birth event"
+);
+registerSubheadingForOptions(
+  "narrative",
+  "birthReg",
+  "reg",
+  "When date and place are for registration, not birth"
+);
 registerSubsectionForOptions("narrative", "burial", "Burial");
 registerSubsectionForOptions("narrative", "census", "Census");
 registerSubsectionForOptions("narrative", "death", "Death");
 registerSubsectionForOptions("narrative", "deathReg", "Death Registration");
-registerSubheadingForOptions("narrative", "deathReg", "evt", "When date and place are for death event");
-registerSubheadingForOptions("narrative", "deathReg", "reg", "When date and place are for registration, not death");
+registerSubheadingForOptions(
+  "narrative",
+  "deathReg",
+  "evt",
+  "When date and place are for death event"
+);
+registerSubheadingForOptions(
+  "narrative",
+  "deathReg",
+  "reg",
+  "When date and place are for registration, not death"
+);
 registerSubsectionForOptions("narrative", "marriage", "Marriage");
-registerSubsectionForOptions("narrative", "marriageReg", "Marriage Registration");
-registerSubheadingForOptions("narrative", "marriageReg", "evt", "When date and place are for marriage event");
-registerSubheadingForOptions("narrative", "marriageReg", "reg", "When date and place are for registration, not marriage");
+registerSubsectionForOptions(
+  "narrative",
+  "marriageReg",
+  "Marriage Registration"
+);
+registerSubheadingForOptions(
+  "narrative",
+  "marriageReg",
+  "evt",
+  "When date and place are for marriage event"
+);
+registerSubheadingForOptions(
+  "narrative",
+  "marriageReg",
+  "reg",
+  "When date and place are for registration, not marriage"
+);
 registerSubsectionForOptions("narrative", "obituary", "Obituary");
 
 registerSubsectionForOptions("table", "general", "General");
 registerSubheadingForOptions("table", "general", "table", "When using a table");
 registerSubheadingForOptions("table", "general", "list", "When using a list");
-registerSubheadingForOptions("table", "general", "sentence", "When using a sentence");
+registerSubheadingForOptions(
+  "table",
+  "general",
+  "sentence",
+  "When using a sentence"
+);
 
 registerSubsectionForOptions("addPerson", "general", "General");
 

@@ -22,11 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GD, GeneralizedData, dateQualifiers, WtsPlace, WtsName, WtsDate } from "../../../base/core/generalize_data_utils.mjs";
+import {
+  GD,
+  GeneralizedData,
+  dateQualifiers,
+  WtsPlace,
+  WtsName,
+  WtsDate,
+} from "../../../base/core/generalize_data_utils.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { getRecordType } from "./scotp_utils.mjs";
-import { getRegistrationDistrict, getCountyDisplayName } from "./scotp_registration_districts.mjs";
+import {
+  getRegistrationDistrict,
+  getCountyDisplayName,
+} from "./scotp_registration_districts.mjs";
 import { getParishData } from "./scotp_parishes.mjs";
 import { getRcParishDataFromNameAndCongregation } from "./scotp_rc_parishes.mjs";
 import { getOtherParishDataFromNameAndCongregation } from "./scotp_other_parishes.mjs";
@@ -62,9 +72,7 @@ function standardizeCountyName(countyName) {
 
 function shouldUpperCaseAfterMac(name) {
   // input is all lower case
-  const exceptions = [
-    "Macilbowie", "Mackenzie", "Macmaster",
-  ];
+  const exceptions = ["Macilbowie", "Mackenzie", "Macmaster"];
 
   if (name.length < 5) {
     // exclude names like "Mack", "Mach"
@@ -74,13 +82,11 @@ function shouldUpperCaseAfterMac(name) {
   if (exceptions.includes(name)) {
     return false;
   }
-  return true; 
+  return true;
 }
 
 function shouldUpperCaseAfterMc(name) {
-  const exceptions = [
-    "Mcilbowie", "Mckenzie", "Mcmaster",
-  ];
+  const exceptions = ["Mcilbowie", "Mckenzie", "Mcmaster"];
 
   if (exceptions.includes(name)) {
     return false;
@@ -93,7 +99,6 @@ function shouldUpperCaseAfterO(name) {
 }
 
 function standardizeName(string) {
-
   // Note: this is a complicated issue for names like:
   // MACGREGOR, MCLELLAN, MACKIE, MACHIN
   // O'CONNOR
@@ -120,7 +125,7 @@ function standardizeName(string) {
   if (resultString.startsWith("(")) {
     let closeIndex = resultString.indexOf(")");
     if (closeIndex != -1) {
-      resultString = resultString.substring(closeIndex+1).trim();
+      resultString = resultString.substring(closeIndex + 1).trim();
       if (!resultString) {
         return originalStringClean;
       }
@@ -150,10 +155,12 @@ function standardizeName(string) {
   resultString = resultString.toLowerCase().trim();
 
   function upperCaseLetterAtIndex(toUpperIndex) {
-    resultString = resultString.substring(0, toUpperIndex)
-        + resultString[toUpperIndex].toUpperCase() + resultString.substring(toUpperIndex+1);
+    resultString =
+      resultString.substring(0, toUpperIndex) +
+      resultString[toUpperIndex].toUpperCase() +
+      resultString.substring(toUpperIndex + 1);
   }
-  
+
   var index = 0;
   do {
     upperCaseLetterAtIndex(index);
@@ -162,25 +169,22 @@ function standardizeName(string) {
     let nextSpaceIndex = resultString.indexOf(" ", index);
     if (nextSpaceIndex != -1) {
       word = resultString.substring(index, nextSpaceIndex);
-    }
-    else {
+    } else {
       word = resultString.substring(index);
     }
 
     // check for Mac or word
     if (word.startsWith("Mac") && word[3] != " ") {
       if (shouldUpperCaseAfterMac(word)) {
-        upperCaseLetterAtIndex(index+3);
+        upperCaseLetterAtIndex(index + 3);
       }
-    }
-    else if (word.startsWith("Mc") && word[2] != " ") {
+    } else if (word.startsWith("Mc") && word[2] != " ") {
       if (shouldUpperCaseAfterMc(word)) {
-        upperCaseLetterAtIndex(index+2);
+        upperCaseLetterAtIndex(index + 2);
       }
-    }
-    else if (word.startsWith("O'") && word[2] != " ") {
+    } else if (word.startsWith("O'") && word[2] != " ") {
       if (shouldUpperCaseAfterO(word)) {
-        upperCaseLetterAtIndex(index+2);
+        upperCaseLetterAtIndex(index + 2);
       }
     }
 
@@ -194,15 +198,14 @@ function standardizeName(string) {
 }
 
 function getRdNumber(data) {
-
   let rdNumber = undefined;
 
   let reference = data.recordData["Ref"];
   if (reference) {
-    if(reference.includes ("/")) {
+    if (reference.includes("/")) {
       rdNumber = reference.trim().split(" ")[0];
-      if(rdNumber.endsWith("/")) {
-        rdNumber = rdNumber.slice(0,-1);
+      if (rdNumber.endsWith("/")) {
+        rdNumber = rdNumber.slice(0, -1);
       }
     }
   }
@@ -210,12 +213,12 @@ function getRdNumber(data) {
   if (!rdNumber) {
     reference = data.recordData["Parish Number"];
     if (reference) {
-      if(reference.includes("/")) {
+      if (reference.includes("/")) {
         rdNumber = reference.trim();
-        if(rdNumber.endsWith("/")) {
-          rdNumber = rdNumber.slice(0,-1);
+        if (rdNumber.endsWith("/")) {
+          rdNumber = rdNumber.slice(0, -1);
         }
-      } 
+      }
     }
   }
 
@@ -223,16 +226,15 @@ function getRdNumber(data) {
 }
 
 function getCountyNameFromRegistrationDistrict(data, rdName, eventYear) {
-
   let countyName = "";
 
   let rdNumber = getRdNumber(data);
 
   if (rdNumber) {
     const district = getRegistrationDistrict(rdNumber, rdName, eventYear);
-    if(district.length >= 1) { 
+    if (district.length >= 1) {
       const county = getCountyDisplayName(district[0].county);
-      if(county){
+      if (county) {
         countyName = county.display_county;
       }
     }
@@ -243,8 +245,7 @@ function getCountyNameFromRegistrationDistrict(data, rdName, eventYear) {
       const county = getCountyDisplayName(data.urlQuery.county);
       if (county) {
         countyName = county.display_county;
-      }
-      else {
+      } else {
         countyName = standardizeCountyName(data.urlQuery.county);
       }
     }
@@ -252,7 +253,7 @@ function getCountyNameFromRegistrationDistrict(data, rdName, eventYear) {
 
   if (!countyName) {
     const parishes = getParishData(rdName, eventYear);
-    if(parishes.length >= 1) { 
+    if (parishes.length >= 1) {
       for (let parish of parishes) {
         if (parish.rdNo == rdNumber) {
           const county = getCountyDisplayName(parish.county);
@@ -279,17 +280,22 @@ function getCountyNameFromSearch(data) {
   let scotpRecordType = getRecordType(data);
 
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.county)) {
-    let countySearchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.county);
+    let countySearchParam = ScotpRecordType.getSearchParam(
+      scotpRecordType,
+      SpField.county
+    );
     if (countySearchParam) {
       let userCounty = data.urlQuery[countySearchParam];
       if (userCounty) {
         // County is unusual, a lot of record types support county in search but do not show it in the results
         // So, if the user specified a county and it found this result use it
         result = userCounty;
-      }
-      else {
+      } else {
         // some record types do have the County or County/City in the search results
-        let countyKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.county);
+        let countyKey = ScotpRecordType.getRecordKey(
+          scotpRecordType,
+          SpField.county
+        );
         if (countyKey) {
           let county = data.recordData[countyKey];
           if (county) {
@@ -299,7 +305,7 @@ function getCountyNameFromSearch(data) {
       }
     }
   }
-  
+
   return result;
 }
 
@@ -313,14 +319,12 @@ function getCountyNameFromOprParish(data, townName, eventYear) {
     const county = getCountyDisplayName(searchCounty);
     if (county) {
       countyName = county.display_county;
-    }
-    else {
+    } else {
       countyName = standardizeCountyName(searchCounty);
     }
-  }
-  else {
+  } else {
     const parishes = getParishData(townName, eventYear);
-    if(parishes.length >= 1) { 
+    if (parishes.length >= 1) {
       let parishNumber = data.recordData["Parish Number"];
       if (parishNumber) {
         parishNumber = parishNumber.trim(); // often has space on end
@@ -350,9 +354,9 @@ function getCountyNameFromParishName(data, townName, eventYear) {
   let countyName = "";
 
   const parish = getParishData(townName, eventYear);
-  if(parish.length >= 1) { 
+  if (parish.length >= 1) {
     const county = getCountyDisplayName(parish[0].county);
-    if(county){
+    if (county) {
       countyName = county.display_county;
     }
   }
@@ -362,8 +366,7 @@ function getCountyNameFromParishName(data, townName, eventYear) {
       const county = getCountyDisplayName(data.urlQuery.county);
       if (county) {
         countyName = county.display_county;
-      }
-      else {
+      } else {
         countyName = standardizeCountyName(data.urlQuery.county);
       }
     }
@@ -372,13 +375,20 @@ function getCountyNameFromParishName(data, townName, eventYear) {
   return countyName;
 }
 
-function getCountyNameFromRcParishAndCongregationName(data, parishName, congregationName) {
+function getCountyNameFromRcParishAndCongregationName(
+  data,
+  parishName,
+  congregationName
+) {
   let countyName = "";
 
-  const parish = getRcParishDataFromNameAndCongregation(parishName, congregationName);
-  if(parish.length >= 1) { 
+  const parish = getRcParishDataFromNameAndCongregation(
+    parishName,
+    congregationName
+  );
+  if (parish.length >= 1) {
     const county = getCountyDisplayName(parish[0].county);
-    if(county){
+    if (county) {
       countyName = county.display_county;
     }
   }
@@ -388,8 +398,7 @@ function getCountyNameFromRcParishAndCongregationName(data, parishName, congrega
       const county = getCountyDisplayName(data.urlQuery.county);
       if (county) {
         countyName = county.display_county;
-      }
-      else {
+      } else {
         countyName = standardizeCountyName(data.urlQuery.county);
       }
     }
@@ -398,13 +407,20 @@ function getCountyNameFromRcParishAndCongregationName(data, parishName, congrega
   return countyName;
 }
 
-function getCountyNameFromOtherParishAndCongregationName(data, parishName, congregationName) {
+function getCountyNameFromOtherParishAndCongregationName(
+  data,
+  parishName,
+  congregationName
+) {
   let countyName = "";
 
-  const parish = getOtherParishDataFromNameAndCongregation(parishName, congregationName);
-  if(parish.length >= 1) { 
+  const parish = getOtherParishDataFromNameAndCongregation(
+    parishName,
+    congregationName
+  );
+  if (parish.length >= 1) {
     const county = getCountyDisplayName(parish[0].county);
-    if(county){
+    if (county) {
       countyName = county.display_county;
     }
   }
@@ -414,8 +430,7 @@ function getCountyNameFromOtherParishAndCongregationName(data, parishName, congr
       const county = getCountyDisplayName(data.urlQuery.county);
       if (county) {
         countyName = county.display_county;
-      }
-      else {
+      } else {
         countyName = standardizeCountyName(data.urlQuery.county);
       }
     }
@@ -488,7 +503,7 @@ function buildPlaceWithHieResidenceAndCountyName(residenceName, countyName) {
     const countyEntry = getCountyDisplayName(countyName);
     if (countyEntry) {
       countyName = countyEntry.display_county;
-    };
+    }
   }
 
   return buildPlaceWithTownAndCountyName(residenceName, countyName);
@@ -503,20 +518,22 @@ function buildPlaceWithCensusCountyAndDistrict(data, rdName, countyName, year) {
     const countyEntry = getCountyDisplayName(countyName);
     if (countyEntry) {
       countyName = countyEntry.display_county;
-    };
+    }
   }
 
   return buildPlaceWithTownAndCountyName(rdName, countyName);
 }
 
 function buildPlaceWithOprParishName(data, parishName, year) {
-
-  let county = getCountyNameFromOprParish(data, data.recordData["Parish"], year);
+  let county = getCountyNameFromOprParish(
+    data,
+    data.recordData["Parish"],
+    year
+  );
   return buildPlaceWithTownAndCountyName(parishName, county);
 }
 
 function buildPlaceWithRcParishCongregationName(placeName, data) {
-
   // examples:
   //   "DUNFERMLINE - ST MARGARET'S UNITED SECESSION",
   //   "Airdrie, St Margaret's"
@@ -526,15 +543,14 @@ function buildPlaceWithRcParishCongregationName(placeName, data) {
   }
 
   let congregationName = "";
-  
+
   if (placeName) {
-    const separator =  ", ";
+    const separator = ", ";
     let dashIndex = placeName.indexOf(separator);
     if (dashIndex != -1) {
       congregationName = placeName.substring(dashIndex + separator.length);
       placeName = placeName.substring(0, dashIndex).trim();
-    }
-    else {
+    } else {
       congregationName = placeName;
       placeName = ""; // we only want parish name, not congregation/church for search etc.
     }
@@ -543,7 +559,11 @@ function buildPlaceWithRcParishCongregationName(placeName, data) {
   let countyName = data.recordData["County/ City"];
 
   if (!countyName) {
-    countyName = getCountyNameFromRcParishAndCongregationName(data, placeName, congregationName);
+    countyName = getCountyNameFromRcParishAndCongregationName(
+      data,
+      placeName,
+      congregationName
+    );
   }
 
   let place = buildPlaceWithTownAndCountyName(placeName, countyName);
@@ -555,27 +575,32 @@ function buildPlaceWithRcParishCongregationName(placeName, data) {
   return place;
 }
 
-function buildPlaceWithOtherParishCongregationName(parishAndCongregationName, data) {
-
+function buildPlaceWithOtherParishCongregationName(
+  parishAndCongregationName,
+  data
+) {
   // examples:
   //   "DUNFERMLINE - ST MARGARET'S UNITED SECESSION",
   //   "Airdrie, St Margaret's"
 
   if (isAllUppercase(parishAndCongregationName)) {
-    parishAndCongregationName = WTS_String.toInitialCapsEachWord(parishAndCongregationName);
+    parishAndCongregationName = WTS_String.toInitialCapsEachWord(
+      parishAndCongregationName
+    );
   }
 
   let parishName = "";
   let congregationName = "";
-  
+
   if (parishAndCongregationName) {
-    const separator =  " - ";
+    const separator = " - ";
     let dashIndex = parishAndCongregationName.indexOf(separator);
     if (dashIndex != -1) {
-      congregationName = parishAndCongregationName.substring(dashIndex + separator.length);
+      congregationName = parishAndCongregationName.substring(
+        dashIndex + separator.length
+      );
       parishName = parishAndCongregationName.substring(0, dashIndex).trim();
-    }
-    else {
+    } else {
       congregationName = parishAndCongregationName;
       parishName = ""; // we only want parish name, not congregation/church for search etc.
     }
@@ -584,11 +609,18 @@ function buildPlaceWithOtherParishCongregationName(parishAndCongregationName, da
   let countyName = data.recordData["County/ City"];
 
   if (!countyName) {
-    countyName = getCountyNameFromOtherParishAndCongregationName(data, parishAndCongregationName);
+    countyName = getCountyNameFromOtherParishAndCongregationName(
+      data,
+      parishAndCongregationName
+    );
 
     if (!countyName) {
       // some parishes currently fail, try falling back to RC parishes
-      countyName = getCountyNameFromRcParishAndCongregationName(data, parishName, congregationName);
+      countyName = getCountyNameFromRcParishAndCongregationName(
+        data,
+        parishName,
+        congregationName
+      );
     }
   }
 
@@ -602,7 +634,6 @@ function buildPlaceWithOtherParishCongregationName(parishAndCongregationName, da
 }
 
 function buildPlaceWithCourtName(data, result, court, eventYear) {
-
   if (!court) {
     return;
   }
@@ -637,12 +668,11 @@ function buildPlaceWithCourtName(data, result, court, eventYear) {
   index = courtName.indexOf("Wills");
   if (index != -1) {
     courtName = courtName.substring(0, index);
-  }
-  else {
+  } else {
     index = courtName.indexOf("Inventories");
     if (index != -1) {
       courtName = courtName.substring(0, index);
-    } 
+    }
   }
 
   if (courtName) {
@@ -658,8 +688,7 @@ function buildPlaceWithCourtName(data, result, court, eventYear) {
     if (countyEntry) {
       countyName = townName;
       townName = "";
-    }
-    else {
+    } else {
       countyName = getCountyNameFromParishName(data, townName, eventYear);
     }
   }
@@ -668,7 +697,6 @@ function buildPlaceWithCourtName(data, result, court, eventYear) {
 }
 
 function buildPlaceWithPrisonName(data, prisonName, eventYear) {
-
   if (!prisonName) {
     return;
   }
@@ -682,8 +710,7 @@ function buildPlaceWithPrisonName(data, prisonName, eventYear) {
     if (countyEntry) {
       countyName = townName;
       townName = "";
-    }
-    else {
+    } else {
       countyName = getCountyNameFromParishName(data, townName, eventYear);
     }
   }
@@ -691,7 +718,13 @@ function buildPlaceWithPrisonName(data, prisonName, eventYear) {
   return buildPlaceWithTownAndCountyName(townName, countyName);
 }
 
-function setResultFieldFromRecordDataField(data, dataKey, result, resultKey, toInitialCaps) {
+function setResultFieldFromRecordDataField(
+  data,
+  dataKey,
+  result,
+  resultKey,
+  toInitialCaps
+) {
   let value = data.recordData[dataKey];
   if (value) {
     if (!/^\-+$/.test(value)) {
@@ -726,7 +759,6 @@ function cleanDdMonthYyyyDate(dateString) {
 }
 
 function cleanDdMmYyyyDate(dateString) {
-
   if (/^\-+$/.test(dateString)) {
     return "";
   }
@@ -754,26 +786,37 @@ function cleanDdMmYyyyDate(dateString) {
     day = day.substring(1);
   }
 
-  let remainder = dateString.substring(slashIndex+1);
+  let remainder = dateString.substring(slashIndex + 1);
 
   slashIndex = remainder.indexOf("/");
   if (slashIndex == -1) {
-    return dateString;  // not an expected format
+    return dateString; // not an expected format
   }
 
   let month = remainder.substring(0, slashIndex).trim();
-  let year = remainder.substring(slashIndex+1);
+  let year = remainder.substring(slashIndex + 1);
 
   let monthNum = parseInt(month);
   if (monthNum != NaN) {
     if (month < 1 || month > 12) {
       return dateString;
     }
-    const monthStrings = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"];
-    month = monthStrings[monthNum-1];
-  }
-  else {
+    const monthStrings = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    month = monthStrings[monthNum - 1];
+  } else {
     return dateString;
   }
 
@@ -800,7 +843,6 @@ function isFieldBlank(fieldString) {
 }
 
 function setSourcerRecordType(scotpRecordType, data, result) {
-
   let recordType = ScotpRecordType.getSourcerRecordType(scotpRecordType);
   if (!recordType) {
     return;
@@ -812,8 +854,7 @@ function setSourcerRecordType(scotpRecordType, data, result) {
     if (eventType == "Death") {
       recordType = RT.Death;
     }
-  }
-  else if (scotpRecordType == "ch3_baptism") {
+  } else if (scotpRecordType == "ch3_baptism") {
     let birthDate = data.recordData["Birth Date"];
     let baptismDate = data.recordData["Baptism Date"];
     if (!baptismDate && birthDate) {
@@ -825,7 +866,6 @@ function setSourcerRecordType(scotpRecordType, data, result) {
 }
 
 function setSurnameAndForename(data, result) {
-
   let lastName = standardizeName(data.recordData["Surname"]);
   let forenames = standardizeName(data.recordData["Forename"]);
 
@@ -849,8 +889,7 @@ function setFullName(data, result) {
 function setName(scotpRecordType, data, result) {
   if (scotpRecordType == "coa") {
     setFullName(data, result);
-  }
-  else {
+  } else {
     setSurnameAndForename(data, result);
   }
 }
@@ -880,8 +919,7 @@ function setCollectionReferenceData(scotpRecordType, data, result) {
       let spaceIndex = value.indexOf(" ");
       if (spaceIndex == -1) {
         registrationNumber = value;
-      }
-      else {
+      } else {
         let regNumber = value.substring(0, spaceIndex);
         let remainder = value.substring(spaceIndex + 1).trim();
         registrationNumber = regNumber;
@@ -889,8 +927,7 @@ function setCollectionReferenceData(scotpRecordType, data, result) {
         spaceIndex = remainder.indexOf(" ");
         if (spaceIndex == -1) {
           enumerationDistrict = remainder;
-        }
-        else {
+        } else {
           let enumDistrict = remainder.substring(0, spaceIndex);
           enumerationDistrict = enumDistrict;
 
@@ -914,26 +951,42 @@ function setCollectionReferenceData(scotpRecordType, data, result) {
 
 function setStatutoryCommonFields(data, result) {
   result.setEventYear(data.recordData["Year"]);
-  result.setFieldIfValueExists("registrationDistrict", data.recordData["RD Name"]);
+  result.setFieldIfValueExists(
+    "registrationDistrict",
+    data.recordData["RD Name"]
+  );
 
-  result.eventPlace = buildPlaceWithStatutoryDistrictName(data, data.recordData["RD Name"], data.recordData["Year"]);
+  result.eventPlace = buildPlaceWithStatutoryDistrictName(
+    data,
+    data.recordData["RD Name"],
+    data.recordData["Year"]
+  );
 }
 
 function setOprCommonFields(data, result) {
   let eventDate = cleanDdMmYyyyDate(data.recordData["Date"]);
   result.setEventDate(eventDate);
   let eventYear = getYearFromStandardizedDate(eventDate);
-  result.eventPlace = buildPlaceWithOprParishName(data, data.recordData["Parish"], eventYear);
+  result.eventPlace = buildPlaceWithOprParishName(
+    data,
+    data.recordData["Parish"],
+    eventYear
+  );
 }
 
-function setMarriageData(data, result, spouseSurname, spouseForenames, isFullName) {
+function setMarriageData(
+  data,
+  result,
+  spouseSurname,
+  spouseForenames,
+  isFullName
+) {
   spouseSurname = standardizeName(spouseSurname);
   spouseForenames = standardizeName(spouseForenames);
   let spouseName = new WtsName();
   if (isFullName) {
     spouseName.name = spouseSurname;
-  }
-  else {
+  } else {
     if (spouseForenames) {
       spouseName.forenames = spouseForenames;
     }
@@ -951,10 +1004,16 @@ function setMarriageData(data, result, spouseSurname, spouseForenames, isFullNam
   if (result.eventPlace) {
     spouse.marriagePlace = result.eventPlace;
   }
-  result.spouses = [ spouse ];
+  result.spouses = [spouse];
 }
 
-function setDivorceData(data, result, spouseSurname, spouseForenames, marriageDate) {
+function setDivorceData(
+  data,
+  result,
+  spouseSurname,
+  spouseForenames,
+  marriageDate
+) {
   spouseSurname = standardizeName(spouseSurname);
   spouseForenames = standardizeName(spouseForenames);
   let spouseName = new WtsName();
@@ -971,11 +1030,10 @@ function setDivorceData(data, result, spouseSurname, spouseForenames, marriageDa
   if (marriageDate) {
     spouse.marriageDate = marriageDate;
   }
-  result.spouses = [ spouse ];
+  result.spouses = [spouse];
 }
 
 function setWillsAndTestamentsRecordSubtype(data, result) {
-
   // We want to decide on one of these subtypes:
   // "Probate"
   // "LettersOfAdministration" (intestate)
@@ -997,8 +1055,7 @@ function setWillsAndTestamentsRecordSubtype(data, result) {
   if (actualCourtName == "non-Scottish Court") {
     actualCourtName = "";
     isNonScottishCourt = true;
-  }
-  else {
+  } else {
     const courtText = "Court";
     let courtIndex = actualCourtName.indexOf("Court");
     if (courtIndex != -1) {
@@ -1023,48 +1080,102 @@ function setWillsAndTestamentsRecordSubtype(data, result) {
     lcDesc = lcDesc.replace(/[.,;\s]$/g, "");
     if (lcDesc.endsWith(" intestate")) {
       descriptionType = "intestate";
-    }
-    else if (lcDesc.endsWith(" testate")) {
+    } else if (lcDesc.endsWith(" testate")) {
       descriptionType = "testate";
-    }
-    else {
+    } else {
       // the term intestate or testate may be elsewhere withing the description
       lcDesc = description.toLowerCase();
       if (lcDesc.includes(", intestate,")) {
         descriptionType = "intestate";
-      }
-      else if (lcDesc.includes(", testate,")) {
+      } else if (lcDesc.includes(", testate,")) {
         descriptionType = "testate";
       }
     }
   }
   result.testateOrIntestate = descriptionType;
-  
+
   // these lists are checked in order and the first match is taken
   let exactMatches = [
-    { subtype: "Probate", types: ["probate of will", "probate of the will", "note of probate"] },
-    { subtype: "Testament", types: ["will", "will or deed", "last will and testament",
-        "tt", "tt and i", "inventory; testament", "testament testamentar and inventory"] },
-    { subtype: "Testament", types: ["testament dative", "testament dative and inventory",
-        "td", "td and i" ]},
-    { subtype: "Inventory", types: ["inventory", "inventory only", "extract inventory"] },
-    { subtype: "AdditionalInventory", types: ["eik", "additional inventory",
-        "2nd additional inventory" ] },
-    { subtype: "TrustDisposition", types: ["last deed and settlement", "deed of settlement",
-        "trust disposition and deed of settlement", "disposition and settlement", ] },
+    {
+      subtype: "Probate",
+      types: ["probate of will", "probate of the will", "note of probate"],
+    },
+    {
+      subtype: "Testament",
+      types: [
+        "will",
+        "will or deed",
+        "last will and testament",
+        "tt",
+        "tt and i",
+        "inventory; testament",
+        "testament testamentar and inventory",
+      ],
+    },
+    {
+      subtype: "Testament",
+      types: [
+        "testament dative",
+        "testament dative and inventory",
+        "td",
+        "td and i",
+      ],
+    },
+    {
+      subtype: "Inventory",
+      types: ["inventory", "inventory only", "extract inventory"],
+    },
+    {
+      subtype: "AdditionalInventory",
+      types: ["eik", "additional inventory", "2nd additional inventory"],
+    },
+    {
+      subtype: "TrustDisposition",
+      types: [
+        "last deed and settlement",
+        "deed of settlement",
+        "trust disposition and deed of settlement",
+        "disposition and settlement",
+      ],
+    },
 
-    { subtype: "Other", types: ["will mislaid", "Testamentary writings", ] },
+    { subtype: "Other", types: ["will mislaid", "Testamentary writings"] },
   ];
-  
+
   let startMatches = [
     { subtype: "Probate", typeStarts: ["probate"] },
-    { subtype: "Testament", typeStarts: ["will", "last will", "testament testamentar", "tt", "t.", "t ", ] },
-    { subtype: "Testament", typeStarts: ["testament dative", "td", ]},
+    {
+      subtype: "Testament",
+      typeStarts: [
+        "will",
+        "last will",
+        "testament testamentar",
+        "tt",
+        "t.",
+        "t ",
+      ],
+    },
+    { subtype: "Testament", typeStarts: ["testament dative", "td"] },
     { subtype: "Inventory", typeStarts: ["inventory", "i ", "i;", "i,"] },
-    { subtype: "AdditionalInventory", typeStarts: ["eik", "additional inventory",
-          "original confirmation granted", "confirmation ad omissa"] },
-    { subtype: "Testament", typeStarts: ["last deed", "deed", "trust disposition", "disposition",
-        "extract deed"] },
+    {
+      subtype: "AdditionalInventory",
+      typeStarts: [
+        "eik",
+        "additional inventory",
+        "original confirmation granted",
+        "confirmation ad omissa",
+      ],
+    },
+    {
+      subtype: "Testament",
+      typeStarts: [
+        "last deed",
+        "deed",
+        "trust disposition",
+        "disposition",
+        "extract deed",
+      ],
+    },
   ];
 
   // Examples encountered in the records:
@@ -1137,34 +1248,27 @@ function setWillsAndTestamentsRecordSubtype(data, result) {
   // Inventory. Additional Inventory given up 02/07/1892
   // MD with sister, Janet Fairgrieve
   // Mutual Trust Disposition and Settlement with brother
-  
+
   if (!willTestamentType) {
     // no type
     if (isNonScottishCourt) {
       if (willTestamentType.includes("probate")) {
         result.recordSubtype = "Probate";
-      }
-      else if (willTestamentType.startsWith("letters of")) {
+      } else if (willTestamentType.startsWith("letters of")) {
         result.recordSubtype = "LettersOfAdministration";
-      }
-      else if (descriptionType == "testate") {
+      } else if (descriptionType == "testate") {
         result.recordSubtype = "Probate";
-      }
-      else if (descriptionType == "intestate") {
+      } else if (descriptionType == "intestate") {
         result.recordSubtype = "LettersOfAdministration";
-      }
-      else {
+      } else {
         result.recordSubtype = "Probate"; // default for non-Scottish court
       }
-    }
-    else if (textAfterCourtName == "Inventories") {
+    } else if (textAfterCourtName == "Inventories") {
       result.recordSubtype = "Inventory";
-    }
-    else {
+    } else {
       result.recordSubtype = "Testament";
     }
-  }
-  else {
+  } else {
     // we do have a type
     let isClassified = false;
 
@@ -1201,15 +1305,12 @@ function setWillsAndTestamentsRecordSubtype(data, result) {
       }
     }
 
-
     if (!isClassified) {
       if (textAfterCourtName == "Inventories") {
         result.recordSubtype = "Inventory";
-      }
-      else if (textAfterCourtName == "Wills") {
+      } else if (textAfterCourtName == "Wills") {
         result.recordSubtype = "Testament";
-      }
-      else {
+      } else {
         result.recordSubtype = "Other";
       }
     }
@@ -1219,7 +1320,10 @@ function setWillsAndTestamentsRecordSubtype(data, result) {
   if (description) {
     let deathDateIndex = description.search(/ d\. \d\d\/\d\d\/\d\d\d\d/);
     if (deathDateIndex != -1) {
-      let deathDate = description.substring(deathDateIndex+4, deathDateIndex+14);
+      let deathDate = description.substring(
+        deathDateIndex + 4,
+        deathDateIndex + 14
+      );
       let cleanDeathDate = cleanDdMmYyyyDate(deathDate);
       result.setDeathDate(cleanDeathDate);
     }
@@ -1232,15 +1336,16 @@ function setWillsAndTestamentsRecordSubtype(data, result) {
     function extractFullOrPartialDate(prefix) {
       let prefixIndex = willTestamentType.indexOf(prefix);
       if (prefixIndex != -1) {
-        let remainder = willTestamentType.substring(prefixIndex + prefix.length);
+        let remainder = willTestamentType.substring(
+          prefixIndex + prefix.length
+        );
         if (/^\d\d\/\d\d\/\d\d\d\d/.test(remainder)) {
           let date = remainder.substring(0, 10);
           let cleanDate = cleanDdMmYyyyDate(date);
           if (cleanDate) {
             return cleanDate;
           }
-        }
-        else if (/^\d\d\/\d\d\//.test(remainder)) {
+        } else if (/^\d\d\/\d\d\//.test(remainder)) {
           let date = remainder.substring(0, 6);
           let eventYear = result.inferEventYear();
           if (eventYear) {
@@ -1256,14 +1361,15 @@ function setWillsAndTestamentsRecordSubtype(data, result) {
 
     let grantedDate = extractFullOrPartialDate(" granted ");
     if (grantedDate) {
-      if (willTestamentType && willTestamentType.startsWith("original confirmation granted")) {
+      if (
+        willTestamentType &&
+        willTestamentType.startsWith("original confirmation granted")
+      ) {
         result.originalConfirmationGrantedDate = grantedDate;
-      }
-      else {
+      } else {
         result.grantedDate = grantedDate;
       }
-    }
-    else {
+    } else {
       let givenDate = extractFullOrPartialDate(" given up ");
       if (givenDate) {
         result.givenDate = givenDate;
@@ -1287,7 +1393,7 @@ function setRefPartsOfOtherDetails(result, otherDetailsSuffix, prefix, refKey) {
 
     let parenIndex = remainder.indexOf("(");
     if (parenIndex != -1) {
-      remainder = remainder.substring(parenIndex+1);
+      remainder = remainder.substring(parenIndex + 1);
       let closeParenIndex = remainder.indexOf(")");
       if (closeParenIndex != -1) {
         remainder = remainder.substring(0, closeParenIndex);
@@ -1303,7 +1409,6 @@ function setRefPartsOfOtherDetails(result, otherDetailsSuffix, prefix, refKey) {
 }
 
 function setParents(scotpRecordType, data, result, dataKey) {
-
   let parentsDetails = data.recordData[dataKey];
 
   if (!parentsDetails) {
@@ -1368,8 +1473,7 @@ function setParents(scotpRecordType, data, result, dataKey) {
   if (separatorIndex == -1) {
     // this never seems to happen for RCC records but can happen for an OPR death
     fatherName = parentsDetails;
-  }
-  else {
+  } else {
     fatherName = parentsDetails.substring(0, separatorIndex);
     motherName = parentsDetails.substring(separatorIndex + separator.length);
   }
@@ -1378,7 +1482,7 @@ function setParents(scotpRecordType, data, result, dataKey) {
     // opr_deaths has a parents column but it can also contain spouse and maiden name, even spouse
     // and father. There is no obvious way to be sure it is parents unless the age of the deceased
     // is less than marriage age.
-    let ageString  =result.ageAtDeath;
+    let ageString = result.ageAtDeath;
     if (ageString === undefined || ageString === "") {
       return;
     }
@@ -1408,12 +1512,10 @@ function setParents(scotpRecordType, data, result, dataKey) {
   }
 }
 
-
 function generalizeData(input) {
-
   let data = input.extractedData;
 
-  let result = new GeneralizedData;
+  let result = new GeneralizedData();
 
   result.sourceOfData = "scotp";
 
@@ -1424,7 +1526,7 @@ function generalizeData(input) {
   let scotpRecordType = getRecordType(data);
 
   if (!scotpRecordType) {
-    return result;  // unknown record or page type
+    return result; // unknown record or page type
   }
 
   result.sourceType = "record";
@@ -1440,258 +1542,375 @@ function generalizeData(input) {
   setGender(scotpRecordType, data, result);
 
   switch (scotpRecordType) {
-  case "stat_births":
-    setStatutoryCommonFields(data, result);
-    result.lastNameAtBirth = result.name.lastName;
-    setMothersMaidenName(data, result, "Mother's Maiden Name");
-    result.birthPlace = result.eventPlace;
-    result.birthDate = result.eventDate;
-    break;
+    case "stat_births":
+      setStatutoryCommonFields(data, result);
+      result.lastNameAtBirth = result.name.lastName;
+      setMothersMaidenName(data, result, "Mother's Maiden Name");
+      result.birthPlace = result.eventPlace;
+      result.birthDate = result.eventDate;
+      break;
 
-  case "stat_marriages":
-    setStatutoryCommonFields(data, result);
-    setMarriageData(data, result, data.recordData["Spouse Surname"], data.recordData["Spouse Forename"]);
-    break;
+    case "stat_marriages":
+      setStatutoryCommonFields(data, result);
+      setMarriageData(
+        data,
+        result,
+        data.recordData["Spouse Surname"],
+        data.recordData["Spouse Forename"]
+      );
+      break;
 
-  case "stat_deaths":
-    setStatutoryCommonFields(data, result);
-    result.lastNameAtDeath = result.name.lastName;
-    setMothersMaidenName(data, result, "Mother's Maiden Name");
-    result.setFieldIfValueExists("ageAtDeath", data.recordData["Age at death"]);
-    result.deathPlace = result.eventPlace;
-    result.deathDate = result.eventDate;
-    break;
+    case "stat_deaths":
+      setStatutoryCommonFields(data, result);
+      result.lastNameAtDeath = result.name.lastName;
+      setMothersMaidenName(data, result, "Mother's Maiden Name");
+      result.setFieldIfValueExists(
+        "ageAtDeath",
+        data.recordData["Age at death"]
+      );
+      result.deathPlace = result.eventPlace;
+      result.deathDate = result.eventDate;
+      break;
 
-  case "stat_divorces":  
-    {
-      result.setEventYear(data.recordData["Divorce Year"]);
+    case "stat_divorces":
+      {
+        result.setEventYear(data.recordData["Divorce Year"]);
 
-      let marriageDate = cleanDdMmYyyyDate(data.recordData["Marriage Date"]);
-      setDivorceData(data, result, data.recordData["Spouse Surname"], "", marriageDate);
+        let marriageDate = cleanDdMmYyyyDate(data.recordData["Marriage Date"]);
+        setDivorceData(
+          data,
+          result,
+          data.recordData["Spouse Surname"],
+          "",
+          marriageDate
+        );
 
-      result.eventPlace = buildPlaceWithCourtName(data, result, data.recordData["Court"], data.recordData["Divorce Year"]);
-    }
-    break;
+        result.eventPlace = buildPlaceWithCourtName(
+          data,
+          result,
+          data.recordData["Court"],
+          data.recordData["Divorce Year"]
+        );
+      }
+      break;
 
-  case "civilpartnership":
-    setStatutoryCommonFields(data, result);
-    setMarriageData(data, result, data.recordData["Partner Surname"], "");
-    break;
-  
-  case "dissolutions":
-    {
-      result.setEventYear(data.recordData["Dissolution Year"]);
+    case "civilpartnership":
+      setStatutoryCommonFields(data, result);
+      setMarriageData(data, result, data.recordData["Partner Surname"], "");
+      break;
 
-      let partnerDate = cleanDdMmYyyyDate(data.recordData["Civil Partnership Date"]);
-      setDivorceData(data, result, data.recordData["Partner Surname"], "", partnerDate);
+    case "dissolutions":
+      {
+        result.setEventYear(data.recordData["Dissolution Year"]);
 
-      result.eventPlace = buildPlaceWithCourtName(data, result, data.recordData["Court"], data.recordData["Dissolution Year"]);
-    }
-    break;
-  
-  case "census":
-    {
-      result.setEventYear(data.recordData["Year"]);
-      result.setFieldIfValueExists("ageAtEvent", data.recordData["Age at Census"]);
-      result.setFieldIfValueExists("registrationDistrict", data.recordData["RD Name"]);
-      result.eventPlace = buildPlaceWithCensusCountyAndDistrict(data, data.recordData["RD Name"],
-         data.recordData["County/ City"], data.recordData["Year"]);
-    }
-    break;
+        let partnerDate = cleanDdMmYyyyDate(
+          data.recordData["Civil Partnership Date"]
+        );
+        setDivorceData(
+          data,
+          result,
+          data.recordData["Partner Surname"],
+          "",
+          partnerDate
+        );
 
-  case "census_lds":
-    {
-      result.setEventYear(data.recordData["Year"]);
-      result.setFieldIfValueExists("ageAtEvent", data.recordData["Age"]);
-      // can we extract registrationDistrict from censusPlace?
-      result.eventPlace = buildPlaceWith1891LdsPlaceAndAddress(data.recordData["Census Place"], data.recordData["Address"])
-      result.setBirthPlace(data.recordData["Birth Place"]);
-    }
-    break;
-  
-  case "opr_births": 
-    setOprCommonFields(data, result);
-    setParents(scotpRecordType, data, result, "Parents/ Other Details");
-    break;
+        result.eventPlace = buildPlaceWithCourtName(
+          data,
+          result,
+          data.recordData["Court"],
+          data.recordData["Dissolution Year"]
+        );
+      }
+      break;
 
-  case "opr_deaths":  
-    setOprCommonFields(data, result);
-    result.setFieldIfValueExists("ageAtDeath", data.recordData["Age"]);
-    setParents(scotpRecordType, data, result, "Parents/ Other Details");
-    break;
+    case "census":
+      {
+        result.setEventYear(data.recordData["Year"]);
+        result.setFieldIfValueExists(
+          "ageAtEvent",
+          data.recordData["Age at Census"]
+        );
+        result.setFieldIfValueExists(
+          "registrationDistrict",
+          data.recordData["RD Name"]
+        );
+        result.eventPlace = buildPlaceWithCensusCountyAndDistrict(
+          data,
+          data.recordData["RD Name"],
+          data.recordData["County/ City"],
+          data.recordData["Year"]
+        );
+      }
+      break;
 
-  case "opr_marriages":
-    {
+    case "census_lds":
+      {
+        result.setEventYear(data.recordData["Year"]);
+        result.setFieldIfValueExists("ageAtEvent", data.recordData["Age"]);
+        // can we extract registrationDistrict from censusPlace?
+        result.eventPlace = buildPlaceWith1891LdsPlaceAndAddress(
+          data.recordData["Census Place"],
+          data.recordData["Address"]
+        );
+        result.setBirthPlace(data.recordData["Birth Place"]);
+      }
+      break;
+
+    case "opr_births":
       setOprCommonFields(data, result);
-      result.recordSubtype = RecordSubtype.MarriageOrBanns;  // no way to know which
+      setParents(scotpRecordType, data, result, "Parents/ Other Details");
+      break;
 
-      let spouseName = data.recordData["Spouse Name"];
-      let remainder = "";
-      let slashIndex = spouseName.indexOf("/");
-      if (slashIndex != -1) {
-        remainder = spouseName.substring(slashIndex);
-        spouseName = spouseName.substring(0, slashIndex);
-      }
-      if (spouseName != "-----" && !spouseName.startsWith("NAME NOT GIVEN")) {
-        setMarriageData(data, result, spouseName, "", true);
-      }
+    case "opr_deaths":
+      setOprCommonFields(data, result);
+      result.setFieldIfValueExists("ageAtDeath", data.recordData["Age"]);
+      setParents(scotpRecordType, data, result, "Parents/ Other Details");
+      break;
 
-      // look for a film reel number on end of Spouse Name field
-      if (remainder) {
-        let frameNumberIndex = remainder.search(/FR\d/);
-        if (frameNumberIndex != -1) {
-          remainder = remainder.substring(frameNumberIndex).trim();
-          setRefPartsOfOtherDetails(result, remainder, "FR", "frameNumber");
+    case "opr_marriages":
+      {
+        setOprCommonFields(data, result);
+        result.recordSubtype = RecordSubtype.MarriageOrBanns; // no way to know which
+
+        let spouseName = data.recordData["Spouse Name"];
+        let remainder = "";
+        let slashIndex = spouseName.indexOf("/");
+        if (slashIndex != -1) {
+          remainder = spouseName.substring(slashIndex);
+          spouseName = spouseName.substring(0, slashIndex);
+        }
+        if (spouseName != "-----" && !spouseName.startsWith("NAME NOT GIVEN")) {
+          setMarriageData(data, result, spouseName, "", true);
+        }
+
+        // look for a film reel number on end of Spouse Name field
+        if (remainder) {
+          let frameNumberIndex = remainder.search(/FR\d/);
+          if (frameNumberIndex != -1) {
+            remainder = remainder.substring(frameNumberIndex).trim();
+            setRefPartsOfOtherDetails(result, remainder, "FR", "frameNumber");
+          }
         }
       }
-    }
-    break;
+      break;
 
-  case "crbanns_marriages":
-    result.recordSubtype = RecordSubtype.MarriageOrBanns;  // no way to know which
-    result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date"]));
-    result.eventPlace = buildPlaceWithRcParishCongregationName(data.recordData["Parish"], data);
-    setMarriageData(data, result, data.recordData["Spouse Surname"], data.recordData["Spouse forename"]);
-    break;
+    case "crbanns_marriages":
+      result.recordSubtype = RecordSubtype.MarriageOrBanns; // no way to know which
+      result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date"]));
+      result.eventPlace = buildPlaceWithRcParishCongregationName(
+        data.recordData["Parish"],
+        data
+      );
+      setMarriageData(
+        data,
+        result,
+        data.recordData["Spouse Surname"],
+        data.recordData["Spouse forename"]
+      );
+      break;
 
-  case "crbirths_baptism":
-    {
-      let birthDate = cleanDdMmYyyyDate(data.recordData["Birth Date"]);
-      let baptismDate = cleanDdMmYyyyDate(data.recordData["Baptism Date"]);
-      if (baptismDate) {
-        result.setEventDate(baptismDate);
+    case "crbirths_baptism":
+      {
+        let birthDate = cleanDdMmYyyyDate(data.recordData["Birth Date"]);
+        let baptismDate = cleanDdMmYyyyDate(data.recordData["Baptism Date"]);
+        if (baptismDate) {
+          result.setEventDate(baptismDate);
+        } else {
+          result.setEventDate(birthDate);
+        }
+        result.setBirthDate(birthDate);
+
+        result.eventPlace = buildPlaceWithRcParishCongregationName(
+          data.recordData["Parish"],
+          data
+        );
+
+        setParents(scotpRecordType, data, result, "Parents/ Other details");
       }
-      else {
-        result.setEventDate(birthDate);
+      break;
+
+    case "crdeath_burial":
+      // has separate death and burial date columns
+      {
+        let deathDate = cleanDdMmYyyyDate(data.recordData["Death Date"]);
+        let burialDate = cleanDdMmYyyyDate(data.recordData["Burial Date"]);
+        if (burialDate) {
+          result.setEventDate(burialDate);
+        } else {
+          result.setEventDate(deathDate);
+        }
+        result.setDeathDate(deathDate);
+
+        result.setFieldIfValueExists("ageAtDeath", data.recordData["Age"]);
+
+        result.eventPlace = buildPlaceWithRcParishCongregationName(
+          data.recordData["Parish"],
+          data
+        );
       }
-      result.setBirthDate(birthDate);
+      break;
 
-      result.eventPlace = buildPlaceWithRcParishCongregationName(data.recordData["Parish"], data);
+    case "cr_other":
+      {
+        // can be confirmation etc (there is a column that specifies)
+        let eventDate = cleanDdMmYyyyDate(data.recordData["Event Date"]);
+        result.setEventDate(eventDate);
 
-      setParents(scotpRecordType, data, result, "Parents/ Other details");
-    }
-    break;
-    
-  case "crdeath_burial":
-    // has separate death and burial date columns
-    {
-      let deathDate = cleanDdMmYyyyDate(data.recordData["Death Date"]);
-      let burialDate = cleanDdMmYyyyDate(data.recordData["Burial Date"]);
-      if (burialDate) {
-        result.setEventDate(burialDate);
+        result.eventPlace = buildPlaceWithRcParishCongregationName(
+          data.recordData["Parish"],
+          data
+        );
       }
-      else {
-        result.setEventDate(deathDate);
+      break;
+
+    case "ch3_baptism": // Other church type
+      {
+        let birthDate = cleanDdMonthYyyyDate(data.recordData["Birth Date"]);
+        let baptismDate = cleanDdMonthYyyyDate(data.recordData["Baptism Date"]);
+        if (baptismDate) {
+          result.setEventDate(baptismDate);
+        } else {
+          result.setEventDate(birthDate);
+        }
+        result.setBirthDate(birthDate);
+
+        result.eventPlace = buildPlaceWithOtherParishCongregationName(
+          data.recordData["Parish/Congregation Name"],
+          data
+        );
+        result.birthPlace = result.eventPlace;
+
+        setParents(scotpRecordType, data, result, "Parents/ Other Details");
       }
-      result.setDeathDate(deathDate);
+      break;
 
-      result.setFieldIfValueExists("ageAtDeath", data.recordData["Age"]);
+    case "ch3_burials": // Other church type
+      result.setEventDate(cleanDdMonthYyyyDate(data.recordData["Date"]));
+      setResultFieldFromRecordDataField(
+        data,
+        "Cause of Death",
+        result,
+        "causeOfDeath",
+        true
+      );
+      result.eventPlace = buildPlaceWithOtherParishCongregationName(
+        data.recordData["Parish/Congregation Name"],
+        data
+      );
+      result.deathPlace = result.eventPlace;
+      break;
 
-      result.eventPlace = buildPlaceWithRcParishCongregationName(data.recordData["Parish"], data);
-    }
-    break;
+    case "ch3_marriages": // Other church type
+      result.setEventDate(
+        cleanDdMonthYyyyDate(data.recordData["Marriage Date"])
+      );
+      result.eventPlace = buildPlaceWithOtherParishCongregationName(
+        data.recordData["Parish/Congregation Name"],
+        data
+      );
+      setMarriageData(
+        data,
+        result,
+        data.recordData["Spouse Surname"],
+        data.recordData["Spouse Forename"]
+      );
+      break;
 
-  case "cr_other":
-    {
-      // can be confirmation etc (there is a column that specifies)
-      let eventDate = cleanDdMmYyyyDate(data.recordData["Event Date"]);
-      result.setEventDate(eventDate);
+    case "ch3_other": // Other church type
+      result.setEventDate(
+        cleanDdMonthYyyyDate(data.recordData["Date of Event"])
+      );
+      result.eventPlace = buildPlaceWithOtherParishCongregationName(
+        data.recordData["Parish/Congregation Name"],
+        data
+      );
+      break;
 
-      result.eventPlace = buildPlaceWithRcParishCongregationName(data.recordData["Parish"], data);
-    }
-    break;
+    case "coa": // Coat of Arms
+      result.setEventDate(cleanDdMmYyyyDate(data.recordData["Grant year"]));
+      break;
 
-  case "ch3_baptism":  // Other church type
-    {
+    case "hie": // Poor relief and migration records - Highlands and Island Emigration
+      result.setEventDate(cleanDdMmYyyyDate(data.recordData["Departure Date"]));
+      setResultFieldFromRecordDataField(
+        data,
+        "Shipname",
+        result,
+        "shipName",
+        true
+      );
+      result.eventPlace = buildPlaceWithHieResidenceAndCountyName(
+        data.recordData["Residence"],
+        data.recordData["County"]
+      );
+      break;
 
-      let birthDate = cleanDdMonthYyyyDate(data.recordData["Birth Date"]);
-      let baptismDate = cleanDdMonthYyyyDate(data.recordData["Baptism Date"]);
-      if (baptismDate) {
-        result.setEventDate(baptismDate);
-      }
-      else {
-        result.setEventDate(birthDate);
-      }
-      result.setBirthDate(birthDate);
+    case "military_tribunals":
+      result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date of Appeal"]));
+      result.eventPlace = buildPlaceWithCourtName(
+        data,
+        result,
+        data.recordData["Court"],
+        result.inferEventYear()
+      );
+      break;
 
-      result.eventPlace = buildPlaceWithOtherParishCongregationName(data.recordData["Parish/Congregation Name"], data);
-      result.birthPlace = result.eventPlace;
+    case "prison_records":
+      result.setEventYear(data.recordData["Year admitted"]);
+      result.setFieldIfValueExists("ageAtEvent", data.recordData["Age"]);
 
-      setParents(scotpRecordType, data, result, "Parents/ Other Details");
-    }
-    break;
+      result.eventPlace = buildPlaceWithPrisonName(
+        data,
+        data.recordData["Prison"],
+        data.recordData["Year admitted"]
+      );
 
-  case "ch3_burials":  // Other church type
-    result.setEventDate(cleanDdMonthYyyyDate(data.recordData["Date"]));
-    setResultFieldFromRecordDataField(data, "Cause of Death", result, "causeOfDeath", true);
-    result.eventPlace = buildPlaceWithOtherParishCongregationName(data.recordData["Parish/Congregation Name"], data);
-    result.deathPlace = result.eventPlace;
-    break;
+      result.setBirthPlace(standardizePlaceName(data.recordData["Where born"]));
+      break;
 
-  case "ch3_marriages":  // Other church type
-    result.setEventDate(cleanDdMonthYyyyDate(data.recordData["Marriage Date"]));
-    result.eventPlace = buildPlaceWithOtherParishCongregationName(data.recordData["Parish/Congregation Name"], data);
-    setMarriageData(data, result, data.recordData["Spouse Surname"], data.recordData["Spouse Forename"]);
-    break;
+    case "soldiers_wills":
+      result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date"]));
+      result.deathDate = result.eventDate;
+      result.setDeathPlace(data.recordData["Place of Death"]);
+      result.setFieldIfValueExists(
+        "serviceNumber",
+        data.recordData["Service Number"]
+      );
+      result.setFieldIfValueExists(
+        "militaryRegiment",
+        data.recordData["Regiment"]
+      );
+      break;
 
-  case "ch3_other":  // Other church type
-    result.setEventDate(cleanDdMonthYyyyDate(data.recordData["Date of Event"]));
-    result.eventPlace = buildPlaceWithOtherParishCongregationName(data.recordData["Parish/Congregation Name"], data);
-    break;
+    case "wills_testaments":
+      result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date"]));
+      result.eventPlace = buildPlaceWithCourtName(
+        data,
+        result,
+        data.recordData["Court"],
+        result.inferEventYear()
+      );
+      setWillsAndTestamentsRecordSubtype(data, result);
+      break;
 
-  case "coa":  // Coat of Arms
-    result.setEventDate(cleanDdMmYyyyDate(data.recordData["Grant year"]));
-    break;
-    
-  case "hie": // Poor relief and migration records - Highlands and Island Emigration
-    result.setEventDate(cleanDdMmYyyyDate(data.recordData["Departure Date"]));
-    setResultFieldFromRecordDataField(data, "Shipname", result, "shipName", true);
-    result.eventPlace = buildPlaceWithHieResidenceAndCountyName(data.recordData["Residence"], data.recordData["County"]);
-    break;
+    case "valuation_rolls":
+      result.setEventYear(data.recordData["Year"]);
+      result.eventPlace = buildPlaceWithOprParishName(
+        data,
+        data.recordData["Parish"],
+        data.recordData["Year"]
+      );
+      break;
 
-  case "military_tribunals":
-    result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date of Appeal"]));
-    result.eventPlace = buildPlaceWithCourtName(data, result, data.recordData["Court"], result.inferEventYear());
-    break;
-
-  case "prison_records":  
-    result.setEventYear(data.recordData["Year admitted"]);
-    result.setFieldIfValueExists("ageAtEvent", data.recordData["Age"]);
-
-    result.eventPlace = buildPlaceWithPrisonName(data, data.recordData["Prison"], data.recordData["Year admitted"]);
-
-    result.setBirthPlace(standardizePlaceName(data.recordData["Where born"]));
-    break;
-
-  case "soldiers_wills":  
-    result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date"]));
-    result.deathDate = result.eventDate;
-    result.setDeathPlace(data.recordData["Place of Death"]);
-    result.setFieldIfValueExists("serviceNumber", data.recordData["Service Number"]);
-    result.setFieldIfValueExists("militaryRegiment", data.recordData["Regiment"]);
-    break;
-
-  case "wills_testaments":
-    result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date"]));
-    result.eventPlace = buildPlaceWithCourtName(data, result, data.recordData["Court"], result.inferEventYear());
-    setWillsAndTestamentsRecordSubtype(data, result);
-    break;
-
-  case "valuation_rolls":
-    result.setEventYear(data.recordData["Year"]);
-    result.eventPlace = buildPlaceWithOprParishName(data, data.recordData["Parish"], data.recordData["Year"]);
-    break;
-
-  default:
-    return result;
+    default:
+      return result;
   }
 
   if (scotpRecordType == "census" || scotpRecordType == "census_lds") {
     let collectionId = "";
     if (scotpRecordType == "census_lds") {
       collectionId = "census1881";
-    }
-    else {
+    } else {
       let censusYear = result.inferEventYear();
       if (censusYear) {
         collectionId = "census" + censusYear;

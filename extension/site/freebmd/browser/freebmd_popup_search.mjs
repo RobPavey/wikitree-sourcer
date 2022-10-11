@@ -28,10 +28,14 @@ import {
   addMenuItem,
   beginMainMenu,
   endMainMenu,
-  doAsyncActionWithCatch
+  doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction, testFilterForDatesAndCountries } from "/base/browser/popup/popup_search.mjs";
+import {
+  doSearch,
+  registerSearchMenuItemFunction,
+  testFilterForDatesAndCountries,
+} from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -43,8 +47,12 @@ const freebmdEndYear = 1992;
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function freebmdSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options }
-  doAsyncActionWithCatch("FreeBMD Search", input, async function() {
+  const input = {
+    typeOfSearch: typeOfSearch,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  doAsyncActionWithCatch("FreeBMD Search", input, async function () {
     let loadedModule = await import(`../core/freebmd_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
@@ -59,28 +67,53 @@ function addFreebmdDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log(data);
 
   if (filter) {
-    if (!testFilterForDatesAndCountries(filter, freebmdStartYear, freebmdEndYear, ["England and Wales"])) {
+    if (
+      !testFilterForDatesAndCountries(
+        filter,
+        freebmdStartYear,
+        freebmdEndYear,
+        ["England and Wales"]
+      )
+    ) {
       return;
     }
-  }
-  else {
+  } else {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(freebmdStartYear, freebmdEndYear, maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(freebmdStartYear, freebmdEndYear, maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(freebmdStartYear, freebmdEndYear, maxLifespan);
+    let birthPossibleInRange =
+      data.generalizedData.couldPersonHaveBeenBornInDateRange(
+        freebmdStartYear,
+        freebmdEndYear,
+        maxLifespan
+      );
+    let deathPossibleInRange =
+      data.generalizedData.couldPersonHaveDiedInDateRange(
+        freebmdStartYear,
+        freebmdEndYear,
+        maxLifespan
+      );
+    let marriagePossibleInRange =
+      data.generalizedData.couldPersonHaveMarriedInDateRange(
+        freebmdStartYear,
+        freebmdEndYear,
+        maxLifespan
+      );
 
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
+    if (
+      !(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)
+    ) {
       //console.log("addFreebmdDefaultSearchMenuItem: dates not in range");
       return;
     }
 
-    if (!data.generalizedData.didPersonLiveInCountryList(["England and Wales"])) {
+    if (
+      !data.generalizedData.didPersonLiveInCountryList(["England and Wales"])
+    ) {
       //console.log("addFreebmdDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
       return;
     }
   }
-  
-  addMenuItem(menu, "Search FreeBMD (UK)...", function(element) {
+
+  addMenuItem(menu, "Search FreeBMD (UK)...", function (element) {
     setupFreebmdSearchSubMenu(data, backFunction, filter);
   });
 
@@ -88,7 +121,7 @@ function addFreebmdDefaultSearchMenuItem(menu, data, backFunction, filter) {
 }
 
 async function addFreebmdSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "freebmd", function(element) {
+  await addSameRecordMenuItem(menu, data, "freebmd", function (element) {
     freebmdSearch(data.generalizedData, "SameCollection");
   });
 }
@@ -96,12 +129,17 @@ async function addFreebmdSameRecordMenuItem(menu, data) {
 function addFreebmdSearchBirthsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(freebmdStartYear, freebmdEndYear, maxLifespan);
+    let birthPossibleInRange =
+      data.generalizedData.couldPersonHaveBeenBornInDateRange(
+        freebmdStartYear,
+        freebmdEndYear,
+        maxLifespan
+      );
     if (!birthPossibleInRange) {
       return;
     }
   }
-  addMenuItem(menu, "Search FreeBMD Births", function(element) {
+  addMenuItem(menu, "Search FreeBMD Births", function (element) {
     freebmdSearch(data.generalizedData, "Births");
   });
 }
@@ -109,12 +147,17 @@ function addFreebmdSearchBirthsMenuItem(menu, data, filter) {
 function addFreebmdSearchMarriagesMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(freebmdStartYear, freebmdEndYear, maxLifespan);
+    let marriagePossibleInRange =
+      data.generalizedData.couldPersonHaveMarriedInDateRange(
+        freebmdStartYear,
+        freebmdEndYear,
+        maxLifespan
+      );
     if (!marriagePossibleInRange) {
       return;
     }
   }
-  addMenuItem(menu, "Search FreeBMD Marriages", function(element) {
+  addMenuItem(menu, "Search FreeBMD Marriages", function (element) {
     freebmdSearch(data.generalizedData, "Marriages");
   });
 }
@@ -122,12 +165,17 @@ function addFreebmdSearchMarriagesMenuItem(menu, data, filter) {
 function addFreebmdSearchDeathsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(freebmdStartYear, freebmdEndYear, maxLifespan);
+    let deathPossibleInRange =
+      data.generalizedData.couldPersonHaveDiedInDateRange(
+        freebmdStartYear,
+        freebmdEndYear,
+        maxLifespan
+      );
     if (!deathPossibleInRange) {
       return;
     }
   }
-  addMenuItem(menu, "Search FreeBMD Deaths", function(element) {
+  addMenuItem(menu, "Search FreeBMD Deaths", function (element) {
     freebmdSearch(data.generalizedData, "Deaths");
   });
 }
@@ -153,4 +201,8 @@ async function setupFreebmdSearchSubMenu(data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("freebmd", "FreeBMD (UK)", addFreebmdDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "freebmd",
+  "FreeBMD (UK)",
+  addFreebmdDefaultSearchMenuItem
+);

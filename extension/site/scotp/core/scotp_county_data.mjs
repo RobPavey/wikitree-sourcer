@@ -129,7 +129,6 @@ const emigrationCountyNames = [
 ];
 
 function getCountyListForRecordType(scotpRecordType) {
-
   let countyList = undefined;
 
   switch (scotpRecordType) {
@@ -150,10 +149,10 @@ function getCountyListForRecordType(scotpRecordType) {
     case "crdeath_burial":
     case "cr_other":
 
-    case "ch3_baptism":  // Presbyterian
-    case "ch3_burials":  // Presbyterian
-    case "ch3_marriages":  // Presbyterian
-    case "ch3_other":  // Presbyterian
+    case "ch3_baptism": // Presbyterian
+    case "ch3_burials": // Presbyterian
+    case "ch3_marriages": // Presbyterian
+    case "ch3_other": // Presbyterian
       countyList = statutoryCountyNames;
       break;
 
@@ -169,9 +168,7 @@ function getCountyListForRecordType(scotpRecordType) {
   return countyList;
 }
 
-
 function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
-
   let countyList = getCountyListForRecordType(scotpRecordType);
 
   if (!countyList) {
@@ -212,26 +209,22 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
         }
         // it could still be a place string like "Old Machar, Aberdeen" which would be Aberdeen City
         // but leave it for now.
-      }
-      else if (placeCountyName == "ANGUS") {
+      } else if (placeCountyName == "ANGUS") {
         if (placeString.includes("DUNDEE, ")) {
           return "DUNDEE CITY";
         }
-      }
-      else if (placeCountyName == "MIDLOTHIAN") {
+      } else if (placeCountyName == "MIDLOTHIAN") {
         if (placeString.includes("EDINBURGH, ")) {
           return "EDINBURGH CITY";
         }
-      }
-      else if (placeCountyName == "LANARK") {
+      } else if (placeCountyName == "LANARK") {
         if (placeString.includes("GLASGOW, ")) {
           return "GLASGOW CITY";
         }
       }
 
       return placeCountyName;
-    }
-    else {
+    } else {
       return placeCountyName;
     }
   }
@@ -248,20 +241,28 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
     if (placeString.includes("DUNDEE, ") || placeString.endsWith("DUNDEE")) {
       return "DUNDEE CITY";
     }
-    if (placeString.includes("EDINBURGH, ") || placeString.endsWith("EDINBURGH")) {
+    if (
+      placeString.includes("EDINBURGH, ") ||
+      placeString.endsWith("EDINBURGH")
+    ) {
       return "EDINBURGH CITY";
     }
     if (placeString.includes("GLASGOW, ") || placeString.endsWith("GLASGOW")) {
       return "GLASGOW CITY";
     }
-  }
-  else if (scotpRecordType == "valuation_rolls") {
+  } else if (scotpRecordType == "valuation_rolls") {
     // have to deal with: "ANGUS (FORFAR) COUNTY" and "MORAY (ELGIN) COUNTY"
     // there are only two cases so handle them individually
-    if (placeCountyName == "ANGUS COUNTY" || placeCountyName == "FORFAR COUNTY") {
+    if (
+      placeCountyName == "ANGUS COUNTY" ||
+      placeCountyName == "FORFAR COUNTY"
+    ) {
       return "ANGUS (FORFAR) COUNTY";
     }
-    if (placeCountyName == "MORAY COUNTY" || placeCountyName == "ELGIN COUNTY") {
+    if (
+      placeCountyName == "MORAY COUNTY" ||
+      placeCountyName == "ELGIN COUNTY"
+    ) {
       return "MORAY (ELGIN) COUNTY";
     }
   }

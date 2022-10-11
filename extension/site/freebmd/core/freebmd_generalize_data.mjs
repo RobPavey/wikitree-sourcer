@@ -22,7 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers, WtsPlace, WtsName, WtsDate } from "../../../base/core/generalize_data_utils.mjs";
+import {
+  GeneralizedData,
+  dateQualifiers,
+  WtsPlace,
+  WtsName,
+  WtsDate,
+} from "../../../base/core/generalize_data_utils.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
@@ -39,16 +45,14 @@ function freebmdQuarterToGdQuarter(quarter) {
       return 4;
     default:
       return 1;
-    }
-  
+  }
 }
 // This function generalizes the data extracted from the GRO page.
 // We know what fields can be there. And we knw the ones we want in generalizedData.
 function generalizeData(input) {
-
   let data = input.extractedData;
 
-  let result = new GeneralizedData;
+  let result = new GeneralizedData();
 
   result.sourceOfData = "freebmd";
 
@@ -61,17 +65,17 @@ function generalizeData(input) {
   result.sourceType = "record";
 
   switch (data.eventType) {
-  case "birth":
-    result.recordType = RT.BirthRegistration;
-    break;
-  case "marriage":
-    result.recordType = RT.MarriageRegistration;
-    break;
-  case "death":
-    result.recordType = RT.DeathRegistration;
-    break;
-  default:
-    return;
+    case "birth":
+      result.recordType = RT.BirthRegistration;
+      break;
+    case "marriage":
+      result.recordType = RT.MarriageRegistration;
+      break;
+    case "death":
+      result.recordType = RT.DeathRegistration;
+      break;
+    default:
+      return;
   }
 
   result.setEventYear(data.eventYear);
@@ -87,8 +91,7 @@ function generalizeData(input) {
     if (data.mother) {
       result.mothersMaidenName = data.mothersMaidenName;
     }
-  }
-  else if (data.eventType == "marriage") {
+  } else if (data.eventType == "marriage") {
     collectionId = "marriages";
 
     if (data.spouse) {
@@ -100,18 +103,16 @@ function generalizeData(input) {
         marriagePlace: data.district,
       };
 
-      result.spouses = [ spouse ];
+      result.spouses = [spouse];
     }
-  }
-  else if (data.eventType == "death") {
+  } else if (data.eventType == "death") {
     collectionId = "deaths";
     result.lastNameAtDeath = data.surname;
     result.deathDate = result.eventDate;
 
     if (data.ageAtDeath) {
       result.ageAtDeath = data.ageAtDeath;
-    }
-    else if (data.birthDate) {
+    } else if (data.birthDate) {
       result.setBirthDate(data.birthDate);
     }
   }

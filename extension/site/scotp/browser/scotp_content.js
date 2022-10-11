@@ -25,31 +25,30 @@ SOFTWARE.
 const highlightStyle = "background-color: palegoldenrod";
 
 function getRefRecordKey(recordType) {
-
-  // this is a cut-down version of the scotpRecordTypes in scotp_record_type.mjs since we do not want 
+  // this is a cut-down version of the scotpRecordTypes in scotp_record_type.mjs since we do not want
   // to import that in the content script
   const scotpRecordTypes = {
     ///////////////////// Statutory Registers ///////////////////////
-    stat_births:      {ref: "Ref"},
-    stat_marriages:   {ref: "Ref"},
-    stat_divorces:    {ref: "Serial Number"},
-    stat_deaths:      {ref: "Ref"},
-    civilpartnership: {ref: "RD/EntryNumber"},
-    dissolutions:     {ref: "Serial Number"},
+    stat_births: { ref: "Ref" },
+    stat_marriages: { ref: "Ref" },
+    stat_divorces: { ref: "Serial Number" },
+    stat_deaths: { ref: "Ref" },
+    civilpartnership: { ref: "RD/EntryNumber" },
+    dissolutions: { ref: "Serial Number" },
     ///////////////////// Church Registers ///////////////////////
-    opr_births:       {ref: "Ref"},
-    opr_marriages:    {ref: "Ref"},
-    opr_deaths:       {ref: "Ref"},
+    opr_births: { ref: "Ref" },
+    opr_marriages: { ref: "Ref" },
+    opr_deaths: { ref: "Ref" },
     ///////////////////// Census ///////////////////////
-    census:           {ref: "Ref"},
-    census_lds:       {ref: "Ref"},
+    census: { ref: "Ref" },
+    census_lds: { ref: "Ref" },
     ///////////////////// Valuation Rolls ///////////////////////
-    valuation_rolls:{ref: "Reference Number"},
+    valuation_rolls: { ref: "Reference Number" },
     ///////////////////// Legal ///////////////////////
-    wills_testaments: {ref: "Reference Number"},
-    coa:              {ref: "Record Number"},
+    wills_testaments: { ref: "Reference Number" },
+    coa: { ref: "Record Number" },
   };
-  
+
   let value = "";
   let type = scotpRecordTypes[recordType];
   if (type) {
@@ -59,33 +58,38 @@ function getRefRecordKey(recordType) {
   return value;
 }
 
-
 function addClickedRowListener() {
-  const elResultsTable = document.querySelector(".results-table-wrapper .sticky-table tbody");
-  if(elResultsTable && !elResultsTable.hasAttribute('listenerOnClick')){
-    elResultsTable.setAttribute('listenerOnClick', 'true');
-    elResultsTable.addEventListener("click", function(ev) {
+  const elResultsTable = document.querySelector(
+    ".results-table-wrapper .sticky-table tbody"
+  );
+  if (elResultsTable && !elResultsTable.hasAttribute("listenerOnClick")) {
+    elResultsTable.setAttribute("listenerOnClick", "true");
+    elResultsTable.addEventListener("click", function (ev) {
       // clear existing selected row if any
       let selectedRow = getClickedRow();
-      if(selectedRow) {
+      if (selectedRow) {
         selectedRow.removeAttribute("style");
       }
       selectedRow = ev.target;
       if (selectedRow) {
         selectedRow = selectedRow.closest("tr");
-        if(selectedRow) {
-          selectedRow.setAttribute("style", highlightStyle); 
+        if (selectedRow) {
+          selectedRow.setAttribute("style", highlightStyle);
         }
-      } 
+      }
     });
   }
 }
 
 function getClickedRow() {
-  const elResultsTable = document.querySelector(".results-table-wrapper .sticky-table tbody");
+  const elResultsTable = document.querySelector(
+    ".results-table-wrapper .sticky-table tbody"
+  );
   if (elResultsTable) {
-    const selectedRow = elResultsTable.querySelector("tr[style='" + highlightStyle + "']");
-    return selectedRow
+    const selectedRow = elResultsTable.querySelector(
+      "tr[style='" + highlightStyle + "']"
+    );
+    return selectedRow;
   }
 }
 
@@ -106,7 +110,7 @@ async function doHighlightForRefQuery() {
     if (!refValue) {
       return;
     }
-    
+
     //console.log("doHighlightForRefQuery: refValue = " + refValue);
 
     // extract the record_type from url
@@ -114,14 +118,12 @@ async function doHighlightForRefQuery() {
     let rtIndex = url.indexOf(rt1Query);
     if (rtIndex != -1) {
       rtIndex += rt1Query.length;
-    }
-    else {
+    } else {
       const rt2Query = "&record_type%5B0%5D=";
       rtIndex = url.indexOf(rt2Query);
       if (rtIndex != -1) {
         rtIndex += rt2Query.length;
-      }
-      else {
+      } else {
         return;
       }
     }
@@ -137,7 +139,9 @@ async function doHighlightForRefQuery() {
       return;
     }
 
-    let resultsTableWrapper = document.querySelector("div.results-table-wrapper");
+    let resultsTableWrapper = document.querySelector(
+      "div.results-table-wrapper"
+    );
     if (!resultsTableWrapper) {
       return;
     }
@@ -163,7 +167,7 @@ async function doHighlightForRefQuery() {
     }
     if (refKeyColumnIndex == -1) {
       return;
-    } 
+    }
 
     let rowElements = resultsTable.querySelectorAll("tbody > tr");
     for (let index = 0; index < rowElements.length; index++) {
@@ -182,32 +186,37 @@ async function doHighlightForRefQuery() {
             //console.log("doHighlightForRefQuery: text = '" + text + "', refValue = '" + refValue + "'");
             if (text == refValue) {
               // we have found the row to highlight
-              rowElement.setAttribute("style", highlightStyle); 
+              rowElement.setAttribute("style", highlightStyle);
               return;
             }
           }
         }
       }
     }
-
   }
 }
 
 function extractHandler(request, sendResponse) {
-
   let selectedRow = getClickedRow();
   let siteSpecificInput = {
     selectedRowElement: selectedRow,
-  }
+  };
 
   // Extract the data via DOM scraping
-  let isAsync = extractDataAndRespond(document, location.href, "scotp", sendResponse, siteSpecificInput);
+  let isAsync = extractDataAndRespond(
+    document,
+    location.href,
+    "scotp",
+    sendResponse,
+    siteSpecificInput
+  );
   if (isAsync) {
     return true;
   }
 }
-  
-siteContentInit(`scotp`,
+
+siteContentInit(
+  `scotp`,
   `site/scotp/core/scotp_extract_data.mjs`,
   extractHandler
 );

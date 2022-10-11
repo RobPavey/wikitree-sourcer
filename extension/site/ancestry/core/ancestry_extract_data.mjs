@@ -27,7 +27,7 @@ function cleanText(text) {
     return "";
   }
 
-  text = text.replace(/\s+/g, " ");  // eliminate nbsp and multiple spaces etc
+  text = text.replace(/\s+/g, " "); // eliminate nbsp and multiple spaces etc
 
   // sometimes the text is something like "Zachariah Davey[Zechariah Pavey]"
   // in that case add a space before the [
@@ -43,7 +43,7 @@ function cleanLabel(text) {
     return "";
   }
 
-  text = text.replace(/\s/g, " ");  // eliminate nbsp etc
+  text = text.replace(/\s/g, " "); // eliminate nbsp etc
   text = text.trim();
 
   // remove trailing :
@@ -58,7 +58,6 @@ function setSourceCitation(result, sourceTextNode) {
 }
 
 function setSourceInformation(result, sourceTextNode) {
-
   let sourceText = cleanText(sourceTextNode.textContent);
   result.sourceInformation = sourceText;
 
@@ -75,8 +74,7 @@ function setSourceInformation(result, sourceTextNode) {
         break;
       }
     }
-  }
-  else {
+  } else {
     if (sourceText.startsWith(origDataStr)) {
       originalData = sourceText.substring(origDataStr.length).trim();
     }
@@ -98,10 +96,10 @@ function extractDbAndRecordId(result, url) {
 
   let dbId = "";
   let recordId = "";
-  const dbIdStr = "dbid=";  // could have & or ? before dbid
-  const dbStr = "db=";  // On some records (like Birth Registrations) it is db rather than dbid
+  const dbIdStr = "dbid="; // could have & or ? before dbid
+  const dbStr = "db="; // On some records (like Birth Registrations) it is db rather than dbid
   if (url.includes(dbIdStr) || url.includes(dbStr)) {
-    var dbIdOrDbStr = (url.includes(dbIdStr)) ? dbIdStr : dbStr;
+    var dbIdOrDbStr = url.includes(dbIdStr) ? dbIdStr : dbStr;
     let dbIdIndex = url.indexOf(dbIdOrDbStr);
     dbIdIndex += dbIdOrDbStr.length;
     let dbEndIndex = url.indexOf("&", dbIdIndex);
@@ -114,22 +112,19 @@ function extractDbAndRecordId(result, url) {
         let ampIndex = url.indexOf("&", recIndex);
         if (ampIndex != -1) {
           recordId = url.substring(recIndex, ampIndex);
-        }
-        else {
+        } else {
           recordId = url.substring(recIndex);
         }
       }
     }
-  }
-  else if (url.includes("discoveryui-content")) {
+  } else if (url.includes("discoveryui-content")) {
     let rec = url.replace(/.*\/discoveryui-content\/view\/([^:]+)\:.*/, "$1");
     let db = url.replace(/.*\/discoveryui-content\/view\/[^:]+\:(\d+).*/, "$1");
     if (db != "" && db != url && rec != "" && rec != url) {
       dbId = db;
       recordId = rec;
     }
-  }
-  else if (url.includes("/collections/") && url.includes("/records/")) {
+  } else if (url.includes("/collections/") && url.includes("/records/")) {
     let db = url.replace(/.*\/collections\/([^\/]+)\/records\/.*/, "$1");
     let rec = url.replace(/.*\/collections\/[^\/]+\/records\/([^\/]+)/, "$1");
     if (db != "" && db != url && rec != "" && rec != url) {
@@ -142,14 +137,14 @@ function extractDbAndRecordId(result, url) {
   result.dbId = dbId;
   result.recordId = recordId;
   // Note this is overidden in buildCitation using use options
-  result.ancestryTemplate = "{{Ancestry Record|" + result.dbId + "|" + result.recordId + "}}";
+  result.ancestryTemplate =
+    "{{Ancestry Record|" + result.dbId + "|" + result.recordId + "}}";
 
   let domain = url.replace(/.*\.ancestry.([^\/]+)\/.*/, "$1");
   result.domain = domain;
 }
 
 function extractRecordPageTitle(document, result) {
-
   let titleName = "";
   let titleCollection = "";
 
@@ -159,19 +154,17 @@ function extractRecordPageTitle(document, result) {
     titleName = pageTitle.textContent;
     let pageIntro = document.querySelector("h1.pageTitle > p.pageIntro > a");
     titleCollection = pageIntro.textContent;
-  }
-  else {
+  } else {
     let pageTitleLink = document.querySelector("h1.pageTitle > a");
 
     if (pageTitleLink) {
       titleCollection = pageTitleLink.textContent;
-    }
-    else {
+    } else {
       // this is a case that only seems to happen when fetching the page rather than opening it
       // in a tab.
       // There is a script that generates the span node we try to read above.
       // The script is the next sibling to the pageTitleNode
-      let pageTitleNode = document.querySelector("h1.pageTitle")
+      let pageTitleNode = document.querySelector("h1.pageTitle");
       if (pageTitleNode) {
         //console.log("pageTitle found, numChildren = " + pageTitleNode.children.length);
         let scriptNode = pageTitleNode.nextElementSibling;
@@ -185,7 +178,7 @@ function extractRecordPageTitle(document, result) {
           let startIndex = scriptText.indexOf(titleNamePrefix);
           if (startIndex != -1) {
             startIndex += titleNamePrefix.length;
-            let endIndex= scriptText.indexOf('"', startIndex);
+            let endIndex = scriptText.indexOf('"', startIndex);
             if (endIndex != -1) {
               titleName = scriptText.substring(startIndex, endIndex);
             }
@@ -194,7 +187,7 @@ function extractRecordPageTitle(document, result) {
           startIndex = scriptText.indexOf(titleCollectionPrefix);
           if (startIndex != -1) {
             startIndex += titleCollectionPrefix.length;
-            let endIndex= scriptText.indexOf('"', startIndex);
+            let endIndex = scriptText.indexOf('"', startIndex);
             if (endIndex != -1) {
               titleCollection = scriptText.substring(startIndex, endIndex);
             }
@@ -211,16 +204,16 @@ function extractRecordPageTitle(document, result) {
 }
 
 function extractRecordData(document, result) {
-
   result.recordData = Object.create(null);
 
-  var recordDataRows = document.querySelectorAll("#recordData > table > tbody > tr");
+  var recordDataRows = document.querySelectorAll(
+    "#recordData > table > tbody > tr"
+  );
 
   for (let row of recordDataRows.values()) {
-
     // Get the label of the row (must be immediate child)
     let labelNode = row.querySelector(":scope > th");
-    let label = (labelNode) ? labelNode.textContent : "";
+    let label = labelNode ? labelNode.textContent : "";
     if (label != "") {
       label = cleanLabel(label);
       let rowData = row.querySelector("td");
@@ -234,15 +227,16 @@ function extractRecordData(document, result) {
           //console.log(label + " " + value);
           result.recordData[label] = value;
         }
-      }
-      else {
+      } else {
         // there are children. There are several cases to handle here
-        if (rowData.classList.contains('p_embedTableTd')){
+        if (rowData.classList.contains("p_embedTableTd")) {
           // Sub-tables are used for Household Members in census and Records on page in Marriage Reg
           // If possible put each of the rows of the sub-table in the recordData with line breaks
           if (label.includes("Household")) {
             result.household = {};
-            let headings = row.querySelectorAll("td.p_embedTableTd th.p_embedTableHead");
+            let headings = row.querySelectorAll(
+              "td.p_embedTableTd th.p_embedTableHead"
+            );
             if (headings.length > 0) {
               result.household.headings = [];
               result.household.members = [];
@@ -252,7 +246,9 @@ function extractRecordData(document, result) {
             }
           }
 
-          let subTableRows = row.querySelectorAll("td.p_embedTableTd tr.p_embedTableRow");
+          let subTableRows = row.querySelectorAll(
+            "td.p_embedTableTd tr.p_embedTableRow"
+          );
           let value = "";
           for (let subRow of subTableRows) {
             if (value) {
@@ -260,11 +256,18 @@ function extractRecordData(document, result) {
             }
             value += cleanText(subRow.textContent);
 
-            if (result.household !== undefined && result.household.members !== undefined) {
+            if (
+              result.household !== undefined &&
+              result.household.members !== undefined
+            ) {
               let member = {};
               let subRowCells = subRow.querySelectorAll("td");
               if (subRowCells.length > 0) {
-                for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
+                for (
+                  let cellIndex = 0;
+                  cellIndex < subRowCells.length;
+                  cellIndex++
+                ) {
                   let cell = subRowCells[cellIndex];
                   let memberText = cleanText(cell.textContent);
                   member[result.household.headings[cellIndex]] = memberText;
@@ -286,8 +289,7 @@ function extractRecordData(document, result) {
           if (value) {
             result.recordData[label] = value;
           }
-        }
-        else {
+        } else {
           // for now just get the text of all the children.
           // there can be multiple children for "Name:" in death reg
           // It can also happen for "Inferred Spouse:" in 1939 reg.
@@ -324,8 +326,7 @@ function extractRecordData(document, result) {
                       }
                     }
                   }
-                }
-                else {
+                } else {
                   // no link just use all child text
                   result.recordData[label] = value;
                 }
@@ -334,8 +335,7 @@ function extractRecordData(document, result) {
           }
         }
       }
-    }
-    else {
+    } else {
       // this row doesn't have a <th> label. Could be something like "Household members"
       if (row.classList.contains(`tableContainerRow`)) {
         let table = row.querySelector("table");
@@ -375,12 +375,18 @@ function extractRecordData(document, result) {
         }
 
         for (let subRow of subTableRows.values()) {
-
-          if (result.household !== undefined && result.household.members !== undefined) {
+          if (
+            result.household !== undefined &&
+            result.household.members !== undefined
+          ) {
             let member = {};
             let subRowCells = subRow.querySelectorAll("td");
             if (subRowCells.length > 0) {
-              for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
+              for (
+                let cellIndex = 0;
+                cellIndex < subRowCells.length;
+                cellIndex++
+              ) {
                 let cell = subRowCells[cellIndex];
                 let memberText = cleanText(cell.textContent);
 
@@ -388,10 +394,12 @@ function extractRecordData(document, result) {
                   // check for a closed record
                   let lcText = memberText.toLowerCase();
 
-                  if (lcText == "this record is officially closed." ||
-                    (lcText.includes("record") && lcText.includes("closed"))) {
-                     member.isClosed = true;
-                     memberText = "Closed Record";
+                  if (
+                    lcText == "this record is officially closed." ||
+                    (lcText.includes("record") && lcText.includes("closed"))
+                  ) {
+                    member.isClosed = true;
+                    memberText = "Closed Record";
                   }
                 }
 
@@ -418,13 +426,13 @@ function extractRecordData(document, result) {
 }
 
 function extractRecordSourceCitation(document, result) {
-
   // test is there are contentViewTabs, this allow you to select between Detail and Source
   let contentViewTabs = document.querySelector("#contentViewTabs");
 
   if (contentViewTabs) {
     // example electoral registers
-    let sourceCitationChildren = document.querySelector("#sourceCitation").children;
+    let sourceCitationChildren =
+      document.querySelector("#sourceCitation").children;
 
     if (sourceCitationChildren.length > 0) {
       let lastCitationTitle = "";
@@ -439,37 +447,32 @@ function extractRecordSourceCitation(document, result) {
           if (sourceTextNode) {
             if (citationTitle == "Source Citation") {
               setSourceCitation(result, sourceTextNode);
-            }
-            else if (citationTitle == "Source Information") {
+            } else if (citationTitle == "Source Information") {
               setSourceInformation(result, sourceTextNode);
-            }
-            else if (citationTitle == "Description") {
+            } else if (citationTitle == "Description") {
               setSourceDescription(result, sourceTextNode);
             }
           }
-        }
-        else {
+        } else {
           if (div.classList.contains("citationTitle")) {
-            lastCitationTitle = cleanText(div.textContent);;
+            lastCitationTitle = cleanText(div.textContent);
             //console.log("lastCitationTitle = " + lastCitationTitle);
-          }
-          else if (div.classList.contains("sourceText")) {
+          } else if (div.classList.contains("sourceText")) {
             if (lastCitationTitle == "Source Information") {
               setSourceInformation(result, div);
-            }
-            else if (lastCitationTitle == "Description") {
+            } else if (lastCitationTitle == "Description") {
               setSourceDescription(result, div);
             }
           }
         }
       }
     }
-  }
-  else {
-    let sourceAreaDivs = document.querySelectorAll("#sourceCitation > div.conBody > div");
+  } else {
+    let sourceAreaDivs = document.querySelectorAll(
+      "#sourceCitation > div.conBody > div"
+    );
 
     if (sourceAreaDivs.length > 0) {
-
       for (let index = 0; index < sourceAreaDivs.length; index++) {
         let div = sourceAreaDivs[index];
         let citationTitleNode = div.querySelector("h4.citationTitle");
@@ -478,11 +481,9 @@ function extractRecordSourceCitation(document, result) {
           let citationTitle = citationTitleNode.textContent;
           if (citationTitle == "Source Citation") {
             setSourceCitation(result, sourceTextNode);
-          }
-          else if (citationTitle == "Source Information") {
+          } else if (citationTitle == "Source Information") {
             setSourceInformation(result, sourceTextNode);
-          }
-          else if (citationTitle == "Description") {
+          } else if (citationTitle == "Description") {
             setSourceDescription(result, sourceTextNode);
           }
         }
@@ -497,14 +498,14 @@ function extractImageThumb(document, result) {
   let thumbNode = document.querySelector("#thumbnailTools > div.imageThumb");
   //console.log("extractImageThumb, thumbNode = ");
   //console.log(thumbNode);
-  
+
   if (thumbNode) {
     let linkNode = thumbNode.querySelector("a");
     //console.log("extractImageThumb, linkNode = ");
     //console.log(linkNode);
 
     if (linkNode) {
-      let url = linkNode.getAttribute('href');
+      let url = linkNode.getAttribute("href");
 
       //console.log("extractImageThumb, url = " + url);
 
@@ -512,19 +513,23 @@ function extractImageThumb(document, result) {
         // Example:
         // "https://www.ancestry.com/imageviewer/collections/7814/images/LNDRG13_157_158-0095?pid=2229789&amp;backurl=https://search.ancestry.com/cgi-bin/sse.dll?dbid%3D7814%26h%3D2229789%26indiv%3Dtry%26o_vc%3DRecord:OtherRecord%26rhSource%3D8753&amp;treeid=&amp;personid=&amp;hintid=&amp;usePUB=true&amp;usePUBJs=true"
 
-        let dbId = url.replace(/.*imageviewer\/collections\/([^\/]+)\/images\/.*/, "$1");
+        let dbId = url.replace(
+          /.*imageviewer\/collections\/([^\/]+)\/images\/.*/,
+          "$1"
+        );
         let recordId = url.replace(/.*\/images\/([^?]+).*/, "$1");
 
         result.imageUrl = url;
         result.imageDbId = dbId;
         result.imageRecordId = recordId;
       }
-    }
-    else {
+    } else {
       // Sometimes in some browsers the linkNode is not there. This happens more when ther user is on the
       // factEdit modal, especially in Firefox. It seems to be because the link node is generated by a script.
       // This is a backup that gets the image id from the "Report a problem" link.
-      let reportProblemNode = document.querySelector("#thumbnailTools a.iconWarning");
+      let reportProblemNode = document.querySelector(
+        "#thumbnailTools a.iconWarning"
+      );
       if (reportProblemNode) {
         //console.log("extractImageThumb, reportProblemNode = ");
         //console.log(reportProblemNode);
@@ -532,7 +537,7 @@ function extractImageThumb(document, result) {
         // Report problem node looks like:
         // <a href="https://www.ancestry.com/feedback/reportissue?rp=RD&amp;pid=1903047&amp;dbid=2352&amp;imageId=rg14_00802_0395_03&amp;indexOnly=false&amp;backurl=http%3a%2f%2fsearch.ancestry.com%2fcgi-bin%2fsse.dll%3findiv%3d1%26dbid%3d2352%26h%3d1903047%26ssrc%3dpt%26tid%3d86808578%26pid%3d46552199708%26usePUB%3dtrue%26_gl%3d1*vivebz*_ga*MTA5NTMwNjUwOS4xNTg3ODQ4ODc3*_ga_4QT8FMEX30*MTY1MTYwMzE2NS4zMi4xLjE2NTE2MDYzNzkuMA.." class="link icon iconWarning"><span>Report a problem</span></a>
 
-        let url = reportProblemNode.getAttribute('href');
+        let url = reportProblemNode.getAttribute("href");
 
         //console.log("extractImageThumb, reportProblemNode URL = ");
         //console.log(url);
@@ -544,7 +549,10 @@ function extractImageThumb(document, result) {
           if (imageIndex != -1) {
             let endIndex = url.indexOf("&", imageIndex);
             if (endIndex != -1) {
-              imageRecordId = url.substring(imageIndex + imagePrefix.length, endIndex);
+              imageRecordId = url.substring(
+                imageIndex + imagePrefix.length,
+                endIndex
+              );
               //console.log("extractImageThumb, imageRecordId = " + imageRecordId);
             }
           }
@@ -555,7 +563,10 @@ function extractImageThumb(document, result) {
           if (personIndex != -1) {
             let endIndex = url.indexOf("&", personIndex);
             if (endIndex != -1) {
-              personId = url.substring(personIndex + personPrefix.length, endIndex);
+              personId = url.substring(
+                personIndex + personPrefix.length,
+                endIndex
+              );
               //console.log("extractImageThumb, personId = " + personId);
             }
           }
@@ -563,15 +574,26 @@ function extractImageThumb(document, result) {
           if (result.domain && result.dbId && imageRecordId) {
             result.imageRecordId = imageRecordId;
             result.imageDbId = result.dbId;
-    
+
             if (imageRecordId && personId) {
               // https://www.ancestry.com/imageviewer/collections/61596/images/tna_r39_0773_0773a_021?pid=10189262&treeid=113369578&personid=222372269795&usePUB=true&usePUBJs=true
-              result.imageUrl = "https://www." + result.domain + "/imageviewer/collections/" + result.dbId
-                  + "/images/" + imageRecordId + "?pid=" + personId;
-            }
-            else if (imageRecordId) {
-              result.imageUrl = "https://www." + result.domain + "/imageviewer/collections/" + result.dbId
-                  + "/images/" + imageRecordId;
+              result.imageUrl =
+                "https://www." +
+                result.domain +
+                "/imageviewer/collections/" +
+                result.dbId +
+                "/images/" +
+                imageRecordId +
+                "?pid=" +
+                personId;
+            } else if (imageRecordId) {
+              result.imageUrl =
+                "https://www." +
+                result.domain +
+                "/imageviewer/collections/" +
+                result.dbId +
+                "/images/" +
+                imageRecordId;
             }
           }
         }
@@ -584,12 +606,16 @@ function extractImagePageTitle(document, result) {
   let titleCollection = "";
   let titleName = "";
 
-  let titleCollectionNode = document.querySelector("div.collectionTitle > h1 > a");
+  let titleCollectionNode = document.querySelector(
+    "div.collectionTitle > h1 > a"
+  );
   if (titleCollectionNode) {
-    titleCollection = titleCollectionNode.textContent;    
+    titleCollection = titleCollectionNode.textContent;
   }
 
-  let titleForNameNode = document.querySelector("div.collectionTitle > h1 > span");
+  let titleForNameNode = document.querySelector(
+    "div.collectionTitle > h1 > span"
+  );
   if (titleForNameNode) {
     let titleForName = titleForNameNode.textContent;
     titleForName = titleForName.replace(/^\s*for\s+/, "");
@@ -601,8 +627,9 @@ function extractImagePageTitle(document, result) {
 }
 
 function extractImageBrowsePath(document, result) {
-
-  var wrapperNode = document.querySelector("div.browse-path-header > div.breadcrumbWrapper");
+  var wrapperNode = document.querySelector(
+    "div.browse-path-header > div.breadcrumbWrapper"
+  );
   let browsePath = "";
   if (wrapperNode) {
     let children = wrapperNode.children;
@@ -610,8 +637,7 @@ function extractImageBrowsePath(document, result) {
       let child = children[index];
       if (child.classList.contains("breadcrumbItem")) {
         browsePath += child.textContent;
-      }
-      else if (child.classList.contains("iconArrowRight")) {
+      } else if (child.classList.contains("iconArrowRight")) {
         browsePath += " > ";
       }
     }
@@ -623,21 +649,23 @@ function extractImageBrowsePath(document, result) {
 }
 
 function extractImageHasIndex(document, result) {
-
-  let indexButton = document.querySelector("div.image-viewer-wrapper > div.container-space > div.bottom-container > div.paging-panel.panelTopHeight > div > button.indexToggle");
+  let indexButton = document.querySelector(
+    "div.image-viewer-wrapper > div.container-space > div.bottom-container > div.paging-panel.panelTopHeight > div > button.indexToggle"
+  );
 
   if (indexButton) {
     if (indexButton.classList.contains("disabled")) {
       result.imageHasIndex = false;
-    }
-    else {
+    } else {
       result.imageHasIndex = true;
     }
   }
 }
 
 function extractImageNumberAndTotal(document, result) {
-  let pageCountWrap = document.querySelector("div.image-viewer-wrapper > div.container-space > div.bottom-container > div.paging-panel.panelTopHeight > div > div.imageNum.pageCountWrapInner");
+  let pageCountWrap = document.querySelector(
+    "div.image-viewer-wrapper > div.container-space > div.bottom-container > div.paging-panel.panelTopHeight > div > div.imageNum.pageCountWrapInner"
+  );
 
   if (pageCountWrap) {
     let pageNum = pageCountWrap.querySelector("input.page-input");
@@ -653,7 +681,6 @@ function extractImageNumberAndTotal(document, result) {
 }
 
 function extractImageTemplate(result, url) {
-
   // https://www.ancestry.com/imageviewer/collections/7814/images/LNDRG13_157_158-0095?treeid=&personid=&hintid=&usePUB=true&usePUBJs=true&_ga=2.91252573.636488732.1621444272-1095306509.1587848877&pId=2229789
 
   let db = url.replace(/.*\/imageviewer\/collections\/(\w+)\/.*/, "$1");
@@ -664,7 +691,8 @@ function extractImageTemplate(result, url) {
   if (db != "" && db != url && rec != "" && rec != url) {
     result.dbId = db;
     result.recordId = rec;
-    result.ancestryTemplate = "{{Ancestry Image|" + result.dbId + "|" + result.recordId + "}}";
+    result.ancestryTemplate =
+      "{{Ancestry Image|" + result.dbId + "|" + result.recordId + "}}";
   }
 
   if (pid != "" && pid != url) {
@@ -677,7 +705,9 @@ function extractImageTemplate(result, url) {
 }
 
 function extractSharingUrlTemplate(document, result) {
-  let bandidoModal = document.querySelector("#modal > #modalFixed .bandido-modal-post-share .share-url");
+  let bandidoModal = document.querySelector(
+    "#modal > #modalFixed .bandido-modal-post-share .share-url"
+  );
   if (bandidoModal) {
     let urlNode = bandidoModal.querySelector(".url-input");
 
@@ -687,7 +717,8 @@ function extractSharingUrlTemplate(document, result) {
       let num1 = url.replace(/.*\/sharing\/(\w+)\?h\=\w+\&.*/, "$1");
       let num2 = url.replace(/.*\/sharing\/\w+\?h\=(\w+)\&.*/, "$1");
 
-      result.ancestryTemplate = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
+      result.ancestryTemplate =
+        "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
 
       result.sharingUrl = url.replace(/(^.*\/sharing\/\w+\?h\=\w+)\&.*/, "$1");
     }
@@ -695,12 +726,15 @@ function extractSharingUrlTemplate(document, result) {
 }
 
 function extractSharingImageFullSizeLink(document, result) {
-
   //console.log("extractSharingImageFullSizeLink");
 
-  let attachmentContainer = document.querySelector("div.main-container > div.attachment-container");
+  let attachmentContainer = document.querySelector(
+    "div.main-container > div.attachment-container"
+  );
   if (attachmentContainer) {
-    let zoomImg = attachmentContainer.querySelector("#zoomModal > #zoomContent > #zoomImg");
+    let zoomImg = attachmentContainer.querySelector(
+      "#zoomModal > #zoomContent > #zoomImg"
+    );
 
     if (zoomImg) {
       let imageUrl = zoomImg.getAttribute("src");
@@ -711,34 +745,35 @@ function extractSharingImageFullSizeLink(document, result) {
 }
 
 function detectPageType(document, result, url) {
-
   if (url.includes("/imageviewer/collections/")) {
-    let bandidoModal = document.querySelector("#modal > #modalFixed .bandido-modal-post-share .share-url");
+    let bandidoModal = document.querySelector(
+      "#modal > #modalFixed .bandido-modal-post-share .share-url"
+    );
     if (bandidoModal) {
       result.pageType = "sharingUrl";
-    }
-    else {
+    } else {
       result.pageType = "image";
     }
-  }
-  else if (url.includes("/person/") && url.includes("/facts")) {
+  } else if (url.includes("/person/") && url.includes("/facts")) {
     result.pageType = "personFacts";
 
-    let citationRecord = document.querySelector(".modalContents #FactEditComponent section.citationRecord");
+    let citationRecord = document.querySelector(
+      ".modalContents #FactEditComponent section.citationRecord"
+    );
     if (citationRecord) {
       result.pageType = "personSourceCitation";
     }
-  }
-  else if (url.includes("dbid=") || url.includes("db=") || url.includes("discoveryui-content")) {
+  } else if (
+    url.includes("dbid=") ||
+    url.includes("db=") ||
+    url.includes("discoveryui-content")
+  ) {
     result.pageType = "record";
-  }
-  else if (url.includes("/collections/") && url.includes("/records/")) {
+  } else if (url.includes("/collections/") && url.includes("/records/")) {
     result.pageType = "record";
-  }
-  else if (url.includes("/sharing/") && url.includes("?h=")) {
+  } else if (url.includes("/sharing/") && url.includes("?h=")) {
     result.pageType = "sharingImageOrRecord";
-  }
-  else {
+  } else {
     result.pageType = "unknown";
   }
 
@@ -750,9 +785,9 @@ function handlePersonSourceCitation(document, result) {
 
   let modalContents = document.querySelector(".modalContents");
   if (modalContents) {
-    let factEdit = modalContents.querySelector("#FactEditComponent")
+    let factEdit = modalContents.querySelector("#FactEditComponent");
     if (factEdit) {
-      let link = modalContents.querySelector("#viewRecordLink")
+      let link = modalContents.querySelector("#viewRecordLink");
       if (link) {
         let recordUrl = link.getAttribute("href");
 
@@ -762,15 +797,15 @@ function handlePersonSourceCitation(document, result) {
 
         // However, if someones subscription doesn't allow acess to this record we may as well
         // extract what we can.
-        extractDbAndRecordId(result, recordUrl)
+        extractDbAndRecordId(result, recordUrl);
       }
 
-      let imageLink = modalContents.querySelector("#viewRecordImageLink")
+      let imageLink = modalContents.querySelector("#viewRecordImageLink");
       if (imageLink) {
-        let url = imageLink.getAttribute('href');
-  
+        let url = imageLink.getAttribute("href");
+
         //console.log("handlePersonSourceCitation, url = " + url);
-  
+
         if (url) {
           // Example:
 
@@ -783,16 +818,22 @@ function handlePersonSourceCitation(document, result) {
           let recordId = "";
 
           if (url.includes("/imageviewer/")) {
-            dbId = url.replace(/.*imageviewer\/collections\/([^\/]+)\/images\/.*/, "$1");
+            dbId = url.replace(
+              /.*imageviewer\/collections\/([^\/]+)\/images\/.*/,
+              "$1"
+            );
             recordId = url.replace(/.*\/images\/([^?]+).*/, "$1");
-          }
-          else if (url.includes("/interactive/")) {
+          } else if (url.includes("/interactive/")) {
             dbId = url.replace(/.*interactive\/([^\/]+)\/[^\/]+\/.*/, "$1");
             recordId = url.replace(/.*interactive\/[^\/]+\/([^\/]+)\/.*/, "$1");
-            let base = url.replace(/(.*)\/interactive\/[^\/]+\/[^\/]+\/.*/, "$1");
-            url = base + "/imageviewer/collections/" + dbId + "/images/" + recordId;
+            let base = url.replace(
+              /(.*)\/interactive\/[^\/]+\/[^\/]+\/.*/,
+              "$1"
+            );
+            url =
+              base + "/imageviewer/collections/" + dbId + "/images/" + recordId;
           }
-  
+
           result.imageUrl = url;
           result.imageDbId = dbId;
           result.imageRecordId = recordId;
@@ -808,7 +849,9 @@ function handlePersonSourceCitation(document, result) {
           result.titleCollection = titleNode.textContent;
         }
 
-        let displayFields = citationRecord.querySelectorAll("tr[id^='displayFields']");
+        let displayFields = citationRecord.querySelectorAll(
+          "tr[id^='displayFields']"
+        );
         for (let displayField of displayFields) {
           let header = displayField.querySelector("th");
           let data = displayField.querySelector("td");
@@ -828,8 +871,9 @@ function handlePersonSourceCitation(document, result) {
           }
         }
 
-
-        let householdMembers = citationRecord.querySelectorAll("tr[id^='householdMembers']");
+        let householdMembers = citationRecord.querySelectorAll(
+          "tr[id^='householdMembers']"
+        );
         if (householdMembers && householdMembers.length > 0) {
           result.household = {};
           let tbody = householdMembers[0].parentElement;
@@ -842,7 +886,9 @@ function handlePersonSourceCitation(document, result) {
                 result.household.members = [];
                 let headings = headingRow.querySelectorAll("th");
                 for (let heading of headings) {
-                  result.household.headings.push(cleanText(heading.textContent));
+                  result.household.headings.push(
+                    cleanText(heading.textContent)
+                  );
                 }
 
                 let rows = tbody.querySelectorAll("tr");
@@ -850,7 +896,11 @@ function handlePersonSourceCitation(document, result) {
                   let member = {};
                   let subRowCells = row.querySelectorAll("th, td");
                   if (subRowCells.length > 0) {
-                    for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
+                    for (
+                      let cellIndex = 0;
+                      cellIndex < subRowCells.length;
+                      cellIndex++
+                    ) {
                       let cell = subRowCells[cellIndex];
                       let memberText = cleanText(cell.textContent);
                       member[result.household.headings[cellIndex]] = memberText;
@@ -873,8 +923,7 @@ function handlePersonSourceCitation(document, result) {
           if (dtNodes.length == 1 && ddNodes.length == 1) {
             let sourceText = cleanText(ddNodes[0].textContent);
             result.sourceCitation = sourceText;
-          }
-          else {
+          } else {
             let sourceText = cleanText(body.textContent);
             result.sourceCitation = sourceText;
           }
@@ -896,10 +945,9 @@ function handlePersonSourceCitation(document, result) {
 }
 
 function handlePersonFacts(document, result) {
-
   let personCardContainer = document.querySelector("#personCardContainer");
   if (personCardContainer) {
-    let userCardTitle = personCardContainer.querySelector(".userCardTitle")
+    let userCardTitle = personCardContainer.querySelector(".userCardTitle");
     if (userCardTitle) {
       let fullName = userCardTitle.textContent;
       if (fullName) {
@@ -907,22 +955,22 @@ function handlePersonFacts(document, result) {
       }
     }
 
-    let userCardEvents = personCardContainer.querySelector(".userCardEvents")
+    let userCardEvents = personCardContainer.querySelector(".userCardEvents");
     if (userCardEvents) {
-      let birthDateSpan = userCardEvents.querySelector("span.birthDate")
+      let birthDateSpan = userCardEvents.querySelector("span.birthDate");
       if (birthDateSpan) {
         result.birthDate = birthDateSpan.textContent;
       }
-      let birthPlaceSpan = userCardEvents.querySelector("span.birthPlace")
+      let birthPlaceSpan = userCardEvents.querySelector("span.birthPlace");
       if (birthPlaceSpan) {
         result.birthPlace = birthPlaceSpan.textContent;
       }
 
-      let deathDateSpan = userCardEvents.querySelector("span.deathDate")
+      let deathDateSpan = userCardEvents.querySelector("span.deathDate");
       if (deathDateSpan) {
         result.deathDate = deathDateSpan.textContent;
       }
-      let deathPlaceSpan = userCardEvents.querySelector("span.deathPlace")
+      let deathPlaceSpan = userCardEvents.querySelector("span.deathPlace");
       if (deathPlaceSpan) {
         result.deathPlace = deathPlaceSpan.textContent;
       }
@@ -931,9 +979,8 @@ function handlePersonFacts(document, result) {
 
   let researchListFacts = document.querySelector("#researchListFacts");
   if (researchListFacts) {
-    let factList = researchListFacts.querySelectorAll("li.researchListItem")
+    let factList = researchListFacts.querySelectorAll("li.researchListItem");
     for (let fact of factList) {
-
       if (fact.classList.contains("researchListItemGender")) {
         let valueNode = fact.querySelector("h4");
         if (valueNode) {
@@ -942,8 +989,7 @@ function handlePersonFacts(document, result) {
             result.gender = gender;
           }
         }
-      }
-      else {
+      } else {
         let factItem = fact.querySelector("div.factItemFact");
         if (factItem) {
           if (factItem.classList.contains("preferredEventMarriage")) {
@@ -986,7 +1032,9 @@ function handlePersonFacts(document, result) {
     // there can be multiple research lists but parents should always be first one
     let parentResearchList = familySection.querySelector("ul.researchList");
 
-    let parentItems = parentResearchList.querySelectorAll("li.researchListItem");
+    let parentItems = parentResearchList.querySelectorAll(
+      "li.researchListItem"
+    );
 
     if (parentItems.length == 2) {
       let fatherItem = parentItems[0];
@@ -1001,7 +1049,6 @@ function handlePersonFacts(document, result) {
         result.motherName = motherTitle.textContent;
       }
     }
-
   }
 
   // #family46552199474 > div.noTopSpacing.userCard.userCardSize2 > div.userCardContent.textWrap > h4
@@ -1019,9 +1066,7 @@ function extractRecord(document, url, result) {
 }
 
 function extractData(document, url) {
-
-  var result = {
-  };
+  var result = {};
 
   result.url = url; // useful to know what domain this record is from
 
@@ -1043,25 +1088,20 @@ function extractData(document, url) {
     extractRecordData(document, result);
     extractImageThumb(document, result);
     extractRecordSourceCitation(document, result);
-  }
-  else if (result.pageType == "image") {
+  } else if (result.pageType == "image") {
     extractImagePageTitle(document, result);
     extractImageTemplate(result, url);
     extractImageBrowsePath(document, result);
     extractImageNumberAndTotal(document, result);
     extractImageHasIndex(document, result);
-  }
-  else if (result.pageType == "sharingUrl") {
+  } else if (result.pageType == "sharingUrl") {
     extractImagePageTitle(document, result);
     extractSharingUrlTemplate(document, result);
-  }
-  else if (result.pageType == "sharingImageOrRecord") {
+  } else if (result.pageType == "sharingImageOrRecord") {
     extractSharingImageFullSizeLink(document, result);
-  }
-  else if (result.pageType == "personSourceCitation") {
+  } else if (result.pageType == "personSourceCitation") {
     handlePersonSourceCitation(document, result);
-  }
-  else if (result.pageType == "personFacts") {
+  } else if (result.pageType == "personFacts") {
     handlePersonFacts(document, result);
   }
 

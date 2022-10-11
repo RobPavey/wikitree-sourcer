@@ -25,7 +25,6 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 
 function buildCoreCitation(data, gd, runDate, builder) {
-
   let options = builder.getOptions();
 
   let sourceTitle = gd.getRefTitle();
@@ -36,17 +35,20 @@ function buildCoreCitation(data, gd, runDate, builder) {
 
   builder.recordLinkOrTemplate = recordLink;
 
-  builder.sourceReference = data.newspaperTitle + " " + data.publicationDate + ", page " + data.pageNumber
-
+  builder.sourceReference =
+    data.newspaperTitle +
+    " " +
+    data.publicationDate +
+    ", page " +
+    data.pageNumber;
 }
 
 function buildCitation(input) {
-
   const data = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
 
@@ -62,7 +64,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

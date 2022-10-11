@@ -25,7 +25,7 @@ SOFTWARE.
 import { getDefaultOptions } from "../../core/options/options_database.mjs";
 import { loadOptions } from "./options_storage.mjs";
 
-var options = undefined;  // we cache the current options here
+var options = undefined; // we cache the current options here
 
 function convertOptionsFrom2To3(loadedOptions) {
   let convertedOptions = { ...loadedOptions };
@@ -33,19 +33,24 @@ function convertOptionsFrom2To3(loadedOptions) {
   //console.log("convertOptionsFrom2To3, before:")
   //console.log(loadedOptions);
 
-  convertedOptions.citation_general_addAccessedDate = convertedOptions.citation_addAccessedDate;
+  convertedOptions.citation_general_addAccessedDate =
+    convertedOptions.citation_addAccessedDate;
   delete convertedOptions.citation_addAccessedDate;
 
-  convertedOptions.citation_general_addNewlinesWithinRefs = convertedOptions.citation_addNewlinesWithinRefs;
+  convertedOptions.citation_general_addNewlinesWithinRefs =
+    convertedOptions.citation_addNewlinesWithinRefs;
   delete convertedOptions.citation_addNewlinesWithinRefs;
 
-  convertedOptions.citation_general_addNewlinesWithinBody = convertedOptions.citation_addNewlinesWithinBody;
+  convertedOptions.citation_general_addNewlinesWithinBody =
+    convertedOptions.citation_addNewlinesWithinBody;
   delete convertedOptions.citation_addNewlinesWithinBody;
 
-  convertedOptions.citation_general_addBreaksWithinBody = convertedOptions.citation_addBreaksWithinBody;
+  convertedOptions.citation_general_addBreaksWithinBody =
+    convertedOptions.citation_addBreaksWithinBody;
   delete convertedOptions.citation_addBreaksWithinBody;
 
-  convertedOptions.citation_general_meaningfulNames = convertedOptions.citation_meaningfulNames;
+  convertedOptions.citation_general_meaningfulNames =
+    convertedOptions.citation_meaningfulNames;
   delete convertedOptions.citation_meaningfulNames;
 
   if (convertedOptions.search_ancestry_domain == "none") {
@@ -71,36 +76,33 @@ function convertOptionsFrom2To3(loadedOptions) {
 function convertOptionsFrom3To4(loadedOptions) {
   let convertedOptions = { ...loadedOptions };
 
-  console.log("convertOptionsFrom3To4, before:")
+  console.log("convertOptionsFrom3To4, before:");
   console.log(loadedOptions);
 
   let oldAddAccessedDate = convertedOptions.citation_general_addAccessedDate;
   if (oldAddAccessedDate) {
     convertedOptions.citation_general_addAccessedDate = "parenAfterLink";
-  }
-  else {
+  } else {
     convertedOptions.citation_general_addAccessedDate = "none";
   }
 
   let oldmeaningfulNames = convertedOptions.citation_general_meaningfulNames;
   if (oldmeaningfulNames) {
     convertedOptions.citation_general_meaningfulNames = "bold";
-  }
-  else {
+  } else {
     convertedOptions.citation_general_meaningfulNames = "none";
   }
 
   let oldCaption = convertedOptions.table_table_caption;
   if (oldCaption) {
     convertedOptions.table_table_caption = "titlePlace";
-  }
-  else {
+  } else {
     convertedOptions.table_table_caption = "none";
   }
 
   convertedOptions.options_version = 4;
 
-  console.log("convertOptionsFrom3To4, after:")
+  console.log("convertOptionsFrom3To4, after:");
   console.log(convertedOptions);
 
   return convertedOptions;
@@ -111,12 +113,12 @@ function convertOptionsFrom4To5(loadedOptions) {
 
   let convertedOptions = { ...loadedOptions };
 
-  console.log("convertOptionsFrom4To5, before:")
+  console.log("convertOptionsFrom4To5, before:");
   console.log(loadedOptions);
 
   convertedOptions.options_version = 5;
 
-  console.log("convertOptionsFrom4To5, after:")
+  console.log("convertOptionsFrom4To5, after:");
   console.log(convertedOptions);
 
   return convertedOptions;
@@ -146,7 +148,6 @@ function convertOptions(loadedOptions, defaultOptions) {
 }
 
 function putNewLoadedOptionsSetInOptions(options, optionsSet, prefix) {
-
   if (!optionsSet || !options || !prefix) {
     return;
   }
@@ -159,14 +160,12 @@ function putNewLoadedOptionsSetInOptions(options, optionsSet, prefix) {
 }
 
 function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
-
   let newOptions = {};
   const keys = Object.keys(defaultOptions);
   for (let key of keys) {
     if (loadedOptions.hasOwnProperty(key)) {
       newOptions[key] = loadedOptions[key];
-    }
-    else {
+    } else {
       console.log("option added from defaultOptions: " + key);
       newOptions[key] = defaultOptions[key];
     }
@@ -176,7 +175,6 @@ function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
 }
 
 async function callFunctionWithStoredOptions(optionsFunction) {
-
   let defaultOptions = getDefaultOptions();
 
   let loadedOptions = await loadOptions();
@@ -192,9 +190,11 @@ async function callFunctionWithStoredOptions(optionsFunction) {
     // We used to use the spread operator to merge the stored options and the ones from defaultOptions with
     // the stored ones taking priority. Out a a concern that no longer used options (that the converter forgot)
     // would build up it was changed to use a function.
-    optionsObject = addNewDefaultsAndRemoveOldOptions(convertedOptions, defaultOptions);
-  }
-  else {
+    optionsObject = addNewDefaultsAndRemoveOldOptions(
+      convertedOptions,
+      defaultOptions
+    );
+  } else {
     optionsObject = defaultOptions;
   }
 
