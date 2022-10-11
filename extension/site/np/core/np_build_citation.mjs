@@ -38,7 +38,6 @@ function buildCoreCitation(data, gd, runDate, builder) {
 
   builder.sourceReference = data.newspaperTitle + " " + data.publicationDate + ", page " + data.pageNumber
 
-  builder.dataString = data.newspaperTitle;
 }
 
 function buildCitation(input) {
