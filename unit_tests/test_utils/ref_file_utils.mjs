@@ -118,7 +118,7 @@ function readFile(inputSubPath, testData, logger) {
   try {
     inputText = fs.readFileSync(inputPath, 'utf8');
   } catch (e) {
-    console.log('Error:', e.stack);
+    //console.log('Error:', e.stack);
     logger.logError(testData, "Failed to read input file: " + inputPath);
     return undefined;
   }

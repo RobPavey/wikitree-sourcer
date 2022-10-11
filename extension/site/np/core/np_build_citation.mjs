@@ -24,25 +24,21 @@ SOFTWARE.
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 
-function buildCoreCitation(data, runDate, builder) {
-  // Example citation:
-  // Newspaper: Newspapers.com.
-  // Mentioned in The Abbeville progress on 24 Apr 1922, page 3.
+function buildCoreCitation(data, gd, runDate, builder) {
 
   let options = builder.getOptions();
 
-  let sourceTitle = "Newspapers.com";
+  let sourceTitle = gd.getRefTitle();
 
   builder.databaseHasImages = false;
 
-  builder.sourceTitle = sourceTitle;
+  let recordLink = "[" + data.url + " Newspapers.com image]";
 
-  let recordLink = data.url;
   builder.recordLinkOrTemplate = recordLink;
 
-  let dataString = "Mentioned in " + data.newspaperTitle + " " + data.publicationDate + ", page " + data.pageNumber
+  builder.sourceReference = data.newspaperTitle + " " + data.publicationDate + ", page " + data.pageNumber
 
-  builder.dataString = dataString;
+  builder.dataString = data.newspaperTitle;
 }
 
 function buildCitation(input) {
@@ -55,7 +51,7 @@ function buildCitation(input) {
 
   let builder = new CitationBuilder(type, runDate, options);
 
-  var citation = buildCoreCitation(data, runDate, builder);
+  var citation = buildCoreCitation(data, gd, runDate, builder);
 
   builder.meaningfulTitle = "Newspaper";
 

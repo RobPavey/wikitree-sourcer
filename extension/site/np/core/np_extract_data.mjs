@@ -43,11 +43,13 @@ function extractData(document, url) {
   let sourceList = []
   document.querySelector("#browse-information").firstChild.querySelectorAll("a").forEach(link => sourceList.push(link.innerHTML))
   //there are three links in this div, but the last one just says "page" so i'm replacing it here with the actual page number
-  sourceList[2] = (document.querySelector("#pageNum").placeholder)
+  sourceList[2] = document.querySelector("#pageNum").placeholder
+  sourceList[3] = document.querySelector("#paper-title").innerHTML.split('·')[3].trim().replace("(", "").replace(")", "")
 
   result.newspaperTitle = sourceList[0]
   result.publicationDate = sourceList[1]
   result.pageNumber = sourceList[2]
+  result.location = sourceList[3]
 
   result.success = true;
 

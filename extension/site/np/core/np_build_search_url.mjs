@@ -35,7 +35,7 @@ function buildSearchUrl(buildUrlInput) {
   builder.addSearchParameter("query", (data.inferFirstName() ?? "") + " " + (data.inferMiddleName() ?? "") + " " + (data.inferLastName() ?? ""))
 
   let birthYear = data.inferBirthYear()
-  let deathYear = data.inferDeathYear() ?? null
+  let deathYear = data.inferDeathYear()
   if (birthYear && deathYear) {
     builder.addSearchParameter("dr_year", birthYear + "-" + deathYear)
   } else if (birthYear) {

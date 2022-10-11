@@ -29,15 +29,21 @@ function generalizeData(input) {
 
   let data = input.extractedData;
 
-  let result = new GeneralizedData;
-
-  result.sourceOfData = "np";
-
   if (!data.success) {
     return result; //the extract failed
   }
 
+  let result = new GeneralizedData;
+
+  result.sourceOfData = "np";
+
   result.sourceType = "record";
+
+  result.recordType = RT.Newspaper;
+
+  result.setEventDate(data.publicationDate);
+  result.setEventPlace(data.location)
+
 
   // should we use a collection to allow search for same record on Ancestry?
 

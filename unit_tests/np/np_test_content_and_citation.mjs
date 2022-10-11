@@ -23,9 +23,11 @@ SOFTWARE.
 */
 
 import { extractData } from "../../extension/site/np/core/np_extract_data.mjs";
+import { generalizeData } from "../../extension/site/np/core/np_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/np/core/np_build_citation.mjs";
 
 import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
@@ -38,7 +40,7 @@ const regressionData = [
 
 async function runTests(testManager) {
   await runExtractDataTests("np", extractData, regressionData, testManager);
-
+  await runGeneralizeDataTests("np", generalizeData, regressionData, testManager);
   await runBuildCitationTests("np", buildCitation, undefined, regressionData, testManager);
 }
 
