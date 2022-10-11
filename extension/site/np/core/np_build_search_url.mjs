@@ -30,7 +30,6 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new NpUriBuilder();
 
-  console.log(data.inferLastName());
   builder.addSearchParameter(
     "query",
     (data.inferFirstName() ?? "") +
