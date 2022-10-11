@@ -27,9 +27,9 @@ import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_util
 
 const regressionData = [
   {
-    caseName: "pavey",
-    inputPath: "np/generalized_data/ref/pavey",
-  }
+    caseName: "pavey-451_wikitree",
+    inputPath: "wikitree/generalized_data/ref/pavey-451_read"
+  },
 ];
 
 async function runTests(testManager) {
