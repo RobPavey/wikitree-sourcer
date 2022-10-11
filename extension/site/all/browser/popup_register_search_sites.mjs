@@ -36,4 +36,4 @@ import "/site/freecen/browser/freecen_popup_search.mjs";
 import "/site/freereg/browser/freereg_popup_search.mjs";
 import "/site/scotp/browser/scotp_popup_search.mjs";
 import "/site/wikitree/browser/wikitree_popup_search.mjs";
-import "/site/np/browser/np_popup_search.mjs"
+import "/site/np/browser/np_popup_search.mjs";

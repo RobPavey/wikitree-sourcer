@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 function getRecordType(data) {
-
   let type = undefined;
 
   if (data.urlQuery) {

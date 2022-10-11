@@ -34,8 +34,8 @@ function getDefaultOptions() {
   defaultOptions.options_version = 5;
 
   for (let optionsGroup of optionsRegistry.optionsGroups) {
-
-    let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
+    let optionNamePrefix =
+      optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
     for (let option of optionsGroup.options) {
       let fullOptionName = optionNamePrefix + option.optionName;
@@ -54,16 +54,15 @@ function getUnitTestOptions() {
   unitTestOptions.options_version = 5;
 
   for (let optionsGroup of optionsRegistry.optionsGroups) {
-
-    let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
+    let optionNamePrefix =
+      optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
     for (let option of optionsGroup.options) {
       let fullOptionName = optionNamePrefix + option.optionName;
       let value = undefined;
-      if (typeof option.unitTestValue === 'undefined') {
+      if (typeof option.unitTestValue === "undefined") {
         value = option.defaultValue;
-      }
-      else {
+      } else {
         value = option.unitTestValue;
       }
       unitTestOptions[fullOptionName] = value;

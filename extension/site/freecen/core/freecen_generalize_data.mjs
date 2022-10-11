@@ -22,14 +22,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, GD, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import {
+  GeneralizedData,
+  GD,
+  dateQualifiers,
+} from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
-import { getCountryFromCountyCode, getCountryFromCountyName } from "./freecen_chapman_codes.mjs";
+import {
+  getCountryFromCountyCode,
+  getCountryFromCountyName,
+} from "./freecen_chapman_codes.mjs";
 
 function getCountyAndCountry(data) {
-
-  let result = { county: "", country: ""};
+  let result = { county: "", country: "" };
 
   // "County": "Devon (DEV)",
   let countyString = data.censusDetails["County"];
@@ -39,7 +45,7 @@ function getCountyAndCountry(data) {
   if (openParenIndex != -1) {
     let closeParenIndex = countyString.indexOf(")", openParenIndex);
     if (closeParenIndex != -1) {
-      countyCode = countyString.substring(openParenIndex+1, closeParenIndex);
+      countyCode = countyString.substring(openParenIndex + 1, closeParenIndex);
       county = countyString.substring(0, openParenIndex).trim();
     }
   }
@@ -65,7 +71,6 @@ function getCensusDetail(data, fieldNames) {
 function buildEventPlace(data, result) {
   let countyAndCountry = getCountyAndCountry(data);
 
-
   let country = countyAndCountry.country;
   let county = countyAndCountry.county;
   let district = getCensusDetail(data, ["District", "Census District"]);
@@ -86,7 +91,9 @@ function buildEventPlace(data, result) {
 
   function addPlacePart(part) {
     if (part) {
-      if (placeString) { placeString += ", "; }
+      if (placeString) {
+        placeString += ", ";
+      }
       placeString += part;
     }
   }
@@ -94,8 +101,7 @@ function buildEventPlace(data, result) {
   addPlacePart(streetAddress);
   if (whereTaken) {
     addPlacePart(whereTaken);
-  }
-  else {
+  } else {
     addPlacePart(civilParish);
     if (district != civilParish) {
       addPlacePart(district);
@@ -116,7 +122,6 @@ function buildEventPlace(data, result) {
 }
 
 function findSelectedMember(data) {
-
   for (let member of data.householdMembers) {
     if (member.isSelected) {
       return member;
@@ -128,11 +133,11 @@ function findSelectedMember(data) {
 
 function buildHouseholdArray(data, result) {
   const stdFieldNames = [
-    { stdName: "age", ancestryHeadings: ["Age"]},
-    { stdName: "relationship", ancestryHeadings: ["Relationship"]},
-    { stdName: "maritalStatus", ancestryHeadings: ["Marital Status"]},
-    { stdName: "occupation", ancestryHeadings: ["Occupation"]},
-    { stdName: "gender", ancestryHeadings: ["Sex"]},
+    { stdName: "age", ancestryHeadings: ["Age"] },
+    { stdName: "relationship", ancestryHeadings: ["Relationship"] },
+    { stdName: "maritalStatus", ancestryHeadings: ["Marital Status"] },
+    { stdName: "occupation", ancestryHeadings: ["Occupation"] },
+    { stdName: "gender", ancestryHeadings: ["Sex"] },
   ];
   function headingToStdName(heading) {
     for (let entry of stdFieldNames) {
@@ -147,14 +152,13 @@ function buildHouseholdArray(data, result) {
   let members = data.householdMembers;
   if (headings && members) {
     result.householdArrayFields = [];
-  
+
     let householdArray = [];
     for (let member of members) {
       let householdMember = {};
       if (member.isClosed) {
         householdMember.isClosed = true;
-      }
-      else {
+      } else {
         // handle name specially since we combine surname and forenames into one name
         let surname = WTS_String.toInitialCapsEachWord(member["Surname"], true);
         let forenames = member["Forenames"];
@@ -183,22 +187,24 @@ function buildHouseholdArray(data, result) {
           householdMember.birthPlace = combinedBirthPlace;
         }
 
-        for (let heading of headings ) {
-          if (heading != "Surname" && heading != "Forenames" && heading != "Birth Place" && heading != "Birth County") {
+        for (let heading of headings) {
+          if (
+            heading != "Surname" &&
+            heading != "Forenames" &&
+            heading != "Birth Place" &&
+            heading != "Birth County"
+          ) {
             let fieldName = headingToStdName(heading);
             if (fieldName) {
               let fieldValue = member[heading];
               if (fieldValue) {
                 if (fieldName == "gender") {
                   fieldValue = GD.standardizeGender(fieldValue);
-                }
-                else if (fieldName == "maritalStatus") {
+                } else if (fieldName == "maritalStatus") {
                   fieldValue = GD.standardizeMaritalStatus(fieldValue);
-                }
-                else if (fieldName == "relationship") {
+                } else if (fieldName == "relationship") {
                   fieldValue = GD.standardizeRelationshipToHead(fieldValue);
-                }
-                else if (fieldName == "occupation") {
+                } else if (fieldName == "occupation") {
                   fieldValue = GD.standardizeOccupation(fieldValue);
                 }
 
@@ -222,13 +228,12 @@ function buildHouseholdArray(data, result) {
     result.householdArray = householdArray;
 
     let householdArrayFields = [];
-    for (let heading of headings ) {
+    for (let heading of headings) {
       let fieldName = headingToStdName(heading);
       if (!fieldName) {
         if (heading == "Surname") {
           fieldName = "name";
-        }
-        else if (heading == "Birth Place") {
+        } else if (heading == "Birth Place") {
           fieldName = "birthPlace";
         }
       }
@@ -245,8 +250,11 @@ function buildHouseholdArray(data, result) {
   if (result.spouses && result.spouses.length == 1) {
     if (selectedPersonYearsMarried) {
       let censusDate = result.inferEventDate();
-      let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, selectedPersonYearsMarried);
-      let marriageYear =  WTS_String.getLastWord(marriageDateString);
+      let marriageDateString = GeneralizedData.getSubtractAgeFromDate(
+        censusDate,
+        selectedPersonYearsMarried
+      );
+      let marriageYear = WTS_String.getLastWord(marriageDateString);
       if (marriageYear) {
         result.spouses[0].marriageDate.yearString = marriageYear;
       }
@@ -255,13 +263,12 @@ function buildHouseholdArray(data, result) {
 }
 
 function generalizeData(input) {
-
   //console.log("freecen: generalizeData: input is:");
   //console.log(input);
 
   let data = input.extractedData;
 
-  let result = new GeneralizedData;
+  let result = new GeneralizedData();
 
   result.sourceOfData = "freecen";
 
@@ -269,9 +276,15 @@ function generalizeData(input) {
     return result; //the extract failed
   }
 
-  if (!data.censusDetails || !data.householdHeadings ||!data.householdMembers) {
-    console.log("freecen: generalizeData: censusDetails, householdHeadings or householdMembers is missing");
-    return result;  // defensive
+  if (
+    !data.censusDetails ||
+    !data.householdHeadings ||
+    !data.householdMembers
+  ) {
+    console.log(
+      "freecen: generalizeData: censusDetails, householdHeadings or householdMembers is missing"
+    );
+    return result; // defensive
   }
 
   result.sourceType = "record";
@@ -286,11 +299,16 @@ function generalizeData(input) {
   if (!selectedMember) {
     // this can happen on iPhone, so far haven't found any way around it
     // so use first household member in this case
-    console.log("freecen: generalizeData: selectedMember is missing, using first member");
+    console.log(
+      "freecen: generalizeData: selectedMember is missing, using first member"
+    );
     selectedMember = data.householdMembers[0];
   }
 
-  let surname = WTS_String.toInitialCapsEachWord(selectedMember["Surname"], true);
+  let surname = WTS_String.toInitialCapsEachWord(
+    selectedMember["Surname"],
+    true
+  );
   let forenames = selectedMember["Forenames"];
 
   result.setLastNameAndForeNames(surname, forenames);
@@ -298,7 +316,7 @@ function generalizeData(input) {
   if (data.ageAtDeath) {
     result.ageAtDeath = data.ageAtDeath;
   }
-  
+
   let age = selectedMember["Age"];
   if (age) {
     result.ageAtEvent = age;
@@ -323,7 +341,7 @@ function generalizeData(input) {
       fullBirthPlace += ", " + birthCountry;
     }
   }
-  
+
   result.setBirthPlace(fullBirthPlace);
 
   let relationshipToHead = selectedMember["Relationship"];

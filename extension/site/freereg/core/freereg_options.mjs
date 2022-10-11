@@ -41,7 +41,7 @@ const searchOptionsGroup = {
       type: "checkbox",
       label: "Use Name Soundex",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "yearRange",
       type: "select",
@@ -55,15 +55,15 @@ const searchOptionsGroup = {
         { value: "10", text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
     {
       optionName: "includeCounty",
       type: "checkbox",
       label: "Include county in search (if known)",
       defaultValue: true,
-    },  
+    },
   ],
-}
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -77,19 +77,27 @@ const citationOptionsGroup = {
       label: "Include record data at end of citation as",
       values: [
         { value: "none", text: "Do not include data" },
-        { value: "string", text: "Sentence (fall back to list if no sentence)" },
+        {
+          value: "string",
+          text: "Sentence (fall back to list if no sentence)",
+        },
         { value: "list", text: "List of field names/values" },
         { value: "table", text: "Table of field names/values" },
       ],
       defaultValue: "string",
-      unitTestValue: "table"
+      unitTestValue: "table",
     },
   ],
 };
 
 registerSubsectionForOptions("search", "freereg", "FreeReg (UK)");
 registerSiteSearchPopupOptionsGroup("freereg", 8, 8);
-registerSubheadingForOptions("search", "freereg", "parameters", "Search Parameters");
+registerSubheadingForOptions(
+  "search",
+  "freereg",
+  "parameters",
+  "Search Parameters"
+);
 registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "freereg", "FreeReg (UK)");

@@ -22,6 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`ancestry`,
-  `site/ancestry/core/ancestry_extract_data.mjs`
-);
+siteContentInit(`ancestry`, `site/ancestry/core/ancestry_extract_data.mjs`);

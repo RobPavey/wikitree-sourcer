@@ -25,13 +25,10 @@ SOFTWARE.
 async function getPendingSearch() {
   return new Promise((resolve, reject) => {
     try {
-      chrome.storage.local.get(
-        ["wikitreeSearchData"],
-        function (value) {
-          resolve(value.wikitreeSearchData);
-        });
-    }
-    catch (ex) {
+      chrome.storage.local.get(["wikitreeSearchData"], function (value) {
+        resolve(value.wikitreeSearchData);
+      });
+    } catch (ex) {
       reject(ex);
     }
   });
@@ -50,7 +47,6 @@ async function checkForPendingSearch() {
   if (document.URL == "https://www.wikitree.com/wiki/Special:SearchPerson") {
     //console.log("checkForPendingSearch: URL matches");
 
-
     let wikitreeSearchData = await getPendingSearch();
 
     if (wikitreeSearchData) {
@@ -68,16 +64,14 @@ async function checkForPendingSearch() {
       //console.log("checkForPendingSearch: timeSinceSearch is :" + timeSinceSearch);
 
       if (timeSinceSearch < 10000 && searchUrl == document.URL) {
-
         let formElement = document.getElementById("searchForm");
         if (formElement) {
-
           let fieldData = wikitreeSearchData.fieldData;
 
           //console.log("checkForPendingSearch: fieldData is:");
           //console.log(fieldData);
 
-          for(var key in fieldData.simpleIdFields) {
+          for (var key in fieldData.simpleIdFields) {
             //console.log("checkForPendingSearch: key is: " + key);
             if (key) {
               let value = fieldData.simpleIdFields[key];
@@ -91,7 +85,7 @@ async function checkForPendingSearch() {
             }
           }
 
-          for(var key in fieldData.simpleNameFields) {
+          for (var key in fieldData.simpleNameFields) {
             //console.log("checkForPendingSearch: key is: " + key);
             if (key) {
               let value = fieldData.simpleNameFields[key];
@@ -100,7 +94,7 @@ async function checkForPendingSearch() {
               let selector = "input[name=" + CSS.escape(key) + "]";
               //console.log("checkForPendingSearch: simple name selector is: " + selector);
               let inputElement = formElement.querySelector(selector);
-  
+
               if (inputElement) {
                 //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
                 inputElement.value = value;
@@ -108,7 +102,7 @@ async function checkForPendingSearch() {
             }
           }
 
-          for(var radioField of fieldData.radioFields) {
+          for (var radioField of fieldData.radioFields) {
             let name = radioField.name;
             let value = radioField.value;
             //console.log("checkForPendingSearch: radio name is: " + name);
@@ -120,8 +114,7 @@ async function checkForPendingSearch() {
             for (let inputElement of inputElements) {
               if (inputElement.value == value) {
                 inputElement.checked = true;
-              }
-              else {
+              } else {
                 inputElement.false = true;
               }
             }
@@ -136,7 +129,9 @@ async function checkForPendingSearch() {
             //console.log("checkForPendingSearch: found contentElement:");
             //console.log(contentElement);
 
-            let topDivElement = contentElement.querySelector("div.sixteen.columns");
+            let topDivElement = contentElement.querySelector(
+              "div.sixteen.columns"
+            );
             if (topDivElement) {
               //console.log("checkForPendingSearch: found topDivElement:");
               //console.log(topDivElement);
@@ -155,7 +150,7 @@ async function checkForPendingSearch() {
       }
 
       // clear the search data
-      chrome.storage.local.set({wikitreeSearchData: undefined}, function() {
+      chrome.storage.local.set({ wikitreeSearchData: undefined }, function () {
         //console.log('cleared wikitreeSearchData');
       });
     }
@@ -163,7 +158,6 @@ async function checkForPendingSearch() {
 }
 
 function setEditFamilyFields(personData) {
-
   //console.log("setEditFamilyFields, personData is:");
   //console.log(personData);
 
@@ -175,7 +169,7 @@ function setEditFamilyFields(personData) {
   }
 
   function setRadio(radioName, fieldName) {
-    let value = personData[fieldName]
+    let value = personData[fieldName];
     if (value) {
       let nodeSelector = "input[name=" + radioName + "][value=" + value + "]";
       let node = document.querySelector(nodeSelector);
@@ -221,18 +215,16 @@ function setEditFamilyFields(personData) {
 
   // Let the page know that changes have been made so that the matches are updated
   let inputNode = document.querySelector("#mLastNameAtBirth");
-  var inputEvent = new Event('input', { bubbles: true });
+  var inputEvent = new Event("input", { bubbles: true });
   inputNode.dispatchEvent(inputEvent);
-  var changeEvent = new Event('change', { bubbles: true });
+  var changeEvent = new Event("change", { bubbles: true });
   inputNode.dispatchEvent(changeEvent);
 }
 
 function additionalMessageHandler(request, sender, sendResponse) {
-
   if (request.type == "setFields") {
-
     setEditFamilyFields(request.personData);
-    sendResponse({success: true});
+    sendResponse({ success: true });
     return { wasHandled: true, returnValue: false };
   }
 
@@ -243,9 +235,10 @@ async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
 
-  siteContentInit(`wikitree`,
+  siteContentInit(
+    `wikitree`,
     `site/wikitree/core/wikitree_extract_data.mjs`,
-    undefined,  // overrideExtractHandler
+    undefined, // overrideExtractHandler
     additionalMessageHandler
   );
 }

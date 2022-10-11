@@ -44,12 +44,17 @@ function separateUrlIntoParts(url) {
 
   let slashIndex = remainder.indexOf("/");
   if (slashIndex == -1) {
-    slashIndex =  remainder.length;
+    slashIndex = remainder.length;
   }
   let domain = remainder.substring(0, slashIndex);
   let subdirectory = remainder.substring(slashIndex + 1);
 
-  return { scheme: scheme, subdomain: subdomain, domain: domain, subdirectory: subdirectory };
+  return {
+    scheme: scheme,
+    subdomain: subdomain,
+    domain: domain,
+    subdirectory: subdirectory,
+  };
 }
 
-export { separateUrlIntoParts }
+export { separateUrlIntoParts };

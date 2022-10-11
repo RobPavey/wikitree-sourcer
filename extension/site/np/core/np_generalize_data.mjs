@@ -22,18 +22,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import {
+  GeneralizedData,
+  dateQualifiers,
+} from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function generalizeData(input) {
-
   let data = input.extractedData;
 
   if (!data.success) {
     return result; //the extract failed
   }
 
-  let result = new GeneralizedData;
+  let result = new GeneralizedData();
 
   result.sourceOfData = "np";
 
@@ -42,8 +44,7 @@ function generalizeData(input) {
   result.recordType = RT.Newspaper;
 
   result.setEventDate(data.publicationDate);
-  result.setEventPlace(data.location)
-
+  result.setEventPlace(data.location);
 
   // should we use a collection to allow search for same record on Ancestry?
 

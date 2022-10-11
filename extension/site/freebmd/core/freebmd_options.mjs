@@ -39,19 +39,20 @@ const citationOptionsGroup = {
       type: "checkbox",
       label: "Change any person and place names in all caps to initial caps",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "referenceInItalics",
       type: "checkbox",
-      label: "Put the text \"GRO Reference\" in italics",
+      label: 'Put the text "GRO Reference" in italics',
       defaultValue: true,
-    },  
+    },
     {
       optionName: "useDistrictUrl",
       type: "checkbox",
-      label: "Add a link to the registration district page on ukbmd.org.uk (Not currently implemented)",
+      label:
+        "Add a link to the registration district page on ukbmd.org.uk (Not currently implemented)",
       defaultValue: true,
-    },  
+    },
   ],
 };
 

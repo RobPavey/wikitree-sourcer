@@ -43,7 +43,6 @@ function getFgDateQualifierFromWtsQualifier(wtsQualifier) {
 }
 
 function getFgDateQualifier(exactnessOption, wtsQualifier) {
-
   if (exactnessOption == "auto") {
     return getFgDateQualifierFromWtsQualifier(wtsQualifier);
   }
@@ -52,11 +51,10 @@ function getFgDateQualifier(exactnessOption, wtsQualifier) {
 }
 
 function buildSearchUrl(buildUrlInput) {
-
   const data = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
 
-  var builder = new FgUriBuilder;
+  var builder = new FgUriBuilder();
 
   if (options.search_fg_includeFirstName) {
     let firstName = data.inferFirstName();
@@ -87,14 +85,20 @@ function buildSearchUrl(buildUrlInput) {
   if (options.search_fg_birthYearExactness != "none") {
     let birthYear = data.inferBirthYear();
     let birthDateQualifier = data.inferBirthDateQualifier();
-    let fgBirthDateQualifier = getFgDateQualifier(options.search_fg_birthYearExactness, birthDateQualifier);
+    let fgBirthDateQualifier = getFgDateQualifier(
+      options.search_fg_birthYearExactness,
+      birthDateQualifier
+    );
     builder.addBirthYear(birthYear, fgBirthDateQualifier);
   }
 
   if (options.search_fg_deathYearExactness != "none") {
     let deathYear = data.inferDeathYear();
     let deathDateQualifier = data.inferDeathDateQualifier();
-    let fgDeathDateQualifier = getFgDateQualifier(options.search_fg_deathYearExactness, deathDateQualifier);
+    let fgDeathDateQualifier = getFgDateQualifier(
+      options.search_fg_deathYearExactness,
+      deathDateQualifier
+    );
     builder.addDeathYear(deathYear, fgDeathDateQualifier);
   }
 
@@ -116,8 +120,8 @@ function buildSearchUrl(buildUrlInput) {
   //console.log("URL is " + url);
 
   var result = {
-    'url' : url,
-  }
+    url: url,
+  };
 
   return result;
 }

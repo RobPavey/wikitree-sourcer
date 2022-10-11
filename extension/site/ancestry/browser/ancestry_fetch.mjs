@@ -30,8 +30,12 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
-async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, recordId, url) {
-
+async function fetchAncestrySharingDataObjGivenIds(
+  imageDbId,
+  imageRecordId,
+  recordId,
+  url
+) {
   let mode = "cors";
 
   let domain = url.replace(/https?\:\/\/[^\.]+\.([^\/]+)\/.*/, "$1");
@@ -55,12 +59,15 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
   const callbackNamePart2 = getRandomInt(1621100000000, 1659999999999);
   const callbackName = "jQuery" + callbackNamePart1 + "_" + callbackNamePart2;
 
-  let fetchUrl = "https://www." + domain + "/sharing/shares/create?callback="
-  + callbackName
-  + "&locale=en-US&referrer%5Bclient%5D=website&referrer%5Bpage%5D=iiv-share-webpart&collection_id="
-  + imageDbId // extractedUrlInfo.dbId
-  + "&image_id="
-  + imageRecordId; // extractedUrlInfo.imageId
+  let fetchUrl =
+    "https://www." +
+    domain +
+    "/sharing/shares/create?callback=" +
+    callbackName +
+    "&locale=en-US&referrer%5Bclient%5D=website&referrer%5Bpage%5D=iiv-share-webpart&collection_id=" +
+    imageDbId + // extractedUrlInfo.dbId
+    "&image_id=" +
+    imageRecordId; // extractedUrlInfo.imageId
 
   if (recordId) {
     fetchUrl += "&record_id=" + recordId; // extractedUrlInfo.pId
@@ -69,26 +76,28 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
   fetchUrl += "&_=" + callbackNamePart2;
 
   let response = await fetch(fetchUrl, {
-    "headers": {
-      "accept": "*/*",
+    headers: {
+      accept: "*/*",
       "accept-language": "en-US,en;q=0.9",
     },
-    "referrer": "https://search." + domain + "/",
-    "referrerPolicy": "origin-when-cross-origin",
-    "body": null,
-    "method": "GET",
-    "mode": mode,
-    "credentials": "include"
-  }).catch(err => {
+    referrer: "https://search." + domain + "/",
+    referrerPolicy: "origin-when-cross-origin",
+    body: null,
+    method: "GET",
+    mode: mode,
+    credentials: "include",
+  }).catch((err) => {
     console.log("Fetch threw an exception, message is: " + err.message);
     console.log(err);
-    return {success: false};;
+    return { success: false };
   });
-  
+
   // On Firefox it may return zero any time you use "no-cors"
   if (response.status !== 200) {
-    console.log('Looks like there was a problem. Status Code: ' + response.status);
-    return {success: false};;
+    console.log(
+      "Looks like there was a problem. Status Code: " + response.status
+    );
+    return { success: false };
   }
 
   //console.log("response is");
@@ -96,21 +105,21 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
 
   // Examine the text in the response
   let data = await response.text();
-  
+
   //console.log("data is:");
   //console.log(data);
 
   if (data.startsWith(callbackName)) {
-    const jsonData = data.substring(callbackName.length+1, data.length-2);
+    const jsonData = data.substring(callbackName.length + 1, data.length - 2);
     const dataObj = JSON.parse(jsonData);
 
     //console.log("dataObj is:");
     //console.log(dataObj);
 
-    return {success: true, dataObj: dataObj};
+    return { success: true, dataObj: dataObj };
   }
 
-  return {success: false};
+  return { success: false };
 }
 
 async function getLastSharingData() {
@@ -123,7 +132,6 @@ async function setLastSharingData(lastSharingData) {
 }
 
 async function fetchAncestrySharingDataObj(ed) {
-
   let result = { success: false, dataObj: undefined };
 
   // If the request is the same as the last one made then reuse the result to avoid sending too
@@ -143,7 +151,7 @@ async function fetchAncestrySharingDataObj(ed) {
     personId: null,
     url: ed.url,
     dataObj: null,
-  }
+  };
 
   if (ed.pageType == "record") {
     if (ed.imageUrl) {
@@ -151,8 +159,7 @@ async function fetchAncestrySharingDataObj(ed) {
       sharingData.recordId = ed.imageRecordId;
       sharingData.personId = ed.recordId;
     }
-  }
-  else if (ed.pageType == "image") {
+  } else if (ed.pageType == "image") {
     sharingData.dbId = ed.dbId;
     sharingData.recordId = ed.recordId;
     sharingData.personId = ed.pid;
@@ -162,7 +169,12 @@ async function fetchAncestrySharingDataObj(ed) {
   //console.log(sharingData);
 
   if (sharingData.dbId && sharingData.recordId) {
-    result = await fetchAncestrySharingDataObjGivenIds(sharingData.dbId, sharingData.recordId, sharingData.personId, sharingData.url);
+    result = await fetchAncestrySharingDataObjGivenIds(
+      sharingData.dbId,
+      sharingData.recordId,
+      sharingData.personId,
+      sharingData.url
+    );
     //console.log("fetchAncestrySharingDataObj, result is");
     //console.log(sharingData.dataObj);
 
@@ -193,8 +205,7 @@ async function setRecordPageCache(recordPageCache) {
 }
 
 async function fetchAncestryRecordPage(recordUrl, cacheTag) {
-
-  let result = {success: false, recordUrl: recordUrl, cacheTag: cacheTag};
+  let result = { success: false, recordUrl: recordUrl, cacheTag: cacheTag };
 
   if (!recordUrl) {
     return result;
@@ -228,25 +239,27 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
     //console.log("domain is: " + domain);
 
     let response = await fetch(recordUrl, {
-      "headers": {
-        "accept": "*/*",
+      headers: {
+        accept: "*/*",
         "accept-language": "en-US,en;q=0.9",
       },
-      "referrer": "https://search." + domain + "/",
-      "referrerPolicy": "origin-when-cross-origin",
-      "body": null,
-      "method": "GET",
-      "mode": mode,
-      "credentials": "include"
-    }).catch(err => {
+      referrer: "https://search." + domain + "/",
+      referrerPolicy: "origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: mode,
+      credentials: "include",
+    }).catch((err) => {
       console.log("Fetch threw an exception, message is: " + err.message);
       console.log(err);
-      return result;  // Note this returns from this catch function, not fetchAncestryRecordPage
+      return result; // Note this returns from this catch function, not fetchAncestryRecordPage
     });
-    
+
     // On Firefox it may return zero any time you use "no-cors"
     if (!response || response.status !== 200) {
-      console.log('Looks like there was a problem. Status Code: ' + response.status);
+      console.log(
+        "Looks like there was a problem. Status Code: " + response.status
+      );
       return result;
     }
 
@@ -255,13 +268,13 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
 
     if (response.url && response.url.includes("offers/join")) {
       // the user does not have a subscription that includes this record
-      result.errorStatus = "subscriptionHasNoAccess"
+      result.errorStatus = "subscriptionHasNoAccess";
       return result;
     }
 
     // Examine the text in the response
     let data = await response.text();
-    
+
     //console.log("data is:");
     //console.log(data);
 
@@ -278,9 +291,11 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
       ancestryRecordPageCache[cacheTag] = cache;
       setRecordPageCache(ancestryRecordPageCache);
     }
-  }
-  catch (error) {
-    console.log("WikiTree Sourcer:: fetchAncestryRecordPage, failed. Error message is: " + error.message);
+  } catch (error) {
+    console.log(
+      "WikiTree Sourcer:: fetchAncestryRecordPage, failed. Error message is: " +
+        error.message
+    );
   }
 
   return result;

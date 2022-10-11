@@ -41,30 +41,41 @@ var detectedSupportedSite = false;
 function setupPopupMenuWhenError(message) {
   popupState.progress = progressState.defaultPopupDisplayError;
 
-  displayMessageWithIcon("warning", `WikiTree Sourcer: something went wrong. Please try again.`,
-    "Error message: " + message);
+  displayMessageWithIcon(
+    "warning",
+    `WikiTree Sourcer: something went wrong. Please try again.`,
+    "Error message: " + message
+  );
 }
 
 function setupDefaultPopupMenuWhenNoResponseFromContent() {
   popupState.progress = progressState.defaultPopupDisplayError;
-  displayMessageWithIcon("warning", `
+  displayMessageWithIcon(
+    "warning",
+    `
 WikiTree Sourcer has not yet been able to extract the required data from this page.
 
 The extension appears to have permissions for this page but the page type could not be identified and the content script is not responding.
 
 Please check that you are logged into this site (if required) and on a record page and try again.
-`);
+`
+  );
 }
 
 function setupUnrecognizedSiteMenu() {
   popupState.progress = progressState.defaultPopupSiteNotRecognized;
 
-  let backFunction = function() { setupUnrecognizedSiteMenu(); };
+  let backFunction = function () {
+    setupUnrecognizedSiteMenu();
+  };
 
-  let message = "WikiTree Sourcer doesn't know how to extract data from this site.";
-  message += "\n\nWikiTree Sourcer works on wikitree.com profile pages and record pages from certain genealogy sites.";
-  message += "\n\nTry browsing to a wikitree.com person profile or a record page and try the extension there.";
-  
+  let message =
+    "WikiTree Sourcer doesn't know how to extract data from this site.";
+  message +=
+    "\n\nWikiTree Sourcer works on wikitree.com profile pages and record pages from certain genealogy sites.";
+  message +=
+    "\n\nTry browsing to a wikitree.com person profile or a record page and try the extension there.";
+
   buildMinimalMenuWithMessage(message, {}, backFunction);
 }
 
@@ -79,7 +90,10 @@ function doesUrlMatchPattern(urlParts, patternParts) {
     return false;
   }
 
-  if (patternParts.subdomain != "*" && patternParts.subdomain != urlParts.subdomain) {
+  if (
+    patternParts.subdomain != "*" &&
+    patternParts.subdomain != urlParts.subdomain
+  ) {
     return false;
   }
 
@@ -95,14 +109,12 @@ function doesUrlMatchPattern(urlParts, patternParts) {
   if (starIndex != -1) {
     let subDirectoryToMatch = patternParts.subdirectory.substring(0, starIndex);
     return urlParts.subdirectory.startsWith(subDirectoryToMatch);
-  }
-  else {
+  } else {
     return urlParts.subdirectory == patternParts.subdirectory;
   }
 }
 
-function determineSiteNameForTab(activeTab){
-
+function determineSiteNameForTab(activeTab) {
   let manifest = chrome.runtime.getManifest();
 
   // Note: the url and pendingUrl properties will be ignored unless the extsnion has the "tabs" permission
@@ -118,7 +130,7 @@ function determineSiteNameForTab(activeTab){
     return false;
   }
 
-  console.log('WikiTree Sourcer: determineSiteNameForTab');
+  console.log("WikiTree Sourcer: determineSiteNameForTab");
   let contentScripts = manifest.content_scripts;
 
   for (let contentScript of contentScripts) {
@@ -134,33 +146,39 @@ function determineSiteNameForTab(activeTab){
         // found match, get siteName from the last script name
         let scripts = contentScript.js;
         if (scripts && scripts.length > 0) {
-          let lastScript = scripts[scripts.length-1];
+          let lastScript = scripts[scripts.length - 1];
           // example: "site/fs/browser/fs_content.js"
           let lastSlashIndex = lastScript.lastIndexOf("/");
           if (lastSlashIndex != -1) {
             const suffix = "_content.js";
             let suffixIndex = lastScript.indexOf(suffix, lastSlashIndex);
             if (suffixIndex != -1) {
-              let siteName = lastScript.substring(lastSlashIndex+1, suffixIndex);
+              let siteName = lastScript.substring(
+                lastSlashIndex + 1,
+                suffixIndex
+              );
               return siteName;
             }
           }
         }
 
-        console.log("WikiTree Sourcer: determineSiteNameForTab. Tab matches content script but could not get site name. Content script is:");
+        console.log(
+          "WikiTree Sourcer: determineSiteNameForTab. Tab matches content script but could not get site name. Content script is:"
+        );
         console.log("match pattern is: " + match);
         return "unknown";
       }
     }
   }
-   
-  console.log("WikiTree Sourcer: determineSiteNameForTab. Tab has URL but no content script match");
+
+  console.log(
+    "WikiTree Sourcer: determineSiteNameForTab. Tab has URL but no content script match"
+  );
   console.log("activeTab.url is: " + activeTab.url);
   return "unknown";
 }
 
 async function loadPopupModuleForSupportedSite(popupModulePath) {
-
   if (detectedSupportedSite) {
     return; // don't want to load twice
   }
@@ -176,26 +194,35 @@ async function loadPopupModuleForSupportedSite(popupModulePath) {
     popupState.progress = progressState.defaultPopupLoadingSiteModule;
     let loadedPopupModule = await import(src);
     if (!loadedPopupModule) {
-      console.log('WikiTree Sourcer: loadPopupModuleForSupportedSite. failed to import');
+      console.log(
+        "WikiTree Sourcer: loadPopupModuleForSupportedSite. failed to import"
+      );
     }
-  }
-  catch (e) {
+  } catch (e) {
     popupState.progress = progressState.defaultPopupException;
 
-    console.log('WikiTree Sourcer: error in loadPopupModuleForSupportedSite. Path is: ', src);
+    console.log(
+      "WikiTree Sourcer: error in loadPopupModuleForSupportedSite. Path is: ",
+      src
+    );
 
-    let message = "Error when attempting a dynamic import of the popup module in a the default popup.\n";
+    let message =
+      "Error when attempting a dynamic import of the popup module in a the default popup.\n";
     openExceptionPage(message, popupModulePath, e, false);
   }
 }
 
 function contentLoadedNotification(tab, siteName) {
-  if (popupState.initialStateInDefaultPopup && popupState.initialStateInDefaultPopup.tabId == tab.id) {
+  if (
+    popupState.initialStateInDefaultPopup &&
+    popupState.initialStateInDefaultPopup.tabId == tab.id
+  ) {
     if (siteName != "unknown") {
       // no need for this function to be called again
       popupState.onContentLoaded = undefined;
       // we worked out the siteName from the contentLoaded message, switch to the correct popup script
-      let popupModulePath = "site/" + siteName + "/browser/" + siteName + "_popup.mjs";
+      let popupModulePath =
+        "site/" + siteName + "/browser/" + siteName + "_popup.mjs";
       loadPopupModuleForSupportedSite(popupModulePath);
       return;
     }
@@ -216,8 +243,12 @@ function initPopupGivenActiveTab(activeTab) {
 
   if (!activeTab) {
     // this should never happen
-    console.log("WikiTree Sourcer: popup.mjs: setupInitialPopupMenuWithActiveTab, no active tab");
-    setupPopupMenuWhenError("There is no active tab in initPopupGivenActiveTab");
+    console.log(
+      "WikiTree Sourcer: popup.mjs: setupInitialPopupMenuWithActiveTab, no active tab"
+    );
+    setupPopupMenuWhenError(
+      "There is no active tab in initPopupGivenActiveTab"
+    );
     return;
   }
 
@@ -237,14 +268,19 @@ function initPopupGivenActiveTab(activeTab) {
   // user navigate to another page before the first has finished loading.
 
   if (isSafari() && activeTab.status == "complete") {
-    if (initPopupGivenActiveTabRetryCount < initPopupGivenActiveTabRetryOnCompleteMaxCount) {
+    if (
+      initPopupGivenActiveTabRetryCount <
+      initPopupGivenActiveTabRetryOnCompleteMaxCount
+    ) {
       initPopupGivenActiveTabRetryCount++;
 
       popupState.onContentLoaded = contentLoadedNotification;
       popupState.defaultPopupDidTimeoutOnComplete = true;
       popupState.progress = progressState.defaultPopupTimeout;
 
-      setTimeout(function() { initPopupGivenActiveTab(activeTab); }, initPopupGivenActiveTabRetryOnCompleteDelay );
+      setTimeout(function () {
+        initPopupGivenActiveTab(activeTab);
+      }, initPopupGivenActiveTabRetryOnCompleteDelay);
       return;
     }
   }
@@ -260,7 +296,8 @@ function initPopupGivenActiveTab(activeTab) {
 
   if (siteName != "unknown") {
     // we worked out the siteName from the url, switch to the correct popup script
-    let popupModulePath = "site/" + siteName + "/browser/" + siteName + "_popup.mjs";
+    let popupModulePath =
+      "site/" + siteName + "/browser/" + siteName + "_popup.mjs";
     loadPopupModuleForSupportedSite(popupModulePath);
     return;
   }
@@ -277,11 +314,12 @@ function initPopupWithActiveTab() {
   // Note that await doesn't work with chrome.tabs.query on Firefox
   // So we use the callback version.
   // it is possible that browser.tabs.querey would work.
-  chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     if (!tabs || tabs.length < 1) {
-      console.log("WikiTree Sourcer: popup.mjs: setupInitialPopupMenu, no tabs returned from chrome.tabs.query");
-    }
-    else {
+      console.log(
+        "WikiTree Sourcer: popup.mjs: setupInitialPopupMenu, no tabs returned from chrome.tabs.query"
+      );
+    } else {
       initPopupGivenActiveTab(tabs[0]);
     }
   });

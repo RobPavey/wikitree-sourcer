@@ -25,7 +25,6 @@ SOFTWARE.
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 class FgUriBuilder {
-
   // Example URL:
   // https://www.findagrave.com/memorial/search
   // ?firstname=William&middlename=&lastname=Pavey
@@ -50,8 +49,7 @@ class FgUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
@@ -66,32 +64,31 @@ class FgUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
   }
 
   addCountryId(countryName) {
     const nameToId = {
-      "England": "country_5",
-      "Wales": "country_67",
-      "Scotland": "country_50",
+      England: "country_5",
+      Wales: "country_67",
+      Scotland: "country_50",
 
-      "Ireland": "country_35",
-      "France": "country_7",
-      "Germany": "country_8",
-      "Italy": "country_9",
-      "Netherlands": "country_69",
-      "Sweden": "country_66",
-      "Denmark": "country_27",
-      "Norway": "country_52",
+      Ireland: "country_35",
+      France: "country_7",
+      Germany: "country_8",
+      Italy: "country_9",
+      Netherlands: "country_69",
+      Sweden: "country_66",
+      Denmark: "country_27",
+      Norway: "country_52",
 
       "United States": "country_4",
-      "Canada": "country_10",
-      "Mexico": "country_45",
+      Canada: "country_10",
+      Mexico: "country_45",
 
-      "Australia": "country_15",
+      Australia: "country_15",
       "New Zealand": "country_85",
       "South Africa": "country_64",
     };
@@ -104,15 +101,24 @@ class FgUriBuilder {
   }
 
   addFirstName(string) {
-    this.addSearchParameter("firstname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(
+      "firstname",
+      WTS_String.removeExtendedAsciiCharacters(string)
+    );
   }
 
   addMiddleName(string) {
-    this.addSearchParameter("middlename", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(
+      "middlename",
+      WTS_String.removeExtendedAsciiCharacters(string)
+    );
   }
 
   addLastName(string) {
-    this.addSearchParameter("lastname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(
+      "lastname",
+      WTS_String.removeExtendedAsciiCharacters(string)
+    );
   }
 
   includeMaidenName() {

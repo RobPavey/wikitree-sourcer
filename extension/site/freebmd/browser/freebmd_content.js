@@ -22,6 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`freebmd`,
-`site/freebmd/core/freebmd_extract_data.mjs`
-);
+siteContentInit(`freebmd`, `site/freebmd/core/freebmd_extract_data.mjs`);

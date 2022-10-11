@@ -40,13 +40,13 @@ const citationOptionsGroup = {
       type: "checkbox",
       label: "Change person and place names from all caps to initial caps",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "referenceInItalics",
       type: "checkbox",
-      label: "Put the text \"GRO Reference\" in italics",
+      label: 'Put the text "GRO Reference" in italics',
       defaultValue: true,
-    },  
+    },
     {
       optionName: "linkStyle",
       type: "select",
@@ -58,15 +58,15 @@ const citationOptionsGroup = {
         { value: "url_content", text: "Visible URL to GRO content site" },
       ],
       defaultValue: "search",
-    },  
+    },
     {
       optionName: "useDistrictUrl",
       type: "checkbox",
       label: "Add a link to the registration district page on ukbmd.org.uk",
       defaultValue: true,
-    },  
+    },
   ],
-}
+};
 
 registerSubsectionForOptions("search", "gro", "GRO (UK)");
 registerSiteSearchPopupOptionsGroup("gro", 5, 5);

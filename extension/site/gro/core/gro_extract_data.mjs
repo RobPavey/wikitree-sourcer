@@ -23,18 +23,18 @@ SOFTWARE.
 */
 
 function cleanText(text) {
-  text = text.replace(/\s+/g, " ");  // eliminate nbsp and multiple white space etc
+  text = text.replace(/\s+/g, " "); // eliminate nbsp and multiple white space etc
   text = text.trim();
   return text;
 }
- 
+
 function extractNameFromFirstRowText(text, result) {
   text = text.trim(); // there can be a newline on start for example
   const commaIndex = text.indexOf(",");
   if (commaIndex != -1) {
-    let lastName = text.substring(0,commaIndex);
+    let lastName = text.substring(0, commaIndex);
     result.lastName = cleanText(lastName);
-    let forenames = text.substring(commaIndex+1).trim()
+    let forenames = text.substring(commaIndex + 1).trim();
     let cleanedForenames = cleanText(forenames);
     if (cleanedForenames != "-") {
       result.forenames = cleanedForenames;
@@ -44,16 +44,14 @@ function extractNameFromFirstRowText(text, result) {
       var nlIndex = forenames.indexOf("\n");
       if (nlIndex != -1) {
         result.firstName = cleanText(forenames.substring(0, nlIndex).trim());
-        var middleNames = forenames.substring(nlIndex+1).trim();
+        var middleNames = forenames.substring(nlIndex + 1).trim();
         if (middleNames != "") {
           result.middleNames = cleanText(middleNames);
         }
-      }
-      else {
+      } else {
         result.firstName = cleanedForenames;
       }
-    }
-    else {
+    } else {
       result.forenames = "";
       result.firstName = "";
     }
@@ -79,7 +77,9 @@ function extractSecondRowText(secondRowText, result) {
     result.recordType = "older";
 
     var eventYear = secondRowText.replace(
-      /^GRO Reference\:\s+(\d\d\d\d)\s+\w\s+Quarter\s+in.+Volume\s+[^\s]+.*$/, "$1");
+      /^GRO Reference\:\s+(\d\d\d\d)\s+\w\s+Quarter\s+in.+Volume\s+[^\s]+.*$/,
+      "$1"
+    );
     if (eventYear != secondRowText && eventYear.length == 4) {
       var year = parseInt(eventYear);
       if (year != NaN) {
@@ -88,19 +88,18 @@ function extractSecondRowText(secondRowText, result) {
     }
 
     var quarter = secondRowText.replace(
-      /^GRO Reference\:\s+\d\d\d\d\s+(\w)\s+Quarter\s+in.+Volume\s+[^\s]+.*$/, "$1");
+      /^GRO Reference\:\s+\d\d\d\d\s+(\w)\s+Quarter\s+in.+Volume\s+[^\s]+.*$/,
+      "$1"
+    );
     if (quarter != secondRowText && quarter.length == 1) {
       var eventQuarter = undefined;
       if (quarter == "M") {
         eventQuarter = 1;
-      }
-      else if (quarter == "J") {
+      } else if (quarter == "J") {
         eventQuarter = 2;
-      }
-      else if (quarter == "S") {
+      } else if (quarter == "S") {
         eventQuarter = 3;
-      }
-      else if (quarter == "D") {
+      } else if (quarter == "D") {
         eventQuarter = 4;
       }
       result.eventQuarterLetter = quarter;
@@ -109,25 +108,32 @@ function extractSecondRowText(secondRowText, result) {
       }
     }
 
-    var district = secondRowText.replace(
-      /^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in\s+(.*)\s+Volume\s+[^\s]+.*$/, "$1").trim();
+    var district = secondRowText
+      .replace(
+        /^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in\s+(.*)\s+Volume\s+[^\s]+.*$/,
+        "$1"
+      )
+      .trim();
     if (district != secondRowText && district) {
       result.registrationDistrict = district;
     }
 
     var volume = secondRowText.replace(
-      /^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in.+Volume\s+([^\s]+).*$/, "$1");
+      /^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in.+Volume\s+([^\s]+).*$/,
+      "$1"
+    );
     if (volume != secondRowText && volume.length > 0) {
       result.referenceVolume = volume;
     }
 
     var page = secondRowText.replace(
-      /^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in.+Volume\s+[^\s]+\s+Page\s+(\d+).*$/, "$1");
+      /^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in.+Volume\s+[^\s]+\s+Page\s+(\d+).*$/,
+      "$1"
+    );
     if (page != secondRowText && page.length > 0) {
       result.referencePage = page;
     }
-  }
-  else {
+  } else {
     result.recordType = "newer";
 
     // GRO Reference:  DOR  Q4/1991 in BRISTOL  (3011C)  Volume 22  Page 608  Entry Number 226
@@ -136,7 +142,9 @@ function extractSecondRowText(secondRowText, result) {
     // or
     // GRO Reference:  DOR  Q2/2016 in PLYMOUTH  (416-1C)  Entry Number 513852158 Order this entry as a:...
     var eventYear = secondRowText.replace(
-      /^GRO Reference\:\s+DOR\s+Q\d\/(\d\d\d\d)\s+in\s+.*\s+\([\w\-]+\)\s+.*$/, "$1");
+      /^GRO Reference\:\s+DOR\s+Q\d\/(\d\d\d\d)\s+in\s+.*\s+\([\w\-]+\)\s+.*$/,
+      "$1"
+    );
     if (eventYear != secondRowText && eventYear.length == 4) {
       var year = parseInt(eventYear);
       if (year != NaN) {
@@ -145,24 +153,30 @@ function extractSecondRowText(secondRowText, result) {
     }
 
     var quarter = secondRowText.replace(
-      /^GRO Reference\:\s+DOR\s+Q(\d)\/\d\d\d\d\s+in\s+.*\s+\([\w\-]+\)\s+.*$/, "$1");
+      /^GRO Reference\:\s+DOR\s+Q(\d)\/\d\d\d\d\s+in\s+.*\s+\([\w\-]+\)\s+.*$/,
+      "$1"
+    );
     if (quarter != secondRowText && quarter.length == 1) {
       const number = parseInt(quarter);
       if (number != NaN && number >= 1 && number <= 4) {
         result.eventQuarter = number;
         const letters = ["M", "J", "S", "D"];
-        result.eventQuarterLetter = letters[number-1];
+        result.eventQuarterLetter = letters[number - 1];
       }
     }
 
     var district = secondRowText.replace(
-      /^GRO Reference\:\s+DOR\s+Q\d\/\d\d\d\d\s+in\s+(.*)\s+\([\w\-]+\)\s+.*$/, "$1");
+      /^GRO Reference\:\s+DOR\s+Q\d\/\d\d\d\d\s+in\s+(.*)\s+\([\w\-]+\)\s+.*$/,
+      "$1"
+    );
     if (district != secondRowText && district != "") {
       result.registrationDistrict = district.trim();
     }
 
     var districtCode = secondRowText.replace(
-      /^GRO Reference\:\s+DOR\s+Q\d\/\d\d\d\d\s+in\s+.*\s+\(([\w\-]+)\)\s+.*$/, "$1");
+      /^GRO Reference\:\s+DOR\s+Q\d\/\d\d\d\d\s+in\s+.*\s+\(([\w\-]+)\)\s+.*$/,
+      "$1"
+    );
     if (districtCode != secondRowText && districtCode != "") {
       result.registrationDistrictCode = districtCode.trim();
     }
@@ -176,52 +190,61 @@ function extractSecondRowText(secondRowText, result) {
       let restOfText = secondRowText.substring(volIndex + volumeString.length);
 
       var volume = restOfText.replace(
-        /^\s*([^\s]+)\s+Page\s+\d+\s*(?:Entry Number\s\d+)?.*$/, "$1");
+        /^\s*([^\s]+)\s+Page\s+\d+\s*(?:Entry Number\s\d+)?.*$/,
+        "$1"
+      );
       if (volume != restOfText && volume.length > 0) {
         result.referenceVolume = volume;
       }
 
       var page = restOfText.replace(
-        /^\s*[^\s]+\s+Page\s+(\d+)\s*(?:Entry Number\s\d+)?.*$/, "$1");
+        /^\s*[^\s]+\s+Page\s+(\d+)\s*(?:Entry Number\s\d+)?.*$/,
+        "$1"
+      );
       if (page != restOfText && page.length > 0) {
         result.referencePage = page;
       }
-  
+
       var entryNumber = restOfText.replace(
-        /^\s*[^\s]+\s+Page\s+\d+\s+Entry\s+Number\s+(\d+).*$/, "$1");
-        if (entryNumber != restOfText && entryNumber.length > 0) {
+        /^\s*[^\s]+\s+Page\s+\d+\s+Entry\s+Number\s+(\d+).*$/,
+        "$1"
+      );
+      if (entryNumber != restOfText && entryNumber.length > 0) {
         result.entryNumber = entryNumber;
       }
-    }
-    else {
+    } else {
       const regIndex = secondRowText.indexOf(regString);
       if (regIndex != -1) {
         let restOfText = secondRowText.substring(regIndex + regString.length);
 
         var register = restOfText.replace(
-          /^\s*([^\s]+)\s*(?:Entry Number\s\d+)?.*$/, "$1");
+          /^\s*([^\s]+)\s*(?:Entry Number\s\d+)?.*$/,
+          "$1"
+        );
         if (register != restOfText && register.length > 0) {
           result.referenceRegister = register;
         }
-    
+
         var entryNumber = restOfText.replace(
-          /^\s*[^\s]+\s+Entry\s+Number\s+(\d+).*$/, "$1");
-          if (entryNumber != restOfText && entryNumber.length > 0) {
+          /^\s*[^\s]+\s+Entry\s+Number\s+(\d+).*$/,
+          "$1"
+        );
+        if (entryNumber != restOfText && entryNumber.length > 0) {
           result.entryNumber = entryNumber;
-        }        
-      }
-      else {
+        }
+      } else {
         // no Volume or Reg
         const entryNumIndex = secondRowText.indexOf(entryNumString);
         if (entryNumIndex != -1) {
-          let restOfText = secondRowText.substring(entryNumIndex + entryNumString.length);
-  
-          var entryNumber = restOfText.replace(
-            /^\s*(\d+).*$/, "$1");
-          
+          let restOfText = secondRowText.substring(
+            entryNumIndex + entryNumString.length
+          );
+
+          var entryNumber = restOfText.replace(/^\s*(\d+).*$/, "$1");
+
           if (entryNumber != restOfText && entryNumber.length > 0) {
             result.entryNumber = entryNumber;
-          }        
+          }
         }
       }
     }
@@ -248,7 +271,6 @@ function extractFirstRowForBirth(inputElement, result) {
 }
 
 function extractFirstRowForDeath(inputElement, result) {
-
   var firstRowFirstCell = inputElement.closest("TD");
   if (firstRowFirstCell) {
     let secondCell = firstRowFirstCell.nextElementSibling;
@@ -263,8 +285,7 @@ function extractFirstRowForDeath(inputElement, result) {
         if (number != NaN) {
           if (number > 500) {
             result.birthYear = number;
-          }
-          else {
+          } else {
             result.ageAtDeath = number;
           }
         }
@@ -288,8 +309,12 @@ function extractSecondRow(inputElement, result) {
   }
 }
 
-function extractFirstOrSelectedData(document, firstRowFunction, secondRowFunction, result) {
-  
+function extractFirstOrSelectedData(
+  document,
+  firstRowFunction,
+  secondRowFunction,
+  result
+) {
   let resultsNode = document.querySelector("[name='Results']");
   if (!resultsNode) {
     return;
@@ -331,9 +356,8 @@ function extractFirstOrSelectedData(document, firstRowFunction, secondRowFunctio
 }
 
 function extractData(document, url) {
-
   var result = {
-    success: false
+    success: false,
   };
 
   if (url) {
@@ -345,13 +369,22 @@ function extractData(document, url) {
   const isDeath = document.querySelector("#EW_Death:checked");
 
   if (isBirth) {
-    extractFirstOrSelectedData(document, extractFirstRowForBirth, extractSecondRow, result);
+    extractFirstOrSelectedData(
+      document,
+      extractFirstRowForBirth,
+      extractSecondRow,
+      result
+    );
     result.birthYear = result.eventYear;
     result.birthQuarter = result.eventQuarter;
     result.eventType = "birth";
-  }
-  else if (isDeath) {
-    extractFirstOrSelectedData(document, extractFirstRowForDeath, extractSecondRow, result);
+  } else if (isDeath) {
+    extractFirstOrSelectedData(
+      document,
+      extractFirstRowForDeath,
+      extractSecondRow,
+      result
+    );
     result.deathYear = result.eventYear;
     result.deathQuarter = result.eventQuarter;
     result.eventType = "death";

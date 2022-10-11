@@ -28,64 +28,152 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { ScotpRecordType } from "./scotp_record_type.mjs";
 
 const categories = [
-  { value: "statutory", text: "Statutory registers", },
-  { value: "church_cos", text: "Church of Scotland registers", },
-  { value: "church_rcc", text: "Roman Catholic Church registers", },
-  { value: "church_other", text: "Other church registers", },
-  { value: "census", text: "Census returns", },
-  { value: "valuation", text: "Valuation rolls", },
-  { value: "legal", text: "Legal records", },
-  { value: "poor-relief", text: "Poor relief and migration records", },
-  { value: "prison", text: "Prison registers", },
+  { value: "statutory", text: "Statutory registers" },
+  { value: "church_cos", text: "Church of Scotland registers" },
+  { value: "church_rcc", text: "Roman Catholic Church registers" },
+  { value: "church_other", text: "Other church registers" },
+  { value: "census", text: "Census returns" },
+  { value: "valuation", text: "Valuation rolls" },
+  { value: "legal", text: "Legal records" },
+  { value: "poor-relief", text: "Poor relief and migration records" },
+  { value: "prison", text: "Prison registers" },
 ];
 
 const subcategories = [
-  { value: "stat_births", text: "Births", category: "statutory", includeParents: true, },
-  { value: "stat_marriages", text: "Marriages", category: "statutory", includeSpouses: true, },
-  { value: "stat_divorces", text: "Divorces", category: "statutory", includeSpouses: true, },
-  { value: "stat_deaths", text: "Deaths", category: "statutory", includeParents: true, },
-  { value: "civilpartnership", text: "Civil partnerships", category: "statutory", includeSpouses: true, },
-  { value: "dissolutions", text: "Dissolutions", category: "statutory", includeSpouses: true, },
-  
-  { value: "opr_births", text: "Birth and baptisms", category: "church_cos", includeParents: true, },
-  { value: "opr_marriages", text: "Banns and marriages", category: "church_cos", includeSpouses: true, },
-  { value: "opr_deaths", text: "Deaths and burials", category: "church_cos",  },
+  {
+    value: "stat_births",
+    text: "Births",
+    category: "statutory",
+    includeParents: true,
+  },
+  {
+    value: "stat_marriages",
+    text: "Marriages",
+    category: "statutory",
+    includeSpouses: true,
+  },
+  {
+    value: "stat_divorces",
+    text: "Divorces",
+    category: "statutory",
+    includeSpouses: true,
+  },
+  {
+    value: "stat_deaths",
+    text: "Deaths",
+    category: "statutory",
+    includeParents: true,
+  },
+  {
+    value: "civilpartnership",
+    text: "Civil partnerships",
+    category: "statutory",
+    includeSpouses: true,
+  },
+  {
+    value: "dissolutions",
+    text: "Dissolutions",
+    category: "statutory",
+    includeSpouses: true,
+  },
 
-  { value: "crbirths_baptism", text: "Birth and baptisms", category: "church_rcc", includeParents: true, },
-  { value: "crbanns_marriages", text: " Banns and marriages", category: "church_rcc", includeSpouses: true, },
-  { value: "crdeath_burial", text: " Deaths and burials", category: "church_rcc", },
-  { value: "cr_other", text: "Other events", category: "church_rcc", },
+  {
+    value: "opr_births",
+    text: "Birth and baptisms",
+    category: "church_cos",
+    includeParents: true,
+  },
+  {
+    value: "opr_marriages",
+    text: "Banns and marriages",
+    category: "church_cos",
+    includeSpouses: true,
+  },
+  { value: "opr_deaths", text: "Deaths and burials", category: "church_cos" },
 
-  { value: "ch3_baptism", text: "Birth and baptisms", category: "church_other", includeParents: true, },
-  { value: "ch3_marriages", text: "Banns and marriages", category: "church_other", includeSpouses: true, },
-  { value: "ch3_burials", text: "Deaths and burials", category: "church_other", },
-  { value: "ch3_other", text: "Other events", category: "church_other", },
+  {
+    value: "crbirths_baptism",
+    text: "Birth and baptisms",
+    category: "church_rcc",
+    includeParents: true,
+  },
+  {
+    value: "crbanns_marriages",
+    text: " Banns and marriages",
+    category: "church_rcc",
+    includeSpouses: true,
+  },
+  {
+    value: "crdeath_burial",
+    text: " Deaths and burials",
+    category: "church_rcc",
+  },
+  { value: "cr_other", text: "Other events", category: "church_rcc" },
 
-  { value: "census", text: "Census returns 1841-1911", category: "census", },
-  { value: "census_lds", text: "Census returns 1881 (LDS)", category: "census", },
+  {
+    value: "ch3_baptism",
+    text: "Birth and baptisms",
+    category: "church_other",
+    includeParents: true,
+  },
+  {
+    value: "ch3_marriages",
+    text: "Banns and marriages",
+    category: "church_other",
+    includeSpouses: true,
+  },
+  {
+    value: "ch3_burials",
+    text: "Deaths and burials",
+    category: "church_other",
+  },
+  { value: "ch3_other", text: "Other events", category: "church_other" },
 
-  { value: "valuation_rolls", text: "Valuation rolls", category: "valuation", },
+  { value: "census", text: "Census returns 1841-1911", category: "census" },
+  {
+    value: "census_lds",
+    text: "Census returns 1881 (LDS)",
+    category: "census",
+  },
 
-  { value: "wills_testaments", text: "Wills and testaments", category: "legal", },
-  { value: "coa", text: "Coats of arms", category: "legal", },
-  { value: "soldiers_wills", text: "Soldiers' and airmens' wills", category: "legal", },
-  { value: "military_tribunals", text: "Military service appeals tribunal", category: "legal", },
-  
-  { value: "hie", text: "Highland and Island Emigration", category: "poor-relief", },
+  { value: "valuation_rolls", text: "Valuation rolls", category: "valuation" },
 
-  { value: "prison_records", text: "Prison registers", category: "prison", },
+  {
+    value: "wills_testaments",
+    text: "Wills and testaments",
+    category: "legal",
+  },
+  { value: "coa", text: "Coats of arms", category: "legal" },
+  {
+    value: "soldiers_wills",
+    text: "Soldiers' and airmens' wills",
+    category: "legal",
+  },
+  {
+    value: "military_tribunals",
+    text: "Military service appeals tribunal",
+    category: "legal",
+  },
+
+  {
+    value: "hie",
+    text: "Highland and Island Emigration",
+    category: "poor-relief",
+  },
+
+  { value: "prison_records", text: "Prison registers", category: "prison" },
 ];
 
 const collections = [
-  { value: "all", text: "All (1841-1911)", subcategory: "census", },
-  { value: "1841", text: "1841 Census", subcategory: "census", },
-  { value: "1851", text: "1851 Census", subcategory: "census", },
-  { value: "1861", text: "1861 Census", subcategory: "census", },
-  { value: "1871", text: "1871 Census", subcategory: "census", },
-  { value: "1881", text: "1881 Census", subcategory: "census", },
-  { value: "1891", text: "1891 Census", subcategory: "census", },
-  { value: "1901", text: "1901 Census", subcategory: "census", },
-  { value: "1911", text: "1911 Census", subcategory: "census", },
+  { value: "all", text: "All (1841-1911)", subcategory: "census" },
+  { value: "1841", text: "1841 Census", subcategory: "census" },
+  { value: "1851", text: "1851 Census", subcategory: "census" },
+  { value: "1861", text: "1861 Census", subcategory: "census" },
+  { value: "1871", text: "1871 Census", subcategory: "census" },
+  { value: "1881", text: "1881 Census", subcategory: "census" },
+  { value: "1891", text: "1891 Census", subcategory: "census" },
+  { value: "1901", text: "1901 Census", subcategory: "census" },
+  { value: "1911", text: "1911 Census", subcategory: "census" },
 ];
 
 function isSubCategoryInYearRange(subcategory, yearRange) {
@@ -94,7 +182,10 @@ function isSubCategoryInYearRange(subcategory, yearRange) {
   let dates = ScotpRecordType.getDatesCovered(recordType);
   if (dates) {
     // check if the date range overlaps the lifespan
-    if (yearRange.endYear < dates.from || (dates.to && yearRange.startYear > dates.to)) {
+    if (
+      yearRange.endYear < dates.from ||
+      (dates.to && yearRange.startYear > dates.to)
+    ) {
       isInYearRange = false;
     }
   }
@@ -111,26 +202,28 @@ function getSubcategoryByValue(value) {
 }
 
 const ScotpData = {
-
-  includeCategories : function(generalizedData, parameters) {
+  includeCategories: function (generalizedData, parameters) {
     return true;
   },
 
-  includeSubcategories : function(generalizedData, parameters) {
+  includeSubcategories: function (generalizedData, parameters) {
     return true;
   },
 
-  includeCollections : function(generalizedData, parameters) {
+  includeCollections: function (generalizedData, parameters) {
     if (parameters.subcategory == "census") {
       return true;
     }
     return false;
   },
 
-  includeSpouses : function(generalizedData, parameters) {
+  includeSpouses: function (generalizedData, parameters) {
     let selectedSubcategory = undefined;
     for (let subcategory of subcategories) {
-      if (!subcategory.category || subcategory.category == parameters.category) {
+      if (
+        !subcategory.category ||
+        subcategory.category == parameters.category
+      ) {
         if (subcategory.value == parameters.subcategory) {
           selectedSubcategory = subcategory;
         }
@@ -143,11 +236,13 @@ const ScotpData = {
     return false;
   },
 
-  includeParents : function(generalizedData, parameters) {
-
+  includeParents: function (generalizedData, parameters) {
     let selectedSubcategory = undefined;
     for (let subcategory of subcategories) {
-      if (!subcategory.category || subcategory.category == parameters.category) {
+      if (
+        !subcategory.category ||
+        subcategory.category == parameters.category
+      ) {
         if (subcategory.value == parameters.subcategory) {
           selectedSubcategory = subcategory;
         }
@@ -160,9 +255,12 @@ const ScotpData = {
     return false;
   },
 
-  includeOtherPerson : function(generalizedData, parameters) {
+  includeOtherPerson: function (generalizedData, parameters) {
     if (parameters.subcategory == "census") {
-      if (generalizedData.householdArray && generalizedData.householdArray.length > 1) {
+      if (
+        generalizedData.householdArray &&
+        generalizedData.householdArray.length > 1
+      ) {
         let sourceEventYear = generalizedData.inferEventYear();
         if (parameters.collection == sourceEventYear) {
           return true;
@@ -172,21 +270,21 @@ const ScotpData = {
     return false;
   },
 
-
-  getCategories : function(generalizedData, parameters, options) {
+  getCategories: function (generalizedData, parameters, options) {
     return categories;
   },
 
-  getSubcategories: function(generalizedData, parameters, options) {
+  getSubcategories: function (generalizedData, parameters, options) {
     let result = [];
 
     let maxLifespan = Number(options.search_general_maxLifespan);
     let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
 
     for (let subcategory of subcategories) {
-
-      if (!subcategory.category || subcategory.category == parameters.category) {
-
+      if (
+        !subcategory.category ||
+        subcategory.category == parameters.category
+      ) {
         let value = subcategory.value;
         let text = subcategory.text;
         let recordType = subcategory.value;
@@ -201,7 +299,6 @@ const ScotpData = {
             text = "[" + text + "]";
           }
         }
-  
 
         result.push({ value: value, text: text });
       }
@@ -210,33 +307,29 @@ const ScotpData = {
     return result;
   },
 
-  getCollections : function(generalizedData, parameters, options) {
+  getCollections: function (generalizedData, parameters, options) {
     return collections;
   },
 
-  getOtherPersonList : function(generalizedData, parameters, options) {
-    let result = [
-      { value: "", text: "None", },
-    ];
+  getOtherPersonList: function (generalizedData, parameters, options) {
+    let result = [{ value: "", text: "None" }];
 
     if (generalizedData.householdArray) {
       for (let member of generalizedData.householdArray) {
-
         if (!member.isSelected) {
           let name = member.name;
           let firstName = WTS_String.getFirstWord(name);
-          let text = firstName + " (" + member.age + ", " + member.relationship + ")";
-          result.push({ value: firstName, text: text, });
+          let text =
+            firstName + " (" + member.age + ", " + member.relationship + ")";
+          result.push({ value: firstName, text: text });
         }
-
       }
     }
 
     return result;
   },
 
-  getWarningMessages : function(generalizedData, parameters, options) {
-
+  getWarningMessages: function (generalizedData, parameters, options) {
     let messages = [];
     let subcategory = getSubcategoryByValue(parameters.subcategory);
     if (!subcategory) {
@@ -254,7 +347,6 @@ const ScotpData = {
 
       // check if the date range overlaps the lifespan
       if (!isSubCategoryInYearRange(subcategory, lifeDates)) {
-
         let subcategoryRangeString = dates.from.toString() + "-";
         if (dates.to) {
           subcategoryRangeString += dates.to.toString();
@@ -265,11 +357,15 @@ const ScotpData = {
           lifeRangeString += lifeDates.endYear.toString();
         }
 
-        let message = "Subcategory range " + subcategoryRangeString + " does not overlap possible life range of " + lifeRangeString + ".";
-        messages.push(message); 
+        let message =
+          "Subcategory range " +
+          subcategoryRangeString +
+          " does not overlap possible life range of " +
+          lifeRangeString +
+          ".";
+        messages.push(message);
       }
     }
-
 
     if (eventClass == "marriage" && parameters.spouseIndex != -1) {
       let spouse = generalizedData.spouses[parameters.spouseIndex];
@@ -285,12 +381,16 @@ const ScotpData = {
               if (dates.to) {
                 rangeString += dates.to.toString();
               }
-              let message = "Marriage year " + yearString + " is out of range for collection range of " + rangeString + ".";
-              messages.push(message); 
+              let message =
+                "Marriage year " +
+                yearString +
+                " is out of range for collection range of " +
+                rangeString +
+                ".";
+              messages.push(message);
             }
           }
-  
-        } 
+        }
       }
     }
 
@@ -300,10 +400,8 @@ const ScotpData = {
     return messages;
   },
 
-  setDefaultSearchParameters: function(generalizedData, parameters, options) {
-
+  setDefaultSearchParameters: function (generalizedData, parameters, options) {
     function defaultToSubcategory(parameters, subcategoryName, yearString) {
-
       if (!yearString) {
         return false;
       }
@@ -329,7 +427,11 @@ const ScotpData = {
       return true;
     }
 
-    function defaultToSubcategoryList(parameters, subcategoryNameList, yearString) {
+    function defaultToSubcategoryList(
+      parameters,
+      subcategoryNameList,
+      yearString
+    ) {
       if (!yearString) {
         return false;
       }
@@ -349,11 +451,10 @@ const ScotpData = {
     parameters.subcategory = "stat_births";
 
     if (generalizedData.recordType == RT.Census) {
-
       let censusSubcategory = getSubcategoryByValue("census");
       if (isSubCategoryInYearRange(censusSubcategory, lifeDates)) {
-        parameters.category =  "census";
-        parameters.subcategory =  "census";
+        parameters.category = "census";
+        parameters.subcategory = "census";
 
         let sourceEventYear = generalizedData.inferEventYear();
         parameters.collection = "all";
@@ -368,39 +469,111 @@ const ScotpData = {
 
     // Use a subcategory that corresponds to the source record if it works with date ranges
     // Only do this for the common bases
-    if (generalizedData.recordType == RT.BirthRegistration || generalizedData.recordType == RT.Birth) {
-      const scList = ["stat_births", "opr_births", "crbirths_baptism", "ch3_baptism"];
-      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
+    if (
+      generalizedData.recordType == RT.BirthRegistration ||
+      generalizedData.recordType == RT.Birth
+    ) {
+      const scList = [
+        "stat_births",
+        "opr_births",
+        "crbirths_baptism",
+        "ch3_baptism",
+      ];
+      if (
+        defaultToSubcategoryList(
+          parameters,
+          scList,
+          generalizedData.inferBirthYear()
+        )
+      ) {
         return;
       }
     }
     if (generalizedData.recordType == RT.MarriageRegistration) {
-      const scList = ["stat_marriages", "opr_marriages", "crbanns_marriages", "ch3_marriages"];
-      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
+      const scList = [
+        "stat_marriages",
+        "opr_marriages",
+        "crbanns_marriages",
+        "ch3_marriages",
+      ];
+      if (
+        defaultToSubcategoryList(
+          parameters,
+          scList,
+          generalizedData.inferEventYear()
+        )
+      ) {
         return;
       }
     }
     if (generalizedData.recordType == RT.DeathRegistration) {
-      const scList = ["stat_deaths", "opr_deaths", "crdeath_burial", "ch3_burials"];
-      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
+      const scList = [
+        "stat_deaths",
+        "opr_deaths",
+        "crdeath_burial",
+        "ch3_burials",
+      ];
+      if (
+        defaultToSubcategoryList(
+          parameters,
+          scList,
+          generalizedData.inferDeathYear()
+        )
+      ) {
         return;
       }
     }
-    if (generalizedData.recordType == RT.Baptism || generalizedData.recordType == RT.BirthOrBaptism) {
-      const scList = ["opr_births", "crbirths_baptism", "ch3_baptism", "stat_births",];
-      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
+    if (
+      generalizedData.recordType == RT.Baptism ||
+      generalizedData.recordType == RT.BirthOrBaptism
+    ) {
+      const scList = [
+        "opr_births",
+        "crbirths_baptism",
+        "ch3_baptism",
+        "stat_births",
+      ];
+      if (
+        defaultToSubcategoryList(
+          parameters,
+          scList,
+          generalizedData.inferBirthYear()
+        )
+      ) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Marriage) {
-      const scList = ["opr_marriages", "crbanns_marriages", "ch3_marriages", "stat_marriages", ];
-      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
+      const scList = [
+        "opr_marriages",
+        "crbanns_marriages",
+        "ch3_marriages",
+        "stat_marriages",
+      ];
+      if (
+        defaultToSubcategoryList(
+          parameters,
+          scList,
+          generalizedData.inferEventYear()
+        )
+      ) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Burial) {
-      const scList = ["opr_deaths", "crdeath_burial", "ch3_burials", "stat_deaths", ];
-      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
+      const scList = [
+        "opr_deaths",
+        "crdeath_burial",
+        "ch3_burials",
+        "stat_deaths",
+      ];
+      if (
+        defaultToSubcategoryList(
+          parameters,
+          scList,
+          generalizedData.inferDeathYear()
+        )
+      ) {
         return;
       }
     }
@@ -408,7 +581,6 @@ const ScotpData = {
     // else determine the default category and subcategory based on collection dates
     let firstSubcategoryInRange = undefined;
     for (let subcategory of subcategories) {
-
       if (isSubCategoryInYearRange(subcategory, lifeDates)) {
         firstSubcategoryInRange = subcategory;
         break;
@@ -417,23 +589,36 @@ const ScotpData = {
 
     if (firstSubcategoryInRange) {
       parameters.category = firstSubcategoryInRange.category;
-      parameters.subcategory = firstSubcategoryInRange.value;  
+      parameters.subcategory = firstSubcategoryInRange.value;
     }
   },
 
-  updateParametersOnCategoryChange: function(generalizedData, parameters, options) {
-    let subcategories = this.getSubcategories(generalizedData, parameters, options);
+  updateParametersOnCategoryChange: function (
+    generalizedData,
+    parameters,
+    options
+  ) {
+    let subcategories = this.getSubcategories(
+      generalizedData,
+      parameters,
+      options
+    );
     if (subcategories && subcategories.length > 0) {
       parameters.subcategory = subcategories[0].value;
     }
   },
 
-  updateParametersOnSubcategoryChange: function(generalizedData, parameters, options) {
-  },
+  updateParametersOnSubcategoryChange: function (
+    generalizedData,
+    parameters,
+    options
+  ) {},
 
-  updateParametersOnCollectionChange: function(generalizedData, parameters, options) {
-  },
-
-}
+  updateParametersOnCollectionChange: function (
+    generalizedData,
+    parameters,
+    options
+  ) {},
+};
 
 export { ScotpData };

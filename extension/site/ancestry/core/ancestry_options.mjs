@@ -40,9 +40,10 @@ const searchOptionsGroup = {
       optionName: "domain",
       type: "select",
       label: "Domain to use for searches (where is your subscription?)",
-      comment: "NOTE: If you are trying to follow an Ancestry link/template that points to a different domain"
-        + " you can right click on the link and use the context menu item \"Sourcer: Open Link in New Tab\"."
-        + " This will redirect to the domain selected above.",
+      comment:
+        "NOTE: If you are trying to follow an Ancestry link/template that points to a different domain" +
+        ' you can right click on the link and use the context menu item "Sourcer: Open Link in New Tab".' +
+        " This will redirect to the domain selected above.",
       values: [
         { value: "ancestry.com", text: "ancestry.com" },
         { value: "ancestry.co.uk", text: "ancestry.co.uk" },
@@ -54,14 +55,17 @@ const searchOptionsGroup = {
         { value: "ancestry.se", text: "ancestry.se" },
         { value: "ancestry.mx", text: "ancestry.mx" },
         { value: "ancestrylibrary.com", text: "ancestrylibrary.com" },
-        { value: "ancestrylibraryedition.co.uk", text: "ancestrylibraryedition.co.uk" },
+        {
+          value: "ancestrylibraryedition.co.uk",
+          text: "ancestrylibraryedition.co.uk",
+        },
         { value: "ancestrylibrary.ca", text: "ancestrylibrary.ca" },
         { value: "ancestrylibrary.com.au", text: "ancestrylibrary.com.au" },
       ],
       defaultValue: "ancestry.com",
-    },  
+    },
   ],
-}
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -75,13 +79,16 @@ const citationOptionsGroup = {
       label: "Include record data at end of citation as",
       values: [
         { value: "none", text: "Do not include data" },
-        { value: "string", text: "Sentence (fall back to list if no sentence)" },
+        {
+          value: "string",
+          text: "Sentence (fall back to list if no sentence)",
+        },
         { value: "list", text: "List of field names/values" },
         { value: "table", text: "Table of field names/values" },
       ],
       defaultValue: "string",
-      unitTestValue: "table"
-    },  
+      unitTestValue: "table",
+    },
     {
       optionName: "recordTemplateDomain",
       type: "select",
@@ -99,32 +106,43 @@ const citationOptionsGroup = {
         { value: "ancestry.mx", text: "ancestry.mx" },
       ],
       defaultValue: "fromRecord",
-    },  
+    },
     {
       optionName: "subscriptionRequired",
       type: "select",
       label: "Indicate that a subscription is required with link",
       values: [
         { value: "none", text: "Do not add any such indication" },
-        { value: "subscriptionRequired", text: "Include the text \"subscription required\"" },
-        { value: "requiresSubscription", text: "Include the text \"requires subscription\"" },
-        { value: "dollar", text: "Include the text \"$\"" },
-        { value: "paywall", text: "Include the text \"paywall\"" },
+        {
+          value: "subscriptionRequired",
+          text: 'Include the text "subscription required"',
+        },
+        {
+          value: "requiresSubscription",
+          text: 'Include the text "requires subscription"',
+        },
+        { value: "dollar", text: 'Include the text "$"' },
+        { value: "paywall", text: 'Include the text "paywall"' },
       ],
       defaultValue: "none",
-    },  
+    },
     {
       optionName: "includeSharingTemplate",
       type: "checkbox",
       label: "Include a sharing template to the original image if available",
       defaultValue: true,
-    },  
+    },
   ],
 };
 
 registerSubsectionForOptions("search", "ancestry", "Ancestry");
 registerSiteSearchPopupOptionsGroup("ancestry", 1, 1);
-registerSubheadingForOptions("search", "ancestry", "parameters", "Search Parameters");
+registerSubheadingForOptions(
+  "search",
+  "ancestry",
+  "parameters",
+  "Search Parameters"
+);
 registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "ancestry", "Ancestry");

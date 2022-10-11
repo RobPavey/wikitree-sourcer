@@ -28,7 +28,6 @@ import { AncestryData } from "./ancestry_data.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function buildSearchUrl(buildUrlInput) {
-
   let data = buildUrlInput.generalizedData;
   let options = buildUrlInput.options;
 
@@ -44,15 +43,19 @@ function buildSearchUrl(buildUrlInput) {
   let collection = undefined;
   if (buildUrlInput.typeOfSearch == "SameCollection") {
     if (data.collectionData && data.collectionData.id) {
-      ancestryCollectionId = RC.mapCollectionId(data.sourceOfData, data.collectionData.id, "ancestry",
-        data.inferEventCountry(), data.inferEventYear());
+      ancestryCollectionId = RC.mapCollectionId(
+        data.sourceOfData,
+        data.collectionData.id,
+        "ancestry",
+        data.inferEventCountry(),
+        data.inferEventYear()
+      );
       if (ancestryCollectionId) {
         collection = RC.findCollection("ancestry", ancestryCollectionId);
         sameCollection = true;
       }
     }
-  }
-  else if (buildUrlInput.typeOfSearch == "SpecifiedCollection") {
+  } else if (buildUrlInput.typeOfSearch == "SpecifiedCollection") {
     let searchParams = buildUrlInput.searchParameters;
     if (searchParams.collectionWtsId) {
       collection = RC.findCollectionByWtsId(searchParams.collectionWtsId);
@@ -60,8 +63,7 @@ function buildSearchUrl(buildUrlInput) {
         ancestryCollectionId = collection.sites["ancestry"].id;
       }
     }
-  }
-  else if (buildUrlInput.typeOfSearch == "SpecifiedParameters") {
+  } else if (buildUrlInput.typeOfSearch == "SpecifiedParameters") {
     parameters = buildUrlInput.searchParameters;
     if (parameters.category != "all") {
       category = parameters.category;
@@ -69,15 +71,23 @@ function buildSearchUrl(buildUrlInput) {
     if (parameters.subcategory != "all") {
       subcategory = parameters.subcategory;
     }
-  }
-  else if (buildUrlInput.typeOfSearch == "FamilyTree") {
+  } else if (buildUrlInput.typeOfSearch == "FamilyTree") {
     category = "42";
   }
-  
-  var builder = new AncestryUriBuilder(ancestryCollectionId, category, subcategory, options);
+
+  var builder = new AncestryUriBuilder(
+    ancestryCollectionId,
+    category,
+    subcategory,
+    options
+  );
 
   let hasAnyName = false;
-  let lastNames = data.inferLastNameGivenParametersAndCollection(parameters, collection, true);
+  let lastNames = data.inferLastNameGivenParametersAndCollection(
+    parameters,
+    collection,
+    true
+  );
 
   if (lastNames) {
     hasAnyName = true;
@@ -92,14 +102,13 @@ function buildSearchUrl(buildUrlInput) {
     builder.addName(forenames, lastNames);
   }
 
-  builder.addBirth(data.inferBirthYear(), data.inferBirthPlace())
-  builder.addDeath(data.inferDeathYear(), data.inferDeathPlace())
+  builder.addBirth(data.inferBirthYear(), data.inferBirthPlace());
+  builder.addDeath(data.inferDeathYear(), data.inferDeathPlace());
 
   if (data.personGender) {
     if (data.personGender == "male") {
       builder.addGenderMale();
-    }
-    else if (data.personGender == "female") {
+    } else if (data.personGender == "female") {
       builder.addGenderFemale();
     }
   }
@@ -130,11 +139,13 @@ function buildSearchUrl(buildUrlInput) {
   if (data.spouses && data.spouses.length > 0) {
     let spouse = undefined;
     if (parameters) {
-      if (parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
+      if (
+        parameters.spouseIndex != -1 &&
+        parameters.spouseIndex < data.spouses.length
+      ) {
         spouse = data.spouses[parameters.spouseIndex];
       }
-    }
-    else {
+    } else {
       spouse = data.spouses[0];
     }
 
@@ -146,8 +157,12 @@ function buildSearchUrl(buildUrlInput) {
       }
 
       if (spouse.marriageDate || spouse.marriagePlace) {
-        let marriageYear = (spouse.marriageDate) ? spouse.marriageDate.getYearString() : "";
-        let marriagePlace = (spouse.marriagePlace) ? spouse.marriagePlace.placeString : "";
+        let marriageYear = spouse.marriageDate
+          ? spouse.marriageDate.getYearString()
+          : "";
+        let marriagePlace = spouse.marriagePlace
+          ? spouse.marriagePlace.placeString
+          : "";
         builder.addMarriage(marriageYear, marriagePlace);
       }
     }
@@ -193,8 +208,8 @@ function buildSearchUrl(buildUrlInput) {
   //console.log("URL is " + url);
 
   var result = {
-      'url' : url,
-  }
+    url: url,
+  };
 
   return result;
 }

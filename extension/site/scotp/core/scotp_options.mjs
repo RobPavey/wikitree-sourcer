@@ -41,19 +41,19 @@ const searchOptionsGroup = {
       type: "checkbox",
       label: "Use 'Phonetic matching' search option for surname",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "forenameSoundex",
       type: "checkbox",
       label: "Use 'Phonetic matching' search option for forename",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "parentNameSoundex",
       type: "checkbox",
       label: "Use 'Phonetic matching' search option for parent names",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "birthYearExactness",
       type: "select",
@@ -67,7 +67,7 @@ const searchOptionsGroup = {
         { value: 10, text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
     {
       optionName: "deathYearExactness",
       type: "select",
@@ -81,7 +81,7 @@ const searchOptionsGroup = {
         { value: 10, text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
     {
       optionName: "marriageYearExactness",
       type: "select",
@@ -95,7 +95,7 @@ const searchOptionsGroup = {
         { value: 10, text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
     {
       optionName: "ageExactness",
       type: "select",
@@ -109,9 +109,9 @@ const searchOptionsGroup = {
         { value: 10, text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
   ],
-}
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -125,51 +125,81 @@ const citationOptionsGroup = {
       label: "Include record data at end of citation as",
       values: [
         { value: "none", text: "Do not include data" },
-        { value: "string", text: "Sentence (fall back to list if no sentence)" },
+        {
+          value: "string",
+          text: "Sentence (fall back to list if no sentence)",
+        },
         { value: "list", text: "List of field names/values" },
         { value: "table", text: "Table of field names/values" },
       ],
       defaultValue: "string",
-      unitTestValue: "string"
-    },  
+      unitTestValue: "string",
+    },
     {
       optionName: "urlStyle",
       type: "select",
       label: "Include Scotlands People URL as",
       values: [
-        { value: "visible", text: "Just https://www.scotlandspeople.gov.uk/ as a visible URL" },
-        { value: "base", text: "Just https://www.scotlandspeople.gov.uk/ as a WikiTree external link" },
-        { value: "original", text: "The search URL used on the page the citation was created on" },
-        { value: "created", text: "A search URL created by Sourcer to try to just get the one correct result" },
-        { value: "best", text: "A search URL created by Sourcer unless the current page one had only one result" },
-        { value: "short", text: "A shorter search URL created by Sourcer that avoids the verbose search parameters" },
+        {
+          value: "visible",
+          text: "Just https://www.scotlandspeople.gov.uk/ as a visible URL",
+        },
+        {
+          value: "base",
+          text: "Just https://www.scotlandspeople.gov.uk/ as a WikiTree external link",
+        },
+        {
+          value: "original",
+          text: "The search URL used on the page the citation was created on",
+        },
+        {
+          value: "created",
+          text: "A search URL created by Sourcer to try to just get the one correct result",
+        },
+        {
+          value: "best",
+          text: "A search URL created by Sourcer unless the current page one had only one result",
+        },
+        {
+          value: "short",
+          text: "A shorter search URL created by Sourcer that avoids the verbose search parameters",
+        },
       ],
       defaultValue: "best",
-      unitTestValue: "created"
-    },  
+      unitTestValue: "created",
+    },
     {
       optionName: "databaseTitle",
       type: "select",
       label: "Get the text for the database/collection title from",
       values: [
-        { value: "nrs", text: "The National Records of Scotland collection name" },
+        {
+          value: "nrs",
+          text: "The National Records of Scotland collection name",
+        },
         { value: "header", text: "The heading of the search results page" },
       ],
       defaultValue: "nrs",
-      unitTestValue: "nrs"
-    },  
+      unitTestValue: "nrs",
+    },
     {
       optionName: "urlIncludeRef",
       type: "checkbox",
-      label: "Include a '&ref=' query in search URL. It will only have effect for Sourcer users.",
+      label:
+        "Include a '&ref=' query in search URL. It will only have effect for Sourcer users.",
       defaultValue: true,
-    },  
+    },
   ],
 };
 
 registerSubsectionForOptions("search", "scotp", "ScotlandsPeople");
 registerSiteSearchPopupOptionsGroup("scotp", 7, 7);
-registerSubheadingForOptions("search", "scotp", "parameters", "Search Parameters");
+registerSubheadingForOptions(
+  "search",
+  "scotp",
+  "parameters",
+  "Search Parameters"
+);
 registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "scotp", "ScotlandsPeople");

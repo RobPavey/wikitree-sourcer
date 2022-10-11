@@ -22,6 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`fg`,
-  `site/fg/core/fg_extract_data.mjs`
-);
+siteContentInit(`fg`, `site/fg/core/fg_extract_data.mjs`);

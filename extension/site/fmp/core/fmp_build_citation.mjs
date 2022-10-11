@@ -27,15 +27,12 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
 
 function getRefTitle(ed, gd) {
-
   const recordTypeToRefTitle = [
     {
       type: RT.Census,
       defaultTitle: "Census",
       addYear: true,
-      titleMatches: [
-        {title: "Register", matches: ["1939 Register"]},
-      ],
+      titleMatches: [{ title: "Register", matches: ["1939 Register"] }],
     },
   ];
 
@@ -57,13 +54,11 @@ function getRefTitle(ed, gd) {
 }
 
 function removeUnwantedKeysForTable(keys, recordData) {
-
   // for the moment they are the same
   return removeUnwantedKeysForDataString(keys, recordData);
 }
 
 function removeUnwantedKeysForDataString(keys, recordData) {
-
   const exactMatchesToExclude = [
     "Collections from",
     "Event type",
@@ -118,11 +113,10 @@ function removeUnwantedKeysForDataString(keys, recordData) {
 }
 
 function buildDataString(data, gd, dataStyle, builder) {
-
   let options = builder.options;
 
   let dataString = "";
-  
+
   if (dataStyle == "string") {
     let input = {
       generalizedData: gd,
@@ -144,25 +138,25 @@ function buildDataString(data, gd, dataStyle, builder) {
     return dataString;
   }
 
-  dataString = builder.buildDataList(recordData, removeUnwantedKeysForDataString);
+  dataString = builder.buildDataList(
+    recordData,
+    removeUnwantedKeysForDataString
+  );
 
   return dataString;
 }
 
 function getAdditionalInfo(data, gd, builder) {
-
   let citationType = builder.type;
   let options = builder.options;
 
   let dataStyle = options.citation_fmp_dataStyle;
   if (dataStyle == "none") {
     return "";
-  }
-  else if (dataStyle == "table") {
+  } else if (dataStyle == "table") {
     if (options.citation_general_referencePosition == "atEnd") {
       dataStyle = "string";
-    }
-    else if (citationType == "source") {
+    } else if (citationType == "source") {
       dataStyle = "list";
     }
   }
@@ -186,14 +180,13 @@ function getAdditionalInfo(data, gd, builder) {
       for (let key of keys) {
         if (firstRow) {
           firstRow = false;
-        }
-        else {
+        } else {
           result += "|-\n";
         }
         result += "| " + key + " || " + recordData[key] + "\n";
       }
 
-      result += "|}"
+      result += "|}";
     }
   }
 
@@ -201,7 +194,6 @@ function getAdditionalInfo(data, gd, builder) {
 }
 
 function buildSourceReference(data, options) {
-
   if (!data.recordData) {
     return "";
   }
@@ -243,8 +235,9 @@ function buildSourceReference(data, options) {
   if (options.citation_general_sourceReferenceSeparator == "commaColon") {
     itemSep = ",";
     valueSep = ":";
-  }
-  else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
+  } else if (
+    options.citation_general_sourceReferenceSeparator == "commaSpace"
+  ) {
     itemSep = ",";
     valueSep = "";
   }
@@ -275,7 +268,6 @@ function buildSourceReference(data, options) {
 }
 
 function buildCoreCitation(data, gd, options, runDate, builder) {
-
   builder.sourceTitle = data.collection;
   builder.sourceReference = buildSourceReference(data, options);
 
@@ -293,7 +285,8 @@ function buildCoreCitation(data, gd, options, runDate, builder) {
     let prefixIndex = imageUrl.indexOf(parentPrefix);
     if (prefixIndex != -1) {
       let parentPart = imageUrl.substring(prefixIndex + parentPrefix.length);
-      transcriptUrl = "https://www." + data.domain + "/transcript?id=" + parentPart;
+      transcriptUrl =
+        "https://www." + data.domain + "/transcript?id=" + parentPart;
     }
   }
 
@@ -301,11 +294,12 @@ function buildCoreCitation(data, gd, options, runDate, builder) {
     builder.databaseHasImages = true;
     if (options.citation_fmp_includeImageLink) {
       builder.imageLink = "[" + imageUrl + " FindMyPast Image]";
-    } 
+    }
   }
 
   if (transcriptUrl) {
-    builder.recordLinkOrTemplate = "[" + transcriptUrl + " FindMyPast Transcription]";
+    builder.recordLinkOrTemplate =
+      "[" + transcriptUrl + " FindMyPast Transcription]";
   }
 
   let additionalInfo = getAdditionalInfo(data, gd, builder);
@@ -315,7 +309,6 @@ function buildCoreCitation(data, gd, options, runDate, builder) {
 }
 
 function buildCitation(input) {
-
   //console.log("buildCitation: input is")
   //console.log(input)
 
@@ -323,11 +316,12 @@ function buildCitation(input) {
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
   builder.householdTableString = input.householdTableString;
-  builder.includeSubscriptionRequired = options.citation_fmp_subscriptionRequired;
+  builder.includeSubscriptionRequired =
+    options.citation_fmp_subscriptionRequired;
 
   buildCoreCitation(data, gd, options, runDate, builder);
 
@@ -345,7 +339,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

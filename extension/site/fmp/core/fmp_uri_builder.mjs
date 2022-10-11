@@ -52,13 +52,12 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 function fixedEncodeURIComponent(str) {
-  return encodeURI(str).replace(/[()&,]/g, function(c) {
-    return '%' + c.charCodeAt(0).toString(16);
+  return encodeURI(str).replace(/[()&,]/g, function (c) {
+    return "%" + c.charCodeAt(0).toString(16);
   });
 }
 
 class FmpUriBuilder {
-
   constructor(collection, options) {
     this.collection = collection;
 
@@ -90,14 +89,18 @@ class FmpUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
 
   addSearchParameter(parameter, value) {
-    if (parameter == undefined || parameter == "" || value == undefined || value == "") {
+    if (
+      parameter == undefined ||
+      parameter == "" ||
+      value == undefined ||
+      value == ""
+    ) {
       return;
     }
 
@@ -106,8 +109,7 @@ class FmpUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
   }
@@ -120,7 +122,10 @@ class FmpUriBuilder {
     if (name != undefined && name != "") {
       name = name.trim().replace(/\s+/g, "+");
 
-      this.addSearchParameter(title, WTS_String.removeExtendedAsciiCharacters(name));
+      this.addSearchParameter(
+        title,
+        WTS_String.removeExtendedAsciiCharacters(name)
+      );
 
       if (nameVariants) {
         this.addSearchParameter(title + "_variants", "true");
@@ -138,7 +143,10 @@ class FmpUriBuilder {
   addPlace(title, location, proximity = 5) {
     if (location != undefined && location != "") {
       let string = location;
-      this.addSearchParameter(title, WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(
+        title,
+        WTS_String.removeExtendedAsciiCharacters(string)
+      );
 
       this.addSearchParameter(title + "_proximity", proximity);
     }
@@ -146,7 +154,11 @@ class FmpUriBuilder {
 
   addPersonName(forenames, lastName) {
     this.addName("firstname", forenames);
-    this.addName("lastname", lastName, this.options.search_fmp_lastNameVariants);
+    this.addName(
+      "lastname",
+      lastName,
+      this.options.search_fmp_lastNameVariants
+    );
   }
 
   addEventPlace(place) {
@@ -222,7 +234,10 @@ class FmpUriBuilder {
   }
 
   addMaritalStatus(status) {
-    let queryName = this.getSearchQueryNameFromCollection("maritalStatus", "condition");
+    let queryName = this.getSearchQueryNameFromCollection(
+      "maritalStatus",
+      "condition"
+    );
     this.addSearchParameter(queryName, status);
   }
 

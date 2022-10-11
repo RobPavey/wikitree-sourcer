@@ -25,8 +25,8 @@ SOFTWARE.
 import { WtsPlace } from "../../../base/core/generalize_data_utils.mjs";
 
 const categories = [
-  { value: "wikitree_person_search", text: "WikiTree Person Search", },
-  { value: "wikitree_plus_search", text: "WikiTree Plus", },
+  { value: "wikitree_person_search", text: "WikiTree Person Search" },
+  { value: "wikitree_plus_search", text: "WikiTree Plus" },
 ];
 
 let controls = [
@@ -45,7 +45,10 @@ let controls = [
       { value: "ancestry.se", text: "ancestry.se" },
       { value: "ancestry.mx", text: "ancestry.mx" },
       { value: "ancestrylibrary.com", text: "ancestrylibrary.com" },
-      { value: "ancestrylibraryedition.co.uk", text: "ancestrylibraryedition.co.uk" },
+      {
+        value: "ancestrylibraryedition.co.uk",
+        text: "ancestrylibraryedition.co.uk",
+      },
       { value: "ancestrylibrary.ca", text: "ancestrylibrary.ca" },
       { value: "ancestrylibrary.com.au", text: "ancestrylibrary.com.au" },
     ],
@@ -59,7 +62,7 @@ function buildSelectValuesForPlace(placeString, countries) {
   function addValue(valueString) {
     if (valueString) {
       let value = { value: valueString, text: valueString };
-      if (!values.some(entry => entry.value === valueString)) {
+      if (!values.some((entry) => entry.value === valueString)) {
         values.push(value);
       }
     }
@@ -71,8 +74,14 @@ function buildSelectValuesForPlace(placeString, countries) {
   place.placeString = placeString;
   let placeParts = place.separatePlaceIntoParts();
 
-  if (placeParts.localPlace && placeParts.county  && placeParts.country) {
-    addValue(placeParts.localPlace + ", " + placeParts.county + ", " + placeParts.country);
+  if (placeParts.localPlace && placeParts.county && placeParts.country) {
+    addValue(
+      placeParts.localPlace +
+        ", " +
+        placeParts.county +
+        ", " +
+        placeParts.country
+    );
   }
 
   if (placeParts.localPlace && placeParts.county) {
@@ -112,38 +121,36 @@ function buildSelectValuesForPlace(placeString, countries) {
 }
 
 const WikitreeData = {
-
-  includeCategories : function(generalizedData, parameters) {
+  includeCategories: function (generalizedData, parameters) {
     return true;
   },
 
-  includeSubcategories : function(generalizedData, parameters) {
+  includeSubcategories: function (generalizedData, parameters) {
     return false;
   },
 
-  includeCollections : function(generalizedData, parameters) {
+  includeCollections: function (generalizedData, parameters) {
     return false;
   },
 
-  includeSpouses : function(generalizedData, parameters) {
+  includeSpouses: function (generalizedData, parameters) {
     return false;
   },
 
-  includeParents : function(generalizedData, parameters) {
+  includeParents: function (generalizedData, parameters) {
     if (parameters.category == "wikitree_person_search") {
       return true;
     }
     return false;
   },
 
-  getCategories : function(generalizedData, parameters, options) {
+  getCategories: function (generalizedData, parameters, options) {
     return categories;
   },
 
-  getCollections : function(generalizedData, parameters, options) {
-  },
+  getCollections: function (generalizedData, parameters, options) {},
 
-  getCategorySelectorLabel: function(gd, parameters) {
+  getCategorySelectorLabel: function (gd, parameters) {
     return "Choose type of search: ";
   },
 
@@ -159,7 +166,10 @@ const WikitreeData = {
       birthPlaceControl.parameterName = "birthPlace";
       birthPlaceControl.type = "select";
       birthPlaceControl.label = "Birth place to use in search";
-      birthPlaceControl.values = buildSelectValuesForPlace(birthPlace, countries);
+      birthPlaceControl.values = buildSelectValuesForPlace(
+        birthPlace,
+        countries
+      );
       controls.push(birthPlaceControl);
     }
 
@@ -169,14 +179,17 @@ const WikitreeData = {
       deathPlaceControl.parameterName = "deathPlace";
       deathPlaceControl.type = "select";
       deathPlaceControl.label = "Death place to use in search";
-      deathPlaceControl.values = buildSelectValuesForPlace(deathPlace, countries);
+      deathPlaceControl.values = buildSelectValuesForPlace(
+        deathPlace,
+        countries
+      );
       controls.push(deathPlaceControl);
     }
 
     return controls;
   },
 
-  setDefaultSearchParameters: function(generalizedData, parameters, options) {
+  setDefaultSearchParameters: function (generalizedData, parameters, options) {
     parameters.category = "wikitree_person_search";
 
     let birthPlace = generalizedData.inferBirthPlace();
@@ -190,9 +203,11 @@ const WikitreeData = {
     }
   },
 
-  updateParametersOnCategoryChange: function(generalizedData, parameters, options) {
-  },
-
-}
+  updateParametersOnCategoryChange: function (
+    generalizedData,
+    parameters,
+    options
+  ) {},
+};
 
 export { WikitreeData };

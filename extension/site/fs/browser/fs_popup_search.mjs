@@ -32,10 +32,13 @@ import {
   addMenuItem,
   beginMainMenu,
   endMainMenu,
-  doAsyncActionWithCatch
+  doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
+import {
+  doSearch,
+  registerSearchMenuItemFunction,
+} from "/base/browser/popup/popup_search.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -43,14 +46,18 @@ import { options } from "/base/browser/options/options_loader.mjs";
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function familySearchDoSearch(input) {
-  doAsyncActionWithCatch("FamilySearch Search", input, async function() {
+  doAsyncActionWithCatch("FamilySearch Search", input, async function () {
     let loadedModule = await import(`../core/fs_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
 }
 
 async function familySearchSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options }
+  const input = {
+    typeOfSearch: typeOfSearch,
+    generalizedData: generalizedData,
+    options: options,
+  };
   familySearchDoSearch(input);
 }
 
@@ -81,12 +88,19 @@ async function familySearchSearchWithParameters(generalizedData, parameters) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addFamilySearchDefaultSearchMenuItem(menu, data, backFunction, filter) {
+function addFamilySearchDefaultSearchMenuItem(
+  menu,
+  data,
+  backFunction,
+  filter
+) {
   if (!hasBirthOrDeathYear(data)) {
     return false;
   }
-  addMenuItemWithSubMenu(menu, "Search FamilySearch",
-    function(element) {
+  addMenuItemWithSubMenu(
+    menu,
+    "Search FamilySearch",
+    function (element) {
       familySearchSearch(data.generalizedData, "");
     },
     function () {
@@ -97,25 +111,30 @@ function addFamilySearchDefaultSearchMenuItem(menu, data, backFunction, filter) 
 }
 
 async function addFsSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "fs", function(element) {
+  await addSameRecordMenuItem(menu, data, "fs", function (element) {
     familySearchSearch(data.generalizedData, "SameCollection");
   });
 }
 
 function addFsSearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function(element) {
-    setupSearchCollectionsSubMenu(data, "fs", familySearchSearchCollection, backFunction);
+  addMenuItem(menu, "Search a specific collection", function (element) {
+    setupSearchCollectionsSubMenu(
+      data,
+      "fs",
+      familySearchSearchCollection,
+      backFunction
+    );
   });
 }
 
 function addFsSearchTreeMenuItem(menu, data) {
-  addMenuItem(menu, "Search family tree", function(element) {
+  addMenuItem(menu, "Search family tree", function (element) {
     familySearchSearch(data.generalizedData, "FamilyTree");
   });
 }
 
 function addFsSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function(element) {
+  addMenuItem(menu, "Search with specified parameters", function (element) {
     setupFsSearchWithParametersSubMenu(data, backFunction);
   });
 }
@@ -124,8 +143,9 @@ function addFsSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 async function setupFamilySearchSearchSubMenu(data, backFunction) {
-
-  let backToHereFunction = function() { setupFamilySearchSearchSubMenu(data, backFunction) };
+  let backToHereFunction = function () {
+    setupFamilySearchSearchSubMenu(data, backFunction);
+  };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
@@ -149,7 +169,7 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
     spouses: [],
     father: true,
     mother: true,
-  }
+  };
 
   let gd = data.generalizedData;
 
@@ -157,15 +177,15 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
   let typeSelector = document.createElement("select");
   typeSelector.id = "typeSelector";
   const values = [
-    { value: "all", text: "All", },
-    { value: "0", text: "Birth, Baptism, and Christening", },
-    { value: "1", text: "Marriage", },
-    { value: "2", text: "Death", },
-    { value: "3", text: "Census, Residence, and Lists", },
-    { value: "4", text: "Immigration and Naturalization", },
-    { value: "5", text: "Military", },
-    { value: "6", text: "Probate", },
-    { value: "7", text: "Other", },
+    { value: "all", text: "All" },
+    { value: "0", text: "Birth, Baptism, and Christening" },
+    { value: "1", text: "Marriage" },
+    { value: "2", text: "Death" },
+    { value: "3", text: "Census, Residence, and Lists" },
+    { value: "4", text: "Immigration and Naturalization" },
+    { value: "5", text: "Military" },
+    { value: "6", text: "Probate" },
+    { value: "7", text: "Other" },
   ];
   for (const val of values) {
     let option = document.createElement("option");
@@ -173,9 +193,9 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
     option.text = val.text;
     typeSelector.appendChild(option);
   }
-  typeSelector.addEventListener('change', function(event) {
+  typeSelector.addEventListener("change", function (event) {
     parameters.type = event.target.value;
-  });  
+  });
   let label = document.createElement("label");
   label.className = "dialogInput";
   label.appendChild(document.createTextNode("Choose type: "));
@@ -192,10 +212,18 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
 
     let heading = document.createElement("label");
     heading.className = "dialogHeading";
-    heading.appendChild(document.createTextNode("There are multiple last names, select which to use"));
+    heading.appendChild(
+      document.createTextNode(
+        "There are multiple last names, select which to use"
+      )
+    );
     menu.list.appendChild(heading);
 
-    for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
+    for (
+      let lastNameIndex = 0;
+      lastNameIndex < lastNamesArray.length;
+      ++lastNameIndex
+    ) {
       let lastName = lastNamesArray[lastNameIndex];
       let br = document.createElement("br");
       menu.list.appendChild(br);
@@ -203,13 +231,13 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
       checkbox.type = "checkbox";
       checkbox.checked = true;
       parameters.lastNames.push(true);
-      checkbox.addEventListener('change', function() {
+      checkbox.addEventListener("change", function () {
         if (this.checked) {
           parameters.lastNames[lastNameIndex] = true;
         } else {
           parameters.lastNames[lastNameIndex] = false;
         }
-      });  
+      });
       let label = document.createElement("label");
       label.className = "dialogInput";
       label.appendChild(checkbox);
@@ -225,7 +253,9 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
     menu.list.appendChild(br);
     let heading = document.createElement("label");
     heading.className = "dialogHeading";
-    heading.appendChild(document.createTextNode("Spouses/marriages to include:"));
+    heading.appendChild(
+      document.createTextNode("Spouses/marriages to include:")
+    );
     menu.list.appendChild(heading);
     let firstSpouse = true;
 
@@ -239,18 +269,20 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
       checkbox.type = "checkbox";
       checkbox.checked = firstSpouse;
       firstSpouse = false;
-      checkbox.addEventListener('change', function() {
+      checkbox.addEventListener("change", function () {
         if (this.checked) {
           parameters.spouses[spouseIndex] = true;
         } else {
           parameters.spouses[spouseIndex] = false;
         }
-      });  
+      });
       let label = document.createElement("label");
       label.className = "dialogInput";
       label.appendChild(checkbox);
       let spouseName = spouse.name ? spouse.name.inferFullName() : "Unknown";
-      let marriageYear = (spouse.marriageDate) ? spouse.marriageDate.getYearString() : "????";
+      let marriageYear = spouse.marriageDate
+        ? spouse.marriageDate.getYearString()
+        : "????";
       let labelText = spouseName + " (m. " + marriageYear + ")";
 
       label.appendChild(document.createTextNode(labelText));
@@ -278,13 +310,13 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
       let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.checked = true;
-      checkbox.addEventListener('change', function() {
+      checkbox.addEventListener("change", function () {
         if (this.checked) {
           parameters.father = true;
         } else {
           parameters.father = false;
         }
-      });  
+      });
       let label = document.createElement("label");
       label.className = "dialogInput";
       label.appendChild(checkbox);
@@ -304,13 +336,13 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
       let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.checked = true;
-      checkbox.addEventListener('change', function() {
+      checkbox.addEventListener("change", function () {
         if (this.checked) {
           parameters.mother = true;
         } else {
           parameters.mother = false;
         }
-      });  
+      });
       let label = document.createElement("label");
       label.className = "dialogInput";
       label.appendChild(checkbox);
@@ -329,8 +361,8 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
 
   let button = document.createElement("button");
   button.className = "dialogButton";
-  button.innerText = "Do Search"
-  button.onclick = function(element) {
+  button.innerText = "Do Search";
+  button.onclick = function (element) {
     familySearchSearchWithParameters(gd, parameters);
   };
   menu.list.appendChild(button);
@@ -339,18 +371,32 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
 }
 
 function addFamilySearchImageBuildCitationMenuItems(menu, data) {
-  addMenuItemWithSubtitle(menu, "Build Inline Image Citation", function(element) {
-    data.type = "inline";
-    familySearchBuildCitation(data);
-  }, "It is recommended to Build Inline Citation on the Record Page instead if one exists.");
-  addMenuItemWithSubtitle(menu, "Build Source Image Citation", function(element) {
-    data.type = "source";
-    familySearchBuildCitation(data);
-  }, "It is recommended to Build Source Citation on the Record Page instead if one exists.");
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Inline Image Citation",
+    function (element) {
+      data.type = "inline";
+      familySearchBuildCitation(data);
+    },
+    "It is recommended to Build Inline Citation on the Record Page instead if one exists."
+  );
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Source Image Citation",
+    function (element) {
+      data.type = "source";
+      familySearchBuildCitation(data);
+    },
+    "It is recommended to Build Source Citation on the Record Page instead if one exists."
+  );
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("fs", "FamilySearch", addFamilySearchDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "fs",
+  "FamilySearch",
+  addFamilySearchDefaultSearchMenuItem
+);

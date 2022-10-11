@@ -29,7 +29,7 @@ import { handleContentLoadedMessage } from "./background_content_loaded.mjs";
 async function executeScript(tabId, script, callback) {
   chrome.scripting.executeScript(
     {
-      target: {tabId: tabId},
+      target: { tabId: tabId },
       files: [script],
     },
     callback
@@ -38,11 +38,11 @@ async function executeScript(tabId, script, callback) {
 
 function setPopup(tab, popupPage) {
   //console.log("WikiTree Sourcer, background script (MV3), set popup on tab " + tab + " to: " + popupPage);
-  chrome.action.setPopup({ tabId: tab, popup: popupPage});
+  chrome.action.setPopup({ tabId: tab, popup: popupPage });
 }
 
 function setIcon(tab, iconPath) {
-  chrome.action.setIcon({ tabId: tab, path: iconPath});
+  chrome.action.setIcon({ tabId: tab, path: iconPath });
 }
 
 // Listen for messages (from the popup script mostly)
@@ -55,9 +55,14 @@ function messageHandler(request, sender, sendResponse) {
 
   if (request.type == "contentLoaded") {
     //console.log("WikiTree Sourcer, background script, received contentLoaded message");
-    handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon)
-  }
-  else if (request.type == "exception") {
+    handleContentLoadedMessage(
+      request,
+      sender,
+      sendResponse,
+      setPopup,
+      setIcon
+    );
+  } else if (request.type == "exception") {
     handleExceptionMessage(request, sendResponse);
 
     // we send an async response to confirm the tab was opened and updated
@@ -74,8 +79,7 @@ function messageHandler(request, sender, sendResponse) {
 // It does appear to work but
 // Unfortunately it requires the host_permission for every page that I have content scripts for
 
-function installScript(details){
-
+function installScript(details) {
   let manifest = chrome.runtime.getManifest();
 
   //console.log('WikiTree Sourcer (Chrome): Install or enable detected. Installing content script in all tabs.');
@@ -85,7 +89,7 @@ function installScript(details){
     //console.log("contentScript.matches = ")
     //console.log(contentScript.matches)
     let queryObj = {
-      url: contentScript.matches
+      url: contentScript.matches,
     };
 
     chrome.tabs.query(queryObj, function (tabs) {
@@ -95,22 +99,18 @@ function installScript(details){
         //console.log(tab);
 
         if (tab.status == "complete") {
-  
           for (let script of contentScript.js) {
             //console.log("executing script: " + script)
             //console.log("executing on tabId: " + tab.id)
 
-            executeScript(tab.id, script,
-              () => {
-                const lastErr = chrome.runtime.lastError;
-                if (lastErr) {
-                  //console.log('tab: ' + tab.id + ' lastError: ' + JSON.stringify(lastErr));
-                }
-                else {
-                  //console.log('tab: ' + tab.id + ' OK. script is ' + script);
-                }
+            executeScript(tab.id, script, () => {
+              const lastErr = chrome.runtime.lastError;
+              if (lastErr) {
+                //console.log('tab: ' + tab.id + ' lastError: ' + JSON.stringify(lastErr));
+              } else {
+                //console.log('tab: ' + tab.id + ' OK. script is ' + script);
               }
-            );
+            });
           }
         }
       }

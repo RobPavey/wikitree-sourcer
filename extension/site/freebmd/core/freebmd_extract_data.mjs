@@ -23,9 +23,7 @@ SOFTWARE.
 */
 
 function extractData(document, url) {
-
-  var result = {
-  };
+  var result = {};
 
   if (url) {
     result.url = url;
@@ -36,7 +34,9 @@ function extractData(document, url) {
   // to be sure we use the right one we start off searching for the entry rows since they are
   // the only thing with a good class name to search on
 
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
+  const entries = document.querySelectorAll(
+    "table > tbody > tr[class^=entrybmd_]"
+  );
   //console.log("entriesQuery size is: " + entriesQuery.length);
   if (entries.length < 1) {
     return result;
@@ -45,7 +45,9 @@ function extractData(document, url) {
   let firstEntry = entries[0];
 
   // Find the centered row that looks like "Deaths Mar 1914"
-  const bmdTypeHeading = document.querySelector("table > tbody > tr > th[align=center]");
+  const bmdTypeHeading = document.querySelector(
+    "table > tbody > tr > th[align=center]"
+  );
   if (bmdTypeHeading) {
     let bmdText = bmdTypeHeading.textContent.trim();
     //console.log("bmdText is: " + bmdText);
@@ -56,16 +58,13 @@ function extractData(document, url) {
     if (bmdText.startsWith(birthsStr)) {
       result.eventType = "birth";
       bmdText = bmdText.substring(birthsStr.length);
-    }
-    else if (bmdText.startsWith(marriagesStr)) {
+    } else if (bmdText.startsWith(marriagesStr)) {
       result.eventType = "marriage";
       bmdText = bmdText.substring(marriagesStr.length);
-    }
-    else if (bmdText.startsWith(deathsStr)) {
+    } else if (bmdText.startsWith(deathsStr)) {
       result.eventType = "death";
       bmdText = bmdText.substring(deathsStr.length);
-    }
-    else {
+    } else {
       return result;
     }
 
@@ -74,12 +73,11 @@ function extractData(document, url) {
     let spaceIndex = bmdText.indexOf(" ");
     if (spaceIndex != -1) {
       quarter = bmdText.substring(0, spaceIndex).trim();
-      bmdText = bmdText.substring(spaceIndex+1).trim();
+      bmdText = bmdText.substring(spaceIndex + 1).trim();
     }
     result.eventQuarter = quarter;
     result.eventYear = bmdText;
-  }
-  else {
+  } else {
     // it could be modified by ORA
     const oraTable = document.querySelector("table.ora-generic-table");
     if (!oraTable) {
@@ -88,7 +86,9 @@ function extractData(document, url) {
   }
 
   // We want the first row in the tbody (nth-child is 1 based)
-  const headingsNodes = document.querySelectorAll("table > tbody > tr:nth-child(1) > th");
+  const headingsNodes = document.querySelectorAll(
+    "table > tbody > tr:nth-child(1) > th"
+  );
   if (headingsNodes.length < 1) {
     return result;
   }
@@ -138,7 +138,7 @@ function extractData(document, url) {
           result.eventType = type;
         }
         break;
-      case "sdate":   // For ORA only
+      case "sdate": // For ORA only
         {
           let quarterYear = entryValue.trim();
           let spaceIndex = quarterYear.indexOf(" ");
@@ -154,18 +154,19 @@ function extractData(document, url) {
       case "transcribers":
         break;
       default:
-        console.log("Unknown heading: " + heading)
+        console.log("Unknown heading: " + heading);
         break;
     }
-
   }
 
   // find the citation URL, it is hard to find - we rely on the fact that the td before
   // it has the textContent "URL"
-  const allTableDataCells = document.querySelectorAll("table > tbody > tr > td");
-  for (let cellIndex = 0; cellIndex < allTableDataCells.length ; cellIndex++) {
+  const allTableDataCells = document.querySelectorAll(
+    "table > tbody > tr > td"
+  );
+  for (let cellIndex = 0; cellIndex < allTableDataCells.length; cellIndex++) {
     let cell = allTableDataCells[cellIndex];
-    if (cell.textContent == "URL" && cellIndex < allTableDataCells.length-1) {
+    if (cell.textContent == "URL" && cellIndex < allTableDataCells.length - 1) {
       const urlNode = cell.nextElementSibling;
       if (urlNode) {
         const url = urlNode.textContent.trim();

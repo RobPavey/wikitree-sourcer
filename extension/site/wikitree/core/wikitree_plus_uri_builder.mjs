@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 class WikiTreePlusUriBuilder {
-
   constructor() {
     this.uri = "https://wikitree.sdms.si/default.htm?report=srch1";
     this.searchTermAdded = true;
@@ -36,8 +35,7 @@ class WikiTreePlusUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
@@ -52,8 +50,7 @@ class WikiTreePlusUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
   }

@@ -31,7 +31,6 @@ import { RC } from "/base/core/record_collections.mjs";
  * https://stackoverflow.com/questions/56500742/why-is-my-google-chrome-extensions-popup-ui-laggy-on-external-monitors-but-not/64113061
  */
 function macSecondMonitorWorkaround() {
-
   if (
     // From testing the following conditions seem to indicate that the popup was opened on a secondary monitor
     window.screenLeft < 0 ||
@@ -40,8 +39,8 @@ function macSecondMonitorWorkaround() {
     window.screenTop > window.screen.height
   ) {
     chrome.runtime.getPlatformInfo(function (info) {
-      if (info.os === 'mac') {
-        const fontFaceSheet = new CSSStyleSheet()
+      if (info.os === "mac") {
+        const fontFaceSheet = new CSSStyleSheet();
         fontFaceSheet.insertRule(`
           @keyframes redraw {
             0% {
@@ -51,45 +50,41 @@ function macSecondMonitorWorkaround() {
               opacity: .99;
             }
           }
-        `)
+        `);
         fontFaceSheet.insertRule(`
           html {
             animation: redraw 1s linear infinite;
           }
-        `)
+        `);
         document.adoptedStyleSheets = [
           ...document.adoptedStyleSheets,
           fontFaceSheet,
-        ]
+        ];
       }
-    })
+    });
   }
 }
 
-function getBrowserName() { 
-  if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
-  {
-    return 'Opera';
-  }
-  else if(navigator.userAgent.indexOf("Chrome") != -1 )
-  {
-    return 'Chrome';
-  }
-  else if(navigator.userAgent.indexOf("Safari") != -1)
-  {
-    return 'Safari';
-  }
-  else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
-  {
-    return 'Firefox';
-  }
-  else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
-  {
-    return 'IE'; 
-  }  
-  else 
-  {
-    return 'unknown';
+function getBrowserName() {
+  if (
+    (navigator.userAgent.indexOf("Opera") ||
+      navigator.userAgent.indexOf("OPR")) != -1
+  ) {
+    return "Opera";
+  } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+    return "Chrome";
+  } else if (navigator.userAgent.indexOf("Safari") != -1) {
+    return "Safari";
+  } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+    return "Firefox";
+  } else if (
+    navigator.userAgent.indexOf("MSIE") != -1 ||
+    !!document.documentMode == true
+  ) {
+    //IF IE > 10
+    return "IE";
+  } else {
+    return "unknown";
   }
 }
 
@@ -99,13 +94,13 @@ function isSafari() {
   let browserName = getBrowserName();
   //console.log("browserName is:");
   //console.log(browserName);
-  const isSafariBrowser = (browserName == "Safari");
+  const isSafariBrowser = browserName == "Safari";
   return isSafariBrowser;
 }
 
 function isFirefox() {
   let browserName = getBrowserName();
-  const isFirefoxBrowser = (browserName == "Firefox");
+  const isFirefoxBrowser = browserName == "Firefox";
   return isFirefoxBrowser;
 }
 
@@ -118,7 +113,6 @@ function emptyMenu() {
 }
 
 async function displayUnexpectedErrorMessage(message, error, requestReport) {
-
   if (!message) {
     message = "Unknown error condition";
   }
@@ -183,8 +177,10 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
     let fspLinkButton = document.createElement("button");
     fspLinkButton.className = "linkButton";
     fspLinkButton.innerText = "WikiTree Sourcer free space page";
-    fspLinkButton.onclick = async function(element) {
-      chrome.tabs.create({ url: "https://www.wikitree.com/wiki/Space:WikiTree_Sourcer" });
+    fspLinkButton.onclick = async function (element) {
+      chrome.tabs.create({
+        url: "https://www.wikitree.com/wiki/Space:WikiTree_Sourcer",
+      });
       window.close();
     };
     labelDiv.appendChild(fspLinkButton);
@@ -197,7 +193,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
     let robLinkButton = document.createElement("button");
     robLinkButton.className = "linkButton";
     robLinkButton.innerText = "Rob Pavey.";
-    robLinkButton.onclick = async function(element) {
+    robLinkButton.onclick = async function (element) {
       chrome.tabs.create({ url: "https://www.wikitree.com/wiki/Pavey-429" });
       window.close();
     };
@@ -205,7 +201,8 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
 
     let label5 = document.createElement("label");
     label5.className = "messageLabelInDiv";
-    label5.innerText = "Please include details of the message above, which browser/device and extension version it occurred on " +
+    label5.innerText =
+      "Please include details of the message above, which browser/device and extension version it occurred on " +
       "and a link to the web page that it occurred on.";
     labelDiv.appendChild(label5);
   }
@@ -224,8 +221,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
         labelDiv.appendChild(label5);
       }
     }
-  }
-  catch (e) {}
+  } catch (e) {}
 
   try {
     if (browser && browser.runtime.getBrowserInfo) {
@@ -241,8 +237,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
         labelDiv.appendChild(label);
       }
     }
-  }
-  catch (e) {}
+  } catch (e) {}
 
   try {
     let userAgentString = window.navigator.userAgent;
@@ -255,14 +250,12 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
       label.innerText = message;
       labelDiv.appendChild(label);
     }
-  }
-  catch (e) {}
+  } catch (e) {}
 
   document.getElementById("menu").appendChild(fragment);
 }
 
 async function displayMessageWithIcon(iconType, message1, message2) {
-
   emptyMenu();
 
   let fragment = document.createDocumentFragment();
@@ -283,7 +276,7 @@ async function displayMessageWithIcon(iconType, message1, message2) {
     case "warning":
       imagePath = "/images/warning_icon.svg";
       break;
-    }
+  }
 
   let image = document.createElement("img");
   image.className = "messageIconInDiv";
@@ -312,7 +305,6 @@ async function displayMessageWithIcon(iconType, message1, message2) {
 }
 
 async function displayMessage(message1, message2) {
-
   emptyMenu();
 
   let fragment = document.createDocumentFragment();
@@ -333,19 +325,21 @@ async function displayMessage(message1, message2) {
 }
 
 async function displayMessageThenClosePopup(message1, message2) {
-
   displayMessage(message1, message2);
 
-  setTimeout(function() {
+  setTimeout(function () {
     window.close();
   }, 1500);
 }
 
-async function displayMessageWithIconThenClosePopup(iconType, message1, message2) {
-
+async function displayMessageWithIconThenClosePopup(
+  iconType,
+  message1,
+  message2
+) {
   displayMessageWithIcon(iconType, message1, message2);
 
-  setTimeout(function() {
+  setTimeout(function () {
     window.close();
   }, 1500);
 }
@@ -358,7 +352,12 @@ function beginMainMenu() {
   list.className = "list";
   fragment.appendChild(list);
 
-  return {fragment: fragment, list: list, dividerOnNext: false, numNavItems: 0};
+  return {
+    fragment: fragment,
+    list: list,
+    dividerOnNext: false,
+    numNavItems: 0,
+  };
 }
 
 function endMainMenu(menu) {
@@ -374,18 +373,15 @@ function setMenuItemClassName(menu, element, mainClassName) {
     menu.dividerOnNext = false;
     if (mainClassName) {
       element.className = mainClassName + " dividerAbove";
-    }
-    else {
+    } else {
       element.className = "dividerAbove";
     }
-  }
-  else {
+  } else {
     element.className = mainClassName;
   }
 }
 
 async function openExceptionPage(message, input, error, requestReport) {
-
   displayMessage("An error occurred. Gathering more debug information ...");
 
   let errorName = "";
@@ -398,7 +394,6 @@ async function openExceptionPage(message, input, error, requestReport) {
   }
 
   if (!isSafari()) {
-
     chrome.runtime.sendMessage(
       {
         type: "exception",
@@ -407,45 +402,43 @@ async function openExceptionPage(message, input, error, requestReport) {
         errorName: errorName,
         errorMessage: errorMessage,
         errorStack: errorStack,
-        requestReport: requestReport
+        requestReport: requestReport,
       },
-      function(response) {
+      function (response) {
         // We get a detailed response for debugging this
         //console.log("openExceptionPage got response: ");
         //console.log(response);
-      
+
         if (!response || !response.success) {
           // Note: In Safari it seems unable to send a message to the exception tab after
           // opening it. So report in popup instead.
           displayUnexpectedErrorMessage(message, error, requestReport);
         }
-      } 
+      }
     );
-  }
-  else {
+  } else {
     // if Safari starts working with the exception page this can be removed
     displayUnexpectedErrorMessage(message, error, requestReport);
   }
 }
 
 async function doAsyncActionWithCatch(actionText, input, actionFunc) {
-
   if (actionText) {
     displayMessage(actionText + " ...");
   }
   try {
     await actionFunc();
-  }
-  catch (error) {
-    console.log('Error:', error.stack);
-    displayMessageWithIcon("warning", 
+  } catch (error) {
+    console.log("Error:", error.stack);
+    displayMessageWithIcon(
+      "warning",
       "An error occurred during " + actionText,
       error.stack
     );
 
     let message = "Error while " + actionText;
     openExceptionPage(message, input, error, true);
-  };
+  }
 }
 
 function addBreak(element) {
@@ -548,16 +541,16 @@ function addMessageMenuItem(menu, message) {
 }
 
 function addOptionsMenuItem(menu) {
-  addMenuItem(menu, "Options... (opens in new tab)", function(element) {
+  addMenuItem(menu, "Options... (opens in new tab)", function (element) {
     chrome.runtime.openOptionsPage();
     window.close();
   });
 }
 
 function addSupportMenuItem(menu, data, backFunction) {
-  let menuItemText = (isSafari()) ? "Support..." : "Support/Donate...";
+  let menuItemText = isSafari() ? "Support..." : "Support/Donate...";
 
-  addMenuItem(menu, menuItemText, function(element) {
+  addMenuItem(menu, menuItemText, function (element) {
     setupSupportSubmenuMenu(data, backFunction);
   });
 }
@@ -569,7 +562,7 @@ function addBackMenuItem(menu, backFunction) {
 
   let button = document.createElement("button");
   button.className = "menuButton";
-  button.onclick = function(element) {
+  button.onclick = function (element) {
     backFunction();
   };
   button.innerText = "< Back";
@@ -581,7 +574,7 @@ function addBackMenuItem(menu, backFunction) {
 function hasBirthOrDeathYear(data) {
   let birthYear = data.generalizedData.inferBirthYear();
   let deathYear = data.generalizedData.inferDeathYear();
-  return (birthYear != "" || deathYear == "");
+  return birthYear != "" || deathYear == "";
 }
 
 function isManualClassificationNeeded(data) {
@@ -603,13 +596,11 @@ function isManualClassificationNeeded(data) {
       if (options.citation_ancestry_dataStyle == "string") {
         result.isRecordTypeNeeded = true;
       }
-    }
-    else if (data.generalizedData.sourceOfData == "fmp") {
+    } else if (data.generalizedData.sourceOfData == "fmp") {
       if (options.citation_fmp_dataStyle == "string") {
         result.isRecordTypeNeeded = true;
       }
-    }
-    else if (data.generalizedData.sourceOfData == "fs") {
+    } else if (data.generalizedData.sourceOfData == "fs") {
       if (options.citation_fs_dataStyle == "string") {
         result.isRecordTypeNeeded = true;
       }
@@ -619,59 +610,66 @@ function isManualClassificationNeeded(data) {
   return result;
 }
 
-function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, buildFunction, backFunction, generalizeFunction) {
-
-  let needsRecordType = manualClassification.isRecordTypeNeeded ||
-    (manualClassification.isRecordTypeNeededForNarrative && data.type == "narrative");
+function setupUnclassifiedBuildCitationSubMenu(
+  data,
+  manualClassification,
+  buildFunction,
+  backFunction,
+  generalizeFunction
+) {
+  let needsRecordType =
+    manualClassification.isRecordTypeNeeded ||
+    (manualClassification.isRecordTypeNeededForNarrative &&
+      data.type == "narrative");
   let needsRefTitle = manualClassification.isRefTitleNeeded;
 
   // This is used for submenu list - it is not as advanced as GeneraizedData.getRefTitle.
   // This isn alphabetical order
   const rtToRefTitle = {
-    'Unclassified': `Unknown`,
-    'Apprenticeship': `Apprenticeship`,
-    'Baptism': `Baptism`,
-    'Birth': `Birth`,
-    'BirthRegistration': `Birth Registration`,
-    'Burial': `Burial`,
-    'Certificate': `Certificate`,
-    'Census': `Census`,
-    'ConvictTransportation': `Convict Transportation`,
-    'CrewList': `Crew List`,
-    'CriminalRegister': `Criminal Register`,
-    'Death': `Death`,
-    'DeathRegistration': `Death Registration`,
-    'Directory': `Directory`,
-    'Divorce': `Divorce`,
-    'ElectoralRegister': `Electoral Register`,
-    'Employment': `Employment`,
-    'FamHistOrPedigree': `Family History Or Pedigree`,
-    'FreemasonMembership': `Freemason Membership`,
-    'Heraldry': `Heraldic Record`,
-    'Immigration': `Immigration`,
-    'LandTax': `Land Tax`,
-    'LegalRecord': `Legal Record`,
-    'Marriage': `Marriage`,
-    'MarriageRegistration': `Marriage Registration`,
-    'MedicalPatient': `Medical Patient`,
-    'Military': `Military`,
-    'Naturalization': `Naturalization`,
-    'Newspaper': `Newspaper`,
-    'NonpopulationCensus': `Nonpopulation Census`,
-    'Obituary': `Obituary`,
-    'OtherChurchEvent': `Other Church Event`,
-    'PassengerList': `Passenger List`,
-    'PassportApplication': `Passport Application`,
-    'Pension': `Pension`,
-    'Probate': `Probate`,
-    'QuarterSession': `Quarter Session`,
-    'RateBook': `Rate Book`,
-    'Residence': `Residence`,
-    'SchoolRecords': `School Records`,
-    'SocialSecurity': `Social Security`,
-    'Tax': `Tax`,
-    'Will': `Will`,
-    'WorkhouseRecord': `Workhouse Record`,
+    Unclassified: `Unknown`,
+    Apprenticeship: `Apprenticeship`,
+    Baptism: `Baptism`,
+    Birth: `Birth`,
+    BirthRegistration: `Birth Registration`,
+    Burial: `Burial`,
+    Certificate: `Certificate`,
+    Census: `Census`,
+    ConvictTransportation: `Convict Transportation`,
+    CrewList: `Crew List`,
+    CriminalRegister: `Criminal Register`,
+    Death: `Death`,
+    DeathRegistration: `Death Registration`,
+    Directory: `Directory`,
+    Divorce: `Divorce`,
+    ElectoralRegister: `Electoral Register`,
+    Employment: `Employment`,
+    FamHistOrPedigree: `Family History Or Pedigree`,
+    FreemasonMembership: `Freemason Membership`,
+    Heraldry: `Heraldic Record`,
+    Immigration: `Immigration`,
+    LandTax: `Land Tax`,
+    LegalRecord: `Legal Record`,
+    Marriage: `Marriage`,
+    MarriageRegistration: `Marriage Registration`,
+    MedicalPatient: `Medical Patient`,
+    Military: `Military`,
+    Naturalization: `Naturalization`,
+    Newspaper: `Newspaper`,
+    NonpopulationCensus: `Nonpopulation Census`,
+    Obituary: `Obituary`,
+    OtherChurchEvent: `Other Church Event`,
+    PassengerList: `Passenger List`,
+    PassportApplication: `Passport Application`,
+    Pension: `Pension`,
+    Probate: `Probate`,
+    QuarterSession: `Quarter Session`,
+    RateBook: `Rate Book`,
+    Residence: `Residence`,
+    SchoolRecords: `School Records`,
+    SocialSecurity: `Social Security`,
+    Tax: `Tax`,
+    Will: `Will`,
+    WorkhouseRecord: `Workhouse Record`,
   };
 
   let menu = beginMainMenu();
@@ -688,7 +686,7 @@ function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, build
     while (selector.firstChild) {
       selector.removeChild(selector.firstChild);
     }
-    
+
     const keys = Object.keys(rtToRefTitle);
     for (const key of keys) {
       let option = document.createElement("option");
@@ -703,7 +701,7 @@ function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, build
     selector.id = id;
     selector.className = "dialogSelector";
     fillFunction(selector);
-    selector.addEventListener('change', changeFunction);  
+    selector.addEventListener("change", changeFunction);
     let label = document.createElement("label");
     label.className = "dialogInput";
     label.appendChild(document.createTextNode(labelText));
@@ -719,7 +717,7 @@ function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, build
     textInput.type = "text";
     textInput.id = id;
     textInput.className = "dialogTextInput";
-    textInput.addEventListener('change', changeFunction);  
+    textInput.addEventListener("change", changeFunction);
     let label = document.createElement("label");
     label.className = "dialogInput";
     label.appendChild(document.createTextNode(labelText));
@@ -733,7 +731,9 @@ function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, build
   // Explanation
   let reasonLabel = document.createElement("label");
   reasonLabel.className = "dialogInput";
-  reasonLabel.appendChild(document.createTextNode("Could not identify the record type."));
+  reasonLabel.appendChild(
+    document.createTextNode("Could not identify the record type.")
+  );
   menu.list.appendChild(reasonLabel);
 
   if (needsRecordType) {
@@ -741,15 +741,17 @@ function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, build
     addBreak(menu.list);
 
     // Record Type
-    let categorySelector = addSelector("recordTypeSelector", "Choose record type: ", fillRecordTypeSelector,
-      function(event) {
+    let categorySelector = addSelector(
+      "recordTypeSelector",
+      "Choose record type: ",
+      fillRecordTypeSelector,
+      function (event) {
         recordType = event.target.value;
         //console.log("set record type to: " + recordType);
         // set ref title
-        if (recordType == 'Unclassified') {
-          refTitle ="";
-        }
-        else {
+        if (recordType == "Unclassified") {
+          refTitle = "";
+        } else {
           refTitle = rtToRefTitle[recordType];
         }
         if (textInputField) {
@@ -764,8 +766,10 @@ function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, build
     addBreak(menu.list);
 
     // text input
-    textInputField = addTextInput("refTitleInput", "Choose meaningful title: ",
-      function(event) {
+    textInputField = addTextInput(
+      "refTitleInput",
+      "Choose meaningful title: ",
+      function (event) {
         refTitle = event.target.value;
         //console.log("set ref title to: " + refTitle);
       }
@@ -776,11 +780,9 @@ function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, build
   let buttonText = "";
   if (data.type == "inline") {
     buttonText = "Build Inline Citation";
-  }
-  else if (data.type == "narrative") {
+  } else if (data.type == "narrative") {
     buttonText = "Build Narrative with Citation";
-  }
-  else if (data.type == "source") {
+  } else if (data.type == "source") {
     buttonText = "Build Source Citation";
   }
 
@@ -790,7 +792,7 @@ function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, build
   let button = document.createElement("button");
   button.className = "dialogButton";
   button.innerText = buttonText;
-  button.onclick = function(element) {
+  button.onclick = function (element) {
     //console.log("record type is: " + recordType);
     gd.recordType = recordType;
     if (refTitle) {
@@ -808,16 +810,28 @@ function setupUnclassifiedBuildCitationSubMenu(data, manualClassification, build
   endMainMenu(menu);
 }
 
-function addBuildCitationMenuItem(menu, data, manualClassification, buildFunction, type, backFunction, generalizeFunction) {
-
+function addBuildCitationMenuItem(
+  menu,
+  data,
+  manualClassification,
+  buildFunction,
+  type,
+  backFunction,
+  generalizeFunction
+) {
   let suffix = "";
   if (type == "narrative") {
-    if (manualClassification.isRecordTypeNeededForNarrative || manualClassification.isRefTitleNeeded) {
+    if (
+      manualClassification.isRecordTypeNeededForNarrative ||
+      manualClassification.isRefTitleNeeded
+    ) {
       suffix = "...";
     }
-  }
-  else {
-    if (manualClassification.isRecordTypeNeeded || manualClassification.isRefTitleNeeded) {
+  } else {
+    if (
+      manualClassification.isRecordTypeNeeded ||
+      manualClassification.isRefTitleNeeded
+    ) {
       suffix = "...";
     }
   }
@@ -825,11 +839,9 @@ function addBuildCitationMenuItem(menu, data, manualClassification, buildFunctio
   let menuText = "";
   if (type == "inline") {
     menuText = "Build Inline Citation";
-  }
-  else if (type == "narrative") {
+  } else if (type == "narrative") {
     menuText = "Build Narrative with Citation";
-  }
-  else if (type == "source") {
+  } else if (type == "source") {
     menuText = "Build Source Citation";
   }
 
@@ -841,29 +853,63 @@ function addBuildCitationMenuItem(menu, data, manualClassification, buildFunctio
   input.type = type;
 
   if (suffix) {
-    addMenuItem(menu, menuText, function(element) {
-      setupUnclassifiedBuildCitationSubMenu(input, manualClassification, buildFunction, backFunction, generalizeFunction);
+    addMenuItem(menu, menuText, function (element) {
+      setupUnclassifiedBuildCitationSubMenu(
+        input,
+        manualClassification,
+        buildFunction,
+        backFunction,
+        generalizeFunction
+      );
     });
-  }
-  else {
-    addMenuItem(menu, menuText, function(element) {
+  } else {
+    addMenuItem(menu, menuText, function (element) {
       displayMessage("Building citation...");
       buildFunction(input);
     });
   }
 }
 
-
-function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, generalizeFunction) {
+function addBuildCitationMenuItems(
+  menu,
+  data,
+  buildFunction,
+  backFunction,
+  generalizeFunction
+) {
   if (data.extractedData.pageType && data.extractedData.pageType != "record") {
     return;
   }
 
   let manualClassification = isManualClassificationNeeded(data);
 
-  addBuildCitationMenuItem(menu, data, manualClassification, buildFunction, "inline", backFunction, generalizeFunction);
-  addBuildCitationMenuItem(menu, data, manualClassification, buildFunction, "narrative", backFunction, generalizeFunction);
-  addBuildCitationMenuItem(menu, data, manualClassification, buildFunction, "source", backFunction, generalizeFunction);
+  addBuildCitationMenuItem(
+    menu,
+    data,
+    manualClassification,
+    buildFunction,
+    "inline",
+    backFunction,
+    generalizeFunction
+  );
+  addBuildCitationMenuItem(
+    menu,
+    data,
+    manualClassification,
+    buildFunction,
+    "narrative",
+    backFunction,
+    generalizeFunction
+  );
+  addBuildCitationMenuItem(
+    menu,
+    data,
+    manualClassification,
+    buildFunction,
+    "source",
+    backFunction,
+    generalizeFunction
+  );
 }
 
 // Global to remember the popup menu width before EditCitation
@@ -880,10 +926,9 @@ async function resizeBackFunction(backFunction) {
 }
 
 async function debugDisplayMenu(object, titleText, backFunction) {
-
   // this switches the popup to display a different frame and populates the edit box
 
-  let displayString = JSON.stringify(object, null, 2);  // 2 spaces of indentation
+  let displayString = JSON.stringify(object, null, 2); // 2 spaces of indentation
 
   // Make the whole window wider (if not on iOS)
   if (shouldPopupWindowResize) {
@@ -895,7 +940,9 @@ async function debugDisplayMenu(object, titleText, backFunction) {
 
   let fragment = document.createDocumentFragment();
 
-  addBackMenuItem(menu, function () { resizeBackFunction(backFunction); } );
+  addBackMenuItem(menu, function () {
+    resizeBackFunction(backFunction);
+  });
 
   addBreak(fragment);
   let label = document.createElement("label");
@@ -915,31 +962,32 @@ async function debugDisplayMenu(object, titleText, backFunction) {
 
 function displayExtractedData(data, backFunction) {
   if (data) {
-    console.log(data.extractedData)
+    console.log(data.extractedData);
     debugDisplayMenu(data.extractedData, "Extracted Data", backFunction);
   }
 }
 
 function displayGeneralizedData(data, backFunction) {
   if (data) {
-    console.log(data.generalizedData)
+    console.log(data.generalizedData);
     debugDisplayMenu(data.generalizedData, "Generalized Data", backFunction);
   }
 }
 
 function setupDebugSubmenuMenu(data, backFunction) {
-
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
 
-  let toHereBackFunction = function() { setupDebugSubmenuMenu(data, backFunction); };
+  let toHereBackFunction = function () {
+    setupDebugSubmenuMenu(data, backFunction);
+  };
 
-  addMenuItem(menu, "Show extracted data", function(element) {
+  addMenuItem(menu, "Show extracted data", function (element) {
     displayExtractedData(data, toHereBackFunction);
   });
 
-  addMenuItem(menu, "Show generalized data", function(element) {
+  addMenuItem(menu, "Show generalized data", function (element) {
     displayGeneralizedData(data, toHereBackFunction);
   });
 
@@ -947,7 +995,6 @@ function setupDebugSubmenuMenu(data, backFunction) {
 }
 
 function setupSupportSubmenuMenu(data, backFunction) {
-
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -957,7 +1004,8 @@ function setupSupportSubmenuMenu(data, backFunction) {
 
     let introLabel = document.createElement("label");
     introLabel.className = "messageLabel";
-    introLabel.innerText = "WikiTree Sourcer is a free browser extension developed by Rob Pavey.";
+    introLabel.innerText =
+      "WikiTree Sourcer is a free browser extension developed by Rob Pavey.";
     menu.list.appendChild(introLabel);
 
     // Buy me a Coffee
@@ -966,25 +1014,26 @@ function setupSupportSubmenuMenu(data, backFunction) {
     coffeeDiv.className = "messageParagraph";
 
     let coffeeLabel1 = document.createElement("label");
-    coffeeLabel1.innerText = "If you find it useful and wish to show your appreciation and support the ongoing development and maintainance of this extension you can make a donation at ";
+    coffeeLabel1.innerText =
+      "If you find it useful and wish to show your appreciation and support the ongoing development and maintainance of this extension you can make a donation at ";
 
     let coffeeLinkButton = document.createElement("button");
     coffeeLinkButton.className = "linkButton";
     coffeeLinkButton.innerText = "buy me a coffee.";
-    coffeeLinkButton.onclick = async function(element) {
+    coffeeLinkButton.onclick = async function (element) {
       chrome.tabs.create({ url: "https://www.buymeacoffee.com/RobPavey" });
       window.close();
     };
 
     let coffeeLabel2 = document.createElement("label");
     coffeeLabel2.innerText = ".";
-    
+
     coffeeDiv.appendChild(coffeeLabel1);
     coffeeDiv.appendChild(coffeeLinkButton);
     coffeeDiv.appendChild(coffeeLabel2);
     menu.list.appendChild(coffeeDiv);
   }
-  
+
   // tech support and FSP link
 
   let fspDiv = document.createElement("div");
@@ -996,30 +1045,39 @@ function setupSupportSubmenuMenu(data, backFunction) {
   let fspLinkButton = document.createElement("button");
   fspLinkButton.className = "linkButton";
   fspLinkButton.innerText = "WikiTree Sourcer Free Space Page.";
-  fspLinkButton.onclick = async function(element) {
-    chrome.tabs.create({ url: "https://www.wikitree.com/index.php?title=Space:WikiTree_Sourcer" });
+  fspLinkButton.onclick = async function (element) {
+    chrome.tabs.create({
+      url: "https://www.wikitree.com/index.php?title=Space:WikiTree_Sourcer",
+    });
     window.close();
   };
 
   let fspLabel2 = document.createElement("label");
   fspLabel2.innerText = ".";
-  
+
   fspDiv.appendChild(fspLabel1);
   fspDiv.appendChild(fspLinkButton);
   fspDiv.appendChild(fspLabel2);
   menu.list.appendChild(fspDiv);
 
-  let toHereBackFunction = function() { setupSupportSubmenuMenu(data, backFunction); };
+  let toHereBackFunction = function () {
+    setupSupportSubmenuMenu(data, backFunction);
+  };
 
   addMenuDivider(menu);
-  addMenuItem(menu, "Debug...", function(element) {
+  addMenuItem(menu, "Debug...", function (element) {
     setupDebugSubmenuMenu(data, toHereBackFunction);
   });
 
   endMainMenu(menu);
 }
 
-async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFunction, backFunction) {
+async function setupSearchCollectionsSubMenu(
+  data,
+  siteName,
+  searchCollectionFunction,
+  backFunction
+) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -1027,24 +1085,34 @@ async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFun
   let gd = data.generalizedData;
   let countryArray = gd.inferCountries();
   let maxLifespan = Number(options.search_general_maxLifespan);
-  let dates = { maxLifespan: maxLifespan, eventYear: gd.inferEventYear(),
-    birthYear: gd.inferBirthYear(), deathYear: gd.inferDeathYear(), };
-  let collectionArray = RC.findCollectionsForSiteWithinDateRangeAndCountries(siteName, dates, countryArray);
+  let dates = {
+    maxLifespan: maxLifespan,
+    eventYear: gd.inferEventYear(),
+    birthYear: gd.inferBirthYear(),
+    deathYear: gd.inferDeathYear(),
+  };
+  let collectionArray = RC.findCollectionsForSiteWithinDateRangeAndCountries(
+    siteName,
+    dates,
+    countryArray
+  );
 
   //console.log("setupSearchCollectionsSubMenu, countryArray is:");
   //console.log(countryArray);
   //console.log("setupSearchCollectionsSubMenu, dates is:");
   //console.log(dates);
-  
+
   if (collectionArray && collectionArray.length > 0) {
     for (let collection of collectionArray) {
-      addMenuItem(menu, collection.title, function(element) {
+      addMenuItem(menu, collection.title, function (element) {
         searchCollectionFunction(data.generalizedData, collection.wtsId);
       });
     }
-  }
-  else {
-    addMessageMenuItem(menu, "No supported collections in date range and country:")
+  } else {
+    addMessageMenuItem(
+      menu,
+      "No supported collections in date range and country:"
+    );
 
     if (dates) {
       let datesString = "";
@@ -1052,11 +1120,15 @@ async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFun
         datesString += "birth: " + dates.birthYear;
       }
       if (dates.deathYear) {
-        if (datesString != "") { datesString += ", "; }
+        if (datesString != "") {
+          datesString += ", ";
+        }
         datesString += "death: " + dates.deathYear;
       }
       if (dates.eventYear) {
-        if (datesString != "") { datesString += ", "; }
+        if (datesString != "") {
+          datesString += ", ";
+        }
         datesString += "event: " + dates.eventYear;
       }
       if (datesString) {
@@ -1075,12 +1147,11 @@ async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFun
       addMessageMenuItem(menu, "Countries: " + countriesString);
     }
   }
- 
+
   endMainMenu(menu);
 }
 
 function addSameRecordMenuItem(menu, data, siteName, searchFunction) {
-
   let gd = data.generalizedData;
 
   //console.log("addSameRecordMenuItem, gd is")
@@ -1088,11 +1159,19 @@ function addSameRecordMenuItem(menu, data, siteName, searchFunction) {
 
   if (gd.sourceType == "record") {
     if (gd.collectionData && gd.collectionData.id) {
-  
-      let fsCollectionId = RC.mapCollectionId(gd.sourceOfData, gd.collectionData.id, siteName,
-        gd.inferEventCountry(), gd.inferEventYear());
+      let fsCollectionId = RC.mapCollectionId(
+        gd.sourceOfData,
+        gd.collectionData.id,
+        siteName,
+        gd.inferEventCountry(),
+        gd.inferEventYear()
+      );
       if (fsCollectionId) {
-        addMenuItem(menu, "Search the same collection for the same record", searchFunction);
+        addMenuItem(
+          menu,
+          "Search the same collection for the same record",
+          searchFunction
+        );
       }
     }
   }
@@ -1132,8 +1211,7 @@ function setPopupMenuWidthBasedOnPlatform(platformInfo) {
     // because it is not possible to set smaller once we enlarge it
     shouldPopupWindowResize = false;
     window.onresize = setPopupMenuWidthForIosOnResize;
-  }
-  else {
+  } else {
     // on all other platforms the window should resize
     shouldPopupWindowResize = true;
     document.body.style.width = "350px";
@@ -1147,16 +1225,33 @@ function setPopupMenuWidth() {
   chrome.runtime.getPlatformInfo(setPopupMenuWidthBasedOnPlatform);
 }
 
-export { addBuildCitationMenuItems,
-  addSameRecordMenuItem, setPopupMenuWidth, setupSearchCollectionsSubMenu,
-  hasBirthOrDeathYear, addBackMenuItem, addSupportMenuItem, addOptionsMenuItem,
-  addItalicMessageMenuItem, addMenuItemWithSubMenu, addMenuItemWithSubtitle, addMenuItem, addBreak,
-  addMenuDivider, beginMainMenu, endMainMenu,
-  displayMessage, displayMessageWithIcon, displayMessageWithIconThenClosePopup, displayMessageThenClosePopup,
+export {
+  addBuildCitationMenuItems,
+  addSameRecordMenuItem,
+  setPopupMenuWidth,
+  setupSearchCollectionsSubMenu,
+  hasBirthOrDeathYear,
+  addBackMenuItem,
+  addSupportMenuItem,
+  addOptionsMenuItem,
+  addItalicMessageMenuItem,
+  addMenuItemWithSubMenu,
+  addMenuItemWithSubtitle,
+  addMenuItem,
+  addBreak,
+  addMenuDivider,
+  beginMainMenu,
+  endMainMenu,
+  displayMessage,
+  displayMessageWithIcon,
+  displayMessageWithIconThenClosePopup,
+  displayMessageThenClosePopup,
   displayUnexpectedErrorMessage,
   emptyMenu,
-  openExceptionPage, doAsyncActionWithCatch,
+  openExceptionPage,
+  doAsyncActionWithCatch,
   shouldPopupWindowResize,
   macSecondMonitorWorkaround,
-  isSafari, isFirefox
+  isSafari,
+  isFirefox,
 };

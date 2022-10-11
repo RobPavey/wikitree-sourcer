@@ -24,7 +24,6 @@ SOFTWARE.
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 class NpUriBuilder {
-
   // Example URL:
   // https://www.newspapers.com/search/?query=Celina%20Aucoin&dr_year=1932-1932
 

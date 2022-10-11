@@ -25,13 +25,10 @@ SOFTWARE.
 async function getPendingSearch() {
   return new Promise((resolve, reject) => {
     try {
-      chrome.storage.local.get(
-        ["freeregSearchData"],
-        function (value) {
-          resolve(value.freeregSearchData);
-        });
-    }
-    catch (ex) {
+      chrome.storage.local.get(["freeregSearchData"], function (value) {
+        resolve(value.freeregSearchData);
+      });
+    } catch (ex) {
       reject(ex);
     }
   });
@@ -47,9 +44,10 @@ async function checkForPendingSearch() {
     return;
   }
 
-  if (document.URL == "https://www.freereg.org.uk/search_queries/new?locale=en") {
+  if (
+    document.URL == "https://www.freereg.org.uk/search_queries/new?locale=en"
+  ) {
     //console.log("checkForPendingSearch: URL matches");
-
 
     let freeregSearchData = await getPendingSearch();
 
@@ -73,7 +71,7 @@ async function checkForPendingSearch() {
         //console.log("checkForPendingSearch: fieldData is:");
         //console.log(fieldData);
 
-        for(var key in fieldData) {
+        for (var key in fieldData) {
           //console.log("checkForPendingSearch: key is: " + key);
           if (key) {
             let value = fieldData[key];
@@ -83,10 +81,12 @@ async function checkForPendingSearch() {
             if (inputElement) {
               //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
 
-              if (inputElement.type == "checkbox" || inputElement.type == "radio") {
+              if (
+                inputElement.type == "checkbox" ||
+                inputElement.type == "radio"
+              ) {
                 inputElement.checked = value;
-              }
-              else {
+              } else {
                 inputElement.value = value;
               }
             }
@@ -102,7 +102,9 @@ async function checkForPendingSearch() {
           // Now hide the form so that the use doesn't try to use it.
           formElement.style.display = "none";
 
-          const titleElement = document.querySelector("main.site__content div.container h1.title");
+          const titleElement = document.querySelector(
+            "main.site__content div.container h1.title"
+          );
           if (titleElement) {
             titleElement.innerText = "Performing WikiTree Sourcer search...";
           }
@@ -113,7 +115,7 @@ async function checkForPendingSearch() {
       }
 
       // clear the search data
-      chrome.storage.local.set({freeregSearchData: undefined}, function() {
+      chrome.storage.local.set({ freeregSearchData: undefined }, function () {
         //console.log('cleared freeregSearchData');
       });
     }
@@ -124,9 +126,7 @@ async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
 
-  siteContentInit(`freereg`,
-    `site/freereg/core/freereg_extract_data.mjs`,
-  );
+  siteContentInit(`freereg`, `site/freereg/core/freereg_extract_data.mjs`);
 }
 
 checkForSearchThenInit();
