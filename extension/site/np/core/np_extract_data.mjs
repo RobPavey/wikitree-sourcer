@@ -22,18 +22,40 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their search menu items
+function cleanText(inputText) {
+  let text = inputText;
+  if (text) {
+    text = text.trim();
+    text = text.replace(/\s+/g, " ");
+    text = text.replace(/\s([,;.])/g, "$1");
+  }
+  return text;
+}
 
-// Currently the order that they are imported is the order that they appear in the menu
-// We may have options at some point to control which items appear
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
-import "../../np/core/np_options.mjs"
+function extractData(document, url) {
+
+  var result = {
+  };
+  result.url = url;
+
+  result.success = false;
+
+  let sourceList = []
+  document.querySelector("#browse-information").firstChild.querySelectorAll("a").forEach(link => sourceList.push(link.innerHTML))
+  //there are three links in this div, but the last one just says "page" so i'm replacing it here with the actual page number
+  sourceList[2] = document.querySelector("#pageNum").placeholder
+  sourceList[3] = document.querySelector("#paper-title").innerHTML.split('·')[3].trim().replace("(", "").replace(")", "")
+
+  result.newspaperTitle = sourceList[0]
+  result.publicationDate = sourceList[1]
+  result.pageNumber = sourceList[2]
+  result.location = sourceList[3]
+
+  result.success = true;
+
+  //console.log(result);
+
+  return result;
+}
+
+export { extractData };

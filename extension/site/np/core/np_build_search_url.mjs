@@ -22,18 +22,37 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their search menu items
+import { NpUriBuilder } from "./np_uri_builder.mjs";
 
-// Currently the order that they are imported is the order that they appear in the menu
-// We may have options at some point to control which items appear
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
-import "../../np/core/np_options.mjs"
+function buildSearchUrl(buildUrlInput) {
+
+  const data = buildUrlInput.generalizedData;
+  const options = buildUrlInput.options;
+
+  var builder = new NpUriBuilder;
+
+  console.log(data.inferLastName())
+  builder.addSearchParameter("query", (data.inferFirstName() ?? "") + " " + (data.inferMiddleName() ?? "") + " " + (data.inferLastName() ?? ""))
+
+  let birthYear = data.inferBirthYear()
+  let deathYear = data.inferDeathYear()
+  if (birthYear && deathYear) {
+    builder.addSearchParameter("dr_year", birthYear + "-" + deathYear)
+  } else if (birthYear) {
+    builder.addSearchParameter("dr_year", birthYear + "-" + (birthYear + 80))
+  } else if (deathYear) {
+    builder.addSearchParameter("dr_year", (deathYear - 80) + "-" + deathYear)
+  }
+
+  const url = builder.getUri();
+
+  //console.log("URL is " + url);
+
+  var result = {
+    'url': url,
+  }
+
+  return result;
+}
+
+export { buildSearchUrl };

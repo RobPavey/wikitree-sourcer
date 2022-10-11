@@ -22,18 +22,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their search menu items
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { buildCitation } from "../core/np_build_citation.mjs";
+import { generalizeData } from "../core/np_generalize_data.mjs";
 
-// Currently the order that they are imported is the order that they appear in the menu
-// We may have options at some point to control which items appear
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
-import "../../np/core/np_options.mjs"
+async function setupNpPopupMenu(extractedData) {
+
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage: "It looks like a Newspapers.com page but not an article page.",
+    generalizeFailedMessage: "It looks like a Newspapers.com page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "np",
+    //not going to show search for newspapers.com - it doesn't really make sense
+    //what would we search for? and is anyone really wanting to search ancestry/fmp from a newspapers.com article?
+    doNotIncludeSearch: true
+  };
+  setupSimplePopupMenu(input);
+}
+
+initPopup("np", setupNpPopupMenu);

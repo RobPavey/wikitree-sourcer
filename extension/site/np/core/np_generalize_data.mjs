@@ -22,18 +22,34 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their search menu items
+import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
 
-// Currently the order that they are imported is the order that they appear in the menu
-// We may have options at some point to control which items appear
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
-import "../../np/core/np_options.mjs"
+function generalizeData(input) {
+
+  let data = input.extractedData;
+
+  if (!data.success) {
+    return result; //the extract failed
+  }
+
+  let result = new GeneralizedData;
+
+  result.sourceOfData = "np";
+
+  result.sourceType = "record";
+
+  result.recordType = RT.Newspaper;
+
+  result.setEventDate(data.publicationDate);
+  result.setEventPlace(data.location)
+
+
+  // should we use a collection to allow search for same record on Ancestry?
+
+  result.hasValidData = true;
+
+  return result;
+}
+
+export { generalizeData, GeneralizedData, dateQualifiers };

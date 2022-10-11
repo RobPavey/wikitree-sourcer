@@ -40,16 +40,16 @@ const regressionData = [
     url: "https://www.findagrave.com/memorial/45398821/elizabeth-bates",
     optionVariants: [
       {
-        variantName: "accessedDate_none", 
-        optionOverrides: {citation_general_addAccessedDate: "none",},
+        variantName: "accessedDate_none",
+        optionOverrides: { citation_general_addAccessedDate: "none", },
       },
       {
-        variantName: "accessedDate_parenAfterLink", 
-        optionOverrides: {citation_general_addAccessedDate: "parenAfterLink",},
+        variantName: "accessedDate_parenAfterLink",
+        optionOverrides: { citation_general_addAccessedDate: "parenAfterLink", },
       },
       {
-        variantName: "accessedDate_parenBeforeLink", 
-        optionOverrides: {citation_general_addAccessedDate: "parenBeforeLink",},
+        variantName: "accessedDate_parenBeforeLink",
+        optionOverrides: { citation_general_addAccessedDate: "parenBeforeLink", },
       },
     ],
   },

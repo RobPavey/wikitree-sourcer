@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Newspaper''':\nWestern Gazette 24 Sep 1869, Fri, page 8<br/>\n[https://www.newspapers.com/search?=undefined&query=William%20%20Pavey&dr_year=1791-1872 Newspapers.com image] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "<ref>\n'''Newspaper''':\nWestern Gazette 24 Sep 1869, Fri, page 8<br/>\n[https://www.newspapers.com/search?=undefined&query=William%20%20Pavey&dr_year=1791-1872 Newspapers.com image] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Newspaper''': Western Gazette 24 Sep 1869, Fri, page 8<br/>[https://www.newspapers.com/search?=undefined&query=William%20%20Pavey&dr_year=1791-1872 Newspapers.com image] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

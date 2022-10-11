@@ -25,8 +25,7 @@ SOFTWARE.
 import fs from 'fs'
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 
-function JSONstringifySorted(object, space)
-{
+function JSONstringifySorted(object, space) {
   var allKeys = [];
   var seen = {};
   JSON.stringify(object, function (key, value) {
@@ -51,7 +50,7 @@ function createFolderIfNeeded(type, siteName, dataDir) {
 
   let folderName = "./unit_tests/" + siteName;
   createFolderPathIfNeeded(folderName);
-  
+
   folderName += "/" + dataDir;
   createFolderPathIfNeeded(folderName);
 
@@ -82,7 +81,7 @@ function writeTestOutputFile(testResultObject, siteName, dataDir, testData, logg
   let resultJsonString = JSON.stringify(testResultObject, null, 2);
   try {
     fs.writeFileSync(resultPath, resultJsonString, { mode: 0o755 });
-  } catch(err) {
+  } catch (err) {
     // An error occurred
     //console.error(err);
     logger.logError(testData, "Failed to write output test file: " + resultPath);
@@ -101,7 +100,7 @@ function createRefFile(testResultObject, siteName, dataDir, testData, logger) {
   let resultJsonString = JSON.stringify(testResultObject, null, 2);
   try {
     fs.writeFileSync(resultPath, resultJsonString, { mode: 0o755 });
-  } catch(err) {
+  } catch (err) {
     // An error occurred
     //console.error(err);
     logger.logError(testData, "Failed to create ref file: " + resultPath);
