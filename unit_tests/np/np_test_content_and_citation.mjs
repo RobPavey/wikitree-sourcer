@@ -33,9 +33,8 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   {
     caseName: "pavey",
-    url: "https://www.newspapers.com/search?=undefined&query=William%20%20Pavey&dr_year=1791-1872"
+    url: "https://www.newspapers.com/search?=undefined&query=William%20%20Pavey&dr_year=1791-1872",
   },
-
 ];
 
 async function runTests(testManager) {

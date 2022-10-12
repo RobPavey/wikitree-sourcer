@@ -85,8 +85,7 @@ async function updatePage(request) {
       if (version) {
         let versionMessage = "The extension version is " + version;
 
-        let extensionVersionElement =
-          document.getElementById("extensionVersion");
+        let extensionVersionElement = document.getElementById("extensionVersion");
         if (extensionVersionElement) {
           extensionVersionElement.innerText = versionMessage;
         }

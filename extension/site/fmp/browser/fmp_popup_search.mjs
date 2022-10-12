@@ -35,10 +35,7 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -117,12 +114,7 @@ async function addFmpSameRecordMenuItem(menu, data) {
 
 function addFmpSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection", function (element) {
-    setupSearchCollectionsSubMenu(
-      data,
-      "fmp",
-      fmpSearchCollection,
-      backFunction
-    );
+    setupSearchCollectionsSubMenu(data, "fmp", fmpSearchCollection, backFunction);
   });
 }
 
@@ -160,20 +152,11 @@ async function setupFmpSearchSubMenu(data, backFunction) {
 
 async function setupFmpSearchWithParametersSubMenu(data, backFunction) {
   let dataModule = await import(`../core/fmp_data.mjs`);
-  setupSearchWithParametersSubMenu(
-    data,
-    backFunction,
-    dataModule.FmpData,
-    fmpSearchWithParameters
-  );
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.FmpData, fmpSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "fmp",
-  "FindMyPast",
-  addFmpDefaultSearchMenuItem
-);
+registerSearchMenuItemFunction("fmp", "FindMyPast", addFmpDefaultSearchMenuItem);

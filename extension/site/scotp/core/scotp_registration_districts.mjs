@@ -20826,10 +20826,7 @@ function getRegistrationDistrict(rdno, rd_name, year) {
   const result = registrationDistricts.filter((district) => {
     if (district.rdno === rdno) {
       if (stdRdName == district.rd_name.toLowerCase()) {
-        if (
-          district.first_year <= +year &&
-          (district.last_year >= +year || district.last_year === 0)
-        ) {
+        if (district.first_year <= +year && (district.last_year >= +year || district.last_year === 0)) {
           return true;
         }
       }

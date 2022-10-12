@@ -137,20 +137,11 @@ function isMiddleNameLikelyAnInitial(dates, type) {
 
   if (isInYearRange(startYearNum, endYearNum, 1866, 1866)) {
     useInitial = true;
-  } else if (
-    type == "births" &&
-    isInYearRange(startYearNum, endYearNum, 1910, 1965)
-  ) {
+  } else if (type == "births" && isInYearRange(startYearNum, endYearNum, 1910, 1965)) {
     useInitial = true;
-  } else if (
-    type == "marriages" &&
-    isInYearRange(startYearNum, endYearNum, 1910, 1983)
-  ) {
+  } else if (type == "marriages" && isInYearRange(startYearNum, endYearNum, 1910, 1983)) {
     useInitial = true;
-  } else if (
-    type == "deaths" &&
-    isInYearRange(startYearNum, endYearNum, 1910, 1969)
-  ) {
+  } else if (type == "deaths" && isInYearRange(startYearNum, endYearNum, 1910, 1969)) {
     useInitial = true;
   }
 
@@ -164,11 +155,7 @@ function addAppropriateGivenNames(data, dates, type, builder) {
   let firstName = data.inferFirstName();
   let middleName = data.inferMiddleName();
 
-  if (
-    middleName &&
-    middleName.length > 1 &&
-    isMiddleNameLikelyAnInitial(dates, type)
-  ) {
+  if (middleName && middleName.length > 1 && isMiddleNameLikelyAnInitial(dates, type)) {
     middleName = middleName.substr(0, 1); // make an initial
   }
 

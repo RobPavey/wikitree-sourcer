@@ -182,10 +182,7 @@ function isSubCategoryInYearRange(subcategory, yearRange) {
   let dates = ScotpRecordType.getDatesCovered(recordType);
   if (dates) {
     // check if the date range overlaps the lifespan
-    if (
-      yearRange.endYear < dates.from ||
-      (dates.to && yearRange.startYear > dates.to)
-    ) {
+    if (yearRange.endYear < dates.from || (dates.to && yearRange.startYear > dates.to)) {
       isInYearRange = false;
     }
   }
@@ -220,10 +217,7 @@ const ScotpData = {
   includeSpouses: function (generalizedData, parameters) {
     let selectedSubcategory = undefined;
     for (let subcategory of subcategories) {
-      if (
-        !subcategory.category ||
-        subcategory.category == parameters.category
-      ) {
+      if (!subcategory.category || subcategory.category == parameters.category) {
         if (subcategory.value == parameters.subcategory) {
           selectedSubcategory = subcategory;
         }
@@ -239,10 +233,7 @@ const ScotpData = {
   includeParents: function (generalizedData, parameters) {
     let selectedSubcategory = undefined;
     for (let subcategory of subcategories) {
-      if (
-        !subcategory.category ||
-        subcategory.category == parameters.category
-      ) {
+      if (!subcategory.category || subcategory.category == parameters.category) {
         if (subcategory.value == parameters.subcategory) {
           selectedSubcategory = subcategory;
         }
@@ -257,10 +248,7 @@ const ScotpData = {
 
   includeOtherPerson: function (generalizedData, parameters) {
     if (parameters.subcategory == "census") {
-      if (
-        generalizedData.householdArray &&
-        generalizedData.householdArray.length > 1
-      ) {
+      if (generalizedData.householdArray && generalizedData.householdArray.length > 1) {
         let sourceEventYear = generalizedData.inferEventYear();
         if (parameters.collection == sourceEventYear) {
           return true;
@@ -281,10 +269,7 @@ const ScotpData = {
     let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
 
     for (let subcategory of subcategories) {
-      if (
-        !subcategory.category ||
-        subcategory.category == parameters.category
-      ) {
+      if (!subcategory.category || subcategory.category == parameters.category) {
         let value = subcategory.value;
         let text = subcategory.text;
         let recordType = subcategory.value;
@@ -319,8 +304,7 @@ const ScotpData = {
         if (!member.isSelected) {
           let name = member.name;
           let firstName = WTS_String.getFirstWord(name);
-          let text =
-            firstName + " (" + member.age + ", " + member.relationship + ")";
+          let text = firstName + " (" + member.age + ", " + member.relationship + ")";
           result.push({ value: firstName, text: text });
         }
       }
@@ -382,11 +366,7 @@ const ScotpData = {
                 rangeString += dates.to.toString();
               }
               let message =
-                "Marriage year " +
-                yearString +
-                " is out of range for collection range of " +
-                rangeString +
-                ".";
+                "Marriage year " + yearString + " is out of range for collection range of " + rangeString + ".";
               messages.push(message);
             }
           }
@@ -427,11 +407,7 @@ const ScotpData = {
       return true;
     }
 
-    function defaultToSubcategoryList(
-      parameters,
-      subcategoryNameList,
-      yearString
-    ) {
+    function defaultToSubcategoryList(parameters, subcategoryNameList, yearString) {
       if (!yearString) {
         return false;
       }
@@ -469,111 +445,39 @@ const ScotpData = {
 
     // Use a subcategory that corresponds to the source record if it works with date ranges
     // Only do this for the common bases
-    if (
-      generalizedData.recordType == RT.BirthRegistration ||
-      generalizedData.recordType == RT.Birth
-    ) {
-      const scList = [
-        "stat_births",
-        "opr_births",
-        "crbirths_baptism",
-        "ch3_baptism",
-      ];
-      if (
-        defaultToSubcategoryList(
-          parameters,
-          scList,
-          generalizedData.inferBirthYear()
-        )
-      ) {
+    if (generalizedData.recordType == RT.BirthRegistration || generalizedData.recordType == RT.Birth) {
+      const scList = ["stat_births", "opr_births", "crbirths_baptism", "ch3_baptism"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.MarriageRegistration) {
-      const scList = [
-        "stat_marriages",
-        "opr_marriages",
-        "crbanns_marriages",
-        "ch3_marriages",
-      ];
-      if (
-        defaultToSubcategoryList(
-          parameters,
-          scList,
-          generalizedData.inferEventYear()
-        )
-      ) {
+      const scList = ["stat_marriages", "opr_marriages", "crbanns_marriages", "ch3_marriages"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.DeathRegistration) {
-      const scList = [
-        "stat_deaths",
-        "opr_deaths",
-        "crdeath_burial",
-        "ch3_burials",
-      ];
-      if (
-        defaultToSubcategoryList(
-          parameters,
-          scList,
-          generalizedData.inferDeathYear()
-        )
-      ) {
+      const scList = ["stat_deaths", "opr_deaths", "crdeath_burial", "ch3_burials"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
         return;
       }
     }
-    if (
-      generalizedData.recordType == RT.Baptism ||
-      generalizedData.recordType == RT.BirthOrBaptism
-    ) {
-      const scList = [
-        "opr_births",
-        "crbirths_baptism",
-        "ch3_baptism",
-        "stat_births",
-      ];
-      if (
-        defaultToSubcategoryList(
-          parameters,
-          scList,
-          generalizedData.inferBirthYear()
-        )
-      ) {
+    if (generalizedData.recordType == RT.Baptism || generalizedData.recordType == RT.BirthOrBaptism) {
+      const scList = ["opr_births", "crbirths_baptism", "ch3_baptism", "stat_births"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Marriage) {
-      const scList = [
-        "opr_marriages",
-        "crbanns_marriages",
-        "ch3_marriages",
-        "stat_marriages",
-      ];
-      if (
-        defaultToSubcategoryList(
-          parameters,
-          scList,
-          generalizedData.inferEventYear()
-        )
-      ) {
+      const scList = ["opr_marriages", "crbanns_marriages", "ch3_marriages", "stat_marriages"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Burial) {
-      const scList = [
-        "opr_deaths",
-        "crdeath_burial",
-        "ch3_burials",
-        "stat_deaths",
-      ];
-      if (
-        defaultToSubcategoryList(
-          parameters,
-          scList,
-          generalizedData.inferDeathYear()
-        )
-      ) {
+      const scList = ["opr_deaths", "crdeath_burial", "ch3_burials", "stat_deaths"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
         return;
       }
     }
@@ -593,32 +497,16 @@ const ScotpData = {
     }
   },
 
-  updateParametersOnCategoryChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {
-    let subcategories = this.getSubcategories(
-      generalizedData,
-      parameters,
-      options
-    );
+  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {
+    let subcategories = this.getSubcategories(generalizedData, parameters, options);
     if (subcategories && subcategories.length > 0) {
       parameters.subcategory = subcategories[0].value;
     }
   },
 
-  updateParametersOnSubcategoryChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {},
+  updateParametersOnSubcategoryChange: function (generalizedData, parameters, options) {},
 
-  updateParametersOnCollectionChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {},
+  updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
 };
 
 export { ScotpData };

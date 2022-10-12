@@ -22,11 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  loadDataCache,
-  cachedDataCache,
-  isCachedDataCacheReady,
-} from "/base/browser/common/data_cache.mjs";
+import { loadDataCache, cachedDataCache, isCachedDataCacheReady } from "/base/browser/common/data_cache.mjs";
 
 import {
   addBuildCitationMenuItems,
@@ -38,10 +34,7 @@ import {
   openExceptionPage,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  addStandardMenuEnd,
-  buildMinimalMenuWithMessage,
-} from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import {
   saveCitation,
@@ -173,8 +166,7 @@ async function setupSimplePopupMenu(input) {
   //console.log(extractedData);
 
   if (!extractedData || !extractedData.success) {
-    let message =
-      "WikiTree Sourcer doesn't know how to extract data from this page.";
+    let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
     message += "\n\n" + input.extractFailedMessage;
     let data = { extractedData: extractedData };
     buildMinimalMenuWithMessage(message, data, backFunction);
@@ -207,8 +199,7 @@ async function setupSimplePopupMenu(input) {
   }
 
   simplePopupFunctions.buildCitationFunction = input.buildCitationFunction;
-  simplePopupFunctions.buildHouseholdTableFunction =
-    input.buildHouseholdTableFunction;
+  simplePopupFunctions.buildHouseholdTableFunction = input.buildHouseholdTableFunction;
 
   // do async prefetches
   loadDataCache();
@@ -216,22 +207,12 @@ async function setupSimplePopupMenu(input) {
   let menu = beginMainMenu();
 
   if (input.doNotIncludeSearch != true) {
-    await addSearchMenus(
-      menu,
-      data,
-      backFunction,
-      input.siteNameToExcludeFromSearch
-    );
+    await addSearchMenus(menu, data, backFunction, input.siteNameToExcludeFromSearch);
     addMenuDivider(menu);
   }
 
   if (input.buildCitationFunction) {
-    addBuildCitationMenuItems(
-      menu,
-      data,
-      simplePopupBuildCitation,
-      backFunction
-    );
+    addBuildCitationMenuItems(menu, data, simplePopupBuildCitation, backFunction);
   }
   if (input.buildHouseholdTableFunction) {
     addBuildHouseholdTableMenuItem(menu, data);

@@ -25,10 +25,7 @@
   "ageAtEvent": "36",
   "maritalStatus": "married",
   "relationshipToHead": "head",
-  "householdArrayFields": [
-    "name",
-    "age"
-  ],
+  "householdArrayFields": ["name", "age"],
   "householdArray": [
     {
       "name": "Francis Cyril More",

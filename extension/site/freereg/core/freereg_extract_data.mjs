@@ -97,9 +97,7 @@ function extractData(document, url) {
 
   result.success = false;
 
-  const tables = document.querySelectorAll(
-    "main.site__content table.table--bordered"
-  );
+  const tables = document.querySelectorAll("main.site__content table.table--bordered");
 
   if (tables.length != 1) {
     return result;
@@ -125,24 +123,14 @@ function extractData(document, url) {
   // build a simple object from table
   let tableObject = {};
   if (!convertTableToObjectProperties(tableNode, tableObject)) {
-    console.log(
-      "freereg: extractData: convertTableToObjectProperties on tableNode failed"
-    );
+    console.log("freereg: extractData: convertTableToObjectProperties on tableNode failed");
     return result;
   }
   result.recordData = tableObject;
 
   if (result.recordType == "marriage") {
-    let groomName = buildFullName(
-      result,
-      ["Groom forename"],
-      ["Groom surname"]
-    );
-    let brideName = buildFullName(
-      result,
-      ["Bride forename"],
-      ["Bride surname"]
-    );
+    let groomName = buildFullName(result, ["Groom forename"], ["Groom surname"]);
+    let brideName = buildFullName(result, ["Bride forename"], ["Bride surname"]);
 
     if (groomName && brideName) {
       result.ambiguousPerson = true;

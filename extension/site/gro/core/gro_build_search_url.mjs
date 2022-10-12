@@ -27,20 +27,12 @@ import { RC } from "../../../base/core/record_collections.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { DataCache } from "../../../base/core/data_cache.mjs";
 
-function getPersonGenderFromGeneralizedDataOrDataCache(
-  generalizedData,
-  dataCache,
-  isBirth
-) {
+function getPersonGenderFromGeneralizedDataOrDataCache(generalizedData, dataCache, isBirth) {
   let personGender = generalizedData.personGender;
 
   if (!personGender) {
     // search the data cache for the person
-    let entry = DataCache.findClosestWikiTreeProfilePrioritizingFirstName(
-      generalizedData,
-      dataCache,
-      isBirth
-    );
+    let entry = DataCache.findClosestWikiTreeProfilePrioritizingFirstName(generalizedData, dataCache, isBirth);
     if (entry) {
       personGender = entry.generalizedData.personGender;
     }

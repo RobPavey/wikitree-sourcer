@@ -240,10 +240,7 @@ const AncestryData = {
       }
     } else {
       for (let subcategory of subcategories) {
-        if (
-          !subcategory.category ||
-          subcategory.category == parameters.category
-        ) {
+        if (!subcategory.category || subcategory.category == parameters.category) {
           result.push(subcategory);
         }
       }
@@ -269,32 +266,16 @@ const AncestryData = {
     }
   },
 
-  updateParametersOnCategoryChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {
-    let subcategories = this.getSubcategories(
-      generalizedData,
-      parameters,
-      options
-    );
+  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {
+    let subcategories = this.getSubcategories(generalizedData, parameters, options);
     if (subcategories && subcategories.length > 0) {
       parameters.subcategory = subcategories[0].value;
     }
   },
 
-  updateParametersOnSubcategoryChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {},
+  updateParametersOnSubcategoryChange: function (generalizedData, parameters, options) {},
 
-  updateParametersOnCollectionChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {},
+  updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
 };
 
 export { AncestryData };

@@ -118,10 +118,7 @@ class FsUriBuilder {
     if (location != undefined && location != "") {
       var fullTitle = "q." + title + "Place";
       var uniqueTitle = this.makeUniqueTitle(fullTitle);
-      this.addSearchParameter(
-        uniqueTitle,
-        WTS_String.removeExtendedAsciiCharacters(location)
-      );
+      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(location));
     }
   }
 
@@ -129,10 +126,7 @@ class FsUriBuilder {
     if (year != undefined && year != "") {
       var fullTitle = "q." + title + "Date.from";
       var uniqueTitle = this.makeUniqueTitle(fullTitle);
-      this.addSearchParameter(
-        uniqueTitle,
-        WTS_String.removeExtendedAsciiCharacters(year)
-      );
+      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(year));
     }
   }
 
@@ -140,10 +134,7 @@ class FsUriBuilder {
     if (year != undefined && year != "") {
       var fullTitle = "q." + title + "Date.to";
       var uniqueTitle = this.makeUniqueTitle(fullTitle);
-      this.addSearchParameter(
-        uniqueTitle,
-        WTS_String.removeExtendedAsciiCharacters(year)
-      );
+      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(year));
     }
   }
 
@@ -161,10 +152,7 @@ class FsUriBuilder {
       string += names.trim();
     }
     if (string != "") {
-      this.addSearchParameter(
-        uniqueTitle,
-        WTS_String.removeExtendedAsciiCharacters(string)
-      );
+      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(string));
     }
   }
 

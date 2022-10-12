@@ -49,8 +49,7 @@ const citationOptionsGroup = {
     {
       optionName: "useDistrictUrl",
       type: "checkbox",
-      label:
-        "Add a link to the registration district page on ukbmd.org.uk (Not currently implemented)",
+      label: "Add a link to the registration district page on ukbmd.org.uk (Not currently implemented)",
       defaultValue: true,
     },
   ],

@@ -25,7 +25,6 @@ SOFTWARE.
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 class ExamplesiteUriBuilder {
-
   constructor() {
     this.uri = "https://www.examplesite.org.uk/cgi/search.pl";
     this.searchTermAdded = false;
@@ -38,8 +37,7 @@ class ExamplesiteUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
@@ -54,8 +52,7 @@ class ExamplesiteUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
   }

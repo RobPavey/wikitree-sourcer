@@ -29,11 +29,7 @@
     "Household Members<br/>Age<br/>Relationship": "Charles Darby 57 Head<br/>Rebacca Darby 55 Wife<br/>Joseph Darby 31 Son<br/>Leah Darby 23 Daughter<br/>Emily Darby 16 Daughter<br/>Adaliade Darby 12 Daughter"
   },
   "household": {
-    "headings": [
-      "Household Members",
-      "Age",
-      "Relationship"
-    ],
+    "headings": ["Household Members", "Age", "Relationship"],
     "members": [
       {
         "Household Members": "Charles Darby",

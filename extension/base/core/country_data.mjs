@@ -65,12 +65,7 @@ const CountryData = [
   },
   {
     stdName: "Jersey",
-    matches: [
-      "Jersey",
-      "Jersey, United Kingdom",
-      "Jersey, Channel Islands",
-      "Jersey, Channel Islands, United Kingdom",
-    ],
+    matches: ["Jersey", "Jersey, United Kingdom", "Jersey, Channel Islands", "Jersey, Channel Islands, United Kingdom"],
     partOf: ["United Kingdom", "Channel Islands"],
   },
   {
@@ -99,16 +94,7 @@ const CountryData = [
 
   {
     stdName: "United States",
-    matches: [
-      "United States",
-      "USA",
-      "US",
-      "U.S.",
-      "U.S.A.",
-      "U.S",
-      "U.S.A",
-      "United States of America",
-    ],
+    matches: ["United States", "USA", "US", "U.S.", "U.S.A.", "U.S", "U.S.A", "United States of America"],
     hasStates: true,
     usesMiddleNames: true,
   },
@@ -168,11 +154,7 @@ const CountyData = {
     },
     {
       stdName: "London & Middlesex",
-      matches: [
-        "London & Middlesex",
-        "London and Middlesex",
-        "London, Middlesex",
-      ],
+      matches: ["London & Middlesex", "London and Middlesex", "London, Middlesex"],
     },
     {
       stdName: "London & Surrey",
@@ -252,25 +234,12 @@ const CountyData = {
     { stdName: "Forfarshire", matches: ["Forfarshire", "Forfar"] },
     {
       stdName: "Inverness-shire",
-      matches: [
-        "Inverness-shire",
-        "Invernesshire",
-        "Invernessshire",
-        ,
-        "Inverneshire",
-        "Inverness",
-      ],
+      matches: ["Inverness-shire", "Invernesshire", "Invernessshire", , "Inverneshire", "Inverness"],
     },
     { stdName: "Kincardineshire", matches: ["Kincardineshire", "Kincardine"] },
     {
       stdName: "Kinross-shire",
-      matches: [
-        "Kinross-shire",
-        "Kinrossshire",
-        "Kinrosshire",
-        "Kinroshire",
-        "Kinross",
-      ],
+      matches: ["Kinross-shire", "Kinrossshire", "Kinrosshire", "Kinroshire", "Kinross"],
     },
     {
       stdName: "Kirkcudbrightshire",
@@ -335,10 +304,7 @@ const CD = {
         }
         let ending = ", " + match;
         if (placeName.endsWith(ending)) {
-          let remainder = placeName.substring(
-            0,
-            placeName.length - ending.length
-          );
+          let remainder = placeName.substring(0, placeName.length - ending.length);
           return { country: country, remainder: remainder };
         }
       }

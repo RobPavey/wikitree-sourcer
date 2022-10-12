@@ -95,12 +95,7 @@ class FmpUriBuilder {
   }
 
   addSearchParameter(parameter, value) {
-    if (
-      parameter == undefined ||
-      parameter == "" ||
-      value == undefined ||
-      value == ""
-    ) {
+    if (parameter == undefined || parameter == "" || value == undefined || value == "") {
       return;
     }
 
@@ -122,10 +117,7 @@ class FmpUriBuilder {
     if (name != undefined && name != "") {
       name = name.trim().replace(/\s+/g, "+");
 
-      this.addSearchParameter(
-        title,
-        WTS_String.removeExtendedAsciiCharacters(name)
-      );
+      this.addSearchParameter(title, WTS_String.removeExtendedAsciiCharacters(name));
 
       if (nameVariants) {
         this.addSearchParameter(title + "_variants", "true");
@@ -143,10 +135,7 @@ class FmpUriBuilder {
   addPlace(title, location, proximity = 5) {
     if (location != undefined && location != "") {
       let string = location;
-      this.addSearchParameter(
-        title,
-        WTS_String.removeExtendedAsciiCharacters(string)
-      );
+      this.addSearchParameter(title, WTS_String.removeExtendedAsciiCharacters(string));
 
       this.addSearchParameter(title + "_proximity", proximity);
     }
@@ -154,11 +143,7 @@ class FmpUriBuilder {
 
   addPersonName(forenames, lastName) {
     this.addName("firstname", forenames);
-    this.addName(
-      "lastname",
-      lastName,
-      this.options.search_fmp_lastNameVariants
-    );
+    this.addName("lastname", lastName, this.options.search_fmp_lastNameVariants);
   }
 
   addEventPlace(place) {
@@ -234,10 +219,7 @@ class FmpUriBuilder {
   }
 
   addMaritalStatus(status) {
-    let queryName = this.getSearchQueryNameFromCollection(
-      "maritalStatus",
-      "condition"
-    );
+    let queryName = this.getSearchQueryNameFromCollection("maritalStatus", "condition");
     this.addSearchParameter(queryName, status);
   }
 

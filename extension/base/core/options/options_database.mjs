@@ -34,8 +34,7 @@ function getDefaultOptions() {
   defaultOptions.options_version = 5;
 
   for (let optionsGroup of optionsRegistry.optionsGroups) {
-    let optionNamePrefix =
-      optionsGroup.category + "_" + optionsGroup.subcategory + "_";
+    let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
     for (let option of optionsGroup.options) {
       let fullOptionName = optionNamePrefix + option.optionName;
@@ -54,8 +53,7 @@ function getUnitTestOptions() {
   unitTestOptions.options_version = 5;
 
   for (let optionsGroup of optionsRegistry.optionsGroups) {
-    let optionNamePrefix =
-      optionsGroup.category + "_" + optionsGroup.subcategory + "_";
+    let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
     for (let option of optionsGroup.options) {
       let fullOptionName = optionNamePrefix + option.optionName;

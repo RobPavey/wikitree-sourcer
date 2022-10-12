@@ -94,11 +94,7 @@ function createCitationUrl(data, gd, options) {
   if (year) {
     if (scotpRecordType == "census" || scotpRecordType == "valuation_rolls") {
       builder.addYear(year);
-    } else if (
-      scotpRecordType == "census_lds" ||
-      scotpRecordType == "military_tribunals" ||
-      scotpRecordType == "hie"
-    ) {
+    } else if (scotpRecordType == "census_lds" || scotpRecordType == "military_tribunals" || scotpRecordType == "hie") {
       // no date for these record types (it is part of standard text for census_lds)
     } else {
       builder.addStartYear(year);
@@ -108,10 +104,7 @@ function createCitationUrl(data, gd, options) {
 
   // Gender
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.gender)) {
-    let genderKey = ScotpRecordType.getRecordKey(
-      scotpRecordType,
-      SpField.gender
-    );
+    let genderKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.gender);
     if (genderKey) {
       let gender = data.recordData[genderKey];
       if (gender) {
@@ -122,10 +115,7 @@ function createCitationUrl(data, gd, options) {
 
   // Parents
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.parents)) {
-    let parentsKey = ScotpRecordType.getRecordKey(
-      scotpRecordType,
-      SpField.parents
-    );
+    let parentsKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.parents);
     if (parentsKey) {
       let parents = data.recordData[parentsKey];
       if (parents) {
@@ -196,28 +186,19 @@ function createCitationUrl(data, gd, options) {
     // works correctly with the exact search. e.g.: In a OPR marriage the "Spouse Name" fields can contain:
     // JACOBINA CAMPBELL/URQUHART FR5344 (FR5344)
 
-    let surnameKey = ScotpRecordType.getRecordKey(
-      scotpRecordType,
-      SpField.spouseSurname
-    );
+    let surnameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.spouseSurname);
     if (surnameKey) {
       let surname = data.recordData[surnameKey];
       builder.addSpouseSurname(surname, "exact");
     }
 
-    let forenameKey = ScotpRecordType.getRecordKey(
-      scotpRecordType,
-      SpField.spouseForename
-    );
+    let forenameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.spouseForename);
     if (forenameKey) {
       let forename = data.recordData[forenameKey];
       builder.addSpouseForename(forename, "exact");
     }
 
-    let fullNameKey = ScotpRecordType.getRecordKey(
-      scotpRecordType,
-      SpField.spouseFullName
-    );
+    let fullNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.spouseFullName);
     if (fullNameKey) {
       let fullName = data.recordData[fullNameKey];
       builder.addSpouseFullName(fullName, "exact");
@@ -249,10 +230,7 @@ function createCitationUrl(data, gd, options) {
 
   // County
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.county)) {
-    let countySearchParam = ScotpRecordType.getSearchParam(
-      scotpRecordType,
-      SpField.county
-    );
+    let countySearchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.county);
     if (countySearchParam) {
       let userCounty = data.urlQuery[countySearchParam];
       if (userCounty) {
@@ -261,10 +239,7 @@ function createCitationUrl(data, gd, options) {
         builder.addSearchParameter(countySearchParam, userCounty);
       } else {
         // some record types do have the County or County/City in the search results
-        let countyKey = ScotpRecordType.getRecordKey(
-          scotpRecordType,
-          SpField.county
-        );
+        let countyKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.county);
         if (countyKey) {
           let county = data.recordData[countyKey];
           if (county) {
@@ -276,14 +251,8 @@ function createCitationUrl(data, gd, options) {
   }
 
   // Registration district
-  if (
-    !isShort &&
-    ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rd)
-  ) {
-    let rdNameKey = ScotpRecordType.getRecordKey(
-      scotpRecordType,
-      SpField.rdName
-    );
+  if (!isShort && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rd)) {
+    let rdNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.rdName);
     if (rdNameKey) {
       let rdNameValue = data.recordData[rdNameKey];
       if (rdNameValue) {
@@ -293,14 +262,8 @@ function createCitationUrl(data, gd, options) {
   }
 
   // OPR parish
-  if (
-    !isShort &&
-    ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.oprParish)
-  ) {
-    let parishNameKey = ScotpRecordType.getRecordKey(
-      scotpRecordType,
-      SpField.parishName
-    );
+  if (!isShort && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.oprParish)) {
+    let parishNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.parishName);
     if (parishNameKey) {
       let parishNameValue = data.recordData[parishNameKey];
       if (parishNameValue) {
@@ -310,14 +273,8 @@ function createCitationUrl(data, gd, options) {
   }
 
   // Catholic parish
-  if (
-    !isShort &&
-    ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rcParish)
-  ) {
-    let parishNameKey = ScotpRecordType.getRecordKey(
-      scotpRecordType,
-      SpField.parishName
-    );
+  if (!isShort && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rcParish)) {
+    let parishNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.parishName);
     if (parishNameKey) {
       let parishNameValue = data.recordData[parishNameKey];
       if (parishNameValue) {
@@ -327,14 +284,8 @@ function createCitationUrl(data, gd, options) {
   }
 
   // Other church parish
-  if (
-    !isShort &&
-    ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.otherParish)
-  ) {
-    let parishNameKey = ScotpRecordType.getRecordKey(
-      scotpRecordType,
-      SpField.parishName
-    );
+  if (!isShort && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.otherParish)) {
+    let parishNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.parishName);
     if (parishNameKey) {
       let parishNameValue = data.recordData[parishNameKey];
       if (parishNameValue) {
@@ -344,15 +295,9 @@ function createCitationUrl(data, gd, options) {
   }
 
   // Court/Tribunal
-  if (
-    !isShort &&
-    ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.court)
-  ) {
+  if (!isShort && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.court)) {
     if (scotpRecordType == "wills_testaments") {
-      let courtNameKey = ScotpRecordType.getRecordKey(
-        scotpRecordType,
-        SpField.courtName
-      );
+      let courtNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.courtName);
       if (courtNameKey) {
         let courtNameValue = data.recordData[courtNameKey];
         if (courtNameValue) {
@@ -361,10 +306,7 @@ function createCitationUrl(data, gd, options) {
             courtNameValue += " ";
           }
 
-          let courtNameParam = ScotpRecordType.getSearchParam(
-            scotpRecordType,
-            SpField.courtName
-          );
+          let courtNameParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.courtName);
           builder.addSearchArrayParameter(courtNameParam, courtNameValue);
         }
       }
@@ -404,15 +346,9 @@ function buildCitationUrl(data, gd, options) {
     let url = data.url;
     if (data.numResultsOnPage > 1 && options.citation_scotp_urlIncludeRef) {
       let scotpRecordType = getRecordType(data);
-      let searchParam = ScotpRecordType.getSearchParam(
-        scotpRecordType,
-        SpField.ref
-      );
+      let searchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.ref);
       if (searchParam) {
-        let recordKey = ScotpRecordType.getRecordKey(
-          scotpRecordType,
-          SpField.ref
-        );
+        let recordKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.ref);
         if (recordKey) {
           let recordValue = data.recordData[recordKey];
           if (recordValue) {
@@ -519,12 +455,7 @@ function buildDataString(data, gd, dataStyle, builder) {
 
   if (dataStyle == "string") {
     if (gd.recordType == RT.ValuationRoll) {
-      let dataString = buildValuationRollDataString(
-        data,
-        gd,
-        dataStyle,
-        builder
-      );
+      let dataString = buildValuationRollDataString(data, gd, dataStyle, builder);
       if (dataString) {
         return dataString;
       }
@@ -550,10 +481,7 @@ function buildDataString(data, gd, dataStyle, builder) {
     return dataString;
   }
 
-  dataString = builder.buildDataList(
-    recordData,
-    removeUnwantedKeysForDataString
-  );
+  dataString = builder.buildDataList(recordData, removeUnwantedKeysForDataString);
 
   return dataString;
 }
@@ -651,9 +579,7 @@ function buildSourceReference(data, gd, options) {
   if (options.citation_general_sourceReferenceSeparator == "commaColon") {
     itemSep = ",";
     valueSep = ":";
-  } else if (
-    options.citation_general_sourceReferenceSeparator == "commaSpace"
-  ) {
+  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
     itemSep = ",";
     valueSep = "";
   }
@@ -721,8 +647,7 @@ function buildSourceTitle(data, options) {
 
     case "opr_marriages":
       // NRS includes "Proclamation of Banns" but Scotland Project uses this
-      sourceTitle =
-        "Church of Scotland: Old Parish Registers - Banns and Marriages";
+      sourceTitle = "Church of Scotland: Old Parish Registers - Banns and Marriages";
       break;
 
     case "census":

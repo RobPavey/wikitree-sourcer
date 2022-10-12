@@ -22,15 +22,7 @@
   "maritalStatus": "married",
   "personGender": "male",
   "occupation": "Sawyer",
-  "householdArrayFields": [
-    "name",
-    "relationship",
-    "maritalStatus",
-    "gender",
-    "age",
-    "occupation",
-    "birthPlace"
-  ],
+  "householdArrayFields": ["name", "relationship", "maritalStatus", "gender", "age", "occupation", "birthPlace"],
   "householdArray": [
     {
       "name": "William Pavey",

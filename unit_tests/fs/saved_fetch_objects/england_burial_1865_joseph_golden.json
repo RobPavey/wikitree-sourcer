@@ -1,436 +1,584 @@
 {
-  "id" : "r_105160068515",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7?seek=next"
+  "id": "r_105160068515",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7"
     }
   },
-  "description" : "#sd_p_103450621732",
-  "persons" : [ {
-    "id" : "p_103450621732",
-    "extracted" : true,
-    "principal" : true,
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QLYW-5F4G?flag=fsh"
+  "description": "#sd_p_103450621732",
+  "persons": [
+    {
+      "id": "p_103450621732",
+      "extracted": true,
+      "principal": true,
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QLYW-5F4G?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/Q54J-4ZJ7?flag=fsh"
+        }
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/Q54J-4ZJ7?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QLYW-5F4G" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Joseph Golden",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Joseph",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "Joseph"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Joseph"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Golden",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "Golden"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Golden"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "Joseph Golden"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Joseph Golden"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Burial",
-      "date" : {
-        "original" : "21 Jul 1865",
-        "formal" : "+1865-07-21",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "1865"
-          }, {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QLYW-5F4G"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Joseph Golden",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Joseph",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "Joseph"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Joseph"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Golden",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Golden"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Golden"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "Joseph Golden"
+                    },
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Joseph Golden"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Burial",
+          "date": {
+            "original": "21 Jul 1865",
+            "formal": "+1865-07-21",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "1865"
+                  },
+                  {
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                      },
+                      "modified": 1507217203370
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "21 Jul 1865",
+                    "resource": "+1865-07-21"
+                  }
+                ]
               },
-              "modified" : 1507217203370
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_YEAR_ORIG",
+                    "text": "1865"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1865"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Minstead, Hampshire, England, United Kingdom",
+            "description": "#place_2972272",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "confidence": "http://confidence/68",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Minstead, Hampshire, England, United Kingdom",
+                    "resource": "https://www.familysearch.org/platform/places/description/2972272",
+                    "qualifiers": [
+                      {
+                        "value": "1015;1020;1011;1010;1013",
+                        "name": "StdQualifier"
+                      },
+                      {
+                        "value": "Minstead, Hampshire, England, Parish Church of Minstead, Minstead, Hampshire, England",
+                        "name": "Context"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Burial"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "1829",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_YEAR_EST",
+                    "text": "1829"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_ORIG",
+              "text": "36"
             },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "21 Jul 1865",
-            "resource" : "+1865-07-21"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_YEAR_ORIG",
-            "text" : "1865"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1865"
-          } ]
-        } ]
-      },
-      "place" : {
-        "original" : "Minstead, Hampshire, England, United Kingdom",
-        "description" : "#place_2972272",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "confidence" : "http://confidence/68",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Minstead, Hampshire, England, United Kingdom",
-            "resource" : "https://www.familysearch.org/platform/places/description/2972272",
-            "qualifiers" : [ {
-              "value" : "1015;1020;1011;1010;1013",
-              "name" : "StdQualifier"
-            }, {
-              "value" : "Minstead, Hampshire, England, Parish Church of Minstead, Minstead, Hampshire, England",
-              "name" : "Context"
-            } ]
-          } ]
-        } ]
-      },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Burial"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "1829",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_YEAR_EST",
-            "text" : "1829"
-          } ]
-        } ]
+            {
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "36"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_2640059",
+      "about": "https://api.familysearch.org/platform/records/collections/2640059",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1507217024355,
+      "modified": 1629530446845,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Hampshire, England",
+            "description": "#place_1986340-1927904"
+          },
+          "temporal": {
+            "original": "1680/1892",
+            "formal": "1680/1892"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "England, Hampshire Bishop's Transcripts 1680-1892"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/2640059"]
       }
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_ORIG",
-        "text" : "36"
-      }, {
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_AGE",
-        "text" : "36"
-      } ]
-    } ]
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_2640059",
-    "about" : "https://api.familysearch.org/platform/records/collections/2640059",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1507217024355,
-    "modified" : 1629530446845,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Hampshire, England",
-        "description" : "#place_1986340-1927904"
+    },
+    {
+      "id": "src_r_105160068515",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7",
+      "componentOf": {
+        "description": "#sd_c_2640059"
       },
-      "temporal" : {
-        "original" : "1680/1892",
-        "formal" : "1680/1892"
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1507217203382,
+      "modified": 1629530446845,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Minstead, Hampshire, England, United Kingdom"
+          },
+          "temporal": {
+            "original": "21 Jul 1865"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"England, Hampshire Bishop's Transcripts 1680-1892,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:Q54J-4ZJ7 : 16 March 2018), Entry for Joseph Golden, 21 Jul 1865; citing Burial, Minstead, Hampshire, England, United Kingdom, Lancashire Record Office and Hampshire Record Office, United Kingdom."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Joseph Golden, \"England, Hampshire Bishop's Transcripts 1680-1892\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/14049880976"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7"]
       },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "England, Hampshire Bishop's Transcripts 1680-1892"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2640059" ]
-    }
-  }, {
-    "id" : "src_r_105160068515",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7",
-    "componentOf" : {
-      "description" : "#sd_c_2640059"
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2640059?arkName=1:2:Q54J-4ZJ7"
+      }
     },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1507217203382,
-    "modified" : 1629530446845,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Minstead, Hampshire, England, United Kingdom"
+    {
+      "id": "sd_p_103450621732",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QLYW-5F4G",
+      "componentOf": {
+        "description": "#src_r_105160068515"
       },
-      "temporal" : {
-        "original" : "21 Jul 1865"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England, Hampshire Bishop's Transcripts 1680-1892,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QLYW-5F4G : 16 March 2018), Joseph Golden, 21 Jul 1865; citing Burial, Minstead, Hampshire, England, United Kingdom, Lancashire Record Office and Hampshire Record Office, United Kingdom."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Joseph Golden, \"England, Hampshire Bishop's Transcripts 1680-1892\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QLYW-5F4G"]
+      }
+    },
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9ZW-BHCK?cc=2640059",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
       },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "citations" : [ {
-      "value" : "\"England, Hampshire Bishop's Transcripts 1680-1892,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:Q54J-4ZJ7 : 16 March 2018), Entry for Joseph Golden, 21 Jul 1865; citing Burial, Minstead, Hampshire, England, United Kingdom, Lancashire Record Office and Hampshire Record Office, United Kingdom."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for Joseph Golden, \"England, Hampshire Bishop's Transcripts 1680-1892\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/14049880976" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:Q54J-4ZJ7" ]
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9ZW-BHCK?cc=2640059"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2640059?arkName=3:1:3QSQ-G9ZW-BHCK"
+      }
+    }
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "place": {
+        "resource": "https://www.familysearch.org/platform/places/description/2972272",
+        "resourceId": "place_2972272"
+      }
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2640059?arkName=1:2:Q54J-4ZJ7"
+    {
+      "id": "place_1986340-1927904",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1927904?context=1986340"]
+      }
     }
-  }, {
-    "id" : "sd_p_103450621732",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QLYW-5F4G",
-    "componentOf" : {
-      "description" : "#src_r_105160068515"
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/Id",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "ID",
+          "text": "651505"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"England, Hampshire Bishop's Transcripts 1680-1892,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QLYW-5F4G : 16 March 2018), Joseph Golden, 21 Jul 1865; citing Burial, Minstead, Hampshire, England, United Kingdom, Lancashire Record Office and Hampshire Record Office, United Kingdom."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Joseph Golden, \"England, Hampshire Bishop's Transcripts 1680-1892\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QLYW-5F4G" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9ZW-BHCK?cc=2640059",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
+    {
+      "type": "http://familysearch.org/types/fields/BatchLocality",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_BATCH_LOCALITY",
+          "text": "Hampshire, England"
+        }
+      ]
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9ZW-BHCK?cc=2640059" ]
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "2640059"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2640059?arkName=3:1:3QSQ-G9ZW-BHCK"
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DIGITAL_FILM_NBR",
+          "text": "007455885"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_FILM_NBR",
+          "text": "001596211"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_ID",
+          "text": "007455885_00090"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_NBR",
+          "text": "00090"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PPQ_ID",
+          "text": "15-0938"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "15-0938; 2017-10-04T09:18:45-0600; cartertp; 1935; CB; England, Hampshire Bishop's Transcripts 1680-1892 - FSI"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_ID",
+          "text": "007455885_00090_4"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/TravelerTitle",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_TRAVELER_TITLE",
+          "text": "England, Hampshire Bishop's Transcripts 1680-1892 - FSI"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UniqueId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UNIQUE_ID",
+          "text": "14049880976"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceSup",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_SUP",
+          "text": "Minstead,Hampshire,England, Parish Church of Minstead, Minstead, Hampshire, England"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceYearRange",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_YEAR_RANGE",
+          "text": "1781-1867"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "0000000007455885_00090_00004_0000105160068515"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageApid",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_APID",
+          "text": "TH-1942-36208-7489-64"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageArk",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "IMAGE_ARK",
+          "text": "https://familysearch.org/ark:/61903/3:1:3QSQ-G9ZW-BHCK"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "3"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "43305"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
     }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
-    }
-  } ],
-  "places" : [ {
-    "place" : {
-      "resource" : "https://www.familysearch.org/platform/places/description/2972272",
-      "resourceId" : "place_2972272"
-    }
-  }, {
-    "id" : "place_1986340-1927904",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1927904?context=1986340" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/Id",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "ID",
-      "text" : "651505"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchLocality",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_BATCH_LOCALITY",
-      "text" : "Hampshire, England"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "2640059"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DIGITAL_FILM_NBR",
-      "text" : "007455885"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_FILM_NBR",
-      "text" : "001596211"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_ID",
-      "text" : "007455885_00090"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_NBR",
-      "text" : "00090"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PPQ_ID",
-      "text" : "15-0938"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_GROUP",
-      "text" : "15-0938; 2017-10-04T09:18:45-0600; cartertp; 1935; CB; England, Hampshire Bishop's Transcripts 1680-1892 - FSI"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_ID",
-      "text" : "007455885_00090_4"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/TravelerTitle",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_TRAVELER_TITLE",
-      "text" : "England, Hampshire Bishop's Transcripts 1680-1892 - FSI"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UniqueId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UNIQUE_ID",
-      "text" : "14049880976"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceSup",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_SUP",
-      "text" : "Minstead,Hampshire,England, Parish Church of Minstead, Minstead, Hampshire, England"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceYearRange",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_YEAR_RANGE",
-      "text" : "1781-1867"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "0000000007455885_00090_00004_0000105160068515"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageApid",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_APID",
-      "text" : "TH-1942-36208-7489-64"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageArk",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "IMAGE_ARK",
-      "text" : "https://familysearch.org/ark:/61903/3:1:3QSQ-G9ZW-BHCK"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "3"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "43305"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ]
+  ]
 }

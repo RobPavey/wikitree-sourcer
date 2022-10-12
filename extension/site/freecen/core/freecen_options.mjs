@@ -51,8 +51,7 @@ const searchOptionsGroup = {
     {
       optionName: "birthYearRangeDefault",
       type: "select",
-      label:
-        "Search range to use for birth year (when not searching same collection)",
+      label: "Search range to use for birth year (when not searching same collection)",
       values: [
         { value: "none", text: "Do not specify a birth year" },
         { value: "auto", text: "Set automatically based on source" },
@@ -66,8 +65,7 @@ const searchOptionsGroup = {
     {
       optionName: "birthYearRangeSameCollection",
       type: "select",
-      label:
-        "Search range to use for birth year (when searching same collection)",
+      label: "Search range to use for birth year (when searching same collection)",
       values: [
         { value: "none", text: "Do not specify a birth year" },
         { value: "auto", text: "Set automatically based on source" },
@@ -118,8 +116,7 @@ const citationOptionsGroup = {
     {
       optionName: "includeNationalArchivesLink",
       type: "checkbox",
-      label:
-        "Include a link to to the National Archives page for the census if known",
+      label: "Include a link to to the National Archives page for the census if known",
       defaultValue: true,
     },
   ],
@@ -127,12 +124,7 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "freecen", "FreeCen (UK)");
 registerSiteSearchPopupOptionsGroup("freecen", 6, 6);
-registerSubheadingForOptions(
-  "search",
-  "freecen",
-  "parameters",
-  "Search Parameters"
-);
+registerSubheadingForOptions("search", "freecen", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "freecen", "FreeCen (UK)");

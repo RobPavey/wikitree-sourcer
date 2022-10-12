@@ -23,11 +23,7 @@ SOFTWARE.
 */
 
 import { FmpUriBuilder } from "./fmp_uri_builder.mjs";
-import {
-  GeneralizedData,
-  GD,
-  dateQualifiers,
-} from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 import { FmpData } from "./fmp_data.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
@@ -213,10 +209,7 @@ function buildSearchUrl(buildUrlInput) {
   builder.addGender(data.personGender);
 
   let hasAnyName = false;
-  let lastName = data.inferLastNameGivenParametersAndCollection(
-    parameters,
-    collection
-  );
+  let lastName = data.inferLastNameGivenParametersAndCollection(parameters, collection);
   if (lastName) {
     hasAnyName = true;
   }
@@ -329,10 +322,7 @@ function buildSearchUrl(buildUrlInput) {
     if (data.spouses && data.spouses.length > 0) {
       let spouse = undefined;
       if (parameters) {
-        if (
-          parameters.spouseIndex != -1 &&
-          parameters.spouseIndex < data.spouses.length
-        ) {
+        if (parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
           spouse = data.spouses[parameters.spouseIndex];
         }
       } else {
@@ -355,11 +345,7 @@ function buildSearchUrl(buildUrlInput) {
             }
           }
 
-          if (
-            parameters &&
-            (parameters.category == "census,+land+&+surveys" ||
-              parameters.subCategory == "census")
-          ) {
+          if (parameters && (parameters.category == "census,+land+&+surveys" || parameters.subCategory == "census")) {
             // for a census the spouse will have the same name as the main person
             builder.addOtherPerson(spouseForeNames, lastName);
           } else {
@@ -397,11 +383,7 @@ function buildSearchUrl(buildUrlInput) {
 
     // certain census searches include birth county
     if (collection.title.toLowerCase().includes("census")) {
-      if (
-        collection.country == "United Kingdom" ||
-        collection.country == "England" ||
-        collection.country == "Wales"
-      ) {
+      if (collection.country == "United Kingdom" || collection.country == "England" || collection.country == "Wales") {
         builder.addBirthCounty(data.inferBirthCounty());
       }
     }

@@ -44,10 +44,7 @@ function getTextOfImmediateTextNodes(element) {
   return text;
 }
 
-function convertTableToObjectPropertiesInVariant(
-  censusTableNode,
-  censusTableObject
-) {
+function convertTableToObjectPropertiesInVariant(censusTableNode, censusTableObject) {
   let rowNodes = censusTableNode.querySelectorAll("tbody > tr");
 
   if (!rowNodes || rowNodes.length == 0) return false;
@@ -78,10 +75,7 @@ function convertTableToObjectProperties(censusTableNode, censusTableObject) {
   // it could be a different layout where there is no heading row and the field names
   // are in the left column
   if (censusHeaderNodes.length == 0) {
-    return convertTableToObjectPropertiesInVariant(
-      censusTableNode,
-      censusTableObject
-    );
+    return convertTableToObjectPropertiesInVariant(censusTableNode, censusTableObject);
   }
 
   let censusBodyNodes = censusTableNode.querySelectorAll("tbody > tr > td");
@@ -104,10 +98,7 @@ function setSelectedFromUrl(url, householdMembers) {
   // https://www.freecen.org.uk/search_records/616ee428f493fda018407a1b
   // https://www.freecen.org.uk/search_records/616ee428f493fda018407a1b/ann-gadsby-1891-lincolnshire-grantham-1882-?locale=en
   // If it is the latter we can work out who the selected person should be.
-  let urlExtraData = url.replace(
-    /https\:\/\/www.freecen.org.uk\/search_records\/[^\/]+\/(.*)$/,
-    "$1"
-  );
+  let urlExtraData = url.replace(/https\:\/\/www.freecen.org.uk\/search_records\/[^\/]+\/(.*)$/, "$1");
   if (urlExtraData && urlExtraData != url) {
     //console.log("urlExtraData is: " + urlExtraData);
     // found the extra data that could identify the person.
@@ -124,10 +115,7 @@ function setSelectedFromUrl(url, householdMembers) {
     // So the only useful parts to ID the person are the forename and surname plus the birth date.
     let namePart = personString.replace(/([a-z\-]+)\-\d+\-.*$/, "$1");
     let censusDate = personString.replace(/[a-z\-]+\-(\d+)\-.*$/, "$1");
-    let birthDate = personString.replace(
-      /[a-z\-]+\-\d+\-[a-z\-]+\-(\d+)\-.*$/,
-      "$1"
-    );
+    let birthDate = personString.replace(/[a-z\-]+\-\d+\-[a-z\-]+\-(\d+)\-.*$/, "$1");
     if (
       namePart &&
       namePart != personString &&
@@ -188,9 +176,7 @@ function extractData(document, url) {
 
   result.success = false;
 
-  const tables = document.querySelectorAll(
-    "main.site__content table.table--bordered"
-  );
+  const tables = document.querySelectorAll("main.site__content table.table--bordered");
 
   // we expect 2 tables in most censuses, one for census details and one for household
   // but in 1911 there are three
@@ -218,17 +204,13 @@ function extractData(document, url) {
   // build a simple object from first table
   let censusTableObject = {};
   if (!convertTableToObjectProperties(censusTableNode, censusTableObject)) {
-    console.log(
-      "freecen: extractData: convertTableToObjectProperties on censusTableNode failed"
-    );
+    console.log("freecen: extractData: convertTableToObjectProperties on censusTableNode failed");
     return result;
   }
 
   if (censusTableNode2) {
     if (!convertTableToObjectProperties(censusTableNode2, censusTableObject)) {
-      console.log(
-        "freecen: extractData: convertTableToObjectProperties on censusTableNode2 failed"
-      );
+      console.log("freecen: extractData: convertTableToObjectProperties on censusTableNode2 failed");
       return result;
     }
   }
@@ -237,12 +219,10 @@ function extractData(document, url) {
 
   result.censusDetails = censusTableObject;
 
-  let householdHeaderNodes =
-    houseHoldTableNode.querySelectorAll("thead > tr > th");
+  let householdHeaderNodes = houseHoldTableNode.querySelectorAll("thead > tr > th");
   // in 1911 census there are td's in the thead
   if (householdHeaderNodes.length == 0) {
-    householdHeaderNodes =
-      houseHoldTableNode.querySelectorAll("thead > tr > td");
+    householdHeaderNodes = houseHoldTableNode.querySelectorAll("thead > tr > td");
   }
 
   //console.log("freecen: extractData: householdHeaderNodes.length is: " + householdHeaderNodes.length);

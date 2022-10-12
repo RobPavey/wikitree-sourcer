@@ -158,9 +158,7 @@ function buildSourceReference(data, options) {
   if (options.citation_general_sourceReferenceSeparator == "commaColon") {
     itemSep = ",";
     valueSep = ":";
-  } else if (
-    options.citation_general_sourceReferenceSeparator == "commaSpace"
-  ) {
+  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
     itemSep = ",";
     valueSep = "";
   }
@@ -224,10 +222,7 @@ function getRecordLink(data) {
   const searchRecordsText = "/search_records/";
   const searchRecordsIndex = url.indexOf(searchRecordsText);
   if (searchRecordsIndex != -1) {
-    let nextSlashIndex = url.indexOf(
-      "/",
-      searchRecordsIndex + searchRecordsText.length
-    );
+    let nextSlashIndex = url.indexOf("/", searchRecordsIndex + searchRecordsText.length);
     if (nextSlashIndex != -1) {
       newUrl = url.substring(0, nextSlashIndex);
     }

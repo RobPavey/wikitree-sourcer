@@ -26,46 +26,46 @@ import { buildSearchData } from "../../extension/site/freereg/core/freereg_build
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-    {
-      caseName: "dickens-1530_private",
-      inputPath: "wikitree/generalized_data/ref/dickens-1530_private",
-      typeOfSearch: "baptism",
-      optionVariants: [
-        {
-          variantName: "marriage", 
-          typeOfSearch: "marriage",
-        },
-        {
-          variantName: "burial", 
-          typeOfSearch: "burial",
-        },
-      ],
-    },
-    {
-      caseName: "ellacott-59_read",
-      inputPath: "wikitree/generalized_data/ref/ellacott-59_read",
-      typeOfSearch: "baptism",
-    },
-    {
-      caseName: "handford-3_read",
-      inputPath: "wikitree/generalized_data/ref/handford-3_read",
-      typeOfSearch: "baptism",
-    },
-    {
-      caseName: "littlemore-13_read",
-      inputPath: "wikitree/generalized_data/ref/littlemore-13_read",
-      typeOfSearch: "baptism",
-    },
-    {
-      caseName: "pavey-451_read",
-      inputPath: "wikitree/generalized_data/ref/pavey-451_read",
-      typeOfSearch: "baptism",
-    },
-    {
-      caseName: "pavey-507_private",
-      inputPath: "wikitree/generalized_data/ref/pavey-507_private",
-      typeOfSearch: "baptism",
-    },
+  {
+    caseName: "dickens-1530_private",
+    inputPath: "wikitree/generalized_data/ref/dickens-1530_private",
+    typeOfSearch: "baptism",
+    optionVariants: [
+      {
+        variantName: "marriage",
+        typeOfSearch: "marriage",
+      },
+      {
+        variantName: "burial",
+        typeOfSearch: "burial",
+      },
+    ],
+  },
+  {
+    caseName: "ellacott-59_read",
+    inputPath: "wikitree/generalized_data/ref/ellacott-59_read",
+    typeOfSearch: "baptism",
+  },
+  {
+    caseName: "handford-3_read",
+    inputPath: "wikitree/generalized_data/ref/handford-3_read",
+    typeOfSearch: "baptism",
+  },
+  {
+    caseName: "littlemore-13_read",
+    inputPath: "wikitree/generalized_data/ref/littlemore-13_read",
+    typeOfSearch: "baptism",
+  },
+  {
+    caseName: "pavey-451_read",
+    inputPath: "wikitree/generalized_data/ref/pavey-451_read",
+    typeOfSearch: "baptism",
+  },
+  {
+    caseName: "pavey-507_private",
+    inputPath: "wikitree/generalized_data/ref/pavey-507_private",
+    typeOfSearch: "baptism",
+  },
 ];
 
 async function runTests(testManager) {

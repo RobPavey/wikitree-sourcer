@@ -28,10 +28,9 @@ import { RT } from "../../../base/core/record_type.mjs";
 // This function generalizes the data extracted web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-
   let data = input.extractedData;
 
-  let result = new GeneralizedData;
+  let result = new GeneralizedData();
 
   result.sourceOfData = "examplesite";
 
@@ -44,17 +43,17 @@ function generalizeData(input) {
   result.sourceType = "record";
 
   switch (data.eventType) {
-  case "birth":
-    result.recordType = RT.BirthRegistration;
-    break;
-  case "marriage":
-    result.recordType = RT.MarriageRegistration;
-    break;
-  case "death":
-    result.recordType = RT.DeathRegistration;
-    break;
-  default:
-    return;
+    case "birth":
+      result.recordType = RT.BirthRegistration;
+      break;
+    case "marriage":
+      result.recordType = RT.MarriageRegistration;
+      break;
+    case "death":
+      result.recordType = RT.DeathRegistration;
+      break;
+    default:
+      return;
   }
 
   result.setEventYear(data.eventYear);
@@ -69,8 +68,7 @@ function generalizeData(input) {
     if (data.mother) {
       result.mothersMaidenName = data.mothersMaidenName;
     }
-  }
-  else if (data.eventType == "marriage") {
+  } else if (data.eventType == "marriage") {
     collectionId = "marriages";
 
     if (data.spouse) {
@@ -82,18 +80,16 @@ function generalizeData(input) {
         marriagePlace: data.district,
       };
 
-      result.spouses = [ spouse ];
+      result.spouses = [spouse];
     }
-  }
-  else if (data.eventType == "death") {
+  } else if (data.eventType == "death") {
     collectionId = "deaths";
     result.lastNameAtDeath = data.surname;
     result.deathDate = result.eventDate;
 
     if (data.ageAtDeath) {
       result.ageAtDeath = data.ageAtDeath;
-    }
-    else if (data.birthDate) {
+    } else if (data.birthDate) {
       result.setBirthDate(data.birthDate);
     }
   }

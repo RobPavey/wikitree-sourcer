@@ -1,709 +1,919 @@
 {
-  "id" : "r_22313556266",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT?seek=next"
+  "id": "r_22313556266",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT"
     }
   },
-  "description" : "#sd_p_14175374066",
-  "persons" : [ {
-    "id" : "p_14175374066",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "0dcb1950-074c-4d47-9bc3-b156da45301e",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Male"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/K6Z6-RVT?flag=fsh"
+  "description": "#sd_p_14175374066",
+  "persons": [
+    {
+      "id": "p_14175374066",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "0dcb1950-074c-4d47-9bc3-b156da45301e",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Male"
+              }
+            ]
+          }
+        ]
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/9MV4-VMHT?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K6Z6-RVT" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "John Smith",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "John",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "5fb6700a-9f52-48ff-9b82-bfc32f2c0a72",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "John"
-            }, {
-              "id" : "3af59dfc-ae59-4df2-a0c8-57305c6adc3b",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1566631228543
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "John"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Smith",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "5baefa4d-6c97-4f2a-8a2a-0b4ad29fd1db",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "Smith"
-            }, {
-              "id" : "40ca2f70-8b21-431e-95ab-5e4ec61057bf",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1566631228543
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Smith"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1566631228536
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "John Smith"
-          }, {
-            "id" : "2822e5b4-293b-42f1-9e47-cec642c1fb46",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1566631228543
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "John Smith"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/MilitaryDraftRegistration",
-      "date" : {
-        "original" : "1917-1918",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "id" : "b605a725-d3dc-4bd6-abb6-b891502d20d7",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "1917-1918"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "753eac48-3913-459a-aadb-4bde8da1aae4",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1917-1918"
-          } ]
-        } ]
-      },
-      "place" : {
-        "original" : "Surry, Virginia, United States",
-        "description" : "#place_395036",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "87a8193f-2bc9-48c2-996b-14b29945fe6d",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1566631228568
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "United States, Virginia, Surrey County"
-          }, {
-            "id" : "c6f7c734-231e-4416-88a0-9c2a021e5b46",
-            "confidence" : "http://confidence/96",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1566631228568
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Surry, Virginia, United States",
-            "resource" : "https://www.familysearch.org/platform/places/description/395036",
-            "qualifiers" : [ {
-              "value" : "1010, 1013",
-              "name" : "StdQualifier"
-            } ]
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/EventPlaceLevel1",
-          "values" : [ {
-            "id" : "99a5ad89-990e-4601-8a4c-498f5bcf2988",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_1_TYPE",
-            "text" : "COUNTRY",
-            "qualifiers" : [ {
-              "value" : "PLACE",
-              "name" : "http://familysearch.org/types/qualifiers/Info"
-            } ]
-          }, {
-            "id" : "af201c83-db02-4553-98f6-8acf3cea8d6d",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_LEVEL_1_ORIG",
-            "text" : "United States"
-          }, {
-            "id" : "d4e8e2ca-5cb4-4a24-a824-6d269bac0a2c",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_1",
-            "text" : "United States"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/EventPlaceLevel2",
-          "values" : [ {
-            "id" : "b8d3147a-3a88-4703-bd06-d649561bc237",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_2_TYPE",
-            "text" : "STATE",
-            "qualifiers" : [ {
-              "value" : "PLACE",
-              "name" : "http://familysearch.org/types/qualifiers/Info"
-            } ]
-          }, {
-            "id" : "4ccc6320-edfa-4f68-a313-af8108ef68ae",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_LEVEL_2_ORIG",
-            "text" : "Virginia"
-          }, {
-            "id" : "227bb208-3b13-4276-8616-ae7317bdf39d",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_2",
-            "text" : "Virginia"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/EventPlaceLevel3",
-          "values" : [ {
-            "id" : "ed813882-f38e-4dec-95bf-77ddbdc4f843",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_3_TYPE",
-            "text" : "CITY_COUNTY_LOCAL_DRAFT_BRD",
-            "qualifiers" : [ {
-              "value" : "PLACE",
-              "name" : "http://familysearch.org/types/qualifiers/Info"
-            } ]
-          }, {
-            "id" : "f9fbbe43-ee1e-4807-87ea-a089294477d0",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_LEVEL_3_ORIG",
-            "text" : "Surrey County"
-          }, {
-            "id" : "217d4a19-db3a-4d10-86eb-9aec5b2c54a4",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_3",
-            "text" : "Surrey County"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/State",
-          "values" : [ {
-            "id" : "2e82fae2-1721-4355-b16b-6ede57eff2a0",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_STATE",
-            "text" : "Virginia"
-          } ]
-        } ]
-      },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "id" : "0aff17ef-4cc2-453b-b9a2-35fb8cb7010f",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "EVENT_TYPE_ORIG",
-          "text" : "Draft Registration"
-        }, {
-          "id" : "631bcd95-6526-4c79-a17f-e116aabbeebc",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Draft Registration"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "22 Mar 1880",
-        "formal" : "+1880-03-22",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "id" : "de6b9c7f-5d6c-481c-bffb-7b2013703306",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_BIR_DATE_ORIG",
-            "text" : "22 Mar 1880"
-          }, {
-            "id" : "e80bca7b-3a03-4046-9083-b5f37002e116",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1566631228536
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_DATE",
-            "text" : "22 Mar 1880",
-            "resource" : "+1880-03-22"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Month",
-          "values" : [ {
-            "id" : "c3b99725-7ccc-4ec6-9700-9e0006b628e7",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1566631228536
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_MONTH",
-            "text" : "3"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Day",
-          "values" : [ {
-            "id" : "ddc68ea7-4943-47de-8daa-4625b9fa468d",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1566631228536
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_DAY",
-            "text" : "22"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "61184571-b362-4b46-98cf-5a53de487bc0",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_BIR_YEAR_ORIG",
-            "text" : "1880"
-          }, {
-            "id" : "c68131b7-55ca-4aa1-9e0c-0d01359e4b67",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1566631228536
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_YEAR",
-            "text" : "1880"
-          } ]
-        } ]
-      },
-      "place" : {
-        "original" : ", , United States",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "6fe3365b-6139-4f4d-8e60-aa0e3dfdfc0c",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_PLACE",
-            "text" : ", , United States"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Country",
-          "values" : [ {
-            "id" : "40810376-f0e7-40cc-8bf4-0c0b35cb9131",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_COUNTRY",
-            "text" : "United States"
-          } ]
-        } ]
-      }
-    }, {
-      "type" : "http://familysearch.org/types/facts/Citizenship",
-      "place" : {
-        "original" : "United States",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "2ab2b270-7fb9-4504-9082-784bb2625cb9",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_CITZN_PLACE",
-            "text" : "United States"
-          } ]
-        } ]
-      }
-    } ]
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_1968530",
-    "about" : "https://api.familysearch.org/platform/records/collections/1968530",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1382223769447,
-    "modified" : 1623345455671,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "United States",
-        "description" : "#place_1"
-      },
-      "temporal" : {
-        "original" : "1917/1918",
-        "formal" : "1917/1918"
-      },
-      "recordType" : "http://gedcomx.org/Military"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "United States World War I Draft Registration Cards, 1917-1918"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1968530" ]
-    }
-  }, {
-    "id" : "src_r_22313556266",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT",
-    "componentOf" : {
-      "description" : "#sd_c_1968530"
-    },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1566631228578,
-    "modified" : 1623345455671,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Surry, Virginia, United States, United States"
-      },
-      "temporal" : {
-        "original" : "1917/1918",
-        "formal" : "+1917/+1918"
-      },
-      "recordType" : "http://gedcomx.org/Military"
-    } ],
-    "citations" : [ {
-      "value" : "\"United States World War I Draft Registration Cards, 1917-1918\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT : 23 February 2021), Entry for John Smith, 1917-1918."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for John Smith, \"United States World War I Draft Registration Cards, 1917-1918\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1673840996" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1968530?arkName=1:2:9MV4-VMHT"
-    }
-  }, {
-    "id" : "sd_p_14175374066",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:K6Z6-RVT",
-    "componentOf" : {
-      "description" : "#src_r_22313556266"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"United States World War I Draft Registration Cards, 1917-1918\", database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:K6Z6-RVT : 23 February 2021), John Smith, 1917-1918."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "John Smith, \"United States World War I Draft Registration Cards, 1917-1918\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K6Z6-RVT" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:33SQ-GYBK-9SM6?cc=1968530",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
-    },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:33SQ-GYBK-9SM6?cc=1968530" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1968530?arkName=3:1:33SQ-GYBK-9SM6"
-    }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
-    }
-  } ],
-  "places" : [ {
-    "place" : {
-      "resource" : "https://www.familysearch.org/platform/places/description/395036",
-      "resourceId" : "place_395036"
-    }
-  }, {
-    "id" : "place_1",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/ExtPubNbr",
-    "values" : [ {
-      "id" : "b3b2422b-2ebc-4a09-8850-d41720a2ef6b",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_PUB_NBR",
-      "text" : "M1509"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ExtPubTitle",
-    "values" : [ {
-      "id" : "e53416f4-f058-4d01-9494-de6661dab66a",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_PUB_TITLE",
-      "text" : "World War I Selective Service System Draft Registration Cards"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchLocality",
-    "values" : [ {
-      "id" : "9917a0a0-be87-4ff8-afbb-cd035fc6fad2",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_BATCH_LOCALITY",
-      "text" : "United States"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "id" : "189722dd-045e-4fed-bc9c-48b2e6c40d40",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "1968530"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DasVerify",
-    "values" : [ {
-      "id" : "ac4f0c3b-eb91-4097-99c4-115cc0184cb8",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DAS_VERIFY",
-      "text" : "2013-03-24 00:00:00"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "id" : "0a3659b7-512d-4dfc-907e-5b429e6acb6a",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DIGITAL_FILM_NBR",
-      "text" : "005153914"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EasyImageId",
-    "values" : [ {
-      "id" : "80453839-f9d2-492d-8422-158dd69915b4",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_EASY_IMAGE_ID",
-      "text" : "005153914_02539"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FilmNumber",
-    "values" : [ {
-      "id" : "8bb2121c-b9c6-4bc7-9e80-41e4dca99d15",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_FILM_NBR",
-      "text" : "1991280"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/Folder",
-    "values" : [ {
-      "id" : "91b44f80-3737-4b11-9793-d95477d54f4e",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_FOLDER",
-      "text" : "005153914"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FolderImageSequence",
-    "values" : [ {
-      "id" : "729f2017-8886-4344-9387-eff3fb92ceeb",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_FOLDER_IMAGE_SEQ",
-      "text" : "2539"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageApid",
-    "values" : [ {
-      "id" : "c71e17bb-d499-4e46-b2be-edd7d9be6643",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_APID",
-      "text" : "TH-1942-25159-28813-46"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageId",
-    "values" : [ {
-      "id" : "6df7dd14-600c-40ed-97c3-0510ddaa6831",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_ID",
-      "text" : "/005153914/005153914_02539.jpg"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNumber",
-    "values" : [ {
-      "id" : "5afe9979-6a26-4213-9d92-b97454be23da",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_NBR",
-      "text" : "02539"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageArk",
-    "values" : [ {
-      "id" : "a69455b3-d4a2-4f6d-9e6e-d11b24ae24f8",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "IMAGE_ARK",
-      "text" : "https://familysearch.org/ark:/61903/3:1:33SQ-GYBK-9SM6"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "id" : "518e29eb-0fb0-4ca8-87b2-a9fd8b709239",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PPQ_ID",
-      "text" : "11-1229"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "id" : "7030b359-3a60-4c85-8253-ef1b3f87a224",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_GROUP",
-      "text" : "No Traveler; 2019-08-22T10:44:00-0600; gilberts; 5235; TB; work.cds_sg_1968530_dio484_batch21583_input; No Traveler"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordId",
-    "values" : [ {
-      "id" : "cdc4358c-334e-459b-901e-c3d810026540",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_ID",
-      "text" : "005153914_02539"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "id" : "b028c7b1-08f3-4b80-8f07-49e5e6b71e82",
-      "attribution" : {
-        "contributor" : {
-          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/K6Z6-RVT?flag=fsh"
         },
-        "modified" : 1566631228569
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/9MV4-VMHT?flag=fsh"
+        }
       },
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "0000000005153914_02539_00000_0000022313556266"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/TravelerTitle",
-    "values" : [ {
-      "id" : "b16553d9-8d27-41db-bc1f-ec6be8afd584",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_TRAVELER_TITLE",
-      "text" : "United States, World War One (WWI) Draft Registration Cards,1917-1918 Pt 1-FSI"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UniqueId",
-    "values" : [ {
-      "id" : "24dd96ca-a121-45b0-8a5f-6d9f4793a502",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UNIQUE_ID",
-      "text" : "1673840996"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsVisStatus",
-    "values" : [ {
-      "id" : "e5898591-6083-4b3d-8889-d87f80fcb886",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_VIS_STATUS",
-      "text" : "VISIBLE"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SourceDraftBoard",
-    "values" : [ {
-      "id" : "ad668d89-029a-42b5-ae33-8c17e97f3490",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "SOURCE_DRAFT_BOARD",
-      "text" : "Surrey County; A-Z"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "8"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "49618"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ],
-  "qualifiers" : [ {
-    "value" : "true",
-    "name" : "TreatmentWarnings"
-  } ]
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:K6Z6-RVT"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "John Smith",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "John",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "5fb6700a-9f52-48ff-9b82-bfc32f2c0a72",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "John"
+                        },
+                        {
+                          "id": "3af59dfc-ae59-4df2-a0c8-57305c6adc3b",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1566631228543
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "John"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Smith",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "5baefa4d-6c97-4f2a-8a2a-0b4ad29fd1db",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Smith"
+                        },
+                        {
+                          "id": "40ca2f70-8b21-431e-95ab-5e4ec61057bf",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1566631228543
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Smith"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1566631228536
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "John Smith"
+                    },
+                    {
+                      "id": "2822e5b4-293b-42f1-9e47-cec642c1fb46",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1566631228543
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "John Smith"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/MilitaryDraftRegistration",
+          "date": {
+            "original": "1917-1918",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "id": "b605a725-d3dc-4bd6-abb6-b891502d20d7",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "1917-1918"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "753eac48-3913-459a-aadb-4bde8da1aae4",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1917-1918"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Surry, Virginia, United States",
+            "description": "#place_395036",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "87a8193f-2bc9-48c2-996b-14b29945fe6d",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1566631228568
+                    },
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_ORIG",
+                    "text": "United States, Virginia, Surrey County"
+                  },
+                  {
+                    "id": "c6f7c734-231e-4416-88a0-9c2a021e5b46",
+                    "confidence": "http://confidence/96",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1566631228568
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Surry, Virginia, United States",
+                    "resource": "https://www.familysearch.org/platform/places/description/395036",
+                    "qualifiers": [
+                      {
+                        "value": "1010, 1013",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/EventPlaceLevel1",
+                "values": [
+                  {
+                    "id": "99a5ad89-990e-4601-8a4c-498f5bcf2988",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_1_TYPE",
+                    "text": "COUNTRY",
+                    "qualifiers": [
+                      {
+                        "value": "PLACE",
+                        "name": "http://familysearch.org/types/qualifiers/Info"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "af201c83-db02-4553-98f6-8acf3cea8d6d",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_LEVEL_1_ORIG",
+                    "text": "United States"
+                  },
+                  {
+                    "id": "d4e8e2ca-5cb4-4a24-a824-6d269bac0a2c",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_1",
+                    "text": "United States"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/EventPlaceLevel2",
+                "values": [
+                  {
+                    "id": "b8d3147a-3a88-4703-bd06-d649561bc237",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_2_TYPE",
+                    "text": "STATE",
+                    "qualifiers": [
+                      {
+                        "value": "PLACE",
+                        "name": "http://familysearch.org/types/qualifiers/Info"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "4ccc6320-edfa-4f68-a313-af8108ef68ae",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_LEVEL_2_ORIG",
+                    "text": "Virginia"
+                  },
+                  {
+                    "id": "227bb208-3b13-4276-8616-ae7317bdf39d",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_2",
+                    "text": "Virginia"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/EventPlaceLevel3",
+                "values": [
+                  {
+                    "id": "ed813882-f38e-4dec-95bf-77ddbdc4f843",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_3_TYPE",
+                    "text": "CITY_COUNTY_LOCAL_DRAFT_BRD",
+                    "qualifiers": [
+                      {
+                        "value": "PLACE",
+                        "name": "http://familysearch.org/types/qualifiers/Info"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "f9fbbe43-ee1e-4807-87ea-a089294477d0",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_LEVEL_3_ORIG",
+                    "text": "Surrey County"
+                  },
+                  {
+                    "id": "217d4a19-db3a-4d10-86eb-9aec5b2c54a4",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_3",
+                    "text": "Surrey County"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/State",
+                "values": [
+                  {
+                    "id": "2e82fae2-1721-4355-b16b-6ede57eff2a0",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_STATE",
+                    "text": "Virginia"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "id": "0aff17ef-4cc2-453b-b9a2-35fb8cb7010f",
+                  "type": "http://gedcomx.org/Original",
+                  "labelId": "EVENT_TYPE_ORIG",
+                  "text": "Draft Registration"
+                },
+                {
+                  "id": "631bcd95-6526-4c79-a17f-e116aabbeebc",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Draft Registration"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "22 Mar 1880",
+            "formal": "+1880-03-22",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "id": "de6b9c7f-5d6c-481c-bffb-7b2013703306",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_BIR_DATE_ORIG",
+                    "text": "22 Mar 1880"
+                  },
+                  {
+                    "id": "e80bca7b-3a03-4046-9083-b5f37002e116",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
+                      },
+                      "modified": 1566631228536
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_DATE",
+                    "text": "22 Mar 1880",
+                    "resource": "+1880-03-22"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Month",
+                "values": [
+                  {
+                    "id": "c3b99725-7ccc-4ec6-9700-9e0006b628e7",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
+                      },
+                      "modified": 1566631228536
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_MONTH",
+                    "text": "3"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Day",
+                "values": [
+                  {
+                    "id": "ddc68ea7-4943-47de-8daa-4625b9fa468d",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
+                      },
+                      "modified": 1566631228536
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_DAY",
+                    "text": "22"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "61184571-b362-4b46-98cf-5a53de487bc0",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_BIR_YEAR_ORIG",
+                    "text": "1880"
+                  },
+                  {
+                    "id": "c68131b7-55ca-4aa1-9e0c-0d01359e4b67",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
+                      },
+                      "modified": 1566631228536
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_YEAR",
+                    "text": "1880"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": ", , United States",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "6fe3365b-6139-4f4d-8e60-aa0e3dfdfc0c",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_PLACE",
+                    "text": ", , United States"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "id": "40810376-f0e7-40cc-8bf4-0c0b35cb9131",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_COUNTRY",
+                    "text": "United States"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "http://familysearch.org/types/facts/Citizenship",
+          "place": {
+            "original": "United States",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "2ab2b270-7fb9-4504-9082-784bb2625cb9",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_CITZN_PLACE",
+                    "text": "United States"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_1968530",
+      "about": "https://api.familysearch.org/platform/records/collections/1968530",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1382223769447,
+      "modified": 1623345455671,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "United States",
+            "description": "#place_1"
+          },
+          "temporal": {
+            "original": "1917/1918",
+            "formal": "1917/1918"
+          },
+          "recordType": "http://gedcomx.org/Military"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "United States World War I Draft Registration Cards, 1917-1918"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1968530"]
+      }
+    },
+    {
+      "id": "src_r_22313556266",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT",
+      "componentOf": {
+        "description": "#sd_c_1968530"
+      },
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1566631228578,
+      "modified": 1623345455671,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Surry, Virginia, United States, United States"
+          },
+          "temporal": {
+            "original": "1917/1918",
+            "formal": "+1917/+1918"
+          },
+          "recordType": "http://gedcomx.org/Military"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"United States World War I Draft Registration Cards, 1917-1918\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT : 23 February 2021), Entry for John Smith, 1917-1918."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for John Smith, \"United States World War I Draft Registration Cards, 1917-1918\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/1673840996"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:9MV4-VMHT"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1968530?arkName=1:2:9MV4-VMHT"
+      }
+    },
+    {
+      "id": "sd_p_14175374066",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:K6Z6-RVT",
+      "componentOf": {
+        "description": "#src_r_22313556266"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"United States World War I Draft Registration Cards, 1917-1918\", database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:K6Z6-RVT : 23 February 2021), John Smith, 1917-1918."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "John Smith, \"United States World War I Draft Registration Cards, 1917-1918\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:K6Z6-RVT"]
+      }
+    },
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/3:1:33SQ-GYBK-9SM6?cc=1968530",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:33SQ-GYBK-9SM6?cc=1968530"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1968530?arkName=3:1:33SQ-GYBK-9SM6"
+      }
+    }
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "place": {
+        "resource": "https://www.familysearch.org/platform/places/description/395036",
+        "resourceId": "place_395036"
+      }
+    },
+    {
+      "id": "place_1",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/ExtPubNbr",
+      "values": [
+        {
+          "id": "b3b2422b-2ebc-4a09-8850-d41720a2ef6b",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_PUB_NBR",
+          "text": "M1509"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtPubTitle",
+      "values": [
+        {
+          "id": "e53416f4-f058-4d01-9494-de6661dab66a",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_PUB_TITLE",
+          "text": "World War I Selective Service System Draft Registration Cards"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/BatchLocality",
+      "values": [
+        {
+          "id": "9917a0a0-be87-4ff8-afbb-cd035fc6fad2",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_BATCH_LOCALITY",
+          "text": "United States"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "id": "189722dd-045e-4fed-bc9c-48b2e6c40d40",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "1968530"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DasVerify",
+      "values": [
+        {
+          "id": "ac4f0c3b-eb91-4097-99c4-115cc0184cb8",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DAS_VERIFY",
+          "text": "2013-03-24 00:00:00"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "id": "0a3659b7-512d-4dfc-907e-5b429e6acb6a",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DIGITAL_FILM_NBR",
+          "text": "005153914"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EasyImageId",
+      "values": [
+        {
+          "id": "80453839-f9d2-492d-8422-158dd69915b4",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_EASY_IMAGE_ID",
+          "text": "005153914_02539"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FilmNumber",
+      "values": [
+        {
+          "id": "8bb2121c-b9c6-4bc7-9e80-41e4dca99d15",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_FILM_NBR",
+          "text": "1991280"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/Folder",
+      "values": [
+        {
+          "id": "91b44f80-3737-4b11-9793-d95477d54f4e",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_FOLDER",
+          "text": "005153914"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FolderImageSequence",
+      "values": [
+        {
+          "id": "729f2017-8886-4344-9387-eff3fb92ceeb",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_FOLDER_IMAGE_SEQ",
+          "text": "2539"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageApid",
+      "values": [
+        {
+          "id": "c71e17bb-d499-4e46-b2be-edd7d9be6643",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_APID",
+          "text": "TH-1942-25159-28813-46"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageId",
+      "values": [
+        {
+          "id": "6df7dd14-600c-40ed-97c3-0510ddaa6831",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_ID",
+          "text": "/005153914/005153914_02539.jpg"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNumber",
+      "values": [
+        {
+          "id": "5afe9979-6a26-4213-9d92-b97454be23da",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_NBR",
+          "text": "02539"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageArk",
+      "values": [
+        {
+          "id": "a69455b3-d4a2-4f6d-9e6e-d11b24ae24f8",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "IMAGE_ARK",
+          "text": "https://familysearch.org/ark:/61903/3:1:33SQ-GYBK-9SM6"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "id": "518e29eb-0fb0-4ca8-87b2-a9fd8b709239",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PPQ_ID",
+          "text": "11-1229"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "id": "7030b359-3a60-4c85-8253-ef1b3f87a224",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "No Traveler; 2019-08-22T10:44:00-0600; gilberts; 5235; TB; work.cds_sg_1968530_dio484_batch21583_input; No Traveler"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordId",
+      "values": [
+        {
+          "id": "cdc4358c-334e-459b-901e-c3d810026540",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_ID",
+          "text": "005153914_02539"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "id": "b028c7b1-08f3-4b80-8f07-49e5e6b71e82",
+          "attribution": {
+            "contributor": {
+              "resource": "http://treatment/SortKeyTreatment/ver/1"
+            },
+            "modified": 1566631228569
+          },
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "0000000005153914_02539_00000_0000022313556266"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/TravelerTitle",
+      "values": [
+        {
+          "id": "b16553d9-8d27-41db-bc1f-ec6be8afd584",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_TRAVELER_TITLE",
+          "text": "United States, World War One (WWI) Draft Registration Cards,1917-1918 Pt 1-FSI"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UniqueId",
+      "values": [
+        {
+          "id": "24dd96ca-a121-45b0-8a5f-6d9f4793a502",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UNIQUE_ID",
+          "text": "1673840996"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FsVisStatus",
+      "values": [
+        {
+          "id": "e5898591-6083-4b3d-8889-d87f80fcb886",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_VIS_STATUS",
+          "text": "VISIBLE"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourceDraftBoard",
+      "values": [
+        {
+          "id": "ad668d89-029a-42b5-ae33-8c17e97f3490",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "SOURCE_DRAFT_BOARD",
+          "text": "Surrey County; A-Z"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "8"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "49618"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
+    }
+  ],
+  "qualifiers": [
+    {
+      "value": "true",
+      "name": "TreatmentWarnings"
+    }
+  ]
 }

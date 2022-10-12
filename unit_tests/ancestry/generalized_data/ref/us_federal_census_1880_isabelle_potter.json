@@ -19,11 +19,7 @@
   "ageAtEvent": "56",
   "maritalStatus": "married",
   "relationshipToHead": "wife",
-  "householdArrayFields": [
-    "name",
-    "age",
-    "relationship"
-  ],
+  "householdArrayFields": ["name", "age", "relationship"],
   "householdArray": [
     {
       "name": "Paul Potter",

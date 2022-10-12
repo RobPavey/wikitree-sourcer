@@ -30,7 +30,7 @@ function findFirstDiffPos(a, b) {
 }
 
 function isObject(object) {
-  return object != null && typeof object === 'object';
+  return object != null && typeof object === "object";
 }
 
 function deepObjectEquals(object1, object2) {
@@ -38,7 +38,9 @@ function deepObjectEquals(object1, object2) {
   const keys2 = Object.keys(object2);
 
   if (keys1.length !== keys2.length) {
-    console.log("Failed compare: diff number of keys. object1 has " + keys1.length + " and object2 has " + keys2.length);
+    console.log(
+      "Failed compare: diff number of keys. object1 has " + keys1.length + " and object2 has " + keys2.length
+    );
 
     let outputHeading = false;
     for (let key of keys1) {
@@ -75,10 +77,7 @@ function deepObjectEquals(object1, object2) {
     const val1 = object1[key];
     const val2 = object2[key];
     const areObjects = isObject(val1) && isObject(val2);
-    if (
-      areObjects && !deepObjectEquals(val1, val2) ||
-      !areObjects && val1 !== val2
-    ) {
+    if ((areObjects && !deepObjectEquals(val1, val2)) || (!areObjects && val1 !== val2)) {
       console.log("Failed compare: key:" + key);
       return false;
     }

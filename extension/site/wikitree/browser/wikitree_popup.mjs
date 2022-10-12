@@ -31,10 +31,7 @@ import {
   displayMessageWithIconThenClosePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  addStandardMenuEnd,
-  buildMinimalMenuWithMessage,
-} from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
 
@@ -44,10 +41,7 @@ import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 
 import { generalizeData } from "../core/wikitree_generalize_data.mjs";
 
-import {
-  GeneralizedData,
-  dateQualifiers,
-} from "/base/core/generalize_data_utils.mjs";
+import { GeneralizedData, dateQualifiers } from "/base/core/generalize_data_utils.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
@@ -118,10 +112,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
 
       let parent1HasParen = false;
       if (pageParent1Name) {
-        let birthName = pageParent1Name.replace(
-          /^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/,
-          "$1$2"
-        );
+        let birthName = pageParent1Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
         if (birthName && birthName != pageParent1Name) {
           pageParent1Name = birthName;
           parent1HasParen = true;
@@ -130,10 +121,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
 
       let parent2HasParen = false;
       if (pageParent2Name) {
-        let birthName = pageParent2Name.replace(
-          /^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/,
-          "$1$2"
-        );
+        let birthName = pageParent2Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
         if (birthName && birthName != pageParent2Name) {
           pageParent2Name = birthName;
           parent2HasParen = true;
@@ -175,10 +163,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
 
       // Remove married name from mother if present
       if (motherName) {
-        let birthName = motherName.replace(
-          /^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/,
-          "$1$2"
-        );
+        let birthName = motherName.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
         if (birthName && birthName != motherName) {
           motherName = birthName;
         }
@@ -252,13 +237,9 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
   }
 
   result.birthDate = personGd.inferBirthDate();
-  result.birthDateStatus = qualifierToStatus(
-    personGd.inferBirthDateQualifier()
-  );
+  result.birthDateStatus = qualifierToStatus(personGd.inferBirthDateQualifier());
   result.deathDate = personGd.inferDeathDate();
-  result.deathDateStatus = qualifierToStatus(
-    personGd.inferDeathDateQualifier()
-  );
+  result.deathDateStatus = qualifierToStatus(personGd.inferDeathDateQualifier());
 
   result.birthLocation = personGd.inferBirthPlace();
   result.deathLocation = personGd.inferDeathPlace();
@@ -282,9 +263,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
       if (openParenIndex != -1) {
         let closeParenIndex = fmName.indexOf(")", openParenIndex);
         if (closeParenIndex != -1) {
-          let lnab = fmName
-            .substring(openParenIndex + 1, closeParenIndex)
-            .trim();
+          let lnab = fmName.substring(openParenIndex + 1, closeParenIndex).trim();
           let forenames = fmName.substring(0, openParenIndex).trim();
           fmName = forenames + " " + lnab;
         }
@@ -340,12 +319,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
     if (birthDateObj) {
       let format = options.narrative_general_dateFormat;
       let highlight = options.narrative_general_dateHighlight;
-      birthDateString = personGd.getNarrativeDateFormat(
-        birthDateObj,
-        format,
-        highlight,
-        true
-      );
+      birthDateString = personGd.getNarrativeDateFormat(birthDateObj, format, highlight, true);
     }
 
     let birthPlace = personGd.inferBirthPlace();
@@ -406,10 +380,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
     if (addDiedYoung) {
       intro += "{{Died Young}}\n";
     }
-    if (
-      fullName &&
-      (birthDateString || birthPlace || fatherName || motherName)
-    ) {
+    if (fullName && (birthDateString || birthPlace || fatherName || motherName)) {
       intro += fullName;
       if (birthDateString || birthPlace) {
         intro += " was born";
@@ -475,10 +446,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
   }
 
   // optionally add a "See also:" link to the person profile
-  if (
-    personGd.sourceType == "profile" &&
-    options.addPerson_general_includeProfileLink
-  ) {
+  if (personGd.sourceType == "profile" && options.addPerson_general_includeProfileLink) {
     const url = personEd.url;
     let linkString = "";
     if (url) {
@@ -547,19 +515,8 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
   return result;
 }
 
-async function setFieldsFromPersonData(
-  data,
-  personEd,
-  personGd,
-  tabId,
-  citationObject
-) {
-  let wtPersonData = getWikiTreeEditFamilyData(
-    data,
-    personEd,
-    personGd,
-    citationObject
-  );
+async function setFieldsFromPersonData(data, personEd, personGd, tabId, citationObject) {
+  let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
 
   // send a message to content script
   try {
@@ -567,34 +524,30 @@ async function setFieldsFromPersonData(
     //console.log(tabId);
     //console.log(personData);
 
-    chrome.tabs.sendMessage(
-      tabId,
-      { type: "setFields", personData: wtPersonData },
-      function (response) {
-        displayMessage("Setting fields ...");
+    chrome.tabs.sendMessage(tabId, { type: "setFields", personData: wtPersonData }, function (response) {
+      displayMessage("Setting fields ...");
 
-        //console.log("setFieldsFromPersonData, chrome.runtime.lastError is:");
-        //console.log(chrome.runtime.lastError);
-        //console.log("setFieldsFromPersonData, response is:");
-        //console.log(response);
+      //console.log("setFieldsFromPersonData, chrome.runtime.lastError is:");
+      //console.log(chrome.runtime.lastError);
+      //console.log("setFieldsFromPersonData, response is:");
+      //console.log(response);
 
-        // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
-        if (chrome.runtime.lastError || !response) {
-          // possibly there is no content script loaded, this could be an error that should be reported
-          // By testing edge cases I have found the if you reload the page and immediately click the
-          // extension button sometimes this will happen. Presumably because the content script
-          // just got unloaded prior to the reload but we got here because the popup had not been reset.
-          // In this case we are seeing the response being undefined.
-          // What to do in this case? Don't want to leave the "Initializing menu..." up.
-          displayMessageWithIcon("warning", "setFieldsFromPersonData failed");
-        } else if (response.success) {
-          displayMessageWithIconThenClosePopup("check", "Fields updated");
-        } else {
-          let message = response.errorMessage;
-          console.log(message);
-        }
+      // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
+      if (chrome.runtime.lastError || !response) {
+        // possibly there is no content script loaded, this could be an error that should be reported
+        // By testing edge cases I have found the if you reload the page and immediately click the
+        // extension button sometimes this will happen. Presumably because the content script
+        // just got unloaded prior to the reload but we got here because the popup had not been reset.
+        // In this case we are seeing the response being undefined.
+        // What to do in this case? Don't want to leave the "Initializing menu..." up.
+        displayMessageWithIcon("warning", "setFieldsFromPersonData failed");
+      } else if (response.success) {
+        displayMessageWithIconThenClosePopup("check", "Fields updated");
+      } else {
+        let message = response.errorMessage;
+        console.log(message);
       }
-    );
+    });
   } catch (error) {
     console.log(error);
   }
@@ -659,9 +612,7 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId) {
   let menuText = "Set Fields from Citation Data";
   let subtitleText = "";
   if (citationObject && citationObject.generalizedData) {
-    let gd = GeneralizedData.createFromPlainObject(
-      citationObject.generalizedData
-    );
+    let gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
     let name = gd.inferFullName();
     if (!name) {
       name = "Unknown";
@@ -695,13 +646,7 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId) {
       menu,
       menuText,
       function (element) {
-        setFieldsFromPersonData(
-          data,
-          citationObject.extractedData,
-          gd,
-          tabId,
-          citationObject
-        );
+        setFieldsFromPersonData(data, citationObject.extractedData, gd, tabId, citationObject);
       },
       subtitleText
     );
@@ -719,16 +664,13 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
     let data = { extractedData: extractedData };
 
     if (extractedData.currentTabText) {
-      let message =
-        "WikiTree Sourcer doesn't know how to extract data from this page.";
-      message +=
-        "\n\nIt looks like a WikiTree person profile or free space page but not the right tab.";
+      let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
+      message += "\n\nIt looks like a WikiTree person profile or free space page but not the right tab.";
       (message +=
         "\n\nThis extension only works on Person Profile and the Profile, Edit or Profile (private view) tab should be selected."),
         buildMinimalMenuWithMessage(message, data, backFunction);
     } else {
-      let message =
-        "WikiTree Sourcer doesn't know how to extract data from this page.";
+      let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
       message += "\n\nIt looks like a WikiTree page but not a person profile.";
       buildMinimalMenuWithMessage(message, data, backFunction);
     }
@@ -744,8 +686,7 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
 
   if (!generalizedData || !generalizedData.hasValidData) {
     let message = "WikiTree Sourcer could not interpret the data on this page.";
-    message +=
-      "\n\nIt looks like a supported WikiTree page but the data generalize failed.";
+    message += "\n\nIt looks like a supported WikiTree page but the data generalize failed.";
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
   }

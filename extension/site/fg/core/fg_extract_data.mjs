@@ -79,9 +79,7 @@ function extractData(document, url) {
   //console.log(memEvents);
   if (!memEvents) {
     // old page format
-    memEvents = document.querySelector(
-      "div.section-bio-cover table.mem-events"
-    );
+    memEvents = document.querySelector("div.section-bio-cover table.mem-events");
   }
 
   if (!memEvents) {
@@ -103,9 +101,7 @@ function extractData(document, url) {
 
       let closeParenIndex = text.indexOf(")", openParenIndex + 1);
       if (closeParenIndex != -1) {
-        let parenContents = text
-          .substring(openParenIndex + 1, closeParenIndex)
-          .trim();
+        let parenContents = text.substring(openParenIndex + 1, closeParenIndex).trim();
         const prefix = "aged";
         if (parenContents.startsWith(prefix)) {
           parenContents = parenContents.substring(prefix.length).trim();
@@ -121,19 +117,9 @@ function extractData(document, url) {
   setFromLabelWithId(result, memEvents, "#cemeteryNameLabel", "cemeteryName");
 
   setFromLabelWithId(result, memEvents, "#cemeteryCityName", "cemeteryCity");
-  setFromLabelWithId(
-    result,
-    memEvents,
-    "#cemeteryCountyName",
-    "cemeteryCounty"
-  );
+  setFromLabelWithId(result, memEvents, "#cemeteryCountyName", "cemeteryCounty");
   setFromLabelWithId(result, memEvents, "#cemeteryStateName", "cemeteryState");
-  setFromLabelWithId(
-    result,
-    memEvents,
-    "#cemeteryCountryName",
-    "cemeteryCountry"
-  );
+  setFromLabelWithId(result, memEvents, "#cemeteryCountryName", "cemeteryCountry");
 
   // also get the whole address string
   const placeSpan = memEvents.querySelector("span.place[itemprop=address");

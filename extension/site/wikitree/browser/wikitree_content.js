@@ -129,9 +129,7 @@ async function checkForPendingSearch() {
             //console.log("checkForPendingSearch: found contentElement:");
             //console.log(contentElement);
 
-            let topDivElement = contentElement.querySelector(
-              "div.sixteen.columns"
-            );
+            let topDivElement = contentElement.querySelector("div.sixteen.columns");
             if (topDivElement) {
               //console.log("checkForPendingSearch: found topDivElement:");
               //console.log(topDivElement);

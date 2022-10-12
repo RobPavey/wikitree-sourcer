@@ -37,17 +37,14 @@ function restoreOptions() {
   // get the values from the stored user options
   callFunctionWithStoredOptions(function (options) {
     for (let optionsGroup of optionsRegistry.optionsGroups) {
-      let optionNamePrefix =
-        optionsGroup.category + "_" + optionsGroup.subcategory + "_";
+      let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
       for (let option of optionsGroup.options) {
         let fullOptionName = optionNamePrefix + option.optionName;
 
         let element = document.getElementById(fullOptionName);
         if (!element) {
-          console.log(
-            "restoreOptions: no element found with id: " + fullOptionName
-          );
+          console.log("restoreOptions: no element found with id: " + fullOptionName);
           continue;
         }
 
@@ -80,10 +77,7 @@ function setActiveTab(tabName) {
       }
     } else {
       tabPanelElement.style.display = "none";
-      tabButtonElement.className = tabButtonElement.className.replace(
-        " active",
-        ""
-      );
+      tabButtonElement.className = tabButtonElement.className.replace(" active", "");
     }
   }
 }
@@ -161,17 +155,14 @@ async function saveOptionsFromPage() {
 
   let options = getDefaultOptions();
   for (let optionsGroup of optionsRegistry.optionsGroups) {
-    let optionNamePrefix =
-      optionsGroup.category + "_" + optionsGroup.subcategory + "_";
+    let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
     for (let option of optionsGroup.options) {
       let fullOptionName = optionNamePrefix + option.optionName;
 
       let element = document.getElementById(fullOptionName);
       if (!element) {
-        console.log(
-          "saveOptionsFromPage: no element found with id: " + fullOptionName
-        );
+        console.log("saveOptionsFromPage: no element found with id: " + fullOptionName);
         continue;
       }
 
@@ -232,9 +223,7 @@ function getRegistrySubsection(tabName, subsectionName) {
       }
     }
   }
-  console.log(
-    "getRegistrySubsection: not found: " + tabName + ", " + subsectionName
-  );
+  console.log("getRegistrySubsection: not found: " + tabName + ", " + subsectionName);
 }
 
 function getRegistrySubheading(tabName, subsectionName, subheadingName) {
@@ -247,14 +236,7 @@ function getRegistrySubheading(tabName, subsectionName, subheadingName) {
       }
     }
   }
-  console.log(
-    "getRegistrySubheading: not found: " +
-      tabName +
-      ", " +
-      subsectionName +
-      ", " +
-      subheadingName
-  );
+  console.log("getRegistrySubheading: not found: " + tabName + ", " + subsectionName + ", " + subheadingName);
 }
 
 function buildPage() {
@@ -283,9 +265,7 @@ function buildPage() {
     }
 
     let tabPanelElement = document.getElementById(tabElementData.panelElement);
-    let tabButtonElement = document.getElementById(
-      tabElementData.buttonElement
-    );
+    let tabButtonElement = document.getElementById(tabElementData.buttonElement);
 
     if (!tabPanelElement) {
       console.log("buildPage: no tabPanelElement found for name: " + tab);
@@ -382,9 +362,7 @@ function buildPage() {
     }
 
     if (!optionsGroup.subsection) {
-      console.log(
-        "buildPage: optionsGroup has no subsection, optionsGroup is:"
-      );
+      console.log("buildPage: optionsGroup has no subsection, optionsGroup is:");
       console.log(optionsGroup);
       continue;
     }
@@ -398,13 +376,10 @@ function buildPage() {
       continue;
     }
 
-    let subsectionPanelElement =
-      tabElementObj.subsections[subsectionName].panelElement;
+    let subsectionPanelElement = tabElementObj.subsections[subsectionName].panelElement;
 
     if (!subsectionPanelElement) {
-      console.log(
-        "buildPage: no subsectionElement found for name: " + subsectionName
-      );
+      console.log("buildPage: no subsectionElement found for name: " + subsectionName);
       console.log(tabElements);
       console.log("optionsGroup is:");
       console.log(optionsGroup);
@@ -413,11 +388,7 @@ function buildPage() {
 
     // if this group has a subheading then create a heading element
     if (optionsGroup.subheading) {
-      let subheading = getRegistrySubheading(
-        tabName,
-        subsectionName,
-        optionsGroup.subheading
-      );
+      let subheading = getRegistrySubheading(tabName, subsectionName, optionsGroup.subheading);
       if (subheading) {
         let label = subheading.label;
         let subheadingElement = document.createElement("h4");
@@ -426,8 +397,7 @@ function buildPage() {
       }
     }
 
-    let optionNamePrefix =
-      optionsGroup.category + "_" + optionsGroup.subcategory + "_";
+    let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
     for (let option of optionsGroup.options) {
       let fullOptionName = optionNamePrefix + option.optionName;
@@ -513,9 +483,7 @@ function buildPage() {
 
   restoreOptions();
 
-  document
-    .getElementById("save")
-    .addEventListener("click", saveOptionsFromPage);
+  document.getElementById("save").addEventListener("click", saveOptionsFromPage);
 }
 
 document.addEventListener("DOMContentLoaded", buildPage);

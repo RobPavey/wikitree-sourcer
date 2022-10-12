@@ -14,12 +14,14 @@ You can either create these folders manually or you can copy any existing site f
 There are certain files that all sites will have and they should follow the naming conventions.
 
 In the browser folder:
+
 - `<site>_content.js`
 - `<site>_popup.html`
 - `<site>_popup.mjs`
 - `<site>_popup_search.mjs`
 
 In the core folder:
+
 - `<site>_build_citation.mjs`
 - `<site>_build_search_url.mjs`
 - `<site>_extract_data.mjs`
@@ -41,7 +43,7 @@ The is a subfolder under unit_tests for each site.
 
 ### Add the unit tests site folder
 
-Look at one of the existing ones as an example. There is a main file `<site>_test.mjs that runs the test. You should follow the pattern of the existing tests with a separate .mjs file for each type of test.
+Look at one of the existing ones as an example. There is a main file `<site>\_test.mjs that runs the test. You should follow the pattern of the existing tests with a separate .mjs file for each type of test.
 
 ### Add the site to scripts/run_test.js
 
@@ -64,6 +66,3 @@ This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any mo
 ### Add some lines under "host_permissions"
 
 To be honest I forget why this is needed and whether it is needed on all three platforms (Chrome, Safari, Firefox). I think it is related to the code that reloads the content scripts when the extension is installed or re-enabled. This code is only needed on Chrome since the other platforms do it automatically. But there may be a reason why adding the sites here is needed on the other platforms to.
-
-
-

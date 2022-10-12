@@ -32,8 +32,7 @@ async function setupFreeregPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
     extractFailedMessage: "It looks like a FreeReg page but not a record page.",
-    generalizeFailedMessage:
-      "It looks like a FreeReg page but does not contain the required data.",
+    generalizeFailedMessage: "It looks like a FreeReg page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     buildHouseholdTableFunction: buildHouseholdTable,

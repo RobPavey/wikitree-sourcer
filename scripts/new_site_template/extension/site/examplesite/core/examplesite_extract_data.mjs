@@ -23,9 +23,7 @@ SOFTWARE.
 */
 
 function extractData(document, url) {
-
-  var result = {
-  };
+  var result = {};
 
   if (url) {
     result.url = url;
@@ -39,8 +37,6 @@ function extractData(document, url) {
     return result;
   }
   */
-
-
 
   result.success = true;
 

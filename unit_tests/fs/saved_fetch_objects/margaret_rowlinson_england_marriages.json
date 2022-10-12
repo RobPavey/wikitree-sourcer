@@ -1,600 +1,765 @@
 {
-    "id" : "r_849103237",
-    "lang" : "en",
-    "links" : {
-      "next" : {
-        "href" : "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94?seek=next"
+  "id": "r_849103237",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94?seek=next"
+    },
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94?seek=prev"
+    },
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94"
+    }
+  },
+  "description": "#sd_p_12072509545",
+  "persons": [
+    {
+      "id": "p_12072509546",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "c906f5ac-b5d2-4a9c-b571-8cb373546cfe",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "Male"
+              }
+            ]
+          }
+        ]
       },
-      "prev" : {
-        "href" : "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94?seek=prev"
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/NN5C-1XT?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/9QBH-H94?flag=fsh"
+        }
       },
-      "self" : {
-        "href" : "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94"
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NN5C-1XT"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Joseph Walmsley",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Joseph",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "f05e44ab-96b1-4200-91cc-c2cbe83cd5a2",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "Joseph"
+                        },
+                        {
+                          "id": "72534ebd-75ae-4efc-acb4-86c44817ed55",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1584078634482
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Joseph"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Walmsley",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "efdfe01e-a2e2-4587-8922-d918c7436a53",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Walmsley"
+                        },
+                        {
+                          "id": "6144f966-8b2e-49d8-a101-cdabce5ef178",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1584078634482
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Walmsley"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1584078634471
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "Joseph Walmsley"
+                    },
+                    {
+                      "id": "6561f5ca-dd0f-408c-8a84-4bc7f2b12e1c",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1584078634482
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Joseph Walmsley"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_12072509545",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "ca6b788b-19be-4899-b850-64d49f7c3a13",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "SP_SEX_CODE_ORIG",
+                "text": "Female"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/NN5C-1XR?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/9QBH-H94?flag=fsh"
+        }
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NN5C-1XR"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Margaret Rowlinson",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Margaret",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "9b175689-d957-4c0b-9ea2-334a35cdbd6f",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_NAME_GN_ORIG",
+                          "text": "Margaret"
+                        },
+                        {
+                          "id": "d0e6adc6-b734-48dc-a04a-fcea4d482a6a",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1584078634488
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_NAME_GN",
+                          "text": "Margaret"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Rowlinson",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "f94d2ccf-1e26-4cf4-8a1c-45b20bf5fe50",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_NAME_SURN_ORIG",
+                          "text": "Rowlinson"
+                        },
+                        {
+                          "id": "3b096788-b9e2-46eb-a7ac-94901949680b",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1584078634488
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_NAME_SURN",
+                          "text": "Rowlinson"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1584078634482
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "SP_NAME_ORIG",
+                      "text": "Margaret Rowlinson"
+                    },
+                    {
+                      "id": "2fdd2b0e-bdcc-4f74-bb3e-1133263f43da",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1584078634488
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "SP_NAME",
+                      "text": "Margaret Rowlinson"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "MM9.1.6/FDXR-7G68",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_12072509546",
+        "resourceId": "p_12072509546"
+      },
+      "person2": {
+        "resource": "#p_12072509545",
+        "resourceId": "p_12072509545"
+      },
+      "facts": [
+        {
+          "type": "http://gedcomx.org/MarriageNotice",
+          "date": {
+            "original": "28 Oct 1855",
+            "formal": "+1855-10-28",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "id": "3c82ccf8-76b4-4065-99bf-10d970f22ff3",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "28 Oct 1855"
+                  },
+                  {
+                    "id": "925bd772-c7b5-4515-be91-5d5d13f2bc3a",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1584078634471
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "28 Oct 1855",
+                    "resource": "+1855-10-28"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Month",
+                "values": [
+                  {
+                    "id": "f6541785-d0e3-42cc-ab0c-f7cbd1c2bc8b",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1584078634471
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_MONTH",
+                    "text": "10"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Day",
+                "values": [
+                  {
+                    "id": "56e2b6ad-941f-4140-977d-224a1df51666",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1584078634471
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DAY",
+                    "text": "28"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "67f1ea97-a7b7-4735-81ac-b8c9461622b5",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_YEAR_ORIG",
+                    "text": "1855"
+                  },
+                  {
+                    "id": "3567a5da-2193-4b53-b6cf-9687ace6afd5",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1584078634471
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1855"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Padgate, Lancashire, England, United Kingdom",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "610652f4-0687-43d6-b78e-3906bfcafb10",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_SUP",
+                    "text": "Padgate, Lancashire, England",
+                    "qualifiers": [
+                      {
+                        "value": "SUP",
+                        "name": "http://familysearch.org/types/qualifiers/Info"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "a7440311-933a-41b4-9b68-0d3c2fc35cfc",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_ORIG",
+                    "text": "Christ Church, Warrington, Lancashire, England"
+                  },
+                  {
+                    "id": "4b4e3e2e-f39d-4575-b08f-6106f1e02cc1",
+                    "confidence": "http://confidence/100",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1584078634496
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Padgate, Lancashire, England, United Kingdom",
+                    "resource": "https://www.familysearch.org/platform/places/description/1621979",
+                    "qualifiers": [
+                      {
+                        "value": "1010, 1013",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "id": "79fbc4fb-ddf1-4f8a-ab77-d558ed0bb4a4",
+                  "type": "http://gedcomx.org/Original",
+                  "labelId": "EVENT_TYPE_ORIG",
+                  "text": "intended-marriage"
+                },
+                {
+                  "id": "c3655544-67f2-4a89-82a3-42a81c2a217e",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Marriage Notice"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_1473015",
+      "about": "https://api.familysearch.org/platform/records/collections/1473015",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1382223556691,
+      "modified": 1627028222735,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "England",
+            "description": "#place_1986340"
+          },
+          "temporal": {
+            "original": "1538/1973",
+            "formal": "1538/1973"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "England Marriages, 1538–1973  "
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1473015"]
       }
     },
-    "description" : "#sd_p_12072509545",
-    "persons" : [ {
-      "id" : "p_12072509546",
-      "extracted" : true,
-      "principal" : true,
-      "gender" : {
-        "type" : "http://gedcomx.org/Male",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Gender",
-          "values" : [ {
-            "id" : "c906f5ac-b5d2-4a9c-b571-8cb373546cfe",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_SEX_CODE_ORIG",
-            "text" : "Male"
-          } ]
-        } ]
+    {
+      "id": "src_r_849103237",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94",
+      "componentOf": {
+        "description": "#sd_c_1473015"
       },
-      "links" : {
-        "persona" : {
-          "href" : "https://api.familysearch.org/platform/records/personas/NN5C-1XT?flag=fsh"
-        },
-        "record" : {
-          "href" : "https://api.familysearch.org/platform/records/records/9QBH-H94?flag=fsh"
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1584078634503,
+      "modified": 1627028222735,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Padgate, Lancashire, England, United Kingdom"
+          },
+          "temporal": {
+            "original": "28 Oct 1855"
+          },
+          "recordType": "http://gedcomx.org/Vital"
         }
-      },
-      "identifiers" : {
-        "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NN5C-1XT" ]
-      },
-      "names" : [ {
-        "type" : "http://gedcomx.org/BirthName",
-        "nameForms" : [ {
-          "fullText" : "Joseph Walmsley",
-          "parts" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "value" : "Joseph",
-            "fields" : [ {
-              "type" : "http://gedcomx.org/Given",
-              "values" : [ {
-                "id" : "f05e44ab-96b1-4200-91cc-c2cbe83cd5a2",
-                "type" : "http://gedcomx.org/Original",
-                "labelId" : "PR_NAME_GN_ORIG",
-                "text" : "Joseph"
-              }, {
-                "id" : "72534ebd-75ae-4efc-acb4-86c44817ed55",
-                "attribution" : {
-                  "contributor" : {
-                    "resource" : "http://treatment/NameTreatment/ver/1"
-                  },
-                  "modified" : 1584078634482
-                },
-                "type" : "http://gedcomx.org/Interpreted",
-                "labelId" : "PR_NAME_GN",
-                "text" : "Joseph"
-              } ]
-            } ]
-          }, {
-            "type" : "http://gedcomx.org/Surname",
-            "value" : "Walmsley",
-            "fields" : [ {
-              "type" : "http://gedcomx.org/Surname",
-              "values" : [ {
-                "id" : "efdfe01e-a2e2-4587-8922-d918c7436a53",
-                "type" : "http://gedcomx.org/Original",
-                "labelId" : "PR_NAME_SURN_ORIG",
-                "text" : "Walmsley"
-              }, {
-                "id" : "6144f966-8b2e-49d8-a101-cdabce5ef178",
-                "attribution" : {
-                  "contributor" : {
-                    "resource" : "http://treatment/NameTreatment/ver/1"
-                  },
-                  "modified" : 1584078634482
-                },
-                "type" : "http://gedcomx.org/Interpreted",
-                "labelId" : "PR_NAME_SURN",
-                "text" : "Walmsley"
-              } ]
-            } ]
-          } ],
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Name",
-            "values" : [ {
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1584078634471
-              },
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_ORIG",
-              "text" : "Joseph Walmsley"
-            }, {
-              "id" : "6561f5ca-dd0f-408c-8a84-4bc7f2b12e1c",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1584078634482
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME",
-              "text" : "Joseph Walmsley"
-            } ]
-          } ]
-        } ]
-      } ]
-    }, {
-      "id" : "p_12072509545",
-      "extracted" : true,
-      "principal" : false,
-      "gender" : {
-        "type" : "http://gedcomx.org/Female",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Gender",
-          "values" : [ {
-            "id" : "ca6b788b-19be-4899-b850-64d49f7c3a13",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "SP_SEX_CODE_ORIG",
-            "text" : "Female"
-          } ]
-        } ]
-      },
-      "links" : {
-        "persona" : {
-          "href" : "https://api.familysearch.org/platform/records/personas/NN5C-1XR?flag=fsh"
-        },
-        "record" : {
-          "href" : "https://api.familysearch.org/platform/records/records/9QBH-H94?flag=fsh"
+      ],
+      "citations": [
+        {
+          "value": "\"England Marriages, 1538–1973  \", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:9QBH-H94 : 13 March 2020), Entry for Joseph Walmsley, 1855."
         }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Joseph Walmsley, \"England Marriages, 1538–1973  \""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/206723186"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:9QBH-H94"]
       },
-      "identifiers" : {
-        "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NN5C-1XR" ]
-      },
-      "names" : [ {
-        "type" : "http://gedcomx.org/BirthName",
-        "nameForms" : [ {
-          "fullText" : "Margaret Rowlinson",
-          "parts" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "value" : "Margaret",
-            "fields" : [ {
-              "type" : "http://gedcomx.org/Given",
-              "values" : [ {
-                "id" : "9b175689-d957-4c0b-9ea2-334a35cdbd6f",
-                "type" : "http://gedcomx.org/Original",
-                "labelId" : "SP_NAME_GN_ORIG",
-                "text" : "Margaret"
-              }, {
-                "id" : "d0e6adc6-b734-48dc-a04a-fcea4d482a6a",
-                "attribution" : {
-                  "contributor" : {
-                    "resource" : "http://treatment/NameTreatment/ver/1"
-                  },
-                  "modified" : 1584078634488
-                },
-                "type" : "http://gedcomx.org/Interpreted",
-                "labelId" : "SP_NAME_GN",
-                "text" : "Margaret"
-              } ]
-            } ]
-          }, {
-            "type" : "http://gedcomx.org/Surname",
-            "value" : "Rowlinson",
-            "fields" : [ {
-              "type" : "http://gedcomx.org/Surname",
-              "values" : [ {
-                "id" : "f94d2ccf-1e26-4cf4-8a1c-45b20bf5fe50",
-                "type" : "http://gedcomx.org/Original",
-                "labelId" : "SP_NAME_SURN_ORIG",
-                "text" : "Rowlinson"
-              }, {
-                "id" : "3b096788-b9e2-46eb-a7ac-94901949680b",
-                "attribution" : {
-                  "contributor" : {
-                    "resource" : "http://treatment/NameTreatment/ver/1"
-                  },
-                  "modified" : 1584078634488
-                },
-                "type" : "http://gedcomx.org/Interpreted",
-                "labelId" : "SP_NAME_SURN",
-                "text" : "Rowlinson"
-              } ]
-            } ]
-          } ],
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Name",
-            "values" : [ {
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1584078634482
-              },
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_NAME_ORIG",
-              "text" : "Margaret Rowlinson"
-            }, {
-              "id" : "2fdd2b0e-bdcc-4f74-bb3e-1133263f43da",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1584078634488
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_NAME",
-              "text" : "Margaret Rowlinson"
-            } ]
-          } ]
-        } ]
-      } ]
-    } ],
-    "relationships" : [ {
-      "id" : "MM9.1.6/FDXR-7G68",
-      "type" : "http://gedcomx.org/Couple",
-      "person1" : {
-        "resource" : "#p_12072509546",
-        "resourceId" : "p_12072509546"
-      },
-      "person2" : {
-        "resource" : "#p_12072509545",
-        "resourceId" : "p_12072509545"
-      },
-      "facts" : [ {
-        "type" : "http://gedcomx.org/MarriageNotice",
-        "date" : {
-          "original" : "28 Oct 1855",
-          "formal" : "+1855-10-28",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Date",
-            "values" : [ {
-              "id" : "3c82ccf8-76b4-4065-99bf-10d970f22ff3",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "EVENT_DATE_ORIG",
-              "text" : "28 Oct 1855"
-            }, {
-              "id" : "925bd772-c7b5-4515-be91-5d5d13f2bc3a",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-                },
-                "modified" : 1584078634471
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "EVENT_DATE",
-              "text" : "28 Oct 1855",
-              "resource" : "+1855-10-28"
-            } ]
-          }, {
-            "type" : "http://gedcomx.org/Month",
-            "values" : [ {
-              "id" : "f6541785-d0e3-42cc-ab0c-f7cbd1c2bc8b",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-                },
-                "modified" : 1584078634471
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "EVENT_MONTH",
-              "text" : "10"
-            } ]
-          }, {
-            "type" : "http://gedcomx.org/Day",
-            "values" : [ {
-              "id" : "56e2b6ad-941f-4140-977d-224a1df51666",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-                },
-                "modified" : 1584078634471
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "EVENT_DAY",
-              "text" : "28"
-            } ]
-          }, {
-            "type" : "http://gedcomx.org/Year",
-            "values" : [ {
-              "id" : "67f1ea97-a7b7-4735-81ac-b8c9461622b5",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "EVENT_YEAR_ORIG",
-              "text" : "1855"
-            }, {
-              "id" : "3567a5da-2193-4b53-b6cf-9687ace6afd5",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-                },
-                "modified" : 1584078634471
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "EVENT_YEAR",
-              "text" : "1855"
-            } ]
-          } ]
-        },
-        "place" : {
-          "original" : "Padgate, Lancashire, England, United Kingdom",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Place",
-            "values" : [ {
-              "id" : "610652f4-0687-43d6-b78e-3906bfcafb10",
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "EVENT_PLACE_SUP",
-              "text" : "Padgate, Lancashire, England",
-              "qualifiers" : [ {
-                "value" : "SUP",
-                "name" : "http://familysearch.org/types/qualifiers/Info"
-              } ]
-            }, {
-              "id" : "a7440311-933a-41b4-9b68-0d3c2fc35cfc",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "EVENT_PLACE_ORIG",
-              "text" : "Christ Church, Warrington, Lancashire, England"
-            }, {
-              "id" : "4b4e3e2e-f39d-4575-b08f-6106f1e02cc1",
-              "confidence" : "http://confidence/100",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/LocalityTreatment/ver/1"
-                },
-                "modified" : 1584078634496
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "EVENT_PLACE",
-              "text" : "Padgate, Lancashire, England, United Kingdom",
-              "resource" : "https://www.familysearch.org/platform/places/description/1621979",
-              "qualifiers" : [ {
-                "value" : "1010, 1013",
-                "name" : "StdQualifier"
-              } ]
-            } ]
-          } ]
-        },
-        "primary" : true,
-        "fields" : [ {
-          "type" : "http://familysearch.org/types/fields/EventType",
-          "values" : [ {
-            "id" : "79fbc4fb-ddf1-4f8a-ab77-d558ed0bb4a4",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_TYPE_ORIG",
-            "text" : "intended-marriage"
-          }, {
-            "id" : "c3655544-67f2-4a89-82a3-42a81c2a217e",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_TYPE",
-            "text" : "Marriage Notice"
-          } ]
-        } ]
-      } ]
-    } ],
-    "sourceDescriptions" : [ {
-      "id" : "sd_c_1473015",
-      "about" : "https://api.familysearch.org/platform/records/collections/1473015",
-      "resourceType" : "http://gedcomx.org/Collection",
-      "created" : 1382223556691,
-      "modified" : 1627028222735,
-      "coverage" : [ {
-        "spatial" : {
-          "original" : "England",
-          "description" : "#place_1986340"
-        },
-        "temporal" : {
-          "original" : "1538/1973",
-          "formal" : "1538/1973"
-        },
-        "recordType" : "http://gedcomx.org/Vital"
-      } ],
-      "titles" : [ {
-        "lang" : "en_US",
-        "value" : "England Marriages, 1538–1973  "
-      } ],
-      "identifiers" : {
-        "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1473015" ]
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1473015?arkName=1:2:9QBH-H94"
       }
-    }, {
-      "id" : "src_r_849103237",
-      "mediaType" : "image/jpeg",
-      "about" : "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94",
-      "componentOf" : {
-        "description" : "#sd_c_1473015"
+    },
+    {
+      "id": "sd_p_12072509546",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:NN5C-1XT",
+      "componentOf": {
+        "description": "#src_r_849103237"
       },
-      "resourceType" : "http://gedcomx.org/Record",
-      "created" : 1584078634503,
-      "modified" : 1627028222735,
-      "coverage" : [ {
-        "spatial" : {
-          "original" : "Padgate, Lancashire, England, United Kingdom"
-        },
-        "temporal" : {
-          "original" : "28 Oct 1855"
-        },
-        "recordType" : "http://gedcomx.org/Vital"
-      } ],
-      "citations" : [ {
-        "value" : "\"England Marriages, 1538–1973  \", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:9QBH-H94 : 13 March 2020), Entry for Joseph Walmsley, 1855."
-      } ],
-      "titles" : [ {
-        "lang" : "en",
-        "value" : "Entry for Joseph Walmsley, \"England Marriages, 1538–1973  \""
-      } ],
-      "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-      "identifiers" : {
-        "$" : [ "https://www.familysearch.org/platform/externalId/easy/206723186" ],
-        "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9QBH-H94" ]
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England Marriages, 1538–1973  \", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NN5C-1XT : 13 March 2020), Joseph Walmsley, 1855."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Joseph Walmsley, \"England Marriages, 1538–1973  \""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NN5C-1XT"]
+      }
+    },
+    {
+      "id": "sd_p_12072509545",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:NN5C-1XR",
+      "componentOf": {
+        "description": "#src_r_849103237"
       },
-      "descriptor" : {
-        "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1473015?arkName=1:2:9QBH-H94"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England Marriages, 1538–1973  \", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NN5C-1XR : 13 March 2020), Margaret Rowlinson in entry for Joseph Walmsley, 1855."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Margaret Rowlinson in entry for Joseph Walmsley, \"England Marriages, 1538–1973  \""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NN5C-1XR"]
       }
-    }, {
-      "id" : "sd_p_12072509546",
-      "about" : "https://www.familysearch.org/ark:/61903/1:1:NN5C-1XT",
-      "componentOf" : {
-        "description" : "#src_r_849103237"
-      },
-      "resourceType" : "http://gedcomx.org/Person",
-      "citations" : [ {
-        "value" : "\"England Marriages, 1538–1973  \", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NN5C-1XT : 13 March 2020), Joseph Walmsley, 1855."
-      } ],
-      "titles" : [ {
-        "lang" : "en",
-        "value" : "Joseph Walmsley, \"England Marriages, 1538–1973  \""
-      } ],
-      "identifiers" : {
-        "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NN5C-1XT" ]
+    }
+  ],
+  "places": [
+    {
+      "id": "place_1986340",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986340"]
       }
-    }, {
-      "id" : "sd_p_12072509545",
-      "about" : "https://www.familysearch.org/ark:/61903/1:1:NN5C-1XR",
-      "componentOf" : {
-        "description" : "#src_r_849103237"
-      },
-      "resourceType" : "http://gedcomx.org/Person",
-      "citations" : [ {
-        "value" : "\"England Marriages, 1538–1973  \", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NN5C-1XR : 13 March 2020), Margaret Rowlinson in entry for Joseph Walmsley, 1855."
-      } ],
-      "titles" : [ {
-        "lang" : "en",
-        "value" : "Margaret Rowlinson in entry for Joseph Walmsley, \"England Marriages, 1538–1973  \""
-      } ],
-      "identifiers" : {
-        "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NN5C-1XR" ]
-      }
-    } ],
-    "places" : [ {
-      "id" : "place_1986340",
-      "identifiers" : {
-        "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986340" ]
-      }
-    } ],
-    "fields" : [ {
-      "type" : "http://familysearch.org/types/fields/ExtData",
-      "values" : [ {
-        "id" : "63c7926f-326e-4177-bcb3-ed65c9fdccca",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_DATA",
-        "text" : "{ \"EVENT_PLACE_ALT_ORIG\": \"Christ Church, Warrington, Lancashire, England\", \"EVENT_DATE_ALT_ORIG\": \"28 Oct 1855\"}"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/BatchId",
-      "values" : [ {
-        "id" : "fde66f93-b1e6-42c9-9a7d-27e3eec39983",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_BATCH_ID",
-        "text" : "334647"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/BatchLocality",
-      "values" : [ {
-        "id" : "d2039188-25aa-440d-90b4-f5616388261b",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_BATCH_LOCALITY",
-        "text" : "Padgate, Lancashire, England"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-      "values" : [ {
-        "id" : "de4868f3-2a2b-412c-abbd-3e8ee4a69929",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_DIGITAL_FILM_NBR",
-        "text" : "004027888"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/FilmNumber",
-      "values" : [ {
-        "id" : "dcd80023-8984-43f5-b99e-852c573f9ee0",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_FILM_NBR",
-        "text" : "2068609"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ImageNumber",
-      "values" : [ {
-        "id" : "050aa835-01f0-4b10-903b-4a1cd6b131de",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_IMAGE_NBR",
-        "text" : "00728"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/PacketLetter",
-      "values" : [ {
-        "id" : "1c8cf15c-5cd5-41f7-9120-c4e979b27b3d",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_PACKET_LTR",
-        "text" : "A"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/RecordGroup",
-      "values" : [ {
-        "id" : "0a91320f-4600-4c15-a526-7f3b5250db3e",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_RECORD_GROUP",
-        "text" : "England-EASy"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/RecordNumber",
-      "values" : [ {
-        "id" : "4d6bf5b4-4447-413c-926b-cd7ba60bda9a",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_RECORD_NBR",
-        "text" : "97"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SortKey",
-      "values" : [ {
-        "id" : "4136a166-4e91-4771-9c24-c641402c2c7c",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_SORT_KEY",
-        "text" : "2068609_I02229-2X_1855_10_28_0000206723186"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SystemOfOrigin",
-      "values" : [ {
-        "id" : "27eb77c7-0c51-48d5-80c1-6b19d32d2976",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_SYSTEM_OF_ORIGIN",
-        "text" : "EASY"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
-      "values" : [ {
-        "id" : "31d853f7-58de-4813-b934-cebe56d4440e",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_UDE_BATCH_NBR",
-        "text" : "I02229-2"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/UniqueId",
-      "values" : [ {
-        "id" : "f045ca5f-5ee7-4218-b556-81585dea5ec4",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_UNIQUE_ID",
-        "text" : "206723186"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/RecordVersion",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_RECORD_VERSION",
-        "text" : "5"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/UserModified",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_USER_MODIFIED",
-        "text" : "false"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/CdsBatchId",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_CDS_BATCH_ID",
-        "text" : "52887"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/PublicationStatus",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_PUB_STATUS",
-        "text" : "Production"
-      } ]
-    } ]
-  }
-  
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/ExtData",
+      "values": [
+        {
+          "id": "63c7926f-326e-4177-bcb3-ed65c9fdccca",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_DATA",
+          "text": "{ \"EVENT_PLACE_ALT_ORIG\": \"Christ Church, Warrington, Lancashire, England\", \"EVENT_DATE_ALT_ORIG\": \"28 Oct 1855\"}"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/BatchId",
+      "values": [
+        {
+          "id": "fde66f93-b1e6-42c9-9a7d-27e3eec39983",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_BATCH_ID",
+          "text": "334647"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/BatchLocality",
+      "values": [
+        {
+          "id": "d2039188-25aa-440d-90b4-f5616388261b",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_BATCH_LOCALITY",
+          "text": "Padgate, Lancashire, England"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "id": "de4868f3-2a2b-412c-abbd-3e8ee4a69929",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DIGITAL_FILM_NBR",
+          "text": "004027888"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FilmNumber",
+      "values": [
+        {
+          "id": "dcd80023-8984-43f5-b99e-852c573f9ee0",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_FILM_NBR",
+          "text": "2068609"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNumber",
+      "values": [
+        {
+          "id": "050aa835-01f0-4b10-903b-4a1cd6b131de",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_NBR",
+          "text": "00728"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PacketLetter",
+      "values": [
+        {
+          "id": "1c8cf15c-5cd5-41f7-9120-c4e979b27b3d",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PACKET_LTR",
+          "text": "A"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "id": "0a91320f-4600-4c15-a526-7f3b5250db3e",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "England-EASy"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordNumber",
+      "values": [
+        {
+          "id": "4d6bf5b4-4447-413c-926b-cd7ba60bda9a",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_NBR",
+          "text": "97"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "id": "4136a166-4e91-4771-9c24-c641402c2c7c",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "2068609_I02229-2X_1855_10_28_0000206723186"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SystemOfOrigin",
+      "values": [
+        {
+          "id": "27eb77c7-0c51-48d5-80c1-6b19d32d2976",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SYSTEM_OF_ORIGIN",
+          "text": "EASY"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UdeBatchNumber",
+      "values": [
+        {
+          "id": "31d853f7-58de-4813-b934-cebe56d4440e",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UDE_BATCH_NBR",
+          "text": "I02229-2"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UniqueId",
+      "values": [
+        {
+          "id": "f045ca5f-5ee7-4218-b556-81585dea5ec4",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UNIQUE_ID",
+          "text": "206723186"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "5"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "52887"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
+    }
+  ]
+}

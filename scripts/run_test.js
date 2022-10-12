@@ -36,21 +36,20 @@ import "../unit_tests/fs/fs_test.mjs";
 import "../unit_tests/gro/gro_test.mjs";
 import "../unit_tests/scotp/scotp_test.mjs";
 import "../unit_tests/wikitree/wikitree_test.mjs";
-import "../unit_tests/np/np_test.mjs"
+import "../unit_tests/np/np_test.mjs";
 
 function testSuiteEnabled(parameters, testSuiteName) {
-  return (parameters.testSuiteName == "" || parameters.testSuiteName == testSuiteName);
+  return parameters.testSuiteName == "" || parameters.testSuiteName == testSuiteName;
 }
 
 async function runTests() {
-
   // results is an object that builds up the test results
-  // it contains an array of objects (allTests), each has a test name and whether it passed 
+  // it contains an array of objects (allTests), each has a test name and whether it passed
   let results = {
     totalTestsRun: 0,
     numFailedTests: 0,
-    allTests: []
-  }
+    allTests: [],
+  };
 
   let parameters = {
     testSuiteName: "",
@@ -72,8 +71,8 @@ async function runTests() {
   let testManager = {
     parameters: parameters,
     options: options,
-    results: results
-  }
+    results: results,
+  };
 
   // go through all the registered tests and run the tests if enabled
   for (let siteTest of testRegistry) {
@@ -85,8 +84,7 @@ async function runTests() {
   // Report the test results
   if (results.numFailedTests == 0) {
     console.log("++++ All tests passed ++++");
-  }
-  else {
+  } else {
     console.log("#### TESTS FAILED ####");
     for (let result of results.allTests) {
       if (!result.succeeded) {

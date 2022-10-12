@@ -89,23 +89,11 @@ const FreeregData = {
     return "Choose county to search: ";
   },
 
-  updateParametersOnCategoryChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {},
+  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {},
 
-  updateParametersOnSubcategoryChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {},
+  updateParametersOnSubcategoryChange: function (generalizedData, parameters, options) {},
 
-  updateParametersOnCollectionChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {},
+  updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
 };
 
 export { FreeregData };

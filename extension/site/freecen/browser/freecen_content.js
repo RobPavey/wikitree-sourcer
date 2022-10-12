@@ -44,9 +44,7 @@ async function checkForPendingSearch() {
     return;
   }
 
-  if (
-    document.URL == "https://www.freecen.org.uk/search_queries/new?locale=en"
-  ) {
+  if (document.URL == "https://www.freecen.org.uk/search_queries/new?locale=en") {
     //console.log("checkForPendingSearch: URL matches");
 
     let freecenSearchData = await getPendingSearch();
@@ -83,9 +81,7 @@ async function checkForPendingSearch() {
               inputElement.value = value;
 
               if (key == "search_query_fuzzy") {
-                const hiddenInputElement = document.querySelector(
-                  "input[type=hidden][name='search_query[fuzzy]']"
-                );
+                const hiddenInputElement = document.querySelector("input[type=hidden][name='search_query[fuzzy]']");
                 if (hiddenInputElement) {
                   hiddenInputElement.value = value;
                 }
@@ -103,9 +99,7 @@ async function checkForPendingSearch() {
           // Now hide the form so that the use doesn't try to use it.
           formElement.style.display = "none";
 
-          const titleElement = document.querySelector(
-            "main.site__content div.container h1.title"
-          );
+          const titleElement = document.querySelector("main.site__content div.container h1.title");
           if (titleElement) {
             titleElement.innerText = "Performing WikiTree Sourcer search...";
           }

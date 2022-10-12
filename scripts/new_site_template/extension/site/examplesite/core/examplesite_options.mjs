@@ -39,7 +39,7 @@ const citationOptionsGroup = {
       type: "checkbox",
       label: "Change any person and place names in all caps to initial caps",
       defaultValue: true,
-    },  
+    },
   ],
 };
 

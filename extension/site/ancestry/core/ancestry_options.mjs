@@ -137,12 +137,7 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "ancestry", "Ancestry");
 registerSiteSearchPopupOptionsGroup("ancestry", 1, 1);
-registerSubheadingForOptions(
-  "search",
-  "ancestry",
-  "parameters",
-  "Search Parameters"
-);
+registerSubheadingForOptions("search", "ancestry", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "ancestry", "Ancestry");

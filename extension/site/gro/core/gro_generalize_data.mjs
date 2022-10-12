@@ -60,8 +60,7 @@ function generalizeData(input) {
   }
 
   result.sourceType = "record";
-  result.recordType =
-    data.eventType == "birth" ? RT.BirthRegistration : RT.DeathRegistration;
+  result.recordType = data.eventType == "birth" ? RT.BirthRegistration : RT.DeathRegistration;
 
   result.setEventYear(data.eventYear.toString());
   result.setEventQuarter(data.eventQuarter); // this is 1-4
@@ -78,13 +77,8 @@ function generalizeData(input) {
   // most strings in extractedData are in all caps. Change them to mixed case
   let lastName = WTS_String.toInitialCapsEachWord(data.lastName, true);
   let forenames = WTS_String.toInitialCapsEachWord(data.forenames, true);
-  let mothersMaidenName = WTS_String.toInitialCapsEachWord(
-    data.mothersMaidenName,
-    true
-  );
-  let registrationDistrict = cleanRegistrationDistrictName(
-    data.registrationDistrict
-  );
+  let mothersMaidenName = WTS_String.toInitialCapsEachWord(data.mothersMaidenName, true);
+  let registrationDistrict = cleanRegistrationDistrictName(data.registrationDistrict);
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
   result.setLastNameAndForeNames(lastName, forenames);

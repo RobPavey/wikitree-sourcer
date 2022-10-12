@@ -22,11 +22,7 @@
   },
   "ageAtEvent": "22",
   "relationshipToHead": "wife",
-  "householdArrayFields": [
-    "name",
-    "age",
-    "relationship"
-  ],
+  "householdArrayFields": ["name", "age", "relationship"],
   "householdArray": [
     {
       "name": "Thomas Radcliffe",

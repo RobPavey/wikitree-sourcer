@@ -28,10 +28,7 @@
     "Household Members": "Emily Kimberlin 46<br/>Emily Black 74<br/>William Brain 19"
   },
   "household": {
-    "headings": [
-      "Name",
-      "Age"
-    ],
+    "headings": ["Name", "Age"],
     "members": [
       {
         "Name": "Emily Kimberlin",

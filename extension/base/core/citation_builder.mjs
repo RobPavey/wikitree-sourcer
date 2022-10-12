@@ -71,13 +71,7 @@ class CitationBuilder {
       "December",
     ];
 
-    const dateString =
-      "" +
-      date.getDate() +
-      " " +
-      monthStrings[date.getMonth()] +
-      " " +
-      date.getFullYear();
+    const dateString = "" + date.getDate() + " " + monthStrings[date.getMonth()] + " " + date.getFullYear();
 
     return dateString;
   }
@@ -102,18 +96,11 @@ class CitationBuilder {
     if (this.options.citation_general_addBreaksWithinBody) {
       citation += "<br/>";
     } else {
-      if (
-        citation.endsWith(";") ||
-        citation.endsWith(",") ||
-        citation.endsWith(".")
-      ) {
+      if (citation.endsWith(";") || citation.endsWith(",") || citation.endsWith(".")) {
         citation = citation.substring(0, citation.length - 1);
       }
 
-      if (
-        this.options.citation_general_commaInsideQuotes &&
-        citation.endsWith('"')
-      ) {
+      if (this.options.citation_general_commaInsideQuotes && citation.endsWith('"')) {
         citation = citation.substring(0, citation.length - 1);
         citation += separatorChar + '"';
       } else {
@@ -122,10 +109,7 @@ class CitationBuilder {
 
       citation += " ";
     }
-    if (
-      this.type != "source" &&
-      this.options.citation_general_addNewlinesWithinBody
-    ) {
+    if (this.type != "source" && this.options.citation_general_addNewlinesWithinBody) {
       citation += "\n";
     }
 
@@ -161,9 +145,7 @@ class CitationBuilder {
     if (this.options.citation_general_dataListSeparator == "commaColon") {
       itemSep = ",";
       valueSep = ":";
-    } else if (
-      this.options.citation_general_dataListSeparator == "commaSpace"
-    ) {
+    } else if (this.options.citation_general_dataListSeparator == "commaSpace") {
       itemSep = ",";
       valueSep = "";
     }
@@ -209,17 +191,11 @@ class CitationBuilder {
       citation += "<ref>";
     }
 
-    if (
-      this.type != "source" &&
-      this.options.citation_general_addNewlinesWithinRefs
-    ) {
+    if (this.type != "source" && this.options.citation_general_addNewlinesWithinRefs) {
       citation += "\n";
     }
 
-    if (
-      this.options.citation_general_meaningfulNames != "none" &&
-      this.meaningfulTitle
-    ) {
+    if (this.options.citation_general_meaningfulNames != "none" && this.meaningfulTitle) {
       if (this.options.citation_general_meaningfulNames == "bold") {
         citation += "'''" + this.meaningfulTitle + "''':";
       } else if (this.options.citation_general_meaningfulNames == "italic") {
@@ -228,10 +204,7 @@ class CitationBuilder {
         citation += this.meaningfulTitle + ":";
       }
 
-      if (
-        this.type != "source" &&
-        this.options.citation_general_addNewlinesWithinBody
-      ) {
+      if (this.type != "source" && this.options.citation_general_addNewlinesWithinBody) {
         citation += "\n";
       } else {
         citation += " ";
@@ -246,10 +219,7 @@ class CitationBuilder {
       citation += sourceTitle;
 
       if (this.options.citation_general_addEeItemType) {
-        if (
-          this.options.citation_general_commaInsideQuotes &&
-          citation.endsWith('"')
-        ) {
+        if (this.options.citation_general_commaInsideQuotes && citation.endsWith('"')) {
           citation = citation.substring(0, citation.length - 1);
           citation += ',"';
         } else {
@@ -268,20 +238,14 @@ class CitationBuilder {
     if (this.websiteCreatorOwner) {
       citation += this.websiteCreatorOwner;
 
-      if (
-        this.sourceReference &&
-        this.options.citation_general_referencePosition == "afterSourceTitle"
-      ) {
+      if (this.sourceReference && this.options.citation_general_referencePosition == "afterSourceTitle") {
         citation += ", ";
       } else {
         citation = this.addBreakNewlineOrAlternatives(citation);
       }
     }
 
-    if (
-      this.sourceReference &&
-      this.options.citation_general_referencePosition == "afterSourceTitle"
-    ) {
+    if (this.sourceReference && this.options.citation_general_referencePosition == "afterSourceTitle") {
       citation += this.sourceReference;
       citation = this.addBreakNewlineOrAlternatives(citation);
     }
@@ -291,10 +255,7 @@ class CitationBuilder {
       if (this.recordLinkOrTemplate) {
         if (subReqString) {
           citation += " (free access)<br/>";
-          if (
-            this.type != "source" &&
-            this.options.citation_general_addNewlinesWithinBody
-          ) {
+          if (this.type != "source" && this.options.citation_general_addNewlinesWithinBody) {
             citation += "\n";
           }
         } else {
@@ -318,9 +279,7 @@ class CitationBuilder {
         } else {
           citation += " (accessed " + accessedDate + ")";
         }
-      } else if (
-        this.options.citation_general_addAccessedDate == "parenBeforeLink"
-      ) {
+      } else if (this.options.citation_general_addAccessedDate == "parenBeforeLink") {
         citation += "(";
         citation += this.recordLinkOrTemplate;
 
@@ -345,10 +304,7 @@ class CitationBuilder {
         } else {
           citation += " ";
         }
-        if (
-          this.type != "source" &&
-          this.options.citation_general_addNewlinesWithinBody
-        ) {
+        if (this.type != "source" && this.options.citation_general_addNewlinesWithinBody) {
           citation += "\n";
         }
       }
@@ -364,10 +320,7 @@ class CitationBuilder {
       citation += this.dataString;
     }
 
-    if (
-      this.sourceReference &&
-      this.options.citation_general_referencePosition == "atEnd"
-    ) {
+    if (this.sourceReference && this.options.citation_general_referencePosition == "atEnd") {
       citation = this.addBreakNewlineOrAlternatives(citation, ";");
       if (!this.sourceReference.toLowerCase().startsWith("citing ")) {
         citation += "citing ";
@@ -385,14 +338,7 @@ class CitationBuilder {
       // However, it could end with accessed date if there is no data section, or just
       // a bare link and we don't want a period then. There are various ways we could test
       // for this
-      if (
-        !(
-          citation.endsWith("]") ||
-          citation.endsWith(">") ||
-          citation.endsWith("\n") ||
-          citation.endsWith("* ")
-        )
-      ) {
+      if (!(citation.endsWith("]") || citation.endsWith(">") || citation.endsWith("\n") || citation.endsWith("* "))) {
         // if ends with accessed date then (for now) we don't add a period
         // (accessed 6 May 2021)
         if (!/accessed \d+ \w+ \d+\)$/.test(citation)) {
@@ -401,10 +347,7 @@ class CitationBuilder {
       }
     }
 
-    if (
-      this.type != "source" &&
-      this.options.citation_general_addNewlinesWithinRefs
-    ) {
+    if (this.type != "source" && this.options.citation_general_addNewlinesWithinRefs) {
       citation += "\n";
     }
 
@@ -435,10 +378,7 @@ class CitationBuilder {
           }
         }
         citation += this.householdTableString;
-        if (
-          tableFormat != "sentence" ||
-          this.options.citation_general_addNewlinesWithinRefs
-        ) {
+        if (tableFormat != "sentence" || this.options.citation_general_addNewlinesWithinRefs) {
           citation += "\n";
         }
         //}

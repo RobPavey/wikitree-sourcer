@@ -87,10 +87,7 @@ function extractSecondRowText(secondRowText, result) {
       }
     }
 
-    var quarter = secondRowText.replace(
-      /^GRO Reference\:\s+\d\d\d\d\s+(\w)\s+Quarter\s+in.+Volume\s+[^\s]+.*$/,
-      "$1"
-    );
+    var quarter = secondRowText.replace(/^GRO Reference\:\s+\d\d\d\d\s+(\w)\s+Quarter\s+in.+Volume\s+[^\s]+.*$/, "$1");
     if (quarter != secondRowText && quarter.length == 1) {
       var eventQuarter = undefined;
       if (quarter == "M") {
@@ -109,19 +106,13 @@ function extractSecondRowText(secondRowText, result) {
     }
 
     var district = secondRowText
-      .replace(
-        /^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in\s+(.*)\s+Volume\s+[^\s]+.*$/,
-        "$1"
-      )
+      .replace(/^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in\s+(.*)\s+Volume\s+[^\s]+.*$/, "$1")
       .trim();
     if (district != secondRowText && district) {
       result.registrationDistrict = district;
     }
 
-    var volume = secondRowText.replace(
-      /^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in.+Volume\s+([^\s]+).*$/,
-      "$1"
-    );
+    var volume = secondRowText.replace(/^GRO Reference\:\s+\d\d\d\d\s+\w\s+Quarter\s+in.+Volume\s+([^\s]+).*$/, "$1");
     if (volume != secondRowText && volume.length > 0) {
       result.referenceVolume = volume;
     }
@@ -152,10 +143,7 @@ function extractSecondRowText(secondRowText, result) {
       }
     }
 
-    var quarter = secondRowText.replace(
-      /^GRO Reference\:\s+DOR\s+Q(\d)\/\d\d\d\d\s+in\s+.*\s+\([\w\-]+\)\s+.*$/,
-      "$1"
-    );
+    var quarter = secondRowText.replace(/^GRO Reference\:\s+DOR\s+Q(\d)\/\d\d\d\d\s+in\s+.*\s+\([\w\-]+\)\s+.*$/, "$1");
     if (quarter != secondRowText && quarter.length == 1) {
       const number = parseInt(quarter);
       if (number != NaN && number >= 1 && number <= 4) {
@@ -189,26 +177,17 @@ function extractSecondRowText(secondRowText, result) {
     if (volIndex != -1) {
       let restOfText = secondRowText.substring(volIndex + volumeString.length);
 
-      var volume = restOfText.replace(
-        /^\s*([^\s]+)\s+Page\s+\d+\s*(?:Entry Number\s\d+)?.*$/,
-        "$1"
-      );
+      var volume = restOfText.replace(/^\s*([^\s]+)\s+Page\s+\d+\s*(?:Entry Number\s\d+)?.*$/, "$1");
       if (volume != restOfText && volume.length > 0) {
         result.referenceVolume = volume;
       }
 
-      var page = restOfText.replace(
-        /^\s*[^\s]+\s+Page\s+(\d+)\s*(?:Entry Number\s\d+)?.*$/,
-        "$1"
-      );
+      var page = restOfText.replace(/^\s*[^\s]+\s+Page\s+(\d+)\s*(?:Entry Number\s\d+)?.*$/, "$1");
       if (page != restOfText && page.length > 0) {
         result.referencePage = page;
       }
 
-      var entryNumber = restOfText.replace(
-        /^\s*[^\s]+\s+Page\s+\d+\s+Entry\s+Number\s+(\d+).*$/,
-        "$1"
-      );
+      var entryNumber = restOfText.replace(/^\s*[^\s]+\s+Page\s+\d+\s+Entry\s+Number\s+(\d+).*$/, "$1");
       if (entryNumber != restOfText && entryNumber.length > 0) {
         result.entryNumber = entryNumber;
       }
@@ -217,18 +196,12 @@ function extractSecondRowText(secondRowText, result) {
       if (regIndex != -1) {
         let restOfText = secondRowText.substring(regIndex + regString.length);
 
-        var register = restOfText.replace(
-          /^\s*([^\s]+)\s*(?:Entry Number\s\d+)?.*$/,
-          "$1"
-        );
+        var register = restOfText.replace(/^\s*([^\s]+)\s*(?:Entry Number\s\d+)?.*$/, "$1");
         if (register != restOfText && register.length > 0) {
           result.referenceRegister = register;
         }
 
-        var entryNumber = restOfText.replace(
-          /^\s*[^\s]+\s+Entry\s+Number\s+(\d+).*$/,
-          "$1"
-        );
+        var entryNumber = restOfText.replace(/^\s*[^\s]+\s+Entry\s+Number\s+(\d+).*$/, "$1");
         if (entryNumber != restOfText && entryNumber.length > 0) {
           result.entryNumber = entryNumber;
         }
@@ -236,9 +209,7 @@ function extractSecondRowText(secondRowText, result) {
         // no Volume or Reg
         const entryNumIndex = secondRowText.indexOf(entryNumString);
         if (entryNumIndex != -1) {
-          let restOfText = secondRowText.substring(
-            entryNumIndex + entryNumString.length
-          );
+          let restOfText = secondRowText.substring(entryNumIndex + entryNumString.length);
 
           var entryNumber = restOfText.replace(/^\s*(\d+).*$/, "$1");
 
@@ -309,12 +280,7 @@ function extractSecondRow(inputElement, result) {
   }
 }
 
-function extractFirstOrSelectedData(
-  document,
-  firstRowFunction,
-  secondRowFunction,
-  result
-) {
+function extractFirstOrSelectedData(document, firstRowFunction, secondRowFunction, result) {
   let resultsNode = document.querySelector("[name='Results']");
   if (!resultsNode) {
     return;
@@ -369,22 +335,12 @@ function extractData(document, url) {
   const isDeath = document.querySelector("#EW_Death:checked");
 
   if (isBirth) {
-    extractFirstOrSelectedData(
-      document,
-      extractFirstRowForBirth,
-      extractSecondRow,
-      result
-    );
+    extractFirstOrSelectedData(document, extractFirstRowForBirth, extractSecondRow, result);
     result.birthYear = result.eventYear;
     result.birthQuarter = result.eventQuarter;
     result.eventType = "birth";
   } else if (isDeath) {
-    extractFirstOrSelectedData(
-      document,
-      extractFirstRowForDeath,
-      extractSecondRow,
-      result
-    );
+    extractFirstOrSelectedData(document, extractFirstRowForDeath, extractSecondRow, result);
     result.deathYear = result.eventYear;
     result.deathQuarter = result.eventQuarter;
     result.eventType = "death";

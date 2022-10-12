@@ -48,9 +48,7 @@ function getRefTitle(ed, gd) {
       type: RT.Census,
       defaultTitle: "Census",
       addYear: true,
-      titleMatches: [
-        { title: "Register", matches: ["1939 England and Wales Register"] },
-      ],
+      titleMatches: [{ title: "Register", matches: ["1939 England and Wales Register"] }],
     },
   ];
 
@@ -147,9 +145,7 @@ function getImageRefTitle(titleCollection, imageBrowsePath) {
   // no matches
   if (titleCollection && imageBrowsePath) {
     // choose the shorter one
-    return imageBrowsePath.length < titleCollection.length
-      ? imageBrowsePath
-      : titleCollection;
+    return imageBrowsePath.length < titleCollection.length ? imageBrowsePath : titleCollection;
   }
   if (titleCollection) {
     return titleCollection;
@@ -163,10 +159,7 @@ function getImageRefTitle(titleCollection, imageBrowsePath) {
 
 function modifyValueForUrl(value) {
   if (value.startsWith("https://www.findagrave.com/memorial")) {
-    let memorialId = value.replace(
-      /^https\:\/\/www\.findagrave\.com\/memorial\/(\d+)\/.*$/,
-      "$1"
-    );
+    let memorialId = value.replace(/^https\:\/\/www\.findagrave\.com\/memorial\/(\d+)\/.*$/, "$1");
     if (memorialId && memorialId != value) {
       return "{{FindAGrave|" + memorialId + "}}";
     }
@@ -223,8 +216,7 @@ function removeUnwantedKeysForTable(keys, recordData) {
   let newKeys = [];
 
   for (let key of keys) {
-    if (key.includes("Parish Map") || recordData[key].startsWith("View"))
-      continue;
+    if (key.includes("Parish Map") || recordData[key].startsWith("View")) continue;
 
     if (key.includes("Search") || key.includes("Learn More")) continue;
 
@@ -244,14 +236,11 @@ function removeUnwantedKeysForDataString(keys, recordData) {
   let newKeys = [];
 
   for (let key of keys) {
-    if (key.includes("Parish Map") || recordData[key].startsWith("View"))
-      continue;
+    if (key.includes("Parish Map") || recordData[key].startsWith("View")) continue;
 
     if (key.includes("Search") || key.includes("Learn More")) continue;
-    if (key.includes("as it Appears") || key.includes("Register Type"))
-      continue;
-    if (key.includes("Other Records") || key.includes("Family Members"))
-      continue;
+    if (key.includes("as it Appears") || key.includes("Register Type")) continue;
+    if (key.includes("Other Records") || key.includes("Family Members")) continue;
 
     // remove SSN for privacy. This could be an option
     if (key.includes("Social Security #")) continue;
@@ -278,9 +267,7 @@ function addReferenceDataToSourceReference(data, builder, options) {
     if (options.citation_general_sourceReferenceSeparator == "commaColon") {
       itemSep = ",";
       valueSep = ":";
-    } else if (
-      options.citation_general_sourceReferenceSeparator == "commaSpace"
-    ) {
+    } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
       itemSep = ",";
       valueSep = "";
     }
@@ -298,10 +285,7 @@ function addReferenceDataToSourceReference(data, builder, options) {
           for (let refKey of refKeyList) {
             let matchString = itemSep + " " + refKey + valueSep;
             let startString = refKey + valueSep;
-            if (
-              lcSourceReference.includes(matchString) ||
-              lcSourceReference.startsWith(startString)
-            ) {
+            if (lcSourceReference.includes(matchString) || lcSourceReference.startsWith(startString)) {
               // now check value is the same
               let index = lcSourceReference.indexOf(matchString);
               let valIndex = 0;
@@ -315,9 +299,7 @@ function addReferenceDataToSourceReference(data, builder, options) {
               if (endIndex == -1) {
                 endIndex = lcSourceReference.length;
               }
-              let matchValue = lcSourceReference
-                .substring(valIndex, endIndex)
-                .trim();
+              let matchValue = lcSourceReference.substring(valIndex, endIndex).trim();
               if (matchValue == value) {
                 alreadyInSourceReference = true;
                 break;
@@ -414,10 +396,7 @@ function buildDataString(data, gd, dataStyle, options, builder) {
         if (dataString != "") {
           dataString += itemSep + " ";
         }
-        if (
-          key.startsWith("Household Members") ||
-          key.startsWith("Household Member(s)")
-        ) {
+        if (key.startsWith("Household Members") || key.startsWith("Household Member(s)")) {
           if (!builder.householdTableString) {
             let newKey = key.replace(/\<br\/\>/g, " ");
             if (options.citation_general_addBreaksWithinBody) {
@@ -428,10 +407,7 @@ function buildDataString(data, gd, dataStyle, options, builder) {
               dataString += newKey + valueSep + " " + newValue;
             }
           }
-        } else if (
-          value.indexOf("<br/>") != -1 &&
-          !options.citation_general_addBreaksWithinBody
-        ) {
+        } else if (value.indexOf("<br/>") != -1 && !options.citation_general_addBreaksWithinBody) {
           let newValue = value.replace(/\<br\/\>/g, ", ");
           dataString += key + valueSep + " " + newValue;
         } else {
@@ -524,15 +500,7 @@ function buildAncestryRecordTemplate(data, options) {
   }
 
   if (domainParam) {
-    return (
-      "{{Ancestry Record|" +
-      data.dbId +
-      "|" +
-      data.recordId +
-      "|" +
-      domainParam +
-      "}}"
-    );
+    return "{{Ancestry Record|" + data.dbId + "|" + data.recordId + "|" + domainParam + "}}";
   }
 
   return "{{Ancestry Record|" + data.dbId + "|" + data.recordId + "}}";
@@ -562,10 +530,7 @@ function cleanOriginalData(text) {
   // remove bad Find a Grave links
   text = text.replace(/^Find a Grave\.\s+Find a Grave\./, "Find a Grave.");
   text = text.trim();
-  text = text.replace(
-    /^Find a Grave\.\s+http\:\/\/www\.findagrave\.com\/cgi\-bin\/fg\.cgi\.?/,
-    ""
-  );
+  text = text.replace(/^Find a Grave\.\s+http\:\/\/www\.findagrave\.com\/cgi\-bin\/fg\.cgi\.?/, "");
   text = text.trim();
 
   // The Original data string can get quite long and often has verbose ownership verbiage on the end that if not part
@@ -643,21 +608,14 @@ function buildCoreCitation(data, gd, options, sharingDataObj, builder) {
   addReferenceDataToSourceReference(data, builder, options);
 
   if (sharingDataObj) {
-    let template =
-      buildAncestrySharingTemplateFromSharingDataObj(sharingDataObj);
+    let template = buildAncestrySharingTemplateFromSharingDataObj(sharingDataObj);
     builder.sharingLinkOrTemplate = template;
     builder.databaseHasImages = true;
   }
 
   builder.recordLinkOrTemplate = buildAncestryRecordTemplate(data, options);
 
-  let additionalInfo = getAdditionalInfo(
-    data,
-    gd,
-    builder.type,
-    options,
-    builder
-  );
+  let additionalInfo = getAdditionalInfo(data, gd, builder.type, options, builder);
   if (additionalInfo) {
     builder.dataString = additionalInfo;
   }
@@ -679,21 +637,16 @@ function buildImageCitation(data, options, sharingDataObj, builder) {
   }
 
   if (sharingDataObj) {
-    let template =
-      buildAncestrySharingTemplateFromSharingDataObj(sharingDataObj);
+    let template = buildAncestrySharingTemplateFromSharingDataObj(sharingDataObj);
     builder.sharingLinkOrTemplate = template;
   }
 
   // builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(data, options) + " " + data.dbId + " " + data.recordId;
-  builder.recordLinkOrTemplate =
-    "Ancestry " + buildAncestryImageTemplate(data, options);
+  builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(data, options);
 
   builder.dataString = data.titleName;
 
-  builder.meaningfulTitle = getImageRefTitle(
-    data.titleCollection,
-    data.imageBrowsePath
-  );
+  builder.meaningfulTitle = getImageRefTitle(data.titleCollection, data.imageBrowsePath);
 }
 
 function buildCitation(input) {
@@ -706,8 +659,7 @@ function buildCitation(input) {
 
   let builder = new CitationBuilder(type, runDate, options);
   builder.householdTableString = input.householdTableString;
-  builder.includeSubscriptionRequired =
-    options.citation_ancestry_subscriptionRequired;
+  builder.includeSubscriptionRequired = options.citation_ancestry_subscriptionRequired;
 
   if (data.pageType == "record") {
     buildCoreCitation(data, gd, options, sharingDataObj, builder);

@@ -28,11 +28,7 @@
     "Household Members<br/>Age<br/>Relationship": "Harry A Pavey 20 Head<br/>Amelia E Pavey 21 Wife<br/>Henry A G Pavey 1/12 Son"
   },
   "household": {
-    "headings": [
-      "Household Members",
-      "Age",
-      "Relationship"
-    ],
+    "headings": ["Household Members", "Age", "Relationship"],
     "members": [
       {
         "Household Members": "Harry A Pavey",

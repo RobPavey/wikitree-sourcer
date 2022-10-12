@@ -36,19 +36,13 @@ const WTS_String = {
 
     var index = 0;
     do {
-      string =
-        string.substring(0, index) +
-        string[index].toUpperCase() +
-        string.substring(index + 1);
+      string = string.substring(0, index) + string[index].toUpperCase() + string.substring(index + 1);
       index = string.indexOf(" ", index);
       if (index != -1) {
         index++;
       }
       // it might not be on a letter, move to next letter
-      while (
-        index < string.length &&
-        (string[index] < "a" || string[index] > "z")
-      ) {
+      while (index < string.length && (string[index] < "a" || string[index] > "z")) {
         index++;
       }
     } while (index != -1 && index < string.length);
@@ -311,17 +305,7 @@ const WTS_String = {
           "av",
           "av.",
         ];
-        const atEndings = [
-          "workhouse",
-          "house",
-          "manor",
-          "farm",
-          "church",
-          "hospital",
-          "apartments",
-          "apts",
-          "apts.",
-        ];
+        const atEndings = ["workhouse", "house", "manor", "farm", "church", "hospital", "apartments", "apts", "apts."];
         lastWord = lastWord.toLowerCase();
         if (onEndings.includes(lastWord)) {
           preposition = "on";

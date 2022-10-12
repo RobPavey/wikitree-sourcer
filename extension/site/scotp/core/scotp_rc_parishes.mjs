@@ -550,8 +550,7 @@ const rc_parishes = [
   {
     mp_code: "MP",
     mp_no: "22",
-    rc_parish:
-      "FETTERNEAR, OUR LADY OF THE GARIOCH AND ST. JOHN THE EVANGELIST",
+    rc_parish: "FETTERNEAR, OUR LADY OF THE GARIOCH AND ST. JOHN THE EVANGELIST",
     county: "Aberdeen",
   },
   {
@@ -931,8 +930,7 @@ const rc_parishes = [
   {
     mp_code: "BF",
     mp_no: "1",
-    rc_parish:
-      "MIDDLE EAST, MIDDLE EAST AIR FORCES, CHRIST THE KING, KASFAREET WITH SAINTS MARY AND JOSEPH, HALTON",
+    rc_parish: "MIDDLE EAST, MIDDLE EAST AIR FORCES, CHRIST THE KING, KASFAREET WITH SAINTS MARY AND JOSEPH, HALTON",
     county: "Military or outside Scotland",
   },
   {
@@ -1246,10 +1244,7 @@ function getRcParishDataFromNameAndCongregation(parishName, congregationName) {
   }
 
   const result = rc_parishes.filter((parish) => {
-    if (
-      ucParishNamePlusCongregation &&
-      ucParishNamePlusCongregation == parish.rc_parish
-    ) {
+    if (ucParishNamePlusCongregation && ucParishNamePlusCongregation == parish.rc_parish) {
       return true;
     } else if (ucParishName == parish.rc_parish) {
       return true;
@@ -1280,7 +1275,4 @@ function getRcParishDataFromParishNameOnly(parishName) {
   return result;
 }
 
-export {
-  getRcParishDataFromNameAndCongregation,
-  getRcParishDataFromParishNameOnly,
-};
+export { getRcParishDataFromNameAndCongregation, getRcParishDataFromParishNameOnly };

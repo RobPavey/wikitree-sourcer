@@ -23,11 +23,7 @@
   },
   "ageAtEvent": "55",
   "relationshipToHead": "wife",
-  "householdArrayFields": [
-    "name",
-    "age",
-    "relationship"
-  ],
+  "householdArrayFields": ["name", "age", "relationship"],
   "householdArray": [
     {
       "name": "Charles Darby",

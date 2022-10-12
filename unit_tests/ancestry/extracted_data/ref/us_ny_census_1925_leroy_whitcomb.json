@@ -24,11 +24,7 @@
     "Household Members<br/>Age<br/>Relationship": "Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son"
   },
   "household": {
-    "headings": [
-      "Household Members",
-      "Age",
-      "Relationship"
-    ],
+    "headings": ["Household Members", "Age", "Relationship"],
     "members": [
       {
         "Household Members": "Robert E Whitcomb",

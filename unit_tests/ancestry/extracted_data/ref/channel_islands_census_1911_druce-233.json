@@ -26,11 +26,7 @@
     "Household Members<br/>Age<br/>Relationship": "Walter John Salmon 30 Head<br/>Roseline Augustus Salmon 25 Wife<br/>Lillian May Salmon 5 Daughter<br/>Walter William John Salmon 3 Son<br/>April Henry Salmon 2 Son<br/>Cecil Henry Druce 14 Brother-in-law"
   },
   "household": {
-    "headings": [
-      "Household Members",
-      "Age",
-      "Relationship"
-    ],
+    "headings": ["Household Members", "Age", "Relationship"],
     "members": [
       {
         "Household Members": "Walter John Salmon",

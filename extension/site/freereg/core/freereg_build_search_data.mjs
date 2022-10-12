@@ -26,13 +26,7 @@ import { WTS_Date } from "../../../base/core/wts_date.mjs";
 import { countyNameToCountyCode } from "../../freecen/core/freecen_chapman_codes.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
-function addStartAndEndYearFromEventYear(
-  data,
-  options,
-  eventYear,
-  dateQualifier,
-  fieldData
-) {
+function addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier, fieldData) {
   // compute the start and end birth dates
   let optYearRange = options.search_freereg_yearRange;
   if (optYearRange != "none") {
@@ -69,12 +63,7 @@ function addStartAndEndYearFromEventYear(
   }
 }
 
-function addStartAndEndYearFromBirthAndDeath(
-  data,
-  options,
-  fieldData,
-  startOffset
-) {
+function addStartAndEndYearFromBirthAndDeath(data, options, fieldData, startOffset) {
   // compute the start and end birth dates
   let optYearRange = options.search_freereg_yearRange;
   if (optYearRange != "none") {
@@ -94,18 +83,9 @@ function addStartAndEndYearFromBirthAndDeath(
         endYear: undefined,
       };
 
-      data.setDatesUsingQualifierAndYearNum(
-        birthStartAndEndDates,
-        startAndEndDates.startYear,
-        birthDateQualifier
-      );
-      data.setDatesUsingQualifierAndYearNum(
-        deathStartAndEndDates,
-        startAndEndDates.endYear,
-        deathDateQualifier
-      );
-      startAndEndDates.startYear =
-        birthStartAndEndDates.startYear + startOffset;
+      data.setDatesUsingQualifierAndYearNum(birthStartAndEndDates, startAndEndDates.startYear, birthDateQualifier);
+      data.setDatesUsingQualifierAndYearNum(deathStartAndEndDates, startAndEndDates.endYear, deathDateQualifier);
+      startAndEndDates.startYear = birthStartAndEndDates.startYear + startOffset;
       startAndEndDates.endYear = deathStartAndEndDates.endYear;
     } else {
       let startYearNum = startAndEndDates.startYear + startOffset;
@@ -175,26 +155,14 @@ function buildSearchData(input) {
     eventYear = data.inferBirthYear();
     dateQualifier = data.inferBirthDateQualifier();
     county = data.inferBirthCounty();
-    addStartAndEndYearFromEventYear(
-      data,
-      options,
-      eventYear,
-      dateQualifier,
-      fieldData
-    );
+    addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier, fieldData);
     fieldData["ba"] = true;
   } else if (type == "burial") {
     lastName = data.inferLastNameAtDeath();
     eventYear = data.inferDeathYear();
     dateQualifier = data.inferDeathDateQualifier();
     county = data.inferDeathCounty();
-    addStartAndEndYearFromEventYear(
-      data,
-      options,
-      eventYear,
-      dateQualifier,
-      fieldData
-    );
+    addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier, fieldData);
     fieldData["bu"] = true;
   } else if (type == "marriage") {
     addStartAndEndYearFromBirthAndDeath(data, options, fieldData, 14);

@@ -21,10 +21,7 @@
   },
   "ageAtEvent": "10",
   "maritalStatus": "single",
-  "householdArrayFields": [
-    "name",
-    "age"
-  ],
+  "householdArrayFields": ["name", "age"],
   "householdArray": [
     {
       "name": "Thomas Goggin",

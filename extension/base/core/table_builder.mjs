@@ -110,12 +110,7 @@ class TableBuilder {
   getTableString() {
     let tableString = "";
 
-    if (
-      !this.fieldNames ||
-      this.fieldNames.length < 1 ||
-      !this.personArray ||
-      this.personArray.length < 1
-    ) {
+    if (!this.fieldNames || this.fieldNames.length < 1 || !this.personArray || this.personArray.length < 1) {
       return "";
     }
 
@@ -150,10 +145,7 @@ class TableBuilder {
       for (let fieldName of this.fieldNames) {
         if (this.includeFieldColumn(fieldName)) {
           if (firstCol) {
-            if (
-              optHeading == "boldCentered" ||
-              optHeading == "bgGreenBoldCentered"
-            ) {
+            if (optHeading == "boldCentered" || optHeading == "bgGreenBoldCentered") {
               tableString += `! `;
             } else {
               tableString += `| `;
@@ -203,11 +195,7 @@ class TableBuilder {
         for (let fieldName of this.fieldNames) {
           if (this.includeFieldColumn(fieldName)) {
             if (firstCol) {
-              if (
-                person.isSelected &&
-                (optSelected == "boldCenteredRow" ||
-                  optSelected == "bgYellowBoldCenteredRow")
-              ) {
+              if (person.isSelected && (optSelected == "boldCenteredRow" || optSelected == "bgYellowBoldCenteredRow")) {
                 tableString += `! `;
               } else {
                 tableString += `| `;
@@ -219,16 +207,9 @@ class TableBuilder {
             if (value) {
               let useBoldQuotes = false;
               if (person.isSelected) {
-                if (
-                  firstCol &&
-                  (optSelected == "boldName" ||
-                    optSelected == "bgYellowBoldName")
-                ) {
+                if (firstCol && (optSelected == "boldName" || optSelected == "bgYellowBoldName")) {
                   useBoldQuotes = true;
-                } else if (
-                  optSelected == "boldRow" ||
-                  optSelected == "bgYellowBoldRow"
-                ) {
+                } else if (optSelected == "boldRow" || optSelected == "bgYellowBoldRow") {
                   useBoldQuotes = true;
                 }
               }
@@ -255,12 +236,7 @@ class TableBuilder {
   getListString() {
     let listString = "";
 
-    if (
-      !this.fieldNames ||
-      this.fieldNames.length < 1 ||
-      !this.personArray ||
-      this.personArray.length < 1
-    ) {
+    if (!this.fieldNames || this.fieldNames.length < 1 || !this.personArray || this.personArray.length < 1) {
       return "";
     }
 
@@ -334,11 +310,7 @@ class TableBuilder {
 
     let lastPunctOpt = this.options.table_sentence_lastItemPunctuation;
 
-    for (
-      let personIndex = 0;
-      personIndex < this.personArray.length;
-      personIndex++
-    ) {
+    for (let personIndex = 0; personIndex < this.personArray.length; personIndex++) {
       let person = this.personArray[personIndex];
 
       if (person.isClosed) {
@@ -425,10 +397,7 @@ function buildHouseholdTable(input) {
     let collection = RC.findCollection(gd.sourceOfData, gd.collectionData.id);
 
     if (collection) {
-      let collectionFieldNames = RC.getFieldFromCollectionOrOwningCollections(
-        collection,
-        "householdTableColumns"
-      );
+      let collectionFieldNames = RC.getFieldFromCollectionOrOwningCollections(collection, "householdTableColumns");
       if (collectionFieldNames && collectionFieldNames.length > 0) {
         fieldNames = collectionFieldNames;
       }
@@ -504,10 +473,7 @@ function buildHouseholdTable(input) {
     }
 
     // Optionally insert an inline citation at the end of the caption
-    if (
-      options.table_general_autoGenerate == "citationInTableCaption" &&
-      input.citationObject
-    ) {
+    if (options.table_general_autoGenerate == "citationInTableCaption" && input.citationObject) {
       if (input.citationObject.citation) {
         builder.caption += input.citationObject.citation;
       }

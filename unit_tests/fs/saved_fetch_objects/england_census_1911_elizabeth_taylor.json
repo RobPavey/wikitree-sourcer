@@ -1,2155 +1,2828 @@
 {
-  "id" : "r_21691290243",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3?seek=next"
+  "id": "r_21691290243",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3"
     }
   },
-  "description" : "#sd_p_10347919944",
-  "persons" : [ {
-    "id" : "p_10347919943",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "33c40cc4-484a-4620-b9f4-ce37ee9ae8fb",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "M"
-        }, {
-          "id" : "f254bb88-2782-4ca0-9294-2d6689a7d797",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1563663475113
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Male",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/X7RW-H5P?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/1GK8-3V3?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5P" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Richard Taylor",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Richard",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "b7695be3-4dea-4f2c-90ca-c3d94e682c16",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "RICHARD"
-            }, {
-              "id" : "42e8a6de-6219-4d56-842a-cb0acb729f9b",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+  "description": "#sd_p_10347919944",
+  "persons": [
+    {
+      "id": "p_10347919943",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "33c40cc4-484a-4620-b9f4-ce37ee9ae8fb",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "M"
+              },
+              {
+                "id": "f254bb88-2782-4ca0-9294-2d6689a7d797",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1563663475113
                 },
-                "modified" : 1563663475110
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Richard"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Taylor",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "586ee628-5d40-4074-8dff-ba9e525a402c",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "TAYLOR"
-            }, {
-              "id" : "0c2d5803-547e-433e-aba7-cbfef40f48ce",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Male",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/X7RW-H5P?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/1GK8-3V3?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X7RW-H5P"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Richard Taylor",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Richard",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "b7695be3-4dea-4f2c-90ca-c3d94e682c16",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "RICHARD"
+                        },
+                        {
+                          "id": "42e8a6de-6219-4d56-842a-cb0acb729f9b",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1563663475110
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Richard"
+                        }
+                      ]
+                    }
+                  ]
                 },
-                "modified" : 1563663475110
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Taylor"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "d833ffd9-9f57-4710-80e5-2b6432649eee",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1563663475103
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "RICHARD TAYLOR"
-          }, {
-            "id" : "6987947e-dec2-469c-8beb-eda8c8f563f2",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1563663475110
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Richard Taylor"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Census",
-      "date" : {
-        "original" : "1911",
-        "formal" : "+1911",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "id" : "36cc2c5b-9bf5-46d6-99e4-620f1ba84678",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "1911"
-          }, {
-            "id" : "c8213df2-85a2-4f88-909b-81d016035471",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
-              },
-              "modified" : 1544106918189
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "1911",
-            "resource" : "+1911"
-          } ]
-        } ]
-      },
-      "place" : {
-        "original" : "Luxborough, Somerset, England, United Kingdom",
-        "description" : "#place_2978459",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "de487e77-a007-430a-be93-6459594f1415",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_SUP",
-            "text" : "Luxborough, Luxborough Washford, Somersetshire, England",
-            "qualifiers" : [ {
-              "value" : "SUP",
-              "name" : "http://familysearch.org/types/qualifiers/Info"
-            } ]
-          }, {
-            "id" : "9163de42-3fa0-422f-9b2d-a818db93270f",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1563663475125
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Luxborough, Luxborough Washford, Somersetshire, England"
-          }, {
-            "id" : "7ec31744-fd65-4e8e-965c-aad91ce6269e",
-            "confidence" : "http://confidence/81",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1563663475125
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Luxborough, Somerset, England, United Kingdom",
-            "resource" : "https://www.familysearch.org/platform/places/description/2978459",
-            "qualifiers" : [ {
-              "value" : "1013, 1020, 1015, 1014, 1026",
-              "name" : "StdQualifier"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Country",
-          "values" : [ {
-            "id" : "08036ac2-15b9-472d-a616-381253f06f13",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_COUNTRY",
-            "text" : "England"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "id" : "3dff2b8e-1532-464e-b64c-e2a4a87a75d4",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_COUNTY",
-            "text" : "Somersetshire"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
-          "values" : [ {
-            "id" : "40ddc47f-69a3-4517-b9cd-9e8c79280460",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_ENUMERATION",
-            "text" : "9"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/DistrictNumber",
-          "values" : [ {
-            "id" : "22ffb3c1-837b-4595-95f5-be4af2fced11",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_NBR",
-            "text" : "302"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/RegistrationDistrict",
-          "values" : [ {
-            "id" : "9b6cf7fb-3767-45c0-a876-2bfbe2146836",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_REG",
-            "text" : "Williton"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Parish",
-          "values" : [ {
-            "id" : "22c3de08-bde9-4822-8545-4eefb5d3e536",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PARISH",
-            "text" : "Luxborough"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/SubDistrict",
-          "values" : [ {
-            "id" : "62e19398-016f-4b45-b0db-497c22c30c71",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_SUB_DISTRICT",
-            "text" : "Dunster"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/SubDistrictNumber",
-          "values" : [ {
-            "id" : "a93bd867-dc07-4cf0-b9f7-d4f89e6ec13e",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_SUB_DISTRICT_NBR",
-            "text" : "2"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Town",
-          "values" : [ {
-            "id" : "fe7d30cd-9ebe-46df-9020-c835605a25a0",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_TOWN",
-            "text" : "LUXBOROUGH WASHFORD"
-          } ]
-        } ]
-      },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "id" : "de1bbe36-27fc-4437-ac92-a831476cce36",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Census"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/MaritalStatus",
-      "value" : "Married",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/MaritalStatus",
-        "values" : [ {
-          "id" : "c69b970f-0e42-4955-9172-fb819da48f96",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_MARITAL_STATUS_ORIG",
-          "text" : "MARRIED"
-        }, {
-          "id" : "32f5e2ab-56b3-4ffc-b1a4-a231b265191b",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvMaritalStatusTreatment/ver/2"
-            },
-            "modified" : 1563663475110
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Taylor",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "586ee628-5d40-4074-8dff-ba9e525a402c",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "TAYLOR"
+                        },
+                        {
+                          "id": "0c2d5803-547e-433e-aba7-cbfef40f48ce",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1563663475110
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Taylor"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "d833ffd9-9f57-4710-80e5-2b6432649eee",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1563663475103
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "RICHARD TAYLOR"
+                    },
+                    {
+                      "id": "6987947e-dec2-469c-8beb-eda8c8f563f2",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1563663475110
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Richard Taylor"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Census",
+          "date": {
+            "original": "1911",
+            "formal": "+1911",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "id": "36cc2c5b-9bf5-46d6-99e4-620f1ba84678",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "1911"
+                  },
+                  {
+                    "id": "c8213df2-85a2-4f88-909b-81d016035471",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                      },
+                      "modified": 1544106918189
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "1911",
+                    "resource": "+1911"
+                  }
+                ]
+              }
+            ]
           },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_MARITAL_STATUS",
-          "text" : "Married",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103503"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Marriage",
-      "date" : {
-        "original" : "1864",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "2104cc5c-1bf9-4e99-9c6b-08a958935b0a",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_MAR_YEAR",
-            "text" : "1864"
-          } ]
-        } ]
-      }
-    }, {
-      "type" : "http://gedcomx.org/Occupation",
-      "value" : "FARM LABOURER",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Occupation",
-        "values" : [ {
-          "id" : "4c082f17-e81d-4df8-920f-d5d02dda1030",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_OCCUPATION",
-          "text" : "FARM LABOURER"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "1841",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "3f62b29e-86f7-4019-a3a6-b0872e2409cc",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/EstBirthYearTreatment/ver/2"
+          "place": {
+            "original": "Luxborough, Somerset, England, United Kingdom",
+            "description": "#place_2978459",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "de487e77-a007-430a-be93-6459594f1415",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_SUP",
+                    "text": "Luxborough, Luxborough Washford, Somersetshire, England",
+                    "qualifiers": [
+                      {
+                        "value": "SUP",
+                        "name": "http://familysearch.org/types/qualifiers/Info"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "9163de42-3fa0-422f-9b2d-a818db93270f",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1563663475125
+                    },
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_ORIG",
+                    "text": "Luxborough, Luxborough Washford, Somersetshire, England"
+                  },
+                  {
+                    "id": "7ec31744-fd65-4e8e-965c-aad91ce6269e",
+                    "confidence": "http://confidence/81",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1563663475125
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Luxborough, Somerset, England, United Kingdom",
+                    "resource": "https://www.familysearch.org/platform/places/description/2978459",
+                    "qualifiers": [
+                      {
+                        "value": "1013, 1020, 1015, 1014, 1026",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ]
               },
-              "modified" : 1563663475122
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_YEAR_EST",
-            "text" : "1841",
-            "resource" : "+1841"
-          } ]
-        } ]
-      },
-      "place" : {
-        "original" : "Luxborough, Somersetshire",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "73050ede-ac20-400f-94d4-7257989de963",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_PLACE",
-            "text" : "Luxborough, Somersetshire"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "id" : "22399d69-85f4-4956-ad96-f155a122a57b",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_COUNTY",
-            "text" : "SOMERSETSHIRE"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Town",
-          "values" : [ {
-            "id" : "c3bd215d-f517-4650-8712-2fe3fc91a747",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_TOWN",
-            "text" : "LUXBOROUGH"
-          } ]
-        } ]
-      }
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "id" : "59f82ce7-1684-4158-bf50-c5e9e25e5697",
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/AgeTreatment/ver/1"
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "id": "08036ac2-15b9-472d-a616-381253f06f13",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_COUNTRY",
+                    "text": "England"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "id": "3dff2b8e-1532-464e-b64c-e2a4a87a75d4",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_COUNTY",
+                    "text": "Somersetshire"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/EnumerationDistrict",
+                "values": [
+                  {
+                    "id": "40ddc47f-69a3-4517-b9cd-9e8c79280460",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_ENUMERATION",
+                    "text": "9"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/DistrictNumber",
+                "values": [
+                  {
+                    "id": "22ffb3c1-837b-4595-95f5-be4af2fced11",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_NBR",
+                    "text": "302"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/RegistrationDistrict",
+                "values": [
+                  {
+                    "id": "9b6cf7fb-3767-45c0-a876-2bfbe2146836",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_REG",
+                    "text": "Williton"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Parish",
+                "values": [
+                  {
+                    "id": "22c3de08-bde9-4822-8545-4eefb5d3e536",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PARISH",
+                    "text": "Luxborough"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/SubDistrict",
+                "values": [
+                  {
+                    "id": "62e19398-016f-4b45-b0db-497c22c30c71",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_SUB_DISTRICT",
+                    "text": "Dunster"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/SubDistrictNumber",
+                "values": [
+                  {
+                    "id": "a93bd867-dc07-4cf0-b9f7-d4f89e6ec13e",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_SUB_DISTRICT_NBR",
+                    "text": "2"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Town",
+                "values": [
+                  {
+                    "id": "fe7d30cd-9ebe-46df-9020-c835605a25a0",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_TOWN",
+                    "text": "LUXBOROUGH WASHFORD"
+                  }
+                ]
+              }
+            ]
           },
-          "modified" : 1563663475110
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "id": "de1bbe36-27fc-4437-ac92-a831476cce36",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Census"
+                }
+              ]
+            }
+          ]
         },
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_ORIG",
-        "text" : "070"
-      }, {
-        "id" : "294e6b29-fbd6-48e4-a8d4-4377fbb37dad",
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/AgeTreatment/ver/1"
-          },
-          "modified" : 1563663475113
-        },
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_AGE",
-        "text" : "70",
-        "resource" : "P70Y"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/AgeYears",
-      "values" : [ {
-        "id" : "b0c5fa78-7ae6-42bd-b622-13ff8bd1d090",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_YEARS_ORIG",
-        "text" : "070"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtCountyCode",
-      "values" : [ {
-        "id" : "ef7a4a73-c118-46e6-b365-5e88f41fa194",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_COUNTY_CODE",
-        "text" : "25"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtData",
-      "values" : [ {
-        "id" : "bfa8e664-650a-4703-9741-85ccab45abec",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_DATA",
-        "text" : "{\"address\": \"DITCH COTTAGE LUXBOROUGH WASHFORD\", \"name_concat\": \"EDWARD,TAYLOR|ELIZABETH,TAYLOR|RICHARD,TAYLOR\", \"no_of_rooms\": \"3 ROOMS\", \"image_upp_id\": \"GBC/1911/RG14/14131/0031\", \"rg14_look_up\": \"14131 0031 0031_03 00001\", \"rg78_look_up\": \"00844 0097 0108_60 00005\", \"year_of_birth\": \" 1841\", \"keywords_place\": \"WILLITON,LUXBOROUGH,DUNSTER,ENGLAND,Somerset\", \"occupation_code\": \"140\", \"where_born_full\": \"SOMERSET LUXBOROUGH\", \"working_at_home\": \"N\", \"census_reference\": \"RG14PN14131 RG78PN844 RD302 SD2 ED9 SN16\", \"rg78_code_number\": \" 844.0\", \"type_of_building\": \"PRIVATE HOUSE\", \"year_of_marriage\": \" 1864\", \"address_house_name\": \"DITCH COTTAGE\", \"image_upp_id_rg14_cover\": \"GBC/1911/RG14/14131/0000\", \"image_upp_id_rg78_cover\": \"GBC/1911/RG78/00844/0000\", \"piece_number_and_suffix\": \"14131\", \"image_upp_id_rg78_totals\": \"GBC/1911/RG78/00844/0097-TOTAL\", \"image_upp_id_rg14_address\": \"GBC/1911/RG14/14131/0032\", \"image_upp_id_rg78_details\": \"GBC/1911/RG78/00844/0097-DETAIL\", \"image_upp_id_rg78_summary\": \"GBC/1911/RG78/00844/0108\", \"image_upp_id_rg78_description\": \"GBC/1911/RG78/00844/0097-DESC\"}"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExternalImageId",
-      "values" : [ {
-        "id" : "a36cc860-4c1f-4d6f-9d2c-eec2dc40f6b6",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_IMAGE_ID",
-        "text" : "GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/1"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtImageIdOrig",
-      "values" : [ {
-        "id" : "2df6455a-649f-40fd-b960-b870f9f38515",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "EXT_IMAGE_ID_ORIG",
-        "text" : "141310031_1_0"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtLineNbrSuf",
-      "values" : [ {
-        "id" : "5fb6782d-f6d2-4a81-a4ec-cc65c9d88b9d",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_LINE_NBR_SUF",
-        "text" : "0"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtRecordId",
-      "values" : [ {
-        "id" : "c70501ba-8efc-4f2a-aa35-5ef64f105b8a",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_RECORD_ID",
-        "text" : "GBC/1911/RG14/14131/0031/1"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUarn",
-      "values" : [ {
-        "id" : "9c81c948-a6b5-45c2-95a5-e48d720b795e",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_UARN",
-        "text" : "141310031"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUir",
-      "values" : [ {
-        "id" : "5b82ea54-10f1-4637-9a16-59cdbe8d8c4a",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_UIR",
-        "text" : "141310031"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUrn",
-      "values" : [ {
-        "id" : "1d7419ce-4080-4594-8182-9aa0b9e2774a",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_URN",
-        "text" : "141310031001000"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUrprn",
-      "values" : [ {
-        "id" : "81642ce0-18bd-4de4-b2ca-19c737130448",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_URPRN",
-        "text" : "8440108"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/CodeEmployed",
-      "values" : [ {
-        "id" : "2e1ce767-f74e-4de8-91be-a5366357f61d",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "MISC_CODE_EMPLOYED",
-        "text" : "Y",
-        "qualifiers" : [ {
-          "value" : "MISC",
-          "name" : "http://familysearch.org/types/qualifiers/Info"
-        } ]
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/InhabitedFlag",
-      "values" : [ {
-        "id" : "12992b04-4f3c-4422-b46b-c62ca0202b56",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "MISC_FLAG_INHABITED",
-        "text" : "Y",
-        "qualifiers" : [ {
-          "value" : "MISC",
-          "name" : "http://familysearch.org/types/qualifiers/Info"
-        } ]
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/MiscNameHouse",
-      "values" : [ {
-        "id" : "aedfd6f7-e296-4898-bc0b-8b6e521328fe",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "MISC_NAME_HOUSE",
-        "text" : "DITCH COTTAGE",
-        "qualifiers" : [ {
-          "value" : "MISC",
-          "name" : "http://familysearch.org/types/qualifiers/Info"
-        } ]
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/CntFamilyMembers",
-      "values" : [ {
-        "id" : "7fd65f6e-310e-44e2-abec-4d0ceae91bee",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_CNT_FAMILY_MEMBERS",
-        "text" : "3"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/CntYearsMarried",
-      "values" : [ {
-        "id" : "23d277af-d9bb-4a79-b6f7-e2282c4a4ae5",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_CNT_YEARS_MARRIED",
-        "text" : "47"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/RelationshipToHeadCode",
-      "values" : [ {
-        "id" : "cd705278-ad73-45d9-b9d6-0743f81e3548",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_RELATIONSHIP_CODE",
-        "text" : "Head"
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/RelationshipToHead",
-      "values" : [ {
-        "id" : "d3db941b-34c7-4745-bf91-03222f562b7b",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
-        "text" : "HEAD"
-      }, {
-        "id" : "05a8c7ae-e470-4927-9b04-6a5c06209e02",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
-        "text" : "Head"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceDocumentType",
-      "values" : [ {
-        "id" : "0d278df4-380c-47c6-8308-b4b99e416417",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_DOCUMENT_TYPE",
-        "text" : "3"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceHouseholdId",
-      "values" : [ {
-        "id" : "b18b9797-0708-4194-862b-69115453833d",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_HOUSEHOLD_ID",
-        "text" : "141310031"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
-      "values" : [ {
-        "id" : "ce90254c-0ab6-44e9-af2f-4248e929cd1b",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_LINE_NBR",
-        "text" : "1"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
-      "values" : [ {
-        "id" : "60237971-348b-4c88-8bcb-8d0e53b70e01",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PAGE_NBR",
-        "text" : "1"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePageType",
-      "values" : [ {
-        "id" : "e5b9c6f6-821e-4390-9c40-a0bf9ad22ff5",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PAGE_TYPE",
-        "text" : "6"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePieceFolio",
-      "values" : [ {
-        "id" : "a7b64567-2e6d-4f76-9e2f-c925fcb7ccda",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PIECE_FOLIO",
-        "text" : "31"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePieceNbr",
-      "values" : [ {
-        "id" : "470b0233-14cc-4398-b05c-c34ea6583309",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PIECE_NBR",
-        "text" : "14131"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceRecordType",
-      "values" : [ {
-        "id" : "074ed06e-341b-40bc-8c16-585cb48976ab",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_RECORD_TYPE",
-        "text" : "Household"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceRegNbr",
-      "values" : [ {
-        "id" : "0a1d46d0-bd8f-47cb-8675-c58d6a71032f",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_REG_NBR",
-        "text" : "RG14"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceScheduleType",
-      "values" : [ {
-        "id" : "6c26e265-15dc-40db-a26a-f0a2335a4af2",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_SCHEDULE_TYPE",
-        "text" : "16"
-      } ]
-    } ]
-  }, {
-    "id" : "p_10347919944",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "4bfa320b-1a42-4bbd-8bda-181525f91c45",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "F"
-        }, {
-          "id" : "698b9f63-b676-4968-b9fd-ed008baa1720",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1563663475163
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Female",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/X7RW-H55?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/1GK8-3V3?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd3",
-      "descriptionId" : "sd3"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X7RW-H55" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Elizabeth Taylor",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Elizabeth",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "18bc9bfc-83aa-49c8-90cd-6ba4d8633862",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "ELIZABETH"
-            }, {
-              "id" : "fb74de44-64e6-4dd4-a193-646ca306b7ff",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+        {
+          "type": "http://gedcomx.org/MaritalStatus",
+          "value": "Married",
+          "fields": [
+            {
+              "type": "http://gedcomx.org/MaritalStatus",
+              "values": [
+                {
+                  "id": "c69b970f-0e42-4955-9172-fb819da48f96",
+                  "type": "http://gedcomx.org/Original",
+                  "labelId": "PR_MARITAL_STATUS_ORIG",
+                  "text": "MARRIED"
                 },
-                "modified" : 1563663475154
+                {
+                  "id": "32f5e2ab-56b3-4ffc-b1a4-a231b265191b",
+                  "attribution": {
+                    "contributor": {
+                      "resource": "http://treatment/CvMaritalStatusTreatment/ver/2"
+                    },
+                    "modified": 1563663475110
+                  },
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "PR_MARITAL_STATUS",
+                  "text": "Married",
+                  "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103503"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Marriage",
+          "date": {
+            "original": "1864",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "2104cc5c-1bf9-4e99-9c6b-08a958935b0a",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_MAR_YEAR",
+                    "text": "1864"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "http://gedcomx.org/Occupation",
+          "value": "FARM LABOURER",
+          "fields": [
+            {
+              "type": "http://gedcomx.org/Occupation",
+              "values": [
+                {
+                  "id": "4c082f17-e81d-4df8-920f-d5d02dda1030",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "PR_OCCUPATION",
+                  "text": "FARM LABOURER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "1841",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "3f62b29e-86f7-4019-a3a6-b0872e2409cc",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/EstBirthYearTreatment/ver/2"
+                      },
+                      "modified": 1563663475122
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_YEAR_EST",
+                    "text": "1841",
+                    "resource": "+1841"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Luxborough, Somersetshire",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "73050ede-ac20-400f-94d4-7257989de963",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_PLACE",
+                    "text": "Luxborough, Somersetshire"
+                  }
+                ]
               },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Elizabeth"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Taylor",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "c442b765-74c1-4f2a-a149-c90d30d76a41",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "TAYLOR"
-            }, {
-              "id" : "c68ba4eb-d64c-456b-804e-4052f29e55a3",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "id": "22399d69-85f4-4956-ad96-f155a122a57b",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_COUNTY",
+                    "text": "SOMERSETSHIRE"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Town",
+                "values": [
+                  {
+                    "id": "c3bd215d-f517-4650-8712-2fe3fc91a747",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_TOWN",
+                    "text": "LUXBOROUGH"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "id": "59f82ce7-1684-4158-bf50-c5e9e25e5697",
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/AgeTreatment/ver/1"
                 },
-                "modified" : 1563663475154
+                "modified": 1563663475110
               },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Taylor"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "d8ff83e5-98e9-4794-b07f-b7b5e8a02667",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1563663475147
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_ORIG",
+              "text": "070"
             },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "ELIZABETH TAYLOR"
-          }, {
-            "id" : "a75e1631-2031-4e1a-9b04-67995c36ed4b",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1563663475154
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Elizabeth Taylor"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Census",
-      "date" : {
-        "original" : "1911",
-        "formal" : "+1911",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "id" : "1a002b0c-0ef3-47cb-8d64-3e782c73bac9",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "1911"
-          }, {
-            "id" : "53c28857-8f2f-4710-981c-7917d7067901",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
-              },
-              "modified" : 1544106918207
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "1911",
-            "resource" : "+1911"
-          } ]
-        } ]
-      },
-      "place" : {
-        "original" : "Luxborough, Somerset, England, United Kingdom",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "6e7b1f73-d323-412c-b3b7-b7c8d94781b8",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_SUP",
-            "text" : "Luxborough, Luxborough Washford, Somersetshire, England",
-            "qualifiers" : [ {
-              "value" : "SUP",
-              "name" : "http://familysearch.org/types/qualifiers/Info"
-            } ]
-          }, {
-            "id" : "da49af5d-0eed-44f8-8318-ff3c4da93314",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1563663475177
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Luxborough, Luxborough Washford, Somersetshire, England"
-          }, {
-            "id" : "a2fad414-c124-44e6-a3b4-0a36eb59baa8",
-            "confidence" : "http://confidence/81",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1563663475177
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Luxborough, Somerset, England, United Kingdom",
-            "resource" : "https://www.familysearch.org/platform/places/description/2978459",
-            "qualifiers" : [ {
-              "value" : "1013, 1020, 1015, 1014, 1026",
-              "name" : "StdQualifier"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Country",
-          "values" : [ {
-            "id" : "6d8f67c9-ffb9-4fa4-8729-31c6827b033b",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_COUNTRY",
-            "text" : "England"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "id" : "8301499f-b0c5-49dc-a927-9a0ce8da4ebc",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_COUNTY",
-            "text" : "Somersetshire"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
-          "values" : [ {
-            "id" : "f8e8fc21-1dc2-42b6-b4f8-16c087bb34b0",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_ENUMERATION",
-            "text" : "9"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/DistrictNumber",
-          "values" : [ {
-            "id" : "248b18e8-c0ec-422e-aca4-815efe00bdf6",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_NBR",
-            "text" : "302"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/RegistrationDistrict",
-          "values" : [ {
-            "id" : "2790a6e4-ed50-40fe-a805-0349b3e8014d",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_REG",
-            "text" : "Williton"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Parish",
-          "values" : [ {
-            "id" : "cf9b1935-5c16-4574-9a9d-ac2c8c5603bc",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PARISH",
-            "text" : "Luxborough"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/SubDistrict",
-          "values" : [ {
-            "id" : "1db0eaca-c529-4f47-927d-f49814ae1f43",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_SUB_DISTRICT",
-            "text" : "Dunster"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/SubDistrictNumber",
-          "values" : [ {
-            "id" : "ef390d63-edc2-4c89-9b66-9ee48ac1e7bc",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_SUB_DISTRICT_NBR",
-            "text" : "2"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Town",
-          "values" : [ {
-            "id" : "067b15c2-b366-440d-8e91-cad0f3a69378",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_TOWN",
-            "text" : "LUXBOROUGH WASHFORD"
-          } ]
-        } ]
-      },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "id" : "20e21b8d-f5a0-46f0-bb5d-dc0a85e36d82",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Census"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/MaritalStatus",
-      "value" : "Married",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/MaritalStatus",
-        "values" : [ {
-          "id" : "cca0fbbb-66ff-48a1-9628-a0b0e7e2f556",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_MARITAL_STATUS_ORIG",
-          "text" : "MARRIED"
-        }, {
-          "id" : "0fd37395-3d1d-4b3e-b74d-728b91f5bc13",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvMaritalStatusTreatment/ver/2"
-            },
-            "modified" : 1563663475154
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_MARITAL_STATUS",
-          "text" : "Married",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103503"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Marriage",
-      "date" : {
-        "original" : "1864",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "a2a37bf8-c206-42ad-bf0d-83b4871fcd3e",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_MAR_YEAR",
-            "text" : "1864"
-          } ]
-        } ]
-      }
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "1842",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "a13598f7-f0d9-4c50-b987-3767b88f18e5",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/EstBirthYearTreatment/ver/2"
-              },
-              "modified" : 1563663475174
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_YEAR_EST",
-            "text" : "1842",
-            "resource" : "+1842"
-          } ]
-        } ]
-      },
-      "place" : {
-        "original" : "Withycombe, Somersetshire",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "32a0d7d5-2eec-43a3-98fe-f1522057f20d",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_PLACE",
-            "text" : "Withycombe, Somersetshire"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "id" : "ed60cacd-2f5e-4e8e-a103-607aa6564f42",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_COUNTY",
-            "text" : "SOMERSETSHIRE"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Town",
-          "values" : [ {
-            "id" : "b8735d24-e13c-4185-8dc8-fc642be8d04b",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_TOWN",
-            "text" : "WITHYCOMBE"
-          } ]
-        } ]
-      }
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "id" : "fdbfdb0c-a0b3-449d-8569-ad10e4024cb6",
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/AgeTreatment/ver/1"
-          },
-          "modified" : 1563663475154
-        },
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_ORIG",
-        "text" : "069"
-      }, {
-        "id" : "938fcba0-12a3-423d-a67f-3464f19b17df",
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/AgeTreatment/ver/1"
-          },
-          "modified" : 1563663475157
-        },
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_AGE",
-        "text" : "69",
-        "resource" : "P69Y"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/AgeYears",
-      "values" : [ {
-        "id" : "8dde971e-4a5b-4aec-b380-582e1cfa37ca",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_YEARS_ORIG",
-        "text" : "069"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtCountyCode",
-      "values" : [ {
-        "id" : "8365fc6b-3f65-4d45-910e-c471a5e3900b",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_COUNTY_CODE",
-        "text" : "25"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtData",
-      "values" : [ {
-        "id" : "bc469db3-7c83-4b1d-9442-29578e03cc58",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_DATA",
-        "text" : "{\"address\": \"DITCH COTTAGE LUXBOROUGH WASHFORD\", \"name_concat\": \"EDWARD,TAYLOR|ELIZABETH,TAYLOR|RICHARD,TAYLOR\", \"no_of_rooms\": \"3 ROOMS\", \"image_upp_id\": \"GBC/1911/RG14/14131/0031\", \"rg14_look_up\": \"14131 0031 0031_03 00001\", \"rg78_look_up\": \"00844 0097 0108_60 00005\", \"year_of_birth\": \" 1842\", \"keywords_place\": \"WILLITON,LUXBOROUGH,DUNSTER,ENGLAND,Somerset\", \"where_born_full\": \"SOMERSET WITHYCOMBE\", \"working_at_home\": \"N\", \"census_reference\": \"RG14PN14131 RG78PN844 RD302 SD2 ED9 SN16\", \"rg78_code_number\": \" 844.0\", \"type_of_building\": \"PRIVATE HOUSE\", \"year_of_marriage\": \" 1864\", \"address_house_name\": \"DITCH COTTAGE\", \"image_upp_id_rg14_cover\": \"GBC/1911/RG14/14131/0000\", \"image_upp_id_rg78_cover\": \"GBC/1911/RG78/00844/0000\", \"piece_number_and_suffix\": \"14131\", \"image_upp_id_rg78_totals\": \"GBC/1911/RG78/00844/0097-TOTAL\", \"image_upp_id_rg14_address\": \"GBC/1911/RG14/14131/0032\", \"image_upp_id_rg78_details\": \"GBC/1911/RG78/00844/0097-DETAIL\", \"image_upp_id_rg78_summary\": \"GBC/1911/RG78/00844/0108\", \"image_upp_id_rg78_description\": \"GBC/1911/RG78/00844/0097-DESC\"}"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExternalImageId",
-      "values" : [ {
-        "id" : "4dc336e1-1a6d-4517-879c-359322257bb9",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_IMAGE_ID",
-        "text" : "GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/2"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtImageIdOrig",
-      "values" : [ {
-        "id" : "658296d9-bb24-4d45-aaa4-ea6af4e692de",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "EXT_IMAGE_ID_ORIG",
-        "text" : "141310031_2_0"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtLineNbrSuf",
-      "values" : [ {
-        "id" : "6b3ad9ea-f924-4f84-b488-32fd76a353f6",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_LINE_NBR_SUF",
-        "text" : "0"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtRecordId",
-      "values" : [ {
-        "id" : "0ebad61f-0b16-445c-a327-f8bcb1e1e0de",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_RECORD_ID",
-        "text" : "GBC/1911/RG14/14131/0031/2"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUarn",
-      "values" : [ {
-        "id" : "2fa0b976-cb36-40d6-9065-68ef1194b1a0",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_UARN",
-        "text" : "141310031"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUir",
-      "values" : [ {
-        "id" : "67a71a51-ab69-46bc-9ea9-b2ba4b5b837e",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_UIR",
-        "text" : "141310031"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUrn",
-      "values" : [ {
-        "id" : "5fe7f81c-4128-424b-87e2-c5535841a029",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_URN",
-        "text" : "141310031002000"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUrprn",
-      "values" : [ {
-        "id" : "609149ca-e73f-4962-b862-af64f944cfed",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_URPRN",
-        "text" : "8440108"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/CodeEmployed",
-      "values" : [ {
-        "id" : "1a781c36-dc17-4cab-939d-dc684cac327b",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "MISC_CODE_EMPLOYED",
-        "text" : "N",
-        "qualifiers" : [ {
-          "value" : "MISC",
-          "name" : "http://familysearch.org/types/qualifiers/Info"
-        } ]
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/InhabitedFlag",
-      "values" : [ {
-        "id" : "bc7947e2-56a2-4578-a48c-15acc06f13fa",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "MISC_FLAG_INHABITED",
-        "text" : "Y",
-        "qualifiers" : [ {
-          "value" : "MISC",
-          "name" : "http://familysearch.org/types/qualifiers/Info"
-        } ]
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/MiscNameHouse",
-      "values" : [ {
-        "id" : "675d68d0-01e8-46dc-96a1-cb1a20f98397",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "MISC_NAME_HOUSE",
-        "text" : "DITCH COTTAGE",
-        "qualifiers" : [ {
-          "value" : "MISC",
-          "name" : "http://familysearch.org/types/qualifiers/Info"
-        } ]
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/CntFamilyMembers",
-      "values" : [ {
-        "id" : "b9726f08-5bbc-433b-a3df-88a1db0880e3",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_CNT_FAMILY_MEMBERS",
-        "text" : "3"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/CntYearsMarried",
-      "values" : [ {
-        "id" : "635bbb2a-0246-403f-973e-ef6da894e3d3",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_CNT_YEARS_MARRIED",
-        "text" : "47"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/RelationshipToHeadCode",
-      "values" : [ {
-        "id" : "9ccc544a-bd00-4eca-b386-62c0bf6f9dab",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_RELATIONSHIP_CODE",
-        "text" : "Wife"
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/RelationshipToHead",
-      "values" : [ {
-        "id" : "8f05dbf4-63ce-4e08-a9f3-08268077e0ad",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
-        "text" : "WIFE"
-      }, {
-        "id" : "923ef82a-f800-4b17-b9e5-b26340a3f8c5",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_RELATIONSHIP_TO_HEAD",
-        "text" : "Wife"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceDocumentType",
-      "values" : [ {
-        "id" : "eb611384-c763-454d-aa39-880303c91cd2",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_DOCUMENT_TYPE",
-        "text" : "3"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceHouseholdId",
-      "values" : [ {
-        "id" : "ffb30c6a-372b-4569-8587-9cdf8fd84e22",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_HOUSEHOLD_ID",
-        "text" : "141310031"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
-      "values" : [ {
-        "id" : "fda29d37-8863-461b-8d91-d5a56cd2492a",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_LINE_NBR",
-        "text" : "2"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
-      "values" : [ {
-        "id" : "fa6b25d5-8144-4213-8d55-87ed3f6709c7",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PAGE_NBR",
-        "text" : "1"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePageType",
-      "values" : [ {
-        "id" : "6497064d-31e6-43cf-8689-1f9b8c5b9116",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PAGE_TYPE",
-        "text" : "6"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePieceFolio",
-      "values" : [ {
-        "id" : "f49e77fa-d440-4ad2-8996-0eefd00df596",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PIECE_FOLIO",
-        "text" : "31"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePieceNbr",
-      "values" : [ {
-        "id" : "0f623d4a-baac-439d-ba75-a748390c0b66",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PIECE_NBR",
-        "text" : "14131"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceRecordType",
-      "values" : [ {
-        "id" : "6c966049-1d58-4588-9279-9caf52985bcb",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_RECORD_TYPE",
-        "text" : "Household"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceRegNbr",
-      "values" : [ {
-        "id" : "ab0d061c-f6c3-461c-bf50-548690023ae5",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_REG_NBR",
-        "text" : "RG14"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceScheduleType",
-      "values" : [ {
-        "id" : "35961f41-3630-40c7-a8ec-970673ce334b",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_SCHEDULE_TYPE",
-        "text" : "16"
-      } ]
-    } ]
-  }, {
-    "id" : "p_10347919945",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "eb5ac42c-f711-4832-9a38-8d696af47275",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "M"
-        }, {
-          "id" : "586d2128-dc67-4533-80f7-0ec739a277f9",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1563663475189
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Male",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/X7RW-H5R?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/1GK8-3V3?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd4",
-      "descriptionId" : "sd4"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5R" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Edward Taylor",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Edward",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "0ab177e6-6fd3-4ebc-854d-7294472d1ee9",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "EDWARD"
-            }, {
-              "id" : "dc1679ab-7a7f-494f-b307-8bddbdbaa559",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+            {
+              "id": "294e6b29-fbd6-48e4-a8d4-4377fbb37dad",
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/AgeTreatment/ver/1"
                 },
-                "modified" : 1563663475186
+                "modified": 1563663475113
               },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Edward"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Taylor",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "c6778d0f-b74d-481e-b360-59711bb2a422",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "TAYLOR"
-            }, {
-              "id" : "cc2f1569-7ef5-4584-b077-4caafe802aa4",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "70",
+              "resource": "P70Y"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/AgeYears",
+          "values": [
+            {
+              "id": "b0c5fa78-7ae6-42bd-b622-13ff8bd1d090",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_YEARS_ORIG",
+              "text": "070"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtCountyCode",
+          "values": [
+            {
+              "id": "ef7a4a73-c118-46e6-b365-5e88f41fa194",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_COUNTY_CODE",
+              "text": "25"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtData",
+          "values": [
+            {
+              "id": "bfa8e664-650a-4703-9741-85ccab45abec",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_DATA",
+              "text": "{\"address\": \"DITCH COTTAGE LUXBOROUGH WASHFORD\", \"name_concat\": \"EDWARD,TAYLOR|ELIZABETH,TAYLOR|RICHARD,TAYLOR\", \"no_of_rooms\": \"3 ROOMS\", \"image_upp_id\": \"GBC/1911/RG14/14131/0031\", \"rg14_look_up\": \"14131 0031 0031_03 00001\", \"rg78_look_up\": \"00844 0097 0108_60 00005\", \"year_of_birth\": \" 1841\", \"keywords_place\": \"WILLITON,LUXBOROUGH,DUNSTER,ENGLAND,Somerset\", \"occupation_code\": \"140\", \"where_born_full\": \"SOMERSET LUXBOROUGH\", \"working_at_home\": \"N\", \"census_reference\": \"RG14PN14131 RG78PN844 RD302 SD2 ED9 SN16\", \"rg78_code_number\": \" 844.0\", \"type_of_building\": \"PRIVATE HOUSE\", \"year_of_marriage\": \" 1864\", \"address_house_name\": \"DITCH COTTAGE\", \"image_upp_id_rg14_cover\": \"GBC/1911/RG14/14131/0000\", \"image_upp_id_rg78_cover\": \"GBC/1911/RG78/00844/0000\", \"piece_number_and_suffix\": \"14131\", \"image_upp_id_rg78_totals\": \"GBC/1911/RG78/00844/0097-TOTAL\", \"image_upp_id_rg14_address\": \"GBC/1911/RG14/14131/0032\", \"image_upp_id_rg78_details\": \"GBC/1911/RG78/00844/0097-DETAIL\", \"image_upp_id_rg78_summary\": \"GBC/1911/RG78/00844/0108\", \"image_upp_id_rg78_description\": \"GBC/1911/RG78/00844/0097-DESC\"}"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExternalImageId",
+          "values": [
+            {
+              "id": "a36cc860-4c1f-4d6f-9d2c-eec2dc40f6b6",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_IMAGE_ID",
+              "text": "GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/1"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtImageIdOrig",
+          "values": [
+            {
+              "id": "2df6455a-649f-40fd-b960-b870f9f38515",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "EXT_IMAGE_ID_ORIG",
+              "text": "141310031_1_0"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtLineNbrSuf",
+          "values": [
+            {
+              "id": "5fb6782d-f6d2-4a81-a4ec-cc65c9d88b9d",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_LINE_NBR_SUF",
+              "text": "0"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtRecordId",
+          "values": [
+            {
+              "id": "c70501ba-8efc-4f2a-aa35-5ef64f105b8a",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_RECORD_ID",
+              "text": "GBC/1911/RG14/14131/0031/1"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUarn",
+          "values": [
+            {
+              "id": "9c81c948-a6b5-45c2-95a5-e48d720b795e",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_UARN",
+              "text": "141310031"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUir",
+          "values": [
+            {
+              "id": "5b82ea54-10f1-4637-9a16-59cdbe8d8c4a",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_UIR",
+              "text": "141310031"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUrn",
+          "values": [
+            {
+              "id": "1d7419ce-4080-4594-8182-9aa0b9e2774a",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_URN",
+              "text": "141310031001000"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUrprn",
+          "values": [
+            {
+              "id": "81642ce0-18bd-4de4-b2ca-19c737130448",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_URPRN",
+              "text": "8440108"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/CodeEmployed",
+          "values": [
+            {
+              "id": "2e1ce767-f74e-4de8-91be-a5366357f61d",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "MISC_CODE_EMPLOYED",
+              "text": "Y",
+              "qualifiers": [
+                {
+                  "value": "MISC",
+                  "name": "http://familysearch.org/types/qualifiers/Info"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/InhabitedFlag",
+          "values": [
+            {
+              "id": "12992b04-4f3c-4422-b46b-c62ca0202b56",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "MISC_FLAG_INHABITED",
+              "text": "Y",
+              "qualifiers": [
+                {
+                  "value": "MISC",
+                  "name": "http://familysearch.org/types/qualifiers/Info"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/MiscNameHouse",
+          "values": [
+            {
+              "id": "aedfd6f7-e296-4898-bc0b-8b6e521328fe",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "MISC_NAME_HOUSE",
+              "text": "DITCH COTTAGE",
+              "qualifiers": [
+                {
+                  "value": "MISC",
+                  "name": "http://familysearch.org/types/qualifiers/Info"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/CntFamilyMembers",
+          "values": [
+            {
+              "id": "7fd65f6e-310e-44e2-abec-4d0ceae91bee",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_CNT_FAMILY_MEMBERS",
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/CntYearsMarried",
+          "values": [
+            {
+              "id": "23d277af-d9bb-4a79-b6f7-e2282c4a4ae5",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_CNT_YEARS_MARRIED",
+              "text": "47"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/RelationshipToHeadCode",
+          "values": [
+            {
+              "id": "cd705278-ad73-45d9-b9d6-0743f81e3548",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_RELATIONSHIP_CODE",
+              "text": "Head"
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/RelationshipToHead",
+          "values": [
+            {
+              "id": "d3db941b-34c7-4745-bf91-03222f562b7b",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_RELATIONSHIP_TO_HEAD_ORIG",
+              "text": "HEAD"
+            },
+            {
+              "id": "05a8c7ae-e470-4927-9b04-6a5c06209e02",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_RELATIONSHIP_TO_HEAD",
+              "text": "Head"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceDocumentType",
+          "values": [
+            {
+              "id": "0d278df4-380c-47c6-8308-b4b99e416417",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_DOCUMENT_TYPE",
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceHouseholdId",
+          "values": [
+            {
+              "id": "b18b9797-0708-4194-862b-69115453833d",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_HOUSEHOLD_ID",
+              "text": "141310031"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceLineNbr",
+          "values": [
+            {
+              "id": "ce90254c-0ab6-44e9-af2f-4248e929cd1b",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_LINE_NBR",
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePageNbr",
+          "values": [
+            {
+              "id": "60237971-348b-4c88-8bcb-8d0e53b70e01",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PAGE_NBR",
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePageType",
+          "values": [
+            {
+              "id": "e5b9c6f6-821e-4390-9c40-a0bf9ad22ff5",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PAGE_TYPE",
+              "text": "6"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePieceFolio",
+          "values": [
+            {
+              "id": "a7b64567-2e6d-4f76-9e2f-c925fcb7ccda",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PIECE_FOLIO",
+              "text": "31"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePieceNbr",
+          "values": [
+            {
+              "id": "470b0233-14cc-4398-b05c-c34ea6583309",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PIECE_NBR",
+              "text": "14131"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceRecordType",
+          "values": [
+            {
+              "id": "074ed06e-341b-40bc-8c16-585cb48976ab",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_RECORD_TYPE",
+              "text": "Household"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceRegNbr",
+          "values": [
+            {
+              "id": "0a1d46d0-bd8f-47cb-8675-c58d6a71032f",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_REG_NBR",
+              "text": "RG14"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceScheduleType",
+          "values": [
+            {
+              "id": "6c26e265-15dc-40db-a26a-f0a2335a4af2",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_SCHEDULE_TYPE",
+              "text": "16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_10347919944",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "4bfa320b-1a42-4bbd-8bda-181525f91c45",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "F"
+              },
+              {
+                "id": "698b9f63-b676-4968-b9fd-ed008baa1720",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1563663475163
                 },
-                "modified" : 1563663475186
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Taylor"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "2f5f30e7-5ab6-4392-8c3b-4f1b82d47442",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1563663475180
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "EDWARD TAYLOR"
-          }, {
-            "id" : "3734a96b-00b5-48f6-99c7-8acf3e53a9dc",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1563663475186
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Edward Taylor"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Census",
-      "date" : {
-        "original" : "1911",
-        "formal" : "+1911",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "id" : "d4c2bb1f-37b0-47dd-9cdd-2bc98133b641",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "1911"
-          }, {
-            "id" : "655acb73-83dd-4204-b7d1-91abf84e84a9",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
-              },
-              "modified" : 1544106918214
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "1911",
-            "resource" : "+1911"
-          } ]
-        } ]
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Female",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+              }
+            ]
+          }
+        ]
       },
-      "place" : {
-        "original" : "Luxborough, Somerset, England, United Kingdom",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "1fd39391-4caf-49df-b538-d07c93a09e08",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_SUP",
-            "text" : "Luxborough, Luxborough Washford, Somersetshire, England",
-            "qualifiers" : [ {
-              "value" : "SUP",
-              "name" : "http://familysearch.org/types/qualifiers/Info"
-            } ]
-          }, {
-            "id" : "5e0cb3f8-b837-4f9f-a42e-775e4736a22f",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1563663475199
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Luxborough, Luxborough Washford, Somersetshire, England"
-          }, {
-            "id" : "a7a0e3f7-f999-40f1-83bd-32cb16ee49df",
-            "confidence" : "http://confidence/81",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1563663475199
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Luxborough, Somerset, England, United Kingdom",
-            "resource" : "https://www.familysearch.org/platform/places/description/2978459",
-            "qualifiers" : [ {
-              "value" : "1013, 1020, 1015, 1014, 1026",
-              "name" : "StdQualifier"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Country",
-          "values" : [ {
-            "id" : "5fe2676c-7791-4e1d-9fb4-14d776408181",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_COUNTRY",
-            "text" : "England"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "id" : "b4c339f7-aeac-4d1a-a60c-b80e4dc8b1a5",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_COUNTY",
-            "text" : "Somersetshire"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
-          "values" : [ {
-            "id" : "00cd6e55-3816-4df4-bea8-5742965745f2",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_ENUMERATION",
-            "text" : "9"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/DistrictNumber",
-          "values" : [ {
-            "id" : "4b68769c-1ddb-447c-ad03-afb1c7ad1809",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_NBR",
-            "text" : "302"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/RegistrationDistrict",
-          "values" : [ {
-            "id" : "1e22a547-ab3f-4a3f-9b03-ed531760fbf0",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_REG",
-            "text" : "Williton"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Parish",
-          "values" : [ {
-            "id" : "49742942-04a2-4dee-a755-2c528ed2b012",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PARISH",
-            "text" : "Luxborough"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/SubDistrict",
-          "values" : [ {
-            "id" : "eb4a2d89-a7ef-45e9-ab3f-5293de997eee",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_SUB_DISTRICT",
-            "text" : "Dunster"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/SubDistrictNumber",
-          "values" : [ {
-            "id" : "2e34b31d-775b-469f-a8d5-3a2fd57c0be7",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_SUB_DISTRICT_NBR",
-            "text" : "2"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Town",
-          "values" : [ {
-            "id" : "0eaefebc-df50-48f4-93fd-2c836df4c26c",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_TOWN",
-            "text" : "LUXBOROUGH WASHFORD"
-          } ]
-        } ]
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/X7RW-H55?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/1GK8-3V3?flag=fsh"
+        }
       },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "id" : "8e19f3e4-42e0-4856-afa1-da5b4b330b7a",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Census"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Occupation",
-      "value" : "SCHOOL",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Occupation",
-        "values" : [ {
-          "id" : "6170ffac-5bf0-4592-a8a9-71f1bd771a4c",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_OCCUPATION",
-          "text" : "SCHOOL"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "1905",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "94003f46-e001-43b5-aa1e-b33770971a2c",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/EstBirthYearTreatment/ver/2"
-              },
-              "modified" : 1563663475197
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_YEAR_EST",
-            "text" : "1905",
-            "resource" : "+1905"
-          } ]
-        } ]
+      "sources": [
+        {
+          "description": "#sd3",
+          "descriptionId": "sd3"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X7RW-H55"]
       },
-      "place" : {
-        "original" : "Williton, Somersetshire",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "e1accf7e-4f3c-40c5-a47a-42d73ae4397c",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_PLACE",
-            "text" : "Williton, Somersetshire"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "id" : "4c498436-929b-40b1-a16f-07c99f5b0bac",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_COUNTY",
-            "text" : "SOMERSETSHIRE"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Town",
-          "values" : [ {
-            "id" : "9035c83d-dff6-4b07-9421-e17225cdd316",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_TOWN",
-            "text" : "WILLITON"
-          } ]
-        } ]
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Elizabeth Taylor",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Elizabeth",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "18bc9bfc-83aa-49c8-90cd-6ba4d8633862",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "ELIZABETH"
+                        },
+                        {
+                          "id": "fb74de44-64e6-4dd4-a193-646ca306b7ff",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1563663475154
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Elizabeth"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Taylor",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "c442b765-74c1-4f2a-a149-c90d30d76a41",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "TAYLOR"
+                        },
+                        {
+                          "id": "c68ba4eb-d64c-456b-804e-4052f29e55a3",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1563663475154
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Taylor"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "d8ff83e5-98e9-4794-b07f-b7b5e8a02667",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1563663475147
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "ELIZABETH TAYLOR"
+                    },
+                    {
+                      "id": "a75e1631-2031-4e1a-9b04-67995c36ed4b",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1563663475154
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Elizabeth Taylor"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Census",
+          "date": {
+            "original": "1911",
+            "formal": "+1911",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "id": "1a002b0c-0ef3-47cb-8d64-3e782c73bac9",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "1911"
+                  },
+                  {
+                    "id": "53c28857-8f2f-4710-981c-7917d7067901",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                      },
+                      "modified": 1544106918207
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "1911",
+                    "resource": "+1911"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Luxborough, Somerset, England, United Kingdom",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "6e7b1f73-d323-412c-b3b7-b7c8d94781b8",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_SUP",
+                    "text": "Luxborough, Luxborough Washford, Somersetshire, England",
+                    "qualifiers": [
+                      {
+                        "value": "SUP",
+                        "name": "http://familysearch.org/types/qualifiers/Info"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "da49af5d-0eed-44f8-8318-ff3c4da93314",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1563663475177
+                    },
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_ORIG",
+                    "text": "Luxborough, Luxborough Washford, Somersetshire, England"
+                  },
+                  {
+                    "id": "a2fad414-c124-44e6-a3b4-0a36eb59baa8",
+                    "confidence": "http://confidence/81",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1563663475177
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Luxborough, Somerset, England, United Kingdom",
+                    "resource": "https://www.familysearch.org/platform/places/description/2978459",
+                    "qualifiers": [
+                      {
+                        "value": "1013, 1020, 1015, 1014, 1026",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "id": "6d8f67c9-ffb9-4fa4-8729-31c6827b033b",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_COUNTRY",
+                    "text": "England"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "id": "8301499f-b0c5-49dc-a927-9a0ce8da4ebc",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_COUNTY",
+                    "text": "Somersetshire"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/EnumerationDistrict",
+                "values": [
+                  {
+                    "id": "f8e8fc21-1dc2-42b6-b4f8-16c087bb34b0",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_ENUMERATION",
+                    "text": "9"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/DistrictNumber",
+                "values": [
+                  {
+                    "id": "248b18e8-c0ec-422e-aca4-815efe00bdf6",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_NBR",
+                    "text": "302"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/RegistrationDistrict",
+                "values": [
+                  {
+                    "id": "2790a6e4-ed50-40fe-a805-0349b3e8014d",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_REG",
+                    "text": "Williton"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Parish",
+                "values": [
+                  {
+                    "id": "cf9b1935-5c16-4574-9a9d-ac2c8c5603bc",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PARISH",
+                    "text": "Luxborough"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/SubDistrict",
+                "values": [
+                  {
+                    "id": "1db0eaca-c529-4f47-927d-f49814ae1f43",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_SUB_DISTRICT",
+                    "text": "Dunster"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/SubDistrictNumber",
+                "values": [
+                  {
+                    "id": "ef390d63-edc2-4c89-9b66-9ee48ac1e7bc",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_SUB_DISTRICT_NBR",
+                    "text": "2"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Town",
+                "values": [
+                  {
+                    "id": "067b15c2-b366-440d-8e91-cad0f3a69378",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_TOWN",
+                    "text": "LUXBOROUGH WASHFORD"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "id": "20e21b8d-f5a0-46f0-bb5d-dc0a85e36d82",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Census"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/MaritalStatus",
+          "value": "Married",
+          "fields": [
+            {
+              "type": "http://gedcomx.org/MaritalStatus",
+              "values": [
+                {
+                  "id": "cca0fbbb-66ff-48a1-9628-a0b0e7e2f556",
+                  "type": "http://gedcomx.org/Original",
+                  "labelId": "PR_MARITAL_STATUS_ORIG",
+                  "text": "MARRIED"
+                },
+                {
+                  "id": "0fd37395-3d1d-4b3e-b74d-728b91f5bc13",
+                  "attribution": {
+                    "contributor": {
+                      "resource": "http://treatment/CvMaritalStatusTreatment/ver/2"
+                    },
+                    "modified": 1563663475154
+                  },
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "PR_MARITAL_STATUS",
+                  "text": "Married",
+                  "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103503"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Marriage",
+          "date": {
+            "original": "1864",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "a2a37bf8-c206-42ad-bf0d-83b4871fcd3e",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_MAR_YEAR",
+                    "text": "1864"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "1842",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "a13598f7-f0d9-4c50-b987-3767b88f18e5",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/EstBirthYearTreatment/ver/2"
+                      },
+                      "modified": 1563663475174
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_YEAR_EST",
+                    "text": "1842",
+                    "resource": "+1842"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Withycombe, Somersetshire",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "32a0d7d5-2eec-43a3-98fe-f1522057f20d",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_PLACE",
+                    "text": "Withycombe, Somersetshire"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "id": "ed60cacd-2f5e-4e8e-a103-607aa6564f42",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_COUNTY",
+                    "text": "SOMERSETSHIRE"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Town",
+                "values": [
+                  {
+                    "id": "b8735d24-e13c-4185-8dc8-fc642be8d04b",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_TOWN",
+                    "text": "WITHYCOMBE"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "id": "fdbfdb0c-a0b3-449d-8569-ad10e4024cb6",
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/AgeTreatment/ver/1"
+                },
+                "modified": 1563663475154
+              },
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_ORIG",
+              "text": "069"
+            },
+            {
+              "id": "938fcba0-12a3-423d-a67f-3464f19b17df",
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/AgeTreatment/ver/1"
+                },
+                "modified": 1563663475157
+              },
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "69",
+              "resource": "P69Y"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/AgeYears",
+          "values": [
+            {
+              "id": "8dde971e-4a5b-4aec-b380-582e1cfa37ca",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_YEARS_ORIG",
+              "text": "069"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtCountyCode",
+          "values": [
+            {
+              "id": "8365fc6b-3f65-4d45-910e-c471a5e3900b",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_COUNTY_CODE",
+              "text": "25"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtData",
+          "values": [
+            {
+              "id": "bc469db3-7c83-4b1d-9442-29578e03cc58",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_DATA",
+              "text": "{\"address\": \"DITCH COTTAGE LUXBOROUGH WASHFORD\", \"name_concat\": \"EDWARD,TAYLOR|ELIZABETH,TAYLOR|RICHARD,TAYLOR\", \"no_of_rooms\": \"3 ROOMS\", \"image_upp_id\": \"GBC/1911/RG14/14131/0031\", \"rg14_look_up\": \"14131 0031 0031_03 00001\", \"rg78_look_up\": \"00844 0097 0108_60 00005\", \"year_of_birth\": \" 1842\", \"keywords_place\": \"WILLITON,LUXBOROUGH,DUNSTER,ENGLAND,Somerset\", \"where_born_full\": \"SOMERSET WITHYCOMBE\", \"working_at_home\": \"N\", \"census_reference\": \"RG14PN14131 RG78PN844 RD302 SD2 ED9 SN16\", \"rg78_code_number\": \" 844.0\", \"type_of_building\": \"PRIVATE HOUSE\", \"year_of_marriage\": \" 1864\", \"address_house_name\": \"DITCH COTTAGE\", \"image_upp_id_rg14_cover\": \"GBC/1911/RG14/14131/0000\", \"image_upp_id_rg78_cover\": \"GBC/1911/RG78/00844/0000\", \"piece_number_and_suffix\": \"14131\", \"image_upp_id_rg78_totals\": \"GBC/1911/RG78/00844/0097-TOTAL\", \"image_upp_id_rg14_address\": \"GBC/1911/RG14/14131/0032\", \"image_upp_id_rg78_details\": \"GBC/1911/RG78/00844/0097-DETAIL\", \"image_upp_id_rg78_summary\": \"GBC/1911/RG78/00844/0108\", \"image_upp_id_rg78_description\": \"GBC/1911/RG78/00844/0097-DESC\"}"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExternalImageId",
+          "values": [
+            {
+              "id": "4dc336e1-1a6d-4517-879c-359322257bb9",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_IMAGE_ID",
+              "text": "GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/2"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtImageIdOrig",
+          "values": [
+            {
+              "id": "658296d9-bb24-4d45-aaa4-ea6af4e692de",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "EXT_IMAGE_ID_ORIG",
+              "text": "141310031_2_0"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtLineNbrSuf",
+          "values": [
+            {
+              "id": "6b3ad9ea-f924-4f84-b488-32fd76a353f6",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_LINE_NBR_SUF",
+              "text": "0"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtRecordId",
+          "values": [
+            {
+              "id": "0ebad61f-0b16-445c-a327-f8bcb1e1e0de",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_RECORD_ID",
+              "text": "GBC/1911/RG14/14131/0031/2"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUarn",
+          "values": [
+            {
+              "id": "2fa0b976-cb36-40d6-9065-68ef1194b1a0",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_UARN",
+              "text": "141310031"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUir",
+          "values": [
+            {
+              "id": "67a71a51-ab69-46bc-9ea9-b2ba4b5b837e",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_UIR",
+              "text": "141310031"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUrn",
+          "values": [
+            {
+              "id": "5fe7f81c-4128-424b-87e2-c5535841a029",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_URN",
+              "text": "141310031002000"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUrprn",
+          "values": [
+            {
+              "id": "609149ca-e73f-4962-b862-af64f944cfed",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_URPRN",
+              "text": "8440108"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/CodeEmployed",
+          "values": [
+            {
+              "id": "1a781c36-dc17-4cab-939d-dc684cac327b",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "MISC_CODE_EMPLOYED",
+              "text": "N",
+              "qualifiers": [
+                {
+                  "value": "MISC",
+                  "name": "http://familysearch.org/types/qualifiers/Info"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/InhabitedFlag",
+          "values": [
+            {
+              "id": "bc7947e2-56a2-4578-a48c-15acc06f13fa",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "MISC_FLAG_INHABITED",
+              "text": "Y",
+              "qualifiers": [
+                {
+                  "value": "MISC",
+                  "name": "http://familysearch.org/types/qualifiers/Info"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/MiscNameHouse",
+          "values": [
+            {
+              "id": "675d68d0-01e8-46dc-96a1-cb1a20f98397",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "MISC_NAME_HOUSE",
+              "text": "DITCH COTTAGE",
+              "qualifiers": [
+                {
+                  "value": "MISC",
+                  "name": "http://familysearch.org/types/qualifiers/Info"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/CntFamilyMembers",
+          "values": [
+            {
+              "id": "b9726f08-5bbc-433b-a3df-88a1db0880e3",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_CNT_FAMILY_MEMBERS",
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/CntYearsMarried",
+          "values": [
+            {
+              "id": "635bbb2a-0246-403f-973e-ef6da894e3d3",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_CNT_YEARS_MARRIED",
+              "text": "47"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/RelationshipToHeadCode",
+          "values": [
+            {
+              "id": "9ccc544a-bd00-4eca-b386-62c0bf6f9dab",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_RELATIONSHIP_CODE",
+              "text": "Wife"
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/RelationshipToHead",
+          "values": [
+            {
+              "id": "8f05dbf4-63ce-4e08-a9f3-08268077e0ad",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_RELATIONSHIP_TO_HEAD_ORIG",
+              "text": "WIFE"
+            },
+            {
+              "id": "923ef82a-f800-4b17-b9e5-b26340a3f8c5",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_RELATIONSHIP_TO_HEAD",
+              "text": "Wife"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceDocumentType",
+          "values": [
+            {
+              "id": "eb611384-c763-454d-aa39-880303c91cd2",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_DOCUMENT_TYPE",
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceHouseholdId",
+          "values": [
+            {
+              "id": "ffb30c6a-372b-4569-8587-9cdf8fd84e22",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_HOUSEHOLD_ID",
+              "text": "141310031"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceLineNbr",
+          "values": [
+            {
+              "id": "fda29d37-8863-461b-8d91-d5a56cd2492a",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_LINE_NBR",
+              "text": "2"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePageNbr",
+          "values": [
+            {
+              "id": "fa6b25d5-8144-4213-8d55-87ed3f6709c7",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PAGE_NBR",
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePageType",
+          "values": [
+            {
+              "id": "6497064d-31e6-43cf-8689-1f9b8c5b9116",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PAGE_TYPE",
+              "text": "6"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePieceFolio",
+          "values": [
+            {
+              "id": "f49e77fa-d440-4ad2-8996-0eefd00df596",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PIECE_FOLIO",
+              "text": "31"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePieceNbr",
+          "values": [
+            {
+              "id": "0f623d4a-baac-439d-ba75-a748390c0b66",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PIECE_NBR",
+              "text": "14131"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceRecordType",
+          "values": [
+            {
+              "id": "6c966049-1d58-4588-9279-9caf52985bcb",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_RECORD_TYPE",
+              "text": "Household"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceRegNbr",
+          "values": [
+            {
+              "id": "ab0d061c-f6c3-461c-bf50-548690023ae5",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_REG_NBR",
+              "text": "RG14"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceScheduleType",
+          "values": [
+            {
+              "id": "35961f41-3630-40c7-a8ec-970673ce334b",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_SCHEDULE_TYPE",
+              "text": "16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_10347919945",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "eb5ac42c-f711-4832-9a38-8d696af47275",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "M"
+              },
+              {
+                "id": "586d2128-dc67-4533-80f7-0ec739a277f9",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1563663475189
+                },
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Male",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/X7RW-H5R?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/1GK8-3V3?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd4",
+          "descriptionId": "sd4"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X7RW-H5R"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Edward Taylor",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Edward",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "0ab177e6-6fd3-4ebc-854d-7294472d1ee9",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "EDWARD"
+                        },
+                        {
+                          "id": "dc1679ab-7a7f-494f-b307-8bddbdbaa559",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1563663475186
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Edward"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Taylor",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "c6778d0f-b74d-481e-b360-59711bb2a422",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "TAYLOR"
+                        },
+                        {
+                          "id": "cc2f1569-7ef5-4584-b077-4caafe802aa4",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1563663475186
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Taylor"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "2f5f30e7-5ab6-4392-8c3b-4f1b82d47442",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1563663475180
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "EDWARD TAYLOR"
+                    },
+                    {
+                      "id": "3734a96b-00b5-48f6-99c7-8acf3e53a9dc",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1563663475186
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Edward Taylor"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Census",
+          "date": {
+            "original": "1911",
+            "formal": "+1911",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "id": "d4c2bb1f-37b0-47dd-9cdd-2bc98133b641",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "1911"
+                  },
+                  {
+                    "id": "655acb73-83dd-4204-b7d1-91abf84e84a9",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                      },
+                      "modified": 1544106918214
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "1911",
+                    "resource": "+1911"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Luxborough, Somerset, England, United Kingdom",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "1fd39391-4caf-49df-b538-d07c93a09e08",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_SUP",
+                    "text": "Luxborough, Luxborough Washford, Somersetshire, England",
+                    "qualifiers": [
+                      {
+                        "value": "SUP",
+                        "name": "http://familysearch.org/types/qualifiers/Info"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "5e0cb3f8-b837-4f9f-a42e-775e4736a22f",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1563663475199
+                    },
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_ORIG",
+                    "text": "Luxborough, Luxborough Washford, Somersetshire, England"
+                  },
+                  {
+                    "id": "a7a0e3f7-f999-40f1-83bd-32cb16ee49df",
+                    "confidence": "http://confidence/81",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1563663475199
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Luxborough, Somerset, England, United Kingdom",
+                    "resource": "https://www.familysearch.org/platform/places/description/2978459",
+                    "qualifiers": [
+                      {
+                        "value": "1013, 1020, 1015, 1014, 1026",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "id": "5fe2676c-7791-4e1d-9fb4-14d776408181",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_COUNTRY",
+                    "text": "England"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "id": "b4c339f7-aeac-4d1a-a60c-b80e4dc8b1a5",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_COUNTY",
+                    "text": "Somersetshire"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/EnumerationDistrict",
+                "values": [
+                  {
+                    "id": "00cd6e55-3816-4df4-bea8-5742965745f2",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_ENUMERATION",
+                    "text": "9"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/DistrictNumber",
+                "values": [
+                  {
+                    "id": "4b68769c-1ddb-447c-ad03-afb1c7ad1809",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_NBR",
+                    "text": "302"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/RegistrationDistrict",
+                "values": [
+                  {
+                    "id": "1e22a547-ab3f-4a3f-9b03-ed531760fbf0",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_REG",
+                    "text": "Williton"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Parish",
+                "values": [
+                  {
+                    "id": "49742942-04a2-4dee-a755-2c528ed2b012",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PARISH",
+                    "text": "Luxborough"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/SubDistrict",
+                "values": [
+                  {
+                    "id": "eb4a2d89-a7ef-45e9-ab3f-5293de997eee",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_SUB_DISTRICT",
+                    "text": "Dunster"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/SubDistrictNumber",
+                "values": [
+                  {
+                    "id": "2e34b31d-775b-469f-a8d5-3a2fd57c0be7",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_SUB_DISTRICT_NBR",
+                    "text": "2"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Town",
+                "values": [
+                  {
+                    "id": "0eaefebc-df50-48f4-93fd-2c836df4c26c",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_TOWN",
+                    "text": "LUXBOROUGH WASHFORD"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "id": "8e19f3e4-42e0-4856-afa1-da5b4b330b7a",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Census"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Occupation",
+          "value": "SCHOOL",
+          "fields": [
+            {
+              "type": "http://gedcomx.org/Occupation",
+              "values": [
+                {
+                  "id": "6170ffac-5bf0-4592-a8a9-71f1bd771a4c",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "PR_OCCUPATION",
+                  "text": "SCHOOL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "1905",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "94003f46-e001-43b5-aa1e-b33770971a2c",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/EstBirthYearTreatment/ver/2"
+                      },
+                      "modified": 1563663475197
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_YEAR_EST",
+                    "text": "1905",
+                    "resource": "+1905"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Williton, Somersetshire",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "e1accf7e-4f3c-40c5-a47a-42d73ae4397c",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_PLACE",
+                    "text": "Williton, Somersetshire"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "id": "4c498436-929b-40b1-a16f-07c99f5b0bac",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_COUNTY",
+                    "text": "SOMERSETSHIRE"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Town",
+                "values": [
+                  {
+                    "id": "9035c83d-dff6-4b07-9421-e17225cdd316",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_TOWN",
+                    "text": "WILLITON"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "id": "26669aee-5d69-4848-aa06-395e041e5fe8",
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/AgeTreatment/ver/1"
+                },
+                "modified": 1563663475186
+              },
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_ORIG",
+              "text": "006"
+            },
+            {
+              "id": "5fcba73d-4ca2-4b74-a99b-2e40bbe7b335",
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/AgeTreatment/ver/1"
+                },
+                "modified": 1563663475189
+              },
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "6",
+              "resource": "P6Y"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/AgeYears",
+          "values": [
+            {
+              "id": "ef02382e-24f5-429d-9360-d63f4a803118",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_YEARS_ORIG",
+              "text": "006"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtCountyCode",
+          "values": [
+            {
+              "id": "447c531e-2830-4d82-9c88-ea3eb17952e3",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_COUNTY_CODE",
+              "text": "25"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtData",
+          "values": [
+            {
+              "id": "d3c5f610-25c6-4e38-8ef1-759e66c91ddf",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_DATA",
+              "text": "{\"address\": \"DITCH COTTAGE LUXBOROUGH WASHFORD\", \"name_concat\": \"EDWARD,TAYLOR|ELIZABETH,TAYLOR|RICHARD,TAYLOR\", \"no_of_rooms\": \"3 ROOMS\", \"image_upp_id\": \"GBC/1911/RG14/14131/0031\", \"rg14_look_up\": \"14131 0031 0031_03 00001\", \"rg78_look_up\": \"00844 0097 0108_60 00005\", \"year_of_birth\": \" 1905\", \"keywords_place\": \"WILLITON,LUXBOROUGH,DUNSTER,ENGLAND,Somerset\", \"where_born_full\": \"SOMERSET WILLITON\", \"working_at_home\": \"N\", \"census_reference\": \"RG14PN14131 RG78PN844 RD302 SD2 ED9 SN16\", \"rg78_code_number\": \" 844.0\", \"type_of_building\": \"PRIVATE HOUSE\", \"address_house_name\": \"DITCH COTTAGE\", \"image_upp_id_rg14_cover\": \"GBC/1911/RG14/14131/0000\", \"image_upp_id_rg78_cover\": \"GBC/1911/RG78/00844/0000\", \"piece_number_and_suffix\": \"14131\", \"image_upp_id_rg78_totals\": \"GBC/1911/RG78/00844/0097-TOTAL\", \"image_upp_id_rg14_address\": \"GBC/1911/RG14/14131/0032\", \"image_upp_id_rg78_details\": \"GBC/1911/RG78/00844/0097-DETAIL\", \"image_upp_id_rg78_summary\": \"GBC/1911/RG78/00844/0108\", \"image_upp_id_rg78_description\": \"GBC/1911/RG78/00844/0097-DESC\"}"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExternalImageId",
+          "values": [
+            {
+              "id": "42940b9b-6cc8-4d20-8164-46f0c7bb34a1",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_IMAGE_ID",
+              "text": "GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/3"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtImageIdOrig",
+          "values": [
+            {
+              "id": "fd04ba9f-35b2-45d0-b774-bb801f56e3bd",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "EXT_IMAGE_ID_ORIG",
+              "text": "141310031_3_0"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtLineNbrSuf",
+          "values": [
+            {
+              "id": "fe9f99b4-7428-435f-ab77-7cb2167718a9",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_LINE_NBR_SUF",
+              "text": "0"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtRecordId",
+          "values": [
+            {
+              "id": "c3f2395e-3747-40d2-a03c-d369c7c6cb59",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_RECORD_ID",
+              "text": "GBC/1911/RG14/14131/0031/3"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUarn",
+          "values": [
+            {
+              "id": "92925ffa-959f-4962-8ee0-55a8905ebc1c",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_UARN",
+              "text": "141310031"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUir",
+          "values": [
+            {
+              "id": "28585e07-9881-48bc-99da-9ba97d6cc482",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_UIR",
+              "text": "141310031"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUrn",
+          "values": [
+            {
+              "id": "37090d1f-4c98-43f6-99ea-50090f8b302b",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_URN",
+              "text": "141310031003000"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/ExtUrprn",
+          "values": [
+            {
+              "id": "fb2cbc4b-d887-474b-bf8b-f540c801f132",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_URPRN",
+              "text": "8440108"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/CodeEmployed",
+          "values": [
+            {
+              "id": "6a05d8d4-8558-477e-8247-1a332ba8650d",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "MISC_CODE_EMPLOYED",
+              "text": "N",
+              "qualifiers": [
+                {
+                  "value": "MISC",
+                  "name": "http://familysearch.org/types/qualifiers/Info"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/InhabitedFlag",
+          "values": [
+            {
+              "id": "65ab8514-a330-46ae-8b0d-700be2ff6559",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "MISC_FLAG_INHABITED",
+              "text": "Y",
+              "qualifiers": [
+                {
+                  "value": "MISC",
+                  "name": "http://familysearch.org/types/qualifiers/Info"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/MiscNameHouse",
+          "values": [
+            {
+              "id": "f9b5dddb-0b6c-454c-84f9-cf2333a70711",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "MISC_NAME_HOUSE",
+              "text": "DITCH COTTAGE",
+              "qualifiers": [
+                {
+                  "value": "MISC",
+                  "name": "http://familysearch.org/types/qualifiers/Info"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/CntFamilyMembers",
+          "values": [
+            {
+              "id": "0506e3c2-b30e-454b-b218-8eda9087c2da",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_CNT_FAMILY_MEMBERS",
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceDocumentType",
+          "values": [
+            {
+              "id": "1e17fc00-dd01-4470-acc6-a8e0e766e88b",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_DOCUMENT_TYPE",
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceHouseholdId",
+          "values": [
+            {
+              "id": "300a0b1e-4853-4ce6-bde1-9d6c8105b021",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_HOUSEHOLD_ID",
+              "text": "141310031"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceLineNbr",
+          "values": [
+            {
+              "id": "0d90ccd0-8b13-4555-a948-618087ee50b8",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_LINE_NBR",
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePageNbr",
+          "values": [
+            {
+              "id": "11b77439-5989-4759-b0b0-9cee70c7edff",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PAGE_NBR",
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePageType",
+          "values": [
+            {
+              "id": "a21c03b6-f1cc-42a1-865a-fdec0de34b8d",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PAGE_TYPE",
+              "text": "6"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePieceFolio",
+          "values": [
+            {
+              "id": "548969ce-edb0-4582-a02b-71f4a325eb73",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PIECE_FOLIO",
+              "text": "31"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourcePieceNbr",
+          "values": [
+            {
+              "id": "d251c3c4-ff02-4d0d-b9b0-2ccf5d9350dc",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_PIECE_NBR",
+              "text": "14131"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceRecordType",
+          "values": [
+            {
+              "id": "4a93259a-9877-4f14-8295-0dce77fbd9cf",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_RECORD_TYPE",
+              "text": "Household"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceRegNbr",
+          "values": [
+            {
+              "id": "61d4c383-ecec-42e3-8339-f8624ff65d69",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_REG_NBR",
+              "text": "RG14"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SourceScheduleType",
+          "values": [
+            {
+              "id": "ad7a4dd5-df6f-468d-8343-ac14ac8fb0b5",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SOURCE_SCHEDULE_TYPE",
+              "text": "16"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "MM9.1.6/LF8B-2Z1",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_10347919943",
+        "resourceId": "p_10347919943"
+      },
+      "person2": {
+        "resource": "#p_10347919944",
+        "resourceId": "p_10347919944"
       }
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "id" : "26669aee-5d69-4848-aa06-395e041e5fe8",
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/AgeTreatment/ver/1"
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_1921547",
+      "about": "https://api.familysearch.org/platform/records/collections/1921547",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1382223266639,
+      "modified": 1657230832963,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "England",
+            "description": "#place_1986340"
           },
-          "modified" : 1563663475186
-        },
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_ORIG",
-        "text" : "006"
-      }, {
-        "id" : "5fcba73d-4ca2-4b74-a99b-2e40bbe7b335",
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/AgeTreatment/ver/1"
+          "temporal": {
+            "original": "1911/1911",
+            "formal": "1911/1911"
           },
-          "modified" : 1563663475189
+          "recordType": "http://gedcomx.org/Census"
         },
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_AGE",
-        "text" : "6",
-        "resource" : "P6Y"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/AgeYears",
-      "values" : [ {
-        "id" : "ef02382e-24f5-429d-9360-d63f4a803118",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_YEARS_ORIG",
-        "text" : "006"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtCountyCode",
-      "values" : [ {
-        "id" : "447c531e-2830-4d82-9c88-ea3eb17952e3",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_COUNTY_CODE",
-        "text" : "25"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtData",
-      "values" : [ {
-        "id" : "d3c5f610-25c6-4e38-8ef1-759e66c91ddf",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_DATA",
-        "text" : "{\"address\": \"DITCH COTTAGE LUXBOROUGH WASHFORD\", \"name_concat\": \"EDWARD,TAYLOR|ELIZABETH,TAYLOR|RICHARD,TAYLOR\", \"no_of_rooms\": \"3 ROOMS\", \"image_upp_id\": \"GBC/1911/RG14/14131/0031\", \"rg14_look_up\": \"14131 0031 0031_03 00001\", \"rg78_look_up\": \"00844 0097 0108_60 00005\", \"year_of_birth\": \" 1905\", \"keywords_place\": \"WILLITON,LUXBOROUGH,DUNSTER,ENGLAND,Somerset\", \"where_born_full\": \"SOMERSET WILLITON\", \"working_at_home\": \"N\", \"census_reference\": \"RG14PN14131 RG78PN844 RD302 SD2 ED9 SN16\", \"rg78_code_number\": \" 844.0\", \"type_of_building\": \"PRIVATE HOUSE\", \"address_house_name\": \"DITCH COTTAGE\", \"image_upp_id_rg14_cover\": \"GBC/1911/RG14/14131/0000\", \"image_upp_id_rg78_cover\": \"GBC/1911/RG78/00844/0000\", \"piece_number_and_suffix\": \"14131\", \"image_upp_id_rg78_totals\": \"GBC/1911/RG78/00844/0097-TOTAL\", \"image_upp_id_rg14_address\": \"GBC/1911/RG14/14131/0032\", \"image_upp_id_rg78_details\": \"GBC/1911/RG78/00844/0097-DETAIL\", \"image_upp_id_rg78_summary\": \"GBC/1911/RG78/00844/0108\", \"image_upp_id_rg78_description\": \"GBC/1911/RG78/00844/0097-DESC\"}"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExternalImageId",
-      "values" : [ {
-        "id" : "42940b9b-6cc8-4d20-8164-46f0c7bb34a1",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_IMAGE_ID",
-        "text" : "GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/3"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtImageIdOrig",
-      "values" : [ {
-        "id" : "fd04ba9f-35b2-45d0-b774-bb801f56e3bd",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "EXT_IMAGE_ID_ORIG",
-        "text" : "141310031_3_0"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtLineNbrSuf",
-      "values" : [ {
-        "id" : "fe9f99b4-7428-435f-ab77-7cb2167718a9",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_LINE_NBR_SUF",
-        "text" : "0"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtRecordId",
-      "values" : [ {
-        "id" : "c3f2395e-3747-40d2-a03c-d369c7c6cb59",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_RECORD_ID",
-        "text" : "GBC/1911/RG14/14131/0031/3"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUarn",
-      "values" : [ {
-        "id" : "92925ffa-959f-4962-8ee0-55a8905ebc1c",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_UARN",
-        "text" : "141310031"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUir",
-      "values" : [ {
-        "id" : "28585e07-9881-48bc-99da-9ba97d6cc482",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_UIR",
-        "text" : "141310031"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUrn",
-      "values" : [ {
-        "id" : "37090d1f-4c98-43f6-99ea-50090f8b302b",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_URN",
-        "text" : "141310031003000"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/ExtUrprn",
-      "values" : [ {
-        "id" : "fb2cbc4b-d887-474b-bf8b-f540c801f132",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_URPRN",
-        "text" : "8440108"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/CodeEmployed",
-      "values" : [ {
-        "id" : "6a05d8d4-8558-477e-8247-1a332ba8650d",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "MISC_CODE_EMPLOYED",
-        "text" : "N",
-        "qualifiers" : [ {
-          "value" : "MISC",
-          "name" : "http://familysearch.org/types/qualifiers/Info"
-        } ]
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/InhabitedFlag",
-      "values" : [ {
-        "id" : "65ab8514-a330-46ae-8b0d-700be2ff6559",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "MISC_FLAG_INHABITED",
-        "text" : "Y",
-        "qualifiers" : [ {
-          "value" : "MISC",
-          "name" : "http://familysearch.org/types/qualifiers/Info"
-        } ]
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/MiscNameHouse",
-      "values" : [ {
-        "id" : "f9b5dddb-0b6c-454c-84f9-cf2333a70711",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "MISC_NAME_HOUSE",
-        "text" : "DITCH COTTAGE",
-        "qualifiers" : [ {
-          "value" : "MISC",
-          "name" : "http://familysearch.org/types/qualifiers/Info"
-        } ]
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/CntFamilyMembers",
-      "values" : [ {
-        "id" : "0506e3c2-b30e-454b-b218-8eda9087c2da",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_CNT_FAMILY_MEMBERS",
-        "text" : "3"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceDocumentType",
-      "values" : [ {
-        "id" : "1e17fc00-dd01-4470-acc6-a8e0e766e88b",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_DOCUMENT_TYPE",
-        "text" : "3"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceHouseholdId",
-      "values" : [ {
-        "id" : "300a0b1e-4853-4ce6-bde1-9d6c8105b021",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_HOUSEHOLD_ID",
-        "text" : "141310031"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
-      "values" : [ {
-        "id" : "0d90ccd0-8b13-4555-a948-618087ee50b8",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_LINE_NBR",
-        "text" : "3"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
-      "values" : [ {
-        "id" : "11b77439-5989-4759-b0b0-9cee70c7edff",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PAGE_NBR",
-        "text" : "1"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePageType",
-      "values" : [ {
-        "id" : "a21c03b6-f1cc-42a1-865a-fdec0de34b8d",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PAGE_TYPE",
-        "text" : "6"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePieceFolio",
-      "values" : [ {
-        "id" : "548969ce-edb0-4582-a02b-71f4a325eb73",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PIECE_FOLIO",
-        "text" : "31"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourcePieceNbr",
-      "values" : [ {
-        "id" : "d251c3c4-ff02-4d0d-b9b0-2ccf5d9350dc",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_PIECE_NBR",
-        "text" : "14131"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceRecordType",
-      "values" : [ {
-        "id" : "4a93259a-9877-4f14-8295-0dce77fbd9cf",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_RECORD_TYPE",
-        "text" : "Household"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceRegNbr",
-      "values" : [ {
-        "id" : "61d4c383-ecec-42e3-8339-f8624ff65d69",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_REG_NBR",
-        "text" : "RG14"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SourceScheduleType",
-      "values" : [ {
-        "id" : "ad7a4dd5-df6f-468d-8343-ac14ac8fb0b5",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SOURCE_SCHEDULE_TYPE",
-        "text" : "16"
-      } ]
-    } ]
-  } ],
-  "relationships" : [ {
-    "id" : "MM9.1.6/LF8B-2Z1",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_10347919943",
-      "resourceId" : "p_10347919943"
+        {
+          "spatial": {
+            "original": "Wales",
+            "description": "#place_1986311"
+          },
+          "temporal": {
+            "original": "1911/1911",
+            "formal": "1911/1911"
+          },
+          "recordType": "http://gedcomx.org/Census"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "England and Wales Census, 1911"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1921547"]
+      }
     },
-    "person2" : {
-      "resource" : "#p_10347919944",
-      "resourceId" : "p_10347919944"
-    }
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_1921547",
-    "about" : "https://api.familysearch.org/platform/records/collections/1921547",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1382223266639,
-    "modified" : 1657230832963,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "England",
-        "description" : "#place_1986340"
+    {
+      "id": "src_r_21691290243",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3",
+      "componentOf": {
+        "description": "#sd_c_1921547"
       },
-      "temporal" : {
-        "original" : "1911/1911",
-        "formal" : "1911/1911"
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1563663475132,
+      "modified": 1657230832963,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Luxborough, Somerset, England, United Kingdom"
+          },
+          "temporal": {
+            "original": "1911",
+            "formal": "+1911"
+          },
+          "recordType": "http://gedcomx.org/Census"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"England and Wales Census, 1911,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:1GK8-3V3 : 21 July 2019), Household of Richard Taylor, Luxborough, Somerset, England, United Kingdom; from \"1911 England and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        },
+        {
+          "description": "#sd3",
+          "descriptionId": "sd3"
+        },
+        {
+          "description": "#sd4",
+          "descriptionId": "sd4"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Household of Richard Taylor, \"England and Wales Census, 1911\""
+        }
+      ],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/1000804195401"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3"]
       },
-      "recordType" : "http://gedcomx.org/Census"
-    }, {
-      "spatial" : {
-        "original" : "Wales",
-        "description" : "#place_1986311"
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1921547?arkName=1:2:1GK8-3V3"
+      }
+    },
+    {
+      "id": "sd_p_10347919943",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5P",
+      "componentOf": {
+        "description": "#src_r_21691290243"
       },
-      "temporal" : {
-        "original" : "1911/1911",
-        "formal" : "1911/1911"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England and Wales Census, 1911,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:X7RW-H5P : 21 July 2019), Richard Taylor, Luxborough, Somerset, England, United Kingdom; from \"1911 England and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Richard Taylor, \"England and Wales Census, 1911\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X7RW-H5P"]
+      }
+    },
+    {
+      "id": "sd_p_10347919944",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:X7RW-H55",
+      "componentOf": {
+        "description": "#src_r_21691290243"
       },
-      "recordType" : "http://gedcomx.org/Census"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "England and Wales Census, 1911"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1921547" ]
-    }
-  }, {
-    "id" : "src_r_21691290243",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3",
-    "componentOf" : {
-      "description" : "#sd_c_1921547"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England and Wales Census, 1911,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:X7RW-H55 : 21 July 2019), Elizabeth Taylor in household of Richard Taylor, Luxborough, Somerset, England, United Kingdom; from \"1911 England and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Elizabeth Taylor in household of Richard Taylor, \"England and Wales Census, 1911\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X7RW-H55"]
+      }
     },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1563663475132,
-    "modified" : 1657230832963,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Luxborough, Somerset, England, United Kingdom"
+    {
+      "id": "sd_p_10347919945",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5R",
+      "componentOf": {
+        "description": "#src_r_21691290243"
       },
-      "temporal" : {
-        "original" : "1911",
-        "formal" : "+1911"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England and Wales Census, 1911,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:X7RW-H5R : 21 July 2019), Edward Taylor in household of Richard Taylor, Luxborough, Somerset, England, United Kingdom; from \"1911 England and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Edward Taylor in household of Richard Taylor, \"England and Wales Census, 1911\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X7RW-H5R"]
+      }
+    },
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/1",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
       },
-      "recordType" : "http://gedcomx.org/Census"
-    } ],
-    "citations" : [ {
-      "value" : "\"England and Wales Census, 1911,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:1GK8-3V3 : 21 July 2019), Household of Richard Taylor, Luxborough, Somerset, England, United Kingdom; from \"1911 England and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    }, {
-      "description" : "#sd3",
-      "descriptionId" : "sd3"
-    }, {
-      "description" : "#sd4",
-      "descriptionId" : "sd4"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Household of Richard Taylor, \"England and Wales Census, 1911\""
-    } ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1000804195401" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:1GK8-3V3" ]
+      "identifiers": {
+        "http://gedcomx.org/Persistent": [
+          "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/1"
+        ]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1921547"
+      }
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1921547?arkName=1:2:1GK8-3V3"
-    }
-  }, {
-    "id" : "sd_p_10347919943",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5P",
-    "componentOf" : {
-      "description" : "#src_r_21691290243"
+    {
+      "id": "sd3",
+      "mediaType": "image/jpeg",
+      "about": "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/2",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": [
+          "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/2"
+        ]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1921547"
+      }
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"England and Wales Census, 1911,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:X7RW-H5P : 21 July 2019), Richard Taylor, Luxborough, Somerset, England, United Kingdom; from \"1911 England and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Richard Taylor, \"England and Wales Census, 1911\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5P" ]
+    {
+      "id": "sd4",
+      "mediaType": "image/jpeg",
+      "about": "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/3",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": [
+          "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/3"
+        ]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1921547"
+      }
     }
-  }, {
-    "id" : "sd_p_10347919944",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:X7RW-H55",
-    "componentOf" : {
-      "description" : "#src_r_21691290243"
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["search.findmypast.co.uk"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "place": {
+        "resource": "https://www.familysearch.org/platform/places/description/2978459",
+        "resourceId": "place_2978459"
+      }
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"England and Wales Census, 1911,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:X7RW-H55 : 21 July 2019), Elizabeth Taylor in household of Richard Taylor, Luxborough, Somerset, England, United Kingdom; from \"1911 England and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Elizabeth Taylor in household of Richard Taylor, \"England and Wales Census, 1911\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X7RW-H55" ]
-    }
-  }, {
-    "id" : "sd_p_10347919945",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5R",
-    "componentOf" : {
-      "description" : "#src_r_21691290243"
+    {
+      "id": "place_1986311",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986311"]
+      }
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"England and Wales Census, 1911,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:X7RW-H5R : 21 July 2019), Edward Taylor in household of Richard Taylor, Luxborough, Somerset, England, United Kingdom; from \"1911 England and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Edward Taylor in household of Richard Taylor, \"England and Wales Census, 1911\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5R" ]
+    {
+      "id": "place_1986340",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986340"]
+      }
     }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/1",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "id": "f4292d27-e6e2-4c4c-970a-615647bf7bf1",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "1921547"
+        }
+      ]
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/1" ]
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "id": "f85827ec-5637-4d02-a0de-2d11ffb65c89",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PPQ_ID",
+          "text": "17-0199"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1921547"
-    }
-  }, {
-    "id" : "sd3",
-    "mediaType" : "image/jpeg",
-    "about" : "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/2",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "id": "5d9ef474-59f2-4a58-abf6-fb8566b42605",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "11-0500; 10-FEB-2012 17:27:30.238446; Default"
+        }
+      ]
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/2" ]
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "id": "6579a327-6c20-4bbd-aabe-e4b2aca40a40",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "000000141310031_001_001000804195401"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1921547"
-    }
-  }, {
-    "id" : "sd4",
-    "mediaType" : "image/jpeg",
-    "about" : "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/3",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
+    {
+      "type": "http://familysearch.org/types/fields/UniqueId",
+      "values": [
+        {
+          "id": "8c79883a-3ab8-4d83-abbd-1b8bc397744b",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UNIQUE_ID",
+          "text": "1000804195401"
+        }
+      ]
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "http://search.findmypast.co.uk/record?id=GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/3" ]
+    {
+      "type": "http://familysearch.org/types/fields/FsVisStatus",
+      "values": [
+        {
+          "id": "35d49549-f536-46fc-98bd-92ad6fcee0b7",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_VIS_STATUS",
+          "text": "VISIBLE"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1921547"
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "12"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "49207"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
     }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "search.findmypast.co.uk" ]
+  ],
+  "qualifiers": [
+    {
+      "value": "true",
+      "name": "TreatmentWarnings"
     }
-  } ],
-  "places" : [ {
-    "place" : {
-      "resource" : "https://www.familysearch.org/platform/places/description/2978459",
-      "resourceId" : "place_2978459"
-    }
-  }, {
-    "id" : "place_1986311",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986311" ]
-    }
-  }, {
-    "id" : "place_1986340",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986340" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "id" : "f4292d27-e6e2-4c4c-970a-615647bf7bf1",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "1921547"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "id" : "f85827ec-5637-4d02-a0de-2d11ffb65c89",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PPQ_ID",
-      "text" : "17-0199"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "id" : "5d9ef474-59f2-4a58-abf6-fb8566b42605",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_GROUP",
-      "text" : "11-0500; 10-FEB-2012 17:27:30.238446; Default"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "id" : "6579a327-6c20-4bbd-aabe-e4b2aca40a40",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "000000141310031_001_001000804195401"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UniqueId",
-    "values" : [ {
-      "id" : "8c79883a-3ab8-4d83-abbd-1b8bc397744b",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UNIQUE_ID",
-      "text" : "1000804195401"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsVisStatus",
-    "values" : [ {
-      "id" : "35d49549-f536-46fc-98bd-92ad6fcee0b7",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_VIS_STATUS",
-      "text" : "VISIBLE"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "12"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "49207"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ],
-  "qualifiers" : [ {
-    "value" : "true",
-    "name" : "TreatmentWarnings"
-  } ]
+  ]
 }

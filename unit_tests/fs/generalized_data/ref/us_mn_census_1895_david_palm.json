@@ -19,12 +19,7 @@
     "placeString": "Township 160N, Range 40W, Roseau, Minnesota"
   },
   "ageAtEvent": "8y",
-  "householdArrayFields": [
-    "name",
-    "gender",
-    "age",
-    "birthPlace"
-  ],
+  "householdArrayFields": ["name", "gender", "age", "birthPlace"],
   "householdArray": [
     {
       "name": "Louis Palm",

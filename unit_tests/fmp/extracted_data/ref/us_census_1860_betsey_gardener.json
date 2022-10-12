@@ -30,14 +30,7 @@
     "Collections from": "Americas, United States"
   },
   "household": {
-    "headings": [
-      "Last name",
-      "Gender",
-      "Age",
-      "First name(s)",
-      "Birth year",
-      "Birth place"
-    ],
+    "headings": ["Last name", "Gender", "Age", "First name(s)", "Birth year", "Birth place"],
     "members": [
       {
         "isSelected": false,

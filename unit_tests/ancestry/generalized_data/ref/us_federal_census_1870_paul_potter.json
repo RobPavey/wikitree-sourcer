@@ -17,10 +17,7 @@
   },
   "occupation": "Farm Laborer",
   "ageAtEvent": "48",
-  "householdArrayFields": [
-    "name",
-    "age"
-  ],
+  "householdArrayFields": ["name", "age"],
   "householdArray": [
     {
       "name": "Paul Potter",

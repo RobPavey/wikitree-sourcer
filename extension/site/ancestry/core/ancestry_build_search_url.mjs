@@ -75,19 +75,10 @@ function buildSearchUrl(buildUrlInput) {
     category = "42";
   }
 
-  var builder = new AncestryUriBuilder(
-    ancestryCollectionId,
-    category,
-    subcategory,
-    options
-  );
+  var builder = new AncestryUriBuilder(ancestryCollectionId, category, subcategory, options);
 
   let hasAnyName = false;
-  let lastNames = data.inferLastNameGivenParametersAndCollection(
-    parameters,
-    collection,
-    true
-  );
+  let lastNames = data.inferLastNameGivenParametersAndCollection(parameters, collection, true);
 
   if (lastNames) {
     hasAnyName = true;
@@ -139,10 +130,7 @@ function buildSearchUrl(buildUrlInput) {
   if (data.spouses && data.spouses.length > 0) {
     let spouse = undefined;
     if (parameters) {
-      if (
-        parameters.spouseIndex != -1 &&
-        parameters.spouseIndex < data.spouses.length
-      ) {
+      if (parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
         spouse = data.spouses[parameters.spouseIndex];
       }
     } else {
@@ -157,12 +145,8 @@ function buildSearchUrl(buildUrlInput) {
       }
 
       if (spouse.marriageDate || spouse.marriagePlace) {
-        let marriageYear = spouse.marriageDate
-          ? spouse.marriageDate.getYearString()
-          : "";
-        let marriagePlace = spouse.marriagePlace
-          ? spouse.marriagePlace.placeString
-          : "";
+        let marriageYear = spouse.marriageDate ? spouse.marriageDate.getYearString() : "";
+        let marriagePlace = spouse.marriagePlace ? spouse.marriagePlace.placeString : "";
         builder.addMarriage(marriageYear, marriagePlace);
       }
     }

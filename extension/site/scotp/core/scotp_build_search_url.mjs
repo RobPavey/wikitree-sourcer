@@ -24,17 +24,9 @@ SOFTWARE.
 
 import { ScotpUriBuilder } from "./scotp_uri_builder.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import {
-  WtsPlace,
-  GeneralizedData,
-} from "../../../base/core/generalize_data_utils.mjs";
+import { WtsPlace, GeneralizedData } from "../../../base/core/generalize_data_utils.mjs";
 import { WTS_Date } from "../../../base/core/wts_date.mjs";
-import {
-  ScotpRecordType,
-  SpField,
-  SpFeature,
-  SpEventClass,
-} from "./scotp_record_type.mjs";
+import { ScotpRecordType, SpField, SpFeature, SpEventClass } from "./scotp_record_type.mjs";
 import { getSearchCountyFromWtsPlace } from "./scotp_county_data.mjs";
 import { getPlaceSearchTerms } from "./scotp_place_search_terms.mjs";
 
@@ -163,18 +155,8 @@ function getSourceDataEventClass(data) {
   return SpEventClass.other;
 }
 
-function adjustCountyForSpecialCases(
-  countyName,
-  scotpRecordType,
-  wtsPlace,
-  dates
-) {
-  const statutoryDistrictRecordTypes = [
-    "stat_births",
-    "stat_marriages",
-    "stat_deaths",
-    "civilpartnership",
-  ];
+function adjustCountyForSpecialCases(countyName, scotpRecordType, wtsPlace, dates) {
+  const statutoryDistrictRecordTypes = ["stat_births", "stat_marriages", "stat_deaths", "civilpartnership"];
 
   // FORFAR and ANGUS are a special case. FORFAR was renamed to ANGUS in 1928 but Scotland's People
   // is inconsistent about which county name it requires for records.
@@ -188,15 +170,9 @@ function adjustCountyForSpecialCases(
       {
         let firstCommaIndex = wtsPlace.placeString.indexOf(",");
         if (firstCommaIndex != -1) {
-          let townName = wtsPlace.placeString
-            .substring(0, firstCommaIndex)
-            .trim();
+          let townName = wtsPlace.placeString.substring(0, firstCommaIndex).trim();
           let searchTerms = getPlaceSearchTerms(townName, "statutory", false);
-          if (
-            searchTerms &&
-            Array.isArray(searchTerms) &&
-            searchTerms.length > 0
-          ) {
+          if (searchTerms && Array.isArray(searchTerms) && searchTerms.length > 0) {
             // this is a valid district name
             districtName = townName;
           }
@@ -207,11 +183,7 @@ function adjustCountyForSpecialCases(
         let townName = wtsPlace.inferTown();
         if (townName) {
           let searchTerms = getPlaceSearchTerms(townName, "statutory", false);
-          if (
-            searchTerms &&
-            Array.isArray(searchTerms) &&
-            searchTerms.length > 0
-          ) {
+          if (searchTerms && Array.isArray(searchTerms) && searchTerms.length > 0) {
             // this is a valid district name
             districtName = townName;
           }
@@ -274,16 +246,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
     } else {
       // enable all the years within lifespan, this results in something like:
       // &year%5B0%5D=1861&year%5B1%5D=1871&year%5B2%5D=1881&year%5B3%5D=1891
-      let censusYears = [
-        "1841",
-        "1851",
-        "1861",
-        "1871",
-        "1881",
-        "1891",
-        "1901",
-        "1911",
-      ];
+      let censusYears = ["1841", "1851", "1861", "1871", "1881", "1891", "1901", "1911"];
       for (let censusYear of censusYears) {
         if (isYearInDateRange(dates, censusYear)) {
           builder.addYear(censusYear);
@@ -295,20 +258,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
 
   if (scotpRecordType == "valuation_rolls") {
     // another special case. In this case only one year can be specified
-    let rollYears = [
-      "1855",
-      "1865",
-      "1875",
-      "1885",
-      "1895",
-      "1905",
-      "1915",
-      "1920",
-      "1925",
-      "1930",
-      "1935",
-      "1940",
-    ];
+    let rollYears = ["1855", "1865", "1875", "1885", "1895", "1905", "1915", "1920", "1925", "1930", "1935", "1940"];
     for (let rollYear of rollYears) {
       if (isYearInDateRange(dates, rollYear)) {
         builder.addYear(rollYear);
@@ -333,10 +283,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
   if (eventClass == SpEventClass.birth) {
     let birthYear = data.inferBirthYear();
     if (birthYear) {
-      let range = getRangeFromExactnessOption(
-        options,
-        "search_scotp_birthYearExactness"
-      );
+      let range = getRangeFromExactnessOption(options, "search_scotp_birthYearExactness");
       if (range == "auto") {
         range = 5;
         if (data.recordType == RT.Birth) {
@@ -351,10 +298,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
   } else if (eventClass == SpEventClass.death) {
     let deathYear = data.inferDeathYear();
     if (deathYear) {
-      let range = getRangeFromExactnessOption(
-        options,
-        "search_scotp_deathYearExactness"
-      );
+      let range = getRangeFromExactnessOption(options, "search_scotp_deathYearExactness");
       if (range == "auto") {
         range = 5;
         if (data.recordType == RT.Death) {
@@ -374,11 +318,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
     let datesAdjusted = false;
     if (parameters.spouseIndex != -1) {
       // we may have a marriage date
-      if (
-        data.spouses &&
-        parameters.spouseIndex != -1 &&
-        parameters.spouseIndex < data.spouses.length
-      ) {
+      if (data.spouses && parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
         let spouse = data.spouses[parameters.spouseIndex];
         if (spouse.marriageDate) {
           let marriageYear = spouse.marriageDate.getYearString();
@@ -386,10 +326,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
           // if the marriage date is outside collection range then ignore it
           let constrainedYear = constrainYear(marriageYear, scotpRecordType);
           if (constrainedYear == marriageYear) {
-            let range = getRangeFromExactnessOption(
-              options,
-              "search_scotp_marriageYearExactness"
-            );
+            let range = getRangeFromExactnessOption(options, "search_scotp_marriageYearExactness");
             if (range == "auto") {
               range = 5;
               if (data.recordType == RT.Marriage) {
@@ -429,10 +366,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.birthYear)) {
     let birthYear = data.inferBirthYear();
     if (birthYear) {
-      let range = getRangeFromExactnessOption(
-        options,
-        "search_scotp_birthYearExactness"
-      );
+      let range = getRangeFromExactnessOption(options, "search_scotp_birthYearExactness");
       if (range == "auto") {
         range = 1;
       }
@@ -444,14 +378,8 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
 }
 
 function setAge(data, scotpRecordType, parameters, options, builder) {
-  let targetHasAgeRange = ScotpRecordType.hasSearchFeature(
-    scotpRecordType,
-    SpFeature.ageRange
-  );
-  let targetHasAge = ScotpRecordType.hasSearchFeature(
-    scotpRecordType,
-    SpFeature.age
-  );
+  let targetHasAgeRange = ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.ageRange);
+  let targetHasAge = ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.age);
 
   if (!targetHasAgeRange && !targetHasAge) {
     return;
@@ -483,10 +411,7 @@ function setAge(data, scotpRecordType, parameters, options, builder) {
   if (birthDate) {
     let estimatedAge = GeneralizedData.getAgeAtDate(birthDate, searchYear);
 
-    let range = getRangeFromExactnessOption(
-      options,
-      "search_scotp_ageExactness"
-    );
+    let range = getRangeFromExactnessOption(options, "search_scotp_ageExactness");
     if (range == "auto") {
       range = 3;
     }
@@ -512,17 +437,13 @@ function setNames(data, scotpRecordType, parameters, options, builder) {
       }
     }
     if (lastName) {
-      let searchOption = options.search_scotp_surnameSoundex
-        ? "soundex"
-        : "exact";
+      let searchOption = options.search_scotp_surnameSoundex ? "soundex" : "exact";
       builder.addSurname(lastName, searchOption);
     }
 
     let forename = data.inferForenames();
     if (forename) {
-      let searchOption = options.search_scotp_forenameSoundex
-        ? "soundex"
-        : "exact";
+      let searchOption = options.search_scotp_forenameSoundex ? "soundex" : "exact";
       builder.addForename(forename, searchOption);
     }
   }
@@ -558,15 +479,8 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
         wtsPlace.placeString = deathPlaceString;
       }
     }
-  } else if (
-    searchEventClass == SpEventClass.marriage &&
-    parameters.spouseIndex != -1
-  ) {
-    if (
-      data.spouses &&
-      parameters.spouseIndex != -1 &&
-      parameters.spouseIndex < data.spouses.length
-    ) {
+  } else if (searchEventClass == SpEventClass.marriage && parameters.spouseIndex != -1) {
+    if (data.spouses && parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
       let spouse = data.spouses[parameters.spouseIndex];
       if (spouse.marriagePlace) {
         wtsPlace = spouse.marriagePlace;
@@ -589,20 +503,12 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
     }
   }
 
-  let countySearchParam = ScotpRecordType.getSearchParam(
-    scotpRecordType,
-    SpField.county
-  );
+  let countySearchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.county);
   if (countySearchParam) {
     if (wtsPlace) {
       let countyName = getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace);
 
-      countyName = adjustCountyForSpecialCases(
-        countyName,
-        scotpRecordType,
-        wtsPlace,
-        dates
-      );
+      countyName = adjustCountyForSpecialCases(countyName, scotpRecordType, wtsPlace, dates);
 
       builder.addSearchParameter(countySearchParam, countyName);
     }
@@ -612,10 +518,7 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
   // Registration district
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rd)) {
     if (data.registrationDistrict) {
-      if (
-        sourceDataEventClass != SpEventClass.other &&
-        searchEventClass == sourceDataEventClass
-      ) {
+      if (sourceDataEventClass != SpEventClass.other && searchEventClass == sourceDataEventClass) {
         // for a census or residence we should only add district if same year
         if (builder.addRdName(data.registrationDistrict, false)) {
           addedPlace = true;
@@ -626,8 +529,7 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
     if (
       !addedPlace &&
       wtsPlace &&
-      (data.recordType == RT.BirthRegistration ||
-        data.recordType == RT.Birth) &&
+      (data.recordType == RT.BirthRegistration || data.recordType == RT.Birth) &&
       !data.registrationDistrict
     ) {
       // coming from a birth registration or birth and the place name should be a district
@@ -636,9 +538,7 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
       // and inferTown will get "Edinburgh" but we want "Saint George"
       let firstCommaIndex = wtsPlace.placeString.indexOf(",");
       if (firstCommaIndex != -1) {
-        let districtName = wtsPlace.placeString
-          .substring(0, firstCommaIndex)
-          .trim();
+        let districtName = wtsPlace.placeString.substring(0, firstCommaIndex).trim();
         if (builder.addRdName(districtName, false)) {
           addedPlace = true;
         }
@@ -647,11 +547,7 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
 
     // say we are coming from a WikiTree profile. Do we want to use the place name to find the RD?
     // Example where it would fail: https://www.wikitree.com/wiki/Black-16695
-    if (
-      !addedPlace &&
-      wtsPlace &&
-      (data.recordType == RT.BirthRegistration || data.recordType == RT.Birth)
-    ) {
+    if (!addedPlace && wtsPlace && (data.recordType == RT.BirthRegistration || data.recordType == RT.Birth)) {
       let townName = wtsPlace.inferTown();
       if (townName) {
         if (builder.addRdName(townName, false)) {
@@ -662,10 +558,7 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
   }
 
   // OPR parish
-  if (
-    !addedPlace &&
-    ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.oprParish)
-  ) {
+  if (!addedPlace && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.oprParish)) {
     if (data.registrationDistrict) {
       if (searchEventClass == sourceDataEventClass) {
         if (builder.addOprParishName(data.registrationDistrict, false)) {
@@ -685,10 +578,7 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
   }
 
   // Catholic parish
-  if (
-    !addedPlace &&
-    ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rcParish)
-  ) {
+  if (!addedPlace && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rcParish)) {
     if (data.registrationDistrict) {
       if (builder.addCatholicParishName(parish.rc_parish, false)) {
         addedPlace = true;
@@ -708,9 +598,7 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
 
 function setParents(data, scotpRecordType, parameters, options, builder) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.parents)) {
-    let searchOption = options.search_scotp_parentNameSoundex
-      ? "soundex"
-      : "exact";
+    let searchOption = options.search_scotp_parentNameSoundex ? "soundex" : "exact";
 
     let parentNames = data.inferParentNamesForDataString();
     if (parameters.father) {
@@ -725,11 +613,7 @@ function setParents(data, scotpRecordType, parameters, options, builder) {
 function setSpouse(data, scotpRecordType, parameters, options, builder) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.spouse)) {
     let spouseName = "";
-    if (
-      data.spouses &&
-      parameters.spouseIndex != -1 &&
-      parameters.spouseIndex < data.spouses.length
-    ) {
+    if (data.spouses && parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
       let spouse = data.spouses[parameters.spouseIndex];
       if (spouse.name) {
         spouseName = spouse.name;
@@ -746,16 +630,12 @@ function setSpouse(data, scotpRecordType, parameters, options, builder) {
     let forename = spouseName.inferFirstName();
 
     if (lastName) {
-      let searchOption = options.search_scotp_surnameSoundex
-        ? "soundex"
-        : "exact";
+      let searchOption = options.search_scotp_surnameSoundex ? "soundex" : "exact";
       builder.addSpouseSurname(lastName, searchOption);
     }
 
     if (forename) {
-      let searchOption = options.search_scotp_forenameSoundex
-        ? "soundex"
-        : "exact";
+      let searchOption = options.search_scotp_forenameSoundex ? "soundex" : "exact";
       builder.addSpouseForename(forename, searchOption);
     }
 
@@ -763,18 +643,14 @@ function setSpouse(data, scotpRecordType, parameters, options, builder) {
     let fullName = spouseName.inferFullName();
 
     if (fullName) {
-      let searchOption = options.search_scotp_surnameSoundex
-        ? "soundex"
-        : "exact";
+      let searchOption = options.search_scotp_surnameSoundex ? "soundex" : "exact";
       builder.addSpouseFullName(fullName, searchOption);
     }
   }
 }
 
 function setOtherPerson(data, scotpRecordType, parameters, options, builder) {
-  if (
-    !ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.otherPerson)
-  ) {
+  if (!ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.otherPerson)) {
     return;
   }
 

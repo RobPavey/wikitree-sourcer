@@ -45,13 +45,7 @@ function messageHandler(request, sender, sendResponse) {
 
   if (request.type == "contentLoaded") {
     //console.log("WikiTree Sourcer, background script, received contentLoaded message");
-    handleContentLoadedMessage(
-      request,
-      sender,
-      sendResponse,
-      setPopup,
-      setIcon
-    );
+    handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon);
   } else if (request.type == "exception") {
     handleExceptionMessage(request, sendResponse);
 

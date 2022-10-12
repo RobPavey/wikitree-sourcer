@@ -22,13 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function handleContentLoadedMessage(
-  request,
-  sender,
-  sendResponse,
-  setPopup,
-  setIcon
-) {
+function handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon) {
   //console.log("WikiTree Sourcer, background script, received contentLoaded message");
 
   //console.log("WikiTree Sourcer, background script, sender.tab.id is: " + sender.tab.id + ", siteName is: " + request.siteName);

@@ -36,10 +36,7 @@ function openAncestryLink(link, options) {
     }
     //console.log("openAncestryLink, realLinkIndex is: " + realLinkIndex);
     if (realLinkIndex != -1) {
-      let domainEndIndex = link.indexOf(
-        "/",
-        realLinkIndex + linkStartText.length
-      );
+      let domainEndIndex = link.indexOf("/", realLinkIndex + linkStartText.length);
       if (domainEndIndex != -1) {
         let linkStart = link.substring(realLinkIndex, domainEndIndex);
         // linkStart = https://search.ancestry.com for example
@@ -67,10 +64,7 @@ function openAncestryLink(link, options) {
     // or:
     // https://search.ancestry.co.uk/cgi-bin/sse.dll?db=uki1861&indiv=try&h=19053031
 
-    let domain = link.replace(
-      /^https?\:\/\/[^\.]+\.(ancestry[^\/]+)\/.*/,
-      "$1"
-    );
+    let domain = link.replace(/^https?\:\/\/[^\.]+\.(ancestry[^\/]+)\/.*/, "$1");
     //console.log("openAncestryLink, domain is: " + domain);
     if (domain && domain != link) {
       let desiredDomain = options.search_ancestry_domain;
@@ -90,10 +84,7 @@ function openAncestryLink(link, options) {
 }
 
 function openFmpLink(link, options) {
-  let domain = link.replace(
-    /^https?\:\/\/[^\.]+\.(findmypast[^\/]+)\/.*/,
-    "$1"
-  );
+  let domain = link.replace(/^https?\:\/\/[^\.]+\.(findmypast[^\/]+)\/.*/, "$1");
   //console.log("openFmpLink, domain is: " + domain);
   if (domain && domain != link) {
     let desiredDomain = options.search_fmp_domain;
@@ -155,53 +146,27 @@ function openAncestryTemplate(text, options) {
 
   if (text.includes("Ancestry Record")) {
     // {{Ancestry Record|1989|219120}}
-    let dbId = text.replace(
-      /\{\{Ancestry Record\|([^|]+)\|[^}]+[^|}]*\}\}/,
-      "$1"
-    );
-    let recordId = text.replace(
-      /\{\{Ancestry Record\|[^|]+\|([^|}]+)[^}]*\}\}/,
-      "$1"
-    );
+    let dbId = text.replace(/\{\{Ancestry Record\|([^|]+)\|[^}]+[^|}]*\}\}/, "$1");
+    let recordId = text.replace(/\{\{Ancestry Record\|[^|]+\|([^|}]+)[^}]*\}\}/, "$1");
     if (dbId && dbId != text && recordId && recordId != text) {
       // https://www.ancestry.com/discoveryui-content/view/219120:1989
-      link =
-        "https://www." +
-        desiredDomain +
-        "/discoveryui-content/view/" +
-        recordId +
-        ":" +
-        dbId;
+      link = "https://www." + desiredDomain + "/discoveryui-content/view/" + recordId + ":" + dbId;
     }
   } else if (text.includes("Ancestry Image")) {
     // {{Ancestry Image|1234|5678}}
-    let num1 = text.replace(
-      /\{\{Ancestry Image\|([^|]+)\|[^|}]+[^}]*\}\}/,
-      "$1"
-    );
-    let num2 = text.replace(
-      /\{\{Ancestry Image\|[^|]+\|([^|}]+)[^}]*\}\}/,
-      "$1"
-    );
+    let num1 = text.replace(/\{\{Ancestry Image\|([^|]+)\|[^|}]+[^}]*\}\}/, "$1");
+    let num2 = text.replace(/\{\{Ancestry Image\|[^|]+\|([^|}]+)[^}]*\}\}/, "$1");
     if (num1 && num1 != text && num2 && num2 != text) {
       // https://www.ancestry.com/interactive/1234/5678
-      link =
-        "https://www." + desiredDomain + "/interactive/" + num1 + "/" + num2;
+      link = "https://www." + desiredDomain + "/interactive/" + num1 + "/" + num2;
     }
   } else if (text.includes("Ancestry Sharing")) {
     // {{Ancestry Sharing|26032935|f25069}}
-    let num1 = text.replace(
-      /\{\{Ancestry Sharing\|([^|]+)\|[^}|]+[^}]*\}\}/,
-      "$1"
-    );
-    let num2 = text.replace(
-      /\{\{Ancestry Sharing\|[^|]+\|([^}|]+)[^}]*\}\}/,
-      "$1"
-    );
+    let num1 = text.replace(/\{\{Ancestry Sharing\|([^|]+)\|[^}|]+[^}]*\}\}/, "$1");
+    let num2 = text.replace(/\{\{Ancestry Sharing\|[^|]+\|([^}|]+)[^}]*\}\}/, "$1");
     if (num1 && num1 != text && num2 && num2 != text) {
       // https://www.ancestry.com/sharing/26032935?h=f25069
-      link =
-        "https://www." + desiredDomain + "/sharing//" + num1 + "?h=" + num2;
+      link = "https://www." + desiredDomain + "/sharing//" + num1 + "?h=" + num2;
     }
   }
 

@@ -22,15 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import fs from 'fs'
-
+import fs from "fs";
 
 function doesFolderExist(path) {
   return fs.existsSync(path);
 }
 
 function createFolderPathIfNeeded(path) {
-
   if (!fs.existsSync(path)) {
     try {
       fs.mkdirSync(path);
@@ -47,10 +45,10 @@ function createFolderPathIfNeeded(path) {
 function readFile(path) {
   let inputText = "";
   try {
-    inputText = fs.readFileSync(path, 'utf8');
+    inputText = fs.readFileSync(path, "utf8");
   } catch (e) {
     console.log("Failed to read input file: " + path);
-    console.log('Error:', e.stack);
+    console.log("Error:", e.stack);
     return "";
   }
 
@@ -60,7 +58,7 @@ function readFile(path) {
 function writeFile(path, text) {
   try {
     fs.writeFileSync(path, text, { mode: 0o644 });
-  } catch(err) {
+  } catch (err) {
     // An error occurred
     console.log("Failed to write output file: " + path);
     console.error(err);
@@ -70,7 +68,6 @@ function writeFile(path, text) {
 }
 
 function checkParameters(parameters) {
-
   const siteName = parameters.siteName;
   if (!siteName) {
     console.log("Parameter check failed. siteName missing.");
@@ -103,18 +100,11 @@ function checkParameters(parameters) {
 }
 
 function checkForRequiredFolders() {
-
-  const requiredFolders = [
-    "extension",
-    "unit_tests",
-    "scripts",
-    "extension/site",
-    "scripts/new_site_template",
-  ]
+  const requiredFolders = ["extension", "unit_tests", "scripts", "extension/site", "scripts/new_site_template"];
 
   for (let folder of requiredFolders) {
     if (!doesFolderExist(folder)) {
-      console.log("Not running in correct folder. Missing path: " + folder );
+      console.log("Not running in correct folder. Missing path: " + folder);
       return false;
     }
   }
@@ -123,7 +113,6 @@ function checkForRequiredFolders() {
 }
 
 function createSiteFolders(siteName) {
-
   const extensionSite = "extension/site/" + siteName;
   if (!createFolderPathIfNeeded(extensionSite)) return false;
   if (!createFolderPathIfNeeded(extensionSite + "/browser")) return false;
@@ -141,7 +130,6 @@ function createSiteFolders(siteName) {
 }
 
 function createSiteFileFromTemplate(parameters, rootPath, midPath, fileEnd) {
-
   let templatePath = "scripts/new_site_template/" + rootPath + "/examplesite/";
   let sitePath = rootPath + "/" + parameters.siteName + "/";
   if (midPath) {
@@ -165,7 +153,7 @@ function createSiteFileFromTemplate(parameters, rootPath, midPath, fileEnd) {
   function replaceAll(fromString, toString) {
     let regexString = fromString;
     let regex = new RegExp(regexString, "g");
-    outputText = outputText.replace(regex, toString); 
+    outputText = outputText.replace(regex, toString);
   }
 
   let regexString = "examplesite";
@@ -185,7 +173,6 @@ function createSiteFileFromTemplate(parameters, rootPath, midPath, fileEnd) {
 }
 
 function createSiteFilesFromTemplates(parameters) {
-
   const files = [
     { root: "extension/site", mid: "browser", end: "_content.js" },
     { root: "extension/site", mid: "browser", end: "_popup_search.mjs" },
@@ -239,27 +226,23 @@ function addLineToFile(path, lineToAdd) {
   return true;
 }
 
-
 function updatePopupRegisterSearchSites(siteName) {
-
   const path = "extension/site/all/browser/popup_register_search_sites.mjs";
-  const lineToAdd = 'import "/site/' + siteName + '/browser/' + siteName + '_popup_search.mjs";';
+  const lineToAdd = 'import "/site/' + siteName + "/browser/" + siteName + '_popup_search.mjs";';
 
   return addLineToFile(path, lineToAdd);
 }
 
 function updateRegisterSiteOptions(siteName) {
-
   const path = "extension/site/all/core/register_site_options.mjs";
-  const lineToAdd = 'import "../../' + siteName + '/core/' + siteName + '_options.mjs";';
+  const lineToAdd = 'import "../../' + siteName + "/core/" + siteName + '_options.mjs";';
 
   return addLineToFile(path, lineToAdd);
 }
 
 function updateRunTest(siteName) {
-
   const path = "scripts/run_test.js";
-  const lineToAdd = '\nimport "../unit_tests/' + siteName + '/' + siteName + '_test.mjs";';
+  const lineToAdd = '\nimport "../unit_tests/' + siteName + "/" + siteName + '_test.mjs";';
 
   // read file
   let text = readFile(path);
@@ -307,14 +290,13 @@ function updateRunTest(siteName) {
 }
 
 async function createNewSite() {
-
   // results is an object that builds up the test results
-  // it contains an array of objects (allTests), each has a test name and whether it passed 
+  // it contains an array of objects (allTests), each has a test name and whether it passed
   let results = {
     totalTestsRun: 0,
     numFailedTests: 0,
-    allTests: []
-  }
+    allTests: [],
+  };
 
   let parameters = {
     siteName: "",
@@ -348,20 +330,19 @@ async function createNewSite() {
 
   // Now create all the folders for the new site
   if (!createSiteFolders(parameters.siteName)) {
-    console.log("Falied to created site folders")
+    console.log("Falied to created site folders");
     return;
   }
 
   // Now create all the files from the template files
   if (!createSiteFilesFromTemplates(parameters)) {
-    console.log("Falied to created site files from templates")
+    console.log("Falied to created site files from templates");
     return;
   }
 
   updatePopupRegisterSearchSites(parameters.siteName);
   updateRegisterSiteOptions(parameters.siteName);
   updateRunTest(parameters.siteName);
-
 }
 
 createNewSite();

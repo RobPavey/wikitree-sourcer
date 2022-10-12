@@ -21,13 +21,7 @@
   "eventDate": {
     "yearString": "1860"
   },
-  "householdArrayFields": [
-    "name",
-    "gender",
-    "age",
-    "birthYear",
-    "birthPlace"
-  ],
+  "householdArrayFields": ["name", "gender", "age", "birthYear", "birthPlace"],
   "householdArray": [
     {
       "name": "G B Gardener",

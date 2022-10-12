@@ -34,10 +34,7 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { registerSearchMenuItemFunction, testFilterForDatesAndCountries } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -64,13 +61,10 @@ function freecenDoSearch(input) {
 
       // this stores the search data in local storage which is then picked up by the
       // content script in the new tab/window
-      chrome.storage.local.set(
-        { freecenSearchData: freecenSearchData },
-        function () {
-          //console.log('saved freecenSearchData, freecenSearchData is:');
-          //console.log(freecenSearchData);
-        }
-      );
+      chrome.storage.local.set({ freecenSearchData: freecenSearchData }, function () {
+        //console.log('saved freecenSearchData, freecenSearchData is:');
+        //console.log(freecenSearchData);
+      });
     } catch (ex) {
       console.log("storeDataCache failed");
     }
@@ -122,20 +116,12 @@ async function freecenSearchWithParameters(generalizedData, parameters) {
 
 function addFreecenDefaultSearchMenuItem(menu, data, backFunction, filter) {
   if (filter) {
-    if (
-      !testFilterForDatesAndCountries(filter, 1841, 1911, ["United Kingdom"])
-    ) {
+    if (!testFilterForDatesAndCountries(filter, 1841, 1911, ["United Kingdom"])) {
       return;
     }
   } else {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    if (
-      !data.generalizedData.couldPersonHaveLivedInDateRange(
-        1841,
-        1911,
-        maxLifespan
-      )
-    ) {
+    if (!data.generalizedData.couldPersonHaveLivedInDateRange(1841, 1911, maxLifespan)) {
       //console.log("addFreecenDefaultSearchMenuItem: couldPersonHaveLivedInDateRange returned false");
       return false;
     }
@@ -173,12 +159,7 @@ function addFreecenSameRecordMenuItem(menu, data) {
 
 function addFreecenSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection", function (element) {
-    setupSearchCollectionsSubMenu(
-      data,
-      "freecen",
-      freecenSearchCollection,
-      backFunction
-    );
+    setupSearchCollectionsSubMenu(data, "freecen", freecenSearchCollection, backFunction);
   });
 }
 
@@ -209,20 +190,11 @@ async function setupFreecenSearchSubMenu(data, backFunction) {
 
 async function setupFreecenSearchWithParametersSubMenu(data, backFunction) {
   let dataModule = await import(`../core/freecen_data.mjs`);
-  setupSearchWithParametersSubMenu(
-    data,
-    backFunction,
-    dataModule.FreecenData,
-    freecenSearchWithParameters
-  );
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.FreecenData, freecenSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "freecen",
-  "FreeCen (UK)",
-  addFreecenDefaultSearchMenuItem
-);
+registerSearchMenuItemFunction("freecen", "FreeCen (UK)", addFreecenDefaultSearchMenuItem);

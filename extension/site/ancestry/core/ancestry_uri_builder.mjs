@@ -131,12 +131,7 @@ class AncestryUriBuilder {
   }
 
   addSearchParameter(parameter, value, exact = false) {
-    if (
-      parameter == undefined ||
-      parameter == "" ||
-      value == undefined ||
-      value == ""
-    ) {
+    if (parameter == undefined || parameter == "" || value == undefined || value == "") {
       return;
     }
 
@@ -182,10 +177,7 @@ class AncestryUriBuilder {
       string += fixupLocation(location);
     }
     if (string != "") {
-      this.addSearchParameter(
-        uniqueTitle,
-        WTS_String.removeExtendedAsciiCharacters(string)
-      );
+      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(string));
     }
   }
 
@@ -200,10 +192,7 @@ class AncestryUriBuilder {
       name += lastName.trim().replace(/\s+/g, "+");
     }
     if (name != "") {
-      this.addSearchParameter(
-        uniqueTitle,
-        WTS_String.removeExtendedAsciiCharacters(name)
-      );
+      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(name));
     }
   }
 
@@ -252,51 +241,33 @@ class AncestryUriBuilder {
   }
 
   addVolume(volume) {
-    let queryName = this.getSearchQueryNameFromCollection(
-      "volume",
-      "f-SourceVolumeNumber"
-    );
+    let queryName = this.getSearchQueryNameFromCollection("volume", "f-SourceVolumeNumber");
     this.addSearchParameter(queryName, volume);
   }
 
   addPage(page) {
-    let queryName = this.getSearchQueryNameFromCollection(
-      "page",
-      "f-SourcePageNumber"
-    );
+    let queryName = this.getSearchQueryNameFromCollection("page", "f-SourcePageNumber");
     this.addSearchParameter(queryName, page);
   }
 
   addFolio(folio) {
-    let queryName = this.getSearchQueryNameFromCollection(
-      "folio",
-      "f-SourceFolioNumber"
-    );
+    let queryName = this.getSearchQueryNameFromCollection("folio", "f-SourceFolioNumber");
     this.addSearchParameter(queryName, folio, true);
   }
 
   addPiece(piece) {
-    let queryName = this.getSearchQueryNameFromCollection(
-      "piece",
-      "f-SourcePieceNumber"
-    );
+    let queryName = this.getSearchQueryNameFromCollection("piece", "f-SourcePieceNumber");
     this.addSearchParameter(queryName, piece, true);
   }
 
   addSchedule(schedule) {
-    let queryName = this.getSearchQueryNameFromCollection(
-      "schedule",
-      "f-Famnum"
-    );
+    let queryName = this.getSearchQueryNameFromCollection("schedule", "f-Famnum");
     this.addSearchParameter(queryName, schedule);
   }
 
   addRegistrationNumber(registrationNumber) {
     if (registrationNumber) {
-      let queryName = this.getSearchQueryNameFromCollection(
-        "registrationNumber",
-        ""
-      );
+      let queryName = this.getSearchQueryNameFromCollection("registrationNumber", "");
       if (queryName) {
         this.addSearchParameter(queryName, registrationNumber);
         this.addSearchParameter(queryName + "_x", "1"); // set as exact
@@ -321,10 +292,7 @@ class AncestryUriBuilder {
         defaultName = "f-Notes";
       }
     }
-    let queryName = this.getSearchQueryNameFromCollection(
-      "district",
-      defaultName
-    );
+    let queryName = this.getSearchQueryNameFromCollection("district", defaultName);
     this.addSearchParameter(queryName, district);
   }
 

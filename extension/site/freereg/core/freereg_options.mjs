@@ -92,12 +92,7 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "freereg", "FreeReg (UK)");
 registerSiteSearchPopupOptionsGroup("freereg", 8, 8);
-registerSubheadingForOptions(
-  "search",
-  "freereg",
-  "parameters",
-  "Search Parameters"
-);
+registerSubheadingForOptions("search", "freereg", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "freereg", "FreeReg (UK)");

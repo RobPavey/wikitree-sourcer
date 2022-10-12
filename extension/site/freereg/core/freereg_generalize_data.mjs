@@ -22,12 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  GeneralizedData,
-  GD,
-  dateQualifiers,
-  WtsName,
-} from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { getCountryFromCountyName } from "../../freecen/core/freecen_chapman_codes.mjs";
@@ -97,10 +92,7 @@ function setMarriageData(data, result, input) {
   result.setLastNameAndForeNames(surname, input.forenames);
   result.setFieldIfValueExists("ageAtEvent", input.age);
 
-  let spouseSurname = WTS_String.toInitialCapsEachWord(
-    input.spouseSurname,
-    true
-  );
+  let spouseSurname = WTS_String.toInitialCapsEachWord(input.spouseSurname, true);
   let spouseName = new WtsName();
   if (input.spouseForenames) {
     spouseName.forenames = input.spouseForenames;
@@ -140,11 +132,7 @@ function generalizeDataForBaptism(data, result) {
   }
 
   let forenames = getRecordDataValueForKeys(data, ["Person forename"]);
-  let surname = getRecordDataValueForKeys(data, [
-    "Person surname",
-    "Father surname",
-    "Mother surname",
-  ]);
+  let surname = getRecordDataValueForKeys(data, ["Person surname", "Father surname", "Mother surname"]);
   surname = WTS_String.toInitialCapsEachWord(surname, true);
   result.lastNameAtBirth = surname;
   result.setLastNameAndForeNames(surname, forenames);

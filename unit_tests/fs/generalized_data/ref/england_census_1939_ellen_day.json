@@ -20,14 +20,7 @@
   "registrationDistrict": "West Ham C.B.",
   "ageAtEvent": "40",
   "occupation": "Unpaid Domestic Duties",
-  "householdArrayFields": [
-    "name",
-    "maritalStatus",
-    "gender",
-    "age",
-    "birthYear",
-    "occupation"
-  ],
+  "householdArrayFields": ["name", "maritalStatus", "gender", "age", "birthYear", "occupation"],
   "householdArray": [
     {
       "name": "John E G Day",

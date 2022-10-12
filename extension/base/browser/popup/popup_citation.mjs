@@ -178,17 +178,9 @@ function doesCitationWantHouseholdTable(citationType, generalizedData) {
   return false;
 }
 
-function buildHouseholdTableString(
-  extractedData,
-  generalizedData,
-  citationType,
-  buildHouseholdTable
-) {
+function buildHouseholdTableString(extractedData, generalizedData, citationType, buildHouseholdTable) {
   let householdTableString = "";
-  if (
-    buildHouseholdTable &&
-    doesCitationWantHouseholdTable(citationType, generalizedData)
-  ) {
+  if (buildHouseholdTable && doesCitationWantHouseholdTable(citationType, generalizedData)) {
     const input = {
       extractedData: extractedData,
       generalizedData: generalizedData,
@@ -203,22 +195,14 @@ function buildHouseholdTableString(
   return householdTableString;
 }
 
-function buildCitationObjectForTable(
-  extractedData,
-  generalizedData,
-  sharingDataObj,
-  buildCitation
-) {
+function buildCitationObjectForTable(extractedData, generalizedData, sharingDataObj, buildCitation) {
   // There is an option to put an inline citation at the end of the table caption
   // If this is set then generate the citation string.
   let citationObject = undefined;
 
   if (buildCitation) {
     let autoTableOpt = options.table_general_autoGenerate;
-    if (
-      autoTableOpt == "citationInTableCaption" &&
-      options.table_table_caption != "none"
-    ) {
+    if (autoTableOpt == "citationInTableCaption" && options.table_table_caption != "none") {
       const input = {
         extractedData: extractedData,
         generalizedData: generalizedData,

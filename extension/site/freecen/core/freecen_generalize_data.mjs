@@ -22,17 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  GeneralizedData,
-  GD,
-  dateQualifiers,
-} from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
-import {
-  getCountryFromCountyCode,
-  getCountryFromCountyName,
-} from "./freecen_chapman_codes.mjs";
+import { getCountryFromCountyCode, getCountryFromCountyName } from "./freecen_chapman_codes.mjs";
 
 function getCountyAndCountry(data) {
   let result = { county: "", country: "" };
@@ -188,12 +181,7 @@ function buildHouseholdArray(data, result) {
         }
 
         for (let heading of headings) {
-          if (
-            heading != "Surname" &&
-            heading != "Forenames" &&
-            heading != "Birth Place" &&
-            heading != "Birth County"
-          ) {
+          if (heading != "Surname" && heading != "Forenames" && heading != "Birth Place" && heading != "Birth County") {
             let fieldName = headingToStdName(heading);
             if (fieldName) {
               let fieldValue = member[heading];
@@ -250,10 +238,7 @@ function buildHouseholdArray(data, result) {
   if (result.spouses && result.spouses.length == 1) {
     if (selectedPersonYearsMarried) {
       let censusDate = result.inferEventDate();
-      let marriageDateString = GeneralizedData.getSubtractAgeFromDate(
-        censusDate,
-        selectedPersonYearsMarried
-      );
+      let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, selectedPersonYearsMarried);
       let marriageYear = WTS_String.getLastWord(marriageDateString);
       if (marriageYear) {
         result.spouses[0].marriageDate.yearString = marriageYear;
@@ -276,14 +261,8 @@ function generalizeData(input) {
     return result; //the extract failed
   }
 
-  if (
-    !data.censusDetails ||
-    !data.householdHeadings ||
-    !data.householdMembers
-  ) {
-    console.log(
-      "freecen: generalizeData: censusDetails, householdHeadings or householdMembers is missing"
-    );
+  if (!data.censusDetails || !data.householdHeadings || !data.householdMembers) {
+    console.log("freecen: generalizeData: censusDetails, householdHeadings or householdMembers is missing");
     return result; // defensive
   }
 
@@ -299,16 +278,11 @@ function generalizeData(input) {
   if (!selectedMember) {
     // this can happen on iPhone, so far haven't found any way around it
     // so use first household member in this case
-    console.log(
-      "freecen: generalizeData: selectedMember is missing, using first member"
-    );
+    console.log("freecen: generalizeData: selectedMember is missing, using first member");
     selectedMember = data.householdMembers[0];
   }
 
-  let surname = WTS_String.toInitialCapsEachWord(
-    selectedMember["Surname"],
-    true
-  );
+  let surname = WTS_String.toInitialCapsEachWord(selectedMember["Surname"], true);
   let forenames = selectedMember["Forenames"];
 
   result.setLastNameAndForeNames(surname, forenames);

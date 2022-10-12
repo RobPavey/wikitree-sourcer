@@ -81,7 +81,7 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8510&h=17179&tid=&pid=&queryId=61ee16f934cc220dd3206fb1c54fbced&usePUB=true&_phsrc=XJK1011&_phstart=successSource",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "pronoun",
@@ -91,7 +91,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "fullName",
@@ -116,19 +116,23 @@ const regressionData = [
     caseName: "england_1939_register_pavey-452",
     url: "https://www.ancestry.com/discoveryui-content/view/7205480:61596",
   },
-  { // Newer version (seem June 2022) where Registration District is replaced with Registration Place
+  {
+    // Newer version (seem June 2022) where Registration District is replaced with Registration Place
     caseName: "england_birth_reg_1887_emmeline_brain",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8912&h=33557671&indiv=try&o_vc=Record:OtherRecord&rhSource=8913",
   },
-  { // Saved July 2022 - still says Registration District, has MMN
+  {
+    // Saved July 2022 - still says Registration District, has MMN
     caseName: "england_birth_reg_1949_maureen_hale",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8782&h=22191988&tid=172368945&pid=392241408802&hid=1048116409333&_gl=1*9eek4q*_ga*NTE3MDQyOTk1LjE2NTY5NDk1Nzk.*_ga_4QT8FMEX30*MTY1Njk2OTIyOC4zLjEuMTY1Njk2OTYwNS4w",
   },
-  { // Older version with Registration District (pre June 2022)
+  {
+    // Older version with Registration District (pre June 2022)
     caseName: "england_birth_reg_chaplin-1740",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8912&h=37047757&tid=&pid=&queryId=8210154b464e9c6948ce68f1f4d12893&usePUB=true&_phsrc=ywU7512&_phstart=successSource",
   },
-  { // relies on field names to classify record
+  {
+    // relies on field names to classify record
     caseName: "england_bt_marriage_1828_james_halliwell",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=60496&h=3995291",
   },
@@ -153,7 +157,7 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/4576313:7619",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inCensusTitle",
@@ -162,7 +166,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inYear",
@@ -170,7 +174,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "onDate",
@@ -178,7 +182,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_4", 
+        variantName: "narrative_4",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inYear",
@@ -186,7 +190,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_5", 
+        variantName: "narrative_5",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inYear",
@@ -194,7 +198,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_6", 
+        variantName: "narrative_6",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inYear",
@@ -202,7 +206,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_7",   // Steve Whitfield preferred
+        variantName: "narrative_7", // Steve Whitfield preferred
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inYear",
@@ -224,7 +228,7 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=7572&h=10602933&tid=&pid=&queryId=918527b36e360d9cd105c91de4316714&usePUB=true&_phsrc=RTj20886&_phstart=successSource&_gl=1*1p0bvpw*_ga*MTg1ODgzOTg5Ny4xNjQ3OTQ3OTE4*_ga_4QT8FMEX30*MTY1NTMyNjgxMy4yNzUuMS4xNjU1MzM2MzU2LjA.",
     optionVariants: [
       {
-        variantName: "narrative_1",   // Steve Whitfield preferred
+        variantName: "narrative_1", // Steve Whitfield preferred
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inYear",
@@ -246,8 +250,8 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=6598&h=11301719&clickref=1011lhuMFmjB%2C1011lhuMFmjB&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
     optionVariants: [
       {
-        variantName: "domain_au", 
-        optionOverrides: { citation_ancestry_recordTemplateDomain: "ancestry.com.au", },
+        variantName: "domain_au",
+        optionOverrides: { citation_ancestry_recordTemplateDomain: "ancestry.com.au" },
       },
     ],
   },
@@ -257,21 +261,21 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51208",
     optionVariants: [
       {
-        variantName: "table_afterRef", 
+        variantName: "table_afterRef",
         optionOverrides: {
           narrative_general_nameOrPronoun: "forenames",
           table_general_autoGenerate: "afterRef",
         },
       },
       {
-        variantName: "table_afterRefBlankLine", 
+        variantName: "table_afterRefBlankLine",
         optionOverrides: {
           narrative_general_nameOrPronoun: "fullName",
           table_general_autoGenerate: "afterRefBlankLine",
         },
       },
       {
-        variantName: "table_withinRefOrSource", 
+        variantName: "table_withinRefOrSource",
         optionOverrides: {
           narrative_general_nameOrPronoun: "pronoun",
           table_general_autoGenerate: "withinRefOrSource",
@@ -279,7 +283,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "table_withinRefOrSourceList", 
+        variantName: "table_withinRefOrSourceList",
         optionOverrides: {
           table_general_autoGenerate: "withinRefOrSource",
           table_general_format: "list",
@@ -287,7 +291,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeOccupation: "no",
@@ -296,7 +300,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeOccupation: "inMainSentence",
@@ -305,7 +309,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeOccupation: "inSeparateSentence",
@@ -326,7 +330,7 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/604340115:2256",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "pronoun",
@@ -340,7 +344,7 @@ const regressionData = [
     url: "https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv=1&dbid=1351&h=2249655&tid=172368945&pid=392333730623&hid=1048044804201",
     optionVariants: [
       {
-        variantName: "narrative_forenames", 
+        variantName: "narrative_forenames",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_baptism_nameOrPronoun: "forenames",
@@ -348,7 +352,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_fullName", 
+        variantName: "narrative_fullName",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_baptism_nameOrPronoun: "fullName",
@@ -356,7 +360,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_pronoun", 
+        variantName: "narrative_pronoun",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_baptism_nameOrPronoun: "pronoun",
@@ -364,7 +368,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_noParentage", 
+        variantName: "narrative_noParentage",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_baptism_includeParentage: "no",
@@ -373,7 +377,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_parentageFormat", 
+        variantName: "narrative_parentageFormat",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_baptism_parentageFormat: "theTwoCommas",
@@ -381,7 +385,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_parentageSeparate", 
+        variantName: "narrative_parentageSeparate",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_baptism_includeParentage: "inSeparateSentence",
@@ -390,7 +394,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_dateFormatCountryNth", 
+        variantName: "narrative_dateFormatCountryNth",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_dateFormat: "countryNth",
@@ -398,7 +402,8 @@ const regressionData = [
       },
     ],
   },
-  { // Smith-204554
+  {
+    // Smith-204554
     caseName: "england_death_reg_2002_teresa_fitchie",
     url: "https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv=1&dbid=7579&h=13080918&ssrc=pt&tid=172368945&pid=392239251050&usePUB=true",
   },
@@ -407,14 +412,14 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8914&h=14602608&tid=&pid=&queryId=3cb07e6ff167de79091b215fd9c16cf3&usePUB=true&_phsrc=ywU7466&_phstart=successSource",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_deathRegReg_sentenceStructure: "twoSentences",
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_deathRegReg_sentenceStructure: "twoSentencesDate",
@@ -439,7 +444,7 @@ const regressionData = [
     url: "https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv=1&dbid=61187&h=93209492",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_placeChurchFirst: "yes",
@@ -453,7 +458,7 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/688871:2056",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_placeChurchFirst: "yes",
@@ -471,7 +476,7 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=8913&h=3291674",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "forenames",
@@ -480,7 +485,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "fullName",
@@ -507,7 +512,7 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/1579851:1558",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "pronoun",
@@ -521,7 +526,7 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=9201&h=797866&tid=&pid=&queryId=9d2a963c864aa43d55b6d554fee39040&usePUB=true&_phsrc=ywU6427&_phstart=successSource",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_burial_nameOrPronoun: "pronoun",
@@ -529,20 +534,20 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_burial_nameOrPronoun: "fullName",
           narrative_burial_includeAge: "inSeparateSentence",
-       },
+        },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_burial_nameOrPronoun: "forenames",
           narrative_burial_includeAge: "no",
-       },
+        },
       },
     ],
   },
@@ -603,7 +608,7 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=2543&h=1504470",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_death_nameOrPronoun: "pronoun",
@@ -611,23 +616,23 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_death_nameOrPronoun: "fullName",
           narrative_death_includeAge: "inSeparateSentence",
           narrative_death_includeParentage: "inSeparateSentence",
-       },
+        },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_parentsUseAmpOrAnd: "and",
           narrative_death_nameOrPronoun: "forenames",
           narrative_death_includeAge: "no",
           narrative_death_parentageFormat: "theTwoCommas",
-       },
+        },
       },
     ],
   },
@@ -644,7 +649,7 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=5187&h=1511274&clickref=1100lii9YCCc%2C1100lii9YCCc&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "forenames",
@@ -652,7 +657,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "fullName",
@@ -662,14 +667,14 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_dateFormat: "country",
         },
       },
       {
-        variantName: "narrative_4", 
+        variantName: "narrative_4",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_dateFormat: "countryNth",
@@ -762,7 +767,7 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/38163:62361",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_dateFormat: "short",
@@ -773,20 +778,20 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_birth_nameOrPronoun: "fullName",
           narrative_birth_includeParentage: "inSeparateSentence",
-       },
+        },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_birth_nameOrPronoun: "forenames",
           narrative_birth_includeParentage: "no",
-       },
+        },
       },
     ],
   },
@@ -795,7 +800,7 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/76967:1088",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_dateFormat: "short",
@@ -807,7 +812,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inYear",
@@ -845,7 +850,7 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/24992583:2704",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_dateFormat: "short",
@@ -859,7 +864,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inYear",
@@ -877,7 +882,7 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/982098692:61843?tid=&pid=&queryId=c04479f2cec3171a504df07c4a358fb4&_phsrc=ywU8200&_phstart=successSource",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "pronoun",
@@ -885,7 +890,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "fullName",
@@ -893,7 +898,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "forenames",
@@ -911,7 +916,7 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=1671&h=2089834&tid=&pid=&queryId=19e575cdf12c6f09b8b5bd713ca5e6d0&usePUB=true&_phsrc=XJK3973&_phstart=successSource",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "pronoun",
@@ -919,7 +924,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "fullName",
@@ -927,7 +932,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_general_nameOrPronoun: "forenames",
@@ -1014,7 +1019,8 @@ const regressionData = [
   },
 
   // Person profile pages
-  { // Had "ABT" in death date
+  {
+    // Had "ABT" in death date
     caseName: "xx_profile_clement_more_1833_1905_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/260052341589/facts",
   },
@@ -1022,7 +1028,8 @@ const regressionData = [
     caseName: "xx_profile_ralph_pavey_1891_1958_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },
-  { // has a "Possible marriage records" fact
+  {
+    // has a "Possible marriage records" fact
     caseName: "xx_profile_william_saville_1995_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262406177056/facts",
   },
@@ -1044,31 +1051,31 @@ const regressionData = [
 
 const optionVariants = [
   {
-    variantName: "dataStyle_none", 
+    variantName: "dataStyle_none",
     optionOverrides: {
       citation_ancestry_dataStyle: "none",
     },
   },
   {
-    variantName: "dataStyle_string", 
+    variantName: "dataStyle_string",
     optionOverrides: {
       citation_ancestry_dataStyle: "string",
     },
   },
   {
-    variantName: "dataStyle_list", 
+    variantName: "dataStyle_list",
     optionOverrides: {
       citation_ancestry_dataStyle: "list",
     },
   },
   {
-    variantName: "dataStyle_table", 
+    variantName: "dataStyle_table",
     optionOverrides: {
       citation_ancestry_dataStyle: "table",
     },
   },
   {
-    variantName: "full_ee_style", 
+    variantName: "full_ee_style",
     optionOverrides: {
       citation_general_meaningfulNames: "none",
       citation_general_commaInsideQuotes: true,
@@ -1084,7 +1091,7 @@ const optionVariants = [
     },
   },
   {
-    variantName: "partial_ee_style", 
+    variantName: "partial_ee_style",
     optionOverrides: {
       citation_general_meaningfulNames: "italic",
       citation_general_commaInsideQuotes: false,
@@ -1102,12 +1109,18 @@ const optionVariants = [
 ];
 
 async function runTests(testManager) {
-
   await runExtractDataTests("ancestry", extractData, regressionData, testManager);
 
   await runGeneralizeDataTests("ancestry", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("ancestry", buildCitation, buildHouseholdTable, regressionData, testManager, optionVariants);
+  await runBuildCitationTests(
+    "ancestry",
+    buildCitation,
+    buildHouseholdTable,
+    regressionData,
+    testManager,
+    optionVariants
+  );
 }
 
 export { runTests };

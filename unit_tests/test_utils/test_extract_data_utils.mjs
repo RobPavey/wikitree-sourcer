@@ -22,22 +22,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import fs from 'fs'
+import fs from "fs";
 import jsdom from "jsdom";
 const { JSDOM } = jsdom;
 
 import { deepObjectEquals } from "../test_utils/compare_result_utils.mjs";
-import { writeTestOutputFile, readRefFile, readFile, getRefFilePath, getTestFilePath } from "../test_utils/ref_file_utils.mjs";
+import {
+  writeTestOutputFile,
+  readRefFile,
+  readFile,
+  getRefFilePath,
+  getTestFilePath,
+} from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 
 function testEnabled(parameters, testName) {
-  return (parameters.testName == "" || parameters.testName == testName);
+  return parameters.testName == "" || parameters.testName == testName;
 }
 
 // The regressionData passed in must be an array of objects.
 // Each object having the keys: "PageFile" and "extractedData"
 async function runExtractDataTests(siteName, extractDataFunction, regressionData, testManager) {
-
   if (!testEnabled(testManager.parameters, "extract")) {
     return;
   }
@@ -49,7 +54,6 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
   let logger = new LocalErrorLogger(testManager.results, testName);
 
   for (var testData of regressionData) {
-
     if (testManager.parameters.testCaseName != "" && testManager.parameters.testCaseName != testData.caseName) {
       continue;
     }
@@ -61,7 +65,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     if (!fetchType) {
       fetchType = "record";
     }
-    
+
     if (!pageFile) {
       let testPageFile = "./unit_tests/" + siteName + "/saved_pages/" + testData.caseName + ".html";
       if (fs.existsSync(testPageFile)) {
@@ -77,14 +81,14 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       }
     }
 
-    fs.existsSync()
+    fs.existsSync();
 
     if (fetchObjPath && pageFile) {
       let dom = undefined;
       try {
         dom = await JSDOM.fromFile(pageFile);
       } catch (e) {
-        console.log('Error:', e.stack);
+        console.log("Error:", e.stack);
         logger.logError(testData, "Failed to read input file");
         continue;
       }
@@ -93,10 +97,10 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       // read in the input file (which is the reference result of the extractData test)
       var fetchObj;
       try {
-        let fetchObjJson = fs.readFileSync(fetchObjPath, 'utf8');
-        fetchObj= JSON.parse(fetchObjJson);
+        let fetchObjJson = fs.readFileSync(fetchObjPath, "utf8");
+        fetchObj = JSON.parse(fetchObjJson);
       } catch (e) {
-        console.log('Error:', e.stack);
+        console.log("Error:", e.stack);
         logger.logError(testData, "Failed to read fetchObj file: " + fetchObj);
         continue;
       }
@@ -104,17 +108,16 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       try {
         result = extractDataFunction(undefined, fetchObj, fetchType, testManager.options);
       } catch (e) {
-        console.log('Error:', e.stack);
+        console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
         continue;
       }
-    }
-    else if (pageFile) {
+    } else if (pageFile) {
       let dom = undefined;
       try {
         dom = await JSDOM.fromFile(pageFile);
       } catch (e) {
-        console.log('Error:', e.stack);
+        console.log("Error:", e.stack);
         logger.logError(testData, "Failed to read input file");
         continue;
       }
@@ -123,19 +126,18 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       try {
         result = extractDataFunction(doc, testData.url);
       } catch (e) {
-        console.log('Error:', e.stack);
+        console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
         continue;
       }
-    }
-    else if (fetchObjPath) {
+    } else if (fetchObjPath) {
       // read in the input file (which is the reference result of the extractData test)
       var fetchObj;
       try {
-        let fetchObjJson = fs.readFileSync(fetchObjPath, 'utf8');
-        fetchObj= JSON.parse(fetchObjJson);
+        let fetchObjJson = fs.readFileSync(fetchObjPath, "utf8");
+        fetchObj = JSON.parse(fetchObjJson);
       } catch (e) {
-        console.log('Error:', e.stack);
+        console.log("Error:", e.stack);
         logger.logError(testData, "Failed to read fetchObj file: " + fetchObjPath);
         continue;
       }
@@ -143,12 +145,11 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       try {
         result = extractDataFunction(undefined, fetchObj, fetchType, testManager.options);
       } catch (e) {
-        console.log('Error:', e.stack);
+        console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
         continue;
       }
-    }
-    else {
+    } else {
       console.log("Neither pageFile or fetchObjPath available, testData is:");
       console.log(testData);
       continue;
@@ -190,8 +191,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
   if (logger.numFailedTests > 0) {
     console.log("Test failed (" + testName + "): " + logger.numFailedTests + " cases failed.");
-  }
-  else {
+  } else {
     console.log("Test passed (" + testName + ").");
   }
 }

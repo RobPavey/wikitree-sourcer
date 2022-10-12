@@ -1,499 +1,652 @@
 {
-  "id" : "r_102805391831",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8?seek=next"
+  "id": "r_102805391831",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8"
     }
   },
-  "description" : "#sd_p_102139227099",
-  "persons" : [ {
-    "id" : "p_102139227099",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "male"
-        }, {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Male"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/Q234-5Z3C?flag=fsh"
+  "description": "#sd_p_102139227099",
+  "persons": [
+    {
+      "id": "p_102139227099",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "male"
+              },
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Male"
+              }
+            ]
+          }
+        ]
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QLM2-43Q8?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "John Laird Jenkins",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "John Laird Jenkins"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Immigration",
-      "date" : {
-        "original" : "04 Oct 1863",
-        "formal" : "+1863-10-04",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "4 October 1863"
-          }, {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
-              },
-              "modified" : 1513122860638
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "04 Oct 1863",
-            "resource" : "+1863-10-04"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1863"
-          } ]
-        } ]
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/Q234-5Z3C?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/QLM2-43Q8?flag=fsh"
+        }
       },
-      "place" : {
-        "original" : "Deseret, United States",
-        "description" : "#place_10705033",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "confidence" : "http://confidence/79",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Deseret, United States",
-            "resource" : "https://www.familysearch.org/platform/places/description/10705033",
-            "qualifiers" : [ {
-              "value" : "1010;1013;1014;1011",
-              "name" : "StdQualifier"
-            }, {
-              "value" : "Utah, United States",
-              "name" : "Context"
-            } ]
-          } ]
-        } ]
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C"]
       },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Immigration"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "17 Jan 1844",
-        "formal" : "+1844-01-17",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_BIR_DATE_ORIG",
-            "text" : "17 January 1844"
-          }, {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "John Laird Jenkins",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "John Laird Jenkins"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Immigration",
+          "date": {
+            "original": "04 Oct 1863",
+            "formal": "+1863-10-04",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "4 October 1863"
+                  },
+                  {
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                      },
+                      "modified": 1513122860638
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "04 Oct 1863",
+                    "resource": "+1863-10-04"
+                  }
+                ]
               },
-              "modified" : 1513122860663
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_DATE",
-            "text" : "17 Jan 1844",
-            "resource" : "+1844-01-17"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_YEAR",
-            "text" : "1844"
-          } ]
-        } ]
-      }
-    }, {
-      "type" : "http://gedcomx.org/Death",
-      "date" : {
-        "original" : "22 May 1905",
-        "formal" : "+1905-05-22",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_DEA_DATE_ORIG",
-            "text" : "22 May 1905"
-          }, {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
-              },
-              "modified" : 1513122860737
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_DEA_DATE",
-            "text" : "22 May 1905",
-            "resource" : "+1905-05-22"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_DEA_YEAR",
-            "text" : "1905"
-          } ]
-        } ]
-      }
-    }, {
-      "type" : "http://gedcomx.org/Emigration",
-      "date" : {
-        "original" : "10 Aug 1863",
-        "formal" : "+1863-08-10",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_DEP_DATE_ORIG",
-            "text" : "10 August 1863"
-          }, {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
-              },
-              "modified" : 1513122860789
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_DEP_DATE",
-            "text" : "10 Aug 1863",
-            "resource" : "+1863-08-10"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_DEP_YEAR",
-            "text" : "1863"
-          } ]
-        } ]
-      }
-    } ],
-    "fields" : [ {
-      "type" : "http://familysearch.org/types/fields/SortBirDate",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_SORT_BIR_DATE_ORIG",
-        "text" : "1844-01-17"
-      }, {
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/StandardsDateTreatment/ver/1"
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1863"
+                  }
+                ]
+              }
+            ]
           },
-          "modified" : 1513122860916
-        },
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_SORT_BIR_DATE",
-        "text" : "17 Jan 1844",
-        "resource" : "+1844-01-17"
-      } ]
-    }, {
-      "type" : "http://familysearch.org/types/fields/SortDeaDate",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_SORT_DEA_DATE_ORIG",
-        "text" : "1905-05-22"
-      }, {
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/StandardsDateTreatment/ver/1"
+          "place": {
+            "original": "Deseret, United States",
+            "description": "#place_10705033",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "confidence": "http://confidence/79",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Deseret, United States",
+                    "resource": "https://www.familysearch.org/platform/places/description/10705033",
+                    "qualifiers": [
+                      {
+                        "value": "1010;1013;1014;1011",
+                        "name": "StdQualifier"
+                      },
+                      {
+                        "value": "Utah, United States",
+                        "name": "Context"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
-          "modified" : 1513122860962
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Immigration"
+                }
+              ]
+            }
+          ]
         },
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_SORT_DEA_DATE",
-        "text" : "22 May 1905",
-        "resource" : "+1905-05-22"
-      } ]
-    } ]
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_2517340",
-    "about" : "https://api.familysearch.org/platform/records/collections/2517340",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1432044023002,
-    "modified" : 1658156035817,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Utah, United States",
-        "description" : "#place_1-27"
-      },
-      "temporal" : {
-        "original" : "1847/1868",
-        "formal" : "1847/1868"
-      },
-      "recordType" : "http://gedcomx.org/Migration"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Utah Mormon Pioneer Overland Travel Database, 1847-1868"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2517340" ]
-    }
-  }, {
-    "id" : "src_r_102805391831",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8",
-    "componentOf" : {
-      "description" : "#sd_c_2517340"
-    },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1513122860965,
-    "modified" : 1658156035817,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Deseret, United States"
-      },
-      "temporal" : {
-        "original" : "04 Oct 1863"
-      },
-      "recordType" : "http://gedcomx.org/Migration"
-    } ],
-    "citations" : [ {
-      "value" : "\"Utah Mormon Pioneer Overland Travel Database, 1847-1868,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:QLM2-43Q8 : 10 February 2018), Entry for John Laird Jenkins, 04 Oct 1863; from \"Mormon Pioneer Overland Travel: 1847-1868,\" database, <i>Church History</i> (https://history.lds.org/overlandtravels/ : 2015)."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for John Laird Jenkins, \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\""
-    } ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/10054453857087" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2517340?arkName=1:2:QLM2-43Q8"
-    }
-  }, {
-    "id" : "sd_p_102139227099",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C",
-    "componentOf" : {
-      "description" : "#src_r_102805391831"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Utah Mormon Pioneer Overland Travel Database, 1847-1868,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q234-5Z3C : 10 February 2018), John Laird Jenkins, 04 Oct 1863; from \"Mormon Pioneer Overland Travel: 1847-1868,\" database, <i>> The Church of Jesus Christ of Latter-day Saints </i> (https://history.lds.org/overlandtravels/ : 2004-)."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "John Laird Jenkins, \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
-    },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2517340"
-    }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "history.lds.org" ]
-    }
-  } ],
-  "places" : [ {
-    "place" : {
-      "resource" : "https://www.familysearch.org/platform/places/description/10705033",
-      "resourceId" : "place_10705033"
-    }
-  }, {
-    "id" : "place_1-27",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/27?context=1" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/ExternalImageId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EXT_IMAGE_ID_ORIG",
-      "text" : "15771343513857904660"
-    }, {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_IMAGE_ID",
-      "text" : "15771343513857904660"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ExtId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_ID",
-      "text" : "253"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CompanyName",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "MISC_NAME_COMPANY",
-      "text" : "Thomas E. Ricks Company"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ExtUrl",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_URL",
-      "text" : "http://history.lds.org/overlandtravels/companyDetail?lang=eng&companyId=253"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PPQ_ID",
-      "text" : "15-0221"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "2517340"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UniqueId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UNIQUE_ID",
-      "text" : "10054453857087"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "0000000000000000000000253_0000015771343513857904660_1005445385708"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_GROUP",
-      "text" : "May 2016"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ExtUpdateDate",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EXT_UPDATE_DATE_ORIG",
-      "text" : "17 Jul 2017"
-    }, {
-      "attribution" : {
-        "contributor" : {
-          "resource" : "http://treatment/StandardsDateTreatment/ver/1"
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "17 Jan 1844",
+            "formal": "+1844-01-17",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_BIR_DATE_ORIG",
+                    "text": "17 January 1844"
+                  },
+                  {
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                      },
+                      "modified": 1513122860663
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_DATE",
+                    "text": "17 Jan 1844",
+                    "resource": "+1844-01-17"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_YEAR",
+                    "text": "1844"
+                  }
+                ]
+              }
+            ]
+          }
         },
-        "modified" : 1513122860632
+        {
+          "type": "http://gedcomx.org/Death",
+          "date": {
+            "original": "22 May 1905",
+            "formal": "+1905-05-22",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_DEA_DATE_ORIG",
+                    "text": "22 May 1905"
+                  },
+                  {
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                      },
+                      "modified": 1513122860737
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_DEA_DATE",
+                    "text": "22 May 1905",
+                    "resource": "+1905-05-22"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_DEA_YEAR",
+                    "text": "1905"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "http://gedcomx.org/Emigration",
+          "date": {
+            "original": "10 Aug 1863",
+            "formal": "+1863-08-10",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_DEP_DATE_ORIG",
+                    "text": "10 August 1863"
+                  },
+                  {
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                      },
+                      "modified": 1513122860789
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_DEP_DATE",
+                    "text": "10 Aug 1863",
+                    "resource": "+1863-08-10"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_DEP_YEAR",
+                    "text": "1863"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://familysearch.org/types/fields/SortBirDate",
+          "values": [
+            {
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_SORT_BIR_DATE_ORIG",
+              "text": "1844-01-17"
+            },
+            {
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                },
+                "modified": 1513122860916
+              },
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_SORT_BIR_DATE",
+              "text": "17 Jan 1844",
+              "resource": "+1844-01-17"
+            }
+          ]
+        },
+        {
+          "type": "http://familysearch.org/types/fields/SortDeaDate",
+          "values": [
+            {
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_SORT_DEA_DATE_ORIG",
+              "text": "1905-05-22"
+            },
+            {
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/StandardsDateTreatment/ver/1"
+                },
+                "modified": 1513122860962
+              },
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_SORT_DEA_DATE",
+              "text": "22 May 1905",
+              "resource": "+1905-05-22"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_2517340",
+      "about": "https://api.familysearch.org/platform/records/collections/2517340",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1432044023002,
+      "modified": 1658156035817,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Utah, United States",
+            "description": "#place_1-27"
+          },
+          "temporal": {
+            "original": "1847/1868",
+            "formal": "1847/1868"
+          },
+          "recordType": "http://gedcomx.org/Migration"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Utah Mormon Pioneer Overland Travel Database, 1847-1868"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/2517340"]
+      }
+    },
+    {
+      "id": "src_r_102805391831",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8",
+      "componentOf": {
+        "description": "#sd_c_2517340"
       },
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_UPDATE_DATE",
-      "text" : "17 Jul 2017",
-      "resource" : "+2017-07-17"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceSup",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_SUP",
-      "text" : "Utah, United States"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceYearRange",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_YEAR_RANGE",
-      "text" : "1847-1868"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "11"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "43889"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ]
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1513122860965,
+      "modified": 1658156035817,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Deseret, United States"
+          },
+          "temporal": {
+            "original": "04 Oct 1863"
+          },
+          "recordType": "http://gedcomx.org/Migration"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"Utah Mormon Pioneer Overland Travel Database, 1847-1868,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:QLM2-43Q8 : 10 February 2018), Entry for John Laird Jenkins, 04 Oct 1863; from \"Mormon Pioneer Overland Travel: 1847-1868,\" database, <i>Church History</i> (https://history.lds.org/overlandtravels/ : 2015)."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for John Laird Jenkins, \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\""
+        }
+      ],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/10054453857087"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:QLM2-43Q8"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2517340?arkName=1:2:QLM2-43Q8"
+      }
+    },
+    {
+      "id": "sd_p_102139227099",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C",
+      "componentOf": {
+        "description": "#src_r_102805391831"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Utah Mormon Pioneer Overland Travel Database, 1847-1868,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q234-5Z3C : 10 February 2018), John Laird Jenkins, 04 Oct 1863; from \"Mormon Pioneer Overland Travel: 1847-1868,\" database, <i>> The Church of Jesus Christ of Latter-day Saints </i> (https://history.lds.org/overlandtravels/ : 2004-)."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "John Laird Jenkins, \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C"]
+      }
+    },
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": [
+          "https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660"
+        ]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2517340"
+      }
+    }
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["history.lds.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "place": {
+        "resource": "https://www.familysearch.org/platform/places/description/10705033",
+        "resourceId": "place_10705033"
+      }
+    },
+    {
+      "id": "place_1-27",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/27?context=1"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/ExternalImageId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EXT_IMAGE_ID_ORIG",
+          "text": "15771343513857904660"
+        },
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_IMAGE_ID",
+          "text": "15771343513857904660"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_ID",
+          "text": "253"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CompanyName",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "MISC_NAME_COMPANY",
+          "text": "Thomas E. Ricks Company"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtUrl",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_URL",
+          "text": "http://history.lds.org/overlandtravels/companyDetail?lang=eng&companyId=253"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PPQ_ID",
+          "text": "15-0221"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "2517340"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UniqueId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UNIQUE_ID",
+          "text": "10054453857087"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "0000000000000000000000253_0000015771343513857904660_1005445385708"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "May 2016"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtUpdateDate",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EXT_UPDATE_DATE_ORIG",
+          "text": "17 Jul 2017"
+        },
+        {
+          "attribution": {
+            "contributor": {
+              "resource": "http://treatment/StandardsDateTreatment/ver/1"
+            },
+            "modified": 1513122860632
+          },
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_UPDATE_DATE",
+          "text": "17 Jul 2017",
+          "resource": "+2017-07-17"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceSup",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_SUP",
+          "text": "Utah, United States"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceYearRange",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_YEAR_RANGE",
+          "text": "1847-1868"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "11"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "43889"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
+    }
+  ]
 }

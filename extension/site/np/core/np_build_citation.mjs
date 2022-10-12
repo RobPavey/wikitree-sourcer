@@ -35,12 +35,7 @@ function buildCoreCitation(data, gd, runDate, builder) {
 
   builder.recordLinkOrTemplate = recordLink;
 
-  builder.sourceReference =
-    data.newspaperTitle +
-    " " +
-    data.publicationDate +
-    ", page " +
-    data.pageNumber;
+  builder.sourceReference = data.newspaperTitle + " " + data.publicationDate + ", page " + data.pageNumber;
 }
 
 function buildCitation(input) {

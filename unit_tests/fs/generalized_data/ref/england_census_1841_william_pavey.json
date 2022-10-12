@@ -22,13 +22,7 @@
   },
   "registrationDistrict": "East Stonehouse",
   "ageAtEvent": "30",
-  "householdArrayFields": [
-    "name",
-    "gender",
-    "age",
-    "birthYear",
-    "birthPlace"
-  ],
+  "householdArrayFields": ["name", "gender", "age", "birthYear", "birthPlace"],
   "householdArray": [
     {
       "name": "William Pavey",

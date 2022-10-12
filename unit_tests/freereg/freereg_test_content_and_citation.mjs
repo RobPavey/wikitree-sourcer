@@ -34,61 +34,61 @@ const regressionData = [
   // baptisms
   {
     caseName: "bap_1568_ken_robert_jones",
-    url: "https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa/robert-jones-baptism-kent-warehorne-1568-06-13?locale=en"
+    url: "https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa/robert-jones-baptism-kent-warehorne-1568-06-13?locale=en",
   },
   {
     caseName: "bap_1582_wry_jacobus_walker",
-    url: "https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203/jacobus-walker-baptism-yorkshire-west-riding-sheffield-1582-07-31?locale=en"
+    url: "https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203/jacobus-walker-baptism-yorkshire-west-riding-sheffield-1582-07-31?locale=en",
   },
   {
     caseName: "bap_1713_gls_elizabeth_pavey",
-    url: "https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e/elizabeth-pavey-baptism-gloucestershire-dursley-1713-09-28?citation_type=wikitree&locale=en"
+    url: "https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e/elizabeth-pavey-baptism-gloucestershire-dursley-1713-09-28?citation_type=wikitree&locale=en",
   },
   {
     caseName: "bap_1874_jsy_philip_jordan",
-    url: "https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f/philip-john-marett-jordan-baptism-jersey-st-helier-1874-06-14?locale=en"
+    url: "https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f/philip-john-marett-jordan-baptism-jersey-st-helier-1874-06-14?locale=en",
   },
   // burials
   {
     caseName: "bur_1755_abd_alexander_taylor",
-    url: "https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c/alexander-taylor-burial-aberdeenshire-strichen-1755-08-30?locale=en"
+    url: "https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c/alexander-taylor-burial-aberdeenshire-strichen-1755-08-30?locale=en",
   },
   // marriages
   {
     caseName: "mar_1700_nfk_james_musset_susan_taylor",
-    url: "https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b/susan-taylor-james-musset-marriage-norfolk-gunthorpe-1700-?locale=en"
+    url: "https://www.freereg.org.uk/search_records/58183154e93790eb7f575f2b/susan-taylor-james-musset-marriage-norfolk-gunthorpe-1700-?locale=en",
   },
   {
     caseName: "mar_1894_ken_francis_smith_julia_loughrey",
-    url: "https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541/julia-loughrey-francis-patrick-smith-marriage-kent-rochester-1894-09-01?locale=en"
+    url: "https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541/julia-loughrey-francis-patrick-smith-marriage-kent-rochester-1894-09-01?locale=en",
   },
 ];
 
 const optionVariants = [
   {
-    variantName: "dataStyle_none", 
+    variantName: "dataStyle_none",
     optionOverrides: {
       citation_freereg_dataStyle: "none",
     },
   },
   {
-    variantName: "dataStyle_string", 
+    variantName: "dataStyle_string",
     optionOverrides: {
       citation_freereg_dataStyle: "string",
     },
   },
   {
-    variantName: "dataStyle_list", 
+    variantName: "dataStyle_list",
     optionOverrides: {
       citation_freereg_dataStyle: "list",
     },
   },
   {
-    variantName: "dataStyle_table", 
+    variantName: "dataStyle_table",
     optionOverrides: {
       citation_freereg_dataStyle: "table",
     },
-  }
+  },
 ];
 
 async function runTests(testManager) {

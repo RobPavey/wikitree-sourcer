@@ -1,430 +1,553 @@
 {
-  "id" : "r_165049366400",
-  "lang" : "en",
-  "attribution" : {
-    "contributor" : {
-      "resource" : "cis.user.MMM9-3KTD"
+  "id": "r_165049366400",
+  "lang": "en",
+  "attribution": {
+    "contributor": {
+      "resource": "cis.user.MMM9-3KTD"
     },
-    "modified" : 1603811899022,
-    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
+    "modified": 1603811899022,
+    "changeMessageResource": "http://familysearch.org/types/reasons/127657"
   },
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2?seek=next"
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2"
     }
   },
-  "description" : "#sd_p_271531355800",
-  "persons" : [ {
-    "id" : "p_271531355800",
-    "extracted" : true,
-    "principal" : true,
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/DDX3-TT6Z?flag=fsh"
+  "description": "#sd_p_271531355800",
+  "persons": [
+    {
+      "id": "p_271531355800",
+      "extracted": true,
+      "principal": true,
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/DDX3-TT6Z?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/4NDQ-KXT2?flag=fsh"
+        }
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/4NDQ-KXT2?flag=fsh"
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "John Smith",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "John",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "de339acd-9e8a-4ad7-b56d-4febb4e44364",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "John"
+                        },
+                        {
+                          "id": "7e2cb2aa-254c-463d-8934-f086d9eee45c",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1607104931933
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "John"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Smith",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "2bb14e5b-3313-4f97-afb5-cd2e1b21d46a",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Smith"
+                        },
+                        {
+                          "id": "ac13e766-42f4-406f-a87f-4f2f325eb071",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1607104931933
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Smith"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "efd8f368-fe3c-4360-9652-2c6414be6616",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1607104931927
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "John Smith"
+                    },
+                    {
+                      "id": "76bed948-aee7-43a3-ba7e-2fa861f057df",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1607104931933
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "John Smith"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/TaxAssessment",
+          "place": {
+            "original": "Boston, Suffolk, Massachusetts, United States",
+            "description": "#place_4229284",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "a92c91a7-e60e-4e67-bbaa-cd90d3853e16",
+                    "confidence": "http://confidence/1",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1607104931950
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Boston, Suffolk, Massachusetts, United States",
+                    "resource": "https://www.familysearch.org/platform/places/description/4229284"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "id": "e0cbf308-e3bd-43c2-93a9-f94f87f4248a",
+                  "type": "http://gedcomx.org/Original",
+                  "labelId": "EVENT_TYPE_ORIG",
+                  "text": "Tax Assessment"
+                },
+                {
+                  "id": "0bb6163d-0b99-4a08-8251-52eda869c760",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Tax Assessment"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_2125599",
+      "about": "https://api.familysearch.org/platform/records/collections/2125599",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1389048361919,
+      "modified": 1632319706274,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Boston, Suffolk, Massachusetts, United States",
+            "description": "#place_1-52-2525-561096"
+          },
+          "temporal": {
+            "original": "1822/1918",
+            "formal": "1822/1918"
+          },
+          "recordType": "http://gedcomx.org/Tax"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "Massachusetts, Boston Tax Records, 1822-1918"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/2125599"]
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z" ]
+    {
+      "id": "src_r_165049366400",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2",
+      "componentOf": {
+        "description": "#sd_c_2125599"
+      },
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1603811903285,
+      "modified": 1632319706274,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Boston, Suffolk, Massachusetts, United States"
+          },
+          "recordType": "http://gedcomx.org/Tax"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"Massachusetts, Boston Tax Records, 1822-1918\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2 : 4 December 2020), Entry for John Smith, ."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for John Smith, \"Massachusetts, Boston Tax Records, 1822-1918\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2125599?arkName=1:2:4NDQ-KXT2"
+      }
     },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "John Smith",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "John",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "de339acd-9e8a-4ad7-b56d-4febb4e44364",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "John"
-            }, {
-              "id" : "7e2cb2aa-254c-463d-8934-f086d9eee45c",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1607104931933
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "John"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Smith",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "2bb14e5b-3313-4f97-afb5-cd2e1b21d46a",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "Smith"
-            }, {
-              "id" : "ac13e766-42f4-406f-a87f-4f2f325eb071",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1607104931933
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Smith"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "efd8f368-fe3c-4360-9652-2c6414be6616",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1607104931927
+    {
+      "id": "sd_p_271531355800",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z",
+      "componentOf": {
+        "description": "#src_r_165049366400"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Massachusetts, Boston Tax Records, 1822-1918\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z : 4 December 2020), John Smith, ."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "John Smith, \"Massachusetts, Boston Tax Records, 1822-1918\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z"]
+      }
+    },
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/3:1:3QS7-99DF-19RJ?cc=2125599",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:3QS7-99DF-19RJ?cc=2125599"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2125599?arkName=3:1:3QS7-99DF-19RJ"
+      }
+    }
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "place": {
+        "resource": "https://www.familysearch.org/platform/places/description/4229284",
+        "resourceId": "place_4229284"
+      }
+    },
+    {
+      "id": "place_1-52-2525-561096",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/561096?context=1-52-2525"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/BatchId",
+      "values": [
+        {
+          "id": "f8acb2d3-234a-42c6-bbec-b69dd93acab0",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_BATCH_ID",
+          "text": "d12961ad-ec4e-4331-8754-7d6676a4ff4a"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "id": "5bcabc50-b6f5-4d3f-a949-31ed50ae80e8",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "2125599"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "id": "45917531-22f2-4bab-83de-c2b798ce872f",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DIGITAL_FILM_NBR",
+          "text": "100075615"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/IdxProjectId",
+      "values": [
+        {
+          "id": "0530069b-319b-4a4a-8805-fed146455353",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IDX_PROJECT_ID",
+          "text": "d6762c9d-8867-4723-99cb-d25a2dd82d37"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/IdxTemplateId",
+      "values": [
+        {
+          "id": "8382e2a4-a243-4fd6-a4fd-ff4674f317b7",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IDX_TEMPLATE_ID",
+          "text": "template://idx-template/templates/entity/template;entitytype=PROJECT;entityid=d6762c9d-8867-4723-99cb-d25a2dd82d37;name=ba64321b-b76a-41e7-8e71-788e0ff3b8bf"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageApid",
+      "values": [
+        {
+          "id": "19046e2c-65f9-47b5-8575-57bf5da715d9",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_APID",
+          "text": "TH-1951-38279-1667-18"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNumber",
+      "values": [
+        {
+          "id": "79d34133-15a7-4797-b6e7-0ef828faed71",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_NBR",
+          "text": "00069"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageArk",
+      "values": [
+        {
+          "id": "499223ab-d6bd-4ef1-83c1-010c4d635513",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "IMAGE_ARK",
+          "text": "https://familysearch.org/ark:/61903/3:1:3QS7-99DF-19RJ"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FsModelVer",
+      "values": [
+        {
+          "id": "a5fcfdf8-557b-4aa8-80e5-38ad190de884",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_MODEL_VER",
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "id": "8bc19f3e-afc4-47fa-a85f-feecbe6fb685",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PPQ_ID",
+          "text": "20-0900"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "id": "aabda4e8-5c56-46ae-8c74-eb5026722bb8",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "20-0900; 2020-11-05T09:52:00-0700; fairchildbc; 7435; SB; IDX; Massachusetts, Boston Tax Records, 1822-1918 - FSI"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordNumber",
+      "values": [
+        {
+          "id": "a1879b8f-64c0-4a69-9eaf-9acc35d0e9a2",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_NBR",
+          "text": "5"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "id": "7723bc62-3c88-49f2-a77a-2ed97db3f1db",
+          "attribution": {
+            "contributor": {
+              "resource": "http://treatment/SortKeyTreatment/ver/1"
             },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "John Smith"
-          }, {
-            "id" : "76bed948-aee7-43a3-ba7e-2fa861f057df",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1607104931933
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "John Smith"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/TaxAssessment",
-      "place" : {
-        "original" : "Boston, Suffolk, Massachusetts, United States",
-        "description" : "#place_4229284",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "a92c91a7-e60e-4e67-bbaa-cd90d3853e16",
-            "confidence" : "http://confidence/1",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1607104931950
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Boston, Suffolk, Massachusetts, United States",
-            "resource" : "https://www.familysearch.org/platform/places/description/4229284"
-          } ]
-        } ]
+            "modified": 1603811903158
+          },
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "0000000100075615_00069_00005_0000165049366400"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/TravelerTitle",
+      "values": [
+        {
+          "id": "e1b4f09d-f76a-4759-a6dc-79ec4b34333b",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_TRAVELER_TITLE",
+          "text": "Massachusetts, Boston Tax Records, 1822-1918 - FSI"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FsVisStatus",
+      "values": [
+        {
+          "id": "8a37f509-c11d-438c-94aa-76c37fe5c488",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_VIS_STATUS",
+          "text": "VISIBLE"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "2"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "60252"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
+    }
+  ],
+  "additionalAttribution": [
+    {
+      "contributor": {
+        "resource": "cis.user.MMMN-TRKX"
       },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "id" : "e0cbf308-e3bd-43c2-93a9-f94f87f4248a",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "EVENT_TYPE_ORIG",
-          "text" : "Tax Assessment"
-        }, {
-          "id" : "0bb6163d-0b99-4a08-8251-52eda869c760",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Tax Assessment"
-        } ]
-      } ]
-    } ]
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_2125599",
-    "about" : "https://api.familysearch.org/platform/records/collections/2125599",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1389048361919,
-    "modified" : 1632319706274,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Boston, Suffolk, Massachusetts, United States",
-        "description" : "#place_1-52-2525-561096"
-      },
-      "temporal" : {
-        "original" : "1822/1918",
-        "formal" : "1822/1918"
-      },
-      "recordType" : "http://gedcomx.org/Tax"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "Massachusetts, Boston Tax Records, 1822-1918"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2125599" ]
+      "modified": 1603338657409,
+      "changeMessageResource": "http://familysearch.org/types/reasons/127657"
     }
-  }, {
-    "id" : "src_r_165049366400",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2",
-    "componentOf" : {
-      "description" : "#sd_c_2125599"
-    },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1603811903285,
-    "modified" : 1632319706274,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Boston, Suffolk, Massachusetts, United States"
-      },
-      "recordType" : "http://gedcomx.org/Tax"
-    } ],
-    "citations" : [ {
-      "value" : "\"Massachusetts, Boston Tax Records, 1822-1918\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2 : 4 December 2020), Entry for John Smith, ."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for John Smith, \"Massachusetts, Boston Tax Records, 1822-1918\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:4NDQ-KXT2" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2125599?arkName=1:2:4NDQ-KXT2"
-    }
-  }, {
-    "id" : "sd_p_271531355800",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z",
-    "componentOf" : {
-      "description" : "#src_r_165049366400"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Massachusetts, Boston Tax Records, 1822-1918\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z : 4 December 2020), John Smith, ."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "John Smith, \"Massachusetts, Boston Tax Records, 1822-1918\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QS7-99DF-19RJ?cc=2125599",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
-    },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QS7-99DF-19RJ?cc=2125599" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2125599?arkName=3:1:3QS7-99DF-19RJ"
-    }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
-    }
-  } ],
-  "places" : [ {
-    "place" : {
-      "resource" : "https://www.familysearch.org/platform/places/description/4229284",
-      "resourceId" : "place_4229284"
-    }
-  }, {
-    "id" : "place_1-52-2525-561096",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/561096?context=1-52-2525" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/BatchId",
-    "values" : [ {
-      "id" : "f8acb2d3-234a-42c6-bbec-b69dd93acab0",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_BATCH_ID",
-      "text" : "d12961ad-ec4e-4331-8754-7d6676a4ff4a"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "id" : "5bcabc50-b6f5-4d3f-a949-31ed50ae80e8",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "2125599"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "id" : "45917531-22f2-4bab-83de-c2b798ce872f",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DIGITAL_FILM_NBR",
-      "text" : "100075615"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/IdxProjectId",
-    "values" : [ {
-      "id" : "0530069b-319b-4a4a-8805-fed146455353",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IDX_PROJECT_ID",
-      "text" : "d6762c9d-8867-4723-99cb-d25a2dd82d37"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/IdxTemplateId",
-    "values" : [ {
-      "id" : "8382e2a4-a243-4fd6-a4fd-ff4674f317b7",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IDX_TEMPLATE_ID",
-      "text" : "template://idx-template/templates/entity/template;entitytype=PROJECT;entityid=d6762c9d-8867-4723-99cb-d25a2dd82d37;name=ba64321b-b76a-41e7-8e71-788e0ff3b8bf"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageApid",
-    "values" : [ {
-      "id" : "19046e2c-65f9-47b5-8575-57bf5da715d9",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_APID",
-      "text" : "TH-1951-38279-1667-18"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNumber",
-    "values" : [ {
-      "id" : "79d34133-15a7-4797-b6e7-0ef828faed71",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_NBR",
-      "text" : "00069"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageArk",
-    "values" : [ {
-      "id" : "499223ab-d6bd-4ef1-83c1-010c4d635513",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "IMAGE_ARK",
-      "text" : "https://familysearch.org/ark:/61903/3:1:3QS7-99DF-19RJ"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsModelVer",
-    "values" : [ {
-      "id" : "a5fcfdf8-557b-4aa8-80e5-38ad190de884",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_MODEL_VER",
-      "text" : "1"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "id" : "8bc19f3e-afc4-47fa-a85f-feecbe6fb685",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PPQ_ID",
-      "text" : "20-0900"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "id" : "aabda4e8-5c56-46ae-8c74-eb5026722bb8",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_GROUP",
-      "text" : "20-0900; 2020-11-05T09:52:00-0700; fairchildbc; 7435; SB; IDX; Massachusetts, Boston Tax Records, 1822-1918 - FSI"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordNumber",
-    "values" : [ {
-      "id" : "a1879b8f-64c0-4a69-9eaf-9acc35d0e9a2",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_NBR",
-      "text" : "5"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "id" : "7723bc62-3c88-49f2-a77a-2ed97db3f1db",
-      "attribution" : {
-        "contributor" : {
-          "resource" : "http://treatment/SortKeyTreatment/ver/1"
-        },
-        "modified" : 1603811903158
-      },
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "0000000100075615_00069_00005_0000165049366400"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/TravelerTitle",
-    "values" : [ {
-      "id" : "e1b4f09d-f76a-4759-a6dc-79ec4b34333b",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_TRAVELER_TITLE",
-      "text" : "Massachusetts, Boston Tax Records, 1822-1918 - FSI"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsVisStatus",
-    "values" : [ {
-      "id" : "8a37f509-c11d-438c-94aa-76c37fe5c488",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_VIS_STATUS",
-      "text" : "VISIBLE"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "2"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "60252"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ],
-  "additionalAttribution" : [ {
-    "contributor" : {
-      "resource" : "cis.user.MMMN-TRKX"
-    },
-    "modified" : 1603338657409,
-    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
-  } ]
+  ]
 }

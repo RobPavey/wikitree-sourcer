@@ -31,10 +31,7 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { registerSearchMenuItemFunction, testFilterForDatesAndCountries } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -63,13 +60,10 @@ function freeregDoSearch(input) {
 
       // this stores the search data in local storage which is then picked up by the
       // content script in the new tab/window
-      chrome.storage.local.set(
-        { freeregSearchData: freeregSearchData },
-        function () {
-          //console.log('saved freeregSearchData, freeregSearchData is:');
-          //console.log(freeregSearchData);
-        }
-      );
+      chrome.storage.local.set({ freeregSearchData: freeregSearchData }, function () {
+        //console.log('saved freeregSearchData, freeregSearchData is:');
+        //console.log(freeregSearchData);
+      });
     } catch (ex) {
       console.log("storeDataCache failed");
     }
@@ -111,37 +105,28 @@ function addFreeregDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log(data);
 
   if (filter) {
-    if (
-      !testFilterForDatesAndCountries(filter, freeregStartYear, undefined, [
-        "United Kingdom",
-      ])
-    ) {
+    if (!testFilterForDatesAndCountries(filter, freeregStartYear, undefined, ["United Kingdom"])) {
       return;
     }
   } else {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange =
-      data.generalizedData.couldPersonHaveBeenBornInDateRange(
-        freeregStartYear,
-        undefined,
-        maxLifespan
-      );
-    let deathPossibleInRange =
-      data.generalizedData.couldPersonHaveDiedInDateRange(
-        freeregStartYear,
-        undefined,
-        maxLifespan
-      );
-    let marriagePossibleInRange =
-      data.generalizedData.couldPersonHaveMarriedInDateRange(
-        freeregStartYear,
-        undefined,
-        maxLifespan
-      );
+    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
+    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
 
-    if (
-      !(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)
-    ) {
+    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
       //console.log("addFreeregDefaultSearchMenuItem: dates not in range");
       return;
     }
@@ -162,12 +147,11 @@ function addFreeregDefaultSearchMenuItem(menu, data, backFunction, filter) {
 function addFreeregSearchBaptismsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange =
-      data.generalizedData.couldPersonHaveBeenBornInDateRange(
-        freeregStartYear,
-        undefined,
-        maxLifespan
-      );
+    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
     if (!birthPossibleInRange) {
       return;
     }
@@ -180,12 +164,11 @@ function addFreeregSearchBaptismsMenuItem(menu, data, filter) {
 function addFreeregSearchMarriagesMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange =
-      data.generalizedData.couldPersonHaveMarriedInDateRange(
-        freeregStartYear,
-        undefined,
-        maxLifespan
-      );
+    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
     if (!marriagePossibleInRange) {
       return;
     }
@@ -198,12 +181,11 @@ function addFreeregSearchMarriagesMenuItem(menu, data, filter) {
 function addFreeregSearchBurialsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange =
-      data.generalizedData.couldPersonHaveDiedInDateRange(
-        freeregStartYear,
-        undefined,
-        maxLifespan
-      );
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
     if (!deathPossibleInRange) {
       return;
     }
@@ -216,12 +198,11 @@ function addFreeregSearchBurialsMenuItem(menu, data, filter) {
 function addFreeregSearchAllTypesMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = options.search_general_maxLifespan;
-    let livingPossibleInRange =
-      data.generalizedData.couldPersonHaveLivedInDateRange(
-        freeregStartYear,
-        undefined,
-        maxLifespan
-      );
+    let livingPossibleInRange = data.generalizedData.couldPersonHaveLivedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
     if (!livingPossibleInRange) {
       return;
     }
@@ -260,20 +241,11 @@ async function setupFreeregSearchSubMenu(data, backFunction, filter) {
 
 async function setupFreeregSearchWithParametersSubMenu(data, backFunction) {
   let dataModule = await import(`../core/freereg_data.mjs`);
-  setupSearchWithParametersSubMenu(
-    data,
-    backFunction,
-    dataModule.FreeregData,
-    freeregSearchWithParameters
-  );
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.FreeregData, freeregSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "freereg",
-  "FreeReg (UK)",
-  addFreeregDefaultSearchMenuItem
-);
+registerSearchMenuItemFunction("freereg", "FreeReg (UK)", addFreeregDefaultSearchMenuItem);

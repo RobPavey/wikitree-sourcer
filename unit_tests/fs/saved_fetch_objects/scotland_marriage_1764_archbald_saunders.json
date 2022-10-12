@@ -1,498 +1,634 @@
 {
-  "id" : "r_694723925",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7?seek=next"
+  "id": "r_694723925",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7"
     }
   },
-  "description" : "#sd_p_10855494444",
-  "persons" : [ {
-    "id" : "p_10855494444",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "a0f7a410-4509-477c-8e27-ca2ab2cce244",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "Male"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/XTLR-ZX5?flag=fsh"
+  "description": "#sd_p_10855494444",
+  "persons": [
+    {
+      "id": "p_10855494444",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "a0f7a410-4509-477c-8e27-ca2ab2cce244",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "Male"
+              }
+            ]
+          }
+        ]
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/MBJ2-FX7?flag=fsh"
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/XTLR-ZX5?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/MBJ2-FX7?flag=fsh"
+        }
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Archbald Saunders",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Archbald",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "92fe5aaf-ad2a-4b2e-9069-9b51d4312dd7",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "ARCHBALD"
+                        },
+                        {
+                          "id": "314058e8-275d-4f73-92f1-2a8da67fff8c",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1581431742120
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Archbald"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Saunders",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "8bd1ca4e-1581-438d-a2ca-76682076be57",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "SAUNDERS"
+                        },
+                        {
+                          "id": "1da668d9-56f6-4788-8547-17d7f8469269",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1581431742120
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Saunders"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1581431742112
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "ARCHBALD SAUNDERS"
+                    },
+                    {
+                      "id": "17444a77-fc1c-4ae1-8f87-75f120fb3405",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1581431742120
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Archbald Saunders"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://familysearch.org/types/fields/FsPrTreeId",
+          "values": [
+            {
+              "id": "c9e5e533-f5bf-438f-b8f0-a1537ea5b301",
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "FS_PR_TREE_ID",
+              "text": "762836746"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_10855494443",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "e426d082-239e-4348-bda1-1e8e0fcfef0b",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "SP_SEX_CODE_ORIG",
+                "text": "Female"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/XTLR-ZXP?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/MBJ2-FX7?flag=fsh"
+        }
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XTLR-ZXP"]
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "MM9.1.6/8CSY-3LZ9",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_10855494444",
+        "resourceId": "p_10855494444"
+      },
+      "person2": {
+        "resource": "#p_10855494443",
+        "resourceId": "p_10855494443"
+      },
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Marriage",
+          "date": {
+            "original": "22 Apr 1764",
+            "formal": "+1764-04-22",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "id": "2453e175-1baf-418d-9579-4844f535533b",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "22 Apr 1764"
+                  },
+                  {
+                    "id": "c9377aa9-c1bb-4747-9f96-31345cc79f9d",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1581431742112
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "22 Apr 1764",
+                    "resource": "+1764-04-22"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Month",
+                "values": [
+                  {
+                    "id": "da19c3e2-d026-4601-a9fb-4768de265a3e",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1581431742112
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_MONTH",
+                    "text": "4"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Day",
+                "values": [
+                  {
+                    "id": "e8342598-b67b-4f7a-b285-01b6d24de219",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1581431742112
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DAY",
+                    "text": "22"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "91a8070f-0841-4b29-a385-495241a3979a",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_YEAR_ORIG",
+                    "text": "1764"
+                  },
+                  {
+                    "id": "3d1047aa-0103-4b26-96c7-e8951794241b",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1581431742112
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1764"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Applegarth Town, Dumfriesshire, Scotland",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "9790e143-22f5-4762-9dc1-9dd06373634e",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_SUP",
+                    "text": "Applegarth, Dumf County, Scotland",
+                    "qualifiers": [
+                      {
+                        "value": "SUP",
+                        "name": "http://familysearch.org/types/qualifiers/Info"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "a46fbdb1-5a97-4af0-b900-fdba87957145",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_ORIG",
+                    "text": "Applegarth, Dumfries, Scotland"
+                  },
+                  {
+                    "id": "db683ba0-bb4d-4c12-a316-0d39017c158c",
+                    "confidence": "http://confidence/88",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1581431742130
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Applegarth Town, Dumfriesshire, Scotland",
+                    "resource": "https://www.familysearch.org/platform/places/description/1648463",
+                    "qualifiers": [
+                      {
+                        "value": "1014, 1010, 1026, 1013",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "id": "1377fdbb-6639-487f-bd9a-40490456a86e",
+                  "type": "http://gedcomx.org/Original",
+                  "labelId": "EVENT_TYPE_ORIG",
+                  "text": "MAR"
+                },
+                {
+                  "id": "79fa6e13-4c25-4307-a927-bca1458c86b6",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Marriage"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_1771074",
+      "about": "https://api.familysearch.org/platform/records/collections/1771074",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1382223587384,
+      "modified": 1583973473736,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Scotland",
+            "description": "#place_1986318"
+          },
+          "temporal": {
+            "original": "1561/1910",
+            "formal": "1561/1910"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "Scotland Marriages, 1561-1910"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1771074"]
       }
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Archbald Saunders",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Archbald",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "92fe5aaf-ad2a-4b2e-9069-9b51d4312dd7",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "ARCHBALD"
-            }, {
-              "id" : "314058e8-275d-4f73-92f1-2a8da67fff8c",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1581431742120
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Archbald"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Saunders",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "8bd1ca4e-1581-438d-a2ca-76682076be57",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "SAUNDERS"
-            }, {
-              "id" : "1da668d9-56f6-4788-8547-17d7f8469269",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1581431742120
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Saunders"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1581431742112
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "ARCHBALD SAUNDERS"
-          }, {
-            "id" : "17444a77-fc1c-4ae1-8f87-75f120fb3405",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1581431742120
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Archbald Saunders"
-          } ]
-        } ]
-      } ]
-    } ],
-    "fields" : [ {
-      "type" : "http://familysearch.org/types/fields/FsPrTreeId",
-      "values" : [ {
-        "id" : "c9e5e533-f5bf-438f-b8f0-a1537ea5b301",
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "FS_PR_TREE_ID",
-        "text" : "762836746"
-      } ]
-    } ]
-  }, {
-    "id" : "p_10855494443",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "e426d082-239e-4348-bda1-1e8e0fcfef0b",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "SP_SEX_CODE_ORIG",
-          "text" : "Female"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/XTLR-ZXP?flag=fsh"
+    {
+      "id": "src_r_694723925",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7",
+      "componentOf": {
+        "description": "#sd_c_1771074"
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/MBJ2-FX7?flag=fsh"
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1581431742134,
+      "modified": 1583973473736,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Applegarth Town, Dumfriesshire, Scotland"
+          },
+          "temporal": {
+            "original": "22 Apr 1764"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"Scotland Marriages, 1561-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:MBJ2-FX7 : 11 February 2020), Entry for Archbald Saunders, 1764."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Archbald Saunders, \"Scotland Marriages, 1561-1910\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/1000463099130"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1771074?arkName=1:2:MBJ2-FX7"
       }
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZXP" ]
-    }
-  } ],
-  "relationships" : [ {
-    "id" : "MM9.1.6/8CSY-3LZ9",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_10855494444",
-      "resourceId" : "p_10855494444"
-    },
-    "person2" : {
-      "resource" : "#p_10855494443",
-      "resourceId" : "p_10855494443"
-    },
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Marriage",
-      "date" : {
-        "original" : "22 Apr 1764",
-        "formal" : "+1764-04-22",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "id" : "2453e175-1baf-418d-9579-4844f535533b",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "22 Apr 1764"
-          }, {
-            "id" : "c9377aa9-c1bb-4747-9f96-31345cc79f9d",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1581431742112
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "22 Apr 1764",
-            "resource" : "+1764-04-22"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Month",
-          "values" : [ {
-            "id" : "da19c3e2-d026-4601-a9fb-4768de265a3e",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1581431742112
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_MONTH",
-            "text" : "4"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Day",
-          "values" : [ {
-            "id" : "e8342598-b67b-4f7a-b285-01b6d24de219",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1581431742112
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DAY",
-            "text" : "22"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "91a8070f-0841-4b29-a385-495241a3979a",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_YEAR_ORIG",
-            "text" : "1764"
-          }, {
-            "id" : "3d1047aa-0103-4b26-96c7-e8951794241b",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1581431742112
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1764"
-          } ]
-        } ]
+    {
+      "id": "sd_p_10855494444",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5",
+      "componentOf": {
+        "description": "#src_r_694723925"
       },
-      "place" : {
-        "original" : "Applegarth Town, Dumfriesshire, Scotland",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "9790e143-22f5-4762-9dc1-9dd06373634e",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_SUP",
-            "text" : "Applegarth, Dumf County, Scotland",
-            "qualifiers" : [ {
-              "value" : "SUP",
-              "name" : "http://familysearch.org/types/qualifiers/Info"
-            } ]
-          }, {
-            "id" : "a46fbdb1-5a97-4af0-b900-fdba87957145",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Applegarth, Dumfries, Scotland"
-          }, {
-            "id" : "db683ba0-bb4d-4c12-a316-0d39017c158c",
-            "confidence" : "http://confidence/88",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1581431742130
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Applegarth Town, Dumfriesshire, Scotland",
-            "resource" : "https://www.familysearch.org/platform/places/description/1648463",
-            "qualifiers" : [ {
-              "value" : "1014, 1010, 1026, 1013",
-              "name" : "StdQualifier"
-            } ]
-          } ]
-        } ]
-      },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "id" : "1377fdbb-6639-487f-bd9a-40490456a86e",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "EVENT_TYPE_ORIG",
-          "text" : "MAR"
-        }, {
-          "id" : "79fa6e13-4c25-4307-a927-bca1458c86b6",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Marriage"
-        } ]
-      } ]
-    } ]
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_1771074",
-    "about" : "https://api.familysearch.org/platform/records/collections/1771074",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1382223587384,
-    "modified" : 1583973473736,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Scotland",
-        "description" : "#place_1986318"
-      },
-      "temporal" : {
-        "original" : "1561/1910",
-        "formal" : "1561/1910"
-      },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "Scotland Marriages, 1561-1910"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1771074" ]
-    }
-  }, {
-    "id" : "src_r_694723925",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7",
-    "componentOf" : {
-      "description" : "#sd_c_1771074"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Scotland Marriages, 1561-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XTLR-ZX5 : 11 February 2020), Archbald Saunders, 1764."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Archbald Saunders, \"Scotland Marriages, 1561-1910\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5"]
+      }
     },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1581431742134,
-    "modified" : 1583973473736,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Applegarth Town, Dumfriesshire, Scotland"
+    {
+      "id": "sd_p_10855494443",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZXP",
+      "componentOf": {
+        "description": "#src_r_694723925"
       },
-      "temporal" : {
-        "original" : "22 Apr 1764"
-      },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "citations" : [ {
-      "value" : "\"Scotland Marriages, 1561-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:MBJ2-FX7 : 11 February 2020), Entry for Archbald Saunders, 1764."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for Archbald Saunders, \"Scotland Marriages, 1561-1910\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1000463099130" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:MBJ2-FX7" ]
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Scotland Marriages, 1561-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XTLR-ZXP : 11 February 2020), Archbald Saunders, 1764."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "<Unknown> in entry for Archbald Saunders, \"Scotland Marriages, 1561-1910\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XTLR-ZXP"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "place_1986318",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986318"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/ExtData",
+      "values": [
+        {
+          "id": "d532640f-b10f-4eef-ad42-218d89480d80",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_DATA",
+          "text": "{ \"EVENT_PLACE_ALT_ORIG\": \"Applegarth,Dumfries,Scotland\", \"EVENT_DATE_ALT_ORIG\": \"22 APR 1764\"}"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1771074?arkName=1:2:MBJ2-FX7"
-    }
-  }, {
-    "id" : "sd_p_10855494444",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5",
-    "componentOf" : {
-      "description" : "#src_r_694723925"
+    {
+      "type": "http://familysearch.org/types/fields/BatchLocality",
+      "values": [
+        {
+          "id": "1630d44f-d1b8-402b-a046-85dd83569e39",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_BATCH_LOCALITY",
+          "text": "Dumf, Scotland"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Scotland Marriages, 1561-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XTLR-ZX5 : 11 February 2020), Archbald Saunders, 1764."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Archbald Saunders, \"Scotland Marriages, 1561-1910\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5" ]
-    }
-  }, {
-    "id" : "sd_p_10855494443",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZXP",
-    "componentOf" : {
-      "description" : "#src_r_694723925"
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "id": "bfc19817-eebd-473f-80e5-966d5dbcc1a3",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DIGITAL_FILM_NBR",
+          "text": "007909297"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Scotland Marriages, 1561-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XTLR-ZXP : 11 February 2020), Archbald Saunders, 1764."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "<Unknown> in entry for Archbald Saunders, \"Scotland Marriages, 1561-1910\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZXP" ]
+    {
+      "type": "http://familysearch.org/types/fields/FilmNumber",
+      "values": [
+        {
+          "id": "e3f580b6-4e6f-4fdd-a061-07505527d857",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_FILM_NBR",
+          "text": "1067956"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "id": "43fa6806-400d-49a9-82ba-d338b9b2448f",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "Scotland-ODM"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "id": "2f143b6f-a365-43bc-a008-0885850b53ca",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "1067956_M11813-2X_1764_04_22_1000463099130"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SystemOfOrigin",
+      "values": [
+        {
+          "id": "d91ad934-ed3d-4a86-9346-5cdf0e429a6a",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SYSTEM_OF_ORIGIN",
+          "text": "ODM"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UdeBatchNumber",
+      "values": [
+        {
+          "id": "e1e9bee7-d1ef-4a09-be1b-0f4482fc35fe",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UDE_BATCH_NBR",
+          "text": "M11813-2"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UniqueId",
+      "values": [
+        {
+          "id": "4c71fa95-e8e3-4e05-a247-7ef2759ed95a",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UNIQUE_ID",
+          "text": "1000463099130"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "3"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "52313"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
     }
-  } ],
-  "places" : [ {
-    "id" : "place_1986318",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986318" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/ExtData",
-    "values" : [ {
-      "id" : "d532640f-b10f-4eef-ad42-218d89480d80",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_DATA",
-      "text" : "{ \"EVENT_PLACE_ALT_ORIG\": \"Applegarth,Dumfries,Scotland\", \"EVENT_DATE_ALT_ORIG\": \"22 APR 1764\"}"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchLocality",
-    "values" : [ {
-      "id" : "1630d44f-d1b8-402b-a046-85dd83569e39",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_BATCH_LOCALITY",
-      "text" : "Dumf, Scotland"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "id" : "bfc19817-eebd-473f-80e5-966d5dbcc1a3",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DIGITAL_FILM_NBR",
-      "text" : "007909297"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FilmNumber",
-    "values" : [ {
-      "id" : "e3f580b6-4e6f-4fdd-a061-07505527d857",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_FILM_NBR",
-      "text" : "1067956"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "id" : "43fa6806-400d-49a9-82ba-d338b9b2448f",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_GROUP",
-      "text" : "Scotland-ODM"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "id" : "2f143b6f-a365-43bc-a008-0885850b53ca",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "1067956_M11813-2X_1764_04_22_1000463099130"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SystemOfOrigin",
-    "values" : [ {
-      "id" : "d91ad934-ed3d-4a86-9346-5cdf0e429a6a",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SYSTEM_OF_ORIGIN",
-      "text" : "ODM"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
-    "values" : [ {
-      "id" : "e1e9bee7-d1ef-4a09-be1b-0f4482fc35fe",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UDE_BATCH_NBR",
-      "text" : "M11813-2"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UniqueId",
-    "values" : [ {
-      "id" : "4c71fa95-e8e3-4e05-a247-7ef2759ed95a",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UNIQUE_ID",
-      "text" : "1000463099130"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "3"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "52313"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ]
+  ]
 }

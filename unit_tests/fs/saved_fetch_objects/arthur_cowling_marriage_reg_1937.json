@@ -1,489 +1,662 @@
 {
-  "id" : "r_101993000944",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ?seek=next"
+  "id": "r_101993000944",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ"
     }
   },
-  "description" : "#sd_p_100880794788",
-  "persons" : [ {
-    "id" : "p_100880794788",
-    "extracted" : true,
-    "principal" : true,
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QV8X-7L1V?flag=fsh"
+  "description": "#sd_p_100880794788",
+  "persons": [
+    {
+      "id": "p_100880794788",
+      "extracted": true,
+      "principal": true,
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QV8X-7L1V?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/QKY4-HNVQ?flag=fsh"
+        }
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QKY4-HNVQ?flag=fsh"
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1V"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Arthur R Cowling",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Arthur R",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Arthur R"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Cowling",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Cowling"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Arthur R Cowling"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_100880794789",
+      "extracted": true,
+      "principal": true,
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QV8X-7L1K?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/QKY4-HNVQ?flag=fsh"
+        }
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1K"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Penter",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Penter",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SPOUSE_NAME_SURN",
+                          "text": "Penter"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": []
+            }
+          ]
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://familysearch.org/types/fields/ExtRefNbr",
+          "values": [
+            {
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "EXT_SPOUSE_REF_NBR",
+              "text": "67104280"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "MM9.1.6/4XCF-QCV",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_100880794788",
+        "resourceId": "p_100880794788"
+      },
+      "person2": {
+        "resource": "#p_100880794789",
+        "resourceId": "p_100880794789"
+      },
+      "facts": [
+        {
+          "type": "http://familysearch.org/types/facts/MarriageRegistration",
+          "date": {
+            "original": "1937",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "1937"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1937"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Hull, Yorkshire, England",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Hull, Yorkshire, England"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_COUNTY",
+                    "text": "Yorkshire"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_2",
+                    "text": "Yorkshire"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_1",
+                    "text": "England"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/RegistrationDistrict",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_3",
+                    "text": "Hull"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/RegistrationDistrict",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DISTRICT_REG",
+                    "text": "Hull"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Marriage Registration"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_2285732",
+      "about": "https://api.familysearch.org/platform/records/collections/2285732",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1387492743534,
+      "modified": 1584702628246,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "England",
+            "description": "#place_1986340"
+          },
+          "temporal": {
+            "original": "1837/1920",
+            "formal": "1837/1920"
+          },
+          "recordType": "http://gedcomx.org/Marriage"
+        },
+        {
+          "spatial": {
+            "original": "Wales",
+            "description": "#place_1986311"
+          },
+          "temporal": {
+            "original": "1837/1920",
+            "formal": "1837/1920"
+          },
+          "recordType": "http://gedcomx.org/Marriage"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "England and Wales Marriage Registration Index, 1837-2005"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/2285732"]
       }
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1V" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Arthur R Cowling",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Arthur R",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Arthur R"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Cowling",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Cowling"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Arthur R Cowling"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_100880794789",
-    "extracted" : true,
-    "principal" : true,
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QV8X-7L1K?flag=fsh"
+    {
+      "id": "src_r_101993000944",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ",
+      "componentOf": {
+        "description": "#sd_c_2285732"
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QKY4-HNVQ?flag=fsh"
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1409264831824,
+      "modified": 1584702628246,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Hull, Yorkshire, England"
+          },
+          "temporal": {
+            "original": "1937",
+            "formal": "+1937"
+          },
+          "recordType": "http://gedcomx.org/Marriage"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"England and Wales Marriage Registration Index, 1837-2005,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:QKY4-HNVQ : 8 October 2014), Entry for Arthur R Cowling and Penter, 1937; from \"England & Wales Marriages, 1837-2005,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.\n"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Arthur R Cowling and Penter, \"England and Wales Marriage Registration Index, 1837-2005\""
+        }
+      ],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/1002014852795"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2285732#rd_MM9.1.9/MMMM-QP1"
       }
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1K" ]
+    {
+      "id": "sd_p_100880794788",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1V",
+      "componentOf": {
+        "description": "#src_r_101993000944"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England and Wales Marriage Registration Index, 1837-2005,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QV8X-7L1V : 8 October 2014), Arthur R Cowling and null, 1937; from \"England & Wales Marriages, 1837-2005,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.\n"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Arthur R Cowling, \"England and Wales Marriage Registration Index, 1837-2005\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1V"]
+      }
     },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Penter",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Penter",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SPOUSE_NAME_SURN",
-              "text" : "Penter"
-            } ]
-          } ]
-        } ],
-        "fields" : [ ]
-      } ]
-    } ],
-    "fields" : [ {
-      "type" : "http://familysearch.org/types/fields/ExtRefNbr",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "EXT_SPOUSE_REF_NBR",
-        "text" : "67104280"
-      } ]
-    } ]
-  } ],
-  "relationships" : [ {
-    "id" : "MM9.1.6/4XCF-QCV",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_100880794788",
-      "resourceId" : "p_100880794788"
-    },
-    "person2" : {
-      "resource" : "#p_100880794789",
-      "resourceId" : "p_100880794789"
-    },
-    "facts" : [ {
-      "type" : "http://familysearch.org/types/facts/MarriageRegistration",
-      "date" : {
-        "original" : "1937",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "1937"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1937"
-          } ]
-        } ]
+    {
+      "id": "sd_p_100880794789",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1K",
+      "componentOf": {
+        "description": "#src_r_101993000944"
       },
-      "place" : {
-        "original" : "Hull, Yorkshire, England",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Hull, Yorkshire, England"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_COUNTY",
-            "text" : "Yorkshire"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_2",
-            "text" : "Yorkshire"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Country",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_1",
-            "text" : "England"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/RegistrationDistrict",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_3",
-            "text" : "Hull"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/RegistrationDistrict",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DISTRICT_REG",
-            "text" : "Hull"
-          } ]
-        } ]
-      },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Marriage Registration"
-        } ]
-      } ]
-    } ]
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_2285732",
-    "about" : "https://api.familysearch.org/platform/records/collections/2285732",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1387492743534,
-    "modified" : 1584702628246,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "England",
-        "description" : "#place_1986340"
-      },
-      "temporal" : {
-        "original" : "1837/1920",
-        "formal" : "1837/1920"
-      },
-      "recordType" : "http://gedcomx.org/Marriage"
-    }, {
-      "spatial" : {
-        "original" : "Wales",
-        "description" : "#place_1986311"
-      },
-      "temporal" : {
-        "original" : "1837/1920",
-        "formal" : "1837/1920"
-      },
-      "recordType" : "http://gedcomx.org/Marriage"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "England and Wales Marriage Registration Index, 1837-2005"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2285732" ]
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England and Wales Marriage Registration Index, 1837-2005,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QV8X-7L1K : 8 October 2014), Arthur R Cowling and null, 1937; from \"England & Wales Marriages, 1837-2005,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.\n"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Penter, \"England and Wales Marriage Registration Index, 1837-2005\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1K"]
+      }
     }
-  }, {
-    "id" : "src_r_101993000944",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ",
-    "componentOf" : {
-      "description" : "#sd_c_2285732"
+  ],
+  "places": [
+    {
+      "id": "place_1986311",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986311"]
+      }
     },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1409264831824,
-    "modified" : 1584702628246,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Hull, Yorkshire, England"
-      },
-      "temporal" : {
-        "original" : "1937",
-        "formal" : "+1937"
-      },
-      "recordType" : "http://gedcomx.org/Marriage"
-    } ],
-    "citations" : [ {
-      "value" : "\"England and Wales Marriage Registration Index, 1837-2005,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:QKY4-HNVQ : 8 October 2014), Entry for Arthur R Cowling and Penter, 1937; from \"England & Wales Marriages, 1837-2005,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.\n"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for Arthur R Cowling and Penter, \"England and Wales Marriage Registration Index, 1837-2005\""
-    } ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1002014852795" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QKY4-HNVQ" ]
+    {
+      "id": "place_1986340",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986340"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel1Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_LEVEL_1_TYPE",
+          "text": "Country"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2285732#rd_MM9.1.9/MMMM-QP1"
-    }
-  }, {
-    "id" : "sd_p_100880794788",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1V",
-    "componentOf" : {
-      "description" : "#src_r_101993000944"
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevelType",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_LEVEL_2_TYPE",
+          "text": "County"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"England and Wales Marriage Registration Index, 1837-2005,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QV8X-7L1V : 8 October 2014), Arthur R Cowling and null, 1937; from \"England & Wales Marriages, 1837-2005,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.\n"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Arthur R Cowling, \"England and Wales Marriage Registration Index, 1837-2005\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1V" ]
-    }
-  }, {
-    "id" : "sd_p_100880794789",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1K",
-    "componentOf" : {
-      "description" : "#src_r_101993000944"
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel3Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_LEVEL_3_TYPE",
+          "text": "Registration District"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"England and Wales Marriage Registration Index, 1837-2005,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QV8X-7L1K : 8 October 2014), Arthur R Cowling and null, 1937; from \"England & Wales Marriages, 1837-2005,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.\n"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Penter, \"England and Wales Marriage Registration Index, 1837-2005\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1K" ]
+    {
+      "type": "http://familysearch.org/types/fields/EventRegDate",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_REG_DATE",
+          "text": "1937"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventRegQtr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_REG_QTR",
+          "text": "Apr-May-Jun"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/Evquarter",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVQUARTER",
+          "text": "2"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtAdditionalEntryFlag",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_ADDITIONAL_ENTRY_FLAG",
+          "text": "N"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtLineNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_LINE_NBR",
+          "text": "70"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtPageCode",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_PAGE_CODE",
+          "text": "26302"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtRefNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EXT_REF_NBR",
+          "text": "67025141"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "2285732"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/OtherOnPageName1",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "OTHER_ON_PAGE_NAME_1",
+          "text": "Florence K Penter"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/OtherOnPageNameGn1",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "OTHER_ON_PAGE_NAME_GN_1",
+          "text": "Florence K"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/OtherOnPageNameSurn1",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "OTHER_ON_PAGE_NAME_SURN_1",
+          "text": "Penter"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/OtherOnPageUrl1",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "OTHER_ON_PAGE_URL_1",
+          "text": "/pal:/MM9.1.1/QV8X-DHSW"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "PPQ_ID",
+          "text": "14-1094"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "RECORD_GROUP",
+          "text": "marriages_1900stxt"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "SORT_KEY",
+          "text": "000067025141_1937_2_000001002014852795"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourcePage",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "SOURCE_PAGE",
+          "text": "519"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourceVolume",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "SOURCE_VOLUME",
+          "text": "9D"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UniqueId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "UNIQUE_IDENTIFIER",
+          "text": "1002014852795"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "3"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "25002"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
     }
-  } ],
-  "places" : [ {
-    "id" : "place_1986311",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986311" ]
-    }
-  }, {
-    "id" : "place_1986340",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986340" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevel1Type",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_LEVEL_1_TYPE",
-      "text" : "Country"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevelType",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_LEVEL_2_TYPE",
-      "text" : "County"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevel3Type",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_LEVEL_3_TYPE",
-      "text" : "Registration District"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventRegDate",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_REG_DATE",
-      "text" : "1937"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventRegQtr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_REG_QTR",
-      "text" : "Apr-May-Jun"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/Evquarter",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVQUARTER",
-      "text" : "2"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ExtAdditionalEntryFlag",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_ADDITIONAL_ENTRY_FLAG",
-      "text" : "N"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ExtLineNbr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_LINE_NBR",
-      "text" : "70"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ExtPageCode",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_PAGE_CODE",
-      "text" : "26302"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ExtRefNbr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_REF_NBR",
-      "text" : "67025141"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "2285732"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/OtherOnPageName1",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "OTHER_ON_PAGE_NAME_1",
-      "text" : "Florence K Penter"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/OtherOnPageNameGn1",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "OTHER_ON_PAGE_NAME_GN_1",
-      "text" : "Florence K"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/OtherOnPageNameSurn1",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "OTHER_ON_PAGE_NAME_SURN_1",
-      "text" : "Penter"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/OtherOnPageUrl1",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "OTHER_ON_PAGE_URL_1",
-      "text" : "/pal:/MM9.1.1/QV8X-DHSW"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "PPQ_ID",
-      "text" : "14-1094"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "RECORD_GROUP",
-      "text" : "marriages_1900stxt"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "SORT_KEY",
-      "text" : "000067025141_1937_2_000001002014852795"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SourcePage",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "SOURCE_PAGE",
-      "text" : "519"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SourceVolume",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "SOURCE_VOLUME",
-      "text" : "9D"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UniqueId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "UNIQUE_IDENTIFIER",
-      "text" : "1002014852795"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "3"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "25002"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ]
+  ]
 }

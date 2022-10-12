@@ -20,15 +20,7 @@
     "placeString": "Kingsford, Dickinson, Michigan, United States"
   },
   "ageAtEvent": "32",
-  "householdArrayFields": [
-    "name",
-    "relationship",
-    "maritalStatus",
-    "gender",
-    "age",
-    "birthYear",
-    "birthPlace"
-  ],
+  "householdArrayFields": ["name", "relationship", "maritalStatus", "gender", "age", "birthYear", "birthPlace"],
   "householdArray": [
     {
       "name": "Carl Schei",

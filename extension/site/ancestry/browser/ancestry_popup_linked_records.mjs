@@ -22,10 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  displayMessage,
-  displayMessageWithIcon,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { displayMessage, displayMessageWithIcon } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { extractRecord } from "../core/ancestry_extract_data.mjs";
 
@@ -62,8 +59,7 @@ function resetStaticCounts() {
 }
 
 function displayStatusMessage() {
-  const baseMessage =
-    "WikiTree Sourcer fetching additional records ...\n\n(This might take several seconds)...\n";
+  const baseMessage = "WikiTree Sourcer fetching additional records ...\n\n(This might take several seconds)...\n";
 
   let message = baseMessage;
   for (let record of linkedRecordsData.linkedRecords) {
@@ -73,10 +69,8 @@ function displayStatusMessage() {
 }
 
 function displayLinkedRecordsFetchErrorsMessage(actionName) {
-  let baseMessage =
-    "During " + actionName + " some linked records could not be retreived.";
-  baseMessage +=
-    "\nThis could be due to internet connectivity issues or server issues.";
+  let baseMessage = "During " + actionName + " some linked records could not be retreived.";
+  baseMessage += "\nThis could be due to internet connectivity issues or server issues.";
   baseMessage += "\nPlease try again.\n";
 
   let message = baseMessage;
@@ -87,8 +81,7 @@ function displayLinkedRecordsFetchErrorsMessage(actionName) {
 }
 
 function receiveFetchedRecord(response) {
-  const baseMessage =
-    "WikiTree Sourcer fetching additional records ...\n(This might take several seconds)...";
+  const baseMessage = "WikiTree Sourcer fetching additional records ...\n(This might take several seconds)...";
 
   //console.log("received response from extractRecordFromUrl message");
   if (chrome.runtime.lastError) {
@@ -112,10 +105,7 @@ function receiveFetchedRecord(response) {
     }
 
     if (response.success) {
-      let extractedData = extractDataFromHtml(
-        response.htmlText,
-        response.recordUrl
-      );
+      let extractedData = extractDataFromHtml(response.htmlText, response.recordUrl);
 
       if (matchingRecord) {
         matchingRecord.extractedData = extractedData;
@@ -125,8 +115,7 @@ function receiveFetchedRecord(response) {
     } else {
       // ??
       console.log(
-        "receiveFetchedRecord: Failed response from ancestry extractRecordFromUrl. recordUrl is: " +
-          response.recordUrl
+        "receiveFetchedRecord: Failed response from ancestry extractRecordFromUrl. recordUrl is: " + response.recordUrl
       );
 
       if (!matchingRecord.timeouts) {
@@ -143,10 +132,7 @@ function receiveFetchedRecord(response) {
         matchingRecord.status = "failed";
         linkedRecordFailureCount++;
         receivedLinkedRecordCount++;
-        console.log(
-          "receiveFetchedRecord: timed out. receivedLinkedRecordCount is: " +
-            receivedLinkedRecordCount
-        );
+        console.log("receiveFetchedRecord: timed out. receivedLinkedRecordCount is: " + receivedLinkedRecordCount);
       }
     }
   }
@@ -163,9 +149,7 @@ function receiveFetchedRecord(response) {
 
 async function extractRecordFromUrlBg(recordUrl, cacheTag) {
   //console.log("extractRecordFromUrl");
-  displayMessage(
-    "WikiTree Sourcer fetching additional records ...\n(This might take several seconds)..."
-  );
+  displayMessage("WikiTree Sourcer fetching additional records ...\n(This might take several seconds)...");
 
   chrome.runtime.sendMessage(
     {
@@ -180,9 +164,7 @@ async function extractRecordFromUrlBg(recordUrl, cacheTag) {
 
 async function extractRecordFromUrl(recordUrl, cacheTag) {
   //console.log("extractRecordFromUrl");
-  displayMessage(
-    "WikiTree Sourcer fetching additional records ...\n(This might take several seconds)..."
-  );
+  displayMessage("WikiTree Sourcer fetching additional records ...\n(This might take several seconds)...");
 
   let extractResult = await extractRecordHtmlFromUrl(recordUrl, cacheTag);
   receiveFetchedRecord(extractResult);
@@ -216,11 +198,7 @@ async function getDataForLinkedHouseholdRecords(data, processfunction) {
   //console.log(data);
   let linkedRecords = [];
   for (let member of data.extractedData.household.members) {
-    if (
-      member.recordId &&
-      member.link &&
-      data.extractedData.recordId != member.recordId
-    ) {
+    if (member.recordId && member.link && data.extractedData.recordId != member.recordId) {
       if (!member.isClosed) {
         // waste of time fetching closed record pages
         let name = member["Household Members"];
@@ -301,11 +279,7 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction) {
   //console.log(data);
   let linkedRecords = [];
   for (let member of data.extractedData.household.members) {
-    if (
-      member.recordId &&
-      member.link &&
-      data.extractedData.recordId != member.recordId
-    ) {
+    if (member.recordId && member.link && data.extractedData.recordId != member.recordId) {
       if (!member.isClosed) {
         // waste of time fetching closed record pages
         let name = member["Household Members"];

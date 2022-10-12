@@ -24,10 +24,7 @@
     "Household Members<br/>Age": "Charles Pavey 53<br/>Amelia Pavey 49<br/>Geo Pavey 19<br/>Charles Pavey 9"
   },
   "household": {
-    "headings": [
-      "Household Members",
-      "Age"
-    ],
+    "headings": ["Household Members", "Age"],
     "members": [
       {
         "Household Members": "Charles Pavey",

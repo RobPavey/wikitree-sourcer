@@ -17,11 +17,7 @@
   },
   "ageAtEvent": "43",
   "relationshipToHead": "head",
-  "householdArrayFields": [
-    "name",
-    "age",
-    "relationship"
-  ],
+  "householdArrayFields": ["name", "age", "relationship"],
   "householdArray": [
     {
       "name": "Robert E Whitcomb",

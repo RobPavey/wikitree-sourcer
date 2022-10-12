@@ -38,8 +38,7 @@ const parishes = [
   {
     rdNo: "003/",
     selectParishName: "CUNNINGSBURGH",
-    searchParishParam:
-      "SANDWICK AND CUNNINGSBURGH|DUNROSSNESS, SANDWICK AND CUNNINGSB",
+    searchParishParam: "SANDWICK AND CUNNINGSBURGH|DUNROSSNESS, SANDWICK AND CUNNINGSB",
     recordParishName: "DUNROSSNESS, SANDWICK AND CUNNINGSB",
     county: "Shetland",
     startYear: 1731,
@@ -138,8 +137,7 @@ const parishes = [
   {
     rdNo: "007/",
     selectParishName: "SKERRIES",
-    searchParishParam:
-      "WHALSAY AND SKERRIES|NESTING,LUNNASTING, WHALSAY AND SKE",
+    searchParishParam: "WHALSAY AND SKERRIES|NESTING,LUNNASTING, WHALSAY AND SKE",
     recordParishName: "NESTING,LUNNASTING, WHALSAY AND SKE",
     county: "Shetland",
     startYear: 1760,
@@ -148,8 +146,7 @@ const parishes = [
   {
     rdNo: "007/",
     selectParishName: "WHALSAY",
-    searchParishParam:
-      "WHALSAY AND SKERRIES|NESTING,LUNNASTING, WHALSAY AND SKE",
+    searchParishParam: "WHALSAY AND SKERRIES|NESTING,LUNNASTING, WHALSAY AND SKE",
     recordParishName: "NESTING,LUNNASTING, WHALSAY AND SKE",
     county: "Shetland",
     startYear: 1760,
@@ -203,8 +200,7 @@ const parishes = [
   {
     rdNo: "010/",
     selectParishName: "WEISDALE",
-    searchParishParam:
-      "WHITENESS AND WEISDALE|TINGWALL, WHITENESS AND WEISDALE",
+    searchParishParam: "WHITENESS AND WEISDALE|TINGWALL, WHITENESS AND WEISDALE",
     recordParishName: "TINGWALL, WHITENESS AND WEISDALE",
     county: "Shetland",
     startYear: 1695,
@@ -213,8 +209,7 @@ const parishes = [
   {
     rdNo: "010/",
     selectParishName: "WHITENESS",
-    searchParishParam:
-      "WHITENESS AND WEISDALE|TINGWALL, WHITENESS AND WEISDALE",
+    searchParishParam: "WHITENESS AND WEISDALE|TINGWALL, WHITENESS AND WEISDALE",
     recordParishName: "TINGWALL, WHITENESS AND WEISDALE",
     county: "Shetland",
     startYear: 1695,
@@ -259,8 +254,7 @@ const parishes = [
   {
     rdNo: "012/",
     selectParishName: "WALLS (SHETLAND)",
-    searchParishParam:
-      "WALLS CHURCH RECORDS|WALLS|WALLS, SANDNESS, PAPA STOUR AND FOULA",
+    searchParishParam: "WALLS CHURCH RECORDS|WALLS|WALLS, SANDNESS, PAPA STOUR AND FOULA",
     recordParishName: "WALLS, SANDNESS, PAPA STOUR AND FOULA",
     county: "Shetland",
     startYear: 1783,
@@ -386,8 +380,7 @@ const parishes = [
   {
     rdNo: "021/",
     selectParishName: "KIRKWALL",
-    searchParishParam:
-      "KIRKWALL AND ST OLA LANDWARD|KIRKWALL AND ST OLA BURGH|KIRKWALL",
+    searchParishParam: "KIRKWALL AND ST OLA LANDWARD|KIRKWALL AND ST OLA BURGH|KIRKWALL",
     recordParishName: "KIRKWALL AND ST OLA",
     county: "Orkney",
     startYear: 1657,
@@ -1152,8 +1145,7 @@ const parishes = [
   {
     rdNo: "092/",
     selectParishName: "ABERTARFF",
-    searchParishParam:
-      "ABERTARFF or FORT AUGUSTUS|BOLESKINE AND ABERTARFF or FORT AUG",
+    searchParishParam: "ABERTARFF or FORT AUGUSTUS|BOLESKINE AND ABERTARFF or FORT AUG",
     recordParishName: "BOLESKINE AND ABERTARFF OR FORT AUGUSTUS",
     county: "Inverness",
     startYear: 1739,
@@ -1171,8 +1163,7 @@ const parishes = [
   {
     rdNo: "092/",
     selectParishName: "FORT AUGUSTUS",
-    searchParishParam:
-      "ABERTARFF or FORT AUGUSTUS|BOLESKINE AND ABERTARFF or FORT AUG",
+    searchParishParam: "ABERTARFF or FORT AUGUSTUS|BOLESKINE AND ABERTARFF or FORT AUG",
     recordParishName: "BOLESKINE AND ABERTARFF OR FORT AUG",
     county: "Inverness",
     startYear: 1739,
@@ -1946,8 +1937,7 @@ const parishes = [
   {
     rdNo: "168/B",
     selectParishName: "OLD MACHAR",
-    searchParishParam:
-      "OLD MACHAR|OLD MACHAR LANDWARD|OLD MACHAR ABERDEEN BURGH",
+    searchParishParam: "OLD MACHAR|OLD MACHAR LANDWARD|OLD MACHAR ABERDEEN BURGH",
     recordParishName: "OLD MACHAR",
     county: "Aberdeen",
     startYear: 1621,
@@ -3108,8 +3098,7 @@ const parishes = [
   {
     rdNo: "282/",
     selectParishName: "DUNDEE",
-    searchParishParam:
-      "DUNDEE THIRD DISTRICT|DUNDEE SECOND DISTRICT|DUNDEE BURGH FIRST DISTRICT|DUNDEE",
+    searchParishParam: "DUNDEE THIRD DISTRICT|DUNDEE SECOND DISTRICT|DUNDEE BURGH FIRST DISTRICT|DUNDEE",
     recordParishName: "DUNDEE",
     county: "Forfar",
     startYear: 1645,
@@ -4288,8 +4277,7 @@ const parishes = [
   {
     rdNo: "406/",
     selectParishName: "AUCHTERMUCHTY",
-    searchParishParam:
-      "AUCHTERMUCHTY LANDWARD|AUCHTERMUCHTY BURGH|AUCHTERMUCHTY",
+    searchParishParam: "AUCHTERMUCHTY LANDWARD|AUCHTERMUCHTY BURGH|AUCHTERMUCHTY",
     recordParishName: "AUCHTERMUCHTY",
     county: "Fife",
     startYear: 1649,
@@ -4532,8 +4520,7 @@ const parishes = [
   {
     rdNo: "432/",
     selectParishName: "INVERKEITHING",
-    searchParishParam:
-      "INVERKEITHING LANDWARD|INVERKEITHING BURGH|INVERKEITHING",
+    searchParishParam: "INVERKEITHING LANDWARD|INVERKEITHING BURGH|INVERKEITHING",
     recordParishName: "INVERKEITHING",
     county: "Fife",
     startYear: 1676,
@@ -4722,8 +4709,7 @@ const parishes = [
   {
     rdNo: "453/",
     selectParishName: "ST ANDREWS (FIFE)",
-    searchParishParam:
-      "ST ANDREWS LANDWARD|ST ANDREWS BURGH|ST ANDREWS AND ST LEONARDS",
+    searchParishParam: "ST ANDREWS LANDWARD|ST ANDREWS BURGH|ST ANDREWS AND ST LEONARDS",
     recordParishName: "ST ANDREWS AND ST LEONARDS",
     county: "Fife",
     startYear: 1627,
@@ -5272,8 +5258,7 @@ const parishes = [
   {
     rdNo: "505/",
     selectParishName: "ARDNAMURCHAN",
-    searchParishParam:
-      "WESTERN ARDNAMURCHAN|ARDNAMURCHAN AND STRONTIAN or SUNAR",
+    searchParishParam: "WESTERN ARDNAMURCHAN|ARDNAMURCHAN AND STRONTIAN or SUNAR",
     recordParishName: "ARDNAMURCHAN AND STRONTIAN OR SUNAR",
     county: "Argyll",
     startYear: 1777,
@@ -5291,8 +5276,7 @@ const parishes = [
   {
     rdNo: "505/",
     selectParishName: "STRONTIAN",
-    searchParishParam:
-      "SUNART or STRONTIAN|ARDNAMURCHAN AND STRONTIAN or SUNAR",
+    searchParishParam: "SUNART or STRONTIAN|ARDNAMURCHAN AND STRONTIAN or SUNAR",
     recordParishName: "SUNART OR STRONTIAN",
     county: "Argyll",
     startYear: 1777,
@@ -5301,8 +5285,7 @@ const parishes = [
   {
     rdNo: "505/",
     selectParishName: "SUNART",
-    searchParishParam:
-      "SUNART or STRONTIAN|ARDNAMURCHAN AND STRONTIAN or SUNAR",
+    searchParishParam: "SUNART or STRONTIAN|ARDNAMURCHAN AND STRONTIAN or SUNAR",
     recordParishName: "SUNART OR STRONTIAN",
     county: "Argyll",
     startYear: 1777,
@@ -5401,8 +5384,7 @@ const parishes = [
   {
     rdNo: "513/",
     selectParishName: "INVERARAY",
-    searchParishParam:
-      "INVERARAY LANDWARD|INVERARAY BURGH|INVERARAY AND GLENARAY",
+    searchParishParam: "INVERARAY LANDWARD|INVERARAY BURGH|INVERARAY AND GLENARAY",
     recordParishName: "INVERARAY AND GLENARAY",
     county: "Argyll",
     startYear: 1651,
@@ -5825,8 +5807,7 @@ const parishes = [
   {
     rdNo: "544/",
     selectParishName: "KILMORE",
-    searchParishParam:
-      "KILNINIAN AND KILMORE|KILMORE AND KILBRIDE LANDWARD|KILMORE AND KILBRIDE",
+    searchParishParam: "KILNINIAN AND KILMORE|KILMORE AND KILBRIDE LANDWARD|KILMORE AND KILBRIDE",
     recordParishName: "KILNINIAN AND KILMORE",
     county: "Argyll",
     startYear: 1766,
@@ -6060,8 +6041,7 @@ const parishes = [
   {
     rdNo: "564/1",
     selectParishName: "GREENOCK",
-    searchParishParam:
-      "GREENOCK OLD or WEST|GREENOCK EAST|GREENOCK NEW or MIDDLE|GREENOCK",
+    searchParishParam: "GREENOCK OLD or WEST|GREENOCK EAST|GREENOCK NEW or MIDDLE|GREENOCK",
     recordParishName: "GREENOCK NEW OR MIDDLE",
     county: "Renfrew",
     startYear: 1741,
@@ -6070,8 +6050,7 @@ const parishes = [
   {
     rdNo: "564/2",
     selectParishName: "GREENOCK",
-    searchParishParam:
-      "GREENOCK OLD or WEST|GREENOCK EAST|GREENOCK NEW or MIDDLE|GREENOCK",
+    searchParishParam: "GREENOCK OLD or WEST|GREENOCK EAST|GREENOCK NEW or MIDDLE|GREENOCK",
     recordParishName: "GREENOCK EAST",
     county: "Renfrew",
     startYear: 1809,
@@ -6080,8 +6059,7 @@ const parishes = [
   {
     rdNo: "564/3",
     selectParishName: "GREENOCK",
-    searchParishParam:
-      "GREENOCK OLD or WEST|GREENOCK EAST|GREENOCK NEW or MIDDLE|GREENOCK",
+    searchParishParam: "GREENOCK OLD or WEST|GREENOCK EAST|GREENOCK NEW or MIDDLE|GREENOCK",
     recordParishName: "GREENOCK OLD OR WEST",
     county: "Renfrew",
     startYear: 1698,
@@ -6171,8 +6149,7 @@ const parishes = [
   {
     rdNo: "573/",
     selectParishName: "PAISLEY",
-    searchParishParam:
-      "PAISLEY MIDDLE CHURCH|PAISLEY LOW CHURCH|PAISLEY HIGH CHURCH|PAISLEY",
+    searchParishParam: "PAISLEY MIDDLE CHURCH|PAISLEY LOW CHURCH|PAISLEY HIGH CHURCH|PAISLEY",
     recordParishName: "PAISLEY",
     county: "Renfrew",
     startYear: 1738,
@@ -7154,8 +7131,7 @@ const parishes = [
   {
     rdNo: "668/",
     selectParishName: "LINLITHGOW",
-    searchParishParam:
-      "LINLITHGOW LANDWARD (ST. MICHAEL'S)|LINLITHGOW BURGH|LINLITHGOW",
+    searchParishParam: "LINLITHGOW LANDWARD (ST. MICHAEL'S)|LINLITHGOW BURGH|LINLITHGOW",
     recordParishName: "LINLITHGOW",
     county: "Linlithgow (West Lothian)",
     startYear: 1613,
@@ -7335,8 +7311,7 @@ const parishes = [
   {
     rdNo: "684/",
     selectParishName: "DUDDINGSTON",
-    searchParishParam:
-      "DUDDINGSTON LANDWARD|DUDDINGSTON AND PORTOBELLO|DUDDINGSTON",
+    searchParishParam: "DUDDINGSTON LANDWARD|DUDDINGSTON AND PORTOBELLO|DUDDINGSTON",
     recordParishName: "DUDDINGSTON",
     county: "Edinburgh (Midlothian)",
     startYear: 1631,
@@ -7732,8 +7707,7 @@ const parishes = [
   {
     rdNo: "713/",
     selectParishName: "NORTH BERWICK",
-    searchParishParam:
-      "NORTH BERWICK LANDWARD|NORTH BERWICK BURGH|NORTH BERWICK",
+    searchParishParam: "NORTH BERWICK LANDWARD|NORTH BERWICK BURGH|NORTH BERWICK",
     recordParishName: "NORTH BERWICK",
     county: "Haddington (East Lothian)",
     startYear: 1604,
@@ -9245,8 +9219,7 @@ const parishes = [
   {
     rdNo: "871/",
     selectParishName: "KIRKCUDBRIGHT",
-    searchParishParam:
-      "KIRKCUDBRIGHT LANDWARD|KIRKCUDBRIGHT BURGH|KIRKCUDBRIGHT",
+    searchParishParam: "KIRKCUDBRIGHT LANDWARD|KIRKCUDBRIGHT BURGH|KIRKCUDBRIGHT",
     recordParishName: "KIRKCUDBRIGHT",
     county: "Kirkcudbright",
     startYear: 1743,
@@ -9544,10 +9517,7 @@ function getParishData(parishName, year) {
     if (ucParishName == parish.recordParishName) {
       if (!year) {
         return true;
-      } else if (
-        parish.startYear <= +year &&
-        (parish.endYear >= +year || parish.endYear === 0)
-      ) {
+      } else if (parish.startYear <= +year && (parish.endYear >= +year || parish.endYear === 0)) {
         return true;
       }
     }

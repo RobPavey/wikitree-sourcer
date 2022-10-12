@@ -18,11 +18,7 @@
   "ageAtEvent": "28",
   "maritalStatus": "married",
   "relationshipToHead": "head",
-  "householdArrayFields": [
-    "name",
-    "age",
-    "relationship"
-  ],
+  "householdArrayFields": ["name", "age", "relationship"],
   "householdArray": [
     {
       "name": "William Pavey",

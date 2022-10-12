@@ -33,9 +33,7 @@ async function doFetch() {
   if (fetchUrl.indexOf("/search/record/results?") != -1) {
     //console.log('doFetch, looks like a search page, checking sidebar');
     // this looks like a search page, see if a record is selected in sidebar
-    let viewRecord = document.querySelector(
-      "a[data-testid=viewSimilarRecordButton]"
-    );
+    let viewRecord = document.querySelector("a[data-testid=viewSimilarRecordButton]");
     if (viewRecord) {
       //console.log("found view record");
       let text = viewRecord.textContent;
@@ -50,23 +48,15 @@ async function doFetch() {
 
         //console.log("viewRecordUrl = " + viewRecordUrl);
 
-        if (
-          viewRecordUrl.startsWith("/ark:/") ||
-          viewRecordUrl.startsWith("/search/ark:/")
-        ) {
+        if (viewRecordUrl.startsWith("/ark:/") || viewRecordUrl.startsWith("/search/ark:/")) {
           viewRecordUrl = "https://www.familysearch.org" + viewRecordUrl;
         }
 
         fetchUrl = viewRecordUrl;
       }
     }
-  } else if (
-    fetchUrl.startsWith("https://www.familysearch.org/tree/person/details/")
-  ) {
-    let personId = fetchUrl.replace(
-      "https://www.familysearch.org/tree/person/details/",
-      ""
-    );
+  } else if (fetchUrl.startsWith("https://www.familysearch.org/tree/person/details/")) {
+    let personId = fetchUrl.replace("https://www.familysearch.org/tree/person/details/", "");
     let slashOrQueryIndex = personId.search(/[/?]/);
     if (slashOrQueryIndex != -1) {
       personId = personId.substring(0, slashOrQueryIndex);
@@ -74,10 +64,7 @@ async function doFetch() {
 
     // API URL looks like this: https://api.familysearch.org/platform/tree/persons/K2F9-F5Z
     if (personId) {
-      fetchUrl =
-        "https://www.familysearch.org/platform/tree/persons/" +
-        personId +
-        "?relatives";
+      fetchUrl = "https://www.familysearch.org/platform/tree/persons/" + personId + "?relatives";
       fetchType = "person";
     }
   }
@@ -85,10 +72,7 @@ async function doFetch() {
   // This seems like a recent change on FamilySearch (noticed on 25 May 2022).
   // Sometimes the URL contains "/search/" and this stops the fetch working
   if (fetchUrl.indexOf("www.familysearch.org/search/ark:/") != -1) {
-    fetchUrl = fetchUrl.replace(
-      "www.familysearch.org/search/ark:/",
-      "www.familysearch.org/ark:/"
-    );
+    fetchUrl = fetchUrl.replace("www.familysearch.org/search/ark:/", "www.familysearch.org/ark:/");
   }
 
   //console.log('doFetch, fetchUrl is: ' + fetchUrl);
@@ -117,9 +101,7 @@ async function doFetch() {
     //console.log('doFetch, response.status is: ' + response.status);
 
     if (response.status !== 200) {
-      console.log(
-        "Looks like there was a problem. Status Code: " + response.status
-      );
+      console.log("Looks like there was a problem. Status Code: " + response.status);
       return {
         success: false,
         errorCondition: "FetchError",
@@ -151,13 +133,7 @@ async function doFetch() {
   }
 }
 
-async function extractDataFromFetchAndRespond(
-  document,
-  dataObj,
-  fetchType,
-  options,
-  sendResponse
-) {
+async function extractDataFromFetchAndRespond(document, dataObj, fetchType, options, sendResponse) {
   //console.log('extractDataFromFetchAndRespond entered');
 
   if (!isLoadedExtractDataModuleReady) {
@@ -170,17 +146,9 @@ async function extractDataFromFetchAndRespond(
     // dependencies not ready, wait a few milliseconds and try again
     else if (loadExtractDataModuleRetries < maxLoadModuleRetries) {
       loadExtractDataModuleRetries++;
-      console.log(
-        "extractDataFromFetchAndRespond. Retry number: ",
-        loadExtractDataModuleRetries
-      );
+      console.log("extractDataFromFetchAndRespond. Retry number: ", loadExtractDataModuleRetries);
       setTimeout(function () {
-        extractDataFromFetchAndRespond(
-          document,
-          dataObj,
-          options,
-          sendResponse
-        );
+        extractDataFromFetchAndRespond(document, dataObj, options, sendResponse);
       }, loadModuleTimeout);
       return true;
     } else {
@@ -194,12 +162,7 @@ async function extractDataFromFetchAndRespond(
   }
 
   // Extract the data.
-  let extractedData = loadedExtractDataModule.extractDataFromFetch(
-    document,
-    dataObj,
-    fetchType,
-    options
-  );
+  let extractedData = loadedExtractDataModule.extractDataFromFetch(document, dataObj, fetchType, options);
 
   // respond with the type of content and the extracted data
   sendResponse({
@@ -214,13 +177,7 @@ async function doFetchAndSendResponse(sendResponse, options) {
 
   if (result.success) {
     // Extract the data.
-    extractDataFromFetchAndRespond(
-      document,
-      result.dataObj,
-      result.fetchType,
-      options,
-      sendResponse
-    );
+    extractDataFromFetchAndRespond(document, result.dataObj, result.fetchType, options, sendResponse);
   } else {
     if (result.errorCondition == "NotJSON") {
       // This is normal for some pages that could be records but are not.
@@ -268,11 +225,7 @@ function shouldUseFetch() {
 
   let useFetch = false;
 
-  if (
-    location.href.startsWith(
-      "https://www.familysearch.org/tree/person/details/"
-    )
-  ) {
+  if (location.href.startsWith("https://www.familysearch.org/tree/person/details/")) {
     useFetch = true;
   } else {
     let main = document.querySelector("#main");
@@ -302,12 +255,7 @@ function extractHandler(request, sendResponse) {
     return true; // will respond async
   } else {
     // Extract the data via DOM scraping
-    let isAsync = extractDataAndRespond(
-      document,
-      location.href,
-      "fs",
-      sendResponse
-    );
+    let isAsync = extractDataAndRespond(document, location.href, "fs", sendResponse);
     if (isAsync) {
       return true;
     }

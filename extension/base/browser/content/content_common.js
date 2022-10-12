@@ -45,10 +45,7 @@ var loadModuleTimeout = 100;
 
 // these are duplicates of functions used in the popup code
 function getBrowserName() {
-  if (
-    (navigator.userAgent.indexOf("Opera") ||
-      navigator.userAgent.indexOf("OPR")) != -1
-  ) {
+  if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
     return "Opera";
   } else if (navigator.userAgent.indexOf("Chrome") != -1) {
     return "Chrome";
@@ -56,10 +53,7 @@ function getBrowserName() {
     return "Safari";
   } else if (navigator.userAgent.indexOf("Firefox") != -1) {
     return "Firefox";
-  } else if (
-    navigator.userAgent.indexOf("MSIE") != -1 ||
-    !!document.documentMode == true
-  ) {
+  } else if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
     //IF IE > 10
     return "IE";
   } else {
@@ -78,12 +72,7 @@ function isSafari() {
 }
 
 // this is a version of a function in a shared module but we can't use that dynamic module version here
-async function openExceptionPageForContentScript(
-  message,
-  input,
-  error,
-  requestReport
-) {
+async function openExceptionPageForContentScript(message, input, error, requestReport) {
   if (!isSafari()) {
     chrome.runtime.sendMessage(
       {
@@ -129,19 +118,14 @@ async function loadExtractDataModule(modulePath) {
       isLoadedExtractDataModuleLoading = false;
       //console.log('WikiTree Sourcer: loadExtractDataModule. Loaded. src is: ', src);
     } catch (e) {
-      console.log(
-        "WikiTree Sourcer: error in loadExtractDataModule. Path is: " +
-          src +
-          ", exception is:"
-      );
+      console.log("WikiTree Sourcer: error in loadExtractDataModule. Path is: " + src + ", exception is:");
       console.log(e);
 
       // This can happen in the case of a FreeCen search for example, we are in the middle of loading
       // the extract data module and we do a form.submit which switched to another page, killing this script.
       // That has happened in Firefox at least and in that case the error object was undefined.
       if (e) {
-        let message =
-          "Error when attempting a dynamic import of the extract data module in a content script.\n";
+        let message = "Error when attempting a dynamic import of the extract data module in a content script.\n";
         message +=
           "This may occur in versions of Firefox prior to Firefox 89 and possibly in versions of Safari prior to version 15.\n";
         message +=
@@ -152,35 +136,19 @@ async function loadExtractDataModule(modulePath) {
       loadedExtractDataModuleFailed = true;
     }
   } else if (isLoadedExtractDataModuleLoading) {
-    console.log(
-      "WikiTree Sourcer: loadExtractDataModule. Currently loading. relative path is: ",
-      modulePath
-    );
+    console.log("WikiTree Sourcer: loadExtractDataModule. Currently loading. relative path is: ", modulePath);
   } else {
-    console.log(
-      "WikiTree Sourcer: loadExtractDataModule. Already loaded relative path is: ",
-      modulePath
-    );
-    console.log(
-      "WikiTree Sourcer: loadExtractDataModule. loadedExtractDataModule is: ",
-      loadedExtractDataModule
-    );
+    console.log("WikiTree Sourcer: loadExtractDataModule. Already loaded relative path is: ", modulePath);
+    console.log("WikiTree Sourcer: loadExtractDataModule. loadedExtractDataModule is: ", loadedExtractDataModule);
   }
 }
 
-function extractDataAndRespond(
-  document,
-  url,
-  contentType,
-  sendResponse,
-  siteSpecificInput
-) {
+function extractDataAndRespond(document, url, contentType, sendResponse, siteSpecificInput) {
   //console.log('extractDataAndRespond. url: ' + url);
 
   if (!isLoadedExtractDataModuleReady) {
     if (loadedExtractDataModuleFailed) {
-      let message =
-        "Error when attempting use a dynamically imported extract data module in a content script.\n";
+      let message = "Error when attempting use a dynamically imported extract data module in a content script.\n";
       message +=
         "This may occur in versions of Firefox prior to Firefox 89 and possibly in versions of Safari prior to version 15.\n";
       message +=
@@ -194,10 +162,7 @@ function extractDataAndRespond(
       // dependencies not ready, wait a few milliseconds and try again
       if (loadExtractDataModuleRetries < maxLoadModuleRetries) {
         loadExtractDataModuleRetries++;
-        console.log(
-          "extractDataAndRespond. Retry number: ",
-          loadExtractDataModuleRetries
-        );
+        console.log("extractDataAndRespond. Retry number: ", loadExtractDataModuleRetries);
         setTimeout(function () {
           extractDataAndRespond(document, url, contentType, sendResponse);
         }, loadModuleTimeout);
@@ -213,9 +178,7 @@ function extractDataAndRespond(
       // module is not loaded and doesn't seem to be in the process of loading. This should never happen
       // but it does in Firefox when the extension is reloaded. It appears that somehow the module
       // gets loaded but then isLoadedExtractDataModuleReady gets set to false
-      console.log(
-        "extractDataAndRespond. extract module not loaded and not loading"
-      );
+      console.log("extractDataAndRespond. extract module not loaded and not loading");
       console.log("url is: " + url + ", contentType is: " + contentType);
       console.log("loadedExtractDataModule is: ");
       console.log(loadedExtractDataModule);
@@ -227,11 +190,7 @@ function extractDataAndRespond(
   //console.log('extractDataAndRespond. calling : loadedExtractDataModule.extractData');
 
   // Extract the data.
-  let extractedData = loadedExtractDataModule.extractData(
-    document,
-    url,
-    siteSpecificInput
-  );
+  let extractedData = loadedExtractDataModule.extractData(document, url, siteSpecificInput);
 
   //if (extractedData) {
   //  console.log("extractDataAndRespond, extractedData is");
@@ -261,16 +220,11 @@ function retryMessageToBackground(siteName, prefersDark) {
     { type: "contentLoaded", siteName: siteName, prefersDark: prefersDark },
     function (response) {
       // nothing to do, the message needs to send a response though to avoid console error message
-      console.log(
-        "siteContentInit 2nd attempt, received response from contentLoaded message, siteName is " +
-          siteName
-      );
+      console.log("siteContentInit 2nd attempt, received response from contentLoaded message, siteName is " + siteName);
       console.log(response);
       if (chrome.runtime.lastError) {
         // possibly there is no background script loaded, this should never happen
-        console.log(
-          "retryMessageToBackground: No response from background script, lastError message is:"
-        );
+        console.log("retryMessageToBackground: No response from background script, lastError message is:");
         console.log(chrome.runtime.lastError.message);
       }
     }
@@ -282,9 +236,7 @@ function setPopupAndIcon(siteName) {
   // The reason for the message is to get the tab id (which gets put in sender.tab.id).
   // Apparently chrome.tabs.query is not available in the content script.
 
-  let prefersDark =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  let prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   chrome.runtime.sendMessage(
     { type: "contentLoaded", siteName: siteName, prefersDark: prefersDark },
@@ -298,9 +250,7 @@ function setPopupAndIcon(siteName) {
       //}
       if (chrome.runtime.lastError) {
         // possibly there is no background script loaded, this should never happen
-        console.log(
-          "siteContentInit: No response from background script. lastError message is:"
-        );
+        console.log("siteContentInit: No response from background script. lastError message is:");
         console.log(chrome.runtime.lastError.message);
       } else if (!response || !response.success) {
         // This typically means that the background script was not listening yet and did not set
@@ -343,12 +293,7 @@ function contentMessageListener(
       return isAsync;
     }
     // Extract the data.
-    let isAsync = extractDataAndRespond(
-      document,
-      location.href,
-      siteName,
-      sendResponse
-    );
+    let isAsync = extractDataAndRespond(document, location.href, siteName, sendResponse);
     if (isAsync) {
       return true;
     }
@@ -362,12 +307,7 @@ function contentMessageListener(
   // we always respond synchronously for most requests.
 }
 
-function siteContentInit(
-  siteName,
-  extractModulePath,
-  overrideExtractHandler,
-  additionalMessageHandler
-) {
+function siteContentInit(siteName, extractModulePath, overrideExtractHandler, additionalMessageHandler) {
   //console.log("siteContentInit, site name is: " + siteName);
 
   // In the case of Safari where the permission popup comes up when you click the extension icon,
@@ -379,11 +319,7 @@ function siteContentInit(
   loadExtractDataModule(extractModulePath);
 
   // Listen for messages (from the popup script mostly)
-  chrome.runtime.onMessage.addListener(function (
-    request,
-    sender,
-    sendResponse
-  ) {
+  chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     return contentMessageListener(
       request,
       sender,

@@ -93,14 +93,8 @@ function extractUrlInfo(result, url) {
     // https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181965009/profile
     if (/\#\/trees\/[a-f0-9\-]+\/[0-9]+\/profile/.test(remainder)) {
       result.urlPath = remainder;
-      result.urlTreeId = remainder.replace(
-        /\#\/trees\/([a-f0-9\-]+)\/[0-9]+\/profile/,
-        "$1"
-      );
-      result.urlProfileId = remainder.replace(
-        /\#\/trees\/[a-f0-9\-]+\/([0-9]+)\/profile/,
-        "$1"
-      );
+      result.urlTreeId = remainder.replace(/\#\/trees\/([a-f0-9\-]+)\/[0-9]+\/profile/, "$1");
+      result.urlProfileId = remainder.replace(/\#\/trees\/[a-f0-9\-]+\/([0-9]+)\/profile/, "$1");
       return true;
     }
     return false;
@@ -166,9 +160,7 @@ function retrieveWindowVariables(document, variables) {
   var script = document.createElement("script");
   script.id = "tmpScript";
   script.appendChild(document.createTextNode(scriptContent));
-  (document.body || document.head || document.documentElement).appendChild(
-    script
-  );
+  (document.body || document.head || document.documentElement).appendChild(script);
 
   for (var i = 0; i < variables.length; i++) {
     var currVariable = variables[i];
@@ -180,9 +172,7 @@ function retrieveWindowVariables(document, variables) {
     }
   }
 
-  (document.body || document.head || document.documentElement).removeChild(
-    script
-  );
+  (document.body || document.head || document.documentElement).removeChild(script);
 
   //console.log("retrieveWindowVariables: ret is:");
   //console.log(ret);
@@ -240,10 +230,7 @@ function createRecordDataFromImageTranscriptData(transcriptData, result) {
 }
 
 function isImageForOneHousehold(result) {
-  if (
-    result.collection == "1921 Census Of England & Wales" ||
-    result.collection == "1911 Census For England & Wales"
-  ) {
+  if (result.collection == "1921 Census Of England & Wales" || result.collection == "1911 Census For England & Wales") {
     return true;
   }
 
@@ -345,9 +332,7 @@ function extractProfileData(document, result) {
       }
     }
 
-    let surnameNode = parentNode.querySelector(
-      "h2.node__name > strong.surname"
-    );
+    let surnameNode = parentNode.querySelector("h2.node__name > strong.surname");
     if (surnameNode) {
       let surname = surnameNode.textContent;
       if (surname) {
@@ -377,17 +362,13 @@ function extractProfileData(document, result) {
     return parentName;
   }
 
-  let container = document.querySelector(
-    "#maincontent > div > div.container.ng-scope"
-  );
+  let container = document.querySelector("#maincontent > div > div.container.ng-scope");
 
   if (!container) {
     return;
   }
 
-  let topProfileNode = container.querySelector(
-    "div.node.node--profile > div.node__body"
-  );
+  let topProfileNode = container.querySelector("div.node.node--profile > div.node__body");
   if (!topProfileNode) {
     return;
   }
@@ -479,9 +460,7 @@ function extractProfileData(document, result) {
       let birthIconNode = eventNode.querySelector("i.icon-birth");
       let deathIconNode = eventNode.querySelector("i.icon-death");
       let marriageIconNode = eventNode.querySelector("i.icon-marriage");
-      let eventYearNode = eventNode.querySelector(
-        "strong.timeline-event__year"
-      );
+      let eventYearNode = eventNode.querySelector("strong.timeline-event__year");
       let eventYear = "";
       if (eventYearNode) {
         eventYear = eventYearNode.textContent.trim();
@@ -512,17 +491,13 @@ function extractProfileData(document, result) {
                 }
 
                 // get place
-                let placeString = info
-                  .substring(yearIndex + eventYear.length)
-                  .trim();
+                let placeString = info.substring(yearIndex + eventYear.length).trim();
                 if (placeString) {
                   if (placeString.startsWith("in ")) {
                     placeString = placeString.substring(3);
                   }
                   if (placeString.endsWith(".")) {
-                    placeString = placeString
-                      .substring(0, placeString.length - 1)
-                      .trim();
+                    placeString = placeString.substring(0, placeString.length - 1).trim();
                   }
                 }
 
@@ -530,11 +505,7 @@ function extractProfileData(document, result) {
                   result.birthDate = dateString;
                 }
 
-                if (
-                  placeString &&
-                  (!result.birthPlace ||
-                    placeString.length > result.birthPlace.length)
-                ) {
+                if (placeString && (!result.birthPlace || placeString.length > result.birthPlace.length)) {
                   result.birthPlace = placeString;
                 }
               }
@@ -552,9 +523,7 @@ function extractProfileData(document, result) {
                 }
 
                 // get place
-                let placeString = info
-                  .substring(yearIndex + eventYear.length)
-                  .trim();
+                let placeString = info.substring(yearIndex + eventYear.length).trim();
                 if (placeString) {
                   if (placeString.startsWith("in ")) {
                     placeString = placeString.substring(3);
@@ -568,9 +537,7 @@ function extractProfileData(document, result) {
                   }
 
                   if (placeString.endsWith(".")) {
-                    placeString = placeString
-                      .substring(0, placeString.length - 1)
-                      .trim();
+                    placeString = placeString.substring(0, placeString.length - 1).trim();
                   }
                 }
 
@@ -578,11 +545,7 @@ function extractProfileData(document, result) {
                   result.deathDate = dateString;
                 }
 
-                if (
-                  placeString &&
-                  (!result.deathPlace ||
-                    placeString.length > result.deathPlace.length)
-                ) {
+                if (placeString && (!result.deathPlace || placeString.length > result.deathPlace.length)) {
                   result.deathPlace = placeString;
                 }
               }
@@ -609,17 +572,13 @@ function extractProfileData(document, result) {
                     }
 
                     // get place
-                    let placeString = info
-                      .substring(yearIndex + eventYear.length)
-                      .trim();
+                    let placeString = info.substring(yearIndex + eventYear.length).trim();
                     if (placeString) {
                       if (placeString.startsWith("in ")) {
                         placeString = placeString.substring(3);
                       }
                       if (placeString.endsWith(".")) {
-                        placeString = placeString
-                          .substring(0, placeString.length - 1)
-                          .trim();
+                        placeString = placeString.substring(0, placeString.length - 1).trim();
                       }
                     }
 
@@ -650,18 +609,10 @@ function extractProfileData(document, result) {
 function extractStyle1TranscriptionData(document, result) {
   // the class names seem generated and may not be consistent
   // the attribute data-testid seems useful.
-  let headerContentNode = document.querySelector(
-    "div[data-testid=transcript-header-content]"
-  );
-  let transcriptTableHeadingNode = document.querySelector(
-    "tr[data-testid=transcript-table-heading]"
-  );
-  let recordTableNode = document.querySelector(
-    "tbody[data-testid=transcript-record-table]"
-  );
-  let householdTableNode = document.querySelector(
-    "table[data-testid=transcript-household-table]"
-  );
+  let headerContentNode = document.querySelector("div[data-testid=transcript-header-content]");
+  let transcriptTableHeadingNode = document.querySelector("tr[data-testid=transcript-table-heading]");
+  let recordTableNode = document.querySelector("tbody[data-testid=transcript-record-table]");
+  let householdTableNode = document.querySelector("table[data-testid=transcript-household-table]");
 
   if (!headerContentNode || !recordTableNode) {
     return result;
@@ -671,9 +622,7 @@ function extractStyle1TranscriptionData(document, result) {
   let headingNode = headerContentNode.querySelector("div > h1");
   result.heading = cleanText(headingNode.textContent);
 
-  let childDivNodeList = headerContentNode.querySelectorAll(
-    ":scope div:nth-child(2) > div"
-  );
+  let childDivNodeList = headerContentNode.querySelectorAll(":scope div:nth-child(2) > div");
   if (childDivNodeList.length > 0) {
     result.collection = "";
     for (let divNode of childDivNodeList) {
@@ -796,15 +745,11 @@ function extractStyle1TranscriptionData(document, result) {
   }
 
   // image link, note there can be 2 matches for the first query
-  let transcriptHeaderNodeList = document.querySelectorAll(
-    "article[data-testid=transcript-header]"
-  );
+  let transcriptHeaderNodeList = document.querySelectorAll("article[data-testid=transcript-header]");
   for (let transcriptHeaderNode of transcriptHeaderNodeList) {
     let divHeader = transcriptHeaderNode.parentNode;
     if (divHeader) {
-      let imgNode = divHeader.querySelector(
-        'a[href^="https://search.findmypast."]'
-      );
+      let imgNode = divHeader.querySelector('a[href^="https://search.findmypast."]');
       //console.log("imgNode is:");
       //console.log(imgNode);
       if (imgNode) {

@@ -22,11 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  loadDataCache,
-  cachedDataCache,
-  isCachedDataCacheReady,
-} from "/base/browser/common/data_cache.mjs";
+import { loadDataCache, cachedDataCache, isCachedDataCacheReady } from "/base/browser/common/data_cache.mjs";
 import {
   addBuildCitationMenuItems,
   addMenuItemWithSubtitle,
@@ -39,10 +35,7 @@ import {
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  addStandardMenuEnd,
-  buildMinimalMenuWithMessage,
-} from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
@@ -78,10 +71,7 @@ import {
 import { buildCitation } from "../core/ancestry_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
-import {
-  fetchAncestrySharingDataObj,
-  extractRecordHtmlFromUrl,
-} from "./ancestry_fetch.mjs";
+import { fetchAncestrySharingDataObj, extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Prefetch data and functions
@@ -113,19 +103,12 @@ function displayPrefetchErrorForSharingData() {
 }
 
 function displayPrefetchWaitingMessage(baseMessage, isRequired) {
-  if (
-    ancestryPrefetch.isPrefetchedSharingDataObjReady &&
-    ancestryPrefetch.timeoutCount > 5
-  ) {
+  if (ancestryPrefetch.isPrefetchedSharingDataObjReady && ancestryPrefetch.timeoutCount > 5) {
     let message = baseMessage + "...\nWaiting for Ancestry sharing data\n";
 
-    let timeRemaining =
-      ((prefetchTimeoutMax - ancestryPrefetch.timeoutCount) *
-        prefetchTimeoutDelay) /
-      1000;
+    let timeRemaining = ((prefetchTimeoutMax - ancestryPrefetch.timeoutCount) * prefetchTimeoutDelay) / 1000;
 
-    message +=
-      "If not retrieved in:\n" + timeRemaining.toFixed(1) + " seconds\n";
+    message += "If not retrieved in:\n" + timeRemaining.toFixed(1) + " seconds\n";
 
     if (isRequired) {
       message += "the operation cannot be performed.\n";
@@ -151,10 +134,7 @@ function ancestryDependencyListener() {
     );
   }
 
-  if (
-    isCachedDataCacheReady &&
-    ancestryPrefetch.isPrefetchedSharingDataObjReady
-  ) {
+  if (isCachedDataCacheReady && ancestryPrefetch.isPrefetchedSharingDataObjReady) {
     ancestryPrefetch.areBuildCitationDependenciesReady = true;
   }
 
@@ -193,9 +173,7 @@ async function getAncestrySharingDataObj(data, dependencyListener) {
       // This is not considered an error there just will be no sharing link
     }
   } catch (e) {
-    console.log(
-      "getAncestrySharingDataObj caught exception on fetchAncestrySharingDataObj:"
-    );
+    console.log("getAncestrySharingDataObj caught exception on fetchAncestrySharingDataObj:");
     console.log(e);
   }
 
@@ -266,10 +244,7 @@ async function ancestryBuildCitation(data) {
 
   // poss household
   if (doesCitationWantHouseholdTable(data.type, data.generalizedData)) {
-    getDataForCitationAndHouseholdRecords(
-      data,
-      ancestryBuildCitationWithLinkData
-    );
+    getDataForCitationAndHouseholdRecords(data, ancestryBuildCitationWithLinkData);
   } else {
     processWithFetchedLinkData(data, ancestryBuildCitationWithLinkData);
   }
@@ -291,33 +266,29 @@ async function ancestryBuildSharingTemplate(extractedData) {
     return;
   }
 
-  doAsyncActionWithCatch(
-    "Building Sharing Template",
-    extractedData,
-    async function () {
-      if (extractedData.pageType == "sharingUrl") {
-        // we already have the sharing template in the extractedData so we just need to store it.
-        var template = extractedData.ancestryTemplate;
+  doAsyncActionWithCatch("Building Sharing Template", extractedData, async function () {
+    if (extractedData.pageType == "sharingUrl") {
+      // we already have the sharing template in the extractedData so we just need to store it.
+      var template = extractedData.ancestryTemplate;
+      writeToClipboard(template, "Sharing template");
+    } else {
+      // this is a record or image page
+      let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
+      if (dataObj) {
+        let url = dataObj.url;
+
+        // https://www.ancestry.com/sharing/24274440?h=95cf5c
+        let num1 = url.replace(/.*\/sharing\/(\w+)\?h\=\w+/, "$1");
+        let num2 = url.replace(/.*\/sharing\/\w+\?h\=(\w+)/, "$1");
+
+        let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
+
         writeToClipboard(template, "Sharing template");
       } else {
-        // this is a record or image page
-        let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
-        if (dataObj) {
-          let url = dataObj.url;
-
-          // https://www.ancestry.com/sharing/24274440?h=95cf5c
-          let num1 = url.replace(/.*\/sharing\/(\w+)\?h\=\w+/, "$1");
-          let num2 = url.replace(/.*\/sharing\/\w+\?h\=(\w+)/, "$1");
-
-          let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
-
-          writeToClipboard(template, "Sharing template");
-        } else {
-          displayMessageWithIcon("warning", "Error building sharing template.");
-        }
+        displayMessageWithIcon("warning", "Error building sharing template.");
       }
     }
-  );
+  });
 }
 
 async function ancestryBuildSharingUrl(extractedData) {
@@ -336,25 +307,21 @@ async function ancestryBuildSharingUrl(extractedData) {
     return;
   }
 
-  doAsyncActionWithCatch(
-    "Building Sharing URL",
-    extractedData,
-    async function () {
-      if (extractedData.pageType == "sharingUrl") {
-        // we already have the sharing template in the extractedData so we just need to store it.
-        var sharingUrl = extractedData.sharingUrl;
-        writeToClipboard(sharingUrl, "Sharing URL");
+  doAsyncActionWithCatch("Building Sharing URL", extractedData, async function () {
+    if (extractedData.pageType == "sharingUrl") {
+      // we already have the sharing template in the extractedData so we just need to store it.
+      var sharingUrl = extractedData.sharingUrl;
+      writeToClipboard(sharingUrl, "Sharing URL");
+    } else {
+      // this is a record or image page
+      let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
+      if (dataObj) {
+        writeToClipboard(dataObj.url, "Sharing URL");
       } else {
-        // this is a record or image page
-        let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
-        if (dataObj) {
-          writeToClipboard(dataObj.url, "Sharing URL");
-        } else {
-          displayMessageWithIcon("warning", "Error building sharing URL.");
-        }
+        displayMessageWithIcon("warning", "Error building sharing URL.");
       }
     }
-  );
+  });
 }
 
 async function ancestryBuildHouseholdTableWithLinkedRecords(data) {
@@ -407,10 +374,7 @@ async function ancestryBuildHouseholdTable(data) {
   }
 
   // for Ancestry it is necessary to get extra info from linked records
-  getDataForLinkedHouseholdRecords(
-    data,
-    ancestryBuildHouseholdTableWithLinkedRecords
-  );
+  getDataForLinkedHouseholdRecords(data, ancestryBuildHouseholdTableWithLinkedRecords);
 }
 
 function ancestryGoToRecord(data) {
@@ -447,10 +411,7 @@ function ancestryGoToRecord(data) {
     window.close();
   } else {
     // failed
-    displayMessageWithIcon(
-      "warning",
-      "The Image URL is not in the expected format."
-    );
+    displayMessageWithIcon("warning", "The Image URL is not in the expected format.");
   }
 }
 
@@ -470,14 +431,9 @@ function ancestryGoToFullSizeSharingImage(data) {
   }
 }
 
-async function extractRecordFromUrlFromPersonSourceCitation(
-  recordUrl,
-  originalExtractedData
-) {
+async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalExtractedData) {
   //console.log("extractRecordFromUrlFromPersonSourceCitation");
-  displayMessage(
-    "WikiTree Sourcer fetching full record page ...\n(This might take several seconds)"
-  );
+  displayMessage("WikiTree Sourcer fetching full record page ...\n(This might take several seconds)");
 
   let extractResult = await extractRecordHtmlFromUrl(recordUrl, "Full");
 
@@ -491,12 +447,10 @@ async function extractRecordFromUrlFromPersonSourceCitation(
   } else {
     // ??
     console.log(
-      "Failed response from ancestry extractRecordFromUrlFromPersonSourceCitation. recordUrl is: " +
-        recordUrl
+      "Failed response from ancestry extractRecordFromUrlFromPersonSourceCitation. recordUrl is: " + recordUrl
     );
     let message = "Error fetching linked record from URL:\n\n" + recordUrl;
-    message +=
-      "\n\nThis could be due to internet connectivity issues or server issues.";
+    message += "\n\nThis could be due to internet connectivity issues or server issues.";
     message += "\n\nPlease try again.\n";
     displayMessageWithIcon("warning", message);
   }
@@ -580,10 +534,7 @@ function addAncestryImageBuildCitationMenuItems(menu, data) {
 }
 
 function addAncestryGoToFullImageMenuItem(menu, data) {
-  if (
-    data.extractedData.pageType == "sharingImageOrRecord" &&
-    data.extractedData.fullSizeSharingImageUrl
-  ) {
+  if (data.extractedData.pageType == "sharingImageOrRecord" && data.extractedData.fullSizeSharingImageUrl) {
     addMenuItem(menu, "Go to Fullsize Sharing Image Page", function (element) {
       ancestryGoToFullSizeSharingImage(data);
     });
@@ -622,8 +573,7 @@ async function setupAncestryPopupMenuWithLinkData(data) {
   } else if (extractedData.pageType == "record") {
     // if the user doesn't have a subscription add a heading to that effect
     if (extractedData.isLimitedDueToSubscription) {
-      let subMessage =
-        "It appears that your subscription does not give access to this record.";
+      let subMessage = "It appears that your subscription does not give access to this record.";
       subMessage += " Only limited information could be extracted.";
       addItalicMessageMenuItem(menu, subMessage, "yellowBackground");
     }
@@ -631,13 +581,7 @@ async function setupAncestryPopupMenuWithLinkData(data) {
     await addSearchMenus(menu, data, backFunction, "ancestry");
     addMenuDivider(menu);
 
-    addBuildCitationMenuItems(
-      menu,
-      data,
-      ancestryBuildCitation,
-      backFunction,
-      generalizeDataGivenRecordType
-    );
+    addBuildCitationMenuItems(menu, data, ancestryBuildCitation, backFunction, generalizeDataGivenRecordType);
     addAncestryBuildHouseholdTableMenuItem(menu, data);
     addAncestryGoToImageMenuItem(menu, data);
   } else if (extractedData.pageType == "image") {
@@ -666,10 +610,7 @@ async function setupAncestryPopupMenu(extractedData) {
 
   if (extractedData && extractedData.pageType == "personSourceCitation") {
     // we want to go to the record URL and do an extract there
-    extractRecordFromUrlFromPersonSourceCitation(
-      extractedData.recordUrl,
-      extractedData
-    );
+    extractRecordFromUrlFromPersonSourceCitation(extractedData.recordUrl, extractedData);
     return; // the above call will asyncronously call setupAncestryPopupMenu again
   }
 
@@ -677,15 +618,9 @@ async function setupAncestryPopupMenu(extractedData) {
     setupAncestryPopupMenu(extractedData);
   };
 
-  if (
-    !extractedData ||
-    !extractedData.pageType ||
-    extractedData.pageType == "unknown"
-  ) {
-    let message =
-      "WikiTree Sourcer doesn't know how to extract data from this page.";
-    message +=
-      "\n\nIt looks like an Ancestry page but not a record, image or person page.";
+  if (!extractedData || !extractedData.pageType || extractedData.pageType == "unknown") {
+    let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
+    message += "\n\nIt looks like an Ancestry page but not a record, image or person page.";
     let data = { extractedData: extractedData };
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
@@ -700,8 +635,7 @@ async function setupAncestryPopupMenu(extractedData) {
 
   if (!generalizedData || !generalizedData.hasValidData) {
     let message = "WikiTree Sourcer could not interpret the data on this page.";
-    message +=
-      "\n\nIt looks like a supported Ancestry page but the data generalize failed.";
+    message += "\n\nIt looks like a supported Ancestry page but the data generalize failed.";
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
   }
@@ -713,11 +647,7 @@ async function setupAncestryPopupMenu(extractedData) {
     getAncestrySharingDataObj(data, ancestryDependencyListener);
   }
 
-  if (
-    generalizedData.sourceType == "record" &&
-    generalizedData.recordType == RT.Unclassified &&
-    generalizedData.role
-  ) {
+  if (generalizedData.sourceType == "record" && generalizedData.recordType == RT.Unclassified && generalizedData.role) {
     // use linked record to try to determine record type
     useLinkedRecordsToDetermineType(data);
   } else {

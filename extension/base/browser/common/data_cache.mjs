@@ -49,10 +49,7 @@ async function storeDataCache(dataCache) {
   }
 }
 
-async function updateDataCacheWithWikiTreeExtract(
-  extractedData,
-  generalizedData
-) {
+async function updateDataCacheWithWikiTreeExtract(extractedData, generalizedData) {
   let dateToday = new Date();
   let timeStamp = dateToday.getTime();
 
@@ -131,9 +128,4 @@ async function loadDataCache(listenerFunction) {
   }
 }
 
-export {
-  updateDataCacheWithWikiTreeExtract,
-  loadDataCache,
-  cachedDataCache,
-  isCachedDataCacheReady,
-};
+export { updateDataCacheWithWikiTreeExtract, loadDataCache, cachedDataCache, isCachedDataCacheReady };

@@ -59,17 +59,9 @@ const FreecenData = {
     return collections;
   },
 
-  setDefaultSearchParameters: function (
-    generalizedData,
-    parameters,
-    options
-  ) {},
+  setDefaultSearchParameters: function (generalizedData, parameters, options) {},
 
-  updateParametersOnCollectionChange: function (
-    generalizedData,
-    parameters,
-    options
-  ) {},
+  updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
 };
 
 export { FreecenData };

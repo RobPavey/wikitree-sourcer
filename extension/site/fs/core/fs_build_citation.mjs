@@ -40,10 +40,7 @@ function buildFsCitationDataString(data) {
     // find the middle part like:
     // "Isabella Pavey in household of William Pavey, East Stonehouse, Devon, England, United Kingdom"
 
-    let dataString = data.citation.replace(
-      /^.*\<i\>FamilySearch\<\/i\>\s+\([^\)]+\)\,\s*([^\;]+).*$/,
-      "$1"
-    );
+    let dataString = data.citation.replace(/^.*\<i\>FamilySearch\<\/i\>\s+\([^\)]+\)\,\s*([^\;]+).*$/, "$1");
     if (dataString && dataString != data.citation) {
       // Sometimes there are commas with no space after them, fix that.
       dataString = dataString.replace(/\,(\w)/g, ", $1");
@@ -140,10 +137,7 @@ function buildDataString(data, gd, dataStyle, builder) {
     }
 
     if (data.sourceTitleForPerson) {
-      let dataString = data.sourceTitleForPerson.replace(
-        /^([^\,]*)\,.*$/,
-        "$1"
-      );
+      let dataString = data.sourceTitleForPerson.replace(/^([^\,]*)\,.*$/, "$1");
       return dataString;
     }
 
@@ -171,10 +165,7 @@ function buildDataString(data, gd, dataStyle, builder) {
     return dataString;
   }
 
-  dataString = builder.buildDataList(
-    recordData,
-    removeUnwantedKeysForDataString
-  );
+  dataString = builder.buildDataList(recordData, removeUnwantedKeysForDataString);
 
   return dataString;
 }
@@ -194,11 +185,7 @@ function getAdditionalInfo(data, gd, builder) {
     }
   }
 
-  if (
-    dataStyle == "string" ||
-    dataStyle == "list" ||
-    dataStyle == "fsCitation"
-  ) {
+  if (dataStyle == "string" || dataStyle == "list" || dataStyle == "fsCitation") {
     return buildDataString(data, gd, dataStyle, builder);
   }
 
@@ -263,10 +250,7 @@ function buildSourceReferenceFromRecord(data, gd, options) {
   let refData = data.referenceData;
 
   if (gd.isRecordInCountry("United Kingdom")) {
-    if (
-      gd.recordType == RT.Census &&
-      data.collectionTitle.startsWith("England and Wales Census")
-    ) {
+    if (gd.recordType == RT.Census && data.collectionTitle.startsWith("England and Wales Census")) {
       // The Ancestry reference would look like:
       // Class: HO107; Piece: 276; Book: 6; Civil Parish: East Stonehouse; County: Devon; Enumeration District: 6; Folio: 21; Page: 37; Line: 20; GSU roll: 241335<br/>
 
@@ -376,10 +360,7 @@ function buildSourceReferenceFromFsCitation(data, options) {
 }
 
 function buildSourceReference(data, gd, options) {
-  if (
-    options.citation_fs_sourceRef == "fsCitationShort" ||
-    options.citation_fs_sourceRef == "fsCitationLong"
-  ) {
+  if (options.citation_fs_sourceRef == "fsCitationShort" || options.citation_fs_sourceRef == "fsCitationLong") {
     let refString = buildSourceReferenceFromFsCitation(data, options);
     if (refString) {
       return refString;
@@ -447,18 +428,13 @@ function buildCoreCitation(data, gd, builder) {
 
   var recordUrl = data.personRecordUrl;
 
-  if (
-    (data.fsImageUrl || data.externalImageUrl) &&
-    data.externalImageUrl != "bad"
-  ) {
+  if ((data.fsImageUrl || data.externalImageUrl) && data.externalImageUrl != "bad") {
     let text = "";
     if (data.externalImageUrl) {
       if (builder.options.citation_fs_includeExternalImageLink) {
         if (data.externalImageUrl.includes("findmypast")) {
           text += "[" + data.externalImageUrl + " FindMyPast Image]";
-          let subReqString = builder.getSubReqString(
-            builder.options.citation_fs_subscriptionRequired
-          );
+          let subReqString = builder.getSubReqString(builder.options.citation_fs_subscriptionRequired);
           if (subReqString) {
             text += " (" + subReqString + ")";
           }
@@ -487,10 +463,7 @@ function buildCoreCitation(data, gd, builder) {
           nextParamIndex = url.length;
         }
 
-        let memorialId = url.substring(
-          paramIndex + idParam.length,
-          nextParamIndex
-        );
+        let memorialId = url.substring(paramIndex + idParam.length, nextParamIndex);
         builder.externalSiteLink = "{{FindAGrave|" + memorialId + "}}";
       }
     } else {
@@ -582,9 +555,7 @@ function getImageRefTitle(catalogRecordName, filmTitle) {
   // no matches
   if (catalogRecordName && filmTitle) {
     // choose the shorter one
-    return filmTitle.length < catalogRecordName.length
-      ? filmTitle
-      : catalogRecordName;
+    return filmTitle.length < catalogRecordName.length ? filmTitle : catalogRecordName;
   }
   if (catalogRecordName) {
     return catalogRecordName;
@@ -608,12 +579,7 @@ function buildImageCitation(data, gd, builder) {
   let imageLink = buildFsImageLink(data.url);
   builder.recordLinkOrTemplate = imageLink;
 
-  builder.dataString = buildDataString(
-    data,
-    gd,
-    builder.options.citation_fs_dataStyle,
-    builder
-  );
+  builder.dataString = buildDataString(data, gd, builder.options.citation_fs_dataStyle, builder);
 
   builder.sourceReference = buildSourceReference(data, gd, builder.options);
   if (!builder.sourceReference) {
@@ -642,10 +608,7 @@ function buildImageCitation(data, gd, builder) {
       } else {
         newSourceReference += "; ";
       }
-      if (
-        builder.type != "source" &&
-        builder.options.citation_general_addNewlinesWithinBody
-      ) {
+      if (builder.type != "source" && builder.options.citation_general_addNewlinesWithinBody) {
         newSourceReference += "\n";
       }
     }
@@ -662,8 +625,7 @@ function buildImageCitation(data, gd, builder) {
       if (!imageNumber) {
         imageNumber = "?";
       }
-      newSourceReference +=
-        " > image " + imageNumber + " of " + data.totalImages;
+      newSourceReference += " > image " + imageNumber + " of " + data.totalImages;
     }
   }
 
@@ -673,10 +635,7 @@ function buildImageCitation(data, gd, builder) {
 
   builder.sourceReference = newSourceReference;
 
-  builder.meaningfulTitle = getImageRefTitle(
-    data.catalogRecordName,
-    data.filmTitle
-  );
+  builder.meaningfulTitle = getImageRefTitle(data.catalogRecordName, data.filmTitle);
 }
 
 function getRefTitle(ed, gd) {
@@ -695,9 +654,7 @@ function getRefTitle(ed, gd) {
       type: RT.ElectoralRegister,
       defaultTitle: "Voter Registration",
       addYear: true,
-      titleMatches: [
-        { title: "Electoral Register", matches: ["Electoral Register"] },
-      ],
+      titleMatches: [{ title: "Electoral Register", matches: ["Electoral Register"] }],
     },
   ];
 

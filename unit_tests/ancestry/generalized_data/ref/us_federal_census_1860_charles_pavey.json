@@ -21,10 +21,7 @@
   },
   "occupation": "Farmer",
   "ageAtEvent": "53",
-  "householdArrayFields": [
-    "name",
-    "age"
-  ],
+  "householdArrayFields": ["name", "age"],
   "householdArray": [
     {
       "name": "Charles Pavey",

@@ -22,15 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  WtsPlace,
-  WtsName,
-  WtsDate,
-} from "../../../base/core/generalize_data_utils.mjs";
-import {
-  GeneralizedData,
-  dateQualifiers,
-} from "../../../base/core/generalize_data_utils.mjs";
+import { WtsPlace, WtsName, WtsDate } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
 function getQualifier(status) {
   if (status == undefined || status == "") {
@@ -162,18 +155,10 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
 
     let lnab = name.substring(parenIndex + 1, closeParenIndex).trim();
     if (lnab != lnabFromId) {
-      console.log(
-        "LNAB in name '" +
-          name +
-          "' does not match LNAB in wikiId '" +
-          wikiId +
-          "'"
-      );
+      console.log("LNAB in name '" + name + "' does not match LNAB in wikiId '" + wikiId + "'");
     }
 
-    object.lastNameAtBirth = name
-      .substring(parenIndex + 1, closeParenIndex)
-      .trim();
+    object.lastNameAtBirth = name.substring(parenIndex + 1, closeParenIndex).trim();
 
     // the part after the close paren could have suffixes. We could in some cases know the
     // spouses LNAB but they are not guaranteed to be the *last* husband
@@ -183,8 +168,7 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
     object.lastNameAtDeath = lastNameAtDeath;
 
     object.nameObj.lastName = object.lastNameAtBirth;
-    object.nameObj.name =
-      object.nameObj.forenames + " " + object.nameObj.lastName;
+    object.nameObj.name = object.nameObj.forenames + " " + object.nameObj.lastName;
   }
 
   return object;

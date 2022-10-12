@@ -62,31 +62,19 @@ class FreebmdUriBuilder {
   }
 
   addSurname(string) {
-    this.addSearchParameter(
-      "surname",
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter(
-      "given",
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter("given", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addOtherSurname(string) {
-    this.addSearchParameter(
-      "s_surname",
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter("s_surname", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addOtherGivenNames(string) {
-    this.addSearchParameter(
-      "s_given",
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter("s_given", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {

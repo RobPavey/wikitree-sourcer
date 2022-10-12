@@ -22,12 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addBackMenuItem,
-  beginMainMenu,
-  endMainMenu,
-  addBreak,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { addBackMenuItem, beginMainMenu, endMainMenu, addBreak } from "/base/browser/popup/popup_menu_building.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
 function getCategoriesLabelText(siteData, gd, parameters) {
@@ -180,11 +175,7 @@ function addLastNameSelector(data, siteData, listElement, parameters) {
     }
 
     let lastNamesArray = gd.inferPersonLastNamesArray(gd);
-    for (
-      let lastNameIndex = 0;
-      lastNameIndex < lastNamesArray.length;
-      ++lastNameIndex
-    ) {
+    for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
       let lastName = lastNamesArray[lastNameIndex];
       let option = document.createElement("option");
       option.value = lastNameIndex;
@@ -230,9 +221,7 @@ function addSpouseSelector(data, siteData, listElement, parameters) {
           spouseName = name;
         }
       }
-      let marriageYear = spouse.marriageDate
-        ? spouse.marriageDate.getYearString()
-        : "????";
+      let marriageYear = spouse.marriageDate ? spouse.marriageDate.getYearString() : "????";
       let labelText = spouseName + " (m. " + marriageYear + ")";
 
       option = document.createElement("option");
@@ -248,19 +237,13 @@ function addSpouseSelector(data, siteData, listElement, parameters) {
   if (siteData.includeSpouses(gd, parameters)) {
     if (gd.spouses && gd.spouses.length > 0) {
       addBreakIfNeeded(listElement);
-      addSelector(
-        listElement,
-        "spouseSelector",
-        "Spouse/marriage to include: ",
-        fillSpouseSelector,
-        function (event) {
-          parameters.spouseIndex = event.target.value;
-          if (typeof siteData.updateParametersOnSpouseChange === "function") {
-            siteData.updateParametersOnSpouseChange(gd, parameters, options);
-          }
-          setupParametersElements(data, siteData, listElement, parameters);
+      addSelector(listElement, "spouseSelector", "Spouse/marriage to include: ", fillSpouseSelector, function (event) {
+        parameters.spouseIndex = event.target.value;
+        if (typeof siteData.updateParametersOnSpouseChange === "function") {
+          siteData.updateParametersOnSpouseChange(gd, parameters, options);
         }
-      );
+        setupParametersElements(data, siteData, listElement, parameters);
+      });
     }
   }
 }
@@ -346,10 +329,7 @@ function addOtherPersonSelector(data, siteData, listElement, parameters) {
   }
 
   let gd = data.generalizedData;
-  if (
-    typeof siteData.includeOtherPerson === "function" &&
-    siteData.includeOtherPerson(gd, parameters)
-  ) {
+  if (typeof siteData.includeOtherPerson === "function" && siteData.includeOtherPerson(gd, parameters)) {
     addBreakIfNeeded(listElement);
     let otherPersonSelector = addSelector(
       listElement,
@@ -459,12 +439,7 @@ function setupParametersElements(data, siteData, listElement, parameters) {
   addWarningMessages(data, siteData, listElement, parameters);
 }
 
-function setupSearchWithParametersSubMenu(
-  data,
-  backFunction,
-  siteData,
-  searchFunction
-) {
+function setupSearchWithParametersSubMenu(data, backFunction, siteData, searchFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -483,11 +458,7 @@ function setupSearchWithParametersSubMenu(
   };
 
   if (siteData) {
-    siteData.setDefaultSearchParameters(
-      data.generalizedData,
-      parameters,
-      options
-    );
+    siteData.setDefaultSearchParameters(data.generalizedData, parameters, options);
 
     let parametersDiv = document.createElement("div");
     let listElement = document.createElement("ul");

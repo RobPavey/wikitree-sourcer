@@ -101,24 +101,15 @@ class FgUriBuilder {
   }
 
   addFirstName(string) {
-    this.addSearchParameter(
-      "firstname",
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter("firstname", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addMiddleName(string) {
-    this.addSearchParameter(
-      "middlename",
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter("middlename", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addLastName(string) {
-    this.addSearchParameter(
-      "lastname",
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter("lastname", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   includeMaidenName() {

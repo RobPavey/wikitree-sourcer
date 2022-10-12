@@ -56,20 +56,14 @@ function macSecondMonitorWorkaround() {
             animation: redraw 1s linear infinite;
           }
         `);
-        document.adoptedStyleSheets = [
-          ...document.adoptedStyleSheets,
-          fontFaceSheet,
-        ];
+        document.adoptedStyleSheets = [...document.adoptedStyleSheets, fontFaceSheet];
       }
     });
   }
 }
 
 function getBrowserName() {
-  if (
-    (navigator.userAgent.indexOf("Opera") ||
-      navigator.userAgent.indexOf("OPR")) != -1
-  ) {
+  if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
     return "Opera";
   } else if (navigator.userAgent.indexOf("Chrome") != -1) {
     return "Chrome";
@@ -77,10 +71,7 @@ function getBrowserName() {
     return "Safari";
   } else if (navigator.userAgent.indexOf("Firefox") != -1) {
     return "Firefox";
-  } else if (
-    navigator.userAgent.indexOf("MSIE") != -1 ||
-    !!document.documentMode == true
-  ) {
+  } else if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
     //IF IE > 10
     return "IE";
   } else {
@@ -332,11 +323,7 @@ async function displayMessageThenClosePopup(message1, message2) {
   }, 1500);
 }
 
-async function displayMessageWithIconThenClosePopup(
-  iconType,
-  message1,
-  message2
-) {
+async function displayMessageWithIconThenClosePopup(iconType, message1, message2) {
   displayMessageWithIcon(iconType, message1, message2);
 
   setTimeout(function () {
@@ -430,11 +417,7 @@ async function doAsyncActionWithCatch(actionText, input, actionFunc) {
     await actionFunc();
   } catch (error) {
     console.log("Error:", error.stack);
-    displayMessageWithIcon(
-      "warning",
-      "An error occurred during " + actionText,
-      error.stack
-    );
+    displayMessageWithIcon("warning", "An error occurred during " + actionText, error.stack);
 
     let message = "Error while " + actionText;
     openExceptionPage(message, input, error, true);
@@ -619,8 +602,7 @@ function setupUnclassifiedBuildCitationSubMenu(
 ) {
   let needsRecordType =
     manualClassification.isRecordTypeNeeded ||
-    (manualClassification.isRecordTypeNeededForNarrative &&
-      data.type == "narrative");
+    (manualClassification.isRecordTypeNeededForNarrative && data.type == "narrative");
   let needsRefTitle = manualClassification.isRefTitleNeeded;
 
   // This is used for submenu list - it is not as advanced as GeneraizedData.getRefTitle.
@@ -731,9 +713,7 @@ function setupUnclassifiedBuildCitationSubMenu(
   // Explanation
   let reasonLabel = document.createElement("label");
   reasonLabel.className = "dialogInput";
-  reasonLabel.appendChild(
-    document.createTextNode("Could not identify the record type.")
-  );
+  reasonLabel.appendChild(document.createTextNode("Could not identify the record type."));
   menu.list.appendChild(reasonLabel);
 
   if (needsRecordType) {
@@ -766,14 +746,10 @@ function setupUnclassifiedBuildCitationSubMenu(
     addBreak(menu.list);
 
     // text input
-    textInputField = addTextInput(
-      "refTitleInput",
-      "Choose meaningful title: ",
-      function (event) {
-        refTitle = event.target.value;
-        //console.log("set ref title to: " + refTitle);
-      }
-    );
+    textInputField = addTextInput("refTitleInput", "Choose meaningful title: ", function (event) {
+      refTitle = event.target.value;
+      //console.log("set ref title to: " + refTitle);
+    });
   }
 
   // final button
@@ -821,17 +797,11 @@ function addBuildCitationMenuItem(
 ) {
   let suffix = "";
   if (type == "narrative") {
-    if (
-      manualClassification.isRecordTypeNeededForNarrative ||
-      manualClassification.isRefTitleNeeded
-    ) {
+    if (manualClassification.isRecordTypeNeededForNarrative || manualClassification.isRefTitleNeeded) {
       suffix = "...";
     }
   } else {
-    if (
-      manualClassification.isRecordTypeNeeded ||
-      manualClassification.isRefTitleNeeded
-    ) {
+    if (manualClassification.isRecordTypeNeeded || manualClassification.isRefTitleNeeded) {
       suffix = "...";
     }
   }
@@ -870,28 +840,14 @@ function addBuildCitationMenuItem(
   }
 }
 
-function addBuildCitationMenuItems(
-  menu,
-  data,
-  buildFunction,
-  backFunction,
-  generalizeFunction
-) {
+function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, generalizeFunction) {
   if (data.extractedData.pageType && data.extractedData.pageType != "record") {
     return;
   }
 
   let manualClassification = isManualClassificationNeeded(data);
 
-  addBuildCitationMenuItem(
-    menu,
-    data,
-    manualClassification,
-    buildFunction,
-    "inline",
-    backFunction,
-    generalizeFunction
-  );
+  addBuildCitationMenuItem(menu, data, manualClassification, buildFunction, "inline", backFunction, generalizeFunction);
   addBuildCitationMenuItem(
     menu,
     data,
@@ -901,15 +857,7 @@ function addBuildCitationMenuItems(
     backFunction,
     generalizeFunction
   );
-  addBuildCitationMenuItem(
-    menu,
-    data,
-    manualClassification,
-    buildFunction,
-    "source",
-    backFunction,
-    generalizeFunction
-  );
+  addBuildCitationMenuItem(menu, data, manualClassification, buildFunction, "source", backFunction, generalizeFunction);
 }
 
 // Global to remember the popup menu width before EditCitation
@@ -1004,8 +952,7 @@ function setupSupportSubmenuMenu(data, backFunction) {
 
     let introLabel = document.createElement("label");
     introLabel.className = "messageLabel";
-    introLabel.innerText =
-      "WikiTree Sourcer is a free browser extension developed by Rob Pavey.";
+    introLabel.innerText = "WikiTree Sourcer is a free browser extension developed by Rob Pavey.";
     menu.list.appendChild(introLabel);
 
     // Buy me a Coffee
@@ -1072,12 +1019,7 @@ function setupSupportSubmenuMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupSearchCollectionsSubMenu(
-  data,
-  siteName,
-  searchCollectionFunction,
-  backFunction
-) {
+async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFunction, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -1091,11 +1033,7 @@ async function setupSearchCollectionsSubMenu(
     birthYear: gd.inferBirthYear(),
     deathYear: gd.inferDeathYear(),
   };
-  let collectionArray = RC.findCollectionsForSiteWithinDateRangeAndCountries(
-    siteName,
-    dates,
-    countryArray
-  );
+  let collectionArray = RC.findCollectionsForSiteWithinDateRangeAndCountries(siteName, dates, countryArray);
 
   //console.log("setupSearchCollectionsSubMenu, countryArray is:");
   //console.log(countryArray);
@@ -1109,10 +1047,7 @@ async function setupSearchCollectionsSubMenu(
       });
     }
   } else {
-    addMessageMenuItem(
-      menu,
-      "No supported collections in date range and country:"
-    );
+    addMessageMenuItem(menu, "No supported collections in date range and country:");
 
     if (dates) {
       let datesString = "";
@@ -1167,11 +1102,7 @@ function addSameRecordMenuItem(menu, data, siteName, searchFunction) {
         gd.inferEventYear()
       );
       if (fsCollectionId) {
-        addMenuItem(
-          menu,
-          "Search the same collection for the same record",
-          searchFunction
-        );
+        addMenuItem(menu, "Search the same collection for the same record", searchFunction);
       }
     }
   }

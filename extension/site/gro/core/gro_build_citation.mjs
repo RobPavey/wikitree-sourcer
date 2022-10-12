@@ -91,11 +91,7 @@ function buildGroSearchUrl(data) {
     builder.addYear(data.eventYear);
     builder.addYearRange("0");
     builder.addSurname(data.lastName);
-    if (
-      data.mothersMaidenName != undefined &&
-      data.mothersMaidenName != "" &&
-      data.mothersMaidenName != "-"
-    ) {
+    if (data.mothersMaidenName != undefined && data.mothersMaidenName != "" && data.mothersMaidenName != "-") {
       builder.addMothersSurname(data.mothersMaidenName);
     }
   } else {
@@ -128,10 +124,7 @@ function buildGroSearchUrl(data) {
   if (data.referenceVolume != undefined && data.referenceVolume != "") {
     builder.addVolume(data.referenceVolume);
     builder.addPage(data.referencePage);
-  } else if (
-    data.referenceRegister != undefined &&
-    data.referenceRegister != ""
-  ) {
+  } else if (data.referenceRegister != undefined && data.referenceRegister != "") {
     builder.addRegister(data.referenceRegister);
   }
 
@@ -157,17 +150,8 @@ function buildGroUrl(data, builder) {
 }
 
 function getQuarterName(data) {
-  const quarterNames = [
-    "Jan-Feb-Mar",
-    "Apr-May-Jun",
-    "Jul-Aug-Sep",
-    "Oct-Nov-Dec",
-  ];
-  if (
-    data.eventQuarter != undefined &&
-    data.eventQuarter >= 1 &&
-    data.eventQuarter <= 4
-  ) {
+  const quarterNames = ["Jan-Feb-Mar", "Apr-May-Jun", "Jul-Aug-Sep", "Oct-Nov-Dec"];
+  if (data.eventQuarter != undefined && data.eventQuarter >= 1 && data.eventQuarter <= 4) {
     return quarterNames[data.eventQuarter - 1];
   } else if (data.eventQuarterLetter != undefined) {
     return data.eventQuarterLetter + " Quarter";
@@ -237,8 +221,7 @@ async function buildCoreCitation(data, runDate, builder) {
     builder.recordLinkOrTemplate = recordLink;
   }
 
-  let dataString =
-    getLastName(data, options) + ", " + getFirstName(data, options);
+  let dataString = getLastName(data, options) + ", " + getFirstName(data, options);
   if (data.middleNames != undefined && data.middleNames != "") {
     dataString += " " + getMiddleNames(data, options);
   }
@@ -267,10 +250,7 @@ async function buildCoreCitation(data, runDate, builder) {
   } else {
     dataString += " ";
   }
-  if (
-    options.citation_general_addNewlinesWithinBody &&
-    builder.type != "source"
-  ) {
+  if (options.citation_general_addNewlinesWithinBody && builder.type != "source") {
     dataString += "\n";
   }
 
@@ -298,10 +278,7 @@ async function buildCoreCitation(data, runDate, builder) {
     dataString += "unspecified district";
   }
 
-  if (
-    data.registrationDistrictCode != undefined &&
-    data.registrationDistrictCode != ""
-  ) {
+  if (data.registrationDistrictCode != undefined && data.registrationDistrictCode != "") {
     dataString += " (" + data.registrationDistrictCode + ")";
   }
 
@@ -310,10 +287,7 @@ async function buildCoreCitation(data, runDate, builder) {
     if (data.referencePage != undefined && data.referencePage != "") {
       dataString += " Page " + data.referencePage;
     }
-  } else if (
-    data.referenceRegister != undefined &&
-    data.referenceRegister != ""
-  ) {
+  } else if (data.referenceRegister != undefined && data.referenceRegister != "") {
     dataString += " Reg " + data.referenceRegister;
   }
 
@@ -359,8 +333,7 @@ function buildCitation(input) {
   var citation = buildCoreCitation(data, runDate, builder);
 
   // Get meaningful title
-  var refTitle =
-    data.eventType == "birth" ? "Birth Registration" : "Death Registration";
+  var refTitle = data.eventType == "birth" ? "Birth Registration" : "Death Registration";
   builder.meaningfulTitle = refTitle;
 
   if (type == "narrative") {

@@ -85,20 +85,14 @@ function buildSearchUrl(buildUrlInput) {
   if (options.search_fg_birthYearExactness != "none") {
     let birthYear = data.inferBirthYear();
     let birthDateQualifier = data.inferBirthDateQualifier();
-    let fgBirthDateQualifier = getFgDateQualifier(
-      options.search_fg_birthYearExactness,
-      birthDateQualifier
-    );
+    let fgBirthDateQualifier = getFgDateQualifier(options.search_fg_birthYearExactness, birthDateQualifier);
     builder.addBirthYear(birthYear, fgBirthDateQualifier);
   }
 
   if (options.search_fg_deathYearExactness != "none") {
     let deathYear = data.inferDeathYear();
     let deathDateQualifier = data.inferDeathDateQualifier();
-    let fgDeathDateQualifier = getFgDateQualifier(
-      options.search_fg_deathYearExactness,
-      deathDateQualifier
-    );
+    let fgDeathDateQualifier = getFgDateQualifier(options.search_fg_deathYearExactness, deathDateQualifier);
     builder.addDeathYear(deathYear, fgDeathDateQualifier);
   }
 

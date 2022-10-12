@@ -22,12 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractFromSearchResults(
-  document,
-  url,
-  userSelectedRowElement,
-  result
-) {
+function extractFromSearchResults(document, url, userSelectedRowElement, result) {
   let resultsTableWrapper = document.querySelector("div.results-table-wrapper");
 
   let resultsTable = resultsTableWrapper.querySelector("table.table");
@@ -76,14 +71,12 @@ function extractFromSearchResults(
           // 1. The user has bought this image
           // 2. The user hasn't bought image but has enough credits
           // 3. The user hasn't bought image and doesn't have enough credits (no image link available)
-          let viewedImageLinkElement =
-            rowDataElement.querySelector("a.viewed-image");
+          let viewedImageLinkElement = rowDataElement.querySelector("a.viewed-image");
           if (viewedImageLinkElement) {
             let linkText = viewedImageLinkElement.getAttribute("href");
             result.imageLink = linkText;
           } else {
-            let inputElement =
-              rowDataElement.querySelector("input.viewimglink");
+            let inputElement = rowDataElement.querySelector("input.viewimglink");
             if (inputElement) {
               let linkText = inputElement.value;
               result.imageLink = linkText;

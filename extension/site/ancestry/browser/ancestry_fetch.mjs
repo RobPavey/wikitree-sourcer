@@ -30,12 +30,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
-async function fetchAncestrySharingDataObjGivenIds(
-  imageDbId,
-  imageRecordId,
-  recordId,
-  url
-) {
+async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, recordId, url) {
   let mode = "cors";
 
   let domain = url.replace(/https?\:\/\/[^\.]+\.([^\/]+)\/.*/, "$1");
@@ -94,9 +89,7 @@ async function fetchAncestrySharingDataObjGivenIds(
 
   // On Firefox it may return zero any time you use "no-cors"
   if (response.status !== 200) {
-    console.log(
-      "Looks like there was a problem. Status Code: " + response.status
-    );
+    console.log("Looks like there was a problem. Status Code: " + response.status);
     return { success: false };
   }
 
@@ -257,9 +250,7 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
 
     // On Firefox it may return zero any time you use "no-cors"
     if (!response || response.status !== 200) {
-      console.log(
-        "Looks like there was a problem. Status Code: " + response.status
-      );
+      console.log("Looks like there was a problem. Status Code: " + response.status);
       return result;
     }
 
@@ -292,10 +283,7 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
       setRecordPageCache(ancestryRecordPageCache);
     }
   } catch (error) {
-    console.log(
-      "WikiTree Sourcer:: fetchAncestryRecordPage, failed. Error message is: " +
-        error.message
-    );
+    console.log("WikiTree Sourcer:: fetchAncestryRecordPage, failed. Error message is: " + error.message);
   }
 
   return result;

@@ -119,14 +119,7 @@ const valuationCountyNames = [
 // https://www.scotlandspeople.gov.uk/advanced-search#{%22category%22:%22poor-relief%22,%22record%22:%22poor-relief-hie%22}
 // When a search is done these names (URI encoded) are put in the search query for the key "county"
 // e.g.: &county=ARGYLL
-const emigrationCountyNames = [
-  "ARGYLL",
-  "CAITHNESS",
-  "INVERNESS",
-  "MIDLOTHIAN",
-  "ROSS AND CROMARTY",
-  "SUTHERLAND",
-];
+const emigrationCountyNames = ["ARGYLL", "CAITHNESS", "INVERNESS", "MIDLOTHIAN", "ROSS AND CROMARTY", "SUTHERLAND"];
 
 function getCountyListForRecordType(scotpRecordType) {
   let countyList = undefined;
@@ -241,10 +234,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
     if (placeString.includes("DUNDEE, ") || placeString.endsWith("DUNDEE")) {
       return "DUNDEE CITY";
     }
-    if (
-      placeString.includes("EDINBURGH, ") ||
-      placeString.endsWith("EDINBURGH")
-    ) {
+    if (placeString.includes("EDINBURGH, ") || placeString.endsWith("EDINBURGH")) {
       return "EDINBURGH CITY";
     }
     if (placeString.includes("GLASGOW, ") || placeString.endsWith("GLASGOW")) {
@@ -253,16 +243,10 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
   } else if (scotpRecordType == "valuation_rolls") {
     // have to deal with: "ANGUS (FORFAR) COUNTY" and "MORAY (ELGIN) COUNTY"
     // there are only two cases so handle them individually
-    if (
-      placeCountyName == "ANGUS COUNTY" ||
-      placeCountyName == "FORFAR COUNTY"
-    ) {
+    if (placeCountyName == "ANGUS COUNTY" || placeCountyName == "FORFAR COUNTY") {
       return "ANGUS (FORFAR) COUNTY";
     }
-    if (
-      placeCountyName == "MORAY COUNTY" ||
-      placeCountyName == "ELGIN COUNTY"
-    ) {
+    if (placeCountyName == "MORAY COUNTY" || placeCountyName == "ELGIN COUNTY") {
       return "MORAY (ELGIN) COUNTY";
     }
   }

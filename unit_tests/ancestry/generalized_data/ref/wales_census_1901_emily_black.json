@@ -23,10 +23,7 @@
   },
   "ageAtEvent": "74",
   "relationshipToHead": "mother",
-  "householdArrayFields": [
-    "name",
-    "age"
-  ],
+  "householdArrayFields": ["name", "age"],
   "householdArray": [
     {
       "name": "Emily Kimberlin",

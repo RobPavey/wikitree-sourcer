@@ -28,10 +28,7 @@
     "Household Members": "John Risbry 37<br/>Caroline Risbry 33<br/>George Risbry 12<br/>Elizabeth Risbry 10<br/>John R. Risbry 8<br/>Rachel Risbry 4<br/>Amelia Risbry 2<br/>Alfred Moore 36"
   },
   "household": {
-    "headings": [
-      "Name",
-      "Age"
-    ],
+    "headings": ["Name", "Age"],
     "members": [
       {
         "Name": "John Risbry",

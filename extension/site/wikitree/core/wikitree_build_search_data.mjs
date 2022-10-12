@@ -48,10 +48,7 @@ function buildSearchData(input) {
     fieldData.simpleIdFields["wpFirst"] = firstName;
   }
 
-  let lastName = data.inferLastNameGivenParametersAndCollection(
-    parameters,
-    undefined
-  );
+  let lastName = data.inferLastNameGivenParametersAndCollection(parameters, undefined);
   if (lastName) {
     fieldData.simpleIdFields["wpLast"] = lastName;
   }

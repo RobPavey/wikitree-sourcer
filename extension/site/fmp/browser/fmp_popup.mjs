@@ -22,11 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  loadDataCache,
-  cachedDataCache,
-  isCachedDataCacheReady,
-} from "/base/browser/common/data_cache.mjs";
+import { loadDataCache, cachedDataCache, isCachedDataCacheReady } from "/base/browser/common/data_cache.mjs";
 import {
   addBuildCitationMenuItems,
   addItalicMessageMenuItem,
@@ -37,10 +33,7 @@ import {
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  addStandardMenuEnd,
-  buildMinimalMenuWithMessage,
-} from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import {
   saveCitation,
@@ -56,10 +49,7 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
-import {
-  generalizeData,
-  generalizeDataGivenRecordType,
-} from "../core/fmp_generalize_data.mjs";
+import { generalizeData, generalizeDataGivenRecordType } from "../core/fmp_generalize_data.mjs";
 import { buildCitation } from "../core/fmp_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
@@ -115,12 +105,7 @@ async function fmpBuildHouseholdTable(data) {
 
   // There is an option to put an inline citation at the end of the table caption
   // If this is set then generate the citation string.
-  let citationObject = buildCitationObjectForTable(
-    data.extractedData,
-    data.generalizedData,
-    undefined,
-    buildCitation
-  );
+  let citationObject = buildCitationObjectForTable(data.extractedData, data.generalizedData, undefined, buildCitation);
 
   doAsyncActionWithCatch("Building table", data, async function () {
     const input = {
@@ -145,10 +130,7 @@ function addFmpBuildHouseholdTableMenuItem(menu, data) {
   let objectArray = data.generalizedData.householdArray;
 
   if (fieldNames && objectArray) {
-    if (
-      data.extractedData.household &&
-      data.extractedData.household.expanded === false
-    ) {
+    if (data.extractedData.household && data.extractedData.household.expanded === false) {
       addItalicMessageMenuItem(
         menu,
         "To build a household table: First click the 'Show x more rows' arrow below 'Household members' on the page so that all members are visible."
@@ -175,20 +157,13 @@ async function setupFmpPopupMenu(extractedData) {
 
   let isTranscript = extractedData.urlPath == "transcript";
   let isRecord = extractedData.urlPath == "record";
-  let isProfile =
-    extractedData.urlProfileId && extractedData.urlProfileId.length > 0;
+  let isProfile = extractedData.urlProfileId && extractedData.urlProfileId.length > 0;
 
-  if (
-    !extractedData ||
-    (!isTranscript && !isRecord && !isProfile) ||
-    !extractedData.success
-  ) {
-    let message =
-      "WikiTree Sourcer doesn't know how to extract data from this page.";
+  if (!extractedData || (!isTranscript && !isRecord && !isProfile) || !extractedData.success) {
+    let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
     message +=
       "\n\nIt looks like FindMyPast page but not a transcript or a record/image with a parent id nor a person profile on the Overview tab.";
-    message +=
-      "\n\nThis can also happen if the page has not finished loading when you click on the extension icon.";
+    message += "\n\nThis can also happen if the page has not finished loading when you click on the extension icon.";
     let data = { extractedData: extractedData };
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
@@ -205,8 +180,7 @@ async function setupFmpPopupMenu(extractedData) {
 
   if (!generalizedData || !generalizedData.hasValidData) {
     let message = "WikiTree Sourcer could not interpret the data on this page.";
-    message +=
-      "\n\nIt looks like a supported FindMyPast page but does not contain the required data.";
+    message += "\n\nIt looks like a supported FindMyPast page but does not contain the required data.";
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
   }
@@ -220,13 +194,7 @@ async function setupFmpPopupMenu(extractedData) {
     // do async prefetches
     loadDataCache();
 
-    addBuildCitationMenuItems(
-      menu,
-      data,
-      fmpBuildCitation,
-      backFunction,
-      generalizeDataGivenRecordType
-    );
+    addBuildCitationMenuItems(menu, data, fmpBuildCitation, backFunction, generalizeDataGivenRecordType);
     addFmpBuildHouseholdTableMenuItem(menu, data);
   } else if (isProfile) {
     await addSearchMenus(menu, data, backFunction, "fmp");

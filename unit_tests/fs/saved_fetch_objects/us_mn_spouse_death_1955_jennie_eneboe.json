@@ -1,1075 +1,1350 @@
 {
-  "id" : "r_139479455700",
-  "lang" : "en",
-  "attribution" : {
-    "contributor" : {
-      "resource" : "cis.user.MMMM-F3SL"
+  "id": "r_139479455700",
+  "lang": "en",
+  "attribution": {
+    "contributor": {
+      "resource": "cis.user.MMMM-F3SL"
     },
-    "modified" : 1579888194867,
-    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
+    "modified": 1579888194867,
+    "changeMessageResource": "http://familysearch.org/types/reasons/127657"
   },
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM?seek=next"
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM"
     }
   },
-  "description" : "#sd_p_185674517800",
-  "persons" : [ {
-    "id" : "p_185674517500",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "279ac336-014d-4710-a447-4232987fe8d3",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "M",
-          "resource" : "https://api.familysearch.org/platform/vocab/terms/103982"
-        }, {
-          "id" : "05265501-44ab-4487-8604-baf4f333ca4f",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1586371643513
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Male",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/HX2Y-P16Z?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/W8CT-RPMM?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P16Z" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Henry John Eneboe",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Henry John",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "68e73b81-584d-400d-adea-62c8e327a28a",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "Henry John"
-            }, {
-              "id" : "5769efc3-273f-44ee-9212-65893262321c",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+  "description": "#sd_p_185674517800",
+  "persons": [
+    {
+      "id": "p_185674517500",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "279ac336-014d-4710-a447-4232987fe8d3",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "M",
+                "resource": "https://api.familysearch.org/platform/vocab/terms/103982"
+              },
+              {
+                "id": "05265501-44ab-4487-8604-baf4f333ca4f",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1586371643513
                 },
-                "modified" : 1586371643489
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Henry John"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Eneboe",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "a1dc7138-81a5-4fb9-a89f-85d0b92eb47c",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "Eneboe"
-            }, {
-              "id" : "6a168883-13b3-460d-a70a-8e3122dbd316",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1586371643489
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Eneboe"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1586371643482
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "Henry John Eneboe"
-          }, {
-            "id" : "0c5febbf-1b2d-4cc8-a5c4-70441f6b51cd",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1586371643489
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Henry John Eneboe"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Death",
-      "date" : {
-        "original" : "20 May 1955",
-        "formal" : "+1955-05-20",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1586371643479
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "20 May 1955"
-          }, {
-            "id" : "122374fb-0075-4b7b-8b80-51119873d9a7",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1586371643479
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "20 May 1955",
-            "resource" : "+1955-05-20"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Month",
-          "values" : [ {
-            "id" : "2700635c-0ebc-4421-92ea-95622ab437ee",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_MONTH_ORIG",
-            "text" : "May",
-            "resource" : "https://api.familysearch.org/platform/vocab/terms/104448"
-          }, {
-            "id" : "a35df747-fffa-4a3d-9f41-3ee79263e39e",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1586371643479
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_MONTH",
-            "text" : "5"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Day",
-          "values" : [ {
-            "id" : "bac52fe5-57ee-42dd-b536-7cab6bf98b10",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DAY_ORIG",
-            "text" : "20"
-          }, {
-            "id" : "ad55b9d7-693f-41ac-8264-d6e6c3a61497",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1586371643479
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DAY",
-            "text" : "20"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "c3490543-956d-4dc5-849f-d7ae8c76b425",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_YEAR_ORIG",
-            "text" : "1955"
-          }, {
-            "id" : "bfa71ee1-2fa6-454f-b240-53d4bb70e428",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1586371643479
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1955"
-          } ]
-        } ]
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Male",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+              }
+            ]
+          }
+        ]
       },
-      "place" : {
-        "original" : "Rochester, Olmsted, Minnesota, United States",
-        "description" : "#place_4346331",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "d62f58b8-9c54-4168-8857-9dbb9724fe21",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Rochester, Olmsted, Minnesota"
-          }, {
-            "id" : "00763907-94ea-4445-a4b0-afb75570a664",
-            "confidence" : "http://confidence/94",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1586371643569
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Rochester, Olmsted, Minnesota, United States",
-            "resource" : "https://www.familysearch.org/platform/places/description/4346331",
-            "qualifiers" : [ {
-              "value" : "1013, 1014, 1010",
-              "name" : "StdQualifier"
-            } ]
-          } ]
-        } ]
-      },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "id" : "9796ceb4-434d-46f1-9132-d5314b316771",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "EVENT_TYPE_ORIG",
-          "text" : "Death"
-        }, {
-          "id" : "9df239cf-2736-46e0-a1cf-a6517f405bf6",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Death"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "1893",
-        "formal" : "+1893",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1586371643482
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_BIR_DATE_ORIG",
-            "text" : "1893"
-          }, {
-            "id" : "196a1f98-5541-4531-ab7c-0a6c4a8a66f8",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1586371643482
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_DATE",
-            "text" : "1893",
-            "resource" : "+1893"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "bcec6ef9-d8ba-4212-bf06-154411102ee9",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_BIR_YEAR_ORIG",
-            "text" : "1893"
-          }, {
-            "id" : "c4d431b0-6c05-4a83-989a-31de1d5ed510",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
-              },
-              "modified" : 1586371643482
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_YEAR",
-            "text" : "1893"
-          } ]
-        } ]
-      },
-      "place" : {
-        "original" : "South Dakota",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "10598f11-4c47-4600-85a1-9a4c7581e25c",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_BIR_PLACE_ORIG",
-            "text" : "South Dakota"
-          } ]
-        } ]
-      }
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "id" : "07128898-9253-406f-a956-ed5351dd7e6b",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_ORIG",
-        "text" : "61"
-      }, {
-        "id" : "f833ebeb-f011-4f2c-a346-74d612663319",
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/AgeTreatment/ver/1"
-          },
-          "modified" : 1586371643513
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/HX2Y-P16Z?flag=fsh"
         },
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_AGE",
-        "text" : "61",
-        "resource" : "P61Y"
-      } ]
-    } ]
-  }, {
-    "id" : "p_185674517600",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "08955196-7995-47e6-9d6a-0bade9a9f3f5",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1586371643513
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/W8CT-RPMM?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:HX2Y-P16Z"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Henry John Eneboe",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Henry John",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "68e73b81-584d-400d-adea-62c8e327a28a",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "Henry John"
+                        },
+                        {
+                          "id": "5769efc3-273f-44ee-9212-65893262321c",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1586371643489
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Henry John"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Eneboe",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "a1dc7138-81a5-4fb9-a89f-85d0b92eb47c",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Eneboe"
+                        },
+                        {
+                          "id": "6a168883-13b3-460d-a70a-8e3122dbd316",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1586371643489
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Eneboe"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1586371643482
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "Henry John Eneboe"
+                    },
+                    {
+                      "id": "0c5febbf-1b2d-4cc8-a5c4-70441f6b51cd",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1586371643489
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Henry John Eneboe"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Death",
+          "date": {
+            "original": "20 May 1955",
+            "formal": "+1955-05-20",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1586371643479
+                    },
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "20 May 1955"
+                  },
+                  {
+                    "id": "122374fb-0075-4b7b-8b80-51119873d9a7",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1586371643479
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "20 May 1955",
+                    "resource": "+1955-05-20"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Month",
+                "values": [
+                  {
+                    "id": "2700635c-0ebc-4421-92ea-95622ab437ee",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_MONTH_ORIG",
+                    "text": "May",
+                    "resource": "https://api.familysearch.org/platform/vocab/terms/104448"
+                  },
+                  {
+                    "id": "a35df747-fffa-4a3d-9f41-3ee79263e39e",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1586371643479
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_MONTH",
+                    "text": "5"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Day",
+                "values": [
+                  {
+                    "id": "bac52fe5-57ee-42dd-b536-7cab6bf98b10",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DAY_ORIG",
+                    "text": "20"
+                  },
+                  {
+                    "id": "ad55b9d7-693f-41ac-8264-d6e6c3a61497",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1586371643479
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DAY",
+                    "text": "20"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "c3490543-956d-4dc5-849f-d7ae8c76b425",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_YEAR_ORIG",
+                    "text": "1955"
+                  },
+                  {
+                    "id": "bfa71ee1-2fa6-454f-b240-53d4bb70e428",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1586371643479
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1955"
+                  }
+                ]
+              }
+            ]
           },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_FTHR_SEX_CODE",
-          "text" : "Male",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/HX2Y-P1N2?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/W8CT-RPMM?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1N2" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "John Eneboe",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "John",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "4d92b5c1-63d1-4c40-b86b-88662517f5da",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_FTHR_NAME_GN_ORIG",
-              "text" : "John"
-            }, {
-              "id" : "4a978000-5703-41e1-90a0-b5a07939472e",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1586371643495
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_FTHR_NAME_GN",
-              "text" : "John"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Eneboe",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "41b73c35-d39a-4e20-aaeb-d331cbd8391f",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
-              "text" : "Eneboe"
-            }, {
-              "id" : "ada5c64d-f938-44b1-be5c-6e4c66451517",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1586371643495
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_FTHR_NAME_SURN",
-              "text" : "Eneboe"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1586371643489
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_FTHR_NAME_ORIG",
-            "text" : "John Eneboe"
-          }, {
-            "id" : "b04b3cd7-57ad-430a-ba2e-8fd40fb1ef16",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1586371643495
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_FTHR_NAME",
-            "text" : "John Eneboe"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_185674517700",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "e66b2230-9b93-43bf-8a7e-131ce9fb0cec",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1586371643513
+          "place": {
+            "original": "Rochester, Olmsted, Minnesota, United States",
+            "description": "#place_4346331",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "d62f58b8-9c54-4168-8857-9dbb9724fe21",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_ORIG",
+                    "text": "Rochester, Olmsted, Minnesota"
+                  },
+                  {
+                    "id": "00763907-94ea-4445-a4b0-afb75570a664",
+                    "confidence": "http://confidence/94",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1586371643569
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Rochester, Olmsted, Minnesota, United States",
+                    "resource": "https://www.familysearch.org/platform/places/description/4346331",
+                    "qualifiers": [
+                      {
+                        "value": "1013, 1014, 1010",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_MTHR_SEX_CODE",
-          "text" : "Female",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/HX2Y-P12M?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/W8CT-RPMM?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P12M" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Elina Bakke",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Elina",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "24f1721b-d38c-4dfd-a13f-e7e1bd105a6a",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_MTHR_NAME_GN_ORIG",
-              "text" : "Elina"
-            }, {
-              "id" : "53493926-2a25-4bd4-82cf-921dcb92c29c",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "id": "9796ceb4-434d-46f1-9132-d5314b316771",
+                  "type": "http://gedcomx.org/Original",
+                  "labelId": "EVENT_TYPE_ORIG",
+                  "text": "Death"
                 },
-                "modified" : 1586371643501
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_MTHR_NAME_GN",
-              "text" : "Elina"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Bakke",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "df18cc60-2520-478a-8f6d-e1e596b602b2",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
-              "text" : "Bakke"
-            }, {
-              "id" : "6b72501d-98b7-4ec9-9827-528c193ee7c6",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1586371643501
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_MTHR_NAME_SURN",
-              "text" : "Bakke"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1586371643495
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_MTHR_NAME_ORIG",
-            "text" : "Elina Bakke"
-          }, {
-            "id" : "7f8a5103-5127-4778-a6d2-b2302dbc4f63",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1586371643501
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_MTHR_NAME",
-            "text" : "Elina Bakke"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_185674517800",
-    "extracted" : true,
-    "principal" : false,
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/HX2Y-P1PZ?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/W8CT-RPMM?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Jennie Eggn Eneboe",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Jennie Eggn",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "8dcb8301-b506-45fc-81db-2f26657c2ac5",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_NAME_GN_ORIG",
-              "text" : "Jennie Eggn"
-            }, {
-              "id" : "ed3513fb-4821-4135-b1c5-1798f83cb0e9",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1586371643510
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_NAME_GN",
-              "text" : "Jennie Eggn"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Eneboe",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "e7fce763-1115-471e-8cd5-196dc25cbf5b",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_NAME_SURN_ORIG",
-              "text" : "Eneboe"
-            }, {
-              "id" : "d6b72467-0d92-4f82-9120-1ad28b883797",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1586371643510
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_NAME_SURN",
-              "text" : "Eneboe"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1586371643501
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "SP_NAME_ORIG",
-            "text" : "Jennie Eggn Eneboe"
-          }, {
-            "id" : "699f4d6d-909b-4bdc-aa52-5e857d2f3dc8",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1586371643510
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "SP_NAME",
-            "text" : "Jennie Eggn Eneboe"
-          } ]
-        } ]
-      } ]
-    } ]
-  } ],
-  "relationships" : [ {
-    "id" : "MM9.1.6/JFVW-SJ68",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_185674517600",
-      "resourceId" : "p_185674517600"
-    },
-    "person2" : {
-      "resource" : "#p_185674517500",
-      "resourceId" : "p_185674517500"
-    }
-  }, {
-    "id" : "MM9.1.6/JFVW-SJNL",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_185674517700",
-      "resourceId" : "p_185674517700"
-    },
-    "person2" : {
-      "resource" : "#p_185674517500",
-      "resourceId" : "p_185674517500"
-    }
-  }, {
-    "id" : "MM9.1.6/JFVW-SJ29",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_185674517600",
-      "resourceId" : "p_185674517600"
-    },
-    "person2" : {
-      "resource" : "#p_185674517700",
-      "resourceId" : "p_185674517700"
-    }
-  }, {
-    "id" : "MM9.1.6/JFVW-SJP8",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_185674517500",
-      "resourceId" : "p_185674517500"
-    },
-    "person2" : {
-      "resource" : "#p_185674517800",
-      "resourceId" : "p_185674517800"
-    }
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_3398461",
-    "about" : "https://api.familysearch.org/platform/records/collections/3398461",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1567865414767,
-    "modified" : 1601106487712,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "US-Minnesota",
-        "description" : "#place_1-18"
-      },
-      "temporal" : {
-        "original" : "1899/2001",
-        "formal" : "1899/2001"
-      },
-      "recordType" : "http://gedcomx.org/Death"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Minnesota Deaths, 1887-2001"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/3398461" ]
-    }
-  }, {
-    "id" : "src_r_139479455700",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM",
-    "componentOf" : {
-      "description" : "#sd_c_3398461"
-    },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1579888198188,
-    "modified" : 1601106487712,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Rochester, Olmsted, Minnesota, United States"
-      },
-      "temporal" : {
-        "original" : "20 May 1955"
-      },
-      "recordType" : "http://gedcomx.org/Death"
-    } ],
-    "citations" : [ {
-      "value" : "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:W8CT-RPMM : 8 April 2020), Entry for Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/3398461?arkName=1:2:W8CT-RPMM"
-    }
-  }, {
-    "id" : "sd_p_185674517500",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P16Z",
-    "componentOf" : {
-      "description" : "#src_r_139479455700"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:HX2Y-P16Z : 8 April 2020), Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P16Z" ]
-    }
-  }, {
-    "id" : "sd_p_185674517600",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1N2",
-    "componentOf" : {
-      "description" : "#src_r_139479455700"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:HX2Y-P1N2 : 8 April 2020), John Eneboe in entry for Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "John Eneboe in entry for Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1N2" ]
-    }
-  }, {
-    "id" : "sd_p_185674517700",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P12M",
-    "componentOf" : {
-      "description" : "#src_r_139479455700"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:HX2Y-P12M : 8 April 2020), Elina Bakke in entry for Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Elina Bakke in entry for Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P12M" ]
-    }
-  }, {
-    "id" : "sd_p_185674517800",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ",
-    "componentOf" : {
-      "description" : "#src_r_139479455700"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:HX2Y-P1PZ : 8 April 2020), Jennie Eggn Eneboe in entry for Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Jennie Eggn Eneboe in entry for Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:S3HT-67Q9-R1Z?cc=3398461",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
-    },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:S3HT-67Q9-R1Z?cc=3398461" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/3398461?arkName=3:1:S3HT-67Q9-R1Z"
-    }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
-    }
-  } ],
-  "places" : [ {
-    "place" : {
-      "resource" : "https://www.familysearch.org/platform/places/description/4346331",
-      "resourceId" : "place_4346331"
-    }
-  }, {
-    "id" : "place_1-18",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/18?context=1" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/BatchId",
-    "values" : [ {
-      "id" : "b5e094c9-6d6b-4f36-9932-2fe6e05e8e18",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_BATCH_ID",
-      "text" : "a3b3d783-ef8f-48f8-a8c7-7bd62e707b74"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "id" : "9ace9234-f750-4752-a055-ba056288f1da",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "3398461"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "id" : "594f56a2-649e-4100-aa01-791146b8ed27",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DIGITAL_FILM_NBR",
-      "text" : "004225434"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/IdxProjectId",
-    "values" : [ {
-      "id" : "7d7ec90c-f7e0-44ac-ac59-eca470632e3f",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IDX_PROJECT_ID",
-      "text" : "d2552d14-4b98-4a91-a645-5e95025bc35f"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/IdxTemplateId",
-    "values" : [ {
-      "id" : "117de0a8-4760-4869-8f4f-5049f5ca9839",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IDX_TEMPLATE_ID",
-      "text" : "template://idx-template/templates/entity/template;entitytype=PROJECT;entityid=d2552d14-4b98-4a91-a645-5e95025bc35f;name=05af9adc-22fe-42f8-b8be-e3494b1d0b99"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageApid",
-    "values" : [ {
-      "id" : "d1ac6efd-4853-4169-b424-a37da6085eab",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_APID",
-      "text" : "TH-266-11854-50380-99"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNumber",
-    "values" : [ {
-      "id" : "832d35c5-bd7b-478c-9324-3217cf730428",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_NBR",
-      "text" : "00697"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageArk",
-    "values" : [ {
-      "id" : "86d8a577-71f3-458f-ac33-b882a28dac00",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "IMAGE_ARK",
-      "text" : "https://familysearch.org/ark:/61903/3:1:S3HT-67Q9-R1Z"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsModelVer",
-    "values" : [ {
-      "id" : "8580730e-e7ac-472e-9b0d-abeed37005b5",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_MODEL_VER",
-      "text" : "1"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "id" : "79bac600-6c5a-49db-923b-b45b0de3877b",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PPQ_ID",
-      "text" : "19-0591"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "id" : "3cbe4032-a031-4a43-9010-18f043cd86bb",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_GROUP",
-      "text" : "19-0591; 2020-02-13T09:02:47-0700; fairchildbc; 5921; SB; IDX; Minnesota, Minnesota Historical Society, Death records, 1899-2001 - FSI"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordNumber",
-    "values" : [ {
-      "id" : "0f0c4b1e-a390-4511-b96a-5defd925d543",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_NBR",
-      "text" : "0"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "id" : "202d954c-f558-4ef7-94cc-8495492bd5dd",
-      "attribution" : {
-        "contributor" : {
-          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+                {
+                  "id": "9df239cf-2736-46e0-a1cf-a6517f405bf6",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Death"
+                }
+              ]
+            }
+          ]
         },
-        "modified" : 1579888198059
-      },
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "0000000004225434_00697_00000_0000139479455700"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/TravelerTitle",
-    "values" : [ {
-      "id" : "a4b59e67-b806-4426-acb5-0c343cb3b116",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_TRAVELER_TITLE",
-      "text" : "Minnesota, Minnesota Historical Society, Death records, 1899-2001 - FSI"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsVisStatus",
-    "values" : [ {
-      "id" : "592da329-1f45-48d4-a1e7-50efe2fb09e1",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_VIS_STATUS",
-      "text" : "VISIBLE"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SourceCertificateNbr",
-    "values" : [ {
-      "id" : "f7f48974-6fa9-4196-8dba-556b7a2fc65e",
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "SOURCE_CERTIFICATE_NBR_ORIG",
-      "text" : "011102"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "3"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "55273"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ],
-  "qualifiers" : [ {
-    "value" : "true",
-    "name" : "TreatmentWarnings"
-  } ],
-  "additionalAttribution" : [ {
-    "contributor" : {
-      "resource" : "cis.user.MMMS-XVR5"
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "1893",
+            "formal": "+1893",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1586371643482
+                    },
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_BIR_DATE_ORIG",
+                    "text": "1893"
+                  },
+                  {
+                    "id": "196a1f98-5541-4531-ab7c-0a6c4a8a66f8",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1586371643482
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_DATE",
+                    "text": "1893",
+                    "resource": "+1893"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "bcec6ef9-d8ba-4212-bf06-154411102ee9",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_BIR_YEAR_ORIG",
+                    "text": "1893"
+                  },
+                  {
+                    "id": "c4d431b0-6c05-4a83-989a-31de1d5ed510",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                      },
+                      "modified": 1586371643482
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_YEAR",
+                    "text": "1893"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "South Dakota",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "10598f11-4c47-4600-85a1-9a4c7581e25c",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_BIR_PLACE_ORIG",
+                    "text": "South Dakota"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "id": "07128898-9253-406f-a956-ed5351dd7e6b",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_ORIG",
+              "text": "61"
+            },
+            {
+              "id": "f833ebeb-f011-4f2c-a346-74d612663319",
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/AgeTreatment/ver/1"
+                },
+                "modified": 1586371643513
+              },
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "61",
+              "resource": "P61Y"
+            }
+          ]
+        }
+      ]
     },
-    "modified" : 1569454337919,
-    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
-  } ]
+    {
+      "id": "p_185674517600",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "08955196-7995-47e6-9d6a-0bade9a9f3f5",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1586371643513
+                },
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_FTHR_SEX_CODE",
+                "text": "Male",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/HX2Y-P1N2?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/W8CT-RPMM?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1N2"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "John Eneboe",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "John",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "4d92b5c1-63d1-4c40-b86b-88662517f5da",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_FTHR_NAME_GN_ORIG",
+                          "text": "John"
+                        },
+                        {
+                          "id": "4a978000-5703-41e1-90a0-b5a07939472e",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1586371643495
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_FTHR_NAME_GN",
+                          "text": "John"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Eneboe",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "41b73c35-d39a-4e20-aaeb-d331cbd8391f",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_FTHR_NAME_SURN_ORIG",
+                          "text": "Eneboe"
+                        },
+                        {
+                          "id": "ada5c64d-f938-44b1-be5c-6e4c66451517",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1586371643495
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_FTHR_NAME_SURN",
+                          "text": "Eneboe"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1586371643489
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_FTHR_NAME_ORIG",
+                      "text": "John Eneboe"
+                    },
+                    {
+                      "id": "b04b3cd7-57ad-430a-ba2e-8fd40fb1ef16",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1586371643495
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_FTHR_NAME",
+                      "text": "John Eneboe"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_185674517700",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "e66b2230-9b93-43bf-8a7e-131ce9fb0cec",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1586371643513
+                },
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_MTHR_SEX_CODE",
+                "text": "Female",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/HX2Y-P12M?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/W8CT-RPMM?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:HX2Y-P12M"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Elina Bakke",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Elina",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "24f1721b-d38c-4dfd-a13f-e7e1bd105a6a",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_MTHR_NAME_GN_ORIG",
+                          "text": "Elina"
+                        },
+                        {
+                          "id": "53493926-2a25-4bd4-82cf-921dcb92c29c",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1586371643501
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_MTHR_NAME_GN",
+                          "text": "Elina"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Bakke",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "df18cc60-2520-478a-8f6d-e1e596b602b2",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_MTHR_NAME_SURN_ORIG",
+                          "text": "Bakke"
+                        },
+                        {
+                          "id": "6b72501d-98b7-4ec9-9827-528c193ee7c6",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1586371643501
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_MTHR_NAME_SURN",
+                          "text": "Bakke"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1586371643495
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_MTHR_NAME_ORIG",
+                      "text": "Elina Bakke"
+                    },
+                    {
+                      "id": "7f8a5103-5127-4778-a6d2-b2302dbc4f63",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1586371643501
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_MTHR_NAME",
+                      "text": "Elina Bakke"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_185674517800",
+      "extracted": true,
+      "principal": false,
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/HX2Y-P1PZ?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/W8CT-RPMM?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Jennie Eggn Eneboe",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Jennie Eggn",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "8dcb8301-b506-45fc-81db-2f26657c2ac5",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_NAME_GN_ORIG",
+                          "text": "Jennie Eggn"
+                        },
+                        {
+                          "id": "ed3513fb-4821-4135-b1c5-1798f83cb0e9",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1586371643510
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_NAME_GN",
+                          "text": "Jennie Eggn"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Eneboe",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "e7fce763-1115-471e-8cd5-196dc25cbf5b",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_NAME_SURN_ORIG",
+                          "text": "Eneboe"
+                        },
+                        {
+                          "id": "d6b72467-0d92-4f82-9120-1ad28b883797",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1586371643510
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_NAME_SURN",
+                          "text": "Eneboe"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1586371643501
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "SP_NAME_ORIG",
+                      "text": "Jennie Eggn Eneboe"
+                    },
+                    {
+                      "id": "699f4d6d-909b-4bdc-aa52-5e857d2f3dc8",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1586371643510
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "SP_NAME",
+                      "text": "Jennie Eggn Eneboe"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "MM9.1.6/JFVW-SJ68",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_185674517600",
+        "resourceId": "p_185674517600"
+      },
+      "person2": {
+        "resource": "#p_185674517500",
+        "resourceId": "p_185674517500"
+      }
+    },
+    {
+      "id": "MM9.1.6/JFVW-SJNL",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_185674517700",
+        "resourceId": "p_185674517700"
+      },
+      "person2": {
+        "resource": "#p_185674517500",
+        "resourceId": "p_185674517500"
+      }
+    },
+    {
+      "id": "MM9.1.6/JFVW-SJ29",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_185674517600",
+        "resourceId": "p_185674517600"
+      },
+      "person2": {
+        "resource": "#p_185674517700",
+        "resourceId": "p_185674517700"
+      }
+    },
+    {
+      "id": "MM9.1.6/JFVW-SJP8",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_185674517500",
+        "resourceId": "p_185674517500"
+      },
+      "person2": {
+        "resource": "#p_185674517800",
+        "resourceId": "p_185674517800"
+      }
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_3398461",
+      "about": "https://api.familysearch.org/platform/records/collections/3398461",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1567865414767,
+      "modified": 1601106487712,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "US-Minnesota",
+            "description": "#place_1-18"
+          },
+          "temporal": {
+            "original": "1899/2001",
+            "formal": "1899/2001"
+          },
+          "recordType": "http://gedcomx.org/Death"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Minnesota Deaths, 1887-2001"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/3398461"]
+      }
+    },
+    {
+      "id": "src_r_139479455700",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM",
+      "componentOf": {
+        "description": "#sd_c_3398461"
+      },
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1579888198188,
+      "modified": 1601106487712,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Rochester, Olmsted, Minnesota, United States"
+          },
+          "temporal": {
+            "original": "20 May 1955"
+          },
+          "recordType": "http://gedcomx.org/Death"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:W8CT-RPMM : 8 April 2020), Entry for Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:W8CT-RPMM"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/3398461?arkName=1:2:W8CT-RPMM"
+      }
+    },
+    {
+      "id": "sd_p_185674517500",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P16Z",
+      "componentOf": {
+        "description": "#src_r_139479455700"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:HX2Y-P16Z : 8 April 2020), Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:HX2Y-P16Z"]
+      }
+    },
+    {
+      "id": "sd_p_185674517600",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1N2",
+      "componentOf": {
+        "description": "#src_r_139479455700"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:HX2Y-P1N2 : 8 April 2020), John Eneboe in entry for Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "John Eneboe in entry for Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1N2"]
+      }
+    },
+    {
+      "id": "sd_p_185674517700",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P12M",
+      "componentOf": {
+        "description": "#src_r_139479455700"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:HX2Y-P12M : 8 April 2020), Elina Bakke in entry for Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Elina Bakke in entry for Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:HX2Y-P12M"]
+      }
+    },
+    {
+      "id": "sd_p_185674517800",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ",
+      "componentOf": {
+        "description": "#src_r_139479455700"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Minnesota Deaths, 1887-2001,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:HX2Y-P1PZ : 8 April 2020), Jennie Eggn Eneboe in entry for Henry John Eneboe, 20 May 1955; citing Death, Minnesota State Department of Health, St. Paul.\n"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Jennie Eggn Eneboe in entry for Henry John Eneboe, \"Minnesota Deaths, 1887-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ"]
+      }
+    },
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/3:1:S3HT-67Q9-R1Z?cc=3398461",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:S3HT-67Q9-R1Z?cc=3398461"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/3398461?arkName=3:1:S3HT-67Q9-R1Z"
+      }
+    }
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "place": {
+        "resource": "https://www.familysearch.org/platform/places/description/4346331",
+        "resourceId": "place_4346331"
+      }
+    },
+    {
+      "id": "place_1-18",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/18?context=1"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/BatchId",
+      "values": [
+        {
+          "id": "b5e094c9-6d6b-4f36-9932-2fe6e05e8e18",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_BATCH_ID",
+          "text": "a3b3d783-ef8f-48f8-a8c7-7bd62e707b74"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "id": "9ace9234-f750-4752-a055-ba056288f1da",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "3398461"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "id": "594f56a2-649e-4100-aa01-791146b8ed27",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DIGITAL_FILM_NBR",
+          "text": "004225434"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/IdxProjectId",
+      "values": [
+        {
+          "id": "7d7ec90c-f7e0-44ac-ac59-eca470632e3f",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IDX_PROJECT_ID",
+          "text": "d2552d14-4b98-4a91-a645-5e95025bc35f"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/IdxTemplateId",
+      "values": [
+        {
+          "id": "117de0a8-4760-4869-8f4f-5049f5ca9839",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IDX_TEMPLATE_ID",
+          "text": "template://idx-template/templates/entity/template;entitytype=PROJECT;entityid=d2552d14-4b98-4a91-a645-5e95025bc35f;name=05af9adc-22fe-42f8-b8be-e3494b1d0b99"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageApid",
+      "values": [
+        {
+          "id": "d1ac6efd-4853-4169-b424-a37da6085eab",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_APID",
+          "text": "TH-266-11854-50380-99"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNumber",
+      "values": [
+        {
+          "id": "832d35c5-bd7b-478c-9324-3217cf730428",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_NBR",
+          "text": "00697"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageArk",
+      "values": [
+        {
+          "id": "86d8a577-71f3-458f-ac33-b882a28dac00",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "IMAGE_ARK",
+          "text": "https://familysearch.org/ark:/61903/3:1:S3HT-67Q9-R1Z"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FsModelVer",
+      "values": [
+        {
+          "id": "8580730e-e7ac-472e-9b0d-abeed37005b5",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_MODEL_VER",
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "id": "79bac600-6c5a-49db-923b-b45b0de3877b",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PPQ_ID",
+          "text": "19-0591"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "id": "3cbe4032-a031-4a43-9010-18f043cd86bb",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "19-0591; 2020-02-13T09:02:47-0700; fairchildbc; 5921; SB; IDX; Minnesota, Minnesota Historical Society, Death records, 1899-2001 - FSI"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordNumber",
+      "values": [
+        {
+          "id": "0f0c4b1e-a390-4511-b96a-5defd925d543",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_NBR",
+          "text": "0"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "id": "202d954c-f558-4ef7-94cc-8495492bd5dd",
+          "attribution": {
+            "contributor": {
+              "resource": "http://treatment/SortKeyTreatment/ver/1"
+            },
+            "modified": 1579888198059
+          },
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "0000000004225434_00697_00000_0000139479455700"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/TravelerTitle",
+      "values": [
+        {
+          "id": "a4b59e67-b806-4426-acb5-0c343cb3b116",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_TRAVELER_TITLE",
+          "text": "Minnesota, Minnesota Historical Society, Death records, 1899-2001 - FSI"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FsVisStatus",
+      "values": [
+        {
+          "id": "592da329-1f45-48d4-a1e7-50efe2fb09e1",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_VIS_STATUS",
+          "text": "VISIBLE"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourceCertificateNbr",
+      "values": [
+        {
+          "id": "f7f48974-6fa9-4196-8dba-556b7a2fc65e",
+          "type": "http://gedcomx.org/Original",
+          "labelId": "SOURCE_CERTIFICATE_NBR_ORIG",
+          "text": "011102"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "3"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "55273"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
+    }
+  ],
+  "qualifiers": [
+    {
+      "value": "true",
+      "name": "TreatmentWarnings"
+    }
+  ],
+  "additionalAttribution": [
+    {
+      "contributor": {
+        "resource": "cis.user.MMMS-XVR5"
+      },
+      "modified": 1569454337919,
+      "changeMessageResource": "http://familysearch.org/types/reasons/127657"
+    }
+  ]
 }

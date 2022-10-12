@@ -1,806 +1,1082 @@
 {
-  "id" : "r_80077625",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7?seek=next"
+  "id": "r_80077625",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7"
     }
   },
-  "description" : "#sd_p_10537419718",
-  "persons" : [ {
-    "id" : "p_10537419718",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "M"
-        }, {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Male"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/X6KQ-53B?flag=fsh"
+  "description": "#sd_p_10537419718",
+  "persons": [
+    {
+      "id": "p_10537419718",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "M"
+              },
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Male"
+              }
+            ]
+          }
+        ]
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/M3HR-RQ7?flag=fsh"
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/X6KQ-53B?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/M3HR-RQ7?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Jacob S Swartz",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Jacob S",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "Jacob S"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Jacob S"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Swartz",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Swartz"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Swartz"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "Jacob S./Swartz"
+                    },
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Jacob S Swartz"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Race",
+          "value": "White",
+          "fields": [
+            {
+              "type": "http://gedcomx.org/Race",
+              "values": [
+                {
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "PR_RACE_OR_COLOR",
+                  "text": "White"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Death",
+          "date": {
+            "original": "26 Sep 1948",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "26 Sep 1948"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "26 Sep 1948"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1948"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true
+        },
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "17 Jun 1868",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_BIRTH_DATE_ORIG",
+                    "text": "17 Jun 1868"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIRTH_DATE",
+                    "text": "17 Jun 1868"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIRTH_YEAR_ESTIMATED",
+                    "text": "1868"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Union County, Penn",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIRTH_PLACE",
+                    "text": "Union County, Penn"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_ORIG",
+              "text": "80y3m9d"
+            },
+            {
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_10537419719",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "text": "Male"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/X6KQ-531?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/M3HR-RQ7?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X6KQ-531"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Jacob Swartz",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Jacob",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_FTHR_NAME_GN_ORIG",
+                          "text": "Jacob"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_FTHR_NAME_GN",
+                          "text": "Jacob"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Swartz",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_FTHR_NAME_SURN_ORIG",
+                          "text": "Swartz"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_FTHR_NAME_SURN",
+                          "text": "Swartz"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_FTHR_NAME_ORIG",
+                      "text": "Jacob/Swartz"
+                    },
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_FTHR_NAME",
+                      "text": "Jacob Swartz"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_10537419720",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "text": "Female"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/X6KQ-5QM?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/M3HR-RQ7?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X6KQ-5QM"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Magdalena",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Magdalena",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_MTHR_NAME_GN_ORIG",
+                          "text": "Magdalena"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_MTHR_NAME_GN",
+                          "text": "Magdalena"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_MTHR_NAME_ORIG",
+                      "text": "Magdalena/"
+                    },
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_MTHR_NAME",
+                      "text": "Magdalena"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_10537419721",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "text": "Female"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/X6KQ-5Q9?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/M3HR-RQ7?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X6KQ-5Q9"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Ethel Davis Swartz",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Ethel Davis",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SPOUSE_NAME_GN_ORIG",
+                          "text": "Ethel Davis"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SPOUSE_NAME_GN",
+                          "text": "Ethel Davis"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Swartz",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SPOUSE_NAME_SURN_ORIG",
+                          "text": "Swartz"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SPOUSE_NAME_SURN",
+                          "text": "Swartz"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "SPOUSE_NAME_ORIG",
+                      "text": "Ethel Davis/Swartz"
+                    },
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "SPOUSE_NAME",
+                      "text": "Ethel Davis Swartz"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "MM9.1.6/MMK1-JPD",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_10537419718",
+        "resourceId": "p_10537419718"
+      },
+      "person2": {
+        "resource": "#p_10537419721",
+        "resourceId": "p_10537419721"
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Jacob S Swartz",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Jacob S",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "Jacob S"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Jacob S"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Swartz",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "Swartz"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Swartz"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "Jacob S./Swartz"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Jacob S Swartz"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Race",
-      "value" : "White",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Race",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_RACE_OR_COLOR",
-          "text" : "White"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Death",
-      "date" : {
-        "original" : "26 Sep 1948",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "26 Sep 1948"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "26 Sep 1948"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1948"
-          } ]
-        } ]
+    {
+      "id": "MM9.1.6/MMK1-JP6",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_10537419719",
+        "resourceId": "p_10537419719"
       },
-      "primary" : true
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "17 Jun 1868",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_BIRTH_DATE_ORIG",
-            "text" : "17 Jun 1868"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIRTH_DATE",
-            "text" : "17 Jun 1868"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIRTH_YEAR_ESTIMATED",
-            "text" : "1868"
-          } ]
-        } ]
-      },
-      "place" : {
-        "original" : "Union County, Penn",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIRTH_PLACE",
-            "text" : "Union County, Penn"
-          } ]
-        } ]
-      }
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_ORIG",
-        "text" : "80y3m9d"
-      }, {
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_AGE",
-        "text" : "80"
-      } ]
-    } ]
-  }, {
-    "id" : "p_10537419719",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "text" : "Male"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/X6KQ-531?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/M3HR-RQ7?flag=fsh"
+      "person2": {
+        "resource": "#p_10537419718",
+        "resourceId": "p_10537419718"
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X6KQ-531" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Jacob Swartz",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Jacob",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_FTHR_NAME_GN_ORIG",
-              "text" : "Jacob"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_FTHR_NAME_GN",
-              "text" : "Jacob"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Swartz",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
-              "text" : "Swartz"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_FTHR_NAME_SURN",
-              "text" : "Swartz"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_FTHR_NAME_ORIG",
-            "text" : "Jacob/Swartz"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_FTHR_NAME",
-            "text" : "Jacob Swartz"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_10537419720",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "text" : "Female"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/X6KQ-5QM?flag=fsh"
+    {
+      "id": "MM9.1.6/MMK1-JPX",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_10537419720",
+        "resourceId": "p_10537419720"
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/M3HR-RQ7?flag=fsh"
+      "person2": {
+        "resource": "#p_10537419718",
+        "resourceId": "p_10537419718"
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X6KQ-5QM" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Magdalena",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Magdalena",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_MTHR_NAME_GN_ORIG",
-              "text" : "Magdalena"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_MTHR_NAME_GN",
-              "text" : "Magdalena"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_MTHR_NAME_ORIG",
-            "text" : "Magdalena/"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_MTHR_NAME",
-            "text" : "Magdalena"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_10537419721",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "text" : "Female"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/X6KQ-5Q9?flag=fsh"
+    {
+      "id": "MM9.1.6/MMK1-JPF",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_10537419719",
+        "resourceId": "p_10537419719"
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/M3HR-RQ7?flag=fsh"
+      "person2": {
+        "resource": "#p_10537419720",
+        "resourceId": "p_10537419720"
+      }
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_1307272",
+      "about": "https://api.familysearch.org/platform/records/collections/1307272",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1382223495204,
+      "modified": 1633504455914,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Ohio, United States",
+            "description": "#place_1-43"
+          },
+          "temporal": {
+            "original": "1908/1953",
+            "formal": "1908/1953"
+          },
+          "recordType": "http://gedcomx.org/Death"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "Ohio Deaths, 1908-1953"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1307272"]
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X6KQ-5Q9" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Ethel Davis Swartz",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Ethel Davis",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SPOUSE_NAME_GN_ORIG",
-              "text" : "Ethel Davis"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SPOUSE_NAME_GN",
-              "text" : "Ethel Davis"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Swartz",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SPOUSE_NAME_SURN_ORIG",
-              "text" : "Swartz"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SPOUSE_NAME_SURN",
-              "text" : "Swartz"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "SPOUSE_NAME_ORIG",
-            "text" : "Ethel Davis/Swartz"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "SPOUSE_NAME",
-            "text" : "Ethel Davis Swartz"
-          } ]
-        } ]
-      } ]
-    } ]
-  } ],
-  "relationships" : [ {
-    "id" : "MM9.1.6/MMK1-JPD",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_10537419718",
-      "resourceId" : "p_10537419718"
-    },
-    "person2" : {
-      "resource" : "#p_10537419721",
-      "resourceId" : "p_10537419721"
-    }
-  }, {
-    "id" : "MM9.1.6/MMK1-JP6",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_10537419719",
-      "resourceId" : "p_10537419719"
-    },
-    "person2" : {
-      "resource" : "#p_10537419718",
-      "resourceId" : "p_10537419718"
-    }
-  }, {
-    "id" : "MM9.1.6/MMK1-JPX",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_10537419720",
-      "resourceId" : "p_10537419720"
-    },
-    "person2" : {
-      "resource" : "#p_10537419718",
-      "resourceId" : "p_10537419718"
-    }
-  }, {
-    "id" : "MM9.1.6/MMK1-JPF",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_10537419719",
-      "resourceId" : "p_10537419719"
-    },
-    "person2" : {
-      "resource" : "#p_10537419720",
-      "resourceId" : "p_10537419720"
-    }
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_1307272",
-    "about" : "https://api.familysearch.org/platform/records/collections/1307272",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1382223495204,
-    "modified" : 1633504455914,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Ohio, United States",
-        "description" : "#place_1-43"
+    {
+      "id": "src_r_80077625",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7",
+      "componentOf": {
+        "description": "#sd_c_1307272"
       },
-      "temporal" : {
-        "original" : "1908/1953",
-        "formal" : "1908/1953"
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1383535920553,
+      "modified": 1633504455914,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Ohio, United States"
+          },
+          "temporal": {
+            "original": "26 Sep 1948"
+          },
+          "recordType": "http://gedcomx.org/Death"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7 : 8 March 2021), Entry for Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmNoAccess"],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/350763328"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7"]
       },
-      "recordType" : "http://gedcomx.org/Death"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "Ohio Deaths, 1908-1953"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1307272" ]
-    }
-  }, {
-    "id" : "src_r_80077625",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7",
-    "componentOf" : {
-      "description" : "#sd_c_1307272"
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1307272?arkName=1:2:M3HR-RQ7"
+      }
     },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1383535920553,
-    "modified" : 1633504455914,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Ohio, United States"
+    {
+      "id": "sd_p_10537419718",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B",
+      "componentOf": {
+        "description": "#src_r_80077625"
       },
-      "temporal" : {
-        "original" : "26 Sep 1948"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B : 8 March 2021), Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B"]
+      }
+    },
+    {
+      "id": "sd_p_10537419719",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:X6KQ-531",
+      "componentOf": {
+        "description": "#src_r_80077625"
       },
-      "recordType" : "http://gedcomx.org/Death"
-    } ],
-    "citations" : [ {
-      "value" : "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7 : 8 March 2021), Entry for Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmNoAccess" ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/350763328" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:M3HR-RQ7" ]
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:X6KQ-531 : 8 March 2021), Jacob Swartz in entry for Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Jacob Swartz in entry for Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X6KQ-531"]
+      }
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1307272?arkName=1:2:M3HR-RQ7"
-    }
-  }, {
-    "id" : "sd_p_10537419718",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B",
-    "componentOf" : {
-      "description" : "#src_r_80077625"
+    {
+      "id": "sd_p_10537419720",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:X6KQ-5QM",
+      "componentOf": {
+        "description": "#src_r_80077625"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:X6KQ-5QM : 8 March 2021), Magdalena in entry for Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Magdalena in entry for Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X6KQ-5QM"]
+      }
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B : 8 March 2021), Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B" ]
-    }
-  }, {
-    "id" : "sd_p_10537419719",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:X6KQ-531",
-    "componentOf" : {
-      "description" : "#src_r_80077625"
+    {
+      "id": "sd_p_10537419721",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:X6KQ-5Q9",
+      "componentOf": {
+        "description": "#src_r_80077625"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:X6KQ-5Q9 : 8 March 2021), Ethel Davis Swartz in entry for Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Ethel Davis Swartz in entry for Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:X6KQ-5Q9"]
+      }
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:X6KQ-531 : 8 March 2021), Jacob Swartz in entry for Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Jacob Swartz in entry for Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X6KQ-531" ]
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/3:1:S3HY-63B7-YCY?cc=1307272",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:S3HY-63B7-YCY?cc=1307272"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1307272?arkName=3:1:S3HY-63B7-YCY"
+      }
     }
-  }, {
-    "id" : "sd_p_10537419720",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:X6KQ-5QM",
-    "componentOf" : {
-      "description" : "#src_r_80077625"
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "place_1-43",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/43?context=1"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/UniqueIdentifier",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "UNIQUE_IDENTIFIER",
+          "text": "350763328"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:X6KQ-5QM : 8 March 2021), Magdalena in entry for Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Magdalena in entry for Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X6KQ-5QM" ]
-    }
-  }, {
-    "id" : "sd_p_10537419721",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:X6KQ-5Q9",
-    "componentOf" : {
-      "description" : "#src_r_80077625"
+    {
+      "type": "http://familysearch.org/types/fields/ImageId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_ID",
+          "text": "/004109115/004109115_00157.jpg"
+        },
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "IMAGE_ID_NORM",
+          "text": "dgs:004109115.004109115_00157"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Ohio Deaths, 1908-1953,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:X6KQ-5Q9 : 8 March 2021), Ethel Davis Swartz in entry for Jacob S Swartz, 26 Sep 1948; citing , reference certificate; FHL microfilm 2,246,536."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Ethel Davis Swartz in entry for Jacob S Swartz, \"Ohio Deaths, 1908-1953\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:X6KQ-5Q9" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:S3HY-63B7-YCY?cc=1307272",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
+    {
+      "type": "http://familysearch.org/types/fields/FolderImageSeq",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FOLDER_IMAGE_SEQ",
+          "text": "157"
+        }
+      ]
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:S3HY-63B7-YCY?cc=1307272" ]
+    {
+      "type": "http://familysearch.org/types/fields/Folder",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FOLDER",
+          "text": "004109115"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1307272?arkName=3:1:S3HY-63B7-YCY"
+    {
+      "type": "http://familysearch.org/types/fields/BatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "BATCH_ID",
+          "text": "449605"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/BatchLocality",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "BATCH_LOCALITY",
+          "text": "Ohio, United States"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "DIGITAL_GS_NUMBER",
+          "text": "004109115"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EasyImageId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EASY_IMAGE_ID",
+          "text": "4109115_00157"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventCity",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_CITY",
+          "text": "Harrison Twp"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventCounty",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_COUNTY",
+          "text": "Logan"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventType",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_TYPE",
+          "text": "Death"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FILM_NUMBER",
+          "text": "2246536"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageApid",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_APID",
+          "text": "TH-267-11818-159597-45"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_NBR",
+          "text": "00157"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageArk",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_ARK",
+          "text": "https://familysearch.org/ark:/61903/3:1:S3HY-63B7-YCY"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PacketLtr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "PACKET_LTR",
+          "text": "A"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PrAddlSpouses",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "PR_ADDL_SPOUSES",
+          "text": "N"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "REC_NBR",
+          "text": "151"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "REC_NUMBER",
+          "text": "151"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "RECORD_GROUP",
+          "text": "OHIO_DEATHS_WR_09_01_2011_OH1945DT_1542-1794"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "RECORD_ID",
+          "text": "4109115_00157"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RefId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "REF_ID",
+          "text": "certificate"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "SORT_KEY",
+          "text": "000000000000_004109115_00157_0a151_000350763328"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UdeBatchNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "UDE_BATCH_NUMBER",
+          "text": "I06888-4"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "4"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "3960"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
     }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
-    }
-  } ],
-  "places" : [ {
-    "id" : "place_1-43",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/43?context=1" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/UniqueIdentifier",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "UNIQUE_IDENTIFIER",
-      "text" : "350763328"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_ID",
-      "text" : "/004109115/004109115_00157.jpg"
-    }, {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "IMAGE_ID_NORM",
-      "text" : "dgs:004109115.004109115_00157"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FolderImageSeq",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FOLDER_IMAGE_SEQ",
-      "text" : "157"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/Folder",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FOLDER",
-      "text" : "004109115"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "BATCH_ID",
-      "text" : "449605"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchLocality",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "BATCH_LOCALITY",
-      "text" : "Ohio, United States"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "DIGITAL_GS_NUMBER",
-      "text" : "004109115"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EasyImageId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EASY_IMAGE_ID",
-      "text" : "4109115_00157"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventCity",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EVENT_CITY",
-      "text" : "Harrison Twp"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventCounty",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EVENT_COUNTY",
-      "text" : "Logan"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventType",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EVENT_TYPE",
-      "text" : "Death"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FILM_NUMBER",
-      "text" : "2246536"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageApid",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_APID",
-      "text" : "TH-267-11818-159597-45"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNbr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_NBR",
-      "text" : "00157"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageArk",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_ARK",
-      "text" : "https://familysearch.org/ark:/61903/3:1:S3HY-63B7-YCY"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PacketLtr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "PACKET_LTR",
-      "text" : "A"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PrAddlSpouses",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "PR_ADDL_SPOUSES",
-      "text" : "N"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecNbr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "REC_NBR",
-      "text" : "151"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "REC_NUMBER",
-      "text" : "151"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "RECORD_GROUP",
-      "text" : "OHIO_DEATHS_WR_09_01_2011_OH1945DT_1542-1794"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "RECORD_ID",
-      "text" : "4109115_00157"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RefId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "REF_ID",
-      "text" : "certificate"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "SORT_KEY",
-      "text" : "000000000000_004109115_00157_0a151_000350763328"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "UDE_BATCH_NUMBER",
-      "text" : "I06888-4"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "4"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "3960"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ]
+  ]
 }

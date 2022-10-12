@@ -30,10 +30,8 @@ import { generalizeData } from "../core/np_generalize_data.mjs";
 async function setupNpPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage:
-      "It looks like a Newspapers.com page but not an article page.",
-    generalizeFailedMessage:
-      "It looks like a Newspapers.com page but does not contain the required data.",
+    extractFailedMessage: "It looks like a Newspapers.com page but not an article page.",
+    generalizeFailedMessage: "It looks like a Newspapers.com page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "np",

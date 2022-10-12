@@ -34,9 +34,7 @@ function extractData(document, url) {
   // to be sure we use the right one we start off searching for the entry rows since they are
   // the only thing with a good class name to search on
 
-  const entries = document.querySelectorAll(
-    "table > tbody > tr[class^=entrybmd_]"
-  );
+  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
   //console.log("entriesQuery size is: " + entriesQuery.length);
   if (entries.length < 1) {
     return result;
@@ -45,9 +43,7 @@ function extractData(document, url) {
   let firstEntry = entries[0];
 
   // Find the centered row that looks like "Deaths Mar 1914"
-  const bmdTypeHeading = document.querySelector(
-    "table > tbody > tr > th[align=center]"
-  );
+  const bmdTypeHeading = document.querySelector("table > tbody > tr > th[align=center]");
   if (bmdTypeHeading) {
     let bmdText = bmdTypeHeading.textContent.trim();
     //console.log("bmdText is: " + bmdText);
@@ -86,9 +82,7 @@ function extractData(document, url) {
   }
 
   // We want the first row in the tbody (nth-child is 1 based)
-  const headingsNodes = document.querySelectorAll(
-    "table > tbody > tr:nth-child(1) > th"
-  );
+  const headingsNodes = document.querySelectorAll("table > tbody > tr:nth-child(1) > th");
   if (headingsNodes.length < 1) {
     return result;
   }
@@ -161,9 +155,7 @@ function extractData(document, url) {
 
   // find the citation URL, it is hard to find - we rely on the fact that the td before
   // it has the textContent "URL"
-  const allTableDataCells = document.querySelectorAll(
-    "table > tbody > tr > td"
-  );
+  const allTableDataCells = document.querySelectorAll("table > tbody > tr > td");
   for (let cellIndex = 0; cellIndex < allTableDataCells.length; cellIndex++) {
     let cell = allTableDataCells[cellIndex];
     if (cell.textContent == "URL" && cellIndex < allTableDataCells.length - 1) {

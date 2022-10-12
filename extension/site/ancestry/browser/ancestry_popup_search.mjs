@@ -35,10 +35,7 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -118,12 +115,7 @@ async function addAncestrySameRecordMenuItem(menu, data) {
 
 function addAncestrySearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection", function (element) {
-    setupSearchCollectionsSubMenu(
-      data,
-      "ancestry",
-      ancestrySearchCollection,
-      backFunction
-    );
+    setupSearchCollectionsSubMenu(data, "ancestry", ancestrySearchCollection, backFunction);
   });
 }
 
@@ -161,20 +153,11 @@ async function setupAncestrySearchSubMenu(data, backFunction) {
 
 async function setupAncestrySearchWithParametersSubMenu(data, backFunction) {
   let dataModule = await import(`../core/ancestry_data.mjs`);
-  setupSearchWithParametersSubMenu(
-    data,
-    backFunction,
-    dataModule.AncestryData,
-    ancestrySearchWithParameters
-  );
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.AncestryData, ancestrySearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "ancestry",
-  "Ancestry",
-  addAncestryDefaultSearchMenuItem
-);
+registerSearchMenuItemFunction("ancestry", "Ancestry", addAncestryDefaultSearchMenuItem);

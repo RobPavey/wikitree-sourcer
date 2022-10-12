@@ -20,15 +20,7 @@
   "relationshipToHead": "wife",
   "maritalStatus": "married",
   "personGender": "female",
-  "householdArrayFields": [
-    "name",
-    "relationship",
-    "maritalStatus",
-    "gender",
-    "age",
-    "occupation",
-    "birthPlace"
-  ],
+  "householdArrayFields": ["name", "relationship", "maritalStatus", "gender", "age", "occupation", "birthPlace"],
   "householdArray": [
     {
       "name": "Richard Taylor",

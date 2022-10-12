@@ -117,12 +117,7 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "fmp", "FindMyPast");
 registerSiteSearchPopupOptionsGroup("fmp", 2, 2);
-registerSubheadingForOptions(
-  "search",
-  "fmp",
-  "parameters",
-  "Search Parameters"
-);
+registerSubheadingForOptions("search", "fmp", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "fmp", "FindMyPast");

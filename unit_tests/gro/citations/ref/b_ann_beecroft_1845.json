@@ -1,14 +1,14 @@
 {
-    "std_inline": {
-      "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1845&range=0&surname=BEECROFT&motherssurname=BELL&forename1=ANNE&gender=F&quarter=D&district=SETTLE%20UNION&volume=23 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nBeecroft, Anne (Mother's maiden name: Bell).<br/>\n''GRO Reference:'' 1845 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/settle.html Settle Union] Volume 23.\n</ref>",
-      "type": "inline"
-    },
-    "std_narrative": {
-      "citation": "Anne's birth was registered in the Oct-Nov-Dec quarter of 1845 in the Settle Union district.<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1845&range=0&surname=BEECROFT&motherssurname=BELL&forename1=ANNE&gender=F&quarter=D&district=SETTLE%20UNION&volume=23 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nBeecroft, Anne (Mother's maiden name: Bell).<br/>\n''GRO Reference:'' 1845 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/settle.html Settle Union] Volume 23.\n</ref>",
-      "type": "narrative"
-    },
-    "std_source": {
-      "citation": "* '''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1845&range=0&surname=BEECROFT&motherssurname=BELL&forename1=ANNE&gender=F&quarter=D&district=SETTLE%20UNION&volume=23 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Beecroft, Anne (Mother's maiden name: Bell).<br/>''GRO Reference:'' 1845 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/settle.html Settle Union] Volume 23.",
-      "type": "source"
-    }
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1845&range=0&surname=BEECROFT&motherssurname=BELL&forename1=ANNE&gender=F&quarter=D&district=SETTLE%20UNION&volume=23 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nBeecroft, Anne (Mother's maiden name: Bell).<br/>\n''GRO Reference:'' 1845 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/settle.html Settle Union] Volume 23.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Anne's birth was registered in the Oct-Nov-Dec quarter of 1845 in the Settle Union district.<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1845&range=0&surname=BEECROFT&motherssurname=BELL&forename1=ANNE&gender=F&quarter=D&district=SETTLE%20UNION&volume=23 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nBeecroft, Anne (Mother's maiden name: Bell).<br/>\n''GRO Reference:'' 1845 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/settle.html Settle Union] Volume 23.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1845&range=0&surname=BEECROFT&motherssurname=BELL&forename1=ANNE&gender=F&quarter=D&district=SETTLE%20UNION&volume=23 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Beecroft, Anne (Mother's maiden name: Bell).<br/>''GRO Reference:'' 1845 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/settle.html Settle Union] Volume 23.",
+    "type": "source"
   }
+}

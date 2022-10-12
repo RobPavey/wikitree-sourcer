@@ -34,10 +34,7 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -62,13 +59,10 @@ function wikitreeDoSearch(input) {
         fieldData: fieldData,
       };
 
-      chrome.storage.local.set(
-        { wikitreeSearchData: wikitreeSearchData },
-        function () {
-          //console.log('saved wikitreeSearchData, wikitreeSearchData is:');
-          //console.log(wikitreeSearchData);
-        }
-      );
+      chrome.storage.local.set({ wikitreeSearchData: wikitreeSearchData }, function () {
+        //console.log('saved wikitreeSearchData, wikitreeSearchData is:');
+        //console.log(wikitreeSearchData);
+      });
     } catch (ex) {
       console.log("storeDataCache failed");
     }
@@ -84,9 +78,7 @@ function wikitreeDoSearch(input) {
 
 async function wikitreePlusDoSearch(input) {
   doAsyncActionWithCatch("WikiTree Plus Search", input, async function () {
-    let loadedModule = await import(
-      `../core/wikitree_plus_build_search_url.mjs`
-    );
+    let loadedModule = await import(`../core/wikitree_plus_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
 }
@@ -172,20 +164,11 @@ async function setupWikitreeSearchSubMenu(data, backFunction) {
 
 async function setupWikitreeSearchWithParametersSubMenu(data, backFunction) {
   let dataModule = await import(`../core/wikitree_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(
-    data,
-    backFunction,
-    dataModule.WikitreeData,
-    wikitreeSearchWithParameters
-  );
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.WikitreeData, wikitreeSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "wikitree",
-  "WikiTree",
-  addWikitreeDefaultSearchMenuItem
-);
+registerSearchMenuItemFunction("wikitree", "WikiTree", addWikitreeDefaultSearchMenuItem);

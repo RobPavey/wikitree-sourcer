@@ -23,10 +23,7 @@
     "Household Member(s)<br/>Age": "Thomas Goggin 31<br/>Beffy Goggin 30<br/>James Goggin 10<br/>Michael Goggin 5<br/>Thomas Goggin 3<br/>Katy Goggin 8<br/>Anna Goggin 6<br/>July Goggin 5 M"
   },
   "household": {
-    "headings": [
-      "Household Member(s)",
-      "Age"
-    ],
+    "headings": ["Household Member(s)", "Age"],
     "members": [
       {
         "Household Member(s)": "Thomas Goggin",

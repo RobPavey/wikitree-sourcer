@@ -28,8 +28,7 @@ import { getPlaceSearchTerms } from "./scotp_place_search_terms.mjs";
 
 class ScotpUriBuilder {
   constructor(recordType) {
-    this.uri =
-      "https://www.scotlandspeople.gov.uk/record-results?search_type=people";
+    this.uri = "https://www.scotlandspeople.gov.uk/record-results?search_type=people";
     this.searchTermAdded = true;
 
     this.uri += ScotpRecordType.getSearchStdText(recordType);
@@ -83,15 +82,9 @@ class ScotpUriBuilder {
   }
 
   addRecordDataValue(data, scotpRecordType, spFieldName) {
-    let searchParam = ScotpRecordType.getSearchParam(
-      scotpRecordType,
-      spFieldName
-    );
+    let searchParam = ScotpRecordType.getSearchParam(scotpRecordType, spFieldName);
     if (searchParam) {
-      let recordKey = ScotpRecordType.getRecordKey(
-        scotpRecordType,
-        spFieldName
-      );
+      let recordKey = ScotpRecordType.getRecordKey(scotpRecordType, spFieldName);
       if (recordKey) {
         let recordValue = data.recordData[recordKey];
         if (recordValue) {
@@ -111,94 +104,58 @@ class ScotpUriBuilder {
 
   addSurname(string, searchOption) {
     if (searchOption == "soundex") {
-      let surnameLengthLimit = ScotpRecordType.getNameSearchLimitForSoundex(
-        this.recordType,
-        "surname"
-      );
+      let surnameLengthLimit = ScotpRecordType.getNameSearchLimitForSoundex(this.recordType, "surname");
       if (string.length > surnameLengthLimit) {
         string = string.substring(0, surnameLengthLimit);
       }
     }
 
-    this.addSearchParameter(
-      "surname",
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
     this.addSearchOption("surname", searchOption);
   }
 
   addForename(string, searchOption) {
-    let forenameParam = ScotpRecordType.getSearchParam(
-      this.recordType,
-      SpField.forename
-    );
+    let forenameParam = ScotpRecordType.getSearchParam(this.recordType, SpField.forename);
 
     if (searchOption == "soundex") {
-      let surnameLengthLimit = ScotpRecordType.getNameSearchLimitForSoundex(
-        this.recordType,
-        "forename"
-      );
+      let surnameLengthLimit = ScotpRecordType.getNameSearchLimitForSoundex(this.recordType, "forename");
       if (string.length > surnameLengthLimit) {
         string = string.substring(0, surnameLengthLimit);
       }
     }
 
-    this.addSearchParameter(
-      forenameParam,
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter(forenameParam, WTS_String.removeExtendedAsciiCharacters(string));
     this.addSearchOption(forenameParam, searchOption);
   }
 
   addFullName(string, searchOption) {
-    this.addSearchParameter(
-      "name",
-      WTS_String.removeExtendedAsciiCharacters(string)
-    );
+    this.addSearchParameter("name", WTS_String.removeExtendedAsciiCharacters(string));
     this.addSearchOption("name", searchOption);
   }
 
   addSpouseSurname(string, searchOption) {
-    let surnameParam = ScotpRecordType.getSearchParam(
-      this.recordType,
-      SpField.spouseSurname
-    );
+    let surnameParam = ScotpRecordType.getSearchParam(this.recordType, SpField.spouseSurname);
 
     if (surnameParam) {
-      this.addSearchParameter(
-        surnameParam,
-        WTS_String.removeExtendedAsciiCharacters(string)
-      );
+      this.addSearchParameter(surnameParam, WTS_String.removeExtendedAsciiCharacters(string));
       this.addSearchOption(surnameParam, searchOption);
     }
   }
 
   addSpouseForename(string, searchOption) {
-    let forenameParam = ScotpRecordType.getSearchParam(
-      this.recordType,
-      SpField.spouseForename
-    );
+    let forenameParam = ScotpRecordType.getSearchParam(this.recordType, SpField.spouseForename);
 
     if (forenameParam) {
-      this.addSearchParameter(
-        forenameParam,
-        WTS_String.removeExtendedAsciiCharacters(string)
-      );
+      this.addSearchParameter(forenameParam, WTS_String.removeExtendedAsciiCharacters(string));
       this.addSearchOption(forenameParam, searchOption);
     }
   }
 
   addSpouseFullName(string, searchOption) {
-    let fullNameParam = ScotpRecordType.getSearchParam(
-      this.recordType,
-      SpField.spouseFullName
-    );
+    let fullNameParam = ScotpRecordType.getSearchParam(this.recordType, SpField.spouseFullName);
 
     if (fullNameParam) {
-      this.addSearchParameter(
-        fullNameParam,
-        WTS_String.removeExtendedAsciiCharacters(string)
-      );
+      this.addSearchParameter(fullNameParam, WTS_String.removeExtendedAsciiCharacters(string));
       this.addSearchOption(fullNameParam, searchOption);
     }
   }
@@ -265,21 +222,11 @@ class ScotpUriBuilder {
   addRdName(string, stringIsFromResults) {
     let addedParam = false;
     if (string) {
-      const searchTerms = getPlaceSearchTerms(
-        string,
-        "statutory",
-        stringIsFromResults
-      );
+      const searchTerms = getPlaceSearchTerms(string, "statutory", stringIsFromResults);
       if (searchTerms && Array.isArray(searchTerms)) {
         for (let i = 0; i < searchTerms.length; i += 1) {
-          this.addSearchArrayParameter(
-            "rd_real_name",
-            searchTerms[i].real_name
-          );
-          this.addSearchArrayParameter(
-            "rd_display_name",
-            searchTerms[i].display_name
-          );
+          this.addSearchArrayParameter("rd_real_name", searchTerms[i].real_name);
+          this.addSearchArrayParameter("rd_display_name", searchTerms[i].display_name);
           this.addSearchArrayParameter("rdno", searchTerms[i].rdno);
           addedParam = true;
         }
@@ -298,10 +245,7 @@ class ScotpUriBuilder {
         // from the same page work correctly (otherwise the "Parish/Congregation" is lost)
         // This may change with more research:
         //this.addSearchArrayParameter("rd_real_name", searchTerms[i].real_name);
-        this.addSearchArrayParameter(
-          "rd_display_name",
-          searchTerms[i].display_name
-        );
+        this.addSearchArrayParameter("rd_display_name", searchTerms[i].display_name);
         //this.addSearchArrayParameter("rd_label", searchTerms[i].label);
         this.addSearchArrayParameter("rd_name", searchTerms[i].real_name);
         addedParam = true;
@@ -313,19 +257,12 @@ class ScotpUriBuilder {
   addCatholicParishName(string, stringIsFromResults) {
     let addedParam = false;
     if (string) {
-      const searchTerms = getPlaceSearchTerms(
-        string,
-        "rc",
-        stringIsFromResults
-      );
+      const searchTerms = getPlaceSearchTerms(string, "rc", stringIsFromResults);
       if (searchTerms && Array.isArray(searchTerms)) {
         for (let i = 0; i < searchTerms.length; i += 1) {
           this.addSearchArrayParameter("mp_code", searchTerms[i].mp_code);
           this.addSearchArrayParameter("mp_no", searchTerms[i].mp_no);
-          this.addSearchArrayParameter(
-            "parish_title",
-            searchTerms[i].parish_title
-          );
+          this.addSearchArrayParameter("parish_title", searchTerms[i].parish_title);
           addedParam = true;
         }
       }
@@ -340,10 +277,7 @@ class ScotpUriBuilder {
       const searchTerms = getPlaceSearchTerms(string, "other");
       if (searchTerms && Array.isArray(searchTerms)) {
         for (let i = 0; i < searchTerms.length; i += 1) {
-          this.addSearchArrayParameter(
-            "congregation",
-            searchTerms[i].congregation
-          );
+          this.addSearchArrayParameter("congregation", searchTerms[i].congregation);
         }
       }
     }

@@ -185,8 +185,7 @@ const citationOptionsGroup = {
     {
       optionName: "urlIncludeRef",
       type: "checkbox",
-      label:
-        "Include a '&ref=' query in search URL. It will only have effect for Sourcer users.",
+      label: "Include a '&ref=' query in search URL. It will only have effect for Sourcer users.",
       defaultValue: true,
     },
   ],
@@ -194,12 +193,7 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "scotp", "ScotlandsPeople");
 registerSiteSearchPopupOptionsGroup("scotp", 7, 7);
-registerSubheadingForOptions(
-  "search",
-  "scotp",
-  "parameters",
-  "Search Parameters"
-);
+registerSubheadingForOptions("search", "scotp", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "scotp", "ScotlandsPeople");

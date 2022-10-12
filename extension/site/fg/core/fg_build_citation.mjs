@@ -56,11 +56,7 @@ function buildCoreCitation(data, runDate, builder) {
 
   // The name string can contain italics
   let nameString = data.name;
-  if (
-    data.nameHtml &&
-    nameString != data.nameHtml &&
-    data.nameHtml.includes("<i>")
-  ) {
+  if (data.nameHtml && nameString != data.nameHtml && data.nameHtml.includes("<i>")) {
     // we may have a part in italics
     if (options.citation_fg_italicsInName != "plain") {
       let html = data.nameHtml;
@@ -68,9 +64,7 @@ function buildCoreCitation(data, runDate, builder) {
       let italicEndIndex = html.indexOf("</i>", italicStartIndex);
       if (italicStartIndex != -1 && italicEndIndex != -1) {
         let partBefore = html.substring(0, italicStartIndex).trim();
-        let partItalic = html
-          .substring(italicStartIndex + 3, italicEndIndex)
-          .trim();
+        let partItalic = html.substring(italicStartIndex + 3, italicEndIndex).trim();
         let partAfter = html.substring(italicEndIndex + 4).trim();
 
         if (options.citation_fg_italicsInName == "omit") {
@@ -90,8 +84,7 @@ function buildCoreCitation(data, runDate, builder) {
   }
 
   if (data.cemeteryName && data.cemeteryFullAddress) {
-    dataString +=
-      ", citing " + data.cemeteryName + ", " + data.cemeteryFullAddress;
+    dataString += ", citing " + data.cemeteryName + ", " + data.cemeteryFullAddress;
 
     if (data.plot && options.citation_fg_includeImageStatus) {
       dataString += " (plot: " + data.plot + ")";
@@ -103,9 +96,7 @@ function buildCoreCitation(data, runDate, builder) {
     if (indexOfMaintained != -1) {
       let maintainedString = data.citation.substring(indexOfMaintained);
       if (maintainedString.endsWith(".")) {
-        maintainedString = maintainedString
-          .substring(0, maintainedString.length - 1)
-          .trim();
+        maintainedString = maintainedString.substring(0, maintainedString.length - 1).trim();
       }
       dataString += "; " + maintainedString;
     }
@@ -119,10 +110,7 @@ function buildCoreCitation(data, runDate, builder) {
     } else {
       dataString += " ";
     }
-    if (
-      builder.type != "source" &&
-      options.citation_general_addNewlinesWithinBody
-    ) {
+    if (builder.type != "source" && options.citation_general_addNewlinesWithinBody) {
       dataString += "\n";
     }
     let inscription = data.inscription.trim();

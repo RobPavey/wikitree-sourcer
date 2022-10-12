@@ -22,10 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addMenuItem,
-  doAsyncActionWithCatch,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
@@ -66,37 +63,28 @@ function addScotpDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log(data);
 
   if (filter) {
-    if (
-      !testFilterForDatesAndCountries(filter, scotpStartYear, scotpEndYear, [
-        "Scotland",
-      ])
-    ) {
+    if (!testFilterForDatesAndCountries(filter, scotpStartYear, scotpEndYear, ["Scotland"])) {
       return;
     }
   } else {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange =
-      data.generalizedData.couldPersonHaveBeenBornInDateRange(
-        scotpStartYear,
-        scotpEndYear,
-        maxLifespan
-      );
-    let deathPossibleInRange =
-      data.generalizedData.couldPersonHaveDiedInDateRange(
-        scotpStartYear,
-        scotpEndYear,
-        maxLifespan
-      );
-    let marriagePossibleInRange =
-      data.generalizedData.couldPersonHaveMarriedInDateRange(
-        scotpStartYear,
-        scotpEndYear,
-        maxLifespan
-      );
+    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
+      scotpStartYear,
+      scotpEndYear,
+      maxLifespan
+    );
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
+      scotpStartYear,
+      scotpEndYear,
+      maxLifespan
+    );
+    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
+      scotpStartYear,
+      scotpEndYear,
+      maxLifespan
+    );
 
-    if (
-      !(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)
-    ) {
+    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
       //console.log("addScotpDefaultSearchMenuItem: dates not in range");
       return;
     }
@@ -120,20 +108,11 @@ function addScotpDefaultSearchMenuItem(menu, data, backFunction, filter) {
 
 async function setupScotpSearchSubMenu(data, backFunction) {
   let dataModule = await import(`../core/scotp_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(
-    data,
-    backFunction,
-    dataModule.ScotpData,
-    scotpSearch
-  );
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.ScotpData, scotpSearch);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "scotp",
-  "ScotlandsPeople",
-  addScotpDefaultSearchMenuItem
-);
+registerSearchMenuItemFunction("scotp", "ScotlandsPeople", addScotpDefaultSearchMenuItem);

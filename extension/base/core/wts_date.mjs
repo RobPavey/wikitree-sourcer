@@ -22,20 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const threeLetterMonths = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+const threeLetterMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const fullMonths = [
   "January",
@@ -64,11 +51,7 @@ const WTS_Date = {
     }
 
     let lcString = string.toLowerCase();
-    for (
-      let monthIndex = 0;
-      monthIndex < threeLetterMonths.length;
-      monthIndex++
-    ) {
+    for (let monthIndex = 0; monthIndex < threeLetterMonths.length; monthIndex++) {
       if (lcString == months[monthIndex].toLowerCase()) {
         return monthIndex + 1;
       }
@@ -120,10 +103,7 @@ const WTS_Date = {
     }
 
     // check for a year range
-    if (
-      /^\d\d\d\d\-\d\d\d\d$/.test(cleanString) ||
-      /^\d\d\d\d\-\d\d$/.test(cleanString)
-    ) {
+    if (/^\d\d\d\d\-\d\d\d\d$/.test(cleanString) || /^\d\d\d\d\-\d\d$/.test(cleanString)) {
       // it is a year range,
       let startYearString = cleanString.substring(0, 4);
       let endYearString = cleanString.substring(5);
@@ -152,10 +132,7 @@ const WTS_Date = {
       let firstSpaceIndex = cleanString.indexOf(" ");
       let lastSpaceIndex = cleanString.lastIndexOf(" ");
       let dayString = cleanString.substring(0, firstSpaceIndex);
-      let monthString = cleanString.substring(
-        firstSpaceIndex + 1,
-        lastSpaceIndex
-      );
+      let monthString = cleanString.substring(firstSpaceIndex + 1, lastSpaceIndex);
       let yearString = cleanString.substring(lastSpaceIndex + 1);
       let dayNum = parseInt(dayString);
       if (isNaN(dayNum) || !dayNum) {
@@ -200,10 +177,7 @@ const WTS_Date = {
       let firstSpaceIndex = cleanString.indexOf(" ");
       let lastSpaceIndex = cleanString.lastIndexOf(" ");
       let dayString = cleanString.substring(0, firstSpaceIndex);
-      let monthString = cleanString.substring(
-        firstSpaceIndex + 1,
-        lastSpaceIndex
-      );
+      let monthString = cleanString.substring(firstSpaceIndex + 1, lastSpaceIndex);
       let yearString = cleanString.substring(lastSpaceIndex + 1);
       let dayNum = parseInt(dayString);
       if (isNaN(dayNum) || !dayNum) {
@@ -330,11 +304,7 @@ const WTS_Date = {
     }
 
     if (parsedDate.isRange) {
-      return (
-        parsedDate.startYearNum.toString() +
-        "-" +
-        parsedDate.endYearNum.toString()
-      );
+      return parsedDate.startYearNum.toString() + "-" + parsedDate.endYearNum.toString();
     }
 
     if (parsedDate.hasDay) {
@@ -360,8 +330,7 @@ const WTS_Date = {
       return WTS_Date.getStdDateString(parsedDate, fullMonths);
     }
 
-    let string =
-      fullMonths[parsedDate.monthNum - 1] + " " + parsedDate.dayNum.toString();
+    let string = fullMonths[parsedDate.monthNum - 1] + " " + parsedDate.dayNum.toString();
     string += ", " + parsedDate.yearNum.toString();
     return string;
   },
@@ -408,8 +377,7 @@ const WTS_Date = {
       return WTS_Date.getStdDateString(parsedDate, fullMonths);
     }
 
-    let string =
-      "the " + dayString + " of " + fullMonths[parsedDate.monthNum - 1];
+    let string = "the " + dayString + " of " + fullMonths[parsedDate.monthNum - 1];
     string += " " + parsedDate.yearNum.toString();
     return string;
   },

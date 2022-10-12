@@ -73,9 +73,7 @@ function getValueBySelector(startNode, selector) {
 }
 
 function getParentsFromDocumentInEditMode(document, parents) {
-  let parentRows = document.querySelectorAll(
-    ".five.columns.omega table tbody tr"
-  );
+  let parentRows = document.querySelectorAll(".five.columns.omega table tbody tr");
 
   parentRows.forEach(function (item) {
     var titleText = getTextBySelector(item, "td:nth-child(1)");
@@ -93,9 +91,7 @@ function getParentsFromDocumentInEditMode(document, parents) {
 }
 
 function getSpousesFromDocumentInEditMode(document, spouses) {
-  let rightTableRows = document.querySelectorAll(
-    ".five.columns.omega table tbody tr"
-  );
+  let rightTableRows = document.querySelectorAll(".five.columns.omega table tbody tr");
 
   rightTableRows.forEach(function (item) {
     var titleText = getTextBySelector(item, "td:nth-child(1)");
@@ -110,25 +106,15 @@ function getSpousesFromDocumentInEditMode(document, spouses) {
 
           let spouse = { name: name, wikiId: wikiId };
 
-          var marriageDetails = getAttrBySelector(
-            item,
-            "span.SMALL > a",
-            "title"
-          );
+          var marriageDetails = getAttrBySelector(item, "span.SMALL > a", "title");
           marriageDetails.replace(/\s+/g, " ").trim();
           if (marriageDetails.startsWith("Edit marriage details")) {
-            let marriageString = marriageDetails.replace(
-              /Edit marriage details \(([^\)]+)\).*/,
-              "$1"
-            );
+            let marriageString = marriageDetails.replace(/Edit marriage details \(([^\)]+)\).*/, "$1");
             spouse.marriageString = marriageString;
             let dateStr = "";
             let placeStr = "";
             if (/^\d\d? \w\w\w \d\d\d\d/.test(marriageString)) {
-              dateStr = marriageString.replace(
-                /^(\d\d? \w\w\w \d\d\d\d).*/,
-                "$1"
-              );
+              dateStr = marriageString.replace(/^(\d\d? \w\w\w \d\d\d\d).*/, "$1");
               placeStr = marriageString.replace(/^\d\d? \w\w\w \d\d\d\d */, "");
             } else if (/^\w\w\w \d\d\d\d/.test(marriageString)) {
               dateStr = marriageString.replace(/^(\w\w\w \d\d\d\d).*/, "$1");
@@ -169,17 +155,13 @@ function extractDataInEditMode(document, result) {
   result.middleNames = getValueBySelector(document, "#mMiddleName");
 
   result.birthDate = getValueBySelector(document, "#mBirthDate");
-  let checkedBirthDateStatus = document.querySelector(
-    "input[name=mStatus_BirthDate]:checked"
-  );
+  let checkedBirthDateStatus = document.querySelector("input[name=mStatus_BirthDate]:checked");
   if (checkedBirthDateStatus) {
     result.birthDateStatus = checkedBirthDateStatus.value;
   }
 
   result.deathDate = getValueBySelector(document, "#mDeathDate");
-  let checkedDeathDateStatus = document.querySelector(
-    "input[name=mStatus_DeathDate]:checked"
-  );
+  let checkedDeathDateStatus = document.querySelector("input[name=mStatus_DeathDate]:checked");
   if (checkedDeathDateStatus) {
     result.deathDateStatus = checkedDeathDateStatus.value;
   }
@@ -292,19 +274,14 @@ function getBirthOrDeathLocation(startNode, selector) {
 function getParentsFromDocumentInReadOrPrivateMode(document, result) {
   // there is no easy way to distinguish the parents, there could be 0, 1 or 2 and they don't say if they are mother
   // or father. So we have to compare the lnab - if it matches this person then it is the father.
-  var parentUrls = document.querySelectorAll(
-    ".VITALS span[itemprop=parent] a[itemprop=url]"
-  );
+  var parentUrls = document.querySelectorAll(".VITALS span[itemprop=parent] a[itemprop=url]");
   for (let index = 0; index < parentUrls.length; ++index) {
     if (result.parents == undefined) {
       result.parents = {};
     }
 
     var pathName = parentUrls[index].getAttribute("href");
-    const wikiId = pathName.replace(
-      /(?:https?\:\/\/www\.wikitree\.com)?\/wiki\//,
-      ""
-    );
+    const wikiId = pathName.replace(/(?:https?\:\/\/www\.wikitree\.com)?\/wiki\//, "");
     var fullName = getTextBySelector(parentUrls[index], "span[itemprop=name]");
 
     var lastName = wikiId.replace(/^([^\-]+)\-\d*$/, "$1");
@@ -323,9 +300,7 @@ function getParentsFromDocumentInReadOrPrivateMode(document, result) {
       // Only one parent. There should be some text saying either "[father unknown]" or "[mother unknown]"
       let parentIdentified = false;
       let isFather = true;
-      var parentVitals = document
-        .querySelector(".VITALS span[itemprop=parent]")
-        .closest("div");
+      var parentVitals = document.querySelector(".VITALS span[itemprop=parent]").closest("div");
       if (parentVitals) {
         let text = parentVitals.textContent;
         if (text.includes("[father unknown]")) {
@@ -360,15 +335,10 @@ function getParentsFromDocumentInReadOrPrivateMode(document, result) {
 function getSpousesFromDocumentInNonEditMode(isPrivate, document, result) {
   // read
   // get the spouses (if any)
-  var spouseUrls = document.querySelectorAll(
-    ".VITALS span[itemprop=spouse] a[itemprop=url]"
-  );
+  var spouseUrls = document.querySelectorAll(".VITALS span[itemprop=spouse] a[itemprop=url]");
   for (let index = 0; index < spouseUrls.length; ++index) {
     let pathName = spouseUrls[index].getAttribute("href");
-    const wikiId = pathName.replace(
-      /(?:https?\:\/\/www\.wikitree\.com)?\/wiki\//,
-      ""
-    );
+    const wikiId = pathName.replace(/(?:https?\:\/\/www\.wikitree\.com)?\/wiki\//, "");
     let fullName = getTextBySelector(spouseUrls[index], "span[itemprop=name]");
 
     let spouse = { wikiId: wikiId, name: fullName };
@@ -426,81 +396,37 @@ function getSpousesFromDocumentInNonEditMode(isPrivate, document, result) {
 function extractVitalsDataInNonEditMode(document, result, isPrivate) {
   // Get name (includes first, middle, last names)
   result.name = getTextBySelector(document, "#content span[itemProp=name]");
-  result.birthDate = getTextBySelector(
-    document,
-    ".VITALS time[itemprop=birthDate]"
-  );
-  result.birthDateStatus = getDateStatus(
-    document,
-    ".VITALS time[itemprop=birthDate]"
-  );
-  result.deathDate = getTextBySelector(
-    document,
-    ".VITALS time[itemprop=deathDate]"
-  );
-  result.deathDateStatus = getDateStatus(
-    document,
-    ".VITALS time[itemprop=deathDate]"
-  );
+  result.birthDate = getTextBySelector(document, ".VITALS time[itemprop=birthDate]");
+  result.birthDateStatus = getDateStatus(document, ".VITALS time[itemprop=birthDate]");
+  result.deathDate = getTextBySelector(document, ".VITALS time[itemprop=deathDate]");
+  result.deathDateStatus = getDateStatus(document, ".VITALS time[itemprop=deathDate]");
 
-  result.firstNames = getTextBySelector(
-    document,
-    ".VITALS span[itemprop=givenName]"
-  );
-  result.middleNames = getTextBySelector(
-    document,
-    ".VITALS span[itemprop=additionalName]"
-  );
+  result.firstNames = getTextBySelector(document, ".VITALS span[itemprop=givenName]");
+  result.middleNames = getTextBySelector(document, ".VITALS span[itemprop=additionalName]");
 
   if (isPrivate) {
-    result.birthLocation = getBirthOrDeathLocation(
-      document,
-      ".VITALS time[itemprop=birthDate]"
-    );
-    result.deathLocation = getBirthOrDeathLocation(
-      document,
-      ".VITALS time[itemprop=deathDate]"
-    );
+    result.birthLocation = getBirthOrDeathLocation(document, ".VITALS time[itemprop=birthDate]");
+    result.deathLocation = getBirthOrDeathLocation(document, ".VITALS time[itemprop=deathDate]");
   } else {
-    result.birthLocation = getTextBySelector(
-      document,
-      ".VITALS span[itemprop=birthPlace]"
-    );
-    result.deathLocation = getTextBySelector(
-      document,
-      ".VITALS span[itemprop=deathPlace]"
-    );
+    result.birthLocation = getTextBySelector(document, ".VITALS span[itemprop=birthPlace]");
+    result.deathLocation = getTextBySelector(document, ".VITALS span[itemprop=deathPlace]");
   }
 
   result.currentLastName = getCurrentLastNameInNonEditMode(document, isPrivate);
 
-  result.lnab = getAttrBySelector(
-    document,
-    ".VITALS meta[itemprop=familyName]",
-    "content"
-  );
+  result.lnab = getAttrBySelector(document, ".VITALS meta[itemprop=familyName]", "content");
 }
 
 function extractVitalsDataInPrivateToUserMode(document, result, isPrivate) {
   // Get name (includes first, middle, last names)
   result.name = getTextBySelector(document, "#content span[itemProp=name]");
 
-  result.firstNames = getTextBySelector(
-    document,
-    ".VITALS span[itemprop=givenName]"
-  );
-  result.middleNames = getTextBySelector(
-    document,
-    ".VITALS span[itemprop=additionalName]"
-  );
+  result.firstNames = getTextBySelector(document, ".VITALS span[itemprop=givenName]");
+  result.middleNames = getTextBySelector(document, ".VITALS span[itemprop=additionalName]");
 
   result.currentLastName = getCurrentLastNameInNonEditMode(document, isPrivate);
 
-  result.lnab = getAttrBySelector(
-    document,
-    ".VITALS meta[itemprop=familyName]",
-    "content"
-  );
+  result.lnab = getAttrBySelector(document, ".VITALS meta[itemprop=familyName]", "content");
 
   function extractMidYearFromDecadeString(string, prefix) {
     let yearString = string.substring(prefix.length);
@@ -526,19 +452,13 @@ function extractVitalsDataInPrivateToUserMode(document, result, isPrivate) {
       const bornPrefix = "Born ";
       const diedPrefix = "Died ";
       if (textContent.startsWith(bornPrefix)) {
-        let yearString = extractMidYearFromDecadeString(
-          textContent,
-          bornPrefix
-        );
+        let yearString = extractMidYearFromDecadeString(textContent, bornPrefix);
         if (yearString) {
           result.birthDate = yearString;
           result.birthDateStatus = "about";
         }
       } else if (textContent.startsWith(diedPrefix)) {
-        let yearString = extractMidYearFromDecadeString(
-          textContent,
-          diedPrefix
-        );
+        let yearString = extractMidYearFromDecadeString(textContent, diedPrefix);
         if (yearString) {
           result.deathDate = yearString;
           result.deathDateStatus = "about";
@@ -555,9 +475,7 @@ function extractDataInReadMode(document, result) {
 
   result.pageType = "read";
 
-  let copyIdSelector = document.querySelector(
-    "#content button[aria-label='Copy ID']"
-  );
+  let copyIdSelector = document.querySelector("#content button[aria-label='Copy ID']");
   let genderSelector = document.querySelector(".VITALS meta[itemprop=gender]");
 
   if (!copyIdSelector || !genderSelector) {
@@ -584,9 +502,7 @@ function extractDataInPrivateMode(document, result) {
 
   result.pageType = "private";
 
-  let copyIdSelector = document.querySelector(
-    "#content button[aria-label='Copy ID']"
-  );
+  let copyIdSelector = document.querySelector("#content button[aria-label='Copy ID']");
   let genderSelector = document.querySelector(".VITALS meta[itemprop=gender]");
 
   if (!copyIdSelector || !genderSelector) {
@@ -727,9 +643,7 @@ function extractDataForEditFamily(document, result) {
     }
     result.familyMemberWikiId = wikiId;
 
-    let spouseIsParentNodes = document.querySelectorAll(
-      '#content input[name="wpSpouseIsParent"]'
-    );
+    let spouseIsParentNodes = document.querySelectorAll('#content input[name="wpSpouseIsParent"]');
     if (spouseIsParentNodes.length > 0) {
       for (let spouseIsParentNode of spouseIsParentNodes) {
         if (spouseIsParentNode.checked) {
@@ -747,17 +661,12 @@ function extractDataForEditFamily(document, result) {
         }
       }
     } else {
-      let sameFatherNode = document.querySelector(
-        '#content input[name="wpSameFather"]'
-      );
+      let sameFatherNode = document.querySelector('#content input[name="wpSameFather"]');
       if (sameFatherNode && sameFatherNode.checked) {
         let textNode = sameFatherNode.nextSibling;
         if (textNode) {
           let fatherText = textNode.textContent;
-          fatherText = fatherText.replace(
-            /^\s*Father of new sibling is\s+/,
-            ""
-          ); // leaing text
+          fatherText = fatherText.replace(/^\s*Father of new sibling is\s+/, ""); // leaing text
           fatherText = fatherText.replace(/\($/, ""); // remove trailing "("
           result.familyMemberFatherName = fatherText.trim();
 
@@ -769,17 +678,12 @@ function extractDataForEditFamily(document, result) {
           }
         }
       }
-      let sameMotherNode = document.querySelector(
-        '#content input[name="wpSameMother"]'
-      );
+      let sameMotherNode = document.querySelector('#content input[name="wpSameMother"]');
       if (sameMotherNode && sameMotherNode.checked) {
         let textNode = sameMotherNode.nextSibling;
         if (textNode) {
           let motherText = textNode.textContent;
-          motherText = motherText.replace(
-            /^\s*Mother of new sibling is\s+/,
-            ""
-          ); // leaing text
+          motherText = motherText.replace(/^\s*Mother of new sibling is\s+/, ""); // leaing text
           motherText = motherText.replace(/\($/, ""); // remove trailing "("
           result.familyMemberMotherName = motherText.trim();
 
@@ -803,16 +707,7 @@ function extractDataForEditFamily(document, result) {
   let birthDateNode = document.querySelector("#mBirthDate");
   let deathDateNode = document.querySelector("#mDeathDate");
 
-  if (
-    !(
-      firstNameNode &&
-      realNameNode &&
-      lnabNode &&
-      clnNode &&
-      birthDateNode &&
-      deathDateNode
-    )
-  ) {
+  if (!(firstNameNode && realNameNode && lnabNode && clnNode && birthDateNode && deathDateNode)) {
     return result;
   }
 
@@ -825,16 +720,12 @@ function extractDataForEditFamily(document, result) {
   result.currentLastName = getValueBySelector(document, "#mLastNameCurrent");
 
   result.birthDate = getValueBySelector(document, "#mBirthDate");
-  let checkedBirthDateStatus = document.querySelector(
-    "input[name=mStatus_BirthDate]:checked"
-  );
+  let checkedBirthDateStatus = document.querySelector("input[name=mStatus_BirthDate]:checked");
   if (checkedBirthDateStatus) {
     result.birthDateStatus = checkedBirthDateStatus.value;
   }
   result.deathDate = getValueBySelector(document, "#mDeathDate");
-  let checkedDeathDateStatus = document.querySelector(
-    "input[name=mStatus_DeathDate]:checked"
-  );
+  let checkedDeathDateStatus = document.querySelector("input[name=mStatus_DeathDate]:checked");
   if (checkedDeathDateStatus) {
     result.deathDateStatus = checkedDeathDateStatus.value;
   }
@@ -879,9 +770,7 @@ function extractData(document, url) {
     return extractDataForEditFamily(document, result);
   }
 
-  let currentTabNode = document.querySelector(
-    "#content > div > ul.profile-tabs > li"
-  );
+  let currentTabNode = document.querySelector("#content > div > ul.profile-tabs > li");
 
   let currentTabText = currentTabNode ? currentTabNode.textContent : "";
 
@@ -900,9 +789,7 @@ function extractData(document, url) {
         extractDataInReadMode(document, result);
       }
     } else {
-      let privacyIconNode = document.querySelector(
-        "#content img[title^='Privacy Level:']"
-      );
+      let privacyIconNode = document.querySelector("#content img[title^='Privacy Level:']");
       let loginNode = document.querySelector("#header div.login");
 
       if (loginNode) {

@@ -74,31 +74,11 @@ async function loadOptions() {
 
   if (itemsNew.options_search) {
     loadedOptions = {};
-    putNewLoadedOptionsSetInOptions(
-      loadedOptions,
-      itemsNew.options_search,
-      "search"
-    );
-    putNewLoadedOptionsSetInOptions(
-      loadedOptions,
-      itemsNew.options_citation,
-      "citation"
-    );
-    putNewLoadedOptionsSetInOptions(
-      loadedOptions,
-      itemsNew.options_narrative,
-      "narrative"
-    );
-    putNewLoadedOptionsSetInOptions(
-      loadedOptions,
-      itemsNew.options_table,
-      "table"
-    );
-    putNewLoadedOptionsSetInOptions(
-      loadedOptions,
-      itemsNew.options_addPerson,
-      "addPerson"
-    );
+    putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_search, "search");
+    putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_citation, "citation");
+    putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_narrative, "narrative");
+    putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_table, "table");
+    putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addPerson, "addPerson");
     if (itemsNew.options) {
       loadedOptions.options_version = itemsNew.options.options_version;
     } else if (itemsNew.options_version) {
@@ -119,14 +99,7 @@ async function loadOptions() {
 }
 
 function convertOptionsObjectToSaveFormat(options) {
-  const prefixes = [
-    "search",
-    "citation",
-    "narrative",
-    "table",
-    "addPerson",
-    "options",
-  ];
+  const prefixes = ["search", "citation", "narrative", "table", "addPerson", "options"];
 
   let newOptions = {};
 
@@ -181,9 +154,7 @@ async function saveOptions(options) {
           console.log(chrome.runtime.lastError);
 
           chrome.storage.sync.getBytesInUse(null, function (bytesInUse) {
-            console.log(
-              "saveOptions: total sync storage in use is : " + bytesInUse
-            );
+            console.log("saveOptions: total sync storage in use is : " + bytesInUse);
           });
 
           // This fixed the issue in iPad simulator. But it seems a bit drastic...
@@ -212,15 +183,9 @@ async function saveOptions(options) {
                   console.log("saveOptions, after clear: Runtime error is:");
                   console.log(chrome.runtime.lastError);
 
-                  chrome.storage.sync.getBytesInUse(
-                    null,
-                    function (bytesInUse) {
-                      console.log(
-                        "saveOptions, after clear: total sync storage in use is : " +
-                          bytesInUse
-                      );
-                    }
-                  );
+                  chrome.storage.sync.getBytesInUse(null, function (bytesInUse) {
+                    console.log("saveOptions, after clear: total sync storage in use is : " + bytesInUse);
+                  });
 
                   var status = document.getElementById("status");
                   status.textContent = "Options could not be saved.";

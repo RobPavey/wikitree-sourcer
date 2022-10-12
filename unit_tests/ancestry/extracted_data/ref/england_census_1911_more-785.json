@@ -26,10 +26,7 @@
     "Household Members": "Francis Cyril More 36<br/>Mary Elizabeth More 38<br/>Maisie Constance More 10<br/>Ellaline Hannah More 9"
   },
   "household": {
-    "headings": [
-      "Name",
-      "Age"
-    ],
+    "headings": ["Name", "Age"],
     "members": [
       {
         "Name": "Francis Cyril More",

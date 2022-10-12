@@ -2,579 +2,563 @@
   "id": "r_22948203053",
   "lang": "en",
   "links": {
-      "next": {
-          "href": "https://www.familysearch.org/ark:/61903/1:2:99X8-368P?seek=next"
-      },
-      "prev": {
-          "href": "https://www.familysearch.org/ark:/61903/1:2:99X8-368P?seek=prev"
-      },
-      "self": {
-          "href": "https://www.familysearch.org/ark:/61903/1:2:99X8-368P"
-      }
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:99X8-368P?seek=next"
+    },
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:99X8-368P?seek=prev"
+    },
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:99X8-368P"
+    }
   },
   "description": "#sd_p_14992760853",
   "persons": [
-      {
-          "id": "p_14992760853",
-          "extracted": true,
-          "principal": true,
-          "links": {
-              "persona": {
-                  "href": "https://api.familysearch.org/platform/records/personas/2N1J-673?flag=fsh"
-              },
-              "record": {
-                  "href": "https://api.familysearch.org/platform/records/records/99X8-368P?flag=fsh"
-              }
-          },
-          "identifiers": {
-              "http://gedcomx.org/Persistent": [
-                  "https://www.familysearch.org/ark:/61903/1:1:2N1J-673"
-              ]
-          },
-          "names": [
-              {
-                  "type": "http://gedcomx.org/BirthName",
-                  "nameForms": [
-                      {
-                          "fullText": "William Handford",
-                          "parts": [
-                              {
-                                  "type": "http://gedcomx.org/Given",
-                                  "value": "William",
-                                  "fields": [
-                                      {
-                                          "type": "http://gedcomx.org/Given",
-                                          "values": [
-                                              {
-                                                  "type": "http://gedcomx.org/Interpreted",
-                                                  "labelId": "PR_NAME_GN",
-                                                  "text": "William"
-                                              }
-                                          ]
-                                      }
-                                  ]
-                              },
-                              {
-                                  "type": "http://gedcomx.org/Surname",
-                                  "value": "Handford",
-                                  "fields": [
-                                      {
-                                          "type": "http://gedcomx.org/Surname",
-                                          "values": [
-                                              {
-                                                  "type": "http://gedcomx.org/Interpreted",
-                                                  "labelId": "PR_NAME_SURN",
-                                                  "text": "Handford"
-                                              }
-                                          ]
-                                      }
-                                  ]
-                              }
-                          ],
-                          "fields": [
-                              {
-                                  "type": "http://gedcomx.org/Name",
-                                  "values": [
-                                      {
-                                          "type": "http://gedcomx.org/Interpreted",
-                                          "labelId": "PR_NAME",
-                                          "text": "William Handford"
-                                      }
-                                  ]
-                              }
-                          ]
-                      }
-                  ]
-              }
-          ],
-          "facts": [
-              {
-                  "type": "http://gedcomx.org/Death",
-                  "date": {
-                      "original": "1913",
-                      "fields": [
-                          {
-                              "type": "http://gedcomx.org/Date",
-                              "values": [
-                                  {
-                                      "type": "http://gedcomx.org/Interpreted",
-                                      "labelId": "EVENT_DATE",
-                                      "text": "1913"
-                                  }
-                              ]
-                          },
-                          {
-                              "type": "http://gedcomx.org/Year",
-                              "values": [
-                                  {
-                                      "type": "http://gedcomx.org/Interpreted",
-                                      "labelId": "EVENT_YEAR",
-                                      "text": "1913"
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  "place": {
-                      "original": "Middlesbrough, Yorkshire, England",
-                      "fields": [
-                          {
-                              "type": "http://gedcomx.org/Place",
-                              "values": [
-                                  {
-                                      "type": "http://gedcomx.org/Interpreted",
-                                      "labelId": "EVENT_PLACE",
-                                      "text": "Middlesbrough, Yorkshire, England"
-                                  }
-                              ]
-                          },
-                          {
-                              "type": "http://familysearch.org/types/fields/RegistrationDistrict",
-                              "values": [
-                                  {
-                                      "type": "http://gedcomx.org/Interpreted",
-                                      "labelId": "EVENT_PLACE_LEVEL_3",
-                                      "text": "Middlesbrough"
-                                  }
-                              ]
-                          },
-                          {
-                              "type": "http://gedcomx.org/County",
-                              "values": [
-                                  {
-                                      "type": "http://gedcomx.org/Interpreted",
-                                      "labelId": "EVENT_PLACE_LEVEL_2",
-                                      "text": "Yorkshire"
-                                  }
-                              ]
-                          },
-                          {
-                              "type": "http://gedcomx.org/Country",
-                              "values": [
-                                  {
-                                      "type": "http://gedcomx.org/Interpreted",
-                                      "labelId": "EVENT_PLACE_LEVEL_1",
-                                      "text": "England"
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  "primary": true
-              },
-              {
-                  "type": "http://gedcomx.org/Birth",
-                  "date": {
-                      "original": "1844",
-                      "fields": [
-                          {
-                              "type": "http://gedcomx.org/Year",
-                              "values": [
-                                  {
-                                      "type": "http://gedcomx.org/Interpreted",
-                                      "labelId": "PR_BIRTH_YEAR_ESTIMATED",
-                                      "text": "1844"
-                                  }
-                              ]
-                          }
-                      ]
-                  }
-              }
-          ],
-          "fields": [
-              {
-                  "type": "http://gedcomx.org/Age",
-                  "values": [
-                      {
+    {
+      "id": "p_14992760853",
+      "extracted": true,
+      "principal": true,
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/2N1J-673?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/99X8-368P?flag=fsh"
+        }
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:2N1J-673"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "William Handford",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "William",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
                           "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_AGE",
-                          "text": "69"
-                      }
+                          "labelId": "PR_NAME_GN",
+                          "text": "William"
+                        }
+                      ]
+                    }
                   ]
-              }
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Handford",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Handford"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "William Handford"
+                    }
+                  ]
+                }
+              ]
+            }
           ]
-      }
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Death",
+          "date": {
+            "original": "1913",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "1913"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1913"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Middlesbrough, Yorkshire, England",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Middlesbrough, Yorkshire, England"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/RegistrationDistrict",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_3",
+                    "text": "Middlesbrough"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_2",
+                    "text": "Yorkshire"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_1",
+                    "text": "England"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true
+        },
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "1844",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIRTH_YEAR_ESTIMATED",
+                    "text": "1844"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "69"
+            }
+          ]
+        }
+      ]
+    }
   ],
   "sourceDescriptions": [
-      {
-          "id": "sd_c_2285341",
-          "about": "https://api.familysearch.org/platform/records/collections/2285341",
-          "resourceType": "http://gedcomx.org/Collection",
-          "created": 1387492839317,
-          "modified": 1610559977446,
-          "coverage": [
-              {
-                  "spatial": {
-                      "original": "England",
-                      "description": "#place_1986340"
-                  },
-                  "temporal": {
-                      "original": "1837/1920",
-                      "formal": "1837/1920"
-                  },
-                  "recordType": "http://gedcomx.org/Death"
-              },
-              {
-                  "spatial": {
-                      "original": "Wales",
-                      "description": "#place_1986311"
-                  },
-                  "temporal": {
-                      "original": "1837/1920",
-                      "formal": "1837/1920"
-                  },
-                  "recordType": "http://gedcomx.org/Death"
-              },
-              {
-                  "spatial": {
-                      "original": "United Kingdom",
-                      "description": "#place_1927033"
-                  },
-                  "temporal": {
-                      "original": "1837/1920",
-                      "formal": "1837/1920"
-                  },
-                  "recordType": "http://gedcomx.org/Death"
-              }
-          ],
-          "titles": [
-              {
-                  "lang": "en_US",
-                  "value": "England and Wales Death Registration Index 1837-2007"
-              }
-          ],
-          "identifiers": {
-              "http://gedcomx.org/Primary": [
-                  "https://api.familysearch.org/platform/records/collections/2285341"
-              ]
-          }
-      },
-      {
-          "id": "src_r_22948203053",
-          "mediaType": "image/jpeg",
-          "about": "https://www.familysearch.org/ark:/61903/1:2:99X8-368P",
-          "componentOf": {
-              "description": "#sd_c_2285341"
+    {
+      "id": "sd_c_2285341",
+      "about": "https://api.familysearch.org/platform/records/collections/2285341",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1387492839317,
+      "modified": 1610559977446,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "England",
+            "description": "#place_1986340"
           },
-          "resourceType": "http://gedcomx.org/Record",
-          "created": 1391833326265,
-          "modified": 1610559977446,
-          "coverage": [
-              {
-                  "spatial": {
-                      "original": "Middlesbrough, Yorkshire, England"
-                  },
-                  "temporal": {
-                      "original": "1913",
-                      "formal": "+1913"
-                  },
-                  "recordType": "http://gedcomx.org/Death"
-              }
-          ],
-          "citations": [
-              {
-                  "value": "\"England and Wales Death Registration Index 1837-2007,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:99X8-368P : 31 December 2014), 1913; from \"England & Wales Deaths, 1837-2006,\" index, <i>findmypast</i> (http://www.findmypast.com : 2012); citing Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England."
-              }
-          ],
-          "titles": [
-              {
-                  "lang": "en",
-                  "value": "Entry for William Handford, \"England and Wales Death Registration Index 1837-2007\""
-              }
-          ],
-          "identifiers": {
-              "$": [
-                  "https://www.familysearch.org/platform/externalId/easy/1001876106449"
-              ],
-              "http://gedcomx.org/Persistent": [
-                  "https://www.familysearch.org/ark:/61903/1:2:99X8-368P"
-              ]
+          "temporal": {
+            "original": "1837/1920",
+            "formal": "1837/1920"
           },
-          "descriptor": {
-              "resource": "https://www.familysearch.org/service/cds/recapi/collections/2285341#rd_MM9.1.9/MMMM-99S"
-          }
-      },
-      {
-          "id": "sd_p_14992760853",
-          "about": "https://www.familysearch.org/ark:/61903/1:1:2N1J-673",
-          "componentOf": {
-              "description": "#src_r_22948203053"
+          "recordType": "http://gedcomx.org/Death"
+        },
+        {
+          "spatial": {
+            "original": "Wales",
+            "description": "#place_1986311"
           },
-          "resourceType": "http://gedcomx.org/Person",
-          "citations": [
-              {
-                  "value": "\"England and Wales Death Registration Index 1837-2007,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:2N1J-673 : 31 December 2014), William Handford, 1913; from \"England & Wales Deaths, 1837-2006,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England."
-              }
-          ],
-          "titles": [
-              {
-                  "lang": "en",
-                  "value": "William Handford, \"England and Wales Death Registration Index 1837-2007\""
-              }
-          ],
-          "identifiers": {
-              "http://gedcomx.org/Persistent": [
-                  "https://www.familysearch.org/ark:/61903/1:1:2N1J-673"
-              ]
-          }
+          "temporal": {
+            "original": "1837/1920",
+            "formal": "1837/1920"
+          },
+          "recordType": "http://gedcomx.org/Death"
+        },
+        {
+          "spatial": {
+            "original": "United Kingdom",
+            "description": "#place_1927033"
+          },
+          "temporal": {
+            "original": "1837/1920",
+            "formal": "1837/1920"
+          },
+          "recordType": "http://gedcomx.org/Death"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "England and Wales Death Registration Index 1837-2007"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/2285341"]
       }
+    },
+    {
+      "id": "src_r_22948203053",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:99X8-368P",
+      "componentOf": {
+        "description": "#sd_c_2285341"
+      },
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1391833326265,
+      "modified": 1610559977446,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Middlesbrough, Yorkshire, England"
+          },
+          "temporal": {
+            "original": "1913",
+            "formal": "+1913"
+          },
+          "recordType": "http://gedcomx.org/Death"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"England and Wales Death Registration Index 1837-2007,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:99X8-368P : 31 December 2014), 1913; from \"England & Wales Deaths, 1837-2006,\" index, <i>findmypast</i> (http://www.findmypast.com : 2012); citing Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for William Handford, \"England and Wales Death Registration Index 1837-2007\""
+        }
+      ],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/1001876106449"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:99X8-368P"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2285341#rd_MM9.1.9/MMMM-99S"
+      }
+    },
+    {
+      "id": "sd_p_14992760853",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:2N1J-673",
+      "componentOf": {
+        "description": "#src_r_22948203053"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England and Wales Death Registration Index 1837-2007,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:2N1J-673 : 31 December 2014), William Handford, 1913; from \"England & Wales Deaths, 1837-2006,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing Death, Middlesbrough, Yorkshire, England, General Register Office, Southport, England."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "William Handford, \"England and Wales Death Registration Index 1837-2007\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:2N1J-673"]
+      }
+    }
   ],
   "places": [
-      {
-          "id": "place_1986311",
-          "identifiers": {
-              "http://gedcomx.org/Primary": [
-                  "https://api.familysearch.org/authorities/v1/place/1986311"
-              ]
-          }
-      },
-      {
-          "id": "place_1927033",
-          "identifiers": {
-              "http://gedcomx.org/Primary": [
-                  "https://api.familysearch.org/authorities/v1/place/1927033"
-              ]
-          }
-      },
-      {
-          "id": "place_1986340",
-          "identifiers": {
-              "http://gedcomx.org/Primary": [
-                  "https://api.familysearch.org/authorities/v1/place/1986340"
-              ]
-          }
+    {
+      "id": "place_1986311",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986311"]
       }
+    },
+    {
+      "id": "place_1927033",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1927033"]
+      }
+    },
+    {
+      "id": "place_1986340",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986340"]
+      }
+    }
   ],
   "fields": [
-      {
-          "type": "http://familysearch.org/types/fields/UniqueIdentifier",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "UNIQUE_IDENTIFIER",
-                  "text": "1001876106449"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/EventType",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_TYPE",
-                  "text": "Death"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/EventRegQtr",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_REG_QTR",
-                  "text": "Jan-Feb-Mar"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/EventRegDate",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_REG_DATE",
-                  "text": "1913"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/EventDistrictReg",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_DISTRICT_REG",
-                  "text": "Middlesbrough"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/EventCounty",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_COUNTY",
-                  "text": "Yorkshire"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/SourceVolume",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "SOURCE_VOLUME",
-                  "text": "9D"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/SourcePage",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "SOURCE_PAGE",
-                  "text": "710"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/ExtLineNbr",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EXT_LINE_NBR",
-                  "text": "80"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/EventPlaceLevel1Type",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_PLACE_LEVEL_1_TYPE",
-                  "text": "Country"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/EventPlaceLevel2Type",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_PLACE_LEVEL_2_TYPE",
-                  "text": "County"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/EventPlaceLevel3Type",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_PLACE_LEVEL_3_TYPE",
-                  "text": "Registration District"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/Evquarter",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVQUARTER",
-                  "text": "1"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/ExtAdditionalEntryFlag",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EXT_ADDITIONAL_ENTRY_FLAG",
-                  "text": "N"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/ExtRefNbr",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EXT_REF_NBR",
-                  "text": "53785038"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/CollectionId",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "FS_COLLECTION_ID",
-                  "text": "2285341"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/PpqId",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "PPQ_ID",
-                  "text": "13-1239"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/RecordGroup",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "RECORD_GROUP",
-                  "text": "deaths_1900stxt"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/SortKey",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "SORT_KEY",
-                  "text": "000053785038_1913_1_000001001876106449"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/RecordVersion",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "FS_RECORD_VERSION",
-                  "text": "1"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/UserModified",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "FS_USER_MODIFIED",
-                  "text": "false"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/CdsBatchId",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "FS_CDS_BATCH_ID",
-                  "text": "18144"
-              }
-          ]
-      },
-      {
-          "type": "http://familysearch.org/types/fields/PublicationStatus",
-          "values": [
-              {
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "FS_PUB_STATUS",
-                  "text": "Production"
-              }
-          ]
-      }
+    {
+      "type": "http://familysearch.org/types/fields/UniqueIdentifier",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "UNIQUE_IDENTIFIER",
+          "text": "1001876106449"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventType",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_TYPE",
+          "text": "Death"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventRegQtr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_REG_QTR",
+          "text": "Jan-Feb-Mar"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventRegDate",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_REG_DATE",
+          "text": "1913"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventDistrictReg",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_DISTRICT_REG",
+          "text": "Middlesbrough"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventCounty",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_COUNTY",
+          "text": "Yorkshire"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourceVolume",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "SOURCE_VOLUME",
+          "text": "9D"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourcePage",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "SOURCE_PAGE",
+          "text": "710"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtLineNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EXT_LINE_NBR",
+          "text": "80"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel1Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_PLACE_LEVEL_1_TYPE",
+          "text": "Country"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel2Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_PLACE_LEVEL_2_TYPE",
+          "text": "County"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel3Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_PLACE_LEVEL_3_TYPE",
+          "text": "Registration District"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/Evquarter",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVQUARTER",
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtAdditionalEntryFlag",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EXT_ADDITIONAL_ENTRY_FLAG",
+          "text": "N"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ExtRefNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EXT_REF_NBR",
+          "text": "53785038"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "2285341"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "PPQ_ID",
+          "text": "13-1239"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "RECORD_GROUP",
+          "text": "deaths_1900stxt"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "SORT_KEY",
+          "text": "000053785038_1913_1_000001001876106449"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "18144"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
+    }
   ]
 }

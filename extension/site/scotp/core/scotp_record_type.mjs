@@ -86,19 +86,16 @@ const scotpRecordTypes = {
 
   ///////////////////// Statutory Registers ///////////////////////
   stat_births: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/statutory-registers/births",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/statutory-registers/births",
     collectionNrsTitle: "Statutory Register of Births",
     dates: { from: 1855, to: 0 },
     eventClass: "birth",
     recordKeys: { ref: "Ref", gender: "Gender", rdName: "RD Name" },
-    searchStdText:
-      "&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births",
+    searchStdText: "&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births",
     sourcerRecordType: RT.BirthRegistration,
   },
   stat_marriages: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/statutory-registers/marriages",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/statutory-registers/marriages",
     collectionNrsTitle: "Statutory Register of Marriages",
     dates: { from: 1855, to: 0 },
     eventClass: "marriage",
@@ -110,38 +107,32 @@ const scotpRecordTypes = {
     },
     search: { spouse: true },
     searchParams: { spouseSurname: "spsurname", spouseForename: "spforename" },
-    searchStdText:
-      "&dl_cat=statutory&dl_rec=statutory-marriages&record_type=stat_marriages",
+    searchStdText: "&dl_cat=statutory&dl_rec=statutory-marriages&record_type=stat_marriages",
     sourcerRecordType: RT.MarriageRegistration,
   },
   stat_divorces: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/statutory-register-of-divorce",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/statutory-register-of-divorce",
     collectionNrsTitle: "Statutory Register of Divorces",
     dates: { from: 1984, to: 0 },
     eventClass: "divorce",
     recordKeys: { ref: "Serial Number", spouseSurname: "Spouse Surname" },
     search: { spouse: true, county: false },
     searchParams: { spouseSurname: "spsurname" },
-    searchStdText:
-      "&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces",
+    searchStdText: "&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces",
     sourcerRecordType: RT.Divorce,
   },
   stat_deaths: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/statutory-registers/deaths",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/statutory-registers/deaths",
     collectionNrsTitle: "Statutory Register of Deaths",
     dates: { from: 1855, to: 0 },
     eventClass: "death",
     recordKeys: { ref: "Ref", age: "Age at death", rdName: "RD Name" },
     search: { ageRange: true, birthYear: true },
-    searchStdText:
-      "&dl_cat=statutory&dl_rec=statutory-deaths&record_type=stat_deaths",
+    searchStdText: "&dl_cat=statutory&dl_rec=statutory-deaths&record_type=stat_deaths",
     sourcerRecordType: RT.DeathRegistration,
   },
   civilpartnership: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/statutory-register-of-civil-partnerships",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/statutory-register-of-civil-partnerships",
     collectionNrsTitle: "Statutory Register of Civil Partnerships",
     dates: { from: 2005, to: 0 },
     eventClass: "marriage",
@@ -152,13 +143,11 @@ const scotpRecordTypes = {
     },
     search: { spouse: true },
     searchParams: { spouseSurname: "psurname", spouseForename: "" },
-    searchStdText:
-      "&dl_cat=statutory&dl_rec=statutory-civilpartnerships&record_type=civilpartnership",
+    searchStdText: "&dl_cat=statutory&dl_rec=statutory-civilpartnerships&record_type=civilpartnership",
     sourcerRecordType: RT.MarriageRegistration,
   },
   dissolutions: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/statutory-register-of-dissolutions",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/statutory-register-of-dissolutions",
     collectionNrsTitle: "Statutory Register of Dissolutions",
     dates: { from: 2007, to: 0 },
     eventClass: "divorce",
@@ -166,8 +155,7 @@ const scotpRecordTypes = {
     search: { spouse: true, county: false },
     searchParams: { spouseSurname: "psurname", spouseForename: "" },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
-    searchStdText:
-      "&dl_cat=statutory&dl_rec=statutory-dissolutions&record_type=dissolutions",
+    searchStdText: "&dl_cat=statutory&dl_rec=statutory-dissolutions&record_type=dissolutions",
     sourcerRecordType: RT.Divorce,
   },
 
@@ -193,8 +181,7 @@ const scotpRecordTypes = {
   opr_marriages: {
     collectionNrsLink:
       "https://www.nrscotland.gov.uk/research/guides/birth-death-and-marriage-records/old-parish-registers/marriages-and-proclamation-of-banns",
-    collectionNrsTitle:
-      "Old Parish Registers - Marriages and Proclamation of Banns",
+    collectionNrsTitle: "Old Parish Registers - Marriages and Proclamation of Banns",
     dates: { from: 1553, to: 1885 },
     eventClass: "marriage",
     recordKeys: {
@@ -222,8 +209,7 @@ const scotpRecordTypes = {
   },
 
   crbirths_baptism: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/births-and-baptisms",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/births-and-baptisms",
     collectionNrsTitle: "Catholic Parish Registers - Births and Baptisms",
     dates: { from: 1703, to: 1921 },
     eventClass: "birth",
@@ -239,8 +225,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.Baptism,
   },
   crbanns_marriages: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/marriages",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/marriages",
     collectionNrsTitle: "Catholic Parish Registers - Marriages",
     dates: { from: 1736, to: 1946 },
     eventClass: "marriage",
@@ -262,8 +247,7 @@ const scotpRecordTypes = {
   crdeath_burial: {
     collectionNrsLink:
       "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/deaths-burials-and-funerals",
-    collectionNrsTitle:
-      "Catholic Parish Registers - Deaths, Burials and Funerals",
+    collectionNrsTitle: "Catholic Parish Registers - Deaths, Burials and Funerals",
     dates: { from: 1742, to: 1971 },
     eventClass: "death",
     recordKeys: { parishName: "Parish", gender: "Gender", age: "Age" },
@@ -274,22 +258,19 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.Burial, // NOTE: can be overidden to RT.Death
   },
   cr_other: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers",
     collectionNrsTitle: "Catholic Parish Registers - Other Events",
     dates: { from: 1742, to: 1971 },
     eventClass: "other",
     recordKeys: { parishName: "Parish", gender: "Gender" },
     search: { rd: false, rcParish: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
-    searchStdText:
-      "&record_type%5B0%5D=cr_other&church_type=Catholic%20Registers",
+    searchStdText: "&record_type%5B0%5D=cr_other&church_type=Catholic%20Registers",
     sourcerRecordType: RT.OtherChurchEvent,
   },
 
   ch3_baptism: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/church-records",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/church-records",
     collectionNrsTitle: "Other Church Registers - Births and Baptisms",
     dates: { from: 1733, to: 1855 },
     eventClass: "birth",
@@ -305,8 +286,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.Baptism,
   },
   ch3_marriages: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/church-records",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/church-records",
     collectionNrsTitle: "Other Church Registers - Marriages",
     dates: { from: 1740, to: 1855 },
     eventClass: "marriage",
@@ -323,8 +303,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.Marriage,
   },
   ch3_burials: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/church-records",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/church-records",
     collectionNrsTitle: "Other Church Registers - Deaths and Burials",
     dates: { from: 1783, to: 1855 },
     eventClass: "death",
@@ -337,8 +316,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.DeathOrBurial,
   },
   ch3_other: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/church-records",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/church-records",
     collectionNrsTitle: "Other Church Registers - Other Events",
     dates: { from: 1742, to: 1855 },
     eventClass: "other",
@@ -346,14 +324,12 @@ const scotpRecordTypes = {
     search: { rd: false, otherParish: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { parishName: "congregation" },
-    searchStdText:
-      "&record_type%5B0%5D=ch3_other&church_type=Presbyterian%20registers",
+    searchStdText: "&record_type%5B0%5D=ch3_other&church_type=Presbyterian%20registers",
     sourcerRecordType: RT.OtherChurchEvent,
   },
 
   census: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/census-records",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/census-records",
     collectionNrsTitle: "Census Returns",
     dates: { from: 1841, to: 1911 },
     eventClass: "census",
@@ -370,8 +346,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.Census,
   },
   census_lds: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/census-records",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/census-records",
     collectionNrsTitle: "Census Returns",
     dates: { from: 1881, to: 1881 },
     eventClass: "census",
@@ -383,8 +358,7 @@ const scotpRecordTypes = {
   },
 
   valuation_rolls: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/valuation-rolls",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/valuation-rolls",
     collectionNrsTitle: "Valuation Rolls",
     dates: { from: 1855, to: 1940 },
     eventClass: "other",
@@ -397,8 +371,7 @@ const scotpRecordTypes = {
   },
 
   wills_testaments: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/wills-and-testaments",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/wills-and-testaments",
     collectionNrsTitle: "Wills and Testaments",
     dates: { from: 1513, to: 1925 },
     eventClass: "death",
@@ -410,13 +383,11 @@ const scotpRecordTypes = {
     search: { gender: false, rd: false, county: false, court: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { description: "description", courtName: "court" },
-    searchStdText:
-      "&dl_cat=legal&dl_rec=legal-wills-testaments&record_type=wills_testaments",
+    searchStdText: "&dl_cat=legal&dl_rec=legal-wills-testaments&record_type=wills_testaments",
     sourcerRecordType: RT.Will,
   },
   coa: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/coats-of-arms/public-register-of-arms",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/coats-of-arms/public-register-of-arms",
     collectionNrsTitle: "Public Register of All Arms and Bearings",
     dates: { from: 1672, to: 1921 },
     eventClass: "other",
@@ -427,8 +398,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.Heraldry,
   },
   soldiers_wills: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/soldiers-and-airmens-wills",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/soldiers-and-airmens-wills",
     collectionNrsTitle: "Soldiers' and Airmen's Wills",
     dates: { from: 1857, to: 1965 },
     eventClass: "death",
@@ -436,8 +406,7 @@ const scotpRecordTypes = {
     search: { gender: false, rd: false, county: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { serviceNumber: "service_number" },
-    searchStdText:
-      "&dl_cat=legal&dl_rec=legal-soldiers-wills&record_type=soldiers_wills",
+    searchStdText: "&dl_cat=legal&dl_rec=legal-soldiers-wills&record_type=soldiers_wills",
     sourcerRecordType: RT.Military,
   },
   military_tribunals: {
@@ -454,14 +423,12 @@ const scotpRecordTypes = {
       courtName: "tribunal",
       occupation: "occupation",
     },
-    searchStdText:
-      "&dl_cat=legal&dl_rec=legal-military-service&record_type=military_tribunals",
+    searchStdText: "&dl_cat=legal&dl_rec=legal-military-service&record_type=military_tribunals",
     sourcerRecordType: RT.Military,
   },
 
   hie: {
-    collectionNrsLink:
-      "https://www.nrscotland.gov.uk/research/guides/emigration-records",
+    collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/emigration-records",
     collectionNrsTitle: "Highland and Island Emigration Society records",
     dates: { from: 1852, to: 1857 },
     record: { county: true },
@@ -473,8 +440,7 @@ const scotpRecordTypes = {
   },
 
   prison_records: {
-    collectionNrsLink:
-      "https://www.scotlandspeople.gov.uk/guides/prison-registers",
+    collectionNrsLink: "https://www.scotlandspeople.gov.uk/guides/prison-registers",
     collectionNrsTitle: "Prison Registers",
     dates: { from: 1867, to: 1921 },
     search: { rd: false, county: false },
@@ -555,32 +521,17 @@ const ScotpRecordType = {
 
   getSearchParam: function (recordType, paramName) {
     let defaultValue = getDefaultValue("searchParams", paramName);
-    return getValueWithDefault(
-      recordType,
-      "searchParams",
-      paramName,
-      defaultValue
-    );
+    return getValueWithDefault(recordType, "searchParams", paramName, defaultValue);
   },
 
   getRecordKey: function (recordType, fieldName) {
     let defaultValue = getDefaultValue("recordKeys", fieldName);
-    return getValueWithDefault(
-      recordType,
-      "recordKeys",
-      fieldName,
-      defaultValue
-    );
+    return getValueWithDefault(recordType, "recordKeys", fieldName, defaultValue);
   },
 
   getNameSearchLimitForSoundex: function (recordType, nameType) {
     let defaultValue = getDefaultValue("searchNameLimits", nameType);
-    return getValueWithDefault(
-      recordType,
-      "searchNameLimits",
-      nameType,
-      defaultValue
-    );
+    return getValueWithDefault(recordType, "searchNameLimits", nameType, defaultValue);
   },
 };
 

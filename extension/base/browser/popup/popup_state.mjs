@@ -58,12 +58,7 @@ var popupState = {
     this.tabId = activeTab.id;
   },
 
-  recordSitePopupActiveTab: function (
-    activeTab,
-    siteName,
-    options,
-    menuSetupFunction
-  ) {
+  recordSitePopupActiveTab: function (activeTab, siteName, options, menuSetupFunction) {
     this.initialStateInSitePopup = {
       tabId: activeTab.id,
       tabStatus: activeTab.status,

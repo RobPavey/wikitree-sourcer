@@ -44,10 +44,7 @@ const factTypeToRecordType = [
     titleMatches: [
       {
         recordType: RT.BirthRegistration,
-        matches: [
-          "England and Wales Birth Registration Index",
-          "New Zealand, Civil Records Indexes",
-        ],
+        matches: ["England and Wales Birth Registration Index", "New Zealand, Civil Records Indexes"],
       },
     ],
     recordDataMatches: [
@@ -145,9 +142,7 @@ const factTypeToRecordType = [
   {
     type: "Immigration",
     defaultRT: RT.Immigration,
-    titleMatches: [
-      { recordType: RT.PassengerList, matches: ["Passenger List"] },
-    ],
+    titleMatches: [{ recordType: RT.PassengerList, matches: ["Passenger List"] }],
   },
   {
     type: "MilitaryService",
@@ -160,9 +155,7 @@ const factTypeToRecordType = [
   {
     type: "VoterRegistration",
     defaultRT: RT.ElectoralRegister,
-    titleMatches: [
-      { recordType: RT.ElectoralRegister, matches: ["Electoral Register"] },
-    ],
+    titleMatches: [{ recordType: RT.ElectoralRegister, matches: ["Electoral Register"] }],
   },
   {
     type: "TaxAssessment",
@@ -232,24 +225,14 @@ function determineRecordType(extractedData) {
   // If there is a relatedPersonFactType that implies that it is
   // the fact type of the primary fact
   if (extractedData.relatedPersonFactType) {
-    let recordType = lookup(
-      extractedData.relatedPersonFactType,
-      sourceTitle,
-      recordData,
-      factTypeToRecordType
-    );
+    let recordType = lookup(extractedData.relatedPersonFactType, sourceTitle, recordData, factTypeToRecordType);
     if (recordType != undefined) {
       return recordType;
     }
   }
 
   if (extractedData.factType) {
-    let recordType = lookup(
-      extractedData.factType,
-      sourceTitle,
-      recordData,
-      factTypeToRecordType
-    );
+    let recordType = lookup(extractedData.factType, sourceTitle, recordData, factTypeToRecordType);
     if (recordType != undefined) {
       return recordType;
     }
@@ -257,12 +240,7 @@ function determineRecordType(extractedData) {
 
   if (recordData && recordData["Source Record Type"]) {
     let sourceRecordType = recordData["Source Record Type"];
-    let recordType = lookup(
-      sourceRecordType,
-      sourceTitle,
-      recordData,
-      sourceRecordTypeToRecordType
-    );
+    let recordType = lookup(sourceRecordType, sourceTitle, recordData, sourceRecordTypeToRecordType);
     if (recordType != undefined) {
       return recordType;
     }
@@ -288,11 +266,7 @@ function determineRecordType(extractedData) {
     }
 
     // check for a marriage
-    if (
-      sourceTitle.includes("Marriage") &&
-      extractedData.recordData &&
-      extractedData.recordData["Marriage Date"]
-    ) {
+    if (sourceTitle.includes("Marriage") && extractedData.recordData && extractedData.recordData["Marriage Date"]) {
       return RT.Marriage;
     }
 
@@ -428,10 +402,7 @@ function generalizeDataGivenRecordType(data, result) {
           age = age.replace(/\s*years\s*$/i, "");
         }
       }
-      if (
-        result.recordType == RT.DeathRegistration ||
-        result.recordType == RT.Death
-      ) {
+      if (result.recordType == RT.DeathRegistration || result.recordType == RT.Death) {
         result.ageAtDeath = age;
       } else {
         result.ageAtEvent = age;
@@ -574,10 +545,7 @@ function generalizeDataGivenRecordType(data, result) {
       data.recordData["Marriage Year"]
     ) {
       let marriageDate = new WtsDate();
-      let dateString = selectDate(
-        data.recordData["Marriage Date"],
-        data.recordData["Marriage Date (Original)"]
-      );
+      let dateString = selectDate(data.recordData["Marriage Date"], data.recordData["Marriage Date (Original)"]);
       if (dateString) {
         marriageDate.dateString = dateString;
       }
@@ -601,15 +569,10 @@ function generalizeDataGivenRecordType(data, result) {
         // there could be more info in record data
         let recordData = data.recordData;
         if (recordData) {
-          if (
-            recordData["Other On Page Name1"] &&
-            !recordData["Other On Page Name2"]
-          ) {
+          if (recordData["Other On Page Name1"] && !recordData["Other On Page Name2"]) {
             if (recordData["Other On Page Name Surn1"] == data.spouseSurname) {
               spouseFullName = recordData["Other On Page Name1"];
-            } else if (
-              recordData["Other On Page Name1"].endsWith(data.spouseSurname)
-            ) {
+            } else if (recordData["Other On Page Name1"].endsWith(data.spouseSurname)) {
               spouseFullName = recordData["Other On Page Name1"];
             }
           }
@@ -649,10 +612,7 @@ function generalizeDataGivenRecordType(data, result) {
       data.recordData["Marriage Year"]
     ) {
       let marriageDate = new WtsDate();
-      let dateString = selectDate(
-        data.recordData["Marriage Date"],
-        data.recordData["Marriage Date (Original)"]
-      );
+      let dateString = selectDate(data.recordData["Marriage Date"], data.recordData["Marriage Date (Original)"]);
       if (dateString) {
         marriageDate.dateString = dateString;
       }
@@ -686,8 +646,7 @@ function generalizeDataGivenRecordType(data, result) {
           }
           let relationship = member.relationship;
           if (relationship && relationship != "Unknown") {
-            householdMember.relationship =
-              GD.standardizeRelationshipToHead(relationship);
+            householdMember.relationship = GD.standardizeRelationshipToHead(relationship);
             fieldsEncountered.relationship = true;
           }
           let maritalStatus = GD.standardizeMaritalStatus(member.maritalStatus);
@@ -795,18 +754,12 @@ function generalizeDataForPerson(data, result) {
 
       if (spouse.marriageDate || spouse.marriageDateOriginal) {
         resultSpouse.marriageDate = new WtsDate();
-        resultSpouse.marriageDate.dateString = selectDate(
-          spouse.marriageDate,
-          spouse.marriageDateOriginal
-        );
+        resultSpouse.marriageDate.dateString = selectDate(spouse.marriageDate, spouse.marriageDateOriginal);
       }
 
       if (spouse.marriagePlace || spouse.marriagePlaceOriginal) {
         resultSpouse.marriagePlace = new WtsPlace();
-        resultSpouse.marriagePlace.placeString = selectPlace(
-          spouse.marriagePlace,
-          spouse.marriagePlaceOriginal
-        );
+        resultSpouse.marriagePlace.placeString = selectPlace(spouse.marriagePlace, spouse.marriagePlaceOriginal);
       }
 
       result.spouses.push(resultSpouse);
@@ -961,10 +914,7 @@ function generalizeData(input) {
       let yearsMarried = data.recordData["Cnt Years Married"];
       if (yearsMarried) {
         let censusDate = result.inferEventDate();
-        let marriageDateString = GeneralizedData.getSubtractAgeFromDate(
-          censusDate,
-          yearsMarried
-        );
+        let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, yearsMarried);
         let marriageYear = WTS_String.getLastWord(marriageDateString);
         if (marriageYear) {
           result.spouses[0].marriageDate.yearString = marriageYear;
@@ -1014,9 +964,4 @@ function generalizeData(input) {
   return result;
 }
 
-export {
-  generalizeData,
-  generalizeDataGivenRecordType,
-  GeneralizedData,
-  dateQualifiers,
-};
+export { generalizeData, generalizeDataGivenRecordType, GeneralizedData, dateQualifiers };

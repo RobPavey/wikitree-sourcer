@@ -27,11 +27,7 @@ import { GeneralizedData, WtsDate } from "./generalize_data_utils.mjs";
 import { Role } from "./record_type.mjs";
 import { WTS_String } from "./wts_string.mjs";
 import { WTS_Date } from "./wts_date.mjs";
-import {
-  getChildTerm,
-  getPrimaryPersonChildTerm,
-  getPrimaryPersonSpouseTerm,
-} from "./narrative_or_sentence_utils.mjs";
+import { getChildTerm, getPrimaryPersonChildTerm, getPrimaryPersonSpouseTerm } from "./narrative_or_sentence_utils.mjs";
 import { RC } from "./record_collections.mjs";
 
 class NarrativeBuilder {
@@ -56,20 +52,10 @@ class NarrativeBuilder {
         subsection = this.optionsSubsection;
       }
       if (subsection) {
-        value =
-          this.options[
-            "narrative_" +
-              this.optionsSubcategory +
-              subsection +
-              "_" +
-              leafOptionName
-          ];
+        value = this.options["narrative_" + this.optionsSubcategory + subsection + "_" + leafOptionName];
       }
       if (value == undefined) {
-        value =
-          this.options[
-            "narrative_" + this.optionsSubcategory + "_" + leafOptionName
-          ];
+        value = this.options["narrative_" + this.optionsSubcategory + "_" + leafOptionName];
       }
     }
     if (value == undefined || value == "default") {
@@ -154,10 +140,7 @@ class NarrativeBuilder {
     ];
 
     // remove trailing . or spaces
-    while (
-      placeString[placeString.length - 1] == "." ||
-      placeString[placeString.length - 1] == " "
-    ) {
+    while (placeString[placeString.length - 1] == "." || placeString[placeString.length - 1] == " ") {
       if (placeString.length > 1) {
         placeString = placeString.substring(0, placeString.length - 1);
       }
@@ -202,18 +185,9 @@ class NarrativeBuilder {
         }
 
         if (removeCountry) {
-          placeString = placeString.substring(
-            0,
-            placeString.length - countryString.length
-          );
-        } else if (
-          options.narrative_general_country == "standard" &&
-          stdCountryString
-        ) {
-          placeString = placeString.substring(
-            0,
-            placeString.length - countryString.length
-          );
+          placeString = placeString.substring(0, placeString.length - countryString.length);
+        } else if (options.narrative_general_country == "standard" && stdCountryString) {
+          placeString = placeString.substring(0, placeString.length - countryString.length);
           placeString += stdCountryString;
         }
       }
@@ -232,18 +206,11 @@ class NarrativeBuilder {
         if (firstCommaIndex != -1 && placeString.length > firstCommaIndex + 2) {
           let secondCommaIndex = placeString.indexOf(",", firstCommaIndex + 1);
           if (secondCommaIndex != -1) {
-            let churchName = placeString
-              .substring(firstCommaIndex + 1, secondCommaIndex)
-              .trim();
+            let churchName = placeString.substring(firstCommaIndex + 1, secondCommaIndex).trim();
             let placeNoChurch =
-              placeString.substring(0, firstCommaIndex) +
-              ", " +
-              placeString.substring(secondCommaIndex + 1).trim();
+              placeString.substring(0, firstCommaIndex) + ", " + placeString.substring(secondCommaIndex + 1).trim();
 
-            if (
-              /^St[ \.]+/.test(churchName) ||
-              /^All Saints/i.test(churchName)
-            ) {
+            if (/^St[ \.]+/.test(churchName) || /^All Saints/i.test(churchName)) {
               if (churchName.endsWith("s")) {
                 churchName += "'";
               } else {
@@ -360,10 +327,7 @@ class NarrativeBuilder {
       // However, sometimes the generalize has already done a better job of this so it should not be done again
       // NOTE: we could perhaps centralise the code in scotp that does name casing.
       if (gd.sourceOfData != "scotp") {
-        result.nameOrPronoun = WTS_String.toInitialCapsEachWord(
-          result.nameOrPronoun,
-          true
-        );
+        result.nameOrPronoun = WTS_String.toInitialCapsEachWord(result.nameOrPronoun, true);
       }
     }
 
@@ -482,10 +446,7 @@ class NarrativeBuilder {
   }
 
   highlightDate(dateString) {
-    return WTS_String.highlightString(
-      dateString,
-      this.options.narrative_general_dateHighlight
-    );
+    return WTS_String.highlightString(dateString, this.options.narrative_general_dateHighlight);
   }
 
   getParentSeparator() {
@@ -533,8 +494,7 @@ class NarrativeBuilder {
       let parentNames = this.eventGd.inferParentNamesForDataString();
 
       if (parentNames.fatherName || parentNames.motherName) {
-        this.narrative +=
-          " " + this.getPronounAndPastTenseInitialCaps() + " the ";
+        this.narrative += " " + this.getPronounAndPastTenseInitialCaps() + " the ";
         this.narrative += getChildTerm(this.eventGd.personGender) + " of ";
         if (parentNames.fatherName) {
           this.narrative += parentNames.fatherName;
@@ -556,42 +516,21 @@ class NarrativeBuilder {
     dateObj.dateString = dateString;
     let format = this.options.narrative_general_dateFormat;
     let highlight = this.options.narrative_general_dateHighlight;
-    return this.eventGd.getNarrativeDateFormat(
-      dateObj,
-      format,
-      highlight,
-      addPreposition,
-      prepSuffix
-    );
+    return this.eventGd.getNarrativeDateFormat(dateObj, format, highlight, addPreposition, prepSuffix);
   }
 
   formatDateObj(dateObj, addPreposition, prepSuffix = "") {
     if (dateObj) {
       let format = this.options.narrative_general_dateFormat;
       let highlight = this.options.narrative_general_dateHighlight;
-      return this.eventGd.getNarrativeDateFormat(
-        dateObj,
-        format,
-        highlight,
-        addPreposition,
-        prepSuffix
-      );
+      return this.eventGd.getNarrativeDateFormat(dateObj, format, highlight, addPreposition, prepSuffix);
     }
     return "";
   }
 
   getQuarterName(quarterNumber) {
-    const quarterNames = [
-      "Jan-Feb-Mar",
-      "Apr-May-Jun",
-      "Jul-Aug-Sep",
-      "Oct-Nov-Dec",
-    ];
-    if (
-      quarterNumber != undefined &&
-      quarterNumber >= 1 &&
-      quarterNumber <= 4
-    ) {
+    const quarterNames = ["Jan-Feb-Mar", "Apr-May-Jun", "Jul-Aug-Sep", "Oct-Nov-Dec"];
+    if (quarterNumber != undefined && quarterNumber >= 1 && quarterNumber <= 4) {
       return quarterNames[quarterNumber - 1];
     }
 
@@ -757,12 +696,7 @@ class NarrativeBuilder {
 
     if (occupationText) {
       if (headRelation) {
-        this.narrative +=
-          " " +
-          this.getPossessivePronounInitialCaps() +
-          " " +
-          headRelation +
-          " was ";
+        this.narrative += " " + this.getPossessivePronounInitialCaps() + " " + headRelation + " was ";
         this.narrative += WTS_String.getIndefiniteArticle(occupationText);
         this.narrative += " " + occupationText;
         this.narrative += ".";
@@ -798,10 +732,7 @@ class NarrativeBuilder {
     // it being the registration date/quarter.
     // It might require either a separate record type or a flag in the GD
     let isDateTheRegistrationDate = false;
-    if (
-      registrationDistrict &&
-      (this.eventGd.isRecordInCountry("United Kingdom") || !eventPlace)
-    ) {
+    if (registrationDistrict && (this.eventGd.isRecordInCountry("United Kingdom") || !eventPlace)) {
       isDateTheRegistrationDate = true;
     } else if ((quarter || year == dateString) && year) {
       isDateTheRegistrationDate = true;
@@ -839,11 +770,9 @@ class NarrativeBuilder {
       if (sentenceStructure == "oneSentence") {
         // One sentence format
         if (gd.role && gd.role == Role.Parent) {
-          this.narrative +=
-            "The " + typeString + " of " + this.getPossessiveNamePlusChild();
+          this.narrative += "The " + typeString + " of " + this.getPossessiveNamePlusChild();
         } else if (gd.role && gd.role == Role.Spouse) {
-          this.narrative +=
-            "The " + typeString + " of " + this.getPossessiveNamePlusSpouse();
+          this.narrative += "The " + typeString + " of " + this.getPossessiveNamePlusSpouse();
         } else {
           let possessiveName = this.getPossessiveName();
           this.narrative += possessiveName + " " + typeString;
@@ -889,9 +818,7 @@ class NarrativeBuilder {
         let pronoun = "Their";
         if (!spouseName) {
           if (this.eventGd.role) {
-            pronoun = this.getPossessivePronounForGenderInitialCaps(
-              this.eventGd.primaryPersonGender
-            );
+            pronoun = this.getPossessivePronounForGenderInitialCaps(this.eventGd.primaryPersonGender);
           } else {
             pronoun = this.getPossessivePronounInitialCaps();
           }
@@ -904,13 +831,9 @@ class NarrativeBuilder {
 
       this.narrative += " was registered";
 
-      if (
-        sentenceStructure == "oneSentence" ||
-        sentenceStructure == "twoSentencesDate"
-      ) {
+      if (sentenceStructure == "oneSentence" || sentenceStructure == "twoSentencesDate") {
         if (quarter) {
-          this.narrative +=
-            " in the " + quarter + " quarter of " + this.highlightDate(year);
+          this.narrative += " in the " + quarter + " quarter of " + this.highlightDate(year);
         } else {
           this.narrative += " in " + this.highlightDate(year);
         }
@@ -998,16 +921,10 @@ class NarrativeBuilder {
     if (gd.role && gd.role == Role.Parent && gd.primaryPerson) {
       // This is a record for one of the parents
       // "X and X's child Z"
-      if (
-        gd.spouses &&
-        gd.spouses[0] &&
-        gd.spouses[0].name &&
-        gd.spouses[0].name.name
-      ) {
+      if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
         this.narrative += " and " + gd.spouses[0].name.name;
       }
-      this.narrative +=
-        "'s " + getPrimaryPersonChildTerm(gd) + " " + gd.primaryPerson;
+      this.narrative += "'s " + getPrimaryPersonChildTerm(gd) + " " + gd.primaryPerson;
       // inferBirthDate will not return the date of the primary person's birth
       dateObj = gd.inferEventDateObj();
       place = gd.inferEventPlace();
@@ -1062,8 +979,7 @@ class NarrativeBuilder {
     } else {
       let residencePlace = this.eventGd.inferResidencePlace();
       if (residencePlace) {
-        this.narrative +=
-          " residing " + this.getPlaceWithPreposition(residencePlace);
+        this.narrative += " residing " + this.getPlaceWithPreposition(residencePlace);
       }
     }
     this.narrative += ".";
@@ -1094,9 +1010,7 @@ class NarrativeBuilder {
 
     if (gd.birthDate && this.options.narrative_baptism_includeBirthDate) {
       this.narrative += "born " + this.formatDateObj(gd.birthDate, true);
-      if (
-        this.options.narrative_baptism_sentenceStructure == "parentsBornAndBap"
-      ) {
+      if (this.options.narrative_baptism_sentenceStructure == "parentsBornAndBap") {
         this.narrative += " and ";
       } else {
         this.narrative += "; ";
@@ -1161,11 +1075,7 @@ class NarrativeBuilder {
       this.addAgeForMainSentence(spouseAge);
     }
 
-    if (
-      gd.recordSubtype &&
-      gd.recordSubtype == RecordSubtype.Banns &&
-      (dateObj || place)
-    ) {
+    if (gd.recordSubtype && gd.recordSubtype == RecordSubtype.Banns && (dateObj || place)) {
       this.narrative += ". The banns were read";
     }
 
@@ -1176,10 +1086,7 @@ class NarrativeBuilder {
       this.narrative += " " + this.formatDateObj(dateObj, true);
     } else if (dateObj) {
       let prepSuffix = "";
-      if (
-        gd.recordSubtype &&
-        gd.recordSubtype == RecordSubtype.MarriageOrBanns
-      ) {
+      if (gd.recordSubtype && gd.recordSubtype == RecordSubtype.MarriageOrBanns) {
         prepSuffix = "or after";
       }
       this.narrative += " " + this.formatDateObj(dateObj, true, prepSuffix);
@@ -1218,11 +1125,7 @@ class NarrativeBuilder {
       this.addParentageForMainSentence();
     }
 
-    if (
-      deathDate &&
-      burialDate &&
-      deathDate.dateString != burialDate.dateString
-    ) {
+    if (deathDate && burialDate && deathDate.dateString != burialDate.dateString) {
       this.narrative += " died";
       this.narrative += " " + this.formatDateObj(deathDate, true);
       this.narrative += " and was buried";
@@ -1296,8 +1199,7 @@ class NarrativeBuilder {
       this.narrative += " " + this.getPlaceWithPreposition(place);
     }
     if (deathDate) {
-      this.narrative +=
-        " with a death date of " + this.formatDate(deathDate, false);
+      this.narrative += " with a death date of " + this.formatDate(deathDate, false);
     }
     this.narrative += ".";
   }
@@ -1336,11 +1238,7 @@ class NarrativeBuilder {
       this.narrative += " was in an obituary";
     }
 
-    if (
-      eventDateObj &&
-      (!deathDateObj ||
-        eventDateObj.getDateString() != deathDateObj.getDateString())
-    ) {
+    if (eventDateObj && (!deathDateObj || eventDateObj.getDateString() != deathDateObj.getDateString())) {
       this.narrative += " " + this.formatDateObj(eventDateObj, true);
     }
     if (eventPlace && eventPlace != deathPlace) {
@@ -1348,8 +1246,7 @@ class NarrativeBuilder {
     }
 
     if (deathDateObj) {
-      this.narrative +=
-        ". " + this.getPersonPronounOrNameIfNoGender() + " died";
+      this.narrative += ". " + this.getPersonPronounOrNameIfNoGender() + " died";
 
       age = this.eventGd.ageAtDeath;
       if (!age) {
@@ -1399,8 +1296,7 @@ class NarrativeBuilder {
 
     // sometimes a baptism has a death date. (e.g. germany_baptism_1840_johanna_hartmann)
     if (gd.deathDate) {
-      this.narrative +=
-        " and died " + this.formatDateObj(gd.inferDeathDateObj(), true);
+      this.narrative += " and died " + this.formatDateObj(gd.inferDeathDateObj(), true);
     }
 
     this.narrative += ".";
@@ -1431,10 +1327,7 @@ class NarrativeBuilder {
           // There is no head (this should not be called if this person is the head)
           // Occasionally the first person of the household has a relationship of "wife" or "widow"
           if (!household[0].isSelected) {
-            if (
-              household[0].relationship == "wife" ||
-              household[0].relationship == "widow"
-            ) {
+            if (household[0].relationship == "wife" || household[0].relationship == "widow") {
               return household[0];
             }
           }
@@ -1504,20 +1397,12 @@ class NarrativeBuilder {
           if (relationship.includes("head")) {
             result += " the " + maritalStatus + " head of household";
           } else {
-            let headName = getHeadOfHouseholdNameIfNotSelected(
-              gd.householdArray
-            );
+            let headName = getHeadOfHouseholdNameIfNotSelected(gd.householdArray);
             if (headName) {
               if (relationship.includes("wife")) {
                 result += " the " + relationship + " of " + headName;
               } else {
-                result +=
-                  " the " +
-                  maritalStatus +
-                  " " +
-                  relationship +
-                  " of " +
-                  headName;
+                result += " the " + maritalStatus + " " + relationship + " of " + headName;
               }
             } else {
               result += " a " + maritalStatus + " " + relationship;
@@ -1527,9 +1412,7 @@ class NarrativeBuilder {
           if (relationship.includes("head")) {
             result += " the head of household";
           } else {
-            let headName = getHeadOfHouseholdNameIfNotSelected(
-              gd.householdArray
-            );
+            let headName = getHeadOfHouseholdNameIfNotSelected(gd.householdArray);
             if (headName) {
               result += " the " + relationship + " of " + headName;
             } else {
@@ -1554,9 +1437,7 @@ class NarrativeBuilder {
           let hasMother = false;
           let isHeadOrWife = false;
 
-          let headMember = getHeadOfHouseholdMemberIfNotSelected(
-            gd.householdArray
-          );
+          let headMember = getHeadOfHouseholdMemberIfNotSelected(gd.householdArray);
 
           if (relationship.includes("head") || relationship == "wife") {
             isHeadOrWife = true;
@@ -1564,10 +1445,7 @@ class NarrativeBuilder {
             for (let member of gd.householdArray) {
               if (member.isSelected) continue;
               let thisMemberIsHead = false;
-              if (
-                (member.relationship && member.relationship.includes("head")) ||
-                member == headMember
-              ) {
+              if ((member.relationship && member.relationship.includes("head")) || member == headMember) {
                 thisMemberIsHead = true;
               }
 
@@ -1589,10 +1467,7 @@ class NarrativeBuilder {
                 }
               }
 
-              if (
-                member.relationship == "son" ||
-                member.relationship == "daughter"
-              ) {
+              if (member.relationship == "son" || member.relationship == "daughter") {
                 childCount++;
                 if (childType == "none") {
                   childType = member.relationship;
@@ -1617,10 +1492,7 @@ class NarrativeBuilder {
             for (let member of gd.householdArray) {
               if (member.isSelected) continue;
               let thisMemberIsHead = false;
-              if (
-                (member.relationship && member.relationship.includes("head")) ||
-                member == headMember
-              ) {
+              if ((member.relationship && member.relationship.includes("head")) || member == headMember) {
                 thisMemberIsHead = true;
               }
 
@@ -1668,10 +1540,7 @@ class NarrativeBuilder {
             }
             if (childCount == 1) {
               let text = "";
-              if (
-                childMaritalStatus != "none" &&
-                childMaritalStatus != "mixed"
-              ) {
+              if (childMaritalStatus != "none" && childMaritalStatus != "mixed") {
                 text += childMaritalStatus + " ";
               }
               if (childType != "none" && childType != "mixed") {
@@ -1683,10 +1552,7 @@ class NarrativeBuilder {
             } else {
               let text = "" + childCount;
 
-              if (
-                childMaritalStatus != "none" &&
-                childMaritalStatus != "mixed"
-              ) {
+              if (childMaritalStatus != "none" && childMaritalStatus != "mixed") {
                 text += " " + childMaritalStatus;
               }
 
@@ -1717,9 +1583,7 @@ class NarrativeBuilder {
 
           let numParts = listParts.length;
           if (numParts > 0) {
-            let pronoun = builder
-              .getPossessivePronounInitialCaps()
-              .toLowerCase();
+            let pronoun = builder.getPossessivePronounInitialCaps().toLowerCase();
             result += " with " + pronoun + " ";
             if (numParts == 1) {
               result += listParts[0];
@@ -1739,15 +1603,12 @@ class NarrativeBuilder {
               result += " as";
             }
 
-            let headName = getHeadOfHouseholdNameIfNotSelected(
-              gd.householdArray
-            );
+            let headName = getHeadOfHouseholdNameIfNotSelected(gd.householdArray);
 
             if (relationship.includes("head")) {
               result += " the head of household";
             } else if (headName) {
-              result +=
-                " a " + relationship + " in the household of " + headName;
+              result += " a " + relationship + " in the household of " + headName;
             } else {
               result += " a " + relationship;
             }
@@ -1801,16 +1662,9 @@ class NarrativeBuilder {
 
     let ageNum = undefined;
     let ageAtEvent = "";
-    if (
-      year == "1939" &&
-      this.eventGd.birthDate &&
-      this.eventGd.birthDate.dateString
-    ) {
+    if (year == "1939" && this.eventGd.birthDate && this.eventGd.birthDate.dateString) {
       // 1939 register was taken on 29 September 1939 (could store this in collections)
-      ageNum = GeneralizedData.getAgeAtDate(
-        this.eventGd.birthDate.dateString,
-        "9 September 1939"
-      );
+      ageNum = GeneralizedData.getAgeAtDate(this.eventGd.birthDate.dateString, "9 September 1939");
       if (ageNum != undefined && ageNum != NaN) {
         ageAtEvent = ageNum.toString();
       }
@@ -1874,15 +1728,11 @@ class NarrativeBuilder {
 
     if (deathDateObj && eventDateObj) {
       let pronoun = this.getPossessivePronounInitialCaps().toLowerCase();
-      this.narrative +=
-        this.getPersonNameOrPronoun() +
-        " died " +
-        this.formatDateObj(deathDateObj, true);
+      this.narrative += this.getPersonNameOrPronoun() + " died " + this.formatDateObj(deathDateObj, true);
       if (deathPlace) {
         this.narrative += " " + this.getPlaceWithPreposition(deathPlace);
       } else if (residencePlace) {
-        this.narrative +=
-          " residing " + this.getPlaceWithPreposition(residencePlace);
+        this.narrative += " residing " + this.getPlaceWithPreposition(residencePlace);
       }
       this.narrative += " and " + pronoun + " estate passed probate";
       if (eventDateObj) {
@@ -1899,8 +1749,7 @@ class NarrativeBuilder {
       if (deathPlace) {
         this.narrative += " " + this.getPlaceWithPreposition(deathPlace);
       } else if (residencePlace) {
-        this.narrative +=
-          " residing " + this.getPlaceWithPreposition(residencePlace);
+        this.narrative += " residing " + this.getPlaceWithPreposition(residencePlace);
       }
     } else {
       this.narrative += possessiveName + " estate passed probate";
@@ -1910,11 +1759,7 @@ class NarrativeBuilder {
       if (eventPlace) {
         this.narrative += " " + this.getPlaceWithPreposition(eventPlace);
       } else if (residencePlace) {
-        this.narrative +=
-          ". " +
-          this.getPossessivePronounInitialCaps() +
-          " last residence was " +
-          residencePlace;
+        this.narrative += ". " + this.getPossessivePronounInitialCaps() + " last residence was " + residencePlace;
       }
     }
 
@@ -1939,9 +1784,7 @@ class NarrativeBuilder {
         } else if (role == Role.Spouse) {
           this.narrative = possessiveName + " spouse's will passed probate";
         } else if (role == Role.Witness) {
-          this.narrative =
-            this.getPersonNameOrPronoun() +
-            " witnessed a will that passed probate";
+          this.narrative = this.getPersonNameOrPronoun() + " witnessed a will that passed probate";
         }
       } else {
         if (gd.courtName && gd.courtName != "non-Scottish Court") {
@@ -1952,31 +1795,20 @@ class NarrativeBuilder {
       }
     } else if (gd.recordSubtype == "Testament") {
       if (gd.originalConfirmationGrantedDate) {
-        this.narrative =
-          "Confirmation was originally granted on " +
-          possessiveName +
-          " estate";
-        this.narrative +=
-          " " + this.formatDate(gd.originalConfirmationGrantedDate, true);
+        this.narrative = "Confirmation was originally granted on " + possessiveName + " estate";
+        this.narrative += " " + this.formatDate(gd.originalConfirmationGrantedDate, true);
         this.narrative += " and an additional confirmation was granted";
       } else {
-        this.narrative =
-          "Confirmation was granted on " + possessiveName + " estate";
+        this.narrative = "Confirmation was granted on " + possessiveName + " estate";
       }
-    } else if (
-      gd.recordSubtype == "Inventory" ||
-      gd.recordSubtype == "AdditionalInventory"
-    ) {
-      this.narrative =
-        "Confirmation was granted on " + possessiveName + " estate";
+    } else if (gd.recordSubtype == "Inventory" || gd.recordSubtype == "AdditionalInventory") {
+      this.narrative = "Confirmation was granted on " + possessiveName + " estate";
       if (gd.originalConfirmationGrantedDate) {
-        this.narrative +=
-          " " + this.formatDate(gd.originalConfirmationGrantedDate, true);
+        this.narrative += " " + this.formatDate(gd.originalConfirmationGrantedDate, true);
         this.narrative += " and an additional inventory was granted";
       }
     } else {
-      this.narrative =
-        "Confirmation was granted on " + possessiveName + " estate";
+      this.narrative = "Confirmation was granted on " + possessiveName + " estate";
     }
 
     if (dateObj) {
@@ -1985,13 +1817,9 @@ class NarrativeBuilder {
 
     if (gd.recordSubtype == "AdditionalInventory") {
       if (gd.grantedDate) {
-        this.narrative +=
-          ", additional inventory granted on " +
-          this.formatDate(gd.grantedDate, false);
+        this.narrative += ", additional inventory granted on " + this.formatDate(gd.grantedDate, false);
       } else if (gd.givenUpDate) {
-        this.narrative +=
-          ", additional inventory given up on " +
-          this.formatDate(gd.givenUpDate, false);
+        this.narrative += ", additional inventory given up on " + this.formatDate(gd.givenUpDate, false);
       }
     }
 
@@ -2012,10 +1840,7 @@ class NarrativeBuilder {
     let gd = this.eventGd;
     this.optionsSubcategory = "will";
 
-    if (
-      gd.inferEventCountry() == "Scotland" ||
-      (gd.courtName && gd.courtName.startsWith("non-Scot"))
-    ) {
+    if (gd.inferEventCountry() == "Scotland" || (gd.courtName && gd.courtName.startsWith("non-Scot"))) {
       this.buildScottishWillString();
       return;
     }
@@ -2058,17 +1883,13 @@ class NarrativeBuilder {
       if (deathPlace) {
         this.narrative += " " + this.getPlaceWithPreposition(deathPlace);
       } else if (residencePlace) {
-        this.narrative +=
-          " residing " + this.getPlaceWithPreposition(residencePlace);
+        this.narrative += " residing " + this.getPlaceWithPreposition(residencePlace);
       } else if (place && !hasProbateDate) {
         this.narrative += " " + this.getPlaceWithPreposition(place);
       }
 
       if (hasProbateDate) {
-        this.narrative +=
-          ". " +
-          this.getPossessivePronounInitialCaps() +
-          " will passed probate";
+        this.narrative += ". " + this.getPossessivePronounInitialCaps() + " will passed probate";
 
         if (dateObj) {
           this.narrative += " " + this.formatDateObj(dateObj, true);
@@ -2086,9 +1907,7 @@ class NarrativeBuilder {
         } else if (role == Role.Spouse) {
           this.narrative = possessiveName + " spouse's will passed probate";
         } else if (role == Role.Witness) {
-          this.narrative =
-            this.getPersonNameOrPronoun() +
-            " witnessed a will that passed probate";
+          this.narrative = this.getPersonNameOrPronoun() + " witnessed a will that passed probate";
         }
       } else {
         this.narrative = possessiveName + " will passed probate";
@@ -2176,19 +1995,13 @@ class NarrativeBuilder {
     let number = this.eventGd.serviceNumber;
     let unit = this.eventGd.unit;
     if (unit) {
-      this.narrative +=
-        " " + this.getPronounAndPastTenseInitialCaps() + " in the " + unit;
+      this.narrative += " " + this.getPronounAndPastTenseInitialCaps() + " in the " + unit;
       if (number) {
         this.narrative += " (service number " + number + ")";
       }
       this.narrative += ".";
     } else if (number) {
-      this.narrative +=
-        " " +
-        this.getPossessivePronounInitialCaps() +
-        " service number was " +
-        number +
-        ".";
+      this.narrative += " " + this.getPossessivePronounInitialCaps() + " service number was " + number + ".";
     }
   }
 
@@ -2449,9 +2262,7 @@ function buildNarrative(input) {
   //console.log(eventGd);
 
   let eventGeneralizedData = GeneralizedData.createFromPlainObject(eventGd);
-  let wtGeneralizedData = GeneralizedData.createFromPlainObject(
-    input.wtGeneralizedData
-  );
+  let wtGeneralizedData = GeneralizedData.createFromPlainObject(input.wtGeneralizedData);
 
   let builder = new NarrativeBuilder(options);
   builder.profileGd = wtGeneralizedData;

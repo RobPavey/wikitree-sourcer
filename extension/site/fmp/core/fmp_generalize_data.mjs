@@ -22,12 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  GeneralizedData,
-  GD,
-  dateQualifiers,
-  WtsName,
-} from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 
 function determineRecordType(extractedData) {
@@ -35,28 +30,18 @@ function determineRecordType(extractedData) {
     { type: RT.BirthRegistration, matches: ["England & Wales Births"] },
     {
       type: RT.MarriageRegistration,
-      matches: [
-        "England & Wales Marriages",
-        "Civil Registration Marriage Index",
-      ],
+      matches: ["England & Wales Marriages", "Civil Registration Marriage Index"],
     },
     { type: RT.DeathRegistration, matches: ["England & Wales Deaths"] },
 
     {
       type: RT.Baptism,
-      matches: [
-        "Select Births and Christenings",
-        "Church of England Births and Baptisms",
-      ],
+      matches: ["Select Births and Christenings", "Church of England Births and Baptisms"],
     },
     { type: RT.Marriage, matches: ["Church of England Marriages and Banns"] },
     {
       type: RT.Burial,
-      matches: [
-        "Church of England Burials",
-        "Burial and Cremation Index",
-        "Find a Grave",
-      ],
+      matches: ["Church of England Burials", "Burial and Cremation Index", "Find a Grave"],
     },
 
     { type: RT.Divorce, matches: ["Divorce Index"] },
@@ -132,9 +117,7 @@ function determineRecordType(extractedData) {
     { type: RT.SchoolRecords, matches: ["Schools & Education"] },
   ];
 
-  const categoryMatches = [
-    { type: RT.Military, matches: ["Military, armed forces & conflict"] },
-  ];
+  const categoryMatches = [{ type: RT.Military, matches: ["Military, armed forces & conflict"] }];
 
   //console.log("in determineRecordType");
   //console.log(extractedData.recordData);
@@ -252,15 +235,7 @@ function setDeathDateAndYear(data, result) {
   }
 }
 
-function setEventDateFromRecordData(
-  data,
-  result,
-  dateStrings,
-  dayStrings,
-  monthStrings,
-  quarterStrings,
-  yearStrings
-) {
+function setEventDateFromRecordData(data, result, dateStrings, dayStrings, monthStrings, quarterStrings, yearStrings) {
   function cleanDateString(dateString) {
     if (dateString) {
       if (dateString == "-" || dateString.startsWith("?")) {
@@ -272,12 +247,8 @@ function setEventDateFromRecordData(
 
   let eventDate = cleanDateString(getRecordDataValueForList(data, dateStrings));
   let eventDay = cleanDateString(getRecordDataValueForList(data, dayStrings));
-  let eventMonth = cleanDateString(
-    getRecordDataValueForList(data, monthStrings)
-  );
-  let eventQuarter = cleanDateString(
-    getRecordDataValueForList(data, quarterStrings)
-  );
+  let eventMonth = cleanDateString(getRecordDataValueForList(data, monthStrings));
+  let eventQuarter = cleanDateString(getRecordDataValueForList(data, quarterStrings));
   let eventYear = cleanDateString(getRecordDataValueForList(data, yearStrings));
 
   if (eventDate) {
@@ -303,15 +274,7 @@ function setEventDateFromRecordDataKey(data, result, key) {
   let quarterStrings = [key + " quarter", "Quarter"];
   let yearStrings = [key + " year", "Year"];
 
-  setEventDateFromRecordData(
-    data,
-    result,
-    dateStrings,
-    dayStrings,
-    monthStrings,
-    quarterStrings,
-    yearStrings
-  );
+  setEventDateFromRecordData(data, result, dateStrings, dayStrings, monthStrings, quarterStrings, yearStrings);
 }
 
 function setEventDateFromRecordDataKeys(data, result, keys) {
@@ -332,15 +295,7 @@ function setEventDateFromRecordDataKeys(data, result, keys) {
   let quarterStrings = setStrings(keys, "quarter", "Quarter");
   let yearStrings = setStrings(keys, "year", "Year");
 
-  setEventDateFromRecordData(
-    data,
-    result,
-    dateStrings,
-    dayStrings,
-    monthStrings,
-    quarterStrings,
-    yearStrings
-  );
+  setEventDateFromRecordData(data, result, dateStrings, dayStrings, monthStrings, quarterStrings, yearStrings);
 }
 
 function buildMainPlaceObj(data) {
@@ -350,24 +305,14 @@ function buildMainPlaceObj(data) {
   placeObj.state = getCleanRecordDataValue(data, "State");
   placeObj.county = getCleanRecordDataValue(data, "County");
   placeObj.parish = getCleanRecordDataValue(data, "Parish");
-  placeObj.place = getRecordDataValueForList(data, [
-    "Place",
-    "Marriage place",
-    "Burial place",
-  ]);
+  placeObj.place = getRecordDataValueForList(data, ["Place", "Marriage place", "Burial place"]);
   placeObj.streetAddress = getCleanRecordDataValue(data, "Address");
   placeObj.fullAddress = getCleanRecordDataValue(data, "Full address");
 
   // some less common ones
-  placeObj.residence = getRecordDataValueForList(data, [
-    "Residence",
-    "Residence town",
-  ]);
+  placeObj.residence = getRecordDataValueForList(data, ["Residence", "Residence town"]);
   placeObj.electorate = getCleanRecordDataValue(data, "Electorate");
-  placeObj.pollingDistrict = getCleanRecordDataValue(
-    data,
-    "Polling district or place"
-  );
+  placeObj.pollingDistrict = getCleanRecordDataValue(data, "Polling district or place");
 
   return placeObj;
 }
@@ -388,17 +333,11 @@ function getPlaceStringFromPlaceObj(placeObj, recordType) {
   }
 
   let placeString = "";
-  if (
-    isValidPlaceValue(placeObj.fullAddress) &&
-    isResidenceOrStreetAddressWanted
-  ) {
+  if (isValidPlaceValue(placeObj.fullAddress) && isResidenceOrStreetAddressWanted) {
     return placeObj.fullAddress;
   }
 
-  if (
-    isValidPlaceValue(placeObj.streetAddress) &&
-    isResidenceOrStreetAddressWanted
-  ) {
+  if (isValidPlaceValue(placeObj.streetAddress) && isResidenceOrStreetAddressWanted) {
     placeString += placeObj.streetAddress;
   } else if (isValidPlaceValue(placeObj.residence)) {
     if (isResidenceOrStreetAddressWanted) {
@@ -423,10 +362,7 @@ function getPlaceStringFromPlaceObj(placeObj, recordType) {
     }
   }
 
-  if (
-    isValidPlaceValue(placeObj.place) &&
-    placeObj.place != placeObj.residence
-  ) {
+  if (isValidPlaceValue(placeObj.place) && placeObj.place != placeObj.residence) {
     addString(placeObj.place);
   }
 
@@ -464,9 +400,7 @@ function getPlaceStringFromPlaceObj(placeObj, recordType) {
 }
 
 function setEventPlaceFromPlaceObj(result, eventPlaceObj) {
-  result.setEventPlace(
-    getPlaceStringFromPlaceObj(eventPlaceObj, result.recordType)
-  );
+  result.setEventPlace(getPlaceStringFromPlaceObj(eventPlaceObj, result.recordType));
 
   if (eventPlaceObj.streetAddress) {
     result.eventPlace.streetAddress = eventPlaceObj.streetAddress;
@@ -553,10 +487,7 @@ function generalizeDataGivenRecordType(data, result) {
       result.setBirthPlace(getCleanRecordDataValue(data, "Birth place"));
     }
 
-    if (
-      !result.eventDate ||
-      (!result.eventDate.dateString && !result.eventDate.yearString)
-    ) {
+    if (!result.eventDate || (!result.eventDate.dateString && !result.eventDate.yearString)) {
       // if this came from an image there will be no heading but may be a year
       if (data.year) {
         result.setEventYear(data.year);
@@ -579,10 +510,7 @@ function generalizeDataGivenRecordType(data, result) {
 
     result.setMaritalStatus(getCleanRecordDataValue(data, "Marital status"));
 
-    let relationshipToHead = getRecordDataValueForList(data, [
-      "Relationship",
-      "Relationship to head",
-    ]);
+    let relationshipToHead = getRecordDataValueForList(data, ["Relationship", "Relationship to head"]);
     result.setRelationshipToHead(relationshipToHead);
 
     if (data.household) {
@@ -641,8 +569,7 @@ function generalizeDataGivenRecordType(data, result) {
               relationship = result.relationshipToHead;
             }
             if (relationship && relationship != "-") {
-              householdMember.relationship =
-                GD.standardizeRelationshipToHead(relationship);
+              householdMember.relationship = GD.standardizeRelationshipToHead(relationship);
               fieldsEncountered.relationship = true;
             }
 
@@ -651,8 +578,7 @@ function generalizeDataGivenRecordType(data, result) {
               maritalStatus = result.maritalStatus;
             }
             if (maritalStatus && maritalStatus != "-") {
-              householdMember.maritalStatus =
-                GD.standardizeMaritalStatus(maritalStatus);
+              householdMember.maritalStatus = GD.standardizeMaritalStatus(maritalStatus);
               fieldsEncountered.maritalStatus = true;
             }
 
@@ -720,12 +646,7 @@ function generalizeDataGivenRecordType(data, result) {
             }
 
             let birthPlace = member["Birth place"];
-            if (
-              !birthPlace &&
-              isSelected &&
-              result.birthPlace &&
-              result.birthPlace.placeString
-            ) {
+            if (!birthPlace && isSelected && result.birthPlace && result.birthPlace.placeString) {
               birthPlace = result.birthPlace.placeString;
             }
             if (birthPlace && birthPlace != "-") {
@@ -769,10 +690,7 @@ function generalizeDataGivenRecordType(data, result) {
         }
       }
     }
-  } else if (
-    result.recordType == RT.MarriageRegistration ||
-    result.recordType == RT.Marriage
-  ) {
+  } else if (result.recordType == RT.MarriageRegistration || result.recordType == RT.Marriage) {
     setEventDateFromRecordDataKeys(data, result, ["Marriage"]);
 
     if (!result.eventDate) {
@@ -782,35 +700,17 @@ function generalizeDataGivenRecordType(data, result) {
       }
     }
 
-    let spouseLastName = getRecordDataValueForList(data, [
-      "Spouse's last name",
-      "Spouse's last name(s)",
-    ]);
-    let spouseFirstNames = getRecordDataValueForList(data, [
-      "Spouse's first name(s)",
-      "Spouse's first name",
-    ]);
+    let spouseLastName = getRecordDataValueForList(data, ["Spouse's last name", "Spouse's last name(s)"]);
+    let spouseFirstNames = getRecordDataValueForList(data, ["Spouse's first name(s)", "Spouse's first name"]);
 
     // sometimes it says "Groom's last name" or "Bride's last name" instead
     if (!spouseLastName) {
       if (data.personGender == "male") {
-        spouseLastName = getRecordDataValueForList(data, [
-          "Bride's last name(s)",
-          "Bride's last name",
-        ]);
-        spouseFirstNames = getRecordDataValueForList(data, [
-          "Bride's first name(s)",
-          "Bride's first name",
-        ]);
+        spouseLastName = getRecordDataValueForList(data, ["Bride's last name(s)", "Bride's last name"]);
+        spouseFirstNames = getRecordDataValueForList(data, ["Bride's first name(s)", "Bride's first name"]);
       } else if (data.personGender == "female") {
-        spouseLastName = getRecordDataValueForList(data, [
-          "Groom's last name(s)",
-          "Groom's last name",
-        ]);
-        spouseFirstNames = getRecordDataValueForList(data, [
-          "Groom's first name(s)",
-          "Groom's first name",
-        ]);
+        spouseLastName = getRecordDataValueForList(data, ["Groom's last name(s)", "Groom's last name"]);
+        spouseFirstNames = getRecordDataValueForList(data, ["Groom's first name(s)", "Groom's first name"]);
       }
     }
 
@@ -856,12 +756,7 @@ function generalizeDataGivenRecordType(data, result) {
       "Bride's father's last name",
     ]);
 
-    if (
-      groomFatherFirstName ||
-      groomFatherLastName ||
-      brideFatherFirstName ||
-      brideFatherLastName
-    ) {
+    if (groomFatherFirstName || groomFatherLastName || brideFatherFirstName || brideFatherLastName) {
       if (!result.parents || !result.parents.father) {
         let father = result.father ?? result.addFather();
 
@@ -891,12 +786,7 @@ function generalizeDataGivenRecordType(data, result) {
       "Bride's mother's last name(s)",
       "Bride's mother's last name",
     ]);
-    if (
-      groomMotherFirstName ||
-      groomMotherLastName ||
-      brideMotherFirstName ||
-      brideMotherLastName
-    ) {
+    if (groomMotherFirstName || groomMotherLastName || brideMotherFirstName || brideMotherLastName) {
       if (!result.parents || !result.parents.mother) {
         let mother = result.mother ?? result.addMother();
 
@@ -937,13 +827,11 @@ function generalizeDataGivenRecordType(data, result) {
       } else {
         if (data.personGender == "male") {
           if (brideFatherFirstName && brideFatherLastName) {
-            spouse.fatherName =
-              brideFatherFirstName + " " + brideFatherLastName;
+            spouse.fatherName = brideFatherFirstName + " " + brideFatherLastName;
           }
         } else {
           if (groomFatherFirstName && groomFatherLastName) {
-            spouse.fatherName =
-              groomFatherFirstName + " " + groomFatherLastName;
+            spouse.fatherName = groomFatherFirstName + " " + groomFatherLastName;
           }
         }
       }
@@ -961,13 +849,11 @@ function generalizeDataGivenRecordType(data, result) {
       } else {
         if (data.personGender == "male") {
           if (brideMotherFirstName && brideMotherLastName) {
-            spouse.motherName =
-              brideMotherFirstName + " " + brideMotherLastName;
+            spouse.motherName = brideMotherFirstName + " " + brideMotherLastName;
           }
         } else {
           if (groomMotherFirstName && groomMotherLastName) {
-            spouse.motherName =
-              groomMotherFirstName + " " + groomMotherLastName;
+            spouse.motherName = groomMotherFirstName + " " + groomMotherLastName;
           }
         }
       }
@@ -1002,11 +888,7 @@ function generalizeDataGivenRecordType(data, result) {
     // residence place. It is incorrect to set the death place to residence place. So we have a separate
     // "residencePlace"
 
-    let residencePlace = getRecordDataValueForList(data, [
-      "Residence",
-      "Residence town",
-      "Place",
-    ]);
+    let residencePlace = getRecordDataValueForList(data, ["Residence", "Residence town", "Place"]);
     if (residencePlace) {
       // we may be able to get a more complete residence place
       let placeObj = buildMainPlaceObj(data);
@@ -1033,10 +915,7 @@ function generalizeDataGivenRecordType(data, result) {
       result.setDeathPlace(deathPlace);
     }
 
-    let eventPlace = getRecordDataValueForList(data, [
-      "Registry",
-      "Probate registry",
-    ]);
+    let eventPlace = getRecordDataValueForList(data, ["Registry", "Probate registry"]);
     if (eventPlace) {
       if (eventPlace.placeString != eventPlace) {
         result.setEventPlace(eventPlace);
@@ -1052,15 +931,9 @@ function generalizeDataGivenRecordType(data, result) {
   } else if (result.recordType == RT.Divorce) {
     setEventDateFromRecordDataKeys(data, result, ["Petition", "Divorce"]);
 
-    let spouseLastName = getRecordDataValueForList(data, [
-      "Spouse's last name",
-      "Spouse's last name(s)",
-    ]);
+    let spouseLastName = getRecordDataValueForList(data, ["Spouse's last name", "Spouse's last name(s)"]);
     if (spouseLastName) {
-      let spouseFirstNames = getRecordDataValueForList(data, [
-        "Spouse's first name(s)",
-        "Spouse's first name",
-      ]);
+      let spouseFirstNames = getRecordDataValueForList(data, ["Spouse's first name(s)", "Spouse's first name"]);
 
       let name = new WtsName();
       name.setFirstNames(spouseFirstNames);
@@ -1072,13 +945,7 @@ function generalizeDataGivenRecordType(data, result) {
       result.spouses = [spouse];
     }
   } else {
-    setEventDateFromRecordDataKeys(data, result, [
-      "Event",
-      "Issue",
-      "Entry",
-      "Electoral",
-      "Registration",
-    ]);
+    setEventDateFromRecordDataKeys(data, result, ["Event", "Issue", "Entry", "Electoral", "Registration"]);
   }
 }
 
@@ -1146,10 +1013,7 @@ function generalizeData(input) {
 
   result.setPersonGender(data.personGender);
 
-  let firstNames = getRecordDataValueForList(data, [
-    "First name(s)",
-    "First name",
-  ]);
+  let firstNames = getRecordDataValueForList(data, ["First name(s)", "First name"]);
   let lastName = getRecordDataValueForList(data, ["Last name", "Last name(s)"]);
   result.setLastNameAndForeNames(lastName, firstNames);
 
@@ -1160,10 +1024,7 @@ function generalizeData(input) {
     result.setEventCountry(getCleanRecordDataValue(data, "Country"));
 
     if (getCleanRecordDataValue(data, "Registration district")) {
-      result.registrationDistrict = getCleanRecordDataValue(
-        data,
-        "Registration district"
-      );
+      result.registrationDistrict = getCleanRecordDataValue(data, "Registration district");
     } else if (getCleanRecordDataValue(data, "District")) {
       result.registrationDistrict = getCleanRecordDataValue(data, "District");
     }
@@ -1172,27 +1033,15 @@ function generalizeData(input) {
     setEventPlaceFromPlaceObj(result, eventPlaceObj);
 
     // parents may be recorded
-    let fatherFirstName = getRecordDataValueForList(data, [
-      "Father's first name(s)",
-      "Father's first name",
-    ]);
-    let fatherLastName = getRecordDataValueForList(data, [
-      "Father's last name(s)",
-      "Father's last name",
-    ]);
+    let fatherFirstName = getRecordDataValueForList(data, ["Father's first name(s)", "Father's first name"]);
+    let fatherLastName = getRecordDataValueForList(data, ["Father's last name(s)", "Father's last name"]);
     if (fatherFirstName || fatherLastName) {
       let father = result.addFather();
       father.name.setFirstNames(fatherFirstName);
       father.name.setLastName(fatherLastName);
     }
-    let motherFirstName = getRecordDataValueForList(data, [
-      "Mother's first name(s)",
-      "Mother's first name",
-    ]);
-    let motherLastName = getRecordDataValueForList(data, [
-      "Mother's last name(s)",
-      "Mother's last name",
-    ]);
+    let motherFirstName = getRecordDataValueForList(data, ["Mother's first name(s)", "Mother's first name"]);
+    let motherLastName = getRecordDataValueForList(data, ["Mother's last name(s)", "Mother's last name"]);
     if (motherFirstName || motherLastName) {
       let mother = result.addMother();
       mother.name.setFirstNames(motherFirstName);
@@ -1222,10 +1071,7 @@ function generalizeData(input) {
       if (page) {
         result.collectionData.page = page;
       }
-      let districtNumber = getCleanRecordDataValue(
-        data,
-        "Registration district number"
-      );
+      let districtNumber = getCleanRecordDataValue(data, "Registration district number");
       if (districtNumber) {
         result.collectionData.districtNumber = districtNumber;
       }
@@ -1241,10 +1087,7 @@ function generalizeData(input) {
       if (schedule) {
         result.collectionData.schedule = schedule;
       }
-      let registrationNumber = getCleanRecordDataValue(
-        data,
-        "Registration number"
-      );
+      let registrationNumber = getCleanRecordDataValue(data, "Registration number");
       if (registrationNumber) {
         result.collectionData.registrationNumber = registrationNumber;
       }
@@ -1259,9 +1102,4 @@ function generalizeData(input) {
   return result;
 }
 
-export {
-  generalizeData,
-  generalizeDataGivenRecordType,
-  GeneralizedData,
-  dateQualifiers,
-};
+export { generalizeData, generalizeDataGivenRecordType, GeneralizedData, dateQualifiers };

@@ -44,27 +44,17 @@ const DataCache = {
     return { firstName: firstName, lastName: lastName };
   },
 
-  findClosestWikiTreeProfilePrioritizingFirstName: function (
-    generalizedData,
-    dataCache,
-    useLnab
-  ) {
+  findClosestWikiTreeProfilePrioritizingFirstName: function (generalizedData, dataCache, useLnab) {
     let result = undefined;
 
     if (dataCache && dataCache.wikiTreeProfileCache) {
       let firstNameMatch = undefined;
 
-      let names = DataCache.getLcFirstAndLastNameFromGeneralizedData(
-        generalizedData,
-        useLnab
-      );
+      let names = DataCache.getLcFirstAndLastNameFromGeneralizedData(generalizedData, useLnab);
 
       for (let entry of dataCache.wikiTreeProfileCache.items) {
         let data = GeneralizedData.createFromPlainObject(entry.generalizedData);
-        let dataNames = DataCache.getLcFirstAndLastNameFromGeneralizedData(
-          data,
-          useLnab
-        );
+        let dataNames = DataCache.getLcFirstAndLastNameFromGeneralizedData(data, useLnab);
 
         if (dataNames.firstName == names.firstName) {
           if (dataNames.lastName == names.lastName) {

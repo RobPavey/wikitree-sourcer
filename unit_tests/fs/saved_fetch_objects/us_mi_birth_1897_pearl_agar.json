@@ -1,629 +1,841 @@
 {
-  "id" : "r_94573677",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY?seek=next"
+  "id": "r_94573677",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY"
     }
   },
-  "description" : "#sd_p_11772922240",
-  "persons" : [ {
-    "id" : "p_11772922240",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "SEX_CODE_ORIG",
-          "text" : "F"
-        }, {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "SEX_CODE_STD",
-          "text" : "Female"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/NQXX-QLZ?flag=fsh"
+  "description": "#sd_p_11772922240",
+  "persons": [
+    {
+      "id": "p_11772922240",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "SEX_CODE_ORIG",
+                "text": "F"
+              },
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "SEX_CODE_STD",
+                "text": "Female"
+              }
+            ]
+          }
+        ]
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/M3TG-LRY?flag=fsh"
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/NQXX-QLZ?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/M3TG-LRY?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NQXX-QLZ"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Pearl Jennie Agar",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Pearl Jennie",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "Pearl Jennie"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Pearl Jennie"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Agar",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Agar"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Agar"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "Pearl Jennie/Agar"
+                    },
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Pearl Jennie Agar"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "17 Mar 1897",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "BIRTH_DATE_ORIG",
+                    "text": "17 Mar 1897"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "BIRTH_DATE_STD",
+                    "text": "17 Mar 1897"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Evergreen Township, Sanilac, Michigan",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "BIRTH_PLACE",
+                    "text": "Evergreen Township, Sanilac, Michigan"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "p_11772922241",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "text": "Male"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/NQXX-QL8?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/M3TG-LRY?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NQXX-QL8"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Robert Agar",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Robert",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "FTHR_NAME_GN_ORIG",
+                          "text": "Robert"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "FTHR_NAME_GN",
+                          "text": "Robert"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Agar",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "FTHR_NAME_SURN_ORIG",
+                          "text": "Agar"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "FTHR_NAME_SURN",
+                          "text": "Agar"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "FTHR_NAME_ORIG",
+                      "text": "Robert/Agar"
+                    },
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "FTHR_NAME",
+                      "text": "Robert Agar"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Birth",
+          "place": {
+            "original": "Ontario, Canada",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "FTHR_BIRTH_PLACE",
+                    "text": "Ontario, Canada"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "p_11772922242",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "text": "Female"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/NQXX-QLD?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/M3TG-LRY?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NQXX-QLD"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Mary Agar",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Mary",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "MTHR_NAME_GN_ORIG",
+                          "text": "Mary"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "MTHR_NAME_GN",
+                          "text": "Mary"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Agar",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "MTHR_NAME_SURN_ORIG",
+                          "text": "Agar"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "MTHR_NAME_SURN",
+                          "text": "Agar"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "MTHR_NAME_ORIG",
+                      "text": "Mary/Agar"
+                    },
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "MTHR_NAME",
+                      "text": "Mary Agar"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Birth",
+          "place": {
+            "original": "Michigan",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "MTHR_BIRTH_PLACE",
+                    "text": "Michigan"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "MM9.1.6/QRPK-C9S",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_11772922241",
+        "resourceId": "p_11772922241"
+      },
+      "person2": {
+        "resource": "#p_11772922240",
+        "resourceId": "p_11772922240"
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLZ" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Pearl Jennie Agar",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Pearl Jennie",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "Pearl Jennie"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Pearl Jennie"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Agar",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "Agar"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Agar"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "Pearl Jennie/Agar"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Pearl Jennie Agar"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "17 Mar 1897",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "BIRTH_DATE_ORIG",
-            "text" : "17 Mar 1897"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "BIRTH_DATE_STD",
-            "text" : "17 Mar 1897"
-          } ]
-        } ]
+    {
+      "id": "MM9.1.6/QRPK-C93",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_11772922242",
+        "resourceId": "p_11772922242"
       },
-      "place" : {
-        "original" : "Evergreen Township, Sanilac, Michigan",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "BIRTH_PLACE",
-            "text" : "Evergreen Township, Sanilac, Michigan"
-          } ]
-        } ]
-      },
-      "primary" : true
-    } ]
-  }, {
-    "id" : "p_11772922241",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "text" : "Male"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/NQXX-QL8?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/M3TG-LRY?flag=fsh"
+      "person2": {
+        "resource": "#p_11772922240",
+        "resourceId": "p_11772922240"
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NQXX-QL8" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Robert Agar",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Robert",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "FTHR_NAME_GN_ORIG",
-              "text" : "Robert"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "FTHR_NAME_GN",
-              "text" : "Robert"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Agar",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "FTHR_NAME_SURN_ORIG",
-              "text" : "Agar"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "FTHR_NAME_SURN",
-              "text" : "Agar"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "FTHR_NAME_ORIG",
-            "text" : "Robert/Agar"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "FTHR_NAME",
-            "text" : "Robert Agar"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Birth",
-      "place" : {
-        "original" : "Ontario, Canada",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "FTHR_BIRTH_PLACE",
-            "text" : "Ontario, Canada"
-          } ]
-        } ]
-      }
-    } ]
-  }, {
-    "id" : "p_11772922242",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "text" : "Female"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/NQXX-QLD?flag=fsh"
+    {
+      "id": "MM9.1.6/QRPK-C9Q",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_11772922241",
+        "resourceId": "p_11772922241"
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/M3TG-LRY?flag=fsh"
+      "person2": {
+        "resource": "#p_11772922242",
+        "resourceId": "p_11772922242"
+      }
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_1459684",
+      "about": "https://api.familysearch.org/platform/records/collections/1459684",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1382223425872,
+      "modified": 1616792574956,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Michigan, United States",
+            "description": "#place_1-17"
+          },
+          "temporal": {
+            "original": "1867/1902",
+            "formal": "1867/1902"
+          },
+          "recordType": "http://gedcomx.org/Birth"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "Michigan Births, 1867-1902"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1459684"]
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLD" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Mary Agar",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Mary",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "MTHR_NAME_GN_ORIG",
-              "text" : "Mary"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "MTHR_NAME_GN",
-              "text" : "Mary"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Agar",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "MTHR_NAME_SURN_ORIG",
-              "text" : "Agar"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "MTHR_NAME_SURN",
-              "text" : "Agar"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "MTHR_NAME_ORIG",
-            "text" : "Mary/Agar"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "MTHR_NAME",
-            "text" : "Mary Agar"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Birth",
-      "place" : {
-        "original" : "Michigan",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "MTHR_BIRTH_PLACE",
-            "text" : "Michigan"
-          } ]
-        } ]
+    {
+      "id": "src_r_94573677",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY",
+      "componentOf": {
+        "description": "#sd_c_1459684"
+      },
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1389387717341,
+      "modified": 1616792574956,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Evergreen Township, Sanilac, Michigan, United States"
+          },
+          "temporal": {
+            "original": "17 Mar 1897"
+          },
+          "recordType": "http://gedcomx.org/Birth"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"Michigan Births, 1867-1902,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY : 20 February 2021), Entry for Pearl Jennie Agar, 17 Mar 1897; citing item 1 p 171 rn 787, Evergreen Township, Sanilac, Michigan, Department of Vital Records, Lansing; FHL microfilm 2,322,715."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Pearl Jennie Agar, \"Michigan Births, 1867-1902\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/283248437"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1459684?arkName=1:2:M3TG-LRY"
       }
-    } ]
-  } ],
-  "relationships" : [ {
-    "id" : "MM9.1.6/QRPK-C9S",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_11772922241",
-      "resourceId" : "p_11772922241"
     },
-    "person2" : {
-      "resource" : "#p_11772922240",
-      "resourceId" : "p_11772922240"
-    }
-  }, {
-    "id" : "MM9.1.6/QRPK-C93",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_11772922242",
-      "resourceId" : "p_11772922242"
-    },
-    "person2" : {
-      "resource" : "#p_11772922240",
-      "resourceId" : "p_11772922240"
-    }
-  }, {
-    "id" : "MM9.1.6/QRPK-C9Q",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_11772922241",
-      "resourceId" : "p_11772922241"
-    },
-    "person2" : {
-      "resource" : "#p_11772922242",
-      "resourceId" : "p_11772922242"
-    }
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_1459684",
-    "about" : "https://api.familysearch.org/platform/records/collections/1459684",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1382223425872,
-    "modified" : 1616792574956,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Michigan, United States",
-        "description" : "#place_1-17"
+    {
+      "id": "sd_p_11772922240",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLZ",
+      "componentOf": {
+        "description": "#src_r_94573677"
       },
-      "temporal" : {
-        "original" : "1867/1902",
-        "formal" : "1867/1902"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Michigan Births, 1867-1902,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NQXX-QLZ : 20 February 2021), Pearl Jennie Agar, 17 Mar 1897; citing item 1 p 171 rn 787, Evergreen Township, Sanilac, Michigan, Department of Vital Records, Lansing; FHL microfilm 2,322,715."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Pearl Jennie Agar, \"Michigan Births, 1867-1902\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NQXX-QLZ"]
+      }
+    },
+    {
+      "id": "sd_p_11772922241",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:NQXX-QL8",
+      "componentOf": {
+        "description": "#src_r_94573677"
       },
-      "recordType" : "http://gedcomx.org/Birth"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "Michigan Births, 1867-1902"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1459684" ]
-    }
-  }, {
-    "id" : "src_r_94573677",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY",
-    "componentOf" : {
-      "description" : "#sd_c_1459684"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Michigan Births, 1867-1902,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NQXX-QL8 : 20 February 2021), Robert Agar in entry for Pearl Jennie Agar, 17 Mar 1897; citing item 1 p 171 rn 787, Evergreen Township, Sanilac, Michigan, Department of Vital Records, Lansing; FHL microfilm 2,322,715."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Robert Agar in entry for Pearl Jennie Agar, \"Michigan Births, 1867-1902\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NQXX-QL8"]
+      }
     },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1389387717341,
-    "modified" : 1616792574956,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Evergreen Township, Sanilac, Michigan, United States"
+    {
+      "id": "sd_p_11772922242",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLD",
+      "componentOf": {
+        "description": "#src_r_94573677"
       },
-      "temporal" : {
-        "original" : "17 Mar 1897"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Michigan Births, 1867-1902,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NQXX-QLD : 20 February 2021), Mary Agar in entry for Pearl Jennie Agar, 17 Mar 1897; citing item 1 p 171 rn 787, Evergreen Township, Sanilac, Michigan, Department of Vital Records, Lansing; FHL microfilm 2,322,715."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Mary Agar in entry for Pearl Jennie Agar, \"Michigan Births, 1867-1902\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:NQXX-QLD"]
+      }
+    },
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/3:1:S3HT-6737-3CW",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
       },
-      "recordType" : "http://gedcomx.org/Birth"
-    } ],
-    "citations" : [ {
-      "value" : "\"Michigan Births, 1867-1902,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY : 20 February 2021), Entry for Pearl Jennie Agar, 17 Mar 1897; citing item 1 p 171 rn 787, Evergreen Township, Sanilac, Michigan, Department of Vital Records, Lansing; FHL microfilm 2,322,715."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for Pearl Jennie Agar, \"Michigan Births, 1867-1902\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/283248437" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:M3TG-LRY" ]
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:S3HT-6737-3CW"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1459684?arkName=3:1:S3HT-6737-3CW"
+      }
+    }
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "place_1-17",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/17?context=1"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/UniqueIdentifier",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "UNIQUE_IDENTIFIER",
+          "text": "283248437"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1459684?arkName=1:2:M3TG-LRY"
-    }
-  }, {
-    "id" : "sd_p_11772922240",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLZ",
-    "componentOf" : {
-      "description" : "#src_r_94573677"
+    {
+      "type": "http://familysearch.org/types/fields/ImageId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_ID",
+          "text": "dgs:004207534.004207534_00052"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Michigan Births, 1867-1902,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NQXX-QLZ : 20 February 2021), Pearl Jennie Agar, 17 Mar 1897; citing item 1 p 171 rn 787, Evergreen Township, Sanilac, Michigan, Department of Vital Records, Lansing; FHL microfilm 2,322,715."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Pearl Jennie Agar, \"Michigan Births, 1867-1902\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLZ" ]
-    }
-  }, {
-    "id" : "sd_p_11772922241",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:NQXX-QL8",
-    "componentOf" : {
-      "description" : "#src_r_94573677"
+    {
+      "type": "http://familysearch.org/types/fields/FolderImageSeq",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FOLDER_IMAGE_SEQ",
+          "text": "52"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Michigan Births, 1867-1902,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NQXX-QL8 : 20 February 2021), Robert Agar in entry for Pearl Jennie Agar, 17 Mar 1897; citing item 1 p 171 rn 787, Evergreen Township, Sanilac, Michigan, Department of Vital Records, Lansing; FHL microfilm 2,322,715."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Robert Agar in entry for Pearl Jennie Agar, \"Michigan Births, 1867-1902\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NQXX-QL8" ]
-    }
-  }, {
-    "id" : "sd_p_11772922242",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLD",
-    "componentOf" : {
-      "description" : "#src_r_94573677"
+    {
+      "type": "http://familysearch.org/types/fields/Folder",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FOLDER",
+          "text": "004207534"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Michigan Births, 1867-1902,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NQXX-QLD : 20 February 2021), Mary Agar in entry for Pearl Jennie Agar, 17 Mar 1897; citing item 1 p 171 rn 787, Evergreen Township, Sanilac, Michigan, Department of Vital Records, Lansing; FHL microfilm 2,322,715."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Mary Agar in entry for Pearl Jennie Agar, \"Michigan Births, 1867-1902\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLD" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:S3HT-6737-3CW",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
+    {
+      "type": "http://familysearch.org/types/fields/BatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "BATCH_ID",
+          "text": "345846"
+        }
+      ]
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:S3HT-6737-3CW" ]
+    {
+      "type": "http://familysearch.org/types/fields/BatchLocality",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "BATCH_LOCALITY",
+          "text": "Michigan, United States"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1459684?arkName=3:1:S3HT-6737-3CW"
+    {
+      "type": "http://familysearch.org/types/fields/BirthYear",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "BIRTH_YEAR",
+          "text": "1897"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "DIGITAL_GS_NUMBER",
+          "text": "4207534"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FILM_NUMBER",
+          "text": "2322715"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_NBR",
+          "text": "52"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PacketLtr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "PACKET_LTR",
+          "text": "C"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "REC_NBR",
+          "text": "28"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RefId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "REF_ID",
+          "text": "item 1 p 171 rn 787"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UdeBatchNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "UDE_BATCH_NUMBER",
+          "text": "C02706-8"
+        }
+      ]
+    },
+    {
+      "type": "SORT_KEY",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FS_SORT_KEY",
+          "text": "004207534_00052_283248437"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "SORT_KEY",
+          "text": "000283248437#09"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "4"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "16753"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
     }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
-    }
-  } ],
-  "places" : [ {
-    "id" : "place_1-17",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/17?context=1" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/UniqueIdentifier",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "UNIQUE_IDENTIFIER",
-      "text" : "283248437"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_ID",
-      "text" : "dgs:004207534.004207534_00052"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FolderImageSeq",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FOLDER_IMAGE_SEQ",
-      "text" : "52"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/Folder",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FOLDER",
-      "text" : "004207534"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "BATCH_ID",
-      "text" : "345846"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchLocality",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "BATCH_LOCALITY",
-      "text" : "Michigan, United States"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BirthYear",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "BIRTH_YEAR",
-      "text" : "1897"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "DIGITAL_GS_NUMBER",
-      "text" : "4207534"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FILM_NUMBER",
-      "text" : "2322715"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNbr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_NBR",
-      "text" : "52"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PacketLtr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "PACKET_LTR",
-      "text" : "C"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecNbr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "REC_NBR",
-      "text" : "28"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RefId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "REF_ID",
-      "text" : "item 1 p 171 rn 787"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "UDE_BATCH_NUMBER",
-      "text" : "C02706-8"
-    } ]
-  }, {
-    "type" : "SORT_KEY",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "004207534_00052_283248437"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "SORT_KEY",
-      "text" : "000283248437#09"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "4"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "16753"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ]
+  ]
 }

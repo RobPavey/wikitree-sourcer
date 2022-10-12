@@ -65,12 +65,7 @@ async function doSearch(loadedModule, input) {
   window.close();
 }
 
-function testFilterForDatesAndCountries(
-  filter,
-  startYear,
-  endYear,
-  countryArray
-) {
+function testFilterForDatesAndCountries(filter, startYear, endYear, countryArray) {
   //console.log("testFilterForDatesAndCountries, startYear is: " + startYear + ", endYear is: " + endYear);
   //console.log("testFilterForDatesAndCountries, filter is: ");
   //console.log(filter);
@@ -78,10 +73,7 @@ function testFilterForDatesAndCountries(
   //console.log(countryArray);
 
   if (filter.filterByDate) {
-    if (
-      (endYear && filter.startYear > endYear) ||
-      (startYear && filter.endYear < startYear)
-    ) {
+    if ((endYear && filter.startYear > endYear) || (startYear && filter.endYear < startYear)) {
       return false;
     }
   }
@@ -123,10 +115,7 @@ function buildSortedMenuItemFunctions(optionName) {
     //console.log("buildSortedMenuItemFunctions: fullOptionName is: " + fullOptionName + ", optionValue is: " + optionValue);
 
     if (typeof optionValue === "undefined") {
-      console.log(
-        "buildSortedMenuItemFunctions: missing option value for: " +
-          fullOptionName
-      );
+      console.log("buildSortedMenuItemFunctions: missing option value for: " + fullOptionName);
       optionValue = 10000; // don't exclude it - put at end of list
     }
 
@@ -160,12 +149,7 @@ function buildSubMenuItemFunctions() {
   return buildSortedMenuItemFunctions("popup_priorityOnSubMenu");
 }
 
-function addSearchFilterMenuItem(
-  menu,
-  filter,
-  numSitesExcludedByPriority,
-  backFunction
-) {
+function addSearchFilterMenuItem(menu, filter, numSitesExcludedByPriority, backFunction) {
   let filterText = "Filter: ";
 
   if (!filter.filterByDate && !filter.filterByCountry) {
@@ -212,12 +196,7 @@ function addSearchFilterMenuItem(
     if (numSitesExcludedByPriority == 1) {
       siteText = "site";
     }
-    filterText +=
-      "; " +
-      numSitesExcludedByPriority +
-      " " +
-      siteText +
-      " excluded by zero priority in options";
+    filterText += "; " + numSitesExcludedByPriority + " " + siteText + " excluded by zero priority in options";
   }
 
   // create a list item and add it to the list
@@ -227,11 +206,7 @@ function addSearchFilterMenuItem(
   let button = document.createElement("button");
   button.className = "menuButton";
   button.onclick = function (element) {
-    setupSearchMenuItemFilterSubmenu(
-      filter,
-      numSitesExcludedByPriority,
-      backFunction
-    );
+    setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, backFunction);
   };
   button.innerText = filterText;
   listItem.appendChild(button);
@@ -239,11 +214,7 @@ function addSearchFilterMenuItem(
   menu.list.appendChild(listItem);
 }
 
-function setupSearchMenuItemFilterSubmenu(
-  filter,
-  numSitesExcludedByPriority,
-  backFunction
-) {
+function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, backFunction) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
@@ -349,14 +320,8 @@ function setupSearchMenuItemFilterSubmenu(
         filter.countryArray.push(string);
       }
 
-      for (
-        let countryIndex = 0;
-        countryIndex < filter.countryArray.length;
-        countryIndex++
-      ) {
-        let stdName = CD.standardizeCountryName(
-          filter.countryArray[countryIndex]
-        );
+      for (let countryIndex = 0; countryIndex < filter.countryArray.length; countryIndex++) {
+        let stdName = CD.standardizeCountryName(filter.countryArray[countryIndex]);
         if (stdName) {
           filter.countryArray[countryIndex] = stdName;
         }
@@ -381,14 +346,12 @@ function setupSearchMenuItemFilterSubmenu(
     addBreak(filterDivElement);
 
     let excludedSitesLabelElement = document.createElement("label");
-    excludedSitesLabelElement.innerText =
-      "These sites are excluded by options settings:";
+    excludedSitesLabelElement.innerText = "These sites are excluded by options settings:";
     excludedSitesLabelElement.className = "searchFilterExcludedSiteHeader";
 
     for (let registeredFunction of registeredSearchMenuItemFunctions) {
       let siteName = registeredFunction.siteName;
-      let priorityOptionName =
-        "search_" + siteName + "_popup_priorityOnSubMenu";
+      let priorityOptionName = "search_" + siteName + "_popup_priorityOnSubMenu";
 
       if (options[priorityOptionName] <= 0) {
         addBreak(excludedSitesLabelElement);
@@ -427,12 +390,7 @@ function setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList) {
     }
   }
 
-  addSearchFilterMenuItem(
-    menu,
-    filter,
-    numSitesExcludedByPriority,
-    backToHereFunction
-  );
+  addSearchFilterMenuItem(menu, filter, numSitesExcludedByPriority, backToHereFunction);
 
   for (let registeredFunction of subMenuFunctionList) {
     let siteName = registeredFunction.siteName;
@@ -459,10 +417,7 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
     for (let registeredFunction of topMenuFunctionList) {
       let siteName = registeredFunction.siteName;
       let menuItemFunction = registeredFunction.menuItemFunction;
-      if (
-        options.search_general_popup_showSameSite ||
-        siteName != excludeSite
-      ) {
+      if (options.search_general_popup_showSameSite || siteName != excludeSite) {
         let addedItem = menuItemFunction(menu, data, backFunction);
         if (addedItem) {
           itemsAdded++;
@@ -510,9 +465,4 @@ function registerSearchMenuItemFunction(siteName, siteTitle, menuItemFunction) {
   });
 }
 
-export {
-  doSearch,
-  addSearchMenus,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-};
+export { doSearch, addSearchMenus, registerSearchMenuItemFunction, testFilterForDatesAndCountries };

@@ -20,15 +20,7 @@
     "placeString": "Whitefield, Coos, New Hampshire, United States"
   },
   "ageAtEvent": "28",
-  "householdArrayFields": [
-    "name",
-    "relationship",
-    "maritalStatus",
-    "gender",
-    "age",
-    "birthYear",
-    "birthPlace"
-  ],
+  "householdArrayFields": ["name", "relationship", "maritalStatus", "gender", "age", "birthYear", "birthPlace"],
   "householdArray": [
     {
       "name": "Charles W Elliott, Jr",

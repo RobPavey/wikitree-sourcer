@@ -22,10 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  cachedDataCache,
-  isCachedDataCacheReady,
-} from "/base/browser/common/data_cache.mjs";
+import { cachedDataCache, isCachedDataCacheReady } from "/base/browser/common/data_cache.mjs";
 import {
   addSameRecordMenuItem,
   addBackMenuItem,
@@ -67,11 +64,7 @@ function countryHasGroCoverage(data) {
 
   if (countryArray.length > 0) {
     for (let country of countryArray) {
-      if (
-        country == "England" ||
-        country == "Wales" ||
-        CD.isPartOf(country, "England and Wales")
-      ) {
+      if (country == "England" || country == "Wales" || CD.isPartOf(country, "England and Wales")) {
         return true;
       }
       if (country == "United Kingdom") {
@@ -135,11 +128,7 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
 
 function addGroDefaultSearchMenuItem(menu, data, backFunction, filter) {
   if (filter) {
-    if (
-      !testFilterForDatesAndCountries(filter, groStartYear, groEndYear, [
-        "England and Wales",
-      ])
-    ) {
+    if (!testFilterForDatesAndCountries(filter, groStartYear, groEndYear, ["England and Wales"])) {
       return;
     }
   } else {

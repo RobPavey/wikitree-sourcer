@@ -21,10 +21,7 @@
   },
   "ageAtEvent": "34",
   "maritalStatus": "married",
-  "householdArrayFields": [
-    "name",
-    "age"
-  ],
+  "householdArrayFields": ["name", "age"],
   "householdArray": [
     {
       "name": "R C Jones",

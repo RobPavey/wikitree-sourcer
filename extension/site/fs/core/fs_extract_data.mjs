@@ -138,9 +138,7 @@ function extractRecordData(table, result) {
           if (value) {
             recordData[label] = value;
           } else {
-            console.log(
-              "Unhandled case: Num children = " + numChildren + ". " + label
-            );
+            console.log("Unhandled case: Num children = " + numChildren + ". " + label);
           }
         }
       }
@@ -166,11 +164,7 @@ function extractRecordData(table, result) {
         let subTableRows = table.querySelectorAll("tbody tr");
         if (subTableRows) {
           let value = "";
-          for (
-            let subRowIndex = 0;
-            subRowIndex < subTableRows.length;
-            subRowIndex++
-          ) {
+          for (let subRowIndex = 0; subRowIndex < subTableRows.length; subRowIndex++) {
             let subRow = subTableRows[subRowIndex];
             if (value) {
               value += "<br/>";
@@ -254,10 +248,7 @@ function extractDataForImage(filmViewerNode, result) {
       for (let index = 0; index < children.length; index++) {
         let child = children[index];
         let childDataNgRepeat = child.getAttribute("data-ng-repeat");
-        if (
-          childDataNgRepeat &&
-          childDataNgRepeat.includes("crumb in crumbs")
-        ) {
+        if (childDataNgRepeat && childDataNgRepeat.includes("crumb in crumbs")) {
           let childTitle = child.getAttribute("title");
           if (childTitle) {
             if (browsePath) {
@@ -278,9 +269,7 @@ function extractDataForImage(filmViewerNode, result) {
       result.filmTitle = titleNode.textContent;
     }
     if (!result.filmNumber) {
-      filmNumberNode = crumbsNode.querySelector(
-        "li.hidden-phone > span.ng-scope"
-      );
+      filmNumberNode = crumbsNode.querySelector("li.hidden-phone > span.ng-scope");
       if (filmNumberNode) {
         result.filmNumber = titleNode.textContent;
       }
@@ -302,9 +291,7 @@ function extractDataForImage(filmViewerNode, result) {
 
   let imageInfo = filmViewerNode.querySelector("fs-image-info-panel");
   if (imageInfo) {
-    let table = imageInfo.querySelector(
-      "table[data-ng-if=imageInfo\\.filmNotes]"
-    );
+    let table = imageInfo.querySelector("table[data-ng-if=imageInfo\\.filmNotes]");
     if (table) {
       let tableRows = table.querySelectorAll("tr.ng-scope");
       if (tableRows) {
@@ -313,8 +300,7 @@ function extractDataForImage(filmViewerNode, result) {
           if (catalogLink) {
             result.catalogRecordName = catalogLink.textContent;
             // this link is relative to https://www.familysearch.org
-            result.catalogRecordLink =
-              "https://www.familysearch.org" + catalogLink.getAttribute("href");
+            result.catalogRecordLink = "https://www.familysearch.org" + catalogLink.getAttribute("href");
           }
 
           let imageInfoCols = tableRows[0].querySelectorAll("td");
@@ -345,18 +331,14 @@ function extractDataForImage(filmViewerNode, result) {
               // this link is sometime relative to https://www.familysearch.org
               let newCatalogRecordLink = catalogLink.getAttribute("href");
               if (!newCatalogRecordLink.startsWith("http")) {
-                newCatalogRecordLink =
-                  "https://www.familysearch.org" + newCatalogRecordLink;
+                newCatalogRecordLink = "https://www.familysearch.org" + newCatalogRecordLink;
               }
 
               if (catalogRecordName == "" && catalogRecordLink == "") {
                 catalogRecordName = newCatalogRecordName;
                 catalogRecordLink = newCatalogRecordLink;
               } else {
-                if (
-                  catalogRecordName != newCatalogRecordName ||
-                  catalogRecordLink != newCatalogRecordLink
-                ) {
+                if (catalogRecordName != newCatalogRecordName || catalogRecordLink != newCatalogRecordLink) {
                   allAreTheSame = false;
                   break;
                 }
@@ -408,9 +390,7 @@ function extractDataForPersonPage(document, result) {
         }
 
         if (moreLessElement.shadowRoot) {
-          let spanElement = moreLessElement.shadowRoot.querySelector(
-            "span[data-test-more-less-text]"
-          );
+          let spanElement = moreLessElement.shadowRoot.querySelector("span[data-test-more-less-text]");
           if (spanElement) {
             let originalDate = spanElement.textContent;
             if (originalDate && originalDate != "false") {
@@ -440,15 +420,11 @@ function extractDataForPersonPage(document, result) {
   function extractNamesFromFsTreePerson(fsTreePersonElement, resultObject) {
     let nameDiv = fsTreePersonElement.querySelector("div.fs-person__name");
     if (nameDiv) {
-      let givenNameElement = nameDiv.querySelector(
-        "span.fs-person__given-name"
-      );
+      let givenNameElement = nameDiv.querySelector("span.fs-person__given-name");
       if (givenNameElement) {
         resultObject.givenName = givenNameElement.textContent;
       }
-      let familyNameElement = nameDiv.querySelector(
-        "span.fs-person__family-name"
-      );
+      let familyNameElement = nameDiv.querySelector("span.fs-person__family-name");
       if (familyNameElement) {
         resultObject.surname = familyNameElement.textContent;
       }
@@ -466,29 +442,21 @@ function extractDataForPersonPage(document, result) {
   let personPageElement = document.querySelector("fs-person-page");
   if (personPageElement && personPageElement.shadowRoot) {
     // there are two places to get the person's name, one in header and one in vitals
-    let personElement = personPageElement.shadowRoot.querySelector(
-      "div.person-header-container > fs-tree-person"
-    );
+    let personElement = personPageElement.shadowRoot.querySelector("div.person-header-container > fs-tree-person");
     if (personElement) {
       extractNamesFromFsTreePerson(personElement, result);
     }
 
-    let detailsElement = personPageElement.shadowRoot.querySelector(
-      "#pages > fs-tree-person-details"
-    );
+    let detailsElement = personPageElement.shadowRoot.querySelector("#pages > fs-tree-person-details");
 
     if (detailsElement && detailsElement.shadowRoot) {
-      let vitalsElement = detailsElement.shadowRoot.querySelector(
-        "fs-tree-person-vitals"
-      );
+      let vitalsElement = detailsElement.shadowRoot.querySelector("fs-tree-person-vitals");
 
       if (vitalsElement && vitalsElement.shadowRoot) {
         //console.log("vitalsElement is :");
         //console.log(vitalsElement);
 
-        let cardElement = vitalsElement.shadowRoot.querySelector(
-          "fs-tree-collapsable-card.vitals"
-        );
+        let cardElement = vitalsElement.shadowRoot.querySelector("fs-tree-collapsable-card.vitals");
 
         if (cardElement) {
           //console.log("cardElement is :");
@@ -510,19 +478,15 @@ function extractDataForPersonPage(document, result) {
                 //console.log(cardItem);
 
                 if (cardItem.shadowRoot) {
-                  let cardSection =
-                    cardItem.shadowRoot.querySelector("section");
+                  let cardSection = cardItem.shadowRoot.querySelector("section");
                   if (cardSection) {
                     //console.log("cardSection is :");
                     //console.log(cardSection);
 
-                    let conclusionType = cardSection.getAttribute(
-                      "data-test-conclusion-type"
-                    );
+                    let conclusionType = cardSection.getAttribute("data-test-conclusion-type");
 
                     if (conclusionType == "NAME") {
-                      let nameElement =
-                        cardSection.querySelector("div.display-name");
+                      let nameElement = cardSection.querySelector("div.display-name");
                       if (nameElement) {
                         let name = nameElement.textContent;
                         // we may already have name from header
@@ -531,22 +495,15 @@ function extractDataForPersonPage(document, result) {
                         }
                       }
                     } else if (conclusionType == "GENDER") {
-                      let genderElement =
-                        cardSection.querySelector("div.display-gender");
+                      let genderElement = cardSection.querySelector("div.display-gender");
                       if (genderElement) {
                         let gender = genderElement.textContent;
                         result.gender = gender;
                       }
                     } else if (conclusionType == "BIRTH") {
-                      extractDateAndPlaceFromVitalsSection(
-                        cardSection,
-                        "birth"
-                      );
+                      extractDateAndPlaceFromVitalsSection(cardSection, "birth");
                     } else if (conclusionType == "DEATH") {
-                      extractDateAndPlaceFromVitalsSection(
-                        cardSection,
-                        "death"
-                      );
+                      extractDateAndPlaceFromVitalsSection(cardSection, "death");
                     }
                   }
                 }
@@ -556,82 +513,57 @@ function extractDataForPersonPage(document, result) {
         }
       }
 
-      let familyElement = detailsElement.shadowRoot.querySelector(
-        "fs-tree-person-family"
-      );
+      let familyElement = detailsElement.shadowRoot.querySelector("fs-tree-person-family");
 
       if (familyElement && familyElement.shadowRoot) {
-        let cardElement = familyElement.shadowRoot.querySelector(
-          "fs-tree-collapsable-card.family"
-        );
+        let cardElement = familyElement.shadowRoot.querySelector("fs-tree-collapsable-card.family");
 
         if (cardElement) {
-          let familyMembersElement =
-            cardElement.querySelector("fs-family-members");
+          let familyMembersElement = cardElement.querySelector("fs-family-members");
 
           if (familyMembersElement && familyMembersElement.shadowRoot) {
             // Get spouses
 
-            let spousesElement =
-              familyMembersElement.shadowRoot.querySelector("#spouses");
+            let spousesElement = familyMembersElement.shadowRoot.querySelector("#spouses");
 
             if (spousesElement) {
-              let spouses = spousesElement.querySelectorAll(
-                "fs-family-members-block"
-              );
+              let spouses = spousesElement.querySelectorAll("fs-family-members-block");
               for (let spouseBlockElement of spouses) {
                 if (spouseBlockElement.shadowRoot) {
-                  let familyBlock =
-                    spouseBlockElement.shadowRoot.querySelector(
-                      "div.family-block"
-                    );
+                  let familyBlock = spouseBlockElement.shadowRoot.querySelector("div.family-block");
                   if (familyBlock) {
-                    let couple = familyBlock.querySelector(
-                      "fs-family-members-couple"
-                    );
+                    let couple = familyBlock.querySelector("fs-family-members-couple");
                     if (couple && couple.shadowRoot) {
                       let spouse = {};
 
-                      let spouseElement = couple.shadowRoot.querySelector(
-                        "fs-tree-person:not(.focusPerson)"
-                      );
+                      let spouseElement = couple.shadowRoot.querySelector("fs-tree-person:not(.focusPerson)");
                       if (spouseElement) {
                         extractNamesFromFsTreePerson(spouseElement, spouse);
                       }
 
-                      let marriageDateElement =
-                        couple.shadowRoot.querySelector("span.marriage-date");
+                      let marriageDateElement = couple.shadowRoot.querySelector("span.marriage-date");
                       if (marriageDateElement) {
                         let dateString = marriageDateElement.textContent;
                         if (dateString) {
                           dateString = dateString.replace(/^Marriage\:\s*/, "");
                           spouse.marriageDateOriginal = dateString.trim();
                         }
-                        let stdDateString =
-                          marriageDateElement.getAttribute("title");
+                        let stdDateString = marriageDateElement.getAttribute("title");
                         if (stdDateString) {
-                          stdDateString = stdDateString.replace(
-                            /^Standard\:\s*/,
-                            ""
-                          );
+                          stdDateString = stdDateString.replace(/^Standard\:\s*/, "");
                           spouse.marriageDate = stdDateString.trim();
                         }
                       }
 
-                      let marriagePlaceElement =
-                        couple.shadowRoot.querySelector("span.marriage-place");
+                      let marriagePlaceElement = couple.shadowRoot.querySelector("span.marriage-place");
                       if (marriagePlaceElement) {
                         let placeString = marriagePlaceElement.textContent;
                         if (placeString) {
                           spouse.marriagePlaceOriginal = placeString.trim();
                         }
-                        let stdPlaceString =
-                          marriagePlaceElement.getAttribute("title");
+                        let stdPlaceString = marriagePlaceElement.getAttribute("title");
                         if (stdPlaceString) {
-                          stdPlaceString = stdPlaceString.replace(
-                            /^Standard\:\s*/,
-                            ""
-                          );
+                          stdPlaceString = stdPlaceString.replace(/^Standard\:\s*/, "");
                           spouse.marriagePlace = stdPlaceString.trim();
                         }
                       }
@@ -649,34 +581,22 @@ function extractDataForPersonPage(document, result) {
 
             // Get parents
 
-            let parentsElement =
-              familyMembersElement.shadowRoot.querySelector("#parents");
+            let parentsElement = familyMembersElement.shadowRoot.querySelector("#parents");
             if (parentsElement) {
-              let familyMembersBlock = parentsElement.querySelector(
-                "fs-family-members-block"
-              );
+              let familyMembersBlock = parentsElement.querySelector("fs-family-members-block");
               if (familyMembersBlock && familyMembersBlock.shadowRoot) {
-                let familyBlock =
-                  familyMembersBlock.shadowRoot.querySelector(
-                    "div.family-block"
-                  );
+                let familyBlock = familyMembersBlock.shadowRoot.querySelector("div.family-block");
                 if (familyBlock) {
-                  let couple = familyBlock.querySelector(
-                    "fs-family-members-couple"
-                  );
+                  let couple = familyBlock.querySelector("fs-family-members-couple");
                   if (couple && couple.shadowRoot) {
-                    let fatherElement = couple.shadowRoot.querySelector(
-                      "fs-tree-person.male"
-                    );
+                    let fatherElement = couple.shadowRoot.querySelector("fs-tree-person.male");
                     if (fatherElement) {
                       let father = {};
                       extractNamesFromFsTreePerson(fatherElement, father);
                       result.father = father;
                     }
 
-                    let motherElement = couple.shadowRoot.querySelector(
-                      "fs-tree-person.female"
-                    );
+                    let motherElement = couple.shadowRoot.querySelector("fs-tree-person.female");
                     if (motherElement) {
                       let mother = {};
                       extractNamesFromFsTreePerson(motherElement, mother);
@@ -697,14 +617,8 @@ function extractDataForPersonPage(document, result) {
 
 // As of 12 Sep 2022  this new format page is an option from the old format page
 function extractDataForPersonPageFormat2(document, personId, result) {
-  function extractDateAndPlaceFromVitalsSection(
-    conclusionElement,
-    resultObject,
-    prefix
-  ) {
-    let dateElement = conclusionElement.querySelector(
-      "span[data-testid='conclusion-date']"
-    );
+  function extractDateAndPlaceFromVitalsSection(conclusionElement, resultObject, prefix) {
+    let dateElement = conclusionElement.querySelector("span[data-testid='conclusion-date']");
     if (dateElement) {
       let date = dateElement.textContent;
       if (date) {
@@ -717,9 +631,7 @@ function extractDataForPersonPageFormat2(document, personId, result) {
         }
       }
     }
-    let placeElement = conclusionElement.querySelector(
-      "span[data-testid='conclusion-place']"
-    );
+    let placeElement = conclusionElement.querySelector("span[data-testid='conclusion-place']");
     if (placeElement) {
       let place = placeElement.textContent;
       if (place) {
@@ -733,9 +645,7 @@ function extractDataForPersonPageFormat2(document, personId, result) {
   }
 
   function extractNamesFromPersonItem(personItemElement, resultObject) {
-    let nameSpan = personItemElement.querySelector(
-      "span[data-testid='fullName']"
-    );
+    let nameSpan = personItemElement.querySelector("span[data-testid='fullName']");
     if (nameSpan) {
       resultObject.fullName = nameSpan.textContent;
     }
@@ -750,78 +660,48 @@ function extractDataForPersonPageFormat2(document, personId, result) {
 
   result.pageType = "person";
 
-  let vitalsElement = mainContentNode.querySelector(
-    "div[data-testid='section-card-vitals']"
-  );
+  let vitalsElement = mainContentNode.querySelector("div[data-testid='section-card-vitals']");
   if (vitalsElement) {
     //console.log("vitalsElement:");
     //console.log(vitalsElement);
 
-    let nameConclusionElement = vitalsElement.querySelector(
-      "div[data-testid='conclusionDisplay:NAME']"
-    );
+    let nameConclusionElement = vitalsElement.querySelector("div[data-testid='conclusionDisplay:NAME']");
     if (nameConclusionElement) {
-      let nameElement = nameConclusionElement.querySelector(
-        "span[data-testid='conclusion-name-template']"
-      );
+      let nameElement = nameConclusionElement.querySelector("span[data-testid='conclusion-name-template']");
       if (nameElement) {
         result.fullName = nameElement.textContent;
       }
     }
 
-    let genderConclusionElement = vitalsElement.querySelector(
-      "div[data-testid='conclusionDisplay:GENDER']"
-    );
+    let genderConclusionElement = vitalsElement.querySelector("div[data-testid='conclusionDisplay:GENDER']");
     if (genderConclusionElement) {
-      let genderElement = genderConclusionElement.querySelector(
-        "span[data-testid='conclusion-gender']"
-      );
+      let genderElement = genderConclusionElement.querySelector("span[data-testid='conclusion-gender']");
       if (genderElement) {
         result.gender = genderElement.textContent;
       }
     }
 
-    let birthConclusionElement = vitalsElement.querySelector(
-      "div[data-testid='conclusionDisplay:BIRTH']"
-    );
+    let birthConclusionElement = vitalsElement.querySelector("div[data-testid='conclusionDisplay:BIRTH']");
     if (birthConclusionElement) {
-      extractDateAndPlaceFromVitalsSection(
-        birthConclusionElement,
-        result,
-        "birth"
-      );
+      extractDateAndPlaceFromVitalsSection(birthConclusionElement, result, "birth");
     }
 
-    let deathConclusionElement = vitalsElement.querySelector(
-      "div[data-testid='conclusionDisplay:DEATH']"
-    );
+    let deathConclusionElement = vitalsElement.querySelector("div[data-testid='conclusionDisplay:DEATH']");
     if (deathConclusionElement) {
-      extractDateAndPlaceFromVitalsSection(
-        deathConclusionElement,
-        result,
-        "death"
-      );
+      extractDateAndPlaceFromVitalsSection(deathConclusionElement, result, "death");
     }
   }
 
-  let familyElement = mainContentNode.querySelector(
-    "div[data-testid='section-card-family']"
-  );
+  let familyElement = mainContentNode.querySelector("div[data-testid='section-card-family']");
   if (familyElement) {
-    let families = familyElement.querySelectorAll(
-      "div[data-testid^='family-']"
-    );
+    let families = familyElement.querySelectorAll("div[data-testid^='family-']");
     for (let family of families) {
       let familyId = family.getAttribute("data-testid");
       if (familyId.includes(personId)) {
         // this is a spouse and children
-        let coupleElement = family.querySelector(
-          "ul[data-testid='couple-persons']"
-        );
+        let coupleElement = family.querySelector("ul[data-testid='couple-persons']");
         if (coupleElement) {
-          let couplePersons = coupleElement.querySelectorAll(
-            "li[data-testid='person-item']"
-          );
+          let couplePersons = coupleElement.querySelectorAll("li[data-testid='person-item']");
           if (couplePersons.length == 2) {
             let spouseElement = undefined;
             for (let person of couplePersons) {
@@ -834,11 +714,7 @@ function extractDataForPersonPageFormat2(document, personId, result) {
               let spouse = {};
               extractNamesFromPersonItem(spouseElement, spouse);
 
-              extractDateAndPlaceFromVitalsSection(
-                coupleElement,
-                spouse,
-                "marriage"
-              );
+              extractDateAndPlaceFromVitalsSection(coupleElement, spouse, "marriage");
 
               if (!result.spouses) {
                 result.spouses = [];
@@ -849,13 +725,9 @@ function extractDataForPersonPageFormat2(document, personId, result) {
         }
       } else {
         // this must be parents and siblings
-        let coupleElement = family.querySelector(
-          "ul[data-testid='couple-persons']"
-        );
+        let coupleElement = family.querySelector("ul[data-testid='couple-persons']");
         if (coupleElement) {
-          let couplePersons = coupleElement.querySelectorAll(
-            "li[data-testid='person-item']"
-          );
+          let couplePersons = coupleElement.querySelectorAll("li[data-testid='person-item']");
           if (couplePersons.length == 2) {
             let fatherElement = couplePersons[0];
             let motherElement = couplePersons[1];
@@ -879,9 +751,7 @@ function extractDataForPersonPageFormat2(document, personId, result) {
 function extractDataForPopup(searchArtifactResults, result) {
   let shadowRoot1 = searchArtifactResults.shadowRoot;
 
-  let fsRecordDetailsModal = shadowRoot1.querySelector(
-    "fs-record-details-modal"
-  );
+  let fsRecordDetailsModal = shadowRoot1.querySelector("fs-record-details-modal");
 
   if (fsRecordDetailsModal) {
     let shadowRoot2 = fsRecordDetailsModal.shadowRoot;
@@ -912,9 +782,7 @@ function extractDataForPopup(searchArtifactResults, result) {
             result.collectionLink = collectionLink.getAttribute("href");
           }
 
-          let documentInfoFields = shadowRoot5.querySelector(
-            "div.document-info-inner > table.fields"
-          );
+          let documentInfoFields = shadowRoot5.querySelector("div.document-info-inner > table.fields");
           if (documentInfoFields) {
             var docTableResult = {};
             extractRecordData(documentInfoFields, docTableResult);
@@ -975,9 +843,7 @@ function extractData(document, url) {
     if (filmViewerNode) {
       extractDataForImage(filmViewerNode, result);
       return result;
-    } else if (
-      url.startsWith("https://www.familysearch.org/tree/person/details/")
-    ) {
+    } else if (url.startsWith("https://www.familysearch.org/tree/person/details/")) {
       // it is a person page
       //console.log("extractData, it is a person:");
 
@@ -992,10 +858,7 @@ function extractData(document, url) {
         // it is a person page
         //console.log("extractData, it is a person:");
 
-        let personId = url.replace(
-          "https://www.familysearch.org/tree/person/details/",
-          ""
-        );
+        let personId = url.replace("https://www.familysearch.org/tree/person/details/", "");
 
         extractDataForPersonPageFormat2(document, personId, result);
         return result;
@@ -1106,13 +969,7 @@ function getCleanDateValueFromDate(date, fieldTypeEnding, labelId) {
   return value;
 }
 
-function setFieldFromDate(
-  date,
-  fieldTypeEnding,
-  labelId,
-  result,
-  resultFieldName
-) {
+function setFieldFromDate(date, fieldTypeEnding, labelId, result, resultFieldName) {
   let value = getCleanDateValueFromDate(date, fieldTypeEnding, labelId);
   if (value) {
     result[resultFieldName] = value;
@@ -1138,10 +995,7 @@ function getPlaceValueFromPlace(place, fieldTypeEnding, labelId) {
       if (field.values) {
         let type = field.type;
         for (let value of field.values) {
-          if (
-            (type && fieldTypeEnding && type.endsWith(fieldTypeEnding)) ||
-            value.labelId == labelId
-          ) {
+          if ((type && fieldTypeEnding && type.endsWith(fieldTypeEnding)) || value.labelId == labelId) {
             return value.text;
           } else if (!fieldTypeEnding && !labelId) {
             if (value.text) {
@@ -1180,25 +1034,14 @@ function getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId) {
   return value;
 }
 
-function setFieldFromPlace(
-  place,
-  fieldTypeEnding,
-  labelId,
-  result,
-  resultFieldName
-) {
+function setFieldFromPlace(place, fieldTypeEnding, labelId, result, resultFieldName) {
   let value = getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId);
   if (value) {
     result[resultFieldName] = value;
   }
 }
 
-function setFieldFromPlaceWithLabels(
-  place,
-  labelIdList,
-  result,
-  resultFieldName
-) {
+function setFieldFromPlaceWithLabels(place, labelIdList, result, resultFieldName) {
   for (let labelId of labelIdList) {
     let value = getCleanPlaceValueFromPlace(place, "", labelId);
     if (value) {
@@ -1364,9 +1207,7 @@ function processImageLinks(document, result, options) {
 
   if (document) {
     // use the document to determine if there is a valid image thumbnail
-    let restrictedImageThumb = document.querySelector(
-      "button[class*=restrictedImageThumbCss]"
-    );
+    let restrictedImageThumb = document.querySelector("button[class*=restrictedImageThumbCss]");
     let imageThumb = document.querySelector("img[class*=-imageThumbCss]");
 
     if (result.fsImageUrl && imageThumb && restrictedImageThumb) {
@@ -1413,11 +1254,7 @@ function processImageLinks(document, result, options) {
         // is is possible that an externalUir of "971304" means FMP, have not confirmed yet
         // Just assume the link is FMP for now
         let domain = "findmypast.co.uk";
-        if (
-          options &&
-          options.search_fmp_domain &&
-          options.search_fmp_domain != "none"
-        ) {
+        if (options && options.search_fmp_domain && options.search_fmp_domain != "none") {
           domain = options.search_fmp_domain;
         }
         let uriQuery = encodeURI(url);
@@ -1954,34 +1791,10 @@ function setEventDateAndPlaceForFact(result, fact) {
       result.eventPlaceOriginal = fact.place.original;
     }
     setFieldFromPlace(fact.place, "", "EVENT_PLACE", result, "eventPlace");
-    setFieldFromPlace(
-      fact.place,
-      "/RegistrationDistrict",
-      "",
-      result,
-      "registrationDistrict"
-    );
-    setFieldFromPlace(
-      fact.place,
-      "",
-      "EVENT_PLACE_LEVEL_3",
-      result,
-      "eventPlaceL3"
-    );
-    setFieldFromPlace(
-      fact.place,
-      "/County",
-      "EVENT_PLACE_LEVEL_2",
-      result,
-      "eventPlaceL2"
-    );
-    setFieldFromPlace(
-      fact.place,
-      "/Country",
-      "EVENT_PLACE_LEVEL_1",
-      result,
-      "eventPlaceL1"
-    );
+    setFieldFromPlace(fact.place, "/RegistrationDistrict", "", result, "registrationDistrict");
+    setFieldFromPlace(fact.place, "", "EVENT_PLACE_LEVEL_3", result, "eventPlaceL3");
+    setFieldFromPlace(fact.place, "/County", "EVENT_PLACE_LEVEL_2", result, "eventPlaceL2");
+    setFieldFromPlace(fact.place, "/Country", "EVENT_PLACE_LEVEL_1", result, "eventPlaceL1");
   }
 }
 
@@ -2061,10 +1874,7 @@ function extractFields(result, fields, map) {
       if (resultProperty) {
         for (let value of field.values) {
           const labelId = value.labelId;
-          let doesOverride = doesLabelOverride(
-            labelId,
-            usedLabelIds[resultProperty]
-          );
+          let doesOverride = doesLabelOverride(labelId, usedLabelIds[resultProperty]);
 
           if (!result[resultProperty] || doesOverride) {
             result[resultProperty] = value.text;
@@ -2239,20 +2049,8 @@ function processRecordDataFactsForPersonObj(person, result) {
             if (fact.date.original) {
               result.birthDateOriginal = fact.date.original;
             }
-            setFieldFromDate(
-              fact.date,
-              "/Date",
-              "PR_BIR_DATE_EST",
-              result,
-              "birthDate"
-            );
-            setFieldFromDate(
-              fact.date,
-              "/Year",
-              "PR_BIR_YEAR_EST",
-              result,
-              "birthYear"
-            );
+            setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE_EST", result, "birthDate");
+            setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR_EST", result, "birthYear");
           }
           if (fact.place) {
             setFieldFromPlaceWithLabels(
@@ -2280,64 +2078,22 @@ function processRecordDataFactsForPersonObj(person, result) {
             if (fact.date.original) {
               result.deathDateOriginal = fact.date.original;
             }
-            setFieldFromDate(
-              fact.date,
-              "/Date",
-              "PR_DEA_DATE",
-              result,
-              "deathDate"
-            );
+            setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE", result, "deathDate");
             if (!result.deathDate) {
-              setFieldFromDate(
-                fact.date,
-                "/Date",
-                "PR_DEA_DATE_EST",
-                result,
-                "deathDate"
-              );
+              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_EST", result, "deathDate");
             }
             if (!result.deathDate) {
-              setFieldFromDate(
-                fact.date,
-                "/Date",
-                "PR_DEA_DATE_ORIG",
-                result,
-                "deathDate"
-              );
+              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_ORIG", result, "deathDate");
             }
-            setFieldFromDate(
-              fact.date,
-              "/Year",
-              "PR_DEA_YEAR_EST",
-              result,
-              "deathYear"
-            );
-            setFieldFromDate(
-              fact.date,
-              "/Month",
-              "PR_DEA_MONTH",
-              result,
-              "deathMonth"
-            );
+            setFieldFromDate(fact.date, "/Year", "PR_DEA_YEAR_EST", result, "deathYear");
+            setFieldFromDate(fact.date, "/Month", "PR_DEA_MONTH", result, "deathMonth");
           }
           if (fact.place) {
-            setFieldFromPlace(
-              fact.place,
-              "",
-              "PR_DEA_PLACE",
-              result,
-              "deathPlace"
-            );
+            setFieldFromPlace(fact.place, "", "PR_DEA_PLACE", result, "deathPlace");
           }
         } else if (factType == "Residence" || factType == "Census") {
           if (fact.place) {
-            setFieldFromPlace(
-              fact.place,
-              "",
-              "NOTE_PR_RES_PLACE",
-              result,
-              "residence"
-            );
+            setFieldFromPlace(fact.place, "", "NOTE_PR_RES_PLACE", result, "residence");
           }
         }
 
@@ -2367,20 +2123,8 @@ function processPersonPageFactsForPersonObj(person, result) {
             if (fact.date.original) {
               result.birthDateOriginal = fact.date.original;
             }
-            setFieldFromDate(
-              fact.date,
-              "/Date",
-              "PR_BIR_DATE_EST",
-              result,
-              "birthDate"
-            );
-            setFieldFromDate(
-              fact.date,
-              "/Year",
-              "PR_BIR_YEAR_EST",
-              result,
-              "birthYear"
-            );
+            setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE_EST", result, "birthDate");
+            setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR_EST", result, "birthYear");
           }
           if (fact.place) {
             if (fact.place.original) {
@@ -2405,57 +2149,21 @@ function processPersonPageFactsForPersonObj(person, result) {
             if (fact.date.original) {
               result.deathDateOriginal = fact.date.original;
             }
-            setFieldFromDate(
-              fact.date,
-              "/Date",
-              "PR_DEA_DATE",
-              result,
-              "deathDate"
-            );
+            setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE", result, "deathDate");
             if (!result.deathDate) {
-              setFieldFromDate(
-                fact.date,
-                "/Date",
-                "PR_DEA_DATE_EST",
-                result,
-                "deathDate"
-              );
+              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_EST", result, "deathDate");
             }
             if (!result.deathDate) {
-              setFieldFromDate(
-                fact.date,
-                "/Date",
-                "PR_DEA_DATE_ORIG",
-                result,
-                "deathDate"
-              );
+              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_ORIG", result, "deathDate");
             }
-            setFieldFromDate(
-              fact.date,
-              "/Year",
-              "PR_DEA_YEAR_EST",
-              result,
-              "deathYear"
-            );
-            setFieldFromDate(
-              fact.date,
-              "/Month",
-              "PR_DEA_MONTH",
-              result,
-              "deathMonth"
-            );
+            setFieldFromDate(fact.date, "/Year", "PR_DEA_YEAR_EST", result, "deathYear");
+            setFieldFromDate(fact.date, "/Month", "PR_DEA_MONTH", result, "deathMonth");
           }
           if (fact.place) {
             if (fact.place.original) {
               result.deathPlaceOriginal = fact.place.original;
             }
-            setFieldFromPlace(
-              fact.place,
-              "",
-              "PR_DEA_PLACE",
-              result,
-              "deathPlace"
-            );
+            setFieldFromPlace(fact.place, "", "PR_DEA_PLACE", result, "deathPlace");
           }
         }
       }
@@ -2661,10 +2369,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                   // forget any other person who was a principal
                   personIdWithRelatedFact = undefined;
                   relatedPersonFactType = undefined;
-                } else if (
-                  !thisPersonIsAPrincipal &&
-                  !personIdWithRelatedFact
-                ) {
+                } else if (!thisPersonIsAPrincipal && !personIdWithRelatedFact) {
                   // We have a fact type but it is not for the person of interest
                   // This is the first such case we have found
                   relatedPersonFactType = factType;
@@ -2695,10 +2400,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
             }
 
             // if one of the people in this fact is the selected person
-            if (
-              relationship.person1.resourceId == personId ||
-              relationship.person2.resourceId == personId
-            ) {
+            if (relationship.person1.resourceId == personId || relationship.person2.resourceId == personId) {
               result.factType = factType;
 
               // build up record data that could be included in a data table
@@ -2822,10 +2524,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
         if (relationship.person1.resourceId == personId) {
           // This relationship involves the selected person
           otherPersonId = relationship.person2.resourceId;
-          if (
-            otherPersonId == personIdWithRelatedFact ||
-            otherPersonId == personIdWithRelatedFact2
-          ) {
+          if (otherPersonId == personIdWithRelatedFact || otherPersonId == personIdWithRelatedFact2) {
             // person 2 of this relationship is the person that the fact is about and is related to our person
             relationType = relationship.type;
             if (relationType.endsWith("/ParentChild")) {
@@ -2836,10 +2535,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
           }
         } else if (relationship.person2.resourceId == personId) {
           otherPersonId = relationship.person1.resourceId;
-          if (
-            otherPersonId == personIdWithRelatedFact ||
-            otherPersonId == personIdWithRelatedFact2
-          ) {
+          if (otherPersonId == personIdWithRelatedFact || otherPersonId == personIdWithRelatedFact2) {
             // person 1 of this relationship is the person that the fact is about and is related to our person
             relationType = relationship.type;
             if (relationType.endsWith("/ParentChild")) {
@@ -2881,15 +2577,9 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
             if (relatedPersonFactType == "Marriage") {
               let spouse = undefined;
 
-              if (
-                otherPersonId == personIdWithRelatedFact &&
-                personIdWithRelatedFact2
-              ) {
+              if (otherPersonId == personIdWithRelatedFact && personIdWithRelatedFact2) {
                 spouse = findPersonById(dataObj, personIdWithRelatedFact2);
-              } else if (
-                otherPersonId == personIdWithRelatedFact2 &&
-                personIdWithRelatedFact
-              ) {
+              } else if (otherPersonId == personIdWithRelatedFact2 && personIdWithRelatedFact) {
                 spouse = findPersonById(dataObj, personIdWithRelatedFact);
               }
 
@@ -2917,10 +2607,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
   }
 
   // build household table for census
-  if (
-    result.factType == "Census" ||
-    (result.factType == "Residence" && persons.length > 1)
-  ) {
+  if (result.factType == "Census" || (result.factType == "Residence" && persons.length > 1)) {
     let persons = dataObj.persons;
 
     result.household = {};
@@ -2988,32 +2675,14 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                 if (fact.date.original) {
                   member.birthDateOriginal = fact.date.original;
                 }
-                setFieldFromDate(
-                  fact.date,
-                  "/Date",
-                  "PR_BIR_DATE_EST",
-                  member,
-                  "birthDate"
-                );
-                setFieldFromDate(
-                  fact.date,
-                  "/Year",
-                  "PR_BIR_YEAR_EST",
-                  member,
-                  "birthYear"
-                );
+                setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE_EST", member, "birthDate");
+                setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR_EST", member, "birthYear");
               }
               if (fact.place) {
                 if (fact.place.original) {
                   member.birthPlaceOriginal = fact.place.original;
                 }
-                setFieldFromPlace(
-                  fact.place,
-                  "",
-                  "PR_BIR_PLACE",
-                  member,
-                  "birthPlace"
-                );
+                setFieldFromPlace(fact.place, "", "PR_BIR_PLACE", member, "birthPlace");
               }
             } else if (factType == "MaritalStatus") {
               if (fact.value) {
@@ -3039,10 +2708,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                   }
                 }
               }
-            } else if (
-              factType == "RelationshipToHeadCode" &&
-              !member.relationship
-            ) {
+            } else if (factType == "RelationshipToHeadCode" && !member.relationship) {
               if (fact.values) {
                 for (let value of fact.values) {
                   if (value.labelId == "PR_RELATIONSHIP_CODE") {
@@ -3108,9 +2774,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
       });
     } else if (hasLineNumbers) {
       // sort by line number
-      result.household.members.sort((a, b) =>
-        Number(a.lineNumber) > Number(b.lineNumber) ? 1 : -1
-      );
+      result.household.members.sort((a, b) => (Number(a.lineNumber) > Number(b.lineNumber) ? 1 : -1));
     }
 
     // now remove any line numbers as we don't need them in the extracted data
@@ -3142,14 +2806,8 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
           }
           // The US 1950 census doesn't have the collection Id in the normal place
           if (!result.fsCollectionId) {
-            if (
-              source.about &&
-              source.about.indexOf("/records/collections/") != -1
-            ) {
-              let collectionId = source.about.replace(
-                /^.*\/records\/collections\/(\d+)$/,
-                "$1"
-              );
+            if (source.about && source.about.indexOf("/records/collections/") != -1) {
+              let collectionId = source.about.replace(/^.*\/records\/collections\/(\d+)$/, "$1");
               if (collectionId && collectionId != source.about) {
                 result.fsCollectionId = collectionId;
               }
@@ -3158,16 +2816,10 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
           if (!result.fsCollectionId) {
             // example:
             //       "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/4464515" ]
-            if (
-              source.identifiers &&
-              source.identifiers["http://gedcomx.org/Primary"]
-            ) {
+            if (source.identifiers && source.identifiers["http://gedcomx.org/Primary"]) {
               let idArray = source.identifiers["http://gedcomx.org/Primary"];
               if (idArray.length > 0 && idArray[0]) {
-                let collectionId = idArray[0].replace(
-                  /^.*\/records\/collections\/(\d+)$/,
-                  "$1"
-                );
+                let collectionId = idArray[0].replace(/^.*\/records\/collections\/(\d+)$/, "$1");
                 if (collectionId && collectionId != idArray[0]) {
                   result.fsCollectionId = collectionId;
                 }
@@ -3180,10 +2832,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
           result.recordUrl = source.about;
         }
 
-        if (
-          source.resourceType.endsWith("DigitalArtifact") &&
-          !result.digitalArtifact
-        ) {
+        if (source.resourceType.endsWith("DigitalArtifact") && !result.digitalArtifact) {
           // digitalArtifact property will get deleted later in processImageLinks in all but rare cases
           // There can be multiple digitalArctifact sources, we just use the first for now
           // An example is a census (see england_census_1911_peter_delamotte), there can be an image link

@@ -1,841 +1,1136 @@
 {
-  "id" : "r_102538508972",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS?seek=next"
+  "id": "r_102538508972",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS"
     }
   },
-  "description" : "#sd_p_101637432760",
-  "persons" : [ {
-    "id" : "p_101637432760",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "F"
-        }, {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Female"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QKDV-CZRZ?flag=fsh"
+  "description": "#sd_p_101637432760",
+  "persons": [
+    {
+      "id": "p_101637432760",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "F"
+              },
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Female"
+              }
+            ]
+          }
+        ]
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/Q2K2-GNKS?flag=fsh"
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QKDV-CZRZ?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/Q2K2-GNKS?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRZ"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Virginia Reynolds Vigus",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Virginia Reynolds",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "Virginia Reynolds"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Virginia Reynolds"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Vigus",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Vigus"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Vigus"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Virginia Reynolds Vigus"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Death",
+          "date": {
+            "original": "28 Aug 1959",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "28 Aug 1959"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "28 Aug 1959"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Month",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_MONTH",
+                    "text": "Aug"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Day",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DAY",
+                    "text": "28"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_YEAR_ORIG",
+                    "text": "1959"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1959"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Salt Lake City, Salt Lake, Utah, United States",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Salt Lake City, Salt Lake, Utah, United States"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/City",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_CITY",
+                    "text": "Salt Lake City"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/City",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_4",
+                    "text": "Salt Lake City"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_COUNTY",
+                    "text": "Salt Lake"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_3",
+                    "text": "Salt Lake"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/State",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_2",
+                    "text": "Utah"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/State",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_STATE",
+                    "text": "Utah"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_COUNTRY",
+                    "text": "United States"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_1",
+                    "text": "United States"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/StateOrCountry",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_STATE_COUNTRY",
+                    "text": "Utah"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Death"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "1923",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIR_YEAR_EST",
+                    "text": "1923"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "http://gedcomx.org/MaritalStatus",
+          "value": "Married",
+          "fields": [
+            {
+              "type": "http://gedcomx.org/MaritalStatus",
+              "values": [
+                {
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "PR_MARITAL_STATUS",
+                  "text": "Married"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_ORIG",
+              "text": "36"
+            },
+            {
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "36"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_101637432761",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "resource": "http://gedcomx.org/Male"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QKDV-CZR8?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/Q2K2-GNKS?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR8"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Ward W Reynolds",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Ward W",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_FTHR_NAME_GN_ORIG",
+                          "text": "Ward W"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_FTHR_NAME_GN",
+                          "text": "Ward W"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Reynolds",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_FTHR_NAME_SURN_ORIG",
+                          "text": "Reynolds"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_FTHR_NAME_SURN",
+                          "text": "Reynolds"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_FTHR_NAME",
+                      "text": "Ward W Reynolds"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_101637432762",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "resource": "http://gedcomx.org/Female"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QKDV-CZRD?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/Q2K2-GNKS?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRD"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Laverna Harris",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Laverna",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_MTHR_NAME_GN_ORIG",
+                          "text": "Laverna"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_MTHR_NAME_GN",
+                          "text": "Laverna"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Harris",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_MTHR_NAME_SURN_ORIG",
+                          "text": "Harris"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_MTHR_NAME_SURN",
+                          "text": "Harris"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_MTHR_NAME",
+                      "text": "Laverna Harris"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_101637432763",
+      "extracted": true,
+      "principal": false,
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QKDV-CZR6?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/Q2K2-GNKS?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR6"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Raymond Vigus",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Raymond",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_NAME_GN_ORIG",
+                          "text": "Raymond"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_NAME_GN",
+                          "text": "Raymond"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Vigus",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_NAME_SURN_ORIG",
+                          "text": "Vigus"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_NAME_SURN",
+                          "text": "Vigus"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "SP_NAME",
+                      "text": "Raymond Vigus"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "MM9.1.6/XBY1-1HM",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_101637432760",
+        "resourceId": "p_101637432760"
+      },
+      "person2": {
+        "resource": "#p_101637432763",
+        "resourceId": "p_101637432763"
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRZ" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Virginia Reynolds Vigus",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Virginia Reynolds",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "Virginia Reynolds"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Virginia Reynolds"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Vigus",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "Vigus"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Vigus"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Virginia Reynolds Vigus"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Death",
-      "date" : {
-        "original" : "28 Aug 1959",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "28 Aug 1959"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "28 Aug 1959"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Month",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_MONTH",
-            "text" : "Aug"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Day",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DAY",
-            "text" : "28"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_YEAR_ORIG",
-            "text" : "1959"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1959"
-          } ]
-        } ]
+    {
+      "id": "MM9.1.6/XBY1-1H9",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_101637432761",
+        "resourceId": "p_101637432761"
       },
-      "place" : {
-        "original" : "Salt Lake City, Salt Lake, Utah, United States",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Salt Lake City, Salt Lake, Utah, United States"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/City",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_CITY",
-            "text" : "Salt Lake City"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/City",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_4",
-            "text" : "Salt Lake City"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_COUNTY",
-            "text" : "Salt Lake"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_3",
-            "text" : "Salt Lake"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/State",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_2",
-            "text" : "Utah"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/State",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_STATE",
-            "text" : "Utah"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Country",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_COUNTRY",
-            "text" : "United States"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Country",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_1",
-            "text" : "United States"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/StateOrCountry",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_STATE_COUNTRY",
-            "text" : "Utah"
-          } ]
-        } ]
-      },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Death"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "1923",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIR_YEAR_EST",
-            "text" : "1923"
-          } ]
-        } ]
-      }
-    }, {
-      "type" : "http://gedcomx.org/MaritalStatus",
-      "value" : "Married",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/MaritalStatus",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_MARITAL_STATUS",
-          "text" : "Married"
-        } ]
-      } ]
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_ORIG",
-        "text" : "36"
-      }, {
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_AGE",
-        "text" : "36"
-      } ]
-    } ]
-  }, {
-    "id" : "p_101637432761",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Interpreted",
-          "resource" : "http://gedcomx.org/Male"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QKDV-CZR8?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/Q2K2-GNKS?flag=fsh"
+      "person2": {
+        "resource": "#p_101637432762",
+        "resourceId": "p_101637432762"
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR8" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Ward W Reynolds",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Ward W",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_FTHR_NAME_GN_ORIG",
-              "text" : "Ward W"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_FTHR_NAME_GN",
-              "text" : "Ward W"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Reynolds",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
-              "text" : "Reynolds"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_FTHR_NAME_SURN",
-              "text" : "Reynolds"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_FTHR_NAME",
-            "text" : "Ward W Reynolds"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_101637432762",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Interpreted",
-          "resource" : "http://gedcomx.org/Female"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QKDV-CZRD?flag=fsh"
+    {
+      "id": "MM9.1.6/XBY1-1HS",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_101637432761",
+        "resourceId": "p_101637432761"
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/Q2K2-GNKS?flag=fsh"
+      "person2": {
+        "resource": "#p_101637432760",
+        "resourceId": "p_101637432760"
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRD" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Laverna Harris",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Laverna",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_MTHR_NAME_GN_ORIG",
-              "text" : "Laverna"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_MTHR_NAME_GN",
-              "text" : "Laverna"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Harris",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
-              "text" : "Harris"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_MTHR_NAME_SURN",
-              "text" : "Harris"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_MTHR_NAME",
-            "text" : "Laverna Harris"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_101637432763",
-    "extracted" : true,
-    "principal" : false,
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QKDV-CZR6?flag=fsh"
+    {
+      "id": "MM9.1.6/XBY1-1H3",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_101637432762",
+        "resourceId": "p_101637432762"
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/Q2K2-GNKS?flag=fsh"
+      "person2": {
+        "resource": "#p_101637432760",
+        "resourceId": "p_101637432760"
+      }
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_1747615",
+      "about": "https://api.familysearch.org/platform/records/collections/1747615",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1382223770945,
+      "modified": 1658156033105,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Utah, United States",
+            "description": "#place_1-27"
+          },
+          "temporal": {
+            "original": "1904/1965",
+            "formal": "1904/1965"
+          },
+          "recordType": "http://gedcomx.org/Death"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "Utah Death Certificates, 1904-1965"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1747615"]
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR6" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Raymond Vigus",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Raymond",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_NAME_GN_ORIG",
-              "text" : "Raymond"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_NAME_GN",
-              "text" : "Raymond"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Vigus",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_NAME_SURN_ORIG",
-              "text" : "Vigus"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_NAME_SURN",
-              "text" : "Vigus"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "SP_NAME",
-            "text" : "Raymond Vigus"
-          } ]
-        } ]
-      } ]
-    } ]
-  } ],
-  "relationships" : [ {
-    "id" : "MM9.1.6/XBY1-1HM",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_101637432760",
-      "resourceId" : "p_101637432760"
-    },
-    "person2" : {
-      "resource" : "#p_101637432763",
-      "resourceId" : "p_101637432763"
-    }
-  }, {
-    "id" : "MM9.1.6/XBY1-1H9",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_101637432761",
-      "resourceId" : "p_101637432761"
-    },
-    "person2" : {
-      "resource" : "#p_101637432762",
-      "resourceId" : "p_101637432762"
-    }
-  }, {
-    "id" : "MM9.1.6/XBY1-1HS",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_101637432761",
-      "resourceId" : "p_101637432761"
-    },
-    "person2" : {
-      "resource" : "#p_101637432760",
-      "resourceId" : "p_101637432760"
-    }
-  }, {
-    "id" : "MM9.1.6/XBY1-1H3",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_101637432762",
-      "resourceId" : "p_101637432762"
-    },
-    "person2" : {
-      "resource" : "#p_101637432760",
-      "resourceId" : "p_101637432760"
-    }
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_1747615",
-    "about" : "https://api.familysearch.org/platform/records/collections/1747615",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1382223770945,
-    "modified" : 1658156033105,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Utah, United States",
-        "description" : "#place_1-27"
+    {
+      "id": "src_r_102538508972",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS",
+      "componentOf": {
+        "description": "#sd_c_1747615"
       },
-      "temporal" : {
-        "original" : "1904/1965",
-        "formal" : "1904/1965"
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1441990573819,
+      "modified": 1658156033105,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Salt Lake City, Salt Lake, Utah, United States"
+          },
+          "temporal": {
+            "original": "28 Aug 1959"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS : 3 March 2021), Entry for Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/12734016566"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS"]
       },
-      "recordType" : "http://gedcomx.org/Death"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "Utah Death Certificates, 1904-1965"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1747615" ]
-    }
-  }, {
-    "id" : "src_r_102538508972",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS",
-    "componentOf" : {
-      "description" : "#sd_c_1747615"
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1747615?arkName=1:2:Q2K2-GNKS"
+      }
     },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1441990573819,
-    "modified" : 1658156033105,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Salt Lake City, Salt Lake, Utah, United States"
+    {
+      "id": "sd_p_101637432760",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRZ",
+      "componentOf": {
+        "description": "#src_r_102538508972"
       },
-      "temporal" : {
-        "original" : "28 Aug 1959"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKDV-CZRZ : 3 March 2021), Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRZ"]
+      }
+    },
+    {
+      "id": "sd_p_101637432761",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR8",
+      "componentOf": {
+        "description": "#src_r_102538508972"
       },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "citations" : [ {
-      "value" : "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS : 3 March 2021), Entry for Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/12734016566" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:Q2K2-GNKS" ]
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKDV-CZR8 : 3 March 2021), Ward W Reynolds in entry for Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Ward W Reynolds in entry for Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR8"]
+      }
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1747615?arkName=1:2:Q2K2-GNKS"
-    }
-  }, {
-    "id" : "sd_p_101637432760",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRZ",
-    "componentOf" : {
-      "description" : "#src_r_102538508972"
+    {
+      "id": "sd_p_101637432762",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRD",
+      "componentOf": {
+        "description": "#src_r_102538508972"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKDV-CZRD : 3 March 2021), Laverna Harris in entry for Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Laverna Harris in entry for Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRD"]
+      }
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKDV-CZRZ : 3 March 2021), Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRZ" ]
-    }
-  }, {
-    "id" : "sd_p_101637432761",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR8",
-    "componentOf" : {
-      "description" : "#src_r_102538508972"
+    {
+      "id": "sd_p_101637432763",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR6",
+      "componentOf": {
+        "description": "#src_r_102538508972"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKDV-CZR6 : 3 March 2021), Raymond Vigus in entry for Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Raymond Vigus in entry for Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR6"]
+      }
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKDV-CZR8 : 3 March 2021), Ward W Reynolds in entry for Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Ward W Reynolds in entry for Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR8" ]
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9T2-WSNS-B?cc=1747615",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9T2-WSNS-B?cc=1747615"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1747615?arkName=3:1:3Q9M-C9T2-WSNS-B"
+      }
     }
-  }, {
-    "id" : "sd_p_101637432762",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRD",
-    "componentOf" : {
-      "description" : "#src_r_102538508972"
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "place_1-27",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/27?context=1"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel1Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_LEVEL_1_TYPE",
+          "text": "Country"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKDV-CZRD : 3 March 2021), Laverna Harris in entry for Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Laverna Harris in entry for Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRD" ]
-    }
-  }, {
-    "id" : "sd_p_101637432763",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR6",
-    "componentOf" : {
-      "description" : "#src_r_102538508972"
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel2Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_LEVEL_2_TYPE",
+          "text": "State"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Utah Death Certificates, 1904-1965,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QKDV-CZR6 : 3 March 2021), Raymond Vigus in entry for Virginia Reynolds Vigus, 28 Aug 1959; citing Salt Lake City, Salt Lake, Utah, United States, certificate , series 81448; Utah State Archives Research Center, Salt Lake City, Utah; FHL microfilm."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Raymond Vigus in entry for Virginia Reynolds Vigus, \"Utah Death Certificates, 1904-1965\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR6" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9T2-WSNS-B?cc=1747615",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel3Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_LEVEL_3_TYPE",
+          "text": "County"
+        }
+      ]
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9T2-WSNS-B?cc=1747615" ]
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel4Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "EVENT_PLACE_LEVEL_4_TYPE",
+          "text": "City"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1747615?arkName=3:1:3Q9M-C9T2-WSNS-B"
+    {
+      "type": "http://familysearch.org/types/fields/BatchLocality",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_BATCH_LOCALITY",
+          "text": "Utah, United States"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "1747615"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DasVerify",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DAS_VERIFY",
+          "text": "11-SEP-15"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DIGITAL_FILM_NBR",
+          "text": "101152037"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_FILM_NBR",
+          "text": "101152037"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageApid",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_APID",
+          "text": "TH-909-51006-68488-87"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_NBR",
+          "text": "00009"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageArk",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "IMAGE_ARK",
+          "text": "https://familysearch.org/ark:/61903/3:1:3Q9M-C9T2-WSNS-B"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FsImsImageId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMS_IMAGE_ID",
+          "text": "101152037_00009"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PPQ_ID",
+          "text": "15-0362"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "15-0362; 2015-09-11 08:23:43; HeinerDJ; Utah, Death Certificates,1959-1962-FSI"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_ID",
+          "text": "101152037_00009"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "000000000_101152037_00009_00000_00012734016566"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/TravelerTitle",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_TRAVELER_TITLE",
+          "text": "Utah, Death Certificates,1959-1962-FSI"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UniqueId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UNIQUE_ID",
+          "text": "12734016566"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourceCertificateNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "SOURCE_CERTIFICATE_NBR",
+          "text": "59 18 1754"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "5"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "28892"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
     }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
-    }
-  } ],
-  "places" : [ {
-    "id" : "place_1-27",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/27?context=1" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevel1Type",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_LEVEL_1_TYPE",
-      "text" : "Country"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevel2Type",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_LEVEL_2_TYPE",
-      "text" : "State"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevel3Type",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_LEVEL_3_TYPE",
-      "text" : "County"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevel4Type",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EVENT_PLACE_LEVEL_4_TYPE",
-      "text" : "City"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchLocality",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_BATCH_LOCALITY",
-      "text" : "Utah, United States"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "1747615"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DasVerify",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DAS_VERIFY",
-      "text" : "11-SEP-15"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DIGITAL_FILM_NBR",
-      "text" : "101152037"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_FILM_NBR",
-      "text" : "101152037"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageApid",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_APID",
-      "text" : "TH-909-51006-68488-87"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_NBR",
-      "text" : "00009"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageArk",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "IMAGE_ARK",
-      "text" : "https://familysearch.org/ark:/61903/3:1:3Q9M-C9T2-WSNS-B"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsImsImageId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMS_IMAGE_ID",
-      "text" : "101152037_00009"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PPQ_ID",
-      "text" : "15-0362"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_GROUP",
-      "text" : "15-0362; 2015-09-11 08:23:43; HeinerDJ; Utah, Death Certificates,1959-1962-FSI"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_ID",
-      "text" : "101152037_00009"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "000000000_101152037_00009_00000_00012734016566"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/TravelerTitle",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_TRAVELER_TITLE",
-      "text" : "Utah, Death Certificates,1959-1962-FSI"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UniqueId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UNIQUE_ID",
-      "text" : "12734016566"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SourceCertificateNbr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "SOURCE_CERTIFICATE_NBR",
-      "text" : "59 18 1754"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "5"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "28892"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ]
+  ]
 }

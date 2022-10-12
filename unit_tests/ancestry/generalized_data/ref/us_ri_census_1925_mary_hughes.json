@@ -18,10 +18,7 @@
   },
   "ageAtEvent": "58",
   "relationshipToHead": "head",
-  "householdArrayFields": [
-    "name",
-    "age"
-  ],
+  "householdArrayFields": ["name", "age"],
   "householdArray": [
     {
       "name": "Mary F Hughes",

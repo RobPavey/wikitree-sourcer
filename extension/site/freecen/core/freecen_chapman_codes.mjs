@@ -260,9 +260,4 @@ function getCountryFromCountyName(countyName) {
   return "";
 }
 
-export {
-  countyNameToCountyCode,
-  getCountryFromCountyCode,
-  getCountryFromCountyName,
-  countyMap,
-};
+export { countyNameToCountyCode, getCountryFromCountyCode, getCountryFromCountyName, countyMap };

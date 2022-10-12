@@ -89,8 +89,7 @@ function buildCoreCitation(data, runDate, builder) {
 
   let options = builder.getOptions();
 
-  builder.sourceTitle =
-    "England & Wales " + titleText[data.eventType] + " Index";
+  builder.sourceTitle = "England & Wales " + titleText[data.eventType] + " Index";
 
   builder.sourceReference = data.sourceCitation;
 
@@ -99,8 +98,7 @@ function buildCoreCitation(data, runDate, builder) {
   let recordLink = "[" + freebmdUrl + " FreeBMD Entry Information]";
   builder.recordLinkOrTemplate = recordLink;
 
-  let dataString =
-    getLastName(data, options) + ", " + getGivenNames(data, options);
+  let dataString = getLastName(data, options) + ", " + getGivenNames(data, options);
   if (data.eventType == "birth") {
     if (data.mothersMaidenName != undefined && data.mothersMaidenName != "") {
       dataString += " (Mother's maiden name: ";
@@ -143,18 +141,13 @@ function buildCoreCitation(data, runDate, builder) {
   // temp - disable district link
   if (false && options.citation_freebmd_useDistrictUrl) {
     dataString +=
-      "[" +
-      FBMD.getDistrictPageUrl(data.registrationDistrict) +
-      " " +
-      getRegistrationDistrict(data, options) +
-      "]";
+      "[" + FBMD.getDistrictPageUrl(data.registrationDistrict) + " " + getRegistrationDistrict(data, options) + "]";
   } else {
     dataString += getRegistrationDistrict(data, options);
   }
 
   if (data.referenceVolume != undefined && data.referenceVolume != "") {
-    dataString +=
-      " Volume " + data.referenceVolume + " Page " + data.referencePage + ".";
+    dataString += " Volume " + data.referenceVolume + " Page " + data.referencePage + ".";
   }
 
   builder.dataString = dataString;

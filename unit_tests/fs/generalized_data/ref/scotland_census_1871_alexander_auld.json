@@ -22,15 +22,7 @@
   },
   "ageAtEvent": "51",
   "occupation": "Pattern Designer For Calico Printer",
-  "householdArrayFields": [
-    "name",
-    "relationship",
-    "gender",
-    "age",
-    "birthYear",
-    "occupation",
-    "birthPlace"
-  ],
+  "householdArrayFields": ["name", "relationship", "gender", "age", "birthYear", "occupation", "birthPlace"],
   "householdArray": [
     {
       "name": "Alexander Auld",

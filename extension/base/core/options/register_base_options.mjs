@@ -47,22 +47,19 @@ const searchOptionsGroup = {
     {
       optionName: "popup_showSameSite",
       type: "checkbox",
-      label:
-        "On the popup show a search menu item for the site that you are currently on",
+      label: "On the popup show a search menu item for the site that you are currently on",
       defaultValue: true,
     },
     {
       optionName: "popup_maxSearchItemsInTopMenu",
       type: "number",
-      label:
-        "Maximum number of search menu items to show on top-level popup (0 means just show search submenu)",
+      label: "Maximum number of search menu items to show on top-level popup (0 means just show search submenu)",
       defaultValue: 8,
     },
     {
       optionName: "maxLifespan",
       type: "number",
-      label:
-        "Maximum lifespan to consider when building search date/age ranges",
+      label: "Maximum lifespan to consider when building search date/age ranges",
       defaultValue: 120,
     },
   ],
@@ -81,8 +78,7 @@ const citationOptionsGroup = {
     {
       optionName: "meaningfulNames",
       type: "select",
-      label:
-        'Add a label at the start of each reference (this shows up in the "Sources" section)',
+      label: 'Add a label at the start of each reference (this shows up in the "Sources" section)',
       values: [
         { value: "none", text: "None" },
         { value: "normal", text: "In normal text" },
@@ -94,15 +90,13 @@ const citationOptionsGroup = {
     {
       optionName: "commaInsideQuotes",
       type: "checkbox",
-      label:
-        "Put commas inside quotation marks (old US typographical convention) [EE style]",
+      label: "Put commas inside quotation marks (old US typographical convention) [EE style]",
       defaultValue: false,
     },
     {
       optionName: "addEeItemType",
       type: "checkbox",
-      label:
-        'Add "database" or "database with images" after the database/collection title [EE style]',
+      label: 'Add "database" or "database with images" after the database/collection title [EE style]',
       defaultValue: false,
     },
     {
@@ -162,8 +156,7 @@ const citationOptionsGroup = {
     {
       optionName: "dataListSeparator",
       type: "select",
-      label:
-        "Separators to use for key/value pairs in data list (if list used rather than sentence or table)",
+      label: "Separators to use for key/value pairs in data list (if list used rather than sentence or table)",
       values: [
         { value: "semicolon", text: "Semi-colon and colon (; Age: 20)" },
         { value: "commaColon", text: "Comma and colon (, Age: 20)" },
@@ -181,15 +174,13 @@ const citationOptionsGroup = {
     {
       optionName: "addNewlinesWithinBody",
       type: "checkbox",
-      label:
-        "Add newlines within the citation between sections (for readability in edit mode, no effect in read mode)",
+      label: "Add newlines within the citation between sections (for readability in edit mode, no effect in read mode)",
       defaultValue: true,
     },
     {
       optionName: "addBreaksWithinBody",
       type: "checkbox",
-      label:
-        "Add <br/>s within the citation between sections (for readability in read mode)",
+      label: "Add <br/>s within the citation between sections (for readability in read mode)",
       defaultValue: true,
     },
   ],
@@ -313,8 +304,7 @@ const narrativeOptionsGroup = {
     {
       optionName: "placeChurchFirst",
       type: "select",
-      label:
-        "Attempt to put church name before town name (for certain sites and countries)",
+      label: "Attempt to put church name before town name (for certain sites and countries)",
       values: [
         { value: "no", text: "No" },
         { value: "yes", text: "Yes" },
@@ -425,11 +415,7 @@ const narrativeBirthOptionsGroup = {
   subcategory: "birth",
   tab: "narrative",
   subsection: "birth",
-  options: [
-    narrativeRecordTypeNameOrPronounOption,
-    narrativeIncludeParentageOption,
-    narrativeParentageFormatOption,
-  ],
+  options: [narrativeRecordTypeNameOrPronounOption, narrativeIncludeParentageOption, narrativeParentageFormatOption],
 };
 
 const narrativeBirthRegOptionsGroup = {
@@ -540,11 +526,7 @@ const narrativeBirthOrBaptismOptionsGroup = {
   subcategory: "birthOrBaptism",
   tab: "narrative",
   subsection: "birthOrBaptism",
-  options: [
-    narrativeRecordTypeNameOrPronounOption,
-    narrativeIncludeParentageOption,
-    narrativeParentageFormatOption,
-  ],
+  options: [narrativeRecordTypeNameOrPronounOption, narrativeIncludeParentageOption, narrativeParentageFormatOption],
 };
 
 const narrativeMarriageOptionsGroup = {
@@ -647,11 +629,7 @@ const narrativeDeathRegOptionsGroup = {
   subcategory: "deathReg", // abbreviated to keep storage size of options down
   tab: "narrative",
   subsection: "deathReg",
-  options: [
-    narrativeRecordTypeNameOrPronounOption,
-    narrativeIncludeAgeOption,
-    narrativeAgeFormatOption,
-  ],
+  options: [narrativeRecordTypeNameOrPronounOption, narrativeIncludeAgeOption, narrativeAgeFormatOption],
 };
 
 const narrativeDeathRegEvtOptionsGroup = {
@@ -665,9 +643,7 @@ const narrativeDeathRegEvtOptionsGroup = {
       optionName: "sentenceStructure",
       type: "select",
       label: "Sentence structure",
-      values: [
-        { value: "oneSentence", text: "<name/pronoun> died <date> <place>." },
-      ],
+      values: [{ value: "oneSentence", text: "<name/pronoun> died <date> <place>." }],
       defaultValue: "oneSentence",
     },
     narrativeIncludeParentageOption,
@@ -1077,8 +1053,7 @@ const addPersonGeneralOptionsGroup = {
     {
       optionName: "includeProfileLink",
       type: "checkbox",
-      label:
-        "Add a link/template to the source profile in sources if filling from a profile",
+      label: "Add a link/template to the source profile in sources if filling from a profile",
       defaultValue: false,
       unitTestValue: false,
     },
@@ -1124,8 +1099,7 @@ const addPersonGeneralOptionsGroup = {
     {
       optionName: "addDiedYoung",
       type: "checkbox",
-      label:
-        "Include Died Young sticker if person died aged 15 or less and no known spouse",
+      label: "Include Died Young sticker if person died aged 15 or less and no known spouse",
       defaultValue: false,
       unitTestValue: false,
     },
@@ -1141,46 +1115,17 @@ registerSubsectionForOptions("narrative", "baptism", "Baptism");
 registerSubsectionForOptions("narrative", "birth", "Birth");
 registerSubsectionForOptions("narrative", "birthOrBaptism", "Birth or Baptism");
 registerSubsectionForOptions("narrative", "birthReg", "Birth Registration");
-registerSubheadingForOptions(
-  "narrative",
-  "birthReg",
-  "evt",
-  "When date and place are for birth event"
-);
-registerSubheadingForOptions(
-  "narrative",
-  "birthReg",
-  "reg",
-  "When date and place are for registration, not birth"
-);
+registerSubheadingForOptions("narrative", "birthReg", "evt", "When date and place are for birth event");
+registerSubheadingForOptions("narrative", "birthReg", "reg", "When date and place are for registration, not birth");
 registerSubsectionForOptions("narrative", "burial", "Burial");
 registerSubsectionForOptions("narrative", "census", "Census");
 registerSubsectionForOptions("narrative", "death", "Death");
 registerSubsectionForOptions("narrative", "deathReg", "Death Registration");
-registerSubheadingForOptions(
-  "narrative",
-  "deathReg",
-  "evt",
-  "When date and place are for death event"
-);
-registerSubheadingForOptions(
-  "narrative",
-  "deathReg",
-  "reg",
-  "When date and place are for registration, not death"
-);
+registerSubheadingForOptions("narrative", "deathReg", "evt", "When date and place are for death event");
+registerSubheadingForOptions("narrative", "deathReg", "reg", "When date and place are for registration, not death");
 registerSubsectionForOptions("narrative", "marriage", "Marriage");
-registerSubsectionForOptions(
-  "narrative",
-  "marriageReg",
-  "Marriage Registration"
-);
-registerSubheadingForOptions(
-  "narrative",
-  "marriageReg",
-  "evt",
-  "When date and place are for marriage event"
-);
+registerSubsectionForOptions("narrative", "marriageReg", "Marriage Registration");
+registerSubheadingForOptions("narrative", "marriageReg", "evt", "When date and place are for marriage event");
 registerSubheadingForOptions(
   "narrative",
   "marriageReg",
@@ -1192,12 +1137,7 @@ registerSubsectionForOptions("narrative", "obituary", "Obituary");
 registerSubsectionForOptions("table", "general", "General");
 registerSubheadingForOptions("table", "general", "table", "When using a table");
 registerSubheadingForOptions("table", "general", "list", "When using a list");
-registerSubheadingForOptions(
-  "table",
-  "general",
-  "sentence",
-  "When using a sentence"
-);
+registerSubheadingForOptions("table", "general", "sentence", "When using a sentence");
 
 registerSubsectionForOptions("addPerson", "general", "General");
 

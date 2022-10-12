@@ -364,10 +364,7 @@ function getUkbmdDistrictPageUrl(district) {
     // to spot the special case)
     for (let ending of endingsToRemove) {
       if (districtName.endsWith(ending)) {
-        let newDistrictName = districtName.substring(
-          0,
-          districtName.length - ending.length
-        );
+        let newDistrictName = districtName.substring(0, districtName.length - ending.length);
         // don't remove if it is the only word
         if (newDistrictName) {
           districtName = newDistrictName;
@@ -409,8 +406,7 @@ function getUkbmdDistrictPageUrl(district) {
   districtName = districtName.replace(/\s+union$/, "").trim();
 
   districtName = encodeURI(districtName);
-  const url =
-    "https://www.ukbmd.org.uk/reg/districts/" + districtName + ".html";
+  const url = "https://www.ukbmd.org.uk/reg/districts/" + districtName + ".html";
   return url;
 }
 

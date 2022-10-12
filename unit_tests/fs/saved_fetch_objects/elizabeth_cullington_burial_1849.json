@@ -1,490 +1,665 @@
 {
-  "id" : "r_22712019011",
-  "lang" : "en",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28?seek=next"
+  "id": "r_22712019011",
+  "lang": "en",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28"
     }
   },
-  "description" : "#sd_p_14709561511",
-  "persons" : [ {
-    "id" : "p_14709561511",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "F"
-        }, {
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Female"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/27CB-J49?flag=fsh"
+  "description": "#sd_p_14709561511",
+  "persons": [
+    {
+      "id": "p_14709561511",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "F"
+              },
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Female"
+              }
+            ]
+          }
+        ]
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/99QK-FT28?flag=fsh"
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/27CB-J49?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/99QK-FT28?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:27CB-J49"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Elizabeth Cullington",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Elizabeth",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "Elizabeth"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Elizabeth"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Cullington",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Cullington"
+                        },
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Cullington"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "Elizabeth/Cullington"
+                    },
+                    {
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Elizabeth Cullington"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "type": "http://gedcomx.org/Burial",
+          "date": {
+            "original": "27 Aug 1849",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_DATE_ORIG",
+                    "text": "27Aug1849"
+                  },
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_DATE",
+                    "text": "27 Aug 1849"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_YEAR",
+                    "text": "1849"
+                  }
+                ]
+              }
+            ]
+          },
+          "place": {
+            "original": "Norwich, Norfolk, England",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Norwich, Norfolk, England"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Parish",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_3",
+                    "text": "Norwich"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/County",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_2",
+                    "text": "Norfolk"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE_LEVEL_1",
+                    "text": "England"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true
+        },
+        {
+          "type": "http://gedcomx.org/Birth",
+          "date": {
+            "original": "1844",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_BIRTH_YEAR_ESTIMATED",
+                    "text": "1844"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_ORIG",
+              "text": "5y"
+            },
+            {
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_1823613",
+      "about": "https://api.familysearch.org/platform/records/collections/1823613",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1382223273322,
+      "modified": 1636122202218,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Norfolk, England",
+            "description": "#place_1986340-1927878"
+          },
+          "temporal": {
+            "original": "1685/1941",
+            "formal": "1685/1941"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "England, Norfolk Bishop's Transcripts, 1685-1941"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1823613"]
       }
     },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:27CB-J49" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Elizabeth Cullington",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Elizabeth",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "Elizabeth"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Elizabeth"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Cullington",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "Cullington"
-            }, {
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Cullington"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "Elizabeth/Cullington"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Elizabeth Cullington"
-          } ]
-        } ]
-      } ]
-    } ],
-    "facts" : [ {
-      "type" : "http://gedcomx.org/Burial",
-      "date" : {
-        "original" : "27 Aug 1849",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_DATE_ORIG",
-            "text" : "27Aug1849"
-          }, {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DATE",
-            "text" : "27 Aug 1849"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1849"
-          } ]
-        } ]
+    {
+      "id": "src_r_22712019011",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28",
+      "componentOf": {
+        "description": "#sd_c_1823613"
       },
-      "place" : {
-        "original" : "Norwich, Norfolk, England",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Norwich, Norfolk, England"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Parish",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_3",
-            "text" : "Norwich"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_2",
-            "text" : "Norfolk"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Country",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_LEVEL_1",
-            "text" : "England"
-          } ]
-        } ]
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1383747875182,
+      "modified": 1636122202218,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Norwich, Norfolk, England"
+          },
+          "temporal": {
+            "original": "27 Aug 1849"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"England, Norfolk Bishop's Transcripts, 1685-1941,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:99QK-FT28 : 17 February 2021), Entry for Elizabeth Cullington, 27 Aug 1849; citing Burial, Norwich, Norfolk, England, Record Office, Central Library, Norwich; FHL microfilm 1,526,560."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Elizabeth Cullington, \"England, Norfolk Bishop's Transcripts, 1685-1941\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/1698182582"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:99QK-FT28"]
       },
-      "primary" : true
-    }, {
-      "type" : "http://gedcomx.org/Birth",
-      "date" : {
-        "original" : "1844",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_BIRTH_YEAR_ESTIMATED",
-            "text" : "1844"
-          } ]
-        } ]
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1823613?arkName=1:2:99QK-FT28"
       }
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_ORIG",
-        "text" : "5y"
-      }, {
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_AGE",
-        "text" : "5"
-      } ]
-    } ]
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_1823613",
-    "about" : "https://api.familysearch.org/platform/records/collections/1823613",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1382223273322,
-    "modified" : 1636122202218,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Norfolk, England",
-        "description" : "#place_1986340-1927878"
+    },
+    {
+      "id": "sd_p_14709561511",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:27CB-J49",
+      "componentOf": {
+        "description": "#src_r_22712019011"
       },
-      "temporal" : {
-        "original" : "1685/1941",
-        "formal" : "1685/1941"
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"England, Norfolk Bishop's Transcripts, 1685-1941,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:27CB-J49 : 17 February 2021), Elizabeth Cullington, 27 Aug 1849; citing Burial, Norwich, Norfolk, England, Record Office, Central Library, Norwich; FHL microfilm 1,526,560."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Elizabeth Cullington, \"England, Norfolk Bishop's Transcripts, 1685-1941\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:27CB-J49"]
+      }
+    },
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/3:1:939F-RXKT-R?cc=1823613",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
       },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "England, Norfolk Bishop's Transcripts, 1685-1941"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1823613" ]
-    }
-  }, {
-    "id" : "src_r_22712019011",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28",
-    "componentOf" : {
-      "description" : "#sd_c_1823613"
-    },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1383747875182,
-    "modified" : 1636122202218,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Norwich, Norfolk, England"
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:939F-RXKT-R?cc=1823613"]
       },
-      "temporal" : {
-        "original" : "27 Aug 1849"
-      },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "citations" : [ {
-      "value" : "\"England, Norfolk Bishop's Transcripts, 1685-1941,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:99QK-FT28 : 17 February 2021), Entry for Elizabeth Cullington, 27 Aug 1849; citing Burial, Norwich, Norfolk, England, Record Office, Central Library, Norwich; FHL microfilm 1,526,560."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for Elizabeth Cullington, \"England, Norfolk Bishop's Transcripts, 1685-1941\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1698182582" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:99QK-FT28" ]
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1823613?arkName=3:1:939F-RXKT-R"
+      }
+    }
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "place_1986340-1927878",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1927878?context=1986340"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/UniqueIdentifier",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "UNIQUE_IDENTIFIER",
+          "text": "1698182582"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1823613?arkName=1:2:99QK-FT28"
-    }
-  }, {
-    "id" : "sd_p_14709561511",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:27CB-J49",
-    "componentOf" : {
-      "description" : "#src_r_22712019011"
+    {
+      "type": "http://familysearch.org/types/fields/ImageId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_ID",
+          "text": "/004143448/004143448_01560.jpg"
+        },
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "IMAGE_ID_NORM",
+          "text": "dgs:004143448.004143448_01560"
+        }
+      ]
     },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"England, Norfolk Bishop's Transcripts, 1685-1941,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:27CB-J49 : 17 February 2021), Elizabeth Cullington, 27 Aug 1849; citing Burial, Norwich, Norfolk, England, Record Office, Central Library, Norwich; FHL microfilm 1,526,560."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Elizabeth Cullington, \"England, Norfolk Bishop's Transcripts, 1685-1941\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:27CB-J49" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:939F-RXKT-R?cc=1823613",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
+    {
+      "type": "http://familysearch.org/types/fields/FolderImageSeq",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FOLDER_IMAGE_SEQ",
+          "text": "1560"
+        }
+      ]
     },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:939F-RXKT-R?cc=1823613" ]
+    {
+      "type": "http://familysearch.org/types/fields/Folder",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FOLDER",
+          "text": "004143448"
+        }
+      ]
     },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1823613?arkName=3:1:939F-RXKT-R"
+    {
+      "type": "http://familysearch.org/types/fields/BatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "BATCH_ID",
+          "text": "656156"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/BatchLocality",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "BATCH_LOCALITY",
+          "text": "Norfolk, England"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "DIGITAL_GS_NUMBER",
+          "text": "004143448"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel1Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_PLACE_LEVEL_1_TYPE",
+          "text": "Country"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel2Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_PLACE_LEVEL_2_TYPE",
+          "text": "County"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventPlaceLevel3Type",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_PLACE_LEVEL_3_TYPE",
+          "text": "Parish"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/EventType",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "EVENT_TYPE",
+          "text": "Burial"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FilmNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FILM_NUMBER",
+          "text": "1526560"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FS_RECORD_NBR",
+          "text": "616"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "FS_RECORD_NBR_ORIG",
+          "text": "616"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageApid",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_APID",
+          "text": "TH-1-14264-17905-5"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNbr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_NBR",
+          "text": "1560"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageArk",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "IMAGE_ARK",
+          "text": "https://familysearch.org/ark:/61903/3:1:939F-RXKT-R"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PacketLtr",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "PACKET_LTR",
+          "text": "C"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "RECORD_GROUP",
+          "text": "12-1179; 2013-10-02 10:18:11; heinerdj"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "RECORD_ID",
+          "text": "4143448_1560"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "SORT_KEY",
+          "text": "000000000000_004143448_01560_00000_0001698182582"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourceComposite",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "SOURCE_COMPOSITE",
+          "text": "462"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourceRecordType",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "SOURCE_RECORD_TYPE",
+          "text": "burial"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UdeBatchNumber",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Original",
+          "labelId": "UDE_BATCH_NUMBER",
+          "text": "I11581-2"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "5"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "5217"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
     }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
-    }
-  } ],
-  "places" : [ {
-    "id" : "place_1986340-1927878",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1927878?context=1986340" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/UniqueIdentifier",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "UNIQUE_IDENTIFIER",
-      "text" : "1698182582"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_ID",
-      "text" : "/004143448/004143448_01560.jpg"
-    }, {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "IMAGE_ID_NORM",
-      "text" : "dgs:004143448.004143448_01560"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FolderImageSeq",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FOLDER_IMAGE_SEQ",
-      "text" : "1560"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/Folder",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FOLDER",
-      "text" : "004143448"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "BATCH_ID",
-      "text" : "656156"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/BatchLocality",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "BATCH_LOCALITY",
-      "text" : "Norfolk, England"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "DIGITAL_GS_NUMBER",
-      "text" : "004143448"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevel1Type",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EVENT_PLACE_LEVEL_1_TYPE",
-      "text" : "Country"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevel2Type",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EVENT_PLACE_LEVEL_2_TYPE",
-      "text" : "County"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventPlaceLevel3Type",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EVENT_PLACE_LEVEL_3_TYPE",
-      "text" : "Parish"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/EventType",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EVENT_TYPE",
-      "text" : "Burial"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FilmNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FILM_NUMBER",
-      "text" : "1526560"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FS_RECORD_NBR",
-      "text" : "616"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "FS_RECORD_NBR_ORIG",
-      "text" : "616"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageApid",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_APID",
-      "text" : "TH-1-14264-17905-5"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNbr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_NBR",
-      "text" : "1560"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageArk",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "IMAGE_ARK",
-      "text" : "https://familysearch.org/ark:/61903/3:1:939F-RXKT-R"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PacketLtr",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "PACKET_LTR",
-      "text" : "C"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "RECORD_GROUP",
-      "text" : "12-1179; 2013-10-02 10:18:11; heinerdj"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "RECORD_ID",
-      "text" : "4143448_1560"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "SORT_KEY",
-      "text" : "000000000000_004143448_01560_00000_0001698182582"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SourceComposite",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "SOURCE_COMPOSITE",
-      "text" : "462"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SourceRecordType",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "SOURCE_RECORD_TYPE",
-      "text" : "burial"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "UDE_BATCH_NUMBER",
-      "text" : "I11581-2"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "5"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "5217"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ]
+  ]
 }

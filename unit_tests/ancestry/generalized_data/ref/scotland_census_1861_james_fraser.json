@@ -25,11 +25,7 @@
   "occupation": "Stone Cutter",
   "ageAtEvent": "31",
   "relationshipToHead": "head",
-  "householdArrayFields": [
-    "name",
-    "age",
-    "relationship"
-  ],
+  "householdArrayFields": ["name", "age", "relationship"],
   "householdArray": [
     {
       "name": "James Fraser",

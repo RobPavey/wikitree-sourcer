@@ -138,10 +138,7 @@ function buildDataString(data, gd, dataStyle, builder) {
     return dataString;
   }
 
-  dataString = builder.buildDataList(
-    recordData,
-    removeUnwantedKeysForDataString
-  );
+  dataString = builder.buildDataList(recordData, removeUnwantedKeysForDataString);
 
   return dataString;
 }
@@ -235,9 +232,7 @@ function buildSourceReference(data, options) {
   if (options.citation_general_sourceReferenceSeparator == "commaColon") {
     itemSep = ",";
     valueSep = ":";
-  } else if (
-    options.citation_general_sourceReferenceSeparator == "commaSpace"
-  ) {
+  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
     itemSep = ",";
     valueSep = "";
   }
@@ -285,8 +280,7 @@ function buildCoreCitation(data, gd, options, runDate, builder) {
     let prefixIndex = imageUrl.indexOf(parentPrefix);
     if (prefixIndex != -1) {
       let parentPart = imageUrl.substring(prefixIndex + parentPrefix.length);
-      transcriptUrl =
-        "https://www." + data.domain + "/transcript?id=" + parentPart;
+      transcriptUrl = "https://www." + data.domain + "/transcript?id=" + parentPart;
     }
   }
 
@@ -298,8 +292,7 @@ function buildCoreCitation(data, gd, options, runDate, builder) {
   }
 
   if (transcriptUrl) {
-    builder.recordLinkOrTemplate =
-      "[" + transcriptUrl + " FindMyPast Transcription]";
+    builder.recordLinkOrTemplate = "[" + transcriptUrl + " FindMyPast Transcription]";
   }
 
   let additionalInfo = getAdditionalInfo(data, gd, builder);
@@ -320,8 +313,7 @@ function buildCitation(input) {
 
   let builder = new CitationBuilder(type, runDate, options);
   builder.householdTableString = input.householdTableString;
-  builder.includeSubscriptionRequired =
-    options.citation_fmp_subscriptionRequired;
+  builder.includeSubscriptionRequired = options.citation_fmp_subscriptionRequired;
 
   buildCoreCitation(data, gd, options, runDate, builder);
 

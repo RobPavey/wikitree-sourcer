@@ -28,19 +28,11 @@ import { RT, Role, RecordSubtype } from "./record_type.mjs";
 import { RC } from "./record_collections.mjs";
 import { WTS_Date } from "./wts_date.mjs";
 import { WTS_String } from "./wts_string.mjs";
-import {
-  getPrimaryPersonChildTerm,
-  getPrimaryPersonSpouseTerm,
-} from "./narrative_or_sentence_utils.mjs";
+import { getPrimaryPersonChildTerm, getPrimaryPersonSpouseTerm } from "./narrative_or_sentence_utils.mjs";
 import { GroUriBuilder } from "../../site/gro/core/gro_uri_builder.mjs";
 
 function getQuarterName(quarterNumber) {
-  const quarterNames = [
-    "Jan-Feb-Mar",
-    "Apr-May-Jun",
-    "Jul-Aug-Sep",
-    "Oct-Nov-Dec",
-  ];
+  const quarterNames = ["Jan-Feb-Mar", "Apr-May-Jun", "Jul-Aug-Sep", "Oct-Nov-Dec"];
   if (quarterNumber != undefined && quarterNumber >= 1 && quarterNumber <= 4) {
     return quarterNames[quarterNumber - 1];
   }
@@ -213,27 +205,21 @@ function getUkCensusString(gd, options) {
       let addedPlace = false;
       let placeParts = gd.eventPlace.separatePlaceIntoParts();
       if (placeParts.localPlace) {
-        let regIndex = placeParts.localPlace.indexOf(
-          ", " + gd.registrationDistrict + ", "
-        );
+        let regIndex = placeParts.localPlace.indexOf(", " + gd.registrationDistrict + ", ");
         if (regIndex == -1) {
           if (placeParts.localPlace.endsWith(", " + gd.registrationDistrict)) {
-            regIndex = placeParts.localPlace.indexOf(
-              ", " + gd.registrationDistrict
-            );
+            regIndex = placeParts.localPlace.indexOf(", " + gd.registrationDistrict);
           }
         }
         if (regIndex != -1) {
           let shortPlaceString = placeParts.localPlace.substring(0, regIndex);
           shortPlaceString = getPlaceWithPreposition(shortPlaceString);
           dataString += " " + shortPlaceString;
-          dataString +=
-            " in " + gd.registrationDistrict + " registration district";
+          dataString += " in " + gd.registrationDistrict + " registration district";
           addedPlace = true;
         } else if (placeParts.localPlace == gd.registrationDistrict) {
           // no point duplicating the info - just give registration district
-          dataString +=
-            " in " + gd.registrationDistrict + " registration district";
+          dataString += " in " + gd.registrationDistrict + " registration district";
           addedPlace = true;
         }
       }
@@ -241,11 +227,9 @@ function getUkCensusString(gd, options) {
         if (placeParts.localPlace) {
           dataString += " " + getPlaceWithPreposition(placeParts.localPlace);
         } else if (gd.eventPlace && gd.eventPlace.placeString) {
-          dataString +=
-            " " + getPlaceWithPreposition(gd.eventPlace.placeString);
+          dataString += " " + getPlaceWithPreposition(gd.eventPlace.placeString);
         }
-        dataString +=
-          " in " + gd.registrationDistrict + " registration district";
+        dataString += " in " + gd.registrationDistrict + " registration district";
       }
       if (placeParts.county || placeParts.country) {
         dataString += " in ";
@@ -408,10 +392,7 @@ function getCensusString(gd, options) {
       } else {
         if (collection.country) {
           let country = collection.country;
-          if (
-            country == "United Kingdom" ||
-            CD.isPartOf(country, "United Kingdom")
-          ) {
+          if (country == "United Kingdom" || CD.isPartOf(country, "United Kingdom")) {
             isUkCensus = true;
           }
         }
@@ -476,11 +457,7 @@ function getUkRegistrationString(gd, options, type) {
     let bornOrAgeText = "";
 
     // coming from FS the gd.birthDate.dateString could be something like "1844", we don't want to use that
-    if (
-      gd.birthDate &&
-      gd.birthDate.dateString &&
-      gd.birthDate.dateString.length > 8
-    ) {
+    if (gd.birthDate && gd.birthDate.dateString && gd.birthDate.dateString.length > 8) {
       // later UK death registrations include full birth date (available after June quarter 1969)
       let birthDate = gd.inferBirthDateObj();
       bornOrAgeText = "born " + cleanDateObj(birthDate);
@@ -546,12 +523,7 @@ function getBirthRegistrationString(gd, options) {
     dataString += " born to ";
 
     dataString += getFullName(gd);
-    if (
-      gd.spouses &&
-      gd.spouses[0] &&
-      gd.spouses[0].name &&
-      gd.spouses[0].name.name
-    ) {
+    if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
       dataString += " and " + gd.spouses[0].name.name;
     }
 
@@ -725,12 +697,7 @@ function getBirthString(gd, options) {
       dataString += " born or baptised to ";
     }
     dataString += getFullName(gd);
-    if (
-      gd.spouses &&
-      gd.spouses[0] &&
-      gd.spouses[0].name &&
-      gd.spouses[0].name.name
-    ) {
+    if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
       dataString += " and " + gd.spouses[0].name.name;
     }
 
@@ -809,11 +776,7 @@ function getDeathString(gd, options) {
     dataString += " " + cleanDateObj(deathDate);
   }
 
-  if (
-    gd.birthDate &&
-    gd.birthDate.dateString &&
-    gd.birthDate.dateString.length > 4
-  ) {
+  if (gd.birthDate && gd.birthDate.dateString && gd.birthDate.dateString.length > 4) {
     dataString += " (born " + gd.birthDate.dateString + ")";
   } else {
     let age = cleanAge(gd.ageAtDeath);
@@ -887,8 +850,7 @@ function getBaptismString(gd, options) {
   let dataString = getFullName(gd);
 
   if (gd.role && gd.role == Role.Parent) {
-    dataString +=
-      "'s " + getPrimaryPersonChildTerm(gd) + " " + gd.primaryPerson;
+    dataString += "'s " + getPrimaryPersonChildTerm(gd) + " " + gd.primaryPerson;
   }
 
   dataString += " baptism";
@@ -990,10 +952,7 @@ function getMarriageString(gd, options) {
     let date = gd.inferEventDateObj();
     if (date) {
       let prepSuffix = "";
-      if (
-        gd.recordSubtype &&
-        gd.recordSubtype == RecordSubtype.MarriageOrBanns
-      ) {
+      if (gd.recordSubtype && gd.recordSubtype == RecordSubtype.MarriageOrBanns) {
         prepSuffix = "or after";
       }
       dataString += " " + getDateWithPreposition(date, prepSuffix);
@@ -1011,8 +970,7 @@ function getMarriageString(gd, options) {
 function getBurialString(gd, options) {
   let dataString = getFullName(gd);
   if (gd.role && gd.role == Role.Parent) {
-    dataString +=
-      "'s " + getPrimaryPersonChildTerm(gd) + " " + gd.primaryPerson;
+    dataString += "'s " + getPrimaryPersonChildTerm(gd) + " " + gd.primaryPerson;
   } else {
     if (gd.parents) {
       let fatherName = "";
@@ -1057,8 +1015,7 @@ function getBurialString(gd, options) {
     age = cleanAge(gd.ageAtEvent);
   }
   if (deathDate && age) {
-    dataString +=
-      " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
+    dataString += " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
   } else if (deathDate) {
     dataString += " (died " + getDateWithPreposition(deathDate) + ")";
   } else if (age) {
@@ -1089,8 +1046,7 @@ function getCremationString(gd, options) {
   let deathDate = gd.inferDeathDateObj();
   let age = cleanAge(gd.ageAtDeath);
   if (deathDate && age) {
-    dataString +=
-      " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
+    dataString += " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
   } else if (deathDate) {
     dataString += " (died " + getDateWithPreposition(deathDate) + ")";
   } else if (age) {
@@ -1196,14 +1152,10 @@ function getScottishWillString(gd, options) {
   if (eventDate) {
     if (grantedDate) {
       dataString += " " + getDateFromStringWithPreposition(grantedDate);
-      dataString +=
-        " (original confirmation " + getDateWithPreposition(eventDate) + ")";
+      dataString += " (original confirmation " + getDateWithPreposition(eventDate) + ")";
     } else if (origDate) {
       dataString += " " + getDateWithPreposition(eventDate);
-      dataString +=
-        " (original confirmation " +
-        getDateFromStringWithPreposition(origDate) +
-        ")";
+      dataString += " (original confirmation " + getDateFromStringWithPreposition(origDate) + ")";
     } else {
       dataString += " " + getDateWithPreposition(eventDate);
     }
@@ -1227,10 +1179,7 @@ function getScottishWillString(gd, options) {
 }
 
 function getWillString(gd, options) {
-  if (
-    gd.inferEventCountry() == "Scotland" ||
-    (gd.courtName && gd.courtName.startsWith("non-Scot"))
-  ) {
+  if (gd.inferEventCountry() == "Scotland" || (gd.courtName && gd.courtName.startsWith("non-Scot"))) {
     return getScottishWillString(gd, options);
   }
 
@@ -1243,10 +1192,7 @@ function getWillString(gd, options) {
 
   let hasProbateDate = false;
   if (dateObj) {
-    if (
-      !deathDateObj ||
-      dateObj.getDateString() != deathDateObj.getDateString()
-    ) {
+    if (!deathDateObj || dateObj.getDateString() != deathDateObj.getDateString()) {
       // there is a probate date (probably)
       hasProbateDate = true;
     }

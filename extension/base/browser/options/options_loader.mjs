@@ -33,24 +33,19 @@ function convertOptionsFrom2To3(loadedOptions) {
   //console.log("convertOptionsFrom2To3, before:")
   //console.log(loadedOptions);
 
-  convertedOptions.citation_general_addAccessedDate =
-    convertedOptions.citation_addAccessedDate;
+  convertedOptions.citation_general_addAccessedDate = convertedOptions.citation_addAccessedDate;
   delete convertedOptions.citation_addAccessedDate;
 
-  convertedOptions.citation_general_addNewlinesWithinRefs =
-    convertedOptions.citation_addNewlinesWithinRefs;
+  convertedOptions.citation_general_addNewlinesWithinRefs = convertedOptions.citation_addNewlinesWithinRefs;
   delete convertedOptions.citation_addNewlinesWithinRefs;
 
-  convertedOptions.citation_general_addNewlinesWithinBody =
-    convertedOptions.citation_addNewlinesWithinBody;
+  convertedOptions.citation_general_addNewlinesWithinBody = convertedOptions.citation_addNewlinesWithinBody;
   delete convertedOptions.citation_addNewlinesWithinBody;
 
-  convertedOptions.citation_general_addBreaksWithinBody =
-    convertedOptions.citation_addBreaksWithinBody;
+  convertedOptions.citation_general_addBreaksWithinBody = convertedOptions.citation_addBreaksWithinBody;
   delete convertedOptions.citation_addBreaksWithinBody;
 
-  convertedOptions.citation_general_meaningfulNames =
-    convertedOptions.citation_meaningfulNames;
+  convertedOptions.citation_general_meaningfulNames = convertedOptions.citation_meaningfulNames;
   delete convertedOptions.citation_meaningfulNames;
 
   if (convertedOptions.search_ancestry_domain == "none") {
@@ -190,10 +185,7 @@ async function callFunctionWithStoredOptions(optionsFunction) {
     // We used to use the spread operator to merge the stored options and the ones from defaultOptions with
     // the stored ones taking priority. Out a a concern that no longer used options (that the converter forgot)
     // would build up it was changed to use a function.
-    optionsObject = addNewDefaultsAndRemoveOldOptions(
-      convertedOptions,
-      defaultOptions
-    );
+    optionsObject = addNewDefaultsAndRemoveOldOptions(convertedOptions, defaultOptions);
   } else {
     optionsObject = defaultOptions;
   }

@@ -23,11 +23,7 @@
   },
   "ageAtEvent": "3",
   "relationshipToHead": "son",
-  "householdArrayFields": [
-    "name",
-    "age",
-    "relationship"
-  ],
+  "householdArrayFields": ["name", "age", "relationship"],
   "householdArray": [
     {
       "name": "Susanha Lago",

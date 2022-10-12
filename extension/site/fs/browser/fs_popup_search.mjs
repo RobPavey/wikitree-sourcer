@@ -35,10 +35,7 @@ import {
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -88,12 +85,7 @@ async function familySearchSearchWithParameters(generalizedData, parameters) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addFamilySearchDefaultSearchMenuItem(
-  menu,
-  data,
-  backFunction,
-  filter
-) {
+function addFamilySearchDefaultSearchMenuItem(menu, data, backFunction, filter) {
   if (!hasBirthOrDeathYear(data)) {
     return false;
   }
@@ -118,12 +110,7 @@ async function addFsSameRecordMenuItem(menu, data) {
 
 function addFsSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection", function (element) {
-    setupSearchCollectionsSubMenu(
-      data,
-      "fs",
-      familySearchSearchCollection,
-      backFunction
-    );
+    setupSearchCollectionsSubMenu(data, "fs", familySearchSearchCollection, backFunction);
   });
 }
 
@@ -212,18 +199,10 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
 
     let heading = document.createElement("label");
     heading.className = "dialogHeading";
-    heading.appendChild(
-      document.createTextNode(
-        "There are multiple last names, select which to use"
-      )
-    );
+    heading.appendChild(document.createTextNode("There are multiple last names, select which to use"));
     menu.list.appendChild(heading);
 
-    for (
-      let lastNameIndex = 0;
-      lastNameIndex < lastNamesArray.length;
-      ++lastNameIndex
-    ) {
+    for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
       let lastName = lastNamesArray[lastNameIndex];
       let br = document.createElement("br");
       menu.list.appendChild(br);
@@ -253,9 +232,7 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
     menu.list.appendChild(br);
     let heading = document.createElement("label");
     heading.className = "dialogHeading";
-    heading.appendChild(
-      document.createTextNode("Spouses/marriages to include:")
-    );
+    heading.appendChild(document.createTextNode("Spouses/marriages to include:"));
     menu.list.appendChild(heading);
     let firstSpouse = true;
 
@@ -280,9 +257,7 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
       label.className = "dialogInput";
       label.appendChild(checkbox);
       let spouseName = spouse.name ? spouse.name.inferFullName() : "Unknown";
-      let marriageYear = spouse.marriageDate
-        ? spouse.marriageDate.getYearString()
-        : "????";
+      let marriageYear = spouse.marriageDate ? spouse.marriageDate.getYearString() : "????";
       let labelText = spouseName + " (m. " + marriageYear + ")";
 
       label.appendChild(document.createTextNode(labelText));
@@ -395,8 +370,4 @@ function addFamilySearchImageBuildCitationMenuItems(menu, data) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "fs",
-  "FamilySearch",
-  addFamilySearchDefaultSearchMenuItem
-);
+registerSearchMenuItemFunction("fs", "FamilySearch", addFamilySearchDefaultSearchMenuItem);

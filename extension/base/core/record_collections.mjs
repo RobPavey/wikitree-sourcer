@@ -24,13 +24,7 @@ SOFTWARE.
 
 import { CD } from "./country_data.mjs";
 
-const houseTableColumnsUk1841 = [
-  "name",
-  "gender",
-  "age",
-  "occupation",
-  "birthPlace",
-];
+const houseTableColumnsUk1841 = ["name", "gender", "age", "occupation", "birthPlace"];
 const houseTableColumnsUk1851to1911 = [
   "name",
   "relationship",
@@ -42,21 +36,8 @@ const houseTableColumnsUk1851to1911 = [
   "birthPlace",
 ];
 
-const householdTableColumnsUsFederal1850 = [
-  "name",
-  "gender",
-  "age",
-  "occupation",
-  "birthPlace",
-];
-const householdTableColumnsUsFederalPre1880 = [
-  "name",
-  "gender",
-  "age",
-  "maritalStatus",
-  "occupation",
-  "birthPlace",
-];
+const householdTableColumnsUsFederal1850 = ["name", "gender", "age", "occupation", "birthPlace"];
+const householdTableColumnsUsFederalPre1880 = ["name", "gender", "age", "maritalStatus", "occupation", "birthPlace"];
 const householdTableColumnsUsFederalPost1880 = [
   "name",
   "gender",
@@ -786,13 +767,7 @@ const RecordCollectionData = [
     title: "1939 England and Wales Register",
     country: "England and Wales",
     dates: { year: 1939 },
-    householdTableColumns: [
-      "name",
-      "maritalStatus",
-      "gender",
-      "birthDate",
-      "occupation",
-    ],
+    householdTableColumns: ["name", "maritalStatus", "gender", "birthDate", "occupation"],
     sites: {
       ancestry: { id: "61596" },
       fmp: {
@@ -1138,15 +1113,7 @@ const RecordCollectionData = [
     title: "1921 Census of Canada",
     country: "Canada",
     dates: { year: 1921 },
-    householdTableColumns: [
-      "name",
-      "gender",
-      "age",
-      "relationship",
-      "maritalStatus",
-      "birthPlace",
-      "occupation",
-    ],
+    householdTableColumns: ["name", "gender", "age", "relationship", "maritalStatus", "birthPlace", "occupation"],
     sites: {
       ancestry: { id: "8991" },
     },
@@ -1156,22 +1123,14 @@ const RecordCollectionData = [
 const RC = {
   findCollection: function (siteName, collectionId) {
     for (let collection of RecordCollectionData) {
-      if (
-        collection.sites &&
-        collection.sites[siteName] &&
-        collection.sites[siteName].id == collectionId
-      ) {
+      if (collection.sites && collection.sites[siteName] && collection.sites[siteName].id == collectionId) {
         return collection;
       }
     }
   },
   findCollectionByAltId: function (siteName, altCollectionId) {
     for (let collection of RecordCollectionData) {
-      if (
-        collection.sites &&
-        collection.sites[siteName] &&
-        collection.sites[siteName].altId == altCollectionId
-      ) {
+      if (collection.sites && collection.sites[siteName] && collection.sites[siteName].altId == altCollectionId) {
         return collection;
       }
     }
@@ -1191,17 +1150,12 @@ const RC = {
         if (owningCollection) {
           result.push(owningCollection);
 
-          let parentCollections =
-            RC.getCollectionsThatThisCollectionIsPartOf(owningCollection);
+          let parentCollections = RC.getCollectionsThatThisCollectionIsPartOf(owningCollection);
           for (let parentCollection of parentCollections) {
             result.push(parentCollection);
           }
         } else {
-          console.log(
-            "Error: owningCollectionWtsId of '" +
-              owningCollectionWtsId +
-              "' was not found"
-          );
+          console.log("Error: owningCollectionWtsId of '" + owningCollectionWtsId + "' was not found");
         }
       }
     }
@@ -1217,9 +1171,7 @@ const RC = {
           if (owningCollectionWtsId == parentWtsId) {
             return true;
           }
-          let owningCollection = RC.findCollectionByWtsId(
-            owningCollectionWtsId
-          );
+          let owningCollection = RC.findCollectionByWtsId(owningCollectionWtsId);
           if (doesCollectionOwnCollection(parentCollection, owningCollection)) {
             return true;
           }
@@ -1235,57 +1187,34 @@ const RC = {
     }
     return result;
   },
-  mapCollectionId: function (
-    sourceSiteName,
-    sourceCollectionId,
-    targetSiteName,
-    sourceCountry,
-    eventYearString
-  ) {
+  mapCollectionId: function (sourceSiteName, sourceCollectionId, targetSiteName, sourceCountry, eventYearString) {
     let eventYear = parseInt(eventYearString);
     if (isNaN(eventYear)) {
       eventYear = undefined;
     }
 
-    let sourceCollection = RC.findCollection(
-      sourceSiteName,
-      sourceCollectionId
-    );
-    let targetCollectionId = RC.getSiteIdFromCollection(
-      sourceCollection,
-      targetSiteName
-    );
+    let sourceCollection = RC.findCollection(sourceSiteName, sourceCollectionId);
+    let targetCollectionId = RC.getSiteIdFromCollection(sourceCollection, targetSiteName);
     if (!targetCollectionId && sourceCollection) {
       // sometimes collections don't map exactly, the source collection could be part of a collection
-      let owningCollections =
-        RC.getCollectionsThatThisCollectionIsPartOf(sourceCollection);
+      let owningCollections = RC.getCollectionsThatThisCollectionIsPartOf(sourceCollection);
       for (let owningCollection of owningCollections) {
-        let owningTargetCollectionId = RC.getSiteIdFromCollection(
-          owningCollection,
-          targetSiteName
-        );
+        let owningTargetCollectionId = RC.getSiteIdFromCollection(owningCollection, targetSiteName);
         if (owningTargetCollectionId) {
           return owningTargetCollectionId;
         }
       }
       // or other collections could be part of the source collection
       let bestMatchCollection = undefined;
-      let ownedCollections =
-        RC.getCollectionsThatArePartOfThisCollection(sourceCollection);
+      let ownedCollections = RC.getCollectionsThatArePartOfThisCollection(sourceCollection);
       for (let ownedCollection of ownedCollections) {
         // Note there could be several collections that are part of this collection
         // we should use country as a guide
-        let ownedTargetCollectionId = RC.getSiteIdFromCollection(
-          ownedCollection,
-          targetSiteName
-        );
+        let ownedTargetCollectionId = RC.getSiteIdFromCollection(ownedCollection, targetSiteName);
         if (ownedTargetCollectionId) {
           if (eventYear && ownedCollection.sites) {
             let siteCollection = ownedCollection.sites[targetSiteName];
-            let collDates = RC.getCollectionDates(
-              ownedCollection,
-              siteCollection
-            );
+            let collDates = RC.getCollectionDates(ownedCollection, siteCollection);
 
             let isYearInRange = false;
             if (collDates.from && collDates.to) {
@@ -1322,10 +1251,7 @@ const RC = {
         }
       }
       if (bestMatchCollection) {
-        let bestMatchCollectionId = RC.getSiteIdFromCollection(
-          bestMatchCollection,
-          targetSiteName
-        );
+        let bestMatchCollectionId = RC.getSiteIdFromCollection(bestMatchCollection, targetSiteName);
         targetCollectionId = bestMatchCollectionId;
       }
     }
@@ -1361,11 +1287,7 @@ const RC = {
 
     return collDates;
   },
-  areSourceDatesInCollectionRange: function (
-    sourceDates,
-    collection,
-    siteCollection
-  ) {
+  areSourceDatesInCollectionRange: function (sourceDates, collection, siteCollection) {
     let lifeSpan = 120;
     if (sourceDates.maxLifespan) {
       lifeSpan = sourceDates.maxLifespan;
@@ -1422,8 +1344,7 @@ const RC = {
 
     if (collDates.year) {
       let collYear = collDates.year;
-      let isInRange =
-        collYear + 2 >= minSourceYear && collYear - 2 <= maxSourceYear;
+      let isInRange = collYear + 2 >= minSourceYear && collYear - 2 <= maxSourceYear;
       //console.log("return (c) : " + isInRange);
       return isInRange;
     } else {
@@ -1450,11 +1371,7 @@ const RC = {
     let collCountry = collection.country;
 
     for (let country of countryArray) {
-      if (
-        country == collCountry ||
-        CD.isPartOf(country, collCountry) ||
-        CD.isPartOf(collCountry, country)
-      ) {
+      if (country == collCountry || CD.isPartOf(country, collCountry) || CD.isPartOf(collCountry, country)) {
         //console.log("return true, country = " + country);
         return true;
       }
@@ -1463,23 +1380,13 @@ const RC = {
     //console.log("return false");
     return false;
   },
-  findCollectionsForSiteWithinDateRangeAndCountries: function (
-    siteName,
-    dates,
-    countryArray
-  ) {
+  findCollectionsForSiteWithinDateRangeAndCountries: function (siteName, dates, countryArray) {
     let collectionArray = [];
     for (let collection of RecordCollectionData) {
       if (collection.sites) {
         let siteCollection = collection.sites[siteName];
         if (siteCollection) {
-          if (
-            RC.areSourceDatesInCollectionRange(
-              dates,
-              collection,
-              siteCollection
-            )
-          ) {
+          if (RC.areSourceDatesInCollectionRange(dates, collection, siteCollection)) {
             if (
               !countryArray ||
               countryArray.length == 0 ||
@@ -1501,10 +1408,7 @@ const RC = {
     if (collection.partOf && collection.partOf.length > 0) {
       for (let owningCollectionWtsId of collection.partOf) {
         let owningCollection = RC.findCollectionByWtsId(owningCollectionWtsId);
-        let fieldValue = RC.getFieldFromCollectionOrOwningCollections(
-          owningCollection,
-          fieldName
-        );
+        let fieldValue = RC.getFieldFromCollectionOrOwningCollections(owningCollection, fieldName);
         if (fieldValue != undefined) {
           return fieldValue;
         }

@@ -40,10 +40,7 @@
     "Household Members": "Nominiges Albert 29<br/>Jennie Albert 24<br/>Domingue Albert 5<br/>Joseph Albert 3<br/>Pauline Albert 2<br/>Christine Albert 55"
   },
   "household": {
-    "headings": [
-      "Name",
-      "Age"
-    ],
+    "headings": ["Name", "Age"],
     "members": [
       {
         "Name": "Nominiges Albert",

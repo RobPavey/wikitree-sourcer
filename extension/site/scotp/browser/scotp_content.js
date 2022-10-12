@@ -59,9 +59,7 @@ function getRefRecordKey(recordType) {
 }
 
 function addClickedRowListener() {
-  const elResultsTable = document.querySelector(
-    ".results-table-wrapper .sticky-table tbody"
-  );
+  const elResultsTable = document.querySelector(".results-table-wrapper .sticky-table tbody");
   if (elResultsTable && !elResultsTable.hasAttribute("listenerOnClick")) {
     elResultsTable.setAttribute("listenerOnClick", "true");
     elResultsTable.addEventListener("click", function (ev) {
@@ -82,13 +80,9 @@ function addClickedRowListener() {
 }
 
 function getClickedRow() {
-  const elResultsTable = document.querySelector(
-    ".results-table-wrapper .sticky-table tbody"
-  );
+  const elResultsTable = document.querySelector(".results-table-wrapper .sticky-table tbody");
   if (elResultsTable) {
-    const selectedRow = elResultsTable.querySelector(
-      "tr[style='" + highlightStyle + "']"
-    );
+    const selectedRow = elResultsTable.querySelector("tr[style='" + highlightStyle + "']");
     return selectedRow;
   }
 }
@@ -139,9 +133,7 @@ async function doHighlightForRefQuery() {
       return;
     }
 
-    let resultsTableWrapper = document.querySelector(
-      "div.results-table-wrapper"
-    );
+    let resultsTableWrapper = document.querySelector("div.results-table-wrapper");
     if (!resultsTableWrapper) {
       return;
     }
@@ -203,23 +195,13 @@ function extractHandler(request, sendResponse) {
   };
 
   // Extract the data via DOM scraping
-  let isAsync = extractDataAndRespond(
-    document,
-    location.href,
-    "scotp",
-    sendResponse,
-    siteSpecificInput
-  );
+  let isAsync = extractDataAndRespond(document, location.href, "scotp", sendResponse, siteSpecificInput);
   if (isAsync) {
     return true;
   }
 }
 
-siteContentInit(
-  `scotp`,
-  `site/scotp/core/scotp_extract_data.mjs`,
-  extractHandler
-);
+siteContentInit(`scotp`, `site/scotp/core/scotp_extract_data.mjs`, extractHandler);
 
 addClickedRowListener();
 doHighlightForRefQuery();

@@ -22,11 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  loadDataCache,
-  cachedDataCache,
-  isCachedDataCacheReady,
-} from "/base/browser/common/data_cache.mjs";
+import { loadDataCache, cachedDataCache, isCachedDataCacheReady } from "/base/browser/common/data_cache.mjs";
 import {
   addBuildCitationMenuItems,
   addMenuItemWithSubtitle,
@@ -37,10 +33,7 @@ import {
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  addStandardMenuEnd,
-  buildMinimalMenuWithMessage,
-} from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
@@ -57,10 +50,7 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
-import {
-  generalizeData,
-  generalizeDataGivenRecordType,
-} from "../core/fs_generalize_data.mjs";
+import { generalizeData, generalizeDataGivenRecordType } from "../core/fs_generalize_data.mjs";
 import { buildCitation } from "../core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
@@ -116,12 +106,7 @@ async function fsBuildHouseholdTable(data) {
 
   // There is an option to put an inline citation at the end of the table caption
   // If this is set then generate the citation string.
-  let citationObject = buildCitationObjectForTable(
-    data.extractedData,
-    data.generalizedData,
-    undefined,
-    buildCitation
-  );
+  let citationObject = buildCitationObjectForTable(data.extractedData, data.generalizedData, undefined, buildCitation);
 
   doAsyncActionWithCatch("Building Table", data, async function () {
     const input = {
@@ -168,9 +153,7 @@ function addFsOpenExternalImageMenuItem(menu, data) {
   let extImageUrl = data.extractedData.externalImageUrl;
 
   if (extImageUrl) {
-    let title = extImageUrl.includes("findmypast")
-      ? "Open Image on FindMyPast"
-      : "Open Image on External Site";
+    let title = extImageUrl.includes("findmypast") ? "Open Image on FindMyPast" : "Open Image on External Site";
     addMenuItem(menu, title, function (element) {
       fsOpenExternalImage(data);
     });
@@ -216,22 +199,14 @@ async function setupFsPopupMenu(extractedData) {
 
   if (
     !extractedData ||
-    (extractedData.pageType != "record" &&
-      extractedData.pageType != "image" &&
-      extractedData.pageType != "person")
+    (extractedData.pageType != "record" && extractedData.pageType != "image" && extractedData.pageType != "person")
   ) {
-    let message =
-      "WikiTree Sourcer doesn't know how to extract data from this page.";
-    message +=
-      "\n\nIt looks like a FamilySearch page but not a record, image or person page.";
-    message +=
-      " Sometimes this is because you are no longer logged into FamilySearch.";
-    message +=
-      " If that may be the case try reloading this page and see if it asks you to login.";
-    message +=
-      "\n\nSometimes this is because the page had not finished loading when you clicked the extension icon.";
-    message +=
-      " If that may be the case try clicking the extension icon again.";
+    let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
+    message += "\n\nIt looks like a FamilySearch page but not a record, image or person page.";
+    message += " Sometimes this is because you are no longer logged into FamilySearch.";
+    message += " If that may be the case try reloading this page and see if it asks you to login.";
+    message += "\n\nSometimes this is because the page had not finished loading when you clicked the extension icon.";
+    message += " If that may be the case try clicking the extension icon again.";
     let data = { extractedData: extractedData };
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
@@ -243,8 +218,7 @@ async function setupFsPopupMenu(extractedData) {
 
   if (!generalizedData || !generalizedData.hasValidData) {
     let message = "WikiTree Sourcer could not interpret the data on this page.";
-    message +=
-      "\n\nIt looks like a supported FamilySearch page but the data generalize failed.";
+    message += "\n\nIt looks like a supported FamilySearch page but the data generalize failed.";
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
   }
@@ -261,13 +235,7 @@ async function setupFsPopupMenu(extractedData) {
     await addSearchMenus(menu, data, backFunction, "fs");
     addMenuDivider(menu);
 
-    addBuildCitationMenuItems(
-      menu,
-      data,
-      fsBuildCitation,
-      backFunction,
-      generalizeDataGivenRecordType
-    );
+    addBuildCitationMenuItems(menu, data, fsBuildCitation, backFunction, generalizeDataGivenRecordType);
     addFsBuildHouseholdTableMenuItem(menu, data);
     addFsOpenExternalImageMenuItem(menu, data);
   } else if (extractedData.pageType == "image") {

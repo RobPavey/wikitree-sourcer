@@ -32,11 +32,7 @@ function buildSearchUrl(buildUrlInput) {
 
   builder.addSearchParameter(
     "query",
-    (data.inferFirstName() ?? "") +
-      " " +
-      (data.inferMiddleName() ?? "") +
-      " " +
-      (data.inferLastName() ?? "")
+    (data.inferFirstName() ?? "") + " " + (data.inferMiddleName() ?? "") + " " + (data.inferLastName() ?? "")
   );
 
   let birthYear = data.inferBirthYear();

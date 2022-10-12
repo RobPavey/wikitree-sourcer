@@ -23,10 +23,7 @@ SOFTWARE.
 */
 
 import { FsUriBuilder } from "./fs_uri_builder.mjs";
-import {
-  GeneralizedData,
-  dateQualifiers,
-} from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
@@ -100,12 +97,7 @@ function getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection) {
   return { fromYear: fromYear.toString(), toYear: toYear.toString() };
 }
 
-function getDateRange(
-  yearString,
-  exactnessOption,
-  wtsQualifier,
-  sameCollection
-) {
+function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection) {
   if (!yearString || yearString == "") {
     return null;
   }
@@ -199,21 +191,10 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   let forenames = data.inferForenames();
-  let lastNamesArray = data.inferLastNamesArrayGivenParametersAndCollection(
-    parameters,
-    collection
-  );
+  let lastNamesArray = data.inferLastNamesArrayGivenParametersAndCollection(parameters, collection);
   if (lastNamesArray.length > 0) {
-    for (
-      let lastNameIndex = 0;
-      lastNameIndex < lastNamesArray.length;
-      ++lastNameIndex
-    ) {
-      if (
-        !parameters ||
-        lastNamesArray.length == 1 ||
-        parameters.lastNames[lastNameIndex]
-      ) {
+    for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
+      if (!parameters || lastNamesArray.length == 1 || parameters.lastNames[lastNameIndex]) {
         builder.addName(forenames, lastNamesArray[lastNameIndex]);
       }
     }
@@ -245,10 +226,7 @@ function buildSearchUrl(buildUrlInput) {
     // for now we don't include the father unless it is a specified parameter
     if ((parameters && parameters.father) || sameCollection) {
       let father = data.parents.father;
-      builder.addFather(
-        father.name.inferForenames(),
-        father.name.inferLastName()
-      );
+      builder.addFather(father.name.inferForenames(), father.name.inferLastName());
     }
   }
 
@@ -256,19 +234,12 @@ function buildSearchUrl(buildUrlInput) {
     // for now we don't include the mother unless it is a specified parameter
     if ((parameters && parameters.mother) || sameCollection) {
       let mother = data.parents.mother;
-      builder.addMother(
-        mother.name.inferForenames(),
-        mother.name.inferLastName()
-      );
+      builder.addMother(mother.name.inferForenames(), mother.name.inferLastName());
     }
   }
 
   if (data.spouses) {
-    for (
-      let spouseIndex = 0;
-      spouseIndex < data.spouses.length;
-      ++spouseIndex
-    ) {
+    for (let spouseIndex = 0; spouseIndex < data.spouses.length; ++spouseIndex) {
       let spouse = data.spouses[spouseIndex];
 
       if (parameters && !parameters.spouses[spouseIndex]) {

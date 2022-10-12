@@ -44,9 +44,7 @@ async function checkForPendingSearch() {
     return;
   }
 
-  if (
-    document.URL == "https://www.freereg.org.uk/search_queries/new?locale=en"
-  ) {
+  if (document.URL == "https://www.freereg.org.uk/search_queries/new?locale=en") {
     //console.log("checkForPendingSearch: URL matches");
 
     let freeregSearchData = await getPendingSearch();
@@ -81,10 +79,7 @@ async function checkForPendingSearch() {
             if (inputElement) {
               //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
 
-              if (
-                inputElement.type == "checkbox" ||
-                inputElement.type == "radio"
-              ) {
+              if (inputElement.type == "checkbox" || inputElement.type == "radio") {
                 inputElement.checked = value;
               } else {
                 inputElement.value = value;
@@ -102,9 +97,7 @@ async function checkForPendingSearch() {
           // Now hide the form so that the use doesn't try to use it.
           formElement.style.display = "none";
 
-          const titleElement = document.querySelector(
-            "main.site__content div.container h1.title"
-          );
+          const titleElement = document.querySelector("main.site__content div.container h1.title");
           if (titleElement) {
             titleElement.innerText = "Performing WikiTree Sourcer search...";
           }

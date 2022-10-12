@@ -131,10 +131,7 @@ function buildSearchData(input) {
     fieldData["first_name"] = forenames;
   }
 
-  let lastName = data.inferLastNameGivenParametersAndCollection(
-    parameters,
-    collection
-  );
+  let lastName = data.inferLastNameGivenParametersAndCollection(parameters, collection);
   if (lastName) {
     fieldData["last_name"] = lastName;
   }

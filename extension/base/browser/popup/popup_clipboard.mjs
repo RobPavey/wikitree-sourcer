@@ -52,17 +52,13 @@ async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
   addBreak(fragment);
 
   let label1 = document.createElement("label");
-  label1.innerText =
-    "The " +
-    objectName +
-    " cannot be written to the clipboard by the WikiTree Sourcer extension.";
+  label1.innerText = "The " + objectName + " cannot be written to the clipboard by the WikiTree Sourcer extension.";
   fragment.appendChild(label1);
 
   addBreak(fragment);
 
   let label2 = document.createElement("label");
-  label2.innerText =
-    "Review it below and press the 'Save to clipboard' button to save it to the clipboard.";
+  label2.innerText = "Review it below and press the 'Save to clipboard' button to save it to the clipboard.";
   fragment.appendChild(label);
 
   addBreak(fragment);

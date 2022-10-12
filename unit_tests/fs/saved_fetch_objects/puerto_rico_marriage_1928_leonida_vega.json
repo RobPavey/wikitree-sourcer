@@ -1,1389 +1,1744 @@
 {
-  "id" : "r_102058642224",
-  "lang" : "es",
-  "links" : {
-    "next" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5?seek=next"
+  "id": "r_102058642224",
+  "lang": "es",
+  "links": {
+    "next": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5?seek=next"
     },
-    "prev" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5?seek=prev"
+    "prev": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5?seek=prev"
     },
-    "self" : {
-      "href" : "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5"
+    "self": {
+      "href": "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5"
     }
   },
-  "description" : "#sd_p_101024077741",
-  "persons" : [ {
-    "id" : "p_101024077738",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "d5e4f0cd-b18b-40a1-b843-b16837efd6b9",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "PR_SEX_CODE_ORIG",
-          "text" : "Masculino"
-        }, {
-          "id" : "753488fc-fb73-4fd6-8d31-6e3ad6783ecf",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1608323854082
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_SEX_CODE",
-          "text" : "Male",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QVJ8-SF4B?flag=fsh"
+  "description": "#sd_p_101024077741",
+  "persons": [
+    {
+      "id": "p_101024077738",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "d5e4f0cd-b18b-40a1-b843-b16837efd6b9",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PR_SEX_CODE_ORIG",
+                "text": "Masculino"
+              },
+              {
+                "id": "753488fc-fb73-4fd6-8d31-6e3ad6783ecf",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1608323854082
+                },
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_SEX_CODE",
+                "text": "Male",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+              }
+            ]
+          }
+        ]
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF4B" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Juan Robles Rivera",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Juan",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "230f8b7c-6bcc-49f6-844d-341556321fcb",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "Juan"
-            }, {
-              "id" : "43607c86-23c2-49e9-b077-47edfc2db8c0",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1608323854038
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Juan"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Robles Rivera",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "ed6b5251-6aa6-4bb6-89f3-991a2655797b",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_SURN_ORIG",
-              "text" : "Robles Rivera"
-            }, {
-              "id" : "77bd0eac-b7bd-4c96-aeb2-1fb1861ffa5e",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1608323854038
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_SURN",
-              "text" : "Robles Rivera"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "48126add-5b59-40ed-b46c-dc673eeb6a52",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854029
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_NAME_ORIG",
-            "text" : "Juan Robles Rivera"
-          }, {
-            "id" : "483753a8-1f23-4cdd-842b-e414e37ea3e5",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854038
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_NAME",
-            "text" : "Juan Robles Rivera"
-          } ]
-        } ]
-      } ]
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "id" : "3bffa145-2de9-41c8-83af-e90fb3f6d7d6",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "PR_AGE_ORIG",
-        "text" : "21"
-      }, {
-        "id" : "dbee30d1-4d19-447c-879b-2117de0ce6e9",
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/AgeTreatment/ver/1"
-          },
-          "modified" : 1608323854078
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QVJ8-SF4B?flag=fsh"
         },
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "PR_AGE",
-        "text" : "21",
-        "resource" : "P21Y"
-      } ]
-    } ]
-  }, {
-    "id" : "p_101024077741",
-    "extracted" : true,
-    "principal" : true,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "d6405d30-d384-4234-af7d-165282267acf",
-          "type" : "http://gedcomx.org/Original",
-          "labelId" : "SP_SEX_CODE_ORIG",
-          "text" : "Female"
-        }, {
-          "id" : "bd20e825-30b3-40c2-b6a6-68ba16b983b1",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1608323854098
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "SP_SEX_CODE",
-          "text" : "Female",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QVJ8-SFH9?flag=fsh"
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
+        }
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Leonida Loracuente Vega",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Leonida",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "20582b5e-95fe-4c0e-ac82-0cf4b5772398",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_NAME_GN_ORIG",
-              "text" : "Leonida"
-            }, {
-              "id" : "cec42251-b9c0-4f95-8145-21b2139452bc",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF4B"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Juan Robles Rivera",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Juan",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "230f8b7c-6bcc-49f6-844d-341556321fcb",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_GN_ORIG",
+                          "text": "Juan"
+                        },
+                        {
+                          "id": "43607c86-23c2-49e9-b077-47edfc2db8c0",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854038
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_GN",
+                          "text": "Juan"
+                        }
+                      ]
+                    }
+                  ]
                 },
-                "modified" : 1608323854044
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_NAME_GN",
-              "text" : "Leonida"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Loracuente Vega",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "6479f5ca-d233-4f34-a3a9-9e42f1ee2230",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_NAME_SURN_ORIG",
-              "text" : "Loracuente Vega"
-            }, {
-              "id" : "3bf27e54-d3d1-483f-931b-8befe4051d27",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Robles Rivera",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "ed6b5251-6aa6-4bb6-89f3-991a2655797b",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_NAME_SURN_ORIG",
+                          "text": "Robles Rivera"
+                        },
+                        {
+                          "id": "77bd0eac-b7bd-4c96-aeb2-1fb1861ffa5e",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854038
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_NAME_SURN",
+                          "text": "Robles Rivera"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "48126add-5b59-40ed-b46c-dc673eeb6a52",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854029
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_NAME_ORIG",
+                      "text": "Juan Robles Rivera"
+                    },
+                    {
+                      "id": "483753a8-1f23-4cdd-842b-e414e37ea3e5",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854038
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_NAME",
+                      "text": "Juan Robles Rivera"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "id": "3bffa145-2de9-41c8-83af-e90fb3f6d7d6",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "PR_AGE_ORIG",
+              "text": "21"
+            },
+            {
+              "id": "dbee30d1-4d19-447c-879b-2117de0ce6e9",
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/AgeTreatment/ver/1"
                 },
-                "modified" : 1608323854044
+                "modified": 1608323854078
               },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_NAME_SURN",
-              "text" : "Loracuente Vega"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "80045d8c-c697-47e0-898b-310978050b76",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "PR_AGE",
+              "text": "21",
+              "resource": "P21Y"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_101024077741",
+      "extracted": true,
+      "principal": true,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "d6405d30-d384-4234-af7d-165282267acf",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "SP_SEX_CODE_ORIG",
+                "text": "Female"
               },
-              "modified" : 1608323854038
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "SP_NAME_ORIG",
-            "text" : "Leonida Loracuente Vega"
-          }, {
-            "id" : "a9a76f73-84d5-4088-a058-42d00ed5a8ed",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854044
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "SP_NAME",
-            "text" : "Leonida Loracuente Vega"
-          } ]
-        } ]
-      } ]
-    } ],
-    "fields" : [ {
-      "type" : "http://gedcomx.org/Age",
-      "values" : [ {
-        "id" : "ec4e9ce1-3190-4af3-beea-5a3e8d834813",
-        "type" : "http://gedcomx.org/Original",
-        "labelId" : "SP_AGE_ORIG",
-        "text" : "21"
-      }, {
-        "id" : "a73b2a17-722b-4145-86e6-6e73a5331d06",
-        "attribution" : {
-          "contributor" : {
-            "resource" : "http://treatment/AgeTreatment/ver/1"
-          },
-          "modified" : 1608323854081
+              {
+                "id": "bd20e825-30b3-40c2-b6a6-68ba16b983b1",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1608323854098
+                },
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "SP_SEX_CODE",
+                "text": "Female",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QVJ8-SFH9?flag=fsh"
         },
-        "type" : "http://gedcomx.org/Interpreted",
-        "labelId" : "SP_AGE",
-        "text" : "21",
-        "resource" : "P21Y"
-      } ]
-    } ]
-  }, {
-    "id" : "p_101024077739",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "b3ecca5a-fead-4cad-8efd-f465f0054b51",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1604999889086
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_FTHR_SEX_CODE",
-          "text" : "Male",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QVJ8-SF41?flag=fsh"
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
+        }
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF41" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Luis Robles",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Luis",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "9a4271c9-a073-4051-a5c9-f92a3f26e8b3",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_FTHR_NAME_GN_ORIG",
-              "text" : "Luis"
-            }, {
-              "id" : "fa72193d-b369-46a5-91ff-f828518de813",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Leonida Loracuente Vega",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Leonida",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "20582b5e-95fe-4c0e-ac82-0cf4b5772398",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_NAME_GN_ORIG",
+                          "text": "Leonida"
+                        },
+                        {
+                          "id": "cec42251-b9c0-4f95-8145-21b2139452bc",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854044
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_NAME_GN",
+                          "text": "Leonida"
+                        }
+                      ]
+                    }
+                  ]
                 },
-                "modified" : 1608323854051
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_FTHR_NAME_GN",
-              "text" : "Luis"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Robles",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "d5b0a7e8-ba9f-409f-a2ed-99677d14142b",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
-              "text" : "Robles"
-            }, {
-              "id" : "d9785a1e-63e2-426a-bcbd-7505305ee405",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Loracuente Vega",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "6479f5ca-d233-4f34-a3a9-9e42f1ee2230",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_NAME_SURN_ORIG",
+                          "text": "Loracuente Vega"
+                        },
+                        {
+                          "id": "3bf27e54-d3d1-483f-931b-8befe4051d27",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854044
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_NAME_SURN",
+                          "text": "Loracuente Vega"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "80045d8c-c697-47e0-898b-310978050b76",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854038
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "SP_NAME_ORIG",
+                      "text": "Leonida Loracuente Vega"
+                    },
+                    {
+                      "id": "a9a76f73-84d5-4088-a058-42d00ed5a8ed",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854044
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "SP_NAME",
+                      "text": "Leonida Loracuente Vega"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fields": [
+        {
+          "type": "http://gedcomx.org/Age",
+          "values": [
+            {
+              "id": "ec4e9ce1-3190-4af3-beea-5a3e8d834813",
+              "type": "http://gedcomx.org/Original",
+              "labelId": "SP_AGE_ORIG",
+              "text": "21"
+            },
+            {
+              "id": "a73b2a17-722b-4145-86e6-6e73a5331d06",
+              "attribution": {
+                "contributor": {
+                  "resource": "http://treatment/AgeTreatment/ver/1"
                 },
-                "modified" : 1608323854051
+                "modified": 1608323854081
               },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_FTHR_NAME_SURN",
-              "text" : "Robles"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "51c60f09-8954-4118-9c45-fedd3c979c1a",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854044
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_FTHR_NAME_ORIG",
-            "text" : "Luis Robles"
-          }, {
-            "id" : "f97cc8ec-a997-4bf0-aaa2-2a7fcba3a57a",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854051
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_FTHR_NAME",
-            "text" : "Luis Robles"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_101024077740",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "b39084d0-056e-4c95-bf09-9c859eb076d2",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1604999889086
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "PR_MTHR_SEX_CODE",
-          "text" : "Female",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
-        } ]
-      } ]
+              "type": "http://gedcomx.org/Interpreted",
+              "labelId": "SP_AGE",
+              "text": "21",
+              "resource": "P21Y"
+            }
+          ]
+        }
+      ]
     },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QVJ8-SFHM?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHM" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Aurora Rívera",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Aurora",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "8251ddc7-bc0f-4982-a233-11e9f27480e0",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_MTHR_NAME_GN_ORIG",
-              "text" : "Aurora"
-            }, {
-              "id" : "35a64fdd-17a1-4ad5-a7e4-d333831c996f",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
+    {
+      "id": "p_101024077739",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "b3ecca5a-fead-4cad-8efd-f465f0054b51",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1604999889086
                 },
-                "modified" : 1608323854059
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_MTHR_NAME_GN",
-              "text" : "Aurora"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Rívera",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "721360d8-991f-43ab-84a7-c9ec59c672d7",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
-              "text" : "Rívera"
-            }, {
-              "id" : "fb156087-5700-4265-8501-8ef225ec3756",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1608323854059
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_MTHR_NAME_SURN",
-              "text" : "Rívera"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "b78c57e4-e686-4303-82fe-aa351a742e02",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854051
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "PR_MTHR_NAME_ORIG",
-            "text" : "Aurora Rívera"
-          }, {
-            "id" : "35297d3b-1e2e-4576-83bb-6acd69b555a1",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854059
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "PR_MTHR_NAME",
-            "text" : "Aurora Rívera"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_101024077742",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Male",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "076605db-aaf5-4c9e-ac40-ad70ba57b1d0",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1604999889086
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "SP_FTHR_SEX_CODE",
-          "text" : "Male",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QVJ8-SFHS?flag=fsh"
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_FTHR_SEX_CODE",
+                "text": "Male",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+              }
+            ]
+          }
+        ]
       },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHS" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Anastasio Loracuente",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Anastasio",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "3126f651-5720-4e1c-8f1f-bb6cb3ecfd71",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_FTHR_NAME_GN_ORIG",
-              "text" : "Anastasio"
-            }, {
-              "id" : "6a0b9a41-6b3a-4d6c-8d09-6aed12537ad0",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1608323854066
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_FTHR_NAME_GN",
-              "text" : "Anastasio"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Loracuente",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "fbd140c5-e907-4d5b-a5bf-dbb6eab65d15",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_FTHR_NAME_SURN_ORIG",
-              "text" : "Loracuente"
-            }, {
-              "id" : "ca934cce-3b8c-4c59-b484-38b4dc527e5a",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1608323854066
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_FTHR_NAME_SURN",
-              "text" : "Loracuente"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "6d5f88bd-f985-4b53-b92c-dcc575bdbe79",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854059
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "SP_FTHR_NAME_ORIG",
-            "text" : "Anastasio Loracuente"
-          }, {
-            "id" : "7a7fdb30-741d-4c64-921b-db371f7d2605",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854066
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "SP_FTHR_NAME",
-            "text" : "Anastasio Loracuente"
-          } ]
-        } ]
-      } ]
-    } ]
-  }, {
-    "id" : "p_101024077743",
-    "extracted" : true,
-    "principal" : false,
-    "gender" : {
-      "type" : "http://gedcomx.org/Female",
-      "fields" : [ {
-        "type" : "http://gedcomx.org/Gender",
-        "values" : [ {
-          "id" : "343fbe32-56e3-44a2-8d3b-6007a321b984",
-          "attribution" : {
-            "contributor" : {
-              "resource" : "http://treatment/CvGenderTreatment/ver/1"
-            },
-            "modified" : 1604999889086
-          },
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "SP_MTHR_SEX_CODE",
-          "text" : "Female",
-          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
-        } ]
-      } ]
-    },
-    "links" : {
-      "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QVJ8-SFH3?flag=fsh"
-      },
-      "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
-      }
-    },
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH3" ]
-    },
-    "names" : [ {
-      "type" : "http://gedcomx.org/BirthName",
-      "nameForms" : [ {
-        "fullText" : "Maria de los Santos Vega",
-        "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Maria de los Santos",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "bf2741e3-ee3f-4ba9-826f-469d3e6224bb",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_MTHR_NAME_GN_ORIG",
-              "text" : "Maria De Los Santos"
-            }, {
-              "id" : "a1e7419c-e0be-48a5-8c91-b8834d81905d",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1608323854076
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_MTHR_NAME_GN",
-              "text" : "Maria de los Santos"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Surname",
-          "value" : "Vega",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Surname",
-            "values" : [ {
-              "id" : "39fb809e-920a-46ca-be60-aaaeacb9f80f",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "SP_MTHR_NAME_SURN_ORIG",
-              "text" : "Vega"
-            }, {
-              "id" : "4cbcc4b8-cbf7-44bf-829b-1ad3acc2588a",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1608323854076
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "SP_MTHR_NAME_SURN",
-              "text" : "Vega"
-            } ]
-          } ]
-        } ],
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Name",
-          "values" : [ {
-            "id" : "e9d91768-6f93-44c9-a99b-74522a60db27",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854066
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "SP_MTHR_NAME_ORIG",
-            "text" : "Maria De Los Santos Vega"
-          }, {
-            "id" : "07bf0ed3-2fc6-42f9-9c69-05324664d79c",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1608323854076
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "SP_MTHR_NAME",
-            "text" : "Maria de los Santos Vega"
-          } ]
-        } ]
-      } ]
-    } ]
-  } ],
-  "relationships" : [ {
-    "id" : "MM9.1.6/GL1D-2XZ9",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_101024077739",
-      "resourceId" : "p_101024077739"
-    },
-    "person2" : {
-      "resource" : "#p_101024077738",
-      "resourceId" : "p_101024077738"
-    }
-  }, {
-    "id" : "MM9.1.6/GL1D-2X68",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_101024077740",
-      "resourceId" : "p_101024077740"
-    },
-    "person2" : {
-      "resource" : "#p_101024077738",
-      "resourceId" : "p_101024077738"
-    }
-  }, {
-    "id" : "MM9.1.6/GL1D-2XNL",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_101024077739",
-      "resourceId" : "p_101024077739"
-    },
-    "person2" : {
-      "resource" : "#p_101024077740",
-      "resourceId" : "p_101024077740"
-    }
-  }, {
-    "id" : "MM9.1.6/GL1D-2X29",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_101024077738",
-      "resourceId" : "p_101024077738"
-    },
-    "person2" : {
-      "resource" : "#p_101024077741",
-      "resourceId" : "p_101024077741"
-    },
-    "facts" : [ {
-      "type" : "http://familysearch.org/types/facts/MarriageRegistration",
-      "place" : {
-        "original" : "Ponce, Puerto Rico",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Place",
-          "values" : [ {
-            "id" : "97673d95-ef49-4eef-841c-5ee46eb44017",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1571067220612
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Ponce, Puerto Rico"
-          }, {
-            "id" : "c6087160-7762-4545-bd94-16d3596e5beb",
-            "confidence" : "http://confidence/94",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/LocalityTreatment/ver/1"
-              },
-              "modified" : 1571067220612
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE",
-            "text" : "Ponce, Puerto Rico",
-            "resource" : "https://www.familysearch.org/platform/places/description/384334",
-            "qualifiers" : [ {
-              "value" : "1013, 1020, 1014",
-              "name" : "StdQualifier"
-            } ]
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Country",
-          "values" : [ {
-            "id" : "c72b3240-cc69-4359-8717-0ffd1dffe26c",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_COUNTRY_ORIG",
-            "text" : "Puerto Rico"
-          } ]
-        }, {
-          "type" : "http://familysearch.org/types/fields/Commune",
-          "values" : [ {
-            "id" : "28e8da24-818e-4406-af81-033c85a3ae12",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_MUNICIPALITY_ORIG",
-            "text" : "Ponce"
-          } ]
-        } ]
-      },
-      "primary" : true,
-      "fields" : [ {
-        "type" : "http://familysearch.org/types/fields/EventType",
-        "values" : [ {
-          "id" : "e373add3-0f81-43a2-9ebe-04c993f4504e",
-          "type" : "http://gedcomx.org/Interpreted",
-          "labelId" : "EVENT_TYPE",
-          "text" : "Marriage Registration"
-        } ]
-      } ]
-    }, {
-      "type" : "http://gedcomx.org/Marriage",
-      "date" : {
-        "original" : "16 Apr 1928",
-        "formal" : "+1928-04-16",
-        "fields" : [ {
-          "type" : "http://gedcomx.org/Date",
-          "values" : [ {
-            "id" : "8f823013-d6a1-4a65-afba-3d8e6ae0429c",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1571067220266
-            },
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "CP_MAR_DATE_ORIG",
-            "text" : "16 Abr 1928"
-          }, {
-            "id" : "077c72a3-9864-488a-b5d4-a174e80ecba6",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1571067220266
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "CP_MAR_DATE",
-            "text" : "16 Apr 1928",
-            "resource" : "+1928-04-16"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Month",
-          "values" : [ {
-            "id" : "3ea32198-729c-42fa-8b16-0ae84cdb15b2",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "CP_MAR_MONTH_ORIG",
-            "text" : "Abr"
-          }, {
-            "id" : "ea6dc77a-abb8-407e-bf4e-129a27f0a50b",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1571067220266
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "CP_MAR_MONTH",
-            "text" : "4"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Day",
-          "values" : [ {
-            "id" : "5435e3b1-3eaa-4fcf-8c03-2e9e0f44edcd",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "CP_MAR_DAY_ORIG",
-            "text" : "16"
-          }, {
-            "id" : "8ed3e4cc-a81b-4615-b8b1-ec81626ef064",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1571067220266
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "CP_MAR_DAY",
-            "text" : "16"
-          } ]
-        }, {
-          "type" : "http://gedcomx.org/Year",
-          "values" : [ {
-            "id" : "82068ed4-903a-40c3-8c7a-d980fd855b7c",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "CP_MAR_YEAR_ORIG",
-            "text" : "1928"
-          }, {
-            "id" : "5ac1d926-b675-41a1-a071-31c22ec19e04",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1571067220266
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "CP_MAR_YEAR",
-            "text" : "1928"
-          } ]
-        } ]
-      }
-    } ]
-  }, {
-    "id" : "MM9.1.6/GL1D-2XP8",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_101024077742",
-      "resourceId" : "p_101024077742"
-    },
-    "person2" : {
-      "resource" : "#p_101024077741",
-      "resourceId" : "p_101024077741"
-    }
-  }, {
-    "id" : "MM9.1.6/GL1D-2XTL",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_101024077743",
-      "resourceId" : "p_101024077743"
-    },
-    "person2" : {
-      "resource" : "#p_101024077741",
-      "resourceId" : "p_101024077741"
-    }
-  }, {
-    "id" : "MM9.1.6/GL1D-2FM9",
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_101024077742",
-      "resourceId" : "p_101024077742"
-    },
-    "person2" : {
-      "resource" : "#p_101024077743",
-      "resourceId" : "p_101024077743"
-    }
-  } ],
-  "sourceDescriptions" : [ {
-    "id" : "sd_c_1682798",
-    "about" : "https://api.familysearch.org/platform/records/collections/1682798",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1382223598636,
-    "modified" : 1658155885386,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Puerto Rico",
-        "description" : "#place_5931730"
-      },
-      "temporal" : {
-        "original" : "1805/2001",
-        "formal" : "1805/2001"
-      },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "titles" : [ {
-      "lang" : "en_US",
-      "value" : "Puerto Rico, Civil Registration, 1805-2001"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1682798" ]
-    }
-  }, {
-    "id" : "src_r_102058642224",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5",
-    "componentOf" : {
-      "description" : "#sd_c_1682798"
-    },
-    "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1571067220756,
-    "modified" : 1658155885386,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Ponce, Puerto Rico"
-      },
-      "temporal" : {
-        "original" : "16 Apr 1928"
-      },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "citations" : [ {
-      "value" : "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5 : 18 December 2020), Entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
-    } ],
-    "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
-    } ],
-    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
-    "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1002696642306" ],
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1682798?arkName=1:2:QK1B-CLZ5"
-    }
-  }, {
-    "id" : "sd_p_101024077738",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF4B",
-    "componentOf" : {
-      "description" : "#src_r_102058642224"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF4B : 18 December 2020), Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Juan Robles Rivera, \"Puerto Rico, Civil Registration, 1805-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF4B" ]
-    }
-  }, {
-    "id" : "sd_p_101024077741",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9",
-    "componentOf" : {
-      "description" : "#src_r_102058642224"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9 : 18 December 2020), Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9" ]
-    }
-  }, {
-    "id" : "sd_p_101024077739",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF41",
-    "componentOf" : {
-      "description" : "#src_r_102058642224"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF41 : 18 December 2020), Luis Robles in entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Luis Robles in entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF41" ]
-    }
-  }, {
-    "id" : "sd_p_101024077740",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHM",
-    "componentOf" : {
-      "description" : "#src_r_102058642224"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHM : 18 December 2020), Aurora Rívera in entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Aurora Rívera in entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHM" ]
-    }
-  }, {
-    "id" : "sd_p_101024077742",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHS",
-    "componentOf" : {
-      "description" : "#src_r_102058642224"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHS : 18 December 2020), Anastasio Loracuente in entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Anastasio Loracuente in entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHS" ]
-    }
-  }, {
-    "id" : "sd_p_101024077743",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH3",
-    "componentOf" : {
-      "description" : "#src_r_102058642224"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH3 : 18 December 2020), Maria de los Santos Vega in entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "Maria de los Santos Vega in entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH3" ]
-    }
-  }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:939Z-RGVY-V?cc=1682798",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
-    },
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:939Z-RGVY-V?cc=1682798" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1682798?arkName=3:1:939Z-RGVY-V"
-    }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
-    }
-  } ],
-  "places" : [ {
-    "id" : "place_5931730",
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/5931730" ]
-    }
-  } ],
-  "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/BatchLocality",
-    "values" : [ {
-      "id" : "94db499d-39f3-474b-8010-9c5a13fe0fc7",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_BATCH_LOCALITY",
-      "text" : "Puerto Rico"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "id" : "33e06bf5-9897-47ca-b862-8e24d8e1fbff",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "1682798"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DasVerify",
-    "values" : [ {
-      "id" : "41804cd2-c478-40e8-b7c0-d71fed219384",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DAS_VERIFY",
-      "text" : "30-SEP-14"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "id" : "e98d0261-404c-47d6-a4e7-e5a39aae85a6",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DIGITAL_FILM_NBR",
-      "text" : "004537305"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/Folder",
-    "values" : [ {
-      "id" : "fc9e06e0-5e06-4dba-987d-18b3e16974ee",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_FOLDER",
-      "text" : "004537305"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FolderImageSequence",
-    "values" : [ {
-      "id" : "997c3927-8a86-428f-a78c-ef89625f7018",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_FOLDER_IMAGE_SEQ",
-      "text" : "1939"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageApid",
-    "values" : [ {
-      "id" : "048e3104-f6b9-401e-a592-40eace3d54a5",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_APID",
-      "text" : "TH-1-9772-17028-99"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageId",
-    "values" : [ {
-      "id" : "90a394a3-f7f4-45f3-8a4e-40744b4db633",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_ID",
-      "text" : "/004537305/004537305_01939.jpg"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNumber",
-    "values" : [ {
-      "id" : "ae3488be-7eb1-46cf-bcbb-72722aae8269",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_NBR",
-      "text" : "01939"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageArk",
-    "values" : [ {
-      "id" : "efde3f22-0501-4ec4-9138-199b9de63748",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "IMAGE_ARK",
-      "text" : "https://familysearch.org/ark:/61903/3:1:939Z-RGVY-V"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsImsImageId",
-    "values" : [ {
-      "id" : "190e3160-9204-4623-9291-083734398421",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMS_IMAGE_ID",
-      "text" : "004537305_01939"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "id" : "d5d1445f-921d-466e-b759-47fb8ae23d45",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PPQ_ID",
-      "text" : "13-0167"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordGroup",
-    "values" : [ {
-      "id" : "7a810f6b-f348-4292-bc72-515b03f6b0a0",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_GROUP",
-      "text" : "13-0167: null - Puerto Rico, Civil Registration, 1885-2001 Births: cartertp"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordId",
-    "values" : [ {
-      "id" : "d1ec3dae-61fd-411f-9062-e3ad33b5532d",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_ID",
-      "text" : "004537305_01939_0"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
-    "values" : [ {
-      "id" : "c9a2b1da-cb25-4050-b4ff-11a586156ccc",
-      "attribution" : {
-        "contributor" : {
-          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QVJ8-SF41?flag=fsh"
         },
-        "modified" : 1571067220612
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
+        }
       },
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "0000000004537305_01939_00000_0000102058642224"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/TravelerTitle",
-    "values" : [ {
-      "id" : "5c5a1987-7988-4f3d-8411-2906906c204d",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_TRAVELER_TITLE",
-      "text" : "Puerto Rico, Civil Registration, 1885-2001"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UniqueId",
-    "values" : [ {
-      "id" : "ecd731ff-bc87-4482-9a4d-aa396fb0e3ac",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UNIQUE_ID",
-      "text" : "1002696642306"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsUnsupported",
-    "values" : [ {
-      "id" : "a722da78-3a57-4aa0-869b-ccb8bd177f02",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UNSUPPORTED",
-      "text" : "{\"ext_project_nbr\": \"4497\"}"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/FsVisStatus",
-    "values" : [ {
-      "id" : "d9301b61-a2e2-46ff-901a-7b37b689987f",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_VIS_STATUS",
-      "text" : "VISIBLE"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/SourceVolume",
-    "values" : [ {
-      "id" : "7bd8f33b-c0fb-4d56-87c4-24d887665310",
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "SOURCE_VOLUME_ORIG",
-      "text" : "Matrimonios 1921-1928, t. 30-36"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "26"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/UserModified",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_USER_MODIFIED",
-      "text" : "false"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "60478"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
-    } ]
-  } ]
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF41"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Luis Robles",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Luis",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "9a4271c9-a073-4051-a5c9-f92a3f26e8b3",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_FTHR_NAME_GN_ORIG",
+                          "text": "Luis"
+                        },
+                        {
+                          "id": "fa72193d-b369-46a5-91ff-f828518de813",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854051
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_FTHR_NAME_GN",
+                          "text": "Luis"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Robles",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "d5b0a7e8-ba9f-409f-a2ed-99677d14142b",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_FTHR_NAME_SURN_ORIG",
+                          "text": "Robles"
+                        },
+                        {
+                          "id": "d9785a1e-63e2-426a-bcbd-7505305ee405",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854051
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_FTHR_NAME_SURN",
+                          "text": "Robles"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "51c60f09-8954-4118-9c45-fedd3c979c1a",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854044
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_FTHR_NAME_ORIG",
+                      "text": "Luis Robles"
+                    },
+                    {
+                      "id": "f97cc8ec-a997-4bf0-aaa2-2a7fcba3a57a",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854051
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_FTHR_NAME",
+                      "text": "Luis Robles"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_101024077740",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "b39084d0-056e-4c95-bf09-9c859eb076d2",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1604999889086
+                },
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "PR_MTHR_SEX_CODE",
+                "text": "Female",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QVJ8-SFHM?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHM"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Aurora Rívera",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Aurora",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "8251ddc7-bc0f-4982-a233-11e9f27480e0",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_MTHR_NAME_GN_ORIG",
+                          "text": "Aurora"
+                        },
+                        {
+                          "id": "35a64fdd-17a1-4ad5-a7e4-d333831c996f",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854059
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_MTHR_NAME_GN",
+                          "text": "Aurora"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Rívera",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "721360d8-991f-43ab-84a7-c9ec59c672d7",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_MTHR_NAME_SURN_ORIG",
+                          "text": "Rívera"
+                        },
+                        {
+                          "id": "fb156087-5700-4265-8501-8ef225ec3756",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854059
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_MTHR_NAME_SURN",
+                          "text": "Rívera"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "b78c57e4-e686-4303-82fe-aa351a742e02",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854051
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_MTHR_NAME_ORIG",
+                      "text": "Aurora Rívera"
+                    },
+                    {
+                      "id": "35297d3b-1e2e-4576-83bb-6acd69b555a1",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854059
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_MTHR_NAME",
+                      "text": "Aurora Rívera"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_101024077742",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Male",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "076605db-aaf5-4c9e-ac40-ad70ba57b1d0",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1604999889086
+                },
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "SP_FTHR_SEX_CODE",
+                "text": "Male",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QVJ8-SFHS?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHS"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Anastasio Loracuente",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Anastasio",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "3126f651-5720-4e1c-8f1f-bb6cb3ecfd71",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_FTHR_NAME_GN_ORIG",
+                          "text": "Anastasio"
+                        },
+                        {
+                          "id": "6a0b9a41-6b3a-4d6c-8d09-6aed12537ad0",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854066
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_FTHR_NAME_GN",
+                          "text": "Anastasio"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Loracuente",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "fbd140c5-e907-4d5b-a5bf-dbb6eab65d15",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_FTHR_NAME_SURN_ORIG",
+                          "text": "Loracuente"
+                        },
+                        {
+                          "id": "ca934cce-3b8c-4c59-b484-38b4dc527e5a",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854066
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_FTHR_NAME_SURN",
+                          "text": "Loracuente"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "6d5f88bd-f985-4b53-b92c-dcc575bdbe79",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854059
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "SP_FTHR_NAME_ORIG",
+                      "text": "Anastasio Loracuente"
+                    },
+                    {
+                      "id": "7a7fdb30-741d-4c64-921b-db371f7d2605",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854066
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "SP_FTHR_NAME",
+                      "text": "Anastasio Loracuente"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p_101024077743",
+      "extracted": true,
+      "principal": false,
+      "gender": {
+        "type": "http://gedcomx.org/Female",
+        "fields": [
+          {
+            "type": "http://gedcomx.org/Gender",
+            "values": [
+              {
+                "id": "343fbe32-56e3-44a2-8d3b-6007a321b984",
+                "attribution": {
+                  "contributor": {
+                    "resource": "http://treatment/CvGenderTreatment/ver/1"
+                  },
+                  "modified": 1604999889086
+                },
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "SP_MTHR_SEX_CODE",
+                "text": "Female",
+                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+              }
+            ]
+          }
+        ]
+      },
+      "links": {
+        "persona": {
+          "href": "https://api.familysearch.org/platform/records/personas/QVJ8-SFH3?flag=fsh"
+        },
+        "record": {
+          "href": "https://api.familysearch.org/platform/records/records/QK1B-CLZ5?flag=fsh"
+        }
+      },
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH3"]
+      },
+      "names": [
+        {
+          "type": "http://gedcomx.org/BirthName",
+          "nameForms": [
+            {
+              "fullText": "Maria de los Santos Vega",
+              "parts": [
+                {
+                  "type": "http://gedcomx.org/Given",
+                  "value": "Maria de los Santos",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Given",
+                      "values": [
+                        {
+                          "id": "bf2741e3-ee3f-4ba9-826f-469d3e6224bb",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_MTHR_NAME_GN_ORIG",
+                          "text": "Maria De Los Santos"
+                        },
+                        {
+                          "id": "a1e7419c-e0be-48a5-8c91-b8834d81905d",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854076
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_MTHR_NAME_GN",
+                          "text": "Maria de los Santos"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "http://gedcomx.org/Surname",
+                  "value": "Vega",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Surname",
+                      "values": [
+                        {
+                          "id": "39fb809e-920a-46ca-be60-aaaeacb9f80f",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "SP_MTHR_NAME_SURN_ORIG",
+                          "text": "Vega"
+                        },
+                        {
+                          "id": "4cbcc4b8-cbf7-44bf-829b-1ad3acc2588a",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/NameTreatment/ver/1"
+                            },
+                            "modified": 1608323854076
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "SP_MTHR_NAME_SURN",
+                          "text": "Vega"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Name",
+                  "values": [
+                    {
+                      "id": "e9d91768-6f93-44c9-a99b-74522a60db27",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854066
+                      },
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "SP_MTHR_NAME_ORIG",
+                      "text": "Maria De Los Santos Vega"
+                    },
+                    {
+                      "id": "07bf0ed3-2fc6-42f9-9c69-05324664d79c",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/NameTreatment/ver/1"
+                        },
+                        "modified": 1608323854076
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "SP_MTHR_NAME",
+                      "text": "Maria de los Santos Vega"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "MM9.1.6/GL1D-2XZ9",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_101024077739",
+        "resourceId": "p_101024077739"
+      },
+      "person2": {
+        "resource": "#p_101024077738",
+        "resourceId": "p_101024077738"
+      }
+    },
+    {
+      "id": "MM9.1.6/GL1D-2X68",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_101024077740",
+        "resourceId": "p_101024077740"
+      },
+      "person2": {
+        "resource": "#p_101024077738",
+        "resourceId": "p_101024077738"
+      }
+    },
+    {
+      "id": "MM9.1.6/GL1D-2XNL",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_101024077739",
+        "resourceId": "p_101024077739"
+      },
+      "person2": {
+        "resource": "#p_101024077740",
+        "resourceId": "p_101024077740"
+      }
+    },
+    {
+      "id": "MM9.1.6/GL1D-2X29",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_101024077738",
+        "resourceId": "p_101024077738"
+      },
+      "person2": {
+        "resource": "#p_101024077741",
+        "resourceId": "p_101024077741"
+      },
+      "facts": [
+        {
+          "type": "http://familysearch.org/types/facts/MarriageRegistration",
+          "place": {
+            "original": "Ponce, Puerto Rico",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Place",
+                "values": [
+                  {
+                    "id": "97673d95-ef49-4eef-841c-5ee46eb44017",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1571067220612
+                    },
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_PLACE_ORIG",
+                    "text": "Ponce, Puerto Rico"
+                  },
+                  {
+                    "id": "c6087160-7762-4545-bd94-16d3596e5beb",
+                    "confidence": "http://confidence/94",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/LocalityTreatment/ver/1"
+                      },
+                      "modified": 1571067220612
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "EVENT_PLACE",
+                    "text": "Ponce, Puerto Rico",
+                    "resource": "https://www.familysearch.org/platform/places/description/384334",
+                    "qualifiers": [
+                      {
+                        "value": "1013, 1020, 1014",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Country",
+                "values": [
+                  {
+                    "id": "c72b3240-cc69-4359-8717-0ffd1dffe26c",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_COUNTRY_ORIG",
+                    "text": "Puerto Rico"
+                  }
+                ]
+              },
+              {
+                "type": "http://familysearch.org/types/fields/Commune",
+                "values": [
+                  {
+                    "id": "28e8da24-818e-4406-af81-033c85a3ae12",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "EVENT_MUNICIPALITY_ORIG",
+                    "text": "Ponce"
+                  }
+                ]
+              }
+            ]
+          },
+          "primary": true,
+          "fields": [
+            {
+              "type": "http://familysearch.org/types/fields/EventType",
+              "values": [
+                {
+                  "id": "e373add3-0f81-43a2-9ebe-04c993f4504e",
+                  "type": "http://gedcomx.org/Interpreted",
+                  "labelId": "EVENT_TYPE",
+                  "text": "Marriage Registration"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "http://gedcomx.org/Marriage",
+          "date": {
+            "original": "16 Apr 1928",
+            "formal": "+1928-04-16",
+            "fields": [
+              {
+                "type": "http://gedcomx.org/Date",
+                "values": [
+                  {
+                    "id": "8f823013-d6a1-4a65-afba-3d8e6ae0429c",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
+                      },
+                      "modified": 1571067220266
+                    },
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "CP_MAR_DATE_ORIG",
+                    "text": "16 Abr 1928"
+                  },
+                  {
+                    "id": "077c72a3-9864-488a-b5d4-a174e80ecba6",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
+                      },
+                      "modified": 1571067220266
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "CP_MAR_DATE",
+                    "text": "16 Apr 1928",
+                    "resource": "+1928-04-16"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Month",
+                "values": [
+                  {
+                    "id": "3ea32198-729c-42fa-8b16-0ae84cdb15b2",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "CP_MAR_MONTH_ORIG",
+                    "text": "Abr"
+                  },
+                  {
+                    "id": "ea6dc77a-abb8-407e-bf4e-129a27f0a50b",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
+                      },
+                      "modified": 1571067220266
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "CP_MAR_MONTH",
+                    "text": "4"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Day",
+                "values": [
+                  {
+                    "id": "5435e3b1-3eaa-4fcf-8c03-2e9e0f44edcd",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "CP_MAR_DAY_ORIG",
+                    "text": "16"
+                  },
+                  {
+                    "id": "8ed3e4cc-a81b-4615-b8b1-ec81626ef064",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
+                      },
+                      "modified": 1571067220266
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "CP_MAR_DAY",
+                    "text": "16"
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Year",
+                "values": [
+                  {
+                    "id": "82068ed4-903a-40c3-8c7a-d980fd855b7c",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "CP_MAR_YEAR_ORIG",
+                    "text": "1928"
+                  },
+                  {
+                    "id": "5ac1d926-b675-41a1-a071-31c22ec19e04",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
+                      },
+                      "modified": 1571067220266
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "CP_MAR_YEAR",
+                    "text": "1928"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "MM9.1.6/GL1D-2XP8",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_101024077742",
+        "resourceId": "p_101024077742"
+      },
+      "person2": {
+        "resource": "#p_101024077741",
+        "resourceId": "p_101024077741"
+      }
+    },
+    {
+      "id": "MM9.1.6/GL1D-2XTL",
+      "type": "http://gedcomx.org/ParentChild",
+      "person1": {
+        "resource": "#p_101024077743",
+        "resourceId": "p_101024077743"
+      },
+      "person2": {
+        "resource": "#p_101024077741",
+        "resourceId": "p_101024077741"
+      }
+    },
+    {
+      "id": "MM9.1.6/GL1D-2FM9",
+      "type": "http://gedcomx.org/Couple",
+      "person1": {
+        "resource": "#p_101024077742",
+        "resourceId": "p_101024077742"
+      },
+      "person2": {
+        "resource": "#p_101024077743",
+        "resourceId": "p_101024077743"
+      }
+    }
+  ],
+  "sourceDescriptions": [
+    {
+      "id": "sd_c_1682798",
+      "about": "https://api.familysearch.org/platform/records/collections/1682798",
+      "resourceType": "http://gedcomx.org/Collection",
+      "created": 1382223598636,
+      "modified": 1658155885386,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Puerto Rico",
+            "description": "#place_5931730"
+          },
+          "temporal": {
+            "original": "1805/2001",
+            "formal": "1805/2001"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en_US",
+          "value": "Puerto Rico, Civil Registration, 1805-2001"
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1682798"]
+      }
+    },
+    {
+      "id": "src_r_102058642224",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5",
+      "componentOf": {
+        "description": "#sd_c_1682798"
+      },
+      "resourceType": "http://gedcomx.org/Record",
+      "created": 1571067220756,
+      "modified": 1658155885386,
+      "coverage": [
+        {
+          "spatial": {
+            "original": "Ponce, Puerto Rico"
+          },
+          "temporal": {
+            "original": "16 Apr 1928"
+          },
+          "recordType": "http://gedcomx.org/Vital"
+        }
+      ],
+      "citations": [
+        {
+          "value": "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5 : 18 December 2020), Entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
+        }
+      ],
+      "sources": [
+        {
+          "description": "#sd2",
+          "descriptionId": "sd2"
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
+        }
+      ],
+      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+      "identifiers": {
+        "$": ["https://www.familysearch.org/platform/externalId/easy/1002696642306"],
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:QK1B-CLZ5"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1682798?arkName=1:2:QK1B-CLZ5"
+      }
+    },
+    {
+      "id": "sd_p_101024077738",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF4B",
+      "componentOf": {
+        "description": "#src_r_102058642224"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF4B : 18 December 2020), Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Juan Robles Rivera, \"Puerto Rico, Civil Registration, 1805-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF4B"]
+      }
+    },
+    {
+      "id": "sd_p_101024077741",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9",
+      "componentOf": {
+        "description": "#src_r_102058642224"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9 : 18 December 2020), Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9"]
+      }
+    },
+    {
+      "id": "sd_p_101024077739",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF41",
+      "componentOf": {
+        "description": "#src_r_102058642224"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF41 : 18 December 2020), Luis Robles in entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Luis Robles in entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SF41"]
+      }
+    },
+    {
+      "id": "sd_p_101024077740",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHM",
+      "componentOf": {
+        "description": "#src_r_102058642224"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHM : 18 December 2020), Aurora Rívera in entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Aurora Rívera in entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHM"]
+      }
+    },
+    {
+      "id": "sd_p_101024077742",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHS",
+      "componentOf": {
+        "description": "#src_r_102058642224"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHS : 18 December 2020), Anastasio Loracuente in entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Anastasio Loracuente in entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFHS"]
+      }
+    },
+    {
+      "id": "sd_p_101024077743",
+      "about": "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH3",
+      "componentOf": {
+        "description": "#src_r_102058642224"
+      },
+      "resourceType": "http://gedcomx.org/Person",
+      "citations": [
+        {
+          "value": "\"Puerto Rico, Registro Civil, 1805-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH3 : 18 December 2020), Maria de los Santos Vega in entry for Juan Robles Rivera and Leonida Loracuente Vega, ; citing Ponce, Puerto Rico, Puerto Rico Departamento de Salud and Igesia Catolica (Puerto Rico Department of Health and Catholic churches), Toa Alta."
+        }
+      ],
+      "titles": [
+        {
+          "lang": "en",
+          "value": "Maria de los Santos Vega in entry for Juan Robles Rivera and Leonida Loracuente Vega, \"Puerto Rico, Civil Registration, 1805-2001\""
+        }
+      ],
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH3"]
+      }
+    },
+    {
+      "id": "sd2",
+      "mediaType": "image/jpeg",
+      "about": "https://www.familysearch.org/ark:/61903/3:1:939Z-RGVY-V?cc=1682798",
+      "resourceType": "http://gedcomx.org/DigitalArtifact",
+      "repository": {
+        "resourceId": "#a1"
+      },
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:939Z-RGVY-V?cc=1682798"]
+      },
+      "descriptor": {
+        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1682798?arkName=3:1:939Z-RGVY-V"
+      }
+    }
+  ],
+  "agents": [
+    {
+      "id": "a1",
+      "identifiers": {
+        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "place_5931730",
+      "identifiers": {
+        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/5931730"]
+      }
+    }
+  ],
+  "fields": [
+    {
+      "type": "http://familysearch.org/types/fields/BatchLocality",
+      "values": [
+        {
+          "id": "94db499d-39f3-474b-8010-9c5a13fe0fc7",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_BATCH_LOCALITY",
+          "text": "Puerto Rico"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CollectionId",
+      "values": [
+        {
+          "id": "33e06bf5-9897-47ca-b862-8e24d8e1fbff",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_COLLECTION_ID",
+          "text": "1682798"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DasVerify",
+      "values": [
+        {
+          "id": "41804cd2-c478-40e8-b7c0-d71fed219384",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DAS_VERIFY",
+          "text": "30-SEP-14"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+      "values": [
+        {
+          "id": "e98d0261-404c-47d6-a4e7-e5a39aae85a6",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_DIGITAL_FILM_NBR",
+          "text": "004537305"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/Folder",
+      "values": [
+        {
+          "id": "fc9e06e0-5e06-4dba-987d-18b3e16974ee",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_FOLDER",
+          "text": "004537305"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FolderImageSequence",
+      "values": [
+        {
+          "id": "997c3927-8a86-428f-a78c-ef89625f7018",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_FOLDER_IMAGE_SEQ",
+          "text": "1939"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageApid",
+      "values": [
+        {
+          "id": "048e3104-f6b9-401e-a592-40eace3d54a5",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_APID",
+          "text": "TH-1-9772-17028-99"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageId",
+      "values": [
+        {
+          "id": "90a394a3-f7f4-45f3-8a4e-40744b4db633",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_ID",
+          "text": "/004537305/004537305_01939.jpg"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageNumber",
+      "values": [
+        {
+          "id": "ae3488be-7eb1-46cf-bcbb-72722aae8269",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMAGE_NBR",
+          "text": "01939"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/ImageArk",
+      "values": [
+        {
+          "id": "efde3f22-0501-4ec4-9138-199b9de63748",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "IMAGE_ARK",
+          "text": "https://familysearch.org/ark:/61903/3:1:939Z-RGVY-V"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FsImsImageId",
+      "values": [
+        {
+          "id": "190e3160-9204-4623-9291-083734398421",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_IMS_IMAGE_ID",
+          "text": "004537305_01939"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PpqId",
+      "values": [
+        {
+          "id": "d5d1445f-921d-466e-b759-47fb8ae23d45",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PPQ_ID",
+          "text": "13-0167"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordGroup",
+      "values": [
+        {
+          "id": "7a810f6b-f348-4292-bc72-515b03f6b0a0",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_GROUP",
+          "text": "13-0167: null - Puerto Rico, Civil Registration, 1885-2001 Births: cartertp"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordId",
+      "values": [
+        {
+          "id": "d1ec3dae-61fd-411f-9062-e3ad33b5532d",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_ID",
+          "text": "004537305_01939_0"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SortKey",
+      "values": [
+        {
+          "id": "c9a2b1da-cb25-4050-b4ff-11a586156ccc",
+          "attribution": {
+            "contributor": {
+              "resource": "http://treatment/SortKeyTreatment/ver/1"
+            },
+            "modified": 1571067220612
+          },
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_SORT_KEY",
+          "text": "0000000004537305_01939_00000_0000102058642224"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/TravelerTitle",
+      "values": [
+        {
+          "id": "5c5a1987-7988-4f3d-8411-2906906c204d",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_TRAVELER_TITLE",
+          "text": "Puerto Rico, Civil Registration, 1885-2001"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UniqueId",
+      "values": [
+        {
+          "id": "ecd731ff-bc87-4482-9a4d-aa396fb0e3ac",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UNIQUE_ID",
+          "text": "1002696642306"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FsUnsupported",
+      "values": [
+        {
+          "id": "a722da78-3a57-4aa0-869b-ccb8bd177f02",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_UNSUPPORTED",
+          "text": "{\"ext_project_nbr\": \"4497\"}"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/FsVisStatus",
+      "values": [
+        {
+          "id": "d9301b61-a2e2-46ff-901a-7b37b689987f",
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_VIS_STATUS",
+          "text": "VISIBLE"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/SourceVolume",
+      "values": [
+        {
+          "id": "7bd8f33b-c0fb-4d56-87c4-24d887665310",
+          "type": "http://gedcomx.org/Original",
+          "labelId": "SOURCE_VOLUME_ORIG",
+          "text": "Matrimonios 1921-1928, t. 30-36"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/RecordVersion",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_RECORD_VERSION",
+          "text": "26"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/UserModified",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_USER_MODIFIED",
+          "text": "false"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/CdsBatchId",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_CDS_BATCH_ID",
+          "text": "60478"
+        }
+      ]
+    },
+    {
+      "type": "http://familysearch.org/types/fields/PublicationStatus",
+      "values": [
+        {
+          "type": "http://gedcomx.org/Interpreted",
+          "labelId": "FS_PUB_STATUS",
+          "text": "Production"
+        }
+      ]
+    }
+  ]
 }

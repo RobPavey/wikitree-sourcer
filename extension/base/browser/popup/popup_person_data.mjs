@@ -22,10 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addMenuItem,
-  displayMessageWithIconThenClosePopup,
-} from "./popup_menu_building.mjs";
+import { addMenuItem, displayMessageWithIconThenClosePopup } from "./popup_menu_building.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Citation

@@ -20,12 +20,7 @@
   },
   "personGender": "male",
   "occupation": "Pauper",
-  "householdArrayFields": [
-    "name",
-    "gender",
-    "age",
-    "occupation"
-  ],
+  "householdArrayFields": ["name", "gender", "age", "occupation"],
   "householdArray": [
     {
       "name": "Humphry Priddis",

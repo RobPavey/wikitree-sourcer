@@ -26,58 +26,58 @@ import { buildSearchData } from "../../extension/site/freecen/core/freecen_build
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-    {
-      caseName: "dickens-1530_private",
-      inputPath: "wikitree/generalized_data/ref/dickens-1530_private",
-      optionVariants: [
-        {
-          variantName: "specified_collection", 
-          typeOfSearch: "SpecifiedCollection",
-          searchParameters: {
-            collectionWtsId: "EnglandAndWalesCensus1921",
-          },
+  {
+    caseName: "dickens-1530_private",
+    inputPath: "wikitree/generalized_data/ref/dickens-1530_private",
+    optionVariants: [
+      {
+        variantName: "specified_collection",
+        typeOfSearch: "SpecifiedCollection",
+        searchParameters: {
+          collectionWtsId: "EnglandAndWalesCensus1921",
         },
-      ],
-    },
-    {
-      caseName: "ellacott-59_read",
-      inputPath: "wikitree/generalized_data/ref/ellacott-59_read",
-    },
-    {
-      caseName: "handford-3_read",
-      inputPath: "wikitree/generalized_data/ref/handford-3_read",
-    },
-    {
-      caseName: "littlemore-13_read",
-      inputPath: "wikitree/generalized_data/ref/littlemore-13_read",
-    },
-    {
-      caseName: "pavey-451_read",
-      inputPath: "wikitree/generalized_data/ref/pavey-451_read",
-    },
-    {
-      caseName: "pavey-507_private",
-      inputPath: "wikitree/generalized_data/ref/pavey-507_private",
-      optionVariants: [
-        {
-          variantName: "specified_collection", 
-          typeOfSearch: "SpecifiedCollection",
-          searchParameters: {
-            collectionWtsId: "EnglandWalesAndScotlandCensus1851", // exact date is close to a marriage date
-          },
+      },
+    ],
+  },
+  {
+    caseName: "ellacott-59_read",
+    inputPath: "wikitree/generalized_data/ref/ellacott-59_read",
+  },
+  {
+    caseName: "handford-3_read",
+    inputPath: "wikitree/generalized_data/ref/handford-3_read",
+  },
+  {
+    caseName: "littlemore-13_read",
+    inputPath: "wikitree/generalized_data/ref/littlemore-13_read",
+  },
+  {
+    caseName: "pavey-451_read",
+    inputPath: "wikitree/generalized_data/ref/pavey-451_read",
+  },
+  {
+    caseName: "pavey-507_private",
+    inputPath: "wikitree/generalized_data/ref/pavey-507_private",
+    optionVariants: [
+      {
+        variantName: "specified_collection",
+        typeOfSearch: "SpecifiedCollection",
+        searchParameters: {
+          collectionWtsId: "EnglandWalesAndScotlandCensus1851", // exact date is close to a marriage date
         },
-      ],
-    },
-    {
-      caseName: "england_census_1881_searle-38",
-      inputPath: "ancestry/generalized_data/ref/england_census_1881_searle-38",
-      optionVariants: [
-        {
-          variantName: "same_collection", 
-          typeOfSearch: "SameCollection",
-        },
-      ],
-    },
+      },
+    ],
+  },
+  {
+    caseName: "england_census_1881_searle-38",
+    inputPath: "ancestry/generalized_data/ref/england_census_1881_searle-38",
+    optionVariants: [
+      {
+        variantName: "same_collection",
+        typeOfSearch: "SameCollection",
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {
