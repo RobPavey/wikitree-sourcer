@@ -18,7 +18,13 @@
     "placeString": "Hempstead, Nassau, New York, United States"
   },
   "ageAtEvent": "12",
-  "householdArrayFields": ["name", "relationship", "gender", "age", "birthYear"],
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "age",
+    "birthYear"
+  ],
   "householdArray": [
     {
       "name": "Phila Lee",

@@ -28,7 +28,11 @@
     "Household Members<br/>Age<br/>Relationship": "James Fraser 31 Head<br/>Elizabeth Fraser 29 Wife<br/>Robert Fraser 2 Son<br/>Ann Fraser 4 Mo Daughter<br/>Hellen Kerr 20 Sister-in-law"
   },
   "household": {
-    "headings": ["Household Members", "Age", "Relationship"],
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
     "members": [
       {
         "Household Members": "James Fraser",

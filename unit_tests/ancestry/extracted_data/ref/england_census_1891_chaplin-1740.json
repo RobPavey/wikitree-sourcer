@@ -31,7 +31,11 @@
     "Child": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=6598&h=7866658&indiv=try&viewrecord=1&r=an"
   },
   "household": {
-    "headings": ["Household Members", "Age", "Relationship"],
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
     "members": [
       {
         "Household Members": "Thomas Radcliffe",

@@ -17,7 +17,13 @@
     "dateString": "1950",
     "yearString": "1950"
   },
-  "householdArrayFields": ["name", "relationship", "gender", "birthYear", "birthPlace"],
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "birthYear",
+    "birthPlace"
+  ],
   "householdArray": [
     {
       "name": "John Golden Taylor",

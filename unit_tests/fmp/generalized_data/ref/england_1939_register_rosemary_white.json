@@ -22,7 +22,13 @@
   },
   "occupation": "Unemployed",
   "maritalStatus": "single",
-  "householdArrayFields": ["name", "maritalStatus", "gender", "birthDate", "occupation"],
+  "householdArrayFields": [
+    "name",
+    "maritalStatus",
+    "gender",
+    "birthDate",
+    "occupation"
+  ],
   "householdArray": [
     {
       "isSelected": true,

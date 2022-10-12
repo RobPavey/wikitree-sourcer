@@ -23,7 +23,14 @@
     "yearString": "1871"
   },
   "relationshipToHead": "servant",
-  "householdArrayFields": ["name", "relationship", "gender", "age", "birthYear", "birthPlace"],
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
   "householdArray": [
     {
       "name": "George Mack",

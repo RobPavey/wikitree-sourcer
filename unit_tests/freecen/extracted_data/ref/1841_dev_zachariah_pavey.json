@@ -13,7 +13,15 @@
     "House Number": "",
     "House or Street Name": "Axminster Union Workhouse"
   },
-  "householdHeadings": ["Surname", "Forenames", "Sex", "Age", "Occupation", "Birth County", "Notes"],
+  "householdHeadings": [
+    "Surname",
+    "Forenames",
+    "Sex",
+    "Age",
+    "Occupation",
+    "Birth County",
+    "Notes"
+  ],
   "householdMembers": [
     {
       "Surname": "PRIDDIS",

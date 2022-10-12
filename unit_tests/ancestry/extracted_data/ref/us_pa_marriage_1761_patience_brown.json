@@ -18,7 +18,10 @@
     "Household Members": "Patience Brown Bride<br/>William Morrison Groom"
   },
   "household": {
-    "headings": ["Name", "Role"],
+    "headings": [
+      "Name",
+      "Role"
+    ],
     "members": [
       {
         "Name": "Patience Brown",

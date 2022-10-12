@@ -28,7 +28,11 @@
     "Household Members<br/>Age<br/>Relationship": "William Handford 27 Head<br/>Sophia Handford 30 Wife<br/>William Handford 7 Son<br/>Mary Handford 5 Daughter<br/>Marino Handford 3 Daughter<br/>Luca Handford 1/12 Daughter"
   },
   "household": {
-    "headings": ["Household Members", "Age", "Relationship"],
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
     "members": [
       {
         "Household Members": "William Handford",

@@ -24,7 +24,14 @@
     "yearString": "1871"
   },
   "relationshipToHead": "wife",
-  "householdArrayFields": ["name", "relationship", "gender", "age", "birthYear", "birthPlace"],
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
   "householdArray": [
     {
       "name": "John Forster",

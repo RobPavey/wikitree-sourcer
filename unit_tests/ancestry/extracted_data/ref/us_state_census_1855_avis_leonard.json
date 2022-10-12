@@ -21,7 +21,10 @@
     "Household Members": "Avis Leonard 69<br/>Nathaniel W Baker 41<br/>Almira Baker 40<br/>Almira L Baker 17<br/>Miliesa F Baker 15<br/>Mary E Baker 4"
   },
   "household": {
-    "headings": ["Name", "Age"],
+    "headings": [
+      "Name",
+      "Age"
+    ],
     "members": [
       {
         "Name": "Avis Leonard",

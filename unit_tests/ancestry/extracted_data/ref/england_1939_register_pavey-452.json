@@ -24,7 +24,10 @@
     "Household Members<br/>Age": "Mary E More 68<br/>Maisie C More 39"
   },
   "household": {
-    "headings": ["Household Members", "Age"],
+    "headings": [
+      "Household Members",
+      "Age"
+    ],
     "members": [
       {
         "Household Members": "Mary E More",

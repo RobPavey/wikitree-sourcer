@@ -21,7 +21,15 @@
     "placeString": "Toronto (east/est) (city/cité), Ontario, Canada"
   },
   "ageAtEvent": "45",
-  "householdArrayFields": ["name", "relationship", "maritalStatus", "gender", "age", "birthYear", "birthPlace"],
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
   "householdArray": [
     {
       "name": "James Mcdonald",

@@ -21,7 +21,11 @@
   },
   "ageAtEvent": "14",
   "relationshipToHead": "brother-in-law",
-  "householdArrayFields": ["name", "age", "relationship"],
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
   "householdArray": [
     {
       "name": "Walter John Salmon",

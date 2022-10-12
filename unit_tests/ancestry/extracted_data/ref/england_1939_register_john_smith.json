@@ -31,7 +31,10 @@
     "Inferred Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027085&indiv=try&viewrecord=1&r=an"
   },
   "household": {
-    "headings": ["Household Members", "Age"],
+    "headings": [
+      "Household Members",
+      "Age"
+    ],
     "members": [
       {
         "Household Members": "James Smith",

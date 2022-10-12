@@ -26,7 +26,10 @@
     "Household Members": "Ann Axland 23"
   },
   "household": {
-    "headings": ["Name", "Age"],
+    "headings": [
+      "Name",
+      "Age"
+    ],
     "members": [
       {
         "Name": "Ann Axland",

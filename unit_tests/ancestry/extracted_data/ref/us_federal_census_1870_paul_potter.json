@@ -30,7 +30,10 @@
     "Inferred Children": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=7288333&indiv=try&viewrecord=1&r=an"
   },
   "household": {
-    "headings": ["Household Members", "Age"],
+    "headings": [
+      "Household Members",
+      "Age"
+    ],
     "members": [
       {
         "Household Members": "Paul Potter",

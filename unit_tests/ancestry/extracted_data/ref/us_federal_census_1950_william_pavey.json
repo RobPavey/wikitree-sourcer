@@ -21,7 +21,11 @@
     "Household Members<br/>Age<br/>Relationship": "William Pavey 28 Head<br/>Martha Pavey 29 Wife<br/>Patricia Ann Pavey 5 Daughter"
   },
   "household": {
-    "headings": ["Household Members", "Age", "Relationship"],
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
     "members": [
       {
         "Household Members": "William Pavey",

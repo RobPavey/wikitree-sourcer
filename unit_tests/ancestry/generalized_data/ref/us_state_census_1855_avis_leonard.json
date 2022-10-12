@@ -20,7 +20,10 @@
     "placeString": "Canton, Norfolk, Massachusetts, USA"
   },
   "ageAtEvent": "69",
-  "householdArrayFields": ["name", "age"],
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
   "householdArray": [
     {
       "name": "Avis Leonard",

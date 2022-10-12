@@ -31,7 +31,10 @@
     "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=uki1891&indiv=try&h=11301718"
   },
   "household": {
-    "headings": ["Name", "Age"],
+    "headings": [
+      "Name",
+      "Age"
+    ],
     "members": [
       {
         "Name": "Harry A Pavey",

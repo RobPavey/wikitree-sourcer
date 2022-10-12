@@ -25,7 +25,10 @@
     "Household Members": "Mary F Hughes 58<br/>Agnes M Fay 23<br/>Mary Fay 2<br/>Thomas T Hughes 21<br/>William T Hughes 17<br/>Charles T Fay 25"
   },
   "household": {
-    "headings": ["Name", "Age"],
+    "headings": [
+      "Name",
+      "Age"
+    ],
     "members": [
       {
         "Name": "Mary F Hughes",

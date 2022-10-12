@@ -24,7 +24,10 @@
     "Household Members<br/>Age": "Jas Willson 47<br/>Katharine Willson 40<br/>Abner Willson 22<br/>John Willson 17<br/>Sam Willson 13<br/>Caroline Willson 12<br/>Nancy Willson 11<br/>Frances Willson 8<br/>Katharine Willson 4<br/>Cirus Willson 2"
   },
   "household": {
-    "headings": ["Household Members", "Age"],
+    "headings": [
+      "Household Members",
+      "Age"
+    ],
     "members": [
       {
         "Household Members": "Jas Willson",

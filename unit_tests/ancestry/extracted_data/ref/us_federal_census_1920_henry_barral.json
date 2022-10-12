@@ -32,7 +32,11 @@
     "Household Members<br/>Age<br/>Relationship": "Pio Barral 42 Head<br/>Wihlemena Barral 29 Wife<br/>Charlotte Barral 16 Daughter<br/>Henry P Barral 12 Son"
   },
   "household": {
-    "headings": ["Household Members", "Age", "Relationship"],
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
     "members": [
       {
         "Household Members": "Pio Barral",

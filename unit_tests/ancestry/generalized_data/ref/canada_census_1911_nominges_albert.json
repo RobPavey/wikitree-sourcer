@@ -19,7 +19,10 @@
   "ageAtEvent": "29",
   "maritalStatus": "married",
   "relationshipToHead": "head",
-  "householdArrayFields": ["name", "age"],
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
   "householdArray": [
     {
       "name": "Nominiges Albert",

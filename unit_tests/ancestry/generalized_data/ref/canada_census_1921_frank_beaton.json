@@ -24,7 +24,11 @@
   "ageAtEvent": "57",
   "maritalStatus": "married",
   "relationshipToHead": "head",
-  "householdArrayFields": ["name", "age", "relationship"],
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
   "householdArray": [
     {
       "name": "Frank W Beaton",

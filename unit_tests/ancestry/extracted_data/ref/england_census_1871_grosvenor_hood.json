@@ -26,7 +26,11 @@
     "Household Members<br/>Age<br/>Relationship": "Francis W Hood 32 Head<br/>Edith Hood 23 Wife<br/>Mabel Hood 4 Daughter<br/>Grosvenor Hood 2 Son<br/>Horace Hood 6/12 Son<br/>John Jackman 47 Servant<br/>Thomas Roberts 27 Servant<br/>Mary Cameron 43 Servant<br/>Mary A Yeomans 44 Servant<br/>Eliza L Locke 27 Servant<br/>E A Collett 25 Servant<br/>Amelia Whiles 19 Servant<br/>Anne H Fisher 23 Servant<br/>Jessie Ross 23 Servant"
   },
   "household": {
-    "headings": ["Household Members", "Age", "Relationship"],
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
     "members": [
       {
         "Household Members": "Francis W Hood",

@@ -28,7 +28,11 @@
     "Household Members<br/>Age<br/>Relationship": "Susanha Lago 28 Wife<br/>Emma Lago 5 Daughter<br/>John Lago 3 Son<br/>Waller Lago 3/12 Son"
   },
   "household": {
-    "headings": ["Household Members", "Age", "Relationship"],
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
     "members": [
       {
         "Household Members": "Susanha Lago",

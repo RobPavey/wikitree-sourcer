@@ -23,7 +23,11 @@
   },
   "ageAtEvent": "1/12",
   "relationshipToHead": "son",
-  "householdArrayFields": ["name", "age", "relationship"],
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
   "householdArray": [
     {
       "name": "Harry A Pavey",

@@ -18,7 +18,10 @@
   },
   "occupation": "Unpaid Domestic Duties",
   "relationshipToHead": "head",
-  "householdArrayFields": ["name", "age"],
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
   "householdArray": [
     {
       "name": "Mary E More",

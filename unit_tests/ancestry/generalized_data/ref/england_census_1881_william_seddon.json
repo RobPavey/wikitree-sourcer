@@ -25,7 +25,10 @@
   "occupation": "Pattern Maker (Artz)",
   "ageAtEvent": "15",
   "relationshipToHead": "son",
-  "householdArrayFields": ["name", "age"],
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
   "householdArray": [
     {
       "name": "George Seddon",

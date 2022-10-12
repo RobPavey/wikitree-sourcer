@@ -21,7 +21,15 @@
     "placeString": "District 3, Pulaski, Kentucky, United States"
   },
   "ageAtEvent": "12",
-  "householdArrayFields": ["name", "relationship", "maritalStatus", "gender", "age", "birthYear", "birthPlace"],
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
   "householdArray": [
     {
       "name": "William P Abbott",

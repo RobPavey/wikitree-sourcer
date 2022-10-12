@@ -51,7 +51,11 @@
     "Household Members<br/>Age<br/>Relationship": "Frank W Beaton 57 Head<br/>Emma S Beaton 56 Wife<br/>Margaret Beaton 21 Daughter<br/>Frank Beaton 16 Son<br/>Duncan Beaton 15 Son<br/>Frederick Beaton 13 Son<br/>William Beaton 11 Son"
   },
   "household": {
-    "headings": ["Household Members", "Age", "Relationship"],
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
     "members": [
       {
         "Household Members": "Frank W Beaton",

@@ -18,7 +18,10 @@
     "placeString": "29, Enfield, Middlesex, England"
   },
   "occupation": "Under School Age",
-  "householdArrayFields": ["name", "age"],
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
   "householdArray": [
     {
       "name": "James Smith",

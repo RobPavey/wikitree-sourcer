@@ -27,7 +27,11 @@
     "Household Members<br/>Age<br/>Relationship": "Paul Potter 56 Self (Head)<br/>Isabelle Potter 56 Wife<br/>Robert Potter 21 Son<br/>Sarah Potter 16 Daughter<br/>Virginia Bryant 29 Daughter<br/>Samuel Bryant 7 Grandson<br/>Ida Bryant 3 Granddaughter"
   },
   "household": {
-    "headings": ["Household Members", "Age", "Relationship"],
+    "headings": [
+      "Household Members",
+      "Age",
+      "Relationship"
+    ],
     "members": [
       {
         "Household Members": "Paul Potter",

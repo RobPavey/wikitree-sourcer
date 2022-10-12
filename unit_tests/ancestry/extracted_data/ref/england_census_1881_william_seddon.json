@@ -30,7 +30,10 @@
     "Household Members": "George Seddon 38<br/>Hannah Seddon 40<br/>Richard Seddon 17<br/>William Seddon 15<br/>Alice Seddon 8<br/>Mary Ann Seddon 5<br/>Mary Hensall 40"
   },
   "household": {
-    "headings": ["Name", "Age"],
+    "headings": [
+      "Name",
+      "Age"
+    ],
     "members": [
       {
         "Name": "George Seddon",

@@ -22,7 +22,15 @@
   "maritalStatus": "married",
   "personGender": "female",
   "occupation": "Private Means",
-  "householdArrayFields": ["name", "relationship", "maritalStatus", "gender", "age", "occupation", "birthPlace"],
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
   "householdArray": [
     {
       "name": "Mary Tarr",

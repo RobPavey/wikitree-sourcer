@@ -22,7 +22,13 @@
   },
   "occupation": "Unpaid Domestic Duties",
   "maritalStatus": "widowed",
-  "householdArrayFields": ["name", "maritalStatus", "gender", "birthDate", "occupation"],
+  "householdArrayFields": [
+    "name",
+    "maritalStatus",
+    "gender",
+    "birthDate",
+    "occupation"
+  ],
   "householdArray": [
     {
       "isSelected": true,

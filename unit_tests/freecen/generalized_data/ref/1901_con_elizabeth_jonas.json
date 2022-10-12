@@ -21,7 +21,15 @@
   "maritalStatus": "single",
   "personGender": "female",
   "occupation": "Cook Domestic",
-  "householdArrayFields": ["name", "relationship", "maritalStatus", "gender", "age", "occupation", "birthPlace"],
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
   "householdArray": [
     {
       "name": "William T Pethick",

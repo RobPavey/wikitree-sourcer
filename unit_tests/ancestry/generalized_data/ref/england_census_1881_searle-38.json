@@ -25,7 +25,10 @@
   "ageAtEvent": "33",
   "maritalStatus": "married",
   "relationshipToHead": "wife",
-  "householdArrayFields": ["name", "age"],
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
   "householdArray": [
     {
       "name": "John Risbry",

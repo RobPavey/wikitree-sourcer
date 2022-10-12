@@ -22,7 +22,10 @@
     "yearString": "1841"
   },
   "ageAtEvent": "23",
-  "householdArrayFields": ["name", "age"],
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
   "householdArray": [
     {
       "name": "Ann Axland",

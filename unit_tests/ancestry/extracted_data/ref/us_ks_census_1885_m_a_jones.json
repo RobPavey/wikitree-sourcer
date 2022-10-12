@@ -23,7 +23,10 @@
     "Household Member(s)<br/>Age": "R C Jones 35<br/>M A Jones 34<br/>Rosa Jones 13<br/>J E Jones 11<br/>J M Jones 9<br/>G M Jones 6m"
   },
   "household": {
-    "headings": ["Household Member(s)", "Age"],
+    "headings": [
+      "Household Member(s)",
+      "Age"
+    ],
     "members": [
       {
         "Household Member(s)": "R C Jones",

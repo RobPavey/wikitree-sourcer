@@ -22,7 +22,11 @@
   "ageAtEvent": "12",
   "maritalStatus": "single",
   "relationshipToHead": "son",
-  "householdArrayFields": ["name", "age", "relationship"],
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
   "householdArray": [
     {
       "name": "Pio Barral",
