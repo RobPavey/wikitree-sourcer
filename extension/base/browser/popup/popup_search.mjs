@@ -55,25 +55,23 @@ async function restorePopupSearchFilterState() {
 }
 
 async function doSearch(loadedModule, input) {
-  const result = loadedModule.buildSearchUrl(input)
+  const result = loadedModule.buildSearchUrl(input);
   var newURL = result.url;
   if (options.search_general_new_window) {
     chrome.windows.create({ url: newURL });
-  }
-  else {
+  } else {
     chrome.tabs.create({ url: newURL });
   }
   window.close();
 }
 
 function testFilterForDatesAndCountries(filter, startYear, endYear, countryArray) {
-
   //console.log("testFilterForDatesAndCountries, startYear is: " + startYear + ", endYear is: " + endYear);
   //console.log("testFilterForDatesAndCountries, filter is: ");
   //console.log(filter);
   //console.log("testFilterForDatesAndCountries, countryArray is: ");
   //console.log(countryArray);
-  
+
   if (filter.filterByDate) {
     if ((endYear && filter.startYear > endYear) || (startYear && filter.endYear < startYear)) {
       return false;
@@ -106,7 +104,6 @@ function testFilterForDatesAndCountries(filter, startYear, endYear, countryArray
 var registeredSearchMenuItemFunctions = [];
 
 function buildSortedMenuItemFunctions(optionName) {
-
   let functionList = [];
 
   for (let registeredFunction of registeredSearchMenuItemFunctions) {
@@ -117,13 +114,17 @@ function buildSortedMenuItemFunctions(optionName) {
 
     //console.log("buildSortedMenuItemFunctions: fullOptionName is: " + fullOptionName + ", optionValue is: " + optionValue);
 
-    if (typeof optionValue === 'undefined') {
+    if (typeof optionValue === "undefined") {
       console.log("buildSortedMenuItemFunctions: missing option value for: " + fullOptionName);
-      optionValue = 10000;  // don't exclude it - put at end of list
+      optionValue = 10000; // don't exclude it - put at end of list
     }
 
     if (optionValue > 0) {
-      functionList.push({siteName: siteName, menuItemFunction: menuItemFunction, priority: optionValue});
+      functionList.push({
+        siteName: siteName,
+        menuItemFunction: menuItemFunction,
+        priority: optionValue,
+      });
     }
   }
 
@@ -149,30 +150,25 @@ function buildSubMenuItemFunctions() {
 }
 
 function addSearchFilterMenuItem(menu, filter, numSitesExcludedByPriority, backFunction) {
-
   let filterText = "Filter: ";
 
   if (!filter.filterByDate && !filter.filterByCountry) {
     filterText += "None";
-  }
-  else {
+  } else {
     filterText += "Date: ";
     if (filter.filterByDate) {
       if (filter.startYear) {
         filterText += filter.startYear;
-      }
-      else {
+      } else {
         filterText += "unknown";
       }
       filterText += " - ";
       if (filter.endYear) {
         filterText += filter.endYear;
-      }
-      else {
+      } else {
         filterText += "unknown";
       }
-    }
-    else {
+    } else {
       filterText += "all dates";
     }
 
@@ -187,12 +183,10 @@ function addSearchFilterMenuItem(menu, filter, numSitesExcludedByPriority, backF
           filterText += country;
           addedCountry = true;
         }
-      } 
-      else {
+      } else {
         filterText += "unknown";
       }
-    }
-    else {
+    } else {
       filterText += "all countries";
     }
   }
@@ -211,7 +205,7 @@ function addSearchFilterMenuItem(menu, filter, numSitesExcludedByPriority, backF
 
   let button = document.createElement("button");
   button.className = "menuButton";
-  button.onclick = function(element) {
+  button.onclick = function (element) {
     setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, backFunction);
   };
   button.innerText = filterText;
@@ -221,7 +215,6 @@ function addSearchFilterMenuItem(menu, filter, numSitesExcludedByPriority, backF
 }
 
 function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, backFunction) {
-
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
@@ -233,7 +226,7 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
     filterByDateCheckboxElement.type = "checkbox";
     filterByDateCheckboxElement.className = "searchFilterCheckbox";
     filterByDateCheckboxElement.checked = filter.filterByDate;
-    filterByDateCheckboxElement.onclick = function() {
+    filterByDateCheckboxElement.onclick = function () {
       filter.filterByDate = this.checked;
       filterState.filterByDate = filter.filterByDate;
       savePopupSearchFilterState();
@@ -252,7 +245,7 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
     inputElement.type = "number";
     inputElement.className = "searchFilterYearInput";
     inputElement.value = filter.startYear;
-    inputElement.addEventListener('change', (event) => {
+    inputElement.addEventListener("change", (event) => {
       filter.startYear = event.target.value;
     });
     let labelTextNode = document.createTextNode("Start year: ");
@@ -268,7 +261,7 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
     inputElement.type = "number";
     inputElement.className = "searchFilterYearInput";
     inputElement.value = filter.endYear;
-    inputElement.addEventListener('change', (event) => {
+    inputElement.addEventListener("change", (event) => {
       filter.endYear = event.target.value;
     });
     let labelTextNode = document.createTextNode("End year: ");
@@ -284,7 +277,7 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
     filterByCountryCheckboxElement.type = "checkbox";
     filterByCountryCheckboxElement.className = "searchFilterCheckbox";
     filterByCountryCheckboxElement.checked = filter.filterByCountry;
-    filterByCountryCheckboxElement.onclick = function() {
+    filterByCountryCheckboxElement.onclick = function () {
       filter.filterByCountry = this.checked;
       filterState.filterByCountry = filter.filterByCountry;
       savePopupSearchFilterState();
@@ -311,7 +304,7 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
       countriesString += country;
     }
     inputElement.value = countriesString;
-    inputElement.addEventListener('change', (event) => {
+    inputElement.addEventListener("change", (event) => {
       filter.countryArray = [];
       let string = event.target.value;
       let commaIndex = string.indexOf(",");
@@ -320,7 +313,7 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
         if (country) {
           filter.countryArray.push(country);
         }
-        string = string.substring(commaIndex+1).trim();
+        string = string.substring(commaIndex + 1).trim();
         commaIndex = string.indexOf(",");
       }
       if (string) {
@@ -359,7 +352,7 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
     for (let registeredFunction of registeredSearchMenuItemFunctions) {
       let siteName = registeredFunction.siteName;
       let priorityOptionName = "search_" + siteName + "_popup_priorityOnSubMenu";
-  
+
       if (options[priorityOptionName] <= 0) {
         addBreak(excludedSitesLabelElement);
         let excludedSiteElement = document.createElement("label");
@@ -378,7 +371,9 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
 
 function setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList) {
   //console.log("setupAllSitesSubmenu called, subMenuFunctionList.length = " + subMenuFunctionList.length);
-  let backToHereFunction = function() { setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList) };
+  let backToHereFunction = function () {
+    setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList);
+  };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
@@ -409,7 +404,6 @@ function setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList) {
 }
 
 async function addSearchMenus(menu, data, backFunction, excludeSite) {
-
   await restorePopupSearchFilterState();
 
   let itemsAdded = 0;
@@ -457,20 +451,18 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
 
   if (itemsAdded < registeredSearchMenuItemFunctions.length) {
     // add the "All search sites.." submenu item
-    addMenuItem(menu, subMenuText, function(element) {
+    addMenuItem(menu, subMenuText, function (element) {
       setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList);
     });
   }
 }
 
 function registerSearchMenuItemFunction(siteName, siteTitle, menuItemFunction) {
-  registeredSearchMenuItemFunctions.push( {
+  registeredSearchMenuItemFunctions.push({
     siteName: siteName,
     siteTitle: siteTitle,
-    menuItemFunction: menuItemFunction
+    menuItemFunction: menuItemFunction,
   });
 }
 
-export {
-  doSearch, addSearchMenus, registerSearchMenuItemFunction, testFilterForDatesAndCountries
-};
+export { doSearch, addSearchMenus, registerSearchMenuItemFunction, testFilterForDatesAndCountries };

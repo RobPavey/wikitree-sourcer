@@ -67,8 +67,7 @@ class TableBuilder {
       gender: function (gd, value) {
         if (value.toLowerCase() == "male") {
           return "M";
-        }
-        else if (value.toLowerCase() == "female") {
+        } else if (value.toLowerCase() == "female") {
           return "F";
         }
         return value;
@@ -81,7 +80,7 @@ class TableBuilder {
         if (value == "single") {
           value = gd.getTermForUnmarried();
         }
-  
+
         value = WTS_String.toInitialCaps(value);
         return value;
       },
@@ -108,9 +107,7 @@ class TableBuilder {
     this.personArray = personArray;
   }
 
-
   getTableString() {
-
     let tableString = "";
 
     if (!this.fieldNames || this.fieldNames.length < 1 || !this.personArray || this.personArray.length < 1) {
@@ -150,13 +147,11 @@ class TableBuilder {
           if (firstCol) {
             if (optHeading == "boldCentered" || optHeading == "bgGreenBoldCentered") {
               tableString += `! `;
-            }
-            else {
+            } else {
               tableString += `| `;
             }
             firstCol = false;
-          }
-          else {
+          } else {
             tableString += ` || `;
           }
           let title = this.getTitleForFieldName(fieldName);
@@ -178,20 +173,21 @@ class TableBuilder {
             if (firstCol) {
               tableString += `| ''Closed Record''`;
               firstCol = false;
-            }
-            else {
+            } else {
               tableString += ` || `;
             }
           }
         }
-      }
-      else {
-        if (person.isSelected &&
-          (optSelected == "bgYellowRow" || optSelected == "bgYellowBoldRow"
-           || optSelected == "bgYellowBoldName" || optSelected == "bgYellowBoldCenteredRow")) {
-            tableString += `|- bgcolor=` + optSelectedColor + `\n`;
-        }
-        else if (!firstRow) {
+      } else {
+        if (
+          person.isSelected &&
+          (optSelected == "bgYellowRow" ||
+            optSelected == "bgYellowBoldRow" ||
+            optSelected == "bgYellowBoldName" ||
+            optSelected == "bgYellowBoldCenteredRow")
+        ) {
+          tableString += `|- bgcolor=` + optSelectedColor + `\n`;
+        } else if (!firstRow) {
           tableString += `|-\n`;
         }
 
@@ -201,12 +197,10 @@ class TableBuilder {
             if (firstCol) {
               if (person.isSelected && (optSelected == "boldCenteredRow" || optSelected == "bgYellowBoldCenteredRow")) {
                 tableString += `! `;
-              }
-              else {
+              } else {
                 tableString += `| `;
               }
-            }
-            else {
+            } else {
               tableString += ` || `;
             }
             let value = this.getFormattedValueForPerson(person, fieldName);
@@ -215,16 +209,14 @@ class TableBuilder {
               if (person.isSelected) {
                 if (firstCol && (optSelected == "boldName" || optSelected == "bgYellowBoldName")) {
                   useBoldQuotes = true;
-                }
-                else if (optSelected == "boldRow" || optSelected == "bgYellowBoldRow") {
+                } else if (optSelected == "boldRow" || optSelected == "bgYellowBoldRow") {
                   useBoldQuotes = true;
                 }
               }
 
               if (useBoldQuotes) {
                 tableString += "'''" + value + "'''";
-              }
-              else {
+              } else {
                 tableString += value;
               }
             }
@@ -242,7 +234,6 @@ class TableBuilder {
   }
 
   getListString() {
-
     let listString = "";
 
     if (!this.fieldNames || this.fieldNames.length < 1 || !this.personArray || this.personArray.length < 1) {
@@ -278,15 +269,13 @@ class TableBuilder {
 
       if (person.isClosed) {
         listString += "''Closed Record''";
-      }
-      else {
+      } else {
         let firstCol = true;
         for (let fieldName of this.fieldNames) {
           if (this.includeFieldColumn(fieldName)) {
             if (firstCol) {
               firstCol = false;
-            }
-            else {
+            } else {
               listString += `    `;
             }
             let value = this.getFormattedValueForPerson(person, fieldName);
@@ -302,7 +291,6 @@ class TableBuilder {
   }
 
   getSentenceString() {
-
     let sentenceString = "";
 
     // " John Smith 32, wife Jane Smith 30, son Leslie Smith 8, daughter Frances Smith 6, hired hand James Jones 20."
@@ -314,11 +302,9 @@ class TableBuilder {
     let preampleOpt = this.options.table_sentence_preamble;
     if (preampleOpt == "included") {
       sentenceString += "The household included";
-    }
-    else if (preampleOpt == "consisted") {
+    } else if (preampleOpt == "consisted") {
       sentenceString += "The household consisted of";
-    }
-    else if (preampleOpt == "enumerated") {
+    } else if (preampleOpt == "enumerated") {
       sentenceString += "The household was enumerated as";
     }
 
@@ -329,8 +315,7 @@ class TableBuilder {
 
       if (person.isClosed) {
         sentenceString += "Closed Record";
-      }
-      else {
+      } else {
         if (this.options.table_sentence_includeRelationship) {
           let relationship = person.relationship;
           if (relationship && relationship != "head") {
@@ -358,7 +343,7 @@ class TableBuilder {
         }
       }
 
-      if (personIndex == this.personArray.length-2) {
+      if (personIndex == this.personArray.length - 2) {
         // this is the punctuation before the final person
         if (lastPunctOpt == "comma" || lastPunctOpt == "commaAnd") {
           sentenceString += `,`;
@@ -366,11 +351,9 @@ class TableBuilder {
         if (lastPunctOpt == "and" || lastPunctOpt == "commaAnd") {
           sentenceString += ` and`;
         }
-      }
-      else if (personIndex == this.personArray.length-1) {
+      } else if (personIndex == this.personArray.length - 1) {
         // this is the final person, no punctuation needed
-      }
-      else {
+      } else {
         sentenceString += `,`;
       }
     }
@@ -381,7 +364,6 @@ class TableBuilder {
   }
 
   getString() {
-
     let tableString = "";
 
     if (this.options.table_general_format == "table") {
@@ -396,7 +378,6 @@ class TableBuilder {
 }
 
 function buildHouseholdTable(input) {
-
   //console.log("buildHouseholdTable: input is")
   //console.log(input)
 
@@ -436,16 +417,13 @@ function buildHouseholdTable(input) {
     if (captionOption == "titlePlace") {
       useCollectionTitle = true;
       includeCountryInPlace = true;
-    }
-    else if (captionOption == "titlePlaceNoCountry") {
+    } else if (captionOption == "titlePlaceNoCountry") {
       useCollectionTitle = true;
       includeCountryInPlace = false;
-    }
-    else if (captionOption == "datePlace") {
+    } else if (captionOption == "datePlace") {
       useCollectionTitle = false;
       includeCountryInPlace = true;
-    }
-    else if (captionOption == "datePlaceNoCountry") {
+    } else if (captionOption == "datePlaceNoCountry") {
       useCollectionTitle = false;
       includeCountryInPlace = false;
     }
@@ -459,24 +437,21 @@ function buildHouseholdTable(input) {
 
     if (useCollectionTitle) {
       if (options.table_table_caption != "none")
-      if (collection) {
-        captionPart1 = collection.title;
-      }
+        if (collection) {
+          captionPart1 = collection.title;
+        }
 
       if (!captionPart1) {
         if (gd.recordType == RT.Census) {
           captionPart1 += gd.inferEventYear() + " Census";
-        }
-        else {
+        } else {
           captionPart1 += gd.inferEventYear();
         }
       }
-    }
-    else {
+    } else {
       if (collection && collection.dates && collection.dates.exactDate) {
         captionPart1 = collection.dates.exactDate;
-      }
-      else {
+      } else {
         captionPart1 = gd.inferEventDate();
       }
     }
@@ -491,11 +466,9 @@ function buildHouseholdTable(input) {
 
     if (captionPart1 && captionPart2) {
       builder.caption = captionPart1 + ": " + captionPart2;
-    }
-    else if (captionPart1) {
+    } else if (captionPart1) {
       builder.caption = captionPart1;
-    }
-    else if (captionPart2) {
+    } else if (captionPart2) {
       builder.caption = captionPart2;
     }
 
@@ -512,7 +485,7 @@ function buildHouseholdTable(input) {
 
   var tableObject = {
     tableString: tableString,
-  }
+  };
 
   return tableObject;
 }

@@ -27,14 +27,13 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 //import { FBMD } from "./examplesite_utils.mjs";
 
 function buildExamplesiteUrl(data, builder) {
-
   // could provide option to use a search style URL but don't see any reason to so far
   return data.citationUrl;
 }
 
 function getCorrectlyCasedName(name, options) {
   if (options.citation_examplesite_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name)
+    name = WTS_String.toInitialCaps(name);
   }
   return name;
 }
@@ -55,11 +54,9 @@ function getLastName(data, options) {
 }
 
 function buildCoreCitation(data, runDate, builder) {
-
   let options = builder.getOptions();
   builder.sourceTitle = "";
   builder.sourceReference = data.sourceCitation;
-
 
   var examplesiteUrl = buildExamplesiteUrl(data, builder);
 
@@ -76,13 +73,11 @@ function buildCoreCitation(data, runDate, builder) {
       }
       dataString += mmn + ")";
     }
-  }
-  else if (data.eventType == "death") {
+  } else if (data.eventType == "death") {
     if (data.ageAtDeath) {
       dataString += " (Age at death: ";
       dataString += data.ageAtDeath + ")";
-    }
-    else if (data.birthDate) {
+    } else if (data.birthDate) {
       dataString += " (Date of birth: ";
       dataString += data.birthDate + ")";
     }
@@ -93,8 +88,7 @@ function buildCoreCitation(data, runDate, builder) {
 
   if (options.citation_general_addBreaksWithinBody) {
     dataString += "<br/>";
-  }
-  else {
+  } else {
     dataString += " ";
   }
   if (options.citation_general_addNewlinesWithinBody) {
@@ -109,12 +103,11 @@ function buildCoreCitation(data, runDate, builder) {
 }
 
 function buildCitation(input) {
-
   const data = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
 
@@ -147,7 +140,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

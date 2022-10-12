@@ -45,7 +45,8 @@ const regressionData = [
     caseName: "ellacott-59_read",
     url: "https://www.wikitree.com/wiki/Ellacott-59",
   },
-  { // Scotland example
+  {
+    // Scotland example
     caseName: "gow-822_read",
     url: "https://www.wikitree.com/wiki/Gow-822",
   },
@@ -101,7 +102,8 @@ const regressionData = [
     caseName: "pavey-507_private",
     url: "https://www.wikitree.com/wiki/Pavey-507",
   },
-  { // scotland, forenames over 15 chars
+  {
+    // scotland, forenames over 15 chars
     caseName: "peffers-331_read",
     url: "https://www.wikitree.com/wiki/Peffers-331",
   },

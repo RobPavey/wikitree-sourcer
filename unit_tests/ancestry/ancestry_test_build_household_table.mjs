@@ -41,7 +41,7 @@ const regressionData = [
     caseName: "england_census_1911_more-785",
     optionVariants: [
       {
-        variantName: "citationInCaption", 
+        variantName: "citationInCaption",
         optionOverrides: {
           table_general_autoGenerate: "citationInTableCaption",
           table_table_caption: "titlePlace",

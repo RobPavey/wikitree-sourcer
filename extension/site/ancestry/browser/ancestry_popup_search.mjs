@@ -31,11 +31,9 @@ import {
   addMenuItem,
   beginMainMenu,
   endMainMenu,
-  doAsyncActionWithCatch
+  doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import {
-  setupSearchWithParametersSubMenu,
-} from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 
@@ -47,14 +45,18 @@ import { options } from "/base/browser/options/options_loader.mjs";
 
 async function ancestryDoSearch(input) {
   // doesn't need dataCache, dataObj or preloaded modules (because not writing to clipboard)
-  doAsyncActionWithCatch("Ancestry Search", input, async function() {
+  doAsyncActionWithCatch("Ancestry Search", input, async function () {
     let loadedModule = await import(`../core/ancestry_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
 }
 
 async function ancestrySearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+  const input = {
+    typeOfSearch: typeOfSearch,
+    generalizedData: generalizedData,
+    options: options,
+  };
   ancestryDoSearch(input);
 }
 
@@ -92,8 +94,10 @@ function addAncestryDefaultSearchMenuItem(menu, data, backFunction, filter) {
   if (!hasBirthOrDeathYear(data)) {
     return false;
   }
-  addMenuItemWithSubMenu(menu, "Search Ancestry",
-    function(element) {
+  addMenuItemWithSubMenu(
+    menu,
+    "Search Ancestry",
+    function (element) {
       ancestrySearch(data.generalizedData, "");
     },
     function () {
@@ -104,25 +108,25 @@ function addAncestryDefaultSearchMenuItem(menu, data, backFunction, filter) {
 }
 
 async function addAncestrySameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "ancestry", function(element) {
+  await addSameRecordMenuItem(menu, data, "ancestry", function (element) {
     ancestrySearch(data.generalizedData, "SameCollection");
   });
 }
 
 function addAncestrySearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function(element) {
+  addMenuItem(menu, "Search a specific collection", function (element) {
     setupSearchCollectionsSubMenu(data, "ancestry", ancestrySearchCollection, backFunction);
   });
 }
 
 function addAncestryTreesMenuItem(menu, data) {
-  addMenuItem(menu, "Search family trees", function(element) {
+  addMenuItem(menu, "Search family trees", function (element) {
     ancestrySearch(data.generalizedData, "FamilyTree");
   });
 }
 
 function addAncestrySearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function(element) {
+  addMenuItem(menu, "Search with specified parameters", function (element) {
     setupAncestrySearchWithParametersSubMenu(data, backFunction);
   });
 }
@@ -132,8 +136,9 @@ function addAncestrySearchWithParametersMenuItem(menu, data, backFunction) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupAncestrySearchSubMenu(data, backFunction) {
-
-  let backToHereFunction = function() { setupAncestrySearchSubMenu(data, backFunction) };
+  let backToHereFunction = function () {
+    setupAncestrySearchSubMenu(data, backFunction);
+  };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
@@ -156,4 +161,3 @@ async function setupAncestrySearchWithParametersSubMenu(data, backFunction) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 registerSearchMenuItemFunction("ancestry", "Ancestry", addAncestryDefaultSearchMenuItem);
-

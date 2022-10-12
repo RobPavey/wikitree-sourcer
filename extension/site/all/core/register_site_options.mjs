@@ -36,4 +36,4 @@ import "../../freereg/core/freereg_options.mjs";
 import "../../gro/core/gro_options.mjs";
 import "../../scotp/core/scotp_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
-import "../../np/core/np_options.mjs"
+import "../../np/core/np_options.mjs";

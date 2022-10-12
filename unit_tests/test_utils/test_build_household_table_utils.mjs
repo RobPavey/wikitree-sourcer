@@ -22,19 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { writeTestOutputFile, readRefFile, readInputFile, readFile, getRefFilePath, getTestFilePath } from "../test_utils/ref_file_utils.mjs";
+import {
+  writeTestOutputFile,
+  readRefFile,
+  readInputFile,
+  readFile,
+  getRefFilePath,
+  getTestFilePath,
+} from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { deepObjectEquals } from "../test_utils/compare_result_utils.mjs";
 import { GeneralizedData } from "../../extension/base/core/generalize_data_utils.mjs";
 
 function testEnabled(parameters, testName) {
-  return (parameters.testName == "" || parameters.testName == testName);
+  return parameters.testName == "" || parameters.testName == testName;
 }
 
 // The regressionData passed in must be an array of objects.
 // Each object having the keys: "PageFile" and "extractedData"
-async function runBuildHouseholdTableTests(siteName, buildTableFunction, buildCitationFunction, regressionData, testManager, optionVariants = undefined) {
-
+async function runBuildHouseholdTableTests(
+  siteName,
+  buildTableFunction,
+  buildCitationFunction,
+  regressionData,
+  testManager,
+  optionVariants = undefined
+) {
   if (!testEnabled(testManager.parameters, "table")) {
     return;
   }
@@ -46,7 +59,6 @@ async function runBuildHouseholdTableTests(siteName, buildTableFunction, buildCi
   let logger = new LocalErrorLogger(testManager.results, testName);
 
   for (var testData of regressionData) {
-
     if (testManager.parameters.testCaseName != "" && testManager.parameters.testCaseName != testData.caseName) {
       continue;
     }
@@ -67,30 +79,29 @@ async function runBuildHouseholdTableTests(siteName, buildTableFunction, buildCi
     let userOptions = testManager.options;
     if (testData.userOptions) {
       // use spread operator to merge the default options and the ones from testData
-      userOptions = { ...userOptions, ...testData.userOptions};
+      userOptions = { ...userOptions, ...testData.userOptions };
     }
 
     // to save setting the run date on every test case
     if (!testData.runDate) {
       testData.runDate = new Date("6 May 2021");
     }
-    
+
     let input = {
       extractedData: extractedData,
       generalizedData: generalizedData,
-      runDate: testData.runDate,  // only needed if citation used in caption
+      runDate: testData.runDate, // only needed if citation used in caption
       options: userOptions,
     };
 
-    let result = {};  // this is an object containing all the types
+    let result = {}; // this is an object containing all the types
 
     let finalOptionVariants = [];
     if (optionVariants) {
       for (let variant of optionVariants) {
         finalOptionVariants.push(variant);
       }
-    }
-    else {
+    } else {
       finalOptionVariants.push({ variantName: "std", optionOverrides: {} });
     }
     // add any option variants specific to this test case
@@ -102,7 +113,7 @@ async function runBuildHouseholdTableTests(siteName, buildTableFunction, buildCi
 
     for (let variant of finalOptionVariants) {
       // use spread operator to merge the base options and the ones from the variant
-      input.options = { ...userOptions, ...variant.optionOverrides};
+      input.options = { ...userOptions, ...variant.optionOverrides };
       try {
         // if the option to include the citation in the caption is set then we need to generate the citation
         if (input.options.table_general_autoGenerate == "citationInTableCaption") {
@@ -111,9 +122,9 @@ async function runBuildHouseholdTableTests(siteName, buildTableFunction, buildCi
         }
 
         let name = variant.variantName;
-        result[name] = buildTableFunction(input)
+        result[name] = buildTableFunction(input);
       } catch (e) {
-        console.log('Error:', e.stack);
+        console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
         continue;
       }
@@ -127,13 +138,13 @@ async function runBuildHouseholdTableTests(siteName, buildTableFunction, buildCi
     }
 
     testManager.results.totalTestsRun++;
-    
+
     // read in the reference result
     let refObject = readRefFile(result, siteName, resultDir, testData, logger);
     if (!refObject) {
       continue;
     }
-    
+
     let equal = deepObjectEquals(result, refObject);
     if (!equal) {
       console.log("Result differs from reference. Result is:");
@@ -141,13 +152,12 @@ async function runBuildHouseholdTableTests(siteName, buildTableFunction, buildCi
       let refFile = getRefFilePath(siteName, resultDir, testData);
       let testFile = getTestFilePath(siteName, resultDir, testData);
       logger.logError(testData, "Result differs from reference", refFile, testFile);
-    } 
+    }
   }
 
   if (logger.numFailedTests > 0) {
     console.log("Test failed (" + testName + "): " + logger.numFailedTests + " cases failed.");
-  }
-  else {
+  } else {
     console.log("Test passed (" + testName + ").");
   }
 }

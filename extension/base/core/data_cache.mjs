@@ -25,55 +25,53 @@ SOFTWARE.
 import { GeneralizedData } from "./generalize_data_utils.mjs";
 
 const DataCache = {
-
-  getLcFirstAndLastNameFromGeneralizedData: function(data, useLnab) {
+  getLcFirstAndLastNameFromGeneralizedData: function (data, useLnab) {
     let firstNameMatch = undefined;
     let firstName = data.inferFirstName();
     if (firstName) {
       firstName = firstName.toLowerCase();
     }
-  
-    let lastName = (useLnab) ? data.lastNameAtBirth : data.lastNameAtDeath;
+
+    let lastName = useLnab ? data.lastNameAtBirth : data.lastNameAtDeath;
     if (!lastName && data.name) {
       lastName = data.name.inferLastName();
     }
-  
+
     if (lastName) {
       lastName = lastName.toLowerCase();
     }
-  
+
     return { firstName: firstName, lastName: lastName };
   },
-  
-  findClosestWikiTreeProfilePrioritizingFirstName: function(generalizedData, dataCache, useLnab) {
 
+  findClosestWikiTreeProfilePrioritizingFirstName: function (generalizedData, dataCache, useLnab) {
     let result = undefined;
-  
+
     if (dataCache && dataCache.wikiTreeProfileCache) {
       let firstNameMatch = undefined;
-  
+
       let names = DataCache.getLcFirstAndLastNameFromGeneralizedData(generalizedData, useLnab);
-  
+
       for (let entry of dataCache.wikiTreeProfileCache.items) {
         let data = GeneralizedData.createFromPlainObject(entry.generalizedData);
         let dataNames = DataCache.getLcFirstAndLastNameFromGeneralizedData(data, useLnab);
-  
+
         if (dataNames.firstName == names.firstName) {
           if (dataNames.lastName == names.lastName) {
             return entry;
           }
-  
+
           if (!firstNameMatch) {
             firstNameMatch = entry;
           }
         }
       }
-  
+
       result = firstNameMatch;
     }
-  
+
     return result;
   },
-}
+};
 
 export { DataCache };

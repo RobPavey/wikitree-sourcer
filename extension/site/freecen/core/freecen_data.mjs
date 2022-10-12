@@ -23,49 +23,45 @@ SOFTWARE.
 */
 
 const collections = [
-  { value: "all", text: "All Censuses", },
-  { value: "1841", text: "1841 England, Wales & Scotland Census", },
-  { value: "1851", text: "1851 England, Wales & Scotland Census", },
-  { value: "1861", text: "1861 England, Wales & Scotland Census", },
-  { value: "1871", text: "1871 England, Wales & Scotland Census", },
-  { value: "1881", text: "1881 England, Wales & Scotland Census", },
-  { value: "1891", text: "1891 England, Wales & Scotland Census", },
-  { value: "1901", text: "1901 England, Wales & Scotland Census", },
-  { value: "1911", text: "1911 England & Wales Census", },
+  { value: "all", text: "All Censuses" },
+  { value: "1841", text: "1841 England, Wales & Scotland Census" },
+  { value: "1851", text: "1851 England, Wales & Scotland Census" },
+  { value: "1861", text: "1861 England, Wales & Scotland Census" },
+  { value: "1871", text: "1871 England, Wales & Scotland Census" },
+  { value: "1881", text: "1881 England, Wales & Scotland Census" },
+  { value: "1891", text: "1891 England, Wales & Scotland Census" },
+  { value: "1901", text: "1901 England, Wales & Scotland Census" },
+  { value: "1911", text: "1911 England & Wales Census" },
 ];
 
 const FreecenData = {
-
-  includeCategories : function(generalizedData, parameters) {
+  includeCategories: function (generalizedData, parameters) {
     return false;
   },
 
-  includeSubcategories : function(generalizedData, parameters) {
+  includeSubcategories: function (generalizedData, parameters) {
     return false;
   },
 
-  includeCollections : function(generalizedData, parameters) {
+  includeCollections: function (generalizedData, parameters) {
     return true;
   },
 
-  includeSpouses : function(generalizedData, parameters) {
+  includeSpouses: function (generalizedData, parameters) {
     return false;
   },
 
-  includeParents : function(generalizedData, parameters) {
+  includeParents: function (generalizedData, parameters) {
     return false;
   },
 
-  getCollections : function(generalizedData, parameters, options) {
+  getCollections: function (generalizedData, parameters, options) {
     return collections;
   },
 
-  setDefaultSearchParameters: function(generalizedData, parameters, options) {
-  },
+  setDefaultSearchParameters: function (generalizedData, parameters, options) {},
 
-  updateParametersOnCollectionChange: function(generalizedData, parameters, options) {
-  },
-
-}
+  updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
+};
 
 export { FreecenData };

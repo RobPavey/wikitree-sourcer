@@ -33,7 +33,6 @@ function cleanText(inputText) {
 }
 
 function getRecordDataValueForKeys(result, keys) {
-
   for (let key of keys) {
     let value = result.recordData[key];
     if (value) {
@@ -43,23 +42,19 @@ function getRecordDataValueForKeys(result, keys) {
 }
 
 function buildFullName(result, forenameKeys, surnameKeys) {
-
   let forename = getRecordDataValueForKeys(result, forenameKeys);
   let surname = getRecordDataValueForKeys(result, surnameKeys);
 
   if (forename && surname) {
     return forename + " " + surname;
-  }
-  else if (surname) {
+  } else if (surname) {
     return surname;
-  }
-  else if (forename) {
+  } else if (forename) {
     return forename;
   }
 }
 
 function convertTableToObjectProperties(tableNode, tableObject) {
-
   let headerNodes = tableNode.querySelectorAll("thead > tr > th");
 
   // Not sure if this ever happens - it does on FreeCen
@@ -97,9 +92,7 @@ function convertTableToObjectProperties(tableNode, tableObject) {
 }
 
 function extractData(document, url) {
-
-  var result = {
-  };
+  var result = {};
   result.url = url;
 
   result.success = false;

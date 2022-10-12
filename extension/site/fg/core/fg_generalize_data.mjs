@@ -26,10 +26,9 @@ import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_d
 import { RT } from "../../../base/core/record_type.mjs";
 
 function generalizeData(input) {
-
   let data = input.extractedData;
 
-  let result = new GeneralizedData;
+  let result = new GeneralizedData();
 
   result.sourceOfData = "fg";
 
@@ -57,7 +56,7 @@ function generalizeData(input) {
   if (data.ageAtDeath) {
     result.ageAtDeath = data.ageAtDeath;
   }
-  
+
   result.setBirthDate(data.birthDate);
   result.setBirthPlace(data.birthPlace);
 

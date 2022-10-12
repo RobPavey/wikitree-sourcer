@@ -41,19 +41,19 @@ const searchOptionsGroup = {
       type: "checkbox",
       label: "Include first name in search",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "includeMiddleName",
       type: "checkbox",
       label: "Include middle name in search",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "includeMaidenName",
       type: "checkbox",
       label: "Include matches with a memorial's maiden name in search",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "birthYearExactness",
       type: "select",
@@ -69,7 +69,7 @@ const searchOptionsGroup = {
         { value: "25", text: "+/- 25 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
     {
       optionName: "deathYearExactness",
       type: "select",
@@ -85,9 +85,9 @@ const searchOptionsGroup = {
         { value: "25", text: "+/- 25 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
   ],
-}
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -100,37 +100,43 @@ const citationOptionsGroup = {
       type: "checkbox",
       label: "Include an indication of whether there is an image or not",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "includePlot",
       type: "checkbox",
       label: "Include the burial plot details if available",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "includeMaintainer",
       type: "checkbox",
       label: "Include the maintainer in the citation",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "includeInscription",
       type: "checkbox",
       label: "Include the inscription in the citation if available",
       defaultValue: false,
       unitTestValue: true,
-    },  
+    },
     {
       optionName: "italicsInName",
       type: "select",
       label: "If the name has a part in italics (usually maiden name)",
       values: [
         { value: "omit", text: "Omit that part of name from citation" },
-        { value: "italic", text: "Put that part of name in italics in citation" },
-        { value: "plain", text: "Make that part of the name plain text in citation" },
+        {
+          value: "italic",
+          text: "Put that part of name in italics in citation",
+        },
+        {
+          value: "plain",
+          text: "Make that part of the name plain text in citation",
+        },
       ],
       defaultValue: "italic",
-    },  
+    },
   ],
 };
 

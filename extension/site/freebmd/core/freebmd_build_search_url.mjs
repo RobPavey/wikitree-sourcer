@@ -27,14 +27,12 @@ import { RC } from "../../../base/core/record_collections.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { WTS_Date } from "../../../base/core/wts_date.mjs";
 
-
 function addNumToYearString(yearString, num) {
   let yearNum = WTS_Date.getYearNumFromYearString(yearString);
   if (yearNum) {
     yearNum += num;
     return yearNum.toString();
-  }
-  else {
+  } else {
     return yearString;
   }
 }
@@ -44,8 +42,7 @@ function subtractNumFromYearString(yearString, num) {
   if (yearNum) {
     yearNum -= num;
     return yearNum.toString();
-  }
-  else {
+  } else {
     return yearString;
   }
 }
@@ -55,7 +52,6 @@ const maxFreebmdYear = 1992;
 const minFreebmdQuarter = 3;
 
 function constrainYear(yearString) {
-  
   if (!yearString) {
     return yearString;
   }
@@ -64,19 +60,16 @@ function constrainYear(yearString) {
   if (yearNum) {
     if (yearNum < minFreebmdYear) {
       yearNum = minFreebmdYear;
-    }
-    else if (yearNum > maxFreebmdYear) {
+    } else if (yearNum > maxFreebmdYear) {
       yearNum = maxFreebmdYear;
     }
     return yearNum.toString();
-  }
-  else {
+  } else {
     return yearString;
   }
 }
 
 function constrainQuarter(yearString, quarterString) {
-  
   if (!yearString || !quarterString) {
     return quarterString;
   }
@@ -88,8 +81,7 @@ function constrainQuarter(yearString, quarterString) {
       quarterNum = minFreebmdQuarter;
     }
     return quarterNum.toString();
-  }
-  else {
+  } else {
     return quarterString;
   }
 }
@@ -102,7 +94,6 @@ function constrainYears(dates) {
 }
 
 function addAppropriateSurname(data, type, builder) {
-
   let lastName = data.lastNameAtBirth;
   if (type == "deaths" || !lastName) {
     lastName = data.inferLastNameAtDeath();
@@ -127,9 +118,7 @@ function isInYearRange(rangeStart, rangeEnd, dataStart, dataEnd) {
   return true;
 }
 
-
 function isMiddleNameLikelyAnInitial(dates, type) {
-
   let startYearNum = WTS_Date.getYearNumFromYearString(dates.startYear);
   let endYearNum = WTS_Date.getYearNumFromYearString(dates.endYear);
 
@@ -141,21 +130,18 @@ function isMiddleNameLikelyAnInitial(dates, type) {
   }
 
   if (startYearNum > endYearNum) {
-    endYearNum = startYearNum;  // should never happen but just in case
+    endYearNum = startYearNum; // should never happen but just in case
   }
 
   let useInitial = false;
 
   if (isInYearRange(startYearNum, endYearNum, 1866, 1866)) {
     useInitial = true;
-  }
-  else if (type == "births" && isInYearRange(startYearNum, endYearNum, 1910, 1965)) {
+  } else if (type == "births" && isInYearRange(startYearNum, endYearNum, 1910, 1965)) {
     useInitial = true;
-  }
-  else if (type == "marriages" && isInYearRange(startYearNum, endYearNum, 1910, 1983)) {
+  } else if (type == "marriages" && isInYearRange(startYearNum, endYearNum, 1910, 1983)) {
     useInitial = true;
-  }
-  else if (type == "deaths" && isInYearRange(startYearNum, endYearNum, 1910, 1969)) {
+  } else if (type == "deaths" && isInYearRange(startYearNum, endYearNum, 1910, 1969)) {
     useInitial = true;
   }
 
@@ -180,9 +166,7 @@ function addAppropriateGivenNames(data, dates, type, builder) {
   builder.addGivenNames(givenNames);
 }
 
-
 function includeMothersName(dates, mothersMaidenName) {
-
   let yearNum = WTS_Date.getYearNumFromYearString(dates.startYear);
   if (!yearNum) {
     return false;
@@ -196,29 +180,27 @@ function includeMothersName(dates, mothersMaidenName) {
 }
 
 function includeSpouseNameIfValidThruDateRange(dates, data, builder) {
-
   // although spouse name were not recorded until 1911 the FreeBMD search will
   // check the name you give againt other on the page.
   // So for now we always include the surname
 
   //if (dates.startYear > 1911) {
-    if (data.spouses && data.spouses.length == 1) {
-      let spouse = data.spouses[0];
-      if (spouse.name) {
-        let spouseSurname = spouse.name.inferLastName();
-        builder.addOtherSurname(spouseSurname);
-      }
+  if (data.spouses && data.spouses.length == 1) {
+    let spouse = data.spouses[0];
+    if (spouse.name) {
+      let spouseSurname = spouse.name.inferLastName();
+      builder.addOtherSurname(spouseSurname);
     }
+  }
   //}
 }
 
 function buildSearchUrl(buildUrlInput) {
-
   const data = buildUrlInput.generalizedData;
   const dataCache = buildUrlInput.dataCache;
   const typeOfSearch = buildUrlInput.typeOfSearch;
 
-  var builder = new FreebmdUriBuilder;
+  var builder = new FreebmdUriBuilder();
 
   // typeOfSearch can be:
   // "Births"
@@ -229,10 +211,14 @@ function buildSearchUrl(buildUrlInput) {
   let type = typeOfSearch.toLowerCase();
   if (typeOfSearch == "SameCollection") {
     if (data.collectionData && data.collectionData.id) {
-      type = RC.mapCollectionId(data.sourceOfData, data.collectionData.id, "freebmd",
-        data.inferEventCountry(), data.inferEventYear());
-    }
-    else {
+      type = RC.mapCollectionId(
+        data.sourceOfData,
+        data.collectionData.id,
+        "freebmd",
+        data.inferEventCountry(),
+        data.inferEventYear()
+      );
+    } else {
       // should never happen
       type = "births";
     }
@@ -241,11 +227,9 @@ function buildSearchUrl(buildUrlInput) {
   // add type to search
   if (type == "births") {
     builder.addType("Births");
-  }
-  else if (type == "marriages") {
+  } else if (type == "marriages") {
     builder.addType("Marriages");
-  }
-  else if (type == "deaths") {
+  } else if (type == "deaths") {
     builder.addType("Deaths");
   }
 
@@ -253,39 +237,34 @@ function buildSearchUrl(buildUrlInput) {
   let dates = {
     startYear: undefined,
     endYear: undefined,
-  }
+  };
 
   if (typeOfSearch == "SameCollection") {
     // must be coming from a record of same type and date should be exact
     let eventYear = data.inferEventYear();
     dates.startYear = eventYear;
     dates.endYear = eventYear;
-  }
-  else if (type == "births") {
+  } else if (type == "births") {
     let birthYear = data.inferBirthYear();
     let birthDateQualifier = data.inferBirthDateQualifier();
     data.setDatesUsingQualifier(dates, birthYear, birthDateQualifier);
-  }
-  else if (type == "marriages") {
+  } else if (type == "marriages") {
     let eventYear = data.inferEventYear();
 
     let birthYear = data.inferBirthYear();
     if (birthYear) {
       dates.startYear = addNumToYearString(birthYear, 14);
-    }
-    else if (eventYear) {
+    } else if (eventYear) {
       dates.startYear = subtractNumFromYearString(eventYear, 100);
     }
 
     let deathYear = data.inferDeathYear();
     if (deathYear) {
       dates.endYear = deathYear;
-    }
-    else if (eventYear) {
+    } else if (eventYear) {
       dates.endYear = addNumToYearString(eventYear, 100);
     }
-  }
-  else if (type == "deaths") {
+  } else if (type == "deaths") {
     let deathYear = data.inferDeathYear();
     let deathDateQualifier = data.inferDeathDateQualifier();
     data.setDatesUsingQualifier(dates, deathYear, deathDateQualifier);
@@ -315,13 +294,11 @@ function buildSearchUrl(buildUrlInput) {
     if (includeMothersName(dates, data.mothersMaidenName)) {
       builder.addOtherSurname(data.mothersMaidenName);
     }
-  }
-  else if (type == "marriages") {
+  } else if (type == "marriages") {
     includeSpouseNameIfValidThruDateRange(dates, data, builder);
-  }
-  else if (type == "deaths") {
+  } else if (type == "deaths") {
     // although BMD Entries do not seem to have age of death before 1866 it doesn't
-    // seem to throw off the search if it is included. However if the entry includes the 
+    // seem to throw off the search if it is included. However if the entry includes the
     // age of death and it is off by even 1 year it fails to find it. So only include age
     // if this is SameCollection
     let age = data.inferAgeAtDeath();
@@ -330,8 +307,7 @@ function buildSearchUrl(buildUrlInput) {
         let range = 5;
         if (age < 14) {
           range = 2;
-        }
-        else if (age > 50) {
+        } else if (age > 50) {
           range = 10;
         }
         age = age.toString() + "%" + range.toString();
@@ -351,8 +327,8 @@ function buildSearchUrl(buildUrlInput) {
   //console.log("URL is " + url);
 
   var result = {
-    'url' : url,
-  }
+    url: url,
+  };
 
   return result;
 }

@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import fs from 'fs'
+import fs from "fs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 
 function JSONstringifySorted(object, space) {
@@ -40,14 +40,12 @@ function JSONstringifySorted(object, space) {
 }
 
 function createFolderPathIfNeeded(path) {
-
   if (!fs.existsSync(path)) {
     fs.mkdirSync(path);
   }
 }
 
 function createFolderIfNeeded(type, siteName, dataDir) {
-
   let folderName = "./unit_tests/" + siteName;
   createFolderPathIfNeeded(folderName);
 
@@ -72,7 +70,6 @@ function getTestFilePath(siteName, dataDir, testData) {
 }
 
 function writeTestOutputFile(testResultObject, siteName, dataDir, testData, logger) {
-
   createFolderIfNeeded("test", siteName, dataDir);
 
   // write out result file.
@@ -110,13 +107,12 @@ function createRefFile(testResultObject, siteName, dataDir, testData, logger) {
   return true;
 }
 
-
 function readFile(inputSubPath, testData, logger) {
   // read in the input result
   let inputPath = "./unit_tests/" + inputSubPath + ".json";
   var inputText;
   try {
-    inputText = fs.readFileSync(inputPath, 'utf8');
+    inputText = fs.readFileSync(inputPath, "utf8");
   } catch (e) {
     //console.log('Error:', e.stack);
     logger.logError(testData, "Failed to read input file: " + inputPath);
@@ -131,7 +127,7 @@ function readRefFile(initData, siteName, dataDir, testData, logger) {
   let refPath = getRefFilePath(siteName, dataDir, testData);
   var refText;
   try {
-    refText = fs.readFileSync(refPath, 'utf8');
+    refText = fs.readFileSync(refPath, "utf8");
   } catch (e) {
     //console.log('Error:', e.stack);
     console.log("Creating ref file: " + refPath);
@@ -143,7 +139,6 @@ function readRefFile(initData, siteName, dataDir, testData, logger) {
 }
 
 function readInputFile(siteName, dataDir, testData, logger) {
-
   let inputSubPath = siteName + "/" + dataDir + "/ref/" + testData.caseName;
   if (testData.inputPath) {
     inputSubPath = testData.inputPath;

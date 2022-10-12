@@ -29,13 +29,10 @@ SOFTWARE.
 async function readDataCache() {
   return new Promise((resolve, reject) => {
     try {
-      chrome.storage.local.get(
-        ["dataCache"],
-        function (value) {
-          resolve(value.dataCache);
-        });
-    }
-    catch (ex) {
+      chrome.storage.local.get(["dataCache"], function (value) {
+        resolve(value.dataCache);
+      });
+    } catch (ex) {
       reject(ex);
     }
   });
@@ -43,18 +40,16 @@ async function readDataCache() {
 
 async function storeDataCache(dataCache) {
   try {
-    chrome.storage.local.set({dataCache: dataCache}, function() {
+    chrome.storage.local.set({ dataCache: dataCache }, function () {
       //console.log('saved dataCache, dataCache is:');
       //console.log(dataCache);
     });
-  }
-  catch (ex) {
-    console.log('storeDataCache failed');
+  } catch (ex) {
+    console.log("storeDataCache failed");
   }
 }
 
 async function updateDataCacheWithWikiTreeExtract(extractedData, generalizedData) {
-
   let dateToday = new Date();
   let timeStamp = dateToday.getTime();
 
@@ -66,18 +61,15 @@ async function updateDataCacheWithWikiTreeExtract(extractedData, generalizedData
 
   const maxEntries = 20;
 
-
   let dataCache = await readDataCache();
 
   if (!dataCache) {
-    dataCache = { wikiTreeProfileCache: { items: [ wikiTreeEntry ]}};
-  }
-  else {
+    dataCache = { wikiTreeProfileCache: { items: [wikiTreeEntry] } };
+  } else {
     let wikiTreeProfileCache = dataCache.wikiTreeProfileCache;
     if (!wikiTreeProfileCache) {
-      dataCache.wikiTreeProfileCache = { items: [ wikiTreeEntry ]};
-    }
-    else {
+      dataCache.wikiTreeProfileCache = { items: [wikiTreeEntry] };
+    } else {
       // the wikiTreeProfileCache already exists
       let existingEntry = undefined;
 
@@ -88,8 +80,7 @@ async function updateDataCacheWithWikiTreeExtract(extractedData, generalizedData
         if (extractedData.wikiId == entry.extractedData.wikiId) {
           existingEntry = entry;
           break;
-        }
-        else {
+        } else {
           if (entry.timeStamp < oldestTimeStamp) {
             oldestTimeStamp = entry.timeStamp;
             oldestEntry = entry;
@@ -101,18 +92,15 @@ async function updateDataCacheWithWikiTreeExtract(extractedData, generalizedData
         existingEntry.timeStamp = timeStamp;
         existingEntry.extractedData = extractedData;
         existingEntry.generalizedData = generalizedData;
-      }
-      else {
+      } else {
         if (dataCache.wikiTreeProfileCache.items.length < maxEntries) {
           dataCache.wikiTreeProfileCache.items.push(wikiTreeEntry);
-        }
-        else if (oldestEntry) {
+        } else if (oldestEntry) {
           oldestEntry.timeStamp = timeStamp;
           oldestEntry.extractedData = extractedData;
           oldestEntry.generalizedData = generalizedData;
         }
       }
-
     }
   }
 

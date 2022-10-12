@@ -27,8 +27,8 @@ const progressState = {
   defaultPopupEntered: 1,
   defaultPopupHaveActiveTab: 2,
   defaultPopupTimeout: 3,
-  defaultPopupDisplayError: 4, 
-  defaultPopupException: 5, 
+  defaultPopupDisplayError: 4,
+  defaultPopupException: 5,
   defaultPopupSiteNotRecognized: 6,
   defaultPopupLoadingSiteModule: 7,
   sitePopupEntered: 8,
@@ -37,9 +37,9 @@ const progressState = {
   sitePopupSentExtract: 11,
   sitePopupRetryExtractTimeout: 12,
   sitePopupCalledMenuSetup: 13,
-  sitePopupDisplayError: 14,  // e.g. url changed or siteName changed
+  sitePopupDisplayError: 14, // e.g. url changed or siteName changed
   sitePopupException: 15,
-}
+};
 
 var popupState = {
   progress: progressState.notSet,
@@ -48,7 +48,7 @@ var popupState = {
   tabId: undefined,
   extractedDocumentUrl: undefined,
 
-  recordDefaultPopupActiveTab: function(activeTab) {
+  recordDefaultPopupActiveTab: function (activeTab) {
     this.initialStateInDefaultPopup = {
       tabId: activeTab.id,
       tabStatus: activeTab.status,
@@ -58,7 +58,7 @@ var popupState = {
     this.tabId = activeTab.id;
   },
 
-  recordSitePopupActiveTab: function(activeTab, siteName, options, menuSetupFunction) {
+  recordSitePopupActiveTab: function (activeTab, siteName, options, menuSetupFunction) {
     this.initialStateInSitePopup = {
       tabId: activeTab.id,
       tabStatus: activeTab.status,
@@ -70,7 +70,7 @@ var popupState = {
     };
     this.tabId = activeTab.id;
   },
-}
+};
 
 // NOTE: regarding pendingURL. It is of limited use. See this Stack Overflow post:
 // https://stackoverflow.com/questions/60443329/is-pendingurl-always-defined-for-tabs-oncreatedfunctiontab
@@ -116,7 +116,7 @@ function tabListener(tabId, changeInfo, tab) {
     //console.log("popup_state: tabListener, tab.id is: " + tab.id);
     //console.log("popup_state: tabListener, tab.url is: " + tab.url);
     //console.log("popup_state: tabListener, tab.pendingUrl is: " + tab.pendingUrl);
-  
+
     // the change can but something like the title that we are not interested in
     if (changeInfo.status || changeInfo.url) {
       popupState.lastChangeToThisTab = {
@@ -131,8 +131,7 @@ function tabListener(tabId, changeInfo, tab) {
         popupState.onTabChange(tabId, changeInfo, tab);
       }
     }
-  }
-  else if (!popupState.tabId) {
+  } else if (!popupState.tabId) {
     popupState.lastTabChangeBeforeActiveTabIdSet = {
       tabId: tabId,
       changeInfo: changeInfo,
@@ -165,15 +164,20 @@ function separateUrlIntoParts(url) {
 
   let slashIndex = remainder.indexOf("/");
   if (slashIndex == -1) {
-    slashIndex =  remainder.length;
+    slashIndex = remainder.length;
   }
   let domain = remainder.substring(0, slashIndex);
   let subdirectory = remainder.substring(slashIndex + 1);
 
-  return { scheme: scheme, subdomain: subdomain, domain: domain, subdirectory: subdirectory };
+  return {
+    scheme: scheme,
+    subdomain: subdomain,
+    domain: domain,
+    subdirectory: subdirectory,
+  };
 }
 
 chrome.runtime.onMessage.addListener(contentLoadedMessageListener);
 chrome.tabs.onUpdated.addListener(tabListener);
 
-export { popupState, progressState }
+export { popupState, progressState };

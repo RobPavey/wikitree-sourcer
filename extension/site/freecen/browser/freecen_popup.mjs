@@ -29,7 +29,6 @@ import { buildCitation } from "../core/freecen_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 async function setupFreecenPopupMenu(extractedData) {
-
   let input = {
     extractedData: extractedData,
     extractFailedMessage: "It looks like a FreeCen page but not a record page.",

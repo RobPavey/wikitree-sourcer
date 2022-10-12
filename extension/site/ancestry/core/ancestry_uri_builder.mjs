@@ -82,9 +82,7 @@ function fixupLocation(location) {
 import { RC } from "../../../base/core/record_collections.mjs";
 
 class AncestryUriBuilder {
-
   constructor(collectionId, category, subcategory, options) {
-
     if (collectionId) {
       this.collection = RC.findCollection("ancestry", collectionId);
     }
@@ -98,14 +96,11 @@ class AncestryUriBuilder {
 
     if (collectionId) {
       this.uri = uriBase + "collections/" + collectionId + "/";
-    }
-    else if (subcategory && subcategory != "all") {
+    } else if (subcategory && subcategory != "all") {
       this.uri = uriBase + "categories/" + subcategory + "/";
-    }
-    else if (category && category != "all") {
+    } else if (category && category != "all") {
       this.uri = uriBase + "categories/" + category + "/";
-    }
-    else {
+    } else {
       this.uri = uriBase;
     }
     this.searchTermAdded = false;
@@ -130,8 +125,7 @@ class AncestryUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
@@ -149,8 +143,7 @@ class AncestryUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
 
@@ -166,8 +159,7 @@ class AncestryUriBuilder {
       count++;
       uniqueTitle = title + count;
       this.titleMap.set(title, count);
-    }
-    else {
+    } else {
       this.titleMap.set(title, 1);
     }
 
@@ -204,9 +196,8 @@ class AncestryUriBuilder {
     }
   }
 
-
   addName(forenames, lastName) {
-    this.addPersonName("name", forenames, lastName)
+    this.addPersonName("name", forenames, lastName);
   }
 
   addBirth(year, location) {
@@ -226,15 +217,15 @@ class AncestryUriBuilder {
   }
 
   addFather(forenames, lastName) {
-    this.addPersonName("father", forenames, lastName)
+    this.addPersonName("father", forenames, lastName);
   }
 
   addMother(forenames, lastName) {
-    this.addPersonName("mother", forenames, lastName)
+    this.addPersonName("mother", forenames, lastName);
   }
 
   addSpouse(forenames, lastName) {
-    this.addPersonName("spouse", forenames, lastName)
+    this.addPersonName("spouse", forenames, lastName);
   }
 
   addGenderMale() {

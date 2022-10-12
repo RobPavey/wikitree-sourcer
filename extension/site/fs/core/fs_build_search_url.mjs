@@ -28,19 +28,16 @@ import { RC } from "../../../base/core/record_collections.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function adaptCountryArrayForFamilySearch(countryArray) {
-
   // FS used to support multiple countries in the search but now it only allows one.
 
-  let newCountryArray = [];   
+  let newCountryArray = [];
 
   for (let country of countryArray) {
     if (country == "England and Wales") {
       continue;
-    }
-    else if (country == "United Kingdom") {
+    } else if (country == "United Kingdom") {
       continue;
-    }
-    else {
+    } else {
       newCountryArray.push(country);
       break;
     }
@@ -57,7 +54,7 @@ function shouldAddSearchTerm(collection, termName, defaultResult) {
       result = collection.sites.fs.searchTerms.termName;
     }
   }
-  
+
   return result;
 }
 
@@ -97,11 +94,10 @@ function getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection) {
   fromYear = fromYear - 2;
   toYear = toYear + 2;
 
-  return { fromYear: fromYear.toString(), toYear: toYear.toString()};
+  return { fromYear: fromYear.toString(), toYear: toYear.toString() };
 }
 
 function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection) {
-
   if (!yearString || yearString == "") {
     return null;
   }
@@ -142,11 +138,10 @@ function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection)
     toYear = toYear + plusOrMinus;
   }
 
-  return { fromYear: fromYear.toString(), toYear: toYear.toString()};
+  return { fromYear: fromYear.toString(), toYear: toYear.toString() };
 }
 
 function buildSearchUrl(buildUrlInput) {
-
   const data = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
 
@@ -165,16 +160,20 @@ function buildSearchUrl(buildUrlInput) {
 
   if (buildUrlInput.typeOfSearch == "SameCollection") {
     if (data.collectionData && data.collectionData.id) {
-      let fsCollectionId = RC.mapCollectionId(data.sourceOfData, data.collectionData.id, "fs",
-        data.inferEventCountry(), data.inferEventYear());
+      let fsCollectionId = RC.mapCollectionId(
+        data.sourceOfData,
+        data.collectionData.id,
+        "fs",
+        data.inferEventCountry(),
+        data.inferEventYear()
+      );
       if (fsCollectionId) {
         collection = RC.findCollection("fs", fsCollectionId);
         builder.addCollection(fsCollectionId);
         sameCollection = true;
       }
     }
-  }
-  else if (buildUrlInput.typeOfSearch == "SpecifiedCollection") {
+  } else if (buildUrlInput.typeOfSearch == "SpecifiedCollection") {
     let searchParams = buildUrlInput.searchParameters;
     if (searchParams.collectionWtsId) {
       collection = RC.findCollectionByWtsId(searchParams.collectionWtsId);
@@ -183,8 +182,7 @@ function buildSearchUrl(buildUrlInput) {
         builder.addCollection(fsCollectionId);
       }
     }
-  }
-  else if (buildUrlInput.typeOfSearch == "SpecifiedParameters") {
+  } else if (buildUrlInput.typeOfSearch == "SpecifiedParameters") {
     parameters = buildUrlInput.searchParameters;
   }
 
@@ -209,11 +207,19 @@ function buildSearchUrl(buildUrlInput) {
     birthDateQualifier = dateQualifiers.NONE;
   }
 
-  let birthYearRangeRange = getDateRange(data.inferBirthYear(), options.search_fs_birthYearExactness,
-    birthDateQualifier, sameCollection);
+  let birthYearRangeRange = getDateRange(
+    data.inferBirthYear(),
+    options.search_fs_birthYearExactness,
+    birthDateQualifier,
+    sameCollection
+  );
   builder.addBirth(birthYearRangeRange, data.inferBirthPlace());
-  let deathYearRangeRange = getDateRange(data.inferDeathYear(), options.search_fs_deathYearExactness,
-    data.inferDeathDateQualifier(), sameCollection);
+  let deathYearRangeRange = getDateRange(
+    data.inferDeathYear(),
+    options.search_fs_deathYearExactness,
+    data.inferDeathDateQualifier(),
+    sameCollection
+  );
   builder.addDeath(deathYearRangeRange, data.inferDeathPlace());
 
   if (data.parents && data.parents.father && data.parents.father.name) {
@@ -250,8 +256,12 @@ function buildSearchUrl(buildUrlInput) {
           marriagePlace = spouse.marriagePlace.placeString;
         }
 
-        let marriageYearRange = getDateRange(marriageYear, options.search_fs_marriageYearExactness,
-          dateQualifiers.NONE, sameCollection);
+        let marriageYearRange = getDateRange(
+          marriageYear,
+          options.search_fs_marriageYearExactness,
+          dateQualifiers.NONE,
+          sameCollection
+        );
         builder.addMarriage(marriageYearRange, marriagePlace);
       }
 
@@ -264,8 +274,7 @@ function buildSearchUrl(buildUrlInput) {
             if (data.recordType == RT.Census) {
               spouseLastName = "";
             }
-          }
-          else if (collection && !collection.isMarriage) {
+          } else if (collection && !collection.isMarriage) {
             spouseLastName = "";
           }
         }
@@ -276,8 +285,12 @@ function buildSearchUrl(buildUrlInput) {
 
   if (data.recordType == RT.Census) {
     if (data.eventPlace || data.eventDate) {
-      let residenceYearRange = getDateRange(data.inferEventYear(), options.search_fs_residenceYearExactness,
-        dateQualifiers.NONE, sameCollection);
+      let residenceYearRange = getDateRange(
+        data.inferEventYear(),
+        options.search_fs_residenceYearExactness,
+        dateQualifiers.NONE,
+        sameCollection
+      );
       builder.addResidence(residenceYearRange, data.inferEventPlace());
     }
   }
@@ -311,8 +324,8 @@ function buildSearchUrl(buildUrlInput) {
   //console.log("URL is " + url);
 
   var result = {
-      'url' : url,
-  }
+    url: url,
+  };
 
   return result;
 }

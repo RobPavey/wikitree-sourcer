@@ -22,7 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, GD, dateQualifiers, WtsName, WtsDate, WtsPlace } from "../../../base/core/generalize_data_utils.mjs";
+import {
+  GeneralizedData,
+  GD,
+  dateQualifiers,
+  WtsName,
+  WtsDate,
+  WtsPlace,
+} from "../../../base/core/generalize_data_utils.mjs";
 import { RT, Role } from "../../../base/core/record_type.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 
@@ -35,18 +42,27 @@ const factTypeToRecordType = [
     type: "Birth",
     defaultRT: RT.Birth,
     titleMatches: [
-      {recordType: RT.BirthRegistration, matches: ["England and Wales Birth Registration Index", "New Zealand, Civil Records Indexes"]},
+      {
+        recordType: RT.BirthRegistration,
+        matches: ["England and Wales Birth Registration Index", "New Zealand, Civil Records Indexes"],
+      },
     ],
     recordDataMatches: [
-      {recordType: RT.BirthRegistration, matches: ["Registration Number"]},
-      {recordType: RT.BirthRegistration, matches: ["Baptism Date", "Christening Date"]},
+      { recordType: RT.BirthRegistration, matches: ["Registration Number"] },
+      {
+        recordType: RT.BirthRegistration,
+        matches: ["Baptism Date", "Christening Date"],
+      },
     ],
   },
   {
     type: "Death",
     defaultRT: RT.Death,
     titleMatches: [
-      {title: RT.DeathRegistration, matches: ["England and Wales Death Registration Index"]},
+      {
+        title: RT.DeathRegistration,
+        matches: ["England and Wales Death Registration Index"],
+      },
     ],
   },
   {
@@ -65,7 +81,10 @@ const factTypeToRecordType = [
     type: "Marriage",
     defaultRT: RT.Marriage,
     titleMatches: [
-      {recordType: RT.MarriageRegistration, matches: ["England and Wales Marriage Registration Index"]},
+      {
+        recordType: RT.MarriageRegistration,
+        matches: ["England and Wales Marriage Registration Index"],
+      },
     ],
   },
   {
@@ -92,8 +111,8 @@ const factTypeToRecordType = [
     type: "Residence",
     defaultRT: RT.Residence,
     titleMatches: [
-      {recordType: RT.LandTax, matches: ["Land Tax"]},
-      {recordType: RT.SchoolRecords, matches: ["School Records"]},
+      { recordType: RT.LandTax, matches: ["Land Tax"] },
+      { recordType: RT.SchoolRecords, matches: ["School Records"] },
     ],
   },
   {
@@ -123,9 +142,7 @@ const factTypeToRecordType = [
   {
     type: "Immigration",
     defaultRT: RT.Immigration,
-    titleMatches: [
-      {recordType: RT.PassengerList, matches: ["Passenger List"]},
-    ],
+    titleMatches: [{ recordType: RT.PassengerList, matches: ["Passenger List"] }],
   },
   {
     type: "MilitaryService",
@@ -138,9 +155,7 @@ const factTypeToRecordType = [
   {
     type: "VoterRegistration",
     defaultRT: RT.ElectoralRegister,
-    titleMatches: [
-      {recordType: RT.ElectoralRegister, matches: ["Electoral Register"]},
-    ],
+    titleMatches: [{ recordType: RT.ElectoralRegister, matches: ["Electoral Register"] }],
   },
   {
     type: "TaxAssessment",
@@ -168,11 +183,8 @@ const sourceRecordTypeToRecordType = [
 ];
 
 function determineRecordType(extractedData) {
+  const titleMatches = [{ type: RT.Census, matches: ["Census"] }];
 
-  const titleMatches = [
-    {type: RT.Census, matches: ["Census", ]},
-  ];
-  
   //console.log("in determineRecordType, factType is");
   //console.log(extractedData.factType);
 
@@ -235,7 +247,6 @@ function determineRecordType(extractedData) {
   }
 
   if (sourceTitle) {
-
     for (let titleMatch of titleMatches) {
       for (let match of titleMatch.matches) {
         if (sourceTitle.includes(match)) {
@@ -251,7 +262,7 @@ function determineRecordType(extractedData) {
       }
       if (sourceTitle.includes("Death")) {
         return RT.DeathRegistration;
-      }    
+      }
     }
 
     // check for a marriage
@@ -278,11 +289,9 @@ function determineRecordTypeAndRole(extractedData, result) {
     if (extractedData.relationshipToFactPerson) {
       if (extractedData.relationshipToFactPerson == "Parent") {
         result.role = Role.Parent;
-      }
-      else if (extractedData.relationshipToFactPerson == "Child") {
+      } else if (extractedData.relationshipToFactPerson == "Child") {
         result.role = Role.Child;
-      }
-      else if (extractedData.relationshipToFactPerson == "Spouse") {
+      } else if (extractedData.relationshipToFactPerson == "Spouse") {
         result.role = Role.Spouse;
       }
       if (extractedData.relatedPersonFullName) {
@@ -376,7 +385,7 @@ function selectPlace(placeString, originalPlaceString) {
   if (!placeString) {
     return originalPlaceString;
   }
-  
+
   // Sometimes FS puts things in that are not WikiTree approved
   placeString = placeString.replace(/\,? *British Colonial America/, "");
 
@@ -386,7 +395,7 @@ function selectPlace(placeString, originalPlaceString) {
 function generalizeDataGivenRecordType(data, result) {
   if (data.age) {
     if (data.age != "999") {
-      let age = data.age.replace(/^0*(\d)/, "$1");  // remove leading zeroes (but not a single zero on its own)
+      let age = data.age.replace(/^0*(\d)/, "$1"); // remove leading zeroes (but not a single zero on its own)
       // occasionally the age has extra text. e.g. "7 years"
       if (age && age.length > 1) {
         if (age.search(/[^\d]/) != -1) {
@@ -395,8 +404,7 @@ function generalizeDataGivenRecordType(data, result) {
       }
       if (result.recordType == RT.DeathRegistration || result.recordType == RT.Death) {
         result.ageAtDeath = age;
-      }
-      else {
+      } else {
         result.ageAtEvent = age;
       }
     }
@@ -409,9 +417,14 @@ function generalizeDataGivenRecordType(data, result) {
     }
   }
 
-  if (result.recordType == RT.Baptism || result.recordType == RT.Birth
-       || result.recordType == RT.BirthRegistration || result.recordType == RT.BirthOrBaptism
-       || result.recordType == RT.Death || result.recordType == RT.DeathRegistration) {
+  if (
+    result.recordType == RT.Baptism ||
+    result.recordType == RT.Birth ||
+    result.recordType == RT.BirthRegistration ||
+    result.recordType == RT.BirthOrBaptism ||
+    result.recordType == RT.Death ||
+    result.recordType == RT.DeathRegistration
+  ) {
     if (result.role != Role.Parent) {
       if (data.father) {
         let father = result.addFather();
@@ -429,13 +442,13 @@ function generalizeDataGivenRecordType(data, result) {
         setFieldIfDefined(mother.name, "prefix", data.mother.prefix);
         setFieldIfDefined(mother.name, "suffix", data.mother.suffix);
       }
-  
+
       // spouse can be specified on a death record for example
       if (data.spouseFullName || data.spouseSurname || data.spouseGivenName) {
         result.spouses = [];
         let resultSpouse = {};
         resultSpouse.name = new WtsName();
-  
+
         if (data.spouseFullName) {
           resultSpouse.name.name = data.spouseFullName;
         }
@@ -457,8 +470,7 @@ function generalizeDataGivenRecordType(data, result) {
         result.spouses.push(resultSpouse);
       }
     }
-  }
-  else if (result.recordType == RT.Marriage) {
+  } else if (result.recordType == RT.Marriage) {
     result.spouses = [];
     let resultSpouse = {};
 
@@ -499,11 +511,14 @@ function generalizeDataGivenRecordType(data, result) {
       if (data.spouseSuffix) {
         resultSpouse.name.suffix = data.spouseSuffix;
       }
-    if (data.spouseAge) {
+      if (data.spouseAge) {
         resultSpouse.age = data.spouseAge;
       }
-    }
-    else if (data.relatedPersonSpouseFullName || data.relatedPersonSpouseSurname || data.relatedPersonSpouseGivenName) {
+    } else if (
+      data.relatedPersonSpouseFullName ||
+      data.relatedPersonSpouseSurname ||
+      data.relatedPersonSpouseGivenName
+    ) {
       resultSpouse.name = new WtsName();
       if (data.relatedPersonSpouseFullName) {
         resultSpouse.name.name = data.relatedPersonSpouseFullName;
@@ -524,7 +539,11 @@ function generalizeDataGivenRecordType(data, result) {
 
     // the marriage record can contain an actual marriage date as well as the event date
     // If so it is probably more accurate
-    if (data.recordData["Marriage Date"] || data.recordData["Marriage Date (Original)"] || data.recordData["Marriage Year"]) {
+    if (
+      data.recordData["Marriage Date"] ||
+      data.recordData["Marriage Date (Original)"] ||
+      data.recordData["Marriage Year"]
+    ) {
       let marriageDate = new WtsDate();
       let dateString = selectDate(data.recordData["Marriage Date"], data.recordData["Marriage Date (Original)"]);
       if (dateString) {
@@ -538,8 +557,7 @@ function generalizeDataGivenRecordType(data, result) {
     }
 
     result.spouses.push(resultSpouse);
-  }
-  else if (result.recordType == RT.MarriageRegistration) {
+  } else if (result.recordType == RT.MarriageRegistration) {
     result.spouses = [];
     let resultSpouse = {};
 
@@ -554,8 +572,7 @@ function generalizeDataGivenRecordType(data, result) {
           if (recordData["Other On Page Name1"] && !recordData["Other On Page Name2"]) {
             if (recordData["Other On Page Name Surn1"] == data.spouseSurname) {
               spouseFullName = recordData["Other On Page Name1"];
-            }
-            else if (recordData["Other On Page Name1"].endsWith(data.spouseSurname)) {
+            } else if (recordData["Other On Page Name1"].endsWith(data.spouseSurname)) {
               spouseFullName = recordData["Other On Page Name1"];
             }
           }
@@ -589,7 +606,11 @@ function generalizeDataGivenRecordType(data, result) {
     }
 
     // the marriage registration can contain an actual marriage date
-    if (data.recordData["Marriage Date"] || data.recordData["Marriage Date (Original)"] || data.recordData["Marriage Year"]) {
+    if (
+      data.recordData["Marriage Date"] ||
+      data.recordData["Marriage Date (Original)"] ||
+      data.recordData["Marriage Year"]
+    ) {
       let marriageDate = new WtsDate();
       let dateString = selectDate(data.recordData["Marriage Date"], data.recordData["Marriage Date (Original)"]);
       if (dateString) {
@@ -611,14 +632,13 @@ function generalizeDataGivenRecordType(data, result) {
     if (headings && members) {
       result.householdArrayFields = [];
       let fieldsEncountered = {};
-    
+
       let householdArray = [];
       for (let member of members) {
         let householdMember = {};
         if (member.isClosed) {
           householdMember.isClosed = true;
-        }
-        else {
+        } else {
           let name = member.fullName;
           if (name) {
             householdMember.name = name;
@@ -678,8 +698,14 @@ function generalizeDataGivenRecordType(data, result) {
       result.householdArray = householdArray;
 
       let possibleHouseholdArrayFields = [
-        "name", "relationship", "maritalStatus", "gender", "age", "birthYear",
-        "occupation", "birthPlace"
+        "name",
+        "relationship",
+        "maritalStatus",
+        "gender",
+        "age",
+        "birthYear",
+        "occupation",
+        "birthPlace",
       ];
 
       let householdArrayFields = [];
@@ -694,7 +720,6 @@ function generalizeDataGivenRecordType(data, result) {
 }
 
 function generalizeDataForPerson(data, result) {
-
   function setName(dataObject, resultObject) {
     if (dataObject.fullName) {
       resultObject.name.name = dataObject.fullName;
@@ -755,15 +780,13 @@ function generalizeDataForPerson(data, result) {
 // This function generalizes the data extracted from a FamilySearch page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-
   let data = input.extractedData;
 
-  let result = new GeneralizedData;
+  let result = new GeneralizedData();
 
   if (data.pageType == "person") {
     result.sourceType = "profile";
-  }
-  else {
+  } else {
     result.sourceType = "record";
     determineRecordTypeAndRole(data, result);
   }
@@ -779,7 +802,7 @@ function generalizeData(input) {
   result.setBirthYear(data.birthYear);
   let birthPlace = selectPlace(data.birthPlace, data.birthPlaceOriginal);
   result.setBirthPlace(birthPlace);
-  
+
   let deathDate = selectDate(data.deathDate, data.deathDateOriginal);
   result.setDeathDate(deathDate);
   result.setDeathYear(data.deathYear);
@@ -790,7 +813,7 @@ function generalizeData(input) {
   let eventDate = selectDate(data.eventDate, data.eventDateOriginal);
   result.setEventDate(eventDate);
   result.setEventYear(data.eventYear);
-  
+
   let eventPlace = selectPlace(data.eventPlace, data.eventPlaceOriginal);
 
   if (!eventPlace) {
@@ -860,8 +883,7 @@ function generalizeData(input) {
 
   if (data.pageType == "person") {
     generalizeDataForPerson(data, result);
-  }
-  else {
+  } else {
     generalizeDataGivenRecordType(data, result);
   }
 
@@ -883,7 +905,7 @@ function generalizeData(input) {
   if (!result.maritalStatus && data.recordData) {
     result.setMaritalStatus(data.recordData["MaritalStatus"]);
   }
-  
+
   if (data.household && data.household.members) {
     // We can also determine parents and spouse in some cases
     result.addSpouseOrParentsForSelectedHouseholdMember();
@@ -893,7 +915,7 @@ function generalizeData(input) {
       if (yearsMarried) {
         let censusDate = result.inferEventDate();
         let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, yearsMarried);
-        let marriageYear =  WTS_String.getLastWord(marriageDateString);
+        let marriageYear = WTS_String.getLastWord(marriageDateString);
         if (marriageYear) {
           result.spouses[0].marriageDate.yearString = marriageYear;
         }
@@ -912,29 +934,28 @@ function generalizeData(input) {
       if (refData.sourceVolume) {
         result.collectionData.volume = refData.sourceVolume;
       }
-  
+
       if (refData.sourcePageNbr) {
         result.collectionData.page = refData.sourcePageNbr;
       }
-  
+
       if (refData.sourceScheduleType) {
         result.collectionData.schedule = refData.sourceScheduleType;
       }
-  
+
       if (refData.sourcePieceFolio) {
         let pf = refData.sourcePieceFolio;
         let slashIndex = pf.indexOf("/");
         if (slashIndex != -1) {
           result.collectionData.piece = pf.substring(0, slashIndex).trim();
-          result.collectionData.folio = pf.substring(slashIndex+1).trim();
-        }
-        else {
+          result.collectionData.folio = pf.substring(slashIndex + 1).trim();
+        } else {
           result.collectionData.folio = pf;
         }
       }
     }
   }
-  
+
   result.hasValidData = true;
 
   //console.log("End of FamilySearch generalizeData, result is:");

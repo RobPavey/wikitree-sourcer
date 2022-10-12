@@ -4,5 +4,17 @@
     "git-filter-repo": "0.0.30",
     "jsdom": "^16.5.3",
     "web-ext": "^6.8.0"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "test": "node scripts/run_test.js"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

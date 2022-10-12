@@ -29,7 +29,7 @@ function cleanText(text) {
     return "";
   }
 
-  text = text.replace(/\s+/g, " ");  // eliminate nbsp and multiple spaces etc
+  text = text.replace(/\s+/g, " "); // eliminate nbsp and multiple spaces etc
 
   // sometimes the text is something like "Zachariah Davey[Zechariah Pavey]"
   // in that case add a space before the [
@@ -45,7 +45,7 @@ function cleanLabel(text) {
     return "";
   }
 
-  text = text.replace(/\s/g, " ");  // eliminate nbsp etc
+  text = text.replace(/\s/g, " "); // eliminate nbsp etc
   text = text.trim();
 
   // remove trailing :
@@ -55,7 +55,6 @@ function cleanLabel(text) {
 }
 
 function getVisibleTextInNode(node) {
-
   let text = "";
 
   if (query.length > 0) {
@@ -64,8 +63,8 @@ function getVisibleTextInNode(node) {
     if (contents) {
       for (let childIndex = 0; childIndex < contents.length; childIndex++) {
         let child = contents[childIndex];
-                    
-        if (child.getAttribute('style') != "display: none;") {
+
+        if (child.getAttribute("style") != "display: none;") {
           text += child.textContent;
         }
       }
@@ -74,7 +73,6 @@ function getVisibleTextInNode(node) {
 
   return text;
 }
-
 
 function extractRecordData(table, result) {
   var recordDataRows = table.querySelectorAll("tr");
@@ -89,13 +87,13 @@ function extractRecordData(table, result) {
   for (let rowIndex = 0; rowIndex < recordDataRows.length; rowIndex++) {
     let row = recordDataRows[rowIndex];
 
-    if (row.getAttribute('style') == "display: none;") {
+    if (row.getAttribute("style") == "display: none;") {
       // There can be rows for many records present if this is a model popup dialog
       // and multiple records have been clicked on one after the other
       continue;
     }
 
-    if (row.getAttribute('class') == "non-principal-info") {
+    if (row.getAttribute("class") == "non-principal-info") {
       result.otherPersonRecordData = Object.create(null);
       recordData = result.otherPersonRecordData;
     }
@@ -110,8 +108,7 @@ function extractRecordData(table, result) {
         let value = row.querySelector("td").textContent;
         value = value.replace(/\s+/g, " ").trim();
         recordData[label] = value;
-      }
-      else {
+      } else {
         // there are children. There are several cases to handle here
         if (numChildren == 1) {
           // sometimes there is a shadowRoot
@@ -124,8 +121,7 @@ function extractRecordData(table, result) {
             if (value != "") {
               recordData[label] = value;
             }
-          }
-          else {
+          } else {
             // for now just get the text of all the children, this can happen for "Name:" in death reg
             // If can also happen for "Inferred Spouse:" in 1939 reg.
             let value = getVisibleTextInNode(row.querySelector("td"));
@@ -134,22 +130,19 @@ function extractRecordData(table, result) {
               recordData[label] = value;
             }
           }
-        }
-        else {
+        } else {
           //console.log("Num children = " + numChildren + ". " + label);
           // for now just use the text of the TD itself and not children (if any)
           let value = getVisibleTextInNode(row.querySelector("td"));
           value = cleanText(value);
           if (value) {
             recordData[label] = value;
-          }
-          else {
+          } else {
             console.log("Unhandled case: Num children = " + numChildren + ". " + label);
           }
         }
       }
-    }
-    else {
+    } else {
       // this row doesn't have a <th> label. Could be something like "Household members"
       if (row.classList.contains("tableContainerRow")) {
         let table = row.querySelector("table");
@@ -188,18 +181,16 @@ function extractRecordData(table, result) {
 }
 
 function extractRelatives(relatives, result) {
-
   if (relatives.length > 0) {
     let rows = relatives.querySelectorAll("div.relative");
 
     if (rows && rows.length > 0) {
-
       result.relatives = [];
 
       for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
         let row = rows[rowIndex];
 
-        if (row.getAttribute('style') == "display: none;") {
+        if (row.getAttribute("style") == "display: none;") {
           // There can be rows for many records present if this is a model popup dialog
           // and multiple records have been clicked on one after the other
           continue;
@@ -207,10 +198,9 @@ function extractRelatives(relatives, result) {
 
         let cells = row.querySelectorAll("div[role=gridcell]");
         if (cells && cells.length > 0) {
-
           let rowObject = Object.create(null);
           result.relatives.push(rowObject);
-    
+
           for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
             let cell = cells[cellIndex];
 
@@ -222,8 +212,6 @@ function extractRelatives(relatives, result) {
             }
           }
         }
-    
-
       }
     }
   }
@@ -248,21 +236,20 @@ function extractDataForImage(filmViewerNode, result) {
   let filmNumberNode = filmViewerNode.querySelector("div.film-number");
   if (filmNumberNode) {
     let filmNumberText = filmNumberNode.textContent;
-    result.filmNumber = filmNumberText.replace(/^Film\s*\#\s*/,"").trim();
+    result.filmNumber = filmNumberText.replace(/^Film\s*\#\s*/, "").trim();
   }
 
   let crumbsNode = filmViewerNode.querySelector("fs-waypoint-crumbs");
   if (crumbsNode) {
-
     let browsePath = "";
     let crumbList = crumbsNode.querySelector("nav > ul");
     if (crumbList) {
       let children = crumbList.children;
       for (let index = 0; index < children.length; index++) {
         let child = children[index];
-        let childDataNgRepeat = child.getAttribute('data-ng-repeat');
+        let childDataNgRepeat = child.getAttribute("data-ng-repeat");
         if (childDataNgRepeat && childDataNgRepeat.includes("crumb in crumbs")) {
-          let childTitle = child.getAttribute('title');
+          let childTitle = child.getAttribute("title");
           if (childTitle) {
             if (browsePath) {
               browsePath += " > ";
@@ -298,7 +285,7 @@ function extractDataForImage(filmViewerNode, result) {
     let afterInput = pager.querySelector("label.afterInput");
     if (afterInput) {
       let totalText = afterInput.textContent;
-      result.totalImages = totalText.replace(/^of\s*/,"").trim();
+      result.totalImages = totalText.replace(/^of\s*/, "").trim();
     }
   }
 
@@ -331,8 +318,7 @@ function extractDataForImage(filmViewerNode, result) {
               result.filmNote = note;
             }
           }
-        }
-        else {
+        } else {
           // there are multiple rows. See if they are all the same catalog
           let catalogRecordName = "";
           let catalogRecordLink = "";
@@ -351,16 +337,15 @@ function extractDataForImage(filmViewerNode, result) {
               if (catalogRecordName == "" && catalogRecordLink == "") {
                 catalogRecordName = newCatalogRecordName;
                 catalogRecordLink = newCatalogRecordLink;
-              }
-              else {
+              } else {
                 if (catalogRecordName != newCatalogRecordName || catalogRecordLink != newCatalogRecordLink) {
                   allAreTheSame = false;
                   break;
                 }
               }
             }
-          }     
-          
+          }
+
           if (allAreTheSame) {
             result.catalogRecordName = catalogRecordName;
             result.catalogRecordLink = catalogRecordLink;
@@ -373,7 +358,6 @@ function extractDataForImage(filmViewerNode, result) {
     if (citationNode) {
       result.citation = citationNode.textContent;
     }
-
   }
 
   //console.log("extractDataForImage, result is:");
@@ -381,19 +365,16 @@ function extractDataForImage(filmViewerNode, result) {
 
   if (result.filmNumber || result.imageNumber) {
     result.pageType = "image";
-  }
-  else {
+  } else {
     // FS is an example of a site that says it's page load is complete but the data may not be
     // there to extract.
     //console.log("FS extractData, treating as incomplete");
     result.dataMayBeIncomplete = true;
     result.pageType = "unknown";
   }
-
 }
 
 function extractDataForPersonPage(document, result) {
-
   function extractDateAndPlaceFromVitalsSection(cardSection, prefix) {
     let dateElement = cardSection.querySelector("div.display-date");
     if (dateElement) {
@@ -460,7 +441,6 @@ function extractDataForPersonPage(document, result) {
 
   let personPageElement = document.querySelector("fs-person-page");
   if (personPageElement && personPageElement.shadowRoot) {
-
     // there are two places to get the person's name, one in header and one in vitals
     let personElement = personPageElement.shadowRoot.querySelector("div.person-header-container > fs-tree-person");
     if (personElement) {
@@ -514,18 +494,15 @@ function extractDataForPersonPage(document, result) {
                           result.fullName = name;
                         }
                       }
-                    }
-                    else if (conclusionType == "GENDER") {
+                    } else if (conclusionType == "GENDER") {
                       let genderElement = cardSection.querySelector("div.display-gender");
                       if (genderElement) {
                         let gender = genderElement.textContent;
                         result.gender = gender;
-                      }                 
-                    }
-                    else if (conclusionType == "BIRTH") {         
-                      extractDateAndPlaceFromVitalsSection(cardSection, "birth");        
-                    }
-                    else if (conclusionType == "DEATH") {
+                      }
+                    } else if (conclusionType == "BIRTH") {
+                      extractDateAndPlaceFromVitalsSection(cardSection, "birth");
+                    } else if (conclusionType == "DEATH") {
                       extractDateAndPlaceFromVitalsSection(cardSection, "death");
                     }
                   }
@@ -545,7 +522,6 @@ function extractDataForPersonPage(document, result) {
           let familyMembersElement = cardElement.querySelector("fs-family-members");
 
           if (familyMembersElement && familyMembersElement.shadowRoot) {
-
             // Get spouses
 
             let spousesElement = familyMembersElement.shadowRoot.querySelector("#spouses");
@@ -609,12 +585,10 @@ function extractDataForPersonPage(document, result) {
             if (parentsElement) {
               let familyMembersBlock = parentsElement.querySelector("fs-family-members-block");
               if (familyMembersBlock && familyMembersBlock.shadowRoot) {
-
                 let familyBlock = familyMembersBlock.shadowRoot.querySelector("div.family-block");
                 if (familyBlock) {
                   let couple = familyBlock.querySelector("fs-family-members-couple");
                   if (couple && couple.shadowRoot) {
-
                     let fatherElement = couple.shadowRoot.querySelector("fs-tree-person.male");
                     if (fatherElement) {
                       let father = {};
@@ -643,9 +617,7 @@ function extractDataForPersonPage(document, result) {
 
 // As of 12 Sep 2022  this new format page is an option from the old format page
 function extractDataForPersonPageFormat2(document, personId, result) {
-
   function extractDateAndPlaceFromVitalsSection(conclusionElement, resultObject, prefix) {
-
     let dateElement = conclusionElement.querySelector("span[data-testid='conclusion-date']");
     if (dateElement) {
       let date = dateElement.textContent;
@@ -654,8 +626,7 @@ function extractDataForPersonPageFormat2(document, personId, result) {
         //console.log(date);
         if (prefix) {
           resultObject[prefix + "Date"] = date;
-        }
-        else {
+        } else {
           resultObject["date"] = date;
         }
       }
@@ -666,8 +637,7 @@ function extractDataForPersonPageFormat2(document, personId, result) {
       if (place) {
         if (prefix) {
           resultObject[prefix + "Place"] = place;
-        }
-        else {
+        } else {
           resultObject["place"] = place;
         }
       }
@@ -713,21 +683,19 @@ function extractDataForPersonPageFormat2(document, personId, result) {
 
     let birthConclusionElement = vitalsElement.querySelector("div[data-testid='conclusionDisplay:BIRTH']");
     if (birthConclusionElement) {
-      extractDateAndPlaceFromVitalsSection(birthConclusionElement, result, "birth");        
+      extractDateAndPlaceFromVitalsSection(birthConclusionElement, result, "birth");
     }
 
     let deathConclusionElement = vitalsElement.querySelector("div[data-testid='conclusionDisplay:DEATH']");
     if (deathConclusionElement) {
-      extractDateAndPlaceFromVitalsSection(deathConclusionElement, result, "death");        
+      extractDateAndPlaceFromVitalsSection(deathConclusionElement, result, "death");
     }
   }
 
   let familyElement = mainContentNode.querySelector("div[data-testid='section-card-family']");
   if (familyElement) {
-
     let families = familyElement.querySelectorAll("div[data-testid^='family-']");
     for (let family of families) {
-
       let familyId = family.getAttribute("data-testid");
       if (familyId.includes(personId)) {
         // this is a spouse and children
@@ -745,9 +713,9 @@ function extractDataForPersonPageFormat2(document, personId, result) {
             if (spouseElement) {
               let spouse = {};
               extractNamesFromPersonItem(spouseElement, spouse);
-    
-              extractDateAndPlaceFromVitalsSection(coupleElement, spouse, "marriage");  
-              
+
+              extractDateAndPlaceFromVitalsSection(coupleElement, spouse, "marriage");
+
               if (!result.spouses) {
                 result.spouses = [];
               }
@@ -755,8 +723,7 @@ function extractDataForPersonPageFormat2(document, personId, result) {
             }
           }
         }
-      }
-      else {
+      } else {
         // this must be parents and siblings
         let coupleElement = family.querySelector("ul[data-testid='couple-persons']");
         if (coupleElement) {
@@ -782,7 +749,6 @@ function extractDataForPersonPageFormat2(document, personId, result) {
 }
 
 function extractDataForPopup(searchArtifactResults, result) {
-
   let shadowRoot1 = searchArtifactResults.shadowRoot;
 
   let fsRecordDetailsModal = shadowRoot1.querySelector("fs-record-details-modal");
@@ -796,14 +762,14 @@ function extractDataForPopup(searchArtifactResults, result) {
       let shadowRoot3 = fsRecordDetails.shadowRoot;
 
       let recordDetails = shadowRoot3.querySelector("record-details");
-  
+
       if (recordDetails) {
         let shadowRoot4 = recordDetails.shadowRoot;
 
         result.pageType = "record popup";
 
         //  Document Info
-        
+
         let rdDocumentInfo = shadowRoot4.querySelector("rd-document-info");
         if (rdDocumentInfo) {
           let shadowRoot5 = rdDocumentInfo.shadowRoot;
@@ -813,13 +779,12 @@ function extractDataForPopup(searchArtifactResults, result) {
           if (collectionLink) {
             result.collectionName = collectionLink.textContent;
             // this link is relative to familysearch.org
-            result.collectionLink = collectionLink.getAttribute('href');
+            result.collectionLink = collectionLink.getAttribute("href");
           }
 
           let documentInfoFields = shadowRoot5.querySelector("div.document-info-inner > table.fields");
           if (documentInfoFields) {
-            var docTableResult = {
-            };
+            var docTableResult = {};
             extractRecordData(documentInfoFields, docTableResult);
 
             result.docInfoData = docTableResult.recordData;
@@ -843,7 +808,7 @@ function extractDataForPopup(searchArtifactResults, result) {
           let personHeader = shadowRoot5.querySelector("div.person-header");
 
           // get the main table data
-          let table =  shadowRoot5.querySelector("table.fields");
+          let table = shadowRoot5.querySelector("table.fields");
           if (table) {
             extractRecordData(table, result);
           }
@@ -854,20 +819,15 @@ function extractDataForPopup(searchArtifactResults, result) {
             extractRelatives(relatives, result);
           }
         }
-
       }
     }
   }
-
 }
 
-
 function extractData(document, url) {
-
   //console.log("fs extractData, url = " + url);
 
-  var result = {
-  };
+  var result = {};
 
   result.url = url;
 
@@ -881,18 +841,16 @@ function extractData(document, url) {
   if (mainContent) {
     let filmViewerNode = mainContent.querySelector("fs-film-viewer");
     if (filmViewerNode) {
-      extractDataForImage(filmViewerNode, result)
+      extractDataForImage(filmViewerNode, result);
       return result;
-    }
-    else if (url.startsWith("https://www.familysearch.org/tree/person/details/")) {
+    } else if (url.startsWith("https://www.familysearch.org/tree/person/details/")) {
       // it is a person page
       //console.log("extractData, it is a person:");
 
       extractDataForPersonPage(document, result);
       return result;
     }
-  }
-  else {
+  } else {
     mainContent = document.querySelector("#main");
     if (mainContent) {
       // this is a newer format page, only supported for person pages currently
@@ -901,16 +859,14 @@ function extractData(document, url) {
         //console.log("extractData, it is a person:");
 
         let personId = url.replace("https://www.familysearch.org/tree/person/details/", "");
-  
+
         extractDataForPersonPageFormat2(document, personId, result);
         return result;
-      }
-      else {
+      } else {
         console.log("page type is unknown but has a #main element");
         result.pageType = "unknown";
       }
-    }
-    else {
+    } else {
       // page may be partially loaded
       console.log("page type is unknown");
 
@@ -923,7 +879,7 @@ function extractData(document, url) {
 
   // Currently it never gets this far because we use fetch for non-image pages
   // The below has been converted to not use jQuery but not tested
-/*
+  /*
   let searchArtifactResults = document.querySelector("#main-content-section > div.full-width > search-artifact-results");
   if (searchArtifactResults) {
     extractDataForPopup(searchArtifactResults, result)
@@ -972,15 +928,14 @@ function getDateValueFromDate(date, fieldTypeEnding, labelId) {
       if (type && type.endsWith(fieldTypeEnding)) {
         for (let value of field.values) {
           if (value.labelId == labelId) {
-            return value.text;  // matches both type and labelId
+            return value.text; // matches both type and labelId
           }
         }
 
         if (!closeMatch && field.values.length > 0) {
           closeMatch = field.values[0].text;
         }
-      }
-      else {
+      } else {
         if (field.values) {
           for (let value of field.values) {
             if (value.labelId == labelId) {
@@ -1022,7 +977,6 @@ function setFieldFromDate(date, fieldTypeEnding, labelId, result, resultFieldNam
 }
 
 function getPlaceValueFromPlace(place, fieldTypeEnding, labelId) {
-
   if (place.values) {
     if (labelId) {
       for (let value of place.values) {
@@ -1030,8 +984,7 @@ function getPlaceValueFromPlace(place, fieldTypeEnding, labelId) {
           return value.text;
         }
       }
-    }
-    else if (!fieldTypeEnding) {
+    } else if (!fieldTypeEnding) {
       if (values.length == 1) {
         return values[0].text;
       }
@@ -1044,8 +997,7 @@ function getPlaceValueFromPlace(place, fieldTypeEnding, labelId) {
         for (let value of field.values) {
           if ((type && fieldTypeEnding && type.endsWith(fieldTypeEnding)) || value.labelId == labelId) {
             return value.text;
-          }
-          else if (!fieldTypeEnding && !labelId) {
+          } else if (!fieldTypeEnding && !labelId) {
             if (value.text) {
               return value.text;
             }
@@ -1068,7 +1020,7 @@ function cleanPlaceString(value) {
   }
 
   while (value.endsWith(",")) {
-    value = value.substring(0, value.length-1).trim();
+    value = value.substring(0, value.length - 1).trim();
   }
 
   return value;
@@ -1100,17 +1052,13 @@ function setFieldFromPlaceWithLabels(place, labelIdList, result, resultFieldName
 }
 
 function checkForBadFmpLinks(result) {
-
   // It seems pretty impossible to fix bad image links since within one document they can be off by varying
   // offsets. I'm guessing that at some point the FMP document had multiple scans of the same page and that
   // these were then removed which threw all the image numbers off.
   // So perhaps the best solution is to make a list of document numbers that have issues and do not include
   // FMP links for those.
 
-
-  const fmpDocsWithBadLinksFromFs = [
-    "GBC/1851/4307762/",
-  ];
+  const fmpDocsWithBadLinksFromFs = ["GBC/1851/4307762/"];
 
   let url = result.externalImageUrl;
 
@@ -1166,9 +1114,9 @@ function isUrlAValidFullOrPartialFmpImageLink(url) {
   // Check for known formats that would not be valid
   // example non-FMP link: "D3608/1/4"
   let badFormats = [
-    /^\w\d+\/\d+\/\d+$/,  // e.g. "D3608/1/4"
-    /^\d+$/,  // e.g. "84"
-    /^[\w\d]+$/,  // e.g. "D3608"
+    /^\w\d+\/\d+\/\d+$/, // e.g. "D3608/1/4"
+    /^\d+$/, // e.g. "84"
+    /^[\w\d]+$/, // e.g. "D3608"
     /^[\w\d]+\/$/, // e.g. "nai001442165/"
   ];
 
@@ -1201,7 +1149,6 @@ function isUrlAValidFullOrPartialFmpImageLink(url) {
 }
 
 function processImageLinks(document, result, options) {
-
   let externalImageId = result.externalImageId;
   let extImageUrl = result.extImageUrl;
   let externalFilmNumber = undefined;
@@ -1230,17 +1177,15 @@ function processImageLinks(document, result, options) {
           delete result.digitalArtifact;
         }
       }
-    }
-    else {
+    } else {
       let daArkIndex = result.digitalArtifact.indexOf(arkString);
       let daFsIndex = result.digitalArtifact.indexOf("familysearch");
 
       if (daArkIndex != -1 && daFsIndex != -1) {
         result.fsImageUrl = result.digitalArtifact;
         delete result.digitalArtifact;
-      }
-      else {
-        // it could be an FMP link like: 
+      } else {
+        // it could be an FMP link like:
         // http://search.findmypast.co.uk/record?id=GBC/1911/RG14/06751/0025&parentid=GBC/1911/RG14/06751/0025/4
         // or an Ancestry link like:
         // http://search.ancestry.com/iexec?htx=View&r=an&dbid=2703&iid=32848_B094051-00469
@@ -1250,12 +1195,10 @@ function processImageLinks(document, result, options) {
         if (fmpIndex != -1 && !extImageUrl) {
           extImageUrl = result.digitalArtifact;
           delete result.digitalArtifact;
-        }
-        else if (ancestryIndex != -1 && !extImageUrl) {
+        } else if (ancestryIndex != -1 && !extImageUrl) {
           extImageUrl = result.digitalArtifact;
           delete result.digitalArtifact;
-        }
-        else {
+        } else {
           // leave digitalArtifact for now, it may be related to the externalImageUrl
         }
       }
@@ -1264,8 +1207,8 @@ function processImageLinks(document, result, options) {
 
   if (document) {
     // use the document to determine if there is a valid image thumbnail
-    let restrictedImageThumb = document.querySelector('button[class*=restrictedImageThumbCss]');
-    let imageThumb = document.querySelector('img[class*=-imageThumbCss]');
+    let restrictedImageThumb = document.querySelector("button[class*=restrictedImageThumbCss]");
+    let imageThumb = document.querySelector("img[class*=-imageThumbCss]");
 
     if (result.fsImageUrl && imageThumb && restrictedImageThumb) {
       // this implies that there is a valid FamilySearch image - so do not set externalImageUrl
@@ -1283,23 +1226,18 @@ function processImageLinks(document, result, options) {
     }
 
     result.externalImageUrl = extImageUrl;
-  }
-  else if (externalImageId || externalFilmNumber) {
-    
+  } else if (externalImageId || externalFilmNumber) {
     if (externalImageId && externalImageId.startsWith("http")) {
       result.externalImageUrl = externalImageId;
-    }
-    else if (externalFilmNumber && externalFilmNumber.startsWith("http")) {
+    } else if (externalFilmNumber && externalFilmNumber.startsWith("http")) {
       result.externalImageUrl = externalFilmNumber;
-    }
-    else {
+    } else {
       let isFindMyPast = false;
       let url = externalImageId;
 
       if (result.citation.includes("findmypast")) {
         isFindMyPast = true;
-      }
-      else {
+      } else {
         if (isUrlAValidFullOrPartialFmpImageLink(externalImageId)) {
           isFindMyPast = true;
         }
@@ -1338,8 +1276,7 @@ function processImageLinks(document, result, options) {
   if (result.digitalArtifact) {
     if (result.digitalArtifact == result.externalImageUrl) {
       delete result.digitalArtifact;
-    }
-    else {
+    } else {
       // In the cases I have seen that get here digitalArtifact is a variation of a findmypast link
       // Sometimes it is a better link - i.e. externalImageUrl doesn't resolve but digitalArtifact does.
       // But we don't have a way to test that. For now rmove it if it contains findmypast
@@ -1348,11 +1285,10 @@ function processImageLinks(document, result, options) {
       }
     }
   }
-
 }
 
 function addRecordDataForFact(result, fact, factType) {
-  let factTypeWithSpaces = factType.replace(/([a-z])([A-Z])/g,"$1 $2");
+  let factTypeWithSpaces = factType.replace(/([a-z])([A-Z])/g, "$1 $2");
   if (fact.date) {
     if (fact.date.original) {
       let label = factTypeWithSpaces + " Date";
@@ -1362,14 +1298,14 @@ function addRecordDataForFact(result, fact, factType) {
   }
   if (fact.place) {
     const placeLabelIdsToOverrideForFacts = {
-      "Death": [ {label: "LAST_RESIDENCE", overrideKey: "Last Residence"}, ],
+      Death: [{ label: "LAST_RESIDENCE", overrideKey: "Last Residence" }],
     };
 
     let labelIdsToOverride = placeLabelIdsToOverrideForFacts[factType];
     let overrideKey = "";
     if (labelIdsToOverride) {
       let fieldLabelId = "";
-      if (fact.place.fields && fact.place.fields.length ==1) {
+      if (fact.place.fields && fact.place.fields.length == 1) {
         let values = fact.place.fields[0].values;
         if (values && values.length == 1) {
           fieldLabelId = values[0].labelId;
@@ -1417,11 +1353,24 @@ function addRecordDataForFact(result, fact, factType) {
 // As soon a a match is found later entries in fieldData are ignored?
 
 const fieldData = [
-
   // data and record data fields
-  { fieldFsType: "EventRegQtr", dataField: "registrationQuarter", recordDataField: "Registration Quarter" },
-  { fieldFsType: "EventRegDate", dataField: "registrationDate", recordDataField: "Registration Date" },
-  { fieldGcType: "Age", sourceSection: "primaryPerson", valueType: "Interpreted", dataField: "age", recordDataField: "Age" },
+  {
+    fieldFsType: "EventRegQtr",
+    dataField: "registrationQuarter",
+    recordDataField: "Registration Quarter",
+  },
+  {
+    fieldFsType: "EventRegDate",
+    dataField: "registrationDate",
+    recordDataField: "Registration Date",
+  },
+  {
+    fieldGcType: "Age",
+    sourceSection: "primaryPerson",
+    valueType: "Interpreted",
+    dataField: "age",
+    recordDataField: "Age",
+  },
 
   //  data fields
   { fieldFsType: "ExternalImageId", dataField: "externalImageId" },
@@ -1435,13 +1384,36 @@ const fieldData = [
   { fieldFsType: "CollectionId", dataField: "fsCollectionId" },
 
   // record data fields
-  { fieldFsType: "MilBeginRank", valueType: "Interpreted", recordDataField: "Miitary Beginning Rank" },
-  { fieldFsType: "MilEndRank", valueType: "Interpreted", recordDataField: "Miitary Final Rank" },
-  { fieldFsType: "MilSide", valueType: "Interpreted", recordDataField: "Miitary Side" },
-  { fieldFsType: "MilUnit", valueType: "Interpreted", recordDataField: "Miitary Unit" },
-  { fieldFsType: "MilCompany", valueType: "Interpreted", recordDataField: "Military Company" },
+  {
+    fieldFsType: "MilBeginRank",
+    valueType: "Interpreted",
+    recordDataField: "Miitary Beginning Rank",
+  },
+  {
+    fieldFsType: "MilEndRank",
+    valueType: "Interpreted",
+    recordDataField: "Miitary Final Rank",
+  },
+  {
+    fieldFsType: "MilSide",
+    valueType: "Interpreted",
+    recordDataField: "Miitary Side",
+  },
+  {
+    fieldFsType: "MilUnit",
+    valueType: "Interpreted",
+    recordDataField: "Miitary Unit",
+  },
+  {
+    fieldFsType: "MilCompany",
+    valueType: "Interpreted",
+    recordDataField: "Military Company",
+  },
   // reference fields
-  { fieldFsType: "SourceScheduleType", referenceDataField: "sourceScheduleType" },
+  {
+    fieldFsType: "SourceScheduleType",
+    referenceDataField: "sourceScheduleType",
+  },
   { fieldFsType: "SourcePieceFolio", referenceDataField: "sourcePieceFolio" },
   { fieldFsType: "SourceVolume", referenceDataField: "sourceVolume" },
   { fieldFsType: "SourcePage", referenceDataField: "sourcePageNbr" },
@@ -1471,7 +1443,10 @@ const fieldData = [
 
   { fieldFsType: "ExtFilmNbr", referenceDataField: "externalFilmNumber" },
   { fieldFsType: "ExtPubNbr", referenceDataField: "externalPublicationNumber" },
-  { fieldFsType: "ExtPubTitle", referenceDataField: "externalPublicationTitle" },
+  {
+    fieldFsType: "ExtPubTitle",
+    referenceDataField: "externalPublicationTitle",
+  },
   { fieldFsType: "ExtLineNbr", referenceDataField: "externalLineNumber" },
 
   // fields to ignore
@@ -1494,7 +1469,7 @@ const fieldData = [
   { fieldFsType: "MinorCivilDivision" },
 
   { fieldFsType: "Evquarter" },
-  
+
   { fieldFsType: "ExtCountyCode" },
   { fieldFsType: "CountyCode" },
   { fieldFsType: "CountyId" },
@@ -1575,11 +1550,14 @@ const fieldData = [
   { fieldFsTypePrefix: "Nara" },
 
   // catchAll
-  { recordDataFieldUseFsType: true, recordDataFieldUseGcType: true, valueType: "Interpreted" },
+  {
+    recordDataFieldUseFsType: true,
+    recordDataFieldUseGcType: true,
+    valueType: "Interpreted",
+  },
 ];
 
 function doesFieldDataMatch(entry, result, field, sourceSection) {
-
   if (entry.sourceSection) {
     if (entry.sourceSection != sourceSection) {
       return false;
@@ -1670,7 +1648,6 @@ function determineFieldValue(entry, field) {
 }
 
 function addFieldDataValue(entry, result, field, valueObj) {
-
   let value = valueObj.text;
   if (!value) {
     return;
@@ -1697,7 +1674,7 @@ function addFieldDataValue(entry, result, field, valueObj) {
     }
 
     if (fieldType) {
-      let fieldName = fieldType.replace(/([a-z])([A-Z])/g,"$1 $2");
+      let fieldName = fieldType.replace(/([a-z])([A-Z])/g, "$1 $2");
 
       if (!result.recordData) {
         result.recordData = {};
@@ -1713,9 +1690,9 @@ function addFieldDataValue(entry, result, field, valueObj) {
     if (field.type && field.type.startsWith(gcTypePrefix)) {
       fieldType = field.type.substring(gcTypePrefix.length);
     }
-  
+
     if (fieldType) {
-      let fieldName = fieldType.replace(/([a-z])([A-Z])/g,"$1 $2");
+      let fieldName = fieldType.replace(/([a-z])([A-Z])/g, "$1 $2");
 
       if (!result.recordData) {
         result.recordData = {};
@@ -1756,12 +1733,19 @@ function processFields(result, fields, sourceSection) {
 }
 
 function isFieldTypeValidForRecordData(type) {
-
   const typesToExclude = [
-    "SourcePieceFolio", "SourceLineNbr", "SourceRegNbr", "SourceEntryNbr", "SourcePageNbr",
-    "SourceBookNbr", "SourceHouseholdId", "HouseholdId", "FolioNo",
+    "SourcePieceFolio",
+    "SourceLineNbr",
+    "SourceRegNbr",
+    "SourceEntryNbr",
+    "SourcePageNbr",
+    "SourceBookNbr",
+    "SourceHouseholdId",
+    "HouseholdId",
+    "FolioNo",
     "CountyId",
-    "RelationshipToHead", "RelationshipToHeadCode",
+    "RelationshipToHead",
+    "RelationshipToHeadCode",
   ];
 
   for (let fieldType of typesToExclude) {
@@ -1779,8 +1763,7 @@ function getFactType(fact) {
   const gcTypePrefix = "http://gedcomx.org/";
   if (factType.startsWith(fsTypePrefix)) {
     factType = factType.substring(fsTypePrefix.length);
-  }
-  else if (factType.startsWith(gcTypePrefix)) {
+  } else if (factType.startsWith(gcTypePrefix)) {
     factType = factType.substring(gcTypePrefix.length);
   }
   return factType;
@@ -1819,7 +1802,7 @@ function setDateAndPlaceForAdditionalFact(result, fact) {
   let factType = getFactType(fact);
   let prefix = factType;
   if (fact.date) {
-    let date = getCleanDateValueFromDate(fact.date, "/Date", "EVENT_DATE")
+    let date = getCleanDateValueFromDate(fact.date, "/Date", "EVENT_DATE");
     if (date) {
       result.recordData[prefix + " Date"] = date;
     }
@@ -1829,7 +1812,7 @@ function setDateAndPlaceForAdditionalFact(result, fact) {
     }
 
     if (!fact.date.original && !date) {
-      let year = getCleanDateValueFromDate(fact.date, "/Year", "EVENT_YEAR")
+      let year = getCleanDateValueFromDate(fact.date, "/Year", "EVENT_YEAR");
       if (year) {
         result.recordData[prefix + " Year"] = year;
       }
@@ -1849,8 +1832,8 @@ function setDateAndPlaceForAdditionalFact(result, fact) {
 
 function doesLabelOverride(labelId, usedLabelId) {
   const overrides = {
-    "PR_AGE": ["PR_AGE_ORIG", "PR_AGE_IN_YEARS_ORIG"],
-    "PR_RELATIONSHIP_TO_HEAD": ["PR_RELATIONSHIP_TO_HEAD_ORIG"],
+    PR_AGE: ["PR_AGE_ORIG", "PR_AGE_IN_YEARS_ORIG"],
+    PR_RELATIONSHIP_TO_HEAD: ["PR_RELATIONSHIP_TO_HEAD_ORIG"],
   };
 
   if (!labelId) {
@@ -1872,7 +1855,6 @@ function doesLabelOverride(labelId, usedLabelId) {
 var usedLabelIds = {};
 
 function extractFields(result, fields, map) {
-
   if (!fields) {
     return;
   }
@@ -1884,8 +1866,7 @@ function extractFields(result, fields, map) {
       const gcTypePrefix = "http://gedcomx.org/";
       if (fieldType.startsWith(fsTypePrefix)) {
         fieldType = fieldType.substring(fsTypePrefix.length);
-      }
-      else if (fieldType.startsWith(gcTypePrefix)) {
+      } else if (fieldType.startsWith(gcTypePrefix)) {
         fieldType = fieldType.substring(gcTypePrefix.length);
       }
 
@@ -1906,11 +1887,9 @@ function extractFields(result, fields, map) {
 }
 
 function findPersonById(dataObj, personId) {
-
   let persons = dataObj.persons;
   if (persons) {
     for (let person of persons) {
-
       if (person.id == personId) {
         return person;
       }
@@ -1919,13 +1898,12 @@ function findPersonById(dataObj, personId) {
 }
 
 function getPrimaryNameForm(person) {
-
   let nameForms = [];
   let nameArray = person.names;
   if (nameArray && nameArray.length > 0) {
     for (let name of nameArray) {
-       // this usually seems to be "http://gedcomx.org/BirthName" but can also be
-       // "http://gedcomx.org/AlsoKnownAs" which we ignore
+      // this usually seems to be "http://gedcomx.org/BirthName" but can also be
+      // "http://gedcomx.org/AlsoKnownAs" which we ignore
       let nameType = name.type;
       if (nameType == "http://gedcomx.org/BirthName") {
         for (let nameForm of name.nameForms) {
@@ -1939,8 +1917,8 @@ function getPrimaryNameForm(person) {
   }
 
   if (nameForms.length == 0) {
-      // for some record there are no parts - just a full name
-      if (nameArray && nameArray.length > 0) {
+    // for some record there are no parts - just a full name
+    if (nameArray && nameArray.length > 0) {
       for (let name of nameArray) {
         let nameType = name.type; // this always seems to be "http://gedcomx.org/BirthName"
         if (name.nameForms && name.nameForms.length > 0) {
@@ -1962,10 +1940,10 @@ function getPrimaryNameForm(person) {
     return nameForms[0];
   }
 
-  // there was more than one. The later ones could be corrected names. But sometimes the 
+  // there was more than one. The later ones could be corrected names. But sometimes the
   // corrected one is missing fields like fullName
   let firstNameForm = nameForms[0];
-  let lastNameForm = nameForms[nameForms.length-1]
+  let lastNameForm = nameForms[nameForms.length - 1];
 
   if (!lastNameForm.fullText) {
     let lastParts = {};
@@ -1973,23 +1951,20 @@ function getPrimaryNameForm(person) {
       for (let part of lastNameForm.parts) {
         if (part.type.endsWith("Given")) {
           lastParts.givenName = part.value;
-        }
-        else if (part.type.endsWith("Surname")) {
+        } else if (part.type.endsWith("Surname")) {
           lastParts.surname = part.value;
         }
       }
     }
     if (lastParts.givenName && lastParts.surname) {
       lastNameForm.fullText = lastParts.givenName + " " + lastParts.surname;
-    }
-    else {
+    } else {
       let firstParts = {};
       if (firstNameForm.parts) {
         for (let part of firstNameForm.parts) {
           if (part.type.endsWith("Given")) {
             firstParts.givenName = part.value;
-          }
-          else if (part.type.endsWith("Surname")) {
+          } else if (part.type.endsWith("Surname")) {
             firstParts.surname = part.value;
           }
         }
@@ -2004,8 +1979,7 @@ function getPrimaryNameForm(person) {
 
       if (lastParts.givenName && lastParts.surname) {
         lastNameForm.fullText = lastParts.givenName + " " + lastParts.surname;
-      }
-      else {
+      } else {
         // still can't make full name
         if (firstNameForm.fullText) {
           lastNameForm.fullText = firstNameForm.fullText;
@@ -2028,14 +2002,11 @@ function getNameForPersonObj(person, result) {
         if (part.value) {
           if (part.type.endsWith("Given")) {
             result.givenName = part.value;
-          }
-          else if (part.type.endsWith("Surname")) {
+          } else if (part.type.endsWith("Surname")) {
             result.surname = part.value;
-          }
-          else if (part.type.endsWith("Prefix")) {
+          } else if (part.type.endsWith("Prefix")) {
             result.prefix = part.value;
-          }
-          else if (part.type.endsWith("Suffix")) {
+          } else if (part.type.endsWith("Suffix")) {
             result.suffix = part.value;
           }
         }
@@ -2049,8 +2020,7 @@ function getGenderForPersonObj(person, result) {
   if (person.gender) {
     if (person.gender.type.endsWith("/Male")) {
       result.gender = "male";
-    }
-    else if (person.gender.type.endsWith("/Female")) {
+    } else if (person.gender.type.endsWith("/Female")) {
       result.gender = "female";
     }
   }
@@ -2083,11 +2053,19 @@ function processRecordDataFactsForPersonObj(person, result) {
             setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR_EST", result, "birthYear");
           }
           if (fact.place) {
-            setFieldFromPlaceWithLabels(fact.place,
-              ["PR_BIR_PLACE", "PR_BIR_PLACE_ORIG",
-               "PR_BIRTH_PLACE", "PR_BIRTH_PLACE_ORIG",
-               "BIRTH_PLACE", "BIRTH_PLACE_ORIG", ],
-              result, "birthPlace");
+            setFieldFromPlaceWithLabels(
+              fact.place,
+              [
+                "PR_BIR_PLACE",
+                "PR_BIR_PLACE_ORIG",
+                "PR_BIRTH_PLACE",
+                "PR_BIRTH_PLACE_ORIG",
+                "BIRTH_PLACE",
+                "BIRTH_PLACE_ORIG",
+              ],
+              result,
+              "birthPlace"
+            );
             if (!result.birthPlace && !person.principal) {
               // this birth information about a non-principal. e.g. the birth place of father
               // in a child's birth or death record. The label could be something like:
@@ -2095,8 +2073,7 @@ function processRecordDataFactsForPersonObj(person, result) {
               setFieldFromPlace(fact.place, "", "", result, "birthPlace");
             }
           }
-        }
-        else if (factType == "Death") {
+        } else if (factType == "Death") {
           if (fact.date) {
             if (fact.date.original) {
               result.deathDateOriginal = fact.date.original;
@@ -2114,8 +2091,7 @@ function processRecordDataFactsForPersonObj(person, result) {
           if (fact.place) {
             setFieldFromPlace(fact.place, "", "PR_DEA_PLACE", result, "deathPlace");
           }
-        }
-        else if (factType == "Residence" || factType == "Census") {
+        } else if (factType == "Residence" || factType == "Census") {
           if (fact.place) {
             setFieldFromPlace(fact.place, "", "NOTE_PR_RES_PLACE", result, "residence");
           }
@@ -2154,14 +2130,21 @@ function processPersonPageFactsForPersonObj(person, result) {
             if (fact.place.original) {
               result.birthPlaceOriginal = fact.place.original;
             }
-            setFieldFromPlaceWithLabels(fact.place,
-              ["PR_BIR_PLACE", "PR_BIR_PLACE_ORIG",
-               "PR_BIRTH_PLACE", "PR_BIRTH_PLACE_ORIG",
-               "BIRTH_PLACE", "BIRTH_PLACE_ORIG", ],
-              result, "birthPlace");
+            setFieldFromPlaceWithLabels(
+              fact.place,
+              [
+                "PR_BIR_PLACE",
+                "PR_BIR_PLACE_ORIG",
+                "PR_BIRTH_PLACE",
+                "PR_BIRTH_PLACE_ORIG",
+                "BIRTH_PLACE",
+                "BIRTH_PLACE_ORIG",
+              ],
+              result,
+              "birthPlace"
+            );
           }
-        }
-        else if (factType == "Death") {
+        } else if (factType == "Death") {
           if (fact.date) {
             if (fact.date.original) {
               result.deathDateOriginal = fact.date.original;
@@ -2198,8 +2181,7 @@ function addParentFromPerson(otherPerson, result) {
       for (let part of nameForm.parts) {
         if (part.type.endsWith("Given")) {
           parent.givenName = part.value;
-        }
-        else if (part.type.endsWith("Surname")) {
+        } else if (part.type.endsWith("Surname")) {
           parent.surname = part.value;
         }
       }
@@ -2210,15 +2192,13 @@ function addParentFromPerson(otherPerson, result) {
     if (otherPerson.gender.type.endsWith("/Male")) {
       // it is the father
       result.father = parent;
-    }
-    else if (otherPerson.gender.type.endsWith("/Female")) {
+    } else if (otherPerson.gender.type.endsWith("/Female")) {
       result.mother = parent;
     }
   }
 }
 
 function extractPersonDataFromFetch(document, dataObj, options) {
-
   let result = {};
 
   if (document) {
@@ -2259,8 +2239,7 @@ function extractPersonDataFromFetch(document, dataObj, options) {
       let type = relationship.type;
       if (relationship.person1.resourceId == personId) {
         otherPersonId = relationship.person2.resourceId;
-      }
-      else if (relationship.person2.resourceId == personId) {
+      } else if (relationship.person2.resourceId == personId) {
         otherPersonId = relationship.person1.resourceId;
       }
 
@@ -2308,14 +2287,12 @@ function extractPersonDataFromFetch(document, dataObj, options) {
             result.spouses = [];
           }
           result.spouses.push(spouse);
-        }
-        else if (type == "http://gedcomx.org/ParentChild") {
+        } else if (type == "http://gedcomx.org/ParentChild") {
           if (relationship.person2.resourceId == personId) {
             // this person is the child
             addParentFromPerson(otherPerson, result);
           }
         }
-
       }
     }
   }
@@ -2325,7 +2302,6 @@ function extractPersonDataFromFetch(document, dataObj, options) {
 }
 
 function extractDataFromFetch(document, dataObj, fetchType, options) {
-
   usedLabelIds = {};
 
   let result = {};
@@ -2359,13 +2335,12 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
   let persons = dataObj.persons;
   if (persons) {
     for (let person of persons) {
-
       if (person.id == personId) {
         // this is the person that the page is about
         getNameForPersonObj(person, result);
         if (result.fullName) {
           result.recordData["Name"] = result.fullName;
-        }  
+        }
 
         getGenderForPersonObj(person, result);
         processRecordDataFactsForPersonObj(person, result);
@@ -2374,7 +2349,6 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
         if (person.fields) {
           processFields(result, person.fields, "primaryPerson");
         }
-
       }
       if (person.facts) {
         for (let fact of person.facts) {
@@ -2395,8 +2369,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                   // forget any other person who was a principal
                   personIdWithRelatedFact = undefined;
                   relatedPersonFactType = undefined;
-                }
-                else if (!thisPersonIsAPrincipal && !personIdWithRelatedFact) {
+                } else if (!thisPersonIsAPrincipal && !personIdWithRelatedFact) {
                   // We have a fact type but it is not for the person of interest
                   // This is the first such case we have found
                   relatedPersonFactType = factType;
@@ -2405,10 +2378,8 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
               }
             }
           }
-
         }
       }
-      
     }
   }
 
@@ -2416,7 +2387,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
   if (relationships) {
     let personIdWithRelatedFact2 = undefined;
     // go through thelist one looking for relationships with facts
-    // we need to do this before looking at the relationships with no facts since we need the 
+    // we need to do this before looking at the relationships with no facts since we need the
     // factType to process those.
     for (let relationship of relationships) {
       if (relationship.facts) {
@@ -2453,8 +2424,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                       for (let part of nameForm.parts) {
                         if (part.type.endsWith("Given")) {
                           result.spouseGivenName = part.value;
-                        }
-                        else if (part.type.endsWith("Surname")) {
+                        } else if (part.type.endsWith("Surname")) {
                           result.spouseSurname = part.value;
                         }
                       }
@@ -2463,20 +2433,18 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
 
                   if (otherPerson.fields) {
                     const personFieldsMap = {
-                      "Age": "spouseAge",
+                      Age: "spouseAge",
                     };
                     extractFields(result, otherPerson.fields, personFieldsMap);
                   }
                 }
               }
-            }
-            else if (!personIdWithRelatedFact) {
+            } else if (!personIdWithRelatedFact) {
               relatedPersonFactType = factType;
               personIdWithRelatedFact = relationship.person1.resourceId;
               personIdWithRelatedFact2 = relationship.person2.resourceId;
             }
-          }
-          else if (fact.type) {
+          } else if (fact.type) {
             // we already have a factType for the result and we have found a new fact
             // It could contain useful dates and places so don't ignore it. For example:
             // https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9?from=lynx1UIV8&treeref=L8PL-J4M
@@ -2493,26 +2461,28 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
       if (!relationship.facts) {
         // relationship has no fact. this tends to be the case for a baptism or christening and
         // we need these relationships to find the parents
-        if (result.factType == "Christening" || result.factType == "Baptism" || result.factType == "Birth"
-            || result.factType == "Death" || result.factType == "Marriage") {
+        if (
+          result.factType == "Christening" ||
+          result.factType == "Baptism" ||
+          result.factType == "Birth" ||
+          result.factType == "Death" ||
+          result.factType == "Marriage"
+        ) {
           // if one of the people in this fact is the selected person
           let otherPersonId = undefined;
           if (relationship.person1.resourceId == personId) {
             otherPersonId = relationship.person2.resourceId;
-          }
-          else if (relationship.person2.resourceId == personId) {
+          } else if (relationship.person2.resourceId == personId) {
             otherPersonId = relationship.person1.resourceId;
           }
           if (otherPersonId) {
-         
             let otherPerson = findPersonById(dataObj, otherPersonId);
             if (otherPerson) {
               let relationType = relationship.type;
               if (relationType.endsWith("/ParentChild")) {
                 // other person is either father or mother
                 addParentFromPerson(otherPerson, result);
-              }
-              else if (relationType.endsWith("/Couple")) {
+              } else if (relationType.endsWith("/Couple")) {
                 // other person is spouse
                 // look for their name
                 let nameForm = getPrimaryNameForm(otherPerson);
@@ -2522,8 +2492,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                     for (let part of nameForm.parts) {
                       if (part.type.endsWith("Given")) {
                         result.spouseGivenName = part.value;
-                      }
-                      else if (part.type.endsWith("Surname")) {
+                      } else if (part.type.endsWith("Surname")) {
                         result.spouseSurname = part.value;
                       }
                     }
@@ -2531,7 +2500,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                 }
                 if (otherPerson.fields) {
                   const personFieldsMap = {
-                    "Age": "spouseAge",
+                    Age: "spouseAge",
                   };
                   extractFields(result, otherPerson.fields, personFieldsMap);
                 }
@@ -2543,7 +2512,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
     }
 
     if (relatedPersonFactType) {
-      // go through relationships again looking for the relationship 
+      // go through relationships again looking for the relationship
       // We have three possible person IDs that are principal to the fact:
       // personIdWithRelatedFact (usually set for a child death/baptism, or could be bride or groom)
       // personIdWithRelatedFact2 (usually set for a child marriage - will be bride or groom)
@@ -2555,28 +2524,23 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
         if (relationship.person1.resourceId == personId) {
           // This relationship involves the selected person
           otherPersonId = relationship.person2.resourceId;
-          if (otherPersonId == personIdWithRelatedFact
-             || otherPersonId == personIdWithRelatedFact2) {
+          if (otherPersonId == personIdWithRelatedFact || otherPersonId == personIdWithRelatedFact2) {
             // person 2 of this relationship is the person that the fact is about and is related to our person
             relationType = relationship.type;
             if (relationType.endsWith("/ParentChild")) {
               result.relationshipToFactPerson = "Parent";
-            }
-            else if (relationType.endsWith("/Couple")) {
+            } else if (relationType.endsWith("/Couple")) {
               result.relationshipToFactPerson = "Spouse";
             }
           }
-        }
-        else if (relationship.person2.resourceId == personId) {
+        } else if (relationship.person2.resourceId == personId) {
           otherPersonId = relationship.person1.resourceId;
-          if (otherPersonId == personIdWithRelatedFact
-            || otherPersonId == personIdWithRelatedFact2) {
+          if (otherPersonId == personIdWithRelatedFact || otherPersonId == personIdWithRelatedFact2) {
             // person 1 of this relationship is the person that the fact is about and is related to our person
             relationType = relationship.type;
             if (relationType.endsWith("/ParentChild")) {
               result.relationshipToFactPerson = "Child";
-            }
-            else if (relationType.endsWith("/Couple")) {
+            } else if (relationType.endsWith("/Couple")) {
               result.relationshipToFactPerson = "Spouse";
             }
           }
@@ -2594,8 +2558,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                 for (let part of nameForm.parts) {
                   if (part.type.endsWith("Given")) {
                     result.relatedPersonGivenName = part.value;
-                  }
-                  else if (part.type.endsWith("Surname")) {
+                  } else if (part.type.endsWith("Surname")) {
                     result.relatedPersonSurname = part.value;
                   }
                 }
@@ -2606,8 +2569,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
             if (otherPerson.gender) {
               if (otherPerson.gender.type.endsWith("/Male")) {
                 result.relatedPersonGender = "male";
-              }
-              else if (otherPerson.gender.type.endsWith("/Female")) {
+              } else if (otherPerson.gender.type.endsWith("/Female")) {
                 result.relatedPersonGender = "female";
               }
             }
@@ -2617,8 +2579,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
 
               if (otherPersonId == personIdWithRelatedFact && personIdWithRelatedFact2) {
                 spouse = findPersonById(dataObj, personIdWithRelatedFact2);
-              }
-              else if (otherPersonId == personIdWithRelatedFact2 && personIdWithRelatedFact) {
+              } else if (otherPersonId == personIdWithRelatedFact2 && personIdWithRelatedFact) {
                 spouse = findPersonById(dataObj, personIdWithRelatedFact);
               }
 
@@ -2630,18 +2591,16 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                     for (let part of nameForm.parts) {
                       if (part.type.endsWith("Given")) {
                         result.relatedPersonSpouseGivenName = part.value;
-                      }
-                      else if (part.type.endsWith("Surname")) {
+                      } else if (part.type.endsWith("Surname")) {
                         result.relatedPersonSpouseSurname = part.value;
                       }
                     }
                   }
                 }
               }
-        
             }
           }
-          break;  // we have found the relationship and set relationshipToFactPerson
+          break; // we have found the relationship and set relationshipToFactPerson
         }
       }
     }
@@ -2653,21 +2612,24 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
 
     result.household = {};
     result.household.headings = [
-      "fullName", "givenName", "surname",
+      "fullName",
+      "givenName",
+      "surname",
       "relationship",
       "maritalStatus",
       "gender",
       "age",
       "occupation",
-      "birthDateOriginal", "birthYear",
-      "birthPlaceOriginal", "birthPlace",
+      "birthDateOriginal",
+      "birthYear",
+      "birthPlaceOriginal",
+      "birthPlace",
     ];
     result.household.members = [];
 
     for (let person of persons) {
-
       let member = {};
-  
+
       if (person.id == personId) {
         member.isSelected = true;
       }
@@ -2681,15 +2643,13 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
             for (let part of nameForm.parts) {
               if (part.type.endsWith("Given")) {
                 member.givenName = part.value;
-              }
-              else if (part.type.endsWith("Surname")) {
+              } else if (part.type.endsWith("Surname")) {
                 member.surname = part.value;
               }
             }
           }
         }
-      }
-      else {
+      } else {
         member.isClosed = true;
       }
 
@@ -2697,8 +2657,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
       if (person.gender) {
         if (person.gender.type.endsWith("/Male")) {
           member.gender = "male";
-        }
-        else if (person.gender.type.endsWith("/Female")) {
+        } else if (person.gender.type.endsWith("/Female")) {
           member.gender = "female";
         }
       }
@@ -2708,7 +2667,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
         for (let fact of person.facts) {
           if (fact.type) {
             let factType = getFactType(fact);
-  
+
             //console.log("factType is " + factType);
             if (factType == "Birth") {
               //console.log("type is birth");
@@ -2725,18 +2684,15 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                 }
                 setFieldFromPlace(fact.place, "", "PR_BIR_PLACE", member, "birthPlace");
               }
-            }
-            else if (factType == "MaritalStatus") {
+            } else if (factType == "MaritalStatus") {
               if (fact.value) {
                 member.maritalStatus = fact.value;
               }
-            } 
-            else if (factType == "Occupation") {
+            } else if (factType == "Occupation") {
               if (fact.value) {
                 member.occupation = fact.value;
               }
-            }
-            else if (factType == "Age") {
+            } else if (factType == "Age") {
               if (fact.values) {
                 for (let value of fact.values) {
                   if (value.labelId == "PR_AGE") {
@@ -2744,8 +2700,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                   }
                 }
               }
-            }
-            else if (factType == "RelationshipToHead") {
+            } else if (factType == "RelationshipToHead") {
               if (fact.values) {
                 for (let value of fact.values) {
                   if (value.labelId == "PR_RELATIONSHIP_TO_HEAD_ORIG") {
@@ -2753,8 +2708,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                   }
                 }
               }
-            }
-            else if (factType == "RelationshipToHeadCode" && !member.relationship) {
+            } else if (factType == "RelationshipToHeadCode" && !member.relationship) {
               if (fact.values) {
                 for (let value of fact.values) {
                   if (value.labelId == "PR_RELATIONSHIP_CODE") {
@@ -2769,12 +2723,12 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
 
       if (person.fields) {
         const personFieldsMap = {
-          "Age": "age",
-          "RelationshipToHeadCode": "relationship",
-          "RelationshipToHead": "relationship",
-          "Relationship": "relationship",
-          "SourceSheetNbr": "sheetNumber",
-          "SourceLineNbr": "lineNumber",
+          Age: "age",
+          RelationshipToHeadCode: "relationship",
+          RelationshipToHead: "relationship",
+          Relationship: "relationship",
+          SourceSheetNbr: "sheetNumber",
+          SourceLineNbr: "lineNumber",
         };
         extractFields(member, person.fields, personFieldsMap);
       }
@@ -2810,7 +2764,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
 
     if (hasLineNumbers && hasSheetNumbers) {
       // sort by line number
-      result.household.members.sort(function (a,b) {
+      result.household.members.sort(function (a, b) {
         let sheetDiff = Number(a.sheetNumber) - Number(b.sheetNumber);
         let lineDiff = Number(a.lineNumber) - Number(b.lineNumber);
         if (sheetDiff === 0) {
@@ -2818,10 +2772,9 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
         }
         return sheetDiff;
       });
-    }
-    else if (hasLineNumbers) {
+    } else if (hasLineNumbers) {
       // sort by line number
-      result.household.members.sort((a,b) => (Number(a.lineNumber) > Number(b.lineNumber)) ? 1 : -1);
+      result.household.members.sort((a, b) => (Number(a.lineNumber) > Number(b.lineNumber) ? 1 : -1));
     }
 
     // now remove any line numbers as we don't need them in the extracted data
@@ -2869,7 +2822,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
                 let collectionId = idArray[0].replace(/^.*\/records\/collections\/(\d+)$/, "$1");
                 if (collectionId && collectionId != idArray[0]) {
                   result.fsCollectionId = collectionId;
-                } 
+                }
               }
             }
           }

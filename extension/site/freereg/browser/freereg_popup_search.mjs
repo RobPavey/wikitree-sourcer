@@ -29,9 +29,7 @@ import {
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import {
-  setupSearchWithParametersSubMenu,
-} from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { registerSearchMenuItemFunction, testFilterForDatesAndCountries } from "/base/browser/popup/popup_search.mjs";
 
@@ -44,8 +42,7 @@ const freeregStartYear = 1538;
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function freeregDoSearch(input) {
-
-  doAsyncActionWithCatch("FreeReg Search", input, async function() {
+  doAsyncActionWithCatch("FreeReg Search", input, async function () {
     // since many site searchs can be on the popup for a site, it makes sense to dynamically
     // load the build search module
     let loadedModule = await import(`../core/freereg_build_search_data.mjs`);
@@ -58,24 +55,22 @@ function freeregDoSearch(input) {
       const freeregSearchData = {
         timeStamp: Date.now(),
         url: searchUrl,
-        fieldData: fieldData
+        fieldData: fieldData,
       };
 
       // this stores the search data in local storage which is then picked up by the
       // content script in the new tab/window
-      chrome.storage.local.set({freeregSearchData: freeregSearchData}, function() {
+      chrome.storage.local.set({ freeregSearchData: freeregSearchData }, function () {
         //console.log('saved freeregSearchData, freeregSearchData is:');
         //console.log(freeregSearchData);
       });
-    }
-    catch (ex) {
-      console.log('storeDataCache failed');
+    } catch (ex) {
+      console.log("storeDataCache failed");
     }
 
     if (options.search_general_new_window) {
       chrome.windows.create({ url: searchUrl });
-    }
-    else {
+    } else {
       chrome.tabs.create({ url: searchUrl });
     }
     window.close();
@@ -83,7 +78,11 @@ function freeregDoSearch(input) {
 }
 
 async function freeregSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options }
+  const input = {
+    typeOfSearch: typeOfSearch,
+    generalizedData: generalizedData,
+    options: options,
+  };
   freeregDoSearch(input);
 }
 
@@ -109,12 +108,23 @@ function addFreeregDefaultSearchMenuItem(menu, data, backFunction, filter) {
     if (!testFilterForDatesAndCountries(filter, freeregStartYear, undefined, ["United Kingdom"])) {
       return;
     }
-  }
-  else {
+  } else {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(freeregStartYear, undefined, maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(freeregStartYear, undefined, maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(freeregStartYear, undefined, maxLifespan);
+    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
+    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
 
     if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
       //console.log("addFreeregDefaultSearchMenuItem: dates not in range");
@@ -126,8 +136,8 @@ function addFreeregDefaultSearchMenuItem(menu, data, backFunction, filter) {
       return;
     }
   }
-  
-  addMenuItem(menu, "Search FreeReg (UK)...", function(element) {
+
+  addMenuItem(menu, "Search FreeReg (UK)...", function (element) {
     setupFreeregSearchSubMenu(data, backFunction, filter);
   });
 
@@ -137,12 +147,16 @@ function addFreeregDefaultSearchMenuItem(menu, data, backFunction, filter) {
 function addFreeregSearchBaptismsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(freeregStartYear, undefined, maxLifespan);
+    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
     if (!birthPossibleInRange) {
       return;
     }
   }
-  addMenuItem(menu, "Search FreeReg Baptisms", function(element) {
+  addMenuItem(menu, "Search FreeReg Baptisms", function (element) {
     freeregSearch(data.generalizedData, "baptism");
   });
 }
@@ -150,12 +164,16 @@ function addFreeregSearchBaptismsMenuItem(menu, data, filter) {
 function addFreeregSearchMarriagesMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(freeregStartYear, undefined, maxLifespan);
+    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
     if (!marriagePossibleInRange) {
       return;
     }
   }
-  addMenuItem(menu, "Search FreeReg Marriages", function(element) {
+  addMenuItem(menu, "Search FreeReg Marriages", function (element) {
     freeregSearch(data.generalizedData, "marriage");
   });
 }
@@ -163,12 +181,16 @@ function addFreeregSearchMarriagesMenuItem(menu, data, filter) {
 function addFreeregSearchBurialsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(freeregStartYear, undefined, maxLifespan);
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
     if (!deathPossibleInRange) {
       return;
     }
   }
-  addMenuItem(menu, "Search FreeReg Burials", function(element) {
+  addMenuItem(menu, "Search FreeReg Burials", function (element) {
     freeregSearch(data.generalizedData, "burial");
   });
 }
@@ -176,18 +198,22 @@ function addFreeregSearchBurialsMenuItem(menu, data, filter) {
 function addFreeregSearchAllTypesMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = options.search_general_maxLifespan;
-    let livingPossibleInRange = data.generalizedData.couldPersonHaveLivedInDateRange(freeregStartYear, undefined, maxLifespan);
+    let livingPossibleInRange = data.generalizedData.couldPersonHaveLivedInDateRange(
+      freeregStartYear,
+      undefined,
+      maxLifespan
+    );
     if (!livingPossibleInRange) {
       return;
     }
   }
-  addMenuItem(menu, "Search FreeReg All Types", function(element) {
+  addMenuItem(menu, "Search FreeReg All Types", function (element) {
     freeregSearch(data.generalizedData, "all");
   });
 }
 
 function addFreeregSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function(element) {
+  addMenuItem(menu, "Search with specified parameters", function (element) {
     setupFreeregSearchWithParametersSubMenu(data, backFunction);
   });
 }
@@ -197,8 +223,9 @@ function addFreeregSearchWithParametersMenuItem(menu, data, backFunction) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupFreeregSearchSubMenu(data, backFunction, filter) {
-
-  let backToHereFunction = function() { setupFreeregSearchSubMenu(data, backFunction) };
+  let backToHereFunction = function () {
+    setupFreeregSearchSubMenu(data, backFunction);
+  };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);

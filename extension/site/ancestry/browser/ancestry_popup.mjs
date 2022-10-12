@@ -32,23 +32,21 @@ import {
   beginMainMenu,
   displayMessage,
   displayMessageWithIcon,
-  doAsyncActionWithCatch
+  doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  addStandardMenuEnd, buildMinimalMenuWithMessage,
-} from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
 import {
-  saveCitation, doesCitationWantHouseholdTable, buildHouseholdTableString, buildCitationObjectForTable
+  saveCitation,
+  doesCitationWantHouseholdTable,
+  buildHouseholdTableString,
+  buildCitationObjectForTable,
 } from "/base/browser/popup/popup_citation.mjs";
 
-import {
-  addSavePersonDataMenuItem,
-} from "/base/browser/popup/popup_person_data.mjs";
-
+import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
@@ -58,7 +56,7 @@ import {
   getDataForLinkedHouseholdRecords,
   processWithFetchedLinkData,
   getDataForCitationAndHouseholdRecords,
-  displayLinkedRecordsFetchErrorsMessage
+  displayLinkedRecordsFetchErrorsMessage,
 } from "./ancestry_popup_linked_records.mjs";
 
 import { RT } from "../../../base/core/record_type.mjs";
@@ -66,7 +64,9 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
 import {
-  generalizeData, generalizeDataGivenRecordType, regeneralizeDataWithLinkedRecords
+  generalizeData,
+  generalizeDataGivenRecordType,
+  regeneralizeDataWithLinkedRecords,
 } from "../core/ancestry_generalize_data.mjs";
 import { buildCitation } from "../core/ancestry_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
@@ -87,35 +87,32 @@ var ancestryPrefetch = {
   areBuildTableDependenciesReady: false,
   areBuildSharingDependenciesReady: false,
 
-  timeoutCount: 0
+  timeoutCount: 0,
 };
 
 const prefetchTimeoutMax = 100;
 const prefetchTimeoutDelay = 100;
 
 function displayPrefetchErrorForSharingData() {
-
   console.log("displayPrefetchError: ancestryPrefetch is:");
   console.log(ancestryPrefetch);
-  
+
   let message = "Could not retrieve the Ancestry sharing data\n";
 
   displayMessageWithIcon("warning", message);
 }
 
 function displayPrefetchWaitingMessage(baseMessage, isRequired) {
-
   if (ancestryPrefetch.isPrefetchedSharingDataObjReady && ancestryPrefetch.timeoutCount > 5) {
     let message = baseMessage + "...\nWaiting for Ancestry sharing data\n";
 
-    let timeRemaining = (prefetchTimeoutMax - ancestryPrefetch.timeoutCount) * prefetchTimeoutDelay / 1000;
+    let timeRemaining = ((prefetchTimeoutMax - ancestryPrefetch.timeoutCount) * prefetchTimeoutDelay) / 1000;
 
-    message += "If not retrieved in:\n" + timeRemaining.toFixed(1) + " seconds\n"
-    
+    message += "If not retrieved in:\n" + timeRemaining.toFixed(1) + " seconds\n";
+
     if (isRequired) {
       message += "the operation cannot be performed.\n";
-    }
-    else {
+    } else {
       message += "WikiTree Sourcer will proceed without the sharing data.\n";
     }
 
@@ -128,13 +125,16 @@ function ancestryDependencyListener() {
   // It could be used to enable a menu item for example when everything is ready
   // Though so far that doesn't seem to be necessary, even in Safari
   if (0) {
-    console.log("ancestryDependencyListener"
-    + ", dataCache = " + isCachedDataCacheReady
-      + ", sharingObj = " + ancestryPrefetch.isPrefetchedSharingDataObjReady);
+    console.log(
+      "ancestryDependencyListener" +
+        ", dataCache = " +
+        isCachedDataCacheReady +
+        ", sharingObj = " +
+        ancestryPrefetch.isPrefetchedSharingDataObjReady
+    );
   }
 
-  if (isCachedDataCacheReady
-     && ancestryPrefetch.isPrefetchedSharingDataObjReady) {
+  if (isCachedDataCacheReady && ancestryPrefetch.isPrefetchedSharingDataObjReady) {
     ancestryPrefetch.areBuildCitationDependenciesReady = true;
   }
 
@@ -167,14 +167,12 @@ async function getAncestrySharingDataObj(data, dependencyListener) {
 
     if (response.success) {
       ancestryPrefetch.prefetchedSharingDataObj = response.dataObj;
-    }
-    else {
+    } else {
       // It can fail even if there is an image URL, for example findagrave images:
       // https://www.ancestry.com/discoveryui-content/view/2221897:60527
       // This is not considered an error there just will be no sharing link
     }
-  }
-  catch (e) {
+  } catch (e) {
     console.log("getAncestrySharingDataObj caught exception on fetchAncestrySharingDataObj:");
     console.log(e);
   }
@@ -189,27 +187,30 @@ async function getAncestrySharingDataObj(data, dependencyListener) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function ancestryBuildCitationWithLinkData(data) {
-
   //console.log("ancestryBuildCitationWithLinkData, data is");
   //console.log(data);
 
   // if there are linked records then add that data to the generalized data
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
-      // some of the linked records could not be retrieved. 
+      // some of the linked records could not be retrieved.
       displayLinkedRecordsFetchErrorsMessage("building citation");
       return;
     }
 
     regeneralizeDataWithLinkedRecords(data);
   }
-  
-  let householdTableString = buildHouseholdTableString(data.extractedData, data.generalizedData, data.type, buildHouseholdTable);
+
+  let householdTableString = buildHouseholdTableString(
+    data.extractedData,
+    data.generalizedData,
+    data.type,
+    buildHouseholdTable
+  );
 
   // build the citation
   // this is only for use on an Ancestry record page - not an image page or person page
-  doAsyncActionWithCatch("Building Citation", data, async function() {
-
+  doAsyncActionWithCatch("Building Citation", data, async function () {
     const input = {
       extractedData: data.extractedData,
       generalizedData: data.generalizedData,
@@ -219,7 +220,7 @@ async function ancestryBuildCitationWithLinkData(data) {
       options: options,
       householdTableString: householdTableString,
     };
-  
+
     const citationObject = buildCitation(input);
     citationObject.generalizedData = data.generalizedData;
     saveCitation(citationObject);
@@ -229,9 +230,11 @@ async function ancestryBuildCitationWithLinkData(data) {
 async function ancestryBuildCitation(data) {
   if (!ancestryPrefetch.areBuildCitationDependenciesReady) {
     // dependencies not ready, wait a few milliseconds and try again
-    console.log("ancestryBuildCitation, waiting another 10ms")
+    console.log("ancestryBuildCitation, waiting another 10ms");
     if (ancestryPrefetch.timeoutCount < prefetchTimeoutMax) {
-      setTimeout(function() { ancestryBuildCitation(data); }, prefetchTimeoutDelay );
+      setTimeout(function () {
+        ancestryBuildCitation(data);
+      }, prefetchTimeoutDelay);
       ancestryPrefetch.timeoutCount++;
       displayPrefetchWaitingMessage("Building citation", false);
       return;
@@ -242,8 +245,7 @@ async function ancestryBuildCitation(data) {
   // poss household
   if (doesCitationWantHouseholdTable(data.type, data.generalizedData)) {
     getDataForCitationAndHouseholdRecords(data, ancestryBuildCitationWithLinkData);
-  }
-  else {
+  } else {
     processWithFetchedLinkData(data, ancestryBuildCitationWithLinkData);
   }
 }
@@ -251,102 +253,99 @@ async function ancestryBuildCitation(data) {
 async function ancestryBuildSharingTemplate(extractedData) {
   if (!ancestryPrefetch.areBuildSharingDependenciesReady) {
     // dependencies not ready, wait a few milliseconds and try again
-    console.log("ancestryBuildSharingTemplate, waiting another 10ms")
+    console.log("ancestryBuildSharingTemplate, waiting another 10ms");
     if (ancestryPrefetch.timeoutCount < prefetchTimeoutMax) {
-      setTimeout(function() { ancestryBuildSharingTemplate(extractedData); }, prefetchTimeoutDelay );
+      setTimeout(function () {
+        ancestryBuildSharingTemplate(extractedData);
+      }, prefetchTimeoutDelay);
       ancestryPrefetch.timeoutCount++;
       displayPrefetchWaitingMessage("Building sharing template", true);
-    }
-    else {
+    } else {
       displayPrefetchErrorForSharingData();
     }
     return;
   }
 
-  doAsyncActionWithCatch("Building Sharing Template", extractedData, async function() {
-
+  doAsyncActionWithCatch("Building Sharing Template", extractedData, async function () {
     if (extractedData.pageType == "sharingUrl") {
       // we already have the sharing template in the extractedData so we just need to store it.
       var template = extractedData.ancestryTemplate;
       writeToClipboard(template, "Sharing template");
-    }
-    else {
+    } else {
       // this is a record or image page
       let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
       if (dataObj) {
         let url = dataObj.url;
-        
+
         // https://www.ancestry.com/sharing/24274440?h=95cf5c
         let num1 = url.replace(/.*\/sharing\/(\w+)\?h\=\w+/, "$1");
         let num2 = url.replace(/.*\/sharing\/\w+\?h\=(\w+)/, "$1");
-      
+
         let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
 
         writeToClipboard(template, "Sharing template");
-      }
-      else {
+      } else {
         displayMessageWithIcon("warning", "Error building sharing template.");
-      }  
+      }
     }
-
   });
 }
 
 async function ancestryBuildSharingUrl(extractedData) {
   if (!ancestryPrefetch.areBuildSharingDependenciesReady) {
     // dependencies not ready, wait a few milliseconds and try again
-    console.log("ancestryBuildSharingUrl, waiting another 10ms")
+    console.log("ancestryBuildSharingUrl, waiting another 10ms");
     if (ancestryPrefetch.timeoutCount < prefetchTimeoutMax) {
-      setTimeout(function() { ancestryBuildSharingUrl(extractedData); }, prefetchTimeoutDelay );
+      setTimeout(function () {
+        ancestryBuildSharingUrl(extractedData);
+      }, prefetchTimeoutDelay);
       ancestryPrefetch.timeoutCount++;
       displayPrefetchWaitingMessage("Building sharing URL", true);
-    }
-    else {
+    } else {
       displayPrefetchErrorForSharingData();
     }
     return;
   }
 
-  doAsyncActionWithCatch("Building Sharing URL", extractedData, async function() {
-
+  doAsyncActionWithCatch("Building Sharing URL", extractedData, async function () {
     if (extractedData.pageType == "sharingUrl") {
       // we already have the sharing template in the extractedData so we just need to store it.
       var sharingUrl = extractedData.sharingUrl;
       writeToClipboard(sharingUrl, "Sharing URL");
-    }
-    else {
+    } else {
       // this is a record or image page
       let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
       if (dataObj) {
         writeToClipboard(dataObj.url, "Sharing URL");
-      }
-      else {
+      } else {
         displayMessageWithIcon("warning", "Error building sharing URL.");
-      }  
+      }
     }
-
   });
 }
 
 async function ancestryBuildHouseholdTableWithLinkedRecords(data) {
-
   // if there are linked records then add that data to the generalized data
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
-      // some of the linked records could not be retrieved. 
+      // some of the linked records could not be retrieved.
       displayLinkedRecordsFetchErrorsMessage("building household table");
       return;
     }
-  
+
     regeneralizeDataWithLinkedRecords(data);
   }
 
   // There is an option to put an inline citation at the end of the table caption
   // If this is set then generate the citation string.
-  let citationObject = buildCitationObjectForTable(data.extractedData, data.generalizedData,
-    ancestryPrefetch.prefetchedSharingDataObj, buildCitation);
+  let citationObject = buildCitationObjectForTable(
+    data.extractedData,
+    data.generalizedData,
+    ancestryPrefetch.prefetchedSharingDataObj,
+    buildCitation
+  );
 
-  doAsyncActionWithCatch("Building Household Table", data, async function() {
+  doAsyncActionWithCatch("Building Household Table", data, async function () {
     const input = {
       extractedData: data.extractedData,
       generalizedData: data.generalizedData,
@@ -365,7 +364,9 @@ async function ancestryBuildHouseholdTable(data) {
     // dependencies not ready, wait a few milliseconds and try again
     console.log("ancestryBuildHouseholdTable, waiting another 10ms");
     if (ancestryPrefetch.timeoutCount < prefetchTimeoutMax) {
-      setTimeout(function() { ancestryBuildHouseholdTable(data); }, prefetchTimeoutDelay );
+      setTimeout(function () {
+        ancestryBuildHouseholdTable(data);
+      }, prefetchTimeoutDelay);
       ancestryPrefetch.timeoutCount++;
       return;
     }
@@ -383,12 +384,11 @@ function ancestryGoToRecord(data) {
 
   const pidString = "pId=";
   const colString = "/imageviewer/collections/";
-  
+
   let pidIndex = url.indexOf(pidString);
   let colIndex = url.indexOf(colString);
 
   if (pidIndex != -1 && colIndex != -1) {
-
     let pid = url.substring(pidIndex + pidString.length);
     let pidExtraIndex = pid.search(/[^\d]/);
     if (pidExtraIndex != -1) {
@@ -409,12 +409,10 @@ function ancestryGoToRecord(data) {
   if (recordUrl) {
     chrome.tabs.create({ url: recordUrl });
     window.close();
-  }
-  else {
+  } else {
     // failed
     displayMessageWithIcon("warning", "The Image URL is not in the expected format.");
   }
-
 }
 
 function ancestryGoToImage(data) {
@@ -442,17 +440,17 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
   if (extractResult.success) {
     let extractedData = extractDataFromHtml(extractResult.htmlText, recordUrl);
     setupAncestryPopupMenu(extractedData);
-  }
-  else if (extractResult.errorStatus == "subscriptionHasNoAccess") {
+  } else if (extractResult.errorStatus == "subscriptionHasNoAccess") {
     originalExtractedData.pageType = "record";
     originalExtractedData.isLimitedDueToSubscription = true;
     setupAncestryPopupMenu(originalExtractedData);
-  }
-  else {
+  } else {
     // ??
-    console.log("Failed response from ancestry extractRecordFromUrlFromPersonSourceCitation. recordUrl is: " + recordUrl);
+    console.log(
+      "Failed response from ancestry extractRecordFromUrlFromPersonSourceCitation. recordUrl is: " + recordUrl
+    );
     let message = "Error fetching linked record from URL:\n\n" + recordUrl;
-    message += "\n\nThis could be due to internet connectivity issues or server issues."
+    message += "\n\nThis could be due to internet connectivity issues or server issues.";
     message += "\n\nPlease try again.\n";
     displayMessageWithIcon("warning", message);
   }
@@ -466,7 +464,7 @@ function addAncestryBuildSharingTemplateMenuItem(menu, data) {
   if (data.extractedData.pageType == "record") {
     return;
   }
-  addMenuItem(menu, "Build Sharing Template", function(element) {
+  addMenuItem(menu, "Build Sharing Template", function (element) {
     displayMessage("Building sharing template...");
     ancestryBuildSharingTemplate(data.extractedData);
   });
@@ -476,16 +474,15 @@ function addAncestryBuildSharingUrlMenuItem(menu, data) {
   if (data.extractedData.pageType == "record") {
     return;
   }
-  addMenuItem(menu, "Build Sharing URL", function(element) {
+  addMenuItem(menu, "Build Sharing URL", function (element) {
     displayMessage("Building sharing URL...");
     ancestryBuildSharingUrl(data.extractedData);
   });
 }
 
 function addAncestryBuildHouseholdTableMenuItem(menu, data) {
-
   if (data.generalizedData.hasHouseholdTable()) {
-    addMenuItem(menu, "Build Household Table", function(element) {
+    addMenuItem(menu, "Build Household Table", function (element) {
       displayMessage("Building table...");
       ancestryBuildHouseholdTable(data);
     });
@@ -493,45 +490,52 @@ function addAncestryBuildHouseholdTableMenuItem(menu, data) {
 }
 
 function addAncestryGoToRecordMenuItem(menu, data) {
-
   let url = data.extractedData.url;
   let pidIndex = url.indexOf("pId=");
 
   if (pidIndex != -1) {
-    addMenuItem(menu, "Go to Record Page", function(element) {
+    addMenuItem(menu, "Go to Record Page", function (element) {
       ancestryGoToRecord(data);
     });
   }
 }
 
 function addAncestryGoToImageMenuItem(menu, data) {
-
   let imageUrl = data.extractedData.imageUrl;
 
   if (imageUrl) {
-    addMenuItem(menu, "Go to Image Page", function(element) {
+    addMenuItem(menu, "Go to Image Page", function (element) {
       ancestryGoToImage(data);
     });
   }
 }
 
 function addAncestryImageBuildCitationMenuItems(menu, data) {
-
-  addMenuItemWithSubtitle(menu, "Build Inline Image Citation", function(element) {
-    displayMessage("Building citation...");
-    data.type = "inline";
-    ancestryBuildCitation(data);
-  }, "It is recommended to Build Inline Citation on the Record Page instead if one exists.");
-  addMenuItemWithSubtitle(menu, "Build Source Image Citation", function(element) {
-    displayMessage("Building citation...");
-    data.type = "source";
-    ancestryBuildCitation(data);
-  }, "It is recommended to Build Source Citation on the Record Page instead if one exists.");
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Inline Image Citation",
+    function (element) {
+      displayMessage("Building citation...");
+      data.type = "inline";
+      ancestryBuildCitation(data);
+    },
+    "It is recommended to Build Inline Citation on the Record Page instead if one exists."
+  );
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Source Image Citation",
+    function (element) {
+      displayMessage("Building citation...");
+      data.type = "source";
+      ancestryBuildCitation(data);
+    },
+    "It is recommended to Build Source Citation on the Record Page instead if one exists."
+  );
 }
 
 function addAncestryGoToFullImageMenuItem(menu, data) {
   if (data.extractedData.pageType == "sharingImageOrRecord" && data.extractedData.fullSizeSharingImageUrl) {
-    addMenuItem(menu, "Go to Fullsize Sharing Image Page", function(element) {
+    addMenuItem(menu, "Go to Fullsize Sharing Image Page", function (element) {
       ancestryGoToFullSizeSharingImage(data);
     });
   }
@@ -544,35 +548,33 @@ function addAncestryGoToFullImageMenuItem(menu, data) {
 // Common function used by both the normal path and the path taken for an unclassified
 // non-primary record.
 async function setupAncestryPopupMenuWithLinkData(data) {
-
   // if there are linked records then try to determine record type
   if (data.linkedRecords && data.linkedRecords.length > 0) {
-
     if (data.linkedRecordFailureCount > 0) {
-      // some of the linked records could not be retrieved. 
+      // some of the linked records could not be retrieved.
       displayLinkedRecordsFetchErrorsMessage("initializing menu");
       return;
     }
-  
+
     regeneralizeDataWithLinkedRecords(data);
   }
 
   let extractedData = data.extractedData;
 
-  let backFunction = function() { setupAncestryPopupMenuWithLinkData(data); };
+  let backFunction = function () {
+    setupAncestryPopupMenuWithLinkData(data);
+  };
 
   let menu = beginMainMenu();
 
   if (extractedData.pageType == "personFacts") {
     await addSearchMenus(menu, data, backFunction, "ancestry");
     addSavePersonDataMenuItem(menu, data);
-  }
-  else if (extractedData.pageType == "record") {
-
+  } else if (extractedData.pageType == "record") {
     // if the user doesn't have a subscription add a heading to that effect
     if (extractedData.isLimitedDueToSubscription) {
       let subMessage = "It appears that your subscription does not give access to this record.";
-      subMessage += " Only limited information could be extracted."
+      subMessage += " Only limited information could be extracted.";
       addItalicMessageMenuItem(menu, subMessage, "yellowBackground");
     }
 
@@ -582,14 +584,12 @@ async function setupAncestryPopupMenuWithLinkData(data) {
     addBuildCitationMenuItems(menu, data, ancestryBuildCitation, backFunction, generalizeDataGivenRecordType);
     addAncestryBuildHouseholdTableMenuItem(menu, data);
     addAncestryGoToImageMenuItem(menu, data);
-  }
-  else if (extractedData.pageType == "image") {
+  } else if (extractedData.pageType == "image") {
     addAncestryImageBuildCitationMenuItems(menu, data);
     addAncestryBuildSharingTemplateMenuItem(menu, data);
     addAncestryBuildSharingUrlMenuItem(menu, data);
     addAncestryGoToRecordMenuItem(menu, data);
-  }
-  else if (extractedData.pageType == "sharingImageOrRecord") {
+  } else if (extractedData.pageType == "sharingImageOrRecord") {
     addAncestryGoToFullImageMenuItem(menu, data);
   }
 
@@ -605,7 +605,6 @@ async function useLinkedRecordsToDetermineType(data) {
 }
 
 async function setupAncestryPopupMenu(extractedData) {
-
   //console.log("setupAncestryPopupMenu: extractedData is:");
   //console.log(extractedData);
 
@@ -615,7 +614,9 @@ async function setupAncestryPopupMenu(extractedData) {
     return; // the above call will asyncronously call setupAncestryPopupMenu again
   }
 
-  let backFunction = function() { setupAncestryPopupMenu(extractedData); };
+  let backFunction = function () {
+    setupAncestryPopupMenu(extractedData);
+  };
 
   if (!extractedData || !extractedData.pageType || extractedData.pageType == "unknown") {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
@@ -626,7 +627,7 @@ async function setupAncestryPopupMenu(extractedData) {
   }
 
   // get generalized data
-  let generalizedData = generalizeData({extractedData: extractedData});
+  let generalizedData = generalizeData({ extractedData: extractedData });
   let data = { extractedData: extractedData, generalizedData: generalizedData };
 
   //console.log("setupAncestryPopupMenu: generalizedData is:");
@@ -649,8 +650,7 @@ async function setupAncestryPopupMenu(extractedData) {
   if (generalizedData.sourceType == "record" && generalizedData.recordType == RT.Unclassified && generalizedData.role) {
     // use linked record to try to determine record type
     useLinkedRecordsToDetermineType(data);
-  }
-  else {
+  } else {
     setupAncestryPopupMenuWithLinkData(data);
   }
 }

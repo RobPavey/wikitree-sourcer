@@ -28,7 +28,6 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { DataCache } from "../../../base/core/data_cache.mjs";
 
 function getPersonGenderFromGeneralizedDataOrDataCache(generalizedData, dataCache, isBirth) {
-
   let personGender = generalizedData.personGender;
 
   if (!personGender) {
@@ -42,22 +41,24 @@ function getPersonGenderFromGeneralizedDataOrDataCache(generalizedData, dataCach
   return personGender;
 }
 
-
 function buildSearchUrl(buildUrlInput) {
-
   const data = buildUrlInput.generalizedData;
   const dataCache = buildUrlInput.dataCache;
   const typeOfSearch = buildUrlInput.typeOfSearch;
 
-  var builder = new GroUriBuilder;
+  var builder = new GroUriBuilder();
 
   let type = typeOfSearch.toLowerCase();
   if (typeOfSearch == "SameCollection") {
     if (data.collectionData && data.collectionData.id) {
-      type = RC.mapCollectionId(data.sourceOfData, data.collectionData.id, "gro",
-        data.inferEventCountry(), data.inferEventYear());
-    }
-    else {
+      type = RC.mapCollectionId(
+        data.sourceOfData,
+        data.collectionData.id,
+        "gro",
+        data.inferEventCountry(),
+        data.inferEventYear()
+      );
+    } else {
       // should never happen
       type = "births";
     }
@@ -69,8 +70,7 @@ function buildSearchUrl(buildUrlInput) {
     builder.addYearRange("1");
     if (data.lastNameAtBirth) {
       builder.addSurname(data.lastNameAtBirth);
-    }
-    else {
+    } else {
       let lastName = data.inferLastName();
       if (lastName) {
         builder.addSurname(lastName);
@@ -83,8 +83,7 @@ function buildSearchUrl(buildUrlInput) {
         builder.addDistrict(data.registrationDistrict);
       }
     }
-  }
-  else {
+  } else {
     builder.addIndex("EW_Death");
     builder.addYear(data.inferDeathYear());
     builder.addYearRange("1");
@@ -99,22 +98,25 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  builder.addFirstForename(data.inferFirstName())
+  builder.addFirstForename(data.inferFirstName());
   builder.addSecondForename(data.inferSecondForename());
 
-  let personGender = getPersonGenderFromGeneralizedDataOrDataCache(data, dataCache, buildUrlInput.typeOfSearch == "groBirth");
+  let personGender = getPersonGenderFromGeneralizedDataOrDataCache(
+    data,
+    dataCache,
+    buildUrlInput.typeOfSearch == "groBirth"
+  );
   if (personGender) {
     if (personGender.toLowerCase() == "male") {
       builder.addGenderMale();
-    }
-    else {
+    } else {
       builder.addGenderFemale();
     }
   }
 
   if (data.eventDate && data.eventDate.quarter) {
-    const quarterLetters = [ "M", "J", "S", "D"];
-    let quarterLetter = quarterLetters[data.eventDate.quarter-1];
+    const quarterLetters = ["M", "J", "S", "D"];
+    let quarterLetter = quarterLetters[data.eventDate.quarter - 1];
     builder.addQuarter(quarterLetter);
   }
 
@@ -123,14 +125,14 @@ function buildSearchUrl(buildUrlInput) {
     builder.addVolume(data.collectionData.volume);
     builder.addPage(data.collectionData.page);
   }
-  
+
   const url = builder.getUri();
 
   //console.log("URL is " + url);
 
   var result = {
-    'url' : url,
-  }
+    url: url,
+  };
 
   return result;
 }

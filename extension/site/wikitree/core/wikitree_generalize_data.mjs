@@ -32,27 +32,37 @@ function getQualifier(status) {
 
   if (status == "before") {
     return dateQualifiers.BEFORE;
-  }
-  else if (status == "after") {
+  } else if (status == "after") {
     return dateQualifiers.AFTER;
-  }
-  else if (status == "certain") {
+  } else if (status == "certain") {
     return dateQualifiers.EXACT;
-  }
-  else if (status == "guess") {
+  } else if (status == "guess") {
     return dateQualifiers.ABOUT;
-  }
-  else {
+  } else {
     return dateQualifiers.NONE;
   }
 }
 
 function removeSuffixes(lastName) {
   let suffixes = [
-    "OBE", "CBE", "DBE",
-    "DCVO", "GCVO", "SSI", "GCStJ",
-    "KG", "KT", "PC", "GCB", "AC", "QSO",
-    "GCMG", "CD", "ADC", "DL", "JP",
+    "OBE",
+    "CBE",
+    "DBE",
+    "DCVO",
+    "GCVO",
+    "SSI",
+    "GCStJ",
+    "KG",
+    "KT",
+    "PC",
+    "GCB",
+    "AC",
+    "QSO",
+    "GCMG",
+    "CD",
+    "ADC",
+    "DL",
+    "JP",
   ];
 
   let name = lastName;
@@ -62,16 +72,14 @@ function removeSuffixes(lastName) {
     let isSuffix = false;
     if (suffixes.includes(possibleSuffix)) {
       isSuffix = true;
-    }
-    else if (possibleSuffix.length <= 5 && !/[a-z]/.test(possibleSuffix)) {
+    } else if (possibleSuffix.length <= 5 && !/[a-z]/.test(possibleSuffix)) {
       // it is a short name and no lower-case letters
       isSuffix = true;
     }
     if (isSuffix) {
       name = name.substring(0, lastSpaceIndex).trim();
       lastSpaceIndex = name.lastIndexOf(" ");
-    }
-    else {
+    } else {
       lastSpaceIndex = -1;
     }
   }
@@ -127,8 +135,7 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
         // NOTE: lnabIndex is the space before the LNAB
         let suffix = name.substring(lnabIndex + lnabFromId.length + 1).trim();
         object.nameObj.suffix = suffix;
-      }
-      else {
+      } else {
         // This should never happen, the lnab should always be in the name
       }
     }
@@ -137,8 +144,7 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
     object.nameObj.forenames = name.substring(0, spaceBeforeLastNameIndex);
     object.lastNameAtBirth = lastName;
     object.lastNameAtDeath = object.lastNameAtBirth;
-  }
-  else {
+  } else {
     object.nameObj.forenames = name.substring(0, parenIndex).trim();
 
     let closeParenIndex = name.indexOf(")", parenIndex);
@@ -147,16 +153,16 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
       return;
     }
 
-    let lnab = name.substring(parenIndex+1, closeParenIndex).trim();
+    let lnab = name.substring(parenIndex + 1, closeParenIndex).trim();
     if (lnab != lnabFromId) {
       console.log("LNAB in name '" + name + "' does not match LNAB in wikiId '" + wikiId + "'");
     }
 
-    object.lastNameAtBirth = name.substring(parenIndex+1, closeParenIndex).trim();
+    object.lastNameAtBirth = name.substring(parenIndex + 1, closeParenIndex).trim();
 
     // the part after the close paren could have suffixes. We could in some cases know the
     // spouses LNAB but they are not guaranteed to be the *last* husband
-    let lastNameAtDeath = name.substring(closeParenIndex+1).trim();
+    let lastNameAtDeath = name.substring(closeParenIndex + 1).trim();
     lastNameAtDeath = removeSuffixes(lastNameAtDeath);
 
     object.lastNameAtDeath = lastNameAtDeath;
@@ -169,10 +175,9 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
 }
 
 function generalizeData(input) {
-
   let data = input.extractedData;
 
-  let result = new GeneralizedData;
+  let result = new GeneralizedData();
 
   result.sourceOfData = "wikitree";
   // for wikiTree is sourceType always "profile"?
@@ -196,7 +201,7 @@ function generalizeData(input) {
   result.lastNameAtBirth = data.lnab;
   result.lastNameAtDeath = data.currentLastName;
   result.mothersMaidenName = data.mothersMaidenName;
-  
+
   result.setPersonGender(data.personGender);
 
   // Birth date

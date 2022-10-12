@@ -43,15 +43,12 @@ function getCleanRecordDataValue(recordData, fieldName) {
 }
 
 function getRefTitle(ed, gd) {
-
   const recordTypeToRefTitle = [
     {
       type: RT.Census,
       defaultTitle: "Census",
       addYear: true,
-      titleMatches: [
-        {title: "Register", matches: ["1939 England and Wales Register"]},
-      ],
+      titleMatches: [{ title: "Register", matches: ["1939 England and Wales Register"] }],
     },
   ];
 
@@ -77,33 +74,32 @@ function getRefTitle(ed, gd) {
 }
 
 function getImageRefTitle(titleCollection, imageBrowsePath) {
-
   const titleCollectionTightMatches = [
-    {title: "Death", matches: ["Death Records"]},
-    {title: "Probate", matches: ["Probate Records"]},
+    { title: "Death", matches: ["Death Records"] },
+    { title: "Probate", matches: ["Probate Records"] },
   ];
 
   const imageBrowsePathTightMatches = [
-    {title: "Death", matches: ["Death Certificates"]},
-    {title: "Probate", matches: ["Probate Records"]},
+    { title: "Death", matches: ["Death Certificates"] },
+    { title: "Probate", matches: ["Probate Records"] },
   ];
 
   const titleCollectionLooseMatches = [
-    {title: "Birth", matches: ["Birth"]},
-    {title: "Baptism", matches: ["Baptism"]},
-    {title: "Marriage", matches: ["Marriage"]},
-    {title: "Death", matches: ["Death"]},
-    {title: "Burial", matches: ["Burial"]},
-    {title: "Probate", matches: ["Probate"]},
+    { title: "Birth", matches: ["Birth"] },
+    { title: "Baptism", matches: ["Baptism"] },
+    { title: "Marriage", matches: ["Marriage"] },
+    { title: "Death", matches: ["Death"] },
+    { title: "Burial", matches: ["Burial"] },
+    { title: "Probate", matches: ["Probate"] },
   ];
 
   const imageBrowsePathLooseMatches = [
-    {title: "Birth", matches: ["Birth"]},
-    {title: "Baptism", matches: ["Baptism"]},
-    {title: "Marriage", matches: ["Marriage"]},
-    {title: "Death", matches: ["Death"]},
-    {title: "Burial", matches: ["Burial"]},
-    {title: "Probate", matches: ["Probate"]},
+    { title: "Birth", matches: ["Birth"] },
+    { title: "Baptism", matches: ["Baptism"] },
+    { title: "Marriage", matches: ["Marriage"] },
+    { title: "Death", matches: ["Death"] },
+    { title: "Burial", matches: ["Burial"] },
+    { title: "Probate", matches: ["Probate"] },
   ];
 
   function lookup(title, table) {
@@ -124,32 +120,32 @@ function getImageRefTitle(titleCollection, imageBrowsePath) {
       return refTitle;
     }
   }
-  
+
   if (imageBrowsePath) {
     let refTitle = lookup(imageBrowsePath, imageBrowsePathTightMatches);
     if (refTitle) {
       return refTitle;
     }
   }
-  
+
   if (titleCollection) {
     let refTitle = lookup(titleCollection, titleCollectionLooseMatches);
     if (refTitle) {
       return refTitle;
     }
   }
-  
+
   if (imageBrowsePath) {
     let refTitle = lookup(imageBrowsePath, imageBrowsePathLooseMatches);
     if (refTitle) {
       return refTitle;
     }
   }
-  
+
   // no matches
   if (titleCollection && imageBrowsePath) {
     // choose the shorter one
-    return (imageBrowsePath.length < titleCollection.length) ? imageBrowsePath : titleCollection;
+    return imageBrowsePath.length < titleCollection.length ? imageBrowsePath : titleCollection;
   }
   if (titleCollection) {
     return titleCollection;
@@ -173,27 +169,27 @@ function modifyValueForUrl(value) {
 }
 
 const referenceKeys = [
-  ["reference number",],
-  ["registration number",],
-  ["declaration number",],
-  ["marriage certificate number",],
-  ["book",],
-  ["piece",],
-  ["folio",],
-  ["volume", "volume number",],
-  ["page", "page number", "os page",],
-  ["line", "line number",],
-  ["roll",],
-  ["reel number",],
-  ["fhl film number",],
-  ["schedule", "schedule number", "household schedule number",],
-  ["household number",],
-  ["sub schedule number", "sub-schedule number",],
-  ["registration district number",],
-  ["ed, institution, or vessel",],  // this always seems to be a number
-  ["enumeration district or census tract",],  // this always seems to be a number
-  ["newspaper information",],
-  ["url",],
+  ["reference number"],
+  ["registration number"],
+  ["declaration number"],
+  ["marriage certificate number"],
+  ["book"],
+  ["piece"],
+  ["folio"],
+  ["volume", "volume number"],
+  ["page", "page number", "os page"],
+  ["line", "line number"],
+  ["roll"],
+  ["reel number"],
+  ["fhl film number"],
+  ["schedule", "schedule number", "household schedule number"],
+  ["household number"],
+  ["sub schedule number", "sub-schedule number"],
+  ["registration district number"],
+  ["ed, institution, or vessel"], // this always seems to be a number
+  ["enumeration district or census tract"], // this always seems to be a number
+  ["newspaper information"],
+  ["url"],
 ];
 
 function isReferenceKey(key) {
@@ -217,7 +213,6 @@ function getReferenceKeyListForKey(key) {
 }
 
 function removeUnwantedKeysForTable(keys, recordData) {
-
   let newKeys = [];
 
   for (let key of keys) {
@@ -234,11 +229,10 @@ function removeUnwantedKeysForTable(keys, recordData) {
     newKeys.push(key);
   }
 
-  return newKeys
+  return newKeys;
 }
 
 function removeUnwantedKeysForDataString(keys, recordData) {
-
   let newKeys = [];
 
   for (let key of keys) {
@@ -257,11 +251,10 @@ function removeUnwantedKeysForDataString(keys, recordData) {
     newKeys.push(key);
   }
 
-  return newKeys
+  return newKeys;
 }
 
 function addReferenceDataToSourceReference(data, builder, options) {
-
   if (data.recordData) {
     let keys = Object.keys(data.recordData);
 
@@ -274,8 +267,7 @@ function addReferenceDataToSourceReference(data, builder, options) {
     if (options.citation_general_sourceReferenceSeparator == "commaColon") {
       itemSep = ",";
       valueSep = ":";
-    }
-    else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
+    } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
       itemSep = ",";
       valueSep = "";
     }
@@ -298,10 +290,9 @@ function addReferenceDataToSourceReference(data, builder, options) {
               let index = lcSourceReference.indexOf(matchString);
               let valIndex = 0;
               if (index == -1) {
-                index = 0;  // must be at start
+                index = 0; // must be at start
                 valIndex = index + startString.length;
-              }
-              else {
+              } else {
                 valIndex = index + matchString.length;
               }
               let endIndex = lcSourceReference.indexOf(itemSep, valIndex);
@@ -332,15 +323,17 @@ function addReferenceDataToSourceReference(data, builder, options) {
 }
 
 function cleanSourceCitation(sourceCitation, options) {
-
   let string = sourceCitation;
 
   if (string) {
     string = string.replace(/\;?\s*Social Security\:\s*\d+/, "");
   }
 
-  if (string && (options.citation_general_sourceReferenceSeparator == "commaColon" ||
-                  options.citation_general_sourceReferenceSeparator == "commaSpace")) {
+  if (
+    string &&
+    (options.citation_general_sourceReferenceSeparator == "commaColon" ||
+      options.citation_general_sourceReferenceSeparator == "commaSpace")
+  ) {
     // Ancestry uses semi-colon separator by default, if user wants comma replace ; with ,
     string = string.replace(/\; /g, ", ");
 
@@ -362,7 +355,6 @@ function getOneOfPossibleFieldNames(recordData, names) {
 }
 
 function buildCustomDataString(gd, options) {
-
   let input = {
     generalizedData: gd,
     options: options,
@@ -371,9 +363,8 @@ function buildCustomDataString(gd, options) {
 }
 
 function buildDataString(data, gd, dataStyle, options, builder) {
-
   let dataString = "";
-  
+
   if (dataStyle == "string") {
     dataString = buildCustomDataString(gd, options);
     if (dataString) {
@@ -391,8 +382,7 @@ function buildDataString(data, gd, dataStyle, options, builder) {
   if (options.citation_general_dataListSeparator == "commaColon") {
     itemSep = ",";
     valueSep = ":";
-  }
-  else if (options.citation_general_dataListSeparator == "commaSpace") {
+  } else if (options.citation_general_dataListSeparator == "commaSpace") {
     itemSep = ",";
     valueSep = "";
   }
@@ -412,24 +402,20 @@ function buildDataString(data, gd, dataStyle, options, builder) {
             if (options.citation_general_addBreaksWithinBody) {
               dataString += "<br/>";
               dataString += newKey + valueSep + "<br/>" + value;
-            }
-            else {
+            } else {
               let newValue = value.replace(/\<br\/\>/g, ", ");
               dataString += newKey + valueSep + " " + newValue;
             }
           }
-        }
-        else if (value.indexOf("<br/>") != -1 && !options.citation_general_addBreaksWithinBody) {
+        } else if (value.indexOf("<br/>") != -1 && !options.citation_general_addBreaksWithinBody) {
           let newValue = value.replace(/\<br\/\>/g, ", ");
           dataString += key + valueSep + " " + newValue;
-        }
-        else {
+        } else {
           dataString += key + valueSep + " " + value;
         }
       }
     }
-  }
-  else {
+  } else {
     let titleName = data.titleName;
     if (!titleName && recordData) {
       let name = getOneOfPossibleFieldNames(recordData, ["Name"]);
@@ -437,7 +423,7 @@ function buildDataString(data, gd, dataStyle, options, builder) {
         titleName = name;
       }
     }
-  
+
     dataString += titleName;
   }
 
@@ -445,16 +431,13 @@ function buildDataString(data, gd, dataStyle, options, builder) {
 }
 
 function getAdditionalInfo(data, gd, citationType, options, builder) {
-
   let dataStyle = options.citation_ancestry_dataStyle;
   if (dataStyle == "none") {
     return "";
-  }
-  else if (dataStyle == "table") {
+  } else if (dataStyle == "table") {
     if (options.citation_general_referencePosition == "atEnd") {
       dataStyle = "string";
-    }
-    else if (citationType == "source") {
+    } else if (citationType == "source") {
       dataStyle = "list";
     }
   }
@@ -478,14 +461,13 @@ function getAdditionalInfo(data, gd, citationType, options, builder) {
       for (let key of keys) {
         if (firstRow) {
           firstRow = false;
-        }
-        else {
+        } else {
           result += "|-\n";
         }
         result += "| " + key + " || " + recordData[key] + "\n";
       }
 
-      result += "|}"
+      result += "|}";
     }
   }
 
@@ -493,25 +475,23 @@ function getAdditionalInfo(data, gd, citationType, options, builder) {
 }
 
 function buildAncestryRecordTemplate(data, options) {
-
   const domainParams = {
-    "com": "",
+    com: "",
     "co.uk": "uk",
-    "ca": "ca",
+    ca: "ca",
     "com.au": "au",
-    "de": "de",
-    "it": "it",
-    "fr": "fr",
-    "se": "se",
-    "mx": "mx",
+    de: "de",
+    it: "it",
+    fr: "fr",
+    se: "se",
+    mx: "mx",
   };
 
   let domainParam = undefined;
 
   if (options.citation_ancestry_recordTemplateDomain == "fromRecord") {
     domainParam = domainParams[data.domain];
-  }
-  else {
+  } else {
     let fullDomain = options.citation_ancestry_recordTemplateDomain;
     let domain = fullDomain.replace(/ancestry.(.+)$/, "$1");
     if (domain && domain != fullDomain) {
@@ -527,15 +507,13 @@ function buildAncestryRecordTemplate(data, options) {
 }
 
 function buildAncestryImageTemplate(data, options) {
-
   // Note that the Ancestry Image template has no 3rd (domain parameter)
   return "{{Ancestry Image|" + data.dbId + "|" + data.recordId + "}}";
 }
 
 function buildAncestrySharingTemplateFromSharingDataObj(dataObj) {
-
   let url = dataObj.url;
-  
+
   // https://www.ancestry.com/sharing/24274440?h=95cf5c
   let num1 = url.replace(/.*\/sharing\/(\w+)\?h\=\w+/, "$1");
   let num2 = url.replace(/.*\/sharing\/\w+\?h\=(\w+)/, "$1");
@@ -546,7 +524,6 @@ function buildAncestrySharingTemplateFromSharingDataObj(dataObj) {
 }
 
 function cleanOriginalData(text) {
-
   text = text.replace(/^Crown copyright images reproduced [^.]*\./, "");
   text = text.trim();
 
@@ -559,8 +536,14 @@ function cleanOriginalData(text) {
   // The Original data string can get quite long and often has verbose ownership verbiage on the end that if not part
   // of a normal citation. Note that this Original Data string is only used when there is no Source Citation string.
   const endings = [
-    "©", "Crown copyright", "Copyright", "copyright", "Published by permission", "Used by permission", "You must not",
-    "The Vitalsearch Company Worldwide", 
+    "©",
+    "Crown copyright",
+    "Copyright",
+    "copyright",
+    "Published by permission",
+    "Used by permission",
+    "You must not",
+    "The Vitalsearch Company Worldwide",
   ];
   for (let ending of endings) {
     let index = text.indexOf(ending);
@@ -569,8 +552,7 @@ function cleanOriginalData(text) {
       let lastPeriodIndex = text.lastIndexOf(".");
       if (lastPeriodIndex != -1) {
         text = text.substring(0, lastPeriodIndex);
-      }
-      else {
+      } else {
         text = "";
       }
     }
@@ -586,10 +568,10 @@ function cleanOriginalData(text) {
   let firstPeriodIndex = text.indexOf(".");
   if (firstPeriodIndex != -1) {
     let startText = text.substring(0, firstPeriodIndex);
-    if (text.length > firstPeriodIndex*2) {
+    if (text.length > firstPeriodIndex * 2) {
       if (text.endsWith(startText)) {
         // remove the duplicated sentence from the start
-        text = text.substring(firstPeriodIndex+1).trim();
+        text = text.substring(firstPeriodIndex + 1).trim();
       }
     }
   }
@@ -606,7 +588,6 @@ function cleanOriginalData(text) {
 }
 
 function buildSourceReference(data, options) {
-
   let sourceReference = data.sourceCitation;
 
   if (!sourceReference && data.originalData) {
@@ -617,7 +598,6 @@ function buildSourceReference(data, options) {
 }
 
 function buildCoreCitation(data, gd, options, sharingDataObj, builder) {
-
   //console.log("buildCoreCitation, sharingDataObj is");
   //console.log(sharingDataObj);
   //console.log("buildCoreCitation, data is");
@@ -642,7 +622,6 @@ function buildCoreCitation(data, gd, options, sharingDataObj, builder) {
 }
 
 function buildImageCitation(data, options, sharingDataObj, builder) {
-
   builder.sourceTitle = data.titleCollection;
   builder.databaseHasImages = true;
 
@@ -671,13 +650,12 @@ function buildImageCitation(data, options, sharingDataObj, builder) {
 }
 
 function buildCitation(input) {
-
   const data = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const sharingDataObj = input.sharingDataObj;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
   builder.householdTableString = input.householdTableString;
@@ -692,8 +670,7 @@ function buildCitation(input) {
     if (type == "narrative") {
       builder.addNarrative(gd, input.dataCache, options);
     }
-  }
-  else if (data.pageType == "image") {
+  } else if (data.pageType == "image") {
     buildImageCitation(data, options, sharingDataObj, builder);
   }
 
@@ -703,7 +680,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

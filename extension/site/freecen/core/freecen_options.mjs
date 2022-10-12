@@ -41,13 +41,13 @@ const searchOptionsGroup = {
       type: "checkbox",
       label: "Use Name Soundex (when not searching same collection)",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "fuzzyInSameCollection",
       type: "checkbox",
       label: "Use Name Soundex (when searching same collection)",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "birthYearRangeDefault",
       type: "select",
@@ -61,7 +61,7 @@ const searchOptionsGroup = {
         { value: "10", text: "+/- 10 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
     {
       optionName: "birthYearRangeSameCollection",
       type: "select",
@@ -75,21 +75,21 @@ const searchOptionsGroup = {
         { value: "10", text: "+/- 10 years" },
       ],
       defaultValue: "exact",
-    },  
+    },
     {
       optionName: "includeBirthCounty",
       type: "checkbox",
       label: "Include birth county in search (if known)",
       defaultValue: true,
-    },  
+    },
     {
       optionName: "includeCensusCounty",
       type: "checkbox",
       label: "Include census county when searching same collection (if known)",
       defaultValue: true,
-    },  
+    },
   ],
-}
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -103,19 +103,22 @@ const citationOptionsGroup = {
       label: "Include record data at end of citation as",
       values: [
         { value: "none", text: "Do not include data" },
-        { value: "string", text: "Sentence (fall back to list if no sentence)" },
+        {
+          value: "string",
+          text: "Sentence (fall back to list if no sentence)",
+        },
         { value: "list", text: "List of field names/values" },
         { value: "table", text: "Table of field names/values" },
       ],
       defaultValue: "string",
-      unitTestValue: "table"
+      unitTestValue: "table",
     },
     {
       optionName: "includeNationalArchivesLink",
       type: "checkbox",
       label: "Include a link to to the National Archives page for the census if known",
       defaultValue: true,
-    },  
+    },
   ],
 };
 

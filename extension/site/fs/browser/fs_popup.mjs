@@ -30,21 +30,19 @@ import {
   addMenuDivider,
   beginMainMenu,
   displayMessage,
-  doAsyncActionWithCatch
+  doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  addStandardMenuEnd, buildMinimalMenuWithMessage,
-} from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
-import {
-  addSavePersonDataMenuItem,
-} from "/base/browser/popup/popup_person_data.mjs";
+import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
 
 import {
-  saveCitation, buildHouseholdTableString, buildCitationObjectForTable
+  saveCitation,
+  buildHouseholdTableString,
+  buildCitationObjectForTable,
 } from "/base/browser/popup/popup_citation.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
@@ -64,13 +62,20 @@ async function fsBuildCitation(data) {
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
     // console.log("fsBuildCitation, waiting another 10ms")
-    setTimeout(function() { fsBuildCitation(data); }, 10 );
+    setTimeout(function () {
+      fsBuildCitation(data);
+    }, 10);
     return;
   }
 
-  let householdTableString = buildHouseholdTableString(data.extractedData, data.generalizedData, data.type, buildHouseholdTable);
+  let householdTableString = buildHouseholdTableString(
+    data.extractedData,
+    data.generalizedData,
+    data.type,
+    buildHouseholdTable
+  );
 
-  doAsyncActionWithCatch("Building Citation", data, async function() {
+  doAsyncActionWithCatch("Building Citation", data, async function () {
     const input = {
       extractedData: data.extractedData,
       generalizedData: data.generalizedData,
@@ -80,7 +85,7 @@ async function fsBuildCitation(data) {
       options: options,
       householdTableString: householdTableString,
     };
-    const citationObject = buildCitation(input)
+    const citationObject = buildCitation(input);
     citationObject.generalizedData = data.generalizedData;
     //console.log("fsBuildCitation, citationObject is:");
     //console.log(citationObject);
@@ -92,17 +97,18 @@ async function fsBuildCitation(data) {
 async function fsBuildHouseholdTable(data) {
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
-    console.log("fsBuildHouseholdTable, waiting another 10ms")
-    setTimeout(function() { fsBuildHouseholdTable(data); }, 10 );
+    console.log("fsBuildHouseholdTable, waiting another 10ms");
+    setTimeout(function () {
+      fsBuildHouseholdTable(data);
+    }, 10);
     return;
   }
 
   // There is an option to put an inline citation at the end of the table caption
   // If this is set then generate the citation string.
-  let citationObject = buildCitationObjectForTable(data.extractedData, data.generalizedData,
-    undefined, buildCitation);
+  let citationObject = buildCitationObjectForTable(data.extractedData, data.generalizedData, undefined, buildCitation);
 
-  doAsyncActionWithCatch("Building Table", data, async function() {
+  doAsyncActionWithCatch("Building Table", data, async function () {
     const input = {
       extractedData: data.extractedData,
       generalizedData: data.generalizedData,
@@ -136,7 +142,7 @@ function addFsBuildHouseholdTableMenuItem(menu, data) {
   let objectArray = data.generalizedData.householdArray;
 
   if (fieldNames && objectArray) {
-    addMenuItem(menu, "Build Household Table", function(element) {
+    addMenuItem(menu, "Build Household Table", function (element) {
       displayMessage("Building table...");
       fsBuildHouseholdTable(data);
     });
@@ -144,12 +150,11 @@ function addFsBuildHouseholdTableMenuItem(menu, data) {
 }
 
 function addFsOpenExternalImageMenuItem(menu, data) {
-
   let extImageUrl = data.extractedData.externalImageUrl;
 
   if (extImageUrl) {
-    let title = (extImageUrl.includes("findmypast")) ? "Open Image on FindMyPast" : "Open Image on External Site";
-    addMenuItem(menu, title, function(element) {
+    let title = extImageUrl.includes("findmypast") ? "Open Image on FindMyPast" : "Open Image on External Site";
+    addMenuItem(menu, title, function (element) {
       fsOpenExternalImage(data);
     });
   }
@@ -160,14 +165,24 @@ function addFsOpenExternalImageMenuItem(menu, data) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFsImageBuildCitationMenuItems(menu, data) {
-  addMenuItemWithSubtitle(menu, "Build Inline Image Citation", function(element) {
-    data.type = "inline";
-    fsBuildCitation(data);
-  }, "It is recommended to Build Inline Citation on the Record Page instead if one exists.");
-  addMenuItemWithSubtitle(menu, "Build Source Image Citation", function(element) {
-    data.type = "source";
-    fsBuildCitation(data);
-  }, "It is recommended to Build Source Citation on the Record Page instead if one exists.");
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Inline Image Citation",
+    function (element) {
+      data.type = "inline";
+      fsBuildCitation(data);
+    },
+    "It is recommended to Build Inline Citation on the Record Page instead if one exists."
+  );
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Source Image Citation",
+    function (element) {
+      data.type = "source";
+      fsBuildCitation(data);
+    },
+    "It is recommended to Build Source Citation on the Record Page instead if one exists."
+  );
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -175,15 +190,17 @@ function addFsImageBuildCitationMenuItems(menu, data) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupFsPopupMenu(extractedData) {
-
-  let backFunction = function() { setupFsPopupMenu(extractedData); };
+  let backFunction = function () {
+    setupFsPopupMenu(extractedData);
+  };
 
   //console.log("setupFsPopupMenu: extractedData is:");
   //console.log(extractedData);
 
-  if (!extractedData ||
-     (extractedData.pageType != "record" && extractedData.pageType != "image"  && extractedData.pageType != "person")) {
-
+  if (
+    !extractedData ||
+    (extractedData.pageType != "record" && extractedData.pageType != "image" && extractedData.pageType != "person")
+  ) {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
     message += "\n\nIt looks like a FamilySearch page but not a record, image or person page.";
     message += " Sometimes this is because you are no longer logged into FamilySearch.";
@@ -193,15 +210,15 @@ async function setupFsPopupMenu(extractedData) {
     let data = { extractedData: extractedData };
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
-  };
+  }
 
   // get generalized data
-  let generalizedData = generalizeData({extractedData: extractedData});
+  let generalizedData = generalizeData({ extractedData: extractedData });
   let data = { extractedData: extractedData, generalizedData: generalizedData };
 
   if (!generalizedData || !generalizedData.hasValidData) {
     let message = "WikiTree Sourcer could not interpret the data on this page.";
-    message += "\n\nIt looks like a supported FamilySearch page but the data generalize failed."
+    message += "\n\nIt looks like a supported FamilySearch page but the data generalize failed.";
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
   }
@@ -211,7 +228,7 @@ async function setupFsPopupMenu(extractedData) {
 
   // do async prefetches
   loadDataCache();
-  
+
   let menu = beginMainMenu();
 
   if (extractedData.pageType == "record") {
@@ -221,11 +238,9 @@ async function setupFsPopupMenu(extractedData) {
     addBuildCitationMenuItems(menu, data, fsBuildCitation, backFunction, generalizeDataGivenRecordType);
     addFsBuildHouseholdTableMenuItem(menu, data);
     addFsOpenExternalImageMenuItem(menu, data);
-  }
-  else if (extractedData.pageType == "image") {
+  } else if (extractedData.pageType == "image") {
     addFsImageBuildCitationMenuItems(menu, data);
-  }
-  else if (extractedData.pageType == "person") {
+  } else if (extractedData.pageType == "person") {
     await addSearchMenus(menu, data, backFunction, "fs");
     addSavePersonDataMenuItem(menu, data);
   }

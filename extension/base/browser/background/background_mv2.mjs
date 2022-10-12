@@ -28,11 +28,11 @@ import { handleContentLoadedMessage } from "./background_content_loaded.mjs";
 
 function setPopup(tab, popupPage) {
   //console.log("WikiTree Sourcer, background script (MV2), set popup on tab " + tab + " to: " + popupPage);
-  chrome.browserAction.setPopup({ tabId: tab, popup: popupPage});
+  chrome.browserAction.setPopup({ tabId: tab, popup: popupPage });
 }
 
 function setIcon(tab, iconPath) {
-  chrome.browserAction.setIcon({ tabId: tab, path: iconPath});
+  chrome.browserAction.setIcon({ tabId: tab, path: iconPath });
 }
 
 // Listen for messages (from the popup script mostly)
@@ -45,9 +45,8 @@ function messageHandler(request, sender, sendResponse) {
 
   if (request.type == "contentLoaded") {
     //console.log("WikiTree Sourcer, background script, received contentLoaded message");
-    handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon)
-  }
-  else if (request.type == "exception") {
+    handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon);
+  } else if (request.type == "exception") {
     handleExceptionMessage(request, sendResponse);
 
     // we send an async response to confirm the tab was opened and updated
@@ -60,4 +59,3 @@ function messageHandler(request, sender, sendResponse) {
 
 chrome.runtime.onMessage.addListener(messageHandler);
 setupContextMenu();
-

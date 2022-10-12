@@ -32,9 +32,7 @@ import {
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import {
-  setupSearchWithParametersSubMenu,
-} from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 
@@ -45,8 +43,7 @@ import { options } from "/base/browser/options/options_loader.mjs";
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function wikitreeDoSearch(input) {
-
-  doAsyncActionWithCatch("WikiTree Search", input, async function() {
+  doAsyncActionWithCatch("WikiTree Search", input, async function () {
     // since many site searchs can be on the popup for a site, it makes sense to dynamically
     // load the build search module
     let loadedModule = await import(`../core/wikitree_build_search_data.mjs`);
@@ -59,22 +56,20 @@ function wikitreeDoSearch(input) {
       const wikitreeSearchData = {
         timeStamp: Date.now(),
         url: searchUrl,
-        fieldData: fieldData
+        fieldData: fieldData,
       };
 
-      chrome.storage.local.set({wikitreeSearchData: wikitreeSearchData}, function() {
+      chrome.storage.local.set({ wikitreeSearchData: wikitreeSearchData }, function () {
         //console.log('saved wikitreeSearchData, wikitreeSearchData is:');
         //console.log(wikitreeSearchData);
       });
-    }
-    catch (ex) {
-      console.log('storeDataCache failed');
+    } catch (ex) {
+      console.log("storeDataCache failed");
     }
 
     if (options.search_general_new_window) {
       chrome.windows.create({ url: searchUrl });
-    }
-    else {
+    } else {
       chrome.tabs.create({ url: searchUrl });
     }
     window.close();
@@ -82,24 +77,26 @@ function wikitreeDoSearch(input) {
 }
 
 async function wikitreePlusDoSearch(input) {
-  doAsyncActionWithCatch("WikiTree Plus Search", input, async function() {
+  doAsyncActionWithCatch("WikiTree Plus Search", input, async function () {
     let loadedModule = await import(`../core/wikitree_plus_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
 }
 
-
 async function wikitreeSearch(generalizedData) {
-  const input = { typeOfSearch: "", generalizedData: generalizedData, options: options }
+  const input = {
+    typeOfSearch: "",
+    generalizedData: generalizedData,
+    options: options,
+  };
   wikitreeDoSearch(input);
 }
-
 
 async function wikitreePlusSearch(generalizedData) {
   const input = {
     typeOfSearch: "",
     generalizedData: generalizedData,
-    options: options
+    options: options,
   };
 
   wikitreePlusDoSearch(input);
@@ -115,8 +112,7 @@ async function wikitreeSearchWithParameters(generalizedData, parameters) {
 
   if (parameters.category == "wikitree_person_search") {
     wikitreeDoSearch(input);
-  }
-  else if (parameters.category == "wikitree_plus_search") {
+  } else if (parameters.category == "wikitree_plus_search") {
     wikitreePlusDoSearch(input);
   }
 }
@@ -126,9 +122,10 @@ async function wikitreeSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addWikitreeDefaultSearchMenuItem(menu, data, backFunction, filter) {
-
-  addMenuItemWithSubMenu(menu, "Search WikiTree",
-    function(element) {
+  addMenuItemWithSubMenu(
+    menu,
+    "Search WikiTree",
+    function (element) {
       wikitreeSearch(data.generalizedData);
     },
     function () {
@@ -140,10 +137,10 @@ function addWikitreeDefaultSearchMenuItem(menu, data, backFunction, filter) {
 }
 
 function addWikitreeSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search using WikiTree Plus", function(element) {
+  addMenuItem(menu, "Search using WikiTree Plus", function (element) {
     wikitreePlusSearch(data.generalizedData);
   });
-  addMenuItem(menu, "Search with specified parameters", function(element) {
+  addMenuItem(menu, "Search with specified parameters", function (element) {
     setupWikitreeSearchWithParametersSubMenu(data, backFunction);
   });
 }
@@ -153,8 +150,9 @@ function addWikitreeSearchWithParametersMenuItem(menu, data, backFunction) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupWikitreeSearchSubMenu(data, backFunction) {
-
-  let backToHereFunction = function() { setupWikitreeSearchSubMenu(data, backFunction) };
+  let backToHereFunction = function () {
+    setupWikitreeSearchSubMenu(data, backFunction);
+  };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);

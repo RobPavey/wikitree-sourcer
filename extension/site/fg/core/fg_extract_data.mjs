@@ -33,7 +33,6 @@ function cleanText(inputText) {
 }
 
 function setFromLabelWithId(result, parentNode, labelId, fieldName) {
-
   const label = parentNode.querySelector(labelId);
   if (label) {
     result[fieldName] = cleanText(label.textContent);
@@ -41,7 +40,6 @@ function setFromLabelWithId(result, parentNode, labelId, fieldName) {
 }
 
 function extractInscription(result, document) {
-
   const paragraph = document.querySelector("#inscriptionValue");
   if (paragraph) {
     let text = paragraph.innerHTML;
@@ -49,7 +47,7 @@ function extractInscription(result, document) {
       text = text.trim();
       text = text.replace(/&lt;/g, "<");
       text = text.replace(/&gt;/g, ">");
-      text = text.replace(/&quot;/g, "\"");
+      text = text.replace(/&quot;/g, '"');
       text = text.replace(/&#39;/g, "'");
       text = text.replace(/&amp;/g, "&");
       text = text.replace(/\s+/g, " ");
@@ -63,9 +61,7 @@ function extractInscription(result, document) {
 }
 
 function extractData(document, url) {
-
-  var result = {
-  };
+  var result = {};
   result.url = url;
 
   result.success = false;
@@ -77,7 +73,6 @@ function extractData(document, url) {
   if (nameNode) {
     result.nameHtml = cleanText(nameNode.innerHTML);
   }
-
 
   let memEvents = document.querySelector("div.section-bio-cover dl.mem-events");
   //console.log("memEvents is: ");
@@ -104,16 +99,15 @@ function extractData(document, url) {
     if (openParenIndex != -1) {
       deathDate = cleanText(text.substring(0, openParenIndex));
 
-      let closeParenIndex = text.indexOf(")", openParenIndex+1);
+      let closeParenIndex = text.indexOf(")", openParenIndex + 1);
       if (closeParenIndex != -1) {
-        let parenContents = text.substring(openParenIndex+1, closeParenIndex).trim();
+        let parenContents = text.substring(openParenIndex + 1, closeParenIndex).trim();
         const prefix = "aged";
         if (parenContents.startsWith(prefix)) {
           parenContents = parenContents.substring(prefix.length).trim();
         }
         result.ageAtDeath = cleanText(parenContents);
-      }  
-
+      }
     }
     result.deathDate = cleanText(deathDate);
   }
@@ -145,8 +139,7 @@ function extractData(document, url) {
   const mainPhoto = document.querySelector("#main-photo");
   if (mainPhoto) {
     result.hasImage = true;
-  }
-  else {
+  } else {
     result.hasImage = false;
   }
 

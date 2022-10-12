@@ -25,7 +25,7 @@ SOFTWARE.
 import { getDefaultOptions } from "../../core/options/options_database.mjs";
 import { loadOptions } from "./options_storage.mjs";
 
-var options = undefined;  // we cache the current options here
+var options = undefined; // we cache the current options here
 
 function convertOptionsFrom2To3(loadedOptions) {
   let convertedOptions = { ...loadedOptions };
@@ -71,36 +71,33 @@ function convertOptionsFrom2To3(loadedOptions) {
 function convertOptionsFrom3To4(loadedOptions) {
   let convertedOptions = { ...loadedOptions };
 
-  console.log("convertOptionsFrom3To4, before:")
+  console.log("convertOptionsFrom3To4, before:");
   console.log(loadedOptions);
 
   let oldAddAccessedDate = convertedOptions.citation_general_addAccessedDate;
   if (oldAddAccessedDate) {
     convertedOptions.citation_general_addAccessedDate = "parenAfterLink";
-  }
-  else {
+  } else {
     convertedOptions.citation_general_addAccessedDate = "none";
   }
 
   let oldmeaningfulNames = convertedOptions.citation_general_meaningfulNames;
   if (oldmeaningfulNames) {
     convertedOptions.citation_general_meaningfulNames = "bold";
-  }
-  else {
+  } else {
     convertedOptions.citation_general_meaningfulNames = "none";
   }
 
   let oldCaption = convertedOptions.table_table_caption;
   if (oldCaption) {
     convertedOptions.table_table_caption = "titlePlace";
-  }
-  else {
+  } else {
     convertedOptions.table_table_caption = "none";
   }
 
   convertedOptions.options_version = 4;
 
-  console.log("convertOptionsFrom3To4, after:")
+  console.log("convertOptionsFrom3To4, after:");
   console.log(convertedOptions);
 
   return convertedOptions;
@@ -111,12 +108,12 @@ function convertOptionsFrom4To5(loadedOptions) {
 
   let convertedOptions = { ...loadedOptions };
 
-  console.log("convertOptionsFrom4To5, before:")
+  console.log("convertOptionsFrom4To5, before:");
   console.log(loadedOptions);
 
   convertedOptions.options_version = 5;
 
-  console.log("convertOptionsFrom4To5, after:")
+  console.log("convertOptionsFrom4To5, after:");
   console.log(convertedOptions);
 
   return convertedOptions;
@@ -146,7 +143,6 @@ function convertOptions(loadedOptions, defaultOptions) {
 }
 
 function putNewLoadedOptionsSetInOptions(options, optionsSet, prefix) {
-
   if (!optionsSet || !options || !prefix) {
     return;
   }
@@ -159,14 +155,12 @@ function putNewLoadedOptionsSetInOptions(options, optionsSet, prefix) {
 }
 
 function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
-
   let newOptions = {};
   const keys = Object.keys(defaultOptions);
   for (let key of keys) {
     if (loadedOptions.hasOwnProperty(key)) {
       newOptions[key] = loadedOptions[key];
-    }
-    else {
+    } else {
       console.log("option added from defaultOptions: " + key);
       newOptions[key] = defaultOptions[key];
     }
@@ -176,7 +170,6 @@ function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
 }
 
 async function callFunctionWithStoredOptions(optionsFunction) {
-
   let defaultOptions = getDefaultOptions();
 
   let loadedOptions = await loadOptions();
@@ -193,8 +186,7 @@ async function callFunctionWithStoredOptions(optionsFunction) {
     // the stored ones taking priority. Out a a concern that no longer used options (that the converter forgot)
     // would build up it was changed to use a function.
     optionsObject = addNewDefaultsAndRemoveOldOptions(convertedOptions, defaultOptions);
-  }
-  else {
+  } else {
     optionsObject = defaultOptions;
   }
 

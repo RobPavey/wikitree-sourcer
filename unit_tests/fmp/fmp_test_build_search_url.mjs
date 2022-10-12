@@ -31,7 +31,7 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/dickens-1530_private",
     optionVariants: [
       {
-        variantName: "specified_collection", 
+        variantName: "specified_collection",
         typeOfSearch: "SpecifiedCollection",
         searchParameters: {
           collectionWtsId: "EnglandAndWalesCensus1921",
@@ -48,7 +48,7 @@ const regressionData = [
     inputPath: "fs/generalized_data/ref/england_marriage_1839_richard_greenwood",
     optionVariants: [
       {
-        variantName: "same_collection", 
+        variantName: "same_collection",
         typeOfSearch: "SameCollection",
       },
     ],
@@ -62,14 +62,14 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/littlemore-13_read",
     optionVariants: [
       {
-        variantName: "specified_collection", 
+        variantName: "specified_collection",
         typeOfSearch: "SpecifiedCollection",
         searchParameters: {
           collectionWtsId: "EnglandAndWalesDeathReg",
         },
       },
       {
-        variantName: "parameters_all_no_spouse", 
+        variantName: "parameters_all_no_spouse",
         typeOfSearch: "SpecifiedParameters",
         searchParameters: {
           category: "all",
@@ -81,7 +81,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "parameters_civil_marriage", 
+        variantName: "parameters_civil_marriage",
         typeOfSearch: "SpecifiedParameters",
         searchParameters: {
           category: "life+events+(bmds)",
@@ -90,7 +90,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "parameters_baptism", 
+        variantName: "parameters_baptism",
         typeOfSearch: "SpecifiedParameters",
         searchParameters: {
           category: "life+events+(bmds)",
@@ -115,7 +115,7 @@ const regressionData = [
     },
     optionVariants: [
       {
-        variantName: "specified_collection", 
+        variantName: "specified_collection",
         typeOfSearch: "SpecifiedCollection",
         searchParameters: {
           collectionWtsId: "EnglandWalesAndScotlandCensus1851", // exact date is close to a marriage date
@@ -128,7 +128,7 @@ const regressionData = [
     inputPath: "gro/generalized_data/ref/b_pavey-451",
     optionVariants: [
       {
-        variantName: "same_collection", 
+        variantName: "same_collection",
         typeOfSearch: "SameCollection",
       },
     ],
@@ -138,7 +138,7 @@ const regressionData = [
     inputPath: "ancestry/generalized_data/ref/england_census_1881_searle-38",
     optionVariants: [
       {
-        variantName: "same_collection", 
+        variantName: "same_collection",
         typeOfSearch: "SameCollection",
       },
     ],

@@ -27,14 +27,13 @@ import { ScotpRecordType, SpField } from "./scotp_record_type.mjs";
 import { getPlaceSearchTerms } from "./scotp_place_search_terms.mjs";
 
 class ScotpUriBuilder {
-
   constructor(recordType) {
     this.uri = "https://www.scotlandspeople.gov.uk/record-results?search_type=people";
     this.searchTermAdded = true;
 
     this.uri += ScotpRecordType.getSearchStdText(recordType);
     this.recordType = recordType;
-    
+
     this.yearCount = 0;
   }
 
@@ -45,8 +44,7 @@ class ScotpUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
@@ -61,8 +59,7 @@ class ScotpUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
   }
@@ -71,8 +68,8 @@ class ScotpUriBuilder {
     if (value == undefined || value == "") {
       return;
     }
-    const count = (this.uri.match(new RegExp(parameter,"g")) || []).length;
-    
+    const count = (this.uri.match(new RegExp(parameter, "g")) || []).length;
+
     const newParameter = parameter + "%5B" + count + "%5D";
     this.addSearchParameter(newParameter, value);
   }
@@ -93,7 +90,7 @@ class ScotpUriBuilder {
         if (recordValue) {
           // if the string contains quotes the search doesn't match
           recordValue = recordValue.replace(/["']/g, "");
-    
+
           // This error occurs if some fields are too long:
           // Description (title/occupation/place): cannot be longer than 128 characters but is currently 157 characters long.
           if (recordValue.length > 128) {
@@ -104,9 +101,8 @@ class ScotpUriBuilder {
       }
     }
   }
-  
-  addSurname(string, searchOption) {
 
+  addSurname(string, searchOption) {
     if (searchOption == "soundex") {
       let surnameLengthLimit = ScotpRecordType.getNameSearchLimitForSoundex(this.recordType, "surname");
       if (string.length > surnameLengthLimit) {
@@ -197,8 +193,7 @@ class ScotpUriBuilder {
     let sex = gender;
     if (gender == "male") {
       sex = "M";
-    }
-    else if (gender == "female") {
+    } else if (gender == "female") {
       sex = "F";
     }
     this.addSearchParameter("sex", sex);
@@ -209,8 +204,7 @@ class ScotpUriBuilder {
       if (this.addedParentName) {
         this.addSearchParameter("parent_name_two", string);
         this.addSearchOption("parent_name_two", searchOption);
-      }
-      else {
+      } else {
         this.addSearchParameter("parent_names", string);
         this.addSearchOption("parent_names", searchOption);
         this.addedParentName = true;
@@ -227,13 +221,13 @@ class ScotpUriBuilder {
 
   addRdName(string, stringIsFromResults) {
     let addedParam = false;
-    if(string) {
+    if (string) {
       const searchTerms = getPlaceSearchTerms(string, "statutory", stringIsFromResults);
-      if(searchTerms && Array.isArray(searchTerms)) {
-        for(let i = 0; i<searchTerms.length; i+=1) {
+      if (searchTerms && Array.isArray(searchTerms)) {
+        for (let i = 0; i < searchTerms.length; i += 1) {
           this.addSearchArrayParameter("rd_real_name", searchTerms[i].real_name);
           this.addSearchArrayParameter("rd_display_name", searchTerms[i].display_name);
-          this.addSearchArrayParameter("rdno", searchTerms[i].rdno);			
+          this.addSearchArrayParameter("rdno", searchTerms[i].rdno);
           addedParam = true;
         }
       }
@@ -244,8 +238,8 @@ class ScotpUriBuilder {
   addOprParishName(string, stringIsFromResults) {
     let addedParam = false;
     const searchTerms = getPlaceSearchTerms(string, "opr", stringIsFromResults);
-    if(searchTerms && Array.isArray(searchTerms)) {
-      for(let i = 0; i<searchTerms.length; i+=1) {
+    if (searchTerms && Array.isArray(searchTerms)) {
+      for (let i = 0; i < searchTerms.length; i += 1) {
         // from experiments with OPR births it looks like it works if only the
         // rd_name is used. However the rd_display_name is needed so that subsequent searches
         // from the same page work correctly (otherwise the "Parish/Congregation" is lost)
@@ -259,13 +253,13 @@ class ScotpUriBuilder {
     }
     return addedParam;
   }
-  
+
   addCatholicParishName(string, stringIsFromResults) {
     let addedParam = false;
-    if(string) {
+    if (string) {
       const searchTerms = getPlaceSearchTerms(string, "rc", stringIsFromResults);
-      if(searchTerms && Array.isArray(searchTerms)) {
-        for(let i = 0; i<searchTerms.length; i+=1) {
+      if (searchTerms && Array.isArray(searchTerms)) {
+        for (let i = 0; i < searchTerms.length; i += 1) {
           this.addSearchArrayParameter("mp_code", searchTerms[i].mp_code);
           this.addSearchArrayParameter("mp_no", searchTerms[i].mp_no);
           this.addSearchArrayParameter("parish_title", searchTerms[i].parish_title);
@@ -279,10 +273,10 @@ class ScotpUriBuilder {
 
   addOtherParishName(string) {
     // &congregation%5B0%5D=DALKEITH%20-%20EAST%20UNITED%20PRESBYTERIAN
-    if(string) {
+    if (string) {
       const searchTerms = getPlaceSearchTerms(string, "other");
-      if(searchTerms && Array.isArray(searchTerms)) {
-        for(let i = 0; i<searchTerms.length; i+=1) {
+      if (searchTerms && Array.isArray(searchTerms)) {
+        for (let i = 0; i < searchTerms.length; i += 1) {
           this.addSearchArrayParameter("congregation", searchTerms[i].congregation);
         }
       }

@@ -45,7 +45,6 @@ import { getSyncStorageItems } from "/base/browser/common/browser_compat.mjs";
 // The options version was bumped to 5 as part of this change.
 
 function putNewLoadedOptionsSetInOptions(options, optionsSet, prefix) {
-
   if (!optionsSet || !options || !prefix) {
     return;
   }
@@ -58,15 +57,20 @@ function putNewLoadedOptionsSetInOptions(options, optionsSet, prefix) {
 }
 
 async function loadOptions() {
-
   let loadedOptions = undefined;
 
   chrome.storage.sync.getBytesInUse(null, function (bytesInUse) {
     console.log("loadOptions: total sync storage in use is : " + bytesInUse);
   });
 
-  let itemsNew = await getSyncStorageItems(
-    ["options_search", "options_citation", "options_narrative", "options_table", "options_addPerson", "options_version"]);
+  let itemsNew = await getSyncStorageItems([
+    "options_search",
+    "options_citation",
+    "options_narrative",
+    "options_table",
+    "options_addPerson",
+    "options_version",
+  ]);
 
   if (itemsNew.options_search) {
     loadedOptions = {};
@@ -77,14 +81,12 @@ async function loadOptions() {
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addPerson, "addPerson");
     if (itemsNew.options) {
       loadedOptions.options_version = itemsNew.options.options_version;
-    }
-    else if (itemsNew.options_version) {
+    } else if (itemsNew.options_version) {
       // this is a temporary format for during development of 1.3.4 can be removed once options updated
       loadedOptions.options_version = itemsNew.options_version;
     }
-  }
-  else {
-    let itemsOld = await getSyncStorageItems(["options", ]);
+  } else {
+    let itemsOld = await getSyncStorageItems(["options"]);
     if (itemsOld.options) {
       loadedOptions = itemsOld.options;
     }
@@ -97,8 +99,7 @@ async function loadOptions() {
 }
 
 function convertOptionsObjectToSaveFormat(options) {
-
-  const prefixes = [ "search", "citation", "narrative", "table", "addPerson", "options"];
+  const prefixes = ["search", "citation", "narrative", "table", "addPerson", "options"];
 
   let newOptions = {};
 
@@ -112,24 +113,21 @@ function convertOptionsObjectToSaveFormat(options) {
     if (underscoreIndex != -1) {
       let prefix = key.substring(0, underscoreIndex);
       if (prefixes.includes(prefix)) {
-        let remainder = key.substring(underscoreIndex+1);
+        let remainder = key.substring(underscoreIndex + 1);
         newOptions[prefix][remainder] = options[key];
-      }
-      else {
+      } else {
         newOptions[key] = options[key];
       }
-    }
-    else {
+    } else {
       newOptions[key] = options[key];
     }
   }
- 
+
   return newOptions;
 }
 
 // Saves options to chrome.storage
 async function saveOptions(options) {
-
   let saveFormatOptions = convertOptionsObjectToSaveFormat(options);
 
   // set the values in the stored user options
@@ -143,23 +141,22 @@ async function saveOptions(options) {
         options_addPerson: saveFormatOptions.addPerson,
         options: saveFormatOptions.options,
       },
-      function() {
+      function () {
         if (!chrome.runtime.lastError) {
           // Update status to let user know options were saved.
-          var status = document.getElementById('status');
-          status.textContent = 'Options saved.';
-          setTimeout(function() {
-            status.textContent = '';
+          var status = document.getElementById("status");
+          status.textContent = "Options saved.";
+          setTimeout(function () {
+            status.textContent = "";
           }, 750);
-        }
-        else {
+        } else {
           console.log("saveOptions: Runtime error is:");
           console.log(chrome.runtime.lastError);
 
           chrome.storage.sync.getBytesInUse(null, function (bytesInUse) {
             console.log("saveOptions: total sync storage in use is : " + bytesInUse);
           });
-        
+
           // This fixed the issue in iPad simulator. But it seems a bit drastic...
           // The saved failed, clear all sync storage and try again.
           // Since this extension ONLY uses the sync storage area for user options it should not lose
@@ -174,37 +171,35 @@ async function saveOptions(options) {
                 options_addPerson: saveFormatOptions.addPerson,
                 options: saveFormatOptions.options,
               },
-              function() {
+              function () {
                 if (!chrome.runtime.lastError) {
                   // Update status to let user know options were saved.
-                  var status = document.getElementById('status');
-                  status.textContent = 'Options saved.';
-                  setTimeout(function() {
-                    status.textContent = '';
+                  var status = document.getElementById("status");
+                  status.textContent = "Options saved.";
+                  setTimeout(function () {
+                    status.textContent = "";
                   }, 750);
-                }
-                else {
+                } else {
                   console.log("saveOptions, after clear: Runtime error is:");
                   console.log(chrome.runtime.lastError);
-        
+
                   chrome.storage.sync.getBytesInUse(null, function (bytesInUse) {
                     console.log("saveOptions, after clear: total sync storage in use is : " + bytesInUse);
                   });
-                
-                  var status = document.getElementById('status');
-                  status.textContent = 'Options could not be saved.';
-                  setTimeout(function() {
-                    status.textContent = '';
+
+                  var status = document.getElementById("status");
+                  status.textContent = "Options could not be saved.";
+                  setTimeout(function () {
+                    status.textContent = "";
                   }, 5000);
                 }
               }
-            );            
+            );
           });
         }
       }
     );
-  }
-  catch (e) {
+  } catch (e) {
     console.log("saveOptions: caught error is:");
     console.log(e);
 
@@ -212,10 +207,10 @@ async function saveOptions(options) {
       console.log("saveOptions: total sync storage in use is : " + bytesInUse);
     });
 
-    var status = document.getElementById('status');
-    status.textContent = 'Options could not be saved.';
-    setTimeout(function() {
-      status.textContent = '';
+    var status = document.getElementById("status");
+    status.textContent = "Options could not be saved.";
+    setTimeout(function () {
+      status.textContent = "";
     }, 5000);
   }
 }

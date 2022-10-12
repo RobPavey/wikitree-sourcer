@@ -25,13 +25,10 @@ SOFTWARE.
 async function getPendingSearch() {
   return new Promise((resolve, reject) => {
     try {
-      chrome.storage.local.get(
-        ["freecenSearchData"],
-        function (value) {
-          resolve(value.freecenSearchData);
-        });
-    }
-    catch (ex) {
+      chrome.storage.local.get(["freecenSearchData"], function (value) {
+        resolve(value.freecenSearchData);
+      });
+    } catch (ex) {
       reject(ex);
     }
   });
@@ -49,7 +46,6 @@ async function checkForPendingSearch() {
 
   if (document.URL == "https://www.freecen.org.uk/search_queries/new?locale=en") {
     //console.log("checkForPendingSearch: URL matches");
-
 
     let freecenSearchData = await getPendingSearch();
 
@@ -73,7 +69,7 @@ async function checkForPendingSearch() {
         //console.log("checkForPendingSearch: fieldData is:");
         //console.log(fieldData);
 
-        for(var key in fieldData) {
+        for (var key in fieldData) {
           //console.log("checkForPendingSearch: key is: " + key);
           if (key) {
             let value = fieldData[key];
@@ -114,7 +110,7 @@ async function checkForPendingSearch() {
       }
 
       // clear the search data
-      chrome.storage.local.set({freecenSearchData: undefined}, function() {
+      chrome.storage.local.set({ freecenSearchData: undefined }, function () {
         //console.log('cleared freecenSearchData');
       });
     }
@@ -125,9 +121,7 @@ async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
 
-  siteContentInit(`freecen`,
-    `site/freecen/core/freecen_extract_data.mjs`,
-  );
+  siteContentInit(`freecen`, `site/freecen/core/freecen_extract_data.mjs`);
 }
 
 checkForSearchThenInit();

@@ -36,7 +36,7 @@ function handleExceptionMessage(request, sendResponse) {
   console.log("WikiTree Sourcer, background script: errorStack is:");
   console.log(errorStack);
 
-  chrome.tabs.create({ url: "/base/browser/exception/exception.html" }, function(createdTab) {
+  chrome.tabs.create({ url: "/base/browser/exception/exception.html" }, function (createdTab) {
     //console.log('Created Tab');
     //console.log(createdTab);
 
@@ -45,24 +45,30 @@ function handleExceptionMessage(request, sendResponse) {
         //console.log("Exception tab updated, tabId is: " + tabId);
 
         // make sure the status is 'complete' and it's the right tab
-        if (tabId == createdTab.id && changeInfo.status == 'complete') {
-
+        if (tabId == createdTab.id && changeInfo.status == "complete") {
           // remove the listener now that we know the tab has completed loading
           chrome.tabs.onUpdated.removeListener(exceptionTabListener);
-          
-          chrome.tabs.sendMessage(tabId,
+
+          chrome.tabs.sendMessage(
+            tabId,
             {
-              type: "exception", message: message,
-              errorName: errorName, errorMessage: errorMessage, errorStack: errorStack,
-              input: input, requestReport: requestReport
+              type: "exception",
+              message: message,
+              errorName: errorName,
+              errorMessage: errorMessage,
+              errorStack: errorStack,
+              input: input,
+              requestReport: requestReport,
             },
-            function(response) {
+            function (response) {
               let success = true;
               if (!response) {
                 // we were unable to send a message to the exception tab
                 // This happens in Safari (at least when the exception happens early in popup)
                 // So remove the new tab since we were not able to fill it out.
-                console.log("WikiTree Sourcer, background script: could not sent message to exception tab. Closing tab.");
+                console.log(
+                  "WikiTree Sourcer, background script: could not sent message to exception tab. Closing tab."
+                );
                 console.log(request);
                 chrome.tabs.remove(tabId, function () {
                   sendResponse({
@@ -75,8 +81,7 @@ function handleExceptionMessage(request, sendResponse) {
                     lastError: chrome.runtime.lastError,
                   });
                 });
-              }
-              else {
+              } else {
                 // we send a detailed response back to the caller for debugging this mechanism
                 sendResponse({
                   success: true,
@@ -88,7 +93,8 @@ function handleExceptionMessage(request, sendResponse) {
                   lastError: chrome.runtime.lastError,
                 });
               }
-            } );
+            }
+          );
         }
       });
     }

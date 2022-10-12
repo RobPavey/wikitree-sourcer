@@ -22,7 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers, WtsPlace, WtsName, WtsDate } from "../../../base/core/generalize_data_utils.mjs";
+import {
+  GeneralizedData,
+  dateQualifiers,
+  WtsPlace,
+  WtsName,
+  WtsDate,
+} from "../../../base/core/generalize_data_utils.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
@@ -41,10 +47,9 @@ function cleanRegistrationDistrictName(name) {
 // This function generalizes the data extracted from the GRO page.
 // We know what fields can be there. And we knw the ones we want in generalizedData.
 function generalizeData(input) {
-
   let data = input.extractedData;
 
-  let result = new GeneralizedData;
+  let result = new GeneralizedData();
 
   result.sourceOfData = "gro";
 
@@ -55,7 +60,7 @@ function generalizeData(input) {
   }
 
   result.sourceType = "record";
-  result.recordType = (data.eventType == "birth") ? RT.BirthRegistration : RT.DeathRegistration;
+  result.recordType = data.eventType == "birth" ? RT.BirthRegistration : RT.DeathRegistration;
 
   result.setEventYear(data.eventYear.toString());
   result.setEventQuarter(data.eventQuarter); // this is 1-4
@@ -65,7 +70,7 @@ function generalizeData(input) {
 
     result.eventDate.yearString = data.eventYear.toString();
     if (data.eventQuarter) {
-      result.eventDate.quarter = data.eventQuarter;  // this is 1-4
+      result.eventDate.quarter = data.eventQuarter; // this is 1-4
     }
   }
 
@@ -86,8 +91,7 @@ function generalizeData(input) {
     if (mothersMaidenName) {
       result.mothersMaidenName = mothersMaidenName;
     }
-  }
-  else {
+  } else {
     collectionId = "deaths";
     result.lastNameAtDeath = lastName;
     result.deathDate = result.eventDate;
@@ -99,7 +103,7 @@ function generalizeData(input) {
 
     if (data.ageAtDeath) {
       result.ageAtDeath = data.ageAtDeath;
-    }  
+    }
   }
 
   result.setPersonGender(data.personGender);

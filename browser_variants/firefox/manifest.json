@@ -2,7 +2,9 @@
   "name": "WikiTree Sourcer",
   "version": "1.3.6",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
-  "permissions": ["storage", "contextMenus",
+  "permissions": [
+    "storage",
+    "contextMenus",
     "*://www.wikitree.com/*",
     "*://*.ancestry.com/*",
     "*://*.ancestry.co.uk/*",
@@ -45,10 +47,7 @@
     {
       "matches": ["https://www.wikitree.com/*"],
       "run_at": "document_idle",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/wikitree/browser/wikitree_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/wikitree/browser/wikitree_content.js"]
     },
     {
       "matches": [
@@ -67,10 +66,7 @@
         "https://*.ancestrylibrary.com.au/*"
       ],
       "run_at": "document_idle",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/ancestry/browser/ancestry_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
     },
     {
       "matches": [
@@ -80,68 +76,42 @@
         "*://*.findmypast.com.au/*"
       ],
       "run_at": "document_idle",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/fmp/browser/fmp_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/fmp/browser/fmp_content.js"]
     },
     {
       "matches": ["*://www.findagrave.com/*"],
       "run_at": "document_end",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/fg/browser/fg_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/fg/browser/fg_content.js"]
     },
     {
-      "matches": [
-        "https://www.familysearch.org/*"
-      ],
+      "matches": ["https://www.familysearch.org/*"],
       "run_at": "document_idle",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/fs/browser/fs_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/fs/browser/fs_content.js"]
     },
     {
       "matches": ["https://www.freebmd.org.uk/*"],
       "run_at": "document_end",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/freebmd/browser/freebmd_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/freebmd/browser/freebmd_content.js"]
     },
     {
       "matches": ["https://www.freecen.org.uk/*"],
       "run_at": "document_end",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/freecen/browser/freecen_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/freecen/browser/freecen_content.js"]
     },
     {
       "matches": ["https://www.freereg.org.uk/*"],
       "run_at": "document_end",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/freereg/browser/freereg_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/freereg/browser/freereg_content.js"]
     },
     {
       "matches": ["https://www.gro.gov.uk/gro/content/certificates/*"],
       "run_at": "document_end",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/gro/browser/gro_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
     },
     {
       "matches": ["*://www.scotlandspeople.gov.uk/*"],
       "run_at": "document_idle",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/scotp/browser/scotp_content.js"
-      ]
+      "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
     }
   ],
   "options_ui": {

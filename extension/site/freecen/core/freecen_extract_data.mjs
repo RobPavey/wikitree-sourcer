@@ -35,7 +35,8 @@ function cleanText(inputText) {
 function getTextOfImmediateTextNodes(element) {
   let text = "";
   for (let child of element.childNodes) {
-    if (child.nodeType === 3) { // Node.TEXT_NODE not available in Node.js
+    if (child.nodeType === 3) {
+      // Node.TEXT_NODE not available in Node.js
       text += child.textContent;
     }
   }
@@ -44,7 +45,6 @@ function getTextOfImmediateTextNodes(element) {
 }
 
 function convertTableToObjectPropertiesInVariant(censusTableNode, censusTableObject) {
-
   let rowNodes = censusTableNode.querySelectorAll("tbody > tr");
 
   if (!rowNodes || rowNodes.length == 0) return false;
@@ -105,7 +105,7 @@ function setSelectedFromUrl(url, householdMembers) {
     let personString = urlExtraData;
     let queryIndex = urlExtraData.indexOf("?");
     if (queryIndex != -1) {
-      personString = urlExtraData.substring(0,queryIndex );
+      personString = urlExtraData.substring(0, queryIndex);
     }
     //console.log("personString is: " + personString);
     // the person string has a variable number of parts depending on how many forenames
@@ -116,20 +116,25 @@ function setSelectedFromUrl(url, householdMembers) {
     let namePart = personString.replace(/([a-z\-]+)\-\d+\-.*$/, "$1");
     let censusDate = personString.replace(/[a-z\-]+\-(\d+)\-.*$/, "$1");
     let birthDate = personString.replace(/[a-z\-]+\-\d+\-[a-z\-]+\-(\d+)\-.*$/, "$1");
-    if (namePart && namePart != personString && birthDate && birthDate != personString &&
-      censusDate && censusDate != personString) {
-
+    if (
+      namePart &&
+      namePart != personString &&
+      birthDate &&
+      birthDate != personString &&
+      censusDate &&
+      censusDate != personString
+    ) {
       //console.log("namePart is: " + namePart);
       //console.log("birthDate is: " + birthDate);
       //console.log("censusDate is: " + censusDate);
 
-      namePart = namePart.toLowerCase();  // should be already
-      while (namePart[namePart.length-1] == "-") {
-        namePart - namePart.substring(0, namePart.length-1);
+      namePart = namePart.toLowerCase(); // should be already
+      while (namePart[namePart.length - 1] == "-") {
+        namePart - namePart.substring(0, namePart.length - 1);
       }
       let lastDashIndex = namePart.lastIndexOf("-");
       if (lastDashIndex != -1) {
-        let surname = namePart.substring(lastDashIndex+1);
+        let surname = namePart.substring(lastDashIndex + 1);
         let forenames = namePart.substring(0, lastDashIndex);
         forenames = forenames.replace(/\-/g, " ").trim();
 
@@ -148,9 +153,11 @@ function setSelectedFromUrl(url, householdMembers) {
             //console.log("member.Forenames is: " + member.Forenames);
             //console.log("member.Age is: " + member.Age);
             if (member.Surname && member.Forenames && member.Age) {
-              if (member.Surname.toLowerCase() == surname
-                && member.Forenames.toLowerCase() == forenames
-                && member.Age == expectedAgeString) {
+              if (
+                member.Surname.toLowerCase() == surname &&
+                member.Forenames.toLowerCase() == forenames &&
+                member.Age == expectedAgeString
+              ) {
                 //console.log("Setting isSelected");
                 member.isSelected = true;
                 break;
@@ -164,9 +171,7 @@ function setSelectedFromUrl(url, householdMembers) {
 }
 
 function extractData(document, url) {
-
-  var result = {
-  };
+  var result = {};
   result.url = url;
 
   result.success = false;
@@ -184,13 +189,11 @@ function extractData(document, url) {
   if (tables.length == 2) {
     censusTableNode = tables[0];
     houseHoldTableNode = tables[1];
-  }
-  else if (tables.length == 3) {
+  } else if (tables.length == 3) {
     censusTableNode = tables[0];
     censusTableNode2 = tables[1];
     houseHoldTableNode = tables[2];
-  }
-  else {
+  } else {
     return result;
   }
 
@@ -221,7 +224,7 @@ function extractData(document, url) {
   if (householdHeaderNodes.length == 0) {
     householdHeaderNodes = houseHoldTableNode.querySelectorAll("thead > tr > td");
   }
-  
+
   //console.log("freecen: extractData: householdHeaderNodes.length is: " + householdHeaderNodes.length);
 
   if (householdHeaderNodes.length == 0) return result;
@@ -238,13 +241,12 @@ function extractData(document, url) {
 
   let foundSelected = false;
   for (let rowIndex = 0; rowIndex < householdRowNodes.length; rowIndex++) {
-
     let rowNode = householdRowNodes[rowIndex];
     let cellNodes = rowNode.querySelectorAll("td");
-    
-    if (cellNodes.length == 0) continue;  // there can be empty rows on iPhone
+
+    if (cellNodes.length == 0) continue; // there can be empty rows on iPhone
     if (cellNodes.length != householdHeaderNodes.length) return result;
-  
+
     let member = {};
     for (let colIndex = 0; colIndex < cellNodes.length; colIndex++) {
       let cellNode = cellNodes[colIndex];

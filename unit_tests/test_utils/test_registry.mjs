@@ -31,5 +31,4 @@ function registerTest(siteName, testFunction) {
   testRegistry.push(test);
 }
 
-
 export { testRegistry, registerTest };

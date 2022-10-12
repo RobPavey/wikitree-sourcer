@@ -56,11 +56,23 @@ class CitationBuilder {
   }
 
   getDateString(date) {
-    const monthStrings = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"];
-  
+    const monthStrings = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
     const dateString = "" + date.getDate() + " " + monthStrings[date.getMonth()] + " " + date.getFullYear();
-  
+
     return dateString;
   }
 
@@ -68,36 +80,30 @@ class CitationBuilder {
     let subReqString = "";
     if (subReqOption == "subscriptionRequired") {
       subReqString = "subscription required";
-    }
-    else if (subReqOption == "requiresSubscription") {
+    } else if (subReqOption == "requiresSubscription") {
       subReqString = "requires subscription";
-    }
-    else if (subReqOption == "dollar") {
+    } else if (subReqOption == "dollar") {
       subReqString = "$";
-    }
-    else if (subReqOption == "paywall") {
+    } else if (subReqOption == "paywall") {
       subReqString = "paywall";
     }
     return subReqString;
   }
 
   addBreakNewlineOrAlternatives(oldCitation, separatorChar = ",") {
-
     let citation = oldCitation;
 
     if (this.options.citation_general_addBreaksWithinBody) {
       citation += "<br/>";
-    }
-    else {
+    } else {
       if (citation.endsWith(";") || citation.endsWith(",") || citation.endsWith(".")) {
-        citation = citation.substring(0, citation.length-1);
+        citation = citation.substring(0, citation.length - 1);
       }
 
-      if (this.options.citation_general_commaInsideQuotes && citation.endsWith("\"")) {
-        citation = citation.substring(0, citation.length-1);
-        citation += separatorChar + "\"";
-      }
-      else {
+      if (this.options.citation_general_commaInsideQuotes && citation.endsWith('"')) {
+        citation = citation.substring(0, citation.length - 1);
+        citation += separatorChar + '"';
+      } else {
         citation += separatorChar;
       }
 
@@ -111,7 +117,6 @@ class CitationBuilder {
   }
 
   addNarrative(gd, dataCache, options) {
-
     // eventually these should come from the dataCache
     // The problem is how to be sure we get a valid match from the data cache?
     // It could be worth just getting it for the gender for pronouns
@@ -128,24 +133,23 @@ class CitationBuilder {
 
     //console.log("addNarrative, narrative is");
     //console.log(narrative);
-  
+
     if (narrative) {
       this.narrative = narrative;
     }
   }
-  
+
   buildDataList(recordData, keyFilterFunction) {
     let itemSep = ";";
     let valueSep = ":";
     if (this.options.citation_general_dataListSeparator == "commaColon") {
       itemSep = ",";
       valueSep = ":";
-    }
-    else if (this.options.citation_general_dataListSeparator == "commaSpace") {
+    } else if (this.options.citation_general_dataListSeparator == "commaSpace") {
       itemSep = ",";
       valueSep = "";
     }
-  
+
     let keys = Object.keys(recordData);
     if (keyFilterFunction) {
       keys = keyFilterFunction(keys, recordData);
@@ -162,8 +166,7 @@ class CitationBuilder {
         }
         if (value.startsWith("http")) {
           dataListString += "[" + value + " " + key + "]";
-        }
-        else {
+        } else {
           dataListString += key + valueSep + " " + value;
         }
       }
@@ -173,7 +176,6 @@ class CitationBuilder {
   }
 
   getCitationString() {
-
     let autoTableOpt = this.options.table_general_autoGenerate;
 
     let citation = "";
@@ -185,8 +187,7 @@ class CitationBuilder {
 
     if (this.type == "source") {
       citation += "* ";
-    }
-    else {
+    } else {
       citation += "<ref>";
     }
 
@@ -197,18 +198,15 @@ class CitationBuilder {
     if (this.options.citation_general_meaningfulNames != "none" && this.meaningfulTitle) {
       if (this.options.citation_general_meaningfulNames == "bold") {
         citation += "'''" + this.meaningfulTitle + "''':";
-      }
-      else if (this.options.citation_general_meaningfulNames == "italic") {
+      } else if (this.options.citation_general_meaningfulNames == "italic") {
         citation += "''" + this.meaningfulTitle + "'':";
-      }
-      else {
-        citation += this.meaningfulTitle+ ":";
+      } else {
+        citation += this.meaningfulTitle + ":";
       }
 
       if (this.type != "source" && this.options.citation_general_addNewlinesWithinBody) {
         citation += "\n";
-      }
-      else {
+      } else {
         citation += " ";
       }
     }
@@ -216,22 +214,20 @@ class CitationBuilder {
     if (this.sourceTitle) {
       let sourceTitle = this.sourceTitle.trim();
       if (this.putSourceTitleInQuotes) {
-        sourceTitle = "\"" + sourceTitle + "\"";
+        sourceTitle = '"' + sourceTitle + '"';
       }
       citation += sourceTitle;
 
       if (this.options.citation_general_addEeItemType) {
-        if (this.options.citation_general_commaInsideQuotes && citation.endsWith("\"")) {
-          citation = citation.substring(0, citation.length-1);
-          citation += ",\"";
-        }
-        else {
+        if (this.options.citation_general_commaInsideQuotes && citation.endsWith('"')) {
+          citation = citation.substring(0, citation.length - 1);
+          citation += ',"';
+        } else {
           citation += ",";
         }
         if (this.databaseHasImages) {
           citation += " database with images";
-        }
-        else {
+        } else {
           citation += " database";
         }
       }
@@ -244,8 +240,7 @@ class CitationBuilder {
 
       if (this.sourceReference && this.options.citation_general_referencePosition == "afterSourceTitle") {
         citation += ", ";
-      }
-      else {
+      } else {
         citation = this.addBreakNewlineOrAlternatives(citation);
       }
     }
@@ -263,16 +258,14 @@ class CitationBuilder {
           if (this.type != "source" && this.options.citation_general_addNewlinesWithinBody) {
             citation += "\n";
           }
-        }
-        else {
-          citation += " - ";  // separate the two links with a hyphen for space
+        } else {
+          citation += " - "; // separate the two links with a hyphen for space
         }
       }
-    }
-    else if (this.imageLink) {
+    } else if (this.imageLink) {
       citation += this.imageLink;
       if (this.recordLinkOrTemplate) {
-        citation += " - ";  // separate the two links with a hyphen for space
+        citation += " - "; // separate the two links with a hyphen for space
       }
     }
 
@@ -283,23 +276,19 @@ class CitationBuilder {
 
         if (subReqString) {
           citation += " (" + subReqString + ", accessed " + accessedDate + ")";
-        }
-        else {
+        } else {
           citation += " (accessed " + accessedDate + ")";
         }
-      }
-      else if (this.options.citation_general_addAccessedDate == "parenBeforeLink") {
+      } else if (this.options.citation_general_addAccessedDate == "parenBeforeLink") {
         citation += "(";
         citation += this.recordLinkOrTemplate;
 
         if (subReqString) {
           citation += " : " + subReqString + ", accessed " + accessedDate + ")";
-        }
-        else {
+        } else {
           citation += " : accessed " + accessedDate + ")";
         }
-      }
-      else {
+      } else {
         citation += this.recordLinkOrTemplate;
 
         if (subReqString) {
@@ -312,8 +301,7 @@ class CitationBuilder {
       if (!citation.endsWith("\n")) {
         if (this.options.citation_general_addBreaksWithinBody) {
           citation += "<br/>";
-        }
-        else {
+        } else {
           citation += " ";
         }
         if (this.type != "source" && this.options.citation_general_addNewlinesWithinBody) {
@@ -323,17 +311,15 @@ class CitationBuilder {
       citation += this.externalSiteLink;
     }
 
-
     if (this.dataString) {
       if (!this.dataString.startsWith("{|")) {
         citation = this.addBreakNewlineOrAlternatives(citation);
-      }
-      else {
+      } else {
         citation += "\n"; // always need a newline before table
       }
       citation += this.dataString;
     }
-    
+
     if (this.sourceReference && this.options.citation_general_referencePosition == "atEnd") {
       citation = this.addBreakNewlineOrAlternatives(citation, ";");
       if (!this.sourceReference.toLowerCase().startsWith("citing ")) {
@@ -344,7 +330,7 @@ class CitationBuilder {
 
     citation = citation.trim();
     while (citation.endsWith(",")) {
-      citation = citation.substring(0, citation.length -1).trim();
+      citation = citation.substring(0, citation.length - 1).trim();
     }
 
     if (!(citation.endsWith(".") || citation.endsWith("}"))) {
@@ -353,7 +339,6 @@ class CitationBuilder {
       // a bare link and we don't want a period then. There are various ways we could test
       // for this
       if (!(citation.endsWith("]") || citation.endsWith(">") || citation.endsWith("\n") || citation.endsWith("* "))) {
-
         // if ends with accessed date then (for now) we don't add a period
         // (accessed 6 May 2021)
         if (!/accessed \d+ \w+ \d+\)$/.test(citation)) {
@@ -373,34 +358,29 @@ class CitationBuilder {
         // However, people do want to use the :: style list format in a source
         // Maybe we should just allow whetever they want?
         //if (!(this.type == "source" && (tableFormat == "table" || tableFormat == "list"))) {
-          if (!citation.endsWith("\n")) {
-            if (this.type == "source") {
-              if (tableFormat == "table" || tableFormat == "list") {
-                citation += "\n";
-              }
-              else if (this.options.citation_general_addBreaksWithinBody) {
-                citation += "<br/>";
-              }
-              else {
-                citation += " ";
-              }
+        if (!citation.endsWith("\n")) {
+          if (this.type == "source") {
+            if (tableFormat == "table" || tableFormat == "list") {
+              citation += "\n";
+            } else if (this.options.citation_general_addBreaksWithinBody) {
+              citation += "<br/>";
+            } else {
+              citation += " ";
             }
-            else {
-              if (tableFormat == "table" || tableFormat == "list") {
-                citation += "\n";
-              }
-              else if (this.options.citation_general_addNewlinesWithinRefs) {
-                citation += "\n";
-              }
-              else {
-                citation += " ";
-              }
+          } else {
+            if (tableFormat == "table" || tableFormat == "list") {
+              citation += "\n";
+            } else if (this.options.citation_general_addNewlinesWithinRefs) {
+              citation += "\n";
+            } else {
+              citation += " ";
             }
           }
-          citation += this.householdTableString;
-          if (tableFormat != "sentence" || this.options.citation_general_addNewlinesWithinRefs) {
-            citation += "\n";
-          }
+        }
+        citation += this.householdTableString;
+        if (tableFormat != "sentence" || this.options.citation_general_addNewlinesWithinRefs) {
+          citation += "\n";
+        }
         //}
       }
     }
@@ -413,8 +393,7 @@ class CitationBuilder {
       if (autoTableOpt == "afterRef" || autoTableOpt == "afterRefBlankLine") {
         if (autoTableOpt == "afterRef") {
           citation += "\n";
-        }
-        else if (autoTableOpt == "afterRefBlankLine") {
+        } else if (autoTableOpt == "afterRefBlankLine") {
           citation += "\n\n";
         }
         citation += this.householdTableString;

@@ -45,8 +45,8 @@ const regressionData = [
     caseName: "b_ethel_daisy_bayford",
     optionVariants: [
       {
-        variantName: "no_district_url", 
-        optionOverrides: { citation_gro_useDistrictUrl: false, },
+        variantName: "no_district_url",
+        optionOverrides: { citation_gro_useDistrictUrl: false },
       },
     ],
   },
@@ -83,7 +83,7 @@ const regressionData = [
     caseName: "b_pavey-451",
     optionVariants: [
       {
-        variantName: "no_brs_or_nls", 
+        variantName: "no_brs_or_nls",
         optionOverrides: {
           citation_general_addNewlinesWithinRefs: false,
           citation_general_addNewlinesWithinBody: false,
@@ -107,7 +107,7 @@ const regressionData = [
         variantName: "no_ref_nls",
         optionOverrides: {
           citation_general_addNewlinesWithinRefs: false,
-        },   
+        },
       },
       {
         variantName: "no_body_nls",

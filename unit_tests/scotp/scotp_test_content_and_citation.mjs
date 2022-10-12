@@ -37,28 +37,28 @@ const regressionData = [
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Fraser&surname_so=exact&forename_so=starts&second_person_forename_so=exact&record_type=census&year%5B0%5D=1841",
     optionVariants: [
       {
-        variantName: "urlVisible", 
-        optionOverrides: {citation_scotp_urlStyle: "visible", citation_scotp_urlIncludeRef: true, },
+        variantName: "urlVisible",
+        optionOverrides: { citation_scotp_urlStyle: "visible", citation_scotp_urlIncludeRef: true },
       },
       {
-        variantName: "urlBase", 
-        optionOverrides: {citation_scotp_urlStyle: "base", citation_scotp_urlIncludeRef: true, },
+        variantName: "urlBase",
+        optionOverrides: { citation_scotp_urlStyle: "base", citation_scotp_urlIncludeRef: true },
       },
       {
-        variantName: "urlOriginalRef", 
-        optionOverrides: {citation_scotp_urlStyle: "original", citation_scotp_urlIncludeRef: true, },
+        variantName: "urlOriginalRef",
+        optionOverrides: { citation_scotp_urlStyle: "original", citation_scotp_urlIncludeRef: true },
       },
       {
-        variantName: "urlOriginalNoRef", 
-        optionOverrides: {citation_scotp_urlStyle: "original", citation_scotp_urlIncludeRef: false, },
+        variantName: "urlOriginalNoRef",
+        optionOverrides: { citation_scotp_urlStyle: "original", citation_scotp_urlIncludeRef: false },
       },
       {
-        variantName: "urlShortRef", 
-        optionOverrides: {citation_scotp_urlStyle: "short", citation_scotp_urlIncludeRef: true, },
+        variantName: "urlShortRef",
+        optionOverrides: { citation_scotp_urlStyle: "short", citation_scotp_urlIncludeRef: true },
       },
       {
-        variantName: "urlShortNoRef", 
-        optionOverrides: {citation_scotp_urlStyle: "short", citation_scotp_urlIncludeRef: false, },
+        variantName: "urlShortNoRef",
+        optionOverrides: { citation_scotp_urlStyle: "short", citation_scotp_urlIncludeRef: false },
       },
     ],
   },
@@ -100,7 +100,8 @@ const regressionData = [
     url: "https://www.scotlandspeople.gov.uk/record-results?page=20&search_type=people&dl_cat=census&surname=Duncan&surname_so=exact&forename=Robert&forename_so=starts&sex=M&record_type=census_lds&year%5B0%5D=1881_LDS",
   },
   // ============ Church registers - Births and baptisms - Church of Scotland ==============
-  { // Has FR217 on end of Parents/Other Details
+  {
+    // Has FR217 on end of Parents/Other Details
     caseName: "church_bap_cos_1759_agnes_faichney",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=Faichney&surname_so=exact&forename_so=starts&sex=F&parent_names_so=exact&parent_name_two_so=exact&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
   },
@@ -108,7 +109,8 @@ const regressionData = [
     caseName: "church_bap_cos_1810_agnes_reid",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=Reid&surname_so=wild&forename_so=wild&parent_names_so=wild&parent_name_two=Jane%20Gemmel&parent_name_two_so=wild&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
   },
-  { // page has multiple results, all in same Parish
+  {
+    // page has multiple results, all in same Parish
     caseName: "church_bap_cos_1813_thomas_reid",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=Reid&surname_so=wild&forename_so=wild&parent_names_so=wild&parent_name_two=Jane%20Gemm%2Al&parent_name_two_so=wild&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
   },
@@ -116,11 +118,13 @@ const regressionData = [
     caseName: "church_bap_cos_1823_peter_connan",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=CONNAN&surname_so=exact&forename=PETER&forename_so=exact&from_year=1823&to_year=1823&sex=M&parent_names=JAMES%20CONNAN&parent_names_so=exact&parent_name_two=MARY%20MCGREGOR&parent_name_two_so=exact&rd_display_name%5B0%5D=MONZIE_MONZIE%20(PERTH)&rd_name%5B0%5D=MONZIE&ref=20%209",
   },
-  { // has PG72 on end of Parents/Other Details
+  {
+    // has PG72 on end of Parents/Other Details
     caseName: "church_bap_cos_1850_catherine_faichney",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=FAICHNEY&forename=CATHERINE&from_year=1850&to_year=1850&sex=F&parent_names=JOHN%20FAICHNEY&parent_name_two=MARGARET&rd_display_name%5B0%5D=DUNBLANE_DUNBLANE&rd_name%5B0%5D=DUNBLANE&ref=40%20141",
   },
-  { // has county in url
+  {
+    // has county in url
     caseName: "church_bap_cos_1850_christina_baird",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=BAIRD&forename=CHRISTINA&from_year=1850&to_year=1850&sex=F&parent_names=ROBERT%20BAIRD&parent_name_two=HELEN%20ELLIOT&county=ROXBURGH&rd_display_name%5B0%5D=ROBERTON_ROBERTON%20(ROXBURGH)&rd_name%5B0%5D=ROBERTON&ref=30%2041",
   },
@@ -276,19 +280,23 @@ const regressionData = [
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-civilpartnerships&surname=Smith&surname_so=exact&forename_so=starts&psurname_so=exact&from_year=2005&to_year=2005&record_type=civilpartnership",
   },
   // ============ Statutory registers - Deaths ==============
-  { // RD Name of "Greenock Old or West" doesn't match a search name exactly
+  {
+    // RD Name of "Greenock Old or West" doesn't match a search name exactly
     caseName: "stat_death_1858_norman_fraser",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&surname=Fraser&surname_so=exact&forename=Norman&forename_so=starts&other_surname_so=exact&mmsurname_so=exact&birth_year_range=1&rd_real_name%5B0%5D=GREENOCK%20OLD%20OR%20WEST%20OR%20GREENOCK%20WEST%20OR%20GREENOCK%20MIDDLE%20OR%20GREENOCK%20NEW%20OR%20MIDDLE%20OR%20GREENOCK%20EAST%20OR%20GREENOCK&rd_display_name%5B0%5D=GREENOCK%20OLD%20OR%20WEST%7CGREENOCK%20WEST%7CGREENOCK%20MIDDLE%7CGREENOCK%20NEW%20OR%20MIDDLE%7CGREENOCK%20EAST%7CGREENOCK_GREENOCK&rdno%5B0%5D=GREENOCK%20OLD%20OR%20WEST%20OR%20GREENOCK%20WEST%20OR%20GREENOCK%20MIDDLE%20OR%20GREENOCK%20NEW%20OR%20MIDDLE%20OR%20GREENOCK%20EAST%20OR%20GREENOCK&record_type=stat_deaths",
   },
-  { // Hundreds of results, this is not first page
+  {
+    // Hundreds of results, this is not first page
     caseName: "stat_death_1880_christina_bruce",
     url: "https://www.scotlandspeople.gov.uk/record-results?page=3&search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&surname=Bruce&surname_so=exact&forename_so=starts&other_surname_so=exact&mmsurname_so=exact&from_year=1880&to_year=1920&birth_year_range=1&record_type=stat_deaths",
   },
-  { // No Mother's Maiden Name
+  {
+    // No Mother's Maiden Name
     caseName: "stat_death_1880_jean_bruce",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&surname=Bruce&surname_so=exact&forename=Jean&forename_so=starts&other_surname_so=exact&mmsurname_so=exact&from_year=1880&to_year=1880&age_from=70&age_to=70&birth_year_range=1&record_type=stat_deaths",
   },
-  { // service returns
+  {
+    // service returns
     caseName: "stat_death_1917_james_thomson",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&surname=Thomson&surname_so=exact&forename=James&forename_so=exact&other_surname_so=exact&mmsurname_so=exact&from_year=1917&to_year=1917&age_from=19&age_to=21&birth_year_range=1&county=MINOR%20RECORDS&record_type=stat_deaths",
   },
@@ -311,25 +319,25 @@ const regressionData = [
 
 const optionVariants = [
   {
-    variantName: "dataStyle_none", 
+    variantName: "dataStyle_none",
     optionOverrides: {
       citation_scotp_dataStyle: "none",
     },
   },
   {
-    variantName: "dataStyle_string", 
+    variantName: "dataStyle_string",
     optionOverrides: {
       citation_scotp_dataStyle: "string",
     },
   },
   {
-    variantName: "dataStyle_list", 
+    variantName: "dataStyle_list",
     optionOverrides: {
       citation_scotp_dataStyle: "list",
     },
   },
   {
-    variantName: "dataStyle_table", 
+    variantName: "dataStyle_table",
     optionOverrides: {
       citation_scotp_dataStyle: "table",
     },

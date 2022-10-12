@@ -31,7 +31,7 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/pavey-451_read",
     optionVariants: [
       {
-        variantName: "specified_parameters", 
+        variantName: "specified_parameters",
         typeOfSearch: "SpecifiedParameters",
         searchParameters: {
           father: true,
@@ -44,7 +44,7 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/pavey-342_edit",
     optionVariants: [
       {
-        variantName: "specified_collection", 
+        variantName: "specified_collection",
         typeOfSearch: "SpecifiedCollection",
         searchParameters: {
           collectionWtsId: "EnglandAndWalesCensus1871",
@@ -59,11 +59,11 @@ const regressionData = [
     useDataCache: true,
     optionVariants: [
       {
-        variantName: "same_collection", 
+        variantName: "same_collection",
         typeOfSearch: "SameCollection",
       },
       {
-        variantName: "specified_collection", 
+        variantName: "specified_collection",
         typeOfSearch: "SpecifiedCollection",
         searchParameters: {
           collectionWtsId: "EnglandAndWalesDeathReg",
@@ -80,7 +80,7 @@ const regressionData = [
     inputPath: "ancestry/generalized_data/ref/england_census_1881_searle-38",
     optionVariants: [
       {
-        variantName: "same_collection", 
+        variantName: "same_collection",
         typeOfSearch: "SameCollection",
       },
     ],

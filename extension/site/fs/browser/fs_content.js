@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 async function doFetch() {
-
   //console.log('doFetch, document.location is: ' + document.location);
 
   let fetchType = "record";
@@ -34,7 +33,7 @@ async function doFetch() {
   if (fetchUrl.indexOf("/search/record/results?") != -1) {
     //console.log('doFetch, looks like a search page, checking sidebar');
     // this looks like a search page, see if a record is selected in sidebar
-    let viewRecord = document.querySelector('a[data-testid=viewSimilarRecordButton]');
+    let viewRecord = document.querySelector("a[data-testid=viewSimilarRecordButton]");
     if (viewRecord) {
       //console.log("found view record");
       let text = viewRecord.textContent;
@@ -56,8 +55,7 @@ async function doFetch() {
         fetchUrl = viewRecordUrl;
       }
     }
-  }
-  else if (fetchUrl.startsWith("https://www.familysearch.org/tree/person/details/")) {
+  } else if (fetchUrl.startsWith("https://www.familysearch.org/tree/person/details/")) {
     let personId = fetchUrl.replace("https://www.familysearch.org/tree/person/details/", "");
     let slashOrQueryIndex = personId.search(/[/?]/);
     if (slashOrQueryIndex != -1) {
@@ -74,39 +72,41 @@ async function doFetch() {
   // This seems like a recent change on FamilySearch (noticed on 25 May 2022).
   // Sometimes the URL contains "/search/" and this stops the fetch working
   if (fetchUrl.indexOf("www.familysearch.org/search/ark:/") != -1) {
-    fetchUrl = fetchUrl.replace("www.familysearch.org/search/ark:/", "www.familysearch.org/ark:/")
+    fetchUrl = fetchUrl.replace("www.familysearch.org/search/ark:/", "www.familysearch.org/ark:/");
   }
 
   //console.log('doFetch, fetchUrl is: ' + fetchUrl);
 
   let fetchOptionsHeaders = {
-    "accept": "application/x-gedcomx-v1+json, application/json",
+    accept: "application/x-gedcomx-v1+json, application/json",
     "accept-language": "en",
-    "from": "fsSearch.record.getGedcomX@familysearch.org",
+    from: "fsSearch.record.getGedcomX@familysearch.org",
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
   };
 
   let fetchOptions = {
-    "headers": fetchOptionsHeaders,
-    "referrerPolicy": "strict-origin-when-cross-origin",
-    "body": null,
-    "method": "GET",
-    "mode": "cors",
-    "credentials": "include"
+    headers: fetchOptionsHeaders,
+    referrerPolicy: "strict-origin-when-cross-origin",
+    body: null,
+    method: "GET",
+    mode: "cors",
+    credentials: "include",
   };
 
   try {
-    let response = await fetch(fetchUrl, fetchOptions);  
+    let response = await fetch(fetchUrl, fetchOptions);
 
     //console.log('doFetch, response.status is: ' + response.status);
 
-
     if (response.status !== 200) {
-      console.log('Looks like there was a problem. Status Code: ' +
-        response.status);
-      return {success: false, errorCondition: "FetchError", status: response.status};
+      console.log("Looks like there was a problem. Status Code: " + response.status);
+      return {
+        success: false,
+        errorCondition: "FetchError",
+        status: response.status,
+      };
     }
 
     let jsonData = await response.text();
@@ -115,9 +115,9 @@ async function doFetch() {
     //console.log(jsonData);
 
     if (!jsonData || jsonData[0] != `{`) {
-      console.log('The response text does not look like JSON');
+      console.log("The response text does not look like JSON");
       //console.log(jsonData);
-      return {success: false, errorCondition: "NotJSON"};
+      return { success: false, errorCondition: "NotJSON" };
     }
 
     const dataObj = JSON.parse(jsonData);
@@ -125,36 +125,38 @@ async function doFetch() {
     //console.log("dataObj is:");
     //console.log(dataObj);
 
-    return {success: true, dataObj: dataObj, fetchType: fetchType};
-  }
-  catch (error) {
+    return { success: true, dataObj: dataObj, fetchType: fetchType };
+  } catch (error) {
     console.log("fetch failed, error is:");
     console.log(error);
-    return {success: false};
+    return { success: false };
   }
 }
 
-async function extractDataFromFetchAndRespond(document, dataObj, fetchType,  options, sendResponse) {
-
+async function extractDataFromFetchAndRespond(document, dataObj, fetchType, options, sendResponse) {
   //console.log('extractDataFromFetchAndRespond entered');
 
   if (!isLoadedExtractDataModuleReady) {
     if (loadedExtractDataModuleFailed) {
-      sendResponse({success: false, errorMessage: "Error loading extract data module"});
+      sendResponse({
+        success: false,
+        errorMessage: "Error loading extract data module",
+      });
     }
     // dependencies not ready, wait a few milliseconds and try again
     else if (loadExtractDataModuleRetries < maxLoadModuleRetries) {
       loadExtractDataModuleRetries++;
-      console.log('extractDataFromFetchAndRespond. Retry number: ', loadExtractDataModuleRetries);
-      setTimeout(
-        function() {extractDataFromFetchAndRespond(document, dataObj, options, sendResponse); },
-        loadModuleTimeout
-      );
+      console.log("extractDataFromFetchAndRespond. Retry number: ", loadExtractDataModuleRetries);
+      setTimeout(function () {
+        extractDataFromFetchAndRespond(document, dataObj, options, sendResponse);
+      }, loadModuleTimeout);
       return true;
-    }
-    else {
-      console.log('extractDataFromFetchAndRespond. Too many retries');
-      sendResponse({success: false, errorMessage: "Extract data module never loaded"});
+    } else {
+      console.log("extractDataFromFetchAndRespond. Too many retries");
+      sendResponse({
+        success: false,
+        errorMessage: "Extract data module never loaded",
+      });
     }
     return false;
   }
@@ -163,7 +165,11 @@ async function extractDataFromFetchAndRespond(document, dataObj, fetchType,  opt
   let extractedData = loadedExtractDataModule.extractDataFromFetch(document, dataObj, fetchType, options);
 
   // respond with the type of content and the extracted data
-  sendResponse({success: true, contentType: "fs", extractedData: extractedData});
+  sendResponse({
+    success: true,
+    contentType: "fs",
+    extractedData: extractedData,
+  });
 }
 
 async function doFetchAndSendResponse(sendResponse, options) {
@@ -172,24 +178,33 @@ async function doFetchAndSendResponse(sendResponse, options) {
   if (result.success) {
     // Extract the data.
     extractDataFromFetchAndRespond(document, result.dataObj, result.fetchType, options, sendResponse);
-  }
-  else {
+  } else {
     if (result.errorCondition == "NotJSON") {
       // This is normal for some pages that could be records but are not.
       // For example:
       // https://www.familysearch.org/search/genealogies
-      let extractedData = {pageType: "unknown"};
-      sendResponse({success: true, contentType: "fs", extractedData: extractedData});
-    }
-    else if (result.errorCondition == "FetchError" && result.status == 401) {
+      let extractedData = { pageType: "unknown" };
+      sendResponse({
+        success: true,
+        contentType: "fs",
+        extractedData: extractedData,
+      });
+    } else if (result.errorCondition == "FetchError" && result.status == 401) {
       // This is normal if the login has expired, so don't raise an unexpected
       // error message. It will be handled in FS popup.
-      let extractedData = {pageType: "unknown"};
-      sendResponse({success: true, contentType: "fs", extractedData: extractedData});
-    }
-    else {
+      let extractedData = { pageType: "unknown" };
+      sendResponse({
+        success: true,
+        contentType: "fs",
+        extractedData: extractedData,
+      });
+    } else {
       // treat this as a serious error
-      sendResponse({success: false, errorMessage: "Fetch failed", contentType: "fs"});
+      sendResponse({
+        success: false,
+        errorMessage: "Fetch failed",
+        contentType: "fs",
+      });
     }
   }
 }
@@ -212,8 +227,7 @@ function shouldUseFetch() {
 
   if (location.href.startsWith("https://www.familysearch.org/tree/person/details/")) {
     useFetch = true;
-  }
-  else {
+  } else {
     let main = document.querySelector("#main");
     if (main) {
       //console.log("shouldUseFetch, main found");
@@ -238,9 +252,8 @@ function extractHandler(request, sendResponse) {
   if (useFetch) {
     // extract the data via a fetch thatreturns JSON data
     doFetchAndSendResponse(sendResponse, request.options);
-    return true;  // will respond async
-  }
-  else {
+    return true; // will respond async
+  } else {
     // Extract the data via DOM scraping
     let isAsync = extractDataAndRespond(document, location.href, "fs", sendResponse);
     if (isAsync) {
@@ -249,7 +262,4 @@ function extractHandler(request, sendResponse) {
   }
 }
 
-siteContentInit(`fs`,
-  `site/fs/core/fs_extract_data.mjs`,
-  extractHandler
-);
+siteContentInit(`fs`, `site/fs/core/fs_extract_data.mjs`, extractHandler);

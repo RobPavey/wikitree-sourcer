@@ -28,7 +28,7 @@ import {
   addBreak,
   beginMainMenu,
   endMainMenu,
-  shouldPopupWindowResize
+  shouldPopupWindowResize,
 } from "./popup_menu_building.mjs";
 
 import { writeToClipboard } from "./popup_clipboard.mjs";
@@ -44,13 +44,10 @@ import { cachedDataCache } from "/base/browser/common/data_cache.mjs";
 async function getLatestCitation() {
   return new Promise((resolve, reject) => {
     try {
-      chrome.storage.local.get(
-        ["latestCitation"],
-        function (value) {
-            resolve(value);
-        });
-    }
-    catch (ex) {
+      chrome.storage.local.get(["latestCitation"], function (value) {
+        resolve(value);
+      });
+    } catch (ex) {
       reject(ex);
     }
   });
@@ -59,7 +56,7 @@ async function getLatestCitation() {
 async function saveCitation(citationObject) {
   citationObject.timeStamp = Date.now();
 
-  chrome.storage.local.set({latestCitation: citationObject}, function() {
+  chrome.storage.local.set({ latestCitation: citationObject }, function () {
     //console.log('latestCitation is set to ' + citation);
   });
 
@@ -85,7 +82,6 @@ async function resizeBackFunction(backFunction) {
 }
 
 async function editCitation(backFunction) {
-
   // this switches the popup to display a different frame and populates the edit box
 
   let storedObject = await getLatestCitation();
@@ -108,7 +104,9 @@ async function editCitation(backFunction) {
 
   let fragment = document.createDocumentFragment();
 
-  addBackMenuItem(menu, function () { resizeBackFunction(backFunction); } );
+  addBackMenuItem(menu, function () {
+    resizeBackFunction(backFunction);
+  });
 
   addBreak(fragment);
   let label = document.createElement("label");
@@ -125,7 +123,7 @@ async function editCitation(backFunction) {
   let saveButton = document.createElement("button");
   saveButton.className = "dialogButton";
   saveButton.innerText = "Save";
-  saveButton.onclick = async function(element) {
+  saveButton.onclick = async function (element) {
     citation = textarea.value;
     citationObject.citation = citation;
     saveCitation(citationObject);
@@ -142,7 +140,7 @@ async function editCitation(backFunction) {
 }
 
 function addEditCitationMenuItem(menu, backFunction) {
-  addMenuItem(menu, "Edit Citation...", function(element) {
+  addMenuItem(menu, "Edit Citation...", function (element) {
     editCitation(backFunction);
   });
 }
@@ -163,8 +161,7 @@ function doesCitationWantHouseholdTable(citationType, generalizedData) {
         optionsWantCitation = false;
       }
     }
-  }
-  else if (citationType == "narrative") {
+  } else if (citationType == "narrative") {
     let includeHouseholdOpt = options.narrative_census_includeHousehold;
     if (includeHouseholdOpt != "no") {
       let householdFormatOpt = options.narrative_census_householdPartFormat;
@@ -174,7 +171,7 @@ function doesCitationWantHouseholdTable(citationType, generalizedData) {
     }
   }
 
-  if (optionsWantCitation ) {
+  if (optionsWantCitation) {
     return true;
   }
 
@@ -199,11 +196,10 @@ function buildHouseholdTableString(extractedData, generalizedData, citationType,
 }
 
 function buildCitationObjectForTable(extractedData, generalizedData, sharingDataObj, buildCitation) {
-
   // There is an option to put an inline citation at the end of the table caption
   // If this is set then generate the citation string.
   let citationObject = undefined;
-  
+
   if (buildCitation) {
     let autoTableOpt = options.table_general_autoGenerate;
     if (autoTableOpt == "citationInTableCaption" && options.table_table_caption != "none") {
@@ -215,17 +211,19 @@ function buildCitationObjectForTable(extractedData, generalizedData, sharingData
         type: "inline",
         options: options,
       };
-    
+
       citationObject = buildCitation(input);
     }
   }
-  
+
   return citationObject;
 }
 
 export {
-  saveCitation, addEditCitationMenuItem,
+  saveCitation,
+  addEditCitationMenuItem,
   getLatestCitation,
   doesCitationWantHouseholdTable,
-  buildHouseholdTableString, buildCitationObjectForTable
-}
+  buildHouseholdTableString,
+  buildCitationObjectForTable,
+};

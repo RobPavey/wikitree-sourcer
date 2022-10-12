@@ -31,11 +31,9 @@ import {
   addMenuItem,
   beginMainMenu,
   endMainMenu,
-  doAsyncActionWithCatch
+  doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import {
-  setupSearchWithParametersSubMenu,
-} from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
@@ -45,14 +43,18 @@ import { options } from "/base/browser/options/options_loader.mjs";
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function fmpDoSearch(input) {
-  doAsyncActionWithCatch("FindMyPast Search", input, async function() {
+  doAsyncActionWithCatch("FindMyPast Search", input, async function () {
     let loadedModule = await import(`../core/fmp_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
 }
 
 async function fmpSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+  const input = {
+    typeOfSearch: typeOfSearch,
+    generalizedData: generalizedData,
+    options: options,
+  };
   fmpDoSearch(input);
 }
 
@@ -90,8 +92,10 @@ function addFmpDefaultSearchMenuItem(menu, data, backFunction, filter) {
   if (!hasBirthOrDeathYear(data)) {
     return 0;
   }
-  addMenuItemWithSubMenu(menu, "Search FindMyPast",
-    function(element) {
+  addMenuItemWithSubMenu(
+    menu,
+    "Search FindMyPast",
+    function (element) {
       fmpSearch(data.generalizedData, "");
     },
     function () {
@@ -103,25 +107,25 @@ function addFmpDefaultSearchMenuItem(menu, data, backFunction, filter) {
 }
 
 async function addFmpSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "fmp", function(element) {
+  await addSameRecordMenuItem(menu, data, "fmp", function (element) {
     fmpSearch(data.generalizedData, "SameCollection");
   });
 }
 
 function addFmpSearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function(element) {
+  addMenuItem(menu, "Search a specific collection", function (element) {
     setupSearchCollectionsSubMenu(data, "fmp", fmpSearchCollection, backFunction);
   });
 }
 
 function addFmpSearchTreeMenuItem(menu, data) {
-  addMenuItem(menu, "Search family tree", function(element) {
+  addMenuItem(menu, "Search family tree", function (element) {
     fmpSearch(data.generalizedData, "FamilyTree");
   });
 }
 
 function addFmpSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function(element) {
+  addMenuItem(menu, "Search with specified parameters", function (element) {
     setupFmpSearchWithParametersSubMenu(data, backFunction);
   });
 }
@@ -131,8 +135,9 @@ function addFmpSearchWithParametersMenuItem(menu, data, backFunction) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupFmpSearchSubMenu(data, backFunction) {
-
-  let backToHereFunction = function() { setupFmpSearchSubMenu(data, backFunction) };
+  let backToHereFunction = function () {
+    setupFmpSearchSubMenu(data, backFunction);
+  };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);

@@ -41,11 +41,11 @@ function cleanNamePlaceForSearch(place) {
   }
 
   // FMP doesn't seem to like "United Kingdom" on the end of place names when searching
-  const endingsToRemove = [ ", United Kingdom", ",United Kingdom", ];
+  const endingsToRemove = [", United Kingdom", ",United Kingdom"];
 
   for (let ending of endingsToRemove) {
     if (place.endsWith(ending)) {
-      place = place.substring(0, place.length - ending.length)
+      place = place.substring(0, place.length - ending.length);
     }
   }
 
@@ -53,8 +53,8 @@ function cleanNamePlaceForSearch(place) {
 }
 
 function fixedEncodeURIComponent(str) {
-  return encodeURI(str).replace(/[()&,]/g, function(c) {
-    return '%' + c.charCodeAt(0).toString(16);
+  return encodeURI(str).replace(/[()&,]/g, function (c) {
+    return "%" + c.charCodeAt(0).toString(16);
   });
 }
 
@@ -76,7 +76,6 @@ function buildTreeSearchUrl(buildUrlInput) {
   let url = "https://www." + domain + "/search-family-tree/results?";
   let relativeNumber = 1;
 
-
   function addField(fieldName, value) {
     if (value) {
       url += fieldName + ":" + fixedEncodeURIComponent(value) + "~";
@@ -92,8 +91,7 @@ function buildTreeSearchUrl(buildUrlInput) {
     let code = "";
     if (gender == "male") {
       code = "m";
-    }
-    else if (gender == "female") {
+    } else if (gender == "female") {
       code = "f";
     }
     return code;
@@ -144,17 +142,15 @@ function buildTreeSearchUrl(buildUrlInput) {
   }
 
   var result = {
-    'url' : url,
-  }
+    url: url,
+  };
 
   return result;
 }
 
 function buildSearchUrl(buildUrlInput) {
-
   let data = buildUrlInput.generalizedData;
   let options = buildUrlInput.options;
-
 
   //console.log("buildSearchUrl, gd is:");
   //console.log(data);
@@ -169,11 +165,15 @@ function buildSearchUrl(buildUrlInput) {
   if (buildUrlInput.typeOfSearch == "FamilyTree") {
     // tree search uses a different syntax
     return buildTreeSearchUrl(buildUrlInput);
-  }
-  else if (buildUrlInput.typeOfSearch == "SameCollection") {
+  } else if (buildUrlInput.typeOfSearch == "SameCollection") {
     if (data.collectionData && data.collectionData.id) {
-      let fmpCollectionId = RC.mapCollectionId(data.sourceOfData, data.collectionData.id, "fmp",
-        data.inferEventCountry(), data.inferEventYear());
+      let fmpCollectionId = RC.mapCollectionId(
+        data.sourceOfData,
+        data.collectionData.id,
+        "fmp",
+        data.inferEventCountry(),
+        data.inferEventYear()
+      );
       if (fmpCollectionId) {
         collection = RC.findCollection("fmp", fmpCollectionId);
         if (collection) {
@@ -182,8 +182,7 @@ function buildSearchUrl(buildUrlInput) {
         }
       }
     }
-  }
-  else if (buildUrlInput.typeOfSearch == "SpecifiedCollection") {
+  } else if (buildUrlInput.typeOfSearch == "SpecifiedCollection") {
     let searchParams = buildUrlInput.searchParameters;
     if (searchParams.collectionWtsId) {
       collection = RC.findCollectionByWtsId(searchParams.collectionWtsId);
@@ -191,8 +190,7 @@ function buildSearchUrl(buildUrlInput) {
         dataSetName = encodeDataSetName(collection.sites.fmp.id);
       }
     }
-  }
-  else if (buildUrlInput.typeOfSearch == "SpecifiedParameters") {
+  } else if (buildUrlInput.typeOfSearch == "SpecifiedParameters") {
     parameters = buildUrlInput.searchParameters;
     if (parameters.category != "all") {
       category = parameters.category;
@@ -201,7 +199,7 @@ function buildSearchUrl(buildUrlInput) {
       subcategory = parameters.subcategory;
     }
   }
-  
+
   var builder = new FmpUriBuilder(collection, options);
 
   builder.addSourceCategory(category);
@@ -229,8 +227,7 @@ function buildSearchUrl(buildUrlInput) {
     // if we are searching a birth collection then the event date
     // is the date of birth and we don't want another date
     builder.addEventYear(data.inferBirthYear());
-  }
-  else {
+  } else {
     builder.addBirthYear(data.inferBirthYear());
   }
 
@@ -238,8 +235,7 @@ function buildSearchUrl(buildUrlInput) {
     // if we are searching a death collection then the event date
     // is the date of death and we don't want another date
     builder.addEventYear(data.inferDeathYear());
-  }
-  else {
+  } else {
     builder.addDeathYear(data.inferDeathYear());
   }
 
@@ -255,24 +251,19 @@ function buildSearchUrl(buildUrlInput) {
   let eventPlace = undefined;
   if (sameCollection) {
     eventPlace = data.inferEventPlace();
-  }
-  else if (collection) {
+  } else if (collection) {
     if (collection.isBirth) {
       eventPlace = data.inferBirthPlace();
-    }
-    else if (collection.isDeath) {
+    } else if (collection.isDeath) {
       eventPlace = data.inferDeathPlace();
     }
-  }
-  else if (parameters) {
+  } else if (parameters) {
     if (subcategory == "parish+baptisms") {
       eventPlace = data.inferBirthPlace();
-    }
-    else if (subcategory == "parish+burials") {
+    } else if (subcategory == "parish+burials") {
       eventPlace = data.inferDeathPlace();
     }
-  }
-  else if (data.sourceType == "profile") {
+  } else if (data.sourceType == "profile") {
     eventPlace = data.inferGeneralPlace();
   }
 
@@ -297,7 +288,6 @@ function buildSearchUrl(buildUrlInput) {
 
   // parents. Only add if searching for same record/collection or with parameters
   if (parameters || sameCollection) {
-
     let isBaptism = false;
     if (parameters && subcategory == "parish+baptisms") {
       isBaptism = true;
@@ -314,7 +304,7 @@ function buildSearchUrl(buildUrlInput) {
       }
       if (data.parents.mother && (!parameters || parameters.mother)) {
         let motherForeNames = data.parents.mother.name.inferForenames();
-        let motherLastNames = undefined;  // we don't want multiple names
+        let motherLastNames = undefined; // we don't want multiple names
         builder.addMother(motherForeNames, motherLastNames);
       }
     }
@@ -335,8 +325,7 @@ function buildSearchUrl(buildUrlInput) {
         if (parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
           spouse = data.spouses[parameters.spouseIndex];
         }
-      }
-      else {
+      } else {
         spouse = data.spouses[0];
       }
 
@@ -359,8 +348,7 @@ function buildSearchUrl(buildUrlInput) {
           if (parameters && (parameters.category == "census,+land+&+surveys" || parameters.subCategory == "census")) {
             // for a census the spouse will have the same name as the main person
             builder.addOtherPerson(spouseForeNames, lastName);
-          }
-          else {
+          } else {
             builder.addSpouse(spouseForeNames, spouseLastNames);
           }
         }
@@ -389,8 +377,7 @@ function buildSearchUrl(buildUrlInput) {
       if (collection.wtsId != "EnglandAndWales1939Register") {
         builder.addRegistrationDistrict(data.registrationDistrict);
       }
-    }
-    else {
+    } else {
       builder.addDistrict(data.registrationDistrict);
     }
 
@@ -435,8 +422,8 @@ function buildSearchUrl(buildUrlInput) {
   //console.log("URL is " + url);
 
   var result = {
-      'url' : url,
-  }
+    url: url,
+  };
 
   return result;
 }

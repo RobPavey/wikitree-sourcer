@@ -25,7 +25,6 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
 
-
 function getRefTitle(ed, gd) {
   let refTitle = gd.getRefTitle();
 
@@ -37,7 +36,6 @@ function getRefTitle(ed, gd) {
 }
 
 function getRecordDataValueForKeys(data, keys) {
-
   for (let key of keys) {
     let value = data.recordData[key];
     if (value) {
@@ -47,10 +45,7 @@ function getRecordDataValueForKeys(data, keys) {
 }
 
 function removeUnwantedKeysForDataString(keys, recordData) {
-
-  const exactMatchesToExclude = [
-    "File line number",
-  ];
+  const exactMatchesToExclude = ["File line number"];
   function isKeyWanted(key) {
     for (let match of exactMatchesToExclude) {
       if (match == key) {
@@ -76,7 +71,6 @@ function removeUnwantedKeysForTable(keys, recordData) {
 }
 
 function buildCustomDataString(gd, options) {
-
   let input = {
     generalizedData: gd,
     options: options,
@@ -85,9 +79,8 @@ function buildCustomDataString(gd, options) {
 }
 
 function buildDataString(data, gd, options) {
-
   let dataString = "";
-  
+
   if (options.citation_freereg_dataStyle == "string") {
     dataString = buildCustomDataString(gd, options);
     if (dataString) {
@@ -122,12 +115,15 @@ function buildDataString(data, gd, options) {
 }
 
 function getAdditionalInfo(data, gd, citationType, options) {
-
   if (options.citation_freereg_dataStyle == "none") {
     return "";
   }
 
-  if (citationType == "source" || options.citation_freereg_dataStyle == "string" || options.citation_freereg_dataStyle == "list") {
+  if (
+    citationType == "source" ||
+    options.citation_freereg_dataStyle == "string" ||
+    options.citation_freereg_dataStyle == "list"
+  ) {
     return buildDataString(data, gd, options);
   }
 
@@ -146,14 +142,13 @@ function getAdditionalInfo(data, gd, citationType, options) {
       for (let key of keys) {
         if (firstRow) {
           firstRow = false;
-        }
-        else {
+        } else {
           result += "|-\n";
         }
         result += "| " + key + " || " + recordData[key] + "\n";
       }
 
-      result += "|}"
+      result += "|}";
     }
   }
 
@@ -173,8 +168,7 @@ function buildSourceReference(data, options) {
   if (options.citation_general_sourceReferenceSeparator == "commaColon") {
     itemSep = ",";
     valueSep = ":";
-  }
-  else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
+  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
     itemSep = ",";
     valueSep = "";
   }
@@ -202,8 +196,7 @@ function buildSourceReference(data, options) {
   let registerType = getRecordDataValueForKeys(data, ["Register type"]);
   if (registerType == "Unspecified") {
     addRefPart("Register of unspecified type");
-  }
-  else if (registerType) {
+  } else if (registerType) {
     addRefPart(registerType);
   }
 
@@ -242,11 +235,11 @@ function getRecordLink(data) {
 function buildCoreCitation(data, gd, builder) {
   // Example citation:
   // '''Baptism''':
-  // "FreeReg UK Parish Register database" 
+  // "FreeReg UK Parish Register database"
   // Gloucestershire : Dursley : St James : Register of unspecified type. File line number: 1875
   // [https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 16 April 2022)
   // Baptism of Elizabeth Pavey on 28 Sep 1713. Parents John & Sarah.
-  
+
   let options = builder.getOptions();
 
   let sourceTitle = "FreeReg UK Parish Register database";
@@ -261,18 +254,17 @@ function buildCoreCitation(data, gd, builder) {
 }
 
 function buildCitation(input) {
-
   const data = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
 
   buildCoreCitation(data, gd, builder);
 
-  builder.meaningfulTitle = getRefTitle(data, gd);;
+  builder.meaningfulTitle = getRefTitle(data, gd);
 
   if (type == "narrative") {
     builder.addNarrative(gd, input.dataCache, options);
@@ -286,7 +278,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

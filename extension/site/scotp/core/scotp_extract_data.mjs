@@ -63,7 +63,6 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
     let headerText = headerCell.textContent;
 
     if (headerText) {
-
       let rowDataElement = rowCell.querySelector("div.table-cell-data");
       if (rowDataElement) {
         // Note that we can also get the key name from the row cell in a couple of ways
@@ -76,16 +75,14 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
           if (viewedImageLinkElement) {
             let linkText = viewedImageLinkElement.getAttribute("href");
             result.imageLink = linkText;
-          }
-          else {
+          } else {
             let inputElement = rowDataElement.querySelector("input.viewimglink");
             if (inputElement) {
               let linkText = inputElement.value;
               result.imageLink = linkText;
             }
           }
-        }
-        else {
+        } else {
           let rowText = rowDataElement.textContent;
           rowText = rowText.replace(/\s+/g, " "); // remove double spaces
           result.recordData[headerText] = rowText;
@@ -116,10 +113,9 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
         let separatorIndex = textString.indexOf("',  ");
         let searchItem = "";
         if (separatorIndex != -1) {
-          searchItem = textString.substring(0, separatorIndex+1);
-          textString = textString.substring(separatorIndex+4);
-        }
-        else {
+          searchItem = textString.substring(0, separatorIndex + 1);
+          textString = textString.substring(separatorIndex + 4);
+        } else {
           searchItem = textString;
           textString = "";
         }
@@ -127,7 +123,7 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
         let colonIndex = searchItem.indexOf(":");
         if (colonIndex != -1) {
           let key = searchItem.substring(0, colonIndex).trim();
-          let value = searchItem.substring(colonIndex+1).trim();
+          let value = searchItem.substring(colonIndex + 1).trim();
           value = value.replace(/^\'([^\']*)\'$/, "$1");
           result.searchCriteria[key] = value;
         }
@@ -139,21 +135,19 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
     // https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=opr_marriages&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=McGregor&surname_so=exact&forename=Christane&forename_so=starts&spouse_name_so=exact&from_year=1600&to_year=1700&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches
     let queryIndex = url.indexOf("?");
     if (queryIndex != -1) {
-      let queryString = url.substring(queryIndex+1);
+      let queryString = url.substring(queryIndex + 1);
       result.urlQuery = {};
       while (queryString) {
         let queryTerm = "";
         let ampIndex = queryString.indexOf("&");
         if (ampIndex != -1) {
           queryTerm = queryString.substring(0, ampIndex);
-          queryString = queryString.substring(ampIndex+1);
-        }
-        else {
+          queryString = queryString.substring(ampIndex + 1);
+        } else {
           let poundIndex = queryString.indexOf("#");
           if (poundIndex != -1) {
             queryTerm = queryString.substring(0, poundIndex);
-          }
-          else {
+          } else {
             queryTerm = queryString;
           }
           queryString = "";
@@ -162,7 +156,7 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
         let equalsIndex = queryTerm.indexOf("=");
         if (equalsIndex != -1) {
           let key = queryTerm.substring(0, equalsIndex).trim();
-          let value = queryTerm.substring(equalsIndex+1).trim();
+          let value = queryTerm.substring(equalsIndex + 1).trim();
           key = decodeURI(key);
           value = decodeURI(value);
           result.urlQuery[key] = value;
@@ -199,14 +193,12 @@ function extractFromImageViewer(document, url, result) {
 
 // siteSpecificInput is an optional parameter only passed from content
 function extractData(document, url, siteSpecificInput) {
-
   let userSelectedRowElement = undefined;
   if (siteSpecificInput) {
     userSelectedRowElement = siteSpecificInput.selectedRowElement;
   }
 
-  var result = {
-  };
+  var result = {};
 
   if (url) {
     result.url = url;
@@ -217,8 +209,7 @@ function extractData(document, url, siteSpecificInput) {
 
   if (resultsTableWrapper) {
     extractFromSearchResults(document, url, userSelectedRowElement, result);
-  }
-  else {
+  } else {
     let imageViewer = document.querySelector("div.image-viewer");
 
     if (imageViewer) {

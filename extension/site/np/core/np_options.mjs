@@ -35,17 +35,15 @@ const searchOptionsGroup = {
   tab: "search",
   subsection: "np",
   subheading: "parameters",
-  options: [
-  ],
-}
+  options: [],
+};
 
 const citationOptionsGroup = {
   category: "citation",
   subcategory: "np",
   tab: "citation",
   subsection: "np",
-  options: [
-  ],
+  options: [],
 };
 
 // registerSubsectionForOptions("search", "np", "Newspapers.com");

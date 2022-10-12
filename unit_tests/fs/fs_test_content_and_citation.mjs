@@ -65,7 +65,8 @@ const regressionData = [
     caseName: "england_baptism_1810_john_abberley",
     url: "https://www.familysearch.org/ark:/61903/1:1:QL3G-Z9Z6",
   },
-  { // https://www.familysearch.org/ark:/61903/1:1:QPRD-KN2W
+  {
+    // https://www.familysearch.org/ark:/61903/1:1:QPRD-KN2W
     caseName: "england_baptism_1825_emily_ashworth",
     url: "",
   },
@@ -94,7 +95,7 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:X75L-1V8?id=LZXF-QCZ",
     optionVariants: [
       {
-        variantName: "narrative_1",   // Steve Whitfield preferred
+        variantName: "narrative_1", // Steve Whitfield preferred
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_censusDatePartFormat: "inYear",
@@ -319,15 +320,18 @@ const regressionData = [
     caseName: "us_tx_divorce_1976_sarah_pate",
     url: "https://www.familysearch.org/ark:/61903/1:1:VYX9-KBH",
   },
-  { // was not getting parents
+  {
+    // was not getting parents
     caseName: "us_ut_death_1959_virginia_vigus",
     url: "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRZ",
   },
-  { // has date in form 3/4/1873
+  {
+    // has date in form 3/4/1873
     caseName: "us_ut_marriage_1873_parker_childs",
     url: "https://www.familysearch.org/ark:/61903/1:1:XZJC-SH7?treeref=KWJZ-858",
   },
-  { // was not getting any narrative
+  {
+    // was not getting any narrative
     caseName: "us_ut_immigration_1863_john_jenkins",
     url: "https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C?from=lynx1UIV8&treeref=KWCG-DRL",
   },
@@ -393,66 +397,65 @@ const personRegressionData = [
     url: "https://www.familysearch.org/tree/person/details/G8S8-5FJ",
     fetchType: "person",
   },
-
 ];
 
 const optionVariants = [
   {
-    variantName: "dataStyle_fsShort_fsCitation", 
+    variantName: "dataStyle_fsShort_fsCitation",
     optionOverrides: {
       citation_fs_sourceRef: "fsCitationShort",
       citation_fs_dataStyle: "fsCitation",
     },
   },
   {
-    variantName: "dataStyle_record_string", 
+    variantName: "dataStyle_record_string",
     optionOverrides: {
       citation_fs_sourceRef: "record",
       citation_fs_dataStyle: "string",
     },
   },
   {
-    variantName: "dataStyle_record_list", 
+    variantName: "dataStyle_record_list",
     optionOverrides: {
       citation_fs_sourceRef: "record",
       citation_fs_dataStyle: "list",
     },
   },
   {
-    variantName: "dataStyle_record_table", 
+    variantName: "dataStyle_record_table",
     optionOverrides: {
       citation_fs_sourceRef: "record",
       citation_fs_dataStyle: "table",
     },
   },
   {
-    variantName: "dataStyle_record_fsCitation", 
+    variantName: "dataStyle_record_fsCitation",
     optionOverrides: {
       citation_fs_sourceRef: "record",
       citation_fs_dataStyle: "fsCitation",
     },
   },
   {
-    variantName: "dataStyle_record_none", 
+    variantName: "dataStyle_record_none",
     optionOverrides: {
       citation_fs_sourceRef: "record",
       citation_fs_dataStyle: "none",
     },
   },
   {
-    variantName: "dataStyle_fsShort_string", 
+    variantName: "dataStyle_fsShort_string",
     optionOverrides: {
       citation_fs_sourceRef: "fsCitationShort",
       citation_fs_dataStyle: "string",
     },
   },
   {
-    variantName: "dataStyle_fsLong_fsCitation", 
+    variantName: "dataStyle_fsLong_fsCitation",
     optionOverrides: {
       citation_fs_sourceRef: "fsCitationLong",
       citation_fs_dataStyle: "fsCitation",
     },
-  }
+  },
 ];
 
 async function runTests(testManager) {
@@ -462,7 +465,14 @@ async function runTests(testManager) {
 
   await runExtractDataTests("fs", extractData, imageRegressionData, testManager);
   await runGeneralizeDataTests("fs", generalizeData, imageRegressionData, testManager);
-  await runBuildCitationTests("fs", buildCitation, buildHouseholdTable, imageRegressionData, testManager, optionVariants);
+  await runBuildCitationTests(
+    "fs",
+    buildCitation,
+    buildHouseholdTable,
+    imageRegressionData,
+    testManager,
+    optionVariants
+  );
 
   await runExtractDataTests("fs", extractDataFromFetch, personRegressionData, testManager);
   await runGeneralizeDataTests("fs", generalizeData, personRegressionData, testManager);

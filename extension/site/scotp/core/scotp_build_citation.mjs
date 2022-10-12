@@ -31,27 +31,21 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function getRefTitle(ed, gd) {
-
   let refTitle = gd.getRefTitle();
 
   if (gd.recordType == RT.Will) {
     // treat wills specially
     if (gd.recordSubtype == "Probate") {
       refTitle = "Probate";
-    }
-    else if (gd.recordSubtype == "LettersOfAdministration") {
+    } else if (gd.recordSubtype == "LettersOfAdministration") {
       refTitle = "Letters of Administration";
-    }
-    else if (gd.recordSubtype == "Testament") {
+    } else if (gd.recordSubtype == "Testament") {
       refTitle = "Will or Testament";
-    } 
-    else if (gd.recordSubtype == "Inventory") {
+    } else if (gd.recordSubtype == "Inventory") {
       refTitle = "Inventory Confirmation";
-    }
-    else if (gd.recordSubtype == "AdditionalInventory") {
+    } else if (gd.recordSubtype == "AdditionalInventory") {
       refTitle = "Additional Inventory Confirmation";
-    }
-    else {
+    } else {
       refTitle = "Will or Testament";
     }
   }
@@ -64,19 +58,18 @@ function getRefTitle(ed, gd) {
 }
 
 function createCitationUrl(data, gd, options) {
-
   let scotpRecordType = getRecordType(data);
   if (!scotpRecordType) {
     return data.url;
   }
-  
+
   var builder = new ScotpUriBuilder(scotpRecordType);
 
   if (!data.recordData) {
     return data.url;
   }
 
-  let isShort = (options.citation_scotp_urlStyle == "short");
+  let isShort = options.citation_scotp_urlStyle == "short";
 
   // Names
   // Note on names. In the search results the persons Surname Forename and Full name columns
@@ -85,8 +78,7 @@ function createCitationUrl(data, gd, options) {
   // has no period on the end. (Unlike parent names)
   if (scotpRecordType == "coa") {
     builder.addFullName(data.recordData["Full Name"], "exact");
-  }
-  else {
+  } else {
     let surname = data.recordData["Surname"];
     if (surname) {
       // sometimes the name has " or " in lowercase and that fails search
@@ -102,11 +94,9 @@ function createCitationUrl(data, gd, options) {
   if (year) {
     if (scotpRecordType == "census" || scotpRecordType == "valuation_rolls") {
       builder.addYear(year);
-    }
-    else if (scotpRecordType == "census_lds" || scotpRecordType == "military_tribunals" || scotpRecordType == "hie") {
+    } else if (scotpRecordType == "census_lds" || scotpRecordType == "military_tribunals" || scotpRecordType == "hie") {
       // no date for these record types (it is part of standard text for census_lds)
-    }
-    else {
+    } else {
       builder.addStartYear(year);
       builder.addEndYear(year);
     }
@@ -134,10 +124,9 @@ function createCitationUrl(data, gd, options) {
         let slashIndex = parents.indexOf("/");
         if (slashIndex == -1) {
           parentName1 = parents;
-        }
-        else {
+        } else {
           parentName1 = parents.substring(0, slashIndex);
-          parents = parents.substring(slashIndex+1);
+          parents = parents.substring(slashIndex + 1);
 
           slashIndex = parents.indexOf("/");
           if (slashIndex != -1) {
@@ -202,7 +191,7 @@ function createCitationUrl(data, gd, options) {
       let surname = data.recordData[surnameKey];
       builder.addSpouseSurname(surname, "exact");
     }
-    
+
     let forenameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.spouseForename);
     if (forenameKey) {
       let forename = data.recordData[forenameKey];
@@ -225,16 +214,14 @@ function createCitationUrl(data, gd, options) {
         builder.addAgeRange(age, age);
       }
     }
-  }
-  else if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.age)) {
+  } else if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.age)) {
     let ageKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.age);
     if (ageKey) {
       let age = data.recordData[ageKey];
       if (age) {
         builder.addAge(age);
       }
-    }
-    else if (data.urlQuery["age"]) {
+    } else if (data.urlQuery["age"]) {
       // Military tribunals have an age search but the results do not show an age
       // but the user may have used age to narrow the search results
       builder.addAge(data.urlQuery["age"]);
@@ -250,8 +237,7 @@ function createCitationUrl(data, gd, options) {
         // County is unusual, a lot of record types support county insearch but do not show it in the results
         // So, if the user specified a county and it found this result use it
         builder.addSearchParameter(countySearchParam, userCounty);
-      }
-      else {
+      } else {
         // some record types do have the County or County/City in the search results
         let countyKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.county);
         if (countyKey) {
@@ -324,8 +310,7 @@ function createCitationUrl(data, gd, options) {
           builder.addSearchArrayParameter(courtNameParam, courtNameValue);
         }
       }
-    }
-    else {
+    } else {
       builder.addRecordDataValue(data, scotpRecordType, SpField.courtName);
     }
   }
@@ -350,15 +335,13 @@ function createCitationUrl(data, gd, options) {
 }
 
 function buildCitationUrl(data, gd, options) {
-
   // could provide option to use a search style URL but don't see any reason to so far
 
   let urlOpt = options.citation_scotp_urlStyle;
 
   if (urlOpt == "base" || urlOpt == "visible") {
     return "https://www.scotlandspeople.gov.uk/";
-  }
-  else if (urlOpt == "original") {
+  } else if (urlOpt == "original") {
     // if there is more than one result on the page then add the ref (if that option is selected)
     let url = data.url;
     if (data.numResultsOnPage > 1 && options.citation_scotp_urlIncludeRef) {
@@ -376,8 +359,7 @@ function buildCitationUrl(data, gd, options) {
       }
     }
     return url;
-  }
-  else if (urlOpt == "best") {
+  } else if (urlOpt == "best") {
     let isOnFirstPage = true;
     if (data.urlQuery) {
       let page = data.urlQuery.page;
@@ -395,15 +377,12 @@ function buildCitationUrl(data, gd, options) {
 }
 
 function removeUnwantedKeysForTable(keys, recordData) {
-
   // for the moment they are the same
   return removeUnwantedKeysForDataString(keys, recordData);
 }
 
 function removeUnwantedKeysForDataString(keys, recordData) {
-
   const exactMatchesToExclude = [
-
     "Ref",
     "Court Code",
     "Serial Number",
@@ -413,7 +392,7 @@ function removeUnwantedKeysForDataString(keys, recordData) {
     "Volume",
     "Record Number",
   ];
-  
+
   function isKeyWanted(key) {
     for (let match of exactMatchesToExclude) {
       if (match == key) {
@@ -452,7 +431,7 @@ function buildValuationRollDataString(data, gd, dataStyle, builder) {
   }
   let parish = gd.inferFullEventPlace();
   let place = "";
-  if ( data.recordData) {
+  if (data.recordData) {
     let placeString = data.recordData["Place"];
     if (placeString) {
       place = WTS_String.toInitialCapsEachWord(placeString);
@@ -470,19 +449,17 @@ function buildValuationRollDataString(data, gd, dataStyle, builder) {
 }
 
 function buildDataString(data, gd, dataStyle, builder) {
-
   let options = builder.options;
 
   let dataString = "";
-  
+
   if (dataStyle == "string") {
     if (gd.recordType == RT.ValuationRoll) {
       let dataString = buildValuationRollDataString(data, gd, dataStyle, builder);
       if (dataString) {
         return dataString;
       }
-    }
-    else {
+    } else {
       let input = {
         generalizedData: gd,
         options: options,
@@ -510,19 +487,16 @@ function buildDataString(data, gd, dataStyle, builder) {
 }
 
 function getAdditionalInfo(data, gd, builder) {
-
   let citationType = builder.type;
   let options = builder.options;
 
   let dataStyle = options.citation_scotp_dataStyle;
   if (dataStyle == "none") {
     return "";
-  }
-  else if (dataStyle == "table") {
+  } else if (dataStyle == "table") {
     if (options.citation_general_referencePosition == "atEnd") {
       dataStyle = "string";
-    }
-    else if (citationType == "source") {
+    } else if (citationType == "source") {
       dataStyle = "list";
     }
   }
@@ -546,14 +520,13 @@ function getAdditionalInfo(data, gd, builder) {
       for (let key of keys) {
         if (firstRow) {
           firstRow = false;
-        }
-        else {
+        } else {
           result += "|-\n";
         }
         result += "| " + key + " || " + recordData[key] + "\n";
       }
 
-      result += "|}"
+      result += "|}";
     }
   }
 
@@ -561,7 +534,6 @@ function getAdditionalInfo(data, gd, builder) {
 }
 
 function buildSourceReference(data, gd, options) {
-
   if (!data.recordData) {
     return "";
   }
@@ -569,7 +541,6 @@ function buildSourceReference(data, gd, options) {
   let referenceString = "";
 
   const exactMatchesToIncludeInReference = [
-
     "Ref",
 
     "Court Code",
@@ -583,12 +554,7 @@ function buildSourceReference(data, gd, options) {
     "Service Number",
   ];
 
-  const backupMatchesToIncludeInReference = [
-
-    "Parish",
-  ];
-
-
+  const backupMatchesToIncludeInReference = ["Parish"];
 
   function isKeyWantedInReference(key) {
     for (let match of exactMatchesToIncludeInReference) {
@@ -613,8 +579,7 @@ function buildSourceReference(data, gd, options) {
   if (options.citation_general_sourceReferenceSeparator == "commaColon") {
     itemSep = ",";
     valueSep = ":";
-  }
-  else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
+  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
     itemSep = ",";
     valueSep = "";
   }
@@ -662,7 +627,6 @@ function buildSourceReference(data, gd, options) {
 }
 
 function buildSourceTitle(data, options) {
-
   let recordType = getRecordType(data);
 
   // fallback is the pageHeader but it is a bit ugly. e.g.:
@@ -675,31 +639,30 @@ function buildSourceTitle(data, options) {
   }
 
   switch (recordType) {
-  case "opr_births":
-  case "opr_deaths":
-    // NRS doesn't put Church of Scotland on front but Scotland Project likes it
-    sourceTitle = "Church of Scotland: " + sourceTitle;
-    break;
-  
-  case "opr_marriages":
-    // NRS includes "Proclamation of Banns" but Scotland Project uses this
-    sourceTitle = "Church of Scotland: Old Parish Registers - Banns and Marriages";
-    break;
-    
-  case "census":
-    sourceTitle = "Scotland Census, " + data.recordData["Year"];
-    break;
-   
-  case "census_lds":
-    sourceTitle = "Scotland Census, " + data.recordData["Year"] + " (LDS)";
-    break;
+    case "opr_births":
+    case "opr_deaths":
+      // NRS doesn't put Church of Scotland on front but Scotland Project likes it
+      sourceTitle = "Church of Scotland: " + sourceTitle;
+      break;
+
+    case "opr_marriages":
+      // NRS includes "Proclamation of Banns" but Scotland Project uses this
+      sourceTitle = "Church of Scotland: Old Parish Registers - Banns and Marriages";
+      break;
+
+    case "census":
+      sourceTitle = "Scotland Census, " + data.recordData["Year"];
+      break;
+
+    case "census_lds":
+      sourceTitle = "Scotland Census, " + data.recordData["Year"] + " (LDS)";
+      break;
   }
 
   return sourceTitle;
 }
 
 function buildCoreCitation(data, gd, builder) {
-
   let options = builder.getOptions();
 
   // this may need changing for census - modify and add year
@@ -715,8 +678,7 @@ function buildCoreCitation(data, gd, builder) {
 
   if (options.citation_scotp_urlStyle == "visible") {
     builder.recordLinkOrTemplate = url;
-  }
-  else {
+  } else {
     let linkTitle = "ScotlandsPeople Search";
     if (options.citation_scotp_urlStyle == "base") {
       linkTitle = "ScotlandsPeople";
@@ -732,12 +694,11 @@ function buildCoreCitation(data, gd, builder) {
 }
 
 function buildCitation(input) {
-
   const data = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
 
@@ -759,7 +720,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

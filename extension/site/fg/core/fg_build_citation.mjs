@@ -30,7 +30,7 @@ function buildCoreCitation(data, runDate, builder) {
   // Citing Oak Grove Cemetery, Hillsdale, Hillsdale County, Michigan, USA
   // {{FindAGrave|115176143}} (accessed 4 April 2022)
   // William Henry Pavey (1 Dec 1875–14 Apr 1961)
-  
+
   let options = builder.getOptions();
 
   let sourceTitle = "Find a Grave";
@@ -41,13 +41,11 @@ function buildCoreCitation(data, runDate, builder) {
     if (!data.hasImage) {
       builder.databaseHasImages = false;
     }
-  }
-  else if (options.citation_fg_includeImageStatus) {
+  } else if (options.citation_fg_includeImageStatus) {
     if (data.hasImage === true) {
-      sourceTitle += " (has image)"
-    }
-    else if (data.hasImage === false) {
-      sourceTitle += " (no image)"
+      sourceTitle += " (has image)";
+    } else if (data.hasImage === false) {
+      sourceTitle += " (no image)";
     }
     builder.putSourceTitleInQuotes = false;
   }
@@ -66,13 +64,12 @@ function buildCoreCitation(data, runDate, builder) {
       let italicEndIndex = html.indexOf("</i>", italicStartIndex);
       if (italicStartIndex != -1 && italicEndIndex != -1) {
         let partBefore = html.substring(0, italicStartIndex).trim();
-        let partItalic = html.substring(italicStartIndex+3, italicEndIndex).trim();
-        let partAfter = html.substring(italicEndIndex+4).trim();
+        let partItalic = html.substring(italicStartIndex + 3, italicEndIndex).trim();
+        let partAfter = html.substring(italicEndIndex + 4).trim();
 
         if (options.citation_fg_italicsInName == "omit") {
           nameString = partBefore + " " + partAfter;
-        }
-        else {
+        } else {
           nameString = partBefore + " ''" + partItalic + "'' " + partAfter;
         }
       }
@@ -82,10 +79,9 @@ function buildCoreCitation(data, runDate, builder) {
   let dataString = "Memorial page for " + nameString;
   if (data.deathDate && data.birthDate) {
     dataString += " (" + data.birthDate + "-" + data.deathDate + ")";
-  }
-  else if (data.deathDate) {
+  } else if (data.deathDate) {
     dataString += " (d. " + data.deathDate + ")";
-  }  
+  }
 
   if (data.cemeteryName && data.cemeteryFullAddress) {
     dataString += ", citing " + data.cemeteryName + ", " + data.cemeteryFullAddress;
@@ -100,7 +96,7 @@ function buildCoreCitation(data, runDate, builder) {
     if (indexOfMaintained != -1) {
       let maintainedString = data.citation.substring(indexOfMaintained);
       if (maintainedString.endsWith(".")) {
-        maintainedString = maintainedString.substring(0,maintainedString.length-1).trim();
+        maintainedString = maintainedString.substring(0, maintainedString.length - 1).trim();
       }
       dataString += "; " + maintainedString;
     }
@@ -111,8 +107,7 @@ function buildCoreCitation(data, runDate, builder) {
   if (data.inscription && options.citation_fg_includeInscription) {
     if (options.citation_general_addBreaksWithinBody) {
       dataString += "<br/>";
-    }
-    else {
+    } else {
       dataString += " ";
     }
     if (builder.type != "source" && options.citation_general_addNewlinesWithinBody) {
@@ -135,12 +130,11 @@ function buildCoreCitation(data, runDate, builder) {
 }
 
 function buildCitation(input) {
-
   const data = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
 
@@ -161,7 +155,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

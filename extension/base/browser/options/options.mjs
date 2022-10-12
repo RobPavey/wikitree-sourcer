@@ -35,32 +35,27 @@ var tabElements = {};
 // stored in chrome.storage.
 function restoreOptions() {
   // get the values from the stored user options
-  callFunctionWithStoredOptions(
-    function(options) {
+  callFunctionWithStoredOptions(function (options) {
+    for (let optionsGroup of optionsRegistry.optionsGroups) {
+      let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
-      for (let optionsGroup of optionsRegistry.optionsGroups) {
+      for (let option of optionsGroup.options) {
+        let fullOptionName = optionNamePrefix + option.optionName;
 
-        let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
-    
-        for (let option of optionsGroup.options) {
-          let fullOptionName = optionNamePrefix + option.optionName;
-    
-          let element = document.getElementById(fullOptionName);
-          if (!element) {
-            console.log("restoreOptions: no element found with id: " + fullOptionName);
-            continue;
-          }
+        let element = document.getElementById(fullOptionName);
+        if (!element) {
+          console.log("restoreOptions: no element found with id: " + fullOptionName);
+          continue;
+        }
 
-          if (option.type == "checkbox") {
-            element.checked = options[fullOptionName];
-          }
-          else {
-            element.value = options[fullOptionName];
-          }
+        if (option.type == "checkbox") {
+          element.checked = options[fullOptionName];
+        } else {
+          element.value = options[fullOptionName];
         }
       }
     }
-  );
+  });
 }
 
 function setActiveTab(tabName) {
@@ -80,13 +75,12 @@ function setActiveTab(tabName) {
       if (!tabButtonElement.className.includes(" active")) {
         tabButtonElement.className += " active";
       }
-    }
-    else {
+    } else {
       tabPanelElement.style.display = "none";
       tabButtonElement.className = tabButtonElement.className.replace(" active", "");
     }
   }
-} 
+}
 
 function setActiveSubsection(tabName, subsectionName) {
   //console.log("setActiveTab called: tabName is: " + tabName);
@@ -103,8 +97,7 @@ function setActiveSubsection(tabName, subsectionName) {
 
     if (subsectionName == subsectionKey) {
       panelElement.style.display = "block";
-    }
-    else {
+    } else {
       panelElement.style.display = "none";
     }
   }
@@ -112,7 +105,7 @@ function setActiveSubsection(tabName, subsectionName) {
   if (tabElement.selectElement) {
     tabElement.selectElement.value = subsectionName;
   }
-} 
+}
 
 var uiState = {
   activeTab: "search",
@@ -138,7 +131,6 @@ async function restoreOptionsUiState() {
 }
 
 async function updateAndSaveOptionsUiState(tabName, subsectionName) {
-
   if (tabName) {
     uiState.activeTab = tabName;
 
@@ -150,7 +142,6 @@ async function updateAndSaveOptionsUiState(tabName, subsectionName) {
 }
 
 async function restoreOptionsUiStateAndSetState() {
-
   await restoreOptionsUiState();
 
   setActiveTab(uiState.activeTab);
@@ -160,12 +151,10 @@ async function restoreOptionsUiStateAndSetState() {
 }
 
 async function saveOptionsFromPage() {
-
-  // get the values from the options page 
+  // get the values from the options page
 
   let options = getDefaultOptions();
   for (let optionsGroup of optionsRegistry.optionsGroups) {
-
     let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
     for (let option of optionsGroup.options) {
@@ -179,8 +168,7 @@ async function saveOptionsFromPage() {
 
       if (option.type == "checkbox") {
         options[fullOptionName] = element.checked;
-      }
-      else {
+      } else {
         options[fullOptionName] = element.value;
       }
     }
@@ -252,20 +240,24 @@ function getRegistrySubheading(tabName, subsectionName, subheadingName) {
 }
 
 function buildPage() {
-
   // these refer to names in the .html. These elements could be constructed programaticall but
   // are not yet for historical reasons
   const tabMapping = {
     search: { panelElement: "search-panel", buttonElement: "search-tab" },
     citation: { panelElement: "citation-panel", buttonElement: "citation-tab" },
-    narrative: { panelElement: "narrative-panel", buttonElement: "narrative-tab" },
+    narrative: {
+      panelElement: "narrative-panel",
+      buttonElement: "narrative-tab",
+    },
     table: { panelElement: "table-panel", buttonElement: "table-tab" },
-    addPerson: { panelElement: "addPerson-panel", buttonElement: "addPerson-tab" },
-  }
+    addPerson: {
+      panelElement: "addPerson-panel",
+      buttonElement: "addPerson-tab",
+    },
+  };
 
   tabElements = {};
   for (let tab in tabMapping) {
-
     let tabElementData = tabMapping[tab];
     if (!tabElementData) {
       console.log("buildPage: no tabElementData found for name: " + tab);
@@ -284,13 +276,19 @@ function buildPage() {
       continue;
     }
 
-    tabElements[tab] = { panelElement: tabPanelElement, buttonElement: tabButtonElement, subsections: {} };
+    tabElements[tab] = {
+      panelElement: tabPanelElement,
+      buttonElement: tabButtonElement,
+      subsections: {},
+    };
   }
 
   // Link up the tab panels and buttons and create all the subsection elements
   for (let tab of optionsRegistry.tabs) {
     let tabButtonElement = tabElements[tab.name].buttonElement;
-    tabButtonElement.onclick = function(event) { activeTabChanged(tab.name) };
+    tabButtonElement.onclick = function (event) {
+      activeTabChanged(tab.name);
+    };
 
     let tabPanelElement = tabElements[tab.name].panelElement;
 
@@ -327,18 +325,19 @@ function buildPage() {
       labelElement.className = "subsectionSelector";
       tabPanelElement.appendChild(labelElement);
 
-      subsectionSelectElement.onchange = function() { activeSubsectionChanged(tab.name, this.value); };
+      subsectionSelectElement.onchange = function () {
+        activeSubsectionChanged(tab.name, this.value);
+      };
 
       tabElements[tab.name].selectElement = subsectionSelectElement;
-    }  
+    }
 
     let tabPanelInnerDiv = document.createElement("div");
-    tabPanelInnerDiv.className = "subsectionsContainer"
+    tabPanelInnerDiv.className = "subsectionsContainer";
     tabPanelElement.appendChild(tabPanelInnerDiv);
 
     // add subsections for tab
     for (let subsection of tab.subsections) {
-
       let divElement = document.createElement("div");
       divElement.className = "subsectionPanel";
 
@@ -356,7 +355,6 @@ function buildPage() {
 
   // create all the individual option elements (and subheading elements)
   for (let optionsGroup of optionsRegistry.optionsGroups) {
-
     if (!optionsGroup.tab) {
       console.log("buildPage: optionsGroup has no tab, optionsGroup is:");
       console.log(optionsGroup);
@@ -411,7 +409,7 @@ function buildPage() {
         optionElement = document.createElement("input");
         optionElement.type = "checkbox";
         optionElement.className = "optionCheckbox";
-        
+
         let labelTextNode = document.createTextNode(" " + option.label);
 
         let labelElement = document.createElement("label");
@@ -419,8 +417,7 @@ function buildPage() {
         labelElement.appendChild(optionElement);
         labelElement.appendChild(labelTextNode);
         optionDivElement.appendChild(labelElement);
-      }
-      else if (option.type == "select") {
+      } else if (option.type == "select") {
         optionElement = document.createElement("select");
         optionElement.className = "optionSelect";
 
@@ -438,12 +435,11 @@ function buildPage() {
         labelElement.appendChild(labelTextNode);
         labelElement.appendChild(optionElement);
         optionDivElement.appendChild(labelElement);
-      }
-      else if (option.type == "number") {
+      } else if (option.type == "number") {
         optionElement = document.createElement("input");
         optionElement.type = "number";
         optionElement.className = "optionNumber";
-        
+
         let labelTextNode = document.createTextNode(option.label + ": ");
 
         let labelElement = document.createElement("label");
@@ -451,12 +447,11 @@ function buildPage() {
         labelElement.appendChild(labelTextNode);
         labelElement.appendChild(optionElement);
         optionDivElement.appendChild(labelElement);
-      }
-      else if (option.type == "color") {
+      } else if (option.type == "color") {
         optionElement = document.createElement("input");
         optionElement.type = "color";
         optionElement.className = "optionNumber";
-        
+
         let labelTextNode = document.createTextNode(option.label + ": ");
 
         let labelElement = document.createElement("label");
@@ -488,8 +483,7 @@ function buildPage() {
 
   restoreOptions();
 
-  document.getElementById('save').addEventListener('click', saveOptionsFromPage);
+  document.getElementById("save").addEventListener("click", saveOptionsFromPage);
 }
 
-document.addEventListener('DOMContentLoaded', buildPage);
-
+document.addEventListener("DOMContentLoaded", buildPage);

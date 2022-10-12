@@ -43,7 +43,6 @@ function getFgDateQualifierFromWtsQualifier(wtsQualifier) {
 }
 
 function getFgDateQualifier(exactnessOption, wtsQualifier) {
-
   if (exactnessOption == "auto") {
     return getFgDateQualifierFromWtsQualifier(wtsQualifier);
   }
@@ -52,11 +51,10 @@ function getFgDateQualifier(exactnessOption, wtsQualifier) {
 }
 
 function buildSearchUrl(buildUrlInput) {
-
   const data = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
 
-  var builder = new FgUriBuilder;
+  var builder = new FgUriBuilder();
 
   if (options.search_fg_includeFirstName) {
     let firstName = data.inferFirstName();
@@ -116,8 +114,8 @@ function buildSearchUrl(buildUrlInput) {
   //console.log("URL is " + url);
 
   var result = {
-    'url' : url,
-  }
+    url: url,
+  };
 
   return result;
 }

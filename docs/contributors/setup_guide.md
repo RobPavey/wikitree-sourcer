@@ -22,7 +22,7 @@ Then do:
 
 `git clone https://github.com/RobPavey/wikitree-sourcer.git wikitree-sourcer`
 
-This will create a folder called wikitree-sourcer in your current folder.  If desired you can call it something else by changing the last parameter.
+This will create a folder called wikitree-sourcer in your current folder. If desired you can call it something else by changing the last parameter.
 
 In vscode you can then do "Open Folder" on the new folder.
 
@@ -59,4 +59,3 @@ If you get lots of errors try running it on a subset of tests like this:
 `node scripts/run_test.js fg extract`
 
 so that you can more easily see the errors.
-

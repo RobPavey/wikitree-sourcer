@@ -31,8 +31,7 @@ async function getTabDetails(tabId) {
   // meanwhile the browser global does not exist in Chrome
   if (typeof browser === "undefined") {
     return await chrome.tabs.get(tabId);
-  }
-  else {
+  } else {
     return await browser.tabs.get(tabId);
   }
 }
@@ -42,8 +41,7 @@ async function getLocalStorageItem(key) {
   let items = undefined;
   if (typeof browser === "undefined") {
     items = await chrome.storage.local.get(key);
-  }
-  else {
+  } else {
     items = await browser.storage.local.get(key);
   }
 
@@ -57,8 +55,7 @@ async function getSyncStorageItems(keyList) {
   let items = undefined;
   if (typeof browser === "undefined") {
     items = await chrome.storage.sync.get(keyList);
-  }
-  else {
+  } else {
     items = await browser.storage.sync.get(keyList);
   }
   return items;

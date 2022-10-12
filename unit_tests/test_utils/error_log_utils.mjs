@@ -30,20 +30,17 @@ class LocalErrorLogger {
   }
 
   logError(testData, cause, refFile, testFile) {
-    this.testResults.allTests.push(
-      {
-        testSuite: this.testName,
-        test: testData.caseName,
-        succeded: false,
-        cause: cause,
-        refFile: refFile,
-        testFile: testFile,
-      }
-    );
+    this.testResults.allTests.push({
+      testSuite: this.testName,
+      test: testData.caseName,
+      succeded: false,
+      cause: cause,
+      refFile: refFile,
+      testFile: testFile,
+    });
     this.testResults.numFailedTests++;
     this.numFailedTests++;
   }
-  
 }
 
 export { LocalErrorLogger };

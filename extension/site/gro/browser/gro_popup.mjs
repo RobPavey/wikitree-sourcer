@@ -28,7 +28,6 @@ import { generalizeData } from "../core/gro_generalize_data.mjs";
 import { buildCitation } from "../core/gro_build_citation.mjs";
 
 async function setupGroPopupMenu(extractedData) {
-
   let input = {
     extractedData: extractedData,
     extractFailedMessage: "It looks like a GRO page but not a birth or death index with a succesfull search run.",

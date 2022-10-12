@@ -32,9 +32,7 @@ import {
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import {
-  setupSearchWithParametersSubMenu,
-} from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { registerSearchMenuItemFunction, testFilterForDatesAndCountries } from "/base/browser/popup/popup_search.mjs";
 
@@ -45,8 +43,7 @@ import { options } from "/base/browser/options/options_loader.mjs";
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function freecenDoSearch(input) {
-
-  doAsyncActionWithCatch("FreeCen Search", input, async function() {
+  doAsyncActionWithCatch("FreeCen Search", input, async function () {
     // since many site searchs can be on the popup for a site, it makes sense to dynamically
     // load the build search module
     let loadedModule = await import(`../core/freecen_build_search_data.mjs`);
@@ -59,24 +56,22 @@ function freecenDoSearch(input) {
       const freecenSearchData = {
         timeStamp: Date.now(),
         url: searchUrl,
-        fieldData: fieldData
+        fieldData: fieldData,
       };
 
       // this stores the search data in local storage which is then picked up by the
       // content script in the new tab/window
-      chrome.storage.local.set({freecenSearchData: freecenSearchData}, function() {
+      chrome.storage.local.set({ freecenSearchData: freecenSearchData }, function () {
         //console.log('saved freecenSearchData, freecenSearchData is:');
         //console.log(freecenSearchData);
       });
-    }
-    catch (ex) {
-      console.log('storeDataCache failed');
+    } catch (ex) {
+      console.log("storeDataCache failed");
     }
 
     if (options.search_general_new_window) {
       chrome.windows.create({ url: searchUrl });
-    }
-    else {
+    } else {
       chrome.tabs.create({ url: searchUrl });
     }
     window.close();
@@ -84,7 +79,11 @@ function freecenDoSearch(input) {
 }
 
 async function freecenSearch(generalizedData) {
-  const input = { typeOfSearch: "", generalizedData: generalizedData, options: options }
+  const input = {
+    typeOfSearch: "",
+    generalizedData: generalizedData,
+    options: options,
+  };
   freecenDoSearch(input);
 }
 
@@ -116,13 +115,11 @@ async function freecenSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFreecenDefaultSearchMenuItem(menu, data, backFunction, filter) {
-
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, 1841, 1911, ["United Kingdom"])) {
       return;
     }
-  }
-  else {
+  } else {
     let maxLifespan = Number(options.search_general_maxLifespan);
     if (!data.generalizedData.couldPersonHaveLivedInDateRange(1841, 1911, maxLifespan)) {
       //console.log("addFreecenDefaultSearchMenuItem: couldPersonHaveLivedInDateRange returned false");
@@ -135,8 +132,10 @@ function addFreecenDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItemWithSubMenu(menu, "Search FreeCen (UK)",
-    function(element) {
+  addMenuItemWithSubMenu(
+    menu,
+    "Search FreeCen (UK)",
+    function (element) {
       freecenSearch(data.generalizedData);
     },
     function () {
@@ -148,20 +147,24 @@ function addFreecenDefaultSearchMenuItem(menu, data, backFunction, filter) {
 }
 
 function addFreecenSameRecordMenuItem(menu, data) {
-  addSameRecordMenuItem(menu, data, "freecen", function(element) {
-    const input = { typeOfSearch: "SameCollection", generalizedData: data.generalizedData, options: options }
+  addSameRecordMenuItem(menu, data, "freecen", function (element) {
+    const input = {
+      typeOfSearch: "SameCollection",
+      generalizedData: data.generalizedData,
+      options: options,
+    };
     freecenDoSearch(input);
   });
 }
 
 function addFreecenSearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function(element) {
+  addMenuItem(menu, "Search a specific collection", function (element) {
     setupSearchCollectionsSubMenu(data, "freecen", freecenSearchCollection, backFunction);
   });
 }
 
 function addFreecenSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function(element) {
+  addMenuItem(menu, "Search with specified parameters", function (element) {
     setupFreecenSearchWithParametersSubMenu(data, backFunction);
   });
 }
@@ -171,8 +174,9 @@ function addFreecenSearchWithParametersMenuItem(menu, data, backFunction) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupFreecenSearchSubMenu(data, backFunction) {
-
-  let backToHereFunction = function() { setupFreecenSearchSubMenu(data, backFunction) };
+  let backToHereFunction = function () {
+    setupFreecenSearchSubMenu(data, backFunction);
+  };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);

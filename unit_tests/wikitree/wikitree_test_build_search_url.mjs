@@ -31,7 +31,6 @@ const regressionDataWikitreeData = [
     caseName: "scotland_birth_1842_christian_mcleod",
     inputPath: "ancestry/generalized_data/ref/scotland_birth_1842_christian_mcleod",
   },
-
 ];
 
 const regressionDataWikitreePlusUrl = [
@@ -39,7 +38,6 @@ const regressionDataWikitreePlusUrl = [
     caseName: "plus_scotland_birth_1842_christian_mcleod",
     inputPath: "ancestry/generalized_data/ref/scotland_birth_1842_christian_mcleod",
   },
-
 ];
 
 async function runTests(testManager) {

@@ -47,18 +47,16 @@ function buildFsCitationDataString(data) {
       return dataString;
     }
   }
-  
+
   return "";
 }
 
 function removeUnwantedKeysForTable(keys, recordData) {
-
   // for the moment they are the same
   return removeUnwantedKeysForDataString(keys, recordData);
 }
 
 function removeUnwantedKeysForDataString(keys, recordData) {
-
   const exactMatchesToExclude = [
     "Page",
     "Page number",
@@ -77,7 +75,6 @@ function removeUnwantedKeysForDataString(keys, recordData) {
     "Ppq Id",
     "Record Group",
     "Sort Key",
-
   ];
   function isKeyWanted(key) {
     for (let match of exactMatchesToExclude) {
@@ -110,7 +107,6 @@ function removeUnwantedKeysForDataString(keys, recordData) {
 }
 
 function buildDataString(data, gd, dataStyle, builder) {
-
   let options = builder.options;
 
   let dataString = "";
@@ -124,8 +120,7 @@ function buildDataString(data, gd, dataStyle, builder) {
     if (dataString) {
       return dataString;
     }
-  }
-  else if (dataStyle == "fsCitation") {
+  } else if (dataStyle == "fsCitation") {
     let dataString = buildFsCitationDataString(data);
     if (dataString) {
       return dataString;
@@ -145,7 +140,7 @@ function buildDataString(data, gd, dataStyle, builder) {
       let dataString = data.sourceTitleForPerson.replace(/^([^\,]*)\,.*$/, "$1");
       return dataString;
     }
-    
+
     if (data.fullName && data.eventDate) {
       let dataString = data.fullName + " " + data.eventDate;
       return dataString;
@@ -176,19 +171,16 @@ function buildDataString(data, gd, dataStyle, builder) {
 }
 
 function getAdditionalInfo(data, gd, builder) {
-
   let citationType = builder.type;
   let options = builder.options;
 
   let dataStyle = options.citation_fs_dataStyle;
   if (dataStyle == "none") {
     return "";
-  }
-  else if (dataStyle == "table") {
+  } else if (dataStyle == "table") {
     if (options.citation_general_referencePosition == "atEnd") {
       dataStyle = "string";
-    }
-    else if (citationType == "source") {
+    } else if (citationType == "source") {
       dataStyle = "list";
     }
   }
@@ -212,14 +204,13 @@ function getAdditionalInfo(data, gd, builder) {
       for (let key of keys) {
         if (firstRow) {
           firstRow = false;
-        }
-        else {
+        } else {
           result += "|-\n";
         }
         result += "| " + key + " || " + recordData[key] + "\n";
       }
 
-      result += "|}"
+      result += "|}";
     }
   }
 
@@ -227,7 +218,6 @@ function getAdditionalInfo(data, gd, builder) {
 }
 
 function buildSourceReferenceFromRecord(data, gd, options) {
-
   let dataString = "";
 
   function addValue(title, value) {
@@ -271,12 +261,15 @@ function buildSourceReferenceFromRecord(data, gd, options) {
         addValue("Page", refData.sourcePageNbr);
         addValue("Line", refData.sourceLineNbr);
       }
-    }
-    else if (gd.recordType == RT.BirthRegistration || gd.recordType == RT.DeathRegistration || gd.recordType == RT.MarriageRegistration) {
+    } else if (
+      gd.recordType == RT.BirthRegistration ||
+      gd.recordType == RT.DeathRegistration ||
+      gd.recordType == RT.MarriageRegistration
+    ) {
       // FS citation would say:
       // Citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.
 
-      dataString += "UK General Register Office."
+      dataString += "UK General Register Office.";
       addValue("District", data.registrationDistrict);
       if (refData) {
         addValue("Volume", refData.sourceVolume);
@@ -305,8 +298,7 @@ function buildSourceReferenceFromRecord(data, gd, options) {
 
     if (refData.sourceLineNbr) {
       addValue("Line", refData.sourceLineNbr);
-    }
-    else {
+    } else {
       addValue("Affiliate Line Number", refData.externalLineNumber);
     }
     addValue("Entry", refData.sourceEntryNbr);
@@ -367,9 +359,7 @@ function buildSourceReferenceFromFsCitation(data, options) {
   return "";
 }
 
-
 function buildSourceReference(data, gd, options) {
-
   if (options.citation_fs_sourceRef == "fsCitationShort" || options.citation_fs_sourceRef == "fsCitationLong") {
     let refString = buildSourceReferenceFromFsCitation(data, options);
     if (refString) {
@@ -408,7 +398,7 @@ function buildFsRecordLink(recordUrl) {
 
   // the recordUrl should look like:
   // https://www.familysearch.org/ark:/61903/1:1:XZDY-NHM
-  let recordId = extractIdFromFsUrl(recordUrl, ["ark:/61903/1:1:"], ["/","?"]);
+  let recordId = extractIdFromFsUrl(recordUrl, ["ark:/61903/1:1:"], ["/", "?"]);
 
   if (recordId.length > 5) {
     recordLinkOrTemplate = "{{FamilySearch Record|" + recordId + "}}";
@@ -424,7 +414,7 @@ function buildFsImageLink(imageUrl) {
   // the recordUrl should look like one of these:
   // https://www.familysearch.org/ark:/61903/3:1:33S7-9BSH-9W9B?i=7&cc=1473181
   // https://www.familysearch.org/ark:/61903/3:1:33S7-9P2P-9D2F?i=1179&cc=1307272&personaUrl=%2Fark%3A%2F61903%2F1%3A1%3AXZDY-NHM
-  let imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:1:"], ["/","?"]);
+  let imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:1:"], ["/", "?"]);
 
   if (imageId.length > 5) {
     imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "}}";
@@ -434,7 +424,6 @@ function buildFsImageLink(imageUrl) {
 }
 
 function buildCoreCitation(data, gd, builder) {
-
   builder.sourceTitle = data.collectionTitle;
 
   var recordUrl = data.personRecordUrl;
@@ -449,13 +438,11 @@ function buildCoreCitation(data, gd, builder) {
           if (subReqString) {
             text += " (" + subReqString + ")";
           }
-        }
-        else {
+        } else {
           text += "[" + data.externalImageUrl + " External Image]";
         }
       }
-    }
-    else {
+    } else {
       builder.databaseHasImages = true;
 
       text += buildFsImageLink(data.fsImageUrl);
@@ -464,24 +451,22 @@ function buildCoreCitation(data, gd, builder) {
       }
     }
     builder.externalSiteLink = text;
-  }
-  else if (data.digitalArtifact) {
+  } else if (data.digitalArtifact) {
     // Find A Grave example:   "digitalArtifact": "http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=30569834",
     let url = data.digitalArtifact;
     const idParam = "&GRid=";
     if (url.includes("//www.findagrave.com/cgi-bin") && url.includes(idParam)) {
       let paramIndex = url.indexOf(idParam);
       if (paramIndex != -1) {
-        let nextParamIndex = url.indexOf("&", paramIndex+idParam.length);
+        let nextParamIndex = url.indexOf("&", paramIndex + idParam.length);
         if (nextParamIndex == -1) {
           nextParamIndex = url.length;
         }
 
-        let memorialId = url.substring(paramIndex+idParam.length, nextParamIndex);
-        builder.externalSiteLink = "{{FindAGrave|" + memorialId + "}}"
+        let memorialId = url.substring(paramIndex + idParam.length, nextParamIndex);
+        builder.externalSiteLink = "{{FindAGrave|" + memorialId + "}}";
       }
-    }
-    else {
+    } else {
       builder.externalSiteLink = url;
     }
   }
@@ -497,32 +482,34 @@ function buildCoreCitation(data, gd, builder) {
 }
 
 function getImageRefTitle(catalogRecordName, filmTitle) {
-
   const catalogRecordNameTightMatches = [
-    {title: "Marriage", matches: ["Marriage records"]},
-    {title: "Marriage Bond", matches: ["Marriage licence bonds"]},
-    {title: "Tax record", matches: ["Tax books"]},
-    {title: "Personal Property Tax", matches: ["Personal property tax lists,"]},
-    {title: "Deed", matches: ["Deeds,", "Deed records,"]},
+    { title: "Marriage", matches: ["Marriage records"] },
+    { title: "Marriage Bond", matches: ["Marriage licence bonds"] },
+    { title: "Tax record", matches: ["Tax books"] },
+    {
+      title: "Personal Property Tax",
+      matches: ["Personal property tax lists,"],
+    },
+    { title: "Deed", matches: ["Deeds,", "Deed records,"] },
   ];
 
   const filmTitleTightMatches = [
-    {title: "Marriage", matches: ["County Marriages,"]},
-    {title: "Marriage Bond", matches: ["Marriage Bond,"]},
-    {title: "Deed record", matches: ["Deeds"]},
-    {title: "Land record", matches: ["Land Records,"]},
+    { title: "Marriage", matches: ["County Marriages,"] },
+    { title: "Marriage Bond", matches: ["Marriage Bond,"] },
+    { title: "Deed record", matches: ["Deeds"] },
+    { title: "Land record", matches: ["Land Records,"] },
   ];
 
   const catalogRecordNameLooseMatches = [
-    {title: "Marriage", matches: ["Marriage"]},
-    {title: "Property Tax", matches: ["property tax",]},
-    {title: "Tax record", matches: ["Tax", "tax",]},
+    { title: "Marriage", matches: ["Marriage"] },
+    { title: "Property Tax", matches: ["property tax"] },
+    { title: "Tax record", matches: ["Tax", "tax"] },
   ];
 
   const filmTitleLooseMatches = [
-    {title: "Marriage", matches: ["Marriage"]},
-    {title: "Tax record", matches: ["Tax"]},
-    {title: "Deed record", matches: ["Deed"]},
+    { title: "Marriage", matches: ["Marriage"] },
+    { title: "Tax record", matches: ["Tax"] },
+    { title: "Deed record", matches: ["Deed"] },
   ];
 
   function lookup(title, table) {
@@ -543,32 +530,32 @@ function getImageRefTitle(catalogRecordName, filmTitle) {
       return refTitle;
     }
   }
-  
+
   if (filmTitle) {
     let refTitle = lookup(filmTitle, filmTitleTightMatches);
     if (refTitle) {
       return refTitle;
     }
   }
-  
+
   if (catalogRecordName) {
     let refTitle = lookup(catalogRecordName, catalogRecordNameLooseMatches);
     if (refTitle) {
       return refTitle;
     }
   }
-  
+
   if (filmTitle) {
     let refTitle = lookup(filmTitle, filmTitleLooseMatches);
     if (refTitle) {
       return refTitle;
     }
   }
-  
+
   // no matches
   if (catalogRecordName && filmTitle) {
     // choose the shorter one
-    return (filmTitle.length < catalogRecordName.length) ? filmTitle : catalogRecordName;
+    return filmTitle.length < catalogRecordName.length ? filmTitle : catalogRecordName;
   }
   if (catalogRecordName) {
     return catalogRecordName;
@@ -579,15 +566,13 @@ function getImageRefTitle(catalogRecordName, filmTitle) {
 
   return "Unclassified";
 }
- 
-function buildImageCitation(data, gd, builder) {
 
+function buildImageCitation(data, gd, builder) {
   builder.databaseHasImages = true;
 
   if (data.filmTitle) {
     builder.sourceTitle = data.filmTitle;
-  }
-  else {
+  } else {
     builder.sourceTitle = data.catalogRecordName;
   }
 
@@ -616,12 +601,11 @@ function buildImageCitation(data, gd, builder) {
     }
   }
 
-  if ((data.filmNumber || data.imageBrowsePath) || data.totalImages) {
+  if (data.filmNumber || data.imageBrowsePath || data.totalImages) {
     if (newSourceReference) {
       if (builder.options.citation_general_addBreaksWithinBody) {
         newSourceReference += "<br/>";
-      }
-      else {
+      } else {
         newSourceReference += "; ";
       }
       if (builder.type != "source" && builder.options.citation_general_addNewlinesWithinBody) {
@@ -630,8 +614,7 @@ function buildImageCitation(data, gd, builder) {
     }
     if (data.imageBrowsePath) {
       newSourceReference += "Image path: " + data.imageBrowsePath;
-    }
-    else if (data.filmNumber) {
+    } else if (data.filmNumber) {
       newSourceReference += "Film number: " + data.filmNumber;
     }
 
@@ -656,29 +639,22 @@ function buildImageCitation(data, gd, builder) {
 }
 
 function getRefTitle(ed, gd) {
-
   const recordTypeToRefTitle = [
     {
       type: RT.Marriage,
       defaultTitle: "Marriage",
-      titleMatches: [
-        {title: "Marriage Bond", matches: ["Marriage Bond"]},
-      ],
+      titleMatches: [{ title: "Marriage Bond", matches: ["Marriage Bond"] }],
     },
     {
       type: RT.MilitaryService,
       defaultTitle: "Military Service",
-      titleMatches: [
-        {title: "Navy Allotment", matches: ["Navy Allotment"]},
-      ],
+      titleMatches: [{ title: "Navy Allotment", matches: ["Navy Allotment"] }],
     },
     {
       type: RT.ElectoralRegister,
       defaultTitle: "Voter Registration",
       addYear: true,
-      titleMatches: [
-        {title: "Electoral Register", matches: ["Electoral Register"]},
-      ],
+      titleMatches: [{ title: "Electoral Register", matches: ["Electoral Register"] }],
     },
   ];
 
@@ -692,12 +668,11 @@ function getRefTitle(ed, gd) {
 }
 
 function buildCitation(input) {
-
   const data = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
   builder.householdTableString = input.householdTableString;
@@ -712,8 +687,7 @@ function buildCitation(input) {
     if (type == "narrative") {
       builder.addNarrative(gd, input.dataCache, options);
     }
-  }
-  else if (data.pageType == "image") {
+  } else if (data.pageType == "image") {
     buildImageCitation(data, gd, builder);
   }
 
@@ -725,7 +699,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

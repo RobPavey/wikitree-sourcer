@@ -22,19 +22,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const threeLetterMonths = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-];
+const threeLetterMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const fullMonths = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 const WTS_Date = {
-
-  monthStringToMonthNum: function(string) {
+  monthStringToMonthNum: function (string) {
     if (!string || string.length < 1) {
       return 0;
     }
@@ -55,7 +61,7 @@ const WTS_Date = {
   },
 
   // This returns a parsed data object
-  parseDateString: function(string) {
+  parseDateString: function (string) {
     let result = {
       inputString: string,
       dayNum: 0,
@@ -70,7 +76,7 @@ const WTS_Date = {
       return result;
     }
 
-    if (typeof string !== 'string') {
+    if (typeof string !== "string") {
       return result;
     }
 
@@ -92,17 +98,17 @@ const WTS_Date = {
           result.yearNum = yearNum;
         }
       }
-   
+
       return result;
     }
 
     // check for a year range
     if (/^\d\d\d\d\-\d\d\d\d$/.test(cleanString) || /^\d\d\d\d\-\d\d$/.test(cleanString)) {
       // it is a year range,
-      let startYearString = cleanString.substring(0,4);
+      let startYearString = cleanString.substring(0, 4);
       let endYearString = cleanString.substring(5);
       if (endYearString.length == 2) {
-        endYearString = startYearString.substring(0,2) + endYearString;
+        endYearString = startYearString.substring(0, 2) + endYearString;
       }
 
       let startYearNum = parseInt(startYearString);
@@ -125,9 +131,9 @@ const WTS_Date = {
     if (/^\d\d? [a-zA-Z][a-zA-Z][a-zA-Z] \d\d\d\d$/.test(cleanString)) {
       let firstSpaceIndex = cleanString.indexOf(" ");
       let lastSpaceIndex = cleanString.lastIndexOf(" ");
-      let dayString = cleanString.substring(0,firstSpaceIndex);
-      let monthString = cleanString.substring(firstSpaceIndex+1, lastSpaceIndex);
-      let yearString = cleanString.substring(lastSpaceIndex+1);
+      let dayString = cleanString.substring(0, firstSpaceIndex);
+      let monthString = cleanString.substring(firstSpaceIndex + 1, lastSpaceIndex);
+      let yearString = cleanString.substring(lastSpaceIndex + 1);
       let dayNum = parseInt(dayString);
       if (isNaN(dayNum) || !dayNum) {
         return result;
@@ -147,11 +153,10 @@ const WTS_Date = {
       result.hasMonth = true;
       result.isValid = true;
       return result;
-    }
-    else if (/^[a-zA-Z][a-zA-Z][a-zA-Z] \d\d\d\d$/.test(cleanString)) {
+    } else if (/^[a-zA-Z][a-zA-Z][a-zA-Z] \d\d\d\d$/.test(cleanString)) {
       let firstSpaceIndex = cleanString.indexOf(" ");
       let monthString = cleanString.substring(0, firstSpaceIndex);
-      let yearString = cleanString.substring(firstSpaceIndex+1);
+      let yearString = cleanString.substring(firstSpaceIndex + 1);
       let yearNum = parseInt(yearString);
       if (isNaN(yearNum) || !yearNum) {
         return result;
@@ -166,14 +171,14 @@ const WTS_Date = {
       result.isValid = true;
       return result;
     }
-    
+
     // Did not match the common formats, try less common ones
     if (/^\d\d? [a-zA-Z]+ \d\d\d\d$/.test(cleanString)) {
       let firstSpaceIndex = cleanString.indexOf(" ");
       let lastSpaceIndex = cleanString.lastIndexOf(" ");
-      let dayString = cleanString.substring(0,firstSpaceIndex);
-      let monthString = cleanString.substring(firstSpaceIndex+1, lastSpaceIndex);
-      let yearString = cleanString.substring(lastSpaceIndex+1);
+      let dayString = cleanString.substring(0, firstSpaceIndex);
+      let monthString = cleanString.substring(firstSpaceIndex + 1, lastSpaceIndex);
+      let yearString = cleanString.substring(lastSpaceIndex + 1);
       let dayNum = parseInt(dayString);
       if (isNaN(dayNum) || !dayNum) {
         return result;
@@ -200,9 +205,9 @@ const WTS_Date = {
       let firstSpaceIndex = cleanString.indexOf(" ");
       let lastSpaceIndex = cleanString.lastIndexOf(" ");
       let commaIndex = cleanString.indexOf(",");
-      let monthString = cleanString.substring(0,firstSpaceIndex);
-      let dayString = cleanString.substring(firstSpaceIndex+1, commaIndex);
-      let yearString = cleanString.substring(lastSpaceIndex+1);
+      let monthString = cleanString.substring(0, firstSpaceIndex);
+      let dayString = cleanString.substring(firstSpaceIndex + 1, commaIndex);
+      let yearString = cleanString.substring(lastSpaceIndex + 1);
       let dayNum = parseInt(dayString);
       if (isNaN(dayNum) || !dayNum) {
         return result;
@@ -231,14 +236,14 @@ const WTS_Date = {
       if (firstLetterIndex == -1) {
         return result;
       }
-      let dayString = cleanString.substring(0,firstLetterIndex);
+      let dayString = cleanString.substring(0, firstLetterIndex);
       let remainder = cleanString.substring(firstLetterIndex);
 
       let yearIndex = remainder.search(/\d/);
       if (yearIndex == -1) {
         return result;
       }
-      let monthString = remainder.substring(0,yearIndex);
+      let monthString = remainder.substring(0, yearIndex);
       let yearString = remainder.substring(yearIndex);
 
       let dayNum = parseInt(dayString);
@@ -269,7 +274,7 @@ const WTS_Date = {
       if (yearIndex == -1) {
         return result;
       }
-      let monthString = remainder.substring(0,yearIndex).trim();
+      let monthString = remainder.substring(0, yearIndex).trim();
       let yearString = remainder.substring(yearIndex).trim();
 
       let yearNum = parseInt(yearString);
@@ -288,11 +293,11 @@ const WTS_Date = {
     }
 
     console.log("Unusual date format: " + cleanString);
-  
+
     return result;
   },
 
-  getStdDateString: function(parsedDate, monthStrings) {
+  getStdDateString: function (parsedDate, monthStrings) {
     let string = "";
     if (!parsedDate.isValid) {
       return string;
@@ -306,31 +311,31 @@ const WTS_Date = {
       string += parsedDate.dayNum.toString() + " ";
     }
     if (parsedDate.hasMonth) {
-      string += monthStrings[parsedDate.monthNum-1] + " ";
+      string += monthStrings[parsedDate.monthNum - 1] + " ";
     }
     string += parsedDate.yearNum.toString();
     return string;
   },
 
-  getStdShortFormDateString: function(parsedDate) {
+  getStdShortFormDateString: function (parsedDate) {
     return WTS_Date.getStdDateString(parsedDate, threeLetterMonths);
   },
 
-  getStdLongFormDateString: function(parsedDate) {
+  getStdLongFormDateString: function (parsedDate) {
     return WTS_Date.getStdDateString(parsedDate, fullMonths);
   },
 
-  getUsLongFormDateString: function(parsedDate) {
+  getUsLongFormDateString: function (parsedDate) {
     if (!parsedDate.hasDay || !parsedDate.hasMonth || parsedDate.isRange) {
       return WTS_Date.getStdDateString(parsedDate, fullMonths);
     }
 
-    let string = fullMonths[parsedDate.monthNum-1] + " " + parsedDate.dayNum.toString();
+    let string = fullMonths[parsedDate.monthNum - 1] + " " + parsedDate.dayNum.toString();
     string += ", " + parsedDate.yearNum.toString();
     return string;
   },
 
-  getDayNumberNthString: function(dayNum) {
+  getDayNumberNthString: function (dayNum) {
     let dayString = dayNum.toString();
     if (!dayString) {
       return "";
@@ -339,26 +344,22 @@ const WTS_Date = {
     // account for 11th, 12th, 111th, 213th etc (not that dates get that big!)
     let isTeen = false;
     if (dayString.length >= 2) {
-      if (dayString[dayString.length-2] == "1") {
+      if (dayString[dayString.length - 2] == "1") {
         isTeen = true;
       }
     }
 
     if (isTeen) {
       dayString += "th";
-    }
-    else {
-      let lastDigit = dayString[dayString.length-1];
+    } else {
+      let lastDigit = dayString[dayString.length - 1];
       if (lastDigit == "1") {
         dayString += "st";
-      }
-      else if (lastDigit == "2") {
+      } else if (lastDigit == "2") {
         dayString += "nd";
-      }
-      else if (lastDigit == "3") {
+      } else if (lastDigit == "3") {
         dayString += "rd";
-      }
-      else {
+      } else {
         dayString += "th";
       }
     }
@@ -366,7 +367,7 @@ const WTS_Date = {
     return dayString;
   },
 
-  getStdNthFormDateString: function(parsedDate) {
+  getStdNthFormDateString: function (parsedDate) {
     if (!parsedDate.hasDay || !parsedDate.hasMonth || parsedDate.isRange) {
       return WTS_Date.getStdDateString(parsedDate, fullMonths);
     }
@@ -376,12 +377,12 @@ const WTS_Date = {
       return WTS_Date.getStdDateString(parsedDate, fullMonths);
     }
 
-    let string = "the " + dayString + " of " + fullMonths[parsedDate.monthNum-1];
+    let string = "the " + dayString + " of " + fullMonths[parsedDate.monthNum - 1];
     string += " " + parsedDate.yearNum.toString();
     return string;
   },
 
-  getUsNthFormDateString: function(parsedDate) {
+  getUsNthFormDateString: function (parsedDate) {
     if (!parsedDate.hasDay || !parsedDate.hasMonth || parsedDate.isRange) {
       return WTS_Date.getStdDateString(parsedDate, fullMonths);
     }
@@ -391,12 +392,12 @@ const WTS_Date = {
       return WTS_Date.getStdDateString(parsedDate, fullMonths);
     }
 
-    let string = fullMonths[parsedDate.monthNum-1] + " " + dayString;
+    let string = fullMonths[parsedDate.monthNum - 1] + " " + dayString;
     string += ", " + parsedDate.yearNum.toString();
     return string;
   },
 
-  getParsedDateInDays: function(parsedDate) {
+  getParsedDateInDays: function (parsedDate) {
     if (!parsedDate.isValid) {
       return 0;
     }
@@ -404,16 +405,16 @@ const WTS_Date = {
     let days = parsedDate.yearNum * 365;
     // this is very simplified - currently we don't care about num days in month or leap years
     if (parsedDate.hasMonth) {
-      days += (parsedDate.monthNum-1) * 30;
+      days += (parsedDate.monthNum - 1) * 30;
     }
     if (parsedDate.hasDay) {
-      days += parsedDate.dayNum-1;
+      days += parsedDate.dayNum - 1;
     }
 
     return days;
   },
 
-  getWholeYearsBetweenDateStrings: function(dateString1, dateString2) {
+  getWholeYearsBetweenDateStrings: function (dateString1, dateString2) {
     let parsedDate1 = WTS_Date.parseDateString(dateString1);
     let parsedDate2 = WTS_Date.parseDateString(dateString2);
 
@@ -428,7 +429,7 @@ const WTS_Date = {
     return Math.floor(diffInDays / 365);
   },
 
-  getDaysBetweenParsedDates: function(parsedDate1, parsedDate2) {
+  getDaysBetweenParsedDates: function (parsedDate1, parsedDate2) {
     if (!parsedDate1.isValid || !parsedDate2.isValid) {
       return 0;
     }
@@ -440,46 +441,44 @@ const WTS_Date = {
     return diffInDays;
   },
 
-
-  getDaysBetweenDateStrings: function(dateString1, dateString2) {
+  getDaysBetweenDateStrings: function (dateString1, dateString2) {
     let parsedDate1 = WTS_Date.parseDateString(dateString1);
     let parsedDate2 = WTS_Date.parseDateString(dateString2);
 
     return WTS_Date.getDaysBetweenParsedDates(parsedDate1, parsedDate2);
   },
 
-  getYearNumFromYearString: function(yearString) {
+  getYearNumFromYearString: function (yearString) {
     if (!yearString) {
       return undefined;
     }
-  
+
     let yearNum = parseInt(yearString);
     if (isNaN(yearNum) || yearNum == 0) {
       return undefined;
     }
-  
+
     return yearNum;
   },
-  
-  getQuarterNumFromQuarterString: function(quarterString) {
+
+  getQuarterNumFromQuarterString: function (quarterString) {
     if (!quarterString) {
       return undefined;
     }
-  
+
     if (!isNaN(quarterString)) {
       return quarterString; // already a number
     }
-  
+
     let quarterNum = parseInt(quarterString);
     if (isNaN(quarterNum) || quarterNum == 0) {
       return undefined;
     }
-  
+
     return quarterNum;
   },
- 
-  getDateStringFromYearMonthDay: function(year, month, day) {
 
+  getDateStringFromYearMonthDay: function (year, month, day) {
     let dateString = "";
     if (day) {
       dateString += day;
@@ -490,7 +489,7 @@ const WTS_Date = {
         let monthNum = parseInt(month);
         if (!isNaN(monthNum)) {
           if (monthNum >= 1 && monthNum <= 12) {
-            monthString = threeLetterMonths[monthNum-1];
+            monthString = threeLetterMonths[monthNum - 1];
           }
         }
       }
@@ -509,7 +508,6 @@ const WTS_Date = {
 
     return dateString;
   },
- 
-}
+};
 
 export { WTS_Date };

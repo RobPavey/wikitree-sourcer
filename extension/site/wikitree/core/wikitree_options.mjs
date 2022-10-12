@@ -49,9 +49,9 @@ const searchOptionsGroup = {
         { value: "30", text: "+/- 30 years" },
       ],
       defaultValue: "auto",
-    },  
+    },
   ],
-}
+};
 
 registerSubsectionForOptions("search", "wikitree", "WikiTree");
 registerSiteSearchPopupOptionsGroup("wikitree", 6, 6);

@@ -25,11 +25,9 @@ SOFTWARE.
 function getChildTerm(gender) {
   if (!gender) {
     return "child";
-  }
-  else if (gender == "male") {
+  } else if (gender == "male") {
     return "son";
-  }
-  else if (gender == "female") {
+  } else if (gender == "female") {
     return "daughter";
   }
 }
@@ -41,11 +39,9 @@ function getPrimaryPersonChildTerm(gd) {
 function getParentTerm(gender) {
   if (!gender) {
     return "parent";
-  }
-  else if (gender == "male") {
+  } else if (gender == "male") {
     return "father";
-  }
-  else if (gender == "female") {
+  } else if (gender == "female") {
     return "mother";
   }
 }
@@ -57,11 +53,9 @@ function getPrimaryPersonParentTerm(gd) {
 function getSpouseTerm(gender) {
   if (!gender) {
     return "spouse";
-  }
-  else if (gender == "male") {
+  } else if (gender == "male") {
     return "husband";
-  }
-  else if (gender == "female") {
+  } else if (gender == "female") {
     return "wife";
   }
 }
@@ -71,7 +65,10 @@ function getPrimaryPersonSpouseTerm(gd) {
 }
 
 export {
-  getChildTerm, getPrimaryPersonChildTerm,
-  getParentTerm, getPrimaryPersonParentTerm,
-  getSpouseTerm, getPrimaryPersonSpouseTerm,
- };
+  getChildTerm,
+  getPrimaryPersonChildTerm,
+  getParentTerm,
+  getPrimaryPersonParentTerm,
+  getSpouseTerm,
+  getPrimaryPersonSpouseTerm,
+};

@@ -119,17 +119,9 @@ const valuationCountyNames = [
 // https://www.scotlandspeople.gov.uk/advanced-search#{%22category%22:%22poor-relief%22,%22record%22:%22poor-relief-hie%22}
 // When a search is done these names (URI encoded) are put in the search query for the key "county"
 // e.g.: &county=ARGYLL
-const emigrationCountyNames = [
-  "ARGYLL",
-  "CAITHNESS",
-  "INVERNESS",
-  "MIDLOTHIAN",
-  "ROSS AND CROMARTY",
-  "SUTHERLAND",
-];
+const emigrationCountyNames = ["ARGYLL", "CAITHNESS", "INVERNESS", "MIDLOTHIAN", "ROSS AND CROMARTY", "SUTHERLAND"];
 
 function getCountyListForRecordType(scotpRecordType) {
-
   let countyList = undefined;
 
   switch (scotpRecordType) {
@@ -150,10 +142,10 @@ function getCountyListForRecordType(scotpRecordType) {
     case "crdeath_burial":
     case "cr_other":
 
-    case "ch3_baptism":  // Presbyterian
-    case "ch3_burials":  // Presbyterian
-    case "ch3_marriages":  // Presbyterian
-    case "ch3_other":  // Presbyterian
+    case "ch3_baptism": // Presbyterian
+    case "ch3_burials": // Presbyterian
+    case "ch3_marriages": // Presbyterian
+    case "ch3_other": // Presbyterian
       countyList = statutoryCountyNames;
       break;
 
@@ -169,9 +161,7 @@ function getCountyListForRecordType(scotpRecordType) {
   return countyList;
 }
 
-
 function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
-
   let countyList = getCountyListForRecordType(scotpRecordType);
 
   if (!countyList) {
@@ -212,26 +202,22 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
         }
         // it could still be a place string like "Old Machar, Aberdeen" which would be Aberdeen City
         // but leave it for now.
-      }
-      else if (placeCountyName == "ANGUS") {
+      } else if (placeCountyName == "ANGUS") {
         if (placeString.includes("DUNDEE, ")) {
           return "DUNDEE CITY";
         }
-      }
-      else if (placeCountyName == "MIDLOTHIAN") {
+      } else if (placeCountyName == "MIDLOTHIAN") {
         if (placeString.includes("EDINBURGH, ")) {
           return "EDINBURGH CITY";
         }
-      }
-      else if (placeCountyName == "LANARK") {
+      } else if (placeCountyName == "LANARK") {
         if (placeString.includes("GLASGOW, ")) {
           return "GLASGOW CITY";
         }
       }
 
       return placeCountyName;
-    }
-    else {
+    } else {
       return placeCountyName;
     }
   }
@@ -254,8 +240,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
     if (placeString.includes("GLASGOW, ") || placeString.endsWith("GLASGOW")) {
       return "GLASGOW CITY";
     }
-  }
-  else if (scotpRecordType == "valuation_rolls") {
+  } else if (scotpRecordType == "valuation_rolls") {
     // have to deal with: "ANGUS (FORFAR) COUNTY" and "MORAY (ELGIN) COUNTY"
     // there are only two cases so handle them individually
     if (placeCountyName == "ANGUS COUNTY" || placeCountyName == "FORFAR COUNTY") {

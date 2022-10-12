@@ -52,13 +52,12 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 function fixedEncodeURIComponent(str) {
-  return encodeURI(str).replace(/[()&,]/g, function(c) {
-    return '%' + c.charCodeAt(0).toString(16);
+  return encodeURI(str).replace(/[()&,]/g, function (c) {
+    return "%" + c.charCodeAt(0).toString(16);
   });
 }
 
 class FmpUriBuilder {
-
   constructor(collection, options) {
     this.collection = collection;
 
@@ -90,8 +89,7 @@ class FmpUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", string);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", string);
     }
   }
@@ -106,8 +104,7 @@ class FmpUriBuilder {
     if (!this.searchTermAdded) {
       this.uri = this.uri.concat("?", parameter, "=", encodedValue);
       this.searchTermAdded = true;
-    }
-    else {
+    } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
   }

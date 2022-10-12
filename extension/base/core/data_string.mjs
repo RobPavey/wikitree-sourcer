@@ -28,20 +28,19 @@ import { RT, Role, RecordSubtype } from "./record_type.mjs";
 import { RC } from "./record_collections.mjs";
 import { WTS_Date } from "./wts_date.mjs";
 import { WTS_String } from "./wts_string.mjs";
-import { getPrimaryPersonChildTerm, getPrimaryPersonSpouseTerm, } from "./narrative_or_sentence_utils.mjs";
+import { getPrimaryPersonChildTerm, getPrimaryPersonSpouseTerm } from "./narrative_or_sentence_utils.mjs";
 import { GroUriBuilder } from "../../site/gro/core/gro_uri_builder.mjs";
 
 function getQuarterName(quarterNumber) {
-  const quarterNames = [ "Jan-Feb-Mar", "Apr-May-Jun", "Jul-Aug-Sep", "Oct-Nov-Dec"];
+  const quarterNames = ["Jan-Feb-Mar", "Apr-May-Jun", "Jul-Aug-Sep", "Oct-Nov-Dec"];
   if (quarterNumber != undefined && quarterNumber >= 1 && quarterNumber <= 4) {
-    return quarterNames[quarterNumber-1];
+    return quarterNames[quarterNumber - 1];
   }
 
   return "";
 }
 
 function getPlaceWithPreposition(placeString) {
-
   let preposition = WTS_String.getPrepositionForPlaceString(placeString);
   return preposition + " " + placeString;
 }
@@ -56,7 +55,7 @@ function cleanDateObj(dateObj) {
 function cleanAge(age) {
   let result = age;
   if (result) {
-    if (typeof(result) == 'string') {
+    if (typeof result == "string") {
       result = result.toLowerCase();
     }
   }
@@ -122,7 +121,6 @@ function getReferenceString(gd, options) {
 }
 
 function getUkCensusString(gd, options) {
-
   let dataString = getFullName(gd);
 
   let age = cleanAge(gd.ageAtEvent);
@@ -131,11 +129,10 @@ function getUkCensusString(gd, options) {
 
   if (maritalStatus == "widow") {
     maritalStatus = "widowed";
-  }
-  else if (maritalStatus == "single") {
+  } else if (maritalStatus == "single") {
     maritalStatus = gd.getTermForUnmarried();
   }
-  
+
   if (age) {
     dataString += " (" + age + ")";
   }
@@ -149,8 +146,7 @@ function getUkCensusString(gd, options) {
     if (occupation) {
       dataString += ", " + occupation + ",";
     }
-  }
-  else if (relationshipToHead == "head") {
+  } else if (relationshipToHead == "head") {
     if (maritalStatus) {
       dataString += ", " + maritalStatus;
     }
@@ -158,15 +154,13 @@ function getUkCensusString(gd, options) {
     if (occupation) {
       dataString += ", " + occupation + ",";
     }
-    dataString += " head of household"
-  }
-  else {
-    let needsClosingComma =  false;
+    dataString += " head of household";
+  } else {
+    let needsClosingComma = false;
     if (relationshipToHead == "wife") {
       dataString += ", wife";
       needsClosingComma = true;
-    }
-    else if (relationshipToHead) {
+    } else if (relationshipToHead) {
       if (maritalStatus) {
         dataString += ", " + maritalStatus;
         needsClosingComma = true;
@@ -188,7 +182,7 @@ function getUkCensusString(gd, options) {
       let headIndex = getHeadOfHouseholdIndex(gd.householdArray);
       let headName = gd.householdArray[headIndex].name;
       let headAge = cleanAge(gd.householdArray[headIndex].age);
-      
+
       if (headName) {
         dataString += " in household of ";
         dataString += headName;
@@ -207,8 +201,7 @@ function getUkCensusString(gd, options) {
       if (gd.eventPlace && gd.eventPlace.placeString) {
         dataString += " " + getPlaceWithPreposition(gd.eventPlace.placeString);
       }
-    }
-    else {
+    } else {
       let addedPlace = false;
       let placeParts = gd.eventPlace.separatePlaceIntoParts();
       if (placeParts.localPlace) {
@@ -224,8 +217,7 @@ function getUkCensusString(gd, options) {
           dataString += " " + shortPlaceString;
           dataString += " in " + gd.registrationDistrict + " registration district";
           addedPlace = true;
-        }
-        else if (placeParts.localPlace == gd.registrationDistrict) {
+        } else if (placeParts.localPlace == gd.registrationDistrict) {
           // no point duplicating the info - just give registration district
           dataString += " in " + gd.registrationDistrict + " registration district";
           addedPlace = true;
@@ -234,8 +226,7 @@ function getUkCensusString(gd, options) {
       if (!addedPlace) {
         if (placeParts.localPlace) {
           dataString += " " + getPlaceWithPreposition(placeParts.localPlace);
-        }
-        else if (gd.eventPlace && gd.eventPlace.placeString) {
+        } else if (gd.eventPlace && gd.eventPlace.placeString) {
           dataString += " " + getPlaceWithPreposition(gd.eventPlace.placeString);
         }
         dataString += " in " + gd.registrationDistrict + " registration district";
@@ -244,17 +235,14 @@ function getUkCensusString(gd, options) {
         dataString += " in ";
         if (placeParts.county && placeParts.country) {
           dataString += placeParts.county + ", " + placeParts.country;
-        }
-        else if (placeParts.county) {
+        } else if (placeParts.county) {
           dataString += placeParts.county;
-        }
-        else if (placeParts.country) {
+        } else if (placeParts.country) {
           dataString += placeParts.country;
         }
       }
     }
-  }
-  else if (gd.registrationDistrict) {
+  } else if (gd.registrationDistrict) {
     dataString += " in " + gd.registrationDistrict + " registration district";
   }
 
@@ -299,7 +287,7 @@ function get1939RegisterString(gd, options) {
 }
 
 function getHeadOfHouseholdIndex(householdArray) {
-  for (let index=0; index < householdArray.length; index++) {
+  for (let index = 0; index < householdArray.length; index++) {
     let member = householdArray[index];
     if (member.relationship) {
       let relationshipLc = member.relationship.toLowerCase();
@@ -312,13 +300,12 @@ function getHeadOfHouseholdIndex(householdArray) {
 }
 
 function getOtherCensusString(gd, options) {
-
   let dataString = getFullName(gd);
 
   let age = cleanAge(gd.ageAtEvent);
   let maritalStatus = gd.maritalStatus;
   let relationshipToHead = gd.relationshipToHead;
-  
+
   if (age) {
     dataString += " (" + age + ")";
   }
@@ -331,15 +318,13 @@ function getOtherCensusString(gd, options) {
     if (occupation) {
       dataString += ", " + occupation + ",";
     }
-    dataString += " head of household"
-  }
-  else if (relationshipToHead) {
-    let needsClosingComma =  false;
+    dataString += " head of household";
+  } else if (relationshipToHead) {
+    let needsClosingComma = false;
     if (relationshipToHead == "wife") {
       dataString += ", wife";
       needsClosingComma = true;
-    }
-    else if (relationshipToHead) {
+    } else if (relationshipToHead) {
       if (maritalStatus) {
         dataString += ", " + maritalStatus;
         needsClosingComma = true;
@@ -361,7 +346,7 @@ function getOtherCensusString(gd, options) {
       let headIndex = getHeadOfHouseholdIndex(gd.householdArray);
       let headName = gd.householdArray[headIndex].name;
       let headAge = cleanAge(gd.householdArray[headIndex].age);
-      
+
       if (headName) {
         dataString += " in household of ";
         dataString += headName;
@@ -370,8 +355,7 @@ function getOtherCensusString(gd, options) {
         }
       }
     }
-  }
-  else {
+  } else {
     if (maritalStatus) {
       dataString += ", " + maritalStatus;
     }
@@ -395,23 +379,20 @@ function getOtherCensusString(gd, options) {
 }
 
 function getCensusString(gd, options) {
-
   // First test if this is a regular england census or a 1939 register
 
   let is1939Register = false;
   let isUkCensus = false;
-  
+
   if (gd.collectionData && gd.collectionData.id) {
     let collection = RC.findCollection(gd.sourceOfData, gd.collectionData.id);
     if (collection) {
       if (collection.wtsId == "EnglandAndWales1939Register") {
         is1939Register = true;
-      }
-      else {
+      } else {
         if (collection.country) {
           let country = collection.country;
-          if (country == "United Kingdom" || CD.isPartOf(country, "United Kingdom"))
-          {
+          if (country == "United Kingdom" || CD.isPartOf(country, "United Kingdom")) {
             isUkCensus = true;
           }
         }
@@ -445,7 +426,7 @@ function getUkRegistrationString(gd, options, type) {
     }
   }
 
-  dataString += " registered";  // make clear that it is date of registration not event
+  dataString += " registered"; // make clear that it is date of registration not event
 
   let quarter = getQuarterName(gd.inferEventQuarter());
   if (quarter) {
@@ -455,8 +436,7 @@ function getUkRegistrationString(gd, options, type) {
     if (eventYear) {
       dataString += " " + eventYear;
     }
-  }
-  else {
+  } else {
     let eventDate = gd.inferEventDateObj();
     if (eventDate) {
       dataString += " " + cleanDateObj(eventDate);
@@ -465,7 +445,7 @@ function getUkRegistrationString(gd, options, type) {
 
   let district = gd.registrationDistrict;
   if (!district) {
-    return "";  // fallback to non-custom string
+    return ""; // fallback to non-custom string
   }
   dataString += " in " + district;
 
@@ -473,17 +453,15 @@ function getUkRegistrationString(gd, options, type) {
     if (gd.mothersMaidenName) {
       dataString += ", mother's maiden name " + gd.mothersMaidenName;
     }
-  }
-  else if (type == "death") {
+  } else if (type == "death") {
     let bornOrAgeText = "";
-    
+
     // coming from FS the gd.birthDate.dateString could be something like "1844", we don't want to use that
     if (gd.birthDate && gd.birthDate.dateString && gd.birthDate.dateString.length > 8) {
       // later UK death registrations include full birth date (available after June quarter 1969)
       let birthDate = gd.inferBirthDateObj();
       bornOrAgeText = "born " + cleanDateObj(birthDate);
-    }
-    else {
+    } else {
       let age = cleanAge(gd.ageAtDeath);
       if (!age) {
         age = cleanAge(gd.age);
@@ -493,8 +471,7 @@ function getUkRegistrationString(gd, options, type) {
       }
       if (age) {
         bornOrAgeText = "age " + age;
-      }
-      else if (gd.birthDate) {
+      } else if (gd.birthDate) {
         let dateString = gd.birthDate.dateString;
         if (!dateString) {
           dateString = gd.birthDate.yearString;
@@ -512,11 +489,9 @@ function getUkRegistrationString(gd, options, type) {
 
     if (bornOrAgeText && mmnText) {
       dataString += " (" + bornOrAgeText + ", " + mmnText + ")";
-    }
-    else if (bornOrAgeText) {
+    } else if (bornOrAgeText) {
       dataString += " (" + bornOrAgeText + ")";
-    }
-    else if (mmnText) {
+    } else if (mmnText) {
       dataString += " (" + mmnText + ")";
     }
   }
@@ -531,7 +506,6 @@ function getUkRegistrationString(gd, options, type) {
 }
 
 function getBirthRegistrationString(gd, options) {
-
   if (gd.isRecordInCountry("United Kingdom")) {
     return getUkRegistrationString(gd, options, "birth");
   }
@@ -542,8 +516,7 @@ function getBirthRegistrationString(gd, options) {
   if (gd.role && gd.role == Role.Parent) {
     if (gd.primaryPerson) {
       dataString += gd.primaryPerson;
-    }
-    else {
+    } else {
       dataString += "child";
     }
 
@@ -563,8 +536,7 @@ function getBirthRegistrationString(gd, options) {
     if (place) {
       dataString += " in " + place;
     }
-  }
-  else {
+  } else {
     dataString = getFullName(gd);
     dataString += " birth";
 
@@ -590,11 +562,9 @@ function getBirthRegistrationString(gd, options) {
 
       if (gd.personGender == "male") {
         dataString += ", son of";
-      }
-      else if (gd.personGender == "female") {
+      } else if (gd.personGender == "female") {
         dataString += ", daughter of";
-      }
-      else {
+      } else {
         dataString += ", child of";
       }
       if (fatherName) {
@@ -613,8 +583,7 @@ function getBirthRegistrationString(gd, options) {
     }
   }
 
-
-  return dataString;  
+  return dataString;
 }
 
 function getDeathRegistrationString(gd, options) {
@@ -632,15 +601,13 @@ function getDeathRegistrationString(gd, options) {
       dataString += " " + gd.primaryPerson + ",";
     }
     deathDate = gd.inferEventDateObj();
-  }
-  else if (gd.role == Role.Spouse) {
+  } else if (gd.role == Role.Spouse) {
     dataString += " in death record for " + getPrimaryPersonSpouseTerm(gd);
     if (gd.primaryPerson) {
       dataString += " " + gd.primaryPerson + ",";
     }
     deathDate = gd.inferEventDateObj();
-  }
-  else {
+  } else {
     dataString += " death";
   }
 
@@ -658,12 +625,11 @@ function getDeathRegistrationString(gd, options) {
 
   if (place) {
     dataString += " in " + place;
-  }
-  else if (registrationDistrict) {
+  } else if (registrationDistrict) {
     dataString += " in the " + registrationDistrict + " district";
   }
 
-  return dataString;  
+  return dataString;
 }
 
 function getMarriageRegistrationString(gd, options) {
@@ -717,19 +683,17 @@ function getMarriageRegistrationString(gd, options) {
 
 function getBirthString(gd, options) {
   let dataString = "";
-  
+
   if (gd.role && gd.role == Role.Parent) {
     if (gd.primaryPerson) {
       dataString += gd.primaryPerson;
-    }
-    else {
+    } else {
       dataString += "child";
     }
 
     if (gd.recordType == RT.Birth) {
       dataString += " born to ";
-    }
-    else {
+    } else {
       dataString += " born or baptised to ";
     }
     dataString += getFullName(gd);
@@ -741,14 +705,12 @@ function getBirthString(gd, options) {
     if (date) {
       dataString += " " + getDateWithPreposition(date);
     }
-  }
-  else {
+  } else {
     dataString += getFullName(gd);
 
     if (gd.recordType == RT.Birth) {
       dataString += " born";
-    }
-    else {
+    } else {
       dataString += " born or baptised";
     }
 
@@ -756,16 +718,14 @@ function getBirthString(gd, options) {
     if (date) {
       dataString += " " + getDateWithPreposition(date);
     }
-  
+
     let parentNames = gd.inferParentNamesForDataString();
     if (parentNames.fatherName || parentNames.motherName) {
       if (gd.personGender == "male") {
         dataString += ", son of ";
-      }
-      else if (gd.personGender == "female") {
+      } else if (gd.personGender == "female") {
         dataString += ", daughter of ";
-      }
-      else {
+      } else {
         dataString += ", child of ";
       }
       if (parentNames.fatherName) {
@@ -780,13 +740,12 @@ function getBirthString(gd, options) {
       dataString += ",";
     }
   }
-  
+
   let place = gd.inferFullEventPlace();
   if (place) {
     dataString += " " + getPlaceWithPreposition(place);
-  }
-  else if (dataString.endsWith(",")) {
-    dataString = dataString.substring(0, dataString.length-1);
+  } else if (dataString.endsWith(",")) {
+    dataString = dataString.substring(0, dataString.length - 1);
   }
 
   return dataString;
@@ -803,15 +762,13 @@ function getDeathString(gd, options) {
       dataString += " " + gd.primaryPerson + ",";
     }
     deathDate = gd.inferEventDateObj();
-  }
-  else if (gd.role == Role.Spouse) {
+  } else if (gd.role == Role.Spouse) {
     dataString += " in death record for " + getPrimaryPersonSpouseTerm(gd);
     if (gd.primaryPerson) {
       dataString += " " + gd.primaryPerson + ",";
     }
     deathDate = gd.inferEventDateObj();
-  }
-  else {
+  } else {
     dataString += " death";
   }
 
@@ -821,8 +778,7 @@ function getDeathString(gd, options) {
 
   if (gd.birthDate && gd.birthDate.dateString && gd.birthDate.dateString.length > 4) {
     dataString += " (born " + gd.birthDate.dateString + ")";
-  }
-  else {
+  } else {
     let age = cleanAge(gd.ageAtDeath);
     if (age) {
       dataString += " (age " + age + ")";
@@ -833,11 +789,9 @@ function getDeathString(gd, options) {
   if (parentNames.fatherName || parentNames.motherName) {
     if (gd.personGender == "male") {
       dataString += ", son of ";
-    }
-    else if (gd.personGender == "female") {
+    } else if (gd.personGender == "female") {
       dataString += ", daughter of ";
-    }
-    else {
+    } else {
       dataString += ", child of ";
     }
     if (parentNames.fatherName) {
@@ -860,8 +814,7 @@ function getDeathString(gd, options) {
         let relation = "spouse";
         if (gd.personGender == "male") {
           relation = "husband";
-        }
-        else if (gd.personGender == "female") {
+        } else if (gd.personGender == "female") {
           relation = "wife";
         }
         if (!dataString.endsWith(",")) {
@@ -870,13 +823,12 @@ function getDeathString(gd, options) {
         dataString += " " + relation + " of " + spouseName + ",";
       }
     }
-  } 
+  }
 
   let place = gd.inferFullEventPlace();
   if (place) {
     dataString += " " + getPlaceWithPreposition(place);
-  }
-  else {
+  } else {
     let residencePlace = gd.inferResidencePlace();
     if (residencePlace) {
       dataString += " residing " + getPlaceWithPreposition(residencePlace);
@@ -884,9 +836,9 @@ function getDeathString(gd, options) {
   }
 
   if (dataString.endsWith(",")) {
-    dataString = dataString.substring(0, dataString.length-1);
+    dataString = dataString.substring(0, dataString.length - 1);
   }
-     
+
   if (gd.mothersMaidenName) {
     dataString += ", mother's maiden name " + gd.mothersMaidenName;
   }
@@ -896,11 +848,11 @@ function getDeathString(gd, options) {
 
 function getBaptismString(gd, options) {
   let dataString = getFullName(gd);
-  
+
   if (gd.role && gd.role == Role.Parent) {
     dataString += "'s " + getPrimaryPersonChildTerm(gd) + " " + gd.primaryPerson;
   }
-  
+
   dataString += " baptism";
 
   let date = gd.inferEventDateObj();
@@ -921,11 +873,9 @@ function getBaptismString(gd, options) {
   if (parentNames.fatherName || parentNames.motherName) {
     if (gd.personGender == "male") {
       dataString += ", son of ";
-    }
-    else if (gd.personGender == "female") {
+    } else if (gd.personGender == "female") {
       dataString += ", daughter of ";
-    }
-    else {
+    } else {
       dataString += ", child of ";
     }
     if (parentNames.fatherName) {
@@ -969,8 +919,7 @@ function getMarriageString(gd, options) {
     if (age) {
       dataString += " (" + age + ")";
     }
-  }
-  else {
+  } else {
     dataString += getFullName(gd);
 
     let age = cleanAge(gd.ageAtEvent);
@@ -996,11 +945,10 @@ function getMarriageString(gd, options) {
   }
 
   if (gd.marriageDate) {
-    let date =  new WtsDate();
+    let date = new WtsDate();
     date.dateString = gd.marriageDate;
     dataString += " " + getDateWithPreposition(date);
-  }
-  else {
+  } else {
     let date = gd.inferEventDateObj();
     if (date) {
       let prepSuffix = "";
@@ -1022,9 +970,8 @@ function getMarriageString(gd, options) {
 function getBurialString(gd, options) {
   let dataString = getFullName(gd);
   if (gd.role && gd.role == Role.Parent) {
-    dataString += "'s " + getPrimaryPersonChildTerm(gd)+ " " + gd.primaryPerson;
-  }
-  else {
+    dataString += "'s " + getPrimaryPersonChildTerm(gd) + " " + gd.primaryPerson;
+  } else {
     if (gd.parents) {
       let fatherName = "";
       if (gd.parents.father && gd.parents.father.name) {
@@ -1034,14 +981,12 @@ function getBurialString(gd, options) {
       if (gd.parents.mother && gd.parents.mother.name) {
         motherName = gd.parents.mother.name.inferFullName();
       }
-  
+
       if (gd.personGender == "male") {
         dataString += ", son of";
-      }
-      else if (gd.personGender == "female") {
+      } else if (gd.personGender == "female") {
         dataString += ", daughter of";
-      }
-      else {
+      } else {
         dataString += ", child of";
       }
       if (fatherName) {
@@ -1057,11 +1002,10 @@ function getBurialString(gd, options) {
       dataString += ",";
     }
   }
-  
+
   if (gd.recordType == RT.DeathOrBurial) {
     dataString += " death or burial";
-  }
-  else {
+  } else {
     dataString += " burial";
   }
 
@@ -1072,11 +1016,9 @@ function getBurialString(gd, options) {
   }
   if (deathDate && age) {
     dataString += " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
-  }
-  else if (deathDate) {
-    dataString +=" (died " + getDateWithPreposition(deathDate) + ")";
-  }
-  else if (age) {
+  } else if (deathDate) {
+    dataString += " (died " + getDateWithPreposition(deathDate) + ")";
+  } else if (age) {
     dataString += " (died age " + age + ")";
   }
 
@@ -1105,11 +1047,9 @@ function getCremationString(gd, options) {
   let age = cleanAge(gd.ageAtDeath);
   if (deathDate && age) {
     dataString += " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
-  }
-  else if (deathDate) {
-    dataString +=" (died " + getDateWithPreposition(deathDate) + ")";
-  }
-  else if (age) {
+  } else if (deathDate) {
+    dataString += " (died " + getDateWithPreposition(deathDate) + ")";
+  } else if (age) {
     dataString += " (died age " + age + ")";
   }
 
@@ -1147,15 +1087,13 @@ function getProbateString(gd, options) {
     let deathPlace = gd.inferDeathPlace();
     if (deathPlace) {
       dataString += " " + getPlaceWithPreposition(deathPlace);
-    }
-    else {
+    } else {
       let residencePlace = gd.inferResidencePlace();
       if (residencePlace) {
         dataString += " residing " + getPlaceWithPreposition(residencePlace);
       }
     }
-  }
-  else {
+  } else {
     let residencePlace = gd.inferResidencePlace();
     if (residencePlace) {
       dataString += ". Residence " + residencePlace;
@@ -1170,46 +1108,37 @@ function getProbateString(gd, options) {
 }
 
 function getScottishWillString(gd, options) {
-
   if (gd.role && gd.role != Role.Primary) {
-    return "";  // fall back to non-custom string
+    return ""; // fall back to non-custom string
   }
 
   let dataString = "";
 
   if (gd.recordSubtype == "Probate") {
     dataString = "Confirmation of probate of will of ";
-  }
-  else if (gd.recordSubtype == "Testament") {
+  } else if (gd.recordSubtype == "Testament") {
     if (gd.testateOrIntestate == "testate") {
-      dataString ="Confirmation of will of ";
+      dataString = "Confirmation of will of ";
+    } else if (gd.testateOrIntestate == "intestate") {
+      dataString = "Confirmation of testament of ";
+    } else {
+      dataString = "Confirmation of will or testament of ";
     }
-    else if (gd.testateOrIntestate == "intestate") {
-      dataString ="Confirmation of testament of ";
-    }
-    else {
-      dataString ="Confirmation of will or testament of ";
-    }
-  }
-  else if (gd.recordSubtype == "Inventory") {
+  } else if (gd.recordSubtype == "Inventory") {
     dataString = "Confirmation of inventory for ";
-  }
-  else if (gd.recordSubtype == "AdditionalInventory") {
+  } else if (gd.recordSubtype == "AdditionalInventory") {
     dataString = "Confirmation of inventory for ";
-  }
-  else if (gd.recordSubtype == "AdditionalInventory") {
+  } else if (gd.recordSubtype == "AdditionalInventory") {
     dataString = "Confirmation of additional inventory for ";
-  }
-  else {
-    dataString ="Confirmation of will or testament of ";
+  } else {
+    dataString = "Confirmation of will or testament of ";
   }
 
   dataString += getFullName(gd);
 
   if (gd.courtName) {
     dataString += " at " + gd.courtName;
-  }
-  else {
+  } else {
     let place = gd.inferFullEventPlace();
     if (place) {
       dataString += " in " + place;
@@ -1224,12 +1153,10 @@ function getScottishWillString(gd, options) {
     if (grantedDate) {
       dataString += " " + getDateFromStringWithPreposition(grantedDate);
       dataString += " (original confirmation " + getDateWithPreposition(eventDate) + ")";
-    }
-    else if (origDate) {
+    } else if (origDate) {
       dataString += " " + getDateWithPreposition(eventDate);
       dataString += " (original confirmation " + getDateFromStringWithPreposition(origDate) + ")";
-    }
-    else {
+    } else {
       dataString += " " + getDateWithPreposition(eventDate);
     }
   }
@@ -1252,13 +1179,12 @@ function getScottishWillString(gd, options) {
 }
 
 function getWillString(gd, options) {
-
   if (gd.inferEventCountry() == "Scotland" || (gd.courtName && gd.courtName.startsWith("non-Scot"))) {
     return getScottishWillString(gd, options);
   }
 
   if (gd.role && gd.role != Role.Primary) {
-    return "";  // fall back to non-custom string
+    return ""; // fall back to non-custom string
   }
 
   let dateObj = gd.inferEventDateObj();
@@ -1282,8 +1208,7 @@ function getWillString(gd, options) {
   if (residencePlace) {
     dataString += " of " + residencePlace;
     usedResidence = true;
-  }
-  else if (eventPlace) {
+  } else if (eventPlace) {
     dataString += " of " + eventPlace;
   }
 
@@ -1297,8 +1222,7 @@ function getWillString(gd, options) {
     dataString += ". Died " + cleanDateObj(deathDate);
     if (deathPlace) {
       dataString += " " + getPlaceWithPreposition(deathPlace);
-    }
-    else if (!usedResidence && residencePlace) {
+    } else if (!usedResidence && residencePlace) {
       dataString += " " + getPlaceWithPreposition(residencePlace);
     }
   }
@@ -1314,7 +1238,7 @@ function getDivorceString(gd, options) {
   let dataString = getFullName(gd);
   dataString += " divorce";
 
-  if (gd.spouses && gd.spouses.length ==1 && gd.spouses[0].name) {
+  if (gd.spouses && gd.spouses.length == 1 && gd.spouses[0].name) {
     let spouseName = gd.spouses[0].name.inferFullName();
     dataString += " from " + spouseName;
   }
@@ -1333,8 +1257,7 @@ function getDivorceString(gd, options) {
 }
 
 const DataString = {
-  buildDataString: function(input) {
-
+  buildDataString: function (input) {
     if (!input || !input.generalizedData || !input.options) {
       return "";
     }
@@ -1404,9 +1327,9 @@ const DataString = {
     if (dataString) {
       dataString += ".";
     }
-  
+
     return dataString;
-  }
-}
+  },
+};
 
 export { DataString };

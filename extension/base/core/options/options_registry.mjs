@@ -26,28 +26,39 @@ var optionsRegistry = {
   tabs: [
     { name: "search", label: "Search", subsections: [] },
     { name: "citation", label: "Citation", subsections: [] },
-    { name: "narrative", label: "Narrative", subsections: [],
-      comment: "These options apply to the narrative sentence that is generated before "
-        + "the inline citation by the \"Build Narrative with Citation\" menu option."
+    {
+      name: "narrative",
+      label: "Narrative",
+      subsections: [],
+      comment:
+        "These options apply to the narrative sentence that is generated before " +
+        'the inline citation by the "Build Narrative with Citation" menu option.',
     },
-    { name: "table", label: "Household Table", subsections: [],
-      comment: "These options apply to Household Tables. "
-        + "A Household Table can be generated when you are on a census record. "
-        + "It is separate from the citation."
+    {
+      name: "table",
+      label: "Household Table",
+      subsections: [],
+      comment:
+        "These options apply to Household Tables. " +
+        "A Household Table can be generated when you are on a census record. " +
+        "It is separate from the citation.",
     },
-    { name: "addPerson", label: "Add Person", subsections: [],
-      comment: "These options apply to filling fields in the Add Person screen. "
-        + "Person data can be saved when you are on a person page in Ancestry, FamilySearch, etc. "
-        + "It is separate from the citation."
+    {
+      name: "addPerson",
+      label: "Add Person",
+      subsections: [],
+      comment:
+        "These options apply to filling fields in the Add Person screen. " +
+        "Person data can be saved when you are on a person page in Ancestry, FamilySearch, etc. " +
+        "It is separate from the citation.",
     },
   ],
-  optionsGroups: [
-  ]
+  optionsGroups: [],
 };
 
 function registerSubsectionForOptions(tabName, name, label) {
   //console.log("registerSubsectionForOptions: tabName is: " + tabName + ", name is: " + name + ", label is: " + label);
-  
+
   let tab = undefined;
   for (let thisTab of optionsRegistry.tabs) {
     if (thisTab.name == tabName) {
@@ -72,11 +83,11 @@ function registerSubsectionForOptions(tabName, name, label) {
 
     tab.subsections.push({ name: name, label: label, subheadings: [] });
   }
-};
+}
 
 function registerSubheadingForOptions(tabName, subsectionName, name, label) {
   //console.log("registerSubheadingForOptions: tabName is: " + tabName + ", name is: " + name + ", label is: " + label);
-  
+
   let tab = undefined;
   for (let thisTab of optionsRegistry.tabs) {
     if (thisTab.name == tabName) {
@@ -95,23 +106,22 @@ function registerSubheadingForOptions(tabName, subsectionName, name, label) {
     }
 
     if (existingSubsection) {
-
       let existingSubheading = undefined;
       for (let subheading of existingSubsection.subheadings) {
         if (subheading.name == name) {
           existingSubheading = subsection;
         }
       }
-  
+
       if (existingSubheading) {
         console.log("registerSubheadingForOptions, subheading already exists: " + name);
         return;
       }
-  
+
       existingSubsection.subheadings.push({ name: name, label: label });
     }
   }
-};
+}
 
 function registerOptionsGroup(optionsGroup) {
   optionsRegistry.optionsGroups.push(optionsGroup);
@@ -130,23 +140,25 @@ function registerSiteSearchPopupOptionsGroup(siteName, topMenuPriority, subMenuP
         type: "number",
         label: "Priority of the search menu item for this site on the top-level popup menu",
         defaultValue: topMenuPriority,
-      },  
+      },
       {
         optionName: "popup_priorityOnSubMenu",
         type: "number",
         label: "Priority of the search menu item for this site on the search submenu",
         defaultValue: subMenuPriority,
         comment: "NOTE: One is highest priority. A priority of zero or less means never show this menu item.",
-      },  
+      },
     ],
-  }
+  };
 
   registerSubheadingForOptions("search", siteName, "popup", "Popup Menu");
   registerOptionsGroup(optionsGroup);
 }
 
 export {
-  registerOptionsGroup, registerSubsectionForOptions, registerSubheadingForOptions,
+  registerOptionsGroup,
+  registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerSiteSearchPopupOptionsGroup,
-  optionsRegistry
+  optionsRegistry,
 };

@@ -28,7 +28,6 @@ import {
   emptyMenu,
 } from "./popup_menu_building.mjs";
 
-
 function writeToClipboardSuccessMessage(objectName, internalSave) {
   let message1 = objectName + " saved to clipboard.";
   let message2 = "";
@@ -39,7 +38,6 @@ function writeToClipboardSuccessMessage(objectName, internalSave) {
 }
 
 async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
-
   // This is currently not used. It is an alternate option to use on Safari
 
   function addBreak(fragment) {
@@ -74,13 +72,12 @@ async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
   let saveButton = document.createElement("button");
   saveButton.className = "dialogButton";
   saveButton.innerText = "Save to clipboard";
-  saveButton.onclick = async function(element) {
+  saveButton.onclick = async function (element) {
     let editedText = textarea.value;
     try {
       await navigator.clipboard.writeText(editedText);
       writeToClipboardSuccessMessage(objectName, internalSave);
-    }
-    catch (error) {
+    } catch (error) {
       console.log("Clipboard write failed in userWriteToClipboardWithEdit.");
       console.log(error);
       displayMessageThenClosePopup("Error writing to clipboard.");
@@ -90,7 +87,7 @@ async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
   let cancelButton = document.createElement("button");
   cancelButton.className = "dialogButton";
   cancelButton.innerText = "Cancel";
-  cancelButton.onclick = async function(element) {
+  cancelButton.onclick = async function (element) {
     displayMessageThenClosePopup("Save canceled");
   };
 
@@ -101,12 +98,10 @@ async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
 
   fragment.appendChild(buttonDiv);
 
-
   document.getElementById("menu").appendChild(fragment);
 }
 
 async function userWriteToClipboard(text, objectName, internalSave = false) {
-
   function addBreak(fragment) {
     let br = document.createElement("br");
     fragment.appendChild(br);
@@ -143,12 +138,11 @@ async function userWriteToClipboard(text, objectName, internalSave = false) {
   let saveButton = document.createElement("button");
   saveButton.className = "dialogButton";
   saveButton.innerText = "Save to clipboard";
-  saveButton.onclick = async function(element) {
+  saveButton.onclick = async function (element) {
     try {
       await navigator.clipboard.writeText(text);
       writeToClipboardSuccessMessage(objectName, internalSave);
-    }
-    catch (error) {
+    } catch (error) {
       console.log("Clipboard write failed in userWriteToClipboard.");
       console.log(error);
       displayMessageThenClosePopup("Error writing to clipboard.");
@@ -169,12 +163,11 @@ async function writeToClipboard(text, objectName, internalSave) {
     await navigator.clipboard.writeText(text);
     writeToClipboardSuccessMessage(objectName, internalSave);
     //console.log("Clipboard set");
-  }
-  catch (error) {
+  } catch (error) {
     console.log("Clipboard write failed. Using dialog instead.");
     //console.log(error);
     userWriteToClipboard(text, objectName, internalSave);
   }
 }
 
-export { writeToClipboard }
+export { writeToClipboard };

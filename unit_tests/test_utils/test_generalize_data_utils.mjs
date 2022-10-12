@@ -22,19 +22,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import fs from 'fs'
+import fs from "fs";
 import { deepObjectEquals } from "../test_utils/compare_result_utils.mjs";
-import { writeTestOutputFile, readRefFile, readInputFile, getRefFilePath, getTestFilePath } from "../test_utils/ref_file_utils.mjs";
+import {
+  writeTestOutputFile,
+  readRefFile,
+  readInputFile,
+  getRefFilePath,
+  getTestFilePath,
+} from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 
 function testEnabled(parameters, testName) {
-  return (parameters.testName == "" || parameters.testName == testName);
+  return parameters.testName == "" || parameters.testName == testName;
 }
 
 // The regressionData passed in must be an array of objects.
 // Each object having the keys: "testName", "extractedData" and "generalizedData"
 async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressionData, testManager) {
-
   if (!testEnabled(testManager.parameters, "generalize")) {
     return;
   }
@@ -46,7 +51,6 @@ async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressi
   let logger = new LocalErrorLogger(testManager.results, testName);
 
   for (var testData of regressionData) {
-
     if (testManager.parameters.testCaseName != "" && testManager.parameters.testCaseName != testData.caseName) {
       continue;
     }
@@ -56,8 +60,8 @@ async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressi
     if (!extractedData) {
       continue;
     }
-    
-    const result = generalizeDataFunction({extractedData: extractedData});
+
+    const result = generalizeDataFunction({ extractedData: extractedData });
 
     testManager.results.totalTestsRun++;
 
@@ -67,7 +71,7 @@ async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressi
     if (!writeTestOutputFile(result, siteName, resultDir, testData, logger)) {
       continue;
     }
-    
+
     // read in the reference result
     let refObject = readRefFile(result, siteName, resultDir, testData, logger);
     if (!refObject) {
@@ -87,8 +91,7 @@ async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressi
   if (logger.numFailedTests > 0) {
     console.log(">>>>>> Test failed (" + testName + "): " + logger.numFailedTests + " cases failed.");
     return false;
-  }
-  else {
+  } else {
     console.log("Test passed (" + testName + ").");
     return true;
   }

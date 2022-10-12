@@ -84,7 +84,7 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { getUkbmdDistrictPageUrl } from "./gro_to_ukbmd.mjs";
 
 function buildGroSearchUrl(data) {
-  var builder = new GroUriBuilder;
+  var builder = new GroUriBuilder();
 
   if (data.eventType == "birth") {
     builder.addIndex("EW_Birth");
@@ -94,8 +94,7 @@ function buildGroSearchUrl(data) {
     if (data.mothersMaidenName != undefined && data.mothersMaidenName != "" && data.mothersMaidenName != "-") {
       builder.addMothersSurname(data.mothersMaidenName);
     }
-  }
-  else {
+  } else {
     builder.addIndex("EW_Death");
     builder.addYear(data.eventYear);
     builder.addYearRange("0");
@@ -111,24 +110,21 @@ function buildGroSearchUrl(data) {
 
   if (data.personGender == "male") {
     builder.addGenderMale();
-  }
-  else {
+  } else {
     builder.addGenderFemale();
   }
 
   if (data.recordType == "older") {
     builder.addQuarter(data.eventQuarterLetter);
-  }
-  else {
+  } else {
     const quarterToMonthValue = ["13", "14", "15", "16"];
-    builder.addMonth(quarterToMonthValue[data.eventQuarter-1]);
+    builder.addMonth(quarterToMonthValue[data.eventQuarter - 1]);
   }
   builder.addDistrict(data.registrationDistrict);
   if (data.referenceVolume != undefined && data.referenceVolume != "") {
     builder.addVolume(data.referenceVolume);
     builder.addPage(data.referencePage);
-  }
-  else if (data.referenceRegister != undefined && data.referenceRegister != "") {
+  } else if (data.referenceRegister != undefined && data.referenceRegister != "") {
     builder.addRegister(data.referenceRegister);
   }
 
@@ -137,33 +133,27 @@ function buildGroSearchUrl(data) {
   return url;
 }
 
-
 function buildGroUrl(data, builder) {
-
   let options = builder.getOptions();
 
   if (options.citation_gro_linkStyle == "search") {
     return buildGroSearchUrl(data);
-  }
-  else if (options.citation_gro_linkStyle == "index") {
+  } else if (options.citation_gro_linkStyle == "index") {
     if (data.eventType == "birth") {
       return "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth";
-    }
-    else {
+    } else {
       return "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death";
     }
-  }
-  else {
+  } else {
     return "https://www.gro.gov.uk/gro/content";
   }
 }
 
 function getQuarterName(data) {
-  const quarterNames = [ "Jan-Feb-Mar", "Apr-May-Jun", "Jul-Aug-Sep", "Oct-Nov-Dec"];
+  const quarterNames = ["Jan-Feb-Mar", "Apr-May-Jun", "Jul-Aug-Sep", "Oct-Nov-Dec"];
   if (data.eventQuarter != undefined && data.eventQuarter >= 1 && data.eventQuarter <= 4) {
-    return quarterNames[data.eventQuarter-1];
-  }
-  else if (data.eventQuarterLetter != undefined) {
+    return quarterNames[data.eventQuarter - 1];
+  } else if (data.eventQuarterLetter != undefined) {
     return data.eventQuarterLetter + " Quarter";
   }
 
@@ -172,7 +162,7 @@ function getQuarterName(data) {
 
 function getCorrectlyCasedName(name, options) {
   if (options.citation_gro_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name)
+    name = WTS_String.toInitialCaps(name);
   }
   return name;
 }
@@ -205,7 +195,6 @@ function getRegistrationDistrict(data, options) {
 }
 
 async function buildCoreCitation(data, runDate, builder) {
-
   let options = builder.options;
 
   builder.sourceTitle = "England & Wales General Register Office";
@@ -213,23 +202,19 @@ async function buildCoreCitation(data, runDate, builder) {
   var groUrl = buildGroUrl(data, builder);
 
   if (options.citation_gro_linkStyle == "url_content") {
-
     builder.sourceReference = "GRO Online Indexes - ";
     if (data.eventType == "birth") {
       builder.sourceReference += "Birth";
-    }
-    else {
+    } else {
       builder.sourceReference += "Death";
     }
     builder.recordLinkOrTemplate = groUrl;
-  }
-  else {
+  } else {
     let recordLink = "[" + groUrl + " GRO Online Indexes - ";
 
     if (data.eventType == "birth") {
       recordLink += "Birth";
-    }
-    else {
+    } else {
       recordLink += "Death";
     }
     recordLink += "]";
@@ -249,13 +234,11 @@ async function buildCoreCitation(data, runDate, builder) {
       }
       dataString += mmn + ")";
     }
-  }
-  else {
+  } else {
     if (data.ageAtDeath) {
       dataString += " (Age at death: ";
       dataString += data.ageAtDeath + ")";
-    }
-    else if (data.birthYear) {
+    } else if (data.birthYear) {
       dataString += " (Year of birth: ";
       dataString += data.birthYear + ")";
     }
@@ -264,8 +247,7 @@ async function buildCoreCitation(data, runDate, builder) {
 
   if (options.citation_general_addBreaksWithinBody) {
     dataString += "<br/>";
-  }
-  else {
+  } else {
     dataString += " ";
   }
   if (options.citation_general_addNewlinesWithinBody && builder.type != "source") {
@@ -274,8 +256,7 @@ async function buildCoreCitation(data, runDate, builder) {
 
   if (options.citation_gro_referenceInItalics) {
     dataString += "''GRO Reference:'' ";
-  }
-  else {
+  } else {
     dataString += "GRO Reference: ";
   }
 
@@ -287,16 +268,13 @@ async function buildCoreCitation(data, runDate, builder) {
       let url = getUkbmdDistrictPageUrl(data.registrationDistrict);
       if (url) {
         dataString += "[" + url + " " + districtNameForOutput + "]";
-      }
-      else {
+      } else {
         dataString += districtNameForOutput;
       }
-    }
-    else {
+    } else {
       dataString += districtNameForOutput;
     }
-  }
-  else {
+  } else {
     dataString += "unspecified district";
   }
 
@@ -309,8 +287,7 @@ async function buildCoreCitation(data, runDate, builder) {
     if (data.referencePage != undefined && data.referencePage != "") {
       dataString += " Page " + data.referencePage;
     }
-  }
-  else if (data.referenceRegister != undefined && data.referenceRegister != "") {
+  } else if (data.referenceRegister != undefined && data.referenceRegister != "") {
     dataString += " Reg " + data.referenceRegister;
   }
 
@@ -324,12 +301,11 @@ async function buildCoreCitation(data, runDate, builder) {
 }
 
 function buildCitation(input) {
-
   const data = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
-  const type = input.type;  // "inline", "narrative" or "source"
+  const type = input.type; // "inline", "narrative" or "source"
 
   //console.log("buildCitation (GRO): input is");
   //console.log(input);
@@ -348,7 +324,7 @@ function buildCitation(input) {
   // GRO Reference: 1866 S Quarter in KENSINGTON Volume 01A Page 141.
   //
   // Death
-  // 
+  //
   // England & Wales General Register Office, GRO Online Index - Death
   // (https://www.gro.gov.uk/gro/content : accessed [insert date]),
   // database entry for Vincent, Anna Muddle. (Age at death: 75).
@@ -357,7 +333,7 @@ function buildCitation(input) {
   var citation = buildCoreCitation(data, runDate, builder);
 
   // Get meaningful title
-  var refTitle = (data.eventType == "birth") ? "Birth Registration" : "Death Registration";
+  var refTitle = data.eventType == "birth" ? "Birth Registration" : "Death Registration";
   builder.meaningfulTitle = refTitle;
 
   if (type == "narrative") {
@@ -372,7 +348,7 @@ function buildCitation(input) {
   var citationObject = {
     citation: fullCitation,
     type: type,
-  }
+  };
 
   return citationObject;
 }

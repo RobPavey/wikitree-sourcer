@@ -34,76 +34,76 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   {
     caseName: "1841_dev_zachariah_pavey",
-    url: "https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c/zachariah-pavey-1841-devon-axminster-1761-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c/zachariah-pavey-1841-devon-axminster-1761-?locale=en",
   },
   {
     caseName: "1851_som_eliza_pavey",
-    url: "https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1/eliza-pavey-1851-somerset-axbridge-1813-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/5accf4a9f4040b6d5177d1d1/eliza-pavey-1851-somerset-axbridge-1813-?locale=en",
   },
   {
     caseName: "1861_dev_william_pavey",
-    url: "https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a/william-pavey-1861-devon-chardstock-1788-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a/william-pavey-1861-devon-chardstock-1788-?locale=en",
   },
   {
     caseName: "1871_ery_louisa_barker",
-    url: "https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0/louisa-barker-1871-yorkshire-east-riding-york-1850-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/5c38cb9df4040b8d324b5eb0/louisa-barker-1871-yorkshire-east-riding-york-1850-?locale=en",
   },
   {
     caseName: "1881_cai_john_williamson",
-    url: "https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9/john-williamson-1881-caithness-halkirk-1831-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9/john-williamson-1881-caithness-halkirk-1831-?locale=en",
   },
   {
     caseName: "1891_dev_louisa_hockridge",
-    url: "https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb/louisa-hockridge-1891-devon-plymouth-1876-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb/louisa-hockridge-1891-devon-plymouth-1876-?locale=en",
   },
   {
     caseName: "1891_lnd_felix_mills",
-    url: "https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d/felix-mills-1891-london-city-pancras-1854-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d/felix-mills-1891-london-city-pancras-1854-?locale=en",
   },
   {
     caseName: "1901_con_elizabeth_jonas",
-    url: "https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5/elizabeth-s-jonas-1901-cornwall-launceston-1881-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/6255156ef493fd50a59653e5/elizabeth-s-jonas-1901-cornwall-launceston-1881-?locale=en",
   },
   {
     caseName: "1911_som_beatrice_jones",
-    url: "https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1/beatrice-florence-jones-1911-somerset-minehead-1879-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1/beatrice-florence-jones-1911-somerset-minehead-1879-?locale=en",
   },
   {
     // same URL as above but it was laid out differently this time (28 Apr 2022)
     caseName: "1911_som_beatrice_jones_variant",
-    url: "https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1/beatrice-florence-jones-1911-somerset-minehead-1879-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1/beatrice-florence-jones-1911-somerset-minehead-1879-?locale=en",
   },
   {
     caseName: "1911_som_elizabeth_taylor",
-    url: "https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0/elizabeth-taylor-1911-somerset-luxborough-1842-?locale=en"
+    url: "https://www.freecen.org.uk/search_records/61811fa6f493fdc50c65e3b0/elizabeth-taylor-1911-somerset-luxborough-1842-?locale=en",
   },
 ];
 
 const optionVariants = [
   {
-    variantName: "dataStyle_none", 
+    variantName: "dataStyle_none",
     optionOverrides: {
       citation_freecen_dataStyle: "none",
     },
   },
   {
-    variantName: "dataStyle_string", 
+    variantName: "dataStyle_string",
     optionOverrides: {
       citation_freecen_dataStyle: "string",
     },
   },
   {
-    variantName: "dataStyle_list", 
+    variantName: "dataStyle_list",
     optionOverrides: {
       citation_freecen_dataStyle: "list",
     },
   },
   {
-    variantName: "dataStyle_table", 
+    variantName: "dataStyle_table",
     optionOverrides: {
       citation_freecen_dataStyle: "table",
     },
-  }
+  },
 ];
 
 async function runTests(testManager) {
@@ -111,7 +111,14 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("freecen", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("freecen", buildCitation, buildHouseholdTable, regressionData, testManager, optionVariants);
+  await runBuildCitationTests(
+    "freecen",
+    buildCitation,
+    buildHouseholdTable,
+    regressionData,
+    testManager,
+    optionVariants
+  );
 }
 
 export { runTests };

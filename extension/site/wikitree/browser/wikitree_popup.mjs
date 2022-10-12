@@ -31,13 +31,9 @@ import {
   displayMessageWithIconThenClosePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  addStandardMenuEnd, buildMinimalMenuWithMessage,
-} from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
-import {
-  getLatestCitation,
-} from "/base/browser/popup/popup_citation.mjs";
+import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
 
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
@@ -51,7 +47,6 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 
-
 function convertTimestampDiffToText(timeStamp) {
   let now = Date.now();
   let diffInMs = now - timeStamp;
@@ -62,24 +57,21 @@ function convertTimestampDiffToText(timeStamp) {
     if (diffInSecs > 1) {
       timeText += "s";
     }
-  }
-  else {
+  } else {
     let diffInMins = Math.floor(diffInSecs / 60);
     if (diffInMins < 60) {
       timeText += diffInMins + " minute";
       if (diffInMins > 1) {
         timeText += "s";
       }
-      }
-    else {
+    } else {
       let diffInHours = Math.floor(diffInMins / 60);
       if (diffInHours < 24) {
         timeText += diffInHours + " hour";
         if (diffInHours > 1) {
           timeText += "s";
         }
-      }
-      else {
+      } else {
         return ""; // ignore saved data that is more than 24 hours old
       }
     }
@@ -143,8 +135,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
           parents.motherName = pageParent1Name;
           parents.motherWikiId = pageParent1WikiId;
           parents.genderKnown = true;
-        }
-        else {
+        } else {
           if (!parent1HasParen && parent2HasParen) {
             parents.genderKnown = true;
           }
@@ -154,20 +145,17 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
           parents.motherName = pageParent2Name;
           parents.motherWikiId = pageParent2WikiId;
         }
-      }
-      else if (pageParent1Name) {
+      } else if (pageParent1Name) {
         if (parent1HasParen) {
           parents.motherName = pageParent1Name;
           parents.motherWikiId = pageParent1WikiId;
           parents.genderKnown = true;
-        }
-        else {
+        } else {
           parents.fatherName = pageParent1Name;
           parents.fatherWikiId = pageParent1WikiId;
         }
       }
-    }
-    else if (relationship == "sibling") {
+    } else if (relationship == "sibling") {
       let fatherName = data.extractedData.familyMemberFatherName;
       let motherName = data.extractedData.familyMemberMotherName;
       let fatherWikiId = data.extractedData.familyMemberFatherWikiId;
@@ -205,26 +193,23 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
   const splitForenamesOpt = options.addPerson_general_splitForenames;
   if (splitForenamesOpt == "always") {
     splitForenames = true;
-  }
-  else if (splitForenamesOpt == "countrySpecific") {
+  } else if (splitForenamesOpt == "countrySpecific") {
     let countryList = personGd.inferCountries();
     let numUsing = 0;
     let numNotUsing = 0;
     for (let countryName of countryList) {
       if (CD.usesMiddleNames(countryName)) {
         numUsing++;
-      }
-      else {
+      } else {
         numNotUsing++;
       }
     }
     if (numUsing > 0 && numNotUsing == 0) {
       splitForenames = true;
-    }
-    else if (numUsing > 0) {
+    } else if (numUsing > 0) {
       let birthPlace = personGd.inferBirthPlace();
       if (birthPlace) {
-      let country = CD.matchCountryFromPlaceName(birthPlace);
+        let country = CD.matchCountryFromPlaceName(birthPlace);
         if (country) {
           if (CD.usesMiddleNames(country.stdName)) {
             splitForenames = true;
@@ -237,8 +222,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
   if (splitForenames) {
     result.firstName = personGd.inferFirstName();
     result.middleName = personGd.inferMiddleNames();
-  }
-  else {
+  } else {
     result.firstName = personGd.inferForenames();
   }
 
@@ -262,18 +246,15 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
 
   if (personGd.personGender == "male") {
     result.gender = "Male";
-  }
-  else if (personGd.personGender == "female") {
+  } else if (personGd.personGender == "female") {
     result.gender = "Female";
   }
 
   if (data.extractedData.relationshipToFamilyMember == "spouse") {
-
     //console.log("getWikiTreeEditFamilyData spouses = ");
     //console.log(personGd.spouses);
     //console.log("getWikiTreeEditFamilyData familyMemberName = " + data.extractedData.familyMemberName);
     if (personGd.spouses && data.extractedData.familyMemberName) {
-
       // we want to compare spouse names with data.familyMemberName
       // Can be messy because WT name can have maiden name in parens
       // Can fail because the spouse name in personGd could be previously married
@@ -282,7 +263,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
       if (openParenIndex != -1) {
         let closeParenIndex = fmName.indexOf(")", openParenIndex);
         if (closeParenIndex != -1) {
-          let lnab = fmName.substring(openParenIndex+1, closeParenIndex).trim();
+          let lnab = fmName.substring(openParenIndex + 1, closeParenIndex).trim();
           let forenames = fmName.substring(0, openParenIndex).trim();
           fmName = forenames + " " + lnab;
         }
@@ -301,7 +282,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
       }
     }
   }
- 
+
   // possibly add intro
   const addIntroOpt = options.addPerson_general_generateIntro;
   if (addIntroOpt != "none") {
@@ -317,8 +298,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
           let ageNum = parseInt(ageAtDeath);
           if (ageNum != NaN) {
             ageAtDeath = ageNum;
-          }
-          else {
+          } else {
             ageAtDeath = undefined;
           }
         }
@@ -331,7 +311,6 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
         }
       }
     }
-
 
     let fullName = personGd.inferFullName();
 
@@ -357,8 +336,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
       let parentNames = personGd.inferParentNamesForDataString();
       fatherName = parentNames.fatherName;
       motherName = parentNames.motherName;
-    }
-    else if (addIntroOpt == "fromPageData") {
+    } else if (addIntroOpt == "fromPageData") {
       let relationship = data.extractedData.relationshipToFamilyMember;
       let pageParents = getPageParents(relationship);
       if (pageParents.fatherName) {
@@ -369,8 +347,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
         motherName = pageParents.motherName;
         motherWikiId = pageParents.motherWikiId;
       }
-    }
-    else if (addIntroOpt == "fromBoth") {
+    } else if (addIntroOpt == "fromBoth") {
       let relationship = data.extractedData.relationshipToFamilyMember;
       let pageParents = getPageParents(relationship);
       let dataParents = personGd.inferParentNamesForDataString();
@@ -419,11 +396,9 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
         intro += ", ";
         if (personGd.personGender == "male") {
           intro += "son";
-        }
-        else if (personGd.personGender == "female") {
+        } else if (personGd.personGender == "female") {
           intro += "daughter";
-        }
-        else {
+        } else {
           intro += "child";
         }
         intro += " of ";
@@ -439,11 +414,9 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
 
         if (fatherName && motherName) {
           intro += fatherName + " and " + motherName;
-        }
-        else if (fatherName) {
+        } else if (fatherName) {
           intro += fatherName;
-        }
-        else {
+        } else {
           intro += motherName;
         }
       }
@@ -452,7 +425,6 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
 
       result.notes = intro;
     }
-
   }
 
   if (citationObject && options.addPerson_general_includeCitation) {
@@ -461,12 +433,10 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
     if (citationText) {
       if (type == "source") {
         result.sources = citationText;
-      }
-      else {
+      } else {
         if (!result.notes) {
           result.notes = "";
-        }
-        else if (type == "narrative") {
+        } else if (type == "narrative") {
           result.notes += "\n\n";
         }
 
@@ -498,12 +468,10 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
               linkString = "{{Ancestry Tree|" + tree + "|" + person + "}}";
             }
           }
-        }
-        else {
+        } else {
           linkString = "[" + url + "Ancestry profile]";
         }
-      }
-      else if (personGd.sourceOfData == "fs") {
+      } else if (personGd.sourceOfData == "fs") {
         // https://www.familysearch.org/tree/person/details/L5ZC-N31
         // {{FamilySearch|L5ZC-N31}}
         const treePrefix = "/tree/person/details/";
@@ -519,13 +487,11 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
           }
           let personId = url.substring(treeIndex, endIndex);
           linkString = "{{FamilySearch|" + personId + "}}";
-        }
-        else {
+        } else {
           linkString = "[" + url + "FamilySearch profile]";
         }
-      }
-      else if (personGd.sourceOfData == "fmp") {
-        // Currently we only support pages like this: 
+      } else if (personGd.sourceOfData == "fmp") {
+        // Currently we only support pages like this:
         // https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964996/profile
         // Ideally the extract would work on pages like this too:
         // https://www.findmypast.co.uk/search-family-tree/transcript?id=1518223580&ref=30EB72DD-C6FD-4B08-90BF-94A6335344D2
@@ -535,8 +501,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
       if (linkString) {
         if (!result.sources) {
           result.sources = "";
-        }
-        else {
+        } else {
           result.sources += "\n";
         }
         result.sources += linkString;
@@ -551,7 +516,6 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
 }
 
 async function setFieldsFromPersonData(data, personEd, personGd, tabId, citationObject) {
-
   let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
 
   // send a message to content script
@@ -560,10 +524,9 @@ async function setFieldsFromPersonData(data, personEd, personGd, tabId, citation
     //console.log(tabId);
     //console.log(personData);
 
-    chrome.tabs.sendMessage(tabId, {type: "setFields", personData: wtPersonData}, function(response) {
-
+    chrome.tabs.sendMessage(tabId, { type: "setFields", personData: wtPersonData }, function (response) {
       displayMessage("Setting fields ...");
-    
+
       //console.log("setFieldsFromPersonData, chrome.runtime.lastError is:");
       //console.log(chrome.runtime.lastError);
       //console.log("setFieldsFromPersonData, response is:");
@@ -572,23 +535,20 @@ async function setFieldsFromPersonData(data, personEd, personGd, tabId, citation
       // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
       if (chrome.runtime.lastError || !response) {
         // possibly there is no content script loaded, this could be an error that should be reported
-        // By testing edge cases I have found the if you reload the page and immediately click the 
+        // By testing edge cases I have found the if you reload the page and immediately click the
         // extension button sometimes this will happen. Presumably because the content script
         // just got unloaded prior to the reload but we got here because the popup had not been reset.
         // In this case we are seeing the response being undefined.
         // What to do in this case? Don't want to leave the "Initializing menu..." up.
         displayMessageWithIcon("warning", "setFieldsFromPersonData failed");
-      }
-      else if (response.success) {
+      } else if (response.success) {
         displayMessageWithIconThenClosePopup("check", "Fields updated");
-      }
-      else {
+      } else {
         let message = response.errorMessage;
         console.log(message);
       }
     });
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error);
   }
 }
@@ -607,7 +567,7 @@ async function addSetFieldsFromPersonDataMenuItem(menu, data, tabId) {
     if (!name) {
       name = "Unknown";
     }
-    
+
     menuText += " for:";
     subtitleText += name;
 
@@ -631,9 +591,14 @@ async function addSetFieldsFromPersonDataMenuItem(menu, data, tabId) {
       subtitleText += "\nSaved " + timeText + " ago";
     }
 
-    addMenuItemWithSubtitle(menu, menuText, function(element) {
-      setFieldsFromPersonData(data, personData.extractedData, gd, tabId);
-    }, subtitleText);
+    addMenuItemWithSubtitle(
+      menu,
+      menuText,
+      function (element) {
+        setFieldsFromPersonData(data, personData.extractedData, gd, tabId);
+      },
+      subtitleText
+    );
   }
 }
 
@@ -677,17 +642,23 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId) {
       }
       subtitleText += "\nSaved " + timeText + " ago";
     }
-    addMenuItemWithSubtitle(menu, menuText, function(element) {
-      setFieldsFromPersonData(data, citationObject.extractedData, gd, tabId, citationObject);
-    }, subtitleText);
+    addMenuItemWithSubtitle(
+      menu,
+      menuText,
+      function (element) {
+        setFieldsFromPersonData(data, citationObject.extractedData, gd, tabId, citationObject);
+      },
+      subtitleText
+    );
   }
 }
 
 async function setupWikiTreePopupMenu(extractedData, tabId) {
-
   //console.log("setupWikiTreePopupMenu: tabId is: " + tabId);
 
-  let backFunction = function() { setupWikiTreePopupMenu(extractedData); };
+  let backFunction = function () {
+    setupWikiTreePopupMenu(extractedData);
+  };
 
   if (!extractedData || !extractedData.hasValidData) {
     let data = { extractedData: extractedData };
@@ -695,10 +666,10 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
     if (extractedData.currentTabText) {
       let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
       message += "\n\nIt looks like a WikiTree person profile or free space page but not the right tab.";
-      message += "\n\nThis extension only works on Person Profile and the Profile, Edit or Profile (private view) tab should be selected.",
-      buildMinimalMenuWithMessage(message, data, backFunction);
-    }
-    else {
+      (message +=
+        "\n\nThis extension only works on Person Profile and the Profile, Edit or Profile (private view) tab should be selected."),
+        buildMinimalMenuWithMessage(message, data, backFunction);
+    } else {
       let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
       message += "\n\nIt looks like a WikiTree page but not a person profile.";
       buildMinimalMenuWithMessage(message, data, backFunction);
@@ -707,7 +678,7 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   }
 
   // get generalized data
-  let generalizedData = generalizeData({extractedData: extractedData});
+  let generalizedData = generalizeData({ extractedData: extractedData });
   let data = { extractedData: extractedData, generalizedData: generalizedData };
 
   //console.log("setupWikiTreePopupMenu: generalizedData is:");

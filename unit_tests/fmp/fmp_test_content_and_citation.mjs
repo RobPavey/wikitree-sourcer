@@ -102,7 +102,7 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1871%2F0011811498",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeOccupation: "no",
@@ -111,7 +111,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeOccupation: "inMainSentence",
@@ -120,7 +120,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeOccupation: "inSeparateSentence",
@@ -133,7 +133,7 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1871%2F0003951781",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_householdPartFormat: "withFamily",
@@ -146,14 +146,14 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBC/1901/0005222325",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_householdPartFormat: "withFamily",
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeHousehold: "inSeparateSentence",
@@ -163,7 +163,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeHousehold: "inSeparateSentence",
@@ -177,14 +177,14 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBC/1901/0005222326",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_householdPartFormat: "withFamily",
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_householdPartFormat: "withFamily",
@@ -198,7 +198,7 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1911%2FRG14%2F00566%2F0175%2F3",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_householdPartFormat: "withFamily",
@@ -211,7 +211,7 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBC/1911/RG14/11601/0101/2",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_householdPartFormat: "withFamily",
@@ -219,7 +219,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_householdPartFormat: "withFamily",
@@ -233,7 +233,7 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBC/1921/RG15/12939/0163/01",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeOccupation: "no",
@@ -242,7 +242,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_includeOccupation: "inMainSentence",
@@ -253,7 +253,7 @@ const regressionData = [
         },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_census_wasPartFormat: "wasEnumerated",
@@ -279,22 +279,21 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FMAR%2F00260146%2F2",
     optionVariants: [
       {
-        variantName: "narrative_1", 
+        variantName: "narrative_1",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_marriage_ageFormat: "commasAge",
         },
       },
       {
-        variantName: "narrative_2", 
+        variantName: "narrative_2",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_marriage_ageFormat: "plainAged",
-          
         },
       },
       {
-        variantName: "narrative_3", 
+        variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
           narrative_marriage_includeAge: "inSeparateSentence",
@@ -377,35 +376,33 @@ const regressionData = [
     caseName: "xx_person_john_kimberlin_1800_1871",
     url: "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile",
   },
-
-
 ];
 
 const optionVariants = [
   {
-    variantName: "dataStyle_none", 
+    variantName: "dataStyle_none",
     optionOverrides: {
       citation_fmp_dataStyle: "none",
     },
   },
   {
-    variantName: "dataStyle_string", 
+    variantName: "dataStyle_string",
     optionOverrides: {
       citation_fmp_dataStyle: "string",
     },
   },
   {
-    variantName: "dataStyle_list", 
+    variantName: "dataStyle_list",
     optionOverrides: {
       citation_fmp_dataStyle: "list",
     },
   },
   {
-    variantName: "dataStyle_table", 
+    variantName: "dataStyle_table",
     optionOverrides: {
       citation_fmp_dataStyle: "table",
     },
-  }
+  },
 ];
 
 async function runTests(testManager) {

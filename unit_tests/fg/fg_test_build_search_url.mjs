@@ -32,12 +32,13 @@ const regressionData = [
     typeOfSearch: "EW_Death",
     optionVariants: [
       {
-        variantName: "noMaidenNameInSearch", 
-        optionOverrides: {search_fg_includeMaidenName: false,},
+        variantName: "noMaidenNameInSearch",
+        optionOverrides: { search_fg_includeMaidenName: false },
       },
     ],
   },
-  { // married woman but CLN not set
+  {
+    // married woman but CLN not set
     caseName: "pavey-455_read_wikitree",
     inputPath: "wikitree/generalized_data/ref/pavey-455_read",
     typeOfSearch: "EW_Death",

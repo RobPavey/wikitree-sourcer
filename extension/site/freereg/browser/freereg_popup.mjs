@@ -29,7 +29,6 @@ import { buildCitation } from "../core/freereg_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 async function setupFreeregPopupMenu(extractedData) {
-
   let input = {
     extractedData: extractedData,
     extractFailedMessage: "It looks like a FreeReg page but not a record page.",
