@@ -1,747 +1,564 @@
 {
-  "id": "r_102888734491",
-  "lang": "en",
-  "links": {
-    "next": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39?seek=next"
+  "id" : "r_102888734491",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39?seek=next"
     },
-    "prev": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39?seek=prev"
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39?seek=prev"
     },
-    "self": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39"
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39"
     }
   },
-  "description": "#sd_p_102245762651",
-  "persons": [
-    {
-      "id": "p_102245762643",
-      "extracted": true,
-      "principal": true,
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/Q24K-ZSB3?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/QLQ3-3T39?flag=fsh"
-        }
+  "description" : "#sd_p_102245762651",
+  "persons" : [ {
+    "id" : "p_102245762643",
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/Q24K-ZSB3?flag=fsh"
       },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB3"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Catherine Lucy Gaffney",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Catherine Lucy",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_GN_ORIG",
-                          "text": "Catherine Lucy"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_GN",
-                          "text": "Catherine Lucy"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Gaffney",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_SURN",
-                          "text": "Gaffney"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "PR_NAME_ORIG",
-                      "text": "Catherine Lucy"
-                    },
-                    {
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_NAME",
-                      "text": "Catherine Lucy Gaffney"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "facts": [
-        {
-          "type": "http://gedcomx.org/Birth",
-          "date": {
-            "original": "1888",
-            "formal": "+1888",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Date",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_DATE_ORIG",
-                    "text": "1888"
-                  },
-                  {
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
-                      },
-                      "modified": 1511806570152
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DATE",
-                    "text": "1888",
-                    "resource": "+1888"
-                  }
-                ]
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/QLQ3-3T39?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB3" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Catherine Lucy Gaffney",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Catherine Lucy",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Catherine Lucy"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Catherine Lucy"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Gaffney",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Gaffney"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Catherine Lucy"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Catherine Lucy Gaffney"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1888",
+        "formal" : "+1888",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1888"
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
               },
-              {
-                "type": "http://gedcomx.org/Year",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_YEAR_ORIG",
-                    "text": "1888"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_YEAR",
-                    "text": "1888"
-                  }
-                ]
-              }
-            ]
-          },
-          "place": {
-            "original": "New Zealand",
-            "description": "#place_215",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Place",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_PLACE_ORIG",
-                    "text": "New Zealand"
-                  },
-                  {
-                    "confidence": "http://confidence/100",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_PLACE",
-                    "text": "New Zealand",
-                    "resource": "https://www.familysearch.org/platform/places/description/215"
-                  }
-                ]
-              }
-            ]
-          },
-          "primary": true,
-          "fields": [
-            {
-              "type": "http://familysearch.org/types/fields/EventType",
-              "values": [
-                {
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "EVENT_TYPE",
-                  "text": "Birth"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+              "modified" : 1511806570152
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1888",
+            "resource" : "+1888"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1888"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1888"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "New Zealand",
+        "description" : "#place_215",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "New Zealand"
+          }, {
+            "confidence" : "http://confidence/100",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "New Zealand",
+            "resource" : "https://www.familysearch.org/platform/places/description/215"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Birth"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_102245762651",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
     },
-    {
-      "id": "p_102245762651",
-      "extracted": true,
-      "principal": false,
-      "gender": {
-        "type": "http://gedcomx.org/Male",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "type": "http://gedcomx.org/Interpreted",
-                "resource": "http://gedcomx.org/Male"
-              }
-            ]
-          }
-        ]
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/Q24K-ZSB8?flag=fsh"
       },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/Q24K-ZSB8?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/QLQ3-3T39?flag=fsh"
-        }
-      },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB8"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Miles Gaffney",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Miles",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_FTHR_NAME_GN_ORIG",
-                          "text": "Miles"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_FTHR_NAME_GN",
-                          "text": "Miles"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Gaffney",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_FTHR_NAME_SURN",
-                          "text": "Gaffney"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "PR_FTHR_NAME_ORIG",
-                      "text": "Miles"
-                    },
-                    {
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_FTHR_NAME",
-                      "text": "Miles Gaffney"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/QLQ3-3T39?flag=fsh"
+      }
     },
-    {
-      "id": "p_102245762658",
-      "extracted": true,
-      "principal": false,
-      "gender": {
-        "type": "http://gedcomx.org/Female",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "type": "http://gedcomx.org/Interpreted",
-                "resource": "http://gedcomx.org/Female"
-              }
-            ]
-          }
-        ]
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB8" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Miles Gaffney",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Miles",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Miles"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Miles"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Gaffney",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Gaffney"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "Miles"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Miles Gaffney"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_102245762658",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/Q24K-ZSBV?flag=fsh"
       },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/Q24K-ZSBV?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/QLQ3-3T39?flag=fsh"
-        }
-      },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSBV"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Sarah Elizabeth Gaffney",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Sarah Elizabeth",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_MTHR_NAME_GN_ORIG",
-                          "text": "Sarah Elizabeth"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_MTHR_NAME_GN",
-                          "text": "Sarah Elizabeth"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Gaffney",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_MTHR_NAME_SURN",
-                          "text": "Gaffney"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "PR_MTHR_NAME_ORIG",
-                      "text": "Sarah Elizabeth"
-                    },
-                    {
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_MTHR_NAME",
-                      "text": "Sarah Elizabeth Gaffney"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/QLQ3-3T39?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSBV" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Sarah Elizabeth Gaffney",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Sarah Elizabeth",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Sarah Elizabeth"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Sarah Elizabeth"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Gaffney",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Gaffney"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "Sarah Elizabeth"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Sarah Elizabeth Gaffney"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/PWKW-92W",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_102245762651",
+      "resourceId" : "p_102245762651"
+    },
+    "person2" : {
+      "resource" : "#p_102245762658",
+      "resourceId" : "p_102245762658"
     }
-  ],
-  "relationships": [
-    {
-      "id": "MM9.1.6/PWKW-92W",
-      "type": "http://gedcomx.org/Couple",
-      "person1": {
-        "resource": "#p_102245762651",
-        "resourceId": "p_102245762651"
-      },
-      "person2": {
-        "resource": "#p_102245762658",
-        "resourceId": "p_102245762658"
-      }
+  }, {
+    "id" : "MM9.1.6/PWKW-924",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_102245762651",
+      "resourceId" : "p_102245762651"
     },
-    {
-      "id": "MM9.1.6/PWKW-924",
-      "type": "http://gedcomx.org/ParentChild",
-      "person1": {
-        "resource": "#p_102245762651",
-        "resourceId": "p_102245762651"
-      },
-      "person2": {
-        "resource": "#p_102245762643",
-        "resourceId": "p_102245762643"
-      }
-    },
-    {
-      "id": "MM9.1.6/PWKW-92H",
-      "type": "http://gedcomx.org/ParentChild",
-      "person1": {
-        "resource": "#p_102245762658",
-        "resourceId": "p_102245762658"
-      },
-      "person2": {
-        "resource": "#p_102245762643",
-        "resourceId": "p_102245762643"
-      }
+    "person2" : {
+      "resource" : "#p_102245762643",
+      "resourceId" : "p_102245762643"
     }
-  ],
-  "sourceDescriptions": [
-    {
-      "id": "sd_c_2697870",
-      "about": "https://api.familysearch.org/platform/records/collections/2697870",
-      "resourceType": "http://gedcomx.org/Collection",
-      "created": 1475175530564,
-      "modified": 1658155723434,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "New Zealand",
-            "description": "#place_1927083"
-          },
-          "temporal": {
-            "original": "1800/1966",
-            "formal": "1800/1966"
-          },
-          "recordType": "http://gedcomx.org/Vital"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "New Zealand, Civil Records Indexes, 1800-1966"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/2697870"]
-      }
+  }, {
+    "id" : "MM9.1.6/PWKW-92H",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_102245762658",
+      "resourceId" : "p_102245762658"
     },
-    {
-      "id": "src_r_102888734491",
-      "mediaType": "image/jpeg",
-      "about": "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39",
-      "componentOf": {
-        "description": "#sd_c_2697870"
-      },
-      "resourceType": "http://gedcomx.org/Record",
-      "created": 1511806570157,
-      "modified": 1658155723434,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "New Zealand"
-          },
-          "temporal": {
-            "original": "1888",
-            "formal": "+1888"
-          },
-          "recordType": "http://gedcomx.org/Vital"
-        }
-      ],
-      "citations": [
-        {
-          "value": "\"New Zealand, Civil Records Indexes, 1800-1966,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:QLQ3-3T39 : 27 November 2017), Entry for Catherine Lucy Gaffney, 1888; citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington. "
-        }
-      ],
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Entry for Catherine Lucy Gaffney, \"New Zealand, Civil Records Indexes, 1800-1966\""
-        }
-      ],
-      "identifiers": {
-        "$": ["https://www.familysearch.org/platform/externalId/easy/10054472167339"],
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39"]
-      },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2697870?arkName=1:2:QLQ3-3T39"
-      }
-    },
-    {
-      "id": "sd_p_102245762643",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB3",
-      "componentOf": {
-        "description": "#src_r_102888734491"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"New Zealand, Civil Records Indexes, 1800-1966,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q24K-ZSB3 : 27 November 2017), Catherine Lucy Gaffney, 1888; citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington. "
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Catherine Lucy Gaffney, \"New Zealand, Civil Records Indexes, 1800-1966\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB3"]
-      }
-    },
-    {
-      "id": "sd_p_102245762651",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB8",
-      "componentOf": {
-        "description": "#src_r_102888734491"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"New Zealand, Civil Records Indexes, 1800-1966,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q24K-ZSB8 : 27 November 2017), Miles Gaffney in entry for Catherine Lucy Gaffney, 1888; citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington. "
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Miles Gaffney in entry for Catherine Lucy Gaffney, \"New Zealand, Civil Records Indexes, 1800-1966\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB8"]
-      }
-    },
-    {
-      "id": "sd_p_102245762658",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSBV",
-      "componentOf": {
-        "description": "#src_r_102888734491"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"New Zealand, Civil Records Indexes, 1800-1966,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q24K-ZSBV : 27 November 2017), Sarah Elizabeth Gaffney in entry for Catherine Lucy Gaffney, 1888; citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington. "
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Sarah Elizabeth Gaffney in entry for Catherine Lucy Gaffney, \"New Zealand, Civil Records Indexes, 1800-1966\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSBV"]
-      }
-    },
-    {
-      "id": "sd2",
-      "mediaType": "image/jpeg",
-      "about": "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths",
-      "resourceType": "http://gedcomx.org/DigitalArtifact",
-      "repository": {
-        "resourceId": "#a1"
-      },
-      "identifiers": {
-        "http://gedcomx.org/Persistent": [
-          "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths"
-        ]
-      },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2697870"
-      }
+    "person2" : {
+      "resource" : "#p_102245762643",
+      "resourceId" : "p_102245762643"
     }
-  ],
-  "agents": [
-    {
-      "id": "a1",
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["www.bdmhistoricalrecords.dia.govt.nz"]
-      }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_2697870",
+    "about" : "https://api.familysearch.org/platform/records/collections/2697870",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1475175530564,
+    "modified" : 1658155723434,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "New Zealand",
+        "description" : "#place_1927083"
+      },
+      "temporal" : {
+        "original" : "1800/1966",
+        "formal" : "1800/1966"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "New Zealand, Civil Records Indexes, 1800-1966"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2697870" ]
     }
-  ],
-  "places": [
-    {
-      "place": {
-        "resource": "https://www.familysearch.org/platform/places/description/215",
-        "resourceId": "place_215"
-      }
+  }, {
+    "id" : "src_r_102888734491",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39",
+    "componentOf" : {
+      "description" : "#sd_c_2697870"
     },
-    {
-      "id": "place_1927083",
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1927083"]
-      }
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1511806570157,
+    "modified" : 1658155723434,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "New Zealand"
+      },
+      "temporal" : {
+        "original" : "1888",
+        "formal" : "+1888"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"New Zealand, Civil Records Indexes, 1800-1966,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:QLQ3-3T39 : 27 November 2017), Entry for Catherine Lucy Gaffney, 1888; citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington. "
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Catherine Lucy Gaffney, \"New Zealand, Civil Records Indexes, 1800-1966\""
+    } ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/10054472167339" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QLQ3-3T39" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2697870?arkName=1:2:QLQ3-3T39"
     }
-  ],
-  "fields": [
-    {
-      "type": "http://familysearch.org/types/fields/ExternalImageId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "EXT_IMAGE_ID",
-          "text": "%3Dbirths"
-        }
-      ]
+  }, {
+    "id" : "sd_p_102245762643",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB3",
+    "componentOf" : {
+      "description" : "#src_r_102888734491"
     },
-    {
-      "type": "http://familysearch.org/types/fields/ExtUrl",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "EXT_URL",
-          "text": "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CollectionId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_COLLECTION_ID",
-          "text": "2697870"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PpqId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PPQ_ID",
-          "text": "16-0401"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordGroup",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_GROUP",
-          "text": "2017_09_14;rad;nzbth_01011840_30061897_TypeGeniePart_1.psv"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SortKey",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_SORT_KEY",
-          "text": "000000000_01888_0008036_010054472167339"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UniqueId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_UNIQUE_ID",
-          "text": "10054472167339"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SourceRegNbr",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "SOURCE_REG_NBR",
-          "text": "1888/8036"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UiSourceFlag",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "UI_SOURCE_FLAG",
-          "text": "I-TABLE 2017_11_14;Previously Published"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordVersion",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_VERSION",
-          "text": "8"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UserModified",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_USER_MODIFIED",
-          "text": "false"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CdsBatchId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_CDS_BATCH_ID",
-          "text": "43788"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PublicationStatus",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PUB_STATUS",
-          "text": "Production"
-        }
-      ]
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New Zealand, Civil Records Indexes, 1800-1966,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q24K-ZSB3 : 27 November 2017), Catherine Lucy Gaffney, 1888; citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington. "
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Catherine Lucy Gaffney, \"New Zealand, Civil Records Indexes, 1800-1966\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB3" ]
     }
-  ]
+  }, {
+    "id" : "sd_p_102245762651",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB8",
+    "componentOf" : {
+      "description" : "#src_r_102888734491"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New Zealand, Civil Records Indexes, 1800-1966,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q24K-ZSB8 : 27 November 2017), Miles Gaffney in entry for Catherine Lucy Gaffney, 1888; citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington. "
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Miles Gaffney in entry for Catherine Lucy Gaffney, \"New Zealand, Civil Records Indexes, 1800-1966\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSB8" ]
+    }
+  }, {
+    "id" : "sd_p_102245762658",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSBV",
+    "componentOf" : {
+      "description" : "#src_r_102888734491"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"New Zealand, Civil Records Indexes, 1800-1966,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:Q24K-ZSBV : 27 November 2017), Sarah Elizabeth Gaffney in entry for Catherine Lucy Gaffney, 1888; citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington. "
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Sarah Elizabeth Gaffney in entry for Catherine Lucy Gaffney, \"New Zealand, Civil Records Indexes, 1800-1966\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q24K-ZSBV" ]
+    }
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2697870"
+    }
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.bdmhistoricalrecords.dia.govt.nz" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/215",
+      "resourceId" : "place_215"
+    }
+  }, {
+    "id" : "place_1927083",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1927083" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/ExternalImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_IMAGE_ID",
+      "text" : "%3Dbirths"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtUrl",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_URL",
+      "text" : "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "2697870"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "16-0401"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "2017_09_14;rad;nzbth_01011840_30061897_TypeGeniePart_1.psv"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_01888_0008036_010054472167339"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "10054472167339"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceRegNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_REG_NBR",
+      "text" : "1888/8036"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UiSourceFlag",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "UI_SOURCE_FLAG",
+      "text" : "I-TABLE 2017_11_14;Previously Published"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "8"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "43788"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
 }

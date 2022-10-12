@@ -1,797 +1,589 @@
 {
-  "id": "r_102062118107",
-  "lang": "en",
-  "links": {
-    "next": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J?seek=next"
+  "id" : "r_102062118107",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J?seek=next"
     },
-    "prev": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J?seek=prev"
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J?seek=prev"
     },
-    "self": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J"
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J"
     }
   },
-  "description": "#sd_p_101033942808",
-  "persons": [
-    {
-      "id": "p_101033942808",
-      "extracted": true,
-      "principal": true,
-      "gender": {
-        "type": "http://gedcomx.org/Male",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "type": "http://gedcomx.org/Original",
-                "labelId": "PR_SEX_CODE_ORIG",
-                "text": "M"
-              },
-              {
-                "type": "http://gedcomx.org/Interpreted",
-                "labelId": "PR_SEX_CODE",
-                "text": "Male"
-              }
-            ]
-          }
-        ]
-      },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/QVJP-4T6V?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/Q2MS-V66J?flag=fsh"
-        }
-      },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6V"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Edward Digby Baltzell",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Edward Digby",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_GN_ORIG",
-                          "text": "Edward Digby"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_GN",
-                          "text": "Edward Digby"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Baltzell",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_SURN_ORIG",
-                          "text": "Baltzell"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_SURN",
-                          "text": "Baltzell"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_NAME",
-                      "text": "Edward Digby Baltzell"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "facts": [
-        {
-          "type": "http://familysearch.org/types/facts/PassportApplication",
-          "date": {
-            "original": "1914",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Date",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_DATE_ORIG",
-                    "text": "1914"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DATE",
-                    "text": "1914"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Year",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_YEAR_ORIG",
-                    "text": "1914"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_YEAR",
-                    "text": "1914"
-                  }
-                ]
-              }
-            ]
-          },
-          "primary": true,
-          "fields": [
-            {
-              "type": "http://familysearch.org/types/fields/EventType",
-              "values": [
-                {
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "EVENT_TYPE",
-                  "text": "Passport Application"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "http://gedcomx.org/Birth",
-          "date": {
-            "original": "27 Aug 1885",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Date",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_BIR_DATE_ORIG",
-                    "text": "27 Aug 1885"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_BIR_DATE",
-                    "text": "27 Aug 1885"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Month",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_BIR_MONTH",
-                    "text": "Aug"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Day",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_BIR_DAY",
-                    "text": "27"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Year",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_BIR_YEAR_ORIG",
-                    "text": "1885"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_BIR_YEAR",
-                    "text": "1885"
-                  }
-                ]
-              }
-            ]
-          },
-          "place": {
-            "original": "Pennsylvania",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Place",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_BIR_PLACE",
-                    "text": "Pennsylvania"
-                  }
-                ]
-              },
-              {
-                "type": "http://familysearch.org/types/fields/StateOrCountry",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_BIR_STATE_COUNTRY",
-                    "text": "Pennsylvania"
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ],
-      "fields": [
-        {
-          "type": "http://gedcomx.org/Age",
-          "values": [
-            {
-              "type": "http://gedcomx.org/Interpreted",
-              "labelId": "PR_AGE",
-              "text": "29"
-            }
-          ]
-        }
-      ]
+  "description" : "#sd_p_101033942808",
+  "persons" : [ {
+    "id" : "p_101033942808",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male"
+        } ]
+      } ]
     },
-    {
-      "id": "p_101033942809",
-      "extracted": true,
-      "principal": false,
-      "gender": {
-        "type": "http://gedcomx.org/Female",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "type": "http://gedcomx.org/Interpreted",
-                "labelId": "SP_SEX_CODE",
-                "text": "Female"
-              }
-            ]
-          }
-        ]
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/QVJP-4T6V?flag=fsh"
       },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/QVJP-4T6K?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/Q2MS-V66J?flag=fsh"
-        }
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/Q2MS-V66J?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6V" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Edward Digby Baltzell",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Edward Digby",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Edward Digby"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Edward Digby"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Baltzell",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Baltzell"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Baltzell"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Edward Digby Baltzell"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://familysearch.org/types/facts/PassportApplication",
+      "date" : {
+        "original" : "1914",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1914"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1914"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1914"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1914"
+          } ]
+        } ]
       },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6K"]
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Passport Application"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "27 Aug 1885",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "27 Aug 1885"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "27 Aug 1885"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_MONTH",
+            "text" : "Aug"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DAY",
+            "text" : "27"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1885"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1885"
+          } ]
+        } ]
       },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Caroline Duhring Baltzell",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Caroline Duhring",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "SP_NAME_GN_ORIG",
-                          "text": "Caroline Duhring"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "SP_NAME_GN",
-                          "text": "Caroline Duhring"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Baltzell",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "SP_NAME_SURN_ORIG",
-                          "text": "Baltzell"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "SP_NAME_SURN",
-                          "text": "Baltzell"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "SP_NAME",
-                      "text": "Caroline Duhring Baltzell"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "place" : {
+        "original" : "Pennsylvania",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_PLACE",
+            "text" : "Pennsylvania"
+          } ]
+        }, {
+          "type" : "http://familysearch.org/types/fields/StateOrCountry",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_STATE_COUNTRY",
+            "text" : "Pennsylvania"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "29"
+      } ]
+    } ]
+  }, {
+    "id" : "p_101033942809",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "text" : "Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/QVJP-4T6K?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/Q2MS-V66J?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6K" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Caroline Duhring Baltzell",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Caroline Duhring",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Caroline Duhring"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Caroline Duhring"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Baltzell",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Baltzell"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Baltzell"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Caroline Duhring Baltzell"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/XY8K-93L",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_101033942808",
+      "resourceId" : "p_101033942808"
+    },
+    "person2" : {
+      "resource" : "#p_101033942809",
+      "resourceId" : "p_101033942809"
     }
-  ],
-  "relationships": [
-    {
-      "id": "MM9.1.6/XY8K-93L",
-      "type": "http://gedcomx.org/Couple",
-      "person1": {
-        "resource": "#p_101033942808",
-        "resourceId": "p_101033942808"
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_2185145",
+    "about" : "https://api.familysearch.org/platform/records/collections/2185145",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1389048521179,
+    "modified" : 1653206516635,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "United States",
+        "description" : "#place_1"
       },
-      "person2": {
-        "resource": "#p_101033942809",
-        "resourceId": "p_101033942809"
-      }
+      "temporal" : {
+        "original" : "1795/1925",
+        "formal" : "1795/1925"
+      },
+      "recordType" : "http://gedcomx.org/Migration"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "United States Passport Applications, 1795-1925"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2185145" ]
     }
-  ],
-  "sourceDescriptions": [
-    {
-      "id": "sd_c_2185145",
-      "about": "https://api.familysearch.org/platform/records/collections/2185145",
-      "resourceType": "http://gedcomx.org/Collection",
-      "created": 1389048521179,
-      "modified": 1653206516635,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "United States",
-            "description": "#place_1"
-          },
-          "temporal": {
-            "original": "1795/1925",
-            "formal": "1795/1925"
-          },
-          "recordType": "http://gedcomx.org/Migration"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en_US",
-          "value": "United States Passport Applications, 1795-1925"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/2185145"]
-      }
+  }, {
+    "id" : "src_r_102062118107",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J",
+    "componentOf" : {
+      "description" : "#sd_c_2185145"
     },
-    {
-      "id": "src_r_102062118107",
-      "mediaType": "image/jpeg",
-      "about": "https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J",
-      "componentOf": {
-        "description": "#sd_c_2185145"
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1413819087630,
+    "modified" : 1653206516635,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Pennsylvania, United States"
       },
-      "resourceType": "http://gedcomx.org/Record",
-      "created": 1413819087630,
-      "modified": 1653206516635,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "Pennsylvania, United States"
-          },
-          "temporal": {
-            "original": "1914",
-            "formal": "+1914"
-          },
-          "recordType": "http://gedcomx.org/Migration"
-        }
-      ],
-      "citations": [
-        {
-          "value": "\"United States Passport Applications, 1795-1925,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:Q2MS-V66J : 16 March 2018), Entry for Edward Digby Baltzell, 1914; citing Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).\n\n"
-        }
-      ],
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Entry for Edward Digby Baltzell, \"United States Passport Applications, 1795-1925\""
-        }
-      ],
-      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
-      "identifiers": {
-        "$": ["https://www.familysearch.org/platform/externalId/easy/12187548797"],
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J"]
+      "temporal" : {
+        "original" : "1914",
+        "formal" : "+1914"
       },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2185145?arkName=1:2:Q2MS-V66J"
-      }
+      "recordType" : "http://gedcomx.org/Migration"
+    } ],
+    "citations" : [ {
+      "value" : "\"United States Passport Applications, 1795-1925,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:Q2MS-V66J : 16 March 2018), Entry for Edward Digby Baltzell, 1914; citing Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).\n\n"
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Edward Digby Baltzell, \"United States Passport Applications, 1795-1925\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/12187548797" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:Q2MS-V66J" ]
     },
-    {
-      "id": "sd_p_101033942808",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6V",
-      "componentOf": {
-        "description": "#src_r_102062118107"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"United States Passport Applications, 1795-1925,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QVJP-4T6V : 16 March 2018), Edward Digby Baltzell, 1914; citing Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).\n"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Edward Digby Baltzell, \"United States Passport Applications, 1795-1925\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6V"]
-      }
-    },
-    {
-      "id": "sd_p_101033942809",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6K",
-      "componentOf": {
-        "description": "#src_r_102062118107"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"United States Passport Applications, 1795-1925,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QVJP-4T6K : 16 March 2018), Caroline Duhring Baltzell in entry for Edward Digby Baltzell, 1914; citing Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).\n"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Caroline Duhring Baltzell in entry for Edward Digby Baltzell, \"United States Passport Applications, 1795-1925\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6K"]
-      }
-    },
-    {
-      "id": "sd2",
-      "mediaType": "image/jpeg",
-      "about": "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9X7-C97G-T?cc=2185145",
-      "resourceType": "http://gedcomx.org/DigitalArtifact",
-      "repository": {
-        "resourceId": "#a1"
-      },
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9X7-C97G-T?cc=2185145"]
-      },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2185145?arkName=3:1:3QSQ-G9X7-C97G-T"
-      }
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2185145?arkName=1:2:Q2MS-V66J"
     }
-  ],
-  "agents": [
-    {
-      "id": "a1",
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
-      }
+  }, {
+    "id" : "sd_p_101033942808",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6V",
+    "componentOf" : {
+      "description" : "#src_r_102062118107"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"United States Passport Applications, 1795-1925,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QVJP-4T6V : 16 March 2018), Edward Digby Baltzell, 1914; citing Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).\n"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Edward Digby Baltzell, \"United States Passport Applications, 1795-1925\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6V" ]
     }
-  ],
-  "places": [
-    {
-      "id": "place_1",
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1"]
-      }
+  }, {
+    "id" : "sd_p_101033942809",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6K",
+    "componentOf" : {
+      "description" : "#src_r_102062118107"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"United States Passport Applications, 1795-1925,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QVJP-4T6K : 16 March 2018), Caroline Duhring Baltzell in entry for Edward Digby Baltzell, 1914; citing Passport Application, , source certificate #43563, Passport Applications, January 2, 1906 - March 31, 1925, 226, NARA microfilm publications M1490 and M1372 (Washington D.C.: National Archives and Records Administration, n.d.).\n"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Caroline Duhring Baltzell in entry for Edward Digby Baltzell, \"United States Passport Applications, 1795-1925\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6K" ]
     }
-  ],
-  "fields": [
-    {
-      "type": "http://familysearch.org/types/fields/EventPlaceLevel1Type",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "EVENT_PLACE_LEVEL_1_TYPE",
-          "text": "Country"
-        }
-      ]
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9X7-C97G-T?cc=2185145",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
     },
-    {
-      "type": "http://familysearch.org/types/fields/EventPlaceLevel2Type",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "EVENT_PLACE_LEVEL_2_TYPE",
-          "text": "State or Province"
-        }
-      ]
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9X7-C97G-T?cc=2185145" ]
     },
-    {
-      "type": "http://familysearch.org/types/fields/ExtFilmNbr",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "EXT_FILM_NBR",
-          "text": "226"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ExtPubNbr",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "EXT_PUB_NBR",
-          "text": "M1490"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ExtPubTitle",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "EXT_PUB_TITLE",
-          "text": "Passport Applications, January 2, 1906 - March 31, 1925"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/BatchLocality",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_BATCH_LOCALITY",
-          "text": "United States"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CollectionId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_COLLECTION_ID",
-          "text": "2185145"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/DasVerify",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_DAS_VERIFY",
-          "text": "26-SEP-14"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_DIGITAL_FILM_NBR",
-          "text": "007574955"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/EasyImageId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_EASY_IMAGE_ID",
-          "text": "007574955_00106"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/FilmNumber",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_FILM_NBR",
-          "text": "1514005"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ImageApid",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_IMAGE_APID",
-          "text": "TH-1942-39759-32186-84"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ImageNumber",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_IMAGE_NBR",
-          "text": "00106"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ImageArk",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "IMAGE_ARK",
-          "text": "https://familysearch.org/ark:/61903/3:1:3QSQ-G9X7-C97G-T"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PpqId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PPQ_ID",
-          "text": "13-0345"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordGroup",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_GROUP",
-          "text": "13-0345; 2014-09-23 09:43:43; pinegarmm; United States Passport Applications, 1795-1925 (NARA M1490, M1372) - FSI"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_ID",
-          "text": "007574955_00106"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SortKey",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_SORT_KEY",
-          "text": "000000000_007574955_00106_00000_0012187548797"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/TravelerTitle",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_TRAVELER_TITLE",
-          "text": "United States Passport Applications, 1795-1925 (NARA M1490, M1372) - FSI"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UniqueId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_UNIQUE_ID",
-          "text": "12187548797"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SourceCertificateNbr",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "SOURCE_CERTIFICATE_NBR",
-          "text": "43563"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordVersion",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_VERSION",
-          "text": "10"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UserModified",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_USER_MODIFIED",
-          "text": "false"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CdsBatchId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_CDS_BATCH_ID",
-          "text": "28775"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PublicationStatus",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PUB_STATUS",
-          "text": "Production"
-        }
-      ]
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2185145?arkName=3:1:3QSQ-G9X7-C97G-T"
     }
-  ]
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel1Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_1_TYPE",
+      "text" : "Country"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel2Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_2_TYPE",
+      "text" : "State or Province"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_FILM_NBR",
+      "text" : "226"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtPubNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_PUB_NBR",
+      "text" : "M1490"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtPubTitle",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_PUB_TITLE",
+      "text" : "Passport Applications, January 2, 1906 - March 31, 1925"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "United States"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "2185145"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DasVerify",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DAS_VERIFY",
+      "text" : "26-SEP-14"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007574955"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EasyImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_EASY_IMAGE_ID",
+      "text" : "007574955_00106"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "1514005"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageApid",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_APID",
+      "text" : "TH-1942-39759-32186-84"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "00106"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageArk",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_ARK",
+      "text" : "https://familysearch.org/ark:/61903/3:1:3QSQ-G9X7-C97G-T"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "13-0345"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "13-0345; 2014-09-23 09:43:43; pinegarmm; United States Passport Applications, 1795-1925 (NARA M1490, M1372) - FSI"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "007574955_00106"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_007574955_00106_00000_0012187548797"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "United States Passport Applications, 1795-1925 (NARA M1490, M1372) - FSI"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "12187548797"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceCertificateNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_CERTIFICATE_NBR",
+      "text" : "43563"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "10"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "28775"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
 }

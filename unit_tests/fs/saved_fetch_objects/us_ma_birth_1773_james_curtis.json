@@ -1,1058 +1,836 @@
 {
-  "id": "r_316691939",
-  "lang": "en",
-  "links": {
-    "next": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1?seek=next"
+  "id" : "r_316691939",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1?seek=next"
     },
-    "prev": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1?seek=prev"
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1?seek=prev"
     },
-    "self": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1"
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1"
     }
   },
-  "description": "#sd_p_11115980342",
-  "persons": [
-    {
-      "id": "p_11115980342",
-      "extracted": true,
-      "principal": true,
-      "gender": {
-        "type": "http://gedcomx.org/Male",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "id": "687698ea-1e9e-4a2d-bc0d-886bd3ed9abf",
-                "type": "http://gedcomx.org/Original",
-                "labelId": "PR_SEX_CODE_ORIG",
-                "text": "M"
-              },
-              {
-                "id": "35588d3d-811d-4ec7-97ce-8f2310527656",
-                "attribution": {
-                  "contributor": {
-                    "resource": "http://treatment/CvGenderTreatment/ver/1"
-                  },
-                  "modified": 1604977097366
-                },
-                "type": "http://gedcomx.org/Interpreted",
-                "labelId": "PR_SEX_CODE",
-                "text": "Male",
-                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
-              }
-            ]
-          }
-        ]
-      },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/F46D-1HS?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/M6M1-CY1?flag=fsh"
-        }
-      },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F46D-1HS"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "James Curtis",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "James",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "id": "523f08ba-1dee-47b2-89bc-44f3d8c06902",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_GN_ORIG",
-                          "text": "James"
-                        },
-                        {
-                          "id": "5f117066-edc3-4cc9-83d5-950aeb193ea0",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1604977097351
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_GN",
-                          "text": "James"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Curtis",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "id": "19433beb-1024-4c82-a7b7-dfd49e65b058",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_SURN_ORIG",
-                          "text": "Curtis"
-                        },
-                        {
-                          "id": "957bc0c1-cfc6-4ee1-a055-c4a4c86371ee",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1604977097351
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_SURN",
-                          "text": "Curtis"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "id": "f9867ed7-70e8-4488-9422-a2b8ef1911dd",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1604977097344
-                      },
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "PR_NAME_ORIG",
-                      "text": "James Curtis"
-                    },
-                    {
-                      "id": "a7a5b39e-1912-43f5-af61-88b237621f09",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1604977097351
-                      },
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_NAME",
-                      "text": "James Curtis"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "facts": [
-        {
-          "type": "http://gedcomx.org/Birth",
-          "date": {
-            "original": "25 Nov 1773",
-            "formal": "+1773-11-25",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Date",
-                "values": [
-                  {
-                    "id": "a50bd1ff-ce36-4c1f-81ea-7653e2a36477",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_DATE_ORIG",
-                    "text": "25 Nov 1773"
-                  },
-                  {
-                    "id": "9b5ab866-082d-44f6-81ae-a4d561e37332",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
-                      },
-                      "modified": 1604977097344
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DATE",
-                    "text": "25 Nov 1773",
-                    "resource": "+1773-11-25"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Month",
-                "values": [
-                  {
-                    "id": "4a26046c-80f9-4672-b032-4ae52ff84653",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
-                      },
-                      "modified": 1604977097344
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_MONTH",
-                    "text": "11"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Day",
-                "values": [
-                  {
-                    "id": "4fb0b65b-59a9-4494-be87-a9916e2a420b",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
-                      },
-                      "modified": 1604977097344
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DAY",
-                    "text": "25"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Year",
-                "values": [
-                  {
-                    "id": "94890119-b5bd-4dfe-b3ec-9aefdd9ca014",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
-                      },
-                      "modified": 1604977097344
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_YEAR",
-                    "text": "1773"
-                  }
-                ]
-              }
-            ]
-          },
-          "place": {
-            "original": "Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America",
-            "description": "#place_4229023",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Place",
-                "values": [
-                  {
-                    "id": "2b3af1e7-3be6-43f8-9b31-da77bafea1a5",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_PLACE_ORIG",
-                    "text": "Plymouth, Plymouth, Massachusetts"
-                  },
-                  {
-                    "id": "d7e44783-03c1-4cae-bb2c-eb0ebbb58828",
-                    "confidence": "http://confidence/99",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/LocalityTreatment/ver/1"
-                      },
-                      "modified": 1604977097395
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_PLACE",
-                    "text": "Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America",
-                    "resource": "https://www.familysearch.org/platform/places/description/4229023",
-                    "qualifiers": [
-                      {
-                        "value": "1013, 1010",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          "primary": true,
-          "fields": [
-            {
-              "type": "http://familysearch.org/types/fields/EventType",
-              "values": [
-                {
-                  "id": "21c9f73e-67b0-4422-9813-2bfe9d53f659",
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_TYPE_ORIG",
-                  "text": "birth"
-                },
-                {
-                  "id": "b0c48d86-9fd8-4108-9a79-5b7dbd9dccfe",
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "EVENT_TYPE",
-                  "text": "Birth"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "p_11115980343",
-      "extracted": true,
-      "principal": false,
-      "gender": {
-        "type": "http://gedcomx.org/Male",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "id": "085a9568-1292-424e-bf9a-637a18395022",
-                "attribution": {
-                  "contributor": {
-                    "resource": "http://treatment/CvGenderTreatment/ver/1"
-                  },
-                  "modified": 1604977097366
-                },
-                "type": "http://gedcomx.org/Interpreted",
-                "labelId": "PR_FTHR_SEX_CODE",
-                "text": "Male",
-                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
-              }
-            ]
-          }
-        ]
-      },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/F46D-1H3?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/M6M1-CY1?flag=fsh"
-        }
-      },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F46D-1H3"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "William Curtis",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "William",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "id": "767a644c-128d-4c77-8801-40a8556cebe9",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_FTHR_NAME_GN_ORIG",
-                          "text": "William"
-                        },
-                        {
-                          "id": "9f63cc09-73d4-4c1d-882d-91940e7092db",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1604977097362
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_FTHR_NAME_GN",
-                          "text": "William"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Curtis",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "id": "81055bd6-bc20-4c6b-8ebd-bd60f4705518",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_FTHR_NAME_SURN_ORIG",
-                          "text": "Curtis"
-                        },
-                        {
-                          "id": "bc99584d-7980-4e37-9702-8b43d7401abe",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1604977097362
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_FTHR_NAME_SURN",
-                          "text": "Curtis"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "id": "0199b2d5-7afb-4783-9281-acfe9b4c6475",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1604977097351
-                      },
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "PR_FTHR_NAME_ORIG",
-                      "text": "William Curtis"
-                    },
-                    {
-                      "id": "e855da83-836a-4020-957c-684369e46b2d",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1604977097362
-                      },
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_FTHR_NAME",
-                      "text": "William Curtis"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "p_11115980344",
-      "extracted": true,
-      "principal": false,
-      "gender": {
-        "type": "http://gedcomx.org/Female",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "id": "99f16e2f-6168-4e81-9c1b-783415287c35",
-                "attribution": {
-                  "contributor": {
-                    "resource": "http://treatment/CvGenderTreatment/ver/1"
-                  },
-                  "modified": 1604977097366
-                },
-                "type": "http://gedcomx.org/Interpreted",
-                "labelId": "PR_MTHR_SEX_CODE",
-                "text": "Female",
-                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
-              }
-            ]
-          }
-        ]
-      },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/F46D-1HQ?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/M6M1-CY1?flag=fsh"
-        }
-      },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F46D-1HQ"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Hannah",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Hannah",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "id": "31b43e0d-648d-4b91-9987-a380ca68f22f",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_MTHR_NAME_GN_ORIG",
-                          "text": "Hannah"
-                        },
-                        {
-                          "id": "130aed70-f0c1-4840-a894-7461126ae105",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1604977097366
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_MTHR_NAME_GN",
-                          "text": "Hannah"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "id": "8bcbe840-ebcb-4f00-bcac-2f1897ad6d6e",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1604977097362
-                      },
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "PR_MTHR_NAME_ORIG",
-                      "text": "Hannah"
-                    },
-                    {
-                      "id": "b129e1d4-4aa8-4927-b2ad-ad64d62cbda1",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1604977097366
-                      },
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_MTHR_NAME",
-                      "text": "Hannah"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "relationships": [
-    {
-      "id": "MM9.1.6/P8JN-3DPW",
-      "type": "http://gedcomx.org/ParentChild",
-      "person1": {
-        "resource": "#p_11115980343",
-        "resourceId": "p_11115980343"
-      },
-      "person2": {
-        "resource": "#p_11115980342",
-        "resourceId": "p_11115980342"
-      }
-    },
-    {
-      "id": "MM9.1.6/P8JN-3DP4",
-      "type": "http://gedcomx.org/ParentChild",
-      "person1": {
-        "resource": "#p_11115980344",
-        "resourceId": "p_11115980344"
-      },
-      "person2": {
-        "resource": "#p_11115980342",
-        "resourceId": "p_11115980342"
-      }
-    },
-    {
-      "id": "MM9.1.6/P8JN-3DPH",
-      "type": "http://gedcomx.org/Couple",
-      "person1": {
-        "resource": "#p_11115980343",
-        "resourceId": "p_11115980343"
-      },
-      "person2": {
-        "resource": "#p_11115980344",
-        "resourceId": "p_11115980344"
-      }
-    }
-  ],
-  "sourceDescriptions": [
-    {
-      "id": "sd_c_2061550",
-      "about": "https://api.familysearch.org/platform/records/collections/2061550",
-      "resourceType": "http://gedcomx.org/Collection",
-      "created": 1382223406076,
-      "modified": 1658155593130,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "Massachusetts, United States",
-            "description": "#place_1-52"
-          },
-          "temporal": {
-            "original": "1627/2001",
-            "formal": "1627/2001"
-          },
-          "recordType": "http://gedcomx.org/Vital"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en_US",
-          "value": "Massachusetts, Town Clerk, Vital and Town Records, 1626-2001"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/2061550"]
-      }
-    },
-    {
-      "id": "src_r_316691939",
-      "mediaType": "image/jpeg",
-      "about": "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1",
-      "componentOf": {
-        "description": "#sd_c_2061550"
-      },
-      "resourceType": "http://gedcomx.org/Record",
-      "created": 1603371662741,
-      "modified": 1658155593130,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America"
-          },
-          "temporal": {
-            "original": "25 Nov 1773"
-          },
-          "recordType": "http://gedcomx.org/Vital"
-        }
-      ],
-      "citations": [
-        {
-          "value": "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1 : 20 May 2022), Entry for James Curtis, 25 Nov 1773; citing Birth, Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009252."
-        }
-      ],
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Entry for James Curtis, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\""
-        }
-      ],
-      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
-      "identifiers": {
-        "$": ["https://www.familysearch.org/platform/externalId/easy/101868569"],
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1"]
-      },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2061550?arkName=1:2:M6M1-CY1"
-      }
-    },
-    {
-      "id": "sd_p_11115980342",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:F46D-1HS",
-      "componentOf": {
-        "description": "#src_r_316691939"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:F46D-1HS : 20 May 2022), James Curtis, 25 Nov 1773; citing Birth, Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009252."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "James Curtis, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F46D-1HS"]
-      }
-    },
-    {
-      "id": "sd_p_11115980343",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:F46D-1H3",
-      "componentOf": {
-        "description": "#src_r_316691939"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:F46D-1H3 : 20 May 2022), William Curtis in entry for James Curtis, 25 Nov 1773; citing Birth, Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009252."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "William Curtis in entry for James Curtis, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F46D-1H3"]
-      }
-    },
-    {
-      "id": "sd_p_11115980344",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:F46D-1HQ",
-      "componentOf": {
-        "description": "#src_r_316691939"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:F46D-1HQ : 20 May 2022), Hannah in entry for James Curtis, 25 Nov 1773; citing Birth, Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009252."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Hannah in entry for James Curtis, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F46D-1HQ"]
-      }
-    },
-    {
-      "id": "sd2",
-      "mediaType": "image/jpeg",
-      "about": "https://www.familysearch.org/ark:/61903/3:1:3QS7-L979-Q94W-1?cc=2061550",
-      "resourceType": "http://gedcomx.org/DigitalArtifact",
-      "repository": {
-        "resourceId": "#a1"
-      },
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:3QS7-L979-Q94W-1?cc=2061550"]
-      },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2061550?arkName=3:1:3QS7-L979-Q94W-1"
-      }
-    }
-  ],
-  "agents": [
-    {
-      "id": "a1",
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
-      }
-    }
-  ],
-  "places": [
-    {
-      "place": {
-        "resource": "https://www.familysearch.org/platform/places/description/4229023",
-        "resourceId": "place_4229023"
-      }
-    },
-    {
-      "id": "place_1-52",
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/52?context=1"]
-      }
-    }
-  ],
-  "fields": [
-    {
-      "type": "http://familysearch.org/types/fields/BatchId",
-      "values": [
-        {
-          "id": "2ac95267-2b48-4656-b000-f8fb4b589241",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_BATCH_ID",
-          "text": "283647"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/BatchLocality",
-      "values": [
-        {
-          "id": "81d5e9b0-48d3-4f48-a8df-356e26632b52",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_BATCH_LOCALITY",
-          "text": "Massachusetts, United States"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CollectionId",
-      "values": [
-        {
-          "id": "7e3f6faf-6c98-4ac2-b841-a2845555a119",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_COLLECTION_ID",
-          "text": "2061550"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
-      "values": [
-        {
-          "id": "26a2381c-9eed-4d26-8cf3-ccad03cc6abe",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_DIGITAL_FILM_NBR",
-          "text": "007009252"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/FilmNumber",
-      "values": [
-        {
-          "id": "d583a25f-9453-4366-84a2-0a5f133e0a7f",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_FILM_NBR",
-          "text": "416335"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ImageApid",
-      "values": [
-        {
-          "id": "f03b6286-1ed3-4b1b-8316-19eb54e5f571",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_IMAGE_APID",
-          "text": "TH-1971-31534-33509-77"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ImageNumber",
-      "values": [
-        {
-          "id": "e3a4b62b-2991-4590-9853-f35c918e39e8",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_IMAGE_NBR",
-          "text": "00047"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ImageArk",
-      "values": [
-        {
-          "id": "76a0a1dc-f718-43ff-9120-73f5361c9499",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "IMAGE_ARK",
-          "text": "https://familysearch.org/ark:/61903/3:1:3QS7-L979-Q94W-1"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/FsModelVer",
-      "values": [
-        {
-          "id": "3df26867-adce-4d6d-a61e-3759d7ab7c6c",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_MODEL_VER",
-          "text": "1"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PacketLetter",
-      "values": [
-        {
-          "id": "79c85b91-1d7a-4fb8-bb23-f518416d2cb3",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PACKET_LTR",
-          "text": "H"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PpqId",
-      "values": [
-        {
-          "id": "6157a5e0-4199-4c5d-b1b3-f50834ae6427",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PPQ_ID",
-          "text": "13-1149"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordGroup",
-      "values": [
-        {
-          "id": "c6ef297d-7cf7-460c-83e7-33a47735179d",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_GROUP",
-          "text": "13-1149; 2020-10-24T06:15:00; cartertp; Massachusetts, Town Births, 1630-1905 - UDE"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordId",
-      "values": [
-        {
-          "id": "2ef6e800-493e-49fb-a854-e786d9742f59",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_ID",
-          "text": "007009252_00047_123"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordNumber",
-      "values": [
-        {
-          "id": "d27b0ae3-e1cb-447a-8afb-5ddee1447e7f",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_NBR",
-          "text": "123"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SortKey",
-      "values": [
-        {
-          "id": "5f32888d-9a12-46e7-9e1b-5e82ee673985",
-          "attribution": {
-            "contributor": {
-              "resource": "http://treatment/SortKeyTreatment/ver/1"
+  "description" : "#sd_p_11115980342",
+  "persons" : [ {
+    "id" : "p_11115980342",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "687698ea-1e9e-4a2d-bc0d-886bd3ed9abf",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "35588d3d-811d-4ec7-97ce-8f2310527656",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
             },
-            "modified": 1603598455238
+            "modified" : 1604977097366
           },
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_SORT_KEY",
-          "text": "0000000007009252_00047_00123_0000000316691939"
-        }
-      ]
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
     },
-    {
-      "type": "http://familysearch.org/types/fields/UdeBatchNumber",
-      "values": [
-        {
-          "id": "d44a4363-c778-4c95-8227-417d29e3310b",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_UDE_BATCH_NBR",
-          "text": "I00791-8"
-        }
-      ]
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/F46D-1HS?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/M6M1-CY1?flag=fsh"
+      }
     },
-    {
-      "type": "http://familysearch.org/types/fields/UniqueId",
-      "values": [
-        {
-          "id": "3768d8d7-a649-4ad5-b861-3f3e571f3a92",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_UNIQUE_ID",
-          "text": "101868569"
-        }
-      ]
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F46D-1HS" ]
     },
-    {
-      "type": "http://familysearch.org/types/fields/FsVisStatus",
-      "values": [
-        {
-          "id": "966bc25b-1102-470e-9cb2-56f3f4e5ebc2",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_VIS_STATUS",
-          "text": "VISIBLE"
-        }
-      ]
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "James Curtis",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "James",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "523f08ba-1dee-47b2-89bc-44f3d8c06902",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "James"
+            }, {
+              "id" : "5f117066-edc3-4cc9-83d5-950aeb193ea0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1604977097351
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "James"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Curtis",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "19433beb-1024-4c82-a7b7-dfd49e65b058",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Curtis"
+            }, {
+              "id" : "957bc0c1-cfc6-4ee1-a055-c4a4c86371ee",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1604977097351
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Curtis"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "f9867ed7-70e8-4488-9422-a2b8ef1911dd",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1604977097344
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "James Curtis"
+          }, {
+            "id" : "a7a5b39e-1912-43f5-af61-88b237621f09",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1604977097351
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "James Curtis"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "25 Nov 1773",
+        "formal" : "+1773-11-25",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "a50bd1ff-ce36-4c1f-81ea-7653e2a36477",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "25 Nov 1773"
+          }, {
+            "id" : "9b5ab866-082d-44f6-81ae-a4d561e37332",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1604977097344
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "25 Nov 1773",
+            "resource" : "+1773-11-25"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "4a26046c-80f9-4672-b032-4ae52ff84653",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1604977097344
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "11"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "4fb0b65b-59a9-4494-be87-a9916e2a420b",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1604977097344
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "25"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "94890119-b5bd-4dfe-b3ec-9aefdd9ca014",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1604977097344
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1773"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America",
+        "description" : "#place_4229023",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "2b3af1e7-3be6-43f8-9b31-da77bafea1a5",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Plymouth, Plymouth, Massachusetts"
+          }, {
+            "id" : "d7e44783-03c1-4cae-bb2c-eb0ebbb58828",
+            "confidence" : "http://confidence/99",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1604977097395
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America",
+            "resource" : "https://www.familysearch.org/platform/places/description/4229023",
+            "qualifiers" : [ {
+              "value" : "1013, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "21c9f73e-67b0-4422-9813-2bfe9d53f659",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "birth"
+        }, {
+          "id" : "b0c48d86-9fd8-4108-9a79-5b7dbd9dccfe",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Birth"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_11115980343",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "085a9568-1292-424e-bf9a-637a18395022",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1604977097366
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
     },
-    {
-      "type": "http://familysearch.org/types/fields/SourcePage",
-      "values": [
-        {
-          "id": "ee6c1f15-6ffd-4e4c-9abb-4f85fddda8df",
-          "type": "http://gedcomx.org/Original",
-          "labelId": "SOURCE_PAGE_ORIG",
-          "text": "v 2 p 83"
-        },
-        {
-          "id": "ef650e93-a22b-4f14-8690-8784d18563cc",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "SOURCE_PAGE",
-          "text": "v 2 p 83"
-        }
-      ]
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/F46D-1H3?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/M6M1-CY1?flag=fsh"
+      }
     },
-    {
-      "type": "http://familysearch.org/types/fields/RecordVersion",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_VERSION",
-          "text": "14"
-        }
-      ]
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F46D-1H3" ]
     },
-    {
-      "type": "http://familysearch.org/types/fields/UserModified",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_USER_MODIFIED",
-          "text": "false"
-        }
-      ]
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "William Curtis",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "767a644c-128d-4c77-8801-40a8556cebe9",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "William"
+            }, {
+              "id" : "9f63cc09-73d4-4c1d-882d-91940e7092db",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1604977097362
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "William"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Curtis",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "81055bd6-bc20-4c6b-8ebd-bd60f4705518",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Curtis"
+            }, {
+              "id" : "bc99584d-7980-4e37-9702-8b43d7401abe",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1604977097362
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Curtis"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "0199b2d5-7afb-4783-9281-acfe9b4c6475",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1604977097351
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "William Curtis"
+          }, {
+            "id" : "e855da83-836a-4020-957c-684369e46b2d",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1604977097362
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "William Curtis"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_11115980344",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "99f16e2f-6168-4e81-9c1b-783415287c35",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1604977097366
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
     },
-    {
-      "type": "http://familysearch.org/types/fields/CdsBatchId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_CDS_BATCH_ID",
-          "text": "68585"
-        }
-      ]
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/F46D-1HQ?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/M6M1-CY1?flag=fsh"
+      }
     },
-    {
-      "type": "http://familysearch.org/types/fields/PublicationStatus",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PUB_STATUS",
-          "text": "Production"
-        }
-      ]
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F46D-1HQ" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Hannah",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Hannah",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "31b43e0d-648d-4b91-9987-a380ca68f22f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Hannah"
+            }, {
+              "id" : "130aed70-f0c1-4840-a894-7461126ae105",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1604977097366
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Hannah"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "8bcbe840-ebcb-4f00-bcac-2f1897ad6d6e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1604977097362
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "Hannah"
+          }, {
+            "id" : "b129e1d4-4aa8-4927-b2ad-ad64d62cbda1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1604977097366
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Hannah"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/P8JN-3DPW",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_11115980343",
+      "resourceId" : "p_11115980343"
+    },
+    "person2" : {
+      "resource" : "#p_11115980342",
+      "resourceId" : "p_11115980342"
     }
-  ]
+  }, {
+    "id" : "MM9.1.6/P8JN-3DP4",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_11115980344",
+      "resourceId" : "p_11115980344"
+    },
+    "person2" : {
+      "resource" : "#p_11115980342",
+      "resourceId" : "p_11115980342"
+    }
+  }, {
+    "id" : "MM9.1.6/P8JN-3DPH",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_11115980343",
+      "resourceId" : "p_11115980343"
+    },
+    "person2" : {
+      "resource" : "#p_11115980344",
+      "resourceId" : "p_11115980344"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_2061550",
+    "about" : "https://api.familysearch.org/platform/records/collections/2061550",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223406076,
+    "modified" : 1658155593130,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Massachusetts, United States",
+        "description" : "#place_1-52"
+      },
+      "temporal" : {
+        "original" : "1627/2001",
+        "formal" : "1627/2001"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Massachusetts, Town Clerk, Vital and Town Records, 1626-2001"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2061550" ]
+    }
+  }, {
+    "id" : "src_r_316691939",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1",
+    "componentOf" : {
+      "description" : "#sd_c_2061550"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1603371662741,
+    "modified" : 1658155593130,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America"
+      },
+      "temporal" : {
+        "original" : "25 Nov 1773"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1 : 20 May 2022), Entry for James Curtis, 25 Nov 1773; citing Birth, Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009252."
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for James Curtis, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/101868569" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:M6M1-CY1" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2061550?arkName=1:2:M6M1-CY1"
+    }
+  }, {
+    "id" : "sd_p_11115980342",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:F46D-1HS",
+    "componentOf" : {
+      "description" : "#src_r_316691939"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:F46D-1HS : 20 May 2022), James Curtis, 25 Nov 1773; citing Birth, Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009252."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "James Curtis, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F46D-1HS" ]
+    }
+  }, {
+    "id" : "sd_p_11115980343",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:F46D-1H3",
+    "componentOf" : {
+      "description" : "#src_r_316691939"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:F46D-1H3 : 20 May 2022), William Curtis in entry for James Curtis, 25 Nov 1773; citing Birth, Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009252."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "William Curtis in entry for James Curtis, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F46D-1H3" ]
+    }
+  }, {
+    "id" : "sd_p_11115980344",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:F46D-1HQ",
+    "componentOf" : {
+      "description" : "#src_r_316691939"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:F46D-1HQ : 20 May 2022), Hannah in entry for James Curtis, 25 Nov 1773; citing Birth, Plymouth, Plymouth, Massachusetts Bay Colony, British Colonial America, Massachusetts Secretary of the Commonwealth, Boston; FHL microfilm 007009252."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Hannah in entry for James Curtis, \"Massachusetts, Town Clerk, Vital and Town Records, 1626-2001\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F46D-1HQ" ]
+    }
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QS7-L979-Q94W-1?cc=2061550",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QS7-L979-Q94W-1?cc=2061550" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2061550?arkName=3:1:3QS7-L979-Q94W-1"
+    }
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/4229023",
+      "resourceId" : "place_4229023"
+    }
+  }, {
+    "id" : "place_1-52",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/52?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "2ac95267-2b48-4656-b000-f8fb4b589241",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "283647"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "81d5e9b0-48d3-4f48-a8df-356e26632b52",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Massachusetts, United States"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "7e3f6faf-6c98-4ac2-b841-a2845555a119",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "2061550"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "26a2381c-9eed-4d26-8cf3-ccad03cc6abe",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007009252"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "id" : "d583a25f-9453-4366-84a2-0a5f133e0a7f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "416335"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageApid",
+    "values" : [ {
+      "id" : "f03b6286-1ed3-4b1b-8316-19eb54e5f571",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_APID",
+      "text" : "TH-1971-31534-33509-77"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNumber",
+    "values" : [ {
+      "id" : "e3a4b62b-2991-4590-9853-f35c918e39e8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "00047"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageArk",
+    "values" : [ {
+      "id" : "76a0a1dc-f718-43ff-9120-73f5361c9499",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_ARK",
+      "text" : "https://familysearch.org/ark:/61903/3:1:3QS7-L979-Q94W-1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "3df26867-adce-4d6d-a61e-3759d7ab7c6c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PacketLetter",
+    "values" : [ {
+      "id" : "79c85b91-1d7a-4fb8-bb23-f518416d2cb3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PACKET_LTR",
+      "text" : "H"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "6157a5e0-4199-4c5d-b1b3-f50834ae6427",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "13-1149"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "c6ef297d-7cf7-460c-83e7-33a47735179d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "13-1149; 2020-10-24T06:15:00; cartertp; Massachusetts, Town Births, 1630-1905 - UDE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "2ef6e800-493e-49fb-a854-e786d9742f59",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "007009252_00047_123"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "id" : "d27b0ae3-e1cb-447a-8afb-5ddee1447e7f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "123"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "5f32888d-9a12-46e7-9e1b-5e82ee673985",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1603598455238
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000007009252_00047_00123_0000000316691939"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
+    "values" : [ {
+      "id" : "d44a4363-c778-4c95-8227-417d29e3310b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "I00791-8"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "3768d8d7-a649-4ad5-b861-3f3e571f3a92",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "101868569"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "966bc25b-1102-470e-9cb2-56f3f4e5ebc2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourcePage",
+    "values" : [ {
+      "id" : "ee6c1f15-6ffd-4e4c-9abb-4f85fddda8df",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_PAGE_ORIG",
+      "text" : "v 2 p 83"
+    }, {
+      "id" : "ef650e93-a22b-4f14-8690-8784d18563cc",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_PAGE",
+      "text" : "v 2 p 83"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "14"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "68585"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
 }

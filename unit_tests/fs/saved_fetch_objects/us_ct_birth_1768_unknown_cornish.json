@@ -1,774 +1,610 @@
 {
-  "id": "r_106206841435",
-  "lang": "en",
-  "attribution": {
-    "contributor": {
-      "resource": "cis.user.MMMM-7Y77"
+  "id" : "r_106206841435",
+  "lang" : "en",
+  "attribution" : {
+    "contributor" : {
+      "resource" : "cis.user.MMMM-7Y77"
     },
-    "modified": 1525150987084,
-    "changeMessageResource": "http://familysearch.org/types/reasons/127657"
+    "modified" : 1525150987084,
+    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
   },
-  "links": {
-    "next": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR?seek=next"
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR?seek=next"
     },
-    "prev": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR?seek=prev"
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR?seek=prev"
     },
-    "self": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR"
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR"
     }
   },
-  "description": "#sd_p_104377322633",
-  "persons": [
-    {
-      "id": "p_104377322633",
-      "extracted": true,
-      "principal": true,
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/QP7Z-TGYP?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/QR2K-NLJR?flag=fsh"
-        }
+  "description" : "#sd_p_104377322633",
+  "persons" : [ {
+    "id" : "p_104377322633",
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/QP7Z-TGYP?flag=fsh"
       },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP"]
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/QR2K-NLJR?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP" ]
+    },
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "2 Oct 1768",
+        "formal" : "+1768-10-02",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "3657fb3d-cd98-4533-ad9e-1debfc9d8045",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1550679767789
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "2 Oct 1768"
+          }, {
+            "id" : "ddf32190-538d-4a59-b95f-ee1e63bdfbae",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1550679767789
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "2 Oct 1768",
+            "resource" : "+1768-10-02"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "68bc6556-8a58-4b2d-962b-e73d81df8be4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Oct"
+          }, {
+            "id" : "e21bca5e-2941-4d0d-8b4b-dd98248a9bd2",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1550679767789
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "10"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "81354b3d-8204-41db-a03d-0e2a7dcbf2f8",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "2"
+          }, {
+            "id" : "d212d83b-0d53-4e0c-9b17-d1857e7411c0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1550679767789
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "2"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "f3baf991-2166-4425-b087-29fc6a41ea3c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1768"
+          }, {
+            "id" : "1ca29180-8ef2-4db8-84ac-5850568059d4",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1550679767789
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1768"
+          } ]
+        } ]
       },
-      "facts": [
-        {
-          "type": "http://gedcomx.org/Birth",
-          "date": {
-            "original": "2 Oct 1768",
-            "formal": "+1768-10-02",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Date",
-                "values": [
-                  {
-                    "id": "3657fb3d-cd98-4533-ad9e-1debfc9d8045",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
-                      },
-                      "modified": 1550679767789
-                    },
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_DATE_ORIG",
-                    "text": "2 Oct 1768"
-                  },
-                  {
-                    "id": "ddf32190-538d-4a59-b95f-ee1e63bdfbae",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
-                      },
-                      "modified": 1550679767789
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DATE",
-                    "text": "2 Oct 1768",
-                    "resource": "+1768-10-02"
-                  }
-                ]
+      "place" : {
+        "original" : "Simsbury, Hartford, Connecticut Colony, British Colonial America",
+        "description" : "#place_3779470",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "61e03b39-ee83-4c21-b511-0ee58db61175",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
               },
-              {
-                "type": "http://gedcomx.org/Month",
-                "values": [
-                  {
-                    "id": "68bc6556-8a58-4b2d-962b-e73d81df8be4",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_MONTH_ORIG",
-                    "text": "Oct"
-                  },
-                  {
-                    "id": "e21bca5e-2941-4d0d-8b4b-dd98248a9bd2",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
-                      },
-                      "modified": 1550679767789
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_MONTH",
-                    "text": "10"
-                  }
-                ]
+              "modified" : 1649989388189
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Simsbury, Connecticut"
+          }, {
+            "id" : "712950de-fd60-4322-8a91-4346f3c20acf",
+            "confidence" : "http://confidence/97",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
               },
-              {
-                "type": "http://gedcomx.org/Day",
-                "values": [
-                  {
-                    "id": "81354b3d-8204-41db-a03d-0e2a7dcbf2f8",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_DAY_ORIG",
-                    "text": "2"
-                  },
-                  {
-                    "id": "d212d83b-0d53-4e0c-9b17-d1857e7411c0",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
-                      },
-                      "modified": 1550679767789
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DAY",
-                    "text": "2"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Year",
-                "values": [
-                  {
-                    "id": "f3baf991-2166-4425-b087-29fc6a41ea3c",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_YEAR_ORIG",
-                    "text": "1768"
-                  },
-                  {
-                    "id": "1ca29180-8ef2-4db8-84ac-5850568059d4",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatmentV2/ver/2"
-                      },
-                      "modified": 1550679767789
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_YEAR",
-                    "text": "1768"
-                  }
-                ]
-              }
-            ]
-          },
-          "place": {
-            "original": "Simsbury, Hartford, Connecticut Colony, British Colonial America",
-            "description": "#place_3779470",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Place",
-                "values": [
-                  {
-                    "id": "61e03b39-ee83-4c21-b511-0ee58db61175",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/LocalityTreatment/ver/1"
-                      },
-                      "modified": 1649989388189
-                    },
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_PLACE_ORIG",
-                    "text": "Simsbury, Connecticut"
-                  },
-                  {
-                    "id": "712950de-fd60-4322-8a91-4346f3c20acf",
-                    "confidence": "http://confidence/97",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/LocalityTreatment/ver/1"
-                      },
-                      "modified": 1649989388208
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_PLACE",
-                    "text": "Simsbury, Hartford, Connecticut Colony, British Colonial America",
-                    "resource": "https://www.familysearch.org/platform/places/description/3779470",
-                    "qualifiers": [
-                      {
-                        "value": "913, 910",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/City",
-                "values": [
-                  {
-                    "id": "8cde5ac9-4e31-4e9e-8ab0-7bf46c9d1a6b",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_CITY_ORIG",
-                    "text": "Simsbury"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/State",
-                "values": [
-                  {
-                    "id": "7391b49c-024a-4d77-95b0-03fe84c6ea64",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_STATE_ORIG",
-                    "text": "Connecticut"
-                  }
-                ]
-              }
-            ]
-          },
-          "primary": true,
-          "fields": [
-            {
-              "type": "http://familysearch.org/types/fields/EventType",
-              "values": [
-                {
-                  "id": "8f035134-a0cf-414b-adfa-6ae12da042ed",
-                  "type": "http://gedcomx.org/Original",
-                  "labelId": "EVENT_TYPE_ORIG",
-                  "text": "Birth"
+              "modified" : 1649989388208
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Simsbury, Hartford, Connecticut Colony, British Colonial America",
+            "resource" : "https://www.familysearch.org/platform/places/description/3779470",
+            "qualifiers" : [ {
+              "value" : "913, 910",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "8cde5ac9-4e31-4e9e-8ab0-7bf46c9d1a6b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Simsbury"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "7391b49c-024a-4d77-95b0-03fe84c6ea64",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Connecticut"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "8f035134-a0cf-414b-adfa-6ae12da042ed",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Birth"
+        }, {
+          "id" : "f8bc7ce2-f600-4109-adf3-c1fed3e3c83c",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Birth"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_104377322632",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/QP7Z-TGYG?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/QR2K-NLJR?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYG" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Joel Cornish",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Joel",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "0e5be2f0-2074-4741-88c2-0d1444d8f477",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Joel"
+            }, {
+              "id" : "992b5d5f-3db8-4a9f-bb0e-93b0293c3c3e",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
                 },
-                {
-                  "id": "f8bc7ce2-f600-4109-adf3-c1fed3e3c83c",
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "EVENT_TYPE",
-                  "text": "Birth"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "p_104377322632",
-      "extracted": true,
-      "principal": false,
-      "gender": {
-        "type": "http://gedcomx.org/Male",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "type": "http://gedcomx.org/Interpreted",
-                "resource": "http://gedcomx.org/Male"
-              }
-            ]
-          }
-        ]
-      },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/QP7Z-TGYG?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/QR2K-NLJR?flag=fsh"
-        }
-      },
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYG"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Joel Cornish",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Joel",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "id": "0e5be2f0-2074-4741-88c2-0d1444d8f477",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_FTHR_NAME_GN_ORIG",
-                          "text": "Joel"
-                        },
-                        {
-                          "id": "992b5d5f-3db8-4a9f-bb0e-93b0293c3c3e",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1562944874985
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_FTHR_NAME_GN",
-                          "text": "Joel"
-                        }
-                      ]
-                    }
-                  ]
+                "modified" : 1562944874985
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Joel"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Cornish",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "983db034-e868-41b1-be27-a9a4fd992794",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Cornish"
+            }, {
+              "id" : "3ed808a4-041a-40e7-92c3-7f26e7f11e91",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
                 },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Cornish",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "id": "983db034-e868-41b1-be27-a9a4fd992794",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_FTHR_NAME_SURN_ORIG",
-                          "text": "Cornish"
-                        },
-                        {
-                          "id": "3ed808a4-041a-40e7-92c3-7f26e7f11e91",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1562944874985
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_FTHR_NAME_SURN",
-                          "text": "Cornish"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "id": "0f5c7e5c-5a5e-48d5-90b1-d37365a957b6",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1562944874958
-                      },
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "PR_FTHR_NAME_ORIG",
-                      "text": "Joel Cornish"
-                    },
-                    {
-                      "id": "4d5da07e-3e08-44aa-b501-ebe790f1999d",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1562944874985
-                      },
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_FTHR_NAME",
-                      "text": "Joel Cornish"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+                "modified" : 1562944874985
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Cornish"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "0f5c7e5c-5a5e-48d5-90b1-d37365a957b6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1562944874958
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "Joel Cornish"
+          }, {
+            "id" : "4d5da07e-3e08-44aa-b501-ebe790f1999d",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1562944874985
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Joel Cornish"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/PZ12-S5DK",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_104377322632",
+      "resourceId" : "p_104377322632"
+    },
+    "person2" : {
+      "resource" : "#p_104377322633",
+      "resourceId" : "p_104377322633"
     }
-  ],
-  "relationships": [
-    {
-      "id": "MM9.1.6/PZ12-S5DK",
-      "type": "http://gedcomx.org/ParentChild",
-      "person1": {
-        "resource": "#p_104377322632",
-        "resourceId": "p_104377322632"
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_2843390",
+    "about" : "https://api.familysearch.org/platform/records/collections/2843390",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1521148380243,
+    "modified" : 1658155185903,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Connecticut, United States",
+        "description" : "#place_1-31"
       },
-      "person2": {
-        "resource": "#p_104377322633",
-        "resourceId": "p_104377322633"
-      }
+      "temporal" : {
+        "original" : "1710/1850",
+        "formal" : "1710/1850"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Connecticut, Vital Records, Prior to 1850"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2843390" ]
     }
-  ],
-  "sourceDescriptions": [
-    {
-      "id": "sd_c_2843390",
-      "about": "https://api.familysearch.org/platform/records/collections/2843390",
-      "resourceType": "http://gedcomx.org/Collection",
-      "created": 1521148380243,
-      "modified": 1658155185903,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "Connecticut, United States",
-            "description": "#place_1-31"
-          },
-          "temporal": {
-            "original": "1710/1850",
-            "formal": "1710/1850"
-          },
-          "recordType": "http://gedcomx.org/Vital"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Connecticut, Vital Records, Prior to 1850"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/2843390"]
-      }
+  }, {
+    "id" : "src_r_106206841435",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR",
+    "componentOf" : {
+      "description" : "#sd_c_2843390"
     },
-    {
-      "id": "src_r_106206841435",
-      "mediaType": "image/jpeg",
-      "about": "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR",
-      "componentOf": {
-        "description": "#sd_c_2843390"
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1550676084477,
+    "modified" : 1658155185903,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Simsbury, Hartford, Connecticut Colony, British Colonial America"
       },
-      "resourceType": "http://gedcomx.org/Record",
-      "created": 1550676084477,
-      "modified": 1658155185903,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "Simsbury, Hartford, Connecticut Colony, British Colonial America"
-          },
-          "temporal": {
-            "original": "2 Oct 1768"
-          },
-          "recordType": "http://gedcomx.org/Birth"
-        }
-      ],
-      "citations": [
-        {
-          "value": "\"Connecticut, Vital Records, Prior to 1850,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR : 15 April 2022), Entry for <Unknown>, 2 Oct 1768; citing Birth, Simsbury, Hartford, Connecticut Colony, British Colonial America, Compiled by Lucius A. and Lucius B. Barbour, housed at State Library, Hartford, Connecticut; FHL microfilm 008272228."
-        }
-      ],
-      "sources": [
-        {
-          "description": "#sd2",
-          "descriptionId": "sd2"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Entry for <Unknown>, \"Connecticut, Vital Records, Prior to 1850\""
-        }
-      ],
-      "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR"]
+      "temporal" : {
+        "original" : "2 Oct 1768"
       },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2843390?arkName=1:2:QR2K-NLJR"
-      }
+      "recordType" : "http://gedcomx.org/Birth"
+    } ],
+    "citations" : [ {
+      "value" : "\"Connecticut, Vital Records, Prior to 1850,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR : 15 April 2022), Entry for <Unknown>, 2 Oct 1768; citing Birth, Simsbury, Hartford, Connecticut Colony, British Colonial America, Compiled by Lucius A. and Lucius B. Barbour, housed at State Library, Hartford, Connecticut; FHL microfilm 008272228."
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for <Unknown>, \"Connecticut, Vital Records, Prior to 1850\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QR2K-NLJR" ]
     },
-    {
-      "id": "sd_p_104377322633",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP",
-      "componentOf": {
-        "description": "#src_r_106206841435"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"Connecticut, Vital Records, Prior to 1850,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP : 15 April 2022), MM9.1.1/QP7Z-TGYP:, 2 Oct 1768; citing Birth, Simsbury, Hartford, Connecticut Colony, British Colonial America, Compiled by Lucius A. and Lucius B. Barbour, housed at State Library, Hartford, Connecticut; FHL microfilm 008272228."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "<Unknown>, \"Connecticut, Vital Records, Prior to 1850\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP"]
-      }
-    },
-    {
-      "id": "sd_p_104377322632",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYG",
-      "componentOf": {
-        "description": "#src_r_106206841435"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"Connecticut, Vital Records, Prior to 1850,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYG : 15 April 2022), Joel Cornish in entry for MM9.1.1/QP7Z-TGYP:, 2 Oct 1768; citing Birth, Simsbury, Hartford, Connecticut Colony, British Colonial America, Compiled by Lucius A. and Lucius B. Barbour, housed at State Library, Hartford, Connecticut; FHL microfilm 008272228."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Joel Cornish in entry for <Unknown>, \"Connecticut, Vital Records, Prior to 1850\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYG"]
-      }
-    },
-    {
-      "id": "sd2",
-      "mediaType": "image/jpeg",
-      "about": "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS56-6WL1-6?cc=2843390",
-      "resourceType": "http://gedcomx.org/DigitalArtifact",
-      "repository": {
-        "resourceId": "#a1"
-      },
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS56-6WL1-6?cc=2843390"]
-      },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/2843390?arkName=3:1:3Q9M-CS56-6WL1-6"
-      }
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2843390?arkName=1:2:QR2K-NLJR"
     }
-  ],
-  "agents": [
-    {
-      "id": "a1",
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["www.familysearch.org"]
-      }
+  }, {
+    "id" : "sd_p_104377322633",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP",
+    "componentOf" : {
+      "description" : "#src_r_106206841435"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Connecticut, Vital Records, Prior to 1850,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP : 15 April 2022), MM9.1.1/QP7Z-TGYP:, 2 Oct 1768; citing Birth, Simsbury, Hartford, Connecticut Colony, British Colonial America, Compiled by Lucius A. and Lucius B. Barbour, housed at State Library, Hartford, Connecticut; FHL microfilm 008272228."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "<Unknown>, \"Connecticut, Vital Records, Prior to 1850\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP" ]
     }
-  ],
-  "places": [
-    {
-      "place": {
-        "resource": "https://www.familysearch.org/platform/places/description/3779470",
-        "resourceId": "place_3779470"
-      }
+  }, {
+    "id" : "sd_p_104377322632",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYG",
+    "componentOf" : {
+      "description" : "#src_r_106206841435"
     },
-    {
-      "id": "place_1-31",
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/31?context=1"]
-      }
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Connecticut, Vital Records, Prior to 1850,\" database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYG : 15 April 2022), Joel Cornish in entry for MM9.1.1/QP7Z-TGYP:, 2 Oct 1768; citing Birth, Simsbury, Hartford, Connecticut Colony, British Colonial America, Compiled by Lucius A. and Lucius B. Barbour, housed at State Library, Hartford, Connecticut; FHL microfilm 008272228."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Joel Cornish in entry for <Unknown>, \"Connecticut, Vital Records, Prior to 1850\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYG" ]
     }
-  ],
-  "fields": [
-    {
-      "type": "http://familysearch.org/types/fields/BatchId",
-      "values": [
-        {
-          "id": "e003deed-5aea-43c3-a24a-7890220eb9bd",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_BATCH_ID",
-          "text": "b7cd37cf-50a9-4954-9735-9c6680881e7b"
-        }
-      ]
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS56-6WL1-6?cc=2843390",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
     },
-    {
-      "type": "http://familysearch.org/types/fields/CollectionId",
-      "values": [
-        {
-          "id": "28278656-2df7-41fa-bbc2-6ead8faa6696",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_COLLECTION_ID",
-          "text": "2843390"
-        }
-      ]
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS56-6WL1-6?cc=2843390" ]
     },
-    {
-      "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
-      "values": [
-        {
-          "id": "6da5ec79-4b08-4239-b02e-9c06c4fd0af7",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_DIGITAL_FILM_NBR",
-          "text": "008272228"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/IdxProjectId",
-      "values": [
-        {
-          "id": "d7588e66-7ab2-45e0-a7a0-29830c4fb33e",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_IDX_PROJECT_ID",
-          "text": "7e2d7584-0f9b-4de7-83f2-22d6e6c2fa47"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/IdxTemplateId",
-      "values": [
-        {
-          "id": "1d56d3f1-adb8-450c-afef-053c54b8a27a",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_IDX_TEMPLATE_ID",
-          "text": "https://familysearch.org/indexing-service/template/templates/record.template.1643"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ImageApid",
-      "values": [
-        {
-          "id": "f3efea72-2fca-4961-9852-dc5b8a5fc74f",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_IMAGE_APID",
-          "text": "TH-909-76003-181783-98"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ImageNumber",
-      "values": [
-        {
-          "id": "67feedb1-e2c7-41de-9149-d809af613ae5",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_IMAGE_NBR",
-          "text": "04969"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ImageArk",
-      "values": [
-        {
-          "id": "f9458848-b8e7-4f1b-960f-6209fba4f271",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "IMAGE_ARK",
-          "text": "https://familysearch.org/ark:/61903/3:1:3Q9M-CS56-6WL1-6"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/FsModelVer",
-      "values": [
-        {
-          "id": "6fa2ef69-2ff1-43b4-841f-876b56726a6b",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_MODEL_VER",
-          "text": "1"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PpqId",
-      "values": [
-        {
-          "id": "fc6ed75c-3f0d-4b1d-b1b7-a6c0f61cfc7f",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PPQ_ID",
-          "text": "18-0166"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordGroup",
-      "values": [
-        {
-          "id": "03ff66ac-f9cb-48b1-b655-8435aab5f9ec",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_GROUP",
-          "text": "18-0166; 2018-07-26T10:22:29-0600; fairchildbc; 3310; SB; IDX; Connecticut, Vital Records, Prior to 1850 - FSI"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordNumber",
-      "values": [
-        {
-          "id": "e8650703-38f1-4d8e-9b5b-4c11d1d52fb9",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_NBR",
-          "text": "0"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SortKey",
-      "values": [
-        {
-          "id": "26dfc8bb-d7e9-43be-9111-c972d9f8b671",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_SORT_KEY",
-          "text": "0000000008272228_04969_00000_0000106206841435"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/TravelerTitle",
-      "values": [
-        {
-          "id": "b78b7b62-ccb6-48c5-aecd-fd0d5b5f610e",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_TRAVELER_TITLE",
-          "text": "Connecticut, Vital Records, Prior to 1850 - FSI"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/FsVisStatus",
-      "values": [
-        {
-          "id": "ec8a0136-01c1-49f1-a809-994cb24732e8",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_VIS_STATUS",
-          "text": "VISIBLE"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordVersion",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_VERSION",
-          "text": "12"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UserModified",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_USER_MODIFIED",
-          "text": "false"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CdsBatchId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_CDS_BATCH_ID",
-          "text": "68015"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PublicationStatus",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PUB_STATUS",
-          "text": "Production"
-        }
-      ]
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2843390?arkName=3:1:3Q9M-CS56-6WL1-6"
     }
-  ],
-  "additionalAttribution": [
-    {
-      "contributor": {
-        "resource": "cis.user.MMM3-9KLH"
-      },
-      "modified": 1525119970742,
-      "changeMessageResource": "http://familysearch.org/types/reasons/127657"
-    },
-    {
-      "contributor": {
-        "resource": "cis.user.MMM9-GVLS"
-      },
-      "modified": 1522174812295,
-      "changeMessageResource": "http://familysearch.org/types/reasons/127657"
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
     }
-  ]
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/3779470",
+      "resourceId" : "place_3779470"
+    }
+  }, {
+    "id" : "place_1-31",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/31?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "e003deed-5aea-43c3-a24a-7890220eb9bd",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "b7cd37cf-50a9-4954-9735-9c6680881e7b"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "28278656-2df7-41fa-bbc2-6ead8faa6696",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "2843390"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "6da5ec79-4b08-4239-b02e-9c06c4fd0af7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "008272228"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/IdxProjectId",
+    "values" : [ {
+      "id" : "d7588e66-7ab2-45e0-a7a0-29830c4fb33e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IDX_PROJECT_ID",
+      "text" : "7e2d7584-0f9b-4de7-83f2-22d6e6c2fa47"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/IdxTemplateId",
+    "values" : [ {
+      "id" : "1d56d3f1-adb8-450c-afef-053c54b8a27a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IDX_TEMPLATE_ID",
+      "text" : "https://familysearch.org/indexing-service/template/templates/record.template.1643"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageApid",
+    "values" : [ {
+      "id" : "f3efea72-2fca-4961-9852-dc5b8a5fc74f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_APID",
+      "text" : "TH-909-76003-181783-98"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNumber",
+    "values" : [ {
+      "id" : "67feedb1-e2c7-41de-9149-d809af613ae5",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "04969"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageArk",
+    "values" : [ {
+      "id" : "f9458848-b8e7-4f1b-960f-6209fba4f271",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_ARK",
+      "text" : "https://familysearch.org/ark:/61903/3:1:3Q9M-CS56-6WL1-6"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "6fa2ef69-2ff1-43b4-841f-876b56726a6b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "fc6ed75c-3f0d-4b1d-b1b7-a6c0f61cfc7f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "18-0166"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "03ff66ac-f9cb-48b1-b655-8435aab5f9ec",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "18-0166; 2018-07-26T10:22:29-0600; fairchildbc; 3310; SB; IDX; Connecticut, Vital Records, Prior to 1850 - FSI"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "id" : "e8650703-38f1-4d8e-9b5b-4c11d1d52fb9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "0"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "26dfc8bb-d7e9-43be-9111-c972d9f8b671",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000008272228_04969_00000_0000106206841435"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "b78b7b62-ccb6-48c5-aecd-fd0d5b5f610e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Connecticut, Vital Records, Prior to 1850 - FSI"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "ec8a0136-01c1-49f1-a809-994cb24732e8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "12"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "68015"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ],
+  "additionalAttribution" : [ {
+    "contributor" : {
+      "resource" : "cis.user.MMM3-9KLH"
+    },
+    "modified" : 1525119970742,
+    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
+  }, {
+    "contributor" : {
+      "resource" : "cis.user.MMM9-GVLS"
+    },
+    "modified" : 1522174812295,
+    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
+  } ]
 }

@@ -1,712 +1,557 @@
 {
-  "id": "r_147246117900",
-  "lang": "en",
-  "links": {
-    "next": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M?seek=next"
-    },
-    "prev": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M?seek=prev"
-    },
-    "self": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M"
-    }
-  },
-  "description": "#sd_p_213404892600",
-  "persons": [
-    {
-      "id": "p_213404892600",
-      "extracted": true,
-      "principal": true,
-      "gender": {
-        "type": "http://gedcomx.org/Female",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "id": "6805f32d-c6a5-4865-9aac-12e8b957f815",
-                "type": "http://gedcomx.org/Original",
-                "labelId": "PR_SEX_CODE_ORIG",
-                "text": "F"
-              },
-              {
-                "id": "ffddcc87-5da0-4d08-afc8-becbdea4c744",
-                "attribution": {
-                  "contributor": {
-                    "resource": "http://treatment/CvGenderTreatment/ver/1"
-                  },
-                  "modified": 1586986520578
-                },
-                "type": "http://gedcomx.org/Interpreted",
-                "labelId": "PR_SEX_CODE",
-                "text": "Female",
-                "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
-              }
-            ]
-          }
-        ]
+    "id" : "r_147246117900",
+    "lang" : "en",
+    "links" : {
+      "next" : {
+        "href" : "https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M?seek=next"
       },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/CGGS-5YZM?flag=fsh"
+      "prev" : {
+        "href" : "https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M?seek=prev"
+      },
+      "self" : {
+        "href" : "https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M"
+      }
+    },
+    "description" : "#sd_p_213404892600",
+    "persons" : [ {
+      "id" : "p_213404892600",
+      "extracted" : true,
+      "principal" : true,
+      "gender" : {
+        "type" : "http://gedcomx.org/Female",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Gender",
+          "values" : [ {
+            "id" : "6805f32d-c6a5-4865-9aac-12e8b957f815",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_SEX_CODE_ORIG",
+            "text" : "F"
+          }, {
+            "id" : "ffddcc87-5da0-4d08-afc8-becbdea4c744",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/CvGenderTreatment/ver/1"
+              },
+              "modified" : 1586986520578
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_SEX_CODE",
+            "text" : "Female",
+            "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+          } ]
+        } ]
+      },
+      "links" : {
+        "persona" : {
+          "href" : "https://api.familysearch.org/platform/records/personas/CGGS-5YZM?flag=fsh"
         },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/WL1F-CY2M?flag=fsh"
+        "record" : {
+          "href" : "https://api.familysearch.org/platform/records/records/WL1F-CY2M?flag=fsh"
         }
       },
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM"]
+      "identifiers" : {
+        "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM" ]
       },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Ms Teresa Carole Ann Fitchie",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Teresa Carole Ann",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "id": "c593158e-3fcf-4c92-aeee-b06044f69472",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_GN_ORIG",
-                          "text": "TERESA CAROLE ANN"
-                        },
-                        {
-                          "id": "43ba4031-4b25-4041-8dac-355f78ad23e4",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1611613966297
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_GN",
-                          "text": "Teresa Carole Ann"
-                        }
-                      ]
-                    }
-                  ]
+      "names" : [ {
+        "type" : "http://gedcomx.org/BirthName",
+        "nameForms" : [ {
+          "fullText" : "Ms Teresa Carole Ann Fitchie",
+          "parts" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "value" : "Teresa Carole Ann",
+            "fields" : [ {
+              "type" : "http://gedcomx.org/Given",
+              "values" : [ {
+                "id" : "c593158e-3fcf-4c92-aeee-b06044f69472",
+                "type" : "http://gedcomx.org/Original",
+                "labelId" : "PR_NAME_GN_ORIG",
+                "text" : "TERESA CAROLE ANN"
+              }, {
+                "id" : "43ba4031-4b25-4041-8dac-355f78ad23e4",
+                "attribution" : {
+                  "contributor" : {
+                    "resource" : "http://treatment/NameTreatment/ver/1"
+                  },
+                  "modified" : 1611613966297
                 },
-                {
-                  "type": "http://gedcomx.org/Prefix",
-                  "value": "Ms",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Prefix",
-                      "values": [
-                        {
-                          "id": "dcd15ecd-9ac1-48fa-af81-63afb9772daf",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_PRE_ORIG",
-                          "text": "MS"
-                        },
-                        {
-                          "id": "6702920c-f577-49bb-8c97-c5449c40201a",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1611613966297
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_PRE",
-                          "text": "Ms"
-                        }
-                      ]
-                    }
-                  ]
+                "type" : "http://gedcomx.org/Interpreted",
+                "labelId" : "PR_NAME_GN",
+                "text" : "Teresa Carole Ann"
+              } ]
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Prefix",
+            "value" : "Ms",
+            "fields" : [ {
+              "type" : "http://gedcomx.org/Prefix",
+              "values" : [ {
+                "id" : "dcd15ecd-9ac1-48fa-af81-63afb9772daf",
+                "type" : "http://gedcomx.org/Original",
+                "labelId" : "PR_NAME_PRE_ORIG",
+                "text" : "MS"
+              }, {
+                "id" : "6702920c-f577-49bb-8c97-c5449c40201a",
+                "attribution" : {
+                  "contributor" : {
+                    "resource" : "http://treatment/NameTreatment/ver/1"
+                  },
+                  "modified" : 1611613966297
                 },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Fitchie",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "id": "fd675e99-a651-41c0-b9da-cf6b2088f0e5",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_SURN_ORIG",
-                          "text": "FITCHIE"
-                        },
-                        {
-                          "id": "fd67713b-3ab1-4d36-9389-fa7edda02579",
-                          "attribution": {
-                            "contributor": {
-                              "resource": "http://treatment/NameTreatment/ver/1"
-                            },
-                            "modified": 1611613966297
-                          },
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_SURN",
-                          "text": "Fitchie"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "id": "fe31ccee-8301-4c62-b337-4e3eaa1a880e",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1611613966288
-                      },
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "PR_NAME_ORIG",
-                      "text": "MS TERESA CAROLE ANN FITCHIE"
-                    },
-                    {
-                      "id": "57e10893-74af-4cd9-a666-f6c6d41ff1ed",
-                      "attribution": {
-                        "contributor": {
-                          "resource": "http://treatment/NameTreatment/ver/1"
-                        },
-                        "modified": 1611613966297
-                      },
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_NAME",
-                      "text": "Ms Teresa Carole Ann Fitchie"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "facts": [
-        {
-          "type": "http://gedcomx.org/Death",
-          "date": {
-            "original": "23 Jul 2002",
-            "formal": "+2002-07-23",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Date",
-                "values": [
-                  {
-                    "id": "18293f9c-4698-4d0b-95b1-3e5c14c893ac",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_DATE_ORIG",
-                    "text": "23 Jul 2002"
+                "type" : "http://gedcomx.org/Interpreted",
+                "labelId" : "PR_NAME_PRE",
+                "text" : "Ms"
+              } ]
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Surname",
+            "value" : "Fitchie",
+            "fields" : [ {
+              "type" : "http://gedcomx.org/Surname",
+              "values" : [ {
+                "id" : "fd675e99-a651-41c0-b9da-cf6b2088f0e5",
+                "type" : "http://gedcomx.org/Original",
+                "labelId" : "PR_NAME_SURN_ORIG",
+                "text" : "FITCHIE"
+              }, {
+                "id" : "fd67713b-3ab1-4d36-9389-fa7edda02579",
+                "attribution" : {
+                  "contributor" : {
+                    "resource" : "http://treatment/NameTreatment/ver/1"
                   },
-                  {
-                    "id": "a5049ac7-d5e5-437f-848c-52b7bb985b10",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
-                      },
-                      "modified": 1586986520508
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DATE",
-                    "text": "23 Jul 2002",
-                    "resource": "+2002-07-23"
-                  }
-                ]
+                  "modified" : 1611613966297
+                },
+                "type" : "http://gedcomx.org/Interpreted",
+                "labelId" : "PR_NAME_SURN",
+                "text" : "Fitchie"
+              } ]
+            } ]
+          } ],
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Name",
+            "values" : [ {
+              "id" : "fe31ccee-8301-4c62-b337-4e3eaa1a880e",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1611613966288
               },
-              {
-                "type": "http://gedcomx.org/Month",
-                "values": [
-                  {
-                    "id": "2f374dee-0af8-4c30-963d-de9055588732",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_MONTH_ORIG",
-                    "text": "Jul"
-                  },
-                  {
-                    "id": "2a92e136-3958-439b-92b0-99196e34b2e8",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
-                      },
-                      "modified": 1586986520508
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_MONTH",
-                    "text": "7"
-                  }
-                ]
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_ORIG",
+              "text" : "MS TERESA CAROLE ANN FITCHIE"
+            }, {
+              "id" : "57e10893-74af-4cd9-a666-f6c6d41ff1ed",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1611613966297
               },
-              {
-                "type": "http://gedcomx.org/Day",
-                "values": [
-                  {
-                    "id": "65df7cce-7b18-42f6-a033-5d450cd053da",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_DAY_ORIG",
-                    "text": "23"
-                  },
-                  {
-                    "id": "14be1284-bff6-4378-9609-b805dd87fbf6",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
-                      },
-                      "modified": 1586986520508
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DAY",
-                    "text": "23"
-                  }
-                ]
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME",
+              "text" : "Ms Teresa Carole Ann Fitchie"
+            } ]
+          } ]
+        } ]
+      } ],
+      "facts" : [ {
+        "type" : "http://gedcomx.org/Death",
+        "date" : {
+          "original" : "23 Jul 2002",
+          "formal" : "+2002-07-23",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Date",
+            "values" : [ {
+              "id" : "18293f9c-4698-4d0b-95b1-3e5c14c893ac",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "EVENT_DATE_ORIG",
+              "text" : "23 Jul 2002"
+            }, {
+              "id" : "a5049ac7-d5e5-437f-848c-52b7bb985b10",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+                },
+                "modified" : 1586986520508
               },
-              {
-                "type": "http://gedcomx.org/Year",
-                "values": [
-                  {
-                    "id": "3995ab3e-c1d6-450d-a7e0-7aef961e0ac5",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_YEAR_ORIG",
-                    "text": "2002"
-                  },
-                  {
-                    "id": "2053d337-e08e-4c84-bb2b-1cba6a0ae212",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/2"
-                      },
-                      "modified": 1586986520508
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_YEAR",
-                    "text": "2002"
-                  }
-                ]
-              }
-            ]
-          },
-          "place": {
-            "original": "Canterbury, Kent, England, United Kingdom",
-            "description": "#place_1612351",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Place",
-                "values": [
-                  {
-                    "id": "30a49256-e13c-4c03-94fc-0026f3c174e9",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_PLACE_ORIG",
-                    "text": "Canterbury, Kent, England"
-                  },
-                  {
-                    "id": "0f7ebcba-8531-43c8-83f9-3e3c5765f082",
-                    "confidence": "http://confidence/94",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/LocalityTreatment/ver/1"
-                      },
-                      "modified": 1586986520588
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_PLACE",
-                    "text": "Canterbury, Kent, England, United Kingdom",
-                    "resource": "https://www.familysearch.org/platform/places/description/1612351",
-                    "qualifiers": [
-                      {
-                        "value": "1010, 1014, 1013",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ]
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "EVENT_DATE",
+              "text" : "23 Jul 2002",
+              "resource" : "+2002-07-23"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Month",
+            "values" : [ {
+              "id" : "2f374dee-0af8-4c30-963d-de9055588732",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "EVENT_MONTH_ORIG",
+              "text" : "Jul"
+            }, {
+              "id" : "2a92e136-3958-439b-92b0-99196e34b2e8",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+                },
+                "modified" : 1586986520508
               },
-              {
-                "type": "http://gedcomx.org/City",
-                "values": [
-                  {
-                    "id": "a9fe501f-c690-45a8-bca5-a8f4a20825c1",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_CITY_ORIG",
-                    "text": "Canterbury"
-                  },
-                  {
-                    "id": "c8bd4410-c6a6-4388-ae91-1bc44ab325fa",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_CITY",
-                    "text": "Canterbury"
-                  }
-                ]
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "EVENT_MONTH",
+              "text" : "7"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Day",
+            "values" : [ {
+              "id" : "65df7cce-7b18-42f6-a033-5d450cd053da",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "EVENT_DAY_ORIG",
+              "text" : "23"
+            }, {
+              "id" : "14be1284-bff6-4378-9609-b805dd87fbf6",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+                },
+                "modified" : 1586986520508
               },
-              {
-                "type": "http://gedcomx.org/Country",
-                "values": [
-                  {
-                    "id": "02ccdd52-269e-4d64-8362-38fde71d1ee9",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_COUNTRY_ORIG",
-                    "text": "England"
-                  },
-                  {
-                    "id": "a784982d-64f5-43e3-ac64-dc2fc8cefa5f",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_COUNTRY",
-                    "text": "England"
-                  }
-                ]
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "EVENT_DAY",
+              "text" : "23"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Year",
+            "values" : [ {
+              "id" : "3995ab3e-c1d6-450d-a7e0-7aef961e0ac5",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "EVENT_YEAR_ORIG",
+              "text" : "2002"
+            }, {
+              "id" : "2053d337-e08e-4c84-bb2b-1cba6a0ae212",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+                },
+                "modified" : 1586986520508
               },
-              {
-                "type": "http://gedcomx.org/County",
-                "values": [
-                  {
-                    "id": "a0822984-1c26-4c56-a1d9-bbac9fcf037f",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_COUNTY_ORIG",
-                    "text": "Kent"
-                  },
-                  {
-                    "id": "32b7b134-0d8b-44b8-80a1-c7135dabe336",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_COUNTY",
-                    "text": "Kent"
-                  }
-                ]
-              }
-            ]
-          },
-          "primary": true,
-          "fields": [
-            {
-              "type": "http://familysearch.org/types/fields/EventType",
-              "values": [
-                {
-                  "id": "1dcc1ce3-28bf-4be2-a2f7-c21f18b11712",
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "EVENT_TYPE",
-                  "text": "Death"
-                }
-              ]
-            }
-          ]
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "EVENT_YEAR",
+              "text" : "2002"
+            } ]
+          } ]
         },
-        {
-          "type": "http://gedcomx.org/Residence",
-          "place": {
-            "original": "CT4 6",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/PostalCode",
-                "values": [
-                  {
-                    "id": "cc97417c-0698-4f56-886b-09fe9aec9a78",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_RES_POSTAL_CODE_ORIG",
-                    "text": "CT4 6",
-                    "qualifiers": [
-                      {
-                        "value": "PLACE",
-                        "name": "http://familysearch.org/types/qualifiers/Info"
-                      }
-                    ]
-                  },
-                  {
-                    "id": "6257b099-fc7d-400e-87e5-a67187aed57b",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_RES_POSTAL_CODE",
-                    "text": "CT4 6",
-                    "qualifiers": [
-                      {
-                        "value": "PLACE",
-                        "name": "http://familysearch.org/types/qualifiers/Info"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ],
-  "sourceDescriptions": [
-    {
-      "id": "sd_c_3665073",
-      "about": "https://api.familysearch.org/platform/records/collections/3665073",
-      "resourceType": "http://gedcomx.org/Collection",
-      "created": 1585787420979,
-      "modified": 1611675814390,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "England",
-            "description": "#place_1986340"
-          },
-          "temporal": {
-            "original": "1998/2015",
-            "formal": "1998/2015"
-          },
-          "recordType": "http://gedcomx.org/Death"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "England Death Records, 1998-2015"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/3665073"]
-      }
-    },
-    {
-      "id": "src_r_147246117900",
-      "mediaType": "image/jpeg",
-      "about": "https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M",
-      "componentOf": {
-        "description": "#sd_c_3665073"
-      },
-      "resourceType": "http://gedcomx.org/Record",
-      "created": 1585825631892,
-      "modified": 1611675814390,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "Canterbury, Kent, England, United Kingdom"
-          },
-          "temporal": {
-            "original": "23 Jul 2002"
-          },
-          "recordType": "http://gedcomx.org/Death"
-        }
-      ],
-      "citations": [
-        {
-          "value": "\"England Death Records, 1998-2015\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M : 25 January 2021), Entry for Ms Teresa Carole Ann Fitchie, 2002."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Entry for Ms Teresa Carole Ann Fitchie, \"England Death Records, 1998-2015\""
-        }
-      ],
-      "identifiers": {
-        "$": ["https://www.familysearch.org/platform/externalId/easy/15000550284938"],
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M"]
-      },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/3665073?arkName=1:2:WL1F-CY2M"
-      }
-    },
-    {
-      "id": "sd_p_213404892600",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM",
-      "componentOf": {
-        "description": "#src_r_147246117900"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"England Death Records, 1998-2015\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM : 25 January 2021), Ms Teresa Carole Ann Fitchie, 2002."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Ms Teresa Carole Ann Fitchie, \"England Death Records, 1998-2015\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM"]
-      }
-    }
-  ],
-  "places": [
-    {
-      "place": {
-        "resource": "https://www.familysearch.org/platform/places/description/1612351",
-        "resourceId": "place_1612351"
-      }
-    },
-    {
-      "id": "place_1986340",
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986340"]
-      }
-    }
-  ],
-  "fields": [
-    {
-      "type": "http://familysearch.org/types/fields/ExtData",
-      "values": [
-        {
-          "id": "2236d88d-b665-4aef-b327-7ce30e4da812",
-          "type": "http://gedcomx.org/Original",
-          "labelId": "EXT_DATA_ORIG",
-          "text": "{\"source_document_nbr_orig\": \"CT\"}"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/ExtId",
-      "values": [
-        {
-          "id": "5e32b254-68a6-4c80-9a25-a3b1b31e8b00",
-          "type": "http://gedcomx.org/Original",
-          "labelId": "EXT_ID_ORIG",
-          "text": "80143348"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/BatchLocality",
-      "values": [
-        {
-          "id": "e22aaa2b-caac-495b-a8f0-1f1a74f519e4",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_BATCH_LOCALITY",
-          "text": "England"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CollectionId",
-      "values": [
-        {
-          "id": "c1d432b3-b93e-46f1-a66f-862ea41ac550",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_COLLECTION_ID",
-          "text": "3665073"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/FsModelVer",
-      "values": [
-        {
-          "id": "10324316-c203-4433-aea1-bff9e6611613",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_MODEL_VER",
-          "text": "1"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PpqId",
-      "values": [
-        {
-          "id": "145a7a41-2e5e-41ea-80f0-b47891017e4d",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PPQ_ID",
-          "text": "20-0226"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordGroup",
-      "values": [
-        {
-          "id": "9d2f4222-06b9-4d18-b95e-af55ec57d4e0",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_GROUP",
-          "text": "20-0226; 2020-03-31T15:56:00-0700; cartertp; England, Death Records, 1998-2015, (Wilmington)"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SortKey",
-      "values": [
-        {
-          "id": "bfbfa31c-e3c8-4a6b-98f7-0c2118c393ff",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_SORT_KEY",
-          "text": "15000550284938_80143348"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UniqueId",
-      "values": [
-        {
-          "id": "79348829-ff2d-4970-bf58-bda29fac2eeb",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_UNIQUE_ID",
-          "text": "15000550284938"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/FsVisStatus",
-      "values": [
-        {
-          "id": "4257ce62-8ee8-4127-9cab-bbcadf57b964",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_VIS_STATUS",
-          "text": "VISIBLE"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SourcePostalCode",
-      "values": [
-        {
-          "id": "d62676b4-e060-475f-98ae-077d2b0df8a3",
-          "type": "http://gedcomx.org/Original",
-          "labelId": "SOURCE_POSTAL_CODE_ORIG",
-          "text": "CT4"
+        "place" : {
+          "original" : "Canterbury, Kent, England, United Kingdom",
+          "description" : "#place_1612351",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Place",
+            "values" : [ {
+              "id" : "30a49256-e13c-4c03-94fc-0026f3c174e9",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "EVENT_PLACE_ORIG",
+              "text" : "Canterbury, Kent, England"
+            }, {
+              "id" : "0f7ebcba-8531-43c8-83f9-3e3c5765f082",
+              "confidence" : "http://confidence/94",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/LocalityTreatment/ver/1"
+                },
+                "modified" : 1586986520588
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "EVENT_PLACE",
+              "text" : "Canterbury, Kent, England, United Kingdom",
+              "resource" : "https://www.familysearch.org/platform/places/description/1612351",
+              "qualifiers" : [ {
+                "value" : "1010, 1014, 1013",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/City",
+            "values" : [ {
+              "id" : "a9fe501f-c690-45a8-bca5-a8f4a20825c1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "EVENT_CITY_ORIG",
+              "text" : "Canterbury"
+            }, {
+              "id" : "c8bd4410-c6a6-4388-ae91-1bc44ab325fa",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "EVENT_CITY",
+              "text" : "Canterbury"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/Country",
+            "values" : [ {
+              "id" : "02ccdd52-269e-4d64-8362-38fde71d1ee9",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "EVENT_COUNTRY_ORIG",
+              "text" : "England"
+            }, {
+              "id" : "a784982d-64f5-43e3-ac64-dc2fc8cefa5f",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "EVENT_COUNTRY",
+              "text" : "England"
+            } ]
+          }, {
+            "type" : "http://gedcomx.org/County",
+            "values" : [ {
+              "id" : "a0822984-1c26-4c56-a1d9-bbac9fcf037f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "EVENT_COUNTY_ORIG",
+              "text" : "Kent"
+            }, {
+              "id" : "32b7b134-0d8b-44b8-80a1-c7135dabe336",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "EVENT_COUNTY",
+              "text" : "Kent"
+            } ]
+          } ]
         },
-        {
-          "id": "fc578e75-a86a-47c9-9dc7-542e4a37401c",
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "SOURCE_POSTAL_CODE",
-          "text": "CT4"
+        "primary" : true,
+        "fields" : [ {
+          "type" : "http://familysearch.org/types/fields/EventType",
+          "values" : [ {
+            "id" : "1dcc1ce3-28bf-4be2-a2f7-c21f18b11712",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_TYPE",
+            "text" : "Death"
+          } ]
+        } ]
+      }, {
+        "type" : "http://gedcomx.org/Residence",
+        "place" : {
+          "original" : "CT4 6",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/PostalCode",
+            "values" : [ {
+              "id" : "cc97417c-0698-4f56-886b-09fe9aec9a78",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_RES_POSTAL_CODE_ORIG",
+              "text" : "CT4 6",
+              "qualifiers" : [ {
+                "value" : "PLACE",
+                "name" : "http://familysearch.org/types/qualifiers/Info"
+              } ]
+            }, {
+              "id" : "6257b099-fc7d-400e-87e5-a67187aed57b",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_RES_POSTAL_CODE",
+              "text" : "CT4 6",
+              "qualifiers" : [ {
+                "value" : "PLACE",
+                "name" : "http://familysearch.org/types/qualifiers/Info"
+              } ]
+            } ]
+          } ]
         }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordVersion",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_VERSION",
-          "text": "4"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UserModified",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_USER_MODIFIED",
-          "text": "false"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CdsBatchId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_CDS_BATCH_ID",
-          "text": "61023"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PublicationStatus",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PUB_STATUS",
-          "text": "Production"
-        }
-      ]
-    }
-  ]
-}
+      } ]
+    } ],
+    "sourceDescriptions" : [ {
+      "id" : "sd_c_3665073",
+      "about" : "https://api.familysearch.org/platform/records/collections/3665073",
+      "resourceType" : "http://gedcomx.org/Collection",
+      "created" : 1585787420979,
+      "modified" : 1611675814390,
+      "coverage" : [ {
+        "spatial" : {
+          "original" : "England",
+          "description" : "#place_1986340"
+        },
+        "temporal" : {
+          "original" : "1998/2015",
+          "formal" : "1998/2015"
+        },
+        "recordType" : "http://gedcomx.org/Death"
+      } ],
+      "titles" : [ {
+        "lang" : "en",
+        "value" : "England Death Records, 1998-2015"
+      } ],
+      "identifiers" : {
+        "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/3665073" ]
+      }
+    }, {
+      "id" : "src_r_147246117900",
+      "mediaType" : "image/jpeg",
+      "about" : "https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M",
+      "componentOf" : {
+        "description" : "#sd_c_3665073"
+      },
+      "resourceType" : "http://gedcomx.org/Record",
+      "created" : 1585825631892,
+      "modified" : 1611675814390,
+      "coverage" : [ {
+        "spatial" : {
+          "original" : "Canterbury, Kent, England, United Kingdom"
+        },
+        "temporal" : {
+          "original" : "23 Jul 2002"
+        },
+        "recordType" : "http://gedcomx.org/Death"
+      } ],
+      "citations" : [ {
+        "value" : "\"England Death Records, 1998-2015\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M : 25 January 2021), Entry for Ms Teresa Carole Ann Fitchie, 2002."
+      } ],
+      "titles" : [ {
+        "lang" : "en",
+        "value" : "Entry for Ms Teresa Carole Ann Fitchie, \"England Death Records, 1998-2015\""
+      } ],
+      "identifiers" : {
+        "$" : [ "https://www.familysearch.org/platform/externalId/easy/15000550284938" ],
+        "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:WL1F-CY2M" ]
+      },
+      "descriptor" : {
+        "resource" : "https://www.familysearch.org/service/cds/recapi/collections/3665073?arkName=1:2:WL1F-CY2M"
+      }
+    }, {
+      "id" : "sd_p_213404892600",
+      "about" : "https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM",
+      "componentOf" : {
+        "description" : "#src_r_147246117900"
+      },
+      "resourceType" : "http://gedcomx.org/Person",
+      "citations" : [ {
+        "value" : "\"England Death Records, 1998-2015\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM : 25 January 2021), Ms Teresa Carole Ann Fitchie, 2002."
+      } ],
+      "titles" : [ {
+        "lang" : "en",
+        "value" : "Ms Teresa Carole Ann Fitchie, \"England Death Records, 1998-2015\""
+      } ],
+      "identifiers" : {
+        "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM" ]
+      }
+    } ],
+    "places" : [ {
+      "place" : {
+        "resource" : "https://www.familysearch.org/platform/places/description/1612351",
+        "resourceId" : "place_1612351"
+      }
+    }, {
+      "id" : "place_1986340",
+      "identifiers" : {
+        "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986340" ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://familysearch.org/types/fields/ExtData",
+      "values" : [ {
+        "id" : "2236d88d-b665-4aef-b327-7ce30e4da812",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_DATA_ORIG",
+        "text" : "{\"source_document_nbr_orig\": \"CT\"}"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/ExtId",
+      "values" : [ {
+        "id" : "5e32b254-68a6-4c80-9a25-a3b1b31e8b00",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_ID_ORIG",
+        "text" : "80143348"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/BatchLocality",
+      "values" : [ {
+        "id" : "e22aaa2b-caac-495b-a8f0-1f1a74f519e4",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_BATCH_LOCALITY",
+        "text" : "England"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CollectionId",
+      "values" : [ {
+        "id" : "c1d432b3-b93e-46f1-a66f-862ea41ac550",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_COLLECTION_ID",
+        "text" : "3665073"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/FsModelVer",
+      "values" : [ {
+        "id" : "10324316-c203-4433-aea1-bff9e6611613",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_MODEL_VER",
+        "text" : "1"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/PpqId",
+      "values" : [ {
+        "id" : "145a7a41-2e5e-41ea-80f0-b47891017e4d",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_PPQ_ID",
+        "text" : "20-0226"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/RecordGroup",
+      "values" : [ {
+        "id" : "9d2f4222-06b9-4d18-b95e-af55ec57d4e0",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_GROUP",
+        "text" : "20-0226; 2020-03-31T15:56:00-0700; cartertp; England, Death Records, 1998-2015, (Wilmington)"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "bfbfa31c-e3c8-4a6b-98f7-0c2118c393ff",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "15000550284938_80143348"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/UniqueId",
+      "values" : [ {
+        "id" : "79348829-ff2d-4970-bf58-bda29fac2eeb",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNIQUE_ID",
+        "text" : "15000550284938"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/FsVisStatus",
+      "values" : [ {
+        "id" : "4257ce62-8ee8-4127-9cab-bbcadf57b964",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_VIS_STATUS",
+        "text" : "VISIBLE"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/SourcePostalCode",
+      "values" : [ {
+        "id" : "d62676b4-e060-475f-98ae-077d2b0df8a3",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_POSTAL_CODE_ORIG",
+        "text" : "CT4"
+      }, {
+        "id" : "fc578e75-a86a-47c9-9dc7-542e4a37401c",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "SOURCE_POSTAL_CODE",
+        "text" : "CT4"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/RecordVersion",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_VERSION",
+        "text" : "4"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/UserModified",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_USER_MODIFIED",
+        "text" : "false"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/CdsBatchId",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_CDS_BATCH_ID",
+        "text" : "61023"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/PublicationStatus",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_PUB_STATUS",
+        "text" : "Production"
+      } ]
+    } ]
+  }

@@ -1,684 +1,512 @@
 {
-  "id": "r_21668312773",
-  "lang": "en",
-  "links": {
-    "next": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6?seek=next"
+  "id" : "r_21668312773",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6?seek=next"
     },
-    "prev": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6?seek=prev"
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6?seek=prev"
     },
-    "self": {
-      "href": "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6"
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6"
     }
   },
-  "description": "#sd_p_10463015045",
-  "persons": [
-    {
-      "id": "p_10463015045",
-      "extracted": true,
-      "principal": true,
-      "gender": {
-        "type": "http://gedcomx.org/Male",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "type": "http://gedcomx.org/Interpreted",
-                "labelId": "PR_SEX_CODE",
-                "text": "Male"
-              }
-            ]
-          }
-        ]
-      },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/XZJC-SH7?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/1LLM-3S6?flag=fsh"
-        }
-      },
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XZJC-SH7"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Parker Adelbert Childs",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Parker Adelbert",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_GN_ORIG",
-                          "text": "Parker Adelbert"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_GN",
-                          "text": "Parker Adelbert"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Childs",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_NAME_SURN_ORIG",
-                          "text": "CHILDS"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "PR_NAME_SURN",
-                          "text": "Childs"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "PR_NAME_ORIG",
-                      "text": "Parker Adelbert CHILDS"
-                    },
-                    {
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "PR_NAME",
-                      "text": "Parker Adelbert Childs"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+  "description" : "#sd_p_10463015045",
+  "persons" : [ {
+    "id" : "p_10463015045",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male"
+        } ]
+      } ]
     },
-    {
-      "id": "p_10463015046",
-      "extracted": true,
-      "principal": true,
-      "gender": {
-        "type": "http://gedcomx.org/Female",
-        "fields": [
-          {
-            "type": "http://gedcomx.org/Gender",
-            "values": [
-              {
-                "type": "http://gedcomx.org/Interpreted",
-                "labelId": "SP_SEX_CODE",
-                "text": "Female"
-              }
-            ]
-          }
-        ]
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/XZJC-SH7?flag=fsh"
       },
-      "links": {
-        "persona": {
-          "href": "https://api.familysearch.org/platform/records/personas/XZJC-SHW?flag=fsh"
-        },
-        "record": {
-          "href": "https://api.familysearch.org/platform/records/records/1LLM-3S6?flag=fsh"
-        }
-      },
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XZJC-SHW"]
-      },
-      "names": [
-        {
-          "type": "http://gedcomx.org/BirthName",
-          "nameForms": [
-            {
-              "fullText": "Joannah Elizabeth Coats",
-              "parts": [
-                {
-                  "type": "http://gedcomx.org/Given",
-                  "value": "Joannah Elizabeth",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Given",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "SP_NAME_GN_ORIG",
-                          "text": "Joannah Elizabeth"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "SP_NAME_GN",
-                          "text": "Joannah Elizabeth"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "http://gedcomx.org/Surname",
-                  "value": "Coats",
-                  "fields": [
-                    {
-                      "type": "http://gedcomx.org/Surname",
-                      "values": [
-                        {
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "SP_NAME_SURN_ORIG",
-                          "text": "COATS"
-                        },
-                        {
-                          "type": "http://gedcomx.org/Interpreted",
-                          "labelId": "SP_NAME_SURN",
-                          "text": "Coats"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "fields": [
-                {
-                  "type": "http://gedcomx.org/Name",
-                  "values": [
-                    {
-                      "type": "http://gedcomx.org/Original",
-                      "labelId": "SP_NAME_ORIG",
-                      "text": "Joannah Elizabeth COATS"
-                    },
-                    {
-                      "type": "http://gedcomx.org/Interpreted",
-                      "labelId": "SP_NAME",
-                      "text": "Joannah Elizabeth Coats"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "relationships": [
-    {
-      "id": "MM9.1.6/RRNG-77P",
-      "type": "http://gedcomx.org/Couple",
-      "person1": {
-        "resource": "#p_10463015045",
-        "resourceId": "p_10463015045"
-      },
-      "person2": {
-        "resource": "#p_10463015046",
-        "resourceId": "p_10463015046"
-      },
-      "facts": [
-        {
-          "type": "http://gedcomx.org/Marriage",
-          "date": {
-            "original": "4 Mar 1873",
-            "formal": "+1873-03-04",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Date",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_DATE_ORIG",
-                    "text": "3/4/1873"
-                  },
-                  {
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://treatment/StandardsDateTreatment/ver/1"
-                      },
-                      "modified": 1539715504590
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DATE",
-                    "text": "4 Mar 1873",
-                    "resource": "+1873-03-04"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Month",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_MONTH_ORIG",
-                    "text": "3"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_MONTH",
-                    "text": "Mar"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Day",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_DAY",
-                    "text": "04"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Year",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_YEAR_ORIG",
-                    "text": "1873"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_YEAR",
-                    "text": "1873"
-                  }
-                ]
-              }
-            ]
-          },
-          "place": {
-            "original": "Springville, Utah, Utah, United States",
-            "fields": [
-              {
-                "type": "http://gedcomx.org/Place",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_PLACE_ORIG",
-                    "text": "Springville, Utah, Utah, United States"
-                  },
-                  {
-                    "confidence": "http://confidence/94",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_PLACE",
-                    "text": "Springville, Utah, Utah, United States",
-                    "resource": "https://www.familysearch.org/platform/places/description/5311482",
-                    "qualifiers": [
-                      {
-                        "value": "1013;1010;1011;1014",
-                        "name": "StdQualifier"
-                      },
-                      {
-                        "value": "Springville, Utah, Utah, United States",
-                        "name": "Context"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/City",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_CITY_ORIG",
-                    "text": "Springville"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_CITY",
-                    "text": "Springville"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/County",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_COUNTY_ORIG",
-                    "text": "Utah"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_COUNTY",
-                    "text": "Utah"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/State",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "EVENT_STATE_ORIG",
-                    "text": "Utah"
-                  },
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_STATE",
-                    "text": "Utah"
-                  }
-                ]
-              },
-              {
-                "type": "http://gedcomx.org/Country",
-                "values": [
-                  {
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "EVENT_COUNTRY",
-                    "text": "United States"
-                  }
-                ]
-              }
-            ]
-          },
-          "primary": true,
-          "fields": [
-            {
-              "type": "http://familysearch.org/types/fields/EventType",
-              "values": [
-                {
-                  "type": "http://gedcomx.org/Interpreted",
-                  "labelId": "EVENT_TYPE",
-                  "text": "Marriage"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "sourceDescriptions": [
-    {
-      "id": "sd_c_1854302",
-      "about": "https://api.familysearch.org/platform/records/collections/1854302",
-      "resourceType": "http://gedcomx.org/Collection",
-      "created": 1382223766491,
-      "modified": 1620285341785,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "United States",
-            "description": "#place_1"
-          },
-          "temporal": {
-            "original": "1846/2008",
-            "formal": "1846/2008"
-          },
-          "recordType": "http://gedcomx.org/Vital"
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en_US",
-          "value": "United States Western States Marriage Index"
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/platform/records/collections/1854302"]
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/1LLM-3S6?flag=fsh"
       }
     },
-    {
-      "id": "src_r_21668312773",
-      "mediaType": "image/jpeg",
-      "about": "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6",
-      "componentOf": {
-        "description": "#sd_c_1854302"
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XZJC-SH7" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Parker Adelbert Childs",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Parker Adelbert",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Parker Adelbert"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Parker Adelbert"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Childs",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "CHILDS"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Childs"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Parker Adelbert CHILDS"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Parker Adelbert Childs"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_10463015046",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "text" : "Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://api.familysearch.org/platform/records/personas/XZJC-SHW?flag=fsh"
       },
-      "resourceType": "http://gedcomx.org/Record",
-      "created": 1539715504807,
-      "modified": 1620285341785,
-      "coverage": [
-        {
-          "spatial": {
-            "original": "Springville, Utah, Utah, United States"
-          },
-          "temporal": {
-            "original": "4 Mar 1873"
-          },
-          "recordType": "http://gedcomx.org/Vital"
-        }
-      ],
-      "citations": [
-        {
-          "value": "\"United States Western States Marriage Index\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:1LLM-3S6 : 19 October 2018), Entry for Parker Adelbert Childs and Joannah Elizabeth Coats, 1873."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Entry for Parker Adelbert Childs and Joannah Elizabeth Coats, \"United States Western States Marriage Index\""
-        }
-      ],
-      "identifiers": {
-        "$": ["https://www.familysearch.org/platform/externalId/easy/1000779959215"],
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6"]
-      },
-      "descriptor": {
-        "resource": "https://www.familysearch.org/service/cds/recapi/collections/1854302?arkName=1:2:1LLM-3S6"
+      "record" : {
+        "href" : "https://api.familysearch.org/platform/records/records/1LLM-3S6?flag=fsh"
       }
     },
-    {
-      "id": "sd_p_10463015045",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:XZJC-SH7",
-      "componentOf": {
-        "description": "#src_r_21668312773"
-      },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"United States Western States Marriage Index\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XZJC-SH7 : 19 October 2018), Parker Adelbert Childs and Joannah Elizabeth Coats, 1873."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Parker Adelbert Childs, \"United States Western States Marriage Index\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XZJC-SH7"]
-      }
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XZJC-SHW" ]
     },
-    {
-      "id": "sd_p_10463015046",
-      "about": "https://www.familysearch.org/ark:/61903/1:1:XZJC-SHW",
-      "componentOf": {
-        "description": "#src_r_21668312773"
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Joannah Elizabeth Coats",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Joannah Elizabeth",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Joannah Elizabeth"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Joannah Elizabeth"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Coats",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "COATS"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Coats"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Joannah Elizabeth COATS"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Joannah Elizabeth Coats"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/RRNG-77P",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_10463015045",
+      "resourceId" : "p_10463015045"
+    },
+    "person2" : {
+      "resource" : "#p_10463015046",
+      "resourceId" : "p_10463015046"
+    },
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "4 Mar 1873",
+        "formal" : "+1873-03-04",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "3/4/1873"
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
+              },
+              "modified" : 1539715504590
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "4 Mar 1873",
+            "resource" : "+1873-03-04"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "3"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "Mar"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "04"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1873"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1873"
+          } ]
+        } ]
       },
-      "resourceType": "http://gedcomx.org/Person",
-      "citations": [
-        {
-          "value": "\"United States Western States Marriage Index\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XZJC-SHW : 19 October 2018), Parker Adelbert Childs and Joannah Elizabeth Coats, 1873."
-        }
-      ],
-      "titles": [
-        {
-          "lang": "en",
-          "value": "Joannah Elizabeth Coats, \"United States Western States Marriage Index\""
-        }
-      ],
-      "identifiers": {
-        "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XZJC-SHW"]
-      }
+      "place" : {
+        "original" : "Springville, Utah, Utah, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Springville, Utah, Utah, United States"
+          }, {
+            "confidence" : "http://confidence/94",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Springville, Utah, Utah, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5311482",
+            "qualifiers" : [ {
+              "value" : "1013;1010;1011;1014",
+              "name" : "StdQualifier"
+            }, {
+              "value" : "Springville, Utah, Utah, United States",
+              "name" : "Context"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Springville"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_CITY",
+            "text" : "Springville"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Utah"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Utah"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Utah"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE",
+            "text" : "Utah"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTRY",
+            "text" : "United States"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Marriage"
+        } ]
+      } ]
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1854302",
+    "about" : "https://api.familysearch.org/platform/records/collections/1854302",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223766491,
+    "modified" : 1620285341785,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "United States",
+        "description" : "#place_1"
+      },
+      "temporal" : {
+        "original" : "1846/2008",
+        "formal" : "1846/2008"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "United States Western States Marriage Index"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/1854302" ]
     }
-  ],
-  "places": [
-    {
-      "id": "place_1",
-      "identifiers": {
-        "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1"]
-      }
+  }, {
+    "id" : "src_r_21668312773",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6",
+    "componentOf" : {
+      "description" : "#sd_c_1854302"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1539715504807,
+    "modified" : 1620285341785,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Springville, Utah, Utah, United States"
+      },
+      "temporal" : {
+        "original" : "4 Mar 1873"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"United States Western States Marriage Index\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:1LLM-3S6 : 19 October 2018), Entry for Parker Adelbert Childs and Joannah Elizabeth Coats, 1873."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Parker Adelbert Childs and Joannah Elizabeth Coats, \"United States Western States Marriage Index\""
+    } ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1000779959215" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:1LLM-3S6" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1854302?arkName=1:2:1LLM-3S6"
     }
-  ],
-  "fields": [
-    {
-      "type": "http://familysearch.org/types/fields/MarriageId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "MARRIAGE_ID",
-          "text": "242974"
-        }
-      ]
+  }, {
+    "id" : "sd_p_10463015045",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:XZJC-SH7",
+    "componentOf" : {
+      "description" : "#src_r_21668312773"
     },
-    {
-      "type": "http://familysearch.org/types/fields/SourceVolumeNbr",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Original",
-          "labelId": "SOURCE_VOLUME_NBR_ORIG",
-          "text": "5"
-        },
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "SOURCE_VOLUME_NBR",
-          "text": "5"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SourcePageNbr",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Original",
-          "labelId": "SOURCE_PAGE_NBR_ORIG",
-          "text": "371"
-        },
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "SOURCE_PAGE_NBR",
-          "text": "371"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/MiscNote",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "NOTE_MISC",
-          "text": "Source: LDS Genealogical Surveys (FHL 1,059,455)"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UniqueId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_UNIQUE_ID",
-          "text": "1000779959215"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CollectionId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_COLLECTION_ID",
-          "text": "1854302"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PpqId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PPQ_ID",
-          "text": "10-0219"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/EventPlaceYearRange",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "EVENT_PLACE_YEAR_RANGE",
-          "text": "1858-1912"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordGroup",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_GROUP",
-          "text": "10-0219; 2018-10-08; 3rd party; US Western Marriages; Dave Frogley"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/SortKey",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_SORT_KEY",
-          "text": "1000779959215"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/RecordVersion",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_RECORD_VERSION",
-          "text": "4"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/UserModified",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_USER_MODIFIED",
-          "text": "false"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/CdsBatchId",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_CDS_BATCH_ID",
-          "text": "46078"
-        }
-      ]
-    },
-    {
-      "type": "http://familysearch.org/types/fields/PublicationStatus",
-      "values": [
-        {
-          "type": "http://gedcomx.org/Interpreted",
-          "labelId": "FS_PUB_STATUS",
-          "text": "Production"
-        }
-      ]
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"United States Western States Marriage Index\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XZJC-SH7 : 19 October 2018), Parker Adelbert Childs and Joannah Elizabeth Coats, 1873."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Parker Adelbert Childs, \"United States Western States Marriage Index\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XZJC-SH7" ]
     }
-  ]
+  }, {
+    "id" : "sd_p_10463015046",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:XZJC-SHW",
+    "componentOf" : {
+      "description" : "#src_r_21668312773"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"United States Western States Marriage Index\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XZJC-SHW : 19 October 2018), Parker Adelbert Childs and Joannah Elizabeth Coats, 1873."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Joannah Elizabeth Coats, \"United States Western States Marriage Index\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XZJC-SHW" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/MarriageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "MARRIAGE_ID",
+      "text" : "242974"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceVolumeNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_VOLUME_NBR_ORIG",
+      "text" : "5"
+    }, {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_VOLUME_NBR",
+      "text" : "5"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_PAGE_NBR_ORIG",
+      "text" : "371"
+    }, {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_PAGE_NBR",
+      "text" : "371"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/MiscNote",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "NOTE_MISC",
+      "text" : "Source: LDS Genealogical Surveys (FHL 1,059,455)"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "1000779959215"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "1854302"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "10-0219"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceYearRange",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_YEAR_RANGE",
+      "text" : "1858-1912"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "10-0219; 2018-10-08; 3rd party; US Western Marriages; Dave Frogley"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "1000779959215"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "4"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "46078"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
 }
