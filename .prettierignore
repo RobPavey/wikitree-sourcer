@@ -1,1 +1,4 @@
-*.html
+unit_tests/*/saved_pages/*.html
+unit_tests/*/*/test/
+unit_tests/*/*/ref/ 
+browser_variants/safari/xcode_project/
