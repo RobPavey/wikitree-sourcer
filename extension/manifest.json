@@ -110,7 +110,7 @@
       "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
     },
     {
-      "matches": ["*://www.newspapers.com/image/*"],
+      "matches": ["*://www.newspapers.com/clip/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
