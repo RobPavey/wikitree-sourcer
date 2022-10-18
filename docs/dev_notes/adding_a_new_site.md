@@ -5,11 +5,25 @@
 The first decision is to choose a unique abbrevation for your new site. This will be all lower case.
 For example FindMyPast is fmp and Scotlands People is scotp. Try to keep it to 8 characters or less.
 
-## Create the extension site folder
+## Use the create_new_site script to setup the files and folders for your new site
+
+This does many steps for you. The one thing it doesn't do it edit the manifest.json files.
+
+To run the script:
+
+`node scripts/create_new_site.js <sitename> <site display name>`
+
+for example:
+
+`node scripts/create_new_site.js trove "Trove (Aus)"`
+
+See the subsections below for what the script does and how they could be done manually if needed.
+
+### It creates the extension site folder
 
 You can see examples such as extension/site/ancestry. You can see that each one has two subfolders: browser and core. This pattern should be followed.
 
-You can either create these folders manually or you can copy any existing site folder and modify it.
+If you don't use the create_new_site script, you can either create these folders manually or you can copy any existing site folder and modify it.
 
 There are certain files that all sites will have and they should follow the naming conventions.
 
@@ -29,27 +43,29 @@ In the core folder:
 - `<site>_options.mjs`
 - `<site>_uri_builder.mjs` : this one is not always needed, depending on how searches and citations links are created
 
-### Add imports in the extension/site/all folder
+### It adds imports in the extension/site/all folder
 
 The only javascript code in the extension that has to be modified for each site added is in the extension/site/all folder. You just need to add one import line to each of these files:
 
 - `extension/site/all/browser/popup_register_search_sites.mjs`
 - `extension/site/all/core/register_site_options.mjs`
 
-## Create the unit tests site folder
+### It creates the unit tests site folder
 
 The unit tests are run locally to check that changes have not changed the output of build_search_url, build_citation etc.
 The is a subfolder under unit_tests for each site.
 
-### Add the unit tests site folder
+### It adds the javascript file on the unit tests site folder
 
-Look at one of the existing ones as an example. There is a main file `<site>\_test.mjs that runs the test. You should follow the pattern of the existing tests with a separate .mjs file for each type of test.
+Look at one of the existing ones as an example. There is a main file `<site>\_test.mjs` that runs the test. You should follow the pattern of the existing tests with a separate .mjs file for each type of test.
 
-### Add the site to scripts/run_test.js
+### It adds the site to scripts/run_test.js
 
 All that is needed is to add one import. This will register the site for testing.
 
 ## Add the site to the manifest.json file(s)
+
+This is not done by the create_new_site script.
 
 In order for the popup to work on your site you need to add the site to the manifest files. Because there are three different manifest files (for Chrome, Firefox and Safari) the same changes need to made to each one.
 
