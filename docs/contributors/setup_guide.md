@@ -26,6 +26,14 @@ This will create a folder called wikitree-sourcer in your current folder. If des
 
 In vscode you can then do "Open Folder" on the new folder.
 
+### Get the latest from the develop branch
+
+This is optional. You could just work in the main branch. But it is best to be up to date with the latest work in the develop branch of the main repo.
+
+`git checkout develop`
+
+The main branch is used for making releases. The develop branch is where completed (or at least reviewed and tested) work resides.
+
 ### Install node.js
 
 It can be downloaded here: https://nodejs.org/en/download/
@@ -61,3 +69,7 @@ If you get lots of errors try running it on a subset of tests like this:
 `node scripts/run_test.js fg extract`
 
 so that you can more easily see the errors.
+
+### Putting changes back into the main repo
+
+This is done via a Pull Request. Pull Requests should target the develop branch of the main repo.
