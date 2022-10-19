@@ -19,6 +19,7 @@
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
+    "*://*.billiongraves.com/*",
     "*://*.findmypast.com/*",
     "*://*.findmypast.co.uk/*",
     "*://*.findmypast.ie/*",
@@ -67,6 +68,11 @@
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
+    },
+    {
+      "matches": ["*://*.billiongraves.com/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/bg/browser/bg_content.js"]
     },
     {
       "matches": [
@@ -134,6 +140,7 @@
   "web_accessible_resources": [
     "site/wikitree/core/wikitree_extract_data.mjs",
     "site/ancestry/core/ancestry_extract_data.mjs",
+    "site/bg/core/bg_extract_data.mjs",
     "site/fg/core/fg_extract_data.mjs",
     "site/fmp/core/fmp_extract_data.mjs",
     "site/freebmd/core/freebmd_extract_data.mjs",

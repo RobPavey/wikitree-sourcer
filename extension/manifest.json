@@ -18,6 +18,7 @@
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
+    "*://*.billiongraves.com/*",
     "*://*.findmypast.com/*",
     "*://*.findmypast.co.uk/*",
     "*://*.findmypast.ie/*",
@@ -70,6 +71,11 @@
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
     },
     {
+      "matches": ["*://*.billiongraves.com/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/bg/browser/bg_content.js"]
+    },
+    {
       "matches": [
         "*://*.findmypast.com/*",
         "*://*.findmypast.co.uk/*",
@@ -110,7 +116,7 @@
       "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
     },
     {
-      "matches": ["*://www.newspapers.com/clip/*"],
+      "matches": ["*://www.newspapers.com/image/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
@@ -152,6 +158,10 @@
         "*://*.ancestrylibrary.ca/*",
         "*://*.ancestrylibrary.com.au/*"
       ]
+    },
+    {
+      "resources": ["site/bg/core/bg_extract_data.mjs"],
+      "matches": ["*://*.billiongraves.com/*"]
     },
     {
       "resources": ["site/fg/core/fg_extract_data.mjs"],

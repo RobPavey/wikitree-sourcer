@@ -25,11 +25,13 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 
 function buildCoreCitation(data, gd, runDate, builder) {
-  builder.sourceTitle = gd.getRefTitle();
+  let options = builder.getOptions();
+
+  let sourceTitle = gd.getRefTitle();
 
   builder.databaseHasImages = false;
 
-  let recordLink = "{{Newspapers.com|" + data.url.split("/")[2] + "}}";
+  let recordLink = "[" + data.url + " Newspapers.com image]";
 
   builder.recordLinkOrTemplate = recordLink;
 

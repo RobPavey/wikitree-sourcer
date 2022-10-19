@@ -22,20 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their search menu items
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/bg_generalize_data.mjs";
+import { buildCitation } from "../core/bg_build_citation.mjs";
 
-// Currently the order that they are imported is the order that they appear in the menu
-// We may have options at some point to control which items appear
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../bg/core/bg_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
-import "../../np/core/np_options.mjs";
+async function setupBgPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage:
+      "It looks like a BillionGraves page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
+    generalizeFailedMessage: "It looks like a BillionGraves page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "bg",
+  };
+  setupSimplePopupMenu(input);
+}
 
+initPopup("bg", setupBgPopupMenu);

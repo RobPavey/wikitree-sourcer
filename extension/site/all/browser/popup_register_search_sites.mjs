@@ -27,6 +27,7 @@ SOFTWARE.
 // Currently the order that they are imported is the order that they appear in the menu
 // We may have options at some point to control which items appear
 import "/site/ancestry/browser/ancestry_popup_search.mjs";
+import "/site/bg/browser/bg_popup_search.mjs";
 import "/site/fmp/browser/fmp_popup_search.mjs";
 import "/site/fs/browser/fs_popup_search.mjs";
 import "/site/fg/browser/fg_popup_search.mjs";
@@ -37,3 +38,4 @@ import "/site/freereg/browser/freereg_popup_search.mjs";
 import "/site/scotp/browser/scotp_popup_search.mjs";
 import "/site/wikitree/browser/wikitree_popup_search.mjs";
 import "/site/np/browser/np_popup_search.mjs";
+
