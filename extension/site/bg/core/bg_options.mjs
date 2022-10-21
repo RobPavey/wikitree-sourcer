@@ -93,6 +93,12 @@ const citationOptionsGroup = {
       unitTestValue: true,
     },
     {
+      optionName: "includeEpitaph",
+      type: "checkbox",
+      label: "Include the epitaph (if any)",
+      defaultValue: true,
+    },
+    {
       optionName: "bracketsRoundName",
       type: "select",
       label: "If the name has a part surronded by brackets (usually maiden name)",

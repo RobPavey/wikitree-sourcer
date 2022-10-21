@@ -1,0 +1,23 @@
+{
+  "url": "https://billiongraves.com/supporting-record/Roderick-McLennan/104134264",
+  "success": true,
+  "fullName": "Roderick McLennan",
+  "deathDate": "1 May 2013",
+  "cemeteryName": "Currie Kirk Cemetery",
+  "streetAddress": "156 Lanark Road West",
+  "addressLocality": "Edinburgh, City of Edinburgh",
+  "addressRegion": "Scotland",
+  "addressCountry": "United Kingdom",
+  "cemeteryFullAddress": "156 Lanark Road West, Edinburgh, City of Edinburgh, Scotland, United Kingdom",
+  "epitaph": "Treasured Memories of A Much Loved Wife Mum & Granny CATHERINE S. McLENNAN Nee ATKINSON Died 23.6.91 Aged 68 Years and RODERICK McLENNAN A Dearly Loved Husband, Dad, Grandad & Great Grandad Died 1.5.13 Aged 89 Years",
+  "relations": [
+    {
+      "name": "Catherine Atkinson",
+      "deathDate": "23 Jun 1991"
+    },
+    {
+      "name": "McLennan"
+    }
+  ],
+  "hasImage": true
+}

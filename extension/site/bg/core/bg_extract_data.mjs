@@ -92,7 +92,18 @@ function extractData(document, url) {
   if (cemeteryFullAddress.length > 0) {
     result.cemeteryFullAddress = cemeteryFullAddress;
   }
- 
+  // Epitaph
+  const epitaphHeading = infoNode.querySelector("[alt='Epitaph']");
+  if (epitaphHeading) {
+    const epitaphNode = epitaphHeading.nextElementSibling;
+    if(epitaphNode) {
+      const epitaphDiv = epitaphNode.querySelector("div");
+      if (epitaphDiv) {
+        result.epitaph = cleanText(epitaphDiv.textContent);
+      }
+    }
+  }
+
   // transcriber + <newline> + date
   const transcriberHeading = infoNode.querySelector("[alt='Transcriber']");
   if (transcriberHeading) {

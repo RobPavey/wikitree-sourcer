@@ -92,7 +92,7 @@ function buildCoreCitation(data, runDate, builder) {
     dataString += relativeString;
   }
 
-  if (data.inscription && options.citation_bg_includeInscription) {
+  if (data.epitaph && options.citation_bg_includeEpitaph) {
     if (options.citation_general_addBreaksWithinBody) {
       dataString += "<br/>";
     } else {
@@ -101,14 +101,14 @@ function buildCoreCitation(data, runDate, builder) {
     if (builder.type != "source" && options.citation_general_addNewlinesWithinBody) {
       dataString += "\n";
     }
-    let inscription = data.inscription.trim();
+    let epitaph = data.epitaph.trim();
     dataString += "''";
-    if (inscription[0] != '"' && inscription[0] != "'") {
+    if (epitaph[0] != '"' && epitaph[0] != "'") {
       dataString += '"';
     }
-    dataString += inscription;
-    let inscriptionEnd = inscription[inscription.length - 1];
-    if (inscriptionEnd != '"' && inscriptionEnd != "'") {
+    dataString += epitaph;
+    let epitaphEnd = epitaph[epitaph.length - 1];
+    if (epitaphEnd != '"' && epitaphEnd != "'") {
       dataString += '"';
     }
     dataString += "''";

@@ -56,7 +56,11 @@ const regressionData = [
     inputPath:"bg/generalized_data/ref/mary_ellen_adams_d_1967",
     typeOfSearch: "SameCollection",
   },
-  
+  {
+    caseName: "roderick_mclennan_d_2013",
+    inputPath:"bg/generalized_data/ref/roderick_mclennan_d_2013",
+    typeOfSearch: "SameCollection",
+  },
 ];
 
 async function runTests(testManager) {
