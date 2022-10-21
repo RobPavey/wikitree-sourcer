@@ -32,8 +32,18 @@ const regressionData = [
     typeOfSearch: "SameCollection",
   },
   {
+    caseName: "c_r_bow_d_1917",
+    inputPath:"bg/generalized_data/ref/c_r_bow_d_1917",
+    typeOfSearch: "SameCollection",
+  },
+  {
     caseName: "francis_weyland_dunn_d_1874",
     inputPath:"bg/generalized_data/ref/francis_weyland_dunn_d_1874",
+    typeOfSearch: "SameCollection",
+  },
+  {
+    caseName: "hanna_delaney_fallon_d_1817",
+    inputPath:"bg/generalized_data/ref/hanna_delaney_fallon_d_1817",
     typeOfSearch: "SameCollection",
   },
   {

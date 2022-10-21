@@ -37,8 +37,16 @@ const regressionData = [
     url: "https://billiongraves.com/grave/Agnes-C-Loudon-Fisher/39500252",
   },
   {
+    caseName: "c_r_bow_d_1917",
+    url: "https://billiongraves.com/grave/C-R-Bow/42252559",
+  },
+  {
     caseName: "francis_weyland_dunn_d_1874",
     url: "https://billiongraves.com/grave/Francis-Wayland-Dunn/7557769",
+  },
+  {
+    caseName: "hanna_delaney_fallon_d_1817",
+    url: "https://billiongraves.com/grave/Hanna-Delaney-Fallon/20263950",
   },
   {
     caseName: "margaret_ann_craney_d_1909",
