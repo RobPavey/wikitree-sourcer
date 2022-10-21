@@ -145,7 +145,7 @@ function extractData(document, url) {
 
   result.success = true;
 
-  //console.log(result);
+  console.log(result);
 
   return result;
 }

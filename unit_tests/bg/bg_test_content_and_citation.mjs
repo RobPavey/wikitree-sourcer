@@ -33,14 +33,21 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   
   {
-    caseName: "agnes_c_fisher_(louden)_d_1905",
+    caseName: "agnes_c_loudon_fisher_d_1905",
     url: "https://billiongraves.com/grave/Agnes-C-Loudon-Fisher/39500252",
   },
   {
     caseName: "francis_weyland_dunn_d_1874",
-    url: "https://billiongraves.com/grave/Francis-Wayland-Dunn/7557769"
+    url: "https://billiongraves.com/grave/Francis-Wayland-Dunn/7557769",
   },
-  
+  {
+    caseName: "margaret_ann_craney_d_1909",
+    url: "https://billiongraves.com/grave/Margaret-Ann-Craney/27550409",
+  },
+  {
+    caseName: "mary_ellen_adams_d_1967",
+    url: "https://billiongraves.com/supporting-record/Mary-Ellen-Adams/102675092",
+  },
 ];
 
 async function runTests(testManager) {

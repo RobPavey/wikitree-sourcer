@@ -96,12 +96,13 @@ function buildSearchUrl(buildUrlInput) {
 
   let countryArray = data.inferCountries();
   if (countryArray.length == 1) {
-    let country = countryArray[0];
-    if("England,Scotland,Ireland,Wales".indexOf(country) !== -1) {
+    const country = countryArray[0];
+    const ukCountries = ["England","Scotland","Northern Ireland","Wales"];
+    if (ukCountries.indexOf(country) !== -1) {
       builder.addCemeteryState(country);
       builder.addCemeteryCountry("United Kingdom");
     } else {  
-      builder.addCemeteryCountry(countryArray[0]);
+      builder.addCemeteryCountry(country);
     } 
   }
   

@@ -57,9 +57,12 @@ function buildCoreCitation(data, runDate, builder) {
   let dataString = "Memorial page for " + nameString;
   if (data.deathDate && data.birthDate) {
     dataString += " (" + data.birthDate + "-" + data.deathDate + ")";
+  } else if (data.birthDate) {
+    dataString += " (b " + data.birthDate + ")";
   } else if (data.deathDate) {
-    dataString += " (d. " + data.deathDate + ")";
+    dataString += " (d " + data.deathDate + ")";
   }
+
 
   if (data.cemeteryName && data.cemeteryFullAddress) {
     dataString += ", citing " + data.cemeteryName + ", " + data.cemeteryFullAddress;

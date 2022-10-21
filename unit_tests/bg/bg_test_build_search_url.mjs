@@ -27,8 +27,23 @@ import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_util
 
 const regressionData = [
   {
-    caseName: "agnes_c_fisher_(louden)_d_1905",
-    inputPath: "bg/generalized_data/ref/england_marriage_reg_handford-3",
+    caseName: "agnes_c_loudon_fisher_d_1905",
+    inputPath: "bg/generalized_data/ref/agnes_c_loudon_fisher_d_1905",
+    typeOfSearch: "SameCollection",
+  },
+  {
+    caseName: "francis_weyland_dunn_d_1874",
+    inputPath:"bg/generalized_data/ref/francis_weyland_dunn_d_1874",
+    typeOfSearch: "SameCollection",
+  },
+  {
+    caseName: "margaret_ann_craney_d_1909",
+    inputPath:"bg/generalized_data/ref/margaret_ann_craney_d_1909",
+    typeOfSearch: "SameCollection",
+  },
+  {
+    caseName: "mary_ellen_adams_d_1967",
+    inputPath:"bg/generalized_data/ref/mary_ellen_adams_d_1967",
     typeOfSearch: "SameCollection",
   },
   

@@ -47,22 +47,33 @@ function generalizeData(input) {
   result.recordType = RT.Memorial;
 
   result.setEventDate(data.deathDate);
+  
   result.setEventPlace(data.cemeteryFullAddress);
 
   if (result.eventPlace) {
     result.eventPlace.streetAddress = data.cemeteryName;
   }
-
-  result.setFullName(data.fullName);
+  if (data.fullName) {
+    // Check for maiden name included
+    if (/^(.+)(\()([\s\S]+)(\))$/.test(data.fullName)) {
+      const nameParts = /^(.+)(\()([\s\S]+)(\))$/.exec(data.fullName);
+      result.setFullName(nameParts[1]);
+      result.lastNameAtBirth = nameParts[3];
+    } else {
+      result.setFullName(data.fullName);
+    }
+  }
 
   result.lastNameAtDeath = result.inferLastName();
-  result.deathDate = result.eventDate;
+  // result.deathDate = result.eventDate;
 
   if (data.ageAtDeath) {
     result.ageAtDeath = data.ageAtDeath;
   }
 
   result.setBirthDate(data.birthDate);
+
+  result.setDeathDate(data.deathDate);
 
 
   // should we use a collection to allow search for same record on Ancestry?

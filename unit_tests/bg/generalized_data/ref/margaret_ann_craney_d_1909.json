@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "Aug 1909"
+  },
+  "eventPlace": {
+    "placeString": "Westgate Road, Newcastle upon Tyne, Tyne and Wear, England, United Kingdom",
+    "streetAddress": "Newcastle upon Tyne (Saint Nicholas) Cemetery"
+  },
+  "name": {
+    "name": "Margaret Ann Craney"
+  },
+  "lastNameAtDeath": "Craney",
+  "deathDate": {
+    "dateString": "Aug 1909"
+  },
+  "hasValidData": true
+}

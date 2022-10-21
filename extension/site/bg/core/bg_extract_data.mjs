@@ -58,32 +58,67 @@ function extractData(document, url) {
     console.log ("bg extractData No fullName found");
     return result; 
   } else {
-     result.fullName = cleanText(fullNameNode.innerText);
+     result.fullName = cleanText(fullNameNode.textContent);
   }
   
   setFromLabelWithItemProp(result, infoNode, "birthDate", "birthDate");
   setFromLabelWithItemProp(result, infoNode, "deathDate", "deathDate");
-  setFromLabelWithItemProp(result, infoNode, "address", "cemeteryAddress");
- 
-  const cemeteryNameNode = infoNode.querySelector("[data-vars-page='Cemetery']");
-  if (cemeteryNameNode) {
-    result.cemeteryName = cleanText(cemeteryNameNode.innerText);
-  }
-  const cemeteryAddress = infoNode.querySelector('[itemprop="address"]');
-  if (cemeteryAddress) {
-    result.cemeteryFullAddress = cleanText(cemeteryAddress.innerText.replace(/\n/g,", "));
-  }
+  setFromLabelWithItemProp(result, infoNode, "name", "cemeteryName");
+  setFromLabelWithItemProp(result, infoNode, "streetAddress", "streetAddress");
+  setFromLabelWithItemProp(result, infoNode, "addressLocality", "addressLocality");
+  setFromLabelWithItemProp(result, infoNode, "addressRegion", "addressRegion");
+  setFromLabelWithItemProp(result, infoNode, "addressCountry", "addressCountry");
   
-  // transcriber + <newline> + date
-  const transcriberNode = infoNode.querySelector("[alt='Transcriber']").nextElementSibling;
-  if (transcriberNode) {
-    result.transcriber = cleanText(transcriberNode.innerText.replace("\n",", "));
+  // Build the full address
+  let cemeteryFullAddress = "";
+  if (result.streetAddress.length > 0) {
+    cemeteryFullAddress = result.streetAddress;
   }
+  if (result.addressLocality.length > 0) {
+    if (cemeteryFullAddress.length) {
+      cemeteryFullAddress += ", ";
+    }
+    cemeteryFullAddress += result.addressLocality;
+  }
+  if (result.addressRegion.length > 0) {
+    cemeteryFullAddress += ", " + result.addressRegion;
+  }
+  if (result.addressCountry.length > 0) {
+    if (cemeteryFullAddress.length) {
+      cemeteryFullAddress += ", ";
+    }
+    cemeteryFullAddress += result.addressCountry;
+  }
+  if (cemeteryFullAddress.length > 0) {
+    result.cemeteryFullAddress = cemeteryFullAddress;
+  }
+ 
+  // transcriber + <newline> + date
+  const transcriberHeading = infoNode.querySelector("[alt='Transcriber']");
+  if (transcriberHeading) {
+    const transcriberNode = transcriberHeading.nextElementSibling;
+    const transcriberNameNode = transcriberNode.querySelector("h2");
+    const transcriberDateNode = transcriberNode.querySelector("div");
+    if (transcriberNameNode) {
+      result.transcriber = cleanText(transcriberNameNode.textContent);
+      if (transcriberDateNode) {
+        result.transcriber += ", " + cleanText(transcriberDateNode.textContent);
+      }
+    }
+  }  
 
   // photographer + <newline> + date
-  const photographerNode = infoNode.querySelector("[alt='Photographer']").nextElementSibling;
-  if (photographerNode) {
-    result.photographer = cleanText(photographerNode.innerText.replace("\n",", "));
+  const photographerHeading = infoNode.querySelector("[alt='Photographer']");
+  if (photographerHeading) {
+    const photographerNode = photographerHeading.nextElementSibling;
+    const photographerNameNode = photographerNode.querySelector("h2");
+    const photographerDateNode = photographerNode.querySelector("div");
+    if (photographerNameNode) {
+      result.photographer = cleanText(photographerNameNode.textContent);
+      if (photographerDateNode) {
+        result.photographer += ", " + cleanText(photographerDateNode.textContent);
+      }
+    }
   }  
 
   const relatedToNodes = document.querySelectorAll('[itemprop="relatedTo"]');
@@ -93,12 +128,12 @@ function extractData(document, url) {
       const relation = {};
       setFromLabelWithItemProp(relation, relatedToNode, "name", "name");
       const birthDateNode = relatedToNode.querySelector("[itemprop='birthDate']");
-      if (birthDateNode && birthDateNode.innerText !== "Not Available") {
-        relation.birthDate = birthDateNode.innerText;
+      if (birthDateNode && cleanText(birthDateNode.textContent) !== "Not Available") {
+        relation.birthDate = cleanText(birthDateNode.textContent);
       }
       const deathDateNode = relatedToNode.querySelector("[itemprop='deathDate']");
-      if (deathDateNode && deathDateNode.innerText !== "Not Available") {
-        relation.deathDate = deathDateNode.innerText;
+      if (deathDateNode && cleanText(deathDateNode.textContent) !== "Not Available") {
+        relation.deathDate = cleanText(deathDateNode.textContent);
       }      
       result.relations.push(relation);
     });
