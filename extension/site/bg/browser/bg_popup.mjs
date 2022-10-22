@@ -31,7 +31,7 @@ async function setupBgPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
     extractFailedMessage:
-      "It looks like a BillionGraves page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
+      "It looks like a BillionGraves page but not a Life Information page.\n\n",
     generalizeFailedMessage: "It looks like a BillionGraves page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,

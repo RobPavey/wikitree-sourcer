@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\n[https://billiongraves.com/supporting-record/Mary-Ellen-Adams/102675092 Memorial page] (accessed 6 May 2021)<br/>\nMemorial page for Mary Ellen Adams (d 3 Dec 1967), citing Belfast City Cemetery, Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom.<br/>Others on memorial :<br/>- William Adams d.2 May 1956<br/>- Noel Adams d.27 Oct 1984<br/>\n</ref>",
+    "citation": "<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nBelfast City Cemetery, Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom<br/>\n[https://billiongraves.com/supporting-record/Mary-Ellen-Adams/102675092 BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Mary Ellen Adams (d 3 Dec 1967); .<br/>Also on memorial : William Adams d 2 May 1956; Noel Adams d 27 Oct 1984.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Mary was mentioned on a memorial in Belfast City Cemetery, Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom with a death date of 3 December 1967.<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\n[https://billiongraves.com/supporting-record/Mary-Ellen-Adams/102675092 Memorial page] (accessed 6 May 2021)<br/>\nMemorial page for Mary Ellen Adams (d 3 Dec 1967), citing Belfast City Cemetery, Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom.<br/>Others on memorial :<br/>- William Adams d.2 May 1956<br/>- Noel Adams d.27 Oct 1984<br/>\n</ref>",
+    "citation": "Mary was mentioned on a memorial in Belfast City Cemetery, Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom with a death date of 3 December 1967.<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nBelfast City Cemetery, Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom<br/>\n[https://billiongraves.com/supporting-record/Mary-Ellen-Adams/102675092 BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Mary Ellen Adams (d 3 Dec 1967); .<br/>Also on memorial : William Adams d 2 May 1956; Noel Adams d 27 Oct 1984.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Memorial''': \"Billion Graves\"<br/>[https://billiongraves.com/supporting-record/Mary-Ellen-Adams/102675092 Memorial page] (accessed 6 May 2021)<br/>Memorial page for Mary Ellen Adams (d 3 Dec 1967), citing Belfast City Cemetery, Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom.<br/>Others on memorial :<br/>- William Adams d.2 May 1956<br/>- Noel Adams d.27 Oct 1984<br/>",
+    "citation": "* '''Memorial''': \"Billion Graves\"<br/>Belfast City Cemetery, Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom<br/>[https://billiongraves.com/supporting-record/Mary-Ellen-Adams/102675092 BillionGraves memorial] (accessed 6 May 2021)<br/>Memorial page for Mary Ellen Adams (d 3 Dec 1967); .<br/>Also on memorial : William Adams d 2 May 1956; Noel Adams d 27 Oct 1984.",
     "type": "source"
   }
 }

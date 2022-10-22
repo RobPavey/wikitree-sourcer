@@ -121,10 +121,10 @@ const citationOptionsGroup = {
   ],
 };
 
-registerSubsectionForOptions("search", "bg", "Billion Graves");
+registerSubsectionForOptions("search", "bg", "BillionGraves");
 registerSiteSearchPopupOptionsGroup("bg", 4, 4);
 registerSubheadingForOptions("search", "bg", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 
-registerSubsectionForOptions("citation", "bg", "Billion Graves");
+registerSubsectionForOptions("citation", "bg", "BillionGraves");
 registerOptionsGroup(citationOptionsGroup);

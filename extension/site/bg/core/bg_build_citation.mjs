@@ -27,7 +27,7 @@ function buildCoreCitation(data, runDate, builder) {
   // Example citation:
   // Burial: Billion Graves.
   // Citing Oak Grove Cemetery, Hillsdale, Hillsdale County, Michigan, USA
-  // [<url> Memorial page] (accessed 4 April 2022)
+  // [<url> BillionGraves memorial] (accessed 4 April 2022)
   // William Henry Pavey (1 Dec 1875–14 Apr 1961)
 
   let options = builder.getOptions();
@@ -38,7 +38,7 @@ function buildCoreCitation(data, runDate, builder) {
 
   builder.sourceTitle = sourceTitle;
 
-  let recordLink = "[" + data.url + " Memorial page]";
+  let recordLink = "[" + data.url + " BillionGraves memorial]";
   builder.recordLinkOrTemplate = recordLink;
 
   // The name string can contain brackets
@@ -53,6 +53,9 @@ function buildCoreCitation(data, runDate, builder) {
     }
   }
 
+  if (data.cemeteryName && data.cemeteryFullAddress) {
+    builder.sourceReference +=  data.cemeteryName + ", " + data.cemeteryFullAddress;
+  }
 
   let dataString = "Memorial page for " + nameString;
   if (data.deathDate && data.birthDate) {
@@ -62,33 +65,33 @@ function buildCoreCitation(data, runDate, builder) {
   } else if (data.deathDate) {
     dataString += " (d " + data.deathDate + ")";
   }
-
-
-  if (data.cemeteryName && data.cemeteryFullAddress) {
-    dataString += ", citing " + data.cemeteryName + ", " + data.cemeteryFullAddress;
-  }
-  
+  dataString += "; ";
+   
   if (options.citation_bg_includeTranscriber && data.transcriber) {    
-      dataString += "; " + "Transcribed by " + data.transcriber;
+      dataString +=  "Transcribed by " + data.transcriber;
   }
-  if (options.citation_bg_includePhotographer && data.photographer) {    
-    dataString += "; " + "Photographed by " + data.photographer;
+  if (options.citation_bg_includePhotographer && data.photographer) {
+    if (dataString.length > 0) {
+        dataString += "; "
+    }  
+    dataString += "Photographed by " + data.photographer;
   }
   
   dataString += ".";
 
   if (options.citation_bg_includeRelatives && data.relations) {
-    let relativeString = "<br/>Others on memorial :";
+    let relativeString = "<br/>Also on memorial :";
     data.relations.forEach(relative => {
-      relativeString += "<br/>- " + relative.name;
+      relativeString += " " + relative.name;
       if (relative.birthDate) {
-        relativeString += " b." + relative.birthDate;
+        relativeString += " b " + relative.birthDate;
       }
       if(relative.deathDate) {
-        relativeString += " d." + relative.deathDate
+        relativeString += " d " + relative.deathDate
       }
+      (relativeString += ";")
     });
-    relativeString += "<br/>";
+    relativeString = relativeString.replace(/;$/,". ");
     dataString += relativeString;
   }
 

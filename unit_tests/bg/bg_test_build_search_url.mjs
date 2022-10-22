@@ -47,6 +47,11 @@ const regressionData = [
     typeOfSearch: "SameCollection",
   },
   {
+    caseName: "isabella_crawford_d_17_dec_1948",
+    inputPath:"bg/generalized_data/ref/isabella_crawford_d_17_dec_1948",
+    typeOfSearch: "SameCollection",
+  },
+  {
     caseName: "margaret_ann_craney_d_1909",
     inputPath:"bg/generalized_data/ref/margaret_ann_craney_d_1909",
     typeOfSearch: "SameCollection",

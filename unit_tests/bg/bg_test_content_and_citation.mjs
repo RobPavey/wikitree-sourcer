@@ -49,6 +49,10 @@ const regressionData = [
     url: "https://billiongraves.com/grave/Hanna-Delaney-Fallon/20263950",
   },
   {
+    caseName: "isabella_crawford_d_17_dec_1948",
+    url: "https://billiongraves.com/grave/Isabella-Crawford/38296403",
+  },
+  {
     caseName: "margaret_ann_craney_d_1909",
     url: "https://billiongraves.com/grave/Margaret-Ann-Craney/27550409",
   },

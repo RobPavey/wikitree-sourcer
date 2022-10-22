@@ -105,6 +105,8 @@ function buildSearchUrl(buildUrlInput) {
       builder.addCemeteryCountry(country);
     } 
   }
+
+  builder.addSize(15);
   
   const url = builder.getUri();
 

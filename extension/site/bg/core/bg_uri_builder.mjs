@@ -89,6 +89,10 @@ class bgUriBuilder {
     this.addSearchParameter("death_year", string);
   }
 
+  addSize(string) {
+    this.addSearchParameter("size", string);
+  }
+
   getUri() {
     return this.uri;
   }

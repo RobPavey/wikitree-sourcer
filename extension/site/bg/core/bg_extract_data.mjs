@@ -45,6 +45,7 @@ function extractData(document, url) {
   if (url) {
     result.url = url;
   }
+  
   result.success = false;
 
   const infoNode = document.querySelector("div#VitalInformation")
@@ -58,7 +59,7 @@ function extractData(document, url) {
     console.log ("bg extractData No fullName found");
     return result; 
   } else {
-     result.fullName = cleanText(fullNameNode.textContent);
+     result.fullName = cleanText(fullNameNode.textContent.replace(/<br>/g," "));
   }
   
   setFromLabelWithItemProp(result, infoNode, "birthDate", "birthDate");
@@ -92,14 +93,16 @@ function extractData(document, url) {
   if (cemeteryFullAddress.length > 0) {
     result.cemeteryFullAddress = cemeteryFullAddress;
   }
+
   // Epitaph
   const epitaphHeading = infoNode.querySelector("[alt='Epitaph']");
   if (epitaphHeading) {
     const epitaphNode = epitaphHeading.nextElementSibling;
     if(epitaphNode) {
       const epitaphDiv = epitaphNode.querySelector("div");
-      if (epitaphDiv) {
-        result.epitaph = cleanText(epitaphDiv.textContent);
+      if (epitaphDiv && epitaphDiv.innerText) {
+        // using innerText as epitaph can contain markup which textContent ignores
+        result.epitaph = cleanText(epitaphDiv.innerText.replace(/\n/g," "));
       }
     }
   }
