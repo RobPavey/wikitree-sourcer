@@ -106,6 +106,7 @@ function buildSearchUrl(buildUrlInput) {
     } 
   }
 
+  builder.addYearRange(5);
   builder.addSize(15);
   
   const url = builder.getUri();

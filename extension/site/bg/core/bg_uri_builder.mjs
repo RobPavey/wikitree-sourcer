@@ -89,6 +89,10 @@ class bgUriBuilder {
     this.addSearchParameter("death_year", string);
   }
 
+  addYearRange(string) {
+    this.addSearchParameter("year_range", string);
+  }
+
   addSize(string) {
     this.addSearchParameter("size", string);
   }
