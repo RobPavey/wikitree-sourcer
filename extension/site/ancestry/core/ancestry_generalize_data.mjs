@@ -1018,7 +1018,7 @@ function generalizeDataGivenRecordType(data, result) {
       const stdFieldNames = [
         {
           stdName: "name",
-          ancestryHeadings: ["Name", "Household Members", "Household Member(s)"],
+          ancestryHeadings: ["Name", "Household Members", "Household Member(s)", "Household Members (Name)"],
         },
         { stdName: "age", ancestryHeadings: ["Age"] },
         { stdName: "relationship", ancestryHeadings: ["Relationship"] },
@@ -1036,14 +1036,30 @@ function generalizeDataGivenRecordType(data, result) {
         if (headings && members) {
           result.householdArrayFields = [];
 
+          // check that we have a heading that maps to name, if not we do some extra work later
+          let haveANameHeading = false;
+          for (let heading of headings) {
+            let fieldName = headingToStdName(heading);
+            if (fieldName && fieldName == "name") {
+              haveANameHeading = true;
+              break;
+            }
+          }
+
           let householdArray = [];
           for (let member of members) {
             let householdMember = {};
             if (member.isClosed) {
               householdMember.isClosed = true;
             } else {
-              for (let heading of headings) {
+              for (let headingIndex = 0; headingIndex < headings.length; headingIndex++) {
+                let heading = headings[headingIndex];
                 let fieldName = headingToStdName(heading);
+
+                // This could be the name column as Ancestry keeps changing its name
+                if (!fieldName && !haveANameHeading && headingIndex == 0) {
+                  fieldName = "name";
+                }
                 if (fieldName) {
                   let fieldValue = member[heading];
                   if (fieldValue) {
@@ -1074,8 +1090,15 @@ function generalizeDataGivenRecordType(data, result) {
           result.householdArray = householdArray;
 
           let householdArrayFields = [];
-          for (let heading of headings) {
+          for (let headingIndex = 0; headingIndex < headings.length; headingIndex++) {
+            let heading = headings[headingIndex];
             let fieldName = headingToStdName(heading);
+
+            // This could be the name column as Ancestry keeps changing its name
+            if (!fieldName && !haveANameHeading && headingIndex == 0) {
+              fieldName = "name";
+            }
+
             if (fieldName) {
               householdArrayFields.push(fieldName);
             }

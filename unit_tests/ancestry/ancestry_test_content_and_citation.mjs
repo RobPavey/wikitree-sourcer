@@ -743,6 +743,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/10119823:7667",
   },
   {
+    caseName: "us_federal_census_1870_g_h_smith",
+    url: "https://www.ancestry.com/discoveryui-content/view/18923868:7163",
+  },
+  {
     caseName: "us_federal_census_1870_paul_potter",
     url: "https://www.ancestry.com/discoveryui-content/view/10410782:7163?tid=&pid=&queryId=5cd807e56b157c5368ce218360c2c866&_phsrc=Vww4236&_phstart=successSource",
   },

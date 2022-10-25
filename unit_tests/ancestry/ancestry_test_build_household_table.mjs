@@ -56,6 +56,9 @@ const regressionData = [
     caseName: "us_federal_census_1860_charles_pavey",
   },
   {
+    caseName: "us_federal_census_1870_g_h_smith",
+  },
+  {
     caseName: "us_federal_census_1870_paul_potter",
   },
   {

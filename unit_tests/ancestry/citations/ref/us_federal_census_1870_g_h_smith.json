@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>\n{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1870 census G (age 8 months), At Home, was in Elk Springs, Warren, Kentucky.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>\n{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>\n{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)<br/>\nG H Smith (8/12), At Home, in Elk Springs, Warren, Kentucky. Born in Kentucky.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1870 census G (age 8 months), At Home, was in Elk Springs, Warren, Kentucky.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>\n{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)<br/>\nG H Smith (8/12), At Home, in Elk Springs, Warren, Kentucky. Born in Kentucky.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)<br/>G H Smith (8/12), At Home, in Elk Springs, Warren, Kentucky. Born in Kentucky.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>\n{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)<br/>\nName: G H Smith; Age in 1870: 8/12; Birth Date: Apr; Birthplace: Kentucky; Dwelling Number: 97; Home in 1870: Elk Springs, Warren, Kentucky; Race: Black; Gender: Male; Post Office: Smiths Grove; Occupation: At Home; Inferred Father: John Smith; <br/>Household Members (Name) Age:<br/>John Smith 48<br/>Margret Smith 24<br/>Hester Smith 13<br/>Susan Smith 10<br/>Calvin Smith 6<br/>G H Smith 8/12.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1870 census G (age 8 months), At Home, was in Elk Springs, Warren, Kentucky.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>\n{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)<br/>\nName: G H Smith; Age in 1870: 8/12; Birth Date: Apr; Birthplace: Kentucky; Dwelling Number: 97; Home in 1870: Elk Springs, Warren, Kentucky; Race: Black; Gender: Male; Post Office: Smiths Grove; Occupation: At Home; Inferred Father: John Smith; <br/>Household Members (Name) Age:<br/>John Smith 48<br/>Margret Smith 24<br/>Hester Smith 13<br/>Susan Smith 10<br/>Calvin Smith 6<br/>G H Smith 8/12.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)<br/>Name: G H Smith; Age in 1870: 8/12; Birth Date: Apr; Birthplace: Kentucky; Dwelling Number: 97; Home in 1870: Elk Springs, Warren, Kentucky; Race: Black; Gender: Male; Post Office: Smiths Grove; Occupation: At Home; Inferred Father: John Smith; <br/>Household Members (Name) Age:<br/>John Smith 48<br/>Margret Smith 24<br/>Hester Smith 13<br/>Susan Smith 10<br/>Calvin Smith 6<br/>G H Smith 8/12.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>\n{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || G H Smith\n|-\n| Age in 1870 || 8/12\n|-\n| Birth Date || Apr\n|-\n| Birthplace || Kentucky\n|-\n| Dwelling Number || 97\n|-\n| Home in 1870 || Elk Springs, Warren, Kentucky\n|-\n| Race || Black\n|-\n| Gender || Male\n|-\n| Post Office || Smiths Grove\n|-\n| Occupation || At Home\n|-\n| Inferred Father || John Smith\n|-\n| Household Members (Name)<br/>Age || John Smith 48<br/>Margret Smith 24<br/>Hester Smith 13<br/>Susan Smith 10<br/>Calvin Smith 6<br/>G H Smith 8/12\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1870 census G (age 8 months), At Home, was in Elk Springs, Warren, Kentucky.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>\n{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || G H Smith\n|-\n| Age in 1870 || 8/12\n|-\n| Birth Date || Apr\n|-\n| Birthplace || Kentucky\n|-\n| Dwelling Number || 97\n|-\n| Home in 1870 || Elk Springs, Warren, Kentucky\n|-\n| Race || Black\n|-\n| Gender || Male\n|-\n| Post Office || Smiths Grove\n|-\n| Occupation || At Home\n|-\n| Inferred Father || John Smith\n|-\n| Household Members (Name)<br/>Age || John Smith 48<br/>Margret Smith 24<br/>Hester Smith 13<br/>Susan Smith 10<br/>Calvin Smith 6<br/>G H Smith 8/12\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B<br/>{{Ancestry Record|7163|18923868}} (accessed 6 May 2021)<br/>Name: G H Smith; Age in 1870: 8/12; Birth Date: Apr; Birthplace: Kentucky; Dwelling Number: 97; Home in 1870: Elk Springs, Warren, Kentucky; Race: Black; Gender: Male; Post Office: Smiths Grove; Occupation: At Home; Inferred Father: John Smith; <br/>Household Members (Name) Age:<br/>John Smith 48<br/>Margret Smith 24<br/>Hester Smith 13<br/>Susan Smith 10<br/>Calvin Smith 6<br/>G H Smith 8/12.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1870 United States Federal Census,\" database, ({{Ancestry Record|7163|18923868}} : accessed 6 May 2021), G H Smith (8/12), At Home, in Elk Springs, Warren, Kentucky. Born in Kentucky; citing Year 1870, Census Place Elk Springs, Warren, Kentucky, Roll M593_502, Page 125B.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1870 census G (age 8 months), At Home, was in Elk Springs, Warren, Kentucky.<ref>\"1870 United States Federal Census,\" database, ({{Ancestry Record|7163|18923868}} : accessed 6 May 2021), G H Smith (8/12), At Home, in Elk Springs, Warren, Kentucky. Born in Kentucky; citing Year 1870, Census Place Elk Springs, Warren, Kentucky, Roll M593_502, Page 125B.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1870 United States Federal Census,\" database, ({{Ancestry Record|7163|18923868}} : accessed 6 May 2021), G H Smith (8/12), At Home, in Elk Springs, Warren, Kentucky. Born in Kentucky; citing Year 1870, Census Place Elk Springs, Warren, Kentucky, Roll M593_502, Page 125B.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1870 Census'':\n\"1870 United States Federal Census\", database, \nYear 1870, Census Place Elk Springs, Warren, Kentucky, Roll M593_502, Page 125B, \n({{Ancestry Record|7163|18923868}} : accessed 6 May 2021), \nName: G H Smith; Age in 1870: 8/12; Birth Date: Apr; Birthplace: Kentucky; Dwelling Number: 97; Home in 1870: Elk Springs, Warren, Kentucky; Race: Black; Gender: Male; Post Office: Smiths Grove; Occupation: At Home; Inferred Father: John Smith; Household Members (Name) Age: John Smith 48, Margret Smith 24, Hester Smith 13, Susan Smith 10, Calvin Smith 6, G H Smith 8/12.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1870 census G (age 8 months), At Home, was in Elk Springs, Warren, Kentucky.<ref>\n''1870 Census'':\n\"1870 United States Federal Census\", database, \nYear 1870, Census Place Elk Springs, Warren, Kentucky, Roll M593_502, Page 125B, \n({{Ancestry Record|7163|18923868}} : accessed 6 May 2021), \nName: G H Smith; Age in 1870: 8/12; Birth Date: Apr; Birthplace: Kentucky; Dwelling Number: 97; Home in 1870: Elk Springs, Warren, Kentucky; Race: Black; Gender: Male; Post Office: Smiths Grove; Occupation: At Home; Inferred Father: John Smith; Household Members (Name) Age: John Smith 48, Margret Smith 24, Hester Smith 13, Susan Smith 10, Calvin Smith 6, G H Smith 8/12.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1870 Census'': \"1870 United States Federal Census\", database, Year 1870, Census Place Elk Springs, Warren, Kentucky, Roll M593_502, Page 125B, ({{Ancestry Record|7163|18923868}} : accessed 6 May 2021), Name: G H Smith; Age in 1870: 8/12; Birth Date: Apr; Birthplace: Kentucky; Dwelling Number: 97; Home in 1870: Elk Springs, Warren, Kentucky; Race: Black; Gender: Male; Post Office: Smiths Grove; Occupation: At Home; Inferred Father: John Smith; Household Members (Name) Age: John Smith 48, Margret Smith 24, Hester Smith 13, Susan Smith 10, Calvin Smith 6, G H Smith 8/12.",
+    "type": "source"
+  }
+}

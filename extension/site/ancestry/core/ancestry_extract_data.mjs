@@ -256,7 +256,8 @@ function extractRecordData(document, result) {
                 for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
                   let cell = subRowCells[cellIndex];
                   let memberText = cleanText(cell.textContent);
-                  member[result.household.headings[cellIndex]] = memberText;
+                  let heading = result.household.headings[cellIndex];
+                  member[heading] = memberText;
                   let linkNode = cell.querySelector("a");
                   if (linkNode) {
                     let link = linkNode.getAttribute("href");
@@ -382,7 +383,8 @@ function extractRecordData(document, result) {
                   }
                 }
 
-                member[result.household.headings[cellIndex]] = memberText;
+                let heading = result.household.headings[cellIndex];
+                member[heading] = memberText;
 
                 let linkNode = cell.querySelector("a");
                 if (linkNode) {

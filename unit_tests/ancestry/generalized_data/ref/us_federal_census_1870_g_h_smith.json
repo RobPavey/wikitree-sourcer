@@ -1,0 +1,64 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "G H Smith"
+  },
+  "personGender": "male",
+  "birthPlace": {
+    "placeString": "Kentucky"
+  },
+  "eventDate": {
+    "yearString": "1870"
+  },
+  "eventPlace": {
+    "placeString": "Elk Springs, Warren, Kentucky"
+  },
+  "occupation": "At Home",
+  "ageAtEvent": "8/12",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "John Smith",
+      "age": "48",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=18864837&indiv=try"
+    },
+    {
+      "name": "Margret Smith",
+      "age": "24",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=18923870&indiv=try"
+    },
+    {
+      "name": "Hester Smith",
+      "age": "13",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=18923869&indiv=try"
+    },
+    {
+      "name": "Susan Smith",
+      "age": "10",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=34124497&indiv=try"
+    },
+    {
+      "name": "Calvin Smith",
+      "age": "6",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=34124496&indiv=try"
+    },
+    {
+      "name": "G H Smith",
+      "age": "8/12",
+      "isSelected": true,
+      "gender": "male",
+      "occupation": "At Home",
+      "birthDate": "Apr",
+      "birthPlace": "Kentucky"
+    }
+  ],
+  "collectionData": {
+    "id": "7163"
+  },
+  "hasValidData": true
+}
