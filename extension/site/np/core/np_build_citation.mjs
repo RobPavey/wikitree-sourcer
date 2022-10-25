@@ -29,9 +29,13 @@ function buildCoreCitation(data, gd, runDate, builder) {
 
   builder.databaseHasImages = false;
 
-  let recordLink = "{{Newspapers.com|" + data.url.split("/")[2] + "}}";
-
-  builder.recordLinkOrTemplate = recordLink;
+  const clipString = "/clip/";
+  let clipIndex = data.url.indexOf(clipString);
+  if (clipIndex != -1) {
+    let remainder = data.url.substring(clipIndex + clipString.length);
+    let recordLink = "{{Newspapers.com|" + remainder.split("/")[0] + "}}";
+    builder.recordLinkOrTemplate = recordLink;
+  }
 
   builder.sourceReference = data.newspaperTitle + " " + data.publicationDate + ", page " + data.pageNumber;
 }
