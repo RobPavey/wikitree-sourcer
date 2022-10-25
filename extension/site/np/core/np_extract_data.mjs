@@ -38,12 +38,20 @@ function extractData(document, url) {
 
   result.success = false;
 
-  result.newspaperTitle = document.querySelector("[itemprop='name']").innerHTML;
-  result.location = document.querySelector("[itemprop='locationCreated']").innerHTML;
-  result.publicationDate = document.querySelector("[itemprop='dateCreated']").innerHTML.split(",")[0];
-  result.pageNumber = document.querySelector("[itemprop='position']").innerHTML.split(" ")[1];
+  let titleElement = document.querySelector("[itemprop='name']");
+  let locationElement = document.querySelector("[itemprop='locationCreated']");
+  let dateElement = document.querySelector("[itemprop='dateCreated']");
+  let pageNumberElement = document.querySelector("[itemprop='position']");
 
-  result.success = true;
+  if (titleElement && locationElement && dateElement && pageNumberElement) {
+
+    result.newspaperTitle = titleElement.innerHTML;
+    result.location = locationElement.innerHTML;
+    result.publicationDate = dateElement.innerHTML.split(",")[0];
+    result.pageNumber = pageNumberElement.innerHTML.split(" ")[1];
+
+    result.success = true;
+  }
 
   //console.log(result);
 
