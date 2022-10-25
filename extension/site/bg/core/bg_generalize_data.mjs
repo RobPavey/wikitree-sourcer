@@ -64,8 +64,16 @@ function generalizeData(input) {
     }
   }
 
+  if (data.lastName) {
+    result.name.lastName = data.lastName;
+  }
+
+  if (data.givenName) {
+    result.name.forenames = data.givenName;
+  }
+
   result.lastNameAtDeath = result.inferLastName();
-  // result.deathDate = result.eventDate;
+  
 
   if (data.ageAtDeath) {
     result.ageAtDeath = data.ageAtDeath;
@@ -80,8 +88,8 @@ function generalizeData(input) {
 
   result.hasValidData = true;
 
-  //console.log("Generalized - ");
-  //console.log(result);
+  console.log("Generalized - ");
+  console.log(result);
 
   return result;
 }
