@@ -72,7 +72,7 @@ async function loadOptions() {
     "options_version",
   ]);
 
-  if (itemsNew.options_search) {
+  if (itemsNew && itemsNew.options_search) {
     loadedOptions = {};
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_search, "search");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_citation, "citation");
