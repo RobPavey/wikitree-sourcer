@@ -64,6 +64,10 @@ const regressionData = [
     caseName: "roderick_mclennan_d_2013",
     url: "https://billiongraves.com/supporting-record/Roderick-McLennan/104134264",
   },
+  {
+    caseName: "thomas_moffat_29_october_new_style",
+    url: "https://billiongraves.com/grave/Thomas-Moffat/22067921",
+  },
 ];
 
 async function runTests(testManager) {

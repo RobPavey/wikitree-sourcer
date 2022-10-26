@@ -2,20 +2,22 @@
   "url": "https://billiongraves.com/grave/Margaret-Ann-Craney/27550409",
   "success": true,
   "fullName": "Margaret Ann Craney",
-  "deathDate": "Aug 1909",
+  "lastName": "Craney",
+  "givenName": "Margaret Ann",
+  "deathDate": "August 1909",
   "cemeteryName": "Newcastle upon Tyne (Saint Nicholas) Cemetery",
-  "streetAddress": "Westgate Road",
-  "addressLocality": "Newcastle upon Tyne, Tyne and Wear",
+  "addressLocality": "Newcastle upon Tyne",
   "addressRegion": "England",
   "addressCountry": "United Kingdom",
-  "cemeteryFullAddress": "Westgate Road, Newcastle upon Tyne, Tyne and Wear, England, United Kingdom",
-  "transcriber": "DdraigGoch, June 1, 2018",
-  "photographer": "Lindsay, May 25, 2018",
+  "cemeteryFullAddress": "Westgate Road, Newcastle upon Tyne, England, United Kingdom",
   "relations": [
     {
       "name": "Hugh Craney",
+      "lastName": "Craney",
+      "givenName": "Hugh",
       "deathDate": "1951"
     }
   ],
-  "hasImage": true
+  "transcriber": "DdraigGoch, June 1, 2018",
+  "photographer": "Lindsay, May 25, 2018"
 }

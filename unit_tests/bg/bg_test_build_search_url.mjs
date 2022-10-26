@@ -66,6 +66,11 @@ const regressionData = [
     inputPath:"bg/generalized_data/ref/roderick_mclennan_d_2013",
     typeOfSearch: "SameCollection",
   },
+  {
+    caseName: "thomas_moffat_29_october_new_style",
+    inputPath:"bg/generalized_data/ref/thomas_moffat_29_october_new_style",
+    typeOfSearch: "SameCollection",
+  },
 ];
 
 async function runTests(testManager) {

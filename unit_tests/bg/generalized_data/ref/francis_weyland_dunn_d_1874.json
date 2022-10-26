@@ -3,21 +3,23 @@
   "sourceType": "record",
   "recordType": "Memorial",
   "eventDate": {
-    "dateString": "13 Dec 1874"
+    "dateString": "13 December 1874"
   },
   "eventPlace": {
-    "placeString": "2-12 W Montgomery St, Hillsdale, Hillsdale, Michigan, United States",
+    "placeString": "2-12 W Montgomery St, Hillsdale, Michigan, United States",
     "streetAddress": "Oak Grove Cemetery"
   },
   "name": {
-    "name": "Francis Wayland Dunn"
+    "name": "Francis Wayland Dunn",
+    "lastName": "Dunn",
+    "forenames": "Francis Wayland"
   },
   "lastNameAtDeath": "Dunn",
   "birthDate": {
-    "dateString": "29 Jan 1843"
+    "dateString": "29 January 1843"
   },
   "deathDate": {
-    "dateString": "13 Dec 1874"
+    "dateString": "13 December 1874"
   },
   "hasValidData": true
 }

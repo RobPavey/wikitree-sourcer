@@ -3,14 +3,16 @@
   "sourceType": "record",
   "recordType": "Memorial",
   "eventDate": {
-    "dateString": "15 Jun 1817"
+    "dateString": "15 June 1817"
   },
   "eventPlace": {
-    "placeString": "Abbey Road, Athlone, County Westmeath, County Westmeath, Ireland",
+    "placeString": "Abbey Road, Athlone, County Westmeath, Ireland",
     "streetAddress": "Abbey Graveyard"
   },
   "name": {
-    "name": "Hanna Fallon"
+    "name": "Hanna Fallon",
+    "lastName": "Fallon",
+    "forenames": "Hanna"
   },
   "lastNameAtBirth": "Delaney",
   "lastNameAtDeath": "Fallon",
@@ -18,7 +20,7 @@
     "dateString": "1773"
   },
   "deathDate": {
-    "dateString": "15 Jun 1817"
+    "dateString": "15 June 1817"
   },
   "hasValidData": true
 }

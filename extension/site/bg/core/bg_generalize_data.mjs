@@ -88,8 +88,8 @@ function generalizeData(input) {
 
   result.hasValidData = true;
 
-  console.log("Generalized - ");
-  console.log(result);
+  //console.log("Generalized - ");
+  //console.log(result);
 
   return result;
 }

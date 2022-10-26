@@ -1,20 +1,3 @@
 {
-  "sourceOfData": "bg",
-  "sourceType": "record",
-  "recordType": "Memorial",
-  "eventDate": {
-    "dateString": "3 Dec 1967"
-  },
-  "eventPlace": {
-    "placeString": "Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom",
-    "streetAddress": "Belfast City Cemetery"
-  },
-  "name": {
-    "name": "Mary Ellen Adams"
-  },
-  "lastNameAtDeath": "Adams",
-  "deathDate": {
-    "dateString": "3 Dec 1967"
-  },
-  "hasValidData": true
+  "sourceOfData": "bg"
 }

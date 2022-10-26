@@ -2,26 +2,30 @@
   "url": "https://billiongraves.com/grave/Isabella-Crawford/38296403",
   "success": true,
   "fullName": "Isabella Crawford",
-  "deathDate": "17 Dec 1948",
+  "lastName": "Crawford",
+  "givenName": "Isabella",
+  "deathDate": "17 December 1948",
   "cemeteryName": "Old Pentland Cemtery",
-  "streetAddress": "Pentland Road",
-  "addressLocality": "Bilston, Midlothian",
+  "addressLocality": "Bilston",
   "addressRegion": "Scotland",
   "addressCountry": "United Kingdom",
-  "cemeteryFullAddress": "Pentland Road, Bilston, Midlothian, Scotland, United Kingdom",
-  "transcriber": "Mistdragon, May 11, 2021",
-  "photographer": "ccbb7766, July 6, 2020",
+  "cemeteryFullAddress": "Pentland Road, Bilston, Scotland, United Kingdom",
   "relations": [
     {
       "name": "William Crawford",
+      "lastName": "Crawford",
+      "givenName": "William",
       "birthDate": "Jan 1898",
       "deathDate": "23 Jul 1916"
     },
     {
       "name": "Roderick Crawford",
+      "lastName": "Crawford",
+      "givenName": "Roderick",
       "birthDate": "1870",
       "deathDate": "13 Oct 1938"
     }
   ],
-  "hasImage": true
+  "transcriber": "Mistdragon, May 11, 2021",
+  "photographer": "ccbb7766, July 6, 2020"
 }
