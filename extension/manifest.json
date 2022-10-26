@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "1.3.6",
+  "version": "1.4.3",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": ["storage", "contextMenus", "scripting", "management"],
   "host_permissions": [
@@ -29,7 +29,7 @@
     "*://www.freecen.org.uk/*",
     "*://www.freereg.org.uk/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
-    "*://*.newspapers.com/image/*",
+    "*://*.newspapers.com/*",
     "*://www.scotlandspeople.gov.uk/*"
   ],
   "background": {
@@ -116,7 +116,7 @@
       "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
     },
     {
-      "matches": ["*://www.newspapers.com/image/*"],
+      "matches": ["*://www.newspapers.com/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },

@@ -25,13 +25,11 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 
 function buildCoreCitation(data, gd, runDate, builder) {
-  let options = builder.getOptions();
-
-  let sourceTitle = gd.getRefTitle();
+  builder.sourceTitle = "Newspapers.com";
 
   builder.databaseHasImages = false;
 
-  let recordLink = "[" + data.url + " Newspapers.com image]";
+  let recordLink = "{{Newspapers.com|" + data.url.split("/")[2] + "}}";
 
   builder.recordLinkOrTemplate = recordLink;
 
@@ -47,9 +45,9 @@ function buildCitation(input) {
 
   let builder = new CitationBuilder(type, runDate, options);
 
-  var citation = buildCoreCitation(data, gd, runDate, builder);
+  buildCoreCitation(data, gd, runDate, builder);
 
-  builder.meaningfulTitle = "Newspaper";
+  builder.meaningfulTitle = gd.getRefTitle();
 
   // now the builder is setup use it to build the citation text
   let fullCitation = builder.getCitationString();

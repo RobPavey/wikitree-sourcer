@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Newspaper''':\n\"1908 Newspaper\"<br/>\nAbbeville Meridional 26 Dec 1908, page 3<br/>\n{{Newspapers.com|www.newspapers.com}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1908 Newspaper''':\n\"Newspapers.com\"<br/>\nAbbeville Meridional 26 Dec 1908, page 3<br/>\n{{Newspapers.com|111420722}} (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "<ref>\n'''Newspaper''':\n\"1908 Newspaper\"<br/>\nAbbeville Meridional 26 Dec 1908, page 3<br/>\n{{Newspapers.com|www.newspapers.com}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1908 Newspaper''':\n\"Newspapers.com\"<br/>\nAbbeville Meridional 26 Dec 1908, page 3<br/>\n{{Newspapers.com|111420722}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Newspaper''': \"1908 Newspaper\"<br/>Abbeville Meridional 26 Dec 1908, page 3<br/>{{Newspapers.com|www.newspapers.com}} (accessed 6 May 2021)",
+    "citation": "* '''1908 Newspaper''': \"Newspapers.com\"<br/>Abbeville Meridional 26 Dec 1908, page 3<br/>{{Newspapers.com|111420722}} (accessed 6 May 2021)",
     "type": "source"
   }
 }

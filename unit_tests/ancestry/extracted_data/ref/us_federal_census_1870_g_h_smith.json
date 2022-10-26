@@ -1,0 +1,80 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/18923868:7163",
+  "pageType": "record",
+  "dbId": "7163",
+  "recordId": "18923868",
+  "ancestryTemplate": "{{Ancestry Record|7163|18923868}}",
+  "domain": "com",
+  "titleName": "G H Smith",
+  "titleCollection": "1870 United States Federal Census",
+  "recordData": {
+    "Name": "G H Smith",
+    "Age in 1870": "8/12",
+    "Birth Date": "Apr",
+    "Birthplace": "Kentucky",
+    "Dwelling Number": "97",
+    "Home in 1870": "Elk Springs, Warren, Kentucky",
+    "Race": "Black",
+    "Gender": "Male",
+    "Post Office": "Smiths Grove",
+    "Occupation": "At Home",
+    "Inferred Father": "John Smith",
+    "Household Members (Name)<br/>Age": "John Smith 48<br/>Margret Smith 24<br/>Hester Smith 13<br/>Susan Smith 10<br/>Calvin Smith 6<br/>G H Smith 8/12"
+  },
+  "linkData": {
+    "Inferred Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=18864837&indiv=try&viewrecord=1&r=an"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "John Smith",
+        "dbId": "7163",
+        "recordId": "18864837",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=18864837&indiv=try",
+        "Age": "48"
+      },
+      {
+        "Household Members (Name)": "Margret Smith",
+        "dbId": "7163",
+        "recordId": "18923870",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=18923870&indiv=try",
+        "Age": "24"
+      },
+      {
+        "Household Members (Name)": "Hester Smith",
+        "dbId": "7163",
+        "recordId": "18923869",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=18923869&indiv=try",
+        "Age": "13"
+      },
+      {
+        "Household Members (Name)": "Susan Smith",
+        "dbId": "7163",
+        "recordId": "34124497",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=34124497&indiv=try",
+        "Age": "10"
+      },
+      {
+        "Household Members (Name)": "Calvin Smith",
+        "dbId": "7163",
+        "recordId": "34124496",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=34124496&indiv=try",
+        "Age": "6"
+      },
+      {
+        "Household Members (Name)": "G H Smith",
+        "Age": "8/12"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7163/images/4269403_00254?pid=18923868&usePUB=true&usePUBJs=true",
+  "imageDbId": "7163",
+  "imageRecordId": "4269403_00254",
+  "sourceCitation": "Year: 1870; Census Place: Elk Springs, Warren, Kentucky; Roll: M593_502; Page: 125B",
+  "sourceInformation": "Ancestry.com. 1870 United States Federal Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2009. Images reproduced by FamilySearch. Original data: 1870 U.S. census, population schedules. NARA microfilm publication M593, 1,761 rolls. Washington, D.C.: National Archives and Records Administration, n.d.Minnesota census schedules for 1870. NARA microfilm publication T132, 13 rolls. Washington, D.C.: National Archives and Records Administration, n.d.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1870 United States Federal Census, the Ninth Census of the United States. Census takers recorded many details including each person's name, age at last birthday, sex, color; birthplace, occupation, and more. No relationships were shown between members of a household. Additionally, the names of those listed on the population schedule are linked to actual images of the 1870 Federal Census. Learn more..."
+}

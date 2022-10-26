@@ -197,6 +197,7 @@ async function getDataForLinkedHouseholdRecords(data, processfunction) {
   //console.log("getDataForLinkedHouseholdRecords. data is : ");
   //console.log(data);
   let linkedRecords = [];
+  let headings = data.extractedData.household.headings;
   for (let member of data.extractedData.household.members) {
     if (member.recordId && member.link && data.extractedData.recordId != member.recordId) {
       if (!member.isClosed) {
@@ -207,6 +208,15 @@ async function getDataForLinkedHouseholdRecords(data, processfunction) {
         }
         if (!name) {
           name = member["Name"];
+        }
+        if (!name && headings.length > 0) {
+          let nameHeading = headings[0];
+          if (nameHeading) {
+            name = member[nameHeading];
+          }
+        }
+        if (!name) {
+          name = "Unknown name";
         }
         linkedRecords.push({ link: member.link, name: name, cacheTage: "" });
       }
@@ -278,6 +288,7 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction) {
   //console.log("getDataForLinkedHouseholdRecords. data is : ");
   //console.log(data);
   let linkedRecords = [];
+  let headings = data.extractedData.household.headings;
   for (let member of data.extractedData.household.members) {
     if (member.recordId && member.link && data.extractedData.recordId != member.recordId) {
       if (!member.isClosed) {
@@ -288,6 +299,15 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction) {
         }
         if (!name) {
           name = member["Name"];
+        }
+        if (!name && headings.length > 0) {
+          let nameHeading = headings[0];
+          if (nameHeading) {
+            name = member[nameHeading];
+          }
+        }
+        if (!name) {
+          name = "Unknown name";
         }
         linkedRecords.push({ link: member.link, name: name, cacheTage: "" });
       }
