@@ -44,7 +44,7 @@ function extractData(document, url) {
   result.pageNumber = document.querySelector("[itemprop='position']").innerHTML.split(" ")[1];
 
     result.success = true;
-  }
+  
 
   //console.log(result);
 
