@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "09 April 1917"
+  },
+  "eventPlace": {
+    "placeString": "80-90 D49, Thélus, Pas-de-Calais, France",
+    "streetAddress": "Bois-Carre British Cemetery, Thelus"
+  },
+  "name": {
+    "name": "C R Bow",
+    "lastName": "Bow",
+    "forenames": "C. R."
+  },
+  "lastNameAtDeath": "Bow",
+  "deathDate": {
+    "dateString": "09 April 1917"
+  },
+  "hasValidData": true
+}

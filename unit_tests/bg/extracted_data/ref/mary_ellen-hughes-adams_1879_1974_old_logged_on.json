@@ -1,0 +1,23 @@
+{
+  "url": "https://billiongraves.com/grave/Mary-Ellen-Adams-Hughes/2569833",
+  "success": true,
+  "hasImage": true,
+  "fullName": "Mary Ellen Hughes (Adams)",
+  "lastName": "Hughes",
+  "givenName": "Mary Ellen",
+  "birthDate": "1879",
+  "deathDate": "1974",
+  "relations": [
+    {
+      "name": "William James Hughes",
+      "lastName": "Hughes",
+      "givenName": "William James",
+      "birthDate": "1872",
+      "deathDate": "17 May 1935"
+    }
+  ],
+  "cemeteryName": "Harriston Cemetery",
+  "cemeteryFullAddress": "Harriston Greenway Trail, Minto, Wellington, Canada",
+  "transcriber": "abrown, November 14, 2012",
+  "photographer": "abrown, November 10, 2012"
+}

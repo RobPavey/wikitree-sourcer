@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "01 May 2013"
+  },
+  "eventPlace": {
+    "placeString": "156 Lanark Road West, Edinburgh, City of Edinburgh, United Kingdom",
+    "streetAddress": "Currie Kirk Cemetery"
+  },
+  "name": {
+    "name": "Roderick McLennan",
+    "lastName": "McLennan",
+    "forenames": "Roderick"
+  },
+  "lastNameAtDeath": "McLennan",
+  "deathDate": {
+    "dateString": "01 May 2013"
+  },
+  "hasValidData": true
+}

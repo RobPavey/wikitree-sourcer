@@ -1,0 +1,17 @@
+{
+  "url": "https://billiongraves.com/grave/Thomas-Moffat/22067921",
+  "success": false,
+  "hasImage": true,
+  "fullName": "Thomas Moffat",
+  "lastName": "Moffat",
+  "givenName": "Thomas",
+  "deathDate": "29 October",
+  "relations": [
+    {
+      "name": "Mary Hogg Moffat",
+      "lastName": "Moffat",
+      "givenName": "Mary Hogg",
+      "deathDate": "31 Oct 1946"
+    }
+  ]
+}
