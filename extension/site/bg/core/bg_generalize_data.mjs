@@ -54,7 +54,7 @@ function generalizeData(input) {
     result.eventPlace.streetAddress = data.cemeteryName;
   }
   if (data.fullName) {
-    // Check for maiden name included
+    // Check if maiden name included (within brackets)
     if (/^(.+)(\()([\s\S]+)(\))$/.test(data.fullName)) {
       const nameParts = /^(.+)(\()([\s\S]+)(\))$/.exec(data.fullName);
       result.setFullName(nameParts[1]);

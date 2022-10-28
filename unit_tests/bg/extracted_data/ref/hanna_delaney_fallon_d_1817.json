@@ -1,16 +1,12 @@
 {
   "url": "https://billiongraves.com/grave/Hanna-Delaney-Fallon/20263950",
   "success": true,
+  "hasImage": true,
   "fullName": "Hanna Fallon (Delaney)",
   "lastName": "Fallon",
   "givenName": "Hanna",
   "birthDate": "1773",
   "deathDate": "15 June 1817",
-  "cemeteryName": "Abbey Graveyard",
-  "addressLocality": "Athlone",
-  "addressRegion": "County Westmeath",
-  "addressCountry": "Ireland",
-  "cemeteryFullAddress": "Abbey Road, Athlone, County Westmeath, Ireland",
   "relations": [
     {
       "name": "Mary Anne Fallon",
@@ -27,6 +23,8 @@
       "deathDate": "4 Aug 1832"
     }
   ],
+  "cemeteryName": "Abbey Graveyard",
+  "cemeteryFullAddress": "Abbey Road, Athlone, County Westmeath, Ireland",
   "transcriber": "earrigan1, August 16, 2016",
   "photographer": "earrigan1, August 16, 2016"
 }

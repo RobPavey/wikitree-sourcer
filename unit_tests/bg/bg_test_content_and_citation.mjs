@@ -61,6 +61,22 @@ const regressionData = [
     url: "https://billiongraves.com/supporting-record/Mary-Ellen-Adams/102675092",
   },
   {
+    caseName: "mary_ellen-hughes-adams_1879_1974_new_logged_on",
+    url: "https://billiongraves.com/grave/Mary-Ellen-Adams-Hughes/2569833",
+  },
+  {
+    caseName: "mary_ellen-hughes-adams_1879_1974_new_not_logged_on",
+    url: "https://billiongraves.com/grave/Mary-Ellen-Adams-Hughes/2569833",
+  },
+  {
+    caseName: "mary_ellen-hughes-adams_1879_1974_old_logged_on",
+    url: "https://billiongraves.com/grave/Mary-Ellen-Adams-Hughes/2569833",
+  },
+  {
+    caseName: "mary_ellen-hughes-adams_1879_1974_old_not_logged_on",
+    url: "https://billiongraves.com/grave/Mary-Ellen-Adams-Hughes/2569833",
+  },
+  {
     caseName: "roderick_mclennan_d_2013",
     url: "https://billiongraves.com/supporting-record/Roderick-McLennan/104134264",
   },

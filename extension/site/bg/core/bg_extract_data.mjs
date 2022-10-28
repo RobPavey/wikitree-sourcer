@@ -52,6 +52,13 @@ function convertDateString(text) {
   return text;
 }
 
+function setFromNodeWithAttribute(result, dataNode, attributeText, fieldName){
+  const node = dataNode.querySelector(attributeText);
+  if (node && node.textContent) {
+    result[fieldName] = cleanText(node.textContent);
+  }
+}
+
 function setFromJsonWithKey(result, dataJson, itemKey, fieldName) {
   const value = dataJson[itemKey];
   if (value && value !== "Not Available" ) {
@@ -79,59 +86,45 @@ function appendWithComma(text, appendText) {
   return text;
 }
 
-function buildFullAddress(street, locality, region, country) {
-  let address = street;
-
-  address = appendWithComma(address, locality);
-  address = appendWithComma(address, region);
-  address = appendWithComma(address,country);
+function buildFullAddress(cemetery) {
+  let address = "";
+  address = appendWithComma(address, cemetery.addressStreet);
+  address = appendWithComma(address, cemetery.addressLocality);
+  address = appendWithComma(address, cemetery.addressRegion);
+  address = appendWithComma(address, cemetery.addressCountry);
 
   return address;
 }
 
-
 function extractFromJson(document, result, dataScript) {
-  // extract from new style pages (Oct 2022)
   const dataJson = JSON.parse(dataScript.innerHTML);
-
-  if (!(dataJson["@type"] && dataJson["@type"] === "Person")) {
+  // Either the main person on memorial or some inscribed
+  let personData = null;
+  if (dataJson["@type"] && dataJson["@type"] === "Person") {
+  personData = dataJson;
+  } else if (dataJson.mainEntity && dataJson.mainEntity["@type"] && dataJson.mainEntity["@type"] === "Person") {
+    personData = dataJson.mainEntity;
+  } else {
     console.log("bg extract not a person record");
     return result;
   }
 
-  setFromJsonWithKey(result, dataJson, "name", "fullName");
-  setFromJsonWithKey(result, dataJson, "familyName", "lastName");
-  setFromJsonWithKey(result, dataJson, "givenName", "givenName");
+  setFromJsonWithKey(result, personData, "name", "fullName");
+  setFromJsonWithKey(result, personData, "familyName", "lastName");
+  setFromJsonWithKey(result, personData, "givenName", "givenName");
 
-  setFromJsonWithKey(result, dataJson, "birthDate", "birthDate");
+  setFromJsonWithKey(result, personData, "birthDate", "birthDate");
   if (result.birthDate) {
     result.birthDate = convertDateString(result.birthDate);
   }
 
-  setFromJsonWithKey(result, dataJson, "deathDate", "deathDate");
+  setFromJsonWithKey(result, personData, "deathDate", "deathDate");
   if (result.deathDate) {
     result.deathDate = convertDateString(result.deathDate);
   }
 
-  if (dataJson["deathPlace"]) {
-    const cemeteryData = dataJson.deathPlace;
-    if (cemeteryData["@type"] && cemeteryData["@type"] === "Cemetery") {
-      setFromJsonWithKey(result, cemeteryData, "name", "cemeteryName");
-      if(cemeteryData.address) {
-        const cemeteryAddress = cemeteryData.address;
-        if (cemeteryAddress["@type"] && cemeteryAddress["@type"] === "PostalAddress") {
-          setFromJsonWithKey(result, cemeteryAddress, "streetAddress", "streetAddress");
-          setFromJsonWithKey(result, cemeteryAddress, "addressLocality", "addressLocality");
-          setFromJsonWithKey(result, cemeteryAddress, "addressRegion", "addressRegion");
-          setFromJsonWithKey(result, cemeteryAddress, "addressCountry", "addressCountry");
-          result.cemeteryFullAddress = buildFullAddress(result.addressStreet, result.addressLocality, result.addressRegion, result.addressCountry);
-        }
-      }  
-    }    
-  }
-
-  if (dataJson["relatedTo"]) {
-    const relations  = dataJson["relatedTo"];
+  if (personData["relatedTo"]) {
+    const relations  = personData["relatedTo"];
     result.relations = [];
     relations.forEach(relation => {
       if (relation["@type"] && relation["@type"] === "Person") {
@@ -155,123 +148,184 @@ function extractData(document, url) {
   }
   
   result.success = false;
+  result.hasImage = false;
 
+  // On old style record page (pre Oct 2022)
+  const vitalInformationNode = document.querySelector("div#VitalInformation");
+  // new style record page (Oct 2022)
+  const recordPageHeaderNode = document.querySelector("[class^='RecordPage_header__']");
+
+  
   const dataScript = document.querySelector("script[type='application/ld+json']");
   // extract from script tag JSON in head
   if (dataScript) {    
     extractFromJson(document, result, dataScript);
-    // Expects fullname and cemetery as a minimum
-    if (!result.fullName || !result.cemeteryName) {
-      return result;
-    }
   }
-  // Pre Oct 2022 pages
-  const infoNode = document.querySelector("div#VitalInformation");
-  if (infoNode) {
-    // Get cemetery Street Address
-    const streetAddressNode = document.querySelector("[itemprop='streetAddress']");
-    if (streetAddressNode && streetAddressNode.textContent && streetAddressNode.textContent !== result.addressLocality) {
-      result.cemeteryFullAddress = appendWithComma(streetAddressNode.textContent, result.cemeteryFullAddress);
-    }
-   // transcriber pre Oct 2022 pages
-   const transcriberHeading = infoNode.querySelector("[alt='Transcriber']");
-   if (transcriberHeading) {
-     const transcriberNode = transcriberHeading.nextElementSibling;
-     const transcriberNameNode = transcriberNode.querySelector("h2");
-     const transcriberDateNode = transcriberNode.querySelector("div");
-     if (transcriberNameNode) {
-       result.transcriber = cleanText(transcriberNameNode.textContent);
-       if (transcriberDateNode) {
-         result.transcriber += ", " + cleanText(transcriberDateNode.textContent);
-       }
-     }
-   }  
-  // photographer pre Oct 2022 pages
-  const photographerHeading = infoNode.querySelector("[alt='Photographer']");
-  if (photographerHeading) {
-    const photographerNode = photographerHeading.nextElementSibling;
-    const photographerNameNode = photographerNode.querySelector("h2");
-    const photographerDateNode = photographerNode.querySelector("div");
-    if (photographerNameNode) {
-      result.photographer = cleanText(photographerNameNode.textContent);
-      if (photographerDateNode) {
-        result.photographer += ", " + cleanText(photographerDateNode.textContent);
+
+  if (vitalInformationNode) {
+    const infoNode = document.querySelector('#VitalInformation');
+
+    // Cemetery Pre Oct 2022 pages
+    let cemeteryLinkNode = infoNode.querySelector('[data-vars-link-name="VitalInformationCemetery"]');
+    if (cemeteryLinkNode) {
+      const cemeteryVitalNode = cemeteryLinkNode.parentNode;
+      if (cemeteryVitalNode) {
+        let cemeteryAddress = {};
+        setFromNodeWithAttribute(result, cemeteryVitalNode, 'h2[itemprop="name"]', "cemeteryName");
+        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode,  'div[itemprop="streetAddress"]', "addressStreet");
+        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode, 'span[itemprop="addressLocality"]', "addressLocality");
+        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode,  'span[itemprop="addressDistrict"]', "addressDistrict");
+        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode, 'div[itemprop="addressCountry"]', "addressCountry");
+        
+        result.cemeteryFullAddress = buildFullAddress(cemeteryAddress);
       }
     }
-  }  
-     // Epitaph pre Oct 2022 pages
-  const epitaphHeading = infoNode.querySelector("[alt='Epitaph']");
-  if (epitaphHeading) {
-    const epitaphNode = epitaphHeading.nextElementSibling;
-    if(epitaphNode) {
-      const epitaphDiv = epitaphNode.querySelector("div");
-      if (epitaphDiv && epitaphDiv.innerText) {
-        // using innerText as epitaph can contain markup which textContent ignores
-        result.epitaph = cleanText(epitaphDiv.innerText.replace(/\n/g," "));
+
+    
+    // transcriber pre Oct 2022 pages
+    const transcriberHeading = infoNode.querySelector("[alt='Transcriber']");
+    if (transcriberHeading) {
+      const transcriberNode = transcriberHeading.nextElementSibling;
+      const transcriberNameNode = transcriberNode.querySelector("h2");
+      const transcriberDateNode = transcriberNode.querySelector("div");
+      if (transcriberNameNode) {
+        result.transcriber = cleanText(transcriberNameNode.textContent);
+        if (transcriberDateNode) {
+          result.transcriber += ", " + cleanText(transcriberDateNode.textContent);
+        }
       }
-    }
-  }
-} else {
-  // post Oct 2022 pages
-  
-  // Get Cemetery Street Address
-  const cemeteryNameNode = getElementByTextContent(document, "h2", result.cemeteryName);
-  if (cemeteryNameNode) {
-    const cemeteryAddressNode = cemeteryNameNode.parentNode;
-    if (cemeteryAddressNode) {
-      const cemeteryFirstAddressNode = cemeteryAddressNode.nextElementSibling;
-      if (cemeteryFirstAddressNode) {
-        const firstAddressLine = cleanText(cemeteryFirstAddressNode.textContent);
-        if (firstAddressLine && firstAddressLine !== result.addressLocality) {
-          result.streetAddress = firstAddressLine;
-          result.cemeteryFullAddress = appendWithComma(firstAddressLine, result.cemeteryFullAddress);
+    }  
+
+    // photographer pre Oct 2022 pages
+    const photographerHeading = infoNode.querySelector("[alt='Photographer']");
+    if (photographerHeading) {
+      const photographerNode = photographerHeading.nextElementSibling;
+      const photographerNameNode = photographerNode.querySelector("h2");
+      const photographerDateNode = photographerNode.querySelector("div");
+      if (photographerNameNode) {
+        result.photographer = cleanText(photographerNameNode.textContent);
+        if (photographerDateNode) {
+          result.photographer += ", " + cleanText(photographerDateNode.textContent);
+        }
+      }
+    }  
+
+    // Epitaph pre Oct 2022 pages
+    const epitaphHeading = infoNode.querySelector("[alt='Epitaph']");
+    if (epitaphHeading) {
+      const epitaphNode = epitaphHeading.nextElementSibling;
+      if(epitaphNode) {
+        const epitaphDiv = epitaphNode.querySelector("div");
+        if (epitaphDiv && epitaphDiv.innerText) {
+          // using innerText as epitaph can contain markup which textContent ignores
+          result.epitaph = cleanText(epitaphDiv.innerText.replace(/\n/g," "));
         }
       }
     }
+
+    // Has image
+    const imageLink = document.querySelector("div.record-image-wrapper img[src]");
+    if (imageLink) {
+      result.hasImage = true;
+    }
+  } else {
+    // post Oct 2022 pages
+    
+    // Cemetery
+    // Logged On
+    
+    const cemeteryLinkNode = document.querySelector('[href^="/cemetery/"]');
+    if (cemeteryLinkNode) {
+      setFromNodeWithAttribute(result, cemeteryLinkNode, "h2", "cemeteryName");
+      const cemeteryNode = cemeteryLinkNode.parentNode;
+      const cemeteryAddressNodes = cemeteryNode.querySelectorAll("div");
+      
+      let cemeteryAddress = {};
+      setFromNodeWithAttribute(result, cemeteryNode, "h2", "cemeteryName");
+      for (let i = 0; i < cemeteryAddressNodes.length; i+=1) {
+        cemeteryAddress = appendWithComma(cemeteryAddress, cleanText(cemeteryAddressNodes[i].textContent));
+      }
+      result.cemeteryFullAddress = cemeteryAddress;
+    }
+
+    const dataTableNode = document.querySelector("table");
+    if (dataTableNode) {
+      const dataRowNodes = dataTable.querySelectorAll("tr");
+      if(dataRowNodes.length > 0) {
+        const cemeteryRowNode = dataRowNodes[dataRowNodes.length - 1];
+        let cemetery = cleanText(cemeteryRowNode.querySelector("td").textContent);
+        let indexOfComma = cemetery.indexOf(",");
+        result.cemeteryName = cemetery.slice(0,indexOfComma-1);
+        result.cemeteryFullAddress = cemetery.slice(indexOfComma +2);
+      }
+    }
+
+    const cemeteryNameNode = getElementByTextContent(document, "h2", result.cemeteryName);
+    if (cemeteryNameNode) {
+      const cemeteryAddressNode = cemeteryNameNode.parentNode;
+      if (cemeteryAddressNode) {
+        const cemeteryFirstAddressNode = cemeteryAddressNode.nextElementSibling;
+        if (cemeteryFirstAddressNode) {
+          const firstAddressLine = cleanText(cemeteryFirstAddressNode.textContent);
+          if (firstAddressLine && firstAddressLine !== result.addressLocality) {
+            result.streetAddress = firstAddressLine;
+            result.cemeteryFullAddress = appendWithComma(firstAddressLine, result.cemeteryFullAddress);
+          }
+        }
+      }
+    }
+    
+    // Get transcriber from Oct 2022 pages
+    const transcriberCaptionNode = getElementByTextContent(document, "span", "Transcriber");
+    if (transcriberCaptionNode) {
+      const transcriberNode = transcriberCaptionNode.parentNode.parentNode;
+      let transcriberNameNode = transcriberNode.querySelector("h5");
+      if (transcriberNameNode && transcriberNameNode.textContent) {
+        result.transcriber = cleanText(transcriberNameNode.textContent);
+        let transcriberDateNode = transcriberNode.querySelector("div > span");
+        if (transcriberDateNode && transcriberDateNode.textContent) {
+          result.transcriber += ", " + cleanText(transcriberDateNode.textContent);
+        }
+      }
+    }
+
+    // Get photographer from Oct 2022 pages
+    const photographerCaptionNode = getElementByTextContent(document, "span", "Photographer");
+    if (photographerCaptionNode) {
+      const photographerNode = photographerCaptionNode.parentNode.parentNode;
+      let photographerNameNode = photographerNode.querySelector("h5");
+      if (photographerNameNode && photographerNameNode.textContent) {
+        result.photographer = cleanText(photographerNameNode.textContent);
+        let photographerDateNode = photographerNode.querySelector("div > span");
+        if (photographerDateNode && photographerDateNode.textContent) {
+          result.photographer += ", " + cleanText(photographerDateNode.textContent);
+        }
+      }
+    }
+    
+    // Get epitaph from Oct 2022 pages
+    const epitaphHeading = getElementByTextContent(document, "h4", "Epitaph");
+    if (epitaphHeading) {
+      const epitaphNode = epitaphHeading.nextElementSibling;
+      if(epitaphNode) {
+        if (epitaphNode && epitaphNode.innerText) {
+          // using innerText as epitaph can contain markup which textContent ignores
+          result.epitaph = cleanText(epitaphNode.innerText.replace(/\n/g," "));
+        }
+      }
+    }
+
+    //Has Image
+    const imageLink = document.querySelector("div[class^='RecordPage_ImageWrapper__'] a");
+    if (imageLink) {
+      result.hasImage = true;
+    }
+  } 
+  
+  if (result.fullName && result.cemeteryName) {
+    result.success = true;
   }
   
-  // Get transcriber from Oct 2022 pages
-  const transcriberCaptionNode = getElementByTextContent(document, "span", "Transcriber");
-  if (transcriberCaptionNode) {
-    const transcriberNode = transcriberCaptionNode.parentNode.parentNode;
-    let transcriberNameNode = transcriberNode.querySelector("h5");
-    if (transcriberNameNode && transcriberNameNode.textContent) {
-      result.transcriber = cleanText(transcriberNameNode.textContent);
-      let transcriberDateNode = transcriberNode.querySelector("div > span");
-      if (transcriberDateNode && transcriberDateNode.textContent) {
-        result.transcriber += ", " + cleanText(transcriberDateNode.textContent);
-      }
-    }
-  }
-
-  // Get photographer from Oct 2022 pages
-  const photographerCaptionNode = getElementByTextContent(document, "span", "Photographer");
-  if (photographerCaptionNode) {
-    const photographerNode = photographerCaptionNode.parentNode.parentNode;
-    let photographerNameNode = photographerNode.querySelector("h5");
-    if (photographerNameNode && photographerNameNode.textContent) {
-      result.photographer = cleanText(photographerNameNode.textContent);
-      let photographerDateNode = photographerNode.querySelector("div > span");
-      if (photographerDateNode && photographerDateNode.textContent) {
-        result.photographer += ", " + cleanText(photographerDateNode.textContent);
-      }
-    }
-  }
-  
-  // Get epitaph from Oct 2022 pages
-  const epitaphHeading = getElementByTextContent(document, "h4", "Epitaph");
-  if (epitaphHeading) {
-    const epitaphNode = epitaphHeading.nextElementSibling;
-    if(epitaphNode) {
-      if (epitaphNode && epitaphNode.innerText) {
-        // using innerText as epitaph can contain markup which textContent ignores
-        result.epitaph = cleanText(epitaphNode.innerText.replace(/\n/g," "));
-      }
-    }
-  }
-} 
-  result.success = true;
-
   //console.log("Extracted - ");
   //console.log(result);
 

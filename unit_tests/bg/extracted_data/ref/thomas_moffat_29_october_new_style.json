@@ -1,15 +1,11 @@
 {
   "url": "https://billiongraves.com/grave/Thomas-Moffat/22067921",
-  "success": true,
+  "success": false,
+  "hasImage": true,
   "fullName": "Thomas Moffat",
   "lastName": "Moffat",
   "givenName": "Thomas",
   "deathDate": "29 October",
-  "cemeteryName": "Larkhall Cemetery",
-  "addressLocality": "Larkhall",
-  "addressRegion": "Scotland",
-  "addressCountry": "United Kingdom",
-  "cemeteryFullAddress": "Larkhall, Scotland, United Kingdom",
   "relations": [
     {
       "name": "Mary Hogg Moffat",

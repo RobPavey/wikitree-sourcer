@@ -34,7 +34,7 @@ function buildCoreCitation(data, runDate, builder) {
 
   let sourceTitle = "Billion Graves";
 
-  builder.databaseHasImages = true;
+  builder.databaseHasImages = data.hasImage ;
 
   builder.sourceTitle = sourceTitle;
 

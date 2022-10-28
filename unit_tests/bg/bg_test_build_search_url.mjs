@@ -62,6 +62,26 @@ const regressionData = [
     typeOfSearch: "SameCollection",
   },
   {
+    caseName: "mary_ellen-hughes-adams_1879_1974_new_logged_on",
+    inputPath:"bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_new_logged_on",
+    typeOfSearch: "SameCollection",
+  },
+  {
+    caseName: "mary_ellen-hughes-adams_1879_1974_new_not_logged_on",
+    inputPath:"bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_new_not_logged_on",
+    typeOfSearch: "SameCollection",
+  },
+  {
+    caseName: "mary_ellen-hughes-adams_1879_1974_old_logged_on",
+    inputPath:"bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_old_logged_on",
+    typeOfSearch: "SameCollection",
+  },
+  {
+    caseName: "mary_ellen-hughes-adams_1879_1974_old_not_logged_on",
+    inputPath:"bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_old_not_logged_on",
+    typeOfSearch: "SameCollection",
+  },
+  {
     caseName: "roderick_mclennan_d_2013",
     inputPath:"bg/generalized_data/ref/roderick_mclennan_d_2013",
     typeOfSearch: "SameCollection",

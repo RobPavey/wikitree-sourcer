@@ -55,6 +55,9 @@ function buildSearchUrl(buildUrlInput) {
   const options = buildUrlInput.options;
 
   var builder = new bgUriBuilder();
+
+  builder.addPreamble();
+
    let firstNames = ""
   if (options.search_bg_includeFirstName) {
     let firstName = data.inferFirstName();
@@ -69,18 +72,29 @@ function buildSearchUrl(buildUrlInput) {
       firstNames += " " + middleName;
     }
   }
+  
+  const givenNameExactness = options.search_bg_exactFirstNames ? true : false;
+  builder.addGivenNames(firstNames, givenNameExactness );
 
-  builder.addGivenNames(firstNames);
+  if (options.search_bg_includeMaidenName) {
+    let maidenName = data.inferLastNameAtBirth();
+    if (maidenName) {
+      const maidenNameExactness = options.search_bg_exactMaidenName ? true : false;
+      builder.addMaidenName(maidenName, maidenNameExactness);
+    }
+  }
 
   let lastName = data.inferLastNameAtDeath();
   if (!lastName) {
     lastName = data.inferLastName();
   }
   if (lastName) {
-    builder.addSurname(lastName);
+    const lastNameExactness = options.search_bg_exactLastName ? true : false;
+    builder.addSurname(lastName, lastNameExactness);
   }
 
-  if (options.search_bg_birththYearExactness != "none") {
+
+  if (options.search_bg_birthYearExactness != "none") {
     let birthYear = data.inferBirthYear();
     let birthDateQualifier = data.inferBirthDateQualifier();
     let bgBirthDateQualifier = getBgDateQualifier(options.search_bg_birthYearExactness, birthDateQualifier);
@@ -96,18 +110,8 @@ function buildSearchUrl(buildUrlInput) {
 
   let countryArray = data.inferCountries();
   if (countryArray.length == 1) {
-    const country = countryArray[0];
-    const ukCountries = ["England","Scotland","Northern Ireland","Wales"];
-    if (ukCountries.indexOf(country) !== -1) {
-      builder.addCemeteryState(country);
-      builder.addCemeteryCountry("United Kingdom");
-    } else {  
-      builder.addCemeteryCountry(country);
-    } 
+    builder.addCountry(countryArray[0]);
   }
-
-  builder.addYearRange(5);
-  builder.addSize(15);
   
   const url = builder.getUri();
 

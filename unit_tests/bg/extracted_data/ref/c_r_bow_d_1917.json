@@ -1,15 +1,13 @@
 {
   "url": "https://billiongraves.com/grave/C-R-Bow/42252559",
   "success": true,
+  "hasImage": true,
   "fullName": "C. R. Bow",
   "lastName": "Bow",
   "givenName": "C. R.",
   "deathDate": "09 April 1917",
   "cemeteryName": "Bois-Carre British Cemetery, Thelus",
-  "addressLocality": "Thélus",
-  "addressRegion": "Nord-Pas-de-Calais Picardie",
-  "addressCountry": "France",
-  "cemeteryFullAddress": "80-90 D49, Thélus, Nord-Pas-de-Calais Picardie, France",
+  "cemeteryFullAddress": "80-90 D49, Thélus, Pas-de-Calais, France",
   "transcriber": "LisaK, November 21, 2021",
   "photographer": "Don Favreau, March 4, 2021"
 }

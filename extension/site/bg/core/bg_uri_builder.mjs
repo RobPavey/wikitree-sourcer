@@ -57,16 +57,27 @@ class bgUriBuilder {
     }
   }
 
+  addPreamble() {
+    this.addSearchTerm("CollectionID=&CatalogID=&PageNumber=1&PageSize=20");
+  }
+
   addType(string) {
     this.addSearchParameter("type", string);
   }
 
-  addSurname(string) {
-    this.addSearchParameter("family_names", WTS_String.removeExtendedAsciiCharacters(string));
+  addSurname(string, exact) {
+    this.addSearchParameter("FamilyName", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("FamilyNameExact", exact);
   }
 
-  addGivenNames(string) {
-    this.addSearchParameter("given_names", WTS_String.removeExtendedAsciiCharacters(string));
+  addGivenNames(string, exact) {
+    this.addSearchParameter("GivenNames", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("GivenNamesExact", exact);
+  }
+
+  addMaidenName(string, exact) {
+    this.addSearchParameter("MaidenName", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("MaidenNameExact", exact);
   }
 
   addCemeteryCountry(string) {
@@ -81,20 +92,26 @@ class bgUriBuilder {
     this.addSearchParameter("cemetery_state", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
-  addBirthYear(string) {
-    this.addSearchParameter("birth_year", string);
+  addBirthYear(string, range) {
+    this.addSearchParameter("EventBirthYear", string);
+    this.addSearchParameter("EventBirthYearRange", range);
   }
 
-  addDeathYear(string) {
-    this.addSearchParameter("death_year", string);
+  addDeathYear(string, range) {
+    this.addSearchParameter("EventDeathYear", string);
+    this.addSearchParameter("EventDeathYearRange", range);
   }
 
   addYearRange(string) {
-    this.addSearchParameter("year_range", string);
+    this.addSearchParameter("YearRange", string);
   }
 
   addSize(string) {
     this.addSearchParameter("size", string);
+  }
+
+  addCountry(string) {
+    this.addSearchParameter("Country", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   getUri() {

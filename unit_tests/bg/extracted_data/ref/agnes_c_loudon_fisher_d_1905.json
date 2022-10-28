@@ -1,15 +1,11 @@
 {
   "url": "https://billiongraves.com/grave/Agnes-C-Loudon-Fisher/39500252",
   "success": true,
+  "hasImage": true,
   "fullName": "Agnes C. Fisher (Loudon)",
   "lastName": "Fisher",
   "givenName": "Agnes C.",
   "deathDate": "26 March 1905",
-  "cemeteryName": "Fauldhouse Cemetery",
-  "addressLocality": "Fauldhouse",
-  "addressRegion": "Scotland",
-  "addressCountry": "United Kingdom",
-  "cemeteryFullAddress": "Eldrick Avenue, Fauldhouse, Scotland, United Kingdom",
   "relations": [
     {
       "name": "Gordon B. Fraser",
@@ -23,6 +19,8 @@
       "deathDate": "27 Apr 1931"
     }
   ],
+  "cemeteryName": "Fauldhouse Cemetery",
+  "cemeteryFullAddress": "Eldrick Avenue, Fauldhouse, West Lothian, United Kingdom",
   "transcriber": "SandieBee, September 20, 2020",
   "photographer": "Rambobo, September 19, 2020"
 }
