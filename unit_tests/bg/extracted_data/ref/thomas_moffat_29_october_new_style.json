@@ -1,6 +1,6 @@
 {
   "url": "https://billiongraves.com/grave/Thomas-Moffat/22067921",
-  "success": false,
+  "success": true,
   "hasImage": true,
   "fullName": "Thomas Moffat",
   "lastName": "Moffat",
@@ -13,5 +13,7 @@
       "givenName": "Mary Hogg",
       "deathDate": "31 Oct 1946"
     }
-  ]
+  ],
+  "cemeteryName": "Larkhall Cemetery",
+  "cemeteryFullAddress": "Station Road, Larkhall Scotland ML9, United Kingdom"
 }

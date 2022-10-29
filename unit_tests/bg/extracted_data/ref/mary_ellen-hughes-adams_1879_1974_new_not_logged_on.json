@@ -1,6 +1,6 @@
 {
   "url": "https://billiongraves.com/grave/Mary-Ellen-Adams-Hughes/2569833",
-  "success": false,
+  "success": true,
   "hasImage": true,
   "fullName": "Mary  Ellen Hughes (Adams)",
   "lastName": "Hughes",
@@ -15,5 +15,7 @@
       "birthDate": "1872",
       "deathDate": "17 May 1935"
     }
-  ]
+  ],
+  "cemeteryName": "Harriston Cemetery",
+  "cemeteryFullAddress": "Harriston Greenway Trail, Minto Ontario N0G 1Z0, Canada"
 }

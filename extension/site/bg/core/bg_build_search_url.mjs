@@ -76,14 +76,7 @@ function buildSearchUrl(buildUrlInput) {
   const givenNameExactness = options.search_bg_exactFirstNames ? true : false;
   builder.addGivenNames(firstNames, givenNameExactness );
 
-  if (options.search_bg_includeMaidenName) {
-    let maidenName = data.inferLastNameAtBirth();
-    if (maidenName) {
-      const maidenNameExactness = options.search_bg_exactMaidenName ? true : false;
-      builder.addMaidenName(maidenName, maidenNameExactness);
-    }
-  }
-
+  
   let lastName = data.inferLastNameAtDeath();
   if (!lastName) {
     lastName = data.inferLastName();
@@ -91,6 +84,14 @@ function buildSearchUrl(buildUrlInput) {
   if (lastName) {
     const lastNameExactness = options.search_bg_exactLastName ? true : false;
     builder.addSurname(lastName, lastNameExactness);
+  }
+
+  if (options.search_bg_includeMaidenName) {
+    let maidenName = data.inferLastNameAtBirth();
+    if (maidenName !== lastName) {
+      const maidenNameExactness = options.search_bg_exactMaidenName ? true : false;
+      builder.addMaidenName(maidenName, maidenNameExactness);
+    }
   }
 
 
