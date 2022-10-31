@@ -1029,6 +1029,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/260052341589/facts",
   },
   {
+    // Has middle initial and multiple last names
+    caseName: "xx_profile_fannie_kemper_1859_1933_us",
+    url: "https://www.ancestry.com/family-tree/person/tree/11748183/person/12992988602/facts",
+  },
+  {
     caseName: "xx_profile_ralph_pavey_1891_1958_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },

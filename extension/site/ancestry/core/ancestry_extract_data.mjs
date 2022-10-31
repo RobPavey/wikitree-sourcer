@@ -867,9 +867,38 @@ function handlePersonSourceCitation(document, result) {
   //console.log("handleFactEdit, recordUrl is: " + result.recordUrl);
 }
 
+// Extracting the HTML elements is working but I am unable to get the given name
+// and last name separately that way. There may be a way via a fetch.
+// This request:
+// https://www.ancestry.com/api/treesui-list/trees/11748183/recentlyviewedperson?expires=1667171853706
+// Gets this response:
+// {"pid":"12992988602","gname":"Fannie L.","sname":"(Kemper) Money Barber","isLiving":false}
+// The pid can be compared with the pid of the page to make sure it is the right person.
 function handlePersonFacts(document, result) {
   let personCardContainer = document.querySelector("#personCardContainer");
   if (personCardContainer) {
+    // There is no way that I have found to find the given name and surname separated in the
+    // HTML elements. But it can be found in a script.
+    let scriptElements = personCardContainer.querySelectorAll("script");
+    for (let scriptElement of scriptElements) {
+      let text = scriptElement.textContent;
+      let fullNameIndex = text.indexOf("fullName:");
+      if (fullNameIndex != -1) {
+        let endIndex = text.indexOf("}", fullNameIndex);
+        if (endIndex != -1) {
+          let fullNameText = text.substring(fullNameIndex, endIndex);
+          let givenName = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$1");
+          let surname = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$2");
+          if (givenName && givenName != fullNameText) {
+            result.givenName = givenName;
+          }
+          if (surname && surname != fullNameText) {
+            result.surname = surname;
+          }
+        }
+      }
+    }
+
     let userCardTitle = personCardContainer.querySelector(".userCardTitle");
     if (userCardTitle) {
       let fullName = userCardTitle.textContent;
