@@ -51,7 +51,8 @@ function generalizeData(input) {
   result.setFullName(data.name);
 
   result.lastNameAtDeath = result.inferLastName();
-  result.deathDate = result.eventDate;
+  result.setDeathDate(data.deathDate);
+  result.setDeathPlace(data.deathPlace);
 
   if (data.ageAtDeath) {
     result.ageAtDeath = data.ageAtDeath;
