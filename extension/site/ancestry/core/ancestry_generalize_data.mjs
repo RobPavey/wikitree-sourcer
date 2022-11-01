@@ -1951,6 +1951,7 @@ function generalizeRecordData(input, result) {
   if (!fullName && data.recordData) {
     fullName = getCleanRecordDataValue(data, "Name");
   }
+
   result.setFullName(fullName);
 
   if (data.recordData != undefined) {

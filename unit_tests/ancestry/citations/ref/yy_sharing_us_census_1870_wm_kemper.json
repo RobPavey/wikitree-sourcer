@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>\nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>\nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>Wm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>\nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>\nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>Wm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>\nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>\nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>Wm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>\nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>\nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - {{Ancestry Record|7163|38659916}} (accessed 6 May 2021)<br/>Wm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1870 United States Federal Census,\" database with images, {{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - ({{Ancestry Record|7163|38659916}} : accessed 6 May 2021), Wm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "<ref>\"1870 United States Federal Census,\" database with images, {{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - ({{Ancestry Record|7163|38659916}} : accessed 6 May 2021), Wm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1870 United States Federal Census,\" database with images, {{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - ({{Ancestry Record|7163|38659916}} : accessed 6 May 2021), Wm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1870 Census'':\n\"1870 United States Federal Census\", database with images, \n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - ({{Ancestry Record|7163|38659916}} : accessed 6 May 2021), \nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "<ref>\n''1870 Census'':\n\"1870 United States Federal Census\", database with images, \n{{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - ({{Ancestry Record|7163|38659916}} : accessed 6 May 2021), \nWm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1870 Census'': \"1870 United States Federal Census\", database with images, {{Ancestry Sharing|236392|3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c}} - ({{Ancestry Record|7163|38659916}} : accessed 6 May 2021), Wm Kemper was born about 1839. In 1870, he was 31 years old and lived in Bloomfield, Ohio, with his wife, Mary, 2 sons, and 2 daughters.",
+    "type": "source"
+  }
+}

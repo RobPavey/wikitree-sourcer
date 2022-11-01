@@ -48,37 +48,31 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
   // could not build the link when I was setting domain here to ancestry.com.
   //domain = "ancestry.com";
 
-  const callbackNamePart1Start = "31108426";
-  const callbackNamePart1End = getRandomInt(100000000000, 999999999999);
-  const callbackNamePart1 = callbackNamePart1Start + callbackNamePart1End;
-  const callbackNamePart2 = getRandomInt(1621100000000, 1659999999999);
-  const callbackName = "jQuery" + callbackNamePart1 + "_" + callbackNamePart2;
+  let fetchUrl = "https://www." + domain + "/sharing/shares/create/v2";
 
-  let fetchUrl =
-    "https://www." +
-    domain +
-    "/sharing/shares/create?callback=" +
-    callbackName +
-    "&locale=en-US&referrer%5Bclient%5D=website&referrer%5Bpage%5D=iiv-share-webpart&collection_id=" +
-    imageDbId + // extractedUrlInfo.dbId
-    "&image_id=" +
-    imageRecordId; // extractedUrlInfo.imageId
+  //console.log("fetchUrl is");
+  //console.log(fetchUrl);
 
-  if (recordId) {
-    fetchUrl += "&record_id=" + recordId; // extractedUrlInfo.pId
-  }
-
-  fetchUrl += "&_=" + callbackNamePart2;
+  const postData = {
+    collection_id: imageDbId,
+    cta_view_original_url: url,
+    image_id: imageRecordId,
+    locale: "en-US",
+    record_id: recordId,
+    referrer_client: "LIVE",
+    shared_page_url: url,
+  };
 
   let response = await fetch(fetchUrl, {
     headers: {
       accept: "*/*",
       "accept-language": "en-US,en;q=0.9",
+      "Content-Type": "application/json",
     },
     referrer: "https://search." + domain + "/",
     referrerPolicy: "origin-when-cross-origin",
-    body: null,
-    method: "GET",
+    body: JSON.stringify(postData),
+    method: "POST",
     mode: mode,
     credentials: "include",
   }).catch((err) => {
@@ -87,14 +81,14 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
     return { success: false };
   });
 
+  //console.log("response is");
+  //console.log(response);
+
   // On Firefox it may return zero any time you use "no-cors"
   if (response.status !== 200) {
     console.log("Looks like there was a problem. Status Code: " + response.status);
     return { success: false };
   }
-
-  //console.log("response is");
-  //console.log(response);
 
   // Examine the text in the response
   let data = await response.text();
@@ -102,14 +96,16 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
   //console.log("data is:");
   //console.log(data);
 
-  if (data.startsWith(callbackName)) {
-    const jsonData = data.substring(callbackName.length + 1, data.length - 2);
+  if (data.startsWith(`{"id":`)) {
+    const jsonData = data;
     const dataObj = JSON.parse(jsonData);
 
     //console.log("dataObj is:");
     //console.log(dataObj);
 
-    return { success: true, dataObj: dataObj };
+    if (dataObj) {
+      return { success: true, dataObj: dataObj };
+    }
   }
 
   return { success: false };

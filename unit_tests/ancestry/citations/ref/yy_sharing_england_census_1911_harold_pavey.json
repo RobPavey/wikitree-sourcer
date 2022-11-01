@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\n{{Ancestry Sharing|26033082|b2ba14}}<br/>\nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\n{{Ancestry Sharing|26033082|b2ba14}}<br/>\nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1911 Census''': \"1911 England Census\"<br/>{{Ancestry Sharing|26033082|b2ba14}}<br/>Harold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\n{{Ancestry Sharing|26033082|b2ba14}}<br/>\nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\n{{Ancestry Sharing|26033082|b2ba14}}<br/>\nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1911 Census''': \"1911 England Census\"<br/>{{Ancestry Sharing|26033082|b2ba14}}<br/>Harold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\n{{Ancestry Sharing|26033082|b2ba14}}<br/>\nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\n{{Ancestry Sharing|26033082|b2ba14}}<br/>\nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1911 Census''': \"1911 England Census\"<br/>{{Ancestry Sharing|26033082|b2ba14}}<br/>Harold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\n{{Ancestry Sharing|26033082|b2ba14}}<br/>\nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\n{{Ancestry Sharing|26033082|b2ba14}}<br/>\nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1911 Census''': \"1911 England Census\"<br/>{{Ancestry Sharing|26033082|b2ba14}}<br/>Harold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1911 England Census,\" database with images, {{Ancestry Sharing|26033082|b2ba14}}, Harold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "<ref>\"1911 England Census,\" database with images, {{Ancestry Sharing|26033082|b2ba14}}, Harold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1911 England Census,\" database with images, {{Ancestry Sharing|26033082|b2ba14}}, Harold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1911 Census'':\n\"1911 England Census\", database with images, \n{{Ancestry Sharing|26033082|b2ba14}}, \nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "<ref>\n''1911 Census'':\n\"1911 England Census\", database with images, \n{{Ancestry Sharing|26033082|b2ba14}}, \nHarold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1911 Census'': \"1911 England Census\", database with images, {{Ancestry Sharing|26033082|b2ba14}}, Harold Pavey was born about 1888 in St Pancras. In 1911, he was 23 years old and lived in Islington, England.",
+    "type": "source"
+  }
+}

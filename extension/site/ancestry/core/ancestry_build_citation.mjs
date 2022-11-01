@@ -157,6 +157,50 @@ function getImageRefTitle(titleCollection, imageBrowsePath) {
   return "Unclassified";
 }
 
+function getSharingPageRefTitle(titleCollection) {
+  const titleCollectionMatches = [
+    { title: "Death", matches: ["Death Records"] },
+    { title: "Probate", matches: ["Probate Records"] },
+    { title: "Census", matches: ["Census"] },
+    { title: "School Records", matches: ["School"] },
+    { title: "Workhouse Records", matches: ["Workhouse"] },
+    { title: "Birth or Baptism", matches: ["Births and Baptisms"] },
+    { title: "Birth", matches: ["Births"] },
+    { title: "Baptism", matches: ["Baptisms"] },
+    { title: "Birth", matches: ["Birth"] },
+    { title: "Baptism", matches: ["Baptism"] },
+  ];
+
+  function lookup(title, table) {
+    for (let obj of table) {
+      if (obj.matches) {
+        for (let match of obj.matches) {
+          if (title && title.includes(match)) {
+            return obj.title;
+          }
+        }
+      }
+    }
+  }
+
+  if (titleCollection) {
+    let refTitle = lookup(titleCollection, titleCollectionMatches);
+    if (refTitle) {
+      if (titleCollection.search(/\d\d\d\d /) == 0) {
+        refTitle = titleCollection.substring(0, 4) + " " + refTitle;
+      }
+      return refTitle;
+    }
+  }
+
+  // no matches
+  if (titleCollection) {
+    return titleCollection;
+  }
+
+  return "Unclassified";
+}
+
 function modifyValueForUrl(value) {
   if (value.startsWith("https://www.findagrave.com/memorial")) {
     let memorialId = value.replace(/^https\:\/\/www\.findagrave\.com\/memorial\/(\d+)\/.*$/, "$1");
@@ -512,11 +556,16 @@ function buildAncestryImageTemplate(data, options) {
 }
 
 function buildAncestrySharingTemplateFromSharingDataObj(dataObj) {
-  let url = dataObj.url;
-
+  // V1 versions
   // https://www.ancestry.com/sharing/24274440?h=95cf5c
-  let num1 = url.replace(/.*\/sharing\/(\w+)\?h\=\w+/, "$1");
-  let num2 = url.replace(/.*\/sharing\/\w+\?h\=(\w+)/, "$1");
+  let num1 = dataObj.id;
+  let num2 = dataObj.hmac_id;
+
+  // V2 versions
+  if (dataObj.v2 && dataObj.v2.share_id && dataObj.v2.share_token) {
+    num1 = dataObj.v2.share_id;
+    num2 = dataObj.v2.share_token;
+  }
 
   let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
 
@@ -649,6 +698,29 @@ function buildImageCitation(data, options, sharingDataObj, builder) {
   builder.meaningfulTitle = getImageRefTitle(data.titleCollection, data.imageBrowsePath);
 }
 
+function buildSharingPageCitation(data, options, builder) {
+  builder.sourceTitle = data.titleCollection;
+  builder.databaseHasImages = true;
+
+  // no source reference
+
+  if (data.ancestryTemplate) {
+    builder.sharingLinkOrTemplate = data.ancestryTemplate;
+  }
+
+  if (data.dbId && data.recordId) {
+    if (data.sharingType == "v1") {
+      builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(data, options);
+    } else {
+      builder.recordLinkOrTemplate = buildAncestryRecordTemplate(data, options);
+    }
+  }
+
+  builder.dataString = data.personNarrative;
+
+  builder.meaningfulTitle = getSharingPageRefTitle(data.titleCollection, data.personNarrative);
+}
+
 function buildCitation(input) {
   const data = input.extractedData;
   const gd = input.generalizedData;
@@ -672,6 +744,8 @@ function buildCitation(input) {
     }
   } else if (data.pageType == "image") {
     buildImageCitation(data, options, sharingDataObj, builder);
+  } else if (data.pageType == "sharingImageOrRecord") {
+    buildSharingPageCitation(data, options, builder);
   }
 
   // now the builder is setup use it to build the citation text
