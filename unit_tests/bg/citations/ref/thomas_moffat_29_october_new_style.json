@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nLarkhall Cemetery, Station Road, Larkhall Scotland ML9, United Kingdom<br/>\n[https://billiongraves.com/grave/Thomas-Moffat/22067921 BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Thomas Moffat (d 29 October); .<br/>Also on memorial : Mary Hogg Moffat d 31 Oct 1946.\n</ref>",
+    "citation": "<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nLarkhall Cemetery, Station Road, Larkhall Scotland ML9, United Kingdom<br/>\n[https://billiongraves.com/grave/Thomas-Moffat/22067921 BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Thomas Moffat (d 29 October); <br/>Also on memorial : Mary Hogg Moffat d 31 Oct 1946.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Thomas was mentioned on a memorial in Larkhall Cemetery, Station Road, Larkhall Scotland ML9, United Kingdom with a death date of 29 October.<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nLarkhall Cemetery, Station Road, Larkhall Scotland ML9, United Kingdom<br/>\n[https://billiongraves.com/grave/Thomas-Moffat/22067921 BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Thomas Moffat (d 29 October); .<br/>Also on memorial : Mary Hogg Moffat d 31 Oct 1946.\n</ref>",
+    "citation": "Thomas was mentioned on a memorial in Larkhall Cemetery, Station Road, Larkhall Scotland ML9, United Kingdom with a death date of 29 October.<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nLarkhall Cemetery, Station Road, Larkhall Scotland ML9, United Kingdom<br/>\n[https://billiongraves.com/grave/Thomas-Moffat/22067921 BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Thomas Moffat (d 29 October); <br/>Also on memorial : Mary Hogg Moffat d 31 Oct 1946.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Memorial''': \"Billion Graves\"<br/>Larkhall Cemetery, Station Road, Larkhall Scotland ML9, United Kingdom<br/>[https://billiongraves.com/grave/Thomas-Moffat/22067921 BillionGraves memorial] (accessed 6 May 2021)<br/>Memorial page for Thomas Moffat (d 29 October); .<br/>Also on memorial : Mary Hogg Moffat d 31 Oct 1946.",
+    "citation": "* '''Memorial''': \"Billion Graves\"<br/>Larkhall Cemetery, Station Road, Larkhall Scotland ML9, United Kingdom<br/>[https://billiongraves.com/grave/Thomas-Moffat/22067921 BillionGraves memorial] (accessed 6 May 2021)<br/>Memorial page for Thomas Moffat (d 29 October); <br/>Also on memorial : Mary Hogg Moffat d 31 Oct 1946.",
     "type": "source"
   }
 }

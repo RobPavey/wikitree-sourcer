@@ -66,19 +66,24 @@ function buildCoreCitation(data, runDate, builder) {
     dataString += " (d " + data.deathDate + ")";
   }
   dataString += "; ";
-   
+  
+  let transcriberPhotographerAdded = false;
   if (options.citation_bg_includeTranscriber && data.transcriber) {    
       dataString +=  "Transcribed by " + data.transcriber;
+      transcriberPhotographerAdded = true;
   }
   if (options.citation_bg_includePhotographer && data.photographer) {
     if (dataString.length > 0) {
         dataString += "; "
     }  
     dataString += "Photographed by " + data.photographer;
+    transcriberPhotographerAdded = true;
   }
   
-  dataString += ".";
-
+  if (transcriberPhotographerAdded) {
+    dataString += ".";
+  }
+  
   if (options.citation_bg_includeRelatives && data.relations) {
     let relativeString = "<br/>Also on memorial :";
     data.relations.forEach(relative => {
