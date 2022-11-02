@@ -111,7 +111,12 @@ function buildSearchUrl(buildUrlInput) {
 
   let countryArray = data.inferCountries();
   if (countryArray.length == 1) {
-    builder.addCountry(countryArray[0]);
+    const ukCountries = ["England","Ireland","Scotland","Wales"];
+    if (ukCountries.indexOf(countryArray[0])!== -1) {
+      builder.addCountry("United Kingdom");
+    } else {
+      builder.addCountry(countryArray[0]);
+    }
   }
   
   const url = builder.getUri();
