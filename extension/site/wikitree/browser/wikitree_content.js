@@ -34,10 +34,22 @@ async function getPendingSearch() {
   });
 }
 
-async function checkForPendingSearch() {
-  //console.log("checkForPendingSearch: called");
+async function getPendingMergeEdit() {
+  return new Promise((resolve, reject) => {
+    try {
+      chrome.storage.local.get(["wikitreeMergeEditData"], function (value) {
+        resolve(value.wikitreeMergeEditData);
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
 
-  //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+async function checkForPendingFormData() {
+  //console.log("checkForPendingFormData: called");
+
+  //console.log("checkForPendingFormData: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
@@ -45,12 +57,12 @@ async function checkForPendingSearch() {
   }
 
   if (document.URL == "https://www.wikitree.com/wiki/Special:SearchPerson") {
-    //console.log("checkForPendingSearch: URL matches");
+    //console.log("checkForPendingFormData: URL matches");
 
     let wikitreeSearchData = await getPendingSearch();
 
     if (wikitreeSearchData) {
-      //console.log("checkForPendingSearch: got formValues:");
+      //console.log("checkForPendingFormData: got formValues:");
       //console.log(wikitreeSearchData);
 
       let searchUrl = wikitreeSearchData.url;
@@ -58,45 +70,45 @@ async function checkForPendingSearch() {
       let timeStampNow = Date.now();
       let timeSinceSearch = timeStampNow - timeStamp;
 
-      //console.log("checkForPendingSearch: searchUrl is :" + searchUrl);
-      //console.log("checkForPendingSearch: timeStamp is :" + timeStamp);
-      //console.log("checkForPendingSearch: timeStampNow is :" + timeStampNow);
-      //console.log("checkForPendingSearch: timeSinceSearch is :" + timeSinceSearch);
+      //console.log("checkForPendingFormData: searchUrl is :" + searchUrl);
+      //console.log("checkForPendingFormData: timeStamp is :" + timeStamp);
+      //console.log("checkForPendingFormData: timeStampNow is :" + timeStampNow);
+      //console.log("checkForPendingFormData: timeSinceSearch is :" + timeSinceSearch);
 
       if (timeSinceSearch < 10000 && searchUrl == document.URL) {
         let formElement = document.getElementById("searchForm");
         if (formElement) {
           let fieldData = wikitreeSearchData.fieldData;
 
-          //console.log("checkForPendingSearch: fieldData is:");
+          //console.log("checkForPendingFormData: fieldData is:");
           //console.log(fieldData);
 
           for (var key in fieldData.simpleIdFields) {
-            //console.log("checkForPendingSearch: key is: " + key);
+            //console.log("checkForPendingFormData: key is: " + key);
             if (key) {
               let value = fieldData.simpleIdFields[key];
-              //console.log("checkForPendingSearch: value is: " + value);
+              //console.log("checkForPendingFormData: value is: " + value);
 
               let inputElement = document.getElementById(key);
               if (inputElement) {
-                //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
+                //console.log("checkForPendingFormData: inputElement found, existing value is: " + inputElement.value);
                 inputElement.value = value;
               }
             }
           }
 
           for (var key in fieldData.simpleNameFields) {
-            //console.log("checkForPendingSearch: key is: " + key);
+            //console.log("checkForPendingFormData: key is: " + key);
             if (key) {
               let value = fieldData.simpleNameFields[key];
-              //console.log("checkForPendingSearch: value is: " + value);
+              //console.log("checkForPendingFormData: value is: " + value);
 
               let selector = "input[name=" + CSS.escape(key) + "]";
-              //console.log("checkForPendingSearch: simple name selector is: " + selector);
+              //console.log("checkForPendingFormData: simple name selector is: " + selector);
               let inputElement = formElement.querySelector(selector);
 
               if (inputElement) {
-                //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
+                //console.log("checkForPendingFormData: inputElement found, existing value is: " + inputElement.value);
                 inputElement.value = value;
               }
             }
@@ -105,11 +117,11 @@ async function checkForPendingSearch() {
           for (var radioField of fieldData.radioFields) {
             let name = radioField.name;
             let value = radioField.value;
-            //console.log("checkForPendingSearch: radio name is: " + name);
-            //console.log("checkForPendingSearch: radio value is: " + value);
+            //console.log("checkForPendingFormData: radio name is: " + name);
+            //console.log("checkForPendingFormData: radio value is: " + value);
 
             let selector = "input[name=" + CSS.escape(name) + "]";
-            //console.log("checkForPendingSearch: radio selector is: " + selector);
+            //console.log("checkForPendingFormData: radio selector is: " + selector);
             let inputElements = formElement.querySelectorAll(selector);
             for (let inputElement of inputElements) {
               if (inputElement.value == value) {
@@ -120,18 +132,126 @@ async function checkForPendingSearch() {
             }
           }
 
-          //console.log("checkForPendingSearch: found formElement:");
+          //console.log("checkForPendingFormData: found formElement:");
           //console.log(formElement);
 
           // Now hide most of the page so that the use doesn't try to use it.
           let contentElement = document.getElementById("content");
           if (contentElement) {
-            //console.log("checkForPendingSearch: found contentElement:");
+            //console.log("checkForPendingFormData: found contentElement:");
             //console.log(contentElement);
 
             let topDivElement = contentElement.querySelector("div.sixteen.columns");
             if (topDivElement) {
-              //console.log("checkForPendingSearch: found topDivElement:");
+              //console.log("checkForPendingFormData: found topDivElement:");
+              //console.log(topDivElement);
+
+              topDivElement.style.display = "none";
+            }
+
+            let titleElement = document.createElement("h1");
+            titleElement.innerText = "Performing WikiTree Sourcer search...";
+            contentElement.appendChild(titleElement);
+          }
+
+          // now submit the form to do the search
+          formElement.submit();
+        }
+      }
+
+      // clear the search data
+      chrome.storage.local.set({ wikitreeSearchData: undefined }, function () {
+        //console.log('cleared wikitreeSearchData');
+      });
+    }
+  } else if (document.URL == "https://www.wikitree.com/index.php?title=Special:MergeEdit") {
+    //console.log("checkForPendingFormData: URL matches");
+
+    let wikitreeFormData = await getPendingMergeEdit();
+
+    if (wikitreeFormData) {
+      //console.log("checkForPendingFormData: got formValues:");
+      //console.log(wikitreeSearchData);
+
+      let searchUrl = wikitreeSearchData.url;
+      let timeStamp = wikitreeSearchData.timeStamp;
+      let timeStampNow = Date.now();
+      let timeSinceSearch = timeStampNow - timeStamp;
+
+      //console.log("checkForPendingFormData: searchUrl is :" + searchUrl);
+      //console.log("checkForPendingFormData: timeStamp is :" + timeStamp);
+      //console.log("checkForPendingFormData: timeStampNow is :" + timeStampNow);
+      //console.log("checkForPendingFormData: timeSinceSearch is :" + timeSinceSearch);
+
+      if (timeSinceSearch < 10000 && searchUrl == document.URL) {
+        let formElement = document.getElementById("searchForm");
+        if (formElement) {
+          let fieldData = wikitreeSearchData.fieldData;
+
+          //console.log("checkForPendingFormData: fieldData is:");
+          //console.log(fieldData);
+
+          for (var key in fieldData.simpleIdFields) {
+            //console.log("checkForPendingFormData: key is: " + key);
+            if (key) {
+              let value = fieldData.simpleIdFields[key];
+              //console.log("checkForPendingFormData: value is: " + value);
+
+              let inputElement = document.getElementById(key);
+              if (inputElement) {
+                //console.log("checkForPendingFormData: inputElement found, existing value is: " + inputElement.value);
+                inputElement.value = value;
+              }
+            }
+          }
+
+          for (var key in fieldData.simpleNameFields) {
+            //console.log("checkForPendingFormData: key is: " + key);
+            if (key) {
+              let value = fieldData.simpleNameFields[key];
+              //console.log("checkForPendingFormData: value is: " + value);
+
+              let selector = "input[name=" + CSS.escape(key) + "]";
+              //console.log("checkForPendingFormData: simple name selector is: " + selector);
+              let inputElement = formElement.querySelector(selector);
+
+              if (inputElement) {
+                //console.log("checkForPendingFormData: inputElement found, existing value is: " + inputElement.value);
+                inputElement.value = value;
+              }
+            }
+          }
+
+          for (var radioField of fieldData.radioFields) {
+            let name = radioField.name;
+            let value = radioField.value;
+            //console.log("checkForPendingFormData: radio name is: " + name);
+            //console.log("checkForPendingFormData: radio value is: " + value);
+
+            let selector = "input[name=" + CSS.escape(name) + "]";
+            //console.log("checkForPendingFormData: radio selector is: " + selector);
+            let inputElements = formElement.querySelectorAll(selector);
+            for (let inputElement of inputElements) {
+              if (inputElement.value == value) {
+                inputElement.checked = true;
+              } else {
+                inputElement.false = true;
+              }
+            }
+          }
+
+          //console.log("checkForPendingFormData: found formElement:");
+          //console.log(formElement);
+
+          // Now hide most of the page so that the use doesn't try to use it.
+          let contentElement = document.getElementById("content");
+          if (contentElement) {
+            //console.log("checkForPendingFormData: found contentElement:");
+            //console.log(contentElement);
+
+            let topDivElement = contentElement.querySelector("div.sixteen.columns");
+            if (topDivElement) {
+              //console.log("checkForPendingFormData: found topDivElement:");
               //console.log(topDivElement);
 
               topDivElement.style.display = "none";
@@ -230,8 +350,9 @@ function additionalMessageHandler(request, sender, sendResponse) {
 }
 
 async function checkForSearchThenInit() {
-  // check for a pending search first, there is no need to do the site init if there is one
-  await checkForPendingSearch();
+  // check for a pending search or other form data first,
+  // there is no need to do the site init if there is one
+  await checkForPendingFormData();
 
   siteContentInit(
     `wikitree`,

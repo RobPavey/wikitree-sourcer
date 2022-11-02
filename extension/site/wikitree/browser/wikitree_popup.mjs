@@ -553,6 +553,18 @@ async function setFieldsFromPersonData(data, personEd, personGd, tabId, citation
   }
 }
 
+async function getPendingMergeEdit() {
+  return new Promise((resolve, reject) => {
+    try {
+      chrome.storage.local.get(["wikitreeMergeEditData"], function (value) {
+        resolve(value.wikitreeMergeEditData);
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
 async function addSetFieldsFromPersonDataMenuItem(menu, data, tabId) {
   let personData = await getLatestPersonData();
   if (!personData) {
@@ -701,6 +713,9 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   if (extractedData.pageType == "editFamily") {
     await addSetFieldsFromPersonDataMenuItem(menu, data, tabId);
     await addSetFieldsFromCitationMenuItem(menu, data, tabId);
+  } else if (extractedData.pageType == "read" || extractedData.pageType == "private") {
+    await addMergeEditFromPersonDataMenuItem(menu, data, tabId);
+    await addMergeEditFromPersonDataMenuItem(menu, data, tabId);
   }
 
   addStandardMenuEnd(menu, data, backFunction);
