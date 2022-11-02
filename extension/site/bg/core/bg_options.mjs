@@ -128,12 +128,14 @@ const citationOptionsGroup = {
       type: "checkbox",
       label: "Include the transcriber in the citation",
       defaultValue: true,
+      unitTestValue: true,
     },
     {
       optionName: "includePhotographer",
       type: "checkbox",
       label: "Include the photographer in the citation",
       defaultValue: true,
+      unitTestValue: true,
     },
     {
       optionName: "includeRelatives",
@@ -151,7 +153,7 @@ const citationOptionsGroup = {
     {
       optionName: "bracketsRoundName",
       type: "select",
-      label: "If the name has a part surronded by brackets (usually maiden name)",
+      label: "If the name has a part surrounded by brackets (usually maiden name)",
       values: [
         { 
           value: "omit", 

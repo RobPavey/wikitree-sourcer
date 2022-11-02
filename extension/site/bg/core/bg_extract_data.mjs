@@ -90,6 +90,7 @@ function buildFullAddress(cemetery) {
   let address = "";
   address = appendWithComma(address, cemetery.addressStreet);
   address = appendWithComma(address, cemetery.addressLocality);
+  address = appendWithComma(address, cemetery.addressDistrict);
   address = appendWithComma(address, cemetery.addressRegion);
   address = appendWithComma(address, cemetery.addressCountry);
 
@@ -175,6 +176,7 @@ function extractData(document, url) {
         setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode,  'div[itemprop="streetAddress"]', "addressStreet");
         setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode, 'span[itemprop="addressLocality"]', "addressLocality");
         setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode,  'span[itemprop="addressDistrict"]', "addressDistrict");
+        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode, 'span[itemprop="addressRegion"]', "addressRegion");
         setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode, 'div[itemprop="addressCountry"]', "addressCountry");
         
         result.cemeteryFullAddress = buildFullAddress(cemeteryAddress);
@@ -234,14 +236,11 @@ function extractData(document, url) {
     // Cemetery
     // Logged On
     
-    const cemeteryLinkNode = document.querySelector('[href^="/cemetery/"]');
-    if (cemeteryLinkNode) {
-      setFromNodeWithAttribute(result, cemeteryLinkNode, "h2", "cemeteryName");
-      const cemeteryNode = cemeteryLinkNode.parentNode;
-      const cemeteryAddressNodes = cemeteryNode.querySelectorAll("div");
-      
-      let cemeteryAddress = {};
-      setFromNodeWithAttribute(result, cemeteryNode, "h2", "cemeteryName");
+    const cemeteryNameNode = document.querySelector("div[class^='Stack_stack']>div>a>h2");
+    if (cemeteryNameNode && cemeteryNameNode.textContent) {      
+      result.cemeteryName = cleanText(cemeteryNameNode.textContent);
+      const cemeteryAddressNodes = cemeteryNameNode.parentNode.parentNode.querySelectorAll("div");      
+      let cemeteryAddress = {};      
       for (let i = 0; i < cemeteryAddressNodes.length; i+=1) {
         cemeteryAddress = appendWithComma(cemeteryAddress, cleanText(cemeteryAddressNodes[i].textContent));
       }
@@ -257,21 +256,6 @@ function extractData(document, url) {
         let indexOfComma = cemetery.indexOf(",");
         result.cemeteryName = cemetery.slice(0,indexOfComma-1);
         result.cemeteryFullAddress = cemetery.slice(indexOfComma +2);
-      }
-    }
-
-    const cemeteryNameNode = getElementByTextContent(document, "h2", result.cemeteryName);
-    if (cemeteryNameNode) {
-      const cemeteryAddressNode = cemeteryNameNode.parentNode;
-      if (cemeteryAddressNode) {
-        const cemeteryFirstAddressNode = cemeteryAddressNode.nextElementSibling;
-        if (cemeteryFirstAddressNode) {
-          const firstAddressLine = cleanText(cemeteryFirstAddressNode.textContent);
-          if (firstAddressLine && firstAddressLine !== result.addressLocality) {
-            result.streetAddress = firstAddressLine;
-            result.cemeteryFullAddress = appendWithComma(firstAddressLine, result.cemeteryFullAddress);
-          }
-        }
       }
     }
     
