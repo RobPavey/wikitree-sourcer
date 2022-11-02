@@ -2018,6 +2018,32 @@ class GeneralizedData {
     return undefined;
   }
 
+  inferDeathCountry() {
+    let placeNames = [];
+
+    let deathPlace = this.inferDeathPlace();
+    if (deathPlace) {
+      placeNames.push(deathPlace);
+    }
+
+    if (this.recordType == RT.DeathRegistration || this.recordType == RT.Burial || this.recordType == RT.Death) {
+      if (this.eventPlace && !this.role) {
+        placeNames.push(this.eventPlace);
+      }
+
+      // Collection
+      if (this.collectionData) {
+        let collection = RC.findCollection(this.sourceOfData, this.collectionData.id);
+        let country = RC.getCountryFromCollection(collection);
+        if (country) {
+          placeNames.push(country);
+        }
+      }
+    }
+
+    return this.inferCountryFromPlaceNames(placeNames);
+  }
+
   inferResidencePlace() {
     if (this.residencePlace) {
       return this.residencePlace.placeString;
@@ -2194,6 +2220,34 @@ class GeneralizedData {
     return [];
   }
 
+  inferCountryFromPlaceNames(placeNames) {
+    // determine the country from placeNames array
+    if (placeNames.length > 0) {
+      let countryArray = CD.buildCountryArrayFromPlaceArray(placeNames);
+      if (countryArray && countryArray.length > 0) {
+        if (countryArray.length > 1) {
+          //console.log("inferCountryFromPlaceNames, there are " + countryArray.length + " countries!");
+          //console.log(countryArray);
+        }
+        return countryArray[0];
+      }
+    }
+
+    return undefined;
+  }
+
+  inferCountriesFromPlaceNames(placeNames) {
+    // determine the country from placeNames array
+    if (placeNames.length > 0) {
+      let countryArray = CD.buildCountryArrayFromPlaceArray(placeNames);
+      if (countryArray && countryArray.length > 0) {
+        return countryArray;
+      }
+    }
+
+    return undefined;
+  }
+
   inferEventCountry() {
     let placeNames = [];
 
@@ -2211,19 +2265,7 @@ class GeneralizedData {
       }
     }
 
-    // determine the country or countries from placeNames array
-    if (placeNames.length > 0) {
-      let countryArray = CD.buildCountryArrayFromPlaceArray(placeNames);
-      if (countryArray && countryArray.length > 0) {
-        if (countryArray.length > 1) {
-          //console.log("inferEventCountry, there are " + countryArray.length + " countries!");
-          //console.log(countryArray);
-        }
-        return countryArray[0];
-      }
-    }
-
-    return undefined;
+    return this.inferCountryFromPlaceNames(placeNames);
   }
 
   inferEventCounty() {

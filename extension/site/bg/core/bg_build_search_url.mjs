@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { bgUriBuilder } from "./bg_uri_builder.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import { getBgCountry } from "./bg_country.mjs";
 
 function getBgDateQualifierFromWtsQualifier(wtsQualifier) {
   switch (wtsQualifier) {
@@ -58,7 +59,7 @@ function buildSearchUrl(buildUrlInput) {
 
   builder.addPreamble();
 
-   let firstNames = ""
+  let firstNames = "";
   if (options.search_bg_includeFirstName) {
     let firstName = data.inferFirstName();
     if (firstName) {
@@ -72,11 +73,10 @@ function buildSearchUrl(buildUrlInput) {
       firstNames += " " + middleName;
     }
   }
-  
-  const givenNameExactness = options.search_bg_exactFirstNames ? true : false;
-  builder.addGivenNames(firstNames, givenNameExactness );
 
-  
+  const givenNameExactness = options.search_bg_exactFirstNames ? true : false;
+  builder.addGivenNames(firstNames, givenNameExactness);
+
   let lastName = data.inferLastNameAtDeath();
   if (!lastName) {
     lastName = data.inferLastName();
@@ -94,7 +94,6 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-
   if (options.search_bg_birthYearExactness != "none") {
     let birthYear = data.inferBirthYear();
     let birthDateQualifier = data.inferBirthDateQualifier();
@@ -109,16 +108,11 @@ function buildSearchUrl(buildUrlInput) {
     builder.addDeathYear(deathYear, bgDeathDateQualifier);
   }
 
-  let countryArray = data.inferCountries();
-  if (countryArray.length == 1) {
-    const ukCountries = ["England","Ireland","Scotland","Wales"];
-    if (ukCountries.indexOf(countryArray[0])!== -1) {
-      builder.addCountry("United Kingdom");
-    } else {
-      builder.addCountry(countryArray[0]);
-    }
+  const bgCountry = getBgCountry(data);
+  if (bgCountry) {
+    builder.addCountry(bgCountry);
   }
-  
+
   const url = builder.getUri();
 
   //console.log("URL is " + url);
