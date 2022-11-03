@@ -168,24 +168,23 @@ async function checkForPendingSearchData() {
 }
 
 async function checkForPendingMergeEditData() {
-  console.log("checkForPendingMergeEditData: called");
+  //console.log("checkForPendingMergeEditData: called");
 
-  console.log("checkForPendingMergeEditData: document.referrer is: " + document.referrer);
+  //console.log("checkForPendingMergeEditData: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
     return;
   }
 
-  //if (document.URL.startsWith("https://www.wikitree.com/index.php?title=Special:MergeEdit")) {
   if (document.URL == "https://www.wikitree.com/wiki/Special:MergeEdit") {
-    console.log("checkForPendingMergeEditData: URL matches");
+    //console.log("checkForPendingMergeEditData: URL matches");
 
     let wikitreeMergeEditData = await getPendingMergeEdit();
 
     if (wikitreeMergeEditData) {
-      console.log("checkForPendingMergeEditData: got wikitreeMergeEditData:");
-      console.log(wikitreeMergeEditData);
+      //console.log("checkForPendingMergeEditData: got wikitreeMergeEditData:");
+      //console.log(wikitreeMergeEditData);
 
       let mergeUrl = wikitreeMergeEditData.url;
 
@@ -193,18 +192,25 @@ async function checkForPendingMergeEditData() {
       let timeStampNow = Date.now();
       let timeSinceEvent = timeStampNow - timeStamp;
 
-      console.log("checkForPendingMergeEditData: timeStamp is :" + timeStamp);
-      console.log("checkForPendingMergeEditData: timeStampNow is :" + timeStampNow);
-      console.log("checkForPendingMergeEditData: timeSinceEvent is :" + timeSinceEvent);
+      //console.log("checkForPendingMergeEditData: timeStamp is :" + timeStamp);
+      //console.log("checkForPendingMergeEditData: timeStampNow is :" + timeStampNow);
+      //console.log("checkForPendingMergeEditData: timeSinceEvent is :" + timeSinceEvent);
 
-      if (timeSinceEvent < 10000 && mergeUrl == document.URL) {
-        let wtPersonData = wikitreeMergeEditData.wtPersonData;
-        setMergeEditFields(wtPersonData);
-      }
-
-      // clear the search data
+      // clear the search data before doing the post
       chrome.storage.local.set({ wikitreeMergeEditData: undefined }, function () {
         //console.log('cleared wikitreeMergeEditData');
+
+        if (timeSinceEvent < 10000 && mergeUrl == document.URL) {
+          // set status element
+          let statusElement = document.querySelector("#content div.status.red");
+          if (statusElement) {
+            statusElement.textContent = "Please wait - setting up WikiTree Sourcer merge/edit";
+            statusElement.className = "status";
+          }
+
+          let wtPersonData = wikitreeMergeEditData.wtPersonData;
+          postMergeEditData(wtPersonData, wikitreeMergeEditData.wikiId);
+        }
       });
     }
   }
@@ -311,157 +317,51 @@ function post(path, params, method = "post") {
   form.submit();
 }
 
-function setMergeEditFields(personData) {
-  console.log("setMergeEditFields, personData is:");
+function postMergeEditData(personData, wikiId) {
+  console.log("postMergeEditData, personData is:");
   console.log(personData);
 
-  if (true) {
-    console.log("setMergeEditFields. using create form method");
-
-    let bio = personData.notes;
-    if (personData.sources) {
-      if (personData.notes) {
-        bio += "\n";
-      }
-      bio += personData.sources;
+  let bio = personData.notes;
+  if (personData.sources) {
+    if (personData.notes) {
+      bio += "\n";
     }
-
-    const person = {
-      person: {
-        Prefix: personData.prefix,
-        FirstName: personData.firstName,
-        RealName: personData.prefName,
-        MiddleName: personData.middleName,
-        LastNameCurrent: personData.cln,
-        Suffix: personData.suffix,
-
-        BirthDate: personData.birthDate,
-        BirthLocation: personData.birthLocation,
-
-        DeathDate: personData.deathDate,
-        DeathLocation: personData.deathLocation,
-
-        Gender: personData.gender,
-      },
-      summary: personData.changeExplanation,
-    };
-
-    if (bio) {
-      person.person.Bio = bio;
-      person.options = { mergeBio: 1 };
-    }
-
-    const body = {
-      user_name: "Pavey-342",
-      person: JSON.stringify(person),
-    };
-
-    const url = "https://www.wikitree.com/wiki/Special:MergeEdit";
-
-    post(url, body);
+    bio += personData.sources;
   }
 
-  if (false) {
-    const person = {
-      person: {
-        FirstName: "John",
-        RealName: "Pref",
-        MiddleName: "Middle",
-        LastNameCurrent: "CLN",
-        BirthDate: "06-12-1968",
-        Gender: "Male",
-      },
-      summary: "Sourcer",
-    };
+  const person = {
+    person: {
+      Prefix: personData.prefix,
+      FirstName: personData.firstName,
+      RealName: personData.prefName,
+      MiddleName: personData.middleName,
+      LastNameCurrent: personData.cln,
+      Suffix: personData.suffix,
 
-    const body = {
-      user_name: "Pavey-342",
-      person: person,
-    };
+      BirthDate: personData.birthDate,
+      BirthLocation: personData.birthLocation,
 
-    const url = "https://www.wikitree.com/wiki/Special:MergeEdit";
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", url);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.setRequestHeader("Content-Type", "application/json");
+      DeathDate: personData.deathDate,
+      DeathLocation: personData.deathLocation,
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        console.log(xhr.status);
-        console.log(xhr.responseText);
-      }
-    };
-    xhr.send(body);
+      Gender: personData.gender,
+    },
+    summary: personData.changeExplanation,
+  };
+
+  if (bio) {
+    person.person.Bio = bio;
+    person.options = { mergeBio: 1 };
   }
 
-  if (false) {
-    const url = "https://www.wikitree.com/wiki/Special:MergeEdit";
-    const person = {
-      person: {
-        FirstName: "John",
-        RealName: "Pref",
-        MiddleName: "Middle",
-        LastNameCurrent: "CLN",
-        BirthDate: "06-12-1968",
-        Gender: "Male",
-      },
-      summary: "Sourcer",
-    };
+  const body = {
+    user_name: wikiId,
+    person: JSON.stringify(person),
+  };
 
-    const body = {
-      user_name: "Pavey-342",
-      person: person,
-    };
+  const url = "https://www.wikitree.com/wiki/Special:MergeEdit";
 
-    /*
-    window.postMessage(body, "*");
-    return;
-    */
-
-    ///*
-
-    // send to the endpoint
-    fetch(url, {
-      method: "POST",
-      mode: "no-cors",
-      cache: "no-cache",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: body,
-    }).then(function (response) {
-      // check the response object for result
-      // ...
-      console.log("response from fetch/post is:");
-      console.log(response);
-    });
-
-    return;
-  }
-
-  function setValue(nodeSelector, fieldName) {
-    let node = document.querySelector(nodeSelector);
-    if (node && personData[fieldName]) {
-      node.textContent = personData[fieldName];
-    }
-  }
-
-  if (false) {
-    setValue("#data_mPrefix", "prefix");
-    setValue("#data_mFirstName", "firstName");
-    setValue("#data_mRealName", "prefName");
-    setValue("#data_mMiddleName", "middleName");
-    setValue("#data_mLastNameCurrent", "cln");
-    setValue("#data_mSuffix", "suffix");
-
-    setValue("#data_mBirthDate", "birthDate");
-    setValue("#data_mBirthLocation", "birthLocation");
-
-    setValue("#data_mDeathDate", "deathDate");
-    setValue("#data_mDeathLocation", "deathLocation");
-
-    setValue("#data_mGender", "gender");
-  }
+  post(url, body);
 }
 
 function additionalMessageHandler(request, sender, sendResponse) {

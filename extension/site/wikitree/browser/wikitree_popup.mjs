@@ -571,11 +571,9 @@ async function setFieldsFromPersonData(data, personEd, personGd, tabId, citation
   }
 }
 
-async function mergeEditFromPersonData(data, personEd, personGd, tabId, citationObject) {
+async function mergeEditFromPersonData(data, personEd, personGd, citationObject) {
   let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
 
-  //let mergeUrl = "https://www.wikitree.com/index.php?title=Special:MergeEdit&user_name=";
-  //mergeUrl += data.extractedData.wikiId;
   let mergeUrl = "https://www.wikitree.com/wiki/Special:MergeEdit";
 
   try {
@@ -583,61 +581,19 @@ async function mergeEditFromPersonData(data, personEd, personGd, tabId, citation
       timeStamp: Date.now(),
       wtPersonData: wtPersonData,
       url: mergeUrl,
+      wikiId: data.extractedData.wikiId,
     };
 
     chrome.storage.local.set({ wikitreeMergeEditData: wikitreeMergeEditData }, function () {
-      console.log("saved wikitreeMergeEditData, wikitreeMergeEditData is:");
-      console.log(wikitreeMergeEditData);
+      //console.log("saved wikitreeMergeEditData, wikitreeMergeEditData is:");
+      //console.log(wikitreeMergeEditData);
     });
   } catch (ex) {
-    console.log("storeDataCache failed");
+    console.log("mergeEditFromPersonData: storeDataCache failed");
   }
 
   chrome.tabs.create({ url: mergeUrl });
   window.close();
-
-  /*
-  //let url = "https://www.wikitree.com/index.php?title=Special:MergeEdit&action=wikitreex&user_name=";
-  //url += data.extractedData.wikiId;
-  let url = "https://www.wikitree.com/wiki/Special:MergeEdit";
-
-  const person = {
-    person: {
-      FirstName: "John",
-      RealName: "Pref",
-      MiddleName: "Middle",
-      LastNameCurrent: "CLN",
-      BirthDate: "06-12-1968",
-      Gender: "Male",
-    },
-    summary: "Sourcer",
-  };
-
-  const body = {
-    user_name: "Pavey-342",
-    person: person,
-  };
-
-
-  let xhr = new XMLHttpRequest();
-  xhr.open("POST", url);
-  xhr.setRequestHeader("Accept", "application/json");
-  xhr.setRequestHeader("Content-Type", "application/json");
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      console.log(xhr.status);
-      console.log(xhr.responseText);
-    }
-  };
-
-  xhr.send(body);
-  */
-
-  /*
-  var wikitreeWindow = window.open(url);
-  wikitreeWindow.postMessage(body, "*");
-  */
 }
 
 function getPersonDataSubtitleText(gd, timeText) {
@@ -805,7 +761,7 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId) {
   }
 }
 
-async function addMergeEditFromPersonDataMenuItem(menu, data, tabId) {
+async function addMergeEditFromPersonDataMenuItem(menu, data) {
   console.log("addMergeEditFromPersonDataMenuItem");
 
   let personData = await getLatestPersonData();
@@ -829,7 +785,45 @@ async function addMergeEditFromPersonDataMenuItem(menu, data, tabId) {
       menu,
       menuText,
       function (element) {
-        mergeEditFromPersonData(data, personData.extractedData, gd, tabId);
+        mergeEditFromPersonData(data, personData.extractedData, gd);
+      },
+      subtitleText
+    );
+
+    return true;
+  }
+
+  return false;
+}
+
+async function addMergeEditFromCitationObjectMenuItem(menu, data) {
+  console.log("addMergeEditFromCitationObjectMenuItem");
+
+  let storedObject = await getLatestCitation();
+  if (!storedObject) {
+    return; // no saved data, do not add menu item
+  }
+
+  let citationObject = storedObject.latestCitation;
+  if (!citationObject) {
+    return;
+  }
+
+  let timeText = convertTimestampDiffToText(citationObject.timeStamp);
+  if (!timeText) {
+    return;
+  }
+
+  if (citationObject && citationObject.generalizedData) {
+    let gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
+    let menuText = "Merge Edit from Citation Data for:";
+    let subtitleText = getCitationObjectSubtitleText(gd, timeText);
+
+    addMenuItemWithSubtitle(
+      menu,
+      menuText,
+      function (element) {
+        mergeEditFromPersonData(data, citationObject.extractedData, gd, citationObject);
       },
       subtitleText
     );
@@ -843,7 +837,7 @@ async function addMergeEditFromPersonDataMenuItem(menu, data, tabId) {
 async function addMergeEditMenuItem(menu, data, tabId, backFunction) {
   console.log("addMergeEditMenuItem");
 
-  addMenuItem(menu, "Merge Edit...", function (element) {
+  addMenuItem(menu, "Merge/Edit from external data...", function (element) {
     setupMergeEditSubMenu(data, tabId);
   });
 }
@@ -857,12 +851,16 @@ async function setupMergeEditSubMenu(data, tabId) {
 
   let menu = beginMainMenu();
 
-  const item1Added = await addMergeEditFromPersonDataMenuItem(menu, data, tabId);
+  const item1Added = await addMergeEditFromPersonDataMenuItem(menu, data);
+  const item2Added = await addMergeEditFromCitationObjectMenuItem(menu, data);
 
   console.log("setupMergeEditSubMenu, item1Added = " + item1Added);
 
-  if (!item1Added) {
-    addItalicMessageMenuItem(menu, "No data available");
+  if (!item1Added && !item2Added) {
+    let message = "No external data available.";
+    message += " To get data from a citation use 'Build citation...'.";
+    message += " To get data from a profile use 'Save Person Data'.";
+    addItalicMessageMenuItem(menu, message);
   }
 
   endMainMenu(menu);
