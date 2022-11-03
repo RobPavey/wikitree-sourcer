@@ -46,10 +46,10 @@ async function getPendingMergeEdit() {
   });
 }
 
-async function checkForPendingFormData() {
-  //console.log("checkForPendingFormData: called");
+async function checkForPendingSearchData() {
+  //console.log("checkForPendingSearchData: called");
 
-  //console.log("checkForPendingFormData: document.referrer is: " + document.referrer);
+  //console.log("checkForPendingSearchData: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
@@ -57,12 +57,12 @@ async function checkForPendingFormData() {
   }
 
   if (document.URL == "https://www.wikitree.com/wiki/Special:SearchPerson") {
-    //console.log("checkForPendingFormData: URL matches");
+    //console.log("checkForPendingSearchData: URL matches");
 
     let wikitreeSearchData = await getPendingSearch();
 
     if (wikitreeSearchData) {
-      //console.log("checkForPendingFormData: got formValues:");
+      //console.log("checkForPendingSearchData: got formValues:");
       //console.log(wikitreeSearchData);
 
       let searchUrl = wikitreeSearchData.url;
@@ -70,45 +70,45 @@ async function checkForPendingFormData() {
       let timeStampNow = Date.now();
       let timeSinceSearch = timeStampNow - timeStamp;
 
-      //console.log("checkForPendingFormData: searchUrl is :" + searchUrl);
-      //console.log("checkForPendingFormData: timeStamp is :" + timeStamp);
-      //console.log("checkForPendingFormData: timeStampNow is :" + timeStampNow);
-      //console.log("checkForPendingFormData: timeSinceSearch is :" + timeSinceSearch);
+      //console.log("checkForPendingSearchData: searchUrl is :" + searchUrl);
+      //console.log("checkForPendingSearchData: timeStamp is :" + timeStamp);
+      //console.log("checkForPendingSearchData: timeStampNow is :" + timeStampNow);
+      //console.log("checkForPendingSearchData: timeSinceSearch is :" + timeSinceSearch);
 
       if (timeSinceSearch < 10000 && searchUrl == document.URL) {
         let formElement = document.getElementById("searchForm");
         if (formElement) {
           let fieldData = wikitreeSearchData.fieldData;
 
-          //console.log("checkForPendingFormData: fieldData is:");
+          //console.log("checkForPendingSearchData: fieldData is:");
           //console.log(fieldData);
 
           for (var key in fieldData.simpleIdFields) {
-            //console.log("checkForPendingFormData: key is: " + key);
+            //console.log("checkForPendingSearchData: key is: " + key);
             if (key) {
               let value = fieldData.simpleIdFields[key];
-              //console.log("checkForPendingFormData: value is: " + value);
+              //console.log("checkForPendingSearchData: value is: " + value);
 
               let inputElement = document.getElementById(key);
               if (inputElement) {
-                //console.log("checkForPendingFormData: inputElement found, existing value is: " + inputElement.value);
+                //console.log("checkForPendingSearchData: inputElement found, existing value is: " + inputElement.value);
                 inputElement.value = value;
               }
             }
           }
 
           for (var key in fieldData.simpleNameFields) {
-            //console.log("checkForPendingFormData: key is: " + key);
+            //console.log("checkForPendingSearchData: key is: " + key);
             if (key) {
               let value = fieldData.simpleNameFields[key];
-              //console.log("checkForPendingFormData: value is: " + value);
+              //console.log("checkForPendingSearchData: value is: " + value);
 
               let selector = "input[name=" + CSS.escape(key) + "]";
-              //console.log("checkForPendingFormData: simple name selector is: " + selector);
+              //console.log("checkForPendingSearchData: simple name selector is: " + selector);
               let inputElement = formElement.querySelector(selector);
 
               if (inputElement) {
-                //console.log("checkForPendingFormData: inputElement found, existing value is: " + inputElement.value);
+                //console.log("checkForPendingSearchData: inputElement found, existing value is: " + inputElement.value);
                 inputElement.value = value;
               }
             }
@@ -117,11 +117,11 @@ async function checkForPendingFormData() {
           for (var radioField of fieldData.radioFields) {
             let name = radioField.name;
             let value = radioField.value;
-            //console.log("checkForPendingFormData: radio name is: " + name);
-            //console.log("checkForPendingFormData: radio value is: " + value);
+            //console.log("checkForPendingSearchData: radio name is: " + name);
+            //console.log("checkForPendingSearchData: radio value is: " + value);
 
             let selector = "input[name=" + CSS.escape(name) + "]";
-            //console.log("checkForPendingFormData: radio selector is: " + selector);
+            //console.log("checkForPendingSearchData: radio selector is: " + selector);
             let inputElements = formElement.querySelectorAll(selector);
             for (let inputElement of inputElements) {
               if (inputElement.value == value) {
@@ -132,18 +132,18 @@ async function checkForPendingFormData() {
             }
           }
 
-          //console.log("checkForPendingFormData: found formElement:");
+          //console.log("checkForPendingSearchData: found formElement:");
           //console.log(formElement);
 
           // Now hide most of the page so that the use doesn't try to use it.
           let contentElement = document.getElementById("content");
           if (contentElement) {
-            //console.log("checkForPendingFormData: found contentElement:");
+            //console.log("checkForPendingSearchData: found contentElement:");
             //console.log(contentElement);
 
             let topDivElement = contentElement.querySelector("div.sixteen.columns");
             if (topDivElement) {
-              //console.log("checkForPendingFormData: found topDivElement:");
+              //console.log("checkForPendingSearchData: found topDivElement:");
               //console.log(topDivElement);
 
               topDivElement.style.display = "none";
@@ -164,112 +164,47 @@ async function checkForPendingFormData() {
         //console.log('cleared wikitreeSearchData');
       });
     }
-  } else if (document.URL == "https://www.wikitree.com/index.php?title=Special:MergeEdit") {
-    //console.log("checkForPendingFormData: URL matches");
+  }
+}
 
-    let wikitreeFormData = await getPendingMergeEdit();
+async function checkForPendingMergeEditData() {
+  console.log("checkForPendingMergeEditData: called");
 
-    if (wikitreeFormData) {
-      //console.log("checkForPendingFormData: got formValues:");
-      //console.log(wikitreeSearchData);
+  console.log("checkForPendingMergeEditData: document.referrer is: " + document.referrer);
 
-      let searchUrl = wikitreeSearchData.url;
-      let timeStamp = wikitreeSearchData.timeStamp;
+  if (document.referrer) {
+    // when this page was opened by the extension referrer is an empty string
+    return;
+  }
+
+  //if (document.URL.startsWith("https://www.wikitree.com/index.php?title=Special:MergeEdit")) {
+  if (document.URL == "https://www.wikitree.com/wiki/Special:MergeEdit") {
+    console.log("checkForPendingMergeEditData: URL matches");
+
+    let wikitreeMergeEditData = await getPendingMergeEdit();
+
+    if (wikitreeMergeEditData) {
+      console.log("checkForPendingMergeEditData: got wikitreeMergeEditData:");
+      console.log(wikitreeMergeEditData);
+
+      let mergeUrl = wikitreeMergeEditData.url;
+
+      let timeStamp = wikitreeMergeEditData.timeStamp;
       let timeStampNow = Date.now();
-      let timeSinceSearch = timeStampNow - timeStamp;
+      let timeSinceEvent = timeStampNow - timeStamp;
 
-      //console.log("checkForPendingFormData: searchUrl is :" + searchUrl);
-      //console.log("checkForPendingFormData: timeStamp is :" + timeStamp);
-      //console.log("checkForPendingFormData: timeStampNow is :" + timeStampNow);
-      //console.log("checkForPendingFormData: timeSinceSearch is :" + timeSinceSearch);
+      console.log("checkForPendingMergeEditData: timeStamp is :" + timeStamp);
+      console.log("checkForPendingMergeEditData: timeStampNow is :" + timeStampNow);
+      console.log("checkForPendingMergeEditData: timeSinceEvent is :" + timeSinceEvent);
 
-      if (timeSinceSearch < 10000 && searchUrl == document.URL) {
-        let formElement = document.getElementById("searchForm");
-        if (formElement) {
-          let fieldData = wikitreeSearchData.fieldData;
-
-          //console.log("checkForPendingFormData: fieldData is:");
-          //console.log(fieldData);
-
-          for (var key in fieldData.simpleIdFields) {
-            //console.log("checkForPendingFormData: key is: " + key);
-            if (key) {
-              let value = fieldData.simpleIdFields[key];
-              //console.log("checkForPendingFormData: value is: " + value);
-
-              let inputElement = document.getElementById(key);
-              if (inputElement) {
-                //console.log("checkForPendingFormData: inputElement found, existing value is: " + inputElement.value);
-                inputElement.value = value;
-              }
-            }
-          }
-
-          for (var key in fieldData.simpleNameFields) {
-            //console.log("checkForPendingFormData: key is: " + key);
-            if (key) {
-              let value = fieldData.simpleNameFields[key];
-              //console.log("checkForPendingFormData: value is: " + value);
-
-              let selector = "input[name=" + CSS.escape(key) + "]";
-              //console.log("checkForPendingFormData: simple name selector is: " + selector);
-              let inputElement = formElement.querySelector(selector);
-
-              if (inputElement) {
-                //console.log("checkForPendingFormData: inputElement found, existing value is: " + inputElement.value);
-                inputElement.value = value;
-              }
-            }
-          }
-
-          for (var radioField of fieldData.radioFields) {
-            let name = radioField.name;
-            let value = radioField.value;
-            //console.log("checkForPendingFormData: radio name is: " + name);
-            //console.log("checkForPendingFormData: radio value is: " + value);
-
-            let selector = "input[name=" + CSS.escape(name) + "]";
-            //console.log("checkForPendingFormData: radio selector is: " + selector);
-            let inputElements = formElement.querySelectorAll(selector);
-            for (let inputElement of inputElements) {
-              if (inputElement.value == value) {
-                inputElement.checked = true;
-              } else {
-                inputElement.false = true;
-              }
-            }
-          }
-
-          //console.log("checkForPendingFormData: found formElement:");
-          //console.log(formElement);
-
-          // Now hide most of the page so that the use doesn't try to use it.
-          let contentElement = document.getElementById("content");
-          if (contentElement) {
-            //console.log("checkForPendingFormData: found contentElement:");
-            //console.log(contentElement);
-
-            let topDivElement = contentElement.querySelector("div.sixteen.columns");
-            if (topDivElement) {
-              //console.log("checkForPendingFormData: found topDivElement:");
-              //console.log(topDivElement);
-
-              topDivElement.style.display = "none";
-            }
-
-            let titleElement = document.createElement("h1");
-            titleElement.innerText = "Performing WikiTree Sourcer search...";
-            contentElement.appendChild(titleElement);
-          }
-
-          // now submit the form to do the search
-          formElement.submit();
-        }
+      if (timeSinceEvent < 10000 && mergeUrl == document.URL) {
+        let wtPersonData = wikitreeMergeEditData.wtPersonData;
+        setMergeEditFields(wtPersonData);
       }
 
       // clear the search data
-      chrome.storage.local.set({ wikitreeSearchData: undefined }, function () {
-        //console.log('cleared wikitreeSearchData');
+      chrome.storage.local.set({ wikitreeMergeEditData: undefined }, function () {
+        //console.log('cleared wikitreeMergeEditData');
       });
     }
   }
@@ -331,12 +266,202 @@ function setEditFamilyFields(personData) {
   setValue("#mBioWithoutSources", "notes");
   setValue("#mSources", "sources");
 
+  // change explanation
+  setValue("#wpSummary", "changeExplanation");
+
   // Let the page know that changes have been made so that the matches are updated
   let inputNode = document.querySelector("#mLastNameAtBirth");
   var inputEvent = new Event("input", { bubbles: true });
   inputNode.dispatchEvent(inputEvent);
   var changeEvent = new Event("change", { bubbles: true });
   inputNode.dispatchEvent(changeEvent);
+}
+
+/**
+ * sends a request to the specified url from a form. this will change the window location.
+ * @param {string} path the path to send the post request to
+ * @param {object} params the parameters to add to the url
+ * @param {string} [method=post] the method to use on the form
+ *
+ * See: https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
+ */
+
+function post(path, params, method = "post") {
+  // The rest of this code assumes you are not using a library.
+  // It can be made less verbose if you use one.
+  const form = document.createElement("form");
+  form.method = method;
+  form.action = path;
+
+  for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+      const hiddenField = document.createElement("input");
+      hiddenField.type = "hidden";
+      hiddenField.name = key;
+      hiddenField.value = params[key];
+
+      form.appendChild(hiddenField);
+    }
+  }
+
+  console.log("about to submit form:");
+  console.log(form);
+
+  document.body.appendChild(form);
+  form.submit();
+}
+
+function setMergeEditFields(personData) {
+  console.log("setMergeEditFields, personData is:");
+  console.log(personData);
+
+  if (true) {
+    console.log("setMergeEditFields. using create form method");
+
+    let bio = personData.notes;
+    if (personData.sources) {
+      if (personData.notes) {
+        bio += "\n";
+      }
+      bio += personData.sources;
+    }
+
+    const person = {
+      person: {
+        Prefix: personData.prefix,
+        FirstName: personData.firstName,
+        RealName: personData.prefName,
+        MiddleName: personData.middleName,
+        LastNameCurrent: personData.cln,
+        Suffix: personData.suffix,
+
+        BirthDate: personData.birthDate,
+        BirthLocation: personData.birthLocation,
+
+        DeathDate: personData.deathDate,
+        DeathLocation: personData.deathLocation,
+
+        Gender: personData.gender,
+      },
+      summary: personData.changeExplanation,
+    };
+
+    if (bio) {
+      person.person.Bio = bio;
+      person.options = { mergeBio: 1 };
+    }
+
+    const body = {
+      user_name: "Pavey-342",
+      person: JSON.stringify(person),
+    };
+
+    const url = "https://www.wikitree.com/wiki/Special:MergeEdit";
+
+    post(url, body);
+  }
+
+  if (false) {
+    const person = {
+      person: {
+        FirstName: "John",
+        RealName: "Pref",
+        MiddleName: "Middle",
+        LastNameCurrent: "CLN",
+        BirthDate: "06-12-1968",
+        Gender: "Male",
+      },
+      summary: "Sourcer",
+    };
+
+    const body = {
+      user_name: "Pavey-342",
+      person: person,
+    };
+
+    const url = "https://www.wikitree.com/wiki/Special:MergeEdit";
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        console.log(xhr.status);
+        console.log(xhr.responseText);
+      }
+    };
+    xhr.send(body);
+  }
+
+  if (false) {
+    const url = "https://www.wikitree.com/wiki/Special:MergeEdit";
+    const person = {
+      person: {
+        FirstName: "John",
+        RealName: "Pref",
+        MiddleName: "Middle",
+        LastNameCurrent: "CLN",
+        BirthDate: "06-12-1968",
+        Gender: "Male",
+      },
+      summary: "Sourcer",
+    };
+
+    const body = {
+      user_name: "Pavey-342",
+      person: person,
+    };
+
+    /*
+    window.postMessage(body, "*");
+    return;
+    */
+
+    ///*
+
+    // send to the endpoint
+    fetch(url, {
+      method: "POST",
+      mode: "no-cors",
+      cache: "no-cache",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: body,
+    }).then(function (response) {
+      // check the response object for result
+      // ...
+      console.log("response from fetch/post is:");
+      console.log(response);
+    });
+
+    return;
+  }
+
+  function setValue(nodeSelector, fieldName) {
+    let node = document.querySelector(nodeSelector);
+    if (node && personData[fieldName]) {
+      node.textContent = personData[fieldName];
+    }
+  }
+
+  if (false) {
+    setValue("#data_mPrefix", "prefix");
+    setValue("#data_mFirstName", "firstName");
+    setValue("#data_mRealName", "prefName");
+    setValue("#data_mMiddleName", "middleName");
+    setValue("#data_mLastNameCurrent", "cln");
+    setValue("#data_mSuffix", "suffix");
+
+    setValue("#data_mBirthDate", "birthDate");
+    setValue("#data_mBirthLocation", "birthLocation");
+
+    setValue("#data_mDeathDate", "deathDate");
+    setValue("#data_mDeathLocation", "deathLocation");
+
+    setValue("#data_mGender", "gender");
+  }
 }
 
 function additionalMessageHandler(request, sender, sendResponse) {
@@ -352,7 +477,8 @@ function additionalMessageHandler(request, sender, sendResponse) {
 async function checkForSearchThenInit() {
   // check for a pending search or other form data first,
   // there is no need to do the site init if there is one
-  await checkForPendingFormData();
+  await checkForPendingSearchData();
+  await checkForPendingMergeEditData();
 
   siteContentInit(
     `wikitree`,
