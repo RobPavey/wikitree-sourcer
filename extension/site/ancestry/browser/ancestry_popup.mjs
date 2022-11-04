@@ -386,6 +386,18 @@ async function ancestryBuildHouseholdTable(data) {
   getDataForLinkedHouseholdRecords(data, ancestryBuildHouseholdTableWithLinkedRecords);
 }
 
+async function ancestryBuildTreeTemplate(data) {
+  if (data.extractedData.ancestryTemplate) {
+    writeToClipboard(data.extractedData.ancestryTemplate, "Ancestry Tree Template");
+  }
+}
+
+async function ancestryBuildTreeMediaTemplate(data) {
+  if (data.extractedData.ancestryTemplate) {
+    writeToClipboard(data.extractedData.ancestryTemplate, "Ancestry Tree Media Template");
+  }
+}
+
 function ancestryGoToRecord(data) {
   let url = data.extractedData.url;
 
@@ -574,6 +586,22 @@ function addAncestryGoToFullImageMenuItem(menu, data) {
   }
 }
 
+function addBuildAncestryTreeTemplateMenuItem(menu, data) {
+  if (data.extractedData.ancestryTemplate) {
+    addMenuItem(menu, "Build Ancestry Tree Template", function (element) {
+      ancestryBuildTreeTemplate(data);
+    });
+  }
+}
+
+function addBuildAncestryTreeMediaTemplateMenuItem(menu, data) {
+  if (data.extractedData.ancestryTemplate) {
+    addMenuItem(menu, "Build Ancestry Tree Media Template", function (element) {
+      ancestryBuildTreeMediaTemplate(data);
+    });
+  }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Main Menu
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -602,7 +630,9 @@ async function setupAncestryPopupMenuWithLinkData(data) {
 
   if (extractedData.pageType == "personFacts") {
     await addSearchMenus(menu, data, backFunction, "ancestry");
+    addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data);
+    addBuildAncestryTreeTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "record") {
     // if the user doesn't have a subscription add a heading to that effect
     if (extractedData.isLimitedDueToSubscription) {
@@ -625,6 +655,8 @@ async function setupAncestryPopupMenuWithLinkData(data) {
   } else if (extractedData.pageType == "sharingImageOrRecord") {
     addAncestrySharingPageBuildCitationMenuItems(menu, data);
     addAncestryGoToFullImageMenuItem(menu, data);
+  } else if (extractedData.pageType == "treeMedia") {
+    addBuildAncestryTreeMediaTemplateMenuItem(menu, data);
   }
 
   addStandardMenuEnd(menu, data, backFunction);

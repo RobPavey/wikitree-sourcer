@@ -659,6 +659,64 @@ function extractImageTemplate(result, url) {
   }
 }
 
+function extractTreeTemplate(result, url) {
+  // e.g. "https://www.ancestry.com/family-tree/person/tree/86808578/person/260133535006/facts"
+  // becomes: {{Ancestry Tree|86808578|260133535006}}
+  const treePrefix = "/family-tree/person/tree/";
+  const personPrefix = "/person/";
+  let treePrefixIndex = url.indexOf(treePrefix);
+  if (treePrefixIndex != -1) {
+    let treeIndex = treePrefixIndex + treePrefix.length;
+    let personPrefixIndex = url.indexOf(personPrefix, treeIndex);
+    if (personPrefixIndex != -1) {
+      let tree = url.substring(treeIndex, personPrefixIndex);
+      let personIndex = personPrefixIndex + personPrefix.length;
+      let personEndIndex = url.indexOf("/", personIndex);
+      if (personEndIndex != -1) {
+        let person = url.substring(personIndex, personEndIndex);
+        result.ancestryTemplate = "{{Ancestry Tree|" + tree + "|" + person + "}}";
+      }
+    }
+  }
+}
+
+function extractTreeMediaTemplate(result, url) {
+  // There are various URL forms:
+  // https://www.ancestry.com/family-tree/tree/86808578/media/d69a7d6a-c773-48b1-ab09-19100cd55c14
+  // https://www.ancestry.com/family-tree/tree/86808578/person/46552198684/media/d69a7d6a-c773-48b1-ab09-19100cd55c14
+  // https://www.ancestry.com/mediaui-viewer/tree/86808578/media/d69a7d6a-c773-48b1-ab09-19100cd55c14
+  // https://www.ancestry.com/mediaui-viewer/tree/86808578/person/46552198684/media/d69a7d6a-c773-48b1-ab09-19100cd55c14?usePUBJs=true
+
+  // becomes: {{Ancestry Tree Media|86808578|d69a7d6a-c773-48b1-ab09-19100cd55c14}}
+
+  const treePrefix = "/tree/";
+  const mediaPrefix = "/media/";
+  let treePrefixIndex = url.indexOf(treePrefix);
+  if (treePrefixIndex != -1) {
+    let treeIndex = treePrefixIndex + treePrefix.length;
+    let endTreeIndex = url.indexOf("/", treeIndex);
+    if (endTreeIndex != -1) {
+      let tree = url.substring(treeIndex, endTreeIndex);
+
+      let mediaPrefixIndex = url.indexOf(mediaPrefix, endTreeIndex);
+      if (mediaPrefixIndex != -1) {
+        let mediaIndex = mediaPrefixIndex + mediaPrefix.length;
+        let mediaEndIndex = url.indexOf("/", mediaIndex);
+        if (mediaEndIndex == -1) {
+          mediaEndIndex = url.indexOf("?", mediaIndex);
+        }
+        if (mediaEndIndex == -1) {
+          mediaEndIndex = url.length;
+        }
+        if (mediaEndIndex != -1) {
+          let media = url.substring(mediaIndex, mediaEndIndex);
+          result.ancestryTemplate = "{{Ancestry Tree Media|" + tree + "|" + media + "}}";
+        }
+      }
+    }
+  }
+}
+
 function extractSharingUrlTemplate(document, result) {
   let bandidoModal = document.querySelector("#modal > #modalFixed .bandido-modal-post-share .share-url");
   if (bandidoModal) {
@@ -873,6 +931,8 @@ function detectPageType(document, result, url) {
   } else if (url.includes("/sharing/") && url.includes("?token=")) {
     result.pageType = "sharingImageOrRecord";
     result.sharingType = "v2";
+  } else if (url.includes("/media/") && url.includes("/tree/")) {
+    result.pageType = "treeMedia";
   } else {
     result.pageType = "unknown";
   }
@@ -1219,6 +1279,9 @@ function extractData(document, url) {
     handlePersonSourceCitation(document, result);
   } else if (result.pageType == "personFacts") {
     handlePersonFacts(document, result);
+    extractTreeTemplate(result, url);
+  } else if (result.pageType == "treeMedia") {
+    extractTreeMediaTemplate(result, url);
   }
 
   //console.log("result of extractData on Ancestry");

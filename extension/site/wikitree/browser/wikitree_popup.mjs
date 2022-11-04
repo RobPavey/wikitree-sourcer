@@ -211,23 +211,8 @@ function getProfileLinkForAddMerge(personEd, personGd) {
   let linkString = "";
   if (url) {
     if (personGd.sourceOfData == "ancestry") {
-      // e.g. "https://www.ancestry.com/family-tree/person/tree/86808578/person/260133535006/facts"
-      // becomes: {{Ancestry Tree|86808578|260133535006}}
-      const treePrefix = "/family-tree/person/tree/";
-      const personPrefix = "/person/";
-      let treePrefixIndex = url.indexOf(treePrefix);
-      if (treePrefixIndex != -1) {
-        let treeIndex = treePrefixIndex + treePrefix.length;
-        let personPrefixIndex = url.indexOf(personPrefix, treeIndex);
-        if (personPrefixIndex != -1) {
-          let tree = url.substring(treeIndex, personPrefixIndex);
-          let personIndex = personPrefixIndex + personPrefix.length;
-          let personEndIndex = url.indexOf("/", personIndex);
-          if (personEndIndex != -1) {
-            let person = url.substring(personIndex, personEndIndex);
-            linkString = "{{Ancestry Tree|" + tree + "|" + person + "}}";
-          }
-        }
+      if (personEd.ancestryTemplate) {
+        linkString = personEd.ancestryTemplate;
       } else {
         linkString = "[" + url + "Ancestry profile]";
       }
