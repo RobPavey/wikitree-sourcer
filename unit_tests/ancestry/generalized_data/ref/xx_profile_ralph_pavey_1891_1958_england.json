@@ -2,7 +2,9 @@
   "sourceType": "profile",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "Ralph Edgar Pavey"
+    "name": "Ralph Edgar Pavey",
+    "lastName": "Pavey",
+    "forenames": "Ralph Edgar"
   },
   "birthDate": {
     "dateString": "9 JUL 1891"

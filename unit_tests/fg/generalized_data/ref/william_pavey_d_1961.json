@@ -16,6 +16,9 @@
   "deathDate": {
     "dateString": "14 Apr 1961"
   },
+  "deathPlace": {
+    "placeString": "Hillsdale, Hillsdale County, Michigan, USA"
+  },
   "ageAtDeath": "85",
   "birthDate": {
     "dateString": "1 Dec 1875"

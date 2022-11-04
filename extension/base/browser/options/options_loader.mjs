@@ -119,15 +119,42 @@ function convertOptionsFrom4To5(loadedOptions) {
   return convertedOptions;
 }
 
+function convertOptionsFrom5To6(loadedOptions) {
+  // Options version 5 was spliting up into multiple items, no conversion required here.
+
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom5To6, before:");
+  console.log(loadedOptions);
+
+  convertedOptions.addMerge_general_splitForenames = convertedOptions.addPerson_general_splitForenames;
+
+  convertedOptions.addMerge_addPerson_includeCitation = convertedOptions.addPerson_general_includeCitation;
+  convertedOptions.addMerge_addPerson_includeProfileLink = convertedOptions.addPerson_general_includeProfileLink;
+  convertedOptions.addMerge_addPerson_generateIntro = convertedOptions.addPerson_general_generateIntro;
+  convertedOptions.addMerge_addPerson_includeLinks = convertedOptions.addPerson_general_includeLinks;
+  convertedOptions.addMerge_addPerson_addDiedYoung = convertedOptions.addPerson_general_addDiedYoung;
+
+  convertedOptions.options_version = 6;
+
+  console.log("convertOptionsFrom5To6, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
 function convertOptions(loadedOptions, defaultOptions) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
 
+  console.log("convertOptions, loadedVersion is : " + loadedVersion + ", currentVersion is : " + currentVersion);
+
+  console.log("convertOptions, loadedOptions is : ");
+  console.log(loadedOptions);
+
   if (loadedVersion >= currentVersion) {
     return loadedOptions;
   }
-
-  //console.log("convertOptions, loadedVersion is : " + loadedVersion + ", currentVersion is : " + currentVersion);
 
   if (loadedVersion < 3) {
     loadedOptions = convertOptionsFrom2To3(loadedOptions);
@@ -138,20 +165,11 @@ function convertOptions(loadedOptions, defaultOptions) {
   if (loadedVersion < 5) {
     loadedOptions = convertOptionsFrom4To5(loadedOptions);
   }
+  if (loadedVersion < 6) {
+    loadedOptions = convertOptionsFrom5To6(loadedOptions);
+  }
 
   return loadedOptions;
-}
-
-function putNewLoadedOptionsSetInOptions(options, optionsSet, prefix) {
-  if (!optionsSet || !options || !prefix) {
-    return;
-  }
-
-  const keys = Object.keys(optionsSet);
-  for (let key of keys) {
-    let optionsKeyName = prefix + "_" + key;
-    options[optionsKeyName] = optionsSet[key];
-  }
 }
 
 function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
@@ -183,7 +201,7 @@ async function callFunctionWithStoredOptions(optionsFunction) {
 
     let convertedOptions = convertOptions(loadedOptions, defaultOptions);
     // We used to use the spread operator to merge the stored options and the ones from defaultOptions with
-    // the stored ones taking priority. Out a a concern that no longer used options (that the converter forgot)
+    // the stored ones taking priority. Out of a concern that no longer used options (that the converter forgot)
     // would build up it was changed to use a function.
     optionsObject = addNewDefaultsAndRemoveOldOptions(convertedOptions, defaultOptions);
   } else {

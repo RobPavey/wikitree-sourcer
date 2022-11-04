@@ -684,11 +684,167 @@ function extractSharingImageFullSizeLink(document, result) {
   if (attachmentContainer) {
     let zoomImg = attachmentContainer.querySelector("#zoomModal > #zoomContent > #zoomImg");
 
+    let imageUrl = "";
+
     if (zoomImg) {
-      let imageUrl = zoomImg.getAttribute("src");
-      //console.log("imageUrl is " + imageUrl);
+      imageUrl = zoomImg.getAttribute("src");
+    } else {
+      let img = attachmentContainer.querySelector("img.attachment-image");
+      if (img) {
+        imageUrl = img.getAttribute("src");
+      }
+    }
+
+    //console.log("imageUrl is " + imageUrl);
+
+    if (imageUrl) {
+      let maxParamIndex = imageUrl.toLowerCase().indexOf("&maxwidth=");
+      if (maxParamIndex != -1) {
+        imageUrl = imageUrl.substring(0, maxParamIndex);
+      }
       result.fullSizeSharingImageUrl = imageUrl;
     }
+  }
+}
+
+function extractSharingImageFullSizeLinkV2(document, result) {
+  //console.log("extractSharingImageFullSizeLinkV2");
+
+  let imageUrl = "";
+
+  let img = document.querySelector("#landingPageContent div.photo > img");
+  if (img) {
+    imageUrl = img.getAttribute("src");
+  }
+
+  //console.log("imageUrl is " + imageUrl);
+
+  if (imageUrl) {
+    let maxParamIndex = imageUrl.toLowerCase().indexOf("&maxwidth=");
+    if (maxParamIndex != -1) {
+      imageUrl = imageUrl.substring(0, maxParamIndex);
+    }
+    result.fullSizeSharingImageUrl = imageUrl;
+  }
+}
+
+function extractSharingImageOrRecordDetails(document, result) {
+  //console.log("extractSharingImageOrRecordDetails");
+
+  if (result.fullSizeSharingImageUrl) {
+    // extract the dbId and imageId from image URL
+    // https://mediasvc.ancestry.com/v2/image/namespaces/6598/media/LNDRG12_136_137-0719.jpg?securityToken=xw9176821728cabb787654ce65368a763ae9313f7a99db0000&NamespaceId=6598&Client=Share
+
+    const dbId = result.fullSizeSharingImageUrl.replace(
+      /https?\:\/\/[^\/]+\/v2\/image\/namespaces\/([^\/]+)\/media\/([^\?\.]+).*/,
+      "$1"
+    );
+    const imageId = result.fullSizeSharingImageUrl.replace(
+      /https?\:\/\/[^\/]+\/v2\/image\/namespaces\/([^\/]+)\/media\/([^\?\.]+).*/,
+      "$2"
+    );
+
+    if (dbId && dbId != result.fullSizeSharingImageUrl) {
+      result.dbId = dbId;
+    }
+
+    if (imageId && imageId != result.fullSizeSharingImageUrl) {
+      result.recordId = imageId;
+    }
+  }
+
+  const titleElement = document.querySelector("title");
+  if (titleElement) {
+    let title = titleElement.textContent;
+    const prefix = "discovered in ";
+    const prefixIndex = title.indexOf(prefix);
+    if (prefixIndex != -1) {
+      let remainder = title.substring(prefixIndex + prefix.length);
+      const suffix = " collection";
+      if (remainder.endsWith(suffix)) {
+        remainder = remainder.substring(0, remainder.length - suffix.length);
+      }
+
+      if (remainder) {
+        result.titleCollection = remainder;
+      }
+    }
+  }
+
+  const titleName = document.querySelector("h1.subject-name");
+  if (titleName && titleName.textContent) {
+    result.titleName = titleName.textContent.trim();
+  }
+
+  const personNarrative = document.querySelector("p.content-caption");
+  if (personNarrative && personNarrative.textContent) {
+    result.personNarrative = personNarrative.textContent.trim();
+  }
+
+  // https://www.ancestry.com/sharing/26032858?h=db10de&clickref=1011lwhmEYYb%2C1011lwhmEYYb&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate+External
+  let num1 = result.url.replace(/.*\.ancestry[^\/]+\/sharing\/([^\?]+)\?.*/, "$1");
+  let num2 = result.url.replace(/.*\.ancestry[^\/]+\/sharing\/[^\?]+\?h\=([^\?\&]+).*/, "$1");
+
+  if (num1 && num2) {
+    result.ancestryTemplate = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
+  }
+}
+
+function extractSharingImageOrRecordDetailsV2(document, result) {
+  //console.log("extractSharingImageOrRecordDetailsV2");
+
+  const contentDiv = document.querySelector("#landingPageContent");
+  if (contentDiv) {
+    const dataObjectId = contentDiv.getAttribute("data-object-id");
+    if (dataObjectId) {
+      // example: "7163-38659916"
+      const dashIndex = dataObjectId.indexOf("-");
+      if (dashIndex != -1) {
+        const dbId = dataObjectId.substring(0, dashIndex);
+        const recordId = dataObjectId.substring(dashIndex + 1);
+        if (dbId && recordId) {
+          result.dbId = dbId;
+          result.recordId = recordId;
+        }
+      }
+    }
+  }
+
+  const titleElement = document.querySelector("title");
+  if (titleElement) {
+    let title = titleElement.textContent;
+    const prefix = "Discovered by ";
+    if (title.startsWith(prefix)) {
+      const collectionIndex = title.indexOf(" in ", prefix.length);
+      let remainder = title.substring(collectionIndex + 4);
+      const suffix = " collection";
+      if (remainder.endsWith(suffix)) {
+        remainder = remainder.substring(0, remainder.length - suffix.length);
+      }
+
+      if (remainder) {
+        result.titleCollection = remainder;
+      }
+    }
+  }
+
+  const titleName = document.querySelector("h2.conTitle");
+  if (titleName && titleName.textContent) {
+    result.titleName = titleName.textContent.trim();
+  }
+
+  const personNarrative = document.querySelector("div.conBody > p");
+  if (personNarrative && personNarrative.textContent) {
+    result.personNarrative = personNarrative.textContent.trim();
+  }
+
+  // https://www.ancestry.com/sharing/236392?token=3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c
+
+  let num1 = result.url.replace(/.*\.ancestry[^\/]+\/sharing\/([^\?]+)\?.*/, "$1");
+  let num2 = result.url.replace(/.*\.ancestry[^\/]+\/sharing\/[^\?]+\?token\=([^\?\&]+).*/, "$1");
+
+  if (num1 && num2) {
+    result.ancestryTemplate = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
   }
 }
 
@@ -713,6 +869,10 @@ function detectPageType(document, result, url) {
     result.pageType = "record";
   } else if (url.includes("/sharing/") && url.includes("?h=")) {
     result.pageType = "sharingImageOrRecord";
+    result.sharingType = "v1";
+  } else if (url.includes("/sharing/") && url.includes("?token=")) {
+    result.pageType = "sharingImageOrRecord";
+    result.sharingType = "v2";
   } else {
     result.pageType = "unknown";
   }
@@ -867,9 +1027,38 @@ function handlePersonSourceCitation(document, result) {
   //console.log("handleFactEdit, recordUrl is: " + result.recordUrl);
 }
 
+// Extracting the HTML elements is working but I am unable to get the given name
+// and last name separately that way. There may be a way via a fetch.
+// This request:
+// https://www.ancestry.com/api/treesui-list/trees/11748183/recentlyviewedperson?expires=1667171853706
+// Gets this response:
+// {"pid":"12992988602","gname":"Fannie L.","sname":"(Kemper) Money Barber","isLiving":false}
+// The pid can be compared with the pid of the page to make sure it is the right person.
 function handlePersonFacts(document, result) {
   let personCardContainer = document.querySelector("#personCardContainer");
   if (personCardContainer) {
+    // There is no way that I have found to find the given name and surname separated in the
+    // HTML elements. But it can be found in a script.
+    let scriptElements = personCardContainer.querySelectorAll("script");
+    for (let scriptElement of scriptElements) {
+      let text = scriptElement.textContent;
+      let fullNameIndex = text.indexOf("fullName:");
+      if (fullNameIndex != -1) {
+        let endIndex = text.indexOf("}", fullNameIndex);
+        if (endIndex != -1) {
+          let fullNameText = text.substring(fullNameIndex, endIndex);
+          let givenName = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$1");
+          let surname = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$2");
+          if (givenName && givenName != fullNameText) {
+            result.givenName = givenName;
+          }
+          if (surname && surname != fullNameText) {
+            result.surname = surname;
+          }
+        }
+      }
+    }
+
     let userCardTitle = personCardContainer.querySelector(".userCardTitle");
     if (userCardTitle) {
       let fullName = userCardTitle.textContent;
@@ -1019,7 +1208,13 @@ function extractData(document, url) {
     extractImagePageTitle(document, result);
     extractSharingUrlTemplate(document, result);
   } else if (result.pageType == "sharingImageOrRecord") {
-    extractSharingImageFullSizeLink(document, result);
+    if (result.sharingType == "v1") {
+      extractSharingImageFullSizeLink(document, result);
+      extractSharingImageOrRecordDetails(document, result);
+    } else {
+      extractSharingImageFullSizeLinkV2(document, result);
+      extractSharingImageOrRecordDetailsV2(document, result);
+    }
   } else if (result.pageType == "personSourceCitation") {
     handlePersonSourceCitation(document, result);
   } else if (result.pageType == "personFacts") {

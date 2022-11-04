@@ -275,11 +275,16 @@ async function ancestryBuildSharingTemplate(extractedData) {
       // this is a record or image page
       let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
       if (dataObj) {
-        let url = dataObj.url;
-
+        // V1 versions
         // https://www.ancestry.com/sharing/24274440?h=95cf5c
-        let num1 = url.replace(/.*\/sharing\/(\w+)\?h\=\w+/, "$1");
-        let num2 = url.replace(/.*\/sharing\/\w+\?h\=(\w+)/, "$1");
+        let num1 = dataObj.id;
+        let num2 = dataObj.hmac_id;
+
+        // V2 versions
+        if (dataObj.v2 && dataObj.v2.share_id && dataObj.v2.share_token) {
+          num1 = dataObj.v2.share_id;
+          num2 = dataObj.v2.share_token;
+        }
 
         let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
 
@@ -316,7 +321,11 @@ async function ancestryBuildSharingUrl(extractedData) {
       // this is a record or image page
       let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
       if (dataObj) {
-        writeToClipboard(dataObj.url, "Sharing URL");
+        let url = dataObj.url;
+        if (dataObj.v2 && dataObj.v2.share_url) {
+          url = dataObj.v2.share_url;
+        }
+        writeToClipboard(url, "Sharing URL");
       } else {
         displayMessageWithIcon("warning", "Error building sharing URL.");
       }
@@ -533,8 +542,32 @@ function addAncestryImageBuildCitationMenuItems(menu, data) {
   );
 }
 
+function addAncestrySharingPageBuildCitationMenuItems(menu, data) {
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Inline Citation",
+    function (element) {
+      displayMessage("Building citation...");
+      data.type = "inline";
+      ancestryBuildCitationWithLinkData(data); // avoid prefetch
+    },
+    "It is recommended to Build Inline Citation on the Record Page instead if one exists and you have access."
+  );
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Source Citation",
+    function (element) {
+      displayMessage("Building citation...");
+      data.type = "source";
+      ancestryBuildCitationWithLinkData(data); // avoid prefetch
+    },
+    "It is recommended to Build Source Citation on the Record Page instead if one exists and you have access."
+  );
+}
+
 function addAncestryGoToFullImageMenuItem(menu, data) {
-  if (data.extractedData.pageType == "sharingImageOrRecord" && data.extractedData.fullSizeSharingImageUrl) {
+  const pageType = data.extractedData.pageType;
+  if (pageType == "sharingImageOrRecord" && data.extractedData.fullSizeSharingImageUrl) {
     addMenuItem(menu, "Go to Fullsize Sharing Image Page", function (element) {
       ancestryGoToFullSizeSharingImage(data);
     });
@@ -590,6 +623,7 @@ async function setupAncestryPopupMenuWithLinkData(data) {
     addAncestryBuildSharingUrlMenuItem(menu, data);
     addAncestryGoToRecordMenuItem(menu, data);
   } else if (extractedData.pageType == "sharingImageOrRecord") {
+    addAncestrySharingPageBuildCitationMenuItems(menu, data);
     addAncestryGoToFullImageMenuItem(menu, data);
   }
 

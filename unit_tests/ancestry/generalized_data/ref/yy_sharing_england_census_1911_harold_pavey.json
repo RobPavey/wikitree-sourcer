@@ -1,0 +1,9 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Harold Pavey"
+  },
+  "hasValidData": true
+}

@@ -31,7 +31,7 @@ function getDefaultOptions() {
 
   let defaultOptions = {};
 
-  defaultOptions.options_version = 5;
+  defaultOptions.options_version = 6;
 
   for (let optionsGroup of optionsRegistry.optionsGroups) {
     let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";

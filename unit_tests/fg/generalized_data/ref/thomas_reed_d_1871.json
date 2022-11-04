@@ -16,6 +16,9 @@
   "deathDate": {
     "dateString": "19 Jun 1871"
   },
+  "deathPlace": {
+    "placeString": "Fitzroy, Yarra City, Victoria, Australia"
+  },
   "ageAtDeath": "75",
   "birthDate": {
     "dateString": "20 Jun 1795"

@@ -2,7 +2,9 @@
   "sourceType": "profile",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "William Saville"
+    "name": "William Saville",
+    "lastName": "Saville",
+    "forenames": "William"
   },
   "birthDate": {
     "qualifier": 4,

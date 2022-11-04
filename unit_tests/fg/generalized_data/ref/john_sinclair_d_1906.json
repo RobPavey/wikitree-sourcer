@@ -16,6 +16,9 @@
   "deathDate": {
     "dateString": "16 May 1906"
   },
+  "deathPlace": {
+    "placeString": "Prahran, Stonnington City, Victoria, Australia"
+  },
   "ageAtDeath": "72",
   "birthDate": {
     "dateString": "16 Feb 1834"
