@@ -33,63 +33,71 @@ const regressionData = [
   },
   {
     caseName: "c_r_bow_d_1917",
-    inputPath:"bg/generalized_data/ref/c_r_bow_d_1917",
+    inputPath: "bg/generalized_data/ref/c_r_bow_d_1917",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "francis_weyland_dunn_d_1874",
-    inputPath:"bg/generalized_data/ref/francis_weyland_dunn_d_1874",
+    inputPath: "bg/generalized_data/ref/francis_weyland_dunn_d_1874",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "hanna_delaney_fallon_d_1817",
-    inputPath:"bg/generalized_data/ref/hanna_delaney_fallon_d_1817",
+    inputPath: "bg/generalized_data/ref/hanna_delaney_fallon_d_1817",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "isabella_crawford_d_17_dec_1948",
-    inputPath:"bg/generalized_data/ref/isabella_crawford_d_17_dec_1948",
+    inputPath: "bg/generalized_data/ref/isabella_crawford_d_17_dec_1948",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "margaret_ann_craney_d_1909",
-    inputPath:"bg/generalized_data/ref/margaret_ann_craney_d_1909",
+    inputPath: "bg/generalized_data/ref/margaret_ann_craney_d_1909",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "mary_ellen_adams_d_1967",
-    inputPath:"bg/generalized_data/ref/mary_ellen_adams_d_1967",
+    inputPath: "bg/generalized_data/ref/mary_ellen_adams_d_1967",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "mary_ellen-hughes-adams_1879_1974_new_logged_on",
-    inputPath:"bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_new_logged_on",
+    inputPath: "bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_new_logged_on",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "mary_ellen-hughes-adams_1879_1974_new_not_logged_on",
-    inputPath:"bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_new_not_logged_on",
+    inputPath: "bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_new_not_logged_on",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "mary_ellen-hughes-adams_1879_1974_old_logged_on",
-    inputPath:"bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_old_logged_on",
+    inputPath: "bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_old_logged_on",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "mary_ellen-hughes-adams_1879_1974_old_not_logged_on",
-    inputPath:"bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_old_not_logged_on",
+    inputPath: "bg/generalized_data/ref/mary_ellen-hughes-adams_1879_1974_old_not_logged_on",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "roderick_mclennan_d_2013",
-    inputPath:"bg/generalized_data/ref/roderick_mclennan_d_2013",
+    inputPath: "bg/generalized_data/ref/roderick_mclennan_d_2013",
     typeOfSearch: "SameCollection",
   },
   {
     caseName: "thomas_moffat_29_october_new_style",
-    inputPath:"bg/generalized_data/ref/thomas_moffat_29_october_new_style",
+    inputPath: "bg/generalized_data/ref/thomas_moffat_29_october_new_style",
     typeOfSearch: "SameCollection",
+  },
+  {
+    caseName: "william_shakespeare_d_1616",
+    inputPath: "fg/generalized_data/ref/william_shakespeare_d_1616",
+  },
+  {
+    caseName: "gow-822_read",
+    inputPath: "wikitree/generalized_data/ref/gow-822_read",
   },
 ];
 
