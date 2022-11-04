@@ -1,0 +1,21 @@
+{
+  "url": "https://billiongraves.com/supporting-record/Roderick-McLennan/104134264",
+  "success": true,
+  "hasImage": true,
+  "fullName": "Roderick McLennan",
+  "lastName": "McLennan",
+  "givenName": "Roderick",
+  "deathDate": "01 May 2013",
+  "relations": [
+    {
+      "name": "Catherine Atkinson",
+      "givenName": "Catherine",
+      "deathDate": "23 Jun 1991"
+    },
+    {
+      "name": "McLennan"
+    }
+  ],
+  "cemeteryName": "Currie Kirk Cemetery",
+  "cemeteryFullAddress": "156 Lanark Road West, Edinburgh, City of Edinburgh, Scotland, United Kingdom"
+}
