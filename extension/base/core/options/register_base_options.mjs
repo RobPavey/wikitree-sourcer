@@ -1034,14 +1034,34 @@ const tableSentenceOptionsGroup = {
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// Add Person options groups
+// Add/Merge options groups
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const addPersonGeneralOptionsGroup = {
-  category: "addPerson",
+const addMergeGeneralOptionsGroup = {
+  category: "addMerge",
   subcategory: "general",
-  tab: "addPerson",
+  tab: "addMerge",
   subsection: "general",
+  options: [
+    {
+      optionName: "splitForenames",
+      type: "select",
+      label: "Separate forenames into a first name and middle names",
+      values: [
+        { value: "never", text: "Never" },
+        { value: "always", text: "Always" },
+        { value: "countrySpecific", text: "Only for certain countries" },
+      ],
+      defaultValue: "countrySpecific",
+    },
+  ],
+};
+
+const addMergeAddPersonOptionsGroup = {
+  category: "addMerge",
+  subcategory: "addPerson",
+  tab: "addMerge",
+  subsection: "addPerson",
   options: [
     {
       optionName: "includeCitation",
@@ -1086,20 +1106,32 @@ const addPersonGeneralOptionsGroup = {
       unitTestValue: false,
     },
     {
-      optionName: "splitForenames",
-      type: "select",
-      label: "Separate forenames into a first name and middle names",
-      values: [
-        { value: "never", text: "Never" },
-        { value: "always", text: "Always" },
-        { value: "countrySpecific", text: "Only for certain countries" },
-      ],
-      defaultValue: "countrySpecific",
-    },
-    {
       optionName: "addDiedYoung",
       type: "checkbox",
       label: "Include Died Young sticker if person died aged 15 or less and no known spouse",
+      defaultValue: false,
+      unitTestValue: false,
+    },
+  ],
+};
+
+const addMergeMergeEditOptionsGroup = {
+  category: "addMerge",
+  subcategory: "mergeEdit",
+  tab: "addMerge",
+  subsection: "mergeEdit",
+  options: [
+    {
+      optionName: "includeCitation",
+      type: "checkbox",
+      label: "Put citation text in bio if merging from a citation.",
+      defaultValue: false,
+      unitTestValue: false,
+    },
+    {
+      optionName: "includeProfileLink",
+      type: "checkbox",
+      label: "Add a link/template to the source profile if merging from a profile",
       defaultValue: false,
       unitTestValue: false,
     },
@@ -1139,7 +1171,9 @@ registerSubheadingForOptions("table", "general", "table", "When using a table");
 registerSubheadingForOptions("table", "general", "list", "When using a list");
 registerSubheadingForOptions("table", "general", "sentence", "When using a sentence");
 
-registerSubsectionForOptions("addPerson", "general", "General");
+registerSubsectionForOptions("addMerge", "general", "General");
+registerSubsectionForOptions("addMerge", "addPerson", "Add Person");
+registerSubsectionForOptions("addMerge", "mergeEdit", "Merge/Edit");
 
 registerOptionsGroup(searchOptionsGroup);
 registerOptionsGroup(citationOptionsGroup);
@@ -1168,4 +1202,6 @@ registerOptionsGroup(tableTableOptionsGroup);
 registerOptionsGroup(tableListOptionsGroup);
 registerOptionsGroup(tableSentenceOptionsGroup);
 
-registerOptionsGroup(addPersonGeneralOptionsGroup);
+registerOptionsGroup(addMergeGeneralOptionsGroup);
+registerOptionsGroup(addMergeAddPersonOptionsGroup);
+registerOptionsGroup(addMergeMergeEditOptionsGroup);

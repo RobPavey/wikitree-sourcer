@@ -208,8 +208,7 @@ async function checkForPendingMergeEditData() {
             statusElement.className = "status";
           }
 
-          let wtPersonData = wikitreeMergeEditData.wtPersonData;
-          postMergeEditData(wtPersonData, wikitreeMergeEditData.wikiId);
+          postMergeEditData(wikitreeMergeEditData);
         }
       });
     }
@@ -310,24 +309,19 @@ function post(path, params, method = "post") {
     }
   }
 
-  console.log("about to submit form:");
-  console.log(form);
+  //console.log("about to submit form:");
+  //console.log(form);
 
   document.body.appendChild(form);
   form.submit();
 }
 
-function postMergeEditData(personData, wikiId) {
-  console.log("postMergeEditData, personData is:");
-  console.log(personData);
+function postMergeEditData(wikitreeMergeEditData) {
+  const personData = wikitreeMergeEditData.wtPersonData;
+  const wikiId = wikitreeMergeEditData.wikiId;
 
-  let bio = personData.notes;
-  if (personData.sources) {
-    if (personData.notes) {
-      bio += "\n";
-    }
-    bio += personData.sources;
-  }
+  //console.log("postMergeEditData, personData is:");
+  //console.log(personData);
 
   const person = {
     person: {
@@ -349,8 +343,8 @@ function postMergeEditData(personData, wikiId) {
     summary: personData.changeExplanation,
   };
 
-  if (bio) {
-    person.person.Bio = bio;
+  if (personData.bio) {
+    person.person.Bio = personData.bio;
     person.options = { mergeBio: 1 };
   }
 

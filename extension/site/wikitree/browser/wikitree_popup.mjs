@@ -87,11 +87,7 @@ function convertTimestampDiffToText(timeStamp) {
   return timeText;
 }
 
-function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
-  // this input is:
-  // data: the extracted data from the current page
-  // personData: the stored person data which is extractedData and generalizedData (not as objects)
-
+function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   function qualifierToStatus(qualifier) {
     switch (qualifier) {
       case dateQualifiers.NONE:
@@ -108,96 +104,13 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
     return "";
   }
 
-  function getPageParents(relationship) {
-    let parents = {};
-    parents.genderKnown = false;
-    if (relationship == "child") {
-      let pageParent1Name = data.extractedData.familyMemberName; // we don't actually know gender
-      let pageParent2Name = data.extractedData.familyMemberSpouseName;
-      let pageParent1WikiId = data.extractedData.familyMemberWikiId;
-      let pageParent2WikiId = data.extractedData.familyMemberSpouseWikiId;
-
-      let parent1HasParen = false;
-      if (pageParent1Name) {
-        let birthName = pageParent1Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
-        if (birthName && birthName != pageParent1Name) {
-          pageParent1Name = birthName;
-          parent1HasParen = true;
-        }
-      }
-
-      let parent2HasParen = false;
-      if (pageParent2Name) {
-        let birthName = pageParent2Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
-        if (birthName && birthName != pageParent2Name) {
-          pageParent2Name = birthName;
-          parent2HasParen = true;
-        }
-      }
-
-      if (pageParent1Name && pageParent2Name) {
-        if (parent1HasParen && !parent2HasParen) {
-          parents.fatherName = pageParent2Name;
-          parents.fatherWikiId = pageParent2WikiId;
-          parents.motherName = pageParent1Name;
-          parents.motherWikiId = pageParent1WikiId;
-          parents.genderKnown = true;
-        } else {
-          if (!parent1HasParen && parent2HasParen) {
-            parents.genderKnown = true;
-          }
-
-          parents.fatherName = pageParent1Name;
-          parents.fatherWikiId = pageParent1WikiId;
-          parents.motherName = pageParent2Name;
-          parents.motherWikiId = pageParent2WikiId;
-        }
-      } else if (pageParent1Name) {
-        if (parent1HasParen) {
-          parents.motherName = pageParent1Name;
-          parents.motherWikiId = pageParent1WikiId;
-          parents.genderKnown = true;
-        } else {
-          parents.fatherName = pageParent1Name;
-          parents.fatherWikiId = pageParent1WikiId;
-        }
-      }
-    } else if (relationship == "sibling") {
-      let fatherName = data.extractedData.familyMemberFatherName;
-      let motherName = data.extractedData.familyMemberMotherName;
-      let fatherWikiId = data.extractedData.familyMemberFatherWikiId;
-      let motherWikiId = data.extractedData.familyMemberMotherWikiId;
-
-      // Remove married name from mother if present
-      if (motherName) {
-        let birthName = motherName.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
-        if (birthName && birthName != motherName) {
-          motherName = birthName;
-        }
-      }
-
-      if (fatherName) {
-        parents.fatherName = fatherName;
-        parents.fatherWikiId = fatherWikiId;
-        parents.genderKnown = true;
-      }
-
-      if (motherName) {
-        parents.motherName = motherName;
-        parents.motherWikiId = motherWikiId;
-        parents.genderKnown = true;
-      }
-    }
-    return parents;
-  }
-
-  //console.log("getWikiTreeEditFamilyData, personGd is: ");
+  //console.log("getWikiTreeAddMergeData, personGd is: ");
   //console.log(personGd);
 
   let result = {};
 
   let splitForenames = false;
-  const splitForenamesOpt = options.addPerson_general_splitForenames;
+  const splitForenamesOpt = options.addMerge_general_splitForenames;
   if (splitForenamesOpt == "always") {
     splitForenames = true;
   } else if (splitForenamesOpt == "countrySpecific") {
@@ -290,15 +203,207 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
     }
   }
 
+  return result;
+}
+
+function getProfileLinkForAddMerge(personEd, personGd) {
+  const url = personEd.url;
+  let linkString = "";
+  if (url) {
+    if (personGd.sourceOfData == "ancestry") {
+      // e.g. "https://www.ancestry.com/family-tree/person/tree/86808578/person/260133535006/facts"
+      // becomes: {{Ancestry Tree|86808578|260133535006}}
+      const treePrefix = "/family-tree/person/tree/";
+      const personPrefix = "/person/";
+      let treePrefixIndex = url.indexOf(treePrefix);
+      if (treePrefixIndex != -1) {
+        let treeIndex = treePrefixIndex + treePrefix.length;
+        let personPrefixIndex = url.indexOf(personPrefix, treeIndex);
+        if (personPrefixIndex != -1) {
+          let tree = url.substring(treeIndex, personPrefixIndex);
+          let personIndex = personPrefixIndex + personPrefix.length;
+          let personEndIndex = url.indexOf("/", personIndex);
+          if (personEndIndex != -1) {
+            let person = url.substring(personIndex, personEndIndex);
+            linkString = "{{Ancestry Tree|" + tree + "|" + person + "}}";
+          }
+        }
+      } else {
+        linkString = "[" + url + "Ancestry profile]";
+      }
+    } else if (personGd.sourceOfData == "fs") {
+      // https://www.familysearch.org/tree/person/details/L5ZC-N31
+      // {{FamilySearch|L5ZC-N31}}
+      const treePrefix = "/tree/person/details/";
+      let treePrefixIndex = url.indexOf(treePrefix);
+      if (treePrefixIndex != -1) {
+        let treeIndex = treePrefixIndex + treePrefix.length;
+        let endIndex = url.indexOf("/", treeIndex);
+        if (endIndex == -1) {
+          endIndex = url.indexOf("?", treeIndex);
+        }
+        if (endIndex == -1) {
+          endIndex = url.length;
+        }
+        let personId = url.substring(treeIndex, endIndex);
+        linkString = "{{FamilySearch|" + personId + "}}";
+      } else {
+        linkString = "[" + url + "FamilySearch profile]";
+      }
+    } else if (personGd.sourceOfData == "fmp") {
+      // Currently we only support pages like this:
+      // https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964996/profile
+      // Ideally the extract would work on pages like this too:
+      // https://www.findmypast.co.uk/search-family-tree/transcript?id=1518223580&ref=30EB72DD-C6FD-4B08-90BF-94A6335344D2
+      linkString = "[" + url + "FindMyPast profile]";
+    }
+  }
+  return linkString;
+}
+
+function getWikiTreeMergeEditData(data, personEd, personGd, citationObject) {
+  let result = getWikiTreeAddMergeData(data, personEd, personGd, citationObject);
+
+  if (citationObject && options.addMerge_mergeEdit_includeCitation) {
+    let citationText = citationObject.citation;
+    if (citationText) {
+      result.bio = citationText;
+    }
+  }
+
+  // optionally add a "See also:" link to the person profile
+  if (personGd.sourceType == "profile" && options.addMerge_mergeEdit_includeProfileLink) {
+    let linkString = getProfileLinkForAddMerge(personEd, personGd);
+
+    if (linkString) {
+      if (result.bio) {
+        result.bio += "\n\n";
+      } else {
+        result.bio = "";
+      }
+      //result.sources += "== Sources ==\n";
+      //result.sources += "<references />\n";
+      result.bio += "See also:\n";
+      result.bio += linkString;
+    }
+  }
+
+  // change explanation
+  let fromString = "";
+  if (citationObject) {
+    fromString = getCitationObjectExplanationText(personGd);
+  } else if (personGd.sourceType == "profile") {
+    fromString = getPersonDataExplanationText(personGd);
+  }
+  if (fromString) {
+    result.changeExplanation = "Merge external data for " + fromString + " via WikiTree Sourcer";
+  }
+
+  return result;
+}
+
+function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
+  // this input is:
+  // data: the extracted data from the current page
+  // personData: the stored person data which is extractedData and generalizedData (not as objects)
+
+  function getPageParents(relationship) {
+    let parents = {};
+    parents.genderKnown = false;
+    if (relationship == "child") {
+      let pageParent1Name = data.extractedData.familyMemberName; // we don't actually know gender
+      let pageParent2Name = data.extractedData.familyMemberSpouseName;
+      let pageParent1WikiId = data.extractedData.familyMemberWikiId;
+      let pageParent2WikiId = data.extractedData.familyMemberSpouseWikiId;
+
+      let parent1HasParen = false;
+      if (pageParent1Name) {
+        let birthName = pageParent1Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
+        if (birthName && birthName != pageParent1Name) {
+          pageParent1Name = birthName;
+          parent1HasParen = true;
+        }
+      }
+
+      let parent2HasParen = false;
+      if (pageParent2Name) {
+        let birthName = pageParent2Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
+        if (birthName && birthName != pageParent2Name) {
+          pageParent2Name = birthName;
+          parent2HasParen = true;
+        }
+      }
+
+      if (pageParent1Name && pageParent2Name) {
+        if (parent1HasParen && !parent2HasParen) {
+          parents.fatherName = pageParent2Name;
+          parents.fatherWikiId = pageParent2WikiId;
+          parents.motherName = pageParent1Name;
+          parents.motherWikiId = pageParent1WikiId;
+          parents.genderKnown = true;
+        } else {
+          if (!parent1HasParen && parent2HasParen) {
+            parents.genderKnown = true;
+          }
+
+          parents.fatherName = pageParent1Name;
+          parents.fatherWikiId = pageParent1WikiId;
+          parents.motherName = pageParent2Name;
+          parents.motherWikiId = pageParent2WikiId;
+        }
+      } else if (pageParent1Name) {
+        if (parent1HasParen) {
+          parents.motherName = pageParent1Name;
+          parents.motherWikiId = pageParent1WikiId;
+          parents.genderKnown = true;
+        } else {
+          parents.fatherName = pageParent1Name;
+          parents.fatherWikiId = pageParent1WikiId;
+        }
+      }
+    } else if (relationship == "sibling") {
+      let fatherName = data.extractedData.familyMemberFatherName;
+      let motherName = data.extractedData.familyMemberMotherName;
+      let fatherWikiId = data.extractedData.familyMemberFatherWikiId;
+      let motherWikiId = data.extractedData.familyMemberMotherWikiId;
+
+      // Remove married name from mother if present
+      if (motherName) {
+        let birthName = motherName.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
+        if (birthName && birthName != motherName) {
+          motherName = birthName;
+        }
+      }
+
+      if (fatherName) {
+        parents.fatherName = fatherName;
+        parents.fatherWikiId = fatherWikiId;
+        parents.genderKnown = true;
+      }
+
+      if (motherName) {
+        parents.motherName = motherName;
+        parents.motherWikiId = motherWikiId;
+        parents.genderKnown = true;
+      }
+    }
+    return parents;
+  }
+
+  //console.log("getWikiTreeEditFamilyData, personGd is: ");
+  //console.log(personGd);
+
+  let result = getWikiTreeAddMergeData(data, personEd, personGd, citationObject);
+
   // possibly add intro
-  const addIntroOpt = options.addPerson_general_generateIntro;
+  const addIntroOpt = options.addMerge_addPerson_generateIntro;
   if (addIntroOpt != "none") {
     // Example intro:
     // Cornelius Seddon was born in 1864 in Ashton in Makerfield, Lancashire, England, the son of Joseph Seddon and Ellen Tootell.
 
     // Check whether to add {{Died Young}} sticker.
     let addDiedYoung = false;
-    if (options.addPerson_general_addDiedYoung) {
+    if (options.addMerge_addPerson_addDiedYoung) {
       let ageAtDeath = personGd.inferAgeAtDeath();
       if (ageAtDeath !== undefined) {
         if (typeof ageAtDeath == "string") {
@@ -410,7 +515,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
         }
         intro += " of ";
 
-        if (options.addPerson_general_includeLinks) {
+        if (options.addMerge_addPerson_includeLinks) {
           if (fatherName && fatherWikiId) {
             fatherName = "[[" + fatherWikiId + "|" + fatherName + "]]";
           }
@@ -434,7 +539,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
     }
   }
 
-  if (citationObject && options.addPerson_general_includeCitation) {
+  if (citationObject && options.addMerge_addPerson_includeCitation) {
     let type = citationObject.type;
     let citationText = citationObject.citation;
     if (citationText) {
@@ -453,66 +558,16 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
   }
 
   // optionally add a "See also:" link to the person profile
-  if (personGd.sourceType == "profile" && options.addPerson_general_includeProfileLink) {
-    const url = personEd.url;
-    let linkString = "";
-    if (url) {
-      if (personGd.sourceOfData == "ancestry") {
-        // e.g. "https://www.ancestry.com/family-tree/person/tree/86808578/person/260133535006/facts"
-        // becomes: {{Ancestry Tree|86808578|260133535006}}
-        const treePrefix = "/family-tree/person/tree/";
-        const personPrefix = "/person/";
-        let treePrefixIndex = url.indexOf(treePrefix);
-        if (treePrefixIndex != -1) {
-          let treeIndex = treePrefixIndex + treePrefix.length;
-          let personPrefixIndex = url.indexOf(personPrefix, treeIndex);
-          if (personPrefixIndex != -1) {
-            let tree = url.substring(treeIndex, personPrefixIndex);
-            let personIndex = personPrefixIndex + personPrefix.length;
-            let personEndIndex = url.indexOf("/", personIndex);
-            if (personEndIndex != -1) {
-              let person = url.substring(personIndex, personEndIndex);
-              linkString = "{{Ancestry Tree|" + tree + "|" + person + "}}";
-            }
-          }
-        } else {
-          linkString = "[" + url + "Ancestry profile]";
-        }
-      } else if (personGd.sourceOfData == "fs") {
-        // https://www.familysearch.org/tree/person/details/L5ZC-N31
-        // {{FamilySearch|L5ZC-N31}}
-        const treePrefix = "/tree/person/details/";
-        let treePrefixIndex = url.indexOf(treePrefix);
-        if (treePrefixIndex != -1) {
-          let treeIndex = treePrefixIndex + treePrefix.length;
-          let endIndex = url.indexOf("/", treeIndex);
-          if (endIndex == -1) {
-            endIndex = url.indexOf("?", treeIndex);
-          }
-          if (endIndex == -1) {
-            endIndex = url.length;
-          }
-          let personId = url.substring(treeIndex, endIndex);
-          linkString = "{{FamilySearch|" + personId + "}}";
-        } else {
-          linkString = "[" + url + "FamilySearch profile]";
-        }
-      } else if (personGd.sourceOfData == "fmp") {
-        // Currently we only support pages like this:
-        // https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964996/profile
-        // Ideally the extract would work on pages like this too:
-        // https://www.findmypast.co.uk/search-family-tree/transcript?id=1518223580&ref=30EB72DD-C6FD-4B08-90BF-94A6335344D2
-        linkString = "[" + url + "FindMyPast profile]";
-      }
+  if (personGd.sourceType == "profile" && options.addMerge_addPerson_includeProfileLink) {
+    let linkString = getProfileLinkForAddMerge(personEd, personGd);
 
-      if (linkString) {
-        if (!result.sources) {
-          result.sources = "";
-        } else {
-          result.sources += "\n";
-        }
-        result.sources += linkString;
+    if (linkString) {
+      if (!result.sources) {
+        result.sources = "";
+      } else {
+        result.sources += "\n";
       }
+      result.sources += linkString;
     }
   }
 
@@ -524,7 +579,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
     fromString = getPersonDataExplanationText(personGd);
   }
   if (fromString) {
-    result.changeExplanation = "External data for " + fromString + " generated by WikiTree Sourcer";
+    result.changeExplanation = "Add using external data for " + fromString + " via WikiTree Sourcer";
   }
 
   //console.log("getWikiTreeEditFamilyData, result is: ");
@@ -572,7 +627,7 @@ async function setFieldsFromPersonData(data, personEd, personGd, tabId, citation
 }
 
 async function mergeEditFromPersonData(data, personEd, personGd, citationObject) {
-  let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
+  let wtPersonData = getWikiTreeMergeEditData(data, personEd, personGd, citationObject);
 
   let mergeUrl = "https://www.wikitree.com/wiki/Special:MergeEdit";
 
@@ -762,8 +817,6 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId) {
 }
 
 async function addMergeEditFromPersonDataMenuItem(menu, data) {
-  console.log("addMergeEditFromPersonDataMenuItem");
-
   let personData = await getLatestPersonData();
   if (!personData) {
     console.log("addMergeEditFromPersonDataMenuItem, no person data");
@@ -797,8 +850,6 @@ async function addMergeEditFromPersonDataMenuItem(menu, data) {
 }
 
 async function addMergeEditFromCitationObjectMenuItem(menu, data) {
-  console.log("addMergeEditFromCitationObjectMenuItem");
-
   let storedObject = await getLatestCitation();
   if (!storedObject) {
     return; // no saved data, do not add menu item
@@ -835,8 +886,6 @@ async function addMergeEditFromCitationObjectMenuItem(menu, data) {
 }
 
 async function addMergeEditMenuItem(menu, data, tabId, backFunction) {
-  console.log("addMergeEditMenuItem");
-
   addMenuItem(menu, "Merge/Edit from external data...", function (element) {
     setupMergeEditSubMenu(data, tabId);
   });
@@ -847,14 +896,10 @@ async function addMergeEditMenuItem(menu, data, tabId, backFunction) {
 ////////////////////////////////////////////////////////////////////////////////
 
 async function setupMergeEditSubMenu(data, tabId) {
-  console.log("setupMergeEditSubMenu");
-
   let menu = beginMainMenu();
 
   const item1Added = await addMergeEditFromPersonDataMenuItem(menu, data);
   const item2Added = await addMergeEditFromCitationObjectMenuItem(menu, data);
-
-  console.log("setupMergeEditSubMenu, item1Added = " + item1Added);
 
   if (!item1Added && !item2Added) {
     let message = "No external data available.";
