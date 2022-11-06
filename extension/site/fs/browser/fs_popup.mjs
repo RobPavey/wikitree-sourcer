@@ -133,6 +133,29 @@ function fsOpenExternalImage(data) {
   }
 }
 
+async function fsBuildPersonTemplate(data) {
+  let ed = data.extractedData;
+  let url = ed.url;
+  if (url) {
+    const treePrefix = "/tree/person/details/";
+    let treePrefixIndex = url.indexOf(treePrefix);
+    if (treePrefixIndex != -1) {
+      let treeIndex = treePrefixIndex + treePrefix.length;
+      let endIndex = url.indexOf("/", treeIndex);
+      if (endIndex == -1) {
+        endIndex = url.indexOf("?", treeIndex);
+      }
+      if (endIndex == -1) {
+        endIndex = url.length;
+      }
+      let personId = url.substring(treeIndex, endIndex);
+      const linkString = "{{FamilySearch|" + personId + "}}";
+
+      writeToClipboard(linkString, "FamilySearch Template");
+    }
+  }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -158,6 +181,12 @@ function addFsOpenExternalImageMenuItem(menu, data) {
       fsOpenExternalImage(data);
     });
   }
+}
+
+function addBuildFsTemplateMenuItem(menu, data) {
+  addMenuItem(menu, "Build FamilySearch Template", function (element) {
+    fsBuildPersonTemplate(data);
+  });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -242,7 +271,9 @@ async function setupFsPopupMenu(extractedData) {
     addFsImageBuildCitationMenuItems(menu, data);
   } else if (extractedData.pageType == "person") {
     await addSearchMenus(menu, data, backFunction, "fs");
+    addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data);
+    addBuildFsTemplateMenuItem(menu, data);
   }
 
   addStandardMenuEnd(menu, data, backFunction);
