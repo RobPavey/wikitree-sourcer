@@ -75,6 +75,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:F3VH-9VV",
   },
   {
+    caseName: "england_baptism_1902_ella_giles",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW",
+  },
+  {
     caseName: "england_burial_1865_joseph_golden",
     url: "https://www.familysearch.org/ark:/61903/1:1:QLYW-5F4G",
   },
