@@ -113,6 +113,7 @@ const factTypeToRecordType = [
     titleMatches: [
       { recordType: RT.LandTax, matches: ["Land Tax"] },
       { recordType: RT.SchoolRecords, matches: ["School Records"] },
+      { recordType: RT.Census, matches: ["Census"] },
     ],
   },
   {

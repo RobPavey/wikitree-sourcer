@@ -1,0 +1,107 @@
+{
+  "recordData": {
+    "Name": "Wm L Waldren",
+    "Race": "W",
+    "Birth Date": "1866",
+    "Birth Place": "Ill",
+    "Residence Date": "1895",
+    "Residence Place": "Delavan township, Faribault, Minnesota",
+    "Age": "29y",
+    "Estimated Birth Year": "1866",
+    "Page": "3",
+    "Age In Years": "29",
+    "City Town": "Delavan township",
+    "Census County": "Faribault",
+    "Display Race Or Color": "White",
+    "Ethnicity Std": "American",
+    "Race Std": "White",
+    "Record Place": "Delavan township, Faribault, Minnesota, United States"
+  },
+  "fullName": "Wm L Waldren",
+  "givenName": "Wm L",
+  "surname": "Waldren",
+  "gender": "male",
+  "birthDateOriginal": "1866",
+  "birthDate": "1866",
+  "birthPlace": "Ill",
+  "factType": "Residence",
+  "eventDateOriginal": "1895",
+  "eventDate": "1895",
+  "eventPlaceOriginal": "Delavan township, Faribault, Minnesota",
+  "age": "29y",
+  "referenceData": {
+    "lineNumber": "29",
+    "filmNumber": "000565770",
+    "digitalFilmNumber": "4344705",
+    "imageNumber": "00527",
+    "packetLetter": "A",
+    "recordNumber": "16939"
+  },
+  "household": {
+    "headings": [
+      "fullName",
+      "givenName",
+      "surname",
+      "relationship",
+      "maritalStatus",
+      "gender",
+      "age",
+      "occupation",
+      "birthDateOriginal",
+      "birthYear",
+      "birthPlaceOriginal",
+      "birthPlace"
+    ],
+    "members": [
+      {
+        "isSelected": true,
+        "fullName": "Wm L Waldren",
+        "givenName": "Wm L",
+        "surname": "Waldren",
+        "gender": "male",
+        "birthDateOriginal": "1866",
+        "birthDate": "1866",
+        "birthPlaceOriginal": "Ill",
+        "age": "29y"
+      },
+      {
+        "fullName": "Lettie E Waldren",
+        "givenName": "Lettie E",
+        "surname": "Waldren",
+        "gender": "female",
+        "birthDateOriginal": "1869",
+        "birthDate": "1869",
+        "birthPlaceOriginal": "Minn",
+        "age": "26y"
+      },
+      {
+        "fullName": "Clarissa Waldren",
+        "givenName": "Clarissa",
+        "surname": "Waldren",
+        "gender": "female",
+        "birthDateOriginal": "1890",
+        "birthDate": "1890",
+        "birthPlaceOriginal": "Minn",
+        "age": "5y"
+      },
+      {
+        "fullName": "Wm R Waldren",
+        "givenName": "Wm R",
+        "surname": "Waldren",
+        "gender": "male",
+        "birthDateOriginal": "1893",
+        "birthDate": "1893",
+        "birthPlaceOriginal": "Minn",
+        "age": "2y"
+      }
+    ]
+  },
+  "collectionTitle": "Minnesota State Census, 1895",
+  "fsCollectionId": "1503031",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9VSW-BLG",
+  "citation": "\"Minnesota State Census, 1895,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:MQ67-PZS : 22 February 2021), Wm L Waldren, Delavan township, Faribault, Minnesota; citing p. 3, line 29, State Library and Records Service, St.Paul; FHL microfilm 565,770.",
+  "sourceTitleForPerson": "Wm L Waldren, \"Minnesota State Census, 1895\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:MQ67-PZS",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:S3HY-6889-T6P",
+  "pageType": "record"
+}

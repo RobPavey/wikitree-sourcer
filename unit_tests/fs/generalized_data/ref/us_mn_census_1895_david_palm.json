@@ -1,6 +1,6 @@
 {
   "sourceType": "record",
-  "recordType": "Residence",
+  "recordType": "Census",
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {

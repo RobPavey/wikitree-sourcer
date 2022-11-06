@@ -285,6 +285,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:MQ6G-CR3",
   },
   {
+    caseName: "us_mn_census_1895_wm_waldren",
+    url: "https://www.familysearch.org/ark:/61903/1:1:MQ67-PZS",
+  },
+  {
     caseName: "us_mn_spouse_death_1955_jennie_eneboe",
     url: "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ?treeref=9ZF5-1VJ",
   },
