@@ -1124,14 +1124,14 @@ const addMergeMergeEditOptionsGroup = {
     {
       optionName: "includeCitation",
       type: "checkbox",
-      label: "Put citation text in bio if merging from a citation.",
+      label: "Put citation text in biography if merging from a citation.",
       defaultValue: false,
       unitTestValue: false,
     },
     {
       optionName: "includeProfileLink",
       type: "checkbox",
-      label: "Add a link/template to the source profile if merging from a profile",
+      label: "Add a link/template to the biography if merging from a profile",
       defaultValue: false,
       unitTestValue: false,
     },
