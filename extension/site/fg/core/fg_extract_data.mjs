@@ -28,6 +28,7 @@ function cleanText(inputText) {
     text = text.trim();
     text = text.replace(/\s+/g, " ");
     text = text.replace(/\s([,;.])/g, "$1");
+    text = text.replace(/\u{2013}/gu, "-"); // En dash
   }
   return text;
 }

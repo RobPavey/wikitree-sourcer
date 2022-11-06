@@ -10,13 +10,14 @@
     "streetAddress": "Shelby Center Cemetery"
   },
   "name": {
-    "name": "Elizabeth Singleton Bates"
+    "name": "Elizabeth Bates"
   },
+  "lastNameAtBirth": "Singleton",
   "lastNameAtDeath": "Bates",
   "deathDate": {
     "dateString": "1876"
   },
-  "ageAtDeath": "41–42",
+  "ageAtDeath": "41-42",
   "birthDate": {
     "dateString": "1834"
   },

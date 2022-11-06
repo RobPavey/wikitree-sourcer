@@ -25,6 +25,45 @@ SOFTWARE.
 import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
+function setNames(data, result) {
+  let fgName = data.name;
+  let fullName = fgName;
+  let maidenName = "";
+  let cln = "";
+
+  // The name string can contain italics
+  if (data.nameHtml && fgName != data.nameHtml && data.nameHtml.includes("<i>")) {
+    // we may have a part in italics
+    let html = data.nameHtml;
+    let italicStartIndex = html.indexOf("<i>");
+    let italicEndIndex = html.indexOf("</i>", italicStartIndex);
+    if (italicStartIndex != -1 && italicEndIndex != -1) {
+      let partBefore = html.substring(0, italicStartIndex).trim();
+      let partItalic = html.substring(italicStartIndex + 3, italicEndIndex).trim();
+      let partAfter = html.substring(italicEndIndex + 4).trim();
+
+      // check there are no more italics
+      let secondItalicStartIndex = html.indexOf("<i>", italicEndIndex);
+      if (secondItalicStartIndex == -1) {
+        fullName = partBefore + " " + partAfter;
+        maidenName = partItalic;
+        cln = partAfter;
+      }
+    }
+  }
+
+  result.setFullName(fullName);
+
+  if (!maidenName) {
+    result.lastNameAtDeath = result.inferLastName();
+  } else {
+    result.lastNameAtBirth = maidenName;
+    if (cln) {
+      result.lastNameAtDeath = cln;
+    }
+  }
+}
+
 function generalizeData(input) {
   let data = input.extractedData;
 
@@ -48,9 +87,8 @@ function generalizeData(input) {
     result.eventPlace.streetAddress = data.cemeteryName;
   }
 
-  result.setFullName(data.name);
+  setNames(data, result);
 
-  result.lastNameAtDeath = result.inferLastName();
   result.setDeathDate(data.deathDate);
   result.setDeathPlace(data.deathPlace);
 

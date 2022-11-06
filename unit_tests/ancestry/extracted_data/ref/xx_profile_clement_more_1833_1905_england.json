@@ -21,5 +21,6 @@
     }
   ],
   "fatherName": "John More",
-  "motherName": "Mary More"
+  "motherName": "Mary More",
+  "ancestryTemplate": "{{Ancestry Tree|86808578|260052341589}}"
 }
