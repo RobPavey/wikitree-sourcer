@@ -786,6 +786,51 @@ function extractSharingImageFullSizeLinkV2(document, result) {
   }
 }
 
+function extractSharingImageFullSizeLinkDiscoveries(document, result) {
+  //console.log("extractSharingImageFullSizeLinkV2");
+
+  let imageUrl = "";
+
+  let img = document.querySelector("#interactiveImageWidgetContainer > div > img");
+  if (img) {
+    imageUrl = img.getAttribute("src");
+
+    //console.log("imageUrl is " + imageUrl);
+
+    // Example imageURL:
+    // https://mediasvc.ancestry.com/v2/image/namespaces/2442/media/m-t0627-02314-00441.jpg?securitytoken=xwf0ad4ee289f5eb0ebc4290c1c3a06f8ae8dac110959bce00&download=True&client=discoveryui-contentservice
+
+    // we want to remove the "&download=True" and onwards
+    if (imageUrl) {
+      let downloadParamIndex = imageUrl.toLowerCase().indexOf("&download=");
+      if (downloadParamIndex != -1) {
+        imageUrl = imageUrl.substring(0, downloadParamIndex);
+      }
+      result.fullSizeSharingImageUrl = imageUrl;
+
+      const altString = img.getAttribute("alt");
+      if (altString) {
+        result.titleCollection = altString;
+      }
+    }
+  } else {
+    // head > meta:nth-child(18)
+    let meta = document.querySelector("head > meta[content^='https://mediasvc.ancestry.']");
+
+    if (meta) {
+      let imageUrl = meta.getAttribute("content");
+
+      if (imageUrl) {
+        let maxParamIndex = imageUrl.toLowerCase().indexOf("&maxwidth=");
+        if (maxParamIndex != -1) {
+          imageUrl = imageUrl.substring(0, maxParamIndex);
+        }
+        result.fullSizeSharingImageUrl = imageUrl;
+      }
+    }
+  }
+}
+
 function extractSharingImageOrRecordDetails(document, result) {
   //console.log("extractSharingImageOrRecordDetails");
 
@@ -906,6 +951,57 @@ function extractSharingImageOrRecordDetailsV2(document, result) {
   }
 }
 
+function extractSharingImageOrRecordDetailsDiscoveries(document, result) {
+  //console.log("extractSharingImageOrRecordDetailsDiscoveries");
+
+  function getQueryField(regex) {
+    let value = result.url.replace(regex, "$1");
+
+    if (value && value != result.url) {
+      return value;
+    }
+  }
+
+  function setFromQueryField(regex, resultField) {
+    let value = getQueryField(regex);
+
+    if (value) {
+      result[resultField] = value;
+    }
+  }
+
+  // url contains dbid and recordid:
+  // https://www.ancestry.com/census-search/discoveries
+  // ?matchdbid=2442&matchrecordid=130891334
+  // &matchrelative=relative&share=1&matchgid=ZKaJzrJ3pquxvoYavEO5Hka1nA1QpAf5Wb
+  // &matchfirstname=Leslie%20R&matchlastname=Cox&matchbirthdate=1931&matchgender=male
+  setFromQueryField(/^.*[&?]matchdbid\=([^&]+).*/, "dbId");
+  setFromQueryField(/^.*[&?]matchrecordid\=([^&]+).*/, "recordId");
+
+  let fullName = "";
+  const firstNames = getQueryField(/^.*[&?]matchfirstname\=([^&]+).*/);
+  const lastNames = getQueryField(/^.*[&?]matchlastname\=([^&]+).*/);
+  if (firstNames) {
+    fullName = decodeURIComponent(firstNames);
+  }
+  if (lastNames) {
+    if (fullName) {
+      fullName += " ";
+    }
+    fullName += decodeURIComponent(lastNames);
+  }
+  if (fullName) {
+    result.titleName = fullName;
+  }
+
+  // div.app-card-content > p.text2xlrg.textalt.topSpacing
+
+  const personNarrative = document.querySelector("div.app-card-content > p.text2xlrg.textalt.topSpacing");
+  if (personNarrative && personNarrative.textContent) {
+    result.personNarrative = personNarrative.textContent.trim();
+  }
+}
+
 function detectPageType(document, result, url) {
   if (url.includes("/imageviewer/collections/")) {
     let bandidoModal = document.querySelector("#modal > #modalFixed .bandido-modal-post-share .share-url");
@@ -921,6 +1017,9 @@ function detectPageType(document, result, url) {
     if (citationRecord) {
       result.pageType = "personSourceCitation";
     }
+  } else if (url.includes("/discoveries") || url.includes("matchdbid=")) {
+    result.pageType = "sharingImageOrRecord";
+    result.sharingType = "discoveries";
   } else if (url.includes("dbid=") || url.includes("db=") || url.includes("discoveryui-content")) {
     result.pageType = "record";
   } else if (url.includes("/collections/") && url.includes("/records/")) {
@@ -1271,9 +1370,12 @@ function extractData(document, url) {
     if (result.sharingType == "v1") {
       extractSharingImageFullSizeLink(document, result);
       extractSharingImageOrRecordDetails(document, result);
-    } else {
+    } else if (result.sharingType == "v2") {
       extractSharingImageFullSizeLinkV2(document, result);
       extractSharingImageOrRecordDetailsV2(document, result);
+    } else if (result.sharingType == "discoveries") {
+      extractSharingImageFullSizeLinkDiscoveries(document, result);
+      extractSharingImageOrRecordDetailsDiscoveries(document, result);
     }
   } else if (result.pageType == "personSourceCitation") {
     handlePersonSourceCitation(document, result);

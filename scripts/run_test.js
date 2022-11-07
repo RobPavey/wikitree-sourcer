@@ -27,6 +27,7 @@ import { getUnitTestOptions } from "../extension/base/core/options/options_datab
 
 // Register all test modules, this is the order that they will be run in
 import "../unit_tests/ancestry/ancestry_test.mjs";
+import "../unit_tests/bg/bg_test.mjs";
 import "../unit_tests/fg/fg_test.mjs";
 import "../unit_tests/fmp/fmp_test.mjs";
 import "../unit_tests/freebmd/freebmd_test.mjs";
@@ -34,10 +35,9 @@ import "../unit_tests/freecen/freecen_test.mjs";
 import "../unit_tests/freereg/freereg_test.mjs";
 import "../unit_tests/fs/fs_test.mjs";
 import "../unit_tests/gro/gro_test.mjs";
+import "../unit_tests/np/np_test.mjs";
 import "../unit_tests/scotp/scotp_test.mjs";
 import "../unit_tests/wikitree/wikitree_test.mjs";
-import "../unit_tests/np/np_test.mjs";
-import "../unit_tests/bg/bg_test.mjs";
 
 function testSuiteEnabled(parameters, testSuiteName) {
   return parameters.testSuiteName == "" || parameters.testSuiteName == testSuiteName;

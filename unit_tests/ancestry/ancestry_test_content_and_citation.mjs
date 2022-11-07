@@ -1052,6 +1052,12 @@ const regressionData = [
     caseName: "yy_sharing_us_census_1870_wm_kemper",
     url: "https://www.ancestry.com/sharing/236392?token=3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c",
   },
+  {
+    // As of 7 Nov 2022 this sharing link: https://www.ancestry.com/sharing/27952110?h=8bcf5f
+    // Takes you to this page
+    caseName: "yy_sharing_us_census_1940_leslie_cox",
+    url: "https://www.ancestry.com/census-search/discoveries?matchdbid=2442&matchrecordid=130891334&matchrelative=relative&share=1&matchgid=ZKaJzrJ3pquxvoYavEO5Hka1nA1QpAf5Wb&matchfirstname=Leslie%20R&matchlastname=Cox&matchbirthdate=1931&matchgender=male",
+  },
 
   // Image pages
   {
