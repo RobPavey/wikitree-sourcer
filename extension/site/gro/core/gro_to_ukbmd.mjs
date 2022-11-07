@@ -38,12 +38,14 @@ function getUkbmdDistrictPageUrl(district) {
     ashtonunderlyne: "ashton under lyne",
     "bangor and beaumaris": "bangor",
     "barrow in furness": "barrow-in-furness",
+    "barrowin furness": "barrow-in-furness",
     "barrow on soar": "barrow upon soar",
     "berwick upon tweed": "berwick",
     bootle: "bootle1",
     "bootle cumberland": "bootle1",
     "bosmere and claydon": "bosmere",
     bourn: "bourne",
+    "bournemouth christchurch and poole": "bournemouth",
     "bradford and north bierley yorkshire": "bradford",
     "bradford yorkshire": "bradford",
     "bradford wilts": "bradford on avon",
@@ -57,6 +59,7 @@ function getUkbmdDistrictPageUrl(district) {
     castle: "castle ward",
     "chapel en le firth": "chapel-en-le-frith", // transcription error
     "chapel en le frith": "chapel-en-le-frith",
+    "chapel en lefrith": "chapel-en-le-frith",
     "chapel on le frith": "chapel-en-le-frith",
     chapelenlefrith: "chapel-en-le-frith",
     "chester le street": "chester-le-street",
@@ -95,6 +98,7 @@ function getUkbmdDistrictPageUrl(district) {
     llangadock: "llandovery",
     "loddon and clavering": "loddon",
     "manchester and prestwich": "manchester",
+    "manchester and prestwick": "manchester", // transcription error?
     "matlock bakewell and tideswell": "matlock",
     "mitford and launditch": "mitford",
     "mutford and lothingland": "mutford",
@@ -159,6 +163,7 @@ function getUkbmdDistrictPageUrl(district) {
     "tiverton and dulverton": "tiverton",
     "town of nottingham": "nottingham",
     "tunsd and happing": "tunstead",
+    "tunstd and happg": "tunstead",
     "tunstead and happing": "tunstead",
     "upton upon severn": "upton on severn",
     "vale of glamorgan": "vale-of-glamorgan",
@@ -229,6 +234,7 @@ function getUkbmdDistrictPageUrl(district) {
     "north lincolnshire",
     "north northamptonshire",
     "north shropshire",
+    "north somerset",
     "north surrey",
     "north warwickshire",
     "north yorkshire",
@@ -330,6 +336,7 @@ function getUkbmdDistrictPageUrl(district) {
   districtName = districtName.replace(/\s+poor\s+law\s+union$/, "").trim();
   districtName = districtName.replace(/\s+union$/, "").trim();
   districtName = districtName.replace(/\s+district$/, "").trim();
+  districtName = districtName.replace(/\s+hundred$/, "").trim();
   districtName = districtName.replace(/^the\swhole\sof\sthe\s/, "").trim();
   districtName = districtName.replace(/^the\s/, "").trim();
 
