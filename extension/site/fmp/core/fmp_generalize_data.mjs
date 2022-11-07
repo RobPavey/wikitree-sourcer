@@ -26,6 +26,10 @@ import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 
 function determineRecordType(extractedData) {
+  const eventTypeMatches = {
+    Obituary: RT.Obituary,
+  };
+
   const titleMatches = [
     { type: RT.BirthRegistration, matches: ["England & Wales Births"] },
     {
@@ -121,6 +125,14 @@ function determineRecordType(extractedData) {
 
   //console.log("in determineRecordType");
   //console.log(extractedData.recordData);
+
+  // If the record has an eventType
+  if (extractedData.recordData && extractedData.recordData["Event type"]) {
+    let recordType = eventTypeMatches[extractedData.recordData["Event type"]];
+    if (recordType) {
+      return recordType;
+    }
+  }
 
   let category = extractedData.recordData["Category"];
   let subcategory = extractedData.recordData["Subcategory"];
@@ -866,6 +878,17 @@ function generalizeDataGivenRecordType(data, result) {
     result.lastNameAtBirth = result.inferLastName();
   } else if (result.recordType == RT.Burial) {
     setEventDateFromRecordDataKey(data, result, "Burial");
+    setBirthDateAndYear(data, result);
+    setDeathDateAndYear(data, result);
+
+    let age = getRecordDataValueForList(data, ["Age", "Age at death"]);
+    if (age) {
+      result.ageAtDeath = age;
+    }
+
+    result.lastNameAtDeath = result.inferLastName();
+  } else if (result.recordType == RT.Obituary) {
+    setEventDateFromRecordDataKeys(data, result, ["Obituary", "Publication"]);
     setBirthDateAndYear(data, result);
     setDeathDateAndYear(data, result);
 

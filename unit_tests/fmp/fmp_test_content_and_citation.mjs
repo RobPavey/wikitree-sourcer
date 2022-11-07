@@ -271,6 +271,10 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FM%2F810019037%2F1",
   },
   {
+    caseName: "england_death_notice_1824_charles_thorold",
+    url: "https://www.findmypast.co.uk/transcript?id=R_106287059681",
+  },
+  {
     caseName: "england_devon_marriage_1841_maria_torr",
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FDEV%2FBANNS%2F86127%2F2",
   },

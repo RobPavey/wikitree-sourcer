@@ -1,0 +1,28 @@
+{
+  "sourceType": "record",
+  "recordType": "Obituary",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Thorold",
+    "forenames": "Charles"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Stamford, Lincolnshire & Rutland, England"
+  },
+  "eventDate": {
+    "dateString": "20 Feb 1824",
+    "yearString": "1824"
+  },
+  "deathDate": {
+    "dateString": "20 Feb 1824",
+    "yearString": "1824"
+  },
+  "lastNameAtDeath": "Thorold",
+  "collectionData": {
+    "id": "England, Newspaper Death Notices",
+    "page": "3"
+  },
+  "hasValidData": true
+}
