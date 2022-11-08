@@ -414,6 +414,24 @@ const CD = {
     return undefined;
   },
 
+  getContainingCountries: function (stdName) {
+    let containingCountries = [];
+
+    for (let country of CountryData) {
+      if (country.stdName == stdName) {
+        let parentCountries = country.partOf;
+        if (parentCountries) {
+          for (let containingCountry of parentCountries) {
+            containingCountries.push(containingCountry);
+          }
+        }
+        break;
+      }
+    }
+
+    return containingCountries;
+  },
+
   standardizeCountryName: function (countryName) {
     for (let country of CountryData) {
       for (let match of country.matches) {

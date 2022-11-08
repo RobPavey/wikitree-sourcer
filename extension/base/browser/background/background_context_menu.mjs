@@ -166,7 +166,23 @@ function openAncestryTemplate(text, options) {
     let num2 = text.replace(/\{\{Ancestry Sharing\|[^|]+\|([^}|]+)[^}]*\}\}/, "$1");
     if (num1 && num1 != text && num2 && num2 != text) {
       // https://www.ancestry.com/sharing/26032935?h=f25069
-      link = "https://www." + desiredDomain + "/sharing//" + num1 + "?h=" + num2;
+      link = "https://www." + desiredDomain + "/sharing/" + num1 + "?h=" + num2;
+    }
+  } else if (text.includes("Ancestry Tree Media")) {
+    // {{Ancestry Tree Media|86808578|d69a7d6a-c773-48b1-ab09-19100cd55c14}}
+    let num1 = text.replace(/\{\{Ancestry Tree Media\|([^|]+)\|[^}|]+[^}]*\}\}/, "$1");
+    let num2 = text.replace(/\{\{Ancestry Tree Media\|[^|]+\|([^}|]+)[^}]*\}\}/, "$1");
+    if (num1 && num1 != text && num2 && num2 != text) {
+      // https://www.ancestry.com/family-tree/tree/86808578/media/d69a7d6a-c773-48b1-ab09-19100cd55c14
+      link = "https://www." + desiredDomain + "/family-tree/tree/" + num1 + "/media/" + num2;
+    }
+  } else if (text.includes("Ancestry Tree")) {
+    // {{Ancestry Tree|1234|5678}}
+    let num1 = text.replace(/\{\{Ancestry Tree\|([^|]+)\|[^}|]+[^}]*\}\}/, "$1");
+    let num2 = text.replace(/\{\{Ancestry Tree\|[^|]+\|([^}|]+)[^}]*\}\}/, "$1");
+    if (num1 && num1 != text && num2 && num2 != text) {
+      // https://www.ancestry.com/family-tree/person/tree/1234/person/19531917216/facts
+      link = "https://www." + desiredDomain + "/family-tree/person/tree/" + num1 + "/person/" + num2 + "/facts";
     }
   }
 

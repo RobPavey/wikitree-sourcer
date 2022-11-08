@@ -68,7 +68,8 @@ async function loadOptions() {
     "options_citation",
     "options_narrative",
     "options_table",
-    "options_addPerson",
+    "options_addPerson", // legacy
+    "options_addMerge", // replaced addPerson in options version 6
     "options_version",
   ]);
 
@@ -79,11 +80,14 @@ async function loadOptions() {
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_narrative, "narrative");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_table, "table");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addPerson, "addPerson");
+    putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addMerge, "addMerge");
     if (itemsNew.options) {
       loadedOptions.options_version = itemsNew.options.options_version;
     } else if (itemsNew.options_version) {
       // this is a temporary format for during development of 1.3.4 can be removed once options updated
       loadedOptions.options_version = itemsNew.options_version;
+    } else {
+      loadedOptions.options_version = 5; // there was a bug in versions 4/5 where options_version wasn't saved
     }
   } else {
     let itemsOld = await getSyncStorageItems(["options"]);
@@ -99,7 +103,7 @@ async function loadOptions() {
 }
 
 function convertOptionsObjectToSaveFormat(options) {
-  const prefixes = ["search", "citation", "narrative", "table", "addPerson", "options"];
+  const prefixes = ["search", "citation", "narrative", "table", "addMerge", "options_version"];
 
   let newOptions = {};
 
@@ -138,7 +142,7 @@ async function saveOptions(options) {
         options_citation: saveFormatOptions.citation,
         options_narrative: saveFormatOptions.narrative,
         options_table: saveFormatOptions.table,
-        options_addPerson: saveFormatOptions.addPerson,
+        options_addMerge: saveFormatOptions.addMerge,
         options: saveFormatOptions.options,
       },
       function () {
@@ -168,7 +172,7 @@ async function saveOptions(options) {
                 options_citation: saveFormatOptions.citation,
                 options_narrative: saveFormatOptions.narrative,
                 options_table: saveFormatOptions.table,
-                options_addPerson: saveFormatOptions.addPerson,
+                options_addMerge: saveFormatOptions.addMerge,
                 options: saveFormatOptions.options,
               },
               function () {

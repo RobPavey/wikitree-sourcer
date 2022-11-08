@@ -1,0 +1,23 @@
+{
+  "url": "https://billiongraves.com/supporting-record/Mary-Ellen-Adams/102675092",
+  "success": true,
+  "hasImage": true,
+  "fullName": "Mary Ellen Adams",
+  "lastName": "Adams",
+  "givenName": "Mary Ellen",
+  "deathDate": "03 December 1967",
+  "relations": [
+    {
+      "name": "William Adams",
+      "givenName": "William",
+      "deathDate": "2 May 1956"
+    },
+    {
+      "name": "Noel Adams",
+      "givenName": "Noel",
+      "deathDate": "27 Oct 1984"
+    }
+  ],
+  "cemeteryName": "Belfast City Cemetery",
+  "cemeteryFullAddress": "Whiterock Road, Belfast, County Antrim, Northern Ireland, United Kingdom"
+}

@@ -1,0 +1,308 @@
+/*
+MIT License
+
+Copyright (c) 2020 Robert M Pavey
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+import { CD } from "../../../base/core/country_data.mjs";
+
+const bgCountries = [
+  "United States",
+  "Afghanistan",
+  "Akrotiri and Dhekelia",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Anguilla",
+  "Antarctica",
+  "Antigua and Barbuda",
+  "Argentina",
+  "Armenia",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bermuda",
+  "Bhutan",
+  "Bolivia",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Brazil",
+  "British Indian Ocean Territory",
+  "British Virgin Islands",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Cape Verde",
+  "Caribbean Netherlands",
+  "Cayman Islands",
+  "Chad",
+  "Channel Islands",
+  "Chile",
+  "China",
+  "Christmas Island",
+  "Colombia",
+  "Comoros",
+  "Cook Islands",
+  "Costa Rica",
+  "Croatia",
+  "Cuba",
+  "Curacao",
+  "Cyprus",
+  "Czech Republic",
+  "Danmark",
+  "Democratic Republic of the Congo",
+  "Denmark",
+  "Deutschland",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "East Timor",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Eswatini",
+  "Ethiopia",
+  "Falkland Islands",
+  "Faroe Islands",
+  "Federated States of Micronesia",
+  "Fiji",
+  "Finland",
+  "France",
+  "French Polynesia",
+  "French Southern and Antarctic Lands",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Gibraltar",
+  "Greece",
+  "Greenland",
+  "Grenada",
+  "Guam",
+  "Guatemala",
+  "Guernsey",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Honduras",
+  "Hong Kong",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Isle of Man",
+  "Israel",
+  "Italia",
+  "Italy",
+  "Ivory Coast",
+  "Jamaica",
+  "Japan",
+  "Jersey",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kosovo",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Macau",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Martinique",
+  "Mauritania",
+  "Mauritius",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nederland",
+  "Nepal",
+  "Netherlands",
+  "New Caledonia",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "Niue",
+  "Norfolk Island",
+  "North Korea",
+  "North Macedonia",
+  "Northern Mariana Islands",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Palestine",
+  "Palestinian Territory",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "People's Republic of China",
+  "Peru",
+  "Philippines",
+  "Pitcairn Islands",
+  "Poland",
+  "Portugal",
+  "Puerto Rico",
+  "Qatar",
+  "Republic of the Congo",
+  "Reunion",
+  "Romania",
+  "Russia",
+  "Rwanda",
+  "Saint Helena",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Martin/Sint Maarten Island",
+  "Saint Pierre and Miquelon",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "São Tomé and Príncipe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Georgia and the South Sandwich Islands",
+  "South Korea",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Svalbard and Jan Mayen",
+  "Sverige",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "The Bahamas",
+  "The Gambia",
+  "The Netherlands",
+  "Togo",
+  "Tokelau",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Turks and Caicos Islands",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States Minor Outlying Islands",
+  "United States Virgin Islands",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Vatican City",
+  "Venezuela",
+  "Vietnam",
+  "Wallis and Futuna",
+  "Western Sahara",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe",
+  "Беларусь",
+  "ประเทศไทย",
+  "ไทย",
+];
+
+function stdCountryNameToBgCountryName(stdCountryName) {
+  if (bgCountries.includes(stdCountryName)) {
+    return stdCountryName;
+  }
+
+  let containingCountries = CD.getContainingCountries(stdCountryName);
+  for (let containingCountry of containingCountries) {
+    if (bgCountries.includes(containingCountry)) {
+      return containingCountry;
+    }
+  }
+}
+
+function getBgCountry(gd) {
+  let deathCountry = gd.inferDeathCountry();
+
+  if (deathCountry) {
+    let bgCountryName = stdCountryNameToBgCountryName(deathCountry);
+    if (bgCountryName) {
+      return bgCountryName;
+    }
+  }
+
+  let countryArray = gd.inferCountries();
+  for (let country of countryArray) {
+    let bgCountryName = stdCountryNameToBgCountryName(country);
+    if (bgCountryName) {
+      return bgCountryName;
+    }
+  }
+}
+
+export { getBgCountry };

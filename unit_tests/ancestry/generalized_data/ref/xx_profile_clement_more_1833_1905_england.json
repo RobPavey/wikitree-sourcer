@@ -2,7 +2,9 @@
   "sourceType": "profile",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "Clement More"
+    "name": "Clement More",
+    "lastName": "More",
+    "forenames": "Clement"
   },
   "birthDate": {
     "dateString": "1833"

@@ -275,11 +275,16 @@ async function ancestryBuildSharingTemplate(extractedData) {
       // this is a record or image page
       let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
       if (dataObj) {
-        let url = dataObj.url;
-
+        // V1 versions
         // https://www.ancestry.com/sharing/24274440?h=95cf5c
-        let num1 = url.replace(/.*\/sharing\/(\w+)\?h\=\w+/, "$1");
-        let num2 = url.replace(/.*\/sharing\/\w+\?h\=(\w+)/, "$1");
+        let num1 = dataObj.id;
+        let num2 = dataObj.hmac_id;
+
+        // V2 versions
+        if (dataObj.v2 && dataObj.v2.share_id && dataObj.v2.share_token) {
+          num1 = dataObj.v2.share_id;
+          num2 = dataObj.v2.share_token;
+        }
 
         let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
 
@@ -316,7 +321,11 @@ async function ancestryBuildSharingUrl(extractedData) {
       // this is a record or image page
       let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
       if (dataObj) {
-        writeToClipboard(dataObj.url, "Sharing URL");
+        let url = dataObj.url;
+        if (dataObj.v2 && dataObj.v2.share_url) {
+          url = dataObj.v2.share_url;
+        }
+        writeToClipboard(url, "Sharing URL");
       } else {
         displayMessageWithIcon("warning", "Error building sharing URL.");
       }
@@ -375,6 +384,18 @@ async function ancestryBuildHouseholdTable(data) {
 
   // for Ancestry it is necessary to get extra info from linked records
   getDataForLinkedHouseholdRecords(data, ancestryBuildHouseholdTableWithLinkedRecords);
+}
+
+async function ancestryBuildTreeTemplate(data) {
+  if (data.extractedData.ancestryTemplate) {
+    writeToClipboard(data.extractedData.ancestryTemplate, "Ancestry Tree Template");
+  }
+}
+
+async function ancestryBuildTreeMediaTemplate(data) {
+  if (data.extractedData.ancestryTemplate) {
+    writeToClipboard(data.extractedData.ancestryTemplate, "Ancestry Tree Media Template");
+  }
 }
 
 function ancestryGoToRecord(data) {
@@ -533,10 +554,50 @@ function addAncestryImageBuildCitationMenuItems(menu, data) {
   );
 }
 
+function addAncestrySharingPageBuildCitationMenuItems(menu, data) {
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Inline Citation",
+    function (element) {
+      displayMessage("Building citation...");
+      data.type = "inline";
+      ancestryBuildCitationWithLinkData(data); // avoid prefetch
+    },
+    "It is recommended to Build Inline Citation on the Record Page instead if one exists and you have access."
+  );
+  addMenuItemWithSubtitle(
+    menu,
+    "Build Source Citation",
+    function (element) {
+      displayMessage("Building citation...");
+      data.type = "source";
+      ancestryBuildCitationWithLinkData(data); // avoid prefetch
+    },
+    "It is recommended to Build Source Citation on the Record Page instead if one exists and you have access."
+  );
+}
+
 function addAncestryGoToFullImageMenuItem(menu, data) {
-  if (data.extractedData.pageType == "sharingImageOrRecord" && data.extractedData.fullSizeSharingImageUrl) {
+  const pageType = data.extractedData.pageType;
+  if (pageType == "sharingImageOrRecord" && data.extractedData.fullSizeSharingImageUrl) {
     addMenuItem(menu, "Go to Fullsize Sharing Image Page", function (element) {
       ancestryGoToFullSizeSharingImage(data);
+    });
+  }
+}
+
+function addBuildAncestryTreeTemplateMenuItem(menu, data) {
+  if (data.extractedData.ancestryTemplate) {
+    addMenuItem(menu, "Build Ancestry Tree Template", function (element) {
+      ancestryBuildTreeTemplate(data);
+    });
+  }
+}
+
+function addBuildAncestryTreeMediaTemplateMenuItem(menu, data) {
+  if (data.extractedData.ancestryTemplate) {
+    addMenuItem(menu, "Build Ancestry Tree Media Template", function (element) {
+      ancestryBuildTreeMediaTemplate(data);
     });
   }
 }
@@ -569,7 +630,9 @@ async function setupAncestryPopupMenuWithLinkData(data) {
 
   if (extractedData.pageType == "personFacts") {
     await addSearchMenus(menu, data, backFunction, "ancestry");
+    addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data);
+    addBuildAncestryTreeTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "record") {
     // if the user doesn't have a subscription add a heading to that effect
     if (extractedData.isLimitedDueToSubscription) {
@@ -590,7 +653,10 @@ async function setupAncestryPopupMenuWithLinkData(data) {
     addAncestryBuildSharingUrlMenuItem(menu, data);
     addAncestryGoToRecordMenuItem(menu, data);
   } else if (extractedData.pageType == "sharingImageOrRecord") {
+    addAncestrySharingPageBuildCitationMenuItems(menu, data);
     addAncestryGoToFullImageMenuItem(menu, data);
+  } else if (extractedData.pageType == "treeMedia") {
+    addBuildAncestryTreeMediaTemplateMenuItem(menu, data);
   }
 
   addStandardMenuEnd(menu, data, backFunction);

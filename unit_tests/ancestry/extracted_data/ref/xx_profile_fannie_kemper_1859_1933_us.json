@@ -1,0 +1,26 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/11748183/person/12992988602/facts",
+  "pageType": "personFacts",
+  "givenName": "Fannie L.",
+  "surname": "(Kemper) Money Barber",
+  "titleName": "Fannie L. (Kemper) Money Barber",
+  "birthDate": "NOV 1859",
+  "birthPlace": "Lawrence County, Pennsylvania, USA",
+  "deathDate": "DEC 1933",
+  "gender": "Female",
+  "marriages": [
+    {
+      "date": "31 Aug 1879",
+      "place": "Darke County, Ohio, USA",
+      "spouseName": "James Alpha Money"
+    },
+    {
+      "date": "30 Sep 1901",
+      "place": "Lucas County, Ohio, USA",
+      "spouseName": "Edward Hodge Barber"
+    }
+  ],
+  "fatherName": "William K. Kemper",
+  "motherName": "Mary \"Polly\" (Hornberger) Kemper",
+  "ancestryTemplate": "{{Ancestry Tree|11748183|12992988602}}"
+}

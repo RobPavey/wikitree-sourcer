@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "29 October"
+  },
+  "eventPlace": {
+    "placeString": "Station Road, Larkhall Scotland ML9, United Kingdom",
+    "streetAddress": "Larkhall Cemetery"
+  },
+  "name": {
+    "name": "Thomas Moffat",
+    "lastName": "Moffat",
+    "forenames": "Thomas"
+  },
+  "lastNameAtDeath": "Moffat",
+  "deathDate": {
+    "dateString": "29 October"
+  },
+  "hasValidData": true
+}

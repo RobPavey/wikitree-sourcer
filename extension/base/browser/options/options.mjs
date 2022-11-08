@@ -83,11 +83,11 @@ function setActiveTab(tabName) {
 }
 
 function setActiveSubsection(tabName, subsectionName) {
-  //console.log("setActiveTab called: tabName is: " + tabName);
+  //console.log("setActiveSubsection called: tabName is: " + tabName + " subsectionName is " + subsectionName);
 
   let tabElement = tabElements[tabName];
   if (!tabElement) {
-    console.log("setActiveTab: No tab element found for '" + tab + "'");
+    console.log("setActiveSubsection: No tab element found for '" + tabName + "'");
     return;
   }
 
@@ -114,7 +114,7 @@ var uiState = {
     citation: "general",
     narrative: "general",
     table: "general",
-    addPerson: "general",
+    addMerge: "general",
   },
 };
 
@@ -127,6 +127,15 @@ async function restoreOptionsUiState() {
   let savedUiState = await getLocalStorageItem("options_uiState");
   if (savedUiState) {
     uiState = savedUiState;
+
+    // conversion for change of tab name from addPerson to addMerge
+    if (uiState.activeTab == "addPerson") {
+      uiState.activeTab = "addMerge";
+    }
+    if (uiState.activeSubsectionForTab["addPerson"]) {
+      uiState.activeSubsectionForTab["addMerge"] = uiState.activeSubsectionForTab["addPerson"];
+      delete uiState.activeSubsectionForTab["addPerson"];
+    }
   }
 }
 
@@ -250,9 +259,9 @@ function buildPage() {
       buttonElement: "narrative-tab",
     },
     table: { panelElement: "table-panel", buttonElement: "table-tab" },
-    addPerson: {
-      panelElement: "addPerson-panel",
-      buttonElement: "addPerson-tab",
+    addMerge: {
+      panelElement: "addMerge-panel",
+      buttonElement: "addMerge-tab",
     },
   };
 

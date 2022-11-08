@@ -1,6 +1,8 @@
 {
   "url": "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   "pageType": "personFacts",
+  "givenName": "Ralph Edgar",
+  "surname": "Pavey",
   "titleName": "Ralph Edgar Pavey",
   "birthDate": "9 JUL 1891",
   "birthPlace": "Kentish Town, London, England",
@@ -20,5 +22,6 @@
     }
   ],
   "fatherName": "Harry Alfred Pavey",
-  "motherName": "Amelia Elizabeth Littlemore"
+  "motherName": "Amelia Elizabeth Littlemore",
+  "ancestryTemplate": "{{Ancestry Tree|86808578|46552199708}}"
 }

@@ -1151,6 +1151,9 @@ function isUrlAValidFullOrPartialFmpImageLink(url) {
 function processImageLinks(document, result, options) {
   let externalImageId = result.externalImageId;
   let extImageUrl = result.extImageUrl;
+  let externalImageReference = result.externalImageReference;
+  let externalRecordSeqOrig = result.externalRecordSeqOrig;
+
   let externalFilmNumber = undefined;
   if (result.referenceData) {
     externalFilmNumber = result.referenceData.externalFilmNumber;
@@ -1257,7 +1260,23 @@ function processImageLinks(document, result, options) {
         if (options && options.search_fmp_domain && options.search_fmp_domain != "none") {
           domain = options.search_fmp_domain;
         }
+
+        // sometimes the externalImageId actuall points to the record not the image.
+        // Example from england_baptism_1902_ella_giles
+        // "externalImageId": "GBPRS/CANT/B/96288131",
+        // "externalImageReference": "GBPRS/CANT/005265403/00684",
+        // "externalRecordSeqOrig": "96288131",
+        // In this case we want to use "GBPRS/CANT/005265403/00684"
+        if (externalImageReference && externalRecordSeqOrig) {
+          if (externalImageId.includes(externalRecordSeqOrig)) {
+            url = externalImageReference;
+          }
+          delete result.externalImageReference;
+          delete result.externalRecordSeqOrig;
+        }
+
         let uriQuery = encodeURI(url);
+
         let prefix = "https://search." + domain + "/record?id=";
 
         // if there is no parentId on the URL then the "/browse" part is required
@@ -1374,6 +1393,8 @@ const fieldData = [
 
   //  data fields
   { fieldFsType: "ExternalImageId", dataField: "externalImageId" },
+  { fieldFsType: "ExtImageReference", dataField: "externalImageReference" },
+  { fieldFsType: "ExtRecordSeqOrig", dataField: "externalRecordSeqOrig" },
   { fieldFsType: "ExtImageUrl", dataField: "extImageUrl" },
   { fieldFsType: "ExtRecordId", dataField: "externalRecordId" },
   { fieldFsType: "ExtRecordType", dataField: "externalRecordType" },

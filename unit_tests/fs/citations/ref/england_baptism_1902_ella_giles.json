@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\nciting Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England.<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles, 24 Aug 1902.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Ella, child of Frank & Emma, was baptised on 24 August 1902 in St Damian-in-the-Blean, Kent, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\nciting Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England.<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles, 24 Aug 1902.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>citing Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England.<br/>{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>Ella Rose Giles, 24 Aug 1902.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles baptism on 24 Aug 1902, child of Frank & Emma, in St Damian-in-the-Blean, Kent, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Ella, child of Frank & Emma, was baptised on 24 August 1902 in St Damian-in-the-Blean, Kent, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles baptism on 24 Aug 1902, child of Frank & Emma, in St Damian-in-the-Blean, Kent, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Baptism''': \"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>Ella Rose Giles baptism on 24 Aug 1902, child of Frank & Emma, in St Damian-in-the-Blean, Kent, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nName: Ella Rose Giles; Baptism Date: 24 Aug 1902; Baptism Place: St Damian-in-the-Blean, Kent, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Ella, child of Frank & Emma, was baptised on 24 August 1902 in St Damian-in-the-Blean, Kent, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nName: Ella Rose Giles; Baptism Date: 24 Aug 1902; Baptism Place: St Damian-in-the-Blean, Kent, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Baptism''': \"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>Name: Ella Rose Giles; Baptism Date: 24 Aug 1902; Baptism Place: St Damian-in-the-Blean, Kent, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)\n{| border=\"1\"\n| Name || Ella Rose Giles\n|-\n| Baptism Date || 24 Aug 1902\n|-\n| Baptism Place || St Damian-in-the-Blean, Kent, England, United Kingdom\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Ella, child of Frank & Emma, was baptised on 24 August 1902 in St Damian-in-the-Blean, Kent, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)\n{| border=\"1\"\n| Name || Ella Rose Giles\n|-\n| Baptism Date || 24 Aug 1902\n|-\n| Baptism Place || St Damian-in-the-Blean, Kent, England, United Kingdom\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Baptism''': \"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>Name: Ella Rose Giles; Baptism Date: 24 Aug 1902; Baptism Place: St Damian-in-the-Blean, Kent, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles, 24 Aug 1902.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Ella, child of Frank & Emma, was baptised on 24 August 1902 in St Damian-in-the-Blean, Kent, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles, 24 Aug 1902.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>Ella Rose Giles, 24 Aug 1902.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Ella, child of Frank & Emma, was baptised on 24 August 1902 in St Damian-in-the-Blean, Kent, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Baptism''': \"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required).",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\nciting Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England.<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles baptism on 24 Aug 1902, child of Frank & Emma, in St Damian-in-the-Blean, Kent, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Ella, child of Frank & Emma, was baptised on 24 August 1902 in St Damian-in-the-Blean, Kent, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\nciting Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England.<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles baptism on 24 Aug 1902, child of Frank & Emma, in St Damian-in-the-Blean, Kent, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Baptism''': \"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>citing Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England.<br/>{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>Ella Rose Giles baptism on 24 Aug 1902, child of Frank & Emma, in St Damian-in-the-Blean, Kent, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\nciting Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England.<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles, 24 Aug 1902.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Ella, child of Frank & Emma, was baptised on 24 August 1902 in St Damian-in-the-Blean, Kent, England, United Kingdom.<ref>\n'''Baptism''':\n\"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>\nciting Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England.<br/>\n{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>\n[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>\nElla Rose Giles, 24 Aug 1902.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Baptism''': \"England, Kent, Canterbury Parish Registers, 1538-1986\"<br/>citing Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England.<br/>{{FamilySearch Record|QGNK-BKRW}} (accessed 6 May 2021)<br/>[https://search.findmypast.co.uk/record/browse?id=GBPRS/CANT/005265403/00684 FindMyPast Image] (subscription required)<br/>Ella Rose Giles, 24 Aug 1902.",
+    "type": "source"
+  }
+}

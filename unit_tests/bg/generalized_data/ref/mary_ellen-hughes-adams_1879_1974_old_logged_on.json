@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "1974"
+  },
+  "eventPlace": {
+    "placeString": "Harriston Greenway Trail, Minto, Wellington, Ontario, Canada",
+    "streetAddress": "Harriston Cemetery"
+  },
+  "name": {
+    "name": "Mary Ellen Hughes",
+    "lastName": "Hughes",
+    "forenames": "Mary Ellen"
+  },
+  "lastNameAtBirth": "Adams",
+  "lastNameAtDeath": "Hughes",
+  "birthDate": {
+    "dateString": "1879"
+  },
+  "deathDate": {
+    "dateString": "1974"
+  },
+  "hasValidData": true
+}

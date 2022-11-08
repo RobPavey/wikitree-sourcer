@@ -1,0 +1,63 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Wm L Waldren"
+  },
+  "birthDate": {
+    "dateString": "1866"
+  },
+  "birthPlace": {
+    "placeString": "Ill"
+  },
+  "eventDate": {
+    "dateString": "1895"
+  },
+  "eventPlace": {
+    "placeString": "Delavan township, Faribault, Minnesota"
+  },
+  "ageAtEvent": "29y",
+  "householdArrayFields": [
+    "name",
+    "gender",
+    "age",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Wm L Waldren",
+      "gender": "male",
+      "age": "29y",
+      "birthDate": "1866",
+      "birthPlace": "Ill",
+      "isSelected": true
+    },
+    {
+      "name": "Lettie E Waldren",
+      "gender": "female",
+      "age": "26y",
+      "birthDate": "1869",
+      "birthPlace": "Minn"
+    },
+    {
+      "name": "Clarissa Waldren",
+      "gender": "female",
+      "age": "5y",
+      "birthDate": "1890",
+      "birthPlace": "Minn"
+    },
+    {
+      "name": "Wm R Waldren",
+      "gender": "male",
+      "age": "2y",
+      "birthDate": "1893",
+      "birthPlace": "Minn"
+    }
+  ],
+  "collectionData": {
+    "id": "1503031"
+  },
+  "hasValidData": true
+}

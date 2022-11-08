@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "17 December 1948"
+  },
+  "eventPlace": {
+    "placeString": "Pentland Road, Bilston, Midlothian, Scotland, United Kingdom",
+    "streetAddress": "Old Pentland Cemtery"
+  },
+  "name": {
+    "name": "Isabella Crawford",
+    "lastName": "Crawford",
+    "forenames": "Isabella"
+  },
+  "lastNameAtDeath": "Crawford",
+  "deathDate": {
+    "dateString": "17 December 1948"
+  },
+  "hasValidData": true
+}

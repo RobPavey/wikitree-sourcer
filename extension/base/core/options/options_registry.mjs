@@ -44,11 +44,12 @@ var optionsRegistry = {
         "It is separate from the citation.",
     },
     {
-      name: "addPerson",
-      label: "Add Person",
+      name: "addMerge",
+      label: "Add/Merge",
       subsections: [],
       comment:
-        "These options apply to filling fields in the Add Person screen. " +
+        "These options apply to filling fields in the Add Person screen or the Merge/Edit screen " +
+        "from person data or a citation.\n" +
         "Person data can be saved when you are on a person page in Ancestry, FamilySearch, etc. " +
         "It is separate from the citation.",
     },

@@ -1,0 +1,12 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Wm Kemper"
+  },
+  "collectionData": {
+    "id": "7163"
+  },
+  "hasValidData": true
+}

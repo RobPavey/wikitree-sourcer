@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "26 March 1905"
+  },
+  "eventPlace": {
+    "placeString": "Eldrick Avenue, Fauldhouse, West Lothian, Scotland, United Kingdom",
+    "streetAddress": "Fauldhouse Cemetery"
+  },
+  "name": {
+    "name": "Agnes C Fisher",
+    "lastName": "Fisher",
+    "forenames": "Agnes C."
+  },
+  "lastNameAtBirth": "Loudon",
+  "lastNameAtDeath": "Fisher",
+  "deathDate": {
+    "dateString": "26 March 1905"
+  },
+  "hasValidData": true
+}
