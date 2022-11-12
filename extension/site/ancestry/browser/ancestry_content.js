@@ -23,3 +23,268 @@ SOFTWARE.
 */
 
 siteContentInit(`ancestry`, `site/ancestry/core/ancestry_extract_data.mjs`);
+
+async function saveCitation(citationText) {
+  if (lastCitationObject) {
+    let citationObject = lastCitationObject;
+    citationObject.timeStamp = Date.now();
+    citationObject.citation = citationText;
+
+    navigator.clipboard.writeText(citationText);
+
+    chrome.storage.local.set({ latestCitation: citationObject }, function () {
+      //console.log('latestCitation is set to ' + citation);
+    });
+  }
+}
+
+var lastCitationObject = undefined;
+
+async function getLatestCitation() {
+  return new Promise((resolve, reject) => {
+    try {
+      chrome.storage.local.get(["latestCitation"], function (value) {
+        resolve(value);
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
+async function getCitationText() {
+  let storedObject = await getLatestCitation();
+  let citationObject = storedObject.latestCitation;
+  let citation = "";
+  if (citationObject) {
+    citation = citationObject.citation;
+    lastCitationObject = citationObject;
+  }
+  if (!citation) {
+    citation = "";
+  }
+  return citation;
+}
+
+async function fillTextArea(textArea) {
+  console.log("fillTextArea");
+
+  const citation = await getCitationText();
+  textArea.value = citation;
+  textArea.focus();
+}
+
+function testDivForEditCitation(documentContainingImage) {
+  let bottomContainer = documentContainingImage.querySelector("div.bottom-container");
+
+  //console.log("bottomContainer is");
+  //console.log(bottomContainer);
+
+  if (bottomContainer) {
+    let existingElement = bottomContainer.querySelector("div.index-panel.edit-citation");
+
+    console.log("existingElement is");
+    console.log(existingElement);
+
+    if (existingElement) {
+      // we have already created the panel for the citation just need to hide or show it
+      if (existingElement.className.includes("noDisplay")) {
+        existingElement.className = "index-panel edit-citation";
+      } else {
+        existingElement.className = "index-panel noDisplay edit-citation";
+      }
+    } else {
+      let editDivElement = documentContainingImage.createElement("div");
+      editDivElement.style = "width: 100%; height: 120px;";
+      editDivElement.className = "index-panel edit-citation";
+
+      let panelHeader = documentContainingImage.createElement("div");
+      panelHeader.className = "index-panel-header";
+
+      let panelContainer = documentContainingImage.createElement("div");
+      panelContainer.className = "index-panel-container";
+      //panelContainer.style.flex = "1";
+
+      let titleIndex = documentContainingImage.createElement("span");
+      titleIndex.className = "title-index";
+      titleIndex.textContent = "Edit Citation";
+      panelContainer.appendChild(titleIndex);
+
+      let starty = undefined;
+      let startheight = undefined;
+      let dragging = false;
+
+      let grapper = documentContainingImage.createElement("span");
+      grapper.className = "grapper";
+      grapper.setAttribute("role", "presentation");
+
+      grapper.onmousedown = function (e) {
+        console.log("grapper.onmousedown, e is:");
+        console.log(e);
+        starty = e.y;
+        startheight = editDivElement.clientHeight;
+        dragging = true;
+      };
+      documentContainingImage.body.addEventListener("mousemove", function (e) {
+        if (dragging && startheight && starty) {
+          //console.log("grapper.mousemove");
+          let ydiff = e.y - starty;
+          let height = startheight - ydiff;
+          editDivElement.style.height = `${height}px`;
+        }
+      });
+      documentContainingImage.body.addEventListener("mouseup", function () {
+        if (dragging) {
+          //console.log("grapper.mouseup");
+          dragging = false;
+        }
+      });
+
+      let grapperIcon = documentContainingImage.createElement("span");
+      grapperIcon.className = "icon iconMenu";
+      grapperIcon.style = "::before";
+      grapper.appendChild(grapperIcon);
+
+      panelContainer.appendChild(grapper);
+
+      // save button
+      let saveButton = documentContainingImage.createElement("button");
+      saveButton.className = "icon iconSave saveButton link";
+      //saveButton.className = "icon iconClose closeButton link";
+      saveButton.type = "button";
+      //saveButton.textContent = "Save";
+
+      let saveButtonSpan = documentContainingImage.createElement("span");
+      saveButtonSpan.className = "hideVisually";
+
+      saveButton.appendChild(saveButtonSpan);
+
+      panelContainer.appendChild(saveButton);
+
+      // close button at top right of title bar
+      let titleButton = documentContainingImage.createElement("button");
+      titleButton.className = "icon iconClose closeButton link";
+      titleButton.type = "button";
+      titleButton.onclick = function () {
+        console.log("editCitation titleButton clicked");
+        editDivElement.className = "index-panel noDisplay";
+      };
+
+      let titleButtonSpan = documentContainingImage.createElement("span");
+      titleButtonSpan.className = "hideVisually";
+
+      titleButton.appendChild(titleButtonSpan);
+
+      panelContainer.appendChild(titleButton);
+
+      panelHeader.appendChild(panelContainer);
+      editDivElement.appendChild(panelHeader);
+
+      let textarea = documentContainingImage.createElement("textarea");
+      textarea.style = "width: 100%; height: 100%;";
+      fillTextArea(textarea);
+      textarea.addEventListener("keyup", (e) => {
+        e.stopPropagation();
+      });
+      textarea.addEventListener("keydown", (e) => {
+        e.stopPropagation();
+      });
+      editDivElement.appendChild(textarea);
+
+      saveButton.onclick = function () {
+        console.log("editCitation saveButton clicked");
+        saveCitation(textarea.value);
+      };
+
+      // insert before index-panel if present
+      let existingIndexPanel = bottomContainer.querySelector("div.index-panel");
+      if (existingIndexPanel) {
+        bottomContainer.insertBefore(editDivElement, existingIndexPanel);
+      } else {
+        bottomContainer.appendChild(editDivElement);
+      }
+    }
+  }
+}
+
+var retryCount = 0;
+const maxRetries = 10;
+
+function addEditCitationButton() {
+  let documentContainingImage = document;
+  let wrapper = document.querySelector("div.bottom-container > div.paging-panel > div.paging-wrapper");
+
+  // sometimes the image is being viewed in an iFrame
+  if (!wrapper) {
+    let viewerIframe = document.querySelector("#discoveryUIImageviewerModal > iframe");
+    console.log("viewerIframe is");
+    console.log(viewerIframe);
+
+    if (viewerIframe) {
+      wrapper = viewerIframe.contentWindow.document.querySelector(
+        "div.bottom-container > div.paging-panel > div.paging-wrapper"
+      );
+
+      let isHidden = viewerIframe.className.includes("hidden");
+
+      if (isHidden) {
+        console.log("adding callback on viewerIframe.contentWindow");
+        viewerIframe.addEventListener("load", function () {
+          console.log("viewerIframe load callback");
+          addEditCitationButton();
+        });
+        return;
+      }
+
+      documentContainingImage = viewerIframe.contentWindow.document;
+
+      let indexButton = null;
+      if (wrapper) {
+        indexButton = wrapper.querySelector("button.indexToggle");
+      }
+
+      console.log("indexButton is");
+      console.log(indexButton);
+
+      // possible retry because it can take a while to fill out the image viewer iframe
+      if (!indexButton) {
+        if (retryCount < maxRetries) {
+          console.log("Doing retry, retryCount = " + retryCount);
+          setTimeout(addEditCitationButton, 200);
+          retryCount++;
+          return;
+        }
+      }
+    }
+  }
+
+  console.log("wrapper is");
+  console.log(wrapper);
+
+  if (wrapper) {
+    let existingElement = wrapper.querySelector("button.editCitation");
+
+    console.log("existingElement is");
+    console.log(existingElement);
+
+    if (!existingElement) {
+      let editCitationButton = documentContainingImage.createElement("button");
+      editCitationButton.className = "editCitation";
+      editCitationButton.type = "button";
+      editCitationButton.textContent = "[1] Edit Citation";
+      editCitationButton.onclick = function () {
+        console.log("editCitationButton clicked");
+        testDivForEditCitation(documentContainingImage);
+      };
+
+      let editCitationButtonSpan = documentContainingImage.createElement("span");
+      editCitationButtonSpan.className = "hideVisually ng-binding";
+
+      editCitationButton.appendChild(editCitationButtonSpan);
+
+      wrapper.appendChild(editCitationButton);
+    }
+  }
+}
+
+addEditCitationButton();
