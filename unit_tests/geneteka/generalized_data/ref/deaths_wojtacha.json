@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1896"
+  },
+  "name": {
+    "lastName": "Wojtacha",
+    "forenames": "Jan"
+  },
+  "hasValidData": true
+}

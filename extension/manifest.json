@@ -28,6 +28,7 @@
     "*://www.freebmd.org.uk/*",
     "*://www.freecen.org.uk/*",
     "*://www.freereg.org.uk/*",
+    "*://geneteka.genealodzy.pl/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.newspapers.com/*",
     "*://www.scotlandspeople.gov.uk/*"
@@ -111,6 +112,11 @@
       "js": ["base/browser/content/content_common.js", "site/freereg/browser/freereg_content.js"]
     },
     {
+      "matches": ["*://geneteka.genealodzy.pl/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/geneteka/browser/geneteka_content.js"]
+    },
+    {
       "matches": ["*://www.gro.gov.uk/gro/content/certificates/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
@@ -191,6 +197,10 @@
     {
       "resources": ["site/fs/core/fs_extract_data.mjs"],
       "matches": ["*://www.familysearch.org/*"]
+    },
+    {
+      "resources": ["site/geneteka/core/geneteka_extract_data.mjs"],
+      "matches": ["*://geneteka.genealodzy.pl/*"]
     },
     {
       "resources": ["site/gro/core/gro_extract_data.mjs"],

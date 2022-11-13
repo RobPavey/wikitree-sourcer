@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "eventDate": {
+    "yearString": "1829"
+  },
+  "name": {
+    "lastName": "Woytczuk",
+    "forenames": "Grzegorz"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Stasiuk",
+        "forenames": "Dorota"
+      },
+      "marriageDate": {
+        "dateString": "09.02.1829"
+      },
+      "marriagePlace": {
+        "placeString": "Nowomodna"
+      }
+    }
+  ],
+  "hasValidData": true
+}

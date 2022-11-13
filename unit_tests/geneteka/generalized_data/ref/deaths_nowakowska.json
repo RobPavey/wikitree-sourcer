@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1870"
+  },
+  "name": {
+    "lastName": "Nowakowska",
+    "forenames": "Aleksandra"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstName": "Jan Chryzostom",
+        "lastName": "Nowakowski"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstName": "Magdalena",
+        "lastName": "Strzelecka"
+      }
+    }
+  },
+  "deathDate": {
+    "dateString": "26.12.1870"
+  },
+  "deathPlace": {
+    "placeString": "Grabnik"
+  },
+  "hasValidData": true
+}

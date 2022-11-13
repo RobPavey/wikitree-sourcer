@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1706"
+  },
+  "name": {
+    "lastName": "Ozimek",
+    "forenames": "Józef"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstName": "Franciszek",
+        "lastName": "Ozimek"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstName": "Marianna"
+      }
+    }
+  },
+  "hasValidData": true
+}

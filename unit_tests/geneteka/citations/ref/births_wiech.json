@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Parish birth records\"<br/>\nZegrze 5/1876<br/>\n[http://metryki.genealodzy.pl/metryki.php?op=kt&ar=2&zs=0459d&sy=1876&kt=1 original document scan] - [https://geneteka.genealodzy.pl/index.php?op=gt&bdm=B&w=07mz&rid=B&search_lastname=Więch&search_name=Paweł+Władysław&from_date=1876&to_date=1876&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nPaweł Władysław Więch, child of Ludwik Więch and Apolonia Zalewska, born 05.01.1876 in Zegrze.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Paweł's birth was registered in 1876.<ref>\n'''Birth Registration''':\n\"Parish birth records\"<br/>\nZegrze 5/1876<br/>\n[http://metryki.genealodzy.pl/metryki.php?op=kt&ar=2&zs=0459d&sy=1876&kt=1 original document scan] - [https://geneteka.genealodzy.pl/index.php?op=gt&bdm=B&w=07mz&rid=B&search_lastname=Więch&search_name=Paweł+Władysław&from_date=1876&to_date=1876&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nPaweł Władysław Więch, child of Ludwik Więch and Apolonia Zalewska, born 05.01.1876 in Zegrze.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Parish birth records\"<br/>Zegrze 5/1876<br/>[http://metryki.genealodzy.pl/metryki.php?op=kt&ar=2&zs=0459d&sy=1876&kt=1 original document scan] - [https://geneteka.genealodzy.pl/index.php?op=gt&bdm=B&w=07mz&rid=B&search_lastname=Więch&search_name=Paweł+Władysław&from_date=1876&to_date=1876&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>Paweł Władysław Więch, child of Ludwik Więch and Apolonia Zalewska, born 05.01.1876 in Zegrze.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1876"
+  },
+  "name": {
+    "lastName": "Więch",
+    "forenames": "Paweł Władysław"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstName": "Ludwik",
+        "lastName": "Więch"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstName": "Apolonia",
+        "lastName": "Zalewska"
+      }
+    }
+  },
+  "birthDate": {
+    "dateString": "05.01.1876"
+  },
+  "birthPlace": {
+    "placeString": "Zegrze"
+  },
+  "hasValidData": true
+}
