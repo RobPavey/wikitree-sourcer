@@ -69,8 +69,8 @@ function extractData(document, url, siteSpecificInput) {
 
   const inputSelectedRow = siteSpecificInput && siteSpecificInput.selectedRowElement;
   const selectedRow = inputSelectedRow || document.querySelector(".tablesearch tbody tr");
-  const rowCells = selectedRow.querySelectorAll("td");
-  if (rowCells.length !== COLUMN_COUNT) {
+  const rowCells = selectedRow?.querySelectorAll("td");
+  if (rowCells?.length !== COLUMN_COUNT) {
     return { success: false };
   }
 
