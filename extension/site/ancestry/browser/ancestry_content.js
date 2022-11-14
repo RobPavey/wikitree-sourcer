@@ -24,6 +24,15 @@ SOFTWARE.
 
 siteContentInit(`ancestry`, `site/ancestry/core/ancestry_extract_data.mjs`);
 
+////////////////////////////////////////////////////////////////////////////////
+// All code below this is for editing the citation on an image page
+////////////////////////////////////////////////////////////////////////////////
+
+// we store this in a glabal, the text is in the edit box but we need to remember the
+// whole citation to save it - I guess we could reload it on save but this seems better.
+var lastCitationObject = undefined;
+
+// This could be shared but would require dynamic module load
 async function saveCitation(citationText) {
   if (lastCitationObject) {
     let citationObject = lastCitationObject;
@@ -37,8 +46,6 @@ async function saveCitation(citationText) {
     });
   }
 }
-
-var lastCitationObject = undefined;
 
 async function getLatestCitation() {
   return new Promise((resolve, reject) => {
@@ -67,14 +74,14 @@ async function getCitationText() {
 }
 
 async function fillTextArea(textArea) {
-  console.log("fillTextArea");
+  //console.log("fillTextArea");
 
   const citation = await getCitationText();
   textArea.value = citation;
   textArea.focus();
 }
 
-function testDivForEditCitation(documentContainingImage) {
+function hideOrShowEditCitationPanel(documentContainingImage) {
   let bottomContainer = documentContainingImage.querySelector("div.bottom-container");
 
   //console.log("bottomContainer is");
@@ -83,8 +90,8 @@ function testDivForEditCitation(documentContainingImage) {
   if (bottomContainer) {
     let existingElement = bottomContainer.querySelector("div.index-panel.edit-citation");
 
-    console.log("existingElement is");
-    console.log(existingElement);
+    //console.log("existingElement is");
+    //console.log(existingElement);
 
     if (existingElement) {
       // we have already created the panel for the citation just need to hide or show it
@@ -94,8 +101,9 @@ function testDivForEditCitation(documentContainingImage) {
         existingElement.className = "index-panel noDisplay edit-citation";
       }
     } else {
+      // create the panel
       let editDivElement = documentContainingImage.createElement("div");
-      editDivElement.style = "width: 100%; height: 120px;";
+      editDivElement.style = "width: 100%; height: 200px;";
       editDivElement.className = "index-panel edit-citation";
 
       let panelHeader = documentContainingImage.createElement("div");
@@ -119,8 +127,8 @@ function testDivForEditCitation(documentContainingImage) {
       grapper.setAttribute("role", "presentation");
 
       grapper.onmousedown = function (e) {
-        console.log("grapper.onmousedown, e is:");
-        console.log(e);
+        //console.log("grapper.onmousedown, e is:");
+        //console.log(e);
         starty = e.y;
         startheight = editDivElement.clientHeight;
         dragging = true;
@@ -150,9 +158,7 @@ function testDivForEditCitation(documentContainingImage) {
       // save button
       let saveButton = documentContainingImage.createElement("button");
       saveButton.className = "icon iconSave saveButton link";
-      //saveButton.className = "icon iconClose closeButton link";
       saveButton.type = "button";
-      //saveButton.textContent = "Save";
 
       let saveButtonSpan = documentContainingImage.createElement("span");
       saveButtonSpan.className = "hideVisually";
@@ -166,7 +172,7 @@ function testDivForEditCitation(documentContainingImage) {
       titleButton.className = "icon iconClose closeButton link";
       titleButton.type = "button";
       titleButton.onclick = function () {
-        console.log("editCitation titleButton clicked");
+        //console.log("editCitation titleButton clicked");
         editDivElement.className = "index-panel noDisplay";
       };
 
@@ -192,7 +198,7 @@ function testDivForEditCitation(documentContainingImage) {
       editDivElement.appendChild(textarea);
 
       saveButton.onclick = function () {
-        console.log("editCitation saveButton clicked");
+        //console.log("editCitation saveButton clicked");
         saveCitation(textarea.value);
       };
 
@@ -217,8 +223,8 @@ function addEditCitationButton() {
   // sometimes the image is being viewed in an iFrame
   if (!wrapper) {
     let viewerIframe = document.querySelector("#discoveryUIImageviewerModal > iframe");
-    console.log("viewerIframe is");
-    console.log(viewerIframe);
+    //console.log("viewerIframe is");
+    //console.log(viewerIframe);
 
     if (viewerIframe) {
       wrapper = viewerIframe.contentWindow.document.querySelector(
@@ -228,9 +234,9 @@ function addEditCitationButton() {
       let isHidden = viewerIframe.className.includes("hidden");
 
       if (isHidden) {
-        console.log("adding callback on viewerIframe.contentWindow");
+        //console.log("adding callback on viewerIframe.contentWindow");
         viewerIframe.addEventListener("load", function () {
-          console.log("viewerIframe load callback");
+          //console.log("viewerIframe load callback");
           addEditCitationButton();
         });
         return;
@@ -243,10 +249,11 @@ function addEditCitationButton() {
         indexButton = wrapper.querySelector("button.indexToggle");
       }
 
-      console.log("indexButton is");
-      console.log(indexButton);
+      //console.log("indexButton is");
+      //console.log(indexButton);
 
       // possible retry because it can take a while to fill out the image viewer iframe
+      // I'm not sure this is necessary anymore
       if (!indexButton) {
         if (retryCount < maxRetries) {
           console.log("Doing retry, retryCount = " + retryCount);
@@ -258,23 +265,27 @@ function addEditCitationButton() {
     }
   }
 
-  console.log("wrapper is");
-  console.log(wrapper);
+  //console.log("wrapper is");
+  //console.log(wrapper);
 
   if (wrapper) {
     let existingElement = wrapper.querySelector("button.editCitation");
 
-    console.log("existingElement is");
-    console.log(existingElement);
+    //console.log("existingElement is");
+    //console.log(existingElement);
 
     if (!existingElement) {
       let editCitationButton = documentContainingImage.createElement("button");
       editCitationButton.className = "editCitation";
       editCitationButton.type = "button";
+      editCitationButton.style.margin = "0px 5px";
+      editCitationButton.style.padding = "0px 5px";
+      editCitationButton.style.backgroundColor = "#e1f0b4";
+      editCitationButton.style.border = "thin solid black";
       editCitationButton.textContent = "[1] Edit Citation";
       editCitationButton.onclick = function () {
-        console.log("editCitationButton clicked");
-        testDivForEditCitation(documentContainingImage);
+        //console.log("editCitationButton clicked");
+        hideOrShowEditCitationPanel(documentContainingImage);
       };
 
       let editCitationButtonSpan = documentContainingImage.createElement("span");
