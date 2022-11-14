@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "eventDate": {
+    "yearString": "1811"
+  },
+  "name": {
+    "lastName": "Jańczuk",
+    "forenames": "Mikołaj"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Szczepaniak",
+        "forenames": "Franciszka"
+      },
+      "marriageDate": {
+        "dateString": "20 Nov 1811"
+      },
+      "marriagePlace": {}
+    }
+  ],
+  "hasValidData": true
+}

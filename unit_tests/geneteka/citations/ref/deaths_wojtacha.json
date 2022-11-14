@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Parish death records\"<br/>\nJanina 51/1896<br/>\n[https://geneteka.genealodzy.pl/index.php?op=gt&bdm=D&w=13sk&rid=D&search_lastname=Wojtacha&search_name=Jan&from_date=1896&to_date=1896&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nJan Wojtacha.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jan's death was registered in 1896.<ref>\n'''Death Registration''':\n\"Parish death records\"<br/>\nJanina 51/1896<br/>\n[https://geneteka.genealodzy.pl/index.php?op=gt&bdm=D&w=13sk&rid=D&search_lastname=Wojtacha&search_name=Jan&from_date=1896&to_date=1896&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nJan Wojtacha.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Parish death records\"<br/>Janina 51/1896<br/>[https://geneteka.genealodzy.pl/index.php?op=gt&bdm=D&w=13sk&rid=D&search_lastname=Wojtacha&search_name=Jan&from_date=1896&to_date=1896&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>Jan Wojtacha.",
+    "type": "source"
+  }
+}

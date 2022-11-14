@@ -22,19 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their search menu items
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/geneteka_generalize_data.mjs";
+import { buildCitation } from "../core/geneteka_build_citation.mjs";
 
-// Currently the order that they are imported is the order that they appear in the menu
-// We may have options at some point to control which items appear
-import "/site/ancestry/browser/ancestry_popup_search.mjs";
-import "/site/bg/browser/bg_popup_search.mjs";
-import "/site/fmp/browser/fmp_popup_search.mjs";
-import "/site/fs/browser/fs_popup_search.mjs";
-import "/site/fg/browser/fg_popup_search.mjs";
-import "/site/gro/browser/gro_popup_search.mjs";
-import "/site/freebmd/browser/freebmd_popup_search.mjs";
-import "/site/freecen/browser/freecen_popup_search.mjs";
-import "/site/freereg/browser/freereg_popup_search.mjs";
-import "/site/scotp/browser/scotp_popup_search.mjs";
-import "/site/wikitree/browser/wikitree_popup_search.mjs";
-import "/site/np/browser/np_popup_search.mjs";
+async function setupGenetekaPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage: "It looks like a Geneteka page but not a person search results page.",
+    generalizeFailedMessage: "It looks like a Geneteka page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "geneteka",
+  };
+  setupSimplePopupMenu(input);
+}
+
+initPopup("geneteka", setupGenetekaPopupMenu);
