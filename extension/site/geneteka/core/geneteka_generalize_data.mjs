@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
+import { WTS_Date } from "../../../base/core/wts_date.mjs";
 
 const RECORD_TYPES = {
   B: RT.BirthRegistration,
@@ -36,6 +37,21 @@ const RECORD_TYPES = {
  */
 function femaleToMaleName(name) {
   return name.replace(/ska$/, "ski").replace(/cka$/, "cki").replace(/zka$/, "zki");
+}
+
+/**
+ * Convert date from dd.mm.yyyy format to d MMM yyyy.
+ * Example: 05.01.1876 -> 5 Jan 1876
+ */
+function convertDate(date) {
+  const dateMatch = date?.match(/^(\d\d).(\d\d).(\d\d\d\d)$/);
+  if (!dateMatch) {
+    return undefined;
+  }
+  const day = parseInt(dateMatch[1]);
+  const month = parseInt(dateMatch[2]);
+  const year = parseInt(dateMatch[3]);
+  return WTS_Date.getDateStringFromYearMonthDay(year, month, day);
 }
 
 // This function generalizes the data extracted web page.
@@ -56,7 +72,7 @@ function generalizeData(input) {
 
   result.setEventYear(recordData.year);
 
-  if (recordData !== "S") {
+  if (recordData.recordType !== "S") {
     result.setLastNameAndForeNames(recordData.lastName, recordData.firstName);
 
     if (recordData.fatherFirstName) {
@@ -75,10 +91,10 @@ function generalizeData(input) {
   }
 
   if (recordData.recordType === "B") {
-    result.setBirthDate(recordData.date);
+    result.setBirthDate(convertDate(recordData.date));
     result.setBirthPlace(recordData.place);
   } else if (recordData.recordType === "D") {
-    result.setDeathDate(recordData.date);
+    result.setDeathDate(convertDate(recordData.date));
     result.setDeathPlace(recordData.place);
   } else if (recordData.recordType === "S") {
     result.setLastNameAndForeNames(recordData.husbandLastName, recordData.husbandFirstName);
@@ -87,7 +103,7 @@ function generalizeData(input) {
     spouse.name.setLastName(recordData.wifeLastName);
     spouse.name.setForeNames(recordData.wifeFirstName);
     if (recordData.date) {
-      spouse.marriageDate.setDateAndQualifierFromString(recordData.date);
+      spouse.marriageDate.setDateAndQualifierFromString(convertDate(recordData.date));
     }
     if (recordData.place) {
       spouse.marriagePlace.placeString = recordData.place;
