@@ -59,6 +59,10 @@ const regressionData = [
     caseName: "marriages_stasiuk",
     url: "https://geneteka.genealodzy.pl/index.php?op=gt&lang=pol&bdm=S&w=07mz&rid=S&search_lastname=stasiuk&search_name=&search_lastname2=&search_name2=&from_date=1829&to_date=",
   },
+  {
+    caseName: "marriages_stolarczyk",
+    url: "https://geneteka.genealodzy.pl/index.php?op=gt&lang=pol&bdm=S&w=07mz&rid=S&search_lastname=stolarczyk&search_name=katarzyna&search_lastname2=wi%C4%99ch&search_name2=&from_date=1922&to_date=1922&rpp1=&ordertable=",
+  },
 ];
 
 async function runTests(testManager) {

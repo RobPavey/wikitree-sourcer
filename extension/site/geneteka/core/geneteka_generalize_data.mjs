@@ -86,7 +86,9 @@ function generalizeData(input) {
     spouse.name = new WtsName();
     spouse.name.setLastName(recordData.wifeLastName);
     spouse.name.setForeNames(recordData.wifeFirstName);
-    spouse.marriageDate.setDateAndQualifierFromString(recordData.date);
+    if (recordData.date) {
+      spouse.marriageDate.setDateAndQualifierFromString(recordData.date);
+    }
     if (recordData.place) {
       spouse.marriagePlace.placeString = recordData.place;
     }
