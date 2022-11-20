@@ -1258,6 +1258,16 @@ class GeneralizedData {
     }
   }
 
+  isUsableDateString(string) {
+    if (string) {
+      let lcString = string.toLowerCase().trim();
+      if (lcString != "unknown") {
+        return true;
+      }
+    }
+    return false;
+  }
+
   createBirthDateIfNeeded() {
     if (!this.birthDate) {
       this.birthDate = new WtsDate();
@@ -1265,14 +1275,14 @@ class GeneralizedData {
   }
 
   setBirthDate(string) {
-    if (string) {
+    if (this.isUsableDateString(string)) {
       this.createBirthDateIfNeeded();
       this.birthDate.setDateAndQualifierFromString(string);
     }
   }
 
   setBirthYear(string) {
-    if (string) {
+    if (this.isUsableDateString(string)) {
       this.createBirthDateIfNeeded();
       this.birthDate.setDateAndQualifierFromString(string, true);
     }
@@ -1307,14 +1317,14 @@ class GeneralizedData {
   }
 
   setDeathDate(string) {
-    if (string) {
+    if (this.isUsableDateString(string)) {
       this.createDeathDateIfNeeded();
       this.deathDate.setDateAndQualifierFromString(string);
     }
   }
 
   setDeathYear(string) {
-    if (string) {
+    if (this.isUsableDateString(string)) {
       this.createDeathDateIfNeeded();
       this.deathDate.setDateAndQualifierFromString(string, true);
     }
@@ -1340,14 +1350,14 @@ class GeneralizedData {
   }
 
   setEventDate(string) {
-    if (string) {
+    if (this.isUsableDateString(string)) {
       this.createEventDateIfNeeded();
       this.eventDate.dateString = string;
     }
   }
 
   setEventYear(string) {
-    if (string) {
+    if (this.isUsableDateString(string)) {
       this.createEventDateIfNeeded();
       this.eventDate.yearString = string;
     }

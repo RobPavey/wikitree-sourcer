@@ -58,6 +58,11 @@ const regressionData = [
     url: "https://www.findagrave.com/memorial/39114638/ezekiel-bentley",
   },
   {
+    // has birth date of "unknown"
+    caseName: "francis_rich_d_1957",
+    url: "https://www.findagrave.com/memorial/181842312/francis-leslie-rich",
+  },
+  {
     caseName: "george_reed_d_1887",
     url: "https://www.findagrave.com/memorial/221989091/george-german-reed",
   },
