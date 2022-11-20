@@ -33,6 +33,7 @@ import {
   displayMessage,
   displayMessageWithIcon,
   doAsyncActionWithCatch,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -437,7 +438,7 @@ function ancestryGoToRecord(data) {
 
   if (recordUrl) {
     chrome.tabs.create({ url: recordUrl });
-    window.close();
+    closePopup();
   } else {
     // failed
     displayMessageWithIcon("warning", "The Image URL is not in the expected format.");
@@ -448,7 +449,7 @@ function ancestryGoToImage(data) {
   let imageUrl = data.extractedData.imageUrl;
   if (imageUrl) {
     chrome.tabs.create({ url: imageUrl });
-    window.close();
+    closePopup();
   }
 }
 
@@ -456,7 +457,7 @@ function ancestryGoToFullSizeSharingImage(data) {
   let imageUrl = data.extractedData.fullSizeSharingImageUrl;
   if (imageUrl) {
     chrome.tabs.create({ url: imageUrl });
-    window.close();
+    closePopup();
   }
 }
 

@@ -31,6 +31,7 @@ import {
   beginMainMenu,
   displayMessage,
   doAsyncActionWithCatch,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -129,7 +130,7 @@ function fsOpenExternalImage(data) {
 
   if (externalImageUrl) {
     chrome.tabs.create({ url: externalImageUrl });
-    window.close();
+    closePopup();
   }
 }
 

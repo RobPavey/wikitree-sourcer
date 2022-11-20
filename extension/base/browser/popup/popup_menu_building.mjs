@@ -103,6 +103,15 @@ function emptyMenu() {
   }
 }
 
+var keepPopupOpen = false;
+function closePopup() {
+  // close the window, this is in this function so that we can have a debug option
+  // to leave the popup window open so that we can use inspect to show the console.
+  if (!keepPopupOpen) {
+    window.close();
+  }
+}
+
 async function displayUnexpectedErrorMessage(message, error, requestReport) {
   if (!message) {
     message = "Unknown error condition";
@@ -172,7 +181,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
       chrome.tabs.create({
         url: "https://www.wikitree.com/wiki/Space:WikiTree_Sourcer",
       });
-      window.close();
+      closePopup();
     };
     labelDiv.appendChild(fspLinkButton);
 
@@ -186,7 +195,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
     robLinkButton.innerText = "Rob Pavey.";
     robLinkButton.onclick = async function (element) {
       chrome.tabs.create({ url: "https://www.wikitree.com/wiki/Pavey-429" });
-      window.close();
+      closePopup();
     };
     labelDiv.appendChild(robLinkButton);
 
@@ -319,7 +328,7 @@ async function displayMessageThenClosePopup(message1, message2) {
   displayMessage(message1, message2);
 
   setTimeout(function () {
-    window.close();
+    closePopup();
   }, 1500);
 }
 
@@ -327,7 +336,7 @@ async function displayMessageWithIconThenClosePopup(iconType, message1, message2
   displayMessageWithIcon(iconType, message1, message2);
 
   setTimeout(function () {
-    window.close();
+    closePopup();
   }, 1500);
 }
 
@@ -526,7 +535,7 @@ function addMessageMenuItem(menu, message) {
 function addOptionsMenuItem(menu) {
   addMenuItem(menu, "Options... (opens in new tab)", function (element) {
     chrome.runtime.openOptionsPage();
-    window.close();
+    closePopup();
   });
 }
 
@@ -939,6 +948,12 @@ function setupDebugSubmenuMenu(data, backFunction) {
     displayGeneralizedData(data, toHereBackFunction);
   });
 
+  if (!keepPopupOpen) {
+    addMenuItem(menu, "Keep popup open for inspect", function (element) {
+      keepPopupOpen = true;
+    });
+  }
+
   endMainMenu(menu);
 }
 
@@ -969,7 +984,7 @@ function setupSupportSubmenuMenu(data, backFunction) {
     coffeeLinkButton.innerText = "buy me a coffee.";
     coffeeLinkButton.onclick = async function (element) {
       chrome.tabs.create({ url: "https://www.buymeacoffee.com/RobPavey" });
-      window.close();
+      closePopup();
     };
 
     let coffeeLabel2 = document.createElement("label");
@@ -996,7 +1011,7 @@ function setupSupportSubmenuMenu(data, backFunction) {
     chrome.tabs.create({
       url: "https://www.wikitree.com/index.php?title=Space:WikiTree_Sourcer",
     });
-    window.close();
+    closePopup();
   };
 
   let fspLabel2 = document.createElement("label");
@@ -1173,6 +1188,7 @@ export {
   addMenuDivider,
   beginMainMenu,
   endMainMenu,
+  closePopup,
   displayMessage,
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
