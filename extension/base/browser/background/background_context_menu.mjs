@@ -162,11 +162,18 @@ function openAncestryTemplate(text, options) {
     }
   } else if (text.includes("Ancestry Sharing")) {
     // {{Ancestry Sharing|26032935|f25069}}
+    // or
+    // {{Ancestry Sharing|360708|45105e24a959143273cc624d7eeb616ab4e5002d2c58dca23a9a27d6088b2a7b}}
     let num1 = text.replace(/\{\{Ancestry Sharing\|([^|]+)\|[^}|]+[^}]*\}\}/, "$1");
     let num2 = text.replace(/\{\{Ancestry Sharing\|[^|]+\|([^}|]+)[^}]*\}\}/, "$1");
     if (num1 && num1 != text && num2 && num2 != text) {
-      // https://www.ancestry.com/sharing/26032935?h=f25069
-      link = "https://www." + desiredDomain + "/sharing/" + num1 + "?h=" + num2;
+      if (num2.length > 10) {
+        // https://www.ancestry.com/sharing/360708?token=45105e24a959143273cc624d7eeb616ab4e5002d2c58dca23a9a27d6088b2a7b
+        link = "https://www." + desiredDomain + "/sharing/" + num1 + "?token=" + num2;
+      } else {
+        // https://www.ancestry.com/sharing/26032935?h=f25069
+        link = "https://www." + desiredDomain + "/sharing/" + num1 + "?h=" + num2;
+      }
     }
   } else if (text.includes("Ancestry Tree Media")) {
     // {{Ancestry Tree Media|86808578|d69a7d6a-c773-48b1-ab09-19100cd55c14}}
