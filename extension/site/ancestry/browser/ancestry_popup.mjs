@@ -286,9 +286,13 @@ async function ancestryBuildSharingTemplate(extractedData) {
           num2 = dataObj.v2.share_token;
         }
 
-        let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
+        if (num1 && num2) {
+          let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
 
-        writeToClipboard(template, "Sharing template");
+          writeToClipboard(template, "Sharing template");
+        } else {
+          displayMessageWithIcon("warning", "Error building sharing template.");
+        }
       } else {
         displayMessageWithIcon("warning", "Error building sharing template.");
       }
@@ -325,7 +329,11 @@ async function ancestryBuildSharingUrl(extractedData) {
         if (dataObj.v2 && dataObj.v2.share_url) {
           url = dataObj.v2.share_url;
         }
-        writeToClipboard(url, "Sharing URL");
+        if (url) {
+          writeToClipboard(url, "Sharing URL");
+        } else {
+          displayMessageWithIcon("warning", "Error building sharing URL.");
+        }
       } else {
         displayMessageWithIcon("warning", "Error building sharing URL.");
       }

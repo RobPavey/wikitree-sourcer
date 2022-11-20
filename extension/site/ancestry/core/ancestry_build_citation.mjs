@@ -567,9 +567,10 @@ function buildAncestrySharingTemplateFromSharingDataObj(dataObj) {
     num2 = dataObj.v2.share_token;
   }
 
-  let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
-
-  return template;
+  if (num1 && num2) {
+    let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
+    return template;
+  }
 }
 
 function cleanOriginalData(text) {
