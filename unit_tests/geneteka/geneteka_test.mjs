@@ -22,19 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their search menu items
+import { registerTest } from "../test_utils/test_registry.mjs";
 
-// Currently the order that they are imported is the order that they appear in the menu
-// We may have options at some point to control which items appear
-import "/site/ancestry/browser/ancestry_popup_search.mjs";
-import "/site/bg/browser/bg_popup_search.mjs";
-import "/site/fmp/browser/fmp_popup_search.mjs";
-import "/site/fs/browser/fs_popup_search.mjs";
-import "/site/fg/browser/fg_popup_search.mjs";
-import "/site/gro/browser/gro_popup_search.mjs";
-import "/site/freebmd/browser/freebmd_popup_search.mjs";
-import "/site/freecen/browser/freecen_popup_search.mjs";
-import "/site/freereg/browser/freereg_popup_search.mjs";
-import "/site/scotp/browser/scotp_popup_search.mjs";
-import "/site/wikitree/browser/wikitree_popup_search.mjs";
-import "/site/np/browser/np_popup_search.mjs";
+import * as test_content_and_citation from "./geneteka_test_content_and_citation.mjs";
+
+async function runTests(options, testResults) {
+  await test_content_and_citation.runTests(options, testResults);
+}
+
+registerTest("geneteka", runTests);
+
+export { runTests };

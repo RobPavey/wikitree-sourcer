@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "name": {
+    "lastName": "Mazur",
+    "forenames": "Agnieszka"
+  },
+  "birthPlace": {
+    "placeString": "Sandomierz Katedra"
+  },
+  "hasValidData": true
+}

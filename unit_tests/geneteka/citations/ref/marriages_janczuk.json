@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Parish marriage records\"<br/>\nNur 7/1811<br/>\n[http://metryki.genealodzy.pl/metryki.php?op=kt&ar=6&zs=0262d&sy=A1810&kt=13 original document scan] - [https://geneteka.genealodzy.pl/index.php?op=gt&bdm=S&w=07mz&rid=S&search_lastname=&search_name=&from_date=1811&to_date=1811&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nMikołaj Jańczuk and Franciszka Szczepaniak married 20 Nov 1811.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mikołaj's marriage to Franciszka Szczepaniak was registered in 1811.<ref>\n'''Marriage Registration''':\n\"Parish marriage records\"<br/>\nNur 7/1811<br/>\n[http://metryki.genealodzy.pl/metryki.php?op=kt&ar=6&zs=0262d&sy=A1810&kt=13 original document scan] - [https://geneteka.genealodzy.pl/index.php?op=gt&bdm=S&w=07mz&rid=S&search_lastname=&search_name=&from_date=1811&to_date=1811&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nMikołaj Jańczuk and Franciszka Szczepaniak married 20 Nov 1811.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Parish marriage records\"<br/>Nur 7/1811<br/>[http://metryki.genealodzy.pl/metryki.php?op=kt&ar=6&zs=0262d&sy=A1810&kt=13 original document scan] - [https://geneteka.genealodzy.pl/index.php?op=gt&bdm=S&w=07mz&rid=S&search_lastname=&search_name=&from_date=1811&to_date=1811&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>Mikołaj Jańczuk and Franciszka Szczepaniak married 20 Nov 1811.",
+    "type": "source"
+  }
+}

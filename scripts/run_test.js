@@ -34,6 +34,7 @@ import "../unit_tests/freebmd/freebmd_test.mjs";
 import "../unit_tests/freecen/freecen_test.mjs";
 import "../unit_tests/freereg/freereg_test.mjs";
 import "../unit_tests/fs/fs_test.mjs";
+import "../unit_tests/geneteka/geneteka_test.mjs";
 import "../unit_tests/gro/gro_test.mjs";
 import "../unit_tests/np/np_test.mjs";
 import "../unit_tests/scotp/scotp_test.mjs";
