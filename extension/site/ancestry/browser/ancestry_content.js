@@ -148,6 +148,50 @@ function hideOrShowEditCitationPanel(documentContainingImage) {
         }
       });
 
+      grapper.ontouchstart = function (e) {
+        //console.log("grapper.ontouchstart, e is:");
+        //console.log(e);
+
+        const touches = e.changedTouches;
+        if (touches.length == 1) {
+          e.preventDefault();
+          const touch = touches[0];
+
+          starty = touch.pageY;
+          startheight = editDivElement.clientHeight;
+          dragging = true;
+        }
+      };
+      documentContainingImage.body.addEventListener("touchmove", function (e) {
+        if (dragging && startheight && starty) {
+          //console.log("grapper.touchmove, e is:");
+          //console.log(e);
+
+          const touches = e.changedTouches;
+          if (touches.length == 1) {
+            e.preventDefault();
+
+            const touch = touches[0];
+
+            let ydiff = touch.pageY - starty;
+            let height = startheight - ydiff;
+            editDivElement.style.height = `${height}px`;
+          }
+        }
+      });
+      documentContainingImage.body.addEventListener("touchcancel", function (e) {
+        if (dragging) {
+          //console.log("grapper.touchcancel");
+          dragging = false;
+        }
+      });
+      documentContainingImage.body.addEventListener("touchend", function () {
+        if (dragging) {
+          //console.log("grapper.touchend");
+          dragging = false;
+        }
+      });
+
       let grapperIcon = documentContainingImage.createElement("span");
       grapperIcon.className = "icon iconMenu";
       grapperIcon.style = "::before";
@@ -298,4 +342,19 @@ function addEditCitationButton() {
   }
 }
 
-addEditCitationButton();
+chrome.runtime.sendMessage(
+  {
+    type: "getOptions",
+  },
+  function (response) {
+    // We get a response with the loaded options
+    if (response && response.success) {
+      const options = response.options;
+      if (options) {
+        if (options.citation_ancestry_addEditCitationButton) {
+          addEditCitationButton();
+        }
+      }
+    }
+  }
+);

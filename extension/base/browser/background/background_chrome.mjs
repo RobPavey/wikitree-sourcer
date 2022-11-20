@@ -25,6 +25,7 @@ SOFTWARE.
 import { setupContextMenu } from "./background_context_menu.mjs";
 import { handleExceptionMessage } from "./background_exception.mjs";
 import { handleContentLoadedMessage } from "./background_content_loaded.mjs";
+import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 
 async function executeScript(tabId, script, callback) {
   chrome.scripting.executeScript(
@@ -60,6 +61,12 @@ function messageHandler(request, sender, sendResponse) {
     handleExceptionMessage(request, sendResponse);
 
     // we send an async response to confirm the tab was opened and updated
+    return true;
+  } else if (request.type == "getOptions") {
+    callFunctionWithStoredOptions(function (options) {
+      let response = { success: true, options: options };
+      sendResponse(response);
+    });
     return true;
   }
   //else if (request.type == "updateContextMenu") {

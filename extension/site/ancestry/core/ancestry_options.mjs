@@ -132,6 +132,12 @@ const citationOptionsGroup = {
       label: "Include a sharing template to the original image if available",
       defaultValue: true,
     },
+    {
+      optionName: "addEditCitationButton",
+      type: "checkbox",
+      label: "On Ancestry image pages add a button to edit citation in panel",
+      defaultValue: true,
+    },
   ],
 };
 
