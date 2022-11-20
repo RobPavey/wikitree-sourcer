@@ -60,7 +60,7 @@ async function loadOptions() {
   let loadedOptions = undefined;
 
   chrome.storage.sync.getBytesInUse(null, function (bytesInUse) {
-    console.log("loadOptions: total sync storage in use is : " + bytesInUse);
+    //console.log("loadOptions: total sync storage in use is : " + bytesInUse);
   });
 
   let itemsNew = await getSyncStorageItems([
@@ -72,6 +72,9 @@ async function loadOptions() {
     "options_addMerge", // replaced addPerson in options version 6
     "options_version",
   ]);
+
+  //console.log("loadOptions: itemsNew is");
+  //console.log(itemsNew);
 
   if (itemsNew && itemsNew.options_search) {
     loadedOptions = {};
@@ -132,7 +135,13 @@ function convertOptionsObjectToSaveFormat(options) {
 
 // Saves options to chrome.storage
 async function saveOptions(options) {
+  //console.log("saveOptions: options is:");
+  //console.log(options);
+
   let saveFormatOptions = convertOptionsObjectToSaveFormat(options);
+
+  //console.log("saveOptions: saveFormatOptions is:");
+  //console.log(saveFormatOptions);
 
   // set the values in the stored user options
   try {
@@ -143,7 +152,7 @@ async function saveOptions(options) {
         options_narrative: saveFormatOptions.narrative,
         options_table: saveFormatOptions.table,
         options_addMerge: saveFormatOptions.addMerge,
-        options: saveFormatOptions.options,
+        options_version: saveFormatOptions.options_version,
       },
       function () {
         if (!chrome.runtime.lastError) {
