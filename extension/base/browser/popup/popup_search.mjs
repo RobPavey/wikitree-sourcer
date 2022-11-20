@@ -114,16 +114,23 @@ function buildSortedMenuItemFunctions(optionName) {
 
     //console.log("buildSortedMenuItemFunctions: fullOptionName is: " + fullOptionName + ", optionValue is: " + optionValue);
 
+    let priority = 0;
+
     if (typeof optionValue === "undefined") {
       console.log("buildSortedMenuItemFunctions: missing option value for: " + fullOptionName);
-      optionValue = 10000; // don't exclude it - put at end of list
+      priority = 10000; // don't exclude it - put at end of list
+    } else {
+      let optionNumber = parseInt(optionValue);
+      if (optionNumber != NaN) {
+        priority = optionNumber;
+      }
     }
 
-    if (optionValue > 0) {
+    if (priority > 0) {
       functionList.push({
         siteName: siteName,
         menuItemFunction: menuItemFunction,
-        priority: optionValue,
+        priority: priority,
       });
     }
   }

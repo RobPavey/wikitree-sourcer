@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "eventDate": {
+    "yearString": "1922"
+  },
+  "name": {
+    "lastName": "Więch",
+    "forenames": "Jan"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Stolarczyk",
+        "forenames": "Katarzyna"
+      },
+      "marriageDate": {},
+      "marriagePlace": {
+        "placeString": "Jaźwie i Franciszków"
+      }
+    }
+  ],
+  "hasValidData": true
+}

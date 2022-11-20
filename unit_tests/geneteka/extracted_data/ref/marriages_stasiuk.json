@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "recordData": {
+    "recordType": "S",
+    "voivodeship": "07mz",
+    "year": "1829",
+    "record": "1",
+    "husbandFirstName": "Grzegorz",
+    "husbandLastName": "Woytczuk",
+    "husbandParents": "Wojciech, Anastazja",
+    "wifeFirstName": "Dorota",
+    "wifeLastName": "Stasiuk",
+    "wifeParents": "Aleksander, Katarzyna",
+    "parish": "Wirów",
+    "date": "09.02.1829",
+    "place": "Nowomodna",
+    "scanUrl": "https://szukajwarchiwach.gov.pl/jednostka/-/jednostka/6139770"
+  }
+}

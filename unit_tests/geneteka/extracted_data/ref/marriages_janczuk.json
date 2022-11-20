@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "recordData": {
+    "recordType": "S",
+    "voivodeship": "07mz",
+    "year": "1811",
+    "record": "7",
+    "husbandFirstName": "Mikołaj",
+    "husbandLastName": "Jańczuk",
+    "husbandParents": "Leon, Krystyna Matkowska",
+    "wifeFirstName": "Franciszka",
+    "wifeLastName": "Szczepaniak",
+    "wifeParents": "Jakub, Katarzyna Radomska",
+    "parish": "Nur",
+    "date": "20.11.1811",
+    "scanUrl": "http://metryki.genealodzy.pl/metryki.php?op=kt&ar=6&zs=0262d&sy=A1810&kt=13"
+  }
+}

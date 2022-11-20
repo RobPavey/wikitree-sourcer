@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "recordData": {
+    "recordType": "B",
+    "voivodeship": "07mz",
+    "year": "1876",
+    "record": "5",
+    "firstName": "Paweł Władysław",
+    "lastName": "Więch",
+    "fatherFirstName": "Ludwik",
+    "motherFirstName": "Apolonia",
+    "motherMaidenName": "Zalewska",
+    "parish": "Zegrze",
+    "place": "Zegrze",
+    "date": "05.01.1876",
+    "scanUrl": "http://metryki.genealodzy.pl/metryki.php?op=kt&ar=2&zs=0459d&sy=1876&kt=1"
+  }
+}
