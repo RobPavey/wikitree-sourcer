@@ -147,10 +147,10 @@ function convertOptions(loadedOptions, defaultOptions) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
 
-  console.log("convertOptions, loadedVersion is : " + loadedVersion + ", currentVersion is : " + currentVersion);
+  //console.log("convertOptions, loadedVersion is : " + loadedVersion + ", currentVersion is : " + currentVersion);
 
-  console.log("convertOptions, loadedOptions is : ");
-  console.log(loadedOptions);
+  //console.log("convertOptions, loadedOptions is : ");
+  //console.log(loadedOptions);
 
   if (loadedVersion >= currentVersion) {
     return loadedOptions;
