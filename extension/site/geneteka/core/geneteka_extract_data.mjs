@@ -98,13 +98,13 @@ function extractData(document, url, siteSpecificInput) {
     const src = img.attributes["src"]?.value;
     const title = img.attributes["title"]?.value;
     if (src?.includes("i.png") && title) {
-      const dateMatch = title.match(/Data \S+: (\d\d.\d\d.\d\d\d\d)/);
+      const dateMatch = title.match(/(Data|Date of) \S+:? (\d\d.\d\d.\d\d\d\d)/);
       if (dateMatch) {
-        recordData.date = dateMatch[1];
+        recordData.date = dateMatch[2];
       }
-      const placeMatch = title.match(/Miejscowość: (.+)/);
+      const placeMatch = title.match(/(Miejscowość|Place): (.+)/);
       if (placeMatch) {
-        recordData.place = placeMatch[1].trim();
+        recordData.place = placeMatch[2].trim();
       }
     }
   }

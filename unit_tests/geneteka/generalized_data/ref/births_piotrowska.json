@@ -1,0 +1,40 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "collectionData": {
+    "provinceId": "07mz",
+    "province": "mazowieckie",
+    "registrationNumber": "15",
+    "parish": "Ojrzanów",
+    "id": "births"
+  },
+  "eventDate": {
+    "yearString": "1865"
+  },
+  "name": {
+    "lastName": "Piotrowska",
+    "forenames": "Waleria"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstName": "Szymon",
+        "lastName": "Piotrowski"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstName": "Katarzyna",
+        "lastName": "Poliga"
+      }
+    }
+  },
+  "birthDate": {
+    "dateString": "14 Feb 1865"
+  },
+  "birthPlace": {
+    "placeString": "Jastrzębnik"
+  },
+  "hasValidData": true
+}

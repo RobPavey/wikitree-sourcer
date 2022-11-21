@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "recordData": {
+    "recordType": "S",
+    "province": "07mz",
+    "year": "1810",
+    "husbandFirstName": "Antoni",
+    "husbandLastName": "Jabłoński",
+    "husbandParents": "Bazyli, Anna Rolkiewicz?",
+    "wifeFirstName": "Zuzanna",
+    "wifeLastName": "Woytkowicz",
+    "wifeParents": "Jan, Marianna Janek?",
+    "parish": "Nowe Miasto nad Pilicą",
+    "date": "28.02.1810",
+    "place": "Nowe Miasto",
+    "scanUrl": "http://metryki.genealodzy.pl/metryki.php?op=kt&ar=3&zs=1604d&sy=1810b&kt=2"
+  }
+}

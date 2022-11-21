@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "geneteka",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "collectionData": {
+    "provinceId": "07mz",
+    "province": "mazowieckie",
+    "parish": "Nowe Miasto nad Pilicą",
+    "id": "marriages"
+  },
+  "eventDate": {
+    "yearString": "1810"
+  },
+  "name": {
+    "lastName": "Jabłoński",
+    "forenames": "Antoni"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Woytkowicz",
+        "forenames": "Zuzanna"
+      },
+      "marriageDate": {
+        "dateString": "28 Feb 1810"
+      },
+      "marriagePlace": {
+        "placeString": "Nowe Miasto"
+      }
+    }
+  ],
+  "hasValidData": true
+}

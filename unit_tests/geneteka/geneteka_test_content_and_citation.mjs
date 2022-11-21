@@ -44,6 +44,10 @@ const regressionData = [
     url: "https://geneteka.genealodzy.pl/index.php?op=gt&lang=pol&bdm=B&w=07mz&rid=B&search_lastname=ozimek&search_name=j%C3%B3zef&search_lastname2=&search_name2=&from_date=1706&to_date=&exac=1",
   },
   {
+    caseName: "births_piotrowska",
+    url: "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=B&w=07mz&rid=B&search_lastname=piotrowska&search_name=waleria&search_lastname2=&search_name2=&from_date=1865&to_date=",
+  },
+  {
     caseName: "deaths_nowakowska",
     url: "https://geneteka.genealodzy.pl/index.php?op=gt&lang=pol&bdm=D&w=07mz&rid=D&search_lastname=nowakowska&search_name=aleksandra&search_lastname2=&search_name2=&from_date=&to_date=&exac=1&parents=1",
   },
@@ -62,6 +66,10 @@ const regressionData = [
   {
     caseName: "marriages_stolarczyk",
     url: "https://geneteka.genealodzy.pl/index.php?op=gt&lang=pol&bdm=S&w=07mz&rid=S&search_lastname=stolarczyk&search_name=katarzyna&search_lastname2=wi%C4%99ch&search_name2=&from_date=1922&to_date=1922&rpp1=&ordertable=",
+  },
+  {
+    caseName: "marriages_jablonski",
+    url: "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=S&w=07mz&rid=S&search_lastname=jab%C5%82o%C5%84ski&search_name=antoni&search_lastname2=&search_name2=&from_date=1810&to_date=",
   },
 ];
 
