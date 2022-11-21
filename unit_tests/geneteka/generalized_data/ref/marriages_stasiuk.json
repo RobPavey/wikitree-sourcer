@@ -2,6 +2,13 @@
   "sourceOfData": "geneteka",
   "sourceType": "record",
   "recordType": "MarriageRegistration",
+  "collectionData": {
+    "provinceId": "07mz",
+    "province": "mazowieckie",
+    "registrationNumber": "1",
+    "parish": "Wirów",
+    "id": "marriages"
+  },
   "eventDate": {
     "yearString": "1829"
   },

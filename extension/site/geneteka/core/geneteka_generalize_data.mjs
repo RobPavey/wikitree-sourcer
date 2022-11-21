@@ -32,6 +32,30 @@ const RECORD_TYPES = {
   S: RT.MarriageRegistration,
 };
 
+const PROVINCES = {
+  "01ds": "dolnośląskie",
+  "02kp": "kujawsko-pomorskie",
+  "03lb": "lubelskie",
+  "04ls": "lubuskie",
+  "05ld": "łódzkie",
+  "06mp": "małopolskie",
+  "07mz": "mazowieckie",
+  "71wa": "Warszawa",
+  "08op": "opolskie",
+  "09pk": "podkarpackie",
+  "10pl": "podlaskie",
+  "11pm": "pomorskie",
+  "12sl": "śląskie",
+  "13sk": "świętokrzyskie",
+  "14wm": "warmińsko-mazurskie",
+  "15wp": "wielkopolskie",
+  "16zp": "zachodniopomorskie",
+  "21uk": "Ukraina",
+  "22br": "Białoruś",
+  "23lt": "Litwa",
+  "25po": "Pozostałe",
+};
+
 /**
  * Convert most popular female surnames to their male counterparts.
  */
@@ -69,8 +93,19 @@ function generalizeData(input) {
   const recordData = data.recordData;
   result.sourceType = "record";
   result.recordType = RECORD_TYPES[recordData.recordType];
+  result.collectionData = {
+    provinceId: recordData.province,
+    province: PROVINCES[recordData.province],
+  };
 
   result.setEventYear(recordData.year);
+
+  if (recordData.record) {
+    result.collectionData.registrationNumber = recordData.record;
+  }
+  if (recordData.parish) {
+    result.collectionData.parish = recordData.parish;
+  }
 
   if (recordData.recordType !== "S") {
     result.setLastNameAndForeNames(recordData.lastName, recordData.firstName);
@@ -93,9 +128,11 @@ function generalizeData(input) {
   if (recordData.recordType === "B") {
     result.setBirthDate(convertDate(recordData.date));
     result.setBirthPlace(recordData.place);
+    result.collectionData.id = "births";
   } else if (recordData.recordType === "D") {
     result.setDeathDate(convertDate(recordData.date));
     result.setDeathPlace(recordData.place);
+    result.collectionData.id = "deaths";
   } else if (recordData.recordType === "S") {
     result.setLastNameAndForeNames(recordData.husbandLastName, recordData.husbandFirstName);
     const spouse = result.addSpouse();
@@ -108,6 +145,7 @@ function generalizeData(input) {
     if (recordData.place) {
       spouse.marriagePlace.placeString = recordData.place;
     }
+    result.collectionData.id = "marriages";
   }
 
   result.hasValidData = true;

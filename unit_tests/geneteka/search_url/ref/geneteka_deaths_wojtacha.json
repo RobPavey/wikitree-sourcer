@@ -1,0 +1,11 @@
+{
+  "std": {
+    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=B&rid=B&w=01ds&search_lastname=Wojtacha&search_name=Jan&from_date=1776&to_date=1897"
+  },
+  "deaths": {
+    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=D&rid=D&w=01ds&search_lastname=Wojtacha&search_name=Jan&from_date=1896&to_date=1897"
+  },
+  "marriages": {
+    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=S&rid=S&w=01ds&search_lastname=Wojtacha&search_name=Jan&from_date=1776&to_date=1897"
+  }
+}

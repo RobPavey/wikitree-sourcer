@@ -36,6 +36,7 @@ import "/site/gro/browser/gro_popup_search.mjs";
 import "/site/freebmd/browser/freebmd_popup_search.mjs";
 import "/site/freecen/browser/freecen_popup_search.mjs";
 import "/site/freereg/browser/freereg_popup_search.mjs";
+import "/site/geneteka/browser/geneteka_popup_search.mjs";
 import "/site/np/browser/np_popup_search.mjs";
 import "/site/scotp/browser/scotp_popup_search.mjs";
 import "/site/trove/browser/trove_popup_search.mjs";

@@ -5,27 +5,28 @@
   "collectionData": {
     "provinceId": "07mz",
     "province": "mazowieckie",
-    "registrationNumber": "7",
-    "parish": "Nur",
+    "parish": "Nowe Miasto nad Pilicą",
     "id": "marriages"
   },
   "eventDate": {
-    "yearString": "1811"
+    "yearString": "1810"
   },
   "name": {
-    "lastName": "Jańczuk",
-    "forenames": "Mikołaj"
+    "lastName": "Jabłoński",
+    "forenames": "Antoni"
   },
   "spouses": [
     {
       "name": {
-        "lastName": "Szczepaniak",
-        "forenames": "Franciszka"
+        "lastName": "Woytkowicz",
+        "forenames": "Zuzanna"
       },
       "marriageDate": {
-        "dateString": "20 Nov 1811"
+        "dateString": "28 Feb 1810"
       },
-      "marriagePlace": {}
+      "marriagePlace": {
+        "placeString": "Nowe Miasto"
+      }
     }
   ],
   "hasValidData": true
