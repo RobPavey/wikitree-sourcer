@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Parish marriage records\"<br/>\nKlembów 29/1922<br/>\n[https://geneteka.genealodzy.pl/index.php?op=gt&bdm=S&w=07mz&rid=S&search_lastname=&search_name=&from_date=1922&to_date=1922&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nJan Więch and Katarzyna Stolarczyk married in Jaźwie i Franciszków.\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Parish marriage records\"<br/>\nKlembów 29/1922<br/>\n[https://geneteka.genealodzy.pl/index.php?op=gt&bdm=S&w=07mz&rid=S&search_lastname=Więch&search_name=Jan&search_lastname2=Stolarczyk&search_name2=Katarzyna&from_date=1922&to_date=1922&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nJan Więch and Katarzyna Stolarczyk married in Jaźwie i Franciszków.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Jan's marriage to Katarzyna Stolarczyk was registered in 1922.<ref>\n'''Marriage Registration''':\n\"Parish marriage records\"<br/>\nKlembów 29/1922<br/>\n[https://geneteka.genealodzy.pl/index.php?op=gt&bdm=S&w=07mz&rid=S&search_lastname=&search_name=&from_date=1922&to_date=1922&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nJan Więch and Katarzyna Stolarczyk married in Jaźwie i Franciszków.\n</ref>",
+    "citation": "Jan's marriage to Katarzyna Stolarczyk was registered in 1922.<ref>\n'''Marriage Registration''':\n\"Parish marriage records\"<br/>\nKlembów 29/1922<br/>\n[https://geneteka.genealodzy.pl/index.php?op=gt&bdm=S&w=07mz&rid=S&search_lastname=Więch&search_name=Jan&search_lastname2=Stolarczyk&search_name2=Katarzyna&from_date=1922&to_date=1922&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>\nJan Więch and Katarzyna Stolarczyk married in Jaźwie i Franciszków.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage Registration''': \"Parish marriage records\"<br/>Klembów 29/1922<br/>[https://geneteka.genealodzy.pl/index.php?op=gt&bdm=S&w=07mz&rid=S&search_lastname=&search_name=&from_date=1922&to_date=1922&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>Jan Więch and Katarzyna Stolarczyk married in Jaźwie i Franciszków.",
+    "citation": "* '''Marriage Registration''': \"Parish marriage records\"<br/>Klembów 29/1922<br/>[https://geneteka.genealodzy.pl/index.php?op=gt&bdm=S&w=07mz&rid=S&search_lastname=Więch&search_name=Jan&search_lastname2=Stolarczyk&search_name2=Katarzyna&from_date=1922&to_date=1922&exac=1&parents=1 Geneteka birth record index] (accessed 6 May 2021)<br/>Jan Więch and Katarzyna Stolarczyk married in Jaźwie i Franciszków.",
     "type": "source"
   }
 }

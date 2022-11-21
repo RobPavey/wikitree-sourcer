@@ -2,6 +2,12 @@
   "sourceOfData": "geneteka",
   "sourceType": "record",
   "recordType": "BirthRegistration",
+  "collectionData": {
+    "provinceId": "07mz",
+    "province": "mazowieckie",
+    "parish": "Jazgarzew",
+    "id": "births"
+  },
   "eventDate": {
     "yearString": "1706"
   },

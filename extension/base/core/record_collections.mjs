@@ -1118,6 +1118,34 @@ const RecordCollectionData = [
       ancestry: { id: "8991" },
     },
   },
+  // Poland
+  {
+    wtsId: "PolandBirthReg",
+    title: "Poland Registration Birth Index",
+    country: "Poland",
+    isBirth: true,
+    sites: {
+      geneteka: { id: "births" },
+    },
+  },
+  {
+    wtsId: "PolandDeathReg",
+    title: "Poland Registration Death Index",
+    country: "Poland",
+    isDeath: true,
+    sites: {
+      geneteka: { id: "deaths" },
+    },
+  },
+  {
+    wtsId: "PolandMarriageReg",
+    title: "Poland Registration Marriage Index",
+    country: "Poland",
+    isMarriage: true,
+    sites: {
+      geneteka: { id: "marriages" },
+    },
+  },
 ];
 
 const RC = {

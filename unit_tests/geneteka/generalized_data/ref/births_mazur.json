@@ -2,6 +2,12 @@
   "sourceOfData": "geneteka",
   "sourceType": "record",
   "recordType": "BirthRegistration",
+  "collectionData": {
+    "provinceId": "13sk",
+    "province": "świętokrzyskie",
+    "parish": "Sandomierz NMP - Katedra",
+    "id": "births"
+  },
   "eventDate": {
     "yearString": "1911"
   },

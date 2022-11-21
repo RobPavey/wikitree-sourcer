@@ -22,15 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { registerSubsectionForOptions, registerOptionsGroup } from "../../../base/core/options/options_registry.mjs";
+import {
+  registerSubsectionForOptions,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
 
-const citationOptionsGroup = {
-  category: "citation",
-  subcategory: "geneteka",
-  tab: "citation",
-  subsection: "geneteka",
-  options: [],
-};
-
-registerSubsectionForOptions("citation", "geneteka", "Geneteka");
-registerOptionsGroup(citationOptionsGroup);
+registerSubsectionForOptions("search", "geneteka", "Geneteka");
+registerSiteSearchPopupOptionsGroup("geneteka", 8, 8);
