@@ -5,36 +5,36 @@
   "collectionData": {
     "provinceId": "07mz",
     "province": "mazowieckie",
-    "registrationNumber": "5",
-    "parish": "Zegrze",
+    "registrationNumber": "15",
+    "parish": "Ojrzanów",
     "id": "births"
   },
   "eventDate": {
-    "yearString": "1876"
+    "yearString": "1865"
   },
   "name": {
-    "lastName": "Więch",
-    "forenames": "Paweł Władysław"
+    "lastName": "Piotrowska",
+    "forenames": "Waleria"
   },
   "parents": {
     "father": {
       "name": {
-        "firstName": "Ludwik",
-        "lastName": "Więch"
+        "firstName": "Szymon",
+        "lastName": "Piotrowski"
       }
     },
     "mother": {
       "name": {
-        "firstName": "Apolonia",
-        "lastName": "Zalewska"
+        "firstName": "Katarzyna",
+        "lastName": "Poliga"
       }
     }
   },
   "birthDate": {
-    "dateString": "5 Jan 1876"
+    "dateString": "14 Feb 1865"
   },
   "birthPlace": {
-    "placeString": "Zegrze"
+    "placeString": "Jastrzębnik"
   },
   "hasValidData": true
 }

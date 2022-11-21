@@ -1,0 +1,11 @@
+{
+  "std": {
+    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=B&rid=B&w=03lb&search_lastname=Littlemore&search_name=Amelia&from_date=1849&to_date=1850"
+  },
+  "deaths": {
+    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=D&rid=D&w=03lb&search_lastname=Littlemore&search_name=Amelia&from_date=1938&to_date=1939"
+  },
+  "marriages": {
+    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=S&rid=S&w=03lb&search_lastname=Littlemore&search_name=Amelia&from_date=1849&to_date=1939"
+  }
+}

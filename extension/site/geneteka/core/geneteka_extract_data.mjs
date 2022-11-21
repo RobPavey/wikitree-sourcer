@@ -62,8 +62,8 @@ const REMARKS_COLUMN_NUMBER = 9;
 
 function extractData(document, url, siteSpecificInput) {
   const typeMatch = url.match(/bdm=([BDS])/);
-  const voivodeshipMatch = url.match(/w=(\w\w\w\w)/);
-  if (!typeMatch || !voivodeshipMatch) {
+  const provinceMatch = url.match(/w=(\w\w\w\w)/);
+  if (!typeMatch || !provinceMatch) {
     return { success: false };
   }
 
@@ -77,7 +77,7 @@ function extractData(document, url, siteSpecificInput) {
   const recordType = typeMatch[1];
   const recordData = {
     recordType,
-    voivodeship: voivodeshipMatch[1],
+    province: provinceMatch[1],
   };
 
   // Extract most fields.
@@ -98,13 +98,13 @@ function extractData(document, url, siteSpecificInput) {
     const src = img.attributes["src"]?.value;
     const title = img.attributes["title"]?.value;
     if (src?.includes("i.png") && title) {
-      const dateMatch = title.match(/Data \S+: (\d\d.\d\d.\d\d\d\d)/);
+      const dateMatch = title.match(/(Data|Date of) \S+:? (\d\d.\d\d.\d\d\d\d)/);
       if (dateMatch) {
-        recordData.date = dateMatch[1];
+        recordData.date = dateMatch[2];
       }
-      const placeMatch = title.match(/Miejscowość: (.+)/);
+      const placeMatch = title.match(/(Miejscowość|Place): (.+)/);
       if (placeMatch) {
-        recordData.place = placeMatch[1].trim();
+        recordData.place = placeMatch[2].trim();
       }
     }
   }

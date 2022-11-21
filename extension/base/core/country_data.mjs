@@ -89,6 +89,26 @@ const CountryData = [
   { stdName: "Sweden", matches: ["Sweden"] },
   { stdName: "Denmark", matches: ["Denmark"] },
   { stdName: "Norway", matches: ["Norway"] },
+  {
+    stdName: "Poland",
+    matches: ["Poland", "Polska"],
+  },
+  {
+    stdName: "Ukraine",
+    matches: ["Ukraine", "Україна", "Ukraina"],
+  },
+  {
+    stdName: "Lithuania",
+    matches: ["Lithuania", "Lietuva", "Litwa"],
+  },
+  {
+    stdName: "Belarus",
+    matches: ["Belarus", "Беларусь", "Беларусь, Советский Союз", "Białoruś"],
+  },
+  {
+    stdName: "Galicia",
+    matches: ["Galicia", "Galicia, Austria", "Galicja"],
+  },
 
   { stdName: "Turkey", matches: ["Turkey"] },
 
