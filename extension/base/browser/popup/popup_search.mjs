@@ -29,6 +29,7 @@ import {
   beginMainMenu,
   endMainMenu,
   addBreak,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { CD } from "/base/core/country_data.mjs";
 import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
@@ -62,7 +63,7 @@ async function doSearch(loadedModule, input) {
   } else {
     chrome.tabs.create({ url: newURL });
   }
-  window.close();
+  closePopup();
 }
 
 function testFilterForDatesAndCountries(filter, startYear, endYear, countryArray) {
@@ -451,7 +452,7 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
 
   let subMenuFunctionList = buildSubMenuItemFunctions();
 
-  let subMenuText = "All Search Sites...";
+  let subMenuText = "Show All Search Sites...";
   if (maxItems <= 0) {
     subMenuText = "Search...";
   }

@@ -33,6 +33,7 @@ import {
   displayMessage,
   displayMessageWithIcon,
   doAsyncActionWithCatch,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -286,9 +287,13 @@ async function ancestryBuildSharingTemplate(extractedData) {
           num2 = dataObj.v2.share_token;
         }
 
-        let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
+        if (num1 && num2) {
+          let template = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
 
-        writeToClipboard(template, "Sharing template");
+          writeToClipboard(template, "Sharing template");
+        } else {
+          displayMessageWithIcon("warning", "Error building sharing template.");
+        }
       } else {
         displayMessageWithIcon("warning", "Error building sharing template.");
       }
@@ -325,7 +330,11 @@ async function ancestryBuildSharingUrl(extractedData) {
         if (dataObj.v2 && dataObj.v2.share_url) {
           url = dataObj.v2.share_url;
         }
-        writeToClipboard(url, "Sharing URL");
+        if (url) {
+          writeToClipboard(url, "Sharing URL");
+        } else {
+          displayMessageWithIcon("warning", "Error building sharing URL.");
+        }
       } else {
         displayMessageWithIcon("warning", "Error building sharing URL.");
       }
@@ -429,7 +438,7 @@ function ancestryGoToRecord(data) {
 
   if (recordUrl) {
     chrome.tabs.create({ url: recordUrl });
-    window.close();
+    closePopup();
   } else {
     // failed
     displayMessageWithIcon("warning", "The Image URL is not in the expected format.");
@@ -440,7 +449,7 @@ function ancestryGoToImage(data) {
   let imageUrl = data.extractedData.imageUrl;
   if (imageUrl) {
     chrome.tabs.create({ url: imageUrl });
-    window.close();
+    closePopup();
   }
 }
 
@@ -448,7 +457,7 @@ function ancestryGoToFullSizeSharingImage(data) {
   let imageUrl = data.extractedData.fullSizeSharingImageUrl;
   if (imageUrl) {
     chrome.tabs.create({ url: imageUrl });
-    window.close();
+    closePopup();
   }
 }
 

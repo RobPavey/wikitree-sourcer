@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "13 Feb 1957"
+  },
+  "eventPlace": {
+    "placeString": "Rockbeare, East Devon District, Devon, England",
+    "streetAddress": "St Mary with St Andrews Churchyard"
+  },
+  "name": {
+    "name": "Francis Leslie Rich"
+  },
+  "lastNameAtDeath": "Rich",
+  "deathDate": {
+    "dateString": "13 Feb 1957"
+  },
+  "deathPlace": {
+    "placeString": "Rockbeare, East Devon District, Devon, England"
+  },
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "hasValidData": true
+}

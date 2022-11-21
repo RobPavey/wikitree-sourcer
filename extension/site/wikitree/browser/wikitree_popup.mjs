@@ -32,6 +32,7 @@ import {
   displayMessage,
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -633,7 +634,7 @@ async function mergeEditFromPersonData(data, personEd, personGd, citationObject)
   }
 
   chrome.tabs.create({ url: mergeUrl });
-  window.close();
+  closePopup();
 }
 
 function getPersonDataSubtitleText(gd, timeText) {

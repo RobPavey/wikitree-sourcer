@@ -31,6 +31,7 @@ import {
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
@@ -74,7 +75,7 @@ function freecenDoSearch(input) {
     } else {
       chrome.tabs.create({ url: searchUrl });
     }
-    window.close();
+    closePopup();
   });
 }
 
