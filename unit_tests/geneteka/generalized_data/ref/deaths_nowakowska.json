@@ -2,6 +2,13 @@
   "sourceOfData": "geneteka",
   "sourceType": "record",
   "recordType": "DeathRegistration",
+  "collectionData": {
+    "provinceId": "07mz",
+    "province": "mazowieckie",
+    "registrationNumber": "47",
+    "parish": "Kampinos",
+    "id": "deaths"
+  },
   "eventDate": {
     "yearString": "1870"
   },

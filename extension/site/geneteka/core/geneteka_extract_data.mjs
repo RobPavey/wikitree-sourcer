@@ -62,8 +62,8 @@ const REMARKS_COLUMN_NUMBER = 9;
 
 function extractData(document, url, siteSpecificInput) {
   const typeMatch = url.match(/bdm=([BDS])/);
-  const voivodeshipMatch = url.match(/w=(\w\w\w\w)/);
-  if (!typeMatch || !voivodeshipMatch) {
+  const provinceMatch = url.match(/w=(\w\w\w\w)/);
+  if (!typeMatch || !provinceMatch) {
     return { success: false };
   }
 
@@ -77,7 +77,7 @@ function extractData(document, url, siteSpecificInput) {
   const recordType = typeMatch[1];
   const recordData = {
     recordType,
-    voivodeship: voivodeshipMatch[1],
+    province: provinceMatch[1],
   };
 
   // Extract most fields.

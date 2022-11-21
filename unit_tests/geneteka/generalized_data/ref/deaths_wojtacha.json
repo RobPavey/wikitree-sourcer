@@ -2,6 +2,13 @@
   "sourceOfData": "geneteka",
   "sourceType": "record",
   "recordType": "DeathRegistration",
+  "collectionData": {
+    "provinceId": "13sk",
+    "province": "świętokrzyskie",
+    "registrationNumber": "51",
+    "parish": "Janina",
+    "id": "deaths"
+  },
   "eventDate": {
     "yearString": "1896"
   },

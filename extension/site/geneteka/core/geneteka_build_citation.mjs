@@ -25,12 +25,16 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 
 function buildUrl(data) {
-  const lastName = data.lastName || "";
-  const firstName = data.firstName || "";
+  const lastName = data.lastName || data.husbandLastName || "";
+  const firstName = data.firstName || data.husbandFirstName || "";
+  const lastName2 = data.wifeLastName || "";
+  const firstName2 = data.wifeFirstName || "";
+  const names2 = lastName2 || firstName2 ? `&search_lastname2=${lastName2}&search_name2=${firstName2}` : "";
   return (
     "https://geneteka.genealodzy.pl/index.php" +
-    `?op=gt&bdm=${data.recordType}&w=${data.voivodeship}&rid=${data.recordType}` +
+    `?op=gt&bdm=${data.recordType}&w=${data.province}&rid=${data.recordType}` +
     `&search_lastname=${lastName}&search_name=${firstName}` +
+    names2 +
     `&from_date=${data.year}&to_date=${data.year}&exac=1&parents=1`
   ).replaceAll(" ", "+");
 }
