@@ -452,7 +452,7 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
 
   let subMenuFunctionList = buildSubMenuItemFunctions();
 
-  let subMenuText = "All Search Sites...";
+  let subMenuText = "Show All Search Sites...";
   if (maxItems <= 0) {
     subMenuText = "Search...";
   }
