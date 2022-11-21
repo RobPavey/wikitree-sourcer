@@ -22,21 +22,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their options
+import { extractData } from "../../extension/site/trove/core/trove_extract_data.mjs";
+import { generalizeData } from "../../extension/site/trove/core/trove_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/trove/core/trove_build_citation.mjs";
 
-// Currently the order that they are imported is the order that they appear in the
-// options page subsection drop down
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../bg/core/bg_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../geneteka/core/geneteka_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../np/core/np_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../trove/core/trove_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
+import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
+
+const regressionData = [
+  {
+    caseName: "cairns_post_1940_jeanes_pavey",
+    url: "https://trove.nla.gov.au/newspaper/article/42260088?searchTerm=pavey",
+  },
+];
+
+async function runTests(testManager) {
+  await runExtractDataTests("trove", extractData, regressionData, testManager);
+
+  await runGeneralizeDataTests("trove", generalizeData, regressionData, testManager);
+
+  await runBuildCitationTests("trove", buildCitation, undefined, regressionData, testManager);
+}
+
+export { runTests };

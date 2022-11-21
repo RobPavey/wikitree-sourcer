@@ -290,14 +290,6 @@ function updateRunTest(siteName) {
 }
 
 async function createNewSite() {
-  // results is an object that builds up the test results
-  // it contains an array of objects (allTests), each has a test name and whether it passed
-  let results = {
-    totalTestsRun: 0,
-    numFailedTests: 0,
-    allTests: [],
-  };
-
   let parameters = {
     siteName: "",
     siteDisplayName: "",
