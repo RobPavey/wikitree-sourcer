@@ -35,9 +35,9 @@ const citationOptionsGroup = {
   subsection: "trove",
   options: [
     {
-      optionName: "changeNamesToInitialCaps",
+      optionName: "includeSearchQuery",
       type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
+      label: "Include search query in Trove URL",
       defaultValue: true,
     },
   ],

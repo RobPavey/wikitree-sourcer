@@ -23,35 +23,21 @@ SOFTWARE.
 */
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 function buildTroveUrl(data, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
   let url = data.url;
-  // remove any search stuff
-  let queryIndex = url.indexOf("?");
-  if (queryIndex != -1) {
-    url = url.substring(0, queryIndex);
+
+  const options = builder.getOptions();
+  if (!options.citation_trove_includeSearchQuery) {
+    // remove any search stuff
+    let queryIndex = url.indexOf("?");
+    if (queryIndex != -1) {
+      url = url.substring(0, queryIndex);
+    }
   }
+
   return url;
-}
-
-function getCorrectlyCasedName(name, options) {
-  if (options.citation_trove_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name);
-  }
-  return name;
-}
-
-function getCorrectlyCasedNames(name, options) {
-  if (options.citation_trove_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCapsEachWord(name, true);
-  }
-  return name;
-}
-
-function getGivenNames(data, options) {
-  return getCorrectlyCasedNames(data.givenNames, options);
 }
 
 function buildCoreCitation(data, runDate, builder) {

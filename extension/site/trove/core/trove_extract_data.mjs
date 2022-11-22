@@ -64,6 +64,10 @@ function extractData(document, url) {
   getBreadcrumb("ndp:pageSelector", "page");
   getBreadcrumb("ndp:articleSelector", "article");
 
+  if (!result.title || !result.article) {
+    return result; // not a valid aticle page
+  }
+
   const titleLinkElement = document.querySelector("#breadcrumb-c div.quicknav-title > a");
   if (titleLinkElement) {
     result.titleLink = titleLinkElement.getAttribute("href");
