@@ -134,7 +134,7 @@ function generalizeData(input) {
 
   result.hasValidData = true;
 
-  //console.log("freebmd; generaliseData: result is:");
+  //console.log("freebmd; generalizeData: result is:");
   //console.log(result);
 
   return result;

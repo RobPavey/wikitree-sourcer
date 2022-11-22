@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n[undefined Trove (Aus) Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY.<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088 Trove Article] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Unknown was in a record.<ref>\n[undefined Trove (Aus) Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "Unknown was in a newspaper on 6 August 1940 in Queensland, Australia.<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY.<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088 Trove Article] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* [undefined Trove (Aus) Record] (accessed 6 May 2021)<br/>, undefined.<br/>",
+    "citation": "* '''1940 Newspaper''': \"Trove, National Library of Australia\"<br/>Cairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY.<br/>[https://trove.nla.gov.au/newspaper/article/42260088 Trove Article] (accessed 6 May 2021)",
     "type": "source"
   }
 }

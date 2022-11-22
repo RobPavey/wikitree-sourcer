@@ -25,6 +25,65 @@ SOFTWARE.
 import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
+function issueToDate(issue) {
+  // issue can be of form:
+  // "Tue 6 Aug 1940"
+  // This seems fairly standard across different titles (publications)
+
+  let dateString = issue;
+
+  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  for (let day of days) {
+    if (dateString.startsWith(day)) {
+      dateString = dateString.substring(day.length).trim();
+      break;
+    }
+  }
+
+  return dateString;
+}
+
+function titleToPlace(title) {
+  // title can be of form:
+  // "Camberwell and Hawthorn Advertiser (Vic. : 1914 - 1918)"
+  // "Cairns Post (Qld. : 1909 - 1954)"
+  // "Camp Chronicle (Midland Junction, WA : 1915 - 1918)"
+  // "Chinese Republic News (Sydney, NSW : 1914 - 1937)"
+
+  let placeString = "";
+
+  let parenIndex = title.indexOf("(");
+  if (parenIndex != -1) {
+    const colonIndex = title.indexOf(":", parenIndex);
+    if (colonIndex != -1) {
+      placeString = title.substring(parenIndex + 1, colonIndex).trim();
+    }
+  }
+
+  const stateAbbrevs = {
+    ACT: "Australian Capital Territory",
+    NSW: "New South Wales",
+    NT: "Northern Territory",
+    "Qld.": "Queensland",
+    SA: "South Australia",
+    "Tas.": "Tasmania",
+    "Vic.": "Victoria",
+    WA: "Western Australia",
+  };
+
+  for (let abbrev in stateAbbrevs) {
+    if (placeString.endsWith(abbrev)) {
+      placeString = placeString.substring(0, placeString.length - abbrev.length);
+      placeString += stateAbbrevs[abbrev];
+      break;
+    }
+  }
+
+  placeString += ", Australia";
+
+  return placeString;
+}
+
 // This function generalizes the data extracted web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
@@ -34,82 +93,27 @@ function generalizeData(input) {
 
   result.sourceOfData = "trove";
 
-  let collectionId = undefined;
-
-  if (!data.success == undefined || !data.eventYear) {
+  if (!data.success == undefined) {
     return result; //the extract failed
   }
 
   result.sourceType = "record";
 
-  switch (data.eventType) {
-    case "birth":
-      result.recordType = RT.BirthRegistration;
-      break;
-    case "marriage":
-      result.recordType = RT.MarriageRegistration;
-      break;
-    case "death":
-      result.recordType = RT.DeathRegistration;
-      break;
-    default:
-      return;
+  result.recordType = RT.Newspaper;
+
+  const issue = data.issue;
+  if (issue) {
+    result.setEventDate(issueToDate(issue));
   }
 
-  result.setEventYear(data.eventYear);
-
-  // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setLastNameAndForeNames(data.surname, data.givenNames);
-
-  if (data.eventType == "birth") {
-    collectionId = "births";
-    result.lastNameAtBirth = data.surname;
-    result.birthDate = result.eventDate;
-    if (data.mother) {
-      result.mothersMaidenName = data.mothersMaidenName;
-    }
-  } else if (data.eventType == "marriage") {
-    collectionId = "marriages";
-
-    if (data.spouse) {
-      let name = new WtsName();
-      name.name = data.spouse;
-      let spouse = {
-        name: name,
-        marriageDate: result.eventDate,
-        marriagePlace: data.district,
-      };
-
-      result.spouses = [spouse];
-    }
-  } else if (data.eventType == "death") {
-    collectionId = "deaths";
-    result.lastNameAtDeath = data.surname;
-    result.deathDate = result.eventDate;
-
-    if (data.ageAtDeath) {
-      result.ageAtDeath = data.ageAtDeath;
-    } else if (data.birthDate) {
-      result.setBirthDate(data.birthDate);
-    }
-  }
-
-  // Collection
-  if (collectionId) {
-    result.collectionData = {
-      id: collectionId,
-    };
-    if (data.referenceVolume) {
-      result.collectionData.volume = data.referenceVolume;
-    }
-    if (data.referencePage) {
-      result.collectionData.page = data.referencePage;
-    }
+  const title = data.title;
+  if (title) {
+    result.setEventPlace(titleToPlace(title));
   }
 
   result.hasValidData = true;
 
-  //console.log("trove; generaliseData: result is:");
+  //console.log("trove; generalizeData: result is:");
   //console.log(result);
 
   return result;

@@ -24,11 +24,16 @@ SOFTWARE.
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
-//import { FBMD } from "./trove_utils.mjs";
 
 function buildTroveUrl(data, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
-  return data.citationUrl;
+  let url = data.url;
+  // remove any search stuff
+  let queryIndex = url.indexOf("?");
+  if (queryIndex != -1) {
+    url = url.substring(0, queryIndex);
+  }
+  return url;
 }
 
 function getCorrectlyCasedName(name, options) {
@@ -49,57 +54,18 @@ function getGivenNames(data, options) {
   return getCorrectlyCasedNames(data.givenNames, options);
 }
 
-function getLastName(data, options) {
-  return getCorrectlyCasedName(data.surname, options);
-}
-
 function buildCoreCitation(data, runDate, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = "";
-  builder.sourceReference = data.sourceCitation;
+  builder.sourceTitle = "Trove, National Library of Australia";
+
+  builder.databaseHasImages = true;
 
   var troveUrl = buildTroveUrl(data, builder);
 
-  let recordLink = "[" + troveUrl + " Trove (Aus) Record]";
+  let recordLink = "[" + troveUrl + " Trove Article]";
   builder.recordLinkOrTemplate = recordLink;
 
-  let dataString = getLastName(data, options) + ", " + getGivenNames(data, options);
-  if (data.eventType == "birth") {
-    if (data.mothersMaidenName != undefined && data.mothersMaidenName != "") {
-      dataString += " (Mother's maiden name: ";
-      var mmn = getMothersMaidenName(data, options);
-      if (mmn == undefined || mmn == "") {
-        mmn = "-";
-      }
-      dataString += mmn + ")";
-    }
-  } else if (data.eventType == "death") {
-    if (data.ageAtDeath) {
-      dataString += " (Age at death: ";
-      dataString += data.ageAtDeath + ")";
-    } else if (data.birthDate) {
-      dataString += " (Date of birth: ";
-      dataString += data.birthDate + ")";
-    }
-  }
-  if (!dataString.endsWith(".")) {
-    dataString += ".";
-  }
-
-  if (options.citation_general_addBreaksWithinBody) {
-    dataString += "<br/>";
-  } else {
-    dataString += " ";
-  }
-  if (options.citation_general_addNewlinesWithinBody) {
-    dataString += "\n";
-  }
-
-  if (data.referenceVolume != undefined && data.referenceVolume != "") {
-    dataString += " Volume " + data.referenceVolume + " Page " + data.referencePage + ".";
-  }
-
-  builder.dataString = dataString;
+  builder.sourceReference = data.title + ", " + data.issue + ", " + data.page + " : " + data.article;
 }
 
 function buildCitation(input) {
@@ -113,20 +79,7 @@ function buildCitation(input) {
 
   var citation = buildCoreCitation(data, runDate, builder);
 
-  // Get meaningful title
-  var refTitle = "";
-  switch (data.eventType) {
-    case "birth":
-      refTitle = "Birth Registration";
-      break;
-    case "marriage":
-      refTitle = "Marriage Registration";
-      break;
-    case "death":
-      refTitle = "Death Registration";
-      break;
-  }
-  builder.meaningfulTitle = refTitle;
+  builder.meaningfulTitle = gd.getRefTitle();
 
   if (type == "narrative") {
     builder.addNarrative(gd, input.dataCache, options);
