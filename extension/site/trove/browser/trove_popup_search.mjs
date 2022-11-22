@@ -22,14 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addSameRecordMenuItem,
-  addBackMenuItem,
-  addMenuItem,
-  beginMainMenu,
-  endMainMenu,
-  doAsyncActionWithCatch,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
   doSearch,
@@ -39,15 +32,17 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const troveStartYear = 1837;
-const troveEndYear = 1992;
+// The Sydney Gazette and New South Wales Advertiser,
+// published in 1803, was the first newspaper printed in Australia.
+const troveStartYear = 1803;
+const troveEndYear = 3000; // up to present day
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function troveSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+async function troveSearch(generalizedData) {
+  const input = { generalizedData: generalizedData, options: options };
   doAsyncActionWithCatch("Trove (Aus) Search", input, async function () {
     let loadedModule = await import(`../core/trove_build_search_url.mjs`);
     doSearch(loadedModule, input);
@@ -59,10 +54,7 @@ async function troveSearch(generalizedData, typeOfSearch) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addTroveDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const stdCountryName = "England and Wales";
+  const stdCountryName = "Australia";
 
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, troveStartYear, troveEndYear, [stdCountryName])) {
@@ -97,86 +89,14 @@ function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItem(menu, "Search Trove (Aus)...", function (element) {
-    setupTroveSearchSubMenu(data, backFunction, filter);
-  });
-
-  return true;
-}
-
-async function addTroveSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "trove", function (element) {
-    troveSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addTroveSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      troveStartYear,
-      troveEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Trove (Aus) Births", function (element) {
-    troveSearch(data.generalizedData, "Births");
-  });
-}
-
-function addTroveSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      troveStartYear,
-      troveEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Trove (Aus) Marriages", function (element) {
-    troveSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addTroveSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      troveStartYear,
-      troveEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Trove (Aus) Deaths", function (element) {
-    troveSearch(data.generalizedData, "Deaths");
+  addMenuItem(menu, "Search Trove (Aus)", function (element) {
+    troveSearch(data.generalizedData);
   });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupTroveSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  await addTroveSameRecordMenuItem(menu, data, filter);
-  addTroveSearchBirthsMenuItem(menu, data, filter);
-  addTroveSearchMarriagesMenuItem(menu, data, filter);
-  addTroveSearchDeathsMenuItem(menu, data, filter);
-
-  endMainMenu(menu);
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites

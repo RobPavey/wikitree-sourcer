@@ -26,7 +26,7 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 class TroveUriBuilder {
   constructor() {
-    this.uri = "https://www.trove.org.uk/cgi/search.pl";
+    this.uri = "https://trove.nla.gov.au/search/advanced/category/newspapers";
     this.searchTermAdded = false;
   }
 
@@ -57,44 +57,24 @@ class TroveUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addState(string) {
+    this.addSearchParameter("l-advstate", string);
   }
 
-  addSurname(string) {
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
+  addKeywordsAll(string) {
+    this.addSearchParameter("keyword", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
-  addGivenNames(string) {
-    this.addSearchParameter("given", WTS_String.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", WTS_String.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", WTS_String.removeExtendedAsciiCharacters(string));
+  addKeywordsAny(string) {
+    this.addSearchParameter("keyword.any", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {
-    this.addSearchParameter("start", string);
+    this.addSearchParameter("date.from", string);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+    this.addSearchParameter("date.to", string);
   }
 
   getUri() {
