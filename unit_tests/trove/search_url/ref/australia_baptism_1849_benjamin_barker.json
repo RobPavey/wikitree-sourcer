@@ -1,5 +1,8 @@
 {
   "std": {
     "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1847&date.to=1967&keyword=Barker&keyword.any=Benjamin&l-advstate=New%20South%20Wales"
+  },
+  "noStates": {
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1847&date.to=1967&keyword=Barker&keyword.any=Benjamin"
   }
 }

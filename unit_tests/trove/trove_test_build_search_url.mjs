@@ -29,6 +29,12 @@ const regressionData = [
   {
     caseName: "australia_baptism_1849_benjamin_barker",
     inputPath: "ancestry/generalized_data/ref/australia_baptism_1849_benjamin_barker",
+    optionVariants: [
+      {
+        variantName: "noStates",
+        optionOverrides: { search_trove_includeStateQuery: false },
+      },
+    ],
   },
   {
     caseName: "australia_birth_reg_1885_alice_lloyd",

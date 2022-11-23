@@ -37,12 +37,27 @@ const regressionData = [
   },
 ];
 
+const optionVariants = [
+  {
+    variantName: "std",
+    optionOverrides: {
+      citation_trove_includeSearchQuery: true,
+    },
+  },
+  {
+    variantName: "doNotIncludeQuery",
+    optionOverrides: {
+      citation_trove_includeSearchQuery: false,
+    },
+  },
+];
+
 async function runTests(testManager) {
   await runExtractDataTests("trove", extractData, regressionData, testManager);
 
   await runGeneralizeDataTests("trove", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("trove", buildCitation, undefined, regressionData, testManager);
+  await runBuildCitationTests("trove", buildCitation, undefined, regressionData, testManager, optionVariants);
 }
 
 export { runTests };
