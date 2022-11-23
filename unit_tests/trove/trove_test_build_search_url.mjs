@@ -34,6 +34,10 @@ const regressionData = [
         variantName: "noStates",
         optionOverrides: { search_trove_includeStateQuery: false },
       },
+      {
+        variantName: "noAddRange",
+        optionOverrides: { search_trove_addToDateRange: "none" },
+      },
     ],
   },
   {

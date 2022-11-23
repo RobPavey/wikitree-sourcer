@@ -29,6 +29,26 @@ import { CD } from "../../../base/core/country_data.mjs";
 const minTroveYear = 1803;
 const maxTroveYear = 3000;
 
+function addNumToYearString(yearString, num) {
+  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  if (yearNum) {
+    yearNum += num;
+    return yearNum.toString();
+  } else {
+    return yearString;
+  }
+}
+
+function subtractNumFromYearString(yearString, num) {
+  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  if (yearNum) {
+    yearNum -= num;
+    return yearNum.toString();
+  } else {
+    return yearString;
+  }
+}
+
 function constrainYear(yearString) {
   if (!yearString) {
     return yearString;
@@ -173,6 +193,14 @@ function buildSearchUrl(buildUrlInput) {
   var builder = new TroveUriBuilder();
 
   const dateRange = data.inferPossibleLifeYearRange();
+  if (options.search_trove_addToDateRange != "none") {
+    if (dateRange.startYear) {
+      dateRange.startYear = subtractNumFromYearString(dateRange.startYear, options.search_trove_addToDateRange);
+    }
+    if (dateRange.endYear) {
+      dateRange.endYear = addNumToYearString(dateRange.endYear, options.search_trove_addToDateRange);
+    }
+  }
 
   // constrain years to the range covered by Trove
   constrainYears(dateRange);

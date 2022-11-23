@@ -42,6 +42,19 @@ const searchOptionsGroup = {
       label: "Specify states in search query",
       defaultValue: true,
     },
+    {
+      optionName: "addToDateRange",
+      type: "select",
+      label: "Extra years to add to date range",
+      values: [
+        { value: "none", text: "None" },
+        { value: 1, text: "+/- 1 years" },
+        { value: 2, text: "+/- 2 years" },
+        { value: 5, text: "+/- 5 years" },
+        { value: 10, text: "+/- 10 years" },
+      ],
+      defaultValue: 2,
+    },
   ],
 };
 
