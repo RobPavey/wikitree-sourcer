@@ -27,9 +27,9 @@ import { registerTest } from "../test_utils/test_registry.mjs";
 import * as test_content from "./wikitree_test_content.mjs";
 import * as test_build_search_url from "./wikitree_test_build_search_url.mjs";
 
-async function runTests(options, testResults) {
-  await test_content.runTests(options, testResults);
-  await test_build_search_url.runTests(options, testResults);
+async function runTests(testManager) {
+  await test_content.runTests(testManager);
+  await test_build_search_url.runTests(testManager);
 }
 
 registerTest("wikitree", runTests);
