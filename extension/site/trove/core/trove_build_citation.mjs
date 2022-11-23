@@ -63,7 +63,7 @@ function buildCitation(input) {
 
   let builder = new CitationBuilder(type, runDate, options);
 
-  var citation = buildCoreCitation(data, runDate, builder);
+  buildCoreCitation(data, runDate, builder);
 
   builder.meaningfulTitle = gd.getRefTitle();
 

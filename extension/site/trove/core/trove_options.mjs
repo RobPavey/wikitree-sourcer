@@ -24,9 +24,26 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchOptionsGroup = {
+  category: "search",
+  subcategory: "trove",
+  tab: "search",
+  subsection: "trove",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "includeStateQuery",
+      type: "checkbox",
+      label: "Specify states in search query",
+      defaultValue: true,
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -45,6 +62,8 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "trove", "Trove (Aus)");
 registerSiteSearchPopupOptionsGroup("trove", 7, 7);
+registerSubheadingForOptions("search", "trove", "parameters", "Search Parameters");
+registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "trove", "Trove (Aus)");
 registerOptionsGroup(citationOptionsGroup);

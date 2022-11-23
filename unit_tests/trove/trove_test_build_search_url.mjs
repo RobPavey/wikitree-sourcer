@@ -26,12 +26,38 @@ import { buildSearchUrl } from "../../extension/site/trove/core/trove_build_sear
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+  {
+    caseName: "australia_baptism_1849_benjamin_barker",
+    inputPath: "ancestry/generalized_data/ref/australia_baptism_1849_benjamin_barker",
   },
-  */
+  {
+    caseName: "australia_birth_reg_1885_alice_lloyd",
+    inputPath: "ancestry/generalized_data/ref/australia_birth_reg_1885_alice_lloyd",
+  },
+  {
+    caseName: "australia_child_birth_1897_saml_peck",
+    inputPath: "ancestry/generalized_data/ref/australia_child_birth_1897_saml_peck",
+  },
+  {
+    caseName: "australia_death_1970_alice_armstrong",
+    inputPath: "ancestry/generalized_data/ref/australia_death_1970_alice_armstrong",
+  },
+  {
+    caseName: "australia_electoral_roll_1936_george_stemm",
+    inputPath: "ancestry/generalized_data/ref/australia_electoral_roll_1936_george_stemm",
+  },
+  {
+    caseName: "australia_naturalization_1886_abraham_smith",
+    inputPath: "ancestry/generalized_data/ref/australia_naturalization_1886_abraham_smith",
+  },
+  {
+    caseName: "australia_pardon_1831_james_toomer",
+    inputPath: "ancestry/generalized_data/ref/australia_pardon_1831_james_toomer",
+  },
+  {
+    caseName: "australia_probate_1974_violet_mcconchie",
+    inputPath: "ancestry/generalized_data/ref/australia_probate_1974_violet_mcconchie",
+  },
 ];
 
 async function runTests(testManager) {

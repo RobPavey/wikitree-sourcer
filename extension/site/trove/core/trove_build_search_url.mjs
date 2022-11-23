@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { TroveUriBuilder } from "./trove_uri_builder.mjs";
 import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { CD } from "../../../base/core/country_data.mjs";
 
 const minTroveYear = 1803;
 const maxTroveYear = 3000;
@@ -49,6 +50,94 @@ function constrainYear(yearString) {
 function constrainYears(dates) {
   dates.startYear = constrainYear(dates.startYear);
   dates.endYear = constrainYear(dates.endYear);
+}
+
+function addPlaces(data, builder, options) {
+  if (!options.search_trove_includeStateQuery) {
+    return;
+  }
+
+  const states = [
+    {
+      queryName: "ACT",
+      matches: ["australian capital territory", "act", "capital territory"],
+    },
+    {
+      queryName: "New South Wales",
+      matches: ["new south wales", "nsw"],
+    },
+    {
+      queryName: "Northern Territory",
+      matches: ["northern territory", "nt"],
+    },
+    {
+      queryName: "Queensland",
+      matches: ["queensland", "qld.", "qld"],
+    },
+    {
+      queryName: "South Australia",
+      matches: ["south australia", "sa"],
+    },
+    {
+      queryName: "Tasmania",
+      matches: ["tasmania", "tas.", "tas"],
+    },
+    {
+      queryName: "Victoria",
+      matches: ["victoria", "vic.", "vic"],
+    },
+    {
+      queryName: "Western Australia",
+      matches: ["western australia", "wa"],
+    },
+  ];
+
+  const placeNames = data.inferPlaceNames();
+
+  let placesToAdd = [];
+  for (let placeName of placeNames) {
+    let placeNameMinusCountry = "";
+
+    let country = CD.matchCountryFromPlaceName(placeName);
+    if (country && country.stdName == "Australia") {
+      let countryExtract = CD.extractCountryFromPlaceName(placeName);
+      if (countryExtract) {
+        placeNameMinusCountry = countryExtract.remainder;
+      }
+    } else if (!country) {
+      // the country could be missing - e.g.: "Sydney, New South Wales"
+      placeNameMinusCountry = placeName;
+    } else {
+      if (!placesToAdd.includes("International")) {
+        placesToAdd.push("International");
+      }
+    }
+
+    if (placeNameMinusCountry) {
+      // see if placeName ends with a known state name
+      const lcName = placeNameMinusCountry.toLowerCase();
+      let stateName = "";
+      for (let state of states) {
+        for (let match of state.matches) {
+          if (lcName.endsWith(", " + match) || lcName == match) {
+            stateName = state.queryName;
+            break;
+          }
+        }
+        if (stateName) {
+          break;
+        }
+      }
+
+      if (stateName && !placesToAdd.includes(stateName)) {
+        placesToAdd.push(stateName);
+      }
+    }
+  }
+
+  for (let placeToAdd of placesToAdd) {
+    builder.addState(placeToAdd);
+  }
 }
 
 function buildSearchUrl(buildUrlInput) {
@@ -79,7 +168,7 @@ function buildSearchUrl(buildUrlInput) {
   //
 
   const data = buildUrlInput.generalizedData;
-  const typeOfSearch = buildUrlInput.typeOfSearch;
+  const options = buildUrlInput.options;
 
   var builder = new TroveUriBuilder();
 
@@ -120,6 +209,8 @@ function buildSearchUrl(buildUrlInput) {
 
   builder.addKeywordsAll(keywordsAll);
   builder.addKeywordsAny(keywordsAny);
+
+  addPlaces(data, builder, options);
 
   const url = builder.getUri();
 

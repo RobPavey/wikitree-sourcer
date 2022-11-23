@@ -73,11 +73,6 @@ function extractData(document, url) {
     result.titleLink = titleLinkElement.getAttribute("href");
   }
 
-  const fullTextElement = document.querySelector("#fulltextContents");
-  if (fullTextElement) {
-    result.fullTextContents = fullTextElement.textContent;
-  }
-
   const fullTextLineElements = document.querySelectorAll("#fulltextContents div.line > div.read");
   if (fullTextLineElements) {
     let fullTextLines = [];
