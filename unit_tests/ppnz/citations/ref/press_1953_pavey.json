@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n[undefined Papers Past (NZ) Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n[undefined Papers Past (NZ) Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* [undefined Papers Past (NZ) Record] (accessed 6 May 2021)<br/>, undefined.<br/>",
+    "type": "source"
+  }
+}

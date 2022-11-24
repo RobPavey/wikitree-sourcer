@@ -41,3 +41,4 @@ import "/site/np/browser/np_popup_search.mjs";
 import "/site/scotp/browser/scotp_popup_search.mjs";
 import "/site/trove/browser/trove_popup_search.mjs";
 import "/site/wikitree/browser/wikitree_popup_search.mjs";
+import "/site/ppnz/browser/ppnz_popup_search.mjs";

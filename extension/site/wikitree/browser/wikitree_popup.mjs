@@ -33,6 +33,7 @@ import {
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
   closePopup,
+  addMenuDivider,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -946,9 +947,11 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   await addSearchMenus(menu, data, backFunction, "wikitree");
 
   if (extractedData.pageType == "editFamily") {
+    addMenuDivider(menu);
     await addSetFieldsFromPersonDataMenuItem(menu, data, tabId);
     await addSetFieldsFromCitationMenuItem(menu, data, tabId);
   } else if (extractedData.pageType == "read" || extractedData.pageType == "private") {
+    addMenuDivider(menu);
     await addMergeEditMenuItem(menu, data, tabId);
   }
 
