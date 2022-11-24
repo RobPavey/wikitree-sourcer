@@ -2175,10 +2175,7 @@ class GeneralizedData {
     return undefined;
   }
 
-  inferCountries() {
-    //console.log("inferCountries, this is:");
-    //console.log(this);
-
+  inferPlaceNames() {
     let placeNames = [];
 
     let birthPlace = this.inferBirthPlace();
@@ -2218,6 +2215,15 @@ class GeneralizedData {
         }
       }
     }
+
+    return placeNames;
+  }
+
+  inferCountries() {
+    //console.log("inferCountries, this is:");
+    //console.log(this);
+
+    let placeNames = this.inferPlaceNames();
 
     // determine the country or countries from placeNames array
     if (placeNames.length > 0) {

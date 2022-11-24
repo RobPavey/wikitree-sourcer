@@ -39,4 +39,5 @@ import "../../geneteka/core/geneteka_options.mjs";
 import "../../gro/core/gro_options.mjs";
 import "../../np/core/np_options.mjs";
 import "../../scotp/core/scotp_options.mjs";
+import "../../trove/core/trove_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";

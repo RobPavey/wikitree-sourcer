@@ -335,15 +335,23 @@ class NarrativeBuilder {
     return result;
   }
 
-  getPersonNameOrPronoun(isMidSentence = false) {
+  getPersonNameOrPronoun(isMidSentence = false, noUnknown = false) {
     let nameOrPronounObj = this.getPersonNameOrPronounWithFlag(isMidSentence);
     if (nameOrPronounObj.isValid) {
       return nameOrPronounObj.nameOrPronoun;
     }
     if (isMidSentence) {
-      return "unknown";
+      if (noUnknown) {
+        return "this person";
+      } else {
+        return "unknown";
+      }
     } else {
-      return "Unknown";
+      if (noUnknown) {
+        return "This person";
+      } else {
+        return "Unknown";
+      }
     }
   }
 
@@ -2109,7 +2117,7 @@ class NarrativeBuilder {
       { recordType: RT.Emigration, string: "emigrated" },
       { recordType: RT.Pension, string: "was in a pension record" },
       { recordType: RT.PassportApplication, string: "applied for a passport" },
-      { recordType: RT.Newspaper, string: "was in a newspaper" },
+      { recordType: RT.Newspaper, string: "was mentioned in a newspaper article" },
       { recordType: RT.LegalRecord, string: "was in a legal record" },
       { recordType: RT.RateBook, string: "was in a rate book" },
       {
@@ -2143,7 +2151,7 @@ class NarrativeBuilder {
     if (gd.role && gd.role == Role.Parent) {
       this.narrative += this.getPossessiveNamePlusChild();
     } else {
-      this.narrative += this.getPersonNameOrPronoun();
+      this.narrative += this.getPersonNameOrPronoun(false, true);
     }
 
     this.narrative += " " + narrativeCore;

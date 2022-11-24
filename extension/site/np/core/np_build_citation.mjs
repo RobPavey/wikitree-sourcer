@@ -27,7 +27,7 @@ import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 function buildCoreCitation(data, gd, runDate, builder) {
   builder.sourceTitle = "Newspapers.com";
 
-  builder.databaseHasImages = false;
+  builder.databaseHasImages = true;
 
   const clipString = "/clip/";
   let clipIndex = data.url.indexOf(clipString);

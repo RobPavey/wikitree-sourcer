@@ -109,7 +109,7 @@ function generalizeData(input) {
 
   result.hasValidData = true;
 
-  //console.log("examplesite; generaliseData: result is:");
+  //console.log("examplesite; generalizeData: result is:");
   //console.log(result);
 
   return result;

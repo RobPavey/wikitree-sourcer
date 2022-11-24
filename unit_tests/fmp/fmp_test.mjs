@@ -28,10 +28,10 @@ import * as test_content_and_citation from "./fmp_test_content_and_citation.mjs"
 import * as test_build_household_table from "./fmp_test_build_household_table.mjs";
 import * as test_build_search_url from "./fmp_test_build_search_url.mjs";
 
-async function runTests(options, testResults) {
-  await test_content_and_citation.runTests(options, testResults);
-  await test_build_household_table.runTests(options, testResults);
-  await test_build_search_url.runTests(options, testResults);
+async function runTests(testManager) {
+  await test_content_and_citation.runTests(testManager);
+  await test_build_household_table.runTests(testManager);
+  await test_build_search_url.runTests(testManager);
 }
 
 registerTest("fmp", runTests);

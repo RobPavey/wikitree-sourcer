@@ -32,6 +32,7 @@
     "*://geneteka.genealodzy.pl/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.newspapers.com/*",
+    "*://trove.nla.gov.au/*",
     "*://www.scotlandspeople.gov.uk/*"
   ],
   "background": {
@@ -136,6 +137,11 @@
       "matches": ["*://www.scotlandspeople.gov.uk/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
+    },
+    {
+      "matches": ["*://trove.nla.gov.au/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/trove/browser/trove_content.js"]
     }
   ],
   "options_ui": {
@@ -219,6 +225,10 @@
     {
       "resources": ["site/np/core/np_extract_data.mjs"],
       "matches": ["*://www.newspapers.com/*"]
+    },
+    {
+      "resources": ["site/trove/core/trove_extract_data.mjs"],
+      "matches": ["*://trove.nla.gov.au/*"]
     },
     {
       "resources": ["site/scotp/core/scotp_extract_data.mjs"],

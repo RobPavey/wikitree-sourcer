@@ -1735,7 +1735,7 @@ function generalizeData(input) {
 
   result.hasValidData = true;
 
-  //console.log("scotp; generaliseData: result is:");
+  //console.log("scotp; generalizeData: result is:");
   //console.log(result);
 
   return result;

@@ -1,0 +1,12 @@
+{
+  "sourceOfData": "trove",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "6 Aug 1940"
+  },
+  "eventPlace": {
+    "placeString": "Queensland, Australia"
+  },
+  "hasValidData": true
+}
