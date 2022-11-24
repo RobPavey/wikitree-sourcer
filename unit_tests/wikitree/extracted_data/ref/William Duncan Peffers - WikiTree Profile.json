@@ -1,0 +1,32 @@
+{
+  "hasValidData": true,
+  "firstNames": "William",
+  "prefNames": "",
+  "middleNames": "Duncan",
+  "lnab": "Peffers",
+  "currentLastName": "Peffers",
+  "mothersMaidenName": "Brown",
+  "birthDate": "Jun 1898",
+  "birthDateStatus": "about",
+  "deathDate": "19 Oct 1916",
+  "deathDateStatus": "none",
+  "birthLocation": "Bloemfontein, Orange Free State, South Africa",
+  "deathLocation": "Somme, Picardie, France",
+  "personGender": "male",
+  "spouses": [],
+  "url": "https://www.wikitree.com/wiki/Peffers-436",
+  "currentTabText": "Profile (private view)",
+  "pageType": "private",
+  "wikiId": "Peffers-436",
+  "name": "William Duncan Peffers",
+  "parents": {
+    "father": {
+      "wikiId": "Peffers-427",
+      "name": "William Wilson Peffers"
+    },
+    "mother": {
+      "wikiId": "Brown-125398",
+      "name": "Annie (Brown) Peffers"
+    }
+  }
+}

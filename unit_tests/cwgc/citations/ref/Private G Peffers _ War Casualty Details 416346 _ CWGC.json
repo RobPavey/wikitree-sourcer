@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Commonwealth War Graves Commission\"<br/>\nEdinburgh (North Merchiston) Cemetery, Edinburgh, United Kingdom. (Plot: D. 39)<br/>\n[https://www.cwgc.org/find-records/find-war-dead/casualty-details/416346/g-peffers/ Commonwealth War Graves Commission Record] (accessed 6 May 2021)<br/>\nMemorial page for G Peffers, Service number: 20767, Died: 5 July 1919; <br/>\nRegiment & Unit/Ship: 1st Garrison Bn., East Yorkshire Regiment (United Kingdom); Additional Info: Son of William and Margaret Peffers, of 30, Holywood Square, Edinburgh. Born at Edinburgh.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "G was mentioned on a memorial in EDINBURGH (NORTH MERCHISTON) CEMETERY, Edinburgh, United Kingdom with a death date of 5 July 1919.<ref>\n'''Memorial''':\n\"Commonwealth War Graves Commission\"<br/>\nEdinburgh (North Merchiston) Cemetery, Edinburgh, United Kingdom. (Plot: D. 39)<br/>\n[https://www.cwgc.org/find-records/find-war-dead/casualty-details/416346/g-peffers/ Commonwealth War Graves Commission Record] (accessed 6 May 2021)<br/>\nMemorial page for G Peffers, Service number: 20767, Died: 5 July 1919; <br/>\nRegiment & Unit/Ship: 1st Garrison Bn., East Yorkshire Regiment (United Kingdom); Additional Info: Son of William and Margaret Peffers, of 30, Holywood Square, Edinburgh. Born at Edinburgh.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': \"Commonwealth War Graves Commission\"<br/>Edinburgh (North Merchiston) Cemetery, Edinburgh, United Kingdom. (Plot: D. 39)<br/>[https://www.cwgc.org/find-records/find-war-dead/casualty-details/416346/g-peffers/ Commonwealth War Graves Commission Record] (accessed 6 May 2021)<br/>Memorial page for G Peffers, Service number: 20767, Died: 5 July 1919; <br/>\nRegiment & Unit/Ship: 1st Garrison Bn., East Yorkshire Regiment (United Kingdom); Additional Info: Son of William and Margaret Peffers, of 30, Holywood Square, Edinburgh. Born at Edinburgh.",
+    "type": "source"
+  }
+}
