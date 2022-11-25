@@ -80,6 +80,10 @@ function buildCoreCitation(data, runDate, builder) {
     dataString += " Died: " + data.deathDate + "; ";
   }
 
+  if (data.ageAtDeath) {
+    dataString += " Age: " + data.ageAtDeath + "; ";
+  }
+
   if (options.citation_general_addBreaksWithinBody) {
     dataString += "<br/>";
   } else {

@@ -146,8 +146,11 @@ function buildSearchUrl(buildUrlInput) {
     if ((options.search_cwgc_useFirstnameOrInitial === "initial" && firstName.length > 0) || firstName.length === 1) {
       builder.addInitials(firstName.slice(0, 1));
     } else {
+      const firstNames = data.inferForenames();
       const firstNameExactness = options.search_cwgc_exactFirstName ? true : false;
-      builder.addForename(firstName, firstNameExactness);
+      if (firstNames) {
+        builder.addForename(firstNames, firstNameExactness);
+      }
     }
   }
   const url = builder.getUri();
