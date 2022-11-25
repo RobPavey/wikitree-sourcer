@@ -33,7 +33,8 @@
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.newspapers.com/*",
     "*://trove.nla.gov.au/*",
-    "*://www.scotlandspeople.gov.uk/*"
+    "*://www.scotlandspeople.gov.uk/*",
+    "*://*.cwgc.org/*"
   ],
   "background": {
     "page": "base/browser/background/background.html"
