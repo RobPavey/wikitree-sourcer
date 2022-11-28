@@ -39,6 +39,7 @@ const SpField = {
   age: "age",
   county: "county",
   courtName: "courtName",
+  description: "description",
   forename: "forename",
   fullName: "fullName",
   gender: "gender",
@@ -52,7 +53,8 @@ const SpField = {
   spouseFullName: "spouseFullName",
   spouseSurname: "spouseSurname",
   surname: "surname",
-  description: "description",
+  yearFrom: "yearFrom",
+  yearTo: "yearTo",
 };
 
 const SpFeature = {
@@ -78,6 +80,13 @@ const scotpRecordTypes = {
     search: { gender: true, county: true, rd: true },
     searchNameLimits: { forename: 15, surname: 15 }, // if limit not known set to 99
     searchParams: { ref: "ref", county: "county", forename: "forename" },
+    searchFields: {
+      forename: "edit-search-params-nrs-forename",
+      surname: "edit-search-params-nrs-surname",
+      county: "edit-search-params-str-county",
+      yearFrom: "edit-search-params-nrs-search-year-year-from",
+      yearTo: "edit-search-params-nrs-search-year-year-to",
+    },
   },
 
   // These are in the order that they appear on the Advanced People Search here:
@@ -92,6 +101,7 @@ const scotpRecordTypes = {
     eventClass: "birth",
     recordKeys: { ref: "Ref", gender: "Gender", rdName: "RD Name" },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births",
+    searchUrl: "statutory-records/stat-births",
     sourcerRecordType: RT.BirthRegistration,
   },
   stat_marriages: {
@@ -107,7 +117,12 @@ const scotpRecordTypes = {
     },
     search: { spouse: true },
     searchParams: { spouseSurname: "spsurname", spouseForename: "spforename" },
+    searchFields: {
+      spouseSurname: "edit-search-params-nrs-spsurname",
+      spouseForename: "edit-search-params-nrs-spforename",
+    },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-marriages&record_type=stat_marriages",
+    searchUrl: "statutory-records/stat-marriages",
     sourcerRecordType: RT.MarriageRegistration,
   },
   stat_divorces: {
@@ -118,7 +133,9 @@ const scotpRecordTypes = {
     recordKeys: { ref: "Serial Number", spouseSurname: "Spouse Surname" },
     search: { spouse: true, county: false },
     searchParams: { spouseSurname: "spsurname" },
+    searchFields: { spouseSurname: "edit-search-params-nrs-spsurname" },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces",
+    searchUrl: "statutory-records/stat-divorces",
     sourcerRecordType: RT.Divorce,
   },
   stat_deaths: {
@@ -129,6 +146,7 @@ const scotpRecordTypes = {
     recordKeys: { ref: "Ref", age: "Age at death", rdName: "RD Name" },
     search: { ageRange: true, birthYear: true },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-deaths&record_type=stat_deaths",
+    searchUrl: "statutory-records/stat-deaths",
     sourcerRecordType: RT.DeathRegistration,
   },
   civilpartnership: {
@@ -143,7 +161,9 @@ const scotpRecordTypes = {
     },
     search: { spouse: true },
     searchParams: { spouseSurname: "psurname", spouseForename: "" },
+    searchFields: { spouseSurname: "edit-search-params-nrs-spsurname", spouseForename: "" },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-civilpartnerships&record_type=civilpartnership",
+    searchUrl: "statutory-records/stat-civilpartnerships",
     sourcerRecordType: RT.MarriageRegistration,
   },
   dissolutions: {
@@ -154,8 +174,10 @@ const scotpRecordTypes = {
     recordKeys: { ref: "Serial Number", spouseSurname: "Partner Surname" },
     search: { spouse: true, county: false },
     searchParams: { spouseSurname: "psurname", spouseForename: "" },
+    searchFields: { spouseSurname: "edit-search-params-nrs-ptsurname", spouseForename: "" },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-dissolutions&record_type=dissolutions",
+    searchUrl: "statutory-records/stat-dissolutions",
     sourcerRecordType: RT.Divorce,
   },
 
@@ -176,6 +198,7 @@ const scotpRecordTypes = {
     search: { parents: true, oprParish: true, rd: false },
     searchStdText:
       "&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms",
+    searchUrl: "church-registers/church-births-baptisms/opr-births",
     sourcerRecordType: RT.BirthOrBaptism,
   },
   opr_marriages: {
@@ -191,8 +214,10 @@ const scotpRecordTypes = {
     },
     search: { spouse: true, oprParish: true, rd: false },
     searchParams: { spouseFullName: "spouse_name" },
+    searchFields: { spouseFullName: "edit-search-params-nrs-motherspousename" },
     searchStdText:
       "&event=M&record_type%5B0%5D=opr_marriages&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-banns-marriages",
+    searchUrl: "church-registers/church-banns-marriages/opr-marriages",
     sourcerRecordType: RT.Marriage,
   },
   opr_deaths: {
@@ -205,6 +230,7 @@ const scotpRecordTypes = {
     search: { oprParish: true, rd: false },
     searchStdText:
       "&event=D&record_type%5B0%5D=opr_deaths&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-deaths-burials",
+    searchUrl: "church-registers/church-deaths-burials/opr-deaths",
     sourcerRecordType: RT.DeathOrBurial,
   },
 
@@ -222,6 +248,7 @@ const scotpRecordTypes = {
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchStdText:
       "&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=crbirths_baptism&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-births-baptisms",
+    searchUrl: "church-registers/church-births-baptisms/cr-baptisms",
     sourcerRecordType: RT.Baptism,
   },
   crbanns_marriages: {
@@ -240,8 +267,13 @@ const scotpRecordTypes = {
       spouseSurname: "spouse_surname",
       spouseForename: "spouse_forename",
     },
+    searchFields: {
+      spouseSurname: "edit-search-params-nrs-spouse-surname",
+      spouseForename: "edit-search-params-nrs-spouse-forename",
+    },
     searchStdText:
       "&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages",
+    searchUrl: "church-registers/church-banns-marriages/cr-banns",
     sourcerRecordType: RT.Marriage,
   },
   crdeath_burial: {
@@ -255,6 +287,7 @@ const scotpRecordTypes = {
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchStdText:
       "&event=D&record_type%5B0%5D=crdeath_burial&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-deaths-burials",
+    searchUrl: "church-registers/church-deaths-burials/cr-burials",
     sourcerRecordType: RT.Burial, // NOTE: can be overidden to RT.Death
   },
   cr_other: {
@@ -266,6 +299,7 @@ const scotpRecordTypes = {
     search: { rd: false, rcParish: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchStdText: "&record_type%5B0%5D=cr_other&church_type=Catholic%20Registers",
+    searchUrl: "church-registers/church-other/cr-other",
     sourcerRecordType: RT.OtherChurchEvent,
   },
 
@@ -283,6 +317,7 @@ const scotpRecordTypes = {
     searchParams: { parishName: "congregation" },
     searchStdText:
       "&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=ch3_baptism&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-births-baptisms",
+    searchUrl: "church-registers/church-births-baptisms/ch3-baptisms",
     sourcerRecordType: RT.Baptism,
   },
   ch3_marriages: {
@@ -298,8 +333,10 @@ const scotpRecordTypes = {
     search: { rd: false, otherParish: true, spouse: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { parishName: "congregation", spouseFullName: "spouse_name" },
+    searchFields: { spouseFullName: "edit-search-params-nrs-spouse-name" },
     searchStdText:
       "&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages",
+    searchUrl: "church-registers/church-banns-marriages/ch3-banns",
     sourcerRecordType: RT.Marriage,
   },
   ch3_burials: {
@@ -313,6 +350,7 @@ const scotpRecordTypes = {
     searchParams: { parishName: "congregation" },
     searchStdText:
       "&event=D&record_type%5B0%5D=ch3_burials&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-deaths-burials",
+    searchUrl: "church-registers/church-deaths-burials/ch3-burials",
     sourcerRecordType: RT.DeathOrBurial,
   },
   ch3_other: {
@@ -325,6 +363,7 @@ const scotpRecordTypes = {
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { parishName: "congregation" },
     searchStdText: "&record_type%5B0%5D=ch3_other&church_type=Presbyterian%20registers",
+    searchUrl: "church-registers/church-other/ch3-other",
     sourcerRecordType: RT.OtherChurchEvent,
   },
 
@@ -343,6 +382,7 @@ const scotpRecordTypes = {
     },
     search: { ageRange: true, otherPerson: true },
     searchStdText: "&dl_cat=census&record_type=census",
+    searchUrl: "census-returns/census",
     sourcerRecordType: RT.Census,
   },
   census_lds: {
@@ -354,6 +394,7 @@ const scotpRecordTypes = {
     search: { ageRange: true, rd: false, county: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchStdText: "&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS",
+    searchUrl: "census-returns/census",
     sourcerRecordType: RT.Census,
   },
 
@@ -366,7 +407,9 @@ const scotpRecordTypes = {
     search: { gender: false, rd: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { county: "county_burgh" },
+    searchFields: { county: "edit-search-params-ajax-dropdowns-str-county" },
     searchStdText: "&dl_cat=valuation&record_type=valuation_rolls",
+    searchUrl: "valuation-rolls/vr",
     sourcerRecordType: RT.ValuationRoll,
   },
 
@@ -384,6 +427,7 @@ const scotpRecordTypes = {
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { description: "description", courtName: "court" },
     searchStdText: "&dl_cat=legal&dl_rec=legal-wills-testaments&record_type=wills_testaments",
+    searchUrl: "legal-records/wills",
     sourcerRecordType: RT.Will,
   },
   coa: {
@@ -395,6 +439,7 @@ const scotpRecordTypes = {
     search: { gender: false, rd: false, county: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchStdText: "&dl_cat=legal&dl_rec=legal-coats-arms&record_type=coa",
+    searchUrl: "legal-records/coa",
     sourcerRecordType: RT.Heraldry,
   },
   soldiers_wills: {
@@ -407,6 +452,7 @@ const scotpRecordTypes = {
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { serviceNumber: "service_number" },
     searchStdText: "&dl_cat=legal&dl_rec=legal-soldiers-wills&record_type=soldiers_wills",
+    searchUrl: "legal-records/soldiers-wills",
     sourcerRecordType: RT.Military,
   },
   military_tribunals: {
@@ -424,6 +470,7 @@ const scotpRecordTypes = {
       occupation: "occupation",
     },
     searchStdText: "&dl_cat=legal&dl_rec=legal-military-service&record_type=military_tribunals",
+    searchUrl: "legal-records/military-tribunals",
     sourcerRecordType: RT.Military,
   },
 
@@ -436,6 +483,7 @@ const scotpRecordTypes = {
     search: { gender: false, rd: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchStdText: "&dl_cat=poor-relief&dl_rec=poor-relief-hie&record_type=hie",
+    searchUrl: "poor-relief/hie",
     sourcerRecordType: RT.Immigration,
   },
 
@@ -445,7 +493,12 @@ const scotpRecordTypes = {
     dates: { from: 1867, to: 1921 },
     search: { rd: false, county: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
+    searchFields: {
+      yearFrom: "edit-search-params-hss-yearadmitted-year-from",
+      yearFrom: "edit-search-params-hss-yearadmitted-year-to",
+    },
     searchStdText: "&dl_cat=prison&record_type=prison_records",
+    searchUrl: "prison-registers/prison-records",
     sourcerRecordType: RT.CriminalRegister,
   },
 };
@@ -514,6 +567,10 @@ const ScotpRecordType = {
     return getValueWithDefault(recordType, "", "searchStdText", "");
   },
 
+  getSearchUrlPart: function (recordType) {
+    return getValueWithDefault(recordType, "", "searchUrl", "");
+  },
+
   hasSearchFeature: function (recordType, feature) {
     let defaultValue = getDefaultValue("search", feature);
     return getValueWithDefault(recordType, "search", feature, defaultValue);
@@ -522,6 +579,11 @@ const ScotpRecordType = {
   getSearchParam: function (recordType, paramName) {
     let defaultValue = getDefaultValue("searchParams", paramName);
     return getValueWithDefault(recordType, "searchParams", paramName, defaultValue);
+  },
+
+  getSearchField: function (recordType, fieldName) {
+    let defaultValue = getDefaultValue("searchFields", fieldName);
+    return getValueWithDefault(recordType, "searchFields", fieldName, defaultValue);
   },
 
   getRecordKey: function (recordType, fieldName) {

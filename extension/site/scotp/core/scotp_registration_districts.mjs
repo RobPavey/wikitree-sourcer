@@ -20840,9 +20840,9 @@ function getCountyDisplayName(county) {
   if (!county) {
     return "";
   }
+  let lcCounty = county.toLowerCase();
 
   const result = displayCountyNames.find((name) => {
-    let lcCounty = county.toLowerCase();
     let lcSearchCounty = name.search_county.toLowerCase();
     return lcCounty === lcSearchCounty;
   });

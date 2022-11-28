@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const highlightStyle = "background-color: palegoldenrod";
+const highlightStyle = "font-weight: bold; font-style: italic";
 
 function getRefRecordKey(recordType) {
   // this is a cut-down version of the scotpRecordTypes in scotp_record_type.mjs since we do not want
@@ -59,10 +59,15 @@ function getRefRecordKey(recordType) {
 }
 
 function addClickedRowListener() {
-  const elResultsTable = document.querySelector(".results-table-wrapper .sticky-table tbody");
+  console.log("addClickedRowListener");
+
+  const elResultsTable = document.querySelector("table.results-table tbody");
   if (elResultsTable && !elResultsTable.hasAttribute("listenerOnClick")) {
     elResultsTable.setAttribute("listenerOnClick", "true");
     elResultsTable.addEventListener("click", function (ev) {
+      console.log("clickedRowListener: ev is");
+      console.log(ev);
+
       // clear existing selected row if any
       let selectedRow = getClickedRow();
       if (selectedRow) {
@@ -70,6 +75,9 @@ function addClickedRowListener() {
       }
       selectedRow = ev.target;
       if (selectedRow) {
+        console.log("clickedRowListener: selectedRow is ");
+        console.log(selectedRow);
+
         selectedRow = selectedRow.closest("tr");
         if (selectedRow) {
           selectedRow.setAttribute("style", highlightStyle);
@@ -80,7 +88,7 @@ function addClickedRowListener() {
 }
 
 function getClickedRow() {
-  const elResultsTable = document.querySelector(".results-table-wrapper .sticky-table tbody");
+  const elResultsTable = document.querySelector("table.results-table tbody");
   if (elResultsTable) {
     const selectedRow = elResultsTable.querySelector("tr[style='" + highlightStyle + "']");
     return selectedRow;
@@ -188,6 +196,148 @@ async function doHighlightForRefQuery() {
   }
 }
 
+async function getPendingSearch() {
+  return new Promise((resolve, reject) => {
+    try {
+      chrome.storage.local.get(["scotpSearchData"], function (value) {
+        resolve(value.scotpSearchData);
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
+async function checkForPendingSearch() {
+  console.log("checkForPendingSearch: called");
+
+  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+
+  if (document.referrer) {
+    // when this page was opened by the extension referrer is an empty string
+    return;
+  }
+
+  if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/advanced-search/")) {
+    console.log("checkForPendingSearch: URL matches");
+
+    let searchData = await getPendingSearch();
+
+    if (searchData) {
+      console.log("checkForPendingSearch: got searchData:");
+      console.log(searchData);
+
+      let searchUrl = searchData.url;
+      let timeStamp = searchData.timeStamp;
+      let timeStampNow = Date.now();
+      let timeSinceSearch = timeStampNow - timeStamp;
+
+      console.log("checkForPendingSearch: searchUrl is : '" + searchUrl + "'");
+      console.log("checkForPendingSearch: document.URL is : '" + document.URL + "'");
+      console.log("checkForPendingSearch: timeStamp is :" + timeStamp);
+      console.log("checkForPendingSearch: timeStampNow is :" + timeStampNow);
+      console.log("checkForPendingSearch: timeSinceSearch is :" + timeSinceSearch);
+
+      if (timeSinceSearch < 10000 && searchUrl == document.URL) {
+        let formData = searchData.formData;
+
+        console.log("checkForPendingSearch: formData is:");
+        console.log(formData);
+
+        for (var field of formData.fields) {
+          console.log("checkForPendingSearch: field.fieldKey is: " + field.fieldKey);
+          if (field.fieldKey) {
+            const elementId = field.fieldKey;
+            const fieldType = field.type;
+
+            //console.log("checkForPendingSearch: value is: " + value);
+
+            let inputElement = document.getElementById(elementId);
+
+            if (!inputElement) {
+              continue;
+            }
+
+            console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
+            console.log("checkForPendingSearch: inputElement.tagName is: " + inputElement.tagName);
+            let inputType = inputElement.getAttribute("type");
+            console.log("checkForPendingSearch: inputElement type is: " + inputType);
+            console.log("checkForPendingSearch: fieldType is: " + fieldType);
+
+            let expectedType = fieldType;
+            if (fieldType == "so") {
+              expectedType = "text";
+            } else if (fieldType == "select" || fieldType == "multipleSelect") {
+              expectedType = null;
+            }
+
+            if (inputType != expectedType) {
+              continue;
+            }
+
+            let expectedTag = "INPUT";
+            if (fieldType == "select" || fieldType == "multipleSelect") {
+              expectedTag = "SELECT";
+            }
+
+            if (inputElement.tagName != expectedTag) {
+              continue;
+            }
+
+            if (fieldType == "text") {
+              console.log("checkForPendingSearch: text element, new value is : " + field.value);
+              inputElement.value = field.value;
+            } else if (fieldType == "so") {
+              console.log("checkForPendingSearch: so element, new value is : " + field.value);
+              let soWrapper = inputElement.closest("div.so-wrapper");
+              if (soWrapper) {
+                let buttons = soWrapper.querySelectorAll("input.search-options");
+                for (let button of buttons) {
+                  console.log("checkForPendingSearch: so element, button value is : " + button.value);
+                  if (button.value == field.value) {
+                    button.checked = true;
+                  } else {
+                    button.checked = false;
+                  }
+                }
+              }
+            } else if (fieldType == "radio") {
+              inputElement.checked = field.value;
+            } else if (fieldType == "checkbox") {
+              inputElement.checked = field.value;
+            } else if (fieldType == "select") {
+              console.log("checkForPendingSearch: select element, new value is : " + field.value);
+
+              inputElement.value = field.value;
+            } else if (fieldType == "multipleSelect") {
+            }
+          }
+        }
+
+        // try to submit form
+        let formElement = document.getElementById("advanced-search-form");
+        if (formElement) {
+          //console.log("checkForPendingSearch: found formElement:");
+          //console.log(formElement);
+          // Now hide the form so that the use doesn't try to use it.
+          //formElement.style.display = "none";
+          //const titleElement = document.querySelector("main.site__content div.container h1.title");
+          //if (titleElement) {
+          //  titleElement.innerText = "Performing WikiTree Sourcer search...";
+          //}
+          // now submit the form to do the search
+          //formElement.submit();
+        }
+      }
+
+      // clear the search data
+      chrome.storage.local.set({ scotpSearchData: undefined }, function () {
+        //console.log('cleared scotpSearchData');
+      });
+    }
+  }
+}
+
 function extractHandler(request, sendResponse) {
   let selectedRow = getClickedRow();
   let siteSpecificInput = {
@@ -201,7 +351,14 @@ function extractHandler(request, sendResponse) {
   }
 }
 
-siteContentInit(`scotp`, `site/scotp/core/scotp_extract_data.mjs`, extractHandler);
+async function checkForSearchThenInit() {
+  // check for a pending search first, there is no need to do the site init if there is one
+  await checkForPendingSearch();
 
-addClickedRowListener();
-doHighlightForRefQuery();
+  siteContentInit(`scotp`, `site/scotp/core/scotp_extract_data.mjs`, extractHandler);
+
+  addClickedRowListener();
+  doHighlightForRefQuery();
+}
+
+checkForSearchThenInit();

@@ -25,11 +25,8 @@ SOFTWARE.
 function getRecordType(data) {
   let type = undefined;
 
-  if (data.urlQuery) {
-    type = data.urlQuery["record_type"];
-    if (!type) {
-      type = data.urlQuery["record_type[0]"];
-    }
+  if (data.recordType) {
+    type = data.recordType;
   }
 
   return type;

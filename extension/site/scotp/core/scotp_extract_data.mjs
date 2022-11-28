@@ -23,9 +23,7 @@ SOFTWARE.
 */
 
 function extractFromSearchResults(document, url, userSelectedRowElement, result) {
-  let resultsTableWrapper = document.querySelector("div.results-table-wrapper");
-
-  let resultsTable = resultsTableWrapper.querySelector("table.table");
+  let resultsTable = document.querySelector("table.results-table");
   if (!resultsTable) {
     return;
   }
@@ -52,6 +50,10 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
     return;
   }
 
+  console.log(
+    `extractFromSearchResults: headerCells.length = ${headerCells.length}, rowCells.length = ${rowCells.length}`
+  );
+
   result.numResultsOnPage = rowElements.length;
 
   result.recordData = {};
@@ -62,37 +64,33 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
 
     let headerText = headerCell.textContent;
 
+    console.log(`extractFromSearchResults: headerText = ${headerText}`);
+
     if (headerText) {
-      let rowDataElement = rowCell.querySelector("div.table-cell-data");
+      let rowDataElement = rowCell.querySelector("div.table-row-cell-data");
       if (rowDataElement) {
-        // Note that we can also get the key name from the row cell in a couple of ways
-        if (headerText == "Image View") {
-          // The Image View column has three options:
-          // 1. The user has bought this image
-          // 2. The user hasn't bought image but has enough credits
-          // 3. The user hasn't bought image and doesn't have enough credits (no image link available)
-          let viewedImageLinkElement = rowDataElement.querySelector("a.viewed-image");
-          if (viewedImageLinkElement) {
-            let linkText = viewedImageLinkElement.getAttribute("href");
-            result.imageLink = linkText;
-          } else {
-            let inputElement = rowDataElement.querySelector("input.viewimglink");
-            if (inputElement) {
-              let linkText = inputElement.value;
-              result.imageLink = linkText;
-            }
-          }
-        } else {
-          let rowText = rowDataElement.textContent;
-          rowText = rowText.replace(/\s+/g, " "); // remove double spaces
-          result.recordData[headerText] = rowText;
-        }
+        let rowText = rowDataElement.textContent;
+        rowText = rowText.replace(/\s+/g, " "); // remove double spaces
+        result.recordData[headerText] = rowText;
+      }
+    } else {
+      // Note that we can also get the key name from the row cell in a couple of ways
+      console.log(`extractFromSearchResults: image column`);
+      // The Image View column has three options:
+      // 1. The user has bought this image
+      // 2. The user hasn't bought image but has enough credits
+      // 3. The user hasn't bought image and doesn't have enough credits (no image link available)
+      let viewedImageLinkElement = rowCell.querySelector("a.view-image-button");
+      console.log(`extractFromSearchResults: viewedImageLinkElement = ${viewedImageLinkElement}`);
+      if (viewedImageLinkElement) {
+        let linkText = viewedImageLinkElement.getAttribute("href");
+        result.imageLink = linkText;
       }
     }
   }
 
   // gather some more data that could be useful
-  let pageHeader = document.querySelector("h1.page-header");
+  let pageHeader = document.querySelector("h1.page-title");
   if (pageHeader) {
     let textString = pageHeader.textContent;
     if (textString) {
@@ -101,20 +99,21 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
     }
   }
 
-  let searchCriteria = document.querySelector("div.search-criteria");
+  let searchCriteria = document.querySelector("#you_searched_for");
   if (searchCriteria) {
     let textString = searchCriteria.textContent;
     if (textString) {
       result.searchCriteria = {};
       textString = textString.trim();
-      textString = textString.replace("You searched for: ", "");
+      textString = textString.replace("You searched for - ", "");
       textString = textString.trim();
+
       while (textString) {
-        let separatorIndex = textString.indexOf("',  ");
+        let separatorIndex = textString.indexOf(", ");
         let searchItem = "";
         if (separatorIndex != -1) {
-          searchItem = textString.substring(0, separatorIndex + 1);
-          textString = textString.substring(separatorIndex + 4);
+          searchItem = textString.substring(0, separatorIndex);
+          textString = textString.substring(separatorIndex + 2);
         } else {
           searchItem = textString;
           textString = "";
@@ -124,14 +123,35 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
         if (colonIndex != -1) {
           let key = searchItem.substring(0, colonIndex).trim();
           let value = searchItem.substring(colonIndex + 1).trim();
-          value = value.replace(/^\'([^\']*)\'$/, "$1");
+          value = value.replace(/^\"([^\"]*)\"$/, "$1");
           result.searchCriteria[key] = value;
         }
       }
     }
   }
 
-  if (url) {
+  /*
+  document.querySelector("#refine_form_custom_wrapper > input[type=hidden]:nth-child(1)")
+<input data-drupal-selector="edit-search-params-record-group" type="hidden" name="search_params[record_group]" value="census_returns">
+
+document.querySelector("#refine_form_custom_wrapper > input[type=hidden]:nth-child(3)")
+<input data-drupal-selector="edit-search-params-record-type" type="hidden" name="search_params[record_type]" value="census">
+*/
+  // to get the record group and record type we use the form on left
+  const refineFormWrapper = document.querySelector("#refine_form_custom_wrapper");
+  if (refineFormWrapper) {
+    const recordGroupElement = refineFormWrapper.querySelector("input[name='search_params[record_group]'");
+    if (recordGroupElement) {
+      result.recordGroup = recordGroupElement.value;
+    }
+    const recordTypeElement = refineFormWrapper.querySelector("input[name='search_params[record_type]'");
+    if (recordTypeElement) {
+      result.recordType = recordTypeElement.value;
+    }
+  }
+
+  if (false && url) {
+    // URL no longer contains query
     // https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=opr_marriages&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=McGregor&surname_so=exact&forename=Christane&forename_so=starts&spouse_name_so=exact&from_year=1600&to_year=1700&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches
     let queryIndex = url.indexOf("?");
     if (queryIndex != -1) {
@@ -166,16 +186,17 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
   }
 
   // quick look popup. This is available on some records like prison records
-  let quickLookElement = document.querySelector("div.quick-look-popup");
-  if (quickLookElement) {
-    let rowElements = quickLookElement.querySelectorAll("table > tbody > tr");
-    if (rowElements.length > 0) {
+  let quickLookList = document.querySelector("#drupal-modal ul.quick-look");
+  if (quickLookList) {
+    let listElements = quickLookList.querySelectorAll("li");
+    if (listElements.length > 0) {
       result.quickLookData = {};
-      for (let rowElement of rowElements) {
-        let cellElements = rowElement.querySelectorAll("td");
-        if (cellElements.length == 2) {
-          let key = cellElements[0].textContent;
-          let value = cellElements[1].textContent;
+      for (let listElement of listElements) {
+        let keyElement = listElement.querySelector("span.key");
+        let valueElement = listElement.querySelector("span.value");
+        if (keyElement && valueElement) {
+          let key = keyElement.textContent;
+          let value = valueElement.textContent;
           if (key) {
             result.quickLookData[key] = value;
           }
@@ -205,9 +226,9 @@ function extractData(document, url, siteSpecificInput) {
   }
   result.success = false;
 
-  let resultsTableWrapper = document.querySelector("div.results-table-wrapper");
+  let resultsTable = document.querySelector("table.results-table");
 
-  if (resultsTableWrapper) {
+  if (resultsTable) {
     extractFromSearchResults(document, url, userSelectedRowElement, result);
   } else {
     let imageViewer = document.querySelector("div.image-viewer");

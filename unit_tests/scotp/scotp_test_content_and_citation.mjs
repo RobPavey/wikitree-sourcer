@@ -34,7 +34,7 @@ const regressionData = [
   // ============ Census ==============
   {
     caseName: "census_1841_christian_fraser",
-    url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Fraser&surname_so=exact&forename_so=starts&second_person_forename_so=exact&record_type=census&year%5B0%5D=1841",
+    url: "https://www.scotlandspeople.gov.uk/record-results/1750042657638166d195d80",
     optionVariants: [
       {
         variantName: "urlVisible",

@@ -222,6 +222,23 @@ function getRdNumber(data) {
   return rdNumber;
 }
 
+function getCountyNameFromSearchCriteria(data) {
+  let countyName = "";
+
+  if (data.searchCriteria) {
+    let searchCounty = data.searchCriteria["County/city"];
+    if (searchCounty) {
+      const county = getCountyDisplayName(searchCounty);
+      if (county) {
+        countyName = county.display_county;
+      } else {
+        countyName = standardizeCountyName(searchCounty);
+      }
+    }
+  }
+  return countyName;
+}
+
 function getCountyNameFromRegistrationDistrict(data, rdName, eventYear) {
   let countyName = "";
 
@@ -238,14 +255,7 @@ function getCountyNameFromRegistrationDistrict(data, rdName, eventYear) {
   }
 
   if (!countyName) {
-    if (data.urlQuery.county) {
-      const county = getCountyDisplayName(data.urlQuery.county);
-      if (county) {
-        countyName = county.display_county;
-      } else {
-        countyName = standardizeCountyName(data.urlQuery.county);
-      }
-    }
+    countyName = getCountyNameFromSearchCriteria(data);
   }
 
   if (!countyName) {
@@ -279,7 +289,7 @@ function getCountyNameFromSearch(data) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.county)) {
     let countySearchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.county);
     if (countySearchParam) {
-      let userCounty = data.urlQuery[countySearchParam];
+      let userCounty = data.searchCriteria[countySearchParam];
       if (userCounty) {
         // County is unusual, a lot of record types support county in search but do not show it in the results
         // So, if the user specified a county and it found this result use it
@@ -353,14 +363,7 @@ function getCountyNameFromParishName(data, townName, eventYear) {
   }
 
   if (!countyName) {
-    if (data.urlQuery.county) {
-      const county = getCountyDisplayName(data.urlQuery.county);
-      if (county) {
-        countyName = county.display_county;
-      } else {
-        countyName = standardizeCountyName(data.urlQuery.county);
-      }
-    }
+    countyName = getCountyNameFromSearchCriteria(data);
   }
 
   return countyName;
@@ -378,14 +381,7 @@ function getCountyNameFromRcParishAndCongregationName(data, parishName, congrega
   }
 
   if (!countyName) {
-    if (data.urlQuery.county) {
-      const county = getCountyDisplayName(data.urlQuery.county);
-      if (county) {
-        countyName = county.display_county;
-      } else {
-        countyName = standardizeCountyName(data.urlQuery.county);
-      }
-    }
+    countyName = getCountyNameFromSearchCriteria(data);
   }
 
   return countyName;
@@ -403,14 +399,7 @@ function getCountyNameFromOtherParishAndCongregationName(data, parishName, congr
   }
 
   if (!countyName) {
-    if (data.urlQuery.county) {
-      const county = getCountyDisplayName(data.urlQuery.county);
-      if (county) {
-        countyName = county.display_county;
-      } else {
-        countyName = standardizeCountyName(data.urlQuery.county);
-      }
-    }
+    countyName = getCountyNameFromSearchCriteria(data);
   }
 
   return countyName;
@@ -529,7 +518,7 @@ function buildPlaceWithRcParishCongregationName(placeName, data) {
     }
   }
 
-  let countyName = data.recordData["County/ City"];
+  let countyName = data.recordData["County / City"];
 
   if (!countyName) {
     countyName = getCountyNameFromRcParishAndCongregationName(data, placeName, congregationName);
@@ -568,7 +557,7 @@ function buildPlaceWithOtherParishCongregationName(parishAndCongregationName, da
     }
   }
 
-  let countyName = data.recordData["County/ City"];
+  let countyName = data.recordData["County / City"];
 
   if (!countyName) {
     countyName = getCountyNameFromOtherParishAndCongregationName(data, parishAndCongregationName);
@@ -855,13 +844,14 @@ function setGender(scotpRecordType, data, result) {
 }
 
 function setCollectionReferenceData(scotpRecordType, data, result) {
-  // currently only census records us this
+  // currently only census records use this
   let key = ScotpRecordType.getRecordKey(scotpRecordType, SpField.ref);
   if (key) {
     let value = data.recordData[key];
     if (value) {
       // we use this to set the registrationNumber using the part before the space
       // The ref usually also contains the ED number but not using this yet
+      value = value.replace(/\s*\/\s*/g, " ");
       let registrationNumber = "";
       let enumerationDistrict = "";
       let pageNumber = "";
@@ -884,11 +874,9 @@ function setCollectionReferenceData(scotpRecordType, data, result) {
         }
       }
       if (registrationNumber) {
-        registrationNumber = registrationNumber.replace(/\/$/, ""); // remove trailing slash
         result.collectionData.registrationNumber = registrationNumber;
       }
       if (enumerationDistrict) {
-        enumerationDistrict = enumerationDistrict.replace(/\/$/, ""); // remove trailing slash
         result.collectionData.enumerationDistrict = enumerationDistrict;
       }
       if (pageNumber) {
@@ -906,10 +894,10 @@ function setStatutoryCommonFields(data, result) {
 }
 
 function setOprCommonFields(data, result) {
-  let eventDate = cleanDdMmYyyyDate(data.recordData["Date"]);
+  let eventDate = cleanDdMmYyyyDate(data.recordData["BIRTH DATE"]);
   result.setEventDate(eventDate);
   let eventYear = getYearFromStandardizedDate(eventDate);
-  result.eventPlace = buildPlaceWithOprParishName(data, data.recordData["Parish"], eventYear);
+  result.eventPlace = buildPlaceWithOprParishName(data, data.recordData["PARISH"], eventYear);
 }
 
 function setMarriageData(data, result, spouseSurname, spouseForenames, isFullName) {
@@ -1499,12 +1487,12 @@ function generalizeData(input) {
     case "census":
       {
         result.setEventYear(data.recordData["Year"]);
-        result.setFieldIfValueExists("ageAtEvent", data.recordData["Age at Census"]);
+        result.setFieldIfValueExists("ageAtEvent", data.recordData["Age at census"]);
         result.setFieldIfValueExists("registrationDistrict", data.recordData["RD Name"]);
         result.eventPlace = buildPlaceWithCensusCountyAndDistrict(
           data,
           data.recordData["RD Name"],
-          data.recordData["County/ City"],
+          data.recordData["County / City"],
           data.recordData["Year"]
         );
       }

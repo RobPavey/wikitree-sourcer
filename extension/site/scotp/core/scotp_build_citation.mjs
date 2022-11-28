@@ -232,7 +232,7 @@ function createCitationUrl(data, gd, options) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.county)) {
     let countySearchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.county);
     if (countySearchParam) {
-      let userCounty = data.urlQuery[countySearchParam];
+      let userCounty = data.searchCriteria ?? data.searchCriteria[countySearchParam];
       if (userCounty) {
         // County is unusual, a lot of record types support county insearch but do not show it in the results
         // So, if the user specified a county and it found this result use it
