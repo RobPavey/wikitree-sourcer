@@ -12,6 +12,9 @@
   "eventDate": {
     "yearString": "1870"
   },
+  "eventPlace": {
+    "placeString": "Kampinos"
+  },
   "name": {
     "lastName": "Nowakowska",
     "forenames": "Aleksandra"

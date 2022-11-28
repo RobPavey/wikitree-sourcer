@@ -99,6 +99,7 @@ function generalizeData(input) {
   };
 
   result.setEventYear(recordData.year);
+  result.setEventPlace(recordData.parish);
 
   if (recordData.record) {
     result.collectionData.registrationNumber = recordData.record;
