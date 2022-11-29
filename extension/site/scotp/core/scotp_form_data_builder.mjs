@@ -67,7 +67,7 @@ class ScotpFormDataBuilder {
   }
 
   addMultipleSelectField(parameter, values) {
-    let field = { fieldKey: parameter, type: "select", values: values };
+    let field = { fieldKey: parameter, type: "multipleSelect", values: values };
     this.formData.fields.push(field);
   }
 
@@ -147,9 +147,6 @@ class ScotpFormDataBuilder {
   }
 
   addYear(string) {
-    result.fieldData[`search_params[nrs_census_year][${censusYear}]`] = censusYear;
-    result.fieldData["search_params[nrs_year]"] = rollYear;
-
     if (this.recordType == "census") {
       let fieldId = "edit-search-params-nrs-census-year-" + string;
       this.addCheckboxField(fieldId, true);
@@ -160,9 +157,6 @@ class ScotpFormDataBuilder {
   }
 
   addBirthYear(year, range) {
-    result.fieldData["search_params[nrs_dob]"] = birthYear;
-    result.fieldData["search_params[nrs_birth_year_range]"] = range;
-
     this.addTextField("edit-search-params-nrs-dob", year);
     this.addSelectField("edit-search-params-nrs-birth-year-range", range);
   }

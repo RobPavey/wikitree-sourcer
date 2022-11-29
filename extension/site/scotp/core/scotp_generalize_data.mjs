@@ -697,6 +697,10 @@ function cleanDdMonthYyyyDate(dateString) {
 }
 
 function cleanDdMmYyyyDate(dateString) {
+  if (!dateString) {
+    return "";
+  }
+
   if (/^\-+$/.test(dateString)) {
     return "";
   }
@@ -894,10 +898,10 @@ function setStatutoryCommonFields(data, result) {
 }
 
 function setOprCommonFields(data, result) {
-  let eventDate = cleanDdMmYyyyDate(data.recordData["BIRTH DATE"]);
+  let eventDate = cleanDdMmYyyyDate(data.recordData["Birth Date"]);
   result.setEventDate(eventDate);
   let eventYear = getYearFromStandardizedDate(eventDate);
-  result.eventPlace = buildPlaceWithOprParishName(data, data.recordData["PARISH"], eventYear);
+  result.eventPlace = buildPlaceWithOprParishName(data, data.recordData["Parish"], eventYear);
 }
 
 function setMarriageData(data, result, spouseSurname, spouseForenames, isFullName) {

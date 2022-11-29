@@ -59,14 +59,14 @@ function getRefRecordKey(recordType) {
 }
 
 function addClickedRowListener() {
-  console.log("addClickedRowListener");
+  //console.log("addClickedRowListener");
 
   const elResultsTable = document.querySelector("table.results-table tbody");
   if (elResultsTable && !elResultsTable.hasAttribute("listenerOnClick")) {
     elResultsTable.setAttribute("listenerOnClick", "true");
     elResultsTable.addEventListener("click", function (ev) {
-      console.log("clickedRowListener: ev is");
-      console.log(ev);
+      //console.log("clickedRowListener: ev is");
+      //console.log(ev);
 
       // clear existing selected row if any
       let selectedRow = getClickedRow();
@@ -75,8 +75,8 @@ function addClickedRowListener() {
       }
       selectedRow = ev.target;
       if (selectedRow) {
-        console.log("clickedRowListener: selectedRow is ");
-        console.log(selectedRow);
+        //console.log("clickedRowListener: selectedRow is ");
+        //console.log(selectedRow);
 
         selectedRow = selectedRow.closest("tr");
         if (selectedRow) {
@@ -208,10 +208,33 @@ async function getPendingSearch() {
   });
 }
 
-async function checkForPendingSearch() {
-  console.log("checkForPendingSearch: called");
+function hideElementsDuringSearch() {
+  function hideBySelector(selector) {
+    let element = document.querySelector(selector);
+    if (element) {
+      element.style.display = "none";
+    }
+  }
 
-  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+  const titleElement = document.querySelector("#page-wrapper div.content h1.title");
+  if (titleElement) {
+    titleElement.innerText = "Performing WikiTree Sourcer search...";
+  }
+
+  hideBySelector("#cart_summary");
+  hideBySelector("#header");
+  hideBySelector("div.primary-menu-wrapper");
+  hideBySelector("#main-wrapper");
+  hideBySelector("#main-wrapper");
+  hideBySelector("#block-advancedsearchpageintro");
+  hideBySelector("div.region.region-quicklinks");
+  hideBySelector("footer.site-footer");
+}
+
+async function checkForPendingSearch() {
+  //console.log("checkForPendingSearch: called");
+
+  //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
@@ -219,33 +242,36 @@ async function checkForPendingSearch() {
   }
 
   if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/advanced-search/")) {
-    console.log("checkForPendingSearch: URL matches");
+    //console.log("checkForPendingSearch: URL matches");
 
     let searchData = await getPendingSearch();
 
     if (searchData) {
-      console.log("checkForPendingSearch: got searchData:");
-      console.log(searchData);
+      //console.log("checkForPendingSearch: got searchData:");
+      //console.log(searchData);
 
       let searchUrl = searchData.url;
       let timeStamp = searchData.timeStamp;
       let timeStampNow = Date.now();
       let timeSinceSearch = timeStampNow - timeStamp;
 
-      console.log("checkForPendingSearch: searchUrl is : '" + searchUrl + "'");
-      console.log("checkForPendingSearch: document.URL is : '" + document.URL + "'");
-      console.log("checkForPendingSearch: timeStamp is :" + timeStamp);
-      console.log("checkForPendingSearch: timeStampNow is :" + timeStampNow);
-      console.log("checkForPendingSearch: timeSinceSearch is :" + timeSinceSearch);
+      //console.log("checkForPendingSearch: searchUrl is : '" + searchUrl + "'");
+      //console.log("checkForPendingSearch: document.URL is : '" + document.URL + "'");
+      //console.log("checkForPendingSearch: timeStamp is :" + timeStamp);
+      //console.log("checkForPendingSearch: timeStampNow is :" + timeStampNow);
+      //console.log("checkForPendingSearch: timeSinceSearch is :" + timeSinceSearch);
 
       if (timeSinceSearch < 10000 && searchUrl == document.URL) {
+        // we are doing a search
+        hideElementsDuringSearch();
+
         let formData = searchData.formData;
 
-        console.log("checkForPendingSearch: formData is:");
-        console.log(formData);
+        //console.log("checkForPendingSearch: formData is:");
+        //console.log(formData);
 
         for (var field of formData.fields) {
-          console.log("checkForPendingSearch: field.fieldKey is: " + field.fieldKey);
+          //console.log("checkForPendingSearch: field.fieldKey is: " + field.fieldKey);
           if (field.fieldKey) {
             const elementId = field.fieldKey;
             const fieldType = field.type;
@@ -258,11 +284,11 @@ async function checkForPendingSearch() {
               continue;
             }
 
-            console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
-            console.log("checkForPendingSearch: inputElement.tagName is: " + inputElement.tagName);
+            //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
+            //console.log("checkForPendingSearch: inputElement.tagName is: " + inputElement.tagName);
             let inputType = inputElement.getAttribute("type");
-            console.log("checkForPendingSearch: inputElement type is: " + inputType);
-            console.log("checkForPendingSearch: fieldType is: " + fieldType);
+            //console.log("checkForPendingSearch: inputElement type is: " + inputType);
+            //console.log("checkForPendingSearch: fieldType is: " + fieldType);
 
             let expectedType = fieldType;
             if (fieldType == "so") {
@@ -285,15 +311,15 @@ async function checkForPendingSearch() {
             }
 
             if (fieldType == "text") {
-              console.log("checkForPendingSearch: text element, new value is : " + field.value);
+              //console.log("checkForPendingSearch: text element, new value is : " + field.value);
               inputElement.value = field.value;
             } else if (fieldType == "so") {
-              console.log("checkForPendingSearch: so element, new value is : " + field.value);
+              //console.log("checkForPendingSearch: so element, new value is : " + field.value);
               let soWrapper = inputElement.closest("div.so-wrapper");
               if (soWrapper) {
                 let buttons = soWrapper.querySelectorAll("input.search-options");
                 for (let button of buttons) {
-                  console.log("checkForPendingSearch: so element, button value is : " + button.value);
+                  //console.log("checkForPendingSearch: so element, button value is : " + button.value);
                   if (button.value == field.value) {
                     button.checked = true;
                   } else {
@@ -306,10 +332,22 @@ async function checkForPendingSearch() {
             } else if (fieldType == "checkbox") {
               inputElement.checked = field.value;
             } else if (fieldType == "select") {
-              console.log("checkForPendingSearch: select element, new value is : " + field.value);
+              //console.log("checkForPendingSearch: select element, new value is : " + field.value);
 
               inputElement.value = field.value;
             } else if (fieldType == "multipleSelect") {
+              //console.log("checkForPendingSearch: multipleSelect element, new values are : ");
+              //console.log(field.values);
+              let optionElements = inputElement.querySelectorAll("option");
+              let optionIndex = 0;
+              for (let option of optionElements) {
+                option.selected = false;
+                if (field.values.includes(option.value)) {
+                  //console.log("checkForPendingSearch: multipleSelect element, found match : " + option.value);
+                  option.selected = true;
+                }
+                optionIndex++;
+              }
             }
           }
         }
@@ -319,14 +357,8 @@ async function checkForPendingSearch() {
         if (formElement) {
           //console.log("checkForPendingSearch: found formElement:");
           //console.log(formElement);
-          // Now hide the form so that the use doesn't try to use it.
-          //formElement.style.display = "none";
-          //const titleElement = document.querySelector("main.site__content div.container h1.title");
-          //if (titleElement) {
-          //  titleElement.innerText = "Performing WikiTree Sourcer search...";
-          //}
           // now submit the form to do the search
-          //formElement.submit();
+          formElement.submit();
         }
       }
 

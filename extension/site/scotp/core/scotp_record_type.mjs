@@ -196,6 +196,10 @@ const scotpRecordTypes = {
       parishName: "Parish",
     },
     search: { parents: true, oprParish: true, rd: false },
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText:
       "&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms",
     searchUrl: "church-registers/church-births-baptisms/opr-births",
@@ -214,7 +218,11 @@ const scotpRecordTypes = {
     },
     search: { spouse: true, oprParish: true, rd: false },
     searchParams: { spouseFullName: "spouse_name" },
-    searchFields: { spouseFullName: "edit-search-params-nrs-motherspousename" },
+    searchFields: {
+      spouseFullName: "edit-search-params-nrs-motherspousename",
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText:
       "&event=M&record_type%5B0%5D=opr_marriages&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-banns-marriages",
     searchUrl: "church-registers/church-banns-marriages/opr-marriages",
@@ -228,6 +236,10 @@ const scotpRecordTypes = {
     eventClass: "death",
     recordKeys: { ref: "Ref", gender: "Gender", parishName: "Parish" },
     search: { oprParish: true, rd: false },
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText:
       "&event=D&record_type%5B0%5D=opr_deaths&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-deaths-burials",
     searchUrl: "church-registers/church-deaths-burials/opr-deaths",
@@ -246,6 +258,10 @@ const scotpRecordTypes = {
     },
     search: { parents: true, rd: false, rcParish: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText:
       "&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=crbirths_baptism&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-births-baptisms",
     searchUrl: "church-registers/church-births-baptisms/cr-baptisms",
@@ -268,6 +284,8 @@ const scotpRecordTypes = {
       spouseForename: "spouse_forename",
     },
     searchFields: {
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
       spouseSurname: "edit-search-params-nrs-spouse-surname",
       spouseForename: "edit-search-params-nrs-spouse-forename",
     },
@@ -285,6 +303,10 @@ const scotpRecordTypes = {
     recordKeys: { parishName: "Parish", gender: "Gender", age: "Age" },
     search: { rd: false, rcParish: true, ageRange: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText:
       "&event=D&record_type%5B0%5D=crdeath_burial&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-deaths-burials",
     searchUrl: "church-registers/church-deaths-burials/cr-burials",
@@ -298,6 +320,10 @@ const scotpRecordTypes = {
     recordKeys: { parishName: "Parish", gender: "Gender" },
     search: { rd: false, rcParish: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText: "&record_type%5B0%5D=cr_other&church_type=Catholic%20Registers",
     searchUrl: "church-registers/church-other/cr-other",
     sourcerRecordType: RT.OtherChurchEvent,
@@ -315,6 +341,10 @@ const scotpRecordTypes = {
     search: { parents: true, rd: false, otherParish: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { parishName: "congregation" },
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText:
       "&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=ch3_baptism&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-births-baptisms",
     searchUrl: "church-registers/church-births-baptisms/ch3-baptisms",
@@ -332,8 +362,17 @@ const scotpRecordTypes = {
     },
     search: { rd: false, otherParish: true, spouse: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
+    searchFields: {
+      spouseFullName: "edit-search-params-nrs-spouse-name",
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchParams: { parishName: "congregation", spouseFullName: "spouse_name" },
-    searchFields: { spouseFullName: "edit-search-params-nrs-spouse-name" },
+    searchFields: {
+      spouseFullName: "edit-search-params-nrs-spouse-name",
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText:
       "&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages",
     searchUrl: "church-registers/church-banns-marriages/ch3-banns",
@@ -348,6 +387,10 @@ const scotpRecordTypes = {
     search: { rd: false, otherParish: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { parishName: "congregation" },
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText:
       "&event=D&record_type%5B0%5D=ch3_burials&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-deaths-burials",
     searchUrl: "church-registers/church-deaths-burials/ch3-burials",
@@ -362,6 +405,10 @@ const scotpRecordTypes = {
     search: { rd: false, otherParish: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { parishName: "congregation" },
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-year-field-year-from",
+      yearTo: "edit-search-params-nrs-year-field-year-to",
+    },
     searchStdText: "&record_type%5B0%5D=ch3_other&church_type=Presbyterian%20registers",
     searchUrl: "church-registers/church-other/ch3-other",
     sourcerRecordType: RT.OtherChurchEvent,
