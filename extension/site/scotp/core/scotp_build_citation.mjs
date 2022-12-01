@@ -337,11 +337,15 @@ function createCitationUrl(data, gd, options) {
 function buildCitationUrl(data, gd, options) {
   // could provide option to use a search style URL but don't see any reason to so far
 
+  return "https://www.scotlandspeople.gov.uk/";
+
+  /*  No longer use query URLs as they are not supported on scotp site
   let urlOpt = options.citation_scotp_urlStyle;
 
   if (urlOpt == "base" || urlOpt == "visible") {
     return "https://www.scotlandspeople.gov.uk/";
-  } else if (urlOpt == "original") {
+  }
+  else if (urlOpt == "original") {
     // if there is more than one result on the page then add the ref (if that option is selected)
     let url = data.url;
     if (data.numResultsOnPage > 1 && options.citation_scotp_urlIncludeRef) {
@@ -374,6 +378,7 @@ function buildCitationUrl(data, gd, options) {
 
   // if we get here we want to generate a full search URL (either "created" or "short")
   return createCitationUrl(data, gd, options);
+  */
 }
 
 function removeUnwantedKeysForTable(keys, recordData) {
@@ -679,10 +684,7 @@ function buildCoreCitation(data, gd, builder) {
   if (options.citation_scotp_urlStyle == "visible") {
     builder.recordLinkOrTemplate = url;
   } else {
-    let linkTitle = "ScotlandsPeople Search";
-    if (options.citation_scotp_urlStyle == "base") {
-      linkTitle = "ScotlandsPeople";
-    }
+    const linkTitle = "ScotlandsPeople";
     let recordLink = "[" + url + " " + linkTitle + "]";
     builder.recordLinkOrTemplate = recordLink;
   }

@@ -68,17 +68,17 @@ async function scotpSearch(generalizedData, parameters) {
       chrome.storage.local.set({ scotpSearchData: scotpSearchData }, function () {
         console.log("saved scotpSearchData, scotpSearchData is:");
         console.log(scotpSearchData);
+
+        if (options.search_general_new_window) {
+          chrome.windows.create({ url: searchUrl });
+        } else {
+          chrome.tabs.create({ url: searchUrl });
+        }
+        window.close();
       });
     } catch (ex) {
       console.log("chrome.storage.local.set failed");
     }
-
-    if (options.search_general_new_window) {
-      chrome.windows.create({ url: searchUrl });
-    } else {
-      chrome.tabs.create({ url: searchUrl });
-    }
-    window.close();
   });
 }
 

@@ -237,7 +237,8 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
   // census is special in that there is no date range
   if (eventClass == SpEventClass.census) {
     if (scotpRecordType == "census_lds") {
-      return; // the standard text includes the year
+      builder.addYear("1881");
+      return;
     }
 
     if (parameters.collection && parameters.collection != "all") {
@@ -246,7 +247,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
     } else {
       // enable all the years within lifespan, this results in something like:
       // &year%5B0%5D=1861&year%5B1%5D=1871&year%5B2%5D=1881&year%5B3%5D=1891
-      let censusYears = ["1841", "1851", "1861", "1871", "1881", "1891", "1901", "1911"];
+      let censusYears = ["1841", "1851", "1861", "1871", "1881", "1891", "1901", "1911", "1921"];
       for (let censusYear of censusYears) {
         if (isYearInDateRange(dates, censusYear)) {
           builder.addYear(censusYear);
@@ -504,13 +505,24 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
   }
 
   let countySearchParam = ScotpRecordType.getSearchField(scotpRecordType, SpField.county);
-  if (countySearchParam) {
+  if (countySearchParam && ScotpRecordType.hasSearchFeature(SpFeature.county)) {
     if (wtsPlace) {
+      console.log("setPlace: parameters : ");
+      console.log(parameters);
+      console.log("setPlace: data : ");
+      console.log(data);
+      console.log("setPlace: wtsPlace : ");
+      console.log(wtsPlace);
+
       let countyName = getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace);
+      console.log("setPlace: about to add county, countyName : " + countyName);
 
       countyName = adjustCountyForSpecialCases(countyName, scotpRecordType, wtsPlace, dates);
+      console.log("setPlace: adjusted countyName : " + countyName);
 
-      builder.addSelectField(countySearchParam, countyName);
+      if (countyName) {
+        builder.addSelectField(countySearchParam, countyName);
+      }
     }
   }
 
@@ -597,7 +609,8 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
 }
 
 function setParents(data, scotpRecordType, parameters, options, builder) {
-  /* As of 27 Nov 2022 there is no way to search by parents
+  /* As of 27 Nov 2022 there is no way to search by parents on the advanced search page
+     You can specify the parents when refining the search.
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.parents)) {
     let searchOption = options.search_scotp_parentNameSoundex ? "soundex" : "exact";
 

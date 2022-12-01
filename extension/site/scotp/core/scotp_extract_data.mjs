@@ -108,16 +108,14 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
       textString = textString.replace("You searched for - ", "");
       textString = textString.trim();
 
+      // there can be commas within the quotes for a value so can't just separate on that
       while (textString) {
-        let separatorIndex = textString.indexOf(", ");
-        let searchItem = "";
-        if (separatorIndex != -1) {
-          searchItem = textString.substring(0, separatorIndex);
-          textString = textString.substring(separatorIndex + 2);
-        } else {
-          searchItem = textString;
-          textString = "";
+        let searchItem = textString.replace(/^([^\:]+\:\s*\"[^"]*\").*/, "$1");
+        textString = textString.substring(searchItem.length).trim();
+        if (textString && textString[0] == ",") {
+          textString = textString.substring(1).trim();
         }
+
         // searchItem is something like: "Surname: 'Bruce'"
         let colonIndex = searchItem.indexOf(":");
         if (colonIndex != -1) {
@@ -144,9 +142,16 @@ document.querySelector("#refine_form_custom_wrapper > input[type=hidden]:nth-chi
     if (recordGroupElement) {
       result.recordGroup = recordGroupElement.value;
     }
-    const recordTypeElement = refineFormWrapper.querySelector("input[name='search_params[record_type]'");
-    if (recordTypeElement) {
-      result.recordType = recordTypeElement.value;
+    const recordTypeElements = refineFormWrapper.querySelectorAll("input[name='search_params[record_type]'");
+    if (recordTypeElements.length == 1) {
+      result.recordType = recordTypeElements[0].value;
+    } else {
+      for (let recordTypeElement of recordTypeElements) {
+        if (recordTypeElement.checked) {
+          result.recordType = recordTypeElement.value;
+          break;
+        }
+      }
     }
   }
 
@@ -238,7 +243,7 @@ function extractData(document, url, siteSpecificInput) {
     }
   }
 
-  //console.log(result);
+  console.log(result);
 
   return result;
 }

@@ -150,6 +150,9 @@ class ScotpFormDataBuilder {
     if (this.recordType == "census") {
       let fieldId = "edit-search-params-nrs-census-year-" + string;
       this.addCheckboxField(fieldId, true);
+    } else if (this.recordType == "census_lds") {
+      let fieldId = "edit-search-params-nrs-census-year-" + string + "-lds";
+      this.addCheckboxField(fieldId, true);
     } else {
       let fieldId = "edit-search-params-nrs-year-" + string;
       this.addRadioButtonField(fieldId, true);
@@ -172,11 +175,13 @@ class ScotpFormDataBuilder {
   }
 
   addGender(gender) {
-    let sex = gender;
+    const recordTypesUsingNumber = ["stat_marriages", "cr_baptisms", "cr_burials"];
+    const useNumber = recordTypesUsingNumber.includes(this.recordType);
+    let sex = "";
     if (gender == "male") {
-      sex = "m";
+      sex = useNumber ? "1" : "m";
     } else if (gender == "female") {
-      sex = "f";
+      sex = useNumber ? "2" : "f";
     }
 
     let fieldId = "edit-search-params-nrs-sex-" + sex;

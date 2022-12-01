@@ -231,8 +231,371 @@ function hideElementsDuringSearch() {
   hideBySelector("footer.site-footer");
 }
 
+function parseQuery() {
+  let result = undefined;
+  let url = document.URL;
+
+  let queryIndex = url.indexOf("?");
+  if (queryIndex != -1) {
+    let queryString = url.substring(queryIndex + 1);
+    result = {};
+    while (queryString) {
+      let queryTerm = "";
+      let ampIndex = queryString.indexOf("&");
+      if (ampIndex != -1) {
+        queryTerm = queryString.substring(0, ampIndex);
+        queryString = queryString.substring(ampIndex + 1);
+      } else {
+        let poundIndex = queryString.indexOf("#");
+        if (poundIndex != -1) {
+          queryTerm = queryString.substring(0, poundIndex);
+        } else {
+          queryTerm = queryString;
+        }
+        queryString = "";
+      }
+      // searchItem is something like: "Surname: 'Bruce'"
+      let equalsIndex = queryTerm.indexOf("=");
+      if (equalsIndex != -1) {
+        let key = queryTerm.substring(0, equalsIndex).trim();
+        let value = queryTerm.substring(equalsIndex + 1).trim();
+        key = decodeURIComponent(key);
+        value = decodeURIComponent(value);
+        result[key] = value;
+      }
+    }
+  }
+
+  console.log("parseQuery, result is:");
+  console.log(result);
+
+  return result;
+}
+
+function legacyUrlQueryToFormData(urlQuery) {
+  let formData = {};
+  formData.fields = [];
+
+  // https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=O'CONNOR&forename=BARTLEY&year%5B0%5D=1871&sex=M&age_from=28&age_to=28&county=Shipping&rd_real_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY&rd_display_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY_SHIPPING%20-%20MERCHANT%20NAVY&rdno%5B0%5D=%20&ref=903%2FS%201%2F%2016
+
+  let recordType = urlQuery.record_type;
+  if (!recordType) {
+    recordType = urlQuery["record_type[0]"];
+    if (!recordType) {
+      return formData;
+    }
+  }
+
+  const recordTypeToUrlPart = {
+    stat_births: "statutory-records/stat-births",
+    stat_marriages: "statutory-records/stat-marriages",
+    stat_divorces: "statutory-records/stat-divorces",
+    stat_deaths: "statutory-records/stat-deaths",
+    civilpartnership: "statutory-records/stat-civilpartnerships",
+    dissolutions: "statutory-records/stat-dissolutions",
+
+    opr_births: "church-registers/church-births-baptisms/opr-births",
+    opr_marriages: "church-registers/church-banns-marriages/opr-marriages",
+    opr_deaths: "church-registers/church-deaths-burials/opr-deaths",
+
+    crbirths_baptism: "church-registers/church-births-baptisms/cr-baptisms",
+    crbanns_marriages: "church-registers/church-banns-marriages/cr-banns",
+    crdeath_burial: "church-registers/church-deaths-burials/cr-burials",
+    cr_other: "church-registers/church-other/cr-other",
+
+    ch3_baptism: "church-registers/church-births-baptisms/ch3-baptisms",
+    ch3_marriages: "church-registers/church-banns-marriages/ch3-banns",
+    ch3_burials: "church-registers/church-deaths-burials/ch3-burials",
+    ch3_other: "church-registers/church-other/ch3-other",
+
+    census: "census-returns/census",
+    census_lds: "census-returns/census",
+
+    valuation_rolls: "valuation-rolls/vr",
+    wills_testaments: "legal-records/wills",
+    coa: "legal-records/coa",
+    soldiers_wills: "legal-records/soldiers-wills",
+    military_tribunals: "legal-records/military-tribunals",
+    hie: "poor-relief/hie",
+    prison_records: "prison-registers/prison-records",
+  };
+
+  let urlPart = recordTypeToUrlPart[recordType];
+  if (!urlPart) {
+    return formData;
+  }
+  formData.urlPart = urlPart;
+
+  const useNrsYearField = [
+    "opr_births",
+    "opr_marriages",
+    "opr_deaths",
+    "crbirths_baptism",
+    "crbanns_marriages",
+    "crdeath_burial",
+    "cr_other",
+    "ch3_baptism",
+    "ch3_marriages",
+    "ch3_burials",
+    "ch3_other",
+  ];
+
+  const useNumberForGender = ["stat_marriages", "crbirths_baptism", "crdeath_burial"];
+
+  const useRdName = ["opr_births", "opr_marriages", "opr_deaths"];
+
+  for (let key in urlQuery) {
+    let value = urlQuery[key];
+    if (!value) {
+      continue;
+    }
+
+    // https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census
+    // &year%5B0%5D=1841&year%5B1%5D=1851&year%5B2%5D=1861&year%5B3%5D=1871&year%5B4%5D=1881&year%5B5%5D=1891
+    // &year%5B6%5D=1901&year%5B7%5D=1911
+    // &surname=Fraser&surname_so=soundex&forename=James&forename_so=soundex
+    // &sex=M
+    // &rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20
+
+    let addField = true;
+    let field = { type: "text" };
+
+    if (key == "surname" || key == "surname_so") {
+      field.fieldKey = "edit-search-params-nrs-surname";
+      field.value = value;
+      if (key == "surname_so") {
+        field.type = "so";
+      }
+    } else if (key == "forename" || key == "forename_so") {
+      if (recordType == "census_lds") {
+        field.fieldKey = "edit-search-params-nrs-given-name";
+      } else {
+        field.fieldKey = "edit-search-params-nrs-forename";
+      }
+      field.value = value;
+      if (key == "forename_so") {
+        field.type = "so";
+      }
+    } else if (key == "spsurname" || key == "spsurname_so") {
+      field.fieldKey = "edit-search-params-nrs-spsurname";
+      field.value = value;
+      if (key == "spsurname_so") {
+        field.type = "so";
+      }
+    } else if (key == "spouse_surname" || key == "spouse_surname_so") {
+      field.fieldKey = "edit-search-params-nrs-spouse-surname";
+      field.value = value;
+      if (key == "spouse_surname_so") {
+        field.type = "so";
+      }
+    } else if (key == "spforename" || key == "spforename_so") {
+      field.fieldKey = "edit-search-params-nrs-spforename";
+      field.value = value;
+      if (key == "spforename_so") {
+        field.type = "so";
+      }
+    } else if (key == "spouse_forename" || key == "spouse_forename_so") {
+      field.fieldKey = "edit-search-params-nrs-spouse-forename";
+      field.value = value;
+      if (key == "spouse_forename_so") {
+        field.type = "so";
+      }
+    } else if (key == "psurname" || key == "psurname_so") {
+      if (recordType == "civilpartnership") {
+        field.fieldKey = "edit-search-params-nrs-spsurname";
+      } else {
+        field.fieldKey = "edit-search-params-nrs-ptsurname";
+      }
+      field.value = value;
+      if (key == "psurname_so") {
+        field.type = "so";
+      }
+    } else if (key == "spouse_name") {
+      if (recordType == "opr_marriages") {
+        field.fieldKey = "edit-search-params-nrs-motherspousename";
+      } else {
+        field.fieldKey = "edit-search-params-nrs-spouse-name";
+      }
+      field.value = value;
+    } else if (key.startsWith("year[")) {
+      if (recordType == "census") {
+        field.fieldKey = "edit-search-params-nrs-census-year-" + value;
+        field.type = "checkbox";
+        field.value = true;
+      } else if (recordType == "census_lds") {
+        const suffix = "_LDS";
+        if (value.endsWith(suffix)) {
+          value = value.substring(0, value.length - suffix.length);
+        }
+        field.fieldKey = "edit-search-params-nrs-census-year-" + value + "-lds";
+        field.type = "checkbox";
+        field.value = true;
+      } else {
+        // valuation_rolls
+        field.fieldKey = "edit-search-params-nrs-year-" + value;
+        field.type = "radio";
+        field.value = true;
+      }
+    } else if (key == "from_year") {
+      if (useNrsYearField.includes(recordType)) {
+        field.fieldKey = "edit-search-params-nrs-year-field-year-from";
+      } else if (recordType == "prison_records") {
+        field.fieldKey = "edit-search-params-hss-yearadmitted-year-from";
+      } else if (recordType == "wills_testaments") {
+        field.fieldKey = "edit-search-params-nrs-year-year-from";
+      } else {
+        field.fieldKey = "edit-search-params-nrs-search-year-year-from";
+      }
+      field.value = value;
+    } else if (key == "to_year") {
+      if (useNrsYearField.includes(recordType)) {
+        field.fieldKey = "edit-search-params-nrs-year-field-year-to";
+      } else if (recordType == "prison_records") {
+        field.fieldKey = "edit-search-params-hss-yearadmitted-year-to";
+      } else if (recordType == "wills_testaments") {
+        field.fieldKey = "edit-search-params-nrs-year-year-to";
+      } else {
+        field.fieldKey = "edit-search-params-nrs-search-year-year-to";
+      }
+      field.value = value;
+    } else if (key == "sex") {
+      if (useNumberForGender.includes(recordType)) {
+        let code = value.toLowerCase();
+        let suffix = "";
+        if (code == "m") {
+          suffix = "1";
+        } else if (code == "f") {
+          suffix = "2";
+        }
+        field.fieldKey = "edit-search-params-nrs-sex-" + suffix;
+      } else {
+        field.fieldKey = "edit-search-params-nrs-sex-" + value.toLowerCase();
+      }
+      field.type = "radio";
+      field.value = true;
+    } else if (key == "age_from") {
+      field.fieldKey = "edit-search-params-hss-age-age-from";
+      field.value = value;
+    } else if (key == "age_to") {
+      field.fieldKey = "edit-search-params-hss-age-age-to";
+      field.value = value;
+    } else if (key == "birth_year") {
+      // &birth_year=1895&birth_year_range=1
+      field.fieldKey = "edit-search-params-nrs-dob";
+      field.value = value;
+    } else if (key == "birth_year_range") {
+      field.fieldKey = "edit-search-params-nrs-birth-year-range";
+      field.type = "select";
+      field.value = value;
+    } else if (key == "county") {
+      field.fieldKey = "edit-search-params-str-county";
+      field.type = "select";
+      field.value = value.toUpperCase();
+    } else if (key.startsWith("rd_display_name")) {
+      let fieldKey = "edit-search-params-str-district";
+      if (useRdName.includes(recordType)) {
+        fieldKey = "edit-search-params-nrs-rd-name";
+      }
+
+      const existing = formData.fields.find((element) => element.fieldKey == fieldKey);
+      if (existing) {
+        existing.values.push(value);
+        addField = false;
+      } else {
+        field.fieldKey = fieldKey;
+        field.type = "multipleSelect";
+        field.values = [value];
+      }
+    } else if (key.startsWith("parish_title")) {
+      // &mp_code%5B0%5D=MP&mp_no%5B0%5D=6&parish_title%5B0%5D=GREENOCK%2C%20ST%20MARY'S
+      let fieldKey = "edit-search-params-str-parish-congregation";
+      let suffix = "";
+      let bracketIndex = key.indexOf("[");
+      if (bracketIndex != -1) {
+        suffix = key.substring(bracketIndex);
+      }
+      const mpCode = urlQuery["mp_code" + suffix];
+      const mpNo = urlQuery["mp_no" + suffix];
+      if (mpCode && mpNo) {
+        value = mpCode + "|" + mpNo + "|" + value;
+      }
+
+      const existing = formData.fields.find((element) => element.fieldKey == fieldKey);
+      if (existing) {
+        existing.values.push(value);
+        addField = false;
+      } else {
+        field.fieldKey = fieldKey;
+        field.type = "multipleSelect";
+        field.values = [value];
+      }
+    } else if (key.startsWith("congregation")) {
+      //&congregation%5B0%5D=AIRDRIE%20-%20WELLWYND%20ASSOCIATE
+      let fieldKey = "edit-search-params-nrs-congregation";
+
+      const existing = formData.fields.find((element) => element.fieldKey == fieldKey);
+      if (existing) {
+        existing.values.push(value);
+        addField = false;
+      } else {
+        field.fieldKey = fieldKey;
+        field.type = "multipleSelect";
+        field.values = [value];
+      }
+    } else {
+      addField = false; // unknown key
+    }
+
+    if (addField) {
+      formData.fields.push(field);
+    }
+  }
+
+  return formData;
+}
+
+function sendFormDataToSearchPage(path, formData) {
+  const scotpSearchData = {
+    timeStamp: Date.now(),
+    url: path,
+    formData: formData,
+  };
+
+  // this stores the search data in local storage which is then picked up by the
+  // content script in the new tab/window
+  chrome.storage.local.set({ scotpSearchData: scotpSearchData }, async function () {
+    console.log("saved scotpSearchData, scotpSearchData is:");
+    console.log(scotpSearchData);
+    window.location.href = path;
+  });
+}
+
+function doLegacySearch() {
+  // example legacy search URL:
+  // https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=O'CONNOR&forename=BARTLEY&year%5B0%5D=1871&sex=M&age_from=28&age_to=28&county=Shipping&rd_real_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY&rd_display_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY_SHIPPING%20-%20MERCHANT%20NAVY&rdno%5B0%5D=%20&ref=903%2FS%201%2F%2016
+
+  console.log("legacy search");
+
+  let urlQuery = parseQuery();
+
+  let formData = legacyUrlQueryToFormData(urlQuery);
+
+  console.log("doLegacySearch, formData is:");
+  console.log(formData);
+
+  if (formData && formData.fields && formData.fields.length > 0) {
+    const searchUrl = "https://www.scotlandspeople.gov.uk/advanced-search/" + formData.urlPart;
+    sendFormDataToSearchPage(searchUrl, formData);
+  }
+}
+
 async function checkForPendingSearch() {
-  //console.log("checkForPendingSearch: called");
+  console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
+
+  if (document.URL.includes("?search_type")) {
+    doLegacySearch();
+    return;
+  }
 
   //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
@@ -247,8 +610,8 @@ async function checkForPendingSearch() {
     let searchData = await getPendingSearch();
 
     if (searchData) {
-      //console.log("checkForPendingSearch: got searchData:");
-      //console.log(searchData);
+      console.log("checkForPendingSearch: got searchData:");
+      console.log(searchData);
 
       let searchUrl = searchData.url;
       let timeStamp = searchData.timeStamp;
@@ -263,7 +626,7 @@ async function checkForPendingSearch() {
 
       if (timeSinceSearch < 10000 && searchUrl == document.URL) {
         // we are doing a search
-        hideElementsDuringSearch();
+        //hideElementsDuringSearch();
 
         let formData = searchData.formData;
 
@@ -358,7 +721,7 @@ async function checkForPendingSearch() {
           //console.log("checkForPendingSearch: found formElement:");
           //console.log(formElement);
           // now submit the form to do the search
-          formElement.submit();
+          //formElement.submit();
         }
       }
 

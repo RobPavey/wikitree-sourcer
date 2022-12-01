@@ -44,6 +44,7 @@ const regressionData = [
         variantName: "urlBase",
         optionOverrides: { citation_scotp_urlStyle: "base", citation_scotp_urlIncludeRef: true },
       },
+      /*
       {
         variantName: "urlOriginalRef",
         optionOverrides: { citation_scotp_urlStyle: "original", citation_scotp_urlIncludeRef: true },
@@ -60,15 +61,16 @@ const regressionData = [
         variantName: "urlShortNoRef",
         optionOverrides: { citation_scotp_urlStyle: "short", citation_scotp_urlIncludeRef: false },
       },
+      */
     ],
   },
   {
     caseName: "census_1851_john_campbell",
-    url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Campbell&surname_so=exact&forename=John&forename_so=starts&second_person_forename_so=exact&age_from=22&age_to=22&county=ARGYLL&rd_real_name%5B0%5D=GLENCOE%20AND%20BALLACHULISH%20OR%20BALLACHULISH%20AND%20CORRAN%20OF%20ARDGOUR%20OR%20BALLACHULISH%20OR%20HIGHLAND%20%28FORT%20WILLIAM%20AND%20BALLACHU%20OR%20FORT%20WILLIAM%20AND%20BALLACHULISH&rd_display_name%5B0%5D=GLENCOE%20AND%20BALLACHULISH%7CBALLACHULISH%20AND%20CORRAN%20OF%20ARDGOUR%7CBALLACHULISH%7CHIGHLAND%20%28FORT%20WILLIAM%20AND%20BALLACHU%7CFORT%20WILLIAM%20AND%20BALLACHULISH_BALLACHULISH&rdno%5B0%5D=GLENCOE%20AND%20BALLACHULISH%20OR%20BALLACHULISH%20AND%20CORRAN%20OF%20ARDGOUR%20OR%20BALLACHULISH%20OR%20HIGHLAND%20%2AFORT%20WILLIAM%20AND%20BALLACHU%20OR%20FORT%20WILLIAM%20AND%20BALLACHULISH&record_type=census&year%5B0%5D=1851",
+    url: "https://www.scotlandspeople.gov.uk/record-results/10198090206386859514533",
   },
   {
     caseName: "census_1861_james_fraser",
-    url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Fraser&surname_so=exact&forename=James&forename_so=starts&second_person_forename_so=exact&sex=M&age_from=30&age_to=32&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=MILTON&record_type=census&year%5B0%5D=1861&year%5B1%5D=1871",
+    url: "https://www.scotlandspeople.gov.uk/record-results/156245878163869550b461a",
   },
   {
     caseName: "census_1871_bartley_oconnor",
@@ -128,7 +130,7 @@ const regressionData = [
     caseName: "church_bap_cos_1850_christina_baird",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=BAIRD&forename=CHRISTINA&from_year=1850&to_year=1850&sex=F&parent_names=ROBERT%20BAIRD&parent_name_two=HELEN%20ELLIOT&county=ROXBURGH&rd_display_name%5B0%5D=ROBERTON_ROBERTON%20(ROXBURGH)&rd_name%5B0%5D=ROBERTON&ref=30%2041",
   },
-  // ============ Church registers - Births and baptisms - Roman Catholic Church (crbirths_baptism) ==============
+  // ============ Church registers - Births and baptisms - Roman Catholic Church (cr_baptisms) ==============
   {
     caseName: "church_bap_rcc_1839_agnes_white",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=crbirths_baptism&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=White&surname_so=exact&forename=agnes&forename_so=starts&sex=F&from_year=1839&to_year=1839&parent_names_so=exact&parent_name_two_so=exact&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
@@ -155,7 +157,7 @@ const regressionData = [
     caseName: "church_bur_cos_1853_elizabeth_hall",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=D&record_type%5B0%5D=opr_deaths&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-deaths-burials&surname=HALL&forename=ELIZABETH&from_year=1853&to_year=1853&sex=F&rd_display_name%5B0%5D=ST%20CUTHBERT%27S_ST%20CUTHBERT%27S&rd_name%5B0%5D=ST%20CUTHBERT%27S&ref=580%20193",
   },
-  // ============ Church registers - Deaths and Burial - Roman Catholic Church (crdeath_burial)  ==============
+  // ============ Church registers - Deaths and Burial - Roman Catholic Church (cr_burials)  ==============
   {
     caseName: "church_bur_rcc_1860_ruth_fraser",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=D&record_type%5B0%5D=crdeath_burial&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-deaths-burials&surname=Fraser&surname_so=exact&forename=ruth&forename_so=starts&sex=F&birth_year_range=1&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
@@ -174,12 +176,12 @@ const regressionData = [
     caseName: "church_mar_cos_1668_christane_mcgregor",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=opr_marriages&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=McGregor&surname_so=exact&forename=Christane&forename_so=starts&spouse_name_so=exact&from_year=1600&to_year=1700&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
   },
-  // ============ Church registers - Banns and Marriages - Roman Catholic Church (crbanns_marriages) ==============
+  // ============ Church registers - Banns and Marriages - Roman Catholic Church (cr_banns) ==============
   {
     caseName: "church_mar_rcc_1922_davidem_baird",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=McGregor&surname_so=exact&forename_so=starts&spouse_surname_so=exact&spouse_forename_so=exact&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
   },
-  // ============ Church registers - Banns and Marriages - Other (ch3_marriages) ==============
+  // ============ Church registers - Banns and Marriages - Other (ch3_banns) ==============
   {
     caseName: "church_mar_other_1849_john_kay",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=ch3_marriages&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-banns-marriages&surname=Kay&surname_so=exact&forename=John&forename_so=starts&spouse_name_so=exact&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",

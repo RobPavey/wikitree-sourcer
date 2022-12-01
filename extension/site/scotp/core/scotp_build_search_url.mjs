@@ -246,7 +246,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
     } else {
       // enable all the years within lifespan, this results in something like:
       // &year%5B0%5D=1861&year%5B1%5D=1871&year%5B2%5D=1881&year%5B3%5D=1891
-      let censusYears = ["1841", "1851", "1861", "1871", "1881", "1891", "1901", "1911"];
+      let censusYears = ["1841", "1851", "1861", "1871", "1881", "1891", "1901", "1911", "1921"];
       for (let censusYear of censusYears) {
         if (isYearInDateRange(dates, censusYear)) {
           builder.addYear(censusYear);

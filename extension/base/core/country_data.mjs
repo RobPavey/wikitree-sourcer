@@ -262,7 +262,7 @@ const CountyData = {
     },
     { stdName: "Roxburghshire", matches: ["Roxburghshire", "Roxburgh"] },
     { stdName: "Selkirkshire", matches: ["Selkirkshire", "Selkirk"] },
-    { stdName: "Shetland", matches: ["Shetland"] },
+    { stdName: "Shetland", matches: ["Shetland", "Zetland"] },
     { stdName: "Stirlingshire", matches: ["Stirlingshire", "Stirling"] },
     { stdName: "Sutherland", matches: ["Sutherland"] },
     { stdName: "West Lothian", matches: ["West Lothian"] },

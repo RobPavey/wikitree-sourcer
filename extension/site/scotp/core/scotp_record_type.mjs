@@ -86,6 +86,7 @@ const scotpRecordTypes = {
       county: "edit-search-params-str-county",
       yearFrom: "edit-search-params-nrs-search-year-year-from",
       yearTo: "edit-search-params-nrs-search-year-year-to",
+      rdName: "edit-search-params-nrs-rd-name",
     },
   },
 
@@ -100,6 +101,9 @@ const scotpRecordTypes = {
     dates: { from: 1855, to: 0 },
     eventClass: "birth",
     recordKeys: { ref: "Ref", gender: "Gender", rdName: "RD Name" },
+    searchFields: {
+      rdName: "edit-search-params-str-district",
+    },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births",
     searchUrl: "statutory-records/stat-births",
     sourcerRecordType: RT.BirthRegistration,
@@ -120,6 +124,7 @@ const scotpRecordTypes = {
     searchFields: {
       spouseSurname: "edit-search-params-nrs-spsurname",
       spouseForename: "edit-search-params-nrs-spforename",
+      rdName: "edit-search-params-str-district",
     },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-marriages&record_type=stat_marriages",
     searchUrl: "statutory-records/stat-marriages",
@@ -133,7 +138,7 @@ const scotpRecordTypes = {
     recordKeys: { ref: "Serial Number", spouseSurname: "Spouse Surname" },
     search: { spouse: true, county: false },
     searchParams: { spouseSurname: "spsurname" },
-    searchFields: { spouseSurname: "edit-search-params-nrs-spsurname" },
+    searchFields: { spouseSurname: "edit-search-params-nrs-spsurname", rdName: "edit-search-params-str-district" },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces",
     searchUrl: "statutory-records/stat-divorces",
     sourcerRecordType: RT.Divorce,
@@ -145,6 +150,9 @@ const scotpRecordTypes = {
     eventClass: "death",
     recordKeys: { ref: "Ref", age: "Age at death", rdName: "RD Name" },
     search: { ageRange: true, birthYear: true },
+    searchFields: {
+      rdName: "edit-search-params-str-district",
+    },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-deaths&record_type=stat_deaths",
     searchUrl: "statutory-records/stat-deaths",
     sourcerRecordType: RT.DeathRegistration,
@@ -161,7 +169,11 @@ const scotpRecordTypes = {
     },
     search: { spouse: true },
     searchParams: { spouseSurname: "psurname", spouseForename: "" },
-    searchFields: { spouseSurname: "edit-search-params-nrs-spsurname", spouseForename: "" },
+    searchFields: {
+      spouseSurname: "edit-search-params-nrs-spsurname",
+      spouseForename: "",
+      rdName: "edit-search-params-str-district",
+    },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-civilpartnerships&record_type=civilpartnership",
     searchUrl: "statutory-records/stat-civilpartnerships",
     sourcerRecordType: RT.MarriageRegistration,
@@ -174,7 +186,11 @@ const scotpRecordTypes = {
     recordKeys: { ref: "Serial Number", spouseSurname: "Partner Surname" },
     search: { spouse: true, county: false },
     searchParams: { spouseSurname: "psurname", spouseForename: "" },
-    searchFields: { spouseSurname: "edit-search-params-nrs-ptsurname", spouseForename: "" },
+    searchFields: {
+      spouseSurname: "edit-search-params-nrs-ptsurname",
+      spouseForename: "",
+      rdName: "edit-search-params-str-district",
+    },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-dissolutions&record_type=dissolutions",
     searchUrl: "statutory-records/stat-dissolutions",
@@ -246,7 +262,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.DeathOrBurial,
   },
 
-  crbirths_baptism: {
+  cr_baptisms: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/births-and-baptisms",
     collectionNrsTitle: "Catholic Parish Registers - Births and Baptisms",
     dates: { from: 1703, to: 1921 },
@@ -267,7 +283,7 @@ const scotpRecordTypes = {
     searchUrl: "church-registers/church-births-baptisms/cr-baptisms",
     sourcerRecordType: RT.Baptism,
   },
-  crbanns_marriages: {
+  cr_banns: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/marriages",
     collectionNrsTitle: "Catholic Parish Registers - Marriages",
     dates: { from: 1736, to: 1946 },
@@ -294,7 +310,7 @@ const scotpRecordTypes = {
     searchUrl: "church-registers/church-banns-marriages/cr-banns",
     sourcerRecordType: RT.Marriage,
   },
-  crdeath_burial: {
+  cr_burials: {
     collectionNrsLink:
       "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/deaths-burials-and-funerals",
     collectionNrsTitle: "Catholic Parish Registers - Deaths, Burials and Funerals",
@@ -350,7 +366,7 @@ const scotpRecordTypes = {
     searchUrl: "church-registers/church-births-baptisms/ch3-baptisms",
     sourcerRecordType: RT.Baptism,
   },
-  ch3_marriages: {
+  ch3_banns: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/church-records",
     collectionNrsTitle: "Other Church Registers - Marriages",
     dates: { from: 1740, to: 1855 },
@@ -362,11 +378,6 @@ const scotpRecordTypes = {
     },
     search: { rd: false, otherParish: true, spouse: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
-    searchFields: {
-      spouseFullName: "edit-search-params-nrs-spouse-name",
-      yearFrom: "edit-search-params-nrs-year-field-year-from",
-      yearTo: "edit-search-params-nrs-year-field-year-to",
-    },
     searchParams: { parishName: "congregation", spouseFullName: "spouse_name" },
     searchFields: {
       spouseFullName: "edit-search-params-nrs-spouse-name",
@@ -428,6 +439,9 @@ const scotpRecordTypes = {
       county: "County/ City",
     },
     search: { ageRange: true, otherPerson: true },
+    searchFields: {
+      rdName: "edit-search-params-str-district",
+    },
     searchStdText: "&dl_cat=census&record_type=census",
     searchUrl: "census-returns/census",
     sourcerRecordType: RT.Census,
@@ -440,6 +454,10 @@ const scotpRecordTypes = {
     recordKeys: { ref: "Ref", gender: "Gender", age: "Age" },
     search: { ageRange: true, rd: false, county: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
+    searchFields: { forename: "edit-search-params-nrs-given-name" },
+    searchFields: {
+      rdName: "edit-search-params-str-district",
+    },
     searchStdText: "&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS",
     searchUrl: "census-returns/census",
     sourcerRecordType: RT.Census,
@@ -473,6 +491,10 @@ const scotpRecordTypes = {
     search: { gender: false, rd: false, county: false, court: true },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchParams: { description: "description", courtName: "court" },
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-year-year-from",
+      yearTo: "edit-search-params-nrs-year-year-to",
+    },
     searchStdText: "&dl_cat=legal&dl_rec=legal-wills-testaments&record_type=wills_testaments",
     searchUrl: "legal-records/wills",
     sourcerRecordType: RT.Will,

@@ -790,8 +790,8 @@ function setSourcerRecordType(scotpRecordType, data, result) {
     return;
   }
 
-  // crdeath_burial is a special case where it can be a death or a burial
-  if (scotpRecordType == "crdeath_burial") {
+  // cr_burials is a special case where it can be a death or a burial
+  if (scotpRecordType == "cr_burials") {
     let eventType = data.recordData["Event"];
     if (eventType == "Death") {
       recordType = RT.Death;
@@ -855,7 +855,6 @@ function setCollectionReferenceData(scotpRecordType, data, result) {
     if (value) {
       // we use this to set the registrationNumber using the part before the space
       // The ref usually also contains the ED number but not using this yet
-      value = value.replace(/\s*\/\s*/g, " ");
       let registrationNumber = "";
       let enumerationDistrict = "";
       let pageNumber = "";
@@ -878,9 +877,11 @@ function setCollectionReferenceData(scotpRecordType, data, result) {
         }
       }
       if (registrationNumber) {
+        registrationNumber = registrationNumber.replace(/\/$/, ""); // remove trailing slash
         result.collectionData.registrationNumber = registrationNumber;
       }
       if (enumerationDistrict) {
+        enumerationDistrict = enumerationDistrict.replace(/\/$/, ""); // remove trailing slash
         result.collectionData.enumerationDistrict = enumerationDistrict;
       }
       if (pageNumber) {
@@ -1553,14 +1554,14 @@ function generalizeData(input) {
       }
       break;
 
-    case "crbanns_marriages":
+    case "cr_banns":
       result.recordSubtype = RecordSubtype.MarriageOrBanns; // no way to know which
       result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date"]));
       result.eventPlace = buildPlaceWithRcParishCongregationName(data.recordData["Parish"], data);
-      setMarriageData(data, result, data.recordData["Spouse Surname"], data.recordData["Spouse forename"]);
+      setMarriageData(data, result, data.recordData["Spouse Surname"], data.recordData["Spouse Forename"]);
       break;
 
-    case "crbirths_baptism":
+    case "cr_baptisms":
       {
         let birthDate = cleanDdMmYyyyDate(data.recordData["Birth Date"]);
         let baptismDate = cleanDdMmYyyyDate(data.recordData["Baptism Date"]);
@@ -1577,7 +1578,7 @@ function generalizeData(input) {
       }
       break;
 
-    case "crdeath_burial":
+    case "cr_burials":
       // has separate death and burial date columns
       {
         let deathDate = cleanDdMmYyyyDate(data.recordData["Death Date"]);
@@ -1633,7 +1634,7 @@ function generalizeData(input) {
       result.deathPlace = result.eventPlace;
       break;
 
-    case "ch3_marriages": // Other church type
+    case "ch3_banns": // Other church type
       result.setEventDate(cleanDdMonthYyyyDate(data.recordData["Marriage Date"]));
       result.eventPlace = buildPlaceWithOtherParishCongregationName(data.recordData["Parish/Congregation Name"], data);
       setMarriageData(data, result, data.recordData["Spouse Surname"], data.recordData["Spouse Forename"]);
@@ -1727,8 +1728,8 @@ function generalizeData(input) {
 
   result.hasValidData = true;
 
-  //console.log("scotp; generaliseData: result is:");
-  //console.log(result);
+  console.log("scotp; generaliseData: result is:");
+  console.log(result);
 
   return result;
 }

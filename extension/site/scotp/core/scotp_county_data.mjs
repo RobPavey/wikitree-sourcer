@@ -137,14 +137,14 @@ function getCountyListForRecordType(scotpRecordType) {
     case "opr_deaths":
     case "opr_marriages":
 
-    case "crbanns_marriages":
-    case "crbirths_baptism":
-    case "crdeath_burial":
+    case "cr_banns":
+    case "cr_baptisms":
+    case "cr_burials":
     case "cr_other":
 
     case "ch3_baptism": // Presbyterian
     case "ch3_burials": // Presbyterian
-    case "ch3_marriages": // Presbyterian
+    case "ch3_banns": // Presbyterian
     case "ch3_other": // Presbyterian
       countyList = statutoryCountyNames;
       break;
@@ -169,6 +169,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
   }
 
   let placeCountyName = wtsPlace.inferCounty();
+  console.log("getSearchCountyFromWtsPlace: placeCountyName : " + placeCountyName);
 
   if (!placeCountyName) {
     return "";
