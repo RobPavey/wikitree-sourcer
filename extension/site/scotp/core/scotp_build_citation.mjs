@@ -92,7 +92,7 @@ function createCitationUrl(data, gd, options) {
   // Year or year range
   let year = gd.inferEventYear();
   if (year) {
-    if (scotpRecordType == "census" || scotpRecordType == "valuation_rolls") {
+    if (scotpRecordType == "census" || scotpRecordType == "vr") {
       builder.addYear(year);
     } else if (scotpRecordType == "census_lds" || scotpRecordType == "military_tribunals" || scotpRecordType == "hie") {
       // no date for these record types (it is part of standard text for census_lds)

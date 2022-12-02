@@ -138,7 +138,12 @@ const scotpRecordTypes = {
     recordKeys: { ref: "Serial Number", spouseSurname: "Spouse Surname" },
     search: { spouse: true, county: false },
     searchParams: { spouseSurname: "spsurname" },
-    searchFields: { spouseSurname: "edit-search-params-nrs-spsurname", rdName: "edit-search-params-str-district" },
+    searchFields: {
+      spouseSurname: "edit-search-params-nrs-spsurname",
+      rdName: "edit-search-params-str-district",
+      yearFrom: "edit-search-params-nrs-divorce-year-year-from",
+      yearTo: "edit-search-params-nrs-divorce-year-year-to",
+    },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces",
     searchUrl: "statutory-records/stat-divorces",
     sourcerRecordType: RT.Divorce,
@@ -157,7 +162,7 @@ const scotpRecordTypes = {
     searchUrl: "statutory-records/stat-deaths",
     sourcerRecordType: RT.DeathRegistration,
   },
-  civilpartnership: {
+  stat_civilpartnerships: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/statutory-register-of-civil-partnerships",
     collectionNrsTitle: "Statutory Register of Civil Partnerships",
     dates: { from: 2005, to: 0 },
@@ -178,7 +183,7 @@ const scotpRecordTypes = {
     searchUrl: "statutory-records/stat-civilpartnerships",
     sourcerRecordType: RT.MarriageRegistration,
   },
-  dissolutions: {
+  stat_dissolutions: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/statutory-register-of-dissolutions",
     collectionNrsTitle: "Statutory Register of Dissolutions",
     dates: { from: 2007, to: 0 },
@@ -190,6 +195,8 @@ const scotpRecordTypes = {
       spouseSurname: "edit-search-params-nrs-ptsurname",
       spouseForename: "",
       rdName: "edit-search-params-str-district",
+      yearFrom: "edit-search-params-nrs-dissolution-year-year-from",
+      yearTo: "edit-search-params-nrs-dissolution-year-year-to",
     },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-dissolutions&record_type=dissolutions",
@@ -463,7 +470,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.Census,
   },
 
-  valuation_rolls: {
+  vr: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/valuation-rolls",
     collectionNrsTitle: "Valuation Rolls",
     dates: { from: 1855, to: 1940 },
@@ -478,7 +485,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.ValuationRoll,
   },
 
-  wills_testaments: {
+  wills: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/wills-and-testaments",
     collectionNrsTitle: "Wills and Testaments",
     dates: { from: 1513, to: 1925 },
@@ -507,6 +514,10 @@ const scotpRecordTypes = {
     recordKeys: { ref: "Record Number" }, // has Volume and Record Number
     search: { gender: false, rd: false, county: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
+    searchFields: {
+      yearFrom: "edit-search-params-nrs-grantyear-year-from",
+      yearTo: "edit-search-params-nrs-grantyear-year-to",
+    },
     searchStdText: "&dl_cat=legal&dl_rec=legal-coats-arms&record_type=coa",
     searchUrl: "legal-records/coa",
     sourcerRecordType: RT.Heraldry,
@@ -538,6 +549,9 @@ const scotpRecordTypes = {
       courtName: "tribunal",
       occupation: "occupation",
     },
+    searchFields: {
+      forename: "edit-search-params-nrs-forenames",
+    },
     searchStdText: "&dl_cat=legal&dl_rec=legal-military-service&record_type=military_tribunals",
     searchUrl: "legal-records/military-tribunals",
     sourcerRecordType: RT.Military,
@@ -564,7 +578,7 @@ const scotpRecordTypes = {
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
     searchFields: {
       yearFrom: "edit-search-params-hss-yearadmitted-year-from",
-      yearFrom: "edit-search-params-hss-yearadmitted-year-to",
+      yearTo: "edit-search-params-hss-yearadmitted-year-to",
     },
     searchStdText: "&dl_cat=prison&record_type=prison_records",
     searchUrl: "prison-registers/prison-records",

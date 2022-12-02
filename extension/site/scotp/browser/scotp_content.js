@@ -340,7 +340,7 @@ function legacyUrlQueryToFormData(urlQuery) {
     "ch3_other",
   ];
 
-  const useNumberForGender = ["stat_marriages", "crbirths_baptism", "crdeath_burial"];
+  const useNumberForGender = ["stat_marriages", "crbirths_baptism", "crdeath_burial", "cr_other"];
 
   const useRdName = ["opr_births", "opr_marriages", "opr_deaths"];
 
@@ -369,9 +369,17 @@ function legacyUrlQueryToFormData(urlQuery) {
     } else if (key == "forename" || key == "forename_so") {
       if (recordType == "census_lds") {
         field.fieldKey = "edit-search-params-nrs-given-name";
+      } else if (recordType == "hie") {
+        field.fieldKey = "edit-search-params-nrs-forenames";
       } else {
         field.fieldKey = "edit-search-params-nrs-forename";
       }
+      field.value = value;
+      if (key == "forename_so") {
+        field.type = "so";
+      }
+    } else if (key == "forenames" || key == "forenames_so") {
+      field.fieldKey = "edit-search-params-nrs-forenames";
       field.value = value;
       if (key == "forename_so") {
         field.type = "so";
@@ -417,6 +425,9 @@ function legacyUrlQueryToFormData(urlQuery) {
         field.fieldKey = "edit-search-params-nrs-spouse-name";
       }
       field.value = value;
+    } else if (key == "name") {
+      field.fieldKey = "edit-search-params-nrs-name";
+      field.value = value;
     } else if (key.startsWith("year[")) {
       if (recordType == "census") {
         field.fieldKey = "edit-search-params-nrs-census-year-" + value;
@@ -443,6 +454,14 @@ function legacyUrlQueryToFormData(urlQuery) {
         field.fieldKey = "edit-search-params-hss-yearadmitted-year-from";
       } else if (recordType == "wills_testaments") {
         field.fieldKey = "edit-search-params-nrs-year-year-from";
+      } else if (recordType == "coa") {
+        field.fieldKey = "edit-search-params-nrs-grantyear-year-from";
+      } else if (recordType == "soldiers_wills") {
+        field.fieldKey = "edit-search-params-nrs-date-of-death-year-from";
+      } else if (recordType == "dissolutions") {
+        field.fieldKey = "edit-search-params-nrs-dissolution-year-year-from";
+      } else if (recordType == "stat_divorces") {
+        field.fieldKey = "edit-search-params-nrs-divorce-year-year-from";
       } else {
         field.fieldKey = "edit-search-params-nrs-search-year-year-from";
       }
@@ -454,6 +473,14 @@ function legacyUrlQueryToFormData(urlQuery) {
         field.fieldKey = "edit-search-params-hss-yearadmitted-year-to";
       } else if (recordType == "wills_testaments") {
         field.fieldKey = "edit-search-params-nrs-year-year-to";
+      } else if (recordType == "coa") {
+        field.fieldKey = "edit-search-params-nrs-grantyear-year-to";
+      } else if (recordType == "soldiers_wills") {
+        field.fieldKey = "edit-search-params-nrs-date-of-death-year-to";
+      } else if (recordType == "dissolutions") {
+        field.fieldKey = "edit-search-params-nrs-dissolution-year-year-to";
+      } else if (recordType == "stat_divorces") {
+        field.fieldKey = "edit-search-params-nrs-divorce-year-year-to";
       } else {
         field.fieldKey = "edit-search-params-nrs-search-year-year-to";
       }
@@ -542,6 +569,23 @@ function legacyUrlQueryToFormData(urlQuery) {
         field.type = "multipleSelect";
         field.values = [value];
       }
+    } else if (key == "occupation") {
+      field.fieldKey = "edit-search-params-wrd-occupation";
+      field.value = value;
+    } else if (key == "tribunal") {
+      field.fieldKey = "edit-search-params-nrs-tribunal";
+      field.type = "select";
+      field.value = value;
+    } else if (key.startsWith("court")) {
+      field.fieldKey = "edit-search-params-nrs-court";
+      field.type = "select";
+      field.value = value.trim().toUpperCase();
+    } else if (key == "service_number") {
+      field.fieldKey = "edit-search-params-nrs-service-number";
+      field.value = value;
+    } else if (key == "description") {
+      field.fieldKey = "edit-search-params-wrd-designation";
+      field.value = value;
     } else {
       addField = false; // unknown key
     }
@@ -639,7 +683,7 @@ async function checkForPendingSearch() {
             const elementId = field.fieldKey;
             const fieldType = field.type;
 
-            //console.log("checkForPendingSearch: value is: " + value);
+            //console.log("checkForPendingSearch: fieldType is: " + fieldType);
 
             let inputElement = document.getElementById(elementId);
 

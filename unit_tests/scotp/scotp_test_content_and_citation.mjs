@@ -271,7 +271,7 @@ const regressionData = [
     caseName: "stat_birth_1886_louisa_black",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&surname=Black&surname_so=exact&forename=Louisa%20Annie&forename_so=exact&sex=F&from_year=1870&to_year=1890&county=ABERDEEN&record_type=stat_births",
   },
-  // ============ Statutory registers - Civil Dissolutions ==============
+  // ============ Statutory registers - Civil Dissolutions (stat_dissolutions) ==============
   {
     caseName: "stat_civdiss_2009_dorothy_taylor",
     url: "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-dissolutions&surname=Taylor&surname_so=exact&forename_so=starts&psurname_so=exact&from_year=2007&to_year=2015&record_type=dissolutions",

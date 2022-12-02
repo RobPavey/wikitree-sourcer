@@ -156,7 +156,7 @@ function getSourceDataEventClass(data) {
 }
 
 function adjustCountyForSpecialCases(countyName, scotpRecordType, wtsPlace, dates) {
-  const statutoryDistrictRecordTypes = ["stat_births", "stat_marriages", "stat_deaths", "civilpartnership"];
+  const statutoryDistrictRecordTypes = ["stat_births", "stat_marriages", "stat_deaths", "stat_civilpartnerships"];
 
   // FORFAR and ANGUS are a special case. FORFAR was renamed to ANGUS in 1928 but Scotland's People
   // is inconsistent about which county name it requires for records.
@@ -257,7 +257,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
     return; // return as census is special case
   }
 
-  if (scotpRecordType == "valuation_rolls") {
+  if (scotpRecordType == "vr") {
     // another special case. In this case only one year can be specified
     let rollYears = ["1855", "1865", "1875", "1885", "1895", "1905", "1915", "1920", "1925", "1930", "1935", "1940"];
     for (let rollYear of rollYears) {
@@ -267,7 +267,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
         break; // only one year is allowed in UI, possibly years have differing numbers of columns
       }
     }
-    return; // return as valuation_rolls is special case
+    return; // return as vr is special case
   }
 
   if (scotpRecordType == "military_tribunals") {

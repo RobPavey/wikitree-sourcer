@@ -1468,12 +1468,12 @@ function generalizeData(input) {
       }
       break;
 
-    case "civilpartnership":
+    case "stat_civilpartnerships":
       setStatutoryCommonFields(data, result);
       setMarriageData(data, result, data.recordData["Partner Surname"], "");
       break;
 
-    case "dissolutions":
+    case "stat_dissolutions":
       {
         result.setEventYear(data.recordData["Dissolution Year"]);
 
@@ -1680,13 +1680,13 @@ function generalizeData(input) {
       result.setFieldIfValueExists("militaryRegiment", data.recordData["Regiment"]);
       break;
 
-    case "wills_testaments":
+    case "wills":
       result.setEventDate(cleanDdMmYyyyDate(data.recordData["Date"]));
       result.eventPlace = buildPlaceWithCourtName(data, result, data.recordData["Court"], result.inferEventYear());
       setWillsAndTestamentsRecordSubtype(data, result);
       break;
 
-    case "valuation_rolls":
+    case "vr":
       result.setEventYear(data.recordData["Year"]);
       result.eventPlace = buildPlaceWithOprParishName(data, data.recordData["Parish"], data.recordData["Year"]);
       break;

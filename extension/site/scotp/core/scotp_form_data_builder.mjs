@@ -101,8 +101,8 @@ class ScotpFormDataBuilder {
   }
 
   addFullName(string, searchOption) {
-    this.addTextField("nrs_name", string);
-    this.addSearchOption("name", searchOption);
+    this.addTextField("edit-search-params-nrs-name", string);
+    this.addSearchOption("edit-search-params-nrs-name", searchOption);
   }
 
   addSpouseSurname(string, searchOption) {
@@ -175,7 +175,7 @@ class ScotpFormDataBuilder {
   }
 
   addGender(gender) {
-    const recordTypesUsingNumber = ["stat_marriages", "cr_baptisms", "cr_burials"];
+    const recordTypesUsingNumber = ["stat_marriages", "cr_baptisms", "cr_burials", "cr_other"];
     const useNumber = recordTypesUsingNumber.includes(this.recordType);
     let sex = "";
     if (gender == "male") {

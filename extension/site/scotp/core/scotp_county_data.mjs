@@ -128,7 +128,7 @@ function getCountyListForRecordType(scotpRecordType) {
     case "stat_births":
     case "stat_marriages":
     case "stat_deaths":
-    case "civilpartnership":
+    case "stat_civilpartnerships":
 
     case "census":
     case "census_lds":
@@ -149,7 +149,7 @@ function getCountyListForRecordType(scotpRecordType) {
       countyList = statutoryCountyNames;
       break;
 
-    case "valuation_rolls":
+    case "vr":
       countyList = valuationCountyNames;
       break;
 
@@ -182,7 +182,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
   placeCountyName = placeCountyName.replace(/\-SHIRE$/, "");
   placeCountyName = placeCountyName.replace(/\SHIRE$/, "");
 
-  if (scotpRecordType == "valuation_rolls") {
+  if (scotpRecordType == "vr") {
     placeCountyName += " COUNTY";
   }
 
@@ -241,7 +241,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
     if (placeString.includes("GLASGOW, ") || placeString.endsWith("GLASGOW")) {
       return "GLASGOW CITY";
     }
-  } else if (scotpRecordType == "valuation_rolls") {
+  } else if (scotpRecordType == "vr") {
     // have to deal with: "ANGUS (FORFAR) COUNTY" and "MORAY (ELGIN) COUNTY"
     // there are only two cases so handle them individually
     if (placeCountyName == "ANGUS COUNTY" || placeCountyName == "FORFAR COUNTY") {

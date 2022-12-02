@@ -65,13 +65,13 @@ const subcategories = [
     includeParents: true,
   },
   {
-    value: "civilpartnership",
+    value: "stat_civilpartnerships",
     text: "Civil partnerships",
     category: "statutory",
     includeSpouses: true,
   },
   {
-    value: "dissolutions",
+    value: "stat_dissolutions",
     text: "Dissolutions",
     category: "statutory",
     includeSpouses: true,
@@ -136,10 +136,10 @@ const subcategories = [
     category: "census",
   },
 
-  { value: "valuation_rolls", text: "Valuation rolls", category: "valuation" },
+  { value: "vr", text: "Valuation rolls", category: "valuation" },
 
   {
-    value: "wills_testaments",
+    value: "wills",
     text: "Wills and testaments",
     category: "legal",
   },

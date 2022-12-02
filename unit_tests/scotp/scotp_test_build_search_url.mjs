@@ -185,7 +185,7 @@ const regressionData = [
         variantName: "valuation",
         searchParameters: {
           category: "valuation",
-          subcategory: "valuation_rolls",
+          subcategory: "vr",
           lastNameIndex: 0,
           spouseIndex: -1,
           father: false,
@@ -230,10 +230,10 @@ const regressionData = [
         },
       },
       {
-        variantName: "wills_testaments",
+        variantName: "wills",
         searchParameters: {
           category: "legal",
-          subcategory: "wills_testaments",
+          subcategory: "wills",
           lastNameIndex: 1,
           spouseIndex: -1,
           father: false,
