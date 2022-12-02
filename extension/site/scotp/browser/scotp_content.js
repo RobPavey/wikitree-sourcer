@@ -23,6 +23,23 @@ SOFTWARE.
 */
 
 const highlightStyle = "font-weight: bold; font-style: italic";
+const cellHighlightStyle = "background-color: palegoldenrod";
+
+function highlightRow(selectedRow) {
+  selectedRow.setAttribute("style", highlightStyle);
+  const cells = selectedRow.querySelectorAll("td");
+  for (let cell of cells) {
+    cell.setAttribute("style", cellHighlightStyle);
+  }
+}
+
+function unHighlightRow(selectedRow) {
+  selectedRow.removeAttribute("style");
+  const cells = selectedRow.querySelectorAll("td");
+  for (let cell of cells) {
+    cell.removeAttribute("style");
+  }
+}
 
 function getRefRecordKey(recordType) {
   // this is a cut-down version of the scotpRecordTypes in scotp_record_type.mjs since we do not want
@@ -71,7 +88,7 @@ function addClickedRowListener() {
       // clear existing selected row if any
       let selectedRow = getClickedRow();
       if (selectedRow) {
-        selectedRow.removeAttribute("style");
+        unHighlightRow(selectedRow);
       }
       selectedRow = ev.target;
       if (selectedRow) {
@@ -80,7 +97,7 @@ function addClickedRowListener() {
 
         selectedRow = selectedRow.closest("tr");
         if (selectedRow) {
-          selectedRow.setAttribute("style", highlightStyle);
+          highlightRow(selectedRow);
         }
       }
     });
@@ -186,7 +203,7 @@ async function doHighlightForRefQuery() {
             //console.log("doHighlightForRefQuery: text = '" + text + "', refValue = '" + refValue + "'");
             if (text == refValue) {
               // we have found the row to highlight
-              rowElement.setAttribute("style", highlightStyle);
+              highlightRow(rowElement);
               return;
             }
           }
@@ -636,9 +653,22 @@ function doLegacySearch() {
 async function checkForPendingSearch() {
   console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
 
-  if (document.URL.includes("?search_type")) {
-    doLegacySearch();
-    return;
+  if (document.URL.includes("?search_type=people&")) {
+    let isLegacy = false;
+    if (document.URL.includes("/record-results?search_type")) {
+      // an old saved search URL, just in case they start working again check for 404 error
+      const errorBlock = document.getElementById("block-404pagenotfoundblock");
+      if (errorBlock) {
+        isLegacy = true;
+      }
+    } else if (document.URL.includes("/advanced-search?search_type")) {
+      // a modified old search URL
+      isLegacy = true;
+    }
+    if (isLegacy) {
+      doLegacySearch();
+      return;
+    }
   }
 
   //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
