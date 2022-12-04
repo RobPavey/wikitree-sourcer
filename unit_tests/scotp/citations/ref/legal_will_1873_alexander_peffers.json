@@ -36,11 +36,11 @@
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC40/40/18<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Peffers\n|-\n| Forename || Alexander\n|-\n| Date || 22/4/1873\n|-\n| Description || Carter in Haddington\n|-\n| Type || \n|-\n| Court || Haddington Sheriff Court \n|}\n</ref>",
+    "citation": "<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC40/40/18<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Peffers\n|-\n| Forename || Alexander\n|-\n| Date || 22/4/1873\n|-\n| Description || Carter in Haddington\n|-\n| Type || \n|-\n| Court || Haddington Sheriff Court\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Confirmation was granted on Alexander's estate on 22 April 1873 at Haddington Sheriff Court.<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC40/40/18<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Peffers\n|-\n| Forename || Alexander\n|-\n| Date || 22/4/1873\n|-\n| Description || Carter in Haddington\n|-\n| Type || \n|-\n| Court || Haddington Sheriff Court \n|}\n</ref>",
+    "citation": "Confirmation was granted on Alexander's estate on 22 April 1873 at Haddington Sheriff Court.<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC40/40/18<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Peffers\n|-\n| Forename || Alexander\n|-\n| Date || 22/4/1873\n|-\n| Description || Carter in Haddington\n|-\n| Type || \n|-\n| Court || Haddington Sheriff Court\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

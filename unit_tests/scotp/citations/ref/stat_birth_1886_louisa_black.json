@@ -1,50 +1,50 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2 1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2/1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Louisa's birth was registered in 1886 in the Aberdeen Old Machar district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2 1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Louisa's birth was registered in 1886 in the Aberdeen Old Machar district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2/1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 168/2 1649<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 168/2/1649<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2 1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nLouisa Annie Black birth registered 1886 in Aberdeen Old Machar.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2/1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nLouisa Annie Black birth registered 1886 in Aberdeen Old Machar, mother's maiden name Taylor.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Louisa's birth was registered in 1886 in the Aberdeen Old Machar district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2 1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nLouisa Annie Black birth registered 1886 in Aberdeen Old Machar.\n</ref>",
+    "citation": "Louisa's birth was registered in 1886 in the Aberdeen Old Machar district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2/1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nLouisa Annie Black birth registered 1886 in Aberdeen Old Machar, mother's maiden name Taylor.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 168/2 1649<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Louisa Annie Black birth registered 1886 in Aberdeen Old Machar.",
+    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 168/2/1649<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Louisa Annie Black birth registered 1886 in Aberdeen Old Machar, mother's maiden name Taylor.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2 1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BLACK; Forename: LOUISA ANNIE; Gender: F; Year: 1886; RD Name: Aberdeen Old Machar.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2/1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BLACK; Forename: LOUISA ANNIE; Mother's Maiden Name: TAYLOR; Gender: F; Year: 1886; RD Name: Aberdeen Old Machar.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Louisa's birth was registered in 1886 in the Aberdeen Old Machar district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2 1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BLACK; Forename: LOUISA ANNIE; Gender: F; Year: 1886; RD Name: Aberdeen Old Machar.\n</ref>",
+    "citation": "Louisa's birth was registered in 1886 in the Aberdeen Old Machar district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2/1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BLACK; Forename: LOUISA ANNIE; Mother's Maiden Name: TAYLOR; Gender: F; Year: 1886; RD Name: Aberdeen Old Machar.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 168/2 1649<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: BLACK; Forename: LOUISA ANNIE; Gender: F; Year: 1886; RD Name: Aberdeen Old Machar.",
+    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 168/2/1649<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: BLACK; Forename: LOUISA ANNIE; Mother's Maiden Name: TAYLOR; Gender: F; Year: 1886; RD Name: Aberdeen Old Machar.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2 1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BLACK\n|-\n| Forename || LOUISA ANNIE\n|-\n| Mother's Maiden Name || \n|-\n| Gender || F\n|-\n| Year || 1886\n|-\n| RD Name || Aberdeen Old Machar\n|}\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2/1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BLACK\n|-\n| Forename || LOUISA ANNIE\n|-\n| Mother's Maiden Name || TAYLOR\n|-\n| Gender || F\n|-\n| Year || 1886\n|-\n| RD Name || Aberdeen Old Machar\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Louisa's birth was registered in 1886 in the Aberdeen Old Machar district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2 1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BLACK\n|-\n| Forename || LOUISA ANNIE\n|-\n| Mother's Maiden Name || \n|-\n| Gender || F\n|-\n| Year || 1886\n|-\n| RD Name || Aberdeen Old Machar\n|}\n</ref>",
+    "citation": "Louisa's birth was registered in 1886 in the Aberdeen Old Machar district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 168/2/1649<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BLACK\n|-\n| Forename || LOUISA ANNIE\n|-\n| Mother's Maiden Name || TAYLOR\n|-\n| Gender || F\n|-\n| Year || 1886\n|-\n| RD Name || Aberdeen Old Machar\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 168/2 1649<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: BLACK; Forename: LOUISA ANNIE; Gender: F; Year: 1886; RD Name: Aberdeen Old Machar.",
+    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 168/2/1649<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: BLACK; Forename: LOUISA ANNIE; Mother's Maiden Name: TAYLOR; Gender: F; Year: 1886; RD Name: Aberdeen Old Machar.",
     "type": "source"
   }
 }

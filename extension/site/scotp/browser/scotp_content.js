@@ -217,7 +217,11 @@ async function getPendingSearch() {
   return new Promise((resolve, reject) => {
     try {
       chrome.storage.local.get(["scotpSearchData"], function (value) {
-        resolve(value.scotpSearchData);
+        // clear the search data
+        chrome.storage.local.remove(["scotpSearchData"], function () {
+          //console.log('cleared scotpSearchData');
+          resolve(value.scotpSearchData);
+        });
       });
     } catch (ex) {
       reject(ex);
@@ -409,7 +413,7 @@ function legacyUrlQueryToFormData(urlQuery) {
     } else if (key == "forenames" || key == "forenames_so") {
       field.fieldKey = "edit-search-params-nrs-forenames";
       field.value = value;
-      if (key == "forename_so") {
+      if (key == "forenames_so") {
         field.type = "so";
       }
     } else if (key == "spsurname" || key == "spsurname_so") {
@@ -827,11 +831,6 @@ async function checkForPendingSearch() {
           formElement.submit();
         }
       }
-
-      // clear the search data
-      chrome.storage.local.set({ scotpSearchData: undefined }, function () {
-        //console.log('cleared scotpSearchData');
-      });
     }
   }
 }

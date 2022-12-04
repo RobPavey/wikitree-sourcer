@@ -39,6 +39,15 @@ import { getRcParishDataFromNameAndCongregation } from "./scotp_rc_parishes.mjs"
 import { getOtherParishDataFromNameAndCongregation } from "./scotp_other_parishes.mjs";
 import { ScotpRecordType, SpField, SpFeature } from "./scotp_record_type.mjs";
 
+function getCleanValueForRecordDataList(data, fieldNames) {
+  for (let fieldName of fieldNames) {
+    let value = data.recordData[fieldName];
+    if (value) {
+      return value;
+    }
+  }
+}
+
 function isAllUppercase(string) {
   if (!string) {
     return false;
@@ -199,11 +208,30 @@ function getRdNumber(data) {
 
   let reference = data.recordData["Ref"];
   if (reference) {
+    // there can be three numbers in the ref (at least)
+    // the format change in the 22 Nov 2022 update.
+    // For example "685/1 462" changed to "685 / 1 / 462" which extract now changes to "685/1/462"
     if (reference.includes("/")) {
-      rdNumber = reference.trim().split(" ")[0];
-      if (rdNumber.endsWith("/")) {
-        rdNumber = rdNumber.slice(0, -1);
+      let spaceSplit = reference.trim().split(" ");
+      let slashSplit = reference.trim().split("/");
+      if (spaceSplit.length > 1) {
+        rdNumber = spaceSplit[0];
+      } else if (slashSplit.length > 2) {
+        rdNumber = slashSplit[0].trim() + "/" + slashSplit[1].trim();
+      } else if (slashSplit.length == 2) {
+        // this case may be ambiguous for example:
+        // "302/5" - is the RD number 302 or 302/5
+        // for now assume it is 302
+        rdNumber = slashSplit[0].trim();
+      } else {
+        rdNumber = reference.trim();
       }
+    } else {
+      rdNumber = reference;
+    }
+
+    if (rdNumber && rdNumber.endsWith("/")) {
+      rdNumber = rdNumber.slice(0, -1);
     }
   }
 
@@ -228,7 +256,12 @@ function getCountyNameFromSearchCriteria(data) {
   if (data.searchCriteria) {
     let searchCounty = data.searchCriteria["County/city"];
 
-    if (searchCounty && searchCounty.toLowerCase() == "all") {
+    if (!searchCounty) {
+      // stat_deaths uses this
+      searchCounty = data.searchCriteria["County/city/minor records"];
+    }
+
+    if (searchCounty && searchCounty.toLowerCase() != "all") {
       const county = getCountyDisplayName(searchCounty);
       if (county) {
         countyName = county.display_county;
@@ -713,9 +746,17 @@ function cleanDdMmYyyyDate(dateString) {
     return "";
   }
 
+  // ignore "-----"
   if (/^\-+$/.test(dateString)) {
     return "";
   }
+
+  // sometimes (military_tribunals) there are dashes instead of slashes
+  // e.g. 1917-03-09
+  dateString = dateString.replace(/(\d)\s*\-\s*(\d)/g, "$1/$2");
+
+  // After 22 Nov 2022, sometimes, rather than 25/6/1867 we have 25 / 6 / 1867
+  dateString = dateString.replace(/\s*\/\s*/g, "/");
 
   if (dateString == "0/0/0") {
     return "";
@@ -728,6 +769,25 @@ function cleanDdMmYyyyDate(dateString) {
 
   let day = dateString.substring(0, slashIndex).trim();
 
+  let remainder = dateString.substring(slashIndex + 1);
+
+  slashIndex = remainder.indexOf("/");
+  if (slashIndex == -1) {
+    return dateString; // not an expected format
+  }
+
+  let month = remainder.substring(0, slashIndex).trim();
+  let year = remainder.substring(slashIndex + 1);
+
+  // sometimes it is in the order year-month-day
+  if (year.length < 3 || day.length > 2) {
+    let swap = year;
+    year = day;
+    day = swap;
+  }
+
+  // interpret the day/month/year parts
+
   let dayNum = parseInt(day);
   if (dayNum == NaN) {
     return dateString;
@@ -739,16 +799,6 @@ function cleanDdMmYyyyDate(dateString) {
   while (day[0] == "0") {
     day = day.substring(1);
   }
-
-  let remainder = dateString.substring(slashIndex + 1);
-
-  slashIndex = remainder.indexOf("/");
-  if (slashIndex == -1) {
-    return dateString; // not an expected format
-  }
-
-  let month = remainder.substring(0, slashIndex).trim();
-  let year = remainder.substring(slashIndex + 1);
 
   let monthNum = parseInt(month);
   if (monthNum != NaN) {
@@ -821,7 +871,7 @@ function setSourcerRecordType(scotpRecordType, data, result) {
 
 function setSurnameAndForename(data, result) {
   let lastName = standardizeName(data.recordData["Surname"]);
-  let forenames = standardizeName(data.recordData["Forename"]);
+  let forenames = standardizeName(getCleanValueForRecordDataList(data, ["Forename", "Forenames"]));
 
   if (isFieldBlank(forenames)) {
     forenames = "";
@@ -1487,7 +1537,11 @@ function generalizeData(input) {
       {
         result.setEventYear(data.recordData["Dissolution Year"]);
 
-        let partnerDate = cleanDdMmYyyyDate(data.recordData["Civil Partnership Date"]);
+        getCleanValueForRecordDataList;
+
+        let partnerDate = cleanDdMmYyyyDate(
+          getCleanValueForRecordDataList(data, ["Civil Partnership Date", "Partnership Date"])
+        );
         setDivorceData(data, result, data.recordData["Partner Surname"], "", partnerDate);
 
         result.eventPlace = buildPlaceWithCourtName(

@@ -1,16 +1,16 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=D&record_type%5B0%5D=opr_deaths&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-deaths-burials&surname=BRUCE&forename=MARGT&from_year=1846&to_year=1846&sex=F&rd_display_name%5B0%5D=CUPAR%20LANDWARD%7CCUPAR%20BURGH%7CCUPAR_CUPAR&rd_name%5B0%5D=CUPAR%20LANDWARD%20OR%20CUPAR%20BURGH%20OR%20CUPAR&ref=50%20364",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1180687992638ba86adc113",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
     "Surname": "BRUCE",
     "Forename": "MARGT",
-    "Parents/Other details": "JAMES BRUCE / MARGARET MANSON",
+    "Parents/Other details": "JAMES BRUCE/MARGARET MANSON",
     "Age": "0",
     "Gender": "F",
     "Date": "19/01/1846",
     "Parish Number": "420",
-    "Ref": "50 / 364",
+    "Ref": "50/364",
     "Parish": "Cupar"
   },
   "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/opr_deaths/opr_records-11017756/1180687992638ba86adc113?nojs=",

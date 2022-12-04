@@ -36,11 +36,11 @@
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Inventory Confirmation''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC36/48/224<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Fraser\n|-\n| Forename || Agnes\n|-\n| Date || 18/4/1910\n|-\n| Description || or MacLeod, wife of Alexander Fraser, banker, 308 Maxwell Road, Pollokshields, Glasgow, wife of Alexander Fraser, Glasgow, d. 27/12/1909 at Pollokshields, testate.\n|-\n| Type || \n|-\n| Court || Glasgow Sheriff Court Inventories \n|}\n</ref>",
+    "citation": "<ref>\n'''Inventory Confirmation''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC36/48/224<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Fraser\n|-\n| Forename || Agnes\n|-\n| Date || 18/4/1910\n|-\n| Description || or MacLeod, wife of Alexander Fraser, banker, 308 Maxwell Road, Pollokshields, Glasgow, wife of Alexander Fraser, Glasgow, d. 27/12/1909 at Pollokshields, testate.\n|-\n| Type || \n|-\n| Court || Glasgow Sheriff Court Inventories\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Confirmation was granted on Agnes's estate on 18 April 1910 at Glasgow Sheriff Court.<ref>\n'''Inventory Confirmation''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC36/48/224<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Fraser\n|-\n| Forename || Agnes\n|-\n| Date || 18/4/1910\n|-\n| Description || or MacLeod, wife of Alexander Fraser, banker, 308 Maxwell Road, Pollokshields, Glasgow, wife of Alexander Fraser, Glasgow, d. 27/12/1909 at Pollokshields, testate.\n|-\n| Type || \n|-\n| Court || Glasgow Sheriff Court Inventories \n|}\n</ref>",
+    "citation": "Confirmation was granted on Agnes's estate on 18 April 1910 at Glasgow Sheriff Court.<ref>\n'''Inventory Confirmation''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC36/48/224<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Fraser\n|-\n| Forename || Agnes\n|-\n| Date || 18/4/1910\n|-\n| Description || or MacLeod, wife of Alexander Fraser, banker, 308 Maxwell Road, Pollokshields, Glasgow, wife of Alexander Fraser, Glasgow, d. 27/12/1909 at Pollokshields, testate.\n|-\n| Type || \n|-\n| Court || Glasgow Sheriff Court Inventories\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

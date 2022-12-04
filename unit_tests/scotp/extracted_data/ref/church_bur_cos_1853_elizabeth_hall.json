@@ -1,17 +1,17 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=D&record_type%5B0%5D=opr_deaths&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-deaths-burials&surname=HALL&forename=ELIZABETH&from_year=1853&to_year=1853&sex=F&rd_display_name%5B0%5D=ST%20CUTHBERT%27S_ST%20CUTHBERT%27S&rd_name%5B0%5D=ST%20CUTHBERT%27S&ref=580%20193",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1714318870638ba943c7f9d",
   "success": true,
   "isRowSelected": true,
   "numResultsOnPage": 2,
   "recordData": {
     "Surname": "HALL",
     "Forename": "ELIZABETH",
-    "Parents/Other details": "FORREST / JAMES HALL",
+    "Parents/Other details": "FORREST/JAMES HALL",
     "Age": "69",
     "Gender": "F",
     "Date": "20/10/1853",
-    "Parish Number": "685 / 2 ",
-    "Ref": "580 / 193",
+    "Parish Number": "685/2",
+    "Ref": "580/193",
     "Parish": "St Cuthbert's"
   },
   "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/opr_deaths/opr_records-1562860/1714318870638ba943c7f9d?nojs=",

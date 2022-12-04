@@ -36,11 +36,11 @@
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: CC8/8/13<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Alexander\n|-\n| Forename || Bessie\n|-\n| Date || 27/5/1584\n|-\n| Description || sometime spouse to Duncan Ronnald in Popiltreis, sheriffdom of Stirling\n|-\n| Type || Testament Dative and Inventory\n|-\n| Court || Edinburgh Commissary Court \n|}\n</ref>",
+    "citation": "<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: CC8/8/13<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Alexander\n|-\n| Forename || Bessie\n|-\n| Date || 27/5/1584\n|-\n| Description || sometime spouse to Duncan Ronnald in Popiltreis, sheriffdom of Stirling\n|-\n| Type || Testament Dative and Inventory\n|-\n| Court || Edinburgh Commissary Court\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Confirmation was granted on Bessie's estate on 27 May 1584 at Edinburgh Commissary Court.<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: CC8/8/13<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Alexander\n|-\n| Forename || Bessie\n|-\n| Date || 27/5/1584\n|-\n| Description || sometime spouse to Duncan Ronnald in Popiltreis, sheriffdom of Stirling\n|-\n| Type || Testament Dative and Inventory\n|-\n| Court || Edinburgh Commissary Court \n|}\n</ref>",
+    "citation": "Confirmation was granted on Bessie's estate on 27 May 1584 at Edinburgh Commissary Court.<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: CC8/8/13<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Alexander\n|-\n| Forename || Bessie\n|-\n| Date || 27/5/1584\n|-\n| Description || sometime spouse to Duncan Ronnald in Popiltreis, sheriffdom of Stirling\n|-\n| Type || Testament Dative and Inventory\n|-\n| Court || Edinburgh Commissary Court\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

@@ -24,27 +24,27 @@
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: TAYLOR; Forename: DOROTHY JANE; Partner Surname: SIMM; Dissolution Year: 2009; Civil Partnership Date: 31/10/2006; Court: Ayr.\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: TAYLOR; Forename: DOROTHY JANE; Partner Surname: SIMM; Dissolution Year: 2009; Partnership Date: 2006-10-31; Court: Ayr.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Dorothy was divorced from Simm in 2009 in Ayr, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: TAYLOR; Forename: DOROTHY JANE; Partner Surname: SIMM; Dissolution Year: 2009; Civil Partnership Date: 31/10/2006; Court: Ayr.\n</ref>",
+    "citation": "Dorothy was divorced from Simm in 2009 in Ayr, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: TAYLOR; Forename: DOROTHY JANE; Partner Surname: SIMM; Dissolution Year: 2009; Partnership Date: 2006-10-31; Court: Ayr.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Divorce''': \"Statutory Register of Dissolutions\"<br/>National Records of Scotland, Court Code: 9704; Serial Number: 30<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: TAYLOR; Forename: DOROTHY JANE; Partner Surname: SIMM; Dissolution Year: 2009; Civil Partnership Date: 31/10/2006; Court: Ayr.",
+    "citation": "* '''Divorce''': \"Statutory Register of Dissolutions\"<br/>National Records of Scotland, Court Code: 9704; Serial Number: 30<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: TAYLOR; Forename: DOROTHY JANE; Partner Surname: SIMM; Dissolution Year: 2009; Partnership Date: 2006-10-31; Court: Ayr.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || TAYLOR\n|-\n| Forename || DOROTHY JANE\n|-\n| Partner Surname || SIMM\n|-\n| Dissolution Year || 2009\n|-\n| Civil Partnership Date || 31/10/2006\n|-\n| Court || Ayr\n|}\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || TAYLOR\n|-\n| Forename || DOROTHY JANE\n|-\n| Partner Surname || SIMM\n|-\n| Dissolution Year || 2009\n|-\n| Partnership Date || 2006-10-31\n|-\n| Court || Ayr\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Dorothy was divorced from Simm in 2009 in Ayr, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || TAYLOR\n|-\n| Forename || DOROTHY JANE\n|-\n| Partner Surname || SIMM\n|-\n| Dissolution Year || 2009\n|-\n| Civil Partnership Date || 31/10/2006\n|-\n| Court || Ayr\n|}\n</ref>",
+    "citation": "Dorothy was divorced from Simm in 2009 in Ayr, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || TAYLOR\n|-\n| Forename || DOROTHY JANE\n|-\n| Partner Surname || SIMM\n|-\n| Dissolution Year || 2009\n|-\n| Partnership Date || 2006-10-31\n|-\n| Court || Ayr\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Divorce''': \"Statutory Register of Dissolutions\"<br/>National Records of Scotland, Court Code: 9704; Serial Number: 30<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: TAYLOR; Forename: DOROTHY JANE; Partner Surname: SIMM; Dissolution Year: 2009; Civil Partnership Date: 31/10/2006; Court: Ayr.",
+    "citation": "* '''Divorce''': \"Statutory Register of Dissolutions\"<br/>National Records of Scotland, Court Code: 9704; Serial Number: 30<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: TAYLOR; Forename: DOROTHY JANE; Partner Surname: SIMM; Dissolution Year: 2009; Partnership Date: 2006-10-31; Court: Ayr.",
     "type": "source"
   }
 }

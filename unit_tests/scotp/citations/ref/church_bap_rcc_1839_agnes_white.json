@@ -24,27 +24,27 @@
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: WHITE; Forename: AGNES; Parents/Other Details: ALEXANDER WHITE / SARAGH MCDONNOL; Gender: Female; Birth Date: 24/1/1839; Baptism Date: 29/3/1839; Parish: Paisley, St Mirin's.\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: WHITE; Forename: AGNES; Parents/Other Details: ALEXANDER WHITE/SARAGH MCDONNOL; Gender: Female; Birth Date: 24/1/1839; Baptism Date: 29/3/1839; Parish: Paisley, St Mirin's.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Agnes, daughter of Alexander White & Saragh McDonnol, was born on 24 January 1839 and baptised on 29 March 1839 in St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: WHITE; Forename: AGNES; Parents/Other Details: ALEXANDER WHITE / SARAGH MCDONNOL; Gender: Female; Birth Date: 24/1/1839; Baptism Date: 29/3/1839; Parish: Paisley, St Mirin's.\n</ref>",
+    "citation": "Agnes, daughter of Alexander White & Saragh McDonnol, was born on 24 January 1839 and baptised on 29 March 1839 in St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: WHITE; Forename: AGNES; Parents/Other Details: ALEXANDER WHITE/SARAGH MCDONNOL; Gender: Female; Birth Date: 24/1/1839; Baptism Date: 29/3/1839; Parish: Paisley, St Mirin's.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Baptism''': \"Catholic Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish: Paisley, St Mirin's<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: WHITE; Forename: AGNES; Parents/Other Details: ALEXANDER WHITE / SARAGH MCDONNOL; Gender: Female; Birth Date: 24/1/1839; Baptism Date: 29/3/1839; Parish: Paisley, St Mirin's.",
+    "citation": "* '''Baptism''': \"Catholic Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish: Paisley, St Mirin's<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: WHITE; Forename: AGNES; Parents/Other Details: ALEXANDER WHITE/SARAGH MCDONNOL; Gender: Female; Birth Date: 24/1/1839; Baptism Date: 29/3/1839; Parish: Paisley, St Mirin's.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || WHITE\n|-\n| Forename || AGNES\n|-\n| Parents/Other Details || ALEXANDER WHITE / SARAGH MCDONNOL\n|-\n| Gender || Female\n|-\n| Birth Date || 24/1/1839\n|-\n| Baptism Date || 29/3/1839\n|-\n| Parish || Paisley, St Mirin's\n|}\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || WHITE\n|-\n| Forename || AGNES\n|-\n| Parents/Other Details || ALEXANDER WHITE/SARAGH MCDONNOL\n|-\n| Gender || Female\n|-\n| Birth Date || 24/1/1839\n|-\n| Baptism Date || 29/3/1839\n|-\n| Parish || Paisley, St Mirin's\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Agnes, daughter of Alexander White & Saragh McDonnol, was born on 24 January 1839 and baptised on 29 March 1839 in St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || WHITE\n|-\n| Forename || AGNES\n|-\n| Parents/Other Details || ALEXANDER WHITE / SARAGH MCDONNOL\n|-\n| Gender || Female\n|-\n| Birth Date || 24/1/1839\n|-\n| Baptism Date || 29/3/1839\n|-\n| Parish || Paisley, St Mirin's\n|}\n</ref>",
+    "citation": "Agnes, daughter of Alexander White & Saragh McDonnol, was born on 24 January 1839 and baptised on 29 March 1839 in St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || WHITE\n|-\n| Forename || AGNES\n|-\n| Parents/Other Details || ALEXANDER WHITE/SARAGH MCDONNOL\n|-\n| Gender || Female\n|-\n| Birth Date || 24/1/1839\n|-\n| Baptism Date || 29/3/1839\n|-\n| Parish || Paisley, St Mirin's\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Baptism''': \"Catholic Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish: Paisley, St Mirin's<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: WHITE; Forename: AGNES; Parents/Other Details: ALEXANDER WHITE / SARAGH MCDONNOL; Gender: Female; Birth Date: 24/1/1839; Baptism Date: 29/3/1839; Parish: Paisley, St Mirin's.",
+    "citation": "* '''Baptism''': \"Catholic Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish: Paisley, St Mirin's<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: WHITE; Forename: AGNES; Parents/Other Details: ALEXANDER WHITE/SARAGH MCDONNOL; Gender: Female; Birth Date: 24/1/1839; Baptism Date: 29/3/1839; Parish: Paisley, St Mirin's.",
     "type": "source"
   }
 }

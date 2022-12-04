@@ -1,50 +1,50 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF 203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF 203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF 203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF/203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF 203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJames Thomson death registered 1917 in Service Returns (age 19).\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJames Thomson death registered 1917 in Service Returns (age 19).\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF 203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJames Thomson death registered 1917 in Service Returns (age 19).\n</ref>",
+    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJames Thomson death registered 1917 in Service Returns (age 19).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF 203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>James Thomson death registered 1917 in Service Returns (age 19).",
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF/203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>James Thomson death registered 1917 in Service Returns (age 19).",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF 203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: THOMSON; Forename: JAMES; Age at death: 19; Year: 1917; RD Name: Service Returns.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: THOMSON; Forename: JAMES; Age at death: 19; Gender: M; Year: 1917; RD Name: Service Returns.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF 203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: THOMSON; Forename: JAMES; Age at death: 19; Year: 1917; RD Name: Service Returns.\n</ref>",
+    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: THOMSON; Forename: JAMES; Age at death: 19; Gender: M; Year: 1917; RD Name: Service Returns.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF 203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: THOMSON; Forename: JAMES; Age at death: 19; Year: 1917; RD Name: Service Returns.",
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF/203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: THOMSON; Forename: JAMES; Age at death: 19; Gender: M; Year: 1917; RD Name: Service Returns.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF 203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || THOMSON\n|-\n| Forename || JAMES\n|-\n| Age at death || 19\n|-\n| Mother's Maiden Name || \n|-\n| Year || 1917\n|-\n| RD Name || Service Returns\n|}\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || THOMSON\n|-\n| Forename || JAMES\n|-\n| Age at death || 19\n|-\n| Mother's Maiden Name || \n|-\n| Gender || M\n|-\n| Year || 1917\n|-\n| RD Name || Service Returns\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF 203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || THOMSON\n|-\n| Forename || JAMES\n|-\n| Age at death || 19\n|-\n| Mother's Maiden Name || \n|-\n| Year || 1917\n|-\n| RD Name || Service Returns\n|}\n</ref>",
+    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || THOMSON\n|-\n| Forename || JAMES\n|-\n| Age at death || 19\n|-\n| Mother's Maiden Name || \n|-\n| Gender || M\n|-\n| Year || 1917\n|-\n| RD Name || Service Returns\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF 203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: THOMSON; Forename: JAMES; Age at death: 19; Year: 1917; RD Name: Service Returns.",
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF/203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: THOMSON; Forename: JAMES; Age at death: 19; Gender: M; Year: 1917; RD Name: Service Returns.",
     "type": "source"
   }
 }

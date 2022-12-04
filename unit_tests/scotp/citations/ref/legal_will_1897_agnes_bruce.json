@@ -36,11 +36,11 @@
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/4/302<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Bruce\n|-\n| Forename || Agnes\n|-\n| Date || 31/12/1897\n|-\n| Description || Widow, 3 Haldane Terrace, City and County of Newcastle upon Tyne, d. 02/08/1897 at Haldane Terrace aforesaid, testate\n|-\n| Type || Note of Probate\n|-\n| Court || Edinburgh Sheriff Court Wills \n|}\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/4/302<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Bruce\n|-\n| Forename || Agnes\n|-\n| Date || 31/12/1897\n|-\n| Description || Widow, 3 Haldane Terrace, City and County of Newcastle upon Tyne, d. 02/08/1897 at Haldane Terrace aforesaid, testate\n|-\n| Type || Note of Probate\n|-\n| Court || Edinburgh Sheriff Court Wills\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Probate of Agnes's estate endorsed on 31 December 1897 at Edinburgh Sheriff Court.<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/4/302<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Bruce\n|-\n| Forename || Agnes\n|-\n| Date || 31/12/1897\n|-\n| Description || Widow, 3 Haldane Terrace, City and County of Newcastle upon Tyne, d. 02/08/1897 at Haldane Terrace aforesaid, testate\n|-\n| Type || Note of Probate\n|-\n| Court || Edinburgh Sheriff Court Wills \n|}\n</ref>",
+    "citation": "Probate of Agnes's estate endorsed on 31 December 1897 at Edinburgh Sheriff Court.<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/4/302<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Bruce\n|-\n| Forename || Agnes\n|-\n| Date || 31/12/1897\n|-\n| Description || Widow, 3 Haldane Terrace, City and County of Newcastle upon Tyne, d. 02/08/1897 at Haldane Terrace aforesaid, testate\n|-\n| Type || Note of Probate\n|-\n| Court || Edinburgh Sheriff Court Wills\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

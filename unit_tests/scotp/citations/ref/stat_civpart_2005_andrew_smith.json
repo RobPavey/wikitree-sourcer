@@ -1,50 +1,50 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, RD/EntryNumber: 118/ 1<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, Ref: 118<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Andrew's marriage to Harrison was registered in 2005 in the Lerwick district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, RD/EntryNumber: 118/ 1<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Andrew's marriage to Harrison was registered in 2005 in the Lerwick district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, Ref: 118<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage Registration''': \"Statutory Register of Civil Partnerships\"<br/>National Records of Scotland, RD/EntryNumber: 118/ 1<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Marriage Registration''': \"Statutory Register of Civil Partnerships\"<br/>National Records of Scotland, Ref: 118<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, RD/EntryNumber: 118/ 1<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nAndrew Chiswell Smith marriage to Harrison registered 2005 in Lerwick.\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, Ref: 118<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nAndrew Chiswell Smith marriage to Harrison registered 2005 in Lerwick.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Andrew's marriage to Harrison was registered in 2005 in the Lerwick district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, RD/EntryNumber: 118/ 1<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nAndrew Chiswell Smith marriage to Harrison registered 2005 in Lerwick.\n</ref>",
+    "citation": "Andrew's marriage to Harrison was registered in 2005 in the Lerwick district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, Ref: 118<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nAndrew Chiswell Smith marriage to Harrison registered 2005 in Lerwick.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Marriage Registration''': \"Statutory Register of Civil Partnerships\"<br/>National Records of Scotland, RD/EntryNumber: 118/ 1<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Andrew Chiswell Smith marriage to Harrison registered 2005 in Lerwick.",
+    "citation": "* '''Marriage Registration''': \"Statutory Register of Civil Partnerships\"<br/>National Records of Scotland, Ref: 118<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Andrew Chiswell Smith marriage to Harrison registered 2005 in Lerwick.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, RD/EntryNumber: 118/ 1<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: SMITH; Forename: ANDREW CHISWELL; Partner Surname: HARRISON; Year: 2005; RD Name: Lerwick.\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, Ref: 118<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: SMITH; Forename: ANDREW CHISWELL; Partner Surname: HARRISON; Year: 2005; RD Name: Lerwick.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Andrew's marriage to Harrison was registered in 2005 in the Lerwick district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, RD/EntryNumber: 118/ 1<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: SMITH; Forename: ANDREW CHISWELL; Partner Surname: HARRISON; Year: 2005; RD Name: Lerwick.\n</ref>",
+    "citation": "Andrew's marriage to Harrison was registered in 2005 in the Lerwick district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, Ref: 118<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: SMITH; Forename: ANDREW CHISWELL; Partner Surname: HARRISON; Year: 2005; RD Name: Lerwick.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Marriage Registration''': \"Statutory Register of Civil Partnerships\"<br/>National Records of Scotland, RD/EntryNumber: 118/ 1<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: SMITH; Forename: ANDREW CHISWELL; Partner Surname: HARRISON; Year: 2005; RD Name: Lerwick.",
+    "citation": "* '''Marriage Registration''': \"Statutory Register of Civil Partnerships\"<br/>National Records of Scotland, Ref: 118<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: SMITH; Forename: ANDREW CHISWELL; Partner Surname: HARRISON; Year: 2005; RD Name: Lerwick.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, RD/EntryNumber: 118/ 1<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || SMITH\n|-\n| Forename || ANDREW CHISWELL\n|-\n| Partner Surname || HARRISON\n|-\n| Year || 2005\n|-\n| RD Name || Lerwick\n|}\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, Ref: 118<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || SMITH\n|-\n| Forename || ANDREW CHISWELL\n|-\n| Partner Surname || HARRISON\n|-\n| Year || 2005\n|-\n| RD Name || Lerwick\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Andrew's marriage to Harrison was registered in 2005 in the Lerwick district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, RD/EntryNumber: 118/ 1<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || SMITH\n|-\n| Forename || ANDREW CHISWELL\n|-\n| Partner Surname || HARRISON\n|-\n| Year || 2005\n|-\n| RD Name || Lerwick\n|}\n</ref>",
+    "citation": "Andrew's marriage to Harrison was registered in 2005 in the Lerwick district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Civil Partnerships\"<br/>\nNational Records of Scotland, Ref: 118<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || SMITH\n|-\n| Forename || ANDREW CHISWELL\n|-\n| Partner Surname || HARRISON\n|-\n| Year || 2005\n|-\n| RD Name || Lerwick\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Marriage Registration''': \"Statutory Register of Civil Partnerships\"<br/>National Records of Scotland, RD/EntryNumber: 118/ 1<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: SMITH; Forename: ANDREW CHISWELL; Partner Surname: HARRISON; Year: 2005; RD Name: Lerwick.",
+    "citation": "* '''Marriage Registration''': \"Statutory Register of Civil Partnerships\"<br/>National Records of Scotland, Ref: 118<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: SMITH; Forename: ANDREW CHISWELL; Partner Surname: HARRISON; Year: 2005; RD Name: Lerwick.",
     "type": "source"
   }
 }

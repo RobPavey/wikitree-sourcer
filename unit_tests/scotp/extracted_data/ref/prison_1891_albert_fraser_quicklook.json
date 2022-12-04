@@ -1,5 +1,5 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&surname=Fraser&surname_so=exact&forename=Albert%20Attwood&forename_so=starts&trial_court_so=starts&record_type=prison_records",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
@@ -12,33 +12,25 @@
     "Year admitted": "1891",
     "Prison": "PERTH PRISON"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_prison_records/18986?image=1&return_row=0",
-  "pageHeader": "Prison registers",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/prison_records/prison_records-XXIL-HH21-47-6-00033/1229587268638cdf99b7d31?nojs=",
+  "pageHeader": "Prison Registers - Prison records",
   "searchCriteria": {
     "Surname": "Fraser",
-    "Surname Option": "Exact",
+    "Surname options": "Exact names only",
     "Forename": "Albert Attwood",
-    "Forename Option": "Starts"
+    "Forename options": "Names that begin with"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "prison",
-    "surname": "Fraser",
-    "surname_so": "exact",
-    "forename": "Albert Attwood",
-    "forename_so": "starts",
-    "trial_court_so": "starts",
-    "record_type": "prison_records"
-  },
+  "recordGroup": "prison_registers",
+  "recordType": "prison_records",
   "quickLookData": {
-    "Reference": "HH002100047-00006-",
+    "UID": "XXIL-HH21-47-6-00033",
     "Forename": "ALBERT ATTWOOD",
     "Surname": "FRASER",
     "Second surname": "-----",
-    "Gender": "M",
+    "Gender": "Male",
     "Age": "20",
     "Has alias name(s)": "YES",
-    "Alias/Other name 1": "JAMES STEWART",
+    "Alias": "-----",
     "Country of birth": "SCOTLAND",
     "Where born": "GLASGOW",
     "Year admitted": "1891",

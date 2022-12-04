@@ -36,11 +36,11 @@
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/6/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Bruce\n|-\n| Forename || Agnes\n|-\n| Date || 31/12/1897\n|-\n| Description || of 3 Haldane Terrace, Newcastle-upon-Tyne, widow\n|-\n| Type || Probate of the will\n|-\n| Court || non-Scottish Court \n|}\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/6/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Bruce\n|-\n| Forename || Agnes\n|-\n| Date || 31/12/1897\n|-\n| Description || of 3 Haldane Terrace, Newcastle-upon-Tyne, widow\n|-\n| Type || Probate of the will\n|-\n| Court || non-Scottish Court\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Probate of Agnes's estate recorded on 31 December 1897 at a non-Scottish court.<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/6/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Bruce\n|-\n| Forename || Agnes\n|-\n| Date || 31/12/1897\n|-\n| Description || of 3 Haldane Terrace, Newcastle-upon-Tyne, widow\n|-\n| Type || Probate of the will\n|-\n| Court || non-Scottish Court \n|}\n</ref>",
+    "citation": "Probate of Agnes's estate recorded on 31 December 1897 at a non-Scottish court.<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/6/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || Bruce\n|-\n| Forename || Agnes\n|-\n| Date || 31/12/1897\n|-\n| Description || of 3 Haldane Terrace, Newcastle-upon-Tyne, widow\n|-\n| Type || Probate of the will\n|-\n| Court || non-Scottish Court\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

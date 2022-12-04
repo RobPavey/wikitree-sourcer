@@ -1,5 +1,5 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=Reid&surname_so=wild&forename_so=wild&parent_names_so=wild&parent_name_two=Jane%20Gemm%2Al&parent_name_two_so=wild&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1739552792638a8fee1122e",
   "success": true,
   "isRowSelected": true,
   "numResultsOnPage": 7,
@@ -10,7 +10,7 @@
     "Gender": "M",
     "Birth Date": "08/06/1813",
     "Parish Number": "600",
-    "Ref": "10 / 356",
+    "Ref": "10/356",
     "Parish": "Kirkmichael"
   },
   "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/opr_births/opr_records-8819474/1739552792638a8fee1122e?nojs=",

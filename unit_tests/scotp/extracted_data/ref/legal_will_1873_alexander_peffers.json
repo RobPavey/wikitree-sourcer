@@ -1,5 +1,5 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-wills-testaments&surname=peffers&surname_so=wild&forename=alexander&forename_so=soundex&from_year=1873&to_year=1873&record_type=wills_testaments",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
@@ -8,29 +8,19 @@
     "Date": "22/4/1873",
     "Description": "Carter in Haddington",
     "Type": "",
-    "Court": "Haddington Sheriff Court ",
+    "Court": "Haddington Sheriff Court",
     "Reference Number": "SC40/40/18"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_wills_testaments/707521?image=1&return_row=0",
-  "pageHeader": "Legal records - Wills and testaments",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/wills/wills-%7B46C3A011-DDDA-11D6-8308-00C04F24C283%7D/816227757638cd653a9bb3?nojs=",
+  "pageHeader": "Legal Records - Wills and testaments",
   "searchCriteria": {
-    "Surname": "Peffers",
-    "Surname Option": "Wild",
-    "Forename": "Alexander",
-    "Forename Option": "Soundex",
-    "From_year": "1873",
-    "To_year": "1873"
+    "Surname": "peffers",
+    "Surname options": "Wildcards allowed",
+    "Forename": "alexander",
+    "Forename options": "Phonetic match",
+    "Year range": "from 1873 to 1873",
+    "Court/Commissariot": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "legal",
-    "dl_rec": "legal-wills-testaments",
-    "surname": "peffers",
-    "surname_so": "wild",
-    "forename": "alexander",
-    "forename_so": "soundex",
-    "from_year": "1873",
-    "to_year": "1873",
-    "record_type": "wills_testaments"
-  }
+  "recordGroup": "legal_records",
+  "recordType": "wills"
 }

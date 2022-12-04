@@ -81,6 +81,9 @@ function extractFromSearchResults(document, url, result) {
       if (rowDataElement) {
         let rowText = rowDataElement.textContent;
         rowText = rowText.replace(/\s+/g, " "); // remove double spaces
+        rowText = rowText.replace(/\s+\/\s+/g, "/"); // remove spaces around slashes
+        rowText = rowText.replace(/^\s+/g, ""); // remove leading spaces
+        rowText = rowText.replace(/\s+$/g, ""); // remove trailing spaces
         result.recordData[headerText] = rowText;
       }
     } else {
