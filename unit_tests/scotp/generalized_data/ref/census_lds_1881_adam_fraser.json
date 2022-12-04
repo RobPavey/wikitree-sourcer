@@ -16,6 +16,9 @@
     "placeString": "Sandsting & Aitsting, Zetland, Scotland",
     "streetAddress": "Fogrigarth"
   },
+  "birthPlace": {
+    "placeString": "Aithsting, Shetland, Scotland"
+  },
   "collectionData": {
     "id": "census1881"
   },

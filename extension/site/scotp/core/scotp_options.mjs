@@ -167,8 +167,8 @@ const citationOptionsGroup = {
         },
         */
       ],
-      defaultValue: "best",
-      unitTestValue: "created",
+      defaultValue: "base",
+      unitTestValue: "base",
     },
     {
       optionName: "databaseTitle",

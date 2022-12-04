@@ -1,36 +1,25 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=crbirths_baptism&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=Macgregor&surname_so=exact&forename_so=starts&parent_names_so=exact&parent_name_two_so=exact&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/2012857744638ab20b4c6d7",
   "success": true,
-  "numResultsOnPage": 25,
+  "numResultsOnPage": 1,
   "recordData": {
     "Surname": "MACGREGOR",
     "Forename": "ISABELLA",
-    "Parents/ Other details": "ALEXANDER MACGREGOR/MARY ELLEN MCGULDRICK",
-    "Gender": "F",
+    "Parents/Other Details": "ALEXANDER MACGREGOR / MARY ELLEN MCGULDRICK",
+    "Gender": "Female",
     "Birth Date": "1/7/1902",
     "Baptism Date": "6/7/1902",
     "Parish": "Paisley, St Mirin's"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_crbirths_baptism/24295?return_row=0",
-  "pageHeader": "Church registers - Catholic Registers Births and Baptisms",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/cr_baptisms/cr_baptisms-24295/2012857744638ab20b4c6d7?nojs=",
+  "pageHeader": "Church Registers - Catholic Register - Births and Baptisms",
   "searchCriteria": {
-    "Event": "(B OR C OR S)",
-    "Church_type": "Catholic Registers",
+    "Church type": "Catholic Registers - Births and Baptisms",
     "Surname": "Macgregor",
-    "Surname Option": "Exact"
+    "Surname options": "Exact names only",
+    "Year range": "from 1902 to 1902",
+    "County/city": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "event": "(B OR C OR S)",
-    "record_type[0]": "crbirths_baptism",
-    "church_type": "Catholic Registers",
-    "dl_cat": "church",
-    "dl_rec": "church-births-baptisms",
-    "surname": "Macgregor",
-    "surname_so": "exact",
-    "forename_so": "starts",
-    "parent_names_so": "exact",
-    "parent_name_two_so": "exact",
-    "record": "Church of Scotland (old parish registers) Roman Catholic Church Other churches"
-  }
+  "recordGroup": "church_registers",
+  "recordType": "cr_baptisms"
 }

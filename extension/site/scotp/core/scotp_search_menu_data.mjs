@@ -111,7 +111,7 @@ const subcategories = [
   { value: "cr_other", text: "Other events", category: "church_rcc" },
 
   {
-    value: "ch3_baptism",
+    value: "ch3_baptisms",
     text: "Birth and baptisms",
     category: "church_other",
     includeParents: true,
@@ -447,7 +447,7 @@ const ScotpData = {
     // Use a subcategory that corresponds to the source record if it works with date ranges
     // Only do this for the common bases
     if (generalizedData.recordType == RT.BirthRegistration || generalizedData.recordType == RT.Birth) {
-      const scList = ["stat_births", "opr_births", "cr_baptisms", "ch3_baptism"];
+      const scList = ["stat_births", "opr_births", "cr_baptisms", "ch3_baptisms"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
         return;
       }
@@ -465,7 +465,7 @@ const ScotpData = {
       }
     }
     if (generalizedData.recordType == RT.Baptism || generalizedData.recordType == RT.BirthOrBaptism) {
-      const scList = ["opr_births", "cr_baptisms", "ch3_baptism", "stat_births"];
+      const scList = ["opr_births", "cr_baptisms", "ch3_baptisms", "stat_births"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
         return;
       }

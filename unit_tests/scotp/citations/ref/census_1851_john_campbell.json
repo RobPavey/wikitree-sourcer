@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1851 census John (age 22) was in Ballachulish, Argyll, Scotland.<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1851 census John (age 22) was in Ballachulish and Corran Of Ardgour, Argyll, Scotland.<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -12,39 +12,39 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Campbell (22) in Ballachulish registration district in Argyllshire, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Campbell (22) in Ballachulish and Corran Of Ardgour registration district in Argyllshire, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "In the 1851 census John (age 22) was in Ballachulish, Argyll, Scotland.<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Campbell (22) in Ballachulish registration district in Argyllshire, Scotland.\n</ref>",
+    "citation": "In the 1851 census John (age 22) was in Ballachulish and Corran Of Ardgour, Argyll, Scotland.<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Campbell (22) in Ballachulish and Corran Of Ardgour registration district in Argyllshire, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''1851 Census''': \"Scotland Census, 1851\"<br/>National Records of Scotland, Ref: 506/ 6/ 14<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>John Campbell (22) in Ballachulish registration district in Argyllshire, Scotland.",
+    "citation": "* '''1851 Census''': \"Scotland Census, 1851\"<br/>National Records of Scotland, Ref: 506/ 6/ 14<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>John Campbell (22) in Ballachulish and Corran Of Ardgour registration district in Argyllshire, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: CAMPBELL; Forename: JOHN; Year: 1851; Gender: M; Age at census: 22; RD Name: Ballachulish; County / City: Argyll.\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: CAMPBELL; Forename: JOHN; Year: 1851; Gender: M; Age at census: 22; RD Name: Ballachulish and Corran Of Ardgour; County / City: Argyll.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "In the 1851 census John (age 22) was in Ballachulish, Argyll, Scotland.<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: CAMPBELL; Forename: JOHN; Year: 1851; Gender: M; Age at census: 22; RD Name: Ballachulish; County / City: Argyll.\n</ref>",
+    "citation": "In the 1851 census John (age 22) was in Ballachulish and Corran Of Ardgour, Argyll, Scotland.<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: CAMPBELL; Forename: JOHN; Year: 1851; Gender: M; Age at census: 22; RD Name: Ballachulish and Corran Of Ardgour; County / City: Argyll.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''1851 Census''': \"Scotland Census, 1851\"<br/>National Records of Scotland, Ref: 506/ 6/ 14<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: CAMPBELL; Forename: JOHN; Year: 1851; Gender: M; Age at census: 22; RD Name: Ballachulish; County / City: Argyll.",
+    "citation": "* '''1851 Census''': \"Scotland Census, 1851\"<br/>National Records of Scotland, Ref: 506/ 6/ 14<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: CAMPBELL; Forename: JOHN; Year: 1851; Gender: M; Age at census: 22; RD Name: Ballachulish and Corran Of Ardgour; County / City: Argyll.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || CAMPBELL\n|-\n| Forename || JOHN\n|-\n| Year || 1851\n|-\n| Gender || M\n|-\n| Age at census || 22\n|-\n| RD Name || Ballachulish\n|-\n| County / City || Argyll\n|}\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || CAMPBELL\n|-\n| Forename || JOHN\n|-\n| Year || 1851\n|-\n| Gender || M\n|-\n| Age at census || 22\n|-\n| RD Name || Ballachulish and Corran Of Ardgour\n|-\n| County / City || Argyll\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "In the 1851 census John (age 22) was in Ballachulish, Argyll, Scotland.<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || CAMPBELL\n|-\n| Forename || JOHN\n|-\n| Year || 1851\n|-\n| Gender || M\n|-\n| Age at census || 22\n|-\n| RD Name || Ballachulish\n|-\n| County / City || Argyll\n|}\n</ref>",
+    "citation": "In the 1851 census John (age 22) was in Ballachulish and Corran Of Ardgour, Argyll, Scotland.<ref>\n'''1851 Census''':\n\"Scotland Census, 1851\"<br/>\nNational Records of Scotland, Ref: 506/ 6/ 14<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || CAMPBELL\n|-\n| Forename || JOHN\n|-\n| Year || 1851\n|-\n| Gender || M\n|-\n| Age at census || 22\n|-\n| RD Name || Ballachulish and Corran Of Ardgour\n|-\n| County / City || Argyll\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''1851 Census''': \"Scotland Census, 1851\"<br/>National Records of Scotland, Ref: 506/ 6/ 14<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: CAMPBELL; Forename: JOHN; Year: 1851; Gender: M; Age at census: 22; RD Name: Ballachulish; County / City: Argyll.",
+    "citation": "* '''1851 Census''': \"Scotland Census, 1851\"<br/>National Records of Scotland, Ref: 506/ 6/ 14<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: CAMPBELL; Forename: JOHN; Year: 1851; Gender: M; Age at census: 22; RD Name: Ballachulish and Corran Of Ardgour; County / City: Argyll.",
     "type": "source"
   }
 }

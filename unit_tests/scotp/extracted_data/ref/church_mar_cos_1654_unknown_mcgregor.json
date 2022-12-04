@@ -1,5 +1,5 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=opr_marriages&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=McGregor&surname_so=exact&forename_so=starts&spouse_name_so=exact&from_year=1654&to_year=1654&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
@@ -7,33 +7,19 @@
     "Forename": "-----",
     "Spouse Name": "NAME NOT GIVEN//FR269 (FR269)",
     "Date": "31/12/1654",
-    "Parish Number": "474/ ",
-    "Ref": "20 11",
+    "Parish Number": "474",
+    "Ref": "20 / 11",
     "Parish": "Buchanan"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_opr_records/10104063?image=11&return_row=0",
-  "pageHeader": "Church registers - Old Parish Registers Banns and marriages",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/opr_marriages/opr_records-4799008/1286516494638bd97e4f93f?nojs=",
+  "pageHeader": "Church Registers - Old parish registers - Banns and Marriages",
   "searchCriteria": {
-    "Event": "M",
-    "Church_type": "Old Parish Registers",
+    "Church type": "Old Parish Registers - Marriages",
     "Surname": "McGregor",
-    "Surname Option": "Exact",
-    "From_year": "1654",
-    "To_year": "1654"
+    "Surname options": "Exact names only",
+    "Year range": "from 1654 to 1654",
+    "County/city": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "event": "M",
-    "record_type[0]": "opr_marriages",
-    "church_type": "Old Parish Registers",
-    "dl_cat": "church",
-    "dl_rec": "church-banns-marriages",
-    "surname": "McGregor",
-    "surname_so": "exact",
-    "forename_so": "starts",
-    "spouse_name_so": "exact",
-    "from_year": "1654",
-    "to_year": "1654",
-    "record": "Church of Scotland (old parish registers) Roman Catholic Church Other churches"
-  }
+  "recordGroup": "church_registers",
+  "recordType": "opr_marriages"
 }

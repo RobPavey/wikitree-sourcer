@@ -11,11 +11,11 @@
     "yearString": "1851"
   },
   "ageAtEvent": "22",
-  "registrationDistrict": "Ballachulish",
+  "registrationDistrict": "Ballachulish and Corran Of Ardgour",
   "eventPlace": {
     "country": "Scotland",
     "county": "Argyll",
-    "placeString": "Ballachulish, Argyll, Scotland"
+    "placeString": "Ballachulish and Corran Of Ardgour, Argyll, Scotland"
   },
   "collectionData": {
     "id": "census1851",

@@ -1,7 +1,8 @@
 {
   "url": "https://www.scotlandspeople.gov.uk/record-results/10198090206386859514533",
   "success": true,
-  "numResultsOnPage": 1,
+  "isRowSelected": true,
+  "numResultsOnPage": 9,
   "recordData": {
     "Surname": "CAMPBELL",
     "Forename": "JOHN",
@@ -9,21 +10,19 @@
     "Gender": "M",
     "Age at census": "22",
     "Ref": "506/ 6/ 14",
-    "RD Name": "Ballachulish",
+    "RD Name": "Ballachulish and Corran Of Ardgour",
     "County / City": "Argyll"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/census/census-5061528_3245_506__6_/10198090206386859514533?nojs=",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/census/census-5061528_3245_506__6_/2035092102638a4a4e076fe?nojs=",
   "pageHeader": "Census returns",
   "searchCriteria": {
     "Census year": "1851",
     "Surname": "Campbell",
     "Surname options": "Exact names only",
     "Forename": "John",
-    "Forename options": "Exact names only",
-    "Gender": "Male",
+    "Forename options": "Names that begin with",
     "Age range": "from 22 to 22",
-    "County/city": "ARGYLL",
-    "District": "BALLACHULISH, GLENCOE"
+    "County/city": "ARGYLL"
   },
   "recordGroup": "census_returns",
   "recordType": "census"

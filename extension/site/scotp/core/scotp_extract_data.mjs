@@ -22,7 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractFromSearchResults(document, url, userSelectedRowElement, result) {
+function getSelectedRow(document) {
+  const highlightStyle = "font-weight: bold; font-style: italic";
+  const elResultsTable = document.querySelector("table.results-table tbody");
+  if (elResultsTable) {
+    const selectedRow = elResultsTable.querySelector("tr[style='" + highlightStyle + "']");
+    return selectedRow;
+  }
+}
+
+function extractFromSearchResults(document, url, result) {
   let resultsTable = document.querySelector("table.results-table");
   if (!resultsTable) {
     return;
@@ -35,8 +44,9 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
 
   // by default we use the first row as the record to extract
   let selectedRowElement = rowElements[0];
+  // but if there is a user selected row we use that row
+  let userSelectedRowElement = getSelectedRow(document);
   if (userSelectedRowElement) {
-    // but if there is a user selected row we use that row
     selectedRowElement = userSelectedRowElement;
     result.isRowSelected = true;
   }
@@ -111,6 +121,10 @@ function extractFromSearchResults(document, url, userSelectedRowElement, result)
       // there can be commas within the quotes for a value so can't just separate on that
       while (textString) {
         let searchItem = textString.replace(/^([^\:]+\:\s*\"[^"]*\").*/, "$1");
+        if (textString.startsWith("Church type")) {
+          // special case - there are no quotes around the church type
+          searchItem = textString.replace(/^([^\:]+\:\s*[^,]+).*/, "$1");
+        }
         textString = textString.substring(searchItem.length).trim();
         if (textString && textString[0] == ",") {
           textString = textString.substring(1).trim();
@@ -218,12 +232,7 @@ function extractFromImageViewer(document, url, result) {
 }
 
 // siteSpecificInput is an optional parameter only passed from content
-function extractData(document, url, siteSpecificInput) {
-  let userSelectedRowElement = undefined;
-  if (siteSpecificInput) {
-    userSelectedRowElement = siteSpecificInput.selectedRowElement;
-  }
-
+function extractData(document, url) {
   var result = {};
 
   if (url) {
@@ -234,7 +243,7 @@ function extractData(document, url, siteSpecificInput) {
   let resultsTable = document.querySelector("table.results-table");
 
   if (resultsTable) {
-    extractFromSearchResults(document, url, userSelectedRowElement, result);
+    extractFromSearchResults(document, url, result);
   } else {
     let imageViewer = document.querySelector("div.image-viewer");
 

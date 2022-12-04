@@ -278,6 +278,17 @@ function parseQuery() {
         let value = queryTerm.substring(equalsIndex + 1).trim();
         key = decodeURIComponent(key);
         value = decodeURIComponent(value);
+        // O&#039;Connor
+        value = value.replace(/\&\#\d\d\d\;/g, function (escapeString) {
+          const numString = escapeString.replace(/\&\#(\d\d\d)\;/, "$1");
+          if (numString && numString != escapeString) {
+            let num = parseInt(numString);
+            if (!isNaN(num)) {
+              return String.fromCharCode(num);
+            }
+          }
+          return escapeString;
+        });
         result[key] = value;
       }
     }
@@ -435,6 +446,18 @@ function legacyUrlQueryToFormData(urlQuery) {
       if (key == "psurname_so") {
         field.type = "so";
       }
+    } else if (key == "mmsurname" || key == "mmsurname_so") {
+      field.fieldKey = "edit-search-params-nrs-mmsurname";
+      field.value = value;
+      if (key == "mmsurname_so") {
+        field.type = "so";
+      }
+    } else if (key == "parent_names" || key == "parent_names_so") {
+      // These are now only available in refine search - I could implement a 2 step process
+      addField = false; // unknown key
+    } else if (key == "parent_name_two" || key == "parent_name_two_so") {
+      // These are now only available in refine search - I could implement a 2 step process
+      addField = false; // unknown key
     } else if (key == "spouse_name") {
       if (recordType == "opr_marriages") {
         field.fieldKey = "edit-search-params-nrs-motherspousename";
@@ -603,6 +626,12 @@ function legacyUrlQueryToFormData(urlQuery) {
     } else if (key == "description") {
       field.fieldKey = "edit-search-params-wrd-designation";
       field.value = value;
+    } else if (key == "census_place") {
+      field.fieldKey = "edit-search-params-nrs-census-place";
+      field.value = "*" + value + "*";
+    } else if (key == "birthplace") {
+      field.fieldKey = "edit-search-params-nrs-birth-place";
+      field.value = "*" + value + "*";
     } else {
       addField = false; // unknown key
     }
@@ -653,15 +682,15 @@ function doLegacySearch() {
 async function checkForPendingSearch() {
   console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
 
-  if (document.URL.includes("?search_type=people&")) {
+  if (document.URL.includes("search_type=people")) {
     let isLegacy = false;
-    if (document.URL.includes("/record-results?search_type")) {
+    if (document.URL.includes("/record-results?")) {
       // an old saved search URL, just in case they start working again check for 404 error
       const errorBlock = document.getElementById("block-404pagenotfoundblock");
       if (errorBlock) {
         isLegacy = true;
       }
-    } else if (document.URL.includes("/advanced-search?search_type")) {
+    } else if (document.URL.includes("/advanced-search?")) {
       // a modified old search URL
       isLegacy = true;
     }
@@ -700,7 +729,7 @@ async function checkForPendingSearch() {
 
       if (timeSinceSearch < 10000 && searchUrl == document.URL) {
         // we are doing a search
-        //hideElementsDuringSearch();
+        hideElementsDuringSearch();
 
         let formData = searchData.formData;
 
@@ -795,7 +824,7 @@ async function checkForPendingSearch() {
           //console.log("checkForPendingSearch: found formElement:");
           //console.log(formElement);
           // now submit the form to do the search
-          //formElement.submit();
+          formElement.submit();
         }
       }
 
@@ -807,24 +836,11 @@ async function checkForPendingSearch() {
   }
 }
 
-function extractHandler(request, sendResponse) {
-  let selectedRow = getClickedRow();
-  let siteSpecificInput = {
-    selectedRowElement: selectedRow,
-  };
-
-  // Extract the data via DOM scraping
-  let isAsync = extractDataAndRespond(document, location.href, "scotp", sendResponse, siteSpecificInput);
-  if (isAsync) {
-    return true;
-  }
-}
-
 async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
 
-  siteContentInit(`scotp`, `site/scotp/core/scotp_extract_data.mjs`, extractHandler);
+  siteContentInit(`scotp`, `site/scotp/core/scotp_extract_data.mjs`);
 
   addClickedRowListener();
   doHighlightForRefQuery();

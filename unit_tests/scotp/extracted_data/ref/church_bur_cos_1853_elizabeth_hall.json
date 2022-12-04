@@ -1,43 +1,32 @@
 {
   "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=D&record_type%5B0%5D=opr_deaths&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-deaths-burials&surname=HALL&forename=ELIZABETH&from_year=1853&to_year=1853&sex=F&rd_display_name%5B0%5D=ST%20CUTHBERT%27S_ST%20CUTHBERT%27S&rd_name%5B0%5D=ST%20CUTHBERT%27S&ref=580%20193",
   "success": true,
+  "isRowSelected": true,
   "numResultsOnPage": 2,
   "recordData": {
     "Surname": "HALL",
     "Forename": "ELIZABETH",
-    "Parents/ Other Details": "FORREST / JAMES HALL",
+    "Parents/Other details": "FORREST / JAMES HALL",
     "Age": "69",
     "Gender": "F",
     "Date": "20/10/1853",
-    "Parish Number": "685/2 ",
-    "Ref": "580 193",
+    "Parish Number": "685 / 2 ",
+    "Ref": "580 / 193",
     "Parish": "St Cuthbert's"
   },
-  "pageHeader": "Church registers - Old Parish Registers Deaths and burials",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/opr_deaths/opr_records-1562860/1714318870638ba943c7f9d?nojs=",
+  "pageHeader": "Church Registers - Old parish registers - Deaths and Burials",
   "searchCriteria": {
-    "Event": "D",
-    "Church_type": "Old Parish Registers",
+    "Church type": "Old Parish Registers - Deaths",
     "Surname": "HALL",
+    "Surname options": "Exact names only",
     "Forename": "ELIZABETH",
-    "From_year": "1853",
-    "To_year": "1853",
-    "Gender": "F",
-    "Ref": "580 193"
+    "Forename options": "Exact names only",
+    "Gender": "Female",
+    "Year range": "from 1853 to 1853",
+    "County/city": "ALL",
+    "Parish/Congregation": "ST CUTHBERT'S_ST CUTHBERT'S"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "event": "D",
-    "record_type[0]": "opr_deaths",
-    "church_type": "Old Parish Registers",
-    "dl_cat": "church",
-    "dl_rec": "church-deaths-burials",
-    "surname": "HALL",
-    "forename": "ELIZABETH",
-    "from_year": "1853",
-    "to_year": "1853",
-    "sex": "F",
-    "rd_display_name[0]": "ST CUTHBERT'S_ST CUTHBERT'S",
-    "rd_name[0]": "ST CUTHBERT'S",
-    "ref": "580 193"
-  }
+  "recordGroup": "church_registers",
+  "recordType": "opr_deaths"
 }

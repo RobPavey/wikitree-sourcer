@@ -142,7 +142,7 @@ function getCountyListForRecordType(scotpRecordType) {
     case "cr_burials":
     case "cr_other":
 
-    case "ch3_baptism": // Presbyterian
+    case "ch3_baptisms": // Presbyterian
     case "ch3_burials": // Presbyterian
     case "ch3_banns": // Presbyterian
     case "ch3_other": // Presbyterian

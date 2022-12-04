@@ -352,7 +352,7 @@ const scotpRecordTypes = {
     sourcerRecordType: RT.OtherChurchEvent,
   },
 
-  ch3_baptism: {
+  ch3_baptisms: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/church-records",
     collectionNrsTitle: "Other Church Registers - Births and Baptisms",
     dates: { from: 1733, to: 1855 },

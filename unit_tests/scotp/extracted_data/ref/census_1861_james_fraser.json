@@ -12,17 +12,18 @@
     "RD Name": "Milton",
     "County / City": "Lanark"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/census/census-7634379_4242_644_7_3_/156245878163869550b461a?nojs=",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/census/census-7634379_4242_644_7_3_/1342421693638a4ff62de46?nojs=",
   "pageHeader": "Census returns",
   "searchCriteria": {
-    "Census year": "1861",
+    "Census year": "1861, 1871",
     "Surname": "Fraser",
     "Surname options": "Exact names only",
     "Forename": "James",
-    "Forename options": "Exact names only",
+    "Forename options": "Names that begin with",
     "Gender": "Male",
-    "Age range": "from 31 to 31",
-    "County/city": "LANARK"
+    "Age range": "from 30 to 32",
+    "County/city": "LANARK",
+    "District": "MILTON"
   },
   "recordGroup": "census_returns",
   "recordType": "census"

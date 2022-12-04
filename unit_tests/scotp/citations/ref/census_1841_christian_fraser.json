@@ -1,74 +1,74 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/1/5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/ 1/ 5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
+    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/1/5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Christian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.",
+    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/ 1/ 5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Christian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: CHRISTIAN; Year: 1841; Gender: F; Age at census: 5; RD Name: Kintore; County / City: Aberdeen.\n</ref>",
+    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: CHRISTIAN; Year: 1841; Gender: F; Age at census: 5; RD Name: Kintore; County / City: Aberdeen.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: CHRISTIAN; Year: 1841; Gender: F; Age at census: 5; RD Name: Kintore; County / City: Aberdeen.\n</ref>",
+    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: CHRISTIAN; Year: 1841; Gender: F; Age at census: 5; RD Name: Kintore; County / City: Aberdeen.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/1/5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: CHRISTIAN; Year: 1841; Gender: F; Age at census: 5; RD Name: Kintore; County / City: Aberdeen.",
+    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/ 1/ 5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: CHRISTIAN; Year: 1841; Gender: F; Age at census: 5; RD Name: Kintore; County / City: Aberdeen.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || CHRISTIAN\n|-\n| Year || 1841\n|-\n| Gender || F\n|-\n| Age at census || 5\n|-\n| RD Name || Kintore\n|-\n| County / City || Aberdeen\n|}\n</ref>",
+    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || CHRISTIAN\n|-\n| Year || 1841\n|-\n| Gender || F\n|-\n| Age at census || 5\n|-\n| RD Name || Kintore\n|-\n| County / City || Aberdeen\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || CHRISTIAN\n|-\n| Year || 1841\n|-\n| Gender || F\n|-\n| Age at census || 5\n|-\n| RD Name || Kintore\n|-\n| County / City || Aberdeen\n|}\n</ref>",
+    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || CHRISTIAN\n|-\n| Year || 1841\n|-\n| Gender || F\n|-\n| Age at census || 5\n|-\n| RD Name || Kintore\n|-\n| County / City || Aberdeen\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/1/5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: CHRISTIAN; Year: 1841; Gender: F; Age at census: 5; RD Name: Kintore; County / City: Aberdeen.",
+    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/ 1/ 5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: CHRISTIAN; Year: 1841; Gender: F; Age at census: 5; RD Name: Kintore; County / City: Aberdeen.",
     "type": "source"
   },
   "urlVisible_inline": {
-    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\nhttps://www.scotlandspeople.gov.uk/ (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\nhttps://www.scotlandspeople.gov.uk/ (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
     "type": "inline"
   },
   "urlVisible_narrative": {
-    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\nhttps://www.scotlandspeople.gov.uk/ (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
+    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\nhttps://www.scotlandspeople.gov.uk/ (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
     "type": "narrative"
   },
   "urlVisible_source": {
-    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/1/5<br/>https://www.scotlandspeople.gov.uk/ (accessed 6 May 2021)<br/>Christian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.",
+    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/ 1/ 5<br/>https://www.scotlandspeople.gov.uk/ (accessed 6 May 2021)<br/>Christian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.",
     "type": "source"
   },
   "urlBase_inline": {
-    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
     "type": "inline"
   },
   "urlBase_narrative": {
-    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/1/5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
+    "citation": "In the 1841 census Christian (age 5) was in Kintore, Aberdeenshire, Scotland.<ref>\n'''1841 Census''':\n\"Scotland Census, 1841\"<br/>\nNational Records of Scotland, Ref: 213/ 1/ 5<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nChristian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.\n</ref>",
     "type": "narrative"
   },
   "urlBase_source": {
-    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/1/5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Christian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.",
+    "citation": "* '''1841 Census''': \"Scotland Census, 1841\"<br/>National Records of Scotland, Ref: 213/ 1/ 5<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Christian Fraser (5) in Kintore registration district in Aberdeenshire, Scotland.",
     "type": "source"
   }
 }

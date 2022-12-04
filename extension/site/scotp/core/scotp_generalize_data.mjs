@@ -227,7 +227,8 @@ function getCountyNameFromSearchCriteria(data) {
 
   if (data.searchCriteria) {
     let searchCounty = data.searchCriteria["County/city"];
-    if (searchCounty) {
+
+    if (searchCounty && searchCounty.toLowerCase() == "all") {
       const county = getCountyDisplayName(searchCounty);
       if (county) {
         countyName = county.display_county;
@@ -331,7 +332,15 @@ function getCountyNameFromOprParish(data, townName, eventYear) {
         parishNumber = parishNumber.trim(); // often has space on end
       }
       for (let parish of parishes) {
-        if (parish.rdNo == parishNumber) {
+        let match = parish.rdNo == parishNumber;
+        if (!match) {
+          // after Nov 22 changes the Parish Number in recordData can be say "600" while it is "600/" in parishes
+          if (parish.rdNo.endsWith("/")) {
+            const cleanRdNo = parish.rdNo.substring(0, parish.rdNo.length - 1);
+            match = cleanRdNo == parishNumber;
+          }
+        }
+        if (match) {
           const county = getCountyDisplayName(parish.county);
           if (county) {
             countyName = county.display_county;
@@ -693,6 +702,9 @@ function cleanDdMonthYyyyDate(dateString) {
     return "";
   }
 
+  // After 22 Nov 2022, sometimes, rather than 23 FEBRUARY 1854 we have 23/FEBRUARY/1854
+  dateString = dateString.replace(/\s*\/\s*/g, " ");
+
   return WTS_String.toInitialCapsEachWord(dateString);
 }
 
@@ -796,7 +808,7 @@ function setSourcerRecordType(scotpRecordType, data, result) {
     if (eventType == "Death") {
       recordType = RT.Death;
     }
-  } else if (scotpRecordType == "ch3_baptism") {
+  } else if (scotpRecordType == "ch3_baptisms") {
     let birthDate = data.recordData["Birth Date"];
     let baptismDate = data.recordData["Baptism Date"];
     if (!baptismDate && birthDate) {
@@ -841,9 +853,7 @@ function setGender(scotpRecordType, data, result) {
   if (genderKey) {
     let gender = data.recordData[genderKey];
     // somtimes gender is "U" for unknown, it that case do not add a gender to result
-    if (gender == "M" || gender == "F") {
-      result.setPersonGender(gender);
-    }
+    result.setPersonGender(gender);
   }
 }
 
@@ -898,8 +908,8 @@ function setStatutoryCommonFields(data, result) {
   result.eventPlace = buildPlaceWithStatutoryDistrictName(data, data.recordData["RD Name"], data.recordData["Year"]);
 }
 
-function setOprCommonFields(data, result) {
-  let eventDate = cleanDdMmYyyyDate(data.recordData["Birth Date"]);
+function setOprCommonFields(data, result, date) {
+  let eventDate = cleanDdMmYyyyDate(date);
   result.setEventDate(eventDate);
   let eventYear = getYearFromStandardizedDate(eventDate);
   result.eventPlace = buildPlaceWithOprParishName(data, data.recordData["Parish"], eventYear);
@@ -1506,7 +1516,7 @@ function generalizeData(input) {
     case "census_lds":
       {
         result.setEventYear(data.recordData["Year"]);
-        result.setFieldIfValueExists("ageAtEvent", data.recordData["Age"]);
+        result.setFieldIfValueExists("ageAtEvent", data.recordData["Age at census"]);
         // can we extract registrationDistrict from censusPlace?
         result.eventPlace = buildPlaceWith1891LdsPlaceAndAddress(
           data.recordData["Census Place"],
@@ -1517,19 +1527,19 @@ function generalizeData(input) {
       break;
 
     case "opr_births":
-      setOprCommonFields(data, result);
-      setParents(scotpRecordType, data, result, "Parents/ Other Details");
+      setOprCommonFields(data, result, data.recordData["Birth Date"]);
+      setParents(scotpRecordType, data, result, "Parents/Other details");
       break;
 
     case "opr_deaths":
-      setOprCommonFields(data, result);
+      setOprCommonFields(data, result, data.recordData["Date"]);
       result.setFieldIfValueExists("ageAtDeath", data.recordData["Age"]);
-      setParents(scotpRecordType, data, result, "Parents/ Other Details");
+      setParents(scotpRecordType, data, result, "Parents/Other details");
       break;
 
     case "opr_marriages":
       {
-        setOprCommonFields(data, result);
+        setOprCommonFields(data, result, data.recordData["Date"]);
         result.recordSubtype = RecordSubtype.MarriageOrBanns; // no way to know which
 
         let spouseName = data.recordData["Spouse Name"];
@@ -1574,7 +1584,7 @@ function generalizeData(input) {
 
         result.eventPlace = buildPlaceWithRcParishCongregationName(data.recordData["Parish"], data);
 
-        setParents(scotpRecordType, data, result, "Parents/ Other details");
+        setParents(scotpRecordType, data, result, "Parents/Other details");
       }
       break;
 
@@ -1606,7 +1616,7 @@ function generalizeData(input) {
       }
       break;
 
-    case "ch3_baptism": // Other church type
+    case "ch3_baptisms": // Other church type
       {
         let birthDate = cleanDdMonthYyyyDate(data.recordData["Birth Date"]);
         let baptismDate = cleanDdMonthYyyyDate(data.recordData["Baptism Date"]);
@@ -1623,7 +1633,7 @@ function generalizeData(input) {
         );
         result.birthPlace = result.eventPlace;
 
-        setParents(scotpRecordType, data, result, "Parents/ Other Details");
+        setParents(scotpRecordType, data, result, "Parents/Other details");
       }
       break;
 

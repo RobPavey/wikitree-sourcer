@@ -7,29 +7,20 @@
     "Forename": "BARTLEY",
     "Year": "1871",
     "Gender": "M",
-    "Age at Census": "28",
+    "Age at census": "28",
     "Ref": "903/S 1/ 16",
     "RD Name": "Shipping - Merchant Navy",
-    "County/ City": "Shipping"
+    "County / City": "Shipping"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_census/12304450?image=16&return_row=0",
-  "pageHeader": "Census returns - Census",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/census/census-8927482_5751_903_S_1_/1816613640638a53cd89368?nojs=",
+  "pageHeader": "Census returns",
   "searchCriteria": {
-    "Surname": "'O'Connor'",
-    "Surname Option": "Exact",
+    "Surname": "O'Connor",
+    "Surname options": "Exact names only",
     "Forename": "BARTLEY",
-    "Forename Option": "Starts",
-    "Year": "1871"
+    "Forename options": "Names that begin with",
+    "County/city": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "census",
-    "surname": "O%26%23039%3BConnor",
-    "surname_so": "exact",
-    "forename": "BARTLEY",
-    "forename_so": "starts",
-    "second_person_forename_so": "exact",
-    "record_type": "census",
-    "year[0]": "1871"
-  }
+  "recordGroup": "census_returns",
+  "recordType": "census"
 }

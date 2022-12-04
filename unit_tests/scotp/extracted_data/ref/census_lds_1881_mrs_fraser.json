@@ -1,32 +1,27 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=%28Mrs%29%20Fraser&surname_so=exact&forename_so=starts&record_type=census_lds&year%5B0%5D=1881_LDS",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1337551842638a6f3a7b18b",
   "success": true,
+  "isRowSelected": true,
   "numResultsOnPage": 9,
   "recordData": {
     "Surname": "(Mrs) FRASER",
     "Forename": "",
     "Year": "1881",
     "Gender": "F",
-    "Age": "80",
+    "Age at census": "80",
     "Ref": "49855",
     "Address": "Dwelling: 36 Argyle St",
     "Census Place": "Inverness, Inverness, Scotland",
-    "Birth place": "Kiltarlity, Inverness, Scotland"
+    "Birth Place": "Kiltarlity, Inverness, Scotland"
   },
-  "imageLink": "",
-  "pageHeader": "Census returns - Census 1881 (LDS)",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/census_lds/census_lds-ea058e8a-5a8b-493d-bda9-32100583042f?search_token=1337551842638a6f3a7b18b",
+  "pageHeader": "Census Returns - Census 1881 (LDS)",
   "searchCriteria": {
+    "Census year": "1881_LDS",
     "Surname": "(Mrs) Fraser",
-    "Surname Option": "Exact",
-    "Year": "1881_LDS"
+    "Surname options": "Exact names only",
+    "County/city": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "census",
-    "surname": "(Mrs) Fraser",
-    "surname_so": "exact",
-    "forename_so": "starts",
-    "record_type": "census_lds",
-    "year[0]": "1881_LDS"
-  }
+  "recordGroup": "census_returns",
+  "recordType": "census_lds"
 }
