@@ -298,8 +298,8 @@ function parseQuery() {
     }
   }
 
-  console.log("parseQuery, result is:");
-  console.log(result);
+  //console.log("parseQuery, result is:");
+  //console.log(result);
 
   return result;
 }
@@ -658,8 +658,8 @@ function sendFormDataToSearchPage(path, formData) {
   // this stores the search data in local storage which is then picked up by the
   // content script in the new tab/window
   chrome.storage.local.set({ scotpSearchData: scotpSearchData }, async function () {
-    console.log("saved scotpSearchData, scotpSearchData is:");
-    console.log(scotpSearchData);
+    //console.log("saved scotpSearchData, scotpSearchData is:");
+    //console.log(scotpSearchData);
     window.location.href = path;
   });
 }
@@ -668,14 +668,14 @@ function doLegacySearch() {
   // example legacy search URL:
   // https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=O'CONNOR&forename=BARTLEY&year%5B0%5D=1871&sex=M&age_from=28&age_to=28&county=Shipping&rd_real_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY&rd_display_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY_SHIPPING%20-%20MERCHANT%20NAVY&rdno%5B0%5D=%20&ref=903%2FS%201%2F%2016
 
-  console.log("legacy search");
+  //console.log("legacy search");
 
   let urlQuery = parseQuery();
 
   let formData = legacyUrlQueryToFormData(urlQuery);
 
-  console.log("doLegacySearch, formData is:");
-  console.log(formData);
+  //console.log("doLegacySearch, formData is:");
+  //console.log(formData);
 
   if (formData && formData.fields && formData.fields.length > 0) {
     const searchUrl = "https://www.scotlandspeople.gov.uk/advanced-search/" + formData.urlPart;
@@ -684,7 +684,7 @@ function doLegacySearch() {
 }
 
 async function checkForPendingSearch() {
-  console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
+  //console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
 
   if (document.URL.includes("search_type=people")) {
     let isLegacy = false;
@@ -717,8 +717,8 @@ async function checkForPendingSearch() {
     let searchData = await getPendingSearch();
 
     if (searchData) {
-      console.log("checkForPendingSearch: got searchData:");
-      console.log(searchData);
+      //console.log("checkForPendingSearch: got searchData:");
+      //console.log(searchData);
 
       let searchUrl = searchData.url;
       let timeStamp = searchData.timeStamp;

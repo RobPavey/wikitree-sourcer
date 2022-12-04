@@ -461,8 +461,8 @@ const scotpRecordTypes = {
     recordKeys: { ref: "Ref", gender: "Gender", age: "Age" },
     search: { ageRange: true, rd: false, county: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
-    searchFields: { forename: "edit-search-params-nrs-given-name" },
     searchFields: {
+      forename: "edit-search-params-nrs-given-name",
       rdName: "edit-search-params-str-district",
     },
     searchStdText: "&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS",

@@ -375,8 +375,8 @@ const ScotpData = {
       }
     }
 
-    console.log("messages returned is:");
-    console.log(messages);
+    //console.log("messages returned is:");
+    //console.log(messages);
 
     return messages;
   },

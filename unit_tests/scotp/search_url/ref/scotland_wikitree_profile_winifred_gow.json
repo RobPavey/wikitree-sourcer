@@ -1,23 +1,309 @@
 {
   "std": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&from_year=1890&to_year=1900&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F&county=RENFREW"
+    "urlPart": "statutory-records/stat-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1890"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1900"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Gow"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Winifred Agnes"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      }
+    ]
   },
   "rc_baptism": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=crbirths_baptism&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-births-baptisms&from_year=1890&to_year=1900&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F&parent_names=Jane%20Holmes&parent_names_so=soundex&county=RENFREW&mp_code%5B0%5D=MP&mp_no%5B0%5D=6&parish_title%5B0%5D=GREENOCK%2C%20ST%20MARY'S"
+    "urlPart": "church-registers/church-births-baptisms/cr-baptisms",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1890"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1900"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Gow"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Winifred Agnes"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-2",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-str-parish-congregation",
+        "type": "multipleSelect",
+        "values": [
+          "MP|6|GREENOCK, ST MARY'S"
+        ]
+      }
+    ]
   },
   "stat_death": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&record_type=stat_deaths&from_year=1984&to_year=1994&birth_year=1895&birth_year_range=1&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F&county=EDINBURGH%20CITY"
+    "urlPart": "statutory-records/stat-deaths",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1984"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1994"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-dob",
+        "type": "text",
+        "value": "1895"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-birth-year-range",
+        "type": "select",
+        "value": 1
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Gow"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Winifred Agnes"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      }
+    ]
   },
   "stat_marriage": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-marriages&record_type=stat_marriages&from_year=1918&to_year=1928&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F&spsurname=Phillips&spsurname_so=soundex&spforename=Alexander&spforename_so=soundex&county=RENFREW"
+    "urlPart": "statutory-records/stat-marriages",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1918"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1928"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Gow"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Winifred Agnes"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-2",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "text",
+        "value": "Phillips"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "text",
+        "value": "Alexander"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "so",
+        "value": "soundex"
+      }
+    ]
   },
   "stat_marriage_no_spouse": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-marriages&record_type=stat_marriages&from_year=1910&to_year=1989&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F"
+    "urlPart": "statutory-records/stat-marriages",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1910"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1989"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Gow"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Winifred Agnes"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-2",
+        "type": "radio",
+        "value": true
+      }
+    ]
   },
   "valuation": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&year%5B0%5D=1895&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex"
+    "urlPart": "valuation-rolls/vr",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-year-1895",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Gow"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Winifred Agnes"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      }
+    ]
   },
   "prison": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=prison&record_type=prison_records&from_year=1895&to_year=1921&surname=Gow&surname_so=soundex&forename=Winifred%20Agnes&forename_so=soundex&sex=F"
+    "urlPart": "prison-registers/prison-records",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-hss-yearadmitted-year-from",
+        "type": "text",
+        "value": "1895"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-yearadmitted-year-to",
+        "type": "text",
+        "value": "1921"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Gow"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Winifred Agnes"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      }
+    ]
   }
 }

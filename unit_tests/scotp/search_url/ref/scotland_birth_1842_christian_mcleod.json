@@ -1,20 +1,277 @@
 {
   "std": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&from_year=1841&to_year=1843&surname=Mcleod&surname_so=soundex&forename=Christian&forename_so=soundex&sex=F&parent_names=William%20Mcleod&parent_names_so=soundex&parent_name_two=Helen%20White&parent_name_two_so=soundex&county=ABERDEEN&rd_display_name%5B0%5D=RAYNE_RAYNE&rd_name%5B0%5D=RAYNE"
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1841"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1843"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Mcleod"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Christian"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-rd-name",
+        "type": "multipleSelect",
+        "values": [
+          "RAYNE_RAYNE"
+        ]
+      }
+    ]
   },
   "noFather": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&from_year=1841&to_year=1843&surname=Mcleod&surname_so=soundex&forename=Christian&forename_so=soundex&sex=F&parent_names=Helen%20White&parent_names_so=soundex&county=ABERDEEN&rd_display_name%5B0%5D=RAYNE_RAYNE&rd_name%5B0%5D=RAYNE"
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1841"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1843"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Mcleod"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Christian"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-rd-name",
+        "type": "multipleSelect",
+        "values": [
+          "RAYNE_RAYNE"
+        ]
+      }
+    ]
   },
   "noMother": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&from_year=1841&to_year=1843&surname=Mcleod&surname_so=soundex&forename=Christian&forename_so=soundex&sex=F&parent_names=William%20Mcleod&parent_names_so=soundex&county=ABERDEEN&rd_display_name%5B0%5D=RAYNE_RAYNE&rd_name%5B0%5D=RAYNE"
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1841"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1843"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Mcleod"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Christian"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-rd-name",
+        "type": "multipleSelect",
+        "values": [
+          "RAYNE_RAYNE"
+        ]
+      }
+    ]
   },
   "noParents": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&from_year=1841&to_year=1843&surname=Mcleod&surname_so=soundex&forename=Christian&forename_so=soundex&sex=F&county=ABERDEEN&rd_display_name%5B0%5D=RAYNE_RAYNE&rd_name%5B0%5D=RAYNE"
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1841"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1843"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Mcleod"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Christian"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-rd-name",
+        "type": "multipleSelect",
+        "values": [
+          "RAYNE_RAYNE"
+        ]
+      }
+    ]
   },
   "birthRange10": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&from_year=1832&to_year=1852&surname=Mcleod&surname_so=soundex&forename=Christian&forename_so=soundex&sex=F&county=ABERDEEN&rd_display_name%5B0%5D=RAYNE_RAYNE&rd_name%5B0%5D=RAYNE"
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1832"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1852"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Mcleod"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Christian"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-rd-name",
+        "type": "multipleSelect",
+        "values": [
+          "RAYNE_RAYNE"
+        ]
+      }
+    ]
   },
   "searchDeath": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=D&record_type%5B0%5D=opr_deaths&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-deaths-burials&from_year=1842&to_year=1885&surname=Mcleod&surname_so=soundex&forename=Christian&forename_so=soundex&sex=F"
+    "urlPart": "church-registers/church-deaths-burials/opr-deaths",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1842"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1885"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Mcleod"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Christian"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      }
+    ]
   }
 }

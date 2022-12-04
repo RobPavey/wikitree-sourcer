@@ -169,7 +169,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
   }
 
   let placeCountyName = wtsPlace.inferCounty();
-  console.log("getSearchCountyFromWtsPlace: placeCountyName : " + placeCountyName);
+  //console.log("getSearchCountyFromWtsPlace: placeCountyName : " + placeCountyName);
 
   if (!placeCountyName) {
     return "";

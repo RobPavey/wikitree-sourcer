@@ -60,10 +60,6 @@ function extractFromSearchResults(document, url, result) {
     return;
   }
 
-  console.log(
-    `extractFromSearchResults: headerCells.length = ${headerCells.length}, rowCells.length = ${rowCells.length}`
-  );
-
   result.numResultsOnPage = rowElements.length;
 
   result.recordData = {};
@@ -74,7 +70,7 @@ function extractFromSearchResults(document, url, result) {
 
     let headerText = headerCell.textContent;
 
-    console.log(`extractFromSearchResults: headerText = ${headerText}`);
+    //console.log(`extractFromSearchResults: headerText = ${headerText}`);
 
     if (headerText) {
       let rowDataElement = rowCell.querySelector("div.table-row-cell-data");
@@ -88,13 +84,13 @@ function extractFromSearchResults(document, url, result) {
       }
     } else {
       // Note that we can also get the key name from the row cell in a couple of ways
-      console.log(`extractFromSearchResults: image column`);
+      //console.log(`extractFromSearchResults: image column`);
       // The Image View column has three options:
       // 1. The user has bought this image
       // 2. The user hasn't bought image but has enough credits
       // 3. The user hasn't bought image and doesn't have enough credits (no image link available)
       let viewedImageLinkElement = rowCell.querySelector("a.view-image-button");
-      console.log(`extractFromSearchResults: viewedImageLinkElement = ${viewedImageLinkElement}`);
+      //console.log(`extractFromSearchResults: viewedImageLinkElement = ${viewedImageLinkElement}`);
       if (viewedImageLinkElement) {
         let linkText = viewedImageLinkElement.getAttribute("href");
         result.imageLink = linkText;
@@ -255,7 +251,7 @@ function extractData(document, url) {
     }
   }
 
-  console.log(result);
+  //console.log(result);
 
   return result;
 }

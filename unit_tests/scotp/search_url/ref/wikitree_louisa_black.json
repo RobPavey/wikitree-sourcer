@@ -1,8 +1,82 @@
 {
   "std": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&from_year=1881&to_year=1891&surname=Black&surname_so=soundex&forename=Louisa%20Annie&forename_so=soundex&sex=F&county=ABERDEEN%20CITY"
+    "urlPart": "statutory-records/stat-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1881"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1891"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Black"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Louisa Annie"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      }
+    ]
   },
   "exactDate": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&from_year=1886&to_year=1886&surname=Black&surname_so=soundex&forename=Louisa%20Annie&forename_so=soundex&sex=F&county=ABERDEEN%20CITY"
+    "urlPart": "statutory-records/stat-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1886"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1886"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Black"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Louisa Annie"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      }
+    ]
   }
 }

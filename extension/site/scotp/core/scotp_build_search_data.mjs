@@ -507,18 +507,8 @@ function setPlace(data, scotpRecordType, parameters, options, builder, dates) {
   let countySearchParam = ScotpRecordType.getSearchField(scotpRecordType, SpField.county);
   if (countySearchParam && ScotpRecordType.hasSearchFeature(SpFeature.county)) {
     if (wtsPlace) {
-      console.log("setPlace: parameters : ");
-      console.log(parameters);
-      console.log("setPlace: data : ");
-      console.log(data);
-      console.log("setPlace: wtsPlace : ");
-      console.log(wtsPlace);
-
       let countyName = getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace);
-      console.log("setPlace: about to add county, countyName : " + countyName);
-
       countyName = adjustCountyForSpecialCases(countyName, scotpRecordType, wtsPlace, dates);
-      console.log("setPlace: adjusted countyName : " + countyName);
 
       if (countyName) {
         builder.addSelectField(countySearchParam, countyName);
@@ -701,7 +691,7 @@ function buildSearchData(input) {
 
   let result = builder.getFormData();
 
-  console.log("result is " + result);
+  //console.log("result is " + result);
 
   return result;
 }
