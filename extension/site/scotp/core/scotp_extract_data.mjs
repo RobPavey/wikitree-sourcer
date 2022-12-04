@@ -31,6 +31,18 @@ function getSelectedRow(document) {
   }
 }
 
+function getTextOfImmediateTextNodes(element) {
+  let text = "";
+  for (let child of element.childNodes) {
+    if (child.nodeType === 3) {
+      // Node.TEXT_NODE not available in Node.js
+      text += child.textContent;
+    }
+  }
+
+  return text;
+}
+
 function extractFromSearchResults(document, url, result) {
   let resultsTable = document.querySelector("table.results-table");
   if (!resultsTable) {
@@ -68,7 +80,16 @@ function extractFromSearchResults(document, url, result) {
     let headerCell = headerCells[index];
     let rowCell = rowCells[index];
 
-    let headerText = headerCell.textContent;
+    // If the column has been clicked on to sort it then textContent will get extra text
+    //let headerText = headerCell.textContent;
+    // So only get the text of the immediate child text nodes
+    let headerTextParentElement = headerCell;
+    let headerLink = headerCell.querySelector("a");
+    if (headerLink) {
+      headerTextParentElement = headerLink;
+    }
+    let headerText = getTextOfImmediateTextNodes(headerTextParentElement);
+    headerText = headerText.trim();
 
     //console.log(`extractFromSearchResults: headerText = ${headerText}`);
 

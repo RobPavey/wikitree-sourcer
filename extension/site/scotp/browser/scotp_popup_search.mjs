@@ -66,8 +66,8 @@ async function scotpSearch(generalizedData, parameters) {
       // this stores the search data in local storage which is then picked up by the
       // content script in the new tab/window
       chrome.storage.local.set({ scotpSearchData: scotpSearchData }, function () {
-        console.log("saved scotpSearchData, scotpSearchData is:");
-        console.log(scotpSearchData);
+        //console.log("saved scotpSearchData, scotpSearchData is:");
+        //console.log(scotpSearchData);
 
         if (options.search_general_new_window) {
           chrome.windows.create({ url: searchUrl });
