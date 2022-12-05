@@ -43,6 +43,7 @@ const SpField = {
   forename: "forename",
   fullName: "fullName",
   gender: "gender",
+  mmn: "mmn",
   occupation: "occupation",
   parents: "parents",
   parishName: "parishName",
@@ -67,6 +68,7 @@ const SpFeature = {
   oprParish: "oprParish",
   otherParish: "otherParish",
   parents: "parents",
+  mmn: "mmn",
   rcParish: "rcParish",
   rd: "rd",
   spouse: "spouse",
@@ -101,8 +103,10 @@ const scotpRecordTypes = {
     dates: { from: 1855, to: 0 },
     eventClass: "birth",
     recordKeys: { ref: "Ref", gender: "Gender", rdName: "RD Name" },
+    search: { mmn: true },
     searchFields: {
       rdName: "edit-search-params-str-district",
+      mmn: "edit-search-params-nrs-mmsurname",
     },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births",
     searchUrl: "statutory-records/stat-births",
@@ -154,9 +158,10 @@ const scotpRecordTypes = {
     dates: { from: 1855, to: 0 },
     eventClass: "death",
     recordKeys: { ref: "Ref", age: "Age at death", rdName: "RD Name" },
-    search: { ageRange: true, birthYear: true },
+    search: { ageRange: true, birthYear: true, mmn: true },
     searchFields: {
       rdName: "edit-search-params-str-district",
+      mmn: "edit-search-params-nrs-mmsurname",
     },
     searchStdText: "&dl_cat=statutory&dl_rec=statutory-deaths&record_type=stat_deaths",
     searchUrl: "statutory-records/stat-deaths",
@@ -210,7 +215,7 @@ const scotpRecordTypes = {
     collectionNrsLink:
       "https://www.nrscotland.gov.uk/research/guides/birth-death-and-marriage-records/old-parish-registers/births-and-baptisms",
     collectionNrsTitle: "Old Parish Registers - Births and Baptisms",
-    dates: { from: 1553, to: 1885 },
+    dates: { from: 1553, to: 1855 },
     eventClass: "birth",
     recordKeys: {
       ref: "Ref",
@@ -232,7 +237,7 @@ const scotpRecordTypes = {
     collectionNrsLink:
       "https://www.nrscotland.gov.uk/research/guides/birth-death-and-marriage-records/old-parish-registers/marriages-and-proclamation-of-banns",
     collectionNrsTitle: "Old Parish Registers - Marriages and Proclamation of Banns",
-    dates: { from: 1553, to: 1885 },
+    dates: { from: 1553, to: 1855 },
     eventClass: "marriage",
     recordKeys: {
       ref: "Ref",
@@ -255,7 +260,7 @@ const scotpRecordTypes = {
     collectionNrsLink:
       "https://www.nrscotland.gov.uk/research/guides/birth-death-and-marriage-records/old-parish-registers/deaths-and-burials",
     collectionNrsTitle: "Old Parish Registers - Deaths and Burials",
-    dates: { from: 1553, to: 1885 },
+    dates: { from: 1553, to: 1855 },
     eventClass: "death",
     recordKeys: { ref: "Ref", gender: "Gender", parishName: "Parish" },
     search: { oprParish: true, rd: false },
@@ -272,7 +277,7 @@ const scotpRecordTypes = {
   cr_baptisms: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/births-and-baptisms",
     collectionNrsTitle: "Catholic Parish Registers - Births and Baptisms",
-    dates: { from: 1703, to: 1921 },
+    dates: { from: 1703, to: 1919 },
     eventClass: "birth",
     recordKeys: {
       parishName: "Parish",
@@ -293,7 +298,7 @@ const scotpRecordTypes = {
   cr_banns: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/marriages",
     collectionNrsTitle: "Catholic Parish Registers - Marriages",
-    dates: { from: 1736, to: 1946 },
+    dates: { from: 1736, to: 1944 },
     eventClass: "marriage",
     recordKeys: {
       parishName: "Parish",
@@ -321,7 +326,7 @@ const scotpRecordTypes = {
     collectionNrsLink:
       "https://www.nrscotland.gov.uk/research/guides/catholic-parish-registers/deaths-burials-and-funerals",
     collectionNrsTitle: "Catholic Parish Registers - Deaths, Burials and Funerals",
-    dates: { from: 1742, to: 1971 },
+    dates: { from: 1742, to: 0 },
     eventClass: "death",
     recordKeys: { parishName: "Parish", gender: "Gender", age: "Age" },
     search: { rd: false, rcParish: true, ageRange: true },
@@ -435,7 +440,7 @@ const scotpRecordTypes = {
   census: {
     collectionNrsLink: "https://www.nrscotland.gov.uk/research/guides/census-records",
     collectionNrsTitle: "Census Returns",
-    dates: { from: 1841, to: 1911 },
+    dates: { from: 1841, to: 1921 },
     eventClass: "census",
     record: { county: true },
     recordKeys: {

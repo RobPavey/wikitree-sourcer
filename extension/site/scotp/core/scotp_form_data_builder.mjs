@@ -192,6 +192,15 @@ class ScotpFormDataBuilder {
     // not used in search
   }
 
+  addMothersMaidenName(string, searchOption) {
+    let fieldName = ScotpRecordType.getSearchField(this.recordType, SpField.mmn);
+
+    if (fieldName) {
+      this.addTextField(fieldName, string);
+      this.addSearchOption(fieldName, searchOption);
+    }
+  }
+
   addOtherPersonForename(string, searchOption) {
     if (string) {
       this.addTextField("edit-search-params-nrs-otherforename", string);

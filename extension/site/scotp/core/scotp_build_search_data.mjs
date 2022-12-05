@@ -613,6 +613,15 @@ function setParents(data, scotpRecordType, parameters, options, builder) {
     }
   }
   */
+
+  if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.mmn)) {
+    let searchOption = options.search_scotp_parentNameSoundex ? "soundex" : "exact";
+
+    let mmn = data.mothersMaidenName;
+    if (mmn && parameters.mmn) {
+      builder.addMothersMaidenName(mmn, searchOption);
+    }
+  }
 }
 
 function setSpouse(data, scotpRecordType, parameters, options, builder) {

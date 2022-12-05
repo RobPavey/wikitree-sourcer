@@ -44,7 +44,7 @@ const subcategories = [
     value: "stat_births",
     text: "Births",
     category: "statutory",
-    includeParents: true,
+    includeMmn: true,
   },
   {
     value: "stat_marriages",
@@ -62,7 +62,7 @@ const subcategories = [
     value: "stat_deaths",
     text: "Deaths",
     category: "statutory",
-    includeParents: true,
+    includeMmn: true,
   },
   {
     value: "stat_civilpartnerships",
@@ -242,6 +242,22 @@ const ScotpData = {
     }
 
     if (selectedSubcategory && selectedSubcategory.includeParents) {
+      return true;
+    }
+    return false;
+  },
+
+  includeMmn: function (generalizedData, parameters) {
+    let selectedSubcategory = undefined;
+    for (let subcategory of subcategories) {
+      if (!subcategory.category || subcategory.category == parameters.category) {
+        if (subcategory.value == parameters.subcategory) {
+          selectedSubcategory = subcategory;
+        }
+      }
+    }
+
+    if (selectedSubcategory && selectedSubcategory.includeMmn) {
       return true;
     }
     return false;
