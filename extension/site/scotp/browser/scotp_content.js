@@ -239,7 +239,7 @@ function hideElementsDuringSearch() {
 
   const titleElement = document.querySelector("#page-wrapper div.content h1.title");
   if (titleElement) {
-    titleElement.innerText = "Performing WikiTree Sourcer search...";
+    titleElement.innerText = "Performing WikiTree Sourcer search on ScotlandsPeople...";
   }
 
   hideBySelector("#cart_summary");
@@ -678,6 +678,7 @@ function doLegacySearch() {
   //console.log(formData);
 
   if (formData && formData.fields && formData.fields.length > 0) {
+    hideElementsDuringSearch();
     const searchUrl = "https://www.scotlandspeople.gov.uk/advanced-search/" + formData.urlPart;
     sendFormDataToSearchPage(searchUrl, formData);
   }
@@ -713,6 +714,12 @@ async function checkForPendingSearch() {
 
   if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/advanced-search/")) {
     //console.log("checkForPendingSearch: URL matches");
+
+    // check logged in
+    const loginElement = document.querySelector("div.log-in");
+    if (loginElement) {
+      return;
+    }
 
     let searchData = await getPendingSearch();
 
