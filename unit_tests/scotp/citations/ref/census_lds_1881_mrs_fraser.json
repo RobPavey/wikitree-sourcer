@@ -1,50 +1,50 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1881 census Fraser (age 80) was at 36 Argyle St, Inverness, Inverness, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1881 census Fraser (age 80) was at 36 Argyle St, Inverness, Inverness, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 49855<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 49855<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nFraser (80) in Inverness, Inverness, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nFraser (80) in Inverness, Inverness, Scotland. Born in Kiltarlity, Inverness, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "In the 1881 census Fraser (age 80) was at 36 Argyle St, Inverness, Inverness, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nFraser (80) in Inverness, Inverness, Scotland.\n</ref>",
+    "citation": "In the 1881 census Fraser (age 80) was at 36 Argyle St, Inverness, Inverness, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nFraser (80) in Inverness, Inverness, Scotland. Born in Kiltarlity, Inverness, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 49855<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Fraser (80) in Inverness, Inverness, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 49855<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Fraser (80) in Inverness, Inverness, Scotland. Born in Kiltarlity, Inverness, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: (Mrs) FRASER; Year: 1881; Gender: F; Age: 80; Address: Dwelling: 36 Argyle St; Census Place: Inverness, Inverness, Scotland; Birth place: Kiltarlity, Inverness, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: (Mrs) FRASER; Year: 1881; Gender: F; Age at census: 80; Address: Dwelling: 36 Argyle St; Census Place: Inverness, Inverness, Scotland; Birth Place: Kiltarlity, Inverness, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "In the 1881 census Fraser (age 80) was at 36 Argyle St, Inverness, Inverness, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: (Mrs) FRASER; Year: 1881; Gender: F; Age: 80; Address: Dwelling: 36 Argyle St; Census Place: Inverness, Inverness, Scotland; Birth place: Kiltarlity, Inverness, Scotland.\n</ref>",
+    "citation": "In the 1881 census Fraser (age 80) was at 36 Argyle St, Inverness, Inverness, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: (Mrs) FRASER; Year: 1881; Gender: F; Age at census: 80; Address: Dwelling: 36 Argyle St; Census Place: Inverness, Inverness, Scotland; Birth Place: Kiltarlity, Inverness, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 49855<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: (Mrs) FRASER; Year: 1881; Gender: F; Age: 80; Address: Dwelling: 36 Argyle St; Census Place: Inverness, Inverness, Scotland; Birth place: Kiltarlity, Inverness, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 49855<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: (Mrs) FRASER; Year: 1881; Gender: F; Age at census: 80; Address: Dwelling: 36 Argyle St; Census Place: Inverness, Inverness, Scotland; Birth Place: Kiltarlity, Inverness, Scotland.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || (Mrs) FRASER\n|-\n| Forename || \n|-\n| Year || 1881\n|-\n| Gender || F\n|-\n| Age || 80\n|-\n| Address || Dwelling: 36 Argyle St\n|-\n| Census Place || Inverness, Inverness, Scotland\n|-\n| Birth place || Kiltarlity, Inverness, Scotland\n|}\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || (Mrs) FRASER\n|-\n| Forename || \n|-\n| Year || 1881\n|-\n| Gender || F\n|-\n| Age at census || 80\n|-\n| Address || Dwelling: 36 Argyle St\n|-\n| Census Place || Inverness, Inverness, Scotland\n|-\n| Birth Place || Kiltarlity, Inverness, Scotland\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "In the 1881 census Fraser (age 80) was at 36 Argyle St, Inverness, Inverness, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || (Mrs) FRASER\n|-\n| Forename || \n|-\n| Year || 1881\n|-\n| Gender || F\n|-\n| Age || 80\n|-\n| Address || Dwelling: 36 Argyle St\n|-\n| Census Place || Inverness, Inverness, Scotland\n|-\n| Birth place || Kiltarlity, Inverness, Scotland\n|}\n</ref>",
+    "citation": "In the 1881 census Fraser (age 80) was at 36 Argyle St, Inverness, Inverness, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 49855<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || (Mrs) FRASER\n|-\n| Forename || \n|-\n| Year || 1881\n|-\n| Gender || F\n|-\n| Age at census || 80\n|-\n| Address || Dwelling: 36 Argyle St\n|-\n| Census Place || Inverness, Inverness, Scotland\n|-\n| Birth Place || Kiltarlity, Inverness, Scotland\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 49855<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=(Mrs)%20FRASER&sex=F&age_from=80&age_to=80&ref=49855 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: (Mrs) FRASER; Year: 1881; Gender: F; Age: 80; Address: Dwelling: 36 Argyle St; Census Place: Inverness, Inverness, Scotland; Birth place: Kiltarlity, Inverness, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 49855<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: (Mrs) FRASER; Year: 1881; Gender: F; Age at census: 80; Address: Dwelling: 36 Argyle St; Census Place: Inverness, Inverness, Scotland; Birth Place: Kiltarlity, Inverness, Scotland.",
     "type": "source"
   }
 }

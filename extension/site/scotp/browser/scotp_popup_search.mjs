@@ -48,9 +48,37 @@ async function scotpSearch(generalizedData, parameters) {
     generalizedData: generalizedData,
     options: options,
   };
+
   doAsyncActionWithCatch("ScotlandsPeople Search", input, async function () {
-    let loadedModule = await import(`../core/scotp_build_search_url.mjs`);
-    doSearch(loadedModule, input);
+    // since many site searchs can be on the popup for a site, it makes sense to dynamically
+    // load the build search module
+    let loadedModule = await import(`../core/scotp_build_search_data.mjs`);
+    let formData = loadedModule.buildSearchData(input);
+
+    const searchUrl = "https://www.scotlandspeople.gov.uk/advanced-search/" + formData.urlPart;
+    try {
+      const scotpSearchData = {
+        timeStamp: Date.now(),
+        url: searchUrl,
+        formData: formData,
+      };
+
+      // this stores the search data in local storage which is then picked up by the
+      // content script in the new tab/window
+      chrome.storage.local.set({ scotpSearchData: scotpSearchData }, function () {
+        //console.log("saved scotpSearchData, scotpSearchData is:");
+        //console.log(scotpSearchData);
+
+        if (options.search_general_new_window) {
+          chrome.windows.create({ url: searchUrl });
+        } else {
+          chrome.tabs.create({ url: searchUrl });
+        }
+        window.close();
+      });
+    } catch (ex) {
+      console.log("chrome.storage.local.set failed");
+    }
   });
 }
 

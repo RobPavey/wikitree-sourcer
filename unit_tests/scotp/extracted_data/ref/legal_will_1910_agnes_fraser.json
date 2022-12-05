@@ -1,38 +1,27 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-wills-testaments&surname=Fraser&surname_so=exact&forename=Agnes&forename_so=exact&from_year=1910&to_year=1910&description=or%20MacLeod%2C%20wife%20of%20Alexander%20Fraser%2C%20banker%2C%20308%20Maxwell%20Road%2C%20Pollokshields%2C%20Glasgow%2C%20wife%20of%20Alexander%20Fraser%2C%20Glasgow%2C%20d.%2027&record_type=wills_testaments",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
-  "numResultsOnPage": 2,
+  "numResultsOnPage": 1,
   "recordData": {
     "Surname": "Fraser",
     "Forename": "Agnes",
     "Date": "18/4/1910",
     "Description": "or MacLeod, wife of Alexander Fraser, banker, 308 Maxwell Road, Pollokshields, Glasgow, wife of Alexander Fraser, Glasgow, d. 27/12/1909 at Pollokshields, testate.",
     "Type": "",
-    "Court": "Glasgow Sheriff Court Inventories ",
+    "Court": "Glasgow Sheriff Court Inventories",
     "Reference Number": "SC36/48/224"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_wills_testaments/294637?image=1&return_row=0",
-  "pageHeader": "Legal records - Wills and testaments",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/wills/wills-%7B2F3AA583-6E3B-4FD9-9700-8C757BE877EA%7D/1186251614638cdbdf10355?nojs=",
+  "pageHeader": "Legal Records - Wills and testaments",
   "searchCriteria": {
     "Surname": "Fraser",
-    "Surname Option": "Exact",
+    "Surname options": "Exact names only",
     "Forename": "Agnes",
-    "Forename Option": "Exact",
-    "From_year": "1910",
-    "To_year": "1910",
-    "Description": "Or MacLeod, Wife Of Alexander Fraser, Banker, 308 Maxwell Road, Pollokshields, Glasgow, Wife Of Alexander Fraser, Glasgow, D. 27"
+    "Forename options": "Exact names only",
+    "Year range": "from 1910 to 1910",
+    "Description (title/occupation/place)": "or MacLeod, wife of Alexander Fraser, banker, 308 Maxwell Road, Pollokshields, Glasgow, wife of Alexander Fraser, Glasgow, d. 27",
+    "Court/Commissariot": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "legal",
-    "dl_rec": "legal-wills-testaments",
-    "surname": "Fraser",
-    "surname_so": "exact",
-    "forename": "Agnes",
-    "forename_so": "exact",
-    "from_year": "1910",
-    "to_year": "1910",
-    "description": "or MacLeod%2C wife of Alexander Fraser%2C banker%2C 308 Maxwell Road%2C Pollokshields%2C Glasgow%2C wife of Alexander Fraser%2C Glasgow%2C d. 27",
-    "record_type": "wills_testaments"
-  }
+  "recordGroup": "legal_records",
+  "recordType": "wills"
 }

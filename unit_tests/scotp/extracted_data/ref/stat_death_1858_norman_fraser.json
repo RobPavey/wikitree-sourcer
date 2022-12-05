@@ -1,40 +1,29 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&surname=Fraser&surname_so=exact&forename=Norman&forename_so=starts&other_surname_so=exact&mmsurname_so=exact&birth_year_range=1&rd_real_name%5B0%5D=GREENOCK%20OLD%20OR%20WEST%20OR%20GREENOCK%20WEST%20OR%20GREENOCK%20MIDDLE%20OR%20GREENOCK%20NEW%20OR%20MIDDLE%20OR%20GREENOCK%20EAST%20OR%20GREENOCK&rd_display_name%5B0%5D=GREENOCK%20OLD%20OR%20WEST%7CGREENOCK%20WEST%7CGREENOCK%20MIDDLE%7CGREENOCK%20NEW%20OR%20MIDDLE%7CGREENOCK%20EAST%7CGREENOCK_GREENOCK&rdno%5B0%5D=GREENOCK%20OLD%20OR%20WEST%20OR%20GREENOCK%20WEST%20OR%20GREENOCK%20MIDDLE%20OR%20GREENOCK%20NEW%20OR%20MIDDLE%20OR%20GREENOCK%20EAST%20OR%20GREENOCK&record_type=stat_deaths",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
+  "isRowSelected": true,
   "numResultsOnPage": 1,
   "recordData": {
     "Surname": "FRASER",
     "Forename": "NORMAN",
     "Age at death": "0",
     "Mother's Maiden Name": "ROBERTSON",
+    "Gender": "M",
     "Year": "1858",
-    "Ref": "564/3 102",
+    "Ref": "564/3/102",
     "RD Name": "Greenock Old or West"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_stat_deaths/178180?return_row=0",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/stat_deaths/stat_deaths-4779750_8200306/1169378296638cf6d657d36?nojs=",
   "pageHeader": "Statutory registers - Deaths",
   "searchCriteria": {
     "Surname": "Fraser",
-    "Surname Option": "Exact",
+    "Surname options": "Exact names only",
     "Forename": "Norman",
-    "Forename Option": "Starts",
-    "Birth_year_range": "1",
-    "Rdno": "GREENOCK OLD OR WEST OR GREENOCK WEST OR GREENOCK MIDDLE OR GREENOCK NEW OR MIDDLE OR GREENOCK EAST OR GREENOCK"
+    "Forename options": "Names that begin with",
+    "+/-": "1",
+    "County/city/minor records": "ALL",
+    "District": "GREENOCK"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "statutory",
-    "dl_rec": "statutory-deaths",
-    "surname": "Fraser",
-    "surname_so": "exact",
-    "forename": "Norman",
-    "forename_so": "starts",
-    "other_surname_so": "exact",
-    "mmsurname_so": "exact",
-    "birth_year_range": "1",
-    "rd_real_name[0]": "GREENOCK OLD OR WEST OR GREENOCK WEST OR GREENOCK MIDDLE OR GREENOCK NEW OR MIDDLE OR GREENOCK EAST OR GREENOCK",
-    "rd_display_name[0]": "GREENOCK OLD OR WEST|GREENOCK WEST|GREENOCK MIDDLE|GREENOCK NEW OR MIDDLE|GREENOCK EAST|GREENOCK_GREENOCK",
-    "rdno[0]": "GREENOCK OLD OR WEST OR GREENOCK WEST OR GREENOCK MIDDLE OR GREENOCK NEW OR MIDDLE OR GREENOCK EAST OR GREENOCK",
-    "record_type": "stat_deaths"
-  }
+  "recordGroup": "statutory_records",
+  "recordType": "stat_deaths"
 }

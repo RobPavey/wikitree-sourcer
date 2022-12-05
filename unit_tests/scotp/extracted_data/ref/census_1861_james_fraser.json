@@ -1,5 +1,5 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Fraser&surname_so=exact&forename=James&forename_so=starts&second_person_forename_so=exact&sex=M&age_from=30&age_to=32&county=LANARK&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=MILTON&record_type=census&year%5B0%5D=1861&year%5B1%5D=1871",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/156245878163869550b461a",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
@@ -7,42 +7,24 @@
     "Forename": "JAMES",
     "Year": "1861",
     "Gender": "M",
-    "Age at Census": "31",
+    "Age at census": "31",
     "Ref": "644/7 3/ 14",
     "RD Name": "Milton",
-    "County/ City": "Lanark"
+    "County / City": "Lanark"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_census/10423232?image=14&return_row=0",
-  "pageHeader": "Census returns - Census",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/census/census-7634379_4242_644_7_3_/1342421693638a4ff62de46?nojs=",
+  "pageHeader": "Census returns",
   "searchCriteria": {
+    "Census year": "1861, 1871",
     "Surname": "Fraser",
-    "Surname Option": "Exact",
+    "Surname options": "Exact names only",
     "Forename": "James",
-    "Forename Option": "Starts",
-    "Gender": "M",
-    "Age_from": "30",
-    "Age_to": "32",
-    "County": "LANARK",
-    "Rdno": "MILTON",
-    "Year": "1861, 1871"
+    "Forename options": "Names that begin with",
+    "Gender": "Male",
+    "Age range": "from 30 to 32",
+    "County/city": "LANARK",
+    "District": "MILTON"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "census",
-    "surname": "Fraser",
-    "surname_so": "exact",
-    "forename": "James",
-    "forename_so": "starts",
-    "second_person_forename_so": "exact",
-    "sex": "M",
-    "age_from": "30",
-    "age_to": "32",
-    "county": "LANARK",
-    "rd_real_name[0]": "MILTON",
-    "rd_display_name[0]": "MILTON_MILTON",
-    "rdno[0]": "MILTON",
-    "record_type": "census",
-    "year[0]": "1861",
-    "year[1]": "1871"
-  }
+  "recordGroup": "census_returns",
+  "recordType": "census"
 }

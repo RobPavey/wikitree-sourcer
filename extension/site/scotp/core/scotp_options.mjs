@@ -148,6 +148,7 @@ const citationOptionsGroup = {
           value: "base",
           text: "Just https://www.scotlandspeople.gov.uk/ as a WikiTree external link",
         },
+        /*
         {
           value: "original",
           text: "The search URL used on the page the citation was created on",
@@ -164,9 +165,10 @@ const citationOptionsGroup = {
           value: "short",
           text: "A shorter search URL created by Sourcer that avoids the verbose search parameters",
         },
+        */
       ],
-      defaultValue: "best",
-      unitTestValue: "created",
+      defaultValue: "base",
+      unitTestValue: "base",
     },
     {
       optionName: "databaseTitle",
@@ -182,12 +184,14 @@ const citationOptionsGroup = {
       defaultValue: "nrs",
       unitTestValue: "nrs",
     },
+    /*
     {
       optionName: "urlIncludeRef",
       type: "checkbox",
       label: "Include a '&ref=' query in search URL. It will only have effect for Sourcer users.",
       defaultValue: true,
     },
+    */
   ],
 };
 

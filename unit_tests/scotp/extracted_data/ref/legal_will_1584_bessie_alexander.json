@@ -1,5 +1,5 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-wills-testaments&surname=Alexander&surname_so=exact&forename=bessie&forename_so=starts&from_year=1584&to_year=1584&record_type=wills_testaments",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
@@ -8,29 +8,19 @@
     "Date": "27/5/1584",
     "Description": "sometime spouse to Duncan Ronnald in Popiltreis, sheriffdom of Stirling",
     "Type": "Testament Dative and Inventory",
-    "Court": "Edinburgh Commissary Court ",
+    "Court": "Edinburgh Commissary Court",
     "Reference Number": "CC8/8/13"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_wills_testaments/10724?image=1&return_row=0",
-  "pageHeader": "Legal records - Wills and testaments",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/wills/wills-%7BB44C1A3D-DDDC-11D6-8308-00C04F24C283%7D/776518242638cca59bba56?nojs=",
+  "pageHeader": "Legal Records - Wills and testaments",
   "searchCriteria": {
     "Surname": "Alexander",
-    "Surname Option": "Exact",
-    "Forename": "Bessie",
-    "Forename Option": "Starts",
-    "From_year": "1584",
-    "To_year": "1584"
+    "Surname options": "Exact names only",
+    "Forename": "bessie",
+    "Forename options": "Names that begin with",
+    "Year range": "from 1584 to 1584",
+    "Court/Commissariot": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "legal",
-    "dl_rec": "legal-wills-testaments",
-    "surname": "Alexander",
-    "surname_so": "exact",
-    "forename": "bessie",
-    "forename_so": "starts",
-    "from_year": "1584",
-    "to_year": "1584",
-    "record_type": "wills_testaments"
-  }
+  "recordGroup": "legal_records",
+  "recordType": "wills"
 }

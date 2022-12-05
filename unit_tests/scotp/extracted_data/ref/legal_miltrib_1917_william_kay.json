@@ -1,30 +1,24 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-military-service&surname=Kay&surname_so=exact&forenames_so=starts&record_type=military_tribunals",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 13,
   "recordData": {
     "Surname": "Kay",
-    "Forename": "William Hodgson Hetherington",
+    "Forenames": "William Hodgson Hetherington",
     "Occupation": "Business manager",
     "Court": "Haddington",
     "Grounds of Appeal": "Occupation",
-    "Date of Appeal": "09/03/1917",
+    "Date of Appeal": "1917-03-09",
     "Decision": "Appeal dismissed",
     "Notes": "Appeal submitted by employers, The Kilspindie Hosiery Co., wholesale (home and export) hosiery warehousemen, Haddington, Scotland."
   },
-  "imageLink": "",
-  "pageHeader": "Legal records - Military Tribunals",
+  "imageLink": "https://www.scotlandspeople.gov.uk/buy-credits?destination=/record-results/148543195638cc565bafa3&get-referer=1&nojs=",
+  "pageHeader": "Legal Records - Military service appeals tribunal",
   "searchCriteria": {
     "Surname": "Kay",
-    "Surname Option": "Exact"
+    "Surname options": "Exact names only",
+    "Tribunal": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "legal",
-    "dl_rec": "legal-military-service",
-    "surname": "Kay",
-    "surname_so": "exact",
-    "forenames_so": "starts",
-    "record_type": "military_tribunals"
-  }
+  "recordGroup": "legal_records",
+  "recordType": "military_tribunals"
 }

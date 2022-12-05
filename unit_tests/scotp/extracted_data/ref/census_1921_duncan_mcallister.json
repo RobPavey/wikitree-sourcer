@@ -1,0 +1,28 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1269622268638a5ec62d120",
+  "success": true,
+  "isRowSelected": true,
+  "numResultsOnPage": 13,
+  "recordData": {
+    "Surname": "MCALLISTER",
+    "Forename": "DUNCAN",
+    "Year": "1921",
+    "Gender": "M",
+    "Age at census": "11",
+    "Ref": "501/ 42/ 22",
+    "RD Name": "Old or West Kilpatrick",
+    "County / City": "Dunbarton"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/census/census-30562100_3210_501__42_/1269622268638a5ec62d120?nojs=",
+  "pageHeader": "Census returns",
+  "searchCriteria": {
+    "Census year": "1921",
+    "Surname": "McAllister",
+    "Surname options": "Names that begin with",
+    "Forename": "Duncan",
+    "Forename options": "Names that begin with",
+    "County/city": "ALL"
+  },
+  "recordGroup": "census_returns",
+  "recordType": "census"
+}

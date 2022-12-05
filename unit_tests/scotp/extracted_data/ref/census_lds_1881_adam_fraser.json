@@ -1,35 +1,31 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Fraser&surname_so=exact&forename=Adam%20G&forename_so=starts&record_type=census_lds&year%5B0%5D=1881_LDS",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1264433801638a5fc47d8a2",
   "success": true,
-  "numResultsOnPage": 1,
+  "isRowSelected": true,
+  "numResultsOnPage": 3,
   "recordData": {
     "Surname": "FRASER",
     "Forename": "Adam G.",
     "Year": "1881",
     "Gender": "M",
-    "Age": "1",
+    "Age at census": "1",
     "Ref": "4660",
     "Address": "Dwelling: Fogrigarth",
     "Census Place": "Sandsting & Aitsting, Zetland, Scotland",
-    "Birth place": "Aithsting, Shetland, Scotland"
+    "Birth Place": "Aithsting, Shetland, Scotland"
   },
-  "imageLink": "",
-  "pageHeader": "Census returns - Census 1881 (LDS)",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/census_lds/census_lds-e8e75112-acde-4915-a68a-1e2ae6db5e3e?search_token=1264433801638a5fc47d8a2",
+  "pageHeader": "Census Returns - Census 1881 (LDS)",
   "searchCriteria": {
+    "Census year": "1881_LDS",
     "Surname": "Fraser",
-    "Surname Option": "Exact",
-    "Forename": "Adam G",
-    "Forename Option": "Starts",
-    "Year": "1881_LDS"
+    "Surname options": "Exact names only",
+    "Forename": "Adam G.",
+    "Forename options": "Phonetic match",
+    "Gender": "Male",
+    "Age range": "from 1 to 1",
+    "County/city": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "census",
-    "surname": "Fraser",
-    "surname_so": "exact",
-    "forename": "Adam G",
-    "forename_so": "starts",
-    "record_type": "census_lds",
-    "year[0]": "1881_LDS"
-  }
+  "recordGroup": "census_returns",
+  "recordType": "census_lds"
 }

@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "McAllister",
+    "forenames": "Duncan"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1921"
+  },
+  "ageAtEvent": "11",
+  "registrationDistrict": "Old or West Kilpatrick",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Dunbartonshire",
+    "placeString": "Old or West Kilpatrick, Dunbartonshire, Scotland"
+  },
+  "collectionData": {
+    "id": "census1921",
+    "registrationNumber": "501",
+    "enumerationDistrict": "42",
+    "page": "22"
+  },
+  "hasValidData": true
+}

@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { buildSearchUrl } from "../../extension/site/scotp/core/scotp_build_search_url.mjs";
+import { buildSearchData } from "../../extension/site/scotp/core/scotp_build_search_data.mjs";
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
@@ -140,7 +140,7 @@ const regressionData = [
         variantName: "rc_baptism",
         searchParameters: {
           category: "church",
-          subcategory: "crbirths_baptism",
+          subcategory: "cr_baptisms",
           lastNameIndex: 0,
           spouseIndex: 0,
           father: false,
@@ -185,7 +185,7 @@ const regressionData = [
         variantName: "valuation",
         searchParameters: {
           category: "valuation",
-          subcategory: "valuation_rolls",
+          subcategory: "vr",
           lastNameIndex: 0,
           spouseIndex: -1,
           father: false,
@@ -230,10 +230,10 @@ const regressionData = [
         },
       },
       {
-        variantName: "wills_testaments",
+        variantName: "wills",
         searchParameters: {
           category: "legal",
-          subcategory: "wills_testaments",
+          subcategory: "wills",
           lastNameIndex: 1,
           spouseIndex: -1,
           father: false,
@@ -345,10 +345,24 @@ const regressionData = [
       },
     ],
   },
+  {
+    caseName: "scotp_census_lds_1881_adam_fraser",
+    inputPath: "scotp/generalized_data/ref/census_lds_1881_adam_fraser",
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: {
+      category: "census",
+      subcategory: "census_lds",
+      collection: "1881",
+      lastNameIndex: 0,
+      spouseIndex: -1,
+      father: true,
+      mother: true,
+    },
+  },
 ];
 
 async function runTests(testManager) {
-  await runBuildSearchUrlTests("scotp", buildSearchUrl, regressionData, testManager);
+  await runBuildSearchUrlTests("scotp", buildSearchData, regressionData, testManager);
 }
 
 export { runTests };

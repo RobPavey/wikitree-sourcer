@@ -1,40 +1,27 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&surname=Black&surname_so=exact&forename=Louisa%20Annie&forename_so=exact&sex=F&from_year=1870&to_year=1890&county=ABERDEEN&record_type=stat_births",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
     "Surname": "BLACK",
     "Forename": "LOUISA ANNIE",
-    "Mother's Maiden Name": "",
+    "Mother's Maiden Name": "TAYLOR",
     "Gender": "F",
     "Year": "1886",
-    "Ref": "168/2 1649",
+    "Ref": "168/2/1649",
     "RD Name": "Aberdeen Old Machar"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_stat_births/42622263?return_row=0",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/stat_births/stat_births-14143625_5996356?search_token=222052284638ceda2bfda6",
   "pageHeader": "Statutory registers - Births",
   "searchCriteria": {
     "Surname": "Black",
-    "Surname Option": "Exact",
+    "Surname options": "Exact names only",
     "Forename": "Louisa Annie",
-    "Forename Option": "Exact",
-    "Gender": "F",
-    "From_year": "1870",
-    "To_year": "1890",
-    "County": "ABERDEEN"
+    "Forename options": "Exact names only",
+    "Gender": "Female",
+    "Year range": "from 1870 to 1890",
+    "County/city/minor records": "ABERDEEN"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "statutory",
-    "dl_rec": "statutory-births",
-    "surname": "Black",
-    "surname_so": "exact",
-    "forename": "Louisa Annie",
-    "forename_so": "exact",
-    "sex": "F",
-    "from_year": "1870",
-    "to_year": "1890",
-    "county": "ABERDEEN",
-    "record_type": "stat_births"
-  }
+  "recordGroup": "statutory_records",
+  "recordType": "stat_births"
 }

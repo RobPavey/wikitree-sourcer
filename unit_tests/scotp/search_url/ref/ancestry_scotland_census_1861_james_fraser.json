@@ -1,8 +1,124 @@
 {
   "std": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&year%5B0%5D=1841&year%5B1%5D=1851&year%5B2%5D=1861&year%5B3%5D=1871&year%5B4%5D=1881&year%5B5%5D=1891&year%5B6%5D=1901&year%5B7%5D=1911&surname=Fraser&surname_so=soundex&forename=James&forename_so=soundex&sex=M&rd_real_name%5B0%5D=MILTON&rd_display_name%5B0%5D=MILTON_MILTON&rdno%5B0%5D=%20"
+    "urlPart": "census-returns/census",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1841",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1851",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1861",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1871",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1881",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1891",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1901",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1911",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1921",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Fraser"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "James"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-m",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "MILTON_MILTON"
+        ]
+      }
+    ]
   },
   "oprBirth": {
-    "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&from_year=1825&to_year=1835&surname=Fraser&surname_so=soundex&forename=James&forename_so=soundex&sex=M"
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1825"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1835"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Fraser"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "James"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "soundex"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-m",
+        "type": "radio",
+        "value": true
+      }
+    ]
   }
 }

@@ -128,7 +128,7 @@ function getCountyListForRecordType(scotpRecordType) {
     case "stat_births":
     case "stat_marriages":
     case "stat_deaths":
-    case "civilpartnership":
+    case "stat_civilpartnerships":
 
     case "census":
     case "census_lds":
@@ -137,19 +137,19 @@ function getCountyListForRecordType(scotpRecordType) {
     case "opr_deaths":
     case "opr_marriages":
 
-    case "crbanns_marriages":
-    case "crbirths_baptism":
-    case "crdeath_burial":
+    case "cr_banns":
+    case "cr_baptisms":
+    case "cr_burials":
     case "cr_other":
 
-    case "ch3_baptism": // Presbyterian
+    case "ch3_baptisms": // Presbyterian
     case "ch3_burials": // Presbyterian
-    case "ch3_marriages": // Presbyterian
+    case "ch3_banns": // Presbyterian
     case "ch3_other": // Presbyterian
       countyList = statutoryCountyNames;
       break;
 
-    case "valuation_rolls":
+    case "vr":
       countyList = valuationCountyNames;
       break;
 
@@ -169,6 +169,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
   }
 
   let placeCountyName = wtsPlace.inferCounty();
+  //console.log("getSearchCountyFromWtsPlace: placeCountyName : " + placeCountyName);
 
   if (!placeCountyName) {
     return "";
@@ -181,7 +182,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
   placeCountyName = placeCountyName.replace(/\-SHIRE$/, "");
   placeCountyName = placeCountyName.replace(/\SHIRE$/, "");
 
-  if (scotpRecordType == "valuation_rolls") {
+  if (scotpRecordType == "vr") {
     placeCountyName += " COUNTY";
   }
 
@@ -240,7 +241,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
     if (placeString.includes("GLASGOW, ") || placeString.endsWith("GLASGOW")) {
       return "GLASGOW CITY";
     }
-  } else if (scotpRecordType == "valuation_rolls") {
+  } else if (scotpRecordType == "vr") {
     // have to deal with: "ANGUS (FORFAR) COUNTY" and "MORAY (ELGIN) COUNTY"
     // there are only two cases so handle them individually
     if (placeCountyName == "ANGUS COUNTY" || placeCountyName == "FORFAR COUNTY") {

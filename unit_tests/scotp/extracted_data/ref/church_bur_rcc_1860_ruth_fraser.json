@@ -1,42 +1,28 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=D&record_type%5B0%5D=crdeath_burial&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-deaths-burials&surname=Fraser&surname_so=exact&forename=ruth&forename_so=starts&sex=F&birth_year_range=1&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
     "Surname": "FRASER",
     "Forename": "RUTH",
-    "Gender": "F",
+    "Gender": "Female",
     "Age": "0",
-    "Death Date": "0/0/0",
+    "Death Date": "",
     "Burial Date": "3/12/1860",
     "Event": "Lair",
     "Parish": "Glasgow, Old Dalbeth Cemetery"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_crdeath_burial/19234?return_row=0",
-  "pageHeader": "Church registers - Catholic Registers Deaths and Burials",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/cr_burials/cr_burials-19234/1920557426638bb41812938?nojs=",
+  "pageHeader": "Church Registers - Catholic register - Deaths and Burials",
   "searchCriteria": {
-    "Event": "D",
-    "Church_type": "Catholic Registers",
+    "Church type": "Catholic Registers - Deaths and Burials",
     "Surname": "Fraser",
-    "Surname Option": "Exact",
-    "Forename": "Ruth",
-    "Forename Option": "Starts",
-    "Gender": "F",
-    "Birth_year_range": "1"
+    "Surname options": "Exact names only",
+    "Forename": "ruth",
+    "Forename options": "Names that begin with",
+    "Gender": "Female",
+    "County/city": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "event": "D",
-    "record_type[0]": "crdeath_burial",
-    "church_type": "Catholic Registers",
-    "dl_cat": "church",
-    "dl_rec": "church-deaths-burials",
-    "surname": "Fraser",
-    "surname_so": "exact",
-    "forename": "ruth",
-    "forename_so": "starts",
-    "sex": "F",
-    "birth_year_range": "1",
-    "record": "Church of Scotland (old parish registers) Roman Catholic Church Other churches"
-  }
+  "recordGroup": "church_registers",
+  "recordType": "cr_burials"
 }

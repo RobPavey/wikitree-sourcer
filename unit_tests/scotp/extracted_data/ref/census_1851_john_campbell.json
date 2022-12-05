@@ -1,45 +1,29 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Campbell&surname_so=exact&forename=John&forename_so=starts&second_person_forename_so=exact&age_from=22&age_to=22&county=ARGYLL&rd_real_name%5B0%5D=GLENCOE%20AND%20BALLACHULISH%20OR%20BALLACHULISH%20AND%20CORRAN%20OF%20ARDGOUR%20OR%20BALLACHULISH%20OR%20HIGHLAND%20%28FORT%20WILLIAM%20AND%20BALLACHU%20OR%20FORT%20WILLIAM%20AND%20BALLACHULISH&rd_display_name%5B0%5D=GLENCOE%20AND%20BALLACHULISH%7CBALLACHULISH%20AND%20CORRAN%20OF%20ARDGOUR%7CBALLACHULISH%7CHIGHLAND%20%28FORT%20WILLIAM%20AND%20BALLACHU%7CFORT%20WILLIAM%20AND%20BALLACHULISH_BALLACHULISH&rdno%5B0%5D=GLENCOE%20AND%20BALLACHULISH%20OR%20BALLACHULISH%20AND%20CORRAN%20OF%20ARDGOUR%20OR%20BALLACHULISH%20OR%20HIGHLAND%20%2AFORT%20WILLIAM%20AND%20BALLACHU%20OR%20FORT%20WILLIAM%20AND%20BALLACHULISH&record_type=census&year%5B0%5D=1851",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/10198090206386859514533",
   "success": true,
-  "numResultsOnPage": 1,
+  "isRowSelected": true,
+  "numResultsOnPage": 9,
   "recordData": {
     "Surname": "CAMPBELL",
     "Forename": "JOHN",
     "Year": "1851",
     "Gender": "M",
-    "Age at Census": "22",
+    "Age at census": "22",
     "Ref": "506/ 6/ 14",
     "RD Name": "Ballachulish and Corran Of Ardgour",
-    "County/ City": "Argyll"
+    "County / City": "Argyll"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_census/5569746?image=14&return_row=0",
-  "pageHeader": "Census returns - Census",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/census/census-5061528_3245_506__6_/2035092102638a4a4e076fe?nojs=",
+  "pageHeader": "Census returns",
   "searchCriteria": {
+    "Census year": "1851",
     "Surname": "Campbell",
-    "Surname Option": "Exact",
+    "Surname options": "Exact names only",
     "Forename": "John",
-    "Forename Option": "Starts",
-    "Age_from": "22",
-    "Age_to": "22",
-    "County": "ARGYLL",
-    "Rdno": "GLENCOE AND BALLACHULISH OR BALLACHULISH AND CORRAN OF ARDGOUR OR BALLACHULISH OR HIGHLAND (FORT WILLIAM AND BALLACHU OR FORT WILLIAM AND BALLACHULISH",
-    "Year": "1851"
+    "Forename options": "Names that begin with",
+    "Age range": "from 22 to 22",
+    "County/city": "ARGYLL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "census",
-    "surname": "Campbell",
-    "surname_so": "exact",
-    "forename": "John",
-    "forename_so": "starts",
-    "second_person_forename_so": "exact",
-    "age_from": "22",
-    "age_to": "22",
-    "county": "ARGYLL",
-    "rd_real_name[0]": "GLENCOE AND BALLACHULISH OR BALLACHULISH AND CORRAN OF ARDGOUR OR BALLACHULISH OR HIGHLAND (FORT WILLIAM AND BALLACHU OR FORT WILLIAM AND BALLACHULISH",
-    "rd_display_name[0]": "GLENCOE AND BALLACHULISH|BALLACHULISH AND CORRAN OF ARDGOUR|BALLACHULISH|HIGHLAND (FORT WILLIAM AND BALLACHU|FORT WILLIAM AND BALLACHULISH_BALLACHULISH",
-    "rdno[0]": "GLENCOE AND BALLACHULISH OR BALLACHULISH AND CORRAN OF ARDGOUR OR BALLACHULISH OR HIGHLAND *FORT WILLIAM AND BALLACHU OR FORT WILLIAM AND BALLACHULISH",
-    "record_type": "census",
-    "year[0]": "1851"
-  }
+  "recordGroup": "census_returns",
+  "recordType": "census"
 }

@@ -1,45 +1,31 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&surname=Fraser&surname_so=exact&forename=James&forename_so=starts&sex=M&age_from=27&age_to=27&census_place=Lanark&birthplace=Elgin&record_type=census_lds&year%5B0%5D=1881_LDS",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/83135014638a6cfe95b29",
   "success": true,
-  "numResultsOnPage": 1,
+  "isRowSelected": true,
+  "numResultsOnPage": 20,
   "recordData": {
     "Surname": "FRASER",
     "Forename": "James",
     "Year": "1881",
     "Gender": "M",
-    "Age": "27",
+    "Age at census": "27",
     "Ref": "525913",
     "Address": "Dwelling: 14 Apsley Place",
     "Census Place": "Govan, Lanark, Scotland",
-    "Birth place": "Fochabers, Elgin, Scotland"
+    "Birth Place": "Fochabers, Elgin, Scotland"
   },
-  "imageLink": "",
-  "pageHeader": "Census returns - Census 1881 (LDS)",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/census_lds/census_lds-e4fb022a-a267-4061-9f47-709668e1fffe?search_token=83135014638a6cfe95b29",
+  "pageHeader": "Census Returns - Census 1881 (LDS)",
   "searchCriteria": {
+    "Census year": "1881_LDS",
     "Surname": "Fraser",
-    "Surname Option": "Exact",
+    "Surname options": "Exact names only",
     "Forename": "James",
-    "Forename Option": "Starts",
-    "Gender": "M",
-    "Age_from": "27",
-    "Age_to": "27",
-    "Census_place": "Lanark",
-    "Birthplace": "Elgin",
-    "Year": "1881_LDS"
+    "Forename options": "Names that begin with",
+    "Gender": "Male",
+    "Age range": "from 27 to 27",
+    "County/city": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "census",
-    "surname": "Fraser",
-    "surname_so": "exact",
-    "forename": "James",
-    "forename_so": "starts",
-    "sex": "M",
-    "age_from": "27",
-    "age_to": "27",
-    "census_place": "Lanark",
-    "birthplace": "Elgin",
-    "record_type": "census_lds",
-    "year[0]": "1881_LDS"
-  }
+  "recordGroup": "census_returns",
+  "recordType": "census_lds"
 }

@@ -1,5 +1,5 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-wills-testaments&surname=Bruce&surname_so=exact&forename=Agnes&forename_so=exact&from_year=1897&to_year=1897&court%5B0%5D=non-Scottish%20Court%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&record_type=wills_testaments",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
@@ -8,31 +8,19 @@
     "Date": "31/12/1897",
     "Description": "of 3 Haldane Terrace, Newcastle-upon-Tyne, widow",
     "Type": "Probate of the will",
-    "Court": "non-Scottish Court ",
+    "Court": "non-Scottish Court",
     "Reference Number": "SC70/6/68"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_wills_testaments/106503?image=1&return_row=0",
-  "pageHeader": "Legal records - Wills and testaments",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/wills/wills-%7B86A4307A-F5BD-11D7-84DD-00C04F243143%7D/1087147354638cda331bf22?nojs=",
+  "pageHeader": "Legal Records - Wills and testaments",
   "searchCriteria": {
     "Surname": "Bruce",
-    "Surname Option": "Exact",
+    "Surname options": "Exact names only",
     "Forename": "Agnes",
-    "Forename Option": "Exact",
-    "From_year": "1897",
-    "To_year": "1897",
-    "Court": "Non-Scottish Court                                "
+    "Forename options": "Exact names only",
+    "Year range": "from 1897 to 1897",
+    "Court/Commissariot": "NON-SCOTTISH COURT"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "legal",
-    "dl_rec": "legal-wills-testaments",
-    "surname": "Bruce",
-    "surname_so": "exact",
-    "forename": "Agnes",
-    "forename_so": "exact",
-    "from_year": "1897",
-    "to_year": "1897",
-    "court[0]": "non-Scottish Court                                ",
-    "record_type": "wills_testaments"
-  }
+  "recordGroup": "legal_records",
+  "recordType": "wills"
 }

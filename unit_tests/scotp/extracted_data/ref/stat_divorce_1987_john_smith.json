@@ -1,38 +1,26 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&surname=smith&surname_so=exact&forename=john&forename_so=starts&spsurname_so=exact&from_year=1960&to_year=2000&record_type=stat_divorces",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
-  "numResultsOnPage": 25,
+  "isRowSelected": true,
+  "numResultsOnPage": 22,
   "recordData": {
     "Surname": "SMITH",
     "Forename": "JOHN",
     "Spouse Surname": "POLLOCK",
     "Divorce Year": "1987",
-    "Marriage Date": "24/02/1962",
+    "Marriage Date": "1962-02-24",
     "Court Code": "9772",
     "Serial Number": "28439",
     "Court": "Hamilton"
   },
-  "imageLink": "",
   "pageHeader": "Statutory registers - Divorces",
   "searchCriteria": {
-    "Surname": "Smith",
-    "Surname Option": "Exact",
-    "Forename": "John",
-    "Forename Option": "Starts",
-    "From_year": "1960",
-    "To_year": "2000"
+    "Surname": "smith",
+    "Surname options": "Exact names only",
+    "Forename": "john",
+    "Forename options": "Names that begin with",
+    "Year range": "from 1987 to 1987"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "statutory",
-    "dl_rec": "statutory-divorces",
-    "surname": "smith",
-    "surname_so": "exact",
-    "forename": "john",
-    "forename_so": "starts",
-    "spsurname_so": "exact",
-    "from_year": "1960",
-    "to_year": "2000",
-    "record_type": "stat_divorces"
-  }
+  "recordGroup": "statutory_records",
+  "recordType": "stat_divorces"
 }
