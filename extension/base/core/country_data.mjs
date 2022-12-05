@@ -89,26 +89,6 @@ const CountryData = [
   { stdName: "Sweden", matches: ["Sweden"] },
   { stdName: "Denmark", matches: ["Denmark"] },
   { stdName: "Norway", matches: ["Norway"] },
-  {
-    stdName: "Poland",
-    matches: ["Poland", "Polska"],
-  },
-  {
-    stdName: "Ukraine",
-    matches: ["Ukraine", "Україна", "Ukraina"],
-  },
-  {
-    stdName: "Lithuania",
-    matches: ["Lithuania", "Lietuva", "Litwa"],
-  },
-  {
-    stdName: "Belarus",
-    matches: ["Belarus", "Беларусь", "Беларусь, Советский Союз", "Białoruś"],
-  },
-  {
-    stdName: "Galicia",
-    matches: ["Galicia", "Galicia, Austria", "Galicja"],
-  },
 
   { stdName: "Turkey", matches: ["Turkey"] },
 
@@ -282,7 +262,7 @@ const CountyData = {
     },
     { stdName: "Roxburghshire", matches: ["Roxburghshire", "Roxburgh"] },
     { stdName: "Selkirkshire", matches: ["Selkirkshire", "Selkirk"] },
-    { stdName: "Shetland", matches: ["Shetland"] },
+    { stdName: "Shetland", matches: ["Shetland", "Zetland"] },
     { stdName: "Stirlingshire", matches: ["Stirlingshire", "Stirling"] },
     { stdName: "Sutherland", matches: ["Sutherland"] },
     { stdName: "West Lothian", matches: ["West Lothian"] },

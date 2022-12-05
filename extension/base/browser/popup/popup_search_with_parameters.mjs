@@ -310,6 +310,33 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
         listElement.appendChild(label);
       }
     }
+  } else if (siteData.includeMmn && siteData.includeMmn(gd, parameters)) {
+    if (gd.parents && (gd.parents.father || gd.parents.mother)) {
+      addBreakIfNeeded(listElement);
+
+      if (gd.mothersMaidenName) {
+        let mmn = gd.mothersMaidenName;
+        parameters.mmn = true;
+
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = true;
+        checkbox.addEventListener("change", function () {
+          if (this.checked) {
+            parameters.mmn = true;
+          } else {
+            parameters.mmn = false;
+          }
+        });
+        let label = document.createElement("label");
+        label.className = "dialogInput";
+        label.appendChild(checkbox);
+        let labelText = "Mother's Maiden Name: " + mmn;
+
+        label.appendChild(document.createTextNode(labelText));
+        listElement.appendChild(label);
+      }
+    }
   }
 }
 
