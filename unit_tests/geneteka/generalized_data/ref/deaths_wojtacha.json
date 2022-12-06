@@ -12,6 +12,9 @@
   "eventDate": {
     "yearString": "1896"
   },
+  "eventPlace": {
+    "placeString": "Janina"
+  },
   "name": {
     "lastName": "Wojtacha",
     "forenames": "Jan"

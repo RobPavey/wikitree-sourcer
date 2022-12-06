@@ -20823,7 +20823,7 @@ function getRegistrationDistrict(rdno, rd_name, year) {
 
   stdRdName = stdRdName.toLowerCase();
 
-  const result = registrationDistricts.filter((district) => {
+  let result = registrationDistricts.filter((district) => {
     if (district.rdno === rdno) {
       if (stdRdName == district.rd_name.toLowerCase()) {
         if (district.first_year <= +year && (district.last_year >= +year || district.last_year === 0)) {
@@ -20833,6 +20833,29 @@ function getRegistrationDistrict(rdno, rd_name, year) {
     }
     return false;
   });
+
+  if (result.length == 0) {
+    // no exact match, try fuzzier match
+    // In 22 Nov 2022 SP update the RD NAME column on stat_birtsh changed from
+    // "Aberdeen, Old Machar Parish" to "Aberdeen Old Machar"
+    let fuzzyInputName = stdRdName.replace(",", "");
+    fuzzyInputName = fuzzyInputName.replace(/\s+parish\s*/, " ").trim();
+
+    result = registrationDistricts.filter((district) => {
+      if (district.rdno === rdno) {
+        let fuzzyDistrictName = district.rd_name.toLowerCase();
+        fuzzyDistrictName = fuzzyDistrictName.replace(",", "");
+        fuzzyDistrictName = fuzzyDistrictName.replace(/\s+parish\s*/, " ").trim();
+        if (fuzzyInputName == fuzzyDistrictName) {
+          if (district.first_year <= +year && (district.last_year >= +year || district.last_year === 0)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    });
+  }
+
   return result;
 }
 
@@ -20840,9 +20863,9 @@ function getCountyDisplayName(county) {
   if (!county) {
     return "";
   }
+  let lcCounty = county.toLowerCase();
 
   const result = displayCountyNames.find((name) => {
-    let lcCounty = county.toLowerCase();
     let lcSearchCounty = name.search_county.toLowerCase();
     return lcCounty === lcSearchCounty;
   });

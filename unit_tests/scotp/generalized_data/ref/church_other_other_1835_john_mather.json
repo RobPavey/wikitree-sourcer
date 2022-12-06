@@ -11,7 +11,8 @@
   },
   "eventPlace": {
     "country": "Scotland",
-    "placeString": "Scotland",
+    "county": "East Lothian",
+    "placeString": "East Lothian, Scotland",
     "streetAddress": "Dunbar United Presbyterian"
   },
   "hasValidData": true

@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1921 Census''':\n\"Scotland Census, 1921\"<br/>\nNational Records of Scotland, Ref: 501/ 42/ 22<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1921 census Duncan (age 11) was in Old or West Kilpatrick, Dunbartonshire, Scotland.<ref>\n'''1921 Census''':\n\"Scotland Census, 1921\"<br/>\nNational Records of Scotland, Ref: 501/ 42/ 22<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1921 Census''': \"Scotland Census, 1921\"<br/>National Records of Scotland, Ref: 501/ 42/ 22<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1921 Census''':\n\"Scotland Census, 1921\"<br/>\nNational Records of Scotland, Ref: 501/ 42/ 22<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nDuncan McAllister (11) in Old or West Kilpatrick, Dunbartonshire, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1921 census Duncan (age 11) was in Old or West Kilpatrick, Dunbartonshire, Scotland.<ref>\n'''1921 Census''':\n\"Scotland Census, 1921\"<br/>\nNational Records of Scotland, Ref: 501/ 42/ 22<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nDuncan McAllister (11) in Old or West Kilpatrick, Dunbartonshire, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1921 Census''': \"Scotland Census, 1921\"<br/>National Records of Scotland, Ref: 501/ 42/ 22<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Duncan McAllister (11) in Old or West Kilpatrick, Dunbartonshire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1921 Census''':\n\"Scotland Census, 1921\"<br/>\nNational Records of Scotland, Ref: 501/ 42/ 22<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: MCALLISTER; Forename: DUNCAN; Year: 1921; Gender: M; Age at census: 11; RD Name: Old or West Kilpatrick; County / City: Dunbarton.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1921 census Duncan (age 11) was in Old or West Kilpatrick, Dunbartonshire, Scotland.<ref>\n'''1921 Census''':\n\"Scotland Census, 1921\"<br/>\nNational Records of Scotland, Ref: 501/ 42/ 22<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: MCALLISTER; Forename: DUNCAN; Year: 1921; Gender: M; Age at census: 11; RD Name: Old or West Kilpatrick; County / City: Dunbarton.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1921 Census''': \"Scotland Census, 1921\"<br/>National Records of Scotland, Ref: 501/ 42/ 22<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: MCALLISTER; Forename: DUNCAN; Year: 1921; Gender: M; Age at census: 11; RD Name: Old or West Kilpatrick; County / City: Dunbarton.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1921 Census''':\n\"Scotland Census, 1921\"<br/>\nNational Records of Scotland, Ref: 501/ 42/ 22<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || MCALLISTER\n|-\n| Forename || DUNCAN\n|-\n| Year || 1921\n|-\n| Gender || M\n|-\n| Age at census || 11\n|-\n| RD Name || Old or West Kilpatrick\n|-\n| County / City || Dunbarton\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1921 census Duncan (age 11) was in Old or West Kilpatrick, Dunbartonshire, Scotland.<ref>\n'''1921 Census''':\n\"Scotland Census, 1921\"<br/>\nNational Records of Scotland, Ref: 501/ 42/ 22<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || MCALLISTER\n|-\n| Forename || DUNCAN\n|-\n| Year || 1921\n|-\n| Gender || M\n|-\n| Age at census || 11\n|-\n| RD Name || Old or West Kilpatrick\n|-\n| County / City || Dunbarton\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1921 Census''': \"Scotland Census, 1921\"<br/>National Records of Scotland, Ref: 501/ 42/ 22<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: MCALLISTER; Forename: DUNCAN; Year: 1921; Gender: M; Age at census: 11; RD Name: Old or West Kilpatrick; County / City: Dunbarton.",
+    "type": "source"
+  }
+}

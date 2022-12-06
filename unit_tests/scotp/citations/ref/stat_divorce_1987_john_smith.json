@@ -1,50 +1,50 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)",
+    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJohn Smith divorce from Pollock in 1987 in Hamilton, Scotland.\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Smith divorce from Pollock in 1987 in Hamilton, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJohn Smith divorce from Pollock in 1987 in Hamilton, Scotland.\n</ref>",
+    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Smith divorce from Pollock in 1987 in Hamilton, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)<br/>John Smith divorce from Pollock in 1987 in Hamilton, Scotland.",
+    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>John Smith divorce from Pollock in 1987 in Hamilton, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: SMITH; Forename: JOHN; Spouse Surname: POLLOCK; Divorce Year: 1987; Marriage Date: 24/02/1962; Court: Hamilton.\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: SMITH; Forename: JOHN; Spouse Surname: POLLOCK; Divorce Year: 1987; Marriage Date: 1962-02-24; Court: Hamilton.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: SMITH; Forename: JOHN; Spouse Surname: POLLOCK; Divorce Year: 1987; Marriage Date: 24/02/1962; Court: Hamilton.\n</ref>",
+    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: SMITH; Forename: JOHN; Spouse Surname: POLLOCK; Divorce Year: 1987; Marriage Date: 1962-02-24; Court: Hamilton.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: SMITH; Forename: JOHN; Spouse Surname: POLLOCK; Divorce Year: 1987; Marriage Date: 24/02/1962; Court: Hamilton.",
+    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: SMITH; Forename: JOHN; Spouse Surname: POLLOCK; Divorce Year: 1987; Marriage Date: 1962-02-24; Court: Hamilton.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || SMITH\n|-\n| Forename || JOHN\n|-\n| Spouse Surname || POLLOCK\n|-\n| Divorce Year || 1987\n|-\n| Marriage Date || 24/02/1962\n|-\n| Court || Hamilton\n|}\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || SMITH\n|-\n| Forename || JOHN\n|-\n| Spouse Surname || POLLOCK\n|-\n| Divorce Year || 1987\n|-\n| Marriage Date || 1962-02-24\n|-\n| Court || Hamilton\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || SMITH\n|-\n| Forename || JOHN\n|-\n| Spouse Surname || POLLOCK\n|-\n| Divorce Year || 1987\n|-\n| Marriage Date || 24/02/1962\n|-\n| Court || Hamilton\n|}\n</ref>",
+    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || SMITH\n|-\n| Forename || JOHN\n|-\n| Spouse Surname || POLLOCK\n|-\n| Divorce Year || 1987\n|-\n| Marriage Date || 1962-02-24\n|-\n| Court || Hamilton\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-divorces&record_type=stat_divorces&surname=SMITH&forename=JOHN&from_year=1987&to_year=1987&spsurname=POLLOCK&ref=28439 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: SMITH; Forename: JOHN; Spouse Surname: POLLOCK; Divorce Year: 1987; Marriage Date: 24/02/1962; Court: Hamilton.",
+    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: SMITH; Forename: JOHN; Spouse Surname: POLLOCK; Divorce Year: 1987; Marriage Date: 1962-02-24; Court: Hamilton.",
     "type": "source"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "1.5.0",
+  "version": "1.5.2",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": ["storage", "contextMenus", "scripting", "management"],
   "host_permissions": [
@@ -19,6 +19,7 @@
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
     "*://*.billiongraves.com/*",
+    "*://*.cwgc.org/*",
     "*://*.findmypast.com/*",
     "*://*.findmypast.co.uk/*",
     "*://*.findmypast.ie/*",
@@ -78,6 +79,11 @@
       "js": ["base/browser/content/content_common.js", "site/bg/browser/bg_content.js"]
     },
     {
+      "matches": ["*://*.cwgc.org/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/cwgc/browser/cwgc_content.js"]
+    },
+    {
       "matches": [
         "*://*.findmypast.com/*",
         "*://*.findmypast.co.uk/*",
@@ -129,7 +135,7 @@
     },
     {
       "matches": ["*://www.scotlandspeople.gov.uk/*"],
-      "run_at": "document_idle",
+      "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
     },
     {
@@ -174,6 +180,10 @@
     {
       "resources": ["site/bg/core/bg_extract_data.mjs"],
       "matches": ["*://*.billiongraves.com/*"]
+    },
+    {
+      "resources": ["site/cwgc/core/cwgc_extract_data.mjs"],
+      "matches": ["*://*.cwgc.org/*"]
     },
     {
       "resources": ["site/fg/core/fg_extract_data.mjs"],

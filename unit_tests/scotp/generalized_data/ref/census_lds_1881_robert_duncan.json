@@ -16,6 +16,9 @@
     "placeString": "Irongray, Kircudbright, Scotland",
     "streetAddress": "Cluden Cottages"
   },
+  "birthPlace": {
+    "placeString": "Carlaverock, Dumfries, Scotland"
+  },
   "collectionData": {
     "id": "census1881"
   },

@@ -1,35 +1,24 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-soldiers-wills&surname=Fraser&surname_so=exact&forename_so=starts&from_year=1915&to_year=1915&service_number=8878&record_type=soldiers_wills",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
     "Surname": "Fraser",
     "Forename": "Donald",
-    "Date": "16/05/1915",
+    "Date": "1915-05-16",
     "Service Number": "8878",
     "Rank": "Sergeant",
     "Regiment": "Queen's Own Cameron Highlanders",
     "Place of Death": "No 11 General Hospital, Boulogne, France"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_soldiers_wills/3235?image=1&return_row=0",
-  "pageHeader": "Legal records - Soldiers' and airmen's wills",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/soldiers_wills/soldiers_wills-SC70-8-123-4/1110186233638cc9a26f23b?nojs=",
+  "pageHeader": "Legal Records - Soldier's and airmen's wills",
   "searchCriteria": {
     "Surname": "Fraser",
-    "Surname Option": "Exact",
-    "From_year": "1915",
-    "To_year": "1915",
-    "Service_number": "8878"
+    "Surname options": "Exact names only",
+    "Year of death": "from 1915 to 1915",
+    "Service number": "8878"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "legal",
-    "dl_rec": "legal-soldiers-wills",
-    "surname": "Fraser",
-    "surname_so": "exact",
-    "forename_so": "starts",
-    "from_year": "1915",
-    "to_year": "1915",
-    "service_number": "8878",
-    "record_type": "soldiers_wills"
-  }
+  "recordGroup": "legal_records",
+  "recordType": "soldiers_wills"
 }

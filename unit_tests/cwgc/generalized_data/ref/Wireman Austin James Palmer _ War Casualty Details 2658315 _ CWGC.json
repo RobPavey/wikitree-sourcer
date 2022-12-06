@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "cwgc",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "11 April 1943"
+  },
+  "eventPlace": {
+    "placeString": "Hampshire, United Kingdom",
+    "streetAddress": "PORTSMOUTH NAVAL MEMORIAL"
+  },
+  "name": {
+    "name": "AUSTIN JAMES PALMER",
+    "lastName": "PALMER",
+    "forenames": "AUSTIN JAMES"
+  },
+  "lastNameAtDeath": "PALMER",
+  "ageAtDeath": "28",
+  "deathDate": {
+    "dateString": "11 April 1943"
+  },
+  "hasValidData": true
+}

@@ -2808,7 +2808,7 @@ function findSearchTermMatches(searchTermObject, ucName, resultArray) {
 }
 
 function findSearchTermFuzzyMatches(searchTermObject, ucName, resultArray) {
-  console.log("findSearchTermFuzzyMatches: ucName is: " + ucName);
+  //console.log("findSearchTermFuzzyMatches: ucName is: " + ucName);
 
   const searchTerms = Object.values(searchTermObject);
   for (let searchTerm of searchTerms) {
@@ -2850,7 +2850,7 @@ function findMatches(searchTermObject, ucName, includeFuzzyMatches, onlyOneExact
   }
 
   if (matches.length == 0) {
-    console.log("findMatches: ucName is: '" + ucName + "' and there are no matches");
+    //console.log("findMatches: ucName is: '" + ucName + "' and there are no matches");
     return [];
   }
 

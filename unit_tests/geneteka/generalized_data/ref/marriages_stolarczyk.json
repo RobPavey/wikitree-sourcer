@@ -12,6 +12,9 @@
   "eventDate": {
     "yearString": "1922"
   },
+  "eventPlace": {
+    "placeString": "Klembów"
+  },
   "name": {
     "lastName": "Więch",
     "forenames": "Jan"

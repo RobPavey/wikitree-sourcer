@@ -1,50 +1,50 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1881 census Adam (age 1) was in Fogrigarth, Sandsting & Aitsting, Zetland, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1881 census Adam (age 1) was in Fogrigarth, Sandsting & Aitsting, Zetland, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 4660<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 4660<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nAdam G Fraser (1) in Sandsting & Aitsting, Zetland, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nAdam G Fraser (1) in Sandsting & Aitsting, Zetland, Scotland. Born in Aithsting, Shetland, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "In the 1881 census Adam (age 1) was in Fogrigarth, Sandsting & Aitsting, Zetland, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nAdam G Fraser (1) in Sandsting & Aitsting, Zetland, Scotland.\n</ref>",
+    "citation": "In the 1881 census Adam (age 1) was in Fogrigarth, Sandsting & Aitsting, Zetland, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nAdam G Fraser (1) in Sandsting & Aitsting, Zetland, Scotland. Born in Aithsting, Shetland, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 4660<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Adam G Fraser (1) in Sandsting & Aitsting, Zetland, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 4660<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Adam G Fraser (1) in Sandsting & Aitsting, Zetland, Scotland. Born in Aithsting, Shetland, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: Adam G.; Year: 1881; Gender: M; Age: 1; Address: Dwelling: Fogrigarth; Census Place: Sandsting & Aitsting, Zetland, Scotland; Birth place: Aithsting, Shetland, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: Adam G.; Year: 1881; Gender: M; Age at census: 1; Address: Dwelling: Fogrigarth; Census Place: Sandsting & Aitsting, Zetland, Scotland; Birth Place: Aithsting, Shetland, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "In the 1881 census Adam (age 1) was in Fogrigarth, Sandsting & Aitsting, Zetland, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: Adam G.; Year: 1881; Gender: M; Age: 1; Address: Dwelling: Fogrigarth; Census Place: Sandsting & Aitsting, Zetland, Scotland; Birth place: Aithsting, Shetland, Scotland.\n</ref>",
+    "citation": "In the 1881 census Adam (age 1) was in Fogrigarth, Sandsting & Aitsting, Zetland, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: Adam G.; Year: 1881; Gender: M; Age at census: 1; Address: Dwelling: Fogrigarth; Census Place: Sandsting & Aitsting, Zetland, Scotland; Birth Place: Aithsting, Shetland, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 4660<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: Adam G.; Year: 1881; Gender: M; Age: 1; Address: Dwelling: Fogrigarth; Census Place: Sandsting & Aitsting, Zetland, Scotland; Birth place: Aithsting, Shetland, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 4660<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: Adam G.; Year: 1881; Gender: M; Age at census: 1; Address: Dwelling: Fogrigarth; Census Place: Sandsting & Aitsting, Zetland, Scotland; Birth Place: Aithsting, Shetland, Scotland.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || Adam G.\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age || 1\n|-\n| Address || Dwelling: Fogrigarth\n|-\n| Census Place || Sandsting & Aitsting, Zetland, Scotland\n|-\n| Birth place || Aithsting, Shetland, Scotland\n|}\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || Adam G.\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age at census || 1\n|-\n| Address || Dwelling: Fogrigarth\n|-\n| Census Place || Sandsting & Aitsting, Zetland, Scotland\n|-\n| Birth Place || Aithsting, Shetland, Scotland\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "In the 1881 census Adam (age 1) was in Fogrigarth, Sandsting & Aitsting, Zetland, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || Adam G.\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age || 1\n|-\n| Address || Dwelling: Fogrigarth\n|-\n| Census Place || Sandsting & Aitsting, Zetland, Scotland\n|-\n| Birth place || Aithsting, Shetland, Scotland\n|}\n</ref>",
+    "citation": "In the 1881 census Adam (age 1) was in Fogrigarth, Sandsting & Aitsting, Zetland, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 4660<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || Adam G.\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age at census || 1\n|-\n| Address || Dwelling: Fogrigarth\n|-\n| Census Place || Sandsting & Aitsting, Zetland, Scotland\n|-\n| Birth Place || Aithsting, Shetland, Scotland\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 4660<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=Adam%20G.&sex=M&age_from=1&age_to=1&ref=4660 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: Adam G.; Year: 1881; Gender: M; Age: 1; Address: Dwelling: Fogrigarth; Census Place: Sandsting & Aitsting, Zetland, Scotland; Birth place: Aithsting, Shetland, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 4660<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: Adam G.; Year: 1881; Gender: M; Age at census: 1; Address: Dwelling: Fogrigarth; Census Place: Sandsting & Aitsting, Zetland, Scotland; Birth Place: Aithsting, Shetland, Scotland.",
     "type": "source"
   }
 }

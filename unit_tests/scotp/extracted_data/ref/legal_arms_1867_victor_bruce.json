@@ -1,29 +1,20 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=legal&dl_rec=legal-coats-arms&name=Bruce&name_so=exact&from_year=1867&to_year=1867&record_type=coa",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
-    "Full Name": "VICTOR ALEXANDER BRUCE EARL OF ELGIN AND KINCARDINE",
+    "Full Name": "Victor Alexander Bruce Earl of Elgin and Kincardine",
     "Grant year": "25/6/1867",
     "Volume": "7",
     "Record Number": "71"
   },
-  "imageLink": "",
-  "pageHeader": "Legal records - Coats of arms",
+  "imageLink": "https://www.scotlandspeople.gov.uk/buy-credits?destination=/record-results/17916474638c21578b9a3&get-referer=1&nojs=",
+  "pageHeader": "Legal Records - Coats of Arms",
   "searchCriteria": {
     "Name": "Bruce",
-    "Name Option": "Exact",
-    "From_year": "1867",
-    "To_year": "1867"
+    "Name options": "Exact names only",
+    "Year range": "from 1867 to 1867"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "dl_cat": "legal",
-    "dl_rec": "legal-coats-arms",
-    "name": "Bruce",
-    "name_so": "exact",
-    "from_year": "1867",
-    "to_year": "1867",
-    "record_type": "coa"
-  }
+  "recordGroup": "legal_records",
+  "recordType": "coa"
 }

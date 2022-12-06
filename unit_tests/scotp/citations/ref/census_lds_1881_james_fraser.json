@@ -1,50 +1,50 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1881 census James (age 27) was at 14 Apsley Place, Govan, Lanark, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1881 census James (age 27) was at 14 Apsley Place, Govan, Lanark, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 525913<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 525913<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJames Fraser (27) in Govan, Lanark, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJames Fraser (27) in Govan, Lanark, Scotland. Born in Fochabers, Elgin, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "In the 1881 census James (age 27) was at 14 Apsley Place, Govan, Lanark, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJames Fraser (27) in Govan, Lanark, Scotland.\n</ref>",
+    "citation": "In the 1881 census James (age 27) was at 14 Apsley Place, Govan, Lanark, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJames Fraser (27) in Govan, Lanark, Scotland. Born in Fochabers, Elgin, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 525913<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)<br/>James Fraser (27) in Govan, Lanark, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 525913<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>James Fraser (27) in Govan, Lanark, Scotland. Born in Fochabers, Elgin, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: James; Year: 1881; Gender: M; Age: 27; Address: Dwelling: 14 Apsley Place; Census Place: Govan, Lanark, Scotland; Birth place: Fochabers, Elgin, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: James; Year: 1881; Gender: M; Age at census: 27; Address: Dwelling: 14 Apsley Place; Census Place: Govan, Lanark, Scotland; Birth Place: Fochabers, Elgin, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "In the 1881 census James (age 27) was at 14 Apsley Place, Govan, Lanark, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: James; Year: 1881; Gender: M; Age: 27; Address: Dwelling: 14 Apsley Place; Census Place: Govan, Lanark, Scotland; Birth place: Fochabers, Elgin, Scotland.\n</ref>",
+    "citation": "In the 1881 census James (age 27) was at 14 Apsley Place, Govan, Lanark, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: James; Year: 1881; Gender: M; Age at census: 27; Address: Dwelling: 14 Apsley Place; Census Place: Govan, Lanark, Scotland; Birth Place: Fochabers, Elgin, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 525913<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: James; Year: 1881; Gender: M; Age: 27; Address: Dwelling: 14 Apsley Place; Census Place: Govan, Lanark, Scotland; Birth place: Fochabers, Elgin, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 525913<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: James; Year: 1881; Gender: M; Age at census: 27; Address: Dwelling: 14 Apsley Place; Census Place: Govan, Lanark, Scotland; Birth Place: Fochabers, Elgin, Scotland.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || James\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age || 27\n|-\n| Address || Dwelling: 14 Apsley Place\n|-\n| Census Place || Govan, Lanark, Scotland\n|-\n| Birth place || Fochabers, Elgin, Scotland\n|}\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || James\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age at census || 27\n|-\n| Address || Dwelling: 14 Apsley Place\n|-\n| Census Place || Govan, Lanark, Scotland\n|-\n| Birth Place || Fochabers, Elgin, Scotland\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "In the 1881 census James (age 27) was at 14 Apsley Place, Govan, Lanark, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || James\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age || 27\n|-\n| Address || Dwelling: 14 Apsley Place\n|-\n| Census Place || Govan, Lanark, Scotland\n|-\n| Birth place || Fochabers, Elgin, Scotland\n|}\n</ref>",
+    "citation": "In the 1881 census James (age 27) was at 14 Apsley Place, Govan, Lanark, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 525913<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || James\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age at census || 27\n|-\n| Address || Dwelling: 14 Apsley Place\n|-\n| Census Place || Govan, Lanark, Scotland\n|-\n| Birth Place || Fochabers, Elgin, Scotland\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 525913<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census_lds&year%5B0%5D=1881_LDS&surname=FRASER&forename=James&sex=M&age_from=27&age_to=27&ref=525913 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: James; Year: 1881; Gender: M; Age: 27; Address: Dwelling: 14 Apsley Place; Census Place: Govan, Lanark, Scotland; Birth place: Fochabers, Elgin, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 525913<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: James; Year: 1881; Gender: M; Age at census: 27; Address: Dwelling: 14 Apsley Place; Census Place: Govan, Lanark, Scotland; Birth Place: Fochabers, Elgin, Scotland.",
     "type": "source"
   }
 }

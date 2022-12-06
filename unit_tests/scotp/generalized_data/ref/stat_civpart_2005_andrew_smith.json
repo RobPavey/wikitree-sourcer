@@ -12,7 +12,8 @@
   "registrationDistrict": "Lerwick",
   "eventPlace": {
     "country": "Scotland",
-    "placeString": "Lerwick, Scotland"
+    "county": "Shetland Isles",
+    "placeString": "Lerwick, Shetland Isles, Scotland"
   },
   "spouses": [
     {
@@ -24,7 +25,8 @@
       },
       "marriagePlace": {
         "country": "Scotland",
-        "placeString": "Lerwick, Scotland"
+        "county": "Shetland Isles",
+        "placeString": "Lerwick, Shetland Isles, Scotland"
       }
     }
   ],

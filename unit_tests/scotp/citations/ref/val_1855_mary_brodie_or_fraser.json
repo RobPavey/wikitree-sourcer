@@ -1,50 +1,50 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Mary was in a valuation roll in 1855 in Ardersier, Scotland.<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "Mary was in a valuation roll in 1855 in Ardersier, Scotland.<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Valuation Roll''': \"Valuation Rolls\"<br/>National Records of Scotland, Reference Number: VR010300001-<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)",
+    "citation": "* '''Valuation Roll''': \"Valuation Rolls\"<br/>National Records of Scotland, Reference Number: VR010300001-<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nMary Brodie Or Fraser in 1855 at Dwelling House in Campbelltoun in the parish of Ardersier, Scotland.\n</ref>",
+    "citation": "<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nMary Brodie Or Fraser in 1855 at Dwelling House in Campbelltoun in the parish of Ardersier, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Mary was in a valuation roll in 1855 in Ardersier, Scotland.<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nMary Brodie Or Fraser in 1855 at Dwelling House in Campbelltoun in the parish of Ardersier, Scotland.\n</ref>",
+    "citation": "Mary was in a valuation roll in 1855 in Ardersier, Scotland.<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nMary Brodie Or Fraser in 1855 at Dwelling House in Campbelltoun in the parish of Ardersier, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Valuation Roll''': \"Valuation Rolls\"<br/>National Records of Scotland, Reference Number: VR010300001-<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)<br/>Mary Brodie Or Fraser in 1855 at Dwelling House in Campbelltoun in the parish of Ardersier, Scotland.",
+    "citation": "* '''Valuation Roll''': \"Valuation Rolls\"<br/>National Records of Scotland, Reference Number: VR010300001-<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Mary Brodie Or Fraser in 1855 at Dwelling House in Campbelltoun in the parish of Ardersier, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: BRODIE OR FRASER; Forename: MARY; Status: Proprietor Occupier; Place: DWELLING HOUSE IN CAMPBELLTOUN; Parish: ARDERSIER; Year: 1855.\n</ref>",
+    "citation": "<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BRODIE OR FRASER; Forename: MARY; Status: Proprietor/Occupier; Place: DWELLING HOUSE IN CAMPBELLTOUN; Parish: ARDERSIER; Year: 1855.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Mary was in a valuation roll in 1855 in Ardersier, Scotland.<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: BRODIE OR FRASER; Forename: MARY; Status: Proprietor Occupier; Place: DWELLING HOUSE IN CAMPBELLTOUN; Parish: ARDERSIER; Year: 1855.\n</ref>",
+    "citation": "Mary was in a valuation roll in 1855 in Ardersier, Scotland.<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BRODIE OR FRASER; Forename: MARY; Status: Proprietor/Occupier; Place: DWELLING HOUSE IN CAMPBELLTOUN; Parish: ARDERSIER; Year: 1855.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Valuation Roll''': \"Valuation Rolls\"<br/>National Records of Scotland, Reference Number: VR010300001-<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: BRODIE OR FRASER; Forename: MARY; Status: Proprietor Occupier; Place: DWELLING HOUSE IN CAMPBELLTOUN; Parish: ARDERSIER; Year: 1855.",
+    "citation": "* '''Valuation Roll''': \"Valuation Rolls\"<br/>National Records of Scotland, Reference Number: VR010300001-<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: BRODIE OR FRASER; Forename: MARY; Status: Proprietor/Occupier; Place: DWELLING HOUSE IN CAMPBELLTOUN; Parish: ARDERSIER; Year: 1855.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BRODIE OR FRASER\n|-\n| Forename || MARY\n|-\n| Title || \n|-\n| Status || Proprietor Occupier\n|-\n| Place || DWELLING HOUSE IN CAMPBELLTOUN\n|-\n| Parish || ARDERSIER\n|-\n| Year || 1855\n|}\n</ref>",
+    "citation": "<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BRODIE OR FRASER\n|-\n| Forename || MARY\n|-\n| Title || \n|-\n| Status || Proprietor/Occupier\n|-\n| Place || DWELLING HOUSE IN CAMPBELLTOUN\n|-\n| Parish || ARDERSIER\n|-\n| Year || 1855\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Mary was in a valuation roll in 1855 in Ardersier, Scotland.<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BRODIE OR FRASER\n|-\n| Forename || MARY\n|-\n| Title || \n|-\n| Status || Proprietor Occupier\n|-\n| Place || DWELLING HOUSE IN CAMPBELLTOUN\n|-\n| Parish || ARDERSIER\n|-\n| Year || 1855\n|}\n</ref>",
+    "citation": "Mary was in a valuation roll in 1855 in Ardersier, Scotland.<ref>\n'''Valuation Roll''':\n\"Valuation Rolls\"<br/>\nNational Records of Scotland, Reference Number: VR010300001-<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BRODIE OR FRASER\n|-\n| Forename || MARY\n|-\n| Title || \n|-\n| Status || Proprietor/Occupier\n|-\n| Place || DWELLING HOUSE IN CAMPBELLTOUN\n|-\n| Parish || ARDERSIER\n|-\n| Year || 1855\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Valuation Roll''': \"Valuation Rolls\"<br/>National Records of Scotland, Reference Number: VR010300001-<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=valuation&record_type=valuation_rolls&surname=BRODIE%20OR%20FRASER&forename=MARY&year%5B0%5D=1855&ref=VR010300001- ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: BRODIE OR FRASER; Forename: MARY; Status: Proprietor Occupier; Place: DWELLING HOUSE IN CAMPBELLTOUN; Parish: ARDERSIER; Year: 1855.",
+    "citation": "* '''Valuation Roll''': \"Valuation Rolls\"<br/>National Records of Scotland, Reference Number: VR010300001-<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: BRODIE OR FRASER; Forename: MARY; Status: Proprietor/Occupier; Place: DWELLING HOUSE IN CAMPBELLTOUN; Parish: ARDERSIER; Year: 1855.",
     "type": "source"
   }
 }

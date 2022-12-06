@@ -1,50 +1,50 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1 462<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1/462<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Jane's birth was registered in 1871 in the St George district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1 462<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)\n</ref>",
+    "citation": "Jane's birth was registered in 1871 in the St George district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1/462<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 685/1 462<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 685/1/462<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1 462<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJane Louisa Black birth registered 1871 in St George.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1/462<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJane Louisa Black birth registered 1871 in St George, mother's maiden name Wallace.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Jane's birth was registered in 1871 in the St George district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1 462<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nJane Louisa Black birth registered 1871 in St George.\n</ref>",
+    "citation": "Jane's birth was registered in 1871 in the St George district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1/462<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJane Louisa Black birth registered 1871 in St George, mother's maiden name Wallace.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 685/1 462<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Jane Louisa Black birth registered 1871 in St George.",
+    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 685/1/462<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Jane Louisa Black birth registered 1871 in St George, mother's maiden name Wallace.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1 462<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: BLACK; Forename: JANE LOUISA; Gender: F; Year: 1871; RD Name: St George.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1/462<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BLACK; Forename: JANE LOUISA; Mother's Maiden Name: WALLACE; Gender: F; Year: 1871; RD Name: St George.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Jane's birth was registered in 1871 in the St George district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1 462<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)<br/>\nSurname: BLACK; Forename: JANE LOUISA; Gender: F; Year: 1871; RD Name: St George.\n</ref>",
+    "citation": "Jane's birth was registered in 1871 in the St George district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1/462<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BLACK; Forename: JANE LOUISA; Mother's Maiden Name: WALLACE; Gender: F; Year: 1871; RD Name: St George.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 685/1 462<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: BLACK; Forename: JANE LOUISA; Gender: F; Year: 1871; RD Name: St George.",
+    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 685/1/462<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: BLACK; Forename: JANE LOUISA; Mother's Maiden Name: WALLACE; Gender: F; Year: 1871; RD Name: St George.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1 462<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BLACK\n|-\n| Forename || JANE LOUISA\n|-\n| Mother's Maiden Name || \n|-\n| Gender || F\n|-\n| Year || 1871\n|-\n| RD Name || St George\n|}\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1/462<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BLACK\n|-\n| Forename || JANE LOUISA\n|-\n| Mother's Maiden Name || WALLACE\n|-\n| Gender || F\n|-\n| Year || 1871\n|-\n| RD Name || St George\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Jane's birth was registered in 1871 in the St George district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1 462<br/>\n[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BLACK\n|-\n| Forename || JANE LOUISA\n|-\n| Mother's Maiden Name || \n|-\n| Gender || F\n|-\n| Year || 1871\n|-\n| RD Name || St George\n|}\n</ref>",
+    "citation": "Jane's birth was registered in 1871 in the St George district.<ref>\n'''Birth Registration''':\n\"Statutory Register of Births\"<br/>\nNational Records of Scotland, Ref: 685/1/462<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BLACK\n|-\n| Forename || JANE LOUISA\n|-\n| Mother's Maiden Name || WALLACE\n|-\n| Gender || F\n|-\n| Year || 1871\n|-\n| RD Name || St George\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 685/1 462<br/>[https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-births&record_type=stat_births&surname=BLACK&forename=JANE%20LOUISA&from_year=1871&to_year=1871&sex=F&rd_real_name%5B0%5D=ST%20GEORGE&rd_display_name%5B0%5D=ST%20GEORGE_ST%20GEORGE&rdno%5B0%5D=%20&ref=685%2F1%20462 ScotlandsPeople Search] (accessed 6 May 2021)<br/>Surname: BLACK; Forename: JANE LOUISA; Gender: F; Year: 1871; RD Name: St George.",
+    "citation": "* '''Birth Registration''': \"Statutory Register of Births\"<br/>National Records of Scotland, Ref: 685/1/462<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: BLACK; Forename: JANE LOUISA; Mother's Maiden Name: WALLACE; Gender: F; Year: 1871; RD Name: St George.",
     "type": "source"
   }
 }

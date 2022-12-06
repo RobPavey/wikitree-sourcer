@@ -15,6 +15,9 @@
     "placeString": "Inverness, Inverness, Scotland",
     "streetAddress": "36 Argyle St"
   },
+  "birthPlace": {
+    "placeString": "Kiltarlity, Inverness, Scotland"
+  },
   "collectionData": {
     "id": "census1881"
   },

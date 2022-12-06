@@ -1,38 +1,29 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?page=3&search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&surname=Bruce&surname_so=exact&forename_so=starts&other_surname_so=exact&mmsurname_so=exact&from_year=1880&to_year=1920&birth_year_range=1&record_type=stat_deaths",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   "success": true,
-  "numResultsOnPage": 25,
+  "isRowSelected": true,
+  "numResultsOnPage": 3,
   "recordData": {
     "Surname": "BRUCE",
     "Forename": "CHRISTINA",
     "Age at death": "41",
     "Mother's Maiden Name": "ANDERSON",
+    "Gender": "F",
     "Year": "1880",
-    "Ref": "282/4 1072",
+    "Ref": "282/4/1072",
     "RD Name": "St Andrew (Dundee)"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_stat_deaths/2265110?return_row=0",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/stat_deaths/stat_deaths-139793_11910634/887494821638cf79ab11c2?nojs=",
   "pageHeader": "Statutory registers - Deaths",
   "searchCriteria": {
     "Surname": "Bruce",
-    "Surname Option": "Exact",
-    "From_year": "1880",
-    "To_year": "1920",
-    "Birth_year_range": "1"
+    "Surname options": "Exact names only",
+    "Forename": "Christina",
+    "Forename options": "Names that begin with",
+    "Year of death range": "from 1880 to 1880",
+    "+/-": "1",
+    "County/city/minor records": "ALL"
   },
-  "urlQuery": {
-    "page": "3",
-    "search_type": "people",
-    "dl_cat": "statutory",
-    "dl_rec": "statutory-deaths",
-    "surname": "Bruce",
-    "surname_so": "exact",
-    "forename_so": "starts",
-    "other_surname_so": "exact",
-    "mmsurname_so": "exact",
-    "from_year": "1880",
-    "to_year": "1920",
-    "birth_year_range": "1",
-    "record_type": "stat_deaths"
-  }
+  "recordGroup": "statutory_records",
+  "recordType": "stat_deaths"
 }

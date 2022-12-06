@@ -44,7 +44,7 @@ const subcategories = [
     value: "stat_births",
     text: "Births",
     category: "statutory",
-    includeParents: true,
+    includeMmn: true,
   },
   {
     value: "stat_marriages",
@@ -62,16 +62,16 @@ const subcategories = [
     value: "stat_deaths",
     text: "Deaths",
     category: "statutory",
-    includeParents: true,
+    includeMmn: true,
   },
   {
-    value: "civilpartnership",
+    value: "stat_civilpartnerships",
     text: "Civil partnerships",
     category: "statutory",
     includeSpouses: true,
   },
   {
-    value: "dissolutions",
+    value: "stat_dissolutions",
     text: "Dissolutions",
     category: "statutory",
     includeSpouses: true,
@@ -92,32 +92,32 @@ const subcategories = [
   { value: "opr_deaths", text: "Deaths and burials", category: "church_cos" },
 
   {
-    value: "crbirths_baptism",
+    value: "cr_baptisms",
     text: "Birth and baptisms",
     category: "church_rcc",
     includeParents: true,
   },
   {
-    value: "crbanns_marriages",
+    value: "cr_banns",
     text: " Banns and marriages",
     category: "church_rcc",
     includeSpouses: true,
   },
   {
-    value: "crdeath_burial",
+    value: "cr_burials",
     text: " Deaths and burials",
     category: "church_rcc",
   },
   { value: "cr_other", text: "Other events", category: "church_rcc" },
 
   {
-    value: "ch3_baptism",
+    value: "ch3_baptisms",
     text: "Birth and baptisms",
     category: "church_other",
     includeParents: true,
   },
   {
-    value: "ch3_marriages",
+    value: "ch3_banns",
     text: "Banns and marriages",
     category: "church_other",
     includeSpouses: true,
@@ -129,17 +129,17 @@ const subcategories = [
   },
   { value: "ch3_other", text: "Other events", category: "church_other" },
 
-  { value: "census", text: "Census returns 1841-1911", category: "census" },
+  { value: "census", text: "Census returns 1841-1921", category: "census" },
   {
     value: "census_lds",
     text: "Census returns 1881 (LDS)",
     category: "census",
   },
 
-  { value: "valuation_rolls", text: "Valuation rolls", category: "valuation" },
+  { value: "vr", text: "Valuation rolls", category: "valuation" },
 
   {
-    value: "wills_testaments",
+    value: "wills",
     text: "Wills and testaments",
     category: "legal",
   },
@@ -174,6 +174,7 @@ const collections = [
   { value: "1891", text: "1891 Census", subcategory: "census" },
   { value: "1901", text: "1901 Census", subcategory: "census" },
   { value: "1911", text: "1911 Census", subcategory: "census" },
+  { value: "1921", text: "1921 Census", subcategory: "census" },
 ];
 
 function isSubCategoryInYearRange(subcategory, yearRange) {
@@ -241,6 +242,22 @@ const ScotpData = {
     }
 
     if (selectedSubcategory && selectedSubcategory.includeParents) {
+      return true;
+    }
+    return false;
+  },
+
+  includeMmn: function (generalizedData, parameters) {
+    let selectedSubcategory = undefined;
+    for (let subcategory of subcategories) {
+      if (!subcategory.category || subcategory.category == parameters.category) {
+        if (subcategory.value == parameters.subcategory) {
+          selectedSubcategory = subcategory;
+        }
+      }
+    }
+
+    if (selectedSubcategory && selectedSubcategory.includeMmn) {
       return true;
     }
     return false;
@@ -374,8 +391,8 @@ const ScotpData = {
       }
     }
 
-    console.log("messages returned is:");
-    console.log(messages);
+    //console.log("messages returned is:");
+    //console.log(messages);
 
     return messages;
   },
@@ -446,37 +463,37 @@ const ScotpData = {
     // Use a subcategory that corresponds to the source record if it works with date ranges
     // Only do this for the common bases
     if (generalizedData.recordType == RT.BirthRegistration || generalizedData.recordType == RT.Birth) {
-      const scList = ["stat_births", "opr_births", "crbirths_baptism", "ch3_baptism"];
+      const scList = ["stat_births", "opr_births", "cr_baptisms", "ch3_baptisms"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.MarriageRegistration) {
-      const scList = ["stat_marriages", "opr_marriages", "crbanns_marriages", "ch3_marriages"];
+      const scList = ["stat_marriages", "opr_marriages", "cr_banns", "ch3_banns"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.DeathRegistration) {
-      const scList = ["stat_deaths", "opr_deaths", "crdeath_burial", "ch3_burials"];
+      const scList = ["stat_deaths", "opr_deaths", "cr_burials", "ch3_burials"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Baptism || generalizedData.recordType == RT.BirthOrBaptism) {
-      const scList = ["opr_births", "crbirths_baptism", "ch3_baptism", "stat_births"];
+      const scList = ["opr_births", "cr_baptisms", "ch3_baptisms", "stat_births"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Marriage) {
-      const scList = ["opr_marriages", "crbanns_marriages", "ch3_marriages", "stat_marriages"];
+      const scList = ["opr_marriages", "cr_banns", "ch3_banns", "stat_marriages"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Burial) {
-      const scList = ["opr_deaths", "crdeath_burial", "ch3_burials", "stat_deaths"];
+      const scList = ["opr_deaths", "cr_burials", "ch3_burials", "stat_deaths"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
         return;
       }

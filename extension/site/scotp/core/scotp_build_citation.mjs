@@ -92,7 +92,7 @@ function createCitationUrl(data, gd, options) {
   // Year or year range
   let year = gd.inferEventYear();
   if (year) {
-    if (scotpRecordType == "census" || scotpRecordType == "valuation_rolls") {
+    if (scotpRecordType == "census" || scotpRecordType == "vr") {
       builder.addYear(year);
     } else if (scotpRecordType == "census_lds" || scotpRecordType == "military_tribunals" || scotpRecordType == "hie") {
       // no date for these record types (it is part of standard text for census_lds)
@@ -232,7 +232,7 @@ function createCitationUrl(data, gd, options) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.county)) {
     let countySearchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.county);
     if (countySearchParam) {
-      let userCounty = data.urlQuery[countySearchParam];
+      let userCounty = data.searchCriteria ?? data.searchCriteria[countySearchParam];
       if (userCounty) {
         // County is unusual, a lot of record types support county insearch but do not show it in the results
         // So, if the user specified a county and it found this result use it
@@ -337,11 +337,15 @@ function createCitationUrl(data, gd, options) {
 function buildCitationUrl(data, gd, options) {
   // could provide option to use a search style URL but don't see any reason to so far
 
+  return "https://www.scotlandspeople.gov.uk/";
+
+  /*  No longer use query URLs as they are not supported on scotp site
   let urlOpt = options.citation_scotp_urlStyle;
 
   if (urlOpt == "base" || urlOpt == "visible") {
     return "https://www.scotlandspeople.gov.uk/";
-  } else if (urlOpt == "original") {
+  }
+  else if (urlOpt == "original") {
     // if there is more than one result on the page then add the ref (if that option is selected)
     let url = data.url;
     if (data.numResultsOnPage > 1 && options.citation_scotp_urlIncludeRef) {
@@ -374,6 +378,7 @@ function buildCitationUrl(data, gd, options) {
 
   // if we get here we want to generate a full search URL (either "created" or "short")
   return createCitationUrl(data, gd, options);
+  */
 }
 
 function removeUnwantedKeysForTable(keys, recordData) {
@@ -679,10 +684,7 @@ function buildCoreCitation(data, gd, builder) {
   if (options.citation_scotp_urlStyle == "visible") {
     builder.recordLinkOrTemplate = url;
   } else {
-    let linkTitle = "ScotlandsPeople Search";
-    if (options.citation_scotp_urlStyle == "base") {
-      linkTitle = "ScotlandsPeople";
-    }
+    const linkTitle = "ScotlandsPeople";
     let recordLink = "[" + url + " " + linkTitle + "]";
     builder.recordLinkOrTemplate = recordLink;
   }

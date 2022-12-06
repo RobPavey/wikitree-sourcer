@@ -29,6 +29,7 @@ SOFTWARE.
 // priority set, in that case the order of import would probably control their order
 import "/site/ancestry/browser/ancestry_popup_search.mjs";
 import "/site/bg/browser/bg_popup_search.mjs";
+import "/site/cwgc/browser/cwgc_popup_search.mjs";
 import "/site/fmp/browser/fmp_popup_search.mjs";
 import "/site/fs/browser/fs_popup_search.mjs";
 import "/site/fg/browser/fg_popup_search.mjs";

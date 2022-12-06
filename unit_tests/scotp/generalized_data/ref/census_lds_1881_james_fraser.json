@@ -16,6 +16,9 @@
     "placeString": "Govan, Lanark, Scotland",
     "streetAddress": "14 Apsley Place"
   },
+  "birthPlace": {
+    "placeString": "Fochabers, Elgin, Scotland"
+  },
   "collectionData": {
     "id": "census1881"
   },

@@ -24,6 +24,16 @@ SOFTWARE.
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 
+const RECORD_TYPE_DESCRIPTION = {
+  B: "birth",
+  S: "marriage",
+  D: "death",
+};
+
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
 function buildUrl(data) {
   const lastName = data.lastName || data.husbandLastName || "";
   const firstName = data.firstName || data.husbandFirstName || "";
@@ -100,16 +110,11 @@ function buildMarriageDataString(generalizedData) {
 }
 
 function buildCoreCitation(data, generalizedData, builder) {
-  if (data.recordType === "B") {
-    builder.meaningfulTitle = "Birth Registration";
-    builder.sourceTitle = "Parish birth records";
-  } else if (data.recordType === "D") {
-    builder.meaningfulTitle = "Death Registration";
-    builder.sourceTitle = "Parish death records";
-  } else if (data.recordType === "S") {
-    builder.meaningfulTitle = "Marriage Registration";
-    builder.sourceTitle = "Parish marriage records";
-  }
+  const recordTypeDescription = RECORD_TYPE_DESCRIPTION[data.recordType];
+
+  builder.meaningfulTitle = `${capitalize(recordTypeDescription)} Registration`;
+  builder.sourceTitle = `Parish ${recordTypeDescription} records`;
+
   if (data.record) {
     builder.sourceReference = `${data.parish} ${data.record}/${data.year}`;
   } else {
@@ -117,7 +122,7 @@ function buildCoreCitation(data, generalizedData, builder) {
   }
 
   const url = buildUrl(data);
-  builder.recordLinkOrTemplate = `[${url} Geneteka birth record index]`;
+  builder.recordLinkOrTemplate = `[${url} Geneteka ${recordTypeDescription} record index]`;
   if (data.scanUrl) {
     builder.imageLink = `[${data.scanUrl} original document scan]`;
   }

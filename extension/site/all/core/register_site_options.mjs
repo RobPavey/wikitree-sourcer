@@ -28,6 +28,7 @@ SOFTWARE.
 // options page subsection drop down
 import "../../ancestry/core/ancestry_options.mjs";
 import "../../bg/core/bg_options.mjs";
+import "../../cwgc/core/cwgc_options.mjs";
 import "../../fmp/core/fmp_options.mjs";
 import "../../fs/core/fs_options.mjs";
 import "../../fg/core/fg_options.mjs";

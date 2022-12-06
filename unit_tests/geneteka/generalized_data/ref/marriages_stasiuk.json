@@ -12,6 +12,9 @@
   "eventDate": {
     "yearString": "1829"
   },
+  "eventPlace": {
+    "placeString": "Wirów"
+  },
   "name": {
     "lastName": "Woytczuk",
     "forenames": "Grzegorz"

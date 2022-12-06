@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "cwgc",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "5 July 1919"
+  },
+  "eventPlace": {
+    "placeString": "Edinburgh, United Kingdom",
+    "streetAddress": "EDINBURGH (NORTH MERCHISTON) CEMETERY"
+  },
+  "name": {
+    "name": "G PEFFERS",
+    "lastName": "PEFFERS",
+    "forenames": "G"
+  },
+  "lastNameAtDeath": "PEFFERS",
+  "ageAtDeath": "28",
+  "deathDate": {
+    "dateString": "5 July 1919"
+  },
+  "hasValidData": true
+}

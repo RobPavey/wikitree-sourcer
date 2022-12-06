@@ -1,42 +1,26 @@
 {
-  "url": "https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=ch3_baptism&church_type=Presbyterian%20registers&dl_cat=church&dl_rec=church-births-baptisms&surname=Connor&surname_so=exact&forename=Peter&forename_so=starts&from_year=1854&to_year=1854&parent_names_so=exact&parent_name_two_so=exact&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches",
+  "url": "https://www.scotlandspeople.gov.uk/record-results/230249370638ab2f541ce8",
   "success": true,
   "numResultsOnPage": 1,
   "recordData": {
     "Surname": "CONNOR",
     "Forename": "PETER",
     "Parents/ Other Details": "PETER CONNER/JEAN SNEDDON",
-    "Birth Date": "23 FEBRUARY 1854",
-    "Baptism Date": "16 MARCH 1854",
+    "Birth Date": "23/FEBRUARY/1854",
+    "Baptism Date": "16/MARCH/1854",
     "Parish/Congregation Name": "AIRDRIE - WELLWYND ASSOCIATE"
   },
-  "imageLink": "https://www.scotlandspeople.gov.uk/view-image/nrs_ch3_baptism/313940?image=21&return_row=0",
-  "pageHeader": "Church registers - Other Church Registers Baptisms",
+  "imageLink": "https://www.scotlandspeople.gov.uk/image-viewer/paywall/ch3_baptisms/ch3_baptisms-129393/230249370638ab2f541ce8?nojs=",
+  "pageHeader": "Church Registers - Other Church Registers Baptisms",
   "searchCriteria": {
-    "Event": "(B OR C OR S)",
-    "Church_type": "Presbyterian Registers",
+    "Church type": "Other churches records - Baptisms",
     "Surname": "Connor",
-    "Surname Option": "Exact",
+    "Surname options": "Exact names only",
     "Forename": "Peter",
-    "Forename Option": "Starts",
-    "From_year": "1854",
-    "To_year": "1854"
+    "Forename options": "Names that begin with",
+    "Year range": "from 1854 to 1854",
+    "County/city": "ALL"
   },
-  "urlQuery": {
-    "search_type": "people",
-    "event": "(B OR C OR S)",
-    "record_type[0]": "ch3_baptism",
-    "church_type": "Presbyterian registers",
-    "dl_cat": "church",
-    "dl_rec": "church-births-baptisms",
-    "surname": "Connor",
-    "surname_so": "exact",
-    "forename": "Peter",
-    "forename_so": "starts",
-    "from_year": "1854",
-    "to_year": "1854",
-    "parent_names_so": "exact",
-    "parent_name_two_so": "exact",
-    "record": "Church of Scotland (old parish registers) Roman Catholic Church Other churches"
-  }
+  "recordGroup": "church_registers",
+  "recordType": "ch3_baptisms"
 }
