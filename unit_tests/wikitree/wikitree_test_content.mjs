@@ -118,7 +118,7 @@ const regressionData = [
   },
   {
     // To test search on cwgc
-    caseName: "William Duncan Peffers - WikiTree Profile",
+    caseName: "peffers-436_read",
     url: "https://www.wikitree.com/wiki/Peffers-436",
   },
 ];

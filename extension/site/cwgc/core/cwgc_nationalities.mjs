@@ -22,38 +22,39 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { buildSearchUrl } from "../../extension/site/cwgc/core/cwgc_build_search_url.mjs";
-import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
+//cwgc site mixes nationalities and countries
 
-const regressionData = [
-  {
-    caseName: "g_peffers_read",
-    inputPath: "cwgc/generalized_data/ref/g_peffers_read",
-    typeOfSearch: "SameCollection",
-  },
-  {
-    caseName: "austin_palmer_read",
-    inputPath: "cwgc/generalized_data/ref/austin_palmer_read",
-    typeOfSearch: "SameCollection",
-  },
-  {
-    caseName: "peffers-436_read",
-    inputPath: "wikitree/generalized_data/ref/peffers-436_read",
-  },
-  {
-    caseName: "england_death_reg_handford_3",
-    inputPath: "ancestry/generalized_data/ref/england_death_reg_handford-3",
-  },
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
-  },
-  */
-];
+const nationalities = {
+  american: "United States of America",
+  australian: "Australia",
+  austrian: "Austria",
+  belgian: "Belgium",
+  brazilian: "Brazil",
+  bulgarian: "Bulgaria",
+  canadian: "Canada",
+  czechoslovakian: "Czechoslovakia",
+  dutch: "Netherlands",
+  finnish: "Finland",
+  german: "Germany",
+  greek: "Greece",
+  hungarian: "Hungary",
+  indian: "India",
+  norwegian: "Norway",
+  polish: "Poland",
+  portuguese: "Portugal",
+  romanian: "Romania",
+  russian: "Russia",
+  "south african": "South Africa",
+};
 
-async function runTests(testManager) {
-  await runBuildSearchUrlTests("cwgc", buildSearchUrl, regressionData, testManager);
+function getCountry(nationality) {
+  if (nationality) {
+    const country = nationalities[nationality.toLowerCase()];
+    if (country) {
+      return country;
+    }
+  }
+  return nationality;
 }
 
-export { runTests };
+export { getCountry };
