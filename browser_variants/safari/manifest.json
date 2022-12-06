@@ -118,6 +118,11 @@
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
     {
+      "matches": ["*://paperspast.natlib.govt.nz/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
+    },
+    {
       "matches": ["*://www.scotlandspeople.gov.uk/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
@@ -159,6 +164,7 @@
     "site/geneteka/core/geneteka_extract_data.mjs",
     "site/gro/core/gro_extract_data.mjs",
     "site/np/core/np_extract_data.mjs",
+    "site/ppnz/core/ppnz_extract_data.mjs",
     "site/scotp/core/scotp_extract_data.mjs",
     "site/trove/core/trove_extract_data.mjs"
   ],

@@ -25,7 +25,6 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 
 function buildTroveUrl(data, builder) {
-  // could provide option to use a search style URL but don't see any reason to so far
   let url = data.url;
 
   const options = builder.getOptions();

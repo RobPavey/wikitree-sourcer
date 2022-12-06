@@ -24,82 +24,34 @@ SOFTWARE.
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
-//import { FBMD } from "./ppnz_utils.mjs";
 
 function buildPpnzUrl(data, builder) {
-  // could provide option to use a search style URL but don't see any reason to so far
-  return data.citationUrl;
-}
+  let url = data.url;
 
-function getCorrectlyCasedName(name, options) {
-  if (options.citation_ppnz_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name);
+  const options = builder.getOptions();
+  if (!options.citation_ppnz_includeSearchQuery) {
+    // remove any search stuff
+    let queryIndex = url.indexOf("?");
+    if (queryIndex != -1) {
+      url = url.substring(0, queryIndex);
+    }
   }
-  return name;
-}
 
-function getCorrectlyCasedNames(name, options) {
-  if (options.citation_ppnz_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCapsEachWord(name, true);
-  }
-  return name;
-}
-
-function getGivenNames(data, options) {
-  return getCorrectlyCasedNames(data.givenNames, options);
-}
-
-function getLastName(data, options) {
-  return getCorrectlyCasedName(data.surname, options);
+  return url;
 }
 
 function buildCoreCitation(data, runDate, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = "";
-  builder.sourceReference = data.sourceCitation;
+  builder.sourceTitle = "Papers Past, National Library of New Zealand";
+
+  builder.databaseHasImages = true;
 
   var ppnzUrl = buildPpnzUrl(data, builder);
 
-  let recordLink = "[" + ppnzUrl + " Papers Past (NZ) Record]";
+  let recordLink = "[" + ppnzUrl + " Papers Past Article]";
   builder.recordLinkOrTemplate = recordLink;
 
-  let dataString = getLastName(data, options) + ", " + getGivenNames(data, options);
-  if (data.eventType == "birth") {
-    if (data.mothersMaidenName != undefined && data.mothersMaidenName != "") {
-      dataString += " (Mother's maiden name: ";
-      var mmn = getMothersMaidenName(data, options);
-      if (mmn == undefined || mmn == "") {
-        mmn = "-";
-      }
-      dataString += mmn + ")";
-    }
-  } else if (data.eventType == "death") {
-    if (data.ageAtDeath) {
-      dataString += " (Age at death: ";
-      dataString += data.ageAtDeath + ")";
-    } else if (data.birthDate) {
-      dataString += " (Date of birth: ";
-      dataString += data.birthDate + ")";
-    }
-  }
-  if (!dataString.endsWith(".")) {
-    dataString += ".";
-  }
-
-  if (options.citation_general_addBreaksWithinBody) {
-    dataString += "<br/>";
-  } else {
-    dataString += " ";
-  }
-  if (options.citation_general_addNewlinesWithinBody) {
-    dataString += "\n";
-  }
-
-  if (data.referenceVolume != undefined && data.referenceVolume != "") {
-    dataString += " Volume " + data.referenceVolume + " Page " + data.referencePage + ".";
-  }
-
-  builder.dataString = dataString;
+  builder.sourceReference = data.citationText;
 }
 
 function buildCitation(input) {

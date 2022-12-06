@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n[undefined Papers Past (NZ) Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "<ref>\n\"Papers Past, National Library of New Zealand\"<br/>\nPress, Volume LXXXIX, Issue 27142, 11 September 1953, Page 10<br/>\n[https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108?query=Pavey&snippet=true Papers Past Article] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n[undefined Papers Past (NZ) Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "This person was mentioned in a newspaper article on 11 September 1953 in Canterbury, New Zealand.<ref>\n\"Papers Past, National Library of New Zealand\"<br/>\nPress, Volume LXXXIX, Issue 27142, 11 September 1953, Page 10<br/>\n[https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108?query=Pavey&snippet=true Papers Past Article] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* [undefined Papers Past (NZ) Record] (accessed 6 May 2021)<br/>, undefined.<br/>",
+    "citation": "* \"Papers Past, National Library of New Zealand\"<br/>Press, Volume LXXXIX, Issue 27142, 11 September 1953, Page 10<br/>[https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108?query=Pavey&snippet=true Papers Past Article] (accessed 6 May 2021)",
     "type": "source"
   }
 }

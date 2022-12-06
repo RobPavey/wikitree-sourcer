@@ -20,6 +20,7 @@
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
     "*://*.billiongraves.com/*",
+    "*://*.cwgc.org/*",
     "*://*.findmypast.com/*",
     "*://*.findmypast.co.uk/*",
     "*://*.findmypast.ie/*",
@@ -32,9 +33,9 @@
     "*://geneteka.genealodzy.pl/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.newspapers.com/*",
-    "*://trove.nla.gov.au/*",
+    "*://paperspast.natlib.govt.nz/*",
     "*://www.scotlandspeople.gov.uk/*",
-    "*://*.cwgc.org/*"
+    "*://trove.nla.gov.au/*"
   ],
   "background": {
     "page": "base/browser/background/background.html"
@@ -134,6 +135,11 @@
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
     {
+      "matches": ["*://paperspast.natlib.govt.nz/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
+    },
+    {
       "matches": ["*://www.scotlandspeople.gov.uk/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
@@ -175,6 +181,7 @@
     "site/geneteka/core/geneteka_extract_data.mjs",
     "site/gro/core/gro_extract_data.mjs",
     "site/np/core/np_extract_data.mjs",
+    "site/ppnz/core/ppnz_extract_data.mjs",
     "site/scotp/core/scotp_extract_data.mjs",
     "site/trove/core/trove_extract_data.mjs"
   ],

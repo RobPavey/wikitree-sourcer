@@ -26,7 +26,7 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 class PpnzUriBuilder {
   constructor() {
-    this.uri = "https://www.ppnz.org.uk/cgi/search.pl";
+    this.uri = "https://paperspast.natlib.govt.nz/newspapers";
     this.searchTermAdded = false;
   }
 
@@ -57,44 +57,16 @@ class PpnzUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
-  }
-
-  addSurname(string) {
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
-  }
-
-  addGivenNames(string) {
-    this.addSearchParameter("given", WTS_String.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", WTS_String.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", WTS_String.removeExtendedAsciiCharacters(string));
+  addQueryString(string) {
+    this.addSearchParameter("query", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {
-    this.addSearchParameter("start", string);
+    this.addSearchParameter("start_date", string);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+    this.addSearchParameter("end_date", string);
   }
 
   getUri() {

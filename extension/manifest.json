@@ -32,8 +32,9 @@
     "*://geneteka.genealodzy.pl/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.newspapers.com/*",
-    "*://trove.nla.gov.au/*",
-    "*://www.scotlandspeople.gov.uk/*"
+    "*://paperspast.natlib.govt.nz/*",
+    "*://www.scotlandspeople.gov.uk/*",
+    "*://trove.nla.gov.au/*"
   ],
   "background": {
     "service_worker": "base/browser/background/background_chrome.mjs",
@@ -134,6 +135,11 @@
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
     {
+      "matches": ["*://paperspast.natlib.govt.nz/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
+    },
+    {
       "matches": ["*://www.scotlandspeople.gov.uk/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
@@ -227,12 +233,16 @@
       "matches": ["*://www.newspapers.com/*"]
     },
     {
-      "resources": ["site/trove/core/trove_extract_data.mjs"],
-      "matches": ["*://trove.nla.gov.au/*"]
+      "resources": ["site/ppnz/core/ppnz_extract_data.mjs"],
+      "matches": ["*://paperspast.natlib.govt.nz/*"]
     },
     {
       "resources": ["site/scotp/core/scotp_extract_data.mjs"],
       "matches": ["*://www.scotlandspeople.gov.uk/*"]
+    },
+    {
+      "resources": ["site/trove/core/trove_extract_data.mjs"],
+      "matches": ["*://trove.nla.gov.au/*"]
     }
   ],
   "manifest_version": 3

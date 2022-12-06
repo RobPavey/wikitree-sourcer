@@ -39,15 +39,15 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const ppnzStartYear = 1837;
-const ppnzEndYear = 1992;
+const ppnzStartYear = 1839;
+const ppnzEndYear = 1979;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function ppnzSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+async function ppnzSearch(generalizedData) {
+  const input = { generalizedData: generalizedData, options: options };
   doAsyncActionWithCatch("Papers Past (NZ) Search", input, async function () {
     let loadedModule = await import(`../core/ppnz_build_search_url.mjs`);
     doSearch(loadedModule, input);
@@ -62,7 +62,7 @@ function addPpnzDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addPpnzDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "England and Wales";
+  const stdCountryName = "New Zealand";
 
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, ppnzStartYear, ppnzEndYear, [stdCountryName])) {
@@ -97,85 +97,11 @@ function addPpnzDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItem(menu, "Search Papers Past (NZ)...", function (element) {
-    setupPpnzSearchSubMenu(data, backFunction, filter);
+  addMenuItem(menu, "Search Papers Past (NZ)", function (element) {
+    ppnzSearch(data.generalizedData);
   });
 
   return true;
-}
-
-async function addPpnzSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "ppnz", function (element) {
-    ppnzSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addPpnzSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      ppnzStartYear,
-      ppnzEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Papers Past (NZ) Births", function (element) {
-    ppnzSearch(data.generalizedData, "Births");
-  });
-}
-
-function addPpnzSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      ppnzStartYear,
-      ppnzEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Papers Past (NZ) Marriages", function (element) {
-    ppnzSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addPpnzSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      ppnzStartYear,
-      ppnzEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Papers Past (NZ) Deaths", function (element) {
-    ppnzSearch(data.generalizedData, "Deaths");
-  });
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Submenus
-//////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupPpnzSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  await addPpnzSameRecordMenuItem(menu, data, filter);
-  addPpnzSearchBirthsMenuItem(menu, data, filter);
-  addPpnzSearchMarriagesMenuItem(menu, data, filter);
-  addPpnzSearchDeathsMenuItem(menu, data, filter);
-
-  endMainMenu(menu);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -26,12 +26,10 @@ import { buildSearchUrl } from "../../extension/site/ppnz/core/ppnz_build_search
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+  {
+    caseName: "nz_sowerby-41_read",
+    inputPath: "wikitree/generalized_data/ref/nz_sowerby-41_read",
   },
-  */
 ];
 
 async function runTests(testManager) {

@@ -24,9 +24,33 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchOptionsGroup = {
+  category: "search",
+  subcategory: "ppnz",
+  tab: "search",
+  subsection: "ppnz",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "addToDateRange",
+      type: "select",
+      label: "Extra years to add to date range",
+      values: [
+        { value: "none", text: "None" },
+        { value: 1, text: "+/- 1 years" },
+        { value: 2, text: "+/- 2 years" },
+        { value: 5, text: "+/- 5 years" },
+        { value: 10, text: "+/- 10 years" },
+      ],
+      defaultValue: 2,
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -35,9 +59,9 @@ const citationOptionsGroup = {
   subsection: "ppnz",
   options: [
     {
-      optionName: "changeNamesToInitialCaps",
+      optionName: "includeSearchQuery",
       type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
+      label: "Include search query in PapersPast URL",
       defaultValue: true,
     },
   ],
@@ -45,6 +69,9 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "ppnz", "Papers Past (NZ)");
 registerSiteSearchPopupOptionsGroup("ppnz", 7, 7);
+
+registerSubheadingForOptions("search", "ppnz", "parameters", "Search Parameters");
+registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "ppnz", "Papers Past (NZ)");
 registerOptionsGroup(citationOptionsGroup);
