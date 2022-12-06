@@ -33,7 +33,8 @@
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.newspapers.com/*",
     "*://trove.nla.gov.au/*",
-    "*://www.scotlandspeople.gov.uk/*"
+    "*://www.scotlandspeople.gov.uk/*",
+    "*://*.cwgc.org/*"
   ],
   "background": {
     "page": "base/browser/background/background.html"
@@ -76,6 +77,11 @@
       "matches": ["*://*.billiongraves.com/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/bg/browser/bg_content.js"]
+    },
+    {
+      "matches": ["*://*.cwgc.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/cwgc/browser/cwgc_content.js"]
     },
     {
       "matches": [
@@ -159,6 +165,7 @@
     "site/wikitree/core/wikitree_extract_data.mjs",
     "site/ancestry/core/ancestry_extract_data.mjs",
     "site/bg/core/bg_extract_data.mjs",
+    "site/cwgc/core/cwgc_extract_data.mjs",
     "site/fg/core/fg_extract_data.mjs",
     "site/fmp/core/fmp_extract_data.mjs",
     "site/freebmd/core/freebmd_extract_data.mjs",

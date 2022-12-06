@@ -116,6 +116,11 @@ const regressionData = [
     caseName: "winbush-11_read",
     url: "https://www.wikitree.com/wiki/Winbush-11",
   },
+  {
+    // To test search on cwgc
+    caseName: "William Duncan Peffers - WikiTree Profile",
+    url: "https://www.wikitree.com/wiki/Peffers-436",
+  },
 ];
 
 async function runTests(testManager) {

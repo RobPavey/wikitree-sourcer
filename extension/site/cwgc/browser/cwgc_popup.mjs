@@ -22,22 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their options
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/cwgc_generalize_data.mjs";
+import { buildCitation } from "../core/cwgc_build_citation.mjs";
 
-// Currently the order that they are imported is the order that they appear in the
-// options page subsection drop down
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../bg/core/bg_options.mjs";
-import "../../cwgc/core/cwgc_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../geneteka/core/geneteka_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../np/core/np_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../trove/core/trove_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
+async function setupCwgcPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage: "It looks like a Commonwealth War Graves Commission page but not a casualty details page.",
+    generalizeFailedMessage:
+      "It looks like a Commonwealth War Graves Commission page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "cwgc",
+  };
+  setupSimplePopupMenu(input);
+}
+
+initPopup("cwgc", setupCwgcPopupMenu);

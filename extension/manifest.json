@@ -19,6 +19,7 @@
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
     "*://*.billiongraves.com/*",
+    "*://*.cwgc.org/*",
     "*://*.findmypast.com/*",
     "*://*.findmypast.co.uk/*",
     "*://*.findmypast.ie/*",
@@ -76,6 +77,11 @@
       "matches": ["*://*.billiongraves.com/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/bg/browser/bg_content.js"]
+    },
+    {
+      "matches": ["*://*.cwgc.org/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/cwgc/browser/cwgc_content.js"]
     },
     {
       "matches": [
@@ -174,6 +180,10 @@
     {
       "resources": ["site/bg/core/bg_extract_data.mjs"],
       "matches": ["*://*.billiongraves.com/*"]
+    },
+    {
+      "resources": ["site/cwgc/core/cwgc_extract_data.mjs"],
+      "matches": ["*://*.cwgc.org/*"]
     },
     {
       "resources": ["site/fg/core/fg_extract_data.mjs"],

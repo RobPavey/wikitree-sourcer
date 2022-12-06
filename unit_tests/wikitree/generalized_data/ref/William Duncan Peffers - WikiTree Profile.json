@@ -1,0 +1,49 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "William",
+    "middleNames": "Duncan",
+    "lastName": "Peffers"
+  },
+  "lastNameAtBirth": "Peffers",
+  "lastNameAtDeath": "Peffers",
+  "mothersMaidenName": "Brown",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "Jun 1898",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "19 Oct 1916",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Bloemfontein, Orange Free State, South Africa"
+  },
+  "deathPlace": {
+    "placeString": "Somme, Picardie, France"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Wilson Peffers",
+        "lastName": "Peffers",
+        "forenames": "William Wilson"
+      },
+      "lastNameAtBirth": "Peffers",
+      "lastNameAtDeath": "Peffers"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Annie",
+        "lastName": "Brown",
+        "name": "Annie Brown"
+      },
+      "lastNameAtBirth": "Brown",
+      "lastNameAtDeath": "Peffers"
+    }
+  },
+  "spouses": [],
+  "hasValidData": true
+}
