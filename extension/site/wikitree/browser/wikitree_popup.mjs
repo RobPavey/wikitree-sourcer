@@ -29,6 +29,7 @@ import {
   addMenuItem,
   addMenuItemWithSubtitle,
   addItalicMessageMenuItem,
+  addMenuDivider,
   displayMessage,
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
@@ -944,6 +945,7 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   let menu = beginMainMenu();
 
   await addSearchMenus(menu, data, backFunction, "wikitree");
+  addMenuDivider(menu);
 
   if (extractedData.pageType == "editFamily") {
     await addSetFieldsFromPersonDataMenuItem(menu, data, tabId);
