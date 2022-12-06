@@ -34,7 +34,6 @@ import {
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
   closePopup,
-  addMenuDivider,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
