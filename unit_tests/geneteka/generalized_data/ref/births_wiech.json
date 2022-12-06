@@ -12,6 +12,9 @@
   "eventDate": {
     "yearString": "1876"
   },
+  "eventPlace": {
+    "placeString": "Zegrze"
+  },
   "name": {
     "lastName": "Więch",
     "forenames": "Paweł Władysław"

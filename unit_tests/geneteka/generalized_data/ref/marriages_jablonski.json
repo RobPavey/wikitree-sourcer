@@ -11,6 +11,9 @@
   "eventDate": {
     "yearString": "1810"
   },
+  "eventPlace": {
+    "placeString": "Nowe Miasto nad Pilicą"
+  },
   "name": {
     "lastName": "Jabłoński",
     "forenames": "Antoni"

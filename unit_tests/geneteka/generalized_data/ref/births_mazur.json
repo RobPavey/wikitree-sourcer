@@ -11,6 +11,9 @@
   "eventDate": {
     "yearString": "1911"
   },
+  "eventPlace": {
+    "placeString": "Sandomierz NMP - Katedra"
+  },
   "name": {
     "lastName": "Mazur",
     "forenames": "Agnieszka"
