@@ -1,0 +1,12 @@
+{
+  "sourceOfData": "ppnz",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "20 December 1888"
+  },
+  "eventPlace": {
+    "placeString": "Wellington, New Zealand"
+  },
+  "hasValidData": true
+}

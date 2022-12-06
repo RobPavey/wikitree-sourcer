@@ -32,6 +32,10 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "nztimes_1988_sowerby",
+    url: "https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31?end_date=1992&items_per_page=10&query=Sowerby+Smith+Florence+Maude&snippet=true&start_date=1884",
+  },
+  {
     caseName: "press_1953_pavey",
     url: "https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108?query=Pavey&snippet=true",
   },
