@@ -11,6 +11,9 @@
   "eventDate": {
     "yearString": "1706"
   },
+  "eventPlace": {
+    "placeString": "Jazgarzew"
+  },
   "name": {
     "lastName": "Ozimek",
     "forenames": "Józef"

@@ -12,6 +12,9 @@
   "eventDate": {
     "yearString": "1865"
   },
+  "eventPlace": {
+    "placeString": "Ojrzanów"
+  },
   "name": {
     "lastName": "Piotrowska",
     "forenames": "Waleria"
