@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "cwgc",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "29 October 1944"
+  },
+  "eventPlace": {
+    "placeString": "Pas de Calais, France",
+    "streetAddress": "LONGUENESSE (ST. OMER) SOUVENIR CEMETERY"
+  },
+  "name": {
+    "name": "MILAN PROKOP",
+    "lastName": "PROKOP",
+    "forenames": "MILAN"
+  },
+  "lastNameAtDeath": "PROKOP",
+  "ageAtDeath": "24",
+  "deathDate": {
+    "dateString": "29 October 1944"
+  },
+  "hasValidData": true
+}

@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
-//import { FBMD } from "./cwgc_utils.mjs";
+import { getCountry } from "./cwgc_nationalities.mjs";
 
 function getCorrectlyCasedName(name, options) {
   if (options.citation_cwgc_changeNamesToInitialCaps) {
@@ -70,10 +70,14 @@ function buildCoreCitation(data, runDate, builder) {
     }
   }
 
-  let dataString = "Memorial page for " + getFullName(data, options);
+  let dataString = "Memorial page for " + getFullName(data, options) + ".";
 
   if (options.citation_cwgc_includeServiceNumber && data.serviceNumber) {
-    dataString += ", Service number: " + data.serviceNumber + ",";
+    dataString += " Service number: " + data.serviceNumber + "; ";
+  }
+
+  if (data.rank) {
+    dataString += " Rank: " + data.rank + "; ";
   }
 
   if (data.deathDate) {
@@ -83,6 +87,8 @@ function buildCoreCitation(data, runDate, builder) {
   if (data.ageAtDeath) {
     dataString += " Age: " + data.ageAtDeath + "; ";
   }
+
+  dataString = dataString.replace(/; $/, ".");
 
   if (options.citation_general_addBreaksWithinBody) {
     dataString += "<br/>";
@@ -96,7 +102,8 @@ function buildCoreCitation(data, runDate, builder) {
   if (options.citation_cwgc_includeUnit && data.unit) {
     dataString += "Regiment & Unit/Ship: " + data.unit;
     if (data.serviceCountry) {
-      dataString += " (" + data.serviceCountry + ");";
+      const country = getCountry(data.serviceCountry);
+      dataString += " (" + country + ");";
     }
   }
 
@@ -104,8 +111,8 @@ function buildCoreCitation(data, runDate, builder) {
     dataString += " Additional Info: " + data.info;
   }
 
-  if (dataString.endsWith(";")) {
-    dataString.slice(0, -1);
+  if (!dataString.endsWith(".")) {
+    dataString += ".";
   }
 
   builder.dataString = dataString;

@@ -33,13 +33,22 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   {
     // Only first initial
-    caseName: "Private G Peffers _ War Casualty Details 416346 _ CWGC",
+    caseName: "g_peffers_read",
     url: "https://www.cwgc.org/find-records/find-war-dead/casualty-details/416346/g-peffers/",
   },
   {
-    // Only first initial
-    caseName: "Wireman Austin James Palmer _ War Casualty Details 2658315 _ CWGC",
+    // a ship rather then a cemetery
+    caseName: "austin_palmer_read",
     url: "https://www.cwgc.org/find-records/find-war-dead/casualty-details/2658315/austin-james-palmer/",
+  },
+  {
+    // nationality rather than country
+    caseName: "milan_prokop_read",
+    url: "https://www.cwgc.org/find-records/find-war-dead/casualty-details/7518423/milan-prokop/",
+  },
+  {
+    caseName: "peter_burgon_read",
+    url: "https://www.wikitree.com/wiki/peter_burgon_read",
   },
 ];
 

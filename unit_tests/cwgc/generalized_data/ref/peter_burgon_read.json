@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "cwgc",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "26 December 1915"
+  },
+  "eventPlace": {
+    "placeString": "Kent, United Kingdom",
+    "streetAddress": "CHATHAM NAVAL MEMORIAL"
+  },
+  "name": {
+    "name": "PETER BURGON",
+    "lastName": "BURGON",
+    "forenames": "PETER"
+  },
+  "lastNameAtDeath": "BURGON",
+  "deathDate": {
+    "dateString": "26 December 1915"
+  },
+  "hasValidData": true
+}
