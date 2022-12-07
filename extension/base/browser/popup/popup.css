@@ -222,3 +222,17 @@ li.dividerBelow {
   padding: 10px 0px;
   margin: 0px;
 }
+.improveFieldComment {
+  margin: 5px 10px;
+  font-style: italic;
+  color: red;
+  display: inline-block;
+}
+.improveFieldInput {
+  margin: 5px 0px;
+}
+.improveFieldLabel {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 5px 5px 10px;
+}

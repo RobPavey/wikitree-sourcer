@@ -29,7 +29,9 @@ import {
   addMenuItem,
   addMenuItemWithSubtitle,
   addItalicMessageMenuItem,
+  addBackMenuItem,
   addMenuDivider,
+  addBreak,
   displayMessage,
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
@@ -575,21 +577,19 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
   return result;
 }
 
-async function setFieldsFromPersonData(data, personEd, personGd, tabId, citationObject) {
-  let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
-
+async function doSetFieldsFromPersonData(tabId, wtPersonData) {
   // send a message to content script
   try {
-    //console.log("setFieldsFromPersonData");
+    //console.log("doSetFieldsFromPersonData");
     //console.log(tabId);
-    //console.log(personData);
+    //console.log(wtPersonData);
 
     chrome.tabs.sendMessage(tabId, { type: "setFields", personData: wtPersonData }, function (response) {
       displayMessage("Setting fields ...");
 
-      //console.log("setFieldsFromPersonData, chrome.runtime.lastError is:");
+      //console.log("doSetFieldsFromPersonData, chrome.runtime.lastError is:");
       //console.log(chrome.runtime.lastError);
-      //console.log("setFieldsFromPersonData, response is:");
+      //console.log("doSetFieldsFromPersonData, response is:");
       //console.log(response);
 
       // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
@@ -600,7 +600,7 @@ async function setFieldsFromPersonData(data, personEd, personGd, tabId, citation
         // just got unloaded prior to the reload but we got here because the popup had not been reset.
         // In this case we are seeing the response being undefined.
         // What to do in this case? Don't want to leave the "Initializing menu..." up.
-        displayMessageWithIcon("warning", "setFieldsFromPersonData failed");
+        displayMessageWithIcon("warning", "doSetFieldsFromPersonData failed");
       } else if (response.success) {
         displayMessageWithIconThenClosePopup("check", "Fields updated");
       } else {
@@ -613,9 +613,17 @@ async function setFieldsFromPersonData(data, personEd, personGd, tabId, citation
   }
 }
 
-async function mergeEditFromPersonData(data, personEd, personGd, citationObject) {
-  let wtPersonData = getWikiTreeMergeEditData(data, personEd, personGd, citationObject);
+async function setFieldsFromPersonData(data, personEd, personGd, tabId, citationObject, backFunction) {
+  let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
 
+  function processFunction() {
+    doSetFieldsFromPersonData(tabId, wtPersonData);
+  }
+
+  checkWtPersonData(wtPersonData, processFunction, backFunction);
+}
+
+async function doMergeEditFromPersonData(data, wtPersonData) {
   let mergeUrl = "https://www.wikitree.com/wiki/Special:MergeEdit";
 
   try {
@@ -636,6 +644,68 @@ async function mergeEditFromPersonData(data, personEd, personGd, citationObject)
 
   chrome.tabs.create({ url: mergeUrl });
   closePopup();
+}
+
+async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
+  function backFunctionForApprove() {
+    if (wtPersonData.deathLocationApproved) {
+      wtPersonData.deathLocationApproved = false;
+      checkWtPersonData(wtPersonData, processFunction, backFunction);
+    } else if (wtPersonData.birthLocationApproved) {
+      wtPersonData.birthLocationApproved = false;
+      checkWtPersonData(wtPersonData, processFunction, backFunction);
+    } else {
+      backFunction();
+    }
+  }
+
+  function locationNeedsUserCheck(fieldName, fieldDescription) {
+    let fieldValue = wtPersonData[fieldName];
+    if (fieldValue && !wtPersonData[fieldName + "Approved"]) {
+      let country = CD.matchCountryFromPlaceName(fieldValue);
+      if (!country) {
+        // location has no recognized country
+        let message1 = "Country name not recognized in " + fieldDescription;
+        message1 += ". Please check it and edit below if needed.";
+        let message2 = "Edit " + fieldDescription + ":";
+
+        function continueFunction(newValue) {
+          wtPersonData[fieldName] = newValue;
+          wtPersonData[fieldName + "Approved"] = true;
+          checkWtPersonData(wtPersonData, processFunction, backFunctionForApprove);
+        }
+
+        const existingValue = wtPersonData[fieldName];
+        setupImproveTextFieldSubMenu(existingValue, message1, message2, continueFunction, backFunctionForApprove);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  if (locationNeedsUserCheck("birthLocation", "birth location")) {
+    return;
+  }
+
+  if (locationNeedsUserCheck("deathLocation", "death location")) {
+    return;
+  }
+
+  if (locationNeedsUserCheck("marriageLocation", "marriage location")) {
+    return;
+  }
+
+  processFunction();
+}
+
+async function mergeEditFromPersonData(data, personEd, personGd, citationObject, tabId, backFunction) {
+  let wtPersonData = getWikiTreeMergeEditData(data, personEd, personGd, citationObject);
+
+  function processFunction() {
+    doMergeEditFromPersonData(data, wtPersonData);
+  }
+
+  checkWtPersonData(wtPersonData, processFunction, backFunction);
 }
 
 function getPersonDataSubtitleText(gd, timeText) {
@@ -744,7 +814,7 @@ function getCitationObjectExplanationText(gd) {
 // Add menu item functions
 ////////////////////////////////////////////////////////////////////////////////
 
-async function addSetFieldsFromPersonDataMenuItem(menu, data, tabId) {
+async function addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction) {
   let personData = await getLatestPersonData();
   if (!personData) {
     return; // no saved data, do not add menu item
@@ -764,14 +834,14 @@ async function addSetFieldsFromPersonDataMenuItem(menu, data, tabId) {
       menu,
       menuText,
       function (element) {
-        setFieldsFromPersonData(data, personData.extractedData, gd, tabId);
+        setFieldsFromPersonData(data, personData.extractedData, gd, tabId, null, backFunction);
       },
       subtitleText
     );
   }
 }
 
-async function addSetFieldsFromCitationMenuItem(menu, data, tabId) {
+async function addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction) {
   let storedObject = await getLatestCitation();
   if (!storedObject) {
     return; // no saved data, do not add menu item
@@ -796,14 +866,14 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId) {
       menu,
       menuText,
       function (element) {
-        setFieldsFromPersonData(data, citationObject.extractedData, gd, tabId, citationObject);
+        setFieldsFromPersonData(data, citationObject.extractedData, gd, tabId, citationObject, backFunction);
       },
       subtitleText
     );
   }
 }
 
-async function addMergeEditFromPersonDataMenuItem(menu, data) {
+async function addMergeEditFromPersonDataMenuItem(menu, data, tabId, backFunction) {
   let personData = await getLatestPersonData();
   if (!personData) {
     console.log("addMergeEditFromPersonDataMenuItem, no person data");
@@ -825,7 +895,7 @@ async function addMergeEditFromPersonDataMenuItem(menu, data) {
       menu,
       menuText,
       function (element) {
-        mergeEditFromPersonData(data, personData.extractedData, gd);
+        mergeEditFromPersonData(data, personData.extractedData, gd, null, tabId, backFunction);
       },
       subtitleText
     );
@@ -836,7 +906,7 @@ async function addMergeEditFromPersonDataMenuItem(menu, data) {
   return false;
 }
 
-async function addMergeEditFromCitationObjectMenuItem(menu, data) {
+async function addMergeEditFromCitationObjectMenuItem(menu, data, tabId, backFunction) {
   let storedObject = await getLatestCitation();
   if (!storedObject) {
     return; // no saved data, do not add menu item
@@ -861,7 +931,7 @@ async function addMergeEditFromCitationObjectMenuItem(menu, data) {
       menu,
       menuText,
       function (element) {
-        mergeEditFromPersonData(data, citationObject.extractedData, gd, citationObject);
+        mergeEditFromPersonData(data, citationObject.extractedData, gd, citationObject, tabId, backFunction);
       },
       subtitleText
     );
@@ -874,7 +944,7 @@ async function addMergeEditFromCitationObjectMenuItem(menu, data) {
 
 async function addMergeEditMenuItem(menu, data, tabId, backFunction) {
   addMenuItem(menu, "Merge/Edit from external data...", function (element) {
-    setupMergeEditSubMenu(data, tabId);
+    setupMergeEditSubMenu(data, tabId, backFunction);
   });
 }
 
@@ -882,11 +952,62 @@ async function addMergeEditMenuItem(menu, data, tabId, backFunction) {
 // Sub menus
 ////////////////////////////////////////////////////////////////////////////////
 
-async function setupMergeEditSubMenu(data, tabId) {
+async function setupImproveTextFieldSubMenu(existingValue, message1, message2, continueFunction, backFunction) {
   let menu = beginMainMenu();
 
-  const item1Added = await addMergeEditFromPersonDataMenuItem(menu, data);
-  const item2Added = await addMergeEditFromCitationObjectMenuItem(menu, data);
+  addBackMenuItem(menu, backFunction);
+
+  let commentElement = document.createElement("label");
+  commentElement.innerText = message1;
+  commentElement.className = "improveFieldComment";
+  menu.list.appendChild(commentElement);
+
+  let countriesLabelElement = document.createElement("label");
+  {
+    let inputElement = document.createElement("input");
+    inputElement.type = "text";
+    inputElement.className = "improveFieldInput";
+    inputElement.id = "improveFieldInput";
+
+    inputElement.value = existingValue;
+
+    let labelTextNode = document.createTextNode(message2);
+    countriesLabelElement.appendChild(labelTextNode);
+    countriesLabelElement.appendChild(inputElement);
+    countriesLabelElement.className = "improveFieldLabel";
+    menu.list.appendChild(countriesLabelElement);
+  }
+
+  // final button
+  addBreak(menu.list);
+
+  let button = document.createElement("button");
+  button.className = "dialogButton";
+  button.innerText = "Continue";
+  button.onclick = function (element) {
+    let inputElement = document.getElementById("improveFieldInput");
+    let newValue = existingValue;
+    if (inputElement) {
+      newValue = inputElement.value;
+    }
+    continueFunction(newValue);
+  };
+  menu.list.appendChild(button);
+
+  endMainMenu(menu);
+}
+
+async function setupMergeEditSubMenu(data, tabId, backFunction) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  let toHereBackFunction = function () {
+    setupMergeEditSubMenu(data, tabId, backFunction);
+  };
+
+  const item1Added = await addMergeEditFromPersonDataMenuItem(menu, data, tabId, toHereBackFunction);
+  const item2Added = await addMergeEditFromCitationObjectMenuItem(menu, data, tabId, toHereBackFunction);
 
   if (!item1Added && !item2Added) {
     let message = "No external data available.";
@@ -949,11 +1070,11 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
 
   if (extractedData.pageType == "editFamily") {
     addMenuDivider(menu);
-    await addSetFieldsFromPersonDataMenuItem(menu, data, tabId);
-    await addSetFieldsFromCitationMenuItem(menu, data, tabId);
+    await addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction);
+    await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
   } else if (extractedData.pageType == "read" || extractedData.pageType == "private") {
     addMenuDivider(menu);
-    await addMergeEditMenuItem(menu, data, tabId);
+    await addMergeEditMenuItem(menu, data, tabId, backFunction);
   }
 
   addStandardMenuEnd(menu, data, backFunction);
