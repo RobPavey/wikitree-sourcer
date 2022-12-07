@@ -59,7 +59,7 @@ const searchOptionsGroup = {
       type: "checkbox",
       label: "Include middle name in search",
       defaultValue: true,
-    },    
+    },
     {
       optionName: "includeMaidenName",
       type: "checkbox",
@@ -80,7 +80,7 @@ const searchOptionsGroup = {
         { value: "none", text: "Do not specify a birth year" },
         //{ value: "auto", text: "Set automatically based on source" },
         { value: "0", text: "+/- 0 years" },
-        { value: "1", text: "+/- 1 years" },        
+        { value: "1", text: "+/- 1 years" },
         { value: "2", text: "+/- 2 years" },
         { value: "3", text: "+/- 3 years" },
         { value: "4", text: "+/- 4 years" },
@@ -101,7 +101,7 @@ const searchOptionsGroup = {
         { value: "none", text: "Do not specify a death year" },
         //{ value: "auto", text: "Set automatically based on source" },
         { value: "0", text: "+/- 0 years" },
-        { value: "1", text: "+/- 1 years" },        
+        { value: "1", text: "+/- 1 years" },
         { value: "2", text: "+/- 2 years" },
         { value: "3", text: "+/- 3 years" },
         { value: "4", text: "+/- 4 years" },
@@ -123,7 +123,7 @@ const citationOptionsGroup = {
   tab: "citation",
   subsection: "bg",
   options: [
-        {
+    {
       optionName: "includeTranscriber",
       type: "checkbox",
       label: "Include the transcriber in the citation",
@@ -155,8 +155,8 @@ const citationOptionsGroup = {
       type: "select",
       label: "If the name has a part surrounded by brackets (usually maiden name)",
       values: [
-        { 
-          value: "omit", 
+        {
+          value: "omit",
           text: "Omit that part of name from citation",
         },
         {
@@ -174,7 +174,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "bg", "BillionGraves");
-registerSiteSearchPopupOptionsGroup("bg", 4, 4);
+registerSiteSearchPopupOptionsGroup("bg", 10, 10);
 registerSubheadingForOptions("search", "bg", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

@@ -54,7 +54,7 @@ const searchOptionsGroup = {
       optionName: "popup_maxSearchItemsInTopMenu",
       type: "number",
       label: "Maximum number of search menu items to show on top-level popup (0 means just show search submenu)",
-      defaultValue: 8,
+      defaultValue: 16,
     },
     {
       optionName: "maxLifespan",

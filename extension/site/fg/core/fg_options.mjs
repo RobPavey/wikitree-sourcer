@@ -141,7 +141,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "fg", "Find a Grave");
-registerSiteSearchPopupOptionsGroup("fg", 4, 4);
+registerSiteSearchPopupOptionsGroup("fg", 9, 9);
 registerSubheadingForOptions("search", "fg", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

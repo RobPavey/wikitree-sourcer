@@ -47,7 +47,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "np", "Newspapers.com");
-registerSiteSearchPopupOptionsGroup("np", 4, 4);
+registerSiteSearchPopupOptionsGroup("np", 11, 11);
 // registerSubheadingForOptions("search", "np", "parameters", "Search Parameters");
 // registerOptionsGroup(searchOptionsGroup);
 // registerSubsectionForOptions("citation", "np", "Newspapers.com");
