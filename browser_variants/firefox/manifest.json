@@ -25,6 +25,7 @@
     "*://*.findmypast.co.uk/*",
     "*://*.findmypast.ie/*",
     "*://*.findmypast.com.au/*",
+    "*://www-findmypast-co-uk.nls.idm.oclc.org/*",
     "*://www.findagrave.com/*",
     "*://www.familysearch.org/*",
     "*://www.freebmd.org.uk/*",
@@ -89,7 +90,8 @@
         "*://*.findmypast.com/*",
         "*://*.findmypast.co.uk/*",
         "*://*.findmypast.ie/*",
-        "*://*.findmypast.com.au/*"
+        "*://*.findmypast.com.au/*",
+        "*://www-findmypast-co-uk.nls.idm.oclc.org/*"
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/fmp/browser/fmp_content.js"]

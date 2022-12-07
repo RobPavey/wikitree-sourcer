@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "url": "https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBM%2FWO363-4%2F7315723%2F31%2F840",
+  "subDomain": "www-findmypast-co-uk",
+  "domain": "nls.idm.oclc.org",
+  "urlPath": "transcript",
+  "urlParameters": "id=GBM%2FWO363-4%2F7315723%2F31%2F840",
+  "heading": "Archibald Thomson",
+  "collection": "British Army Service Records",
+  "place": "",
+  "personGender": "male",
+  "recordData": {
+    "First name(s)": "Archibald",
+    "Last name": "Thomson",
+    "Birth year": "-",
+    "Birth town": "Edinburgh",
+    "Birth county": "Midlothian",
+    "Birth country": "Scotland",
+    "Service number": "5668",
+    "Regiment": "Scottish Rifles",
+    "Series": "WO 363",
+    "Series description": "Wo 363 - First World War Service Records 'Burnt Documents'",
+    "Archive": "The National Archives",
+    "Record set": "British Army Service Records",
+    "Category": "Military, armed forces & conflict",
+    "Subcategory": "First World War",
+    "Collections from": "Great Britain, UK None"
+  }
+}

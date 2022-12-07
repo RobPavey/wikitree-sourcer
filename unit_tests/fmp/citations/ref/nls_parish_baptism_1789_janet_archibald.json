@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland, Parish Births & Baptisms 1564-1929\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Archibald, son of James Thomson & Janet Weir, was born in 1789 and baptised in Edinburgh, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland, Parish Births & Baptisms 1564-1929\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"Scotland, Parish Births & Baptisms 1564-1929\"<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland, Parish Births & Baptisms 1564-1929\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nArchibald Thomson baptism (born 1789), son of James Thomson & Janet Weir, in Edinburgh, Midlothian, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Archibald, son of James Thomson & Janet Weir, was born in 1789 and baptised in Edinburgh, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland, Parish Births & Baptisms 1564-1929\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nArchibald Thomson baptism (born 1789), son of James Thomson & Janet Weir, in Edinburgh, Midlothian, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"Scotland, Parish Births & Baptisms 1564-1929\"<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)<br/>Archibald Thomson baptism (born 1789), son of James Thomson & Janet Weir, in Edinburgh, Midlothian, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland, Parish Births & Baptisms 1564-1929\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nMother's first name(s): Janet; First name(s): Archibald; Mother's last name: Weir; Last name: Thomson; Residence: Edinburgh, Midlothian, Scotland; Gender: Male; Place: Edinburgh; Birth year: 1789; County: Midlothian; Birth place: Canongate, Edinburgh, Midlothian, Scotland; Country: Scotland; Baptism place: CANONGATE, EDINBURGH, MIDLOTHIAN, SCOTLAND; Father's first name(s): James; Father's last name: Thomson.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Archibald, son of James Thomson & Janet Weir, was born in 1789 and baptised in Edinburgh, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland, Parish Births & Baptisms 1564-1929\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nMother's first name(s): Janet; First name(s): Archibald; Mother's last name: Weir; Last name: Thomson; Residence: Edinburgh, Midlothian, Scotland; Gender: Male; Place: Edinburgh; Birth year: 1789; County: Midlothian; Birth place: Canongate, Edinburgh, Midlothian, Scotland; Country: Scotland; Baptism place: CANONGATE, EDINBURGH, MIDLOTHIAN, SCOTLAND; Father's first name(s): James; Father's last name: Thomson.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"Scotland, Parish Births & Baptisms 1564-1929\"<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)<br/>Mother's first name(s): Janet; First name(s): Archibald; Mother's last name: Weir; Last name: Thomson; Residence: Edinburgh, Midlothian, Scotland; Gender: Male; Place: Edinburgh; Birth year: 1789; County: Midlothian; Birth place: Canongate, Edinburgh, Midlothian, Scotland; Country: Scotland; Baptism place: CANONGATE, EDINBURGH, MIDLOTHIAN, SCOTLAND; Father's first name(s): James; Father's last name: Thomson.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland, Parish Births & Baptisms 1564-1929\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Mother's first name(s) || Janet\n|-\n| First name(s) || Archibald\n|-\n| Mother's last name || Weir\n|-\n| Last name || Thomson\n|-\n| Residence || Edinburgh, Midlothian, Scotland\n|-\n| Gender || Male\n|-\n| Place || Edinburgh\n|-\n| Birth year || 1789\n|-\n| County || Midlothian\n|-\n| Birth place || Canongate, Edinburgh, Midlothian, Scotland\n|-\n| Country || Scotland\n|-\n| Baptism date || -\n|-\n| Baptism place || CANONGATE, EDINBURGH, MIDLOTHIAN, SCOTLAND\n|-\n| Father's first name(s) || James\n|-\n| Father's last name || Thomson\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Archibald, son of James Thomson & Janet Weir, was born in 1789 and baptised in Edinburgh, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland, Parish Births & Baptisms 1564-1929\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Mother's first name(s) || Janet\n|-\n| First name(s) || Archibald\n|-\n| Mother's last name || Weir\n|-\n| Last name || Thomson\n|-\n| Residence || Edinburgh, Midlothian, Scotland\n|-\n| Gender || Male\n|-\n| Place || Edinburgh\n|-\n| Birth year || 1789\n|-\n| County || Midlothian\n|-\n| Birth place || Canongate, Edinburgh, Midlothian, Scotland\n|-\n| Country || Scotland\n|-\n| Baptism date || -\n|-\n| Baptism place || CANONGATE, EDINBURGH, MIDLOTHIAN, SCOTLAND\n|-\n| Father's first name(s) || James\n|-\n| Father's last name || Thomson\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"Scotland, Parish Births & Baptisms 1564-1929\"<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570 FindMyPast Transcription] (accessed 6 May 2021)<br/>Mother's first name(s): Janet; First name(s): Archibald; Mother's last name: Weir; Last name: Thomson; Residence: Edinburgh, Midlothian, Scotland; Gender: Male; Place: Edinburgh; Birth year: 1789; County: Midlothian; Birth place: Canongate, Edinburgh, Midlothian, Scotland; Country: Scotland; Baptism place: CANONGATE, EDINBURGH, MIDLOTHIAN, SCOTLAND; Father's first name(s): James; Father's last name: Thomson.",
+    "type": "source"
+  }
+}

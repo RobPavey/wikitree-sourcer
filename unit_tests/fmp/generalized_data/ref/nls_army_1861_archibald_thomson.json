@@ -1,0 +1,14 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Thomson",
+    "forenames": "Archibald"
+  },
+  "collectionData": {
+    "id": "British Army Service Records"
+  },
+  "hasValidData": true
+}

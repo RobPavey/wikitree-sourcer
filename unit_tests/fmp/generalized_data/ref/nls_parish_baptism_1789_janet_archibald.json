@@ -1,0 +1,36 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Thomson",
+    "forenames": "Archibald"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Edinburgh, Midlothian, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "James",
+        "lastName": "Thomson"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Janet",
+        "lastName": "Weir"
+      }
+    }
+  },
+  "birthDate": {
+    "yearString": "1789"
+  },
+  "lastNameAtBirth": "Thomson",
+  "collectionData": {
+    "id": "Scotland, Parish Births & Baptisms 1564-1929"
+  },
+  "hasValidData": true
+}

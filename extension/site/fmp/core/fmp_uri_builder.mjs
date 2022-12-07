@@ -65,7 +65,12 @@ class FmpUriBuilder {
     if (domain == "none" || !domain) {
       domain = "findmypast.co.uk";
     }
-    this.uri = "https://www." + domain + "/search/results";
+    if (domain.startsWith("www")) {
+      // this is to handle NLS access
+      this.uri = "https://" + domain + "/search/results";
+    } else {
+      this.uri = "https://www." + domain + "/search/results";
+    }
     this.searchTermAdded = false;
     this.titleMap = new Map();
     this.options = options;

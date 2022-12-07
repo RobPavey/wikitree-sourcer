@@ -1,0 +1,41 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Peffers",
+    "forenames": "Hugh"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Dalkeith, St David, Midlothian, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "Alexander",
+        "lastName": "Peffers"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Ann",
+        "lastName": "Hannen"
+      }
+    }
+  },
+  "eventDate": {
+    "dateString": "12 Jul 1903",
+    "yearString": "1903"
+  },
+  "birthDate": {
+    "dateString": "01 Jan 1869",
+    "yearString": "1869"
+  },
+  "lastNameAtBirth": "Peffers",
+  "collectionData": {
+    "id": "Scotland Roman Catholic Parish Baptisms"
+  },
+  "hasValidData": true
+}

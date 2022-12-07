@@ -49,6 +49,7 @@ const searchOptionsGroup = {
         { value: "findmypast.co.uk", text: "findmypast.co.uk" },
         { value: "findmypast.ie", text: "findmypast.ie" },
         { value: "findmypast.com.au", text: "findmypast.com.au" },
+        { value: "www-findmypast-co-uk.nls.idm.oclc.org", text: "www-findmypast-co-uk.nls.idm.oclc.org" },
       ],
       defaultValue: "findmypast.co.uk",
       unitTestValue: "findmypast.co.uk",

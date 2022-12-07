@@ -1,0 +1,108 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Peffers",
+    "forenames": "Hugh"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland"
+  },
+  "registrationDistrict": "Haddington",
+  "birthDate": {
+    "yearString": "1880",
+    "qualifier": 2
+  },
+  "ageAtEvent": "1",
+  "birthPlace": {
+    "placeString": "Scotland"
+  },
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Alexander Peffers",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "34",
+      "birthYear": "1847",
+      "occupation": "Railway surfaceman",
+      "birthPlace": "Haddington, Haddingtonshire (East Lothian), Scotland"
+    },
+    {
+      "name": "Ann Peffers",
+      "relationship": "wife",
+      "gender": "female",
+      "age": "31",
+      "birthYear": "1850",
+      "birthPlace": "Haddingtonshire (East Lothian), Scotland"
+    },
+    {
+      "name": "James Peffers",
+      "relationship": "son",
+      "gender": "male",
+      "age": "8",
+      "birthYear": "1873",
+      "occupation": "Scholar",
+      "birthPlace": "Haddington, Haddingtonshire (East Lothian), Scotland"
+    },
+    {
+      "name": "Ann Peffers",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "5",
+      "birthYear": "1876",
+      "birthPlace": "Haddington, Haddingtonshire (East Lothian), Scotland"
+    },
+    {
+      "name": "Mary Peffers",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "3",
+      "birthYear": "1878",
+      "birthPlace": "Haddington, Haddingtonshire (East Lothian), Scotland"
+    },
+    {
+      "isSelected": true,
+      "name": "Hugh Peffers",
+      "relationship": "son",
+      "gender": "male",
+      "age": "1",
+      "birthYear": "1880",
+      "birthPlace": "Haddington, Haddingtonshire (East Lothian), Scotland"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Alexander Peffers"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ann Peffers"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1881 England, Wales & Scotland Census",
+    "schedule": "8"
+  },
+  "hasValidData": true
+}

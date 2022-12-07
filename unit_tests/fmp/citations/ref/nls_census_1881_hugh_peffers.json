@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England, Wales & Scotland Census\"<br/>\nReference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1881 census Hugh (age 1) was the son of Alexander Peffers in Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland.<ref>\n'''1881 Census''':\n\"1881 England, Wales & Scotland Census\"<br/>\nReference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1881 Census''': \"1881 England, Wales & Scotland Census\"<br/>Reference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England, Wales & Scotland Census\"<br/>\nReference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)<br/>\nHugh Peffers (1) son in household of Alexander Peffers (34) in Spring Gardens in Haddington registration district in Scotland. Born in Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1881 census Hugh (age 1) was the son of Alexander Peffers in Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland.<ref>\n'''1881 Census''':\n\"1881 England, Wales & Scotland Census\"<br/>\nReference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)<br/>\nHugh Peffers (1) son in household of Alexander Peffers (34) in Spring Gardens in Haddington registration district in Scotland. Born in Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1881 Census''': \"1881 England, Wales & Scotland Census\"<br/>Reference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)<br/>Hugh Peffers (1) son in household of Alexander Peffers (34) in Spring Gardens in Haddington registration district in Scotland. Born in Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England, Wales & Scotland Census\"<br/>\nReference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Hugh; Last name: Peffers; Relationship: Son; Sex: Male; Age: 1; Age as transcribed: 1; Birth year: 1880; Birth town: Haddington; Birth town as transcribed: HADDINGTON; Birth county: Haddingtonshire (East Lothian); Birth county as transcribed: HADDINGTONSHIRE; Birth place: Scotland; Full address: Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland; House name: Spring Gardens; Parish: Haddington; County: Haddingtonshire (East Lothian); Country: Scotland; Registration district: Haddington.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1881 census Hugh (age 1) was the son of Alexander Peffers in Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland.<ref>\n'''1881 Census''':\n\"1881 England, Wales & Scotland Census\"<br/>\nReference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Hugh; Last name: Peffers; Relationship: Son; Sex: Male; Age: 1; Age as transcribed: 1; Birth year: 1880; Birth town: Haddington; Birth town as transcribed: HADDINGTON; Birth county: Haddingtonshire (East Lothian); Birth county as transcribed: HADDINGTONSHIRE; Birth place: Scotland; Full address: Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland; House name: Spring Gardens; Parish: Haddington; County: Haddingtonshire (East Lothian); Country: Scotland; Registration district: Haddington.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1881 Census''': \"1881 England, Wales & Scotland Census\"<br/>Reference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Hugh; Last name: Peffers; Relationship: Son; Sex: Male; Age: 1; Age as transcribed: 1; Birth year: 1880; Birth town: Haddington; Birth town as transcribed: HADDINGTON; Birth county: Haddingtonshire (East Lothian); Birth county as transcribed: HADDINGTONSHIRE; Birth place: Scotland; Full address: Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland; House name: Spring Gardens; Parish: Haddington; County: Haddingtonshire (East Lothian); Country: Scotland; Registration district: Haddington.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England, Wales & Scotland Census\"<br/>\nReference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Hugh\n|-\n| Last name || Peffers\n|-\n| Relationship || Son\n|-\n| Marital status || -\n|-\n| Sex || Male\n|-\n| Age || 1\n|-\n| Age as transcribed || 1\n|-\n| Birth year || 1880\n|-\n| Birth town || Haddington\n|-\n| Birth town as transcribed || HADDINGTON\n|-\n| Birth county || Haddingtonshire (East Lothian)\n|-\n| Birth county as transcribed || HADDINGTONSHIRE\n|-\n| Birth place || Scotland\n|-\n| Occupation || -\n|-\n| Full address || Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland\n|-\n| House name || Spring Gardens\n|-\n| Street || -\n|-\n| Parish || Haddington\n|-\n| County || Haddingtonshire (East Lothian)\n|-\n| Country || Scotland\n|-\n| Registration district || Haddington\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1881 census Hugh (age 1) was the son of Alexander Peffers in Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland.<ref>\n'''1881 Census''':\n\"1881 England, Wales & Scotland Census\"<br/>\nReference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Hugh\n|-\n| Last name || Peffers\n|-\n| Relationship || Son\n|-\n| Marital status || -\n|-\n| Sex || Male\n|-\n| Age || 1\n|-\n| Age as transcribed || 1\n|-\n| Birth year || 1880\n|-\n| Birth town || Haddington\n|-\n| Birth town as transcribed || HADDINGTON\n|-\n| Birth county || Haddingtonshire (East Lothian)\n|-\n| Birth county as transcribed || HADDINGTONSHIRE\n|-\n| Birth place || Scotland\n|-\n| Occupation || -\n|-\n| Full address || Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland\n|-\n| House name || Spring Gardens\n|-\n| Street || -\n|-\n| Parish || Haddington\n|-\n| County || Haddingtonshire (East Lothian)\n|-\n| Country || Scotland\n|-\n| Registration district || Haddington\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1881 Census''': \"1881 England, Wales & Scotland Census\"<br/>Reference: -; Piece number: -; Folio: -; Page: -; Schedule: 8<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Hugh; Last name: Peffers; Relationship: Son; Sex: Male; Age: 1; Age as transcribed: 1; Birth year: 1880; Birth town: Haddington; Birth town as transcribed: HADDINGTON; Birth county: Haddingtonshire (East Lothian); Birth county as transcribed: HADDINGTONSHIRE; Birth place: Scotland; Full address: Spring Gardens, Haddington, Haddingtonshire (East Lothian), Scotland; House name: Spring Gardens; Parish: Haddington; County: Haddingtonshire (East Lothian); Country: Scotland; Registration district: Haddington.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Thomson",
+    "forenames": "Archibald"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Port Glasgow, Renfrewshire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "Archibald",
+        "lastName": "Thomson"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Elizabeth",
+        "lastName": "Leven"
+      }
+    }
+  },
+  "eventDate": {
+    "yearString": "1856"
+  },
+  "birthDate": {
+    "yearString": "1856"
+  },
+  "lastNameAtBirth": "Thomson",
+  "collectionData": {
+    "id": "Scotland, Modern And Civil Births 1855-2019"
+  },
+  "hasValidData": true
+}

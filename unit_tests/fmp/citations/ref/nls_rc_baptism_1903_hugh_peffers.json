@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Roman Catholic Parish Baptisms\"<br/>\nArchive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Hugh, son of Alexander Peffers & Ann Hannen, was born on 1 January 1869 and baptised on 12 July 1903 in Dalkeith, St David, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Roman Catholic Parish Baptisms\"<br/>\nArchive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"Scotland Roman Catholic Parish Baptisms\"<br/>Archive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Roman Catholic Parish Baptisms\"<br/>\nArchive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nHugh Peffers baptism on 12 Jul 1903 (born 1 Jan 1869), son of Alexander Peffers & Ann Hannen, in Dalkeith, St David, Midlothian, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Hugh, son of Alexander Peffers & Ann Hannen, was born on 1 January 1869 and baptised on 12 July 1903 in Dalkeith, St David, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Roman Catholic Parish Baptisms\"<br/>\nArchive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nHugh Peffers baptism on 12 Jul 1903 (born 1 Jan 1869), son of Alexander Peffers & Ann Hannen, in Dalkeith, St David, Midlothian, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"Scotland Roman Catholic Parish Baptisms\"<br/>Archive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)<br/>Hugh Peffers baptism on 12 Jul 1903 (born 1 Jan 1869), son of Alexander Peffers & Ann Hannen, in Dalkeith, St David, Midlothian, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Roman Catholic Parish Baptisms\"<br/>\nArchive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Hugh; Last name: Peffers; Birth date: 01 Jan 1869; Baptism date: 12 Jul 1903; Father's first name(s): Alexander; Father's last name: Peffers; Mother's first name(s): Ann; Mother's last name: Hannen; Denomination: Roman Catholic; Parish: St David; Place: Dalkeith; Diocese: St Andrews & Edinburgh; County: Midlothian; Country: Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Hugh, son of Alexander Peffers & Ann Hannen, was born on 1 January 1869 and baptised on 12 July 1903 in Dalkeith, St David, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Roman Catholic Parish Baptisms\"<br/>\nArchive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Hugh; Last name: Peffers; Birth date: 01 Jan 1869; Baptism date: 12 Jul 1903; Father's first name(s): Alexander; Father's last name: Peffers; Mother's first name(s): Ann; Mother's last name: Hannen; Denomination: Roman Catholic; Parish: St David; Place: Dalkeith; Diocese: St Andrews & Edinburgh; County: Midlothian; Country: Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"Scotland Roman Catholic Parish Baptisms\"<br/>Archive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Hugh; Last name: Peffers; Birth date: 01 Jan 1869; Baptism date: 12 Jul 1903; Father's first name(s): Alexander; Father's last name: Peffers; Mother's first name(s): Ann; Mother's last name: Hannen; Denomination: Roman Catholic; Parish: St David; Place: Dalkeith; Diocese: St Andrews & Edinburgh; County: Midlothian; Country: Scotland.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Roman Catholic Parish Baptisms\"<br/>\nArchive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Hugh\n|-\n| Last name || Peffers\n|-\n| Birth date || 01 Jan 1869\n|-\n| Baptism date || 12 Jul 1903\n|-\n| Father's first name(s) || Alexander\n|-\n| Father's last name || Peffers\n|-\n| Mother's first name(s) || Ann\n|-\n| Mother's last name || Hannen\n|-\n| Denomination || Roman Catholic\n|-\n| Parish || St David\n|-\n| Place || Dalkeith\n|-\n| Diocese || St Andrews & Edinburgh\n|-\n| County || Midlothian\n|-\n| Country || Scotland\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Hugh, son of Alexander Peffers & Ann Hannen, was born on 1 January 1869 and baptised on 12 July 1903 in Dalkeith, St David, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Roman Catholic Parish Baptisms\"<br/>\nArchive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Hugh\n|-\n| Last name || Peffers\n|-\n| Birth date || 01 Jan 1869\n|-\n| Baptism date || 12 Jul 1903\n|-\n| Father's first name(s) || Alexander\n|-\n| Father's last name || Peffers\n|-\n| Mother's first name(s) || Ann\n|-\n| Mother's last name || Hannen\n|-\n| Denomination || Roman Catholic\n|-\n| Parish || St David\n|-\n| Place || Dalkeith\n|-\n| Diocese || St Andrews & Edinburgh\n|-\n| County || Midlothian\n|-\n| Country || Scotland\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"Scotland Roman Catholic Parish Baptisms\"<br/>Archive: The Scottish Catholic Archives; Reference: MP76/1/2/1<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Hugh; Last name: Peffers; Birth date: 01 Jan 1869; Baptism date: 12 Jul 1903; Father's first name(s): Alexander; Father's last name: Peffers; Mother's first name(s): Ann; Mother's last name: Hannen; Denomination: Roman Catholic; Parish: St David; Place: Dalkeith; Diocese: St Andrews & Edinburgh; County: Midlothian; Country: Scotland.",
+    "type": "source"
+  }
+}

@@ -338,6 +338,26 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FLEICS%2FBANNS%2F00070573%2F1",
   },
   {
+    caseName: "nls_army_1861_archibald_thomson",
+    url: "https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBM%2FWO363-4%2F7315723%2F31%2F840",
+  },
+  {
+    caseName: "nls_census_1881_hugh_peffers",
+    url: "https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=GBC/1881/0027690217&expand=true",
+  },
+  {
+    caseName: "nls_death_archibald_thomson",
+    url: "https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693681647",
+  },
+  {
+    caseName: "nls_parish_baptism_1789_janet_archibald",
+    url: "https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_686156570",
+  },
+  {
+    caseName: "nls_rc_baptism_1903_hugh_peffers",
+    url: "https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=SCOT%2FRC%2FBAP2%2F0095734",
+  },
+  {
     caseName: "nz_electoral_roll_1874_robert_wallbutton",
     url: "https://www.findmypast.co.uk/transcript?id=ANZ%2FDWILSON_1865TO1875NZ%2F287077",
   },
