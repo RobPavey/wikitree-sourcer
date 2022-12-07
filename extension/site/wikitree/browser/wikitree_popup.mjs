@@ -948,9 +948,11 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   addMenuDivider(menu);
 
   if (extractedData.pageType == "editFamily") {
+    addMenuDivider(menu);
     await addSetFieldsFromPersonDataMenuItem(menu, data, tabId);
     await addSetFieldsFromCitationMenuItem(menu, data, tabId);
   } else if (extractedData.pageType == "read" || extractedData.pageType == "private") {
+    addMenuDivider(menu);
     await addMergeEditMenuItem(menu, data, tabId);
   }
 

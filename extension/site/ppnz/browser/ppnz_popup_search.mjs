@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2022 Robert M Pavey
+Copyright (c) 2020 Robert M Pavey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import {
+  addSameRecordMenuItem,
+  addBackMenuItem,
+  addMenuItem,
+  beginMainMenu,
+  endMainMenu,
+  doAsyncActionWithCatch,
+} from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
   doSearch,
@@ -32,19 +39,17 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-// The Sydney Gazette and New South Wales Advertiser,
-// published in 1803, was the first newspaper printed in Australia.
-const troveStartYear = 1803;
-const troveEndYear = 3000; // up to present day
+const ppnzStartYear = 1839;
+const ppnzEndYear = 1979;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function troveSearch(generalizedData) {
+async function ppnzSearch(generalizedData) {
   const input = { generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("Trove (Aus) Search", input, async function () {
-    let loadedModule = await import(`../core/trove_build_search_url.mjs`);
+  doAsyncActionWithCatch("Papers Past (NZ) Search", input, async function () {
+    let loadedModule = await import(`../core/ppnz_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
 }
@@ -53,49 +58,54 @@ async function troveSearch(generalizedData) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const stdCountryName = "Australia";
+function addPpnzDefaultSearchMenuItem(menu, data, backFunction, filter) {
+  //console.log("addPpnzDefaultSearchMenuItem, data is:");
+  //console.log(data);
+
+  const stdCountryName = "New Zealand";
 
   if (filter) {
-    if (!testFilterForDatesAndCountries(filter, troveStartYear, troveEndYear, [stdCountryName])) {
+    if (!testFilterForDatesAndCountries(filter, ppnzStartYear, ppnzEndYear, [stdCountryName])) {
       return;
     }
   } else {
     let maxLifespan = Number(options.search_general_maxLifespan);
     let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      troveStartYear,
-      troveEndYear,
+      ppnzStartYear,
+      ppnzEndYear,
       maxLifespan
     );
     let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      troveStartYear,
-      troveEndYear,
+      ppnzStartYear,
+      ppnzEndYear,
       maxLifespan
     );
     let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      troveStartYear,
-      troveEndYear,
+      ppnzStartYear,
+      ppnzEndYear,
       maxLifespan
     );
 
     if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addTroveDefaultSearchMenuItem: dates not in range");
+      //console.log("addPpnzDefaultSearchMenuItem: dates not in range");
       return;
     }
 
     if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addTroveDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
+      //console.log("addPpnzDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
       return;
     }
   }
 
-  addMenuItem(menu, "Search Trove (Aus)", function (element) {
-    troveSearch(data.generalizedData);
+  addMenuItem(menu, "Search Papers Past (NZ)", function (element) {
+    ppnzSearch(data.generalizedData);
   });
+
+  return true;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("trove", "Trove (Aus)", addTroveDefaultSearchMenuItem);
+registerSearchMenuItemFunction("ppnz", "Papers Past (NZ)", addPpnzDefaultSearchMenuItem);

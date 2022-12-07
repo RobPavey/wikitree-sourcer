@@ -1,0 +1,12 @@
+{
+  "sourceOfData": "ppnz",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "11 September 1953"
+  },
+  "eventPlace": {
+    "placeString": "Canterbury, New Zealand"
+  },
+  "hasValidData": true
+}

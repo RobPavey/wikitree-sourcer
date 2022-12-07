@@ -22,23 +22,40 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their options
+import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
+import { titleToPlace } from "./ppnz_titles.mjs";
 
-// Currently the order that they are imported is the order that they appear in the
-// options page subsection drop down
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../bg/core/bg_options.mjs";
-import "../../cwgc/core/cwgc_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../geneteka/core/geneteka_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../np/core/np_options.mjs";
-import "../../ppnz/core/ppnz_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../trove/core/trove_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
+// This function generalizes the data extracted web page.
+// We know what fields can be there. And we know the ones we want in generalizedData.
+function generalizeData(input) {
+  let data = input.extractedData;
+
+  let result = new GeneralizedData();
+
+  result.sourceOfData = "ppnz";
+
+  if (!data.success == undefined) {
+    return result; //the extract failed
+  }
+
+  result.sourceType = "record";
+  result.recordType = RT.Newspaper;
+
+  const issue = data.issueDate;
+  if (issue) {
+    result.setEventDate(issue);
+  }
+
+  const place = titleToPlace(data.paperTitle, issue);
+  result.setEventPlace(place);
+
+  result.hasValidData = true;
+
+  //console.log("ppnz; generalizeData: result is:");
+  //console.log(result);
+
+  return result;
+}
+
+export { generalizeData, GeneralizedData, dateQualifiers };

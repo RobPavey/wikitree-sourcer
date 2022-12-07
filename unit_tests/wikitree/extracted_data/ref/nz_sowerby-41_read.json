@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Florence",
+  "prefNames": "",
+  "middleNames": "Maude",
+  "lnab": "Sowerby",
+  "currentLastName": "Smith",
+  "mothersMaidenName": "Heim",
+  "birthDate": "11 Apr 1886",
+  "birthDateStatus": "none",
+  "deathDate": "2 Jan 1958",
+  "deathDateStatus": "none",
+  "birthLocation": "Geraldine, New Zealand",
+  "deathLocation": "Palmerston North, New Zealand",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Smith-54274",
+      "name": "John Adolphus Smith",
+      "marriageString": "about 30 May 1905 in Hawkes Bay, New Zealand",
+      "marriageDate": "about 30 May 1905",
+      "marriagePlace": "Hawkes Bay, New Zealand"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Sowerby-41",
+  "currentTabText": "Florence (Sowerby) Smith's Profile",
+  "pageType": "read",
+  "wikiId": "Sowerby-41",
+  "name": "Florence Maude (Sowerby) Smith",
+  "parents": {
+    "father": {
+      "wikiId": "Sowerby-33",
+      "name": "Henry Sowerby"
+    },
+    "mother": {
+      "wikiId": "Heim-126",
+      "name": "Sarah Jane (Heim) Sowerby"
+    }
+  }
+}

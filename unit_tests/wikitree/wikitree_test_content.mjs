@@ -75,6 +75,10 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Moore-12982",
   },
   {
+    caseName: "nz_sowerby-41_read",
+    url: "https://www.wikitree.com/wiki/Sowerby-41",
+  },
+  {
     caseName: "pavey-342_edit",
     url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=22280837",
   },

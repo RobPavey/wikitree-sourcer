@@ -1,0 +1,65 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Florence",
+    "middleNames": "Maude",
+    "lastName": "Sowerby"
+  },
+  "lastNameAtBirth": "Sowerby",
+  "lastNameAtDeath": "Smith",
+  "mothersMaidenName": "Heim",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "11 Apr 1886",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "2 Jan 1958",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Geraldine, New Zealand"
+  },
+  "deathPlace": {
+    "placeString": "Palmerston North, New Zealand"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Henry Sowerby",
+        "lastName": "Sowerby",
+        "forenames": "Henry"
+      },
+      "lastNameAtBirth": "Sowerby",
+      "lastNameAtDeath": "Sowerby"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Sarah Jane",
+        "lastName": "Heim",
+        "name": "Sarah Jane Heim"
+      },
+      "lastNameAtBirth": "Heim",
+      "lastNameAtDeath": "Sowerby"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "John Adolphus Smith",
+        "lastName": "Smith",
+        "forenames": "John Adolphus"
+      },
+      "lastNameAtBirth": "Smith",
+      "lastNameAtDeath": "Smith",
+      "marriageDate": {
+        "dateString": "about 30 May 1905"
+      },
+      "marriagePlace": {
+        "placeString": "Hawkes Bay, New Zealand"
+      }
+    }
+  ],
+  "hasValidData": true
+}

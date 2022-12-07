@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2022 Robert M Pavey
+Copyright (c) 2020 Robert M Pavey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,13 @@ SOFTWARE.
 */
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { WTS_String } from "../../../base/core/wts_string.mjs";
 
-function buildTroveUrl(data, builder) {
+function buildPpnzUrl(data, builder) {
   let url = data.url;
 
   const options = builder.getOptions();
-  if (!options.citation_trove_includeSearchQuery) {
+  if (!options.citation_ppnz_includeSearchQuery) {
     // remove any search stuff
     let queryIndex = url.indexOf("?");
     if (queryIndex != -1) {
@@ -41,16 +42,16 @@ function buildTroveUrl(data, builder) {
 
 function buildCoreCitation(data, runDate, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = "Trove, National Library of Australia";
+  builder.sourceTitle = "Papers Past, National Library of New Zealand";
 
   builder.databaseHasImages = true;
 
-  var troveUrl = buildTroveUrl(data, builder);
+  var ppnzUrl = buildPpnzUrl(data, builder);
 
-  let recordLink = "[" + troveUrl + " Trove Article]";
+  let recordLink = "[" + ppnzUrl + " Papers Past Article]";
   builder.recordLinkOrTemplate = recordLink;
 
-  builder.sourceReference = data.title + ", " + data.issue + ", " + data.page + " : " + data.article;
+  builder.sourceReference = data.citationText;
 }
 
 function buildCitation(input) {
@@ -62,9 +63,22 @@ function buildCitation(input) {
 
   let builder = new CitationBuilder(type, runDate, options);
 
-  buildCoreCitation(data, runDate, builder);
+  var citation = buildCoreCitation(data, runDate, builder);
 
-  builder.meaningfulTitle = gd.getRefTitle();
+  // Get meaningful title
+  var refTitle = "";
+  switch (data.eventType) {
+    case "birth":
+      refTitle = "Birth Registration";
+      break;
+    case "marriage":
+      refTitle = "Marriage Registration";
+      break;
+    case "death":
+      refTitle = "Death Registration";
+      break;
+  }
+  builder.meaningfulTitle = refTitle;
 
   if (type == "narrative") {
     builder.addNarrative(gd, input.dataCache, options);
