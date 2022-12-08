@@ -156,6 +156,10 @@ const regressionData = [
     // https://www.familysearch.org/ark:/61903/1:1:MQ6G-CR3
     caseName: "us_mn_census_1895_david_palm",
   },
+  {
+    // https://www.familysearch.org/ark:/61903/1:1:HRWJ-NTN2
+    caseName: "us_va_census_slaves_1850_jesse_jeter",
+  },
 ];
 
 async function runTests(testManager) {

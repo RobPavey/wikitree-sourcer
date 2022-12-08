@@ -2648,6 +2648,8 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
     ];
     result.household.members = [];
 
+    let allowSortByLineNumber = true;
+
     for (let person of persons) {
       let member = {};
 
@@ -2671,7 +2673,11 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
           }
         }
       } else {
-        member.isClosed = true;
+        // no name, this happes for closed records (e.g. england_census_1939_ellen_day)
+        // but also for slaves (e.g. us_va_census_slaves_1850_jesse_jeter)
+        if (!person.gender) {
+          member.isClosed = true;
+        }
       }
 
       // get gender
@@ -2747,6 +2753,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
           Age: "age",
           RelationshipToHeadCode: "relationship",
           RelationshipToHead: "relationship",
+          RelationshipToOwner: "relationship", // only for slaves
           Relationship: "relationship",
           SourceSheetNbr: "sheetNumber",
           SourceLineNbr: "lineNumber",
@@ -2757,45 +2764,78 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
       result.household.members.push(member);
     }
 
-    // The members can be in a different order to how they appear in the census
-    // I have only seen this in the US 1940 Federal Census. E.g. us_census_1940_addie_bullock
-    // if we have line numbers we can reorder them
-    let hasLineNumbers = true;
-    for (let member of result.household.members) {
-      if (!member.lineNumber) {
-        hasLineNumbers = false;
-        break;
-      }
-      if (isNaN(Number(member.lineNumber))) {
-        hasLineNumbers = false;
-        break;
-      }
-    }
-    let hasSheetNumbers = true;
-    for (let member of result.household.members) {
-      if (!member.sheetNumber) {
-        hasSheetNumbers = false;
-        break;
-      }
-      if (isNaN(Number(member.sheetNumber))) {
-        hasSheetNumbers = false;
-        break;
+    // special case for slave records
+    let isSlaveCensus = false;
+    let ownerIndex = 0;
+    for (let memberIndex = 0; memberIndex < result.household.members.length; memberIndex++) {
+      let member = result.household.members[memberIndex];
+      if (member.relationship && member.relationship.toLowerCase() == "slave") {
+        // this is a slave record
+        isSlaveCensus = true;
+      } else if (member.relationship && member.relationship.toLowerCase() == "owner") {
+        // this is the owner in a slave record
+        if (!ownerIndex) {
+          ownerIndex = memberIndex;
+        }
       }
     }
 
-    if (hasLineNumbers && hasSheetNumbers) {
-      // sort by line number
-      result.household.members.sort(function (a, b) {
-        let sheetDiff = Number(a.sheetNumber) - Number(b.sheetNumber);
-        let lineDiff = Number(a.lineNumber) - Number(b.lineNumber);
-        if (sheetDiff === 0) {
-          return lineDiff;
+    if (isSlaveCensus) {
+      // For some reason the owner of often after the first slave, try to correct
+      if (ownerIndex == 1) {
+        let swap = result.household.members[0];
+        result.household.members[0] = result.household.members[1];
+        result.household.members[1] = swap;
+      }
+
+      // there may be a better way to do this. In the slaves example there are two
+      // columns so we don't want to search by line number.
+      allowSortByLineNumber = false;
+    }
+
+    // The members can be in a different order to how they appear in the census
+    // I have only seen this in the US 1940 Federal Census. E.g. us_census_1940_addie_bullock
+    // if we have line numbers we can reorder them
+    // However, if there are two columns on the page this messes things up. e.g.
+    // us_va_census_slaves_1850_jesse_jeter
+    if (allowSortByLineNumber) {
+      let hasLineNumbers = true;
+      for (let member of result.household.members) {
+        if (!member.lineNumber) {
+          hasLineNumbers = false;
+          break;
         }
-        return sheetDiff;
-      });
-    } else if (hasLineNumbers) {
-      // sort by line number
-      result.household.members.sort((a, b) => (Number(a.lineNumber) > Number(b.lineNumber) ? 1 : -1));
+        if (isNaN(Number(member.lineNumber))) {
+          hasLineNumbers = false;
+          break;
+        }
+      }
+      let hasSheetNumbers = true;
+      for (let member of result.household.members) {
+        if (!member.sheetNumber) {
+          hasSheetNumbers = false;
+          break;
+        }
+        if (isNaN(Number(member.sheetNumber))) {
+          hasSheetNumbers = false;
+          break;
+        }
+      }
+
+      if (hasLineNumbers && hasSheetNumbers) {
+        // sort by line number
+        result.household.members.sort(function (a, b) {
+          let sheetDiff = Number(a.sheetNumber) - Number(b.sheetNumber);
+          let lineDiff = Number(a.lineNumber) - Number(b.lineNumber);
+          if (sheetDiff === 0) {
+            return lineDiff;
+          }
+          return sheetDiff;
+        });
+      } else if (hasLineNumbers) {
+        // sort by line number
+        result.household.members.sort((a, b) => (Number(a.lineNumber) > Number(b.lineNumber) ? 1 : -1));
+      }
     }
 
     // now remove any line numbers as we don't need them in the extracted data

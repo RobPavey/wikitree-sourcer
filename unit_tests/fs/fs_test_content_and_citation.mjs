@@ -348,6 +348,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C?from=lynx1UIV8&treeref=KWCG-DRL",
   },
   {
+    caseName: "us_va_census_slaves_1850_jesse_jeter",
+    url: "https://www.familysearch.org/ark:/61903/1:1:HRWJ-NTN2",
+  },
+  {
     caseName: "us_va_death_1921_henry_mullins",
     url: "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWT",
   },

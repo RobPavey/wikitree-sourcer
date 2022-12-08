@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Sex || Age\n|-\n| '''Jesse Jeter''' || '''Owner''' ||  || \n|-\n|  || Slave || M || 50\n|-\n|  || Slave || M || 27\n|-\n|  || Slave || M || 22\n|-\n|  || Slave || M || 24\n|-\n|  || Slave || F || 48\n|-\n|  || Slave || F || 28\n|-\n|  || Slave || F || 19\n|-\n|  || Slave || F || 18\n|-\n|  || Slave || F || 12\n|-\n|  || Slave || F || 6\n|-\n|  || Slave || F || 6\n|-\n|  || Slave || M || 0\n|-\n|  || Slave || F || 23\n|-\n|  || Slave || F || 40\n|-\n|  || Slave || M || 16\n|-\n|  || Slave || M || 14\n|-\n|  || Slave || F || 13\n|-\n|  || Slave || M || 59\n|-\n|  || Slave || M || 10\n|-\n|  || Slave || F || 4\n|-\n|  || Slave || M || 2\n|-\n|  || Slave || M || 65\n|-\n|  || Slave || M || 48\n|-\n|  || Slave || F || 60\n|-\n|  || Slave || F || 33\n|-\n|  || Slave || M || 12\n|-\n|  || Slave || M || 11\n|-\n|  || Slave || M || 9\n|-\n|  || Slave || M || 7\n|-\n|  || Slave || F || 5\n|-\n|  || Slave || F || 3\n|-\n|  || Slave || M || 1\n|-\n|  || Slave || F || 1\n|-\n|  || Slave || F || 80\n|}"
+  }
+}
