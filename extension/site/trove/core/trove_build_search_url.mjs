@@ -23,48 +23,18 @@ SOFTWARE.
 */
 
 import { TroveUriBuilder } from "./trove_uri_builder.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 
 const minTroveYear = 1803;
-const maxTroveYear = 3000;
+const maxTroveYear = 2100;
 
-function addNumToYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
-  if (yearNum) {
-    yearNum += num;
-    return yearNum.toString();
-  } else {
-    return yearString;
+function constrainYear(yearNum) {
+  if (yearNum < minTroveYear) {
+    yearNum = minTroveYear;
+  } else if (yearNum > maxTroveYear) {
+    yearNum = maxTroveYear;
   }
-}
-
-function subtractNumFromYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
-  if (yearNum) {
-    yearNum -= num;
-    return yearNum.toString();
-  } else {
-    return yearString;
-  }
-}
-
-function constrainYear(yearString) {
-  if (!yearString) {
-    return yearString;
-  }
-
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
-  if (yearNum) {
-    if (yearNum < minTroveYear) {
-      yearNum = minTroveYear;
-    } else if (yearNum > maxTroveYear) {
-      yearNum = maxTroveYear;
-    }
-    return yearNum.toString();
-  } else {
-    return yearString;
-  }
+  return yearNum;
 }
 
 function constrainYears(dates) {
@@ -194,11 +164,15 @@ function buildSearchUrl(buildUrlInput) {
 
   const dateRange = data.inferPossibleLifeYearRange();
   if (options.search_trove_addToDateRange != "none") {
-    if (dateRange.startYear) {
-      dateRange.startYear = subtractNumFromYearString(dateRange.startYear, options.search_trove_addToDateRange);
-    }
-    if (dateRange.endYear) {
-      dateRange.endYear = addNumToYearString(dateRange.endYear, options.search_trove_addToDateRange);
+    // although the values are ints in options sometimes they come through as strings in browser
+    let offsetToRange = Number(options.search_trove_addToDateRange);
+    if (!isNaN(offsetToRange)) {
+      if (dateRange.startYear) {
+        dateRange.startYear -= offsetToRange;
+      }
+      if (dateRange.endYear) {
+        dateRange.endYear += offsetToRange;
+      }
     }
   }
 

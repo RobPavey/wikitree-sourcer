@@ -23,47 +23,17 @@ SOFTWARE.
 */
 
 import { PpnzUriBuilder } from "./ppnz_uri_builder.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
-
-function addNumToYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
-  if (yearNum) {
-    yearNum += num;
-    return yearNum.toString();
-  } else {
-    return yearString;
-  }
-}
-
-function subtractNumFromYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
-  if (yearNum) {
-    yearNum -= num;
-    return yearNum.toString();
-  } else {
-    return yearString;
-  }
-}
 
 const minPpnzYear = 1837;
 const maxPpnzYear = 1992;
 
-function constrainYear(yearString) {
-  if (!yearString) {
-    return yearString;
+function constrainYear(yearNum) {
+  if (yearNum < minPpnzYear) {
+    yearNum = minPpnzYear;
+  } else if (yearNum > maxPpnzYear) {
+    yearNum = maxPpnzYear;
   }
-
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
-  if (yearNum) {
-    if (yearNum < minPpnzYear) {
-      yearNum = minPpnzYear;
-    } else if (yearNum > maxPpnzYear) {
-      yearNum = maxPpnzYear;
-    }
-    return yearNum.toString();
-  } else {
-    return yearString;
-  }
+  return yearNum;
 }
 
 function constrainYears(dates) {
@@ -78,12 +48,16 @@ function buildSearchUrl(buildUrlInput) {
   var builder = new PpnzUriBuilder();
 
   const dateRange = data.inferPossibleLifeYearRange();
-  if (options.search_ppnz_addToDateRange && options.search_ppnz_addToDateRange != "none") {
-    if (dateRange.startYear) {
-      dateRange.startYear = subtractNumFromYearString(dateRange.startYear, options.search_ppnz_addToDateRange);
-    }
-    if (dateRange.endYear) {
-      dateRange.endYear = addNumToYearString(dateRange.endYear, options.search_ppnz_addToDateRange);
+  if (options.search_ppnz_addToDateRange != "none") {
+    // although the values are ints in options sometimes they come through as strings in browser
+    let offsetToRange = Number(options.search_ppnz_addToDateRange);
+    if (!isNaN(offsetToRange)) {
+      if (dateRange.startYear) {
+        dateRange.startYear -= offsetToRange;
+      }
+      if (dateRange.endYear) {
+        dateRange.endYear += offsetToRange;
+      }
     }
   }
 

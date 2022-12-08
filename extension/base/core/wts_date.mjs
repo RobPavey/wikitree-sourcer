@@ -449,6 +449,10 @@ const WTS_Date = {
   },
 
   getYearNumFromYearString: function (yearString) {
+    if (Number.isFinite(yearString)) {
+      return yearString; // just in case a number is passed in
+    }
+
     if (!yearString) {
       return undefined;
     }

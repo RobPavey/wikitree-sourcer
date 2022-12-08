@@ -35,7 +35,7 @@ import { options } from "/base/browser/options/options_loader.mjs";
 // The Sydney Gazette and New South Wales Advertiser,
 // published in 1803, was the first newspaper printed in Australia.
 const troveStartYear = 1803;
-const troveEndYear = 3000; // up to present day
+const troveEndYear = 2100; // up to present day
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions

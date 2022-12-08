@@ -264,7 +264,7 @@ function setDates(data, scotpRecordType, parameters, options, builder) {
       if (isYearInDateRange(dates, rollYear)) {
         builder.addYear(rollYear);
         return { startYear: rollYear, endYear: rollYear };
-        break; // only one year is allowed in UI, possibly years have differing numbers of columns
+        // only one year is allowed in UI, possibly years have differing numbers of columns
       }
     }
     return; // return as vr is special case

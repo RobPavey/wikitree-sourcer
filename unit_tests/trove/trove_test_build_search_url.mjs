@@ -68,6 +68,14 @@ const regressionData = [
     caseName: "australia_probate_1974_violet_mcconchie",
     inputPath: "ancestry/generalized_data/ref/australia_probate_1974_violet_mcconchie",
   },
+  {
+    caseName: "us_federal_census_1870_paul_potter",
+    inputPath: "ancestry/generalized_data/ref/us_federal_census_1870_paul_potter",
+  },
+  {
+    caseName: "us_federal_census_1950_william_pavey",
+    inputPath: "ancestry/generalized_data/ref/us_federal_census_1950_william_pavey",
+  },
 ];
 
 async function runTests(testManager) {
