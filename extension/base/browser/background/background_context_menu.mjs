@@ -84,14 +84,32 @@ function openAncestryLink(link, options) {
 }
 
 function openFmpLink(link, options) {
-  let domain = link.replace(/^https?\:\/\/[^\.]+\.(findmypast[^\/]+)\/.*/, "$1");
+  let domain = "";
+  // FMP can be accessed through NLS
+  // https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693518389
+  const nlsDomain = "www-findmypast-co-uk.nls.idm.oclc.org";
+  if (link.includes("nls.idm.oclc.org")) {
+    domain = nlsDomain;
+  } else {
+    domain = link.replace(/^https?\:\/\/[^\.]+\.(findmypast[^\/]+)\/.*/, "$1");
+  }
   //console.log("openFmpLink, domain is: " + domain);
   if (domain && domain != link) {
     let desiredDomain = options.search_fmp_domain;
     //console.log("openFmpLink, desiredDomain is: " + desiredDomain);
 
     if (desiredDomain != "none" && desiredDomain != domain) {
-      let newLink = link.replace(domain, desiredDomain);
+      let newLink = "";
+      if (domain == nlsDomain) {
+        newLink = link.replace(domain, "www." + desiredDomain);
+      } else {
+        if (desiredDomain == nlsDomain) {
+          newLink = link.replace("www." + domain, desiredDomain);
+        } else {
+          newLink = link.replace(domain, desiredDomain);
+        }
+      }
+
       if (newLink && newLink != link) {
         link = newLink;
         //console.log("openFmpLink, new link is: " + newLink);
