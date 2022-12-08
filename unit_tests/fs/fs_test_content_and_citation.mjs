@@ -245,6 +245,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:ZY42-D8N2",
   },
   {
+    caseName: "us_census_lds_1940_dora_remington",
+    url: "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z",
+  },
+  {
     caseName: "us_ct_birth_1768_unknown_cornish",
     url: "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP",
   },

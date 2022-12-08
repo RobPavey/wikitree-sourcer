@@ -31,6 +31,7 @@ class TableBuilder {
   constructor(gd, options) {
     this.gd = gd;
     this.options = options;
+    this.includeBirthYear = false;
   }
 
   getOptions() {
@@ -39,9 +40,20 @@ class TableBuilder {
 
   includeFieldColumn(fieldName) {
     if (fieldName == "birthYear") {
-      return false;
+      // Usually we ignore the birthYear because there is an age column that it was inferred from
+      if (!this.includeBirthYear) {
+        return false;
+      }
     }
     return true;
+  }
+
+  checkForColumnsToExclude() {
+    if (this.fieldNames.includes("birthYear")) {
+      if (!this.fieldNames.includes("age")) {
+        this.includeBirthYear = true;
+      }
+    }
   }
 
   getTitleForFieldName(fieldName) {
@@ -365,6 +377,8 @@ class TableBuilder {
 
   getString() {
     let tableString = "";
+
+    this.checkForColumnsToExclude();
 
     if (this.options.table_general_format == "table") {
       return this.getTableString();

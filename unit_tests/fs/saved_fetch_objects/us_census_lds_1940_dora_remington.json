@@ -1,0 +1,2397 @@
+{
+  "id" : "r_156855642200",
+  "lang" : "en",
+  "attribution" : {
+    "contributor" : {
+      "resource" : "cis.user.MMM9-2NVV"
+    },
+    "modified" : 1595431660763,
+    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:47QB-BWT2?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:47QB-BWT2?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:47QB-BWT2"
+    }
+  },
+  "description" : "#sd_p_248302813600",
+  "persons" : [ {
+    "id" : "p_248302813100",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "5dc06361-f5e2-4d5a-811f-a47a9d2cb510",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male",
+          "resource" : "https://sg30p0.familysearch.org/platform/vocab/terms/109693"
+        }, {
+          "id" : "60f48722-46ad-4d6f-a4fc-73b178a7b039",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1595468185768
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/8ZVW-2XN2?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/47QB-BWT2?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XN2" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Lester S Remington",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Lester S",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "24ce212c-38ea-4e18-97e4-3c23ced53c82",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Lester S"
+            }, {
+              "id" : "280d7d32-fee1-4136-bd85-3c3cacf296ff",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055583643
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Lester S"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Remington",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "bfaafb55-6ff4-4d62-8aa0-b4fa5704e358",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Remington"
+            }, {
+              "id" : "de2fe099-de7c-4153-a61f-0aedcccd43bf",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055583643
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Remington"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "403fc7b4-b613-49e2-9b1e-b8973e98fb29",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055583635
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Lester S Remington"
+          }, {
+            "id" : "359d9fca-c963-4e85-bd77-a6d42d870d3a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055583643
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Lester S Remington"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "1bfecb21-255e-4f8c-ac64-d09faa928e59",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468185757
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "bdc5df8c-5981-4b21-a73c-ccfbcfda8de5",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468185757
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1940",
+            "resource" : "+1940"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "eb115dd9-83b6-48aa-9ed6-66cfe817fe77",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "7a343bd6-9d3c-45dd-8fa8-ee89a8ccdb2c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468185757
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "eef81eb1-1bbf-4a39-99e1-e0d6c3ddd0cb",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census"
+        }, {
+          "id" : "365d7368-5c88-4dd4-96c4-2377538e60b4",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1900",
+        "formal" : "+1900",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "72c749b8-f896-4b81-a064-52649514654e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468185760
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1900"
+          }, {
+            "id" : "60bc5ec2-b0c6-4056-a4cd-2e54ce13621f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468185760
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1900",
+            "resource" : "+1900"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "ae154476-6035-40df-bd58-2add0d1defb6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1900"
+          }, {
+            "id" : "8ec9524a-d8ab-4ae7-921e-15acb53d70d9",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468185760
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1900"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Tooele",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "8c3e9d29-b5a2-41c3-aa06-782838e72ad9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Tooele"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "0f1dc00e-ff2d-49aa-a296-23a24f1e8445",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Head",
+        "resource" : "https://www.familysearch.org/platform/vocab/terms/107744"
+      } ]
+    } ]
+  }, {
+    "id" : "p_248302813200",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "cbc78c53-f81c-4c40-903f-c13748754990",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female",
+          "resource" : "https://sg30p0.familysearch.org/platform/vocab/terms/109658"
+        }, {
+          "id" : "294644a5-605f-437f-a4e6-b0db5d308440",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1595468186084
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/8ZVW-2X2M?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/47QB-BWT2?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2X2M" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Irene E Remington",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Irene E",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "0416abd2-5bc8-492e-b4c6-2d60a76d3e70",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Irene E"
+            }, {
+              "id" : "954da766-34c7-4a6a-a798-c72aab08bac5",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055584470
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Irene E"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Remington",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "90cc074a-745d-4eaa-ba5c-5766f16bb498",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Remington"
+            }, {
+              "id" : "5339c7c8-20fc-4f85-aa63-0f466adbe4a5",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055584470
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Remington"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "959d0d9c-c9d0-4f60-b45a-5b092042d256",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055584464
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Irene E Remington"
+          }, {
+            "id" : "3ddde0b3-0153-4051-be08-d278766acca0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055584470
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Irene E Remington"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "4b825897-b179-4c68-8a13-4e9b400c765e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186061
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "a5c2b01c-1c93-4215-939a-cb4d36fcc014",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186061
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1940",
+            "resource" : "+1940"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "2ce152f7-39dd-4f65-aecf-c0df7add3a01",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "9ef8267d-5ca5-4291-a4fd-2c2e8f4b38f1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186061
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "7cdaa301-a217-4c7e-a8be-3875ddff26fc",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census"
+        }, {
+          "id" : "62c6d2a7-17e9-496f-8e9e-924003cf1de2",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1902",
+        "formal" : "+1902",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "5df16896-ae7a-4f25-9529-5e3f0d73b71f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186063
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1902"
+          }, {
+            "id" : "7284a08d-bed9-4554-8776-6d1888cbc150",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186063
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1902",
+            "resource" : "+1902"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "ceb3d6e7-b637-4260-8c28-df6a1ae44f4c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1902"
+          }, {
+            "id" : "6b850b93-6820-4008-85f7-ca55c6454efc",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186063
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1902"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Salt Lake",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "08d621a0-5ee4-4713-81e3-1fd0ab042e66",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Salt Lake"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "75359312-3cdb-4424-b221-9fe7ccd6ed92",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Wife"
+      } ]
+    } ]
+  }, {
+    "id" : "p_248302813300",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "110d4397-25b4-412b-bcf8-29990925d7f5",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female",
+          "resource" : "https://sg30p0.familysearch.org/platform/vocab/terms/109658"
+        }, {
+          "id" : "f3db4b9e-6106-4e48-897c-a943a31fbcf9",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1595468186319
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/8ZVW-2XPZ?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/47QB-BWT2?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XPZ" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Irene Meyer Remington Mitchell",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Irene Meyer",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "e56f0a5d-25c5-47e7-bf3e-f590e6f390cb",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Irene Meyer"
+            }, {
+              "id" : "08146e3e-1de5-434d-b239-0c80ed963749",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055586006
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Irene Meyer"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Remington Mitchell",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "19f9b975-e46e-46ce-a13f-98e1f0ce884a",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Remington Mitchell"
+            }, {
+              "id" : "2d273d16-69d5-4ed8-b670-7b1c3e8b259a",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055586006
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Remington Mitchell"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "3fcd09fc-3211-43b7-85db-d6ea0f95b530",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055585992
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Irene Meyer Remington Mitchell"
+          }, {
+            "id" : "5e0b70eb-8eb1-4e40-a1e7-4e1afaec2d59",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055586006
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Irene Meyer Remington Mitchell"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "59a6404a-48f5-4b6e-9f54-69e4ba1b6857",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186282
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "6008cfe6-8bed-4520-9aee-be92480ca838",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186282
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1940",
+            "resource" : "+1940"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "50f63b28-6043-4818-ac15-1877a8244442",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "c90f6c83-8651-49d1-bbfe-a109c6c732ba",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186282
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "9795685c-2758-4a62-af7b-cdc0356d82d3",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census"
+        }, {
+          "id" : "d3c0860d-5480-483b-ae58-c961f5549945",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1921",
+        "formal" : "+1921",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "cec7e7c6-72bd-41e8-89bc-012a07b3c293",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186283
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1921"
+          }, {
+            "id" : "648c78fd-0179-4911-a5f6-0df9077328e0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186283
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1921",
+            "resource" : "+1921"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "810d5457-e40e-4bfd-a20d-1364047c944b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1921"
+          }, {
+            "id" : "170837ad-0acd-4310-a7ed-74979a0af2c0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186283
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1921"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Salt Lake",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "ee0cc143-429d-483c-827e-b223c31a8a09",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Salt Lake"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "410e0e63-426a-4931-8e49-94df0de05876",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      } ]
+    } ]
+  }, {
+    "id" : "p_248302813400",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "fd95fe8c-4d87-451f-8faa-62b4d552bfdc",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female",
+          "resource" : "https://sg30p0.familysearch.org/platform/vocab/terms/109658"
+        }, {
+          "id" : "8fc7a8e6-ebd5-4c59-95c6-62d2a7225cf8",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1595468186547
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/8ZVW-2XT2?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/47QB-BWT2?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XT2" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Bettie Lavon Remington",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Bettie Lavon",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "b1808bde-42a2-43f6-ae95-c6ab5fbbcb13",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Bettie Lavon"
+            }, {
+              "id" : "e6a5602a-36c3-472e-92b7-8c460723a9ca",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055586702
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Bettie Lavon"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Remington",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "2ff34494-5e1b-403c-922e-92b676651f45",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Remington"
+            }, {
+              "id" : "3aeb15d4-5a22-4e53-a60a-ce09508de775",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055586702
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Remington"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "2fb6bd2e-327a-4565-94c9-b43df9bc44d9",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055586696
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Bettie Lavon Remington"
+          }, {
+            "id" : "1c19b283-63a4-4d26-9531-508300a3b3ec",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055586702
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Bettie Lavon Remington"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "a70923c5-af7a-43bb-82f0-6c9c1a8293d5",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186523
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "d9fe973e-c426-45a1-a23b-2ce1702eaddf",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186523
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1940",
+            "resource" : "+1940"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "82228be9-d0f2-4913-8a90-385c3672b882",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "45c2d122-c27d-4854-a2cf-640045921562",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186523
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "cbadea3c-c0b9-496a-bced-3356b937f52d",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census"
+        }, {
+          "id" : "8d3dcde5-1517-4950-8ebe-21e87c5e3ac7",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1928",
+        "formal" : "+1928",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "31950cd5-720a-4fa7-9087-bff1876f458f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186525
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1928"
+          }, {
+            "id" : "2f9caa81-af94-480b-b668-c6bfc73a7eae",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186525
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1928",
+            "resource" : "+1928"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "5f1a7f9c-0a8a-4060-9115-463bab34895b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1928"
+          }, {
+            "id" : "9219017b-add3-45c3-adfb-d48e77ab2b07",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186525
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1928"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Midvale",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "44a90ed5-77c6-499c-b321-e8c34cb2c415",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Midvale"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "66eae48f-dce0-4e9d-951d-067e3956270b",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      } ]
+    } ]
+  }, {
+    "id" : "p_248302813500",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "d7e57343-705f-404f-a402-54989defead9",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male",
+          "resource" : "https://sg30p0.familysearch.org/platform/vocab/terms/109693"
+        }, {
+          "id" : "529d3ea0-6dca-420f-8ce9-36abe9043efd",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1595468186775
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/8ZVW-2FMM?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/47QB-BWT2?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FMM" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Ralph Lester Remington",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Ralph Lester",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "5cb30c42-2917-4a09-a026-f061647d1613",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Ralph Lester"
+            }, {
+              "id" : "277b5135-b02c-4b2f-aab4-ae51ae868d43",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055589448
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Ralph Lester"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Remington",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "a49e6835-2eb3-40b0-891e-736d070c8746",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Remington"
+            }, {
+              "id" : "41e28afa-c0f9-476a-81a1-9eb1165de898",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055589448
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Remington"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "64eb1083-970a-41f7-adbb-e0def321415f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055589441
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Ralph Lester Remington"
+          }, {
+            "id" : "966c29bd-a8bf-4171-abbe-27affb388f06",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055589448
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Ralph Lester Remington"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "9854e3cf-3863-4c6a-88af-04964bc3e0f2",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186745
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "23720ac8-57dc-4b78-a07b-c53635c33d33",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186745
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1940",
+            "resource" : "+1940"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "ad724a21-4002-459a-9516-ac3f69bc7b5c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "322b3b5d-8986-4bcb-a9cb-eb193e035f26",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186745
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "f031f720-4cee-4d9a-a194-a23b546bea83",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census"
+        }, {
+          "id" : "986add9b-ac8b-4604-83d7-bb0cab18e6a1",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1931",
+        "formal" : "+1931",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "2444f4e6-8d49-48f2-982c-9eb418de1d5e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186748
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1931"
+          }, {
+            "id" : "03871897-a3ea-4c58-912b-ac7df52d7db6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186748
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1931",
+            "resource" : "+1931"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "fb217578-ed93-4953-b43f-ead252595733",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1931"
+          }, {
+            "id" : "26ad4148-9e9f-4b2d-8127-f8e801699f4e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468186748
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1931"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Midvale",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "23b5346b-b7d2-4a8e-af11-af95374cf193",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Midvale"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "bdf0c30b-5337-45ab-a9ae-7fb503cb0c1e",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Son"
+      } ]
+    } ]
+  }, {
+    "id" : "p_248302813600",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "8aaa3b42-983f-431e-bc36-6c4e17513ba4",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female",
+          "resource" : "https://sg30p0.familysearch.org/platform/vocab/terms/109658"
+        }, {
+          "id" : "b7e8ab83-ce6a-4952-b107-9d5e2f85cadd",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1595468187047
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/8ZVW-2F3Z?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/47QB-BWT2?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Dona Larue Remington",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Dona Larue",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "03bd3d15-3c50-4577-b596-f12a817274e5",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Dona LaRue"
+            }, {
+              "id" : "a544beb4-d625-49dd-ad48-197d10eacabb",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055590848
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Dona Larue"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Remington",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "0263265d-095c-4bb9-bbfe-6bd32ef70356",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Remington"
+            }, {
+              "id" : "393039ae-0c51-4f48-8878-4e9e3c1643cf",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055590848
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Remington"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "d02a71a5-3179-4b8f-81af-e07a54f2886c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055590838
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Dona LaRue Remington"
+          }, {
+            "id" : "40d33933-3d1b-48b8-948c-041aff2467df",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055590848
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Dona Larue Remington"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "39848caa-29bb-480e-9c32-e2c51753a846",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187001
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "c402b9c1-bcef-4dd2-ae68-17ad3be35e1f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187001
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1940",
+            "resource" : "+1940"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "ad67fbe5-1ddb-4797-be80-546f410204f7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "50fe6a8c-2992-4c87-8341-0b914b4013e2",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187001
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "26019fba-0eb8-42f8-9408-dc6ef7d5839e",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census"
+        }, {
+          "id" : "2aadfa63-15c6-46d8-9cbb-870275833178",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1936",
+        "formal" : "+1936",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "3230b3cd-2285-4a13-8ca7-0f0728241b21",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187003
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1936"
+          }, {
+            "id" : "f611182f-c478-402f-b682-d6c9407bedb5",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187003
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1936",
+            "resource" : "+1936"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "b701854d-df32-4631-9060-4266aebe0ebc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1936"
+          }, {
+            "id" : "26a121ff-ffb5-41c2-b027-62aab68c2050",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187003
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1936"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Murray",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "f241150f-bc82-46c0-92ac-a2fc9d0b090f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Murray"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "8c8b71cb-9c09-4a76-b8d7-d38e2229710c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      } ]
+    } ]
+  }, {
+    "id" : "p_248302813700",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "5927c766-7ffd-4ef1-8cf1-dbb308a12a58",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female",
+          "resource" : "https://sg30p0.familysearch.org/platform/vocab/terms/109658"
+        }, {
+          "id" : "90559783-6698-46fa-9d31-b038b363109f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1595468187269
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/8ZVW-2FW2?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/47QB-BWT2?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FW2" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Elizabeth Remington",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Elizabeth",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "52c0f115-8af7-4edf-9233-b68de6e4abb5",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Elizabeth"
+            }, {
+              "id" : "1cc4fbda-876a-4cf8-a93a-652fe4abb5dc",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055592453
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Elizabeth"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Remington",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "d5b8bb0e-68d5-4760-8c51-197abf14b6ad",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Remington"
+            }, {
+              "id" : "d7f036f5-451f-4669-9589-b9befaab6d2c",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1610055592453
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Remington"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "e7dad93f-20f3-4a3d-ae3f-69794c6e33d3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055592448
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Elizabeth Remington"
+          }, {
+            "id" : "65540980-e730-45d8-af71-38c0dea7b635",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1610055592453
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Elizabeth Remington"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "dd0ac9fa-289f-4560-a628-58f466a2bac0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187242
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "9b0b779d-58ae-419b-af39-a73a580697ac",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187242
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1940",
+            "resource" : "+1940"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "8cec6c17-ef40-46f1-a5bd-f88eae056c36",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1940"
+          }, {
+            "id" : "c1894eba-b515-4800-8329-2c831e07241f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187242
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1940"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "c8a51164-be94-4a22-88a2-7b4da2b12964",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census"
+        }, {
+          "id" : "39160ee6-b626-4582-9051-c3e6a977bba6",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Census"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1857",
+        "formal" : "+1857",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "d8ea961c-040b-486e-9872-6ea98ba55ea3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187244
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1857"
+          }, {
+            "id" : "b5eda850-468e-4baa-8350-61a011fb0ac8",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187244
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1857",
+            "resource" : "+1857"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "6d846fa4-8c96-466c-b3ee-dbd90fdcbce7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1857"
+          }, {
+            "id" : "e7e8a5d6-c44e-4733-a4e5-e2f392318a45",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1595468187244
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1857"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Tooele",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "98498c56-4627-4147-8afb-96ebbbc6f18b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Tooele"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "11d0641f-cee0-4593-91e1-5e1f17faeaa4",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Daughter"
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/P7Q5-6VK9",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_248302813100",
+      "resourceId" : "p_248302813100"
+    },
+    "person2" : {
+      "resource" : "#p_248302813200",
+      "resourceId" : "p_248302813200"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VKS",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813100",
+      "resourceId" : "p_248302813100"
+    },
+    "person2" : {
+      "resource" : "#p_248302813300",
+      "resourceId" : "p_248302813300"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VK3",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813100",
+      "resourceId" : "p_248302813100"
+    },
+    "person2" : {
+      "resource" : "#p_248302813400",
+      "resourceId" : "p_248302813400"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VKQ",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813100",
+      "resourceId" : "p_248302813100"
+    },
+    "person2" : {
+      "resource" : "#p_248302813500",
+      "resourceId" : "p_248302813500"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VK7",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813100",
+      "resourceId" : "p_248302813100"
+    },
+    "person2" : {
+      "resource" : "#p_248302813600",
+      "resourceId" : "p_248302813600"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VKW",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813100",
+      "resourceId" : "p_248302813100"
+    },
+    "person2" : {
+      "resource" : "#p_248302813700",
+      "resourceId" : "p_248302813700"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VK4",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813200",
+      "resourceId" : "p_248302813200"
+    },
+    "person2" : {
+      "resource" : "#p_248302813300",
+      "resourceId" : "p_248302813300"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VKH",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813200",
+      "resourceId" : "p_248302813200"
+    },
+    "person2" : {
+      "resource" : "#p_248302813400",
+      "resourceId" : "p_248302813400"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VKC",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813200",
+      "resourceId" : "p_248302813200"
+    },
+    "person2" : {
+      "resource" : "#p_248302813500",
+      "resourceId" : "p_248302813500"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VKZ",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813200",
+      "resourceId" : "p_248302813200"
+    },
+    "person2" : {
+      "resource" : "#p_248302813600",
+      "resourceId" : "p_248302813600"
+    }
+  }, {
+    "id" : "MM9.1.6/P7Q5-6VK8",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_248302813200",
+      "resourceId" : "p_248302813200"
+    },
+    "person2" : {
+      "resource" : "#p_248302813700",
+      "resourceId" : "p_248302813700"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_3438701",
+    "about" : "https://www.familysearch.org/platform/records/collections/3438701",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1576360430248,
+    "modified" : 1669753844397,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "World",
+        "description" : "#place_6371060"
+      },
+      "temporal" : {
+        "original" : "1914/1960",
+        "formal" : "1914/1960"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/3438701" ]
+    }
+  }, {
+    "id" : "src_r_156855642200",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:47QB-BWT2",
+    "componentOf" : {
+      "description" : "#sd_c_3438701"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1595468185971,
+    "modified" : 1669753844397,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Tooele"
+      },
+      "temporal" : {
+        "original" : "1940",
+        "formal" : "+1940"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:47QB-BWT2 : 25 August 2021), Household of Lester S Remington, 1940."
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Household of Lester S Remington, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:47QB-BWT2" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/3438701?arkName=1:2:47QB-BWT2"
+    }
+  }, {
+    "id" : "sd_p_248302813100",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XN2",
+    "componentOf" : {
+      "description" : "#src_r_156855642200"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XN2 : 25 August 2021), Lester S Remington, 1940."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Lester S Remington, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XN2" ]
+    }
+  }, {
+    "id" : "sd_p_248302813200",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2X2M",
+    "componentOf" : {
+      "description" : "#src_r_156855642200"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:8ZVW-2X2M : 25 August 2021), Irene E Remington in entry for Lester S Remington, 1940."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Irene E Remington in household of Lester S Remington, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2X2M" ]
+    }
+  }, {
+    "id" : "sd_p_248302813300",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XPZ",
+    "componentOf" : {
+      "description" : "#src_r_156855642200"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XPZ : 25 August 2021), Irene Meyer Remington Mitchell in entry for Lester S Remington, 1940."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Irene Meyer Remington Mitchell in household of Lester S Remington, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XPZ" ]
+    }
+  }, {
+    "id" : "sd_p_248302813400",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XT2",
+    "componentOf" : {
+      "description" : "#src_r_156855642200"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XT2 : 25 August 2021), Bettie Lavon Remington in entry for Lester S Remington, 1940."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Bettie Lavon Remington in household of Lester S Remington, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XT2" ]
+    }
+  }, {
+    "id" : "sd_p_248302813500",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FMM",
+    "componentOf" : {
+      "description" : "#src_r_156855642200"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FMM : 25 August 2021), Ralph Lester Remington in entry for Lester S Remington, 1940."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Ralph Lester Remington in household of Lester S Remington, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FMM" ]
+    }
+  }, {
+    "id" : "sd_p_248302813600",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z",
+    "componentOf" : {
+      "description" : "#src_r_156855642200"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z : 25 August 2021), Dona Larue Remington in entry for Lester S Remington, 1940."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Dona Larue Remington in household of Lester S Remington, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z" ]
+    }
+  }, {
+    "id" : "sd_p_248302813700",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FW2",
+    "componentOf" : {
+      "description" : "#src_r_156855642200"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FW2 : 25 August 2021), Elizabeth Remington in entry for Lester S Remington, 1940."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Elizabeth Remington in household of Lester S Remington, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FW2" ]
+    }
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C34G-L3ZM-7?cc=3438701",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C34G-L3ZM-7?cc=3438701" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/3438701?arkName=3:1:3Q9M-C34G-L3ZM-7"
+    }
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_6371060",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/6371060" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "50979fc0-c767-494e-8620-9e1cb0cd6e73",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "0472e645-938c-4bbb-9783-c9d22656c0d4"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "1ccf24c0-2ea0-497d-a75a-6fbd2e3d1491",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "3438701"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "f2f2b5c3-8bea-4c36-8774-5bf3e34be804",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "008623163"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsHouseholdId",
+    "values" : [ {
+      "id" : "3fc6cc83-e1ce-4f13-bc6e-f7ba6363a172",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_HOUSEHOLD_ID",
+      "text" : "00862316301503"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/IdxProjectId",
+    "values" : [ {
+      "id" : "55eb01f4-890b-4bef-87e7-f72cfa96acc5",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IDX_PROJECT_ID",
+      "text" : "a539477d-a74b-4211-8f51-8b4b48a54fec"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/IdxTemplateId",
+    "values" : [ {
+      "id" : "4564214a-73a1-46d9-8ff2-3118cdf00708",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IDX_TEMPLATE_ID",
+      "text" : "template://idx-template/templates/entity/template;entitytype=PROJECT;entityid=a539477d-a74b-4211-8f51-8b4b48a54fec;name=4008740c-736e-4977-a555-d4262780af44"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageApid",
+    "values" : [ {
+      "id" : "17ab9187-9d01-421f-b00c-f078f8dbe1b3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_APID",
+      "text" : "TH-909-87981-90005-40"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNumber",
+    "values" : [ {
+      "id" : "02780174-92cb-419d-b914-48b6aa2664e4",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "01503"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageArk",
+    "values" : [ {
+      "id" : "e267330e-9123-460b-9196-6a44f41e7b89",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_ARK",
+      "text" : "https://familysearch.org/ark:/61903/3:1:3Q9M-C34G-L3ZM-7"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "f3661961-d02e-41a5-876b-26f765ab0ee8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "5edffcd7-f95c-444a-8cf5-40841b9592df",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "19-1289"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "77d94923-1128-41bc-a44b-8bee1b29c838",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "19-1289; 2020-12-17T13:19:56-0700; fairchildbc; 7650; SB; IDX; Utah, Church of Jesus Christ of Latter-day Saints, Church Census Records, 1914-1960 - FSI"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "id" : "88a2a6b4-7aa3-493d-b7b2-b936d88698b1",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "0"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "f1d256fd-74ca-4fea-a7e0-643d9c39a06a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "10"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "6404a050-ad00-4486-8750-5b1df00926ce",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1595468185805
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000008623163_01503_00000_0000156855642200"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "66833bba-9aca-49e1-90bb-25f251b02b99",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Utah, Church of Jesus Christ of Latter-day Saints, Church Census Records, 1914-1960 - FSI"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "fdc2d99f-806c-423b-83c8-be155dd3f311",
+      "confidence" : "http://confidence/1",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/LocalityTreatment/ver/1"
+        },
+        "modified" : 1610055583658
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_SYSTEM_OF_RECORD\":\"World\"}",
+      "resource" : "https://www.familysearch.org/platform/places/description/324"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "281e53e2-0bd1-43d0-b121-2807925013ac",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "13"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "60758"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ],
+  "additionalAttribution" : [ {
+    "contributor" : {
+      "resource" : "cis.user.MMM9-6TFL"
+    },
+    "modified" : 1595094238209,
+    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
+  } ]
+}

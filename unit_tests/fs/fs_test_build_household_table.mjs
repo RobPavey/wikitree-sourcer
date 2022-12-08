@@ -148,6 +148,10 @@ const regressionData = [
     caseName: "us_census_1940_william_huffstetler",
   },
   {
+    // https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z
+    caseName: "us_census_lds_1940_dora_remington",
+  },
+  {
     // Case where the fact type is residence rather than census
     // https://www.familysearch.org/ark:/61903/1:1:MQ6G-CR3
     caseName: "us_mn_census_1895_david_palm",

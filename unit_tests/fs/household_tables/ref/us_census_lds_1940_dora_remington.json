@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Sex || Birth Year || Birth Place\n|-\n| Lester S Remington || Head || M || 1900 || Tooele\n|-\n| Irene E Remington || Wife || F || 1902 || Salt Lake\n|-\n| Irene Meyer Remington Mitchell || Daughter || F || 1921 || Salt Lake\n|-\n| Bettie Lavon Remington || Daughter || F || 1928 || Midvale\n|-\n| Ralph Lester Remington || Son || M || 1931 || Midvale\n|-\n| '''Dona Larue Remington''' || '''Daughter''' || '''F''' || '''1936''' || '''Murray'''\n|-\n| Elizabeth Remington || Daughter || F || 1857 || Tooele\n|}"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "recordData": {
+    "Name": "Dona Larue Remington",
+    "Census Date": "1940",
+    "Birth Date": "1936",
+    "Birth Place": "Murray",
+    "Relationship To Head": "Daughter"
+  },
+  "eventDateOriginal": "1940",
+  "eventDate": "1940",
+  "eventYear": "1940",
+  "fullName": "Dona Larue Remington",
+  "givenName": "Dona Larue",
+  "surname": "Remington",
+  "gender": "female",
+  "factType": "Census",
+  "birthDateOriginal": "1936",
+  "birthDate": "1936",
+  "birthYear": "1936",
+  "birthPlace": "Murray",
+  "household": {
+    "headings": [
+      "fullName",
+      "givenName",
+      "surname",
+      "relationship",
+      "maritalStatus",
+      "gender",
+      "age",
+      "occupation",
+      "birthDateOriginal",
+      "birthYear",
+      "birthPlaceOriginal",
+      "birthPlace"
+    ],
+    "members": [
+      {
+        "fullName": "Lester S Remington",
+        "givenName": "Lester S",
+        "surname": "Remington",
+        "gender": "male",
+        "birthDateOriginal": "1900",
+        "birthDate": "1900",
+        "birthYear": "1900",
+        "birthPlaceOriginal": "Tooele",
+        "relationship": "Head"
+      },
+      {
+        "fullName": "Irene E Remington",
+        "givenName": "Irene E",
+        "surname": "Remington",
+        "gender": "female",
+        "birthDateOriginal": "1902",
+        "birthDate": "1902",
+        "birthYear": "1902",
+        "birthPlaceOriginal": "Salt Lake",
+        "relationship": "Wife"
+      },
+      {
+        "fullName": "Irene Meyer Remington Mitchell",
+        "givenName": "Irene Meyer",
+        "surname": "Remington Mitchell",
+        "gender": "female",
+        "birthDateOriginal": "1921",
+        "birthDate": "1921",
+        "birthYear": "1921",
+        "birthPlaceOriginal": "Salt Lake",
+        "relationship": "Daughter"
+      },
+      {
+        "fullName": "Bettie Lavon Remington",
+        "givenName": "Bettie Lavon",
+        "surname": "Remington",
+        "gender": "female",
+        "birthDateOriginal": "1928",
+        "birthDate": "1928",
+        "birthYear": "1928",
+        "birthPlaceOriginal": "Midvale",
+        "relationship": "Daughter"
+      },
+      {
+        "fullName": "Ralph Lester Remington",
+        "givenName": "Ralph Lester",
+        "surname": "Remington",
+        "gender": "male",
+        "birthDateOriginal": "1931",
+        "birthDate": "1931",
+        "birthYear": "1931",
+        "birthPlaceOriginal": "Midvale",
+        "relationship": "Son"
+      },
+      {
+        "isSelected": true,
+        "fullName": "Dona Larue Remington",
+        "givenName": "Dona Larue",
+        "surname": "Remington",
+        "gender": "female",
+        "birthDateOriginal": "1936",
+        "birthDate": "1936",
+        "birthYear": "1936",
+        "birthPlaceOriginal": "Murray",
+        "relationship": "Daughter"
+      },
+      {
+        "fullName": "Elizabeth Remington",
+        "givenName": "Elizabeth",
+        "surname": "Remington",
+        "gender": "female",
+        "birthDateOriginal": "1857",
+        "birthDate": "1857",
+        "birthYear": "1857",
+        "birthPlaceOriginal": "Tooele",
+        "relationship": "Daughter"
+      }
+    ]
+  },
+  "fsCollectionId": "3438701",
+  "referenceData": {
+    "digitalFilmNumber": "008623163",
+    "recordNumber": "0"
+  },
+  "fsImageNumber": "01503",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-C34G-L3ZM-7",
+  "collectionTitle": "The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:47QB-BWT2",
+  "citation": "\"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z : 25 August 2021), Dona Larue Remington in entry for Lester S Remington, 1940.",
+  "sourceTitleForPerson": "Dona Larue Remington in household of Lester S Remington, \"The Church of Jesus Christ of Latter-day Saints, Church Census Records (Worldwide), 1914-1960\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z",
+  "pageType": "record"
+}

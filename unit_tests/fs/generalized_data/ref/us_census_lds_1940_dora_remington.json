@@ -1,0 +1,96 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Dona Larue Remington"
+  },
+  "birthDate": {
+    "dateString": "1936",
+    "yearString": "1936"
+  },
+  "birthPlace": {
+    "placeString": "Murray"
+  },
+  "eventDate": {
+    "dateString": "1940",
+    "yearString": "1940"
+  },
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Lester S Remington",
+      "relationship": "head",
+      "gender": "male",
+      "birthYear": "1900",
+      "birthPlace": "Tooele"
+    },
+    {
+      "name": "Irene E Remington",
+      "relationship": "wife",
+      "gender": "female",
+      "birthYear": "1902",
+      "birthPlace": "Salt Lake"
+    },
+    {
+      "name": "Irene Meyer Remington Mitchell",
+      "relationship": "daughter",
+      "gender": "female",
+      "birthYear": "1921",
+      "birthPlace": "Salt Lake"
+    },
+    {
+      "name": "Bettie Lavon Remington",
+      "relationship": "daughter",
+      "gender": "female",
+      "birthYear": "1928",
+      "birthPlace": "Midvale"
+    },
+    {
+      "name": "Ralph Lester Remington",
+      "relationship": "son",
+      "gender": "male",
+      "birthYear": "1931",
+      "birthPlace": "Midvale"
+    },
+    {
+      "name": "Dona Larue Remington",
+      "relationship": "daughter",
+      "gender": "female",
+      "birthYear": "1936",
+      "birthPlace": "Murray",
+      "isSelected": true
+    },
+    {
+      "name": "Elizabeth Remington",
+      "relationship": "daughter",
+      "gender": "female",
+      "birthYear": "1857",
+      "birthPlace": "Tooele"
+    }
+  ],
+  "relationshipToHead": "daughter",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Lester S Remington"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Irene E Remington"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "3438701"
+  },
+  "hasValidData": true
+}
