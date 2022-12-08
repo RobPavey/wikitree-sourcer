@@ -62,11 +62,13 @@ class PpnzUriBuilder {
   }
 
   addStartYear(string) {
-    this.addSearchParameter("start_date", string);
+    let dateString = "01-01-" + string;
+    this.addSearchParameter("start_date", dateString);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("end_date", string);
+    let dateString = "31-12-" + string;
+    this.addSearchParameter("end_date", dateString);
   }
 
   getUri() {
