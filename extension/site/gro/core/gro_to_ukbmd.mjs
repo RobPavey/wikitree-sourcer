@@ -40,6 +40,7 @@ function getUkbmdDistrictPageUrl(district) {
     "barrow in furness": "barrow-in-furness",
     "barrowin furness": "barrow-in-furness",
     "barrow on soar": "barrow upon soar",
+    "bermondsey now st olave southwark": "bermondsey",
     "berwick upon tweed": "berwick",
     bootle: "bootle1",
     "bootle cumberland": "bootle1",
@@ -56,7 +57,9 @@ function getUkbmdDistrictPageUrl(district) {
     "burton on trent": "burton upon trent",
     "bury bury and lancashire": "bury", // transcription error?
     "bury bury and lancaster": "bury",
+    "bury lancaster": "bury",
     castle: "castle ward",
+    "caxton and arrington": "caxton",
     "chapel en le firth": "chapel-en-le-frith", // transcription error
     "chapel en le frith": "chapel-en-le-frith",
     "chapel en lefrith": "chapel-en-le-frith",
@@ -73,6 +76,7 @@ function getUkbmdDistrictPageUrl(district) {
     eastgrinsted: "east grinstead",
     "ecclesall burlow": "ecclesall bierlow", // transcription error?
     "foleshill and sowe": "foleshill",
+    gainsbro: "gainsborough",
     gainsburgh: "gainsborough", // transcription error?
     "gravesend milton": "gravesend",
     "gravesend and milton": "gravesend",
@@ -127,6 +131,7 @@ function getUkbmdDistrictPageUrl(district) {
     "richmond yorkshire": "richmond2",
     richmond: "richmond2",
     rochester: "medway", // depends on date but only example seen was before 1941
+    "romsey and mitchelmersh": "romsey",
     rotherfield: "uckfield",
     "royston and buntingford": "royston",
     "royston buntingford": "royston",
@@ -157,6 +162,7 @@ function getUkbmdDistrictPageUrl(district) {
     "st thomas union devon": "st thomas",
     stalbridge: "north dorset",
     "stockton and sedgefield": "stockton",
+    stonebridge: "stourbridge", // typo
     "sturminster dorset": "sturminster",
     "sturminster newton": "sturminster",
     "swindon and highworth": "highworth",
@@ -273,6 +279,7 @@ function getUkbmdDistrictPageUrl(district) {
     " essex",
     " hants",
     " herts",
+    " herefordshire",
     " hertfordshire",
     " hertferdshore", // transcription error
     " kent",
@@ -411,6 +418,12 @@ function getUkbmdDistrictPageUrl(district) {
   // Remove UNION again for an example like: BASFORD UNION COUNTIES OF NOTTINGHAM DERBY
   // also works for: SAINT ALBANS UNION HERTS
   districtName = districtName.replace(/\s+union$/, "").trim();
+
+  // check for special cases again, for an example like:
+  // OF HOUGHTON LE SPRING IN THE COUNTY OF DURHAM
+  if (overrides.hasOwnProperty(districtName)) {
+    districtName = overrides[districtName];
+  }
 
   districtName = encodeURI(districtName);
   const url = "https://www.ukbmd.org.uk/reg/districts/" + districtName + ".html";
