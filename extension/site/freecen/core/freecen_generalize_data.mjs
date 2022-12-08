@@ -153,13 +153,18 @@ function buildHouseholdArray(data, result) {
         householdMember.isClosed = true;
       } else {
         // handle name specially since we combine surname and forenames into one name
-        let surname = WTS_String.toInitialCapsEachWord(member["Surname"], true);
         let forenames = member["Forenames"];
-        householdMember.name = forenames;
-        if (forenames && surname) {
-          householdMember.name += " ";
+        if (forenames) {
+          householdMember.name = forenames;
         }
-        householdMember.name += surname;
+        let surname = member["Surname"];
+        if (surname) {
+          if (householdMember.name) {
+            householdMember.name += " ";
+          }
+          surname = WTS_String.toInitialCapsEachWord(surname, true);
+          householdMember.name += surname;
+        }
 
         // handle birthPlace specially since we combine birthPlace and birthCounty into one string
         let combinedBirthPlace = "";
