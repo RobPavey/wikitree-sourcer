@@ -129,7 +129,7 @@
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
     },
     {
-      "matches": ["*://trove.nla.gov.au//*"],
+      "matches": ["*://trove.nla.gov.au/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/trove/browser/trove_content.js"]
     }
