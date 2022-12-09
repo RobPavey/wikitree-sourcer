@@ -80,16 +80,55 @@ const CountryData = [
     usesMiddleNames: true,
   }, // must come after ones it contains
 
-  { stdName: "Ireland", matches: ["Ireland"], usesMiddleNames: true },
+  { stdName: "Ireland", matches: ["Ireland", "Éire"], usesMiddleNames: true },
   { stdName: "France", matches: ["France"] },
   { stdName: "Germany", matches: ["Germany"] },
   { stdName: "Austria", matches: ["Austria"] },
   { stdName: "Italy", matches: ["Italy"] },
   { stdName: "Netherlands", matches: ["Netherlands"] },
-  { stdName: "Sweden", matches: ["Sweden"] },
-  { stdName: "Denmark", matches: ["Denmark"] },
-  { stdName: "Norway", matches: ["Norway"] },
+  { stdName: "Belgium", matches: ["Belgium"] },
+  { stdName: "Luxembourg", matches: ["Luxembourg"] },
 
+  { stdName: "Sweden", matches: ["Sweden", "Sverige"] },
+  { stdName: "Denmark", matches: ["Denmark"] },
+  { stdName: "Norway", matches: ["Norway", "Norge"] },
+  { stdName: "Finland", matches: ["Finland", "Suomi"] },
+  { stdName: "Iceland", matches: ["Iceland", "Ísland"] },
+
+  { stdName: "Czechoslovakia", matches: ["Czechoslovakia"] },
+  { stdName: "Czechia", matches: ["Czechia"], partOf: ["Czechoslovakia"] },
+  { stdName: "Slovakia", matches: ["Slovakia"], partOf: ["Czechoslovakia"] },
+
+  { stdName: "Hungary", matches: ["Hungary"] },
+  { stdName: "Romania", matches: ["Romania"] },
+  { stdName: "Bulgaria", matches: ["Bulgaria", "България"] },
+  { stdName: "Poland", matches: ["Poland", "Polska"] },
+  { stdName: "Ukraine", matches: ["Ukraine", "Україна"] },
+  { stdName: "Belarus", matches: ["Belarus", "Беларусь"] },
+  { stdName: "Moldova", matches: ["Moldova"] },
+
+  { stdName: "Lithuania", matches: ["Lithuania", "Lietuva"] },
+  { stdName: "Latvia", matches: ["Latvia"] },
+  { stdName: "Estonia", matches: ["Estonia", "Eesti"] },
+
+  { stdName: "Yugoslavia", matches: ["Yugoslavia"] },
+  { stdName: "Slovenia", matches: ["Slovenia"], partOf: ["Yugoslavia"] },
+  {
+    stdName: "Bosnia and Herzegovina",
+    matches: ["Bosnia and Herzegovina", "Bosna i Hercegovina"],
+    partOf: ["Yugoslavia"],
+  },
+  { stdName: "Croatia", matches: ["Croatia", "Hrvatska"], partOf: ["Yugoslavia"] },
+  { stdName: "Serbia", matches: ["Serbia", "Србија"], partOf: ["Yugoslavia"] },
+  { stdName: "Montenegro", matches: ["Montenegro", "Црна Гора"], partOf: ["Yugoslavia"] },
+  { stdName: "Kosovo", matches: ["Kosovo"], partOf: ["Yugoslavia"] },
+  { stdName: "North Macedonia", matches: ["North Macedonia", "Северна Македонија"], partOf: ["Yugoslavia"] },
+
+  { stdName: "Albania", matches: ["Albania", "Shqipëria"] },
+
+  { stdName: "Russia", matches: ["Russia"] },
+
+  { stdName: "Greece", matches: ["Greece", "Ελλάδα"] },
   { stdName: "Turkey", matches: ["Turkey"] },
 
   {
