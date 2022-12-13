@@ -7,7 +7,7 @@ that is needed by the other modules like `generalize` and `build_citation`.
 ## Keep it lightweight
 
 By design this file is kept as simple as possible. There are few reasons for this but the main one is that this module is dynamically loaded into the content script whenever the content script is loaded.
-So it is one of the few bits of code loaded beforre the popup menu is invoked.
+So it is one of the few bits of code loaded before the popup menu is invoked.
 So for performance reasons we keep it small.
 
 So, the idea is to extract the page data into some easily digestible object structure to make it easy to process for downstream clients
