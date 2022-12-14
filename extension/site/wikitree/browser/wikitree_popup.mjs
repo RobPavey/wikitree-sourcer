@@ -53,6 +53,7 @@ import { GeneralizedData, dateQualifiers } from "/base/core/generalize_data_util
 import { options } from "/base/browser/options/options_loader.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { WTS_Date } from "../../../base/core/wts_date.mjs";
 
 function convertTimestampDiffToText(timeStamp) {
   if (!timeStamp) {
@@ -108,6 +109,14 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
     return "";
   }
 
+  function standardizeDate(dateString) {
+    let parsedDate = WTS_Date.parseDateString(dateString);
+    if (!parsedDate.isValid) {
+      return dateString;
+    }
+    return WTS_Date.getStdShortFormDateString(parsedDate);
+  }
+
   //console.log("getWikiTreeAddMergeData, personGd is: ");
   //console.log(personGd);
 
@@ -160,9 +169,9 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
     result.cln = cln;
   }
 
-  result.birthDate = personGd.inferBirthDate();
+  result.birthDate = standardizeDate(personGd.inferBirthDate());
   result.birthDateStatus = qualifierToStatus(personGd.inferBirthDateQualifier());
-  result.deathDate = personGd.inferDeathDate();
+  result.deathDate = standardizeDate(personGd.inferDeathDate());
   result.deathDateStatus = qualifierToStatus(personGd.inferDeathDateQualifier());
 
   result.birthLocation = personGd.inferBirthPlace();
@@ -196,7 +205,7 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
       for (let spouse of personGd.spouses) {
         if (spouse.name && spouse.name.name && spouse.name.name == fmName) {
           if (spouse.marriageDate) {
-            result.marriageDate = spouse.marriageDate.dateString;
+            result.marriageDate = standardizeDate(spouse.marriageDate.dateString);
           }
           if (spouse.marriagePlace) {
             result.marriageLocation = spouse.marriagePlace.placeString;
