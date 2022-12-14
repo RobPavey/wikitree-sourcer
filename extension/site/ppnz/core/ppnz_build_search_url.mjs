@@ -64,14 +64,6 @@ function buildSearchUrl(buildUrlInput) {
   // constrain years to the range covered by Ppnz
   constrainYears(dateRange);
 
-  // set the date parameters
-  if (dateRange.startYear) {
-    builder.addStartYear(dateRange.startYear);
-  }
-  if (dateRange.endYear) {
-    builder.addEndYear(dateRange.endYear);
-  }
-
   let queryString = "";
 
   const lnab = data.inferLastNameAtBirth();
@@ -94,6 +86,14 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   builder.addQueryString(queryString);
+
+  // set the date parameters
+  if (dateRange.startYear) {
+    builder.addStartYear(dateRange.startYear);
+  }
+  if (dateRange.endYear) {
+    builder.addEndYear(dateRange.endYear);
+  }
 
   const url = builder.getUri();
 

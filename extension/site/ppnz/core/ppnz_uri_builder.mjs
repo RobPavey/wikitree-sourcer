@@ -58,6 +58,13 @@ class PpnzUriBuilder {
   }
 
   addQueryString(string) {
+    if (!string) {
+      return;
+    }
+    // note that when searching via the site it puts "+" between words rather than "%20"
+    // however, this doesn't seem to make a difference and if we replace space with + here
+    // it ends up puting %2B in the URL which is an actual +
+    string = string.trim();
     this.addSearchParameter("query", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
