@@ -1,0 +1,34 @@
+{
+  "fullName": "Kenneth Galen Crist",
+  "givenName": "Kenneth Galen",
+  "surname": "Crist",
+  "gender": "male",
+  "birthDateOriginal": "19210425",
+  "birthDate": "25 April 1921",
+  "birthPlaceOriginal": "Wenatchee, Chelan, Washington",
+  "birthPlace": "Wenatchee, Chelan, Washington, United States",
+  "deathDateOriginal": "19920703",
+  "deathDate": "3 July 1992",
+  "spouses": [
+    {
+      "fullName": "Rosalie Aileene Hylton",
+      "givenName": "Rosalie Aileene",
+      "surname": "Hylton",
+      "marriageDateOriginal": "13 August 1943",
+      "marriageDate": "13 August 1943",
+      "marriagePlaceOriginal": "La Verne, Los Angeles, California, United States",
+      "marriagePlace": "La Verne, Los Angeles, California, United States"
+    }
+  ],
+  "father": {
+    "fullName": "John Benjamin Crist",
+    "givenName": "John Benjamin",
+    "surname": "Crist"
+  },
+  "mother": {
+    "fullName": "Eva Lena Barnhart",
+    "givenName": "Eva Lena",
+    "surname": "Barnhart"
+  },
+  "pageType": "person"
+}

@@ -1,0 +1,25 @@
+{
+  "fullName": "Martha Barnhart",
+  "givenName": "Martha",
+  "surname": "Barnhart",
+  "gender": "female",
+  "birthDateOriginal": "23 July 1868",
+  "birthDate": "23 July 1868",
+  "birthPlaceOriginal": "Centropolis, Franklin, Kansas, United States",
+  "birthPlace": "Centropolis, Franklin, Kansas, United States",
+  "deathDateOriginal": "28 August 1868",
+  "deathDate": "28 August 1868",
+  "deathPlaceOriginal": "Franklin, Kansas, United States",
+  "deathPlace": "Franklin, Kansas, United States",
+  "father": {
+    "fullName": "David B Barnhart",
+    "givenName": "David B",
+    "surname": "Barnhart"
+  },
+  "mother": {
+    "fullName": "Elizabeth Karns",
+    "givenName": "Elizabeth",
+    "surname": "Karns"
+  },
+  "pageType": "person"
+}

@@ -397,7 +397,20 @@ const imageRegressionData = [
   },
 ];
 
+// Note: to get this fetched data you may need to bring up the Sourcer popup and see the
+// Network tab.
 const personRegressionData = [
+  {
+    caseName: "xx_profile_kenneth_crist_1921_1992",
+    url: "https://www.familysearch.org/tree/person/details/KWDZ-H37",
+    fetchType: "person",
+  },
+  {
+    // twin
+    caseName: "xx_profile_martha_barnhart_1868_1868",
+    url: "https://www.familysearch.org/tree/person/details/KZKS-T46",
+    fetchType: "person",
+  },
   {
     caseName: "xx_profile_pinkney_lyles_1886_1916",
     url: "https://www.familysearch.org/tree/person/details/G6DP-4WD",

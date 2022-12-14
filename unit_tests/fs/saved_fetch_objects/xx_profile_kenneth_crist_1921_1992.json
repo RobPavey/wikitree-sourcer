@@ -1,0 +1,4472 @@
+{
+  "description" : "#SD-KWDZ-H37",
+  "persons" : [ {
+    "id" : "KWDZ-H37",
+    "sortKey" : "0000000000",
+    "living" : false,
+    "gender" : {
+      "id" : "a29ee816-0494-4634-abd6-52092bb6a350",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMMM-MMD",
+          "resourceId" : "MMMM-MMD"
+        },
+        "modified" : 1333921900894
+      },
+      "type" : "http://gedcomx.org/Male",
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/a29ee816-0494-4634-abd6-52092bb6a350?flag=fsh"
+        }
+      }
+    },
+    "links" : {
+      "spouses" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/spouses?flag=fsh"
+      },
+      "change-history" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/changes?flag=fsh"
+      },
+      "ancestry" : {
+        "href" : "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&person=KWDZ-H37"
+      },
+      "notes" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/notes?flag=fsh"
+      },
+      "non-matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/not-a-match?flag=fsh"
+      },
+      "portraits" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/portraits?flag=fsh"
+      },
+      "collection" : {
+        "href" : "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+      },
+      "families" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/families?flag=fsh"
+      },
+      "portrait" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/portrait?flag=fsh"
+      },
+      "matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/matches?flag=fsh"
+      },
+      "children" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/children?flag=fsh"
+      },
+      "descendancy" : {
+        "href" : "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&person=KWDZ-H37"
+      },
+      "person" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37?flag=fsh"
+      },
+      "source-descriptions" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/sources?flag=fsh"
+      },
+      "merge" : {
+        "template" : "https://www.familysearch.org/platform/tree/persons/{pid}/merges/{dpid}?flag=fst{&filter,access_token}",
+        "type" : "application/json,application/x-fs-v1+json,application/x-fs-v1+xml,application/xml,text/html",
+        "accept" : "*/*",
+        "allow" : "GET,OPTIONS,POST",
+        "title" : "Person Merge"
+      },
+      "artifacts" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/memories?flag=fsh"
+      },
+      "parents" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/parents?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "id" : "4b965966-4ef3-4492-a961-ae0361d426cd",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMKK-Y5Y",
+          "resourceId" : "MMKK-Y5Y"
+        },
+        "modified" : 1669774784094
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/4b965966-4ef3-4492-a961-ae0361d426cd?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/QM67-2KB?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/QM67-2KB",
+      "descriptionId" : "QM67-2KB",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Gender"
+      }, {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "a73e63b5-52e1-4a15-a646-15b90dc10267",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMFM-DL4",
+          "resourceId" : "MMFM-DL4"
+        },
+        "modified" : 1650937553144
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/a73e63b5-52e1-4a15-a646-15b90dc10267?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/32F2-2H9?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/32F2-2H9",
+      "descriptionId" : "32F2-2H9",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Gender"
+      }, {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "81b4849a-31a7-4f96-9169-c1fdef8d78de",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMFM-DL4",
+          "resourceId" : "MMFM-DL4"
+        },
+        "modified" : 1650937506728
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/81b4849a-31a7-4f96-9169-c1fdef8d78de?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/32F2-KC4?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/32F2-KC4",
+      "descriptionId" : "32F2-KC4",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Gender"
+      }, {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "a8658127-f002-4dca-b0f3-e2759a00fa80",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1585540102555
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/a8658127-f002-4dca-b0f3-e2759a00fa80?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-JZT?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-JZT",
+      "descriptionId" : "SK6K-JZT",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Name"
+      } ]
+    }, {
+      "id" : "da094ccb-3892-412b-bc07-3550d3922bb3",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1585540086504
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/da094ccb-3892-412b-bc07-3550d3922bb3?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-JMX?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-JMX",
+      "descriptionId" : "SK6K-JMX",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Burial"
+      }, {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Death"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "9028ab7b-720c-4867-b792-cb3896d0e271",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1585540048966
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/9028ab7b-720c-4867-b792-cb3896d0e271?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-NQR?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-NQR",
+      "descriptionId" : "SK6K-NQR",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Burial"
+      }, {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Death"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "89dad80e-8631-45f4-bdff-22e2ca6e634b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXK-PLM",
+          "resourceId" : "MMXK-PLM"
+        },
+        "modified" : 1431371985377,
+        "changeMessage" : "This document adds info. about his military service but only his enlistment, not his advancements or discharge."
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/89dad80e-8631-45f4-bdff-22e2ca6e634b?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9863-6QF?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9863-6QF",
+      "descriptionId" : "9863-6QF",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "bdd4c081-2765-44f8-8a50-efe340ecf1f9",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXK-PLM",
+          "resourceId" : "MMXK-PLM"
+        },
+        "modified" : 1431371366363
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/bdd4c081-2765-44f8-8a50-efe340ecf1f9?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9863-ZTS?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9863-ZTS",
+      "descriptionId" : "9863-ZTS",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Death"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "8a4d5ef6-704f-4ac3-bee3-f99e5ca86eb9",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXK-PLM",
+          "resourceId" : "MMXK-PLM"
+        },
+        "modified" : 1431371130011,
+        "changeMessage" : "Same person with more details."
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/8a4d5ef6-704f-4ac3-bee3-f99e5ca86eb9?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9863-ZMX?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9863-ZMX",
+      "descriptionId" : "9863-ZMX",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Gender"
+      }, {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Death"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "db35f739-873f-438b-a1de-f75836e9c78f",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1428611465528,
+        "changeMessage" : "Shows the marriage of Kenneth Crist in 1943."
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/db35f739-873f-438b-a1de-f75836e9c78f?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-NH8?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-NH8",
+      "descriptionId" : "98QB-NH8",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Gender"
+      }, {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "af920034-ad53-4564-bd1f-9ac47ce0e95d",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXK-PLM",
+          "resourceId" : "MMXK-PLM"
+        },
+        "modified" : 1420601486812
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/af920034-ad53-4564-bd1f-9ac47ce0e95d?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9ZD3-B3D?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9ZD3-B3D",
+      "descriptionId" : "9ZD3-B3D",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Gender"
+      }, {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    }, {
+      "id" : "bfe0b0be-44af-42f1-ac86-8f9eb5b1a868",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXK-PLM",
+          "resourceId" : "MMXK-PLM"
+        },
+        "modified" : 1420601354085
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/bfe0b0be-44af-42f1-ac86-8f9eb5b1a868?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9ZD3-Y28?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9ZD3-Y28",
+      "descriptionId" : "9ZD3-Y28",
+      "tags" : [ {
+        "resource" : "http://gedcomx.org/Gender"
+      }, {
+        "resource" : "http://gedcomx.org/Name"
+      }, {
+        "resource" : "http://gedcomx.org/Birth"
+      } ]
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://familysearch.org/ark:/61903/4:1:KWDZ-H37" ]
+    },
+    "names" : [ {
+      "id" : "ddfa08c7-905a-4cbf-b994-9d4514d2af50",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMMM-MMD",
+          "resourceId" : "MMMM-MMD"
+        },
+        "modified" : 1333921900894
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : true,
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/ddfa08c7-905a-4cbf-b994-9d4514d2af50?flag=fsh"
+        }
+      },
+      "nameForms" : [ {
+        "fullText" : "Kenneth Galen Crist",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Kenneth Galen"
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Crist"
+        } ],
+        "nameFormInfo" : [ {
+          "order" : "http://familysearch.org/v1/Eurotypic"
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "ebe0d4fe-20f8-4dad-b4b8-c69c03d0f100",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMMM-MMD",
+          "resourceId" : "MMMM-MMD"
+        },
+        "modified" : 1333921900894
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "19210425",
+        "formal" : "+1921-04-25",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "25 April 1921"
+        } ]
+      },
+      "place" : {
+        "original" : "Wenatchee, Chelan, Washington",
+        "description" : "#5287658",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/ebe0d4fe-20f8-4dad-b4b8-c69c03d0f100?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "ddb21ddf-0042-4808-af3c-5b2e94e08922",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMMM-MMD",
+          "resourceId" : "MMMM-MMD"
+        },
+        "modified" : 1333921900894
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "19920703",
+        "formal" : "+1992-07-03",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "3 July 1992"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/ddb21ddf-0042-4808-af3c-5b2e94e08922?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "a3ca8aea-4b58-4dbf-aecf-8fd8437e7791",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXK-PLM",
+          "resourceId" : "MMXK-PLM"
+        },
+        "modified" : 1420601353784
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1930",
+        "formal" : "+1930",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1930"
+        } ]
+      },
+      "place" : {
+        "original" : "Chelan, Washington",
+        "description" : "#5287658",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/a3ca8aea-4b58-4dbf-aecf-8fd8437e7791?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "2bfab2b9-5551-49c8-bfb6-09753ac1e2f8",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMMM-MMK",
+          "resourceId" : "MMMM-MMK"
+        },
+        "modified" : 1588718513397
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1935",
+        "formal" : "+1935",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1935"
+        } ]
+      },
+      "place" : {
+        "original" : "Same House, , "
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/2bfab2b9-5551-49c8-bfb6-09753ac1e2f8?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "f47723ec-e7d6-4628-8b82-0f1e6194d01e",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXK-PLM",
+          "resourceId" : "MMXK-PLM"
+        },
+        "modified" : 1420601485451
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1940"
+        } ]
+      },
+      "place" : {
+        "original" : "Wenatchee Election Precinct M, Wenatchee, Chelan, Washington",
+        "description" : "#8070850",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee Election Precinct M, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/f47723ec-e7d6-4628-8b82-0f1e6194d01e?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "af4dfcbf-76a3-44b4-af10-7729e4282d3c",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMFM-DL4",
+          "resourceId" : "MMFM-DL4"
+        },
+        "modified" : 1650937552980
+      },
+      "type" : "data:,Military%20Draft%20Registration",
+      "date" : {
+        "original" : "16 Feb 1942",
+        "formal" : "+1942-02-16",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "16 February 1942"
+        } ]
+      },
+      "place" : {
+        "original" : "La Verne, Los Angeles, California, United States",
+        "description" : "#5495853",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "La Verne, Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/af4dfcbf-76a3-44b4-af10-7729e4282d3c?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "c4df25f8-bad8-415a-8d2b-2092207bda09",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXK-PLM",
+          "resourceId" : "MMXK-PLM"
+        },
+        "modified" : 1431371984549,
+        "changeMessage" : "This document adds info. about his military service but only his enlistment, not his advancements or discharge."
+      },
+      "type" : "http://gedcomx.org/MilitaryService",
+      "date" : {
+        "original" : "07 Jan 1943",
+        "formal" : "+1943-01-07",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "7 January 1943"
+        } ]
+      },
+      "place" : {
+        "original" : "Los Angeles, California, United States",
+        "description" : "#395580",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/c4df25f8-bad8-415a-8d2b-2092207bda09?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "06364820-308f-4698-80cf-69b470c5532d",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMKK-Y5Y",
+          "resourceId" : "MMKK-Y5Y"
+        },
+        "modified" : 1669774783604
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "6 April 1950",
+        "formal" : "+1950-04-06",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "6 April 1950"
+        } ]
+      },
+      "place" : {
+        "original" : "Los Angeles, Los Angeles, California, United States",
+        "description" : "#5494026",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Los Angeles, Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/06364820-308f-4698-80cf-69b470c5532d?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "19791011-c7a0-4b6a-85e0-4649cd9cf80b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1585540048891
+      },
+      "type" : "http://gedcomx.org/Burial",
+      "place" : {
+        "original" : "Oceanside, San Diego, California, United States",
+        "description" : "#5435500",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Oceanside, San Diego, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/19791011-c7a0-4b6a-85e0-4649cd9cf80b?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "9a5b3f98-8434-48a1-b567-8a441ce4db33",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMFM-DL4",
+          "resourceId" : "MMFM-DL4"
+        },
+        "modified" : 1650937553068
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "original" : "Los Angeles, California, La Verne",
+        "description" : "#5495853",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "La Verne, Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/conclusions/9a5b3f98-8434-48a1-b567-8a441ce4db33?flag=fsh"
+        }
+      }
+    } ],
+    "display" : {
+      "name" : "Kenneth Galen Crist",
+      "gender" : "Male",
+      "lifespan" : "1921-1992",
+      "birthDate" : "25 April 1921",
+      "birthPlace" : "Wenatchee, Chelan, Washington, United States",
+      "deathDate" : "3 July 1992",
+      "ascendancyNumber" : "1",
+      "descendancyNumber" : "1",
+      "familiesAsParent" : [ {
+        "parent1" : {
+          "resource" : "#KWDZ-H37",
+          "resourceId" : "KWDZ-H37"
+        },
+        "parent2" : {
+          "resource" : "#LK56-QTN",
+          "resourceId" : "LK56-QTN"
+        },
+        "children" : [ {
+          "resource" : "#LRQG-KBL",
+          "resourceId" : "LRQG-KBL"
+        } ]
+      } ],
+      "familiesAsChild" : [ {
+        "parent1" : {
+          "resource" : "#GJJZ-4MV",
+          "resourceId" : "GJJZ-4MV"
+        },
+        "parent2" : {
+          "resource" : "#K1GW-QX5",
+          "resourceId" : "K1GW-QX5"
+        },
+        "children" : [ {
+          "resource" : "#KWDZ-H37",
+          "resourceId" : "KWDZ-H37"
+        } ]
+      } ]
+    },
+    "personInfo" : [ {
+      "canUserEdit" : true,
+      "visibleToAll" : true,
+      "readOnly" : false,
+      "privateSpaceRestricted" : false
+    } ]
+  }, {
+    "id" : "LK56-QTN",
+    "sortKey" : "0000000002",
+    "evidence" : [ {
+      "id" : "19552433-7312724",
+      "resource" : "https://www.familysearch.org/platform/memories/memories/19552433/personas/19552433-7312724",
+      "resourceId" : "19552433-7312724",
+      "links" : {
+        "evidence-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/memory-references/19552433-7312724?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "19553527-7312724",
+      "resource" : "https://www.familysearch.org/platform/memories/memories/19553527/personas/19553527-7312724",
+      "resourceId" : "19553527-7312724",
+      "links" : {
+        "evidence-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/memory-references/19553527-7312724?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "19552298-7312724",
+      "resource" : "https://www.familysearch.org/platform/memories/memories/19552298/personas/19552298-7312724",
+      "resourceId" : "19552298-7312724",
+      "links" : {
+        "evidence-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/memory-references/19552298-7312724?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "19553530-7312724",
+      "resource" : "https://www.familysearch.org/platform/memories/memories/19553530/personas/19553530-7312724",
+      "resourceId" : "19553530-7312724",
+      "links" : {
+        "evidence-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/memory-references/19553530-7312724?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "19552294-7312724",
+      "resource" : "https://www.familysearch.org/platform/memories/memories/19552294/personas/19552294-7312724",
+      "resourceId" : "19552294-7312724",
+      "links" : {
+        "evidence-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/memory-references/19552294-7312724?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "19552414-7312724",
+      "resource" : "https://www.familysearch.org/platform/memories/memories/19552414/personas/19552414-7312724",
+      "resourceId" : "19552414-7312724",
+      "links" : {
+        "evidence-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/memory-references/19552414-7312724?flag=fsh"
+        }
+      }
+    } ],
+    "living" : false,
+    "gender" : {
+      "id" : "4d6d2211-2c19-4c86-8954-8c2061de445b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/M1F4-7CT",
+          "resourceId" : "M1F4-7CT"
+        },
+        "modified" : 1443825879142
+      },
+      "type" : "http://gedcomx.org/Female",
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/conclusions/4d6d2211-2c19-4c86-8954-8c2061de445b?flag=fsh"
+        }
+      }
+    },
+    "links" : {
+      "spouses" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/spouses?flag=fsh"
+      },
+      "change-history" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/changes?flag=fsh"
+      },
+      "ancestry" : {
+        "href" : "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&person=LK56-QTN"
+      },
+      "notes" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/notes?flag=fsh"
+      },
+      "non-matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/not-a-match?flag=fsh"
+      },
+      "portraits" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/portraits?flag=fsh"
+      },
+      "collection" : {
+        "href" : "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+      },
+      "families" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/families?flag=fsh"
+      },
+      "portrait" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/portrait?flag=fsh"
+      },
+      "matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/matches?flag=fsh"
+      },
+      "children" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/children?flag=fsh"
+      },
+      "descendancy" : {
+        "href" : "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&person=LK56-QTN"
+      },
+      "person" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN?flag=fsh"
+      },
+      "source-descriptions" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/sources?flag=fsh"
+      },
+      "merge" : {
+        "template" : "https://www.familysearch.org/platform/tree/persons/{pid}/merges/{dpid}?flag=fst{&filter,access_token}",
+        "type" : "application/json,application/x-fs-v1+json,application/x-fs-v1+xml,application/xml,text/html",
+        "accept" : "*/*",
+        "allow" : "GET,OPTIONS,POST",
+        "title" : "Person Merge"
+      },
+      "artifacts" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/memories?flag=fsh"
+      },
+      "parents" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/parents?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "id" : "1131fbfe-1fdb-4e2b-849b-c8e043f5fd4c",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/1131fbfe-1fdb-4e2b-849b-c8e043f5fd4c?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/QM67-2FL?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/QM67-2FL",
+      "descriptionId" : "QM67-2FL"
+    }, {
+      "id" : "9cb039fe-976d-48cc-99e5-75a7cc364725",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/9cb039fe-976d-48cc-99e5-75a7cc364725?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SGCG-SBQ?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SGCG-SBQ",
+      "descriptionId" : "SGCG-SBQ"
+    }, {
+      "id" : "38515c8f-8059-42c1-8277-f8352ba88497",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/38515c8f-8059-42c1-8277-f8352ba88497?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SGCG-SSR?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SGCG-SSR",
+      "descriptionId" : "SGCG-SSR"
+    }, {
+      "id" : "a378db81-ec36-4338-bce4-7a08919f74ee",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/a378db81-ec36-4338-bce4-7a08919f74ee?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SGCL-TXC?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SGCL-TXC",
+      "descriptionId" : "SGCL-TXC"
+    }, {
+      "id" : "8ce4d3ad-1f6e-411a-92fc-02160678893f",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/8ce4d3ad-1f6e-411a-92fc-02160678893f?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-JKJ?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-JKJ",
+      "descriptionId" : "SK6K-JKJ"
+    }, {
+      "id" : "d02de186-90a0-4908-be55-24cad6196a8a",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/d02de186-90a0-4908-be55-24cad6196a8a?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/S3SQ-R8W?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/S3SQ-R8W",
+      "descriptionId" : "S3SQ-R8W"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://familysearch.org/ark:/61903/4:1:LK56-QTN" ]
+    },
+    "names" : [ {
+      "id" : "ddfa08c7-905a-4cbf-b994-9d4514d2af50",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/M1F4-7CT",
+          "resourceId" : "M1F4-7CT"
+        },
+        "modified" : 1443825879142
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : true,
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/conclusions/ddfa08c7-905a-4cbf-b994-9d4514d2af50?flag=fsh"
+        }
+      },
+      "nameForms" : [ {
+        "lang" : "x-Latn",
+        "fullText" : "Rosalie Aileene Hylton",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Rosalie Aileene"
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Hylton"
+        } ],
+        "nameFormInfo" : [ {
+          "order" : "http://familysearch.org/v1/Eurotypic"
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "ebe0d4fe-20f8-4dad-b4b8-c69c03d0f100",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/M1F4-7CT",
+          "resourceId" : "M1F4-7CT"
+        },
+        "modified" : 1443825879142
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "23 June 1924",
+        "formal" : "+1924-06-23",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "23 June 1924"
+        } ]
+      },
+      "place" : {
+        "original" : "Nampa, Canyon, Idaho, United States",
+        "description" : "#4001634",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Nampa, Canyon, Idaho, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/conclusions/ebe0d4fe-20f8-4dad-b4b8-c69c03d0f100?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "1636cbe5-d0f2-44f0-b8cc-d471ce96285b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1591394312108,
+        "changeMessage" : "Marriage license"
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1943",
+        "formal" : "+1943",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1943"
+        } ]
+      },
+      "place" : {
+        "original" : "Manhattan Beach, Los Angeles, California, United States",
+        "description" : "#5495807",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Manhattan Beach, Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/conclusions/1636cbe5-d0f2-44f0-b8cc-d471ce96285b?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "ca09900a-e258-4f34-bf5c-5854aeb26fde",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMKK-Y5Y",
+          "resourceId" : "MMKK-Y5Y"
+        },
+        "modified" : 1669774773292
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1949",
+        "formal" : "+1949",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1949"
+        } ]
+      },
+      "place" : {
+        "original" : "United States",
+        "description" : "#1",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/conclusions/ca09900a-e258-4f34-bf5c-5854aeb26fde?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "698caffb-3d2a-403b-9ab9-2a8d37de3a16",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMKK-Y5Y",
+          "resourceId" : "MMKK-Y5Y"
+        },
+        "modified" : 1669774773216
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "6 April 1950",
+        "formal" : "+1950-04-06",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "6 April 1950"
+        } ]
+      },
+      "place" : {
+        "original" : "Los Angeles, Los Angeles, California, United States",
+        "description" : "#5494026",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Los Angeles, Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/conclusions/698caffb-3d2a-403b-9ab9-2a8d37de3a16?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "f1e514fe-d22c-45c0-ae4b-c14cb21b15a0",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1591394614854
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "21 December 1992",
+        "formal" : "+1992-12-21",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "21 December 1992"
+        } ]
+      },
+      "place" : {
+        "original" : "Glendora, Los Angeles, California, United States",
+        "description" : "#5435491",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Glendora, Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN/conclusions/f1e514fe-d22c-45c0-ae4b-c14cb21b15a0?flag=fsh"
+        }
+      }
+    } ],
+    "display" : {
+      "name" : "Rosalie Aileene Hylton",
+      "gender" : "Female",
+      "lifespan" : "1924-1992",
+      "birthDate" : "23 June 1924",
+      "birthPlace" : "Nampa, Canyon, Idaho, United States",
+      "deathDate" : "21 December 1992",
+      "deathPlace" : "Glendora, Los Angeles, California, United States",
+      "familiesAsParent" : [ {
+        "parent1" : {
+          "resource" : "#KWDZ-H37",
+          "resourceId" : "KWDZ-H37"
+        },
+        "parent2" : {
+          "resource" : "#LK56-QTN",
+          "resourceId" : "LK56-QTN"
+        },
+        "children" : [ {
+          "resource" : "#LRQG-KBL",
+          "resourceId" : "LRQG-KBL"
+        } ]
+      } ],
+      "familiesAsChild" : [ {
+        "parent1" : {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:9M6J-M6X",
+          "resourceId" : "9M6J-M6X"
+        },
+        "parent2" : {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:LJJ8-FRJ",
+          "resourceId" : "LJJ8-FRJ"
+        },
+        "children" : [ {
+          "resource" : "#LK56-QTN",
+          "resourceId" : "LK56-QTN"
+        } ]
+      } ]
+    },
+    "personInfo" : [ {
+      "canUserEdit" : true,
+      "visibleToAll" : true,
+      "readOnly" : false,
+      "privateSpaceRestricted" : false
+    } ]
+  }, {
+    "id" : "GJJZ-4MV",
+    "sortKey" : "0000000003",
+    "living" : false,
+    "gender" : {
+      "id" : "7af0aa91-7d53-49a0-9a5d-96443d1feb2b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670790596605
+      },
+      "type" : "http://gedcomx.org/Male",
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/7af0aa91-7d53-49a0-9a5d-96443d1feb2b?flag=fsh"
+        }
+      }
+    },
+    "links" : {
+      "spouses" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/spouses?flag=fsh"
+      },
+      "change-history" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/changes?flag=fsh"
+      },
+      "ancestry" : {
+        "href" : "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&person=GJJZ-4MV"
+      },
+      "notes" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/notes?flag=fsh"
+      },
+      "non-matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/not-a-match?flag=fsh"
+      },
+      "portraits" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/portraits?flag=fsh"
+      },
+      "collection" : {
+        "href" : "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+      },
+      "families" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/families?flag=fsh"
+      },
+      "portrait" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/portrait?flag=fsh"
+      },
+      "matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/matches?flag=fsh"
+      },
+      "children" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/children?flag=fsh"
+      },
+      "descendancy" : {
+        "href" : "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&person=GJJZ-4MV"
+      },
+      "person" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "source-descriptions" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/sources?flag=fsh"
+      },
+      "merge" : {
+        "template" : "https://www.familysearch.org/platform/tree/persons/{pid}/merges/{dpid}?flag=fst{&filter,access_token}",
+        "type" : "application/json,application/x-fs-v1+json,application/x-fs-v1+xml,application/xml,text/html",
+        "accept" : "*/*",
+        "allow" : "GET,OPTIONS,POST",
+        "title" : "Person Merge"
+      },
+      "artifacts" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/memories?flag=fsh"
+      },
+      "parents" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/parents?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "id" : "950480db-d4c9-412d-9af0-4df1fcf5dc40",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/950480db-d4c9-412d-9af0-4df1fcf5dc40?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/32F2-KFH?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/32F2-KFH",
+      "descriptionId" : "32F2-KFH"
+    }, {
+      "id" : "35f9321a-1509-4f82-adc9-338ea076cb27",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/35f9321a-1509-4f82-adc9-338ea076cb27?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-X7R?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-X7R",
+      "descriptionId" : "SK6V-X7R"
+    }, {
+      "id" : "8f6be859-c95f-4487-acac-ae7caddbf619",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/8f6be859-c95f-4487-acac-ae7caddbf619?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-ZVB?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-ZVB",
+      "descriptionId" : "SK6V-ZVB"
+    }, {
+      "id" : "e30277cd-02e6-4c04-b3d3-b2042efa70f8",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/e30277cd-02e6-4c04-b3d3-b2042efa70f8?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-HJF?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-HJF",
+      "descriptionId" : "SK6V-HJF"
+    }, {
+      "id" : "85ed1317-2705-4daa-8f1a-eb0ba9d09406",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/85ed1317-2705-4daa-8f1a-eb0ba9d09406?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-SMP?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-SMP",
+      "descriptionId" : "SK6V-SMP"
+    }, {
+      "id" : "07bc52f7-6ffd-448f-abdb-0dd0e51b4689",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/07bc52f7-6ffd-448f-abdb-0dd0e51b4689?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6J-BZ5?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6J-BZ5",
+      "descriptionId" : "SK6J-BZ5"
+    }, {
+      "id" : "199bc8fd-25b6-4590-afd3-2ba283fd905d",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/199bc8fd-25b6-4590-afd3-2ba283fd905d?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SKZ9-S82?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SKZ9-S82",
+      "descriptionId" : "SKZ9-S82"
+    }, {
+      "id" : "f398fcd9-7147-44af-b126-95a9400f78c1",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/f398fcd9-7147-44af-b126-95a9400f78c1?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SKZ9-9BV?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SKZ9-9BV",
+      "descriptionId" : "SKZ9-9BV"
+    }, {
+      "id" : "62b30614-2b7c-467f-9bd3-7c125af7588b",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/62b30614-2b7c-467f-9bd3-7c125af7588b?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SKZ9-99X?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SKZ9-99X",
+      "descriptionId" : "SKZ9-99X"
+    }, {
+      "id" : "e7cdfe64-0146-4244-83e3-a69f3da63f69",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/e7cdfe64-0146-4244-83e3-a69f3da63f69?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98Q2-KM9?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98Q2-KM9",
+      "descriptionId" : "98Q2-KM9"
+    }, {
+      "id" : "91ab8db1-9feb-40ce-a413-a4b1be94b172",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/91ab8db1-9feb-40ce-a413-a4b1be94b172?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/M99B-GS9?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/M99B-GS9",
+      "descriptionId" : "M99B-GS9"
+    }, {
+      "id" : "a87c0693-b0ef-43ad-8a7c-414ab591736c",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/a87c0693-b0ef-43ad-8a7c-414ab591736c?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/M99B-TPW?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/M99B-TPW",
+      "descriptionId" : "M99B-TPW"
+    }, {
+      "id" : "f91b1f2f-5fe6-4b88-bb39-b71488f9fda3",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/f91b1f2f-5fe6-4b88-bb39-b71488f9fda3?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9VBH-BXH?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9VBH-BXH",
+      "descriptionId" : "9VBH-BXH"
+    }, {
+      "id" : "2e5d4556-1d07-4efc-8a7c-7b019afc1593",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/2e5d4556-1d07-4efc-8a7c-7b019afc1593?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-DX4?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-DX4",
+      "descriptionId" : "98QB-DX4"
+    }, {
+      "id" : "2713da2a-5a15-4349-889a-6402cd901b4f",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/2713da2a-5a15-4349-889a-6402cd901b4f?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-DYN?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-DYN",
+      "descriptionId" : "98QB-DYN"
+    }, {
+      "id" : "4c3fa112-8942-4639-8bd2-67e079d782c8",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/4c3fa112-8942-4639-8bd2-67e079d782c8?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-VP8?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-VP8",
+      "descriptionId" : "98QB-VP8"
+    }, {
+      "id" : "f61e5693-2380-48c5-95df-da91399b1e03",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/f61e5693-2380-48c5-95df-da91399b1e03?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-6Z2?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-6Z2",
+      "descriptionId" : "98QB-6Z2"
+    }, {
+      "id" : "c5a639b2-29e8-4606-b607-6861e12c05eb",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/c5a639b2-29e8-4606-b607-6861e12c05eb?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-XTV?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-XTV",
+      "descriptionId" : "98QB-XTV"
+    }, {
+      "id" : "d916b2d9-00d2-4760-8715-a4a6daee579a",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/d916b2d9-00d2-4760-8715-a4a6daee579a?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-6P8?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-6P8",
+      "descriptionId" : "98QB-6P8"
+    }, {
+      "id" : "70b0cc1f-a012-4e2b-a036-5e8ba736c7f2",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/70b0cc1f-a012-4e2b-a036-5e8ba736c7f2?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-XH1?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-XH1",
+      "descriptionId" : "98QB-XH1"
+    }, {
+      "id" : "50518e39-c10a-4e85-bc0f-73d04a3fbc7b",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/50518e39-c10a-4e85-bc0f-73d04a3fbc7b?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-NQN?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-NQN",
+      "descriptionId" : "98QB-NQN"
+    }, {
+      "id" : "d3997ce6-ae03-457f-b4de-8640f7d07b45",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/d3997ce6-ae03-457f-b4de-8640f7d07b45?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98Q2-K1B?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98Q2-K1B",
+      "descriptionId" : "98Q2-K1B"
+    }, {
+      "id" : "bbaeddaf-377b-464a-9692-11b39f0f9a39",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/bbaeddaf-377b-464a-9692-11b39f0f9a39?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9VYY-X5G?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9VYY-X5G",
+      "descriptionId" : "9VYY-X5G"
+    }, {
+      "id" : "ad68bca9-b597-43d1-a3d3-07f49285988f",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/ad68bca9-b597-43d1-a3d3-07f49285988f?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98WQ-6BZ?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98WQ-6BZ",
+      "descriptionId" : "98WQ-6BZ"
+    }, {
+      "id" : "6a478dc2-7bb0-4a31-b956-3bde4620f8ad",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/6a478dc2-7bb0-4a31-b956-3bde4620f8ad?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/Q9MV-KY8?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/Q9MV-KY8",
+      "descriptionId" : "Q9MV-KY8"
+    }, {
+      "id" : "c00217a3-277d-4cd9-a2dd-1e2fc5b38e83",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/c00217a3-277d-4cd9-a2dd-1e2fc5b38e83?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/Q9MV-63Y?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/Q9MV-63Y",
+      "descriptionId" : "Q9MV-63Y"
+    }, {
+      "id" : "23520ddd-c0d0-43ec-9f11-17c6d565e83e",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/23520ddd-c0d0-43ec-9f11-17c6d565e83e?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/Q9MV-DZ4?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/Q9MV-DZ4",
+      "descriptionId" : "Q9MV-DZ4"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://familysearch.org/ark:/61903/4:1:GJJZ-4MV" ]
+    },
+    "names" : [ {
+      "id" : "55729e55-8cbc-4901-854c-83ad2ba8e7c9",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670796103439,
+        "changeMessage" : "US Find A Grave Index 1600s-Current"
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : true,
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/55729e55-8cbc-4901-854c-83ad2ba8e7c9?flag=fsh"
+        }
+      },
+      "nameForms" : [ {
+        "lang" : "en",
+        "fullText" : "John Benjamin Crist",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "John Benjamin"
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Crist"
+        } ],
+        "nameFormInfo" : [ {
+          "order" : "http://familysearch.org/v1/Eurotypic"
+        } ]
+      } ]
+    }, {
+      "id" : "1d80f566-0941-430b-b605-c8469c80dc23",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/1d80f566-0941-430b-b605-c8469c80dc23?flag=fsh"
+        }
+      },
+      "nameForms" : [ {
+        "fullText" : "John Benjamin Crist",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "John Benjamin"
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Crist"
+        } ],
+        "nameFormInfo" : [ {
+          "order" : "http://familysearch.org/v1/Eurotypic"
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "14e30828-e226-415b-946b-30b74feb3371",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670795834484,
+        "changeMessage" : "Brunton Family Tree"
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "25 March 1884",
+        "formal" : "+1884-03-25",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "25 March 1884"
+        } ]
+      },
+      "place" : {
+        "original" : "Pike Township, Clark, Ohio, United States",
+        "description" : "#4812908",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Pike Township, Clark, Ohio, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/14e30828-e226-415b-946b-30b74feb3371?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "ad76c37c-cb70-4445-93fd-c76acf50f60b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1900",
+        "formal" : "+1900",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1900"
+        } ]
+      },
+      "place" : {
+        "original" : "ED 23 Reeder Township, Anderson, Kansas, United States",
+        "description" : "#4155251",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Reeder Township, Anderson, Kansas, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/ad76c37c-cb70-4445-93fd-c76acf50f60b?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "b2b4cdb4-191c-44d7-9088-23801680a4e5",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930,
+        "changeMessage" : "Shows Crist family in 1910."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1910",
+        "formal" : "+1910",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1910"
+        } ]
+      },
+      "place" : {
+        "original" : "Willow Springs, , Kansas",
+        "description" : "#4137403",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Willow Springs, Douglas, Kansas, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/b2b4cdb4-191c-44d7-9088-23801680a4e5?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "8c895456-2b1b-4213-a080-37ef8501d8c1",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930
+      },
+      "type" : "data:,Military%20Draft%20Registration",
+      "date" : {
+        "original" : "1917-1918",
+        "formal" : "+1917/+1918",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "from 1917 to 1918"
+        } ]
+      },
+      "place" : {
+        "original" : "Chelan, Washington, United States",
+        "description" : "#395097",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/8c895456-2b1b-4213-a080-37ef8501d8c1?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "51334806-51fc-4879-8e5d-0d6f6d9a18e9",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930,
+        "changeMessage" : "Shows Crist family in 1920 in Washington."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1920",
+        "formal" : "+1920",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1920"
+        } ]
+      },
+      "place" : {
+        "original" : "Canyon, Chelan, Washington, United States",
+        "description" : "#395097",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/51334806-51fc-4879-8e5d-0d6f6d9a18e9?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "c9b0cc21-a611-4d58-aa6f-4f6e5436eeec",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930,
+        "changeMessage" : "Shows Crist family in 1930 in Washington."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1930",
+        "formal" : "+1930",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1930"
+        } ]
+      },
+      "place" : {
+        "original" : "Chelan, Washington",
+        "description" : "#5287658",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/c9b0cc21-a611-4d58-aa6f-4f6e5436eeec?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "416c653e-45bb-4a05-8264-573bc1996899",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930,
+        "changeMessage" : "Shows Crist family in 1940 in Washington."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1935",
+        "formal" : "+1935",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1935"
+        } ]
+      },
+      "place" : {
+        "original" : "Same House, , "
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/416c653e-45bb-4a05-8264-573bc1996899?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "d82cacf5-5061-45db-a139-3c66926a202f",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930,
+        "changeMessage" : "Shows Crist family in 1940 in Washington."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1940"
+        } ]
+      },
+      "place" : {
+        "original" : "Wenatchee Election Precinct M, Wenatchee, Chelan, Washington",
+        "description" : "#8070850",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee Election Precinct M, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/d82cacf5-5061-45db-a139-3c66926a202f?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "a1c453c3-cf1b-46c6-9ab2-7831f9999953",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930
+      },
+      "type" : "data:,Military%20Draft%20Registration",
+      "date" : {
+        "original" : "1942",
+        "formal" : "+1942",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1942"
+        } ]
+      },
+      "place" : {
+        "original" : "Wenatchee, Washington, United States",
+        "description" : "#5287658",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/a1c453c3-cf1b-46c6-9ab2-7831f9999953?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "1646efd2-9462-4e1b-8179-dfa9226cb8cd",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670795873303,
+        "changeMessage" : "Brunton Family Tree"
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "16 May 1970",
+        "formal" : "+1970-05-16",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "16 May 1970"
+        } ]
+      },
+      "place" : {
+        "original" : "Long Beach, Los Angeles, California, United States",
+        "description" : "#5435523",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Long Beach, Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/1646efd2-9462-4e1b-8179-dfa9226cb8cd?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "df201f30-ebf5-4892-af45-614e471fc712",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670796021934,
+        "changeMessage" : "Brunton Family Tree; US Find A Grave Index 1600s-Current"
+      },
+      "type" : "http://gedcomx.org/Burial",
+      "place" : {
+        "original" : "Sunnyslope Church Of The Brethren Cemetery, Sunnyslope, Chelan, Washington, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/10756127",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Sunnyslope Church Of The Brethren Cemetery, Sunnyslope, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/df201f30-ebf5-4892-af45-614e471fc712?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "9fc2a5c8-8df8-4141-b0ff-fb4c8e4ed7a3",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "original" : "Wenatchee, Washington, United States",
+        "description" : "#5287658",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/9fc2a5c8-8df8-4141-b0ff-fb4c8e4ed7a3?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "8f120c62-3591-442f-bc18-e79450e52202",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930,
+        "changeMessage" : "Grammar, readability."
+      },
+      "type" : "http://familysearch.org/v1/LifeSketch",
+      "value" : "John (Jonathan?) Benjamin Crist was born 25 March 1884 in North Hampton, Ohio to Nicholas and Sarah (Brubaker) Crist, their second child and older son. The Crist family moved from Ohio to Kansas before 1900. He married Eva Lena Barnhart 18 January 1905 in Olathe, Kansas. John was a farmer. They had a son Ezra in 1906. The family moved to Washington by 1916 where John had a fruit farm There five more children were born. Two of them, Dartha and a baby boy, died as infants. The other children were Marie, Kenneth and Betty. By 1930 John worked as a housing building contractor. By 1954 John and Eva must have moved to the Los Angeles area where Eva died on June 8. On 14 August 1954, John married a widow, Vivian Marie Furray Pierce in San Fernando, California. John died in 1970 and was buried in Washington.",
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/8f120c62-3591-442f-bc18-e79450e52202?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "39b2d6ae-df22-4a86-986a-a96d1783ec90",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797669930
+      },
+      "type" : "data:,Citizenship",
+      "place" : {
+        "original" : "United States",
+        "description" : "#1",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV/conclusions/39b2d6ae-df22-4a86-986a-a96d1783ec90?flag=fsh"
+        }
+      }
+    } ],
+    "display" : {
+      "name" : "John Benjamin Crist",
+      "gender" : "Male",
+      "lifespan" : "1884-1970",
+      "birthDate" : "25 March 1884",
+      "birthPlace" : "Pike Township, Clark, Ohio, United States",
+      "deathDate" : "16 May 1970",
+      "deathPlace" : "Long Beach, Los Angeles, California, United States",
+      "familiesAsParent" : [ {
+        "parent1" : {
+          "resource" : "#GJJZ-4MV",
+          "resourceId" : "GJJZ-4MV"
+        },
+        "parent2" : {
+          "resource" : "#K1GW-QX5",
+          "resourceId" : "K1GW-QX5"
+        },
+        "children" : [ {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:LDZR-JMQ",
+          "resourceId" : "LDZR-JMQ"
+        }, {
+          "resource" : "#KWDZ-H37",
+          "resourceId" : "KWDZ-H37"
+        }, {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:KZRD-T63",
+          "resourceId" : "KZRD-T63"
+        }, {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:KZ2X-XQ3",
+          "resourceId" : "KZ2X-XQ3"
+        }, {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:KCQ8-6G7",
+          "resourceId" : "KCQ8-6G7"
+        }, {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:9K61-VHL",
+          "resourceId" : "9K61-VHL"
+        } ]
+      } ],
+      "familiesAsChild" : [ {
+        "parent1" : {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:L7YM-N7J",
+          "resourceId" : "L7YM-N7J"
+        },
+        "parent2" : {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:K633-F4W",
+          "resourceId" : "K633-F4W"
+        },
+        "children" : [ {
+          "resource" : "#GJJZ-4MV",
+          "resourceId" : "GJJZ-4MV"
+        } ]
+      } ]
+    },
+    "personInfo" : [ {
+      "canUserEdit" : true,
+      "visibleToAll" : true,
+      "readOnly" : false,
+      "privateSpaceRestricted" : false
+    } ]
+  }, {
+    "id" : "K1GW-QX5",
+    "sortKey" : "0000000004",
+    "living" : false,
+    "gender" : {
+      "id" : "2cfdb7b2-1ede-4287-814b-3280139faea7",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMW8-HMT",
+          "resourceId" : "MMW8-HMT"
+        },
+        "modified" : 1326451171634
+      },
+      "type" : "http://gedcomx.org/Female",
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/2cfdb7b2-1ede-4287-814b-3280139faea7?flag=fsh"
+        }
+      }
+    },
+    "links" : {
+      "spouses" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/spouses?flag=fsh"
+      },
+      "change-history" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/changes?flag=fsh"
+      },
+      "ancestry" : {
+        "href" : "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&person=K1GW-QX5"
+      },
+      "notes" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/notes?flag=fsh"
+      },
+      "non-matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/not-a-match?flag=fsh"
+      },
+      "portraits" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/portraits?flag=fsh"
+      },
+      "collection" : {
+        "href" : "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+      },
+      "families" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/families?flag=fsh"
+      },
+      "portrait" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/portrait?flag=fsh"
+      },
+      "matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/matches?flag=fsh"
+      },
+      "children" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/children?flag=fsh"
+      },
+      "descendancy" : {
+        "href" : "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&person=K1GW-QX5"
+      },
+      "person" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "source-descriptions" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/sources?flag=fsh"
+      },
+      "merge" : {
+        "template" : "https://www.familysearch.org/platform/tree/persons/{pid}/merges/{dpid}?flag=fst{&filter,access_token}",
+        "type" : "application/json,application/x-fs-v1+json,application/x-fs-v1+xml,application/xml,text/html",
+        "accept" : "*/*",
+        "allow" : "GET,OPTIONS,POST",
+        "title" : "Person Merge"
+      },
+      "artifacts" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/memories?flag=fsh"
+      },
+      "parents" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/parents?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "id" : "ec1cea9c-eeac-406c-9d4d-cc090b874c89",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/ec1cea9c-eeac-406c-9d4d-cc090b874c89?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/Q9M2-3FN?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/Q9M2-3FN",
+      "descriptionId" : "Q9M2-3FN"
+    }, {
+      "id" : "76547585-da1a-4064-9ddd-b298d1b38403",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/76547585-da1a-4064-9ddd-b298d1b38403?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/32F2-KLS?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/32F2-KLS",
+      "descriptionId" : "32F2-KLS"
+    }, {
+      "id" : "588ddad9-d145-420e-9612-d5bff81e8c26",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/588ddad9-d145-420e-9612-d5bff81e8c26?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/3JWW-4TL?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/3JWW-4TL",
+      "descriptionId" : "3JWW-4TL"
+    }, {
+      "id" : "09d1bc73-7634-4d7a-ad2a-8961a9765f76",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/09d1bc73-7634-4d7a-ad2a-8961a9765f76?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SPSG-YS5?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SPSG-YS5",
+      "descriptionId" : "SPSG-YS5"
+    }, {
+      "id" : "9d6ec521-36be-44a3-bc8c-1add3e7e1f52",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/9d6ec521-36be-44a3-bc8c-1add3e7e1f52?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-H2K?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6V-H2K",
+      "descriptionId" : "SK6V-H2K"
+    }, {
+      "id" : "b231c48a-4b2c-441b-89a4-e330e5640f4a",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/b231c48a-4b2c-441b-89a4-e330e5640f4a?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6J-1HZ?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6J-1HZ",
+      "descriptionId" : "SK6J-1HZ"
+    }, {
+      "id" : "7367764c-f7ed-4f26-8d1e-c0258839f2b6",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/7367764c-f7ed-4f26-8d1e-c0258839f2b6?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SKZ9-9Q5?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SKZ9-9Q5",
+      "descriptionId" : "SKZ9-9Q5"
+    }, {
+      "id" : "c58242f5-dca8-418f-be8c-53b448ef0f5b",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/c58242f5-dca8-418f-be8c-53b448ef0f5b?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9VBH-BJR?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9VBH-BJR",
+      "descriptionId" : "9VBH-BJR"
+    }, {
+      "id" : "d584a9c4-f062-45c9-9107-49bdf653bfc4",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/d584a9c4-f062-45c9-9107-49bdf653bfc4?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9863-CPL?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9863-CPL",
+      "descriptionId" : "9863-CPL"
+    }, {
+      "id" : "7b570c56-cafe-4675-a712-a16041970a1f",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/7b570c56-cafe-4675-a712-a16041970a1f?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-KCY?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-KCY",
+      "descriptionId" : "98QB-KCY"
+    }, {
+      "id" : "9384baf9-a3ed-4577-afd7-58e1ad3cc519",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/9384baf9-a3ed-4577-afd7-58e1ad3cc519?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-VGR?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-VGR",
+      "descriptionId" : "98QB-VGR"
+    }, {
+      "id" : "082b90fd-6910-44aa-95b3-a846d49b09ba",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/082b90fd-6910-44aa-95b3-a846d49b09ba?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-VHB?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-VHB",
+      "descriptionId" : "98QB-VHB"
+    }, {
+      "id" : "94dd5a6b-b454-4084-8a69-630f0024096f",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/94dd5a6b-b454-4084-8a69-630f0024096f?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-VM3?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-VM3",
+      "descriptionId" : "98QB-VM3"
+    }, {
+      "id" : "8c640131-c6b8-470c-b209-fed7aa2252a2",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/8c640131-c6b8-470c-b209-fed7aa2252a2?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-NZB?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-NZB",
+      "descriptionId" : "98QB-NZB"
+    }, {
+      "id" : "28627f23-17d4-4b42-a352-ca835e179262",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/28627f23-17d4-4b42-a352-ca835e179262?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-XYN?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-XYN",
+      "descriptionId" : "98QB-XYN"
+    }, {
+      "id" : "b0acc02b-0344-4873-a52b-91baa50c0c8e",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/b0acc02b-0344-4873-a52b-91baa50c0c8e?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-X8J?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-X8J",
+      "descriptionId" : "98QB-X8J"
+    }, {
+      "id" : "fa66a233-d185-494b-88cb-ff30e78b1481",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/fa66a233-d185-494b-88cb-ff30e78b1481?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-6RQ?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-6RQ",
+      "descriptionId" : "98QB-6RQ"
+    }, {
+      "id" : "67d753db-0199-4f8e-b3c1-7b7affa58c1c",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/67d753db-0199-4f8e-b3c1-7b7affa58c1c?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-6DP?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-6DP",
+      "descriptionId" : "98QB-6DP"
+    }, {
+      "id" : "16c2fcfd-7a1d-40bb-b55a-477e18d157e6",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/16c2fcfd-7a1d-40bb-b55a-477e18d157e6?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-DBV?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-DBV",
+      "descriptionId" : "98QB-DBV"
+    }, {
+      "id" : "2c9d10b0-768b-4d5d-ad6a-562411848dfb",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/2c9d10b0-768b-4d5d-ad6a-562411848dfb?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/98QB-DNT?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/98QB-DNT",
+      "descriptionId" : "98QB-DNT"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://familysearch.org/ark:/61903/4:1:K1GW-QX5" ]
+    },
+    "names" : [ {
+      "id" : "970ee2de-e481-4fa0-a7c8-bf4b3b3e24b7",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMW8-HMT",
+          "resourceId" : "MMW8-HMT"
+        },
+        "modified" : 1326451171634
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/970ee2de-e481-4fa0-a7c8-bf4b3b3e24b7?flag=fsh"
+        }
+      },
+      "nameForms" : [ {
+        "fullText" : "Eva Lena Barnhart",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Eva Lena"
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Barnhart"
+        } ],
+        "nameFormInfo" : [ {
+          "order" : "http://familysearch.org/v1/Eurotypic"
+        } ]
+      } ]
+    }, {
+      "id" : "0ca3ae4f-95c7-4dfa-bd6c-7be6d049400e",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM3K-X2T",
+          "resourceId" : "MM3K-X2T"
+        },
+        "modified" : 1326451171634
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/0ca3ae4f-95c7-4dfa-bd6c-7be6d049400e?flag=fsh"
+        }
+      },
+      "nameForms" : [ {
+        "fullText" : "Eva Barnhart",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Eva"
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Barnhart"
+        } ],
+        "nameFormInfo" : [ {
+          "order" : "http://familysearch.org/v1/Eurotypic"
+        } ]
+      } ]
+    }, {
+      "id" : "c9075aec-0093-4635-8218-b4b05b7e90a8",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMMM-MMC",
+          "resourceId" : "MMMM-MMC"
+        },
+        "modified" : 1328239159024
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/c9075aec-0093-4635-8218-b4b05b7e90a8?flag=fsh"
+        }
+      },
+      "nameForms" : [ {
+        "fullText" : "Eva Barnhard",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Eva"
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Barnhard"
+        } ],
+        "nameFormInfo" : [ {
+          "order" : "http://familysearch.org/v1/Eurotypic"
+        } ]
+      } ]
+    }, {
+      "id" : "991a0a6e-291e-4f21-a0db-159dd32b100f",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/M1DZ-TYX",
+          "resourceId" : "M1DZ-TYX"
+        },
+        "modified" : 1371837902206
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : true,
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/991a0a6e-291e-4f21-a0db-159dd32b100f?flag=fsh"
+        }
+      },
+      "nameForms" : [ {
+        "lang" : "x-Latn",
+        "fullText" : "Eva Lena Barnhart",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Eva Lena"
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Barnhart"
+        } ],
+        "nameFormInfo" : [ {
+          "order" : "http://familysearch.org/v1/Eurotypic"
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "248eaba5-34ae-4182-9874-bfcc07166241",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/M1DZ-TYX",
+          "resourceId" : "M1DZ-TYX"
+        },
+        "modified" : 1371837960658
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "7 June 1887",
+        "formal" : "+1887-06-07",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "7 June 1887"
+        } ]
+      },
+      "place" : {
+        "original" : "Centropolis, Franklin, Kansas, United States",
+        "description" : "#4160928",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Centropolis, Franklin, Kansas, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/248eaba5-34ae-4182-9874-bfcc07166241?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "6a171794-b624-4bd1-bc83-c0cda594f6e3",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMJ7-Z3W",
+          "resourceId" : "MMJ7-Z3W"
+        },
+        "modified" : 1593035247578
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1895",
+        "formal" : "+1895",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1895"
+        } ]
+      },
+      "place" : {
+        "original" : "Johnson, Stanton, Kansas, United States",
+        "description" : "#4080022",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Johnson, Stanton, Kansas, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/6a171794-b624-4bd1-bc83-c0cda594f6e3?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "ad4d8c97-486e-4411-8d60-d7f1e41f2d98",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1428612243871,
+        "changeMessage" : "Shows Barnhart family in 1900."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1900",
+        "formal" : "+1900",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1900"
+        } ]
+      },
+      "place" : {
+        "original" : "ED 103 Olathe Township (excl. Olathe city), Johnson, Kansas, United States",
+        "description" : "#4158309",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Olathe Township, Johnson, Kansas, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/ad4d8c97-486e-4411-8d60-d7f1e41f2d98?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "2bfab2b9-5551-49c8-bfb6-09753ac1e2f8",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1428610681058,
+        "changeMessage" : "Shows Crist family in 1910."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1910",
+        "formal" : "+1910",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1910"
+        } ]
+      },
+      "place" : {
+        "original" : "Willow Springs, , Kansas",
+        "description" : "#4137403",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Willow Springs, Douglas, Kansas, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/2bfab2b9-5551-49c8-bfb6-09753ac1e2f8?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "e28231e3-b161-49ad-b96f-74418af12297",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1428610794958,
+        "changeMessage" : "Shows Crist family in 1920 in Washington."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1920",
+        "formal" : "+1920",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1920"
+        } ]
+      },
+      "place" : {
+        "original" : "Canyon, Chelan, Washington, United States",
+        "description" : "#395097",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/e28231e3-b161-49ad-b96f-74418af12297?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "af5814bf-2b2c-406e-99a2-dcf5ab471f75",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1428610900403,
+        "changeMessage" : "Shows Crist family in 1930 in Washington."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1930",
+        "formal" : "+1930",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1930"
+        } ]
+      },
+      "place" : {
+        "original" : "Chelan, Washington",
+        "description" : "#5287658",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/af5814bf-2b2c-406e-99a2-dcf5ab471f75?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "1a27c26e-9107-4b9a-a041-271552b6806e",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMMM-MMK",
+          "resourceId" : "MMMM-MMK"
+        },
+        "modified" : 1588755755474,
+        "changeMessage" : "Shows Crist family in 1940 in Washington."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1935",
+        "formal" : "+1935",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1935"
+        } ]
+      },
+      "place" : {
+        "original" : "Same House, , "
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/1a27c26e-9107-4b9a-a041-271552b6806e?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "19b570d3-1740-468c-bb9d-18a8d800f09b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMVR-YMZ",
+          "resourceId" : "MMVR-YMZ"
+        },
+        "modified" : 1644293704980
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "13 February 1939",
+        "formal" : "+1939-02-13",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "13 February 1939"
+        } ]
+      },
+      "place" : {
+        "original" : "Wenatchee, Chelan, Washington, United States",
+        "description" : "#5287658",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/19b570d3-1740-468c-bb9d-18a8d800f09b?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "0bde5200-167a-47c6-b7ee-1eba5f4a512a",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1428611029900,
+        "changeMessage" : "Shows Crist family in 1940 in Washington."
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1940",
+        "formal" : "+1940",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1940"
+        } ]
+      },
+      "place" : {
+        "original" : "Wenatchee Election Precinct M, Wenatchee, Chelan, Washington",
+        "description" : "#8070850",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Wenatchee Election Precinct M, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/0bde5200-167a-47c6-b7ee-1eba5f4a512a?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "9381f219-2889-4bfc-9b03-5527232282c1",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797841525,
+        "changeMessage" : "Standardized date and place-2022"
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "8 June 1954",
+        "formal" : "+1954-06-08",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "8 June 1954"
+        } ]
+      },
+      "place" : {
+        "original" : "La Verne, Los Angeles, California, United States",
+        "description" : "#5495853",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "La Verne, Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/9381f219-2889-4bfc-9b03-5527232282c1?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "c5be31e4-c57a-417a-b672-456ec4e963d8",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMXC-9CZ",
+          "resourceId" : "MMXC-9CZ"
+        },
+        "modified" : 1670797948311,
+        "changeMessage" : "US Find A Grave Index 1600s-Current"
+      },
+      "type" : "http://gedcomx.org/Burial",
+      "place" : {
+        "original" : "Sunnyslope Church Of The Brethren Cemetery, Sunnyslope, Chelan, Washington, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/10756127",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Sunnyslope Church Of The Brethren Cemetery, Sunnyslope, Chelan, Washington, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5/conclusions/c5be31e4-c57a-417a-b672-456ec4e963d8?flag=fsh"
+        }
+      }
+    } ],
+    "display" : {
+      "name" : "Eva Lena Barnhart",
+      "gender" : "Female",
+      "lifespan" : "1887-1954",
+      "birthDate" : "7 June 1887",
+      "birthPlace" : "Centropolis, Franklin, Kansas, United States",
+      "deathDate" : "8 June 1954",
+      "deathPlace" : "La Verne, Los Angeles, California, United States",
+      "familiesAsParent" : [ {
+        "parent1" : {
+          "resource" : "#GJJZ-4MV",
+          "resourceId" : "GJJZ-4MV"
+        },
+        "parent2" : {
+          "resource" : "#K1GW-QX5",
+          "resourceId" : "K1GW-QX5"
+        },
+        "children" : [ {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:LDZR-JMQ",
+          "resourceId" : "LDZR-JMQ"
+        }, {
+          "resource" : "#KWDZ-H37",
+          "resourceId" : "KWDZ-H37"
+        }, {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:KZRD-T63",
+          "resourceId" : "KZRD-T63"
+        }, {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:KZ2X-XQ3",
+          "resourceId" : "KZ2X-XQ3"
+        }, {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:KCQ8-6G7",
+          "resourceId" : "KCQ8-6G7"
+        }, {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:9K61-VHL",
+          "resourceId" : "9K61-VHL"
+        } ]
+      } ],
+      "familiesAsChild" : [ {
+        "parent1" : {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:LC32-YCD",
+          "resourceId" : "LC32-YCD"
+        },
+        "parent2" : {
+          "resource" : "https://familysearch.org/ark:/61903/4:1:LC32-Y8P",
+          "resourceId" : "LC32-Y8P"
+        },
+        "children" : [ {
+          "resource" : "#K1GW-QX5",
+          "resourceId" : "K1GW-QX5"
+        } ]
+      } ]
+    },
+    "personInfo" : [ {
+      "canUserEdit" : true,
+      "visibleToAll" : true,
+      "readOnly" : false,
+      "privateSpaceRestricted" : false
+    } ]
+  }, {
+    "id" : "LRQG-KBL",
+    "sortKey" : "0000000005",
+    "evidence" : [ {
+      "id" : "35461733-12706155",
+      "resource" : "https://www.familysearch.org/platform/memories/memories/35461733/personas/35461733-12706155",
+      "resourceId" : "35461733-12706155",
+      "links" : {
+        "evidence-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/memory-references/35461733-12706155?flag=fsh"
+        }
+      }
+    } ],
+    "living" : false,
+    "gender" : {
+      "id" : "b411969d-77bc-4742-976a-e911b2f79ea8",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMDF-P6P",
+          "resourceId" : "MMDF-P6P"
+        },
+        "modified" : 1480622528460
+      },
+      "type" : "http://gedcomx.org/Male",
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/conclusions/b411969d-77bc-4742-976a-e911b2f79ea8?flag=fsh"
+        }
+      }
+    },
+    "links" : {
+      "spouses" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/spouses?flag=fsh"
+      },
+      "change-history" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/changes?flag=fsh"
+      },
+      "ancestry" : {
+        "href" : "https://www.familysearch.org/platform/tree/ancestry?flag=fsh&person=LRQG-KBL"
+      },
+      "notes" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/notes?flag=fsh"
+      },
+      "non-matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/not-a-match?flag=fsh"
+      },
+      "portraits" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/portraits?flag=fsh"
+      },
+      "collection" : {
+        "href" : "https://www.familysearch.org/platform/collections/tree?flag=fsh"
+      },
+      "families" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/families?flag=fsh"
+      },
+      "portrait" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/portrait?flag=fsh"
+      },
+      "matches" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/matches?flag=fsh"
+      },
+      "children" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/children?flag=fsh"
+      },
+      "descendancy" : {
+        "href" : "https://www.familysearch.org/platform/tree/descendancy?flag=fsh&person=LRQG-KBL"
+      },
+      "person" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL?flag=fsh"
+      },
+      "source-descriptions" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/sources?flag=fsh"
+      },
+      "merge" : {
+        "template" : "https://www.familysearch.org/platform/tree/persons/{pid}/merges/{dpid}?flag=fst{&filter,access_token}",
+        "type" : "application/json,application/x-fs-v1+json,application/x-fs-v1+xml,application/xml,text/html",
+        "accept" : "*/*",
+        "allow" : "GET,OPTIONS,POST",
+        "title" : "Person Merge"
+      },
+      "artifacts" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/memories?flag=fsh"
+      },
+      "parents" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/parents?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "id" : "3181a5cc-251b-4b78-a94b-84139c96b2dd",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/3181a5cc-251b-4b78-a94b-84139c96b2dd?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/QM67-28B?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/QM67-28B",
+      "descriptionId" : "QM67-28B"
+    }, {
+      "id" : "396ddc7a-ea6e-4130-8580-99da2b7de592",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/396ddc7a-ea6e-4130-8580-99da2b7de592?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/S3T9-FPF?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/S3T9-FPF",
+      "descriptionId" : "S3T9-FPF"
+    }, {
+      "id" : "135d8cc6-5849-4a64-a5b5-2fd5b710cb5c",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/135d8cc6-5849-4a64-a5b5-2fd5b710cb5c?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/S3T9-FFJ?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/S3T9-FFJ",
+      "descriptionId" : "S3T9-FFJ"
+    }, {
+      "id" : "5f74927c-ef53-4726-b617-0589dd3b11d6",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/5f74927c-ef53-4726-b617-0589dd3b11d6?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/S3T9-XZ5?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/S3T9-XZ5",
+      "descriptionId" : "S3T9-XZ5"
+    }, {
+      "id" : "5576f380-c70a-4e78-8f9d-cf77ba225aa2",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/5576f380-c70a-4e78-8f9d-cf77ba225aa2?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/S3T9-618?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/S3T9-618",
+      "descriptionId" : "S3T9-618"
+    }, {
+      "id" : "ad81020d-26e7-49d6-a06e-88574a9fa0d4",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/ad81020d-26e7-49d6-a06e-88574a9fa0d4?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/S3S7-M61?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/S3S7-M61",
+      "descriptionId" : "S3S7-M61"
+    }, {
+      "id" : "e4c812cb-37b5-4060-a5fa-45773a0a8c2d",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/e4c812cb-37b5-4060-a5fa-45773a0a8c2d?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/S3SQ-RX5?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/S3SQ-RX5",
+      "descriptionId" : "S3SQ-RX5"
+    }, {
+      "id" : "2cd9b104-8243-4264-8ee9-9a3cd1f2db83",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/2cd9b104-8243-4264-8ee9-9a3cd1f2db83?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9TYD-4CD?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9TYD-4CD",
+      "descriptionId" : "9TYD-4CD"
+    }, {
+      "id" : "cf2efb9c-976e-42df-94ec-6de48de3e3ae",
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/cf2efb9c-976e-42df-94ec-6de48de3e3ae?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/9TYD-7KJ?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/9TYD-7KJ",
+      "descriptionId" : "9TYD-7KJ"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://familysearch.org/ark:/61903/4:1:LRQG-KBL" ]
+    },
+    "names" : [ {
+      "id" : "a5fcdfdb-7238-4449-bd57-84f6141db7a5",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMDF-P6P",
+          "resourceId" : "MMDF-P6P"
+        },
+        "modified" : 1480622528460
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : true,
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/conclusions/a5fcdfdb-7238-4449-bd57-84f6141db7a5?flag=fsh"
+        }
+      },
+      "nameForms" : [ {
+        "fullText" : "Stanley King Crist",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Stanley King"
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Crist"
+        } ],
+        "nameFormInfo" : [ {
+          "order" : "http://familysearch.org/v1/Eurotypic"
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "f6d91f0b-e640-4c05-b427-c149b23d0f98",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMFB-2FB",
+          "resourceId" : "MMFB-2FB"
+        },
+        "modified" : 1542740317434
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "6 August 1946",
+        "formal" : "+1946-08-06",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "6 August 1946"
+        } ]
+      },
+      "place" : {
+        "original" : "Los Angeles, California, United States",
+        "description" : "#395580",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/conclusions/f6d91f0b-e640-4c05-b427-c149b23d0f98?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "80979a4f-e1a8-46f9-96a3-4108c208c4d6",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMKK-Y5Y",
+          "resourceId" : "MMKK-Y5Y"
+        },
+        "modified" : 1669774764936
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "1949",
+        "formal" : "+1949",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "1949"
+        } ]
+      },
+      "place" : {
+        "original" : "United States",
+        "description" : "#1",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/conclusions/80979a4f-e1a8-46f9-96a3-4108c208c4d6?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "d12d3b29-81a4-4490-8481-eb7977d24313",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MMKK-Y5Y",
+          "resourceId" : "MMKK-Y5Y"
+        },
+        "modified" : 1669774764853
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "original" : "6 April 1950",
+        "formal" : "+1950-04-06",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "6 April 1950"
+        } ]
+      },
+      "place" : {
+        "original" : "Los Angeles, Los Angeles, California, United States",
+        "description" : "#5494026",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Los Angeles, Los Angeles, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/conclusions/d12d3b29-81a4-4490-8481-eb7977d24313?flag=fsh"
+        }
+      }
+    }, {
+      "id" : "25b4cca9-2375-44ab-bb80-4cee119a6b3b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/M92P-S4R",
+          "resourceId" : "M92P-S4R"
+        },
+        "modified" : 1545397008885
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "11 Dec 2007",
+        "formal" : "+2007-12-11",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "11 December 2007"
+        } ]
+      },
+      "place" : {
+        "original" : "Hesperia, San Bernardino, California, United States",
+        "description" : "#5435498",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Hesperia, San Bernardino, California, United States"
+        } ]
+      },
+      "links" : {
+        "conclusion" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL/conclusions/25b4cca9-2375-44ab-bb80-4cee119a6b3b?flag=fsh"
+        }
+      }
+    } ],
+    "display" : {
+      "name" : "Stanley King Crist",
+      "gender" : "Male",
+      "lifespan" : "1946-2007",
+      "birthDate" : "6 August 1946",
+      "birthPlace" : "Los Angeles, California, United States",
+      "deathDate" : "11 December 2007",
+      "deathPlace" : "Hesperia, San Bernardino, California, United States",
+      "familiesAsParent" : [ ],
+      "familiesAsChild" : [ {
+        "parent1" : {
+          "resource" : "#KWDZ-H37",
+          "resourceId" : "KWDZ-H37"
+        },
+        "parent2" : {
+          "resource" : "#LK56-QTN",
+          "resourceId" : "LK56-QTN"
+        },
+        "children" : [ {
+          "resource" : "#LRQG-KBL",
+          "resourceId" : "LRQG-KBL"
+        } ]
+      } ]
+    },
+    "personInfo" : [ {
+      "canUserEdit" : true,
+      "visibleToAll" : true,
+      "readOnly" : false,
+      "privateSpaceRestricted" : false
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MVQT-2K6",
+    "sortKey" : "0000000001",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#KWDZ-H37",
+      "resourceId" : "KWDZ-H37"
+    },
+    "person2" : {
+      "resource" : "#LK56-QTN",
+      "resourceId" : "LK56-QTN"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/couple-relationships/MVQT-2K6?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "id" : "5a78c6cf-2781-4b1c-82c7-60658a38859c",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1585540115503
+      },
+      "links" : {
+        "source-reference" : {
+          "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37/source-references/5a78c6cf-2781-4b1c-82c7-60658a38859c?flag=fsh"
+        },
+        "description" : {
+          "href" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-J2M?flag=fsh"
+        }
+      },
+      "description" : "https://www.familysearch.org/platform/sources/descriptions/SK6K-J2M",
+      "descriptionId" : "SK6K-J2M"
+    } ],
+    "facts" : [ {
+      "id" : "84dfba6e-9303-4f9c-8c25-a03328141e0b",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "https://www.familysearch.org/platform/users/agents/MM6F-SC7",
+          "resourceId" : "MM6F-SC7"
+        },
+        "modified" : 1591394354272,
+        "changeMessage" : "Marriage certificate."
+      },
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "13 August 1943",
+        "formal" : "+1943-08-13",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "13 August 1943"
+        } ]
+      },
+      "place" : {
+        "original" : "La Verne, Los Angeles, California, United States",
+        "description" : "#5495853",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "La Verne, Los Angeles, California, United States"
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "M1D6-3QH",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "person2" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/couple-relationships/M1D6-3QH?flag=fsh"
+      }
+    },
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "18 Jan 1905",
+        "formal" : "+1905-01-18",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "18 January 1905"
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "M1D6-3Q4",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KW6Q-T42",
+      "resourceId" : "KW6Q-T42"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KW6Q-T42?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/couple-relationships/M1D6-3Q4?flag=fsh"
+      }
+    },
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "14 August 1954",
+        "formal" : "+1954-08-14",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "14 August 1954"
+        } ]
+      },
+      "place" : {
+        "original" : "San Fernando, Los Angeles, California, United States",
+        "description" : "#5435561",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "San Fernando, Los Angeles, California, United States"
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "M1D6-SR9",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/L5YG-SQR",
+      "resourceId" : "L5YG-SQR"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/L5YG-SQR?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/couple-relationships/M1D6-SR9?flag=fsh"
+      }
+    },
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "5 January 1959",
+        "formal" : "+1959-01-05",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "5 January 1959"
+        } ]
+      },
+      "place" : {
+        "original" : "Los Angeles, Los Angeles, California, United States",
+        "description" : "#5494026",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Los Angeles, Los Angeles, California, United States"
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "MVQK-K6J",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#LRQG-KBL",
+      "resourceId" : "LRQG-KBL"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KWHM-SL4",
+      "resourceId" : "KWHM-SL4"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWHM-SL4?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/couple-relationships/MVQK-K6J?flag=fsh"
+      }
+    },
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "5 July 1966",
+        "formal" : "+1966-07-05",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "5 July 1966"
+        } ]
+      },
+      "place" : {
+        "original" : "Los Angeles, California, United States",
+        "description" : "#395580",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Los Angeles, California, United States"
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "ML9J-2YG",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#LRQG-KBL",
+      "resourceId" : "LRQG-KBL"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/GMV7-RTP",
+      "resourceId" : "GMV7-RTP"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GMV7-RTP?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/couple-relationships/ML9J-2YG?flag=fsh"
+      }
+    },
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "23 July 1977",
+        "formal" : "+1977-07-23",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "23 July 1977"
+        } ]
+      },
+      "place" : {
+        "original" : "Los Angeles, California, United States",
+        "description" : "#395580",
+        "normalized" : [ {
+          "lang" : "en",
+          "value" : "Los Angeles, California, United States"
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "P1958C-9N7",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "person2" : {
+      "resource" : "#KWDZ-H37",
+      "resourceId" : "KWDZ-H37"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://familysearch.org/v1/ChildAndParentsRelationship" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9N7"
+    }
+  }, {
+    "id" : "P2958C-9N7",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "person2" : {
+      "resource" : "#KWDZ-H37",
+      "resourceId" : "KWDZ-H37"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://familysearch.org/v1/ChildAndParentsRelationship" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9N7"
+    }
+  }, {
+    "id" : "P1MB2B-J8W",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#KWDZ-H37",
+      "resourceId" : "KWDZ-H37"
+    },
+    "person2" : {
+      "resource" : "#LRQG-KBL",
+      "resourceId" : "LRQG-KBL"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://familysearch.org/v1/ChildAndParentsRelationship" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/MB2B-J8W"
+    }
+  }, {
+    "id" : "P2MB2B-J8W",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#LK56-QTN",
+      "resourceId" : "LK56-QTN"
+    },
+    "person2" : {
+      "resource" : "#LRQG-KBL",
+      "resourceId" : "LRQG-KBL"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://familysearch.org/v1/ChildAndParentsRelationship" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/MB2B-J8W"
+    }
+  }, {
+    "id" : "P1MR82-K78",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/9M6J-M6X",
+      "resourceId" : "9M6J-M6X"
+    },
+    "person2" : {
+      "resource" : "#LK56-QTN",
+      "resourceId" : "LK56-QTN"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/9M6J-M6X?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P2MR82-K78",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/LJJ8-FRJ",
+      "resourceId" : "LJJ8-FRJ"
+    },
+    "person2" : {
+      "resource" : "#LK56-QTN",
+      "resourceId" : "LK56-QTN"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LJJ8-FRJ?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P1958C-9N3",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/L7YM-N7J",
+      "resourceId" : "L7YM-N7J"
+    },
+    "person2" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/L7YM-N7J?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P2958C-9N3",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/K633-F4W",
+      "resourceId" : "K633-F4W"
+    },
+    "person2" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K633-F4W?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P1958C-9N4",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/LDZR-JMQ",
+      "resourceId" : "LDZR-JMQ"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LDZR-JMQ?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P2958C-9N4",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/LDZR-JMQ",
+      "resourceId" : "LDZR-JMQ"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LDZR-JMQ?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P1958C-9NH",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KZRD-T63",
+      "resourceId" : "KZRD-T63"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KZRD-T63?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P2958C-9NH",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KZRD-T63",
+      "resourceId" : "KZRD-T63"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KZRD-T63?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P1958C-9NQ",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KZ2X-XQ3",
+      "resourceId" : "KZ2X-XQ3"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KZ2X-XQ3?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P2958C-9NQ",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KZ2X-XQ3",
+      "resourceId" : "KZ2X-XQ3"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KZ2X-XQ3?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P1958C-9NS",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KCQ8-6G7",
+      "resourceId" : "KCQ8-6G7"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KCQ8-6G7?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P2958C-9NS",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KCQ8-6G7",
+      "resourceId" : "KCQ8-6G7"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KCQ8-6G7?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P1958C-9NW",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/9K61-VHL",
+      "resourceId" : "9K61-VHL"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/9K61-VHL?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P2958C-9NW",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "person2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/9K61-VHL",
+      "resourceId" : "9K61-VHL"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/9K61-VHL?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P1MMTN-TGJ",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/LC32-YCD",
+      "resourceId" : "LC32-YCD"
+    },
+    "person2" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LC32-YCD?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "P2MMTN-TGJ",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/LC32-Y8P",
+      "resourceId" : "LC32-Y8P"
+    },
+    "person2" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "links" : {
+      "person2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "person1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LC32-Y8P?flag=fsh"
+      }
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "SD-KWDZ-H37",
+    "about" : "#KWDZ-H37",
+    "componentOf" : {
+      "description" : "https://www.familysearch.org/platform/collections/tree"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "modified" : 1671018289000,
+    "version" : "1671018289312",
+    "links" : {
+      "description" : {
+        "href" : "https://www.familysearch.org/platform/sources/descriptions/SD-KWDZ-H37?flag=fsh"
+      }
+    },
+    "citations" : [ {
+      "lang" : "en",
+      "value" : "\"Family Tree,\" database, <i>FamilySearch</i> (http://familysearch.org : modified 14 December 2022, 11:44), entry for Kenneth Galen Crist (PID https://familysearch.org/ark:/61903/4:1:KWDZ-H37 ); contributed by various users."
+    } ],
+    "titles" : [ {
+      "value" : "Kenneth Galen Crist"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://familysearch.org/ark:/61903/4:1:KWDZ-H37" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "5287658",
+    "latitude" : 47.4233,
+    "longitude" : -120.3253,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Wenatchee, Chelan, Washington, United States"
+    } ]
+  }, {
+    "id" : "8070850",
+    "latitude" : 47.41921,
+    "longitude" : -120.3128,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Wenatchee Election Precinct M, Chelan, Washington, United States"
+    } ]
+  }, {
+    "id" : "5495853",
+    "latitude" : 34.1008,
+    "longitude" : -117.7678,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "La Verne, Los Angeles, California, United States"
+    } ]
+  }, {
+    "id" : "395580",
+    "latitude" : 34.36667,
+    "longitude" : -118.2,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Los Angeles, California, United States"
+    } ]
+  }, {
+    "id" : "5494026",
+    "latitude" : 34.0522,
+    "longitude" : -118.2428,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Los Angeles, Los Angeles, California, United States"
+    } ]
+  }, {
+    "id" : "5435500",
+    "latitude" : 33.1959,
+    "longitude" : -117.3795,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Oceanside, San Diego, California, United States"
+    } ]
+  }, {
+    "id" : "4001634",
+    "latitude" : 43.579,
+    "longitude" : -116.5597,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Nampa, Canyon, Idaho, United States"
+    } ]
+  }, {
+    "id" : "5495807",
+    "latitude" : 33.8847,
+    "longitude" : -118.4109,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Manhattan Beach, Los Angeles, California, United States"
+    } ]
+  }, {
+    "id" : "1",
+    "latitude" : 40.0,
+    "longitude" : -95.0,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "United States"
+    } ]
+  }, {
+    "id" : "5435491",
+    "latitude" : 34.1361,
+    "longitude" : -117.8653,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Glendora, Los Angeles, California, United States"
+    } ]
+  }, {
+    "id" : "4812908",
+    "latitude" : 39.9892,
+    "longitude" : -83.9553,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Pike Township, Clark, Ohio, United States"
+    } ]
+  }, {
+    "id" : "4155251",
+    "latitude" : 38.325,
+    "longitude" : -95.43333,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Reeder Township, Anderson, Kansas, United States"
+    } ]
+  }, {
+    "id" : "4137403",
+    "latitude" : 38.8186,
+    "longitude" : -95.2964,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Willow Springs, Douglas, Kansas, United States"
+    } ]
+  }, {
+    "id" : "395097",
+    "latitude" : 47.88333,
+    "longitude" : -120.63333,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Chelan, Washington, United States"
+    } ]
+  }, {
+    "id" : "5435523",
+    "latitude" : 33.77057,
+    "longitude" : -118.19416,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Long Beach, Los Angeles, California, United States"
+    } ]
+  }, {
+    "id" : "4160928",
+    "latitude" : 38.7161,
+    "longitude" : -95.35,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Centropolis, Franklin, Kansas, United States"
+    } ]
+  }, {
+    "id" : "4080022",
+    "latitude" : 37.5706,
+    "longitude" : -101.7506,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Johnson, Stanton, Kansas, United States"
+    } ]
+  }, {
+    "id" : "4158309",
+    "latitude" : 38.88056,
+    "longitude" : -94.81667,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Olathe Township, Johnson, Kansas, United States"
+    } ]
+  }, {
+    "id" : "5435498",
+    "latitude" : 34.4264,
+    "longitude" : -117.3009,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "Hesperia, San Bernardino, California, United States"
+    } ]
+  }, {
+    "id" : "5435561",
+    "latitude" : 34.2819,
+    "longitude" : -118.439,
+    "names" : [ {
+      "lang" : "en",
+      "value" : "San Fernando, Los Angeles, California, United States"
+    } ]
+  } ],
+  "childAndParentsRelationships" : [ {
+    "id" : "958C-9N7",
+    "parent1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "parent2" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "child" : {
+      "resource" : "#KWDZ-H37",
+      "resourceId" : "KWDZ-H37"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9N7?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9N7" ]
+    }
+  }, {
+    "id" : "MB2B-J8W",
+    "parent1" : {
+      "resource" : "#KWDZ-H37",
+      "resourceId" : "KWDZ-H37"
+    },
+    "parent2" : {
+      "resource" : "#LK56-QTN",
+      "resourceId" : "LK56-QTN"
+    },
+    "child" : {
+      "resource" : "#LRQG-KBL",
+      "resourceId" : "LRQG-KBL"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KWDZ-H37?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/MB2B-J8W?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LRQG-KBL?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/tree/child-and-parents-relationships/MB2B-J8W" ]
+    }
+  }, {
+    "id" : "MR82-K78",
+    "parent1" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/9M6J-M6X",
+      "resourceId" : "9M6J-M6X"
+    },
+    "parent2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/LJJ8-FRJ",
+      "resourceId" : "LJJ8-FRJ"
+    },
+    "child" : {
+      "resource" : "#LK56-QTN",
+      "resourceId" : "LK56-QTN"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/9M6J-M6X?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/MR82-K78?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LJJ8-FRJ?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LK56-QTN?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "958C-9N3",
+    "parent1" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/L7YM-N7J",
+      "resourceId" : "L7YM-N7J"
+    },
+    "parent2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/K633-F4W",
+      "resourceId" : "K633-F4W"
+    },
+    "child" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/L7YM-N7J?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9N3?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K633-F4W?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "958C-9N4",
+    "parent1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "parent2" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "child" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/LDZR-JMQ",
+      "resourceId" : "LDZR-JMQ"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9N4?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LDZR-JMQ?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "958C-9NH",
+    "parent1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "parent2" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "child" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KZRD-T63",
+      "resourceId" : "KZRD-T63"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9NH?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KZRD-T63?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "958C-9NQ",
+    "parent1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "parent2" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "child" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KZ2X-XQ3",
+      "resourceId" : "KZ2X-XQ3"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9NQ?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KZ2X-XQ3?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "958C-9NS",
+    "parent1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "parent2" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "child" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/KCQ8-6G7",
+      "resourceId" : "KCQ8-6G7"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9NS?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/KCQ8-6G7?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "958C-9NW",
+    "parent1" : {
+      "resource" : "#GJJZ-4MV",
+      "resourceId" : "GJJZ-4MV"
+    },
+    "parent2" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "child" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/9K61-VHL",
+      "resourceId" : "9K61-VHL"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/GJJZ-4MV?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/958C-9NW?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/9K61-VHL?flag=fsh"
+      }
+    }
+  }, {
+    "id" : "MMTN-TGJ",
+    "parent1" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/LC32-YCD",
+      "resourceId" : "LC32-YCD"
+    },
+    "parent2" : {
+      "resource" : "https://www.familysearch.org/platform/tree/persons/LC32-Y8P",
+      "resourceId" : "LC32-Y8P"
+    },
+    "child" : {
+      "resource" : "#K1GW-QX5",
+      "resourceId" : "K1GW-QX5"
+    },
+    "links" : {
+      "parent1" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LC32-YCD?flag=fsh"
+      },
+      "relationship" : {
+        "href" : "https://www.familysearch.org/platform/tree/child-and-parents-relationships/MMTN-TGJ?flag=fsh"
+      },
+      "parent2" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/LC32-Y8P?flag=fsh"
+      },
+      "child" : {
+        "href" : "https://www.familysearch.org/platform/tree/persons/K1GW-QX5?flag=fsh"
+      }
+    }
+  } ]
+}

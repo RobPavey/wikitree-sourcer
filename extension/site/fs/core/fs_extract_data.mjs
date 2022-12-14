@@ -914,13 +914,6 @@ function extractData(document, url) {
 }
 
 function getDateValueFromDate(date, fieldTypeEnding, labelId) {
-  if (date.values) {
-    for (let value of date.values) {
-      if (value.labelId == labelId) {
-        result.eventYear = value.text;
-      }
-    }
-  }
   let closeMatch = undefined;
   if (date.fields) {
     for (let field of date.fields) {
@@ -974,6 +967,37 @@ function setFieldFromDate(date, fieldTypeEnding, labelId, result, resultFieldNam
   if (value) {
     result[resultFieldName] = value;
   }
+}
+
+function setFieldFromNormalizedValue(valueContainer, result, resultFieldName) {
+  if (valueContainer.normalized && valueContainer.normalized.length > 0) {
+    for (let normalizedValue of valueContainer.normalized) {
+      if (normalizedValue.lang == "en") {
+        result[resultFieldName] = normalizedValue.value;
+      }
+    }
+  }
+}
+
+function setOriginalAndNormalizedField(valueContainer, result, resultFieldName) {
+  // Date in a person tends to look like this:
+  //       "date" : {
+  //        "original" : "19210425",
+  //        "formal" : "+1921-04-25",
+  //        "normalized" : [ {
+  //          "lang" : "en",
+  //          "value" : "25 April 1921"
+  //        } ]
+  //      },
+
+  if (!valueContainer) {
+    return;
+  }
+
+  if (valueContainer.original) {
+    result[resultFieldName + "Original"] = valueContainer.original;
+  }
+  setFieldFromNormalizedValue(valueContainer, result, resultFieldName);
 }
 
 function getPlaceValueFromPlace(place, fieldTypeEnding, labelId) {
@@ -1919,9 +1943,33 @@ function findPersonById(dataObj, personId) {
 }
 
 function getPrimaryNameForm(person) {
-  let nameForms = [];
+  // There can be multiple names and each name can have multiple nameforms.
+  // Usually one name is marked as perferred.
+  // First pick the promaryName
+
   let nameArray = person.names;
-  if (nameArray && nameArray.length > 0) {
+  if (!nameArray || nameArray.length == 0) {
+    return undefined;
+  }
+
+  let preferredName = undefined;
+  for (let name of nameArray) {
+    if (name.preferred) {
+      preferredName = name;
+      break;
+    }
+  }
+
+  let nameForms = [];
+
+  if (preferredName) {
+    for (let nameForm of preferredName.nameForms) {
+      if (nameForm.parts) {
+        nameForms.push(nameForm);
+        break;
+      }
+    }
+  } else {
     for (let name of nameArray) {
       // this usually seems to be "http://gedcomx.org/BirthName" but can also be
       // "http://gedcomx.org/AlsoKnownAs" which we ignore
@@ -1938,10 +1986,9 @@ function getPrimaryNameForm(person) {
   }
 
   if (nameForms.length == 0) {
-    // for some record there are no parts - just a full name
+    // for some records there are no parts - just a full name
     if (nameArray && nameArray.length > 0) {
       for (let name of nameArray) {
-        let nameType = name.type; // this always seems to be "http://gedcomx.org/BirthName"
         if (name.nameForms && name.nameForms.length > 0) {
           for (let nameForm of name.nameForms) {
             if (nameForm.fields) {
@@ -2140,52 +2187,11 @@ function processPersonPageFactsForPersonObj(person, result) {
         //console.log("factType is " + factType);
         if (factType == "Birth") {
           //console.log("type is birth");
-          if (fact.date) {
-            if (fact.date.original) {
-              result.birthDateOriginal = fact.date.original;
-            }
-            setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE_EST", result, "birthDate");
-            setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR_EST", result, "birthYear");
-          }
-          if (fact.place) {
-            if (fact.place.original) {
-              result.birthPlaceOriginal = fact.place.original;
-            }
-            setFieldFromPlaceWithLabels(
-              fact.place,
-              [
-                "PR_BIR_PLACE",
-                "PR_BIR_PLACE_ORIG",
-                "PR_BIRTH_PLACE",
-                "PR_BIRTH_PLACE_ORIG",
-                "BIRTH_PLACE",
-                "BIRTH_PLACE_ORIG",
-              ],
-              result,
-              "birthPlace"
-            );
-          }
+          setOriginalAndNormalizedField(fact.date, result, "birthDate");
+          setOriginalAndNormalizedField(fact.place, result, "birthPlace");
         } else if (factType == "Death") {
-          if (fact.date) {
-            if (fact.date.original) {
-              result.deathDateOriginal = fact.date.original;
-            }
-            setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE", result, "deathDate");
-            if (!result.deathDate) {
-              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_EST", result, "deathDate");
-            }
-            if (!result.deathDate) {
-              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE_ORIG", result, "deathDate");
-            }
-            setFieldFromDate(fact.date, "/Year", "PR_DEA_YEAR_EST", result, "deathYear");
-            setFieldFromDate(fact.date, "/Month", "PR_DEA_MONTH", result, "deathMonth");
-          }
-          if (fact.place) {
-            if (fact.place.original) {
-              result.deathPlaceOriginal = fact.place.original;
-            }
-            setFieldFromPlace(fact.place, "", "PR_DEA_PLACE", result, "deathPlace");
-          }
+          setOriginalAndNormalizedField(fact.date, result, "deathDate");
+          setOriginalAndNormalizedField(fact.place, result, "deathPlace");
         }
       }
     }

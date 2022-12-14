@@ -5,9 +5,13 @@
   "surname": "Lyles",
   "gender": "male",
   "birthDateOriginal": "8 February 1856",
+  "birthDate": "8 February 1856",
   "birthPlaceOriginal": "Maryland, United States",
+  "birthPlace": "Maryland, United States",
   "deathDateOriginal": "19 July 1931",
+  "deathDate": "19 July 1931",
   "deathPlaceOriginal": "Taylorsville, Carroll, Maryland, United States",
+  "deathPlace": "Taylorsville, Carroll, Maryland, United States",
   "spouses": [
     {
       "fullName": "Hannah J. Taylor",

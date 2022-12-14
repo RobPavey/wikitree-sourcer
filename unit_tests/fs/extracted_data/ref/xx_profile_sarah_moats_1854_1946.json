@@ -4,7 +4,9 @@
   "surname": "Moats",
   "gender": "female",
   "birthDateOriginal": "23 July 1854",
+  "birthDate": "23 July 1854",
   "deathDateOriginal": "30 April 1946",
+  "deathDate": "30 April 1946",
   "spouses": [
     {
       "fullName": "William Smith",

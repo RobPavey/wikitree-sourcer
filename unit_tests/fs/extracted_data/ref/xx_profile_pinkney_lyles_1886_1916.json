@@ -4,8 +4,11 @@
   "surname": "Lyles",
   "gender": "male",
   "birthDateOriginal": "1886",
+  "birthDate": "1886",
   "birthPlaceOriginal": "Mount Airy, Carroll, Maryland, United States",
+  "birthPlace": "Mount Airy, Carroll, Maryland, United States",
   "deathDateOriginal": "28 March 1916",
+  "deathDate": "28 March 1916",
   "spouses": [
     {
       "fullName": "Anna Rachael Johnson",
