@@ -154,6 +154,15 @@ function extractDataInEditMode(document, result) {
   result.prefNames = getValueBySelector(document, "#mRealName");
   result.middleNames = getValueBySelector(document, "#mMiddleName");
 
+  let nickNames = getValueBySelector(document, "#mNicknames");
+  if (nickNames) {
+    result.nicknames = nickNames;
+  }
+  let otherLastNames = getValueBySelector(document, "#mLastNameOther");
+  if (otherLastNames) {
+    result.otherLastNames = otherLastNames;
+  }
+
   result.birthDate = getValueBySelector(document, "#mBirthDate");
   let checkedBirthDateStatus = document.querySelector("input[name=mStatus_BirthDate]:checked");
   if (checkedBirthDateStatus) {
@@ -415,6 +424,52 @@ function extractVitalsDataInNonEditMode(document, result, isPrivate) {
   result.currentLastName = getCurrentLastNameInNonEditMode(document, isPrivate);
 
   result.lnab = getAttrBySelector(document, ".VITALS meta[itemprop=familyName]", "content");
+
+  // try to find any preferred name or nicknames
+  let beforeSibling = undefined;
+  let givenNameChild = document.querySelector(".VITALS span[itemprop=givenName]");
+  let middleNameChild = document.querySelector(".VITALS span[itemprop=additionalName]");
+  if (middleNameChild) {
+    beforeSibling = middleNameChild.parentNode;
+  } else if (givenNameChild) {
+    beforeSibling = givenNameChild.parentNode;
+  }
+  if (beforeSibling) {
+    let afterSibling = undefined;
+    let familyNameChild = document.querySelector(".VITALS meta[itemprop=familyName]");
+    if (familyNameChild) {
+      afterSibling = familyNameChild;
+    } else {
+      let lastNameChild = document.querySelector(".VITALS a[href^='/genealogy/]");
+      if (lastNameChild) {
+        afterSibling = lastNameChild.parentNode;
+      }
+    }
+
+    if (afterSibling) {
+      let prefNames = "";
+      let nicknames = "";
+      let sibling = beforeSibling.nextSibling;
+      while (sibling && sibling != afterSibling) {
+        let text = sibling.textContent;
+        if (text.startsWith('"') && text.endsWith('"')) {
+          nicknames += text.substring(1, text.length - 1);
+        } else if (text.startsWith("(") && text.endsWith(")")) {
+          prefNames += text.substring(1, text.length - 1);
+        }
+        sibling = sibling.nextSibling;
+      }
+      if (sibling) {
+        // we found the afterSibling OK
+        if (prefNames) {
+          result.prefNames = prefNames;
+        }
+        if (nicknames) {
+          result.nicknames = nicknames;
+        }
+      }
+    }
+  }
 }
 
 function extractVitalsDataInPrivateToUserMode(document, result, isPrivate) {
@@ -718,6 +773,15 @@ function extractDataForEditFamily(document, result) {
   result.middleNames = getValueBySelector(document, "#mMiddleName");
   result.lnab = getValueBySelector(document, "#mLastNameAtBirth");
   result.currentLastName = getValueBySelector(document, "#mLastNameCurrent");
+
+  let nickNames = getValueBySelector(document, "#mNicknames");
+  if (nickNames) {
+    result.nicknames = nickNames;
+  }
+  let otherLastNames = getValueBySelector(document, "#mLastNameOther");
+  if (otherLastNames) {
+    result.otherLastNames = otherLastNames;
+  }
 
   result.birthDate = getValueBySelector(document, "#mBirthDate");
   let checkedBirthDateStatus = document.querySelector("input[name=mStatus_BirthDate]:checked");

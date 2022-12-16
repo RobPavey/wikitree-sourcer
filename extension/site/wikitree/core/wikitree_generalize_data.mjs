@@ -195,6 +195,12 @@ function generalizeData(input) {
   if (data.prefNames) {
     result.name.prefNames = data.prefNames;
   }
+  if (data.nicknames) {
+    result.name.nicknames = data.nicknames;
+  }
+  if (data.otherLastNames) {
+    result.name.otherLastNames = data.otherLastNames;
+  }
   // WT doesn't have a last name as such but every profile has a LNAB
   result.name.lastName = data.lnab;
 
