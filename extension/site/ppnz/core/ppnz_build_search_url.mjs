@@ -41,9 +41,165 @@ function constrainYears(dates) {
   dates.endYear = constrainYear(dates.endYear);
 }
 
+function getDefaultSearchParameters(generalizedData, options) {
+  let parameters = {};
+
+  parameters.queryType = "phrases";
+
+  parameters.proximity = "exact";
+
+  parameters.includeFirstName = true;
+  parameters.includeGivenNames = true;
+  parameters.includePrefName = true;
+
+  parameters.includeLnab = true;
+  parameters.includeCln = true;
+
+  parameters.includeLnabAtStart = false;
+  parameters.includeClnAtStart = false;
+
+  return parameters;
+}
+
+function buildQueryString(gd, parameters, options) {
+  let query = "";
+
+  let givenNameVariants = [];
+  let lastNameVariants = [];
+  let lastNameAtStartVariants = [];
+
+  function addNameVariant(nameArray, name, parameterName) {
+    if (name && parameters[parameterName]) {
+      if (!nameArray.includes(name)) {
+        nameArray.push(name);
+      }
+    }
+  }
+
+  function addNameWordVariants(nameArray, names, parameterName) {
+    if (names) {
+      names = names.trim();
+      let splitNames = names.split(" ");
+      let suffix = 1;
+      for (let name of splitNames) {
+        if (!nameArray.includes(name)) {
+          let newParameterName = parameterName + suffix;
+          if (parameters[newParameterName]) {
+            nameArray.push(name);
+          }
+        }
+        suffix++;
+      }
+    }
+  }
+
+  const proximityMap = {
+    exact: -1,
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+    5: 5,
+    10: 10,
+  };
+
+  let proximity = proximityMap[parameters.proximity];
+
+  addNameVariant(givenNameVariants, gd.inferFirstName(), "includeFirstName");
+  addNameVariant(givenNameVariants, gd.inferForenames(), "includeGivenNames");
+
+  addNameVariant(lastNameVariants, gd.inferLastNameAtBirth(), "includeLnab");
+  addNameVariant(lastNameVariants, gd.inferLastNameAtDeath(), "includeCln");
+
+  if (proximity == -1) {
+    addNameVariant(lastNameAtStartVariants, gd.inferLastNameAtBirth(), "includeLnabAtStart");
+    addNameVariant(lastNameAtStartVariants, gd.inferLastNameAtDeath(), "includeClnAtStart");
+  }
+
+  if (gd.name) {
+    if (gd.name.prefName) {
+      addNameVariant(givenNameVariants, gd.name.prefName, "includePrefName");
+    } else if (gd.name.prefNames) {
+      addNameVariant(givenNameVariants, gd.name.prefNames, "includePrefName");
+    }
+    addNameWordVariants(givenNameVariants, gd.name.nicknames, "includeNickname");
+    addNameWordVariants(lastNameVariants, gd.name.otherLastNames, "includeOtherLastName");
+
+    if (proximity == -1) {
+      addNameWordVariants(lastNameAtStartVariants, gd.name.otherLastNames, "includeOtherLastNameAtStart");
+    }
+  }
+
+  let phrases = [];
+
+  function addPhrase(phrase) {
+    let wordCount = phrase.split(" ").length;
+    let stringToAdd = "";
+    if (wordCount == 1) {
+      stringToAdd = phrase;
+    } else {
+      let proximityString = "";
+      if (proximity != -1) {
+        proximityString = "~" + (wordCount + proximity);
+      }
+      stringToAdd = `"${phrase}"${proximityString}`;
+    }
+
+    if (!phrases.includes(stringToAdd)) {
+      phrases.push(stringToAdd);
+    }
+  }
+
+  if (givenNameVariants.length > 0) {
+    for (let name1 of givenNameVariants) {
+      if (lastNameVariants.length > 0 || lastNameAtStartVariants.length > 0) {
+        for (let name2 of lastNameVariants) {
+          addPhrase(`${name1} ${name2}`);
+        }
+        for (let name2 of lastNameAtStartVariants) {
+          addPhrase(`${name2} ${name1}`);
+        }
+      } else {
+        addPhrase(`${name1}`);
+      }
+    }
+  } else {
+    if (lastNameVariants.length > 0) {
+      for (let name2 of lastNameVariants) {
+        addPhrase(`${name2}`);
+      }
+    }
+    if (lastNameAtStartVariants.length > 0) {
+      for (let name2 of lastNameAtStartVariants) {
+        addPhrase(`${name2}`);
+      }
+    }
+  }
+
+  if (phrases.length == 1) {
+    query += phrases[0];
+  } else if (phrases.length > 1) {
+    query = "(";
+    for (let phrase of phrases) {
+      if (query.length > 1) {
+        query += " OR ";
+      }
+      query += phrase;
+    }
+    query += ")";
+  }
+
+  return query;
+}
+
 function buildSearchUrl(buildUrlInput) {
   const data = buildUrlInput.generalizedData;
+  let parameters = buildUrlInput.searchParameters;
   const options = buildUrlInput.options;
+
+  if (!parameters) {
+    parameters = getDefaultSearchParameters(data, options);
+  }
 
   var builder = new PpnzUriBuilder();
 
@@ -64,27 +220,7 @@ function buildSearchUrl(buildUrlInput) {
   // constrain years to the range covered by Ppnz
   constrainYears(dateRange);
 
-  let queryString = "";
-
-  const lnab = data.inferLastNameAtBirth();
-  const cln = data.inferLastNameAtDeath();
-
-  if (lnab && cln && lnab != cln) {
-    queryString = lnab + " " + cln;
-  } else {
-    if (lnab) {
-      queryString = lnab;
-    } else if (cln) {
-      queryString = cln;
-    }
-  }
-
-  let givenNames = data.inferForenames();
-  if (givenNames) {
-    queryString += " " + givenNames;
-    queryString = queryString.trim();
-  }
-
+  let queryString = buildQueryString(data, parameters, options);
   builder.addQueryString(queryString);
 
   // set the date parameters
@@ -106,4 +242,4 @@ function buildSearchUrl(buildUrlInput) {
   return result;
 }
 
-export { buildSearchUrl };
+export { buildSearchUrl, buildQueryString, getDefaultSearchParameters };

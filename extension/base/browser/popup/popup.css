@@ -142,6 +142,18 @@ li.dividerBelow {
 .yellowBackground {
   background-color: #ffe270;
 }
+.dialogDiv {
+  padding: 0px;
+  margin: 10px 0px;
+}
+.dialogDivCheckbox {
+  padding: 0px;
+  margin: 0px 0px;
+}
+.dialogDivHeading {
+  padding: 0px;
+  margin-top: 10px;
+}
 .dialogHeading {
   padding: 10px;
   margin: 0px;
@@ -154,10 +166,27 @@ li.dividerBelow {
   padding: 0px;
   margin-left: 10px;
 }
+.dialogCheckbox {
+  padding: 0px;
+  margin: 0px;
+  margin-left: 10px;
+}
 .dialogTextInput {
   padding: 0px;
   margin-left: 10px;
   width: 90%;
+}
+.dialogReadOnlyText {
+  display: inline-block;
+  padding: 0px;
+  margin-left: 10px;
+  border: 1px solid black;
+  min-width: 10px;
+  min-height: 10px;
+}
+.dialogButtonDiv {
+  margin: 10px auto 0px auto;
+  width: fit-content;
 }
 .dialogButton {
   padding: 10px;

@@ -764,6 +764,8 @@ class WtsName {
     // middleNames
     // prefName
     // prefNames
+    // nicknames
+    // otherLastNames
     // lastName
   }
 

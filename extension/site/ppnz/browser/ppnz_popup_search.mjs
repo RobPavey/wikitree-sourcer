@@ -22,14 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addSameRecordMenuItem,
-  addBackMenuItem,
-  addMenuItem,
-  beginMainMenu,
-  endMainMenu,
-  doAsyncActionWithCatch,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItemWithSubMenu, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   doSearch,
@@ -46,12 +41,26 @@ const ppnzEndYear = 1979;
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function ppnzSearch(generalizedData) {
-  const input = { generalizedData: generalizedData, options: options };
+async function ppnzSearch(input) {
   doAsyncActionWithCatch("Papers Past (NZ) Search", input, async function () {
     let loadedModule = await import(`../core/ppnz_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
+}
+
+async function ppnzDefaultSearch(generalizedData) {
+  const input = { generalizedData: generalizedData, options: options };
+  ppnzSearch(input);
+}
+
+async function ppnzSearchWithParameters(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  ppnzSearch(input);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -97,11 +106,27 @@ function addPpnzDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItem(menu, "Search Papers Past (NZ)", function (element) {
-    ppnzSearch(data.generalizedData);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search Papers Past (NZ)",
+    function (element) {
+      ppnzDefaultSearch(data.generalizedData, "");
+    },
+    function () {
+      setupPpnzSearchSubMenu(data, backFunction);
+    }
+  );
 
   return true;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Submenus
+//////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupPpnzSearchSubMenu(data, backFunction) {
+  let dataModule = await import(`../core/ppnz_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.PpnzData, ppnzSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

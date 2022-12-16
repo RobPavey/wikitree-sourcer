@@ -45,8 +45,8 @@ function getSubcategoriesLabelText(siteData, gd, parameters) {
 
 function addBreakIfNeeded(listElement) {
   if (listElement.childElementCount > 0) {
-    addBreak(listElement);
-    addBreak(listElement);
+    //addBreak(listElement);
+    //addBreak(listElement);
   }
 }
 
@@ -61,12 +61,19 @@ function addSelector(listElement, id, labelText, fillFunction, changeFunction) {
   label.appendChild(document.createTextNode(labelText));
   addBreak(label);
   label.appendChild(selector);
-  listElement.appendChild(label);
+
+  let div = document.createElement("div");
+  div.className = "dialogDiv";
+  div.appendChild(label);
+
+  listElement.appendChild(div);
 
   return selector;
 }
 
 function addCategorySelector(data, siteData, listElement, parameters) {
+  let gd = data.generalizedData;
+
   function fillCategorySelector(selector) {
     while (selector.firstChild) {
       selector.removeChild(selector.firstChild);
@@ -82,25 +89,28 @@ function addCategorySelector(data, siteData, listElement, parameters) {
     selector.value = parameters.category;
   }
 
-  let gd = data.generalizedData;
-  if (siteData.includeCategories(gd, parameters)) {
-    let labelText = getCategoriesLabelText(siteData, gd, parameters);
-    let categorySelector = addSelector(
-      listElement,
-      "categorySelector",
-      labelText,
-      fillCategorySelector,
-      function (event) {
-        parameters.category = event.target.value;
-        siteData.updateParametersOnCategoryChange(gd, parameters, options);
-        setupParametersElements(data, siteData, listElement, parameters);
-      }
-    );
-    categorySelector.value = parameters.category;
+  if (typeof siteData.includeCategories === "function") {
+    if (siteData.includeCategories(gd, parameters)) {
+      let labelText = getCategoriesLabelText(siteData, gd, parameters);
+      let categorySelector = addSelector(
+        listElement,
+        "categorySelector",
+        labelText,
+        fillCategorySelector,
+        function (event) {
+          parameters.category = event.target.value;
+          siteData.updateParametersOnCategoryChange(gd, parameters, options);
+          setupParametersElements(data, siteData, listElement, parameters);
+        }
+      );
+      categorySelector.value = parameters.category;
+    }
   }
 }
 
 function addSubcategorySelector(data, siteData, listElement, parameters) {
+  let gd = data.generalizedData;
+
   function fillSubcategorySelector(selector) {
     while (selector.firstChild) {
       selector.removeChild(selector.firstChild);
@@ -116,26 +126,29 @@ function addSubcategorySelector(data, siteData, listElement, parameters) {
     selector.value = parameters.subcategory;
   }
 
-  let gd = data.generalizedData;
-  if (siteData.includeSubcategories(gd, parameters)) {
-    let labelText = getSubcategoriesLabelText(siteData, gd, parameters);
-    addBreakIfNeeded(listElement);
-    let subcategorySelector = addSelector(
-      listElement,
-      "subcategorySelector",
-      labelText,
-      fillSubcategorySelector,
-      function (event) {
-        parameters.subcategory = event.target.value;
-        siteData.updateParametersOnSubcategoryChange(gd, parameters, options);
-        setupParametersElements(data, siteData, listElement, parameters);
-      }
-    );
-    subcategorySelector.value = parameters.subcategory;
+  if (typeof siteData.includeSubcategories === "function") {
+    if (siteData.includeSubcategories(gd, parameters)) {
+      let labelText = getSubcategoriesLabelText(siteData, gd, parameters);
+      addBreakIfNeeded(listElement);
+      let subcategorySelector = addSelector(
+        listElement,
+        "subcategorySelector",
+        labelText,
+        fillSubcategorySelector,
+        function (event) {
+          parameters.subcategory = event.target.value;
+          siteData.updateParametersOnSubcategoryChange(gd, parameters, options);
+          setupParametersElements(data, siteData, listElement, parameters);
+        }
+      );
+      subcategorySelector.value = parameters.subcategory;
+    }
   }
 }
 
 function addCollectionSelector(data, siteData, listElement, parameters) {
+  let gd = data.generalizedData;
+
   function fillCollectionSelector(selector) {
     while (selector.firstChild) {
       selector.removeChild(selector.firstChild);
@@ -150,21 +163,22 @@ function addCollectionSelector(data, siteData, listElement, parameters) {
     }
   }
 
-  let gd = data.generalizedData;
-  if (siteData.includeCollections(gd, parameters)) {
-    addBreakIfNeeded(listElement);
-    let collectionSelector = addSelector(
-      listElement,
-      "collectionSelector",
-      "Choose collection: ",
-      fillCollectionSelector,
-      function (event) {
-        parameters.collection = event.target.value;
-        siteData.updateParametersOnCollectionChange(gd, parameters, options);
-        setupParametersElements(data, siteData, listElement, parameters);
-      }
-    );
-    collectionSelector.value = parameters.collection;
+  if (typeof siteData.includeCollections === "function") {
+    if (siteData.includeCollections(gd, parameters)) {
+      addBreakIfNeeded(listElement);
+      let collectionSelector = addSelector(
+        listElement,
+        "collectionSelector",
+        "Choose collection: ",
+        fillCollectionSelector,
+        function (event) {
+          parameters.collection = event.target.value;
+          siteData.updateParametersOnCollectionChange(gd, parameters, options);
+          setupParametersElements(data, siteData, listElement, parameters);
+        }
+      );
+      collectionSelector.value = parameters.collection;
+    }
   }
 }
 
@@ -185,19 +199,27 @@ function addLastNameSelector(data, siteData, listElement, parameters) {
   }
 
   let gd = data.generalizedData;
-  let lastNamesArray = gd.inferPersonLastNamesArray(gd);
-  if (lastNamesArray.length > 1) {
-    addBreakIfNeeded(listElement);
 
-    addSelector(
-      listElement,
-      "lastNameSelector",
-      "Multiple last names, select which to use: ",
-      fillLastNameSelector,
-      function (event) {
-        parameters.lastNameIndex = event.target.value;
-      }
-    );
+  let includeLastNameSelector = true; // default to showing unless siteData overrides
+  if (typeof siteData.includeLastNameSelector === "function") {
+    includeLastNameSelector = siteData.includeLastNameSelector(gd, parameters);
+  }
+
+  if (includeLastNameSelector) {
+    let lastNamesArray = gd.inferPersonLastNamesArray(gd);
+    if (lastNamesArray.length > 1) {
+      addBreakIfNeeded(listElement);
+
+      addSelector(
+        listElement,
+        "lastNameSelector",
+        "Multiple last names, select which to use: ",
+        fillLastNameSelector,
+        function (event) {
+          parameters.lastNameIndex = event.target.value;
+        }
+      );
+    }
   }
 }
 
@@ -234,21 +256,33 @@ function addSpouseSelector(data, siteData, listElement, parameters) {
   }
 
   let gd = data.generalizedData;
-  if (siteData.includeSpouses(gd, parameters)) {
-    if (gd.spouses && gd.spouses.length > 0) {
-      addBreakIfNeeded(listElement);
-      addSelector(listElement, "spouseSelector", "Spouse/marriage to include: ", fillSpouseSelector, function (event) {
-        parameters.spouseIndex = event.target.value;
-        if (typeof siteData.updateParametersOnSpouseChange === "function") {
-          siteData.updateParametersOnSpouseChange(gd, parameters, options);
-        }
-        setupParametersElements(data, siteData, listElement, parameters);
-      });
+  if (typeof siteData.includeSpouses === "function") {
+    if (siteData.includeSpouses(gd, parameters)) {
+      if (gd.spouses && gd.spouses.length > 0) {
+        addBreakIfNeeded(listElement);
+        addSelector(
+          listElement,
+          "spouseSelector",
+          "Spouse/marriage to include: ",
+          fillSpouseSelector,
+          function (event) {
+            parameters.spouseIndex = event.target.value;
+            if (typeof siteData.updateParametersOnSpouseChange === "function") {
+              siteData.updateParametersOnSpouseChange(gd, parameters, options);
+            }
+            setupParametersElements(data, siteData, listElement, parameters);
+          }
+        );
+      }
     }
   }
 }
 
 function addParentCheckboxes(data, siteData, listElement, parameters) {
+  if (typeof siteData.includeParents !== "function") {
+    return;
+  }
+
   let gd = data.generalizedData;
   if (siteData.includeParents(gd, parameters)) {
     if (gd.parents && (gd.parents.father || gd.parents.mother)) {
@@ -371,7 +405,7 @@ function addOtherPersonSelector(data, siteData, listElement, parameters) {
   }
 }
 
-function addControlSelector(listElement, control, parameters) {
+function addControlSelector(data, siteData, listElement, control, parameters) {
   function fillSelector(selector, control) {
     while (selector.firstChild) {
       selector.removeChild(selector.firstChild);
@@ -394,7 +428,7 @@ function addControlSelector(listElement, control, parameters) {
     parameters[control.parameterName] = event.target.value;
 
     if (typeof control.updateOnChangeFunction === "function") {
-      control.updateOnChangeFunction(gd, parameters, options);
+      control.updateOnChangeFunction(control.parameterName, parameters, options);
       setupParametersElements(data, siteData, listElement, parameters);
     }
   });
@@ -406,9 +440,75 @@ function addControlSelector(listElement, control, parameters) {
   label.appendChild(document.createTextNode(labelText));
   addBreak(label);
   label.appendChild(selector);
-  listElement.appendChild(label);
+
+  let div = document.createElement("div");
+  div.className = "dialogDiv";
+  div.appendChild(label);
+  listElement.appendChild(div);
 
   return selector;
+}
+
+function addControlCheckbox(data, siteData, listElement, control, parameters) {
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.id = control.elementId;
+  checkbox.className = "dialogCheckbox";
+  checkbox.addEventListener("change", function (event) {
+    parameters[control.parameterName] = event.target.checked;
+
+    if (typeof control.updateOnChangeFunction === "function") {
+      control.updateOnChangeFunction(control.parameterName, parameters, options);
+      setupParametersElements(data, siteData, listElement, parameters);
+    }
+  });
+  checkbox.checked = parameters[control.parameterName];
+
+  let label = document.createElement("label");
+  label.className = "dialogInput";
+  label.appendChild(checkbox);
+  let labelText = control.label;
+  label.appendChild(document.createTextNode(labelText));
+
+  let div = document.createElement("div");
+  div.className = "dialogDivCheckbox";
+  div.appendChild(label);
+  listElement.appendChild(div);
+
+  return checkbox;
+}
+
+function addControlReadOnlyText(data, siteData, listElement, control, parameters) {
+  let label = document.createElement("label");
+  label.className = "dialogInput";
+  let labelText = control.label;
+  label.appendChild(document.createTextNode(labelText));
+
+  let contentLabel = document.createElement("label");
+  contentLabel.className = "dialogReadOnlyText";
+  let valueText = control.value;
+  contentLabel.appendChild(document.createTextNode(valueText));
+
+  let div = document.createElement("div");
+  div.className = "dialogDiv";
+  div.appendChild(label);
+  div.appendChild(contentLabel);
+  listElement.appendChild(div);
+
+  return label;
+}
+
+function addControlHeading(data, siteData, listElement, control, parameters) {
+  let heading = document.createElement("label");
+  heading.innerText = control.label;
+  heading.className = "dialogHeading";
+
+  let div = document.createElement("div");
+  div.className = "dialogDivHeading";
+  div.appendChild(heading);
+  listElement.appendChild(div);
+
+  return heading;
 }
 
 function addAdditionalControls(data, siteData, listElement, parameters) {
@@ -423,7 +523,13 @@ function addAdditionalControls(data, siteData, listElement, parameters) {
     addBreakIfNeeded(listElement);
 
     if (control.type == "select") {
-      addControlSelector(listElement, control, parameters);
+      addControlSelector(data, siteData, listElement, control, parameters);
+    } else if (control.type == "checkbox") {
+      addControlCheckbox(data, siteData, listElement, control, parameters);
+    } else if (control.type == "readOnlyText") {
+      addControlReadOnlyText(data, siteData, listElement, control, parameters);
+    } else if (control.type == "heading") {
+      addControlHeading(data, siteData, listElement, control, parameters);
     }
   }
 }
@@ -487,6 +593,8 @@ function setupSearchWithParametersSubMenu(data, backFunction, siteData, searchFu
   if (siteData) {
     siteData.setDefaultSearchParameters(data.generalizedData, parameters, options);
 
+    // we create a new nested list so that we can delete all the elements in the
+    // dialog and recreate them easily
     let parametersDiv = document.createElement("div");
     let listElement = document.createElement("ul");
     listElement.className = "list";
@@ -498,16 +606,16 @@ function setupSearchWithParametersSubMenu(data, backFunction, siteData, searchFu
   }
 
   // final button
-  addBreak(menu.list);
-  addBreak(menu.list);
-
   let button = document.createElement("button");
   button.className = "dialogButton";
   button.innerText = "Do Search";
   button.onclick = function (element) {
     searchFunction(data.generalizedData, parameters);
   };
-  menu.list.appendChild(button);
+  let buttonDiv = document.createElement("div");
+  buttonDiv.className = "dialogButtonDiv";
+  buttonDiv.appendChild(button);
+  menu.list.appendChild(buttonDiv);
 
   endMainMenu(menu);
 }

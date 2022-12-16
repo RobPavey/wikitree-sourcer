@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { RC } from "../../../base/core/record_collections.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { ScotpRecordType } from "./scotp_record_type.mjs";
