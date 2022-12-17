@@ -64,7 +64,12 @@ function countryHasGroCoverage(data) {
 
   if (countryArray.length > 0) {
     for (let country of countryArray) {
-      if (country == "England" || country == "Wales" || CD.isPartOf(country, "England and Wales")) {
+      if (
+        country == "England" ||
+        country == "Wales" ||
+        country == "England and Wales" ||
+        CD.isPartOf(country, "England and Wales")
+      ) {
         return true;
       }
       if (country == "United Kingdom") {
