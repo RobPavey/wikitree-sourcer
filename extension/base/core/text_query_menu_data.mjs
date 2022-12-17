@@ -22,9 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { RT } from "../../../base/core/record_type.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
-import { buildQueryString, getDefaultSearchParameters } from "./ppnz_build_search_url.mjs";
+import { buildQueryString, setDefaultTextQueryParameters } from "./text_query.mjs";
 
 const proximityValues = [
   { value: "exact", text: "Exact phrase" },
@@ -179,7 +177,7 @@ function addNameCheckboxes(gd, parameters, options, controls) {
   }
 }
 
-const PpnzData = {
+const TextSearchMenuData = {
   includeLastNameSelector: function (generalizedData, parameters) {
     return false;
   },
@@ -212,9 +210,8 @@ const PpnzData = {
   },
 
   setDefaultSearchParameters: function (generalizedData, parameters, options) {
-    let defaultParameters = getDefaultSearchParameters(generalizedData, options);
-    Object.assign(parameters, defaultParameters);
+    setDefaultTextQueryParameters(parameters, generalizedData, options);
   },
 };
 
-export { PpnzData };
+export { TextSearchMenuData };

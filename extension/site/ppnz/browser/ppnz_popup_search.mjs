@@ -125,8 +125,8 @@ function addPpnzDefaultSearchMenuItem(menu, data, backFunction, filter) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupPpnzSearchSubMenu(data, backFunction) {
-  let dataModule = await import(`../core/ppnz_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.PpnzData, ppnzSearchWithParameters);
+  let dataModule = await import(`../../../base/core/text_query_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.TextSearchMenuData, ppnzSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
