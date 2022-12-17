@@ -28,12 +28,12 @@ import { buildQueryString, getDefaultSearchParameters } from "./ppnz_build_searc
 
 const proximityValues = [
   { value: "exact", text: "Exact phrase" },
-  { value: "0", text: "Words in any order" },
-  { value: "1", text: "Words in any order with 1 extra word between them" },
-  { value: "2", text: "Words in any order with 2 extra word between them" },
-  { value: "3", text: "Words in any order with 3 extra word between them" },
-  { value: "5", text: "Words in any order with 5 extra word between them" },
-  { value: "10", text: "Words in any order with 10 extra word between them" },
+  { value: "1", text: "Proximity 1" },
+  { value: "2", text: "Proximity 2" },
+  { value: "3", text: "Proximity 3" },
+  { value: "5", text: "Proximity 5" },
+  { value: "10", text: "Proximity 10" },
+  { value: "20", text: "Proximity 20" },
 ];
 
 function buildSelectValuesForQueryType() {
@@ -46,7 +46,7 @@ function buildSelectValuesForQueryType() {
   return values;
 }
 
-function addNameCheckboxes(gd, parameters, options, controls, namePart) {
+function addNameCheckboxes(gd, parameters, options, controls) {
   function addCheckbox(parameterName, text, value) {
     if (value) {
       let checkboxControl = {};
@@ -79,6 +79,22 @@ function addNameCheckboxes(gd, parameters, options, controls, namePart) {
     }
   }
 
+  function getInitials(names) {
+    if (!names) {
+      return "";
+    }
+
+    let words = names.split(" ");
+    let initials = "";
+    for (let word of words) {
+      if (initials) {
+        initials += " ";
+      }
+      initials += word[0];
+    }
+    return initials;
+  }
+
   let lnab = gd.inferLastNameAtBirth();
   let cln = gd.inferLastNameAtDeath();
   let givenNames = gd.inferForenames();
@@ -96,24 +112,79 @@ function addNameCheckboxes(gd, parameters, options, controls, namePart) {
     otherLastNames = gd.name.otherLastNames;
   }
 
-  if (namePart == "forenames") {
-    addCheckbox("includeFirstName", "Include first name", firstName);
-    addCheckbox("includeGivenNames", "Include given names", givenNames);
-    addCheckbox("includePrefName", "Include preferred name", prefNames);
-    addCheckboxesPerWord("includeNickname", "Include nickname", nicknames);
-  } else if (namePart == "lastNames") {
-    addCheckbox("includeLnab", "Include last name at birth", lnab);
-    if (cln && lnab != cln) {
-      addCheckbox("includeCln", "Include current last name", cln);
-    }
-    addCheckboxesPerWord("includeOtherLastName", "Include other last name", otherLastNames);
+  let firstNameInitial = getInitials(firstName);
+  let givenNameInitials = getInitials(givenNames);
+  let prefNameInitials = getInitials(prefNames);
 
-    if (parameters.proximity == "exact") {
-      addCheckbox("includeLnabAtStart", "Include LNAB at start of phrase", lnab);
-      if (cln && lnab != cln) {
-        addCheckbox("includeClnAtStart", "Include CLN at start of phrase", cln);
+  let forenamesHeading = {};
+  forenamesHeading.type = "heading";
+  forenamesHeading.label = "Forename variants:";
+  controls.push(forenamesHeading);
+
+  addCheckbox("includeFirstName", "Include first name", firstName);
+  if (givenNames != firstName) {
+    addCheckbox("includeGivenNames", "Include given names", givenNames);
+  }
+  if (prefNames != firstName && prefNames != givenNames) {
+    addCheckbox("includePrefName", "Include preferred name", prefNames);
+  }
+  addCheckboxesPerWord("includeNickname", "Include nickname", nicknames);
+  addCheckbox("includeFirstNameInitial", "Include first name initial", firstNameInitial);
+  if (givenNameInitials != firstNameInitial) {
+    addCheckbox("includeGivenNameInitials", "Include given name initials", givenNameInitials);
+  }
+  if (prefNameInitials != firstNameInitial && prefNames != givenNameInitials) {
+    addCheckbox("includePrefNameInitials", "Include preferred name initials", prefNameInitials);
+  }
+
+  let lastNamesHeading = {};
+  lastNamesHeading.type = "heading";
+  lastNamesHeading.label = "Last name variants:";
+  controls.push(lastNamesHeading);
+
+  addCheckbox("includeLnab", "Include last name at birth", lnab);
+  if (cln && lnab != cln) {
+    addCheckbox("includeCln", "Include current last name", cln);
+  }
+  addCheckboxesPerWord("includeOtherLastName", "Include other last name", otherLastNames);
+
+  if (parameters.proximity == "exact") {
+    addCheckbox("includeLnabAtStart", "Include LNAB at start of phrase", lnab);
+    if (cln && lnab != cln) {
+      addCheckbox("includeClnAtStart", "Include CLN at start of phrase", cln);
+    }
+    addCheckboxesPerWord("includeOtherLastNameAtStart", "Include OLN at start of phrase", otherLastNames);
+  }
+
+  // spouse names
+  if (gd.spouses && gd.spouses.length > 0) {
+    let suffix = 1;
+    for (let spouse of gd.spouses) {
+      if (spouse.name) {
+        let spouseNamesHeading = {};
+        spouseNamesHeading.type = "heading";
+        if (gd.spouses.length > 1) {
+          spouseNamesHeading.label = "Spouse (" + suffix + "):";
+        } else {
+          spouseNamesHeading.label = "Spouse:";
+        }
+        controls.push(spouseNamesHeading);
+
+        let lnab = spouse.lastNameAtBirth;
+        if (!lnab) {
+          lnab = spouse.name.inferLastName();
+        }
+        let givenNames = spouse.name.inferForenames();
+        let firstName = spouse.name.inferFirstName();
+
+        addCheckbox("includeFirstNameSpouse" + suffix, "Include first name", firstName);
+        if (firstName != givenNames) {
+          addCheckbox("includeGivenNamesSpouse" + suffix, "Include given names", givenNames);
+        }
+
+        addCheckbox("includeLnabSpouse" + suffix, "Include last name at birth", lnab);
       }
-      addCheckboxesPerWord("includeOtherLastNameAtStart", "Include OLN at start of phrase", otherLastNames);
+      suffix++;
     }
   }
 }
@@ -126,17 +197,6 @@ const PpnzData = {
   getAdditionalControls(generalizedData, parameters, options) {
     let controls = [];
 
-    let queryTypeControl = {};
-    queryTypeControl.elementId = "queryType";
-    queryTypeControl.parameterName = "queryType";
-    queryTypeControl.type = "select";
-    queryTypeControl.label = "Type of query to use in search";
-    queryTypeControl.values = buildSelectValuesForQueryType();
-    queryTypeControl.updateOnChangeFunction = function (parameterName, parameters, options) {
-      // do nothing - just need this function so that menu get rebuilt on change
-    };
-    controls.push(queryTypeControl);
-
     let proximityControl = {};
     proximityControl.elementId = "proximity";
     proximityControl.parameterName = "proximity";
@@ -148,19 +208,7 @@ const PpnzData = {
     };
     controls.push(proximityControl);
 
-    let forenamesHeading = {};
-    forenamesHeading.type = "heading";
-    forenamesHeading.label = "Forename variants:";
-    controls.push(forenamesHeading);
-
-    addNameCheckboxes(generalizedData, parameters, options, controls, "forenames");
-
-    let lastNamesHeading = {};
-    lastNamesHeading.type = "heading";
-    lastNamesHeading.label = "Last name variants:";
-    controls.push(lastNamesHeading);
-
-    addNameCheckboxes(generalizedData, parameters, options, controls, "lastNames");
+    addNameCheckboxes(generalizedData, parameters, options, controls);
 
     let queryDisplayControl = {};
     queryDisplayControl.elementId = "queryDisplay";

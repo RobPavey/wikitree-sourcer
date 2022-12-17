@@ -178,7 +178,7 @@ li.dividerBelow {
 }
 .dialogReadOnlyText {
   display: inline-block;
-  padding: 0px;
+  padding: 2px;
   margin-left: 10px;
   border: 1px solid black;
   min-width: 10px;

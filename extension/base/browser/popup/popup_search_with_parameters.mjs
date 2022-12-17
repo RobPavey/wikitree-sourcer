@@ -43,13 +43,6 @@ function getSubcategoriesLabelText(siteData, gd, parameters) {
   return labelText;
 }
 
-function addBreakIfNeeded(listElement) {
-  if (listElement.childElementCount > 0) {
-    //addBreak(listElement);
-    //addBreak(listElement);
-  }
-}
-
 function addSelector(listElement, id, labelText, fillFunction, changeFunction) {
   let selector = document.createElement("select");
   selector.id = id;
@@ -129,7 +122,6 @@ function addSubcategorySelector(data, siteData, listElement, parameters) {
   if (typeof siteData.includeSubcategories === "function") {
     if (siteData.includeSubcategories(gd, parameters)) {
       let labelText = getSubcategoriesLabelText(siteData, gd, parameters);
-      addBreakIfNeeded(listElement);
       let subcategorySelector = addSelector(
         listElement,
         "subcategorySelector",
@@ -165,7 +157,6 @@ function addCollectionSelector(data, siteData, listElement, parameters) {
 
   if (typeof siteData.includeCollections === "function") {
     if (siteData.includeCollections(gd, parameters)) {
-      addBreakIfNeeded(listElement);
       let collectionSelector = addSelector(
         listElement,
         "collectionSelector",
@@ -208,8 +199,6 @@ function addLastNameSelector(data, siteData, listElement, parameters) {
   if (includeLastNameSelector) {
     let lastNamesArray = gd.inferPersonLastNamesArray(gd);
     if (lastNamesArray.length > 1) {
-      addBreakIfNeeded(listElement);
-
       addSelector(
         listElement,
         "lastNameSelector",
@@ -259,7 +248,6 @@ function addSpouseSelector(data, siteData, listElement, parameters) {
   if (typeof siteData.includeSpouses === "function") {
     if (siteData.includeSpouses(gd, parameters)) {
       if (gd.spouses && gd.spouses.length > 0) {
-        addBreakIfNeeded(listElement);
         addSelector(
           listElement,
           "spouseSelector",
@@ -286,7 +274,6 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
   let gd = data.generalizedData;
   if (siteData.includeParents(gd, parameters)) {
     if (gd.parents && (gd.parents.father || gd.parents.mother)) {
-      addBreakIfNeeded(listElement);
       let heading = document.createElement("label");
       heading.innerText = "Parents to include:";
       //heading.appendChild(document.createTextNode("Parents to include:"));
@@ -346,8 +333,6 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
     }
   } else if (siteData.includeMmn && siteData.includeMmn(gd, parameters)) {
     if (gd.parents && (gd.parents.father || gd.parents.mother)) {
-      addBreakIfNeeded(listElement);
-
       if (gd.mothersMaidenName) {
         let mmn = gd.mothersMaidenName;
         parameters.mmn = true;
@@ -391,7 +376,6 @@ function addOtherPersonSelector(data, siteData, listElement, parameters) {
 
   let gd = data.generalizedData;
   if (typeof siteData.includeOtherPerson === "function" && siteData.includeOtherPerson(gd, parameters)) {
-    addBreakIfNeeded(listElement);
     let otherPersonSelector = addSelector(
       listElement,
       "collectionSelector",
@@ -520,8 +504,6 @@ function addAdditionalControls(data, siteData, listElement, parameters) {
   let controls = siteData.getAdditionalControls(gd, parameters, options);
 
   for (let control of controls) {
-    addBreakIfNeeded(listElement);
-
     if (control.type == "select") {
       addControlSelector(data, siteData, listElement, control, parameters);
     } else if (control.type == "checkbox") {
@@ -543,8 +525,6 @@ function addWarningMessages(data, siteData, listElement, parameters) {
   let messages = siteData.getWarningMessages(gd, parameters, options);
 
   for (let message of messages) {
-    addBreakIfNeeded(listElement);
-
     let label = document.createElement("label");
     label.className = "searchWarningMessage";
     let labelText = message;
