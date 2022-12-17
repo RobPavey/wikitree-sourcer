@@ -68,7 +68,7 @@ const citationOptionsGroup = {
       optionName: "includeSearchQuery",
       type: "checkbox",
       label: "Include search query in Trove URL",
-      defaultValue: true,
+      defaultValue: false,
     },
   ],
 };

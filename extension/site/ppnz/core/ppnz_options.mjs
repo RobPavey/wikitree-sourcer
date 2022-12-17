@@ -62,7 +62,7 @@ const citationOptionsGroup = {
       optionName: "includeSearchQuery",
       type: "checkbox",
       label: "Include search query in PapersPast URL",
-      defaultValue: true,
+      defaultValue: false,
     },
   ],
 };
