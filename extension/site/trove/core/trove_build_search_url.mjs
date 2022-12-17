@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { TroveUriBuilder } from "./trove_uri_builder.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
+import { buildQueryString, setDefaultTextQueryParameters } from "../../../base/core/text_query.mjs";
 
 const minTroveYear = 1803;
 const maxTroveYear = 2100;
@@ -159,6 +160,12 @@ function buildSearchUrl(buildUrlInput) {
 
   const data = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
+  let parameters = buildUrlInput.searchParameters;
+
+  if (!parameters) {
+    parameters = {};
+    setDefaultTextQueryParameters(parameters, data, options);
+  }
 
   var builder = new TroveUriBuilder();
 
@@ -187,30 +194,8 @@ function buildSearchUrl(buildUrlInput) {
     builder.addEndYear(dateRange.endYear);
   }
 
-  let keywordsAll = "";
-  let keywordsAny = "";
-
-  const lnab = data.inferLastNameAtBirth();
-  const cln = data.inferLastNameAtDeath();
-
-  if (lnab && cln && lnab != cln) {
-    keywordsAny = lnab + " " + cln;
-  } else {
-    if (lnab) {
-      keywordsAll = lnab;
-    } else if (cln) {
-      keywordsAll = cln;
-    }
-  }
-
-  let givenNames = data.inferForenames();
-  if (givenNames) {
-    keywordsAny += " " + givenNames;
-    keywordsAny = keywordsAny.trim();
-  }
-
-  builder.addKeywordsAll(keywordsAll);
-  builder.addKeywordsAny(keywordsAny);
+  let queryString = buildQueryString(data, parameters, options);
+  builder.addKeywordsAll(queryString);
 
   addPlaces(data, builder, options);
 

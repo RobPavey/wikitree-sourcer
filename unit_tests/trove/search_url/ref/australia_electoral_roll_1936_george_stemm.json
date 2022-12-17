@@ -1,5 +1,5 @@
 {
   "std": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1814&date.to=2024&keyword=Stemm&keyword.any=George%20Dougald&l-advstate=Queensland"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1814&date.to=2024&keyword=(%22George%20Stemm%22%20OR%20%22George%20Dougald%20Stemm%22)&l-advstate=Queensland"
   }
 }

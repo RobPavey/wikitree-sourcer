@@ -1,5 +1,5 @@
 {
   "std": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1852&date.to=1976&keyword=McConchie&keyword.any=Violet%20A"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1852&date.to=1976&keyword=(%22Violet%20McConchie%22%20OR%20%22Violet%20A%20McConchie%22)"
   }
 }

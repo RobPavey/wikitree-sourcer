@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItemWithSubMenu, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   doSearch,
@@ -41,12 +43,26 @@ const troveEndYear = 2100; // up to present day
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function troveSearch(generalizedData) {
-  const input = { generalizedData: generalizedData, options: options };
+async function troveSearch(input) {
   doAsyncActionWithCatch("Trove (Aus) Search", input, async function () {
     let loadedModule = await import(`../core/trove_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
+}
+
+async function troveDefaultSearch(generalizedData) {
+  const input = { generalizedData: generalizedData, options: options };
+  troveSearch(input);
+}
+
+async function troveSearchWithParameters(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  troveSearch(input);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -89,9 +105,25 @@ function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItem(menu, "Search Trove (Aus)", function (element) {
-    troveSearch(data.generalizedData);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search Trove (Aus)",
+    function (element) {
+      troveDefaultSearch(data.generalizedData, "");
+    },
+    function () {
+      setupTroveSearchSubMenu(data, backFunction);
+    }
+  );
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Submenus
+//////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupTroveSearchSubMenu(data, backFunction) {
+  let dataModule = await import(`../../../base/core/text_query_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.TextSearchMenuData, troveSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
