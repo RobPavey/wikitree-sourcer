@@ -41,7 +41,7 @@ function constrainYears(dates) {
   dates.endYear = constrainYear(dates.endYear);
 }
 
-function getDefaultSearchParameters(generalizedData, options) {
+function getDefaultSearchParameters(gd, options) {
   let parameters = {};
 
   parameters.proximity = "exact";
@@ -50,8 +50,10 @@ function getDefaultSearchParameters(generalizedData, options) {
   parameters.includeGivenNames = true;
   parameters.includePrefName = true;
 
+  const lnab = gd.inferLastNameAtBirth();
+  const cln = gd.inferLastNameAtDeath();
   parameters.includeLnab = true;
-  parameters.includeCln = true;
+  parameters.includeCln = lnab != cln;
 
   parameters.includeLnabAtStart = false;
   parameters.includeClnAtStart = false;

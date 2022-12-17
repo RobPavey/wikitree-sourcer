@@ -36,16 +36,6 @@ const proximityValues = [
   { value: "20", text: "Proximity 20" },
 ];
 
-function buildSelectValuesForQueryType() {
-  let values = [
-    { value: "phrases", text: "Phrases" },
-    { value: "wordGroups", text: "Word Groups" },
-    { value: "words", text: "Words" },
-  ];
-
-  return values;
-}
-
 function addNameCheckboxes(gd, parameters, options, controls) {
   function addCheckbox(parameterName, text, value) {
     if (value) {
