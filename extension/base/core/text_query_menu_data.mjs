@@ -178,6 +178,8 @@ function addNameCheckboxes(gd, parameters, options, controls) {
 }
 
 const TextSearchMenuData = {
+  searchSiteName: "",
+
   includeLastNameSelector: function (generalizedData, parameters) {
     return false;
   },
@@ -203,7 +205,7 @@ const TextSearchMenuData = {
     queryDisplayControl.parameterName = "queryDisplay";
     queryDisplayControl.type = "readOnlyText";
     queryDisplayControl.label = "Query: ";
-    queryDisplayControl.value = buildQueryString(generalizedData, parameters, options);
+    queryDisplayControl.value = buildQueryString(this.searchSiteName, generalizedData, parameters, options);
     controls.push(queryDisplayControl);
 
     return controls;

@@ -38,7 +38,7 @@ function setDefaultTextQueryParameters(parameters, gd, options) {
   parameters.includeClnAtStart = false;
 }
 
-function buildQueryString(gd, parameters, options) {
+function buildQueryString(searchSiteName, gd, parameters, options) {
   let query = "";
 
   let givenNameVariants = [];
@@ -138,8 +138,14 @@ function buildQueryString(gd, parameters, options) {
       let proximityString = "";
       if (proximity != 0) {
         proximityString = "~" + proximity;
+      } else if (searchSiteName == "trove") {
+        proximityString = "~0";
       }
       stringToAdd = `"${phrase}"${proximityString}`;
+    }
+
+    if (searchSiteName == "trove") {
+      stringToAdd = "fulltext:" + stringToAdd;
     }
 
     if (!phrases.includes(stringToAdd)) {

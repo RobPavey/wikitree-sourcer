@@ -99,9 +99,11 @@ function addPlaces(data, builder, options) {
       // the country could be missing - e.g.: "Sydney, New South Wales"
       placeNameMinusCountry = placeName;
     } else {
-      if (!placesToAdd.includes("International")) {
-        placesToAdd.push("International");
-      }
+      // This rules out newspapers in Australia. Not really useful when we are searching Trove
+      // for someone who lived in Australia but was not born, married or died there.
+      //if (!placesToAdd.includes("International")) {
+      //  placesToAdd.push("International");
+      //}
     }
 
     if (placeNameMinusCountry) {
@@ -194,7 +196,7 @@ function buildSearchUrl(buildUrlInput) {
     builder.addEndYear(dateRange.endYear);
   }
 
-  let queryString = buildQueryString(data, parameters, options);
+  let queryString = buildQueryString("trove", data, parameters, options);
   builder.addKeywordsAll(queryString);
 
   addPlaces(data, builder, options);

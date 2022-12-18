@@ -1,11 +1,11 @@
 {
   "std": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1845&date.to=1969&keyword=%22Benjamin%20Barker%22&l-advstate=New%20South%20Wales"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1845&date.to=1969&keyword=fulltext%3A%22Benjamin%20Barker%22~0&l-advstate=New%20South%20Wales"
   },
   "noStates": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1845&date.to=1969&keyword=%22Benjamin%20Barker%22"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1845&date.to=1969&keyword=fulltext%3A%22Benjamin%20Barker%22~0"
   },
   "noAddRange": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1847&date.to=1967&keyword=%22Benjamin%20Barker%22&l-advstate=New%20South%20Wales"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1847&date.to=1967&keyword=fulltext%3A%22Benjamin%20Barker%22~0&l-advstate=New%20South%20Wales"
   }
 }

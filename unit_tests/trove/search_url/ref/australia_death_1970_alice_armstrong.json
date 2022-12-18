@@ -1,5 +1,5 @@
 {
   "std": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1883&date.to=1972&keyword=%22Alice%20Armstrong%22&l-advstate=Victoria"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1883&date.to=1972&keyword=fulltext%3A%22Alice%20Armstrong%22~0&l-advstate=Victoria"
   }
 }

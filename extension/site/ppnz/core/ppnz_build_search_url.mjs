@@ -71,7 +71,7 @@ function buildSearchUrl(buildUrlInput) {
   // constrain years to the range covered by Ppnz
   constrainYears(dateRange);
 
-  let queryString = buildQueryString(data, parameters, options);
+  let queryString = buildQueryString("ppnz", data, parameters, options);
   builder.addQueryString(queryString);
 
   // set the date parameters

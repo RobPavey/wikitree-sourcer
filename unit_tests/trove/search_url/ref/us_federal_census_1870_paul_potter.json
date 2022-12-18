@@ -1,5 +1,5 @@
 {
   "std": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1820&date.to=1944&keyword=%22Paul%20Potter%22&l-advstate=International"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1820&date.to=1944&keyword=fulltext%3A%22Paul%20Potter%22~0"
   }
 }

@@ -1,5 +1,5 @@
 {
   "std": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?keyword=(%22Saml%20Peck%22%20OR%20%22Saml%20Walt%20Peck%22)"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?keyword=(fulltext%3A%22Saml%20Peck%22~0%20OR%20fulltext%3A%22Saml%20Walt%20Peck%22~0)"
   }
 }

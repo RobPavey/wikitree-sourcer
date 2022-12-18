@@ -1,5 +1,5 @@
 {
   "std": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?keyword=%22Alice%20Lloyd%22&l-advstate=Victoria"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?keyword=fulltext%3A%22Alice%20Lloyd%22~0&l-advstate=Victoria"
   }
 }

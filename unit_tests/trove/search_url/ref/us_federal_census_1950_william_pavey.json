@@ -1,5 +1,5 @@
 {
   "std": {
-    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1920&date.to=2024&keyword=%22William%20Pavey%22&l-advstate=International"
+    "url": "https://trove.nla.gov.au/search/advanced/category/newspapers?date.from=1920&date.to=2024&keyword=fulltext%3A%22William%20Pavey%22~0"
   }
 }

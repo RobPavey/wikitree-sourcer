@@ -123,6 +123,7 @@ function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
 
 async function setupTroveSearchSubMenu(data, backFunction) {
   let dataModule = await import(`../../../base/core/text_query_menu_data.mjs`);
+  dataModule.TextSearchMenuData.searchSiteName = "trove";
   setupSearchWithParametersSubMenu(data, backFunction, dataModule.TextSearchMenuData, troveSearchWithParameters);
 }
 
