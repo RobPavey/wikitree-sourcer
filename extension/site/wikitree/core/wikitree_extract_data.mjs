@@ -674,6 +674,27 @@ function extractDataForEditFamily(document, result) {
   }
   result.relationshipToFamilyMember = relationship;
 
+  // check for the new "steps" form
+  let actionSectionNode = document.querySelector("#actionSection");
+  if (actionSectionNode) {
+    // this is the steps variant
+    result.editFamilyType = "steps";
+    // check which step we are on:
+    let sectionDivNodes = document.querySelectorAll("#editform > div");
+    for (let sectionDivNode of sectionDivNodes) {
+      let style = sectionDivNode.getAttribute("style");
+      if (style) {
+        let displayBlockIndex = style.search(/display\:\s*block/);
+        if (displayBlockIndex != -1) {
+          result.editFamilyTypeStep = sectionDivNode.id;
+          break;
+        }
+      }
+    }
+  } else {
+    result.editFamilyType = "oneStage";
+  }
+
   //console.log("extractDataForEditFamily");
 
   let otherPersonName = "";
@@ -831,6 +852,10 @@ function extractData(document, url) {
   // check for the Add Person/Edit Family page
   let editFamilyNode = document.querySelector("body.page-Special_EditFamily");
   if (editFamilyNode) {
+    return extractDataForEditFamily(document, result);
+  }
+  let editFamilyStepsNode = document.querySelector("body.page-Special_EditFamilySteps");
+  if (editFamilyStepsNode) {
     return extractDataForEditFamily(document, result);
   }
 
