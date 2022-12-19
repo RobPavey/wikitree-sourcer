@@ -34,6 +34,14 @@ const regressionData = [
   {
     caseName: "nztimes_1988_sowerby",
     url: "https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31?end_date=1992&items_per_page=10&query=Sowerby+Smith+Florence+Maude&snippet=true&start_date=1884",
+    optionVariants: [
+      {
+        variantName: "includeSearchQuery",
+        optionOverrides: {
+          citation_ppnz_includeSearchQuery: true,
+        },
+      },
+    ],
   },
   {
     caseName: "press_1953_pavey",
