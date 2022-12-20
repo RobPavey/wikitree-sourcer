@@ -689,6 +689,10 @@ function extractDataForEditFamily(document, result) {
           result.editFamilyTypeStep = sectionDivNode.id;
           break;
         }
+      } else {
+        // sometimes the style attribute is blank - which means visible
+        result.editFamilyTypeStep = sectionDivNode.id;
+        break;
       }
     }
   } else {
