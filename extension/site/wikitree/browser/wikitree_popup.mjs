@@ -1134,9 +1134,11 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   addMenuDivider(menu);
 
   if (extractedData.pageType == "editFamily") {
-    addMenuDivider(menu);
-    await addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction);
-    await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
+    if (extractedData.editFamilyType != "steps" || extractedData.editFamilyTypeStep == "basicDataSection") {
+      addMenuDivider(menu);
+      await addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction);
+      await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
+    }
   } else if (extractedData.pageType == "read" || extractedData.pageType == "private") {
     addMenuDivider(menu);
     await addMergeEditMenuItem(menu, data, tabId, backFunction);
