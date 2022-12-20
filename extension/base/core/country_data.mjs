@@ -25,19 +25,19 @@ SOFTWARE.
 const CountryData = [
   {
     stdName: "England",
-    matches: ["England", "England, United Kingdom"],
+    matches: ["England", "England, United Kingdom", "England, UK", "England, U.K."],
     partOf: ["United Kingdom", "England and Wales"],
     usesMiddleNames: true,
   },
   {
     stdName: "Wales",
-    matches: ["Wales", "Wales, United Kingdom"],
+    matches: ["Wales", "Wales, United Kingdom", "Wales, UK", "Wales, U.K.", "Cymru"],
     partOf: ["United Kingdom", "England and Wales"],
     usesMiddleNames: true,
   },
   {
     stdName: "Scotland",
-    matches: ["Scotland", "Scotland, United Kingdom"],
+    matches: ["Scotland", "Scotland, United Kingdom", "Scotland, UK", "Scotland, U.K.", "Alba"],
     partOf: ["United Kingdom"],
     usesMiddleNames: true,
   },
@@ -48,6 +48,10 @@ const CountryData = [
       "England & Wales",
       "England and Wales, United Kingdom",
       "England & Wales, United Kingdom",
+      "England and Wales, UK",
+      "England & Wales, UK",
+      "England and Wales, U.K.",
+      "England & Wales, U.K.",
     ],
     partOf: ["United Kingdom"],
     invalidCountryName: true, // we never want to use this as a country name in a placename or a search
@@ -58,19 +62,40 @@ const CountryData = [
     matches: [
       "Guernsey",
       "Guernsey, United Kingdom",
+      "Guernsey, UK",
+      "Guernsey, U.K.",
       "Guernsey, Channel Islands",
       "Guernsey, Channel Islands, United Kingdom",
+      "Guernsey, Channel Islands, UK",
+      "Guernsey, Channel Islands, U.K.",
+      "Bailiwick of Guernsey",
+      "the Bailiwick of Guernsey",
+      "Bailiwick of Guernsey, Channel Islands",
+      "the Bailiwick of Guernsey, Channel Islands",
     ],
     partOf: ["United Kingdom", "Channel Islands"],
   },
   {
     stdName: "Jersey",
-    matches: ["Jersey", "Jersey, United Kingdom", "Jersey, Channel Islands", "Jersey, Channel Islands, United Kingdom"],
+    matches: [
+      "Jersey",
+      "Jersey, United Kingdom",
+      "Jersey, UK",
+      "Jersey, U.K.",
+      "Jersey, Channel Islands",
+      "Jersey, Channel Islands, United Kingdom",
+      "Jersey, Channel Islands, UK",
+      "Jersey, Channel Islands, U.K.",
+      "Bailiwick of Jersey",
+      "the Bailiwick of Jersey",
+      "Bailiwick of Jersey, Channel Islands",
+      "the Bailiwick of Jersey, Channel Islands",
+    ],
     partOf: ["United Kingdom", "Channel Islands"],
   },
   {
     stdName: "Channel Islands",
-    matches: ["Channel Islands", "Channel Islands, United Kingdom"],
+    matches: ["Channel Islands", "Channel Islands, United Kingdom", "Channel Islands, UK", "Channel Islands, U.K."],
     partOf: ["United Kingdom"],
   },
 
@@ -336,15 +361,18 @@ const CD = {
   },
 
   extractCountryFromPlaceName: function (placeName) {
+    if (!placeName) {
+      return undefined;
+    }
     for (let country of CountryData) {
       for (let match of country.matches) {
         if (placeName == match) {
-          return { country: country, remainder: "" };
+          return { country: country, remainder: "", originalCountryString: placeName };
         }
         let ending = ", " + match;
         if (placeName.endsWith(ending)) {
           let remainder = placeName.substring(0, placeName.length - ending.length);
-          return { country: country, remainder: remainder };
+          return { country: country, remainder: remainder, originalCountryString: match };
         }
       }
     }

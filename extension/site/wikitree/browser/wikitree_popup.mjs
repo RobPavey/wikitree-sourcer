@@ -117,6 +117,59 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
     return WTS_Date.getStdShortFormDateString(parsedDate);
   }
 
+  function standardizePlace(placeString, dateString) {
+    let countryExtract = CD.extractCountryFromPlaceName(placeString);
+    if (!countryExtract) {
+      return placeString;
+    }
+
+    let country = countryExtract.country;
+    let remainder = countryExtract.remainder;
+    let countryString = countryExtract.originalCountryString;
+
+    if (!country) {
+      return placeString;
+    }
+
+    let newPlaceString = placeString;
+    let newCountryString = countryString;
+
+    // standardize newCountry if desired
+    if (country.stdName == "United States") {
+      let usaOption = options.addMerge_general_standardizeCountryNameForUsa;
+      if (usaOption == "none") {
+        return placeString;
+      }
+      newCountryString = usaOption;
+    } else if (options.addMerge_general_standardizeCountryNameForOther) {
+      newCountryString = country.stdName;
+      // special case of UK, may generalize this via CD if popular
+      if (country.stdName == "England" || country.stdName == "Wales" || country.stdName == "Scotland") {
+        let parsedDate = WTS_Date.parseDateString(dateString);
+        if (parsedDate.isValid && parsedDate.yearNum >= 1801) {
+          // if the input date had UK or something like it on end then add "United Kingdom"
+
+          if (
+            countryString.includes("United Kingdom") ||
+            countryString.includes("UK") ||
+            countryString.includes("U.K.")
+          ) {
+            newCountryString += ", United Kingdom";
+          }
+        }
+      }
+    }
+
+    if (newCountryString != countryString) {
+      newPlaceString = newCountryString;
+      if (remainder) {
+        newPlaceString = remainder + ", " + newCountryString;
+      }
+    }
+
+    return newPlaceString;
+  }
+
   //console.log("getWikiTreeAddMergeData, personGd is: ");
   //console.log(personGd);
 
@@ -158,6 +211,9 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   } else {
     result.firstName = personGd.inferForenames();
   }
+  if (personGd.name && personGd.name.nicknames) {
+    result.nicknames = personGd.name.nicknames;
+  }
 
   result.prefix = personGd.inferPrefix();
   result.suffix = personGd.inferSuffix();
@@ -174,8 +230,8 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   result.deathDate = standardizeDate(personGd.inferDeathDate());
   result.deathDateStatus = qualifierToStatus(personGd.inferDeathDateQualifier());
 
-  result.birthLocation = personGd.inferBirthPlace();
-  result.deathLocation = personGd.inferDeathPlace();
+  result.birthLocation = standardizePlace(personGd.inferBirthPlace(), result.birthDate);
+  result.deathLocation = standardizePlace(personGd.inferDeathPlace(), result.deathDate);
 
   if (personGd.personGender == "male") {
     result.gender = "Male";
@@ -208,7 +264,7 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
             result.marriageDate = standardizeDate(spouse.marriageDate.dateString);
           }
           if (spouse.marriagePlace) {
-            result.marriageLocation = spouse.marriagePlace.placeString;
+            result.marriageLocation = standardizePlace(spouse.marriagePlace.placeString, result.marriageDate);
           }
           break;
         }

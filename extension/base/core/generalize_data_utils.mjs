@@ -823,6 +823,41 @@ class WtsName {
     return name;
   }
 
+  moveNicknamesFromForenames() {
+    let forenames = this.forenames;
+    // if the forenames contain a name in quotes then it is a nickname
+    let forenamesArray = forenames.split(/["']/);
+    // to have matched quotes the length should > 2 and an odd number
+    if (forenamesArray.length > 2 && (forenamesArray.length | 1) == forenamesArray.length) {
+      let nicknames = "";
+      forenames = "";
+      for (let index = 0; index < forenamesArray.length; index++) {
+        let namePart = forenamesArray[index];
+        if ((index | 1) == index) {
+          // odd index - in quotes
+          if (namePart) {
+            if (nicknames) {
+              nicknames += " ";
+            }
+            nicknames += namePart.trim();
+          }
+        } else {
+          // even index - not in quotes
+          if (namePart) {
+            if (forenames) {
+              forenames += " ";
+            }
+            forenames += namePart.trim();
+          }
+        }
+      }
+      if (nicknames) {
+        this.nicknames = nicknames;
+        this.forenames = forenames;
+      }
+    }
+  }
+
   setFullName(name) {
     if (name) {
       this.name = this.cleanName(name);
@@ -838,8 +873,12 @@ class WtsName {
 
   setForeNames(name) {
     if (name) {
+      // sometimes the given names can contain "&quot;"
+      name = name.replace(/\&quot\;/g, '"');
+
       this.forenames = this.cleanName(name);
       this.forenames = this.removeTitle(this.forenames);
+      this.moveNicknamesFromForenames();
     }
   }
 

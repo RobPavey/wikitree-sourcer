@@ -1054,6 +1054,24 @@ const addMergeGeneralOptionsGroup = {
       ],
       defaultValue: "countrySpecific",
     },
+    {
+      optionName: "standardizeCountryNameForUsa",
+      type: "select",
+      label: "Standardize the country name for the United States of America to",
+      values: [
+        { value: "none", text: "Do not change" },
+        { value: "United States", text: "United States" },
+        { value: "United States of America", text: "United States of America" },
+        { value: "USA", text: "USA" },
+      ],
+      defaultValue: "United States",
+    },
+    {
+      optionName: "standardizeCountryNameForOther",
+      type: "checkbox",
+      label: "Standardize the country name for other countries (BETA)",
+      defaultValue: false,
+    },
   ],
 };
 
@@ -1068,14 +1086,12 @@ const addMergeAddPersonOptionsGroup = {
       type: "checkbox",
       label: "Fill citation in appropriate field if filling from a citation",
       defaultValue: false,
-      unitTestValue: false,
     },
     {
       optionName: "includeProfileLink",
       type: "checkbox",
       label: "Add a link/template to the source profile in sources if filling from a profile",
       defaultValue: false,
-      unitTestValue: false,
     },
     {
       optionName: "generateIntro",
@@ -1103,14 +1119,12 @@ const addMergeAddPersonOptionsGroup = {
       type: "checkbox",
       label: "Include WikiTree person links in intro if available",
       defaultValue: false,
-      unitTestValue: false,
     },
     {
       optionName: "addDiedYoung",
       type: "checkbox",
       label: "Include Died Young sticker if person died aged 15 or less and no known spouse",
       defaultValue: false,
-      unitTestValue: false,
     },
   ],
 };
@@ -1126,14 +1140,12 @@ const addMergeMergeEditOptionsGroup = {
       type: "checkbox",
       label: "Put citation text in biography if merging from a citation.",
       defaultValue: false,
-      unitTestValue: false,
     },
     {
       optionName: "includeProfileLink",
       type: "checkbox",
       label: "Add a link/template to the biography if merging from a profile",
       defaultValue: false,
-      unitTestValue: false,
     },
   ],
 };
