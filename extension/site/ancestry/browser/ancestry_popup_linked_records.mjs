@@ -274,6 +274,15 @@ async function processWithFetchedLinkData(data, processFunction) {
           cacheTag: "Siblings",
         });
       }
+    } else if (role == "Spouse") {
+      let childLink = linkData["Spouse"];
+      if (childLink) {
+        linkedRecords.push({
+          link: childLink,
+          name: "Spouse",
+          cacheTag: "Spouse",
+        });
+      }
     }
   }
 

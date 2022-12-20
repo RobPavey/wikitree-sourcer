@@ -971,6 +971,8 @@ function getBurialString(gd, options) {
   let dataString = getFullName(gd);
   if (gd.role && gd.role == Role.Parent) {
     dataString += "'s " + getPrimaryPersonChildTerm(gd) + " " + gd.primaryPerson;
+  } else if (gd.role && gd.role == Role.Spouse) {
+    dataString += "'s " + getPrimaryPersonSpouseTerm(gd) + " " + gd.primaryPerson;
   } else {
     if (gd.parents) {
       let fatherName = "";

@@ -567,6 +567,9 @@ function determineRoleGivenRecordType(extractedData, result) {
           result.role = Role.Parent;
           result.primaryPerson = extractedData.recordData["Child"];
         }
+      } else if (extractedData.recordData["Spouse"]) {
+        result.role = Role.Spouse;
+        result.primaryPerson = extractedData.recordData["Spouse"];
       }
     }
   } else if (recordType == RT.Obituary) {
@@ -2281,6 +2284,11 @@ function regeneralizeDataWithLinkedRecords(input) {
       if (link) {
         primaryLink = link;
       }
+    } else if (result.role == "Spouse") {
+      let link = data.linkData["Spouse"];
+      if (link) {
+        primaryLink = link;
+      }
     }
 
     //console.log("regeneralizeDataWithLinkedRecords, primaryLink is:");
@@ -2308,7 +2316,7 @@ function regeneralizeDataWithLinkedRecords(input) {
         //console.log(generalizedData);
 
         // even if we have an event date and place the one from the linked record should be better.
-        // For example the parent in a child birt record can have a birth place which has been
+        // For example the parent in a child birth record can have a birth place which has been
         // interpreted as the event place incorrectly e.g.:
         // https://www.ancestry.com/discoveryui-content/view/300065623:8703
         if (generalizedData.eventPlace) {

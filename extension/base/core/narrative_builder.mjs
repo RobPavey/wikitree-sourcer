@@ -1119,6 +1119,8 @@ class NarrativeBuilder {
 
     if (gd.role && gd.role == Role.Parent) {
       this.narrative += this.getPossessiveNamePlusChild();
+    } else if (gd.role && gd.role == Role.Spouse) {
+      this.narrative += this.getPossessiveNamePlusSpouse();
     } else {
       this.narrative += this.getPersonNameOrPronoun();
     }
