@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": [
     "storage",
@@ -52,9 +52,14 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.wikitree.com/*"],
+      "matches": [
+        "https://www.wikitree.com/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/wikitree/browser/wikitree_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/wikitree/browser/wikitree_content.js"
+      ]
     },
     {
       "matches": [
@@ -73,17 +78,30 @@
         "https://*.ancestrylibrary.com.au/*"
       ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/ancestry/browser/ancestry_content.js"
+      ]
     },
     {
-      "matches": ["*://*.billiongraves.com/*"],
+      "matches": [
+        "*://*.billiongraves.com/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/bg/browser/bg_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/bg/browser/bg_content.js"
+      ]
     },
     {
-      "matches": ["*://*.cwgc.org/*"],
+      "matches": [
+        "*://*.cwgc.org/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/cwgc/browser/cwgc_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/cwgc/browser/cwgc_content.js"
+      ]
     },
     {
       "matches": [
@@ -94,62 +112,120 @@
         "*://www-findmypast-co-uk.nls.idm.oclc.org/*"
       ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/fmp/browser/fmp_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/fmp/browser/fmp_content.js"
+      ]
     },
     {
-      "matches": ["*://www.findagrave.com/*"],
+      "matches": [
+        "*://www.findagrave.com/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/fg/browser/fg_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/fg/browser/fg_content.js"
+      ]
     },
     {
-      "matches": ["https://www.familysearch.org/*"],
+      "matches": [
+        "https://www.familysearch.org/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/fs/browser/fs_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/fs/browser/fs_content.js"
+      ]
     },
     {
-      "matches": ["https://www.freebmd.org.uk/*"],
+      "matches": [
+        "https://www.freebmd.org.uk/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/freebmd/browser/freebmd_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/freebmd/browser/freebmd_content.js"
+      ]
     },
     {
-      "matches": ["https://www.freecen.org.uk/*"],
+      "matches": [
+        "https://www.freecen.org.uk/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/freecen/browser/freecen_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/freecen/browser/freecen_content.js"
+      ]
     },
     {
-      "matches": ["https://www.freereg.org.uk/*"],
+      "matches": [
+        "https://www.freereg.org.uk/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/freereg/browser/freereg_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/freereg/browser/freereg_content.js"
+      ]
     },
     {
-      "matches": ["*://geneteka.genealodzy.pl/*"],
+      "matches": [
+        "*://geneteka.genealodzy.pl/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/geneteka/browser/geneteka_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/geneteka/browser/geneteka_content.js"
+      ]
     },
     {
-      "matches": ["https://www.gro.gov.uk/gro/content/certificates/*"],
+      "matches": [
+        "https://www.gro.gov.uk/gro/content/certificates/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/gro/browser/gro_content.js"
+      ]
     },
     {
-      "matches": ["*://www.newspapers.com/*"],
+      "matches": [
+        "*://www.newspapers.com/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/np/browser/np_content.js"
+      ]
     },
     {
-      "matches": ["*://paperspast.natlib.govt.nz/*"],
+      "matches": [
+        "*://paperspast.natlib.govt.nz/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/ppnz/browser/ppnz_content.js"
+      ]
     },
     {
-      "matches": ["*://www.scotlandspeople.gov.uk/*"],
+      "matches": [
+        "*://www.scotlandspeople.gov.uk/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/scotp/browser/scotp_content.js"
+      ]
     },
     {
-      "matches": ["*://trove.nla.gov.au/*"],
+      "matches": [
+        "*://trove.nla.gov.au/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/trove/browser/trove_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/trove/browser/trove_content.js"
+      ]
     }
   ],
   "options_ui": {
