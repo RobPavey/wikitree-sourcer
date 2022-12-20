@@ -98,6 +98,7 @@ function getUkbmdDistrictPageUrl(district) {
     "lewes chailey and westfirle": "lewes",
     "lewes chailey westfirle and newhaven": "lewes",
     "lewes chailey westfirle and new haven": "lewes", // transcription error?
+    "lewes chailey westfirld and newhaven": "lewes", // transcription error?
     "lewes chinley westfirle and newhaven": "lewes", // transcription error?
     llangadock: "llandovery",
     "loddon and clavering": "loddon",
