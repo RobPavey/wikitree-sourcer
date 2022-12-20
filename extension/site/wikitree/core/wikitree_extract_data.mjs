@@ -710,8 +710,6 @@ function extractDataForEditFamily(document, result) {
   }
   let heading = headingNode.textContent;
 
-  result.editFamilyType = "steps";
-
   if (relationship != "unrelated") {
     otherPersonName = "";
     if (result.editFamilyType != "steps") {
