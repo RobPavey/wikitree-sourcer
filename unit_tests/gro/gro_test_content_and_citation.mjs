@@ -57,6 +57,9 @@ const regressionData = [
     caseName: "b_frank_pollard_1908",
   },
   {
+    caseName: "b_george_wikeley_1858",
+  },
+  {
     caseName: "b_handford-3",
   },
   {

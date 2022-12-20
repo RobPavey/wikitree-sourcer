@@ -120,6 +120,7 @@ function getUkbmdDistrictPageUrl(district) {
     "newport in the counties of salop and stafford": "newport1",
     "newport mon": "newport2",
     "newtown and llanidloes": "newtown",
+    "pont y pridd": "pontypridd",
     "presteigne kington": "presteigne",
     "presteigne and kington": "presteigne",
     "rhondda cynon taf": "rhondda-cynon-taf",
@@ -395,6 +396,7 @@ function getUkbmdDistrictPageUrl(district) {
   // Note that previous code may have removed the county name on the end and preceding space
   if (districtName.indexOf("county") != -1) {
     districtName = districtName.replace(/^of /, "");
+    districtName = districtName.replace(/ in the city and in the county of.*/, "");
     districtName = districtName.replace(/ in the county of.*/, "");
     districtName = districtName.replace(/ in the city and county.*/, "");
     districtName = districtName.replace(/\s+county of.*/, "");
