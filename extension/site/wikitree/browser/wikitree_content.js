@@ -262,7 +262,8 @@ function setEditFamilyFields(personData) {
   setValue("#mDeathLocation", "deathLocation");
 
   // marriage details - only set in case of a spouse
-  setValue("#mMarrriageDate", "marriageDate");
+  setValue("#mMarrriageDate", "marriageDate"); // typo in old style page
+  setValue("#mMarriageDate", "marriageDate");
   setRadio("mMarriageStatus_marriage_date", "marriageDateStatus");
   setValue("#mMarriageLocation", "marriageLocation");
   setValue("#mMarriageEndDate", "marriageEndDate");

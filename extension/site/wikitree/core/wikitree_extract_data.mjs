@@ -705,8 +705,24 @@ function extractDataForEditFamily(document, result) {
     return result;
   }
   let heading = headingNode.textContent;
-  if (relationship != "unrelated" && heading.indexOf("Edit Family") != -1) {
-    otherPersonName = heading.replace("Edit Family of ", "").trim();
+
+  result.editFamilyType = "steps";
+
+  if (relationship != "unrelated") {
+    otherPersonName = "";
+    if (result.editFamilyType != "steps") {
+      if (heading.indexOf("Edit Family") != -1) {
+        otherPersonName = heading.replace("Edit Family of ", "").trim();
+      }
+    } else {
+      // steps page
+      let headingNameNode = headingNode.querySelector("a[title]");
+      if (!headingNameNode) {
+        return result;
+      }
+      otherPersonName = headingNameNode.textContent;
+    }
+
     result.familyMemberName = otherPersonName;
 
     let headingButtonNode = headingNode.querySelector("button.copyWidget");
@@ -739,35 +755,61 @@ function extractDataForEditFamily(document, result) {
     } else {
       let sameFatherNode = document.querySelector('#content input[name="wpSameFather"]');
       if (sameFatherNode && sameFatherNode.checked) {
-        let textNode = sameFatherNode.nextSibling;
-        if (textNode) {
-          let fatherText = textNode.textContent;
-          fatherText = fatherText.replace(/^\s*Father of new sibling is\s+/, ""); // leaing text
-          fatherText = fatherText.replace(/\($/, ""); // remove trailing "("
-          result.familyMemberFatherName = fatherText.trim();
+        if (result.editFamilyType != "steps") {
+          let textNode = sameFatherNode.nextSibling;
+          if (textNode) {
+            let fatherText = textNode.textContent;
+            fatherText = fatherText.replace(/^\s*Father of new sibling is\s+/, ""); // leading text
+            fatherText = fatherText.replace(/\($/, ""); // remove trailing "("
+            result.familyMemberFatherName = fatherText.trim();
 
-          let linkNode = textNode.nextSibling;
-          if (linkNode) {
-            let href = linkNode.getAttribute("href");
-            href = href.replace(/^\/wiki\//, "");
-            result.familyMemberFatherWikiId = href;
+            let linkNode = textNode.nextSibling;
+            if (linkNode) {
+              let href = linkNode.getAttribute("href");
+              href = href.replace(/^\/wiki\//, "");
+              result.familyMemberFatherWikiId = href;
+            }
+          }
+        } else {
+          let textNode = sameFatherNode.nextSibling;
+          if (textNode) {
+            let linkNode = textNode.nextSibling;
+            if (linkNode && linkNode.type != 3) {
+              let href = linkNode.getAttribute("href");
+              href = href.replace(/^\/wiki\//, "");
+              result.familyMemberFatherName = linkNode.textContent;
+              result.familyMemberFatherWikiId = href;
+            }
           }
         }
       }
       let sameMotherNode = document.querySelector('#content input[name="wpSameMother"]');
       if (sameMotherNode && sameMotherNode.checked) {
-        let textNode = sameMotherNode.nextSibling;
-        if (textNode) {
-          let motherText = textNode.textContent;
-          motherText = motherText.replace(/^\s*Mother of new sibling is\s+/, ""); // leaing text
-          motherText = motherText.replace(/\($/, ""); // remove trailing "("
-          result.familyMemberMotherName = motherText.trim();
+        if (result.editFamilyType != "steps") {
+          let textNode = sameMotherNode.nextSibling;
+          if (textNode) {
+            let motherText = textNode.textContent;
+            motherText = motherText.replace(/^\s*Mother of new sibling is\s+/, ""); // leaing text
+            motherText = motherText.replace(/\($/, ""); // remove trailing "("
+            result.familyMemberMotherName = motherText.trim();
 
-          let linkNode = textNode.nextSibling;
-          if (linkNode) {
-            let href = linkNode.getAttribute("href");
-            href = href.replace(/^\/wiki\//, "");
-            result.familyMemberMotherWikiId = href;
+            let linkNode = textNode.nextSibling;
+            if (linkNode) {
+              let href = linkNode.getAttribute("href");
+              href = href.replace(/^\/wiki\//, "");
+              result.familyMemberMotherWikiId = href;
+            }
+          }
+        } else {
+          let textNode = sameMotherNode.nextSibling;
+          if (textNode) {
+            let linkNode = textNode.nextSibling;
+            if (linkNode && linkNode.type != 3) {
+              let href = linkNode.getAttribute("href");
+              href = href.replace(/^\/wiki\//, "");
+              result.familyMemberMotherName = linkNode.textContent;
+              result.familyMemberMotherWikiId = href;
+            }
           }
         }
       }
