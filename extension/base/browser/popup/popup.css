@@ -265,3 +265,12 @@ li.dividerBelow {
   flex-direction: column;
   margin: 5px 5px 5px 10px;
 }
+.improveNameFieldInput {
+  margin: 0px 0px 0px 5px;
+  flex-grow: 1;
+}
+.improveNameFieldLabel {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 5px 5px 10px;
+}

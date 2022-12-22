@@ -719,24 +719,106 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
     } else if (wtPersonData.birthLocationApproved) {
       wtPersonData.birthLocationApproved = false;
       checkWtPersonData(wtPersonData, processFunction, backFunction);
+    } else if (wtPersonData.nameFieldsApproved) {
+      wtPersonData.nameFieldsApproved = false;
+      checkWtPersonData(wtPersonData, processFunction, backFunction);
     } else {
       backFunction();
     }
+  }
+
+  function nameNeedsUserCheck() {
+    if (!wtPersonData.nameFieldsApproved) {
+      let hasProblem = false;
+      let problemMessages = [];
+
+      // check for prefix in first name
+      const problemFirstNamePrefixes = [
+        "Mr",
+        "Mr.",
+        "Mrs",
+        "Mrs.",
+        "Miss",
+        "Ms",
+        "Ms.",
+        "Sir",
+        "Captain",
+        "Capt",
+        "Capt.",
+      ];
+      for (let prefix of problemFirstNamePrefixes) {
+        if (wtPersonData.firstName.startsWith(" " + prefix) || wtPersonData.firstName == prefix) {
+          hasProblem = true;
+          problemMessages.push(
+            "First name at birth starts with '" + prefix + "'. This should probably be moved to the prefix."
+          );
+          break;
+        }
+      }
+
+      // check for quotes in first name
+      if (wtPersonData.firstName.includes('"')) {
+        hasProblem = true;
+        problemMessages.push(
+          `First name at birth includes '"'. This should probably be moved to the nicknames or preferred name.`
+        );
+      }
+
+      // check for suffix in lnab
+      const problemLastNameEndings = ["Sr", "Sr.", "Jr", "Jr.", "Senior", "Junior", "III"];
+      for (let ending of problemLastNameEndings) {
+        if (wtPersonData.lnab.endsWith(" " + ending) || wtPersonData.lnab == ending) {
+          hasProblem = true;
+          problemMessages.push(
+            "Last name at birth ends with '" + ending + "'. This should probably be moved to the suffix."
+          );
+          break;
+        }
+      }
+
+      if (hasProblem || wtPersonData.nameFieldsDialogShown) {
+        let message1 = "";
+        if (hasProblem) {
+          message1 = "Possible errors in name fields. Please check and edit below if needed:";
+        }
+
+        function continueFunction() {
+          wtPersonData.nameFieldsApproved = true;
+          wtPersonData.nameFieldsDialogShown = true;
+          checkWtPersonData(wtPersonData, processFunction, backFunctionForApprove);
+        }
+
+        setupImproveNameFieldsSubMenu(
+          wtPersonData,
+          message1,
+          problemMessages,
+          continueFunction,
+          backFunctionForApprove
+        );
+        return true;
+      }
+    }
+    return false;
   }
 
   function locationNeedsUserCheck(fieldName, fieldDescription) {
     let fieldValue = wtPersonData[fieldName];
     if (fieldValue && !wtPersonData[fieldName + "Approved"]) {
       let country = CD.matchCountryFromPlaceName(fieldValue);
-      if (!country) {
+      if (!country || wtPersonData[fieldName + "DialogShown"]) {
         // location has no recognized country
-        let message1 = "Country name not recognized in " + fieldDescription;
-        message1 += ". Please check it and edit below if needed.";
+        let message1 = "";
+        if (!country) {
+          message1 = "Country name not recognized in " + fieldDescription;
+          message1 += ". Please check it and edit below if needed.";
+        }
+
         let message2 = "Edit " + fieldDescription + ":";
 
         function continueFunction(newValue) {
           wtPersonData[fieldName] = newValue;
           wtPersonData[fieldName + "Approved"] = true;
+          wtPersonData[fieldName + "DialogShown"] = true;
           checkWtPersonData(wtPersonData, processFunction, backFunctionForApprove);
         }
 
@@ -746,6 +828,10 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
       }
     }
     return false;
+  }
+
+  if (nameNeedsUserCheck()) {
+    return;
   }
 
   if (locationNeedsUserCheck("birthLocation", "birth location")) {
@@ -1056,6 +1142,82 @@ async function setupImproveTextFieldSubMenu(existingValue, message1, message2, c
       newValue = inputElement.value;
     }
     continueFunction(newValue);
+  };
+  menu.list.appendChild(button);
+
+  endMainMenu(menu);
+}
+
+async function setupImproveNameFieldsSubMenu(wtPersonData, message1, problemMessages, continueFunction, backFunction) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  let commentElement = document.createElement("label");
+  commentElement.innerText = message1;
+  commentElement.className = "improveFieldComment";
+  menu.list.appendChild(commentElement);
+
+  for (let problem of problemMessages) {
+    let problemElement = document.createElement("label");
+    problemElement.innerText = problem;
+    problemElement.className = "improveFieldComment";
+    menu.list.appendChild(problemElement);
+  }
+
+  function addField(label, fieldName) {
+    let mainElement = document.createElement("label");
+    {
+      let inputElement = document.createElement("input");
+      inputElement.type = "text";
+      inputElement.className = "improveNameFieldInput";
+      inputElement.id = fieldName + "Input";
+
+      if (wtPersonData[fieldName]) {
+        inputElement.value = wtPersonData[fieldName];
+      }
+
+      let labelTextNode = document.createTextNode(label + ":");
+      mainElement.appendChild(labelTextNode);
+      mainElement.appendChild(inputElement);
+      mainElement.className = "improveNameFieldLabel";
+      menu.list.appendChild(mainElement);
+    }
+  }
+
+  addField("Prefix", "prefix");
+  addField("First Name at Birth", "firstName");
+  addField("Preferred First Name", "prefName");
+  addField("Middle Name", "middleName");
+  addField("Nicknames", "nicknames");
+  addField("Last Name at Birth", "lnab");
+  addField("Current Last Name", "cln");
+  addField("Other Last Names", "otherLastNames");
+  addField("Suffix", "suffix");
+
+  // final button
+  addBreak(menu.list);
+
+  function setFieldFromDialog(fieldName) {
+    let inputElement = document.getElementById(fieldName + "Input");
+    if (inputElement) {
+      wtPersonData[fieldName] = inputElement.value;
+    }
+  }
+
+  let button = document.createElement("button");
+  button.className = "dialogButton";
+  button.innerText = "Continue";
+  button.onclick = function (element) {
+    setFieldFromDialog("prefix");
+    setFieldFromDialog("firstName");
+    setFieldFromDialog("prefName");
+    setFieldFromDialog("nicknames");
+    setFieldFromDialog("lnab");
+    setFieldFromDialog("cln");
+    setFieldFromDialog("otherLastNames");
+    setFieldFromDialog("suffix");
+    continueFunction();
   };
   menu.list.appendChild(button);
 
