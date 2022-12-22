@@ -182,9 +182,15 @@ async function setupSimplePopupMenu(input) {
       true
     );
   }
-  let generalizedData = input.generalizeDataFunction({
-    extractedData: extractedData,
-  });
+  let generalizedData = undefined;
+
+  try {
+    generalizedData = input.generalizeDataFunction({
+      extractedData: extractedData,
+    });
+  } catch (err) {
+    openExceptionPage("Error during creating popup menu for content.", "generalizeData failed", err, true);
+  }
 
   //console.log("setupSimplePopupMenu, generalizedData is:");
   //console.log(generalizedData);

@@ -180,15 +180,15 @@ function standardizeName(string) {
     }
 
     // check for Mac or word
-    if (word.startsWith("Mac") && word[3] != " ") {
+    if (word.startsWith("Mac") && word.length > 3 && word[3] != " ") {
       if (shouldUpperCaseAfterMac(word)) {
         upperCaseLetterAtIndex(index + 3);
       }
-    } else if (word.startsWith("Mc") && word[2] != " ") {
+    } else if (word.startsWith("Mc") && word.length > 2 && word[2] != " ") {
       if (shouldUpperCaseAfterMc(word)) {
         upperCaseLetterAtIndex(index + 2);
       }
-    } else if (word.startsWith("O'") && word[2] != " ") {
+    } else if (word.startsWith("O'") && word.length > 2 && word[2] != " ") {
       if (shouldUpperCaseAfterO(word)) {
         upperCaseLetterAtIndex(index + 2);
       }

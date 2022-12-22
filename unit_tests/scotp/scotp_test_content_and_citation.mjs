@@ -322,6 +322,11 @@ const regressionData = [
     caseName: "stat_birth_1886_louisa_black",
     url: "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   },
+  {
+    // Forenames are abbreviated and end with "MC"
+    caseName: "stat_birth_1941_maureen_houston",
+    url: "https://www.scotlandspeople.gov.uk/record-results/52678608963a4c785526e3?check_logged_in=1",
+  },
   // ============ Statutory registers - Civil Dissolutions (stat_dissolutions) ==============
   {
     // https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-dissolutions&surname=Taylor&surname_so=exact&forename_so=starts&psurname_so=exact&from_year=2007&to_year=2015&record_type=dissolutions
