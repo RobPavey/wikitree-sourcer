@@ -341,7 +341,43 @@ const quarterNames = [
   },
 ];
 
+function cleanDate(dateString) {
+  if (!dateString) {
+    return dateString;
+  }
+
+  // sometimes the dates are surrounded by < >
+  let cleanDate = dateString.replace(/^\s*\<([^>]*)\>\s*$/, "$1");
+  if (cleanDate) {
+    dateString = cleanDate.trim();
+  }
+  return dateString;
+}
+
+function cleanPlace(placeString) {
+  if (!placeString) {
+    return placeString;
+  }
+
+  // sometimes the places are surrounded by < >
+  let cleanPlace = placeString.replace(/^\s*\<([^>]*)\>\s*$/, "$1");
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
+
+  // sometimes the place starts with "of "
+  cleanPlace = placeString.replace(/^\s*of */i, "");
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
+
+  return placeString;
+}
+
 function selectDate(dateString, originalDateString) {
+  dateString = cleanDate(dateString);
+  originalDateString = cleanDate(originalDateString);
+
   if (!dateString) {
     return originalDateString;
   }
@@ -382,6 +418,9 @@ function selectDate(dateString, originalDateString) {
 }
 
 function selectPlace(placeString, originalPlaceString) {
+  placeString = cleanPlace(placeString);
+  originalPlaceString = cleanPlace(originalPlaceString);
+
   // sometimes there is no place but there is an original place
   if (!placeString) {
     return originalPlaceString;
