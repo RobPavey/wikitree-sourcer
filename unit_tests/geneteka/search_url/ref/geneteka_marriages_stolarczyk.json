@@ -1,11 +1,11 @@
 {
   "std": {
-    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=B&rid=B&w=02kp&search_lastname=Wi%C4%99ch&search_name=Jan&from_date=1802&to_date=2023"
+    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=B&rid=B&w=02kp&search_lastname=Wi%C4%99ch&search_name=Jan&from_date=1802&to_date=2024"
   },
   "deaths": {
-    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=D&rid=D&w=02kp&search_lastname=Wi%C4%99ch&search_name=Jan&from_date=1802&to_date=2023"
+    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=D&rid=D&w=02kp&search_lastname=Wi%C4%99ch&search_name=Jan&from_date=1802&to_date=2024"
   },
   "marriages": {
-    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=S&rid=S&w=02kp&search_lastname=Wi%C4%99ch&search_name=Jan&from_date=1802&to_date=2023"
+    "url": "https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng&bdm=S&rid=S&w=02kp&search_lastname=Wi%C4%99ch&search_name=Jan&from_date=1802&to_date=2024"
   }
 }
