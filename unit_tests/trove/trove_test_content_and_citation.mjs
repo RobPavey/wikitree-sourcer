@@ -35,6 +35,10 @@ const regressionData = [
     caseName: "cairns_post_1940_jeanes_pavey",
     url: "https://trove.nla.gov.au/newspaper/article/42260088?searchTerm=pavey",
   },
+  {
+    caseName: "nsw_gov_gazette_1918_stephen_curnoe",
+    url: "https://trove.nla.gov.au/newspaper/article/226920534?searchTerm=(fulltext%3A%22Stephen%20Curnoe%22~0%20OR%20fulltext%3A%22Stephen%20Henry%20John%20Curnoe%22~0)",
+  },
 ];
 
 const optionVariants = [

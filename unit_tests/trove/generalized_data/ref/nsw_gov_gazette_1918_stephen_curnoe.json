@@ -1,0 +1,12 @@
+{
+  "sourceOfData": "trove",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "28 Mar 1918"
+  },
+  "eventPlace": {
+    "placeString": "Sydney, New South Wales, Australia"
+  },
+  "hasValidData": true
+}

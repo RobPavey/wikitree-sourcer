@@ -29,6 +29,8 @@ function issueToDate(issue) {
   // issue can be of form:
   // "Tue 6 Aug 1940"
   // This seems fairly standard across different titles (publications)
+  // However sometimes it is like:
+  // "Thu 28 Mar 1918\n                [Issue No.38]"
 
   let dateString = issue;
 
@@ -38,6 +40,12 @@ function issueToDate(issue) {
       dateString = dateString.substring(day.length).trim();
       break;
     }
+  }
+
+  // if string contains \n then remove it and everything after it
+  const newlineIndex = dateString.indexOf("\n");
+  if (newlineIndex != -1) {
+    dateString = dateString.substring(0, newlineIndex);
   }
 
   return dateString;

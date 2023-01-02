@@ -50,7 +50,10 @@ function buildCoreCitation(data, runDate, builder) {
   let recordLink = "[" + troveUrl + " Trove Article]";
   builder.recordLinkOrTemplate = recordLink;
 
-  builder.sourceReference = data.title + ", " + data.issue + ", " + data.page + " : " + data.article;
+  // issue can contain extra white space including newlines
+  const issue = data.issue.replace(/\s+/g, " ");
+
+  builder.sourceReference = data.title + ", " + issue + ", " + data.page + " : " + data.article;
 }
 
 function buildCitation(input) {
