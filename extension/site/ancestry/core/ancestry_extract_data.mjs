@@ -1186,6 +1186,13 @@ function handlePersonSourceCitation(document, result) {
   //console.log("handleFactEdit, recordUrl is: " + result.recordUrl);
 }
 
+function parseHtmlEscapeCodes(str) {
+  return str.replace(/&#([0-9]{1,3});/gi, function (match, numStr) {
+    var num = parseInt(numStr, 10); // read num as normal number
+    return String.fromCharCode(num);
+  });
+}
+
 // Extracting the HTML elements is working but I am unable to get the given name
 // and last name separately that way. There may be a way via a fetch.
 // This request:
@@ -1209,10 +1216,10 @@ function handlePersonFacts(document, result) {
           let givenName = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$1");
           let surname = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$2");
           if (givenName && givenName != fullNameText) {
-            result.givenName = givenName;
+            result.givenName = parseHtmlEscapeCodes(givenName);
           }
           if (surname && surname != fullNameText) {
-            result.surname = surname;
+            result.surname = parseHtmlEscapeCodes(surname);
           }
         }
       }
