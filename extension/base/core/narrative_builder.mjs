@@ -2088,6 +2088,38 @@ class NarrativeBuilder {
     }
   }
 
+  buildNewspaperString() {
+    this.optionsSubcategory = "newspaper";
+
+    let gd = this.eventGd;
+
+    let dateObj = gd.inferEventDateObj();
+    let place = gd.inferFullEventPlace();
+
+    this.narrative += this.getPersonNameOrPronoun(false, true);
+
+    this.narrative += " was mentioned in ";
+
+    if (gd.newspaperName) {
+      this.narrative += "the " + gd.newspaperName;
+    } else {
+      this.narrative += "a newspaper article";
+    }
+
+    if (dateObj) {
+      let formattedDate = this.formatDateObj(dateObj, true);
+      if (formattedDate) {
+        this.narrative += " " + formattedDate;
+      }
+    }
+
+    if (place) {
+      this.narrative += " " + this.getPlaceWithPreposition(place);
+    }
+
+    this.narrative += ".";
+  }
+
   buildDefaultString() {
     const narratives = [
       {
@@ -2119,7 +2151,6 @@ class NarrativeBuilder {
       { recordType: RT.Emigration, string: "emigrated" },
       { recordType: RT.Pension, string: "was in a pension record" },
       { recordType: RT.PassportApplication, string: "applied for a passport" },
-      { recordType: RT.Newspaper, string: "was mentioned in a newspaper article" },
       { recordType: RT.LegalRecord, string: "was in a legal record" },
       { recordType: RT.RateBook, string: "was in a rate book" },
       {
@@ -2250,6 +2281,10 @@ class NarrativeBuilder {
       }
       case RT.PassengerList: {
         this.buildPassengerListString();
+        break;
+      }
+      case RT.Newspaper: {
+        this.buildNewspaperString();
         break;
       }
     }

@@ -51,7 +51,7 @@ function issueToDate(issue) {
   return dateString;
 }
 
-function titleToPlace(title) {
+function titleToPlaceAndPaperName(title) {
   // title can be of form:
   // "Camberwell and Hawthorn Advertiser (Vic. : 1914 - 1918)"
   // "Cairns Post (Qld. : 1909 - 1954)"
@@ -59,6 +59,7 @@ function titleToPlace(title) {
   // "Chinese Republic News (Sydney, NSW : 1914 - 1937)"
 
   let placeString = "";
+  let paperNameString = "";
 
   let parenIndex = title.indexOf("(");
   if (parenIndex != -1) {
@@ -66,6 +67,7 @@ function titleToPlace(title) {
     if (colonIndex != -1) {
       placeString = title.substring(parenIndex + 1, colonIndex).trim();
     }
+    paperNameString = title.substring(0, parenIndex).trim();
   }
 
   const stateAbbrevs = {
@@ -89,7 +91,7 @@ function titleToPlace(title) {
 
   placeString += ", Australia";
 
-  return placeString;
+  return { place: placeString, paperName: paperNameString };
 }
 
 // This function generalizes the data extracted web page.
@@ -116,7 +118,12 @@ function generalizeData(input) {
 
   const title = data.title;
   if (title) {
-    result.setEventPlace(titleToPlace(title));
+    const placeAndName = titleToPlaceAndPaperName(title);
+    result.setEventPlace(placeAndName.place);
+
+    if (placeAndName.paperName) {
+      result.newspaperName = placeAndName.paperName;
+    }
   }
 
   result.hasValidData = true;

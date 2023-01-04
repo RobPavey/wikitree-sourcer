@@ -50,6 +50,10 @@ function generalizeData(input) {
   const place = titleToPlace(data.paperTitle, issue);
   result.setEventPlace(place);
 
+  if (data.paperTitle) {
+    result.newspaperName = data.paperTitle;
+  }
+
   result.hasValidData = true;
 
   //console.log("ppnz; generalizeData: result is:");

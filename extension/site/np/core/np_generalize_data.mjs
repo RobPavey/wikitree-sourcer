@@ -43,6 +43,10 @@ function generalizeData(input) {
   result.setEventDate(data.publicationDate);
   result.setEventPlace(data.location);
 
+  if (data.newspaperTitle) {
+    result.newspaperName = data.newspaperTitle;
+  }
+
   // should we use a collection to allow search for same record on Ancestry?
 
   result.hasValidData = true;

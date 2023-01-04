@@ -53,6 +53,10 @@ function buildCitation(input) {
 
   builder.meaningfulTitle = gd.getRefTitle();
 
+  if (type == "narrative") {
+    builder.addNarrative(gd, input.dataCache, options);
+  }
+
   // now the builder is setup use it to build the citation text
   let fullCitation = builder.getCitationString();
 
