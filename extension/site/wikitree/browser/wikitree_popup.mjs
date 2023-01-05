@@ -764,6 +764,14 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
         );
       }
 
+      // check for quotes in middle name
+      if (wtPersonData.middleName && wtPersonData.middleName.includes('"')) {
+        hasProblem = true;
+        problemMessages.push(
+          `Middle name includes '"'. This should probably be moved to the nicknames or preferred name.`
+        );
+      }
+
       // check for suffix in lnab
       const problemLastNameEndings = ["Sr", "Sr.", "Jr", "Jr.", "Senior", "Junior", "III"];
       for (let ending of problemLastNameEndings) {
