@@ -258,9 +258,10 @@ function hideOrShowEditCitationPanel(documentContainingImage) {
 }
 
 var retryCount = 0;
-const maxRetries = 10;
 
 function addEditCitationButton() {
+  const maxRetries = 10;
+
   let documentContainingImage = document;
   let wrapper = document.querySelector("div.bottom-container > div.paging-panel > div.paging-wrapper");
 

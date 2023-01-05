@@ -81,9 +81,15 @@ function messageHandler(request, sender, sendResponse) {
 // Unfortunately it requires the host_permission for every page that I have content scripts for
 
 function installScript(details) {
+  //console.log("WikiTree Sourcer (Chrome): Install or enable detected. Installing content script in all tabs.");
+  //console.log(details);
+
+  if (details.reason != "update") {
+    return;
+  }
+
   let manifest = chrome.runtime.getManifest();
 
-  //console.log('WikiTree Sourcer (Chrome): Install or enable detected. Installing content script in all tabs.');
   let contentScripts = manifest.content_scripts;
 
   for (let contentScript of contentScripts) {
