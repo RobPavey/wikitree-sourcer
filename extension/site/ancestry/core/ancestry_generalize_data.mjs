@@ -1601,19 +1601,13 @@ function generalizeDataGivenRecordType(data, result) {
     let spouseName = getCleanValueForRecordDataList(data, ["Spouse", "Spouse Name"]);
 
     if (spouseName) {
-      let name = new WtsName();
-      name.name = spouseName;
-      let spouse = {
-        name: name,
-      };
+      let spouse = result.addSpouse();
+      spouse.name.name = spouseName;
 
       let marriageDate = getCleanValueForRecordDataList(data, ["Marriage Date", "Marriage Year"], "date");
       if (marriageDate) {
-        spouse.marriageDate = new WtsDate();
-        spouse.marriageDate.dateString = marriageDate;
+        spouse.marriageDate.setDateAndQualifierFromString(marriageDate);
       }
-
-      result.spouses = [spouse];
     }
   } else if (result.recordType == RT.BirthOrBaptism) {
     let birthDate = getCleanRecordDataValue(data, "Birth Date", "date");
@@ -1734,27 +1728,19 @@ function generalizeDataGivenRecordType(data, result) {
     // sometimes a military record can contain a spouse name and possibly a marriage date
     let spouseName = getCleanValueForRecordDataList(data, ["Spouse", "Spouse Name", "Spouse's Name"]);
     if (spouseName) {
-      let name = new WtsName();
-      name.name = spouseName;
-
-      let spouse = {
-        name: name,
-      };
+      let spouse = result.addSpouse();
+      spouse.name.name = spouseName;
 
       let marriageDate = getCleanValueForRecordDataList(data, ["Marriage Date"]);
       let marriagePlace = getCleanValueForRecordDataList(data, ["Marriage Place"]);
 
       if (marriageDate) {
-        spouse.marriageDate = new WtsDate();
-        spouse.marriageDate.dateString = marriageDate;
+        spouse.marriageDate.setDateAndQualifierFromString(marriageDate);
       }
 
       if (marriagePlace) {
-        spouse.marriagePlace = new WtsPlace();
         spouse.marriagePlace.placeString = marriagePlace;
       }
-
-      result.spouses = [spouse];
     }
   } else if (result.recordType == RT.SchoolRecords) {
     result.setEventDate(getCleanValueForRecordDataList(data, ["Yearbook Date", "Admission Date"], "date"));
@@ -2103,7 +2089,7 @@ function generalizeProfileData(input, result) {
     for (let marriage of data.marriages) {
       let spouse = result.addSpouse();
       spouse.name.setFullName(marriage.spouseName);
-      spouse.marriageDate.dateString = marriage.date;
+      spouse.marriageDate.setDateAndQualifierFromString(marriage.date);
       spouse.marriagePlace.placeString = marriage.place;
     }
   }

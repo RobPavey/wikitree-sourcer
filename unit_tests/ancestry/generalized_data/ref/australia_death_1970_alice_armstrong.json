@@ -6,7 +6,8 @@
     "name": "Alice Armstrong"
   },
   "eventDate": {
-    "dateString": "Abt 1970"
+    "dateString": "1970",
+    "qualifier": 2
   },
   "deathDate": {
     "qualifier": 2,

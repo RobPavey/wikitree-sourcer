@@ -1396,7 +1396,7 @@ class GeneralizedData {
   setEventDate(string) {
     if (this.isUsableDateString(string)) {
       this.createEventDateIfNeeded();
-      this.eventDate.dateString = string;
+      this.eventDate.setDateAndQualifierFromString(string);
     }
   }
 
