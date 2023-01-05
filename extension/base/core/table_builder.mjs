@@ -139,6 +139,9 @@ class TableBuilder {
     if (this.options.table_table_padding) {
       tableString += ` cellpadding="4"`;
     }
+    if (this.options.table_table_fullWidth) {
+      tableString += ` width="100%"`;
+    }
     tableString += `\n`;
 
     if (this.options.table_table_caption && this.caption) {

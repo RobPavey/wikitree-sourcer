@@ -941,6 +941,12 @@ const tableTableOptionsGroup = {
       unitTestValue: false,
     },
     {
+      optionName: "fullWidth",
+      type: "checkbox",
+      label: "Make table the full width of the biography area",
+      defaultValue: false,
+    },
+    {
       optionName: "caption",
       type: "select",
       label: "Add a caption above the table",
