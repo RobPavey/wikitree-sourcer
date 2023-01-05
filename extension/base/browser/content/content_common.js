@@ -182,6 +182,10 @@ function extractDataAndRespond(document, url, contentType, sendResponse, siteSpe
       console.log("url is: " + url + ", contentType is: " + contentType);
       console.log("loadedExtractDataModule is: ");
       console.log(loadedExtractDataModule);
+      sendResponse({
+        success: false,
+        errorMessage: "Extract data module never loaded",
+      });
     }
 
     return false;
