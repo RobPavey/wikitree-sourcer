@@ -767,6 +767,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/4001446:1276",
   },
   {
+    caseName: "us_ia_child_birth_1894_eva_warnock",
+    url: "https://www.ancestry.com/discoveryui-content/view/602090064:61441",
+  },
+  {
     caseName: "us_il_birth_1915_henry_ohlman",
     url: "https://www.ancestry.com/discoveryui-content/view/38163:62361",
     optionVariants: [

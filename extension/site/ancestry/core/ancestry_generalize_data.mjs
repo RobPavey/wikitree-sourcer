@@ -571,6 +571,26 @@ function determineRoleGivenRecordType(extractedData, result) {
         result.role = Role.Spouse;
         result.primaryPerson = extractedData.recordData["Spouse"];
       }
+    } else {
+      let value2 = getCleanValueForRecordDataList(extractedData, [
+        "Baptism Date",
+        "Christening Date",
+        "Burial Date",
+        "Cremation Date",
+      ]);
+
+      if (!value2) {
+        // sometimes the parent's record for a child's birth gives that parents birth date
+        // (Usually inferred from the parent's age)
+        // Example: https://www.ancestry.com/discoveryui-content/view/602090064:61441
+        // For now
+        if (extractedData.recordData["Child"]) {
+          if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
+            result.role = Role.Parent;
+            result.primaryPerson = extractedData.recordData["Child"];
+          }
+        }
+      }
     }
   } else if (recordType == RT.Obituary) {
     // obituary can have lots of relations
