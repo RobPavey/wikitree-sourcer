@@ -406,6 +406,11 @@ const personRegressionData = [
     fetchType: "person",
   },
   {
+    caseName: "xx_profile_jacob_showalter_1702_1773",
+    url: "https://www.familysearch.org/tree/person/details/LDL8-2H9",
+    fetchType: "person",
+  },
+  {
     // twin
     caseName: "xx_profile_martha_barnhart_1868_1868",
     url: "https://www.familysearch.org/tree/person/details/KZKS-T46",

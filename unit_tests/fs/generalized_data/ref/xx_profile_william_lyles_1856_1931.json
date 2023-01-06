@@ -28,7 +28,8 @@
         "forenames": "Hannah J."
       },
       "marriageDate": {
-        "dateString": "about 1878"
+        "qualifier": 2,
+        "dateString": "1878"
       }
     }
   ],

@@ -588,6 +588,7 @@ function generalizeDataGivenRecordType(data, result) {
       let dateString = selectDate(data.recordData["Marriage Date"], data.recordData["Marriage Date (Original)"]);
       if (dateString) {
         marriageDate.dateString = dateString;
+        marriageDate.setDateAndQualifierFromString(dateString);
       }
       if (data.recordData["Marriage Year"]) {
         marriageDate.yearString = data.recordData["Marriage Year"];
@@ -654,7 +655,7 @@ function generalizeDataGivenRecordType(data, result) {
       let marriageDate = new WtsDate();
       let dateString = selectDate(data.recordData["Marriage Date"], data.recordData["Marriage Date (Original)"]);
       if (dateString) {
-        marriageDate.dateString = dateString;
+        marriageDate.setDateAndQualifierFromString(dateString);
       }
       if (data.recordData["Marriage Year"]) {
         marriageDate.yearString = data.recordData["Marriage Year"];
@@ -793,8 +794,9 @@ function generalizeDataForPerson(data, result) {
       }
 
       if (spouse.marriageDate || spouse.marriageDateOriginal) {
+        let marriageDate = selectDate(spouse.marriageDate, spouse.marriageDateOriginal);
         resultSpouse.marriageDate = new WtsDate();
-        resultSpouse.marriageDate.dateString = selectDate(spouse.marriageDate, spouse.marriageDateOriginal);
+        resultSpouse.marriageDate.setDateAndQualifierFromString(marriageDate);
       }
 
       if (spouse.marriagePlace || spouse.marriagePlaceOriginal) {
