@@ -52,14 +52,20 @@ function getQuarterName(data) {
 
 function getCorrectlyCasedName(name, options) {
   if (options.citation_freebmd_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name);
+    // the option says "Change any person and place names in all caps to initial caps"
+    if (WTS_String.isWordAllUpperCase(name)) {
+      name = WTS_String.toInitialCaps(name);
+    }
   }
   return name;
 }
 
 function getCorrectlyCasedNames(name, options) {
   if (options.citation_freebmd_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCapsEachWord(name, true);
+    // the option says "Change any person and place names in all caps to initial caps"
+    if (WTS_String.isWordAllUpperCase(name)) {
+      name = WTS_String.toInitialCapsEachWord(name, true);
+    }
   }
   return name;
 }

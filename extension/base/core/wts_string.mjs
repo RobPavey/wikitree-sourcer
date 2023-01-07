@@ -23,6 +23,10 @@ SOFTWARE.
 */
 
 const WTS_String = {
+  isWordAllUpperCase: function (string) {
+    return string.toUpperCase() == string;
+  },
+
   toInitialCapsEachWord: function (string, isName = false) {
     if (!string || string.length == 0) {
       return;
@@ -54,6 +58,11 @@ const WTS_String = {
     string = string.replace(/ At /g, " at ");
     string = string.replace(/ The /g, " the ");
     string = string.replace(/ And /g, " and ");
+
+    // a letter after a . should be uppercase (e.g. "Surrey S.E.")
+    string = string.replace(/(\.[a-z])/g, function (m) {
+      return m.toUpperCase();
+    });
 
     if (!isName) {
       string = string.replace(/ A /g, " a ");
