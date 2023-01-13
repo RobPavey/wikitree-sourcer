@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Houston",
+    "forenames": "Maureen Mary Mc"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1941"
+  },
+  "registrationDistrict": "Bonhill",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Dunbartonshire",
+    "placeString": "Bonhill, Dunbartonshire, Scotland"
+  },
+  "lastNameAtBirth": "Houston",
+  "birthPlace": {
+    "country": "Scotland",
+    "county": "Dunbartonshire",
+    "placeString": "Bonhill, Dunbartonshire, Scotland"
+  },
+  "birthDate": {
+    "yearString": "1941"
+  },
+  "hasValidData": true
+}

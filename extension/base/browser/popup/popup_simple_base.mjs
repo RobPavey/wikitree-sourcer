@@ -60,7 +60,7 @@ var simplePopupFunctions = {
 async function simplePopupBuildCitation(data) {
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
-    // console.log("simplePopupBuildCitation, waiting another 10ms")
+    //console.log("simplePopupBuildCitation, waiting another 10ms")
     setTimeout(function () {
       simplePopupBuildCitation(data);
     }, 10);

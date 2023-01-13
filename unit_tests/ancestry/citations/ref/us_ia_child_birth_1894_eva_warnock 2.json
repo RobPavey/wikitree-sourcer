@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Record of child Reed''':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>\nState Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>\n{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Eva's child Reed was in a record.<ref>\n'''Record of child Reed''':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>\nState Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>\n{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Record of child Reed''': \"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>State Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Record of child Reed''':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>\nState Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>\n{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)<br/>\nName: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Eva's child Reed was in a record.<ref>\n'''Record of child Reed''':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>\nState Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>\n{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)<br/>\nName: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Record of child Reed''': \"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>State Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)<br/>Name: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Record of child Reed''':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>\nState Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>\n{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)<br/>\nName: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Eva's child Reed was in a record.<ref>\n'''Record of child Reed''':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>\nState Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>\n{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)<br/>\nName: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Record of child Reed''': \"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>State Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)<br/>Name: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Record of child Reed''':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>\nState Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>\n{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Eva Warnock\n|-\n| Gender || Female\n|-\n| Residence Age || 21\n|-\n| Birth Date || Abt 1873\n|-\n| Spouse || Charles Reed\n|-\n| Child || Reed\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Eva's child Reed was in a record.<ref>\n'''Record of child Reed''':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>\nState Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>\n{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Eva Warnock\n|-\n| Gender || Female\n|-\n| Residence Age || 21\n|-\n| Birth Date || Abt 1873\n|-\n| Spouse || Charles Reed\n|-\n| Child || Reed\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Record of child Reed''': \"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\"<br/>State Historical Society of Iowa; Des Moines, Iowa; Title: Iowa Birth Records, 1888-1904<br/>{{Ancestry Record|61441|602090064}} (accessed 6 May 2021)<br/>Name: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940,\" database, ({{Ancestry Record|61441|602090064}} : accessed 6 May 2021), Name Eva Warnock, Gender Female, Residence Age 21, Birth Date Abt 1873, Spouse Charles Reed, Child Reed; citing State Historical Society of Iowa, Des Moines, Iowa, Title Iowa Birth Records, 1888-1904.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Eva's child Reed was in a record.<ref>\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940,\" database, ({{Ancestry Record|61441|602090064}} : accessed 6 May 2021), Name Eva Warnock, Gender Female, Residence Age 21, Birth Date Abt 1873, Spouse Charles Reed, Child Reed; citing State Historical Society of Iowa, Des Moines, Iowa, Title Iowa Birth Records, 1888-1904.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940,\" database, ({{Ancestry Record|61441|602090064}} : accessed 6 May 2021), Name Eva Warnock, Gender Female, Residence Age 21, Birth Date Abt 1873, Spouse Charles Reed, Child Reed; citing State Historical Society of Iowa, Des Moines, Iowa, Title Iowa Birth Records, 1888-1904.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Record of child Reed'':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\", database, \nState Historical Society of Iowa, Des Moines, Iowa, Title Iowa Birth Records, 1888-1904, \n({{Ancestry Record|61441|602090064}} : accessed 6 May 2021), \nName: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Eva's child Reed was in a record.<ref>\n''Record of child Reed'':\n\"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\", database, \nState Historical Society of Iowa, Des Moines, Iowa, Title Iowa Birth Records, 1888-1904, \n({{Ancestry Record|61441|602090064}} : accessed 6 May 2021), \nName: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Record of child Reed'': \"Iowa, U.S., Births (series) 1880-1904, 1921-1944 and Delayed Births (series), 1856-1940\", database, State Historical Society of Iowa, Des Moines, Iowa, Title Iowa Birth Records, 1888-1904, ({{Ancestry Record|61441|602090064}} : accessed 6 May 2021), Name: Eva Warnock; Gender: Female; Residence Age: 21; Birth Date: Abt 1873; Spouse: Charles Reed; Child: Reed.",
+    "type": "source"
+  }
+}
