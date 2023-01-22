@@ -1922,6 +1922,7 @@ function generalizeDataGivenRecordType(data, result) {
       "Record Place",
       "Place Moored",
       "Electoral Place",
+      "Parliamentary Division",
       "Death County",
     ]);
 

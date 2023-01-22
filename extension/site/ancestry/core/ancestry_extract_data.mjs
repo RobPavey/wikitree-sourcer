@@ -52,6 +52,16 @@ function cleanLabel(text) {
   return text;
 }
 
+function cleanPlaceName(text) {
+  let result = text;
+  if (result) {
+    result = result.trim();
+    // replace multiple spaces with one space
+    result = result.replace(/\s+/g, " ");
+  }
+
+  return result;
+}
 function setSourceCitation(result, sourceTextNode) {
   let sourceText = cleanText(sourceTextNode.textContent);
   result.sourceCitation = sourceText;
@@ -1240,8 +1250,8 @@ function handlePersonFacts(document, result) {
         result.birthDate = birthDateSpan.textContent;
       }
       let birthPlaceSpan = userCardEvents.querySelector("span.birthPlace");
-      if (birthPlaceSpan) {
-        result.birthPlace = birthPlaceSpan.textContent;
+      if (birthPlaceSpan && birthPlaceSpan.textContent) {
+        result.birthPlace = cleanPlaceName(birthPlaceSpan.textContent);
       }
 
       let deathDateSpan = userCardEvents.querySelector("span.deathDate");
@@ -1249,8 +1259,8 @@ function handlePersonFacts(document, result) {
         result.deathDate = deathDateSpan.textContent;
       }
       let deathPlaceSpan = userCardEvents.querySelector("span.deathPlace");
-      if (deathPlaceSpan) {
-        result.deathPlace = deathPlaceSpan.textContent;
+      if (deathPlaceSpan && deathPlaceSpan.textContent) {
+        result.deathPlace = cleanPlaceName(deathPlaceSpan.textContent);
       }
     }
   }
@@ -1283,7 +1293,7 @@ function handlePersonFacts(document, result) {
             if (placeNode) {
               let place = placeNode.textContent;
               if (place) {
-                marriage.place = place;
+                marriage.place = cleanPlaceName(place);
               }
             }
             let spouseNode = factItem.querySelector("h5.userCardTitle");
@@ -1315,13 +1325,13 @@ function handlePersonFacts(document, result) {
     if (parentItems.length == 2) {
       let fatherItem = parentItems[0];
       let fatherTitle = fatherItem.querySelector("h4.userCardTitle");
-      if (fatherTitle) {
+      if (fatherTitle && fatherTitle.textContent != "Unknown father") {
         result.fatherName = fatherTitle.textContent;
       }
 
       let motherItem = parentItems[1];
       let motherTitle = motherItem.querySelector("h4.userCardTitle");
-      if (motherTitle) {
+      if (motherTitle && motherTitle.textContent != "Unknown mother") {
         result.motherName = motherTitle.textContent;
       }
     }

@@ -1261,7 +1261,7 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   //console.log("setupWikiTreePopupMenu: tabId is: " + tabId);
 
   let backFunction = function () {
-    setupWikiTreePopupMenu(extractedData);
+    setupWikiTreePopupMenu(extractedData, tabId);
   };
 
   if (!extractedData || !extractedData.hasValidData) {
