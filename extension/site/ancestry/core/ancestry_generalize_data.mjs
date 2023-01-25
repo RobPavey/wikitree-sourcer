@@ -331,7 +331,11 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.FamHistOrPedigree,
-      matches: ["of the American Revolution Membership", "Colonial Families of the USA"],
+      matches: [
+        "of the American Revolution Membership",
+        "Colonial Families of the USA",
+        "Geneanet Community Trees Index",
+      ],
     },
     {
       // This could possibly be confused with a child marriage. It is to handle a record like this:
