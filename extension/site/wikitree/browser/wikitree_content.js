@@ -269,8 +269,25 @@ function setEditFamilyFields(personData) {
   setValue("#mMarriageEndDate", "marriageEndDate");
 
   // text boxes
-  setValue("#mBioWithoutSources", "notes");
-  setValue("#mSources", "sources");
+  let notesNode = document.querySelector("#mBioWithoutSources");
+  if (notesNode) {
+    setValue("#mBioWithoutSources", "notes");
+    setValue("#mSources", "sources");
+  } else {
+    // must be in beta mode, put everything in mSources
+    let bioText = "== Biography ==\n\n";
+    if (personData.notes) {
+      bioText += personData.notes + "\n\n";
+    }
+    bioText += "== Sources ==\n<references />";
+    if (personData.sources) {
+      bioText += personData.sources;
+    }
+    let fullBioNode = document.querySelector("#mSources");
+    if (fullBioNode) {
+      fullBioNode.value = bioText;
+    }
+  }
 
   // change explanation
   setValue("#wpSummary", "changeExplanation");
