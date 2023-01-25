@@ -41,7 +41,7 @@ import {
 import { CD } from "/base/core/country_data.mjs";
 
 const groStartYear = 1837;
-const groEndYear = 2020;
+const groEndYear = 2021;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Helper functions
@@ -117,7 +117,7 @@ function addGroSearchBirthsMenuItem(menu, data, filter) {
   if (!filter && !birthYearInGroRange(data)) {
     return;
   }
-  addMenuItem(menu, "Search GRO Births", function (element) {
+  addMenuItem(menu, "Search GRO Births (1837-1934, 1984-2021)", function (element) {
     groSearch(data.generalizedData, "births");
   });
 }
@@ -126,7 +126,7 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
   if (!filter && !deathYearInGroRange(data)) {
     return;
   }
-  addMenuItem(menu, "Search GRO Deaths", function (element) {
+  addMenuItem(menu, "Search GRO Deaths (1837-1957, 1984-2021)", function (element) {
     groSearch(data.generalizedData, "deaths");
   });
 }
