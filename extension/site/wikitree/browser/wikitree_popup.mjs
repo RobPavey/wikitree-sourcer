@@ -258,15 +258,28 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
         }
       }
 
-      for (let spouse of personGd.spouses) {
-        if (spouse.name && spouse.name.name && spouse.name.name == fmName) {
-          if (spouse.marriageDate) {
-            result.marriageDate = standardizeDate(spouse.marriageDate.dateString);
+      if (citationObject && personGd.spouses.length == 1) {
+        // is using a citation it is probably a marriage citation
+        // the spouse name may not match exactly but we should still use it
+        let spouse = personGd.spouses[0];
+        if (spouse.marriageDate) {
+          result.marriageDate = standardizeDate(spouse.marriageDate.dateString);
+        }
+        if (spouse.marriagePlace) {
+          result.marriageLocation = standardizePlace(spouse.marriagePlace.placeString, result.marriageDate);
+        }
+      } else {
+        // else it is from a profile and may have multiple marriages
+        for (let spouse of personGd.spouses) {
+          if (spouse.name && spouse.name.name && spouse.name.name == fmName) {
+            if (spouse.marriageDate) {
+              result.marriageDate = standardizeDate(spouse.marriageDate.dateString);
+            }
+            if (spouse.marriagePlace) {
+              result.marriageLocation = standardizePlace(spouse.marriagePlace.placeString, result.marriageDate);
+            }
+            break;
           }
-          if (spouse.marriagePlace) {
-            result.marriageLocation = standardizePlace(spouse.marriagePlace.placeString, result.marriageDate);
-          }
-          break;
         }
       }
     }
