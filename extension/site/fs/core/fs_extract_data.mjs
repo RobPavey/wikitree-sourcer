@@ -1878,6 +1878,8 @@ function setDateAndPlaceForAdditionalFact(result, fact) {
 function doesLabelOverride(labelId, usedLabelId) {
   const overrides = {
     PR_AGE: ["PR_AGE_ORIG", "PR_AGE_IN_YEARS_ORIG"],
+    PR_AGE_IN_YEARS_ORIG: ["NOTE_PR_AGE_ORIG"], // NOTE_PR_AGE_ORIG can be an invalid age like 0320000 (yyymmdd)
+    PR_AGE_ORIG: ["NOTE_PR_AGE_ORIG"],
     PR_RELATIONSHIP_TO_HEAD: ["PR_RELATIONSHIP_TO_HEAD_ORIG"],
   };
 

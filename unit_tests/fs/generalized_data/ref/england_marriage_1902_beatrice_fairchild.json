@@ -1,0 +1,51 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Beatrice Ellen Fairchild"
+  },
+  "birthDate": {
+    "dateString": "1874",
+    "yearString": "1874"
+  },
+  "eventDate": {
+    "dateString": "19 Feb 1902",
+    "yearString": "1902"
+  },
+  "eventPlace": {
+    "placeString": "Liverpool, Lancashire, England, United Kingdom"
+  },
+  "ageAtEvent": "28",
+  "spouses": [
+    {
+      "name": {
+        "name": "Matthew Walling",
+        "lastName": "Walling",
+        "forenames": "Matthew"
+      },
+      "age": "32",
+      "marriageDate": {
+        "dateString": "19 Feb 1902"
+      },
+      "marriagePlace": {
+        "placeString": "Liverpool, Lancashire, England, United Kingdom"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Ebenezer George Fairchild",
+        "forenames": "Ebenezer George",
+        "lastName": "Fairchild"
+      }
+    }
+  },
+  "marriageDate": "19 Feb 1902",
+  "collectionData": {
+    "id": "1473015"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,995 @@
+{
+  "id" : "r_846471333",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9QRM-PL3?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9QRM-PL3?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9QRM-PL3"
+    }
+  },
+  "description" : "#sd_p_12040981528",
+  "persons" : [ {
+    "id" : "p_12040981530",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "b9a23054-03ce-4226-88e4-08dc70e4e21d",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/NFFD-H8M?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9QRM-PL3?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NFFD-H8M" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Matthew Walling",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Matthew",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "61bc277d-fecb-456c-b8c7-f691283f83c1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "MATTHEW"
+            }, {
+              "id" : "40a4fb97-1c65-42eb-afe0-40b98403c161",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1583967816950
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Matthew"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Walling",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "0e9c7329-7a77-46c1-b220-224f4de05cd6",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "WALLING"
+            }, {
+              "id" : "563c0017-bf17-4222-8a9b-48fe913e1b93",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1583967816950
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Walling"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1583967816945
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "MATTHEW WALLING"
+          }, {
+            "id" : "5e5b5019-0cd8-4627-8991-32fca402b763",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1583967816950
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Matthew Walling"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1870",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "d5393185-c982-449e-ad27-a1c1862b14a5",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/EstBirthYearTreatment/ver/2"
+              },
+              "modified" : 1583967816988
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1870",
+            "resource" : "+1870"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "958d39aa-cd9b-488c-9317-facd5f82fd76",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "NOTE_PR_AGE_ORIG",
+        "text" : "0320000",
+        "qualifiers" : [ {
+          "value" : "NOTE",
+          "name" : "http://familysearch.org/types/qualifiers/Info"
+        } ]
+      }, {
+        "id" : "9cd57197-98c2-4fe4-b2e1-ac3850758de9",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "32"
+      }, {
+        "id" : "74c6d549-40e4-4bc6-b13e-c313d82daf1f",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1583967816973
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "32",
+        "resource" : "P32Y"
+      } ]
+    }, {
+      "type" : "http://familysearch.org/types/fields/FlagPrevMar",
+      "values" : [ {
+        "id" : "df46a639-746a-4079-9701-7bd39a310d3e",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_FLAG_PREV_MAR_ORIG",
+        "text" : "Y"
+      } ]
+    } ]
+  }, {
+    "id" : "p_12040981528",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "81b48fd4-72d7-4320-ae6d-b8023fbd50c7",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "SP_SEX_CODE_ORIG",
+          "text" : "Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/NFFD-HZB?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9QRM-PL3?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZB" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Beatrice Ellen Fairchild",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Beatrice Ellen",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "706249b4-d9c1-4051-8305-a754a06107f2",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "BEATRICE ELLEN"
+            }, {
+              "id" : "eaf12c14-4165-48a3-9e79-86c2c7220848",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1583967816958
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Beatrice Ellen"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Fairchild",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "1c6fd44d-db17-4248-b180-6efe2d62612b",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "FAIRCHILD"
+            }, {
+              "id" : "1d4a7a1f-f925-453a-beae-e4d19530c38a",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1583967816958
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Fairchild"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1583967816950
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "BEATRICE ELLEN FAIRCHILD"
+          }, {
+            "id" : "ff788361-b3d1-491e-9f7b-f8c9a86431ea",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1583967816958
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Beatrice Ellen Fairchild"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1874",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "86369f68-fada-499e-a502-1c9b2672edcc",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/EstBirthYearTreatment/ver/2"
+              },
+              "modified" : 1583967816994
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_BIR_YEAR_EST",
+            "text" : "1874",
+            "resource" : "+1874"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "53128539-164b-4529-ab96-09691181bd72",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "NOTE_SP_AGE_ORIG",
+        "text" : "0280000",
+        "qualifiers" : [ {
+          "value" : "NOTE",
+          "name" : "http://familysearch.org/types/qualifiers/Info"
+        } ]
+      }, {
+        "id" : "742dd3cd-9675-41ba-90ad-982fa5b471cc",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SP_AGE_ORIG",
+        "text" : "28"
+      }, {
+        "id" : "4bd940be-54ce-451a-be47-a468b5544639",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1583967816977
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "SP_AGE",
+        "text" : "28",
+        "resource" : "P28Y"
+      } ]
+    } ]
+  }, {
+    "id" : "p_12040981531",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "4517e649-f054-4d07-bba2-7c437d5b3608",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1583967816977
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/NFFD-H89?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9QRM-PL3?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NFFD-H89" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Matthew Walling",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Matthew",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "0e1d31d0-b199-425e-8629-74f709128ae1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "MATTHEW"
+            }, {
+              "id" : "f45a061b-4dcc-4a3b-940d-6667c8d61e48",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1583967816964
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Matthew"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Walling",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "a3327eef-a4f4-4f5c-a012-436b04430c63",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "WALLING"
+            }, {
+              "id" : "e95677d7-7b06-452a-b43d-d293d4d94caa",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1583967816964
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Walling"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1583967816958
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "MATTHEW WALLING"
+          }, {
+            "id" : "2f5f218b-e745-4111-96bf-abc852c50735",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1583967816964
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Matthew Walling"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_12040981529",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "dfaad8d1-cdd3-4af6-835d-8beeaa4b9bf0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1583967816977
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/NFFD-HZ1?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9QRM-PL3?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZ1" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Ebenezer George Fairchild",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Ebenezer George",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "3649474e-ba98-4c97-8069-2caaf3e14284",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_FTHR_NAME_GN_ORIG",
+              "text" : "EBENEZER GEORGE"
+            }, {
+              "id" : "bbdc3071-27e0-4995-afac-75498b54c925",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1583967816970
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_FTHR_NAME_GN",
+              "text" : "Ebenezer George"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Fairchild",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "030068e5-4805-4d91-a96f-c123d922b3fa",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_FTHR_NAME_SURN_ORIG",
+              "text" : "FAIRCHILD"
+            }, {
+              "id" : "aa1ae411-4a9b-410b-b198-0d512fb05196",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1583967816970
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_FTHR_NAME_SURN",
+              "text" : "Fairchild"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1583967816964
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_FTHR_NAME_ORIG",
+            "text" : "EBENEZER GEORGE FAIRCHILD"
+          }, {
+            "id" : "95051458-2eac-4a1e-b5c9-4cf8a5165496",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1583967816970
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_FTHR_NAME",
+            "text" : "Ebenezer George Fairchild"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/F7GQ-3TWL",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_12040981530",
+      "resourceId" : "p_12040981530"
+    },
+    "person2" : {
+      "resource" : "#p_12040981528",
+      "resourceId" : "p_12040981528"
+    },
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "19 Feb 1902",
+        "formal" : "+1902-02-19",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "cc8ef5bc-8efc-4317-98f0-bdee6d578958",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "19 Feb 1902"
+          }, {
+            "id" : "a8086fe0-a7c0-47ea-92d4-1fffb227af72",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1583967816945
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "19 Feb 1902",
+            "resource" : "+1902-02-19"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "f887f6a5-84e8-4c42-8a6f-f11162e99ef3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1583967816945
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "2"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "dcf8d06c-d54a-43c7-aba8-fd3b90da36bb",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1583967816945
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "19"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "ba42e961-0fd8-407a-b392-aec654c2179e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1902"
+          }, {
+            "id" : "092600f5-0ba4-4ae5-aa09-401f86985d55",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1583967816945
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1902"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Liverpool, Lancashire, England, United Kingdom",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "e0c49fa9-9d79-4114-ae5e-46d84cf3f778",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_SUP",
+            "text" : "St. Cathrine, Liverpool, Lancsh County, England",
+            "qualifiers" : [ {
+              "value" : "SUP",
+              "name" : "http://familysearch.org/types/qualifiers/Info"
+            } ]
+          }, {
+            "id" : "142567e3-c650-4d78-ad89-1bdc6dd2b7e4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Saint Catherine, Liverpool, Lancashire, England"
+          }, {
+            "id" : "90dc1a8d-1e3b-40bc-b065-d5a0fb54417c",
+            "confidence" : "http://confidence/87",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1583967817001
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Liverpool, Lancashire, England, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/3039900",
+            "qualifiers" : [ {
+              "value" : "1026, 1024, 1021, 1010, 1020, 1015, 1013",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "c7405203-4f82-47ac-aa1e-318ca4b574c5",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "b8759dd7-e870-4dd2-ae60-742b8b1ba91b",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Marriage"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "MM9.1.6/F7GQ-3TZ9",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_12040981531",
+      "resourceId" : "p_12040981531"
+    },
+    "person2" : {
+      "resource" : "#p_12040981530",
+      "resourceId" : "p_12040981530"
+    }
+  }, {
+    "id" : "MM9.1.6/F7GQ-3T68",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_12040981529",
+      "resourceId" : "p_12040981529"
+    },
+    "person2" : {
+      "resource" : "#p_12040981528",
+      "resourceId" : "p_12040981528"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1473015",
+    "about" : "https://www.familysearch.org/platform/records/collections/1473015",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223556691,
+    "modified" : 1672817906150,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "England",
+        "description" : "#place_1986340"
+      },
+      "temporal" : {
+        "original" : "1538/1973",
+        "formal" : "1538/1973"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "England Marriages, 1538–1973"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1473015" ]
+    }
+  }, {
+    "id" : "src_r_846471333",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9QRM-PL3",
+    "componentOf" : {
+      "description" : "#sd_c_1473015"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1583967817015,
+    "modified" : 1672817906150,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Liverpool, Lancashire, England, United Kingdom"
+      },
+      "temporal" : {
+        "original" : "19 Feb 1902"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"England Marriages, 1538–1973\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:9QRM-PL3 : 11 March 2020), Entry for Matthew Walling, 1902."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Matthew Walling, \"England Marriages, 1538–1973\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1000174570309" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9QRM-PL3" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1473015#rd_MM9.1.9/MMM9-P53"
+    }
+  }, {
+    "id" : "sd_p_12040981530",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:NFFD-H8M",
+    "componentOf" : {
+      "description" : "#src_r_846471333"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England Marriages, 1538–1973\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NFFD-H8M : 11 March 2020), Matthew Walling, 1902."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Matthew Walling, \"England Marriages, 1538–1973\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NFFD-H8M" ]
+    }
+  }, {
+    "id" : "sd_p_12040981528",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZB",
+    "componentOf" : {
+      "description" : "#src_r_846471333"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England Marriages, 1538–1973\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NFFD-HZB : 11 March 2020), Beatrice Ellen Fairchild in entry for Matthew Walling, 1902."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Beatrice Ellen Fairchild in entry for Matthew Walling, \"England Marriages, 1538–1973\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZB" ]
+    }
+  }, {
+    "id" : "sd_p_12040981531",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:NFFD-H89",
+    "componentOf" : {
+      "description" : "#src_r_846471333"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England Marriages, 1538–1973\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NFFD-H89 : 11 March 2020), Matthew Walling in entry for Matthew Walling, 1902."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Matthew Walling in entry for Matthew Walling, \"England Marriages, 1538–1973\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NFFD-H89" ]
+    }
+  }, {
+    "id" : "sd_p_12040981529",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZ1",
+    "componentOf" : {
+      "description" : "#src_r_846471333"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England Marriages, 1538–1973\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NFFD-HZ1 : 11 March 2020), Ebenezer George Fairchild in entry for Matthew Walling, 1902."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Ebenezer George Fairchild in entry for Matthew Walling, \"England Marriages, 1538–1973\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZ1" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1986340",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986340" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "f0ef0c34-7bde-41a1-ac50-c82cb7869b66",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{ \"EVENT_PLACE_ALT_ORIG\": \"Saint Catherine, Liverpool, Lancashire, England\", \"EVENT_DATE_ALT_ORIG\": \"19 FEB 1902\", \"PR_AGE_ALT_ORIG\": \"32\", \"SP_AGE_ALT_ORIG\": \"28\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "a71a3d73-a061-4894-b953-f988568cd44e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Liverpool, Lancashire, England"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "f8d35563-1a07-4695-9d41-312149fc4633",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "004484303"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "id" : "0531b21a-04a6-4da8-bcf3-465aacc075fb",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "1546076"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "eaf25e84-6afc-42f6-8fdd-cf0f80d99c81",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "England-VR"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "id" : "3a771072-5934-47c3-8c5c-0d8da997d687",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "828823"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "1f8c78a8-f03b-48a3-9ad1-416a6ba4752f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "1546076_M16096-2X_1902_02_19_1000174570309"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfOrigin",
+    "values" : [ {
+      "id" : "f17cec69-50a1-49ec-b91e-be59c83d7c74",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_ORIGIN",
+      "text" : "VR"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
+    "values" : [ {
+      "id" : "0802bca2-9200-4ba1-a8d1-bc7a3f7bbfc3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "M16096-2"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "5cbc587e-975c-4200-92e7-8e7fcee7cea9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "1000174570309"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/AdditionalRelativesFlag",
+    "values" : [ {
+      "id" : "e8100628-f7c3-469e-8bbb-9e925ddebcc5",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "MISC_FLAG_ADDL_RELATIVES_ORIG",
+      "text" : "Y",
+      "qualifiers" : [ {
+        "value" : "MISC",
+        "name" : "http://familysearch.org/types/qualifiers/Info"
+      } ]
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceComposite",
+    "values" : [ {
+      "id" : "2cfaf4f9-55c7-44c0-8ffd-a8de00dfaafe",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_COMPOSITE_ORIG",
+      "text" : "2:1FH4XZT"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceReference",
+    "values" : [ {
+      "id" : "f3150736-7aae-4974-938b-e26b75416c81",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_REFERENCE_ORIG",
+      "text" : "Items 3-8"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "3"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "52919"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

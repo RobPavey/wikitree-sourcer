@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild in entry for Matthew Walling, 1902.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32) on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild in entry for Matthew Walling, 1902.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>Beatrice Ellen Fairchild in entry for Matthew Walling, 1902.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild (28) marriage to Matthew Walling (32) on 19 Feb 1902 in Liverpool, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32) on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild (28) marriage to Matthew Walling (32) on 19 Feb 1902 in Liverpool, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>Beatrice Ellen Fairchild (28) marriage to Matthew Walling (32) on 19 Feb 1902 in Liverpool, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nName: Beatrice Ellen Fairchild; Birth Date: 1874; Age: 28; Marriage Date: 19 Feb 1902; Marriage Place: Liverpool, Lancashire, England, United Kingdom; Source Reference: Items 3-8.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32) on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nName: Beatrice Ellen Fairchild; Birth Date: 1874; Age: 28; Marriage Date: 19 Feb 1902; Marriage Place: Liverpool, Lancashire, England, United Kingdom; Source Reference: Items 3-8.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>Name: Beatrice Ellen Fairchild; Birth Date: 1874; Age: 28; Marriage Date: 19 Feb 1902; Marriage Place: Liverpool, Lancashire, England, United Kingdom; Source Reference: Items 3-8.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Beatrice Ellen Fairchild\n|-\n| Birth Date || 1874\n|-\n| Age || 28\n|-\n| Marriage Date || 19 Feb 1902\n|-\n| Marriage Place || Liverpool, Lancashire, England, United Kingdom\n|-\n| Source Reference || Items 3-8\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32) on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Beatrice Ellen Fairchild\n|-\n| Birth Date || 1874\n|-\n| Age || 28\n|-\n| Marriage Date || 19 Feb 1902\n|-\n| Marriage Place || Liverpool, Lancashire, England, United Kingdom\n|-\n| Source Reference || Items 3-8\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>Name: Beatrice Ellen Fairchild; Birth Date: 1874; Age: 28; Marriage Date: 19 Feb 1902; Marriage Place: Liverpool, Lancashire, England, United Kingdom; Source Reference: Items 3-8.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild in entry for Matthew Walling, 1902.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32) on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild in entry for Matthew Walling, 1902.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>Beatrice Ellen Fairchild in entry for Matthew Walling, 1902.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32) on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild (28) marriage to Matthew Walling (32) on 19 Feb 1902 in Liverpool, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32) on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild (28) marriage to Matthew Walling (32) on 19 Feb 1902 in Liverpool, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>Beatrice Ellen Fairchild (28) marriage to Matthew Walling (32) on 19 Feb 1902 in Liverpool, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild in entry for Matthew Walling, 1902.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32) on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>\nBeatrice Ellen Fairchild in entry for Matthew Walling, 1902.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)<br/>Beatrice Ellen Fairchild in entry for Matthew Walling, 1902.",
+    "type": "source"
+  }
+}

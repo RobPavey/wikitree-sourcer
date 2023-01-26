@@ -1,0 +1,44 @@
+{
+  "recordData": {
+    "Name": "Beatrice Ellen Fairchild",
+    "Birth Date": "1874",
+    "Age": "28",
+    "Marriage Date": "19 Feb 1902",
+    "Marriage Place": "Liverpool, Lancashire, England, United Kingdom",
+    "Source Reference": "Items 3-8"
+  },
+  "fullName": "Beatrice Ellen Fairchild",
+  "givenName": "Beatrice Ellen",
+  "surname": "Fairchild",
+  "gender": "female",
+  "birthDateOriginal": "1874",
+  "birthYear": "1874",
+  "age": "28",
+  "eventDateOriginal": "19 Feb 1902",
+  "eventDate": "19 Feb 1902",
+  "eventYear": "1902",
+  "eventPlaceOriginal": "Liverpool, Lancashire, England, United Kingdom",
+  "eventPlace": "Liverpool, Lancashire, England, United Kingdom",
+  "factType": "Marriage",
+  "spouseFullName": "Matthew Walling",
+  "spouseGivenName": "Matthew",
+  "spouseSurname": "Walling",
+  "spouseAge": "32",
+  "father": {
+    "fullName": "Ebenezer George Fairchild",
+    "givenName": "Ebenezer George",
+    "surname": "Fairchild"
+  },
+  "referenceData": {
+    "digitalFilmNumber": "004484303",
+    "filmNumber": "1546076",
+    "recordNumber": "828823"
+  },
+  "collectionTitle": "England Marriages, 1538–1973",
+  "fsCollectionId": "1473015",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9QRM-PL3",
+  "citation": "\"England Marriages, 1538–1973\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:NFFD-HZB : 11 March 2020), Beatrice Ellen Fairchild in entry for Matthew Walling, 1902.",
+  "sourceTitleForPerson": "Beatrice Ellen Fairchild in entry for Matthew Walling, \"England Marriages, 1538–1973\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZB",
+  "pageType": "record"
+}
