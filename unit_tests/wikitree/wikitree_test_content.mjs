@@ -34,6 +34,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Black-16695",
   },
   {
+    // Since I am manager this has the highlighted text for adding missing data
+    caseName: "brewster-4830_read",
+    url: "https://www.wikitree.com/index.php?title=Brewster-4803&errcode=saved",
+  },
+  {
     caseName: "davey-2737_private",
     url: "https://www.wikitree.com/wiki/Davey-2737",
   },

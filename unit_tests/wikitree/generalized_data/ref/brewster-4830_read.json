@@ -1,0 +1,38 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Jane",
+    "lastName": "Brewster"
+  },
+  "lastNameAtBirth": "Brewster",
+  "lastNameAtDeath": "",
+  "mothersMaidenName": "Rilat",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "12 Oct 1840",
+    "qualifier": 3
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Brewster",
+        "lastName": "Brewster",
+        "forenames": "John"
+      },
+      "lastNameAtBirth": "Brewster",
+      "lastNameAtDeath": "Brewster"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Elizabeth",
+        "lastName": "Rilat",
+        "name": "Elizabeth Rilat"
+      },
+      "lastNameAtBirth": "Rilat",
+      "lastNameAtDeath": "Brewster"
+    }
+  },
+  "spouses": [],
+  "hasValidData": true
+}

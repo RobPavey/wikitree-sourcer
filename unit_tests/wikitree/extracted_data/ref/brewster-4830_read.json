@@ -1,0 +1,32 @@
+{
+  "hasValidData": true,
+  "firstNames": "Jane",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Brewster",
+  "currentLastName": "",
+  "mothersMaidenName": "Rilat",
+  "birthDate": "12 Oct 1840",
+  "birthDateStatus": "before",
+  "deathDate": "",
+  "deathDateStatus": "none",
+  "birthLocation": "",
+  "deathLocation": "",
+  "personGender": "female",
+  "spouses": [],
+  "url": "https://www.wikitree.com/index.php?title=Brewster-4803&errcode=saved",
+  "currentTabText": "Jane Brewster's Profile",
+  "pageType": "read",
+  "wikiId": "Brewster-4803",
+  "name": "Jane Brewster",
+  "parents": {
+    "father": {
+      "wikiId": "Brewster-4798",
+      "name": "John Brewster"
+    },
+    "mother": {
+      "wikiId": "Rilat-2",
+      "name": "Elizabeth (Rilat) Brewster"
+    }
+  }
+}

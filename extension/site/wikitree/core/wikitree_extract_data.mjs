@@ -245,7 +245,7 @@ function getCurrentLastNameInNonEditMode(document, isPrivate) {
       if (isPrivate) {
         clnNode = vitalsNode.querySelector("a[title='Current Last Name']");
       } else {
-        clnNode = vitalsNode.querySelector("a");
+        clnNode = vitalsNode.querySelector("a[title='Click here for the surname index page']");
       }
       if (clnNode) {
         currentLastName = clnNode.textContent;
