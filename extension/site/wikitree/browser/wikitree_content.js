@@ -274,12 +274,17 @@ function setEditFamilyFields(personData) {
     setValue("#mBioWithoutSources", "notes");
     setValue("#mSources", "sources");
   } else {
+    let advancedSourcesNode = document.querySelector("#useAdvancedSources");
+    if (advancedSourcesNode) {
+      advancedSourcesNode.value = "1";
+    }
+
     // must be in beta mode, put everything in mSources
-    let bioText = "== Biography ==\n\n";
+    let bioText = "== Biography ==\n";
     if (personData.notes) {
       bioText += personData.notes + "\n\n";
     }
-    bioText += "== Sources ==\n<references />";
+    bioText += "== Sources ==\n<references />\n";
     if (personData.sources) {
       bioText += personData.sources;
     }

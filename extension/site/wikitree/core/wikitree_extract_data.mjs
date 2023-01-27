@@ -742,15 +742,16 @@ function extractDataForEditFamily(document, result) {
       for (let spouseIsParentNode of spouseIsParentNodes) {
         if (spouseIsParentNode.checked) {
           let parentNode = spouseIsParentNode.parentNode;
-          let spouseText = parentNode.childNodes[1].textContent;
-          spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
-          result.familyMemberSpouseName = spouseText.trim();
 
           let linkNode = parentNode.querySelector("a");
           if (linkNode) {
             let href = linkNode.getAttribute("href");
             href = href.replace(/^\/wiki\//, "");
             result.familyMemberSpouseWikiId = href;
+
+            let spouseText = linkNode.textContent;
+            spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
+            result.familyMemberSpouseName = spouseText.trim();
           }
         }
       }

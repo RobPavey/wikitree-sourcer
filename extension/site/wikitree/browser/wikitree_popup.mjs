@@ -239,15 +239,28 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
     result.gender = "Female";
   }
 
-  if (data.extractedData.relationshipToFamilyMember == "spouse") {
+  let addMarriage = false;
+  let marriageSpouse = undefined;
+  const relationship = data.extractedData.relationshipToFamilyMember;
+  if (relationship == "spouse") {
+    addMarriage = true;
+    marriageSpouse = data.extractedData.familyMemberName;
+  } else if (relationship == "father" || relationship == "mother") {
+    if (data.extractedData.familyMemberSpouseName) {
+      addMarriage = true;
+      marriageSpouse = data.extractedData.familyMemberSpouseName;
+    }
+  }
+
+  if (addMarriage) {
     //console.log("getWikiTreeEditFamilyData spouses = ");
     //console.log(personGd.spouses);
     //console.log("getWikiTreeEditFamilyData familyMemberName = " + data.extractedData.familyMemberName);
-    if (personGd.spouses && data.extractedData.familyMemberName) {
+    if (personGd.spouses && marriageSpouse) {
       // we want to compare spouse names with data.familyMemberName
       // Can be messy because WT name can have maiden name in parens
       // Can fail because the spouse name in personGd could be previously married
-      let fmName = data.extractedData.familyMemberName;
+      let fmName = marriageSpouse;
       let openParenIndex = fmName.indexOf("(");
       if (openParenIndex != -1) {
         let closeParenIndex = fmName.indexOf(")", openParenIndex);
@@ -634,6 +647,11 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
       } else {
         result.sources += "\n";
       }
+
+      if (data.extractedData.editFamilyType == "steps") {
+        result.sources += "See also:\n* ";
+      }
+
       result.sources += linkString;
     }
   }
