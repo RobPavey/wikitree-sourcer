@@ -27,6 +27,7 @@ import {
   addSameRecordMenuItem,
   addBackMenuItem,
   addMenuItem,
+  addMenuItemWithSubtitle,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
@@ -117,18 +118,56 @@ function addGroSearchBirthsMenuItem(menu, data, filter) {
   if (!filter && !birthYearInGroRange(data)) {
     return;
   }
-  addMenuItem(menu, "Search GRO Births (1837-1934, 1984-2021)", function (element) {
+
+  const onClick = function (element) {
     groSearch(data.generalizedData, "births");
-  });
+  };
+
+  const menuItemText = "Search GRO Births (1837-1934, 1984-2021)";
+  let year = data.generalizedData.inferBirthYear();
+  let subtitle = "";
+
+  if (year) {
+    if (year < groStartYear || year > groEndYear || (year > 1934 && year < 1984)) {
+      subtitle = "Birth year " + year + " is not covered by GRO";
+    }
+  } else {
+    subtitle = "Birth year not known";
+  }
+
+  if (subtitle) {
+    addMenuItemWithSubtitle(menu, menuItemText, onClick, subtitle);
+  } else {
+    addMenuItem(menu, menuItemText, onClick);
+  }
 }
 
 function addGroSearchDeathsMenuItem(menu, data, filter) {
   if (!filter && !deathYearInGroRange(data)) {
     return;
   }
-  addMenuItem(menu, "Search GRO Deaths (1837-1957, 1984-2021)", function (element) {
+
+  const onClick = function (element) {
     groSearch(data.generalizedData, "deaths");
-  });
+  };
+
+  const menuItemText = "Search GRO Deaths (1837-1957, 1984-2021)";
+  let year = data.generalizedData.inferDeathYear();
+  let subtitle = "";
+
+  if (year) {
+    if (year < groStartYear || year > groEndYear || (year > 1957 && year < 1984)) {
+      subtitle = "Death year " + year + " is not covered by GRO";
+    }
+  } else {
+    subtitle = "Death year not known";
+  }
+
+  if (subtitle) {
+    addMenuItemWithSubtitle(menu, menuItemText, onClick, subtitle);
+  } else {
+    addMenuItem(menu, menuItemText, onClick);
+  }
 }
 
 function addGroDefaultSearchMenuItem(menu, data, backFunction, filter) {
