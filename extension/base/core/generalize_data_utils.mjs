@@ -1949,6 +1949,14 @@ class GeneralizedData {
       dateObj.qualifier = dateQualifiers.ABOUT;
       return dateObj;
     }
+    if (this.eventDate && !this.role) {
+      if (this.recordType == RT.Baptism) {
+        let dateObj = new WtsDate();
+        dateObj.dateString = this.eventDate.dateString;
+        dateObj.qualifier = dateQualifiers.BEFORE;
+        return dateObj;
+      }
+    }
   }
 
   inferBirthYear() {
@@ -1979,6 +1987,12 @@ class GeneralizedData {
     if (this.eventDate && !this.role) {
       if (this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
         return this.eventDate;
+      }
+      if (this.recordType == RT.Burial) {
+        let dateObj = new WtsDate();
+        dateObj.dateString = this.eventDate.dateString;
+        dateObj.qualifier = dateQualifiers.BEFORE;
+        return dateObj;
       }
     }
   }

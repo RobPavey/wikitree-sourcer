@@ -1011,7 +1011,7 @@ function getBurialString(gd, options) {
     dataString += " burial";
   }
 
-  let deathDate = gd.inferDeathDateObj();
+  let deathDate = gd.deathDate;
   let age = cleanAge(gd.ageAtDeath);
   if (!age) {
     age = cleanAge(gd.ageAtEvent);
