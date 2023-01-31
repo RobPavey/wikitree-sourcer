@@ -167,8 +167,14 @@ function openAncestryTemplate(text, options) {
     let dbId = text.replace(/\{\{Ancestry Record\|([^|]+)\|[^}]+[^|}]*\}\}/, "$1");
     let recordId = text.replace(/\{\{Ancestry Record\|[^|]+\|([^|}]+)[^}]*\}\}/, "$1");
     if (dbId && dbId != text && recordId && recordId != text) {
-      // https://www.ancestry.com/discoveryui-content/view/219120:1989
-      link = "https://www." + desiredDomain + "/discoveryui-content/view/" + recordId + ":" + dbId;
+      if (/^\d+$/.test(dbId)) {
+        // This only works when the dbId is a number
+        // https://www.ancestry.com/discoveryui-content/view/219120:1989
+        link = "https://www." + desiredDomain + "/discoveryui-content/view/" + recordId + ":" + dbId;
+      } else {
+        // https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=uki1851&h=9872118
+        link = "https://search." + desiredDomain + "/cgi-bin/sse.dll?indiv=1&db=" + dbId + "&h=" + recordId;
+      }
     }
   } else if (text.includes("Ancestry Image")) {
     // {{Ancestry Image|1234|5678}}
