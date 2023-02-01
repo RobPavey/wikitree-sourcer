@@ -22,6 +22,10 @@
         {
           "name": "date_spread",
           "value": "2"
+        },
+        {
+          "name": "skip_variants",
+          "value": "0"
         }
       ],
       "options": {}

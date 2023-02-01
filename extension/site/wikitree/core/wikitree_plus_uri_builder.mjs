@@ -24,7 +24,7 @@ SOFTWARE.
 
 class WikiTreePlusUriBuilder {
   constructor() {
-    this.uri = "https://wikitree.sdms.si/default.htm?report=srch1";
+    this.uri = "https://plus.wikitree.com/default.htm?report=srch1";
     this.searchTermAdded = true;
   }
 

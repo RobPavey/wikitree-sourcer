@@ -23,9 +23,9 @@ SOFTWARE.
 */
 
 // NOTE: Broken UKBMD links on WikiTree can be found with this search:
-// https://wikitree.sdms.si/default.htm?report=err6&Query=ukbmd+&MaxErrors=1000&ErrorID=965
+// https://plus.wikitree.com/default.htm?report=err6&Query=ukbmd+&MaxErrors=1000&ErrorID=965
 // Other suggestions related to ukbmd can be found using this search:
-// https://wikitree.sdms.si/default.htm?report=err6&Query=ukbmd+&MaxErrors=1000&ErrorID=
+// https://plus.wikitree.com/default.htm?report=err6&Query=ukbmd+&MaxErrors=1000&ErrorID=
 
 function getUkbmdDistrictPageUrl(district) {
   // https://www.ukbmd.org.uk/reg/districts/st%20pancras.html
