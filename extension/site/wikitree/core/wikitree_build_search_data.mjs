@@ -149,6 +149,24 @@ function buildSearchData(input) {
     }
   }
 
+  let nameExactness = options.search_wikitree_nameExactness;
+  if (nameExactness) {
+    let value = "";
+    if (nameExactness == "bothVariant") {
+      value = "0";
+    } else if (nameExactness == "firstVariant") {
+      value = "2";
+    } else if (nameExactness == "lastVariant") {
+      value = "3";
+    } else if (nameExactness == "exact") {
+      value = "1";
+    }
+
+    if (value) {
+      fieldData.radioFields.push({ name: "skip_variants", value: value });
+    }
+  }
+
   // More exact census place involves generating a special place ID. This is too much effort.
   // search_query[freecen2_place_ids][]: 5fc6db0ef4040beff4813f18
   // Only allowed if an exact census place specified

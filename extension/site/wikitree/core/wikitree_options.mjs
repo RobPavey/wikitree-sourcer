@@ -50,6 +50,18 @@ const searchOptionsGroup = {
       ],
       defaultValue: "auto",
     },
+    {
+      optionName: "nameExactness",
+      type: "select",
+      label: "Include name variant matches",
+      values: [
+        { value: "bothVariant", text: "Yes, include both first & last name variants" },
+        { value: "firstVariant", text: "Include first name variants, only exact last name matches" },
+        { value: "lastVariant", text: "Include last name variants, only exact first name matches" },
+        { value: "exact", text: "No, only exact name matches" },
+      ],
+      defaultValue: "bothVariant",
+    },
   ],
 };
 
