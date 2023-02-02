@@ -26,6 +26,7 @@ import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 
 function buildCoreCitation(data, gd, runDate, builder) {
   builder.sourceTitle = "Newspapers.com";
+  let options = builder.getOptions();
 
   builder.databaseHasImages = true;
 
@@ -37,7 +38,13 @@ function buildCoreCitation(data, gd, runDate, builder) {
     builder.recordLinkOrTemplate = recordLink;
   }
 
-  builder.sourceReference = data.newspaperTitle + " " + data.publicationDate + ", page " + data.pageNumber;
+  builder.sourceReference = data.newspaperTitle;
+
+  if (options.citation_np_includeLocation) {
+    builder.sourceReference += " (" + data.location + ")";
+  }
+
+  builder.sourceReference += " " + data.publicationDate + ", page " + data.pageNumber;
 }
 
 function buildCitation(input) {

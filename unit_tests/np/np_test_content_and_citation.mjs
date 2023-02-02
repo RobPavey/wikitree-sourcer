@@ -32,7 +32,11 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    caseName: "fleetwood",
+    caseName: "england_1929_arthur_pavey",
+    url: "https://www.newspapers.com/clip/111121391/wedding-of-emmeline-brain-and-arthur/",
+  },
+  {
+    caseName: "us_1908_fleetwood_guidry",
     url: "https://www.newspapers.com/clip/111420722/fleetwood-shot-his-arm-off/",
   },
 ];

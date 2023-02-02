@@ -43,12 +43,19 @@ const citationOptionsGroup = {
   subcategory: "np",
   tab: "citation",
   subsection: "np",
-  options: [],
+  options: [
+    {
+      optionName: "includeLocation",
+      type: "checkbox",
+      label: "Include newspaper location in citation",
+      defaultValue: true,
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "np", "Newspapers.com");
 registerSiteSearchPopupOptionsGroup("np", 11, 11);
 // registerSubheadingForOptions("search", "np", "parameters", "Search Parameters");
 // registerOptionsGroup(searchOptionsGroup);
-// registerSubsectionForOptions("citation", "np", "Newspapers.com");
-// registerOptionsGroup(citationOptionsGroup);
+registerSubsectionForOptions("citation", "np", "Newspapers.com");
+registerOptionsGroup(citationOptionsGroup);
