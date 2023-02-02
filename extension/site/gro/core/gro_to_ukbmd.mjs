@@ -34,6 +34,8 @@ function getUkbmdDistrictPageUrl(district) {
     "alston and garrigill": "alston",
     "ashby de la zouch": "ashby-de-la-zouch",
     "ashby de la louch": "ashby-de-la-zouch", // transcription error?
+    "ashby de la zouche": "ashby-de-la-zouch", // transcription error?
+    "ashby dela zouch": "ashby-de-la-zouch",
     ashbydelazouch: "ashby-de-la-zouch",
     ashtonunderlyne: "ashton under lyne",
     "bangor and beaumaris": "bangor",
@@ -54,6 +56,7 @@ function getUkbmdDistrictPageUrl(district) {
     brighthelmston: "brighton",
     "bristol barton regis": "barton regis", // could be date specific?
     "bucklow altrincham": "bucklow",
+    bumley: "burnley", // transcription error
     "burton on trent": "burton upon trent",
     "bury bury and lancashire": "bury", // transcription error?
     "bury bury and lancaster": "bury",
@@ -68,6 +71,7 @@ function getUkbmdDistrictPageUrl(district) {
     "chester le street": "chester-le-street",
     chesterlestreet: "chester-le-street",
     "city of london": "london city",
+    "county of london": "london city",
     "cricklade and wootton bassett": "cricklade",
     "dorchester and cerne": "dorchester",
     "durham and lanchester": "durham",
@@ -81,6 +85,7 @@ function getUkbmdDistrictPageUrl(district) {
     "gravesend milton": "gravesend",
     "gravesend and milton": "gravesend",
     "gravesend and melton": "gravesend", // transcription error?
+    guisbro: "guisborough", // abbreviation
     haggerston: "shoreditch",
     "hatfield and welwyn": "hatfield",
     "hayfield and glossop": "hayfield",
@@ -120,6 +125,7 @@ function getUkbmdDistrictPageUrl(district) {
     "newport in the counties of salop and stafford": "newport1",
     "newport mon": "newport2",
     "newtown and llanidloes": "newtown",
+    norhamshire: "northamptonshire",
     "pont y pridd": "pontypridd",
     "presteigne kington": "presteigne",
     "presteigne and kington": "presteigne",
@@ -146,6 +152,7 @@ function getUkbmdDistrictPageUrl(district) {
     "st george the martyr southwark": "st george southwark",
     "st giles and st george": "st giles",
     "st giles in the fields and st george bloomsbury": "st giles",
+    "st just in penwith": "penzance",
     "st luke chelsea": "chelsea",
     "st mary carlisle": "carlisle",
     "st mary magdalen bermondsey surrey": "bermondsey",
@@ -163,6 +170,7 @@ function getUkbmdDistrictPageUrl(district) {
     "st saviour": "st saviour southwark",
     "st thomas union devon": "st thomas",
     stalbridge: "north dorset",
+    "stockton and ledgefield": "stockton", // typo
     "stockton and sedgefield": "stockton",
     stonebridge: "stourbridge", // typo
     "sturminster dorset": "sturminster",
@@ -171,6 +179,7 @@ function getUkbmdDistrictPageUrl(district) {
     "tiverton and dulverton": "tiverton",
     "town of nottingham": "nottingham",
     "tunsd and happing": "tunstead",
+    "tunstd happg": "tunstead",
     "tunstd and happg": "tunstead",
     "tunstead and happing": "tunstead",
     "upton upon severn": "upton on severn",
@@ -184,6 +193,7 @@ function getUkbmdDistrictPageUrl(district) {
     "wellington salop": "wellington2",
     "wem and whitchurch": "whitchurch2",
     "west bromwich north east": "west bromwich",
+    "west croydon": "croydon",
     "west derby and toxteth park": "west derby",
     "westderby and toxteth park": "west derby", // transcription error?
     "westbury and whorwellsdown": "westbury",
