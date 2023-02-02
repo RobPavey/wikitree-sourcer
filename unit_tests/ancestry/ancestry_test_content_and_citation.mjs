@@ -65,6 +65,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/462110:61315?tid=172368945&pid=392239251991&hid=1047564774518",
   },
   {
+    caseName: "canada_census_1881_clara_travis",
+    url: "https://www.ancestry.com/discoveryui-content/view/2074:4628",
+  },
+  {
     caseName: "canada_census_1911_nominges_albert",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8947&h=442578&ssrc=pt&tid=160114497&pid=412193732194&usePUB=true",
   },

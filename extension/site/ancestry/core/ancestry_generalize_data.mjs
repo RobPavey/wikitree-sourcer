@@ -828,6 +828,11 @@ function buildEventPlace(data, result, includeResidence) {
       placeString += country;
     }
   }
+
+  if (!placeString) {
+    placeString = getCleanValueForRecordDataList(data, ["Place"]);
+  }
+
   result.setEventPlace(placeString);
 
   if (streetAddress) {
@@ -1967,6 +1972,12 @@ function generalizeRecordData(input, result) {
   }
 
   result.setFullName(fullName);
+
+  if (!fullName && data.recordData) {
+    const firstName = getCleanRecordDataValue(data, "First Name");
+    const lastName = getCleanRecordDataValue(data, "Last Name");
+    result.setLastNameAndForeNames(lastName, firstName);
+  }
 
   if (data.recordData != undefined) {
     result.setPersonGender(getCleanRecordDataValue(data, "Gender"));

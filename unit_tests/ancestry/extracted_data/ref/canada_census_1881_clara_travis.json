@@ -1,0 +1,27 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/2074:4628",
+  "pageType": "record",
+  "dbId": "4628",
+  "recordId": "2074",
+  "ancestryTemplate": "{{Ancestry Record|4628|2074}}",
+  "domain": "com",
+  "titleName": "",
+  "titleCollection": "Raleigh Township, Kent County, Ontario Census, 1881",
+  "recordData": {
+    "First Name": "Clara",
+    "Last Name": "Travis",
+    "Year": "1881",
+    "Place": "Raleigh",
+    "Film": "C-13278",
+    "Div": "3",
+    "Pg": "3",
+    "Entry": "25",
+    "Fam": "18",
+    "Age": "7",
+    "Birthplace": "Ontario",
+    "Religion": "Methodist"
+  },
+  "sourceInformation": "Hewitt, Kristina. Raleigh Township, Kent County, Ontario Census, 1881 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2000. Original data: 1881 Federal Census of Canada. Toronto, Canada: Government of Canada, 1881.",
+  "originalData": "1881 Federal Census of Canada. Toronto, Canada: Government of Canada, 1881.",
+  "sourceDescription": "Federal census records for residents of Raleigh Township, Ontario in 1881. Learn more..."
+}

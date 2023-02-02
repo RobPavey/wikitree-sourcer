@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "lastName": "Travis",
+    "forenames": "Clara"
+  },
+  "birthPlace": {
+    "placeString": "Ontario"
+  },
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "eventPlace": {
+    "placeString": "Raleigh"
+  },
+  "ageAtEvent": "7",
+  "collectionData": {
+    "id": "4628"
+  },
+  "hasValidData": true
+}
