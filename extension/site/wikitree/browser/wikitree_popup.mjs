@@ -1251,6 +1251,7 @@ async function setupImproveNameFieldsSubMenu(wtPersonData, message1, problemMess
     setFieldFromDialog("prefix");
     setFieldFromDialog("firstName");
     setFieldFromDialog("prefName");
+    setFieldFromDialog("middleName");
     setFieldFromDialog("nicknames");
     setFieldFromDialog("lnab");
     setFieldFromDialog("cln");
