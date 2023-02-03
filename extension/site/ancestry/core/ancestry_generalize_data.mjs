@@ -1511,9 +1511,20 @@ function generalizeDataGivenRecordType(data, result) {
         eventPlace = eventPlace + ", " + largerPlace;
       }
     }
+
+    let deathPlace = eventPlace;
+    let cemeteryName = getCleanValueForRecordDataList(data, ["Cemetery"]);
+    if (cemeteryName) {
+      if (!eventPlace) {
+        eventPlace = cemeteryName;
+      } else if (!eventPlace.startsWith(cemeteryName)) {
+        eventPlace = cemeteryName + ", " + eventPlace;
+      }
+    }
+
     if (eventPlace) {
       result.setEventPlace(eventPlace);
-      result.setDeathPlace(eventPlace);
+      result.setDeathPlace(deathPlace);
     }
     result.lastNameAtDeath = result.inferLastName();
 
