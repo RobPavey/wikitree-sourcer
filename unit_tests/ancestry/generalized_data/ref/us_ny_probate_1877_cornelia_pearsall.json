@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Probate",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Cornelia V Pearsall"
+  },
+  "dateIsNotGrantDate": true,
+  "eventDate": {
+    "yearString": "1877"
+  },
+  "eventPlace": {
+    "placeString": "Queens, New York, USA"
+  },
+  "deathPlace": {
+    "placeString": "New York, USA"
+  },
+  "lastNameAtDeath": "Pearsall",
+  "collectionData": {
+    "id": "8800"
+  },
+  "hasValidData": true
+}

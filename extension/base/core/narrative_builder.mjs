@@ -1744,7 +1744,11 @@ class NarrativeBuilder {
       } else if (residencePlace) {
         this.narrative += " residing " + this.getPlaceWithPreposition(residencePlace);
       }
-      this.narrative += " and " + pronoun + " estate passed probate";
+      if (this.eventGd.dateIsNotGrantDate) {
+        this.narrative += " and " + pronoun + " estate was in the probate process";
+      } else {
+        this.narrative += " and " + pronoun + " estate passed probate";
+      }
       if (eventDateObj) {
         this.narrative += " " + this.formatDateObj(eventDateObj, true);
       }
@@ -1762,7 +1766,11 @@ class NarrativeBuilder {
         this.narrative += " residing " + this.getPlaceWithPreposition(residencePlace);
       }
     } else {
-      this.narrative += possessiveName + " estate passed probate";
+      if (this.eventGd.dateIsNotGrantDate) {
+        this.narrative += possessiveName + " estate was in the probate process";
+      } else {
+        this.narrative += possessiveName + " estate passed probate";
+      }
       if (eventDateObj) {
         this.narrative += " " + this.formatDateObj(eventDateObj, true);
       }

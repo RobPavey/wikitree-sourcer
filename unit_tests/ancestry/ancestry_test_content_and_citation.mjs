@@ -890,6 +890,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/7162:2878",
   },
   {
+    caseName: "us_ny_probate_1877_cornelia_pearsall",
+    url: "https://www.ancestry.com/discoveryui-content/view/10725078:8800",
+  },
+  {
     caseName: "us_obituary_1901_john_gardiner",
     url: "https://www.ancestry.com/discoveryui-content/view/982098692:61843?tid=&pid=&queryId=c04479f2cec3171a504df07c4a358fb4&_phsrc=ywU8200&_phstart=successSource",
     optionVariants: [

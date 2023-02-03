@@ -1,0 +1,25 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/10725078:8800",
+  "pageType": "record",
+  "dbId": "8800",
+  "recordId": "10725078",
+  "ancestryTemplate": "{{Ancestry Record|8800|10725078}}",
+  "domain": "com",
+  "titleName": "Cornelia V Pearsall",
+  "titleCollection": "New York, U.S., Wills and Probate Records, 1659-1999",
+  "recordData": {
+    "Name": "Cornelia V Pearsall",
+    "Probate Place": "Queens, New York, USA",
+    "Inferred Death Place": "New York, USA",
+    "Item Description": "Accounts, 1877-1877",
+    "Individuals Listed (Name)": "Cornelia V Pearsall",
+    "Table of Contents<br/>10 images": "Table of Contents 10 images<br/>Cover Page 1<br/>Account Papers 2 – 10"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8800/images/005038251_00059?pid=10725078&usePUB=true&usePUBJs=true",
+  "imageDbId": "8800",
+  "imageRecordId": "005038251_00059",
+  "sourceCitation": "New York, Queens County, Accounting Records; Author: New York. Supreme Court (Kings County); Probate Place: Queens, New York",
+  "sourceInformation": "Ancestry.com. New York, U.S., Wills and Probate Records, 1659-1999 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2015. Original data: New York County, District and Probate Courts.",
+  "originalData": "New York County, District and Probate Courts.",
+  "sourceDescription": "These probates from the state of New York, 1659-1999, can bequeath a wealth of personal details on the decedent and other family members. Learn more..."
+}

@@ -1584,20 +1584,53 @@ function generalizeDataGivenRecordType(data, result) {
   } else if (result.recordType == RT.Will || result.recordType == RT.Probate) {
     result.setDeathDate(getCleanRecordDataValue(data, "Death Date", "date"));
     result.setDeathYear(getCleanRecordDataValue(data, "Death Year"));
-    result.setEventDate(
-      getCleanValueForRecordDataList(data, ["Probate Date", "Will Proved Date", "Grant Date"], "date")
+
+    let probateGrantDate = getCleanValueForRecordDataList(
+      data,
+      ["Probate Date", "Will Proved Date", "Grant Date"],
+      "date"
     );
+    if (probateGrantDate) {
+      result.setEventDate(probateGrantDate);
+    } else {
+      result.dateIsNotGrantDate = true;
+    }
     result.setEventYear(getCleanRecordDataValue(data, "Probate Year"));
+
+    // special case see: https://www.ancestry.com/discoveryui-content/view/10725078:8800
+    if (result.eventDate === undefined) {
+      const desc = getCleanValueForRecordDataList(data, ["Item Description"]);
+      if (desc) {
+        if (/^.*\d\d\d\d\-\d\d\d\d$/.test(desc)) {
+          let range = desc.replace(/^.*(\d\d\d\d\-\d\d\d\d)$/, "$1");
+          let start = range.substring(0, 4);
+          let end = range.substring(5);
+          if (start == end) {
+            result.setEventYear(start);
+          } else {
+            result.setEventYear(range);
+          }
+        } else if (/^.*\d\d\d\d$/.test(desc)) {
+          let date = desc.replace(/^.*(\d\d\d\d)$/, "$1");
+          result.setEventYear(date);
+        }
+      }
+    }
 
     if (result.recordType == RT.Will) {
       result.recordSubtype = "Probate"; // for now assume Ancestry Will records have probate date
     }
 
-    let eventPlace = getCleanValueForRecordDataList(data, ["Probate Registry"]);
+    let eventPlace = getCleanValueForRecordDataList(data, ["Probate Registry", "Probate Place"]);
     if (eventPlace) {
       result.setEventPlace(eventPlace);
     }
-    let deathPlace = getCleanValueForRecordDataList(data, ["Residence", "Death Place", "Death County"]);
+    let deathPlace = getCleanValueForRecordDataList(data, [
+      "Residence",
+      "Death Place",
+      "Death County",
+      "Inferred Death Place",
+    ]);
     if (deathPlace) {
       result.setDeathPlace(deathPlace);
     }
