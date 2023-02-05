@@ -716,8 +716,16 @@ function setResultFieldFromRecordDataField(data, dataKey, result, resultKey, toI
   }
 }
 
-function setMothersMaidenName(data, result, key) {
-  let mmn = data.recordData[key];
+function setMothersMaidenName(data, result, keys) {
+  let mmn = "";
+
+  for (let key of keys) {
+    if (data.recordData[key]) {
+      mmn = data.recordData[key];
+      break;
+    }
+  }
+
   if (mmn) {
     if (!/^\-+$/.test(mmn)) {
       mmn = standardizeName(mmn);
@@ -1493,7 +1501,7 @@ function generalizeData(input) {
     case "stat_births":
       setStatutoryCommonFields(data, result);
       result.lastNameAtBirth = result.name.lastName;
-      setMothersMaidenName(data, result, "Mother's Maiden Name");
+      setMothersMaidenName(data, result, ["Mother's Maiden Name", "Mothers Maiden Name"]);
       result.birthPlace = result.eventPlace;
       result.birthDate = result.eventDate;
       break;
@@ -1506,7 +1514,7 @@ function generalizeData(input) {
     case "stat_deaths":
       setStatutoryCommonFields(data, result);
       result.lastNameAtDeath = result.name.lastName;
-      setMothersMaidenName(data, result, "Mother's Maiden Name");
+      setMothersMaidenName(data, result, ["Mother's Maiden Name", "Mothers Maiden Name"]);
       result.setFieldIfValueExists("ageAtDeath", data.recordData["Age at death"]);
       result.deathPlace = result.eventPlace;
       result.deathDate = result.eventDate;
