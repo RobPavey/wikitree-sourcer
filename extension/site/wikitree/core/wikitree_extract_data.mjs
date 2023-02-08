@@ -906,6 +906,11 @@ function extractData(document, url) {
 
   let currentTabNode = document.querySelector("#content > div > ul.profile-tabs > li");
 
+  if (!currentTabNode) {
+    // we could be viewing what those outside the trusted list see
+    currentTabNode = document.querySelector("#content > div > ul.profile-tabs li.current");
+  }
+
   let currentTabText = currentTabNode ? currentTabNode.textContent : "";
 
   result.currentTabText = currentTabText; // used for error messages
@@ -917,7 +922,10 @@ function extractData(document, url) {
     extractDataInEditMode(document, result);
   } else {
     if (currentTabText) {
-      if (currentTabText.includes("private view")) {
+      // see if the "[public view]" link exists - if so this is private view
+      let publicViewLink = document.querySelector("#content > div > ul.profile-tabs a.usePublicView");
+      // the || currentTabText.includes("private view") is just for backward compat with unit tests
+      if (publicViewLink || currentTabText.includes("private view")) {
         extractDataInPrivateMode(document, result);
       } else {
         extractDataInReadMode(document, result);
