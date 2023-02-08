@@ -6,6 +6,10 @@ node_modules
 *.zip
 .DS_Store
 
+# Mac Time Machine files
+"* 2.*"
+"* 2"
+
 # VSCode files
 .vscode/*
 *.code-workspace
