@@ -129,6 +129,29 @@ const regressionData = [
     // Saved July 2022 - still says Registration District, has MMN
     caseName: "england_birth_reg_1949_maureen_hale",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8782&h=22191988&tid=172368945&pid=392241408802&hid=1048116409333&_gl=1*9eek4q*_ga*NTE3MDQyOTk1LjE2NTY5NDk1Nzk.*_ga_4QT8FMEX30*MTY1Njk2OTIyOC4zLjEuMTY1Njk2OTYwNS4w",
+    optionVariants: [
+      {
+        variantName: "narrative_1",
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_birthRegReg_includeMmn: "no",
+        },
+      },
+      {
+        variantName: "narrative_2",
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_birthRegReg_includeMmn: "inMainSentence",
+        },
+      },
+      {
+        variantName: "narrative_3",
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_birthRegReg_includeMmn: "inSeparateSentence",
+        },
+      },
+    ],
   },
   {
     // Older version with Registration District (pre June 2022)

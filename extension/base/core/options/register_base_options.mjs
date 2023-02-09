@@ -380,6 +380,18 @@ const narrativeRegistrationDistrictFormatOption = {
   defaultValue: "theDistrict",
 };
 
+const narrativeIncludeMmnOption = {
+  optionName: "includeMmn",
+  type: "select",
+  label: "Include mother's maiden name if known",
+  values: [
+    { value: "no", text: "No" },
+    { value: "inMainSentence", text: "In the main sentence" },
+    { value: "inSeparateSentence", text: "In a separate following sentence" },
+  ],
+  defaultValue: "no",
+};
+
 const narrativeIncludeAgeOption = {
   optionName: "includeAge",
   type: "select",
@@ -477,6 +489,7 @@ const narrativeBirthRegRegOptionsGroup = {
       ],
       defaultValue: "oneSentence",
     },
+    narrativeIncludeMmnOption,
     narrativeRegistrationDistrictFormatOption,
   ],
 };
@@ -678,6 +691,7 @@ const narrativeDeathRegRegOptionsGroup = {
       ],
       defaultValue: "oneSentence",
     },
+    narrativeIncludeMmnOption,
     narrativeRegistrationDistrictFormatOption,
   ],
 };

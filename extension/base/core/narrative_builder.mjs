@@ -546,6 +546,30 @@ class NarrativeBuilder {
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Mmn (Mother's maiden name)
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  addMmnForMainSentence(mmn) {
+    if (this.getSubcatOption("includeMmn") == "inMainSentence") {
+      if (mmn) {
+        this.narrative += " (Mother's maiden name ";
+        this.narrative += mmn;
+        this.narrative += ")";
+      }
+    }
+  }
+
+  addMmnAsSeparateSentence(mmn) {
+    if (this.getSubcatOption("includeMmn") == "inSeparateSentence") {
+      if (mmn) {
+        this.narrative += " Mother's maiden name ";
+        this.narrative += mmn;
+        this.narrative += ".";
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Age
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -787,6 +811,8 @@ class NarrativeBuilder {
           this.addAgeForMainSentence(ageAtEvent);
         }
 
+        this.addMmnForMainSentence(this.eventGd.mothersMaidenName);
+
         if (spouseName) {
           this.narrative += " to " + spouseName;
           this.addAgeForMainSentence(spouseAge);
@@ -904,6 +930,7 @@ class NarrativeBuilder {
 
     this.addParentageAsSeparateSentence();
     this.addAgeAsSeparateSentence(ageAtEvent);
+    this.addMmnAsSeparateSentence(this.eventGd.mothersMaidenName);
   }
 
   buildBirthRegistrationString() {
