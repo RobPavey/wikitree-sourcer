@@ -206,6 +206,7 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   }
 
   if (splitForenames) {
+    result.wereForenamesSplit = true;
     result.firstName = personGd.inferFirstName();
     result.middleName = personGd.inferMiddleNames();
   } else {
@@ -299,6 +300,72 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   }
 
   return result;
+}
+
+function updateAfterCheckWtPersonData(wtPersonData) {
+  // this is called after checkWtPersonData is done.
+  // If the user added a country we need to recheck whether to splt middle names
+
+  // if forenames were already split that implies either the split option was set to always
+  // or one of the places had a country that meant they should be split
+  if (wtPersonData.wereForenamesSplit) {
+    return;
+  }
+
+  const splitForenamesOpt = options.addMerge_general_splitForenames;
+  if (splitForenamesOpt != "countrySpecific") {
+    return;
+  }
+
+  if (
+    !wtPersonData.birthLocationModified &&
+    !wtPersonData.deathLocationModified &&
+    !wtPersonData.marriageLocationModified
+  ) {
+    return;
+  }
+
+  if (wtPersonData.middleName) {
+    return; // there is data in the middle name field already
+  }
+
+  // at least one location was changed, implies one was missing country before
+  let numUsing = 0;
+  let numNotUsing = 0;
+  let birthUsing = false;
+  function checkCountry(fieldName) {
+    const placeName = wtPersonData[fieldName];
+    if (placeName) {
+      let country = CD.matchCountryFromPlaceName(placeName);
+      if (country) {
+        if (country.usesMiddleNames) {
+          numUsing++;
+          if (fieldName == "birthLocation") {
+            birthUsing = true;
+          }
+        } else {
+          numNotUsing++;
+        }
+      }
+    }
+  }
+
+  checkCountry("birthLocation");
+  checkCountry("deathLocation");
+  checkCountry("marriageLocation");
+
+  let splitForenames = false;
+  if (numUsing > 0 && numNotUsing == 0) {
+    splitForenames = true;
+  } else if (birthUsing) {
+    splitForenames = true;
+  }
+
+  if (splitForenames) {
+    let forenames = wtPersonData.firstName;
+    wtPersonData.firstName = WTS_String.getFirstWord(forenames);
+    wtPersonData.middleName = WTS_String.getWordsAfterFirstWord(forenames);
+  }
 }
 
 function getProfileLinkForAddMerge(personEd, personGd) {
@@ -713,6 +780,7 @@ async function setFieldsFromPersonData(data, personEd, personGd, tabId, citation
   let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
 
   function processFunction() {
+    updateAfterCheckWtPersonData(wtPersonData);
     doSetFieldsFromPersonData(tabId, wtPersonData);
   }
 
@@ -855,6 +923,9 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
         let message2 = "Edit " + fieldDescription + ":";
 
         function continueFunction(newValue) {
+          if (newValue != wtPersonData[fieldName]) {
+            wtPersonData[fieldName + "Modified"] = true;
+          }
           wtPersonData[fieldName] = newValue;
           wtPersonData[fieldName + "Approved"] = true;
           wtPersonData[fieldName + "DialogShown"] = true;
@@ -892,6 +963,7 @@ async function mergeEditFromPersonData(data, personEd, personGd, citationObject,
   let wtPersonData = getWikiTreeMergeEditData(data, personEd, personGd, citationObject);
 
   function processFunction() {
+    updateAfterCheckWtPersonData(wtPersonData);
     doMergeEditFromPersonData(data, wtPersonData);
   }
 
