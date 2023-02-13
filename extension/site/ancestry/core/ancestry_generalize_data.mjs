@@ -2168,9 +2168,15 @@ function generalizeProfileData(input, result) {
   if (data.marriages) {
     for (let marriage of data.marriages) {
       let spouse = result.addSpouse();
-      spouse.name.setFullName(marriage.spouseName);
-      spouse.marriageDate.setDateAndQualifierFromString(marriage.date);
-      spouse.marriagePlace.placeString = marriage.place;
+      if (marriage.spouseName) {
+        spouse.name.setFullName(marriage.spouseName);
+      }
+      if (marriage.date) {
+        spouse.marriageDate.setDateAndQualifierFromString(marriage.date);
+      }
+      if (marriage.place) {
+        spouse.marriagePlace.placeString = marriage.place;
+      }
     }
   }
 

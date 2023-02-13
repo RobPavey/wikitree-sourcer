@@ -419,6 +419,10 @@ class WtsDate {
       { prefix: "bef", qualifier: dateQualifiers.BEFORE },
     ];
 
+    if (!dateString) {
+      return;
+    }
+    
     let qualifier = dateQualifiers.NONE;
     let lcDateString = dateString.toLowerCase();
 
