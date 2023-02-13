@@ -743,15 +743,31 @@ function extractDataForEditFamily(document, result) {
         if (spouseIsParentNode.checked) {
           let parentNode = spouseIsParentNode.parentNode;
 
-          let linkNode = parentNode.querySelector("a");
-          if (linkNode) {
-            let href = linkNode.getAttribute("href");
-            href = href.replace(/^\/wiki\//, "");
-            result.familyMemberSpouseWikiId = href;
+          if (result.editFamilyType != "steps") {
+            let textNode = spouseIsParentNode.nextSibling;
+            if (textNode) {
+              let spouseText = textNode.textContent;
+              spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
+              result.familyMemberSpouseName = spouseText.trim();
 
-            let spouseText = linkNode.textContent;
-            spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
-            result.familyMemberSpouseName = spouseText.trim();
+              let linkNode = textNode.nextSibling;
+              if (linkNode) {
+                let href = linkNode.getAttribute("href");
+                href = href.replace(/^\/wiki\//, "");
+                result.familyMemberSpouseWikiId = href;
+              }
+            }
+          } else if (parentNode) {
+            let linkNode = parentNode.querySelector("a");
+            if (linkNode) {
+              let href = linkNode.getAttribute("href");
+              href = href.replace(/^\/wiki\//, "");
+              result.familyMemberSpouseWikiId = href;
+
+              let spouseText = linkNode.textContent;
+              spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
+              result.familyMemberSpouseName = spouseText.trim();
+            }
           }
         }
       }
