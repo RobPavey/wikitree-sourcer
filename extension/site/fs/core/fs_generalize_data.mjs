@@ -819,6 +819,12 @@ function generalizeDataForPerson(data, result) {
   }
 }
 
+function generalizeDataForBook(data, result) {
+  result.sourceType = "book";
+
+  result.hasValidData = true;
+}
+
 // This function generalizes the data extracted from a FamilySearch page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
@@ -828,6 +834,9 @@ function generalizeData(input) {
 
   if (data.pageType == "person") {
     result.sourceType = "profile";
+  } else if (data.pageType == "book") {
+    generalizeDataForBook(data, result);
+    return result;
   } else {
     result.sourceType = "record";
     determineRecordTypeAndRole(data, result);

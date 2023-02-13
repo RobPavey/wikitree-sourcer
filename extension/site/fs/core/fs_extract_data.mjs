@@ -867,11 +867,41 @@ function extractData(document, url) {
         result.pageType = "unknown";
       }
     } else {
-      // page may be partially loaded
-      console.log("page type is unknown");
+      let unknown = true;
+      // could be a book
+      if (url.startsWith("https://www.familysearch.org/library/books/")) {
+        let content = document.querySelector("#content");
+        if (content) {
+          let heading = content.querySelector("div.p_right > h1");
+          let table = content.querySelector("#single-table");
+          if (heading && table) {
+            unknown = false;
+            result.pageType = "book";
+            result.title = heading.textContent;
+            let rows = table.querySelectorAll("dl");
+            result.recordData = {};
+            for (let row of rows) {
+              let dt = row.querySelector("dt");
+              let dd = row.querySelector("dd");
+              if (dt && dd) {
+                let key = dt.textContent;
+                let value = dd.textContent;
+                if (key && value) {
+                  result.recordData[key] = value;
+                }
+              }
+            }
+          }
+        }
+      }
 
-      result.pageType = "unknown";
-      result.dataMayBeIncomplete = true;
+      if (unknown) {
+        // page may be partially loaded
+        console.log("page type is unknown");
+
+        result.pageType = "unknown";
+        result.dataMayBeIncomplete = true;
+      }
     }
   }
 

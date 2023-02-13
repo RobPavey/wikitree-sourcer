@@ -190,6 +190,24 @@ function addBuildFsTemplateMenuItem(menu, data) {
   });
 }
 
+function addBuildBookCitationMenuItems(menu, data) {
+  addMenuItem(menu, "Build Inline Citation", function (element) {
+    // This is a bit hacky. We don't want to change the input data object but we need a different type in
+    // the one for each menu item
+    let input = Object.assign({}, data);
+    input.type = "inline";
+
+    displayMessage("Building citation...");
+    fsBuildCitation(input);
+  });
+  addMenuItem(menu, "Build Source Citation", function (element) {
+    let input = Object.assign({}, data);
+    input.type = "source";
+    displayMessage("Building citation...");
+    fsBuildCitation(input);
+  });
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -229,7 +247,10 @@ async function setupFsPopupMenu(extractedData) {
 
   if (
     !extractedData ||
-    (extractedData.pageType != "record" && extractedData.pageType != "image" && extractedData.pageType != "person")
+    (extractedData.pageType != "record" &&
+      extractedData.pageType != "image" &&
+      extractedData.pageType != "person" &&
+      extractedData.pageType != "book")
   ) {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
     message += "\n\nIt looks like a FamilySearch page but not a record, image or person page.";
@@ -275,6 +296,8 @@ async function setupFsPopupMenu(extractedData) {
     addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data);
     addBuildFsTemplateMenuItem(menu, data);
+  } else if (extractedData.pageType == "book") {
+    addBuildBookCitationMenuItems(menu, data);
   }
 
   addStandardMenuEnd(menu, data, backFunction);

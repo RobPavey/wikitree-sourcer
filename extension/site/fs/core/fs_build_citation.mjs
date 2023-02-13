@@ -638,6 +638,18 @@ function buildImageCitation(data, gd, builder) {
   builder.meaningfulTitle = getImageRefTitle(data.catalogRecordName, data.filmTitle);
 }
 
+function buildBookCitation(data, gd, builder) {
+  builder.databaseHasImages = true;
+
+  builder.sourceTitle = data.title;
+
+  builder.recordLinkOrTemplate = data.url;
+
+  builder.dataString = builder.buildDataList(data.recordData, removeUnwantedKeysForDataString);
+
+  builder.meaningfulTitle = "Book";
+}
+
 function getRefTitle(ed, gd) {
   const recordTypeToRefTitle = [
     {
@@ -689,6 +701,8 @@ function buildCitation(input) {
     }
   } else if (data.pageType == "image") {
     buildImageCitation(data, gd, builder);
+  } else if (data.pageType == "book") {
+    buildBookCitation(data, gd, builder);
   }
 
   // now the builder is setup use it to build the citation text

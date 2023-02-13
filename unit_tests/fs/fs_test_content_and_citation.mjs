@@ -437,6 +437,14 @@ const personRegressionData = [
   },
 ];
 
+const bookRegressionData = [
+  {
+    // had to edit HTML to remove stylesheet stuff
+    caseName: "book_ca_ontario_essex",
+    url: "https://www.familysearch.org/library/books/records/item/236963-redirection",
+  },
+];
+
 const optionVariants = [
   {
     variantName: "dataStyle_fsShort_fsCitation",
@@ -514,6 +522,17 @@ async function runTests(testManager) {
 
   await runExtractDataTests("fs", extractDataFromFetch, personRegressionData, testManager);
   await runGeneralizeDataTests("fs", generalizeData, personRegressionData, testManager);
+
+  await runExtractDataTests("fs", extractData, bookRegressionData, testManager);
+  await runGeneralizeDataTests("fs", generalizeData, bookRegressionData, testManager);
+  await runBuildCitationTests(
+    "fs",
+    buildCitation,
+    buildHouseholdTable,
+    bookRegressionData,
+    testManager,
+    optionVariants
+  );
 }
 
 export { runTests };
