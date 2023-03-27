@@ -699,15 +699,19 @@ function extractDataForEditFamily(document, result) {
     result.editFamilyType = "oneStage";
   }
 
-  //console.log("extractDataForEditFamily");
+  //console.log("extractDataForEditFamily, editFamilyTypeStep = " + result.editFamilyTypeStep);
 
   let otherPersonName = "";
   let wikiId = "";
 
-  let headingNode = document.querySelector("#content > div > h1");
+  let headingNode = document.querySelector("#addEditHeadline");
   if (!headingNode) {
-    return result;
+    headingNode = document.querySelector("#content > div > h1");
+    if (!headingNode) {
+      return result;
+    }
   }
+
   let heading = headingNode.textContent;
 
   if (relationship != "unrelated") {
@@ -717,8 +721,8 @@ function extractDataForEditFamily(document, result) {
         otherPersonName = heading.replace("Edit Family of ", "").trim();
       }
     } else {
-      // steps page
-      let headingNameNode = headingNode.querySelector("a[title]");
+      // steps page, there can be multiple "a" child nodes, we want the first
+      let headingNameNode = headingNode.querySelector("a");
       if (!headingNameNode) {
         return result;
       }
@@ -849,6 +853,12 @@ function extractDataForEditFamily(document, result) {
   }
 
   result.hasValidData = true;
+
+  // record if the middle name field is present (there is a WikiTree setting to turn it off)
+  let middleNameNode = document.querySelector("#mMiddleName");
+  if (middleNameNode) {
+    result.hasMiddleNameField = true;
+  }
 
   result.firstNames = getValueBySelector(document, "#mFirstName");
   result.prefNames = getValueBySelector(document, "#mRealName");

@@ -274,23 +274,51 @@ function setEditFamilyFields(personData) {
     setValue("#mBioWithoutSources", "notes");
     setValue("#mSources", "sources");
   } else {
-    let advancedSourcesNode = document.querySelector("#useAdvancedSources");
-    if (advancedSourcesNode) {
-      advancedSourcesNode.value = "1";
+    let needAdvancedMode = false;
+    if (personData.notes || personData.sources) {
+      needAdvancedMode = true;
     }
 
-    // must be in beta mode, put everything in mSources
-    let bioText = "== Biography ==\n";
-    if (personData.notes) {
-      bioText += personData.notes + "\n\n";
-    }
-    bioText += "== Sources ==\n<references />\n";
-    if (personData.sources) {
-      bioText += personData.sources;
-    }
-    let fullBioNode = document.querySelector("#mSources");
-    if (fullBioNode) {
-      fullBioNode.value = bioText;
+    if (needAdvancedMode) {
+      let advancedSourcesNode = document.querySelector("#useAdvancedSources");
+      if (advancedSourcesNode) {
+        if (advancedSourcesNode.value != "1") {
+          advancedSourcesNode.value = "1";
+          let sourcesContentNode = document.querySelector("#sourcesSection > p.sourcesContent");
+          if (sourcesContentNode) {
+            // change text on switch:
+            let switchLinkNode = sourcesContentNode.querySelector("a.toggleAdvancedSources");
+            if (switchLinkNode) {
+              switchLinkNode.textContent = "Switch to Basic Sourcing";
+            }
+            // hide the "Default to Advanced option" checkbox and label:
+            let asOptionContainerNode = document.querySelector("#asOptionContainer");
+            if (asOptionContainerNode) {
+              asOptionContainerNode.style = "display: none;";
+            }
+          }
+        }
+
+        // Change the label for the sources/bio box
+        let sourcesLabelNode = document.querySelector("#sourcesLabel");
+        if (sourcesLabelNode) {
+          sourcesLabelNode.innerHTML = "Sourcer generated bio.<br>See Sourcer options<br>to control this.";
+        }
+      }
+
+      // must be in beta mode, put everything in mSources
+      let bioText = "== Biography ==\n";
+      if (personData.notes) {
+        bioText += personData.notes + "\n\n";
+      }
+      bioText += "== Sources ==\n<references />\n";
+      if (personData.sources) {
+        bioText += personData.sources;
+      }
+      let fullBioNode = document.querySelector("#mSources");
+      if (fullBioNode) {
+        fullBioNode.value = bioText;
+      }
     }
   }
 

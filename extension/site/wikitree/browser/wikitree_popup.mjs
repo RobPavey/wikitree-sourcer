@@ -176,29 +176,31 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   let result = {};
 
   let splitForenames = false;
-  const splitForenamesOpt = options.addMerge_general_splitForenames;
-  if (splitForenamesOpt == "always") {
-    splitForenames = true;
-  } else if (splitForenamesOpt == "countrySpecific") {
-    let countryList = personGd.inferCountries();
-    let numUsing = 0;
-    let numNotUsing = 0;
-    for (let countryName of countryList) {
-      if (CD.usesMiddleNames(countryName)) {
-        numUsing++;
-      } else {
-        numNotUsing++;
-      }
-    }
-    if (numUsing > 0 && numNotUsing == 0) {
+  if (data.extractedData.hasMiddleNameField) {
+    const splitForenamesOpt = options.addMerge_general_splitForenames;
+    if (splitForenamesOpt == "always") {
       splitForenames = true;
-    } else if (numUsing > 0) {
-      let birthPlace = personGd.inferBirthPlace();
-      if (birthPlace) {
-        let country = CD.matchCountryFromPlaceName(birthPlace);
-        if (country) {
-          if (CD.usesMiddleNames(country.stdName)) {
-            splitForenames = true;
+    } else if (splitForenamesOpt == "countrySpecific") {
+      let countryList = personGd.inferCountries();
+      let numUsing = 0;
+      let numNotUsing = 0;
+      for (let countryName of countryList) {
+        if (CD.usesMiddleNames(countryName)) {
+          numUsing++;
+        } else {
+          numNotUsing++;
+        }
+      }
+      if (numUsing > 0 && numNotUsing == 0) {
+        splitForenames = true;
+      } else if (numUsing > 0) {
+        let birthPlace = personGd.inferBirthPlace();
+        if (birthPlace) {
+          let country = CD.matchCountryFromPlaceName(birthPlace);
+          if (country) {
+            if (CD.usesMiddleNames(country.stdName)) {
+              splitForenames = true;
+            }
           }
         }
       }
