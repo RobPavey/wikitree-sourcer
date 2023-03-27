@@ -291,7 +291,7 @@ const CountyData = {
       stdName: "Dunbartonshire",
       matches: ["Dunbartonshire", "Dunbarton", "Dumbartonshire", "Dumbarton"],
     },
-    { stdName: "Dumfriesshire", matches: ["Dumfriesshire", "Dumfries"] },
+    { stdName: "Dumfriesshire", matches: ["Dumfriesshire", "Dumfries-shire", "Dumfries"] },
     { stdName: "East Lothian", matches: ["East Lothian"] },
     { stdName: "Edinburgh", matches: ["Edinburgh", "Edinburghshire"] },
     { stdName: "Fife", matches: ["Fife"] },
