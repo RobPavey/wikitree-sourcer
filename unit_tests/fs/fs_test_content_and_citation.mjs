@@ -245,6 +245,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:6XVR-FRK3",
   },
   {
+    caseName: "us_census_1950_ruth_pearson",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6X12-6VV7",
+  },
+  {
     caseName: "us_census_church_1950_stephen_taylor",
     url: "https://www.familysearch.org/ark:/61903/1:1:ZY42-D8N2",
   },

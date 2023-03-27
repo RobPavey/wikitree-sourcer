@@ -2117,7 +2117,7 @@ function getNameForPersonObj(person, result) {
 
 function getGenderForPersonObj(person, result) {
   // get gender
-  if (person.gender) {
+  if (person.gender && person.gender.type) {
     if (person.gender.type.endsWith("/Male")) {
       result.gender = "male";
     } else if (person.gender.type.endsWith("/Female")) {
@@ -2719,7 +2719,7 @@ function extractDataFromFetch(document, dataObj, fetchType, options) {
       }
 
       // get gender
-      if (person.gender) {
+      if (person.gender && person.gender.type) {
         if (person.gender.type.endsWith("/Male")) {
           member.gender = "male";
         } else if (person.gender.type.endsWith("/Female")) {

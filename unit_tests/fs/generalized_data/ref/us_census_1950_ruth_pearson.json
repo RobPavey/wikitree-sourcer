@@ -1,0 +1,60 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Ruth Pearson"
+  },
+  "birthDate": {
+    "dateString": "1910",
+    "yearString": "1910"
+  },
+  "birthPlace": {
+    "placeString": "Ill"
+  },
+  "eventDate": {
+    "dateString": "10 April 1950"
+  },
+  "eventPlace": {
+    "placeString": "Chicago, Cook, Illinois, United States"
+  },
+  "ageAtEvent": "40",
+  "occupation": "Typist",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Eleanor Pearson",
+      "relationship": "head",
+      "maritalStatus": "single",
+      "age": "47 years",
+      "birthYear": "1903",
+      "occupation": "Clerk",
+      "birthPlace": "Illinois"
+    },
+    {
+      "name": "Ruth Pearson",
+      "relationship": "sister",
+      "maritalStatus": "single",
+      "age": "40 years",
+      "birthYear": "1910",
+      "occupation": "Typist",
+      "birthPlace": "Ill",
+      "isSelected": true
+    }
+  ],
+  "maritalStatus": "single",
+  "relationshipToHead": "sister",
+  "collectionData": {
+    "id": "4464515",
+    "page": "10"
+  },
+  "hasValidData": true
+}

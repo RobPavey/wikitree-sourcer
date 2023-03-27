@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nEntry for Eleanor Pearson and Ruth Pearson, 10 April 1950.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "In the 1950 census Ruth (age 40), Typist, was the never married sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nEntry for Eleanor Pearson and Ruth Pearson, 10 April 1950.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15;<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>Entry for Eleanor Pearson and Ruth Pearson, 10 April 1950.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nRuth Pearson (40), single sister, Typist, in household of Eleanor Pearson (47 years) in Chicago, Cook, Illinois, United States. Born in Ill.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "In the 1950 census Ruth (age 40), Typist, was the never married sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nRuth Pearson (40), single sister, Typist, in household of Eleanor Pearson (47 years) in Chicago, Cook, Illinois, United States. Born in Ill.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15;<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>Ruth Pearson (40), single sister, Typist, in household of Eleanor Pearson (47 years) in Chicago, Cook, Illinois, United States. Born in Ill.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nName: Ruth Pearson; Occupation: Typist; Marital Status: Single; Race: White; Residence Date: 1949; Birth Date: 1910; Birth Place: Ill; Census Date: 10 April 1950; Census Place: Chicago, Cook, Illinois, United States; Checked By Date: 4/20, 1950; Misc Code A1950Census: 7; Image Dimensions: 4105,4705; Checked By: E A Anderson; Occupation Industry: Chemist Manufacturer; Image Folder1950Census: 43290879-Illinois-018190; Misc Worker Class: p; Ag Questionair Nbr: g; Lived On Farm: no; Enumerator Name: Dona V Dudley; Misc Hours Worked: 37; Household Continued: Yes; Occupation Category: wk; Misc Code C1950Census: 350; Relationship To Head: Sister; 3Plus Acres: no; Misc Code C11950Census: 469; Misc Code C21950Census: 1; Age: 40 years; System Of Record: SLS; Digital Film Nbr: 108923927.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "In the 1950 census Ruth (age 40), Typist, was the never married sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nName: Ruth Pearson; Occupation: Typist; Marital Status: Single; Race: White; Residence Date: 1949; Birth Date: 1910; Birth Place: Ill; Census Date: 10 April 1950; Census Place: Chicago, Cook, Illinois, United States; Checked By Date: 4/20, 1950; Misc Code A1950Census: 7; Image Dimensions: 4105,4705; Checked By: E A Anderson; Occupation Industry: Chemist Manufacturer; Image Folder1950Census: 43290879-Illinois-018190; Misc Worker Class: p; Ag Questionair Nbr: g; Lived On Farm: no; Enumerator Name: Dona V Dudley; Misc Hours Worked: 37; Household Continued: Yes; Occupation Category: wk; Misc Code C1950Census: 350; Relationship To Head: Sister; 3Plus Acres: no; Misc Code C11950Census: 469; Misc Code C21950Census: 1; Age: 40 years; System Of Record: SLS; Digital Film Nbr: 108923927.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15;<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>Name: Ruth Pearson; Occupation: Typist; Marital Status: Single; Race: White; Residence Date: 1949; Birth Date: 1910; Birth Place: Ill; Census Date: 10 April 1950; Census Place: Chicago, Cook, Illinois, United States; Checked By Date: 4/20, 1950; Misc Code A1950Census: 7; Image Dimensions: 4105,4705; Checked By: E A Anderson; Occupation Industry: Chemist Manufacturer; Image Folder1950Census: 43290879-Illinois-018190; Misc Worker Class: p; Ag Questionair Nbr: g; Lived On Farm: no; Enumerator Name: Dona V Dudley; Misc Hours Worked: 37; Household Continued: Yes; Occupation Category: wk; Misc Code C1950Census: 350; Relationship To Head: Sister; 3Plus Acres: no; Misc Code C11950Census: 469; Misc Code C21950Census: 1; Age: 40 years; System Of Record: SLS; Digital Film Nbr: 108923927.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}\n{| border=\"1\"\n| Name || Ruth Pearson\n|-\n| Occupation || Typist\n|-\n| Marital Status || Single\n|-\n| Race || White\n|-\n| Residence Date || 1949\n|-\n| Birth Date || 1910\n|-\n| Birth Place || Ill\n|-\n| Census Date || 10 April 1950\n|-\n| Census Place || Chicago, Cook, Illinois, United States\n|-\n| Checked By Date || 4/20, 1950\n|-\n| Misc Code A1950Census || 7\n|-\n| Image Dimensions || 4105,4705\n|-\n| Checked By || E A Anderson\n|-\n| Occupation Industry || Chemist Manufacturer\n|-\n| Image Folder1950Census || 43290879-Illinois-018190\n|-\n| Misc Worker Class || p\n|-\n| Ag Questionair Nbr || g\n|-\n| Lived On Farm || no\n|-\n| Enumerator Name || Dona V Dudley\n|-\n| Misc Hours Worked || 37\n|-\n| Household Continued || Yes\n|-\n| Occupation Category || wk\n|-\n| Misc Code C1950Census || 350\n|-\n| Relationship To Head || Sister\n|-\n| 3Plus Acres || no\n|-\n| Misc Code C11950Census || 469\n|-\n| Misc Code C21950Census || 1\n|-\n| Age || 40 years\n|-\n| System Of Record || SLS\n|-\n| Digital Film Nbr || 108923927\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "In the 1950 census Ruth (age 40), Typist, was the never married sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}\n{| border=\"1\"\n| Name || Ruth Pearson\n|-\n| Occupation || Typist\n|-\n| Marital Status || Single\n|-\n| Race || White\n|-\n| Residence Date || 1949\n|-\n| Birth Date || 1910\n|-\n| Birth Place || Ill\n|-\n| Census Date || 10 April 1950\n|-\n| Census Place || Chicago, Cook, Illinois, United States\n|-\n| Checked By Date || 4/20, 1950\n|-\n| Misc Code A1950Census || 7\n|-\n| Image Dimensions || 4105,4705\n|-\n| Checked By || E A Anderson\n|-\n| Occupation Industry || Chemist Manufacturer\n|-\n| Image Folder1950Census || 43290879-Illinois-018190\n|-\n| Misc Worker Class || p\n|-\n| Ag Questionair Nbr || g\n|-\n| Lived On Farm || no\n|-\n| Enumerator Name || Dona V Dudley\n|-\n| Misc Hours Worked || 37\n|-\n| Household Continued || Yes\n|-\n| Occupation Category || wk\n|-\n| Misc Code C1950Census || 350\n|-\n| Relationship To Head || Sister\n|-\n| 3Plus Acres || no\n|-\n| Misc Code C11950Census || 469\n|-\n| Misc Code C21950Census || 1\n|-\n| Age || 40 years\n|-\n| System Of Record || SLS\n|-\n| Digital Film Nbr || 108923927\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15;<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>Name: Ruth Pearson; Occupation: Typist; Marital Status: Single; Race: White; Residence Date: 1949; Birth Date: 1910; Birth Place: Ill; Census Date: 10 April 1950; Census Place: Chicago, Cook, Illinois, United States; Checked By Date: 4/20, 1950; Misc Code A1950Census: 7; Image Dimensions: 4105,4705; Checked By: E A Anderson; Occupation Industry: Chemist Manufacturer; Image Folder1950Census: 43290879-Illinois-018190; Misc Worker Class: p; Ag Questionair Nbr: g; Lived On Farm: no; Enumerator Name: Dona V Dudley; Misc Hours Worked: 37; Household Continued: Yes; Occupation Category: wk; Misc Code C1950Census: 350; Relationship To Head: Sister; 3Plus Acres: no; Misc Code C11950Census: 469; Misc Code C21950Census: 1; Age: 40 years; System Of Record: SLS; Digital Film Nbr: 108923927.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nEntry for Eleanor Pearson and Ruth Pearson, 10 April 1950.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "In the 1950 census Ruth (age 40), Typist, was the never married sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nEntry for Eleanor Pearson and Ruth Pearson, 10 April 1950.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15;<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>Entry for Eleanor Pearson and Ruth Pearson, 10 April 1950.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "In the 1950 census Ruth (age 40), Typist, was the never married sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15;<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nRuth Pearson (40), single sister, Typist, in household of Eleanor Pearson (47 years) in Chicago, Cook, Illinois, United States. Born in Ill.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "In the 1950 census Ruth (age 40), Typist, was the never married sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nRuth Pearson (40), single sister, Typist, in household of Eleanor Pearson (47 years) in Chicago, Cook, Illinois, United States. Born in Ill.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15;<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>Ruth Pearson (40), single sister, Typist, in household of Eleanor Pearson (47 years) in Chicago, Cook, Illinois, United States. Born in Ill.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nEntry for Eleanor Pearson and Ruth Pearson, 10 April 1950.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "In the 1950 census Ruth (age 40), Typist, was the never married sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15;<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>\nEntry for Eleanor Pearson and Ruth Pearson, 10 April 1950.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15;<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}<br/>Entry for Eleanor Pearson and Ruth Pearson, 10 April 1950.",
+    "type": "source"
+  }
+}

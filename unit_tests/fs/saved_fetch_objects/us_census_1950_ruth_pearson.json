@@ -1,0 +1,2621 @@
+{
+  "id" : "r_174655813990",
+  "attribution" : {
+    "modified" : 1650105892218,
+    "created" : 1650105892218
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:41JX-6RNZ?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:41JX-6RNZ?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:41JX-6RNZ"
+    }
+  },
+  "description" : "#sd_p_295237267745",
+  "persons" : [ {
+    "id" : "p_295237267744",
+    "attribution" : {
+      "modified" : 1650105892218,
+      "created" : 1650105892218
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "fields" : [ {
+        "id" : "c2ddb452-f635-4409-9b89-309ec5363867",
+        "attribution" : {
+          "modified" : 1650105892218,
+          "created" : 1650105892218
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "sources" : [ {
+          "description" : "#sd_da1",
+          "descriptionId" : "sd_da1",
+          "qualifiers" : [ {
+            "value" : "0.406090,0.434857,0.422655,0.446971",
+            "name" : "http://gedcomx.org/RectangleRegion"
+          } ]
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6X12-6VVQ?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/41JX-6RNZ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/ancestry/218518055" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6X12-6VVQ" ]
+    },
+    "names" : [ {
+      "id" : "611e5898-efaf-4072-b614-89c73f56e184",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Eleanor Pearson",
+        "parts" : [ {
+          "id" : "0588dc8f-4504-4aba-a86f-10dc8ba78ec0",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Eleanor",
+          "fields" : [ {
+            "id" : "2d5936fc-fdfb-4ea2-9b4d-9d21e86eeb84",
+            "attribution" : {
+              "modified" : 1650105892218,
+              "created" : 1650105892218
+            },
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ {
+              "description" : "#sd_da1",
+              "descriptionId" : "sd_da1",
+              "qualifiers" : [ {
+                "value" : "0.263825,0.437620,0.331790,0.448459",
+                "name" : "http://gedcomx.org/RectangleRegion"
+              } ]
+            } ],
+            "values" : [ {
+              "id" : "58557636-2a0c-4782-9861-c1cee8a9c315",
+              "attribution" : {
+                "modified" : 1670544024503,
+                "created" : 1670544024503,
+                "changeMessageResource" : "http://familysearch.org/types/reasons/147760"
+              },
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Eleanor"
+            }, {
+              "id" : "58557636-2a0c-4782-9861-c1cee8a9c315",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                },
+                "modified" : 1670544024504,
+                "created" : 1670544024504
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Eleanor"
+            } ]
+          } ]
+        }, {
+          "id" : "874747ea-59ea-4bf9-9143-c423f76926eb",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Pearson",
+          "fields" : [ {
+            "id" : "a8f93eaf-7713-456e-b391-1a76a4b7202e",
+            "attribution" : {
+              "modified" : 1650105892218,
+              "created" : 1650105892218
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ {
+              "description" : "#sd_da1",
+              "descriptionId" : "sd_da1",
+              "qualifiers" : [ {
+                "value" : "0.218514,0.437620,0.263825,0.448459",
+                "name" : "http://gedcomx.org/RectangleRegion"
+              } ]
+            } ],
+            "values" : [ {
+              "id" : "4f985e7c-bcce-448d-a4c3-5d7b94eafda5",
+              "attribution" : {
+                "modified" : 1670544024504,
+                "created" : 1670544024504,
+                "changeMessageResource" : "http://familysearch.org/types/reasons/147760"
+              },
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Pearson"
+            }, {
+              "id" : "4f985e7c-bcce-448d-a4c3-5d7b94eafda5",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                },
+                "modified" : 1670544024505,
+                "created" : 1670544024505
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Pearson"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "0cb190b0-714f-4d13-bb32-0d193085b389",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            },
+            "modified" : 1670544024504,
+            "created" : 1670544024504
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "ae7f5db2-f850-46d0-9c1c-f51a4e117831",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              },
+              "modified" : 1670544024504,
+              "created" : 1670544024504
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Eleanor Pearson"
+          }, {
+            "id" : "ae7f5db2-f850-46d0-9c1c-f51a4e117831",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              },
+              "modified" : 1670544024504,
+              "created" : 1670544024504
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Eleanor Pearson"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Occupation",
+      "value" : "Clerk",
+      "fields" : [ {
+        "id" : "595fb3f5-2ce9-46f0-ae98-4afd992e52a1",
+        "attribution" : {
+          "modified" : 1650105892218,
+          "created" : 1650105892218
+        },
+        "type" : "http://gedcomx.org/Occupation",
+        "sources" : [ {
+          "description" : "#sd_da1",
+          "descriptionId" : "sd_da1",
+          "qualifiers" : [ {
+            "value" : "0.678928,0.430606,0.761023,0.441870",
+            "name" : "http://gedcomx.org/RectangleRegion"
+          } ]
+        } ],
+        "values" : [ {
+          "id" : "a129cefe-f445-4ef8-b3f0-fce8c204f629",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_OCCUPATION_ORIG",
+          "text" : "Clerk"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Single",
+      "fields" : [ {
+        "id" : "47a58609-d12e-4a2c-a778-21a2d2b5045f",
+        "attribution" : {
+          "modified" : 1650105892218,
+          "created" : 1650105892218
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "sources" : [ {
+          "description" : "#sd_da1",
+          "descriptionId" : "sd_da1",
+          "qualifiers" : [ {
+            "value" : "0.441657,0.434219,0.465773,0.446334",
+            "name" : "http://gedcomx.org/RectangleRegion"
+          } ]
+        } ],
+        "values" : [ {
+          "id" : "0eb2a7f7-2e69-47a7-94aa-1c0195cc2131",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "nev"
+        }, {
+          "id" : "0eb2a7f7-2e69-47a7-94aa-1c0195cc2131",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.0"
+            },
+            "modified" : 1674876726702,
+            "created" : 1674876726702
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Single",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103333"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "b43e52b3-59f3-42a7-aa9e-9dfa81483f50",
+        "attribution" : {
+          "modified" : 1650105892218,
+          "created" : 1650105892218
+        },
+        "type" : "http://gedcomx.org/Race",
+        "sources" : [ {
+          "description" : "#sd_da1",
+          "descriptionId" : "sd_da1",
+          "qualifiers" : [ {
+            "value" : "0.385384,0.435069,0.406577,0.447184",
+            "name" : "http://gedcomx.org/RectangleRegion"
+          } ]
+        } ],
+        "values" : [ {
+          "id" : "69918e1c-a5f4-4d09-94a2-4eeb39b1cab6",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "id" : "af40979a-f45d-4cd2-9ae0-1a78c039a108",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "d61c84e2-9d03-4c95-b760-21127f13da4b",
+        "original" : "1903",
+        "fields" : [ {
+          "id" : "a99058f5-f241-4c1d-9bc3-2b256455cdb9",
+          "type" : "http://familysearch.org/types/fields/YearEst",
+          "values" : [ {
+            "id" : "ca8d2367-d13e-4942-bb69-2c540624053c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/EstimatedBirthYear?version=1.2.0"
+              },
+              "modified" : 1674876726702,
+              "created" : 1674876726702
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1903",
+            "resource" : "+1903"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "bb8551c2-e89d-4f82-8cd6-c72498140501",
+        "original" : "Illinois",
+        "fields" : [ {
+          "id" : "c9d1287a-de86-4c69-8051-867d1e7fcb3e",
+          "attribution" : {
+            "modified" : 1650105892218,
+            "created" : 1650105892218
+          },
+          "type" : "http://gedcomx.org/Place",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.465286,0.433794,0.530085,0.445271",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "9ccd8134-3247-4ffd-a85c-eda3ced2b272",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Illinois"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "4890fba5-dd48-49eb-9793-3036d77e4d79",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "id" : "7b09084c-b3a9-472b-a304-c729dc50ab37",
+        "original" : "1949",
+        "fields" : [ {
+          "id" : "186d517b-6725-423b-b214-75afef10b8af",
+          "attribution" : {
+            "modified" : 1650105892218,
+            "created" : 1650105892218
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "d46c6a1e-b72c-4b70-be6b-9a7b729f228b",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_YEAR",
+            "text" : "1949"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "71c9e180-d9f1-418b-949d-feb9e122a044",
+      "attribution" : {
+        "modified" : 1664391664542,
+        "created" : 1664391664542
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "0c0b66e4-9946-4e80-be57-f8a7bab6012d",
+        "original" : "10 April 1950",
+        "formal" : "+1950-04-10",
+        "fields" : [ {
+          "id" : "4aacadde-2de6-4360-b61e-ee3b609cd31b",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.715225,0.068863,0.859440,0.081615",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "42eee4a3-f255-480f-adbf-e328797a2717",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "April 10, 1950"
+          }, {
+            "id" : "42eee4a3-f255-480f-adbf-e328797a2717",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "10 April 1950",
+            "resource" : "+1950-04-10"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "a8a33bf0-18f0-4d19-8f76-7147ae03a79a",
+        "original" : "Chicago, Cook, Illinois, United States",
+        "description" : "#place_4035838",
+        "fields" : [ {
+          "id" : "796fef23-8af4-4874-bd0a-4825d83d208f",
+          "attribution" : {
+            "modified" : 1650105890370,
+            "created" : 1650105890370
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.086967,0.117747,0.190012,0.128587",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "d7a6a389-2f1b-42a1-a046-ef776175470a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_ORIG",
+            "text" : "103-4426"
+          } ]
+        }, {
+          "id" : "0afbca71-820d-4db6-b373-aa9895578dc8",
+          "attribution" : {
+            "modified" : 1650105890370,
+            "created" : 1650105890370
+          },
+          "type" : "http://gedcomx.org/City",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.086724,0.106482,0.189769,0.116259",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "ebadbd37-d069-4b17-8aea-a8f9ef2d42fa",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Chicago"
+          } ]
+        }, {
+          "id" : "09422709-1db6-4c98-ac7c-001ad0b69524",
+          "attribution" : {
+            "modified" : 1650105890370,
+            "created" : 1650105890370
+          },
+          "type" : "http://gedcomx.org/State",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.085505,0.081190,0.189038,0.092030",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "64c024dc-00fc-41fe-bc88-f67b6314519f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Illinois"
+          } ]
+        }, {
+          "id" : "47f380b7-27fe-45f9-855e-97110f99b65e",
+          "attribution" : {
+            "modified" : 1650105892218,
+            "created" : 1650105892218
+          },
+          "type" : "http://familysearch.org/types/fields/ApartmentNbr",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.116931,0.444846,0.140560,0.451222",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "574d3dd9-1091-45a9-98fc-501e9bd0adbe",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_APARTMENT_NBR_ORIG",
+            "text" : "N"
+          } ]
+        }, {
+          "id" : "1b657c5e-a2aa-4fc5-ae38-77a939da81d1",
+          "attribution" : {
+            "modified" : 1650105890370,
+            "created" : 1650105890370
+          },
+          "type" : "http://gedcomx.org/County",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.085749,0.093943,0.189281,0.104570",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "6e6eaf59-5d27-428a-801c-619ad8d35c15",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Cook"
+          } ]
+        }, {
+          "id" : "5206780c-3ef7-481b-8dc0-2417c6ed2a36",
+          "attribution" : {
+            "modified" : 1650105892218,
+            "created" : 1650105892218
+          },
+          "type" : "http://gedcomx.org/HouseNbr",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.116687,0.439107,0.140317,0.444421",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "46085f01-412d-4e00-994c-60fabfa3bf5c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_HOUSE_NBR_ORIG",
+            "text" : "95e"
+          } ]
+        }, {
+          "id" : "cf4e058e-b3ff-4fbc-afda-3b25dccbaf90",
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "a3071d1c-e664-40b7-9e3e-425d04242f5e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1674876726702,
+              "created" : 1674876726702
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Chicago, Cook, Illinois"
+          }, {
+            "id" : "a3071d1c-e664-40b7-9e3e-425d04242f5e",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1674876726702,
+              "created" : 1674876726702
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Chicago, Cook, Illinois, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4035838"
+          } ]
+        } ]
+      },
+      "primary" : true
+    } ],
+    "fields" : [ {
+      "id" : "4ff579ba-f9ff-4e82-ae8c-e41c24c6c47d",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/CheckedByDate",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.816322,0.096281,0.863337,0.116684",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "26d0a773-2401-4af9-8f1f-f39155c8a3dd",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CHECKED_BY_DATE_ORIG",
+        "text" : "4/20, 1950"
+      } ]
+    }, {
+      "id" : "076a0259-3297-4064-9478-9b3941f56ece",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdId",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.140073,0.438682,0.163703,0.450797",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "a2717d0f-ab53-4d4c-88ae-f3ed60ecc112",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "FS_HOUSEHOLD_ID_ORIG",
+        "text" : "157"
+      } ]
+    }, {
+      "id" : "c182809e-1e29-442e-8fee-817f07d306ca",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.331303,0.435919,0.375883,0.447609",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "1a8f1cc8-1bf4-473b-a516-851626efa649",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Head"
+      } ]
+    }, {
+      "id" : "19c4b563-fb0a-4acc-887a-9bcbe129e810",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/CheckedBy",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.715956,0.098406,0.810231,0.119022",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "f3143522-e441-4efc-90a0-b9fff9f65203",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CHECKED_BY_ORIG",
+        "text" : "E A Anderson"
+      } ]
+    }, {
+      "id" : "f3e6e785-0869-4725-9489-24aeb1ad72b8",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeC21950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.898173,0.427418,0.906699,0.439745",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "281cd07c-b05c-4142-9a7e-e766cc0333df",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CODE_C2_1950_CENSUS_ORIG",
+        "text" : "2"
+      } ]
+    }, {
+      "id" : "6ec2539a-10bc-4b9e-9a8a-2a7a6a8d0398",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution11950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.197320,0.089054,0.301583,0.100319",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "ed6cea17-c88b-404a-882e-7fe30503bb07",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/OccupationCategory",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.562485,0.432306,0.587820,0.444421",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "ff814cfb-b008-4f2e-af9c-9120b5eeb748",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_OCCUPATION_CATEGORY_ORIG",
+        "text" : "wk"
+      } ]
+    }, {
+      "id" : "1247d4e8-ffe9-41b7-9c24-e61745595556",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/OccupationIndustry",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.760780,0.429330,0.842875,0.440595",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "73b59252-9820-4558-8869-0e20dbba3fc0",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_OCCUPATION_INDUSTRY_ORIG",
+        "text" : "Internal Rev"
+      } ]
+    }, {
+      "id" : "dbba8470-3644-4d50-9e14-ca2bfc054a95",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/WorkedLastWeek",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.587576,0.432094,0.615347,0.443996",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "284c8480-f37b-4800-895a-1397233958b4",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution2ToLine1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.366870,0.114559,0.397808,0.125611",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "f8c4b828-a30c-41fd-a842-7caf243cf684",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscHoursWorked",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.654811,0.431031,0.679415,0.443146",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "db6d387b-f53a-4fb7-a3a8-b0a8ba8b6212",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_HOURS_WORKED_ORIG",
+        "text" : "40"
+      } ]
+    }, {
+      "id" : "0dceb714-0965-41ad-bf9c-30db99aee68b",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution1ToLine1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.218758,0.116047,0.250670,0.127311",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "e7e2a84c-a74d-45a9-8665-29b6aedfa4e9",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeA1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.375396,0.435282,0.385627,0.447609",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "c79f5519-1888-41f1-abc9-6445f28d3dbe",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscWorkerClass",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.842631,0.428268,0.858952,0.440383",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "cda5a3ec-cf98-42e0-a0e3-0eb08ecc8701",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_WORKER_CLASS_ORIG",
+        "text" : "g"
+      } ]
+    }, {
+      "id" : "59f6b16e-98e1-49bc-9c75-2a54f0453c8a",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution1FromLine1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.256516,0.115834,0.286967,0.127736",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "0b9062cd-997f-40ad-93e4-3a3e2a7959ef",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution2Type1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.307917,0.100531,0.410475,0.113921",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "5ef4cf6e-e977-4b94-a9a5-4e8c577bd155",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeC1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.858709,0.427843,0.877954,0.440170",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "8d62fa65-71a0-432d-bf63-17fd666cd155",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CODE_C_1950_CENSUS_ORIG",
+        "text" : "390"
+      } ]
+    }, {
+      "id" : "d711925f-10f4-459e-9144-3e30d9864f97",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagSeekingWork",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.615104,0.431668,0.635079,0.443783",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "190fe503-6720-456e-b8f7-20322fdcc887",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution1Type1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.197320,0.102444,0.302071,0.114134",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "7270ab63-e9e6-4b97-9cdf-ef852604b163",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.095493,0.439532,0.105725,0.451860",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "8a77bea3-07eb-4e67-a3f3-c827ff114723",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "14"
+      } ]
+    }, {
+      "id" : "b09f94dd-d8ff-4579-9767-6ef6750ebfad",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/ImageFolder1950Census",
+      "values" : [ {
+        "id" : "5a6ca730-fbb4-43ee-ad50-512db99bd0a7",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_IMAGE_FOLDER_1950_CENSUS_ORIG",
+        "text" : "43290879-Illinois-018190"
+      } ]
+    }, {
+      "id" : "1d7de719-25ac-4ef4-9ff1-40dc25258285",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/AgQuestionairNbr",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.206334,0.437832,0.219001,0.450159",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "3fac5b85-217f-4128-b774-ed25c02d4554",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_AG_QUESTIONAIRE_NBR_1950_CENSUS_ORIG",
+        "text" : "g"
+      } ]
+    }, {
+      "id" : "38bc3bce-c084-4405-a52a-be60ed2cedc0",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution21950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.307674,0.086929,0.410475,0.098618",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "e6c34ab6-7543-46e5-afa9-91b8aa830805",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/FlagCitznStatus",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.545189,0.432731,0.562972,0.444846",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "5796db5f-a226-47c1-a8c3-f20246a695a0",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeC11950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.877710,0.427630,0.898417,0.439745",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "45572188-dd49-4c73-80c2-cf7aaac5229f",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CODE_C1_1950_CENSUS_ORIG",
+        "text" : "916"
+      } ]
+    }, {
+      "id" : "211d522c-8e38-40d0-a972-177486d6c357",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/LivedOnFarm",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.165408,0.499469,0.188307,0.511583",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "7f2cc52a-7135-4e1b-98e6-aa3670729a5c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_LIVED_ON_FARM_ORIG",
+        "text" : "no"
+      } ]
+    }, {
+      "id" : "4ca10525-4086-4e58-9b0a-cbd4afc5153c",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/EnumeratorName",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.715469,0.082465,0.867479,0.096281",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "83dbdcd7-86e1-4bb6-9f1e-21c5d9e9808d",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_ENUMERATOR_NAME_ORIG",
+        "text" : "Dona V Dudley"
+      } ]
+    }, {
+      "id" : "12c428d0-ebd1-4ad5-9ba1-15ad1241a4cb",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.877467,0.080340,0.912058,0.114559",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "f0d69628-f4b1-4532-ad69-428dc90a5a1a",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_NBR_ORIG",
+        "text" : "10"
+      } ]
+    }, {
+      "id" : "5bf7a404-e636-4963-8029-3d8203700dec",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/ImageDimensions",
+      "values" : [ {
+        "id" : "0ce1ce01-b148-4590-a17c-f2916d0ce454",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_IMAGE_DIMENSIONS",
+        "text" : "4105,4705"
+      } ]
+    }, {
+      "id" : "d933758e-59a3-4bb0-8a98-6635db615644",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeB1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.529842,0.432944,0.545432,0.445058",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "02589d65-d0e3-43ea-a381-a4bcc8d1f9d9",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdContinued",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.205847,0.646971,0.217540,0.656536",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "e2f0546b-19b3-4048-832f-35904f4f34a0",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_HOUSEHOLD_CONTINUED_ORIG",
+        "text" : "Yes"
+      } ]
+    }, {
+      "id" : "a229a1e2-f468-4a34-b323-7104e62cee1f",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "7330bdac-b214-4b22-b9ce-03a91e59973a",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "FS_SORT_KEY_ORIG",
+        "text" : "13"
+      } ]
+    }, {
+      "id" : "3df44548-d91a-4e6c-82bb-8d9845b3c5eb",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/3PlusAcres",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.187820,0.499256,0.208770,0.511371",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "1871c378-110a-4606-b5d0-7261a16d3d28",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_3_PLUS_ACRES_ORIG",
+        "text" : "no"
+      } ]
+    }, {
+      "id" : "0b1bcd48-4033-4c50-b599-7a78ea74ccf8",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution2FromLine1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.330572,0.115622,0.361267,0.126036",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "2a2f75d7-9c6c-462f-8a81-80c22d14b573",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagEmployed",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.634592,0.431243,0.655055,0.443571",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "290ad236-d7dd-4aa0-ab45-a12d7a984a19",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://gedcomx.org/Age",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.422168,0.434431,0.442144,0.446759",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "f62d5cdb-b3a2-480a-b180-76a658124cd6",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "47"
+      }, {
+        "id" : "f62d5cdb-b3a2-480a-b180-76a658124cd6",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1674876726702,
+          "created" : 1674876726702
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "47 years",
+        "resource" : "P47Y"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Eleanor Pearson",
+      "birthDate" : "1903",
+      "birthPlace" : "Illinois"
+    }
+  }, {
+    "id" : "p_295237267745",
+    "attribution" : {
+      "modified" : 1650105892218,
+      "created" : 1650105892218
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "fields" : [ {
+        "id" : "96ffc2b3-200d-4f9d-b87b-85b3f96381c8",
+        "attribution" : {
+          "modified" : 1650105892218,
+          "created" : 1650105892218
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "sources" : [ {
+          "description" : "#sd_da1",
+          "descriptionId" : "sd_da1",
+          "qualifiers" : [ {
+            "value" : "0.406577,0.447184,0.422899,0.458236",
+            "name" : "http://gedcomx.org/RectangleRegion"
+          } ]
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6X12-6VV7?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/41JX-6RNZ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/ancestry/218518056" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6X12-6VV7" ]
+    },
+    "names" : [ {
+      "id" : "2c60a420-7cb4-42b6-a306-b9ba879931de",
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Ruth Pearson",
+        "parts" : [ {
+          "id" : "f611dcd7-f395-4a72-9a60-225d52d17dcc",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Ruth",
+          "fields" : [ {
+            "id" : "c1e0a6d1-1e33-4245-a84a-3b93c936b3ee",
+            "attribution" : {
+              "modified" : 1650105892218,
+              "created" : 1650105892218
+            },
+            "type" : "http://gedcomx.org/Given",
+            "sources" : [ {
+              "description" : "#sd_da1",
+              "descriptionId" : "sd_da1",
+              "qualifiers" : [ {
+                "value" : "0.264214,0.450159,0.332034,0.459724",
+                "name" : "http://gedcomx.org/RectangleRegion"
+              } ]
+            } ],
+            "values" : [ {
+              "id" : "97581f90-9ecf-4067-ba72-afdeb4c2d7ef",
+              "attribution" : {
+                "modified" : 1670544024505,
+                "created" : 1670544024505,
+                "changeMessageResource" : "http://familysearch.org/types/reasons/147760"
+              },
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Ruth"
+            }, {
+              "id" : "97581f90-9ecf-4067-ba72-afdeb4c2d7ef",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                },
+                "modified" : 1670544024505,
+                "created" : 1670544024505
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Ruth"
+            } ]
+          } ]
+        }, {
+          "id" : "874747ea-59ea-4bf9-9143-c423f76926eb",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Pearson",
+          "fields" : [ {
+            "id" : "a8f93eaf-7713-456e-b391-1a76a4b7202e",
+            "attribution" : {
+              "modified" : 1650105892218,
+              "created" : 1650105892218
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "sources" : [ {
+              "description" : "#sd_da1",
+              "descriptionId" : "sd_da1",
+              "qualifiers" : [ {
+                "value" : "0.218514,0.437620,0.263825,0.448459",
+                "name" : "http://gedcomx.org/RectangleRegion"
+              } ]
+            } ],
+            "values" : [ {
+              "id" : "4f985e7c-bcce-448d-a4c3-5d7b94eafda5",
+              "attribution" : {
+                "modified" : 1670544024504,
+                "created" : 1670544024504,
+                "changeMessageResource" : "http://familysearch.org/types/reasons/147760"
+              },
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Pearson"
+            }, {
+              "id" : "4f985e7c-bcce-448d-a4c3-5d7b94eafda5",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                },
+                "modified" : 1670544024505,
+                "created" : 1670544024505
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Pearson"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "17a6d22b-8684-439f-b1a6-6efc8f36f653",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            },
+            "modified" : 1670544024505,
+            "created" : 1670544024505
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "f7a515cd-e1b1-4293-90e7-c31464948979",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              },
+              "modified" : 1670544024505,
+              "created" : 1670544024505
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Ruth Pearson"
+          }, {
+            "id" : "f7a515cd-e1b1-4293-90e7-c31464948979",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              },
+              "modified" : 1670544024505,
+              "created" : 1670544024505
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Ruth Pearson"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Occupation",
+      "value" : "Typist",
+      "fields" : [ {
+        "id" : "56fa332a-3328-4479-93a1-33df06f3c419",
+        "attribution" : {
+          "modified" : 1650105892218,
+          "created" : 1650105892218
+        },
+        "type" : "http://gedcomx.org/Occupation",
+        "sources" : [ {
+          "description" : "#sd_da1",
+          "descriptionId" : "sd_da1",
+          "qualifiers" : [ {
+            "value" : "0.679415,0.443146,0.761267,0.453135",
+            "name" : "http://gedcomx.org/RectangleRegion"
+          } ]
+        } ],
+        "values" : [ {
+          "id" : "6ef01b96-ad24-4578-b574-86fe5443fff6",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_OCCUPATION_ORIG",
+          "text" : "Typist"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Single",
+      "fields" : [ {
+        "id" : "c9577034-eaf9-48af-8198-271111c61d32",
+        "attribution" : {
+          "modified" : 1650105892218,
+          "created" : 1650105892218
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "sources" : [ {
+          "description" : "#sd_da1",
+          "descriptionId" : "sd_da1",
+          "qualifiers" : [ {
+            "value" : "0.442144,0.446759,0.466017,0.457598",
+            "name" : "http://gedcomx.org/RectangleRegion"
+          } ]
+        } ],
+        "values" : [ {
+          "id" : "91e09a35-3639-4550-b8b9-a687ee776a0b",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "nev"
+        }, {
+          "id" : "91e09a35-3639-4550-b8b9-a687ee776a0b",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.0"
+            },
+            "modified" : 1674876726702,
+            "created" : 1674876726702
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Single",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103333"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "2e3d69a9-4ac0-46ec-8940-12adc68389a0",
+        "attribution" : {
+          "modified" : 1650105892218,
+          "created" : 1650105892218
+        },
+        "type" : "http://gedcomx.org/Race",
+        "sources" : [ {
+          "description" : "#sd_da1",
+          "descriptionId" : "sd_da1",
+          "qualifiers" : [ {
+            "value" : "0.385627,0.447609,0.406821,0.458448",
+            "name" : "http://gedcomx.org/RectangleRegion"
+          } ]
+        } ],
+        "values" : [ {
+          "id" : "7390adf4-683b-490a-ac20-363bad92e19c",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "id" : "43804e5d-7d7d-45ea-8602-8a7ff2c485b6",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "date" : {
+        "id" : "fd120335-4804-4da9-8398-6fb801b03666",
+        "original" : "1949",
+        "fields" : [ {
+          "id" : "c8a4cad9-6d1b-486f-81d3-4efdd20271d3",
+          "attribution" : {
+            "modified" : 1650105892218,
+            "created" : 1650105892218
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "d8425f1f-6b7d-4072-8caa-be6d26fd468d",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_YEAR",
+            "text" : "1949"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "63c758ba-6898-44bc-b54f-790fc82e2f43",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "15190412-6472-4f83-bb67-1fc3f3f10b17",
+        "original" : "1910",
+        "fields" : [ {
+          "id" : "00038a47-c5f3-4d6a-a5cb-96b7f934e3ce",
+          "type" : "http://familysearch.org/types/fields/YearEst",
+          "values" : [ {
+            "id" : "3410586b-c9fc-4e09-83f6-9eaeffec9186",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/EstimatedBirthYear?version=1.2.0"
+              },
+              "modified" : 1674876726702,
+              "created" : 1674876726702
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1910",
+            "resource" : "+1910"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "db7b8294-4c59-4987-949c-d3234b7c2091",
+        "original" : "Ill",
+        "fields" : [ {
+          "id" : "53baa55e-9649-4701-87e9-d7864447ccb1",
+          "attribution" : {
+            "modified" : 1650105892218,
+            "created" : 1650105892218
+          },
+          "type" : "http://gedcomx.org/Place",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.465773,0.446334,0.530329,0.456536",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "599c6e3e-533c-4f30-ad63-5b87962e4ae6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Ill"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "71c9e180-d9f1-418b-949d-feb9e122a044",
+      "attribution" : {
+        "modified" : 1664391664542,
+        "created" : 1664391664542
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "0c0b66e4-9946-4e80-be57-f8a7bab6012d",
+        "original" : "10 April 1950",
+        "formal" : "+1950-04-10",
+        "fields" : [ {
+          "id" : "4aacadde-2de6-4360-b61e-ee3b609cd31b",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.715225,0.068863,0.859440,0.081615",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "42eee4a3-f255-480f-adbf-e328797a2717",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "April 10, 1950"
+          }, {
+            "id" : "42eee4a3-f255-480f-adbf-e328797a2717",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "10 April 1950",
+            "resource" : "+1950-04-10"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "a8a33bf0-18f0-4d19-8f76-7147ae03a79a",
+        "original" : "Chicago, Cook, Illinois, United States",
+        "fields" : [ {
+          "id" : "796fef23-8af4-4874-bd0a-4825d83d208f",
+          "attribution" : {
+            "modified" : 1650105890370,
+            "created" : 1650105890370
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.086967,0.117747,0.190012,0.128587",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "d7a6a389-2f1b-42a1-a046-ef776175470a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_ORIG",
+            "text" : "103-4426"
+          } ]
+        }, {
+          "id" : "0afbca71-820d-4db6-b373-aa9895578dc8",
+          "attribution" : {
+            "modified" : 1650105890370,
+            "created" : 1650105890370
+          },
+          "type" : "http://gedcomx.org/City",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.086724,0.106482,0.189769,0.116259",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "ebadbd37-d069-4b17-8aea-a8f9ef2d42fa",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Chicago"
+          } ]
+        }, {
+          "id" : "09422709-1db6-4c98-ac7c-001ad0b69524",
+          "attribution" : {
+            "modified" : 1650105890370,
+            "created" : 1650105890370
+          },
+          "type" : "http://gedcomx.org/State",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.085505,0.081190,0.189038,0.092030",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "64c024dc-00fc-41fe-bc88-f67b6314519f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Illinois"
+          } ]
+        }, {
+          "id" : "47f380b7-27fe-45f9-855e-97110f99b65e",
+          "attribution" : {
+            "modified" : 1650105892218,
+            "created" : 1650105892218
+          },
+          "type" : "http://familysearch.org/types/fields/ApartmentNbr",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.116931,0.444846,0.140560,0.451222",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "574d3dd9-1091-45a9-98fc-501e9bd0adbe",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_APARTMENT_NBR_ORIG",
+            "text" : "N"
+          } ]
+        }, {
+          "id" : "1b657c5e-a2aa-4fc5-ae38-77a939da81d1",
+          "attribution" : {
+            "modified" : 1650105890370,
+            "created" : 1650105890370
+          },
+          "type" : "http://gedcomx.org/County",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.085749,0.093943,0.189281,0.104570",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "6e6eaf59-5d27-428a-801c-619ad8d35c15",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Cook"
+          } ]
+        }, {
+          "id" : "5206780c-3ef7-481b-8dc0-2417c6ed2a36",
+          "attribution" : {
+            "modified" : 1650105892218,
+            "created" : 1650105892218
+          },
+          "type" : "http://gedcomx.org/HouseNbr",
+          "sources" : [ {
+            "description" : "#sd_da1",
+            "descriptionId" : "sd_da1",
+            "qualifiers" : [ {
+              "value" : "0.116687,0.439107,0.140317,0.444421",
+              "name" : "http://gedcomx.org/RectangleRegion"
+            } ]
+          } ],
+          "values" : [ {
+            "id" : "46085f01-412d-4e00-994c-60fabfa3bf5c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_HOUSE_NBR_ORIG",
+            "text" : "95e"
+          } ]
+        }, {
+          "id" : "cf4e058e-b3ff-4fbc-afda-3b25dccbaf90",
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "a3071d1c-e664-40b7-9e3e-425d04242f5e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1674876726702,
+              "created" : 1674876726702
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Chicago, Cook, Illinois"
+          }, {
+            "id" : "a3071d1c-e664-40b7-9e3e-425d04242f5e",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1674876726702,
+              "created" : 1674876726702
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Chicago, Cook, Illinois, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4035838"
+          } ]
+        } ]
+      },
+      "primary" : true
+    } ],
+    "fields" : [ {
+      "id" : "4ff579ba-f9ff-4e82-ae8c-e41c24c6c47d",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/CheckedByDate",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.816322,0.096281,0.863337,0.116684",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "26d0a773-2401-4af9-8f1f-f39155c8a3dd",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CHECKED_BY_DATE_ORIG",
+        "text" : "4/20, 1950"
+      } ]
+    }, {
+      "id" : "0141491a-b01a-41d8-b1bd-54616ab328b8",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeA1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.375883,0.447609,0.386114,0.458874",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "c03a95cc-6841-4210-81ba-133fc8e588ae",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CODE_A_1950_CENSUS_ORIG",
+        "text" : "7"
+      } ]
+    }, {
+      "id" : "076a0259-3297-4064-9478-9b3941f56ece",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdId",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.140073,0.438682,0.163703,0.450797",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "a2717d0f-ab53-4d4c-88ae-f3ed60ecc112",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "FS_HOUSEHOLD_ID_ORIG",
+        "text" : "157"
+      } ]
+    }, {
+      "id" : "a05d938a-6fdd-4a51-8afc-90974bea319c",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/ImageDimensions",
+      "values" : [ {
+        "id" : "10645a40-3f55-4a63-8036-422f418df899",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_IMAGE_DIMENSIONS",
+        "text" : "4105,4705"
+      } ]
+    }, {
+      "id" : "19c4b563-fb0a-4acc-887a-9bcbe129e810",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/CheckedBy",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.715956,0.098406,0.810231,0.119022",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "f3143522-e441-4efc-90a0-b9fff9f65203",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CHECKED_BY_ORIG",
+        "text" : "E A Anderson"
+      } ]
+    }, {
+      "id" : "6ec2539a-10bc-4b9e-9a8a-2a7a6a8d0398",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution11950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.197320,0.089054,0.301583,0.100319",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "3845b87c-9555-40e8-9879-97b79ec830ca",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/OccupationIndustry",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.761023,0.441870,0.843118,0.451860",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "3f4caa6e-b8a7-47e8-ab47-a4553797966e",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_OCCUPATION_INDUSTRY_ORIG",
+        "text" : "Chemist Manufacturer"
+      } ]
+    }, {
+      "id" : "3b4f7a12-77a6-49d7-a1cf-cf1e2b863392",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagSeekingWork",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.615347,0.443996,0.635323,0.455048",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "284c8480-f37b-4800-895a-1397233958b4",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution2ToLine1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.366870,0.114559,0.397808,0.125611",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "0dceb714-0965-41ad-bf9c-30db99aee68b",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution1ToLine1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.218758,0.116047,0.250670,0.127311",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "dd7ae152-1acd-4fcb-a4f4-ce5a528571e2",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/ImageFolder1950Census",
+      "values" : [ {
+        "id" : "ace26926-7f21-4fde-bd14-bd6cb3337da6",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_IMAGE_FOLDER_1950_CENSUS_ORIG",
+        "text" : "43290879-Illinois-018190"
+      } ]
+    }, {
+      "id" : "293afc45-50d2-46e6-b2f8-bdf0e14a2072",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscWorkerClass",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.842875,0.440595,0.859196,0.451647",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "0e33472b-3f72-499c-8212-2cbb925e9003",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_WORKER_CLASS_ORIG",
+        "text" : "p"
+      } ]
+    }, {
+      "id" : "59f6b16e-98e1-49bc-9c75-2a54f0453c8a",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution1FromLine1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.256516,0.115834,0.286967,0.127736",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "2032d056-32a8-438c-924d-348efa143d41",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagEmployed",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.635079,0.443783,0.655298,0.454835",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "53194f3b-0bd4-454f-9375-1740a0a6c7ab",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeB1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.530085,0.445271,0.545676,0.456323",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "0b9062cd-997f-40ad-93e4-3a3e2a7959ef",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution2Type1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.307917,0.100531,0.410475,0.113921",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "190fe503-6720-456e-b8f7-20322fdcc887",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution1Type1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.197320,0.102444,0.302071,0.114134",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "4d091430-01ba-4bfa-b942-8d1494561f3a",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.095981,0.451860,0.106212,0.463124",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "0124c2f2-8ca8-4b92-a1d6-a5a4b7693768",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_LINE_NBR_ORIG",
+        "text" : "15"
+      } ]
+    }, {
+      "id" : "1d7de719-25ac-4ef4-9ff1-40dc25258285",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/AgQuestionairNbr",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.206334,0.437832,0.219001,0.450159",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "3fac5b85-217f-4128-b774-ed25c02d4554",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_AG_QUESTIONAIRE_NBR_1950_CENSUS_ORIG",
+        "text" : "g"
+      } ]
+    }, {
+      "id" : "38bc3bce-c084-4405-a52a-be60ed2cedc0",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution21950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.307674,0.086929,0.410475,0.098618",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "211d522c-8e38-40d0-a972-177486d6c357",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/LivedOnFarm",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.165408,0.499469,0.188307,0.511583",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "7f2cc52a-7135-4e1b-98e6-aa3670729a5c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_LIVED_ON_FARM_ORIG",
+        "text" : "no"
+      } ]
+    }, {
+      "id" : "4ca10525-4086-4e58-9b0a-cbd4afc5153c",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/EnumeratorName",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.715469,0.082465,0.867479,0.096281",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "83dbdcd7-86e1-4bb6-9f1e-21c5d9e9808d",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_ENUMERATOR_NAME_ORIG",
+        "text" : "Dona V Dudley"
+      } ]
+    }, {
+      "id" : "12c428d0-ebd1-4ad5-9ba1-15ad1241a4cb",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.877467,0.080340,0.912058,0.114559",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "f0d69628-f4b1-4532-ad69-428dc90a5a1a",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_NBR_ORIG",
+        "text" : "10"
+      } ]
+    }, {
+      "id" : "b1441585-808b-45e2-b6fb-355e17186a2a",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "cbdcff76-5ff9-459f-91c6-97b800e18b43",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "FS_SORT_KEY_ORIG",
+        "text" : "14"
+      } ]
+    }, {
+      "id" : "ba1a5ae4-6b3d-4268-83e6-563ebde289cf",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscHoursWorked",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.655055,0.443571,0.679659,0.454410",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "905ae599-91e7-4c12-b9c6-3f2515aa2c06",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_HOURS_WORKED_ORIG",
+        "text" : "37"
+      } ]
+    }, {
+      "id" : "02589d65-d0e3-43ea-a381-a4bcc8d1f9d9",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/HouseholdContinued",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.205847,0.646971,0.217540,0.656536",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "e2f0546b-19b3-4048-832f-35904f4f34a0",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_HOUSEHOLD_CONTINUED_ORIG",
+        "text" : "Yes"
+      } ]
+    }, {
+      "id" : "b6c6f425-3bcb-4298-bfd1-893d7910f97b",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/OccupationCategory",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.562972,0.444846,0.588063,0.455685",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "98ffc11e-636c-4dd0-89da-f1d31486c280",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_OCCUPATION_CATEGORY_ORIG",
+        "text" : "wk"
+      } ]
+    }, {
+      "id" : "b7134d03-ba88-42af-8fea-92cbf6025a0d",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeC1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.858952,0.440383,0.878197,0.451435",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "c539af8a-a420-4799-a816-105aac750122",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CODE_C_1950_CENSUS_ORIG",
+        "text" : "350"
+      } ]
+    }, {
+      "id" : "f0d01495-b78e-4a46-935c-d5934c79c1a1",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.331790,0.448459,0.376127,0.458874",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "657f248a-aa7e-4f91-b59a-decf83dbc74e",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "Sister"
+      } ]
+    }, {
+      "id" : "3df44548-d91a-4e6c-82bb-8d9845b3c5eb",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/3PlusAcres",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.187820,0.499256,0.208770,0.511371",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "1871c378-110a-4606-b5d0-7261a16d3d28",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_3_PLUS_ACRES_ORIG",
+        "text" : "no"
+      } ]
+    }, {
+      "id" : "0b1bcd48-4033-4c50-b599-7a78ea74ccf8",
+      "attribution" : {
+        "modified" : 1650105890370,
+        "created" : 1650105890370
+      },
+      "type" : "http://familysearch.org/types/fields/Institution2FromLine1950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.330572,0.115622,0.361267,0.126036",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "4c459a9f-ec6b-4935-bd8d-dcbbcc950fff",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeC11950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.877954,0.440170,0.898660,0.451010",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "c2d771dc-a1f0-442f-b684-a67e99a12903",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CODE_C1_1950_CENSUS_ORIG",
+        "text" : "469"
+      } ]
+    }, {
+      "id" : "4e7a9a33-86b0-42bf-9987-6f2c53a752aa",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/WorkedLastWeek",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.587820,0.444421,0.615834,0.455260",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "d1d38797-1571-4cbc-bd52-408b4dfbe8a4",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/MiscCodeC21950Census",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.898417,0.439745,0.906943,0.451010",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "3e892246-3566-46a6-820f-826e4d3841b2",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_CODE_C2_1950_CENSUS_ORIG",
+        "text" : "1"
+      } ]
+    }, {
+      "id" : "4cc991dd-a731-484f-bf07-12a5889a0e31",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://familysearch.org/types/fields/FlagCitznStatus",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.545432,0.445058,0.563216,0.456111",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ]
+    }, {
+      "id" : "65774b1b-734e-42de-b308-3dfa676a7cdb",
+      "attribution" : {
+        "modified" : 1650105892218,
+        "created" : 1650105892218
+      },
+      "type" : "http://gedcomx.org/Age",
+      "sources" : [ {
+        "description" : "#sd_da1",
+        "descriptionId" : "sd_da1",
+        "qualifiers" : [ {
+          "value" : "0.422655,0.446971,0.442387,0.458023",
+          "name" : "http://gedcomx.org/RectangleRegion"
+        } ]
+      } ],
+      "values" : [ {
+        "id" : "1d3eaac3-866d-44fc-86b3-89d75721de81",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "40"
+      }, {
+        "id" : "1d3eaac3-866d-44fc-86b3-89d75721de81",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1674876726702,
+          "created" : 1674876726702
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "40 years",
+        "resource" : "P40Y"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Ruth Pearson",
+      "birthDate" : "1910",
+      "birthPlace" : "Ill"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_174655813990",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:41JX-6RNZ",
+    "componentOf" : {
+      "description" : "#sd_c_4464515",
+      "descriptionId" : "sd_c_4464515"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1650105892218,
+    "modified" : 1675022540962,
+    "coverage" : [ {
+      "spatial" : {
+        "id" : "a8a33bf0-18f0-4d19-8f76-7147ae03a79a",
+        "original" : "Chicago, Cook, Illinois, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/4035838"
+      },
+      "temporal" : {
+        "original" : "10 April 1950",
+        "formal" : "+1950-04-10"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "citations" : [ {
+      "value" : "\"United States 1950 Census\", database, <i>FamilySearch</i> (ark:/61903/1:1:6X12-6VVQ : Sun Jan 29 20:02:20 UTC 2023), Entry for Eleanor Pearson and Ruth Pearson, 10 April 1950."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Household of Eleanor Pearson, \"United States 1950 Census\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone", "http://familysearch.org/records/recordPermissions/CdsPrmNotSignedIn" ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:41JX-6RNZ" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/4464515?arkName=1:2:41JX-6RNZ"
+    },
+    "statuses" : [ "http://gedcomx.org/Published" ]
+  }, {
+    "id" : "sd_c_4464515",
+    "about" : "https://www.familysearch.org/platform/records/collections/4464515",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1647881636833,
+    "modified" : 1665442552759,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "United States",
+        "description" : "https://www.familysearch.org/platform/places/1"
+      },
+      "temporal" : {
+        "original" : "1950/1950",
+        "formal" : "1950/1950"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "United States 1950 Census"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/4464515" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QHK-9QHW-N9QW-7",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QHK-9QHW-N9QW-7" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/4464515?arkName=3:1:3QHK-9QHW-N9QW-7"
+    }
+  }, {
+    "id" : "sd_p_295237267744",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6X12-6VVQ",
+    "componentOf" : {
+      "description" : "#src_r_174655813990",
+      "descriptionId" : "src_r_174655813990"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"United States 1950 Census\", database, <i>FamilySearch</i> (ark:/61903/1:1:6X12-6VVQ : Sun Jan 29 20:02:20 UTC 2023), Entry for Eleanor Pearson and Ruth Pearson, 10 April 1950."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Eleanor Pearson, \"United States 1950 Census\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/ancestry/218518055" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6X12-6VVQ" ]
+    }
+  }, {
+    "id" : "sd_p_295237267745",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6X12-6VV7",
+    "componentOf" : {
+      "description" : "#src_r_174655813990",
+      "descriptionId" : "src_r_174655813990"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"United States 1950 Census\", database, <i>FamilySearch</i> (ark:/61903/1:1:6X12-6VVQ : Sun Jan 29 20:02:20 UTC 2023), Entry for Eleanor Pearson and Ruth Pearson, 10 April 1950."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Ruth Pearson, \"United States 1950 Census\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/ancestry/218518056" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6X12-6VV7" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/4035838",
+      "resourceId" : "place_4035838"
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsViewerRii",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "text" : "true"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "108923927"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "9"
+    } ]
+  } ]
+}
