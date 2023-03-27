@@ -23,7 +23,7 @@ const displayCountyNames = [
   },
   { search_county: "Dumbarton", display_county: "Dunbartonshire" },
   { search_county: "Dunbarton", display_county: "Dunbartonshire" },
-  { search_county: "Dumfries", display_county: "Dumfries-shire" },
+  { search_county: "Dumfries", display_county: "Dumfriesshire" },
   {
     search_county: "Dumfries and Galloway",
     display_county: "Dumfries and Galloway",
@@ -69,7 +69,7 @@ const displayCountyNames = [
   { search_county: "North Lanarkshire", display_county: "North Lanarkshire" },
   { search_county: "Orkney", display_county: "Orkney Isles" },
   { search_county: "Orkney Islands", display_county: "Orkney Isles" },
-  { search_county: "Peebles", display_county: "Peebles-shire" },
+  { search_county: "Peebles", display_county: "Peeblesshire" },
   { search_county: "Perth", display_county: "Perthshire" },
   { search_county: "Perth and Kinross", display_county: "Perth and Kinross" },
   { search_county: "Renfrew", display_county: "Renfrewshire" },
