@@ -146,6 +146,10 @@ const factTypeToRecordType = [
     titleMatches: [{ recordType: RT.PassengerList, matches: ["Passenger List"] }],
   },
   {
+    type: "Naturalization",
+    defaultRT: RT.Naturalization,
+  },
+  {
     type: "MilitaryService",
     defaultRT: RT.Military,
   },
@@ -169,6 +173,11 @@ const factTypeToRecordType = [
   {
     type: "PassportApplication",
     defaultRT: RT.PassportApplication,
+  },
+  {
+    type: "SocialProgramCorrespondence",
+    defaultRT: RT.Birth,
+    recordDataMatches: [{ recordType: RT.Death, matches: ["Death Date"] }],
   },
 ];
 
