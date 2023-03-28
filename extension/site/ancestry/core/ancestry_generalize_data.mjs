@@ -58,7 +58,11 @@ const recordTypeByFields = [
   { type: RT.Marriage, labels: ["Marriage Date", "Marriage Place", "Spouse"] },
   {
     type: RT.Marriage,
-    labels: ["Marriage License Date", "Marriage License Place", "Spouse"],
+    labels: ["Marriage License Date", "Allegation Place", "Spouse"],
+  },
+  {
+    type: RT.Marriage,
+    labels: ["Allegation Date", "Marriage License Place", "Spouse"],
   },
   { type: RT.Marriage, labels: ["License Date", "License Place", "Spouse"] },
   { type: RT.Baptism, labels: ["Baptism Date", "Baptism Place"] },
@@ -136,6 +140,7 @@ function determineRecordType(extractedData) {
         "U.S. and International Marriage Records",
         "Index to Marriage Bonds",
         "Marriage Bonds and Allegations",
+        "Allegations for Marriage Licences",
       ],
     },
     {
@@ -543,7 +548,7 @@ function determineRoleGivenRecordType(extractedData, result) {
   } else if (recordType == RT.Marriage || recordType == RT.MarriageRegistration) {
     // if there is a date etc then this is likely a record for this person not a
     // child or spouse
-    let value = getCleanValueForRecordDataList(extractedData, ["Marriage Date"]);
+    let value = getCleanValueForRecordDataList(extractedData, ["Marriage Date", "Allegation Date"]);
     if (!value) {
       if (extractedData.recordData["Child"]) {
         if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
@@ -1275,6 +1280,7 @@ function generalizeDataGivenRecordType(data, result) {
           "Recording Date",
           "License Date",
           "Event Date",
+          "Allegation Date",
           "Translated Marriage Date",
           "Marriage Year",
           "Marriage Date on Image",
@@ -1290,6 +1296,7 @@ function generalizeDataGivenRecordType(data, result) {
       "Marriage License Place",
       "Recording Place",
       "License Place",
+      "Allegation Place",
       "Marriage State",
       "Marriage City",
     ]);
