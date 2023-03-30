@@ -301,16 +301,23 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
     }
   }
 
+  //console.log("getWikiTreeAddMergeData, result is: ");
+  //console.log(result);
+
   return result;
 }
 
-function updateAfterCheckWtPersonData(wtPersonData) {
+function updateAfterCheckWtPersonData(data, wtPersonData) {
   // this is called after checkWtPersonData is done.
   // If the user added a country we need to recheck whether to splt middle names
 
   // if forenames were already split that implies either the split option was set to always
   // or one of the places had a country that meant they should be split
   if (wtPersonData.wereForenamesSplit) {
+    return;
+  }
+
+  if (!data.extractedData.hasMiddleNameField) {
     return;
   }
 
@@ -782,7 +789,7 @@ async function setFieldsFromPersonData(data, personEd, personGd, tabId, citation
   let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
 
   function processFunction() {
-    updateAfterCheckWtPersonData(wtPersonData);
+    updateAfterCheckWtPersonData(data, wtPersonData);
     doSetFieldsFromPersonData(tabId, wtPersonData);
   }
 
@@ -965,7 +972,7 @@ async function mergeEditFromPersonData(data, personEd, personGd, citationObject,
   let wtPersonData = getWikiTreeMergeEditData(data, personEd, personGd, citationObject);
 
   function processFunction() {
-    updateAfterCheckWtPersonData(wtPersonData);
+    updateAfterCheckWtPersonData(data, wtPersonData);
     doMergeEditFromPersonData(data, wtPersonData);
   }
 
