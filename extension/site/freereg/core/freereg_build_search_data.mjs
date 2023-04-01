@@ -54,6 +54,7 @@ function addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier
         startAndEndDates.endYear = yearNum + range;
       }
     }
+
     if (startAndEndDates.startYear) {
       fieldData["start_year"] = startAndEndDates.startYear;
     }
@@ -101,7 +102,7 @@ function addStartAndEndYearFromBirthAndDeath(data, options, fieldData, startOffs
       } else if (optYearRange == "10") {
         range = 10;
       }
-      if (yearNum) {
+      if (startYearNum && endYearNum) {
         startAndEndDates.startYear = startYearNum - range;
         startAndEndDates.endYear = endYearNum + range;
       }
