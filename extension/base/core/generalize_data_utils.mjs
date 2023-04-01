@@ -47,6 +47,16 @@ const GD = {
         result = year;
       }
     }
+    // Not a standard form date string, try parsing
+    if (!result) {
+      let parsedDate = WTS_Date.parseDateString(date);
+      if (!parsedDate.isValid || !parsedDate.yearNum) {
+        return result;
+      }
+
+      result = parsedDate.yearNum.toString();
+    }
+
     return result;
   },
 
@@ -422,7 +432,7 @@ class WtsDate {
     if (!dateString) {
       return;
     }
-    
+
     let qualifier = dateQualifiers.NONE;
     let lcDateString = dateString.toLowerCase();
 

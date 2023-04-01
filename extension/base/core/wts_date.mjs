@@ -266,6 +266,42 @@ const WTS_Date = {
       result.isValid = true;
       return result;
     }
+
+    // Sometimes we can get a date like: 1849-08-27
+    // e.g.: from newspapers.com
+    if (/^\d\d\d\d\-\d\d\-\d\d$/.test(cleanString)) {
+      let dateParts = cleanString.split("-");
+      if (dateParts.length != 3) {
+        return result;
+      }
+
+      let yearString = dateParts[0];
+      let monthNumString = dateParts[1];
+      let dayString = dateParts[2];
+
+      let monthNum = parseInt(monthNumString);
+      if (isNaN(monthNum) || !monthNum || monthNum < 1 || monthNum > 12) {
+        return result;
+      }
+
+      let dayNum = parseInt(dayString);
+      if (isNaN(dayNum) || !dayNum) {
+        return result;
+      }
+      let yearNum = parseInt(yearString);
+      if (isNaN(yearNum) || !yearNum) {
+        return result;
+      }
+
+      result.dayNum = dayNum;
+      result.monthNum = monthNum;
+      result.yearNum = yearNum;
+      result.hasDay = true;
+      result.hasMonth = true;
+      result.isValid = true;
+      return result;
+    }
+
     // Sometimes we can get a date like: July 1852 or Jul 1852
     if (/[a-zA-Z]+\s+\d\d\d\d$/.test(cleanString)) {
       let remainder = cleanString;

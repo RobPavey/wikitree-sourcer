@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "np",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "1967-05-20"
+  },
+  "eventPlace": {
+    "placeString": "Albuquerque, New Mexico"
+  },
+  "newspaperName": "Albuquerque Journal",
+  "hasValidData": true
+}

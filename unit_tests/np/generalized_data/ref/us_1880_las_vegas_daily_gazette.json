@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "np",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "1880-06-17"
+  },
+  "eventPlace": {
+    "placeString": "Las Vegas, New Mexico"
+  },
+  "newspaperName": "Daily Gazette",
+  "hasValidData": true
+}

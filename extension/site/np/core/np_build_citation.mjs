@@ -36,6 +36,17 @@ function buildCoreCitation(data, gd, runDate, builder) {
     let remainder = data.url.substring(clipIndex + clipString.length);
     let recordLink = "{{Newspapers.com|" + remainder.split("/")[0] + "}}";
     builder.recordLinkOrTemplate = recordLink;
+  } else {
+    const articleString = "/article/";
+    let articleIndex = data.url.indexOf(articleString);
+    if (articleIndex != -1) {
+      let remainder = data.url.substring(articleIndex + articleString.length);
+      let clipNum = remainder.replace(/^[^\/]+\/(\d+)\/$/, "$1");
+      if (clipNum && clipNum != remainder) {
+        let recordLink = "{{Newspapers.com|" + clipNum + "}}";
+        builder.recordLinkOrTemplate = recordLink;
+      }
+    }
   }
 
   builder.sourceReference = data.newspaperTitle;

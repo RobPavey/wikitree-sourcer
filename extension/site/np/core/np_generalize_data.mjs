@@ -28,11 +28,11 @@ import { RT } from "../../../base/core/record_type.mjs";
 function generalizeData(input) {
   let data = input.extractedData;
 
+  let result = new GeneralizedData();
+
   if (!data.success) {
     return result; //the extract failed
   }
-
-  let result = new GeneralizedData();
 
   result.sourceOfData = "np";
 
@@ -40,7 +40,7 @@ function generalizeData(input) {
 
   result.recordType = RT.Newspaper;
 
-  result.setEventDate(data.publicationDate);
+  result.setEventDate(data.eventDate);
   result.setEventPlace(data.location);
 
   if (data.newspaperTitle) {

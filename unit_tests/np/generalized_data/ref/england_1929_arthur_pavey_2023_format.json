@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "np",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "1913-06-21"
+  },
+  "eventPlace": {
+    "placeString": "Tamworth, Staffordshire, England"
+  },
+  "newspaperName": "The Tamworth Herald, etc.",
+  "hasValidData": true
+}

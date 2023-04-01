@@ -44,13 +44,52 @@ function extractData(document, url) {
   let pageNumberElement = document.querySelector("[itemprop='position']");
 
   if (titleElement && locationElement && dateElement && pageNumberElement) {
+    // This is the old format page. It changed around the end of March 2023
 
     result.newspaperTitle = titleElement.innerHTML;
     result.location = locationElement.innerHTML;
     result.publicationDate = dateElement.innerHTML.split(",")[0];
     result.pageNumber = pageNumberElement.innerHTML.split(" ")[1];
 
+    result.eventDate = result.publicationDate;
+
     result.success = true;
+  } else {
+    // could be new format page
+    let mainContentNode = document.querySelector("#mainContent");
+    if (mainContentNode) {
+      let aNode = mainContentNode.querySelector("div > div.hideMobile > a[href^='https://www.newspapers.com/paper/']");
+      if (aNode) {
+        let headingNode = aNode.querySelector("h2");
+        let locationNode = aNode.querySelector("p");
+        let dateNode = aNode.querySelector("time");
+        let pageNode = aNode.querySelector("span");
+
+        if (headingNode && locationNode && dateNode && pageNode) {
+          result.newspaperTitle = headingNode.textContent;
+          result.location = locationNode.textContent;
+          result.publicationDate = dateNode.textContent;
+
+          let pageString = pageNode.textContent;
+          pageString = pageString.replace(/^page\s*/i, ""); // remove "Page " from start
+          result.pageNumber = pageString;
+
+          let date = dateNode.getAttribute("datetime");
+          if (date) {
+            result.eventDate = date;
+          } else {
+            result.eventDate = result.publicationDate;
+          }
+
+          if (result.location && result.location.indexOf("•") != -1) {
+            let index = result.location.indexOf("•");
+            result.location = result.location.substring(0, index).trim();
+          }
+
+          result.success = true;
+        }
+      }
+    }
   }
 
   //console.log(result);

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1880 Newspaper''':\n\"Newspapers.com\"<br/>\nDaily Gazette (Las Vegas, New Mexico) Thu, Jun 17, 1880, page 4<br/>\n{{Newspapers.com|121899396}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the Daily Gazette on 17 June 1880 in Las Vegas, New Mexico.<ref>\n'''1880 Newspaper''':\n\"Newspapers.com\"<br/>\nDaily Gazette (Las Vegas, New Mexico) Thu, Jun 17, 1880, page 4<br/>\n{{Newspapers.com|121899396}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1880 Newspaper''': \"Newspapers.com\"<br/>Daily Gazette (Las Vegas, New Mexico) Thu, Jun 17, 1880, page 4<br/>{{Newspapers.com|121899396}} (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

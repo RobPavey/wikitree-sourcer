@@ -36,8 +36,20 @@ const regressionData = [
     url: "https://www.newspapers.com/clip/111121391/wedding-of-emmeline-brain-and-arthur/",
   },
   {
+    caseName: "england_1929_arthur_pavey_2023_format",
+    url: "https://www.newspapers.com/clip/111121391/wedding-of-emmeline-brain-and-arthur/",
+  },
+  {
+    caseName: "us_1880_las_vegas_daily_gazette",
+    url: "https://www.newspapers.com/article/daily-gazette/121899396/",
+  },
+  {
     caseName: "us_1908_fleetwood_guidry",
     url: "https://www.newspapers.com/clip/111420722/fleetwood-shot-his-arm-off/",
+  },
+  {
+    caseName: "us_1967_pauline_chavez_obit",
+    url: "https://www.newspapers.com/article/albuquerque-journal-obituary-for-pauline/121970302/",
   },
 ];
 
