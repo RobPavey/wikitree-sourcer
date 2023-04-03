@@ -215,61 +215,59 @@ async function checkForPendingMergeEditData() {
   }
 }
 
+function addNewNodesForField(label, nodeSelector, followingNodeSelector) {
+  let followingNode = document.querySelector(followingNodeSelector);
+  if (!followingNode) return;
+
+  let trNode = followingNode.parentNode.parentNode;
+  if (!trNode) return;
+
+  let tbodyNode = trNode.parentNode;
+  if (!tbodyNode) return;
+
+  let idName = nodeSelector.replace("#", "");
+
+  let newTrNode = document.createElement("tr");
+  let newLabelTdNode = document.createElement("td");
+  newLabelTdNode.textContent = label + ":";
+  newLabelTdNode.align = "right";
+  newLabelTdNode.style.verticalAlign = "top";
+
+  let newValueTdNode = document.createElement("td");
+  let newInputNode = document.createElement("input");
+
+  newInputNode.id = idName;
+  newInputNode.type = "text";
+  newInputNode.name = idName;
+  newInputNode.className = "small";
+  newInputNode.size = "40";
+
+  newTrNode.appendChild(newLabelTdNode);
+  newTrNode.appendChild(newValueTdNode);
+  newValueTdNode.appendChild(newInputNode);
+
+  tbodyNode.insertBefore(newTrNode, trNode);
+
+  return newInputNode;
+}
+
+function possiblyAddMissingNode(nodeSelector) {
+  if (nodeSelector == "#mPrefix") {
+    return addNewNodesForField("Prefix", nodeSelector, "#mFirstName");
+  } else if (nodeSelector == "#mNicknames") {
+    return addNewNodesForField("Other Nicknames", nodeSelector, "#mLastNameAtBirth");
+  } else if (nodeSelector == "#mLastNameOther") {
+    return addNewNodesForField("Other Last Name(s)", nodeSelector, "#mBirthDate");
+  } else if (nodeSelector == "#mSuffix") {
+    return addNewNodesForField("Suffix", nodeSelector, "#mBirthDate");
+  } else if (nodeSelector == "#mMiddleName") {
+    return addNewNodesForField("Middle Names", nodeSelector, "#mLastNameAtBirth");
+  }
+}
+
 function setEditFamilyFields(personData) {
   //console.log("setEditFamilyFields, personData is:");
   //console.log(personData);
-
-  function addNewNodesForField(label, nodeSelector, followingNodeSelector) {
-    let followingNode = document.querySelector(followingNodeSelector);
-    if (!followingNode) return;
-
-    let trNode = followingNode.parentNode.parentNode;
-    if (!trNode) return;
-
-    let tbodyNode = trNode.parentNode;
-    if (!tbodyNode) return;
-
-    console.log("possiblyAddMissingNode, found parents");
-
-    let idName = nodeSelector.replace("#", "");
-
-    let newTrNode = document.createElement("tr");
-    let newLabelTdNode = document.createElement("td");
-    newLabelTdNode.textContent = label + ":";
-    newLabelTdNode.align = "right";
-    newLabelTdNode.style.verticalAlign = "top";
-
-    let newValueTdNode = document.createElement("td");
-    let newInputNode = document.createElement("input");
-
-    newInputNode.id = idName;
-    newInputNode.type = "text";
-    newInputNode.name = idName;
-    newInputNode.className = "small";
-    newInputNode.size = "40";
-
-    newTrNode.appendChild(newLabelTdNode);
-    newTrNode.appendChild(newValueTdNode);
-    newValueTdNode.appendChild(newInputNode);
-
-    tbodyNode.insertBefore(newTrNode, trNode);
-
-    return newInputNode;
-  }
-
-  function possiblyAddMissingNode(nodeSelector) {
-    console.log("possiblyAddMissingNode, nodeSelector = " + nodeSelector);
-
-    if (nodeSelector == "#mPrefix") {
-      return addNewNodesForField("Prefix", nodeSelector, "#mFirstName");
-    } else if (nodeSelector == "#mNicknames") {
-      return addNewNodesForField("Other Nicknames", nodeSelector, "#mLastNameAtBirth");
-    } else if (nodeSelector == "#mLastNameOther") {
-      return addNewNodesForField("Other Last Name(s)", nodeSelector, "#mBirthDate");
-    } else if (nodeSelector == "#mSuffix") {
-      return addNewNodesForField("Suffix", nodeSelector, "#mBirthDate");
-    }
-  }
 
   function setValue(nodeSelector, fieldName) {
     if (personData[fieldName]) {
@@ -390,6 +388,21 @@ function setEditFamilyFields(personData) {
   inputNode.dispatchEvent(changeEvent);
 }
 
+function addAdditionalAddPersonFields() {
+  function addNodeIfNotPresent(nodeSelector) {
+    let node = document.querySelector(nodeSelector);
+    if (!node) {
+      node = possiblyAddMissingNode(nodeSelector);
+    }
+  }
+
+  addNodeIfNotPresent("#mPrefix");
+  addNodeIfNotPresent("#mMiddleName");
+  addNodeIfNotPresent("#mNicknames");
+  addNodeIfNotPresent("#mLastNameOther");
+  addNodeIfNotPresent("#mSuffix");
+}
+
 /**
  * sends a request to the specified url from a form. this will change the window location.
  * @param {string} path the path to send the post request to
@@ -469,6 +482,10 @@ function postMergeEditData(wikitreeMergeEditData) {
 function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "setFields") {
     setEditFamilyFields(request.personData);
+    sendResponse({ success: true });
+    return { wasHandled: true, returnValue: false };
+  } else if (request.type == "showAdditionalFields") {
+    addAdditionalAddPersonFields();
     sendResponse({ success: true });
     return { wasHandled: true, returnValue: false };
   }

@@ -1081,6 +1081,31 @@ function getCitationObjectExplanationText(gd) {
   return text;
 }
 
+async function doShowAdditionalFields(tabId) {
+  // send a message to content script
+  try {
+    chrome.tabs.sendMessage(tabId, { type: "showAdditionalFields" }, function (response) {
+      // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
+      if (chrome.runtime.lastError || !response) {
+        // possibly there is no content script loaded, this could be an error that should be reported
+        // By testing edge cases I have found the if you reload the page and immediately click the
+        // extension button sometimes this will happen. Presumably because the content script
+        // just got unloaded prior to the reload but we got here because the popup had not been reset.
+        // In this case we are seeing the response being undefined.
+        // What to do in this case? Don't want to leave the "Initializing menu..." up.
+        displayMessageWithIcon("warning", "doShowAdditionalFields failed");
+      } else if (response.success) {
+        displayMessageWithIconThenClosePopup("check", "Fields shown");
+      } else {
+        let message = response.errorMessage;
+        console.log(message);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Add menu item functions
 ////////////////////////////////////////////////////////////////////////////////
@@ -1216,6 +1241,14 @@ async function addMergeEditFromCitationObjectMenuItem(menu, data, tabId, backFun
 async function addMergeEditMenuItem(menu, data, tabId, backFunction) {
   addMenuItem(menu, "Merge/Edit from external data...", function (element) {
     setupMergeEditSubMenu(data, tabId, backFunction);
+  });
+}
+
+async function addShowAdditionalFieldsMenuItem(menu, tabId) {
+  let menuText = "Show additional data fields";
+
+  addMenuItem(menu, menuText, function (element) {
+    doShowAdditionalFields(tabId);
   });
 }
 
@@ -1421,6 +1454,7 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
       addMenuDivider(menu);
       await addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction);
       await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
+      addShowAdditionalFieldsMenuItem(menu, tabId);
     }
   } else if (extractedData.pageType == "read" || extractedData.pageType == "private") {
     addMenuDivider(menu);

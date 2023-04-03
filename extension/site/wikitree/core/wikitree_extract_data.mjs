@@ -970,7 +970,7 @@ function extractData(document, url) {
 
       if (loginNode) {
         // if user is not logged in to WikiTree there are no tabs
-        // console.log("Not logged in");
+        //console.log("Not logged in");
         extractDataInLoggedOutMode(document, result);
       } else if (privacyIconNode) {
         let privacyTitle = privacyIconNode.getAttribute("title");
