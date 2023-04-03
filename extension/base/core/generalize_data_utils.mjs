@@ -1093,6 +1093,13 @@ class WtsName {
     if (this.suffix) {
       return this.suffix;
     }
+
+    if (this.lastName && this.name && !this.name.endsWith(this.lastName)) {
+      let index = this.name.indexOf(this.lastName);
+      if (index != -1) {
+        return this.name.substring(index + this.lastName.length).trim();
+      }
+    }
   }
 }
 

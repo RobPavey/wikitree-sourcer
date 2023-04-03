@@ -874,6 +874,14 @@ function extractDataForEditFamily(document, result) {
   if (otherLastNames) {
     result.otherLastNames = otherLastNames;
   }
+  let prefix = getValueBySelector(document, "#mPrefix");
+  if (prefix) {
+    result.prefix = prefix;
+  }
+  let suffix = getValueBySelector(document, "#mSuffix");
+  if (suffix) {
+    result.suffix = suffix;
+  }
 
   result.birthDate = getValueBySelector(document, "#mBirthDate");
   let checkedBirthDateStatus = document.querySelector("input[name=mStatus_BirthDate]:checked");

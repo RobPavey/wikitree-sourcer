@@ -855,7 +855,7 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
         "Capt.",
       ];
       for (let prefix of problemFirstNamePrefixes) {
-        if (wtPersonData.firstName.startsWith(" " + prefix) || wtPersonData.firstName == prefix) {
+        if (wtPersonData.firstName.startsWith(prefix + " ") || wtPersonData.firstName == prefix) {
           hasProblem = true;
           problemMessages.push(
             "First name at birth starts with '" + prefix + "'. This should probably be moved to the prefix."
