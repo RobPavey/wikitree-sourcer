@@ -28,7 +28,7 @@ async function doFetch() {
   let fetchType = "record";
 
   let fetchUrl = document.location.href;
-  //console.log('doFetch, fetchUrl is: ' + fetchUrl);
+  //console.log("doFetch, fetchUrl is: " + fetchUrl);
 
   if (fetchUrl.indexOf("/search/record/results?") != -1) {
     //console.log('doFetch, looks like a search page, checking sidebar');
@@ -55,8 +55,14 @@ async function doFetch() {
         fetchUrl = viewRecordUrl;
       }
     }
-  } else if (fetchUrl.startsWith("https://www.familysearch.org/tree/person/details/")) {
+  } else if (
+    fetchUrl.startsWith("https://www.familysearch.org/tree/person/details/") ||
+    fetchUrl.startsWith("https://www.familysearch.org/tree/person/vitals/")
+  ) {
     let personId = fetchUrl.replace("https://www.familysearch.org/tree/person/details/", "");
+    if (!personId || personId == fetchUrl) {
+      personId = fetchUrl.replace("https://www.familysearch.org/tree/person/vitals/", "");
+    }
     let slashOrQueryIndex = personId.search(/[/?]/);
     if (slashOrQueryIndex != -1) {
       personId = personId.substring(0, slashOrQueryIndex);
