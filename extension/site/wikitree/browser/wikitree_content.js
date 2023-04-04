@@ -396,8 +396,8 @@ function addAdditionalAddPersonFields() {
     }
   }
 
+  // Don't add middle name since that is controlled by a WikiTree option
   addNodeIfNotPresent("#mPrefix");
-  addNodeIfNotPresent("#mMiddleName");
   addNodeIfNotPresent("#mNicknames");
   addNodeIfNotPresent("#mLastNameOther");
   addNodeIfNotPresent("#mSuffix");
