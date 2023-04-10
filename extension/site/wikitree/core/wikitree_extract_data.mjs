@@ -680,19 +680,10 @@ function extractDataForEditFamily(document, result) {
     // this is the steps variant
     result.editFamilyType = "steps";
     // check which step we are on:
-    let sectionDivNodes = document.querySelectorAll("#editform > div");
-    for (let sectionDivNode of sectionDivNodes) {
-      let style = sectionDivNode.getAttribute("style");
-      if (style) {
-        let displayBlockIndex = style.search(/display\:\s*block/);
-        if (displayBlockIndex != -1) {
-          result.editFamilyTypeStep = sectionDivNode.id;
-          break;
-        }
-      } else {
-        // sometimes the style attribute is blank - which means visible
-        result.editFamilyTypeStep = sectionDivNode.id;
-        break;
+    let currentTab = document.querySelector("#progressBar > span.current");
+    if (currentTab) {
+      if (currentTab.id == "basicDataTab") {
+        result.editFamilyTypeStep = "basicData";
       }
     }
   } else {

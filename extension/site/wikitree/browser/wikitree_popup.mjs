@@ -1450,7 +1450,7 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   addMenuDivider(menu);
 
   if (extractedData.pageType == "editFamily") {
-    if (extractedData.editFamilyType != "steps" || extractedData.editFamilyTypeStep == "basicDataSection") {
+    if (extractedData.editFamilyType != "steps" || extractedData.editFamilyTypeStep == "basicData") {
       addMenuDivider(menu);
       await addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction);
       await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
