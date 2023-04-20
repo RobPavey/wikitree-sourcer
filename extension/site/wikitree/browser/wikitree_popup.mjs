@@ -423,6 +423,8 @@ function getWikiTreeMergeEditData(data, personEd, personGd, citationObject) {
   if (citationObject && options.addMerge_mergeEdit_includeCitation) {
     let citationText = citationObject.citation;
     if (citationText) {
+      // Note, if this is not an inline citation it should go after Sources
+      // however I haven't yet found a way to make that happen
       result.bio = citationText;
     }
   }
