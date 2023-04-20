@@ -1,0 +1,33 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Florence Speanburgh"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "25 Sep 1907"
+  },
+  "eventPlace": {
+    "placeString": "Schaghticoke, New York, USA"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Arthur Wood"
+      },
+      "marriageDate": {
+        "dateString": "25 Sep 1907"
+      },
+      "marriagePlace": {
+        "placeString": "Schaghticoke, New York, USA"
+      }
+    }
+  ],
+  "lastNameAtDeath": "Wood",
+  "collectionData": {
+    "id": "61632"
+  },
+  "hasValidData": true
+}

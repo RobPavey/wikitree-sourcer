@@ -917,6 +917,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/7162:2878",
   },
   {
+    caseName: "us_ny_marriage_1907_florence_speanburgh",
+    url: "https://www.ancestry.com/discoveryui-content/view/198847:61632?ssrc=pt&tid=59952022&pid=362148268781",
+  },
+  {
     caseName: "us_ny_probate_1877_cornelia_pearsall",
     url: "https://www.ancestry.com/discoveryui-content/view/10725078:8800",
   },

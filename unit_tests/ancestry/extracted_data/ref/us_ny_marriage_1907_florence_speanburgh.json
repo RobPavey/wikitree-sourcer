@@ -1,0 +1,29 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/198847:61632?ssrc=pt&tid=59952022&pid=362148268781",
+  "pageType": "record",
+  "dbId": "61632",
+  "recordId": "198847",
+  "ancestryTemplate": "{{Ancestry Record|61632|198847}}",
+  "domain": "com",
+  "titleName": "Florence Speanburgh",
+  "titleCollection": "New York State, Marriage Index, 1881-1967",
+  "recordData": {
+    "Name": "Florence Speanburgh",
+    "Gender": "Female",
+    "Marriage Date": "25 Sep 1907",
+    "Marriage Place": "Schaghticoke, New York, USA",
+    "Spouse": "Arthur Wood",
+    "Certificate Number": "21704",
+    "Records Sharing Certificate Number (Name)": "Florence Speanburgh<br/>Arthur Wood"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61632&h=208116&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/61632/images/48722_556179-01021?pid=198847&treeid=59952022&personid=362148268781&usePUB=true&usePUBJs=true",
+  "imageDbId": "61632",
+  "imageRecordId": "48722_556179-01021",
+  "sourceCitation": "New York State Department of Health; Albany, NY, USA; New York State Marriage Index",
+  "sourceInformation": "Ancestry.com. New York State, Marriage Index, 1881-1967 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2017. Original data: New York State Marriage Index, New York State Department of Health, Albany, NY.",
+  "originalData": "New York State Marriage Index, New York State Department of Health, Albany, NY.",
+  "sourceDescription": "Did you have ancestors that were married in the \"Empire State\" between 1881 and 1967? You may be able to find them in this collection. Learn more..."
+}

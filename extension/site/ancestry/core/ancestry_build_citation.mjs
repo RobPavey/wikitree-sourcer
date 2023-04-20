@@ -216,7 +216,7 @@ const referenceKeys = [
   ["reference number"],
   ["registration number"],
   ["declaration number"],
-  ["marriage certificate number"],
+  ["marriage certificate number", "certificate number"],
   ["book"],
   ["piece"],
   ["folio"],

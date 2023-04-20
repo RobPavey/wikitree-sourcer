@@ -1,86 +1,86 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021)",
+    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>\nHenry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>\nHenry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>\nHenry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois.\n</ref>",
+    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>\nHenry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>Henry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois.",
+    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>Henry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>\nName: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman; Certificate Number: 288.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>\nName: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>\nName: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman; Certificate Number: 288.\n</ref>",
+    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>\nName: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>Name: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman; Certificate Number: 288.",
+    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>Name: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|-\n| Certificate Number || 288\n|}\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|-\n| Certificate Number || 288\n|}\n</ref>",
+    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>Name: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman; Certificate Number: 288.",
+    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021)<br/>Name: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman.",
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"Peoria County, Illinois, U.S., Births 1878-1915,\" database, ({{Ancestry Record|62361|38163}} : accessed 6 May 2021), Henry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois; citing Peoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915.</ref>",
+    "citation": "<ref>\"Peoria County, Illinois, U.S., Births 1878-1915,\" database, ({{Ancestry Record|62361|38163}} : accessed 6 May 2021), Henry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois; citing Peoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915, Certificate Number 288.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\"Peoria County, Illinois, U.S., Births 1878-1915,\" database, ({{Ancestry Record|62361|38163}} : accessed 6 May 2021), Henry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois; citing Peoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915.</ref>",
+    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\"Peoria County, Illinois, U.S., Births 1878-1915,\" database, ({{Ancestry Record|62361|38163}} : accessed 6 May 2021), Henry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois; citing Peoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915, Certificate Number 288.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"Peoria County, Illinois, U.S., Births 1878-1915,\" database, ({{Ancestry Record|62361|38163}} : accessed 6 May 2021), Henry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois; citing Peoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915.",
+    "citation": "* \"Peoria County, Illinois, U.S., Births 1878-1915,\" database, ({{Ancestry Record|62361|38163}} : accessed 6 May 2021), Henry M Ohlman born on 7 Feb 1915, son of Harry A Ohlman & Ethel W Ohlman, in Chillicothe, Illinois; citing Peoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915, Certificate Number 288.",
     "type": "source"
   },
   "partial_ee_style_inline": {
-    "citation": "<ref>\n''Birth'':\n\"Peoria County, Illinois, U.S., Births 1878-1915\", database, \nPeoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915, \n({{Ancestry Record|62361|38163}} : accessed 6 May 2021), \nName: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman; Certificate Number: 288.\n</ref>",
+    "citation": "<ref>\n''Birth'':\n\"Peoria County, Illinois, U.S., Births 1878-1915\", database, \nPeoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915, Certificate Number 288, \n({{Ancestry Record|62361|38163}} : accessed 6 May 2021), \nName: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman.\n</ref>",
     "type": "inline"
   },
   "partial_ee_style_narrative": {
-    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n''Birth'':\n\"Peoria County, Illinois, U.S., Births 1878-1915\", database, \nPeoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915, \n({{Ancestry Record|62361|38163}} : accessed 6 May 2021), \nName: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman; Certificate Number: 288.\n</ref>",
+    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n''Birth'':\n\"Peoria County, Illinois, U.S., Births 1878-1915\", database, \nPeoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915, Certificate Number 288, \n({{Ancestry Record|62361|38163}} : accessed 6 May 2021), \nName: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman.\n</ref>",
     "type": "narrative"
   },
   "partial_ee_style_source": {
-    "citation": "* ''Birth'': \"Peoria County, Illinois, U.S., Births 1878-1915\", database, Peoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915, ({{Ancestry Record|62361|38163}} : accessed 6 May 2021), Name: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman; Certificate Number: 288.",
+    "citation": "* ''Birth'': \"Peoria County, Illinois, U.S., Births 1878-1915\", database, Peoria County Courthouse, Peoria, IL, USA, Peoria County Births, 1878-1915, Certificate Number 288, ({{Ancestry Record|62361|38163}} : accessed 6 May 2021), Name: Henry M Ohlman; Gender: Male; Race: White; Birth Date: 7 Feb 1915; Birth Place: Chillicothe, Illinois; Father: Harry A Ohlman; Mother: Ethel W Ohlman.",
     "type": "source"
   },
   "narrative_1_narrative": {
-    "citation": "He, the son of Harry A Ohlman and Ethel W Ohlman, was born on 7 Feb 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|-\n| Certificate Number || 288\n|}\n</ref>",
+    "citation": "He, the son of Harry A Ohlman and Ethel W Ohlman, was born on 7 Feb 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|}\n</ref>",
     "type": "narrative"
   },
   "narrative_2_narrative": {
-    "citation": "Henry M Ohlman was born on 7 February 1915 in Chillicothe, Illinois. He was the son of Harry A Ohlman & Ethel W Ohlman.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|-\n| Certificate Number || 288\n|}\n</ref>",
+    "citation": "Henry M Ohlman was born on 7 February 1915 in Chillicothe, Illinois. He was the son of Harry A Ohlman & Ethel W Ohlman.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|}\n</ref>",
     "type": "narrative"
   },
   "narrative_3_narrative": {
-    "citation": "Henry M was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|-\n| Certificate Number || 288\n|}\n</ref>",
+    "citation": "Henry M was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry M Ohlman\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 7 Feb 1915\n|-\n| Birth Place || Chillicothe, Illinois\n|-\n| Father || Harry A Ohlman\n|-\n| Mother || Ethel W Ohlman\n|}\n</ref>",
     "type": "narrative"
   }
 }

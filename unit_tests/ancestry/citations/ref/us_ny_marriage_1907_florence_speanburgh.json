@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Florence married Arthur Wood on 25 September 1907 in Schaghticoke, New York, USA.<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"New York State, Marriage Index, 1881-1967\"<br/>New York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>{{Ancestry Record|61632|198847}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)<br/>\nFlorence Speanburgh marriage to Arthur Wood on 25 Sep 1907 in Schaghticoke, New York, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Florence married Arthur Wood on 25 September 1907 in Schaghticoke, New York, USA.<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)<br/>\nFlorence Speanburgh marriage to Arthur Wood on 25 Sep 1907 in Schaghticoke, New York, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"New York State, Marriage Index, 1881-1967\"<br/>New York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>{{Ancestry Record|61632|198847}} (accessed 6 May 2021)<br/>Florence Speanburgh marriage to Arthur Wood on 25 Sep 1907 in Schaghticoke, New York, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)<br/>\nName: Florence Speanburgh; Gender: Female; Marriage Date: 25 Sep 1907; Marriage Place: Schaghticoke, New York, USA; Spouse: Arthur Wood; Records Sharing Certificate Number (Name): Florence Speanburgh<br/>Arthur Wood.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Florence married Arthur Wood on 25 September 1907 in Schaghticoke, New York, USA.<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)<br/>\nName: Florence Speanburgh; Gender: Female; Marriage Date: 25 Sep 1907; Marriage Place: Schaghticoke, New York, USA; Spouse: Arthur Wood; Records Sharing Certificate Number (Name): Florence Speanburgh<br/>Arthur Wood.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"New York State, Marriage Index, 1881-1967\"<br/>New York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>{{Ancestry Record|61632|198847}} (accessed 6 May 2021)<br/>Name: Florence Speanburgh; Gender: Female; Marriage Date: 25 Sep 1907; Marriage Place: Schaghticoke, New York, USA; Spouse: Arthur Wood; Records Sharing Certificate Number (Name): Florence Speanburgh<br/>Arthur Wood.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Florence Speanburgh\n|-\n| Gender || Female\n|-\n| Marriage Date || 25 Sep 1907\n|-\n| Marriage Place || Schaghticoke, New York, USA\n|-\n| Spouse || Arthur Wood\n|-\n| Records Sharing Certificate Number (Name) || Florence Speanburgh<br/>Arthur Wood\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Florence married Arthur Wood on 25 September 1907 in Schaghticoke, New York, USA.<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Florence Speanburgh\n|-\n| Gender || Female\n|-\n| Marriage Date || 25 Sep 1907\n|-\n| Marriage Place || Schaghticoke, New York, USA\n|-\n| Spouse || Arthur Wood\n|-\n| Records Sharing Certificate Number (Name) || Florence Speanburgh<br/>Arthur Wood\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"New York State, Marriage Index, 1881-1967\"<br/>New York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>{{Ancestry Record|61632|198847}} (accessed 6 May 2021)<br/>Name: Florence Speanburgh; Gender: Female; Marriage Date: 25 Sep 1907; Marriage Place: Schaghticoke, New York, USA; Spouse: Arthur Wood; Records Sharing Certificate Number (Name): Florence Speanburgh<br/>Arthur Wood.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"New York State, Marriage Index, 1881-1967,\" database, ({{Ancestry Record|61632|198847}} : accessed 6 May 2021), Florence Speanburgh marriage to Arthur Wood on 25 Sep 1907 in Schaghticoke, New York, USA; citing New York State Department of Health, Albany, NY, USA, New York State Marriage Index, Certificate Number 21704.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Florence married Arthur Wood on 25 September 1907 in Schaghticoke, New York, USA.<ref>\"New York State, Marriage Index, 1881-1967,\" database, ({{Ancestry Record|61632|198847}} : accessed 6 May 2021), Florence Speanburgh marriage to Arthur Wood on 25 Sep 1907 in Schaghticoke, New York, USA; citing New York State Department of Health, Albany, NY, USA, New York State Marriage Index, Certificate Number 21704.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"New York State, Marriage Index, 1881-1967,\" database, ({{Ancestry Record|61632|198847}} : accessed 6 May 2021), Florence Speanburgh marriage to Arthur Wood on 25 Sep 1907 in Schaghticoke, New York, USA; citing New York State Department of Health, Albany, NY, USA, New York State Marriage Index, Certificate Number 21704.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage'':\n\"New York State, Marriage Index, 1881-1967\", database, \nNew York State Department of Health, Albany, NY, USA, New York State Marriage Index, Certificate Number 21704, \n({{Ancestry Record|61632|198847}} : accessed 6 May 2021), \nName: Florence Speanburgh; Gender: Female; Marriage Date: 25 Sep 1907; Marriage Place: Schaghticoke, New York, USA; Spouse: Arthur Wood; Records Sharing Certificate Number (Name): Florence Speanburgh, Arthur Wood.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Florence married Arthur Wood on 25 September 1907 in Schaghticoke, New York, USA.<ref>\n''Marriage'':\n\"New York State, Marriage Index, 1881-1967\", database, \nNew York State Department of Health, Albany, NY, USA, New York State Marriage Index, Certificate Number 21704, \n({{Ancestry Record|61632|198847}} : accessed 6 May 2021), \nName: Florence Speanburgh; Gender: Female; Marriage Date: 25 Sep 1907; Marriage Place: Schaghticoke, New York, USA; Spouse: Arthur Wood; Records Sharing Certificate Number (Name): Florence Speanburgh, Arthur Wood.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage'': \"New York State, Marriage Index, 1881-1967\", database, New York State Department of Health, Albany, NY, USA, New York State Marriage Index, Certificate Number 21704, ({{Ancestry Record|61632|198847}} : accessed 6 May 2021), Name: Florence Speanburgh; Gender: Female; Marriage Date: 25 Sep 1907; Marriage Place: Schaghticoke, New York, USA; Spouse: Arthur Wood; Records Sharing Certificate Number (Name): Florence Speanburgh, Arthur Wood.",
+    "type": "source"
+  }
+}
