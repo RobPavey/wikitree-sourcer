@@ -881,6 +881,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/46470693:2495",
   },
   {
+    caseName: "us_ny_census_1892_henry_brixius",
+    url: "https://www.ancestry.com/discoveryui-content/view/93143:8940",
+  },
+  {
     caseName: "us_ny_census_1925_leroy_whitcomb",
     url: "https://www.ancestry.com/discoveryui-content/view/24992583:2704",
     optionVariants: [

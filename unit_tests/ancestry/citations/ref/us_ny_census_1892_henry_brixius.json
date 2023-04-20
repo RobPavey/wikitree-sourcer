@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1892 Census''':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>\nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>\n{{Ancestry Record|8940|93143}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1892 census Henry was in Lowville, Lewis, New York.<ref>\n'''1892 Census''':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>\nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>\n{{Ancestry Record|8940|93143}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1892 Census''': \"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>{{Ancestry Record|8940|93143}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1892 Census''':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>\nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>\n{{Ancestry Record|8940|93143}} (accessed 6 May 2021)<br/>\nHenry R Brixius in Lowville, Lewis, New York. Born in United States of America.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1892 census Henry was in Lowville, Lewis, New York.<ref>\n'''1892 Census''':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>\nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>\n{{Ancestry Record|8940|93143}} (accessed 6 May 2021)<br/>\nHenry R Brixius in Lowville, Lewis, New York. Born in United States of America.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1892 Census''': \"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>{{Ancestry Record|8940|93143}} (accessed 6 May 2021)<br/>Henry R Brixius in Lowville, Lewis, New York. Born in United States of America.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1892 Census''':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>\nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>\n{{Ancestry Record|8940|93143}} (accessed 6 May 2021)<br/>\nName: Henry R Brixius; Residence: Lowville, Lewis, New York; Census year: 1892; Birth Place: United States of America; Estimated Birth Year: abt 1887; Gender: Male.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1892 census Henry was in Lowville, Lewis, New York.<ref>\n'''1892 Census''':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>\nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>\n{{Ancestry Record|8940|93143}} (accessed 6 May 2021)<br/>\nName: Henry R Brixius; Residence: Lowville, Lewis, New York; Census year: 1892; Birth Place: United States of America; Estimated Birth Year: abt 1887; Gender: Male.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1892 Census''': \"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>{{Ancestry Record|8940|93143}} (accessed 6 May 2021)<br/>Name: Henry R Brixius; Residence: Lowville, Lewis, New York; Census year: 1892; Birth Place: United States of America; Estimated Birth Year: abt 1887; Gender: Male.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1892 Census''':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>\nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>\n{{Ancestry Record|8940|93143}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry R Brixius\n|-\n| Residence || Lowville, Lewis, New York\n|-\n| Census year || 1892\n|-\n| Birth Place || United States of America\n|-\n| Estimated Birth Year || abt 1887\n|-\n| Gender || Male\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1892 census Henry was in Lowville, Lewis, New York.<ref>\n'''1892 Census''':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>\nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>\n{{Ancestry Record|8940|93143}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Henry R Brixius\n|-\n| Residence || Lowville, Lewis, New York\n|-\n| Census year || 1892\n|-\n| Birth Place || United States of America\n|-\n| Estimated Birth Year || abt 1887\n|-\n| Gender || Male\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1892 Census''': \"New York, U.S., State Censuses, 1880, 1892, 1905\"<br/>Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library<br/>{{Ancestry Record|8940|93143}} (accessed 6 May 2021)<br/>Name: Henry R Brixius; Residence: Lowville, Lewis, New York; Census year: 1892; Birth Place: United States of America; Estimated Birth Year: abt 1887; Gender: Male.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"New York, U.S., State Censuses, 1880, 1892, 1905,\" database, ({{Ancestry Record|8940|93143}} : accessed 6 May 2021), Henry R Brixius in Lowville, Lewis, New York. Born in United States of America; citing Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1892 census Henry was in Lowville, Lewis, New York.<ref>\"New York, U.S., State Censuses, 1880, 1892, 1905,\" database, ({{Ancestry Record|8940|93143}} : accessed 6 May 2021), Henry R Brixius in Lowville, Lewis, New York. Born in United States of America; citing Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"New York, U.S., State Censuses, 1880, 1892, 1905,\" database, ({{Ancestry Record|8940|93143}} : accessed 6 May 2021), Henry R Brixius in Lowville, Lewis, New York. Born in United States of America; citing Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1892 Census'':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\", database, \nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library, \n({{Ancestry Record|8940|93143}} : accessed 6 May 2021), \nName: Henry R Brixius; Residence: Lowville, Lewis, New York; Census year: 1892; Birth Place: United States of America; Estimated Birth Year: abt 1887; Gender: Male.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1892 census Henry was in Lowville, Lewis, New York.<ref>\n''1892 Census'':\n\"New York, U.S., State Censuses, 1880, 1892, 1905\", database, \nMicrofilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library, \n({{Ancestry Record|8940|93143}} : accessed 6 May 2021), \nName: Henry R Brixius; Residence: Lowville, Lewis, New York; Census year: 1892; Birth Place: United States of America; Estimated Birth Year: abt 1887; Gender: Male.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1892 Census'': \"New York, U.S., State Censuses, 1880, 1892, 1905\", database, Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library, ({{Ancestry Record|8940|93143}} : accessed 6 May 2021), Name: Henry R Brixius; Residence: Lowville, Lewis, New York; Census year: 1892; Birth Place: United States of America; Estimated Birth Year: abt 1887; Gender: Male.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Henry R Brixius"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "yearString": "1887",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "United States of America"
+  },
+  "eventDate": {
+    "yearString": "1892"
+  },
+  "eventPlace": {
+    "placeString": "Lowville, Lewis, New York"
+  },
+  "collectionData": {
+    "id": "8940"
+  },
+  "hasValidData": true
+}

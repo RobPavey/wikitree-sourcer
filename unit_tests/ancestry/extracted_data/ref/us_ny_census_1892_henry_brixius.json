@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/93143:8940",
+  "pageType": "record",
+  "dbId": "8940",
+  "recordId": "93143",
+  "ancestryTemplate": "{{Ancestry Record|8940|93143}}",
+  "domain": "com",
+  "titleName": "Henry R Brixius",
+  "titleCollection": "New York, U.S., State Censuses, 1880, 1892, 1905",
+  "recordData": {
+    "Name": "Henry R Brixius",
+    "Residence": "Lowville, Lewis, New York",
+    "Census year": "1892",
+    "Birth Place": "United States of America",
+    "Estimated Birth Year": "abt 1887",
+    "Gender": "Male"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8940/images/NYV14_290-0119?pid=93143&usePUB=true&usePUBJs=true",
+  "imageDbId": "8940",
+  "imageRecordId": "NYV14_290-0119",
+  "sourceInformation": "Ancestry.com. New York, U.S., State Censuses, 1880, 1892, 1905 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2005. Original data: Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library.",
+  "originalData": "Microfilmed copies of the originals can be found at the New York Genealogical and Biographical Society, as well as the Family History Library.",
+  "sourceDescription": "In New York (U.S.A.) state censuses were taken every ten years from 1825-1875, in 1892, and then again from 1905-1925. This database is an index to, with corresponding images of, parts of the 1880, 1892, and 1905 censuses. Information available in this database includes name, gender, age, race or color, birthplace, enumeration place, year of enumeration, relationship to head of household, and number of years living in the U.S. Learn more..."
+}

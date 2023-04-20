@@ -1206,7 +1206,12 @@ function generalizeDataGivenRecordType(data, result) {
 
       if (!result.eventDate || (!result.eventDate.dateString && !result.eventDate.yearString)) {
         // see if we can get the census year from a field
-        let yearString = getCleanValueForRecordDataList(data, ["Enumeration Year", "Residence Year", "Census Year"]);
+        let yearString = getCleanValueForRecordDataList(data, [
+          "Enumeration Year",
+          "Residence Year",
+          "Census Year",
+          "Census year",
+        ]);
         if (yearString) {
           result.setEventYear(yearString);
         } else {
