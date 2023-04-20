@@ -327,7 +327,10 @@ class NarrativeBuilder {
       // However, sometimes the generalize has already done a better job of this so it should not be done again
       // NOTE: we could perhaps centralise the code in scotp that does name casing.
       if (gd.sourceOfData != "scotp") {
-        result.nameOrPronoun = WTS_String.toInitialCapsEachWord(result.nameOrPronoun, true);
+        // For now, rather than the complex code in scotp we only change case if it is in all uppercase
+        if (WTS_String.isAllUppercase(result.nameOrPronoun)) {
+          result.nameOrPronoun = WTS_String.toInitialCapsEachWord(result.nameOrPronoun, true);
+        }
       }
     }
 

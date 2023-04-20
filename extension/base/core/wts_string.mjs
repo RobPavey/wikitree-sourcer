@@ -335,6 +335,19 @@ const WTS_String = {
     }
     return newString;
   },
+
+  isAllUppercase: function (string) {
+    if (!string) {
+      return false;
+    }
+
+    let upperString = string.toUpperCase();
+    if (upperString == string) {
+      return true;
+    }
+
+    return false;
+  },
 };
 
 export { WTS_String };

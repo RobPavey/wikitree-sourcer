@@ -48,21 +48,9 @@ function getCleanValueForRecordDataList(data, fieldNames) {
   }
 }
 
-function isAllUppercase(string) {
-  if (!string) {
-    return false;
-  }
-
-  let upperString = string.toUpperCase();
-  if (upperString == string) {
-    return true;
-  }
-
-  return false;
-}
 function standardizePlaceName(placeName) {
   let stdName = placeName;
-  if (isAllUppercase(placeName)) {
+  if (WTS_String.isAllUppercase(placeName)) {
     stdName = WTS_String.toInitialCapsEachWord(placeName);
   }
   return stdName;
@@ -70,7 +58,7 @@ function standardizePlaceName(placeName) {
 
 function standardizeCountyName(countyName) {
   let stdName = countyName;
-  if (isAllUppercase(countyName)) {
+  if (WTS_String.isAllUppercase(countyName)) {
     stdName = WTS_String.toInitialCapsEachWord(countyName);
   }
   return stdName;
@@ -147,9 +135,9 @@ function standardizeName(string) {
 
   // if the string is already mixed case do not change it.
   // Unless it is something like "BAIRD or MCGREGOR"
-  if (!isAllUppercase(resultString)) {
+  if (!WTS_String.isAllUppercase(resultString)) {
     let partialString = resultString.replace(/\s+or\s+/g, "");
-    if (!isAllUppercase(partialString)) {
+    if (!WTS_String.isAllUppercase(partialString)) {
       return originalStringClean;
     }
   }
@@ -542,7 +530,7 @@ function buildPlaceWithRcParishCongregationName(placeName, data) {
   //   "DUNFERMLINE - ST MARGARET'S UNITED SECESSION",
   //   "Airdrie, St Margaret's"
 
-  if (isAllUppercase(placeName)) {
+  if (WTS_String.isAllUppercase(placeName)) {
     placeName = WTS_String.toInitialCapsEachWord(placeName);
   }
 
@@ -580,7 +568,7 @@ function buildPlaceWithOtherParishCongregationName(parishAndCongregationName, da
   //   "DUNFERMLINE - ST MARGARET'S UNITED SECESSION",
   //   "Airdrie, St Margaret's"
 
-  if (isAllUppercase(parishAndCongregationName)) {
+  if (WTS_String.isAllUppercase(parishAndCongregationName)) {
     parishAndCongregationName = WTS_String.toInitialCapsEachWord(parishAndCongregationName);
   }
 

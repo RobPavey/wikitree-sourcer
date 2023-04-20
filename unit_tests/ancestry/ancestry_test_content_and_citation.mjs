@@ -587,6 +587,19 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/413359:5111?tid=&pid=&_phsrc=ywU133&_phstart=successSource",
   },
   {
+    caseName: "england_probate_1962_william_mclaren",
+    url: "https://www.ancestry.com/discoveryui-content/view/13762821:1904",
+    optionVariants: [
+      {
+        variantName: "fullName",
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_general_nameOrPronoun: "fullName",
+        },
+      },
+    ],
+  },
+  {
     caseName: "england_probate_1994_minnie_flatters",
     url: "https://www.ancestry.co.uk/discoveryui-content/view/24194132:1904",
   },

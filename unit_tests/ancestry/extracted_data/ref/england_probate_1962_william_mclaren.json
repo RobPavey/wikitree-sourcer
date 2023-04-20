@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/13762821:1904",
+  "pageType": "record",
+  "dbId": "1904",
+  "recordId": "13762821",
+  "ancestryTemplate": "{{Ancestry Record|1904|13762821}}",
+  "domain": "com",
+  "titleName": "William Berry McLaren",
+  "titleCollection": "England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995",
+  "recordData": {
+    "Name": "William Berry McLaren",
+    "Death Date": "22 Sep 1962",
+    "Death Place": "London, England",
+    "Probate Date": "30 Nov 1962",
+    "Probate Registry": "London, England"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1904/images/32858_611411_1988-00172?pid=13762821&usePUB=true&usePUBJs=true",
+  "imageDbId": "1904",
+  "imageRecordId": "32858_611411_1988-00172",
+  "sourceInformation": "Ancestry.com. England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England. London, England © Crown copyright.",
+  "originalData": "Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England. London, England © Crown copyright.",
+  "sourceDescription": "This is a directory of probates for England and Wales. Volumes in this collection cover years 1858 to 1995. Learn more..."
+}

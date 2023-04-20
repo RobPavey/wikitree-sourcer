@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Probate",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William Berry McLaren"
+  },
+  "deathDate": {
+    "dateString": "22 Sep 1962"
+  },
+  "eventDate": {
+    "dateString": "30 Nov 1962"
+  },
+  "eventPlace": {
+    "placeString": "London, England"
+  },
+  "deathPlace": {
+    "placeString": "London, England"
+  },
+  "lastNameAtDeath": "McLaren",
+  "collectionData": {
+    "id": "1904"
+  },
+  "hasValidData": true
+}
