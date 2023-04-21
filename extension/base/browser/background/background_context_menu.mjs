@@ -26,8 +26,78 @@ import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 
 function openAncestryLink(link, options) {
   //console.log("openAncestryLink, link is: " + link);
-  if (link.startsWith("https://ancestry.prf.hn/")) {
-    // an ancestry template it always should contain https://search.ancestry* after the wrapper link
+  if (link.startsWith("https://click.linksynergy")) {
+    // NOTE: Ancestry switched from Partnerize to Rakuten on 18 Apr 2023. Partnerize used the
+    // "prf.hn" format, Rakuten uses this new click.linksynergy format.
+    // And example link in this format:
+    // https://click.linksynergy.com/deeplink?id=Xib7NfnK11s&amp;mid=50138&amp;murl=https%3A%2F%2Fsearch.ancestry.com%2Fcgi-bin%2Fsse.dll%3Findiv%3D1%26db%3D61596%26h%3D8900762
+    let linkStartText = "https%3A%2F%2Fsearch.ancestry";
+    let realLinkIndex = link.indexOf(linkStartText);
+    if (realLinkIndex == -1) {
+      linkStartText = "https%3A%2F%2Fwww.ancestry";
+      realLinkIndex = link.indexOf(linkStartText);
+    }
+    //console.log("openAncestryLink, realLinkIndex is: " + realLinkIndex);
+    if (realLinkIndex != -1) {
+      let domainEndIndex = link.indexOf("%2F", realLinkIndex + linkStartText.length);
+      if (domainEndIndex != -1) {
+        let linkStart = link.substring(realLinkIndex, domainEndIndex);
+        // linkStart = https%3A%2F%2Fsearch.ancestry.com for example
+        let ancestryStartIndex = linkStart.indexOf("ancestry");
+        if (ancestryStartIndex != -1) {
+          let domain = linkStart.substring(ancestryStartIndex);
+          //console.log("openAncestryLink, domain is: " + domain);
+
+          let desiredDomain = options.search_ancestry_domain;
+          //console.log("openAncestryLink, desiredDomain is: " + desiredDomain);
+
+          if (desiredDomain != "none" && desiredDomain != domain) {
+            // we want to change the link, first decide if we are changing to a domain supported by
+            // the Rakuten links
+            const rukutenSupportedDomains = [
+              { domain: "ancestry.com", mid: "50138" },
+              { domain: "ancestry.co.uk", mid: "50140" },
+              { domain: "ancestry.ca", mid: "50139" },
+              { domain: "ancestry.com.au", mid: "50142" },
+            ];
+            let mid = "";
+            for (let entry of rukutenSupportedDomains) {
+              if (entry.domain == desiredDomain) {
+                mid = entry.mid;
+                break;
+              }
+            }
+            if (mid) {
+              // it is a supported domain to modify the mid and domain in link
+              let newLink = link.replace(domain, desiredDomain);
+              if (newLink && newLink != link) {
+                link = newLink;
+                //console.log("openAncestryLink, new link is: " + newLink);
+              }
+              newLink = link.replace(/([&;])mid=\d+/, "$1mid=" + mid);
+              if (newLink && newLink != link) {
+                link = newLink;
+                //console.log("openAncestryLink, new link is: " + newLink);
+              }
+            } else {
+              // not one of the supported domains - change to a non-referral link
+              let encodedPlainLink = link.substring(realLinkIndex);
+              //console.log("openAncestryLink, encodedPlainLink is: " + encodedPlainLink);
+              let plainLink = decodeURIComponent(encodedPlainLink);
+              //console.log("openAncestryLink, plainLink is: " + plainLink);
+              let newLink = plainLink.replace(domain, desiredDomain);
+              if (newLink && newLink != plainLink) {
+                link = newLink;
+                //console.log("openAncestryLink, new link is: " + newLink);
+              }
+            }
+          }
+        }
+      }
+    }
+  } else if (link.startsWith("https://ancestry.prf.hn/")) {
+    // NOTE: Ancestry switched from Partnerize to Rakuten on 18 Apr 2023. Partnerize used the
+    // "prf.hn" format. So this is no longer used.
     let linkStartText = "https://search.ancestry";
     let realLinkIndex = link.indexOf(linkStartText);
     if (realLinkIndex == -1) {
