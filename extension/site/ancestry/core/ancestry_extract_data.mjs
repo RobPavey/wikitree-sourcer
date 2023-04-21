@@ -67,6 +67,11 @@ function setSourceCitation(result, sourceTextNode) {
   result.sourceCitation = sourceText;
 }
 
+function setSourceCitationDescription(result, sourceTextNode) {
+  let sourceText = cleanText(sourceTextNode.textContent);
+  result.sourceCitationDescription = sourceText;
+}
+
 function setSourceInformation(result, sourceTextNode) {
   let sourceText = cleanText(sourceTextNode.textContent);
   result.sourceInformation = sourceText;
@@ -473,6 +478,45 @@ function extractRecordSourceCitation(document, result) {
             setSourceInformation(result, sourceTextNode);
           } else if (citationTitle == "Description") {
             setSourceDescription(result, sourceTextNode);
+          }
+        }
+      }
+    }
+  }
+}
+
+function extractImageSourceCitation(document, result) {
+  // test is there is an info panel, this is the sidebar
+  let infoPanelContainer = document.querySelector("div.info-panel-container");
+
+  if (infoPanelContainer) {
+    let sourceContainer = document.querySelector("div.sourceDescription");
+
+    if (sourceContainer) {
+      let sourceCitationChildren = sourceContainer.children;
+
+      if (sourceCitationChildren.length > 0) {
+        let lastCitationTitle = "";
+
+        for (let index = 0; index < sourceCitationChildren.length; index++) {
+          let child = sourceCitationChildren[index];
+
+          console.log("child is:");
+          console.log(child);
+
+          if (child.tagName == "H6") {
+            lastCitationTitle = cleanText(child.textContent);
+            console.log("lastCitationTitle = " + lastCitationTitle);
+          } else if (child.tagName == "P") {
+            if (lastCitationTitle == "Source Citation") {
+              setSourceCitation(result, child);
+            } else if (lastCitationTitle == "Description") {
+              setSourceCitationDescription(result, child);
+            } else if (lastCitationTitle == "Source Information") {
+              setSourceInformation(result, child);
+            } else if (lastCitationTitle == "Source Description") {
+              setSourceDescription(result, child);
+            }
           }
         }
       }
@@ -1380,6 +1424,7 @@ function extractData(document, url) {
     extractImageBrowsePath(document, result);
     extractImageNumberAndTotal(document, result);
     extractImageHasIndex(document, result);
+    extractImageSourceCitation(document, result);
   } else if (result.pageType == "sharingUrl") {
     extractImagePageTitle(document, result);
     extractSharingUrlTemplate(document, result);
