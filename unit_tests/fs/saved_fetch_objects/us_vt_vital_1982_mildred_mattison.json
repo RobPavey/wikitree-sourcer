@@ -1,0 +1,1092 @@
+{
+  "id" : "r_22341725824",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MKD-8C5Q?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MKD-8C5Q?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MKD-8C5Q"
+    }
+  },
+  "description" : "#sd_p_14234686283",
+  "persons" : [ {
+    "id" : "p_14234686283",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "870b054b-76d8-4679-ae9d-995b5658fb63",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female"
+        }, {
+          "id" : "c05db2aa-2eb5-4094-90f5-cda7bf26e36f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1597864453632
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/KFP2-VSP?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MKD-8C5Q?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSP" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Mildred E Mattison",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Mildred E",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "32113eaf-43ba-4a6b-8ea0-d6c0b9b0857f",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Mildred E"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Mattison",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "f50727e5-3aed-4b86-b309-3a05412c4031",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Mattison"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "e4d15fc0-e972-474e-8bef-0829b8b5c563",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Mildred E Mattison"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://familysearch.org/types/facts/DeathRegistration",
+      "date" : {
+        "original" : "30 Mar 1982",
+        "formal" : "+1982-03-30",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "80545695-ee91-42c0-8012-db3a9b0bf3c5",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "30 Mar 1982"
+          }, {
+            "id" : "e10a4456-b1ef-4c2d-85d1-dd04e54bda2f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444887
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "30 Mar 1982",
+            "resource" : "+1982-03-30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "9f2fe3cf-17d7-415b-8286-6a3a91f193fb",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Mar"
+          }, {
+            "id" : "b8bc9a64-2da0-4f65-b4c4-4ef3e507967c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444887
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "3"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "fab12729-c033-4b16-aa38-b4058036038c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "30"
+          }, {
+            "id" : "f2dd23d9-746e-4dd6-940a-ced1b160fec3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444887
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "3d3bfc5d-cc6b-453b-9d91-faa1c4a1b838",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1982"
+          }, {
+            "id" : "6ba6ce47-fd70-44cc-b1a0-4bfd21b5f5da",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444887
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1982"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Bennington, Bennington, Vermont, United States",
+        "description" : "#place_5405062",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "5cb676e4-f35f-479c-891b-597f4f77856c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1597864453632
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Bennington, Bennington, Vermont, United States"
+          }, {
+            "id" : "f869d4a4-5eff-4489-a527-459926c21f10",
+            "confidence" : "http://confidence/100",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1598289235698
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Bennington, Bennington, Vermont, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5405062",
+            "qualifiers" : [ {
+              "value" : "1013, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "6a737f4c-e26b-424d-889c-9e5bd102227d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "e4d12127-83a3-44a0-84c3-c37da3c1e7c9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Bennington"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "4f4c37bd-2d77-4afc-9734-d856ab95a25d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Vermont"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Town",
+          "values" : [ {
+            "id" : "8f1a5e00-ffdc-42d4-9217-8cd89581e084",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWN_ORIG",
+            "text" : "Bennington"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "e5d22b96-010c-43e4-bd10-42cf25ad7429",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Death Registration"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "23 Mar 1909",
+        "formal" : "+1909-03-23",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444888
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "23 Mar 1909"
+          }, {
+            "id" : "7cef2019-cd43-4dbe-88d1-b7bcb3dad6a2",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444888
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "23 Mar 1909",
+            "resource" : "+1909-03-23"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "56e22d4c-3524-4751-b2dd-98abc283b579",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "Mar"
+          }, {
+            "id" : "82ffdbe7-1fe9-4d24-bf26-c6f5f043fb6a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444888
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_MONTH",
+            "text" : "3"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "854a177b-148a-4660-a15f-5bc9c1ff753a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "23"
+          }, {
+            "id" : "0e1634b8-d1da-47fa-8d6f-00888084fa1c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444888
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DAY",
+            "text" : "23"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "4ba90e3e-e737-4d28-a1aa-1fe1b367b139",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1909"
+          }, {
+            "id" : "24864130-a3ee-48dc-93c3-eafccccd9f13",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444888
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1909"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : ", Vermont,",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "6f18d4a8-e88b-4e8c-992a-909e14deff11",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : ", Vermont,"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "5d5d3a50-cdb5-43a5-960e-1d8dab40521a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_STATE_ORIG",
+            "text" : "Vermont"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "28 Mar 1982",
+        "formal" : "+1982-03-28",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "ffb2633b-2593-49a6-b4b0-6cc394ca595b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_DATE_ORIG",
+            "text" : "28 Mar 1982"
+          }, {
+            "id" : "669bbbe7-942f-40cd-a30e-e73959bfdbf5",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444890
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_DATE",
+            "text" : "28 Mar 1982",
+            "resource" : "+1982-03-28"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "337a73fa-247e-4a46-ba72-cd23c27f6d37",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_MONTH_ORIG",
+            "text" : "Mar"
+          }, {
+            "id" : "bb305ccc-8a68-48c8-8af4-02d6dd38fd3e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444890
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_MONTH",
+            "text" : "3"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "73bc457a-815a-45ce-81e6-0a0873344eb3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_DAY_ORIG",
+            "text" : "28"
+          }, {
+            "id" : "af816f7b-893c-4b73-898b-87a786796b9a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444890
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_DAY",
+            "text" : "28"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "f72b53f1-42d2-465b-85f1-6d63ab3765b0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_YEAR_ORIG",
+            "text" : "1982"
+          }, {
+            "id" : "9598f278-14ef-4b81-a92f-91e3068243a4",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1597864444890
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_YEAR",
+            "text" : "1982"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Dead on Arrival",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "1b015586-48c5-4fb7-8be5-4aecfcd53b34",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_PLACE_ORIG",
+            "text" : "Dead on Arrival"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "original" : "Pownal, VT",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "b4ebe029-b45e-467e-a619-5b2239262a9c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1597864453652
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Pownal, VT"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "9916e783-098b-418d-aaf1-563fc785dc39",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_STATE_ORIG",
+            "text" : "VT"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Town",
+          "values" : [ {
+            "id" : "41ba47cb-1717-4f75-8012-07e7f43c07ff",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_TOWN_ORIG",
+            "text" : "Pownal"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://familysearch.org/types/fields/FlagDeaAutopsy",
+      "values" : [ {
+        "id" : "1de6f17c-5b7f-4860-93fd-dd4083f3e95f",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_FLAG_DEA_AUTOPSY_ORIG",
+        "text" : "N"
+      } ]
+    } ]
+  }, {
+    "id" : "p_14234686284",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "59820871-780e-46bb-a304-12aac8d10d7a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1597864453632
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/KFP2-VS5?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MKD-8C5Q?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KFP2-VS5" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "William M Crosier",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William M",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "345be316-0606-49ee-9059-4b6ed34d5254",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "William M"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Crosier",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "bcf9fb6d-95dd-45ee-ae1f-aa47440443be",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Crosier"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "77623b82-5a76-49fa-b822-365ab6d9520c",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "William M Crosier"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_14234686285",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "ee3f69fe-fb67-430b-8441-895d496a250f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1597864453632
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/KFP2-VSR?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MKD-8C5Q?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSR" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Mary L Flynn",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Mary L",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "40c57483-c03f-4c64-b207-6c5b65f1f0f3",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Mary L"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Flynn",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "d9fe4d00-c72b-488f-a25b-0b41f31582de",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Flynn"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "24507880-13c2-4537-9dda-452cd2eae3c9",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Mary L Flynn"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/2GVH-B4P8",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14234686284",
+      "resourceId" : "p_14234686284"
+    },
+    "person2" : {
+      "resource" : "#p_14234686283",
+      "resourceId" : "p_14234686283"
+    }
+  }, {
+    "id" : "MM9.1.6/2GVH-B4TL",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14234686285",
+      "resourceId" : "p_14234686285"
+    },
+    "person2" : {
+      "resource" : "#p_14234686283",
+      "resourceId" : "p_14234686283"
+    }
+  }, {
+    "id" : "MM9.1.6/2GVH-BHM9",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_14234686284",
+      "resourceId" : "p_14234686284"
+    },
+    "person2" : {
+      "resource" : "#p_14234686285",
+      "resourceId" : "p_14234686285"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_2075288",
+    "about" : "https://www.familysearch.org/platform/records/collections/2075288",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223780266,
+    "modified" : 1658156049466,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Vermont, United States",
+        "description" : "#place_1-47"
+      },
+      "temporal" : {
+        "original" : "1760/2003",
+        "formal" : "1760/2003"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Vermont Vital Records, 1760-2008"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/2075288" ]
+    }
+  }, {
+    "id" : "src_r_22341725824",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MKD-8C5Q",
+    "componentOf" : {
+      "description" : "#sd_c_2075288"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1383825794954,
+    "modified" : 1658156049466,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Bennington, Bennington, Vermont, United States",
+        "description" : "#place_5405062"
+      },
+      "temporal" : {
+        "original" : "30 Mar 1982"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Vermont Vital Records, 1760-2008\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:9MKD-8C5Q : 23 February 2021), Entry for Mildred E Mattison, 1982."
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Mildred E Mattison, \"Vermont Vital Records, 1760-2008\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1001162791485" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MKD-8C5Q" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2075288?arkName=1:2:9MKD-8C5Q"
+    }
+  }, {
+    "id" : "sd_p_14234686283",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSP",
+    "componentOf" : {
+      "description" : "#src_r_22341725824"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Vermont Vital Records, 1760-2008\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KFP2-VSP : 23 February 2021), Mildred E Mattison, 1982."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Mildred E Mattison, \"Vermont Vital Records, 1760-2008\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSP" ]
+    }
+  }, {
+    "id" : "sd_p_14234686284",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:KFP2-VS5",
+    "componentOf" : {
+      "description" : "#src_r_22341725824"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Vermont Vital Records, 1760-2008\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KFP2-VS5 : 23 February 2021), William M Crosier in entry for Mildred E Mattison, 1982."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "William M Crosier in entry for Mildred E Mattison, \"Vermont Vital Records, 1760-2008\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KFP2-VS5" ]
+    }
+  }, {
+    "id" : "sd_p_14234686285",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSR",
+    "componentOf" : {
+      "description" : "#src_r_22341725824"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Vermont Vital Records, 1760-2008\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KFP2-VSR : 23 February 2021), Mary L Flynn in entry for Mildred E Mattison, 1982."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Mary L Flynn in entry for Mildred E Mattison, \"Vermont Vital Records, 1760-2008\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSR" ]
+    }
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G97W-WNS?cc=2075288",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G97W-WNS?cc=2075288" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2075288?arkName=3:1:3QSQ-G97W-WNS"
+    }
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/5405062",
+      "resourceId" : "place_5405062"
+    }
+  }, {
+    "id" : "place_1-47",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/47?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/Ext2FilmNbr",
+    "values" : [ {
+      "id" : "78328e04-de30-4c48-a25d-a62045189ded",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_2_FILM_NBR_ORIG",
+      "text" : "S-31614"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtFilmNbr",
+    "values" : [ {
+      "id" : "ef00a6c1-eda3-4f55-bf46-14827e85d556",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_FILM_NBR_ORIG",
+      "text" : "31394_203756"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExternalImageId",
+    "values" : [ {
+      "id" : "050c5ef6-6b99-4e81-a440-f54b8e6b94b8",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_IMAGE_ID_ORIG",
+      "text" : "31394_203756-01496"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtImageIndex",
+    "values" : [ {
+      "id" : "2d956166-7f9d-4144-b8f2-bbb2d2304c14",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_IMAGE_INDEX_ORIG",
+      "text" : "1982_Mar_28_DEATH_Mattison_Mildred_E."
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtPubTitle",
+    "values" : [ {
+      "id" : "c79e38f4-a8b4-4de5-8bd1-654c37a101a7",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_PUB_TITLE_ORIG",
+      "text" : "Vermont Death Records, 1909-2008"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtRepositoryName",
+    "values" : [ {
+      "id" : "80a82a8b-ede2-49cb-a322-ce85166c40da",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_REPOSITORY_NAME_ORIG",
+      "text" : "Vermont State Archives and Records Administration"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtRepositoryPlace",
+    "values" : [ {
+      "id" : "d81bfb15-aab9-4c8a-af8e-03670daf3b63",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_REPOSITORY_PLACE_ORIG",
+      "text" : "Montpelier, Vermont"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtUniqueId",
+    "values" : [ {
+      "id" : "c2853214-d387-4dd8-b79b-4d684d1a15dd",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_UNIQUE_ID_ORIG",
+      "text" : "10967"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "0fea8ca0-7634-4338-ac7c-16b43913024e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "2075288"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "9f968d11-72d4-4fb3-bac4-403b7d689060",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007029280"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/Folder",
+    "values" : [ {
+      "id" : "bd72b650-4536-4992-b39e-11e91d38719f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FOLDER",
+      "text" : "007029280"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FolderImageSequence",
+    "values" : [ {
+      "id" : "105b9977-1459-4a54-9adf-67765bbe14d8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FOLDER_IMAGE_SEQ",
+      "text" : "1497"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageApid",
+    "values" : [ {
+      "id" : "9f7b5e28-e4ed-4a27-a01d-65c47e623f98",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_APID",
+      "text" : "TH-1942-31686-482-8"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageId",
+    "values" : [ {
+      "id" : "ba7c76dd-a704-4d2e-b91c-a2cfcfeba38c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_ID",
+      "text" : "/007029280/007029280_01497.jpg"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNumber",
+    "values" : [ {
+      "id" : "89139d91-8993-438a-8495-c8518f764762",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "01497"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageArk",
+    "values" : [ {
+      "id" : "a1e40dd9-ac1d-4eb3-a442-fa2aa642c1c5",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_ARK",
+      "text" : "https://familysearch.org/ark:/61903/3:1:3QSQ-G97W-WNS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "cf036a56-2463-4f6f-8510-8be847a244c7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "14d6212e-60ba-4f2d-81f3-dbf241b2dd65",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "VermontDeaths_testtxt"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "94e22e5f-cd9f-40a8-b700-4407f2d9cb11",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1597864453652
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000007029280_01497_00000_0000022341725824"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "821de1cf-41a9-4c4c-9c1c-7287d782e302",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "1001162791485"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "57d4997f-2415-41ab-90dd-4fb036009358",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"pr_dea_cause\": \"Arteriosclerotic Heart Disease\", \"pr_name_middle\": \"E\", \"pr_injury_cause\": \"N\", \"pr_fthr_name_middle\": \"M\", \"pr_mthr_name_middle\": \"L\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "2952024b-6600-4825-b74b-652a1728f4b4",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/WarName",
+    "values" : [ {
+      "id" : "fb55fc14-0c49-4f9a-b3ba-9eeb2c4d727c",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "MISC_NAME_WAR_ORIG",
+      "text" : "Non Applicable",
+      "qualifiers" : [ {
+        "value" : "MISC",
+        "name" : "http://familysearch.org/types/qualifiers/Info"
+      } ]
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceBoxNbr",
+    "values" : [ {
+      "id" : "ae4e3e95-27b5-4f5e-b857-b381d8bc7c42",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_BOX_NBR_ORIG",
+      "text" : "PR-01524"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceFormType",
+    "values" : [ {
+      "id" : "c4a7e854-456e-4499-addf-83c5583343f8",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_FORM_TYPE_ORIG",
+      "text" : "Certificate of Death"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "5"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "58514"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ],
+  "qualifiers" : [ {
+    "value" : "true",
+    "name" : "TreatmentWarnings"
+  } ]
+}

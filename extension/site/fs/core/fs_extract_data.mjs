@@ -1172,6 +1172,7 @@ function isUrlAValidFullOrPartialFmpImageLink(url) {
     /^\d+$/, // e.g. "84"
     /^[\w\d]+$/, // e.g. "D3608"
     /^[\w\d]+\/$/, // e.g. "nai001442165/"
+    /^[\w\d_\-]+$/, // e.g. "31394_203756-01496"
   ];
 
   let isBadArchiveIdFormat = false;

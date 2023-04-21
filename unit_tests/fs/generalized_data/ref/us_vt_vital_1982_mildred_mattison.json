@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Mildred E Mattison"
+  },
+  "birthDate": {
+    "dateString": "23 Mar 1909",
+    "yearString": "1909"
+  },
+  "birthPlace": {
+    "placeString": "Vermont"
+  },
+  "deathDate": {
+    "dateString": "28 Mar 1982",
+    "yearString": "1982"
+  },
+  "eventDate": {
+    "dateString": "30 Mar 1982",
+    "yearString": "1982"
+  },
+  "eventPlace": {
+    "placeString": "Bennington, Bennington, Vermont, United States"
+  },
+  "collectionData": {
+    "id": "2075288"
+  },
+  "hasValidData": true
+}

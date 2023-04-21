@@ -364,6 +364,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWT",
   },
   {
+    caseName: "us_vt_vital_1982_mildred_mattison",
+    url: "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSP",
+  },
+  {
     caseName: "us_ww1_draft_1917_john_smith",
     url: "https://www.familysearch.org/ark:/61903/1:1:K6Z6-RVT",
   },
