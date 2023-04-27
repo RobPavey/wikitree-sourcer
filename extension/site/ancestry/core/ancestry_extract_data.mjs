@@ -177,37 +177,61 @@ function extractRecordPageTitle(document, result) {
       // this is a case that only seems to happen when fetching the page rather than opening it
       // in a tab.
       // There is a script that generates the span node we try to read above.
-      // The script is the next sibling to the pageTitleNode
-      let pageTitleNode = document.querySelector("h1.pageTitle");
-      if (pageTitleNode) {
-        //console.log("pageTitle found, numChildren = " + pageTitleNode.children.length);
-        let scriptNode = pageTitleNode.nextElementSibling;
-        if (scriptNode && scriptNode.tagName.toLowerCase() == "script") {
-          // we could evaluate the script but that might has security risks.
-          // since we know what the script looks like we could just search it for the string we want.
-          let scriptText = scriptNode.textContent;
-          //console.log("scriptText = ");
-          //console.log(scriptText);
-          const titleNamePrefix = 'nameSpanEl.textContent = "';
-          let startIndex = scriptText.indexOf(titleNamePrefix);
-          if (startIndex != -1) {
-            startIndex += titleNamePrefix.length;
-            let endIndex = scriptText.indexOf('"', startIndex);
-            if (endIndex != -1) {
-              titleName = scriptText.substring(startIndex, endIndex);
+      // In the old style the script is the next sibling to the pageTitleNode but starting on
+      // 25 Apr 2023 there is a template = so use that iff possible
+      let pageTitleTemplate = document.querySelector("#pageTitleTemplate");
+      if (pageTitleTemplate) {
+        console.log("pageTitleTemplate found, numChildren = " + pageTitleTemplate.children.length);
+        console.log(pageTitleTemplate);
+        // It looks like this:
+        // 		<template id="pageTitleTemplate">
+        // 			<span id="pageNameTemplate">William H Pavey</span>
+        // 			<span id="collectionLearnMoreTemplate">Learn more about the 1871 England Census</span>
+        // 			<span id="collectionTitleTemplate">1871 England Census</span>
+        // 		</template>
+        let nameNode = pageTitleTemplate.content.querySelector("#pageNameTemplate");
+        if (nameNode) {
+          console.log("nameNode found, textContent = " + nameNode.textContent);
+          titleName = nameNode.textContent;
+        }
+        let collectionNode = pageTitleTemplate.content.querySelector("#collectionTitleTemplate");
+        if (collectionNode) {
+          console.log("collectionNode found, textContent = " + collectionNode.textContent);
+          titleCollection = collectionNode.textContent;
+        }
+      } else {
+        let pageTitleNode = document.querySelector("h1.pageTitle");
+        if (pageTitleNode) {
+          //console.log("pageTitle found, numChildren = " + pageTitleNode.children.length);
+          let nextNode = pageTitleNode.nextElementSibling;
+          if (nextNode && nextNode.tagName.toLowerCase() == "script") {
+            let scriptNode = nextNode;
+            // we could evaluate the script but that might has security risks.
+            // since we know what the script looks like we could just search it for the string we want.
+            let scriptText = scriptNode.textContent;
+            //console.log("scriptText = ");
+            //console.log(scriptText);
+            const titleNamePrefix = 'nameSpanEl.textContent = "';
+            let startIndex = scriptText.indexOf(titleNamePrefix);
+            if (startIndex != -1) {
+              startIndex += titleNamePrefix.length;
+              let endIndex = scriptText.indexOf('"', startIndex);
+              if (endIndex != -1) {
+                titleName = scriptText.substring(startIndex, endIndex);
+              }
             }
-          }
-          const titleCollectionPrefix = 'collectionAnchorEl.textContent = "';
-          startIndex = scriptText.indexOf(titleCollectionPrefix);
-          if (startIndex != -1) {
-            startIndex += titleCollectionPrefix.length;
-            let endIndex = scriptText.indexOf('"', startIndex);
-            if (endIndex != -1) {
-              titleCollection = scriptText.substring(startIndex, endIndex);
+            const titleCollectionPrefix = 'collectionAnchorEl.textContent = "';
+            startIndex = scriptText.indexOf(titleCollectionPrefix);
+            if (startIndex != -1) {
+              startIndex += titleCollectionPrefix.length;
+              let endIndex = scriptText.indexOf('"', startIndex);
+              if (endIndex != -1) {
+                titleCollection = scriptText.substring(startIndex, endIndex);
+              }
             }
+            //console.log("titleName = " + titleName);
+            //console.log("titleCollection = " + titleCollection);
           }
-          //console.log("titleName = " + titleName);
-          //console.log("titleCollection = " + titleCollection);
         }
       }
     }
