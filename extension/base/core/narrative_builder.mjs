@@ -632,7 +632,7 @@ class NarrativeBuilder {
       if (age) {
         this.narrative += " " + this.getPronounAndPastTenseInitialCaps() + " ";
 
-        if (age.search(/[^0-9]/) != -1) {
+        if (typeof age == "string" && age.search(/[^0-9]/) != -1) {
           // the age has non numerical characters, it could be something like "of Full Age"
           let lcAge = age.toLowerCase();
           this.narrative += lcAge;
