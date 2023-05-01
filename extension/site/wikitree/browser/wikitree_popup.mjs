@@ -727,7 +727,7 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
       }
 
       if (data.extractedData.editFamilyType == "steps") {
-        result.sources += "See also:\n* ";
+        result.sources += "\nSee also:\n* ";
       }
 
       result.sources += linkString;
