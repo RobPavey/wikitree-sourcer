@@ -55,6 +55,12 @@ const searchOptionsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "includeCemeteryLocation",
+      type: "checkbox",
+      label: "Include death/profile location as cemetery location in search",
+      defaultValue: false,
+    },
+    {
       optionName: "birthYearExactness",
       type: "select",
       label: "Search exactness to use for birth year",

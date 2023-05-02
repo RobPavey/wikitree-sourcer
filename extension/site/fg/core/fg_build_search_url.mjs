@@ -96,18 +96,19 @@ function buildSearchUrl(buildUrlInput) {
     builder.addDeathYear(deathYear, fgDeathDateQualifier);
   }
 
-  /*  Adding location seems to cause a lot of search failures.
+  if (options.search_fg_includeCemeteryLocation) {
+    let deathCountry = data.inferDeathCountry();
+    if (!deathCountry) {
+      let countryArray = data.inferCountries();
+      if (countryArray.length == 1) {
+        deathCountry = countryArray[0];
+      }
+    }
 
-  For example this search fails even though the person died in US:
-  https://www.findagrave.com/memorial/search?firstname=Isaac&middlename=S.&lastname=Rasey&includeMaidenName=true&birthyear=1889&birthyearfilter=3&deathyear=1939&deathyearfilter=3&location=United%20States&locationId=country_4
-
-  It seems that the location has to match the burial/cemetery location 
-  
-  let countryArray = data.inferCountries();
-  if (countryArray.length == 1) {
-    builder.addCountry(countryArray[0]);
+    if (deathCountry) {
+      builder.addCountry(deathCountry);
+    }
   }
-  */
 
   const url = builder.getUri();
 

@@ -4,5 +4,8 @@
   },
   "noMaidenNameInSearch": {
     "url": "https://www.findagrave.com/memorial/search?firstname=Harry&middlename=Alfred&lastname=Pavey&birthyear=1871&birthyearfilter=3&deathyear=1872&deathyearfilter=3"
+  },
+  "includeCountry": {
+    "url": "https://www.findagrave.com/memorial/search?firstname=Harry&middlename=Alfred&lastname=Pavey&includeMaidenName=true&birthyear=1871&birthyearfilter=3&deathyear=1872&deathyearfilter=3&location=England&locationId=country_5"
   }
 }

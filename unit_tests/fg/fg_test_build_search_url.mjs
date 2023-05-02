@@ -35,6 +35,10 @@ const regressionData = [
         variantName: "noMaidenNameInSearch",
         optionOverrides: { search_fg_includeMaidenName: false },
       },
+      {
+        variantName: "includeCountry",
+        optionOverrides: { search_fg_includeCemeteryLocation: true },
+      },
     ],
   },
   {
