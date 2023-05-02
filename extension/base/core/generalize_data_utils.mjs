@@ -2211,8 +2211,16 @@ class GeneralizedData {
     if (this.eventPlace) {
       let place = this.eventPlace.placeString;
       let streetAddress = this.eventPlace.streetAddress;
-      if (streetAddress && place && !place.toLowerCase().startsWith(streetAddress.toLowerCase())) {
-        place = streetAddress + ", " + place;
+      if (streetAddress && place) {
+        // sometimes we have something like this (from FMP for example)
+        // "placeString": "3, Brown Street, Leigh, Lancashire, England"
+        // "streetAddress": "3 Brown Street"
+        // e.g. : https://www.findmypast.co.uk/transcript?id=GBC/1921/RG15/18439/0547/07&expand=true
+        const streetLc = streetAddress.toLowerCase().replace(/\,/g, "");
+        const placeLc = place.toLowerCase().replace(/\,/g, "");
+        if (!placeLc.startsWith(streetLc)) {
+          place = streetAddress + ", " + place;
+        }
       }
       return place;
     }

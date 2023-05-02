@@ -525,12 +525,12 @@ function extractImageSourceCitation(document, result) {
         for (let index = 0; index < sourceCitationChildren.length; index++) {
           let child = sourceCitationChildren[index];
 
-          console.log("child is:");
-          console.log(child);
+          //console.log("child is:");
+          //console.log(child);
 
           if (child.tagName == "H6") {
             lastCitationTitle = cleanText(child.textContent);
-            console.log("lastCitationTitle = " + lastCitationTitle);
+            //console.log("lastCitationTitle = " + lastCitationTitle);
           } else if (child.tagName == "P") {
             if (lastCitationTitle == "Source Citation") {
               setSourceCitation(result, child);
