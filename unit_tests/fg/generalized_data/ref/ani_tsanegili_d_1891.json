@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "10 Jun 1891"
+  },
+  "eventPlace": {
+    "placeString": "Wauhillau, Adair County, Oklahoma, USA",
+    "streetAddress": "Hair Cemetery"
+  },
+  "name": {
+    "firstNames": "A-ni",
+    "lastName": "Tsa-he-gi-li",
+    "middleNames": "Wo-nv-gi"
+  },
+  "lastNameAtDeath": "Tsa-he-gi-li",
+  "deathDate": {
+    "dateString": "10 Jun 1891"
+  },
+  "ageAtDeath": "1",
+  "birthDate": {
+    "dateString": "25 Nov 1889"
+  },
+  "hasValidData": true
+}

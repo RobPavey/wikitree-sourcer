@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "20 Sep 2004"
+  },
+  "eventPlace": {
+    "placeString": "Augusta, Kalamazoo County, Michigan, USA",
+    "streetAddress": "Fort Custer National Cemetery"
+  },
+  "name": {
+    "prefix": "CPL",
+    "suffix": "Jr",
+    "firstNames": "Harry",
+    "lastName": "Bleeker"
+  },
+  "lastNameAtDeath": "Bleeker",
+  "deathDate": {
+    "dateString": "20 Sep 2004"
+  },
+  "deathPlace": {
+    "placeString": "Long Lake, Iosco County, Michigan, USA"
+  },
+  "ageAtDeath": "75",
+  "birthDate": {
+    "dateString": "16 Feb 1929"
+  },
+  "birthPlace": {
+    "placeString": "Kalamazoo, Kalamazoo County, Michigan, USA"
+  },
+  "hasValidData": true
+}

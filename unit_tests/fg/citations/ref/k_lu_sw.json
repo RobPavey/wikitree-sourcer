@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|55174407}} (accessed 6 May 2021)<br/>\nMemorial page for K---- Lu--- Sw--- (unknown-unknown), citing Salem Evangelical Reformed Church Cemetery, Lancaster, Lancaster County, Pennsylvania, USA; Maintained by Miabeth (contributor 47091766).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "K---- was mentioned on a memorial in Salem Evangelical Reformed Church Cemetery, Lancaster, Lancaster County, Pennsylvania, USA.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|55174407}} (accessed 6 May 2021)<br/>\nMemorial page for K---- Lu--- Sw--- (unknown-unknown), citing Salem Evangelical Reformed Church Cemetery, Lancaster, Lancaster County, Pennsylvania, USA; Maintained by Miabeth (contributor 47091766).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>{{FindAGrave|55174407}} (accessed 6 May 2021)<br/>Memorial page for K---- Lu--- Sw--- (unknown-unknown), citing Salem Evangelical Reformed Church Cemetery, Lancaster, Lancaster County, Pennsylvania, USA; Maintained by Miabeth (contributor 47091766).",
+    "type": "source"
+  }
+}

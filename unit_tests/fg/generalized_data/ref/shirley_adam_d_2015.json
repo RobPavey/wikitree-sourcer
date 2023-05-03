@@ -10,7 +10,9 @@
     "streetAddress": "Enfield Memorial Park"
   },
   "name": {
-    "name": "Shirley Beveridge Adam"
+    "firstNames": "Shirley",
+    "lastName": "Adam",
+    "middleNames": "Beveridge"
   },
   "lastNameAtBirth": "Shakespeare",
   "lastNameAtDeath": "Adam",

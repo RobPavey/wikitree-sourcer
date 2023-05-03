@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "20 Mar 1943"
+  },
+  "eventPlace": {
+    "placeString": "London Borough of Tower Hamlets, Greater London, England",
+    "streetAddress": "Tower Hill Memorial"
+  },
+  "name": {
+    "nickNames": "Harry",
+    "prefix": "Master OBE",
+    "firstNames": "Capt John",
+    "lastName": "Smith",
+    "middleNames": "Henry Reardon"
+  },
+  "lastNameAtDeath": "Smith",
+  "deathDate": {
+    "dateString": "20 Mar 1943"
+  },
+  "ageAtDeath": "58-59",
+  "birthDate": {
+    "dateString": "1884"
+  },
+  "hasValidData": true
+}

@@ -10,7 +10,8 @@
     "streetAddress": "Melbourne General Cemetery"
   },
   "name": {
-    "name": "Thomas Reed"
+    "firstNames": "Thomas",
+    "lastName": "Reed"
   },
   "lastNameAtDeath": "Reed",
   "deathDate": {

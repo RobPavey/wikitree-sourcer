@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "30 Dec 1923"
+  },
+  "eventPlace": {
+    "placeString": "Fort Washakie, Fremont County, Wyoming, USA",
+    "streetAddress": "Sacajawea Cemetery"
+  },
+  "name": {
+    "nickNames": "Maggie",
+    "firstNames": "Margaret",
+    "lastName": "Cody-Carter-Large-Day",
+    "middleNames": "(Ca-kit-sie)"
+  },
+  "lastNameAtBirth": "Bazil",
+  "lastNameAtDeath": "Cody-Carter-Large-Day",
+  "deathDate": {
+    "dateString": "30 Dec 1923"
+  },
+  "deathPlace": {
+    "placeString": "Wyoming, USA"
+  },
+  "ageAtDeath": "67",
+  "birthDate": {
+    "dateString": "13 Jun 1856"
+  },
+  "birthPlace": {
+    "placeString": "Fort Washakie, Fremont County, Wyoming, USA"
+  },
+  "hasValidData": true
+}

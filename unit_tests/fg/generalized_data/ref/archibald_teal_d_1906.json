@@ -10,7 +10,10 @@
     "streetAddress": "Greenlawn Cemetery"
   },
   "name": {
-    "name": "Archibald W A “Archie” Teal"
+    "nickNames": "Archie",
+    "firstNames": "Archibald",
+    "lastName": "Teal",
+    "middleNames": "W A"
   },
   "lastNameAtDeath": "Teal",
   "deathDate": {

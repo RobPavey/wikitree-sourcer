@@ -10,7 +10,10 @@
     "streetAddress": "Tallangatta Cemetery"
   },
   "name": {
-    "name": "John Thomas “Thomas Stirling” Sinclair"
+    "nickNames": "Thomas Stirling",
+    "firstNames": "John",
+    "lastName": "Sinclair",
+    "middleNames": "Thomas"
   },
   "lastNameAtDeath": "Sinclair",
   "deathDate": {

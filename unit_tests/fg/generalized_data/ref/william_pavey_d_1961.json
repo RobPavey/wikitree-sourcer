@@ -10,7 +10,9 @@
     "streetAddress": "Oak Grove Cemetery"
   },
   "name": {
-    "name": "William Henry Pavey"
+    "firstNames": "William",
+    "lastName": "Pavey",
+    "middleNames": "Henry"
   },
   "lastNameAtDeath": "Pavey",
   "deathDate": {

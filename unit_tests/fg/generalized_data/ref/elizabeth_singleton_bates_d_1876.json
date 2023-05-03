@@ -10,7 +10,8 @@
     "streetAddress": "Shelby Center Cemetery"
   },
   "name": {
-    "name": "Elizabeth Bates"
+    "firstNames": "Elizabeth",
+    "lastName": "Bates"
   },
   "lastNameAtBirth": "Singleton",
   "lastNameAtDeath": "Bates",

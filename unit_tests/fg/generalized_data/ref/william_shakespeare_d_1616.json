@@ -10,7 +10,8 @@
     "streetAddress": "Westminster Abbey"
   },
   "name": {
-    "name": "William Shakespeare"
+    "firstNames": "William",
+    "lastName": "Shakespeare"
   },
   "lastNameAtDeath": "Shakespeare",
   "deathDate": {

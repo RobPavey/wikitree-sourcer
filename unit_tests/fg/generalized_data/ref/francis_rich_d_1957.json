@@ -10,7 +10,9 @@
     "streetAddress": "St Mary with St Andrews Churchyard"
   },
   "name": {
-    "name": "Francis Leslie Rich"
+    "firstNames": "Francis",
+    "lastName": "Rich",
+    "middleNames": "Leslie"
   },
   "lastNameAtDeath": "Rich",
   "deathDate": {

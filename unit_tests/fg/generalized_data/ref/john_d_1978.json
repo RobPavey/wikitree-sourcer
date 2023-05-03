@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "1978"
+  },
+  "eventPlace": {
+    "placeString": "Tucson, Pima County, Arizona, USA",
+    "streetAddress": "Holy Hope Cemetery and Mausoleum"
+  },
+  "name": {
+    "name": "John"
+  },
+  "lastNameAtDeath": "John",
+  "deathDate": {
+    "dateString": "1978"
+  },
+  "ageAtDeath": "89-90",
+  "birthDate": {
+    "dateString": "1888"
+  },
+  "hasValidData": true
+}

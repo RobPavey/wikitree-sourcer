@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "20 Sep 1941"
+  },
+  "eventPlace": {
+    "placeString": "London Borough of Tower Hamlets, Greater London, England",
+    "streetAddress": "Tower Hill Memorial"
+  },
+  "name": {
+    "prefix": "Master",
+    "firstNames": "Capt John",
+    "lastName": "Smith"
+  },
+  "lastNameAtDeath": "Smith",
+  "deathDate": {
+    "dateString": "20 Sep 1941"
+  },
+  "ageAtDeath": "57-58",
+  "birthDate": {
+    "dateString": "1883"
+  },
+  "hasValidData": true
+}

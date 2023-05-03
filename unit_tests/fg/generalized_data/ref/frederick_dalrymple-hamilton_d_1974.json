@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "27 Dec 1974"
+  },
+  "name": {
+    "prefix": "Admiral Sir",
+    "firstNames": "Frederick",
+    "lastName": "Dalrymple-Hamilton",
+    "middleNames": "Hew George"
+  },
+  "lastNameAtDeath": "Dalrymple-Hamilton",
+  "deathDate": {
+    "dateString": "27 Dec 1974"
+  },
+  "deathPlace": {
+    "placeString": "Bargany, South Ayrshire, Scotland"
+  },
+  "ageAtDeath": "84",
+  "birthDate": {
+    "dateString": "27 Mar 1890"
+  },
+  "birthPlace": {
+    "placeString": "Bargany, South Ayrshire, Scotland"
+  },
+  "hasValidData": true
+}

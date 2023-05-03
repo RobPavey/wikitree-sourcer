@@ -827,7 +827,7 @@ class WtsName {
 
     let firstWord = WTS_String.getFirstWord(name);
 
-    const titles = ["mr", "mrs", "miss", "ms"];
+    const titles = ["mr", "mrs", "miss", "ms", "mx"];
     let lcFirstWord = firstWord.toLowerCase();
     if (titles.includes(lcFirstWord)) {
       // remove the title
@@ -837,16 +837,16 @@ class WtsName {
     return name;
   }
 
-  moveNicknamesFromForenames() {
-    let forenames = this.forenames;
-    // if the forenames contain a name in quotes then it is a nickname
-    let forenamesArray = forenames.split(/["']/);
+  moveNicknamesFromNameString(nameString) {
+    let newString = nameString;
+    // if the nameString contain a name in quotes then it is a nickname
+    let namesArray = nameString.split(/["']/);
     // to have matched quotes the length should > 2 and an odd number
-    if (forenamesArray.length > 2 && (forenamesArray.length | 1) == forenamesArray.length) {
+    if (namesArray.length > 2 && (namesArray.length | 1) == namesArray.length) {
       let nicknames = "";
-      forenames = "";
-      for (let index = 0; index < forenamesArray.length; index++) {
-        let namePart = forenamesArray[index];
+      newString = "";
+      for (let index = 0; index < namesArray.length; index++) {
+        let namePart = namesArray[index];
         if ((index | 1) == index) {
           // odd index - in quotes
           if (namePart) {
@@ -858,23 +858,30 @@ class WtsName {
         } else {
           // even index - not in quotes
           if (namePart) {
-            if (forenames) {
-              forenames += " ";
+            if (newString) {
+              newString += " ";
             }
-            forenames += namePart.trim();
+            newString += namePart.trim();
           }
         }
       }
       if (nicknames) {
         this.nicknames = nicknames;
-        this.forenames = forenames;
+        nameString = newString;
       }
     }
+
+    return nameString;
+  }
+
+  moveNicknamesFromForenames() {
+    this.forenames = this.moveNicknamesFromNameString(this.forenames);
   }
 
   setFullName(name) {
     if (name) {
       this.name = this.cleanName(name);
+      this.name = this.moveNicknamesFromNameString(this.name);
       this.name = this.removeTitle(this.name, true);
     }
   }

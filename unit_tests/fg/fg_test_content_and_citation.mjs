@@ -32,8 +32,22 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    // has extensded ASCII characters
+    caseName: "ales_hrdlicka_d_1943",
+    url: "https://www.findagrave.com/memorial/202957947/ale%C5%A1-hrdli%C4%8Dka",
+  },
+  {
+    // hyphens in first, middle and last names
+    caseName: "ani_tsanegili_d_1891",
+    url: "view-source:https://www.findagrave.com/memorial/86027509/a-ni-wo-nv-gi-tsa-he-gi-li",
+  },
+  {
     caseName: "archibald_teal_d_1906",
     url: "https://www.findagrave.com/memorial/142850482/archibald-w_a-teal",
+  },
+  {
+    caseName: "daiana_d_2022",
+    url: "https://www.findagrave.com/memorial/241543775/daiana------",
   },
   {
     caseName: "elizabeth_singleton_bates_d_1876",
@@ -63,13 +77,52 @@ const regressionData = [
     url: "https://www.findagrave.com/memorial/181842312/francis-leslie-rich",
   },
   {
+    // Has hyphenated last name and prefixes
+    caseName: "frederick_dalrymple-hamilton_d_1974",
+    url: "https://www.findagrave.com/memorial/140044048/frederick-hew_george-dalrymple-hamilton",
+  },
+  {
     caseName: "george_reed_d_1887",
     url: "https://www.findagrave.com/memorial/221989091/george-german-reed",
+  },
+  {
+    caseName: "harry_bleeker_d_2004",
+    url: "https://www.findagrave.com/memorial/60724641/harry-bleeker",
+  },
+  {
+    // has only one name
+    caseName: "john_d_1978",
+    url: "https://www.findagrave.com/memorial/62103674/john",
+  },
+  {
+    // has nickname or preferred name
+    caseName: "john_jack_smith_d_1938",
+    url: "https://www.findagrave.com/memorial/81147520/john-smith",
+  },
+  {
+    // has multiple prefixes and nickname
+    caseName: "john_reardon_smith_d_1943",
+    url: "https://www.findagrave.com/memorial/15373519/capt_john-henry_reardon-smith",
   },
   {
     // has long inscription
     caseName: "john_sinclair_d_1906",
     url: "https://www.findagrave.com/memorial/148814973/john-thomas-sinclair",
+  },
+  {
+    // has lots of hyphens in name
+    caseName: "k_lu_sw",
+    url: "https://www.findagrave.com/memorial/55174407/k-----lu----sw---",
+  },
+  {
+    // has parens and hyphens
+    caseName: "margaret_cody-carter-large-day_d_1923",
+    url: "view-source:https://www.findagrave.com/memorial/20605336/margaret-ca-kit-sie-cody-carter-large-day",
+  },
+  {
+    // has multiple prefixes
+    caseName: "master_capt_john_smith_d_1941",
+    url: "https://www.findagrave.com/memorial/15373507/capt_john-smith",
   },
   {
     // cremation. Still has a "BURIAL" field.

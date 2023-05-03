@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "2022"
+  },
+  "eventPlace": {
+    "placeString": "Orenburg, Orenburg Oblast, Russia",
+    "streetAddress": "Abdulino Cemetery"
+  },
+  "name": {
+    "nickNames": "Dazai",
+    "firstNames": "Daiana",
+    "lastName": "--",
+    "middleNames": "--"
+  },
+  "lastNameAtDeath": "--",
+  "deathDate": {
+    "dateString": "2022"
+  },
+  "deathPlace": {
+    "placeString": "Rozhdestveno, Leningrad Oblast, Russia"
+  },
+  "ageAtDeath": "19-20",
+  "birthDate": {
+    "dateString": "16 Aug 2002"
+  },
+  "birthPlace": {
+    "placeString": "Vyra, Leningrad Oblast, Russia"
+  },
+  "hasValidData": true
+}

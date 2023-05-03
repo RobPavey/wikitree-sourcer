@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventPlace": {
+    "placeString": "Lancaster, Lancaster County, Pennsylvania, USA",
+    "streetAddress": "Salem Evangelical Reformed Church Cemetery"
+  },
+  "name": {
+    "firstNames": "K----",
+    "lastName": "Sw---",
+    "middleNames": "Lu---"
+  },
+  "lastNameAtDeath": "Sw---",
+  "hasValidData": true
+}

@@ -10,7 +10,8 @@
     "streetAddress": "St Peter Churchyard"
   },
   "name": {
-    "name": "Stephen Taylor"
+    "firstNames": "Stephen",
+    "lastName": "Taylor"
   },
   "lastNameAtDeath": "Taylor",
   "deathDate": {

@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "5 Sep 1943"
+  },
+  "eventPlace": {
+    "placeString": "Washington, District of Columbia, District of Columbia, USA",
+    "streetAddress": "Rock Creek Cemetery"
+  },
+  "name": {
+    "prefix": "Dr",
+    "firstNames": "Aleš",
+    "lastName": "Hrdlička"
+  },
+  "lastNameAtDeath": "Hrdlička",
+  "deathDate": {
+    "dateString": "5 Sep 1943"
+  },
+  "deathPlace": {
+    "placeString": "Washington, District of Columbia, District of Columbia, USA"
+  },
+  "ageAtDeath": "74",
+  "birthDate": {
+    "dateString": "30 Mar 1869"
+  },
+  "birthPlace": {
+    "placeString": "Humpolec, Okres Klatovy, Plzeňský (Plzen), Czech Republic"
+  },
+  "hasValidData": true
+}

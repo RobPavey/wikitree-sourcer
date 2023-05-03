@@ -10,7 +10,9 @@
     "streetAddress": "Brompton Cemetery"
   },
   "name": {
-    "name": "George German Reed"
+    "firstNames": "George",
+    "lastName": "Reed",
+    "middleNames": "German"
   },
   "lastNameAtDeath": "Reed",
   "deathDate": {

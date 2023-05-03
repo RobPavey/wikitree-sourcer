@@ -67,12 +67,26 @@ function extractData(document, url) {
 
   result.success = false;
 
-  setFromLabelWithId(result, document, "#bio-name", "name");
-
+  // There can be other text like "famous memorial" in the children of the nameNode
   // also save the innerHTML for the name because the maiden name can be in italics
   const nameNode = document.querySelector("#bio-name");
   if (nameNode) {
-    result.nameHtml = cleanText(nameNode.innerHTML);
+    let html = "";
+    let text = "";
+    for (let child of nameNode.childNodes) {
+      if (child.nodeType == 3) {
+        // Node.TEXT_NODE
+        html += child.nodeValue;
+        text += child.nodeValue;
+      } else if (child.tagName == "I") {
+        html += "<i>" + child.innerHTML + "</i>";
+        text += child.textContent;
+      }
+      html += " ";
+      text += " ";
+    }
+    result.name = cleanText(text);
+    result.nameHtml = cleanText(html);
   }
 
   let memEvents = document.querySelector("div.section-bio-cover dl.mem-events");

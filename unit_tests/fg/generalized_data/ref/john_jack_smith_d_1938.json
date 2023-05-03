@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "29 Nov 1938"
+  },
+  "eventPlace": {
+    "placeString": "Vandalia, Fayette County, Illinois, USA",
+    "streetAddress": "South Hill Cemetery"
+  },
+  "name": {
+    "nickNames": "Jack",
+    "firstNames": "John",
+    "lastName": "Smith"
+  },
+  "lastNameAtDeath": "Smith",
+  "deathDate": {
+    "dateString": "29 Nov 1938"
+  },
+  "ageAtDeath": "78",
+  "birthDate": {
+    "dateString": "4 Oct 1860"
+  },
+  "hasValidData": true
+}

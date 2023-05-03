@@ -10,7 +10,8 @@
     "streetAddress": "Shelby Center Cemetery"
   },
   "name": {
-    "name": "Ezekiel Bentley"
+    "firstNames": "Ezekiel",
+    "lastName": "Bentley"
   },
   "lastNameAtDeath": "Bentley",
   "deathDate": {
