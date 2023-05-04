@@ -24,7 +24,19 @@ SOFTWARE.
 
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 
-function openAncestryLink(link, options) {
+function openInNewTab(link, currentTab, options) {
+  const tabOption = options.context_general_newTabPos;
+
+  if (tabOption == "newWindow") {
+    chrome.windows.create({ url: link });
+  } else if (tabOption == "nextToRight") {
+    chrome.tabs.create({ url: link, index: currentTab.index + 1 });
+  } else {
+    chrome.tabs.create({ url: link });
+  }
+}
+
+function openAncestryLink(tab, link, options) {
   //console.log("openAncestryLink, link is: " + link);
   if (link.startsWith("https://click.linksynergy")) {
     // NOTE: Ancestry switched from Partnerize to Rakuten on 18 Apr 2023. Partnerize used the
@@ -150,10 +162,10 @@ function openAncestryLink(link, options) {
     }
   }
 
-  chrome.tabs.create({ url: link });
+  openInNewTab(link, tab, options);
 }
 
-function openFmpLink(link, options) {
+function openFmpLink(tab, link, options) {
   let domain = "";
   // FMP can be accessed through NLS
   // https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693518389
@@ -187,10 +199,10 @@ function openFmpLink(link, options) {
     }
   }
 
-  chrome.tabs.create({ url: link });
+  openInNewTab(link, tab, options);
 }
 
-function openLink(info) {
+function openLink(info, tab) {
   // linkUrl: "https://search.findmypast.co.uk/record/browse?id=GBC/1881/4362252/00449&parentid=GBC/1881/0023259406"
   // linkUrl: "https://ancestry.prf.hn/click/camref:1011l4xx5/type:cpc/destination:https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=2352&h=1903048"
 
@@ -209,20 +221,22 @@ function openLink(info) {
 
     if (link.includes("ancestry")) {
       callFunctionWithStoredOptions(function (options) {
-        openAncestryLink(link, options);
+        openAncestryLink(tab, link, options);
       });
     } else if (link.includes("findmypast")) {
       callFunctionWithStoredOptions(function (options) {
-        openFmpLink(link, options);
+        openFmpLink(tab, link, options);
       });
     } else {
       // open unchanged link
-      chrome.tabs.create({ url: link });
+      callFunctionWithStoredOptions(function (options) {
+        openInNewTab(link, tab, options);
+      });
     }
   }
 }
 
-function openAncestryTemplate(text, options) {
+function openAncestryTemplate(tab, text, options) {
   //console.log("openAncestryTemplate, text is: " + text);
 
   let desiredDomain = options.search_ancestry_domain;
@@ -288,11 +302,13 @@ function openAncestryTemplate(text, options) {
   }
 
   if (link) {
-    chrome.tabs.create({ url: link });
+    callFunctionWithStoredOptions(function (options) {
+      openInNewTab(link, tab, options);
+    });
   }
 }
 
-function openFamilySearchTemplate(text) {
+function openFamilySearchTemplate(tab, text) {
   //console.log("openFamilySearchTemplate, text is: " + text);
 
   let link = "";
@@ -314,11 +330,13 @@ function openFamilySearchTemplate(text) {
   }
 
   if (link) {
-    chrome.tabs.create({ url: link });
+    callFunctionWithStoredOptions(function (options) {
+      openInNewTab(link, tab, options);
+    });
   }
 }
 
-function openFindAGraveTemplate(text) {
+function openFindAGraveTemplate(tab, text) {
   //console.log("openFindAGraveTemplate, text is: " + text);
 
   let link = "";
@@ -333,11 +351,13 @@ function openFindAGraveTemplate(text) {
   }
 
   if (link) {
-    chrome.tabs.create({ url: link });
+    callFunctionWithStoredOptions(function (options) {
+      openInNewTab(link, tab, options);
+    });
   }
 }
 
-function openTemplate(info) {
+function openTemplate(info, tab) {
   let text = info.selectionText;
 
   //console.log("openTemplate, text is: " + text);
@@ -354,26 +374,28 @@ function openTemplate(info) {
 
   if (text.includes("Ancestry")) {
     callFunctionWithStoredOptions(function (options) {
-      openAncestryTemplate(text, options);
+      openAncestryTemplate(tab, text, options);
     });
   } else if (text.includes("FamilySearch")) {
-    openFamilySearchTemplate(text);
+    openFamilySearchTemplate(tab, text);
   } else if (text.includes("FindAGrave")) {
-    openFindAGraveTemplate(text);
+    openFindAGraveTemplate(tab, text);
   } else {
     // open unchanged link
-    chrome.tabs.create({ url: text });
+    callFunctionWithStoredOptions(function (options) {
+      openInNewTab(text, tab, options);
+    });
   }
 }
 
-function openSelectionText(info) {
+function openSelectionText(info, tab) {
   let text = info.selectionText;
 
   //console.log("openTemplate, text is: " + text);
 
   let templateStartIndex = text.indexOf("{{");
   if (templateStartIndex != -1) {
-    openTemplate(info);
+    openTemplate(info, tab);
   }
 
   // not a template, could be a Wiki-Id
@@ -384,7 +406,9 @@ function openSelectionText(info) {
     // Want something line this: https://www.wikitree.com/wiki/Pavey-451
     let link = "https://www.wikitree.com/wiki/" + wikiId;
 
-    chrome.tabs.create({ url: link });
+    callFunctionWithStoredOptions(function (options) {
+      openInNewTab(link, tab, options);
+    });
   }
 }
 
@@ -397,9 +421,9 @@ function contextClick(info, tab) {
 
   if (info.menuItemId == "openLink") {
     if (info.linkUrl) {
-      openLink(info);
+      openLink(info, tab);
     } else if (info.selectionText) {
-      openSelectionText(info);
+      openSelectionText(info, tab);
     }
   }
 }

@@ -29,6 +29,7 @@ import {
   doSearch,
   registerSearchMenuItemFunction,
   testFilterForDatesAndCountries,
+  openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
@@ -69,11 +70,7 @@ async function scotpSearch(generalizedData, parameters) {
         //console.log("saved scotpSearchData, scotpSearchData is:");
         //console.log(scotpSearchData);
 
-        if (options.search_general_new_window) {
-          chrome.windows.create({ url: searchUrl });
-        } else {
-          chrome.tabs.create({ url: searchUrl });
-        }
+        openUrlInNewTab(searchUrl);
         window.close();
       });
     } catch (ex) {

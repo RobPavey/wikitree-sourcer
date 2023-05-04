@@ -53,6 +53,13 @@ var optionsRegistry = {
         "Person data can be saved when you are on a person page in Ancestry, FamilySearch, etc. " +
         "It is separate from the citation.",
     },
+    {
+      name: "context",
+      label: "Context Menu",
+      subsections: [],
+      comment:
+        "These options apply to the context menu. " + "The context menu is accessed via right-click of the mouse.",
+    },
   ],
   optionsGroups: [],
 };

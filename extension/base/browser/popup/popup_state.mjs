@@ -51,6 +51,7 @@ var popupState = {
   recordDefaultPopupActiveTab: function (activeTab) {
     this.initialStateInDefaultPopup = {
       tabId: activeTab.id,
+      tabIndex: activeTab.index,
       tabStatus: activeTab.status,
       tabUrl: activeTab.url,
       tabPendingUrl: activeTab.pendingUrl,
@@ -61,6 +62,7 @@ var popupState = {
   recordSitePopupActiveTab: function (activeTab, siteName, options, menuSetupFunction) {
     this.initialStateInSitePopup = {
       tabId: activeTab.id,
+      tabIndex: activeTab.index,
       tabStatus: activeTab.status,
       tabUrl: activeTab.url,
       tabPendingUrl: activeTab.pendingUrl,

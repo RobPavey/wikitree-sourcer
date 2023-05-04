@@ -31,7 +31,7 @@ function getDefaultOptions() {
 
   let defaultOptions = {};
 
-  defaultOptions.options_version = 6;
+  defaultOptions.options_version = 7;
 
   for (let optionsGroup of optionsRegistry.optionsGroups) {
     let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
@@ -50,7 +50,7 @@ function getUnitTestOptions() {
 
   let unitTestOptions = {};
 
-  unitTestOptions.options_version = 5;
+  unitTestOptions.options_version = 7;
 
   for (let optionsGroup of optionsRegistry.optionsGroups) {
     let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";

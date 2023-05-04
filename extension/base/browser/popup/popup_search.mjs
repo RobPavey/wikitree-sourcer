@@ -33,6 +33,7 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { CD } from "/base/core/country_data.mjs";
 import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
+import { popupState } from "./popup_state.mjs";
 
 var filterState = {
   filterByDate: true,
@@ -55,14 +56,35 @@ async function restorePopupSearchFilterState() {
   }
 }
 
+function openUrlInNewTab(link) {
+  const tabOption = options.search_general_newTabPos;
+
+  if (tabOption == "newWindow") {
+    chrome.windows.create({ url: link });
+  } else if (tabOption == "nextToRight") {
+    let tabIndex = undefined;
+    // this is a bit of a hacky way of getting the active tab index
+    if (popupState && popupState.initialStateInDefaultPopup) {
+      tabIndex = popupState.initialStateInDefaultPopup.tabIndex;
+    }
+    if (!tabIndex && popupState && popupState.initialStateInSitePopup) {
+      tabIndex = popupState.initialStateInSitePopup.tabIndex;
+    }
+
+    if (tabIndex) {
+      chrome.tabs.create({ url: link, index: tabIndex + 1 });
+    } else {
+      chrome.tabs.create({ url: link });
+    }
+  } else {
+    chrome.tabs.create({ url: link });
+  }
+}
+
 async function doSearch(loadedModule, input) {
   const result = loadedModule.buildSearchUrl(input);
   var newURL = result.url;
-  if (options.search_general_new_window) {
-    chrome.windows.create({ url: newURL });
-  } else {
-    chrome.tabs.create({ url: newURL });
-  }
+  openUrlInNewTab(newURL);
   closePopup();
 }
 
@@ -473,4 +495,4 @@ function registerSearchMenuItemFunction(siteName, siteTitle, menuItemFunction) {
   });
 }
 
-export { doSearch, addSearchMenus, registerSearchMenuItemFunction, testFilterForDatesAndCountries };
+export { openUrlInNewTab, doSearch, addSearchMenus, registerSearchMenuItemFunction, testFilterForDatesAndCountries };

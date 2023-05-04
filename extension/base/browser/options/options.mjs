@@ -115,6 +115,7 @@ var uiState = {
     narrative: "general",
     table: "general",
     addMerge: "general",
+    context: "general",
   },
 };
 
@@ -249,7 +250,7 @@ function getRegistrySubheading(tabName, subsectionName, subheadingName) {
 }
 
 function buildPage() {
-  // these refer to names in the .html. These elements could be constructed programaticall but
+  // these refer to names in the .html. These elements could be constructed programatically but
   // are not yet for historical reasons
   const tabMapping = {
     search: { panelElement: "search-panel", buttonElement: "search-tab" },
@@ -262,6 +263,10 @@ function buildPage() {
     addMerge: {
       panelElement: "addMerge-panel",
       buttonElement: "addMerge-tab",
+    },
+    context: {
+      panelElement: "context-panel",
+      buttonElement: "context-tab",
     },
   };
 
@@ -385,7 +390,16 @@ function buildPage() {
       continue;
     }
 
-    let subsectionPanelElement = tabElementObj.subsections[subsectionName].panelElement;
+    let subSection = tabElementObj.subsections[subsectionName];
+    if (!subSection) {
+      console.log("buildPage: no subSection found for name: " + subsectionName + ", for tab: " + tabName);
+      console.log(tabElements);
+      console.log("optionsGroup is:");
+      console.log(optionsGroup);
+      continue;
+    }
+
+    let subsectionPanelElement = subSection.panelElement;
 
     if (!subsectionPanelElement) {
       console.log("buildPage: no subsectionElement found for name: " + subsectionName);

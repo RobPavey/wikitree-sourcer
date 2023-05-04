@@ -70,6 +70,7 @@ async function loadOptions() {
     "options_table",
     "options_addPerson", // legacy
     "options_addMerge", // replaced addPerson in options version 6
+    "options_context",
     "options_version",
   ]);
 
@@ -84,6 +85,7 @@ async function loadOptions() {
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_table, "table");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addPerson, "addPerson");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addMerge, "addMerge");
+    putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_context, "context");
     if (itemsNew.options) {
       loadedOptions.options_version = itemsNew.options.options_version;
     } else if (itemsNew.options_version) {
@@ -106,7 +108,7 @@ async function loadOptions() {
 }
 
 function convertOptionsObjectToSaveFormat(options) {
-  const prefixes = ["search", "citation", "narrative", "table", "addMerge", "options_version"];
+  const prefixes = ["search", "citation", "narrative", "table", "addMerge", "context", "options_version"];
 
   let newOptions = {};
 
@@ -152,6 +154,7 @@ async function saveOptions(options) {
         options_narrative: saveFormatOptions.narrative,
         options_table: saveFormatOptions.table,
         options_addMerge: saveFormatOptions.addMerge,
+        options_context: saveFormatOptions.context,
         options_version: saveFormatOptions.options_version,
       },
       function () {
@@ -182,6 +185,7 @@ async function saveOptions(options) {
                 options_narrative: saveFormatOptions.narrative,
                 options_table: saveFormatOptions.table,
                 options_addMerge: saveFormatOptions.addMerge,
+                options_context: saveFormatOptions.context,
                 options: saveFormatOptions.options,
               },
               function () {

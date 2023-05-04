@@ -39,10 +39,15 @@ const searchOptionsGroup = {
   subsection: "general",
   options: [
     {
-      optionName: "new_window",
-      type: "checkbox",
-      label: "Open search results in a new window rather than a new tab",
-      defaultValue: false,
+      optionName: "newTabPos",
+      type: "select",
+      label: "Where to open search results tab",
+      values: [
+        { value: "rightMost", text: "To the right of all existing tabs" },
+        { value: "nextToRight", text: "To the right of the current tab" },
+        { value: "newWindow", text: "In a new window" },
+      ],
+      defaultValue: "rightMost",
     },
     {
       optionName: "popup_showSameSite",
@@ -1170,6 +1175,34 @@ const addMergeMergeEditOptionsGroup = {
   ],
 };
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Context Menu options groups
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const contextGeneralOptionsGroup = {
+  category: "context",
+  subcategory: "general",
+  tab: "context",
+  subsection: "general",
+  options: [
+    {
+      optionName: "newTabPos",
+      type: "select",
+      label: "Where to open link in new tab",
+      values: [
+        { value: "rightMost", text: "To the right of all existing tabs" },
+        { value: "nextToRight", text: "To the right of the current tab" },
+        { value: "newWindow", text: "In a new window" },
+      ],
+      defaultValue: "rightMost",
+    },
+  ],
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Register the groups
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 registerSubsectionForOptions("search", "general", "General");
 
 registerSubsectionForOptions("citation", "general", "General");
@@ -1207,6 +1240,8 @@ registerSubsectionForOptions("addMerge", "general", "General");
 registerSubsectionForOptions("addMerge", "addPerson", "Add Person");
 registerSubsectionForOptions("addMerge", "mergeEdit", "Merge/Edit");
 
+registerSubsectionForOptions("context", "general", "General");
+
 registerOptionsGroup(searchOptionsGroup);
 registerOptionsGroup(citationOptionsGroup);
 
@@ -1237,3 +1272,5 @@ registerOptionsGroup(tableSentenceOptionsGroup);
 registerOptionsGroup(addMergeGeneralOptionsGroup);
 registerOptionsGroup(addMergeAddPersonOptionsGroup);
 registerOptionsGroup(addMergeMergeEditOptionsGroup);
+
+registerOptionsGroup(contextGeneralOptionsGroup);

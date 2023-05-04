@@ -143,6 +143,25 @@ function convertOptionsFrom5To6(loadedOptions) {
   return convertedOptions;
 }
 
+function convertOptionsFrom6To7(loadedOptions) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom6To7, before:");
+  console.log(loadedOptions);
+
+  if (convertedOptions.search_general_new_window) {
+    convertedOptions.search_general_newTabPos = "newWindow";
+  } else {
+    convertedOptions.search_general_newTabPos = "rightMost";
+  }
+  convertedOptions.options_version = 7;
+
+  console.log("convertOptionsFrom6To7, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
 function convertOptions(loadedOptions, defaultOptions) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
@@ -167,6 +186,9 @@ function convertOptions(loadedOptions, defaultOptions) {
   }
   if (loadedVersion < 6) {
     loadedOptions = convertOptionsFrom5To6(loadedOptions);
+  }
+  if (loadedVersion < 7) {
+    loadedOptions = convertOptionsFrom6To7(loadedOptions);
   }
 
   return loadedOptions;

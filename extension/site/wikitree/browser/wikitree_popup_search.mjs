@@ -33,7 +33,7 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, openUrlInNewTab } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -66,11 +66,7 @@ function wikitreeDoSearch(input) {
       console.log("storeDataCache failed");
     }
 
-    if (options.search_general_new_window) {
-      chrome.windows.create({ url: searchUrl });
-    } else {
-      chrome.tabs.create({ url: searchUrl });
-    }
+    openUrlInNewTab(searchUrl);
     closePopup();
   });
 }
