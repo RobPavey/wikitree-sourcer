@@ -2268,6 +2268,20 @@ function setExtraGdHouseholdFields(extractedData, generalizedMember, fieldNames)
     }
   }
 
+  // Workaround for bug where Ancestry record shows age instead of name in the link
+  // This bug occurred on 8-May-2023 on several censuses
+  if (/^\d.*/.test(generalizedMember.name)) {
+    generalizedMember.name = "";
+    if (fieldNames.includes("name")) {
+      let index = fieldNames.indexOf("name");
+      if (index != -1) {
+        fieldNames.splice(index, 1);
+      }
+    }
+    setMemberData("name", ["Name"]);
+  }
+
+  setMemberData("age", ["Age"]);
   setMemberData(
     "relationship",
     ["Relationship to Head", "Relation to Head", "Relation to Head of House", "Relationship", "Relation"],
