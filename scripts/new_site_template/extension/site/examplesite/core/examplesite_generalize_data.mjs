@@ -36,7 +36,7 @@ function generalizeData(input) {
 
   let collectionId = undefined;
 
-  if (!data.success == undefined || !data.eventYear) {
+  if (!data.success) {
     return result; //the extract failed
   }
 

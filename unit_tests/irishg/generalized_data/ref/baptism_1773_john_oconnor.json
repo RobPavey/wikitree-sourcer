@@ -1,0 +1,12 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "John O'Connor"
+  },
+  "eventDate": {
+    "dateString": "19 May 1773"
+  },
+  "hasValidData": true
+}

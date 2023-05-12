@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "eventPlace": {
+    "placeString": "Dublin South"
+  },
+  "eventDate": {
+    "dateString": "16 September 1854"
+  },
+  "name": {
+    "name": "Mary Henry"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "John Smith"
+      },
+      "marriageDate": {
+        "dateString": "16 September 1854"
+      },
+      "marriagePlace": "Dublin South"
+    }
+  ],
+  "collectionData": {
+    "id": "marriages",
+    "registrationId": "3242437"
+  },
+  "hasValidData": true
+}

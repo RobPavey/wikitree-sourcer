@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventPlace": {
+    "placeString": "Armagh"
+  },
+  "eventDate": {
+    "dateString": "30 May 1921"
+  },
+  "name": {
+    "name": "David Taylor"
+  },
+  "birthDate": {
+    "dateString": "30 May 1921"
+  },
+  "mothersMaidenName": "Taylor",
+  "gender": "male",
+  "collectionData": {
+    "id": "births",
+    "registrationId": "1424208"
+  },
+  "hasValidData": true
+}

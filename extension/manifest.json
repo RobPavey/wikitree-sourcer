@@ -37,6 +37,7 @@
     "*://www.freereg.org.uk/*",
     "*://geneteka.genealodzy.pl/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
+    "*://*.irishgenealogy.ie/*",
     "*://*.newspapers.com/*",
     "*://paperspast.natlib.govt.nz/*",
     "*://www.scotlandspeople.gov.uk/*",
@@ -190,6 +191,16 @@
       "js": [
         "base/browser/content/content_common.js",
         "site/gro/browser/gro_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.irishgenealogy.ie/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/irishg/browser/irishg_content.js"
       ]
     },
     {
@@ -354,6 +365,14 @@
       ],
       "matches": [
         "*://www.gro.gov.uk/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/irishg/core/irishg_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.irishgenealogy.ie/*"
       ]
     },
     {

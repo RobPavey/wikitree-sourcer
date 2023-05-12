@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventPlace": {
+    "placeString": "Belfast"
+  },
+  "eventDate": {
+    "dateString": "1890"
+  },
+  "name": {
+    "name": "Isabella McDonald"
+  },
+  "lastNameAtDeath": "McDonald",
+  "deathDate": {
+    "dateString": "1890"
+  },
+  "collectionData": {
+    "id": "deaths",
+    "registrationId": "6137628"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventPlace": {
+    "placeString": "Belfast"
+  },
+  "eventDate": {
+    "dateString": "1898"
+  },
+  "name": {
+    "name": "Mark Donnelly"
+  },
+  "birthDate": {
+    "dateString": "1898"
+  },
+  "collectionData": {
+    "id": "births",
+    "registrationId": "11946689"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventPlace": {
+    "placeString": "Rathdrum"
+  },
+  "eventDate": {
+    "dateString": "1960"
+  },
+  "name": {
+    "name": "Michael Doyle"
+  },
+  "lastNameAtDeath": "Doyle",
+  "deathDate": {
+    "dateString": "1960"
+  },
+  "collectionData": {
+    "id": "deaths",
+    "registrationId": "1899412"
+  },
+  "hasValidData": true
+}

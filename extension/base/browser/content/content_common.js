@@ -312,7 +312,7 @@ function contentMessageListener(
 }
 
 function siteContentInit(siteName, extractModulePath, overrideExtractHandler, additionalMessageHandler) {
-  //console.log("siteContentInit, site name is: " + siteName);
+  console.log("siteContentInit, site name is: " + siteName);
 
   // In the case of Safari where the permission popup comes up when you click the extension icon,
   // siteContentInit is called when the user responds but the response from the contentLoaded
@@ -333,15 +333,4 @@ function siteContentInit(siteName, extractModulePath, overrideExtractHandler, ad
       additionalMessageHandler
     );
   });
-
-  /* Context menus disabled for now:
-
-  // To support context menus, this will hide/show or enable/disable context menu items
-  document.addEventListener("mousedown", function(event){
-    //right click
-    if(event.button == 2) {
-      chrome.runtime.sendMessage({type: "updateContextMenu", contentType: siteName});
-    }
-  }, true); 
-  */
 }
