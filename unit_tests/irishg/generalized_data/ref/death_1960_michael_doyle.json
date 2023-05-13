@@ -15,6 +15,7 @@
   "deathDate": {
     "dateString": "1960"
   },
+  "ageAtDeath": "86",
   "collectionData": {
     "id": "deaths",
     "registrationId": "1899412"

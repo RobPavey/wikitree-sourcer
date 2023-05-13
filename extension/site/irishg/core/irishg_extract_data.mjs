@@ -68,21 +68,33 @@ function extractData(document, url) {
     if (isSimpleTable) {
       for (let row of dataRows) {
         let labelNode = row.querySelector("th");
-        let valueNode = row.querySelector("td");
-        if (labelNode && valueNode) {
+        let valueNodes = row.querySelectorAll("td");
+        if (labelNode && valueNodes.length > 0) {
           if (labelNode.textContent) {
             // has a label
             let label = labelNode.textContent.trim();
-            let value = valueNode.textContent.trim();
+            let value = valueNodes[0].textContent.trim();
             if (label && value) {
               label = label.replace(/\s+/g, " ");
               value = value.replace(/\s+/g, " ");
               result.recordData[label] = value;
+
+              if (valueNodes.length == 2) {
+                // this can happen in a church marriage where there is a column for each person
+                if (!result.spouseRecordData) {
+                  result.spouseRecordData = {};
+                }
+                let spouseValue = valueNodes[1].textContent.trim();
+                if (spouseValue) {
+                  spouseValue = spouseValue.replace(/\s+/g, " ");
+                  result.spouseRecordData[label] = spouseValue;   
+                }
+              }
             }
           }
           else {
             // could be an image link
-            let linkNode = valueNode.querySelector("a");
+            let linkNode = valueNodes[0].querySelector("a");
             if (linkNode && linkNode.textContent == "Image") {
               let link = linkNode.getAttribute("href");
               if (link) {
@@ -120,6 +132,21 @@ function extractData(document, url) {
     }
   }
 
+  // if we did not find an image href in a table try looking for a paragraph with text starting with
+  // "View the "
+  if (!result.imageHref) {
+    let links = dataArea.querySelectorAll("div.content > p > a");
+    for (let link of links) {
+      let text = link.textContent;
+      if (text && text.startsWith("View the ")) {
+        let href = link.getAttribute("href");
+        if (href) {
+          result.imageHref = href;
+        }
+      }
+    }
+  }
+
   // Also extract from the banner, we may need this to determine the event type
   let bannerArea = document.querySelector("#banner");
   if (!bannerArea) {
@@ -137,6 +164,17 @@ function extractData(document, url) {
         if (text) {
           result.eventText = text;
         }
+      }
+    }
+  }
+
+  let heading = bannerArea.querySelector("h1");
+  if (heading) {
+    let text = heading.textContent;
+    if (text) {
+      text = text.replace(/\s+/g, " ").trim();
+      if (text) {
+        result.headingText = text;
       }
     }
   }

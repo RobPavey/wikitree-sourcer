@@ -50,11 +50,56 @@ function cleanDate(dateString) {
     return "";
   }
 
-  // remove parts in parens. E.g. 
+  // remove parts in parens. E.g.
   // "19 May 1773 (BASED ON OTHER DATE INFORMATION)"
   let cleanDate = dateString.replace(/\(.*\)/g, "").trim();
 
+  cleanDate = cleanDate.replace(/N\/R/g, "").trim();
+
   return cleanDate;
+}
+
+function extractDateFromEventString(eventString) {
+  let dateString = eventString.replace(/^.* in (\d\d\d\d)$/, "$1");
+  if (dateString && dateString != eventString) {
+    return dateString;
+  }
+
+  dateString = eventString.replace(/^.* on (\d\d? \w+ \d\d\d\d)$/, "$1");
+  if (dateString && dateString != eventString) {
+    return dateString;
+  }
+
+  dateString = eventString.replace(/^.* on N\/R (\w+ \d\d\d\d)$/, "$1");
+  if (dateString && dateString != eventString) {
+    return dateString;
+  }
+}
+
+function buildEventPlace(data, result) {
+  let eventPlace = "";
+  let districtArea = data.recordData["SR District/Reg Area"];
+  if (districtArea) {
+    eventPlace = districtArea;
+  } else if (data.headingText) {
+    let area = data.headingText.replace(/^Area - ([^,]+)\,.*$/, "$1");
+    if (area == data.headingText) {
+      area = "";
+    }
+    let parish = data.headingText.replace(/^.*Parish\/Church\/Congregation - ([^,]+).*$/, "$1");
+    if (parish == data.headingText) {
+      parish = "";
+    }
+
+    if (area && parish) {
+      eventPlace = parish.trim() + ", " + area.trim();
+    } else if (parish) {
+      eventPlace = parish.trim();
+    } else if (area) {
+      eventPlace = area.trim();
+    }
+  }
+  return eventPlace;
 }
 
 // This function generalizes the data extracted web page.
@@ -86,7 +131,6 @@ function generalizeData(input) {
     return result;
   }
 
-
   let firstWord = WTS_String.getFirstWord(data.eventText).toLowerCase();
   switch (firstWord) {
     case "baptism":
@@ -112,8 +156,7 @@ function generalizeData(input) {
       return;
   }
 
-  let eventPlace = data.recordData["SR District/Reg Area"];
-  result.setEventPlace(eventPlace);
+  result.setEventPlace(buildEventPlace(data, result));
 
   if (result.recordType == RT.BirthRegistration) {
     result.setEventDate(data.recordData["Date of Birth"]);
@@ -133,7 +176,7 @@ function generalizeData(input) {
   } else if (result.recordType == RT.MarriageRegistration) {
     result.setEventDate(data.recordData["Date of Event"]);
 
-    collectionId = "marriages";
+    collectionId = "civil-marriages";
 
     let name1 = cleanFullName(data.recordData["Party 1 Name"]);
     let name2 = cleanFullName(data.recordData["Party 2 Name"]);
@@ -148,8 +191,11 @@ function generalizeData(input) {
       let spouse = {
         name: name,
         marriageDate: result.eventDate,
-        marriagePlace: eventPlace,
       };
+      let eventPlace = result.inferEventPlace();
+      if (eventPlace) {
+        spouse["marriagePlace"] = eventPlace;
+      }
 
       result.spouses = [spouse];
     }
@@ -161,18 +207,51 @@ function generalizeData(input) {
     result.lastNameAtDeath = result.inferLastNameAtDeath();
     result.deathDate = result.eventDate;
 
-    if (data.ageAtDeath) {
-      result.ageAtDeath = data.ageAtDeath;
-    } else if (data.birthDate) {
-      result.setBirthDate(data.birthDate);
+    let age = data.recordData["Deceased Age at Death"];
+    if (age) {
+      result.ageAtDeath = age;
     }
   } else if (result.recordType == RT.Baptism) {
     result.setFullName(cleanFullName(data.recordData["Name"]));
-    result.setEventDate(cleanDate(data.recordData["Date of Birth"]));
-
+    result.setBirthDate(cleanDate(data.recordData["Date of Birth"]));
+    result.setEventDate(extractDateFromEventString(data.eventText));
+    collectionId = "baptisms";
   } else if (result.recordType == RT.Marriage) {
+    result.setEventDate(extractDateFromEventString(data.eventText));
+    collectionId = "marriages";
 
+    let name1 = cleanFullName(data.recordData["Name"]);
+    let name2 = cleanFullName(data.spouseRecordData["Name"]);
+
+    if (name1) {
+      result.setFullName(name1);
+    }
+
+    if (name2) {
+      let name = new WtsName();
+      name.name = name2;
+      let spouse = {
+        name: name,
+        marriageDate: result.eventDate,
+      };
+
+      let eventPlace = result.inferEventPlace();
+      if (eventPlace) {
+        spouse["marriagePlace"] = eventPlace;
+      }
+
+      result.spouses = [spouse];
+    }
   } else if (result.recordType == RT.Burial) {
+    result.setFullName(cleanFullName(data.recordData["Name"]));
+    result.setDeathDate(cleanDate(data.recordData["Date of Death"]));
+    result.setEventDate(extractDateFromEventString(data.eventText));
+    let age = data.recordData["Age"];
+    if (age && age != "N/R") {
+      result.ageAtDeath = age;
+    }
+
+    collectionId = "burials";
   }
 
   // Collection

@@ -2,5 +2,17 @@
   "sourceOfData": "irishg",
   "sourceType": "record",
   "recordType": "Burial",
+  "eventPlace": {
+    "placeString": "ST. JAMES, DUBLIN (COI)"
+  },
+  "name": {
+    "name": "Siobhan Martin"
+  },
+  "eventDate": {
+    "dateString": "23 February 1763"
+  },
+  "collectionData": {
+    "id": "burials"
+  },
   "hasValidData": true
 }

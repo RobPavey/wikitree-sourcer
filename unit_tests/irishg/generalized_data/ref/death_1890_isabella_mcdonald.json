@@ -15,6 +15,7 @@
   "deathDate": {
     "dateString": "1890"
   },
+  "ageAtDeath": "22",
   "collectionData": {
     "id": "deaths",
     "registrationId": "6137628"

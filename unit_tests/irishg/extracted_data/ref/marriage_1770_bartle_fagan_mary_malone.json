@@ -10,6 +10,13 @@
     "Witness 1": "MARY MALONE",
     "Witness 2": "BRYAN FAGAN"
   },
+  "spouseRecordData": {
+    "Name": "MARY MALONE",
+    "Address": "N/R",
+    "Occupation": "N/R",
+    "Father": "N/R",
+    "Mother": "N/R"
+  },
   "refData": {
     "Book Number": "N/R",
     "Page": "N/R",
@@ -17,5 +24,7 @@
     "Record_Identifier": "DU-RC-MA-139050",
     "Image Filename": "st.michans_mf_1726-1830_ma_1113"
   },
-  "eventText": "Marriage of BARTLE FAGAN of N/R and MARY MALONE of N/R on N/R June 1770"
+  "imageHref": "https://churchrecords.irishgenealogy.ie/churchrecords/display-pdf.jsp?pdfName=st.michans_mf_1726-1830_ma_1113",
+  "eventText": "Marriage of BARTLE FAGAN of N/R and MARY MALONE of N/R on N/R June 1770",
+  "headingText": "Area - DUBLIN (RC) , Parish/Church/Congregation - ST. MICHAN"
 }

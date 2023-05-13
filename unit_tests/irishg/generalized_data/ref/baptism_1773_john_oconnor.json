@@ -2,11 +2,20 @@
   "sourceOfData": "irishg",
   "sourceType": "record",
   "recordType": "Baptism",
+  "eventPlace": {
+    "placeString": "TRALEE, KERRY (RC)"
+  },
   "name": {
     "name": "John O'Connor"
   },
+  "birthDate": {
+    "dateString": "19 May 1773"
+  },
   "eventDate": {
     "dateString": "19 May 1773"
+  },
+  "collectionData": {
+    "id": "baptisms"
   },
   "hasValidData": true
 }
