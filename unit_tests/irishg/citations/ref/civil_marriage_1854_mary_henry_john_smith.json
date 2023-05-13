@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n[undefined IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Civil Records of Births, Marriages and Deaths; General Register Office of Ireland\"<br/>\nGroup Registration ID: 3242437, SR District/Reg Area: Dublin South<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/5ff15e3242437 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nMary Henry marriage to John Smith on 16 Sep 1854 in Dublin South.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n[undefined IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "Mary married John Smith on 16 September 1854 in Dublin South.<ref>\n'''Marriage Registration''':\n\"Civil Records of Births, Marriages and Deaths; General Register Office of Ireland\"<br/>\nGroup Registration ID: 3242437, SR District/Reg Area: Dublin South<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/5ff15e3242437 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nMary Henry marriage to John Smith on 16 Sep 1854 in Dublin South.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* [undefined IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>, undefined.<br/>",
+    "citation": "* '''Marriage Registration''': \"Civil Records of Births, Marriages and Deaths; General Register Office of Ireland\"<br/>Group Registration ID: 3242437, SR District/Reg Area: Dublin South<br/>[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/5ff15e3242437 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Mary Henry marriage to John Smith on 16 Sep 1854 in Dublin South.",
     "type": "source"
   }
 }

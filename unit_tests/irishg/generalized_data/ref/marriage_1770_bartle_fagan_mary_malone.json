@@ -3,7 +3,7 @@
   "sourceType": "record",
   "recordType": "Marriage",
   "eventPlace": {
-    "placeString": "ST. MICHAN, DUBLIN (RC)"
+    "placeString": "St. Michan, Dublin (RC)"
   },
   "eventDate": {
     "dateString": "June 1770"
@@ -19,7 +19,7 @@
       "marriageDate": {
         "dateString": "June 1770"
       },
-      "marriagePlace": "ST. MICHAN, DUBLIN (RC)"
+      "marriagePlace": "St. Michan, Dublin (RC)"
     }
   ],
   "collectionData": {

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n[undefined IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Civil Records of Births, Marriages and Deaths; General Register Office of Ireland\"<br/>\nGroup Registration ID: 6137628, SR District/Reg Area: Belfast<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/a6b2ff6137628 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nIsabella McDonald death 1890 (age 22) in Belfast.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Their death was registered in 1890 in Belfast.<ref>\n[undefined IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "Isabella's death (age 22) was registered in 1890 in Belfast.<ref>\n'''Death Registration''':\n\"Civil Records of Births, Marriages and Deaths; General Register Office of Ireland\"<br/>\nGroup Registration ID: 6137628, SR District/Reg Area: Belfast<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/a6b2ff6137628 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nIsabella McDonald death 1890 (age 22) in Belfast.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* [undefined IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>, undefined.<br/>",
+    "citation": "* '''Death Registration''': \"Civil Records of Births, Marriages and Deaths; General Register Office of Ireland\"<br/>Group Registration ID: 6137628, SR District/Reg Area: Belfast<br/>[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/a6b2ff6137628 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Isabella McDonald death 1890 (age 22) in Belfast.",
     "type": "source"
   }
 }

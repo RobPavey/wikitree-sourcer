@@ -23,82 +23,31 @@ SOFTWARE.
 */
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
-//import { FBMD } from "./examplesite_utils.mjs";
+import { DataString } from "../../../base/core/data_string.mjs";
 
 function buildExamplesiteUrl(data, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
   return data.citationUrl;
 }
 
-function getCorrectlyCasedName(name, options) {
-  if (options.citation_examplesite_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name);
-  }
-  return name;
-}
-
-function getCorrectlyCasedNames(name, options) {
-  if (options.citation_examplesite_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCapsEachWord(name, true);
-  }
-  return name;
-}
-
-function getGivenNames(data, options) {
-  return getCorrectlyCasedNames(data.givenNames, options);
-}
-
-function getLastName(data, options) {
-  return getCorrectlyCasedName(data.surname, options);
-}
-
-function buildCoreCitation(data, runDate, builder) {
+function buildCoreCitation(data, gd, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = "";
-  builder.sourceReference = data.sourceCitation;
+  builder.sourceTitle = "Put Source Title here";
+  builder.sourceReference = "Put Source Reference here";
 
   var examplesiteUrl = buildExamplesiteUrl(data, builder);
 
   let recordLink = "[" + examplesiteUrl + " ExampleSite Record]";
   builder.recordLinkOrTemplate = recordLink;
 
-  let dataString = getLastName(data, options) + ", " + getGivenNames(data, options);
-  if (data.eventType == "birth") {
-    if (data.mothersMaidenName != undefined && data.mothersMaidenName != "") {
-      dataString += " (Mother's maiden name: ";
-      var mmn = getMothersMaidenName(data, options);
-      if (mmn == undefined || mmn == "") {
-        mmn = "-";
-      }
-      dataString += mmn + ")";
-    }
-  } else if (data.eventType == "death") {
-    if (data.ageAtDeath) {
-      dataString += " (Age at death: ";
-      dataString += data.ageAtDeath + ")";
-    } else if (data.birthDate) {
-      dataString += " (Date of birth: ";
-      dataString += data.birthDate + ")";
-    }
-  }
+  let input = {
+    generalizedData: gd,
+    options: options,
+  };
+  let dataString = DataString.buildDataString(input);
   if (!dataString.endsWith(".")) {
     dataString += ".";
   }
-
-  if (options.citation_general_addBreaksWithinBody) {
-    dataString += "<br/>";
-  } else {
-    dataString += " ";
-  }
-  if (options.citation_general_addNewlinesWithinBody) {
-    dataString += "\n";
-  }
-
-  if (data.referenceVolume != undefined && data.referenceVolume != "") {
-    dataString += " Volume " + data.referenceVolume + " Page " + data.referencePage + ".";
-  }
-
   builder.dataString = dataString;
 }
 
@@ -111,22 +60,10 @@ function buildCitation(input) {
 
   let builder = new CitationBuilder(type, runDate, options);
 
-  var citation = buildCoreCitation(data, runDate, builder);
+  var citation = buildCoreCitation(data, gd, builder);
 
   // Get meaningful title
-  var refTitle = "";
-  switch (data.eventType) {
-    case "birth":
-      refTitle = "Birth Registration";
-      break;
-    case "marriage":
-      refTitle = "Marriage Registration";
-      break;
-    case "death":
-      refTitle = "Death Registration";
-      break;
-  }
-  builder.meaningfulTitle = refTitle;
+  builder.meaningfulTitle = gd.getRefTitle();
 
   if (type == "narrative") {
     builder.addNarrative(gd, input.dataCache, options);

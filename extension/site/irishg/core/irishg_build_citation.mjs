@@ -23,82 +23,93 @@ SOFTWARE.
 */
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
-//import { FBMD } from "./irishg_utils.mjs";
+import { DataString } from "../../../base/core/data_string.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
 
 function buildIrishgUrl(data, builder) {
-  // could provide option to use a search style URL but don't see any reason to so far
-  return data.citationUrl;
-}
+  // Example URL:
+  // "https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275
+  // ?b=https%3A%2F%2Fchurchrecords.irishgenealogy.ie%2Fchurchrecords%2Fsearch.jsp%3Fnamefm%3DJohn%26namel%3DO%2527Connor%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch"
+  let url = data.url;
 
-function getCorrectlyCasedName(name, options) {
-  if (options.citation_irishg_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name);
+  let queryIndex = url.indexOf("?");
+  if (queryIndex != -1) {
+    url = url.substring(0, queryIndex);
   }
-  return name;
+  return url;
 }
 
-function getCorrectlyCasedNames(name, options) {
-  if (options.citation_irishg_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCapsEachWord(name, true);
+function buildSourceTitle(data, gd) {
+  let sourceTitle = "";
+  if (
+    gd.recordType == RT.BirthRegistration ||
+    gd.recordType == RT.MarriageRegistration ||
+    gd.recordType == RT.DeathRegistration
+  ) {
+    sourceTitle = "Civil Records of Births, Marriages and Deaths; General Register Office of Ireland";
+  } else {
+    sourceTitle = "Church Records";
   }
-  return name;
+
+  return sourceTitle;
 }
 
-function getGivenNames(data, options) {
-  return getCorrectlyCasedNames(data.givenNames, options);
+function buildSourceReference(data, gd) {
+  let sourceReference = "";
+
+  function addField(label, value) {
+    if (value) {
+      if (sourceReference) {
+        sourceReference += ", ";
+      }
+      sourceReference += label + ": " + value;
+    }
+  }
+
+  function addFieldFromRecordData(label) {
+    addField(label, data.recordData[label]);
+  }
+
+  function addFieldFromRefData(label) {
+    addField(label, data.refData[label]);
+  }
+
+  if (
+    gd.recordType == RT.BirthRegistration ||
+    gd.recordType == RT.MarriageRegistration ||
+    gd.recordType == RT.DeathRegistration
+  ) {
+    addFieldFromRecordData("Group Registration ID");
+    addFieldFromRecordData("SR District/Reg Area");
+  } else {
+    addFieldFromRefData("Book Number");
+    addFieldFromRefData("Page");
+    addFieldFromRefData("Entry Number");
+    addFieldFromRefData("Record_Identifier");
+    addFieldFromRefData("Image Filename");
+  }
+
+  return sourceReference;
 }
 
-function getLastName(data, options) {
-  return getCorrectlyCasedName(data.surname, options);
-}
-
-function buildCoreCitation(data, runDate, builder) {
+function buildCoreCitation(data, gd, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = "";
-  builder.sourceReference = data.sourceCitation;
+  builder.sourceTitle = buildSourceTitle(data, gd);
+  builder.sourceReference = buildSourceReference(data, gd);
 
   var irishgUrl = buildIrishgUrl(data, builder);
 
   let recordLink = "[" + irishgUrl + " IrishGenealogy.ie Record]";
   builder.recordLinkOrTemplate = recordLink;
 
-  let dataString = getLastName(data, options) + ", " + getGivenNames(data, options);
-  if (data.eventType == "birth") {
-    if (data.mothersMaidenName != undefined && data.mothersMaidenName != "") {
-      dataString += " (Mother's maiden name: ";
-      var mmn = getMothersMaidenName(data, options);
-      if (mmn == undefined || mmn == "") {
-        mmn = "-";
-      }
-      dataString += mmn + ")";
-    }
-  } else if (data.eventType == "death") {
-    if (data.ageAtDeath) {
-      dataString += " (Age at death: ";
-      dataString += data.ageAtDeath + ")";
-    } else if (data.birthDate) {
-      dataString += " (Date of birth: ";
-      dataString += data.birthDate + ")";
-    }
-  }
+  let input = {
+    generalizedData: gd,
+    options: options,
+  };
+  let dataString = DataString.buildDataString(input);
   if (!dataString.endsWith(".")) {
     dataString += ".";
   }
-
-  if (options.citation_general_addBreaksWithinBody) {
-    dataString += "<br/>";
-  } else {
-    dataString += " ";
-  }
-  if (options.citation_general_addNewlinesWithinBody) {
-    dataString += "\n";
-  }
-
-  if (data.referenceVolume != undefined && data.referenceVolume != "") {
-    dataString += " Volume " + data.referenceVolume + " Page " + data.referencePage + ".";
-  }
-
   builder.dataString = dataString;
 }
 
@@ -111,22 +122,9 @@ function buildCitation(input) {
 
   let builder = new CitationBuilder(type, runDate, options);
 
-  var citation = buildCoreCitation(data, runDate, builder);
+  var citation = buildCoreCitation(data, gd, builder);
 
-  // Get meaningful title
-  var refTitle = "";
-  switch (data.eventType) {
-    case "birth":
-      refTitle = "Birth Registration";
-      break;
-    case "marriage":
-      refTitle = "Marriage Registration";
-      break;
-    case "death":
-      refTitle = "Death Registration";
-      break;
-  }
-  builder.meaningfulTitle = refTitle;
+  builder.meaningfulTitle = gd.getRefTitle();
 
   if (type == "narrative") {
     builder.addNarrative(gd, input.dataCache, options);

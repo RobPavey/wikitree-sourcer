@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n[undefined IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Civil Records of Births, Marriages and Deaths; General Register Office of Ireland\"<br/>\nGroup Registration ID: 1424208, SR District/Reg Area: Armagh<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/d79f291424208 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nDavid Taylor birth 30 May 1921 in Armagh, mother's maiden name Taylor.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "David was born on 30 May 1921 in Armagh.<ref>\n[undefined IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\n, undefined.<br/>\n</ref>",
+    "citation": "David was born on 30 May 1921 in Armagh.<ref>\n'''Birth Registration''':\n\"Civil Records of Births, Marriages and Deaths; General Register Office of Ireland\"<br/>\nGroup Registration ID: 1424208, SR District/Reg Area: Armagh<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/d79f291424208 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nDavid Taylor birth 30 May 1921 in Armagh, mother's maiden name Taylor.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* [undefined IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>, undefined.<br/>",
+    "citation": "* '''Birth Registration''': \"Civil Records of Births, Marriages and Deaths; General Register Office of Ireland\"<br/>Group Registration ID: 1424208, SR District/Reg Area: Armagh<br/>[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/d79f291424208 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>David Taylor birth 30 May 1921 in Armagh, mother's maiden name Taylor.",
     "type": "source"
   }
 }

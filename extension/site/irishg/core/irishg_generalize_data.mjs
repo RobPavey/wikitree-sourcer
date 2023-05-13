@@ -91,6 +91,22 @@ function buildEventPlace(data, result) {
       parish = "";
     }
 
+    if (area) {
+      let parenIndex = area.indexOf("(");
+      if (parenIndex != -1) {
+        let firstPart = area.substring(0, parenIndex);
+        let secondPart = area.substring(parenIndex);
+        firstPart = WTS_String.toInitialCapsEachWord(firstPart);
+        area = firstPart + " " + secondPart;
+      } else {
+        area = WTS_String.toInitialCapsEachWord(area);
+      }
+    }
+
+    if (parish) {
+      parish = WTS_String.toInitialCapsEachWord(parish);
+    }
+
     if (area && parish) {
       eventPlace = parish.trim() + ", " + area.trim();
     } else if (parish) {
