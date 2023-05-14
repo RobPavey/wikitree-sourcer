@@ -58,7 +58,7 @@ function buildSourceReference(data, gd) {
   let sourceReference = "";
 
   function addField(label, value) {
-    if (value) {
+    if (value && value != "N/R") {
       if (sourceReference) {
         sourceReference += ", ";
       }

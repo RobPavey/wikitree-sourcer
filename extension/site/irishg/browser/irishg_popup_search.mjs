@@ -62,7 +62,7 @@ function addIrishgDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addIrishgDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "England and Wales";
+  const stdCountryName = "Ireland";
 
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, irishgStartYear, irishgEndYear, [stdCountryName])) {
@@ -110,7 +110,7 @@ async function addIrishgSameRecordMenuItem(menu, data) {
   });
 }
 
-function addIrishgSearchBirthsMenuItem(menu, data, filter) {
+function addIrishgSearchCivilRecordsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
     let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
@@ -122,12 +122,12 @@ function addIrishgSearchBirthsMenuItem(menu, data, filter) {
       return;
     }
   }
-  addMenuItem(menu, "Search IrishGenealogy.ie Births", function (element) {
-    irishgSearch(data.generalizedData, "Births");
+  addMenuItem(menu, "Search IrishGenealogy.ie Civil Records", function (element) {
+    irishgSearch(data.generalizedData, "civilrecords");
   });
 }
 
-function addIrishgSearchMarriagesMenuItem(menu, data, filter) {
+function addIrishgSearchChurchRecordsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
     let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
@@ -139,25 +139,8 @@ function addIrishgSearchMarriagesMenuItem(menu, data, filter) {
       return;
     }
   }
-  addMenuItem(menu, "Search IrishGenealogy.ie Marriages", function (element) {
-    irishgSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addIrishgSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      irishgStartYear,
-      irishgEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search IrishGenealogy.ie Deaths", function (element) {
-    irishgSearch(data.generalizedData, "Deaths");
+  addMenuItem(menu, "Search IrishGenealogy.ie Church Records", function (element) {
+    irishgSearch(data.generalizedData, "churchrecords");
   });
 }
 
@@ -170,10 +153,8 @@ async function setupIrishgSearchSubMenu(data, backFunction, filter) {
 
   addBackMenuItem(menu, backFunction);
 
-  await addIrishgSameRecordMenuItem(menu, data, filter);
-  addIrishgSearchBirthsMenuItem(menu, data, filter);
-  addIrishgSearchMarriagesMenuItem(menu, data, filter);
-  addIrishgSearchDeathsMenuItem(menu, data, filter);
+  addIrishgSearchCivilRecordsMenuItem(menu, data, filter);
+  addIrishgSearchChurchRecordsMenuItem(menu, data, filter);
 
   endMainMenu(menu);
 }

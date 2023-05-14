@@ -48,7 +48,6 @@ function subtractNumFromYearString(yearString, num) {
 
 const minExamplesiteYear = 1837;
 const maxExamplesiteYear = 1992;
-const minExamplesiteQuarter = 3;
 
 function constrainYear(yearString) {
   if (!yearString) {
@@ -68,28 +67,9 @@ function constrainYear(yearString) {
   }
 }
 
-function constrainQuarter(yearString, quarterString) {
-  if (!yearString || !quarterString) {
-    return quarterString;
-  }
-
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
-  if (yearNum == minExamplesiteYear) {
-    let quarterNum = WTS_Date.getQuarterNumFromQuarterString(quarterString);
-    if (quarterNum < minExamplesiteQuarter) {
-      quarterNum = minExamplesiteQuarter;
-    }
-    return quarterNum.toString();
-  } else {
-    return quarterString;
-  }
-}
-
 function constrainYears(dates) {
   dates.startYear = constrainYear(dates.startYear);
-  dates.startQuarter = constrainQuarter(dates.startYear, dates.startQuarter);
   dates.endYear = constrainYear(dates.endYear);
-  dates.endQuarter = constrainQuarter(dates.endYear, dates.endQuarter);
 }
 
 function addAppropriateSurname(data, type, builder) {
@@ -266,18 +246,14 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   // constrain years to the range covered by Examplesite
-  dates.startQuarter = 1;
-  dates.endQuarter = 4;
   constrainYears(dates);
 
   // set the date parameters
   if (dates.startYear) {
     builder.addStartYear(dates.startYear);
-    builder.addStartQuarter(dates.startQuarter);
   }
   if (dates.endYear) {
     builder.addEndYear(dates.endYear);
-    builder.addEndQuarter(dates.endQuarter);
   }
 
   addAppropriateSurname(data, type, builder);

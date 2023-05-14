@@ -24,9 +24,20 @@ SOFTWARE.
 
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 
+// An example search:
+// https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=mary&namel=malone&location=&yyfrom=&yyto=&submit=Search
+// https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=John&namel=Smith&location=Dublin&yyfrom=1850&yyto=1890&submit=Search
+
+// https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=John&namel=O%27Connor&location=&yyfrom=&yyto=&submit=Search&sort=&pageSize=&century=&decade=&exact=&ddBfrom=&ddMfrom=&ddDfrom=&ddPfrom=&mmBfrom=&mmMfrom=&mmDfrom=&mmPfrom=&yyBfrom=&yyMfrom=&yyDfrom=&yyPfrom=&ddBto=&ddMto=&ddDto=&ddPto=&mmBto=&mmMto=&mmDto=&mmPto=&yyBto=&yyMto=&yyDto=&yyPto=&locationB=&locationM=&locationD=&locationP=&keywordb=&keywordm=&keywordd=&keywordp=&event=&district=
+// https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namel=O%27Connor&namefm=John
+
 class IrishgUriBuilder {
-  constructor() {
-    this.uri = "https://www.irishg.org.uk/cgi/search.pl";
+  constructor(typeOfSearch) {
+    let searchJsp = "search";
+    if (typeOfSearch == "civilrecords") {
+      searchJsp = "civil-perform-search";
+    }
+    this.uri = "https://" + typeOfSearch + ".irishgenealogy.ie/churchrecords/" + searchJsp + ".jsp";
     this.searchTermAdded = false;
   }
 
@@ -57,48 +68,32 @@ class IrishgUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
-  }
-
   addSurname(string) {
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("namel", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("given", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("namefm", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", WTS_String.removeExtendedAsciiCharacters(string));
+  addLocation(string) {
+    this.addSearchParameter("location", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", WTS_String.removeExtendedAsciiCharacters(string));
+  addLocation(string) {
+    this.addSearchParameter("location", string);
   }
 
   addStartYear(string) {
-    this.addSearchParameter("start", string);
+    this.addSearchParameter("yyfrom", string);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+    this.addSearchParameter("yyto", string);
   }
 
   getUri() {
-    return this.uri;
+    return this.uri + "&submit=Search";
   }
 }
 

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Church Records\"<br/>\nBook Number: N/R, Page: N/R, Entry Number: N/R, Record_Identifier: DU-RC-MA-139050, Image Filename: st.michans_mf_1726-1830_ma_1113<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/7da64d0073868 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nBartle Fagan marriage to Mary Malone in Jun 1770 in St. Michan, Dublin (RC).\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Church Records\"<br/>\nRecord_Identifier: DU-RC-MA-139050, Image Filename: st.michans_mf_1726-1830_ma_1113<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/7da64d0073868 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nBartle Fagan marriage to Mary Malone in Jun 1770 in St. Michan, Dublin (RC).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Bartle married Mary Malone in June 1770 in St. Michan, Dublin (RC).<ref>\n'''Marriage''':\n\"Church Records\"<br/>\nBook Number: N/R, Page: N/R, Entry Number: N/R, Record_Identifier: DU-RC-MA-139050, Image Filename: st.michans_mf_1726-1830_ma_1113<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/7da64d0073868 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nBartle Fagan marriage to Mary Malone in Jun 1770 in St. Michan, Dublin (RC).\n</ref>",
+    "citation": "Bartle married Mary Malone in June 1770 in St. Michan, Dublin (RC).<ref>\n'''Marriage''':\n\"Church Records\"<br/>\nRecord_Identifier: DU-RC-MA-139050, Image Filename: st.michans_mf_1726-1830_ma_1113<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/7da64d0073868 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nBartle Fagan marriage to Mary Malone in Jun 1770 in St. Michan, Dublin (RC).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage''': \"Church Records\"<br/>Book Number: N/R, Page: N/R, Entry Number: N/R, Record_Identifier: DU-RC-MA-139050, Image Filename: st.michans_mf_1726-1830_ma_1113<br/>[https://churchrecords.irishgenealogy.ie/churchrecords/details/7da64d0073868 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Bartle Fagan marriage to Mary Malone in Jun 1770 in St. Michan, Dublin (RC).",
+    "citation": "* '''Marriage''': \"Church Records\"<br/>Record_Identifier: DU-RC-MA-139050, Image Filename: st.michans_mf_1726-1830_ma_1113<br/>[https://churchrecords.irishgenealogy.ie/churchrecords/details/7da64d0073868 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Bartle Fagan marriage to Mary Malone in Jun 1770 in St. Michan, Dublin (RC).",
     "type": "source"
   }
 }
