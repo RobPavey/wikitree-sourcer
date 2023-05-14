@@ -46,23 +46,36 @@ function buildSourceTitle(data, gd) {
     gd.recordType == RT.MarriageRegistration ||
     gd.recordType == RT.DeathRegistration
   ) {
-    sourceTitle = "Civil Records of Births, Marriages and Deaths; General Register Office of Ireland";
+    sourceTitle = "Civil Records; General Register Office of Ireland";
   } else {
-    sourceTitle = "Church Records";
+    sourceTitle = "Irish Church Records";
+    if (gd.eventPlace && gd.eventPlace.placeString) {
+      sourceTitle += "; " + gd.eventPlace.placeString;
+    }
   }
 
   return sourceTitle;
 }
 
-function buildSourceReference(data, gd) {
+function buildSourceReference(data, gd, options) {
   let sourceReference = "";
+
+  let itemSep = ";";
+  let valueSep = ":";
+  if (options.citation_general_sourceReferenceSeparator == "commaColon") {
+    itemSep = ",";
+    valueSep = ":";
+  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
+    itemSep = ",";
+    valueSep = "";
+  }
 
   function addField(label, value) {
     if (value && value != "N/R") {
       if (sourceReference) {
-        sourceReference += ", ";
+        sourceReference += itemSep + " ";
       }
-      sourceReference += label + ": " + value;
+      sourceReference += label + valueSep + " " + value;
     }
   }
 
@@ -95,7 +108,7 @@ function buildSourceReference(data, gd) {
 function buildCoreCitation(data, gd, builder) {
   let options = builder.getOptions();
   builder.sourceTitle = buildSourceTitle(data, gd);
-  builder.sourceReference = buildSourceReference(data, gd);
+  builder.sourceReference = buildSourceReference(data, gd, options);
 
   var irishgUrl = buildIrishgUrl(data, builder);
 

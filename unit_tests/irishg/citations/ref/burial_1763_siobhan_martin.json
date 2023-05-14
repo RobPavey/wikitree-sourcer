@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"Church Records\"<br/>\nBook Number: 1, Page: 89, Entry Number: 8013, Record_Identifier: DU-CI-BU-89807<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/062ad80320870 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nSiobhan Martin burial on 23 Feb 1763 in St. James, Dublin (COI).\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"Irish Church Records; St. James, Dublin (COI)\"<br/>\nBook Number: 1; Page: 89; Entry Number: 8013; Record_Identifier: DU-CI-BU-89807<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/062ad80320870 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nSiobhan Martin burial on 23 Feb 1763 in St. James, Dublin (COI).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Siobhan was buried on 23 February 1763 in St. James, Dublin (COI).<ref>\n'''Burial''':\n\"Church Records\"<br/>\nBook Number: 1, Page: 89, Entry Number: 8013, Record_Identifier: DU-CI-BU-89807<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/062ad80320870 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nSiobhan Martin burial on 23 Feb 1763 in St. James, Dublin (COI).\n</ref>",
+    "citation": "Siobhan was buried on 23 February 1763 in St. James, Dublin (COI).<ref>\n'''Burial''':\n\"Irish Church Records; St. James, Dublin (COI)\"<br/>\nBook Number: 1; Page: 89; Entry Number: 8013; Record_Identifier: DU-CI-BU-89807<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/062ad80320870 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nSiobhan Martin burial on 23 Feb 1763 in St. James, Dublin (COI).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Burial''': \"Church Records\"<br/>Book Number: 1, Page: 89, Entry Number: 8013, Record_Identifier: DU-CI-BU-89807<br/>[https://churchrecords.irishgenealogy.ie/churchrecords/details/062ad80320870 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Siobhan Martin burial on 23 Feb 1763 in St. James, Dublin (COI).",
+    "citation": "* '''Burial''': \"Irish Church Records; St. James, Dublin (COI)\"<br/>Book Number: 1; Page: 89; Entry Number: 8013; Record_Identifier: DU-CI-BU-89807<br/>[https://churchrecords.irishgenealogy.ie/churchrecords/details/062ad80320870 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Siobhan Martin burial on 23 Feb 1763 in St. James, Dublin (COI).",
     "type": "source"
   }
 }

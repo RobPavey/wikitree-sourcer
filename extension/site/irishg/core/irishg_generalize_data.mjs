@@ -118,6 +118,50 @@ function buildEventPlace(data, result) {
   return eventPlace;
 }
 
+function isName2Primary(data, name1, name2) {
+  let url = data.url;
+  const searchString = "search.jsp%3F";
+  let searchIndex = url.indexOf(searchString);
+  if (searchIndex != -1) {
+    let searchParams = url.substring(searchIndex + searchIndex.length);
+
+    const firstNameKey = "namefm%3D";
+    const lastNameKey = "namel%3D";
+
+    let searchFirstName = "";
+    let firstNameIndex = searchParams.indexOf(firstNameKey);
+    if (firstNameIndex != -1) {
+      let endIndex = searchParams.indexOf("%26", firstNameIndex);
+      if (endIndex != -1) {
+        searchFirstName = searchParams.substring(firstNameIndex + firstNameKey.length, endIndex);
+      }
+    }
+
+    let searchLastName = "";
+    let lastNameIndex = searchParams.indexOf(lastNameKey);
+    if (lastNameIndex != -1) {
+      let endIndex = searchParams.indexOf("%26", lastNameIndex);
+      if (endIndex != -1) {
+        searchLastName = searchParams.substring(lastNameIndex + lastNameKey.length, endIndex);
+      }
+    }
+
+    if (searchFirstName) {
+      if (name2.startsWith(searchFirstName)) {
+        return true;
+      }
+    }
+
+    if (searchLastName) {
+      if (name2.endsWith(searchLastName)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
 // This function generalizes the data extracted web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
@@ -197,6 +241,13 @@ function generalizeData(input) {
     let name1 = cleanFullName(data.recordData["Party 1 Name"]);
     let name2 = cleanFullName(data.recordData["Party 2 Name"]);
 
+    // who should be considered the primary person?
+    if (isName2Primary(data, name1, name2)) {
+      let temp = name1;
+      name1 = name2;
+      name2 = temp;
+    }
+
     if (name1) {
       result.setFullName(name1);
     }
@@ -238,6 +289,13 @@ function generalizeData(input) {
 
     let name1 = cleanFullName(data.recordData["Name"]);
     let name2 = cleanFullName(data.spouseRecordData["Name"]);
+
+    // who should be considered the primary person?
+    if (isName2Primary(data, name1, name2)) {
+      let temp = name1;
+      name1 = name2;
+      name2 = temp;
+    }
 
     if (name1) {
       result.setFullName(name1);
