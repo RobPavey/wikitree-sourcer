@@ -35,10 +35,15 @@ const citationOptionsGroup = {
   subsection: "irishg",
   options: [
     {
-      optionName: "changeNamesToInitialCaps",
-      type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
-      defaultValue: true,
+      optionName: "dataStringFormat",
+      type: "select",
+      label: "Data sentence to include in citation",
+      values: [
+        { value: "none", text: "None" },
+        { value: "dataString", text: "Sourcer style data string" },
+        { value: "fromPage", text: "Text shown as event summary on page" },
+      ],
+      defaultValue: "dataString",
     },
   ],
 };

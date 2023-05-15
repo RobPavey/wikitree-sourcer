@@ -115,15 +115,21 @@ function buildCoreCitation(data, gd, builder) {
   let recordLink = "[" + irishgUrl + " IrishGenealogy.ie Record]";
   builder.recordLinkOrTemplate = recordLink;
 
-  let input = {
-    generalizedData: gd,
-    options: options,
-  };
-  let dataString = DataString.buildDataString(input);
-  if (!dataString.endsWith(".")) {
-    dataString += ".";
+  if (options.citation_irishg_dataStringFormat == "dataString") {
+    let input = {
+      generalizedData: gd,
+      options: options,
+    };
+    let dataString = DataString.buildDataString(input);
+    if (!dataString.endsWith(".")) {
+      dataString += ".";
+    }
+    builder.dataString = dataString;
+  } else if (options.citation_irishg_dataStringFormat == "fromPage") {
+    if (data.eventText) {
+      builder.dataString = data.eventText;
+    }
   }
-  builder.dataString = dataString;
 }
 
 function buildCitation(input) {

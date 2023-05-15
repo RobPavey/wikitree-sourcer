@@ -35,6 +35,16 @@ const regressionData = [
     // no image link
     caseName: "baptism_1773_john_oconnor",
     url: "https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275?b=https%3A%2F%2Fchurchrecords.irishgenealogy.ie%2Fchurchrecords%2Fsearch.jsp%3Fnamefm%3DJohn%26namel%3DO%2527Connor%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch",
+    optionVariants: [
+      {
+        variantName: "dataFromPage",
+        optionOverrides: { citation_irishg_dataStringFormat: "fromPage" },
+      },
+      {
+        variantName: "dataNone",
+        optionOverrides: { citation_irishg_dataStringFormat: "none" },
+      },
+    ],
   },
   {
     // missing sex and MMN

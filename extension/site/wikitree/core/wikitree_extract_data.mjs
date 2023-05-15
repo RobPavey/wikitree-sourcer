@@ -468,6 +468,20 @@ function extractVitalsDataInNonEditMode(document, result, isPrivate) {
           result.nicknames = nicknames;
         }
       }
+
+      // look for " aka "
+      sibling = afterSibling.nextSibling;
+      while (sibling) {
+        let text = sibling.textContent;
+        if (text == " aka ") {
+          sibling = sibling.nextSibling;
+          if (sibling && sibling.textContent) {
+            result.otherLastNames = sibling.textContent.trim();
+          }
+          break;
+        }
+        sibling = sibling.nextSibling;
+      }
     }
   }
 }
@@ -506,6 +520,7 @@ function extractVitalsDataInPrivateToUserMode(document, result, isPrivate) {
     if (textContent) {
       const bornPrefix = "Born ";
       const diedPrefix = "Died ";
+      const akaText = " aka ";
       if (textContent.startsWith(bornPrefix)) {
         let yearString = extractMidYearFromDecadeString(textContent, bornPrefix);
         if (yearString) {
@@ -517,6 +532,14 @@ function extractVitalsDataInPrivateToUserMode(document, result, isPrivate) {
         if (yearString) {
           result.deathDate = yearString;
           result.deathDateStatus = "about";
+        }
+      } else if (textContent.includes(akaText)) {
+        let akaIndex = textContent.indexOf(akaText);
+        if (akaIndex != -1) {
+          let otherLastNames = textContent.substring(akaIndex + akaText.length).trim();
+          if (otherLastNames) {
+            result.otherLastNames = otherLastNames;
+          }
         }
       }
     }
@@ -861,7 +884,7 @@ function extractDataForEditFamily(document, result) {
   if (nickNames) {
     result.nicknames = nickNames;
   }
-  let otherLastNames = getValueBySelector(document, "#mLastNameOther");
+  let otherLastNames = getValueBySelector(document, "#mLastNameOther").trim();
   if (otherLastNames) {
     result.otherLastNames = otherLastNames;
   }

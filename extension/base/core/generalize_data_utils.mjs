@@ -1743,6 +1743,16 @@ class GeneralizedData {
       if (lastName && !lastNames.includes(lastName)) {
         lastNames.push(lastName);
       }
+      let otherLastNames = person.name.otherLastNames;
+      if (otherLastNames) {
+        let otherLastNamesArray = otherLastNames.split(",");
+        for (let otherName of otherLastNamesArray) {
+          otherName = otherName.trim();
+          if (otherName) {
+            lastNames.push(otherName);
+          }
+        }
+      }
     }
     if (person.spouses && person.personGender == "female") {
       for (let spouse of person.spouses) {
