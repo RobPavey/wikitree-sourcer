@@ -247,10 +247,6 @@
       "matches": ["*://*.irishgenealogy.ie/*"]
     },
     {
-      "resources": ["site/irishg/core/irishg_extract_data.mjs"],
-      "matches": ["*://*.irishgenealogy.ie/*"]
-    },
-    {
       "resources": ["site/np/core/np_extract_data.mjs"],
       "matches": ["*://www.newspapers.com/*"]
     },
