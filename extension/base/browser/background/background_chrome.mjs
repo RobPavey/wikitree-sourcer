@@ -80,13 +80,8 @@ function messageHandler(request, sender, sendResponse) {
 // It does appear to work but
 // Unfortunately it requires the host_permission for every page that I have content scripts for
 
-function installScript(details) {
-  //console.log("WikiTree Sourcer (Chrome): Install or enable detected. Installing content script in all tabs.");
-  //console.log(details);
-
-  if (details.reason != "update") {
-    return;
-  }
+function reloadContentScripts() {
+  //console.log("WikiTree Sourcer (Chrome): reloadContentScripts.");
 
   let manifest = chrome.runtime.getManifest();
 
@@ -125,7 +120,25 @@ function installScript(details) {
   }
 }
 
+function onInstalledHandler(details) {
+  //console.log("WikiTree Sourcer (Chrome): Install detected. Installing content script in all tabs.");
+  //console.log(details);
+
+  if (details.reason != "update") {
+    return;
+  }
+
+  reloadContentScripts();
+}
+
+function onEnabledHandler(extensionInfo) {
+  //console.log("WikiTree Sourcer (Chrome): Enable detected. Installing content script in all tabs.");
+  //console.log(extensionInfo);
+
+  reloadContentScripts();
+}
+
 chrome.runtime.onMessage.addListener(messageHandler);
-chrome.runtime.onInstalled.addListener(installScript);
-chrome.management.onEnabled.addListener(installScript);
+chrome.runtime.onInstalled.addListener(onInstalledHandler);
+chrome.management.onEnabled.addListener(onEnabledHandler);
 setupContextMenu();
