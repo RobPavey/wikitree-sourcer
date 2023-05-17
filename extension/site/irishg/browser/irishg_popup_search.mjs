@@ -39,8 +39,21 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const irishgStartYear = 1837;
-const irishgEndYear = 1992;
+// The years covered by the release of the historic records of Births, Marriages and Deaths are:
+// Births: 1864 to 1922
+// Marriages: 1845* to 1947
+// Deaths: 1871** to 1972
+// * The General Register Office are currently working on updating further records of Deaths dating back to 1864.
+//   These will be included in future updates to the records available on the website.
+
+const irishgCivilStartYear = 1837;
+const irishgCivilEndYear = 1992;
+
+const irishgChurchStartYear = 1520; // earliest observed in 1571
+const irishgChurchEndYear = 1930; // latest observed is 1927
+
+const irishgStartYear = 1520;
+const irishgEndYear = 1930;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -70,23 +83,13 @@ function addIrishgDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   } else {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      irishgStartYear,
-      irishgEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      irishgStartYear,
-      irishgEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
+    let possibleInRange = data.generalizedData.couldPersonHaveLivedInDateRange(
       irishgStartYear,
       irishgEndYear,
       maxLifespan
     );
 
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
+    if (!possibleInRange) {
       //console.log("addIrishgDefaultSearchMenuItem: dates not in range");
       return;
     }
@@ -113,12 +116,14 @@ async function addIrishgSameRecordMenuItem(menu, data) {
 function addIrishgSearchCivilRecordsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      irishgStartYear,
-      irishgEndYear,
+    let possibleInRange = data.generalizedData.couldPersonHaveLivedInDateRange(
+      irishgCivilStartYear,
+      irishgCivilEndYear,
       maxLifespan
     );
-    if (!birthPossibleInRange) {
+
+    if (!possibleInRange) {
+      //console.log("addIrishgDefaultSearchMenuItem: dates not in range");
       return;
     }
   }
@@ -130,12 +135,14 @@ function addIrishgSearchCivilRecordsMenuItem(menu, data, filter) {
 function addIrishgSearchChurchRecordsMenuItem(menu, data, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      irishgStartYear,
-      irishgEndYear,
+    let possibleInRange = data.generalizedData.couldPersonHaveLivedInDateRange(
+      irishgChurchStartYear,
+      irishgChurchEndYear,
       maxLifespan
     );
-    if (!marriagePossibleInRange) {
+
+    if (!possibleInRange) {
+      //console.log("addIrishgDefaultSearchMenuItem: dates not in range");
       return;
     }
   }
