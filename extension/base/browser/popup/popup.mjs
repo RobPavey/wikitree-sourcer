@@ -212,8 +212,6 @@ var initPopupGivenActiveTabRetryCount = 0;
 const initPopupGivenActiveTabRetryOnCompleteDelay = 100;
 const initPopupGivenActiveTabRetryOnCompleteMaxCount = 5;
 
-var activeTabForPopup = activeTab;
-
 function initPopupGivenActiveTab(activeTab) {
   if (detectedSupportedSite) {
     // our work here is done
