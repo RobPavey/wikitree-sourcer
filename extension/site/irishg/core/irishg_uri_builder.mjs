@@ -31,6 +31,53 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 // https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=John&namel=O%27Connor&location=&yyfrom=&yyto=&submit=Search&sort=&pageSize=&century=&decade=&exact=&ddBfrom=&ddMfrom=&ddDfrom=&ddPfrom=&mmBfrom=&mmMfrom=&mmDfrom=&mmPfrom=&yyBfrom=&yyMfrom=&yyDfrom=&yyPfrom=&ddBto=&ddMto=&ddDto=&ddPto=&mmBto=&mmMto=&mmDto=&mmPto=&yyBto=&yyMto=&yyDto=&yyPto=&locationB=&locationM=&locationD=&locationP=&keywordb=&keywordm=&keywordd=&keywordp=&event=&district=
 // https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namel=O%27Connor&namefm=John
 
+// Basic search for Civil Record, births. With Name, place and dates:
+// https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp
+//   ?namefm=Mary&namel=O%27Donnel&location=Donegal&yyfrom=1866&yyto=1868
+//   &type=B&submit=Search
+
+// https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp
+// ?namefm=Mary&namel=O%27Donnel&location=&yyfrom=1867&yyto=1929
+// &type=B&submit=Search
+// &sort=&pageSize=100&century=&decade=&exact=
+// &ddBfrom=&ddMfrom=&ddDfrom=&ddPfrom=
+// &mmBfrom=&mmMfrom=&mmDfrom=&mmPfrom=
+// &yyBfrom=&yyMfrom=&yyDfrom=&yyPfrom=
+// &ddBto=&ddMto=&ddDto=&ddPto=
+// &mmBto=&mmMto=&mmDto=&mmPto=
+// &yyBto=&yyMto=&yyDto=&yyPto=
+// &locationB=&locationM=&locationD=&locationP=
+// &keywordb=&keywordm=&keywordd=&keywordp=&event=&district=
+//
+// Church records, advanced search with all options:
+// https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp
+// ?namefm=John&namel=Smith&exact=true
+// &type=B&ddBfrom=1&mmBfrom=2&yyBfrom=1803&ddBto=4&mmBto=5&yyBto=1806&locationB=Dublin
+// &type=M&ddMfrom=7&mmMfrom=8&yyMfrom=1809&ddMto=10&mmMto=11&yyMto=1812&locationM=Cork
+// &type=D&ddDfrom=13&mmDfrom=1&yyDfrom=1814&ddDto=15&mmDto=2&yyDto=1816&locationD=Waterford
+// &member0=s&namef0=Ruby&namel0=Taylor
+// &keyword=My+key+words
+// &submit=Search
+
+// JOHN ALFRED SMITH
+// Date of Birth	11 November 1880
+// Address	11 ST MARYS P?
+// Father	JOHN SMITH
+// Mother	CATHERINE CARROLL
+// Sponsor 1	JOHN SMITH
+// Sponsor 2	ROSE CARROLL
+// Priest	P O CONNOR
+
+// You can specify multiple other people on Church Records advanced search even though the UI doesn't allow it:
+// https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp
+// ?namefm=John+Alfred&namel=Smith
+// &type=B&ddBfrom=&mmBfrom=10&yyBfrom=1880&ddBto=&mmBto=12&yyBto=1880&locationB=
+// &ddMfrom=&mmMfrom=&yyMfrom=&ddMto=&mmMto=&yyMto=&locationM=
+// &ddDfrom=&mmDfrom=&yyDfrom=&ddDto=&mmDto=&yyDto=&locationD=
+// &member0=p&namef0=John&namel0=Smith
+// &member1=p&namef1=Catherine&namel0=Carroll
+// &keyword=&submit=Search
+
 class IrishgUriBuilder {
   constructor(typeOfSearch) {
     let searchJsp = "search";

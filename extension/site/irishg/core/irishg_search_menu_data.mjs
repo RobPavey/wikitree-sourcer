@@ -1,0 +1,434 @@
+/*
+MIT License
+
+Copyright (c) 2020 Robert M Pavey
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+import { RT } from "../../../base/core/record_type.mjs";
+import { WTS_String } from "../../../base/core/wts_string.mjs";
+
+const categories = [
+  { value: "civil", text: "Civil Records" },
+  { value: "church", text: "Church Records" },
+];
+
+const subcategories = [
+  {
+    value: "civil_lifetime",
+    text: "All records in lifetime",
+    category: "civil",
+  },
+  {
+    value: "civil_events",
+    text: "All records for events in this page",
+    category: "civil",
+    includeMmn: true,
+  },
+  {
+    value: "civil_births",
+    text: "Civil Births",
+    category: "civil",
+    includeMmn: true,
+  },
+  {
+    value: "civil_marriages",
+    text: "Civil Marriages",
+    category: "civil",
+    includeSpouses: true,
+  },
+  {
+    value: "civil_deaths",
+    text: "Civil Deaths",
+    category: "civil",
+    includeMmn: true,
+  },
+
+  {
+    value: "church_baptisms",
+    text: "Churc Baptisms",
+    category: "church",
+    includeParents: true,
+  },
+  {
+    value: "church_marriages",
+    text: "Church Marriages",
+    category: "church",
+    includeSpouses: true,
+  },
+  {
+    value: "church_deaths",
+    text: "Church Burials",
+    category: "church",
+  },
+];
+
+const collections = [];
+
+function isSubCategoryInYearRange(subcategory, yearRange) {
+  let isInYearRange = true;
+  let recordType = subcategory.value;
+  let dates = ScotpRecordType.getDatesCovered(recordType);
+  if (dates) {
+    // check if the date range overlaps the lifespan
+    if (yearRange.endYear < dates.from || (dates.to && yearRange.startYear > dates.to)) {
+      isInYearRange = false;
+    }
+  }
+  return isInYearRange;
+}
+
+function getSubcategoryByValue(value) {
+  for (let subcategory of subcategories) {
+    if (subcategory.value == value) {
+      return subcategory;
+    }
+  }
+  return undefined;
+}
+
+const ScotpData = {
+  includeCategories: function (generalizedData, parameters) {
+    return true;
+  },
+
+  includeSubcategories: function (generalizedData, parameters) {
+    return true;
+  },
+
+  includeCollections: function (generalizedData, parameters) {
+    if (parameters.subcategory == "census") {
+      return true;
+    }
+    return false;
+  },
+
+  includeSpouses: function (generalizedData, parameters) {
+    let selectedSubcategory = undefined;
+    for (let subcategory of subcategories) {
+      if (!subcategory.category || subcategory.category == parameters.category) {
+        if (subcategory.value == parameters.subcategory) {
+          selectedSubcategory = subcategory;
+        }
+      }
+    }
+
+    if (selectedSubcategory && selectedSubcategory.includeSpouses) {
+      return true;
+    }
+    return false;
+  },
+
+  includeParents: function (generalizedData, parameters) {
+    let selectedSubcategory = undefined;
+    for (let subcategory of subcategories) {
+      if (!subcategory.category || subcategory.category == parameters.category) {
+        if (subcategory.value == parameters.subcategory) {
+          selectedSubcategory = subcategory;
+        }
+      }
+    }
+
+    if (selectedSubcategory && selectedSubcategory.includeParents) {
+      return true;
+    }
+    return false;
+  },
+
+  includeMmn: function (generalizedData, parameters) {
+    let selectedSubcategory = undefined;
+    for (let subcategory of subcategories) {
+      if (!subcategory.category || subcategory.category == parameters.category) {
+        if (subcategory.value == parameters.subcategory) {
+          selectedSubcategory = subcategory;
+        }
+      }
+    }
+
+    if (selectedSubcategory && selectedSubcategory.includeMmn) {
+      return true;
+    }
+    return false;
+  },
+
+  includeOtherPerson: function (generalizedData, parameters) {
+    if (parameters.subcategory == "census") {
+      if (generalizedData.householdArray && generalizedData.householdArray.length > 1) {
+        let sourceEventYear = generalizedData.inferEventYear();
+        if (parameters.collection == sourceEventYear) {
+          return true;
+        }
+      }
+    }
+    return false;
+  },
+
+  getCategories: function (generalizedData, parameters, options) {
+    return categories;
+  },
+
+  getSubcategories: function (generalizedData, parameters, options) {
+    let result = [];
+
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
+
+    for (let subcategory of subcategories) {
+      if (!subcategory.category || subcategory.category == parameters.category) {
+        let value = subcategory.value;
+        let text = subcategory.text;
+        let recordType = subcategory.value;
+        let dates = ScotpRecordType.getDatesCovered(recordType);
+        if (dates) {
+          let from = dates.from || "";
+          let to = dates.to || "";
+          text = text + " (" + from + "-" + to + ")";
+
+          // check if the date range overlaps the lifespan
+          if (!isSubCategoryInYearRange(subcategory, lifeDates)) {
+            text = "[" + text + "]";
+          }
+        }
+
+        result.push({ value: value, text: text });
+      }
+    }
+
+    return result;
+  },
+
+  getCollections: function (generalizedData, parameters, options) {
+    return collections;
+  },
+
+  getOtherPersonList: function (generalizedData, parameters, options) {
+    let result = [{ value: "", text: "None" }];
+
+    if (generalizedData.householdArray) {
+      for (let member of generalizedData.householdArray) {
+        if (!member.isSelected) {
+          let name = member.name;
+          let firstName = WTS_String.getFirstWord(name);
+          let text = firstName + " (" + member.age + ", " + member.relationship + ")";
+          result.push({ value: firstName, text: text });
+        }
+      }
+    }
+
+    return result;
+  },
+
+  getWarningMessages: function (generalizedData, parameters, options) {
+    let messages = [];
+    let subcategory = getSubcategoryByValue(parameters.subcategory);
+    if (!subcategory) {
+      return;
+    }
+
+    let recordType = subcategory.value;
+    let eventClass = ScotpRecordType.getEventClass(recordType);
+
+    // check subcategory date range overlaps life range
+    let dates = ScotpRecordType.getDatesCovered(recordType);
+    if (dates) {
+      let maxLifespan = Number(options.search_general_maxLifespan);
+      let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
+
+      // check if the date range overlaps the lifespan
+      if (!isSubCategoryInYearRange(subcategory, lifeDates)) {
+        let subcategoryRangeString = dates.from.toString() + "-";
+        if (dates.to) {
+          subcategoryRangeString += dates.to.toString();
+        }
+
+        let lifeRangeString = lifeDates.startYear.toString() + "-";
+        if (lifeDates.endYear) {
+          lifeRangeString += lifeDates.endYear.toString();
+        }
+
+        let message =
+          "Subcategory range " +
+          subcategoryRangeString +
+          " does not overlap possible life range of " +
+          lifeRangeString +
+          ".";
+        messages.push(message);
+      }
+    }
+
+    if (eventClass == "marriage" && parameters.spouseIndex != -1) {
+      let spouse = generalizedData.spouses[parameters.spouseIndex];
+
+      if (spouse && spouse.marriageDate) {
+        let yearString = spouse.marriageDate.getYearString();
+        let yearNum = parseInt(yearString);
+        if (yearNum && yearNum != NaN) {
+          if (dates) {
+            // check if the date range overlaps the lifespan
+            if (yearNum < dates.from || (dates.to && yearNum > dates.to)) {
+              let rangeString = dates.from.toString() + "-";
+              if (dates.to) {
+                rangeString += dates.to.toString();
+              }
+              let message =
+                "Marriage year " + yearString + " is out of range for collection range of " + rangeString + ".";
+              messages.push(message);
+            }
+          }
+        }
+      }
+    }
+
+    //console.log("messages returned is:");
+    //console.log(messages);
+
+    return messages;
+  },
+
+  setDefaultSearchParameters: function (generalizedData, parameters, options) {
+    function defaultToSubcategory(parameters, subcategoryName, yearString) {
+      if (!yearString) {
+        return false;
+      }
+
+      var yearNum = parseInt(yearString);
+      if (yearNum == NaN) {
+        return false;
+      }
+
+      let subcategory = getSubcategoryByValue(subcategoryName);
+
+      let recordType = subcategory.value;
+      let dates = ScotpRecordType.getDatesCovered(recordType);
+      if (dates) {
+        // check if the date range includes the given year
+        if (yearNum < dates.from || (dates.to && yearNum > dates.to)) {
+          return false;
+        }
+      }
+
+      parameters.category = subcategory.category;
+      parameters.subcategory = subcategoryName;
+      return true;
+    }
+
+    function defaultToSubcategoryList(parameters, subcategoryNameList, yearString) {
+      if (!yearString) {
+        return false;
+      }
+
+      for (let subcategoryName of subcategoryNameList) {
+        if (defaultToSubcategory(parameters, subcategoryName, yearString)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
+
+    parameters.category = "statutory";
+    parameters.subcategory = "stat_births";
+
+    if (generalizedData.recordType == RT.Census) {
+      let censusSubcategory = getSubcategoryByValue("census");
+      if (isSubCategoryInYearRange(censusSubcategory, lifeDates)) {
+        parameters.category = "census";
+        parameters.subcategory = "census";
+
+        let sourceEventYear = generalizedData.inferEventYear();
+        parameters.collection = "all";
+        for (let collection of collections) {
+          if (collection.value == sourceEventYear) {
+            parameters.collection = sourceEventYear;
+          }
+        }
+        return;
+      }
+    }
+
+    // Use a subcategory that corresponds to the source record if it works with date ranges
+    // Only do this for the common bases
+    if (generalizedData.recordType == RT.BirthRegistration || generalizedData.recordType == RT.Birth) {
+      const scList = ["stat_births", "opr_births", "cr_baptisms", "ch3_baptisms"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
+        return;
+      }
+    }
+    if (generalizedData.recordType == RT.MarriageRegistration) {
+      const scList = ["stat_marriages", "opr_marriages", "cr_banns", "ch3_banns"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
+        return;
+      }
+    }
+    if (generalizedData.recordType == RT.DeathRegistration) {
+      const scList = ["stat_deaths", "opr_deaths", "cr_burials", "ch3_burials"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
+        return;
+      }
+    }
+    if (generalizedData.recordType == RT.Baptism || generalizedData.recordType == RT.BirthOrBaptism) {
+      const scList = ["opr_births", "cr_baptisms", "ch3_baptisms", "stat_births"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
+        return;
+      }
+    }
+    if (generalizedData.recordType == RT.Marriage) {
+      const scList = ["opr_marriages", "cr_banns", "ch3_banns", "stat_marriages"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
+        return;
+      }
+    }
+    if (generalizedData.recordType == RT.Burial) {
+      const scList = ["opr_deaths", "cr_burials", "ch3_burials", "stat_deaths"];
+      if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
+        return;
+      }
+    }
+
+    // else determine the default category and subcategory based on collection dates
+    let firstSubcategoryInRange = undefined;
+    for (let subcategory of subcategories) {
+      if (isSubCategoryInYearRange(subcategory, lifeDates)) {
+        firstSubcategoryInRange = subcategory;
+        break;
+      }
+    }
+
+    if (firstSubcategoryInRange) {
+      parameters.category = firstSubcategoryInRange.category;
+      parameters.subcategory = firstSubcategoryInRange.value;
+    }
+  },
+
+  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {
+    let subcategories = this.getSubcategories(generalizedData, parameters, options);
+    if (subcategories && subcategories.length > 0) {
+      parameters.subcategory = subcategories[0].value;
+    }
+  },
+
+  updateParametersOnSubcategoryChange: function (generalizedData, parameters, options) {},
+
+  updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
+};
+
+export { ScotpData };

@@ -71,6 +71,9 @@ async function irishgSearch(generalizedData, typeOfSearch) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
+// There are a lot of different ways the search could be setup. For IrishGenealogy the best way
+// might be like ScotP - with a default menu that is like "Search with Specific Parameters"
+
 function addIrishgDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addIrishgDefaultSearchMenuItem, data is:");
   //console.log(data);
