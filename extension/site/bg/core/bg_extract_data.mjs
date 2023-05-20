@@ -33,7 +33,20 @@ function cleanText(inputText) {
 }
 
 function convertDateString(text) {
-  const monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const monthArray = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   // Does it look like a date - usually yyyy-mm-dd?
   if (/^(\d{4}|-)(?:-?)([0-1]?[0-9]|-?)(?:-?)([0-3]?[0-9]|-)?$/.test(text)) {
     const dateSplit = /^(\d{4}|-)(?:-?)([0-1]?[0-9]|-?)(?:-?)([0-3]?[0-9]|-)?$/.exec(text);
@@ -44,7 +57,7 @@ function convertDateString(text) {
     if (dateSplit[2]) {
       dateString += monthArray[+dateSplit[2] - 1] + " ";
     }
-        if (dateSplit[1] && dateSplit[1] !== "-") {
+    if (dateSplit[1] && dateSplit[1] !== "-") {
       dateString += dateSplit[1];
     }
     return dateString.trim();
@@ -52,7 +65,7 @@ function convertDateString(text) {
   return text;
 }
 
-function setFromNodeWithAttribute(result, dataNode, attributeText, fieldName){
+function setFromNodeWithAttribute(result, dataNode, attributeText, fieldName) {
   const node = dataNode.querySelector(attributeText);
   if (node && node.textContent) {
     result[fieldName] = cleanText(node.textContent);
@@ -61,14 +74,14 @@ function setFromNodeWithAttribute(result, dataNode, attributeText, fieldName){
 
 function setFromJsonWithKey(result, dataJson, itemKey, fieldName) {
   const value = dataJson[itemKey];
-  if (value && value !== "Not Available" ) {
+  if (value && value !== "Not Available") {
     result[fieldName] = value;
   }
 }
 
 function getElementByTextContent(document, element, text) {
   const elements = document.querySelectorAll(element);
-  for (let i = 0; i < elements.length; i+=1) {
+  for (let i = 0; i < elements.length; i += 1) {
     if (elements[i].innerText && elements[i].innerText === text) {
       return elements[i];
     }
@@ -78,9 +91,9 @@ function getElementByTextContent(document, element, text) {
 function appendWithComma(text, appendText) {
   if (appendText && appendText.length > 0) {
     if (text && text.length > 0) {
-      return (text + ", " + appendText);
+      return text + ", " + appendText;
     } else {
-     return appendText;
+      return appendText;
     }
   }
   return text;
@@ -102,7 +115,7 @@ function extractFromJson(document, result, dataScript) {
   // Either the main person on memorial or some inscribed
   let personData = null;
   if (dataJson["@type"] && dataJson["@type"] === "Person") {
-  personData = dataJson;
+    personData = dataJson;
   } else if (dataJson.mainEntity && dataJson.mainEntity["@type"] && dataJson.mainEntity["@type"] === "Person") {
     personData = dataJson.mainEntity;
   } else {
@@ -125,9 +138,9 @@ function extractFromJson(document, result, dataScript) {
   }
 
   if (personData["relatedTo"]) {
-    const relations  = personData["relatedTo"];
+    const relations = personData["relatedTo"];
     result.relations = [];
-    relations.forEach(relation => {
+    relations.forEach((relation) => {
       if (relation["@type"] && relation["@type"] === "Person") {
         let relative = {};
         setFromJsonWithKey(relative, relation, "name", "name");
@@ -143,11 +156,11 @@ function extractFromJson(document, result, dataScript) {
 
 function extractData(document, url) {
   var result = {};
-  
+
   if (url) {
     result.url = url;
   }
-  
+
   result.success = false;
   result.hasImage = false;
 
@@ -156,15 +169,14 @@ function extractData(document, url) {
   // new style record page (Oct 2022)
   const recordPageHeaderNode = document.querySelector("[class^='RecordPage_header__']");
 
-  
   const dataScript = document.querySelector("script[type='application/ld+json']");
   // extract from script tag JSON in head
-  if (dataScript) {    
+  if (dataScript) {
     extractFromJson(document, result, dataScript);
   }
 
   if (vitalInformationNode) {
-    const infoNode = document.querySelector('#VitalInformation');
+    const infoNode = document.querySelector("#VitalInformation");
 
     // Cemetery Pre Oct 2022 pages
     let cemeteryLinkNode = infoNode.querySelector('[data-vars-link-name="VitalInformationCemetery"]');
@@ -173,17 +185,31 @@ function extractData(document, url) {
       if (cemeteryVitalNode) {
         let cemeteryAddress = {};
         setFromNodeWithAttribute(result, cemeteryVitalNode, 'h2[itemprop="name"]', "cemeteryName");
-        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode,  'div[itemprop="streetAddress"]', "addressStreet");
-        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode, 'span[itemprop="addressLocality"]', "addressLocality");
-        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode,  'span[itemprop="addressDistrict"]', "addressDistrict");
+        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode, 'div[itemprop="streetAddress"]', "addressStreet");
+        setFromNodeWithAttribute(
+          cemeteryAddress,
+          cemeteryVitalNode,
+          'span[itemprop="addressLocality"]',
+          "addressLocality"
+        );
+        setFromNodeWithAttribute(
+          cemeteryAddress,
+          cemeteryVitalNode,
+          'span[itemprop="addressDistrict"]',
+          "addressDistrict"
+        );
         setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode, 'span[itemprop="addressRegion"]', "addressRegion");
-        setFromNodeWithAttribute(cemeteryAddress, cemeteryVitalNode, 'div[itemprop="addressCountry"]', "addressCountry");
-        
+        setFromNodeWithAttribute(
+          cemeteryAddress,
+          cemeteryVitalNode,
+          'div[itemprop="addressCountry"]',
+          "addressCountry"
+        );
+
         result.cemeteryFullAddress = buildFullAddress(cemeteryAddress);
       }
     }
 
-    
     // transcriber pre Oct 2022 pages
     const transcriberHeading = infoNode.querySelector("[alt='Transcriber']");
     if (transcriberHeading) {
@@ -196,7 +222,7 @@ function extractData(document, url) {
           result.transcriber += ", " + cleanText(transcriberDateNode.textContent);
         }
       }
-    }  
+    }
 
     // photographer pre Oct 2022 pages
     const photographerHeading = infoNode.querySelector("[alt='Photographer']");
@@ -210,17 +236,17 @@ function extractData(document, url) {
           result.photographer += ", " + cleanText(photographerDateNode.textContent);
         }
       }
-    }  
+    }
 
     // Epitaph pre Oct 2022 pages
     const epitaphHeading = infoNode.querySelector("[alt='Epitaph']");
     if (epitaphHeading) {
       const epitaphNode = epitaphHeading.nextElementSibling;
-      if(epitaphNode) {
+      if (epitaphNode) {
         const epitaphDiv = epitaphNode.querySelector("div");
         if (epitaphDiv && epitaphDiv.innerText) {
           // using innerText as epitaph can contain markup which textContent ignores
-          result.epitaph = cleanText(epitaphDiv.innerText.replace(/\n/g," "));
+          result.epitaph = cleanText(epitaphDiv.innerText.replace(/\n/g, " "));
         }
       }
     }
@@ -232,16 +258,16 @@ function extractData(document, url) {
     }
   } else {
     // post Oct 2022 pages
-    
+
     // Cemetery
     // Logged On
-    
+
     const cemeteryNameNode = document.querySelector("div[class^='Stack_stack']>div>a>h2");
-    if (cemeteryNameNode && cemeteryNameNode.textContent) {      
+    if (cemeteryNameNode && cemeteryNameNode.textContent) {
       result.cemeteryName = cleanText(cemeteryNameNode.textContent);
-      const cemeteryAddressNodes = cemeteryNameNode.parentNode.parentNode.querySelectorAll("div");      
-      let cemeteryAddress = {};      
-      for (let i = 0; i < cemeteryAddressNodes.length; i+=1) {
+      const cemeteryAddressNodes = cemeteryNameNode.parentNode.parentNode.querySelectorAll("div");
+      let cemeteryAddress = {};
+      for (let i = 0; i < cemeteryAddressNodes.length; i += 1) {
         cemeteryAddress = appendWithComma(cemeteryAddress, cleanText(cemeteryAddressNodes[i].textContent));
       }
       result.cemeteryFullAddress = cemeteryAddress;
@@ -250,15 +276,15 @@ function extractData(document, url) {
     const dataTableNode = document.querySelector("table");
     if (dataTableNode) {
       const dataRowNodes = dataTable.querySelectorAll("tr");
-      if(dataRowNodes.length > 0) {
+      if (dataRowNodes.length > 0) {
         const cemeteryRowNode = dataRowNodes[dataRowNodes.length - 1];
         let cemetery = cleanText(cemeteryRowNode.querySelector("td").textContent);
         let indexOfComma = cemetery.indexOf(",");
-        result.cemeteryName = cemetery.slice(0,indexOfComma-1);
-        result.cemeteryFullAddress = cemetery.slice(indexOfComma +2);
+        result.cemeteryName = cemetery.slice(0, indexOfComma - 1);
+        result.cemeteryFullAddress = cemetery.slice(indexOfComma + 2);
       }
     }
-    
+
     // Get transcriber from Oct 2022 pages
     const transcriberCaptionNode = getElementByTextContent(document, "span", "Transcriber");
     if (transcriberCaptionNode) {
@@ -286,15 +312,15 @@ function extractData(document, url) {
         }
       }
     }
-    
+
     // Get epitaph from Oct 2022 pages
     const epitaphHeading = getElementByTextContent(document, "h4", "Epitaph");
     if (epitaphHeading) {
       const epitaphNode = epitaphHeading.nextElementSibling;
-      if(epitaphNode) {
+      if (epitaphNode) {
         if (epitaphNode && epitaphNode.innerText) {
           // using innerText as epitaph can contain markup which textContent ignores
-          result.epitaph = cleanText(epitaphNode.innerText.replace(/\n/g," "));
+          result.epitaph = cleanText(epitaphNode.innerText.replace(/\n/g, " "));
         }
       }
     }
@@ -304,12 +330,12 @@ function extractData(document, url) {
     if (imageLink) {
       result.hasImage = true;
     }
-  } 
-  
+  }
+
   if (result.fullName && result.cemeteryName) {
     result.success = true;
   }
-  
+
   //console.log("Extracted - ");
   //console.log(result);
 

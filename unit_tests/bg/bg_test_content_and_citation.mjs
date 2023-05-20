@@ -31,7 +31,6 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  
   {
     caseName: "agnes_c_loudon_fisher_d_1905",
     url: "https://billiongraves.com/grave/Agnes-C-Loudon-Fisher/39500252",

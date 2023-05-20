@@ -41,11 +41,10 @@ function extractData(document, url) {
   if (!dataTables || dataTables.length < 1) {
     return result;
   }
-  
+
   result.recordData = {};
 
   for (let table of dataTables) {
-
     let dataRows = table.querySelectorAll("tr");
     if (!dataRows || dataRows.length < 1) {
       return result;
@@ -87,12 +86,11 @@ function extractData(document, url) {
                 let spouseValue = valueNodes[1].textContent.trim();
                 if (spouseValue) {
                   spouseValue = spouseValue.replace(/\s+/g, " ");
-                  result.spouseRecordData[label] = spouseValue;   
+                  result.spouseRecordData[label] = spouseValue;
                 }
               }
             }
-          }
-          else {
+          } else {
             // could be an image link
             let linkNode = valueNodes[0].querySelector("a");
             if (linkNode && linkNode.textContent == "Image") {
@@ -104,8 +102,7 @@ function extractData(document, url) {
           }
         }
       }
-    }
-    else {
+    } else {
       let thsOnRow0 = dataRows[0].querySelectorAll("th");
       let tdsOnRow1 = dataRows[1].querySelectorAll("td");
       if (thsOnRow0.length > 1 && thsOnRow0.length == tdsOnRow1.length) {
@@ -126,7 +123,7 @@ function extractData(document, url) {
                 result.refData[label] = value;
               }
             }
-          }  
+          }
         }
       }
     }

@@ -30,8 +30,7 @@ import { buildCitation } from "../core/bg_build_citation.mjs";
 async function setupBgPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage:
-      "It looks like a BillionGraves page but not a Life Information page.\n\n",
+    extractFailedMessage: "It looks like a BillionGraves page but not a Life Information page.\n\n",
     generalizeFailedMessage: "It looks like a BillionGraves page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,

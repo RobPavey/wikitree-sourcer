@@ -28,13 +28,12 @@ import { RT } from "../../../base/core/record_type.mjs";
 // This function generalizes the data extracted web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-
   let data = input.extractedData;
 
   let result = new GeneralizedData();
 
   result.sourceOfData = "bg";
-  
+
   let collectionId = undefined;
 
   if (!data.success) {
@@ -47,7 +46,7 @@ function generalizeData(input) {
   result.recordType = RT.Memorial;
 
   result.setEventDate(data.deathDate);
-  
+
   result.setEventPlace(data.cemeteryFullAddress);
 
   if (result.eventPlace) {
@@ -73,7 +72,6 @@ function generalizeData(input) {
   }
 
   result.lastNameAtDeath = result.inferLastName();
-  
 
   if (data.ageAtDeath) {
     result.ageAtDeath = data.ageAtDeath;
@@ -82,7 +80,6 @@ function generalizeData(input) {
   result.setBirthDate(data.birthDate);
 
   result.setDeathDate(data.deathDate);
-
 
   // should we use a collection to allow search for same record on Ancestry?
 

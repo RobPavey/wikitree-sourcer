@@ -34,7 +34,7 @@ function buildCoreCitation(data, runDate, builder) {
 
   let sourceTitle = "Billion Graves";
 
-  builder.databaseHasImages = data.hasImage ;
+  builder.databaseHasImages = data.hasImage;
 
   builder.sourceTitle = sourceTitle;
 
@@ -54,7 +54,7 @@ function buildCoreCitation(data, runDate, builder) {
   }
 
   if (data.cemeteryName && data.cemeteryFullAddress) {
-    builder.sourceReference +=  data.cemeteryName + ", " + data.cemeteryFullAddress;
+    builder.sourceReference += data.cemeteryName + ", " + data.cemeteryFullAddress;
   }
 
   let dataString = "Memorial page for " + nameString;
@@ -66,37 +66,37 @@ function buildCoreCitation(data, runDate, builder) {
     dataString += " (d " + data.deathDate + ")";
   }
   dataString += "; ";
-  
+
   let transcriberPhotographerAdded = false;
-  if (options.citation_bg_includeTranscriber && data.transcriber) {    
-      dataString +=  "Transcribed by " + data.transcriber;
-      transcriberPhotographerAdded = true;
+  if (options.citation_bg_includeTranscriber && data.transcriber) {
+    dataString += "Transcribed by " + data.transcriber;
+    transcriberPhotographerAdded = true;
   }
   if (options.citation_bg_includePhotographer && data.photographer) {
     if (dataString.length > 0) {
-        dataString += "; "
-    }  
+      dataString += "; ";
+    }
     dataString += "Photographed by " + data.photographer;
     transcriberPhotographerAdded = true;
   }
-  
+
   if (transcriberPhotographerAdded) {
     dataString += ".";
   }
-  
+
   if (options.citation_bg_includeRelatives && data.relations) {
     let relativeString = "<br/>Also on memorial :";
-    data.relations.forEach(relative => {
+    data.relations.forEach((relative) => {
       relativeString += " " + relative.name;
       if (relative.birthDate) {
         relativeString += " b " + relative.birthDate;
       }
-      if(relative.deathDate) {
-        relativeString += " d " + relative.deathDate
+      if (relative.deathDate) {
+        relativeString += " d " + relative.deathDate;
       }
-      (relativeString += ";")
+      relativeString += ";";
     });
-    relativeString = relativeString.replace(/;$/,". ");
+    relativeString = relativeString.replace(/;$/, ". ");
     dataString += relativeString;
   }
 
