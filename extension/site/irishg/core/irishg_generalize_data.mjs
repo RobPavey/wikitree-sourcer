@@ -279,8 +279,17 @@ function generalizeData(input) {
     }
   } else if (result.recordType == RT.Baptism) {
     result.setFullName(cleanFullName(data.recordData["Name"]));
-    result.setBirthDate(cleanDate(data.recordData["Date of Birth"]));
-    result.setEventDate(extractDateFromEventString(data.eventText));
+
+    // sometimes the birth date is just the baptism date
+    let birthDate = cleanDate(data.recordData["Date of Birth"]);
+    let eventDate = extractDateFromEventString(data.eventText);
+    result.setEventDate(eventDate);
+    if (birthDate && birthDate != eventDate) {
+      const suffix = "(BASED ON OTHER DATE INFORMATION)";
+      if (!data.recordData["Date of Birth"].endsWith(suffix)) {
+        result.setBirthDate(birthDate);
+      }
+    }
     collectionId = "baptisms";
   } else if (result.recordType == RT.Marriage) {
     result.setEventDate(extractDateFromEventString(data.eventText));
