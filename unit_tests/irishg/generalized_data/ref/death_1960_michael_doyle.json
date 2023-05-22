@@ -3,8 +3,10 @@
   "sourceType": "record",
   "recordType": "DeathRegistration",
   "eventPlace": {
-    "placeString": "Rathdrum"
+    "placeString": "Rathdrum",
+    "country": "Ireland"
   },
+  "registrationDistrict": "Rathdrum",
   "eventDate": {
     "dateString": "1960"
   },

@@ -773,6 +773,12 @@ class NarrativeBuilder {
       isDateTheRegistrationDate = true;
     }
 
+    let isPlaceTheRegistrationPlace = false;
+    let isRegCountry = this.eventGd.isRecordInCountry("United Kingdom") || this.eventGd.isRecordInCountry("Ireland");
+    if (registrationDistrict && (isRegCountry || !eventPlace)) {
+      isPlaceTheRegistrationPlace = true;
+    }
+
     if (!isDateTheRegistrationDate) {
       // sometimes there is no event date but there is a marriage date
       if (!dateObj) {
@@ -911,7 +917,7 @@ class NarrativeBuilder {
       }
     }
 
-    if (isDateTheRegistrationDate && registrationDistrict) {
+    if (isPlaceTheRegistrationPlace && registrationDistrict) {
       let districtFormat = this.getSubcatOption("regDistrictFormat", "Reg");
 
       if (districtFormat == "theDistrict") {

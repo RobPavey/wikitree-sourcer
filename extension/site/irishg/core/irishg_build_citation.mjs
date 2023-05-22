@@ -115,6 +115,14 @@ function buildCoreCitation(data, gd, builder) {
   let recordLink = "[" + irishgUrl + " IrishGenealogy.ie Record]";
   builder.recordLinkOrTemplate = recordLink;
 
+  if (data.imageHref) {
+    let link = data.imageHref;
+    if (!link.startsWith("http")) {
+      link = "https://civilrecords.irishgenealogy.ie" + link;
+    }
+    builder.imageLink = "[" + link + " IrishGenealogy.ie Image]";
+  }
+
   if (options.citation_irishg_dataStringFormat == "dataString") {
     let input = {
       generalizedData: gd,

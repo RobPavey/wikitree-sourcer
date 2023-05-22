@@ -505,6 +505,35 @@ function getUkRegistrationString(gd, options, type) {
   return dataString;
 }
 
+function addRegistrationPlace(gd, options) {
+  let placeString = "";
+
+  let place = gd.inferEventPlace();
+  let registrationDistrict = gd.registrationDistrict;
+
+  if (gd.isRecordInCountry("Ireland")) {
+    if (!place) {
+      place = registrationDistrict;
+    }
+    if (place) {
+      let eventYearNum = WTS_Date.getYearNumFromYearString(gd.inferEventYear());
+      if (eventYearNum && eventYearNum >= 1864) {
+        placeString = " in the " + registrationDistrict + " SR district";
+      } else {
+        placeString = " in the " + registrationDistrict + " registration area";
+      }
+    }
+  } else {
+    if (place) {
+      placeString = " " + getPlaceWithPreposition(place);
+    } else if (registrationDistrict) {
+      placeString = " in the " + registrationDistrict + " district";
+    }
+  }
+
+  return placeString;
+}
+
 function getBirthRegistrationString(gd, options) {
   if (gd.isRecordInCountry("United Kingdom")) {
     return getUkRegistrationString(gd, options, "birth");
@@ -532,10 +561,7 @@ function getBirthRegistrationString(gd, options) {
       dataString += " " + getDateWithPreposition(date);
     }
 
-    let place = gd.inferEventPlace();
-    if (place) {
-      dataString += " in " + place;
-    }
+    dataString += addRegistrationPlace(gd, options);
   } else {
     dataString = getFullName(gd);
     dataString += " birth";
@@ -545,10 +571,7 @@ function getBirthRegistrationString(gd, options) {
       dataString += " " + birthDate;
     }
 
-    let place = gd.inferEventPlace();
-    if (place) {
-      dataString += " in " + place;
-    }
+    dataString += addRegistrationPlace(gd, options);
 
     if (gd.parents) {
       let fatherName = "";
@@ -620,14 +643,7 @@ function getDeathRegistrationString(gd, options) {
     dataString += " (age " + age + ")";
   }
 
-  let place = gd.inferEventPlace();
-  let registrationDistrict = gd.registrationDistrict;
-
-  if (place) {
-    dataString += " in " + place;
-  } else if (registrationDistrict) {
-    dataString += " in the " + registrationDistrict + " district";
-  }
+  dataString += addRegistrationPlace(gd, options);
 
   return dataString;
 }
@@ -673,10 +689,7 @@ function getMarriageRegistrationString(gd, options) {
     dataString += " " + getDateWithPreposition(date);
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += addRegistrationPlace(gd, options);
 
   return dataString;
 }

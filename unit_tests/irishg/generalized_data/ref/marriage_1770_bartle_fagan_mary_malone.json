@@ -3,7 +3,8 @@
   "sourceType": "record",
   "recordType": "Marriage",
   "eventPlace": {
-    "placeString": "St. Michan, Dublin (RC)"
+    "placeString": "St. Michan, Dublin (RC)",
+    "country": "Ireland"
   },
   "eventDate": {
     "dateString": "June 1770"

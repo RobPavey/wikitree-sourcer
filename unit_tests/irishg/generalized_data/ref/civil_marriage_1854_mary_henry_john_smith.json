@@ -3,8 +3,10 @@
   "sourceType": "record",
   "recordType": "MarriageRegistration",
   "eventPlace": {
-    "placeString": "Dublin South"
+    "placeString": "Dublin South",
+    "country": "Ireland"
   },
+  "registrationDistrict": "Dublin South",
   "eventDate": {
     "dateString": "16 September 1854"
   },

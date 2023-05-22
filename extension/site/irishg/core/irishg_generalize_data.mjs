@@ -118,6 +118,19 @@ function buildEventPlace(data, result) {
   return eventPlace;
 }
 
+function setRegistrationDistrict(data, result) {
+  if (
+    result.recordType == RT.BirthRegistration ||
+    result.recordType == RT.MarriageRegistration ||
+    result.recordType == RT.DeathRegistration
+  ) {
+    let districtArea = data.recordData["SR District/Reg Area"];
+    if (districtArea) {
+      result.registrationDistrict = districtArea;
+    }
+  }
+}
+
 function isName2Primary(data, name1, name2) {
   let url = data.url;
   const searchString = "search.jsp%3F";
@@ -216,6 +229,12 @@ function generalizeData(input) {
   }
 
   result.setEventPlace(buildEventPlace(data, result));
+  setRegistrationDistrict(data, result);
+  // set country
+  if (!result.eventPlace) {
+    result.eventPlace = new WtsPlace();
+  }
+  result.eventPlace.country = "Ireland";
 
   if (result.recordType == RT.BirthRegistration) {
     result.setEventDate(data.recordData["Date of Birth"]);

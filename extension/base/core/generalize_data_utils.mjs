@@ -2376,6 +2376,15 @@ class GeneralizedData {
       placeNames.push(eventPlace);
     }
 
+    if (this.eventPlace) {
+      let country = this.eventPlace.country;
+      if (country) {
+        if (!placeNames.includes(country)) {
+          placeNames.push(country);
+        }
+      }
+    }
+
     // Collection
     if (this.collectionData) {
       let collection = RC.findCollection(this.sourceOfData, this.collectionData.id);

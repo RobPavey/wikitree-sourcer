@@ -3,7 +3,8 @@
   "sourceType": "record",
   "recordType": "Burial",
   "eventPlace": {
-    "placeString": "St. James, Dublin (COI)"
+    "placeString": "St. James, Dublin (COI)",
+    "country": "Ireland"
   },
   "name": {
     "name": "Siobhan Martin"

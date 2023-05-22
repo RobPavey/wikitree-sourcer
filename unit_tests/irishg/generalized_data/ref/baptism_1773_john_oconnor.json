@@ -3,7 +3,8 @@
   "sourceType": "record",
   "recordType": "Baptism",
   "eventPlace": {
-    "placeString": "Tralee, Kerry (RC)"
+    "placeString": "Tralee, Kerry (RC)",
+    "country": "Ireland"
   },
   "name": {
     "name": "John O'Connor"

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Civil Records; General Register Office of Ireland\"<br/>\nGroup Registration ID: 11946689; SR District/Reg Area: Belfast<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/1c3e5511946689 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nMark Donnelly birth 1898 in Belfast.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Civil Records; General Register Office of Ireland\"<br/>\nGroup Registration ID: 11946689; SR District/Reg Area: Belfast<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/images/birth_returns/births_1898/02065/1789159.pdf IrishGenealogy.ie Image] - [https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/1c3e5511946689 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nMark Donnelly birth 1898 in the Belfast SR district.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Mark's birth was registered in 1898 in Belfast.<ref>\n'''Birth Registration''':\n\"Civil Records; General Register Office of Ireland\"<br/>\nGroup Registration ID: 11946689; SR District/Reg Area: Belfast<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/1c3e5511946689 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nMark Donnelly birth 1898 in Belfast.\n</ref>",
+    "citation": "Mark's birth was registered in 1898 in the Belfast district.<ref>\n'''Birth Registration''':\n\"Civil Records; General Register Office of Ireland\"<br/>\nGroup Registration ID: 11946689; SR District/Reg Area: Belfast<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/images/birth_returns/births_1898/02065/1789159.pdf IrishGenealogy.ie Image] - [https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/1c3e5511946689 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nMark Donnelly birth 1898 in the Belfast SR district.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth Registration''': \"Civil Records; General Register Office of Ireland\"<br/>Group Registration ID: 11946689; SR District/Reg Area: Belfast<br/>[https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/1c3e5511946689 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Mark Donnelly birth 1898 in Belfast.",
+    "citation": "* '''Birth Registration''': \"Civil Records; General Register Office of Ireland\"<br/>Group Registration ID: 11946689; SR District/Reg Area: Belfast<br/>[https://civilrecords.irishgenealogy.ie/churchrecords/images/birth_returns/births_1898/02065/1789159.pdf IrishGenealogy.ie Image] - [https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/1c3e5511946689 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Mark Donnelly birth 1898 in the Belfast SR district.",
     "type": "source"
   }
 }

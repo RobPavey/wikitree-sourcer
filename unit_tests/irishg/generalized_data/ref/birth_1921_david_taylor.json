@@ -3,8 +3,10 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "eventPlace": {
-    "placeString": "Armagh"
+    "placeString": "Armagh",
+    "country": "Ireland"
   },
+  "registrationDistrict": "Armagh",
   "eventDate": {
     "dateString": "30 May 1921"
   },
