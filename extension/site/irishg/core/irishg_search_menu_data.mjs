@@ -118,6 +118,10 @@ const collections = [];
 function isSubCategoryInYearRange(subcategory, yearRange) {
   let isInYearRange = true;
   // check if the date range overlaps the lifespan
+  console.log("isSubCategoryInYearRange:");
+  console.log(subcategory);
+  console.log(yearRange);
+
   if (yearRange.endYear < subcategory.startYear || yearRange.startYear > subcategory.endYear) {
     isInYearRange = false;
   }
@@ -266,12 +270,19 @@ const IrishgData = {
       return;
     }
 
+    console.log("getWarningMessages");
+
     // check subcategory date range overlaps life range
     let maxLifespan = Number(options.search_general_maxLifespan);
     let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
 
+    console.log(maxLifespan);
+    console.log(lifeDates);
+
     // check if the date range overlaps the lifespan
     if (!isSubCategoryInYearRange(subcategory, lifeDates)) {
+      console.log("isSubCategoryInYearRange returned false");
+
       let subcategoryRangeString = subcategory.startYear.toString() + "-";
       if (subcategory.endYear) {
         subcategoryRangeString += subcategory.endYear.toString();
@@ -312,6 +323,12 @@ const IrishgData = {
       }
     }
 
+    if (subcategory.includeMmn && parameters.mmn) {
+      let message =
+        "Many records do not have the mother's maiden name transcribed. Including in search will exclude these records.";
+      messages.push(message);
+    }
+
     //console.log("messages returned is:");
     //console.log(messages);
 
@@ -320,11 +337,15 @@ const IrishgData = {
 
   setDefaultSearchParameters: function (generalizedData, parameters, options) {
     function defaultToSubcategory(parameters, subcategoryName, yearString) {
+      console.log("defaultToSubcategory: subcategoryName is: " + subcategoryName + ", yearString is: " + yearString);
+      console.log(parameters);
+
       if (!yearString) {
         return false;
       }
 
       var yearNum = parseInt(yearString);
+      console.log("defaultToSubcategory: yearNum is: " + yearNum);
       if (yearNum == NaN) {
         return false;
       }
@@ -332,9 +353,12 @@ const IrishgData = {
       let subcategory = getSubcategoryByValue(subcategoryName);
 
       // check if the date range includes the given year
-      if (yearNum < subcategory.startYear || subcategory.endYear) {
+      if (yearNum < subcategory.startYear || yearNum > subcategory.endYear) {
+        console.log("defaultToSubcategory: not in range (" + subcategory.startYear + "-" + subcategory.endYear + ")");
         return false;
       }
+
+      console.log("defaultToSubcategory: setting subcategory");
 
       parameters.category = subcategory.category;
       parameters.subcategory = subcategoryName;
@@ -342,6 +366,9 @@ const IrishgData = {
     }
 
     function defaultToSubcategoryList(parameters, subcategoryNameList, yearString) {
+      console.log("defaultToSubcategory: yearString is: " + yearString);
+      console.log(parameters);
+
       if (!yearString) {
         return false;
       }
@@ -357,60 +384,46 @@ const IrishgData = {
     let maxLifespan = Number(options.search_general_maxLifespan);
     let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
 
-    parameters.category = "statutory";
-    parameters.subcategory = "stat_births";
+    console.log("setDefaultSearchParameters:");
+    console.log(parameters);
 
-    if (generalizedData.recordType == RT.Census) {
-      let censusSubcategory = getSubcategoryByValue("census");
-      if (isSubCategoryInYearRange(censusSubcategory, lifeDates)) {
-        parameters.category = "census";
-        parameters.subcategory = "census";
-
-        let sourceEventYear = generalizedData.inferEventYear();
-        parameters.collection = "all";
-        for (let collection of collections) {
-          if (collection.value == sourceEventYear) {
-            parameters.collection = sourceEventYear;
-          }
-        }
-        return;
-      }
-    }
+    parameters.category = "civil";
+    parameters.subcategory = "civil_lifetime";
 
     // Use a subcategory that corresponds to the source record if it works with date ranges
     // Only do this for the common bases
     if (generalizedData.recordType == RT.BirthRegistration || generalizedData.recordType == RT.Birth) {
-      const scList = ["stat_births", "opr_births", "cr_baptisms", "ch3_baptisms"];
+      const scList = ["civil_births", "church_baptisms"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.MarriageRegistration) {
-      const scList = ["stat_marriages", "opr_marriages", "cr_banns", "ch3_banns"];
+      const scList = ["civil_marriages", "church_marriages"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.DeathRegistration) {
-      const scList = ["stat_deaths", "opr_deaths", "cr_burials", "ch3_burials"];
+      const scList = ["civil_deaths", "church_burials"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Baptism || generalizedData.recordType == RT.BirthOrBaptism) {
-      const scList = ["opr_births", "cr_baptisms", "ch3_baptisms", "stat_births"];
+      const scList = ["church_baptisms", "civil_births"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferBirthYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Marriage) {
-      const scList = ["opr_marriages", "cr_banns", "ch3_banns", "stat_marriages"];
+      const scList = ["church_marriages", "civil_marriages"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferEventYear())) {
         return;
       }
     }
     if (generalizedData.recordType == RT.Burial) {
-      const scList = ["opr_deaths", "cr_burials", "ch3_burials", "stat_deaths"];
+      const scList = ["church_burials", "civil_deaths"];
       if (defaultToSubcategoryList(parameters, scList, generalizedData.inferDeathYear())) {
         return;
       }
@@ -429,6 +442,9 @@ const IrishgData = {
       parameters.category = firstSubcategoryInRange.category;
       parameters.subcategory = firstSubcategoryInRange.value;
     }
+
+    // default this to off because a lot are untranscribed
+    parameters.mmn = false;
   },
 
   updateParametersOnCategoryChange: function (generalizedData, parameters, options) {

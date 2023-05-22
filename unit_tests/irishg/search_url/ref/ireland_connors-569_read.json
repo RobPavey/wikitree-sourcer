@@ -1,38 +1,47 @@
 {
   "std": {
-    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&yyfrom=1864&yyto=1941&submit=Search"
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&yyfrom=1869&yyto=1936&submit=Search"
   },
   "civil_events": {
-    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1864&yyBto=1874&type=D&yyDfrom=1931&yyDto=1941&type=M&yyMfrom=1878&yyMto=1941&submit=Search"
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1869&yyBto=1869&type=D&yyDfrom=1936&yyDto=1936&type=M&yyMfrom=1883&yyMto=1936&submit=Search"
+  },
+  "civil_events_spouse": {
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1869&yyBto=1869&type=D&yyDfrom=1936&yyDto=1936&type=M&yyMfrom=1891&yyMto=1891&submit=Search"
   },
   "civil_births": {
-    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1864&yyBto=1874&submit=Search"
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1869&yyBto=1870&submit=Search"
   },
   "civil_births_cln_inclMmn": {
-    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Long&type=B&yyBfrom=1864&yyBto=1874&keywordb=Power&submit=Search"
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Long&type=B&yyBfrom=1869&yyBto=1870&keywordb=Power&submit=Search"
   },
   "civil_births_aka1": {
-    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=O'Connor&type=B&yyBfrom=1864&yyBto=1874&submit=Search"
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=O'Connor&type=B&yyBfrom=1869&yyBto=1870&submit=Search"
   },
   "civil_births_aka2": {
-    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Kearney&type=B&yyBfrom=1864&yyBto=1874&submit=Search"
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Kearney&type=B&yyBfrom=1869&yyBto=1870&submit=Search"
   },
   "civil_deaths": {
-    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&type=D&yyDfrom=1931&yyDto=1941&submit=Search"
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&type=D&yyDfrom=1936&yyDto=1937&submit=Search"
   },
   "civil_deaths_cln": {
-    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Long&type=D&yyDfrom=1931&yyDto=1941&submit=Search"
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Long&type=D&yyDfrom=1936&yyDto=1937&submit=Search"
   },
   "civil_deaths_cln_age": {
-    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Long&type=D&yyDfrom=1931&yyDto=1941&keywordd=66&submit=Search"
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Long&type=D&yyDfrom=1936&yyDto=1937&keywordd=66&submit=Search"
+  },
+  "church_lifetime": {
+    "url": "https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=Margaret&namel=Connors&yyfrom=1869&yyto=1937&submit=Search"
   },
   "church_events": {
-    "url": "https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1864&yyBto=1874&type=D&yyDfrom=1931&yyDto=1941&type=M&yyMfrom=1878&yyMto=1941&submit=Search"
+    "url": "https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1869&yyBto=1869&type=D&yyDfrom=1936&yyDto=1936&type=M&yyMfrom=1883&yyMto=1936&submit=Search"
+  },
+  "church_events_spouse": {
+    "url": "https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1869&yyBto=1869&type=D&yyDfrom=1936&yyDto=1936&type=M&yyMfrom=1891&yyMto=1891&member0=s&namef0=James&namel0=Kearney&submit=Search"
   },
   "church_baptisms": {
-    "url": "https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1864&yyBto=1874&submit=Search"
+    "url": "https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1869&yyBto=1869&submit=Search"
   },
   "church_baptisms_parents": {
-    "url": "https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1864&yyBto=1874&member0=p&namef0=James&namel0=Connors&member1=p&namef1=Catherine&namel1=Power&submit=Search"
+    "url": "https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1869&yyBto=1869&member0=p&namef0=James&namel0=Connors&member1=p&namef1=Catherine&namel1=Power&submit=Search"
   }
 }

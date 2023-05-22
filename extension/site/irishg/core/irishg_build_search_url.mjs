@@ -24,6 +24,8 @@ SOFTWARE.
 
 import { IrishgUriBuilder } from "./irishg_uri_builder.mjs";
 import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
 
 function addNumToYearString(yearString, num) {
   let yearNum = WTS_Date.getYearNumFromYearString(yearString);
@@ -66,30 +68,173 @@ function addAppropriateGivenNames(data, builder) {
   builder.addGivenNames(givenNames);
 }
 
-function getExactnessRange(type, options) {
+function getAutoYearsToAddOrSubtract(isAdd, qualifier, type, dateInput) {
+  // this is complicated because it depends on the source and the parameters
+  // So it could be an NxN issue.
+  let yearAdjustment = 0; // default if not special cases
+
+  let recordType = RT.Unclassified;
+  let sourceType = dateInput.data.sourceType;
+  if (sourceType == "record") {
+    recordType = dateInput.data.recordType;
+  }
+
+  let subcategory = dateInput.parameters.subcategory;
+  if (subcategory == "civil_events") {
+    if (type == "birth") {
+      subcategory = "civil_births";
+    } else if (type == "marriage") {
+      subcategory = "civil_marriages";
+    } else if (type == "death") {
+      subcategory = "civil_deaths";
+    }
+  } else if (subcategory == "church_events") {
+    if (type == "birth") {
+      subcategory = "church_baptisms";
+    } else if (type == "marriage") {
+      subcategory = "church_marriages";
+    } else if (type == "death") {
+      subcategory = "church_deaths";
+    }
+  }
+
+  switch (dateInput.parameters.subcategory) {
+    case "civil_births": {
+      // can be registered up to a year after actual birth
+      if (recordType == RT.BirthRegistration) {
+        yearAdjustment = 0;
+      } else {
+        if (isAdd) {
+          yearAdjustment = 1;
+        }
+      }
+      break;
+    }
+    case "civil_deaths": {
+      // can be registered up to a year after actual death
+      if (recordType == RT.DeathRegistration) {
+        yearAdjustment = 0;
+      } else {
+        if (isAdd) {
+          yearAdjustment = 1;
+        }
+      }
+      break;
+    }
+    case "civil_marriages": {
+      if (recordType == RT.MarriageRegistration) {
+        yearAdjustment = 0;
+      } else {
+        if (isAdd) {
+          yearAdjustment = 1;
+        }
+      }
+      break;
+    }
+
+    case "church_lifetime": {
+      // burial can be after death
+      if (isAdd) {
+        yearAdjustment = 1;
+      }
+      break;
+    }
+
+    case "church_baptism": {
+      if (recordType == RT.Baptism) {
+        yearAdjustment = 0;
+      } else if (isAdd) {
+        yearAdjustment = 2; // baptism can be a few years after birth
+      }
+      break;
+    }
+
+    case "church_burial": {
+      if (recordType == RT.Burial) {
+        yearAdjustment = 0;
+      } else if (isAdd) {
+        yearAdjustment = 1; // burial can be after death
+      }
+      break;
+    }
+  }
+
+  switch (qualifier) {
+    case qualifier.NONE:
+      break;
+    case qualifier.EXACT:
+      break;
+    case qualifier.ABOUT:
+      yearAdjustment += isAdd ? 5 : -5;
+      break;
+    case qualifier.BEFORE:
+      yearAdjustment += isAdd ? 0 : -5;
+      break;
+    case qualifier.AFTER:
+      yearAdjustment += isAdd ? 5 : 0;
+      break;
+  }
+
+  return yearAdjustment;
+}
+
+function getYearsToAddOrSubtract(isAdd, qualifier, type, dateInput) {
   // type is birth, death or marriage
   let optionName = "search_irishg_" + type + "YearExactness";
 
-  let exactness = options[optionName];
+  let exactness = dateInput.options[optionName];
 
-  let range = 0;
+  let yearAdjustment = 0;
   if (exactness == "auto") {
-    range = 5; // room for improvement here
+    yearAdjustment = getAutoYearsToAddOrSubtract(isAdd, qualifier, type, dateInput);
   } else {
-    range = Number(exactness);
+    yearAdjustment = Number(exactness);
   }
 
-  return range;
+  return yearAdjustment;
 }
 
-function adjustStartYear(yearString, type, options) {
-  const range = getExactnessRange(type, options);
-  return subtractNumFromYearString(yearString, range);
+function adjustStartYear(yearString, qualifier, type, dateInput) {
+  const yearsToSubtract = getYearsToAddOrSubtract(false, qualifier, type, dateInput);
+  return subtractNumFromYearString(yearString, yearsToSubtract);
 }
 
-function adjustEndYear(yearString, type, options) {
-  const range = getExactnessRange(type, options);
-  return addNumToYearString(yearString, range);
+function adjustEndYear(yearString, qualifier, type, dateInput) {
+  const yearsToAdd = getYearsToAddOrSubtract(true, qualifier, type, dateInput);
+  return addNumToYearString(yearString, yearsToAdd);
+}
+
+function setLifetimeStartAndEndDates(builder, dateInput) {
+  const birthDateObj = dateInput.data.inferBirthDateObj();
+  if (birthDateObj) {
+    let startYear = adjustStartYear(birthDateObj.getYearString(), birthDateObj.qualifier, "birth", dateInput);
+    builder.addStartYear(startYear);
+  }
+  const deathDateObj = dateInput.data.inferDeathDateObj();
+  if (deathDateObj) {
+    let endYear = adjustEndYear(deathDateObj.getYearString(), deathDateObj.qualifier, "death", dateInput);
+    builder.addEndYear(endYear);
+  }
+}
+
+function setBirthStartAndEndDates(builder, type, dateInput) {
+  const birthDateObj = dateInput.data.inferBirthDateObj();
+  if (birthDateObj) {
+    let startYear = adjustStartYear(birthDateObj.getYearString(), birthDateObj.qualifier, "birth", dateInput);
+    builder.addBirthStartYear(startYear);
+    let endYear = adjustEndYear(birthDateObj.getYearString(), birthDateObj.qualifier, "birth", dateInput);
+    builder.addBirthEndYear(endYear);
+  }
+}
+
+function setDeathStartAndEndDates(builder, type, dateInput) {
+  const deathDateObj = dateInput.data.inferDeathDateObj();
+  if (deathDateObj) {
+    let startYear = adjustStartYear(deathDateObj.getYearString(), deathDateObj.qualifier, "death", dateInput);
+    builder.addDeathStartYear(startYear);
+    let endYear = adjustEndYear(deathDateObj.getYearString(), deathDateObj.qualifier, "death", dateInput);
+    builder.addDeathEndYear(endYear);
+  }
 }
 
 function buildSearchUrl(buildUrlInput) {
@@ -99,6 +244,8 @@ function buildSearchUrl(buildUrlInput) {
   const parameters = buildUrlInput.searchParameters;
   const options = buildUrlInput.options;
 
+  const dateInput = { data: data, parameters: parameters, options: options };
+
   let urlStart = parameters.category + "records";
   var builder = new IrishgUriBuilder(urlStart);
 
@@ -107,31 +254,24 @@ function buildSearchUrl(buildUrlInput) {
   addAppropriateSurname(data, parameters, builder);
 
   if (parameters.subcategory == "civil_lifetime" || parameters.subcategory == "church_lifetime") {
-    let startYear = adjustStartYear(data.inferBirthYear(), "birth", options);
-    let endYear = adjustEndYear(data.inferDeathYear(), "death", options);
-    builder.addStartYear(startYear);
-    builder.addEndYear(endYear);
+    setLifetimeStartAndEndDates(builder, dateInput);
   } else if (parameters.subcategory == "civil_events" || parameters.subcategory == "church_events") {
     let birthYear = data.inferBirthYear();
     if (birthYear) {
       builder.addType("B");
-      let startYear = adjustStartYear(birthYear, "birth", options);
-      let endYear = adjustEndYear(birthYear, "birth", options);
-      builder.addBirthStartYear(startYear);
-      builder.addBirthEndYear(endYear);
+      setBirthStartAndEndDates(builder, "birth", dateInput);
     }
 
     let deathYear = data.inferDeathYear();
     if (deathYear) {
       builder.addType("D");
-      let startYear = adjustStartYear(deathYear, "death", options);
-      let endYear = adjustEndYear(deathYear, "death", options);
-      builder.addDeathStartYear(startYear);
-      builder.addDeathEndYear(endYear);
+      setDeathStartAndEndDates(builder, "death", dateInput);
     }
 
     let marriageStartYear = "";
     let marriageEndYear = "";
+    let marriageStartQualifier = dateQualifiers.NONE;
+    let marriageEndQualifier = dateQualifiers.NONE;
     let spouse = undefined;
     if (data.spouses && data.spouses.length > 0) {
       // there are marriages in generalizedData
@@ -168,8 +308,8 @@ function buildSearchUrl(buildUrlInput) {
 
     if (marriageStartYear || marriageEndYear) {
       builder.addType("M");
-      let startYear = adjustStartYear(marriageStartYear, "marriage", options);
-      let endYear = adjustEndYear(marriageEndYear, "marriage", options);
+      let startYear = adjustStartYear(marriageStartYear, marriageStartQualifier, "marriage", dateInput);
+      let endYear = adjustEndYear(marriageEndYear, marriageEndQualifier, "marriage", dateInput);
       builder.addMarriageStartYear(startYear);
       builder.addMarriageEndYear(endYear);
     }
@@ -180,17 +320,14 @@ function buildSearchUrl(buildUrlInput) {
         let spouseLastNames = data.inferPersonLastNames(spouse);
         builder.addSpouseName(spouseForenames, spouseLastNames);
       } else {
-        let spouseNames = spouse.name.inferFullName();
-        builder.addSpouseKeywords(spouseNames);
+        // don't add spouse keywords as this will cause all birth and death hits to be ignored
+        //let spouseNames = spouse.name.inferFullName();
+        //builder.addSpouseKeywords(spouseNames);
       }
     }
   } else if (parameters.subcategory == "civil_births" || parameters.subcategory == "church_baptisms") {
-    let birthYear = data.inferBirthYear();
     builder.addType("B");
-    let startYear = adjustStartYear(birthYear, "birth", options);
-    let endYear = adjustEndYear(birthYear, "birth", options);
-    builder.addBirthStartYear(startYear);
-    builder.addBirthEndYear(endYear);
+    setBirthStartAndEndDates(builder, "birth", dateInput);
 
     if (parameters.subcategory == "civil_births") {
       let mmn = data.mothersMaidenName;
@@ -215,8 +352,9 @@ function buildSearchUrl(buildUrlInput) {
       if (spouse) {
         if (spouse.marriageDate) {
           let marriageYear = spouse.marriageDate ? spouse.marriageDate.getYearString() : "";
-          let startYear = adjustStartYear(marriageYear, "marriage", options);
-          let endYear = adjustEndYear(marriageYear, "marriage", options);
+          let marriageQualifier = spouse.marriageDate ? spouse.marriageDate.qualifier : "";
+          let startYear = adjustStartYear(marriageYear, marriageQualifier, "marriage", dateInput);
+          let endYear = adjustEndYear(marriageYear, marriageQualifier, "marriage", dateInput);
 
           builder.addMarriageStartYear(startYear);
           builder.addMarriageEndYear(endYear);
@@ -237,19 +375,15 @@ function buildSearchUrl(buildUrlInput) {
     }
 
     if (!addedDateRange) {
-      let startYear = adjustStartYear(data.inferBirthYear(), "birth", options);
-      let endYear = adjustEndYear(data.inferDeathYear(), "death", options);
+      let startYear = adjustStartYear(data.inferBirthYear(), data.inferBirthDateQualifier(), "birth", dateInput);
+      let endYear = adjustEndYear(data.inferDeathYear(), data.inferDeathDateQualifier(), "death", dateInput);
       let startYearNum = WTS_Date.getYearNumFromYearString(startYear);
       builder.addStartYear(startYearNum + 14);
       builder.addEndYear(endYear);
     }
   } else if (parameters.subcategory == "civil_deaths" || parameters.subcategory == "church_burials") {
-    let deathYear = data.inferDeathYear();
     builder.addType("D");
-    let startYear = adjustStartYear(deathYear, "death", options);
-    let endYear = adjustEndYear(deathYear, "death", options);
-    builder.addDeathStartYear(startYear);
-    builder.addDeathEndYear(endYear);
+    setDeathStartAndEndDates(builder, "death", dateInput);
 
     if (parameters.subcategory == "civil_deaths") {
       let ageAtDeath = data.inferAgeAtDeath();

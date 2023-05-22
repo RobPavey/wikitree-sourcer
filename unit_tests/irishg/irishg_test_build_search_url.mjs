@@ -49,6 +49,15 @@ const regressionData = [
           spouseIndex: -1,
         },
       },
+      {
+        variantName: "civil_events_spouse",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_events",
+          lastNameIndex: 0,
+          spouseIndex: 0,
+        },
+      },
 
       // Civil births
       {
@@ -119,6 +128,16 @@ const regressionData = [
         },
       },
 
+      // Church lifetime
+      {
+        variantName: "church_lifetime",
+        searchParameters: {
+          category: "church",
+          subcategory: "church_lifetime",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+        },
+      },
       // Church all events
       {
         variantName: "church_events",
@@ -127,6 +146,15 @@ const regressionData = [
           subcategory: "church_events",
           lastNameIndex: 0,
           spouseIndex: -1,
+        },
+      },
+      {
+        variantName: "church_events_spouse",
+        searchParameters: {
+          category: "church",
+          subcategory: "church_events",
+          lastNameIndex: 0,
+          spouseIndex: 0,
         },
       },
       // Church baptisms

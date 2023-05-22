@@ -335,17 +335,20 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
     if (gd.parents && (gd.parents.father || gd.parents.mother)) {
       if (gd.mothersMaidenName) {
         let mmn = gd.mothersMaidenName;
-        parameters.mmn = true;
+        if (parameters.mmn === undefined) {
+          parameters.mmn = true;
+        }
 
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.checked = true;
+        checkbox.checked = parameters.mmn;
         checkbox.addEventListener("change", function () {
           if (this.checked) {
             parameters.mmn = true;
           } else {
             parameters.mmn = false;
           }
+          setupParametersElements(data, siteData, listElement, parameters);
         });
         let label = document.createElement("label");
         label.className = "dialogInput";
