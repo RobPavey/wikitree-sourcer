@@ -58,6 +58,20 @@ const regressionData = [
           spouseIndex: 0,
         },
       },
+      {
+        variantName: "civil_events_exactness",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_events",
+          lastNameIndex: -1,
+          spouseIndex: 0,
+        },
+        optionOverrides: {
+          search_irishg_birthYearExactness: 2,
+          search_irishg_marriageYearExactness: 5,
+          search_irishg_deathYearExactness: 10,
+        },
+      },
 
       // Civil births
       {

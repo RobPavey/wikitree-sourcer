@@ -238,9 +238,8 @@ function setDeathStartAndEndDates(builder, type, dateInput) {
 }
 
 function buildSearchUrl(buildUrlInput) {
+  // typeOfSearch is current allways specifiedParameters
   const data = buildUrlInput.generalizedData;
-  const dataCache = buildUrlInput.dataCache;
-  const typeOfSearch = buildUrlInput.typeOfSearch;
   const parameters = buildUrlInput.searchParameters;
   const options = buildUrlInput.options;
 

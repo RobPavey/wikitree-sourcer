@@ -179,7 +179,6 @@ function generalizeData(input) {
 
   result.sourceType = "record";
 
-  // not easy to determine record type - use descriptive paragraph first word
   if (!data.eventText) {
     return result;
   }

@@ -8,6 +8,9 @@
   "civil_events_spouse": {
     "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1869&yyBto=1869&type=D&yyDfrom=1936&yyDto=1936&type=M&yyMfrom=1891&yyMto=1891&submit=Search"
   },
+  "civil_events_exactness": {
+    "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&type=B&yyBfrom=1867&yyBto=1871&type=D&yyDfrom=1926&yyDto=1946&type=M&yyMfrom=1886&yyMto=1896&submit=Search"
+  },
   "civil_births": {
     "url": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=Margaret&namel=Connors&type=B&yyBfrom=1869&yyBto=1870&submit=Search"
   },

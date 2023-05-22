@@ -60,7 +60,7 @@ function buildCitation(input) {
 
   let builder = new CitationBuilder(type, runDate, options);
 
-  var citation = buildCoreCitation(data, gd, builder);
+  buildCoreCitation(data, gd, builder);
 
   // Get meaningful title
   builder.meaningfulTitle = gd.getRefTitle();
@@ -69,7 +69,7 @@ function buildCitation(input) {
     builder.addNarrative(gd, input.dataCache, options);
   }
 
-  // now the builder is setup use it to build the citation text
+  // now the builder is setup, use it to build the citation text
   let fullCitation = builder.getCitationString();
 
   //console.log(fullCitation);

@@ -118,10 +118,6 @@ const collections = [];
 function isSubCategoryInYearRange(subcategory, yearRange) {
   let isInYearRange = true;
   // check if the date range overlaps the lifespan
-  console.log("isSubCategoryInYearRange:");
-  console.log(subcategory);
-  console.log(yearRange);
-
   if (yearRange.endYear < subcategory.startYear || yearRange.startYear > subcategory.endYear) {
     isInYearRange = false;
   }
@@ -270,19 +266,12 @@ const IrishgData = {
       return;
     }
 
-    console.log("getWarningMessages");
-
     // check subcategory date range overlaps life range
     let maxLifespan = Number(options.search_general_maxLifespan);
     let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
 
-    console.log(maxLifespan);
-    console.log(lifeDates);
-
     // check if the date range overlaps the lifespan
     if (!isSubCategoryInYearRange(subcategory, lifeDates)) {
-      console.log("isSubCategoryInYearRange returned false");
-
       let subcategoryRangeString = subcategory.startYear.toString() + "-";
       if (subcategory.endYear) {
         subcategoryRangeString += subcategory.endYear.toString();
@@ -337,15 +326,11 @@ const IrishgData = {
 
   setDefaultSearchParameters: function (generalizedData, parameters, options) {
     function defaultToSubcategory(parameters, subcategoryName, yearString) {
-      console.log("defaultToSubcategory: subcategoryName is: " + subcategoryName + ", yearString is: " + yearString);
-      console.log(parameters);
-
       if (!yearString) {
         return false;
       }
 
       var yearNum = parseInt(yearString);
-      console.log("defaultToSubcategory: yearNum is: " + yearNum);
       if (yearNum == NaN) {
         return false;
       }
@@ -354,11 +339,8 @@ const IrishgData = {
 
       // check if the date range includes the given year
       if (yearNum < subcategory.startYear || yearNum > subcategory.endYear) {
-        console.log("defaultToSubcategory: not in range (" + subcategory.startYear + "-" + subcategory.endYear + ")");
         return false;
       }
-
-      console.log("defaultToSubcategory: setting subcategory");
 
       parameters.category = subcategory.category;
       parameters.subcategory = subcategoryName;
@@ -366,9 +348,6 @@ const IrishgData = {
     }
 
     function defaultToSubcategoryList(parameters, subcategoryNameList, yearString) {
-      console.log("defaultToSubcategory: yearString is: " + yearString);
-      console.log(parameters);
-
       if (!yearString) {
         return false;
       }
@@ -383,9 +362,6 @@ const IrishgData = {
 
     let maxLifespan = Number(options.search_general_maxLifespan);
     let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
-
-    console.log("setDefaultSearchParameters:");
-    console.log(parameters);
 
     parameters.category = "civil";
     parameters.subcategory = "civil_lifetime";

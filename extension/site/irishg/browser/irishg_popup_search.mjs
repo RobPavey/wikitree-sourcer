@@ -70,9 +70,6 @@ async function irishgSearch(generalizedData, parameters) {
 // might be like ScotP - with a default menu that is like "Search with Specific Parameters"
 
 function addIrishgDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addIrishgDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
   const stdCountryName = "Ireland";
 
   if (filter) {

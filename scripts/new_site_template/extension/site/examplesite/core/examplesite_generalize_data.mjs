@@ -34,10 +34,8 @@ function generalizeData(input) {
 
   result.sourceOfData = "examplesite";
 
-  let collectionId = undefined;
-
   if (!data.success) {
-    return result; //the extract failed
+    return result; // the extract failed
   }
 
   result.sourceType = "record";
@@ -62,15 +60,12 @@ function generalizeData(input) {
   result.setLastNameAndForeNames(data.surname, data.givenNames);
 
   if (data.eventType == "birth") {
-    collectionId = "births";
     result.lastNameAtBirth = data.surname;
     result.birthDate = result.eventDate;
     if (data.mother) {
       result.mothersMaidenName = data.mothersMaidenName;
     }
   } else if (data.eventType == "marriage") {
-    collectionId = "marriages";
-
     if (data.spouse) {
       let name = new WtsName();
       name.name = data.spouse;
@@ -83,7 +78,6 @@ function generalizeData(input) {
       result.spouses = [spouse];
     }
   } else if (data.eventType == "death") {
-    collectionId = "deaths";
     result.lastNameAtDeath = data.surname;
     result.deathDate = result.eventDate;
 
@@ -91,19 +85,6 @@ function generalizeData(input) {
       result.ageAtDeath = data.ageAtDeath;
     } else if (data.birthDate) {
       result.setBirthDate(data.birthDate);
-    }
-  }
-
-  // Collection
-  if (collectionId) {
-    result.collectionData = {
-      id: collectionId,
-    };
-    if (data.referenceVolume) {
-      result.collectionData.volume = data.referenceVolume;
-    }
-    if (data.referencePage) {
-      result.collectionData.page = data.referencePage;
     }
   }
 

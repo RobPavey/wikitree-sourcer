@@ -59,15 +59,6 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 // &keyword=My+key+words
 // &submit=Search
 
-// JOHN ALFRED SMITH
-// Date of Birth	11 November 1880
-// Address	11 ST MARYS P?
-// Father	JOHN SMITH
-// Mother	CATHERINE CARROLL
-// Sponsor 1	JOHN SMITH
-// Sponsor 2	ROSE CARROLL
-// Priest	P O CONNOR
-
 // You can specify multiple other people on Church Records advanced search even though the UI doesn't allow it:
 // https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp
 // ?namefm=John+Alfred&namel=Smith
