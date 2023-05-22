@@ -199,7 +199,7 @@ function addLastNameSelector(data, siteData, listElement, parameters) {
   if (includeLastNameSelector) {
     let lastNamesArray = gd.inferPersonLastNamesArray(gd);
     if (lastNamesArray.length > 1) {
-      addSelector(
+      let lastNameSelector = addSelector(
         listElement,
         "lastNameSelector",
         "Multiple last names, select which to use: ",
@@ -208,6 +208,7 @@ function addLastNameSelector(data, siteData, listElement, parameters) {
           parameters.lastNameIndex = event.target.value;
         }
       );
+      lastNameSelector.value = parameters.lastNameIndex;
     }
   }
 }
@@ -248,7 +249,7 @@ function addSpouseSelector(data, siteData, listElement, parameters) {
   if (typeof siteData.includeSpouses === "function") {
     if (siteData.includeSpouses(gd, parameters)) {
       if (gd.spouses && gd.spouses.length > 0) {
-        addSelector(
+        let spouseSelector = addSelector(
           listElement,
           "spouseSelector",
           "Spouse/marriage to include: ",
@@ -261,6 +262,7 @@ function addSpouseSelector(data, siteData, listElement, parameters) {
             setupParametersElements(data, siteData, listElement, parameters);
           }
         );
+        spouseSelector.value = parameters.spouseIndex;
       }
     }
   }
@@ -282,7 +284,9 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
 
       if (gd.parents.father) {
         let father = gd.parents.father;
-        parameters.father = true;
+        if (parameters.father === undefined) {
+          parameters.father = true;
+        }
 
         let br = document.createElement("br");
         listElement.appendChild(br);
@@ -308,7 +312,9 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
 
       if (gd.parents.mother) {
         let mother = gd.parents.mother;
-        parameters.mother = true;
+        if (parameters.mother === undefined) {
+          parameters.mother = true;
+        }
 
         let br = document.createElement("br");
         listElement.appendChild(br);
