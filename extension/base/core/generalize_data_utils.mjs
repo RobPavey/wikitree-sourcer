@@ -2893,6 +2893,35 @@ class GeneralizedData {
     return { fatherName: fatherName, motherName: motherName };
   }
 
+  inferParentForenamesAndLastName() {
+    let fatherForenames = "";
+    let fatherLastName = "";
+    let motherForenames = "";
+    let motherLastName = "";
+
+    if (this.parents) {
+      if (this.parents.father && this.parents.father.name) {
+        fatherForenames = this.parents.father.name.inferForenames();
+        fatherLastName = this.parents.father.name.inferLastName();
+      }
+      if (this.parents.mother && this.parents.mother.name) {
+        motherForenames = this.parents.mother.name.inferForenames();
+        motherLastName = this.parents.mother.name.inferLastName();
+      }
+    }
+
+    if (!motherLastName && this.mothersMaidenName) {
+      motherLastName = this.mothersMaidenName;
+    }
+
+    return {
+      fatherForenames: fatherForenames,
+      fatherLastName: fatherLastName,
+      motherForenames: motherForenames,
+      motherLastName: motherLastName,
+    };
+  }
+
   setDatesUsingQualifierAndYearNum(dates, yearNum, dateQualifier) {
     if (!yearNum) {
       return;

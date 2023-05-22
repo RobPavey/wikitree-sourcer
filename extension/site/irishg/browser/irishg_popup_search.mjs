@@ -22,14 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addSameRecordMenuItem,
-  addBackMenuItem,
-  addMenuItem,
-  beginMainMenu,
-  endMainMenu,
-  doAsyncActionWithCatch,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   doSearch,
@@ -46,12 +41,6 @@ import { options } from "/base/browser/options/options_loader.mjs";
 // * The General Register Office are currently working on updating further records of Deaths dating back to 1864.
 //   These will be included in future updates to the records available on the website.
 
-const irishgCivilStartYear = 1837;
-const irishgCivilEndYear = 1992;
-
-const irishgChurchStartYear = 1520; // earliest observed in 1571
-const irishgChurchEndYear = 1930; // latest observed is 1927
-
 const irishgStartYear = 1520;
 const irishgEndYear = 1930;
 
@@ -59,8 +48,14 @@ const irishgEndYear = 1930;
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function irishgSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+async function irishgSearch(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+
   doAsyncActionWithCatch("IrishGenealogy.ie Search", input, async function () {
     let loadedModule = await import(`../core/irishg_build_search_url.mjs`);
     doSearch(loadedModule, input);
@@ -110,63 +105,13 @@ function addIrishgDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-async function addIrishgSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "irishg", function (element) {
-    irishgSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addIrishgSearchCivilRecordsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let possibleInRange = data.generalizedData.couldPersonHaveLivedInDateRange(
-      irishgCivilStartYear,
-      irishgCivilEndYear,
-      maxLifespan
-    );
-
-    if (!possibleInRange) {
-      //console.log("addIrishgDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-  }
-  addMenuItem(menu, "Search IrishGenealogy.ie Civil Records", function (element) {
-    irishgSearch(data.generalizedData, "civilrecords");
-  });
-}
-
-function addIrishgSearchChurchRecordsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let possibleInRange = data.generalizedData.couldPersonHaveLivedInDateRange(
-      irishgChurchStartYear,
-      irishgChurchEndYear,
-      maxLifespan
-    );
-
-    if (!possibleInRange) {
-      //console.log("addIrishgDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-  }
-  addMenuItem(menu, "Search IrishGenealogy.ie Church Records", function (element) {
-    irishgSearch(data.generalizedData, "churchrecords");
-  });
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupIrishgSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  addIrishgSearchCivilRecordsMenuItem(menu, data, filter);
-  addIrishgSearchChurchRecordsMenuItem(menu, data, filter);
-
-  endMainMenu(menu);
+  let dataModule = await import(`../core/irishg_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.IrishgData, irishgSearch);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -26,7 +26,60 @@ import {
   registerSubsectionForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
+  registerSubheadingForOptions,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchOptionsGroup = {
+  category: "search",
+  subcategory: "irishg",
+  tab: "search",
+  subsection: "irishg",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "birthYearExactness",
+      type: "select",
+      label: "Search exactness to use for birth year",
+      values: [
+        { value: "auto", text: "Set automatically based on source" },
+        { value: 0, text: "Exact year only" },
+        { value: 1, text: "+/- 1 years" },
+        { value: 2, text: "+/- 2 years" },
+        { value: 5, text: "+/- 5 years" },
+        { value: 10, text: "+/- 10 years" },
+      ],
+      defaultValue: "auto",
+    },
+    {
+      optionName: "deathYearExactness",
+      type: "select",
+      label: "Search exactness to use for death year",
+      values: [
+        { value: "auto", text: "Set automatically based on source" },
+        { value: 0, text: "Exact year only" },
+        { value: 1, text: "+/- 1 years" },
+        { value: 2, text: "+/- 2 years" },
+        { value: 5, text: "+/- 5 years" },
+        { value: 10, text: "+/- 10 years" },
+      ],
+      defaultValue: "auto",
+    },
+    {
+      optionName: "marriageYearExactness",
+      type: "select",
+      label: "Search exactness to use for marriage year",
+      values: [
+        { value: "auto", text: "Set automatically based on source" },
+        { value: 0, text: "Exact year only" },
+        { value: 1, text: "+/- 1 years" },
+        { value: 2, text: "+/- 2 years" },
+        { value: 5, text: "+/- 5 years" },
+        { value: 10, text: "+/- 10 years" },
+      ],
+      defaultValue: "auto",
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -50,6 +103,8 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "irishg", "IrishGenealogy.ie");
 registerSiteSearchPopupOptionsGroup("irishg", 7, 7);
+registerSubheadingForOptions("search", "irishg", "parameters", "Search Parameters");
+registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "irishg", "IrishGenealogy.ie");
 registerOptionsGroup(citationOptionsGroup);

@@ -86,6 +86,7 @@ class IrishgUriBuilder {
     }
     this.uri = "https://" + typeOfSearch + ".irishgenealogy.ie/churchrecords/" + searchJsp + ".jsp";
     this.searchTermAdded = false;
+    this.membersAdded = 0;
   }
 
   addSearchTerm(string) {
@@ -137,6 +138,66 @@ class IrishgUriBuilder {
 
   addEndYear(string) {
     this.addSearchParameter("yyto", string);
+  }
+
+  addBirthStartYear(string) {
+    this.addSearchParameter("yyBfrom", string);
+  }
+
+  addBirthEndYear(string) {
+    this.addSearchParameter("yyBto", string);
+  }
+
+  addMarriageStartYear(string) {
+    this.addSearchParameter("yyMfrom", string);
+  }
+
+  addMarriageEndYear(string) {
+    this.addSearchParameter("yyMto", string);
+  }
+
+  addDeathStartYear(string) {
+    this.addSearchParameter("yyDfrom", string);
+  }
+
+  addDeathEndYear(string) {
+    this.addSearchParameter("yyDto", string);
+  }
+
+  addType(string) {
+    this.addSearchParameter("type", string);
+  }
+
+  addMothersMaidenName(string) {
+    this.addSearchParameter("keywordb", string);
+  }
+
+  addSpouseKeywords(string) {
+    this.addSearchParameter("keywordm", string);
+  }
+
+  addAgeAtDeath(string) {
+    this.addSearchParameter("keywordd", string);
+  }
+
+  addParentName(forenames, lastName) {
+    // &member0=p&namef0=John&namel0=Smith
+    // &member1=p&namef1=Catherine&namel0=Carroll
+    if (forenames || lastName) {
+      this.addSearchParameter("member" + this.membersAdded, "p");
+      this.addSearchParameter("namef" + this.membersAdded, forenames);
+      this.addSearchParameter("namel" + this.membersAdded, lastName);
+      this.membersAdded++;
+    }
+  }
+
+  addSpouseName(forenames, lastName) {
+    if (forenames || lastName) {
+      this.addSearchParameter("member" + this.membersAdded, "s");
+      this.addSearchParameter("namef" + this.membersAdded, forenames);
+      this.addSearchParameter("namel" + this.membersAdded, lastName);
+      this.membersAdded++;
+    }
   }
 
   getUri() {

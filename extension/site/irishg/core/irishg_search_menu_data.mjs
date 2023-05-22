@@ -35,48 +35,81 @@ const subcategories = [
     value: "civil_lifetime",
     text: "All records in lifetime",
     category: "civil",
+    startYear: 1845,
+    endYear: 1972,
   },
   {
     value: "civil_events",
-    text: "All records for events in this page",
+    text: "All records for events on this page",
     category: "civil",
+    includeSpouses: true,
     includeMmn: true,
+    startYear: 1845,
+    endYear: 1972,
   },
   {
     value: "civil_births",
     text: "Civil Births",
     category: "civil",
     includeMmn: true,
+    startYear: 1864,
+    endYear: 1922,
   },
   {
     value: "civil_marriages",
     text: "Civil Marriages",
     category: "civil",
     includeSpouses: true,
+    startYear: 1845,
+    endYear: 1947,
   },
   {
     value: "civil_deaths",
     text: "Civil Deaths",
     category: "civil",
-    includeMmn: true,
+    includeAgeAtDeath: true,
+    startYear: 1871,
+    endYear: 1972,
   },
 
   {
+    value: "church_lifetime",
+    text: "All records in lifetime",
+    category: "church",
+    startYear: 1520, // earliest observed in 1571
+    endYear: 1930, // latest observed is 1927
+  },
+  {
+    value: "church_events",
+    text: "All records for events on this page",
+    category: "church",
+    startYear: 1520,
+    endYear: 1930,
+    includeSpouses: true,
+    includeParents: true,
+  },
+  {
     value: "church_baptisms",
-    text: "Churc Baptisms",
+    text: "Church Baptisms",
     category: "church",
     includeParents: true,
+    startYear: 1520,
+    endYear: 1930,
   },
   {
     value: "church_marriages",
     text: "Church Marriages",
     category: "church",
     includeSpouses: true,
+    startYear: 1520,
+    endYear: 1930,
   },
   {
     value: "church_deaths",
     text: "Church Burials",
     category: "church",
+    startYear: 1520,
+    endYear: 1930,
   },
 ];
 
@@ -84,13 +117,9 @@ const collections = [];
 
 function isSubCategoryInYearRange(subcategory, yearRange) {
   let isInYearRange = true;
-  let recordType = subcategory.value;
-  let dates = ScotpRecordType.getDatesCovered(recordType);
-  if (dates) {
-    // check if the date range overlaps the lifespan
-    if (yearRange.endYear < dates.from || (dates.to && yearRange.startYear > dates.to)) {
-      isInYearRange = false;
-    }
+  // check if the date range overlaps the lifespan
+  if (yearRange.endYear < subcategory.startYear || yearRange.startYear > subcategory.endYear) {
+    isInYearRange = false;
   }
   return isInYearRange;
 }
@@ -104,7 +133,7 @@ function getSubcategoryByValue(value) {
   return undefined;
 }
 
-const ScotpData = {
+const IrishgData = {
   includeCategories: function (generalizedData, parameters) {
     return true;
   },
@@ -121,48 +150,24 @@ const ScotpData = {
   },
 
   includeSpouses: function (generalizedData, parameters) {
-    let selectedSubcategory = undefined;
-    for (let subcategory of subcategories) {
-      if (!subcategory.category || subcategory.category == parameters.category) {
-        if (subcategory.value == parameters.subcategory) {
-          selectedSubcategory = subcategory;
-        }
-      }
-    }
-
-    if (selectedSubcategory && selectedSubcategory.includeSpouses) {
+    let subcategory = getSubcategoryByValue(parameters.subcategory);
+    if (subcategory && subcategory.includeSpouses) {
       return true;
     }
     return false;
   },
 
   includeParents: function (generalizedData, parameters) {
-    let selectedSubcategory = undefined;
-    for (let subcategory of subcategories) {
-      if (!subcategory.category || subcategory.category == parameters.category) {
-        if (subcategory.value == parameters.subcategory) {
-          selectedSubcategory = subcategory;
-        }
-      }
-    }
-
-    if (selectedSubcategory && selectedSubcategory.includeParents) {
+    let subcategory = getSubcategoryByValue(parameters.subcategory);
+    if (subcategory && subcategory.includeParents) {
       return true;
     }
     return false;
   },
 
   includeMmn: function (generalizedData, parameters) {
-    let selectedSubcategory = undefined;
-    for (let subcategory of subcategories) {
-      if (!subcategory.category || subcategory.category == parameters.category) {
-        if (subcategory.value == parameters.subcategory) {
-          selectedSubcategory = subcategory;
-        }
-      }
-    }
-
-    if (selectedSubcategory && selectedSubcategory.includeMmn) {
+    let subcategory = getSubcategoryByValue(parameters.subcategory);
+    if (subcategory && subcategory.includeMmn) {
       return true;
     }
     return false;
@@ -194,17 +199,13 @@ const ScotpData = {
       if (!subcategory.category || subcategory.category == parameters.category) {
         let value = subcategory.value;
         let text = subcategory.text;
-        let recordType = subcategory.value;
-        let dates = ScotpRecordType.getDatesCovered(recordType);
-        if (dates) {
-          let from = dates.from || "";
-          let to = dates.to || "";
-          text = text + " (" + from + "-" + to + ")";
+        let from = subcategory.startYear || "";
+        let to = subcategory.endYear || "";
+        text = text + " (" + from + "-" + to + ")";
 
-          // check if the date range overlaps the lifespan
-          if (!isSubCategoryInYearRange(subcategory, lifeDates)) {
-            text = "[" + text + "]";
-          }
+        // check if the date range overlaps the lifespan
+        if (!isSubCategoryInYearRange(subcategory, lifeDates)) {
+          text = "[" + text + "]";
         }
 
         result.push({ value: value, text: text });
@@ -235,6 +236,29 @@ const ScotpData = {
     return result;
   },
 
+  getAdditionalControls: function (generalizedData, parameters, options) {
+    let controls = [];
+
+    let subcategory = getSubcategoryByValue(parameters.subcategory);
+
+    if (subcategory && subcategory.includeAgeAtDeath) {
+      let ageAtDeath = generalizedData.inferAgeAtDeath();
+      if (ageAtDeath !== undefined) {
+        const label = "Include age at death (" + ageAtDeath + ")";
+        const ageAtDeathControl = {
+          elementId: "ageAtDeath",
+          parameterName: "ageAtDeath",
+          type: "checkbox",
+          label: label,
+        };
+
+        controls.push(ageAtDeathControl);
+      }
+    }
+
+    return controls;
+  },
+
   getWarningMessages: function (generalizedData, parameters, options) {
     let messages = [];
     let subcategory = getSubcategoryByValue(parameters.subcategory);
@@ -242,55 +266,47 @@ const ScotpData = {
       return;
     }
 
-    let recordType = subcategory.value;
-    let eventClass = ScotpRecordType.getEventClass(recordType);
-
     // check subcategory date range overlaps life range
-    let dates = ScotpRecordType.getDatesCovered(recordType);
-    if (dates) {
-      let maxLifespan = Number(options.search_general_maxLifespan);
-      let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
 
-      // check if the date range overlaps the lifespan
-      if (!isSubCategoryInYearRange(subcategory, lifeDates)) {
-        let subcategoryRangeString = dates.from.toString() + "-";
-        if (dates.to) {
-          subcategoryRangeString += dates.to.toString();
-        }
-
-        let lifeRangeString = lifeDates.startYear.toString() + "-";
-        if (lifeDates.endYear) {
-          lifeRangeString += lifeDates.endYear.toString();
-        }
-
-        let message =
-          "Subcategory range " +
-          subcategoryRangeString +
-          " does not overlap possible life range of " +
-          lifeRangeString +
-          ".";
-        messages.push(message);
+    // check if the date range overlaps the lifespan
+    if (!isSubCategoryInYearRange(subcategory, lifeDates)) {
+      let subcategoryRangeString = subcategory.startYear.toString() + "-";
+      if (subcategory.endYear) {
+        subcategoryRangeString += subcategory.endYear.toString();
       }
+
+      let lifeRangeString = lifeDates.startYear.toString() + "-";
+      if (lifeDates.endYear) {
+        lifeRangeString += lifeDates.endYear.toString();
+      }
+
+      let message =
+        "Subcategory range " +
+        subcategoryRangeString +
+        " does not overlap possible life range of " +
+        lifeRangeString +
+        ".";
+      messages.push(message);
     }
 
-    if (eventClass == "marriage" && parameters.spouseIndex != -1) {
+    if (subcategory.value.includes("marriage") && parameters.spouseIndex != -1) {
       let spouse = generalizedData.spouses[parameters.spouseIndex];
 
       if (spouse && spouse.marriageDate) {
         let yearString = spouse.marriageDate.getYearString();
         let yearNum = parseInt(yearString);
         if (yearNum && yearNum != NaN) {
-          if (dates) {
-            // check if the date range overlaps the lifespan
-            if (yearNum < dates.from || (dates.to && yearNum > dates.to)) {
-              let rangeString = dates.from.toString() + "-";
-              if (dates.to) {
-                rangeString += dates.to.toString();
-              }
-              let message =
-                "Marriage year " + yearString + " is out of range for collection range of " + rangeString + ".";
-              messages.push(message);
+          // check if the date range overlaps the lifespan
+          if (yearNum < subcategory.startYear || (subcategory.endYear && yearNum > subcategory.endYear)) {
+            let rangeString = subcategory.startYear.toString() + "-";
+            if (subcategory.endYear) {
+              rangeString += subcategory.endYear.toString();
             }
+            let message =
+              "Marriage year " + yearString + " is out of range for collection range of " + rangeString + ".";
+            messages.push(message);
           }
         }
       }
@@ -315,13 +331,9 @@ const ScotpData = {
 
       let subcategory = getSubcategoryByValue(subcategoryName);
 
-      let recordType = subcategory.value;
-      let dates = ScotpRecordType.getDatesCovered(recordType);
-      if (dates) {
-        // check if the date range includes the given year
-        if (yearNum < dates.from || (dates.to && yearNum > dates.to)) {
-          return false;
-        }
+      // check if the date range includes the given year
+      if (yearNum < subcategory.startYear || subcategory.endYear) {
+        return false;
       }
 
       parameters.category = subcategory.category;
@@ -431,4 +443,4 @@ const ScotpData = {
   updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
 };
 
-export { ScotpData };
+export { IrishgData };

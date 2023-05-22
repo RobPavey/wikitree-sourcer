@@ -1,0 +1,48 @@
+{
+  "hasValidData": true,
+  "firstNames": "Margaret",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Connors",
+  "currentLastName": "Long",
+  "mothersMaidenName": "Power",
+  "birthDate": "9 Nov 1869",
+  "birthDateStatus": "none",
+  "deathDate": "20 Sep 1936",
+  "deathDateStatus": "none",
+  "birthLocation": "Sporthouse, Waterford, Ireland",
+  "deathLocation": "County Hospital, Waterford, Ireland",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Kearney-2056",
+      "name": "James Kearney",
+      "marriageString": "25 Jan 1891 (to 1903) in Waterford",
+      "marriageDate": "25 Jan 1891",
+      "marriagePlace": "Waterford"
+    },
+    {
+      "wikiId": "Long-22741",
+      "name": "John Long",
+      "marriageString": "7 Jan 1907 in Waterford, Ireland",
+      "marriageDate": "7 Jan 1907",
+      "marriagePlace": "Waterford, Ireland"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Connors-569",
+  "currentTabText": "Margaret (Connors) Long's Profile",
+  "pageType": "read",
+  "wikiId": "Connors-569",
+  "name": "Margaret (Connors) Long",
+  "otherLastNames": "O'Connor, Kearney",
+  "parents": {
+    "father": {
+      "wikiId": "Connors-614",
+      "name": "James Connors"
+    },
+    "mother": {
+      "wikiId": "Power-1867",
+      "name": "Catherine (Power) Connors"
+    }
+  }
+}

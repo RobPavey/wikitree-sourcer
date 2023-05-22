@@ -26,12 +26,132 @@ import { buildSearchUrl } from "../../extension/site/irishg/core/irishg_build_se
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+  {
+    caseName: "ireland_connors-569_read",
+    inputPath: "wikitree/generalized_data/ref/ireland_connors-569_read",
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: {
+      category: "civil",
+      subcategory: "civil_lifetime",
+      lastNameIndex: 0,
+      spouseIndex: -1,
+      father: false,
+      mother: false,
+    },
+    optionVariants: [
+      // Civil all events
+      {
+        variantName: "civil_events",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_events",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+        },
+      },
+
+      // Civil births
+      {
+        variantName: "civil_births",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_births",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+        },
+      },
+      {
+        variantName: "civil_births_cln_inclMmn",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_births",
+          lastNameIndex: 1,
+          spouseIndex: -1,
+          mmn: "Power",
+        },
+      },
+      {
+        variantName: "civil_births_aka1",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_births",
+          lastNameIndex: 2,
+          spouseIndex: -1,
+        },
+      },
+      {
+        variantName: "civil_births_aka2",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_births",
+          lastNameIndex: 3,
+          spouseIndex: -1,
+        },
+      },
+
+      // Civil deaths
+      {
+        variantName: "civil_deaths",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_deaths",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+        },
+      },
+      {
+        variantName: "civil_deaths_cln",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_deaths",
+          lastNameIndex: 1,
+          spouseIndex: -1,
+        },
+      },
+      {
+        variantName: "civil_deaths_cln_age",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_deaths",
+          lastNameIndex: 1,
+          spouseIndex: -1,
+          ageAtDeath: true,
+        },
+      },
+
+      // Church all events
+      {
+        variantName: "church_events",
+        searchParameters: {
+          category: "church",
+          subcategory: "church_events",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+        },
+      },
+      // Church baptisms
+      {
+        variantName: "church_baptisms",
+        searchParameters: {
+          category: "church",
+          subcategory: "church_baptisms",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+        },
+      },
+      {
+        variantName: "church_baptisms_parents",
+        searchParameters: {
+          category: "church",
+          subcategory: "church_baptisms",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+          father: true,
+          mother: true,
+        },
+      },
+    ],
   },
-  */
 ];
 
 async function runTests(testManager) {

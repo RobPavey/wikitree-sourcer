@@ -64,6 +64,11 @@ const regressionData = [
     url: "https://www.wikitree.com/index.php?title=Harrington-1500",
   },
   {
+    // Ireland example
+    caseName: "ireland_connors-569_read",
+    url: "https://www.wikitree.com/wiki/Connors-569",
+  },
+  {
     caseName: "kimberlin-117_logged_out",
     url: "https://www.wikitree.com/wiki/Kimberlin-117",
   },
