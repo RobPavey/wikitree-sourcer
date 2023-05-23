@@ -139,7 +139,6 @@ function buildHouseholdArray(data, result) {
       }
     }
   }
-  let selectedPersonYearsMarried = "";
 
   let headings = data.householdHeadings;
   let members = data.householdMembers;
@@ -164,6 +163,11 @@ function buildHouseholdArray(data, result) {
           }
           surname = WTS_String.toInitialCapsEachWord(surname, true);
           householdMember.name += surname;
+        }
+        let yearsMarried = member["Years Married"];
+        if (yearsMarried && yearsMarried != "-") {
+          // this is not used in table but can be used to determine married date
+          householdMember.yearsMarried = yearsMarried;
         }
 
         // handle birthPlace specially since we combine birthPlace and birthCounty into one string
@@ -209,11 +213,6 @@ function buildHouseholdArray(data, result) {
         let isSelected = member.isSelected;
         if (isSelected) {
           householdMember.isSelected = isSelected;
-
-          let yearsMarried = member["Years Married"];
-          if (yearsMarried) {
-            selectedPersonYearsMarried = yearsMarried;
-          }
         }
       }
       householdArray.push(householdMember);
@@ -239,17 +238,6 @@ function buildHouseholdArray(data, result) {
 
   // We can also determine parents and spouse in some cases
   result.addSpouseOrParentsForSelectedHouseholdMember();
-
-  if (result.spouses && result.spouses.length == 1) {
-    if (selectedPersonYearsMarried) {
-      let censusDate = result.inferEventDate();
-      let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, selectedPersonYearsMarried);
-      let marriageYear = WTS_String.getLastWord(marriageDateString);
-      if (marriageYear) {
-        result.spouses[0].marriageDate.yearString = marriageYear;
-      }
-    }
-  }
 }
 
 function generalizeData(input) {

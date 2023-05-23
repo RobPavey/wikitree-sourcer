@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined National Archives of Ireland Record] (accessed 6 May 2021)<br/>\n.\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nJohn Long (33), married, Labourer - General, head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford. Born in City of Waterford.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined National Archives of Ireland Record] (accessed 6 May 2021)<br/>\n.\n</ref>",
+    "citation": "In the 1911 census John (age 33), Labourer - General, was the married head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford.<ref>\n'''1911 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nJohn Long (33), married, Labourer - General, head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford. Born in City of Waterford.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[undefined National Archives of Ireland Record] (accessed 6 May 2021)<br/>.",
+    "citation": "* '''1911 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[undefined National Archives of Ireland Record] (accessed 6 May 2021)<br/>John Long (33), married, Labourer - General, head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford. Born in City of Waterford.",
     "type": "source"
   }
 }

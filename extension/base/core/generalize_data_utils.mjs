@@ -1516,6 +1516,12 @@ class GeneralizedData {
     }
   }
 
+  setAgeAtEvent(value) {
+    if (value) {
+      this.ageAtEvent = value;
+    }
+  }
+
   addSpouse() {
     if (this.spouses == undefined) {
       this.spouses = [];
@@ -1596,6 +1602,25 @@ class GeneralizedData {
       return gd.addMother();
     }
 
+    function addMarriageDate(spouse, eventDate, primaryMember, spouseMember) {
+      let yearsMarried = NaN;
+      if (primaryMember && primaryMember.yearsMarried) {
+        yearsMarried = Number(primaryMember.yearsMarried);
+      }
+      if (isNaN(yearsMarried)) {
+        if (spouseMember && spouseMember.yearsMarried) {
+          yearsMarried = Number(spouseMember.yearsMarried);
+        }
+      }
+      if (!isNaN(yearsMarried)) {
+        let marriageDateString = GeneralizedData.getSubtractAgeFromDate(eventDate, yearsMarried);
+        let marriageYear = WTS_String.getLastWord(marriageDateString);
+        if (marriageYear) {
+          spouse.marriageDate.yearString = marriageYear;
+        }
+      }
+    }
+
     if (this.relationshipToHead) {
       if (this.relationshipToHead == "head") {
         // look for spouse
@@ -1614,6 +1639,10 @@ class GeneralizedData {
               // add a spouse
               let spouse = this.addSpouse();
               spouse.name.setFullName(wife.name);
+              let head = findHouseholdMemberByRelationship("head");
+              if (head) {
+                addMarriageDate(spouse, this.inferEventDate(), head, wife);
+              }
             }
           }
         }
@@ -1637,6 +1666,10 @@ class GeneralizedData {
               // add a spouse
               let spouse = this.addSpouse();
               spouse.name.setFullName(head.name);
+              let wife = findHouseholdMemberByRelationship("wife");
+              if (wife) {
+                addMarriageDate(spouse, this.inferEventDate(), wife, head);
+              }
             }
           }
         }

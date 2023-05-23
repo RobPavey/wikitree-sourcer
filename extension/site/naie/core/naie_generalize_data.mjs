@@ -22,8 +22,169 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
+import { WTS_String } from "../../../base/core/wts_string.mjs";
+
+function buildHouseholdArray(headings, members, result) {
+  const stdFieldNames = [
+    { stdName: "age", siteHeadings: ["Age"] },
+    { stdName: "relationship", siteHeadings: ["Relation to head"] },
+    { stdName: "maritalStatus", siteHeadings: ["Marital Status"] },
+    { stdName: "occupation", siteHeadings: ["Occupation"] },
+    { stdName: "gender", siteHeadings: ["Sex"] },
+  ];
+  function headingToStdName(heading) {
+    for (let entry of stdFieldNames) {
+      if (entry.siteHeadings.includes(heading)) {
+        return entry.stdName;
+      }
+    }
+  }
+  result.householdArrayFields = [];
+
+  let householdArray = [];
+  for (let member of members) {
+    let householdMember = {};
+    if (member.isClosed) {
+      // not currently happening on Irish censuses
+      householdMember.isClosed = true;
+    } else {
+      // handle name specially since we combine surname and forenames into one name
+      let forenames = member["Forename"];
+      if (forenames) {
+        householdMember.name = forenames;
+      }
+      let surname = member["Surname"];
+      if (surname) {
+        if (householdMember.name) {
+          householdMember.name += " ";
+        }
+        householdMember.name += surname;
+      }
+      let yearsMarried = member["Years Married"];
+      if (yearsMarried && yearsMarried != "-") {
+        // this is not used in table but can be used to determine married date
+        householdMember.yearsMarried = yearsMarried;
+      }
+
+      // handle birthPlace specially since we combine birthPlace and birthCounty into one string
+      let combinedBirthPlace = "";
+      let birthPlace = member["Birthplace"];
+      if (birthPlace) {
+        householdMember.birthPlace = birthPlace;
+      }
+
+      for (let heading of headings) {
+        if (heading != "Surname" && heading != "Forename" && heading != "Birthplace") {
+          let fieldName = headingToStdName(heading);
+          if (fieldName) {
+            let fieldValue = member[heading];
+            if (fieldValue) {
+              if (fieldName == "gender") {
+                fieldValue = GD.standardizeGender(fieldValue);
+              } else if (fieldName == "maritalStatus") {
+                fieldValue = GD.standardizeMaritalStatus(fieldValue);
+              } else if (fieldName == "relationship") {
+                fieldValue = GD.standardizeRelationshipToHead(fieldValue);
+              } else if (fieldName == "occupation") {
+                fieldValue = GD.standardizeOccupation(fieldValue);
+              }
+
+              householdMember[fieldName] = fieldValue;
+            }
+          }
+        }
+      }
+      let isSelected = member.isSelected;
+      if (isSelected) {
+        householdMember.isSelected = isSelected;
+      }
+    }
+    householdArray.push(householdMember);
+  }
+  result.householdArray = householdArray;
+
+  let householdArrayFields = [];
+  for (let heading of headings) {
+    let fieldName = headingToStdName(heading);
+    if (!fieldName) {
+      if (heading == "Surname") {
+        fieldName = "name";
+      } else if (heading == "Birthplace") {
+        fieldName = "birthPlace";
+      }
+    }
+    if (fieldName) {
+      householdArrayFields.push(fieldName);
+    }
+
+    result.householdArrayFields = householdArrayFields;
+  }
+
+  // We can also determine parents and spouse in some cases
+  result.addSpouseOrParentsForSelectedHouseholdMember();
+}
+
+function setYearAndPlace(data, result) {
+  // breadcrumbs
+  if (!data.breadCrumbs || data.breadCrumbs.length != 6) {
+    return false;
+  }
+  const breadCrumbs = data.breadCrumbs;
+
+  result.setEventYear(breadCrumbs[1]);
+
+  let eventPlace = breadCrumbs[4] + ", " + breadCrumbs[3] + ", " + breadCrumbs[2];
+  result.setEventPlace(eventPlace);
+  result.eventPlace.country = "Ireland";
+
+  return true;
+}
+
+function setDataFromTable(data, result) {
+  if (!data.household || data.household.length < 1) {
+    return false;
+  }
+
+  const household = data.household;
+  if (!household.headings || !household.members) {
+    return false;
+  }
+
+  const headings = household.headings;
+  const members = household.members;
+  if (headings.length < 1 || members.length < 1) {
+    return false;
+  }
+
+  // find selected member
+  let selectedMember = undefined;
+  for (let member of members) {
+    if (member.isSelected) {
+      selectedMember = member;
+      break;
+    }
+  }
+  if (!selectedMember) {
+    return false;
+  }
+
+  // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
+  result.setLastNameAndForeNames(selectedMember["Surname"], selectedMember["Forename"]);
+
+  result.setAgeAtEvent(selectedMember["Age"]);
+  result.setBirthPlace(selectedMember["Birthplace"]);
+  result.setRelationshipToHead(selectedMember["Relation to head"]);
+
+  result.setMaritalStatus(selectedMember["Marital Status"]);
+  result.setPersonGender(selectedMember["Sex"]);
+  result.setOccupation(selectedMember["Occupation"]);
+
+  buildHouseholdArray(headings, members, result);
+
+  return true;
+}
 
 // This function generalizes the data extracted web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
@@ -39,53 +200,14 @@ function generalizeData(input) {
   }
 
   result.sourceType = "record";
+  result.recordType = RT.Census;
 
-  switch (data.eventType) {
-    case "birth":
-      result.recordType = RT.BirthRegistration;
-      break;
-    case "marriage":
-      result.recordType = RT.MarriageRegistration;
-      break;
-    case "death":
-      result.recordType = RT.DeathRegistration;
-      break;
-    default:
-      return result;
+  if (!setYearAndPlace(data, result)) {
+    return result;
   }
 
-  result.setEventYear(data.eventYear);
-
-  // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setLastNameAndForeNames(data.surname, data.givenNames);
-
-  if (data.eventType == "birth") {
-    result.lastNameAtBirth = data.surname;
-    result.birthDate = result.eventDate;
-    if (data.mother) {
-      result.mothersMaidenName = data.mothersMaidenName;
-    }
-  } else if (data.eventType == "marriage") {
-    if (data.spouse) {
-      let name = new WtsName();
-      name.name = data.spouse;
-      let spouse = {
-        name: name,
-        marriageDate: result.eventDate,
-        marriagePlace: data.district,
-      };
-
-      result.spouses = [spouse];
-    }
-  } else if (data.eventType == "death") {
-    result.lastNameAtDeath = data.surname;
-    result.deathDate = result.eventDate;
-
-    if (data.ageAtDeath) {
-      result.ageAtDeath = data.ageAtDeath;
-    } else if (data.birthDate) {
-      result.setBirthDate(data.birthDate);
-    }
+  if (!setDataFromTable(data, result)) {
+    return result;
   }
 
   result.hasValidData = true;
