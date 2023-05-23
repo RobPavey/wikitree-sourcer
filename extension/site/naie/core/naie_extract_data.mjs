@@ -22,6 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function getSelectedRow(document) {
+  const highlightStyle = "font-weight: bold; font-style: italic";
+  const resultsTable = document.querySelector("#results_frame > table.results > tbody");
+  if (resultsTable) {
+    const selectedRow = resultsTable.querySelector("tr[style='" + highlightStyle + "']");
+    return selectedRow;
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -32,13 +41,97 @@ function extractData(document, url) {
 
   // Note that a census page is for household - not specific to person
 
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
-    return result;
+  const breadCrumbList = document.querySelector("#breadcrumb");
+  if (breadCrumbList) {
+    result.breadCrumbs = [];
+    const listElements = breadCrumbList.querySelectorAll("li");
+    for (let element of listElements) {
+      let text = element.textContent;
+      if (text) {
+        result.breadCrumbs.push(text);
+      }
+    }
   }
-  */
+
+  const headingNode = document.querySelector("#results_frame > h1");
+  if (headingNode) {
+    let text = headingNode.textContent;
+    if (text) {
+      result.heading = text;
+    }
+  }
+
+  const tableNode = document.querySelector("#results_frame > table");
+  if (tableNode) {
+    let tableHeading = tableNode.querySelector("thead");
+    let tableBody = tableNode.querySelector("tbody");
+
+    let household = undefined;
+
+    if (tableHeading && tableBody) {
+      let headingCols = tableHeading.querySelectorAll("th");
+
+      household = {};
+
+      household.headings = [];
+      household.members = [];
+
+      for (let heading of headingCols) {
+        let text = heading.textContent;
+        if (!text) {
+          text = "";
+        }
+        household.headings.push(text);
+      }
+
+      let rows = tableBody.querySelectorAll("tr");
+
+      // by default we use the first row as the record to extract
+      let selectedRowElement = rows[0];
+      // but if there is a user selected row we use that row
+      let userSelectedRowElement = getSelectedRow(document);
+      if (userSelectedRowElement) {
+        selectedRowElement = userSelectedRowElement;
+        result.isRowUserSelected = true;
+      }
+
+      for (let row of rows) {
+        let member = {};
+        let cols = row.querySelectorAll("td");
+        for (let colIndex = 0; colIndex < cols.length; colIndex++) {
+          let col = cols[colIndex];
+          let label = household.headings[colIndex];
+          let text = col.textContent;
+          if (!text) {
+            text = "";
+          }
+          member[label] = text;
+        }
+
+        if (row == selectedRowElement) {
+          member.isSelected = true;
+        }
+
+        household.members.push(member);
+      }
+    }
+
+    if (household && household.headings && household.headings.length > 0) {
+      result.household = household;
+    }
+  }
+
+  let imageList = document.querySelector("#mainlist");
+  if (imageList) {
+    // just use the fist link for now
+    let linkNode = imageList.querySelector("dt > a.imagelink");
+    if (linkNode) {
+      let href = linkNode.getAttribute("href");
+      if (href) {
+        result.imageLink = href;
+      }
+    }
+  }
 
   result.success = true;
 

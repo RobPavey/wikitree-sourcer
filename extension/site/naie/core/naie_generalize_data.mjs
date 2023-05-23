@@ -51,7 +51,7 @@ function generalizeData(input) {
       result.recordType = RT.DeathRegistration;
       break;
     default:
-      return;
+      return result;
   }
 
   result.setEventYear(data.eventYear);
