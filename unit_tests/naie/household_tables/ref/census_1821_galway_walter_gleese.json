@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Age || Relation || Occupation\n|-\n| '''Walter Gleese''' || '''35''' || '''Head''' || '''Farmer & Shepherd'''\n|-\n| Ellenor Gleese || 35 || Wife || \n|-\n| Mary Gleese || 7 || Daughter || \n|-\n| Margaret Gleese || 5 || Daughter || \n|-\n| Honoria Gleese || 3 || Daughter || \n|-\n| Catharine Gleese || 1 || Daughter || \n|-\n| Margaret Gleese || 60 || Mother || \n|-\n| Bridget Sheil || 20 ||  || House Servant\n|-\n| Patrick Darcy || 11 || Nephew || \n|-\n| John Walsh || 60 ||  || A Strolling Beggar\n|}"
+  }
+}

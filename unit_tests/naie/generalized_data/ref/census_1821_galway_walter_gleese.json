@@ -1,0 +1,105 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1821"
+  },
+  "eventPlace": {
+    "placeString": "Rathreddy, Kilconickney, Galway",
+    "country": "Ireland"
+  },
+  "name": {
+    "lastName": "Gleese",
+    "forenames": "Walter"
+  },
+  "ageAtEvent": "35",
+  "relationshipToHead": "head",
+  "occupation": "Farmer & Shepherd",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Walter Gleese",
+      "age": "35",
+      "relationship": "head",
+      "occupation": "Farmer & Shepherd",
+      "isSelected": true
+    },
+    {
+      "name": "Ellenor Gleese",
+      "age": "35",
+      "relationship": "wife",
+      "occupation": ""
+    },
+    {
+      "name": "Mary Gleese",
+      "age": "7",
+      "relationship": "daughter",
+      "occupation": ""
+    },
+    {
+      "name": "Margaret Gleese",
+      "age": "5",
+      "relationship": "daughter",
+      "occupation": ""
+    },
+    {
+      "name": "Honoria Gleese",
+      "age": "3",
+      "relationship": "daughter",
+      "occupation": ""
+    },
+    {
+      "name": "Catharine Gleese",
+      "age": "1",
+      "relationship": "daughter",
+      "occupation": ""
+    },
+    {
+      "name": "Margaret Gleese",
+      "age": "60",
+      "relationship": "mother",
+      "occupation": ""
+    },
+    {
+      "name": "Bridget Sheil",
+      "age": "20",
+      "relationship": "",
+      "occupation": "House Servant"
+    },
+    {
+      "name": "Patrick Darcy",
+      "age": "11",
+      "relationship": "nephew",
+      "occupation": ""
+    },
+    {
+      "name": "John Walsh",
+      "age": "60",
+      "relationship": "",
+      "occupation": "A Strolling Beggar"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Ellenor Gleese"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Margaret Gleese"
+      }
+    }
+  },
+  "hasValidData": true
+}

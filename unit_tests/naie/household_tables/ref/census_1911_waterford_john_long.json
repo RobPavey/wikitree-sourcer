@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Age || Sex || Relation || Birth Place || Occupation || Status\n|-\n| '''John Long''' || '''33''' || '''M''' || '''Head''' || '''City of Waterford''' || '''Labourer - General''' || '''Married'''\n|-\n| Margaret Long || 41 || F || Wife || County Waterford ||  || Married\n|-\n| James Kearney || 19 || M || Son || City of Waterford || Engine Cleaner || Single\n|-\n| Mary Kate Kearney || 15 || F || Daughter || City of Waterford || Scholar || Single\n|-\n| Myles Kearney || 10 || M || Son || City of Waterford || Scholar || Single\n|-\n| Margaret Mary Long || 3 || F || Daughter || City of Waterford ||  || Single\n|-\n| Joseph Long ||  || M || Son || City of Waterford ||  || Single\n|-\n| Ellie Long || 34 || F || Sister || City of Waterford || Domestic Servant || Single\n|-\n| Michael Carroll || 49 || M || Boarder || County Kerry || Labourer - General || Single\n|-\n| Maurice Murphy || 35 || M || Boarder || County Kilkenny || Sailor || Single\n|}"
+  }
+}

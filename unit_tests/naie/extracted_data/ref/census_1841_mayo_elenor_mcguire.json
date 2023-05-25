@@ -1,0 +1,81 @@
+{
+  "url": "http://www.census.nationalarchives.ie/pages/1841/Mayo/Erris/Kil_Common/Dooyork/21/",
+  "success": true,
+  "breadCrumbs": [
+    "Census Years",
+    "1841",
+    "Mayo",
+    "Erris",
+    "Kil Common",
+    "Dooyork",
+    "Residents of a house"
+  ],
+  "heading": "Residents of a house 21 in Dooyork\n        (Kil Common, Erris, Mayo)",
+  "isRowUserSelected": true,
+  "household": {
+    "headings": [
+      "Surname",
+      "Forename",
+      "Age in years",
+      "Age in months if under one year",
+      "Sex",
+      "Relation to head",
+      "Marital Status",
+      "In what year(s) married",
+      "Occupation",
+      "Education",
+      "Native country, county, or city",
+      "Cause of death",
+      "Year of death"
+    ],
+    "members": [
+      {
+        "Surname": "McGuire",
+        "Forename": "Bryan",
+        "Age in years": "28",
+        "Age in months if under one year": "-",
+        "Sex": "Male",
+        "Relation to head": "Head Of Family",
+        "Marital Status": "Married",
+        "In what year(s) married": "-",
+        "Occupation": "Labourer",
+        "Education": "Cannot Read",
+        "Native country, county, or city": "Mayo",
+        "Cause of death": "-",
+        "Year of death": "-"
+      },
+      {
+        "Surname": "McGuire",
+        "Forename": "Elenor",
+        "Age in years": "21",
+        "Age in months if under one year": "-",
+        "Sex": "Female",
+        "Relation to head": "Wife",
+        "Marital Status": "Married",
+        "In what year(s) married": "-",
+        "Occupation": "None",
+        "Education": "Cannot Read",
+        "Native country, county, or city": "Mayo",
+        "Cause of death": "-",
+        "Year of death": "-",
+        "isSelected": true
+      },
+      {
+        "Surname": "McGuire",
+        "Forename": "Jams",
+        "Age in years": "-",
+        "Age in months if under one year": "6",
+        "Sex": "Male",
+        "Relation to head": "Son",
+        "Marital Status": "Not Married",
+        "In what year(s) married": "-",
+        "Occupation": "None",
+        "Education": "Cannot Read",
+        "Native country, county, or city": "Mayo",
+        "Cause of death": "-",
+        "Year of death": "-"
+      }
+    ]
+  },
+  "imageLink": "http://www.census.nationalarchives.ie/reels/c19/007246610/007246610_00145.pdf"
+}

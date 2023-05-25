@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1821 Census''':\n\"1821 Census of Ireland; The National Archives of Ireland\"<br/>\nResidents of a house 3 in Rathreddy (Kilconickney, Galway)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246639/007246639_00480.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Galway/Kilconickney/Rathreddy/3/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nWalter Gleese (35), Farmer & Shepherd, head of household in Rathreddy, Kilconickney, Galway.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1821 census Walter (age 35), Farmer & Shepherd, was the head of household in Rathreddy, Kilconickney, Galway.<ref>\n'''1821 Census''':\n\"1821 Census of Ireland; The National Archives of Ireland\"<br/>\nResidents of a house 3 in Rathreddy (Kilconickney, Galway)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246639/007246639_00480.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Galway/Kilconickney/Rathreddy/3/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nWalter Gleese (35), Farmer & Shepherd, head of household in Rathreddy, Kilconickney, Galway.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1821 Census''': \"1821 Census of Ireland; The National Archives of Ireland\"<br/>Residents of a house 3 in Rathreddy (Kilconickney, Galway)<br/>[http://www.census.nationalarchives.ie/reels/c19/007246639/007246639_00480.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Galway/Kilconickney/Rathreddy/3/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>Walter Gleese (35), Farmer & Shepherd, head of household in Rathreddy, Kilconickney, Galway.",
+    "type": "source"
+  }
+}

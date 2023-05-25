@@ -22,18 +22,33 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { registerTest } from "../test_utils/test_registry.mjs";
+import { buildHouseholdTable } from "../../extension/base/core/table_builder.mjs";
+import { buildCitation } from "../../extension/site/freecen/core/freecen_build_citation.mjs";
+import { runBuildHouseholdTableTests } from "../test_utils/test_build_household_table_utils.mjs";
 
-import * as test_content_and_citation from "./naie_test_content_and_citation.mjs";
-import * as test_build_household_table from "./naie_test_build_household_table.mjs";
-import * as test_build_search_url from "./naie_test_build_search_url.mjs";
+const regressionData = [
+  {
+    caseName: "census_1821_galway_walter_gleese",
+  },
+  {
+    caseName: "census_1831_londonderry_danl_dimond",
+  },
+  {
+    caseName: "census_1841_fermanagh_mathew_dowds",
+  },
+  {
+    caseName: "census_1841_mayo_elenor_mcguire",
+  },
+  {
+    caseName: "census_1851_dublin_mary_kennedy",
+  },
+  {
+    caseName: "census_1911_waterford_john_long",
+  },
+];
 
 async function runTests(testManager) {
-  await test_content_and_citation.runTests(testManager);
-  await test_build_household_table.runTests(testManager);
-  await test_build_search_url.runTests(testManager);
+  await runBuildHouseholdTableTests("naie", buildHouseholdTable, buildCitation, regressionData, testManager);
 }
-
-registerTest("naie", runTests);
 
 export { runTests };

@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Age || Sex || Relation || Status || Occupation\n|-\n| '''Mary Anne Kennedy''' || '''48''' || '''F''' || '''Head''' || '''Widowed''' || '''House Keeper'''\n|-\n| Marsella Kennedy || 20 || F || Daughter ||  || Spinster\n|-\n| Thomas Kennedy || 17 || M || Son ||  || Plough Man\n|-\n| Catherine Bermingham || 8 || F || Cousin ||  || None\n|-\n| Anne Kennedy || 13 || F || Daughter ||  || Going to School\n|-\n| James Kennedy || 11 || M || Son ||  || Going to School\n|-\n| Jane Kennedy || 8 || F || Daughter ||  || None\n|}"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "url": "http://www.census.nationalarchives.ie/pages/1821/Galway/Kilconickney/Rathreddy/3/",
+  "success": true,
+  "breadCrumbs": [
+    "Census Years",
+    "1821",
+    "Galway",
+    "Kilconickney",
+    "Rathreddy",
+    "Residents of a house"
+  ],
+  "heading": "Residents of a house 3 in Rathreddy (Kilconickney, Galway)",
+  "household": {
+    "headings": [
+      "Surname",
+      "Forename",
+      "Age",
+      "Relation to head",
+      "Occupation"
+    ],
+    "members": [
+      {
+        "Surname": "Gleese",
+        "Forename": "Walter",
+        "Age": "35",
+        "Relation to head": "-",
+        "Occupation": "Farmer & Shepherd",
+        "isSelected": true
+      },
+      {
+        "Surname": "Gleese",
+        "Forename": "Ellenor",
+        "Age": "35",
+        "Relation to head": "Wife",
+        "Occupation": "-"
+      },
+      {
+        "Surname": "Gleese",
+        "Forename": "Mary",
+        "Age": "7",
+        "Relation to head": "Daughter",
+        "Occupation": "-"
+      },
+      {
+        "Surname": "Gleese",
+        "Forename": "Margaret",
+        "Age": "5",
+        "Relation to head": "Daughter",
+        "Occupation": "-"
+      },
+      {
+        "Surname": "Gleese",
+        "Forename": "Honoria",
+        "Age": "3",
+        "Relation to head": "Daughter",
+        "Occupation": "-"
+      },
+      {
+        "Surname": "Gleese",
+        "Forename": "Catharine",
+        "Age": "1",
+        "Relation to head": "Daughter",
+        "Occupation": "-"
+      },
+      {
+        "Surname": "Gleese",
+        "Forename": "Margaret",
+        "Age": "60",
+        "Relation to head": "Mother",
+        "Occupation": "-"
+      },
+      {
+        "Surname": "Sheil",
+        "Forename": "Bridget",
+        "Age": "20",
+        "Relation to head": "-",
+        "Occupation": "House Servant"
+      },
+      {
+        "Surname": "Darcy",
+        "Forename": "Patrick",
+        "Age": "11",
+        "Relation to head": "Nephew",
+        "Occupation": "-"
+      },
+      {
+        "Surname": "Walsh",
+        "Forename": "John",
+        "Age": "60",
+        "Relation to head": "-",
+        "Occupation": "A Strolling Beggar"
+      }
+    ]
+  },
+  "imageLink": "http://www.census.nationalarchives.ie/reels/c19/007246639/007246639_00480.pdf"
+}

@@ -1,0 +1,66 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1841"
+  },
+  "eventPlace": {
+    "placeString": "Dooyork, Kil Common, Erris, Mayo",
+    "country": "Ireland"
+  },
+  "name": {
+    "lastName": "McGuire",
+    "forenames": "Elenor"
+  },
+  "ageAtEvent": "21",
+  "relationshipToHead": "wife",
+  "maritalStatus": "married",
+  "personGender": "female",
+  "occupation": "None",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "gender",
+    "relationship",
+    "maritalStatus",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Bryan McGuire",
+      "age": "28",
+      "gender": "male",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Labourer"
+    },
+    {
+      "name": "Elenor McGuire",
+      "age": "21",
+      "gender": "female",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "occupation": "None",
+      "isSelected": true
+    },
+    {
+      "name": "Jams McGuire",
+      "age": "6 months",
+      "gender": "male",
+      "relationship": "son",
+      "maritalStatus": "",
+      "occupation": "None"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Bryan McGuire"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "hasValidData": true
+}

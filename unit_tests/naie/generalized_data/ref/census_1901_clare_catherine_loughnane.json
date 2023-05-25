@@ -1,0 +1,80 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "Inishmore on Deen Island, Ballynacally, Clare",
+    "country": "Ireland"
+  },
+  "name": {
+    "lastName": "Loughnane",
+    "forenames": "Catherine"
+  },
+  "ageAtEvent": "23",
+  "birthPlace": {
+    "placeString": "County Clare",
+    "country": "Ireland"
+  },
+  "relationshipToHead": "daughter",
+  "personGender": "female",
+  "occupation": "Farmers Daughter",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "gender",
+    "relationship",
+    "birthPlace",
+    "occupation",
+    "maritalStatus"
+  ],
+  "householdArray": [
+    {
+      "name": "Patrick Loughnane",
+      "birthPlace": "County of Clare",
+      "age": "74",
+      "gender": "male",
+      "relationship": "head",
+      "occupation": "Farmer",
+      "maritalStatus": "widowed"
+    },
+    {
+      "name": "Catherine Loughnane",
+      "birthPlace": "County Clare",
+      "age": "23",
+      "gender": "female",
+      "relationship": "daughter",
+      "occupation": "Farmers Daughter",
+      "maritalStatus": "",
+      "isSelected": true
+    },
+    {
+      "name": "Daniel Loughnane",
+      "birthPlace": "Co Clare",
+      "age": "21",
+      "gender": "male",
+      "relationship": "son",
+      "occupation": "Farmers Son",
+      "maritalStatus": ""
+    },
+    {
+      "name": "Cornelius Loughnane",
+      "birthPlace": "Co Clare",
+      "age": "19",
+      "gender": "male",
+      "relationship": "son",
+      "occupation": "Farmers Son",
+      "maritalStatus": ""
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Patrick Loughnane"
+      }
+    }
+  },
+  "hasValidData": true
+}

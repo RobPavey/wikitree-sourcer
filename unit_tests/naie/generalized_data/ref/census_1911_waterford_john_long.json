@@ -15,7 +15,8 @@
   },
   "ageAtEvent": "33",
   "birthPlace": {
-    "placeString": "City of Waterford"
+    "placeString": "City of Waterford",
+    "country": "Ireland"
   },
   "relationshipToHead": "head",
   "maritalStatus": "married",
@@ -48,7 +49,7 @@
       "age": "41",
       "gender": "female",
       "relationship": "wife",
-      "occupation": "-",
+      "occupation": "",
       "maritalStatus": "married"
     },
     {
@@ -84,7 +85,7 @@
       "age": "3",
       "gender": "female",
       "relationship": "daughter",
-      "occupation": "-",
+      "occupation": "",
       "maritalStatus": "single"
     },
     {
@@ -92,7 +93,7 @@
       "birthPlace": "City of Waterford",
       "gender": "male",
       "relationship": "son",
-      "occupation": "-",
+      "occupation": "",
       "maritalStatus": "single"
     },
     {

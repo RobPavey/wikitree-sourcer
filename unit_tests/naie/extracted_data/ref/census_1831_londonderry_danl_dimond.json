@@ -1,0 +1,48 @@
+{
+  "url": "http://www.census.nationalarchives.ie/pages/1831/Londonderry/Loughinshillin/Kilrea/Kilrea/55/",
+  "success": true,
+  "breadCrumbs": [
+    "Census Years",
+    "1831",
+    "Londonderry",
+    "Loughinshillin",
+    "Kilrea",
+    "Kilrea",
+    "Residents of a house"
+  ],
+  "heading": "Residents of a house 55 in Kilrea\n        (Kilrea, Loughinshillin, Londonderry)",
+  "household": {
+    "headings": [
+      "Surname",
+      "Forename",
+      "Number of house",
+      "Number of families in each",
+      "Number of males in family",
+      "Number of females in family",
+      "Number of male servants",
+      "Number of female servants",
+      "Number in Established Church",
+      "Number of Roman Catholics",
+      "Number of Presbyterians",
+      "Number of other Protestants"
+    ],
+    "members": [
+      {
+        "Surname": "Dimond",
+        "Forename": "Danl",
+        "Number of house": "55",
+        "Number of families in each": "1",
+        "Number of males in family": "2",
+        "Number of females in family": "3",
+        "Number of male servants": "-",
+        "Number of female servants": "-",
+        "Number in Established Church": "-",
+        "Number of Roman Catholics": "5",
+        "Number of Presbyterians": "-",
+        "Number of other Protestants": "-",
+        "isSelected": true
+      }
+    ]
+  },
+  "imageLink": "http://www.census.nationalarchives.ie/reels/c19/007246634/007246634_00301.pdf"
+}

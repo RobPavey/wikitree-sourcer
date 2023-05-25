@@ -26,15 +26,18 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/naie_generalize_data.mjs";
 import { buildCitation } from "../core/naie_build_citation.mjs";
+import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 async function setupNaiePopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
     extractFailedMessage:
       "It looks like a National Archives of Ireland page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
-    generalizeFailedMessage: "It looks like a National Archives of Ireland page but does not contain the required data.",
+    generalizeFailedMessage:
+      "It looks like a National Archives of Ireland page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
+    buildHouseholdTableFunction: buildHouseholdTable,
     siteNameToExcludeFromSearch: "naie",
   };
   setupSimplePopupMenu(input);

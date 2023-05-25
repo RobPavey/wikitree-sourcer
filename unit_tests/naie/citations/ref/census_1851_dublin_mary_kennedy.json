@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Census of Ireland; The National Archives of Ireland\"<br/>\nResidents of a house 10 in Stephenstown (Balrothery, Balrothery East, Dublin)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246610/007246610_00303.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1851/Dublin/Balrothery_East/Balrothery/Stephenstown/10/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nMary Anne Kennedy (48), widowed, House Keeper, head of household in Stephenstown, Balrothery, Balrothery East, Dublin.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1851 census Mary (age 48), House Keeper, was the widowed head of household in Stephenstown, Balrothery, Balrothery East, Dublin.<ref>\n'''1851 Census''':\n\"1851 Census of Ireland; The National Archives of Ireland\"<br/>\nResidents of a house 10 in Stephenstown (Balrothery, Balrothery East, Dublin)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246610/007246610_00303.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1851/Dublin/Balrothery_East/Balrothery/Stephenstown/10/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nMary Anne Kennedy (48), widowed, House Keeper, head of household in Stephenstown, Balrothery, Balrothery East, Dublin.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1851 Census''': \"1851 Census of Ireland; The National Archives of Ireland\"<br/>Residents of a house 10 in Stephenstown (Balrothery, Balrothery East, Dublin)<br/>[http://www.census.nationalarchives.ie/reels/c19/007246610/007246610_00303.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1851/Dublin/Balrothery_East/Balrothery/Stephenstown/10/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>Mary Anne Kennedy (48), widowed, House Keeper, head of household in Stephenstown, Balrothery, Balrothery East, Dublin.",
+    "type": "source"
+  }
+}

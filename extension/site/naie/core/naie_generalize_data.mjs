@@ -28,7 +28,6 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 function buildHouseholdArray(headings, members, result) {
   const stdFieldNames = [
-    { stdName: "age", siteHeadings: ["Age"] },
     { stdName: "relationship", siteHeadings: ["Relation to head"] },
     { stdName: "maritalStatus", siteHeadings: ["Marital Status"] },
     { stdName: "occupation", siteHeadings: ["Occupation"] },
@@ -68,15 +67,20 @@ function buildHouseholdArray(headings, members, result) {
         householdMember.yearsMarried = yearsMarried;
       }
 
-      // handle birthPlace specially since we combine birthPlace and birthCounty into one string
+      // handle birthPlace specially
       let combinedBirthPlace = "";
       let birthPlace = member["Birthplace"];
       if (birthPlace) {
         householdMember.birthPlace = birthPlace;
       }
 
+      let age = extractAgeFromMember(member);
+      if (age) {
+        householdMember.age = age;
+      }
+
       for (let heading of headings) {
-        if (heading != "Surname" && heading != "Forename" && heading != "Birthplace") {
+        if (heading != "Surname" && heading != "Forename" && heading != "Birthplace" && !heading.startsWith("Age")) {
           let fieldName = headingToStdName(heading);
           if (fieldName) {
             let fieldValue = member[heading];
@@ -86,9 +90,17 @@ function buildHouseholdArray(headings, members, result) {
               } else if (fieldName == "maritalStatus") {
                 fieldValue = GD.standardizeMaritalStatus(fieldValue);
               } else if (fieldName == "relationship") {
+                if (fieldValue == "-") {
+                  // In some years the head just has "-"
+                  if (member == members[0]) {
+                    fieldValue = "Head";
+                  } else {
+                    fieldValue = "";
+                  }
+                }
                 fieldValue = GD.standardizeRelationshipToHead(fieldValue);
               } else if (fieldName == "occupation") {
-                fieldValue = GD.standardizeOccupation(fieldValue);
+                fieldValue = GD.standardizeOccupation(cleanOccupation(fieldValue));
               }
 
               householdMember[fieldName] = fieldValue;
@@ -113,6 +125,8 @@ function buildHouseholdArray(headings, members, result) {
         fieldName = "name";
       } else if (heading == "Birthplace") {
         fieldName = "birthPlace";
+      } else if (heading == "Age" || heading == "Age in years") {
+        fieldName = "age";
       }
     }
     if (fieldName) {
@@ -128,7 +142,7 @@ function buildHouseholdArray(headings, members, result) {
 
 function setYearAndPlace(data, result) {
   // breadcrumbs
-  if (!data.breadCrumbs || data.breadCrumbs.length != 6) {
+  if (!data.breadCrumbs || data.breadCrumbs.length < 6) {
     return false;
   }
   const breadCrumbs = data.breadCrumbs;
@@ -136,10 +150,39 @@ function setYearAndPlace(data, result) {
   result.setEventYear(breadCrumbs[1]);
 
   let eventPlace = breadCrumbs[4] + ", " + breadCrumbs[3] + ", " + breadCrumbs[2];
+  if (data.breadCrumbs.length == 7) {
+    eventPlace = breadCrumbs[5] + ", " + eventPlace;
+  }
   result.setEventPlace(eventPlace);
   result.eventPlace.country = "Ireland";
 
   return true;
+}
+
+function extractAgeFromMember(member) {
+  let age = "";
+  if (member["Age"]) {
+    age = member["Age"];
+  } else if (member["Age in years"] !== undefined) {
+    let ageInYears = member["Age in years"];
+    if (ageInYears && ageInYears != "-") {
+      age = ageInYears;
+    } else {
+      let ageInMonths = member["Age in months if under one year"];
+      if (ageInMonths) {
+        age = ageInMonths + " months";
+      }
+    }
+  }
+  return age;
+}
+
+function cleanOccupation(string) {
+  let occupation = string;
+  if (occupation == "?") {
+    occupation = "";
+  }
+  return occupation;
 }
 
 function setDataFromTable(data, result) {
@@ -170,18 +213,40 @@ function setDataFromTable(data, result) {
     return false;
   }
 
+  let year = result.inferEventYear();
+
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
   result.setLastNameAndForeNames(selectedMember["Surname"], selectedMember["Forename"]);
 
-  result.setAgeAtEvent(selectedMember["Age"]);
+  result.setAgeAtEvent(extractAgeFromMember(selectedMember));
+
   result.setBirthPlace(selectedMember["Birthplace"]);
-  result.setRelationshipToHead(selectedMember["Relation to head"]);
+  if (result.birthPlace) {
+    result.birthPlace.country = "Ireland";
+  }
+
+  if (year == "1831") {
+    // in 1831 there is no list of members - list head name and a count
+    result.setRelationshipToHead("Head");
+  } else {
+    let relationship = selectedMember["Relation to head"];
+    if (relationship == "-" || relationship == "?") {
+      if (selectedMember == members[0]) {
+        relationship = "Head";
+      } else {
+        relationship = "";
+      }
+    }
+    result.setRelationshipToHead(relationship);
+  }
 
   result.setMaritalStatus(selectedMember["Marital Status"]);
   result.setPersonGender(selectedMember["Sex"]);
-  result.setOccupation(selectedMember["Occupation"]);
+  result.setOccupation(cleanOccupation(selectedMember["Occupation"]));
 
-  buildHouseholdArray(headings, members, result);
+  if (year != "1831") {
+    buildHouseholdArray(headings, members, result);
+  }
 
   return true;
 }

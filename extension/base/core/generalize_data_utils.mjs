@@ -138,12 +138,15 @@ const GD = {
       "self (head)": "head",
       wife: "wife",
       w: "wife",
+      "farmers wife": "wife",
       // children
       son: "son",
       s: "son",
+      "farmers son": "son",
       daughter: "daughter",
       dau: "daughter",
       d: "daughter",
+      "farmers daughter": "daughter",
       // step children
       stepdaughter: "stepdaughter",
       "step-daughter": "stepdaughter",
@@ -343,7 +346,7 @@ const GD = {
   standardizeOccupation: function (string) {
     // we could handle all the abbreviations here: https://www.freecen.org.uk/cms/information-for-transcribers/abbreviations
 
-    if (!string) {
+    if (!string || string == "-") {
       return "";
     }
 

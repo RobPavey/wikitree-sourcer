@@ -1,0 +1,89 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "eventPlace": {
+    "placeString": "Stephenstown, Balrothery, Balrothery East, Dublin",
+    "country": "Ireland"
+  },
+  "name": {
+    "lastName": "Kennedy",
+    "forenames": "Mary Anne"
+  },
+  "ageAtEvent": "48",
+  "relationshipToHead": "head",
+  "maritalStatus": "widowed",
+  "personGender": "female",
+  "occupation": "House Keeper",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "gender",
+    "relationship",
+    "maritalStatus",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Mary Anne Kennedy",
+      "age": "48",
+      "gender": "female",
+      "relationship": "head",
+      "maritalStatus": "widowed",
+      "occupation": "House Keeper",
+      "isSelected": true
+    },
+    {
+      "name": "Marsella Kennedy",
+      "age": "20",
+      "gender": "female",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "occupation": "Spinster"
+    },
+    {
+      "name": "Thomas Kennedy",
+      "age": "17",
+      "gender": "male",
+      "relationship": "son",
+      "maritalStatus": "",
+      "occupation": "Plough Man"
+    },
+    {
+      "name": "Catherine Bermingham",
+      "age": "8",
+      "gender": "female",
+      "relationship": "cousin",
+      "maritalStatus": "",
+      "occupation": "None"
+    },
+    {
+      "name": "Anne Kennedy",
+      "age": "13",
+      "gender": "female",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "occupation": "Going to School"
+    },
+    {
+      "name": "James Kennedy",
+      "age": "11",
+      "gender": "male",
+      "relationship": "son",
+      "maritalStatus": "",
+      "occupation": "Going to School"
+    },
+    {
+      "name": "Jane Kennedy",
+      "age": "8",
+      "gender": "female",
+      "relationship": "daughter",
+      "maritalStatus": "",
+      "occupation": "None"
+    }
+  ],
+  "hasValidData": true
+}

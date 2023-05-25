@@ -1,0 +1,90 @@
+{
+  "url": "http://www.census.nationalarchives.ie/pages/1901/Clare/Ballynacally/Inishmore_on_Deen_Island/1075611/",
+  "success": true,
+  "breadCrumbs": [
+    "Census Years",
+    "1901",
+    "Clare",
+    "Ballynacally",
+    "Inishmore on Deen Island",
+    "Residents of a house"
+  ],
+  "heading": "Residents of a house 7 in Inishmore on Deen Island (Ballynacally, Clare)",
+  "isRowUserSelected": true,
+  "household": {
+    "headings": [
+      "Surname",
+      "Forename",
+      "Age",
+      "Sex",
+      "Relation to head",
+      "Religion",
+      "Birthplace",
+      "Occupation",
+      "Literacy",
+      "Irish Language",
+      "Marital Status",
+      "Specified Illnesses"
+    ],
+    "members": [
+      {
+        "Surname": "Loughnane",
+        "Forename": "Patrick",
+        "Age": "74",
+        "Sex": "Male",
+        "Relation to head": "Head of Family",
+        "Religion": "Roman Catholic",
+        "Birthplace": "County of Clare",
+        "Occupation": "Farmer",
+        "Literacy": "Can read and write",
+        "Irish Language": "Irish and English",
+        "Marital Status": "Widower",
+        "Specified Illnesses": "-"
+      },
+      {
+        "Surname": "Loughnane",
+        "Forename": "Catherine",
+        "Age": "23",
+        "Sex": "Female",
+        "Relation to head": "Farmers Daughter",
+        "Religion": "Roman Catholic",
+        "Birthplace": "County Clare",
+        "Occupation": "Farmers Daughter",
+        "Literacy": "Can read and write",
+        "Irish Language": "English",
+        "Marital Status": "Not Married",
+        "Specified Illnesses": "-",
+        "isSelected": true
+      },
+      {
+        "Surname": "Loughnane",
+        "Forename": "Daniel",
+        "Age": "21",
+        "Sex": "Male",
+        "Relation to head": "Son",
+        "Religion": "Roman Catholic",
+        "Birthplace": "Co Clare",
+        "Occupation": "Farmers Son",
+        "Literacy": "Read and write",
+        "Irish Language": "English",
+        "Marital Status": "Not Married",
+        "Specified Illnesses": "-"
+      },
+      {
+        "Surname": "Loughnane",
+        "Forename": "Cornelius",
+        "Age": "19",
+        "Sex": "Male",
+        "Relation to head": "Son",
+        "Religion": "Roman Catholic",
+        "Birthplace": "Co Clare",
+        "Occupation": "Farmers Son",
+        "Literacy": "Read and write",
+        "Irish Language": "English",
+        "Marital Status": "Not Married",
+        "Specified Illnesses": "-"
+      }
+    ]
+  },
+  "imageLink": "http://www.census.nationalarchives.ie/reels/nai000472125/"
+}

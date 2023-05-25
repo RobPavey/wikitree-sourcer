@@ -27,18 +27,51 @@ import { DataString } from "../../../base/core/data_string.mjs";
 
 function buildNaieUrl(data, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
-  return data.citationUrl;
+  return data.url;
+}
+
+function buildSourceTitle(data, gd) {
+  let sourceTitle = "";
+  let year = gd.inferEventYear();
+  if (year) {
+    sourceTitle += year + " ";
+  }
+  sourceTitle += "Census of Ireland; The National Archives of Ireland";
+
+  return sourceTitle;
+}
+
+function buildSourceReference(data, gd, options) {
+  // The National Archives of the UK (TNA); Kew, Surrey, England;
+  // Census Returns of England and Wales, 1911;
+  // Registration District Number: 10; ED, institution, or vessel: 03; Piece: 802<br/>
+
+  let sourceReference = "";
+  if (data.heading) {
+    let string = data.heading.replace(/\s+/g, " ");
+    sourceReference = string;
+  }
+
+  return sourceReference;
 }
 
 function buildCoreCitation(data, gd, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = "Put Source Title here";
-  builder.sourceReference = "Put Source Reference here";
+  builder.sourceTitle = buildSourceTitle(data, gd);
+  builder.sourceReference = buildSourceReference(data, gd, options);
 
   var naieUrl = buildNaieUrl(data, builder);
 
   let recordLink = "[" + naieUrl + " National Archives of Ireland Record]";
   builder.recordLinkOrTemplate = recordLink;
+
+  if (data.imageLink) {
+    let link = data.imageLink;
+    if (!link.startsWith("http")) {
+      link = "http://www.census.nationalarchives.ie/" + link;
+    }
+    builder.imageLink = "[" + link + " National Archives of Ireland Image]";
+  }
 
   let input = {
     generalizedData: gd,
@@ -59,6 +92,7 @@ function buildCitation(input) {
   const type = input.type; // "inline", "narrative" or "source"
 
   let builder = new CitationBuilder(type, runDate, options);
+  builder.householdTableString = input.householdTableString;
 
   buildCoreCitation(data, gd, builder);
 

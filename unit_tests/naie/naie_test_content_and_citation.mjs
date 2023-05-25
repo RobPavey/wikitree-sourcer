@@ -32,6 +32,34 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "census_1821_fermanagh_ann_keenan",
+    url: "http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/",
+  },
+  {
+    caseName: "census_1821_galway_walter_gleese",
+    url: "http://www.census.nationalarchives.ie/pages/1821/Galway/Kilconickney/Rathreddy/3/",
+  },
+  {
+    caseName: "census_1831_londonderry_danl_dimond",
+    url: "http://www.census.nationalarchives.ie/pages/1831/Londonderry/Loughinshillin/Kilrea/Kilrea/55/",
+  },
+  {
+    caseName: "census_1841_fermanagh_mathew_dowds",
+    url: "http://www.census.nationalarchives.ie/pages/1841/Fermanagh/Coole/Currin/Hermitage/0/",
+  },
+  {
+    caseName: "census_1841_mayo_elenor_mcguire",
+    url: "http://www.census.nationalarchives.ie/pages/1841/Mayo/Erris/Kil_Common/Dooyork/21/",
+  },
+  {
+    caseName: "census_1851_dublin_mary_kennedy",
+    url: "http://www.census.nationalarchives.ie/pages/1851/Dublin/Balrothery_East/Balrothery/Stephenstown/10/",
+  },
+  {
+    caseName: "census_1901_clare_catherine_loughnane",
+    url: "http://www.census.nationalarchives.ie/pages/1901/Clare/Ballynacally/Inishmore_on_Deen_Island/1075611/",
+  },
+  {
     caseName: "census_1911_waterford_john_long",
     url: "http://www.census.nationalarchives.ie/pages/1911/Waterford/Waterford_No__2_Urban/Spring_Garden_Alley/670431/",
   },

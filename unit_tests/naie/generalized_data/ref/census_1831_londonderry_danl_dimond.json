@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1831"
+  },
+  "eventPlace": {
+    "placeString": "Kilrea, Kilrea, Loughinshillin, Londonderry",
+    "country": "Ireland"
+  },
+  "name": {
+    "lastName": "Dimond",
+    "forenames": "Danl"
+  },
+  "relationshipToHead": "head",
+  "hasValidData": true
+}

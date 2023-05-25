@@ -1,0 +1,55 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1841"
+  },
+  "eventPlace": {
+    "placeString": "Hermitage, Currin, Coole, Fermanagh",
+    "country": "Ireland"
+  },
+  "name": {
+    "lastName": "Dowds",
+    "forenames": "Mathew"
+  },
+  "ageAtEvent": "65",
+  "relationshipToHead": "head",
+  "personGender": "male",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "gender",
+    "relationship",
+    "maritalStatus",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Mathew Dowds",
+      "age": "65",
+      "gender": "male",
+      "relationship": "?",
+      "maritalStatus": "",
+      "occupation": "",
+      "isSelected": true
+    },
+    {
+      "name": "Mary Dowds",
+      "age": "10",
+      "gender": "female",
+      "relationship": "?",
+      "maritalStatus": "",
+      "occupation": ""
+    },
+    {
+      "name": "James Dowds",
+      "age": "18",
+      "gender": "male",
+      "relationship": "?",
+      "maritalStatus": "",
+      "occupation": ""
+    }
+  ],
+  "hasValidData": true
+}

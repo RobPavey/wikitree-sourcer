@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nJohn Long (33), married, Labourer - General, head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford. Born in City of Waterford.\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of Ireland; The National Archives of Ireland\"<br/>\nResidents of a house 5 in Spring Garden Alley (Waterford No. 2 Urban, Waterford)<br/>\n[http://www.census.nationalarchives.ie/reels/nai003499429/ National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1911/Waterford/Waterford_No__2_Urban/Spring_Garden_Alley/670431/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nJohn Long (33), married, Labourer - General, head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford. Born in City of Waterford.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1911 census John (age 33), Labourer - General, was the married head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford.<ref>\n'''1911 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nJohn Long (33), married, Labourer - General, head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford. Born in City of Waterford.\n</ref>",
+    "citation": "In the 1911 census John (age 33), Labourer - General, was the married head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford.<ref>\n'''1911 Census''':\n\"1911 Census of Ireland; The National Archives of Ireland\"<br/>\nResidents of a house 5 in Spring Garden Alley (Waterford No. 2 Urban, Waterford)<br/>\n[http://www.census.nationalarchives.ie/reels/nai003499429/ National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1911/Waterford/Waterford_No__2_Urban/Spring_Garden_Alley/670431/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nJohn Long (33), married, Labourer - General, head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford. Born in City of Waterford.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1911 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[undefined National Archives of Ireland Record] (accessed 6 May 2021)<br/>John Long (33), married, Labourer - General, head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford. Born in City of Waterford.",
+    "citation": "* '''1911 Census''': \"1911 Census of Ireland; The National Archives of Ireland\"<br/>Residents of a house 5 in Spring Garden Alley (Waterford No. 2 Urban, Waterford)<br/>[http://www.census.nationalarchives.ie/reels/nai003499429/ National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1911/Waterford/Waterford_No__2_Urban/Spring_Garden_Alley/670431/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>John Long (33), married, Labourer - General, head of household in Spring Garden Alley, Waterford No. 2 Urban, Waterford. Born in City of Waterford.",
     "type": "source"
   }
 }

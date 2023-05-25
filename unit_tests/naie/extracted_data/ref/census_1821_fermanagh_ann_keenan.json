@@ -1,0 +1,69 @@
+{
+  "url": "http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/",
+  "success": true,
+  "breadCrumbs": [
+    "Census Years",
+    "1821",
+    "Fermanagh",
+    "Derryvolland",
+    "Lisnarrick Village",
+    "Residents of a house"
+  ],
+  "heading": "Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)",
+  "isRowUserSelected": true,
+  "household": {
+    "headings": [
+      "Surname",
+      "Forename",
+      "Age",
+      "Relation to head",
+      "Occupation"
+    ],
+    "members": [
+      {
+        "Surname": "McLaughlin",
+        "Forename": "Anne",
+        "Age": "40",
+        "Relation to head": "Widow",
+        "Occupation": "Farmer"
+      },
+      {
+        "Surname": "McLaughlin",
+        "Forename": "John",
+        "Age": "5",
+        "Relation to head": "Son",
+        "Occupation": "-"
+      },
+      {
+        "Surname": "McLaughlin",
+        "Forename": "Anne",
+        "Age": "6",
+        "Relation to head": "Daughter",
+        "Occupation": "-"
+      },
+      {
+        "Surname": "Keenan",
+        "Forename": "Ann",
+        "Age": "92",
+        "Relation to head": "Mother, Widow",
+        "Occupation": "-",
+        "isSelected": true
+      },
+      {
+        "Surname": "McLaughlin",
+        "Forename": "Ann",
+        "Age": "26",
+        "Relation to head": "-",
+        "Occupation": "House Servant"
+      },
+      {
+        "Surname": "McLaughlin",
+        "Forename": "Patrick",
+        "Age": "40",
+        "Relation to head": "-",
+        "Occupation": "Labourer"
+      }
+    ]
+  },
+  "imageLink": "http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf"
+}

@@ -1,0 +1,80 @@
+{
+  "url": "http://www.census.nationalarchives.ie/pages/1841/Fermanagh/Coole/Currin/Hermitage/0/",
+  "success": true,
+  "breadCrumbs": [
+    "Census Years",
+    "1841",
+    "Fermanagh",
+    "Coole",
+    "Currin",
+    "Hermitage",
+    "Residents of a house"
+  ],
+  "heading": "Residents of a house  in Hermitage\n        (Currin, Coole, Fermanagh)",
+  "household": {
+    "headings": [
+      "Surname",
+      "Forename",
+      "Age in years",
+      "Age in months if under one year",
+      "Sex",
+      "Relation to head",
+      "Marital Status",
+      "In what year(s) married",
+      "Occupation",
+      "Education",
+      "Native country, county, or city",
+      "Cause of death",
+      "Year of death"
+    ],
+    "members": [
+      {
+        "Surname": "Dowds",
+        "Forename": "Mathew",
+        "Age in years": "65",
+        "Age in months if under one year": "-",
+        "Sex": "Male",
+        "Relation to head": "?",
+        "Marital Status": "?",
+        "In what year(s) married": "-",
+        "Occupation": "?",
+        "Education": "?",
+        "Native country, county, or city": "?",
+        "Cause of death": "-",
+        "Year of death": "-",
+        "isSelected": true
+      },
+      {
+        "Surname": "Dowds",
+        "Forename": "Mary",
+        "Age in years": "10",
+        "Age in months if under one year": "-",
+        "Sex": "Female",
+        "Relation to head": "?",
+        "Marital Status": "?",
+        "In what year(s) married": "-",
+        "Occupation": "?",
+        "Education": "?",
+        "Native country, county, or city": "?",
+        "Cause of death": "-",
+        "Year of death": "-"
+      },
+      {
+        "Surname": "Dowds",
+        "Forename": "James",
+        "Age in years": "18",
+        "Age in months if under one year": "-",
+        "Sex": "Male",
+        "Relation to head": "?",
+        "Marital Status": "?",
+        "In what year(s) married": "-",
+        "Occupation": "?",
+        "Education": "?",
+        "Native country, county, or city": "?",
+        "Cause of death": "-",
+        "Year of death": "-"
+      }
+    ]
+  },
+  "imageLink": "http://www.census.nationalarchives.ie/reels/c19/007246483/007246483_00056.pdf"
+}

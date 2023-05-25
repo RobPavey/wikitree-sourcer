@@ -1,0 +1,64 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1821"
+  },
+  "eventPlace": {
+    "placeString": "Lisnarrick Village, Derryvolland, Fermanagh",
+    "country": "Ireland"
+  },
+  "name": {
+    "lastName": "Keenan",
+    "forenames": "Ann"
+  },
+  "ageAtEvent": "92",
+  "relationshipToHead": "mother, widow",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Anne McLaughlin",
+      "age": "40",
+      "relationship": "widow",
+      "occupation": "Farmer"
+    },
+    {
+      "name": "John McLaughlin",
+      "age": "5",
+      "relationship": "son",
+      "occupation": ""
+    },
+    {
+      "name": "Anne McLaughlin",
+      "age": "6",
+      "relationship": "daughter",
+      "occupation": ""
+    },
+    {
+      "name": "Ann Keenan",
+      "age": "92",
+      "relationship": "mother, widow",
+      "occupation": "",
+      "isSelected": true
+    },
+    {
+      "name": "Ann McLaughlin",
+      "age": "26",
+      "relationship": "",
+      "occupation": "House Servant"
+    },
+    {
+      "name": "Patrick McLaughlin",
+      "age": "40",
+      "relationship": "",
+      "occupation": "Labourer"
+    }
+  ],
+  "hasValidData": true
+}
