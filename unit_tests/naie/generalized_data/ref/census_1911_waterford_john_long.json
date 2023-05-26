@@ -6,8 +6,7 @@
     "yearString": "1911"
   },
   "eventPlace": {
-    "placeString": "Spring Garden Alley, Waterford No. 2 Urban, Waterford",
-    "country": "Ireland"
+    "placeString": "Spring Garden Alley, Waterford No. 2 Urban, Waterford, Ireland"
   },
   "name": {
     "lastName": "Long",
@@ -15,8 +14,7 @@
   },
   "ageAtEvent": "33",
   "birthPlace": {
-    "placeString": "City of Waterford",
-    "country": "Ireland"
+    "placeString": "City of Waterford, Ireland"
   },
   "relationshipToHead": "head",
   "maritalStatus": "married",

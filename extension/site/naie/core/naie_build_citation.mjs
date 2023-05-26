@@ -36,7 +36,7 @@ function buildSourceTitle(data, gd) {
   if (year) {
     sourceTitle += year + " ";
   }
-  sourceTitle += "Census of Ireland; The National Archives of Ireland";
+  sourceTitle += "Census of Ireland";
 
   return sourceTitle;
 }
@@ -46,10 +46,10 @@ function buildSourceReference(data, gd, options) {
   // Census Returns of England and Wales, 1911;
   // Registration District Number: 10; ED, institution, or vessel: 03; Piece: 802<br/>
 
-  let sourceReference = "";
+  let sourceReference = "The National Archives of Ireland";
   if (data.heading) {
     let string = data.heading.replace(/\s+/g, " ");
-    sourceReference = string;
+    sourceReference += ", " + string;
   }
 
   return sourceReference;

@@ -6,14 +6,16 @@
     "yearString": "1851"
   },
   "eventPlace": {
-    "placeString": "Stephenstown, Balrothery, Balrothery East, Dublin",
-    "country": "Ireland"
+    "placeString": "Stephenstown, Balrothery, Balrothery East, Dublin, Ireland"
   },
   "name": {
     "lastName": "Kennedy",
     "forenames": "Mary Anne"
   },
   "ageAtEvent": "48",
+  "birthPlace": {
+    "placeString": "County of Dublin, Ireland"
+  },
   "relationshipToHead": "head",
   "maritalStatus": "widowed",
   "personGender": "female",

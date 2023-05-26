@@ -6,8 +6,7 @@
     "yearString": "1901"
   },
   "eventPlace": {
-    "placeString": "Inishmore on Deen Island, Ballynacally, Clare",
-    "country": "Ireland"
+    "placeString": "Inishmore on Deen Island, Ballynacally, Clare, Ireland"
   },
   "name": {
     "lastName": "Loughnane",
@@ -15,8 +14,7 @@
   },
   "ageAtEvent": "23",
   "birthPlace": {
-    "placeString": "County Clare",
-    "country": "Ireland"
+    "placeString": "County Clare, Ireland"
   },
   "relationshipToHead": "daughter",
   "personGender": "female",

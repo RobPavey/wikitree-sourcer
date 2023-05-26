@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { CD } from "../../../base/core//country_data.mjs";
 
 function buildHouseholdArray(headings, members, result) {
   const stdFieldNames = [
@@ -153,8 +153,9 @@ function setYearAndPlace(data, result) {
   if (data.breadCrumbs.length == 7) {
     eventPlace = breadCrumbs[5] + ", " + eventPlace;
   }
+
+  eventPlace += ", Ireland";
   result.setEventPlace(eventPlace);
-  result.eventPlace.country = "Ireland";
 
   return true;
 }
@@ -220,9 +221,17 @@ function setDataFromTable(data, result) {
 
   result.setAgeAtEvent(extractAgeFromMember(selectedMember));
 
-  result.setBirthPlace(selectedMember["Birthplace"]);
-  if (result.birthPlace) {
-    result.birthPlace.country = "Ireland";
+  // could attempt to set country but birth place may not be in Ireland
+  let birthPlace = selectedMember["Birthplace"];
+  if (!birthPlace) {
+    birthPlace = selectedMember["Native country, county, or city"];
+  }
+  if (birthPlace && birthPlace != "-" && birthPlace != "?") {
+    let countryExtract = CD.extractCountryFromPlaceName(birthPlace);
+    if (!countryExtract) {
+      birthPlace += ", Ireland";
+    }
+    result.setBirthPlace(birthPlace);
   }
 
   if (year == "1831") {

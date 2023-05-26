@@ -6,14 +6,16 @@
     "yearString": "1841"
   },
   "eventPlace": {
-    "placeString": "Dooyork, Kil Common, Erris, Mayo",
-    "country": "Ireland"
+    "placeString": "Dooyork, Kil Common, Erris, Mayo, Ireland"
   },
   "name": {
     "lastName": "McGuire",
     "forenames": "Elenor"
   },
   "ageAtEvent": "21",
+  "birthPlace": {
+    "placeString": "Mayo, Ireland"
+  },
   "relationshipToHead": "wife",
   "maritalStatus": "married",
   "personGender": "female",
