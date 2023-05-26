@@ -22,20 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addSameRecordMenuItem,
-  addBackMenuItem,
-  addMenuItem,
-  beginMainMenu,
-  endMainMenu,
-  doAsyncActionWithCatch,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
   doSearch,
   registerSearchMenuItemFunction,
   testFilterForDatesAndCountries,
 } from "/base/browser/popup/popup_search.mjs";
+
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -46,8 +41,14 @@ const naieEndYear = 1992;
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function naieSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+async function naieSearch(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+
   doAsyncActionWithCatch("National Archives of Ireland Search", input, async function () {
     let loadedModule = await import(`../core/naie_build_search_url.mjs`);
     doSearch(loadedModule, input);
@@ -62,7 +63,7 @@ function addNaieDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addNaieDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "England and Wales";
+  const stdCountryName = "Ireland";
 
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, naieStartYear, naieEndYear, [stdCountryName])) {
@@ -97,68 +98,11 @@ function addNaieDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItem(menu, "Search National Archives of Ireland...", function (element) {
+  addMenuItem(menu, "Search National Archives of Ireland Census...", function (element) {
     setupNaieSearchSubMenu(data, backFunction, filter);
   });
 
   return true;
-}
-
-async function addNaieSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "naie", function (element) {
-    naieSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addNaieSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      naieStartYear,
-      naieEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search National Archives of Ireland Births", function (element) {
-    naieSearch(data.generalizedData, "Births");
-  });
-}
-
-function addNaieSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      naieStartYear,
-      naieEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search National Archives of Ireland Marriages", function (element) {
-    naieSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addNaieSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      naieStartYear,
-      naieEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search National Archives of Ireland Deaths", function (element) {
-    naieSearch(data.generalizedData, "Deaths");
-  });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -166,16 +110,8 @@ function addNaieSearchDeathsMenuItem(menu, data, filter) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupNaieSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  await addNaieSameRecordMenuItem(menu, data, filter);
-  addNaieSearchBirthsMenuItem(menu, data, filter);
-  addNaieSearchMarriagesMenuItem(menu, data, filter);
-  addNaieSearchDeathsMenuItem(menu, data, filter);
-
-  endMainMenu(menu);
+  let dataModule = await import(`../core/naie_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.NaieData, naieSearch);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -24,9 +24,18 @@ SOFTWARE.
 
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 
+// http://www.census.nationalarchives.ie/search/results.jsp
+// ?census_year=1911&surname=John&firstname=Long
+// &county19011911=&county1821=&county1831=&county1841=&county1851=
+// &parish=&ward=&barony=&townland=&houseNumber=&ded=
+// &age=10&sex=M&search=Search
+
+// http://www.census.nationalarchives.ie/search/results.jsp?searchMoreVisible=&census_year=1901&surname=Connors&firstname=Margaret&county19011911=&county1821=&county1831=&county1841=&county1851=&parish=&ward=&barony=&townland=&houseNumber=&ded=&age=31&sex=F&search=Search&ageInMonths=&relationToHead=&religion=&education=&occupation=&marriageStatus=&yearsMarried=&birthplace=&nativeCountry=&language=&deafdumb=&causeOfDeath=&yearOfDeath=&familiesNumber=&malesNumber=&femalesNumber=&maleServNumber=&femaleServNumber=&estChurchNumber=&romanCatNumber=&presbNumber=&protNumber=&marriageYears=&childrenBorn=&childrenLiving=
+// http://www.census.nationalarchives.ie/search/results.jsp?census_year=1901&surname=Connors&firstname=Margaret&county19011911=&county1821=&county1831=&county1841=&county1851=&parish=&ward=&barony=&townland=&houseNumber=&ded=&age=31&sex=F&search=Search
+
 class NaieUriBuilder {
   constructor() {
-    this.uri = "https://www.naie.org.uk/cgi/search.pl";
+    this.uri = "http://www.census.nationalarchives.ie/search/results.jsp";
     this.searchTermAdded = false;
   }
 
@@ -57,8 +66,8 @@ class NaieUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addYear(string) {
+    this.addSearchParameter("census_year", string);
   }
 
   addSurname(string) {
@@ -66,38 +75,35 @@ class NaieUriBuilder {
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("given", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("firstname", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", WTS_String.removeExtendedAsciiCharacters(string));
+  addAge(string) {
+    this.addSearchParameter("age", string);
   }
 
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", WTS_String.removeExtendedAsciiCharacters(string));
+  addGender(gender) {
+    if (gender == "male") {
+      gender = "M";
+    } else if (gender == "female") {
+      gender = "F";
+    } else {
+      return;
+    }
+    this.addSearchParameter("sex", gender);
   }
 
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
+  addCounty(censusYear, county) {
+    let paramName = "county" + censusYear;
+    if (censusYear == "1901" || censusYear == "1911") {
+      paramName = "county19011911";
+    }
 
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+    this.addSearchParameter(paramName, county);
   }
 
   getUri() {
+    this.uri += "&search=Search";
     return this.uri;
   }
 }

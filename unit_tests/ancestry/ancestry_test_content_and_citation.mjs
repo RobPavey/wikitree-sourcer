@@ -616,6 +616,10 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61311&h=2913",
   },
   {
+    caseName: "ireland_census_1901_margaret_kearney",
+    url: "https://www.ancestry.co.uk/discoveryui-content/view/10426199:70667?tid=&pid=&queryId=599070b5196aba97ca5be878bcb79ee9&_phsrc=UnG12&_phstart=successSource",
+  },
+  {
     caseName: "ireland_death_1933_olive_houston",
     url: "https://www.ancestry.com/discoveryui-content/view/6407416:2534",
   },

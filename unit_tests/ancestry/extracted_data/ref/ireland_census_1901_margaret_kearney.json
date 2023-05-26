@@ -1,0 +1,96 @@
+{
+  "url": "https://www.ancestry.co.uk/discoveryui-content/view/10426199:70667?tid=&pid=&queryId=599070b5196aba97ca5be878bcb79ee9&_phsrc=UnG12&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "70667",
+  "recordId": "10426199",
+  "ancestryTemplate": "{{Ancestry Record|70667|10426199}}",
+  "domain": "co.uk",
+  "titleName": "Margaret Kearney",
+  "titleCollection": "Web: Ireland, Census, 1901",
+  "recordData": {
+    "Name": "Margaret Kearney",
+    "Gender": "Female",
+    "Marital Status": "Married",
+    "Age": "31",
+    "Birth Date": "abt 1870",
+    "Birth Place": "Spert Houel, Co Waterford",
+    "Residence Date": "31 Mar 1901",
+    "House Number": "32",
+    "Residence Place": "Spring Garden, Waterford Urban No. 2, Waterford, Ireland",
+    "Relation to Head": "Wife",
+    "Occupation": "Wife",
+    "Religion": "Catholic",
+    "Literacy": "Read and write",
+    "Household Members (Name)<br/>Age<br/>Relationship": "James Kearney 33 Head of Family (Head)<br/>Margaret Kearney 31 Wife<br/>James Kearney 9 Son<br/>Mch John Kearney 6 Son<br/>Mary Kate Kearney 5 Daughter<br/>Myles Kearney Son<br/>Valentine Kearney 21 Brother",
+    "URL": "http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "James Kearney",
+        "dbId": "70667",
+        "recordId": "9407265",
+        "link": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=9407265&indiv=try",
+        "Age": "33",
+        "Relationship": "Head of Family (Head)"
+      },
+      {
+        "Household Members (Name)": "Margaret Kearney",
+        "Age": "31",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members (Name)": "James Kearney",
+        "dbId": "70667",
+        "recordId": "11070666",
+        "link": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=11070666&indiv=try&viewrecord=1&r=5538",
+        "Age": "9",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members (Name)": "Mch John Kearney",
+        "dbId": "70667",
+        "recordId": "11815037",
+        "link": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=11815037&indiv=try&viewrecord=1&r=5538",
+        "Age": "6",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members (Name)": "Mary Kate Kearney",
+        "dbId": "70667",
+        "recordId": "12235314",
+        "link": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=12235314&indiv=try&viewrecord=1&r=5538",
+        "Age": "5",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "Myles Kearney",
+        "dbId": "70667",
+        "recordId": "12667914",
+        "link": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=12667914&indiv=try&viewrecord=1&r=5538",
+        "Age": "",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members (Name)": "Valentine Kearney",
+        "dbId": "70667",
+        "recordId": "12891304",
+        "link": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=12891304&indiv=try&viewrecord=1&r=5538",
+        "Age": "21",
+        "Relationship": "Brother"
+      }
+    ]
+  },
+  "imageUrl": "http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/",
+  "imageDbId": "http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/",
+  "imageRecordId": "http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/",
+  "sourceCitation": "Class: RG14",
+  "sourceInformation": "Ancestry.com. Web: Ireland, Census, 1901 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2013. Original data: Census of Ireland 1901/1911. The National Archives of Ireland. http://www.census.nationalarchives.ie/search/: accessed 31 May 2013.",
+  "originalData": "Census of Ireland 1901/1911. The National Archives of Ireland. http://www.census.nationalarchives.ie/search/: accessed 31 May 2013.",
+  "sourceDescription": "All data in this third-party database was obtained from the source’s website. Ancestry.com does not support or make corrections or changes to the original database. To learn more about these records, please refer to the source’s website. Learn more..."
+}

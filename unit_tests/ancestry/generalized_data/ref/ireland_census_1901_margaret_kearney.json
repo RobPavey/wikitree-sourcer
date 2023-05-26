@@ -1,0 +1,88 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Margaret Kearney"
+  },
+  "personGender": "female",
+  "birthPlace": {
+    "placeString": "Spert Houel, Co Waterford"
+  },
+  "eventDate": {
+    "dateString": "31 Mar 1901"
+  },
+  "eventPlace": {
+    "placeString": "Spring Garden, Waterford Urban No. 2, Waterford, Ireland"
+  },
+  "occupation": "Wife",
+  "ageAtEvent": "31",
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "James Kearney",
+      "age": "33",
+      "relationship": "head",
+      "uid": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=9407265&indiv=try"
+    },
+    {
+      "name": "Margaret Kearney",
+      "age": "31",
+      "relationship": "wife",
+      "isSelected": true,
+      "maritalStatus": "married",
+      "gender": "female",
+      "occupation": "Wife",
+      "birthDate": "abt 1870",
+      "birthPlace": "Spert Houel, Co Waterford"
+    },
+    {
+      "name": "James Kearney",
+      "age": "9",
+      "relationship": "son",
+      "uid": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=11070666&indiv=try&viewrecord=1&r=5538"
+    },
+    {
+      "name": "Mch John Kearney",
+      "age": "6",
+      "relationship": "son",
+      "uid": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=11815037&indiv=try&viewrecord=1&r=5538"
+    },
+    {
+      "name": "Mary Kate Kearney",
+      "age": "5",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=12235314&indiv=try&viewrecord=1&r=5538"
+    },
+    {
+      "name": "Myles Kearney",
+      "relationship": "son",
+      "uid": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=12667914&indiv=try&viewrecord=1&r=5538"
+    },
+    {
+      "name": "Valentine Kearney",
+      "age": "21",
+      "relationship": "brother",
+      "uid": "https://search.ancestry.co.uk/cgi-bin/sse.dll?dbid=70667&h=12891304&indiv=try&viewrecord=1&r=5538"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "James Kearney"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "70667"
+  },
+  "hasValidData": true
+}

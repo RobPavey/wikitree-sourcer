@@ -30,6 +30,7 @@ import {
   endMainMenu,
   addBreak,
   closePopup,
+  keepPopupOpen,
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { CD } from "/base/core/country_data.mjs";
 import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
@@ -57,6 +58,10 @@ async function restorePopupSearchFilterState() {
 }
 
 function openUrlInNewTab(link) {
+  if (keepPopupOpen) {
+    return;
+  }
+
   const tabOption = options.search_general_newTabPos;
 
   if (tabOption == "newWindow") {

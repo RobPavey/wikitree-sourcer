@@ -377,6 +377,44 @@ const GD = {
 
     return newValue;
   },
+
+  inferCountyNameFromPlaceString: function (placeString) {
+    //console.log("inferCountyNameFromPlaceString, placeString is : " + placeString);
+
+    // it can be hard to get the county from the string.
+    let country = undefined;
+    let placeNameMinusCountry = placeString;
+
+    let countryExtract = CD.extractCountryFromPlaceName(placeString);
+    if (countryExtract) {
+      country = countryExtract.country;
+      placeNameMinusCountry = countryExtract.remainder;
+
+      if (country.hasStates) {
+        return "";
+      }
+    }
+
+    //console.log("inferCountyNameFromPlaceString, placeNameMinusCountry is : " + placeNameMinusCountry);
+
+    let countyName = undefined;
+    let lastCommaIndex = placeNameMinusCountry.lastIndexOf(",");
+    if (lastCommaIndex != -1) {
+      countyName = placeNameMinusCountry.substring(lastCommaIndex + 1).trim();
+    } else {
+      countyName = placeNameMinusCountry;
+    }
+
+    //console.log("inferCountyNameFromPlaceString, countyName is : " + countyName);
+
+    if (country) {
+      let stdCountyName = CD.standardizeCountyNameForCountry(countyName, country);
+      //console.log("inferCountyNameFromPlaceString, stdCountyName is : " + stdCountyName);
+      if (stdCountyName) {
+        return stdCountyName;
+      }
+    }
+  },
 };
 
 class WtsDate {
@@ -642,34 +680,7 @@ class WtsPlace {
       return "";
     }
 
-    // it can be hard to get the county from the string.
-    let country = undefined;
-    let placeNameMinusCountry = this.placeString;
-
-    let countryExtract = CD.extractCountryFromPlaceName(this.placeString);
-    if (countryExtract) {
-      country = countryExtract.country;
-      placeNameMinusCountry = countryExtract.remainder;
-
-      if (country.hasStates) {
-        return "";
-      }
-    }
-
-    let countyName = undefined;
-    let lastCommaIndex = placeNameMinusCountry.lastIndexOf(",");
-    if (lastCommaIndex != -1) {
-      countyName = placeNameMinusCountry.substring(lastCommaIndex + 1).trim();
-    } else {
-      countyName = placeNameMinusCountry;
-    }
-
-    if (country) {
-      let stdCountyName = CD.standardizeCountyNameForCountry(countyName, country);
-      if (stdCountyName) {
-        return stdCountyName;
-      }
-    }
+    return GD.inferCountyNameFromPlaceString(this.placeString);
   }
 
   inferTown() {
@@ -2433,6 +2444,35 @@ class GeneralizedData {
     return this.inferCountryFromPlaceNames(placeNames);
   }
 
+  inferCounties() {
+    //console.log("inferCounties, this is:");
+    //console.log(this);
+
+    let placeNames = this.inferPlaceNames();
+
+    //console.log("inferCounties, placeNames is:");
+    //console.log(placeNames);
+
+    // determine the country or countries from placeNames array
+    if (placeNames.length > 0) {
+      let countyArray = [];
+      for (let placeString of placeNames) {
+        let countyName = GD.inferCountyNameFromPlaceString(placeString);
+        //console.log("inferCounties, countyName is:");
+        //console.log(countyName);
+
+        if (countyName && !countyArray.includes(countyName)) {
+          countyArray.push(countyName);
+        }
+      }
+      if (countyArray.length > 0) {
+        return countyArray;
+      }
+    }
+
+    return [];
+  }
+
   inferEventCounty() {
     let eventCounty = "";
 
@@ -2441,6 +2481,39 @@ class GeneralizedData {
     }
 
     return eventCounty;
+  }
+
+  inferLastNameOnDate(targetDate, allowMultiple = false) {
+    let targetParsedDate = WTS_Date.parseDateString(targetDate);
+    let bestMatchName = "";
+    let howCloseIsBestMatch = -1;
+    for (let spouse of this.spouses) {
+      if (spouse.marriageDate) {
+        let marriageDate = spouse.marriageDate.getDateString();
+        let marriageParsedDate = WTS_Date.parseDateString(marriageDate);
+        let diff = WTS_Date.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
+        if (diff >= 0) {
+          let howClose = diff;
+          if (!bestMatchName || howClose <= howCloseIsBestMatch) {
+            bestMatchName = spouse.lastNameAtBirth;
+            howCloseIsBestMatch = howClose;
+          }
+        }
+      }
+    }
+
+    if (bestMatchName) {
+      return bestMatchName;
+    } else if (this.lastNameAtBirth) {
+      // there are some marriages and this collection seems to be before all of them
+      return this.lastNameAtBirth;
+    }
+
+    if (allowMultiple) {
+      return this.inferLastNames();
+    }
+
+    return this.inferLastName();
   }
 
   inferLastNameGivenParametersAndCollection(parameters, collection, allowMultiple = false) {
@@ -2470,30 +2543,7 @@ class GeneralizedData {
           if (!targetDate) {
             targetDate = collection.dates.year.toString();
           }
-          let targetParsedDate = WTS_Date.parseDateString(targetDate);
-          let bestMatchName = "";
-          let howCloseIsBestMatch = -1;
-          for (let spouse of this.spouses) {
-            if (spouse.marriageDate) {
-              let marriageDate = spouse.marriageDate.getDateString();
-              let marriageParsedDate = WTS_Date.parseDateString(marriageDate);
-              let diff = WTS_Date.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
-              if (diff >= 0) {
-                let howClose = diff;
-                if (!bestMatchName || howClose <= howCloseIsBestMatch) {
-                  bestMatchName = spouse.lastNameAtBirth;
-                  howCloseIsBestMatch = howClose;
-                }
-              }
-            }
-          }
-
-          if (bestMatchName) {
-            return bestMatchName;
-          } else if (this.lastNameAtBirth) {
-            // there are some marriages and this collection seems to be before all of them
-            return this.lastNameAtBirth;
-          }
+          return this.inferLastNameOnDate(targetDate, allowMultiple);
         }
       }
     }

@@ -26,12 +26,60 @@ import { buildSearchUrl } from "../../extension/site/naie/core/naie_build_search
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+  {
+    caseName: "ireland_census_1901_margaret_kearney",
+    inputPath: "ancestry/generalized_data/ref/ireland_census_1901_margaret_kearney",
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: {
+      collection: "1901",
+      lastNameIndex: 0,
+    },
+    optionVariants: [
+      {
+        variantName: "county",
+        searchParameters: {
+          collection: "1901",
+          lastNameIndex: 0,
+          county: "Waterford",
+        },
+      },
+    ],
   },
-  */
+  {
+    caseName: "ireland_connors-569_read",
+    inputPath: "wikitree/generalized_data/ref/ireland_connors-569_read",
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: {
+      collection: "1821",
+      lastNameIndex: 0,
+    },
+    optionVariants: [
+      {
+        variantName: "1901Kearney",
+        searchParameters: {
+          collection: "1901",
+          lastNameIndex: 1,
+          county: "Waterford",
+        },
+      },
+      {
+        variantName: "1911Long",
+        searchParameters: {
+          collection: "1911",
+          lastNameIndex: 2,
+          county: "Waterford",
+        },
+      },
+      {
+        variantName: "1831",
+        searchParameters: {
+          collection: "1831",
+          lastNameIndex: 0,
+          county: "Antrim",
+        },
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {

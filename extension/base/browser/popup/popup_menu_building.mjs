@@ -1201,4 +1201,5 @@ export {
   macSecondMonitorWorkaround,
   isSafari,
   isFirefox,
+  keepPopupOpen,
 };
