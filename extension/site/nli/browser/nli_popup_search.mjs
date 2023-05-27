@@ -39,8 +39,8 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const nliStartYear = 1837;
-const nliEndYear = 1992;
+const nliStartYear = 1740;
+const nliEndYear = 1880;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -62,7 +62,7 @@ function addNliDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addNliDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "England and Wales";
+  const stdCountryName = "Ireland";
 
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, nliStartYear, nliEndYear, [stdCountryName])) {
@@ -98,85 +98,15 @@ function addNliDefaultSearchMenuItem(menu, data, backFunction, filter) {
   }
 
   addMenuItem(menu, "Search National Library of Ireland Registers...", function (element) {
-    setupNliSearchSubMenu(data, backFunction, filter);
+    nliSearch(data.generalizedData, "SameCollection");
   });
 
   return true;
 }
 
-async function addNliSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "nli", function (element) {
-    nliSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addNliSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      nliStartYear,
-      nliEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search National Library of Ireland Births", function (element) {
-    nliSearch(data.generalizedData, "Births");
-  });
-}
-
-function addNliSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      nliStartYear,
-      nliEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search National Library of Ireland Marriages", function (element) {
-    nliSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addNliSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      nliStartYear,
-      nliEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search National Library of Ireland Deaths", function (element) {
-    nliSearch(data.generalizedData, "Deaths");
-  });
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupNliSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  await addNliSameRecordMenuItem(menu, data, filter);
-  addNliSearchBirthsMenuItem(menu, data, filter);
-  addNliSearchMarriagesMenuItem(menu, data, filter);
-  addNliSearchDeathsMenuItem(menu, data, filter);
-
-  endMainMenu(menu);
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites

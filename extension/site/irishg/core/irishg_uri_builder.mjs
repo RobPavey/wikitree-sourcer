@@ -192,7 +192,8 @@ class IrishgUriBuilder {
   }
 
   getUri() {
-    return this.uri + "&submit=Search";
+    this.addSearchParameter("submit", "Search");
+    return this.uri;
   }
 }
 
