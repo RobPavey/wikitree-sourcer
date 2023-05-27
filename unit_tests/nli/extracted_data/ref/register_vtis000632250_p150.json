@@ -1,0 +1,20 @@
+{
+  "url": "https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up",
+  "success": true,
+  "parishTitle": "St. Patrick's and St. Olaf's, Waterford city",
+  "registerTitle": "Microfilm 02447 / 05",
+  "dioceseParish": "Diocese of Waterford and Lismore",
+  "county": "County of Waterford",
+  "registerPages": "245 images",
+  "registerEvents": [
+    {
+      "title": "Baptisms",
+      "range": "06 June 1772 to 22 May 1783"
+    },
+    {
+      "title": "Marriages",
+      "range": "10 Oct. 1772 to 19 May 1783"
+    }
+  ],
+  "pageInfo": "Page 150; June 1777"
+}

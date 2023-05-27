@@ -25,18 +25,27 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
 
-function buildExamplesiteUrl(data, builder) {
-  // could provide option to use a search style URL but don't see any reason to so far
-  return data.citationUrl;
+function buildNliUrl(data, builder) {
+  return data.url;
 }
 
 function buildSourceTitle(data, gd) {
-  let sourceTitle = "Put Source Title here";
+  let sourceTitle = "";
+  sourceTitle += "Catholic Parish Registers";
+
   return sourceTitle;
 }
 
 function buildSourceReference(data, gd, options) {
-  let sourceReference = "Put Source Reference here";
+  // The National Archives of the UK (TNA); Kew, Surrey, England;
+  // Census Returns of England and Wales, 1911;
+  // Registration District Number: 10; ED, institution, or vessel: 03; Piece: 802<br/>
+
+  let sourceReference = "National Library of Ireland";
+  if (data.dioceseParish && data.county) {
+    sourceReference += ", " + data.dioceseParish + ", " + data.county;
+  }
+
   return sourceReference;
 }
 
@@ -45,20 +54,14 @@ function buildCoreCitation(data, gd, builder) {
   builder.sourceTitle = buildSourceTitle(data, gd);
   builder.sourceReference = buildSourceReference(data, gd, options);
 
-  var examplesiteUrl = buildExamplesiteUrl(data, builder);
+  var nliUrl = buildNliUrl(data, builder);
 
-  let recordLink = "[" + examplesiteUrl + " ExampleSite Record]";
+  let recordLink = "[" + nliUrl + " National Library of Ireland Register]";
   builder.recordLinkOrTemplate = recordLink;
 
-  let input = {
-    generalizedData: gd,
-    options: options,
-  };
-  let dataString = DataString.buildDataString(input);
-  if (!dataString.endsWith(".")) {
-    dataString += ".";
+  if (data.pageInfo) {
+    builder.dataString = data.pageInfo;
   }
-  builder.dataString = dataString;
 }
 
 function buildCitation(input) {

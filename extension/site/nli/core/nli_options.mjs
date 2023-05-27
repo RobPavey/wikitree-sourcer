@@ -22,26 +22,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Importing each of these site modules causes them to register their options
+import {
+  registerSubsectionForOptions,
+  registerOptionsGroup,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
 
-// Currently the order that they are imported is the order that they appear in the
-// options page subsection drop down
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../bg/core/bg_options.mjs";
-import "../../cwgc/core/cwgc_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../geneteka/core/geneteka_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../irishg/core/irishg_options.mjs";
-import "../../naie/core/naie_options.mjs";
-import "../../np/core/np_options.mjs";
-import "../../ppnz/core/ppnz_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../trove/core/trove_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
-import "../../nli/core/nli_options.mjs";
+const citationOptionsGroup = {
+  category: "citation",
+  subcategory: "nli",
+  tab: "citation",
+  subsection: "nli",
+  options: [
+    {
+      optionName: "changeNamesToInitialCaps",
+      type: "checkbox",
+      label: "Change any person and place names in all caps to initial caps",
+      defaultValue: true,
+    },
+  ],
+};
+
+registerSubsectionForOptions("search", "nli", "National Library of Ireland");
+registerSiteSearchPopupOptionsGroup("nli", 7, 7);
+
+registerSubsectionForOptions("citation", "nli", "National Library of Ireland");
+registerOptionsGroup(citationOptionsGroup);

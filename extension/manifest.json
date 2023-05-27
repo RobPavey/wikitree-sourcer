@@ -34,6 +34,7 @@
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.irishgenealogy.ie/*",
     "*://www.census.nationalarchives.ie/*",
+    "*://*.nli.ie/*",
     "*://*.newspapers.com/*",
     "*://paperspast.natlib.govt.nz/*",
     "*://www.scotlandspeople.gov.uk/*",
@@ -144,6 +145,11 @@
       "js": ["base/browser/content/content_common.js", "site/naie/browser/naie_content.js"]
     },
     {
+      "matches": ["*://*.nli.ie/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/nli/browser/nli_content.js"]
+    },
+    {
       "matches": ["*://www.newspapers.com/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
@@ -250,6 +256,10 @@
     {
       "resources": ["site/naie/core/naie_extract_data.mjs"],
       "matches": ["*://www.census.nationalarchives.ie/*"]
+    },
+    {
+      "resources": ["site/nli/core/nli_extract_data.mjs"],
+      "matches": ["*://*.nli.ie/*"]
     },
     {
       "resources": ["site/np/core/np_extract_data.mjs"],

@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "nli",
+  "sourceType": "record",
+  "eventDate": {
+    "yearString": "1777"
+  },
+  "eventPlace": {
+    "placeString": "Waterford, Ireland"
+  },
+  "hasValidData": true
+}

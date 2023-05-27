@@ -1009,7 +1009,7 @@ function setupSupportSubmenuMenu(data, backFunction) {
   fspLinkButton.innerText = "WikiTree Sourcer Free Space Page.";
   fspLinkButton.onclick = async function (element) {
     chrome.tabs.create({
-      url: "https://www.wikitree.com/index.php?title=Space:WikiTree_Sourcer",
+      url: "https://www.wikitree.com/wiki/Space:WikiTree_Sourcer",
     });
     closePopup();
   };
