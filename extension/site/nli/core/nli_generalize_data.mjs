@@ -24,6 +24,94 @@ SOFTWARE.
 
 import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
+import { WTS_Date } from "../../../base/core/wts_date.mjs";
+
+function processDates(data, result) {
+  if (!data.pageInfo) {
+    return;
+  }
+
+  // parse the pageInfo
+  let semiIndex = data.pageInfo.indexOf(";");
+  if (semiIndex == -1) {
+    return;
+  }
+
+  let dateString = data.pageInfo.substring(semiIndex + 1).trim();
+
+  // could one of two forms:
+  // Aug. 1733 to Nov. 1733
+  // Apr. 1733
+  let eventDate = "";
+  let fromDate = "";
+  let toDate = "";
+  let toIndex = dateString.indexOf("to");
+  if (toIndex == -1) {
+    eventDate = dateString.replace(/\./g, "");
+    fromDate = eventDate;
+    toDate = eventDate;
+  } else {
+    fromDate = dateString.substring(0, toIndex).trim();
+    toDate = dateString.substring(toIndex + 2).trim();
+    fromDate = fromDate.replace(/\./g, "");
+    toDate = toDate.replace(/\./g, "");
+    eventDate = fromDate + " - " + toDate;
+  }
+  result.setEventDate(eventDate);
+
+  let parsedFromDate = WTS_Date.parseDateString(fromDate);
+  let fromDateInDays = WTS_Date.getParsedDateInDays(parsedFromDate);
+  let parsedToDate = WTS_Date.parseDateString(toDate);
+  let toDateInDays = WTS_Date.getParsedDateInDays(parsedToDate);
+
+  let eventInRange = undefined;
+  for (let event of data.registerEvents) {
+    let range = event.range;
+
+    let rangeFrom = "";
+    let rangeTo = "";
+    let toIndex = range.indexOf("to");
+    if (toIndex == -1) {
+      rangeFrom = range.replace(/\./g, "");
+      rangeTo = rangeFrom;
+    } else {
+      rangeFrom = range.substring(0, toIndex).trim();
+      rangeTo = range.substring(toIndex + 2).trim();
+      rangeFrom = rangeFrom.replace(/\./g, "");
+      rangeTo = rangeTo.replace(/\./g, "");
+    }
+
+    let parsedRangeFrom = WTS_Date.parseDateString(rangeFrom);
+    let rangeFromInDays = WTS_Date.getParsedDateInDays(parsedRangeFrom);
+    let parsedRangeTo = WTS_Date.parseDateString(rangeTo);
+    let rangeToInDays = WTS_Date.getParsedDateInDays(parsedRangeTo);
+
+    if (fromDateInDays > rangeToInDays || toDateInDays < rangeFromInDays) {
+      // no overlap ignore
+    } else {
+      if (eventInRange) {
+        // multiple events on range
+        eventInRange = undefined;
+        break;
+      } else {
+        eventInRange = event;
+      }
+    }
+  }
+
+  let guessedRecordType = RT.Unclassified;
+  if (eventInRange) {
+    if (eventInRange.title == "Baptisms") {
+      guessedRecordType = RT.Baptism;
+    } else if (eventInRange.title == "Marriages") {
+      guessedRecordType = RT.Marriage;
+    } else if (eventInRange.title == "Burials") {
+      guessedRecordType = RT.Burial;
+    }
+  }
+
+  return guessedRecordType;
+}
 
 // This function generalizes the data extracted web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
@@ -39,24 +127,45 @@ function generalizeData(input) {
   }
 
   result.sourceType = "record";
+  result.recordType = RT.Unclassified; // causes manual classification
 
-  if (data.pageInfo && data.pageInfo.length >= 4) {
-    let eventYear = data.pageInfo.substring(data.pageInfo.length - 4);
-    if (/\d\d\d\d/.test(eventYear)) {
-      result.setEventYear(eventYear);
-    }
+  let guessedRecordType = processDates(data, result);
+
+  result.classificationHints = {
+    possibleRecordTypes: [
+      { type: RT.Unclassified, string: "Unclassified" },
+      { type: RT.Baptism, string: "Baptism" },
+      { type: RT.Marriage, string: "Marriage" },
+      { type: RT.Burial, string: "Burial" },
+    ],
+    needsName: true,
+    needsEventDate: true,
+    guessedRecordType: guessedRecordType,
+  };
+
+  let eventPlace = "";
+  let parish = data.parishTitle;
+  if (parish) {
+    eventPlace = parish;
   }
-
   let county = data.county;
   if (county) {
     const prefix = "County of ";
     if (county.startsWith(prefix)) {
       county = county.substring(prefix.length);
     }
-    result.setEventPlace(county + ", Ireland");
-  } else {
-    result.setEventPlace("Ireland");
+    if (county) {
+      if (eventPlace) {
+        eventPlace += ", ";
+      }
+      eventPlace += county;
+    }
   }
+  if (eventPlace) {
+    eventPlace += ", ";
+  }
+  eventPlace += "Ireland";
+  result.setEventPlace(eventPlace);
 
   result.hasValidData = true;
 
@@ -66,4 +175,18 @@ function generalizeData(input) {
   return result;
 }
 
-export { generalizeData, GeneralizedData, dateQualifiers };
+function regeneralizeData(input) {
+  let data = input.extractedData;
+  let result = input.generalizedData;
+  let newData = input.newData;
+
+  result.recordType = newData.recordType;
+
+  result.setLastNameAndForeNames(newData.lastName, newData.forenames);
+
+  if (newData.eventDate) {
+    result.setEventDate(newData.eventDate);
+  }
+}
+
+export { generalizeData, regeneralizeData, GeneralizedData, dateQualifiers };

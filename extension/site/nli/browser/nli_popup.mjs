@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
-import { generalizeData } from "../core/nli_generalize_data.mjs";
+import { generalizeData, regeneralizeData } from "../core/nli_generalize_data.mjs";
 import { buildCitation } from "../core/nli_build_citation.mjs";
 
 async function setupNliPopupMenu(extractedData) {
@@ -34,6 +34,7 @@ async function setupNliPopupMenu(extractedData) {
       "It looks like a National Library of Ireland page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
     generalizeFailedMessage: "It looks like a National Library of Ireland page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
+    regeneralizeFunction: regeneralizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "nli",
   };

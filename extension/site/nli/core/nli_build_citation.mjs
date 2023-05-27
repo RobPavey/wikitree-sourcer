@@ -45,6 +45,9 @@ function buildSourceReference(data, gd, options) {
   if (data.dioceseParish && data.county) {
     sourceReference += ", " + data.dioceseParish + ", " + data.county;
   }
+  if (data.pageInfo) {
+    sourceReference += "; " + data.pageInfo;
+  }
 
   return sourceReference;
 }
@@ -59,8 +62,16 @@ function buildCoreCitation(data, gd, builder) {
   let recordLink = "[" + nliUrl + " National Library of Ireland Register]";
   builder.recordLinkOrTemplate = recordLink;
 
-  if (data.pageInfo) {
-    builder.dataString = data.pageInfo;
+  let input = {
+    generalizedData: gd,
+    options: options,
+  };
+  let dataString = DataString.buildDataString(input);
+  if (dataString) {
+    if (!dataString.endsWith(".")) {
+      dataString += ".";
+    }
+    builder.dataString = dataString;
   }
 }
 

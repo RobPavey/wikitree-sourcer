@@ -602,6 +602,161 @@ function isManualClassificationNeeded(data) {
   return result;
 }
 
+function setupUnclassifiedBuildCitationSubMenuWithHints(
+  data,
+  manualClassification,
+  buildFunction,
+  backFunction,
+  generalizeFunction
+) {
+  let menu = beginMainMenu();
+  addBackMenuItem(menu, backFunction);
+
+  let gd = data.generalizedData;
+  let recordType = data.generalizedData.recordType;
+
+  let hintData = gd.classificationHints;
+
+  let textInputField = undefined;
+
+  let resultData = {};
+  resultData.recordType = hintData.guessedRecordType;
+  resultData.forenames = "";
+  resultData.lastName = "";
+  resultData.eventDate = "";
+
+  function fillRecordTypeSelector(selector) {
+    while (selector.firstChild) {
+      selector.removeChild(selector.firstChild);
+    }
+
+    const types = hintData.possibleRecordTypes;
+    for (const type of types) {
+      let option = document.createElement("option");
+      option.value = type.type;
+      option.text = type.string;
+      selector.appendChild(option);
+    }
+  }
+
+  function addSelector(id, labelText, fillFunction, changeFunction) {
+    let selector = document.createElement("select");
+    selector.id = id;
+    selector.className = "dialogSelector";
+    fillFunction(selector);
+    selector.addEventListener("change", changeFunction);
+    let label = document.createElement("label");
+    label.className = "dialogInput";
+    label.appendChild(document.createTextNode(labelText));
+    addBreak(label);
+    label.appendChild(selector);
+    menu.list.appendChild(label);
+
+    return selector;
+  }
+
+  function addTextInput(id, labelText, changeFunction) {
+    let textInput = document.createElement("input");
+    textInput.type = "text";
+    textInput.id = id;
+    textInput.className = "dialogTextInput";
+    textInput.addEventListener("change", changeFunction);
+    let label = document.createElement("label");
+    label.className = "dialogInput";
+    label.appendChild(document.createTextNode(labelText));
+    addBreak(label);
+    label.appendChild(textInput);
+    menu.list.appendChild(label);
+
+    return textInput;
+  }
+
+  // Explanation
+  let reasonLabel = document.createElement("label");
+  reasonLabel.className = "dialogInput";
+  reasonLabel.appendChild(document.createTextNode("Could not identify the record type."));
+  menu.list.appendChild(reasonLabel);
+
+  addBreak(menu.list);
+  addBreak(menu.list);
+
+  // Record Type
+  let recordTypeSelector = addSelector(
+    "recordTypeSelector",
+    "Choose record type: ",
+    fillRecordTypeSelector,
+    function (event) {
+      resultData.recordType = event.target.value;
+    }
+  );
+  recordTypeSelector.value = resultData.recordType;
+
+  if (hintData.needsName) {
+    addBreak(menu.list);
+    addBreak(menu.list);
+
+    // text input
+    textInputField = addTextInput("forenamesInput", "Forenames: ", function (event) {
+      resultData.forenames = event.target.value;
+      //console.log("set ref title to: " + refTitle);
+    });
+
+    addBreak(menu.list);
+    addBreak(menu.list);
+
+    // text input
+    textInputField = addTextInput("lastNameInput", "Last Name: ", function (event) {
+      resultData.lastName = event.target.value;
+      //console.log("set ref title to: " + refTitle);
+    });
+  }
+
+  if (hintData.needsEventDate) {
+    addBreak(menu.list);
+    addBreak(menu.list);
+
+    // text input
+    textInputField = addTextInput("eventDateInput", "Event date: ", function (event) {
+      resultData.eventDate = event.target.value;
+      //console.log("set ref title to: " + refTitle);
+    });
+    let initialEventDate = gd.inferEventDate();
+    if (initialEventDate) {
+      textInputField.value = initialEventDate;
+    }
+  }
+
+  // final button
+  let buttonText = "";
+  if (data.type == "inline") {
+    buttonText = "Build Inline Citation";
+  } else if (data.type == "narrative") {
+    buttonText = "Build Narrative with Citation";
+  } else if (data.type == "source") {
+    buttonText = "Build Source Citation";
+  }
+
+  addBreak(menu.list);
+  addBreak(menu.list);
+
+  let button = document.createElement("button");
+  button.className = "dialogButton";
+  button.innerText = buttonText;
+  button.onclick = function (element) {
+    //console.log("record type is: " + recordType);
+    gd.recordType = recordType;
+    if (recordType && generalizeFunction) {
+      let input = { extractedData: data.extractedData, generalizedData: gd, newData: resultData };
+      generalizeFunction(input);
+    }
+
+    buildFunction(data);
+  };
+  menu.list.appendChild(button);
+
+  endMainMenu(menu);
+}
+
 function setupUnclassifiedBuildCitationSubMenu(
   data,
   manualClassification,
@@ -609,13 +764,24 @@ function setupUnclassifiedBuildCitationSubMenu(
   backFunction,
   generalizeFunction
 ) {
+  if (data.generalizedData.classificationHints) {
+    setupUnclassifiedBuildCitationSubMenuWithHints(
+      data,
+      manualClassification,
+      buildFunction,
+      backFunction,
+      generalizeFunction
+    );
+    return;
+  }
+
   let needsRecordType =
     manualClassification.isRecordTypeNeeded ||
     (manualClassification.isRecordTypeNeededForNarrative && data.type == "narrative");
   let needsRefTitle = manualClassification.isRefTitleNeeded;
 
   // This is used for submenu list - it is not as advanced as GeneraizedData.getRefTitle.
-  // This isn alphabetical order
+  // This isn't alphabetical order
   const rtToRefTitle = {
     Unclassified: `Unknown`,
     Apprenticeship: `Apprenticeship`,
@@ -730,7 +896,7 @@ function setupUnclassifiedBuildCitationSubMenu(
     addBreak(menu.list);
 
     // Record Type
-    let categorySelector = addSelector(
+    let recordTypeSelector = addSelector(
       "recordTypeSelector",
       "Choose record type: ",
       fillRecordTypeSelector,

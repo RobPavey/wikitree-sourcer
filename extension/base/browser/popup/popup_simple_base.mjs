@@ -218,7 +218,7 @@ async function setupSimplePopupMenu(input) {
   }
 
   if (input.buildCitationFunction) {
-    addBuildCitationMenuItems(menu, data, simplePopupBuildCitation, backFunction);
+    addBuildCitationMenuItems(menu, data, simplePopupBuildCitation, backFunction, input.regeneralizeFunction);
   }
   if (input.buildHouseholdTableFunction) {
     addBuildHouseholdTableMenuItem(menu, data);

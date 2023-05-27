@@ -3,7 +3,7 @@
   "sourceType": "record",
   "recordType": "Unclassified",
   "eventDate": {
-    "dateString": "June 1777"
+    "dateString": "Oct 1732 - Nov 1732"
   },
   "classificationHints": {
     "possibleRecordTypes": [
@@ -26,10 +26,10 @@
     ],
     "needsName": true,
     "needsEventDate": true,
-    "guessedRecordType": "Unclassified"
+    "guessedRecordType": "Baptism"
   },
   "eventPlace": {
-    "placeString": "St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland"
+    "placeString": "Holy Trinity, Waterford city, Waterford, Ireland"
   },
   "hasValidData": true
 }

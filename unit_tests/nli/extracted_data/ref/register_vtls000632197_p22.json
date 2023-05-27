@@ -1,0 +1,20 @@
+{
+  "url": "https://registers.nli.ie/registers/vtls000632197#page/22/mode/1up",
+  "success": true,
+  "parishTitle": "Holy Trinity, Waterford city",
+  "registerTitle": "Microfilm 02444 / 01",
+  "dioceseParish": "Diocese of Waterford and Lismore",
+  "county": "County of Waterford",
+  "registerPages": "143 images",
+  "registerEvents": [
+    {
+      "title": "Baptisms",
+      "range": "15 Jan. 1729 to 15 July 1752"
+    },
+    {
+      "title": "Marriages",
+      "range": "05 Sep. 1747 to 20 Dec. 1756"
+    }
+  ],
+  "pageInfo": "Page 22; Oct. 1732 to Nov. 1732"
+}
