@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "1.6.8",
+  "version": "1.7.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": [
     "storage",
@@ -33,6 +33,9 @@
     "*://www.freereg.org.uk/*",
     "*://geneteka.genealodzy.pl/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
+    "*://*.irishgenealogy.ie/*",
+    "*://www.census.nationalarchives.ie/*",
+    "*://*.nli.ie/*",
     "*://*.newspapers.com/*",
     "*://paperspast.natlib.govt.nz/*",
     "*://www.scotlandspeople.gov.uk/*",
@@ -132,6 +135,21 @@
       "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
     },
     {
+      "matches": ["*://*.irishgenealogy.ie/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/irishg/browser/irishg_content.js"]
+    },
+    {
+      "matches": ["*://www.census.nationalarchives.ie/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/naie/browser/naie_content.js"]
+    },
+    {
+      "matches": ["*://*.nli.ie/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/nli/browser/nli_content.js"]
+    },
+    {
       "matches": ["*://www.newspapers.com/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
@@ -182,6 +200,9 @@
     "site/fs/core/fs_extract_data.mjs",
     "site/geneteka/core/geneteka_extract_data.mjs",
     "site/gro/core/gro_extract_data.mjs",
+    "site/irishg/core/irishg_extract_data.mjs",
+    "site/naie/core/naie_extract_data.mjs",
+    "site/nli/core/nli_extract_data.mjs",
     "site/np/core/np_extract_data.mjs",
     "site/ppnz/core/ppnz_extract_data.mjs",
     "site/scotp/core/scotp_extract_data.mjs",

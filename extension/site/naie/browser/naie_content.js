@@ -22,11 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const highlightStyle = "font-weight: bold; font-style: italic";
-const cellHighlightStyle = "background-color: lightgreen";
+function getHighlightStyle() {
+  const highlightStyle = "font-weight: bold; font-style: italic";
+  return highlightStyle;
+}
 
 function highlightRow(selectedRow) {
-  selectedRow.setAttribute("style", highlightStyle);
+  const cellHighlightStyle = "background-color: lightgreen";
+
+  selectedRow.setAttribute("style", getHighlightStyle());
   const cells = selectedRow.querySelectorAll("td");
   for (let cell of cells) {
     cell.setAttribute("style", cellHighlightStyle);
@@ -44,7 +48,7 @@ function unHighlightRow(selectedRow) {
 function getClickedRow() {
   const resultsTable = document.querySelector("#results_frame > table.results > tbody");
   if (resultsTable) {
-    const selectedRow = resultsTable.querySelector("tr[style='" + highlightStyle + "']");
+    const selectedRow = resultsTable.querySelector("tr[style='" + getHighlightStyle() + "']");
     return selectedRow;
   }
 }

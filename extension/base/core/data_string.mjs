@@ -518,7 +518,7 @@ function addRegistrationPlace(gd, options) {
     if (place) {
       let eventYearNum = WTS_Date.getYearNumFromYearString(gd.inferEventYear());
       if (eventYearNum && eventYearNum >= 1864) {
-        placeString = " in the " + registrationDistrict + " SR district";
+        placeString = " in the " + registrationDistrict + " Superintendent Registrar's district";
       } else {
         placeString = " in the " + registrationDistrict + " registration area";
       }

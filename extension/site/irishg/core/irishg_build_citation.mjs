@@ -46,7 +46,7 @@ function buildSourceTitle(data, gd) {
     gd.recordType == RT.MarriageRegistration ||
     gd.recordType == RT.DeathRegistration
   ) {
-    sourceTitle = "Civil Records; General Register Office of Ireland";
+    sourceTitle = "Civil Records of Irish Births, Deaths and Marriages";
   } else {
     sourceTitle = "Irish Church Records";
     if (gd.eventPlace && gd.eventPlace.placeString) {
@@ -92,6 +92,7 @@ function buildSourceReference(data, gd, options) {
     gd.recordType == RT.MarriageRegistration ||
     gd.recordType == RT.DeathRegistration
   ) {
+    sourceReference += "General Register Office, Ireland";
     addFieldFromRecordData("Group Registration ID");
     addFieldFromRecordData("SR District/Reg Area");
   } else {

@@ -68,7 +68,7 @@ function buildCoreCitation(data, gd, builder) {
   if (data.imageLink) {
     let link = data.imageLink;
     if (!link.startsWith("http")) {
-      link = "http://www.census.nationalarchives.ie/" + link;
+      link = "http://www.census.nationalarchives.ie" + link;
     }
     builder.imageLink = "[" + link + " National Archives of Ireland Image]";
   }
