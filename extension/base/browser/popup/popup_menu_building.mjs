@@ -604,10 +604,10 @@ function isManualClassificationNeeded(data) {
 
 function setupUnclassifiedBuildCitationSubMenuWithHints(
   data,
-  manualClassification,
   buildFunction,
   backFunction,
-  generalizeFunction
+  generalizeFunction,
+  partialResultData
 ) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
@@ -620,10 +620,30 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
   let textInputField = undefined;
 
   let resultData = {};
-  resultData.recordType = hintData.guessedRecordType;
-  resultData.forenames = "";
-  resultData.lastName = "";
-  resultData.eventDate = "";
+  if (partialResultData) {
+    resultData = partialResultData;
+  } else {
+    resultData.recordType = hintData.guessedRecordType;
+    resultData.forenames = "";
+    resultData.lastName = "";
+    resultData.spouseForenames = "";
+    resultData.spouseLastName = "";
+    resultData.fatherName = "";
+    resultData.motherName = "";
+    resultData.eventDate = "";
+  }
+
+  function getHintsForRecordType(hintData, recordType) {
+    for (let rtData of hintData.possibleRecordTypes) {
+      if (rtData.type == recordType) {
+        return rtData;
+      }
+    }
+
+    return {};
+  }
+
+  let rtHintData = getHintsForRecordType(hintData, resultData.recordType);
 
   function fillRecordTypeSelector(selector) {
     while (selector.firstChild) {
@@ -703,12 +723,23 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
     "Choose record type: ",
     fillRecordTypeSelector,
     function (event) {
+      let changed = resultData.recordType != event.target.value;
       resultData.recordType = event.target.value;
+      if (changed) {
+        rtHintData = getHintsForRecordType(hintData, resultData.recordType);
+        setupUnclassifiedBuildCitationSubMenuWithHints(
+          data,
+          buildFunction,
+          backFunction,
+          generalizeFunction,
+          resultData
+        );
+      }
     }
   );
   recordTypeSelector.value = resultData.recordType;
 
-  if (hintData.needsName) {
+  if (rtHintData.needsName) {
     addBreak(menu.list);
     addBreak(menu.list);
 
@@ -717,6 +748,7 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
       resultData.forenames = event.target.value;
       //console.log("set ref title to: " + refTitle);
     });
+    textInputField.value = resultData.forenames;
 
     addBreak(menu.list);
     addBreak(menu.list);
@@ -726,9 +758,37 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
       resultData.lastName = event.target.value;
       //console.log("set ref title to: " + refTitle);
     });
+    textInputField.value = resultData.lastName;
   }
 
-  if (hintData.needsParentNames) {
+  if (rtHintData.needsSpouseName) {
+    addBreak(menu.list);
+    addBreak(menu.list);
+
+    // text input
+    textInputField = addTextInput(
+      "forenamesInput",
+      "Spouse's Forenames: ",
+      hintData.forenamesComment,
+      function (event) {
+        resultData.spouseForenames = event.target.value;
+        //console.log("set ref title to: " + refTitle);
+      }
+    );
+    textInputField.value = resultData.spouseForenames;
+
+    addBreak(menu.list);
+    addBreak(menu.list);
+
+    // text input
+    textInputField = addTextInput("lastNameInput", "Spouse's Last Name: ", hintData.lastNameComment, function (event) {
+      resultData.spouseLastName = event.target.value;
+      //console.log("set ref title to: " + refTitle);
+    });
+    textInputField.value = resultData.spouseLastName;
+  }
+
+  if (rtHintData.needsParentNames) {
     addBreak(menu.list);
     addBreak(menu.list);
 
@@ -737,6 +797,7 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
       resultData.fatherName = event.target.value;
       //console.log("set ref title to: " + refTitle);
     });
+    textInputField.value = resultData.fatherName;
 
     addBreak(menu.list);
     addBreak(menu.list);
@@ -746,9 +807,10 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
       resultData.motherName = event.target.value;
       //console.log("set ref title to: " + refTitle);
     });
+    textInputField.value = resultData.motherName;
   }
 
-  if (hintData.needsEventDate) {
+  if (rtHintData.needsEventDate) {
     addBreak(menu.list);
     addBreak(menu.list);
 
@@ -757,9 +819,13 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
       resultData.eventDate = event.target.value;
       //console.log("set ref title to: " + refTitle);
     });
-    let initialEventDate = gd.inferEventDate();
-    if (initialEventDate) {
-      textInputField.value = initialEventDate;
+    if (resultData.eventDate) {
+      textInputField.value = resultData.eventDate;
+    } else {
+      let initialEventDate = gd.inferEventDate();
+      if (initialEventDate) {
+        textInputField.value = initialEventDate;
+      }
     }
   }
 
@@ -802,13 +868,7 @@ function setupUnclassifiedBuildCitationSubMenu(
   generalizeFunction
 ) {
   if (data.generalizedData.classificationHints) {
-    setupUnclassifiedBuildCitationSubMenuWithHints(
-      data,
-      manualClassification,
-      buildFunction,
-      backFunction,
-      generalizeFunction
-    );
+    setupUnclassifiedBuildCitationSubMenuWithHints(data, buildFunction, backFunction, generalizeFunction);
     return;
   }
 

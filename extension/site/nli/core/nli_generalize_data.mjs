@@ -133,14 +133,11 @@ function generalizeData(input) {
 
   result.classificationHints = {
     possibleRecordTypes: [
-      { type: RT.Unclassified, string: "Unclassified" },
-      { type: RT.Baptism, string: "Baptism" },
-      { type: RT.Marriage, string: "Marriage" },
-      { type: RT.Burial, string: "Burial" },
+      { type: RT.Unclassified, string: "Unclassified", needsName: true, needsEventDate: true },
+      { type: RT.Baptism, string: "Baptism", needsName: true, needsParentNames: true, needsEventDate: true },
+      { type: RT.Marriage, string: "Marriage", needsName: true, needsSpouseName: true, needsEventDate: true },
+      { type: RT.Burial, string: "Burial", needsName: true, needsEventDate: true },
     ],
-    needsName: true,
-    needsParentNames: true,
-    needsEventDate: true,
     eventDateComment: "(Edit to give single exact date)",
     guessedRecordType: guessedRecordType,
   };
@@ -198,6 +195,12 @@ function regeneralizeData(input) {
 
   result.addFatherName(newData.fatherName);
   result.addMotherName(newData.motherName);
+
+  if (newData.spouseForenames || newData.spouseLastName) {
+    const spouse = result.addSpouse();
+    spouse.name.setLastName(newData.spouseLastName);
+    spouse.name.setForeNames(newData.spouseForenames);
+  }
 }
 
 export { generalizeData, regeneralizeData, GeneralizedData, dateQualifiers };
