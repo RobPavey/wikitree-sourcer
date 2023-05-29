@@ -139,9 +139,17 @@ function generalizeData(input) {
       { type: RT.Burial, string: "Burial" },
     ],
     needsName: true,
+    needsParentNames: true,
     needsEventDate: true,
+    eventDateComment: "(Edit to give single exact date)",
     guessedRecordType: guessedRecordType,
   };
+
+  if (guessedRecordType != RT.Unclassified) {
+    result.classificationHints.topLabel = "Confirm record type and add transcribed data";
+  } else {
+    result.classificationHints.topLabel = "Select record type and add transcribed data";
+  }
 
   let eventPlace = "";
   let parish = data.parishTitle;
@@ -187,6 +195,9 @@ function regeneralizeData(input) {
   if (newData.eventDate) {
     result.setEventDate(newData.eventDate);
   }
+
+  result.addFatherName(newData.fatherName);
+  result.addMotherName(newData.motherName);
 }
 
 export { generalizeData, regeneralizeData, GeneralizedData, dateQualifiers };

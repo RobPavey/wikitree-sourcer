@@ -1567,6 +1567,13 @@ class GeneralizedData {
     return this.parents.mother;
   }
 
+  addMotherName(name) {
+    if (name) {
+      let mother = this.addMother();
+      mother.name.name = name;
+    }
+  }
+
   addFather() {
     if (this.parents == undefined) {
       this.parents = {};
@@ -1581,6 +1588,13 @@ class GeneralizedData {
     }
 
     return this.parents.father;
+  }
+
+  addFatherName(name) {
+    if (name) {
+      let father = this.addFather();
+      father.name.name = name;
+    }
   }
 
   addSpouseOrParentsForSelectedHouseholdMember() {

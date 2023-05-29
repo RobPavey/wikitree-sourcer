@@ -162,6 +162,11 @@ li.dividerBelow {
   padding: 10px;
   margin: 0px;
 }
+.dialogInputComment {
+  padding: 10px;
+  margin: 0px;
+  font-style: italic;
+}
 .dialogSelector {
   padding: 0px;
   margin-left: 10px;

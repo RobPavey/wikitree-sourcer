@@ -655,7 +655,7 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
     return selector;
   }
 
-  function addTextInput(id, labelText, changeFunction) {
+  function addTextInput(id, labelText, commentText, changeFunction) {
     let textInput = document.createElement("input");
     textInput.type = "text";
     textInput.id = id;
@@ -664,6 +664,13 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
     let label = document.createElement("label");
     label.className = "dialogInput";
     label.appendChild(document.createTextNode(labelText));
+    if (commentText) {
+      //addBreak(label);
+      let commmentlabel = document.createElement("label");
+      commmentlabel.className = "dialogInputComment";
+      commmentlabel.appendChild(document.createTextNode(commentText));
+      label.appendChild(commmentlabel);
+    }
     addBreak(label);
     label.appendChild(textInput);
     menu.list.appendChild(label);
@@ -671,11 +678,21 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
     return textInput;
   }
 
+  function addLabel(labelText) {
+    let label = document.createElement("label");
+    label.className = "dialogInput";
+    label.appendChild(document.createTextNode(labelText));
+    menu.list.appendChild(label);
+
+    return label;
+  }
+
   // Explanation
-  let reasonLabel = document.createElement("label");
-  reasonLabel.className = "dialogInput";
-  reasonLabel.appendChild(document.createTextNode("Could not identify the record type."));
-  menu.list.appendChild(reasonLabel);
+  if (hintData.topLabel) {
+    addLabel(hintData.topLabel);
+  } else {
+    addLabel("Could not identify the record type.");
+  }
 
   addBreak(menu.list);
   addBreak(menu.list);
@@ -696,7 +713,7 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
     addBreak(menu.list);
 
     // text input
-    textInputField = addTextInput("forenamesInput", "Forenames: ", function (event) {
+    textInputField = addTextInput("forenamesInput", "Forenames: ", hintData.forenamesComment, function (event) {
       resultData.forenames = event.target.value;
       //console.log("set ref title to: " + refTitle);
     });
@@ -705,8 +722,28 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
     addBreak(menu.list);
 
     // text input
-    textInputField = addTextInput("lastNameInput", "Last Name: ", function (event) {
+    textInputField = addTextInput("lastNameInput", "Last Name: ", hintData.lastNameComment, function (event) {
       resultData.lastName = event.target.value;
+      //console.log("set ref title to: " + refTitle);
+    });
+  }
+
+  if (hintData.needsParentNames) {
+    addBreak(menu.list);
+    addBreak(menu.list);
+
+    // text input
+    textInputField = addTextInput("fatherInput", "Father's name: ", hintData.fatherNameComment, function (event) {
+      resultData.fatherName = event.target.value;
+      //console.log("set ref title to: " + refTitle);
+    });
+
+    addBreak(menu.list);
+    addBreak(menu.list);
+
+    // text input
+    textInputField = addTextInput("motherInput", "Mother's name: ", hintData.motherNameComment, function (event) {
+      resultData.motherName = event.target.value;
       //console.log("set ref title to: " + refTitle);
     });
   }
@@ -716,7 +753,7 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
     addBreak(menu.list);
 
     // text input
-    textInputField = addTextInput("eventDateInput", "Event date: ", function (event) {
+    textInputField = addTextInput("eventDateInput", "Event date: ", hintData.eventDateComment, function (event) {
       resultData.eventDate = event.target.value;
       //console.log("set ref title to: " + refTitle);
     });
