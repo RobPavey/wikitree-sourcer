@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { CD } from "../../../base/core//country_data.mjs";
+import { CD } from "../../../base/core/country_data.mjs";
 
 function buildHouseholdArray(headings, members, result) {
   const stdFieldNames = [
