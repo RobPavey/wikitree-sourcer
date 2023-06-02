@@ -1,0 +1,36 @@
+{
+  "fullName": "Emma \" Emilia\" Irene Jones",
+  "givenName": "Emma \" Emilia\" Irene",
+  "surname": "Jones",
+  "gender": "female",
+  "birthDateOriginal": "4 March 1874",
+  "birthDate": "4 March 1874",
+  "birthPlaceOriginal": "Surry, North Carolina, United States",
+  "birthPlace": "Surry, North Carolina, United States",
+  "deathDateOriginal": "6 June 1950",
+  "deathDate": "6 June 1950",
+  "deathPlaceOriginal": "Harrisonburg, Rockingham, Virginia, United States",
+  "deathPlace": "Harrisonburg, Rockingham, Virginia, United States",
+  "spouses": [
+    {
+      "fullName": "James Byrd Snow",
+      "givenName": "James Byrd",
+      "surname": "Snow",
+      "marriageDateOriginal": "4 February 1899",
+      "marriageDate": "4 February 1899",
+      "marriagePlaceOriginal": "Stewarts Creek Township, Surry, North Carolina, United States ",
+      "marriagePlace": "Stewarts Creek Township, Surry, North Carolina, United States"
+    }
+  ],
+  "father": {
+    "fullName": "Silas Jones",
+    "givenName": "Silas",
+    "surname": "Jones"
+  },
+  "mother": {
+    "fullName": "Rozena Smith",
+    "givenName": "Rozena",
+    "surname": "Smith"
+  },
+  "pageType": "person"
+}

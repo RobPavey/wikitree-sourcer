@@ -413,13 +413,19 @@ const imageRegressionData = [
 // Network tab.
 const personRegressionData = [
   {
-    caseName: "xx_profile_kenneth_crist_1921_1992",
-    url: "https://www.familysearch.org/tree/person/details/KWDZ-H37",
+    // has nickname
+    caseName: "xx_profile_emma_jones_1874_1950",
+    url: "https://www.familysearch.org/tree/person/details/L69W-LQL",
     fetchType: "person",
   },
   {
     caseName: "xx_profile_jacob_showalter_1702_1773",
     url: "https://www.familysearch.org/tree/person/details/LDL8-2H9",
+    fetchType: "person",
+  },
+  {
+    caseName: "xx_profile_kenneth_crist_1921_1992",
+    url: "https://www.familysearch.org/tree/person/details/KWDZ-H37",
     fetchType: "person",
   },
   {
@@ -436,6 +442,12 @@ const personRegressionData = [
   {
     caseName: "xx_profile_sarah_moats_1854_1946",
     url: "https://www.familysearch.org/tree/person/details/MQWP-4VQ",
+    fetchType: "person",
+  },
+  {
+    // has prefix, suffix and possible nickname
+    caseName: "xx_profile_terry_oneal_1929_2008",
+    url: "https://www.familysearch.org/tree/person/details/L69W-LQL",
     fetchType: "person",
   },
   {

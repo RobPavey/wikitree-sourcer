@@ -770,6 +770,33 @@ function generalizeDataGivenRecordType(data, result) {
 }
 
 function generalizeDataForPerson(data, result) {
+  function setNameWithPossibleNicknames(dataObject, resultObject) {
+    // because this is done when we have already set the name once already the handling of nicknames is
+    // complicated.
+    let nicknames = resultObject.name.nicknames;
+
+    if (dataObject.fullName) {
+      resultObject.name.setFullName(dataObject.fullName);
+    }
+    if (dataObject.surname) {
+      resultObject.name.lastName = dataObject.surname;
+    }
+    if (dataObject.givenName) {
+      resultObject.name.setForeNames(dataObject.givenName);
+    }
+    if (dataObject.prefix) {
+      resultObject.name.prefix = dataObject.prefix;
+    }
+    if (dataObject.suffix) {
+      resultObject.name.suffix = dataObject.suffix;
+    }
+
+    // restore the nicknames
+    if (nicknames) {
+      resultObject.name.nicknames = nicknames;
+    }
+  }
+
   function setName(dataObject, resultObject) {
     if (dataObject.fullName) {
       resultObject.name.name = dataObject.fullName;
@@ -789,7 +816,7 @@ function generalizeDataForPerson(data, result) {
   }
 
   // we will already have set fullName but try to get the fornames and last names
-  setName(data, result);
+  setNameWithPossibleNicknames(data, result);
 
   if (data.spouses) {
     result.spouses = [];

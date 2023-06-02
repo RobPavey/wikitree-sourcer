@@ -1,0 +1,38 @@
+{
+  "fullName": "Dr Terry Warren \"Pete\" O'Neal Jr.",
+  "prefix": "Dr",
+  "givenName": "Terry Warren \"Pete\"",
+  "surname": "O'Neal",
+  "suffix": "Jr.",
+  "gender": "male",
+  "birthDateOriginal": "9 August 1929",
+  "birthDate": "9 August 1929",
+  "birthPlaceOriginal": "Amelia, Virginia, United States",
+  "birthPlace": "Amelia, Virginia, United States",
+  "deathDateOriginal": "8 June 2008",
+  "deathDate": "8 June 2008",
+  "deathPlaceOriginal": "Amelia, Virginia, United States",
+  "deathPlace": "Amelia, Virginia, United States",
+  "spouses": [
+    {
+      "fullName": "Gladys Mae Spainhour",
+      "givenName": "Gladys Mae",
+      "surname": "Spainhour",
+      "marriageDateOriginal": "18 November 1952",
+      "marriageDate": "18 November 1952",
+      "marriagePlaceOriginal": "Amelia Court House, Amelia, Virginia, United States",
+      "marriagePlace": "Amelia Court House, Amelia, Virginia, United States"
+    }
+  ],
+  "father": {
+    "fullName": "Terry Warren O'Neal Sr",
+    "givenName": "Terry Warren",
+    "surname": "O'Neal"
+  },
+  "mother": {
+    "fullName": "Rachel V Johnson",
+    "givenName": "Rachel V",
+    "surname": "Johnson"
+  },
+  "pageType": "person"
+}

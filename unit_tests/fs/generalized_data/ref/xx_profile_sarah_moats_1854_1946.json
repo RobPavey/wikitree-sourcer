@@ -3,9 +3,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Sarah A. Moats",
+    "name": "Sarah A Moats",
     "lastName": "Moats",
-    "forenames": "Sarah A."
+    "forenames": "Sarah A"
   },
   "birthDate": {
     "dateString": "23 July 1854"

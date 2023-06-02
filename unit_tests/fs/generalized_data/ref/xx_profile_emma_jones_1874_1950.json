@@ -1,0 +1,55 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Emma Irene Jones",
+    "nicknames": "Emilia",
+    "lastName": "Jones",
+    "forenames": "Emma Irene"
+  },
+  "birthDate": {
+    "dateString": "4 March 1874"
+  },
+  "birthPlace": {
+    "placeString": "Surry, North Carolina, United States"
+  },
+  "deathDate": {
+    "dateString": "6 June 1950"
+  },
+  "deathPlace": {
+    "placeString": "Harrisonburg, Rockingham, Virginia, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "James Byrd Snow",
+        "lastName": "Snow",
+        "forenames": "James Byrd"
+      },
+      "marriageDate": {
+        "dateString": "4 February 1899"
+      },
+      "marriagePlace": {
+        "placeString": "Stewarts Creek Township, Surry, North Carolina, United States"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Silas Jones",
+        "lastName": "Jones",
+        "forenames": "Silas"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Rozena Smith",
+        "lastName": "Smith",
+        "forenames": "Rozena"
+      }
+    }
+  },
+  "hasValidData": true
+}

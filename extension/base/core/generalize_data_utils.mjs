@@ -854,7 +854,17 @@ class WtsName {
   moveNicknamesFromNameString(nameString) {
     let newString = nameString;
     // if the nameString contain a name in quotes then it is a nickname
-    let namesArray = nameString.split(/["']/);
+    let namesArray = nameString.split(/["]/);
+    if (namesArray.length == 1) {
+      // no double quotes - try single - but be aware that names like O'Neal could cause problems
+      namesArray = nameString.split(/[']/);
+      // check that there is a space before open quote and after close quote
+      if (namesArray.length > 2) {
+        if (!namesArray[0].endsWith(" ") || !namesArray[2].startsWith(" ")) {
+          namesArray = [];
+        }
+      }
+    }
     // to have matched quotes the length should > 2 and an odd number
     if (namesArray.length > 2 && (namesArray.length | 1) == namesArray.length) {
       let nicknames = "";
