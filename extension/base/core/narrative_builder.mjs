@@ -661,6 +661,10 @@ class NarrativeBuilder {
   }
 
   getOccupationPart(occupation) {
+    if (!occupation) {
+      return "";
+    }
+
     let occupationText = occupation;
     if (this.options.narrative_general_occupationFormat == "lowerCase") {
       occupationText = occupationText.toLowerCase();
@@ -713,7 +717,9 @@ class NarrativeBuilder {
               if (member.gender == "female") {
                 headRelation = "mother";
               }
-              occupationText = this.getOccupationPart(member.occupation);
+              if (member.occupation) {
+                occupationText = this.getOccupationPart(member.occupation);
+              }
               break;
             }
           }
@@ -721,7 +727,9 @@ class NarrativeBuilder {
           for (let member of gd.householdArray) {
             if (member.relationship && member.relationship.includes("head")) {
               headRelation = "husband";
-              occupationText = this.getOccupationPart(member.occupation);
+              if (member.occupation) {
+                occupationText = this.getOccupationPart(member.occupation);
+              }
               break;
             }
           }
