@@ -1062,6 +1062,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/23886198:2272",
   },
   {
+    caseName: "us_va_census_1782_abel_wakefield",
+    url: "https://www.ancestry.com/discoveryui-content/view/32837506:3578",
+  },
+  {
     caseName: "us_va_divorce_1956_harold_baker",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=General-9280&h=125735",
   },

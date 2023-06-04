@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1782 Census''':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>\nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>\n{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1782 census Abel was in Fairfax County, VA.<ref>\n'''1782 Census''':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>\nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>\n{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1782 Census''': \"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1782 Census''':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>\nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>\n{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)<br/>\nAbel Wakefield in Fairfax County, VA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1782 census Abel was in Fairfax County, VA.<ref>\n'''1782 Census''':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>\nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>\n{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)<br/>\nAbel Wakefield in Fairfax County, VA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1782 Census''': \"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)<br/>Abel Wakefield in Fairfax County, VA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1782 Census''':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>\nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>\n{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)<br/>\nName: Abel Wakefield; State: VA; County: Fairfax County; Township: 12 00; Year: 1782; Record Type: Continental Census; Database: VA Early Census Index.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1782 census Abel was in Fairfax County, VA.<ref>\n'''1782 Census''':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>\nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>\n{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)<br/>\nName: Abel Wakefield; State: VA; County: Fairfax County; Township: 12 00; Year: 1782; Record Type: Continental Census; Database: VA Early Census Index.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1782 Census''': \"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)<br/>Name: Abel Wakefield; State: VA; County: Fairfax County; Township: 12 00; Year: 1782; Record Type: Continental Census; Database: VA Early Census Index.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1782 Census''':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>\nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>\n{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Abel Wakefield\n|-\n| State || VA\n|-\n| County || Fairfax County\n|-\n| Township || 12 00\n|-\n| Year || 1782\n|-\n| Record Type || Continental Census\n|-\n| Database || VA Early Census Index\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1782 census Abel was in Fairfax County, VA.<ref>\n'''1782 Census''':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>\nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>\n{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Abel Wakefield\n|-\n| State || VA\n|-\n| County || Fairfax County\n|-\n| Township || 12 00\n|-\n| Year || 1782\n|-\n| Record Type || Continental Census\n|-\n| Database || VA Early Census Index\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1782 Census''': \"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\"<br/>Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes; Page: 18<br/>{{Ancestry Record|3578|32837506}} (accessed 6 May 2021)<br/>Name: Abel Wakefield; State: VA; County: Fairfax County; Township: 12 00; Year: 1782; Record Type: Continental Census; Database: VA Early Census Index.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890,\" database, ({{Ancestry Record|3578|32837506}} : accessed 6 May 2021), Abel Wakefield in Fairfax County, VA; citing Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes, Page 18.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1782 census Abel was in Fairfax County, VA.<ref>\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890,\" database, ({{Ancestry Record|3578|32837506}} : accessed 6 May 2021), Abel Wakefield in Fairfax County, VA; citing Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes, Page 18.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890,\" database, ({{Ancestry Record|3578|32837506}} : accessed 6 May 2021), Abel Wakefield in Fairfax County, VA; citing Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes, Page 18.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1782 Census'':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\", database, \nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes, Page 18, \n({{Ancestry Record|3578|32837506}} : accessed 6 May 2021), \nName: Abel Wakefield; State: VA; County: Fairfax County; Township: 12 00; Year: 1782; Record Type: Continental Census; Database: VA Early Census Index.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1782 census Abel was in Fairfax County, VA.<ref>\n''1782 Census'':\n\"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\", database, \nJackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes, Page 18, \n({{Ancestry Record|3578|32837506}} : accessed 6 May 2021), \nName: Abel Wakefield; State: VA; County: Fairfax County; Township: 12 00; Year: 1782; Record Type: Continental Census; Database: VA Early Census Index.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1782 Census'': \"Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890\", database, Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes, Page 18, ({{Ancestry Record|3578|32837506}} : accessed 6 May 2021), Name: Abel Wakefield; State: VA; County: Fairfax County; Township: 12 00; Year: 1782; Record Type: Continental Census; Database: VA Early Census Index.",
+    "type": "source"
+  }
+}

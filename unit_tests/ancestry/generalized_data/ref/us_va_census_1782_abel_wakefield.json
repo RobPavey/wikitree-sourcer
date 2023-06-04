@@ -1,0 +1,21 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Abel Wakefield"
+  },
+  "eventPlace": {
+    "county": "Fairfax County",
+    "placeString": "Fairfax County, VA"
+  },
+  "eventDate": {
+    "yearString": "1782"
+  },
+  "collectionData": {
+    "id": "3578",
+    "page": "18",
+    "county": "Fairfax County"
+  },
+  "hasValidData": true
+}

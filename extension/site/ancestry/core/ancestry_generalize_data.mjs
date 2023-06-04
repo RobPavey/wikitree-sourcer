@@ -1211,6 +1211,7 @@ function generalizeDataGivenRecordType(data, result) {
           "Residence Year",
           "Census Year",
           "Census year",
+          "Year",
         ]);
         if (yearString) {
           result.setEventYear(yearString);
