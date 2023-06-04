@@ -23,7 +23,62 @@ SOFTWARE.
 */
 
 import { FgUriBuilder } from "./fg_uri_builder.mjs";
-import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import { GD, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+
+const fgAllowedUsStateNames = [
+  "Alabama",
+  "Alaska",
+  "Arizona",
+  "Arkansas",
+  "California",
+  "Colorado",
+  "Connecticut",
+  "Delaware",
+  "District of Columbia",
+  "Florida",
+  "Georgia",
+  "Hawaii",
+  "Idaho",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas",
+  "Kentucky",
+  "Louisiana",
+  "Maine",
+  "Maryland",
+  "Massachusetts",
+  "Michigan",
+  "Minnesota",
+  "Mississippi",
+  "Missouri",
+  "Montana",
+  "Nebraska",
+  "Nevada",
+  "New Hampshire",
+  "New Jersey",
+  "New Mexico",
+  "New York",
+  "North Carolina",
+  "North Dakota",
+  "Ohio",
+  "Oklahoma",
+  "Oregon",
+  "Pennsylvania",
+  "Puerto Rico",
+  "Rhode Island",
+  "South Carolina",
+  "South Dakota",
+  "Tennessee",
+  "Texas",
+  "Utah",
+  "Vermont",
+  "Virginia",
+  "Washington",
+  "West Virginia",
+  "Wisconsin",
+  "Wyoming",
+];
 
 function getFgDateQualifierFromWtsQualifier(wtsQualifier) {
   switch (wtsQualifier) {
@@ -105,8 +160,30 @@ function buildSearchUrl(buildUrlInput) {
       }
     }
 
+    // A search for a country only would include:
+    // &location=United+States+of+America&locationId=country_4
+    // A search for a state within a country would be like:
+    // &location=New+Jersey%2C++United+States+of+America&locationId=
+
     if (deathCountry) {
-      builder.addCountry(deathCountry);
+      let locationString = "";
+      if (deathCountry == "United States") {
+        if (deathCountry == data.inferDeathCountry()) {
+          let deathPlace = data.inferDeathPlace();
+          let stateName = GD.inferStateNameFromPlaceString(deathPlace);
+          if (stateName) {
+            if (fgAllowedUsStateNames.includes(stateName)) {
+              locationString = stateName + ", " + deathCountry;
+            }
+          }
+        }
+      }
+
+      if (locationString) {
+        builder.addLocation(locationString);
+      } else {
+        builder.addCountry(deathCountry);
+      }
     }
   }
 

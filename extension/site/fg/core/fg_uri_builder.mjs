@@ -91,6 +91,7 @@ class FgUriBuilder {
       Australia: "country_15",
       "New Zealand": "country_85",
       "South Africa": "country_64",
+      Philippines: "country_80",
     };
 
     let id = nameToId[countryName];
@@ -130,6 +131,10 @@ class FgUriBuilder {
   addCountry(string) {
     this.addSearchParameter("location", string);
     this.addCountryId(string);
+  }
+
+  addLocation(string) {
+    this.addSearchParameter("location", string);
   }
 
   getUri() {

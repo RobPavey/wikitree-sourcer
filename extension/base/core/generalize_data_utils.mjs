@@ -393,6 +393,8 @@ const GD = {
       if (country.hasStates) {
         return "";
       }
+    } else {
+      return ""; // no country recognized
     }
 
     //console.log("inferCountyNameFromPlaceString, placeNameMinusCountry is : " + placeNameMinusCountry);
@@ -412,6 +414,46 @@ const GD = {
       //console.log("inferCountyNameFromPlaceString, stdCountyName is : " + stdCountyName);
       if (stdCountyName) {
         return stdCountyName;
+      }
+    }
+  },
+
+  inferStateNameFromPlaceString: function (placeString) {
+    //console.log("inferStateNameFromPlaceString, placeString is : " + placeString);
+
+    // it can be hard to get the county from the string.
+    let country = undefined;
+    let placeNameMinusCountry = placeString;
+
+    let countryExtract = CD.extractCountryFromPlaceName(placeString);
+    if (countryExtract) {
+      country = countryExtract.country;
+      placeNameMinusCountry = countryExtract.remainder;
+
+      if (!country.hasStates) {
+        return "";
+      }
+    } else {
+      return ""; // no country recognized
+    }
+
+    //console.log("inferCountyNameFromPlaceString, placeNameMinusCountry is : " + placeNameMinusCountry);
+
+    let stateName = undefined;
+    let lastCommaIndex = placeNameMinusCountry.lastIndexOf(",");
+    if (lastCommaIndex != -1) {
+      stateName = placeNameMinusCountry.substring(lastCommaIndex + 1).trim();
+    } else {
+      stateName = placeNameMinusCountry;
+    }
+
+    //console.log("inferCountyNameFromPlaceString, countyName is : " + countyName);
+
+    if (stateName) {
+      let stdStateName = CD.standardizeStateNameForCountry(stateName, country);
+      //console.log("inferCountyNameFromPlaceString, stdCountyName is : " + stdCountyName);
+      if (stdStateName) {
+        return stdStateName;
       }
     }
   },

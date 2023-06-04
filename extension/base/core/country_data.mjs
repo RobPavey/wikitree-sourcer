@@ -113,6 +113,7 @@ const CountryData = [
   { stdName: "Netherlands", matches: ["Netherlands"] },
   { stdName: "Belgium", matches: ["Belgium"] },
   { stdName: "Luxembourg", matches: ["Luxembourg"] },
+  { stdName: "Andorra", matches: ["Andorra"] },
 
   { stdName: "Sweden", matches: ["Sweden", "Sverige"] },
   { stdName: "Denmark", matches: ["Denmark"] },
@@ -156,6 +157,10 @@ const CountryData = [
   { stdName: "Greece", matches: ["Greece", "Ελλάδα"] },
   { stdName: "Turkey", matches: ["Turkey"] },
 
+  { stdName: "Algeria", matches: ["Algeria"] },
+
+  { stdName: "Afghanistan", matches: ["Afghanistan"] },
+
   {
     stdName: "United States",
     matches: ["United States", "USA", "US", "U.S.", "U.S.A.", "U.S", "U.S.A", "United States of America"],
@@ -178,6 +183,8 @@ const CountryData = [
   },
   { stdName: "New Zealand", matches: ["New Zealand"], usesMiddleNames: true },
   { stdName: "South Africa", matches: ["South Africa"] },
+  { stdName: "Philippines", matches: ["Philippines"] },
+  { stdName: "American Samoa", matches: ["American Samoa"] },
 ];
 
 const CountyData = {
@@ -378,6 +385,63 @@ const CountyData = {
   ],
 };
 
+const StateData = {
+  "United States": [
+    { stdName: "Alabama", matches: ["Alabama"] },
+    { stdName: "Alaska", matches: ["Alaska"] },
+    { stdName: "Arizona", matches: ["Arizona"] },
+    { stdName: "Arkansas", matches: ["Arkansas"] },
+    { stdName: "California", matches: ["California"] },
+    { stdName: "Colorado", matches: ["Colorado"] },
+    { stdName: "Connecticut", matches: ["Connecticut"] },
+    { stdName: "Delaware", matches: ["Delaware"] },
+    { stdName: "District of Columbia", matches: ["District of Columbia"] },
+    { stdName: "Florida", matches: ["Florida"] },
+    { stdName: "Georgia", matches: ["Georgia"] },
+    { stdName: "Hawaii", matches: ["Hawaii"] },
+    { stdName: "Idaho", matches: ["Idaho"] },
+    { stdName: "Illinois", matches: ["Illinois"] },
+    { stdName: "Indiana", matches: ["Indiana"] },
+    { stdName: "Iowa", matches: ["Iowa"] },
+    { stdName: "Kansas", matches: ["Kansas"] },
+    { stdName: "Kentucky", matches: ["Kentucky"] },
+    { stdName: "Louisiana", matches: ["Louisiana"] },
+    { stdName: "Maine", matches: ["Maine"] },
+    { stdName: "Maryland", matches: ["Maryland"] },
+    { stdName: "Massachusetts", matches: ["Massachusetts"] },
+    { stdName: "Michigan", matches: ["Michigan"] },
+    { stdName: "Minnesota", matches: ["Minnesota"] },
+    { stdName: "Mississippi", matches: ["Mississippi"] },
+    { stdName: "Missouri", matches: ["Missouri"] },
+    { stdName: "Montana", matches: ["Montana"] },
+    { stdName: "Nebraska", matches: ["Nebraska"] },
+    { stdName: "Nevada", matches: ["Nevada"] },
+    { stdName: "New Hampshire", matches: ["New Hampshire"] },
+    { stdName: "New Jersey", matches: ["New Jersey"] },
+    { stdName: "New Mexico", matches: ["New Mexico"] },
+    { stdName: "New York", matches: ["New York"] },
+    { stdName: "North Carolina", matches: ["North Carolina"] },
+    { stdName: "North Dakota", matches: ["North Dakota"] },
+    { stdName: "Ohio", matches: ["Ohio"] },
+    { stdName: "Oklahoma", matches: ["Oklahoma"] },
+    { stdName: "Oregon", matches: ["Oregon"] },
+    { stdName: "Pennsylvania", matches: ["Pennsylvania"] },
+    { stdName: "Puerto Rico", matches: ["Puerto Rico"] },
+    { stdName: "Rhode Island", matches: ["Rhode Island"] },
+    { stdName: "South Carolina", matches: ["South Carolina"] },
+    { stdName: "South Dakota", matches: ["South Dakota"] },
+    { stdName: "Tennessee", matches: ["Tennessee"] },
+    { stdName: "Texas", matches: ["Texas"] },
+    { stdName: "Utah", matches: ["Utah"] },
+    { stdName: "Vermont", matches: ["Vermont"] },
+    { stdName: "Virginia", matches: ["Virginia"] },
+    { stdName: "Washington", matches: ["Washington"] },
+    { stdName: "West Virginia", matches: ["West Virginia"] },
+    { stdName: "Wisconsin", matches: ["Wisconsin"] },
+    { stdName: "Wyoming", matches: ["Wyoming"] },
+  ],
+};
+
 const CD = {
   matchCountryFromPlaceName: function (placeName) {
     for (let country of CountryData) {
@@ -533,6 +597,10 @@ const CD = {
   },
 
   standardizeCountryName: function (countryName) {
+    if (!countryName) {
+      return undefined;
+    }
+
     for (let country of CountryData) {
       for (let match of country.matches) {
         if (countryName == match) {
@@ -543,6 +611,10 @@ const CD = {
   },
 
   standardizeCountyNameForCountry: function (countyName, country) {
+    if (!countyName) {
+      return undefined;
+    }
+
     // country is a country object
     let countyArray = CountyData[country.stdName];
     if (!countyArray || countyArray.length < 1) {
@@ -553,6 +625,28 @@ const CD = {
       for (let match of county.matches) {
         if (countyName == match) {
           return county.stdName;
+        }
+      }
+    }
+
+    return undefined;
+  },
+
+  standardizeStateNameForCountry: function (stateName, country) {
+    if (!stateName) {
+      return undefined;
+    }
+
+    // country is a country object
+    let stateArray = StateData[country.stdName];
+    if (!stateArray || stateArray.length < 1) {
+      return undefined;
+    }
+
+    for (let state of stateArray) {
+      for (let match of state.matches) {
+        if (stateName == match) {
+          return state.stdName;
         }
       }
     }
