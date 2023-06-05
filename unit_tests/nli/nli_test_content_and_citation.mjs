@@ -34,6 +34,24 @@ const regressionData = [
   {
     caseName: "register_vtis000632250_p150",
     url: "https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up",
+    optionVariants: [
+      {
+        variantName: "semicolon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "semicolon" },
+      },
+      {
+        variantName: "commaColon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaColon" },
+      },
+      {
+        variantName: "commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+      {
+        variantName: "siteStyle",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "siteStyle" },
+      },
+    ],
   },
   {
     caseName: "register_vtls000632197_p22",

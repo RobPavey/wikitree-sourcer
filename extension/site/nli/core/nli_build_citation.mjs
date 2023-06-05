@@ -29,33 +29,28 @@ function buildNliUrl(data, builder) {
   return data.url;
 }
 
-function buildSourceTitle(data, gd) {
-  let sourceTitle = "";
-  sourceTitle += "Catholic Parish Registers";
-
-  return sourceTitle;
+function buildSourceTitle(data, gd, builder) {
+  builder.sourceTitle += "Catholic Parish Registers";
 }
 
-function buildSourceReference(data, gd, options) {
+function buildSourceReference(data, gd, builder) {
   // The National Archives of the UK (TNA); Kew, Surrey, England;
   // Census Returns of England and Wales, 1911;
   // Registration District Number: 10; ED, institution, or vessel: 03; Piece: 802<br/>
 
-  let sourceReference = "National Library of Ireland";
+  builder.sourceReference = "National Library of Ireland";
   if (data.dioceseParish && data.county) {
-    sourceReference += ", " + data.dioceseParish + ", " + data.county;
+    builder.sourceReference += ", " + data.dioceseParish + ", " + data.county;
   }
   if (data.pageInfo) {
-    sourceReference += "; " + data.pageInfo;
+    builder.addSourceReferenceText(data.pageInfo);
   }
-
-  return sourceReference;
 }
 
 function buildCoreCitation(data, gd, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = buildSourceTitle(data, gd);
-  builder.sourceReference = buildSourceReference(data, gd, options);
+  buildSourceTitle(data, gd, builder);
+  buildSourceReference(data, gd, builder);
 
   var nliUrl = buildNliUrl(data, builder);
 

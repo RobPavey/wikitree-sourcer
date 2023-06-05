@@ -306,15 +306,8 @@ function addReferenceDataToSourceReference(data, builder, options) {
       builder.sourceReference = "";
     }
 
-    let itemSep = ";";
-    let valueSep = ":";
-    if (options.citation_general_sourceReferenceSeparator == "commaColon") {
-      itemSep = ",";
-      valueSep = ":";
-    } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
-      itemSep = ",";
-      valueSep = "";
-    }
+    const itemSep = builder.getSourceReferenceItemSeparator();
+    const valueSep = builder.getSourceReferenceValueSeparator();
 
     let lcSourceReference = builder.sourceReference.toLowerCase();
 
@@ -355,10 +348,7 @@ function addReferenceDataToSourceReference(data, builder, options) {
               value = modifyValueForUrl(value);
             }
 
-            if (builder.sourceReference) {
-              builder.sourceReference += itemSep + " ";
-            }
-            builder.sourceReference += key + valueSep + " " + value;
+            builder.addSourceReferenceField(key, value);
           }
         }
       }
@@ -366,8 +356,10 @@ function addReferenceDataToSourceReference(data, builder, options) {
   }
 }
 
-function cleanSourceCitation(sourceCitation, options) {
-  let string = sourceCitation;
+function cleanSourceReference(builder) {
+  const options = builder.getOptions();
+
+  let string = builder.sourceReference;
 
   if (string) {
     string = string.replace(/\;?\s*Social Security\:\s*\d+/, "");
@@ -386,7 +378,7 @@ function cleanSourceCitation(sourceCitation, options) {
     }
   }
 
-  return string;
+  builder.sourceReference = string;
 }
 
 function getOneOfPossibleFieldNames(recordData, names) {
@@ -637,14 +629,16 @@ function cleanOriginalData(text) {
   return text;
 }
 
-function buildSourceReference(data, options) {
-  let sourceReference = data.sourceCitation;
-
-  if (!sourceReference && data.originalData) {
-    sourceReference = cleanOriginalData(data.originalData);
+function buildSourceReference(data, builder) {
+  if (data.sourceCitation) {
+    builder.sourceReference = data.sourceCitation;
   }
 
-  return cleanSourceCitation(sourceReference, options);
+  if (!builder.sourceReference && data.originalData) {
+    builder.sourceReference = cleanOriginalData(data.originalData);
+  }
+
+  cleanSourceReference(builder);
 }
 
 function buildCoreCitation(data, gd, options, sharingDataObj, builder) {
@@ -654,7 +648,7 @@ function buildCoreCitation(data, gd, options, sharingDataObj, builder) {
   //console.log(data);
 
   builder.sourceTitle = data.titleCollection;
-  builder.sourceReference = buildSourceReference(data, options);
+  buildSourceReference(data, builder);
   addReferenceDataToSourceReference(data, builder, options);
 
   if (sharingDataObj) {

@@ -34,5 +34,53 @@
   "dataNone_source": {
     "citation": "* '''Baptism''': \"Irish Church Records; Tralee, Kerry (RC)\"<br/>Book Number: 1; Page: 9; Entry Number: 29; Record_Identifier: KY-RC-BA-443276<br/>[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)",
     "type": "source"
+  },
+  "semicolon_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Irish Church Records; Tralee, Kerry (RC)\"<br/>\nBook Number: 1; Page: 9; Entry Number: 29; Record_Identifier: KY-RC-BA-443276<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).\n</ref>",
+    "type": "inline"
+  },
+  "semicolon_narrative": {
+    "citation": "John was baptised on 19 May 1773 in Tralee, Kerry (RC).<ref>\n'''Baptism''':\n\"Irish Church Records; Tralee, Kerry (RC)\"<br/>\nBook Number: 1; Page: 9; Entry Number: 29; Record_Identifier: KY-RC-BA-443276<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).\n</ref>",
+    "type": "narrative"
+  },
+  "semicolon_source": {
+    "citation": "* '''Baptism''': \"Irish Church Records; Tralee, Kerry (RC)\"<br/>Book Number: 1; Page: 9; Entry Number: 29; Record_Identifier: KY-RC-BA-443276<br/>[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>John O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).",
+    "type": "source"
+  },
+  "commaColon_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Irish Church Records; Tralee, Kerry (RC)\"<br/>\nBook Number: 1, Page: 9, Entry Number: 29, Record_Identifier: KY-RC-BA-443276<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).\n</ref>",
+    "type": "inline"
+  },
+  "commaColon_narrative": {
+    "citation": "John was baptised on 19 May 1773 in Tralee, Kerry (RC).<ref>\n'''Baptism''':\n\"Irish Church Records; Tralee, Kerry (RC)\"<br/>\nBook Number: 1, Page: 9, Entry Number: 29, Record_Identifier: KY-RC-BA-443276<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).\n</ref>",
+    "type": "narrative"
+  },
+  "commaColon_source": {
+    "citation": "* '''Baptism''': \"Irish Church Records; Tralee, Kerry (RC)\"<br/>Book Number: 1, Page: 9, Entry Number: 29, Record_Identifier: KY-RC-BA-443276<br/>[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>John O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).",
+    "type": "source"
+  },
+  "commaSpace_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Irish Church Records; Tralee, Kerry (RC)\"<br/>\nBook Number 1, Page 9, Entry Number 29, Record_Identifier KY-RC-BA-443276<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).\n</ref>",
+    "type": "inline"
+  },
+  "commaSpace_narrative": {
+    "citation": "John was baptised on 19 May 1773 in Tralee, Kerry (RC).<ref>\n'''Baptism''':\n\"Irish Church Records; Tralee, Kerry (RC)\"<br/>\nBook Number 1, Page 9, Entry Number 29, Record_Identifier KY-RC-BA-443276<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).\n</ref>",
+    "type": "narrative"
+  },
+  "commaSpace_source": {
+    "citation": "* '''Baptism''': \"Irish Church Records; Tralee, Kerry (RC)\"<br/>Book Number 1, Page 9, Entry Number 29, Record_Identifier KY-RC-BA-443276<br/>[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>John O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).",
+    "type": "source"
+  },
+  "siteStyle_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Irish Church Records; Tralee, Kerry (RC)\"<br/>\nBook Number: 1; Page: 9; Entry Number: 29; Record_Identifier: KY-RC-BA-443276<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).\n</ref>",
+    "type": "inline"
+  },
+  "siteStyle_narrative": {
+    "citation": "John was baptised on 19 May 1773 in Tralee, Kerry (RC).<ref>\n'''Baptism''':\n\"Irish Church Records; Tralee, Kerry (RC)\"<br/>\nBook Number: 1; Page: 9; Entry Number: 29; Record_Identifier: KY-RC-BA-443276<br/>\n[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).\n</ref>",
+    "type": "narrative"
+  },
+  "siteStyle_source": {
+    "citation": "* '''Baptism''': \"Irish Church Records; Tralee, Kerry (RC)\"<br/>Book Number: 1; Page: 9; Entry Number: 29; Record_Identifier: KY-RC-BA-443276<br/>[https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>John O'Connor baptism on 19 May 1773 in Tralee, Kerry (RC).",
+    "type": "source"
   }
 }

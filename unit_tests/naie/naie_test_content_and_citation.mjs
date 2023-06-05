@@ -34,6 +34,24 @@ const regressionData = [
   {
     caseName: "census_1821_fermanagh_ann_keenan",
     url: "http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/",
+    optionVariants: [
+      {
+        variantName: "semicolon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "semicolon" },
+      },
+      {
+        variantName: "commaColon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaColon" },
+      },
+      {
+        variantName: "commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+      {
+        variantName: "siteStyle",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "siteStyle" },
+      },
+    ],
   },
   {
     caseName: "census_1821_galway_walter_gleese",

@@ -39,52 +39,30 @@ function buildIrishgUrl(data, builder) {
   return url;
 }
 
-function buildSourceTitle(data, gd) {
-  let sourceTitle = "";
+function buildSourceTitle(data, gd, builder) {
   if (
     gd.recordType == RT.BirthRegistration ||
     gd.recordType == RT.MarriageRegistration ||
     gd.recordType == RT.DeathRegistration
   ) {
-    sourceTitle = "Civil Records of Irish Births, Deaths and Marriages";
+    builder.sourceTitle = "Civil Records of Irish Births, Deaths and Marriages";
   } else {
-    sourceTitle = "Irish Church Records";
+    builder.sourceTitle = "Irish Church Records";
     if (gd.eventPlace && gd.eventPlace.placeString) {
-      sourceTitle += "; " + gd.eventPlace.placeString;
+      builder.sourceTitle += "; " + gd.eventPlace.placeString;
     }
   }
-
-  return sourceTitle;
 }
 
-function buildSourceReference(data, gd, options) {
-  let sourceReference = "";
-
-  let itemSep = ";";
-  let valueSep = ":";
-  if (options.citation_general_sourceReferenceSeparator == "commaColon") {
-    itemSep = ",";
-    valueSep = ":";
-  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
-    itemSep = ",";
-    valueSep = "";
-  }
-
-  function addField(label, value) {
-    if (value && value != "N/R") {
-      if (sourceReference) {
-        sourceReference += itemSep + " ";
-      }
-      sourceReference += label + valueSep + " " + value;
-    }
-  }
+function buildSourceReference(data, gd, builder) {
+  const excludeValues = ["N/R"];
 
   function addFieldFromRecordData(label) {
-    addField(label, data.recordData[label]);
+    builder.addSourceReferenceField(label, data.recordData[label], excludeValues);
   }
 
   function addFieldFromRefData(label) {
-    addField(label, data.refData[label]);
+    builder.addSourceReferenceField(label, data.refData[label], excludeValues);
   }
 
   if (
@@ -92,7 +70,7 @@ function buildSourceReference(data, gd, options) {
     gd.recordType == RT.MarriageRegistration ||
     gd.recordType == RT.DeathRegistration
   ) {
-    sourceReference += "General Register Office, Ireland";
+    builder.addSourceReferenceText("General Register Office, Ireland");
     addFieldFromRecordData("Group Registration ID");
     addFieldFromRecordData("SR District/Reg Area");
   } else {
@@ -102,14 +80,12 @@ function buildSourceReference(data, gd, options) {
     addFieldFromRefData("Record_Identifier");
     addFieldFromRefData("Image Filename");
   }
-
-  return sourceReference;
 }
 
 function buildCoreCitation(data, gd, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = buildSourceTitle(data, gd);
-  builder.sourceReference = buildSourceReference(data, gd, options);
+  buildSourceTitle(data, gd, builder);
+  buildSourceReference(data, gd, builder);
 
   var irishgUrl = buildIrishgUrl(data, builder);
 

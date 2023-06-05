@@ -116,6 +116,56 @@ class CitationBuilder {
     return citation;
   }
 
+  getSourceReferenceItemSeparator() {
+    let itemSep = ";";
+    if (this.options.citation_general_sourceReferenceSeparator == "commaColon") {
+      itemSep = ",";
+    } else if (this.options.citation_general_sourceReferenceSeparator == "commaSpace") {
+      itemSep = ",";
+    }
+    return itemSep;
+  }
+
+  getSourceReferenceValueSeparator() {
+    let valueSep = ":";
+    if (this.options.citation_general_sourceReferenceSeparator == "commaColon") {
+      valueSep = ":";
+    } else if (this.options.citation_general_sourceReferenceSeparator == "commaSpace") {
+      valueSep = "";
+    }
+    return valueSep;
+  }
+
+  addSourceReferenceField(label, value, excludeValues) {
+    if (!value) {
+      return;
+    }
+
+    if (excludeValues && excludeValues.includes(value)) {
+      return;
+    }
+
+    if (this.sourceReference) {
+      const itemSep = this.getSourceReferenceItemSeparator();
+      this.sourceReference += itemSep + " ";
+    }
+
+    const valueSep = this.getSourceReferenceValueSeparator();
+    this.sourceReference += label + valueSep + " " + value;
+  }
+
+  addSourceReferenceText(value) {
+    if (!value) {
+      return;
+    }
+
+    if (this.sourceReference) {
+      const itemSep = this.getSourceReferenceItemSeparator();
+      this.sourceReference += itemSep + " ";
+    }
+    this.sourceReference += value;
+  }
+
   addNarrative(gd, dataCache, options) {
     // eventually these should come from the dataCache
     // The problem is how to be sure we get a valid match from the data cache?

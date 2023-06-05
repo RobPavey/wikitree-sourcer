@@ -155,7 +155,7 @@ function getAdditionalInfo(data, gd, citationType, options) {
   return result;
 }
 
-function buildSourceReference(data, options) {
+function buildSourceReference(data, builder) {
   // Example:
   // Gloucestershire : Dursley : St James : Register of unspecified type. File line number: 1875
 
@@ -163,25 +163,8 @@ function buildSourceReference(data, options) {
     return;
   }
 
-  let itemSep = ";";
-  let valueSep = ":";
-  if (options.citation_general_sourceReferenceSeparator == "commaColon") {
-    itemSep = ",";
-    valueSep = ":";
-  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
-    itemSep = ",";
-    valueSep = "";
-  }
-
-  let reference = "";
-
   function addRefPart(value) {
-    if (value) {
-      if (reference) {
-        reference += itemSep + " ";
-      }
-      reference += value;
-    }
+    builder.addSourceReferenceText(value);
   }
 
   function addRefPartForKeys(keys) {
@@ -202,10 +185,8 @@ function buildSourceReference(data, options) {
 
   let fileLineNumber = getRecordDataValueForKeys(data, ["File line number"]);
   if (fileLineNumber) {
-    addRefPart("File line number" + valueSep + " " + fileLineNumber);
+    builder.addSourceReferenceField("File line number", fileLineNumber);
   }
-
-  return reference;
 }
 
 function getRecordLink(data) {
@@ -246,7 +227,7 @@ function buildCoreCitation(data, gd, builder) {
   builder.sourceTitle = sourceTitle;
   builder.putSourceTitleInQuotes = true;
 
-  builder.sourceReference = buildSourceReference(data, options);
+  buildSourceReference(data, builder);
 
   builder.recordLinkOrTemplate = getRecordLink(data);
 

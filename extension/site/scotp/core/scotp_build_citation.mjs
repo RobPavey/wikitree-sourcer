@@ -538,12 +538,10 @@ function getAdditionalInfo(data, gd, builder) {
   return result;
 }
 
-function buildSourceReference(data, gd, options) {
+function buildSourceReference(data, gd, builder) {
   if (!data.recordData) {
-    return "";
+    return;
   }
-
-  let referenceString = "";
 
   const exactMatchesToIncludeInReference = [
     "Ref",
@@ -579,23 +577,8 @@ function buildSourceReference(data, gd, options) {
     return false;
   }
 
-  let itemSep = ";";
-  let valueSep = ":";
-  if (options.citation_general_sourceReferenceSeparator == "commaColon") {
-    itemSep = ",";
-    valueSep = ":";
-  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
-    itemSep = ",";
-    valueSep = "";
-  }
-
   function addTerm(title, value) {
-    if (value) {
-      if (referenceString) {
-        referenceString += itemSep + " ";
-      }
-      referenceString += title + valueSep + " " + value;
-    }
+    builder.addSourceReferenceField(title, value);
   }
 
   for (let key in data.recordData) {
@@ -604,7 +587,7 @@ function buildSourceReference(data, gd, options) {
     }
   }
 
-  if (!referenceString) {
+  if (!builder.sourceReference) {
     for (let key in data.recordData) {
       if (isBackupKeyWantedInReference(key)) {
         addTerm(key, data.recordData[key]);
@@ -627,8 +610,7 @@ function buildSourceReference(data, gd, options) {
 
   // Note we put the "National Records of Scotland" in the websiteCreatorOwner, not here
 
-  //console.log("sourceReference is: " + finalReferenceString);
-  return referenceString;
+  //console.log("sourceReference is: " + builder.sourceReference);
 }
 
 function buildSourceTitle(data, options) {
@@ -677,7 +659,7 @@ function buildCoreCitation(data, gd, builder) {
   // with source reference depending on options
   builder.websiteCreatorOwner = "National Records of Scotland";
 
-  builder.sourceReference = buildSourceReference(data, gd, options);
+  buildSourceReference(data, gd, builder);
 
   var url = buildCitationUrl(data, gd, options);
 

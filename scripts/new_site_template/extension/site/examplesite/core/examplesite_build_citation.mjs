@@ -30,20 +30,18 @@ function buildExamplesiteUrl(data, builder) {
   return data.citationUrl;
 }
 
-function buildSourceTitle(data, gd) {
-  let sourceTitle = "Put Source Title here";
-  return sourceTitle;
+function buildSourceTitle(data, gd, builder) {
+  builder.sourceTitle += "Put Source Title here";
 }
 
-function buildSourceReference(data, gd, options) {
-  let sourceReference = "Put Source Reference here";
-  return sourceReference;
+function buildSourceReference(data, gd, builder) {
+  builder.sourceReference = "Put Source Reference here";
 }
 
 function buildCoreCitation(data, gd, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = buildSourceTitle(data, gd);
-  builder.sourceReference = buildSourceReference(data, gd, options);
+  buildSourceTitle(data, gd);
+  buildSourceReference(data, gd, options);
 
   var examplesiteUrl = buildExamplesiteUrl(data, builder);
 

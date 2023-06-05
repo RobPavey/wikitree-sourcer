@@ -44,6 +44,22 @@ const regressionData = [
         variantName: "dataNone",
         optionOverrides: { citation_irishg_dataStringFormat: "none" },
       },
+      {
+        variantName: "semicolon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "semicolon" },
+      },
+      {
+        variantName: "commaColon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaColon" },
+      },
+      {
+        variantName: "commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+      {
+        variantName: "siteStyle",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "siteStyle" },
+      },
     ],
   },
   {

@@ -1,14 +1,62 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland, Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "citation": "<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1821 census Ann (age 92) was the mother, widow of Anne McLaughlin in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland, Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "citation": "In the 1821 census Ann (age 92) was the mother, widow of Anne McLaughlin in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
+    "citation": "* '''1821 Census''': \"1821 Census of Ireland\"<br/>The National Archives of Ireland; Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>Ann Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.",
+    "type": "source"
+  },
+  "semicolon_inline": {
+    "citation": "<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "semicolon_narrative": {
+    "citation": "In the 1821 census Ann (age 92) was the mother, widow of Anne McLaughlin in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "semicolon_source": {
+    "citation": "* '''1821 Census''': \"1821 Census of Ireland\"<br/>The National Archives of Ireland; Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>Ann Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.",
+    "type": "source"
+  },
+  "commaColon_inline": {
+    "citation": "<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland, Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "commaColon_narrative": {
+    "citation": "In the 1821 census Ann (age 92) was the mother, widow of Anne McLaughlin in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland, Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "commaColon_source": {
     "citation": "* '''1821 Census''': \"1821 Census of Ireland\"<br/>The National Archives of Ireland, Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>Ann Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.",
+    "type": "source"
+  },
+  "commaSpace_inline": {
+    "citation": "<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland, Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "commaSpace_narrative": {
+    "citation": "In the 1821 census Ann (age 92) was the mother, widow of Anne McLaughlin in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland, Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "commaSpace_source": {
+    "citation": "* '''1821 Census''': \"1821 Census of Ireland\"<br/>The National Archives of Ireland, Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>Ann Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.",
+    "type": "source"
+  },
+  "siteStyle_inline": {
+    "citation": "<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "siteStyle_narrative": {
+    "citation": "In the 1821 census Ann (age 92) was the mother, widow of Anne McLaughlin in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.<ref>\n'''1821 Census''':\n\"1821 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>\n[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nAnn Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "siteStyle_source": {
+    "citation": "* '''1821 Census''': \"1821 Census of Ireland\"<br/>The National Archives of Ireland; Residents of a house 15 in Lisnarrick Village (Derryvolland, Fermanagh)<br/>[http://www.census.nationalarchives.ie/reels/c19/007246486/007246486_00200.pdf National Archives of Ireland Image] - [http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>Ann Keenan (92) mother, widow in household of Anne McLaughlin (40) in Lisnarrick Village, Derryvolland, Fermanagh, Ireland.",
     "type": "source"
   }
 }

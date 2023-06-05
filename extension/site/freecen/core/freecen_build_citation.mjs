@@ -127,10 +127,12 @@ function getAdditionalInfo(data, gd, citationType, options) {
   return result;
 }
 
-function buildSourceReference(data, options) {
+function buildSourceReference(data, builder) {
   if (!data.censusDetails) {
     return;
   }
+
+  const options = builder.getOptions();
 
   const seriesForYear = {
     1841: { reference: "HO 107", detailsPage: "C8971" },
@@ -153,34 +155,19 @@ function buildSourceReference(data, options) {
   let page = data.censusDetails["Page"];
   let schedule = data.censusDetails["Schedule"];
 
-  let itemSep = ";";
-  let valueSep = ":";
-  if (options.citation_general_sourceReferenceSeparator == "commaColon") {
-    itemSep = ",";
-    valueSep = ":";
-  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
-    itemSep = ",";
-    valueSep = "";
-  }
-
-  let reference = "The National Archives of the UK, Kew, Surrey, England";
-  reference += itemSep + " ";
+  builder.addSourceReferenceText("The National Archives of the UK, Kew, Surrey, England");
   let series = seriesForYear[year];
   if (series) {
     if (options.citation_freecen_includeNationalArchivesLink) {
-      reference +=
-        "Reference" +
-        valueSep +
-        " [https://discovery.nationalarchives.gov.uk/details/r/" +
-        series.detailsPage +
-        " " +
-        series.reference +
-        "]";
+      let reference =
+        "[https://discovery.nationalarchives.gov.uk/details/r/" + series.detailsPage + " " + series.reference + "]";
+
+      builder.addSourceReferenceField("Reference", reference);
     } else {
-      reference += "Reference" + valueSep + " " + series.reference;
+      builder.addSourceReferenceField("Reference", series.reference);
     }
   } else {
-    reference += year;
+    builder.addSourceReferenceText(year);
   }
   if (piece) {
     if (series && series.reference) {
@@ -194,19 +181,17 @@ function buildSourceReference(data, options) {
         }
       }
     }
-    reference += itemSep + " Piece: " + piece;
+    builder.addSourceReferenceField("Piece", piece);
   }
   if (folio) {
-    reference += itemSep + " Folio: " + folio;
+    builder.addSourceReferenceField("Folio", folio);
   }
   if (page) {
-    reference += itemSep + " Page: " + page;
+    builder.addSourceReferenceField("Page", page);
   }
   if (schedule) {
-    reference += itemSep + " Schedule: " + schedule;
+    builder.addSourceReferenceField("Schedule", schedule);
   }
-
-  return reference;
 }
 
 function getRecordLink(data) {
@@ -251,7 +236,7 @@ function buildCoreCitation(data, gd, builder) {
   builder.sourceTitle = sourceTitle;
   builder.putSourceTitleInQuotes = true;
 
-  builder.sourceReference = buildSourceReference(data, options);
+  buildSourceReference(data, builder);
 
   builder.recordLinkOrTemplate = getRecordLink(data);
 

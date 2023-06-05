@@ -10,5 +10,53 @@
   "std_source": {
     "citation": "* '''Unclassified''': \"Catholic Parish Registers\"<br/>National Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)",
     "type": "source"
+  },
+  "semicolon_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "semicolon_narrative": {
+    "citation": "This person was in a record in June 1777 in St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland.<ref>\n'''Unclassified''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "semicolon_source": {
+    "citation": "* '''Unclassified''': \"Catholic Parish Registers\"<br/>National Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "commaColon_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford, Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "commaColon_narrative": {
+    "citation": "This person was in a record in June 1777 in St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland.<ref>\n'''Unclassified''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford, Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "commaColon_source": {
+    "citation": "* '''Unclassified''': \"Catholic Parish Registers\"<br/>National Library of Ireland, Diocese of Waterford and Lismore, County of Waterford, Page 150; June 1777<br/>[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "commaSpace_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford, Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "commaSpace_narrative": {
+    "citation": "This person was in a record in June 1777 in St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland.<ref>\n'''Unclassified''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford, Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "commaSpace_source": {
+    "citation": "* '''Unclassified''': \"Catholic Parish Registers\"<br/>National Library of Ireland, Diocese of Waterford and Lismore, County of Waterford, Page 150; June 1777<br/>[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "siteStyle_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "siteStyle_narrative": {
+    "citation": "This person was in a record in June 1777 in St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland.<ref>\n'''Unclassified''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "siteStyle_source": {
+    "citation": "* '''Unclassified''': \"Catholic Parish Registers\"<br/>National Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)",
+    "type": "source"
   }
 }

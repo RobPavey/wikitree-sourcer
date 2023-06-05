@@ -30,35 +30,30 @@ function buildNaieUrl(data, builder) {
   return data.url;
 }
 
-function buildSourceTitle(data, gd) {
-  let sourceTitle = "";
+function buildSourceTitle(data, gd, builder) {
   let year = gd.inferEventYear();
   if (year) {
-    sourceTitle += year + " ";
+    builder.sourceTitle += year + " ";
   }
-  sourceTitle += "Census of Ireland";
-
-  return sourceTitle;
+  builder.sourceTitle += "Census of Ireland";
 }
 
-function buildSourceReference(data, gd, options) {
+function buildSourceReference(data, gd, builder) {
   // The National Archives of the UK (TNA); Kew, Surrey, England;
   // Census Returns of England and Wales, 1911;
   // Registration District Number: 10; ED, institution, or vessel: 03; Piece: 802<br/>
 
-  let sourceReference = "The National Archives of Ireland";
+  builder.addSourceReferenceText("The National Archives of Ireland");
   if (data.heading) {
     let string = data.heading.replace(/\s+/g, " ");
-    sourceReference += ", " + string;
+    builder.addSourceReferenceText(string);
   }
-
-  return sourceReference;
 }
 
 function buildCoreCitation(data, gd, builder) {
   let options = builder.getOptions();
-  builder.sourceTitle = buildSourceTitle(data, gd);
-  builder.sourceReference = buildSourceReference(data, gd, options);
+  buildSourceTitle(data, gd, builder);
+  buildSourceReference(data, gd, builder);
 
   var naieUrl = buildNaieUrl(data, builder);
 

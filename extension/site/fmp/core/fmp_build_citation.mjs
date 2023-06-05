@@ -190,13 +190,11 @@ function getAdditionalInfo(data, gd, builder) {
   return result;
 }
 
-function buildSourceReference(data, options) {
+function buildSourceReference(data, builder) {
   if (!data.recordData) {
     return "";
   }
   // Archive reference: RG13, Piece number: 1440; Folio 55; Page: 2
-
-  let referenceString = "";
 
   let archive = data.recordData["Archive"];
   let archiveReference = data.recordData["Archive reference"];
@@ -227,23 +225,8 @@ function buildSourceReference(data, options) {
   let enumerationDistrict = data.recordData["Enumeration district"];
   let districtReference = data.recordData["District reference"];
 
-  let itemSep = ";";
-  let valueSep = ":";
-  if (options.citation_general_sourceReferenceSeparator == "commaColon") {
-    itemSep = ",";
-    valueSep = ":";
-  } else if (options.citation_general_sourceReferenceSeparator == "commaSpace") {
-    itemSep = ",";
-    valueSep = "";
-  }
-
   function addTerm(title, value) {
-    if (value) {
-      if (referenceString) {
-        referenceString += itemSep + " ";
-      }
-      referenceString += title + valueSep + " " + value;
-    }
+    builder.addSourceReferenceField(title, value);
   }
 
   addTerm("Archive", archive);
@@ -257,14 +240,11 @@ function buildSourceReference(data, options) {
   addTerm("Schedule", schedule);
   addTerm("Registration Number", registrationNumber);
   addTerm("District reference", districtReference);
-
-  //console.log("sourceReference is: " + referenceString);
-  return referenceString;
 }
 
 function buildCoreCitation(data, gd, options, runDate, builder) {
   builder.sourceTitle = data.collection;
-  builder.sourceReference = buildSourceReference(data, options);
+  buildSourceReference(data, builder);
 
   let imageUrl = data.imageUrl;
   let transcriptUrl = data.url;
