@@ -25,13 +25,11 @@ SOFTWARE.
 import { NaieUriBuilder } from "./naie_uri_builder.mjs";
 import { GeneralizedData } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { getMatchingCensusCounty } from "./naie_county_data.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   // typeOfSearch is current allways specifiedParameters
   const data = buildUrlInput.generalizedData;
   const parameters = buildUrlInput.searchParameters;
-  const options = buildUrlInput.options;
 
   var builder = new NaieUriBuilder();
 
