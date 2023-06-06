@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 //import { FBMD } from "./freebmd_utils.mjs";
 
@@ -86,7 +86,7 @@ function getRegistrationDistrict(data, options) {
   return getCorrectlyCasedNames(data.registrationDistrict, options);
 }
 
-function buildCoreCitation(data, runDate, builder) {
+function buildCoreCitation(data, gd, builder) {
   const titleText = {
     birth: "Birth",
     marriage: "Marriage",
@@ -159,18 +159,7 @@ function buildCoreCitation(data, runDate, builder) {
   builder.dataString = dataString;
 }
 
-function buildCitation(input) {
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  let builder = new CitationBuilder(type, runDate, options);
-
-  var citation = buildCoreCitation(data, runDate, builder);
-
-  // Get meaningful title
+function getRefTitle(data, gd) {
   var refTitle = "";
   switch (data.eventType) {
     case "birth":
@@ -183,23 +172,11 @@ function buildCitation(input) {
       refTitle = "Death Registration";
       break;
   }
-  builder.meaningfulTitle = refTitle;
+  return refTitle;
+}
 
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+function buildCitation(input) {
+  return simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
 }
 
 export { buildCitation };

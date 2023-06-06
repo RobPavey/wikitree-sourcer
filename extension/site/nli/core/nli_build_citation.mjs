@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
-import { DataString } from "../../../base/core/data_string.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildNliUrl(data, builder) {
   return data.url;
@@ -47,58 +46,22 @@ function buildSourceReference(data, gd, builder) {
   }
 }
 
-function buildCoreCitation(data, gd, builder) {
-  let options = builder.getOptions();
-  buildSourceTitle(data, gd, builder);
-  buildSourceReference(data, gd, builder);
-
+function buildRecordLink(data, gd, builder) {
   var nliUrl = buildNliUrl(data, builder);
 
   let recordLink = "[" + nliUrl + " National Library of Ireland Register]";
   builder.recordLinkOrTemplate = recordLink;
+}
 
-  let input = {
-    generalizedData: gd,
-    options: options,
-  };
-  let dataString = DataString.buildDataString(input);
-  if (dataString) {
-    if (!dataString.endsWith(".")) {
-      dataString += ".";
-    }
-    builder.dataString = dataString;
-  }
+function buildCoreCitation(data, gd, builder) {
+  buildSourceTitle(data, gd, builder);
+  buildSourceReference(data, gd, builder);
+  buildRecordLink(data, gd, builder);
+  builder.addStandardDataString(gd);
 }
 
 function buildCitation(input) {
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  let builder = new CitationBuilder(type, runDate, options);
-
-  buildCoreCitation(data, gd, builder);
-
-  // Get meaningful title
-  builder.meaningfulTitle = gd.getRefTitle();
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup, use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
 }
 
 export { buildCitation };

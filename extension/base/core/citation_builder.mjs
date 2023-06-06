@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { buildNarrative } from "./narrative_builder.mjs";
+import { DataString } from "./data_string.mjs";
 
 // The different parts of a citation are:
 //
@@ -164,6 +165,20 @@ class CitationBuilder {
       this.sourceReference += itemSep + " ";
     }
     this.sourceReference += value;
+  }
+
+  addStandardDataString(gd) {
+    let input = {
+      generalizedData: gd,
+      options: this.options,
+    };
+    let dataString = DataString.buildDataString(input);
+    if (dataString) {
+      if (!dataString.endsWith(".")) {
+        dataString += ".";
+      }
+      this.dataString = dataString;
+    }
   }
 
   addNarrative(gd, dataCache, options) {
@@ -454,4 +469,43 @@ class CitationBuilder {
   }
 }
 
-export { CitationBuilder };
+function simpleBuildCitationWrapper(input, buildCoreCitation, refTitleOverrideFunction) {
+  const data = input.extractedData;
+  const gd = input.generalizedData;
+  const runDate = input.runDate;
+  const options = input.options;
+  const type = input.type; // "inline", "narrative" or "source"
+
+  let builder = new CitationBuilder(type, runDate, options);
+
+  if (input.householdTableString) {
+    builder.householdTableString = input.householdTableString;
+  }
+
+  buildCoreCitation(data, gd, builder);
+
+  // Get meaningful title
+  if (refTitleOverrideFunction) {
+    builder.meaningfulTitle = refTitleOverrideFunction(data, gd);
+  } else {
+    builder.meaningfulTitle = gd.getRefTitle();
+  }
+
+  if (type == "narrative") {
+    builder.addNarrative(gd, input.dataCache, options);
+  }
+
+  // now the builder is setup, use it to build the citation text
+  let fullCitation = builder.getCitationString();
+
+  //console.log(fullCitation);
+
+  var citationObject = {
+    citation: fullCitation,
+    type: type,
+  };
+
+  return citationObject;
+}
+
+export { CitationBuilder, simpleBuildCitationWrapper };

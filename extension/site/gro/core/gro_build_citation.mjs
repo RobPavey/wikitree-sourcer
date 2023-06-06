@@ -78,7 +78,7 @@ $Surname(ic)$, $forename1(ic)$ $OtherForenames(ic)$ (Mother's maiden name: $MMN(
 
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { GroUriBuilder } from "./gro_uri_builder.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { getUkbmdDistrictPageUrl } from "./gro_to_ukbmd.mjs";
@@ -195,6 +195,22 @@ function getRegistrationDistrict(data, options) {
 }
 
 async function buildCoreCitation(data, runDate, builder) {
+  // This is what the England Project Orphan Trail Citation Templates look like (except they have no newlines):
+  //
+  // Birth
+  //
+  // England & Wales General Register Office, GRO Online Index - Birth
+  // (https://www.gro.gov.uk/gro/content : accessed [insert date]),
+  // database entry for POTTER, HELEN BEATRIX (Mother's maiden surname: LEECH).
+  // GRO Reference: 1866 S Quarter in KENSINGTON Volume 01A Page 141.
+  //
+  // Death
+  //
+  // England & Wales General Register Office, GRO Online Index - Death
+  // (https://www.gro.gov.uk/gro/content : accessed [insert date]),
+  // database entry for Vincent, Anna Muddle. (Age at death: 75).
+  // GRO Reference: 1866 M Quarter in Islington, Volume 01B Page 157.
+
   let options = builder.options;
 
   builder.sourceTitle = "England & Wales General Register Office";
@@ -300,57 +316,12 @@ async function buildCoreCitation(data, runDate, builder) {
   builder.dataString = dataString;
 }
 
+function getRefTitle(data, gd) {
+  return data.eventType == "birth" ? "Birth Registration" : "Death Registration";
+}
+
 function buildCitation(input) {
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  //console.log("buildCitation (GRO): input is");
-  //console.log(input);
-
-  let builder = new CitationBuilder(type, runDate, options);
-
-  //console.log("BuildCitation called");
-
-  // This is what the England Project Orphan Trail Citation Templates look like (except they have no newlines):
-  //
-  // Birth
-  //
-  // England & Wales General Register Office, GRO Online Index - Birth
-  // (https://www.gro.gov.uk/gro/content : accessed [insert date]),
-  // database entry for POTTER, HELEN BEATRIX (Mother's maiden surname: LEECH).
-  // GRO Reference: 1866 S Quarter in KENSINGTON Volume 01A Page 141.
-  //
-  // Death
-  //
-  // England & Wales General Register Office, GRO Online Index - Death
-  // (https://www.gro.gov.uk/gro/content : accessed [insert date]),
-  // database entry for Vincent, Anna Muddle. (Age at death: 75).
-  // GRO Reference: 1866 M Quarter in Islington, Volume 01B Page 157.
-
-  var citation = buildCoreCitation(data, runDate, builder);
-
-  // Get meaningful title
-  var refTitle = data.eventType == "birth" ? "Birth Registration" : "Death Registration";
-  builder.meaningfulTitle = refTitle;
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
 }
 
 export { buildCitation };

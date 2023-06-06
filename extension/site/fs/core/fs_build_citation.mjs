@@ -690,7 +690,7 @@ function buildCitation(input) {
   builder.householdTableString = input.householdTableString;
 
   if (data.pageType == "record") {
-    var citation = buildCoreCitation(data, gd, builder);
+    buildCoreCitation(data, gd, builder);
 
     // Get meaningful title
     let refTitle = getRefTitle(data, input.generalizedData);

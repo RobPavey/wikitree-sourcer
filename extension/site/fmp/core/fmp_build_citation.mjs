@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
 
@@ -242,7 +242,11 @@ function buildSourceReference(data, builder) {
   addTerm("District reference", districtReference);
 }
 
-function buildCoreCitation(data, gd, options, runDate, builder) {
+function buildCoreCitation(data, gd, builder) {
+  const options = builder.getOptions();
+
+  builder.includeSubscriptionRequired = options.citation_fmp_subscriptionRequired;
+
   builder.sourceTitle = data.collection;
   buildSourceReference(data, builder);
 
@@ -282,38 +286,7 @@ function buildCoreCitation(data, gd, options, runDate, builder) {
 }
 
 function buildCitation(input) {
-  //console.log("buildCitation: input is")
-  //console.log(input)
-
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  let builder = new CitationBuilder(type, runDate, options);
-  builder.householdTableString = input.householdTableString;
-  builder.includeSubscriptionRequired = options.citation_fmp_subscriptionRequired;
-
-  buildCoreCitation(data, gd, options, runDate, builder);
-
-  // Now wrap the citation in a ref with a title (there should be an option for this)
-  var refTitle = getRefTitle(data, input.generalizedData);
-  builder.meaningfulTitle = refTitle;
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
 }
 
 export { buildCitation };

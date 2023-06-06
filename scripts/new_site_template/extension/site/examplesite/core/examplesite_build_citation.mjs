@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
-import { DataString } from "../../../base/core/data_string.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildExamplesiteUrl(data, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
@@ -38,56 +37,22 @@ function buildSourceReference(data, gd, builder) {
   builder.sourceReference = "Put Source Reference here";
 }
 
-function buildCoreCitation(data, gd, builder) {
-  let options = builder.getOptions();
-  buildSourceTitle(data, gd);
-  buildSourceReference(data, gd, options);
-
+function buildRecordLink(data, gd, builder) {
   var examplesiteUrl = buildExamplesiteUrl(data, builder);
 
   let recordLink = "[" + examplesiteUrl + " ExampleSite Record]";
   builder.recordLinkOrTemplate = recordLink;
+}
 
-  let input = {
-    generalizedData: gd,
-    options: options,
-  };
-  let dataString = DataString.buildDataString(input);
-  if (!dataString.endsWith(".")) {
-    dataString += ".";
-  }
-  builder.dataString = dataString;
+function buildCoreCitation(data, gd, builder) {
+  buildSourceTitle(data, gd);
+  buildSourceReference(data, gd, builder);
+  buildRecordLink(data, gd, builder);
+  builder.addStandardDataString(gd);
 }
 
 function buildCitation(input) {
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  let builder = new CitationBuilder(type, runDate, options);
-
-  buildCoreCitation(data, gd, builder);
-
-  // Get meaningful title
-  builder.meaningfulTitle = gd.getRefTitle();
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup, use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
 }
 
 export { buildCitation };

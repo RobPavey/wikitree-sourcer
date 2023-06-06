@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildPpnzUrl(data, builder) {
   let url = data.url;
@@ -40,8 +39,7 @@ function buildPpnzUrl(data, builder) {
   return url;
 }
 
-function buildCoreCitation(data, runDate, builder) {
-  let options = builder.getOptions();
+function buildCoreCitation(data, gd, builder) {
   builder.sourceTitle = "Papers Past, National Library of New Zealand";
 
   builder.databaseHasImages = true;
@@ -55,46 +53,7 @@ function buildCoreCitation(data, runDate, builder) {
 }
 
 function buildCitation(input) {
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  let builder = new CitationBuilder(type, runDate, options);
-
-  var citation = buildCoreCitation(data, runDate, builder);
-
-  // Get meaningful title
-  var refTitle = "";
-  switch (data.eventType) {
-    case "birth":
-      refTitle = "Birth Registration";
-      break;
-    case "marriage":
-      refTitle = "Marriage Registration";
-      break;
-    case "death":
-      refTitle = "Death Registration";
-      break;
-  }
-  builder.meaningfulTitle = refTitle;
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
 }
 
 export { buildCitation };

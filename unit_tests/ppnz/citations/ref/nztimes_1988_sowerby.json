@@ -1,26 +1,26 @@
 {
   "std_inline": {
-    "citation": "<ref>\n\"Papers Past, National Library of New Zealand\"<br/>\nNew Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>\n[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31 Papers Past Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1888 Newspaper''':\n\"Papers Past, National Library of New Zealand\"<br/>\nNew Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>\n[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31 Papers Past Article] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the New Zealand Times on 20 December 1888 in Wellington, New Zealand.<ref>\n\"Papers Past, National Library of New Zealand\"<br/>\nNew Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>\n[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31 Papers Past Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the New Zealand Times on 20 December 1888 in Wellington, New Zealand.<ref>\n'''1888 Newspaper''':\n\"Papers Past, National Library of New Zealand\"<br/>\nNew Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>\n[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31 Papers Past Article] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* \"Papers Past, National Library of New Zealand\"<br/>New Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31 Papers Past Article] (accessed 6 May 2021)",
+    "citation": "* '''1888 Newspaper''': \"Papers Past, National Library of New Zealand\"<br/>New Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31 Papers Past Article] (accessed 6 May 2021)",
     "type": "source"
   },
   "includeSearchQuery_inline": {
-    "citation": "<ref>\n\"Papers Past, National Library of New Zealand\"<br/>\nNew Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>\n[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31?end_date=1992&items_per_page=10&query=Sowerby+Smith+Florence+Maude&snippet=true&start_date=1884 Papers Past Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1888 Newspaper''':\n\"Papers Past, National Library of New Zealand\"<br/>\nNew Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>\n[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31?end_date=1992&items_per_page=10&query=Sowerby+Smith+Florence+Maude&snippet=true&start_date=1884 Papers Past Article] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "includeSearchQuery_narrative": {
-    "citation": "This person was mentioned in the New Zealand Times on 20 December 1888 in Wellington, New Zealand.<ref>\n\"Papers Past, National Library of New Zealand\"<br/>\nNew Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>\n[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31?end_date=1992&items_per_page=10&query=Sowerby+Smith+Florence+Maude&snippet=true&start_date=1884 Papers Past Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the New Zealand Times on 20 December 1888 in Wellington, New Zealand.<ref>\n'''1888 Newspaper''':\n\"Papers Past, National Library of New Zealand\"<br/>\nNew Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>\n[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31?end_date=1992&items_per_page=10&query=Sowerby+Smith+Florence+Maude&snippet=true&start_date=1884 Papers Past Article] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "includeSearchQuery_source": {
-    "citation": "* \"Papers Past, National Library of New Zealand\"<br/>New Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31?end_date=1992&items_per_page=10&query=Sowerby+Smith+Florence+Maude&snippet=true&start_date=1884 Papers Past Article] (accessed 6 May 2021)",
+    "citation": "* '''1888 Newspaper''': \"Papers Past, National Library of New Zealand\"<br/>New Zealand Times, Volume LI, Issue 8565, 20 December 1888, Page 7<br/>[https://paperspast.natlib.govt.nz/newspapers/NZTIM18881220.2.31?end_date=1992&items_per_page=10&query=Sowerby+Smith+Florence+Maude&snippet=true&start_date=1884 Papers Past Article] (accessed 6 May 2021)",
     "type": "source"
   }
 }

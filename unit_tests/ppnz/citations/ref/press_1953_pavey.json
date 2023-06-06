@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n\"Papers Past, National Library of New Zealand\"<br/>\nPress, Volume LXXXIX, Issue 27142, 11 September 1953, Page 10<br/>\n[https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108 Papers Past Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1953 Newspaper''':\n\"Papers Past, National Library of New Zealand\"<br/>\nPress, Volume LXXXIX, Issue 27142, 11 September 1953, Page 10<br/>\n[https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108 Papers Past Article] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the Press on 11 September 1953 in Canterbury, New Zealand.<ref>\n\"Papers Past, National Library of New Zealand\"<br/>\nPress, Volume LXXXIX, Issue 27142, 11 September 1953, Page 10<br/>\n[https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108 Papers Past Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the Press on 11 September 1953 in Canterbury, New Zealand.<ref>\n'''1953 Newspaper''':\n\"Papers Past, National Library of New Zealand\"<br/>\nPress, Volume LXXXIX, Issue 27142, 11 September 1953, Page 10<br/>\n[https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108 Papers Past Article] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* \"Papers Past, National Library of New Zealand\"<br/>Press, Volume LXXXIX, Issue 27142, 11 September 1953, Page 10<br/>[https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108 Papers Past Article] (accessed 6 May 2021)",
+    "citation": "* '''1953 Newspaper''': \"Papers Past, National Library of New Zealand\"<br/>Press, Volume LXXXIX, Issue 27142, 11 September 1953, Page 10<br/>[https://paperspast.natlib.govt.nz/newspapers/CHP19530911.2.108 Papers Past Article] (accessed 6 May 2021)",
     "type": "source"
   }
 }

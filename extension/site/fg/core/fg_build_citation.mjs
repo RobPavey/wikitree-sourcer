@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildCoreCitation(data, runDate, builder) {
+function buildCoreCitation(data, gd, builder) {
   // Example citation:
   // Burial: Find a Grave.
   // Citing Oak Grove Cemetery, Hillsdale, Hillsdale County, Michigan, USA
@@ -130,34 +130,7 @@ function buildCoreCitation(data, runDate, builder) {
 }
 
 function buildCitation(input) {
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  let builder = new CitationBuilder(type, runDate, options);
-
-  var citation = buildCoreCitation(data, runDate, builder);
-
-  // Assume for now that all memorial pages are for a burial
-  builder.meaningfulTitle = "Memorial";
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
 }
 
 export { buildCitation };

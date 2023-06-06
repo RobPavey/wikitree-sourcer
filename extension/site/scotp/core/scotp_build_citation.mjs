@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
 import { getRecordType } from "./scotp_utils.mjs";
 import { ScotpUriBuilder } from "./scotp_uri_builder.mjs";
@@ -678,35 +678,7 @@ function buildCoreCitation(data, gd, builder) {
 }
 
 function buildCitation(input) {
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  let builder = new CitationBuilder(type, runDate, options);
-
-  buildCoreCitation(data, gd, builder);
-
-  // Get meaningful title
-  var refTitle = getRefTitle(data, gd);
-  builder.meaningfulTitle = refTitle;
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
 }
 
 export { buildCitation };

@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
-import { DataString } from "../../../base/core/data_string.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function buildIrishgUrl(data, builder) {
@@ -101,15 +100,7 @@ function buildCoreCitation(data, gd, builder) {
   }
 
   if (options.citation_irishg_dataStringFormat == "dataString") {
-    let input = {
-      generalizedData: gd,
-      options: options,
-    };
-    let dataString = DataString.buildDataString(input);
-    if (!dataString.endsWith(".")) {
-      dataString += ".";
-    }
-    builder.dataString = dataString;
+    builder.addStandardDataString(gd);
   } else if (options.citation_irishg_dataStringFormat == "fromPage") {
     if (data.eventText) {
       builder.dataString = data.eventText;
@@ -118,33 +109,7 @@ function buildCoreCitation(data, gd, builder) {
 }
 
 function buildCitation(input) {
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  let builder = new CitationBuilder(type, runDate, options);
-
-  buildCoreCitation(data, gd, builder);
-
-  builder.meaningfulTitle = gd.getRefTitle();
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup, use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
 }
 
 export { buildCitation };

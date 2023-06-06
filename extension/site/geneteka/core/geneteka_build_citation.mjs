@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 const RECORD_TYPE_DESCRIPTION = {
   B: "birth",
@@ -109,10 +109,11 @@ function buildMarriageDataString(generalizedData) {
   return `${husbandName} and ${wifeName} married${eventParts.join(" ")}`;
 }
 
-function buildCoreCitation(data, generalizedData, builder) {
+function buildCoreCitation(ed, generalizedData, builder) {
+  const data = ed.recordData;
+
   const recordTypeDescription = RECORD_TYPE_DESCRIPTION[data.recordType];
 
-  builder.meaningfulTitle = `${capitalize(recordTypeDescription)} Registration`;
   builder.sourceTitle = `Parish ${recordTypeDescription} records`;
 
   if (data.record) {
@@ -134,26 +135,14 @@ function buildCoreCitation(data, generalizedData, builder) {
   }
 }
 
+function getRefTitle(ed, gd) {
+  const data = ed.recordData;
+  const recordTypeDescription = RECORD_TYPE_DESCRIPTION[data.recordType];
+  return `${capitalize(recordTypeDescription)} Registration`;
+}
+
 function buildCitation(input) {
-  const data = input.extractedData.recordData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  const builder = new CitationBuilder(type, runDate, options);
-
-  buildCoreCitation(data, gd, builder);
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // Now the builder is set up, use it to build the citation text.
-  return {
-    citation: builder.getCitationString(),
-    type: type,
-  };
+  return simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
 }
 
 export { buildCitation };

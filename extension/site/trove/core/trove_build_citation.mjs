@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildTroveUrl(data, builder) {
   let url = data.url;
@@ -39,8 +39,7 @@ function buildTroveUrl(data, builder) {
   return url;
 }
 
-function buildCoreCitation(data, runDate, builder) {
-  let options = builder.getOptions();
+function buildCoreCitation(data, gd, builder) {
   builder.sourceTitle = "Trove, National Library of Australia";
 
   builder.databaseHasImages = true;
@@ -57,33 +56,7 @@ function buildCoreCitation(data, runDate, builder) {
 }
 
 function buildCitation(input) {
-  const data = input.extractedData;
-  const gd = input.generalizedData;
-  const runDate = input.runDate;
-  const options = input.options;
-  const type = input.type; // "inline", "narrative" or "source"
-
-  let builder = new CitationBuilder(type, runDate, options);
-
-  buildCoreCitation(data, runDate, builder);
-
-  builder.meaningfulTitle = gd.getRefTitle();
-
-  if (type == "narrative") {
-    builder.addNarrative(gd, input.dataCache, options);
-  }
-
-  // now the builder is setup use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
-
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
 }
 
 export { buildCitation };
