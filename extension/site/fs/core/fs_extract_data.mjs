@@ -2353,6 +2353,52 @@ function extractDataFromPersonChildAndParentsRelationships(dataObj, parentRelati
   }
 }
 
+function identifyPreferredParents(document, parentPairs) {
+  // There is no way that I can see to get this through the API without special access
+  // So we use the document to get it.
+  if (!document) {
+    return;
+  }
+
+  let couplePersonNodes = document.querySelectorAll("ul[data-testid=couple-persons]");
+
+  for (let couple of couplePersonNodes) {
+    let personNodes = couple.querySelectorAll("div[data-testid=person]");
+    let coupleIds = [];
+    for (let personNode of personNodes) {
+      let pidButton = personNode.querySelector("button[data-testid=pid]");
+      if (pidButton) {
+        let pid = pidButton.textContent;
+        coupleIds.push(pid);
+      }
+    }
+    let isPreferred = false;
+    let nodeBeforeCouple = couple.previousSibling;
+    if (nodeBeforeCouple) {
+      if (nodeBeforeCouple.textContent == "Preferred") {
+        isPreferred = true;
+      }
+    }
+
+    // now try to update parentRelationships if this one if preferred
+    if (isPreferred) {
+      for (let parentPair of parentPairs) {
+        let isMatch = true;
+        if (parentPair.father && !coupleIds.includes(parentPair.father)) {
+          isMatch = false;
+        }
+        if (parentPair.mother && !coupleIds.includes(parentPair.mother)) {
+          isMatch = false;
+        }
+
+        if (isMatch) {
+          parentPair.isPreferred = true;
+        }
+      }
+    }
+  }
+}
+
 function extractPersonDataFromFetch(document, dataObj, options) {
   let result = {};
 
@@ -2460,7 +2506,7 @@ function extractPersonDataFromFetch(document, dataObj, options) {
 
     // there can be multiple parents, we need to select the best ones
     // We know if they are marked as adoptive.
-    // So far we can't extract which is marked preferred.
+    // We have to use the document to see which is marked preferred.
     // So we prioritize the first unless it is adoptive and there is another one.
 
     let parentPairs = [];
@@ -2497,6 +2543,8 @@ function extractPersonDataFromFetch(document, dataObj, options) {
       }
     }
 
+    identifyPreferredParents(document, parentPairs);
+
     let bestRelationshipPair = undefined;
 
     for (let parentPair of parentPairs) {
@@ -2504,7 +2552,9 @@ function extractPersonDataFromFetch(document, dataObj, options) {
         bestRelationshipPair = parentPair;
       } else {
         // only change if this one if better
-        if (bestRelationshipPair.parentCount < parentPair.parentCount) {
+        if (!bestRelationshipPair.isPreferred && parentPair.isPreferred) {
+          bestRelationshipPair = parentPair;
+        } else if (bestRelationshipPair.parentCount < parentPair.parentCount) {
           if (!(bestRelationshipPair.adoptiveCount == 0 && parentPair.adoptiveCount > 0)) {
             bestRelationshipPair = parentPair;
           }

@@ -1,4 +1,5 @@
 {
+  "url": "file:///Users/robpavey/Documents/BrowserExtensionDev/WikiTreeSourcer/wikitree-sourcer/unit_tests/fs/saved_pages/xx_profile_ralph_allan_pavey_1914_1992.html",
   "fullName": "Ralph Allan Pavey",
   "givenName": "Ralph Allan",
   "surname": "Pavey",
@@ -28,9 +29,9 @@
     "surname": "Pavey"
   },
   "mother": {
-    "fullName": "Elsie shara Chambers",
-    "givenName": "Elsie shara",
-    "surname": "Chambers"
+    "fullName": "Clara Ethel Risley",
+    "givenName": "Clara Ethel",
+    "surname": "Risley"
   },
   "pageType": "person"
 }

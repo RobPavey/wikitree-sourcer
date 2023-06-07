@@ -108,7 +108,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       let dataObjects = { dataObj: fetchObj };
 
       try {
-        result = extractDataFunction(undefined, dataObjects, fetchType, testManager.options);
+        result = extractDataFunction(doc, dataObjects, fetchType, testManager.options);
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
