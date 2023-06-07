@@ -680,6 +680,84 @@ function extractDataForPrivateToUserProfile(document, result) {
 }
 
 function extractDataForEditFamily(document, result) {
+  function getSpouseNameAndWikiId(spouseIsParentNode) {
+    let parentNode = spouseIsParentNode.parentNode;
+
+    let nameAndId = {};
+    if (result.editFamilyType != "steps") {
+      let textNode = spouseIsParentNode.nextSibling;
+      if (textNode) {
+        let spouseText = textNode.textContent;
+        spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
+        nameAndId.name = spouseText.trim();
+
+        let linkNode = textNode.nextSibling;
+        if (linkNode) {
+          let href = linkNode.getAttribute("href");
+          href = href.replace(/^\/wiki\//, "");
+          nameAndId.wikiId = href;
+        }
+      }
+    } else if (parentNode) {
+      let linkNode = parentNode.querySelector("a");
+      if (linkNode) {
+        let href = linkNode.getAttribute("href");
+        href = href.replace(/^\/wiki\//, "");
+        nameAndId.wikiId = href;
+
+        let spouseText = linkNode.textContent;
+        spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
+        nameAndId.name = spouseText.trim();
+      }
+    }
+
+    return nameAndId;
+  }
+
+  function getSiblingParentNameAndWikiId(isFather) {
+    let selector = isFather ? '#content input[name="wpSameFather"]' : '#content input[name="wpSameMother"]';
+
+    let nameAndId = {};
+
+    let sameParentNode = document.querySelector(selector);
+    if (sameParentNode) {
+      if (sameParentNode.checked) {
+        nameAndId.checked = true;
+      }
+
+      if (result.editFamilyType != "steps") {
+        let textNode = sameParentNode.nextSibling;
+        if (textNode) {
+          const regex = isFather ? /^\s*Father of new sibling is\s+/ : /^\s*Mother of new sibling is\s+/;
+          let parentText = textNode.textContent;
+          parentText = parentText.replace(regex, ""); // leading text
+          parentText = parentText.replace(/\($/, ""); // remove trailing "("
+          nameAndId.name = parentText.trim();
+
+          let linkNode = textNode.nextSibling;
+          if (linkNode) {
+            let href = linkNode.getAttribute("href");
+            href = href.replace(/^\/wiki\//, "");
+            nameAndId.wikiId = href;
+          }
+        }
+      } else {
+        let textNode = sameParentNode.nextSibling;
+        if (textNode) {
+          let linkNode = textNode.nextSibling;
+          if (linkNode && linkNode.type != 3) {
+            let href = linkNode.getAttribute("href");
+            href = href.replace(/^\/wiki\//, "");
+            nameAndId.name = linkNode.textContent;
+            nameAndId.wikiId = href;
+          }
+        }
+      }
+    }
+
+    return nameAndId;
+  }
+
   result.pageType = "editFamily";
 
   // check the end of the URL. Examples are:
@@ -757,99 +835,20 @@ function extractDataForEditFamily(document, result) {
 
     let spouseIsParentNodes = document.querySelectorAll('#content input[name="wpSpouseIsParent"]');
     if (spouseIsParentNodes.length > 0) {
+      result.familyMemberSpouses = [];
+
       for (let spouseIsParentNode of spouseIsParentNodes) {
+        let nameAndId = getSpouseNameAndWikiId(spouseIsParentNode);
+        result.familyMemberSpouses.push(nameAndId);
+
         if (spouseIsParentNode.checked) {
-          let parentNode = spouseIsParentNode.parentNode;
-
-          if (result.editFamilyType != "steps") {
-            let textNode = spouseIsParentNode.nextSibling;
-            if (textNode) {
-              let spouseText = textNode.textContent;
-              spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
-              result.familyMemberSpouseName = spouseText.trim();
-
-              let linkNode = textNode.nextSibling;
-              if (linkNode) {
-                let href = linkNode.getAttribute("href");
-                href = href.replace(/^\/wiki\//, "");
-                result.familyMemberSpouseWikiId = href;
-              }
-            }
-          } else if (parentNode) {
-            let linkNode = parentNode.querySelector("a");
-            if (linkNode) {
-              let href = linkNode.getAttribute("href");
-              href = href.replace(/^\/wiki\//, "");
-              result.familyMemberSpouseWikiId = href;
-
-              let spouseText = linkNode.textContent;
-              spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
-              result.familyMemberSpouseName = spouseText.trim();
-            }
-          }
+          result.familyMemberSpouseName = nameAndId.name;
+          result.familyMemberSpouseWikiId = nameAndId.wikiId;
         }
       }
     } else {
-      let sameFatherNode = document.querySelector('#content input[name="wpSameFather"]');
-      if (sameFatherNode && sameFatherNode.checked) {
-        if (result.editFamilyType != "steps") {
-          let textNode = sameFatherNode.nextSibling;
-          if (textNode) {
-            let fatherText = textNode.textContent;
-            fatherText = fatherText.replace(/^\s*Father of new sibling is\s+/, ""); // leading text
-            fatherText = fatherText.replace(/\($/, ""); // remove trailing "("
-            result.familyMemberFatherName = fatherText.trim();
-
-            let linkNode = textNode.nextSibling;
-            if (linkNode) {
-              let href = linkNode.getAttribute("href");
-              href = href.replace(/^\/wiki\//, "");
-              result.familyMemberFatherWikiId = href;
-            }
-          }
-        } else {
-          let textNode = sameFatherNode.nextSibling;
-          if (textNode) {
-            let linkNode = textNode.nextSibling;
-            if (linkNode && linkNode.type != 3) {
-              let href = linkNode.getAttribute("href");
-              href = href.replace(/^\/wiki\//, "");
-              result.familyMemberFatherName = linkNode.textContent;
-              result.familyMemberFatherWikiId = href;
-            }
-          }
-        }
-      }
-      let sameMotherNode = document.querySelector('#content input[name="wpSameMother"]');
-      if (sameMotherNode && sameMotherNode.checked) {
-        if (result.editFamilyType != "steps") {
-          let textNode = sameMotherNode.nextSibling;
-          if (textNode) {
-            let motherText = textNode.textContent;
-            motherText = motherText.replace(/^\s*Mother of new sibling is\s+/, ""); // leaing text
-            motherText = motherText.replace(/\($/, ""); // remove trailing "("
-            result.familyMemberMotherName = motherText.trim();
-
-            let linkNode = textNode.nextSibling;
-            if (linkNode) {
-              let href = linkNode.getAttribute("href");
-              href = href.replace(/^\/wiki\//, "");
-              result.familyMemberMotherWikiId = href;
-            }
-          }
-        } else {
-          let textNode = sameMotherNode.nextSibling;
-          if (textNode) {
-            let linkNode = textNode.nextSibling;
-            if (linkNode && linkNode.type != 3) {
-              let href = linkNode.getAttribute("href");
-              href = href.replace(/^\/wiki\//, "");
-              result.familyMemberMotherName = linkNode.textContent;
-              result.familyMemberMotherWikiId = href;
-            }
-          }
-        }
-      }
+      result.familyMemberFather = getSiblingParentNameAndWikiId(true);
+      result.familyMemberMother = getSiblingParentNameAndWikiId(false);
     }
   }
 

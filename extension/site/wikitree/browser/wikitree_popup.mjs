@@ -465,87 +465,239 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
   // data: the extracted data from the current page
   // personData: the stored person data which is extractedData and generalizedData (not as objects)
 
-  function getPageParents(relationship) {
+  function getPageParentsForAddingChild(otherParentName, otherParentWikiId) {
     let parents = {};
     parents.genderKnown = false;
-    if (relationship == "child") {
-      let pageParent1Name = data.extractedData.familyMemberName; // we don't actually know gender
-      let pageParent2Name = data.extractedData.familyMemberSpouseName;
-      let pageParent1WikiId = data.extractedData.familyMemberWikiId;
-      let pageParent2WikiId = data.extractedData.familyMemberSpouseWikiId;
 
-      let parent1HasParen = false;
-      if (pageParent1Name) {
-        let birthName = pageParent1Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
-        if (birthName && birthName != pageParent1Name) {
-          pageParent1Name = birthName;
-          parent1HasParen = true;
-        }
+    let pageParent1Name = data.extractedData.familyMemberName; // we don't actually know gender
+    let pageParent2Name = otherParentName;
+    let pageParent1WikiId = data.extractedData.familyMemberWikiId;
+    let pageParent2WikiId = otherParentWikiId;
+
+    let parent1HasParen = false;
+    if (pageParent1Name) {
+      let birthName = pageParent1Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
+      if (birthName && birthName != pageParent1Name) {
+        pageParent1Name = birthName;
+        parent1HasParen = true;
       }
+    }
 
-      let parent2HasParen = false;
-      if (pageParent2Name) {
-        let birthName = pageParent2Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
-        if (birthName && birthName != pageParent2Name) {
-          pageParent2Name = birthName;
-          parent2HasParen = true;
-        }
+    let parent2HasParen = false;
+    if (pageParent2Name) {
+      let birthName = pageParent2Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
+      if (birthName && birthName != pageParent2Name) {
+        pageParent2Name = birthName;
+        parent2HasParen = true;
       }
+    }
 
-      if (pageParent1Name && pageParent2Name) {
-        if (parent1HasParen && !parent2HasParen) {
-          parents.fatherName = pageParent2Name;
-          parents.fatherWikiId = pageParent2WikiId;
-          parents.motherName = pageParent1Name;
-          parents.motherWikiId = pageParent1WikiId;
+    if (pageParent1Name && pageParent2Name) {
+      if (parent1HasParen && !parent2HasParen) {
+        parents.fatherName = pageParent2Name;
+        parents.fatherWikiId = pageParent2WikiId;
+        parents.motherName = pageParent1Name;
+        parents.motherWikiId = pageParent1WikiId;
+        parents.genderKnown = true;
+      } else {
+        if (!parent1HasParen && parent2HasParen) {
           parents.genderKnown = true;
-        } else {
-          if (!parent1HasParen && parent2HasParen) {
-            parents.genderKnown = true;
+        }
+
+        parents.fatherName = pageParent1Name;
+        parents.fatherWikiId = pageParent1WikiId;
+        parents.motherName = pageParent2Name;
+        parents.motherWikiId = pageParent2WikiId;
+      }
+    } else if (pageParent1Name) {
+      if (parent1HasParen) {
+        parents.motherName = pageParent1Name;
+        parents.motherWikiId = pageParent1WikiId;
+        parents.genderKnown = true;
+      } else {
+        parents.fatherName = pageParent1Name;
+        parents.fatherWikiId = pageParent1WikiId;
+      }
+    }
+
+    return parents;
+  }
+
+  function getPageParentsForAddingSibling(father, mother) {
+    let parents = {};
+    parents.genderKnown = false;
+
+    if (father && father.name) {
+      parents.fatherName = father.name;
+      parents.fatherWikiId = father.wikiId;
+      parents.genderKnown = true;
+    }
+
+    if (mother && mother.name) {
+      // Remove married name from mother if present
+      let birthName = mother.name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
+      if (birthName && birthName != mother.name) {
+        mother.name = birthName;
+      }
+
+      parents.motherName = mother.name;
+      parents.motherWikiId = mother.wikiId;
+      parents.genderKnown = true;
+    }
+
+    return parents;
+  }
+
+  function generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, pageParents) {
+    let parentsLine = "";
+
+    let fatherName = "";
+    let motherName = "";
+    let fatherWikiId = "";
+    let motherWikiId = "";
+    if (addIntroOpt == "fromSavedData") {
+      let parentNames = personGd.inferParentNamesForDataString();
+      fatherName = parentNames.fatherName;
+      motherName = parentNames.motherName;
+    } else if (addIntroOpt == "fromPageData") {
+      if (pageParents.fatherName) {
+        fatherName = pageParents.fatherName;
+        fatherWikiId = pageParents.fatherWikiId;
+      }
+      if (pageParents.motherName) {
+        motherName = pageParents.motherName;
+        motherWikiId = pageParents.motherWikiId;
+      }
+    } else if (addIntroOpt == "fromBoth") {
+      let dataParents = personGd.inferParentNamesForDataString();
+      fatherName = dataParents.fatherName;
+      motherName = dataParents.motherName;
+      // the page parents can have the father and mother the wrong way round
+      if (!pageParents.genderKnown) {
+        if (pageParents.fatherName != dataParents.fatherName) {
+          if (pageParents.motherName == dataParents.fatherName) {
+            let swapName = pageParents.motherName;
+            let swapWikiId = pageParents.motherWikiId;
+            pageParents.motherName = pageParents.fatherName;
+            pageParents.motherWikiId = pageParents.fatherWikiId;
+            pageParents.fatherName = swapName;
+            pageParents.fatherWikiId = swapWikiId;
           }
-
-          parents.fatherName = pageParent1Name;
-          parents.fatherWikiId = pageParent1WikiId;
-          parents.motherName = pageParent2Name;
-          parents.motherWikiId = pageParent2WikiId;
         }
-      } else if (pageParent1Name) {
-        if (parent1HasParen) {
-          parents.motherName = pageParent1Name;
-          parents.motherWikiId = pageParent1WikiId;
-          parents.genderKnown = true;
+      }
+      if (pageParents.fatherName) {
+        fatherName = pageParents.fatherName;
+        fatherWikiId = pageParents.fatherWikiId;
+      }
+      if (pageParents.motherName) {
+        motherName = pageParents.motherName;
+        motherWikiId = pageParents.motherWikiId;
+      }
+    }
+
+    if (fullName && (birthDateString || birthPlace || fatherName || motherName)) {
+      parentsLine += fullName;
+      if (birthDateString || birthPlace) {
+        parentsLine += " was born";
+        if (birthDateString) {
+          parentsLine += " " + birthDateString;
+        }
+        if (birthPlace) {
+          parentsLine += " " + birthPlace;
+        }
+      }
+
+      if (fatherName || motherName) {
+        parentsLine += ", ";
+        if (personGd.personGender == "male") {
+          parentsLine += "son";
+        } else if (personGd.personGender == "female") {
+          parentsLine += "daughter";
         } else {
-          parents.fatherName = pageParent1Name;
-          parents.fatherWikiId = pageParent1WikiId;
+          parentsLine += "child";
+        }
+        parentsLine += " of ";
+
+        if (options.addMerge_addPerson_includeLinks) {
+          if (fatherName && fatherWikiId) {
+            fatherName = "[[" + fatherWikiId + "|" + fatherName + "]]";
+          }
+          if (motherName && motherWikiId) {
+            motherName = "[[" + motherWikiId + "|" + motherName + "]]";
+          }
+        }
+
+        if (fatherName && motherName) {
+          parentsLine += fatherName + " and " + motherName;
+        } else if (fatherName) {
+          parentsLine += fatherName;
+        } else {
+          parentsLine += motherName;
+        }
+      }
+
+      parentsLine += ".";
+    }
+    return parentsLine;
+  }
+
+  function generateParentsLine(fullName, birthDateString, birthPlace) {
+    let relationship = data.extractedData.relationshipToFamilyMember;
+
+    let parentsLine = "";
+
+    let pageParents = {};
+    if (relationship == "child") {
+      let otherParentName = data.extractedData.familyMemberSpouseName;
+      let otherParentWikiId = data.extractedData.familyMemberSpouseWikiId;
+
+      pageParents = getPageParentsForAddingChild(otherParentName, otherParentWikiId);
+      parentsLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, pageParents);
+
+      result.childParentLines = {};
+      let noneParents = getPageParentsForAddingChild("", "");
+      let noneLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, noneParents);
+      result.childParentLines["none"] = noneLine;
+
+      let possibleSpouses = data.extractedData.familyMemberSpouses;
+      if (possibleSpouses && possibleSpouses.length > 0) {
+        for (let spouse of possibleSpouses) {
+          let parents = getPageParentsForAddingChild(spouse.name, spouse.wikiId);
+          let line = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, parents);
+
+          result.childParentLines[spouse.wikiId] = line;
         }
       }
     } else if (relationship == "sibling") {
-      let fatherName = data.extractedData.familyMemberFatherName;
-      let motherName = data.extractedData.familyMemberMotherName;
-      let fatherWikiId = data.extractedData.familyMemberFatherWikiId;
-      let motherWikiId = data.extractedData.familyMemberMotherWikiId;
+      let father = data.extractedData.familyMemberFather;
+      let mother = data.extractedData.familyMemberMother;
 
-      // Remove married name from mother if present
-      if (motherName) {
-        let birthName = motherName.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
-        if (birthName && birthName != motherName) {
-          motherName = birthName;
-        }
+      result.siblingParentLines = [];
+
+      function addCase(fatherChecked, motherChecked) {
+        let caseFather = fatherChecked ? father : undefined;
+        let caseMother = motherChecked ? mother : undefined;
+        let caseParents = getPageParentsForAddingSibling(caseFather, caseMother);
+        let caseParentsLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, caseParents);
+        result.siblingParentLines.push({ father: fatherChecked, mother: motherChecked, parentLine: caseParentsLine });
       }
 
-      if (fatherName) {
-        parents.fatherName = fatherName;
-        parents.fatherWikiId = fatherWikiId;
-        parents.genderKnown = true;
-      }
+      addCase(true, true);
+      addCase(true, false);
+      addCase(false, true);
+      addCase(false, false);
 
-      if (motherName) {
-        parents.motherName = motherName;
-        parents.motherWikiId = motherWikiId;
-        parents.genderKnown = true;
+      if (father && !father.checked) {
+        father = undefined;
       }
+      if (mother && !mother.checked) {
+        mother = undefined;
+      }
+      pageParents = getPageParentsForAddingSibling(father, mother);
+      parentsLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, pageParents);
     }
-    return parents;
+
+    return parentsLine;
   }
 
   //console.log("getWikiTreeEditFamilyData, personGd is: ");
@@ -598,103 +750,13 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
       birthPlace = preposition + " " + birthPlace;
     }
 
-    let fatherName = "";
-    let motherName = "";
-    let fatherWikiId = "";
-    let motherWikiId = "";
-    if (addIntroOpt == "fromSavedData") {
-      let parentNames = personGd.inferParentNamesForDataString();
-      fatherName = parentNames.fatherName;
-      motherName = parentNames.motherName;
-    } else if (addIntroOpt == "fromPageData") {
-      let relationship = data.extractedData.relationshipToFamilyMember;
-      let pageParents = getPageParents(relationship);
-      if (pageParents.fatherName) {
-        fatherName = pageParents.fatherName;
-        fatherWikiId = pageParents.fatherWikiId;
-      }
-      if (pageParents.motherName) {
-        motherName = pageParents.motherName;
-        motherWikiId = pageParents.motherWikiId;
-      }
-    } else if (addIntroOpt == "fromBoth") {
-      let relationship = data.extractedData.relationshipToFamilyMember;
-      let pageParents = getPageParents(relationship);
-      let dataParents = personGd.inferParentNamesForDataString();
-      fatherName = dataParents.fatherName;
-      motherName = dataParents.motherName;
-      // the page parents can have the father and mother the wrong way round
-      if (!pageParents.genderKnown) {
-        if (pageParents.fatherName != dataParents.fatherName) {
-          if (pageParents.motherName == dataParents.fatherName) {
-            let swapName = pageParents.motherName;
-            let swapWikiId = pageParents.motherWikiId;
-            pageParents.motherName = pageParents.fatherName;
-            pageParents.motherWikiId = pageParents.fatherWikiId;
-            pageParents.fatherName = swapName;
-            pageParents.fatherWikiId = swapWikiId;
-          }
-        }
-      }
-      if (pageParents.fatherName) {
-        fatherName = pageParents.fatherName;
-        fatherWikiId = pageParents.fatherWikiId;
-      }
-      if (pageParents.motherName) {
-        motherName = pageParents.motherName;
-        motherWikiId = pageParents.motherWikiId;
-      }
-    }
-
     let intro = "";
     if (addDiedYoung) {
       intro += "{{Died Young}}\n";
     }
-    if (fullName && (birthDateString || birthPlace || fatherName || motherName)) {
-      intro += fullName;
-      if (birthDateString || birthPlace) {
-        intro += " was born";
-        if (birthDateString) {
-          intro += " " + birthDateString;
-        }
-        if (birthPlace) {
-          intro += " " + birthPlace;
-        }
-      }
-
-      if (fatherName || motherName) {
-        intro += ", ";
-        if (personGd.personGender == "male") {
-          intro += "son";
-        } else if (personGd.personGender == "female") {
-          intro += "daughter";
-        } else {
-          intro += "child";
-        }
-        intro += " of ";
-
-        if (options.addMerge_addPerson_includeLinks) {
-          if (fatherName && fatherWikiId) {
-            fatherName = "[[" + fatherWikiId + "|" + fatherName + "]]";
-          }
-          if (motherName && motherWikiId) {
-            motherName = "[[" + motherWikiId + "|" + motherName + "]]";
-          }
-        }
-
-        if (fatherName && motherName) {
-          intro += fatherName + " and " + motherName;
-        } else if (fatherName) {
-          intro += fatherName;
-        } else {
-          intro += motherName;
-        }
-      }
-
-      intro += ".";
-
-      result.notes = intro;
-    }
+    result.parentLine = generateParentsLine(fullName, birthDateString, birthPlace);
+    intro += result.parentLine;
+    result.notes = intro;
   }
 
   if (citationObject && options.addMerge_addPerson_includeCitation) {
@@ -774,7 +836,11 @@ async function doSetFieldsFromPersonData(tabId, wtPersonData) {
         // just got unloaded prior to the reload but we got here because the popup had not been reset.
         // In this case we are seeing the response being undefined.
         // What to do in this case? Don't want to leave the "Initializing menu..." up.
-        displayMessageWithIcon("warning", "doSetFieldsFromPersonData failed");
+        let message = "doSetFieldsFromPersonData failed";
+        if (chrome.runtime.lastError && chrome.runtime.lastError.message) {
+          message += ": " + chrome.runtime.lastError.message;
+        }
+        displayMessageWithIcon("warning", message);
       } else if (response.success) {
         displayMessageWithIconThenClosePopup("check", "Fields updated");
       } else {

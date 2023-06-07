@@ -265,6 +265,131 @@ function possiblyAddMissingNode(nodeSelector) {
   }
 }
 
+var lastParentLineSet = "";
+var childParentLines = undefined;
+var siblingParentLines = undefined;
+
+function putNotesAndSourcesInSourcesBox(notes, sources) {
+  let bioText = "== Biography ==\n";
+  if (notes) {
+    bioText += notes + "\n\n";
+  }
+  bioText += "== Sources ==\n<references />\n";
+  if (sources) {
+    bioText += sources;
+  }
+  let fullBioNode = document.querySelector("#mSources");
+  if (fullBioNode) {
+    fullBioNode.value = bioText;
+  }
+}
+
+function connectionsContinueClickedChangeParentLine(desiredParentLine) {
+  //console.log("connectionsContinueClickedChangeParentLine");
+  //console.log("desiredParentLine is: " + desiredParentLine);
+  //console.log("lastParentLineSet is: " + lastParentLineSet);
+
+  if (desiredParentLine != lastParentLineSet) {
+    // get the bioText
+    let sourcesTextArea = document.querySelector("#mSources");
+    if (sourcesTextArea) {
+      let bioText = sourcesTextArea.value;
+      if (bioText) {
+        if (!desiredParentLine) {
+          desiredParentLine = "";
+        }
+        if (bioText.includes(lastParentLineSet)) {
+          //console.log("changing parent line to: " + desiredParentLine);
+          let newBioText = bioText.replace(lastParentLineSet, desiredParentLine);
+          sourcesTextArea.value = newBioText;
+          lastParentLineSet = desiredParentLine;
+        }
+      }
+    }
+  }
+}
+
+function connectionsContinueClickedAddingChild(spouseIsParentElements) {
+  let wikiId = "";
+
+  for (let inputElement of spouseIsParentElements) {
+    let isChecked = inputElement.checked;
+    if (isChecked) {
+      let linkElement = undefined;
+
+      // Get the next sibling element that is a link
+      let sibling = inputElement.nextElementSibling;
+      while (sibling) {
+        if (sibling.matches("a")) {
+          linkElement = sibling;
+          break;
+        }
+        sibling = sibling.nextElementSibling;
+      }
+
+      if (linkElement) {
+        let href = linkElement.getAttribute("href");
+        if (href) {
+          let selectedWikiId = href.replace("/wiki/", "");
+          if (selectedWikiId && selectedWikiId != href) {
+            wikiId = selectedWikiId;
+          }
+        }
+      }
+    }
+  }
+
+  //console.log("connectionsContinueClickedAddingChild, childParentLines is: ");
+  //console.log(childParentLines);
+
+  if (childParentLines) {
+    if (!wikiId) {
+      wikiId = "none";
+    }
+    let desiredParentLine = childParentLines[wikiId];
+    //console.log("connectionsContinueClickedAddingChild, desiredParentLine is: " + desiredParentLine);
+    if (!desiredParentLine) {
+      desiredParentLine = "";
+    }
+    connectionsContinueClickedChangeParentLine(desiredParentLine);
+  }
+}
+
+function connectionsContinueClickedAddingSibling(sameFatherNode, sameMotherNode) {
+  if (!siblingParentLines) {
+    return;
+  }
+
+  let desiredParentLine = lastParentLineSet;
+
+  let isSameFather = sameFatherNode.checked;
+  let isSameMother = sameMotherNode.checked;
+
+  for (let parentLineObj of siblingParentLines) {
+    if (isSameFather == parentLineObj.father && isSameMother == parentLineObj.mother) {
+      desiredParentLine = parentLineObj.parentLine;
+      break;
+    }
+  }
+  connectionsContinueClickedChangeParentLine(desiredParentLine);
+}
+
+function connectionsContinueClicked(event) {
+  //console.log("connectionsContinueClicked, event is:");
+  //console.log(event);
+  let spouseIsParentElements = document.querySelectorAll("#connectionsSection input[name='wpSpouseIsParent']");
+
+  if (spouseIsParentElements && spouseIsParentElements.length > 0) {
+    connectionsContinueClickedAddingChild(spouseIsParentElements);
+  } else {
+    let sameFatherNode = document.querySelector('#content input[name="wpSameFather"]');
+    let sameMotherNode = document.querySelector('#content input[name="wpSameMother"]');
+    if (sameFatherNode || sameMotherNode) {
+      connectionsContinueClickedAddingSibling(sameFatherNode, sameMotherNode);
+    }
+  }
+}
+
 function setEditFamilyFields(personData) {
   //console.log("setEditFamilyFields, personData is:");
   //console.log(personData);
@@ -362,18 +487,10 @@ function setEditFamilyFields(personData) {
       }
 
       // must be in beta mode, put everything in mSources
-      let bioText = "== Biography ==\n";
-      if (personData.notes) {
-        bioText += personData.notes + "\n\n";
-      }
-      bioText += "== Sources ==\n<references />\n";
-      if (personData.sources) {
-        bioText += personData.sources;
-      }
-      let fullBioNode = document.querySelector("#mSources");
-      if (fullBioNode) {
-        fullBioNode.value = bioText;
-      }
+      putNotesAndSourcesInSourcesBox(personData.notes, personData.sources);
+      lastParentLineSet = personData.parentLine;
+      childParentLines = personData.childParentLines;
+      siblingParentLines = personData.siblingParentLines;
     }
   }
 
@@ -386,6 +503,13 @@ function setEditFamilyFields(personData) {
   inputNode.dispatchEvent(inputEvent);
   var changeEvent = new Event("change", { bubbles: true });
   inputNode.dispatchEvent(changeEvent);
+
+  // add a listener for continue from connections section
+  // This is so we can potentially update the generated bio and perhaps do extra checks
+  let continueButton = document.querySelector("#connectionsSection #continueToSourcesButton");
+  if (continueButton) {
+    continueButton.addEventListener("click", connectionsContinueClicked);
+  }
 }
 
 function addAdditionalAddPersonFields() {
