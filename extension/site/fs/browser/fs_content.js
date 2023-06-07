@@ -131,7 +131,12 @@ async function doFetch() {
     //console.log("dataObj is:");
     //console.log(dataObj);
 
-    return { success: true, dataObj: dataObj, fetchType: fetchType };
+    // suport having multiple data objects for separate API queries
+    let dataObjects = {
+      dataObj: dataObj,
+    };
+
+    return { success: true, dataObjects: dataObjects, fetchType: fetchType };
   } catch (error) {
     console.log("fetch failed, error is:");
     console.log(error);
@@ -139,7 +144,7 @@ async function doFetch() {
   }
 }
 
-async function extractDataFromFetchAndRespond(document, dataObj, fetchType, options, sendResponse) {
+async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, options, sendResponse) {
   //console.log('extractDataFromFetchAndRespond entered');
 
   if (!isLoadedExtractDataModuleReady) {
@@ -154,7 +159,7 @@ async function extractDataFromFetchAndRespond(document, dataObj, fetchType, opti
       loadExtractDataModuleRetries++;
       console.log("extractDataFromFetchAndRespond. Retry number: ", loadExtractDataModuleRetries);
       setTimeout(function () {
-        extractDataFromFetchAndRespond(document, dataObj, options, sendResponse);
+        extractDataFromFetchAndRespond(document, dataObjects, options, sendResponse);
       }, loadModuleTimeout);
       return true;
     } else {
@@ -168,7 +173,7 @@ async function extractDataFromFetchAndRespond(document, dataObj, fetchType, opti
   }
 
   // Extract the data.
-  let extractedData = loadedExtractDataModule.extractDataFromFetch(document, dataObj, fetchType, options);
+  let extractedData = loadedExtractDataModule.extractDataFromFetch(document, dataObjects, fetchType, options);
 
   // respond with the type of content and the extracted data
   sendResponse({
@@ -183,7 +188,7 @@ async function doFetchAndSendResponse(sendResponse, options) {
 
   if (result.success) {
     // Extract the data.
-    extractDataFromFetchAndRespond(document, result.dataObj, result.fetchType, options, sendResponse);
+    extractDataFromFetchAndRespond(document, result.dataObjects, result.fetchType, options, sendResponse);
   } else {
     if (result.errorCondition == "NotJSON") {
       // This is normal for some pages that could be records but are not.

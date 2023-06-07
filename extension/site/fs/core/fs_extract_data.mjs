@@ -2258,6 +2258,101 @@ function addParentFromPerson(otherPerson, result) {
   }
 }
 
+function createParentForPerson(otherPerson) {
+  // look for their name
+  let parent = {};
+  let nameForm = getPrimaryNameForm(otherPerson);
+  if (nameForm) {
+    parent.fullName = nameForm.fullText;
+    if (nameForm.parts) {
+      for (let part of nameForm.parts) {
+        if (part.type.endsWith("Given")) {
+          parent.givenName = part.value;
+        } else if (part.type.endsWith("Surname")) {
+          parent.surname = part.value;
+        }
+      }
+    }
+  }
+
+  return parent;
+}
+
+function addParentFromRelationship(relationship, person, otherPerson, parentRelationships) {
+  let gender = undefined;
+  if (otherPerson.gender) {
+    if (otherPerson.gender.type.endsWith("/Male")) {
+      // it is the father
+      gender = "male";
+    } else if (otherPerson.gender.type.endsWith("/Female")) {
+      gender = "female";
+    }
+  }
+
+  let parentRelationship = {
+    id: relationship.id,
+    parentId: otherPerson.id,
+    gender: gender,
+  };
+
+  parentRelationships.push(parentRelationship);
+}
+
+function extractDataFromPersonChildAndParentsRelationships(dataObj, parentRelationships) {
+  function updateParentRelationship(cpRelationship, parentId, parentFacts, parentRelationships) {
+    if (!parentFacts) {
+      return;
+    }
+    for (let fact of parentFacts) {
+      let typeId = "";
+      let type = fact.type;
+      if (type) {
+        // "http://gedcomx.org/AdoptiveParent"
+        if (type.includes("AdoptiveParent")) {
+          typeId = "adoptive";
+        }
+      }
+
+      if (typeId) {
+        // go through result.parentRelationships and add the type
+        for (let parentRelationship of parentRelationships) {
+          let parentRelationshipId = parentRelationship.id;
+          if (parentRelationshipId.length == 10) {
+            // these ID typically have an extra P1 or P2 on the front
+            parentRelationshipId = parentRelationshipId.substring(2);
+          }
+          if (parentRelationshipId == cpRelationship.id && parentRelationship.parentId == parentId) {
+            if (!parentRelationship.type) {
+              parentRelationship.type = typeId;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  let cpRelationships = dataObj.childAndParentsRelationships;
+  for (let cpRelationship of cpRelationships) {
+    if (cpRelationship.parent1) {
+      updateParentRelationship(
+        cpRelationship,
+        cpRelationship.parent1.resourceId,
+        cpRelationship.parent1Facts,
+        parentRelationships
+      );
+    }
+
+    if (cpRelationship.parent2) {
+      updateParentRelationship(
+        cpRelationship,
+        cpRelationship.parent2.resourceId,
+        cpRelationship.parent2Facts,
+        parentRelationships
+      );
+    }
+  }
+}
+
 function extractPersonDataFromFetch(document, dataObj, options) {
   let result = {};
 
@@ -2294,6 +2389,8 @@ function extractPersonDataFromFetch(document, dataObj, options) {
 
   // now look for relationships for spouse and parents
   if (dataObj.relationships) {
+    let parentRelationships = [];
+
     for (let relationship of dataObj.relationships) {
       let otherPersonId = "";
       let type = relationship.type;
@@ -2350,9 +2447,81 @@ function extractPersonDataFromFetch(document, dataObj, options) {
         } else if (type == "http://gedcomx.org/ParentChild") {
           if (relationship.person2.resourceId == personId) {
             // this person is the child
-            addParentFromPerson(otherPerson, result);
+            addParentFromRelationship(relationship, person, otherPerson, parentRelationships);
           }
         }
+      }
+    }
+
+    // use this to identify adoptive parents
+    if (dataObj.childAndParentsRelationships) {
+      extractDataFromPersonChildAndParentsRelationships(dataObj, parentRelationships);
+    }
+
+    // there can be multiple parents, we need to select the best ones
+    // We know if they are marked as adoptive.
+    // So far we can't extract which is marked preferred.
+    // So we prioritize the first unless it is adoptive and there is another one.
+
+    let parentPairs = [];
+    for (let parentRelationship of parentRelationships) {
+      let id = parentRelationship.id;
+      if (id.length == 10) {
+        // relationship tends to have P1 or P2 on start like P19Y97-QFV
+        id = id.substring(2);
+      }
+      let parentPair = parentPairs.find((element) => element.id == id);
+      if (!parentPair) {
+        parentPair = { id: id, parentCount: 0, adoptiveCount: 0 };
+        parentPairs.push(parentPair);
+      }
+
+      if (parentRelationship.gender == "male") {
+        if (!parentPair.father) {
+          parentPair.father = parentRelationship.parentId;
+          parentPair.fatherType = parentRelationship.type;
+          parentPair.parentCount++;
+          if (parentRelationship.type == "adoptive") {
+            parentPair.adoptiveCount++;
+          }
+        }
+      } else if (parentRelationship.gender == "female") {
+        if (!parentPair.mother) {
+          parentPair.mother = parentRelationship.parentId;
+          parentPair.motherType = parentRelationship.type;
+          parentPair.parentCount++;
+          if (parentRelationship.type == "adoptive") {
+            parentPair.adoptiveCount++;
+          }
+        }
+      }
+    }
+
+    let bestRelationshipPair = undefined;
+
+    for (let parentPair of parentPairs) {
+      if (!bestRelationshipPair) {
+        bestRelationshipPair = parentPair;
+      } else {
+        // only change if this one if better
+        if (bestRelationshipPair.parentCount < parentPair.parentCount) {
+          if (!(bestRelationshipPair.adoptiveCount == 0 && parentPair.adoptiveCount > 0)) {
+            bestRelationshipPair = parentPair;
+          }
+        } else if (bestRelationshipPair.adoptiveCount > parentPair.adoptiveCount) {
+          bestRelationshipPair = parentPair;
+        }
+      }
+    }
+
+    if (bestRelationshipPair) {
+      let father = findPersonById(dataObj, bestRelationshipPair.father);
+      if (father) {
+        result.father = createParentForPerson(father);
+      }
+      let mother = findPersonById(dataObj, bestRelationshipPair.mother);
+      if (mother) {
+        result.mother = createParentForPerson(mother);
       }
     }
   }
@@ -2361,10 +2530,12 @@ function extractPersonDataFromFetch(document, dataObj, options) {
   return result;
 }
 
-function extractDataFromFetch(document, dataObj, fetchType, options) {
+function extractDataFromFetch(document, dataObjects, fetchType, options) {
   usedLabelIds = {};
 
   let result = {};
+
+  let dataObj = dataObjects.dataObj;
 
   if (document) {
     result.url = document.URL;

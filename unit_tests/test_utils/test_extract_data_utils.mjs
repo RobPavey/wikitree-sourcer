@@ -105,8 +105,10 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
         continue;
       }
 
+      let dataObjects = { dataObj: fetchObj };
+
       try {
-        result = extractDataFunction(undefined, fetchObj, fetchType, testManager.options);
+        result = extractDataFunction(undefined, dataObjects, fetchType, testManager.options);
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -142,8 +144,10 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
         continue;
       }
 
+      let dataObjects = { dataObj: fetchObj };
+
       try {
-        result = extractDataFunction(undefined, fetchObj, fetchType, testManager.options);
+        result = extractDataFunction(undefined, dataObjects, fetchType, testManager.options);
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");

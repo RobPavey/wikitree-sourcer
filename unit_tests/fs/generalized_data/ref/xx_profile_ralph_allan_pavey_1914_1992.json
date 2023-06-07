@@ -1,0 +1,54 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Ralph Allan Pavey",
+    "lastName": "Pavey",
+    "forenames": "Ralph Allan"
+  },
+  "birthDate": {
+    "dateString": "22 December 1914"
+  },
+  "birthPlace": {
+    "placeString": "St Pancras, Middlesex, England, United Kingdom"
+  },
+  "deathDate": {
+    "dateString": "6 November 1992"
+  },
+  "deathPlace": {
+    "placeString": "Ramsgate, Kent, England, United Kingdom"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Lillian R Pulling",
+        "lastName": "Pulling",
+        "forenames": "Lillian R"
+      },
+      "marriageDate": {
+        "dateString": "September 1939"
+      },
+      "marriagePlace": {
+        "placeString": "Barnet, Middlesex, England, United Kingdom"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Ralph Edgar Pavey",
+        "lastName": "Pavey",
+        "forenames": "Ralph Edgar"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Elsie shara Chambers",
+        "lastName": "Chambers",
+        "forenames": "Elsie shara"
+      }
+    }
+  },
+  "hasValidData": true
+}

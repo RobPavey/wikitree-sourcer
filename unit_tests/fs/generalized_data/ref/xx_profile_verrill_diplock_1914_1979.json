@@ -1,0 +1,54 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Verrill Longley Diplock",
+    "lastName": "Diplock",
+    "forenames": "Verrill Longley"
+  },
+  "birthDate": {
+    "dateString": "2 April 1914"
+  },
+  "birthPlace": {
+    "placeString": "Camden, Knox, Maine, United States"
+  },
+  "deathDate": {
+    "dateString": "5 January 1979"
+  },
+  "deathPlace": {
+    "placeString": "Bangor, Penobscot, Maine, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Eleanor Frances Greene",
+        "lastName": "Greene",
+        "forenames": "Eleanor Frances"
+      },
+      "marriageDate": {
+        "dateString": "21 October 1945"
+      },
+      "marriagePlace": {
+        "placeString": "Maine, United States"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Oswald Percy Diplock",
+        "lastName": "Diplock",
+        "forenames": "Oswald Percy"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Elizabeth Bernice Alley",
+        "lastName": "Alley",
+        "forenames": "Elizabeth Bernice"
+      }
+    }
+  },
+  "hasValidData": true
+}

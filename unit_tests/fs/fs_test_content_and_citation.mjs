@@ -440,6 +440,11 @@ const personRegressionData = [
     fetchType: "person",
   },
   {
+    caseName: "xx_profile_ralph_allan_pavey_1914_1992",
+    url: "https://www.familysearch.org/tree/person/details/GX7Z-VKW",
+    fetchType: "person",
+  },
+  {
     caseName: "xx_profile_sarah_moats_1854_1946",
     url: "https://www.familysearch.org/tree/person/details/MQWP-4VQ",
     fetchType: "person",
@@ -448,6 +453,12 @@ const personRegressionData = [
     // has prefix, suffix and possible nickname
     caseName: "xx_profile_terry_oneal_1929_2008",
     url: "https://www.familysearch.org/tree/person/details/L69W-LQL",
+    fetchType: "person",
+  },
+  {
+    // has two sets of parents, one adoptive, the other preferred
+    caseName: "xx_profile_verrill_diplock_1914_1979",
+    url: "https://www.familysearch.org/tree/person/details/LBGV-4TR",
     fetchType: "person",
   },
   {
