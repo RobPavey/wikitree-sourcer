@@ -2383,16 +2383,19 @@ function identifyPreferredParents(document, parentPairs) {
     // now try to update parentRelationships if this one if preferred
     if (isPreferred) {
       for (let parentPair of parentPairs) {
-        let isMatch = true;
-        if (parentPair.father && !coupleIds.includes(parentPair.father)) {
-          isMatch = false;
-        }
-        if (parentPair.mother && !coupleIds.includes(parentPair.mother)) {
-          isMatch = false;
-        }
+        if (parentPair.parentCount == coupleIds.length) {
+          let isMatch = true;
+          if (parentPair.father && !coupleIds.includes(parentPair.father)) {
+            isMatch = false;
+          }
+          if (parentPair.mother && !coupleIds.includes(parentPair.mother)) {
+            isMatch = false;
+          }
 
-        if (isMatch) {
-          parentPair.isPreferred = true;
+          if (isMatch) {
+            parentPair.isPreferred = true;
+            break;
+          }
         }
       }
     }
