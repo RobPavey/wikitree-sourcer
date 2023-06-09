@@ -1118,6 +1118,16 @@ const RecordCollectionData = [
       ancestry: { id: "8991" },
     },
   },
+  {
+    wtsId: "CanadaCensus1931",
+    title: "1931 Census of Canada",
+    country: "Canada",
+    dates: { year: 1931 },
+    householdTableColumns: ["name", "gender", "age", "relationship", "maritalStatus", "birthPlace", "occupation"],
+    sites: {
+      ancestry: { id: "62640" },
+    },
+  },
   // Poland
   {
     wtsId: "PolandBirthReg",
