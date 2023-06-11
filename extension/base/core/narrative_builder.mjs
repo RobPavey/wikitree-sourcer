@@ -1738,6 +1738,13 @@ class NarrativeBuilder {
     let relationship = this.eventGd.relationshipToHead;
     if (relationship) {
       relationship = relationship.toLowerCase();
+
+      // For example FS can have "other" for a grandson when that detail was not transcribed
+      // "x was the other of y" doesn't make a good narrative sentence.
+      // Example: https://www.familysearch.org/ark:/61903/1:1:M6TZ-886
+      if (relationship == "other") {
+        relationship = "";
+      }
     }
 
     let maritalStatus = this.eventGd.maritalStatus;
