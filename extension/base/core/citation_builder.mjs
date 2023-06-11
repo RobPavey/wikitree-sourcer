@@ -470,7 +470,7 @@ class CitationBuilder {
 }
 
 function simpleBuildCitationWrapper(input, buildCoreCitation, refTitleOverrideFunction) {
-  const data = input.extractedData;
+  const ed = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
@@ -482,11 +482,11 @@ function simpleBuildCitationWrapper(input, buildCoreCitation, refTitleOverrideFu
     builder.householdTableString = input.householdTableString;
   }
 
-  buildCoreCitation(data, gd, builder);
+  buildCoreCitation(ed, gd, builder);
 
   // Get meaningful title
   if (refTitleOverrideFunction) {
-    builder.meaningfulTitle = refTitleOverrideFunction(data, gd);
+    builder.meaningfulTitle = refTitleOverrideFunction(ed, gd);
   } else {
     builder.meaningfulTitle = gd.getRefTitle();
   }

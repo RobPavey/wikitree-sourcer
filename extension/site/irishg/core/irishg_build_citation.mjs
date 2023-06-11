@@ -25,11 +25,11 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
-function buildIrishgUrl(data, builder) {
+function buildIrishgUrl(ed, builder) {
   // Example URL:
   // "https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275
   // ?b=https%3A%2F%2Fchurchrecords.irishgenealogy.ie%2Fchurchrecords%2Fsearch.jsp%3Fnamefm%3DJohn%26namel%3DO%2527Connor%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch"
-  let url = data.url;
+  let url = ed.url;
 
   let queryIndex = url.indexOf("?");
   if (queryIndex != -1) {
@@ -38,7 +38,7 @@ function buildIrishgUrl(data, builder) {
   return url;
 }
 
-function buildSourceTitle(data, gd, builder) {
+function buildSourceTitle(ed, gd, builder) {
   if (
     gd.recordType == RT.BirthRegistration ||
     gd.recordType == RT.MarriageRegistration ||
@@ -53,15 +53,15 @@ function buildSourceTitle(data, gd, builder) {
   }
 }
 
-function buildSourceReference(data, gd, builder) {
+function buildSourceReference(ed, gd, builder) {
   const excludeValues = ["N/R"];
 
   function addFieldFromRecordData(label) {
-    builder.addSourceReferenceField(label, data.recordData[label], excludeValues);
+    builder.addSourceReferenceField(label, ed.recordData[label], excludeValues);
   }
 
   function addFieldFromRefData(label) {
-    builder.addSourceReferenceField(label, data.refData[label], excludeValues);
+    builder.addSourceReferenceField(label, ed.refData[label], excludeValues);
   }
 
   if (
@@ -81,18 +81,18 @@ function buildSourceReference(data, gd, builder) {
   }
 }
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   let options = builder.getOptions();
-  buildSourceTitle(data, gd, builder);
-  buildSourceReference(data, gd, builder);
+  buildSourceTitle(ed, gd, builder);
+  buildSourceReference(ed, gd, builder);
 
-  var irishgUrl = buildIrishgUrl(data, builder);
+  var irishgUrl = buildIrishgUrl(ed, builder);
 
   let recordLink = "[" + irishgUrl + " IrishGenealogy.ie Record]";
   builder.recordLinkOrTemplate = recordLink;
 
-  if (data.imageHref) {
-    let link = data.imageHref;
+  if (ed.imageHref) {
+    let link = ed.imageHref;
     if (!link.startsWith("http")) {
       link = "https://civilrecords.irishgenealogy.ie" + link;
     }
@@ -102,8 +102,8 @@ function buildCoreCitation(data, gd, builder) {
   if (options.citation_irishg_dataStringFormat == "dataString") {
     builder.addStandardDataString(gd);
   } else if (options.citation_irishg_dataStringFormat == "fromPage") {
-    if (data.eventText) {
-      builder.dataString = data.eventText;
+    if (ed.eventText) {
+      builder.dataString = ed.eventText;
     }
   }
 }

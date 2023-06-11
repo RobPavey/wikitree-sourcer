@@ -47,9 +47,9 @@ function subtractNumFromYearString(yearString, num) {
   }
 }
 
-function addAppropriateSurname(data, parameters, builder) {
+function addAppropriateSurname(gd, parameters, builder) {
   let lastName = "";
-  let lastNamesArray = data.inferPersonLastNamesArray(data);
+  let lastNamesArray = gd.inferPersonLastNamesArray(gd);
   if (lastNamesArray.length > 0) {
     if (lastNamesArray.length == 1) {
       lastName = lastNamesArray[0];
@@ -62,8 +62,8 @@ function addAppropriateSurname(data, parameters, builder) {
   }
 }
 
-function addAppropriateGivenNames(data, builder) {
-  let firstName = data.inferFirstName();
+function addAppropriateGivenNames(gd, builder) {
+  let firstName = gd.inferFirstName();
   let givenNames = firstName;
   builder.addGivenNames(givenNames);
 }
@@ -74,9 +74,9 @@ function getAutoYearsToAddOrSubtract(isAdd, qualifier, type, dateInput) {
   let yearAdjustment = 0; // default if not special cases
 
   let recordType = RT.Unclassified;
-  let sourceType = dateInput.data.sourceType;
+  let sourceType = dateInput.gd.sourceType;
   if (sourceType == "record") {
-    recordType = dateInput.data.recordType;
+    recordType = dateInput.gd.recordType;
   }
 
   let subcategory = dateInput.parameters.subcategory;
@@ -205,12 +205,12 @@ function adjustEndYear(yearString, qualifier, type, dateInput) {
 }
 
 function setLifetimeStartAndEndDates(builder, dateInput) {
-  const birthDateObj = dateInput.data.inferBirthDateObj();
+  const birthDateObj = dateInput.gd.inferBirthDateObj();
   if (birthDateObj) {
     let startYear = adjustStartYear(birthDateObj.getYearString(), birthDateObj.qualifier, "birth", dateInput);
     builder.addStartYear(startYear);
   }
-  const deathDateObj = dateInput.data.inferDeathDateObj();
+  const deathDateObj = dateInput.gd.inferDeathDateObj();
   if (deathDateObj) {
     let endYear = adjustEndYear(deathDateObj.getYearString(), deathDateObj.qualifier, "death", dateInput);
     builder.addEndYear(endYear);
@@ -218,7 +218,7 @@ function setLifetimeStartAndEndDates(builder, dateInput) {
 }
 
 function setBirthStartAndEndDates(builder, type, dateInput) {
-  const birthDateObj = dateInput.data.inferBirthDateObj();
+  const birthDateObj = dateInput.gd.inferBirthDateObj();
   if (birthDateObj) {
     let startYear = adjustStartYear(birthDateObj.getYearString(), birthDateObj.qualifier, "birth", dateInput);
     builder.addBirthStartYear(startYear);
@@ -228,7 +228,7 @@ function setBirthStartAndEndDates(builder, type, dateInput) {
 }
 
 function setDeathStartAndEndDates(builder, type, dateInput) {
-  const deathDateObj = dateInput.data.inferDeathDateObj();
+  const deathDateObj = dateInput.gd.inferDeathDateObj();
   if (deathDateObj) {
     let startYear = adjustStartYear(deathDateObj.getYearString(), deathDateObj.qualifier, "death", dateInput);
     builder.addDeathStartYear(startYear);
@@ -239,29 +239,29 @@ function setDeathStartAndEndDates(builder, type, dateInput) {
 
 function buildSearchUrl(buildUrlInput) {
   // typeOfSearch is current allways specifiedParameters
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const parameters = buildUrlInput.searchParameters;
   const options = buildUrlInput.options;
 
-  const dateInput = { data: data, parameters: parameters, options: options };
+  const dateInput = { gd: gd, parameters: parameters, options: options };
 
   let urlStart = parameters.category + "records";
   var builder = new IrishgUriBuilder(urlStart);
 
-  addAppropriateGivenNames(data, builder);
+  addAppropriateGivenNames(gd, builder);
 
-  addAppropriateSurname(data, parameters, builder);
+  addAppropriateSurname(gd, parameters, builder);
 
   if (parameters.subcategory == "civil_lifetime" || parameters.subcategory == "church_lifetime") {
     setLifetimeStartAndEndDates(builder, dateInput);
   } else if (parameters.subcategory == "civil_events" || parameters.subcategory == "church_events") {
-    let birthYear = data.inferBirthYear();
+    let birthYear = gd.inferBirthYear();
     if (birthYear) {
       builder.addType("B");
       setBirthStartAndEndDates(builder, "birth", dateInput);
     }
 
-    let deathYear = data.inferDeathYear();
+    let deathYear = gd.inferDeathYear();
     if (deathYear) {
       builder.addType("D");
       setDeathStartAndEndDates(builder, "death", dateInput);
@@ -272,22 +272,22 @@ function buildSearchUrl(buildUrlInput) {
     let marriageStartQualifier = dateQualifiers.NONE;
     let marriageEndQualifier = dateQualifiers.NONE;
     let spouse = undefined;
-    if (data.spouses && data.spouses.length > 0) {
+    if (gd.spouses && gd.spouses.length > 0) {
       // there are marriages in generalizedData
       if (parameters) {
-        if (parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
-          spouse = data.spouses[parameters.spouseIndex];
+        if (parameters.spouseIndex != -1 && parameters.spouseIndex < gd.spouses.length) {
+          spouse = gd.spouses[parameters.spouseIndex];
           if (spouse.marriageDate) {
             marriageStartYear = spouse.marriageDate.getYearString();
             marriageEndYear = marriageStartYear;
           }
         }
       } else {
-        if (data.spouses[0].marriageDate) {
-          marriageStartYear = data.spouses[0].marriageDate.getYearString();
+        if (gd.spouses[0].marriageDate) {
+          marriageStartYear = gd.spouses[0].marriageDate.getYearString();
         }
-        if (data.spouses[data.spouses.length - 1].marriageDate) {
-          marriageEndYear = data.spouses[data.spouses.length - 1].marriageDate.getYearString();
+        if (gd.spouses[gd.spouses.length - 1].marriageDate) {
+          marriageEndYear = gd.spouses[gd.spouses.length - 1].marriageDate.getYearString();
         }
       }
     }
@@ -316,7 +316,7 @@ function buildSearchUrl(buildUrlInput) {
     if (spouse && spouse.name) {
       if (parameters.subcategory == "church_events") {
         let spouseForenames = spouse.name.inferForenames();
-        let spouseLastNames = data.inferPersonLastNames(spouse);
+        let spouseLastNames = gd.inferPersonLastNames(spouse);
         builder.addSpouseName(spouseForenames, spouseLastNames);
       } else {
         // don't add spouse keywords as this will cause all birth and death hits to be ignored
@@ -329,7 +329,7 @@ function buildSearchUrl(buildUrlInput) {
     setBirthStartAndEndDates(builder, "birth", dateInput);
 
     if (parameters.subcategory == "civil_births") {
-      let mmn = data.mothersMaidenName;
+      let mmn = gd.mothersMaidenName;
       if (mmn && parameters.mmn) {
         builder.addMothersMaidenName(mmn);
       }
@@ -338,14 +338,14 @@ function buildSearchUrl(buildUrlInput) {
     builder.addType("M");
 
     let addedDateRange = false;
-    if (data.spouses && data.spouses.length > 0) {
+    if (gd.spouses && gd.spouses.length > 0) {
       let spouse = undefined;
       if (parameters) {
-        if (parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
-          spouse = data.spouses[parameters.spouseIndex];
+        if (parameters.spouseIndex != -1 && parameters.spouseIndex < gd.spouses.length) {
+          spouse = gd.spouses[parameters.spouseIndex];
         }
       } else {
-        spouse = data.spouses[0];
+        spouse = gd.spouses[0];
       }
 
       if (spouse) {
@@ -363,7 +363,7 @@ function buildSearchUrl(buildUrlInput) {
         if (spouse.name) {
           if (parameters.subcategory == "church_marriages") {
             let spouseForenames = spouse.name.inferForenames();
-            let spouseLastNames = data.inferPersonLastNames(spouse);
+            let spouseLastNames = gd.inferPersonLastNames(spouse);
             builder.addSpouseName(spouseForenames, spouseLastNames);
           } else {
             let spouseNames = spouse.name.inferFullName();
@@ -374,8 +374,8 @@ function buildSearchUrl(buildUrlInput) {
     }
 
     if (!addedDateRange) {
-      let startYear = adjustStartYear(data.inferBirthYear(), data.inferBirthDateQualifier(), "birth", dateInput);
-      let endYear = adjustEndYear(data.inferDeathYear(), data.inferDeathDateQualifier(), "death", dateInput);
+      let startYear = adjustStartYear(gd.inferBirthYear(), gd.inferBirthDateQualifier(), "birth", dateInput);
+      let endYear = adjustEndYear(gd.inferDeathYear(), gd.inferDeathDateQualifier(), "death", dateInput);
       let startYearNum = WTS_Date.getYearNumFromYearString(startYear);
       builder.addStartYear(startYearNum + 14);
       builder.addEndYear(endYear);
@@ -385,7 +385,7 @@ function buildSearchUrl(buildUrlInput) {
     setDeathStartAndEndDates(builder, "death", dateInput);
 
     if (parameters.subcategory == "civil_deaths") {
-      let ageAtDeath = data.inferAgeAtDeath();
+      let ageAtDeath = gd.inferAgeAtDeath();
       if (ageAtDeath && parameters.ageAtDeath) {
         builder.addAgeAtDeath(ageAtDeath);
       }
@@ -393,7 +393,7 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   if (parameters.category == "church") {
-    let parentNames = data.inferParentForenamesAndLastName();
+    let parentNames = gd.inferParentForenamesAndLastName();
 
     if (parameters.father) {
       builder.addParentName(parentNames.fatherForenames, parentNames.fatherLastName);

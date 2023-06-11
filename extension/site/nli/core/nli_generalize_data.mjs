@@ -26,18 +26,18 @@ import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/gen
 import { RT } from "../../../base/core/record_type.mjs";
 import { WTS_Date } from "../../../base/core/wts_date.mjs";
 
-function processDates(data, result) {
-  if (!data.pageInfo) {
+function processDates(ed, result) {
+  if (!ed.pageInfo) {
     return;
   }
 
   // parse the pageInfo
-  let semiIndex = data.pageInfo.indexOf(";");
+  let semiIndex = ed.pageInfo.indexOf(";");
   if (semiIndex == -1) {
     return;
   }
 
-  let dateString = data.pageInfo.substring(semiIndex + 1).trim();
+  let dateString = ed.pageInfo.substring(semiIndex + 1).trim();
 
   // could one of two forms:
   // Aug. 1733 to Nov. 1733
@@ -65,7 +65,7 @@ function processDates(data, result) {
   let toDateInDays = WTS_Date.getParsedDateInDays(parsedToDate);
 
   let eventInRange = undefined;
-  for (let event of data.registerEvents) {
+  for (let event of ed.registerEvents) {
     let range = event.range;
 
     let rangeFrom = "";
@@ -113,23 +113,23 @@ function processDates(data, result) {
   return guessedRecordType;
 }
 
-// This function generalizes the data extracted web page.
+// This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
   result.sourceOfData = "nli";
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; // the extract failed
   }
 
   result.sourceType = "record";
   result.recordType = RT.Unclassified; // causes manual classification
 
-  let guessedRecordType = processDates(data, result);
+  let guessedRecordType = processDates(ed, result);
 
   result.classificationHints = {
     possibleRecordTypes: [
@@ -149,11 +149,11 @@ function generalizeData(input) {
   }
 
   let eventPlace = "";
-  let parish = data.parishTitle;
+  let parish = ed.parishTitle;
   if (parish) {
     eventPlace = parish;
   }
-  let county = data.county;
+  let county = ed.county;
   if (county) {
     const prefix = "County of ";
     if (county.startsWith(prefix)) {
@@ -181,7 +181,7 @@ function generalizeData(input) {
 }
 
 function regeneralizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
   let result = input.generalizedData;
   let newData = input.newData;
 

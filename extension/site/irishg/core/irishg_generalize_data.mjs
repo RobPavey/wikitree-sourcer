@@ -76,18 +76,18 @@ function extractDateFromEventString(eventString) {
   }
 }
 
-function buildEventPlace(data, result) {
+function buildEventPlace(ed, result) {
   let eventPlace = "";
-  let districtArea = data.recordData["SR District/Reg Area"];
+  let districtArea = ed.recordData["SR District/Reg Area"];
   if (districtArea) {
     eventPlace = districtArea;
-  } else if (data.headingText) {
-    let area = data.headingText.replace(/^Area - ([^,]+)\,.*$/, "$1");
-    if (area == data.headingText) {
+  } else if (ed.headingText) {
+    let area = ed.headingText.replace(/^Area - ([^,]+)\,.*$/, "$1");
+    if (area == ed.headingText) {
       area = "";
     }
-    let parish = data.headingText.replace(/^.*Parish\/Church\/Congregation - ([^,]+).*$/, "$1");
-    if (parish == data.headingText) {
+    let parish = ed.headingText.replace(/^.*Parish\/Church\/Congregation - ([^,]+).*$/, "$1");
+    if (parish == ed.headingText) {
       parish = "";
     }
 
@@ -118,21 +118,21 @@ function buildEventPlace(data, result) {
   return eventPlace;
 }
 
-function setRegistrationDistrict(data, result) {
+function setRegistrationDistrict(ed, result) {
   if (
     result.recordType == RT.BirthRegistration ||
     result.recordType == RT.MarriageRegistration ||
     result.recordType == RT.DeathRegistration
   ) {
-    let districtArea = data.recordData["SR District/Reg Area"];
+    let districtArea = ed.recordData["SR District/Reg Area"];
     if (districtArea) {
       result.registrationDistrict = districtArea;
     }
   }
 }
 
-function isName2Primary(data, name1, name2) {
-  let url = data.url;
+function isName2Primary(ed, name1, name2) {
+  let url = ed.url;
   const searchString = "search.jsp%3F";
   let searchIndex = url.indexOf(searchString);
   if (searchIndex != -1) {
@@ -175,10 +175,10 @@ function isName2Primary(data, name1, name2) {
   return false;
 }
 
-// This function generalizes the data extracted web page.
+// This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
@@ -186,24 +186,24 @@ function generalizeData(input) {
 
   let collectionId = undefined;
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; //the extract failed
   }
 
   result.sourceType = "record";
 
-  if (!data.eventText) {
+  if (!ed.eventText) {
     return result;
   }
 
   // to tell if civil or church we can look at url
-  let recordSite = data.url.replace(/^.*\:\/\/([^\.]+)\.irishgenealogy.*$/, "$1");
-  if (!recordSite || recordSite == data.url) {
+  let recordSite = ed.url.replace(/^.*\:\/\/([^\.]+)\.irishgenealogy.*$/, "$1");
+  if (!recordSite || recordSite == ed.url) {
     console.log("irishg generalizeData: could not find recordSite in URL");
     return result;
   }
 
-  let firstWord = WTS_String.getFirstWord(data.eventText).toLowerCase();
+  let firstWord = WTS_String.getFirstWord(ed.eventText).toLowerCase();
   switch (firstWord) {
     case "baptism":
       result.recordType = RT.Baptism;
@@ -228,8 +228,8 @@ function generalizeData(input) {
       return;
   }
 
-  result.setEventPlace(buildEventPlace(data, result));
-  setRegistrationDistrict(data, result);
+  result.setEventPlace(buildEventPlace(ed, result));
+  setRegistrationDistrict(ed, result);
   // set country
   if (!result.eventPlace) {
     result.eventPlace = new WtsPlace();
@@ -237,30 +237,30 @@ function generalizeData(input) {
   result.eventPlace.country = "Ireland";
 
   if (result.recordType == RT.BirthRegistration) {
-    result.setEventDate(data.recordData["Date of Birth"]);
-    result.setFullName(cleanFullName(data.recordData["Name"]));
+    result.setEventDate(ed.recordData["Date of Birth"]);
+    result.setFullName(cleanFullName(ed.recordData["Name"]));
 
     collectionId = "births";
     result.birthDate = result.eventDate;
-    let mmn = data.recordData["Mother's Birth Surname"];
+    let mmn = ed.recordData["Mother's Birth Surname"];
     if (mmn && mmn != "see register entry") {
       result.mothersMaidenName = cleanFullName(mmn);
     }
 
-    let sex = data.recordData["Sex"];
+    let sex = ed.recordData["Sex"];
     if (sex && sex != "see register entry") {
       result.gender = GD.standardizeGender(sex);
     }
   } else if (result.recordType == RT.MarriageRegistration) {
-    result.setEventDate(data.recordData["Date of Event"]);
+    result.setEventDate(ed.recordData["Date of Event"]);
 
     collectionId = "civil-marriages";
 
-    let name1 = cleanFullName(data.recordData["Party 1 Name"]);
-    let name2 = cleanFullName(data.recordData["Party 2 Name"]);
+    let name1 = cleanFullName(ed.recordData["Party 1 Name"]);
+    let name2 = cleanFullName(ed.recordData["Party 2 Name"]);
 
     // who should be considered the primary person?
-    if (isName2Primary(data, name1, name2)) {
+    if (isName2Primary(ed, name1, name2)) {
       let temp = name1;
       name1 = name2;
       name2 = temp;
@@ -285,40 +285,40 @@ function generalizeData(input) {
       result.spouses = [spouse];
     }
   } else if (result.recordType == RT.DeathRegistration) {
-    result.setEventDate(data.recordData["Date of Death"]);
-    result.setFullName(cleanFullName(data.recordData["Name"]));
+    result.setEventDate(ed.recordData["Date of Death"]);
+    result.setFullName(cleanFullName(ed.recordData["Name"]));
 
     collectionId = "deaths";
     result.lastNameAtDeath = result.inferLastNameAtDeath();
     result.deathDate = result.eventDate;
 
-    let age = data.recordData["Deceased Age at Death"];
+    let age = ed.recordData["Deceased Age at Death"];
     if (age) {
       result.ageAtDeath = age;
     }
   } else if (result.recordType == RT.Baptism) {
-    result.setFullName(cleanFullName(data.recordData["Name"]));
+    result.setFullName(cleanFullName(ed.recordData["Name"]));
 
     // sometimes the birth date is just the baptism date
-    let birthDate = cleanDate(data.recordData["Date of Birth"]);
-    let eventDate = extractDateFromEventString(data.eventText);
+    let birthDate = cleanDate(ed.recordData["Date of Birth"]);
+    let eventDate = extractDateFromEventString(ed.eventText);
     result.setEventDate(eventDate);
     if (birthDate && birthDate != eventDate) {
       const suffix = "(BASED ON OTHER DATE INFORMATION)";
-      if (!data.recordData["Date of Birth"].endsWith(suffix)) {
+      if (!ed.recordData["Date of Birth"].endsWith(suffix)) {
         result.setBirthDate(birthDate);
       }
     }
     collectionId = "baptisms";
   } else if (result.recordType == RT.Marriage) {
-    result.setEventDate(extractDateFromEventString(data.eventText));
+    result.setEventDate(extractDateFromEventString(ed.eventText));
     collectionId = "marriages";
 
-    let name1 = cleanFullName(data.recordData["Name"]);
-    let name2 = cleanFullName(data.spouseRecordData["Name"]);
+    let name1 = cleanFullName(ed.recordData["Name"]);
+    let name2 = cleanFullName(ed.spouseRecordData["Name"]);
 
     // who should be considered the primary person?
-    if (isName2Primary(data, name1, name2)) {
+    if (isName2Primary(ed, name1, name2)) {
       let temp = name1;
       name1 = name2;
       name2 = temp;
@@ -344,10 +344,10 @@ function generalizeData(input) {
       result.spouses = [spouse];
     }
   } else if (result.recordType == RT.Burial) {
-    result.setFullName(cleanFullName(data.recordData["Name"]));
-    result.setDeathDate(cleanDate(data.recordData["Date of Death"]));
-    result.setEventDate(extractDateFromEventString(data.eventText));
-    let age = data.recordData["Age"];
+    result.setFullName(cleanFullName(ed.recordData["Name"]));
+    result.setDeathDate(cleanDate(ed.recordData["Date of Death"]));
+    result.setEventDate(extractDateFromEventString(ed.eventText));
+    let age = ed.recordData["Age"];
     if (age && age != "N/R") {
       result.ageAtDeath = age;
     }
@@ -361,7 +361,7 @@ function generalizeData(input) {
       id: collectionId,
     };
 
-    let registrationId = data.recordData["Group Registration ID"];
+    let registrationId = ed.recordData["Group Registration ID"];
 
     if (registrationId) {
       result.collectionData.registrationId = registrationId;
