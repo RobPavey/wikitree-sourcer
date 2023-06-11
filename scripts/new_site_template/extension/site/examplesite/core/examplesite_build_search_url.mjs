@@ -72,14 +72,14 @@ function constrainYears(dates) {
   dates.endYear = constrainYear(dates.endYear);
 }
 
-function addAppropriateSurname(data, type, builder) {
-  let lastName = data.lastNameAtBirth;
+function addAppropriateSurname(gd, type, builder) {
+  let lastName = gd.lastNameAtBirth;
   if (type == "deaths" || !lastName) {
-    lastName = data.inferLastNameAtDeath();
+    lastName = gd.inferLastNameAtDeath();
   }
 
   if (!lastName) {
-    lastName = data.inferLastName();
+    lastName = gd.inferLastName();
   }
 
   if (lastName) {
@@ -127,12 +127,12 @@ function isMiddleNameLikelyAnInitial(dates, type) {
   return useInitial;
 }
 
-function addAppropriateGivenNames(data, dates, type, builder) {
+function addAppropriateGivenNames(gd, dates, type, builder) {
   // there is a limit on the number of given names that the indices contain
   // For now just use first name plus first middle name
   // Oftern they contain the first letter of the third name but of the first 2 are long they might not
-  let firstName = data.inferFirstName();
-  let middleName = data.inferMiddleName();
+  let firstName = gd.inferFirstName();
+  let middleName = gd.inferMiddleName();
 
   if (middleName && middleName.length > 1 && isMiddleNameLikelyAnInitial(dates, type)) {
     middleName = middleName.substr(0, 1); // make an initial
@@ -158,10 +158,10 @@ function includeMothersName(dates, mothersMaidenName) {
   return false;
 }
 
-function includeSpouseNameIfValidThruDateRange(dates, data, builder) {
+function includeSpouseNameIfValidThruDateRange(dates, gd, builder) {
   //if (dates.startYear > 1911) {
-  if (data.spouses && data.spouses.length == 1) {
-    let spouse = data.spouses[0];
+  if (gd.spouses && gd.spouses.length == 1) {
+    let spouse = gd.spouses[0];
     if (spouse.name) {
       let spouseSurname = spouse.name.inferLastName();
       builder.addOtherSurname(spouseSurname);
@@ -171,7 +171,7 @@ function includeSpouseNameIfValidThruDateRange(dates, data, builder) {
 }
 
 function buildSearchUrl(buildUrlInput) {
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const dataCache = buildUrlInput.dataCache;
   const typeOfSearch = buildUrlInput.typeOfSearch;
 
@@ -185,13 +185,13 @@ function buildSearchUrl(buildUrlInput) {
 
   let type = typeOfSearch.toLowerCase();
   if (typeOfSearch == "SameCollection") {
-    if (data.collectionData && data.collectionData.id) {
+    if (gd.collectionData && gd.collectionData.id) {
       type = RC.mapCollectionId(
-        data.sourceOfData,
-        data.collectionData.id,
+        gd.sourceOfData,
+        gd.collectionData.id,
         "examplesite",
-        data.inferEventCountry(),
-        data.inferEventYear()
+        gd.inferEventCountry(),
+        gd.inferEventYear()
       );
     } else {
       // should never happen
@@ -216,33 +216,33 @@ function buildSearchUrl(buildUrlInput) {
 
   if (typeOfSearch == "SameCollection") {
     // must be coming from a record of same type and date should be exact
-    let eventYear = data.inferEventYear();
+    let eventYear = gd.inferEventYear();
     dates.startYear = eventYear;
     dates.endYear = eventYear;
   } else if (type == "births") {
-    let birthYear = data.inferBirthYear();
-    let birthDateQualifier = data.inferBirthDateQualifier();
-    data.setDatesUsingQualifier(dates, birthYear, birthDateQualifier);
+    let birthYear = gd.inferBirthYear();
+    let birthDateQualifier = gd.inferBirthDateQualifier();
+    gd.setDatesUsingQualifier(dates, birthYear, birthDateQualifier);
   } else if (type == "marriages") {
-    let eventYear = data.inferEventYear();
+    let eventYear = gd.inferEventYear();
 
-    let birthYear = data.inferBirthYear();
+    let birthYear = gd.inferBirthYear();
     if (birthYear) {
       dates.startYear = addNumToYearString(birthYear, 14);
     } else if (eventYear) {
       dates.startYear = subtractNumFromYearString(eventYear, 100);
     }
 
-    let deathYear = data.inferDeathYear();
+    let deathYear = gd.inferDeathYear();
     if (deathYear) {
       dates.endYear = deathYear;
     } else if (eventYear) {
       dates.endYear = addNumToYearString(eventYear, 100);
     }
   } else if (type == "deaths") {
-    let deathYear = data.inferDeathYear();
-    let deathDateQualifier = data.inferDeathDateQualifier();
-    data.setDatesUsingQualifier(dates, deathYear, deathDateQualifier);
+    let deathYear = gd.inferDeathYear();
+    let deathDateQualifier = gd.inferDeathDateQualifier();
+    gd.setDatesUsingQualifier(dates, deathYear, deathDateQualifier);
   }
 
   // constrain years to the range covered by Examplesite
@@ -256,23 +256,23 @@ function buildSearchUrl(buildUrlInput) {
     builder.addEndYear(dates.endYear);
   }
 
-  addAppropriateSurname(data, type, builder);
+  addAppropriateSurname(gd, type, builder);
 
-  addAppropriateGivenNames(data, dates, type, builder);
+  addAppropriateGivenNames(gd, dates, type, builder);
 
   // now set specific fields for each type
   if (type == "births") {
-    if (includeMothersName(dates, data.mothersMaidenName)) {
-      builder.addOtherSurname(data.mothersMaidenName);
+    if (includeMothersName(dates, gd.mothersMaidenName)) {
+      builder.addOtherSurname(gd.mothersMaidenName);
     }
   } else if (type == "marriages") {
-    includeSpouseNameIfValidThruDateRange(dates, data, builder);
+    includeSpouseNameIfValidThruDateRange(dates, gd, builder);
   } else if (type == "deaths") {
     // although BMD Entries do not seem to have age of death before 1866 it doesn't
     // seem to throw off the search if it is included. However if the entry includes the
     // age of death and it is off by even 1 year it fails to find it. So only include age
     // if this is SameCollection
-    let age = data.inferAgeAtDeath();
+    let age = gd.inferAgeAtDeath();
     if (age != undefined && age >= 0) {
       if (typeOfSearch != "SameCollection") {
         let range = 5;
@@ -287,10 +287,10 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  // Add collection reference data if this is SameCollection
+  // Add collection reference gd if this is SameCollection
   if (typeOfSearch == "SameCollection") {
-    builder.addVolume(data.collectionData.volume);
-    builder.addPage(data.collectionData.page);
+    builder.addVolume(gd.collectionData.volume);
+    builder.addPage(gd.collectionData.page);
   }
 
   const url = builder.getUri();

@@ -140,17 +140,17 @@ function buildHouseholdArray(headings, members, result) {
   result.addSpouseOrParentsForSelectedHouseholdMember();
 }
 
-function setYearAndPlace(data, result) {
+function setYearAndPlace(ed, result) {
   // breadcrumbs
-  if (!data.breadCrumbs || data.breadCrumbs.length < 6) {
+  if (!ed.breadCrumbs || ed.breadCrumbs.length < 6) {
     return false;
   }
-  const breadCrumbs = data.breadCrumbs;
+  const breadCrumbs = ed.breadCrumbs;
 
   result.setEventYear(breadCrumbs[1]);
 
   let eventPlace = breadCrumbs[4] + ", " + breadCrumbs[3] + ", " + breadCrumbs[2];
-  if (data.breadCrumbs.length == 7) {
+  if (ed.breadCrumbs.length == 7) {
     eventPlace = breadCrumbs[5] + ", " + eventPlace;
   }
 
@@ -186,12 +186,12 @@ function cleanOccupation(string) {
   return occupation;
 }
 
-function setDataFromTable(data, result) {
-  if (!data.household || data.household.length < 1) {
+function setDataFromTable(ed, result) {
+  if (!ed.household || ed.household.length < 1) {
     return false;
   }
 
-  const household = data.household;
+  const household = ed.household;
   if (!household.headings || !household.members) {
     return false;
   }
@@ -260,27 +260,27 @@ function setDataFromTable(data, result) {
   return true;
 }
 
-// This function generalizes the data extracted web page.
+// This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
   result.sourceOfData = "naie";
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; // the extract failed
   }
 
   result.sourceType = "record";
   result.recordType = RT.Census;
 
-  if (!setYearAndPlace(data, result)) {
+  if (!setYearAndPlace(ed, result)) {
     return result;
   }
 
-  if (!setDataFromTable(data, result)) {
+  if (!setDataFromTable(ed, result)) {
     return result;
   }
 

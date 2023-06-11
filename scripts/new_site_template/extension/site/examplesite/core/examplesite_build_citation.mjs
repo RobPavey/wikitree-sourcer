@@ -24,30 +24,30 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildExamplesiteUrl(data, builder) {
+function buildExamplesiteUrl(ed, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
-  return data.citationUrl;
+  return ed.citationUrl;
 }
 
-function buildSourceTitle(data, gd, builder) {
+function buildSourceTitle(ed, gd, builder) {
   builder.sourceTitle += "Put Source Title here";
 }
 
-function buildSourceReference(data, gd, builder) {
+function buildSourceReference(ed, gd, builder) {
   builder.sourceReference = "Put Source Reference here";
 }
 
-function buildRecordLink(data, gd, builder) {
-  var examplesiteUrl = buildExamplesiteUrl(data, builder);
+function buildRecordLink(ed, gd, builder) {
+  var examplesiteUrl = buildExamplesiteUrl(ed, builder);
 
   let recordLink = "[" + examplesiteUrl + " ExampleSite Record]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
-function buildCoreCitation(data, gd, builder) {
-  buildSourceTitle(data, gd);
-  buildSourceReference(data, gd, builder);
-  buildRecordLink(data, gd, builder);
+function buildCoreCitation(ed, gd, builder) {
+  buildSourceTitle(ed, gd);
+  buildSourceReference(ed, gd, builder);
+  buildRecordLink(ed, gd, builder);
   builder.addStandardDataString(gd);
 }
 

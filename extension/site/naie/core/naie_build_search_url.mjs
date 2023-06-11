@@ -28,14 +28,14 @@ import { RT } from "../../../base/core/record_type.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   // typeOfSearch is current allways specifiedParameters
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const parameters = buildUrlInput.searchParameters;
 
   var builder = new NaieUriBuilder();
 
   builder.addYear(parameters.collection);
 
-  let lastNamesArray = data.inferPersonLastNamesArray(data);
+  let lastNamesArray = gd.inferPersonLastNamesArray(gd);
   if (lastNamesArray.length > 0) {
     let lastNameIndex = parameters.lastNameIndex;
     if (lastNameIndex < 0 || lastNameIndex > lastNamesArray.length - 1) {
@@ -45,15 +45,15 @@ function buildSearchUrl(buildUrlInput) {
     builder.addSurname(lastName);
   }
 
-  builder.addGivenNames(data.inferForenames());
-  builder.addGender(data.personGender);
+  builder.addGivenNames(gd.inferForenames());
+  builder.addGender(gd.personGender);
 
-  if (data.sourceType == "record" && data.recordType == RT.Census) {
-    builder.addAge(data.inferAgeAtEvent());
+  if (gd.sourceType == "record" && gd.recordType == RT.Census) {
+    builder.addAge(gd.inferAgeAtEvent());
   } else {
     // work out age in census year
     let censusYearString = parameters.collection;
-    let birthDateString = data.inferBirthDate();
+    let birthDateString = gd.inferBirthDate();
     if (birthDateString && censusYearString) {
       let age = GeneralizedData.getAgeAtDate(birthDateString, censusYearString);
       builder.addAge(age);

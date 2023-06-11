@@ -25,22 +25,22 @@ SOFTWARE.
 import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
-// This function generalizes the data extracted web page.
+// This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
   result.sourceOfData = "examplesite";
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; // the extract failed
   }
 
   result.sourceType = "record";
 
-  switch (data.eventType) {
+  switch (ed.eventType) {
     case "birth":
       result.recordType = RT.BirthRegistration;
       break;
@@ -54,37 +54,37 @@ function generalizeData(input) {
       return result;
   }
 
-  result.setEventYear(data.eventYear);
+  result.setEventYear(ed.eventYear);
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setLastNameAndForeNames(data.surname, data.givenNames);
+  result.setLastNameAndForeNames(ed.surname, ed.givenNames);
 
-  if (data.eventType == "birth") {
-    result.lastNameAtBirth = data.surname;
+  if (ed.eventType == "birth") {
+    result.lastNameAtBirth = ed.surname;
     result.birthDate = result.eventDate;
-    if (data.mother) {
-      result.mothersMaidenName = data.mothersMaidenName;
+    if (ed.mother) {
+      result.mothersMaidenName = ed.mothersMaidenName;
     }
-  } else if (data.eventType == "marriage") {
-    if (data.spouse) {
+  } else if (ed.eventType == "marriage") {
+    if (ed.spouse) {
       let name = new WtsName();
-      name.name = data.spouse;
+      name.name = ed.spouse;
       let spouse = {
         name: name,
         marriageDate: result.eventDate,
-        marriagePlace: data.district,
+        marriagePlace: ed.district,
       };
 
       result.spouses = [spouse];
     }
-  } else if (data.eventType == "death") {
-    result.lastNameAtDeath = data.surname;
+  } else if (ed.eventType == "death") {
+    result.lastNameAtDeath = ed.surname;
     result.deathDate = result.eventDate;
 
-    if (data.ageAtDeath) {
-      result.ageAtDeath = data.ageAtDeath;
-    } else if (data.birthDate) {
-      result.setBirthDate(data.birthDate);
+    if (ed.ageAtDeath) {
+      result.ageAtDeath = ed.ageAtDeath;
+    } else if (ed.birthDate) {
+      result.setBirthDate(ed.birthDate);
     }
   }
 
