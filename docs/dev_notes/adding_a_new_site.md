@@ -1,5 +1,9 @@
 # Adding support for a new site
 
+## Work in the develop branch in your fork when adding a new site
+
+This is so that I can merge a PR to the main repo without affecting the next release being worked on in the main branch.
+
 ## Pick a name
 
 The first decision is to choose a unique abbrevation for your new site. This will be all lower case.
