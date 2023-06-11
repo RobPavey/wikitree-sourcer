@@ -26,11 +26,11 @@ import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_d
 import { RT } from "../../../base/core/record_type.mjs";
 
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; //the extract failed
   }
 
@@ -40,11 +40,11 @@ function generalizeData(input) {
 
   result.recordType = RT.Newspaper;
 
-  result.setEventDate(data.eventDate);
-  result.setEventPlace(data.location);
+  result.setEventDate(ed.eventDate);
+  result.setEventPlace(ed.location);
 
-  if (data.newspaperTitle) {
-    result.newspaperName = data.newspaperTitle;
+  if (ed.newspaperTitle) {
+    result.newspaperName = ed.newspaperTitle;
   }
 
   // should we use a collection to allow search for same record on Ancestry?

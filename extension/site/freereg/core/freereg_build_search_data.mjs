@@ -26,7 +26,7 @@ import { WTS_Date } from "../../../base/core/wts_date.mjs";
 import { countyNameToCountyCode } from "../../freecen/core/freecen_chapman_codes.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
-function addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier, fieldData) {
+function addStartAndEndYearFromEventYear(gd, options, eventYear, dateQualifier, fieldData) {
   // compute the start and end birth dates
   let optYearRange = options.search_freereg_yearRange;
   if (optYearRange != "none") {
@@ -36,7 +36,7 @@ function addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier
     };
 
     if (optYearRange == "auto") {
-      data.setDatesUsingQualifier(startAndEndDates, eventYear, dateQualifier);
+      gd.setDatesUsingQualifier(startAndEndDates, eventYear, dateQualifier);
     } else {
       let range = 2;
       if (optYearRange == "exact") {
@@ -64,16 +64,16 @@ function addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier
   }
 }
 
-function addStartAndEndYearFromBirthAndDeath(data, options, fieldData, startOffset) {
+function addStartAndEndYearFromBirthAndDeath(gd, options, fieldData, startOffset) {
   // compute the start and end birth dates
   let optYearRange = options.search_freereg_yearRange;
   if (optYearRange != "none") {
     let maxLifespan = Number(options.search_general_maxLifespan);
-    let startAndEndDates = data.inferPossibleLifeYearRange(maxLifespan);
+    let startAndEndDates = gd.inferPossibleLifeYearRange(maxLifespan);
 
     if (optYearRange == "auto") {
-      let birthDateQualifier = data.inferBirthDateQualifier();
-      let deathDateQualifier = data.inferDeathDateQualifier();
+      let birthDateQualifier = gd.inferBirthDateQualifier();
+      let deathDateQualifier = gd.inferDeathDateQualifier();
 
       let birthStartAndEndDates = {
         startYear: undefined,
@@ -84,8 +84,8 @@ function addStartAndEndYearFromBirthAndDeath(data, options, fieldData, startOffs
         endYear: undefined,
       };
 
-      data.setDatesUsingQualifierAndYearNum(birthStartAndEndDates, startAndEndDates.startYear, birthDateQualifier);
-      data.setDatesUsingQualifierAndYearNum(deathStartAndEndDates, startAndEndDates.endYear, deathDateQualifier);
+      gd.setDatesUsingQualifierAndYearNum(birthStartAndEndDates, startAndEndDates.startYear, birthDateQualifier);
+      gd.setDatesUsingQualifierAndYearNum(deathStartAndEndDates, startAndEndDates.endYear, deathDateQualifier);
       startAndEndDates.startYear = birthStartAndEndDates.startYear + startOffset;
       startAndEndDates.endYear = deathStartAndEndDates.endYear;
     } else {
@@ -121,7 +121,7 @@ function buildSearchData(input) {
   //console.log("buildSearchData, input is:");
   //console.log(input);
 
-  const data = input.generalizedData;
+  const gd = input.generalizedData;
   const options = input.options;
 
   let fieldData = {
@@ -146,52 +146,52 @@ function buildSearchData(input) {
     }
   }
 
-  let lastName = data.inferLastName();
-  let eventYear = data.inferEventYear();
+  let lastName = gd.inferLastName();
+  let eventYear = gd.inferEventYear();
   let dateQualifier = dateQualifiers.NONE;
   let county = undefined;
 
   if (type == "baptism") {
-    lastName = data.inferLastNameAtBirth();
-    eventYear = data.inferBirthYear();
-    dateQualifier = data.inferBirthDateQualifier();
-    county = data.inferBirthCounty();
-    addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier, fieldData);
+    lastName = gd.inferLastNameAtBirth();
+    eventYear = gd.inferBirthYear();
+    dateQualifier = gd.inferBirthDateQualifier();
+    county = gd.inferBirthCounty();
+    addStartAndEndYearFromEventYear(gd, options, eventYear, dateQualifier, fieldData);
     fieldData["ba"] = true;
   } else if (type == "burial") {
-    lastName = data.inferLastNameAtDeath();
-    eventYear = data.inferDeathYear();
-    dateQualifier = data.inferDeathDateQualifier();
-    county = data.inferDeathCounty();
-    addStartAndEndYearFromEventYear(data, options, eventYear, dateQualifier, fieldData);
+    lastName = gd.inferLastNameAtDeath();
+    eventYear = gd.inferDeathYear();
+    dateQualifier = gd.inferDeathDateQualifier();
+    county = gd.inferDeathCounty();
+    addStartAndEndYearFromEventYear(gd, options, eventYear, dateQualifier, fieldData);
     fieldData["bu"] = true;
   } else if (type == "marriage") {
-    addStartAndEndYearFromBirthAndDeath(data, options, fieldData, 14);
-    county = data.inferBirthCounty();
+    addStartAndEndYearFromBirthAndDeath(gd, options, fieldData, 14);
+    county = gd.inferBirthCounty();
     if (!county) {
-      county = data.inferDeathCounty();
+      county = gd.inferDeathCounty();
     }
     fieldData["ma"] = true;
   } else if (type == "all") {
-    addStartAndEndYearFromBirthAndDeath(data, options, fieldData, 0);
-    county = data.inferBirthCounty();
+    addStartAndEndYearFromBirthAndDeath(gd, options, fieldData, 0);
+    county = gd.inferBirthCounty();
     if (!county) {
-      county = data.inferDeathCounty();
+      county = gd.inferDeathCounty();
     }
     fieldData["all"] = true;
   }
 
   if (!county) {
-    county = data.inferEventCounty();
+    county = gd.inferEventCounty();
   }
 
-  let forenames = data.inferForenames();
+  let forenames = gd.inferForenames();
   if (forenames) {
     fieldData["first_name"] = forenames;
   }
 
   if (parameters) {
-    let lastNamesArray = data.inferPersonLastNamesArray(data);
+    let lastNamesArray = gd.inferPersonLastNamesArray(gd);
     if (lastNamesArray.length > 0) {
       if (lastNamesArray.length == 1) {
         lastName = lastNamesArray[0];

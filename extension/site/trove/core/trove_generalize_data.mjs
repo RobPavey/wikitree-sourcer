@@ -94,16 +94,16 @@ function titleToPlaceAndPaperName(title) {
   return { place: placeString, paperName: paperNameString };
 }
 
-// This function generalizes the data extracted web page.
+// This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
   result.sourceOfData = "trove";
 
-  if (!data.success == undefined) {
+  if (!ed.success == undefined) {
     return result; //the extract failed
   }
 
@@ -111,12 +111,12 @@ function generalizeData(input) {
 
   result.recordType = RT.Newspaper;
 
-  const issue = data.issue;
+  const issue = ed.issue;
   if (issue) {
     result.setEventDate(issueToDate(issue));
   }
 
-  const title = data.title;
+  const title = ed.title;
   if (title) {
     const placeAndName = titleToPlaceAndPaperName(title);
     result.setEventPlace(placeAndName.place);

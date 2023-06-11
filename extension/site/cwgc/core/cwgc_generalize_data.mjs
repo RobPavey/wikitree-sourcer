@@ -25,10 +25,10 @@ SOFTWARE.
 import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
-// This function generalizes the data extracted web page.
+// This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
@@ -36,7 +36,7 @@ function generalizeData(input) {
 
   let collectionId = undefined;
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; //the extract failed
   }
 
@@ -44,32 +44,32 @@ function generalizeData(input) {
 
   result.recordType = RT.Memorial;
 
-  if (data.deathDate) {
-    result.setEventDate(data.deathDate);
+  if (ed.deathDate) {
+    result.setEventDate(ed.deathDate);
   }
 
-  result.setEventPlace(data.cemeteryAddress);
+  result.setEventPlace(ed.cemeteryAddress);
 
   if (result.eventPlace) {
-    result.eventPlace.streetAddress = data.cemeteryName;
+    result.eventPlace.streetAddress = ed.cemeteryName;
   }
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setFullName(data.fullName);
-  const indexOfLastSpace = data.fullName.lastIndexOf(" ");
+  result.setFullName(ed.fullName);
+  const indexOfLastSpace = ed.fullName.lastIndexOf(" ");
   if (indexOfLastSpace > 0) {
-    result.name.lastName = data.fullName.substring(indexOfLastSpace + 1);
-    result.name.forenames = data.fullName.substring(0, indexOfLastSpace);
+    result.name.lastName = ed.fullName.substring(indexOfLastSpace + 1);
+    result.name.forenames = ed.fullName.substring(0, indexOfLastSpace);
   }
 
   result.lastNameAtDeath = result.inferLastName();
 
-  if (data.ageAtDeath) {
-    result.ageAtDeath = data.ageAtDeath;
+  if (ed.ageAtDeath) {
+    result.ageAtDeath = ed.ageAtDeath;
   }
 
-  if (data.deathDate) {
-    result.setDeathDate(data.deathDate);
+  if (ed.deathDate) {
+    result.setDeathDate(ed.deathDate);
   }
 
   // Collection
@@ -77,11 +77,11 @@ function generalizeData(input) {
     result.collectionData = {
       id: collectionId,
     };
-    if (data.referenceVolume) {
-      result.collectionData.volume = data.referenceVolume;
+    if (ed.referenceVolume) {
+      result.collectionData.volume = ed.referenceVolume;
     }
-    if (data.referencePage) {
-      result.collectionData.page = data.referencePage;
+    if (ed.referencePage) {
+      result.collectionData.page = ed.referencePage;
     }
   }
 

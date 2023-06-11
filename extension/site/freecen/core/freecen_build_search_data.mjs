@@ -26,22 +26,22 @@ import { RC } from "../../../base/core/record_collections.mjs";
 import { WTS_Date } from "../../../base/core/wts_date.mjs";
 import { countyNameToCountyCode } from "./freecen_chapman_codes.mjs";
 
-function addBirthYear(data, options, sameCollection, fieldData) {
+function addBirthYear(gd, options, sameCollection, fieldData) {
   // compute the start and end birth dates
   let optBirthYearRange = options.search_freecen_birthYearRangeDefault;
   if (sameCollection) {
     optBirthYearRange = options.search_freecen_birthYearRangeSameCollection;
   }
   if (optBirthYearRange != "none") {
-    let birthYear = data.inferBirthYear();
+    let birthYear = gd.inferBirthYear();
     let birthDates = {
       startYear: undefined,
       endYear: undefined,
     };
 
     if (optBirthYearRange == "auto") {
-      let birthDateQualifier = data.inferBirthDateQualifier();
-      data.setDatesUsingQualifier(birthDates, birthYear, birthDateQualifier);
+      let birthDateQualifier = gd.inferBirthDateQualifier();
+      gd.setDatesUsingQualifier(birthDates, birthYear, birthDateQualifier);
     } else {
       let range = 2;
       if (optBirthYearRange == "exact") {
@@ -72,7 +72,7 @@ function buildSearchData(input) {
   //console.log("buildSearchData, input is:");
   //console.log(input);
 
-  const data = input.generalizedData;
+  const gd = input.generalizedData;
   const options = input.options;
 
   let fieldData = {
@@ -85,13 +85,13 @@ function buildSearchData(input) {
   let freecenCollectionId = undefined;
 
   if (input.typeOfSearch == "SameCollection") {
-    if (data.collectionData && data.collectionData.id) {
+    if (gd.collectionData && gd.collectionData.id) {
       freecenCollectionId = RC.mapCollectionId(
-        data.sourceOfData,
-        data.collectionData.id,
+        gd.sourceOfData,
+        gd.collectionData.id,
         "freecen",
-        data.inferEventCountry(),
-        data.inferEventYear()
+        gd.inferEventCountry(),
+        gd.inferEventYear()
       );
       if (freecenCollectionId) {
         collection = RC.findCollection("freecen", freecenCollectionId);
@@ -126,12 +126,12 @@ function buildSearchData(input) {
     fieldData["search_query_record_type"] = freecenCollectionId;
   }
 
-  let forenames = data.inferForenames();
+  let forenames = gd.inferForenames();
   if (forenames) {
     fieldData["first_name"] = forenames;
   }
 
-  let lastName = data.inferLastNameGivenParametersAndCollection(parameters, collection);
+  let lastName = gd.inferLastNameGivenParametersAndCollection(parameters, collection);
   if (lastName) {
     fieldData["last_name"] = lastName;
   }
@@ -142,9 +142,9 @@ function buildSearchData(input) {
   }
   fieldData["search_query_fuzzy"] = optFuzzy;
 
-  addBirthYear(data, options, sameCollection, fieldData);
+  addBirthYear(gd, options, sameCollection, fieldData);
 
-  let maritalStatus = data.maritalStatus;
+  let maritalStatus = gd.maritalStatus;
   let maritalStatusCode = "";
   if (maritalStatus == "married") {
     maritalStatusCode = "M";
@@ -158,14 +158,14 @@ function buildSearchData(input) {
     fieldData["search_query_marital_status"] = maritalStatusCode;
   }
 
-  let sex = data.personGender;
+  let sex = gd.personGender;
   if (sex && sex != "-") {
     fieldData["search_query_sex"] = sex.toUpperCase()[0];
   }
 
   let optBirthCounty = options.search_freecen_includeBirthCounty;
   if (optBirthCounty) {
-    let birthCounty = data.inferBirthCounty();
+    let birthCounty = gd.inferBirthCounty();
     if (birthCounty) {
       let chapmanCode = countyNameToCountyCode(birthCounty);
       if (chapmanCode) {
@@ -178,7 +178,7 @@ function buildSearchData(input) {
   if (sameCollection) {
     let optCensusCounty = options.search_freecen_includeCensusCounty;
     if (optCensusCounty) {
-      let eventCounty = data.inferEventCounty();
+      let eventCounty = gd.inferEventCounty();
       if (eventCounty) {
         let chapmanCode = countyNameToCountyCode(eventCounty);
         if (chapmanCode) {

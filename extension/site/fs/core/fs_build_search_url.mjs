@@ -142,11 +142,11 @@ function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection)
 }
 
 function buildSearchUrl(buildUrlInput) {
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
 
   //console.log("buildSearchUrl, generalizedData is ");
-  //console.log(data);
+  //console.log(gd);
 
   let searchType = "record";
   if (buildUrlInput.typeOfSearch == "FamilyTree") {
@@ -159,13 +159,13 @@ function buildSearchUrl(buildUrlInput) {
   let collection = undefined;
 
   if (buildUrlInput.typeOfSearch == "SameCollection") {
-    if (data.collectionData && data.collectionData.id) {
+    if (gd.collectionData && gd.collectionData.id) {
       let fsCollectionId = RC.mapCollectionId(
-        data.sourceOfData,
-        data.collectionData.id,
+        gd.sourceOfData,
+        gd.collectionData.id,
         "fs",
-        data.inferEventCountry(),
-        data.inferEventYear()
+        gd.inferEventCountry(),
+        gd.inferEventYear()
       );
       if (fsCollectionId) {
         collection = RC.findCollection("fs", fsCollectionId);
@@ -186,12 +186,12 @@ function buildSearchUrl(buildUrlInput) {
     parameters = buildUrlInput.searchParameters;
   }
 
-  if (data.personGender && shouldAddSearchTerm(collection, "gender", true)) {
-    builder.addGender(data.personGender);
+  if (gd.personGender && shouldAddSearchTerm(collection, "gender", true)) {
+    builder.addGender(gd.personGender);
   }
 
-  let forenames = data.inferForenames();
-  let lastNamesArray = data.inferLastNamesArrayGivenParametersAndCollection(parameters, collection);
+  let forenames = gd.inferForenames();
+  let lastNamesArray = gd.inferLastNamesArrayGivenParametersAndCollection(parameters, collection);
   if (lastNamesArray.length > 0) {
     for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
       if (!parameters || lastNamesArray.length == 1 || parameters.lastNames[lastNameIndex]) {
@@ -200,47 +200,47 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  let birthDateQualifier = data.inferBirthDateQualifier();
-  if (sameCollection && data.recordType == RT.Census) {
+  let birthDateQualifier = gd.inferBirthDateQualifier();
+  if (sameCollection && gd.recordType == RT.Census) {
     // although birth dates in censuses are inaccurate, if searching for the same record they should be close
     // so remove the ABOUT
     birthDateQualifier = dateQualifiers.NONE;
   }
 
   let birthYearRangeRange = getDateRange(
-    data.inferBirthYear(),
+    gd.inferBirthYear(),
     options.search_fs_birthYearExactness,
     birthDateQualifier,
     sameCollection
   );
-  builder.addBirth(birthYearRangeRange, data.inferBirthPlace());
+  builder.addBirth(birthYearRangeRange, gd.inferBirthPlace());
   let deathYearRangeRange = getDateRange(
-    data.inferDeathYear(),
+    gd.inferDeathYear(),
     options.search_fs_deathYearExactness,
-    data.inferDeathDateQualifier(),
+    gd.inferDeathDateQualifier(),
     sameCollection
   );
-  builder.addDeath(deathYearRangeRange, data.inferDeathPlace());
+  builder.addDeath(deathYearRangeRange, gd.inferDeathPlace());
 
-  if (data.parents && data.parents.father && data.parents.father.name) {
+  if (gd.parents && gd.parents.father && gd.parents.father.name) {
     // for now we don't include the father unless it is a specified parameter
     if ((parameters && parameters.father) || sameCollection) {
-      let father = data.parents.father;
+      let father = gd.parents.father;
       builder.addFather(father.name.inferForenames(), father.name.inferLastName());
     }
   }
 
-  if (data.parents && data.parents.mother && data.parents.mother.name) {
+  if (gd.parents && gd.parents.mother && gd.parents.mother.name) {
     // for now we don't include the mother unless it is a specified parameter
     if ((parameters && parameters.mother) || sameCollection) {
-      let mother = data.parents.mother;
+      let mother = gd.parents.mother;
       builder.addMother(mother.name.inferForenames(), mother.name.inferLastName());
     }
   }
 
-  if (data.spouses) {
-    for (let spouseIndex = 0; spouseIndex < data.spouses.length; ++spouseIndex) {
-      let spouse = data.spouses[spouseIndex];
+  if (gd.spouses) {
+    for (let spouseIndex = 0; spouseIndex < gd.spouses.length; ++spouseIndex) {
+      let spouse = gd.spouses[spouseIndex];
 
       if (parameters && !parameters.spouses[spouseIndex]) {
         continue;
@@ -269,9 +269,9 @@ function buildSearchUrl(buildUrlInput) {
         // if searching for a census record do not add the surname of the spouse
         // since, if it is a wife their last name will no be different
         let spouseLastName = spouse.name.inferLastName();
-        if (data.personGender == "male") {
+        if (gd.personGender == "male") {
           if (sameCollection) {
-            if (data.recordType == RT.Census) {
+            if (gd.recordType == RT.Census) {
               spouseLastName = "";
             }
           } else if (collection && !collection.isMarriage) {
@@ -283,15 +283,15 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  if (data.recordType == RT.Census) {
-    if (data.eventPlace || data.eventDate) {
+  if (gd.recordType == RT.Census) {
+    if (gd.eventPlace || gd.eventDate) {
       let residenceYearRange = getDateRange(
-        data.inferEventYear(),
+        gd.inferEventYear(),
         options.search_fs_residenceYearExactness,
         dateQualifiers.NONE,
         sameCollection
       );
-      builder.addResidence(residenceYearRange, data.inferEventPlace());
+      builder.addResidence(residenceYearRange, gd.inferEventPlace());
     }
   }
 
@@ -299,7 +299,7 @@ function buildSearchUrl(buildUrlInput) {
   // For example in England and Wales Birth Index. So if there is a collection then do not add
   // countries at all since all collections tend to be specific to a country (or a few)
   if (!collection && searchType != "tree") {
-    let countryArray = data.inferCountries();
+    let countryArray = gd.inferCountries();
     if (countryArray.length > 0) {
       let fsCountryArray = adaptCountryArrayForFamilySearch(countryArray);
       for (let country of fsCountryArray) {
@@ -314,8 +314,8 @@ function buildSearchUrl(buildUrlInput) {
 
   if (buildUrlInput.typeOfSearch == "SameCollection") {
     if (collection) {
-      builder.addMaritalStatus(data.maritalStatus);
-      builder.addRelationship(data.relationshipToHead);
+      builder.addMaritalStatus(gd.maritalStatus);
+      builder.addRelationship(gd.relationshipToHead);
     }
   }
 

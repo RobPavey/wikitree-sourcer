@@ -298,9 +298,9 @@ function removeUnwantedKeysForDataString(keys, recordData) {
   return newKeys;
 }
 
-function addReferenceDataToSourceReference(data, builder, options) {
-  if (data.recordData) {
-    let keys = Object.keys(data.recordData);
+function addReferenceDataToSourceReference(ed, builder, options) {
+  if (ed.recordData) {
+    let keys = Object.keys(ed.recordData);
 
     if (!builder.sourceReference) {
       builder.sourceReference = "";
@@ -314,7 +314,7 @@ function addReferenceDataToSourceReference(data, builder, options) {
     for (let key of keys) {
       let refKeyList = getReferenceKeyListForKey(key);
       if (refKeyList) {
-        let value = data.recordData[key];
+        let value = ed.recordData[key];
 
         if (value) {
           // can't just test value since it could be something like "1"
@@ -398,7 +398,7 @@ function buildCustomDataString(gd, options) {
   return DataString.buildDataString(input);
 }
 
-function buildDataString(data, gd, dataStyle, options, builder) {
+function buildDataString(ed, gd, dataStyle, options, builder) {
   let dataString = "";
 
   if (dataStyle == "string") {
@@ -409,7 +409,7 @@ function buildDataString(data, gd, dataStyle, options, builder) {
   }
 
   // build a list string
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
 
   dataString = "";
 
@@ -452,7 +452,7 @@ function buildDataString(data, gd, dataStyle, options, builder) {
       }
     }
   } else {
-    let titleName = data.titleName;
+    let titleName = ed.titleName;
     if (!titleName && recordData) {
       let name = getOneOfPossibleFieldNames(recordData, ["Name"]);
       if (name) {
@@ -466,7 +466,7 @@ function buildDataString(data, gd, dataStyle, options, builder) {
   return dataString;
 }
 
-function getAdditionalInfo(data, gd, citationType, options, builder) {
+function getAdditionalInfo(ed, gd, citationType, options, builder) {
   let dataStyle = options.citation_ancestry_dataStyle;
   if (dataStyle == "none") {
     return "";
@@ -479,12 +479,12 @@ function getAdditionalInfo(data, gd, citationType, options, builder) {
   }
 
   if (dataStyle == "string" || dataStyle == "list") {
-    return buildDataString(data, gd, dataStyle, options, builder);
+    return buildDataString(ed, gd, dataStyle, options, builder);
   }
 
   // style must be table
   var result = "";
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
   if (recordData) {
     let keys = Object.keys(recordData);
 
@@ -510,7 +510,7 @@ function getAdditionalInfo(data, gd, citationType, options, builder) {
   return result;
 }
 
-function buildAncestryRecordTemplate(data, options) {
+function buildAncestryRecordTemplate(ed, options) {
   const domainParams = {
     com: "",
     "co.uk": "uk",
@@ -526,7 +526,7 @@ function buildAncestryRecordTemplate(data, options) {
   let domainParam = undefined;
 
   if (options.citation_ancestry_recordTemplateDomain == "fromRecord") {
-    domainParam = domainParams[data.domain];
+    domainParam = domainParams[ed.domain];
   } else {
     let fullDomain = options.citation_ancestry_recordTemplateDomain;
     let domain = fullDomain.replace(/ancestry.(.+)$/, "$1");
@@ -536,15 +536,15 @@ function buildAncestryRecordTemplate(data, options) {
   }
 
   if (domainParam) {
-    return "{{Ancestry Record|" + data.dbId + "|" + data.recordId + "|" + domainParam + "}}";
+    return "{{Ancestry Record|" + ed.dbId + "|" + ed.recordId + "|" + domainParam + "}}";
   }
 
-  return "{{Ancestry Record|" + data.dbId + "|" + data.recordId + "}}";
+  return "{{Ancestry Record|" + ed.dbId + "|" + ed.recordId + "}}";
 }
 
-function buildAncestryImageTemplate(data, options) {
+function buildAncestryImageTemplate(ed, options) {
   // Note that the Ancestry Image template has no 3rd (domain parameter)
-  return "{{Ancestry Image|" + data.dbId + "|" + data.recordId + "}}";
+  return "{{Ancestry Image|" + ed.dbId + "|" + ed.recordId + "}}";
 }
 
 function buildAncestrySharingTemplateFromSharingDataObj(dataObj) {
@@ -629,27 +629,27 @@ function cleanOriginalData(text) {
   return text;
 }
 
-function buildSourceReference(data, builder) {
-  if (data.sourceCitation) {
-    builder.sourceReference = data.sourceCitation;
+function buildSourceReference(ed, builder) {
+  if (ed.sourceCitation) {
+    builder.sourceReference = ed.sourceCitation;
   }
 
-  if (!builder.sourceReference && data.originalData) {
-    builder.sourceReference = cleanOriginalData(data.originalData);
+  if (!builder.sourceReference && ed.originalData) {
+    builder.sourceReference = cleanOriginalData(ed.originalData);
   }
 
   cleanSourceReference(builder);
 }
 
-function buildCoreCitation(data, gd, options, sharingDataObj, builder) {
+function buildCoreCitation(ed, gd, options, sharingDataObj, builder) {
   //console.log("buildCoreCitation, sharingDataObj is");
   //console.log(sharingDataObj);
-  //console.log("buildCoreCitation, data is");
-  //console.log(data);
+  //console.log("buildCoreCitation, ed is");
+  //console.log(ed);
 
-  builder.sourceTitle = data.titleCollection;
-  buildSourceReference(data, builder);
-  addReferenceDataToSourceReference(data, builder, options);
+  builder.sourceTitle = ed.titleCollection;
+  buildSourceReference(ed, builder);
+  addReferenceDataToSourceReference(ed, builder, options);
 
   if (sharingDataObj) {
     let template = buildAncestrySharingTemplateFromSharingDataObj(sharingDataObj);
@@ -657,24 +657,24 @@ function buildCoreCitation(data, gd, options, sharingDataObj, builder) {
     builder.databaseHasImages = true;
   }
 
-  builder.recordLinkOrTemplate = buildAncestryRecordTemplate(data, options);
+  builder.recordLinkOrTemplate = buildAncestryRecordTemplate(ed, options);
 
-  let additionalInfo = getAdditionalInfo(data, gd, builder.type, options, builder);
+  let additionalInfo = getAdditionalInfo(ed, gd, builder.type, options, builder);
   if (additionalInfo) {
     builder.dataString = additionalInfo;
   }
 }
 
-function buildImageCitation(data, options, sharingDataObj, builder) {
-  builder.sourceTitle = data.titleCollection;
+function buildImageCitation(ed, options, sharingDataObj, builder) {
+  builder.sourceTitle = ed.titleCollection;
   builder.databaseHasImages = true;
 
-  let sourceReference = data.imageBrowsePath;
-  if (data.totalImages && data.imageNumber) {
+  let sourceReference = ed.imageBrowsePath;
+  if (ed.totalImages && ed.imageNumber) {
     if (sourceReference) {
       sourceReference += " > ";
     }
-    sourceReference += "image " + data.imageNumber + " of " + data.totalImages;
+    sourceReference += "image " + ed.imageNumber + " of " + ed.totalImages;
   }
   if (sourceReference) {
     builder.sourceReference = sourceReference;
@@ -685,39 +685,39 @@ function buildImageCitation(data, options, sharingDataObj, builder) {
     builder.sharingLinkOrTemplate = template;
   }
 
-  // builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(data, options) + " " + data.dbId + " " + data.recordId;
-  builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(data, options);
+  // builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(ed, options) + " " + ed.dbId + " " + ed.recordId;
+  builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(ed, options);
 
-  builder.dataString = data.titleName;
+  builder.dataString = ed.titleName;
 
-  builder.meaningfulTitle = getImageRefTitle(data.titleCollection, data.imageBrowsePath);
+  builder.meaningfulTitle = getImageRefTitle(ed.titleCollection, ed.imageBrowsePath);
 }
 
-function buildSharingPageCitation(data, options, builder) {
-  builder.sourceTitle = data.titleCollection;
+function buildSharingPageCitation(ed, options, builder) {
+  builder.sourceTitle = ed.titleCollection;
   builder.databaseHasImages = true;
 
   // no source reference
 
-  if (data.ancestryTemplate) {
-    builder.sharingLinkOrTemplate = data.ancestryTemplate;
+  if (ed.ancestryTemplate) {
+    builder.sharingLinkOrTemplate = ed.ancestryTemplate;
   }
 
-  if (data.dbId && data.recordId) {
-    if (data.sharingType == "v1") {
-      builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(data, options);
+  if (ed.dbId && ed.recordId) {
+    if (ed.sharingType == "v1") {
+      builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(ed, options);
     } else {
-      builder.recordLinkOrTemplate = buildAncestryRecordTemplate(data, options);
+      builder.recordLinkOrTemplate = buildAncestryRecordTemplate(ed, options);
     }
   }
 
-  builder.dataString = data.personNarrative;
+  builder.dataString = ed.personNarrative;
 
-  builder.meaningfulTitle = getSharingPageRefTitle(data.titleCollection, data.personNarrative);
+  builder.meaningfulTitle = getSharingPageRefTitle(ed.titleCollection, ed.personNarrative);
 }
 
 function buildCitation(input) {
-  const data = input.extractedData;
+  const ed = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const sharingDataObj = input.sharingDataObj;
@@ -728,19 +728,19 @@ function buildCitation(input) {
   builder.householdTableString = input.householdTableString;
   builder.includeSubscriptionRequired = options.citation_ancestry_subscriptionRequired;
 
-  if (data.pageType == "record") {
-    buildCoreCitation(data, gd, options, sharingDataObj, builder);
+  if (ed.pageType == "record") {
+    buildCoreCitation(ed, gd, options, sharingDataObj, builder);
 
-    var refTitle = getRefTitle(data, gd);
+    var refTitle = getRefTitle(ed, gd);
     builder.meaningfulTitle = refTitle;
 
     if (type == "narrative") {
       builder.addNarrative(gd, input.dataCache, options);
     }
-  } else if (data.pageType == "image") {
-    buildImageCitation(data, options, sharingDataObj, builder);
-  } else if (data.pageType == "sharingImageOrRecord") {
-    buildSharingPageCitation(data, options, builder);
+  } else if (ed.pageType == "image") {
+    buildImageCitation(ed, options, sharingDataObj, builder);
+  } else if (ed.pageType == "sharingImageOrRecord") {
+    buildSharingPageCitation(ed, options, builder);
   }
 
   // now the builder is setup use it to build the citation text

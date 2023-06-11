@@ -81,12 +81,12 @@ class ScotpUriBuilder {
     }
   }
 
-  addRecordDataValue(data, scotpRecordType, spFieldName) {
+  addRecordDataValue(ed, scotpRecordType, spFieldName) {
     let searchParam = ScotpRecordType.getSearchParam(scotpRecordType, spFieldName);
     if (searchParam) {
       let recordKey = ScotpRecordType.getRecordKey(scotpRecordType, spFieldName);
       if (recordKey) {
-        let recordValue = data.recordData[recordKey];
+        let recordValue = ed.recordData[recordKey];
         if (recordValue) {
           // if the string contains quotes the search doesn't match
           recordValue = recordValue.replace(/["']/g, "");

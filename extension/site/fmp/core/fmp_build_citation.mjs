@@ -112,7 +112,7 @@ function removeUnwantedKeysForDataString(keys, recordData) {
   return newKeys;
 }
 
-function buildDataString(data, gd, dataStyle, builder) {
+function buildDataString(ed, gd, dataStyle, builder) {
   let options = builder.options;
 
   let dataString = "";
@@ -128,13 +128,13 @@ function buildDataString(data, gd, dataStyle, builder) {
     }
   }
 
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
 
   dataString = "";
 
   // I don't think this will ever happen
   if (!recordData) {
-    dataString = data.heading + " in " + data.place;
+    dataString = ed.heading + " in " + ed.place;
     return dataString;
   }
 
@@ -143,7 +143,7 @@ function buildDataString(data, gd, dataStyle, builder) {
   return dataString;
 }
 
-function getAdditionalInfo(data, gd, builder) {
+function getAdditionalInfo(ed, gd, builder) {
   let citationType = builder.type;
   let options = builder.options;
 
@@ -159,12 +159,12 @@ function getAdditionalInfo(data, gd, builder) {
   }
 
   if (dataStyle == "string" || dataStyle == "list") {
-    return buildDataString(data, gd, dataStyle, builder);
+    return buildDataString(ed, gd, dataStyle, builder);
   }
 
   // style must be table
   var result = "";
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
   if (recordData) {
     let keys = Object.keys(recordData);
 
@@ -190,40 +190,40 @@ function getAdditionalInfo(data, gd, builder) {
   return result;
 }
 
-function buildSourceReference(data, builder) {
-  if (!data.recordData) {
+function buildSourceReference(ed, builder) {
+  if (!ed.recordData) {
     return "";
   }
   // Archive reference: RG13, Piece number: 1440; Folio 55; Page: 2
 
-  let archive = data.recordData["Archive"];
-  let archiveReference = data.recordData["Archive reference"];
+  let archive = ed.recordData["Archive"];
+  let archiveReference = ed.recordData["Archive reference"];
   if (!archiveReference) {
-    archiveReference = data.recordData["Archive ref"];
+    archiveReference = ed.recordData["Archive ref"];
   }
   if (!archiveReference) {
-    archiveReference = data.recordData["Reference"];
+    archiveReference = ed.recordData["Reference"];
   }
-  let rolls = data.recordData["Rolls"];
-  let pieceNumber = data.recordData["Piece number"];
-  let folio = data.recordData["Folio"];
+  let rolls = ed.recordData["Rolls"];
+  let pieceNumber = ed.recordData["Piece number"];
+  let folio = ed.recordData["Folio"];
 
-  let volume = data.recordData["Volume"];
-  let page = data.recordData["Page"];
+  let volume = ed.recordData["Volume"];
+  let page = ed.recordData["Page"];
   if (!page) {
-    page = data.recordData["Page number"];
+    page = ed.recordData["Page number"];
   }
-  let schedule = data.recordData["Schedule"];
-  let series = data.recordData["Series"];
+  let schedule = ed.recordData["Schedule"];
+  let series = ed.recordData["Series"];
   if (!series) {
-    series = data.recordData["Archive series"];
+    series = ed.recordData["Archive series"];
   }
 
-  let registrationNumber = data.recordData["Registration number"];
+  let registrationNumber = ed.recordData["Registration number"];
 
-  let districtNumber = data.recordData["Registration district number"];
-  let enumerationDistrict = data.recordData["Enumeration district"];
-  let districtReference = data.recordData["District reference"];
+  let districtNumber = ed.recordData["Registration district number"];
+  let enumerationDistrict = ed.recordData["Enumeration district"];
+  let districtReference = ed.recordData["District reference"];
 
   function addTerm(title, value) {
     builder.addSourceReferenceField(title, value);
@@ -242,29 +242,29 @@ function buildSourceReference(data, builder) {
   addTerm("District reference", districtReference);
 }
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   const options = builder.getOptions();
 
   builder.includeSubscriptionRequired = options.citation_fmp_subscriptionRequired;
 
-  builder.sourceTitle = data.collection;
-  buildSourceReference(data, builder);
+  builder.sourceTitle = ed.collection;
+  buildSourceReference(ed, builder);
 
-  let imageUrl = data.imageUrl;
-  let transcriptUrl = data.url;
+  let imageUrl = ed.imageUrl;
+  let transcriptUrl = ed.url;
 
-  if (data.urlPath == "record") {
+  if (ed.urlPath == "record") {
     // this came from an image page
     // If url looks like:
     // https://search.findmypast.co.uk/record?id=GBC%2F1921%2FRG15%2F12939%2F0163&parentid=GBC%2F1921%2FRG15%2F12939%2F0163%2F01
     // then transcript URL is:
     // https://www.findmypast.co.uk/transcript?id=GBC/1921/RG15/12939/0163/01
-    imageUrl = data.url;
+    imageUrl = ed.url;
     const parentPrefix = "&parentid=";
     let prefixIndex = imageUrl.indexOf(parentPrefix);
     if (prefixIndex != -1) {
       let parentPart = imageUrl.substring(prefixIndex + parentPrefix.length);
-      transcriptUrl = "https://www." + data.domain + "/transcript?id=" + parentPart;
+      transcriptUrl = "https://www." + ed.domain + "/transcript?id=" + parentPart;
     }
   }
 
@@ -279,7 +279,7 @@ function buildCoreCitation(data, gd, builder) {
     builder.recordLinkOrTemplate = "[" + transcriptUrl + " FindMyPast Transcription]";
   }
 
-  let additionalInfo = getAdditionalInfo(data, gd, builder);
+  let additionalInfo = getAdditionalInfo(ed, gd, builder);
   if (additionalInfo) {
     builder.dataString = additionalInfo;
   }

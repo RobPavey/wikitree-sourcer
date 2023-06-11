@@ -60,7 +60,7 @@ function extractNicknames(name, nameObj) {
   return name;
 }
 
-function extractNameParts(data, name, nameObj) {
+function extractNameParts(ed, name, nameObj) {
   if (!name) {
     return;
   }
@@ -68,7 +68,7 @@ function extractNameParts(data, name, nameObj) {
   name = name.replace(/[.]/g, ""); // eliminate periods
   name = name.replace(/\s+/g, " "); // change multple spaces to single space
 
-  let url = data.url;
+  let url = ed.url;
   let urlName = url.replace(/^.*\/([^/]+)\/?$/, "$1"); // extract the last component
 
   // decode the URL name so that escapes like
@@ -174,8 +174,8 @@ function extractNameParts(data, name, nameObj) {
   nameObj.setFullName(name);
 }
 
-function setNames(data, result) {
-  let fgName = data.name;
+function setNames(ed, result) {
+  let fgName = ed.name;
   let fullName = fgName;
   let maidenName = "";
 
@@ -183,9 +183,9 @@ function setNames(data, result) {
   let nameObj = result.name;
 
   // The name string can contain italics which indicates the maiden name
-  if (data.nameHtml && fgName != data.nameHtml && data.nameHtml.includes("<i>")) {
+  if (ed.nameHtml && fgName != ed.nameHtml && ed.nameHtml.includes("<i>")) {
     // we may have a part in italics
-    let html = data.nameHtml;
+    let html = ed.nameHtml;
     let italicStartIndex = html.indexOf("<i>");
     let italicEndIndex = html.indexOf("</i>", italicStartIndex);
     if (italicStartIndex != -1 && italicEndIndex != -1) {
@@ -206,7 +206,7 @@ function setNames(data, result) {
   fullName = extractNicknames(fullName, nameObj);
 
   // Now use the URL to identify what the remaining parts of the name are
-  extractNameParts(data, fullName, nameObj);
+  extractNameParts(ed, fullName, nameObj);
 
   if (!maidenName) {
     result.lastNameAtDeath = result.inferLastName();
@@ -219,13 +219,13 @@ function setNames(data, result) {
 }
 
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
   result.sourceOfData = "fg";
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; //the extract failed
   }
 
@@ -234,24 +234,24 @@ function generalizeData(input) {
   // If no burial location perhaps it should be a death?
   result.recordType = RT.Memorial;
 
-  result.setEventDate(data.deathDate);
-  result.setEventPlace(data.cemeteryFullAddress);
+  result.setEventDate(ed.deathDate);
+  result.setEventPlace(ed.cemeteryFullAddress);
 
   if (result.eventPlace) {
-    result.eventPlace.streetAddress = data.cemeteryName;
+    result.eventPlace.streetAddress = ed.cemeteryName;
   }
 
-  setNames(data, result);
+  setNames(ed, result);
 
-  result.setDeathDate(data.deathDate);
-  result.setDeathPlace(data.deathPlace);
+  result.setDeathDate(ed.deathDate);
+  result.setDeathPlace(ed.deathPlace);
 
-  if (data.ageAtDeath) {
-    result.ageAtDeath = data.ageAtDeath;
+  if (ed.ageAtDeath) {
+    result.ageAtDeath = ed.ageAtDeath;
   }
 
-  result.setBirthDate(data.birthDate);
-  result.setBirthPlace(data.birthPlace);
+  result.setBirthDate(ed.birthDate);
+  result.setBirthPlace(ed.birthPlace);
 
   // should we use a collection to allow search for same record on Ancestry?
 

@@ -27,11 +27,11 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { getCountryFromCountyCode, getCountryFromCountyName } from "./freecen_chapman_codes.mjs";
 
-function getCountyAndCountry(data) {
+function getCountyAndCountry(ed) {
   let result = { county: "", country: "" };
 
   // "County": "Devon (DEV)",
-  let countyString = data.censusDetails["County"];
+  let countyString = ed.censusDetails["County"];
   let countyCode = "";
   let county = countyString;
   let openParenIndex = countyString.lastIndexOf("(");
@@ -50,10 +50,10 @@ function getCountyAndCountry(data) {
   return result;
 }
 
-function getCensusDetail(data, fieldNames) {
+function getCensusDetail(ed, fieldNames) {
   let result = undefined;
   for (let fieldName of fieldNames) {
-    result = data.censusDetails[fieldName];
+    result = ed.censusDetails[fieldName];
     if (result) {
       break;
     }
@@ -61,16 +61,16 @@ function getCensusDetail(data, fieldNames) {
   return result;
 }
 
-function buildEventPlace(data, result) {
-  let countyAndCountry = getCountyAndCountry(data);
+function buildEventPlace(ed, result) {
+  let countyAndCountry = getCountyAndCountry(ed);
 
   let country = countyAndCountry.country;
   let county = countyAndCountry.county;
-  let district = getCensusDetail(data, ["District", "Census District"]);
-  let civilParish = data.censusDetails["Civil Parish"];
-  let whereTaken = data.censusDetails["Where Census Taken"];
-  let houseNumber = data.censusDetails["House Number"];
-  let houseOrStreetName = data.censusDetails["House or Street Name"];
+  let district = getCensusDetail(ed, ["District", "Census District"]);
+  let civilParish = ed.censusDetails["Civil Parish"];
+  let whereTaken = ed.censusDetails["Where Census Taken"];
+  let houseNumber = ed.censusDetails["House Number"];
+  let houseOrStreetName = ed.censusDetails["House or Street Name"];
 
   let streetAddress = "";
   if (houseOrStreetName && houseOrStreetName != "-") {
@@ -114,8 +114,8 @@ function buildEventPlace(data, result) {
   }
 }
 
-function findSelectedMember(data) {
-  for (let member of data.householdMembers) {
+function findSelectedMember(ed) {
+  for (let member of ed.householdMembers) {
     if (member.isSelected) {
       return member;
     }
@@ -124,7 +124,7 @@ function findSelectedMember(data) {
   return undefined;
 }
 
-function buildHouseholdArray(data, result) {
+function buildHouseholdArray(ed, result) {
   const stdFieldNames = [
     { stdName: "age", ancestryHeadings: ["Age"] },
     { stdName: "relationship", ancestryHeadings: ["Relationship"] },
@@ -140,8 +140,8 @@ function buildHouseholdArray(data, result) {
     }
   }
 
-  let headings = data.householdHeadings;
-  let members = data.householdMembers;
+  let headings = ed.householdHeadings;
+  let members = ed.householdMembers;
   if (headings && members) {
     result.householdArrayFields = [];
 
@@ -244,17 +244,17 @@ function generalizeData(input) {
   //console.log("freecen: generalizeData: input is:");
   //console.log(input);
 
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
   result.sourceOfData = "freecen";
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; //the extract failed
   }
 
-  if (!data.censusDetails || !data.householdHeadings || !data.householdMembers) {
+  if (!ed.censusDetails || !ed.householdHeadings || !ed.householdMembers) {
     console.log("freecen: generalizeData: censusDetails, householdHeadings or householdMembers is missing");
     return result; // defensive
   }
@@ -262,17 +262,17 @@ function generalizeData(input) {
   result.sourceType = "record";
   result.recordType = RT.Census;
 
-  buildEventPlace(data, result);
+  buildEventPlace(ed, result);
 
-  let censusYear = getCensusDetail(data, ["Census", "Census Year"]);
+  let censusYear = getCensusDetail(ed, ["Census", "Census Year"]);
   result.setEventYear(censusYear);
 
-  let selectedMember = findSelectedMember(data);
+  let selectedMember = findSelectedMember(ed);
   if (!selectedMember) {
     // this can happen on iPhone, so far haven't found any way around it
     // so use first household member in this case
     console.log("freecen: generalizeData: selectedMember is missing, using first member");
-    selectedMember = data.householdMembers[0];
+    selectedMember = ed.householdMembers[0];
   }
 
   let surname = WTS_String.toInitialCapsEachWord(selectedMember["Surname"], true);
@@ -280,8 +280,8 @@ function generalizeData(input) {
 
   result.setLastNameAndForeNames(surname, forenames);
 
-  if (data.ageAtDeath) {
-    result.ageAtDeath = data.ageAtDeath;
+  if (ed.ageAtDeath) {
+    result.ageAtDeath = ed.ageAtDeath;
   }
 
   let age = selectedMember["Age"];
@@ -318,7 +318,7 @@ function generalizeData(input) {
   result.setPersonGender(selectedMember["Sex"]);
   result.setOccupation(selectedMember["Occupation"]);
 
-  buildHouseholdArray(data, result);
+  buildHouseholdArray(ed, result);
 
   // should we use a collection to allow search for same record on Ancestry?
   if (censusYear) {
@@ -326,22 +326,22 @@ function generalizeData(input) {
       id: censusYear,
     };
 
-    let piece = data.censusDetails["Piece"];
+    let piece = ed.censusDetails["Piece"];
     if (piece) {
       result.collectionData.piece = piece;
     }
 
-    let folio = data.censusDetails["Folio"];
+    let folio = ed.censusDetails["Folio"];
     if (folio) {
       result.collectionData.folio = folio;
     }
 
-    let page = data.censusDetails["Page"];
+    let page = ed.censusDetails["Page"];
     if (page) {
       result.collectionData.page = page;
     }
 
-    let schedule = data.censusDetails["Schedule"];
+    let schedule = ed.censusDetails["Schedule"];
     if (schedule) {
       result.collectionData.schedule = schedule;
     }

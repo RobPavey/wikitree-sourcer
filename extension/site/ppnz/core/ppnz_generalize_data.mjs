@@ -26,32 +26,32 @@ import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/gen
 import { RT } from "../../../base/core/record_type.mjs";
 import { titleToPlace } from "./ppnz_titles.mjs";
 
-// This function generalizes the data extracted web page.
+// This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
   result.sourceOfData = "ppnz";
 
-  if (!data.success == undefined) {
+  if (!ed.success == undefined) {
     return result; //the extract failed
   }
 
   result.sourceType = "record";
   result.recordType = RT.Newspaper;
 
-  const issue = data.issueDate;
+  const issue = ed.issueDate;
   if (issue) {
     result.setEventDate(issue);
   }
 
-  const place = titleToPlace(data.paperTitle, issue);
+  const place = titleToPlace(ed.paperTitle, issue);
   result.setEventPlace(place);
 
-  if (data.paperTitle) {
-    result.newspaperName = data.paperTitle;
+  if (ed.paperTitle) {
+    result.newspaperName = ed.paperTitle;
   }
 
   result.hasValidData = true;

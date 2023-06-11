@@ -27,10 +27,10 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { getCountryFromCountyName } from "../../freecen/core/freecen_chapman_codes.mjs";
 
-function getCountyAndCountry(data) {
+function getCountyAndCountry(ed) {
   let result = { county: "", country: "" };
 
-  let county = data.recordData["County"];
+  let county = ed.recordData["County"];
   let country = getCountryFromCountyName(county);
 
   result.country = country;
@@ -38,21 +38,21 @@ function getCountyAndCountry(data) {
   return result;
 }
 
-function getRecordDataValueForKeys(data, keys) {
+function getRecordDataValueForKeys(ed, keys) {
   for (let key of keys) {
-    let value = data.recordData[key];
+    let value = ed.recordData[key];
     if (value) {
       return value;
     }
   }
 }
 
-function buildEventPlace(data, result) {
-  let countyAndCountry = getCountyAndCountry(data);
+function buildEventPlace(ed, result) {
+  let countyAndCountry = getCountyAndCountry(ed);
 
   let country = countyAndCountry.country;
   let county = countyAndCountry.county;
-  let place = getRecordDataValueForKeys(data, ["Place"]);
+  let place = getRecordDataValueForKeys(ed, ["Place"]);
 
   let placeString = "";
 
@@ -72,9 +72,9 @@ function buildEventPlace(data, result) {
   result.setEventPlace(placeString);
 }
 
-function buildFullName(data, forenameKeys, surnameKeys) {
-  let forename = getRecordDataValueForKeys(data, forenameKeys);
-  let surname = getRecordDataValueForKeys(data, surnameKeys);
+function buildFullName(ed, forenameKeys, surnameKeys) {
+  let forename = getRecordDataValueForKeys(ed, forenameKeys);
+  let surname = getRecordDataValueForKeys(ed, surnameKeys);
 
   surname = WTS_String.toInitialCapsEachWord(surname, true);
 
@@ -87,7 +87,7 @@ function buildFullName(data, forenameKeys, surnameKeys) {
   }
 }
 
-function setMarriageData(data, result, input) {
+function setMarriageData(ed, result, input) {
   let surname = WTS_String.toInitialCapsEachWord(input.surname, true);
   result.setLastNameAndForeNames(surname, input.forenames);
   result.setFieldIfValueExists("ageAtEvent", input.age);
@@ -116,69 +116,69 @@ function setMarriageData(data, result, input) {
   result.spouses = [spouse];
 }
 
-function generalizeDataForBaptism(data, result) {
+function generalizeDataForBaptism(ed, result) {
   result.recordType = RT.Baptism;
-  let baptismDate = getRecordDataValueForKeys(data, ["Baptism date"]);
+  let baptismDate = getRecordDataValueForKeys(ed, ["Baptism date"]);
   result.setEventDate(baptismDate);
-  let birthDate = getRecordDataValueForKeys(data, ["Birth date"]);
+  let birthDate = getRecordDataValueForKeys(ed, ["Birth date"]);
   result.setBirthDate(birthDate);
   // does a baptism record ever have a death date?
 
   result.setBirthPlace(result.eventPlace.placeString);
 
-  let age = getRecordDataValueForKeys(data, ["Age", "Baptism age"]);
+  let age = getRecordDataValueForKeys(ed, ["Age", "Baptism age"]);
   if (age) {
     result.ageAtEvent = age;
   }
 
-  let forenames = getRecordDataValueForKeys(data, ["Person forename"]);
-  let surname = getRecordDataValueForKeys(data, ["Person surname", "Father surname", "Mother surname"]);
+  let forenames = getRecordDataValueForKeys(ed, ["Person forename"]);
+  let surname = getRecordDataValueForKeys(ed, ["Person surname", "Father surname", "Mother surname"]);
   surname = WTS_String.toInitialCapsEachWord(surname, true);
   result.lastNameAtBirth = surname;
   result.setLastNameAndForeNames(surname, forenames);
 
-  let fatherName = buildFullName(data, ["Father forename"], ["Father surname"]);
+  let fatherName = buildFullName(ed, ["Father forename"], ["Father surname"]);
   if (fatherName) {
     let father = result.addFather();
     father.name.name = fatherName;
   }
-  let motherName = buildFullName(data, ["Mother forename"], ["Mother surname"]);
+  let motherName = buildFullName(ed, ["Mother forename"], ["Mother surname"]);
   if (motherName) {
     let mother = result.addMother();
     mother.name.name = motherName;
   }
 }
 
-function generalizeDataForBurial(data, result) {
+function generalizeDataForBurial(ed, result) {
   result.recordType = RT.Burial;
-  let burialDate = getRecordDataValueForKeys(data, ["Burial date"]);
+  let burialDate = getRecordDataValueForKeys(ed, ["Burial date"]);
   result.setEventDate(burialDate);
 
-  let abode = getRecordDataValueForKeys(data, ["Burial person abode"]);
+  let abode = getRecordDataValueForKeys(ed, ["Burial person abode"]);
   let placeString = result.eventPlace.placeString;
   if (abode) {
     placeString = abode + ", " + placeString;
   }
   result.setDeathPlace(placeString);
 
-  let age = getRecordDataValueForKeys(data, ["Age", "Burial age"]);
+  let age = getRecordDataValueForKeys(ed, ["Age", "Burial age"]);
   if (age) {
     result.ageAtEvent = age;
   }
 
-  let forenames = getRecordDataValueForKeys(data, ["Burial person forename"]);
-  let surname = getRecordDataValueForKeys(data, ["Burial person surname"]);
+  let forenames = getRecordDataValueForKeys(ed, ["Burial person forename"]);
+  let surname = getRecordDataValueForKeys(ed, ["Burial person surname"]);
   surname = WTS_String.toInitialCapsEachWord(surname, true);
   result.lastNameAtDeath = surname;
   result.setLastNameAndForeNames(surname, forenames);
 }
 
-function generalizeDataForMarriage(data, result) {
+function generalizeDataForMarriage(ed, result) {
   result.recordType = RT.Marriage;
-  let marriageDate = getRecordDataValueForKeys(data, ["Marriage date"]);
+  let marriageDate = getRecordDataValueForKeys(ed, ["Marriage date"]);
   result.setEventDate(marriageDate);
 
-  let primaryId = data.ambiguousPersonResolvedId;
+  let primaryId = ed.ambiguousPersonResolvedId;
   if (!primaryId) {
     primaryId = "groom";
   }
@@ -187,69 +187,69 @@ function generalizeDataForMarriage(data, result) {
   if (primaryId == "groom") {
     result.setPersonGender("male");
 
-    input.forenames = getRecordDataValueForKeys(data, ["Groom forename"]);
-    input.surname = getRecordDataValueForKeys(data, ["Groom surname"]);
-    input.age = getRecordDataValueForKeys(data, ["Groom age"]);
+    input.forenames = getRecordDataValueForKeys(ed, ["Groom forename"]);
+    input.surname = getRecordDataValueForKeys(ed, ["Groom surname"]);
+    input.age = getRecordDataValueForKeys(ed, ["Groom age"]);
 
-    input.spouseForenames = getRecordDataValueForKeys(data, ["Bride forename"]);
-    input.spouseSurname = getRecordDataValueForKeys(data, ["Bride surname"]);
-    input.spouseAge = getRecordDataValueForKeys(data, ["Bride age"]);
+    input.spouseForenames = getRecordDataValueForKeys(ed, ["Bride forename"]);
+    input.spouseSurname = getRecordDataValueForKeys(ed, ["Bride surname"]);
+    input.spouseAge = getRecordDataValueForKeys(ed, ["Bride age"]);
   } else {
     result.setPersonGender("female");
 
-    input.forenames = getRecordDataValueForKeys(data, ["Bride forename"]);
-    input.surname = getRecordDataValueForKeys(data, ["Bride surname"]);
-    input.age = getRecordDataValueForKeys(data, ["Bride age"]);
+    input.forenames = getRecordDataValueForKeys(ed, ["Bride forename"]);
+    input.surname = getRecordDataValueForKeys(ed, ["Bride surname"]);
+    input.age = getRecordDataValueForKeys(ed, ["Bride age"]);
 
-    input.spouseForenames = getRecordDataValueForKeys(data, ["Groom forename"]);
-    input.spouseSurname = getRecordDataValueForKeys(data, ["Groom surname"]);
-    input.spouseAge = getRecordDataValueForKeys(data, ["Groom age"]);
+    input.spouseForenames = getRecordDataValueForKeys(ed, ["Groom forename"]);
+    input.spouseSurname = getRecordDataValueForKeys(ed, ["Groom surname"]);
+    input.spouseAge = getRecordDataValueForKeys(ed, ["Groom age"]);
   }
-  setMarriageData(data, result, input);
+  setMarriageData(ed, result, input);
 }
 
 function generalizeData(input) {
   //console.log("freereg: generalizeData: input is:");
   //console.log(input);
 
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
   result.sourceOfData = "freereg";
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; //the extract failed
   }
 
-  if (!data.recordData) {
+  if (!ed.recordData) {
     console.log("freereg: generalizeData: recordData is missing");
     return result; // defensive
   }
 
   result.sourceType = "record";
 
-  buildEventPlace(data, result);
+  buildEventPlace(ed, result);
 
-  switch (data.recordType) {
+  switch (ed.recordType) {
     case "baptism":
-      generalizeDataForBaptism(data, result);
+      generalizeDataForBaptism(ed, result);
       break;
 
     case "burial":
-      generalizeDataForBurial(data, result);
+      generalizeDataForBurial(ed, result);
       break;
 
     case "marriage":
-      generalizeDataForMarriage(data, result);
+      generalizeDataForMarriage(ed, result);
       break;
 
     default:
-      console.log("unknown record type: " + data.recordType);
+      console.log("unknown record type: " + ed.recordType);
       return result;
   }
 
-  result.setPersonGender(getRecordDataValueForKeys(data, ["Person sex"]));
+  result.setPersonGender(getRecordDataValueForKeys(ed, ["Person sex"]));
 
   result.hasValidData = true;
 

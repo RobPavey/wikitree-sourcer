@@ -40,52 +40,52 @@ function getCorrectlyCasedNames(name, options) {
   return name;
 }
 
-function getFullName(data, options) {
-  const indexOfLastSpace = data.fullName.lastIndexOf(" ");
+function getFullName(ed, options) {
+  const indexOfLastSpace = ed.fullName.lastIndexOf(" ");
   if (indexOfLastSpace > 0) {
-    let forenames = data.fullName.substring(0, indexOfLastSpace);
-    let surname = data.fullName.substring(indexOfLastSpace + 1);
+    let forenames = ed.fullName.substring(0, indexOfLastSpace);
+    let surname = ed.fullName.substring(indexOfLastSpace + 1);
     return getCorrectlyCasedNames(forenames, options) + " " + getCorrectlyCasedName(surname, options);
   }
-  return getCorrectlyCasedName(data.fullName, options);
+  return getCorrectlyCasedName(ed.fullName, options);
 }
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   let options = builder.getOptions();
   builder.sourceTitle = "Commonwealth War Graves Commission";
-  if (data.hasImage) {
+  if (ed.hasImage) {
     builder.databaseHasImages = true;
   }
 
-  let recordLink = "[" + data.url + " Commonwealth War Graves Commission Record]";
+  let recordLink = "[" + ed.url + " Commonwealth War Graves Commission Record]";
   builder.recordLinkOrTemplate = recordLink;
 
-  if (data.cemeteryName) {
-    builder.sourceReference += getCorrectlyCasedNames(data.cemeteryName, options);
-    if (data.cemeteryAddress) {
-      builder.sourceReference += ", " + getCorrectlyCasedNames(data.cemeteryAddress, options);
+  if (ed.cemeteryName) {
+    builder.sourceReference += getCorrectlyCasedNames(ed.cemeteryName, options);
+    if (ed.cemeteryAddress) {
+      builder.sourceReference += ", " + getCorrectlyCasedNames(ed.cemeteryAddress, options);
     }
-    if (data.plot) {
-      builder.sourceReference += ". (Plot: " + data.plot + ")";
+    if (ed.plot) {
+      builder.sourceReference += ". (Plot: " + ed.plot + ")";
     }
   }
 
-  let dataString = "Memorial page for " + getFullName(data, options) + ".";
+  let dataString = "Memorial page for " + getFullName(ed, options) + ".";
 
-  if (options.citation_cwgc_includeServiceNumber && data.serviceNumber) {
-    dataString += " Service number: " + data.serviceNumber + "; ";
+  if (options.citation_cwgc_includeServiceNumber && ed.serviceNumber) {
+    dataString += " Service number: " + ed.serviceNumber + "; ";
   }
 
-  if (data.rank) {
-    dataString += " Rank: " + data.rank + "; ";
+  if (ed.rank) {
+    dataString += " Rank: " + ed.rank + "; ";
   }
 
-  if (data.deathDate) {
-    dataString += " Died: " + data.deathDate + "; ";
+  if (ed.deathDate) {
+    dataString += " Died: " + ed.deathDate + "; ";
   }
 
-  if (data.ageAtDeath) {
-    dataString += " Age: " + data.ageAtDeath + "; ";
+  if (ed.ageAtDeath) {
+    dataString += " Age: " + ed.ageAtDeath + "; ";
   }
 
   dataString = dataString.replace(/; $/, ".");
@@ -99,16 +99,16 @@ function buildCoreCitation(data, gd, builder) {
     dataString += "\n";
   }
 
-  if (options.citation_cwgc_includeUnit && data.unit) {
-    dataString += "Regiment & Unit/Ship: " + data.unit;
-    if (data.serviceCountry) {
-      const country = getCountry(data.serviceCountry);
+  if (options.citation_cwgc_includeUnit && ed.unit) {
+    dataString += "Regiment & Unit/Ship: " + ed.unit;
+    if (ed.serviceCountry) {
+      const country = getCountry(ed.serviceCountry);
       dataString += " (" + country + ");";
     }
   }
 
-  if (options.citation_cwgc_includeAdditionalInfo && data.info) {
-    dataString += " Additional Info: " + data.info;
+  if (options.citation_cwgc_includeAdditionalInfo && ed.info) {
+    dataString += " Additional Info: " + ed.info;
   }
 
   if (!dataString.endsWith(".")) {

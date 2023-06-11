@@ -68,7 +68,7 @@ function buildSearchUrl(input) {
   //console.log("buildSearchData, input is:");
   //console.log(input);
 
-  const data = input.generalizedData;
+  const gd = input.generalizedData;
   const options = input.options;
   let parameters = undefined;
 
@@ -80,22 +80,22 @@ function buildSearchUrl(input) {
 
   let query = "";
 
-  let firstName = data.inferFirstName();
+  let firstName = gd.inferFirstName();
   if (firstName) {
     query = addToQueryString(query, "FirstName", firstName);
   }
 
-  let lastNameAtBirth = data.inferLastNameAtBirth();
+  let lastNameAtBirth = gd.inferLastNameAtBirth();
   if (lastNameAtBirth) {
     query = addToQueryString(query, "LastNameatBirth", lastNameAtBirth);
   }
 
-  let lastNameAtDeath = data.inferLastNameAtDeath();
+  let lastNameAtDeath = gd.inferLastNameAtDeath();
   if (lastNameAtDeath && lastNameAtDeath != lastNameAtBirth) {
     query = addToQueryString(query, "CurrentLastName", lastNameAtDeath);
   }
 
-  let birthDate = data.inferBirthDate();
+  let birthDate = gd.inferBirthDate();
   if (birthDate) {
     let wtpDate = convertDateToWtpSearchFormat(birthDate);
     if (wtpDate) {
@@ -103,7 +103,7 @@ function buildSearchUrl(input) {
     }
   }
 
-  let deathDate = data.inferDeathDate();
+  let deathDate = gd.inferDeathDate();
   if (deathDate) {
     let wtpDate = convertDateToWtpSearchFormat(deathDate);
     if (wtpDate) {
@@ -115,7 +115,7 @@ function buildSearchUrl(input) {
   if (parameters) {
     birthPlace = parameters.birthPlace;
   } else {
-    birthPlace = data.inferBirthPlace();
+    birthPlace = gd.inferBirthPlace();
   }
   if (birthPlace) {
     let birthPlaceString = birthPlace.replace(/\s*\,\s+/g, " ");
@@ -126,7 +126,7 @@ function buildSearchUrl(input) {
   if (parameters) {
     deathPlace = parameters.deathPlace;
   } else {
-    deathPlace = data.inferDeathPlace();
+    deathPlace = gd.inferDeathPlace();
   }
   if (deathPlace) {
     let deathPlaceString = deathPlace.replace(/\s*\,\s+/g, " ");

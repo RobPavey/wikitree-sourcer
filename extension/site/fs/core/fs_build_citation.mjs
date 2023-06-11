@@ -26,8 +26,8 @@ import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
 
-function buildFsCitationDataString(data) {
-  if (data.citation) {
+function buildFsCitationDataString(ed) {
+  if (ed.citation) {
     // citation string looks like this (for example):
     /*
     "England and Wales Census, 1841," database with images,
@@ -40,8 +40,8 @@ function buildFsCitationDataString(data) {
     // find the middle part like:
     // "Isabella Pavey in household of William Pavey, East Stonehouse, Devon, England, United Kingdom"
 
-    let dataString = data.citation.replace(/^.*\<i\>FamilySearch\<\/i\>\s+\([^\)]+\)\,\s*([^\;]+).*$/, "$1");
-    if (dataString && dataString != data.citation) {
+    let dataString = ed.citation.replace(/^.*\<i\>FamilySearch\<\/i\>\s+\([^\)]+\)\,\s*([^\;]+).*$/, "$1");
+    if (dataString && dataString != ed.citation) {
       // Sometimes there are commas with no space after them, fix that.
       dataString = dataString.replace(/\,(\w)/g, ", $1");
       return dataString;
@@ -106,7 +106,7 @@ function removeUnwantedKeysForDataString(keys, recordData) {
   return newKeys;
 }
 
-function buildDataString(data, gd, dataStyle, builder) {
+function buildDataString(ed, gd, dataStyle, builder) {
   let options = builder.options;
 
   let dataString = "";
@@ -121,7 +121,7 @@ function buildDataString(data, gd, dataStyle, builder) {
       return dataString;
     }
   } else if (dataStyle == "fsCitation") {
-    let dataString = buildFsCitationDataString(data);
+    let dataString = buildFsCitationDataString(ed);
     if (dataString) {
       return dataString;
     }
@@ -136,18 +136,18 @@ function buildDataString(data, gd, dataStyle, builder) {
       return dataString;
     }
 
-    if (data.sourceTitleForPerson) {
-      let dataString = data.sourceTitleForPerson.replace(/^([^\,]*)\,.*$/, "$1");
+    if (ed.sourceTitleForPerson) {
+      let dataString = ed.sourceTitleForPerson.replace(/^([^\,]*)\,.*$/, "$1");
       return dataString;
     }
 
-    if (data.fullName && data.eventDate) {
-      let dataString = data.fullName + " " + data.eventDate;
+    if (ed.fullName && ed.eventDate) {
+      let dataString = ed.fullName + " " + ed.eventDate;
       return dataString;
     }
   }
 
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
 
   dataString = "";
 
@@ -170,7 +170,7 @@ function buildDataString(data, gd, dataStyle, builder) {
   return dataString;
 }
 
-function getAdditionalInfo(data, gd, builder) {
+function getAdditionalInfo(ed, gd, builder) {
   let citationType = builder.type;
   let options = builder.options;
 
@@ -186,12 +186,12 @@ function getAdditionalInfo(data, gd, builder) {
   }
 
   if (dataStyle == "string" || dataStyle == "list" || dataStyle == "fsCitation") {
-    return buildDataString(data, gd, dataStyle, builder);
+    return buildDataString(ed, gd, dataStyle, builder);
   }
 
   // style must be table
   var result = "";
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
   if (recordData) {
     let keys = Object.keys(recordData);
 
@@ -217,7 +217,7 @@ function getAdditionalInfo(data, gd, builder) {
   return result;
 }
 
-function buildSourceReferenceFromRecord(data, gd, options) {
+function buildSourceReferenceFromRecord(ed, gd, options) {
   let dataString = "";
 
   function addValue(title, value) {
@@ -231,9 +231,9 @@ function buildSourceReferenceFromRecord(data, gd, options) {
 
   function addRecordDataValue(title, keyArray) {
     let value = undefined;
-    if (data.recordData) {
+    if (ed.recordData) {
       for (let key of keyArray) {
-        value = data.recordData[key];
+        value = ed.recordData[key];
         if (value) {
           break;
         }
@@ -247,10 +247,10 @@ function buildSourceReferenceFromRecord(data, gd, options) {
     }
   }
 
-  let refData = data.referenceData;
+  let refData = ed.referenceData;
 
   if (gd.isRecordInCountry("United Kingdom")) {
-    if (gd.recordType == RT.Census && data.collectionTitle.startsWith("England and Wales Census")) {
+    if (gd.recordType == RT.Census && ed.collectionTitle.startsWith("England and Wales Census")) {
       // The Ancestry reference would look like:
       // Class: HO107; Piece: 276; Book: 6; Civil Parish: East Stonehouse; County: Devon; Enumeration District: 6; Folio: 21; Page: 37; Line: 20; GSU roll: 241335<br/>
 
@@ -270,7 +270,7 @@ function buildSourceReferenceFromRecord(data, gd, options) {
       // Citing 1937, quarter 2, vol. 9D, p. 519, Hull, Yorkshire, England, General Register Office, Southport, England.
 
       dataString += "UK General Register Office.";
-      addValue("District", data.registrationDistrict);
+      addValue("District", ed.registrationDistrict);
       if (refData) {
         addValue("Volume", refData.sourceVolume);
         addValue("Page", refData.sourcePageNbr);
@@ -286,7 +286,7 @@ function buildSourceReferenceFromRecord(data, gd, options) {
   }
 
   // not a special case, just add everything that could be part of reference
-  addValue("District", data.registrationDistrict);
+  addValue("District", ed.registrationDistrict);
   if (refData) {
     addValue("Volume", refData.sourceVolume);
     addValue("Piece/Folio", refData.sourcePieceFolio);
@@ -314,8 +314,8 @@ function buildSourceReferenceFromRecord(data, gd, options) {
   return dataString;
 }
 
-function buildSourceReferenceFromFsCitation(data, options) {
-  if (data.citation) {
+function buildSourceReferenceFromFsCitation(ed, options) {
+  if (ed.citation) {
     // citation string looks like this (for example):
     /*
     "England and Wales Census, 1841," database with images,
@@ -326,11 +326,11 @@ function buildSourceReferenceFromFsCitation(data, options) {
     citing PRO HO 107, The National Archives, Kew, Surrey.
     */
     const citingString = "citing ";
-    let citingIndex = data.citation.indexOf(citingString);
+    let citingIndex = ed.citation.indexOf(citingString);
     if (citingIndex != -1) {
       citingIndex += citingString.length;
 
-      let refString = data.citation.substring(citingIndex);
+      let refString = ed.citation.substring(citingIndex);
       const fromString = "from ";
 
       if (options.citation_fs_sourceRef == "fsCitationShort") {
@@ -359,16 +359,16 @@ function buildSourceReferenceFromFsCitation(data, options) {
   return "";
 }
 
-function buildSourceReference(data, gd, options) {
+function buildSourceReference(ed, gd, options) {
   if (options.citation_fs_sourceRef == "fsCitationShort" || options.citation_fs_sourceRef == "fsCitationLong") {
-    let refString = buildSourceReferenceFromFsCitation(data, options);
+    let refString = buildSourceReferenceFromFsCitation(ed, options);
     if (refString) {
       return refString;
     }
   }
 
   // build from record
-  return buildSourceReferenceFromRecord(data, gd, options);
+  return buildSourceReferenceFromRecord(ed, gd, options);
 }
 
 function extractIdFromFsUrl(url, prefixList, terminatorList) {
@@ -423,37 +423,37 @@ function buildFsImageLink(imageUrl) {
   return imageLinkOrTemplate;
 }
 
-function buildCoreCitation(data, gd, builder) {
-  builder.sourceTitle = data.collectionTitle;
+function buildCoreCitation(ed, gd, builder) {
+  builder.sourceTitle = ed.collectionTitle;
 
-  var recordUrl = data.personRecordUrl;
+  var recordUrl = ed.personRecordUrl;
 
-  if ((data.fsImageUrl || data.externalImageUrl) && data.externalImageUrl != "bad") {
+  if ((ed.fsImageUrl || ed.externalImageUrl) && ed.externalImageUrl != "bad") {
     let text = "";
-    if (data.externalImageUrl) {
+    if (ed.externalImageUrl) {
       if (builder.options.citation_fs_includeExternalImageLink) {
-        if (data.externalImageUrl.includes("findmypast")) {
-          text += "[" + data.externalImageUrl + " FindMyPast Image]";
+        if (ed.externalImageUrl.includes("findmypast")) {
+          text += "[" + ed.externalImageUrl + " FindMyPast Image]";
           let subReqString = builder.getSubReqString(builder.options.citation_fs_subscriptionRequired);
           if (subReqString) {
             text += " (" + subReqString + ")";
           }
         } else {
-          text += "[" + data.externalImageUrl + " External Image]";
+          text += "[" + ed.externalImageUrl + " External Image]";
         }
       }
     } else {
       builder.databaseHasImages = true;
 
-      text += buildFsImageLink(data.fsImageUrl);
-      if (data.fsImageNumber) {
-        text += " Image number " + data.fsImageNumber;
+      text += buildFsImageLink(ed.fsImageUrl);
+      if (ed.fsImageNumber) {
+        text += " Image number " + ed.fsImageNumber;
       }
     }
     builder.externalSiteLink = text;
-  } else if (data.digitalArtifact) {
+  } else if (ed.digitalArtifact) {
     // Find A Grave example:   "digitalArtifact": "http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=30569834",
-    let url = data.digitalArtifact;
+    let url = ed.digitalArtifact;
     const idParam = "&GRid=";
     if (url.includes("//www.findagrave.com/cgi-bin") && url.includes(idParam)) {
       let paramIndex = url.indexOf(idParam);
@@ -473,12 +473,12 @@ function buildCoreCitation(data, gd, builder) {
 
   builder.recordLinkOrTemplate = buildFsRecordLink(recordUrl);
 
-  let additionalInfo = getAdditionalInfo(data, gd, builder);
+  let additionalInfo = getAdditionalInfo(ed, gd, builder);
   if (additionalInfo) {
     builder.dataString = additionalInfo;
   }
 
-  builder.sourceReference = buildSourceReference(data, gd, builder.options);
+  builder.sourceReference = buildSourceReference(ed, gd, builder.options);
 }
 
 function getImageRefTitle(catalogRecordName, filmTitle) {
@@ -567,33 +567,33 @@ function getImageRefTitle(catalogRecordName, filmTitle) {
   return "Unclassified";
 }
 
-function buildImageCitation(data, gd, builder) {
+function buildImageCitation(ed, gd, builder) {
   builder.databaseHasImages = true;
 
-  if (data.filmTitle) {
-    builder.sourceTitle = data.filmTitle;
+  if (ed.filmTitle) {
+    builder.sourceTitle = ed.filmTitle;
   } else {
-    builder.sourceTitle = data.catalogRecordName;
+    builder.sourceTitle = ed.catalogRecordName;
   }
 
-  let imageLink = buildFsImageLink(data.url);
+  let imageLink = buildFsImageLink(ed.url);
   builder.recordLinkOrTemplate = imageLink;
 
-  builder.dataString = buildDataString(data, gd, builder.options.citation_fs_dataStyle, builder);
+  builder.dataString = buildDataString(ed, gd, builder.options.citation_fs_dataStyle, builder);
 
-  builder.sourceReference = buildSourceReference(data, gd, builder.options);
+  builder.sourceReference = buildSourceReference(ed, gd, builder.options);
   if (!builder.sourceReference) {
     builder.sourceReference = "";
   }
 
   let newSourceReference = "";
-  if (data.catalogRecordLink && data.catalogRecordName) {
-    let linkText = data.catalogRecordName;
+  if (ed.catalogRecordLink && ed.catalogRecordName) {
+    let linkText = ed.catalogRecordName;
     newSourceReference += "Catalog: ";
-    newSourceReference += "[" + data.catalogRecordLink + " " + linkText + "]";
+    newSourceReference += "[" + ed.catalogRecordLink + " " + linkText + "]";
 
-    if (data.filmNote) {
-      let note = data.filmNote;
+    if (ed.filmNote) {
+      let note = ed.filmNote;
       if (note.startsWith(linkText)) {
         note = note.substring(linkText).trim();
       }
@@ -601,7 +601,7 @@ function buildImageCitation(data, gd, builder) {
     }
   }
 
-  if (data.filmNumber || data.imageBrowsePath || data.totalImages) {
+  if (ed.filmNumber || ed.imageBrowsePath || ed.totalImages) {
     if (newSourceReference) {
       if (builder.options.citation_general_addBreaksWithinBody) {
         newSourceReference += "<br/>";
@@ -612,20 +612,20 @@ function buildImageCitation(data, gd, builder) {
         newSourceReference += "\n";
       }
     }
-    if (data.imageBrowsePath) {
-      newSourceReference += "Image path: " + data.imageBrowsePath;
-    } else if (data.filmNumber) {
-      newSourceReference += "Film number: " + data.filmNumber;
+    if (ed.imageBrowsePath) {
+      newSourceReference += "Image path: " + ed.imageBrowsePath;
+    } else if (ed.filmNumber) {
+      newSourceReference += "Film number: " + ed.filmNumber;
     }
 
     // this is a workaround for Unit Tests. In Unit Tests the imageNumber is empty because of the
     // way the text input works
-    if (data.totalImages) {
-      let imageNumber = data.imageNumber;
+    if (ed.totalImages) {
+      let imageNumber = ed.imageNumber;
       if (!imageNumber) {
         imageNumber = "?";
       }
-      newSourceReference += " > image " + imageNumber + " of " + data.totalImages;
+      newSourceReference += " > image " + imageNumber + " of " + ed.totalImages;
     }
   }
 
@@ -635,17 +635,17 @@ function buildImageCitation(data, gd, builder) {
 
   builder.sourceReference = newSourceReference;
 
-  builder.meaningfulTitle = getImageRefTitle(data.catalogRecordName, data.filmTitle);
+  builder.meaningfulTitle = getImageRefTitle(ed.catalogRecordName, ed.filmTitle);
 }
 
-function buildBookCitation(data, gd, builder) {
+function buildBookCitation(ed, gd, builder) {
   builder.databaseHasImages = true;
 
-  builder.sourceTitle = data.title;
+  builder.sourceTitle = ed.title;
 
-  builder.recordLinkOrTemplate = data.url;
+  builder.recordLinkOrTemplate = ed.url;
 
-  builder.dataString = builder.buildDataList(data.recordData, removeUnwantedKeysForDataString);
+  builder.dataString = builder.buildDataList(ed.recordData, removeUnwantedKeysForDataString);
 
   builder.meaningfulTitle = "Book";
 }
@@ -680,7 +680,7 @@ function getRefTitle(ed, gd) {
 }
 
 function buildCitation(input) {
-  const data = input.extractedData;
+  const ed = input.extractedData;
   const gd = input.generalizedData;
   const runDate = input.runDate;
   const options = input.options;
@@ -689,20 +689,20 @@ function buildCitation(input) {
   let builder = new CitationBuilder(type, runDate, options);
   builder.householdTableString = input.householdTableString;
 
-  if (data.pageType == "record") {
-    buildCoreCitation(data, gd, builder);
+  if (ed.pageType == "record") {
+    buildCoreCitation(ed, gd, builder);
 
     // Get meaningful title
-    let refTitle = getRefTitle(data, input.generalizedData);
+    let refTitle = getRefTitle(ed, input.generalizedData);
     builder.meaningfulTitle = refTitle;
 
     if (type == "narrative") {
       builder.addNarrative(gd, input.dataCache, options);
     }
-  } else if (data.pageType == "image") {
-    buildImageCitation(data, gd, builder);
-  } else if (data.pageType == "book") {
-    buildBookCitation(data, gd, builder);
+  } else if (ed.pageType == "image") {
+    buildImageCitation(ed, gd, builder);
+  } else if (ed.pageType == "book") {
+    buildBookCitation(ed, gd, builder);
   }
 
   // now the builder is setup use it to build the citation text

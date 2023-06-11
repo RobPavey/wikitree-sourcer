@@ -25,18 +25,18 @@ SOFTWARE.
 import { NpUriBuilder } from "./np_uri_builder.mjs";
 
 function buildSearchUrl(buildUrlInput) {
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
 
   var builder = new NpUriBuilder();
 
   builder.addSearchParameter(
     "query",
-    (data.inferFirstName() ?? "") + " " + (data.inferMiddleName() ?? "") + " " + (data.inferLastName() ?? "")
+    (gd.inferFirstName() ?? "") + " " + (gd.inferMiddleName() ?? "") + " " + (gd.inferLastName() ?? "")
   );
 
-  let birthYear = data.inferBirthYear();
-  let deathYear = data.inferDeathYear();
+  let birthYear = gd.inferBirthYear();
+  let deathYear = gd.inferDeathYear();
   if (birthYear && deathYear) {
     builder.addSearchParameter("dr_year", birthYear + "-" + deathYear);
   } else if (birthYear) {

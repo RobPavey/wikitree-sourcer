@@ -106,28 +106,28 @@ function getFgDateQualifier(exactnessOption, wtsQualifier) {
 }
 
 function buildSearchUrl(buildUrlInput) {
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
 
   var builder = new FgUriBuilder();
 
   if (options.search_fg_includeFirstName) {
-    let firstName = data.inferFirstName();
+    let firstName = gd.inferFirstName();
     if (firstName) {
       builder.addFirstName(firstName);
     }
   }
 
   if (options.search_fg_includeMiddleName) {
-    let middleName = data.inferMiddleName();
+    let middleName = gd.inferMiddleName();
     if (middleName) {
       builder.addMiddleName(middleName);
     }
   }
 
-  let lastName = data.inferLastNameAtDeath();
+  let lastName = gd.inferLastNameAtDeath();
   if (!lastName) {
-    lastName = data.inferLastName();
+    lastName = gd.inferLastName();
   }
   if (lastName) {
     builder.addLastName(lastName);
@@ -138,23 +138,23 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   if (options.search_fg_birthYearExactness != "none") {
-    let birthYear = data.inferBirthYear();
-    let birthDateQualifier = data.inferBirthDateQualifier();
+    let birthYear = gd.inferBirthYear();
+    let birthDateQualifier = gd.inferBirthDateQualifier();
     let fgBirthDateQualifier = getFgDateQualifier(options.search_fg_birthYearExactness, birthDateQualifier);
     builder.addBirthYear(birthYear, fgBirthDateQualifier);
   }
 
   if (options.search_fg_deathYearExactness != "none") {
-    let deathYear = data.inferDeathYear();
-    let deathDateQualifier = data.inferDeathDateQualifier();
+    let deathYear = gd.inferDeathYear();
+    let deathDateQualifier = gd.inferDeathDateQualifier();
     let fgDeathDateQualifier = getFgDateQualifier(options.search_fg_deathYearExactness, deathDateQualifier);
     builder.addDeathYear(deathYear, fgDeathDateQualifier);
   }
 
   if (options.search_fg_includeCemeteryLocation) {
-    let deathCountry = data.inferDeathCountry();
+    let deathCountry = gd.inferDeathCountry();
     if (!deathCountry) {
-      let countryArray = data.inferCountries();
+      let countryArray = gd.inferCountries();
       if (countryArray.length == 1) {
         deathCountry = countryArray[0];
       }
@@ -168,8 +168,8 @@ function buildSearchUrl(buildUrlInput) {
     if (deathCountry) {
       let locationString = "";
       if (deathCountry == "United States") {
-        if (deathCountry == data.inferDeathCountry()) {
-          let deathPlace = data.inferDeathPlace();
+        if (deathCountry == gd.inferDeathCountry()) {
+          let deathPlace = gd.inferDeathPlace();
           let stateName = GD.inferStateNameFromPlaceString(deathPlace);
           if (stateName) {
             if (fgAllowedUsStateNames.includes(stateName)) {

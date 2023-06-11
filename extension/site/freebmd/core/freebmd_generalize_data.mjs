@@ -47,10 +47,10 @@ function freebmdQuarterToGdQuarter(quarter) {
       return 1;
   }
 }
-// This function generalizes the data extracted from the GRO page.
+// This function generalizes the data (ed) extracted from the GRO page.
 // We know what fields can be there. And we knw the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
@@ -58,13 +58,13 @@ function generalizeData(input) {
 
   let collectionId = undefined;
 
-  if (!data.success == undefined || !data.eventYear) {
+  if (!ed.success == undefined || !ed.eventYear) {
     return result; //the extract failed
   }
 
   result.sourceType = "record";
 
-  switch (data.eventType) {
+  switch (ed.eventType) {
     case "birth":
       result.recordType = RT.BirthRegistration;
       break;
@@ -78,57 +78,57 @@ function generalizeData(input) {
       return;
   }
 
-  result.setEventYear(data.eventYear);
-  result.setEventQuarter(freebmdQuarterToGdQuarter(data.eventQuarter));
+  result.setEventYear(ed.eventYear);
+  result.setEventQuarter(freebmdQuarterToGdQuarter(ed.eventQuarter));
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setLastNameAndForeNames(data.surname, data.givenNames);
+  result.setLastNameAndForeNames(ed.surname, ed.givenNames);
 
-  if (data.eventType == "birth") {
+  if (ed.eventType == "birth") {
     collectionId = "births";
-    result.lastNameAtBirth = data.surname;
+    result.lastNameAtBirth = ed.surname;
     result.birthDate = result.eventDate;
-    if (data.mother) {
-      result.mothersMaidenName = data.mothersMaidenName;
+    if (ed.mother) {
+      result.mothersMaidenName = ed.mothersMaidenName;
     }
-  } else if (data.eventType == "marriage") {
+  } else if (ed.eventType == "marriage") {
     collectionId = "marriages";
 
-    if (data.spouse) {
+    if (ed.spouse) {
       let name = new WtsName();
-      name.name = data.spouse;
+      name.name = ed.spouse;
       let spouse = {
         name: name,
         marriageDate: result.eventDate,
-        marriagePlace: data.district,
+        marriagePlace: ed.district,
       };
 
       result.spouses = [spouse];
     }
-  } else if (data.eventType == "death") {
+  } else if (ed.eventType == "death") {
     collectionId = "deaths";
-    result.lastNameAtDeath = data.surname;
+    result.lastNameAtDeath = ed.surname;
     result.deathDate = result.eventDate;
 
-    if (data.ageAtDeath) {
-      result.ageAtDeath = data.ageAtDeath;
-    } else if (data.birthDate) {
-      result.setBirthDate(data.birthDate);
+    if (ed.ageAtDeath) {
+      result.ageAtDeath = ed.ageAtDeath;
+    } else if (ed.birthDate) {
+      result.setBirthDate(ed.birthDate);
     }
   }
 
-  result.registrationDistrict = data.registrationDistrict;
+  result.registrationDistrict = ed.registrationDistrict;
 
   // Collection
   if (collectionId) {
     result.collectionData = {
       id: collectionId,
     };
-    if (data.referenceVolume) {
-      result.collectionData.volume = data.referenceVolume;
+    if (ed.referenceVolume) {
+      result.collectionData.volume = ed.referenceVolume;
     }
-    if (data.referencePage) {
-      result.collectionData.page = data.referencePage;
+    if (ed.referencePage) {
+      result.collectionData.page = ed.referencePage;
     }
   }
 

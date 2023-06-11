@@ -84,7 +84,7 @@ function isInYearRange(rangeStart, rangeEnd, dataStart, dataEnd) {
 }
 
 function buildSearchUrl(buildUrlInput) {
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
 
   var builder = new CwgcUriBuilder();
@@ -96,16 +96,16 @@ function buildSearchUrl(buildUrlInput) {
   };
 
   if (options.search_cwgc_deathYearExactness !== "none") {
-    if (data.deathDate) {
-      const deathYear = data.inferDeathYear();
+    if (gd.deathDate) {
+      const deathYear = gd.inferDeathYear();
       if (deathYear) {
-        dates.startYear = data.inferDeathYear();
-        dates.endYear = data.inferDeathYear();
+        dates.startYear = gd.inferDeathYear();
+        dates.endYear = gd.inferDeathYear();
       }
-    } else if (data.birthDate) {
+    } else if (gd.birthDate) {
       // UK Official conscription ages were 18 to 41
       // but may have lied about age on joining
-      const birthYear = data.inferBirthYear();
+      const birthYear = gd.inferBirthYear();
       if (birthYear) {
         dates.startYear = addNumToYearString(birthYear, 0); // include civilian deaths
         dates.endYear = addNumToYearString(birthYear, 120);
@@ -136,17 +136,17 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   const surnameExactness = options.search_cwgc_exactLastName ? true : false;
-  const surnameAtDeath = data.inferLastName();
+  const surnameAtDeath = gd.inferLastName();
   if (surnameAtDeath) {
     builder.addSurname(surnameAtDeath, surnameExactness);
   }
 
-  let firstName = data.inferFirstName();
+  let firstName = gd.inferFirstName();
   if (firstName) {
     if ((options.search_cwgc_useFirstnameOrInitial === "initial" && firstName.length > 0) || firstName.length === 1) {
       builder.addInitials(firstName.slice(0, 1));
     } else {
-      const firstNames = data.inferForenames();
+      const firstNames = gd.inferForenames();
       const firstNameExactness = options.search_cwgc_exactFirstName ? true : false;
       if (firstNames) {
         builder.addForename(firstNames, firstNameExactness);

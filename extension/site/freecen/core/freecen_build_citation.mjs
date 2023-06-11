@@ -33,7 +33,7 @@ function buildCustomDataString(gd, options) {
   return DataString.buildDataString(input);
 }
 
-function buildDataString(data, gd, options) {
+function buildDataString(ed, gd, options) {
   let dataString = "";
 
   if (options.citation_freecen_dataStyle == "string") {
@@ -44,7 +44,7 @@ function buildDataString(data, gd, options) {
   }
 
   // build a list string
-  let recordData = data.censusDetails;
+  let recordData = ed.censusDetails;
 
   let itemSep = ";";
   let valueSep = ":";
@@ -75,7 +75,7 @@ function buildDataString(data, gd, options) {
   return dataString;
 }
 
-function getAdditionalInfo(data, gd, citationType, options) {
+function getAdditionalInfo(ed, gd, citationType, options) {
   if (options.citation_freecen_dataStyle == "none") {
     return "";
   }
@@ -85,12 +85,12 @@ function getAdditionalInfo(data, gd, citationType, options) {
     options.citation_freecen_dataStyle == "string" ||
     options.citation_freecen_dataStyle == "list"
   ) {
-    return buildDataString(data, gd, options);
+    return buildDataString(ed, gd, options);
   }
 
   // style must be table
   var result = "";
-  let recordData = data.censusDetails;
+  let recordData = ed.censusDetails;
   if (recordData) {
     let keys = Object.keys(recordData);
 
@@ -116,8 +116,8 @@ function getAdditionalInfo(data, gd, citationType, options) {
   return result;
 }
 
-function buildSourceReference(data, builder) {
-  if (!data.censusDetails) {
+function buildSourceReference(ed, builder) {
+  if (!ed.censusDetails) {
     return;
   }
 
@@ -135,14 +135,14 @@ function buildSourceReference(data, builder) {
     1921: { reference: "RG 15", detailsPage: "C13340" },
   };
 
-  let year = data.censusDetails["Census"];
+  let year = ed.censusDetails["Census"];
   if (!year) {
-    year = data.censusDetails["Census Year"];
+    year = ed.censusDetails["Census Year"];
   }
-  let piece = data.censusDetails["Piece"];
-  let folio = data.censusDetails["Folio"];
-  let page = data.censusDetails["Page"];
-  let schedule = data.censusDetails["Schedule"];
+  let piece = ed.censusDetails["Piece"];
+  let folio = ed.censusDetails["Folio"];
+  let page = ed.censusDetails["Page"];
+  let schedule = ed.censusDetails["Schedule"];
 
   builder.addSourceReferenceText("The National Archives of the UK, Kew, Surrey, England");
   let series = seriesForYear[year];
@@ -183,14 +183,14 @@ function buildSourceReference(data, builder) {
   }
 }
 
-function getRecordLink(data) {
+function getRecordLink(ed) {
   // URL might be something like:
   // https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459c/friendly?citation_type=wikitree&locale=en
   // or:
   // https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459c/mary-pavey-1861-devon-chardstock-1793-?locale=en
   // We want:
   // https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459c
-  let url = data.url;
+  let url = ed.url;
 
   let newUrl = url;
   const searchRecordsText = "/search_records/";
@@ -207,7 +207,7 @@ function getRecordLink(data) {
   return recordLink;
 }
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   // Example citation:
   // '''1861 Census''':
   // "1861 Census of England, Scotland and Wales"
@@ -225,11 +225,11 @@ function buildCoreCitation(data, gd, builder) {
   builder.sourceTitle = sourceTitle;
   builder.putSourceTitleInQuotes = true;
 
-  buildSourceReference(data, builder);
+  buildSourceReference(ed, builder);
 
-  builder.recordLinkOrTemplate = getRecordLink(data);
+  builder.recordLinkOrTemplate = getRecordLink(ed);
 
-  builder.dataString = getAdditionalInfo(data, gd, builder.type, options);
+  builder.dataString = getAdditionalInfo(ed, gd, builder.type, options);
 }
 
 function buildCitation(input) {

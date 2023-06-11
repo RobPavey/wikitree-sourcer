@@ -175,7 +175,7 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
 }
 
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
@@ -186,75 +186,75 @@ function generalizeData(input) {
 
   // names
   result.name = new WtsName();
-  if (data.firstNames) {
-    result.name.setFirstNames(data.firstNames);
+  if (ed.firstNames) {
+    result.name.setFirstNames(ed.firstNames);
   }
-  if (data.middleNames) {
-    result.name.middleNames = data.middleNames;
+  if (ed.middleNames) {
+    result.name.middleNames = ed.middleNames;
   }
-  if (data.prefNames) {
-    result.name.prefNames = data.prefNames;
+  if (ed.prefNames) {
+    result.name.prefNames = ed.prefNames;
   }
-  if (data.nicknames) {
-    result.name.nicknames = data.nicknames;
+  if (ed.nicknames) {
+    result.name.nicknames = ed.nicknames;
   }
-  if (data.otherLastNames) {
-    result.name.otherLastNames = data.otherLastNames;
+  if (ed.otherLastNames) {
+    result.name.otherLastNames = ed.otherLastNames;
   }
   // WT doesn't have a last name as such but every profile has a LNAB
-  result.name.lastName = data.lnab;
+  result.name.lastName = ed.lnab;
 
-  result.lastNameAtBirth = data.lnab;
-  result.lastNameAtDeath = data.currentLastName;
-  result.mothersMaidenName = data.mothersMaidenName;
+  result.lastNameAtBirth = ed.lnab;
+  result.lastNameAtDeath = ed.currentLastName;
+  result.mothersMaidenName = ed.mothersMaidenName;
 
-  result.setPersonGender(data.personGender);
+  result.setPersonGender(ed.personGender);
 
   // Birth date
-  if (data.birthDate || data.birthYear) {
+  if (ed.birthDate || ed.birthYear) {
     result.birthDate = new WtsDate();
 
-    if (data.birthDate) {
-      result.birthDate.dateString = data.birthDate;
+    if (ed.birthDate) {
+      result.birthDate.dateString = ed.birthDate;
     }
-    if (data.birthYear) {
-      result.birthDate.yearString = data.birthYear;
+    if (ed.birthYear) {
+      result.birthDate.yearString = ed.birthYear;
     }
-    if (data.birthDateStatus) {
-      result.birthDate.qualifier = getQualifier(data.birthDateStatus);
+    if (ed.birthDateStatus) {
+      result.birthDate.qualifier = getQualifier(ed.birthDateStatus);
     }
   }
 
   // Death date
-  if (data.deathDate || data.birthYear) {
+  if (ed.deathDate || ed.birthYear) {
     result.deathDate = new WtsDate();
 
-    if (data.deathDate) {
-      result.deathDate.dateString = data.deathDate;
+    if (ed.deathDate) {
+      result.deathDate.dateString = ed.deathDate;
     }
-    if (data.birthYear) {
-      result.deathDate.yearString = data.deathYear;
+    if (ed.birthYear) {
+      result.deathDate.yearString = ed.deathYear;
     }
-    if (data.deathDateStatus) {
-      result.deathDate.qualifier = getQualifier(data.deathDateStatus);
+    if (ed.deathDateStatus) {
+      result.deathDate.qualifier = getQualifier(ed.deathDateStatus);
     }
   }
 
-  if (data.birthLocation) {
-    result.setBirthPlace(data.birthLocation);
+  if (ed.birthLocation) {
+    result.setBirthPlace(ed.birthLocation);
   }
-  if (data.deathLocation) {
-    result.setDeathPlace(data.deathLocation);
+  if (ed.deathLocation) {
+    result.setDeathPlace(ed.deathLocation);
   }
 
   // parents
-  if (data.parents) {
+  if (ed.parents) {
     result.parents = {};
 
-    if (data.parents.father) {
-      let name = data.parents.father.name;
+    if (ed.parents.father) {
+      let name = ed.parents.father.name;
       if (name) {
-        let obj = getPartsFromWikiTreeName(name, data.parents.father.wikiId);
+        let obj = getPartsFromWikiTreeName(name, ed.parents.father.wikiId);
         result.parents.father = {
           name: obj.nameObj,
           lastNameAtBirth: obj.lastNameAtBirth,
@@ -262,10 +262,10 @@ function generalizeData(input) {
         };
       }
     }
-    if (data.parents.mother) {
-      let name = data.parents.mother.name;
+    if (ed.parents.mother) {
+      let name = ed.parents.mother.name;
       if (name) {
-        let obj = getPartsFromWikiTreeName(name, data.parents.mother.wikiId);
+        let obj = getPartsFromWikiTreeName(name, ed.parents.mother.wikiId);
         result.parents.mother = {
           name: obj.nameObj,
           lastNameAtBirth: obj.lastNameAtBirth,
@@ -276,10 +276,10 @@ function generalizeData(input) {
   }
 
   // Spouses/marriages
-  if (data.spouses) {
+  if (ed.spouses) {
     result.spouses = [];
 
-    for (let spouse of data.spouses) {
+    for (let spouse of ed.spouses) {
       let resultSpouse = {};
       if (spouse.name) {
         let obj = getPartsFromWikiTreeName(spouse.name, spouse.wikiId);

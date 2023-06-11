@@ -57,16 +57,16 @@ function getRefTitle(ed, gd) {
   return "";
 }
 
-function createCitationUrl(data, gd, options) {
-  let scotpRecordType = getRecordType(data);
+function createCitationUrl(ed, gd, options) {
+  let scotpRecordType = getRecordType(ed);
   if (!scotpRecordType) {
-    return data.url;
+    return ed.url;
   }
 
   var builder = new ScotpUriBuilder(scotpRecordType);
 
-  if (!data.recordData) {
-    return data.url;
+  if (!ed.recordData) {
+    return ed.url;
   }
 
   let isShort = options.citation_scotp_urlStyle == "short";
@@ -77,16 +77,16 @@ function createCitationUrl(data, gd, options) {
   // WILHELMINA GRAC
   // has no period on the end. (Unlike parent names)
   if (scotpRecordType == "coa") {
-    builder.addFullName(data.recordData["Full Name"], "exact");
+    builder.addFullName(ed.recordData["Full Name"], "exact");
   } else {
-    let surname = data.recordData["Surname"];
+    let surname = ed.recordData["Surname"];
     if (surname) {
       // sometimes the name has " or " in lowercase and that fails search
       // But can't always upper case the whole name as that fails the search in military_tribunals
       surname = surname.replace(/\s+or\s+/g, " OR ");
     }
     builder.addSurname(surname, "exact");
-    builder.addForename(data.recordData["Forename"], "exact");
+    builder.addForename(ed.recordData["Forename"], "exact");
   }
 
   // Year or year range
@@ -106,7 +106,7 @@ function createCitationUrl(data, gd, options) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.gender)) {
     let genderKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.gender);
     if (genderKey) {
-      let gender = data.recordData[genderKey];
+      let gender = ed.recordData[genderKey];
       if (gender) {
         builder.addGender(gender);
       }
@@ -117,7 +117,7 @@ function createCitationUrl(data, gd, options) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.parents)) {
     let parentsKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.parents);
     if (parentsKey) {
-      let parents = data.recordData[parentsKey];
+      let parents = ed.recordData[parentsKey];
       if (parents) {
         let parentName1 = "";
         let parentName2 = "";
@@ -182,25 +182,25 @@ function createCitationUrl(data, gd, options) {
   // Spouse
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.spouse)) {
     // Spouse names never seem to be abbreviated so we do not need to remove periods.
-    // They can have extra data on the end and "/" characters within the name but that is fine and
+    // They can have extra ed on the end and "/" characters within the name but that is fine and
     // works correctly with the exact search. e.g.: In a OPR marriage the "Spouse Name" fields can contain:
     // JACOBINA CAMPBELL/URQUHART FR5344 (FR5344)
 
     let surnameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.spouseSurname);
     if (surnameKey) {
-      let surname = data.recordData[surnameKey];
+      let surname = ed.recordData[surnameKey];
       builder.addSpouseSurname(surname, "exact");
     }
 
     let forenameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.spouseForename);
     if (forenameKey) {
-      let forename = data.recordData[forenameKey];
+      let forename = ed.recordData[forenameKey];
       builder.addSpouseForename(forename, "exact");
     }
 
     let fullNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.spouseFullName);
     if (fullNameKey) {
-      let fullName = data.recordData[fullNameKey];
+      let fullName = ed.recordData[fullNameKey];
       builder.addSpouseFullName(fullName, "exact");
     }
   }
@@ -209,7 +209,7 @@ function createCitationUrl(data, gd, options) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.ageRange)) {
     let ageKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.age);
     if (ageKey) {
-      let age = data.recordData[ageKey];
+      let age = ed.recordData[ageKey];
       if (age) {
         builder.addAgeRange(age, age);
       }
@@ -217,14 +217,14 @@ function createCitationUrl(data, gd, options) {
   } else if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.age)) {
     let ageKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.age);
     if (ageKey) {
-      let age = data.recordData[ageKey];
+      let age = ed.recordData[ageKey];
       if (age) {
         builder.addAge(age);
       }
-    } else if (data.urlQuery["age"]) {
+    } else if (ed.urlQuery["age"]) {
       // Military tribunals have an age search but the results do not show an age
       // but the user may have used age to narrow the search results
-      builder.addAge(data.urlQuery["age"]);
+      builder.addAge(ed.urlQuery["age"]);
     }
   }
 
@@ -232,7 +232,7 @@ function createCitationUrl(data, gd, options) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.county)) {
     let countySearchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.county);
     if (countySearchParam) {
-      let userCounty = data.searchCriteria ?? data.searchCriteria[countySearchParam];
+      let userCounty = ed.searchCriteria ?? ed.searchCriteria[countySearchParam];
       if (userCounty) {
         // County is unusual, a lot of record types support county insearch but do not show it in the results
         // So, if the user specified a county and it found this result use it
@@ -241,7 +241,7 @@ function createCitationUrl(data, gd, options) {
         // some record types do have the County or County/City in the search results
         let countyKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.county);
         if (countyKey) {
-          let county = data.recordData[countyKey];
+          let county = ed.recordData[countyKey];
           if (county) {
             builder.addSearchParameter(countySearchParam, county);
           }
@@ -254,7 +254,7 @@ function createCitationUrl(data, gd, options) {
   if (!isShort && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rd)) {
     let rdNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.rdName);
     if (rdNameKey) {
-      let rdNameValue = data.recordData[rdNameKey];
+      let rdNameValue = ed.recordData[rdNameKey];
       if (rdNameValue) {
         builder.addRdName(rdNameValue, true);
       }
@@ -265,7 +265,7 @@ function createCitationUrl(data, gd, options) {
   if (!isShort && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.oprParish)) {
     let parishNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.parishName);
     if (parishNameKey) {
-      let parishNameValue = data.recordData[parishNameKey];
+      let parishNameValue = ed.recordData[parishNameKey];
       if (parishNameValue) {
         builder.addOprParishName(parishNameValue, true);
       }
@@ -276,7 +276,7 @@ function createCitationUrl(data, gd, options) {
   if (!isShort && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rcParish)) {
     let parishNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.parishName);
     if (parishNameKey) {
-      let parishNameValue = data.recordData[parishNameKey];
+      let parishNameValue = ed.recordData[parishNameKey];
       if (parishNameValue) {
         builder.addCatholicParishName(parishNameValue, true);
       }
@@ -287,7 +287,7 @@ function createCitationUrl(data, gd, options) {
   if (!isShort && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.otherParish)) {
     let parishNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.parishName);
     if (parishNameKey) {
-      let parishNameValue = data.recordData[parishNameKey];
+      let parishNameValue = ed.recordData[parishNameKey];
       if (parishNameValue) {
         builder.addOtherParishName(parishNameValue);
       }
@@ -299,7 +299,7 @@ function createCitationUrl(data, gd, options) {
     if (scotpRecordType == "wills_testaments") {
       let courtNameKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.courtName);
       if (courtNameKey) {
-        let courtNameValue = data.recordData[courtNameKey];
+        let courtNameValue = ed.recordData[courtNameKey];
         if (courtNameValue) {
           let extraSpacesNeeded = 50 - courtNameValue.length;
           for (let i = 0; i < extraSpacesNeeded; i++) {
@@ -311,30 +311,30 @@ function createCitationUrl(data, gd, options) {
         }
       }
     } else {
-      builder.addRecordDataValue(data, scotpRecordType, SpField.courtName);
+      builder.addRecordDataValue(ed, scotpRecordType, SpField.courtName);
     }
   }
 
   if (!isShort) {
     // Occupation
-    builder.addRecordDataValue(data, scotpRecordType, SpField.occupation);
+    builder.addRecordDataValue(ed, scotpRecordType, SpField.occupation);
 
     // Description
-    builder.addRecordDataValue(data, scotpRecordType, SpField.description);
+    builder.addRecordDataValue(ed, scotpRecordType, SpField.description);
   }
 
   // serviceNumber (for Soldiers' and Airmens' Wills this is a unique ID)
-  builder.addRecordDataValue(data, scotpRecordType, SpField.serviceNumber);
+  builder.addRecordDataValue(ed, scotpRecordType, SpField.serviceNumber);
 
   // Optionally include a &ref= on the end. It doesn't affect search but Source will highlight the row
   if (options.citation_scotp_urlIncludeRef) {
-    builder.addRecordDataValue(data, scotpRecordType, SpField.ref);
+    builder.addRecordDataValue(ed, scotpRecordType, SpField.ref);
   }
 
   return builder.getUri();
 }
 
-function buildCitationUrl(data, gd, options) {
+function buildCitationUrl(ed, gd, options) {
   // could provide option to use a search style URL but don't see any reason to so far
 
   return "https://www.scotlandspeople.gov.uk/";
@@ -347,14 +347,14 @@ function buildCitationUrl(data, gd, options) {
   }
   else if (urlOpt == "original") {
     // if there is more than one result on the page then add the ref (if that option is selected)
-    let url = data.url;
-    if (data.numResultsOnPage > 1 && options.citation_scotp_urlIncludeRef) {
-      let scotpRecordType = getRecordType(data);
+    let url = ed.url;
+    if (ed.numResultsOnPage > 1 && options.citation_scotp_urlIncludeRef) {
+      let scotpRecordType = getRecordType(ed);
       let searchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.ref);
       if (searchParam) {
         let recordKey = ScotpRecordType.getRecordKey(scotpRecordType, SpField.ref);
         if (recordKey) {
-          let recordValue = data.recordData[recordKey];
+          let recordValue = ed.recordData[recordKey];
           if (recordValue) {
             const encodedValue = encodeURIComponent(recordValue);
             url += "&" + searchParam + "=" + encodedValue;
@@ -365,19 +365,19 @@ function buildCitationUrl(data, gd, options) {
     return url;
   } else if (urlOpt == "best") {
     let isOnFirstPage = true;
-    if (data.urlQuery) {
-      let page = data.urlQuery.page;
+    if (ed.urlQuery) {
+      let page = ed.urlQuery.page;
       if (page && page != "1") {
         isOnFirstPage = false;
       }
     }
-    if (isOnFirstPage && data.numResultsOnPage == 1) {
-      return data.url;
+    if (isOnFirstPage && ed.numResultsOnPage == 1) {
+      return ed.url;
     }
   }
 
   // if we get here we want to generate a full search URL (either "created" or "short")
-  return createCitationUrl(data, gd, options);
+  return createCitationUrl(ed, gd, options);
   */
 }
 
@@ -428,7 +428,7 @@ function removeUnwantedKeysForDataString(keys, recordData) {
   return newKeys;
 }
 
-function buildValuationRollDataString(data, gd, dataStyle, builder) {
+function buildValuationRollDataString(ed, gd, dataStyle, builder) {
   let dataString = gd.inferFullName();
   let date = gd.inferEventDate();
   if (date) {
@@ -436,8 +436,8 @@ function buildValuationRollDataString(data, gd, dataStyle, builder) {
   }
   let parish = gd.inferFullEventPlace();
   let place = "";
-  if (data.recordData) {
-    let placeString = data.recordData["Place"];
+  if (ed.recordData) {
+    let placeString = ed.recordData["Place"];
     if (placeString) {
       place = WTS_String.toInitialCapsEachWord(placeString);
     }
@@ -453,14 +453,14 @@ function buildValuationRollDataString(data, gd, dataStyle, builder) {
   return dataString;
 }
 
-function buildDataString(data, gd, dataStyle, builder) {
+function buildDataString(ed, gd, dataStyle, builder) {
   let options = builder.options;
 
   let dataString = "";
 
   if (dataStyle == "string") {
     if (gd.recordType == RT.ValuationRoll) {
-      let dataString = buildValuationRollDataString(data, gd, dataStyle, builder);
+      let dataString = buildValuationRollDataString(ed, gd, dataStyle, builder);
       if (dataString) {
         return dataString;
       }
@@ -476,13 +476,13 @@ function buildDataString(data, gd, dataStyle, builder) {
     }
   }
 
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
 
   dataString = "";
 
   // I don't think this will ever happen
   if (!recordData) {
-    dataString = data.heading + " in " + data.place;
+    dataString = ed.heading + " in " + ed.place;
     return dataString;
   }
 
@@ -491,7 +491,7 @@ function buildDataString(data, gd, dataStyle, builder) {
   return dataString;
 }
 
-function getAdditionalInfo(data, gd, builder) {
+function getAdditionalInfo(ed, gd, builder) {
   let citationType = builder.type;
   let options = builder.options;
 
@@ -507,12 +507,12 @@ function getAdditionalInfo(data, gd, builder) {
   }
 
   if (dataStyle == "string" || dataStyle == "list") {
-    return buildDataString(data, gd, dataStyle, builder);
+    return buildDataString(ed, gd, dataStyle, builder);
   }
 
   // style must be table
   var result = "";
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
   if (recordData) {
     let keys = Object.keys(recordData);
 
@@ -538,8 +538,8 @@ function getAdditionalInfo(data, gd, builder) {
   return result;
 }
 
-function buildSourceReference(data, gd, builder) {
-  if (!data.recordData) {
+function buildSourceReference(ed, gd, builder) {
+  if (!ed.recordData) {
     return;
   }
 
@@ -581,16 +581,16 @@ function buildSourceReference(data, gd, builder) {
     builder.addSourceReferenceField(title, value);
   }
 
-  for (let key in data.recordData) {
+  for (let key in ed.recordData) {
     if (isKeyWantedInReference(key)) {
-      addTerm(key, data.recordData[key]);
+      addTerm(key, ed.recordData[key]);
     }
   }
 
   if (!builder.sourceReference) {
-    for (let key in data.recordData) {
+    for (let key in ed.recordData) {
       if (isBackupKeyWantedInReference(key)) {
-        addTerm(key, data.recordData[key]);
+        addTerm(key, ed.recordData[key]);
       }
     }
   }
@@ -613,13 +613,13 @@ function buildSourceReference(data, gd, builder) {
   //console.log("sourceReference is: " + builder.sourceReference);
 }
 
-function buildSourceTitle(data, options) {
-  let recordType = getRecordType(data);
+function buildSourceTitle(ed, options) {
+  let recordType = getRecordType(ed);
 
   // fallback is the pageHeader but it is a bit ugly. e.g.:
   // Church registers - Other Church Registers Baptisms
   // So we use a title from the record type if available.
-  let sourceTitle = data.pageHeader;
+  let sourceTitle = ed.pageHeader;
   let nrsTitle = ScotpRecordType.getNrsTitle(recordType);
   if (nrsTitle && options.citation_scotp_databaseTitle == "nrs") {
     sourceTitle = nrsTitle;
@@ -638,30 +638,30 @@ function buildSourceTitle(data, options) {
       break;
 
     case "census":
-      sourceTitle = "Scotland Census, " + data.recordData["Year"];
+      sourceTitle = "Scotland Census, " + ed.recordData["Year"];
       break;
 
     case "census_lds":
-      sourceTitle = "Scotland Census, " + data.recordData["Year"] + " (LDS)";
+      sourceTitle = "Scotland Census, " + ed.recordData["Year"] + " (LDS)";
       break;
   }
 
   return sourceTitle;
 }
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   let options = builder.getOptions();
 
   // this may need changing for census - modify and add year
-  builder.sourceTitle = buildSourceTitle(data, options);
+  builder.sourceTitle = buildSourceTitle(ed, options);
 
   // Note we put the "National Records of Scotland" in the websiteCreatorOwner, so it doesn't move
   // with source reference depending on options
   builder.websiteCreatorOwner = "National Records of Scotland";
 
-  buildSourceReference(data, gd, builder);
+  buildSourceReference(ed, gd, builder);
 
-  var url = buildCitationUrl(data, gd, options);
+  var url = buildCitationUrl(ed, gd, options);
 
   if (options.citation_scotp_urlStyle == "visible") {
     builder.recordLinkOrTemplate = url;
@@ -671,7 +671,7 @@ function buildCoreCitation(data, gd, builder) {
     builder.recordLinkOrTemplate = recordLink;
   }
 
-  let additionalInfo = getAdditionalInfo(data, gd, builder);
+  let additionalInfo = getAdditionalInfo(ed, gd, builder);
   if (additionalInfo) {
     builder.dataString = additionalInfo;
   }

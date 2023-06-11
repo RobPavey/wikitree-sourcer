@@ -83,49 +83,49 @@ import { GroUriBuilder } from "./gro_uri_builder.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { getUkbmdDistrictPageUrl } from "./gro_to_ukbmd.mjs";
 
-function buildGroSearchUrl(data) {
+function buildGroSearchUrl(ed) {
   var builder = new GroUriBuilder();
 
-  if (data.eventType == "birth") {
+  if (ed.eventType == "birth") {
     builder.addIndex("EW_Birth");
-    builder.addYear(data.eventYear);
+    builder.addYear(ed.eventYear);
     builder.addYearRange("0");
-    builder.addSurname(data.lastName);
-    if (data.mothersMaidenName != undefined && data.mothersMaidenName != "" && data.mothersMaidenName != "-") {
-      builder.addMothersSurname(data.mothersMaidenName);
+    builder.addSurname(ed.lastName);
+    if (ed.mothersMaidenName != undefined && ed.mothersMaidenName != "" && ed.mothersMaidenName != "-") {
+      builder.addMothersSurname(ed.mothersMaidenName);
     }
   } else {
     builder.addIndex("EW_Death");
-    builder.addYear(data.eventYear);
+    builder.addYear(ed.eventYear);
     builder.addYearRange("0");
-    builder.addSurname(data.lastName);
-    if (data.recordType == "older") {
-      builder.addAge(data.ageAtDeath);
+    builder.addSurname(ed.lastName);
+    if (ed.recordType == "older") {
+      builder.addAge(ed.ageAtDeath);
       builder.addAgeRange("0");
     }
   }
 
-  builder.addFirstForename(data.firstName);
-  builder.addSecondForename(WTS_String.getFirstWord(data.middleNames));
+  builder.addFirstForename(ed.firstName);
+  builder.addSecondForename(WTS_String.getFirstWord(ed.middleNames));
 
-  if (data.personGender == "male") {
+  if (ed.personGender == "male") {
     builder.addGenderMale();
   } else {
     builder.addGenderFemale();
   }
 
-  if (data.recordType == "older") {
-    builder.addQuarter(data.eventQuarterLetter);
+  if (ed.recordType == "older") {
+    builder.addQuarter(ed.eventQuarterLetter);
   } else {
     const quarterToMonthValue = ["13", "14", "15", "16"];
-    builder.addMonth(quarterToMonthValue[data.eventQuarter - 1]);
+    builder.addMonth(quarterToMonthValue[ed.eventQuarter - 1]);
   }
-  builder.addDistrict(data.registrationDistrict);
-  if (data.referenceVolume != undefined && data.referenceVolume != "") {
-    builder.addVolume(data.referenceVolume);
-    builder.addPage(data.referencePage);
-  } else if (data.referenceRegister != undefined && data.referenceRegister != "") {
-    builder.addRegister(data.referenceRegister);
+  builder.addDistrict(ed.registrationDistrict);
+  if (ed.referenceVolume != undefined && ed.referenceVolume != "") {
+    builder.addVolume(ed.referenceVolume);
+    builder.addPage(ed.referencePage);
+  } else if (ed.referenceRegister != undefined && ed.referenceRegister != "") {
+    builder.addRegister(ed.referenceRegister);
   }
 
   const url = builder.getUri();
@@ -133,13 +133,13 @@ function buildGroSearchUrl(data) {
   return url;
 }
 
-function buildGroUrl(data, builder) {
+function buildGroUrl(ed, builder) {
   let options = builder.getOptions();
 
   if (options.citation_gro_linkStyle == "search") {
-    return buildGroSearchUrl(data);
+    return buildGroSearchUrl(ed);
   } else if (options.citation_gro_linkStyle == "index") {
-    if (data.eventType == "birth") {
+    if (ed.eventType == "birth") {
       return "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth";
     } else {
       return "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death";
@@ -149,12 +149,12 @@ function buildGroUrl(data, builder) {
   }
 }
 
-function getQuarterName(data) {
+function getQuarterName(ed) {
   const quarterNames = ["Jan-Feb-Mar", "Apr-May-Jun", "Jul-Aug-Sep", "Oct-Nov-Dec"];
-  if (data.eventQuarter != undefined && data.eventQuarter >= 1 && data.eventQuarter <= 4) {
-    return quarterNames[data.eventQuarter - 1];
-  } else if (data.eventQuarterLetter != undefined) {
-    return data.eventQuarterLetter + " Quarter";
+  if (ed.eventQuarter != undefined && ed.eventQuarter >= 1 && ed.eventQuarter <= 4) {
+    return quarterNames[ed.eventQuarter - 1];
+  } else if (ed.eventQuarterLetter != undefined) {
+    return ed.eventQuarterLetter + " Quarter";
   }
 
   return "";
@@ -174,27 +174,27 @@ function getCorrectlyCasedNames(name, options, isName = false) {
   return name;
 }
 
-function getFirstName(data, options) {
-  return getCorrectlyCasedName(data.firstName, options);
+function getFirstName(ed, options) {
+  return getCorrectlyCasedName(ed.firstName, options);
 }
 
-function getLastName(data, options) {
-  return getCorrectlyCasedName(data.lastName, options);
+function getLastName(ed, options) {
+  return getCorrectlyCasedName(ed.lastName, options);
 }
 
-function getMiddleNames(data, options) {
-  return getCorrectlyCasedNames(data.middleNames, options, true);
+function getMiddleNames(ed, options) {
+  return getCorrectlyCasedNames(ed.middleNames, options, true);
 }
 
-function getMothersMaidenName(data, options) {
-  return getCorrectlyCasedName(data.mothersMaidenName, options);
+function getMothersMaidenName(ed, options) {
+  return getCorrectlyCasedName(ed.mothersMaidenName, options);
 }
 
-function getRegistrationDistrict(data, options) {
-  return getCorrectlyCasedNames(data.registrationDistrict, options);
+function getRegistrationDistrict(ed, options) {
+  return getCorrectlyCasedNames(ed.registrationDistrict, options);
 }
 
-async function buildCoreCitation(data, runDate, builder) {
+async function buildCoreCitation(ed, runDate, builder) {
   // This is what the England Project Orphan Trail Citation Templates look like (except they have no newlines):
   //
   // Birth
@@ -215,11 +215,11 @@ async function buildCoreCitation(data, runDate, builder) {
 
   builder.sourceTitle = "England & Wales General Register Office";
 
-  var groUrl = buildGroUrl(data, builder);
+  var groUrl = buildGroUrl(ed, builder);
 
   if (options.citation_gro_linkStyle == "url_content") {
     builder.sourceReference = "GRO Online Indexes - ";
-    if (data.eventType == "birth") {
+    if (ed.eventType == "birth") {
       builder.sourceReference += "Birth";
     } else {
       builder.sourceReference += "Death";
@@ -228,7 +228,7 @@ async function buildCoreCitation(data, runDate, builder) {
   } else {
     let recordLink = "[" + groUrl + " GRO Online Indexes - ";
 
-    if (data.eventType == "birth") {
+    if (ed.eventType == "birth") {
       recordLink += "Birth";
     } else {
       recordLink += "Death";
@@ -237,26 +237,26 @@ async function buildCoreCitation(data, runDate, builder) {
     builder.recordLinkOrTemplate = recordLink;
   }
 
-  let dataString = getLastName(data, options) + ", " + getFirstName(data, options);
-  if (data.middleNames != undefined && data.middleNames != "") {
-    dataString += " " + getMiddleNames(data, options);
+  let dataString = getLastName(ed, options) + ", " + getFirstName(ed, options);
+  if (ed.middleNames != undefined && ed.middleNames != "") {
+    dataString += " " + getMiddleNames(ed, options);
   }
-  if (data.eventType == "birth") {
-    if (data.mothersMaidenName != undefined && data.mothersMaidenName != "") {
+  if (ed.eventType == "birth") {
+    if (ed.mothersMaidenName != undefined && ed.mothersMaidenName != "") {
       dataString += " (Mother's maiden name: ";
-      var mmn = getMothersMaidenName(data, options);
+      var mmn = getMothersMaidenName(ed, options);
       if (mmn == undefined || mmn == "") {
         mmn = "-";
       }
       dataString += mmn + ")";
     }
   } else {
-    if (data.ageAtDeath) {
+    if (ed.ageAtDeath) {
       dataString += " (Age at death: ";
-      dataString += data.ageAtDeath + ")";
-    } else if (data.birthYear) {
+      dataString += ed.ageAtDeath + ")";
+    } else if (ed.birthYear) {
       dataString += " (Year of birth: ";
-      dataString += data.birthYear + ")";
+      dataString += ed.birthYear + ")";
     }
   }
   dataString += ".";
@@ -276,12 +276,12 @@ async function buildCoreCitation(data, runDate, builder) {
     dataString += "GRO Reference: ";
   }
 
-  dataString += data.eventYear + " " + getQuarterName(data) + " in ";
+  dataString += ed.eventYear + " " + getQuarterName(ed) + " in ";
 
-  let districtNameForOutput = getRegistrationDistrict(data, options);
+  let districtNameForOutput = getRegistrationDistrict(ed, options);
   if (districtNameForOutput) {
     if (options.citation_gro_useDistrictUrl) {
-      let url = getUkbmdDistrictPageUrl(data.registrationDistrict);
+      let url = getUkbmdDistrictPageUrl(ed.registrationDistrict);
       if (url) {
         dataString += "[" + url + " " + districtNameForOutput + "]";
       } else {
@@ -294,21 +294,21 @@ async function buildCoreCitation(data, runDate, builder) {
     dataString += "unspecified district";
   }
 
-  if (data.registrationDistrictCode != undefined && data.registrationDistrictCode != "") {
-    dataString += " (" + data.registrationDistrictCode + ")";
+  if (ed.registrationDistrictCode != undefined && ed.registrationDistrictCode != "") {
+    dataString += " (" + ed.registrationDistrictCode + ")";
   }
 
-  if (data.referenceVolume != undefined && data.referenceVolume != "") {
-    dataString += " Volume " + data.referenceVolume;
-    if (data.referencePage != undefined && data.referencePage != "") {
-      dataString += " Page " + data.referencePage;
+  if (ed.referenceVolume != undefined && ed.referenceVolume != "") {
+    dataString += " Volume " + ed.referenceVolume;
+    if (ed.referencePage != undefined && ed.referencePage != "") {
+      dataString += " Page " + ed.referencePage;
     }
-  } else if (data.referenceRegister != undefined && data.referenceRegister != "") {
-    dataString += " Reg " + data.referenceRegister;
+  } else if (ed.referenceRegister != undefined && ed.referenceRegister != "") {
+    dataString += " Reg " + ed.referenceRegister;
   }
 
-  if (data.entryNumber != undefined && data.entryNumber != "") {
-    dataString += " Entry Number " + data.entryNumber;
+  if (ed.entryNumber != undefined && ed.entryNumber != "") {
+    dataString += " Entry Number " + ed.entryNumber;
   }
 
   dataString += ".";
@@ -316,8 +316,8 @@ async function buildCoreCitation(data, runDate, builder) {
   builder.dataString = dataString;
 }
 
-function getRefTitle(data, gd) {
-  return data.eventType == "birth" ? "Birth Registration" : "Death Registration";
+function getRefTitle(ed, gd) {
+  return ed.eventType == "birth" ? "Birth Registration" : "Death Registration";
 }
 
 function buildCitation(input) {

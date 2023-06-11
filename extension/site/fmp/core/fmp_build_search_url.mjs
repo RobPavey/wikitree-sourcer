@@ -66,7 +66,7 @@ function buildTreeSearchUrl(buildUrlInput) {
   // &rel2=fn:amelia%20elizabeth~ln:littlemore~yob:1849~ybo:2~r:p~g:f~
   // &rel3=fn:emmeline%20may~ln:brain~r:sp~
   // &tsid=1999
-  let data = buildUrlInput.generalizedData;
+  let gd = buildUrlInput.generalizedData;
   let options = buildUrlInput.options;
 
   let domain = options.search_fmp_domain;
@@ -99,16 +99,16 @@ function buildTreeSearchUrl(buildUrlInput) {
 
   // root person
   url += "root=";
-  addField("fn", data.inferForenames());
-  addField("ln", data.inferLastName());
-  addField("g", encodeGender(data.personGender));
-  addField("yob", data.inferBirthYear());
-  addField("pob", data.inferBirthPlace());
+  addField("fn", gd.inferForenames());
+  addField("ln", gd.inferLastName());
+  addField("g", encodeGender(gd.personGender));
+  addField("yob", gd.inferBirthYear());
+  addField("pob", gd.inferBirthPlace());
 
   // parents
-  if (data.parents) {
-    if (data.parents.father) {
-      let father = data.parents.father;
+  if (gd.parents) {
+    if (gd.parents.father) {
+      let father = gd.parents.father;
       if (father.name) {
         addRelative();
         addField("fn", father.name.inferForenames());
@@ -117,8 +117,8 @@ function buildTreeSearchUrl(buildUrlInput) {
         addField("g", "m");
       }
     }
-    if (data.parents.mother) {
-      let mother = data.parents.mother;
+    if (gd.parents.mother) {
+      let mother = gd.parents.mother;
       if (mother.name) {
         addRelative();
         addField("fn", mother.name.inferForenames());
@@ -130,8 +130,8 @@ function buildTreeSearchUrl(buildUrlInput) {
   }
 
   // spouses
-  if (data.spouses) {
-    for (let spouse of data.spouses) {
+  if (gd.spouses) {
+    for (let spouse of gd.spouses) {
       if (spouse.name) {
         addRelative();
         addField("fn", spouse.name.inferForenames());
@@ -149,11 +149,11 @@ function buildTreeSearchUrl(buildUrlInput) {
 }
 
 function buildSearchUrl(buildUrlInput) {
-  let data = buildUrlInput.generalizedData;
+  let gd = buildUrlInput.generalizedData;
   let options = buildUrlInput.options;
 
   //console.log("buildSearchUrl, gd is:");
-  //console.log(data);
+  //console.log(gd);
 
   let sameCollection = false;
   let collection = undefined;
@@ -166,13 +166,13 @@ function buildSearchUrl(buildUrlInput) {
     // tree search uses a different syntax
     return buildTreeSearchUrl(buildUrlInput);
   } else if (buildUrlInput.typeOfSearch == "SameCollection") {
-    if (data.collectionData && data.collectionData.id) {
+    if (gd.collectionData && gd.collectionData.id) {
       let fmpCollectionId = RC.mapCollectionId(
-        data.sourceOfData,
-        data.collectionData.id,
+        gd.sourceOfData,
+        gd.collectionData.id,
         "fmp",
-        data.inferEventCountry(),
-        data.inferEventYear()
+        gd.inferEventCountry(),
+        gd.inferEventYear()
       );
       if (fmpCollectionId) {
         collection = RC.findCollection("fmp", fmpCollectionId);
@@ -206,15 +206,15 @@ function buildSearchUrl(buildUrlInput) {
   builder.addCollection(subcategory);
   builder.addDataSetName(dataSetName);
 
-  builder.addGender(data.personGender);
+  builder.addGender(gd.personGender);
 
   let hasAnyName = false;
-  let lastName = data.inferLastNameGivenParametersAndCollection(parameters, collection);
+  let lastName = gd.inferLastNameGivenParametersAndCollection(parameters, collection);
   if (lastName) {
     hasAnyName = true;
   }
 
-  let forenames = data.inferForenames();
+  let forenames = gd.inferForenames();
   if (forenames) {
     hasAnyName = true;
   }
@@ -226,63 +226,63 @@ function buildSearchUrl(buildUrlInput) {
   if (collection && collection.isBirth) {
     // if we are searching a birth collection then the event date
     // is the date of birth and we don't want another date
-    builder.addEventYear(data.inferBirthYear());
+    builder.addEventYear(gd.inferBirthYear());
   } else {
-    builder.addBirthYear(data.inferBirthYear());
+    builder.addBirthYear(gd.inferBirthYear());
   }
 
   if (collection && collection.isDeath) {
     // if we are searching a death collection then the event date
     // is the date of death and we don't want another date
-    builder.addEventYear(data.inferDeathYear());
+    builder.addEventYear(gd.inferDeathYear());
   } else {
-    builder.addDeathYear(data.inferDeathYear());
+    builder.addDeathYear(gd.inferDeathYear());
   }
 
   if (sameCollection) {
     if (!collection.dates || !collection.dates.year) {
       // we don't want to add a date when searching collection that is already for a fixed date
-      builder.addEventYear(data.inferEventYear());
+      builder.addEventYear(gd.inferEventYear());
     }
-    builder.addEventQuarter(data.inferEventQuarter());
+    builder.addEventQuarter(gd.inferEventQuarter());
   }
 
   // set place
   let eventPlace = undefined;
   if (sameCollection) {
-    eventPlace = data.inferEventPlace();
+    eventPlace = gd.inferEventPlace();
   } else if (collection) {
     if (collection.isBirth) {
-      eventPlace = data.inferBirthPlace();
+      eventPlace = gd.inferBirthPlace();
     } else if (collection.isDeath) {
-      eventPlace = data.inferDeathPlace();
+      eventPlace = gd.inferDeathPlace();
     }
   } else if (parameters) {
     if (subcategory == "parish+baptisms") {
-      eventPlace = data.inferBirthPlace();
+      eventPlace = gd.inferBirthPlace();
     } else if (subcategory == "parish+burials") {
-      eventPlace = data.inferDeathPlace();
+      eventPlace = gd.inferDeathPlace();
     }
-  } else if (data.sourceType == "profile") {
-    eventPlace = data.inferGeneralPlace();
+  } else if (gd.sourceType == "profile") {
+    eventPlace = gd.inferGeneralPlace();
   }
 
   if (!eventPlace) {
-    eventPlace = data.inferEventPlace();
+    eventPlace = gd.inferEventPlace();
   }
   // for a general search using the birth or death place as a location may be OK
   // but when searcg a collection then it rules out too much. For example someone may not be living near
   // where they were born or died
   if (!eventPlace && !collection) {
-    eventPlace = data.inferBirthPlace();
+    eventPlace = gd.inferBirthPlace();
     if (!eventPlace) {
-      eventPlace = data.inferDeathPlace();
+      eventPlace = gd.inferDeathPlace();
     }
   }
   builder.addEventPlace(eventPlace);
 
   // this only adds birth place if there is a collection and collection has a setting for it
-  let birthPlace = data.inferBirthPlace();
+  let birthPlace = gd.inferBirthPlace();
   birthPlace = cleanNamePlaceForSearch(birthPlace);
   builder.addBirthPlace(birthPlace);
 
@@ -293,49 +293,49 @@ function buildSearchUrl(buildUrlInput) {
       isBaptism = true;
     }
 
-    if (data.parents) {
-      if (data.parents.father && (!parameters || parameters.father)) {
-        let fatherForeNames = data.parents.father.name.inferForenames();
-        let fatherLastNames = data.inferPersonLastNames(data.parents.father);
+    if (gd.parents) {
+      if (gd.parents.father && (!parameters || parameters.father)) {
+        let fatherForeNames = gd.parents.father.name.inferForenames();
+        let fatherLastNames = gd.inferPersonLastNames(gd.parents.father);
         if (isBaptism) {
           fatherLastNames = undefined; // giving the father's last name on baptism causes search to fail
         }
         builder.addFather(fatherForeNames, fatherLastNames);
       }
-      if (data.parents.mother && (!parameters || parameters.mother)) {
-        let motherForeNames = data.parents.mother.name.inferForenames();
+      if (gd.parents.mother && (!parameters || parameters.mother)) {
+        let motherForeNames = gd.parents.mother.name.inferForenames();
         let motherLastNames = undefined; // we don't want multiple names
         builder.addMother(motherForeNames, motherLastNames);
       }
     }
 
     // sometimes we just have the mother's maiden name and no mother
-    if (!data.parents || !data.parents.mother) {
-      if (data.mothersMaidenName && (!parameters || parameters.mother)) {
-        builder.addMother("", data.mothersMaidenName);
+    if (!gd.parents || !gd.parents.mother) {
+      if (gd.mothersMaidenName && (!parameters || parameters.mother)) {
+        builder.addMother("", gd.mothersMaidenName);
       }
     }
   }
 
   // spouses/marriages. Only add if searching for same record/collection or with parameters
   if (parameters || sameCollection) {
-    if (data.spouses && data.spouses.length > 0) {
+    if (gd.spouses && gd.spouses.length > 0) {
       let spouse = undefined;
       if (parameters) {
-        if (parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
-          spouse = data.spouses[parameters.spouseIndex];
+        if (parameters.spouseIndex != -1 && parameters.spouseIndex < gd.spouses.length) {
+          spouse = gd.spouses[parameters.spouseIndex];
         }
       } else {
-        spouse = data.spouses[0];
+        spouse = gd.spouses[0];
       }
 
       if (spouse) {
         if (spouse.name) {
           let spouseForeNames = spouse.name.inferForenames();
-          let spouseLastNames = data.inferPersonLastNames(spouse);
+          let spouseLastNames = gd.inferPersonLastNames(spouse);
           // if coming from somewhere with more than one last name (basically a WT profile)
           // then, depending on the type of search we may be able to chose one
-          if (data.sourceType == "profile") {
+          if (gd.sourceType == "profile") {
             if (parameters && parameters.subCategory == "parish+marriages") {
               // it is a marriage, we want the name before the marriage, we don't have enough
               // info to know that. Try using lastNameAtBirth
@@ -370,21 +370,21 @@ function buildSearchUrl(buildUrlInput) {
 
   if (collection) {
     // we are searching a collection that might have extra fields
-    if (data.recordType == RT.Census) {
+    if (gd.recordType == RT.Census) {
       // Note that the registration district for 1939 register doesn't work
       // Coming from Ancestry it would put something like 319/4 in the
       // "Borough / District" field on FMP which makes the search fail
       if (collection.wtsId != "EnglandAndWales1939Register") {
-        builder.addRegistrationDistrict(data.registrationDistrict);
+        builder.addRegistrationDistrict(gd.registrationDistrict);
       }
     } else {
-      builder.addDistrict(data.registrationDistrict);
+      builder.addDistrict(gd.registrationDistrict);
     }
 
     // certain census searches include birth county
     if (collection.title.toLowerCase().includes("census")) {
       if (collection.country == "United Kingdom" || collection.country == "England" || collection.country == "Wales") {
-        builder.addBirthCounty(data.inferBirthCounty());
+        builder.addBirthCounty(gd.inferBirthCounty());
       }
     }
   }
@@ -392,22 +392,22 @@ function buildSearchUrl(buildUrlInput) {
   if (sameCollection) {
     // In theory we could add volume and page. But it seems like that could be collection specific.
 
-    if (data.collectionData) {
-      builder.addVolume(data.collectionData.volume);
-      builder.addPage(data.collectionData.page);
-      builder.addPiece(data.collectionData.piece);
-      builder.addFolio(data.collectionData.folio);
-      builder.addParish(data.collectionData.parish);
+    if (gd.collectionData) {
+      builder.addVolume(gd.collectionData.volume);
+      builder.addPage(gd.collectionData.page);
+      builder.addPiece(gd.collectionData.piece);
+      builder.addFolio(gd.collectionData.folio);
+      builder.addParish(gd.collectionData.parish);
     }
 
-    builder.addMaritalStatus(data.maritalStatus);
-    builder.addRelationship(data.relationshipToHead);
+    builder.addMaritalStatus(gd.maritalStatus);
+    builder.addRelationship(gd.relationshipToHead);
   }
 
   // restrict search by region if it makes sense
   // Note, this can prevent an exact dataset search from occuring
   if (!dataSetName) {
-    let countryArray = data.inferCountries();
+    let countryArray = gd.inferCountries();
     if (countryArray.length == 1) {
       let country = countryArray[0];
       let sourceCountry = FmpData.getCountryNameFromStdCountry(country);

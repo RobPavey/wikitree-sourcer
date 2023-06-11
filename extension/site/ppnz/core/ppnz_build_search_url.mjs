@@ -43,18 +43,18 @@ function constrainYears(dates) {
 }
 
 function buildSearchUrl(buildUrlInput) {
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   let parameters = buildUrlInput.searchParameters;
   const options = buildUrlInput.options;
 
   if (!parameters) {
     parameters = {};
-    setDefaultTextQueryParameters(parameters, data, options);
+    setDefaultTextQueryParameters(parameters, gd, options);
   }
 
   var builder = new PpnzUriBuilder();
 
-  const dateRange = data.inferPossibleLifeYearRange();
+  const dateRange = gd.inferPossibleLifeYearRange();
   if (options.search_ppnz_addToDateRange != "none") {
     // although the values are ints in options sometimes they come through as strings in browser
     let offsetToRange = Number(options.search_ppnz_addToDateRange);
@@ -71,7 +71,7 @@ function buildSearchUrl(buildUrlInput) {
   // constrain years to the range covered by Ppnz
   constrainYears(dateRange);
 
-  let queryString = buildQueryString("ppnz", data, parameters, options);
+  let queryString = buildQueryString("ppnz", gd, parameters, options);
   builder.addQueryString(queryString);
 
   // set the date parameters

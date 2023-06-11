@@ -25,10 +25,10 @@ SOFTWARE.
 import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
-// This function generalizes the data extracted web page.
+// This function generalizes the data (ed) extracted web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
@@ -36,7 +36,7 @@ function generalizeData(input) {
 
   let collectionId = undefined;
 
-  if (!data.success) {
+  if (!ed.success) {
     return result; //the extract failed
   }
 
@@ -45,41 +45,41 @@ function generalizeData(input) {
   // If no burial location perhaps it should be a death?
   result.recordType = RT.Memorial;
 
-  result.setEventDate(data.deathDate);
+  result.setEventDate(ed.deathDate);
 
-  result.setEventPlace(data.cemeteryFullAddress);
+  result.setEventPlace(ed.cemeteryFullAddress);
 
   if (result.eventPlace) {
-    result.eventPlace.streetAddress = data.cemeteryName;
+    result.eventPlace.streetAddress = ed.cemeteryName;
   }
-  if (data.fullName) {
+  if (ed.fullName) {
     // Check if maiden name included (within brackets)
-    if (/^(.+)(\()([\s\S]+)(\))$/.test(data.fullName)) {
-      const nameParts = /^(.+)(\()([\s\S]+)(\))$/.exec(data.fullName);
+    if (/^(.+)(\()([\s\S]+)(\))$/.test(ed.fullName)) {
+      const nameParts = /^(.+)(\()([\s\S]+)(\))$/.exec(ed.fullName);
       result.setFullName(nameParts[1]);
       result.lastNameAtBirth = nameParts[3];
     } else {
-      result.setFullName(data.fullName);
+      result.setFullName(ed.fullName);
     }
   }
 
-  if (data.lastName) {
-    result.name.lastName = data.lastName;
+  if (ed.lastName) {
+    result.name.lastName = ed.lastName;
   }
 
-  if (data.givenName) {
-    result.name.forenames = data.givenName;
+  if (ed.givenName) {
+    result.name.forenames = ed.givenName;
   }
 
   result.lastNameAtDeath = result.inferLastName();
 
-  if (data.ageAtDeath) {
-    result.ageAtDeath = data.ageAtDeath;
+  if (ed.ageAtDeath) {
+    result.ageAtDeath = ed.ageAtDeath;
   }
 
-  result.setBirthDate(data.birthDate);
+  result.setBirthDate(ed.birthDate);
 
-  result.setDeathDate(data.deathDate);
+  result.setDeathDate(ed.deathDate);
 
   // should we use a collection to allow search for same record on Ancestry?
 

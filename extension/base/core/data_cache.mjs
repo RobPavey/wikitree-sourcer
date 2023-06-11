@@ -25,16 +25,16 @@ SOFTWARE.
 import { GeneralizedData } from "./generalize_data_utils.mjs";
 
 const DataCache = {
-  getLcFirstAndLastNameFromGeneralizedData: function (data, useLnab) {
+  getLcFirstAndLastNameFromGeneralizedData: function (gd, useLnab) {
     let firstNameMatch = undefined;
-    let firstName = data.inferFirstName();
+    let firstName = gd.inferFirstName();
     if (firstName) {
       firstName = firstName.toLowerCase();
     }
 
-    let lastName = useLnab ? data.lastNameAtBirth : data.lastNameAtDeath;
-    if (!lastName && data.name) {
-      lastName = data.name.inferLastName();
+    let lastName = useLnab ? gd.lastNameAtBirth : gd.lastNameAtDeath;
+    if (!lastName && gd.name) {
+      lastName = gd.name.inferLastName();
     }
 
     if (lastName) {
@@ -53,8 +53,8 @@ const DataCache = {
       let names = DataCache.getLcFirstAndLastNameFromGeneralizedData(generalizedData, useLnab);
 
       for (let entry of dataCache.wikiTreeProfileCache.items) {
-        let data = GeneralizedData.createFromPlainObject(entry.generalizedData);
-        let dataNames = DataCache.getLcFirstAndLastNameFromGeneralizedData(data, useLnab);
+        let gd = GeneralizedData.createFromPlainObject(entry.generalizedData);
+        let dataNames = DataCache.getLcFirstAndLastNameFromGeneralizedData(gd, useLnab);
 
         if (dataNames.firstName == names.firstName) {
           if (dataNames.lastName == names.lastName) {

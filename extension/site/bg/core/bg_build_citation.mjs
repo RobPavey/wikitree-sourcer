@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   // Example citation:
   // Burial: Billion Graves.
   // Citing Oak Grove Cemetery, Hillsdale, Hillsdale County, Michigan, USA
@@ -35,49 +35,49 @@ function buildCoreCitation(data, gd, builder) {
 
   let sourceTitle = "Billion Graves";
 
-  builder.databaseHasImages = data.hasImage;
+  builder.databaseHasImages = ed.hasImage;
 
   builder.sourceTitle = sourceTitle;
 
-  let recordLink = "[" + data.url + " BillionGraves memorial]";
+  let recordLink = "[" + ed.url + " BillionGraves memorial]";
   builder.recordLinkOrTemplate = recordLink;
 
   // The name string can contain brackets
-  let nameString = data.fullName;
-  if (/\([\s\S]+\)/.test(data.fullName)) {
+  let nameString = ed.fullName;
+  if (/\([\s\S]+\)/.test(ed.fullName)) {
     if (options.citation_bg_bracketsRoundName === "omit") {
-      nameString = data.fullName.replace(/(.+)(\([\s\S]+\))/, "$1");
+      nameString = ed.fullName.replace(/(.+)(\([\s\S]+\))/, "$1");
     } else if (options.citation_bg_bracketsRoundName === "insert") {
-      let marriedName = data.fullName.replace(/(.+)(\()([\s\S]+)(\))/, "$1").trim();
-      let bracketName = data.fullName.replace(/(.+)(\([\s\S]+\))/, "$2").trim();
+      let marriedName = ed.fullName.replace(/(.+)(\()([\s\S]+)(\))/, "$1").trim();
+      let bracketName = ed.fullName.replace(/(.+)(\([\s\S]+\))/, "$2").trim();
       nameString = marriedName.replace(/(.+)(\s.+)$/, "$1 " + bracketName + "$2");
     }
   }
 
-  if (data.cemeteryName && data.cemeteryFullAddress) {
-    builder.sourceReference += data.cemeteryName + ", " + data.cemeteryFullAddress;
+  if (ed.cemeteryName && ed.cemeteryFullAddress) {
+    builder.sourceReference += ed.cemeteryName + ", " + ed.cemeteryFullAddress;
   }
 
   let dataString = "Memorial page for " + nameString;
-  if (data.deathDate && data.birthDate) {
-    dataString += " (" + data.birthDate + "-" + data.deathDate + ")";
-  } else if (data.birthDate) {
-    dataString += " (b " + data.birthDate + ")";
-  } else if (data.deathDate) {
-    dataString += " (d " + data.deathDate + ")";
+  if (ed.deathDate && ed.birthDate) {
+    dataString += " (" + ed.birthDate + "-" + ed.deathDate + ")";
+  } else if (ed.birthDate) {
+    dataString += " (b " + ed.birthDate + ")";
+  } else if (ed.deathDate) {
+    dataString += " (d " + ed.deathDate + ")";
   }
   dataString += "; ";
 
   let transcriberPhotographerAdded = false;
-  if (options.citation_bg_includeTranscriber && data.transcriber) {
-    dataString += "Transcribed by " + data.transcriber;
+  if (options.citation_bg_includeTranscriber && ed.transcriber) {
+    dataString += "Transcribed by " + ed.transcriber;
     transcriberPhotographerAdded = true;
   }
-  if (options.citation_bg_includePhotographer && data.photographer) {
+  if (options.citation_bg_includePhotographer && ed.photographer) {
     if (dataString.length > 0) {
       dataString += "; ";
     }
-    dataString += "Photographed by " + data.photographer;
+    dataString += "Photographed by " + ed.photographer;
     transcriberPhotographerAdded = true;
   }
 
@@ -85,9 +85,9 @@ function buildCoreCitation(data, gd, builder) {
     dataString += ".";
   }
 
-  if (options.citation_bg_includeRelatives && data.relations) {
+  if (options.citation_bg_includeRelatives && ed.relations) {
     let relativeString = "<br/>Also on memorial :";
-    data.relations.forEach((relative) => {
+    ed.relations.forEach((relative) => {
       relativeString += " " + relative.name;
       if (relative.birthDate) {
         relativeString += " b " + relative.birthDate;
@@ -101,7 +101,7 @@ function buildCoreCitation(data, gd, builder) {
     dataString += relativeString;
   }
 
-  if (data.epitaph && options.citation_bg_includeEpitaph) {
+  if (ed.epitaph && options.citation_bg_includeEpitaph) {
     if (options.citation_general_addBreaksWithinBody) {
       dataString += "<br/>";
     } else {
@@ -110,7 +110,7 @@ function buildCoreCitation(data, gd, builder) {
     if (builder.type != "source" && options.citation_general_addNewlinesWithinBody) {
       dataString += "\n";
     }
-    let epitaph = data.epitaph.trim();
+    let epitaph = ed.epitaph.trim();
     dataString += "''";
     if (epitaph[0] != '"' && epitaph[0] != "'") {
       dataString += '"';

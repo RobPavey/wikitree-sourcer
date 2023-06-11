@@ -398,7 +398,6 @@ function buildHouseholdTable(input) {
   //console.log("buildHouseholdTable: input is")
   //console.log(input)
 
-  const data = input.extractedData;
   const gd = input.generalizedData;
   const options = input.options;
 

@@ -24,8 +24,8 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildTroveUrl(data, builder) {
-  let url = data.url;
+function buildTroveUrl(ed, builder) {
+  let url = ed.url;
 
   const options = builder.getOptions();
   if (!options.citation_trove_includeSearchQuery) {
@@ -39,20 +39,20 @@ function buildTroveUrl(data, builder) {
   return url;
 }
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   builder.sourceTitle = "Trove, National Library of Australia";
 
   builder.databaseHasImages = true;
 
-  var troveUrl = buildTroveUrl(data, builder);
+  var troveUrl = buildTroveUrl(ed, builder);
 
   let recordLink = "[" + troveUrl + " Trove Article]";
   builder.recordLinkOrTemplate = recordLink;
 
   // issue can contain extra white space including newlines
-  const issue = data.issue.replace(/\s+/g, " ");
+  const issue = ed.issue.replace(/\s+/g, " ");
 
-  builder.sourceReference = data.title + ", " + issue + ", " + data.page + " : " + data.article;
+  builder.sourceReference = ed.title + ", " + issue + ", " + ed.page + " : " + ed.article;
 }
 
 function buildCitation(input) {

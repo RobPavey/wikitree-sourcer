@@ -26,12 +26,12 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 import { WTS_String } from "../../../base/core/wts_string.mjs";
 //import { FBMD } from "./freebmd_utils.mjs";
 
-function buildFreebmdUrl(data, builder) {
+function buildFreebmdUrl(ed, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
-  return data.citationUrl;
+  return ed.citationUrl;
 }
 
-function getQuarterName(data) {
+function getQuarterName(ed) {
   const quarterNames = {
     Mar: "Jan-Feb-Mar",
     Jun: "Apr-May-Jun",
@@ -39,10 +39,10 @@ function getQuarterName(data) {
     Dec: "Oct-Nov-Dec",
   };
 
-  if (data.eventQuarter != undefined && data.eventQuarter != "") {
-    let quarterName = quarterNames[data.eventQuarter];
+  if (ed.eventQuarter != undefined && ed.eventQuarter != "") {
+    let quarterName = quarterNames[ed.eventQuarter];
     if (!quarterName) {
-      quarterName = data.eventQuarter;
+      quarterName = ed.eventQuarter;
     }
     return quarterName;
   }
@@ -70,23 +70,23 @@ function getCorrectlyCasedNames(name, options) {
   return name;
 }
 
-function getGivenNames(data, options) {
-  return getCorrectlyCasedNames(data.givenNames, options);
+function getGivenNames(ed, options) {
+  return getCorrectlyCasedNames(ed.givenNames, options);
 }
 
-function getLastName(data, options) {
-  return getCorrectlyCasedName(data.surname, options);
+function getLastName(ed, options) {
+  return getCorrectlyCasedName(ed.surname, options);
 }
 
-function getMothersMaidenName(data, options) {
-  return getCorrectlyCasedName(data.mothersMaidenName, options);
+function getMothersMaidenName(ed, options) {
+  return getCorrectlyCasedName(ed.mothersMaidenName, options);
 }
 
-function getRegistrationDistrict(data, options) {
-  return getCorrectlyCasedNames(data.registrationDistrict, options);
+function getRegistrationDistrict(ed, options) {
+  return getCorrectlyCasedNames(ed.registrationDistrict, options);
 }
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   const titleText = {
     birth: "Birth",
     marriage: "Marriage",
@@ -95,32 +95,32 @@ function buildCoreCitation(data, gd, builder) {
 
   let options = builder.getOptions();
 
-  builder.sourceTitle = "England & Wales " + titleText[data.eventType] + " Index";
+  builder.sourceTitle = "England & Wales " + titleText[ed.eventType] + " Index";
 
-  builder.sourceReference = data.sourceCitation;
+  builder.sourceReference = ed.sourceCitation;
 
-  var freebmdUrl = buildFreebmdUrl(data, builder);
+  var freebmdUrl = buildFreebmdUrl(ed, builder);
 
   let recordLink = "[" + freebmdUrl + " FreeBMD Entry Information]";
   builder.recordLinkOrTemplate = recordLink;
 
-  let dataString = getLastName(data, options) + ", " + getGivenNames(data, options);
-  if (data.eventType == "birth") {
-    if (data.mothersMaidenName != undefined && data.mothersMaidenName != "") {
+  let dataString = getLastName(ed, options) + ", " + getGivenNames(ed, options);
+  if (ed.eventType == "birth") {
+    if (ed.mothersMaidenName != undefined && ed.mothersMaidenName != "") {
       dataString += " (Mother's maiden name: ";
-      var mmn = getMothersMaidenName(data, options);
+      var mmn = getMothersMaidenName(ed, options);
       if (mmn == undefined || mmn == "") {
         mmn = "-";
       }
       dataString += mmn + ")";
     }
-  } else if (data.eventType == "death") {
-    if (data.ageAtDeath) {
+  } else if (ed.eventType == "death") {
+    if (ed.ageAtDeath) {
       dataString += " (Age at death: ";
-      dataString += data.ageAtDeath + ")";
-    } else if (data.birthDate) {
+      dataString += ed.ageAtDeath + ")";
+    } else if (ed.birthDate) {
       dataString += " (Date of birth: ";
-      dataString += data.birthDate + ")";
+      dataString += ed.birthDate + ")";
     }
   }
   if (!dataString.endsWith(".")) {
@@ -142,26 +142,26 @@ function buildCoreCitation(data, gd, builder) {
     dataString += "GRO Reference: ";
   }
 
-  dataString += data.eventYear + " " + getQuarterName(data) + " in ";
+  dataString += ed.eventYear + " " + getQuarterName(ed) + " in ";
 
   // temp - disable district link
   if (false && options.citation_freebmd_useDistrictUrl) {
     dataString +=
-      "[" + FBMD.getDistrictPageUrl(data.registrationDistrict) + " " + getRegistrationDistrict(data, options) + "]";
+      "[" + FBMD.getDistrictPageUrl(ed.registrationDistrict) + " " + getRegistrationDistrict(ed, options) + "]";
   } else {
-    dataString += getRegistrationDistrict(data, options);
+    dataString += getRegistrationDistrict(ed, options);
   }
 
-  if (data.referenceVolume != undefined && data.referenceVolume != "") {
-    dataString += " Volume " + data.referenceVolume + " Page " + data.referencePage + ".";
+  if (ed.referenceVolume != undefined && ed.referenceVolume != "") {
+    dataString += " Volume " + ed.referenceVolume + " Page " + ed.referencePage + ".";
   }
 
   builder.dataString = dataString;
 }
 
-function getRefTitle(data, gd) {
+function getRefTitle(ed, gd) {
   var refTitle = "";
-  switch (data.eventType) {
+  switch (ed.eventType) {
     case "birth":
       refTitle = "Birth Registration";
       break;

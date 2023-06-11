@@ -23,9 +23,9 @@ SOFTWARE.
 */
 
 /** Infers possible year range to search in for the given type of record. */
-function inferDates(data, recordType, maxLifespan) {
+function inferDates(gd, recordType, maxLifespan) {
   if (recordType === "B") {
-    const birthYear = data.inferBirthYear();
+    const birthYear = gd.inferBirthYear();
     if (birthYear) {
       return {
         fromYear: parseInt(birthYear),
@@ -33,7 +33,7 @@ function inferDates(data, recordType, maxLifespan) {
       };
     }
   } else if (recordType === "D") {
-    const deathYear = data.inferDeathYear();
+    const deathYear = gd.inferDeathYear();
     if (deathYear) {
       return {
         fromYear: parseInt(deathYear),
@@ -41,13 +41,13 @@ function inferDates(data, recordType, maxLifespan) {
       };
     }
   }
-  const range = data.inferPossibleLifeYearRange(maxLifespan);
+  const range = gd.inferPossibleLifeYearRange(maxLifespan);
   return { fromYear: range.startYear, toYear: parseInt(range.endYear) + 1 };
 }
 
 /** Builds a search URL for Geneteka. */
 function buildSearchUrl(buildUrlInput) {
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
   const parameters = buildUrlInput.searchParameters;
 
@@ -56,9 +56,9 @@ function buildSearchUrl(buildUrlInput) {
 
   const maxLifespan = Number(options.search_general_maxLifespan);
 
-  const lastName = data.inferLastName();
-  const firstName = data.inferFirstName();
-  const { fromYear, toYear } = inferDates(data, recordType, maxLifespan);
+  const lastName = gd.inferLastName();
+  const firstName = gd.inferFirstName();
+  const { fromYear, toYear } = inferDates(gd, recordType, maxLifespan);
 
   const url = new URL("https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng");
   url.searchParams.append("bdm", recordType);

@@ -78,19 +78,19 @@ function convertDate(date) {
   return WTS_Date.getDateStringFromYearMonthDay(year, month, day);
 }
 
-// This function generalizes the data extracted web page.
+// This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   const result = new GeneralizedData();
   result.sourceOfData = "geneteka";
 
-  if (!data || !data.success) {
+  if (!ed || !ed.success) {
     return result; // The extract failed.
   }
 
-  const recordData = data.recordData;
+  const recordData = ed.recordData;
   result.sourceType = "record";
   result.recordType = RECORD_TYPES[recordData.recordType];
   result.collectionData = {

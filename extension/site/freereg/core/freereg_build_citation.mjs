@@ -35,9 +35,9 @@ function getRefTitle(ed, gd) {
   return "";
 }
 
-function getRecordDataValueForKeys(data, keys) {
+function getRecordDataValueForKeys(ed, keys) {
   for (let key of keys) {
-    let value = data.recordData[key];
+    let value = ed.recordData[key];
     if (value) {
       return value;
     }
@@ -78,7 +78,7 @@ function buildCustomDataString(gd, options) {
   return DataString.buildDataString(input);
 }
 
-function buildDataString(data, gd, options) {
+function buildDataString(ed, gd, options) {
   let dataString = "";
 
   if (options.citation_freereg_dataStyle == "string") {
@@ -89,7 +89,7 @@ function buildDataString(data, gd, options) {
   }
 
   // build a list string
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
 
   dataString = "";
 
@@ -114,7 +114,7 @@ function buildDataString(data, gd, options) {
   return dataString;
 }
 
-function getAdditionalInfo(data, gd, citationType, options) {
+function getAdditionalInfo(ed, gd, citationType, options) {
   if (options.citation_freereg_dataStyle == "none") {
     return "";
   }
@@ -124,12 +124,12 @@ function getAdditionalInfo(data, gd, citationType, options) {
     options.citation_freereg_dataStyle == "string" ||
     options.citation_freereg_dataStyle == "list"
   ) {
-    return buildDataString(data, gd, options);
+    return buildDataString(ed, gd, options);
   }
 
   // style must be table
   var result = "";
-  let recordData = data.recordData;
+  let recordData = ed.recordData;
   if (recordData) {
     let keys = Object.keys(recordData);
 
@@ -155,11 +155,11 @@ function getAdditionalInfo(data, gd, citationType, options) {
   return result;
 }
 
-function buildSourceReference(data, builder) {
+function buildSourceReference(ed, builder) {
   // Example:
   // Gloucestershire : Dursley : St James : Register of unspecified type. File line number: 1875
 
-  if (!data.recordData) {
+  if (!ed.recordData) {
     return;
   }
 
@@ -168,7 +168,7 @@ function buildSourceReference(data, builder) {
   }
 
   function addRefPartForKeys(keys) {
-    let value = getRecordDataValueForKeys(data, keys);
+    let value = getRecordDataValueForKeys(ed, keys);
     addRefPart(value);
   }
 
@@ -176,27 +176,27 @@ function buildSourceReference(data, builder) {
   addRefPartForKeys(["Place"]);
   addRefPartForKeys(["Church name"]);
 
-  let registerType = getRecordDataValueForKeys(data, ["Register type"]);
+  let registerType = getRecordDataValueForKeys(ed, ["Register type"]);
   if (registerType == "Unspecified") {
     addRefPart("Register of unspecified type");
   } else if (registerType) {
     addRefPart(registerType);
   }
 
-  let fileLineNumber = getRecordDataValueForKeys(data, ["File line number"]);
+  let fileLineNumber = getRecordDataValueForKeys(ed, ["File line number"]);
   if (fileLineNumber) {
     builder.addSourceReferenceField("File line number", fileLineNumber);
   }
 }
 
-function getRecordLink(data) {
+function getRecordLink(ed) {
   // URL might be something like:
   // https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e/elizabeth-pavey-baptism-gloucestershire-dursley-1713-09-28?citation_type=wikitree&locale=en
   // or:
   // https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f/philip-john-marett-jordan-baptism-jersey-st-helier-1874-06-14?locale=en
   // We want:
   // https://www.freereg.org.uk/search_records/5a1466eaf4040b9d6e5d459c
-  let url = data.url;
+  let url = ed.url;
 
   let newUrl = url;
   const searchRecordsText = "/search_records/";
@@ -213,7 +213,7 @@ function getRecordLink(data) {
   return recordLink;
 }
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   // Example citation:
   // '''Baptism''':
   // "FreeReg UK Parish Register database"
@@ -227,11 +227,11 @@ function buildCoreCitation(data, gd, builder) {
   builder.sourceTitle = sourceTitle;
   builder.putSourceTitleInQuotes = true;
 
-  buildSourceReference(data, builder);
+  buildSourceReference(ed, builder);
 
-  builder.recordLinkOrTemplate = getRecordLink(data);
+  builder.recordLinkOrTemplate = getRecordLink(ed);
 
-  builder.dataString = getAdditionalInfo(data, gd, builder.type, options);
+  builder.dataString = getAdditionalInfo(ed, gd, builder.type, options);
 }
 
 function buildCitation(input) {

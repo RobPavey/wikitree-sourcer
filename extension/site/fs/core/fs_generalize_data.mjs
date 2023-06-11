@@ -441,10 +441,10 @@ function selectPlace(placeString, originalPlaceString) {
   return placeString;
 }
 
-function generalizeDataGivenRecordType(data, result) {
-  if (data.age) {
-    if (data.age != "999") {
-      let age = data.age.replace(/^0*(\d)/, "$1"); // remove leading zeroes (but not a single zero on its own)
+function generalizeDataGivenRecordType(ed, result) {
+  if (ed.age) {
+    if (ed.age != "999") {
+      let age = ed.age.replace(/^0*(\d)/, "$1"); // remove leading zeroes (but not a single zero on its own)
       // occasionally the age has extra text. e.g. "7 years"
       if (age && age.length > 1) {
         if (age.search(/[^\d]/) != -1) {
@@ -459,8 +459,8 @@ function generalizeDataGivenRecordType(data, result) {
     }
   }
 
-  if (data.recordData && data.recordData["Occupation"]) {
-    let occupation = cleanOccupation(data.recordData["Occupation"]);
+  if (ed.recordData && ed.recordData["Occupation"]) {
+    let occupation = cleanOccupation(ed.recordData["Occupation"]);
     if (occupation) {
       result.occupation = occupation;
     }
@@ -475,46 +475,46 @@ function generalizeDataGivenRecordType(data, result) {
     result.recordType == RT.DeathRegistration
   ) {
     if (result.role != Role.Parent) {
-      if (data.father) {
+      if (ed.father) {
         let father = result.addFather();
-        setFieldIfDefined(father.name, "name", data.father.fullName);
-        setFieldIfDefined(father.name, "forenames", data.father.givenName);
-        setFieldIfDefined(father.name, "lastName", data.father.surname);
-        setFieldIfDefined(father.name, "prefix", data.father.prefix);
-        setFieldIfDefined(father.name, "suffix", data.father.suffix);
+        setFieldIfDefined(father.name, "name", ed.father.fullName);
+        setFieldIfDefined(father.name, "forenames", ed.father.givenName);
+        setFieldIfDefined(father.name, "lastName", ed.father.surname);
+        setFieldIfDefined(father.name, "prefix", ed.father.prefix);
+        setFieldIfDefined(father.name, "suffix", ed.father.suffix);
       }
-      if (data.mother) {
+      if (ed.mother) {
         let mother = result.addMother();
-        setFieldIfDefined(mother.name, "name", data.mother.fullName);
-        setFieldIfDefined(mother.name, "forenames", data.mother.givenName);
-        setFieldIfDefined(mother.name, "lastName", data.mother.surname);
-        setFieldIfDefined(mother.name, "prefix", data.mother.prefix);
-        setFieldIfDefined(mother.name, "suffix", data.mother.suffix);
+        setFieldIfDefined(mother.name, "name", ed.mother.fullName);
+        setFieldIfDefined(mother.name, "forenames", ed.mother.givenName);
+        setFieldIfDefined(mother.name, "lastName", ed.mother.surname);
+        setFieldIfDefined(mother.name, "prefix", ed.mother.prefix);
+        setFieldIfDefined(mother.name, "suffix", ed.mother.suffix);
       }
 
       // spouse can be specified on a death record for example
-      if (data.spouseFullName || data.spouseSurname || data.spouseGivenName) {
+      if (ed.spouseFullName || ed.spouseSurname || ed.spouseGivenName) {
         result.spouses = [];
         let resultSpouse = {};
         resultSpouse.name = new WtsName();
 
-        if (data.spouseFullName) {
-          resultSpouse.name.name = data.spouseFullName;
+        if (ed.spouseFullName) {
+          resultSpouse.name.name = ed.spouseFullName;
         }
-        if (data.spouseSurname) {
-          resultSpouse.name.lastName = data.spouseSurname;
+        if (ed.spouseSurname) {
+          resultSpouse.name.lastName = ed.spouseSurname;
         }
-        if (data.spouseGivenName) {
-          resultSpouse.name.forenames = data.spouseGivenName;
+        if (ed.spouseGivenName) {
+          resultSpouse.name.forenames = ed.spouseGivenName;
         }
-        if (data.spousePrefix) {
-          resultSpouse.name.prefix = data.spousePrefix;
+        if (ed.spousePrefix) {
+          resultSpouse.name.prefix = ed.spousePrefix;
         }
-        if (data.spouseSuffix) {
-          resultSpouse.name.suffix = data.spouseSuffix;
+        if (ed.spouseSuffix) {
+          resultSpouse.name.suffix = ed.spouseSuffix;
         }
-        if (data.spouseAge) {
-          resultSpouse.age = data.spouseAge;
+        if (ed.spouseAge) {
+          resultSpouse.age = ed.spouseAge;
         }
         result.spouses.push(resultSpouse);
       }
@@ -524,59 +524,55 @@ function generalizeDataGivenRecordType(data, result) {
     let resultSpouse = {};
 
     if (result.role != Role.Parent) {
-      if (data.father) {
+      if (ed.father) {
         let father = result.addFather();
-        setFieldIfDefined(father.name, "name", data.father.fullName);
-        setFieldIfDefined(father.name, "forenames", data.father.givenName);
-        setFieldIfDefined(father.name, "lastName", data.father.surname);
-        setFieldIfDefined(father.name, "prefix", data.father.prefix);
-        setFieldIfDefined(father.name, "suffix", data.father.suffix);
+        setFieldIfDefined(father.name, "name", ed.father.fullName);
+        setFieldIfDefined(father.name, "forenames", ed.father.givenName);
+        setFieldIfDefined(father.name, "lastName", ed.father.surname);
+        setFieldIfDefined(father.name, "prefix", ed.father.prefix);
+        setFieldIfDefined(father.name, "suffix", ed.father.suffix);
       }
-      if (data.mother) {
+      if (ed.mother) {
         let mother = result.addMother();
-        setFieldIfDefined(mother.name, "name", data.mother.fullName);
-        setFieldIfDefined(mother.name, "forenames", data.mother.givenName);
-        setFieldIfDefined(mother.name, "lastName", data.mother.surname);
-        setFieldIfDefined(mother.name, "prefix", data.mother.prefix);
-        setFieldIfDefined(mother.name, "suffix", data.mother.suffix);
+        setFieldIfDefined(mother.name, "name", ed.mother.fullName);
+        setFieldIfDefined(mother.name, "forenames", ed.mother.givenName);
+        setFieldIfDefined(mother.name, "lastName", ed.mother.surname);
+        setFieldIfDefined(mother.name, "prefix", ed.mother.prefix);
+        setFieldIfDefined(mother.name, "suffix", ed.mother.suffix);
       }
     }
 
-    if (data.spouseFullName || data.spouseSurname || data.spouseGivenName) {
+    if (ed.spouseFullName || ed.spouseSurname || ed.spouseGivenName) {
       resultSpouse.name = new WtsName();
 
-      if (data.spouseFullName) {
-        resultSpouse.name.name = data.spouseFullName;
+      if (ed.spouseFullName) {
+        resultSpouse.name.name = ed.spouseFullName;
       }
-      if (data.spouseSurname) {
-        resultSpouse.name.lastName = data.spouseSurname;
+      if (ed.spouseSurname) {
+        resultSpouse.name.lastName = ed.spouseSurname;
       }
-      if (data.spouseGivenName) {
-        resultSpouse.name.forenames = data.spouseGivenName;
+      if (ed.spouseGivenName) {
+        resultSpouse.name.forenames = ed.spouseGivenName;
       }
-      if (data.spousePrefix) {
-        resultSpouse.name.prefix = data.spousePrefix;
+      if (ed.spousePrefix) {
+        resultSpouse.name.prefix = ed.spousePrefix;
       }
-      if (data.spouseSuffix) {
-        resultSpouse.name.suffix = data.spouseSuffix;
+      if (ed.spouseSuffix) {
+        resultSpouse.name.suffix = ed.spouseSuffix;
       }
-      if (data.spouseAge) {
-        resultSpouse.age = data.spouseAge;
+      if (ed.spouseAge) {
+        resultSpouse.age = ed.spouseAge;
       }
-    } else if (
-      data.relatedPersonSpouseFullName ||
-      data.relatedPersonSpouseSurname ||
-      data.relatedPersonSpouseGivenName
-    ) {
+    } else if (ed.relatedPersonSpouseFullName || ed.relatedPersonSpouseSurname || ed.relatedPersonSpouseGivenName) {
       resultSpouse.name = new WtsName();
-      if (data.relatedPersonSpouseFullName) {
-        resultSpouse.name.name = data.relatedPersonSpouseFullName;
+      if (ed.relatedPersonSpouseFullName) {
+        resultSpouse.name.name = ed.relatedPersonSpouseFullName;
       }
-      if (data.relatedPersonSpouseSurname) {
-        resultSpouse.name.lastName = data.relatedPersonSpouseSurname;
+      if (ed.relatedPersonSpouseSurname) {
+        resultSpouse.name.lastName = ed.relatedPersonSpouseSurname;
       }
-      if (data.relatedPersonSpouseGivenName) {
-        resultSpouse.name.forenames = data.relatedPersonSpouseGivenName;
+      if (ed.relatedPersonSpouseGivenName) {
+        resultSpouse.name.forenames = ed.relatedPersonSpouseGivenName;
       }
     }
     if (result.eventDate) {
@@ -588,19 +584,15 @@ function generalizeDataGivenRecordType(data, result) {
 
     // the marriage record can contain an actual marriage date as well as the event date
     // If so it is probably more accurate
-    if (
-      data.recordData["Marriage Date"] ||
-      data.recordData["Marriage Date (Original)"] ||
-      data.recordData["Marriage Year"]
-    ) {
+    if (ed.recordData["Marriage Date"] || ed.recordData["Marriage Date (Original)"] || ed.recordData["Marriage Year"]) {
       let marriageDate = new WtsDate();
-      let dateString = selectDate(data.recordData["Marriage Date"], data.recordData["Marriage Date (Original)"]);
+      let dateString = selectDate(ed.recordData["Marriage Date"], ed.recordData["Marriage Date (Original)"]);
       if (dateString) {
         marriageDate.dateString = dateString;
         marriageDate.setDateAndQualifierFromString(dateString);
       }
-      if (data.recordData["Marriage Year"]) {
-        marriageDate.yearString = data.recordData["Marriage Year"];
+      if (ed.recordData["Marriage Year"]) {
+        marriageDate.yearString = ed.recordData["Marriage Year"];
       }
       resultSpouse.marriageDate = marriageDate;
       result.marriageDate = marriageDate.getDateString();
@@ -611,18 +603,18 @@ function generalizeDataGivenRecordType(data, result) {
     result.spouses = [];
     let resultSpouse = {};
 
-    if (data.spouseFullName || data.spouseSurname || data.spouseGivenName) {
+    if (ed.spouseFullName || ed.spouseSurname || ed.spouseGivenName) {
       resultSpouse.name = new WtsName();
 
-      let spouseFullName = data.spouseFullName;
-      if (spouseFullName == data.spouseSurname) {
-        // there could be more info in record data
-        let recordData = data.recordData;
+      let spouseFullName = ed.spouseFullName;
+      if (spouseFullName == ed.spouseSurname) {
+        // there could be more info in record ed
+        let recordData = ed.recordData;
         if (recordData) {
           if (recordData["Other On Page Name1"] && !recordData["Other On Page Name2"]) {
-            if (recordData["Other On Page Name Surn1"] == data.spouseSurname) {
+            if (recordData["Other On Page Name Surn1"] == ed.spouseSurname) {
               spouseFullName = recordData["Other On Page Name1"];
-            } else if (recordData["Other On Page Name1"].endsWith(data.spouseSurname)) {
+            } else if (recordData["Other On Page Name1"].endsWith(ed.spouseSurname)) {
               spouseFullName = recordData["Other On Page Name1"];
             }
           }
@@ -632,20 +624,20 @@ function generalizeDataGivenRecordType(data, result) {
       if (spouseFullName) {
         resultSpouse.name.name = spouseFullName;
       }
-      if (data.spouseSurname) {
-        resultSpouse.name.lastName = data.spouseSurname;
+      if (ed.spouseSurname) {
+        resultSpouse.name.lastName = ed.spouseSurname;
       }
-      if (data.spouseGivenName) {
-        resultSpouse.name.forenames = data.spouseGivenName;
+      if (ed.spouseGivenName) {
+        resultSpouse.name.forenames = ed.spouseGivenName;
       }
-      if (data.spousePrefix) {
-        resultSpouse.name.prefix = data.spousePrefix;
+      if (ed.spousePrefix) {
+        resultSpouse.name.prefix = ed.spousePrefix;
       }
-      if (data.spouseSuffix) {
-        resultSpouse.name.suffix = data.spouseSuffix;
+      if (ed.spouseSuffix) {
+        resultSpouse.name.suffix = ed.spouseSuffix;
       }
-      if (data.spouseAge) {
-        resultSpouse.age = data.spouseAge;
+      if (ed.spouseAge) {
+        resultSpouse.age = ed.spouseAge;
       }
     }
     if (result.eventDate) {
@@ -656,18 +648,14 @@ function generalizeDataGivenRecordType(data, result) {
     }
 
     // the marriage registration can contain an actual marriage date
-    if (
-      data.recordData["Marriage Date"] ||
-      data.recordData["Marriage Date (Original)"] ||
-      data.recordData["Marriage Year"]
-    ) {
+    if (ed.recordData["Marriage Date"] || ed.recordData["Marriage Date (Original)"] || ed.recordData["Marriage Year"]) {
       let marriageDate = new WtsDate();
-      let dateString = selectDate(data.recordData["Marriage Date"], data.recordData["Marriage Date (Original)"]);
+      let dateString = selectDate(ed.recordData["Marriage Date"], ed.recordData["Marriage Date (Original)"]);
       if (dateString) {
         marriageDate.setDateAndQualifierFromString(dateString);
       }
-      if (data.recordData["Marriage Year"]) {
-        marriageDate.yearString = data.recordData["Marriage Year"];
+      if (ed.recordData["Marriage Year"]) {
+        marriageDate.yearString = ed.recordData["Marriage Year"];
       }
       resultSpouse.marriageDate = marriageDate;
       result.marriageDate = marriageDate.getDateString();
@@ -676,9 +664,9 @@ function generalizeDataGivenRecordType(data, result) {
     result.spouses.push(resultSpouse);
   }
 
-  if (data.household) {
-    let headings = data.household.headings;
-    let members = data.household.members;
+  if (ed.household) {
+    let headings = ed.household.headings;
+    let members = ed.household.members;
     if (headings && members) {
       result.householdArrayFields = [];
       let fieldsEncountered = {};
@@ -769,7 +757,7 @@ function generalizeDataGivenRecordType(data, result) {
   }
 }
 
-function generalizeDataForPerson(data, result) {
+function generalizeDataForPerson(ed, result) {
   function setNameWithPossibleNicknames(dataObject, resultObject) {
     // because this is done when we have already set the name once already the handling of nicknames is
     // complicated.
@@ -816,12 +804,12 @@ function generalizeDataForPerson(data, result) {
   }
 
   // we will already have set fullName but try to get the fornames and last names
-  setNameWithPossibleNicknames(data, result);
+  setNameWithPossibleNicknames(ed, result);
 
-  if (data.spouses) {
+  if (ed.spouses) {
     result.spouses = [];
 
-    for (let spouse of data.spouses) {
+    for (let spouse of ed.spouses) {
       let resultSpouse = {};
 
       if (spouse.fullName || spouse.surname || spouse.givenName) {
@@ -844,97 +832,97 @@ function generalizeDataForPerson(data, result) {
     }
   }
 
-  if (data.father) {
+  if (ed.father) {
     let father = result.addFather();
-    setName(data.father, father);
+    setName(ed.father, father);
   }
 
-  if (data.mother) {
+  if (ed.mother) {
     let mother = result.addMother();
-    setName(data.mother, mother);
+    setName(ed.mother, mother);
   }
 }
 
-function generalizeDataForBook(data, result) {
+function generalizeDataForBook(ed, result) {
   result.sourceType = "book";
 
   result.hasValidData = true;
 }
 
-// This function generalizes the data extracted from a FamilySearch page.
+// This function generalizes the data (ed) extracted from a FamilySearch page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
-  if (data.pageType == "person") {
+  if (ed.pageType == "person") {
     result.sourceType = "profile";
-  } else if (data.pageType == "book") {
-    generalizeDataForBook(data, result);
+  } else if (ed.pageType == "book") {
+    generalizeDataForBook(ed, result);
     return result;
   } else {
     result.sourceType = "record";
-    determineRecordTypeAndRole(data, result);
+    determineRecordTypeAndRole(ed, result);
   }
 
   result.sourceOfData = "fs";
 
-  result.setPersonGender(data.gender);
+  result.setPersonGender(ed.gender);
 
-  result.setFullName(data.fullName);
+  result.setFullName(ed.fullName);
 
-  let birthDate = selectDate(data.birthDate, data.birthDateOriginal);
+  let birthDate = selectDate(ed.birthDate, ed.birthDateOriginal);
   result.setBirthDate(birthDate);
-  result.setBirthYear(data.birthYear);
-  let birthPlace = selectPlace(data.birthPlace, data.birthPlaceOriginal);
+  result.setBirthYear(ed.birthYear);
+  let birthPlace = selectPlace(ed.birthPlace, ed.birthPlaceOriginal);
   result.setBirthPlace(birthPlace);
 
-  let deathDate = selectDate(data.deathDate, data.deathDateOriginal);
+  let deathDate = selectDate(ed.deathDate, ed.deathDateOriginal);
   result.setDeathDate(deathDate);
-  result.setDeathYear(data.deathYear);
+  result.setDeathYear(ed.deathYear);
 
-  let deathPlace = selectPlace(data.deathPlace, data.deathPlaceOriginal);
+  let deathPlace = selectPlace(ed.deathPlace, ed.deathPlaceOriginal);
   result.setDeathPlace(deathPlace);
 
-  let eventDate = selectDate(data.eventDate, data.eventDateOriginal);
+  let eventDate = selectDate(ed.eventDate, ed.eventDateOriginal);
   result.setEventDate(eventDate);
-  result.setEventYear(data.eventYear);
+  result.setEventYear(ed.eventYear);
 
-  let eventPlace = selectPlace(data.eventPlace, data.eventPlaceOriginal);
+  let eventPlace = selectPlace(ed.eventPlace, ed.eventPlaceOriginal);
 
   if (!eventPlace) {
     // sometimes the event place info is in other fields
     eventPlace = "";
-    if (data.eventCity) {
-      eventPlace += data.eventCity;
+    if (ed.eventCity) {
+      eventPlace += ed.eventCity;
     }
-    if (data.eventCounty) {
+    if (ed.eventCounty) {
       if (eventPlace) {
         eventPlace += ", ";
       }
-      eventPlace += data.eventCounty;
+      eventPlace += ed.eventCounty;
     }
-    if (data.eventState) {
+    if (ed.eventState) {
       if (eventPlace) {
         eventPlace += ", ";
       }
-      eventPlace += data.eventState;
+      eventPlace += ed.eventState;
     }
-    if (data.eventCountry) {
+    if (ed.eventCountry) {
       if (eventPlace) {
         eventPlace += ", ";
       }
-      eventPlace += data.eventCountry;
+      eventPlace += ed.eventCountry;
     }
   }
 
   result.setEventPlace(eventPlace);
 
-  let residencePlace = data.residence;
-  if (!residencePlace && data.recordData && data.recordData["Note Res Place"]) {
+  let residencePlace = ed.residence;
+  if (!residencePlace && ed.recordData && ed.recordData["Note Res Place"]) {
     // sometimes this is a field that is not on the residence fact
-    residencePlace = data.recordData["Note Res Place"];
+    residencePlace = ed.recordData["Note Res Place"];
   }
   if (residencePlace && result.eventPlace) {
     // at least in 1841 census this is the stree address
@@ -944,19 +932,19 @@ function generalizeData(input) {
   if (result.eventPlace) {
     // there is an event place. But sometimes this isn't really the event place
     // For example for US SS Death Index it is the last residence place
-    if (data.collectionTitle == "United States Social Security Death Index") {
+    if (ed.collectionTitle == "United States Social Security Death Index") {
       result.residencePlace = result.eventPlace;
       delete result.eventPlace;
     }
   }
 
-  if (data.registrationDistrict) {
-    result.registrationDistrict = data.registrationDistrict;
+  if (ed.registrationDistrict) {
+    result.registrationDistrict = ed.registrationDistrict;
   }
 
-  if (data.registrationQuarter) {
+  if (ed.registrationQuarter) {
     let quarter = -1;
-    let fsQuarter = data.registrationQuarter;
+    let fsQuarter = ed.registrationQuarter;
     for (let quarterName of quarterNames) {
       if (fsQuarter == quarterName.name) {
         quarter = quarterName.value;
@@ -968,15 +956,15 @@ function generalizeData(input) {
     }
   }
 
-  if (data.pageType == "person") {
-    generalizeDataForPerson(data, result);
+  if (ed.pageType == "person") {
+    generalizeDataForPerson(ed, result);
   } else {
-    generalizeDataGivenRecordType(data, result);
+    generalizeDataGivenRecordType(ed, result);
   }
 
-  if (data.household && data.household.members) {
+  if (ed.household && ed.household.members) {
     let selectedMember = undefined;
-    for (let member of data.household.members) {
+    for (let member of ed.household.members) {
       if (member.isSelected) {
         selectedMember = member;
         break;
@@ -989,16 +977,16 @@ function generalizeData(input) {
     }
   }
 
-  if (!result.maritalStatus && data.recordData) {
-    result.setMaritalStatus(data.recordData["MaritalStatus"]);
+  if (!result.maritalStatus && ed.recordData) {
+    result.setMaritalStatus(ed.recordData["MaritalStatus"]);
   }
 
-  if (data.household && data.household.members) {
+  if (ed.household && ed.household.members) {
     // We can also determine parents and spouse in some cases
     result.addSpouseOrParentsForSelectedHouseholdMember();
 
     if (result.spouses && result.spouses.length == 1) {
-      let yearsMarried = data.recordData["Cnt Years Married"];
+      let yearsMarried = ed.recordData["Cnt Years Married"];
       if (yearsMarried) {
         let censusDate = result.inferEventDate();
         let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, yearsMarried);
@@ -1011,13 +999,13 @@ function generalizeData(input) {
   }
 
   // Collection
-  if (data.fsCollectionId) {
+  if (ed.fsCollectionId) {
     result.collectionData = {
-      id: data.fsCollectionId,
+      id: ed.fsCollectionId,
     };
 
-    if (data.referenceData) {
-      let refData = data.referenceData;
+    if (ed.referenceData) {
+      let refData = ed.referenceData;
       if (refData.sourceVolume) {
         result.collectionData.volume = refData.sourceVolume;
       }

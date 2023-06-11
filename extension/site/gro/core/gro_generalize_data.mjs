@@ -44,10 +44,10 @@ function cleanRegistrationDistrictName(name) {
   return WTS_String.toInitialCapsEachWord(newName);
 }
 
-// This function generalizes the data extracted from the GRO page.
+// This function generalizes the data (ed) extracted from the GRO page.
 // We know what fields can be there. And we knw the ones we want in generalizedData.
 function generalizeData(input) {
-  let data = input.extractedData;
+  let ed = input.extractedData;
 
   let result = new GeneralizedData();
 
@@ -55,35 +55,35 @@ function generalizeData(input) {
 
   let collectionId = undefined;
 
-  if (data.eventYear == undefined || data.eventYear == 0) {
+  if (ed.eventYear == undefined || ed.eventYear == 0) {
     return result; //the extract failed
   }
 
   result.sourceType = "record";
-  result.recordType = data.eventType == "birth" ? RT.BirthRegistration : RT.DeathRegistration;
+  result.recordType = ed.eventType == "birth" ? RT.BirthRegistration : RT.DeathRegistration;
 
-  result.setEventYear(data.eventYear.toString());
-  result.setEventQuarter(data.eventQuarter); // this is 1-4
+  result.setEventYear(ed.eventYear.toString());
+  result.setEventQuarter(ed.eventQuarter); // this is 1-4
 
-  if (data.eventYear) {
+  if (ed.eventYear) {
     result.eventDate = new WtsDate();
 
-    result.eventDate.yearString = data.eventYear.toString();
-    if (data.eventQuarter) {
-      result.eventDate.quarter = data.eventQuarter; // this is 1-4
+    result.eventDate.yearString = ed.eventYear.toString();
+    if (ed.eventQuarter) {
+      result.eventDate.quarter = ed.eventQuarter; // this is 1-4
     }
   }
 
   // most strings in extractedData are in all caps. Change them to mixed case
-  let lastName = WTS_String.toInitialCapsEachWord(data.lastName, true);
-  let forenames = WTS_String.toInitialCapsEachWord(data.forenames, true);
-  let mothersMaidenName = WTS_String.toInitialCapsEachWord(data.mothersMaidenName, true);
-  let registrationDistrict = cleanRegistrationDistrictName(data.registrationDistrict);
+  let lastName = WTS_String.toInitialCapsEachWord(ed.lastName, true);
+  let forenames = WTS_String.toInitialCapsEachWord(ed.forenames, true);
+  let mothersMaidenName = WTS_String.toInitialCapsEachWord(ed.mothersMaidenName, true);
+  let registrationDistrict = cleanRegistrationDistrictName(ed.registrationDistrict);
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
   result.setLastNameAndForeNames(lastName, forenames);
 
-  if (data.eventType == "birth") {
+  if (ed.eventType == "birth") {
     collectionId = "births";
     result.lastNameAtBirth = lastName;
     result.birthDate = result.eventDate;
@@ -96,17 +96,17 @@ function generalizeData(input) {
     result.lastNameAtDeath = lastName;
     result.deathDate = result.eventDate;
 
-    if (data.birthYear) {
+    if (ed.birthYear) {
       result.birthDate = new WtsDate();
-      result.birthDate.yearString = data.birthYear.toString();
+      result.birthDate.yearString = ed.birthYear.toString();
     }
 
-    if (data.ageAtDeath) {
-      result.ageAtDeath = data.ageAtDeath;
+    if (ed.ageAtDeath) {
+      result.ageAtDeath = ed.ageAtDeath;
     }
   }
 
-  result.setPersonGender(data.personGender);
+  result.setPersonGender(ed.personGender);
 
   if (registrationDistrict) {
     result.registrationDistrict = registrationDistrict;
@@ -117,11 +117,11 @@ function generalizeData(input) {
     result.collectionData = {
       id: collectionId,
     };
-    if (data.referenceVolume) {
-      result.collectionData.volume = data.referenceVolume;
+    if (ed.referenceVolume) {
+      result.collectionData.volume = ed.referenceVolume;
     }
-    if (data.referencePage) {
-      result.collectionData.page = data.referencePage;
+    if (ed.referencePage) {
+      result.collectionData.page = ed.referencePage;
     }
   }
 

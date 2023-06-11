@@ -28,11 +28,11 @@ import { AncestryData } from "./ancestry_data.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function buildSearchUrl(buildUrlInput) {
-  let data = buildUrlInput.generalizedData;
+  let gd = buildUrlInput.generalizedData;
   let options = buildUrlInput.options;
 
   //console.log("buildSearchUrlAncestry, gd is:");
-  //console.log(data);
+  //console.log(gd);
 
   let sameCollection = false;
   let ancestryCollectionId = undefined;
@@ -42,13 +42,13 @@ function buildSearchUrl(buildUrlInput) {
 
   let collection = undefined;
   if (buildUrlInput.typeOfSearch == "SameCollection") {
-    if (data.collectionData && data.collectionData.id) {
+    if (gd.collectionData && gd.collectionData.id) {
       ancestryCollectionId = RC.mapCollectionId(
-        data.sourceOfData,
-        data.collectionData.id,
+        gd.sourceOfData,
+        gd.collectionData.id,
         "ancestry",
-        data.inferEventCountry(),
-        data.inferEventYear()
+        gd.inferEventCountry(),
+        gd.inferEventYear()
       );
       if (ancestryCollectionId) {
         collection = RC.findCollection("ancestry", ancestryCollectionId);
@@ -78,13 +78,13 @@ function buildSearchUrl(buildUrlInput) {
   var builder = new AncestryUriBuilder(ancestryCollectionId, category, subcategory, options);
 
   let hasAnyName = false;
-  let lastNames = data.inferLastNameGivenParametersAndCollection(parameters, collection, true);
+  let lastNames = gd.inferLastNameGivenParametersAndCollection(parameters, collection, true);
 
   if (lastNames) {
     hasAnyName = true;
   }
 
-  let forenames = data.inferForenames();
+  let forenames = gd.inferForenames();
   if (forenames) {
     hasAnyName = true;
   }
@@ -93,54 +93,54 @@ function buildSearchUrl(buildUrlInput) {
     builder.addName(forenames, lastNames);
   }
 
-  builder.addBirth(data.inferBirthYear(), data.inferBirthPlace());
-  builder.addDeath(data.inferDeathYear(), data.inferDeathPlace());
+  builder.addBirth(gd.inferBirthYear(), gd.inferBirthPlace());
+  builder.addDeath(gd.inferDeathYear(), gd.inferDeathPlace());
 
-  if (data.personGender) {
-    if (data.personGender == "male") {
+  if (gd.personGender) {
+    if (gd.personGender == "male") {
       builder.addGenderMale();
-    } else if (data.personGender == "female") {
+    } else if (gd.personGender == "female") {
       builder.addGenderFemale();
     }
   }
 
-  if (data.parents) {
-    if (data.parents.father && (!parameters || parameters.father)) {
-      let fatherForeNames = data.parents.father.name.inferForenames();
-      let fatherLastNames = data.inferPersonLastNames(data.parents.father);
+  if (gd.parents) {
+    if (gd.parents.father && (!parameters || parameters.father)) {
+      let fatherForeNames = gd.parents.father.name.inferForenames();
+      let fatherLastNames = gd.inferPersonLastNames(gd.parents.father);
       builder.addFather(fatherForeNames, fatherLastNames);
     }
-    if (data.parents.mother && (!parameters || parameters.mother)) {
-      let motherForeNames = data.parents.mother.name.inferForenames();
-      let motherLastNames = data.inferPersonLastNames(data.parents.mother);
+    if (gd.parents.mother && (!parameters || parameters.mother)) {
+      let motherForeNames = gd.parents.mother.name.inferForenames();
+      let motherLastNames = gd.inferPersonLastNames(gd.parents.mother);
       builder.addMother(motherForeNames, motherLastNames);
     }
   }
 
   // sometimes we just have the mother's maiden name and no mother
-  if (!data.parents || !data.parents.mother) {
-    if (data.mothersMaidenName && (!parameters || parameters.mother)) {
-      builder.addMother("", data.mothersMaidenName);
+  if (!gd.parents || !gd.parents.mother) {
+    if (gd.mothersMaidenName && (!parameters || parameters.mother)) {
+      builder.addMother("", gd.mothersMaidenName);
     }
   }
 
   // The Ancestry search does allow multiple spouse but only seems to allow one
   // marriage event (at least in form). For now we just put one spouse in the search.
   // The parameters allow the user to select which one.
-  if (data.spouses && data.spouses.length > 0) {
+  if (gd.spouses && gd.spouses.length > 0) {
     let spouse = undefined;
     if (parameters) {
-      if (parameters.spouseIndex != -1 && parameters.spouseIndex < data.spouses.length) {
-        spouse = data.spouses[parameters.spouseIndex];
+      if (parameters.spouseIndex != -1 && parameters.spouseIndex < gd.spouses.length) {
+        spouse = gd.spouses[parameters.spouseIndex];
       }
     } else {
-      spouse = data.spouses[0];
+      spouse = gd.spouses[0];
     }
 
     if (spouse) {
       if (spouse.name) {
         let spouseForeNames = spouse.name.inferForenames();
-        let spouseLastNames = data.inferPersonLastNames(spouse);
+        let spouseLastNames = gd.inferPersonLastNames(spouse);
         builder.addSpouse(spouseForeNames, spouseLastNames);
       }
 
@@ -153,13 +153,13 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   // For a sameCollection census add a residence place
-  if (sameCollection && data.recordType == RT.Census) {
-    let eventPlace = data.inferEventPlace();
+  if (sameCollection && gd.recordType == RT.Census) {
+    let eventPlace = gd.inferEventPlace();
     builder.addResidence(eventPlace);
   }
 
   // restrict search by region if it makes sense
-  let countryArray = data.inferCountries();
+  let countryArray = gd.inferCountries();
   if (countryArray.length == 1) {
     let country = countryArray[0];
     let priority = AncestryData.getPriorityFromStdCountry(country);
@@ -168,12 +168,12 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  if (sameCollection && data.collectionData) {
+  if (sameCollection && gd.collectionData) {
     // In theory we could add volume and page. But it seems like that could be collection specific.
     // This is a search in Ancestry England Civil Births with Volume and Page specified:
     // https://www.ancestry.com/search/collections/8912/?name=Harry+Alfred_Pavey&birth=1852_Plymouth
     // &f-F00056EC=5b&f-F0005906=238
-    let colData = data.collectionData;
+    let colData = gd.collectionData;
     builder.addVolume(colData.volume);
     builder.addPage(colData.page);
     builder.addFolio(colData.folio);
@@ -182,9 +182,9 @@ function buildSearchUrl(buildUrlInput) {
     builder.addRegistrationNumber(colData.registrationNumber);
     builder.addEnumerationDistrict(colData.enumerationDistrict);
 
-    builder.addMaritalStatus(data.maritalStatus);
-    builder.addRelationship(data.relationshipToHead);
-    builder.addDistrict(data.registrationDistrict);
+    builder.addMaritalStatus(gd.maritalStatus);
+    builder.addRelationship(gd.relationshipToHead);
+    builder.addDistrict(gd.registrationDistrict);
   }
 
   const url = builder.getUri();

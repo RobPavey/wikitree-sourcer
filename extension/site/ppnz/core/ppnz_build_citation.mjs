@@ -24,8 +24,8 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildPpnzUrl(data, builder) {
-  let url = data.url;
+function buildPpnzUrl(ed, builder) {
+  let url = ed.url;
 
   const options = builder.getOptions();
   if (!options.citation_ppnz_includeSearchQuery) {
@@ -39,17 +39,17 @@ function buildPpnzUrl(data, builder) {
   return url;
 }
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   builder.sourceTitle = "Papers Past, National Library of New Zealand";
 
   builder.databaseHasImages = true;
 
-  var ppnzUrl = buildPpnzUrl(data, builder);
+  var ppnzUrl = buildPpnzUrl(ed, builder);
 
   let recordLink = "[" + ppnzUrl + " Papers Past Article]";
   builder.recordLinkOrTemplate = recordLink;
 
-  builder.sourceReference = data.citationText;
+  builder.sourceReference = ed.citationText;
 }
 
 function buildCitation(input) {

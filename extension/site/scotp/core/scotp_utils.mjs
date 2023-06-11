@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function getRecordType(data) {
+function getRecordType(ed) {
   let type = undefined;
 
-  if (data.recordType) {
-    type = data.recordType;
+  if (ed.recordType) {
+    type = ed.recordType;
   }
 
   return type;

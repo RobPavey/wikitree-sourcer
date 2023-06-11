@@ -26,7 +26,7 @@ function buildSearchData(input) {
   //console.log("buildSearchData, input is:");
   //console.log(input);
 
-  const data = input.generalizedData;
+  const gd = input.generalizedData;
   const options = input.options;
 
   let parameters = undefined;
@@ -43,22 +43,22 @@ function buildSearchData(input) {
     options: {},
   };
 
-  let firstName = data.inferFirstName();
+  let firstName = gd.inferFirstName();
   if (firstName) {
     fieldData.simpleIdFields["wpFirst"] = firstName;
   }
 
-  let lastName = data.inferLastNameGivenParametersAndCollection(parameters, undefined);
+  let lastName = gd.inferLastNameGivenParametersAndCollection(parameters, undefined);
   if (lastName) {
     fieldData.simpleIdFields["wpLast"] = lastName;
   }
 
-  let birthDate = data.inferBirthDate();
+  let birthDate = gd.inferBirthDate();
   if (birthDate) {
     fieldData.simpleNameFields["wpBirthDate"] = birthDate;
   }
 
-  let deathDate = data.inferDeathDate();
+  let deathDate = gd.inferDeathDate();
   if (deathDate) {
     fieldData.simpleNameFields["wpDeathDate"] = deathDate;
   }
@@ -67,7 +67,7 @@ function buildSearchData(input) {
   if (parameters) {
     birthPlace = parameters.birthPlace;
   } else {
-    birthPlace = data.inferBirthPlace();
+    birthPlace = gd.inferBirthPlace();
   }
   if (birthPlace) {
     fieldData.simpleNameFields["birth_location"] = birthPlace;
@@ -77,13 +77,13 @@ function buildSearchData(input) {
   if (parameters) {
     deathPlace = parameters.deathPlace;
   } else {
-    deathPlace = data.inferDeathPlace();
+    deathPlace = gd.inferDeathPlace();
   }
   if (deathPlace) {
     fieldData.simpleNameFields["death_location"] = deathPlace;
   }
 
-  let parents = data.parents;
+  let parents = gd.parents;
   if (parents) {
     if (!parameters || parameters.father) {
       let father = parents.father;
@@ -113,7 +113,7 @@ function buildSearchData(input) {
     }
   }
 
-  let sex = data.personGender;
+  let sex = gd.personGender;
   if (sex && sex != "-") {
     if (sex == "male") {
       fieldData.radioFields.push({ name: "gender", value: "Male" });
@@ -125,7 +125,7 @@ function buildSearchData(input) {
   let dateExactness = options.search_wikitree_dateExactness;
   if (dateExactness) {
     if (dateExactness == "auto") {
-      if (data.sourceOfData == "wikitree") {
+      if (gd.sourceOfData == "wikitree") {
         dateExactness = "exactDate";
       } else {
         dateExactness = "2";

@@ -24,23 +24,23 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildCoreCitation(data, gd, builder) {
+function buildCoreCitation(ed, gd, builder) {
   builder.sourceTitle = "Newspapers.com";
   let options = builder.getOptions();
 
   builder.databaseHasImages = true;
 
   const clipString = "/clip/";
-  let clipIndex = data.url.indexOf(clipString);
+  let clipIndex = ed.url.indexOf(clipString);
   if (clipIndex != -1) {
-    let remainder = data.url.substring(clipIndex + clipString.length);
+    let remainder = ed.url.substring(clipIndex + clipString.length);
     let recordLink = "{{Newspapers.com|" + remainder.split("/")[0] + "}}";
     builder.recordLinkOrTemplate = recordLink;
   } else {
     const articleString = "/article/";
-    let articleIndex = data.url.indexOf(articleString);
+    let articleIndex = ed.url.indexOf(articleString);
     if (articleIndex != -1) {
-      let remainder = data.url.substring(articleIndex + articleString.length);
+      let remainder = ed.url.substring(articleIndex + articleString.length);
       let clipNum = remainder.replace(/^[^\/]+\/(\d+)\/$/, "$1");
       if (clipNum && clipNum != remainder) {
         let recordLink = "{{Newspapers.com|" + clipNum + "}}";
@@ -49,13 +49,13 @@ function buildCoreCitation(data, gd, builder) {
     }
   }
 
-  builder.sourceReference = data.newspaperTitle;
+  builder.sourceReference = ed.newspaperTitle;
 
   if (options.citation_np_includeLocation) {
-    builder.sourceReference += " (" + data.location + ")";
+    builder.sourceReference += " (" + ed.location + ")";
   }
 
-  builder.sourceReference += " " + data.publicationDate + ", page " + data.pageNumber;
+  builder.sourceReference += " " + ed.publicationDate + ", page " + ed.pageNumber;
 }
 
 function buildCitation(input) {

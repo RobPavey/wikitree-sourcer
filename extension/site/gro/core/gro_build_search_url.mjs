@@ -42,7 +42,7 @@ function getPersonGenderFromGeneralizedDataOrDataCache(generalizedData, dataCach
 }
 
 function buildSearchUrl(buildUrlInput) {
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const dataCache = buildUrlInput.dataCache;
   const typeOfSearch = buildUrlInput.typeOfSearch;
 
@@ -50,13 +50,13 @@ function buildSearchUrl(buildUrlInput) {
 
   let type = typeOfSearch.toLowerCase();
   if (typeOfSearch == "SameCollection") {
-    if (data.collectionData && data.collectionData.id) {
+    if (gd.collectionData && gd.collectionData.id) {
       type = RC.mapCollectionId(
-        data.sourceOfData,
-        data.collectionData.id,
+        gd.sourceOfData,
+        gd.collectionData.id,
         "gro",
-        data.inferEventCountry(),
-        data.inferEventYear()
+        gd.inferEventCountry(),
+        gd.inferEventYear()
       );
     } else {
       // should never happen
@@ -66,43 +66,43 @@ function buildSearchUrl(buildUrlInput) {
 
   if (type == "births") {
     builder.addIndex("EW_Birth");
-    builder.addYear(data.inferBirthYear());
+    builder.addYear(gd.inferBirthYear());
     builder.addYearRange("1");
-    if (data.lastNameAtBirth) {
-      builder.addSurname(data.lastNameAtBirth);
+    if (gd.lastNameAtBirth) {
+      builder.addSurname(gd.lastNameAtBirth);
     } else {
-      let lastName = data.inferLastName();
+      let lastName = gd.inferLastName();
       if (lastName) {
         builder.addSurname(lastName);
       }
     }
-    builder.addMothersSurname(data.mothersMaidenName);
+    builder.addMothersSurname(gd.mothersMaidenName);
 
-    if (data.recordType == RT.BirthRegistration) {
-      if (data.registrationDistrict) {
-        builder.addDistrict(data.registrationDistrict);
+    if (gd.recordType == RT.BirthRegistration) {
+      if (gd.registrationDistrict) {
+        builder.addDistrict(gd.registrationDistrict);
       }
     }
   } else {
     builder.addIndex("EW_Death");
-    builder.addYear(data.inferDeathYear());
+    builder.addYear(gd.inferDeathYear());
     builder.addYearRange("1");
-    builder.addSurname(data.inferLastNameAtDeath());
-    builder.addAge(data.inferAgeAtDeath());
+    builder.addSurname(gd.inferLastNameAtDeath());
+    builder.addAge(gd.inferAgeAtDeath());
     builder.addAgeRange("5");
 
-    if (data.recordType == RT.DeathRegistration) {
-      if (data.registrationDistrict) {
-        builder.addDistrict(data.registrationDistrict);
+    if (gd.recordType == RT.DeathRegistration) {
+      if (gd.registrationDistrict) {
+        builder.addDistrict(gd.registrationDistrict);
       }
     }
   }
 
-  builder.addFirstForename(data.inferFirstName());
-  builder.addSecondForename(data.inferSecondForename());
+  builder.addFirstForename(gd.inferFirstName());
+  builder.addSecondForename(gd.inferSecondForename());
 
   let personGender = getPersonGenderFromGeneralizedDataOrDataCache(
-    data,
+    gd,
     dataCache,
     buildUrlInput.typeOfSearch == "groBirth"
   );
@@ -114,16 +114,16 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  if (data.eventDate && data.eventDate.quarter) {
+  if (gd.eventDate && gd.eventDate.quarter) {
     const quarterLetters = ["M", "J", "S", "D"];
-    let quarterLetter = quarterLetters[data.eventDate.quarter - 1];
+    let quarterLetter = quarterLetters[gd.eventDate.quarter - 1];
     builder.addQuarter(quarterLetter);
   }
 
   // Add collection reference data if this is SameCollection
   if (typeOfSearch == "SameCollection") {
-    builder.addVolume(data.collectionData.volume);
-    builder.addPage(data.collectionData.page);
+    builder.addVolume(gd.collectionData.volume);
+    builder.addPage(gd.collectionData.page);
   }
 
   const url = builder.getUri();

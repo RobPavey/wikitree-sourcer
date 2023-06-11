@@ -43,7 +43,7 @@ function constrainYears(dates) {
   dates.endYear = constrainYear(dates.endYear);
 }
 
-function addPlaces(data, builder, options) {
+function addPlaces(gd, builder, options) {
   if (!options.search_trove_includeStateQuery) {
     return;
   }
@@ -83,7 +83,7 @@ function addPlaces(data, builder, options) {
     },
   ];
 
-  const placeNames = data.inferPlaceNames();
+  const placeNames = gd.inferPlaceNames();
 
   let placesToAdd = [];
   for (let placeName of placeNames) {
@@ -160,18 +160,18 @@ function buildSearchUrl(buildUrlInput) {
   //  keyword - first and last name
   //
 
-  const data = buildUrlInput.generalizedData;
+  const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
   let parameters = buildUrlInput.searchParameters;
 
   if (!parameters) {
     parameters = {};
-    setDefaultTextQueryParameters(parameters, data, options);
+    setDefaultTextQueryParameters(parameters, gd, options);
   }
 
   var builder = new TroveUriBuilder();
 
-  const dateRange = data.inferPossibleLifeYearRange();
+  const dateRange = gd.inferPossibleLifeYearRange();
   if (options.search_trove_addToDateRange != "none") {
     // although the values are ints in options sometimes they come through as strings in browser
     let offsetToRange = Number(options.search_trove_addToDateRange);
@@ -196,10 +196,10 @@ function buildSearchUrl(buildUrlInput) {
     builder.addEndYear(dateRange.endYear);
   }
 
-  let queryString = buildQueryString("trove", data, parameters, options);
+  let queryString = buildQueryString("trove", gd, parameters, options);
   builder.addKeywordsAll(queryString);
 
-  addPlaces(data, builder, options);
+  addPlaces(gd, builder, options);
 
   const url = builder.getUri();
 
