@@ -1,0 +1,8 @@
+{
+  "std": {
+    "url": "https://www.familysearch.org/search/record/results?count=20&q.sex=Male&q.givenName=Charles&q.surname=Pavey&q.birthLikePlace=England&q.birthLikeDate.from=1800&q.birthLikeDate.to=1814&q.residencePlace=El%20Dorado%2C%20El%20Dorado%2C%20California&q.residenceDate.from=1856&q.residenceDate.to=1864&q.recordCountry=United%20States"
+  },
+  "specified_collection": {
+    "url": "https://www.familysearch.org/search/record/results?count=20&f.collectionId=1473181&q.sex=Male&q.givenName=Charles&q.surname=Pavey&q.birthLikePlace=England&q.birthLikeDate.from=1800&q.birthLikeDate.to=1814&q.residencePlace=El%20Dorado%2C%20El%20Dorado%2C%20California&q.residenceDate.from=1856&q.residenceDate.to=1864"
+  }
+}

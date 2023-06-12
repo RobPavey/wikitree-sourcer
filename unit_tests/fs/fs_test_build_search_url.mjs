@@ -85,6 +85,32 @@ const regressionData = [
       },
     ],
   },
+  {
+    caseName: "pavey-507_wikitree",
+    inputPath: "wikitree/generalized_data/ref/pavey-507_private",
+    optionVariants: [
+      {
+        variantName: "specified_collection",
+        typeOfSearch: "SpecifiedCollection",
+        searchParameters: {
+          collectionWtsId: "UsCensus1870",
+        },
+      },
+    ],
+  },
+  {
+    caseName: "us_federal_census_1860_charles_pavey_ancestry",
+    inputPath: "ancestry/generalized_data/ref/us_federal_census_1860_charles_pavey",
+    optionVariants: [
+      {
+        variantName: "specified_collection",
+        typeOfSearch: "SpecifiedCollection",
+        searchParameters: {
+          collectionWtsId: "UsCensus1860",
+        },
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {

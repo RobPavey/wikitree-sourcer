@@ -27,23 +27,18 @@ import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_d
 import { RC } from "../../../base/core/record_collections.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
-function adaptCountryArrayForFamilySearch(countryArray) {
-  // FS used to support multiple countries in the search but now it only allows one.
-
-  let newCountryArray = [];
-
-  for (let country of countryArray) {
-    if (country == "England and Wales") {
-      continue;
-    } else if (country == "United Kingdom") {
-      continue;
-    } else {
-      newCountryArray.push(country);
-      break;
-    }
+function adaptCountryForFamilySearch(country) {
+  if (!country) {
+    return "";
   }
 
-  return newCountryArray;
+  if (country == "England and Wales") {
+    return "";
+  } else if (country == "United Kingdom") {
+    return "";
+  }
+
+  return country;
 }
 
 function shouldAddSearchTerm(collection, termName, defaultResult) {
@@ -295,15 +290,33 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  // Note that adding multiple countries like England & Walse sometimes gets no results
+  // Note that adding multiple countries like England & Wales sometimes gets no results
   // For example in England and Wales Birth Index. So if there is a collection then do not add
   // countries at all since all collections tend to be specific to a country (or a few)
   if (!collection && searchType != "tree") {
     let countryArray = gd.inferCountries();
-    if (countryArray.length > 0) {
-      let fsCountryArray = adaptCountryArrayForFamilySearch(countryArray);
-      for (let country of fsCountryArray) {
-        builder.addCountry(country);
+    if (countryArray.length == 1) {
+      let fsCountry = adaptCountryForFamilySearch(countryArray[0]);
+      builder.addCountry(fsCountry);
+    } else if (countryArray.length > 1) {
+      // FS no longer supports more than one country to focus on, so we have to decide which one to
+      // use.
+      let haveAddedCountry = false;
+      if (gd.sourceType == "record") {
+        if (gd.collectionData && gd.collectionData.id) {
+          let collection = RC.findCollection(gd.sourceOfData, gd.collectionData.id);
+          if (collection && collection.country) {
+            let fsCountry = adaptCountryForFamilySearch(collection.country);
+            if (fsCountry) {
+              builder.addCountry(fsCountry);
+              haveAddedCountry = true;
+            }
+          }
+        }
+      }
+      if (!haveAddedCountry) {
+        let fsCountry = adaptCountryForFamilySearch(countryArray[0]);
+        builder.addCountry(fsCountry);
       }
     }
   }
