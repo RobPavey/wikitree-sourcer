@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "James was in the military and died on 15 September 1918 and was buried in Cairo War Memorial Cemetery, Egypt. He was in the Cameronian (Scottish Rifles) (service number 293250).<ref>\n'''Military''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Military''': \"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>Commonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>{{Ancestry Record|2706|66407}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)<br/>\nName: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "James was in the military and died on 15 September 1918 and was buried in Cairo War Memorial Cemetery, Egypt. He was in the Cameronian (Scottish Rifles) (service number 293250).<ref>\n'''Military''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)<br/>\nName: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Military''': \"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>Commonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>{{Ancestry Record|2706|66407}} (accessed 6 May 2021)<br/>Name: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)<br/>\nName: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "James was in the military and died on 15 September 1918 and was buried in Cairo War Memorial Cemetery, Egypt. He was in the Cameronian (Scottish Rifles) (service number 293250).<ref>\n'''Military''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)<br/>\nName: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Military''': \"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>Commonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>{{Ancestry Record|2706|66407}} (accessed 6 May 2021)<br/>Name: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Holmes\n|-\n| Gender || Male\n|-\n| Age || 34\n|-\n| Birth Date || abt 1884\n|-\n| Death Date || 15 Sep 1918\n|-\n| Cemetery || Cairo War Memorial Cemetery\n|-\n| Burial Country || Egypt\n|-\n| Regiment || Cameronian (Scottish Rifles)\n|-\n| Regimental Number || 293250\n|-\n| Region or Memorial || Egypt\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "James was in the military and died on 15 September 1918 and was buried in Cairo War Memorial Cemetery, Egypt. He was in the Cameronian (Scottish Rifles) (service number 293250).<ref>\n'''Military''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James Holmes\n|-\n| Gender || Male\n|-\n| Age || 34\n|-\n| Birth Date || abt 1884\n|-\n| Death Date || 15 Sep 1918\n|-\n| Cemetery || Cairo War Memorial Cemetery\n|-\n| Burial Country || Egypt\n|-\n| Regiment || Cameronian (Scottish Rifles)\n|-\n| Regimental Number || 293250\n|-\n| Region or Memorial || Egypt\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Military''': \"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>Commonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>{{Ancestry Record|2706|66407}} (accessed 6 May 2021)<br/>Name: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947,\" database, ({{Ancestry Record|2706|66407}} : accessed 6 May 2021), Name James Holmes, Gender Male, Age 34, Birth Date abt 1884, Death Date 15 Sep 1918, Cemetery Cairo War Memorial Cemetery, Burial Country Egypt, Regiment Cameronian (Scottish Rifles), Regimental Number 293250, Region or Memorial Egypt; citing Commonwealth War Graves Commission, Author Peter Singlehurst, Series Title British Commonwealth War Graves Registers, 1914-1918, Archive Name London, United Kingdom.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "James was in the military and died on 15 September 1918 and was buried in Cairo War Memorial Cemetery, Egypt. He was in the Cameronian (Scottish Rifles) (service number 293250).<ref>\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947,\" database, ({{Ancestry Record|2706|66407}} : accessed 6 May 2021), Name James Holmes, Gender Male, Age 34, Birth Date abt 1884, Death Date 15 Sep 1918, Cemetery Cairo War Memorial Cemetery, Burial Country Egypt, Regiment Cameronian (Scottish Rifles), Regimental Number 293250, Region or Memorial Egypt; citing Commonwealth War Graves Commission, Author Peter Singlehurst, Series Title British Commonwealth War Graves Registers, 1914-1918, Archive Name London, United Kingdom.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"UK, Commonwealth War Graves, 1914-1921 and 1939-1947,\" database, ({{Ancestry Record|2706|66407}} : accessed 6 May 2021), Name James Holmes, Gender Male, Age 34, Birth Date abt 1884, Death Date 15 Sep 1918, Cemetery Cairo War Memorial Cemetery, Burial Country Egypt, Regiment Cameronian (Scottish Rifles), Regimental Number 293250, Region or Memorial Egypt; citing Commonwealth War Graves Commission, Author Peter Singlehurst, Series Title British Commonwealth War Graves Registers, 1914-1918, Archive Name London, United Kingdom.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Military'':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\", database, \nCommonwealth War Graves Commission, Author Peter Singlehurst, Series Title British Commonwealth War Graves Registers, 1914-1918, Archive Name London, United Kingdom, \n({{Ancestry Record|2706|66407}} : accessed 6 May 2021), \nName: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "James was in the military and died on 15 September 1918 and was buried in Cairo War Memorial Cemetery, Egypt. He was in the Cameronian (Scottish Rifles) (service number 293250).<ref>\n''Military'':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\", database, \nCommonwealth War Graves Commission, Author Peter Singlehurst, Series Title British Commonwealth War Graves Registers, 1914-1918, Archive Name London, United Kingdom, \n({{Ancestry Record|2706|66407}} : accessed 6 May 2021), \nName: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Military'': \"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\", database, Commonwealth War Graves Commission, Author Peter Singlehurst, Series Title British Commonwealth War Graves Registers, 1914-1918, Archive Name London, United Kingdom, ({{Ancestry Record|2706|66407}} : accessed 6 May 2021), Name: James Holmes; Gender: Male; Age: 34; Birth Date: abt 1884; Death Date: 15 Sep 1918; Cemetery: Cairo War Memorial Cemetery; Burial Country: Egypt; Regiment: Cameronian (Scottish Rifles); Regimental Number: 293250; Region or Memorial: Egypt.",
+    "type": "source"
+  }
+}

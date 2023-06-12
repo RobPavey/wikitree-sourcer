@@ -2048,6 +2048,11 @@ class NarrativeBuilder {
       let deathPlace = this.eventGd.inferDeathPlace();
       if (deathPlace) {
         place = deathPlace;
+      } else {
+        if (this.eventGd.burialPlace) {
+          place = this.eventGd.burialPlace;
+          this.narrative += " and was buried";
+        }
       }
     } else {
       this.narrative += " was in a military record";

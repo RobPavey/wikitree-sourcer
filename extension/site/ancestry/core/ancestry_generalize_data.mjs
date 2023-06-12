@@ -1819,6 +1819,15 @@ function generalizeDataGivenRecordType(ed, result) {
         spouse.marriagePlace.placeString = marriagePlace;
       }
     }
+
+    // sometimes there is a burial place or cemetery and no death place.
+    if (result.deathDate && !result.deathPlace && !result.eventPlace) {
+      let cemeteryName = getCleanValueForRecordDataList(ed, ["Cemetery"]);
+      let burialCountry = getCleanValueForRecordDataList(ed, ["Burial Country"]);
+      if (cemeteryName && burialCountry) {
+        result.burialPlace = cemeteryName + ", " + burialCountry;
+      }
+    }
   } else if (result.recordType == RT.SchoolRecords) {
     result.setEventDate(getCleanValueForRecordDataList(ed, ["Yearbook Date", "Admission Date"], "date"));
 

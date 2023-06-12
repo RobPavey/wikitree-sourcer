@@ -112,6 +112,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/188915:2355?tid=&pid=&queryId=2030d8a7bbdcfb9eecb95cad68efd69a&_phsrc=ywU8110&_phstart=successSource",
   },
   {
+    caseName: "cwgc_james_holmes_1918",
+    url: "https://www.ancestry.com/discoveryui-content/view/66407:2706?tid=&pid=&queryId=2a5b5f890a288da244d3fbe3874d866a&_phsrc=jWE3571&_phstart=successSource",
+  },
+  {
     // has closed entries
     caseName: "england_1939_register_john_smith",
     url: "https://www.ancestry.com/discoveryui-content/view/10027090:61596",

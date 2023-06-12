@@ -1,0 +1,29 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/66407:2706?tid=&pid=&queryId=2a5b5f890a288da244d3fbe3874d866a&_phsrc=jWE3571&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "2706",
+  "recordId": "66407",
+  "ancestryTemplate": "{{Ancestry Record|2706|66407}}",
+  "domain": "com",
+  "titleName": "James Holmes",
+  "titleCollection": "UK, Commonwealth War Graves, 1914-1921 and 1939-1947",
+  "recordData": {
+    "Name": "James Holmes",
+    "Gender": "Male",
+    "Age": "34",
+    "Birth Date": "abt 1884",
+    "Death Date": "15 Sep 1918",
+    "Cemetery": "Cairo War Memorial Cemetery",
+    "Burial Country": "Egypt",
+    "Regiment": "Cameronian (Scottish Rifles)",
+    "Regimental Number": "293250",
+    "Region or Memorial": "Egypt"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2706/images/40465_291343-00047?pid=66407&usePUB=true&_phsrc=jWE3571&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "2706",
+  "imageRecordId": "40465_291343-00047",
+  "sourceCitation": "Commonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom",
+  "sourceInformation": "Ancestry.com. UK, Commonwealth War Graves, 1914-1921 and 1939-1947 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2012. Original data: British Commonwealth War Graves Registers, 1914-1918. London, England: Commonwealth War Graves Commission. Commonwealth War Graves Commission,Commonwealth War Graves Registers. London, United Kingdom: Peter Singlehurst.",
+  "originalData": "British Commonwealth War Graves Registers, 1914-1918. London, England: Commonwealth War Graves Commission.",
+  "sourceDescription": "This database contains a collection of cemetery and memorial registers from the Commonwealth War Graves Commission. The cemetery registers generally provide details on who is buried in the cemetery and where they are buried. The memorial registers list the names of individuals with no known grave. Learn more..."
+}
