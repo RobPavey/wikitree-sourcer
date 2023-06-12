@@ -1,0 +1,40 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Peter Wolstenholme",
+    "lastName": "Wolstenholme",
+    "forenames": "Peter"
+  },
+  "deathDate": {
+    "dateString": "1847"
+  },
+  "deathPlace": {
+    "placeString": "Worsley, Lancashire, England, United Kingdom"
+  },
+  "birthDate": {
+    "dateString": "28 August 1842",
+    "qualifier": 3
+  },
+  "birthPlace": {
+    "placeString": "Worsley, Lancashire, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Joseph Wolstenholme",
+        "lastName": "Wolstenholme",
+        "forenames": "Joseph"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ellen Hampson",
+        "lastName": "Hampson",
+        "forenames": "Ellen"
+      }
+    }
+  },
+  "hasValidData": true
+}

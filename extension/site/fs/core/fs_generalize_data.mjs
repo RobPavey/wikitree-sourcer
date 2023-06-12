@@ -806,6 +806,34 @@ function generalizeDataForPerson(ed, result) {
   // we will already have set fullName but try to get the fornames and last names
   setNameWithPossibleNicknames(ed, result);
 
+  // if there is no birth or death details then there could be baptism or burial
+  if (!result.birthDate) {
+    let baptismDate = selectDate(ed.baptismDate, ed.baptismDateOriginal);
+    result.setBirthDate(baptismDate);
+    result.setBirthYear(ed.baptismYear);
+    if (result.birthDate) {
+      result.birthDate.qualifier = dateQualifiers.BEFORE;
+
+      if (!result.birthPlace) {
+        let baptismPlace = selectPlace(ed.baptismPlace, ed.baptismPlaceOriginal);
+        result.setBirthPlace(baptismPlace);
+      }
+    }
+  }
+  if (!result.deathDate) {
+    let burialDate = selectDate(ed.burialDate, ed.burialDateOriginal);
+    result.setDeathDate(burialDate);
+    result.setDeathYear(ed.burialYear);
+    if (result.deathDate) {
+      result.deathDate.qualifier = dateQualifiers.BEFORE;
+
+      if (!result.deathPlace) {
+        let burialPlace = selectPlace(ed.burialPlace, ed.burialPlaceOriginal);
+        result.setDeathPlace(burialPlace);
+      }
+    }
+  }
+
   if (ed.spouses) {
     result.spouses = [];
 

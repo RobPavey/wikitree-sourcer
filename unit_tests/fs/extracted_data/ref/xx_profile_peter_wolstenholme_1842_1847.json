@@ -1,0 +1,25 @@
+{
+  "fullName": "Peter Wolstenholme",
+  "givenName": "Peter",
+  "surname": "Wolstenholme",
+  "gender": "male",
+  "deathDateOriginal": "1847",
+  "deathDate": "1847",
+  "deathPlaceOriginal": "Worsley, Lancashire, England, United Kingdom",
+  "deathPlace": "Worsley, Lancashire, England, United Kingdom",
+  "baptismDateOriginal": "28 August 1842",
+  "baptismDate": "28 August 1842",
+  "baptismPlaceOriginal": "Worsley, Lancashire, England, United Kingdom",
+  "baptismPlace": "Worsley, Lancashire, England, United Kingdom",
+  "father": {
+    "fullName": "Joseph Wolstenholme",
+    "givenName": "Joseph",
+    "surname": "Wolstenholme"
+  },
+  "mother": {
+    "fullName": "Ellen Hampson",
+    "givenName": "Ellen",
+    "surname": "Hampson"
+  },
+  "pageType": "person"
+}

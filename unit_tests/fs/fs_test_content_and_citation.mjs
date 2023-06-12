@@ -435,6 +435,12 @@ const personRegressionData = [
     fetchType: "person",
   },
   {
+    // has no birth date but has christening date
+    caseName: "xx_profile_peter_wolstenholme_1842_1847",
+    url: "https://www.familysearch.org/tree/person/details/L6BB-ZWD",
+    fetchType: "person",
+  },
+  {
     caseName: "xx_profile_pinkney_lyles_1886_1916",
     url: "https://www.familysearch.org/tree/person/details/G6DP-4WD",
     fetchType: "person",

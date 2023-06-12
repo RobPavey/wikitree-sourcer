@@ -2225,6 +2225,12 @@ function processPersonPageFactsForPersonObj(person, result) {
         } else if (factType == "Death") {
           setOriginalAndNormalizedField(fact.date, result, "deathDate");
           setOriginalAndNormalizedField(fact.place, result, "deathPlace");
+        } else if (factType == "Baptism" || factType == "Christening") {
+          setOriginalAndNormalizedField(fact.date, result, "baptismDate");
+          setOriginalAndNormalizedField(fact.place, result, "baptismPlace");
+        } else if (factType == "Burial") {
+          setOriginalAndNormalizedField(fact.date, result, "burialDate");
+          setOriginalAndNormalizedField(fact.place, result, "burialPlace");
         }
       }
     }
