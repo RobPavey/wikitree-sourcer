@@ -2246,8 +2246,9 @@ class GeneralizedData {
     }
 
     if (this.recordType == RT.DeathRegistration || this.recordType == RT.Burial || this.recordType == RT.Death) {
-      if (this.eventPlace && !this.role) {
-        placeNames.push(this.eventPlace);
+      let eventPlace = this.inferEventPlace();
+      if (eventPlace && !this.role) {
+        placeNames.push(eventPlace);
       }
 
       // Collection

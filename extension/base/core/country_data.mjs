@@ -444,6 +444,10 @@ const StateData = {
 
 const CD = {
   matchCountryFromPlaceName: function (placeName) {
+    if (!placeName) {
+      return "";
+    }
+
     for (let country of CountryData) {
       for (let match of country.matches) {
         if (placeName == match) {
