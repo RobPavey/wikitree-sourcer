@@ -394,7 +394,7 @@ class CitationBuilder {
     }
 
     citation = citation.trim();
-    while (citation.endsWith(",")) {
+    while (citation.endsWith(",") || citation.endsWith(";")) {
       citation = citation.substring(0, citation.length - 1).trim();
     }
 
