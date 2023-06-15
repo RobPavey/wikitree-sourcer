@@ -22,24 +22,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
-import { initPopup } from "/base/browser/popup/popup_init.mjs";
-import { generalizeData, regeneralizeData, getRequestedUserInput } from "../core/nli_generalize_data.mjs";
-import { buildCitation } from "../core/nli_build_citation.mjs";
+import { buildSearchUrl } from "../../extension/site/psuk/core/psuk_build_search_url.mjs";
+import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
-async function setupNliPopupMenu(extractedData) {
-  let input = {
-    extractedData: extractedData,
-    extractFailedMessage:
-      "It looks like a National Library of Ireland page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
-    generalizeFailedMessage: "It looks like a National Library of Ireland page but does not contain the required data.",
-    generalizeDataFunction: generalizeData,
-    regeneralizeFunction: regeneralizeData,
-    userInputFunction: getRequestedUserInput,
-    buildCitationFunction: buildCitation,
-    siteNameToExcludeFromSearch: "nli",
-  };
-  setupSimplePopupMenu(input);
+const regressionData = [
+  /*{
+    caseName: "england_marriage_reg_handford-3_sc",
+    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
+    typeOfSearch: "SameCollection",
+  },
+  */
+];
+
+async function runTests(testManager) {
+  await runBuildSearchUrlTests("psuk", buildSearchUrl, regressionData, testManager);
 }
 
-initPopup("nli", setupNliPopupMenu);
+export { runTests };

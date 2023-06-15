@@ -162,6 +162,10 @@ li.dividerBelow {
   padding: 10px;
   margin: 0px;
 }
+.dialogLine {
+  padding: 0px;
+  margin: 5px 0px;
+}
 .dialogInputComment {
   padding: 10px;
   margin: 0px;

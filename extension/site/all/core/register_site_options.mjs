@@ -45,3 +45,4 @@ import "../../scotp/core/scotp_options.mjs";
 import "../../trove/core/trove_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
 import "../../nli/core/nli_options.mjs";
+import "../../psuk/core/psuk_options.mjs";

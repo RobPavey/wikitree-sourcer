@@ -22,37 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
-
-function buildExamplesiteUrl(ed, builder) {
-  // could provide option to use a search style URL but don't see any reason to so far
-  return ed.citationUrl;
-}
-
-function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
-}
-
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
-}
-
-function buildRecordLink(ed, gd, builder) {
-  var examplesiteUrl = buildExamplesiteUrl(ed, builder);
-
-  let recordLink = "[" + examplesiteUrl + " ExampleSite Record]";
-  builder.recordLinkOrTemplate = recordLink;
-}
-
-function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
-}
-
-function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
-}
-
-export { buildCitation };
+siteContentInit(`psuk`, `site/psuk/core/psuk_extract_data.mjs`);

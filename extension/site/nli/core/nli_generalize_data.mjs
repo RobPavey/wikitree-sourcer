@@ -129,25 +129,6 @@ function generalizeData(input) {
   result.sourceType = "record";
   result.recordType = RT.Unclassified; // causes manual classification
 
-  let guessedRecordType = processDates(ed, result);
-
-  result.classificationHints = {
-    possibleRecordTypes: [
-      { type: RT.Unclassified, string: "Unclassified", needsName: true, needsEventDate: true },
-      { type: RT.Baptism, string: "Baptism", needsName: true, needsParentNames: true, needsEventDate: true },
-      { type: RT.Marriage, string: "Marriage", needsName: true, needsSpouseName: true, needsEventDate: true },
-      { type: RT.Burial, string: "Burial", needsName: true, needsEventDate: true },
-    ],
-    eventDateComment: "(Edit to give single exact date)",
-    guessedRecordType: guessedRecordType,
-  };
-
-  if (guessedRecordType != RT.Unclassified) {
-    result.classificationHints.topLabel = "Confirm record type and add transcribed data";
-  } else {
-    result.classificationHints.topLabel = "Select record type and add transcribed data";
-  }
-
   let eventPlace = "";
   let parish = ed.parishTitle;
   if (parish) {
@@ -203,4 +184,119 @@ function regeneralizeData(input) {
   }
 }
 
-export { generalizeData, regeneralizeData, GeneralizedData, dateQualifiers };
+function getRequestedUserInput(input) {
+  let ed = input.extractedData;
+  let result = input.generalizedData;
+  let newData = input.newData;
+
+  if (!newData || !newData.recordType) {
+    newData = {};
+    newData.recordType = processDates(ed, result);
+    newData.forenames = result.inferForenames();
+    newData.lastName = result.inferLastName();
+    newData.eventDate = result.inferEventDate();
+
+    newData.fatherName = "";
+    let parentNames = result.inferParentNamesForDataString();
+    if (parentNames.fatherName) {
+      newData.fatherName = result.fatherName;
+    }
+    newData.motherName = "";
+    if (parentNames.motherName) {
+      newData.motherName = result.motherName;
+    }
+
+    newData.spouseForenames = "";
+    newData.spouseLastName = "";
+  }
+
+  let topLabel = "";
+  if (newData.recordType != RT.Unclassified) {
+    topLabel = "Confirm record type and add transcribed data";
+  } else {
+    topLabel = "Select record type and add transcribed data";
+  }
+
+  let requestedUserInput = {
+    resultData: newData,
+    fields: [
+      {
+        id: "topLabel",
+        type: "label",
+        label: topLabel,
+      },
+      {
+        id: "recordType",
+        type: "select",
+        label: "Choose record type",
+        property: "recordType",
+        options: [
+          { value: RT.Unclassified, text: "Unclassified" },
+          { value: RT.Baptism, text: "Baptism" },
+          { value: RT.Marriage, text: "Marriage" },
+          { value: RT.Burial, text: "Burial" },
+        ],
+        defaultValue: newData.recordType,
+        requiresRebuild: true,
+      },
+      {
+        id: "forenames",
+        type: "textInput",
+        label: "Forenames: ",
+        property: "forenames",
+        defaultValue: newData.forenames,
+      },
+      {
+        id: "lastName",
+        type: "textInput",
+        label: "Last name: ",
+        property: "lastName",
+        defaultValue: newData.lastName,
+      },
+      {
+        id: "fatherName",
+        type: "textInput",
+        label: "Father's name: ",
+        property: "fatherName",
+        defaultValue: newData.fatherName,
+        hidden: newData.recordType != RT.Baptism,
+      },
+      {
+        id: "motherName",
+        type: "textInput",
+        label: "Mother's name: ",
+        property: "motherName",
+        defaultValue: newData.motherName,
+        hidden: newData.recordType != RT.Baptism,
+      },
+      {
+        id: "spouseForenames",
+        type: "textInput",
+        label: "Spouse's forenames: ",
+        property: "spouseForenames",
+        defaultValue: newData.spouseForenames,
+        hidden: newData.recordType != RT.Marriage,
+      },
+      {
+        id: "spouseLastName",
+        type: "textInput",
+        label: "Spouse's last name: ",
+        property: "spouseLastName",
+        defaultValue: newData.spouseLastName,
+        hidden: newData.recordType != RT.Marriage,
+      },
+      {
+        id: "eventDate",
+        type: "textInput",
+        label: "Event date: ",
+        comment: "(Edit to give single exact date)",
+        property: "eventDate",
+        defaultValue: newData.eventDate,
+      },
+    ],
+  };
+
+  return requestedUserInput;
+}
+
+export { generalizeData, regeneralizeData, getRequestedUserInput, GeneralizedData, dateQualifiers };

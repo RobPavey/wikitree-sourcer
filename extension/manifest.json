@@ -37,6 +37,7 @@
     "*://*.nli.ie/*",
     "*://*.newspapers.com/*",
     "*://paperspast.natlib.govt.nz/*",
+    "*://probatesearch.service.gov.uk/*",
     "*://www.scotlandspeople.gov.uk/*",
     "*://trove.nla.gov.au/*"
   ],
@@ -160,6 +161,11 @@
       "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
     },
     {
+      "matches": ["*://probatesearch.service.gov.uk/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/psuk/browser/psuk_content.js"]
+    },
+    {
       "matches": ["*://www.scotlandspeople.gov.uk/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
@@ -268,6 +274,10 @@
     {
       "resources": ["site/ppnz/core/ppnz_extract_data.mjs"],
       "matches": ["*://paperspast.natlib.govt.nz/*"]
+    },
+    {
+      "resources": ["site/psuk/core/psuk_extract_data.mjs"],
+      "matches": ["*://probatesearch.service.gov.uk/*"]
     },
     {
       "resources": ["site/scotp/core/scotp_extract_data.mjs"],

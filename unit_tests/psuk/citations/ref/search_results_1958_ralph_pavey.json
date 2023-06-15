@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1958<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nRalph Edgar Pavey probate on 13 Oct 1958. Died 8 Sep 1958.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ralph died on 8 September 1958 and their estate passed probate on 13 October 1958.<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1958<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nRalph Edgar Pavey probate on 13 Oct 1958. Died 8 Sep 1958.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar 1958<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>Ralph Edgar Pavey probate on 13 Oct 1958. Died 8 Sep 1958.",
+    "type": "source"
+  }
+}

@@ -5,7 +5,7 @@
   "eventDate": {
     "dateString": "Oct 1732 - Nov 1732"
   },
-  "classificationHints": {
+  "requestedUserInput": {
     "possibleRecordTypes": [
       {
         "type": "Unclassified",

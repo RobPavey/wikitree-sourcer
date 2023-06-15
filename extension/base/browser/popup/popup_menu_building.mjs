@@ -602,230 +602,133 @@ function isManualClassificationNeeded(data) {
   return result;
 }
 
-function setupUnclassifiedBuildCitationSubMenuWithHints(
+function setupBuildCitationSubMenuForRequestedUserInput(
   data,
   buildFunction,
   backFunction,
-  generalizeFunction,
+  regeneralizeFunction,
+  userInputFunction,
   partialResultData
 ) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
   let gd = data.generalizedData;
-  let recordType = data.generalizedData.recordType;
 
-  let hintData = gd.classificationHints;
+  let input = { extractedData: data.extractedData, generalizedData: gd, newData: partialResultData };
+  let requestedUserInput = userInputFunction(input);
 
-  let textInputField = undefined;
+  let resultData = requestedUserInput.resultData;
 
-  let resultData = {};
-  if (partialResultData) {
-    resultData = partialResultData;
-  } else {
-    resultData.recordType = hintData.guessedRecordType;
-    resultData.forenames = "";
-    resultData.lastName = "";
-    resultData.spouseForenames = "";
-    resultData.spouseLastName = "";
-    resultData.fatherName = "";
-    resultData.motherName = "";
-    resultData.eventDate = "";
-  }
-
-  function getHintsForRecordType(hintData, recordType) {
-    for (let rtData of hintData.possibleRecordTypes) {
-      if (rtData.type == recordType) {
-        return rtData;
-      }
-    }
-
-    return {};
-  }
-
-  let rtHintData = getHintsForRecordType(hintData, resultData.recordType);
-
-  function fillRecordTypeSelector(selector) {
-    while (selector.firstChild) {
-      selector.removeChild(selector.firstChild);
-    }
-
-    const types = hintData.possibleRecordTypes;
-    for (const type of types) {
-      let option = document.createElement("option");
-      option.value = type.type;
-      option.text = type.string;
-      selector.appendChild(option);
-    }
-  }
-
-  function addSelector(id, labelText, fillFunction, changeFunction) {
-    let selector = document.createElement("select");
-    selector.id = id;
-    selector.className = "dialogSelector";
-    fillFunction(selector);
-    selector.addEventListener("change", changeFunction);
+  function addLabelField(field) {
     let label = document.createElement("label");
     label.className = "dialogInput";
-    label.appendChild(document.createTextNode(labelText));
-    addBreak(label);
-    label.appendChild(selector);
-    menu.list.appendChild(label);
+    label.appendChild(document.createTextNode(field.label));
+    let div = document.createElement("div");
+    div.className = "dialogLine";
+    div.appendChild(label);
 
-    return selector;
-  }
-
-  function addTextInput(id, labelText, commentText, changeFunction) {
-    let textInput = document.createElement("input");
-    textInput.type = "text";
-    textInput.id = id;
-    textInput.className = "dialogTextInput";
-    textInput.addEventListener("change", changeFunction);
-    let label = document.createElement("label");
-    label.className = "dialogInput";
-    label.appendChild(document.createTextNode(labelText));
-    if (commentText) {
-      //addBreak(label);
-      let commmentlabel = document.createElement("label");
-      commmentlabel.className = "dialogInputComment";
-      commmentlabel.appendChild(document.createTextNode(commentText));
-      label.appendChild(commmentlabel);
-    }
-    addBreak(label);
-    label.appendChild(textInput);
-    menu.list.appendChild(label);
-
-    return textInput;
-  }
-
-  function addLabel(labelText) {
-    let label = document.createElement("label");
-    label.className = "dialogInput";
-    label.appendChild(document.createTextNode(labelText));
-    menu.list.appendChild(label);
+    menu.list.appendChild(div);
 
     return label;
   }
 
-  // Explanation
-  if (hintData.topLabel) {
-    addLabel(hintData.topLabel);
-  } else {
-    addLabel("Could not identify the record type.");
-  }
+  function addSelectField(field) {
+    let selector = document.createElement("select");
+    selector.id = field.id;
+    selector.className = "dialogSelector";
 
-  addBreak(menu.list);
-  addBreak(menu.list);
+    for (const option of field.options) {
+      let optionElement = document.createElement("option");
+      optionElement.value = option.value;
+      optionElement.text = option.text;
+      selector.appendChild(optionElement);
+    }
 
-  // Record Type
-  let recordTypeSelector = addSelector(
-    "recordTypeSelector",
-    "Choose record type: ",
-    fillRecordTypeSelector,
-    function (event) {
-      let changed = resultData.recordType != event.target.value;
-      resultData.recordType = event.target.value;
-      if (changed) {
-        rtHintData = getHintsForRecordType(hintData, resultData.recordType);
-        setupUnclassifiedBuildCitationSubMenuWithHints(
+    if (resultData[field.property]) {
+      selector.value = resultData[field.property];
+    } else if (field.defaultValue) {
+      selector.value = field.defaultValue;
+    }
+
+    selector.addEventListener("change", function (event) {
+      let changed = resultData[field.property] != event.target.value;
+      resultData[field.property] = event.target.value;
+      if (changed && field.requiresRebuild) {
+        setupBuildCitationSubMenuForRequestedUserInput(
           data,
           buildFunction,
           backFunction,
-          generalizeFunction,
+          regeneralizeFunction,
+          userInputFunction,
           resultData
         );
       }
+    });
+
+    let label = document.createElement("label");
+    label.className = "dialogInput";
+    label.appendChild(document.createTextNode(field.label));
+    addBreak(label);
+    label.appendChild(selector);
+    let div = document.createElement("div");
+    div.className = "dialogLine";
+    div.appendChild(label);
+
+    menu.list.appendChild(div);
+
+    return selector;
+  }
+
+  function addTextInputField(field) {
+    let textInput = document.createElement("input");
+    textInput.type = "text";
+    textInput.id = field.id;
+    textInput.className = "dialogTextInput";
+
+    if (resultData[field.property]) {
+      textInput.value = resultData[field.property];
+    } else if (field.defaultValue) {
+      textInput.value = field.defaultValue;
     }
-  );
-  recordTypeSelector.value = resultData.recordType;
 
-  if (rtHintData.needsName) {
-    addBreak(menu.list);
-    addBreak(menu.list);
-
-    // text input
-    textInputField = addTextInput("forenamesInput", "Forenames: ", hintData.forenamesComment, function (event) {
-      resultData.forenames = event.target.value;
-      //console.log("set ref title to: " + refTitle);
+    textInput.addEventListener("change", function (event) {
+      resultData[field.property] = event.target.value;
     });
-    textInputField.value = resultData.forenames;
+    let label = document.createElement("label");
+    label.className = "dialogInput";
+    label.appendChild(document.createTextNode(field.label));
+    if (field.comment) {
+      //addBreak(label);
+      let commmentlabel = document.createElement("label");
+      commmentlabel.className = "dialogInputComment";
+      commmentlabel.appendChild(document.createTextNode(field.comment));
+      label.appendChild(commmentlabel);
+    }
+    addBreak(label);
+    label.appendChild(textInput);
+    let div = document.createElement("div");
+    div.className = "dialogLine";
+    div.appendChild(label);
 
-    addBreak(menu.list);
-    addBreak(menu.list);
+    menu.list.appendChild(div);
 
-    // text input
-    textInputField = addTextInput("lastNameInput", "Last Name: ", hintData.lastNameComment, function (event) {
-      resultData.lastName = event.target.value;
-      //console.log("set ref title to: " + refTitle);
-    });
-    textInputField.value = resultData.lastName;
+    return textInput;
   }
 
-  if (rtHintData.needsSpouseName) {
-    addBreak(menu.list);
-    addBreak(menu.list);
-
-    // text input
-    textInputField = addTextInput(
-      "forenamesInput",
-      "Spouse's Forenames: ",
-      hintData.forenamesComment,
-      function (event) {
-        resultData.spouseForenames = event.target.value;
-        //console.log("set ref title to: " + refTitle);
-      }
-    );
-    textInputField.value = resultData.spouseForenames;
-
-    addBreak(menu.list);
-    addBreak(menu.list);
-
-    // text input
-    textInputField = addTextInput("lastNameInput", "Spouse's Last Name: ", hintData.lastNameComment, function (event) {
-      resultData.spouseLastName = event.target.value;
-      //console.log("set ref title to: " + refTitle);
-    });
-    textInputField.value = resultData.spouseLastName;
+  function addField(field) {
+    if (field.type == "label") {
+      addLabelField(field);
+    } else if (field.type == "select") {
+      addSelectField(field);
+    } else if (field.type == "textInput") {
+      addTextInputField(field);
+    }
   }
 
-  if (rtHintData.needsParentNames) {
-    addBreak(menu.list);
-    addBreak(menu.list);
-
-    // text input
-    textInputField = addTextInput("fatherInput", "Father's name: ", hintData.fatherNameComment, function (event) {
-      resultData.fatherName = event.target.value;
-      //console.log("set ref title to: " + refTitle);
-    });
-    textInputField.value = resultData.fatherName;
-
-    addBreak(menu.list);
-    addBreak(menu.list);
-
-    // text input
-    textInputField = addTextInput("motherInput", "Mother's name: ", hintData.motherNameComment, function (event) {
-      resultData.motherName = event.target.value;
-      //console.log("set ref title to: " + refTitle);
-    });
-    textInputField.value = resultData.motherName;
-  }
-
-  if (rtHintData.needsEventDate) {
-    addBreak(menu.list);
-    addBreak(menu.list);
-
-    // text input
-    textInputField = addTextInput("eventDateInput", "Event date: ", hintData.eventDateComment, function (event) {
-      resultData.eventDate = event.target.value;
-      //console.log("set ref title to: " + refTitle);
-    });
-    if (resultData.eventDate) {
-      textInputField.value = resultData.eventDate;
-    } else {
-      let initialEventDate = gd.inferEventDate();
-      if (initialEventDate) {
-        textInputField.value = initialEventDate;
-      }
+  for (let field of requestedUserInput.fields) {
+    if (!field.hidden) {
+      addField(field);
     }
   }
 
@@ -839,18 +742,13 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
     buttonText = "Build Source Citation";
   }
 
-  addBreak(menu.list);
-  addBreak(menu.list);
-
   let button = document.createElement("button");
   button.className = "dialogButton";
   button.innerText = buttonText;
   button.onclick = function (element) {
-    //console.log("record type is: " + recordType);
-    gd.recordType = recordType;
-    if (recordType && generalizeFunction) {
+    if (regeneralizeFunction) {
       let input = { extractedData: data.extractedData, generalizedData: gd, newData: resultData };
-      generalizeFunction(input);
+      regeneralizeFunction(input);
     }
 
     buildFunction(data);
@@ -860,15 +758,22 @@ function setupUnclassifiedBuildCitationSubMenuWithHints(
   endMainMenu(menu);
 }
 
-function setupUnclassifiedBuildCitationSubMenu(
+function setupBuildCitationSubMenu(
   data,
   manualClassification,
   buildFunction,
   backFunction,
-  generalizeFunction
+  regeneralizeFunction,
+  userInputFunction
 ) {
-  if (data.generalizedData.classificationHints) {
-    setupUnclassifiedBuildCitationSubMenuWithHints(data, buildFunction, backFunction, generalizeFunction);
+  if (userInputFunction) {
+    setupBuildCitationSubMenuForRequestedUserInput(
+      data,
+      buildFunction,
+      backFunction,
+      regeneralizeFunction,
+      userInputFunction
+    );
     return;
   }
 
@@ -1047,8 +952,8 @@ function setupUnclassifiedBuildCitationSubMenu(
       gd.overrideRefTitle = refTitle;
     }
 
-    if (recordType && generalizeFunction) {
-      generalizeFunction(data.extractedData, gd);
+    if (recordType && regeneralizeFunction) {
+      regeneralizeFunction(data.extractedData, gd);
     }
 
     buildFunction(data);
@@ -1065,16 +970,23 @@ function addBuildCitationMenuItem(
   buildFunction,
   type,
   backFunction,
-  generalizeFunction
+  regeneralizeFunction,
+  userInputFunction
 ) {
   let suffix = "";
-  if (type == "narrative") {
-    if (manualClassification.isRecordTypeNeededForNarrative || manualClassification.isRefTitleNeeded) {
+  if (regeneralizeFunction) {
+    if (userInputFunction) {
       suffix = "...";
-    }
-  } else {
-    if (manualClassification.isRecordTypeNeeded || manualClassification.isRefTitleNeeded) {
-      suffix = "...";
+    } else {
+      if (type == "narrative") {
+        if (manualClassification.isRecordTypeNeededForNarrative || manualClassification.isRefTitleNeeded) {
+          suffix = "...";
+        }
+      } else {
+        if (manualClassification.isRecordTypeNeeded || manualClassification.isRefTitleNeeded) {
+          suffix = "...";
+        }
+      }
     }
   }
 
@@ -1096,12 +1008,13 @@ function addBuildCitationMenuItem(
 
   if (suffix) {
     addMenuItem(menu, menuText, function (element) {
-      setupUnclassifiedBuildCitationSubMenu(
+      setupBuildCitationSubMenu(
         input,
         manualClassification,
         buildFunction,
         backFunction,
-        generalizeFunction
+        regeneralizeFunction,
+        userInputFunction
       );
     });
   } else {
@@ -1112,14 +1025,23 @@ function addBuildCitationMenuItem(
   }
 }
 
-function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, generalizeFunction) {
+function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, regeneralizeFunction, userInputFunction) {
   if (data.extractedData.pageType && data.extractedData.pageType != "record") {
     return;
   }
 
   let manualClassification = isManualClassificationNeeded(data);
 
-  addBuildCitationMenuItem(menu, data, manualClassification, buildFunction, "inline", backFunction, generalizeFunction);
+  addBuildCitationMenuItem(
+    menu,
+    data,
+    manualClassification,
+    buildFunction,
+    "inline",
+    backFunction,
+    regeneralizeFunction,
+    userInputFunction
+  );
   addBuildCitationMenuItem(
     menu,
     data,
@@ -1127,9 +1049,19 @@ function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, gene
     buildFunction,
     "narrative",
     backFunction,
-    generalizeFunction
+    regeneralizeFunction,
+    userInputFunction
   );
-  addBuildCitationMenuItem(menu, data, manualClassification, buildFunction, "source", backFunction, generalizeFunction);
+  addBuildCitationMenuItem(
+    menu,
+    data,
+    manualClassification,
+    buildFunction,
+    "source",
+    backFunction,
+    regeneralizeFunction,
+    userInputFunction
+  );
 }
 
 // Global to remember the popup menu width before EditCitation

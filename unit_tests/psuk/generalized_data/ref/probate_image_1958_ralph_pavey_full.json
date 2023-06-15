@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "psuk",
+  "sourceType": "record",
+  "recordType": "Probate",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Ralph Edgar"
+  },
+  "deathDate": {
+    "dateString": "08 Sep 1958"
+  },
+  "eventDate": {
+    "dateString": "13 Oct 1958"
+  },
+  "hasValidData": true
+}
