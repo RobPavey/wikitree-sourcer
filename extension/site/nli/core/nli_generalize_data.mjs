@@ -127,7 +127,7 @@ function generalizeData(input) {
   }
 
   result.sourceType = "record";
-  result.recordType = RT.Unclassified; // causes manual classification
+  result.recordType = processDates(ed, result);
 
   let eventPlace = "";
   let parish = ed.parishTitle;

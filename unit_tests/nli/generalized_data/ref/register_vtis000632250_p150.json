@@ -1,43 +1,10 @@
 {
   "sourceOfData": "nli",
   "sourceType": "record",
-  "recordType": "Unclassified",
   "eventDate": {
     "dateString": "June 1777"
   },
-  "requestedUserInput": {
-    "possibleRecordTypes": [
-      {
-        "type": "Unclassified",
-        "string": "Unclassified",
-        "needsName": true,
-        "needsEventDate": true
-      },
-      {
-        "type": "Baptism",
-        "string": "Baptism",
-        "needsName": true,
-        "needsParentNames": true,
-        "needsEventDate": true
-      },
-      {
-        "type": "Marriage",
-        "string": "Marriage",
-        "needsName": true,
-        "needsSpouseName": true,
-        "needsEventDate": true
-      },
-      {
-        "type": "Burial",
-        "string": "Burial",
-        "needsName": true,
-        "needsEventDate": true
-      }
-    ],
-    "eventDateComment": "(Edit to give single exact date)",
-    "guessedRecordType": "Unclassified",
-    "topLabel": "Select record type and add transcribed data"
-  },
+  "recordType": "Unclassified",
   "eventPlace": {
     "placeString": "St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland"
   },
