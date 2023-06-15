@@ -39,8 +39,8 @@ function buildSourceReference(ed, gd, builder) {
   if (probateYear) {
     builder.sourceReference += " " + probateYear;
   }
-  if (gd.probateData && gd.probateData.page) {
-    builder.sourceReference += ", page " + gd.probateData.page;
+  if (gd.siteData && gd.siteData.page) {
+    builder.sourceReference += ", page " + gd.siteData.page;
   }
 }
 
@@ -99,7 +99,7 @@ function addFullSentenceDataString(gd, builder) {
     addPart(deathDate);
     let deathPlace = gd.inferDeathPlace();
     if (deathPlace) {
-      addPart("at");
+      addPart("at"); // preposition doesn't always sound right but "at" always used in image
       addPart(deathPlace);
     }
   }

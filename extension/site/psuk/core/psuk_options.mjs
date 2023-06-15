@@ -52,13 +52,6 @@ const citationOptionsGroup = {
         { value: "table", text: "Table of field names/values" },
       ],
       defaultValue: "fullSentence",
-      unitTestValue: "string",
-    },
-    {
-      optionName: "gatherExtraData",
-      type: "checkbox",
-      label: "Prompt for more than the basic data",
-      defaultValue: true,
     },
   ],
 };

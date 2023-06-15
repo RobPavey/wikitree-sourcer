@@ -85,6 +85,8 @@ function regeneralizeData(input) {
   result.setEventDate(newData.probateDate);
   result.setEventPlace(newData.probateRegistry);
 
+  result.setPersonGender(newData.gender);
+
   function addSiteField(newDataField, siteField) {
     if (!result.siteData) {
       result.siteData = {};
@@ -103,8 +105,16 @@ function regeneralizeData(input) {
 
 function getRequestedUserInput(input) {
   let ed = input.extractedData;
+  let citationType = input.type;
+  let options = input.options;
   let result = input.generalizedData;
   let newData = input.newData;
+
+  let isNarrative = citationType == "narrative";
+  let dataStyle = options.citation_psuk_dataStyle;
+
+  let isSimpleData = dataStyle == "string" || dataStyle == "none";
+  let noNarrativeOrData = !isNarrative && dataStyle == "none";
 
   if (!newData || !newData.recordType) {
     newData = {};
@@ -128,12 +138,27 @@ function getRequestedUserInput(input) {
         type: "textInput",
         label: "Last name * : ",
         property: "lastName",
+        hidden: noNarrativeOrData,
       },
       {
         id: "forenames",
         type: "textInput",
         label: "Forenames * : ",
         property: "forenames",
+        hidden: noNarrativeOrData,
+      },
+      {
+        id: "gender",
+        type: "select",
+        label: "Gender: ",
+        property: "gender",
+        options: [
+          { value: "", text: "Unknown" },
+          { value: "male", text: "Male" },
+          { value: "female", text: "Female" },
+        ],
+        defaultValue: "",
+        hidden: !isNarrative,
       },
       {
         id: "residence",
@@ -141,6 +166,7 @@ function getRequestedUserInput(input) {
         label: "Residence: ",
         comment: "(add comma's between parts)",
         property: "residence",
+        hidden: isSimpleData,
       },
       {
         id: "status",
@@ -148,12 +174,14 @@ function getRequestedUserInput(input) {
         label: "Status: ",
         comment: "(e.g. widow or wife of ...)",
         property: "status",
+        hidden: isSimpleData,
       },
       {
         id: "deathDate",
         type: "textInput",
         label: "Death date * : ",
         property: "deathDate",
+        hidden: noNarrativeOrData,
       },
       {
         id: "deathPlace",
@@ -161,6 +189,7 @@ function getRequestedUserInput(input) {
         label: "Death place: ",
         comment: "(add comma's between parts)",
         property: "deathPlace",
+        hidden: noNarrativeOrData,
       },
       {
         id: "entryType",
@@ -174,12 +203,14 @@ function getRequestedUserInput(input) {
           { value: "Confirmation", text: "AdministConfirmationation" },
         ],
         defaultValue: "probate",
+        hidden: isSimpleData,
       },
       {
         id: "probateRegistry",
         type: "textInput",
         label: "Probate registry: ",
         property: "probateRegistry",
+        hidden: noNarrativeOrData,
       },
       {
         id: "probateDate",
@@ -193,12 +224,14 @@ function getRequestedUserInput(input) {
         label: "Granted to: ",
         comment: "(include all and their relationship)",
         property: "grantedTo",
+        hidden: isSimpleData,
       },
       {
         id: "effects",
         type: "textInput",
         label: "Effects (£): ",
         property: "effects",
+        hidden: isSimpleData,
       },
       {
         id: "page",

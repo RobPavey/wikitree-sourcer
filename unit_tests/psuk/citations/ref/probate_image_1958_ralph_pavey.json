@@ -1,14 +1,14 @@
 {
-    "std_inline": {
-      "citation": "<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1958<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nRalph Edgar Pavey probate in 1958. Died 1958.\n</ref>",
-      "type": "inline"
-    },
-    "std_narrative": {
-      "citation": "Ralph died in 1958 and their estate passed probate in 1958.<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1958<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nRalph Edgar Pavey probate in 1958. Died 1958.\n</ref>",
-      "type": "narrative"
-    },
-    "std_source": {
-      "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar 1958<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>Ralph Edgar Pavey probate in 1958. Died 1958.",
-      "type": "source"
-    }
+  "std_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1958<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Ralph Edgar died 1958. Probate 1958.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ralph died in 1958 and their estate passed probate in 1958.<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1958<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Ralph Edgar died 1958. Probate 1958.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar 1958<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Ralph Edgar died 1958. Probate 1958.",
+    "type": "source"
   }
+}

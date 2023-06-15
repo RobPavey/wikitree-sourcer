@@ -521,7 +521,11 @@ const WTS_Date = {
   getDateStringFromYearMonthDay: function (year, month, day) {
     let dateString = "";
     if (day) {
-      dateString += day;
+      let dayString = day.toString();
+      if (dayString) {
+        dayString = dayString.replace(/^0*/, "");
+        dateString += dayString;
+      }
     }
     if (month) {
       let monthString = month;

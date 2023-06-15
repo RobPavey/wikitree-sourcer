@@ -3,14 +3,14 @@
   "sourceType": "record",
   "recordType": "Probate",
   "name": {
-    "lastName": "Pavey",
-    "forenames": "Ralph Edgar"
+    "lastName": "Chamberlin",
+    "forenames": "Jane Ada"
   },
   "deathDate": {
-    "dateString": "8 Sep 1958"
+    "dateString": "1950"
   },
   "eventDate": {
-    "dateString": "13 Oct 1958"
+    "dateString": "1950"
   },
   "hasValidData": true
 }

@@ -615,7 +615,13 @@ function setupBuildCitationSubMenuForRequestedUserInput(
 
   let gd = data.generalizedData;
 
-  let input = { extractedData: data.extractedData, generalizedData: gd, newData: partialResultData };
+  let input = {
+    type: data.type,
+    extractedData: data.extractedData,
+    generalizedData: gd,
+    newData: partialResultData,
+    options: options,
+  };
   let requestedUserInput = userInputFunction(input);
 
   let resultData = requestedUserInput.resultData;
