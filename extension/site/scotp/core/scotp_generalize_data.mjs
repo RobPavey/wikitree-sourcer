@@ -1528,8 +1528,6 @@ function generalizeData(input) {
       {
         result.setEventYear(ed.recordData["Dissolution Year"]);
 
-        getCleanValueForRecordDataList;
-
         let partnerDate = cleanDdMmYyyyDate(
           getCleanValueForRecordDataList(ed, ["Civil Partnership Date", "Partnership Date"])
         );
@@ -1547,7 +1545,10 @@ function generalizeData(input) {
     case "census":
       {
         result.setEventYear(ed.recordData["Year"]);
-        result.setFieldIfValueExists("ageAtEvent", ed.recordData["Age at census"]);
+        result.setFieldIfValueExists(
+          "ageAtEvent",
+          getCleanValueForRecordDataList(ed, ["Age at census", "Age at Census"])
+        );
         result.setFieldIfValueExists("registrationDistrict", ed.recordData["RD Name"]);
         result.eventPlace = buildPlaceWithCensusCountyAndDistrict(
           ed,
@@ -1561,7 +1562,10 @@ function generalizeData(input) {
     case "census_lds":
       {
         result.setEventYear(ed.recordData["Year"]);
-        result.setFieldIfValueExists("ageAtEvent", ed.recordData["Age at census"]);
+        result.setFieldIfValueExists(
+          "ageAtEvent",
+          getCleanValueForRecordDataList(ed, ["Age at census", "Age at Census"])
+        );
         // can we extract registrationDistrict from censusPlace?
         result.eventPlace = buildPlaceWith1891LdsPlaceAndAddress(
           ed.recordData["Census Place"],
