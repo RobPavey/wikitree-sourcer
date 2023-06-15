@@ -58,5 +58,17 @@
   "siteStyle_source": {
     "citation": "* '''Unclassified''': \"Catholic Parish Registers\"<br/>National Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)",
     "type": "source"
+  },
+  "regeneralized_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)<br/>\nGiuliemium Welsh baptism on 14 Jun 1777, child of Joannis Welsh & Anna Phelan, in St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "regeneralized_narrative": {
+    "citation": "Giuliemium, child of Joannis Welsh & Anna Phelan, was baptised on 14 June 1777 in St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>\n[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)<br/>\nGiuliemium Welsh baptism on 14 Jun 1777, child of Joannis Welsh & Anna Phelan, in St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "regeneralized_source": {
+    "citation": "* '''Baptism''': \"Catholic Parish Registers\"<br/>National Library of Ireland, Diocese of Waterford and Lismore, County of Waterford; Page 150; June 1777<br/>[https://registers.nli.ie/registers/vtls000632250#page/150/mode/1up National Library of Ireland Register] (accessed 6 May 2021)<br/>Giuliemium Welsh baptism on 14 Jun 1777, child of Joannis Welsh & Anna Phelan, in St. Patrick's and St. Olaf's, Waterford city, Waterford, Ireland.",
+    "type": "source"
   }
 }

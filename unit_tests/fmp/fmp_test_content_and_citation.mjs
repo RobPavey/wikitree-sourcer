@@ -434,7 +434,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("fmp", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("fmp", buildCitation, buildHouseholdTable, regressionData, testManager, optionVariants);
+  const functions = { buildCitation: buildCitation, buildTable: buildHouseholdTable };
+  await runBuildCitationTests("fmp", functions, regressionData, testManager, optionVariants);
 }
 
 export { runTests };

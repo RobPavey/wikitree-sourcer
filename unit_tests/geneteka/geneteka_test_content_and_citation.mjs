@@ -78,7 +78,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("geneteka", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("geneteka", buildCitation, undefined, regressionData, testManager);
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("geneteka", functions, regressionData, testManager);
 }
 
 export { runTests };

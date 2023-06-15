@@ -544,32 +544,21 @@ const optionVariants = [
 async function runTests(testManager) {
   await runExtractDataTests("fs", extractDataFromFetch, regressionData, testManager);
   await runGeneralizeDataTests("fs", generalizeData, regressionData, testManager);
-  await runBuildCitationTests("fs", buildCitation, buildHouseholdTable, regressionData, testManager, optionVariants);
+
+  const functions = { buildCitation: buildCitation, buildTable: buildHouseholdTable };
+
+  await runBuildCitationTests("fs", functions, regressionData, testManager, optionVariants);
 
   await runExtractDataTests("fs", extractData, imageRegressionData, testManager);
   await runGeneralizeDataTests("fs", generalizeData, imageRegressionData, testManager);
-  await runBuildCitationTests(
-    "fs",
-    buildCitation,
-    buildHouseholdTable,
-    imageRegressionData,
-    testManager,
-    optionVariants
-  );
+  await runBuildCitationTests("fs", functions, imageRegressionData, testManager, optionVariants);
 
   await runExtractDataTests("fs", extractDataFromFetch, personRegressionData, testManager);
   await runGeneralizeDataTests("fs", generalizeData, personRegressionData, testManager);
 
   await runExtractDataTests("fs", extractData, bookRegressionData, testManager);
   await runGeneralizeDataTests("fs", generalizeData, bookRegressionData, testManager);
-  await runBuildCitationTests(
-    "fs",
-    buildCitation,
-    buildHouseholdTable,
-    bookRegressionData,
-    testManager,
-    optionVariants
-  );
+  await runBuildCitationTests("fs", functions, bookRegressionData, testManager, optionVariants);
 }
 
 export { runTests };

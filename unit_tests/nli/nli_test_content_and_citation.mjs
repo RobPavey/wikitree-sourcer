@@ -23,8 +23,10 @@ SOFTWARE.
 */
 
 import { extractData } from "../../extension/site/nli/core/nli_extract_data.mjs";
-import { generalizeData } from "../../extension/site/nli/core/nli_generalize_data.mjs";
+import { generalizeData, regeneralizeData } from "../../extension/site/nli/core/nli_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/nli/core/nli_build_citation.mjs";
+
+import { RT } from "../../extension/base/core/record_type.mjs";
 
 import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
@@ -51,6 +53,17 @@ const regressionData = [
         variantName: "siteStyle",
         optionOverrides: { citation_general_sourceReferenceSeparator: "siteStyle" },
       },
+      {
+        variantName: "regeneralized",
+        newData: {
+          recordType: RT.Baptism,
+          lastName: "Welsh",
+          forenames: "Giuliemium",
+          eventDate: "14 Jun 1777",
+          fatherName: "Joannis Welsh",
+          motherName: "Anna Phelan",
+        },
+      },
     ],
   },
   {
@@ -64,7 +77,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("nli", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("nli", buildCitation, undefined, regressionData, testManager);
+  const functions = { buildCitation: buildCitation, regeneralizeData: regeneralizeData };
+  await runBuildCitationTests("nli", functions, regressionData, testManager);
 }
 
 export { runTests };

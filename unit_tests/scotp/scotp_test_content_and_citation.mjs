@@ -434,7 +434,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("scotp", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("scotp", buildCitation, undefined, regressionData, testManager, optionVariants);
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("scotp", functions, regressionData, testManager, optionVariants);
 }
 
 export { runTests };

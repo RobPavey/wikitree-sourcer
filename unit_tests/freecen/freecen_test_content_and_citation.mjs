@@ -111,14 +111,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("freecen", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests(
-    "freecen",
-    buildCitation,
-    buildHouseholdTable,
-    regressionData,
-    testManager,
-    optionVariants
-  );
+  const functions = { buildCitation: buildCitation, buildTable: buildHouseholdTable };
+  await runBuildCitationTests("freecen", functions, regressionData, testManager, optionVariants);
 }
 
 export { runTests };

@@ -41,17 +41,14 @@ function testEnabled(parameters, testName) {
 
 // The regressionData passed in must be an array of objects.
 // Each object having the keys: "PageFile" and "extractedData"
-async function runBuildCitationTests(
-  siteName,
-  buildCitationFunction,
-  buildTableFunction,
-  regressionData,
-  testManager,
-  optionVariants = undefined
-) {
+async function runBuildCitationTests(siteName, functions, regressionData, testManager, optionVariants = undefined) {
   if (!testEnabled(testManager.parameters, "citation")) {
     return;
   }
+
+  const regeneralizeDataFunction = functions.regeneralizeData;
+  const buildCitationFunction = functions.buildCitation;
+  const buildTableFunction = functions.buildTable;
 
   let testName = siteName + "_build_citation";
 
@@ -124,6 +121,15 @@ async function runBuildCitationTests(
       let baseName = variant.variantName + "_";
       // use spread operator to merge the base options and the ones from the variant
       input.options = { ...userOptions, ...variant.optionOverrides };
+
+      if (regeneralizeDataFunction && variant.newData) {
+        let regeneralizeInput = {
+          extractedData: extractedData,
+          generalizedData: generalizedData,
+          newData: variant.newData,
+        };
+        regeneralizeDataFunction(regeneralizeInput);
+      }
 
       for (let citationType of citationTypes) {
         if (variant.thisTypeOnly && variant.thisTypeOnly != citationType) {

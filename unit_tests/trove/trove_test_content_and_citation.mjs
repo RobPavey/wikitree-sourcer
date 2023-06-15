@@ -61,7 +61,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("trove", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("trove", buildCitation, undefined, regressionData, testManager, optionVariants);
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("trove", functions, regressionData, testManager, optionVariants);
 }
 
 export { runTests };

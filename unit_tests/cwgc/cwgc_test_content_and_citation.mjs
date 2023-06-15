@@ -57,7 +57,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("cwgc", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("cwgc", buildCitation, undefined, regressionData, testManager);
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("cwgc", functions, regressionData, testManager);
 }
 
 export { runTests };

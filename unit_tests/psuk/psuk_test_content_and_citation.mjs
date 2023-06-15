@@ -34,6 +34,25 @@ const regressionData = [
   {
     caseName: "probate_image_1958_ralph_pavey_full",
     url: "https://probatesearch.service.gov.uk/search-results",
+    optionVariants: [
+      {
+        variantName: "regeneralizeFull",
+        newData: {
+          lastName: "Pavey",
+          forenames: "Ralph Edgar",
+          residence: "14 New Oak Road, Finchley, London, N.2",
+          status: "",
+          deathDate: "8 Sep 1958",
+          deathPlace: "Middlesex Hospital, London, W.1",
+          entryType: "Administration",
+          probateRegistry: "London",
+          probateDate: "13 October 1958",
+          grantedTo: "Elsie Sarah Pavey widow",
+          effects: "477 7s. 4d.",
+          page: "410",
+        },
+      },
+    ],
   },
   {
     caseName: "probate_image_1958_ralph_pavey",
@@ -50,7 +69,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("psuk", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("psuk", buildCitation, undefined, regressionData, testManager);
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("psuk", functions, regressionData, testManager);
 }
 
 export { runTests };

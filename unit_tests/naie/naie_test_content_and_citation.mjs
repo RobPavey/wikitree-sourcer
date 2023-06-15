@@ -88,7 +88,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("naie", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("naie", buildCitation, undefined, regressionData, testManager);
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("naie", functions, regressionData, testManager);
 }
 
 export { runTests };

@@ -44,7 +44,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("examplesite", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("examplesite", buildCitation, undefined, regressionData, testManager);
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("examplesite", functions, regressionData, testManager);
 }
 
 export { runTests };

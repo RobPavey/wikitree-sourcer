@@ -1206,14 +1206,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("ancestry", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests(
-    "ancestry",
-    buildCitation,
-    buildHouseholdTable,
-    regressionData,
-    testManager,
-    optionVariants
-  );
+  const functions = { buildCitation: buildCitation, buildTable: buildHouseholdTable };
+  await runBuildCitationTests("ancestry", functions, regressionData, testManager, optionVariants);
 }
 
 export { runTests };

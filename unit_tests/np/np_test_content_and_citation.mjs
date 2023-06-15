@@ -56,7 +56,9 @@ const regressionData = [
 async function runTests(testManager) {
   await runExtractDataTests("np", extractData, regressionData, testManager);
   await runGeneralizeDataTests("np", generalizeData, regressionData, testManager);
-  await runBuildCitationTests("np", buildCitation, undefined, regressionData, testManager);
+
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("np", functions, regressionData, testManager);
 }
 
 export { runTests };

@@ -96,7 +96,8 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("freereg", generalizeData, regressionData, testManager);
 
-  await runBuildCitationTests("freereg", buildCitation, undefined, regressionData, testManager, optionVariants);
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("freereg", functions, regressionData, testManager, optionVariants);
 }
 
 export { runTests };
