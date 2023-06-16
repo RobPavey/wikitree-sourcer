@@ -36,10 +36,14 @@ async function setupPsukPopupMenu(extractedData) {
       "It looks like a Probate Search/Find A Will (UK) page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     regeneralizeFunction: regeneralizeData,
-    userInputFunction: getRequestedUserInput,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "psuk",
   };
+
+  if (extractedData.isImage) {
+    input.userInputFunction = getRequestedUserInput;
+  }
+
   setupSimplePopupMenu(input);
 }
 

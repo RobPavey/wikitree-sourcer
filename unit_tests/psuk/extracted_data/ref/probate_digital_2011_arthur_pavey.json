@@ -1,0 +1,21 @@
+{
+  "url": "https://probatesearch.service.gov.uk/search-results",
+  "success": true,
+  "searchData": {
+    "Last name": "Pavey",
+    "First name (Optional)": "Arthur",
+    "Year of death": "2011",
+    "Was the person a soldier": "No"
+  },
+  "digitalResultCount": 1,
+  "documentResultCount": 0,
+  "digitalRecordData": {
+    "Last name": "PAVEY",
+    "First name": "ARTHUR ROBERT BRIAN",
+    "Date of death": "3 February 2011",
+    "Date of probate": "2 March 2011",
+    "Probate number": "3479270",
+    "Document type": "PROBATE",
+    "Registry office": "Leeds"
+  }
+}

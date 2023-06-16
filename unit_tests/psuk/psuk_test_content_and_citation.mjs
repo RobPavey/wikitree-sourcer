@@ -64,6 +64,16 @@ const janeChamberlinFullNewData = {
 
 const regressionData = [
   {
+    // 1 Digital Result
+    caseName: "probate_digital_2011_arthur_pavey",
+    url: "https://probatesearch.service.gov.uk/search-results",
+  },
+  {
+    // 17 Digital Results
+    caseName: "probate_digital_2011_pavey",
+    url: "https://probatesearch.service.gov.uk/search-results",
+  },
+  {
     caseName: "probate_image_1950_jane_chamberlin",
     url: "https://probatesearch.service.gov.uk/search-results",
     optionVariants: [
@@ -96,6 +106,17 @@ const regressionData = [
   },
   {
     caseName: "search_results_1958_ralph_pavey",
+    url: "https://probatesearch.service.gov.uk/search-results",
+  },
+  {
+    // 2 Digital Results of Soldier's wills
+    caseName: "soldier_1918_pavey",
+    url: "https://probatesearch.service.gov.uk/search-results",
+  },
+  {
+    // 2 Digital Results of Soldier's wills - then click on image
+    // In this example the image has the wrong records
+    caseName: "soldier_image_1918_pavey",
     url: "https://probatesearch.service.gov.uk/search-results",
   },
 ];

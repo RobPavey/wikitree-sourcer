@@ -1,0 +1,20 @@
+{
+  "url": "https://probatesearch.service.gov.uk/search-results",
+  "success": true,
+  "searchData": {
+    "Last name": "Pavey",
+    "Year of death": "2011",
+    "Was the person a soldier": "No"
+  },
+  "digitalResultCount": 17,
+  "documentResultCount": 0,
+  "digitalRecordData": {
+    "Last name": "PAVEY",
+    "First name": "LEONARD MAURICE",
+    "Date of death": "5 January 2011",
+    "Date of probate": "28 February 2011",
+    "Probate number": "3483565",
+    "Document type": "PROBATE",
+    "Registry office": "Winchester"
+  }
+}

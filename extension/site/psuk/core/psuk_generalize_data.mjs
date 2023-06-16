@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { WTS_String } from "../../../base/core/wts_string.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 // This function generalizes the data (ed) extracted from the web page.
@@ -42,23 +43,46 @@ function generalizeData(input) {
   result.sourceType = "record";
   result.recordType = RT.Probate;
 
-  let lastName = ed.recordData["Last name"];
-  let forenames = ed.recordData["First name (Optional)"];
-  result.setLastNameAndForeNames(lastName, forenames);
+  result.siteData = {};
 
-  function buildDate(year, month, day) {
-    return WTS_Date.getDateStringFromYearMonthDay(year, month, day);
+  if (ed.digitalRecordData) {
+    // This is a digital result
+    let lastName = WTS_String.toInitialCapsEachWord(ed.digitalRecordData["Last name"]);
+    let forenames = WTS_String.toInitialCapsEachWord(ed.digitalRecordData["First name"]);
+    result.setLastNameAndForeNames(lastName, forenames);
+
+    result.setDeathDate(ed.digitalRecordData["Date of death"]);
+    result.setEventDate(ed.digitalRecordData["Date of probate"]);
+    result.setEventPlace(ed.digitalRecordData["Registry office"]);
+
+    function addSiteField(recordDataField, siteField) {
+      if (ed.digitalRecordData[recordDataField]) {
+        result.siteData[siteField] = ed.digitalRecordData[recordDataField];
+      }
+    }
+
+    addSiteField("Probate number", "probateNumber");
+    addSiteField("Document type", "entryType");
+    addSiteField("Regiment number", "regimentNumber");
+  } else {
+    let lastName = ed.searchData["Last name"];
+    let forenames = ed.searchData["First name (Optional)"];
+    result.setLastNameAndForeNames(lastName, forenames);
+
+    function buildDate(year, month, day) {
+      return WTS_Date.getDateStringFromYearMonthDay(year, month, day);
+    }
+
+    let deathYear = ed.searchData["Year of death"];
+    let deathMonth = ed.searchData["Month of death (Optional)"];
+    let deathDay = ed.searchData["Day of death (Optional)"];
+    result.setDeathDate(buildDate(deathYear, deathMonth, deathDay));
+
+    let probateYear = ed.searchData["Year of probate (Optional)"];
+    let probateMonth = ed.searchData["Month of probate (Optional)"];
+    let probateDay = ed.searchData["Day of probate (Optional)"];
+    result.setEventDate(buildDate(probateYear, probateMonth, probateDay));
   }
-
-  let deathYear = ed.recordData["Year of death"];
-  let deathMonth = ed.recordData["Month of death (Optional)"];
-  let deathDay = ed.recordData["Day of death (Optional)"];
-  result.setDeathDate(buildDate(deathYear, deathMonth, deathDay));
-
-  let probateYear = ed.recordData["Year of probate (Optional)"];
-  let probateMonth = ed.recordData["Month of probate (Optional)"];
-  let probateDay = ed.recordData["Day of probate (Optional)"];
-  result.setEventDate(buildDate(probateYear, probateMonth, probateDay));
 
   result.hasValidData = true;
 
@@ -69,6 +93,7 @@ function generalizeData(input) {
 }
 
 function regeneralizeData(input) {
+  // This is only used when viewing an image
   let ed = input.extractedData;
   let result = input.generalizedData;
   let newData = input.newData;
@@ -88,9 +113,6 @@ function regeneralizeData(input) {
   result.setPersonGender(newData.gender);
 
   function addSiteField(newDataField, siteField) {
-    if (!result.siteData) {
-      result.siteData = {};
-    }
     if (newData[newDataField]) {
       result.siteData[siteField] = newData[newDataField];
     }

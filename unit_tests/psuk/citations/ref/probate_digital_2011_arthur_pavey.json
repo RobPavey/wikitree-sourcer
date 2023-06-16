@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 2011<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Arthur Robert Brian died 3 February 2011. Date of probate 2 March 2011 Probate number 3479270 Document type PROBATE Registry office Leeds.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Arthur died on 3 February 2011 and their estate passed probate on 2 March 2011 in Leeds.<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 2011<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Arthur Robert Brian died 3 February 2011. Date of probate 2 March 2011 Probate number 3479270 Document type PROBATE Registry office Leeds.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar 2011<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Arthur Robert Brian died 3 February 2011. Date of probate 2 March 2011 Probate number 3479270 Document type PROBATE Registry office Leeds.",
+    "type": "source"
+  }
+}

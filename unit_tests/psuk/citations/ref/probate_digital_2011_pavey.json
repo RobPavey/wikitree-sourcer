@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 2011<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Leonard Maurice died 5 January 2011. Date of probate 28 February 2011 Probate number 3483565 Document type PROBATE Registry office Winchester.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Leonard died on 5 January 2011 and their estate passed probate on 28 February 2011 in Winchester.<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 2011<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Leonard Maurice died 5 January 2011. Date of probate 28 February 2011 Probate number 3483565 Document type PROBATE Registry office Winchester.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar 2011<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Leonard Maurice died 5 January 2011. Date of probate 28 February 2011 Probate number 3483565 Document type PROBATE Registry office Winchester.",
+    "type": "source"
+  }
+}

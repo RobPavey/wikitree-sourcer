@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "psuk",
+  "sourceType": "record",
+  "recordType": "Probate",
+  "siteData": {
+    "probateNumber": "3479270",
+    "entryType": "PROBATE"
+  },
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Arthur Robert Brian"
+  },
+  "deathDate": {
+    "dateString": "3 February 2011"
+  },
+  "eventDate": {
+    "dateString": "2 March 2011"
+  },
+  "eventPlace": {
+    "placeString": "Leeds"
+  },
+  "hasValidData": true
+}

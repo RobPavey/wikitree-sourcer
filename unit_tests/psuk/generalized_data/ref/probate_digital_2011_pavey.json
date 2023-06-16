@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "psuk",
+  "sourceType": "record",
+  "recordType": "Probate",
+  "siteData": {
+    "probateNumber": "3483565",
+    "entryType": "PROBATE"
+  },
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Leonard Maurice"
+  },
+  "deathDate": {
+    "dateString": "5 January 2011"
+  },
+  "eventDate": {
+    "dateString": "28 February 2011"
+  },
+  "eventPlace": {
+    "placeString": "Winchester"
+  },
+  "hasValidData": true
+}

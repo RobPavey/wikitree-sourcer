@@ -34,8 +34,8 @@ async function setupNliPopupMenu(extractedData) {
       "It looks like a National Library of Ireland page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
     generalizeFailedMessage: "It looks like a National Library of Ireland page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
-    regeneralizeFunction: regeneralizeData,
     userInputFunction: getRequestedUserInput,
+    regeneralizeFunction: regeneralizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "nli",
   };

@@ -1,11 +1,14 @@
 {
   "url": "https://probatesearch.service.gov.uk/search-results",
   "success": true,
-  "recordData": {
+  "searchData": {
     "Last name": "Chamberlin",
     "First name (Optional)": "Jane Ada",
     "Year of death": "1950",
     "Was the person a soldier": "No",
     "Year of probate (Optional)": "1950"
-  }
+  },
+  "digitalResultCount": 0,
+  "documentResultCount": 1,
+  "isImage": true
 }

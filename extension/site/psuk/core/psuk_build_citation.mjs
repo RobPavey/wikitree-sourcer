@@ -24,13 +24,28 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
+function isSoldierRecord(ed) {
+  if (ed.digitalRecordData) {
+    // all soldier record are transcribed
+    let wasSoldier = ed.searchData["Was the person a soldier"];
+    if (wasSoldier && wasSoldier == "Yes") {
+      return true;
+    }
+  }
+  return false;
+}
+
 function buildPsukUrl(ed, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
   return "https://probatesearch.service.gov.uk/";
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Probate record";
+  if (isSoldierRecord(ed)) {
+    builder.sourceTitle = "Soldier's will";
+  } else {
+    builder.sourceTitle = "Probate record";
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
@@ -51,7 +66,7 @@ function buildRecordLink(ed, gd, builder) {
   builder.recordLinkOrTemplate = recordLink;
 }
 
-function addFullSentenceDataString(gd, builder) {
+function addFullSentenceDataString(ed, gd, builder) {
   let dataString = "";
 
   function addPart(string) {
@@ -79,6 +94,16 @@ function addFullSentenceDataString(gd, builder) {
     return value;
   }
 
+  function addDigitalRecordField(fieldName) {
+    if (ed.digitalRecordData) {
+      let value = ed.digitalRecordData[fieldName];
+      if (value) {
+        addPart(fieldName);
+        addPart(value);
+      }
+    }
+  }
+
   addPart(gd.inferLastName().toUpperCase());
   addPart(gd.inferForenames());
 
@@ -96,6 +121,9 @@ function addFullSentenceDataString(gd, builder) {
   let deathDate = gd.inferDeathDate();
   if (deathDate) {
     addPart("died");
+    if (isSoldierRecord(ed)) {
+      addPart("while serving in the British armed forces");
+    }
     addPart(deathDate);
     let deathPlace = gd.inferDeathPlace();
     if (deathPlace) {
@@ -105,23 +133,34 @@ function addFullSentenceDataString(gd, builder) {
   }
   addPeriod();
 
-  addPart(getSiteData("entryType", "Probate"));
-  addPart(gd.inferEventPlace());
-  addPart(gd.inferEventDate());
+  if (ed.isImage) {
+    addPart(getSiteData("entryType", "Probate"));
+    addPart(gd.inferEventPlace());
+    addPart(gd.inferEventDate());
 
-  let grantedTo = getSiteData("grantedTo");
-  if (grantedTo) {
-    addPart("to");
-    addPart(grantedTo);
-  }
+    let grantedTo = getSiteData("grantedTo");
+    if (grantedTo) {
+      addPart("to");
+      addPart(grantedTo);
+    }
 
-  let effects = getSiteData("effects");
-  if (effects) {
-    addPeriod();
-    addPart("Effects");
-    // add pound sign at start if not there
-    effects = effects.replace(/^(\d)/, "£$1");
-    addPart(effects);
+    let effects = getSiteData("effects");
+    if (effects) {
+      addPeriod();
+      addPart("Effects");
+      // add pound sign at start if not there
+      effects = effects.replace(/^(\d)/, "£$1");
+      addPart(effects);
+    }
+  } else {
+    if (isSoldierRecord(ed)) {
+      addDigitalRecordField("Regiment number");
+    } else {
+      addDigitalRecordField("Date of probate");
+      addDigitalRecordField("Probate number");
+      addDigitalRecordField("Document type");
+      addDigitalRecordField("Registry office");
+    }
   }
 
   addPeriod();
@@ -137,13 +176,13 @@ function addAdditionalData(ed, gd, builder) {
       builder.addStandardDataString(gd);
       break;
     case "fullSentence":
-      addFullSentenceDataString(gd, builder);
+      addFullSentenceDataString(ed, gd, builder);
       break;
     case "list":
-      addFullSentenceDataString(gd, builder);
+      addFullSentenceDataString(ed, gd, builder);
       break;
     case "table":
-      addFullSentenceDataString(gd, builder);
+      addFullSentenceDataString(ed, gd, builder);
       break;
   }
 }
