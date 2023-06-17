@@ -22,5 +22,17 @@
   "regeneralizeFull_source": {
     "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar 1958, page 410<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Ralph Edgar of 14 New Oak Road, Finchley, London, N.2 died 8 Sep 1958 at Middlesex Hospital, London, W.1. Administration London 13 October 1958 to Elsie Sarah Pavey widow. Effects £477 7s. 4d.",
     "type": "source"
+  },
+  "regeneralizeFullString_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1958, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nRalph Edgar Pavey probate on 13 Oct 1958 in London. Died 8 Sep 1958 at Middlesex Hospital, London, W.1.\n</ref>",
+    "type": "inline"
+  },
+  "regeneralizeFullString_narrative": {
+    "citation": "Ralph died on 8 September 1958 at Middlesex Hospital, London, W.1 and his estate passed probate on 13 October 1958 in London.<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1958, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nRalph Edgar Pavey probate on 13 Oct 1958 in London. Died 8 Sep 1958 at Middlesex Hospital, London, W.1.\n</ref>",
+    "type": "narrative"
+  },
+  "regeneralizeFullString_source": {
+    "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar 1958, page 410<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>Ralph Edgar Pavey probate on 13 Oct 1958 in London. Died 8 Sep 1958 at Middlesex Hospital, London, W.1.",
+    "type": "source"
   }
 }

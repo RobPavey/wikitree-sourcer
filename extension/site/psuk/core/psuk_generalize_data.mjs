@@ -188,7 +188,7 @@ function getRequestedUserInput(input) {
         label: "Residence: ",
         comment: "(add comma's between parts)",
         property: "residence",
-        hidden: isSimpleData,
+        hidden: noNarrativeOrData,
       },
       {
         id: "status",

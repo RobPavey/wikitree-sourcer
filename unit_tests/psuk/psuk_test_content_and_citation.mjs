@@ -98,6 +98,13 @@ const regressionData = [
         variantName: "regeneralizeFull",
         newData: ralphPaveyFullNewData,
       },
+      {
+        variantName: "regeneralizeFullString",
+        newData: ralphPaveyFullNewData,
+        optionOverrides: {
+          citation_psuk_dataStyle: "string",
+        },
+      },
     ],
   },
   {
