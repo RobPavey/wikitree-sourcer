@@ -4,7 +4,7 @@
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": ["storage", "contextMenus", "scripting", "management"],
   "host_permissions": [
-    "*://www.wikitree.com/*",
+    "*://*.wikitree.com/*",
     "*://*.ancestry.com/*",
     "*://*.ancestry.co.uk/*",
     "*://*.ancestry.ca/*",
@@ -56,7 +56,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://www.wikitree.com/*"],
+      "matches": ["*://*.wikitree.com/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/wikitree/browser/wikitree_content.js"]
     },
@@ -189,7 +189,7 @@
   "web_accessible_resources": [
     {
       "resources": ["site/wikitree/core/wikitree_extract_data.mjs"],
-      "matches": ["*://www.wikitree.com/*"]
+      "matches": ["*://*.wikitree.com/*"]
     },
     {
       "resources": ["site/ancestry/core/ancestry_extract_data.mjs"],
