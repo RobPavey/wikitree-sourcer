@@ -85,5 +85,127 @@ function addClickedRowListener() {
   }
 }
 
+async function getPendingSearch() {
+  return new Promise((resolve, reject) => {
+    try {
+      chrome.storage.local.get(["searchData"], function (value) {
+        resolve(value.searchData);
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
+async function checkForPendingSearchData() {
+  //console.log("checkForPendingSearchData: called");
+
+  //console.log("checkForPendingSearchData: document.referrer is: " + document.referrer);
+
+  if (document.referrer) {
+    // when this page was opened by the extension referrer is an empty string
+    return;
+  }
+
+  if (document.URL == "https://probatesearch.service.gov.uk/") {
+    //console.log("checkForPendingSearchData: URL matches");
+
+    let searchData = await getPendingSearch();
+
+    if (searchData) {
+      //console.log("checkForPendingSearchData: got searchData:");
+      //console.log(searchData);
+
+      let searchUrl = searchData.url;
+      let timeStamp = searchData.timeStamp;
+      let timeStampNow = Date.now();
+      let timeSinceSearch = timeStampNow - timeStamp;
+
+      //console.log("checkForPendingSearchData: searchUrl is :" + searchUrl);
+      //console.log("checkForPendingSearchData: timeStamp is :" + timeStamp);
+      //console.log("checkForPendingSearchData: timeStampNow is :" + timeStampNow);
+      //console.log("checkForPendingSearchData: timeSinceSearch is :" + timeSinceSearch);
+
+      if (timeSinceSearch < 10000 && searchUrl == document.URL) {
+        let mainContent = document.getElementById("main-content");
+        if (mainContent) {
+          //console.log("checkForPendingSearchData: fieldData is:");
+          //console.log(fieldData);
+
+          function setTextFields(fieldData) {
+            for (var key in fieldData) {
+              if (key) {
+                let value = fieldData[key];
+                if (value) {
+                  let inputElement = document.getElementById(key);
+                  if (inputElement) {
+                    inputElement.value = value;
+
+                    // Create a new 'input' event
+                    var event = new Event("input", {
+                      view: window,
+                      bubbles: true,
+                      cancelable: true,
+                    });
+                    // Dispatch it.
+                    inputElement.dispatchEvent(event);
+                  }
+                }
+              }
+            }
+          }
+
+          function sleep() {
+            // we are just wating for pending events to be processed so waiting 1ms works for that
+            return new Promise((r) => setTimeout(r, 1));
+          }
+
+          setTextFields(searchData.stage1TextFieldData);
+
+          for (var key in searchData.stage1RadioFieldData) {
+            //console.log("checkForPendingSearchData: key is: " + key);
+            if (key) {
+              let value = searchData.stage1RadioFieldData[key];
+              //console.log("checkForPendingSearchData: value is: " + value);
+
+              let yesElement = document.getElementById(key + "-yes");
+              let noElement = document.getElementById(key + "-no");
+              if (yesElement && noElement) {
+                if (value) {
+                  yesElement.checked = true;
+                } else {
+                  noElement.checked = true;
+                }
+              }
+            }
+          }
+
+          let stage1FormButton = document.querySelector("#main-content > form > button");
+          if (stage1FormButton) {
+            await sleep(); // wait for the input events to be processed
+            stage1FormButton.click();
+            //console.log("checkForPendingSearchData: submitted stage1");
+          }
+
+          await sleep(); // wait for new inputs to be created
+          setTextFields(searchData.stage2TextFieldData);
+
+          let stage2FormButton = document.querySelector("#main-content > form > button");
+          if (stage2FormButton) {
+            await sleep(); // wait for the input events to be processed
+            stage2FormButton.click();
+          }
+        }
+      }
+
+      // clear the search data
+      chrome.storage.local.set({ searchData: undefined }, function () {
+        //console.log('cleared searchData');
+      });
+    }
+  }
+}
+
+checkForPendingSearchData();
 siteContentInit(`psuk`, `site/psuk/core/psuk_extract_data.mjs`);
 addClickedRowListener();

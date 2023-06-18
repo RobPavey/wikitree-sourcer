@@ -1,0 +1,20 @@
+{
+  "std": {
+    "stage1TextFieldData": {
+      "lastname": "Flatters",
+      "firstname": "Minnie Mary Matilda",
+      "yearofdeath": "1994"
+    },
+    "stage1RadioFieldData": {
+      "wasasoldier": false
+    },
+    "stage2TextFieldData": {
+      "keywords": "",
+      "monthofdeath": "05",
+      "dayofdeath": "04",
+      "yearofprobate": "1994",
+      "monthofprobate": "07",
+      "dayofprobate": "11"
+    }
+  }
+}

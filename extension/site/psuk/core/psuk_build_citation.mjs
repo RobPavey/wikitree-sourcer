@@ -149,7 +149,16 @@ function addFullSentenceDataString(ed, gd, builder) {
       addPeriod();
       addPart("Effects");
       // add pound sign at start if not there
-      effects = effects.replace(/^(\d)/, "£$1");
+      if (!effects.startsWith("£")) {
+        let lcEffects = effects.toLowerCase();
+        if (lcEffects.startsWith("not exceeding")) {
+          if (!effects.includes("£")) {
+            effects = effects.replace(/^(Not exceeding)\s+(\d)/i, "$1 £$2");
+          }
+        } else {
+          effects = "£" + effects;
+        }
+      }
       addPart(effects);
     }
   } else {

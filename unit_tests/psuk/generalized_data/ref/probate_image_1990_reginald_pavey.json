@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "psuk",
+  "sourceType": "record",
+  "recordType": "Probate",
+  "siteData": {},
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Reginald John"
+  },
+  "deathDate": {
+    "dateString": "2 Mar 1990"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://probatesearch.service.gov.uk/search-results",
+  "success": true,
+  "searchData": {
+    "Last name": "Pavey",
+    "First name (Optional)": "Reginald John",
+    "Year of death": "1990",
+    "Was the person a soldier": "No",
+    "Month of death (Optional)": "03",
+    "Day of death (Optional)": "02"
+  },
+  "digitalResultCount": 0,
+  "documentResultCount": 1,
+  "isImage": true
+}

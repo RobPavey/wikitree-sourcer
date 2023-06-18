@@ -114,7 +114,9 @@ function regeneralizeData(input) {
 
   function addSiteField(newDataField, siteField) {
     if (newData[newDataField]) {
-      result.siteData[siteField] = newData[newDataField];
+      if (newData[newDataField].trim() != "£") {
+        result.siteData[siteField] = newData[newDataField];
+      }
     }
   }
 
@@ -122,6 +124,7 @@ function regeneralizeData(input) {
   addSiteField("entryType", "entryType");
   addSiteField("grantedTo", "grantedTo");
   addSiteField("effects", "effects");
+  addSiteField("reference", "reference");
   addSiteField("page", "page");
 }
 
@@ -253,6 +256,14 @@ function getRequestedUserInput(input) {
         type: "textInput",
         label: "Effects (£): ",
         property: "effects",
+        defaultValue: "£",
+        hidden: isSimpleData,
+      },
+      {
+        id: "reference",
+        type: "textInput",
+        label: "Reference number (if after 1973): ",
+        property: "reference",
         hidden: isSimpleData,
       },
       {

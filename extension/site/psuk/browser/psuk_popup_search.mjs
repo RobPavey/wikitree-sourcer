@@ -35,22 +35,47 @@ import {
   doSearch,
   registerSearchMenuItemFunction,
   testFilterForDatesAndCountries,
+  openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const psukStartYear = 1837;
-const psukEndYear = 1992;
+const psukStartYear = 1858;
+const psukEndYear = 2100;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function psukSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+async function psukSearch(generalizedData) {
+  const input = { generalizedData: generalizedData, options: options };
+
   doAsyncActionWithCatch("Probate Search/Find A Will (UK) Search", input, async function () {
-    let loadedModule = await import(`../core/psuk_build_search_url.mjs`);
-    doSearch(loadedModule, input);
+    // since many site searchs can be on the popup for a site, it makes sense to dynamically
+    // load the build search module
+    let loadedModule = await import(`../core/psuk_build_search_data.mjs`);
+    let buildResult = loadedModule.buildSearchData(input);
+
+    const searchUrl = "https://probatesearch.service.gov.uk/";
+    try {
+      const searchData = {
+        timeStamp: Date.now(),
+        url: searchUrl,
+        stage1TextFieldData: buildResult.stage1TextFieldData,
+        stage1RadioFieldData: buildResult.stage1RadioFieldData,
+        stage2TextFieldData: buildResult.stage2TextFieldData,
+      };
+
+      chrome.storage.local.set({ searchData: searchData }, function () {
+        //console.log('saved searchData, searchData is:');
+        //console.log(searchData);
+      });
+    } catch (ex) {
+      console.log("storeDataCache failed");
+    }
+
+    openUrlInNewTab(searchUrl);
+    closePopup();
   });
 }
 
@@ -69,24 +94,9 @@ function addPsukDefaultSearchMenuItem(menu, data, backFunction, filter) {
       return;
     }
   } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      psukStartYear,
-      psukEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      psukStartYear,
-      psukEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      psukStartYear,
-      psukEndYear,
-      maxLifespan
-    );
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(psukStartYear, psukEndYear);
 
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
+    if (!deathPossibleInRange) {
       //console.log("addPsukDefaultSearchMenuItem: dates not in range");
       return;
     }
@@ -97,86 +107,16 @@ function addPsukDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItem(menu, "Search Probate Search/Find A Will (UK)...", function (element) {
-    setupPsukSearchSubMenu(data, backFunction, filter);
+  addMenuItem(menu, "Search Probate Search/Find A Will (UK)", function (element) {
+    psukSearch(data.generalizedData);
   });
 
   return true;
 }
 
-async function addPsukSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "psuk", function (element) {
-    psukSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addPsukSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      psukStartYear,
-      psukEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Probate Search/Find A Will (UK) Births", function (element) {
-    psukSearch(data.generalizedData, "Births");
-  });
-}
-
-function addPsukSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      psukStartYear,
-      psukEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Probate Search/Find A Will (UK) Marriages", function (element) {
-    psukSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addPsukSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      psukStartYear,
-      psukEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Probate Search/Find A Will (UK) Deaths", function (element) {
-    psukSearch(data.generalizedData, "Deaths");
-  });
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupPsukSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  await addPsukSameRecordMenuItem(menu, data, filter);
-  addPsukSearchBirthsMenuItem(menu, data, filter);
-  addPsukSearchMarriagesMenuItem(menu, data, filter);
-  addPsukSearchDeathsMenuItem(menu, data, filter);
-
-  endMainMenu(menu);
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites

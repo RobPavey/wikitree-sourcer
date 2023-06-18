@@ -30,6 +30,22 @@ import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
+const janeChamberlinFullNewData = {
+  lastName: "Chamberlin",
+  forenames: "Jane Ada",
+  gender: "female",
+  residence: "18 Hill-crescent, Totteridge, Hertfordshire",
+  status: "widow",
+  deathDate: "4 August 1950",
+  deathPlace: "Danesborough, Durliegh, Bridgewater, Somersetshire",
+  entryType: "Probate",
+  probateRegistry: "London",
+  probateDate: "31 August 1950",
+  grantedTo: "Ada Riddell widow",
+  effects: "480.",
+  page: "127",
+};
+
 const ralphPaveyFullNewData = {
   lastName: "Pavey",
   forenames: "Ralph Edgar",
@@ -46,20 +62,19 @@ const ralphPaveyFullNewData = {
   page: "410",
 };
 
-const janeChamberlinFullNewData = {
-  lastName: "Chamberlin",
-  forenames: "Jane Ada",
-  gender: "female",
-  residence: "18 Hill-crescent, Totteridge, Hertfordshire",
-  status: "widow",
-  deathDate: "4 August 1950",
-  deathPlace: "Danesborough, Durliegh, Bridgewater, Somersetshire",
+const reginaldPaveyFullNewData = {
+  lastName: "Pavey",
+  forenames: "Reginald John",
+  gender: "male",
+  residence: "Manor Farm, Shorncote, Cirencester, Glos",
+  status: "",
+  deathDate: "2 March 1990",
   entryType: "Probate",
-  probateRegistry: "London",
-  probateDate: "31 August 1950",
-  grantedTo: "Ada Riddell widow",
-  effects: "480.",
-  page: "127",
+  probateRegistry: "Oxford",
+  probateDate: "17 May 1990",
+  effects: "Not exceeding 115000",
+  reference: "9052204586H",
+  page: "410",
 };
 
 const regressionData = [
@@ -110,6 +125,23 @@ const regressionData = [
   {
     caseName: "probate_image_1958_ralph_pavey",
     url: "https://probatesearch.service.gov.uk/search-results",
+  },
+  {
+    caseName: "probate_image_1990_reginald_pavey",
+    url: "https://probatesearch.service.gov.uk/search-results",
+    optionVariants: [
+      {
+        variantName: "regeneralizeFull",
+        newData: reginaldPaveyFullNewData,
+      },
+      {
+        variantName: "regeneralizeFullString",
+        newData: reginaldPaveyFullNewData,
+        optionOverrides: {
+          citation_psuk_dataStyle: "string",
+        },
+      },
+    ],
   },
   {
     caseName: "search_results_1958_ralph_pavey",

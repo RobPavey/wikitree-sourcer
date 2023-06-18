@@ -1,0 +1,20 @@
+{
+  "std": {
+    "stage1TextFieldData": {
+      "lastname": "McLaren",
+      "firstname": "William Berry",
+      "yearofdeath": "1962"
+    },
+    "stage1RadioFieldData": {
+      "wasasoldier": false
+    },
+    "stage2TextFieldData": {
+      "keywords": "",
+      "monthofdeath": "09",
+      "dayofdeath": "22",
+      "yearofprobate": "1962",
+      "monthofprobate": "11",
+      "dayofprobate": "30"
+    }
+  }
+}
