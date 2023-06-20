@@ -1,38 +1,38 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Reginald John died 2 Mar 1990. Probate.\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"England and Wales, Index to wills and administrations (1858-1995)\"<br/>\nEngland & Wales National Probate Calendar<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Reginald John died 2 Mar 1990. Probate.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Reginald died on 2 March 1990.<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Reginald John died 2 Mar 1990. Probate.\n</ref>",
+    "citation": "Reginald died on 2 March 1990.<ref>\n'''Probate''':\n\"England and Wales, Index to wills and administrations (1858-1995)\"<br/>\nEngland & Wales National Probate Calendar<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Reginald John died 2 Mar 1990. Probate.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Reginald John died 2 Mar 1990. Probate.",
+    "citation": "* '''Probate''': \"England and Wales, Index to wills and administrations (1858-1995)\"<br/>England & Wales National Probate Calendar<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Reginald John died 2 Mar 1990. Probate.",
     "type": "source"
   },
   "regeneralizeFull_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1990, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Reginald John of Manor Farm, Shorncote, Cirencester, Glos died 2 March 1990. Probate Oxford 17 May 1990. Effects Not exceeding £115000.\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"England and Wales, Index to wills and administrations (1858-1995)\"<br/>\nEngland & Wales National Probate Calendar 1990, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Reginald John of Manor Farm, Shorncote, Cirencester, Glos died 2 March 1990. Probate Oxford 17 May 1990. Effects Not exceeding £115000 9052204586H.\n</ref>",
     "type": "inline"
   },
   "regeneralizeFull_narrative": {
-    "citation": "Reginald died on 2 March 1990 residing at Manor Farm, Shorncote, Cirencester, Glos and his estate passed probate on 17 May 1990 in Oxford.<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1990, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Reginald John of Manor Farm, Shorncote, Cirencester, Glos died 2 March 1990. Probate Oxford 17 May 1990. Effects Not exceeding £115000.\n</ref>",
+    "citation": "Reginald died on 2 March 1990 residing at Manor Farm, Shorncote, Cirencester, Glos and his estate passed probate on 17 May 1990 in Oxford.<ref>\n'''Probate''':\n\"England and Wales, Index to wills and administrations (1858-1995)\"<br/>\nEngland & Wales National Probate Calendar 1990, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Reginald John of Manor Farm, Shorncote, Cirencester, Glos died 2 March 1990. Probate Oxford 17 May 1990. Effects Not exceeding £115000 9052204586H.\n</ref>",
     "type": "narrative"
   },
   "regeneralizeFull_source": {
-    "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar 1990, page 410<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Reginald John of Manor Farm, Shorncote, Cirencester, Glos died 2 March 1990. Probate Oxford 17 May 1990. Effects Not exceeding £115000.",
+    "citation": "* '''Probate''': \"England and Wales, Index to wills and administrations (1858-1995)\"<br/>England & Wales National Probate Calendar 1990, page 410<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Reginald John of Manor Farm, Shorncote, Cirencester, Glos died 2 March 1990. Probate Oxford 17 May 1990. Effects Not exceeding £115000 9052204586H.",
     "type": "source"
   },
   "regeneralizeFullString_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1990, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nReginald John Pavey probate on 17 May 1990 in Oxford. Died 2 Mar 1990 residing at Manor Farm, Shorncote, Cirencester, Glos.\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"England and Wales, Index to wills and administrations (1858-1995)\"<br/>\nEngland & Wales National Probate Calendar 1990, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nReginald John Pavey probate on 17 May 1990 in Oxford. Died 2 Mar 1990 residing at Manor Farm, Shorncote, Cirencester, Glos.\n</ref>",
     "type": "inline"
   },
   "regeneralizeFullString_narrative": {
-    "citation": "Reginald died on 2 March 1990 residing at Manor Farm, Shorncote, Cirencester, Glos and his estate passed probate on 17 May 1990 in Oxford.<ref>\n'''Probate''':\n\"Probate record\"<br/>\nEngland & Wales Probate Calendar 1990, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nReginald John Pavey probate on 17 May 1990 in Oxford. Died 2 Mar 1990 residing at Manor Farm, Shorncote, Cirencester, Glos.\n</ref>",
+    "citation": "Reginald died on 2 March 1990 residing at Manor Farm, Shorncote, Cirencester, Glos and his estate passed probate on 17 May 1990 in Oxford.<ref>\n'''Probate''':\n\"England and Wales, Index to wills and administrations (1858-1995)\"<br/>\nEngland & Wales National Probate Calendar 1990, page 410<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nReginald John Pavey probate on 17 May 1990 in Oxford. Died 2 Mar 1990 residing at Manor Farm, Shorncote, Cirencester, Glos.\n</ref>",
     "type": "narrative"
   },
   "regeneralizeFullString_source": {
-    "citation": "* '''Probate''': \"Probate record\"<br/>England & Wales Probate Calendar 1990, page 410<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>Reginald John Pavey probate on 17 May 1990 in Oxford. Died 2 Mar 1990 residing at Manor Farm, Shorncote, Cirencester, Glos.",
+    "citation": "* '''Probate''': \"England and Wales, Index to wills and administrations (1858-1995)\"<br/>England & Wales National Probate Calendar 1990, page 410<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>Reginald John Pavey probate on 17 May 1990 in Oxford. Died 2 Mar 1990 residing at Manor Farm, Shorncote, Cirencester, Glos.",
     "type": "source"
   }
 }

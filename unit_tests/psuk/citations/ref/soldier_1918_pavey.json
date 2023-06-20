@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"Soldier's will\"<br/>\nEngland & Wales Probate Calendar<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Thomas Frank died while serving in the British armed forces 16 May 1918. Regiment number 31763.\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"Index to soldiers' wills (1850-1986)\"<br/>\nWills of soldiers who died while serving in the British Armed Forces<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Thomas Frank died while serving in the British armed forces 16 May 1918. Regiment number: 31763.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Thomas died on 16 May 1918.<ref>\n'''Probate''':\n\"Soldier's will\"<br/>\nEngland & Wales Probate Calendar<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Thomas Frank died while serving in the British armed forces 16 May 1918. Regiment number 31763.\n</ref>",
+    "citation": "Thomas died on 16 May 1918.<ref>\n'''Probate''':\n\"Index to soldiers' wills (1850-1986)\"<br/>\nWills of soldiers who died while serving in the British Armed Forces<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>\nPAVEY Thomas Frank died while serving in the British armed forces 16 May 1918. Regiment number: 31763.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Probate''': \"Soldier's will\"<br/>England & Wales Probate Calendar<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Thomas Frank died while serving in the British armed forces 16 May 1918. Regiment number 31763.",
+    "citation": "* '''Probate''': \"Index to soldiers' wills (1850-1986)\"<br/>Wills of soldiers who died while serving in the British Armed Forces<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)<br/>PAVEY Thomas Frank died while serving in the British armed forces 16 May 1918. Regiment number: 31763.",
     "type": "source"
   }
 }

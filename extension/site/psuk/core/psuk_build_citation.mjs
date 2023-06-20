@@ -42,20 +42,40 @@ function buildPsukUrl(ed, builder) {
 
 function buildSourceTitle(ed, gd, builder) {
   if (isSoldierRecord(ed)) {
-    builder.sourceTitle = "Soldier's will";
+    builder.sourceTitle = "Index to soldiers' wills (1850-1986)";
+  } else if (ed.isImage) {
+    builder.sourceTitle = "England and Wales, Index to wills and administrations (1858-1995)";
   } else {
-    builder.sourceTitle = "Probate record";
+    builder.sourceTitle = "England and Wales, Index to wills and administrations (1996 to present)";
   }
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "England & Wales Probate Calendar";
-  let probateYear = gd.inferEventYear();
-  if (probateYear) {
-    builder.sourceReference += " " + probateYear;
-  }
-  if (gd.siteData && gd.siteData.page) {
-    builder.sourceReference += ", page " + gd.siteData.page;
+  if (isSoldierRecord(ed)) {
+    builder.sourceReference = "Wills of soldiers who died while serving in the British Armed Forces";
+  } else if (ed.isImage) {
+    builder.sourceReference = "England & Wales National Probate Calendar";
+    let probateYear = gd.inferEventYear();
+    if (probateYear) {
+      builder.sourceReference += " " + probateYear;
+    }
+    if (gd.siteData && gd.siteData.page) {
+      builder.sourceReference += ", page " + gd.siteData.page;
+    }
+  } else {
+    let probateYear = gd.inferEventYear();
+    if (probateYear) {
+      builder.sourceReference = "Probate year: " + probateYear;
+    }
+    if (ed.digitalRecordData) {
+      let probateNumber = ed.digitalRecordData["Probate number"];
+      if (probateNumber) {
+        if (builder.sourceReference) {
+          builder.sourceReference += "; ";
+        }
+        builder.sourceReference += "Probate number: " + probateNumber;
+      }
+    }
   }
 }
 
@@ -98,14 +118,14 @@ function addFullSentenceDataString(ed, gd, builder) {
     if (ed.digitalRecordData) {
       let value = ed.digitalRecordData[fieldName];
       if (value) {
-        addPart(fieldName);
-        addPart(value);
+        dataString = builder.addKeyValuePairToDataListString(dataString, fieldName, value);
       }
     }
   }
 
   addPart(gd.inferLastName().toUpperCase());
   addPart(gd.inferForenames());
+  addPart(getSiteData("aka"));
 
   let residence = gd.inferResidencePlace();
   if (residence) {
@@ -148,19 +168,25 @@ function addFullSentenceDataString(ed, gd, builder) {
     if (effects) {
       addPeriod();
       addPart("Effects");
-      // add pound sign at start if not there
-      if (!effects.startsWith("£")) {
-        let lcEffects = effects.toLowerCase();
-        if (lcEffects.startsWith("not exceeding")) {
-          if (!effects.includes("£")) {
-            effects = effects.replace(/^(Not exceeding)\s+(\d)/i, "$1 £$2");
+
+      if (effects != "£") {
+        // add pound sign at start if not there
+        if (!effects.startsWith("£")) {
+          let lcEffects = effects.toLowerCase();
+          if (lcEffects.startsWith("not exceeding")) {
+            if (!effects.includes("£")) {
+              effects = effects.replace(/^(Not exceeding)\s+(\d)/i, "$1 £$2");
+            }
+          } else {
+            effects = "£" + effects;
           }
-        } else {
-          effects = "£" + effects;
         }
+        addPart(effects);
       }
-      addPart(effects);
     }
+
+    addPart(getSiteData("extraInfo"));
+    addPart(getSiteData("reference"));
   } else {
     if (isSoldierRecord(ed)) {
       addDigitalRecordField("Regiment number");
@@ -188,10 +214,8 @@ function addAdditionalData(ed, gd, builder) {
       addFullSentenceDataString(ed, gd, builder);
       break;
     case "list":
-      addFullSentenceDataString(ed, gd, builder);
       break;
     case "table":
-      addFullSentenceDataString(ed, gd, builder);
       break;
   }
 }

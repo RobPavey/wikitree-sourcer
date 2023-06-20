@@ -204,6 +204,55 @@ class CitationBuilder {
     }
   }
 
+  addSingleValueToDataListString(dataListString, value) {
+    let itemSep = ";";
+    if (this.options.citation_general_dataListSeparator == "commaColon") {
+      itemSep = ",";
+    } else if (this.options.citation_general_dataListSeparator == "commaSpace") {
+      itemSep = ",";
+    }
+
+    if (value && value != "-") {
+      value = value.trim();
+      if (dataListString != "") {
+        dataListString += itemSep + " ";
+      }
+      dataListString += value;
+    }
+
+    return dataListString;
+  }
+
+  addKeyValuePairToDataListString(dataListString, key, value) {
+    let itemSep = ";";
+    let valueSep = ":";
+    if (this.options.citation_general_dataListSeparator == "commaColon") {
+      itemSep = ",";
+      valueSep = ":";
+    } else if (this.options.citation_general_dataListSeparator == "commaSpace") {
+      itemSep = ",";
+      valueSep = "";
+    }
+
+    if (value && value != "-") {
+      value = value.trim();
+      if (dataListString != "") {
+        if (!dataListString.endsWith(itemSep) && !dataListString.endsWith(".")) {
+          dataListString += itemSep + " ";
+        } else if (!dataListString.endsWith(" ")) {
+          dataListString += " ";
+        }
+      }
+      if (value.startsWith("http")) {
+        dataListString += "[" + value + " " + key + "]";
+      } else {
+        dataListString += key + valueSep + " " + value;
+      }
+    }
+
+    return dataListString;
+  }
+
   buildDataList(recordData, keyFilterFunction) {
     let itemSep = ";";
     let valueSep = ":";

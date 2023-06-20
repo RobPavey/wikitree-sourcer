@@ -699,7 +699,18 @@ function setupBuildCitationSubMenuForRequestedUserInput(
     }
 
     textInput.addEventListener("change", function (event) {
+      let changed = resultData[field.property] != event.target.value;
       resultData[field.property] = event.target.value;
+      if (changed && field.requiresRebuild) {
+        setupBuildCitationSubMenuForRequestedUserInput(
+          data,
+          buildFunction,
+          backFunction,
+          regeneralizeFunction,
+          userInputFunction,
+          resultData
+        );
+      }
     });
     let label = document.createElement("label");
     label.className = "dialogInput";

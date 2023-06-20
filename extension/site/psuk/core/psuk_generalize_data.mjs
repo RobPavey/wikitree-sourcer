@@ -107,7 +107,24 @@ function regeneralizeData(input) {
 
   result.setResidencePlace(newData.residence);
 
-  result.setEventDate(newData.probateDate);
+  let probateDate = newData.probateYear;
+  if (probateDate) {
+    probateDate.trim();
+  }
+  if (!probateDate) {
+    probateDate = newData.probateDate;
+  } else {
+    let fullDate = newData.probateDate.trim();
+    if (fullDate) {
+      if (/^\d\d?\s+\w+$/.test(fullDate)) {
+        probateDate = fullDate + " " + probateDate;
+      } else if (/^\d\d?\s+\w+\s+\d\d\d\d$/.test(fullDate)) {
+        let fullDateMinusYear = fullDate.substring(0, fullDate.length - 4);
+        probateDate = fullDateMinusYear + " " + probateDate;
+      }
+    }
+  }
+  result.setEventDate(probateDate);
   result.setEventPlace(newData.probateRegistry);
 
   result.setPersonGender(newData.gender);
@@ -120,10 +137,12 @@ function regeneralizeData(input) {
     }
   }
 
+  addSiteField("aka", "aka");
   addSiteField("status", "status");
   addSiteField("entryType", "entryType");
   addSiteField("grantedTo", "grantedTo");
   addSiteField("effects", "effects");
+  addSiteField("extraInfo", "extraInfo");
   addSiteField("reference", "reference");
   addSiteField("page", "page");
 }
@@ -141,13 +160,28 @@ function getRequestedUserInput(input) {
   let isSimpleData = dataStyle == "string" || dataStyle == "none";
   let noNarrativeOrData = !isNarrative && dataStyle == "none";
 
-  if (!newData || !newData.recordType) {
+  if (!newData) {
     newData = {};
     newData.entryType = "probate";
     newData.forenames = result.inferForenames();
     newData.lastName = result.inferLastName();
     newData.deathDate = result.inferDeathDate();
     newData.probateDate = result.inferEventDate();
+    newData.probateYear = result.inferEventYear();
+  }
+
+  let isPre1968 = true;
+  let isPre1973 = true;
+  if (newData.probateYear) {
+    let yearNum = Number(newData.probateYear);
+    if (!isNaN(yearNum)) {
+      if (yearNum >= 1968) {
+        isPre1968 = false;
+      }
+      if (yearNum >= 1973) {
+        isPre1973 = false;
+      }
+    }
   }
 
   let requestedUserInput = {
@@ -157,6 +191,14 @@ function getRequestedUserInput(input) {
         id: "topLabel",
         type: "label",
         label: "Add transcribed data (* indicates required field)",
+      },
+      {
+        id: "probateYear",
+        type: "textInput",
+        label: "Probate year * : ",
+        comment: "(at top of page)",
+        property: "probateYear",
+        requiresRebuild: true,
       },
       {
         id: "lastName",
@@ -170,6 +212,14 @@ function getRequestedUserInput(input) {
         type: "textInput",
         label: "Forenames * : ",
         property: "forenames",
+        hidden: noNarrativeOrData,
+      },
+      {
+        id: "aka",
+        type: "textInput",
+        label: "AKA : ",
+        comment: "(e.g. type 'otherwise John Smith')",
+        property: "aka",
         hidden: noNarrativeOrData,
       },
       {
@@ -199,7 +249,7 @@ function getRequestedUserInput(input) {
         label: "Status: ",
         comment: "(e.g. widow or wife of ...)",
         property: "status",
-        hidden: isSimpleData,
+        hidden: isSimpleData || !isPre1968,
       },
       {
         id: "deathDate",
@@ -214,7 +264,7 @@ function getRequestedUserInput(input) {
         label: "Death place: ",
         comment: "(add comma's between parts)",
         property: "deathPlace",
-        hidden: noNarrativeOrData,
+        hidden: noNarrativeOrData || !isPre1968,
       },
       {
         id: "entryType",
@@ -225,7 +275,7 @@ function getRequestedUserInput(input) {
           { value: "Probate", text: "Probate" },
           { value: "Administration", text: "Administration" },
           { value: "Administration (with Will)", text: "Administration (with Will)" },
-          { value: "Confirmation", text: "AdministConfirmationation" },
+          { value: "Confirmation", text: "Confirmation" },
         ],
         defaultValue: "probate",
         hidden: isSimpleData,
@@ -241,6 +291,7 @@ function getRequestedUserInput(input) {
         id: "probateDate",
         type: "textInput",
         label: "Probate date * : ",
+        comment: "(without year)",
         property: "probateDate",
       },
       {
@@ -249,7 +300,7 @@ function getRequestedUserInput(input) {
         label: "Granted to: ",
         comment: "(include all and their relationship)",
         property: "grantedTo",
-        hidden: isSimpleData,
+        hidden: isSimpleData || !isPre1968,
       },
       {
         id: "effects",
@@ -260,11 +311,19 @@ function getRequestedUserInput(input) {
         hidden: isSimpleData,
       },
       {
+        id: "extraInfo",
+        type: "textInput",
+        label: "Extra info: ",
+        comment: "(e.g. former grant)",
+        property: "extraInfo",
+        hidden: isSimpleData,
+      },
+      {
         id: "reference",
         type: "textInput",
-        label: "Reference number (if after 1973): ",
+        label: "Reference number (if probate after 1973): ",
         property: "reference",
-        hidden: isSimpleData,
+        hidden: isSimpleData || isPre1973,
       },
       {
         id: "page",
