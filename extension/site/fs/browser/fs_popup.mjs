@@ -65,7 +65,7 @@ import { fetchFsSources } from "./fs_fetch.mjs";
 async function fsBuildCitation(data) {
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
-    // console.log("fsBuildCitation, waiting another 10ms")
+    //console.log("fsBuildCitation, waiting another 10ms")
     setTimeout(function () {
       fsBuildCitation(data);
     }, 10);
@@ -165,8 +165,8 @@ async function fsGetAllCitations(input) {
     let response = await fetchFsSources(input);
 
     if (response.success) {
-      console.log("fsGetAllCitations, response is");
-      console.log(response);
+      //console.log("fsGetAllCitations, response is");
+      //console.log(response);
 
       keepPopupOpenForDebug();
       writeToClipboard(response.citationsString, "All citations");
@@ -233,13 +233,15 @@ function addBuildBookCitationMenuItems(menu, data) {
 }
 
 function addSaveAllCitationsMenuItem(menu, data) {
-  addMenuItem(menu, "Get All Citations", function (element) {
-    let input = Object.assign({}, data);
-    input.type = "source";
-    input.options = options;
-    displayMessage("Getting sources...");
-    fsGetAllCitations(input);
-  });
+  if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
+    addMenuItem(menu, "Get All Citations", function (element) {
+      let input = Object.assign({}, data);
+      input.type = "source";
+      input.options = options;
+      displayMessage("Getting sources...");
+      fsGetAllCitations(input);
+    });
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

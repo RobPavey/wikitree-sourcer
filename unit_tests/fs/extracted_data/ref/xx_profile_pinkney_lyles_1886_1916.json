@@ -1,4 +1,5 @@
 {
+  "personId": "G6DP-4WD",
   "fullName": "Pinkney Francis Lyles",
   "givenName": "Pinkney Francis",
   "surname": "Lyles",
@@ -32,5 +33,11 @@
     "givenName": "Hannah J.",
     "surname": "Taylor"
   },
+  "sourceIds": [
+    "3YZB-53B",
+    "3YZB-GTQ",
+    "3VJL-9PC",
+    "3VNR-K39"
+  ],
   "pageType": "person"
 }

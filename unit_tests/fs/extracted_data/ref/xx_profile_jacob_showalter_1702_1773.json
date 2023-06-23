@@ -1,4 +1,5 @@
 {
+  "personId": "LDL8-2H9",
   "fullName": "Jacob Mathias Showalter",
   "givenName": "Jacob Mathias",
   "surname": "Showalter",
@@ -34,5 +35,30 @@
     "givenName": "Margarethe Katharina",
     "surname": "Lütwyler"
   },
+  "sourceIds": [
+    "3QH9-7K2",
+    "3QH9-M6T",
+    "3QHM-YMT",
+    "3Q41-YXP",
+    "3Q41-RKG",
+    "SJXL-1RM",
+    "33VN-PG5",
+    "SJ45-VVR",
+    "SJ4P-RKD",
+    "912T-7FN",
+    "92FK-1FC",
+    "9VXP-ZYJ",
+    "9VXP-Z2F",
+    "9VXP-ZNK",
+    "9VXP-ZZ4",
+    "MMRG-719",
+    "9ZTH-RYL",
+    "9ZTH-TPB",
+    "9ZTH-Y8D",
+    "9ZTC-96M",
+    "9895-QV1",
+    "9J3Q-8TX",
+    "98SY-41B"
+  ],
   "pageType": "person"
 }

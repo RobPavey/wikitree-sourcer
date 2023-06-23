@@ -1,4 +1,5 @@
 {
+  "personId": "KZKS-T46",
   "fullName": "Martha Barnhart",
   "givenName": "Martha",
   "surname": "Barnhart",
@@ -23,5 +24,9 @@
     "givenName": "Elizabeth",
     "surname": "Karns"
   },
+  "sourceIds": [
+    "Q9SM-JK8",
+    "Q9SM-WFS"
+  ],
   "pageType": "person"
 }

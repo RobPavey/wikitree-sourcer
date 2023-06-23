@@ -46,8 +46,8 @@ async function fetchFsSourcesJson(sourceIdList) {
     fetchUrl += "," + sourceId;
   }
 
-  console.log("fetchUrl is");
-  console.log(fetchUrl);
+  //console.log("fetchUrl is");
+  //console.log(fetchUrl);
 
   let fetchOptionsHeaders = {
     accept: "application/x-gedcomx-v1+json, application/json",
@@ -73,8 +73,8 @@ async function fetchFsSourcesJson(sourceIdList) {
     return { success: false };
   });
 
-  console.log("response is");
-  console.log(response);
+  //console.log("response is");
+  //console.log(response);
 
   // On Firefox it may return zero any time you use "no-cors"
   if (response.status !== 200) {
@@ -85,15 +85,15 @@ async function fetchFsSourcesJson(sourceIdList) {
   // Examine the text in the response
   let data = await response.text();
 
-  console.log("data is:");
-  console.log(data);
+  //console.log("data is:");
+  //console.log(data);
 
   if (data.startsWith(`{`)) {
     const jsonData = data;
     const dataObj = JSON.parse(jsonData);
 
-    console.log("dataObj is:");
-    console.log(dataObj);
+    //console.log("dataObj is:");
+    //console.log(dataObj);
 
     if (dataObj) {
       return { success: true, dataObj: dataObj };
@@ -114,8 +114,8 @@ async function fetchRecords(sources, options) {
 
   displayMessage(message);
 
-  console.log("fetchRecords, sources is: ");
-  console.log(sources);
+  //console.log("fetchRecords, sources is: ");
+  //console.log(sources);
 
   for (let source of sources) {
     message += ".";
@@ -126,7 +126,7 @@ async function fetchRecords(sources, options) {
     let fetchType = "record";
 
     let fetchUrl = uri;
-    console.log("doFetch, fetchUrl is: " + fetchUrl);
+    //console.log("doFetch, fetchUrl is: " + fetchUrl);
 
     if (!fetchUrl.includes("familysearch.org/")) {
       continue;
@@ -134,7 +134,7 @@ async function fetchRecords(sources, options) {
 
     fetchUrl = fetchUrl.replace(/\/familysearch.org/, "/www.familysearch.org");
 
-    console.log("doFetch, fetchUrl is: " + fetchUrl);
+    //console.log("doFetch, fetchUrl is: " + fetchUrl);
 
     let fetchOptionsHeaders = {
       accept: "application/x-gedcomx-v1+json, application/json",
@@ -157,7 +157,7 @@ async function fetchRecords(sources, options) {
     try {
       let response = await fetch(fetchUrl, fetchOptions);
 
-      console.log("doFetch, response.status is: " + response.status);
+      //console.log("doFetch, response.status is: " + response.status);
 
       if (response.status !== 200) {
         console.log("Looks like there was a problem. Status Code: " + response.status);
@@ -170,8 +170,8 @@ async function fetchRecords(sources, options) {
 
       let jsonData = await response.text();
 
-      console.log("doFetch: response text is:");
-      console.log(jsonData);
+      //console.log("doFetch: response text is:");
+      //console.log(jsonData);
 
       if (!jsonData || jsonData[0] != `{`) {
         console.log("The response text does not look like JSON");
@@ -181,8 +181,8 @@ async function fetchRecords(sources, options) {
 
       const dataObj = JSON.parse(jsonData);
 
-      console.log("dataObj is:");
-      console.log(dataObj);
+      //console.log("dataObj is:");
+      //console.log(dataObj);
 
       // support having multiple data objects for separate API queries
       let dataObjects = {
@@ -220,39 +220,38 @@ function sortSourcesUsingFsSortKeys(result) {
 
   // sort the sources
   result.sources.sort(compareSortKeys);
-  console.log("getFsPlainInlineCitations: sorted sources:");
-  console.log(result.sources);
+  //console.log("getFsPlainInlineCitations: sorted sources:");
+  //console.log(result.sources);
 }
 
-function getFsPlainInlineCitations(result, ed) {
+function getFsPlainCitations(result, ed, type, options) {
   sortSourcesUsingFsSortKeys(result);
 
   let citationsString = "";
 
   for (let source of result.sources) {
-    if (source.citation) {
-      if (citationsString) {
-        citationsString += "\n\n";
+    if (type == "inline") {
+      if (source.citation) {
+        if (citationsString) {
+          citationsString += "\n";
+        }
+        citationsString += "<ref>";
+        if (options.citation_general_addNewlinesWithinRefs) {
+          citationsString += "\n";
+        }
+        citationsString += source.citation.trim();
+        if (options.citation_general_addNewlinesWithinRefs) {
+          citationsString += "\n";
+        }
+        citationsString += "</ref>";
+        citationsString += "\n";
       }
-      citationsString += "<ref>\n";
-      citationsString += source.citation.trim();
-      citationsString += "\n</ref>";
-    }
-  }
-
-  result.citationsString = citationsString;
-}
-
-function getFsPlainSourceCitations(result, ed) {
-  sortSourcesUsingFsSortKeys(result);
-
-  let citationsString = "";
-
-  for (let source of result.sources) {
-    if (source.citation) {
-      citationsString += "* ";
-      citationsString += source.citation.trim();
-      citationsString += "\n";
+    } else {
+      if (source.citation) {
+        citationsString += "* ";
+        citationsString += source.citation.trim();
+        citationsString += "\n";
+      }
     }
   }
 
@@ -300,11 +299,11 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
 
   // sort the sources
   result.sources.sort(compareFunction);
-  console.log("getFsPlainInlineCitations: sorted sources:");
-  console.log(result.sources);
+  //console.log("getFsPlainInlineCitations: sorted sources:");
+  //console.log(result.sources);
 }
 
-async function getNarrativeCitations(result, ed, gd, options) {
+async function getSourcerCitations(result, ed, gd, type, options) {
   // fetch additional records where possible
   await fetchRecords(result.sources, options);
 
@@ -317,8 +316,6 @@ async function getNarrativeCitations(result, ed, gd, options) {
         let generalizedData = generalizeData({ extractedData: extractedData });
         if (generalizedData) {
           source.generalizedData = generalizedData;
-
-          let type = "narrative"; // "inline", "narrative" or "source"
 
           let householdTableString = buildHouseholdTableString(
             extractedData,
@@ -377,27 +374,42 @@ async function getNarrativeCitations(result, ed, gd, options) {
 
   for (let source of result.sources) {
     if (source.citationObject) {
-      if (citationsString) {
-        citationsString += "\n\n";
+      if (citationsString && type != "source") {
+        citationsString += "\n";
       }
       citationsString += source.citationObject.citation;
+      citationsString += "\n";
     } else if (source.citation) {
-      if (citationsString) {
-        citationsString += "\n\n";
+      if (citationsString && type != "source") {
+        citationsString += "\n";
       }
-      if (source.prefName) {
-        citationsString += source.prefName;
+      if (type == "narrative") {
+        if (source.prefName) {
+          citationsString += source.prefName;
+        } else {
+          citationsString += "This person";
+        }
+        citationsString += " was in a record";
+        if (source.sortYear) {
+          citationsString += " in " + source.sortYear;
+        }
+        citationsString += ".";
+      }
+
+      if (type != "source") {
+        citationsString += "<ref>";
+        if (options.citation_general_addNewlinesWithinRefs) {
+          citationsString += "\n";
+        }
+        citationsString += source.citation.trim();
+        if (options.citation_general_addNewlinesWithinRefs) {
+          citationsString += "\n";
+        }
+        citationsString += "</ref>";
       } else {
-        citationsString += "This person";
+        citationsString += "* " + source.citation.trim();
       }
-      citationsString += " was in a record";
-      if (source.sortYear) {
-        citationsString += " in " + source.sortYear;
-      }
-      citationsString += ".";
-      citationsString += "<ref>\n";
-      citationsString += source.citation.trim();
-      citationsString += "\n</ref>";
+      citationsString += "\n";
     }
   }
 
@@ -446,17 +458,15 @@ async function fetchFsSources(input) {
 
     switch (citationType) {
       case "fsPlainInline":
-        getFsPlainInlineCitations(result, ed);
+        getFsPlainCitations(result, ed, "inline", options);
         break;
       case "fsPlainSource":
-        getFsPlainSourceCitations(result, ed);
+        getFsPlainCitations(result, ed, "source", options);
         break;
       case "narrative":
-        await getNarrativeCitations(result, ed, gd, options);
-        break;
       case "inline":
-        break;
       case "source":
+        await getSourcerCitations(result, ed, gd, citationType, options);
         break;
     }
 

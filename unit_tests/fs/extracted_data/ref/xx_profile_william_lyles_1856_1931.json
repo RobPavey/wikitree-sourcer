@@ -1,4 +1,5 @@
 {
+  "personId": "G8S8-5FJ",
   "fullName": "Rev William Oscar Lyles",
   "prefix": "Rev",
   "givenName": "William Oscar",
@@ -22,6 +23,18 @@
       "marriageDateOriginal": "about 1878",
       "marriageDate": "about 1878"
     }
+  ],
+  "sourceIds": [
+    "3Y8M-QY6",
+    "3Y8M-SR3",
+    "3Y8M-MBX",
+    "3Y8M-MSS",
+    "3YZB-5HN",
+    "SR5G-8LZ",
+    "3VJL-9L3",
+    "3VJL-977",
+    "3VNR-VYC",
+    "3ZMD-K4S"
   ],
   "pageType": "person"
 }

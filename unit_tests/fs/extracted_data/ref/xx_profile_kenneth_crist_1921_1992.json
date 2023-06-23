@@ -1,4 +1,5 @@
 {
+  "personId": "KWDZ-H37",
   "fullName": "Kenneth Galen Crist",
   "givenName": "Kenneth Galen",
   "surname": "Crist",
@@ -32,5 +33,19 @@
     "givenName": "Eva Lena",
     "surname": "Barnhart"
   },
+  "sourceIds": [
+    "QM67-2KB",
+    "32F2-2H9",
+    "32F2-KC4",
+    "SK6K-JZT",
+    "SK6K-JMX",
+    "SK6K-NQR",
+    "9863-6QF",
+    "9863-ZTS",
+    "9863-ZMX",
+    "98QB-NH8",
+    "9ZD3-B3D",
+    "9ZD3-Y28"
+  ],
   "pageType": "person"
 }

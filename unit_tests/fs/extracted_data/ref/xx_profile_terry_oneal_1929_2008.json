@@ -1,4 +1,5 @@
 {
+  "personId": "L69W-LQL",
   "fullName": "Dr Terry Warren \"Pete\" O'Neal Jr.",
   "prefix": "Dr",
   "givenName": "Terry Warren \"Pete\"",
@@ -38,5 +39,23 @@
     "givenName": "Rachel V",
     "surname": "Johnson"
   },
+  "sourceIds": [
+    "QCBT-P36",
+    "QCBT-K13",
+    "QCBT-VXS",
+    "QCBT-NJ9",
+    "QCBT-X6C",
+    "QCMD-NL5",
+    "QCMD-6KQ",
+    "3S3Q-NBZ",
+    "3S3Q-NPZ",
+    "3S3Q-NFP",
+    "3S3Q-6DR",
+    "3S3Q-384",
+    "SYXG-TCS",
+    "9P91-8XP",
+    "MM8P-C5R",
+    "MM8Y-56R"
+  ],
   "pageType": "person"
 }

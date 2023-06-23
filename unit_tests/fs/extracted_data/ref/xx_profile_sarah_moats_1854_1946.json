@@ -1,4 +1,5 @@
 {
+  "personId": "MQWP-4VQ",
   "fullName": "Sarah A. Moats",
   "givenName": "Sarah A.",
   "surname": "Moats",
@@ -28,5 +29,19 @@
     "givenName": "Anna",
     "surname": "Bloom"
   },
+  "sourceIds": [
+    "3YH8-4DQ",
+    "3YH8-7YR",
+    "3GNC-4DK",
+    "SRBR-R7T",
+    "SRBR-5T2",
+    "S54Q-NYR",
+    "S54Q-NM7",
+    "928R-CQ7",
+    "928R-WDP",
+    "S54Q-XR9",
+    "S54Q-F4X",
+    "S54Q-FG5"
+  ],
   "pageType": "person"
 }

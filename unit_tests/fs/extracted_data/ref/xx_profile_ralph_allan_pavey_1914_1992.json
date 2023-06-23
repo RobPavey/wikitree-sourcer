@@ -1,5 +1,6 @@
 {
   "url": "file:///Users/robpavey/Documents/BrowserExtensionDev/WikiTreeSourcer/wikitree-sourcer/unit_tests/fs/saved_pages/xx_profile_ralph_allan_pavey_1914_1992.html",
+  "personId": "GX7Z-VKW",
   "fullName": "Ralph Allan Pavey",
   "givenName": "Ralph Allan",
   "surname": "Pavey",
@@ -33,5 +34,10 @@
     "givenName": "Clara Ethel",
     "surname": "Risley"
   },
+  "sourceIds": [
+    "3LXH-MGC",
+    "3LX4-14Q",
+    "3LX4-BGX"
+  ],
   "pageType": "person"
 }
