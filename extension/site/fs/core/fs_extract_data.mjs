@@ -659,6 +659,7 @@ function extractDataForPersonPageFormat2(document, personId, result) {
   }
 
   result.pageType = "person";
+  result.personId = personId;
 
   let vitalsElement = mainContentNode.querySelector("div[data-testid='section-card-vitals']");
   if (vitalsElement) {
@@ -2427,6 +2428,7 @@ function extractPersonDataFromFetch(document, dataObj, options) {
   // For a person page the descript will be something like: "#SD-G8S8-5FJ" meaning the personId is:
   // "G8S8-5FJ"
   let personId = description.replace(/^\#SD\-/, "");
+  result.personId = personId;
 
   if (!dataObj.persons || dataObj.persons.length < 1) {
     return result;
@@ -2581,6 +2583,17 @@ function extractPersonDataFromFetch(document, dataObj, options) {
       let mother = findPersonById(dataObj, bestRelationshipPair.mother);
       if (mother) {
         result.mother = createParentForPerson(mother);
+      }
+    }
+  }
+
+  // extract the source IDs we can use these to fetch the source data if needed
+  if (person && person.sources) {
+    result.sourceIds = [];
+
+    for (let source of person.sources) {
+      if (source.descriptionId) {
+        result.sourceIds.push(source.descriptionId);
       }
     }
   }

@@ -1143,6 +1143,10 @@ function displayGeneralizedData(data, backFunction) {
   }
 }
 
+function keepPopupOpenForDebug() {
+  keepPopupOpen = true;
+}
+
 function setupDebugSubmenuMenu(data, backFunction) {
   let menu = beginMainMenu();
 
@@ -1162,7 +1166,7 @@ function setupDebugSubmenuMenu(data, backFunction) {
 
   if (!keepPopupOpen) {
     addMenuItem(menu, "Keep popup open for inspect", function (element) {
-      keepPopupOpen = true;
+      keepPopupOpenForDebug();
     });
   }
 
@@ -1414,4 +1418,5 @@ export {
   isSafari,
   isFirefox,
   keepPopupOpen,
+  keepPopupOpenForDebug,
 };

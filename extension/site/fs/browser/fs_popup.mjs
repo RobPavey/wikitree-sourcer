@@ -32,6 +32,7 @@ import {
   displayMessage,
   doAsyncActionWithCatch,
   closePopup,
+  keepPopupOpenForDebug,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -54,6 +55,8 @@ import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData, generalizeDataGivenRecordType } from "../core/fs_generalize_data.mjs";
 import { buildCitation } from "../core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
+
+import { fetchFsSources } from "./fs_fetch.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -157,6 +160,27 @@ async function fsBuildPersonTemplate(data) {
   }
 }
 
+async function fsGetAllCitations(input) {
+  try {
+    let response = await fetchFsSources(input);
+
+    if (response.success) {
+      console.log("fsGetAllCitations, response is");
+      console.log(response);
+
+      keepPopupOpenForDebug();
+      writeToClipboard(response.citationsString, "All citations");
+    } else {
+      // It can fail even if there is an image URL, for example findagrave images:
+      // https://www.ancestry.com/discoveryui-content/view/2221897:60527
+      // This is not considered an error there just will be no sharing link
+    }
+  } catch (e) {
+    console.log("fsGetAllCitations caught exception on fetchFsSources:");
+    console.log(e);
+  }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -205,6 +229,16 @@ function addBuildBookCitationMenuItems(menu, data) {
     input.type = "source";
     displayMessage("Building citation...");
     fsBuildCitation(input);
+  });
+}
+
+function addSaveAllCitationsMenuItem(menu, data) {
+  addMenuItem(menu, "Get All Citations", function (element) {
+    let input = Object.assign({}, data);
+    input.type = "source";
+    input.options = options;
+    displayMessage("Getting sources...");
+    fsGetAllCitations(input);
   });
 }
 
@@ -295,6 +329,7 @@ async function setupFsPopupMenu(extractedData) {
     await addSearchMenus(menu, data, backFunction, "fs");
     addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data);
+    addSaveAllCitationsMenuItem(menu, data);
     addBuildFsTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "book") {
     addBuildBookCitationMenuItems(menu, data);

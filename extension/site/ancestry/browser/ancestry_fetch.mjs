@@ -24,12 +24,6 @@ SOFTWARE.
 
 import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-}
-
 async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, recordId, url) {
   let mode = "cors";
 

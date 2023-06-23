@@ -171,6 +171,28 @@ const citationOptionsGroup = {
   ],
 };
 
+const addMergeFsAllCitationsOptionsGroup = {
+  category: "addMerge",
+  subcategory: "fsAllCitations",
+  tab: "addMerge",
+  subsection: "fsAllCitations",
+  options: [
+    {
+      optionName: "citationType",
+      type: "select",
+      label: "Type of citations to generate",
+      values: [
+        { value: "fsPlainInline", text: "Inline citations using unchanged FS citation" },
+        { value: "fsPlainSource", text: "Source citations using unchanged FS citation" },
+        { value: "narrative", text: "Narrative plus Sourcer style inline citation" },
+        { value: "inline", text: "Sourcer style inline citation" },
+        { value: "source", text: "Sourcer style source citation" },
+      ],
+      defaultValue: "narrative",
+    },
+  ],
+};
+
 registerSubsectionForOptions("search", "fs", "FamilySearch");
 registerSiteSearchPopupOptionsGroup("fs", 3, 3);
 registerSubheadingForOptions("search", "fs", "parameters", "Search Parameters");
@@ -178,3 +200,6 @@ registerOptionsGroup(searchOptionsGroup);
 
 registerOptionsGroup(citationOptionsGroup);
 registerSubsectionForOptions("citation", "fs", "FamilySearch");
+
+registerSubsectionForOptions("addMerge", "fsAllCitations", "FamilySearch Get All Citations");
+registerOptionsGroup(addMergeFsAllCitationsOptionsGroup);

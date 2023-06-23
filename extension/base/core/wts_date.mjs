@@ -552,6 +552,30 @@ const WTS_Date = {
 
     return dateString;
   },
+
+  compareParsedDates: function (parsedDataA, parsedDataB) {
+    if (parsedDataA.isValid) {
+      if (parsedDataB.isValid) {
+        let dateADays = WTS_Date.getParsedDateInDays(parsedDateA);
+        let dateBDays = WTS_Date.getParsedDateInDays(parsedDateB);
+
+        return dateADays - dateBDays;
+      } else {
+        return -1;
+      }
+    } else if (parsedDataB.isValid) {
+      return 1;
+    }
+
+    return 0;
+  },
+
+  compareDateStrings: function (dateStringA, dateStringB) {
+    let parsedDataA = WTS_Date.parseDateString(dateStringA);
+    let parsedDataB = WTS_Date.parseDateString(dateStringB);
+
+    return compareParsedDates(parsedDataA, parsedDataB);
+  },
 };
 
 export { WTS_Date };
