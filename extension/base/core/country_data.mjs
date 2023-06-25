@@ -108,6 +108,7 @@ const CountryData = [
   { stdName: "Ireland", matches: ["Ireland", "Éire"], usesMiddleNames: true },
   { stdName: "France", matches: ["France"] },
   { stdName: "Germany", matches: ["Germany"] },
+  { stdName: "German Empire", matches: ["German Empire"] },
   { stdName: "Austria", matches: ["Austria"] },
   { stdName: "Italy", matches: ["Italy"] },
   { stdName: "Netherlands", matches: ["Netherlands"] },
