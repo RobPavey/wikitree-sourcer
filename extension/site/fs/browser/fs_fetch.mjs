@@ -151,6 +151,7 @@ async function fetchRecord(fetchUrl) {
         success: false,
         errorCondition: "FetchError",
         status: response.status,
+        allowRetry: true,
       };
     }
 
@@ -297,10 +298,16 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
   //console.log(result.sources);
 }
 
-async function getSourcerCitation(source, type, options) {
+async function getSourcerCitation(source, type, options, updateStatusFunction) {
   let uri = source.uri.uri;
 
   let fetchResult = await fetchRecord(uri);
+  let retryCount = 0;
+  while (!fetchResult.success && fetchResult.allowRetry && retryCount < 3) {
+    retryCount++;
+    updateStatusFunction("retry " + retryCount);
+    fetchResult = await fetchRecord(uri);
+  }
 
   if (fetchResult.success) {
     source.dataObjects = fetchResult.dataObjects;
@@ -369,9 +376,10 @@ async function getSourcerCitations(result, ed, gd, type, options) {
     requests.push(request);
   }
 
-  async function requestFunction(input) {
+  async function requestFunction(input, updateStatusFunction) {
+    updateStatusFunction("fetching...");
     let newResponse = { success: true };
-    await getSourcerCitation(input, type, options);
+    await getSourcerCitation(input, type, options, updateStatusFunction);
     return newResponse;
   }
 

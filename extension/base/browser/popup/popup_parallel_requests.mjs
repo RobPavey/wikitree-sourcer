@@ -62,6 +62,21 @@ function parallelRequestsDisplayErrorsMessage(actionName) {
   displayMessageWithIcon("warning", message);
 }
 
+function updateStatusForRequest(request, status) {
+  let matchingRequestState = undefined;
+  for (let requestState of requestsTracker.requestStates) {
+    if (requestState.request == request) {
+      matchingRequestState = requestState;
+      break;
+    }
+  }
+
+  if (matchingRequestState) {
+    matchingRequestState.status = status;
+    displayStatusMessage();
+  }
+}
+
 function handleRequestResponse(request, response, doRequest, resolve) {
   //console.log("received response in parallel_requests handleRequestResponse:");
   //console.log(response);
@@ -84,7 +99,7 @@ function handleRequestResponse(request, response, doRequest, resolve) {
   if (response.success) {
     if (matchingRequestState) {
       matchingRequestState.response = response;
-      matchingRequestState.status = "fetched";
+      matchingRequestState.status = "completed";
     }
     requestsTracker.receivedResponseCount++;
   } else {
@@ -93,24 +108,9 @@ function handleRequestResponse(request, response, doRequest, resolve) {
       "receiveFetchedRecord: Failed response from ancestry extractRecordFromUrl. recordUrl is: " + response.recordUrl
     );
 
-    if (!matchingRequestState.timeouts) {
-      matchingRequestState.timeouts = 0;
-    }
-
-    if (response.allowRetry && matchingRequestState.timeouts < requestsTracker.maxRetries) {
-      matchingRequestState.timeouts++;
-      matchingRequestState.status = "retry " + matchingRequestState.timeouts + " ...";
-      setTimeout(function () {
-        doRequest(request, requestsTracker.requestFunction);
-      }, 1000);
-    } else {
-      matchingRequestState.status = "failed";
-      requestsTracker.failureCount++;
-      requestsTracker.receivedResponseCount++;
-      console.log(
-        "handleRequestResponse: timed out. receivedResponseCount is: " + requestsTracker.receivedResponseCount
-      );
-    }
+    matchingRequestState.status = "failed";
+    requestsTracker.failureCount++;
+    requestsTracker.receivedResponseCount++;
   }
 
   displayStatusMessage();
@@ -127,38 +127,38 @@ function handleRequestResponse(request, response, doRequest, resolve) {
   }
 }
 
-// This function does a series of asynchronouse requests in parallel and returns
-// when they are all complete. It is passed an array of request objects and an
+// This function does a series of asynchronous requests in parallel and returns
+// when they are all completed. It is passed an array of request objects and an
 // async function to call for each request
-function doRequestsInParallel(requests, requestFunction, maxRetries = 3) {
+function doRequestsInParallel(requests, requestFunction) {
   // requests is an array of objects, each has the following fields
   //   name : a name that can be used in the status display
   //   input : data to be passed to the request function (varies by site/action)
   // requestFunction is an async function that performs the request and returns a response
+  //   Two parameters are passed to requestFunction:
+  //      input: the input fields of the request
+  //      statusUpdateFunction: a function taking a single string parameter
   //   The response object must have a property "success" that is true or false.
-  // maxRetires is the number of times a request function will be retried in the
-  //    case that the responseObject has a property allowRetries set to true.
   // return value is a Promise. The resolve object has the following properties
   //   failureCount
   //   responses: array of response objects
 
   resetStaticCounts();
   requestsTracker.expectedResponseCount = requests.length;
-  requestsTracker.maxRetries = maxRetries;
-  requestsTracker.requestFunction = requestFunction; // only needed for retries
 
   requestsTracker.requestStates = [];
   for (let request of requests) {
     let requestState = {
       request: request,
-      status: "fetching...",
     };
     requestsTracker.requestStates.push(requestState);
   }
 
   return new Promise((resolve) => {
     async function doRequest(request, requestFunction) {
-      let response = await requestFunction(request.input);
+      let response = await requestFunction(request.input, function (status) {
+        updateStatusForRequest(request, status);
+      });
       handleRequestResponse(request, response, doRequest, resolve);
     }
 

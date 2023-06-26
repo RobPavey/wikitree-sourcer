@@ -62,9 +62,18 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     requests.push(request);
   }
 
-  async function requestFunction(input) {
+  async function requestFunction(input, updateStatusFunction) {
+    updateStatusFunction("fetching...");
     let newResponse = { success: false };
     let response = await extractRecordHtmlFromUrl(input.link, input.cacheTag);
+
+    let retryCount = 0;
+    while (!response.success && response.allowRetry && retryCount < 3) {
+      retryCount++;
+      updateStatusFunction("retry " + retryCount);
+      response = await extractRecordHtmlFromUrl(input.link, input.cacheTag);
+    }
+
     if (response.success) {
       let extractedData = extractDataFromHtml(response.htmlText, response.recordUrl);
       newResponse.extractedData = extractedData;
