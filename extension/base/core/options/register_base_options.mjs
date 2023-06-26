@@ -1115,7 +1115,7 @@ const addMergeAddPersonOptionsGroup = {
     {
       optionName: "includeAllCitations",
       type: "checkbox",
-      label: "Include all source citations after doing Save Person Data on a person profile (and site supports it)",
+      label: "Include all source citations after doing Save Person Data on a person profile (if site supports it)",
       defaultValue: false,
     },
     {
@@ -1175,7 +1175,7 @@ const addMergeMergeEditOptionsGroup = {
     {
       optionName: "includeAllCitations",
       type: "checkbox",
-      label: "Include all source citations after doing Save Person Data on a person profile (and site supports it)",
+      label: "Include all source citations after doing Save Person Data on a person profile (if site supports it)",
       defaultValue: false,
     },
     {

@@ -56,7 +56,7 @@ import { generalizeData, generalizeDataGivenRecordType } from "../core/fs_genera
 import { buildCitation } from "../core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
-import { fsGetAllCitations } from "./fs_fetch.mjs";
+import { fsGetAllCitations } from "./fs_get_all_citations.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
