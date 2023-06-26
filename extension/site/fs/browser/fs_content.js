@@ -57,11 +57,15 @@ async function doFetch() {
     }
   } else if (
     fetchUrl.startsWith("https://www.familysearch.org/tree/person/details/") ||
-    fetchUrl.startsWith("https://www.familysearch.org/tree/person/vitals/")
+    fetchUrl.startsWith("https://www.familysearch.org/tree/person/vitals/") ||
+    fetchUrl.startsWith("https://www.familysearch.org/tree/person/sources/")
   ) {
     let personId = fetchUrl.replace("https://www.familysearch.org/tree/person/details/", "");
     if (!personId || personId == fetchUrl) {
       personId = fetchUrl.replace("https://www.familysearch.org/tree/person/vitals/", "");
+    }
+    if (!personId || personId == fetchUrl) {
+      personId = fetchUrl.replace("https://www.familysearch.org/tree/person/sources/", "");
     }
     let slashOrQueryIndex = personId.search(/[/?]/);
     if (slashOrQueryIndex != -1) {
@@ -238,14 +242,30 @@ function shouldUseFetch() {
 
   if (location.href.startsWith("https://www.familysearch.org/tree/person/details/")) {
     useFetch = true;
+  } else if (location.href.startsWith("https://www.familysearch.org/tree/person/sources/")) {
+    useFetch = true;
   } else {
     let main = document.querySelector("#main");
     if (main) {
       //console.log("shouldUseFetch, main found");
-      if (main.getAttribute("aria-label") == "Main Content") {
-        //console.log("shouldUseFetch, aria-label of Main Content found");
 
-        useFetch = true;
+      //  Commented out check below because it fails if website is in another language
+      //if (main.getAttribute("aria-label") == "Main Content") {
+      //console.log("shouldUseFetch, aria-label of Main Content found");
+
+      // Image URL looks like:
+      // https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9MR-NFZL
+      // Record URL looks like:
+      // https://www.familysearch.org/ark:/61903/1:1:VTHY-ZB3
+
+      if (location.href.startsWith("https://www.familysearch.org/ark:/")) {
+        let url = location.href;
+        let recordId = url.replace(/^https\:\/\/www\.familysearch\.org\/ark\:\/\d+\/([^/?&]+).*$/, "$1");
+        if (recordId && recordId != url) {
+          if (recordId.startsWith("1:1:")) {
+            useFetch = true;
+          }
+        }
       }
     }
   }

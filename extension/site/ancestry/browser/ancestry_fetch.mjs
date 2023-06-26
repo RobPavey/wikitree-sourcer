@@ -235,12 +235,21 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
     }).catch((err) => {
       console.log("Fetch threw an exception, message is: " + err.message);
       console.log(err);
+      result.allowRetry = true;
       return result; // Note this returns from this catch function, not fetchAncestryRecordPage
     });
+
+    if (chrome.runtime.lastError) {
+      console.log("LastError set on fetch");
+      console.log(chrome.runtime.lastError);
+      result.allowRetry = true;
+      return result;
+    }
 
     // On Firefox it may return zero any time you use "no-cors"
     if (!response || response.status !== 200) {
       console.log("Looks like there was a problem. Status Code: " + response.status);
+      result.allowRetry = true;
       return result;
     }
 

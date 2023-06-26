@@ -417,7 +417,9 @@ function getProfileLinkForAddMerge(personEd, personGd) {
   return linkString;
 }
 
-function getWikiTreeMergeEditData(data, personEd, personGd, citationObject) {
+function getWikiTreeMergeEditData(data, personData, citationObject) {
+  let personEd = personData.extractedData;
+  let personGd = personData.generalizedData;
   let result = getWikiTreeAddMergeData(data, personEd, personGd, citationObject);
 
   if (citationObject && options.addMerge_mergeEdit_includeCitation) {
@@ -426,6 +428,13 @@ function getWikiTreeMergeEditData(data, personEd, personGd, citationObject) {
       // Note, if this is not an inline citation it should go after Sources
       // however I haven't yet found a way to make that happen
       result.bio = citationText;
+    }
+  }
+
+  if (!citationObject && options.addMerge_mergeEdit_includeAllCitations) {
+    let allCitationsText = personData.allCitationsString;
+    if (allCitationsText) {
+      result.bio = allCitationsText;
     }
   }
 
@@ -460,10 +469,12 @@ function getWikiTreeMergeEditData(data, personEd, personGd, citationObject) {
   return result;
 }
 
-function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
+function getWikiTreeEditFamilyData(data, personData, citationObject) {
   // this input is:
   // data: the extracted data from the current page
   // personData: the stored person data which is extractedData and generalizedData (not as objects)
+  let personEd = personData.extractedData;
+  let personGd = personData.generalizedData;
 
   function getPageParentsForAddingChild(otherParentName, otherParentWikiId) {
     let parents = {};
@@ -777,6 +788,26 @@ function getWikiTreeEditFamilyData(data, personEd, personGd, citationObject) {
     }
   }
 
+  if (!citationObject) {
+    let allCitationsText = personData.allCitationsString;
+    if (allCitationsText) {
+      if (options.addMerge_addPerson_includeAllCitations) {
+        let type = personData.allCitationsType;
+        if (type == "source") {
+          result.sources = allCitationsText;
+        } else {
+          if (!result.notes) {
+            result.notes = "";
+          } else if (type == "narrative") {
+            result.notes += "\n\n";
+          }
+
+          result.notes += allCitationsText;
+        }
+      }
+    }
+  }
+
   // optionally add a "See also:" link to the person profile
   if (personGd.sourceType == "profile" && options.addMerge_addPerson_includeProfileLink) {
     let linkString = getProfileLinkForAddMerge(personEd, personGd);
@@ -853,8 +884,8 @@ async function doSetFieldsFromPersonData(tabId, wtPersonData) {
   }
 }
 
-async function setFieldsFromPersonData(data, personEd, personGd, tabId, citationObject, backFunction) {
-  let wtPersonData = getWikiTreeEditFamilyData(data, personEd, personGd, citationObject);
+async function setFieldsFromPersonData(data, personData, tabId, citationObject, backFunction) {
+  let wtPersonData = getWikiTreeEditFamilyData(data, personData, citationObject);
 
   function processFunction() {
     updateAfterCheckWtPersonData(data, wtPersonData);
@@ -1036,8 +1067,8 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
   processFunction();
 }
 
-async function mergeEditFromPersonData(data, personEd, personGd, citationObject, tabId, backFunction) {
-  let wtPersonData = getWikiTreeMergeEditData(data, personEd, personGd, citationObject);
+async function mergeEditFromPersonData(data, personData, citationObject, tabId, backFunction) {
+  let wtPersonData = getWikiTreeMergeEditData(data, personData, citationObject);
 
   function processFunction() {
     updateAfterCheckWtPersonData(data, wtPersonData);
@@ -1191,6 +1222,7 @@ async function addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunctio
 
   if (personData.generalizedData) {
     let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+    personData.generalizedData = gd;
     let menuText = "Set Fields from Person Data for:";
     let subtitleText = getPersonDataSubtitleText(gd, timeText);
 
@@ -1198,7 +1230,7 @@ async function addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunctio
       menu,
       menuText,
       function (element) {
-        setFieldsFromPersonData(data, personData.extractedData, gd, tabId, null, backFunction);
+        setFieldsFromPersonData(data, personData, tabId, null, backFunction);
       },
       subtitleText
     );
@@ -1223,6 +1255,8 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction)
 
   if (citationObject && citationObject.generalizedData) {
     let gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
+    let personData = { extractedData: citationObject.extractedData, generalizedData: gd };
+
     let menuText = "Set Fields from Citation Data for:";
     let subtitleText = getCitationObjectSubtitleText(gd, timeText);
 
@@ -1230,7 +1264,7 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction)
       menu,
       menuText,
       function (element) {
-        setFieldsFromPersonData(data, citationObject.extractedData, gd, tabId, citationObject, backFunction);
+        setFieldsFromPersonData(data, personData, tabId, citationObject, backFunction);
       },
       subtitleText
     );
@@ -1252,6 +1286,7 @@ async function addMergeEditFromPersonDataMenuItem(menu, data, tabId, backFunctio
 
   if (personData.generalizedData) {
     let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+    personData.generalizedData = gd;
     let menuText = "Merge Edit from Person Data for:";
     let subtitleText = getPersonDataSubtitleText(gd, timeText);
 
@@ -1259,7 +1294,7 @@ async function addMergeEditFromPersonDataMenuItem(menu, data, tabId, backFunctio
       menu,
       menuText,
       function (element) {
-        mergeEditFromPersonData(data, personData.extractedData, gd, null, tabId, backFunction);
+        mergeEditFromPersonData(data, personData, null, tabId, backFunction);
       },
       subtitleText
     );

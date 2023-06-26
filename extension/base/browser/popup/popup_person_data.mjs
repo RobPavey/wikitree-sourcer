@@ -22,7 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, displayMessageWithIconThenClosePopup } from "./popup_menu_building.mjs";
+import { addMenuItem, displayMessageWithIconThenClosePopup, keepPopupOpenForDebug } from "./popup_menu_building.mjs";
+import { options } from "../options/options_loader.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Citation
@@ -40,7 +41,13 @@ async function getLatestPersonData() {
   });
 }
 
-function savePersonData(data) {
+async function savePersonData(data, getAllCitationsFunction) {
+  if (getAllCitationsFunction) {
+    if (options.addMerge_addPerson_includeAllCitations || options.addMerge_mergeEdit_includeAllCitations) {
+      await getAllCitationsFunction(data);
+    }
+  }
+
   data.timeStamp = Date.now();
 
   chrome.storage.local.set({ latestPersonData: data }, function () {
@@ -53,9 +60,9 @@ function savePersonData(data) {
   });
 }
 
-function addSavePersonDataMenuItem(menu, data) {
+function addSavePersonDataMenuItem(menu, data, getAllCitationsFunction = undefined) {
   addMenuItem(menu, "Save Person Data", function (element) {
-    savePersonData(data);
+    savePersonData(data, getAllCitationsFunction);
   });
 }
 

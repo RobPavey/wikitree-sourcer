@@ -1113,6 +1113,12 @@ const addMergeAddPersonOptionsGroup = {
       defaultValue: false,
     },
     {
+      optionName: "includeAllCitations",
+      type: "checkbox",
+      label: "Include all source citations after doing Save Person Data on a person profile (and site supports it)",
+      defaultValue: false,
+    },
+    {
       optionName: "includeProfileLink",
       type: "checkbox",
       label: "Add a link/template to the source profile in sources if filling from a profile",
@@ -1164,6 +1170,12 @@ const addMergeMergeEditOptionsGroup = {
       optionName: "includeCitation",
       type: "checkbox",
       label: "Put citation text in biography if merging from a citation.",
+      defaultValue: false,
+    },
+    {
+      optionName: "includeAllCitations",
+      type: "checkbox",
+      label: "Include all source citations after doing Save Person Data on a person profile (and site supports it)",
       defaultValue: false,
     },
     {

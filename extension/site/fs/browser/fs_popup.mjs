@@ -56,7 +56,7 @@ import { generalizeData, generalizeDataGivenRecordType } from "../core/fs_genera
 import { buildCitation } from "../core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
-import { fetchFsSources } from "./fs_fetch.mjs";
+import { fsGetAllCitations } from "./fs_fetch.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -160,12 +160,15 @@ async function fsBuildPersonTemplate(data) {
   }
 }
 
-async function fsGetAllCitations(input) {
+async function fsGetAllCitationsAction(data) {
   try {
-    let response = await fetchFsSources(input);
+    let input = Object.assign({}, data);
+    input.options = options;
+
+    let response = await fsGetAllCitations(input);
 
     if (response.success) {
-      //console.log("fsGetAllCitations, response is");
+      //console.log("fsGetAllCitationsAction, response is");
       //console.log(response);
 
       keepPopupOpenForDebug();
@@ -176,7 +179,31 @@ async function fsGetAllCitations(input) {
       // This is not considered an error there just will be no sharing link
     }
   } catch (e) {
-    console.log("fsGetAllCitations caught exception on fetchFsSources:");
+    console.log("fsGetAllCitationsAction caught exception on fsGetAllCitations:");
+    console.log(e);
+  }
+}
+
+async function fsGetAllCitationsForSavePersonData(data) {
+  try {
+    let input = Object.assign({}, data);
+    input.options = options;
+    displayMessage("Getting sources...");
+    let response = await fsGetAllCitations(input);
+
+    if (response.success) {
+      //console.log("fsGetAllCitations, response is");
+      //console.log(response);
+
+      data.allCitationsString = response.citationsString;
+      data.allCitationsType = response.citationsStringType;
+    } else {
+      // It can fail even if there is an image URL, for example findagrave images:
+      // https://www.ancestry.com/discoveryui-content/view/2221897:60527
+      // This is not considered an error there just will be no sharing link
+    }
+  } catch (e) {
+    console.log("fsGetAllCitationsForSavePersonData caught exception on fsGetAllCitations:");
     console.log(e);
   }
 }
@@ -235,11 +262,8 @@ function addBuildBookCitationMenuItems(menu, data) {
 function addSaveAllCitationsMenuItem(menu, data) {
   if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
     addMenuItem(menu, "Get All Citations", function (element) {
-      let input = Object.assign({}, data);
-      input.type = "source";
-      input.options = options;
       displayMessage("Getting sources...");
-      fsGetAllCitations(input);
+      fsGetAllCitationsAction(data);
     });
   }
 }
@@ -330,7 +354,7 @@ async function setupFsPopupMenu(extractedData) {
   } else if (extractedData.pageType == "person") {
     await addSearchMenus(menu, data, backFunction, "fs");
     addMenuDivider(menu);
-    addSavePersonDataMenuItem(menu, data);
+    addSavePersonDataMenuItem(menu, data, fsGetAllCitationsForSavePersonData);
     addSaveAllCitationsMenuItem(menu, data);
     addBuildFsTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "book") {

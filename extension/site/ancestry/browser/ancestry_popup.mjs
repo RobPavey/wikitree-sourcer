@@ -57,8 +57,9 @@ import {
   getDataForLinkedHouseholdRecords,
   processWithFetchedLinkData,
   getDataForCitationAndHouseholdRecords,
-  displayLinkedRecordsFetchErrorsMessage,
 } from "./ancestry_popup_linked_records.mjs";
+
+import { parallelRequestsDisplayErrorsMessage } from "/base/browser/popup/popup_parallel_requests.mjs";
 
 import { RT } from "../../../base/core/record_type.mjs";
 
@@ -195,7 +196,7 @@ async function ancestryBuildCitationWithLinkData(data) {
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
       // some of the linked records could not be retrieved.
-      displayLinkedRecordsFetchErrorsMessage("building citation");
+      parallelRequestsDisplayErrorsMessage("building citation");
       return;
     }
 
@@ -347,7 +348,7 @@ async function ancestryBuildHouseholdTableWithLinkedRecords(data) {
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
       // some of the linked records could not be retrieved.
-      displayLinkedRecordsFetchErrorsMessage("building household table");
+      parallelRequestsDisplayErrorsMessage("building household table");
       return;
     }
 
@@ -622,7 +623,7 @@ async function setupAncestryPopupMenuWithLinkData(data) {
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
       // some of the linked records could not be retrieved.
-      displayLinkedRecordsFetchErrorsMessage("initializing menu");
+      parallelRequestsDisplayErrorsMessage("initializing menu");
       return;
     }
 

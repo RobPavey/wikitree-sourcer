@@ -42,8 +42,14 @@ async function fetchFsSourcesJson(sourceIdList) {
 
   let fetchUrl = "https://www.familysearch.org/service/tree/links/sources/";
 
+  let isFirstSource = true;
   for (let sourceId of sourceIdList) {
-    fetchUrl += "," + sourceId;
+    if (isFirstSource) {
+      isFirstSource = false;
+    } else {
+      fetchUrl += ",";
+    }
+    fetchUrl += sourceId;
   }
 
   //console.log("fetchUrl is");
@@ -105,98 +111,85 @@ async function fetchFsSourcesJson(sourceIdList) {
   return { success: false };
 }
 
-async function fetchRecords(sources, options) {
-  if (sources.length == 0) {
-    return;
+async function fetchRecord(fetchUrl) {
+  //console.log("fetchRecord, fetchUrl is: " + fetchUrl);
+
+  if (!fetchUrl.includes("familysearch.org/")) {
+    return { success: false };
   }
 
-  let message = "Fetching FamilySearch records";
+  fetchUrl = fetchUrl.replace(/\/familysearch.org/, "/www.familysearch.org");
 
-  displayMessage(message);
+  //console.log("doFetch, fetchUrl is: " + fetchUrl);
 
-  //console.log("fetchRecords, sources is: ");
-  //console.log(sources);
+  let fetchOptionsHeaders = {
+    accept: "application/x-gedcomx-v1+json, application/json",
+    "accept-language": "en",
+    from: "fsSearch.record.getGedcomX@familysearch.org",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+  };
 
-  for (let source of sources) {
-    message += ".";
-    displayMessage(message);
+  let fetchOptions = {
+    headers: fetchOptionsHeaders,
+    referrerPolicy: "strict-origin-when-cross-origin",
+    body: null,
+    method: "GET",
+    mode: "cors",
+    credentials: "include",
+  };
 
-    let uri = source.uri.uri;
+  try {
+    let response = await fetch(fetchUrl, fetchOptions);
 
-    let fetchType = "record";
+    //console.log("doFetch, response.status is: " + response.status);
 
-    let fetchUrl = uri;
-    //console.log("doFetch, fetchUrl is: " + fetchUrl);
-
-    if (!fetchUrl.includes("familysearch.org/")) {
-      continue;
-    }
-
-    fetchUrl = fetchUrl.replace(/\/familysearch.org/, "/www.familysearch.org");
-
-    //console.log("doFetch, fetchUrl is: " + fetchUrl);
-
-    let fetchOptionsHeaders = {
-      accept: "application/x-gedcomx-v1+json, application/json",
-      "accept-language": "en",
-      from: "fsSearch.record.getGedcomX@familysearch.org",
-      "sec-fetch-dest": "empty",
-      "sec-fetch-mode": "cors",
-      "sec-fetch-site": "same-origin",
-    };
-
-    let fetchOptions = {
-      headers: fetchOptionsHeaders,
-      referrerPolicy: "strict-origin-when-cross-origin",
-      body: null,
-      method: "GET",
-      mode: "cors",
-      credentials: "include",
-    };
-
-    try {
-      let response = await fetch(fetchUrl, fetchOptions);
-
-      //console.log("doFetch, response.status is: " + response.status);
-
-      if (response.status !== 200) {
-        console.log("Looks like there was a problem. Status Code: " + response.status);
-        return {
-          success: false,
-          errorCondition: "FetchError",
-          status: response.status,
-        };
-      }
-
-      let jsonData = await response.text();
-
-      //console.log("doFetch: response text is:");
-      //console.log(jsonData);
-
-      if (!jsonData || jsonData[0] != `{`) {
-        console.log("The response text does not look like JSON");
-        //console.log(jsonData);
-        return { success: false, errorCondition: "NotJSON" };
-      }
-
-      const dataObj = JSON.parse(jsonData);
-
-      //console.log("dataObj is:");
-      //console.log(dataObj);
-
-      // support having multiple data objects for separate API queries
-      let dataObjects = {
-        dataObj: dataObj,
+    if (response.status !== 200) {
+      console.log("Looks like there was a problem. Status Code: " + response.status);
+      return {
+        success: false,
+        errorCondition: "FetchError",
+        status: response.status,
       };
-
-      source.dataObjects = dataObjects;
-    } catch (error) {
-      console.log("fetch failed, error is:");
-      console.log(error);
-      return { success: false };
     }
+
+    let jsonData = await response.text();
+
+    //console.log("doFetch: response text is:");
+    //console.log(jsonData);
+
+    if (!jsonData || jsonData[0] != `{`) {
+      console.log("The response text does not look like JSON");
+      //console.log(jsonData);
+      return { success: false, errorCondition: "NotJSON" };
+    }
+
+    const dataObj = JSON.parse(jsonData);
+
+    //console.log("dataObj is:");
+    //console.log(dataObj);
+
+    // support having multiple data objects for separate API queries
+    let dataObjects = {
+      dataObj: dataObj,
+    };
+
+    let result = {};
+    result.dataObjects = dataObjects;
+    result.success = true;
+    return result;
+  } catch (error) {
+    console.log("fetch failed, error is:");
+    console.log(error);
+    return { success: false };
   }
 }
+
+////////////////////////////////////////////////////////////
+// Should move to separate file
+////////////////////////////////////////////////////////////
+import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 
 function sortSourcesUsingFsSortKeys(result) {
   function compareSortKeys(a, b) {
@@ -256,6 +249,7 @@ function getFsPlainCitations(result, ed, type, options) {
   }
 
   result.citationsString = citationsString;
+  result.citationsStringType = type;
 }
 
 function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
@@ -303,70 +297,87 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
   //console.log(result.sources);
 }
 
-async function getSourcerCitations(result, ed, gd, type, options) {
-  // fetch additional records where possible
-  await fetchRecords(result.sources, options);
+async function getSourcerCitation(source, type, options) {
+  let uri = source.uri.uri;
 
-  for (let source of result.sources) {
-    if (source.dataObjects) {
-      let extractedData = extractDataFromFetch(undefined, source.dataObjects, "record", options);
-      if (extractedData) {
-        source.extractedData = extractedData;
+  let fetchResult = await fetchRecord(uri);
 
-        let generalizedData = generalizeData({ extractedData: extractedData });
-        if (generalizedData) {
-          source.generalizedData = generalizedData;
+  if (fetchResult.success) {
+    source.dataObjects = fetchResult.dataObjects;
 
-          let householdTableString = buildHouseholdTableString(
-            extractedData,
-            generalizedData,
-            type,
-            buildHouseholdTable
-          );
+    let extractedData = extractDataFromFetch(undefined, source.dataObjects, "record", options);
+    if (extractedData) {
+      source.extractedData = extractedData;
 
-          const input = {
-            extractedData: extractedData,
-            generalizedData: generalizedData,
-            runDate: new Date(),
-            type: type,
-            dataCache: undefined,
-            options: options,
-            householdTableString: householdTableString,
-          };
-          const citationObject = buildCitation(input);
-          citationObject.generalizedData = generalizedData;
-          source.citationObject = citationObject;
-        }
+      let generalizedData = generalizeData({ extractedData: extractedData });
+      if (generalizedData) {
+        source.generalizedData = generalizedData;
+
+        let householdTableString = buildHouseholdTableString(extractedData, generalizedData, type, buildHouseholdTable);
+
+        const input = {
+          extractedData: extractedData,
+          generalizedData: generalizedData,
+          runDate: new Date(),
+          type: type,
+          dataCache: undefined,
+          options: options,
+          householdTableString: householdTableString,
+        };
+        const citationObject = buildCitation(input);
+        citationObject.generalizedData = generalizedData;
+        source.citationObject = citationObject;
       }
-    } else if (source.citation) {
-      // we don't have an FS fetch object, see what we can do my parsing FS citation string
-      if (/^"[^"]+"\s+\d\d\d\d http/.test(source.citation)) {
-        let year = source.citation.replace(/^"[^"]+"\s+(\d\d\d\d) http.*$/, "$1");
-        if (year && year != source.citation) {
-          source.sortYear = year;
-        }
-        let firstSentence = source.citation.replace(/^"([^"]+)"\s+\d\d\d\d http.*$/, "$1");
-        if (firstSentence && firstSentence != source.citation) {
-          source.firstSentence = firstSentence;
-        }
-        let link = source.citation.replace(/^"[^"]+"\s+\d\d\d\d (http.*)\. Accessed.*$/, "$1");
-        if (link && link != source.citation) {
-          source.link = link;
-        }
+    }
+  } else {
+    // we don't have an FS fetch object, see what we can do my parsing FS citation string
+    if (/^"[^"]+"\s+\d\d\d\d http/.test(source.citation)) {
+      let year = source.citation.replace(/^"[^"]+"\s+(\d\d\d\d) http.*$/, "$1");
+      if (year && year != source.citation) {
+        source.sortYear = year;
+      }
+      let firstSentence = source.citation.replace(/^"([^"]+)"\s+\d\d\d\d http.*$/, "$1");
+      if (firstSentence && firstSentence != source.citation) {
+        source.firstSentence = firstSentence;
+      }
+      let link = source.citation.replace(/^"[^"]+"\s+\d\d\d\d (http.*)\. Accessed.*$/, "$1");
+      if (link && link != source.citation) {
+        source.link = link;
+      }
 
-        let title = source.title;
-        if (!title) {
-          title = source.firstSentence;
-        }
-        if (title) {
-          let joinIndex = title.search(/\s+in\s+the\s+/);
-          if (joinIndex != -1) {
-            source.prefName = title.substring(0, joinIndex);
-          }
+      let title = source.title;
+      if (!title) {
+        title = source.firstSentence;
+      }
+      if (title) {
+        let joinIndex = title.search(/\s+in\s+the\s+/);
+        if (joinIndex != -1) {
+          source.prefName = title.substring(0, joinIndex);
         }
       }
     }
   }
+}
+
+async function getSourcerCitations(result, ed, gd, type, options) {
+  let requests = [];
+  for (let source of result.sources) {
+    let request = {
+      name: source.id,
+      input: source,
+    };
+    requests.push(request);
+  }
+
+  async function requestFunction(input) {
+    let newResponse = { success: true };
+    await getSourcerCitation(input, type, options);
+    return newResponse;
+  }
+
+  let requestsResult = await doRequestsInParallel(requests, requestFunction);
+
+  result.failureCount = requestsResult.failureCount;
 
   sortSourcesUsingFsSortKeysAndFetchedRecords(result);
 
@@ -414,9 +425,10 @@ async function getSourcerCitations(result, ed, gd, type, options) {
   }
 
   result.citationsString = citationsString;
+  result.citationsStringType = type;
 }
 
-async function fetchFsSources(input) {
+async function fsGetAllCitations(input, callbackFunction) {
   let ed = input.extractedData;
   let gd = input.generalizedData;
   let options = input.options;
@@ -431,6 +443,9 @@ async function fetchFsSources(input) {
     result.sources = [];
 
     for (let source of sources) {
+      console.log("FS source is:");
+      console.log(source);
+
       let sourceObj = {};
 
       function addField(fieldName) {
@@ -441,6 +456,7 @@ async function fetchFsSources(input) {
       addField("citation");
       addField("title");
       addField("uri");
+      addField("id");
 
       if (source.event) {
         if (source.event.sortKey) {
@@ -476,4 +492,4 @@ async function fetchFsSources(input) {
   return result;
 }
 
-export { fetchFsSources };
+export { fsGetAllCitations };
