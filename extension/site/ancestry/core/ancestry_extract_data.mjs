@@ -1108,6 +1108,9 @@ function detectPageType(document, result, url) {
   } else if (url.includes("/sharing/") && url.includes("?token=")) {
     result.pageType = "sharingImageOrRecord";
     result.sharingType = "v2";
+  } else if (url.includes("/sharing/") && url.includes("?mark=")) {
+    result.pageType = "sharingImageOrRecord";
+    result.sharingType = "v2";
   } else if (url.includes("/media/") && url.includes("/tree/")) {
     result.pageType = "treeMedia";
   } else {
