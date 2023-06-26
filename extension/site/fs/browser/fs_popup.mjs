@@ -171,7 +171,7 @@ async function fsGetAllCitationsAction(data) {
       //console.log("fsGetAllCitationsAction, response is");
       //console.log(response);
 
-      keepPopupOpenForDebug();
+      //keepPopupOpenForDebug();
       writeToClipboard(response.citationsString, "All citations");
     } else {
       // It can fail even if there is an image URL, for example findagrave images:
@@ -198,9 +198,7 @@ async function fsGetAllCitationsForSavePersonData(data) {
       data.allCitationsString = response.citationsString;
       data.allCitationsType = response.citationsStringType;
     } else {
-      // It can fail even if there is an image URL, for example findagrave images:
-      // https://www.ancestry.com/discoveryui-content/view/2221897:60527
-      // This is not considered an error there just will be no sharing link
+      // If it fails we just don't get an all citations string
     }
   } catch (e) {
     console.log("fsGetAllCitationsForSavePersonData caught exception on fsGetAllCitations:");

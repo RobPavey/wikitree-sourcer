@@ -443,8 +443,8 @@ async function fsGetAllCitations(input, callbackFunction) {
     result.sources = [];
 
     for (let source of sources) {
-      console.log("FS source is:");
-      console.log(source);
+      //console.log("FS source is:");
+      //console.log(source);
 
       let sourceObj = {};
 

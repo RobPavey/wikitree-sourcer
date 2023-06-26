@@ -62,9 +62,9 @@ function parallelRequestsDisplayErrorsMessage(actionName) {
   displayMessageWithIcon("warning", message);
 }
 
-function handleRequestResponse(request, response) {
-  console.log("received response in parallel_requests handleRequestResponse:");
-  console.log(response);
+function handleRequestResponse(request, response, doRequest, resolve) {
+  //console.log("received response in parallel_requests handleRequestResponse:");
+  //console.log(response);
 
   //console.log("received response:");
   //console.log(response);
@@ -78,8 +78,8 @@ function handleRequestResponse(request, response) {
     }
   }
 
-  console.log("in parallel_requests handleRequestResponse, matchingRequestState is:");
-  console.log(matchingRequestState);
+  //console.log("in parallel_requests handleRequestResponse, matchingRequestState is:");
+  //console.log(matchingRequestState);
 
   if (response.success) {
     if (matchingRequestState) {
@@ -93,118 +93,18 @@ function handleRequestResponse(request, response) {
       "receiveFetchedRecord: Failed response from ancestry extractRecordFromUrl. recordUrl is: " + response.recordUrl
     );
 
-    if (!matchingRequestState.timeouts && response.allowRetry) {
+    if (!matchingRequestState.timeouts) {
       matchingRequestState.timeouts = 0;
     }
 
-    if (matchingRequestState.timeouts < 3) {
+    if (response.allowRetry && matchingRequestState.timeouts < requestsTracker.maxRetries) {
       matchingRequestState.timeouts++;
       matchingRequestState.status = "retry " + matchingRequestState.timeouts + " ...";
       setTimeout(function () {
         doRequest(request, requestsTracker.requestFunction);
       }, 1000);
     } else {
-      matchingRecord.status = "failed";
-      requestsTracker.failureCount++;
-      requestsTracker.receivedResponseCount++;
-      console.log(
-        "handleRequestResponse: timed out. receivedResponseCount is: " + requestsTracker.receivedResponseCount
-      );
-    }
-  }
-
-  displayStatusMessage();
-
-  if (requestsTracker.receivedResponseCount == requestsTracker.expectedResponseCount) {
-    // if there were any failures then remember that for caller
-    let callbackInput = { failureCount: requestsTracker.failureCount, responses: [] };
-    for (let requestState of requestsTracker.requestStates) {
-      callbackInput.responses.push(requestState.response);
-    }
-
-    requestsTracker.callbackFunction(callbackInput);
-    resetStaticCounts();
-  }
-}
-
-async function doRequest(request, requestFunction) {
-  let response = await requestFunction(request.input);
-  handleRequestResponse(request, response);
-}
-
-function parallelRequests(requests, requestFunction, callbackFunction) {
-  // requests is an array of objects, each has the following fields
-  //   name : a name that can be used in the status display
-  //   input : data to be passed to the request function (varies by site/action)
-  // requestFunction is an async function that performs the request and returns a response
-  //   The response object numst have a property "success" that is true or false.
-  // callbackFunction is a method that takes a single object, this object has the following properties
-  //   failureCount
-  //   responses: array of response objects
-
-  resetStaticCounts();
-  requestsTracker.expectedResponseCount = requests.length;
-  requestsTracker.callbackFunction = callbackFunction;
-
-  requestsTracker.requestStates = [];
-  for (let request of requests) {
-    let requestState = {
-      request: request,
-      status: "fetching...",
-    };
-    requestsTracker.requestStates.push(requestState);
-  }
-
-  for (let request of requests) {
-    doRequest(request, requestFunction);
-  }
-
-  displayStatusMessage();
-}
-
-function handleRequestResponseWithResolve(request, response, resolve) {
-  console.log("received response in parallel_requests handleRequestResponse:");
-  console.log(response);
-
-  //console.log("received response:");
-  //console.log(response);
-
-  // find linkedRecord for this url
-  let matchingRequestState = undefined;
-  for (let requestState of requestsTracker.requestStates) {
-    if (requestState.request == request) {
-      matchingRequestState = requestState;
-      break;
-    }
-  }
-
-  console.log("in parallel_requests handleRequestResponse, matchingRequestState is:");
-  console.log(matchingRequestState);
-
-  if (response.success) {
-    if (matchingRequestState) {
-      matchingRequestState.response = response;
-      matchingRequestState.status = "fetched";
-    }
-    requestsTracker.receivedResponseCount++;
-  } else {
-    // ??
-    console.log(
-      "receiveFetchedRecord: Failed response from ancestry extractRecordFromUrl. recordUrl is: " + response.recordUrl
-    );
-
-    if (!matchingRequestState.timeouts && response.allowRetry) {
-      matchingRequestState.timeouts = 0;
-    }
-
-    if (matchingRequestState.timeouts < 3) {
-      matchingRequestState.timeouts++;
-      matchingRequestState.status = "retry " + matchingRequestState.timeouts + " ...";
-      setTimeout(function () {
-        doRequest(request, requestsTracker.requestFunction);
-      }, 1000);
-    } else {
-      matchingRecord.status = "failed";
+      matchingRequestState.status = "failed";
       requestsTracker.failureCount++;
       requestsTracker.receivedResponseCount++;
       console.log(
@@ -227,18 +127,25 @@ function handleRequestResponseWithResolve(request, response, resolve) {
   }
 }
 
-function doRequestsInParallel(requests, requestFunction) {
+// This function does a series of asynchronouse requests in parallel and returns
+// when they are all complete. It is passed an array of request objects and an
+// async function to call for each request
+function doRequestsInParallel(requests, requestFunction, maxRetries = 3) {
   // requests is an array of objects, each has the following fields
   //   name : a name that can be used in the status display
   //   input : data to be passed to the request function (varies by site/action)
   // requestFunction is an async function that performs the request and returns a response
-  //   The response object numst have a property "success" that is true or false.
-  // callbackFunction is a method that takes a single object, this object has the following properties
+  //   The response object must have a property "success" that is true or false.
+  // maxRetires is the number of times a request function will be retried in the
+  //    case that the responseObject has a property allowRetries set to true.
+  // return value is a Promise. The resolve object has the following properties
   //   failureCount
   //   responses: array of response objects
 
   resetStaticCounts();
   requestsTracker.expectedResponseCount = requests.length;
+  requestsTracker.maxRetries = maxRetries;
+  requestsTracker.requestFunction = requestFunction; // only needed for retries
 
   requestsTracker.requestStates = [];
   for (let request of requests) {
@@ -252,7 +159,7 @@ function doRequestsInParallel(requests, requestFunction) {
   return new Promise((resolve) => {
     async function doRequest(request, requestFunction) {
       let response = await requestFunction(request.input);
-      handleRequestResponseWithResolve(request, response, resolve);
+      handleRequestResponse(request, response, doRequest, resolve);
     }
 
     for (let request of requests) {
@@ -263,4 +170,4 @@ function doRequestsInParallel(requests, requestFunction) {
   });
 }
 
-export { parallelRequests, doRequestsInParallel, parallelRequestsDisplayErrorsMessage };
+export { doRequestsInParallel, parallelRequestsDisplayErrorsMessage };

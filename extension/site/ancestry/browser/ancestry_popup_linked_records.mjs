@@ -32,7 +32,7 @@ import { extractRecord } from "../core/ancestry_extract_data.mjs";
 
 import { extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
 
-import { parallelRequests, doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
+import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 
 function extractDataFromHtml(htmlText, recordUrl) {
   //console.log("extractDataFromHtml, recordUrl is: " + recordUrl);
@@ -94,9 +94,9 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     }
   }
 
-  keepPopupOpenForDebug();
-  console.log("processInput is:");
-  console.log(processInput);
+  //keepPopupOpenForDebug();
+  //console.log("processInput is:");
+  //console.log(processInput);
   processFunction(processInput);
 }
 

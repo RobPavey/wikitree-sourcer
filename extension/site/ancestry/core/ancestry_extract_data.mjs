@@ -181,8 +181,8 @@ function extractRecordPageTitle(document, result) {
       // 25 Apr 2023 there is a template = so use that iff possible
       let pageTitleTemplate = document.querySelector("#pageTitleTemplate");
       if (pageTitleTemplate) {
-        console.log("pageTitleTemplate found, numChildren = " + pageTitleTemplate.children.length);
-        console.log(pageTitleTemplate);
+        //console.log("pageTitleTemplate found, numChildren = " + pageTitleTemplate.children.length);
+        //console.log(pageTitleTemplate);
         // It looks like this:
         // 		<template id="pageTitleTemplate">
         // 			<span id="pageNameTemplate">William H Pavey</span>
@@ -191,12 +191,12 @@ function extractRecordPageTitle(document, result) {
         // 		</template>
         let nameNode = pageTitleTemplate.content.querySelector("#pageNameTemplate");
         if (nameNode) {
-          console.log("nameNode found, textContent = " + nameNode.textContent);
+          //console.log("nameNode found, textContent = " + nameNode.textContent);
           titleName = nameNode.textContent;
         }
         let collectionNode = pageTitleTemplate.content.querySelector("#collectionTitleTemplate");
         if (collectionNode) {
-          console.log("collectionNode found, textContent = " + collectionNode.textContent);
+          //console.log("collectionNode found, textContent = " + collectionNode.textContent);
           titleCollection = collectionNode.textContent;
         }
       } else {
