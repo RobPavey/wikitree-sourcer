@@ -189,6 +189,7 @@ const addMergeFsAllCitationsOptionsGroup = {
         { value: "source", text: "Sourcer style source citation" },
       ],
       defaultValue: "narrative",
+      comment: "NOTE: Some FamilySearch profiles have many incorrect sources - please check the generated citations.",
     },
   ],
 };
@@ -201,5 +202,5 @@ registerOptionsGroup(searchOptionsGroup);
 registerOptionsGroup(citationOptionsGroup);
 registerSubsectionForOptions("citation", "fs", "FamilySearch");
 
-registerSubsectionForOptions("addMerge", "fsAllCitations", "FamilySearch Get All Citations");
+registerSubsectionForOptions("addMerge", "fsAllCitations", "FamilySearch Build All Citations");
 registerOptionsGroup(addMergeFsAllCitationsOptionsGroup);

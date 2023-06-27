@@ -259,7 +259,7 @@ function addBuildBookCitationMenuItems(menu, data) {
 
 function addSaveAllCitationsMenuItem(menu, data) {
   if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
-    addMenuItem(menu, "Get All Citations", function (element) {
+    addMenuItem(menu, "Build All Citations", function (element) {
       displayMessage("Getting sources...");
       fsGetAllCitationsAction(data);
     });
