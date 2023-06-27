@@ -1,74 +1,74 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nOriginal data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nOriginal data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth''': \"Scotland, Select Births and Baptisms, 1564-1950\"<br/>Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)",
+    "citation": "* '''Birth''': \"Scotland, Select Births and Baptisms, 1564-1950\"<br/>Original data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>\nChristian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nOriginal data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>\nChristian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>\nChristian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland.\n</ref>",
+    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nOriginal data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>\nChristian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Birth''': \"Scotland, Select Births and Baptisms, 1564-1950\"<br/>Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>Christian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland.",
+    "citation": "* '''Birth''': \"Scotland, Select Births and Baptisms, 1564-1950\"<br/>Original data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>Christian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>\nName: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nOriginal data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>\nName: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>\nName: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.\n</ref>",
+    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nOriginal data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>\nName: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Birth''': \"Scotland, Select Births and Baptisms, 1564-1950\"<br/>Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>Name: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.",
+    "citation": "* '''Birth''': \"Scotland, Select Births and Baptisms, 1564-1950\"<br/>Original data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>Name: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Christian Mcleod\n|-\n| Gender || Female\n|-\n| Birth Date || 25 Aug 1842\n|-\n| Birth Place || Rayne,Aberdeen,Scotland\n|-\n| Father || William Mcleod\n|-\n| Mother || Helen White\n|}\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nOriginal data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Christian Mcleod\n|-\n| Gender || Female\n|-\n| Birth Date || 25 Aug 1842\n|-\n| Birth Place || Rayne,Aberdeen,Scotland\n|-\n| Father || William Mcleod\n|-\n| Mother || Helen White\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Christian Mcleod\n|-\n| Gender || Female\n|-\n| Birth Date || 25 Aug 1842\n|-\n| Birth Place || Rayne,Aberdeen,Scotland\n|-\n| Father || William Mcleod\n|-\n| Mother || Helen White\n|}\n</ref>",
+    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n'''Birth''':\n\"Scotland, Select Births and Baptisms, 1564-1950\"<br/>\nOriginal data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Christian Mcleod\n|-\n| Gender || Female\n|-\n| Birth Date || 25 Aug 1842\n|-\n| Birth Place || Rayne,Aberdeen,Scotland\n|-\n| Father || William Mcleod\n|-\n| Mother || Helen White\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Birth''': \"Scotland, Select Births and Baptisms, 1564-1950\"<br/>Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>Name: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.",
+    "citation": "* '''Birth''': \"Scotland, Select Births and Baptisms, 1564-1950\"<br/>Original data: Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|60143|14121139}} (accessed 6 May 2021)<br/>Name: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.",
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"Scotland, Select Births and Baptisms, 1564-1950,\" database, ({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), Christian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland; citing Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013.</ref>",
+    "citation": "<ref>\"Scotland, Select Births and Baptisms, 1564-1950,\" database, ({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), Christian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland; citing Original data Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\"Scotland, Select Births and Baptisms, 1564-1950,\" database, ({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), Christian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland; citing Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013.</ref>",
+    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\"Scotland, Select Births and Baptisms, 1564-1950,\" database, ({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), Christian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland; citing Original data Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"Scotland, Select Births and Baptisms, 1564-1950,\" database, ({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), Christian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland; citing Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013.",
+    "citation": "* \"Scotland, Select Births and Baptisms, 1564-1950,\" database, ({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), Christian Mcleod born on 25 Aug 1842, daughter of William Mcleod & Helen White, in Rayne, Aberdeen, Scotland; citing Original data Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013.",
     "type": "source"
   },
   "partial_ee_style_inline": {
-    "citation": "<ref>\n''Birth'':\n\"Scotland, Select Births and Baptisms, 1564-1950\", database, \nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013, \n({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), \nName: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.\n</ref>",
+    "citation": "<ref>\n''Birth'':\n\"Scotland, Select Births and Baptisms, 1564-1950\", database, \nOriginal data Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013, \n({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), \nName: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.\n</ref>",
     "type": "inline"
   },
   "partial_ee_style_narrative": {
-    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n''Birth'':\n\"Scotland, Select Births and Baptisms, 1564-1950\", database, \nScotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013, \n({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), \nName: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.\n</ref>",
+    "citation": "Christian, daughter of William Mcleod & Helen White, was born on 25 August 1842 in Rayne, Aberdeen, Scotland.<ref>\n''Birth'':\n\"Scotland, Select Births and Baptisms, 1564-1950\", database, \nOriginal data Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013, \n({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), \nName: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.\n</ref>",
     "type": "narrative"
   },
   "partial_ee_style_source": {
-    "citation": "* ''Birth'': \"Scotland, Select Births and Baptisms, 1564-1950\", database, Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013, ({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), Name: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.",
+    "citation": "* ''Birth'': \"Scotland, Select Births and Baptisms, 1564-1950\", database, Original data Scotland, Births and Baptisms, 1564-1950. Salt Lake City, Utah FamilySearch, 2013, ({{Ancestry Record|60143|14121139}} : accessed 6 May 2021), Name: Christian Mcleod; Gender: Female; Birth Date: 25 Aug 1842; Birth Place: Rayne,Aberdeen,Scotland; Father: William Mcleod; Mother: Helen White.",
     "type": "source"
   }
 }

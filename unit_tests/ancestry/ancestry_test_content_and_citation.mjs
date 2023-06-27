@@ -620,6 +620,10 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61311&h=2913",
   },
   {
+    caseName: "ireland_birth_reg_1878_ruth_shaw",
+    url: "https://www.ancestry.com/discoveryui-content/view/3027592:2573",
+  },
+  {
     caseName: "ireland_census_1901_margaret_kearney",
     url: "https://www.ancestry.co.uk/discoveryui-content/view/10426199:70667?tid=&pid=&queryId=599070b5196aba97ca5be878bcb79ee9&_phsrc=UnG12&_phstart=successSource",
   },

@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Ruth Gladdis Shaw"
+  },
+  "eventDate": {
+    "dateString": "1878"
+  },
+  "birthDate": {
+    "dateString": "1878"
+  },
+  "registrationDistrict": "Ireland",
+  "eventPlace": {
+    "placeString": "Ireland"
+  },
+  "lastNameAtBirth": "Shaw",
+  "collectionData": {
+    "id": "2573",
+    "volume": "5",
+    "page": "465"
+  },
+  "hasValidData": true
+}

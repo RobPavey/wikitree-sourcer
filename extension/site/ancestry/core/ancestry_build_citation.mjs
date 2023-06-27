@@ -635,7 +635,10 @@ function buildSourceReference(ed, builder) {
   }
 
   if (!builder.sourceReference && ed.originalData) {
-    builder.sourceReference = cleanOriginalData(ed.originalData);
+    let cleanedOriginalData = cleanOriginalData(ed.originalData);
+    if (cleanedOriginalData) {
+      builder.sourceReference = "Original data: " + cleanedOriginalData;
+    }
   }
 
   cleanSourceReference(builder);

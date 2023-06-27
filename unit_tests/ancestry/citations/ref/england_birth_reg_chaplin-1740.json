@@ -1,74 +1,74 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>Original data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>\nBlanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>\nBlanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>\nBlanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras.\n</ref>",
+    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>\nBlanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>Blanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras.",
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>Original data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>Blanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>\nName: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>\nName: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>\nName: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.\n</ref>",
+    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>\nName: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>Name: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.",
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>Original data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>Name: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Blanche Amelia Chaplin\n|-\n| Registration Year || 1867\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Registration District || Pancras\n|-\n| Inferred County || London\n|}\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Blanche Amelia Chaplin\n|-\n| Registration Year || 1867\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Registration District || Pancras\n|-\n| Inferred County || London\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nEngland and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Blanche Amelia Chaplin\n|-\n| Registration Year || 1867\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Registration District || Pancras\n|-\n| Inferred County || London\n|}\n</ref>",
+    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Blanche Amelia Chaplin\n|-\n| Registration Year || 1867\n|-\n| Registration Quarter || Jul-Aug-Sep\n|-\n| Registration District || Pancras\n|-\n| Inferred County || London\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>Name: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.",
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>Original data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)<br/>Name: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.",
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"England & Wales, Civil Registration Birth Index, 1837-1915,\" database, ({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), Blanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras; citing England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164.</ref>",
+    "citation": "<ref>\"England & Wales, Civil Registration Birth Index, 1837-1915,\" database, ({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), Blanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras; citing Original data England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\"England & Wales, Civil Registration Birth Index, 1837-1915,\" database, ({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), Blanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras; citing England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164.</ref>",
+    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\"England & Wales, Civil Registration Birth Index, 1837-1915,\" database, ({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), Blanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras; citing Original data England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"England & Wales, Civil Registration Birth Index, 1837-1915,\" database, ({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), Blanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras; citing England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164.",
+    "citation": "* \"England & Wales, Civil Registration Birth Index, 1837-1915,\" database, ({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), Blanche Amelia Chaplin birth registered Jul-Aug-Sep 1867 in Pancras; citing Original data England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164.",
     "type": "source"
   },
   "partial_ee_style_inline": {
-    "citation": "<ref>\n''Birth Registration'':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\", database, \nEngland and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164, \n({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), \nName: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.\n</ref>",
+    "citation": "<ref>\n''Birth Registration'':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\", database, \nOriginal data England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164, \n({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), \nName: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.\n</ref>",
     "type": "inline"
   },
   "partial_ee_style_narrative": {
-    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n''Birth Registration'':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\", database, \nEngland and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164, \n({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), \nName: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.\n</ref>",
+    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n''Birth Registration'':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\", database, \nOriginal data England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164, \n({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), \nName: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.\n</ref>",
     "type": "narrative"
   },
   "partial_ee_style_source": {
-    "citation": "* ''Birth Registration'': \"England & Wales, Civil Registration Birth Index, 1837-1915\", database, England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164, ({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), Name: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.",
+    "citation": "* ''Birth Registration'': \"England & Wales, Civil Registration Birth Index, 1837-1915\", database, Original data England and Wales Civil Registration Indexes. London, England General Register Office, Volume 1b, Page 164, ({{Ancestry Record|8912|37047757}} : accessed 6 May 2021), Name: Blanche Amelia Chaplin; Registration Year: 1867; Registration Quarter: Jul-Aug-Sep; Registration District: Pancras; Inferred County: London.",
     "type": "source"
   }
 }

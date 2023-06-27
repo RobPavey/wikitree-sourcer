@@ -1,90 +1,90 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>Original data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>\nMary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>\nMary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>\nMary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA.\n</ref>",
+    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>\nMary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>Mary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA.",
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>Original data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>Mary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA.",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>\nName: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>\nName: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>\nName: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.\n</ref>",
+    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>\nName: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>Name: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.",
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>Original data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>Name: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.",
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
+    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>Name: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.",
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>Original data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)<br/>Name: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.",
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"California, U.S., Death Index, 1905-1939,\" database, ({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), Mary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA; citing California Department of Health and Welfare. California Vital Records-Vitalsearch.</ref>",
+    "citation": "<ref>\"California, U.S., Death Index, 1905-1939,\" database, ({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), Mary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA; citing Original data California Department of Health and Welfare. California Vital Records-Vitalsearch.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\"California, U.S., Death Index, 1905-1939,\" database, ({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), Mary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA; citing California Department of Health and Welfare. California Vital Records-Vitalsearch.</ref>",
+    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\"California, U.S., Death Index, 1905-1939,\" database, ({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), Mary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA; citing Original data California Department of Health and Welfare. California Vital Records-Vitalsearch.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"California, U.S., Death Index, 1905-1939,\" database, ({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), Mary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA; citing California Department of Health and Welfare. California Vital Records-Vitalsearch.",
+    "citation": "* \"California, U.S., Death Index, 1905-1939,\" database, ({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), Mary E Miller death 10 Dec 1927 (age 71) in Kern, California, USA; citing Original data California Department of Health and Welfare. California Vital Records-Vitalsearch.",
     "type": "source"
   },
   "partial_ee_style_inline": {
-    "citation": "<ref>\n''Death'':\n\"California, U.S., Death Index, 1905-1939\", database, \nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch, \n({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), \nName: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.\n</ref>",
+    "citation": "<ref>\n''Death'':\n\"California, U.S., Death Index, 1905-1939\", database, \nOriginal data California Department of Health and Welfare. California Vital Records-Vitalsearch, \n({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), \nName: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.\n</ref>",
     "type": "inline"
   },
   "partial_ee_style_narrative": {
-    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n''Death'':\n\"California, U.S., Death Index, 1905-1939\", database, \nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch, \n({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), \nName: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.\n</ref>",
+    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n''Death'':\n\"California, U.S., Death Index, 1905-1939\", database, \nOriginal data California Department of Health and Welfare. California Vital Records-Vitalsearch, \n({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), \nName: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.\n</ref>",
     "type": "narrative"
   },
   "partial_ee_style_source": {
-    "citation": "* ''Death'': \"California, U.S., Death Index, 1905-1939\", database, California Department of Health and Welfare. California Vital Records-Vitalsearch, ({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), Name: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.",
+    "citation": "* ''Death'': \"California, U.S., Death Index, 1905-1939\", database, Original data California Department of Health and Welfare. California Vital Records-Vitalsearch, ({{Ancestry Record|5187|1511274}} : accessed 6 May 2021), Name: Mary E Miller; Birth Year: abt 1856; Death Date: 10 Dec 1927; Age at Death: 71; Death Place: Kern, California, USA.",
     "type": "source"
   },
   "narrative_1_narrative": {
-    "citation": "Mary E died, aged 71, on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
+    "citation": "Mary E died, aged 71, on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
     "type": "narrative"
   },
   "narrative_2_narrative": {
-    "citation": "Mary E Miller died age 71 on 10 Dec 1927 in Kern, California.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
+    "citation": "Mary E Miller died age 71 on 10 Dec 1927 in Kern, California.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
     "type": "narrative"
   },
   "narrative_3_narrative": {
-    "citation": "Mary died (age 71) on December 10, 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
+    "citation": "Mary died (age 71) on December 10, 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
     "type": "narrative"
   },
   "narrative_4_narrative": {
-    "citation": "Mary died (age 71) on December 10th, 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nCalifornia Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
+    "citation": "Mary died (age 71) on December 10th, 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary E Miller\n|-\n| Birth Year || abt 1856\n|-\n| Death Date || 10 Dec 1927\n|-\n| Age at Death || 71\n|-\n| Death Place || Kern, California, USA\n|}\n</ref>",
     "type": "narrative"
   }
 }

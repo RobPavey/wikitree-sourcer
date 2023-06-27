@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/3027592:2573",
+  "pageType": "record",
+  "dbId": "2573",
+  "recordId": "3027592",
+  "ancestryTemplate": "{{Ancestry Record|2573|3027592}}",
+  "domain": "com",
+  "titleName": "Ruth Gladdis Shaw",
+  "titleCollection": "Ireland, Civil Registration Births Index, 1864-1958",
+  "recordData": {
+    "Name": "Ruth Gladdis Shaw",
+    "Birth Quarter": "Apr-May-Jun",
+    "Birth Date": "1878",
+    "Birth Place": "Limerick, Ireland",
+    "Birth Registration Date": "Jun 1878",
+    "Birth Registration Place": "Ireland",
+    "Volume": "5",
+    "Page": "465",
+    "FHL Film Number": "101055"
+  },
+  "sourceInformation": "Ancestry.com. Ireland, Civil Registration Births Index, 1864-1958 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: \"Ireland, Civil Registration Indexes 1845–1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Births in Ireland with Index to Births.\".",
+  "originalData": "\"Ireland, Civil Registration Indexes 1845–1958,” Index. FamilySearch, Salt Lake City, Utah. General Register Office, Republic of Ireland. \"Quarterly Returns of Births in Ireland with Index to Births.\".",
+  "sourceDescription": "This database contains an index extracted from an index of births registered in Ireland. Learn more..."
+}
