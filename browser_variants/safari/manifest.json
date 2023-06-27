@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": [
     "storage",
@@ -34,7 +34,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.wikitree.com/*"],
+      "matches": ["https://*.wikitree.com/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/wikitree/browser/wikitree_content.js"]
     },
@@ -129,7 +129,7 @@
       "js": ["base/browser/content/content_common.js", "site/nli/browser/nli_content.js"]
     },
     {
-      "matches": ["*://www.newspapers.com/*"],
+      "matches": ["*://*.newspapers.com/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
@@ -137,6 +137,11 @@
       "matches": ["*://paperspast.natlib.govt.nz/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
+    },
+    {
+      "matches": ["*://probatesearch.service.gov.uk/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/psuk/browser/psuk_content.js"]
     },
     {
       "matches": ["*://www.scotlandspeople.gov.uk/*"],

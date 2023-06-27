@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": ["storage", "contextMenus", "scripting", "management"],
   "host_permissions": [
@@ -151,7 +151,7 @@
       "js": ["base/browser/content/content_common.js", "site/nli/browser/nli_content.js"]
     },
     {
-      "matches": ["*://www.newspapers.com/*"],
+      "matches": ["*://*.newspapers.com/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
@@ -269,7 +269,7 @@
     },
     {
       "resources": ["site/np/core/np_extract_data.mjs"],
-      "matches": ["*://www.newspapers.com/*"]
+      "matches": ["*://*.newspapers.com/*"]
     },
     {
       "resources": ["site/ppnz/core/ppnz_extract_data.mjs"],
