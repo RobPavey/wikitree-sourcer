@@ -893,15 +893,6 @@ function generalizeDataGivenRecordType(ed, result) {
 
     let eventPlace = getCleanValueForRecordDataList(ed, ["Birth Registration Place", "Registration Place"]);
     if (eventPlace) {
-      if (!result.registrationDistrict) {
-        let place = eventPlace;
-        let commaIndex = place.indexOf(`,`);
-        if (commaIndex != -1) {
-          place = place.substring(0, commaIndex);
-        }
-        result.registrationDistrict = place;
-      }
-
       let county = getCleanRecordDataValue(ed, "Inferred County");
       if (county && !eventPlace.includes(county)) {
         eventPlace += ", " + county;

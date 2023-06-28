@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693681647 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nPlace: Port Glasgow; First name(s): Archibald; Mother's first name(s): Elizabeth; Gender: Male; Mother's last name: Leven; Last name: Thomson; Father's first name(s): Archibald; Birth year: 1856; Father's last name: Thomson; Birth place: Port Glasgow,Renfrew,Scotland; County: Renfrewshire; Country: Scotland.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693681647 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nArchibald Thomson birth registered 1856 in Port Glasgow, Renfrewshire, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Archibald's birth was registered in 1856 in Port Glasgow, Renfrewshire, Scotland.<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693681647 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nPlace: Port Glasgow; First name(s): Archibald; Mother's first name(s): Elizabeth; Gender: Male; Mother's last name: Leven; Last name: Thomson; Father's first name(s): Archibald; Birth year: 1856; Father's last name: Thomson; Birth place: Port Glasgow,Renfrew,Scotland; County: Renfrewshire; Country: Scotland.\n</ref>",
+    "citation": "Archibald's birth was registered in 1856 in Port Glasgow, Renfrewshire, Scotland.<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693681647 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nArchibald Thomson birth registered 1856 in Port Glasgow, Renfrewshire, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Birth Registration''': \"Scotland, Modern And Civil Births 1855-2019\"<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693681647 FindMyPast Transcription] (accessed 6 May 2021)<br/>Place: Port Glasgow; First name(s): Archibald; Mother's first name(s): Elizabeth; Gender: Male; Mother's last name: Leven; Last name: Thomson; Father's first name(s): Archibald; Birth year: 1856; Father's last name: Thomson; Birth place: Port Glasgow,Renfrew,Scotland; County: Renfrewshire; Country: Scotland.",
+    "citation": "* '''Birth Registration''': \"Scotland, Modern And Civil Births 1855-2019\"<br/>[https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693681647 FindMyPast Transcription] (accessed 6 May 2021)<br/>Archibald Thomson birth registered 1856 in Port Glasgow, Renfrewshire, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {

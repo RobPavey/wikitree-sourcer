@@ -445,7 +445,12 @@ function getUkRegistrationString(gd, options, type) {
 
   let district = gd.registrationDistrict;
   if (!district) {
-    return ""; // fallback to non-custom string
+    let eventPlace = gd.inferEventPlace();
+    if (eventPlace) {
+      district = eventPlace;
+    } else {
+      return ""; // fallback to non-custom string
+    }
   }
   dataString += " in " + district;
 
@@ -511,17 +516,12 @@ function addRegistrationPlace(gd, options) {
   let place = gd.inferEventPlace();
   let registrationDistrict = gd.registrationDistrict;
 
-  if (gd.isRecordInCountry("Ireland")) {
-    if (!place) {
-      place = registrationDistrict;
-    }
-    if (place) {
-      let eventYearNum = WTS_Date.getYearNumFromYearString(gd.inferEventYear());
-      if (eventYearNum && eventYearNum >= 1864) {
-        placeString = " in the " + registrationDistrict + " Superintendent Registrar's district";
-      } else {
-        placeString = " in the " + registrationDistrict + " registration area";
-      }
+  if (gd.isRecordInCountry("Ireland") && registrationDistrict) {
+    let eventYearNum = WTS_Date.getYearNumFromYearString(gd.inferEventYear());
+    if (eventYearNum && eventYearNum >= 1864) {
+      placeString = " in the " + registrationDistrict + " Superintendent Registrar's district";
+    } else {
+      placeString = " in the " + registrationDistrict + " registration area";
     }
   } else {
     if (place) {
