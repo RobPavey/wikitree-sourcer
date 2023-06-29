@@ -182,11 +182,11 @@ const addMergeFsAllCitationsOptionsGroup = {
       type: "select",
       label: "Type of citations to generate",
       values: [
-        { value: "fsPlainInline", text: "Inline citations using unchanged FS citation" },
-        { value: "fsPlainSource", text: "Source citations using unchanged FS citation" },
         { value: "narrative", text: "Narrative plus Sourcer style inline citation" },
         { value: "inline", text: "Sourcer style inline citation" },
         { value: "source", text: "Sourcer style source citation" },
+        { value: "fsPlainInline", text: "Inline citation using text on FS Sources page" },
+        { value: "fsPlainSource", text: "Source citation using text on FS Sources page" },
       ],
       defaultValue: "narrative",
       comment: "NOTE: Some FamilySearch profiles have many incorrect sources - please check the generated citations.",
@@ -194,7 +194,7 @@ const addMergeFsAllCitationsOptionsGroup = {
     {
       optionName: "groupCitations",
       type: "checkbox",
-      label: "Group Sourcer inline  and narrative citations by fact",
+      label: "Group Sourcer inline citations by fact and merge narratives",
       defaultValue: true,
     },
   ],
