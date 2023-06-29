@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { extractDataFromFetch } from "../core/fs_extract_data.mjs";
 import { generalizeData } from "../core/fs_generalize_data.mjs";
+import { CD } from "../../../base/core/country_data.mjs";
 import { buildCitation } from "../core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
 import { WTS_Date } from "../../../base/core/wts_date.mjs";
@@ -36,34 +37,8 @@ import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_request
 
 import { fetchFsSourcesJson, fetchRecord } from "./fs_fetch.mjs";
 
-function sortSourcesUsingFsSortKeys(result) {
-  function compareSortKeys(a, b) {
-    if (a.sortKey) {
-      if (b.sortKey) {
-        if (a.sortKey < b.sortKey) {
-          return -1;
-        } else if (a.sortKey > b.sortKey) {
-          return 1;
-        }
-        return 0;
-      } else {
-        return -1;
-      }
-    } else if (b.sortKey) {
-      return 1;
-    }
-
-    return 0;
-  }
-
-  // sort the sources
-  result.sources.sort(compareSortKeys);
-  //console.log("getFsPlainInlineCitations: sorted sources:");
-  //console.log(result.sources);
-}
-
 function getFsPlainCitations(result, ed, type, options) {
-  sortSourcesUsingFsSortKeys(result);
+  sortSourcesUsingFsSortKeysAndFetchedRecords(result);
 
   let citationsString = "";
 
@@ -91,14 +66,38 @@ function getFsPlainCitations(result, ed, type, options) {
 
 function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
   function compareFunction(a, b) {
-    if (a.generalizeData) {
-      if (b.generalizeData) {
-        let eventDataA = a.generalizeData.inferEventDate();
-        let eventDataB = b.generalizeData.inferEventDate();
-        if (eventDataA && eventDataB) {
-          return WTS_Date.compareDateStrings(eventDataA, eventDataB);
-        }
-      }
+    let eventDateA = "";
+    if (a.generalizedData) {
+      eventDateA = a.generalizedData.inferEventDate();
+    }
+    let eventDateB = "";
+    if (b.generalizedData) {
+      eventDateB = b.generalizedData.inferEventDate();
+    }
+
+    if (!eventDateA) {
+      eventDateA = a.eventDate;
+    }
+    if (!eventDateB) {
+      eventDateB = b.eventDate;
+    }
+
+    if (!eventDateA) {
+      eventDateA = a.sortYear;
+    }
+    if (!eventDateB) {
+      eventDateB = b.sortYear;
+    }
+
+    if (eventDateA && eventDateB) {
+      return WTS_Date.compareDateStrings(eventDateA, eventDateB);
+    }
+
+    // if one has a date and the other doesn't then the one with the date comes first
+    if (eventDateA) {
+      return -1;
+    } else if (eventDateB) {
+      return 1;
     }
 
     if (a.sortKey && b.sortKey) {
@@ -110,18 +109,9 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
       return 0;
     }
 
-    if (a.sortYear && b.sortYear) {
-      if (a.sortYear < b.sortYear) {
-        return -1;
-      } else if (a.sortYear > b.sortYear) {
-        return 1;
-      }
-      return 0;
-    }
-
-    if (a.sortYear) {
+    if (a.sortKey) {
       return -1;
-    } else if (b.sortYear) {
+    } else if (b.sortKey) {
       return 1;
     }
 
@@ -130,7 +120,7 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
 
   // sort the sources
   result.sources.sort(compareFunction);
-  //console.log("getFsPlainInlineCitations: sorted sources:");
+  //console.log("sortSourcesUsingFsSortKeysAndFetchedRecords: sorted sources:");
   //console.log(result.sources);
 }
 
@@ -349,12 +339,58 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       return placeA;
     }
 
+    // this will make these match:
+    // Devon, England, United Kingdom
+    // Devon, England
+    placeA = CD.standardizePlaceName(placeA);
+    placeB = CD.standardizePlaceName(placeB);
+
+    if (placeA == placeB) {
+      return placeA;
+    }
+
     if (placeA.endsWith(placeB)) {
       return placeA;
     }
 
     if (placeB.endsWith(placeA)) {
       return placeB;
+    }
+
+    // we would like these to merge OK for example:
+    //   St Pancras, Middlesex, England
+    //   Kentish Town, St Pancras, London, Middlesex, England
+    // So if every term in one name if also in the other name in the same order it is OK
+    function areAllTermsInOtherTerms(termsA, termsB) {
+      let termBStartIndex = 0;
+      for (let termA of termsA) {
+        let cleanTermA = termA.trim().toLowerCase();
+        let foundTermA = false;
+        for (let termBIndex = termBStartIndex; termBIndex < termsB.length; termBIndex++) {
+          let cleanTermB = placeBTerms[termBIndex].trim().toLowerCase();
+          if (cleanTermA == cleanTermB) {
+            termBStartIndex = termBIndex + 1;
+            foundTermA = true;
+            break;
+          }
+        }
+        if (!foundTermA) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    let placeATerms = placeA.split(",");
+    let placeBTerms = placeB.split(",");
+    if (placeATerms.length < placeBTerms.length) {
+      if (areAllTermsInOtherTerms(placeATerms, placeBTerms)) {
+        return placeB;
+      }
+    } else if (placeATerms.length > placeBTerms.length) {
+      if (areAllTermsInOtherTerms(placeBTerms, placeATerms)) {
+        return placeA;
+      }
     }
 
     return undefined;
@@ -495,6 +531,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   let age = gd.age;
   let mothersMaidenName = gd.mothersMaidenName;
   let parents = gd.parents;
+  let birthDate = gd.inferBirthDate();
+  let registrationDistrict = gd.registrationDistrict;
 
   for (let priorFact of result.facts) {
     if (priorFact.generalizedData) {
@@ -541,6 +579,16 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
         continue;
       }
 
+      let mergedBirthDate = mergeDates(mergedGd.inferBirthDate(), birthDate);
+      if (!mergedBirthDate) {
+        continue;
+      }
+
+      let mergedDistrict = mergeSimpleStrings(mergedGd.registrationDistrict, registrationDistrict);
+      if (mergedDistrict === undefined) {
+        continue;
+      }
+
       // set merged properties
       mergedGd.setEventDate(mergedDate);
       mergedGd.name = mergedName;
@@ -552,6 +600,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
         mergedGd.parents = mergedParents.value;
       }
       mergedGd.mothersMaidenName = mergedMmn;
+      mergedGd.setBirthDate(mergedBirthDate);
+      mergedGd.registrationDistrict = mergedDistrict;
 
       priorFact.sources.push(source);
       merged = true;
@@ -696,17 +746,17 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
           if (endRefIndex != -1) {
             let startTableIndex = endRefIndex + endRef.length;
             if (startTableIndex < citation.length) {
-              citation = citation.substring(0, startTableIndex);
               let table = citation.substring(startTableIndex);
               if (table.length > longestTable.length) {
                 longestTable = table;
               }
+              citation = citation.substring(0, startTableIndex);
             }
           }
           citationsString += citation;
-          if (longestTable) {
-            citationsString += longestTable;
-          }
+        }
+        if (longestTable) {
+          citationsString += longestTable;
         }
       } else {
         for (let source of fact.sources) {

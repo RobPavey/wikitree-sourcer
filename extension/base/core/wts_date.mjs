@@ -574,7 +574,7 @@ const WTS_Date = {
     let parsedDateA = WTS_Date.parseDateString(dateStringA);
     let parsedDateB = WTS_Date.parseDateString(dateStringB);
 
-    return compareParsedDates(parsedDateA, parsedDateB);
+    return WTS_Date.compareParsedDates(parsedDateA, parsedDateB);
   },
 };
 

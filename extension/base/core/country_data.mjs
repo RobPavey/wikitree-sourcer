@@ -659,6 +659,48 @@ const CD = {
     return undefined;
   },
 
+  standardizePlaceName: function (place) {
+    let countryExtract = CD.extractCountryFromPlaceName(place);
+    if (!countryExtract || !countryExtract.country) {
+      return place;
+    }
+
+    let placeNameMinusCountry = countryExtract.remainder.trim();
+    while (placeNameMinusCountry.endsWith(",")) {
+      placeNameMinusCountry = placeNameMinusCountry.substring(0, placeNameMinusCountry.length - 1);
+      placeNameMinusCountry = placeNameMinusCountry.trim();
+    }
+
+    let countyName = undefined;
+    let lastCommaIndex = placeNameMinusCountry.lastIndexOf(",");
+    let placeNameMinusCounty = "";
+    if (lastCommaIndex != -1) {
+      countyName = placeNameMinusCountry.substring(lastCommaIndex + 1).trim();
+      placeNameMinusCounty = placeNameMinusCountry.substring(0, lastCommaIndex).trim();
+    } else {
+      countyName = placeNameMinusCountry;
+    }
+
+    let countryObj = countryExtract.country;
+
+    let stdCountyName = "";
+    if (countryObj.hasStates) {
+      stdCountyName = CD.standardizeStateNameForCountry(countyName, countryObj);
+    } else {
+      stdCountyName = CD.standardizeCountyNameForCountry(countyName, countryObj);
+    }
+
+    if (!stdCountyName) {
+      return placeNameMinusCountry + ", " + countryObj.stdName;
+    }
+
+    if (placeNameMinusCounty) {
+      return placeNameMinusCounty + ", " + stdCountyName + ", " + countryObj.stdName;
+    }
+
+    return stdCountyName + ", " + countryObj.stdName;
+  },
+
   usesMiddleNames: function (countryName) {
     let stdName = CD.standardizeCountryName(countryName);
 
