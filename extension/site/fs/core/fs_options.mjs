@@ -191,6 +191,12 @@ const addMergeFsAllCitationsOptionsGroup = {
       defaultValue: "narrative",
       comment: "NOTE: Some FamilySearch profiles have many incorrect sources - please check the generated citations.",
     },
+    {
+      optionName: "groupCitations",
+      type: "checkbox",
+      label: "Group Sourcer inline  and narrative citations by fact",
+      defaultValue: true,
+    },
   ],
 };
 
@@ -202,5 +208,11 @@ registerOptionsGroup(searchOptionsGroup);
 registerOptionsGroup(citationOptionsGroup);
 registerSubsectionForOptions("citation", "fs", "FamilySearch");
 
-registerSubsectionForOptions("addMerge", "fsAllCitations", "FamilySearch Build All Citations");
+registerSubsectionForOptions(
+  "addMerge",
+  "fsAllCitations",
+  "FamilySearch Build All Citations",
+  'These options control the output of "Build All Citations" and also' +
+    ' "Save Person Data" when the "Include all source citations" option is enabled.'
+);
 registerOptionsGroup(addMergeFsAllCitationsOptionsGroup);

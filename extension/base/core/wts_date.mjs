@@ -553,9 +553,9 @@ const WTS_Date = {
     return dateString;
   },
 
-  compareParsedDates: function (parsedDataA, parsedDataB) {
-    if (parsedDataA.isValid) {
-      if (parsedDataB.isValid) {
+  compareParsedDates: function (parsedDateA, parsedDateB) {
+    if (parsedDateA.isValid) {
+      if (parsedDateB.isValid) {
         let dateADays = WTS_Date.getParsedDateInDays(parsedDateA);
         let dateBDays = WTS_Date.getParsedDateInDays(parsedDateB);
 
@@ -563,7 +563,7 @@ const WTS_Date = {
       } else {
         return -1;
       }
-    } else if (parsedDataB.isValid) {
+    } else if (parsedDateB.isValid) {
       return 1;
     }
 
@@ -571,10 +571,10 @@ const WTS_Date = {
   },
 
   compareDateStrings: function (dateStringA, dateStringB) {
-    let parsedDataA = WTS_Date.parseDateString(dateStringA);
-    let parsedDataB = WTS_Date.parseDateString(dateStringB);
+    let parsedDateA = WTS_Date.parseDateString(dateStringA);
+    let parsedDateB = WTS_Date.parseDateString(dateStringB);
 
-    return compareParsedDates(parsedDataA, parsedDataB);
+    return compareParsedDates(parsedDateA, parsedDateB);
   },
 };
 

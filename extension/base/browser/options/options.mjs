@@ -361,6 +361,18 @@ function buildPage() {
       //headingElement.innerText = subsection.label + ":";
       //divElement.appendChild(headingElement);
 
+      if (subsection.comment) {
+        let commentElement = document.createElement("label");
+        commentElement.innerText = subsection.comment;
+        commentElement.className = "subsectionComment";
+        divElement.appendChild(commentElement);
+
+        let breakElement = document.createElement("br");
+        divElement.appendChild(breakElement);
+        let breakElement2 = document.createElement("br");
+        divElement.appendChild(breakElement2);
+      }
+
       tabPanelInnerDiv.appendChild(divElement);
 
       elementSubsections[subsection.name] = { panelElement: divElement };

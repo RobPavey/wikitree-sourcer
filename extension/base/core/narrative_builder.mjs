@@ -34,8 +34,6 @@ class NarrativeBuilder {
   constructor(options) {
     this.options = options;
 
-    this.recordType = RT.Unclassified;
-
     this.eventDate = "";
     this.eventPlace = "";
   }
@@ -966,7 +964,6 @@ class NarrativeBuilder {
     let gd = this.eventGd;
     let dateObj = gd.inferBirthDateObj();
     let place = gd.inferBirthPlace();
-    this.optionsSubcategory = "birth";
 
     this.narrative = this.getPersonNameOrPronoun();
 
@@ -1001,7 +998,6 @@ class NarrativeBuilder {
     let gd = this.eventGd;
     let dateObj = gd.inferDeathDateObj();
     let place = gd.inferDeathPlace();
-    this.optionsSubcategory = "death";
 
     if (gd.role && gd.role == Role.Parent) {
       this.narrative += this.getPossessiveNamePlusChild();
@@ -1044,7 +1040,6 @@ class NarrativeBuilder {
     let gd = this.eventGd;
     let dateObj = gd.inferEventDateObj();
     let place = gd.inferFullEventPlace();
-    this.optionsSubcategory = "baptism";
 
     let baptisedString = "baptised";
     if (this.options.narrative_general_spelling == "en_us") {
@@ -1096,8 +1091,6 @@ class NarrativeBuilder {
     let dateObj = this.eventGd.inferEventDateObj();
     let place = this.eventGd.inferFullEventPlace();
     let ageAtEvent = this.eventGd.inferAgeAtEvent();
-
-    this.optionsSubcategory = "marriage";
 
     let spouseName = "";
     let spouseAge = "";
@@ -1154,7 +1147,6 @@ class NarrativeBuilder {
 
   buildBurialString() {
     let gd = this.eventGd;
-    this.optionsSubcategory = "burial";
 
     let burialDate = gd.eventDate;
     let deathDate = gd.deathDate;
@@ -1210,7 +1202,6 @@ class NarrativeBuilder {
   buildCremationString() {
     let cremationDate = this.eventGd.eventDate;
     let deathDate = this.eventGd.deathDate;
-    this.optionsSubcategory = "cremation";
 
     let place = this.eventGd.inferFullEventPlace();
 
@@ -1240,7 +1231,6 @@ class NarrativeBuilder {
 
   buildMemorialString() {
     let gd = this.eventGd;
-    this.optionsSubcategory = "memorial";
 
     let place = gd.inferFullEventPlace();
 
@@ -1260,7 +1250,6 @@ class NarrativeBuilder {
 
   buildObituaryString() {
     let gd = this.eventGd;
-    this.optionsSubcategory = "obituary";
 
     let eventPlace = gd.inferFullEventPlace();
     let eventDateObj = gd.inferEventDateObj();
@@ -1325,7 +1314,6 @@ class NarrativeBuilder {
     let gd = this.eventGd;
     let dateObj = gd.inferEventDateObj();
     let place = gd.inferFullEventPlace();
-    this.optionsSubcategory = "birthOrBaptism";
 
     let baptisedString = "baptised";
     if (this.options.narrative_general_spelling == "en_us") {
@@ -1363,7 +1351,6 @@ class NarrativeBuilder {
     let options = this.options;
     let builder = this;
     let collection = this.getCollection();
-    this.optionsSubcategory = "census";
 
     function getHeadOfHouseholdMemberIfNotSelected(household) {
       let hasRelationships = false;
@@ -1907,7 +1894,6 @@ class NarrativeBuilder {
 
   buildWillString() {
     let gd = this.eventGd;
-    this.optionsSubcategory = "will";
 
     if (gd.inferEventCountry() == "Scotland" || (gd.courtName && gd.courtName.startsWith("non-Scot"))) {
       this.buildScottishWillString();
@@ -2028,7 +2014,6 @@ class NarrativeBuilder {
     let eventDate = this.eventGd.inferEventDate();
     let deathDate = this.eventGd.inferDeathDate();
     let place = this.eventGd.inferFullEventPlace();
-    this.optionsSubcategory = "military";
 
     this.narrative = this.getPersonNameOrPronoun();
     if (deathDate) {
@@ -2080,8 +2065,6 @@ class NarrativeBuilder {
   }
 
   buildPassengerListString() {
-    this.optionsSubcategory = "passengerList";
-
     let eventDate = this.eventGd.inferEventDate();
     let eventPlace = this.eventGd.inferFullEventPlace();
 
@@ -2153,8 +2136,6 @@ class NarrativeBuilder {
   }
 
   buildNewspaperString() {
-    this.optionsSubcategory = "newspaper";
-
     let gd = this.eventGd;
 
     let dateObj = gd.inferEventDateObj();
@@ -2266,6 +2247,105 @@ class NarrativeBuilder {
     this.narrative += ".";
   }
 
+  setupForRecordType() {
+    switch (this.eventGd.recordType) {
+      case RT.BirthRegistration: {
+        this.buildFunction = this.buildBirthRegistrationString;
+        this.optionsSubcategory = "birthReg";
+        break;
+      }
+      case RT.Birth: {
+        this.buildFunction = this.buildBirthString;
+        this.optionsSubcategory = "birth";
+        break;
+      }
+      case RT.DeathRegistration: {
+        this.buildFunction = this.buildDeathRegistrationString;
+        this.optionsSubcategory = "deathReg";
+        break;
+      }
+      case RT.Death: {
+        this.buildFunction = this.buildDeathString;
+        this.optionsSubcategory = "death";
+        break;
+      }
+      case RT.MarriageRegistration: {
+        this.buildFunction = this.buildMarriageRegistrationString;
+        this.optionsSubcategory = "marriageReg";
+        break;
+      }
+      case RT.Baptism: {
+        this.buildFunction = this.buildBaptismString;
+        this.optionsSubcategory = "baptism";
+        break;
+      }
+      case RT.Marriage: {
+        this.buildFunction = this.buildMarriageString;
+        this.optionsSubcategory = "marriage";
+        break;
+      }
+      case RT.Burial:
+      case RT.DeathOrBurial: {
+        this.buildFunction = this.buildBurialString;
+        this.optionsSubcategory = "burial";
+        break;
+      }
+      case RT.Cremation: {
+        this.buildFunction = this.buildCremationString;
+        this.optionsSubcategory = "cremation";
+        break;
+      }
+      case RT.Memorial: {
+        this.buildFunction = this.buildMemorialString;
+        this.optionsSubcategory = "memorial";
+        break;
+      }
+      case RT.Obituary: {
+        this.buildFunction = this.buildObituaryString;
+        this.optionsSubcategory = "obituary";
+        break;
+      }
+      case RT.BirthOrBaptism: {
+        this.buildFunction = this.buildBirthOrBaptismString;
+        this.optionsSubcategory = "birthOrBaptism";
+        break;
+      }
+      case RT.Census: {
+        this.buildFunction = this.buildCensusString;
+        this.optionsSubcategory = "census";
+        break;
+      }
+      case RT.Probate: {
+        this.buildFunction = this.buildProbateString;
+        break;
+      }
+      case RT.Will: {
+        this.buildFunction = this.buildWillString;
+        this.optionsSubcategory = "will";
+        break;
+      }
+      case RT.Divorce: {
+        this.buildFunction = this.buildDivorceString;
+        break;
+      }
+      case RT.Military: {
+        this.buildFunction = this.buildMilitaryString;
+        this.optionsSubcategory = "military";
+        break;
+      }
+      case RT.PassengerList: {
+        this.buildFunction = this.buildPassengerListString;
+        this.optionsSubcategory = "passengerList";
+        break;
+      }
+      case RT.Newspaper: {
+        this.buildFunction = this.buildNewspaperString;
+        this.optionsSubcategory = "newspaper";
+        break;
+      }
+    }
+  }
+
   buildNarrativeString() {
     // The problem with using apostrophe after the name is that there are rules for when the name
     // ends in s. If we are going to substitute the pref name on insertion then we do not know whether
@@ -2273,89 +2353,36 @@ class NarrativeBuilder {
 
     this.narrative = "";
 
-    switch (this.eventGd.recordType) {
-      case RT.BirthRegistration: {
-        this.buildBirthRegistrationString();
-        break;
-      }
-      case RT.Birth: {
-        this.buildBirthString();
-        break;
-      }
-      case RT.DeathRegistration: {
-        this.buildDeathRegistrationString();
-        break;
-      }
-      case RT.Death: {
-        this.buildDeathString();
-        break;
-      }
-      case RT.MarriageRegistration: {
-        this.buildMarriageRegistrationString();
-        break;
-      }
-      case RT.Baptism: {
-        this.buildBaptismString();
-        break;
-      }
-      case RT.Marriage: {
-        this.buildMarriageString();
-        break;
-      }
-      case RT.Burial:
-      case RT.DeathOrBurial: {
-        this.buildBurialString();
-        break;
-      }
-      case RT.Cremation: {
-        this.buildCremationString();
-        break;
-      }
-      case RT.Memorial: {
-        this.buildMemorialString();
-        break;
-      }
-      case RT.Obituary: {
-        this.buildObituaryString();
-        break;
-      }
-      case RT.BirthOrBaptism: {
-        this.buildBirthOrBaptismString();
-        break;
-      }
-      case RT.Census: {
-        this.buildCensusString();
-        break;
-      }
-      case RT.Probate: {
-        this.buildProbateString();
-        break;
-      }
-      case RT.Will: {
-        this.buildWillString();
-        break;
-      }
-      case RT.Divorce: {
-        this.buildDivorceString();
-        break;
-      }
-      case RT.Military: {
-        this.buildMilitaryString();
-        break;
-      }
-      case RT.PassengerList: {
-        this.buildPassengerListString();
-        break;
-      }
-      case RT.Newspaper: {
-        this.buildNewspaperString();
-        break;
-      }
+    this.setupForRecordType();
+    if (this.buildFunction) {
+      this.buildFunction();
     }
 
     if (!this.narrative) {
       this.buildDefaultString();
     }
+  }
+
+  getFieldsUsed() {
+    let fieldsUsed = {};
+
+    this.setupForRecordType();
+
+    function setUsed(field, value) {
+      fieldsUsed[field] = value && value != "no";
+    }
+
+    setUsed("age", this.getSubcatOption("includeAge"));
+    setUsed("parentage", this.getSubcatOption("includeParentage"));
+    setUsed("mmn", this.getSubcatOption("includeMmn"));
+
+    // other possible fields that can be used in narratives
+    // spouse name
+    // birth date
+    // occupation
+    // registration district
+
+    return fieldsUsed;
   }
 }
 
@@ -2388,4 +2415,14 @@ function buildNarrative(input) {
   return builder.narrative;
 }
 
-export { NarrativeBuilder, buildNarrative };
+function getFieldsUsedInNarrative(eventGd, options) {
+  let builder = new NarrativeBuilder(options);
+  builder.eventGd = eventGd;
+  if (eventGd.personGender) {
+    builder.personGender = eventGd.personGender;
+  }
+
+  return builder.getFieldsUsed();
+}
+
+export { NarrativeBuilder, buildNarrative, getFieldsUsedInNarrative };

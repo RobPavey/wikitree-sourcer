@@ -64,7 +64,7 @@ var optionsRegistry = {
   optionsGroups: [],
 };
 
-function registerSubsectionForOptions(tabName, name, label) {
+function registerSubsectionForOptions(tabName, name, label, comment) {
   //console.log("registerSubsectionForOptions: tabName is: " + tabName + ", name is: " + name + ", label is: " + label);
 
   let tab = undefined;
@@ -89,7 +89,7 @@ function registerSubsectionForOptions(tabName, name, label) {
       return;
     }
 
-    tab.subsections.push({ name: name, label: label, subheadings: [] });
+    tab.subsections.push({ name: name, label: label, comment: comment, subheadings: [] });
   }
 }
 
