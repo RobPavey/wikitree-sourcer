@@ -197,6 +197,12 @@ const addMergeFsAllCitationsOptionsGroup = {
       label: "Group Sourcer inline citations by fact and merge narratives",
       defaultValue: true,
     },
+    {
+      optionName: "includeNotes",
+      type: "checkbox",
+      label: "Include FS Source Notes when not using a full Sourcer citation",
+      defaultValue: true,
+    },
   ],
 };
 

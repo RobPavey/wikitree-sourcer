@@ -120,14 +120,28 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
 
   // sort the sources
   result.sources.sort(compareFunction);
-  //console.log("sortSourcesUsingFsSortKeysAndFetchedRecords: sorted sources:");
-  //console.log(result.sources);
+  console.log("sortSourcesUsingFsSortKeysAndFetchedRecords: sorted sources:");
+  console.log(result.sources);
 }
 
 function attemptToMergeSourceIntoPriorFact(source, result, type) {
   console.log("attemptToMergeSourceIntoPriorFact");
 
   function mergeDates(dateA, dateB) {
+    //console.log("mergeDates:");
+    //console.log(dateA);
+    //console.log(dateB);
+
+    if (!dateA) {
+      if (!dateB) {
+        return undefined; // for a birthDate it is fine if neither exist
+      } else {
+        return dateB;
+      }
+    } else if (!dateB) {
+      return dateA;
+    }
+
     if (dateA == dateB) {
       return dateA;
     }
@@ -161,10 +175,14 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       }
     }
 
-    return undefined;
+    return "nomatch";
   }
 
   function mergeNames(nameObjA, nameObjB) {
+    //console.log("mergeNames:");
+    //console.log(nameObjA);
+    //console.log(nameObjB);
+
     if (!nameObjA || !nameObjB) {
       return undefined;
     }
@@ -325,6 +343,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   }
 
   function mergePlaces(placeA, placeB) {
+    //console.log("mergePlaces:");
+    //console.log(placeA);
+    //console.log(placeB);
+
     if (!placeA) {
       if (!placeB) {
         return "";
@@ -397,6 +419,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   }
 
   function mergeGenders(genderA, genderB) {
+    //console.log("mergeGenders:");
+    //console.log(genderA);
+    //console.log(genderB);
+
     if (!genderA) {
       if (!genderB) {
         return "";
@@ -415,6 +441,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   }
 
   function mergeAges(ageA, ageB) {
+    //console.log("mergeAges:");
+    //console.log(ageA);
+    //console.log(ageB);
+
     let result = { rejected: false, value: "" };
 
     if (!ageA) {
@@ -442,6 +472,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   }
 
   function mergeSimpleStrings(valueA, valueB) {
+    //console.log("mergeSimpleStrings:");
+    //console.log(valueA);
+    //console.log(valueB);
+
     if (!valueA) {
       if (!valueB) {
         return "";
@@ -460,6 +494,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   }
 
   function mergeParents(parentsA, parentsB) {
+    //console.log("mergeParents:");
+    //console.log(parentsA);
+    //console.log(parentsB);
+
     let result = { rejected: false, value: undefined };
 
     if (!parentsA) {
@@ -545,7 +583,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       }
 
       let mergedDate = mergeDates(mergedGd.inferEventDate(), eventDate);
-      if (!mergedDate) {
+      if (mergedDate == "nomatch") {
         continue;
       }
 
@@ -580,7 +618,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       }
 
       let mergedBirthDate = mergeDates(mergedGd.inferBirthDate(), birthDate);
-      if (!mergedBirthDate) {
+      if (!mergedBirthDate == "nomatch") {
         continue;
       }
 
@@ -588,6 +626,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       if (mergedDistrict === undefined) {
         continue;
       }
+
+      //console.log("====== merge approved ======");
 
       // set merged properties
       mergedGd.setEventDate(mergedDate);
@@ -656,6 +696,9 @@ function groupSourcesIntoFacts(result, type, options) {
       result.facts.push(newFact);
     }
   }
+
+  console.log("groupSourcesIntoFacts: facts:");
+  console.log(result.facts);
 }
 
 function buildNarrativeForPlainCitation(source, options) {
@@ -678,24 +721,78 @@ function buildNarrativeForPlainCitation(source, options) {
 }
 
 function getTextForPlainCitation(source, type, options) {
-  let citationText = source.citation.trim();
+  function cleanText(text) {
+    if (text) {
+      text = text.replace(/\<\/?i\>/gi, "''");
+
+      if (type == "source") {
+        text = text.replace(/ *\n */g, ", ");
+        text = text.replace(/\s+/g, " ");
+      }
+
+      text = text.trim();
+
+      text = text.replace(/,$/g, "");
+
+      text = text.trim();
+    }
+    return text;
+  }
+
+  function cleanNotes(text) {
+    if (text) {
+      text = cleanText(text);
+
+      // crap that sometimes gets pasted in
+      text = text.replace(/[,\s\n]+save\s+cancel/gi, "");
+      text = text.replace(/\s+View\sblank\sform,?/gi, "");
+      text = text.replace(/\s+Add\salternate\sinformation,?/gi, "");
+      text = text.replace(/\s+Report\s+issue,?/gi, "");
+      text = text.replace(/SAVE\s+PRINT\s+SHARE[,.\s]/gi, "");
+      text = text.replace(/[\s\n]+VIEW[ ,]/gi, "");
+
+      text = text.replace(/ +/g, " ");
+      text = text.trim();
+    }
+
+    return text;
+  }
+
+  let citationText = cleanText(source.citation);
 
   if (source.uri && !citationText.includes(source.uri)) {
-    citationText += " " + source.uri;
+    let tempUri = source.uri.replace(/^https?\:\/\/[^\/]+\//, "");
+    if (!citationText.includes(tempUri)) {
+      if (citationText) {
+        citationText += " ";
+      }
+      if (source.uriUpdatedDate) {
+        citationText += "(" + source.uri + " : " + source.uriUpdatedDate + ")";
+      } else {
+        citationText += source.uri;
+      }
+    }
   }
 
   if (!citationText.includes("familysearch.org")) {
     if (source.title) {
       if (!citationText.includes(source.title)) {
-        citationText += " " + source.title;
+        if (citationText) {
+          citationText += ", ";
+        }
+        citationText += cleanText(source.title);
       }
     }
-    if (source.notes) {
-      // some notes are an automatis comment like "Source created by RecordSeek.com"
-      // Not useful to include that.
-      if (!source.notes.startsWith("Source created by ")) {
-        citationText += " " + source.notes;
+  }
+
+  if (source.notes && options.addMerge_fsAllCitations_includeNotes) {
+    // some notes are an automatic comment like "Source created by RecordSeek.com"
+    // Not useful to include that.
+    if (!source.notes.startsWith("Source created by ")) {
+      if (citationText) {
+        citationText += ", ";
       }
+      citationText += " " + cleanNotes(source.notes);
     }
   }
 
@@ -724,18 +821,20 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
       if (citationsString) {
         citationsString += "\n";
       }
-      if (type == "narrative" && fact.sources.length > 1) {
-        // need a combined narrative
-        const narrativeInput = {
-          eventGeneralizedData: fact.generalizedData,
-          options: options,
-        };
-        let narrative = buildNarrative(narrativeInput);
-        citationsString += narrative;
+      if (fact.sources.length > 1) {
+        if (type == "narrative") {
+          // need a combined narrative
+          const narrativeInput = {
+            eventGeneralizedData: fact.generalizedData,
+            options: options,
+          };
+          let narrative = buildNarrative(narrativeInput);
+          citationsString += narrative;
+        }
         let longestTable = "";
         for (let source of fact.sources) {
           let citation = source.citationObject.citation;
-          // strip off existing narrative
+          // strip off any existing narrative
           let refIndex = citation.indexOf("<ref>");
           if (refIndex != -1) {
             citation = citation.substring(refIndex);
@@ -864,7 +963,7 @@ function generateSourcerCitationsStringForTypeSource(result, options) {
       citationsString += source.citationObject.citation;
       citationsString += "\n";
     } else if (source.citation) {
-      citationsString += "* " + source.citation.trim();
+      citationsString += "* " + getTextForPlainCitation(source, "source", options);
       citationsString += "\n";
     }
   }
@@ -995,6 +1094,12 @@ async function fsGetAllCitations(input, callbackFunction) {
 
       if (source.uri && source.uri.uri) {
         sourceObj.uri = source.uri.uri;
+
+        if (source.uriUpdatedOn) {
+          let date = new Date(source.uriUpdatedOn);
+          const options = { day: "numeric", month: "short", year: "numeric" };
+          sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
+        }
       }
 
       if (source.event) {
