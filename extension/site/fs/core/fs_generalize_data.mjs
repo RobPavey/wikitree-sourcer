@@ -375,7 +375,7 @@ function cleanPlace(placeString) {
   }
 
   // sometimes the place starts with "of "
-  cleanPlace = placeString.replace(/^\s*of */i, "");
+  cleanPlace = placeString.replace(/^\s*of +/i, "");
   if (cleanPlace) {
     placeString = cleanPlace.trim();
   }

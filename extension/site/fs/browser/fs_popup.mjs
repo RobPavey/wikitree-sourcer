@@ -171,7 +171,7 @@ async function fsGetAllCitationsAction(data) {
       //console.log("fsGetAllCitationsAction, response is");
       //console.log(response);
 
-      keepPopupOpenForDebug();
+      //keepPopupOpenForDebug();
       writeToClipboard(response.citationsString, "All citations");
     } else {
       // It can fail even if there is an image URL, for example findagrave images:

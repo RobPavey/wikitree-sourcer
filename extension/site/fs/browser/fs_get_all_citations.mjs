@@ -38,6 +38,33 @@ import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_request
 
 import { fetchFsSourcesJson, fetchRecord } from "./fs_fetch.mjs";
 
+function inferEventDate(source) {
+  // there is no date, this can cause sort issues. Sometime we can infer one
+
+  if (source.notes && source.notes == "Source created by RecordSeek.com") {
+    if (source.citation) {
+      let title = source.citation.replace(/^"([^"]+)".*$/, "$1");
+      if (title && title != source.citation) {
+        // get any years in title
+        let years = title.match(/\d\d\d\d/);
+        if (years && years.length == 1) {
+          return years[0];
+        }
+      }
+    }
+  }
+
+  if (source.title) {
+    // get any years in title
+    let years = source.title.match(/\d\d\d\d/);
+    if (years && years.length == 1) {
+      return years[0];
+    }
+  }
+
+  return "";
+}
+
 function getFsPlainCitations(result, ed, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
@@ -123,12 +150,12 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
 
   // sort the sources
   result.sources.sort(compareFunction);
-  console.log("sortSourcesUsingFsSortKeysAndFetchedRecords: sorted sources:");
-  console.log(result.sources);
+  //console.log("sortSourcesUsingFsSortKeysAndFetchedRecords: sorted sources:");
+  //console.log(result.sources);
 }
 
 function attemptToMergeSourceIntoPriorFact(source, result, type) {
-  console.log("attemptToMergeSourceIntoPriorFact");
+  //console.log("attemptToMergeSourceIntoPriorFact");
 
   function mergeDates(dateA, dateB) {
     //console.log("mergeDates:");
@@ -714,8 +741,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       priorFact.sources.push(source);
       merged = true;
 
-      console.log("merged sources: priorFact is: ");
-      console.log(priorFact);
+      //console.log("merged sources: priorFact is: ");
+      //console.log(priorFact);
       break;
     }
   }
@@ -765,8 +792,8 @@ function groupSourcesIntoFacts(result, type, options) {
     }
   }
 
-  console.log("groupSourcesIntoFacts: facts:");
-  console.log(result.facts);
+  //console.log("groupSourcesIntoFacts: facts:");
+  //console.log(result.facts);
 }
 
 function buildNarrativeForPlainCitation(source, options) {
@@ -794,8 +821,10 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
       text = text.replace(/\<\/?i\>/gi, "''");
 
       if (type == "source") {
-        text = text.replace(/ *\n */g, ", ");
+        text = text.replace(/ *\n */g, "<br/>");
         text = text.replace(/\s+/g, " ");
+      } else {
+        text = text.replace(/ *\n */g, "<br/>\n");
       }
 
       text = text.trim();
@@ -832,6 +861,13 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
 
   let citationText = cleanText(source.citation);
 
+  if (!citationText) {
+    citationText = cleanText(source.title);
+  }
+  if (!citationText) {
+    citationText = cleanText(source.notes);
+  }
+
   function addSeparationWithinBody(nonNewlineSeparator) {
     if (citationText) {
       let addedSeparation = false;
@@ -865,8 +901,13 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     }
   }
 
-  if (!citationText.includes("familysearch.org")) {
-    if (source.title) {
+  // Note, we currently put the source.citation before the source.title in this case
+  // That works if the title is like a data string (which it sometimes is)
+  // but it fails for https://www.familysearch.org/tree/person/sources/LHVG-L58
+  // and the Ancestry source for: https://search.ancestry.com/collections/2243/records/1341552
+  let fsRecordLinkIndex = citationText.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
+  if (fsRecordLinkIndex == -1) {
+    if (source.citation && source.title) {
       if (!citationText.includes(source.title)) {
         addSeparationWithinBody(", ");
         citationText += cleanText(source.title);
@@ -1017,8 +1058,8 @@ async function getSourcerCitation(source, type, options, updateStatusFunction) {
     // we don't have an FS fetch object, or it wasn't a record object we could process,
     // see what we can do by parsing FS citation string
 
-    console.log("getSourcerCitation: could not fetch, source is:");
-    console.log(source);
+    //console.log("getSourcerCitation: could not fetch, source is:");
+    //console.log(source);
 
     if (/^"[^"]+"\s+\d\d\d\d http/.test(source.citation)) {
       let year = source.citation.replace(/^"[^"]+"\s+(\d\d\d\d) http.*$/, "$1");
@@ -1193,8 +1234,8 @@ async function fsGetAllCitations(input, callbackFunction) {
     result.sources = [];
 
     for (let source of sources) {
-      console.log("FS source is:");
-      console.log(source);
+      //console.log("FS source is:");
+      //console.log(source);
 
       let sourceObj = {};
 
@@ -1232,6 +1273,11 @@ async function fsGetAllCitations(input, callbackFunction) {
         }
       }
 
+      // ignore some useless sources
+      if (source.citation == "Ancestry Family Tree" && source.title == "Ancestry Family Trees" && !source.notes) {
+        continue;
+      }
+
       if (source.event) {
         if (source.event.sortKey) {
           sourceObj.sortKey = source.event.sortKey;
@@ -1241,6 +1287,13 @@ async function fsGetAllCitations(input, callbackFunction) {
         }
         if (source.event.displayDate) {
           sourceObj.eventDate = source.event.displayDate;
+        }
+      }
+
+      if (!sourceObj.eventDate && !sourceObj.sortYear) {
+        const inferredEventDate = inferEventDate(source);
+        if (inferredEventDate) {
+          sourceObj.eventDate = inferredEventDate;
         }
       }
 
