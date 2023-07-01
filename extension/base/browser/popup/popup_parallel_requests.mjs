@@ -143,6 +143,11 @@ function doRequestsInParallel(requests, requestFunction) {
   //   failureCount
   //   responses: array of response objects
 
+  if (requests.length == 0) {
+    let callbackInput = { failureCount: 0, responses: [] };
+    resolve(callbackInput);
+  }
+
   resetStaticCounts();
   requestsTracker.expectedResponseCount = requests.length;
 

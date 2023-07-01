@@ -39,6 +39,12 @@ import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_request
 import { fetchFsSourcesJson, fetchRecord } from "./fs_fetch.mjs";
 
 function getFsPlainCitations(result, ed, type, options) {
+  if (result.sources.length == 0) {
+    result.citationsString = "";
+    result.citationsStringType = type;
+    return;
+  }
+
   sortSourcesUsingFsSortKeysAndFetchedRecords(result);
 
   let citationsString = "";
@@ -186,8 +192,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       } else {
         return dateObjB.getDateString();
       }
-    } else if (!placeB) {
-      return dateObjB.getDateString();
+    } else if (!dateObjB) {
+      return dateObjA.getDateString();
     }
 
     if (dateObjA.qualifier != dateObjB.qualifier) {
@@ -982,11 +988,11 @@ async function getSourcerCitation(source, type, options, updateStatusFunction) {
     source.dataObjects = fetchResult.dataObjects;
 
     let extractedData = extractDataFromFetch(undefined, source.dataObjects, "record", options);
-    if (extractedData) {
+    if (extractedData && extractedData.pageType) {
       source.extractedData = extractedData;
 
       let generalizedData = generalizeData({ extractedData: extractedData });
-      if (generalizedData) {
+      if (generalizedData && generalizedData.hasValidData) {
         source.generalizedData = generalizedData;
 
         let householdTableString = buildHouseholdTableString(extractedData, generalizedData, type, buildHouseholdTable);
@@ -1005,8 +1011,11 @@ async function getSourcerCitation(source, type, options, updateStatusFunction) {
         source.citationObject = citationObject;
       }
     }
-  } else {
-    // we don't have an FS fetch object, see what we can do by parsing FS citation string
+  }
+
+  if (!source.citationObject) {
+    // we don't have an FS fetch object, or it wasn't a record object we could process,
+    // see what we can do by parsing FS citation string
 
     console.log("getSourcerCitation: could not fetch, source is:");
     console.log(source);
@@ -1103,6 +1112,12 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
 }
 
 async function getSourcerCitations(result, ed, gd, type, options) {
+  if (result.sources.length == 0) {
+    result.citationsString = "";
+    result.citationsStringType = type;
+    return;
+  }
+
   let requests = [];
   for (let source of result.sources) {
     let request = {
@@ -1206,6 +1221,13 @@ async function fsGetAllCitations(input, callbackFunction) {
       if (options.addMerge_fsAllCitations_excludeNonFsSources) {
         // could check whether uri is of right form instead
         if (source.sourceType != "FSREADONLY") {
+          continue;
+        }
+        if (!sourceObj.uri) {
+          continue;
+        }
+        let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
+        if (validLinkIndex == -1) {
           continue;
         }
       }
