@@ -1,0 +1,511 @@
+{
+  "id" : "r_318848929",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:M63K-WJK?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:M63K-WJK?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:M63K-WJK"
+    }
+  },
+  "description" : "#sd_p_11114378515",
+  "persons" : [ {
+    "id" : "p_11114378515",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "8c3e5026-51a1-4b5a-a5dd-2ed892e9dfa9",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/F486-K6R?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/M63K-WJK?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F486-K6R" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Dr. Aaron Ayer",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Dr. Aaron",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "461261da-8a04-460f-aefd-7923b395e709",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Dr. Aaron"
+            }, {
+              "id" : "855d8db6-b3f3-4973-9ec5-47f2fcfd7797",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1579191103862
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Dr. Aaron"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Ayer",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "fb7451ff-4521-4f6f-8228-439bbb17762c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Ayer"
+            }, {
+              "id" : "6041b394-d1dc-43a9-965f-31f24d279a02",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1579191103862
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Ayer"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1579191103854
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Dr. Aaron Ayer"
+          }, {
+            "id" : "a9cedf5b-7b83-4404-b070-1626f812fad0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1579191103862
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Dr. Aaron Ayer"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Death",
+      "place" : {
+        "original" : "Buxton, York, Maine, United States",
+        "description" : "#place_4272551",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "8d21e9f6-533f-4b0b-8615-d4ba112d0fd3",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_SUP",
+            "text" : "Buxton, York, Maine, United States",
+            "qualifiers" : [ {
+              "value" : "SUP",
+              "name" : "http://familysearch.org/types/qualifiers/Info"
+            } ]
+          }, {
+            "id" : "fd6801c2-c7c1-4205-b7a1-a1a8b2d9bfec",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Buxton, York, Maine, United States"
+          }, {
+            "id" : "23e1cd22-4aa9-4f31-8636-23cad225b0e1",
+            "confidence" : "http://confidence/100",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1579191103869
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Buxton, York, Maine, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4272551",
+            "qualifiers" : [ {
+              "value" : "1013",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "0c7e8154-f09a-4d1f-b0da-adee946b5c75",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Death"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_11114378516",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "03108b59-f1c2-4666-832e-719f0ec3fad1",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "SP_SEX_CODE_ORIG",
+          "text" : "Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/F486-K6T?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/M63K-WJK?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F486-K6T" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Ruth",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Ruth",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "c98ba1f2-83af-431a-8aa9-ac6bfeab65ba",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Ruth"
+            }, {
+              "id" : "39c6862c-c329-4dd9-9d9a-70bfcaaafa8c",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1579191103866
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Ruth"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1579191103862
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Ruth"
+          }, {
+            "id" : "76522e7d-6855-4ca4-a18f-ebcf36072551",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1579191103866
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Ruth"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/HPRN-F168",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_11114378515",
+      "resourceId" : "p_11114378515"
+    },
+    "person2" : {
+      "resource" : "#p_11114378516",
+      "resourceId" : "p_11114378516"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1674914",
+    "about" : "https://www.familysearch.org/platform/records/collections/1674914",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223384453,
+    "modified" : 1658155543610,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Maine, United States of America",
+        "description" : "#place_1-16"
+      },
+      "temporal" : {
+        "original" : "1841/1910",
+        "formal" : "1841/1910"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Maine Deaths and Burials, 1841-1910"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1674914" ]
+    }
+  }, {
+    "id" : "src_r_318848929",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:M63K-WJK",
+    "componentOf" : {
+      "description" : "#sd_c_1674914"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1579191103877,
+    "modified" : 1658155543610,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Buxton, York, Maine, United States",
+        "description" : "#place_4272551"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Maine Deaths and Burials, 1841-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:M63K-WJK : 16 January 2020), Entry for Dr. Aaron Ayer, ."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Dr. Aaron Ayer, \"Maine Deaths and Burials, 1841-1910\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/196744619" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:M63K-WJK" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1674914?arkName=1:2:M63K-WJK"
+    }
+  }, {
+    "id" : "sd_p_11114378515",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:F486-K6R",
+    "componentOf" : {
+      "description" : "#src_r_318848929"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Maine Deaths and Burials, 1841-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:F486-K6R : 16 January 2020), Dr. Aaron Ayer, ."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Dr. Aaron Ayer, \"Maine Deaths and Burials, 1841-1910\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F486-K6R" ]
+    }
+  }, {
+    "id" : "sd_p_11114378516",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:F486-K6T",
+    "componentOf" : {
+      "description" : "#src_r_318848929"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Maine Deaths and Burials, 1841-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:F486-K6T : 16 January 2020), Ruth in entry for Dr. Aaron Ayer, ."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Ruth in entry for Dr. Aaron Ayer, \"Maine Deaths and Burials, 1841-1910\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:F486-K6T" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/4272551",
+      "resourceId" : "place_4272551"
+    }
+  }, {
+    "id" : "place_1-16",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/16?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "436f7a3b-06f4-4a4e-a770-272f4b177c2c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{ \"EVENT_PLACE_ALT_ORIG\": \"Buxton, York, Maine\", \"EVENT_DATE_ALT_ORIG\": \"\", \"PR_SEX_CODE_ALT_ORIG\": \"M\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "8243aa4e-4729-423f-9e6a-76475f5c0b46",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "285088"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "99b98807-0b45-404b-8c57-b79f459e51e8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Buxton, York, Maine, United States"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "1b9ae889-3859-4e41-ad59-41ebff8ab140",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007592510"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "id" : "42c1b00b-f0c0-4a34-b3b7-9065490964ba",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "10594"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNumber",
+    "values" : [ {
+      "id" : "7a0bf7f1-6459-4fba-b86b-6261f34ebc6e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "00799"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PacketLetter",
+    "values" : [ {
+      "id" : "afc06167-f2ad-4757-8c40-2505c3d66935",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PACKET_LTR",
+      "text" : "A"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "1fdd0267-310b-4e9e-b1c5-e4f2ff451b0c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "Maine-EASy"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "id" : "142c59e8-3b61-459c-8303-167cd0dc72f9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "3632"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "73e303de-0b4f-4495-9d1a-6cf62dd6ed44",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0010594_I00864-7X_0000_00_00_0000196744619"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfOrigin",
+    "values" : [ {
+      "id" : "c9291d63-1cd2-4df1-bb0e-110d9a3fb9a6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_ORIGIN",
+      "text" : "EASY"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
+    "values" : [ {
+      "id" : "dcb23b33-1f02-4642-bcac-7cb4977f26c0",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "I00864-7"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "549f4b3c-66ec-48d3-951b-add3a41de5c6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "196744619"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceComposite",
+    "values" : [ {
+      "id" : "26c4fb67-c333-4596-b828-d922df0ed75a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_COMPOSITE",
+      "text" : "bk 4 pg 152"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "3"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "51669"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

@@ -1,0 +1,720 @@
+{
+  "id" : "r_22756037568",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:99W6-TW7V?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:99W6-TW7V?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:99W6-TW7V"
+    }
+  },
+  "description" : "#sd_p_14789517574",
+  "persons" : [ {
+    "id" : "p_14789517576",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/2HVK-YCW?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/99W6-TW7V?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:2HVK-YCW" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Hariet Juliann Merrill",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Hariet Juliann",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Hariet Juliann"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Hariet Juliann"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Merrill",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Merrill"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Hariet Juliann Merrill"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "12 Oct 1813",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "12 Oct 1813"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "12 Oct 1813"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "Oct"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "12"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1813"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1813"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Turner, , Maine, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Turner, , Maine, United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_4",
+            "text" : "Turner"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_CITY",
+            "text" : "Turner"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_2",
+            "text" : "Maine"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_LEVEL_1",
+            "text" : "United States"
+          } ]
+        }, {
+          "type" : "http://familysearch.org/types/fields/StateOrCountry",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE_COUNTRY",
+            "text" : "Maine"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Birth"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_14789517574",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/2HVK-YCQ?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/99W6-TW7V?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:2HVK-YCQ" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Abel Merrill Jr.",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Abel",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Abel"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Abel"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Merrill",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Merrill"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Merrill"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Suffix",
+          "value" : "Jr.",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Suffix",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_TITLES_SUFFIX",
+              "text" : "Jr."
+            } ]
+          } ]
+        }, {
+          "type" : "http://familysearch.org/types/fields/Title",
+          "value" : "Jr",
+          "fields" : [ {
+            "type" : "http://familysearch.org/types/fields/Title",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_TITLES_ORIG",
+              "text" : "Jr"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_TITLES",
+              "text" : "Jr"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Abel Merrill Jr."
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_14789517575",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "type" : "http://gedcomx.org/Interpreted",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/2HVK-YC7?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/99W6-TW7V?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:2HVK-YC7" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Abigail",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Abigail",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Abigail"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Abigail"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Abigail"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/WDH9-TV8",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14789517575",
+      "resourceId" : "p_14789517575"
+    },
+    "person2" : {
+      "resource" : "#p_14789517576",
+      "resourceId" : "p_14789517576"
+    }
+  }, {
+    "id" : "MM9.1.6/WDH9-TVD",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_14789517574",
+      "resourceId" : "p_14789517574"
+    },
+    "person2" : {
+      "resource" : "#p_14789517575",
+      "resourceId" : "p_14789517575"
+    }
+  }, {
+    "id" : "MM9.1.6/WDH9-TV6",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14789517574",
+      "resourceId" : "p_14789517574"
+    },
+    "person2" : {
+      "resource" : "#p_14789517576",
+      "resourceId" : "p_14789517576"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1803978",
+    "about" : "https://www.familysearch.org/platform/records/collections/1803978",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223390113,
+    "modified" : 1683703492346,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Maine, United States",
+        "description" : "#place_1-16"
+      },
+      "temporal" : {
+        "original" : "1670/1907",
+        "formal" : "1670/1907"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Maine Vital Records, 1670-1921"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1803978" ]
+    }
+  }, {
+    "id" : "src_r_22756037568",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:99W6-TW7V",
+    "componentOf" : {
+      "description" : "#sd_c_1803978"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1389390610347,
+    "modified" : 1683703492346,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Turner, , Maine, United States"
+      },
+      "temporal" : {
+        "original" : "12 Oct 1813"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Maine Vital Records, 1670-1921,\" database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:99W6-TW7V : 2 March 2021), Entry for Hariet Juliann Merrill, 12 Oct 1813; citing Turner, , Maine, United States, multiple sources, Maine; FHL microfilm."
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Hariet Juliann Merrill, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/11886298281" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:99W6-TW7V" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1803978?arkName=1:2:99W6-TW7V"
+    }
+  }, {
+    "id" : "sd_p_14789517576",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:2HVK-YCW",
+    "componentOf" : {
+      "description" : "#src_r_22756037568"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Maine Vital Records, 1670-1921,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:2HVK-YCW : 2 March 2021), Hariet Juliann Merrill, 12 Oct 1813; citing Turner, , Maine, United States, multiple sources, Maine; FHL microfilm."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Hariet Juliann Merrill, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:2HVK-YCW" ]
+    }
+  }, {
+    "id" : "sd_p_14789517574",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:2HVK-YCQ",
+    "componentOf" : {
+      "description" : "#src_r_22756037568"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Maine Vital Records, 1670-1921,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:2HVK-YCQ : 2 March 2021), Abel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813; citing Turner, , Maine, United States, multiple sources, Maine; FHL microfilm."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Abel Merrill Jr. in entry for Hariet Juliann Merrill, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:2HVK-YCQ" ]
+    }
+  }, {
+    "id" : "sd_p_14789517575",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:2HVK-YC7",
+    "componentOf" : {
+      "description" : "#src_r_22756037568"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Maine Vital Records, 1670-1921,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:2HVK-YC7 : 2 March 2021), Abigail in entry for Hariet Juliann Merrill, 12 Oct 1813; citing Turner, , Maine, United States, multiple sources, Maine; FHL microfilm."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Abigail in entry for Hariet Juliann Merrill, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:2HVK-YC7" ]
+    }
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G979-5HG9?cc=1803978",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G979-5HG9?cc=1803978" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1803978?arkName=3:1:3QSQ-G979-5HG9"
+    }
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1-16",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/16?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "007015906_00404"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FILM_NUMBER",
+      "text" : "001002651"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "1803978"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevelType",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_2_TYPE",
+      "text" : "State"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/VolumeNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "VOLUME_NUMBER",
+      "text" : "Merrill - Michaud, 1881"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageArk",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_ARK",
+      "text" : "https://familysearch.org/ark:/61903/3:1:3QSQ-G979-5HG9"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/Folder",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FOLDER",
+      "text" : "007015906"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Maine, United States"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FolderImageSequence",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FOLDER_IMAGE_SEQ",
+      "text" : "404"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "RECORD_GROUP",
+      "text" : "12-1095: null - Maine, Delayed Returns for Births, Deaths and Marriages,1670-1891-FSI"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/Dasverify",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "DASVERIFY",
+      "text" : "26-DEC-13"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "DIGITAL_GS_NUMBER",
+      "text" : "007015906"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel3Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_3_TYPE",
+      "text" : "County"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "UNIQUE_IDENTIFIER",
+      "text" : "11886298281"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_NBR",
+      "text" : "00404"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_ID",
+      "text" : "/007015906/007015906_00404.jpg"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Maine, Delayed Returns for Births, Deaths and Marriages,1670-1891-FSI"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EasyImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_EASY_IMAGE_ID",
+      "text" : "007015906_00404"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "PPQ_ID",
+      "text" : "12-1095"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsImsImageId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMS_IMAGE_ID",
+      "text" : "007015906_00404"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel4Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_4_TYPE",
+      "text" : "City"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventPlaceLevel1Type",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EVENT_PLACE_LEVEL_1_TYPE",
+      "text" : "Country"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageApid",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_APID",
+      "text" : "TH-1942-31554-7861-86"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SORT_KEY",
+      "text" : "000000000000_007015906_00404_00000_0011886298281"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "5"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "22844"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": "Hariet Juliann Merrill",
+  "primaryPersonGender": "female",
+  "recordType": "Birth",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Abel Merrill Jr"
+  },
+  "eventDate": {
+    "dateString": "12 Oct 1813",
+    "yearString": "1813"
+  },
+  "eventPlace": {
+    "placeString": "Turner, Maine, United States"
+  },
+  "collectionData": {
+    "id": "1803978"
+  },
+  "hasValidData": true
+}

@@ -380,6 +380,24 @@ function cleanPlace(placeString) {
     placeString = cleanPlace.trim();
   }
 
+  // Sometimes there are consequtive commas e.g. "Turner, , Maine, United States"
+  cleanPlace = placeString.replace(/\s+/g, " "); // remove multiple spaces
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
+  cleanPlace = placeString.replace(/\s*,\s*$/g, ""); // remove trailing commas
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
+  cleanPlace = placeString.replace(/\s*,\s*/g, ", "); // remove spaces before commas and ensure space after
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
+  cleanPlace = placeString.replace(/, ,/g, ","); // replace multiple adjacent commas
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
+
   return placeString;
 }
 
@@ -723,7 +741,7 @@ function generalizeDataGivenRecordType(ed, result) {
             birthPlace = member.birthPlaceOriginal;
           }
           if (birthPlace && birthPlace != "Unknown") {
-            householdMember.birthPlace = birthPlace;
+            householdMember.birthPlace = cleanPlace(birthPlace);
             fieldsEncountered.birthPlace = true;
           }
           let isSelected = member["isSelected"];
@@ -945,7 +963,7 @@ function generalizeData(input) {
     }
   }
 
-  result.setEventPlace(eventPlace);
+  result.setEventPlace(cleanPlace(eventPlace));
 
   let residencePlace = ed.residence;
   if (!residencePlace && ed.recordData && ed.recordData["Note Res Place"]) {
@@ -954,7 +972,7 @@ function generalizeData(input) {
   }
   if (residencePlace && result.eventPlace) {
     // at least in 1841 census this is the stree address
-    result.eventPlace.streetAddress = residencePlace;
+    result.eventPlace.streetAddress = cleanPlace(residencePlace);
   }
 
   if (result.eventPlace) {

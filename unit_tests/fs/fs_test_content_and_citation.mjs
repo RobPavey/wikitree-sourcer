@@ -281,6 +281,16 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:FH24-9QT",
   },
   {
+    // no date, prefix in first name "Dr. Aaron Ayer"
+    caseName: "us_me_death_aaron_ayer",
+    url: "https://www.familysearch.org/ark:/61903/1:1:F486-K6R",
+  },
+  {
+    // has two commas in place "Turner, , Maine, United States"
+    caseName: "us_me_vital_1813_abel_merrill",
+    url: "https://www.familysearch.org/ark:/61903/1:1:2HVK-YCQ",
+  },
+  {
     caseName: "us_mi_birth_1885_gertrude_orchard",
     url: "https://www.familysearch.org/ark:/61903/1:1:F4P5-QX7",
   },

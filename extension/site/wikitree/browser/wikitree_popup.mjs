@@ -952,6 +952,8 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
         "Captain",
         "Capt",
         "Capt.",
+        "Dr",
+        "Dr.",
       ];
       for (let prefix of problemFirstNamePrefixes) {
         if (wtPersonData.firstName.startsWith(prefix + " ") || wtPersonData.firstName == prefix) {

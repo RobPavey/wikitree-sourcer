@@ -175,6 +175,28 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     return "nomatch";
   }
 
+  function mergeDateObjs(dateObjA, dateObjB) {
+    //console.log("mergeDateObjs:");
+    //console.log(dateObjA);
+    //console.log(dateObjB);
+
+    if (!dateObjA) {
+      if (!dateObjB) {
+        return "";
+      } else {
+        return dateObjB.getDateString();
+      }
+    } else if (!placeB) {
+      return dateObjB.getDateString();
+    }
+
+    if (dateObjA.qualifier != dateObjB.qualifier) {
+      return "nomatch";
+    }
+
+    return mergeDates(dateObjB.getDateString(), dateObjB.getDateString());
+  }
+
   function mergeNames(nameObjA, nameObjB) {
     //console.log("mergeNames:");
     //console.log(nameObjA);
@@ -189,6 +211,42 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
 
     if (fullNameA == fullNameB) {
       return WtsName.createFromPlainObject(nameObjA);
+    }
+
+    // check for special case where one of the names is a single name
+    function doesFullNameMatchSingleName(fullName, singleName) {
+      if (
+        fullName.startsWith(singleName) ||
+        fullName.endsWith(singleName) ||
+        fullName.includes('"' + singleName + '"') ||
+        fullName.includes("(" + singleName + ")") ||
+        fullName.includes(" " + singleName + " ")
+      ) {
+        return true;
+      }
+      return false;
+    }
+    const nameASpaceIndex = fullNameA.indexOf(" ");
+    const nameBSpaceIndex = fullNameB.indexOf(" ");
+    if (nameASpaceIndex == -1) {
+      if (nameBSpaceIndex == -1) {
+        // there are both single names and we have already tested if full names match
+        return undefined;
+      } else {
+        // nameA is single name
+        if (doesFullNameMatchSingleName(fullNameB, fullNameA)) {
+          return WtsName.createFromPlainObject(nameObjB);
+        } else {
+          return undefined;
+        }
+      }
+    } else if (nameBSpaceIndex == -1) {
+      // nameB is single name
+      if (doesFullNameMatchSingleName(fullNameA, fullNameB)) {
+        return WtsName.createFromPlainObject(nameObjA);
+      } else {
+        return undefined;
+      }
     }
 
     let firstNamesMatch = nameObjA.inferFirstName() == nameObjB.inferFirstName();
@@ -566,7 +624,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   let age = gd.age;
   let mothersMaidenName = gd.mothersMaidenName;
   let parents = gd.parents;
-  let birthDate = gd.inferBirthDate();
+  let birthDateObj = gd.birthDate;
+  let deathDateObj = gd.deathDate;
   let registrationDistrict = gd.registrationDistrict;
 
   for (let priorFact of result.facts) {
@@ -614,8 +673,13 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
         continue;
       }
 
-      let mergedBirthDate = mergeDates(mergedGd.inferBirthDate(), birthDate);
-      if (!mergedBirthDate == "nomatch") {
+      let mergedBirthDate = mergeDateObjs(mergedGd.birthDate, birthDateObj);
+      if (mergedBirthDate == "nomatch") {
+        continue;
+      }
+
+      let mergedDeathDate = mergeDateObjs(mergedGd.deathDate, deathDateObj);
+      if (mergedDeathDate == "nomatch") {
         continue;
       }
 
@@ -638,6 +702,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       }
       mergedGd.mothersMaidenName = mergedMmn;
       mergedGd.setBirthDate(mergedBirthDate);
+      mergedGd.setDeathDate(mergedDeathDate);
       mergedGd.registrationDistrict = mergedDistrict;
 
       priorFact.sources.push(source);

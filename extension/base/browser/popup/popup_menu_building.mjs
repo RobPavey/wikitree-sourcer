@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { options } from "/base/browser/options/options_loader.mjs";
 import { RC } from "/base/core/record_collections.mjs";
+import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
@@ -1143,6 +1144,18 @@ function displayGeneralizedData(data, backFunction) {
   }
 }
 
+async function displaySavedPersonData(data, backFunction) {
+  let personData = await getLatestPersonData();
+  if (!personData) {
+    return; // no saved data, do do anything
+  }
+
+  if (personData) {
+    console.log(personData);
+    debugDisplayMenu(personData, "Saved Person Data", backFunction);
+  }
+}
+
 function keepPopupOpenForDebug() {
   keepPopupOpen = true;
 }
@@ -1162,6 +1175,10 @@ function setupDebugSubmenuMenu(data, backFunction) {
 
   addMenuItem(menu, "Show generalized data", function (element) {
     displayGeneralizedData(data, toHereBackFunction);
+  });
+
+  addMenuItem(menu, "Show saved person data", function (element) {
+    displaySavedPersonData(data, toHereBackFunction);
   });
 
   if (!keepPopupOpen) {

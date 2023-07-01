@@ -1,0 +1,29 @@
+{
+  "recordData": {
+    "Name": "Dr. Aaron Ayer",
+    "Death Place": "Buxton, York, Maine, United States"
+  },
+  "fullName": "Dr. Aaron Ayer",
+  "givenName": "Dr. Aaron",
+  "surname": "Ayer",
+  "gender": "male",
+  "factType": "Death",
+  "eventPlaceOriginal": "Buxton, York, Maine, United States",
+  "eventPlace": "Buxton, York, Maine, United States",
+  "spouseFullName": "Ruth",
+  "spouseGivenName": "Ruth",
+  "referenceData": {
+    "digitalFilmNumber": "007592510",
+    "filmNumber": "10594",
+    "packetLetter": "A",
+    "recordNumber": "3632"
+  },
+  "fsImageNumber": "00799",
+  "collectionTitle": "Maine Deaths and Burials, 1841-1910",
+  "fsCollectionId": "1674914",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:M63K-WJK",
+  "citation": "\"Maine Deaths and Burials, 1841-1910\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:F486-K6R : 16 January 2020), Dr. Aaron Ayer, .",
+  "sourceTitleForPerson": "Dr. Aaron Ayer, \"Maine Deaths and Burials, 1841-1910\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:F486-K6R",
+  "pageType": "record"
+}

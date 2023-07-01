@@ -1,0 +1,38 @@
+{
+  "recordData": {
+    "Name": "Abel Merrill Jr.",
+    "Volume Number": "Merrill - Michaud, 1881",
+    "Dasverify": "26-DEC-13"
+  },
+  "eventDateOriginal": "12 Oct 1813",
+  "eventDate": "12 Oct 1813",
+  "eventYear": "1813",
+  "eventPlaceOriginal": "Turner, , Maine, United States",
+  "eventPlace": "Turner, , Maine, United States",
+  "eventPlaceL2": "Maine",
+  "eventPlaceL1": "United States",
+  "fullName": "Abel Merrill Jr.",
+  "givenName": "Abel",
+  "surname": "Merrill",
+  "suffix": "Jr.",
+  "gender": "male",
+  "relatedPersonFactType": "Birth",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Hariet Juliann Merrill",
+  "relatedPersonGivenName": "Hariet Juliann",
+  "relatedPersonSurname": "Merrill",
+  "relatedPersonGender": "female",
+  "referenceData": {
+    "filmNumber": "001002651",
+    "digitalFilmNumber": "007015906",
+    "imageNumber": "00404"
+  },
+  "fsCollectionId": "1803978",
+  "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3QSQ-G979-5HG9",
+  "collectionTitle": "Maine Vital Records, 1670-1921",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:99W6-TW7V",
+  "citation": "\"Maine Vital Records, 1670-1921,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:2HVK-YCQ : 2 March 2021), Abel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813; citing Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.",
+  "sourceTitleForPerson": "Abel Merrill Jr. in entry for Hariet Juliann Merrill, \"Maine Vital Records, 1670-1921\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:2HVK-YCQ",
+  "pageType": "record"
+}

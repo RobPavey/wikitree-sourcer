@@ -272,7 +272,11 @@ var siblingParentLines = undefined;
 function putNotesAndSourcesInSourcesBox(notes, sources) {
   let bioText = "== Biography ==\n";
   if (notes) {
-    bioText += notes + "\n\n";
+    bioText += notes;
+    // there may already be a \n or 2 on end
+    while (!bioText.endsWith("\n\n")) {
+      bioText += "\n";
+    }
   }
   bioText += "== Sources ==\n<references />\n";
   if (sources) {

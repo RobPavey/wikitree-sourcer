@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nAbel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Abel's daughter Hariet Juliann Merrill was born on 12 October 1813 in Turner, Maine, United States.<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nAbel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Birth of daughter Hariet Juliann Merrill''': \"Maine Vital Records, 1670-1921\"<br/>citing Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.<br/>{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>Abel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nHariet Juliann Merrill born to Abel Merrill Jr on 12 Oct 1813 in Turner, Maine, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Abel's daughter Hariet Juliann Merrill was born on 12 October 1813 in Turner, Maine, United States.<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nHariet Juliann Merrill born to Abel Merrill Jr on 12 Oct 1813 in Turner, Maine, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Birth of daughter Hariet Juliann Merrill''': \"Maine Vital Records, 1670-1921\"<br/>citing FHL microfilm: 001002651;<br/>{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>Hariet Juliann Merrill born to Abel Merrill Jr on 12 Oct 1813 in Turner, Maine, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nName: Abel Merrill Jr.; Volume Number: Merrill - Michaud, 1881; Dasverify: 26-DEC-13.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Abel's daughter Hariet Juliann Merrill was born on 12 October 1813 in Turner, Maine, United States.<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nName: Abel Merrill Jr.; Volume Number: Merrill - Michaud, 1881; Dasverify: 26-DEC-13.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Birth of daughter Hariet Juliann Merrill''': \"Maine Vital Records, 1670-1921\"<br/>citing FHL microfilm: 001002651;<br/>{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>Name: Abel Merrill Jr.; Volume Number: Merrill - Michaud, 1881; Dasverify: 26-DEC-13.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}\n{| border=\"1\"\n| Name || Abel Merrill Jr.\n|-\n| Volume Number || Merrill - Michaud, 1881\n|-\n| Dasverify || 26-DEC-13\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Abel's daughter Hariet Juliann Merrill was born on 12 October 1813 in Turner, Maine, United States.<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}\n{| border=\"1\"\n| Name || Abel Merrill Jr.\n|-\n| Volume Number || Merrill - Michaud, 1881\n|-\n| Dasverify || 26-DEC-13\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Birth of daughter Hariet Juliann Merrill''': \"Maine Vital Records, 1670-1921\"<br/>citing FHL microfilm: 001002651;<br/>{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>Name: Abel Merrill Jr.; Volume Number: Merrill - Michaud, 1881; Dasverify: 26-DEC-13.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nAbel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Abel's daughter Hariet Juliann Merrill was born on 12 October 1813 in Turner, Maine, United States.<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nAbel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Birth of daughter Hariet Juliann Merrill''': \"Maine Vital Records, 1670-1921\"<br/>citing FHL microfilm: 001002651;<br/>{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>Abel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Abel's daughter Hariet Juliann Merrill was born on 12 October 1813 in Turner, Maine, United States.<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting FHL microfilm: 001002651;<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Birth of daughter Hariet Juliann Merrill''': \"Maine Vital Records, 1670-1921\"<br/>citing FHL microfilm: 001002651;<br/>{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G979-5HG9}}",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nHariet Juliann Merrill born to Abel Merrill Jr on 12 Oct 1813 in Turner, Maine, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Abel's daughter Hariet Juliann Merrill was born on 12 October 1813 in Turner, Maine, United States.<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nHariet Juliann Merrill born to Abel Merrill Jr on 12 Oct 1813 in Turner, Maine, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Birth of daughter Hariet Juliann Merrill''': \"Maine Vital Records, 1670-1921\"<br/>citing Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.<br/>{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>Hariet Juliann Merrill born to Abel Merrill Jr on 12 Oct 1813 in Turner, Maine, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nAbel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Abel's daughter Hariet Juliann Merrill was born on 12 October 1813 in Turner, Maine, United States.<ref>\n'''Birth of daughter Hariet Juliann Merrill''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.<br/>\n{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>\nAbel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Birth of daughter Hariet Juliann Merrill''': \"Maine Vital Records, 1670-1921\"<br/>citing Turner, , Maine, United States, multiple sources, Maine; FHL microfilm.<br/>{{FamilySearch Record|2HVK-YCQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G979-5HG9}}<br/>Abel Merrill Jr. in entry for Hariet Juliann Merrill, 12 Oct 1813.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Dr Aaron Ayer"
+  },
+  "eventPlace": {
+    "placeString": "Buxton, York, Maine, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Ruth",
+        "forenames": "Ruth"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "1674914"
+  },
+  "hasValidData": true
+}
