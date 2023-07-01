@@ -203,6 +203,19 @@ const addMergeFsAllCitationsOptionsGroup = {
       label: "Include FS Source Notes when not using a full Sourcer citation",
       defaultValue: true,
     },
+    {
+      optionName: "excludeNonFsSources",
+      type: "checkbox",
+      label: "Exclude sources that do not have a valid link to a FamilySearch record",
+      defaultValue: false,
+    },
+    {
+      optionName: "excludeOtherRoleSources",
+      type: "checkbox",
+      label:
+        "For Sourcer style citations, exclude sources where the source person is not a primary person for the event",
+      defaultValue: false,
+    },
   ],
 };
 

@@ -25,6 +25,7 @@ SOFTWARE.
 import { extractDataFromFetch } from "../core/fs_extract_data.mjs";
 import { generalizeData } from "../core/fs_generalize_data.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
+import { Role } from "../../../base/core/record_type.mjs";
 import { buildCitation } from "../core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
 import { WTS_Date } from "../../../base/core/wts_date.mjs";
@@ -44,19 +45,15 @@ function getFsPlainCitations(result, ed, type, options) {
 
   for (let source of result.sources) {
     if (type == "inline") {
-      if (source.citation) {
-        if (citationsString) {
-          citationsString += "\n";
-        }
-        citationsString += buildRefForPlainCitation(source, options);
+      if (citationsString) {
         citationsString += "\n";
       }
+      citationsString += buildRefForPlainCitation(source, false, options);
+      citationsString += "\n";
     } else {
-      if (source.citation) {
-        citationsString += "* ";
-        citationsString += getTextForPlainCitation(source, "source", options);
-        citationsString += "\n";
-      }
+      citationsString += "* ";
+      citationsString += getTextForPlainCitation(source, "source", false, options);
+      citationsString += "\n";
     }
   }
 
@@ -720,7 +717,7 @@ function buildNarrativeForPlainCitation(source, options) {
   return narrative;
 }
 
-function getTextForPlainCitation(source, type, options) {
+function getTextForPlainCitation(source, type, isSourcerStyle, options) {
   function cleanText(text) {
     if (text) {
       text = text.replace(/\<\/?i\>/gi, "''");
@@ -735,6 +732,8 @@ function getTextForPlainCitation(source, type, options) {
       text = text.replace(/,$/g, "");
 
       text = text.trim();
+    } else {
+      text = "";
     }
     return text;
   }
@@ -753,6 +752,8 @@ function getTextForPlainCitation(source, type, options) {
 
       text = text.replace(/ +/g, " ");
       text = text.trim();
+    } else {
+      text = "";
     }
 
     return text;
@@ -760,12 +761,31 @@ function getTextForPlainCitation(source, type, options) {
 
   let citationText = cleanText(source.citation);
 
+  function addSeparationWithinBody(nonNewlineSeparator) {
+    if (citationText) {
+      let addedSeparation = false;
+      if (isSourcerStyle) {
+        if (options.citation_general_addBreaksWithinBody) {
+          citationText += "<br/>";
+          addedSeparation = true;
+        }
+
+        if (type != "source" && options.citation_general_addNewlinesWithinBody) {
+          citationText += "\n";
+          addedSeparation = true;
+        }
+      }
+
+      if (!addedSeparation) {
+        citationText += nonNewlineSeparator;
+      }
+    }
+  }
+
   if (source.uri && !citationText.includes(source.uri)) {
     let tempUri = source.uri.replace(/^https?\:\/\/[^\/]+\//, "");
     if (!citationText.includes(tempUri)) {
-      if (citationText) {
-        citationText += " ";
-      }
+      addSeparationWithinBody(" ");
       if (source.uriUpdatedDate) {
         citationText += "(" + source.uri + " : " + source.uriUpdatedDate + ")";
       } else {
@@ -777,9 +797,7 @@ function getTextForPlainCitation(source, type, options) {
   if (!citationText.includes("familysearch.org")) {
     if (source.title) {
       if (!citationText.includes(source.title)) {
-        if (citationText) {
-          citationText += ", ";
-        }
+        addSeparationWithinBody(", ");
         citationText += cleanText(source.title);
       }
     }
@@ -789,9 +807,7 @@ function getTextForPlainCitation(source, type, options) {
     // some notes are an automatic comment like "Source created by RecordSeek.com"
     // Not useful to include that.
     if (!source.notes.startsWith("Source created by ")) {
-      if (citationText) {
-        citationText += ", ";
-      }
+      addSeparationWithinBody(", ");
       citationText += " " + cleanNotes(source.notes);
     }
   }
@@ -799,12 +815,12 @@ function getTextForPlainCitation(source, type, options) {
   return citationText;
 }
 
-function buildRefForPlainCitation(source, options) {
+function buildRefForPlainCitation(source, isSourcerStyle, options) {
   let refString = "<ref>";
   if (options.citation_general_addNewlinesWithinRefs) {
     refString += "\n";
   }
-  refString += getTextForPlainCitation(source, "inline", options);
+  refString += getTextForPlainCitation(source, "inline", isSourcerStyle, options);
   if (options.citation_general_addNewlinesWithinRefs) {
     refString += "\n";
   }
@@ -865,18 +881,17 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
       citationsString += "\n";
     } else if (fact.sources.length == 1) {
       let source = fact.sources[0];
-      if (source.citation) {
-        if (citationsString) {
-          citationsString += "\n";
-        }
 
-        if (type == "narrative") {
-          citationsString += buildNarrativeForPlainCitation(source, options);
-        }
-        citationsString += buildRefForPlainCitation(source, options);
-
+      if (citationsString) {
         citationsString += "\n";
       }
+
+      if (type == "narrative") {
+        citationsString += buildNarrativeForPlainCitation(source, options);
+      }
+      citationsString += buildRefForPlainCitation(source, true, options);
+
+      citationsString += "\n";
     }
   }
 
@@ -886,12 +901,16 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
 async function getSourcerCitation(source, type, options, updateStatusFunction) {
   let uri = source.uri;
 
-  let fetchResult = await fetchRecord(uri);
-  let retryCount = 0;
-  while (!fetchResult.success && fetchResult.allowRetry && retryCount < 3) {
-    retryCount++;
-    updateStatusFunction("retry " + retryCount);
+  let fetchResult = { success: false };
+
+  if (uri) {
     fetchResult = await fetchRecord(uri);
+    let retryCount = 0;
+    while (!fetchResult.success && fetchResult.allowRetry && retryCount < 3) {
+      retryCount++;
+      updateStatusFunction("retry " + retryCount);
+      fetchResult = await fetchRecord(uri);
+    }
   }
 
   if (fetchResult.success) {
@@ -962,8 +981,8 @@ function generateSourcerCitationsStringForTypeSource(result, options) {
     if (source.citationObject) {
       citationsString += source.citationObject.citation;
       citationsString += "\n";
-    } else if (source.citation) {
-      citationsString += "* " + getTextForPlainCitation(source, "source", options);
+    } else {
+      citationsString += "* " + getTextForPlainCitation(source, "source", true, options);
       citationsString += "\n";
     }
   }
@@ -981,12 +1000,12 @@ function generateSourcerCitationsStringForTypeInline(result, options) {
       }
       citationsString += source.citationObject.citation;
       citationsString += "\n";
-    } else if (source.citation) {
+    } else {
       if (citationsString) {
         citationsString += "\n";
       }
 
-      citationsString += buildRefForPlainCitation(source, options);
+      citationsString += buildRefForPlainCitation(source, true, options);
       citationsString += "\n";
     }
   }
@@ -1004,13 +1023,13 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
       }
       citationsString += source.citationObject.citation;
       citationsString += "\n";
-    } else if (source.citation) {
+    } else {
       if (citationsString) {
         citationsString += "\n";
       }
 
       citationsString += buildNarrativeForPlainCitation(source, options);
-      citationsString += buildRefForPlainCitation(source, options);
+      citationsString += buildRefForPlainCitation(source, true, options);
       citationsString += "\n";
     }
   }
@@ -1038,6 +1057,23 @@ async function getSourcerCitations(result, ed, gd, type, options) {
   let requestsResult = await doRequestsInParallel(requests, requestFunction);
 
   result.failureCount = requestsResult.failureCount;
+
+  if (options.addMerge_fsAllCitations_excludeOtherRoleSources) {
+    let newSources = [];
+    for (let source of result.sources) {
+      if (source.citationObject) {
+        const gd = source.generalizedData;
+        if (gd && gd.role && gd.role != Role.Primary) {
+          // exclude this one
+        } else {
+          newSources.push(source);
+        }
+      } else {
+        newSources.push(source);
+      }
+    }
+    result.sources = newSources;
+  }
 
   sortSourcesUsingFsSortKeysAndFetchedRecords(result);
 
@@ -1097,8 +1133,15 @@ async function fsGetAllCitations(input, callbackFunction) {
 
         if (source.uriUpdatedOn) {
           let date = new Date(source.uriUpdatedOn);
-          const options = { day: "numeric", month: "short", year: "numeric" };
+          const options = { day: "numeric", month: "long", year: "numeric" };
           sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
+        }
+      }
+
+      if (options.addMerge_fsAllCitations_excludeNonFsSources) {
+        // could check whether uri is of right form instead
+        if (source.sourceType != "FSREADONLY") {
+          continue;
         }
       }
 
