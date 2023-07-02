@@ -272,7 +272,7 @@ function getRequestedUserInput(input) {
         label: "Choose entry type",
         property: "entryType",
         options: [
-          { value: "Probate", text: "Probate" },
+          { value: "Probate", text: "Probate or Will Proved" },
           { value: "Administration", text: "Administration" },
           { value: "Administration (with Will)", text: "Administration (with Will)" },
           { value: "Confirmation", text: "Confirmation" },
@@ -305,7 +305,7 @@ function getRequestedUserInput(input) {
       {
         id: "effects",
         type: "textInput",
-        label: "Effects (£): ",
+        label: "Effects/Personal Estate (£): ",
         property: "effects",
         defaultValue: "£",
         hidden: isSimpleData,

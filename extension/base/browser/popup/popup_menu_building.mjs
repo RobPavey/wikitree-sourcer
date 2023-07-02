@@ -609,8 +609,35 @@ function setupBuildCitationSubMenuForRequestedUserInput(
   backFunction,
   regeneralizeFunction,
   userInputFunction,
-  partialResultData
+  partialResultData,
+  focusElementId
 ) {
+  async function rebuild(existingFocusElementId) {
+    // we rebuild the menu but try to keep the focus element the same.
+    // We use a timeout because when you type in a text field and then press tab or
+    // click in another text field, the change event is called before the document
+    // active element changes
+    setTimeout(function () {
+      let focusElementId = existingFocusElementId;
+
+      let activeElement = document.activeElement;
+
+      if (activeElement) {
+        focusElementId = activeElement.id;
+      }
+
+      setupBuildCitationSubMenuForRequestedUserInput(
+        data,
+        buildFunction,
+        backFunction,
+        regeneralizeFunction,
+        userInputFunction,
+        resultData,
+        focusElementId
+      );
+    }, 1);
+  }
+
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
@@ -662,14 +689,7 @@ function setupBuildCitationSubMenuForRequestedUserInput(
       let changed = resultData[field.property] != event.target.value;
       resultData[field.property] = event.target.value;
       if (changed && field.requiresRebuild) {
-        setupBuildCitationSubMenuForRequestedUserInput(
-          data,
-          buildFunction,
-          backFunction,
-          regeneralizeFunction,
-          userInputFunction,
-          resultData
-        );
+        rebuild(selector.id);
       }
     });
 
@@ -703,14 +723,7 @@ function setupBuildCitationSubMenuForRequestedUserInput(
       let changed = resultData[field.property] != event.target.value;
       resultData[field.property] = event.target.value;
       if (changed && field.requiresRebuild) {
-        setupBuildCitationSubMenuForRequestedUserInput(
-          data,
-          buildFunction,
-          backFunction,
-          regeneralizeFunction,
-          userInputFunction,
-          resultData
-        );
+        rebuild(textInput.id);
       }
     });
     let label = document.createElement("label");
@@ -774,6 +787,13 @@ function setupBuildCitationSubMenuForRequestedUserInput(
   menu.list.appendChild(button);
 
   endMainMenu(menu);
+
+  if (focusElementId) {
+    let focusElement = document.getElementById(focusElementId);
+    if (focusElement) {
+      focusElement.focus();
+    }
+  }
 }
 
 function setupBuildCitationSubMenu(
