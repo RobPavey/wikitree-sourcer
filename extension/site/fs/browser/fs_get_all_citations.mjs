@@ -53,6 +53,7 @@ import { buildHouseholdTableString } from "/base/browser/popup/popup_citation.mj
 
 import { WtsName } from "../../../base/core/generalize_data_utils.mjs";
 import { buildNarrative, getFieldsUsedInNarrative } from "../../../base/core/narrative_builder.mjs";
+import { displayMessage } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 
@@ -112,6 +113,7 @@ function getFsPlainCitations(result, ed, type, options) {
 
   result.citationsString = citationsString;
   result.citationsStringType = type;
+  result.citationCount = result.sources.length;
 }
 
 function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
@@ -664,6 +666,65 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     return result;
   }
 
+  function mergeSpouses(spousesA, spousesB, fact) {
+    if (!spousesA || spousesA.length == 0) {
+      return spousesB;
+    } else if (!spousesB || spousesB.length == 0) {
+      return spousesA;
+    }
+
+    if (spousesA.length != spousesB.length) {
+      return "nomatch";
+    }
+
+    let mergedSpouses = [];
+
+    for (let spouseIndex = 0; spouseIndex < spousesA.length; spouseIndex++) {
+      let spouseA = spousesA[spouseIndex];
+      let spouseB = spousesB[spouseIndex];
+
+      let mergedName = mergeNames(spouseA.name, spouseB.name);
+      if (!mergedName) {
+        return "nomatch";
+      }
+
+      let mergedDate = mergeDateObjs(spouseA.marriageDate, spouseB.marriageDate);
+      if (mergedDate == "nomatch") {
+        return "nomatch";
+      }
+
+      let marriagePlaceA = spouseA.marriagePlace ? spouseA.marriagePlace.placeString : "";
+      let marriagePlaceB = spouseB.marriagePlace ? spouseB.marriagePlace.placeString : "";
+      let mergedPlace = mergePlaces(marriagePlaceA, marriagePlaceB);
+      if (mergedPlace === undefined) {
+        return "nomatch";
+      }
+
+      let mergedAge = mergeAges(spouseA.age, spouseB.age);
+      if (mergedAge.rejected && fact.narrativeFieldsUsed.age) {
+        return "nomatch";
+      }
+
+      let mergedSpouse = {};
+      if (mergedName) {
+        mergedSpouse.name = mergedName;
+      }
+      if (mergedDate) {
+        mergedSpouse.marriageDate = mergedDate;
+      }
+      if (mergedPlace) {
+        mergedSpouse.marriagePlace = mergedPlace;
+      }
+      if (mergedAge && mergedAge.value) {
+        mergedSpouse.age = mergedAge.value;
+      }
+
+      mergedSpouses.push(mergedSpouse);
+    }
+
+    return mergedSpouses;
+  }
+
   let merged = false;
 
   let gd = source.generalizedData;
@@ -677,6 +738,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   let age = gd.age;
   let mothersMaidenName = gd.mothersMaidenName;
   let parents = gd.parents;
+  let spouses = gd.spouses;
   let birthDateObj = gd.birthDate;
   let deathDateObj = gd.deathDate;
   let registrationDistrict = gd.registrationDistrict;
@@ -712,17 +774,22 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       }
 
       let mergedAge = mergeAges(mergedGd.age, age);
-      if (mergedAge.rejected && fact.narrativeFieldsUsed.age) {
+      if (mergedAge.rejected && priorFact.narrativeFieldsUsed.age) {
         continue;
       }
 
       let mergedParents = mergeParents(mergedGd.parents, parents);
-      if (mergedAge.rejected && fact.narrativeFieldsUsed.parentage) {
+      if (mergedAge.rejected && priorFact.narrativeFieldsUsed.parentage) {
+        continue;
+      }
+
+      let mergedSpouses = mergeSpouses(mergedGd.spouses, spouses, priorFact);
+      if (mergedSpouses == "nomatch") {
         continue;
       }
 
       let mergedMmn = mergeSimpleStrings(mergedGd.mothersMaidenName, mothersMaidenName);
-      if (mergedMmn === undefined && fact.narrativeFieldsUsed.mmn) {
+      if (mergedMmn === undefined && priorFact.narrativeFieldsUsed.mmn) {
         continue;
       }
 
@@ -752,6 +819,9 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       mergedGd.age = mergedAge.value;
       if (mergedParents.value) {
         mergedGd.parents = mergedParents.value;
+      }
+      if (mergedSpouses) {
+        mergedGd.spouses = mergedSpouses;
       }
       mergedGd.mothersMaidenName = mergedMmn;
       mergedGd.setBirthDate(mergedBirthDate);
@@ -963,6 +1033,7 @@ function buildRefForPlainCitation(source, isSourcerStyle, options) {
 function generateSourcerCitationsStringForFacts(result, type, options) {
   // this is only ever used for narrative or inline
   let citationsString = "";
+  let citationCount = 0;
 
   for (let fact of result.facts) {
     if (fact.generalizedData) {
@@ -1010,6 +1081,7 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
           citationsString += source.citationObject.citation;
         }
       }
+      citationCount += fact.sources.length;
       citationsString += "\n";
     } else if (fact.sources.length == 1) {
       let source = fact.sources[0];
@@ -1024,10 +1096,12 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
       citationsString += buildRefForPlainCitation(source, true, options);
 
       citationsString += "\n";
+      citationCount++;
     }
   }
 
   result.citationsString = citationsString;
+  result.citationCount = citationCount;
 }
 
 async function getSourcerCitation(source, type, options, updateStatusFunction) {
@@ -1126,6 +1200,7 @@ function generateSourcerCitationsStringForTypeSource(result, options) {
   }
 
   result.citationsString = citationsString;
+  result.citationCount = result.sources.length;
 }
 
 function generateSourcerCitationsStringForTypeInline(result, options) {
@@ -1149,6 +1224,7 @@ function generateSourcerCitationsStringForTypeInline(result, options) {
   }
 
   result.citationsString = citationsString;
+  result.citationCount = result.sources.length;
 }
 
 function generateSourcerCitationsStringForTypeNarrative(result, options) {
@@ -1173,6 +1249,7 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
   }
 
   result.citationsString = citationsString;
+  result.citationCount = result.sources.length;
 }
 
 async function getSourcerCitations(result, ed, gd, type, options) {
@@ -1248,6 +1325,12 @@ async function fsGetAllCitations(input, callbackFunction) {
   let options = input.options;
 
   let sourcesObj = await fetchFsSourcesJson(ed.sourceIds);
+  let retryCount = 0;
+  while (retryCount < 3 && !sourcesObj.success && sourcesObj.allowRetry) {
+    retryCount++;
+    displayMessage("Getting sources, retry " + retryCount + " ...");
+    sourcesObj = await fetchFsSourcesJson(ed.sourceIds);
+  }
 
   let result = { success: false };
 

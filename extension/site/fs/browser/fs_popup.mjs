@@ -174,7 +174,8 @@ async function fsGetAllCitationsAction(data) {
       //keepPopupOpenForDebug();
 
       if (response.citationsString) {
-        writeToClipboard(response.citationsString, "All citations");
+        let message = response.citationCount + " citations";
+        writeToClipboard(response.citationsString, message);
       } else {
         const message = "All sources were excluded due to option settings.";
         displayMessageWithIconThenClosePopup("warning", message, "");
@@ -189,6 +190,8 @@ async function fsGetAllCitationsAction(data) {
   } catch (e) {
     console.log("fsGetAllCitationsAction caught exception on fsGetAllCitations:");
     console.log(e);
+    keepPopupOpenForDebug();
+
     const message = "An exception occurred geting sources.";
     displayMessageWithIconThenClosePopup("warning", message, "");
   }

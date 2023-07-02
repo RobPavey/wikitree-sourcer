@@ -72,7 +72,12 @@ async function fetchFsSourcesJson(sourceIdList) {
   // On Firefox it may return zero any time you use "no-cors"
   if (response.status !== 200) {
     console.log("Looks like there was a problem. Status Code: " + response.status);
-    return { success: false };
+    return {
+      success: false,
+      errorCondition: "FetchError",
+      status: response.status,
+      allowRetry: true,
+    };
   }
 
   // Examine the text in the response
