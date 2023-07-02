@@ -22,6 +22,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+/* 
+  Note that this is a complex piece of code and is not currently tested by unit tests.
+
+  Here are some test cases:
+
+ 		https://www.familysearch.org/tree/person/sources/L2Q9-YLC  (Has ancestry records)
+		https://www.familysearch.org/tree/person/details/K2HC-86C  (Has records that can be merged)
+		https://www.familysearch.org/tree/person/details/LJJH-F8B  (German record. Can’t merge marriage because last name different)
+		https://www.familysearch.org/tree/person/sources/G7MJ-Y7W  (Has non FS source with notes)
+		https://www.familysearch.org/tree/person/sources/L231-R8M  Has censuses that can be merged - also had date sorting issues
+		https://www.familysearch.org/tree/person/sources/MQNQ-H1D  Had issue with birth place match on baptisms
+		https://www.familysearch.org/tree/person/sources/KC6X-WRJ  Has 31 sources
+		https://www.familysearch.org/tree/person/sources/L7LT-DG1  Caused empty ref - no FS sources
+			  Because it has an FS link but it is to an image.
+		https://www.familysearch.org/tree/person/sources/L2QN-6JJ  Merges marriages even though spouse surnames are different.
+			  Perhaps it should not if the spouse name is being shown in narrative.
+		https://www.familysearch.org/tree/person/sources/LHVG-L58  Has some Ancestry sources, one not formatted well
+
+*/
+
 import { extractDataFromFetch } from "../core/fs_extract_data.mjs";
 import { generalizeData } from "../core/fs_generalize_data.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
