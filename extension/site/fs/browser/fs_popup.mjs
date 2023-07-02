@@ -33,6 +33,7 @@ import {
   doAsyncActionWithCatch,
   closePopup,
   keepPopupOpenForDebug,
+  displayMessageWithIconThenClosePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -170,17 +171,26 @@ async function fsGetAllCitationsAction(data) {
     if (response.success) {
       //console.log("fsGetAllCitationsAction, response is");
       //console.log(response);
-
       //keepPopupOpenForDebug();
-      writeToClipboard(response.citationsString, "All citations");
+
+      if (response.citationsString) {
+        writeToClipboard(response.citationsString, "All citations");
+      } else {
+        const message = "All sources were excluded due to option settings.";
+        displayMessageWithIconThenClosePopup("warning", message, "");
+      }
     } else {
       // It can fail even if there is an image URL, for example findagrave images:
       // https://www.ancestry.com/discoveryui-content/view/2221897:60527
       // This is not considered an error there just will be no sharing link
+      const message = "An error occurred geting sources.";
+      displayMessageWithIconThenClosePopup("warning", message, "");
     }
   } catch (e) {
     console.log("fsGetAllCitationsAction caught exception on fsGetAllCitations:");
     console.log(e);
+    const message = "An exception occurred geting sources.";
+    displayMessageWithIconThenClosePopup("warning", message, "");
   }
 }
 

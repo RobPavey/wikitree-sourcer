@@ -1045,6 +1045,9 @@ async function getSourcerCitation(source, type, options, updateStatusFunction) {
     }
   }
 
+  //console.log("getSourcerCitation, fetchResult is:");
+  //console.log(fetchResult);
+
   if (fetchResult.success) {
     source.dataObjects = fetchResult.dataObjects;
 
