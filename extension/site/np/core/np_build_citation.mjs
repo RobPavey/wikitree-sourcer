@@ -40,9 +40,22 @@ function buildCoreCitation(ed, gd, builder) {
     const articleString = "/article/";
     let articleIndex = ed.url.indexOf(articleString);
     if (articleIndex != -1) {
+      // Can be of various forms:
+      // https://www.newspapers.com/article/116219279/tom-turners-sons-visit/
+      // https://www.newspapers.com/article/daily-gazette/121899396/
+      // https://www.newspapers.com/article/111420722/
+
       let remainder = ed.url.substring(articleIndex + articleString.length);
-      let clipNum = remainder.replace(/^[^\/]+\/(\d+)\/$/, "$1");
-      if (clipNum && clipNum != remainder) {
+      let clipNum = "";
+      let parts = remainder.split("/");
+      for (let part of parts) {
+        if (/^\d+$/.test(part)) {
+          clipNum = part;
+          break;
+        }
+      }
+
+      if (clipNum) {
         let recordLink = "{{Newspapers.com|" + clipNum + "}}";
         builder.recordLinkOrTemplate = recordLink;
       }

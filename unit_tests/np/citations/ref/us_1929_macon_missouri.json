@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1929 Newspaper''':\n\"Newspapers.com\"<br/>\nMacon Chronicle-Herald (Macon, Missouri) Wed, Jan 16, 1929, page 6<br/>\n{{Newspapers.com|116219279}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the Macon Chronicle-Herald on 16 January 1929 in Macon, Missouri.<ref>\n'''1929 Newspaper''':\n\"Newspapers.com\"<br/>\nMacon Chronicle-Herald (Macon, Missouri) Wed, Jan 16, 1929, page 6<br/>\n{{Newspapers.com|116219279}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1929 Newspaper''': \"Newspapers.com\"<br/>Macon Chronicle-Herald (Macon, Missouri) Wed, Jan 16, 1929, page 6<br/>{{Newspapers.com|116219279}} (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

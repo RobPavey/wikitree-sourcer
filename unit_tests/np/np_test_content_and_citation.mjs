@@ -48,6 +48,10 @@ const regressionData = [
     url: "https://www.newspapers.com/clip/111420722/fleetwood-shot-his-arm-off/",
   },
   {
+    caseName: "us_1929_macon_missouri",
+    url: "https://www.newspapers.com/article/116219279/tom-turners-sons-visit/",
+  },
+  {
     caseName: "us_1967_pauline_chavez_obit",
     url: "https://www.newspapers.com/article/albuquerque-journal-obituary-for-pauline/121970302/",
   },

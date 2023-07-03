@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "np",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "1929-01-16"
+  },
+  "eventPlace": {
+    "placeString": "Macon, Missouri"
+  },
+  "newspaperName": "Macon Chronicle-Herald",
+  "hasValidData": true
+}
