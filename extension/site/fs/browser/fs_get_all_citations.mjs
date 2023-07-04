@@ -45,6 +45,8 @@ SOFTWARE.
 import { extractDataFromFetch } from "../core/fs_extract_data.mjs";
 import { generalizeData } from "../core/fs_generalize_data.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
+import { RC } from "../../../base/core/record_collections.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
 import { Role } from "../../../base/core/record_type.mjs";
 import { buildCitation } from "../core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
@@ -116,15 +118,35 @@ function getFsPlainCitations(result, ed, type, options) {
   result.citationCount = result.sources.length;
 }
 
+function inferBestEventDateForCompare(gd) {
+  let eventDate = "";
+  if (gd) {
+    eventDate = gd.inferEventDate();
+
+    if (gd.recordType == RT.Census) {
+      let collection = undefined;
+      if (gd.collectionData && gd.collectionData.id) {
+        collection = RC.findCollection(gd.sourceOfData, gd.collectionData.id);
+      }
+
+      if (collection && collection.dates && collection.dates.exactDate) {
+        eventDate = collection.dates.exactDate;
+      }
+    }
+  }
+
+  return eventDate;
+}
+
 function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
   function compareFunction(a, b) {
     let eventDateA = "";
     if (a.generalizedData) {
-      eventDateA = a.generalizedData.inferEventDate();
+      eventDateA = inferBestEventDateForCompare(a.generalizedData);
     }
     let eventDateB = "";
     if (b.generalizedData) {
-      eventDateB = b.generalizedData.inferEventDate();
+      eventDateB = inferBestEventDateForCompare(b.generalizedData);
     }
 
     if (!eventDateA) {
