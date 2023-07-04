@@ -452,6 +452,27 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     return undefined;
   }
 
+  function mergeNameStrings(nameA, nameB) {
+    let nameObjA = undefined;
+    let nameObjB = undefined;
+    if (nameA) {
+      nameObjA = new WtsName();
+      nameObjA.name = nameA;
+    }
+    if (nameB) {
+      nameObjB = new WtsName();
+      nameObjB.name = nameB;
+    }
+
+    let mergedNameObj = mergeNames(nameObjA, nameObjB);
+
+    if (mergedNameObj) {
+      return mergedNameObj.name;
+    } else {
+      return undefined;
+    }
+  }
+
   function mergePlaces(placeA, placeB) {
     //console.log("mergePlaces:");
     //console.log(placeA);
@@ -742,6 +763,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   let birthDateObj = gd.birthDate;
   let deathDateObj = gd.deathDate;
   let registrationDistrict = gd.registrationDistrict;
+  let primaryPersonName = gd.primaryPerson;
+  let primaryPersonGender = gd.primaryPersonGender;
 
   for (let priorFact of result.facts) {
     if (priorFact.generalizedData) {
@@ -788,6 +811,21 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
         continue;
       }
 
+      let mergedPrimaryPersonName = "";
+      let mergedPrimaryPersonGender = "";
+      if (role && role != Role.Primary) {
+        // there should be another person - check they match
+        mergedPrimaryPersonName = mergeNameStrings(mergedGd.primaryPerson, primaryPersonName);
+        if (mergedPrimaryPersonName === undefined) {
+          continue;
+        }
+
+        mergedPrimaryPersonGender = mergeGenders(mergedGd.primaryPersonGender, primaryPersonGender);
+        if (mergedPrimaryPersonGender === undefined) {
+          continue;
+        }
+      }
+
       let mergedMmn = mergeSimpleStrings(mergedGd.mothersMaidenName, mothersMaidenName);
       if (mergedMmn === undefined && priorFact.narrativeFieldsUsed.mmn) {
         continue;
@@ -827,6 +865,13 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       mergedGd.setBirthDate(mergedBirthDate);
       mergedGd.setDeathDate(mergedDeathDate);
       mergedGd.registrationDistrict = mergedDistrict;
+
+      if (mergedPrimaryPersonName) {
+        mergedGd.primaryPerson = mergedPrimaryPersonName;
+        if (mergedPrimaryPersonGender) {
+          mergedGd.primaryPersonGender = mergedPrimaryPersonGender;
+        }
+      }
 
       priorFact.sources.push(source);
       merged = true;
