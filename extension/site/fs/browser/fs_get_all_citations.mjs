@@ -645,7 +645,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     }
 
     // check mother
-    let motherResult = checkParent(parentsA.father, parentsB.father);
+    let motherResult = checkParent(parentsA.mother, parentsB.mother);
     if (motherResult === undefined) {
       result.rejected = true;
       return result;
