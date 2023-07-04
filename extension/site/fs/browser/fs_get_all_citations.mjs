@@ -139,6 +139,28 @@ function inferBestEventDateForCompare(gd) {
 }
 
 function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
+  let recordTypeSortPriority = {};
+  recordTypeSortPriority[RT.Birth] = 1;
+  recordTypeSortPriority[RT.Baptism] = 3;
+
+  recordTypeSortPriority[RT.Census] = 50;
+
+  recordTypeSortPriority[RT.Death] = 90;
+  recordTypeSortPriority[RT.Burial] = 93;
+  recordTypeSortPriority[RT.Will] = 94;
+  recordTypeSortPriority[RT.Probate] = 95;
+
+  function getEventPriority(source) {
+    let priority = 50;
+    if (source.generalizedData) {
+      let rtPriority = recordTypeSortPriority[source.generalizedData.recordType];
+      if (rtPriority) {
+        priority = rtPriority;
+      }
+    }
+    return priority;
+  }
+
   function compareFunction(a, b) {
     let eventDateA = "";
     if (a.generalizedData) {
@@ -164,7 +186,14 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
     }
 
     if (eventDateA && eventDateB) {
-      return WTS_Date.compareDateStrings(eventDateA, eventDateB);
+      let result = WTS_Date.compareDateStrings(eventDateA, eventDateB);
+      if (result == 0) {
+        // dates are equal, sort by record type
+        let priorityA = getEventPriority(a);
+        let priorityB = getEventPriority(b);
+        result = priorityB - priorityA;
+      }
+      return result;
     }
 
     // if one has a date and the other doesn't then the one with the date comes first
