@@ -1332,7 +1332,8 @@ async function addMergeEditFromCitationObjectMenuItem(menu, data, tabId, backFun
       menu,
       menuText,
       function (element) {
-        mergeEditFromPersonData(data, citationObject.extractedData, gd, citationObject, tabId, backFunction);
+        let personData = { extractedData: citationObject.extractedData, generalizedData: gd };
+        mergeEditFromPersonData(data, personData, citationObject, tabId, backFunction);
       },
       subtitleText
     );
