@@ -1731,6 +1731,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "Muster Date",
           "Military Date",
           "Residence Date",
+          "Embarkation",
         ],
         "date"
       )
@@ -1957,6 +1958,7 @@ function generalizeDataGivenRecordType(ed, result) {
         "Publication Year",
         "Enlistment Year",
         "Residence Year",
+        "Electoral Year",
       ])
     );
     let eventPlace = getCleanValueForRecordDataList(ed, [
