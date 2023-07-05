@@ -133,6 +133,26 @@ function inferBestEventDateForCompare(gd) {
         eventDate = collection.dates.exactDate;
       }
     }
+
+    if (!eventDate) {
+      if (gd.recordType == RT.Burial) {
+        // The burial date will be after the death date, we are not currently considering
+        // date qualifiers in sorting though
+        if (!gd.role || gd.role == Role.Primary) {
+          let deathDate = gd.inferDeathDate();
+          if (deathDate) {
+            eventDate = deathDate;
+          }
+        } else {
+          if (gd.primaryPersonDeathDate) {
+            let deathDate = gd.primaryPersonDeathDate.getDateString();
+            if (deathDate) {
+              eventDate = deathDate;
+            }
+          }
+        }
+      }
+    }
   }
 
   return eventDate;

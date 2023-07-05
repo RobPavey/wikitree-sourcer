@@ -1155,8 +1155,10 @@ class NarrativeBuilder {
 
     if (gd.role && gd.role == Role.Parent) {
       this.narrative += this.getPossessiveNamePlusChild();
+      deathDate = gd.primaryPersonDeathDate;
     } else if (gd.role && gd.role == Role.Spouse) {
       this.narrative += this.getPossessiveNamePlusSpouse();
+      deathDate = gd.primaryPersonDeathDate;
     } else {
       this.narrative += this.getPersonNameOrPronoun();
     }

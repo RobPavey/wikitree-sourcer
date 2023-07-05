@@ -1,0 +1,870 @@
+{
+  "id" : "r_174768961420",
+  "lang" : "de",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:41GQ-QXYZ?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:41GQ-QXYZ?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:41GQ-QXYZ"
+    }
+  },
+  "description" : "#sd_p_295476406016",
+  "persons" : [ {
+    "id" : "p_295476406014",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "4c8833a6-a891-4c85-a63d-3f0d59c8638c",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "982af49c-6ff0-4432-88a4-d1ebbe73cc57",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1652065324973
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6FCF-2JP5?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/41GQ-QXYZ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JP5" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Franciscus Sobczak",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Franciscus",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "b38d6ce8-9295-4b3d-b182-bece924a0b06",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Franciscus"
+            }, {
+              "id" : "e23292fc-6d3c-4e73-ba99-6c6a41eca682",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1652065324963
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Franciscus"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Sobczak",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "3683044f-d1cf-44d4-985e-41a6eb7f9b3b",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Sobczak"
+            }, {
+              "id" : "86f61282-69a9-42b5-af77-1825cc617460",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1652065324963
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Sobczak"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1652065324957
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Franciscus Sobczak"
+          }, {
+            "id" : "fe549677-f580-43c0-bcae-53baf67cb106",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1652065324963
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Franciscus Sobczak"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Burial",
+      "place" : {
+        "original" : "Posen, Preußen, Deutschland",
+        "description" : "#place_447071",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "dfd5eac8-5baa-41b8-afe7-bf3c16ae8008",
+            "confidence" : "http://confidence/1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1652065324998
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Posen, Preußen, Deutschland",
+            "resource" : "https://www.familysearch.org/platform/places/description/447071"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "9d3b25f2-901f-4029-8a29-911d42314f56",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Burial"
+        }, {
+          "id" : "cc2291d5-b1a0-4116-9bc4-825634056bd1",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Burial"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "30 Mar 1858",
+        "formal" : "+1858-03-30",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1652065324957
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_DATE_ORIG",
+            "text" : "30 Mar 1858"
+          }, {
+            "id" : "bf74d469-b12f-496d-b6c7-82b686728f0f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1652065324957
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_DATE",
+            "text" : "30 Mar 1858",
+            "resource" : "+1858-03-30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "70581add-d2e5-4373-bcfc-9a4c7290ada5",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_MONTH_ORIG",
+            "text" : "Mar"
+          }, {
+            "id" : "7d69d792-90e3-4902-a477-570d5fdeade8",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1652065324957
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_MONTH",
+            "text" : "3"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "1c7f1348-e63e-4b63-b562-b71e876bcf1d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_DAY_ORIG",
+            "text" : "30"
+          }, {
+            "id" : "34e3c925-15d7-4516-a4e6-55fdad777270",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1652065324957
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_DAY",
+            "text" : "30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "fc45b2de-0f1c-4c25-a989-f7ffeb20df2c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_YEAR_ORIG",
+            "text" : "1858"
+          }, {
+            "id" : "1da35c03-9106-437e-9b32-3652bea60f5c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1652065324957
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_YEAR",
+            "text" : "1858"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "1858",
+        "formal" : "+1858",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "452853ad-17e6-44a5-97af-d19667e751b3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/EstBirthYearTreatment/ver/2"
+              },
+              "modified" : 1652065324977
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1858",
+            "resource" : "+1858"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "44eace32-ff55-4f16-8073-e1df57c23e20",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "0"
+      }, {
+        "id" : "887c6643-2b0e-444f-80da-ac61c5a2e145",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1652065324973
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "0",
+        "resource" : "P0D"
+      } ]
+    } ]
+  }, {
+    "id" : "p_295476406016",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "39c82e4b-b901-439a-aabd-4b9e30ffd3cb",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1652065324973
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6FCF-2JPT?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/41GQ-QXYZ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPT" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Casimirus Sobczak",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Casimirus",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "f49e2a92-5e89-42cc-95c0-a3c61118093f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Casimirus"
+            }, {
+              "id" : "eb25c7a7-bb95-4ce9-93b3-f6c8634de0be",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1652065324967
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Casimirus"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Sobczak",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "ddc14bbb-f41e-44e8-a393-18c168702a01",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Sobczak"
+            }, {
+              "id" : "d8f0fa94-a914-4db1-b3ab-08d8befb62da",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1652065324967
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Sobczak"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1652065324963
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "Casimirus Sobczak"
+          }, {
+            "id" : "4c1a8f89-b7d1-4ca1-8f6e-d8218eb5b84f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1652065324967
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Casimirus Sobczak"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_295476406017",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "d6eaabf4-bdab-4860-8196-ac45efe00afd",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1652065324973
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6FCF-2JPY?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/41GQ-QXYZ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPY" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Michalina Smaczask",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Michalina",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "d052e374-0f8c-414b-b0e9-cba547efadfc",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Michalina"
+            }, {
+              "id" : "08545e04-04ed-476c-87be-5bf123920db6",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1652065324972
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Michalina"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Smaczask",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "634e74f9-207c-471c-8a3d-397f4dfe555c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Smaczask"
+            }, {
+              "id" : "7e1b1feb-ff97-4b32-a095-bd242a0a9498",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1652065324972
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Smaczask"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1652065324967
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "Michalina Smaczask"
+          }, {
+            "id" : "0e13ffec-54cb-4637-a3af-06d9e25c3a61",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1652065324972
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Michalina Smaczask"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/P84T-CJNZ",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_295476406016",
+      "resourceId" : "p_295476406016"
+    },
+    "person2" : {
+      "resource" : "#p_295476406014",
+      "resourceId" : "p_295476406014"
+    }
+  }, {
+    "id" : "MM9.1.6/P84T-CJN8",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_295476406017",
+      "resourceId" : "p_295476406017"
+    },
+    "person2" : {
+      "resource" : "#p_295476406014",
+      "resourceId" : "p_295476406014"
+    }
+  }, {
+    "id" : "MM9.1.6/P84T-CJND",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_295476406016",
+      "resourceId" : "p_295476406016"
+    },
+    "person2" : {
+      "resource" : "#p_295476406017",
+      "resourceId" : "p_295476406017"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_4116415",
+    "about" : "https://www.familysearch.org/platform/records/collections/4116415",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1651069448993,
+    "modified" : 1660726645708,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Posen, Prussia, Germany",
+        "description" : "#place_1927074-5197775-1927953"
+      },
+      "temporal" : {
+        "original" : "1430/1998",
+        "formal" : "1430/1998"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/4116415" ]
+    }
+  }, {
+    "id" : "src_r_174768961420",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:41GQ-QXYZ",
+    "componentOf" : {
+      "description" : "#sd_c_4116415"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1652065325009,
+    "modified" : 1660726645708,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Posen, Preußen, Deutschland",
+        "description" : "#place_447071"
+      },
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "citations" : [ {
+      "value" : "\"Deutschland, Preußen, Posen, Katholische und Lutherisch Kirchenbücher, 1430-1998\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:41GQ-QXYZ : 10 May 2022), Entry for Franciscus Sobczak, ."
+    } ],
+    "sources" : [ {
+      "description" : "#sd2",
+      "descriptionId" : "sd2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Franciscus Sobczak, \"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/15000975948601" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:41GQ-QXYZ" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/4116415?arkName=1:2:41GQ-QXYZ"
+    }
+  }, {
+    "id" : "sd_p_295476406014",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JP5",
+    "componentOf" : {
+      "description" : "#src_r_174768961420"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Deutschland, Preußen, Posen, Katholische und Lutherisch Kirchenbücher, 1430-1998\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6FCF-2JP5 : 10 May 2022), Franciscus Sobczak, ."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Franciscus Sobczak, \"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JP5" ]
+    }
+  }, {
+    "id" : "sd_p_295476406016",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPT",
+    "componentOf" : {
+      "description" : "#src_r_174768961420"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Deutschland, Preußen, Posen, Katholische und Lutherisch Kirchenbücher, 1430-1998\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPT : 10 May 2022), Casimirus Sobczak in entry for Franciscus Sobczak, ."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Casimirus Sobczak in entry for Franciscus Sobczak, \"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPT" ]
+    }
+  }, {
+    "id" : "sd_p_295476406017",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPY",
+    "componentOf" : {
+      "description" : "#src_r_174768961420"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Deutschland, Preußen, Posen, Katholische und Lutherisch Kirchenbücher, 1430-1998\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPY : 10 May 2022), Michalina Smaczask in entry for Franciscus Sobczak, ."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Michalina Smaczask in entry for Franciscus Sobczak, \"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPY" ]
+    }
+  }, {
+    "id" : "sd2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSXN-XK4F?cc=4116415",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSXN-XK4F?cc=4116415" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/4116415?arkName=3:1:3Q9M-CSXN-XK4F"
+    }
+  } ],
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/447071",
+      "resourceId" : "place_447071"
+    }
+  }, {
+    "id" : "place_1927074-5197775-1927953",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1927953?context=1927074-5197775" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "cf347d36-34a0-4dc0-b083-e03f50030e36",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Posen, Germany"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "b0a1ed21-f8dd-4e45-86fc-eda14dd4e72d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "4116415"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "86b95f31-492e-47f1-9bb3-d2458025f391",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "008021113"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNumber",
+    "values" : [ {
+      "id" : "160b9ff6-8faf-45e0-9d14-1f973ed39235",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "00079"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "7c31efaf-0a2f-42fd-995e-ad371f729416",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "17c45390-dba3-4008-80ec-13dcdcbd8081",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "19-1733"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "2d5a55c6-7b8c-4012-9734-be1268f52f01",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "19-1733; 2022-04-20T13:27:49-0600; cartertp; 9252; TB; work.tmp_ck_4116415_19_1733_2; Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998 - Vendor DataPrep"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "id" : "005be56e-b0b6-493b-ad23-2d6007d58dab",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "0"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "3c6e2500-9fa1-4b12-b111-65fd2b1fb071",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998 - Vendor DataPrep"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "af47fbfa-6019-4b8d-a0a6-4d2fc01fd0eb",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "15000975948601"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+    "values" : [ {
+      "id" : "3730db28-aea5-4dc5-bd30-f25893cf5a18",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_PAGE_NBR_ORIG",
+      "text" : "18"
+    }, {
+      "id" : "dc0015f3-2587-4c0b-976b-0869165d67ac",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_PAGE_NBR",
+      "text" : "18"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageApid",
+    "values" : [ {
+      "id" : "145467c1-4d6c-4d0a-b7ae-365cc9055e2a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_APID",
+      "text" : "TH-909-67094-17325-61"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageArk",
+    "values" : [ {
+      "id" : "f75ef54d-0758-4d63-b31b-131fc11cc652",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "IMAGE_ARK",
+      "text" : "https://familysearch.org/ark:/61903/3:1:3Q9M-CSXN-XK4F"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "cd250bb9-0bbc-42f0-b41b-817c4de288b8",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1652065324998
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000008021113_00079_00000_0000174768961420"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "68405"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

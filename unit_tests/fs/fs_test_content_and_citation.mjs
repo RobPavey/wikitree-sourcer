@@ -141,6 +141,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:N1N6-6JS?from=lynx1UIV8&treeref=MMVG-Z3H",
   },
   {
+    caseName: "germany_child_burial_1858_casimirus_sobczak",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPT",
+  },
+  {
     caseName: "handford-3_death_reg",
     url: "https://www.familysearch.org/ark:/61903/1:1:2N1J-673",
   },

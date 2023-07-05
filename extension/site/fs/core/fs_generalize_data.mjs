@@ -937,6 +937,20 @@ function generalizeData(input) {
 
   let eventPlace = selectPlace(ed.eventPlace, ed.eventPlaceOriginal);
 
+  if (result.role && result.role != Role.Primary) {
+    if (result.recordType == RT.Burial) {
+      let deathDate = selectDate(ed.relatedPersonDeathDate, ed.relatedPersonDeathDateOriginal);
+      let deathYear = ed.relatedPersonDeathYear;
+      result.setPrimaryPersonDeathDate(deathDate);
+      result.setPrimaryPersonDeathYear(deathYear);
+    } else if (result.recordType == RT.Baptism) {
+      let birthDate = selectDate(ed.relatedPersonBirthDate, ed.relatedPersonBirthDateOriginal);
+      let birthYear = ed.relatedPersonBirthYear;
+      result.setPrimaryPersonBirthDate(birthDate);
+      result.setPrimaryPersonBirthYear(birthYear);
+    }
+  }
+
   if (!eventPlace) {
     // sometimes the event place info is in other fields
     eventPlace = "";

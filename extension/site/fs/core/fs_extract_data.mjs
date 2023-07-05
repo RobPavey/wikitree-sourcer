@@ -2689,7 +2689,7 @@ function extractDataFromFetch(document, dataObjects, fetchType, options) {
   let relationships = dataObj.relationships;
   if (relationships) {
     let personIdWithRelatedFact2 = undefined;
-    // go through thelist one looking for relationships with facts
+    // go through the list one looking for relationships with facts
     // we need to do this before looking at the relationships with no facts since we need the
     // factType to process those.
     for (let relationship of relationships) {
@@ -2897,6 +2897,26 @@ function extractDataFromFetch(document, dataObjects, fetchType, options) {
                       } else if (part.type.endsWith("Surname")) {
                         result.relatedPersonSpouseSurname = part.value;
                       }
+                    }
+                  }
+                }
+              }
+            }
+
+            // If we could not get an event date we may be able to get a birth or death date
+            // from this related person. For example if this record is a child burial with no burial
+            // date for the child but does have a death dae for the child.
+            if (!result.eventDate && !result.eventDateOriginal) {
+              if (otherPerson.facts) {
+                for (let fact of otherPerson.facts) {
+                  if (fact.type) {
+                    let factType = getFactType(fact);
+                    if (factType == "Birth") {
+                      setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE", result, "relatedPersonBirthDate");
+                      setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR", result, "relatedPersonBirthYear");
+                    } else if (factType == "Death") {
+                      setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE", result, "relatedPersonDeathDate");
+                      setFieldFromDate(fact.date, "/Year", "PR_DEA_YEAR", result, "relatedPersonDeathYear");
                     }
                   }
                 }

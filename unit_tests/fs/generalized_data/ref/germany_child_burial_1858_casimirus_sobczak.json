@@ -1,0 +1,24 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": "Franciscus Sobczak",
+  "primaryPersonGender": "male",
+  "recordType": "Burial",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Casimirus Sobczak"
+  },
+  "primaryPersonDeathDate": {
+    "dateString": "30 Mar 1858",
+    "yearString": "1858"
+  },
+  "eventPlace": {
+    "placeString": "Posen, Preußen, Deutschland"
+  },
+  "collectionData": {
+    "id": "4116415",
+    "page": "18"
+  },
+  "hasValidData": true
+}

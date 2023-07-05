@@ -1203,6 +1203,10 @@ class GeneralizedData {
     // personGender: a lowerface string, either "male", "female" or not defined
     // parents: an object with father and mother fields
     // spouses: an array of objects
+    // primaryPerson
+    // primaryPersonGender
+    // primaryPersonBirthDate
+    // primaryPersonDeathDate
   }
 
   static createFromPlainObject(obj) {
@@ -1213,7 +1217,13 @@ class GeneralizedData {
     let classObj = new GeneralizedData();
     const keys = Object.keys(obj);
     for (let key of keys) {
-      if (key == "eventDate" || key == "birthDate" || key == "deathDate") {
+      if (
+        key == "eventDate" ||
+        key == "birthDate" ||
+        key == "deathDate" ||
+        key == "primaryPersonBirthDate" ||
+        key == "primaryPersonDeathDate"
+      ) {
         classObj[key] = WtsDate.createFromPlainObject(obj[key]);
       } else if (key == "name") {
         classObj[key] = WtsName.createFromPlainObject(obj[key]);
@@ -1465,6 +1475,46 @@ class GeneralizedData {
     if (this.isUsableDateString(string)) {
       this.createDeathDateIfNeeded();
       this.deathDate.setDateAndQualifierFromString(string, true);
+    }
+  }
+
+  createPrimaryPersonBirthDateIfNeeded() {
+    if (!this.primaryPersonBirthDate) {
+      this.primaryPersonBirthDate = new WtsDate();
+    }
+  }
+
+  setPrimaryPersonBirthDate(string) {
+    if (this.isUsableDateString(string)) {
+      this.createPrimaryPersonBirthDateIfNeeded();
+      this.primaryPersonBirthDate.setDateAndQualifierFromString(string);
+    }
+  }
+
+  setPrimaryPersonBirthYear(string) {
+    if (this.isUsableDateString(string)) {
+      this.createPrimaryPersonBirthDateIfNeeded();
+      this.primaryPersonBirthDate.setDateAndQualifierFromString(string, true);
+    }
+  }
+
+  createPrimaryPersonDeathDateIfNeeded() {
+    if (!this.primaryPersonDeathDate) {
+      this.primaryPersonDeathDate = new WtsDate();
+    }
+  }
+
+  setPrimaryPersonDeathDate(string) {
+    if (this.isUsableDateString(string)) {
+      this.createPrimaryPersonDeathDateIfNeeded();
+      this.primaryPersonDeathDate.setDateAndQualifierFromString(string);
+    }
+  }
+
+  setPrimaryPersonDeathYear(string) {
+    if (this.isUsableDateString(string)) {
+      this.createPrimaryPersonDeathDateIfNeeded();
+      this.primaryPersonDeathDate.setDateAndQualifierFromString(string, true);
     }
   }
 
