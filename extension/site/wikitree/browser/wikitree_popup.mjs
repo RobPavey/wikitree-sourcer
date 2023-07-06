@@ -390,8 +390,16 @@ function getProfileLinkForAddMerge(personEd, personGd) {
     } else if (personGd.sourceOfData == "fs") {
       // https://www.familysearch.org/tree/person/details/L5ZC-N31
       // {{FamilySearch|L5ZC-N31}}
-      const treePrefix = "/tree/person/details/";
+      let treePrefix = "/tree/person/details/";
       let treePrefixIndex = url.indexOf(treePrefix);
+      if (treePrefixIndex == -1) {
+        treePrefix = "/tree/person/sources/";
+        treePrefixIndex = url.indexOf(treePrefix);
+      }
+      if (treePrefixIndex == -1) {
+        treePrefix = "/tree/person/vitals/";
+        treePrefixIndex = url.indexOf(treePrefix);
+      }
       if (treePrefixIndex != -1) {
         let treeIndex = treePrefixIndex + treePrefix.length;
         let endIndex = url.indexOf("/", treeIndex);
@@ -404,7 +412,7 @@ function getProfileLinkForAddMerge(personEd, personGd) {
         let personId = url.substring(treeIndex, endIndex);
         linkString = "{{FamilySearch|" + personId + "}}";
       } else {
-        linkString = "[" + url + "FamilySearch profile]";
+        linkString = "[" + url + " FamilySearch profile]";
       }
     } else if (personGd.sourceOfData == "fmp") {
       // Currently we only support pages like this:

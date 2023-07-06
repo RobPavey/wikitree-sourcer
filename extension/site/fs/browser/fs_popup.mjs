@@ -142,8 +142,16 @@ async function fsBuildPersonTemplate(data) {
   let ed = data.extractedData;
   let url = ed.url;
   if (url) {
-    const treePrefix = "/tree/person/details/";
+    let treePrefix = "/tree/person/details/";
     let treePrefixIndex = url.indexOf(treePrefix);
+    if (treePrefixIndex == -1) {
+      treePrefix = "/tree/person/sources/";
+      treePrefixIndex = url.indexOf(treePrefix);
+    }
+    if (treePrefixIndex == -1) {
+      treePrefix = "/tree/person/vitals/";
+      treePrefixIndex = url.indexOf(treePrefix);
+    }
     if (treePrefixIndex != -1) {
       let treeIndex = treePrefixIndex + treePrefix.length;
       let endIndex = url.indexOf("/", treeIndex);
