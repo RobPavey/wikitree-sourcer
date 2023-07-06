@@ -171,7 +171,7 @@ async function fsGetAllCitationsAction(data) {
     if (response.success) {
       //console.log("fsGetAllCitationsAction, response is");
       //console.log(response);
-      //keepPopupOpenForDebug();
+      keepPopupOpenForDebug();
 
       if (response.citationsString) {
         let message = response.citationCount + " citations";

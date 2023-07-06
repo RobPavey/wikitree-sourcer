@@ -1,13 +1,21 @@
 {
   "sourceType": "record",
   "role": "Parent",
-  "primaryPerson": "Ethel D Blackshear",
-  "primaryPersonGender": "female",
+  "primaryPerson": {
+    "name": {
+      "name": "Ethel D Blackshear",
+      "lastName": "Blackshear",
+      "forenames": "Ethel D"
+    },
+    "gender": "female"
+  },
   "recordType": "MarriageRegistration",
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Sally Knight"
+    "name": "Sally Knight",
+    "lastName": "Knight",
+    "forenames": "Sally"
   },
   "eventPlace": {
     "placeString": "Wayne, Indiana, United States"

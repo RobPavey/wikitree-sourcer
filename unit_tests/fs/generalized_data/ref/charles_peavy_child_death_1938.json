@@ -1,13 +1,21 @@
 {
   "sourceType": "record",
   "role": "Parent",
-  "primaryPerson": "Charles Homer Peavy",
-  "primaryPersonGender": "male",
+  "primaryPerson": {
+    "name": {
+      "name": "Charles Homer Peavy",
+      "lastName": "Peavy",
+      "forenames": "Charles Homer"
+    },
+    "gender": "male"
+  },
   "recordType": "Death",
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Charles W Peavy"
+    "name": "Charles W Peavy",
+    "lastName": "Peavy",
+    "forenames": "Charles W"
   },
   "birthPlace": {
     "placeString": "Ga."

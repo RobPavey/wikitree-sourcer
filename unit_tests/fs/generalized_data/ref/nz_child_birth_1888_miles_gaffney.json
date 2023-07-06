@@ -1,12 +1,20 @@
 {
   "sourceType": "record",
   "role": "Parent",
-  "primaryPerson": "Catherine Lucy Gaffney",
+  "primaryPerson": {
+    "name": {
+      "name": "Catherine Lucy Gaffney",
+      "lastName": "Gaffney",
+      "forenames": "Catherine Lucy"
+    }
+  },
   "recordType": "BirthRegistration",
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Miles Gaffney"
+    "name": "Miles Gaffney",
+    "lastName": "Gaffney",
+    "forenames": "Miles"
   },
   "eventDate": {
     "dateString": "1888",

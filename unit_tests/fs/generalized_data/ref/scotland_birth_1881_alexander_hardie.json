@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Alexander Hardie"
+    "name": "Alexander Hardie",
+    "lastName": "Hardie",
+    "forenames": "Alexander"
   },
   "birthDate": {
     "dateString": "10 Jan 1881",

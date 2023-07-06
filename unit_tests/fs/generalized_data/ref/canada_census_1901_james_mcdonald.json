@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "James Mcdonald"
+    "name": "James Mcdonald",
+    "lastName": "Mcdonald",
+    "forenames": "James"
   },
   "birthDate": {
     "dateString": "1856",

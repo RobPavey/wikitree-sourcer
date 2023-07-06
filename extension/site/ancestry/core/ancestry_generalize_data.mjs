@@ -515,7 +515,7 @@ function determineRoleGivenRecordType(extractedData, result) {
         // ignore if Father or Mother fields
         if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
           result.role = Role.Parent;
-          result.primaryPerson = extractedData.recordData["Child"];
+          result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
         }
       }
     }
@@ -531,7 +531,7 @@ function determineRoleGivenRecordType(extractedData, result) {
     if (!value) {
       if (extractedData.recordData["Child"]) {
         result.role = Role.Parent;
-        result.primaryPerson = extractedData.recordData["Child"];
+        result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
       } else if (extractedData.recordData["Spouse"]) {
         if (
           !extractedData.recordData["Death Date"] &&
@@ -541,7 +541,7 @@ function determineRoleGivenRecordType(extractedData, result) {
           !extractedData.recordData["Burial Place"]
         ) {
           result.role = Role.Spouse;
-          result.primaryPerson = extractedData.recordData["Spouse"];
+          result.setPrimaryPersonFullName(extractedData.recordData["Spouse"]);
         }
       }
     }
@@ -553,7 +553,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       if (extractedData.recordData["Child"]) {
         if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
           result.role = Role.Parent;
-          result.primaryPerson = extractedData.recordData["Child"];
+          result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
         }
       }
     }
@@ -574,11 +574,11 @@ function determineRoleGivenRecordType(extractedData, result) {
       if (extractedData.recordData["Child"]) {
         if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
           result.role = Role.Parent;
-          result.primaryPerson = extractedData.recordData["Child"];
+          result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
         }
       } else if (extractedData.recordData["Spouse"]) {
         result.role = Role.Spouse;
-        result.primaryPerson = extractedData.recordData["Spouse"];
+        result.setPrimaryPersonFullName(extractedData.recordData["Spouse"]);
       }
     } else {
       let value2 = getCleanValueForRecordDataList(extractedData, [
@@ -596,7 +596,7 @@ function determineRoleGivenRecordType(extractedData, result) {
         if (extractedData.recordData["Child"]) {
           if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
             result.role = Role.Parent;
-            result.primaryPerson = extractedData.recordData["Child"];
+            result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
           }
         }
       }
@@ -617,19 +617,19 @@ function determineRoleGivenRecordType(extractedData, result) {
       ) {
         if (extractedData.recordData["Child"]) {
           result.role = Role.Parent;
-          result.primaryPerson = extractedData.recordData["Child"];
+          result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
         } else if (extractedData.recordData["Spouse"]) {
           result.role = Role.Spouse;
-          result.primaryPerson = extractedData.recordData["Spouse"];
+          result.setPrimaryPersonFullName(extractedData.recordData["Spouse"]);
         } else if (extractedData.recordData["Father"]) {
           result.role = Role.Child;
-          result.primaryPerson = extractedData.recordData["Father"];
+          result.setPrimaryPersonFullName(extractedData.recordData["Father"]);
         } else if (extractedData.recordData["Mother"]) {
           result.role = Role.Child;
-          result.primaryPerson = extractedData.recordData["Mother"];
+          result.setPrimaryPersonFullName(extractedData.recordData["Mother"]);
         } else if (extractedData.recordData["Siblings"]) {
           result.role = Role.Sibling;
-          result.primaryPerson = extractedData.recordData["Siblings"];
+          result.setPrimaryPersonFullName(extractedData.recordData["Siblings"]);
         }
       }
     }
@@ -2434,8 +2434,9 @@ function regeneralizeDataWithLinkedRecords(input) {
           }
         }
 
-        if (generalizedData.personGender && !result.primaryPersonGender) {
-          result.primaryPersonGender = generalizedData.personGender;
+        let currentPrimaryPersonGender = result.inferPrimaryPersonGender();
+        if (generalizedData.personGender && !currentPrimaryPersonGender) {
+          result.setPrimaryPersonGender(generalizedData.personGender);
         }
 
         // For a child marriage we want to get the spouse,
@@ -2445,7 +2446,7 @@ function regeneralizeDataWithLinkedRecords(input) {
           result.spouses = generalizedData.spouses;
 
           if (generalizedData.ageAtEvent) {
-            result.primaryPersonAge = generalizedData.ageAtEvent;
+            result.setPrimaryPersonAge(generalizedData.ageAtEvent);
           }
         } else {
           // for a child birth/baptism we want to get the other parent and put that in spouses

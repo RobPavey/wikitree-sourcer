@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Teresa Carole Ann Fitchie"
+    "name": "Teresa Carole Ann Fitchie",
+    "lastName": "Fitchie",
+    "forenames": "Teresa Carole Ann"
   },
   "deathDate": {
     "dateString": "23 Jul 2002",

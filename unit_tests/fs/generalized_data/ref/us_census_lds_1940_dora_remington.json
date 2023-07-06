@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Dona Larue Remington"
+    "name": "Dona Larue Remington",
+    "lastName": "Remington",
+    "forenames": "Dona Larue"
   },
   "birthDate": {
     "dateString": "1936",

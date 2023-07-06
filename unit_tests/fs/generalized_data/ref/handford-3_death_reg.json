@@ -3,7 +3,9 @@
   "recordType": "DeathRegistration",
   "sourceOfData": "fs",
   "name": {
-    "name": "William Handford"
+    "name": "William Handford",
+    "lastName": "Handford",
+    "forenames": "William"
   },
   "birthDate": {
     "dateString": "1844",

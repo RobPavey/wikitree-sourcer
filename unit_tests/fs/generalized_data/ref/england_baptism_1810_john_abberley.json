@@ -3,7 +3,9 @@
   "recordType": "Baptism",
   "sourceOfData": "fs",
   "name": {
-    "name": "John Abberley"
+    "name": "John Abberley",
+    "lastName": "Abberley",
+    "forenames": "John"
   },
   "eventDate": {
     "dateString": "9 Dec 1810",

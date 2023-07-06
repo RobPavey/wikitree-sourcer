@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Jacob S Swartz"
+    "name": "Jacob S Swartz",
+    "lastName": "Swartz",
+    "forenames": "Jacob S"
   },
   "birthDate": {
     "dateString": "17 Jun 1868",

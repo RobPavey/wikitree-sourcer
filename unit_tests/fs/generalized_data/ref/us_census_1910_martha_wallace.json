@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Martha Wallace"
+    "name": "Martha Wallace",
+    "lastName": "Wallace",
+    "forenames": "Martha"
   },
   "birthDate": {
     "dateString": "1892",

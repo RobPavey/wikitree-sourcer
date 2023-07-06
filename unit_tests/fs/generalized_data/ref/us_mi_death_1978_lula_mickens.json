@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Lula Mickens"
+    "name": "Lula Mickens",
+    "lastName": "Mickens",
+    "forenames": "Lula"
   },
   "birthDate": {
     "dateString": "11 May 87",

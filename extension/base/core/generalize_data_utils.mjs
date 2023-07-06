@@ -1057,6 +1057,9 @@ class WtsName {
       return this.lastName;
     }
     if (this.name) {
+      if (this.forenames && this.forenames == this.name) {
+        return ""; // full name is just forenames, no last name known
+      }
       return WTS_String.getLastWord(this.name);
     }
   }
@@ -1072,6 +1075,9 @@ class WtsName {
       return WTS_String.getFirstWord(this.forenames);
     }
     if (this.name) {
+      if (this.lastName && this.lastName == this.name) {
+        return ""; // full name is just last name, no forenames known
+      }
       return WTS_String.getFirstWord(this.name);
     }
   }
@@ -1114,6 +1120,10 @@ class WtsName {
       return WTS_String.getFirstWord(this.middleNames);
     }
     if (this.name) {
+      if (this.lastName && this.lastName == this.name) {
+        return ""; // full name is just last name, no forenames known
+      }
+
       return WTS_String.getMiddleWord(this.name);
     }
   }
@@ -1129,6 +1139,9 @@ class WtsName {
       return WTS_String.getWordsAfterFirstWord(this.forenames);
     }
     if (this.name) {
+      if (this.lastName && this.lastName == this.name) {
+        return ""; // full name is just last name, no forenames known
+      }
       return WTS_String.getMiddleWords(this.name);
     }
   }
@@ -1152,6 +1165,9 @@ class WtsName {
       return forenames;
     }
     if (this.name) {
+      if (this.lastName && this.lastName == this.name) {
+        return ""; // full name is just last name, no forenames known
+      }
       return WTS_String.getWordsBeforeLastWord(this.name);
     }
   }
@@ -1203,10 +1219,11 @@ class GeneralizedData {
     // personGender: a lowerface string, either "male", "female" or not defined
     // parents: an object with father and mother fields
     // spouses: an array of objects
-    // primaryPerson
-    // primaryPersonGender
-    // primaryPersonBirthDate
-    // primaryPersonDeathDate
+    // primaryPerson: used if role is not Primary
+    //    name: a WtsName object
+    //    gender
+    //    birthDate: a WtsDate object
+    //    deathDate: a WtsDate object
   }
 
   static createFromPlainObject(obj) {
@@ -1217,13 +1234,7 @@ class GeneralizedData {
     let classObj = new GeneralizedData();
     const keys = Object.keys(obj);
     for (let key of keys) {
-      if (
-        key == "eventDate" ||
-        key == "birthDate" ||
-        key == "deathDate" ||
-        key == "primaryPersonBirthDate" ||
-        key == "primaryPersonDeathDate"
-      ) {
+      if (key == "eventDate" || key == "birthDate" || key == "deathDate") {
         classObj[key] = WtsDate.createFromPlainObject(obj[key]);
       } else if (key == "name") {
         classObj[key] = WtsName.createFromPlainObject(obj[key]);
@@ -1280,6 +1291,23 @@ class GeneralizedData {
             newSpouse.age = spouse.age;
           }
           classObj[key].push(newSpouse);
+        }
+      } else if (key == "primaryPerson") {
+        classObj[key] = {};
+        if (obj.primaryPerson.name) {
+          classObj[key].name = WtsName.createFromPlainObject(obj.primaryPerson.name);
+        }
+        if (obj.primaryPerson.birthDate) {
+          classObj[key].birthDate = WtsDate.createFromPlainObject(obj.primaryPerson.birthDate);
+        }
+        if (obj.primaryPerson.deathDate) {
+          classObj[key].deathDate = WtsDate.createFromPlainObject(obj.primaryPerson.deathDate);
+        }
+        if (obj.primaryPerson.age) {
+          classObj[key].age = obj.primaryPerson.age;
+        }
+        if (obj.primaryPerson.gender) {
+          classObj[key].gender = obj.primaryPerson.gender;
         }
       } else {
         classObj[key] = obj[key];
@@ -1475,46 +1503,6 @@ class GeneralizedData {
     if (this.isUsableDateString(string)) {
       this.createDeathDateIfNeeded();
       this.deathDate.setDateAndQualifierFromString(string, true);
-    }
-  }
-
-  createPrimaryPersonBirthDateIfNeeded() {
-    if (!this.primaryPersonBirthDate) {
-      this.primaryPersonBirthDate = new WtsDate();
-    }
-  }
-
-  setPrimaryPersonBirthDate(string) {
-    if (this.isUsableDateString(string)) {
-      this.createPrimaryPersonBirthDateIfNeeded();
-      this.primaryPersonBirthDate.setDateAndQualifierFromString(string);
-    }
-  }
-
-  setPrimaryPersonBirthYear(string) {
-    if (this.isUsableDateString(string)) {
-      this.createPrimaryPersonBirthDateIfNeeded();
-      this.primaryPersonBirthDate.setDateAndQualifierFromString(string, true);
-    }
-  }
-
-  createPrimaryPersonDeathDateIfNeeded() {
-    if (!this.primaryPersonDeathDate) {
-      this.primaryPersonDeathDate = new WtsDate();
-    }
-  }
-
-  setPrimaryPersonDeathDate(string) {
-    if (this.isUsableDateString(string)) {
-      this.createPrimaryPersonDeathDateIfNeeded();
-      this.primaryPersonDeathDate.setDateAndQualifierFromString(string);
-    }
-  }
-
-  setPrimaryPersonDeathYear(string) {
-    if (this.isUsableDateString(string)) {
-      this.createPrimaryPersonDeathDateIfNeeded();
-      this.primaryPersonDeathDate.setDateAndQualifierFromString(string, true);
     }
   }
 
@@ -1888,6 +1876,92 @@ class GeneralizedData {
       }
     }
   }
+
+  createPrimaryPersonIfNeeded() {
+    if (!this.primaryPerson) {
+      this.primaryPerson = {};
+      this.primaryPerson.name = new WtsName();
+    }
+  }
+
+  setPrimaryPersonFullName(string) {
+    if (string) {
+      this.createPrimaryPersonIfNeeded();
+      this.primaryPerson.name.setFullName(string);
+    }
+  }
+
+  setPrimaryPersonLastNameAndForeNames(lastName, forenames) {
+    if (lastName) {
+      this.createPrimaryPersonIfNeeded();
+      this.primaryPerson.name.setLastName(lastName);
+    }
+    if (forenames) {
+      this.createPrimaryPersonIfNeeded();
+      this.primaryPerson.name.setForeNames(forenames);
+    }
+  }
+
+  setPrimaryPersonGender(value) {
+    value = GD.standardizeGender(value);
+    if (value) {
+      this.createPrimaryPersonIfNeeded();
+      this.primaryPerson.gender = value;
+    }
+  }
+
+  createPrimaryPersonBirthDateIfNeeded() {
+    this.createPrimaryPersonIfNeeded();
+    if (!this.primaryPerson.birthDate) {
+      this.primaryPerson.birthDate = new WtsDate();
+    }
+  }
+
+  setPrimaryPersonBirthDate(string) {
+    if (this.isUsableDateString(string)) {
+      this.createPrimaryPersonBirthDateIfNeeded();
+      this.primaryPerson.birthDate.setDateAndQualifierFromString(string);
+    }
+  }
+
+  setPrimaryPersonBirthYear(string) {
+    if (this.isUsableDateString(string)) {
+      this.createPrimaryPersonBirthDateIfNeeded();
+      this.primaryPerson.birthDate.setDateAndQualifierFromString(string, true);
+    }
+  }
+
+  createPrimaryPersonDeathDateIfNeeded() {
+    this.createPrimaryPersonIfNeeded();
+    if (!this.primaryPerson.deathDate) {
+      this.primaryPerson.deathDate = new WtsDate();
+    }
+  }
+
+  setPrimaryPersonDeathDate(string) {
+    if (this.isUsableDateString(string)) {
+      this.createPrimaryPersonDeathDateIfNeeded();
+      this.primaryPerson.deathDate.setDateAndQualifierFromString(string);
+    }
+  }
+
+  setPrimaryPersonDeathYear(string) {
+    if (this.isUsableDateString(string)) {
+      this.createPrimaryPersonDeathDateIfNeeded();
+      this.primaryPerson.deathDate.setDateAndQualifierFromString(string, true);
+    }
+  }
+
+  setPrimaryPersonAge(string) {
+    if (string) {
+      this.createPrimaryPersonIfNeeded();
+      this.primaryPerson.age = string;
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Infer functions
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   // return an array of last names
   inferPersonLastNamesArray(person) {
@@ -2733,41 +2807,34 @@ class GeneralizedData {
   getRelationshipOfPrimaryPersonToThisPerson() {
     let relationship = "";
     if (this.role) {
+      let primaryPersonGender = this.inferPrimaryPersonGender();
       if (this.role == Role.Parent) {
         relationship = "child";
-        if (this.primaryPersonGender) {
-          if (this.primaryPersonGender == "male") {
-            relationship = "son";
-          } else if (this.primaryPersonGender == "female") {
-            relationship = "daughter";
-          }
+        if (primaryPersonGender == "male") {
+          relationship = "son";
+        } else if (primaryPersonGender == "female") {
+          relationship = "daughter";
         }
       } else if (this.role == Role.Child) {
         relationship = "parent";
-        if (this.primaryPersonGender) {
-          if (this.primaryPersonGender == "male") {
-            relationship = "father";
-          } else if (this.primaryPersonGender == "female") {
-            relationship = "mother";
-          }
+        if (primaryPersonGender == "male") {
+          relationship = "father";
+        } else if (primaryPersonGender == "female") {
+          relationship = "mother";
         }
       } else if (this.role == Role.Spouse) {
         relationship = "spouse";
-        if (this.primaryPersonGender) {
-          if (this.primaryPersonGender == "male") {
-            relationship = "husband";
-          } else if (this.primaryPersonGender == "female") {
-            relationship = "wife";
-          }
+        if (primaryPersonGender == "male") {
+          relationship = "husband";
+        } else if (primaryPersonGender == "female") {
+          relationship = "wife";
         }
       } else if (this.role == Role.Sibling) {
         relationship = "sibling";
-        if (this.primaryPersonGender) {
-          if (this.primaryPersonGender == "male") {
-            relationship = "brother";
-          } else if (this.primaryPersonGender == "female") {
-            relationship = "sister";
-          }
+        if (primaryPersonGender == "male") {
+          relationship = "brother";
+        } else if (primaryPersonGender == "female") {
+          relationship = "sister";
         }
       }
     }
@@ -3065,8 +3132,9 @@ class GeneralizedData {
       }
 
       refTitle += " of " + relationship;
-      if (this.primaryPerson) {
-        refTitle += " " + this.primaryPerson;
+      let primaryPersonName = this.inferPrimaryPersonFullName();
+      if (primaryPersonName) {
+        refTitle += " " + primaryPersonName;
       }
     }
 
@@ -3392,6 +3460,66 @@ class GeneralizedData {
     }
 
     return range;
+  }
+
+  inferPrimaryPersonFullName() {
+    let fullName = "";
+
+    if (this.primaryPerson && this.primaryPerson.name) {
+      fullName = this.primaryPerson.name.inferFullName();
+    }
+
+    return fullName;
+  }
+
+  inferPrimaryPersonGender() {
+    let gender = "";
+
+    if (this.primaryPerson && this.primaryPerson.gender) {
+      gender = this.primaryPerson.gender;
+    }
+
+    return gender;
+  }
+
+  inferPrimaryPersonBirthDate() {
+    let date = "";
+    if (this.primaryPerson && this.primaryPerson.birthDate) {
+      date = this.primaryPerson.birthDate.getDateString();
+    }
+    return date;
+  }
+
+  inferPrimaryPersonBirthDateObj() {
+    let date = undefined;
+    if (this.primaryPerson && this.primaryPerson.birthDate) {
+      date = this.primaryPerson.birthDate;
+    }
+    return date;
+  }
+
+  inferPrimaryPersonDeathDate() {
+    let date = "";
+    if (this.primaryPerson && this.primaryPerson.deathDate) {
+      date = this.primaryPerson.deathDate.getDateString();
+    }
+    return date;
+  }
+
+  inferPrimaryPersonDeathDateObj() {
+    let date = undefined;
+    if (this.primaryPerson && this.primaryPerson.deathDate) {
+      date = this.primaryPerson.deathDate;
+    }
+    return date;
+  }
+
+  inferPrimaryPersonAge() {
+    let age = "";
+    if (this.primaryPerson && this.primaryPerson.age) {
+      age = this.primaryPerson.age;
+    }
+    return age;
   }
 
   didPersonLiveInCountryList(searchCountryArray) {

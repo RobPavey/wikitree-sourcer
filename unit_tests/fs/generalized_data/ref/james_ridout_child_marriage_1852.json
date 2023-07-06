@@ -1,13 +1,21 @@
 {
   "sourceType": "record",
   "role": "Parent",
-  "primaryPerson": "James Ridout",
-  "primaryPersonGender": "male",
+  "primaryPerson": {
+    "name": {
+      "name": "James Ridout",
+      "lastName": "Ridout",
+      "forenames": "James"
+    },
+    "gender": "male"
+  },
   "recordType": "Marriage",
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "James Ridout"
+    "name": "James Ridout",
+    "lastName": "Ridout",
+    "forenames": "James"
   },
   "eventDate": {
     "dateString": "24 Sep 1852",

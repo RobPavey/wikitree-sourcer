@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Linnea Schei"
+    "name": "Linnea Schei",
+    "lastName": "Schei",
+    "forenames": "Linnea"
   },
   "birthDate": {
     "dateString": "1908",

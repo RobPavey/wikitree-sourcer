@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Edward Digby Baltzell"
+    "name": "Edward Digby Baltzell",
+    "lastName": "Baltzell",
+    "forenames": "Edward Digby"
   },
   "birthDate": {
     "dateString": "27 Aug 1885",

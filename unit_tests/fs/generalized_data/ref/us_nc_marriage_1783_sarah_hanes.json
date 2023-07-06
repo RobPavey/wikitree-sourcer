@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Sarah Hanes"
+    "name": "Sarah Hanes",
+    "lastName": "Hanes",
+    "forenames": "Sarah"
   },
   "eventDate": {
     "dateString": "1783",

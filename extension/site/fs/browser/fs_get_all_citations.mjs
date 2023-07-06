@@ -144,8 +144,8 @@ function inferBestEventDateForCompare(gd) {
             eventDate = deathDate;
           }
         } else {
-          if (gd.primaryPersonDeathDate) {
-            let deathDate = gd.primaryPersonDeathDate.getDateString();
+          if (gd.inferPrimaryPersonDeathDate()) {
+            let deathDate = gd.inferPrimaryPersonDeathDate();
             if (deathDate) {
               eventDate = deathDate;
             }
@@ -211,7 +211,7 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
         // dates are equal, sort by record type
         let priorityA = getEventPriority(a);
         let priorityB = getEventPriority(b);
-        result = priorityB - priorityA;
+        result = priorityA - priorityB;
       }
       return result;
     }
@@ -375,8 +375,44 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       }
     }
 
-    let firstNamesMatch = nameObjA.inferFirstName() == nameObjB.inferFirstName();
-    let lastNamesMatch = nameObjA.inferLastName() == nameObjB.inferLastName;
+    let firstNameA = nameObjA.inferFirstName();
+    let firstNameB = nameObjB.inferFirstName();
+    let firstNamesMatch = true; // if no first name it is a match
+    let matchingFirstName = "";
+    if (firstNameA) {
+      matchingFirstName = firstNameA;
+      if (firstNameB) {
+        firstNamesMatch = firstNameA == firstNameB;
+      }
+    } else {
+      matchingFirstName = firstNameB;
+    }
+    if (firstNamesMatch) {
+      matchingFirstName = "";
+    }
+
+    let lastNameA = nameObjA.inferLastName();
+    let lastNameB = nameObjB.inferLastName();
+    let lastNamesMatch = true; // if no last name it is a match
+    let matchingLastName = "";
+    if (lastNameA) {
+      matchingLastName = lastNameA;
+      if (lastNameB) {
+        lastNamesMatch = lastNameA == lastNameB;
+      }
+    } else {
+      matchingLastName = lastNameB;
+    }
+    if (lastNamesMatch) {
+      matchingLastName = "";
+    }
+
+    // debug
+    console.log("mergeNames: nameA = " + fullNameA + ", nameB = " + fullNameB);
+    console.log(nameObjA);
+    console.log(nameObjB);
+    console.log("firstNameA = " + firstNameA + ", firstNameB = " + firstNameB + ", match = " + firstNamesMatch);
+    console.log("lastNameA = " + lastNameA + ", lastNameB = " + lastNameB + ", match = " + lastNamesMatch);
 
     if (firstNamesMatch && lastNamesMatch) {
       let middleNamesA = nameObjA.inferMiddleNames();
@@ -401,9 +437,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     let nameBRemainder = fullNameB;
 
     if (lastNamesMatch) {
-      let lastNameLength = nameObjA.inferLastName().length;
-      nameARemainder = nameARemainder.substring(0, nameARemainder.length - lastNameLength);
-      nameBRemainder = nameBRemainder.substring(0, nameBRemainder.length - lastNameLength);
+      nameARemainder = nameARemainder.substring(0, nameARemainder.length - lastNameA.length);
+      nameBRemainder = nameBRemainder.substring(0, nameBRemainder.length - lastNameB.ength);
     } else if (/^.+ \w+ or \w+$/.test(fullNameA)) {
       let lastNameA1 = fullNameA.replace(/^.+ (\w+) or \w+$/, "$1");
       let lastNameA2 = fullNameA.replace(/^.+ \w+ or (\w+)$/, "$1");
@@ -485,13 +520,11 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
 
     let mergedFirstName = "";
     if (firstNamesMatch) {
-      // this could be enhanced to handle altername first names
-      let firstName = nameObjA.inferFirstName();
+      // this could be enhanced to handle alternate first names
+      nameARemainder = nameARemainder.substring(firstNameA.length);
+      nameBRemainder = nameBRemainder.substring(firstNameB.length);
 
-      nameARemainder = nameARemainder.substring(firstName.length);
-      nameBRemainder = nameBRemainder.substring(firstName.length);
-
-      mergedFirstName = firstName;
+      mergedFirstName = matchingFirstName;
     }
 
     if (firstNamesMatch && lastNamesMatch) {
@@ -502,46 +535,36 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
           if (nameARemainder == nameBRemainder) {
             let name = new WtsName();
             name.name = mergedFirstName + " " + nameARemainder + " " + mergedLastName;
+            name.firstName = mergedFirstName;
+            name.middleNames = nameARemainder;
+            name.lastName = mergedLastName;
             return name;
           }
         } else {
           let name = new WtsName();
           name.name = mergedFirstName + " " + nameARemainder + " " + mergedLastName;
+          name.firstName = mergedFirstName;
+          name.middleNames = nameARemainder;
+          name.lastName = mergedLastName;
           return name;
         }
       } else if (nameBRemainder) {
         let name = new WtsName();
         name.name = mergedFirstName + " " + nameBRemainder + " " + mergedLastName;
+        name.firstName = mergedFirstName;
+        name.middleNames = nameBRemainder;
+        name.lastName = mergedLastName;
         return name;
       } else {
         let name = new WtsName();
         name.name = mergedFirstName + " " + mergedLastName;
+        name.firstName = mergedFirstName;
+        name.lastName = mergedLastName;
         return name;
       }
     }
 
     return undefined;
-  }
-
-  function mergeNameStrings(nameA, nameB) {
-    let nameObjA = undefined;
-    let nameObjB = undefined;
-    if (nameA) {
-      nameObjA = new WtsName();
-      nameObjA.name = nameA;
-    }
-    if (nameB) {
-      nameObjB = new WtsName();
-      nameObjB.name = nameB;
-    }
-
-    let mergedNameObj = mergeNames(nameObjA, nameObjB);
-
-    if (mergedNameObj) {
-      return mergedNameObj.name;
-    } else {
-      return undefined;
-    }
   }
 
   function mergePlaces(placeA, placeB) {
@@ -834,8 +857,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   let birthDateObj = gd.birthDate;
   let deathDateObj = gd.deathDate;
   let registrationDistrict = gd.registrationDistrict;
-  let primaryPersonName = gd.primaryPerson;
-  let primaryPersonGender = gd.primaryPersonGender;
+  let primaryPersonNameObj = gd.primaryPerson ? gd.primaryPerson.name : "";
+  let primaryPersonGender = gd.inferPrimaryPersonGender();
+  let primaryPersonBirthDate = gd.inferPrimaryPersonBirthDate();
+  let primaryPersonDeathDate = gd.inferPrimaryPersonDeathDate();
 
   for (let priorFact of result.facts) {
     if (priorFact.generalizedData) {
@@ -884,15 +909,27 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
 
       let mergedPrimaryPersonName = "";
       let mergedPrimaryPersonGender = "";
-      if (role && role != Role.Primary) {
+      let mergedPrimaryPersonBirthDate = "";
+      let mergedPrimaryPersonDeathDate = "";
+      if (role && role != Role.Primary && mergedGd.primaryPerson) {
         // there should be another person - check they match
-        mergedPrimaryPersonName = mergeNameStrings(mergedGd.primaryPerson, primaryPersonName);
+        mergedPrimaryPersonName = mergeNames(mergedGd.primaryPerson.name, primaryPersonNameObj);
         if (mergedPrimaryPersonName === undefined) {
           continue;
         }
 
-        mergedPrimaryPersonGender = mergeGenders(mergedGd.primaryPersonGender, primaryPersonGender);
+        mergedPrimaryPersonGender = mergeGenders(mergedGd.inferPrimaryPersonGender(), primaryPersonGender);
         if (mergedPrimaryPersonGender === undefined) {
+          continue;
+        }
+
+        mergedPrimaryPersonBirthDate = mergeDates(mergedGd.inferPrimaryPersonBirthDate(), primaryPersonBirthDate);
+        if (mergedPrimaryPersonBirthDate == "nomatch") {
+          continue;
+        }
+
+        mergedPrimaryPersonDeathDate = mergeDates(mergedGd.inferPrimaryPersonDeathDate(), primaryPersonDeathDate);
+        if (mergedPrimaryPersonDeathDate == "nomatch") {
           continue;
         }
       }
@@ -937,12 +974,11 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       mergedGd.setDeathDate(mergedDeathDate);
       mergedGd.registrationDistrict = mergedDistrict;
 
-      if (mergedPrimaryPersonName) {
-        mergedGd.primaryPerson = mergedPrimaryPersonName;
-        if (mergedPrimaryPersonGender) {
-          mergedGd.primaryPersonGender = mergedPrimaryPersonGender;
-        }
-      }
+      mergedGd.createPrimaryPersonIfNeeded();
+      mergedGd.primaryPerson.name = mergedPrimaryPersonName;
+      mergedGd.setPrimaryPersonGender(mergedPrimaryPersonGender);
+      mergedGd.setPrimaryPersonBirthDate(mergedPrimaryPersonBirthDate);
+      mergedGd.setPrimaryPersonDeathDate(mergedPrimaryPersonDeathDate);
 
       priorFact.sources.push(source);
       merged = true;

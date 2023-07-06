@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Leonida Loracuente Vega"
+    "name": "Leonida Loracuente Vega",
+    "lastName": "Loracuente Vega",
+    "forenames": "Leonida"
   },
   "eventPlace": {
     "placeString": "Ponce, Puerto Rico"

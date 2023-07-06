@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Katharine Quattlander"
+    "name": "Katharine Quattlander",
+    "lastName": "Quattlander",
+    "forenames": "Katharine"
   },
   "birthDate": {
     "dateString": "1884",

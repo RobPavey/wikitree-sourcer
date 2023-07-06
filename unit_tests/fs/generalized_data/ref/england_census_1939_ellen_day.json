@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Ellen Day"
+    "name": "Ellen Day",
+    "lastName": "Day",
+    "forenames": "Ellen"
   },
   "birthDate": {
     "dateString": "10 Dec 1899",

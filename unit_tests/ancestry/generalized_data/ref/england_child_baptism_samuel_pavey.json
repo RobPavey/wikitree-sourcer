@@ -2,7 +2,11 @@
   "sourceType": "record",
   "recordType": "BirthOrBaptism",
   "role": "Parent",
-  "primaryPerson": "Leonard Pavey",
+  "primaryPerson": {
+    "name": {
+      "name": "Leonard Pavey"
+    }
+  },
   "sourceOfData": "ancestry",
   "name": {
     "name": "Samuel Pavey"

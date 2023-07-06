@@ -2,7 +2,11 @@
   "sourceType": "record",
   "recordType": "Unclassified",
   "role": "Parent",
-  "primaryPerson": "Reed",
+  "primaryPerson": {
+    "name": {
+      "name": "Reed"
+    }
+  },
   "sourceOfData": "ancestry",
   "name": {
     "name": "Eva Warnock"

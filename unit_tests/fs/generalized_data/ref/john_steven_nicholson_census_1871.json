@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "John Steven Nicholson"
+    "name": "John Steven Nicholson",
+    "lastName": "Nicholson",
+    "forenames": "John Steven"
   },
   "birthPlace": {
     "placeString": "Warrington, Lancashire"

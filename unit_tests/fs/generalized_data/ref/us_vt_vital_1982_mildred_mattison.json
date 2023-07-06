@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Mildred E Mattison"
+    "name": "Mildred E Mattison",
+    "lastName": "Mattison",
+    "forenames": "Mildred E"
   },
   "birthDate": {
     "dateString": "23 Mar 1909",

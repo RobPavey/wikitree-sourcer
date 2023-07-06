@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Joseph Moore"
+    "name": "Joseph Moore",
+    "lastName": "Moore",
+    "forenames": "Joseph"
   },
   "birthDate": {
     "dateString": "1888",

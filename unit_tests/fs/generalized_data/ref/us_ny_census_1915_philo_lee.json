@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Philo Lee, Jr"
+    "name": "Philo Lee, Jr",
+    "lastName": "Lee",
+    "forenames": "Philo"
   },
   "birthDate": {
     "dateString": "1903",

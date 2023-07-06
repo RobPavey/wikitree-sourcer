@@ -3,7 +3,9 @@
   "recordType": "Death",
   "sourceOfData": "fs",
   "name": {
-    "name": "Catherine V Pavey"
+    "name": "Catherine V Pavey",
+    "lastName": "Pavey",
+    "forenames": "Catherine V"
   },
   "birthDate": {
     "dateString": "08 Nov 1921"

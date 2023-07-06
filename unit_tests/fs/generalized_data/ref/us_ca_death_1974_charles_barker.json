@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Charles F Barker"
+    "name": "Charles F Barker",
+    "lastName": "Barker",
+    "forenames": "Charles F"
   },
   "birthDate": {
     "dateString": "23 Feb 1901"

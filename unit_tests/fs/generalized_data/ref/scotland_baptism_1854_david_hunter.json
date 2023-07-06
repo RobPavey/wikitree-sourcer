@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "David Hunter"
+    "name": "David Hunter",
+    "lastName": "Hunter",
+    "forenames": "David"
   },
   "birthDate": {
     "dateString": "1 Nov 1854",

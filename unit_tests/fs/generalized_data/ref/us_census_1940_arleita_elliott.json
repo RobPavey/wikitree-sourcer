@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Arleita M Elliott"
+    "name": "Arleita M Elliott",
+    "lastName": "Elliott",
+    "forenames": "Arleita M"
   },
   "birthDate": {
     "dateString": "1912",

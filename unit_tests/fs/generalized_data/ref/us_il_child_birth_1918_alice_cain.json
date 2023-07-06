@@ -1,13 +1,21 @@
 {
   "sourceType": "record",
   "role": "Parent",
-  "primaryPerson": "Henry Green",
-  "primaryPersonGender": "male",
+  "primaryPerson": {
+    "name": {
+      "name": "Henry Green",
+      "lastName": "Green",
+      "forenames": "Henry"
+    },
+    "gender": "male"
+  },
   "recordType": "Birth",
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Alice Cain"
+    "name": "Alice Cain",
+    "lastName": "Cain",
+    "forenames": "Alice"
   },
   "birthDate": {
     "dateString": "1896",

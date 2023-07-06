@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Peter William Delamotte"
+    "name": "Peter William Delamotte",
+    "lastName": "Delamotte",
+    "forenames": "Peter William"
   },
   "birthDate": {
     "dateString": "1849",

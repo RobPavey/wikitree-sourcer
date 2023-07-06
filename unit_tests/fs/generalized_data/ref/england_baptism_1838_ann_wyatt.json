@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Ann Wyatt"
+    "name": "Ann Wyatt",
+    "lastName": "Wyatt",
+    "forenames": "Ann"
   },
   "birthDate": {
     "dateString": "24 Mar 1838",

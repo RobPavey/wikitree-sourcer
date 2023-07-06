@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Margaret Rowlinson"
+    "name": "Margaret Rowlinson",
+    "lastName": "Rowlinson",
+    "forenames": "Margaret"
   },
   "eventDate": {
     "dateString": "18 May 1834",

@@ -3,7 +3,9 @@
   "recordType": "Tax",
   "sourceOfData": "fs",
   "name": {
-    "name": "John Smith"
+    "name": "John Smith",
+    "lastName": "Smith",
+    "forenames": "John"
   },
   "eventPlace": {
     "placeString": "Boston, Suffolk, Massachusetts, United States"

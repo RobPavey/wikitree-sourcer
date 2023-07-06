@@ -3,7 +3,9 @@
   "recordType": "Marriage",
   "sourceOfData": "fs",
   "name": {
-    "name": "Ann Brian"
+    "name": "Ann Brian",
+    "lastName": "Brian",
+    "forenames": "Ann"
   },
   "eventDate": {
     "dateString": "1799",

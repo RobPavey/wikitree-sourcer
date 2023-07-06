@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "David Palm"
+    "name": "David Palm",
+    "lastName": "Palm",
+    "forenames": "David"
   },
   "birthDate": {
     "dateString": "1887"

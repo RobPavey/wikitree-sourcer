@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Henry Mullins"
+    "name": "Henry Mullins",
+    "lastName": "Mullins",
+    "forenames": "Henry"
   },
   "birthDate": {
     "dateString": "18 Feb 1825",

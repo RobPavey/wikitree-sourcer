@@ -3,7 +3,9 @@
   "recordType": "Burial",
   "sourceOfData": "fs",
   "name": {
-    "name": "Joseph Golden"
+    "name": "Joseph Golden",
+    "lastName": "Golden",
+    "forenames": "Joseph"
   },
   "birthDate": {
     "dateString": "1829",

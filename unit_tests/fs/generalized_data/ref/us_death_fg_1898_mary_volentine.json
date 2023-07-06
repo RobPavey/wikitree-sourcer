@@ -3,7 +3,9 @@
   "recordType": "Burial",
   "sourceOfData": "fs",
   "name": {
-    "name": "Mary Francis Taylor Volentine"
+    "name": "Mary Francis Taylor Volentine",
+    "lastName": "Taylor Volentine",
+    "forenames": "Mary Francis"
   },
   "birthDate": {
     "dateString": "13 Jan 1839",

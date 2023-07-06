@@ -1,12 +1,20 @@
 {
   "sourceType": "record",
   "role": "Spouse",
-  "primaryPerson": "Henry John Eneboe",
-  "primaryPersonGender": "male",
+  "primaryPerson": {
+    "name": {
+      "name": "Henry John Eneboe",
+      "lastName": "Eneboe",
+      "forenames": "Henry John"
+    },
+    "gender": "male"
+  },
   "recordType": "Death",
   "sourceOfData": "fs",
   "name": {
-    "name": "Jennie Eggn Eneboe"
+    "name": "Jennie Eggn Eneboe",
+    "lastName": "Eneboe",
+    "forenames": "Jennie Eggn"
   },
   "eventDate": {
     "dateString": "20 May 1955",

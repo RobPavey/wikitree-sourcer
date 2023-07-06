@@ -1,13 +1,20 @@
 {
   "sourceType": "record",
   "role": "Parent",
-  "primaryPerson": "Charles Plume",
-  "primaryPersonGender": "male",
+  "primaryPerson": {
+    "name": {
+      "name": "Charles Plume",
+      "lastName": "Plume",
+      "forenames": "Charles"
+    },
+    "gender": "male"
+  },
   "recordType": "Baptism",
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Charlotte"
+    "name": "Charlotte",
+    "forenames": "Charlotte"
   },
   "eventDate": {
     "dateString": "28 May 1882",

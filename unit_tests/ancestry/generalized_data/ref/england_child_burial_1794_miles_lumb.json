@@ -2,7 +2,11 @@
   "sourceType": "record",
   "recordType": "Unclassified",
   "role": "Parent",
-  "primaryPerson": "Michl Lumb",
+  "primaryPerson": {
+    "name": {
+      "name": "Michl Lumb"
+    }
+  },
   "sourceOfData": "ancestry",
   "name": {
     "name": "Miles Lumb"

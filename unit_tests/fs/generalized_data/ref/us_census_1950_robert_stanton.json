@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Robert C Stanton"
+    "name": "Robert C Stanton",
+    "lastName": "Stanton",
+    "forenames": "Robert C"
   },
   "birthDate": {
     "dateString": "1941",

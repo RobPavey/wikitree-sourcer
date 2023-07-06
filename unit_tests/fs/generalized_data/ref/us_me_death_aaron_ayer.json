@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Dr Aaron Ayer"
+    "name": "Dr Aaron Ayer",
+    "lastName": "Ayer",
+    "forenames": "Dr Aaron"
   },
   "eventPlace": {
     "placeString": "Buxton, York, Maine, United States"

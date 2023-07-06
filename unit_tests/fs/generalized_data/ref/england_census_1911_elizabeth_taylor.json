@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Elizabeth Taylor"
+    "name": "Elizabeth Taylor",
+    "lastName": "Taylor",
+    "forenames": "Elizabeth"
   },
   "birthDate": {
     "dateString": "1842",

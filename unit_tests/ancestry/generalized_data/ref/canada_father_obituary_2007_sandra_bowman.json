@@ -2,7 +2,11 @@
   "sourceType": "record",
   "recordType": "Obituary",
   "role": "Child",
-  "primaryPerson": "Leslie A. Baldner",
+  "primaryPerson": {
+    "name": {
+      "name": "Leslie A Baldner"
+    }
+  },
   "sourceOfData": "ancestry",
   "name": {
     "name": "Sandra Bowman"

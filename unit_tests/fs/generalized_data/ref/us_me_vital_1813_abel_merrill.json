@@ -1,13 +1,21 @@
 {
   "sourceType": "record",
   "role": "Parent",
-  "primaryPerson": "Hariet Juliann Merrill",
-  "primaryPersonGender": "female",
+  "primaryPerson": {
+    "name": {
+      "name": "Hariet Juliann Merrill",
+      "lastName": "Merrill",
+      "forenames": "Hariet Juliann"
+    },
+    "gender": "female"
+  },
   "recordType": "Birth",
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Abel Merrill Jr"
+    "name": "Abel Merrill Jr",
+    "lastName": "Merrill",
+    "forenames": "Abel"
   },
   "eventDate": {
     "dateString": "12 Oct 1813",

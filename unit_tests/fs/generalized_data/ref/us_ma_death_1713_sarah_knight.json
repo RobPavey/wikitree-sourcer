@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Sarah Knight"
+    "name": "Sarah Knight",
+    "lastName": "Knight",
+    "forenames": "Sarah"
   },
   "deathDate": {
     "dateString": "6 Nov 1713",

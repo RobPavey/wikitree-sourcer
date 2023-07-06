@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "William Pavey"
+    "name": "William Pavey",
+    "lastName": "Pavey",
+    "forenames": "William"
   },
   "birthDate": {
     "dateString": "1807-1811",

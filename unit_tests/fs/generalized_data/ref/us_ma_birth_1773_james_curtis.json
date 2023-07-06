@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "James Curtis"
+    "name": "James Curtis",
+    "lastName": "Curtis",
+    "forenames": "James"
   },
   "birthDate": {
     "dateString": "25 Nov 1773",

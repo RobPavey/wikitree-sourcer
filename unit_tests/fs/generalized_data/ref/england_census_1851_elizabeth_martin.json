@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Elizabeth Martin"
+    "name": "Elizabeth Martin",
+    "lastName": "Martin",
+    "forenames": "Elizabeth"
   },
   "birthDate": {
     "dateString": "1813",

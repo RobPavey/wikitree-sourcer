@@ -3,7 +3,9 @@
   "recordType": "Death",
   "sourceOfData": "fs",
   "name": {
-    "name": "John W Smith"
+    "name": "John W Smith",
+    "lastName": "Smith",
+    "forenames": "John W"
   },
   "birthDate": {
     "dateString": "29 Apr 1930"

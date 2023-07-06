@@ -3,7 +3,9 @@
   "recordType": "MarriageRegistration",
   "sourceOfData": "fs",
   "name": {
-    "name": "Arthur R Cowling"
+    "name": "Arthur R Cowling",
+    "lastName": "Cowling",
+    "forenames": "Arthur R"
   },
   "eventDate": {
     "dateString": "1937",

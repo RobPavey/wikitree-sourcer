@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Pearl Jennie Agar"
+    "name": "Pearl Jennie Agar",
+    "lastName": "Agar",
+    "forenames": "Pearl Jennie"
   },
   "birthDate": {
     "dateString": "17 Mar 1897"

@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Stephen Eyring Taylor"
+    "name": "Stephen Eyring Taylor",
+    "lastName": "Taylor",
+    "forenames": "Stephen Eyring"
   },
   "birthDate": {
     "dateString": "1939",

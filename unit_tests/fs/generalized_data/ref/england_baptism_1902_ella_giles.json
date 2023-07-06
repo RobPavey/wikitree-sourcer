@@ -3,7 +3,9 @@
   "recordType": "Baptism",
   "sourceOfData": "fs",
   "name": {
-    "name": "Ella Rose Giles"
+    "name": "Ella Rose Giles",
+    "lastName": "Giles",
+    "forenames": "Ella Rose"
   },
   "eventDate": {
     "dateString": "24 Aug 1902",

@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Emily Mary Anne Ashworth"
+    "name": "Emily Mary Anne Ashworth",
+    "lastName": "Ashworth",
+    "forenames": "Emily Mary Anne"
   },
   "eventDate": {
     "dateString": "25 Aug 1825",

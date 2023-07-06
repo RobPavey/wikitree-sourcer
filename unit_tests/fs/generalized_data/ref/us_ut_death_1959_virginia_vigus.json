@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Virginia Reynolds Vigus"
+    "name": "Virginia Reynolds Vigus",
+    "lastName": "Vigus",
+    "forenames": "Virginia Reynolds"
   },
   "birthDate": {
     "dateString": "1923",

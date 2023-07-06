@@ -33,7 +33,11 @@ function getChildTerm(gender) {
 }
 
 function getPrimaryPersonChildTerm(gd) {
-  return getChildTerm(gd.primaryPersonGender);
+  let childGender = "";
+  if (gd.primaryPerson) {
+    childGender = gd.primaryPerson.gender;
+  }
+  return getChildTerm(childGender);
 }
 
 function getParentTerm(gender) {
@@ -47,7 +51,11 @@ function getParentTerm(gender) {
 }
 
 function getPrimaryPersonParentTerm(gd) {
-  return getParentTerm(gd.primaryPersonGender);
+  let parentGender = "";
+  if (gd.primaryPerson) {
+    parentGender = gd.primaryPerson.gender;
+  }
+  return getParentTerm(parentGender);
 }
 
 function getSpouseTerm(gender) {
@@ -61,7 +69,11 @@ function getSpouseTerm(gender) {
 }
 
 function getPrimaryPersonSpouseTerm(gd) {
-  return getSpouseTerm(gd.primaryPersonGender);
+  let spouseGender = "";
+  if (gd.primaryPerson) {
+    spouseGender = gd.primaryPerson.gender;
+  }
+  return getSpouseTerm(spouseGender);
 }
 
 export {

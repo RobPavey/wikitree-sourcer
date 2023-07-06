@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Harry R R Easey"
+    "name": "Harry R R Easey",
+    "lastName": "Easey",
+    "forenames": "Harry R R"
   },
   "birthDate": {
     "dateString": "1853",

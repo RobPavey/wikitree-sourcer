@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Wm L Waldren"
+    "name": "Wm L Waldren",
+    "lastName": "Waldren",
+    "forenames": "Wm L"
   },
   "birthDate": {
     "dateString": "1866"

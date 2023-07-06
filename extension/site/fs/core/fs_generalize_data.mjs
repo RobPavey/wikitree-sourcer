@@ -304,12 +304,12 @@ function determineRecordTypeAndRole(extractedData, result) {
       } else if (extractedData.relationshipToFactPerson == "Spouse") {
         result.role = Role.Spouse;
       }
-      if (extractedData.relatedPersonFullName) {
-        result.primaryPerson = extractedData.relatedPersonFullName;
-      }
-      if (extractedData.relatedPersonGender) {
-        result.primaryPersonGender = extractedData.relatedPersonGender;
-      }
+      result.setPrimaryPersonFullName(extractedData.relatedPersonFullName);
+      result.setPrimaryPersonLastNameAndForeNames(
+        extractedData.relatedPersonSurname,
+        extractedData.relatedPersonGivenName
+      );
+      result.setPrimaryPersonGender(extractedData.relatedPersonGender);
     }
   }
 
@@ -917,6 +917,7 @@ function generalizeData(input) {
   result.setPersonGender(ed.gender);
 
   result.setFullName(ed.fullName);
+  result.setLastNameAndForeNames(ed.surname, ed.givenName);
 
   let birthDate = selectDate(ed.birthDate, ed.birthDateOriginal);
   result.setBirthDate(birthDate);

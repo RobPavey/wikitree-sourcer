@@ -1,13 +1,21 @@
 {
   "sourceType": "record",
   "role": "Spouse",
-  "primaryPerson": "James Clifford Moore",
-  "primaryPersonGender": "male",
+  "primaryPerson": {
+    "name": {
+      "name": "James Clifford Moore",
+      "lastName": "Moore",
+      "forenames": "James Clifford"
+    },
+    "gender": "male"
+  },
   "recordType": "Obituary",
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Florida Tucker Moore"
+    "name": "Florida Tucker Moore",
+    "lastName": "Moore",
+    "forenames": "Florida Tucker"
   },
   "eventDate": {
     "dateString": "8 Oct 2009",

@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Parker Adelbert Childs"
+    "name": "Parker Adelbert Childs",
+    "lastName": "Childs",
+    "forenames": "Parker Adelbert"
   },
   "eventDate": {
     "dateString": "4 Mar 1873",

@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Beatrice Ellen Fairchild"
+    "name": "Beatrice Ellen Fairchild",
+    "lastName": "Fairchild",
+    "forenames": "Beatrice Ellen"
   },
   "birthDate": {
     "dateString": "1874",

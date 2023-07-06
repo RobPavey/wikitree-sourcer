@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "John Swinton"
+    "name": "John Swinton",
+    "lastName": "Swinton",
+    "forenames": "John"
   },
   "birthDate": {
     "dateString": "1795",

@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Alice Miller"
+    "name": "Alice Miller",
+    "lastName": "Miller",
+    "forenames": "Alice"
   },
   "birthDate": {
     "dateString": "1855",

@@ -3,7 +3,9 @@
   "recordType": "Census",
   "sourceOfData": "fs",
   "name": {
-    "name": "Ruth Pearson"
+    "name": "Ruth Pearson",
+    "lastName": "Pearson",
+    "forenames": "Ruth"
   },
   "birthDate": {
     "dateString": "1910",

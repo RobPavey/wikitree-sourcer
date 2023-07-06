@@ -561,6 +561,7 @@ const WTS_Date = {
 
         return dateADays - dateBDays;
       } else {
+        // if one has a date and the other doesn't then the one with the date comes first
         return -1;
       }
     } else if (parsedDateB.isValid) {

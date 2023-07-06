@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "John Smith"
+    "name": "John Smith",
+    "lastName": "Smith",
+    "forenames": "John"
   },
   "birthDate": {
     "dateString": "22 Mar 1880",

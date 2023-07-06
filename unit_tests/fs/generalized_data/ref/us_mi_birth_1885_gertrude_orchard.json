@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Gertrude May Orchard"
+    "name": "Gertrude May Orchard",
+    "lastName": "Orchard",
+    "forenames": "Gertrude May"
   },
   "birthDate": {
     "dateString": "16 Oct 1885",

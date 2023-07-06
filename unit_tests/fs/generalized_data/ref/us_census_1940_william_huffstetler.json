@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "William Huffstetler"
+    "name": "William Huffstetler",
+    "lastName": "Huffstetler",
+    "forenames": "William"
   },
   "birthDate": {
     "dateString": "1897",

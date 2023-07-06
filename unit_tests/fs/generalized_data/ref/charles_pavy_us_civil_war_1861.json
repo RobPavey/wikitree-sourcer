@@ -3,7 +3,9 @@
   "recordType": "Military",
   "sourceOfData": "fs",
   "name": {
-    "name": "Charles W Pavy"
+    "name": "Charles W Pavy",
+    "lastName": "Pavy",
+    "forenames": "Charles W"
   },
   "eventDate": {
     "dateString": "1861-1865",

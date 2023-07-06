@@ -3,7 +3,9 @@
   "recordType": "MarriageRegistration",
   "sourceOfData": "fs",
   "name": {
-    "name": "Richard Greenwood"
+    "name": "Richard Greenwood",
+    "lastName": "Greenwood",
+    "forenames": "Richard"
   },
   "eventDate": {
     "dateString": "1839",

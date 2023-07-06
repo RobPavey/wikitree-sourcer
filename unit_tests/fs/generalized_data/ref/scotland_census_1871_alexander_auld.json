@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Alexander Auld"
+    "name": "Alexander Auld",
+    "lastName": "Auld",
+    "forenames": "Alexander"
   },
   "birthDate": {
     "dateString": "1820",

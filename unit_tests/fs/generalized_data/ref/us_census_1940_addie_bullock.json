@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Addie Bullock"
+    "name": "Addie Bullock",
+    "lastName": "Bullock",
+    "forenames": "Addie"
   },
   "birthDate": {
     "dateString": "1909",

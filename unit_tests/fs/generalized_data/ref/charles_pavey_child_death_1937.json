@@ -1,13 +1,21 @@
 {
   "sourceType": "record",
   "role": "Parent",
-  "primaryPerson": "Mary Denning",
-  "primaryPersonGender": "female",
+  "primaryPerson": {
+    "name": {
+      "name": "Mary Denning",
+      "lastName": "Denning",
+      "forenames": "Mary"
+    },
+    "gender": "female"
+  },
   "recordType": "Death",
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Charles Pavey"
+    "name": "Charles Pavey",
+    "lastName": "Pavey",
+    "forenames": "Charles"
   },
   "birthPlace": {
     "placeString": "Indiana"

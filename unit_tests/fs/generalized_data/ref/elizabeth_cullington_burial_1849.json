@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Elizabeth Cullington"
+    "name": "Elizabeth Cullington",
+    "lastName": "Cullington",
+    "forenames": "Elizabeth"
   },
   "birthDate": {
     "dateString": "1844",

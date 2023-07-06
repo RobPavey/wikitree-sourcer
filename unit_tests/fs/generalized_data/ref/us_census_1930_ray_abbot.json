@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Ray Abbott"
+    "name": "Ray Abbott",
+    "lastName": "Abbott",
+    "forenames": "Ray"
   },
   "birthDate": {
     "dateString": "1918",

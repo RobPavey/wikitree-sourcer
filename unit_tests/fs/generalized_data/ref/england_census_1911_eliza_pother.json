@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Eliza Pother"
+    "name": "Eliza Pother",
+    "lastName": "Pother",
+    "forenames": "Eliza"
   },
   "birthDate": {
     "dateString": "1865",

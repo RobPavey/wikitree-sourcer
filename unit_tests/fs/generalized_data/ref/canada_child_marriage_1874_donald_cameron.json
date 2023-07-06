@@ -1,13 +1,21 @@
 {
   "sourceType": "record",
   "role": "Parent",
-  "primaryPerson": "Ann Cameron",
-  "primaryPersonGender": "female",
+  "primaryPerson": {
+    "name": {
+      "name": "Ann Cameron",
+      "lastName": "Cameron",
+      "forenames": "Ann"
+    },
+    "gender": "female"
+  },
   "recordType": "Marriage",
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Donald Cameron"
+    "name": "Donald Cameron",
+    "lastName": "Cameron",
+    "forenames": "Donald"
   },
   "eventDate": {
     "dateString": "15 Jul 1874",

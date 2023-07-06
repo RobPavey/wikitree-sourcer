@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Esther Pavey"
+    "name": "Esther Pavey",
+    "lastName": "Pavey",
+    "forenames": "Esther"
   },
   "birthDate": {
     "dateString": "1842",

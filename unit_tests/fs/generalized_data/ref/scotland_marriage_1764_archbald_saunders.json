@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Archbald Saunders"
+    "name": "Archbald Saunders",
+    "lastName": "Saunders",
+    "forenames": "Archbald"
   },
   "eventDate": {
     "dateString": "22 Apr 1764",

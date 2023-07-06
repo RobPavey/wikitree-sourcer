@@ -4,7 +4,9 @@
   "sourceOfData": "fs",
   "personGender": "female",
   "name": {
-    "name": "Sarah E Pate"
+    "name": "Sarah E Pate",
+    "lastName": "Pate",
+    "forenames": "Sarah E"
   },
   "birthDate": {
     "dateString": "1949",
