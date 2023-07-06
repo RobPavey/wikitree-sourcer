@@ -161,10 +161,15 @@ function doRequestsInParallel(requests, requestFunction) {
 
   return new Promise((resolve) => {
     async function doRequest(request, requestFunction) {
-      let response = await requestFunction(request.input, function (status) {
-        updateStatusForRequest(request, status);
-      });
-      handleRequestResponse(request, response, doRequest, resolve);
+      try {
+        let response = await requestFunction(request.input, function (status) {
+          updateStatusForRequest(request, status);
+        });
+        handleRequestResponse(request, response, doRequest, resolve);
+      } catch (error) {
+        let response = { success: false, error: error };
+        handleRequestResponse(request, response, doRequest, resolve);
+      }
     }
 
     for (let request of requests) {
