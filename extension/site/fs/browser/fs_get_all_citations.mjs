@@ -158,7 +158,8 @@ function inferBestEventDateForCompare(gd) {
   return eventDate;
 }
 
-function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
+// this can be used both for sorthing sources and facts
+function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
   let recordTypeSortPriority = {};
   recordTypeSortPriority[RT.Birth] = 1;
   recordTypeSortPriority[RT.Baptism] = 3;
@@ -181,70 +182,107 @@ function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
     return priority;
   }
 
-  function compareFunction(a, b) {
-    let eventDateA = "";
-    if (a.generalizedData) {
-      eventDateA = inferBestEventDateForCompare(a.generalizedData);
-    }
-    let eventDateB = "";
-    if (b.generalizedData) {
-      eventDateB = inferBestEventDateForCompare(b.generalizedData);
-    }
+  let eventDateA = "";
+  if (gdA) {
+    eventDateA = inferBestEventDateForCompare(gdA);
+  }
+  let eventDateB = "";
+  if (gdB) {
+    eventDateB = inferBestEventDateForCompare(gdB);
+  }
 
-    if (!eventDateA) {
-      eventDateA = a.eventDate;
-    }
-    if (!eventDateB) {
-      eventDateB = b.eventDate;
-    }
+  if (!eventDateA) {
+    eventDateA = sourceA.eventDate;
+  }
+  if (!eventDateB) {
+    eventDateB = sourceB.eventDate;
+  }
 
-    if (!eventDateA) {
-      eventDateA = a.sortYear;
-    }
-    if (!eventDateB) {
-      eventDateB = b.sortYear;
-    }
+  if (!eventDateA) {
+    eventDateA = sourceA.sortYear;
+  }
+  if (!eventDateB) {
+    eventDateB = sourceB.sortYear;
+  }
 
-    if (eventDateA && eventDateB) {
-      let result = WTS_Date.compareDateStrings(eventDateA, eventDateB);
-      if (result == 0) {
-        // dates are equal, sort by record type
-        let priorityA = getEventPriority(a);
-        let priorityB = getEventPriority(b);
-        result = priorityA - priorityB;
-      }
-      return result;
+  if (eventDateA && eventDateB) {
+    let result = WTS_Date.compareDateStrings(eventDateA, eventDateB);
+    if (result == 0) {
+      // dates are equal, sort by record type
+      let priorityA = getEventPriority(sourceA);
+      let priorityB = getEventPriority(sourceB);
+      result = priorityA - priorityB;
     }
+    return result;
+  }
 
-    // if one has a date and the other doesn't then the one with the date comes first
-    if (eventDateA) {
+  // if one has a date and the other doesn't then the one with the date comes first
+  if (eventDateA) {
+    return -1;
+  } else if (eventDateB) {
+    return 1;
+  }
+
+  if (sourceA.sortKey && sourceB.sortKey) {
+    if (sourceA.sortKey < sourceB.sortKey) {
       return -1;
-    } else if (eventDateB) {
+    } else if (sourceA.sortKey > sourceB.sortKey) {
       return 1;
     }
-
-    if (a.sortKey && b.sortKey) {
-      if (a.sortKey < b.sortKey) {
-        return -1;
-      } else if (a.sortKey > b.sortKey) {
-        return 1;
-      }
-      return 0;
-    }
-
-    if (a.sortKey) {
-      return -1;
-    } else if (b.sortKey) {
-      return 1;
-    }
-
     return 0;
+  }
+
+  if (sourceA.sortKey) {
+    return -1;
+  } else if (sourceB.sortKey) {
+    return 1;
+  }
+
+  return 0;
+}
+
+function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
+  function compareFunction(a, b) {
+    return compareGdsAndSources(a.generalizedData, b.generalizedData, a, b);
   }
 
   // sort the sources
   result.sources.sort(compareFunction);
   //console.log("sortSourcesUsingFsSortKeysAndFetchedRecords: sorted sources:");
   //console.log(result.sources);
+}
+
+function sortFacts(result) {
+  // It is very unlikely that sortFacts will change the order but it does seem
+  // possible in rare merge cases
+  //console.log("sortFacts");
+  //console.log(result);
+
+  /*
+  let oldOrder = [];
+  for (let fact of result.facts) {
+    oldOrder.push(fact);
+  }
+  */
+
+  function compareFunction(a, b) {
+    return compareGdsAndSources(a.generalizedData, b.generalizedData, a.sources[0], b.sources[0]);
+  }
+
+  // sort the sources
+  result.facts.sort(compareFunction);
+
+  /*
+  if (oldOrder.length != result.facts.length) {
+    console.log("length changed");
+  } else {
+    for (let factIndex = 0; factIndex < result.facts.length; factIndex++) {
+      if (oldOrder[factIndex] != result.facts[factIndex]) {
+        console.log("fact order different at indes " + factIndex);
+      }
+    }
+  }
+  */
 }
 
 function attemptToMergeSourceIntoPriorFact(source, result, type) {
@@ -1450,6 +1488,7 @@ async function getSourcerCitations(result, ed, gd, type, options) {
 
     if (groupCitations) {
       groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative
+      sortFacts(result);
       generateSourcerCitationsStringForFacts(result, type, options);
     } else {
       if (type == "inline") {
