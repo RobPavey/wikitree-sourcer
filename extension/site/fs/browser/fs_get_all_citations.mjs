@@ -39,6 +39,7 @@ SOFTWARE.
 		https://www.familysearch.org/tree/person/sources/L2QN-6JJ  Merges marriages even though spouse surnames are different.
 			  Perhaps it should not if the spouse name is being shown in narrative.
 		https://www.familysearch.org/tree/person/sources/LHVG-L58  Has some Ancestry sources, one not formatted well
+    https://www.familysearch.org/tree/person/sources/GDF5-G69  Has more Ancestry sources with formatting issues
 
 */
 
@@ -1111,6 +1112,15 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     return text;
   }
 
+  function cleanTitle(text) {
+    if (text) {
+      // sometimes title has a newline after the person's name for no apparent reason
+      let titleText = text.replace(/\n/g, " ");
+      text = cleanText(titleText);
+    }
+    return text;
+  }
+
   function cleanNotes(text) {
     if (text) {
       text = cleanText(text);
@@ -1134,9 +1144,11 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
 
   let citationText = cleanText(source.citation);
 
-  if (!citationText) {
-    citationText = cleanText(source.title);
+  // somtimes the citation is just the uri, in this case it is better to put the title firsl
+  if (!citationText || citationText == source.uri) {
+    citationText = cleanTitle(source.title);
   }
+
   if (!citationText) {
     citationText = cleanText(source.notes);
   }
@@ -1181,9 +1193,10 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
   let fsRecordLinkIndex = citationText.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
   if (fsRecordLinkIndex == -1) {
     if (source.citation && source.title) {
-      if (!citationText.includes(source.title)) {
+      let cleanTitleText = cleanTitle(source.title);
+      if (!citationText.includes(cleanTitleText)) {
         addSeparationWithinBody(", ");
-        citationText += cleanText(source.title);
+        citationText += cleanTitleText;
       }
     }
   }
@@ -1360,7 +1373,7 @@ async function getSourcerCitation(source, type, options, updateStatusFunction) {
         title = source.firstSentence;
       }
       if (title) {
-        let joinIndex = title.search(/\s+in\s+the\s+/);
+        let joinIndex = title.search(/[\s\n]+in\s+the\s+/);
         if (joinIndex != -1) {
           source.prefName = title.substring(0, joinIndex);
         }
