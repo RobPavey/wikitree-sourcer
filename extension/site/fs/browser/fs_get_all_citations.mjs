@@ -79,7 +79,7 @@ function inferEventDate(source) {
 
   if (source.title) {
     // get any years in title
-    let years = source.title.match(/\d\d\d\d/);
+    let years = source.title.match(/\d\d\d\d/g);
     if (years && years.length == 1) {
       return years[0];
     }
@@ -406,13 +406,6 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     if (lastNamesMatch) {
       matchingLastName = "";
     }
-
-    // debug
-    console.log("mergeNames: nameA = " + fullNameA + ", nameB = " + fullNameB);
-    console.log(nameObjA);
-    console.log(nameObjB);
-    console.log("firstNameA = " + firstNameA + ", firstNameB = " + firstNameB + ", match = " + firstNamesMatch);
-    console.log("lastNameA = " + lastNameA + ", lastNameB = " + lastNameB + ", match = " + lastNamesMatch);
 
     if (firstNamesMatch && lastNamesMatch) {
       let middleNamesA = nameObjA.inferMiddleNames();
