@@ -48,7 +48,7 @@ function buildSearchData(input) {
     dayofprobate: "",
   };
 
-  stage1TextFieldData.lastname = gd.inferLastName();
+  stage1TextFieldData.lastname = gd.inferLastNameAtDeath();
   stage1TextFieldData.firstname = gd.inferForenames();
   stage1TextFieldData.yearofdeath = gd.inferDeathYear();
 
