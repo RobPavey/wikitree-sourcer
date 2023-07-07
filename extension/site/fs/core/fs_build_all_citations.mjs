@@ -364,7 +364,8 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     }
   }
 
-  if (!citationText) {
+  // if there is no other text other than notes then put it before link
+  if (!citationText && !cleanTitleText && !cleanCitationText) {
     citationText += cleanText(source.notes);
     includedNotes = true;
   }
