@@ -86,6 +86,13 @@ const WTS_Date = {
       return result;
     }
 
+    // sometimes on Ancestry.com.au there are dates like "Mar. 1912" or "10 Mar. 1912"
+    // in cases like this remove the period
+    cleanString = string.replace(/\.\s+/g, " ").trim();
+    if (cleanString.length == 0) {
+      return result;
+    }
+
     result.cleanString = cleanString;
 
     if (string.length <= 4) {

@@ -1,0 +1,21 @@
+{
+  "url": "https://www.ancestry.com.au/discoveryui-content/view/1158632:8949",
+  "pageType": "record",
+  "dbId": "8949",
+  "recordId": "1158632",
+  "ancestryTemplate": "{{Ancestry Record|8949|1158632}}",
+  "domain": "com.au",
+  "titleName": "Jean Mary Agnes McClimont",
+  "titleCollection": "New Zealand, Birth Index, 1840-1950",
+  "recordData": {
+    "Name": "Jean Mary Agnes McClimont",
+    "Birth Date": "Mar. 1912",
+    "Registration Place": "Springburn, Canterbury, New Zealand",
+    "Birth Quarter": "Jan-Feb-Mar",
+    "Folio Number": "1243"
+  },
+  "sourceCitation": "N/A - microfiche from a private collector; New Zealand; Birth Index, 1840-1950",
+  "sourceInformation": "Ancestry.com. New Zealand, Birth Index, 1840-1950 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: New Zealand, Birth Index, 1840–1950. Microfiche.",
+  "originalData": "New Zealand, Birth Index, 1840–1950. Microfiche.",
+  "sourceDescription": "Here you’ll find a searchable index to birth records from New Zealand covering the years 1840–1950. Learn more..."
+}
