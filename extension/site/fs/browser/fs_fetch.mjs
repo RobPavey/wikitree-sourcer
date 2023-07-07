@@ -60,44 +60,50 @@ async function fetchFsSourcesJson(sourceIdList) {
     credentials: "include",
   };
 
-  let response = await fetch(fetchUrl, fetchOptions).catch((err) => {
-    console.log("Fetch threw an exception, message is: " + err.message);
-    console.log(err);
-    return { success: false };
-  });
+  try {
+    let response = await fetch(fetchUrl, fetchOptions).catch((err) => {
+      console.log("Fetch threw an exception, message is: " + err.message);
+      console.log(err);
+      return { success: false };
+    });
 
-  //console.log("response is");
-  //console.log(response);
+    //console.log("response is");
+    //console.log(response);
 
-  // On Firefox it may return zero any time you use "no-cors"
-  if (response.status !== 200) {
-    console.log("Looks like there was a problem. Status Code: " + response.status);
-    return {
-      success: false,
-      errorCondition: "FetchError",
-      status: response.status,
-      allowRetry: true,
-    };
-  }
-
-  // Examine the text in the response
-  let data = await response.text();
-
-  //console.log("data is:");
-  //console.log(data);
-
-  if (data.startsWith(`{`)) {
-    const jsonData = data;
-    const dataObj = JSON.parse(jsonData);
-
-    //console.log("dataObj is:");
-    //console.log(dataObj);
-
-    if (dataObj) {
-      return { success: true, dataObj: dataObj };
+    // On Firefox it may return zero any time you use "no-cors"
+    if (response.status !== 200) {
+      console.log("Looks like there was a problem. Status Code: " + response.status);
+      return {
+        success: false,
+        errorCondition: "FetchError",
+        status: response.status,
+        allowRetry: true,
+      };
     }
-  } else {
-    console.log("response does not look like JSON");
+
+    // Examine the text in the response
+    let data = await response.text();
+
+    //console.log("data is:");
+    //console.log(data);
+
+    if (data.startsWith(`{`)) {
+      const jsonData = data;
+      const dataObj = JSON.parse(jsonData);
+
+      //console.log("dataObj is:");
+      //console.log(dataObj);
+
+      if (dataObj) {
+        return { success: true, dataObj: dataObj };
+      }
+    } else {
+      console.log("response does not look like JSON");
+    }
+  } catch (error) {
+    console.log("fetch failed, error is:");
+    console.log(error);
+    return { success: false };
   }
 
   return { success: false };

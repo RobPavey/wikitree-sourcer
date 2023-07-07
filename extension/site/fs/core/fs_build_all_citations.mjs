@@ -274,6 +274,16 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     if (text) {
       // sometimes title has a newline after the person's name for no apparent reason
       let titleText = text.replace(/\n/g, " ");
+      titleText = titleText.replace(/\s+/g, " ");
+      text = cleanText(titleText);
+    }
+    return text;
+  }
+
+  function cleanCitation(text) {
+    if (text) {
+      let titleText = text.replace(/\n/g, " ");
+      titleText = titleText.replace(/\s+/g, " ");
       text = cleanText(titleText);
     }
     return text;
@@ -300,17 +310,6 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     return text;
   }
 
-  let citationText = cleanText(source.citation);
-
-  // somtimes the citation is just the uri, in this case it is better to put the title firsl
-  if (!citationText || citationText == source.uri) {
-    citationText = cleanTitle(source.title);
-  }
-
-  if (!citationText) {
-    citationText = cleanText(source.notes);
-  }
-
   function addSeparationWithinBody(nonNewlineSeparator) {
     if (citationText) {
       let addedSeparation = false;
@@ -332,6 +331,44 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     }
   }
 
+  let cleanTitleText = cleanTitle(source.title);
+  let cleanCitationText = cleanCitation(source.citation);
+
+  let includedTitle = false;
+  let includedCitation = false;
+  let includedNotes = false;
+
+  let citationText = "";
+
+  // Harry A Pavey in the 1871 England Census
+
+  if (cleanTitleText.includes(" in the ")) {
+    citationText += cleanCitationText;
+    includedCitation = true;
+  } else {
+    citationText += cleanTitleText;
+    includedTitle = true;
+
+    if (!citationText.includes(cleanCitationText)) {
+      addSeparationWithinBody(" ");
+      citationText += cleanCitationText;
+      includedCitation = true;
+    }
+  }
+
+  // somtimes the citation is just the uri, in this case it is better to put the title first
+  if (!citationText || citationText == source.uri) {
+    if (!includedTitle) {
+      citationText = cleanTitleText;
+      includedTitle = true;
+    }
+  }
+
+  if (!citationText) {
+    citationText += cleanText(source.notes);
+    includedNotes = true;
+  }
+
   if (source.uri && !citationText.includes(source.uri)) {
     let tempUri = source.uri.replace(/^https?\:\/\/[^\/]+\//, "");
     if (!citationText.includes(tempUri)) {
@@ -344,22 +381,17 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     }
   }
 
-  // Note, we currently put the source.citation before the source.title in this case
-  // That works if the title is like a data string (which it sometimes is)
-  // but it fails for https://www.familysearch.org/tree/person/sources/LHVG-L58
-  // and the Ancestry source for: https://search.ancestry.com/collections/2243/records/1341552
-  let fsRecordLinkIndex = citationText.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
-  if (fsRecordLinkIndex == -1) {
-    if (source.citation && source.title) {
-      let cleanTitleText = cleanTitle(source.title);
-      if (!citationText.includes(cleanTitleText)) {
-        addSeparationWithinBody(", ");
-        citationText += cleanTitleText;
-      }
-    }
+  if (!includedTitle && !citationText.includes(cleanTitleText)) {
+    addSeparationWithinBody(", ");
+    citationText += cleanTitleText;
   }
 
-  if (source.notes && options.addMerge_fsAllCitations_includeNotes) {
+  if (!includedCitation && !citationText.includes(cleanCitationText)) {
+    addSeparationWithinBody(", ");
+    citationText += cleanCitationText;
+  }
+
+  if (source.notes && !includedNotes && options.addMerge_fsAllCitations_includeNotes) {
     // some notes are an automatic comment like "Source created by RecordSeek.com"
     // Not useful to include that.
     if (!source.notes.startsWith("Source created by ")) {
