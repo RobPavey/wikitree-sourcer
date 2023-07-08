@@ -140,6 +140,7 @@ async function doFetch() {
 
     if (response.status !== 200) {
       console.log("Looks like there was a problem. Status Code: " + response.status);
+      console.log("Fetch URL is: " + fetchUrl);
       return {
         success: false,
         errorCondition: "FetchError",
@@ -172,7 +173,9 @@ async function doFetch() {
   } catch (error) {
     console.log("fetch failed, error is:");
     console.log(error);
-    return { success: false };
+    console.log("Fetch URL is: " + fetchUrl);
+
+    return { success: false, errorCondition: "Exception", exceptionObject: error };
   }
 }
 
@@ -245,7 +248,9 @@ async function doFetchAndSendResponse(sendResponse, options) {
       // treat this as a serious error
       sendResponse({
         success: false,
-        errorMessage: "Fetch failed",
+        errorMessage: "Fetch failed. Status code: " + result.status + ", Error condition: " + result.errorCondition,
+        exceptionObject: result.exceptionObject,
+        wasFetchError: true,
         contentType: "fs",
       });
     }

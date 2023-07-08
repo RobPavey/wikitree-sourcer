@@ -149,7 +149,9 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
       //console.log(response);
 
       // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
-      if (chrome.runtime.lastError || !response) {
+      // NOTE: On FamilySearch I have recently been getting exceptions in the fetch the page has been inactive
+      // for a while. So do retry if the response has an exception object
+      if (chrome.runtime.lastError || !response || (!response.success && response.wasFetchError)) {
         // possibly there is no content script loaded, this could be an error that should be reported
         // By testing edge cases I have found the if you reload the page and immediately click the
         // extension button sometimes this will happen. Presumably because the content script
@@ -242,13 +244,15 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
         let message = response.errorMessage;
         if (!message) {
           message = "Error response from 'extract' message";
+        } else {
+          message = "Error response from 'extract' message: " + message;
         }
         let requestReport = response.requestReport;
         if ((requestReport = undefined)) {
           requestReport = true;
         }
         popupState.progress = progressState.sitePopupException;
-        openExceptionPage(message, "", undefined, requestReport);
+        openExceptionPage(message, "Extract data for page", response.exceptionObject, requestReport);
       }
     });
   } catch (error) {
