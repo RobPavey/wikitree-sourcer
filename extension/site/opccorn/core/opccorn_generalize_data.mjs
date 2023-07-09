@@ -22,8 +22,74 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, dateQualifiers, WtsName, WtsDate } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
+
+const typeToRecordType = {
+  banns: RT.Marriage,
+  baptisms: RT.Baptism,
+  birth_certificate: RT.Birth,
+};
+
+class OpccornEdd {
+  constructor(ed) {
+    this.ed = ed;
+
+    // url is of the form:
+    // "https://www.cornwall-opc-database.org/search-database/more-info/?t=baptisms&id=1797543",
+    this.recordType = RT.Unclassified;
+    let urlQueryIndex = ed.url.indexOf("?");
+    if (urlQueryIndex != -1) {
+      let urlQuery = ed.url.substring(urlQueryIndex + 1);
+      let terms = urlQuery.split("&");
+      if (terms.length == 2) {
+        let typeTerm = terms[0];
+        if (typeTerm.startsWith("t=")) {
+          let typeString = typeTerm.substring(2);
+          let recordType = typeToRecordType[typeString];
+          if (recordType) {
+            this.recordType = recordType;
+          }
+        }
+      }
+    }
+  }
+
+  getEventDateObj() {
+    let dateObj = new WtsDate();
+    let year = this.ed.recordData["Year"];
+    if (year) {
+      // Banns can have two years for the three dates
+      const slashIndex = year.indexOf("/");
+      if (slashIndex != -1) {
+        year = year.substring(0, slashIndex);
+      }
+
+      dateObj.yearString = year;
+
+      let dayMonth = this.ed.recordData["Day Month"];
+      if (!dayMonth) {
+        dayMonth = this.ed.recordData["Day Month 1"];
+      }
+
+      if (dayMonth) {
+        let parts = dayMonth.split("-");
+        if (parts.length == 2) {
+          let day = parts[0];
+          // remove leading 0
+          if (day && day.length == 2 && day[0] == "0") {
+            day = day.substring(1);
+          }
+          let month = parts[1];
+
+          let dateString = day + " " + month + " " + year;
+          dateObj.dateString = dateString;
+        }
+      }
+    }
+    return dateObj;
+  }
+}
 
 // This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
@@ -31,8 +97,7 @@ function generalizeData(input) {
   let ed = input.extractedData;
 
   let result = new GeneralizedData();
-
-  result.sourceOfData = "examplesite";
+  result.sourceOfData = "opccorn";
 
   if (!ed.success) {
     return result; // the extract failed
@@ -40,21 +105,13 @@ function generalizeData(input) {
 
   result.sourceType = "record";
 
-  switch (ed.eventType) {
-    case "birth":
-      result.recordType = RT.BirthRegistration;
-      break;
-    case "marriage":
-      result.recordType = RT.MarriageRegistration;
-      break;
-    case "death":
-      result.recordType = RT.DeathRegistration;
-      break;
-    default:
-      return result;
-  }
+  let edd = new OpccornEdd(ed);
+  result.recordType = edd.recordType;
 
-  result.setEventYear(ed.eventYear);
+  let eventDateObj = edd.getEventDateObj();
+  if (eventDateObj) {
+    result.eventDate = eventDateObj;
+  }
 
   // Names, there should always be a firstName and lastName. MiddleNames may be undefined.
   result.setLastNameAndForeNames(ed.surname, ed.givenNames);
@@ -90,7 +147,7 @@ function generalizeData(input) {
 
   result.hasValidData = true;
 
-  //console.log("examplesite; generalizeData: result is:");
+  //console.log("opccorn; generalizeData: result is:");
   //console.log(result);
 
   return result;

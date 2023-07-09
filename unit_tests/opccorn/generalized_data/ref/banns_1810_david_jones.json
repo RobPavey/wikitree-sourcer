@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "eventDate": {
+    "yearString": "1810",
+    "dateString": "23 Dec 1810"
+  },
+  "hasValidData": true
+}

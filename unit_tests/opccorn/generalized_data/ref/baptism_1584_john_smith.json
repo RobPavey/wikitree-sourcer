@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "eventDate": {
+    "yearString": "1584",
+    "dateString": "30 May 1584"
+  },
+  "hasValidData": true
+}

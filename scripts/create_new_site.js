@@ -74,7 +74,7 @@ function checkParameters(parameters) {
     return false;
   }
 
-  let lcSiteName = siteName;
+  let lcSiteName = siteName.toLowerCase();
   if (lcSiteName != siteName) {
     console.log("Parameter check failed. siteName must be all lowercase.");
     return false;

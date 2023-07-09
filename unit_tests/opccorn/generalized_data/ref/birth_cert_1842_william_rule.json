@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "eventDate": {
+    "yearString": "1842",
+    "dateString": "30 Sep 1842"
+  },
+  "hasValidData": true
+}
