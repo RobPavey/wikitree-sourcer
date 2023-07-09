@@ -194,23 +194,22 @@ function extractDataAndRespond(document, url, contentType, sendResponse, siteSpe
   //console.log('extractDataAndRespond. calling : loadedExtractDataModule.extractData');
 
   // Extract the data.
-  let extractedData = loadedExtractDataModule.extractData(document, url, siteSpecificInput);
+  try {
+    let extractedData = loadedExtractDataModule.extractData(document, url, siteSpecificInput);
+    // respond with the type of content and the extracted data
+    sendResponse({
+      success: true,
+      contentType: contentType,
+      extractedData: extractedData,
+    });
+  } catch (error) {
+    openExceptionPageForContentScript("Error while performing extractData", url, error, true);
+    sendResponse({
+      success: false,
+      exceptionWasReported: true,
+    });
+  }
 
-  //if (extractedData) {
-  //  console.log("extractDataAndRespond, extractedData is");
-  //  console.log(extractedData);
-  //  console.log("extractDataAndRespond, extractedData.pageType is: " + extractedData.pageType);
-  //}
-  //else {
-  //  console.log("extractDataAndRespond, extractedData is undefined or empty");
-  //}
-
-  // respond with the type of content and the extracted data
-  sendResponse({
-    success: true,
-    contentType: contentType,
-    extractedData: extractedData,
-  });
   return false;
 }
 

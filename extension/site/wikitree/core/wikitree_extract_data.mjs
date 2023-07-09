@@ -694,16 +694,20 @@ function extractDataForEditFamily(document, result) {
         let linkNode = textNode.nextSibling;
         if (linkNode) {
           let href = linkNode.getAttribute("href");
-          href = href.replace(/^\/wiki\//, "");
-          nameAndId.wikiId = href;
+          if (href) {
+            href = href.replace(/^\/wiki\//, "");
+            nameAndId.wikiId = href;
+          }
         }
       }
     } else if (parentNode) {
       let linkNode = parentNode.querySelector("a");
       if (linkNode) {
         let href = linkNode.getAttribute("href");
-        href = href.replace(/^\/wiki\//, "");
-        nameAndId.wikiId = href;
+        if (href) {
+          href = href.replace(/^\/wiki\//, "");
+          nameAndId.wikiId = href;
+        }
 
         let spouseText = linkNode.textContent;
         spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
@@ -715,7 +719,9 @@ function extractDataForEditFamily(document, result) {
   }
 
   function getSiblingParentNameAndWikiId(isFather) {
-    let selector = isFather ? '#content input[name="wpSameFather"]' : '#content input[name="wpSameMother"]';
+    let selector = isFather
+      ? '#content input[name="wpSameFather"]:not([type="hidden"])'
+      : '#content input[name="wpSameMother"]:not([type="hidden"])';
 
     let nameAndId = {};
 
@@ -737,8 +743,10 @@ function extractDataForEditFamily(document, result) {
           let linkNode = textNode.nextSibling;
           if (linkNode) {
             let href = linkNode.getAttribute("href");
-            href = href.replace(/^\/wiki\//, "");
-            nameAndId.wikiId = href;
+            if (href) {
+              href = href.replace(/^\/wiki\//, "");
+              nameAndId.wikiId = href;
+            }
           }
         }
       } else {
@@ -746,10 +754,12 @@ function extractDataForEditFamily(document, result) {
         if (textNode) {
           let linkNode = textNode.nextSibling;
           if (linkNode && linkNode.type != 3) {
-            let href = linkNode.getAttribute("href");
-            href = href.replace(/^\/wiki\//, "");
             nameAndId.name = linkNode.textContent;
-            nameAndId.wikiId = href;
+            let href = linkNode.getAttribute("href");
+            if (href) {
+              href = href.replace(/^\/wiki\//, "");
+              nameAndId.wikiId = href;
+            }
           }
         }
       }
@@ -833,7 +843,7 @@ function extractDataForEditFamily(document, result) {
     }
     result.familyMemberWikiId = wikiId;
 
-    let spouseIsParentNodes = document.querySelectorAll('#content input[name="wpSpouseIsParent"]');
+    let spouseIsParentNodes = document.querySelectorAll('#content input[name="wpSpouseIsParent"]:not([type="hidden"])');
     if (spouseIsParentNodes.length > 0) {
       result.familyMemberSpouses = [];
 
