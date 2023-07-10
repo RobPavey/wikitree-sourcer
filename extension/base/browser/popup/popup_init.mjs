@@ -241,18 +241,22 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
           }
         }
       } else {
-        let message = response.errorMessage;
-        if (!message) {
-          message = "Error response from 'extract' message";
-        } else {
-          message = "Error response from 'extract' message: " + message;
-        }
-        let requestReport = response.requestReport;
-        if ((requestReport = undefined)) {
-          requestReport = true;
+        // it works better to catach this is content_common since the error stack works then
+        // So normally exceptionWasReported will be true if an exception was caught in extractDataAndRespond
+        if (!response.exceptionWasReported) {
+          let message = response.errorMessage;
+          if (!message) {
+            message = "Error response from 'extract' message";
+          } else {
+            message = "Error response from 'extract' message: " + message;
+          }
+          let requestReport = response.requestReport;
+          if (requestReport === undefined) {
+            requestReport = true;
+          }
+          openExceptionPage(message, popupState, response.exceptionObject, requestReport);
         }
         popupState.progress = progressState.sitePopupException;
-        openExceptionPage(message, "Extract data for page", response.exceptionObject, requestReport);
       }
     });
   } catch (error) {
