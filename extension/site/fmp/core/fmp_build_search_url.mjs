@@ -295,17 +295,17 @@ function buildSearchUrl(buildUrlInput) {
 
     if (gd.parents) {
       if (gd.parents.father && (!parameters || parameters.father)) {
-        let fatherForeNames = gd.parents.father.name.inferForenames();
+        let fatherForenames = gd.parents.father.name.inferForenames();
         let fatherLastNames = gd.inferPersonLastNames(gd.parents.father);
         if (isBaptism) {
           fatherLastNames = undefined; // giving the father's last name on baptism causes search to fail
         }
-        builder.addFather(fatherForeNames, fatherLastNames);
+        builder.addFather(fatherForenames, fatherLastNames);
       }
       if (gd.parents.mother && (!parameters || parameters.mother)) {
-        let motherForeNames = gd.parents.mother.name.inferForenames();
+        let motherForenames = gd.parents.mother.name.inferForenames();
         let motherLastNames = undefined; // we don't want multiple names
-        builder.addMother(motherForeNames, motherLastNames);
+        builder.addMother(motherForenames, motherLastNames);
       }
     }
 
@@ -331,7 +331,7 @@ function buildSearchUrl(buildUrlInput) {
 
       if (spouse) {
         if (spouse.name) {
-          let spouseForeNames = spouse.name.inferForenames();
+          let spouseForenames = spouse.name.inferForenames();
           let spouseLastNames = gd.inferPersonLastNames(spouse);
           // if coming from somewhere with more than one last name (basically a WT profile)
           // then, depending on the type of search we may be able to chose one
@@ -347,9 +347,9 @@ function buildSearchUrl(buildUrlInput) {
 
           if (parameters && (parameters.category == "census,+land+&+surveys" || parameters.subCategory == "census")) {
             // for a census the spouse will have the same name as the main person
-            builder.addOtherPerson(spouseForeNames, lastName);
+            builder.addOtherPerson(spouseForenames, lastName);
           } else {
-            builder.addSpouse(spouseForeNames, spouseLastNames);
+            builder.addSpouse(spouseForenames, spouseLastNames);
           }
         }
 

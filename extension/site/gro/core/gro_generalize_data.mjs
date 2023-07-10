@@ -81,7 +81,7 @@ function generalizeData(input) {
   let registrationDistrict = cleanRegistrationDistrictName(ed.registrationDistrict);
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setLastNameAndForeNames(lastName, forenames);
+  result.setLastNameAndForenames(lastName, forenames);
 
   if (ed.eventType == "birth") {
     collectionId = "births";

@@ -3,20 +3,21 @@
   "sourceType": "record",
   "recordType": "Birth",
   "name": {
-    "forenames": "William Charles Jones",
-    "lastName": "Rule"
+    "forenames": "Francis Frederick William George",
+    "lastName": "Smith"
   },
   "eventDate": {
-    "yearString": "1842",
-    "dateString": "30 Sep 1842"
+    "yearString": "1919",
+    "dateString": "8 Oct 1919"
   },
   "eventPlace": {
     "county": "Cornwall",
     "country": "England"
   },
+  "mothersMaidenName": "Beard",
   "birthDate": {
-    "yearString": "1842",
-    "dateString": "30 Sep 1842"
+    "yearString": "1919",
+    "dateString": "8 Oct 1919"
   },
   "hasValidData": true
 }

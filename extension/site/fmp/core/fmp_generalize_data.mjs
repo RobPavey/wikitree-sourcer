@@ -973,7 +973,7 @@ function generalizeDataGivenRecordType(ed, result) {
 }
 
 function generalizeProfileData(ed, result) {
-  result.setLastNameAndForeNames(ed.surname, ed.givenName);
+  result.setLastNameAndForenames(ed.surname, ed.givenName);
   result.setBirthYear(ed.birthYear);
   result.setBirthDate(ed.birthDate);
   result.setBirthPlace(ed.birthPlace);
@@ -1038,7 +1038,7 @@ function generalizeData(input) {
 
   let firstNames = getRecordDataValueForList(ed, ["First name(s)", "First name"]);
   let lastName = getRecordDataValueForList(ed, ["Last name", "Last name(s)"]);
-  result.setLastNameAndForeNames(lastName, firstNames);
+  result.setLastNameAndForenames(lastName, firstNames);
 
   let recordData = ed.recordData;
   if (recordData != undefined) {

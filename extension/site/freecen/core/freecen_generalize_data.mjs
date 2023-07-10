@@ -278,7 +278,7 @@ function generalizeData(input) {
   let surname = WTS_String.toInitialCapsEachWord(selectedMember["Surname"], true);
   let forenames = selectedMember["Forenames"];
 
-  result.setLastNameAndForeNames(surname, forenames);
+  result.setLastNameAndForenames(surname, forenames);
 
   if (ed.ageAtDeath) {
     result.ageAtDeath = ed.ageAtDeath;

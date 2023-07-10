@@ -873,7 +873,7 @@ function setSurnameAndForename(ed, result) {
     forenames = "";
   }
 
-  result.setLastNameAndForeNames(lastName, forenames);
+  result.setLastNameAndForenames(lastName, forenames);
 }
 
 function setFullName(ed, result) {

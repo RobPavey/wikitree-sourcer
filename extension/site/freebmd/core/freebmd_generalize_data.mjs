@@ -82,7 +82,7 @@ function generalizeData(input) {
   result.setEventQuarter(freebmdQuarterToGdQuarter(ed.eventQuarter));
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setLastNameAndForeNames(ed.surname, ed.givenNames);
+  result.setLastNameAndForenames(ed.surname, ed.givenNames);
 
   if (ed.eventType == "birth") {
     collectionId = "births";

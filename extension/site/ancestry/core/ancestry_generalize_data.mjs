@@ -2026,7 +2026,7 @@ function generalizeRecordData(input, result) {
   if (!fullName && ed.recordData) {
     const firstName = getCleanRecordDataValue(ed, "First Name");
     const lastName = getCleanRecordDataValue(ed, "Last Name");
-    result.setLastNameAndForeNames(lastName, firstName);
+    result.setLastNameAndForenames(lastName, firstName);
   }
 
   if (ed.recordData != undefined) {
@@ -2221,7 +2221,7 @@ function generalizeProfileData(input, result) {
       }
     }
   }
-  result.setLastNameAndForeNames(surname, ed.givenName);
+  result.setLastNameAndForenames(surname, ed.givenName);
 }
 
 // This function generalizes the data (ed) extracted from an Ancestry page.

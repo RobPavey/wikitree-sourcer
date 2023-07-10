@@ -24,6 +24,9 @@ SOFTWARE.
 
 const WTS_String = {
   isWordAllUpperCase: function (string) {
+    if (!string) {
+      return false;
+    }
     return string.toUpperCase() == string;
   },
 

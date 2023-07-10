@@ -106,14 +106,14 @@ function buildSearchUrl(buildUrlInput) {
 
   if (gd.parents) {
     if (gd.parents.father && (!parameters || parameters.father)) {
-      let fatherForeNames = gd.parents.father.name.inferForenames();
+      let fatherForenames = gd.parents.father.name.inferForenames();
       let fatherLastNames = gd.inferPersonLastNames(gd.parents.father);
-      builder.addFather(fatherForeNames, fatherLastNames);
+      builder.addFather(fatherForenames, fatherLastNames);
     }
     if (gd.parents.mother && (!parameters || parameters.mother)) {
-      let motherForeNames = gd.parents.mother.name.inferForenames();
+      let motherForenames = gd.parents.mother.name.inferForenames();
       let motherLastNames = gd.inferPersonLastNames(gd.parents.mother);
-      builder.addMother(motherForeNames, motherLastNames);
+      builder.addMother(motherForenames, motherLastNames);
     }
   }
 
@@ -139,9 +139,9 @@ function buildSearchUrl(buildUrlInput) {
 
     if (spouse) {
       if (spouse.name) {
-        let spouseForeNames = spouse.name.inferForenames();
+        let spouseForenames = spouse.name.inferForenames();
         let spouseLastNames = gd.inferPersonLastNames(spouse);
-        builder.addSpouse(spouseForeNames, spouseLastNames);
+        builder.addSpouse(spouseForenames, spouseLastNames);
       }
 
       if (spouse.marriageDate || spouse.marriagePlace) {

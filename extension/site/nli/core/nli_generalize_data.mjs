@@ -168,7 +168,7 @@ function regeneralizeData(input) {
 
   result.recordType = newData.recordType;
 
-  result.setLastNameAndForeNames(newData.lastName, newData.forenames);
+  result.setLastNameAndForenames(newData.lastName, newData.forenames);
 
   if (newData.eventDate) {
     result.setEventDate(newData.eventDate);
@@ -180,7 +180,7 @@ function regeneralizeData(input) {
   if (newData.spouseForenames || newData.spouseLastName) {
     const spouse = result.addSpouse();
     spouse.name.setLastName(newData.spouseLastName);
-    spouse.name.setForeNames(newData.spouseForenames);
+    spouse.name.setForenames(newData.spouseForenames);
   }
 }
 

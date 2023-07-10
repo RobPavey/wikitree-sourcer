@@ -49,7 +49,7 @@ function generalizeData(input) {
     // This is a digital result
     let lastName = WTS_String.toInitialCapsEachWord(ed.digitalRecordData["Last name"]);
     let forenames = WTS_String.toInitialCapsEachWord(ed.digitalRecordData["First name"]);
-    result.setLastNameAndForeNames(lastName, forenames);
+    result.setLastNameAndForenames(lastName, forenames);
 
     result.setDeathDate(ed.digitalRecordData["Date of death"]);
     result.setEventDate(ed.digitalRecordData["Date of probate"]);
@@ -67,7 +67,7 @@ function generalizeData(input) {
   } else {
     let lastName = ed.searchData["Last name"];
     let forenames = ed.searchData["First name (Optional)"];
-    result.setLastNameAndForeNames(lastName, forenames);
+    result.setLastNameAndForenames(lastName, forenames);
 
     function buildDate(year, month, day) {
       return WTS_Date.getDateStringFromYearMonthDay(year, month, day);
@@ -100,7 +100,7 @@ function regeneralizeData(input) {
 
   result.recordType = RT.Probate;
 
-  result.setLastNameAndForeNames(newData.lastName, newData.forenames);
+  result.setLastNameAndForenames(newData.lastName, newData.forenames);
 
   result.setDeathDate(newData.deathDate);
   result.setDeathPlace(newData.deathPlace);

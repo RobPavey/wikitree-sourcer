@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nFrancis Frederick William George Smith born on 8 Oct 1919.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Francis was born on 8 October 1919.<ref>\n'''Birth''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nFrancis Frederick William George Smith born on 8 Oct 1919.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>Francis Frederick William George Smith born on 8 Oct 1919.",
+    "type": "source"
+  }
+}

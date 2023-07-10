@@ -57,7 +57,7 @@ function generalizeData(input) {
   result.setEventYear(ed.eventYear);
 
   // Names, there should always be a firstName and lastName. MiddleNames may be undefined.
-  result.setLastNameAndForeNames(ed.surname, ed.givenNames);
+  result.setLastNameAndForenames(ed.surname, ed.givenNames);
 
   if (ed.eventType == "birth") {
     result.lastNameAtBirth = ed.surname;

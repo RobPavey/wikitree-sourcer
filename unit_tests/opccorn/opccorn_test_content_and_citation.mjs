@@ -43,6 +43,14 @@ const regressionData = [
     caseName: "birth_cert_1842_william_rule",
     url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=birth_certificate&id=2358",
   },
+  {
+    caseName: "birth_cert_1919_francis_smith",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=birth_certificate&id=2297",
+  },
+  {
+    caseName: "marriage_1801_david_davis",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=marriages&id=586772",
+  },
 ];
 
 async function runTests(testManager) {

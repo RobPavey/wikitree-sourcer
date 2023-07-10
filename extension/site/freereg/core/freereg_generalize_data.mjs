@@ -89,7 +89,7 @@ function buildFullName(ed, forenameKeys, surnameKeys) {
 
 function setMarriageData(ed, result, input) {
   let surname = WTS_String.toInitialCapsEachWord(input.surname, true);
-  result.setLastNameAndForeNames(surname, input.forenames);
+  result.setLastNameAndForenames(surname, input.forenames);
   result.setFieldIfValueExists("ageAtEvent", input.age);
 
   let spouseSurname = WTS_String.toInitialCapsEachWord(input.spouseSurname, true);
@@ -135,7 +135,7 @@ function generalizeDataForBaptism(ed, result) {
   let surname = getRecordDataValueForKeys(ed, ["Person surname", "Father surname", "Mother surname"]);
   surname = WTS_String.toInitialCapsEachWord(surname, true);
   result.lastNameAtBirth = surname;
-  result.setLastNameAndForeNames(surname, forenames);
+  result.setLastNameAndForenames(surname, forenames);
 
   let fatherName = buildFullName(ed, ["Father forename"], ["Father surname"]);
   if (fatherName) {
@@ -170,7 +170,7 @@ function generalizeDataForBurial(ed, result) {
   let surname = getRecordDataValueForKeys(ed, ["Burial person surname"]);
   surname = WTS_String.toInitialCapsEachWord(surname, true);
   result.lastNameAtDeath = surname;
-  result.setLastNameAndForeNames(surname, forenames);
+  result.setLastNameAndForenames(surname, forenames);
 }
 
 function generalizeDataForMarriage(ed, result) {

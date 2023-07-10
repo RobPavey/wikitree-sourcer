@@ -22,18 +22,44 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers, WtsName, WtsDate } from "../../../base/core/generalize_data_utils.mjs";
+import {
+  GeneralizedData,
+  dateQualifiers,
+  WtsName,
+  WtsDate,
+  WtsPlace,
+} from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
+import { WTS_String } from "../../../base/core/wts_string.mjs";
 
-const typeToRecordType = {
-  banns: RT.Marriage,
-  baptisms: RT.Baptism,
-  birth_certificate: RT.Birth,
+const typeData = {
+  unknown: {
+    recordType: RT.Unclassified,
+  },
+  banns: {
+    recordType: RT.Marriage,
+    placeType: "pcc",
+  },
+  baptisms: {
+    recordType: RT.Baptism,
+    placeType: "pcc",
+    surnameIsLnab: true,
+  },
+  birth_certificate: {
+    recordType: RT.Birth,
+    placeType: "prd_cs_c",
+    surnameIsLnab: true,
+  },
+  marriages: {
+    recordType: RT.Marriage,
+    placeType: "pcc",
+  },
 };
 
 class OpccornEdd {
   constructor(ed) {
     this.ed = ed;
+    this.urlRecordType = "unknown";
 
     // url is of the form:
     // "https://www.cornwall-opc-database.org/search-database/more-info/?t=baptisms&id=1797543",
@@ -46,13 +72,39 @@ class OpccornEdd {
         let typeTerm = terms[0];
         if (typeTerm.startsWith("t=")) {
           let typeString = typeTerm.substring(2);
-          let recordType = typeToRecordType[typeString];
-          if (recordType) {
-            this.recordType = recordType;
+          this.urlRecordType = typeString;
+          let thisTypeData = typeData[this.urlRecordType];
+          if (thisTypeData) {
+            this.typeData = thisTypeData;
+            let recordType = thisTypeData.recordType;
+            if (recordType) {
+              this.recordType = recordType;
+            }
           }
         }
       }
     }
+  }
+
+  cleanLastName(nameString) {
+    let cleanName = nameString;
+    if (WTS_String.isWordAllUpperCase(cleanName)) {
+      cleanName = WTS_String.toInitialCaps(cleanName);
+    }
+    return cleanName;
+  }
+
+  cleanParishCircuitOrChapel(string) {
+    let cleanString = string;
+    const stSuffix = ", St.";
+    if (cleanString.endsWith(stSuffix)) {
+      let stIndex = cleanString.indexOf(stSuffix);
+      if (stIndex != -1) {
+        cleanString = cleanString.substring(0, stIndex).trim();
+        cleanString = "St. " + cleanString;
+      }
+    }
+    return cleanString;
   }
 
   getEventDateObj() {
@@ -89,11 +141,109 @@ class OpccornEdd {
     }
     return dateObj;
   }
+
+  getEventPlaceObj() {
+    let placeObj = new WtsPlace();
+
+    let county = "Cornwall";
+    let country = "England";
+    let placeString = "";
+
+    let placeType = this.typeData.placeType;
+    switch (placeType) {
+      case "pcc":
+        {
+          // e.g.     "Parish Circuit Or Chapel": "Neot, St.",
+          let pcc = this.ed.recordData["Parish Circuit Or Chapel"];
+          if (pcc) {
+            pcc = this.cleanParishCircuitOrChapel(pcc);
+            placeString = pcc + ", " + county + ", " + country;
+          }
+        }
+        break;
+    }
+
+    if (placeString) {
+      placeObj.placeString = placeString;
+    }
+
+    placeObj.county = county;
+    placeObj.country = country;
+
+    return placeObj;
+  }
+
+  getNameObj() {
+    let nameObj = new WtsName();
+
+    let forename = "";
+    let surname = "";
+
+    if (this.recordType == RT.Marriage) {
+      forename = this.ed.recordData["Groom Fn"];
+      surname = this.ed.recordData["Groom Sn"];
+    } else {
+      forename = this.ed.recordData["Forename"];
+      surname = this.ed.recordData["Surname"];
+    }
+
+    surname = this.cleanLastName(surname);
+
+    nameObj.setForenames(forename);
+    nameObj.setLastName(surname);
+
+    return nameObj;
+  }
+
+  getLastNameAtBirth() {
+    if (this.typeData.surnameIsLnab) {
+      let nameObj = this.getNameObj();
+      if (nameObj.lastName) {
+        return nameObj.lastNam;
+      }
+    }
+    return "";
+  }
+
+  getMothersMaidenName() {
+    let mmn = this.ed.recordData["Mother Maiden Surname"];
+    mmn = this.cleanLastName(mmn);
+    return mmn;
+  }
+
+  getSpouseObj(eventDateObj, eventPlaceObj) {
+    let spouseObj = undefined;
+
+    let forename = this.ed.recordData["Bride Fn"];
+    let surname = this.ed.recordData["Bride Sn"];
+
+    if (forename || surname) {
+      spouseObj = {};
+      let nameObj = new WtsName();
+      surname = this.cleanLastName(surname);
+      nameObj.setForenames(forename);
+      nameObj.setLastName(surname);
+      spouseObj.name = nameObj;
+      if (eventDateObj) {
+        spouseObj.marriageDate = eventDateObj;
+      }
+      if (eventPlaceObj) {
+        spouseObj.marriagePlace = eventPlaceObj;
+      }
+    }
+    return spouseObj;
+  }
 }
 
 // This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
+  function setField(key, value) {
+    if (value) {
+      result[key] = value;
+    }
+  }
+
   let ed = input.extractedData;
 
   let result = new GeneralizedData();
@@ -108,33 +258,17 @@ function generalizeData(input) {
   let edd = new OpccornEdd(ed);
   result.recordType = edd.recordType;
 
-  let eventDateObj = edd.getEventDateObj();
-  if (eventDateObj) {
-    result.eventDate = eventDateObj;
-  }
+  setField("name", edd.getNameObj());
+  setField("eventDate", edd.getEventDateObj());
+  setField("eventPlace", edd.getEventPlaceObj());
+  setField("lastNameAtBirth", edd.getLastNameAtBirth());
+  setField("mothersMaidenName", edd.getMothersMaidenName());
 
-  // Names, there should always be a firstName and lastName. MiddleNames may be undefined.
-  result.setLastNameAndForeNames(ed.surname, ed.givenNames);
-
-  if (ed.eventType == "birth") {
-    result.lastNameAtBirth = ed.surname;
+  if (result.recordType == RT.Birth) {
     result.birthDate = result.eventDate;
-    if (ed.mother) {
-      result.mothersMaidenName = ed.mothersMaidenName;
-    }
-  } else if (ed.eventType == "marriage") {
-    if (ed.spouse) {
-      let name = new WtsName();
-      name.name = ed.spouse;
-      let spouse = {
-        name: name,
-        marriageDate: result.eventDate,
-        marriagePlace: ed.district,
-      };
-
-      result.spouses = [spouse];
-    }
-  } else if (ed.eventType == "death") {
+  } else if (result.recordType == RT.Marriage) {
+    result.addSpouseObj(edd.getSpouseObj(result.eventDate, result.eventPlace));
+  } else if (result.recordType == RT.Death) {
     result.lastNameAtDeath = ed.surname;
     result.deathDate = result.eventDate;
 

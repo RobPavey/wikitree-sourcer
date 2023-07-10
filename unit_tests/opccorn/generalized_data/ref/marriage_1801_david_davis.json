@@ -4,29 +4,29 @@
   "recordType": "Marriage",
   "name": {
     "forenames": "David",
-    "lastName": "Jones"
+    "lastName": "Davis"
   },
   "eventDate": {
-    "yearString": "1810",
-    "dateString": "23 Dec 1810"
+    "yearString": "1801",
+    "dateString": "31 Mar 1801"
   },
   "eventPlace": {
-    "placeString": "Padstow, Cornwall, England",
+    "placeString": "Madron, Cornwall, England",
     "county": "Cornwall",
     "country": "England"
   },
   "spouses": [
     {
       "name": {
-        "forenames": "Ann",
-        "lastName": "Tucker"
+        "forenames": "Mary",
+        "lastName": "Rawlin"
       },
       "marriageDate": {
-        "yearString": "1810",
-        "dateString": "23 Dec 1810"
+        "yearString": "1801",
+        "dateString": "31 Mar 1801"
       },
       "marriagePlace": {
-        "placeString": "Padstow, Cornwall, England",
+        "placeString": "Madron, Cornwall, England",
         "county": "Cornwall",
         "country": "England"
       }

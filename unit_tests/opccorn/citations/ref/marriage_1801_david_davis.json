@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nDavid Davis marriage to Mary Rawlin on 31 Mar 1801 in Madron, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "David married Mary Rawlin on 31 March 1801 in Madron, Cornwall, England.<ref>\n'''Marriage''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nDavid Davis marriage to Mary Rawlin on 31 Mar 1801 in Madron, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>David Davis marriage to Mary Rawlin on 31 Mar 1801 in Madron, Cornwall, England.",
+    "type": "source"
+  }
+}

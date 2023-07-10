@@ -958,7 +958,7 @@ class WtsName {
     }
   }
 
-  setForeNames(name) {
+  setForenames(name) {
     if (name) {
       // sometimes the given names can contain "&quot;"
       name = name.replace(/\&quot\;/g, '"');
@@ -1358,7 +1358,7 @@ class GeneralizedData {
     return dateYear - age;
   }
 
-  extractNamePartsFromForeNames(nameParts) {
+  extractNamePartsFromForenames(nameParts) {
     // we assume that the full name has all white space replaced with single spaces and is trimmed
     let firstSpaceIndex = nameParts.forenames.indexOf(" ");
     if (firstSpaceIndex == -1) {
@@ -1395,13 +1395,13 @@ class GeneralizedData {
     nameParts.forenames = nameParts.fullName.substring(0, lastSpaceIndex);
     nameParts.lastName = nameParts.fullName.substring(lastSpaceIndex + 1);
 
-    this.extractNamePartsFromForeNames(nameParts);
+    this.extractNamePartsFromForenames(nameParts);
 
     return;
   }
 
-  extractNamesFromForeNames() {
-    this.extractNamePartsFromForeNames(this.name);
+  extractNamesFromForenames() {
+    this.extractNamePartsFromForenames(this.name);
   }
 
   extractNamesFromFullName() {
@@ -1423,14 +1423,14 @@ class GeneralizedData {
     }
   }
 
-  setLastNameAndForeNames(lastName, forenames) {
+  setLastNameAndForenames(lastName, forenames) {
     if (lastName) {
       this.createNameIfNeeded();
       this.name.setLastName(lastName);
     }
     if (forenames) {
       this.createNameIfNeeded();
-      this.name.setForeNames(forenames);
+      this.name.setForenames(forenames);
     }
   }
 
@@ -1639,6 +1639,18 @@ class GeneralizedData {
     this.spouses.push(spouse);
 
     return spouse;
+  }
+
+  addSpouseObj(spouseObj) {
+    if (!spouseObj) {
+      return;
+    }
+
+    if (this.spouses == undefined) {
+      this.spouses = [];
+    }
+
+    this.spouses.push(spouseObj);
   }
 
   addMother() {
@@ -1891,14 +1903,14 @@ class GeneralizedData {
     }
   }
 
-  setPrimaryPersonLastNameAndForeNames(lastName, forenames) {
+  setPrimaryPersonLastNameAndForenames(lastName, forenames) {
     if (lastName) {
       this.createPrimaryPersonIfNeeded();
       this.primaryPerson.name.setLastName(lastName);
     }
     if (forenames) {
       this.createPrimaryPersonIfNeeded();
-      this.primaryPerson.name.setForeNames(forenames);
+      this.primaryPerson.name.setForenames(forenames);
     }
   }
 

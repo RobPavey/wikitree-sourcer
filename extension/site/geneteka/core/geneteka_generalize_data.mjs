@@ -109,7 +109,7 @@ function generalizeData(input) {
   }
 
   if (recordData.recordType !== "S") {
-    result.setLastNameAndForeNames(recordData.lastName, recordData.firstName);
+    result.setLastNameAndForenames(recordData.lastName, recordData.firstName);
 
     if (recordData.fatherFirstName) {
       const father = result.addFather();
@@ -135,11 +135,11 @@ function generalizeData(input) {
     result.setDeathPlace(recordData.place);
     result.collectionData.id = "deaths";
   } else if (recordData.recordType === "S") {
-    result.setLastNameAndForeNames(recordData.husbandLastName, recordData.husbandFirstName);
+    result.setLastNameAndForenames(recordData.husbandLastName, recordData.husbandFirstName);
     const spouse = result.addSpouse();
     spouse.name = new WtsName();
     spouse.name.setLastName(recordData.wifeLastName);
-    spouse.name.setForeNames(recordData.wifeFirstName);
+    spouse.name.setForenames(recordData.wifeFirstName);
     if (recordData.date) {
       spouse.marriageDate.setDateAndQualifierFromString(convertDate(recordData.date));
     }

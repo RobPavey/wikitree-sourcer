@@ -217,7 +217,7 @@ function setDataFromTable(ed, result) {
   let year = result.inferEventYear();
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setLastNameAndForeNames(selectedMember["Surname"], selectedMember["Forename"]);
+  result.setLastNameAndForenames(selectedMember["Surname"], selectedMember["Forename"]);
 
   result.setAgeAtEvent(extractAgeFromMember(selectedMember));
 

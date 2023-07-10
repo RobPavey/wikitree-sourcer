@@ -2,9 +2,18 @@
   "sourceOfData": "opccorn",
   "sourceType": "record",
   "recordType": "Baptism",
+  "name": {
+    "forenames": "John",
+    "lastName": "Smith"
+  },
   "eventDate": {
     "yearString": "1584",
     "dateString": "30 May 1584"
+  },
+  "eventPlace": {
+    "placeString": "St. Neot, Cornwall, England",
+    "county": "Cornwall",
+    "country": "England"
   },
   "hasValidData": true
 }
