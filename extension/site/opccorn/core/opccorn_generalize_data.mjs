@@ -26,27 +26,15 @@ import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_d
 
 import { OpccornEdReader } from "./opccorn_ed_reader.mjs";
 
-// This function generalizes the data (ed) extracted from the web page.
-// We know what fields can be there. And we know the ones we want in generalizedData.
-function generalizeData(input) {
+function commonGeneralizeData(input, result) {
   function setField(key, value) {
     if (value) {
       result[key] = value;
     }
   }
 
-  let ed = input.extractedData;
+  let edReader = input.edReader;
 
-  let result = new GeneralizedData();
-  result.sourceOfData = "opccorn";
-
-  if (!ed.success) {
-    return result; // the extract failed
-  }
-
-  result.sourceType = "record";
-
-  let edReader = new OpccornEdReader(ed);
   result.recordType = edReader.recordType;
   setField("recordSubtype", edReader.recordSubtype);
 
@@ -71,6 +59,27 @@ function generalizeData(input) {
   setField("parents", edReader.getParents());
 
   result.hasValidData = true;
+}
+
+// This function generalizes the data (ed) extracted from the web page.
+// We know what fields can be there. And we know the ones we want in generalizedData.
+function generalizeData(input) {
+  let ed = input.extractedData;
+
+  let result = new GeneralizedData();
+  result.sourceOfData = "opccorn";
+
+  if (!ed.success) {
+    return result; // the extract failed
+  }
+
+  result.sourceType = "record";
+
+  let edReader = new OpccornEdReader(ed);
+
+  input.edReader = edReader;
+
+  commonGeneralizeData(input, result);
 
   //console.log("opccorn; generalizeData: result is:");
   //console.log(result);
