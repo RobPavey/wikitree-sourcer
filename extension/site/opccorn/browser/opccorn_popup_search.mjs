@@ -39,8 +39,8 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const opccornStartYear = 1837;
-const opccornEndYear = 1992;
+const opccornStartYear = 1500;
+const opccornEndYear = 2100;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -97,85 +97,11 @@ function addOpccornDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItem(menu, "Search Cornwall OPC...", function (element) {
-    setupOpccornSearchSubMenu(data, backFunction, filter);
+  addMenuItem(menu, "Search Cornwall OPC", function (element) {
+    opccornSearch(data.generalizedData, "PersonSearch");
   });
 
   return true;
-}
-
-async function addOpccornSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "opccorn", function (element) {
-    opccornSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addOpccornSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      opccornStartYear,
-      opccornEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Cornwall OPC Births", function (element) {
-    opccornSearch(data.generalizedData, "Births");
-  });
-}
-
-function addOpccornSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      opccornStartYear,
-      opccornEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Cornwall OPC Marriages", function (element) {
-    opccornSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addOpccornSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      opccornStartYear,
-      opccornEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Cornwall OPC Deaths", function (element) {
-    opccornSearch(data.generalizedData, "Deaths");
-  });
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Submenus
-//////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupOpccornSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  await addOpccornSameRecordMenuItem(menu, data, filter);
-  addOpccornSearchBirthsMenuItem(menu, data, filter);
-  addOpccornSearchMarriagesMenuItem(menu, data, filter);
-  addOpccornSearchDeathsMenuItem(menu, data, filter);
-
-  endMainMenu(menu);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

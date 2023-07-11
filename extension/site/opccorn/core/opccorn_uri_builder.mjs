@@ -26,7 +26,7 @@ import { WTS_String } from "../../../base/core/wts_string.mjs";
 
 class OpccornUriBuilder {
   constructor() {
-    this.uri = "https://www.opccorn.org.uk/cgi/search.pl";
+    this.uri = "https://www.cornwall-opc-database.org/search-database/person-search/index.php";
     this.searchTermAdded = false;
   }
 
@@ -57,48 +57,24 @@ class OpccornUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
-  }
-
   addSurname(string) {
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("surname1", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("given", WTS_String.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", WTS_String.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("forename1", WTS_String.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {
-    this.addSearchParameter("start", string);
+    this.addSearchParameter("year_from", string);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+    this.addSearchParameter("year_to", string);
   }
 
   getUri() {
-    return this.uri;
+    return this.uri + "&bf=Search";
   }
 }
 

@@ -57,8 +57,6 @@ function commonGeneralizeData(input, result) {
   result.addSpouseObj(edReader.getSpouseObj(result.eventDate, result.eventPlace));
 
   setField("parents", edReader.getParents());
-
-  result.hasValidData = true;
 }
 
 // This function generalizes the data (ed) extracted from the web page.
@@ -78,12 +76,12 @@ function generalizeData(input) {
   let edReader = new OpccornEdReader(ed);
 
   input.edReader = edReader;
-
   commonGeneralizeData(input, result);
 
   //console.log("opccorn; generalizeData: result is:");
   //console.log(result);
 
+  result.hasValidData = true;
   return result;
 }
 
