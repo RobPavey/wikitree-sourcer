@@ -50,7 +50,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "opccorn", "Cornwall OPC");
-registerSiteSearchPopupOptionsGroup("opccorn", 7, 7);
+registerSiteSearchPopupOptionsGroup("opccorn", 10, 10);
 
 registerSubsectionForOptions("citation", "opccorn", "Cornwall OPC");
 registerOptionsGroup(citationOptionsGroup);

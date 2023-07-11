@@ -22,34 +22,37 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
-import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
-
-import { OpccornEdReader } from "./opccorn_ed_reader.mjs";
-
-// This function generalizes the data (ed) extracted from the web page.
-function generalizeData(input) {
-  let ed = input.extractedData;
-
-  let result = new GeneralizedData();
-  result.sourceOfData = "opccorn";
-
-  if (!ed.success) {
-    return result; // the extract failed
+function commonGeneralizeData(input, result) {
+  function setField(key, value) {
+    if (value) {
+      result[key] = value;
+    }
   }
 
-  result.sourceType = "record";
+  let edReader = input.edReader;
 
-  let edReader = new OpccornEdReader(ed);
+  setField("recordType", edReader.recordType);
+  setField("recordSubtype", edReader.recordSubtype);
 
-  input.edReader = edReader;
-  commonGeneralizeData(input, result);
+  setField("name", edReader.getNameObj());
+  setField("personGender", edReader.getGender());
 
-  //console.log("opccorn; generalizeData: result is:");
-  //console.log(result);
+  setField("eventDate", edReader.getEventDateObj());
+  setField("eventPlace", edReader.getEventPlaceObj());
 
-  result.hasValidData = true;
-  return result;
+  setField("lastNameAtBirth", edReader.getLastNameAtBirth());
+  setField("lastNameAtDeath", edReader.getLastNameAtDeath());
+
+  setField("mothersMaidenName", edReader.getMothersMaidenName());
+
+  setField("ageAtDeath", edReader.getAgeAtDeath());
+  setField("ageAtEvent", edReader.getAgeAtEvent());
+  setField("birthDate", edReader.getBirthDateObj());
+  setField("deathDate", edReader.getDeathDateObj());
+
+  result.addSpouseObj(edReader.getSpouseObj(result.eventDate, result.eventPlace));
+
+  setField("parents", edReader.getParents());
 }
 
-export { generalizeData, GeneralizedData, dateQualifiers };
+export { commonGeneralizeData };

@@ -26,8 +26,11 @@ SOFTWARE.
 
 // Currently the order that they are imported is the order that they appear in the
 // options page subsection drop down
+// Therefore this list is orderd by the visible string in the options dropdown
+// rather than by sitename.
 import "../../ancestry/core/ancestry_options.mjs";
 import "../../bg/core/bg_options.mjs";
+import "../../opccorn/core/opccorn_options.mjs";
 import "../../cwgc/core/cwgc_options.mjs";
 import "../../fmp/core/fmp_options.mjs";
 import "../../fs/core/fs_options.mjs";
@@ -46,4 +49,3 @@ import "../../psuk/core/psuk_options.mjs";
 import "../../scotp/core/scotp_options.mjs";
 import "../../trove/core/trove_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
-import "../../opccorn/core/opccorn_options.mjs";
