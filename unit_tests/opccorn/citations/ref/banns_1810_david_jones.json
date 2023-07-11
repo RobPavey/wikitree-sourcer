@@ -1,14 +1,26 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nDavid Jones marriage to Ann Tucker on 23 Dec 1810 in Padstow, Cornwall, England.\n</ref>",
+    "citation": "<ref>\n'''Marriage Banns''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBanns database, Padstow<br/>\n[https://www.cornwall-opc-database.org/search-database/banns/ Cornwall OPC] (accessed 6 May 2021)<br/>\nDavid Jones marriage to Ann Tucker. Banns read on 23 Dec 1810 in Padstow, Cornwall, England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "David married Ann Tucker on 23 December 1810 in Padstow, Cornwall, England.<ref>\n'''Marriage''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nDavid Jones marriage to Ann Tucker on 23 Dec 1810 in Padstow, Cornwall, England.\n</ref>",
+    "citation": "David married Ann Tucker. The banns were read on 23 December 1810 in Padstow, Cornwall, England.<ref>\n'''Marriage Banns''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBanns database, Padstow<br/>\n[https://www.cornwall-opc-database.org/search-database/banns/ Cornwall OPC] (accessed 6 May 2021)<br/>\nDavid Jones marriage to Ann Tucker. Banns read on 23 Dec 1810 in Padstow, Cornwall, England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>David Jones marriage to Ann Tucker on 23 Dec 1810 in Padstow, Cornwall, England.",
+    "citation": "* '''Marriage Banns''': \"Cornwall Online Parish Clerks Database\"<br/>Banns database, Padstow<br/>[https://www.cornwall-opc-database.org/search-database/banns/ Cornwall OPC] (accessed 6 May 2021)<br/>David Jones marriage to Ann Tucker. Banns read on 23 Dec 1810 in Padstow, Cornwall, England.",
+    "type": "source"
+  },
+  "recordLink_inline": {
+    "citation": "<ref>\n'''Marriage Banns''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBanns database, Padstow<br/>\n[https://www.cornwall-opc-database.org/search-database/more-info/?t=banns&id=72798 Cornwall OPC Record] (accessed 6 May 2021)<br/>\nDavid Jones marriage to Ann Tucker. Banns read on 23 Dec 1810 in Padstow, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "recordLink_narrative": {
+    "citation": "David married Ann Tucker. The banns were read on 23 December 1810 in Padstow, Cornwall, England.<ref>\n'''Marriage Banns''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBanns database, Padstow<br/>\n[https://www.cornwall-opc-database.org/search-database/more-info/?t=banns&id=72798 Cornwall OPC Record] (accessed 6 May 2021)<br/>\nDavid Jones marriage to Ann Tucker. Banns read on 23 Dec 1810 in Padstow, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "recordLink_source": {
+    "citation": "* '''Marriage Banns''': \"Cornwall Online Parish Clerks Database\"<br/>Banns database, Padstow<br/>[https://www.cornwall-opc-database.org/search-database/more-info/?t=banns&id=72798 Cornwall OPC Record] (accessed 6 May 2021)<br/>David Jones marriage to Ann Tucker. Banns read on 23 Dec 1810 in Padstow, Cornwall, England.",
     "type": "source"
   }
 }

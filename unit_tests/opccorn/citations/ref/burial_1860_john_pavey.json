@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBurials database, Royal Cornwall Gazette<br/>\n[https://www.cornwall-opc-database.org/search-database/burials/ Cornwall OPC] (accessed 6 May 2021)<br/>\nJohn Pavey burial (died age 74) on 14 Sep 1860 in Royal Cornwall Gazette, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John (age 74) was buried on 14 September 1860 in Royal Cornwall Gazette, Cornwall, England.<ref>\n'''Burial''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBurials database, Royal Cornwall Gazette<br/>\n[https://www.cornwall-opc-database.org/search-database/burials/ Cornwall OPC] (accessed 6 May 2021)<br/>\nJohn Pavey burial (died age 74) on 14 Sep 1860 in Royal Cornwall Gazette, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Cornwall Online Parish Clerks Database\"<br/>Burials database, Royal Cornwall Gazette<br/>[https://www.cornwall-opc-database.org/search-database/burials/ Cornwall OPC] (accessed 6 May 2021)<br/>John Pavey burial (died age 74) on 14 Sep 1860 in Royal Cornwall Gazette, Cornwall, England.",
+    "type": "source"
+  }
+}

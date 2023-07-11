@@ -6,6 +6,7 @@
     "forenames": "John",
     "lastName": "Smith"
   },
+  "personGender": "male",
   "eventDate": {
     "yearString": "1584",
     "dateString": "30 May 1584"
@@ -14,6 +15,14 @@
     "placeString": "St. Neot, Cornwall, England",
     "county": "Cornwall",
     "country": "England"
+  },
+  "lastNameAtBirth": "Smith",
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "John"
+      }
+    }
   },
   "hasValidData": true
 }

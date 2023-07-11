@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nMarriage Allegations database, Scilly, Isles of, St. Marys<br/>\n[https://www.cornwall-opc-database.org/search-database/allegations/ Cornwall OPC] (accessed 6 May 2021)<br/>\nRobert Parker Wilson (upwards of 21) marriage to Victoria Rebecca Edwards (upwards of 21) on 2 Mar 1861 in Scilly, Isles of, St. Marys, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Robert (age upwards of 21) married Victoria Rebecca Edwards (age upwards of 21) on 2 March 1861 in Scilly, Isles of, St. Marys, Cornwall, England.<ref>\n'''Marriage''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nMarriage Allegations database, Scilly, Isles of, St. Marys<br/>\n[https://www.cornwall-opc-database.org/search-database/allegations/ Cornwall OPC] (accessed 6 May 2021)<br/>\nRobert Parker Wilson (upwards of 21) marriage to Victoria Rebecca Edwards (upwards of 21) on 2 Mar 1861 in Scilly, Isles of, St. Marys, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Cornwall Online Parish Clerks Database\"<br/>Marriage Allegations database, Scilly, Isles of, St. Marys<br/>[https://www.cornwall-opc-database.org/search-database/allegations/ Cornwall OPC] (accessed 6 May 2021)<br/>Robert Parker Wilson (upwards of 21) marriage to Victoria Rebecca Edwards (upwards of 21) on 2 Mar 1861 in Scilly, Isles of, St. Marys, Cornwall, England.",
+    "type": "source"
+  }
+}

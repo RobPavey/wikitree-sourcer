@@ -11,13 +11,29 @@
     "dateString": "8 Oct 1919"
   },
   "eventPlace": {
+    "placeString": "Falmouth, Cornwall, England",
     "county": "Cornwall",
     "country": "England"
   },
+  "lastNameAtBirth": "Smith",
   "mothersMaidenName": "Beard",
   "birthDate": {
     "yearString": "1919",
     "dateString": "8 Oct 1919"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Frederick George William",
+        "lastName": "Smith"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Daisy Irene",
+        "lastName": "Smith"
+      }
+    }
   },
   "hasValidData": true
 }

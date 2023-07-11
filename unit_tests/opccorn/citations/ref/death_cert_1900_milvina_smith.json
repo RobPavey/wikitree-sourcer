@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nDeath Certificate database, Penzance<br/>\n[https://www.cornwall-opc-database.org/search-database/deaths/ Cornwall OPC] (accessed 6 May 2021)<br/>\nMilvina Gillard Smith death 26 Jan 1900 (age 52) in Penzance, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Milvina died (age 52) on 26 January 1900 in Penzance, Cornwall, England.<ref>\n'''Death''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nDeath Certificate database, Penzance<br/>\n[https://www.cornwall-opc-database.org/search-database/deaths/ Cornwall OPC] (accessed 6 May 2021)<br/>\nMilvina Gillard Smith death 26 Jan 1900 (age 52) in Penzance, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Cornwall Online Parish Clerks Database\"<br/>Death Certificate database, Penzance<br/>[https://www.cornwall-opc-database.org/search-database/deaths/ Cornwall OPC] (accessed 6 May 2021)<br/>Milvina Gillard Smith death 26 Jan 1900 (age 52) in Penzance, Cornwall, England.",
+    "type": "source"
+  }
+}

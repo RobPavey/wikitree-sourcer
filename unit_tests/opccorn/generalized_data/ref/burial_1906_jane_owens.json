@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "forenames": "Jane",
+    "lastName": "Owens"
+  },
+  "eventDate": {
+    "yearString": "1906",
+    "dateString": "25 Dec 1906"
+  },
+  "eventPlace": {
+    "placeString": "Agnes, St., Stile Field Cemetery, Cornwall, England",
+    "county": "Cornwall",
+    "country": "England"
+  },
+  "lastNameAtDeath": "Owens",
+  "ageAtEvent": "86",
+  "hasValidData": true
+}

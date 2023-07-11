@@ -11,12 +11,28 @@
     "dateString": "30 Sep 1842"
   },
   "eventPlace": {
+    "placeString": "Falmouth Union, Falmouth, Cornwall, England",
     "county": "Cornwall",
     "country": "England"
   },
+  "lastNameAtBirth": "Rule",
   "birthDate": {
     "yearString": "1842",
     "dateString": "30 Sep 1842"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "James",
+        "lastName": "Rule"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Mary",
+        "lastName": "Jones"
+      }
+    }
   },
   "hasValidData": true
 }

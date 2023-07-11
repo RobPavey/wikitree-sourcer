@@ -1,0 +1,38 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "forenames": "Robert Parker",
+    "lastName": "Wilson"
+  },
+  "eventDate": {
+    "yearString": "1861",
+    "dateString": "2 Mar 1861"
+  },
+  "eventPlace": {
+    "placeString": "Scilly, Isles of, St. Marys, Cornwall, England",
+    "county": "Cornwall",
+    "country": "England"
+  },
+  "ageAtEvent": "upwards of 21",
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Victoria Rebecca",
+        "lastName": "Edwards"
+      },
+      "marriageDate": {
+        "yearString": "1861",
+        "dateString": "2 Mar 1861"
+      },
+      "marriagePlace": {
+        "placeString": "Scilly, Isles of, St. Marys, Cornwall, England",
+        "county": "Cornwall",
+        "country": "England"
+      },
+      "age": "upwards of 21"
+    }
+  ],
+  "hasValidData": true
+}

@@ -1,0 +1,45 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "forenames": "David Farquharson",
+    "lastName": "Scott"
+  },
+  "eventDate": {
+    "yearString": "1946",
+    "dateString": "29 Jun 1946"
+  },
+  "eventPlace": {
+    "placeString": "Saltash, Cornwall, England",
+    "county": "Cornwall",
+    "country": "England"
+  },
+  "ageAtEvent": "22",
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Muriel May",
+        "lastName": "Gardner"
+      },
+      "marriageDate": {
+        "yearString": "1946",
+        "dateString": "29 Jun 1946"
+      },
+      "marriagePlace": {
+        "placeString": "Saltash, Cornwall, England",
+        "county": "Cornwall",
+        "country": "England"
+      },
+      "age": "19"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "David Farquharson (decd)"
+      }
+    }
+  },
+  "hasValidData": true
+}

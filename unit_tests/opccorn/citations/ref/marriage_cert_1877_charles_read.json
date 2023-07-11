@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nMarriage Certificate database, Penzance<br/>\n[https://www.cornwall-opc-database.org/search-database/marriage-certificates/ Cornwall OPC] (accessed 6 May 2021)<br/>\nCharles Richard Read (of full age) marriage to Elizabeth Fanny Weymouth Johns (of full age) on 15 Jun 1877 in Penzance, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Charles (of full age) married Elizabeth Fanny Weymouth Johns (of full age) on 15 June 1877 in Penzance, Cornwall, England.<ref>\n'''Marriage''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nMarriage Certificate database, Penzance<br/>\n[https://www.cornwall-opc-database.org/search-database/marriage-certificates/ Cornwall OPC] (accessed 6 May 2021)<br/>\nCharles Richard Read (of full age) marriage to Elizabeth Fanny Weymouth Johns (of full age) on 15 Jun 1877 in Penzance, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Cornwall Online Parish Clerks Database\"<br/>Marriage Certificate database, Penzance<br/>[https://www.cornwall-opc-database.org/search-database/marriage-certificates/ Cornwall OPC] (accessed 6 May 2021)<br/>Charles Richard Read (of full age) marriage to Elizabeth Fanny Weymouth Johns (of full age) on 15 Jun 1877 in Penzance, Cornwall, England.",
+    "type": "source"
+  }
+}

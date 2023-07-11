@@ -2,6 +2,7 @@
   "sourceOfData": "opccorn",
   "sourceType": "record",
   "recordType": "Marriage",
+  "recordSubtype": "Banns",
   "name": {
     "forenames": "David",
     "lastName": "Jones"

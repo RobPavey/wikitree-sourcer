@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nFrancis Frederick William George Smith born on 8 Oct 1919.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBirth Certificate database, Falmouth<br/>\n[https://www.cornwall-opc-database.org/search-database/birth-certificates/ Cornwall OPC] (accessed 6 May 2021)<br/>\nFrancis Frederick William George Smith born on 8 Oct 1919, child of Frederick George William Smith & Daisy Irene Smith, in Falmouth, Cornwall, England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Francis was born on 8 October 1919.<ref>\n'''Birth''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nFrancis Frederick William George Smith born on 8 Oct 1919.\n</ref>",
+    "citation": "Francis, child of Frederick George William Smith & Daisy Irene Smith, was born on 8 October 1919 in Falmouth, Cornwall, England.<ref>\n'''Birth''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBirth Certificate database, Falmouth<br/>\n[https://www.cornwall-opc-database.org/search-database/birth-certificates/ Cornwall OPC] (accessed 6 May 2021)<br/>\nFrancis Frederick William George Smith born on 8 Oct 1919, child of Frederick George William Smith & Daisy Irene Smith, in Falmouth, Cornwall, England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>Francis Frederick William George Smith born on 8 Oct 1919.",
+    "citation": "* '''Birth''': \"Cornwall Online Parish Clerks Database\"<br/>Birth Certificate database, Falmouth<br/>[https://www.cornwall-opc-database.org/search-database/birth-certificates/ Cornwall OPC] (accessed 6 May 2021)<br/>Francis Frederick William George Smith born on 8 Oct 1919, child of Frederick George William Smith & Daisy Irene Smith, in Falmouth, Cornwall, England.",
     "type": "source"
   }
 }

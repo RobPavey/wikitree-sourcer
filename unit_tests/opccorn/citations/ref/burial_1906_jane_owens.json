@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBurials database, Agnes, St., Stile Field Cemetery<br/>\n[https://www.cornwall-opc-database.org/search-database/burials/ Cornwall OPC] (accessed 6 May 2021)<br/>\nJane Owens burial (died age 86) on 25 Dec 1906 in Agnes, St., Stile Field Cemetery, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jane (age 86) was buried on 25 December 1906 in Agnes, St., Stile Field Cemetery, Cornwall, England.<ref>\n'''Burial''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBurials database, Agnes, St., Stile Field Cemetery<br/>\n[https://www.cornwall-opc-database.org/search-database/burials/ Cornwall OPC] (accessed 6 May 2021)<br/>\nJane Owens burial (died age 86) on 25 Dec 1906 in Agnes, St., Stile Field Cemetery, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Cornwall Online Parish Clerks Database\"<br/>Burials database, Agnes, St., Stile Field Cemetery<br/>[https://www.cornwall-opc-database.org/search-database/burials/ Cornwall OPC] (accessed 6 May 2021)<br/>Jane Owens burial (died age 86) on 25 Dec 1906 in Agnes, St., Stile Field Cemetery, Cornwall, England.",
+    "type": "source"
+  }
+}

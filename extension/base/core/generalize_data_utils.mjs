@@ -1669,6 +1669,18 @@ class GeneralizedData {
     return this.parents.mother;
   }
 
+  addMotherObj(motherObj) {
+    if (!motherObj) {
+      return;
+    }
+
+    if (this.parents == undefined) {
+      this.parents = {};
+    }
+
+    this.parents.mother = motherObj;
+  }
+
   addMotherName(name) {
     if (name) {
       let mother = this.addMother();
@@ -1690,6 +1702,18 @@ class GeneralizedData {
     }
 
     return this.parents.father;
+  }
+
+  addFatherObj(fatherObj) {
+    if (!fatherObj) {
+      return;
+    }
+
+    if (this.parents == undefined) {
+      this.parents = {};
+    }
+
+    this.parents.father = fatherObj;
   }
 
   addFatherName(name) {
@@ -2489,6 +2513,7 @@ class GeneralizedData {
           place = streetAddress + ", " + place;
         }
       }
+
       return place;
     }
   }
@@ -3066,6 +3091,10 @@ class GeneralizedData {
       {
         type: RT.Heraldry,
         defaultTitle: "Heraldic Record",
+      },
+      {
+        type: RT.Bastardy,
+        defaultTitle: "Bastardy Record",
       },
       {
         type: RT.OtherChurchEvent,

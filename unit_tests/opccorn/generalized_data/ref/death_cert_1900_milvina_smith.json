@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "forenames": "Milvina Gillard",
+    "lastName": "Smith"
+  },
+  "eventDate": {
+    "yearString": "1900",
+    "dateString": "26 Jan 1900"
+  },
+  "eventPlace": {
+    "placeString": "Penzance, Cornwall, England",
+    "county": "Cornwall",
+    "country": "England"
+  },
+  "lastNameAtDeath": "Smith",
+  "ageAtDeath": "52",
+  "ageAtEvent": "52",
+  "deathDate": {
+    "yearString": "1900",
+    "dateString": "26 Jan 1900"
+  },
+  "hasValidData": true
+}

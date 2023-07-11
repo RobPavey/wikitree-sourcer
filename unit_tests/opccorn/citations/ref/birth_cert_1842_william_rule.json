@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nWilliam Charles Jones Rule born on 30 Sep 1842.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBirth Certificate database, Falmouth Union<br/>\n[https://www.cornwall-opc-database.org/search-database/birth-certificates/ Cornwall OPC] (accessed 6 May 2021)<br/>\nWilliam Charles Jones Rule born on 30 Sep 1842, child of James Rule & Mary Jones, in Falmouth Union, Falmouth, Cornwall, England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "William was born on 30 September 1842.<ref>\n'''Birth''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nWilliam Charles Jones Rule born on 30 Sep 1842.\n</ref>",
+    "citation": "William, child of James Rule & Mary Jones, was born on 30 September 1842 in Falmouth Union, Falmouth, Cornwall, England.<ref>\n'''Birth''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBirth Certificate database, Falmouth Union<br/>\n[https://www.cornwall-opc-database.org/search-database/birth-certificates/ Cornwall OPC] (accessed 6 May 2021)<br/>\nWilliam Charles Jones Rule born on 30 Sep 1842, child of James Rule & Mary Jones, in Falmouth Union, Falmouth, Cornwall, England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>William Charles Jones Rule born on 30 Sep 1842.",
+    "citation": "* '''Birth''': \"Cornwall Online Parish Clerks Database\"<br/>Birth Certificate database, Falmouth Union<br/>[https://www.cornwall-opc-database.org/search-database/birth-certificates/ Cornwall OPC] (accessed 6 May 2021)<br/>William Charles Jones Rule born on 30 Sep 1842, child of James Rule & Mary Jones, in Falmouth Union, Falmouth, Cornwall, England.",
     "type": "source"
   }
 }

@@ -34,6 +34,14 @@ const regressionData = [
   {
     caseName: "banns_1810_david_jones",
     url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=banns&id=72798",
+    optionVariants: [
+      {
+        variantName: "recordLink",
+        optionOverrides: {
+          citation_opccorn_linkStyle: "record",
+        },
+      },
+    ],
   },
   {
     caseName: "baptism_1584_john_smith",
@@ -48,8 +56,32 @@ const regressionData = [
     url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=birth_certificate&id=2297",
   },
   {
+    caseName: "burial_1860_john_pavey",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=burials&id=4827393",
+  },
+  {
+    caseName: "burial_1906_jane_owens",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=burials&id=2622494",
+  },
+  {
+    caseName: "death_cert_1900_milvina_smith",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=death_certificate&id=309",
+  },
+  {
     caseName: "marriage_1801_david_davis",
     url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=marriages&id=586772",
+  },
+  {
+    caseName: "marriage_1946_david_scott",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=marriages&id=1667588",
+  },
+  {
+    caseName: "marriage_alleg_1861_robert_wilson",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=marriage_allegations&id=17004",
+  },
+  {
+    caseName: "marriage_cert_1877_charles_read",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=marriage_certificate&id=2070",
   },
 ];
 

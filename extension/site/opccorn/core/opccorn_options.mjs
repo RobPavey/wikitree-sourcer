@@ -35,10 +35,16 @@ const citationOptionsGroup = {
   subsection: "opccorn",
   options: [
     {
-      optionName: "changeNamesToInitialCaps",
-      type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
-      defaultValue: true,
+      optionName: "linkStyle",
+      type: "select",
+      label: "Link to OPC site by",
+      values: [
+        { value: "record", text: "Hyperlink to individual record (not recommended by OPC site)" },
+        { value: "database", text: "Hyperlink to correct Cornwall OPC database" },
+        { value: "content", text: "Hyperlink to Cornwall OPC content site" },
+        { value: "url_content", text: "Visible URL to Cornwall OPC content site" },
+      ],
+      defaultValue: "database",
     },
   ],
 };

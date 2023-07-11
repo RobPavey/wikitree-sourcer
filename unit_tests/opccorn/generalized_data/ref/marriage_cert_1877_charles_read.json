@@ -1,0 +1,38 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "forenames": "Charles Richard",
+    "lastName": "Read"
+  },
+  "eventDate": {
+    "yearString": "1877",
+    "dateString": "15 Jun 1877"
+  },
+  "eventPlace": {
+    "placeString": "Penzance, Cornwall, England",
+    "county": "Cornwall",
+    "country": "England"
+  },
+  "ageAtEvent": "of full age",
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Elizabeth Fanny Weymouth",
+        "lastName": "Johns"
+      },
+      "marriageDate": {
+        "yearString": "1877",
+        "dateString": "15 Jun 1877"
+      },
+      "marriagePlace": {
+        "placeString": "Penzance, Cornwall, England",
+        "county": "Cornwall",
+        "country": "England"
+      },
+      "age": "of full age"
+    }
+  ],
+  "hasValidData": true
+}

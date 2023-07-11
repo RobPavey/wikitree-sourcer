@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nJohn Smith baptism on 30 May 1584 in St. Neot, Cornwall, England.\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBaptisms database, Neot, St.<br/>\n[https://www.cornwall-opc-database.org/search-database/baptisms/ Cornwall OPC] (accessed 6 May 2021)<br/>\nJohn Smith baptism on 30 May 1584, son of John, in St. Neot, Cornwall, England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "John was baptised on 30 May 1584 in St. Neot, Cornwall, England.<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>\nJohn Smith baptism on 30 May 1584 in St. Neot, Cornwall, England.\n</ref>",
+    "citation": "John, son of John, was baptised on 30 May 1584 in St. Neot, Cornwall, England.<ref>\n'''Baptism''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nBaptisms database, Neot, St.<br/>\n[https://www.cornwall-opc-database.org/search-database/baptisms/ Cornwall OPC] (accessed 6 May 2021)<br/>\nJohn Smith baptism on 30 May 1584, son of John, in St. Neot, Cornwall, England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Baptism''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[undefined Cornwall OPC Record] (accessed 6 May 2021)<br/>John Smith baptism on 30 May 1584 in St. Neot, Cornwall, England.",
+    "citation": "* '''Baptism''': \"Cornwall Online Parish Clerks Database\"<br/>Baptisms database, Neot, St.<br/>[https://www.cornwall-opc-database.org/search-database/baptisms/ Cornwall OPC] (accessed 6 May 2021)<br/>John Smith baptism on 30 May 1584, son of John, in St. Neot, Cornwall, England.",
     "type": "source"
   }
 }

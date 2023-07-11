@@ -24,23 +24,56 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildOpccornUrl(ed, builder) {
-  // could provide option to use a search style URL but don't see any reason to so far
-  return ed.citationUrl;
-}
+import { OpccornEdReader } from "./opccorn_ed_reader.mjs";
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle += "Cornwall Online Parish Clerks Database";
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.sourceReference = "";
+  const inThe = " in the ";
+  const inTheIndex = ed.title.indexOf(inThe);
+  if (inTheIndex != -1) {
+    builder.sourceReference = ed.title.substring(inTheIndex + inThe.length);
+  }
+
+  let prd = ed.recordData["Parish Or Reg District"];
+  if (prd) {
+    builder.sourceReference += ", " + prd;
+  } else {
+    let pcc = ed.recordData["Parish Circuit Or Chapel"];
+    if (pcc) {
+      builder.sourceReference += ", " + pcc;
+    }
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var opccornUrl = buildOpccornUrl(ed, builder);
+  let options = builder.getOptions();
 
-  let recordLink = "[" + opccornUrl + " Cornwall OPC Record]";
+  let recordLink = "";
+
+  switch (options.citation_opccorn_linkStyle) {
+    case "record": {
+      recordLink = "[" + ed.url + " Cornwall OPC Record]";
+      break;
+    }
+    case "database": {
+      let edReader = new OpccornEdReader(ed);
+      recordLink = "[" + edReader.getSearchDatabaseUrl() + " Cornwall OPC]";
+      break;
+    }
+    case "content": {
+      recordLink = "[https://www.cornwall-opc-database.org/ Cornwall OPC]";
+      break;
+    }
+    case "url_content": {
+      recordLink = "https://www.cornwall-opc-database.org/";
+      break;
+    }
+  }
+
   builder.recordLinkOrTemplate = recordLink;
 }
 

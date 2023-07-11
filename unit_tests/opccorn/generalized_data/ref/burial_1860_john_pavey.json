@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "forenames": "John",
+    "lastName": "Pavey"
+  },
+  "eventDate": {
+    "yearString": "1860",
+    "dateString": "14 Sep 1860"
+  },
+  "eventPlace": {
+    "placeString": "Royal Cornwall Gazette, Cornwall, England",
+    "county": "Cornwall",
+    "country": "England"
+  },
+  "lastNameAtDeath": "Pavey",
+  "ageAtEvent": "74",
+  "hasValidData": true
+}
