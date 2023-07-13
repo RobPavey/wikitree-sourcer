@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, dateQualifiers, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 

@@ -22,16 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, dateQualifiers, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 function cleanFullName(name) {
   if (!name) {
     return "";
   }
 
-  let cleanName = WTS_String.toInitialCapsEachWord(name);
+  let cleanName = StringUtils.toInitialCapsEachWord(name);
 
   cleanName = cleanName.replace(/Mc (\w)/, "Mc$1");
 
@@ -96,15 +96,15 @@ function buildEventPlace(ed, result) {
       if (parenIndex != -1) {
         let firstPart = area.substring(0, parenIndex);
         let secondPart = area.substring(parenIndex);
-        firstPart = WTS_String.toInitialCapsEachWord(firstPart);
+        firstPart = StringUtils.toInitialCapsEachWord(firstPart);
         area = firstPart + " " + secondPart;
       } else {
-        area = WTS_String.toInitialCapsEachWord(area);
+        area = StringUtils.toInitialCapsEachWord(area);
       }
     }
 
     if (parish) {
-      parish = WTS_String.toInitialCapsEachWord(parish);
+      parish = StringUtils.toInitialCapsEachWord(parish);
     }
 
     if (area && parish) {
@@ -203,7 +203,7 @@ function generalizeData(input) {
     return result;
   }
 
-  let firstWord = WTS_String.getFirstWord(ed.eventText).toLowerCase();
+  let firstWord = StringUtils.getFirstWord(ed.eventText).toLowerCase();
   switch (firstWord) {
     case "baptism":
       result.recordType = RT.Baptism;
@@ -232,7 +232,7 @@ function generalizeData(input) {
   setRegistrationDistrict(ed, result);
   // set country
   if (!result.eventPlace) {
-    result.eventPlace = new WtsPlace();
+    result.eventPlace = new PlaceObj();
   }
   result.eventPlace.country = "Ireland";
 
@@ -271,7 +271,7 @@ function generalizeData(input) {
     }
 
     if (name2) {
-      let name = new WtsName();
+      let name = new NameObj();
       name.name = name2;
       let spouse = {
         name: name,
@@ -329,7 +329,7 @@ function generalizeData(input) {
     }
 
     if (name2) {
-      let name = new WtsName();
+      let name = new NameObj();
       name.name = name2;
       let spouse = {
         name: name,

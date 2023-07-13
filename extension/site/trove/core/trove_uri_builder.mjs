@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class TroveUriBuilder {
   constructor() {
@@ -62,11 +62,11 @@ class TroveUriBuilder {
   }
 
   addKeywordsAll(string) {
-    this.addSearchParameter("keyword", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("keyword", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addKeywordsAny(string) {
-    this.addSearchParameter("keyword.any", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("keyword.any", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {

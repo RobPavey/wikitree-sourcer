@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 // http://www.census.nationalarchives.ie/search/results.jsp
 // ?census_year=1911&surname=John&firstname=Long
@@ -71,11 +71,11 @@ class NaieUriBuilder {
   }
 
   addSurname(string) {
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("firstname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("firstname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addAge(string) {

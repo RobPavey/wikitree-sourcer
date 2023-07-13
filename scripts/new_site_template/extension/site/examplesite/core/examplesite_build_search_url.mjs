@@ -24,10 +24,10 @@ SOFTWARE.
 
 import { ExamplesiteUriBuilder } from "./examplesite_uri_builder.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 function addNumToYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     yearNum += num;
     return yearNum.toString();
@@ -37,7 +37,7 @@ function addNumToYearString(yearString, num) {
 }
 
 function subtractNumFromYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     yearNum -= num;
     return yearNum.toString();
@@ -54,7 +54,7 @@ function constrainYear(yearString) {
     return yearString;
   }
 
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     if (yearNum < minExamplesiteYear) {
       yearNum = minExamplesiteYear;
@@ -98,8 +98,8 @@ function isInYearRange(rangeStart, rangeEnd, dataStart, dataEnd) {
 }
 
 function isMiddleNameLikelyAnInitial(dates, type) {
-  let startYearNum = WTS_Date.getYearNumFromYearString(dates.startYear);
-  let endYearNum = WTS_Date.getYearNumFromYearString(dates.endYear);
+  let startYearNum = DateUtils.getYearNumFromYearString(dates.startYear);
+  let endYearNum = DateUtils.getYearNumFromYearString(dates.endYear);
 
   if (!startYearNum) {
     startYearNum = 1837;
@@ -146,7 +146,7 @@ function addAppropriateGivenNames(gd, dates, type, builder) {
 }
 
 function includeMothersName(dates, mothersMaidenName) {
-  let yearNum = WTS_Date.getYearNumFromYearString(dates.startYear);
+  let yearNum = DateUtils.getYearNumFromYearString(dates.startYear);
   if (!yearNum) {
     return false;
   }

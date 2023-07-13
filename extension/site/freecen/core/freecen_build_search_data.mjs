@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { RC } from "../../../base/core/record_collections.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { countyNameToCountyCode } from "./freecen_chapman_codes.mjs";
 
 function addBirthYear(gd, options, sameCollection, fieldData) {
@@ -53,7 +53,7 @@ function addBirthYear(gd, options, sameCollection, fieldData) {
       } else if (optBirthYearRange == "10") {
         range = 10;
       }
-      let yearNum = WTS_Date.getYearNumFromYearString(birthYear);
+      let yearNum = DateUtils.getYearNumFromYearString(birthYear);
       if (yearNum) {
         birthDates.startYear = yearNum - range;
         birthDates.endYear = yearNum + range;

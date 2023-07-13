@@ -23,10 +23,10 @@ SOFTWARE.
 */
 
 import { WikiTreePlusUriBuilder } from "./wikitree_plus_uri_builder.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 function convertDateToWtpSearchFormat(dateString) {
-  let parsedDate = WTS_Date.parseDateString(dateString);
+  let parsedDate = DateUtils.parseDateString(dateString);
 
   let wtpDate = "";
   if (!parsedDate.isValid) {

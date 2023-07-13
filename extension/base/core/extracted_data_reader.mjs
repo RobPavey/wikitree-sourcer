@@ -27,6 +27,11 @@ import { RT } from "./record_type.mjs";
 // This is the base class for the EdReader for each site (that uses this pattern)
 // The main reason for the base class is so that if the derived class doesn't define one of these functions
 // there will not be an error, since the common code in commonGeneralizeData calls many of these functions
+//
+// The purpose of EdReader classes if to interpret the extracted data for each site.
+// We try to keep the extractData code for each site as simple as possible because that runs in the content script.
+// We the EdReader provides the code to interpret the extracted data. Mainly for the generalizeData function
+// but also any other code that accesses the extracted data (like buildCitation or BuildHouseholdTable).
 class ExtractedDataReader {
   constructor(ed) {
     this.ed = ed;

@@ -23,12 +23,12 @@ SOFTWARE.
 */
 
 import { IrishgUriBuilder } from "./irishg_uri_builder.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function addNumToYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     yearNum += num;
     return yearNum.toString();
@@ -38,7 +38,7 @@ function addNumToYearString(yearString, num) {
 }
 
 function subtractNumFromYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     yearNum -= num;
     return yearNum.toString();
@@ -294,7 +294,7 @@ function buildSearchUrl(buildUrlInput) {
 
     if (!marriageStartYear) {
       if (birthYear) {
-        let startYearNum = WTS_Date.getYearNumFromYearString(birthYear);
+        let startYearNum = DateUtils.getYearNumFromYearString(birthYear);
         marriageStartYear = startYearNum + 14;
       }
     }
@@ -376,7 +376,7 @@ function buildSearchUrl(buildUrlInput) {
     if (!addedDateRange) {
       let startYear = adjustStartYear(gd.inferBirthYear(), gd.inferBirthDateQualifier(), "birth", dateInput);
       let endYear = adjustEndYear(gd.inferDeathYear(), gd.inferDeathDateQualifier(), "death", dateInput);
-      let startYearNum = WTS_Date.getYearNumFromYearString(startYear);
+      let startYearNum = DateUtils.getYearNumFromYearString(startYear);
       builder.addStartYear(startYearNum + 14);
       builder.addEndYear(endYear);
     }

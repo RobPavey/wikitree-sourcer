@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class FgUriBuilder {
   // Example URL:
@@ -102,15 +102,15 @@ class FgUriBuilder {
   }
 
   addFirstName(string) {
-    this.addSearchParameter("firstname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("firstname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addMiddleName(string) {
-    this.addSearchParameter("middlename", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("middlename", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addLastName(string) {
-    this.addSearchParameter("lastname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("lastname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   includeMaidenName() {

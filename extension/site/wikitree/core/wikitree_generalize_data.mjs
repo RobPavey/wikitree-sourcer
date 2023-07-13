@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WtsPlace, WtsName, WtsDate } from "../../../base/core/generalize_data_utils.mjs";
+import { PlaceObj, NameObj, DateObj } from "../../../base/core/generalize_data_utils.mjs";
 import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
 function getQualifier(status) {
@@ -106,7 +106,7 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
   }
 
   let object = {};
-  object.nameObj = new WtsName();
+  object.nameObj = new NameObj();
 
   var parenIndex = name.indexOf("(");
   if (parenIndex == -1) {
@@ -185,7 +185,7 @@ function generalizeData(input) {
   result.sourceType = "profile";
 
   // names
-  result.name = new WtsName();
+  result.name = new NameObj();
   if (ed.firstNames) {
     result.name.setFirstNames(ed.firstNames);
   }
@@ -212,7 +212,7 @@ function generalizeData(input) {
 
   // Birth date
   if (ed.birthDate || ed.birthYear) {
-    result.birthDate = new WtsDate();
+    result.birthDate = new DateObj();
 
     if (ed.birthDate) {
       result.birthDate.dateString = ed.birthDate;
@@ -227,7 +227,7 @@ function generalizeData(input) {
 
   // Death date
   if (ed.deathDate || ed.birthYear) {
-    result.deathDate = new WtsDate();
+    result.deathDate = new DateObj();
 
     if (ed.deathDate) {
       result.deathDate.dateString = ed.deathDate;
@@ -288,11 +288,11 @@ function generalizeData(input) {
         resultSpouse.lastNameAtDeath = obj.lastNameAtDeath;
       }
       if (spouse.marriageDate) {
-        resultSpouse.marriageDate = new WtsDate();
+        resultSpouse.marriageDate = new DateObj();
         resultSpouse.marriageDate.dateString = spouse.marriageDate;
       }
       if (spouse.marriagePlace) {
-        resultSpouse.marriagePlace = new WtsPlace();
+        resultSpouse.marriagePlace = new PlaceObj();
         resultSpouse.marriagePlace.placeString = spouse.marriagePlace;
       }
       result.spouses.push(resultSpouse);

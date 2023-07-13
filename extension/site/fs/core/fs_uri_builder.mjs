@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 // Example FamilySearch search string:
 // https://www.familysearch.org/search/record/results
@@ -118,7 +118,7 @@ class FsUriBuilder {
     if (location != undefined && location != "") {
       var fullTitle = "q." + title + "Place";
       var uniqueTitle = this.makeUniqueTitle(fullTitle);
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(location));
+      this.addSearchParameter(uniqueTitle, StringUtils.removeExtendedAsciiCharacters(location));
     }
   }
 
@@ -126,7 +126,7 @@ class FsUriBuilder {
     if (year != undefined && year != "") {
       var fullTitle = "q." + title + "Date.from";
       var uniqueTitle = this.makeUniqueTitle(fullTitle);
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(year));
+      this.addSearchParameter(uniqueTitle, StringUtils.removeExtendedAsciiCharacters(year));
     }
   }
 
@@ -134,7 +134,7 @@ class FsUriBuilder {
     if (year != undefined && year != "") {
       var fullTitle = "q." + title + "Date.to";
       var uniqueTitle = this.makeUniqueTitle(fullTitle);
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(year));
+      this.addSearchParameter(uniqueTitle, StringUtils.removeExtendedAsciiCharacters(year));
     }
   }
 
@@ -152,7 +152,7 @@ class FsUriBuilder {
       string += names.trim();
     }
     if (string != "") {
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(uniqueTitle, StringUtils.removeExtendedAsciiCharacters(string));
     }
   }
 

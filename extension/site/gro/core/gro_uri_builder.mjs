@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class GroUriBuilder {
   constructor() {
@@ -62,21 +62,21 @@ class GroUriBuilder {
   }
 
   addFirstForename(string) {
-    this.addSearchParameter("forename1", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("forename1", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addSecondForename(string) {
-    let forename2 = WTS_String.getFirstWord(string);
-    this.addSearchParameter("forename2", WTS_String.removeExtendedAsciiCharacters(forename2));
+    let forename2 = StringUtils.getFirstWord(string);
+    this.addSearchParameter("forename2", StringUtils.removeExtendedAsciiCharacters(forename2));
   }
 
   addSurname(string) {
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addMothersSurname(string) {
     if (string != "-") {
-      this.addSearchParameter("motherssurname", WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter("motherssurname", StringUtils.removeExtendedAsciiCharacters(string));
     }
   }
 

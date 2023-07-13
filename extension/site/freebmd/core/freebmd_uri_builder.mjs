@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class FreebmdUriBuilder {
   constructor() {
@@ -62,19 +62,19 @@ class FreebmdUriBuilder {
   }
 
   addSurname(string) {
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("given", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addOtherSurname(string) {
-    this.addSearchParameter("s_surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {

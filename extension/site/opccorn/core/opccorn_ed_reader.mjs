@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WtsName, WtsDate, WtsPlace } from "../../../base/core/generalize_data_utils.mjs";
+import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
 const typeData = {
@@ -213,8 +213,8 @@ class OpccornEdReader extends ExtractedDataReader {
   cleanLastName(nameString) {
     let cleanName = nameString;
 
-    if (WTS_String.isWordAllUpperCase(cleanName)) {
-      cleanName = WTS_String.toInitialCaps(cleanName);
+    if (StringUtils.isWordAllUpperCase(cleanName)) {
+      cleanName = StringUtils.toInitialCaps(cleanName);
     }
 
     return cleanName;
@@ -252,7 +252,7 @@ class OpccornEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    let dateObj = new WtsDate();
+    let dateObj = new DateObj();
     let year = this.ed.recordData["Year"];
     if (year) {
       // Banns can have two years for the three dates
@@ -299,7 +299,7 @@ class OpccornEdReader extends ExtractedDataReader {
   }
 
   getEventPlaceObj() {
-    let placeObj = new WtsPlace();
+    let placeObj = new PlaceObj();
 
     let county = "Cornwall";
     let country = "England";
@@ -365,7 +365,7 @@ class OpccornEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let nameObj = new WtsName();
+    let nameObj = new NameObj();
 
     let forename = "";
     let surname = "";
@@ -467,7 +467,7 @@ class OpccornEdReader extends ExtractedDataReader {
 
     if (forename || surname) {
       spouseObj = {};
-      let nameObj = new WtsName();
+      let nameObj = new NameObj();
       surname = this.cleanLastName(surname);
       nameObj.setForenames(forename);
       nameObj.setLastName(surname);
@@ -495,7 +495,7 @@ class OpccornEdReader extends ExtractedDataReader {
       if (fatherName) {
         parents = {};
         parents.father = {};
-        parents.father.name = new WtsName();
+        parents.father.name = new NameObj();
         parents.father.name.setFullName(fatherName);
       }
     } else {
@@ -507,13 +507,13 @@ class OpccornEdReader extends ExtractedDataReader {
         parents = {};
         if (fatherForename || fatherSurname) {
           parents.father = {};
-          parents.father.name = new WtsName();
+          parents.father.name = new NameObj();
           parents.father.name.setForenames(fatherForename);
           parents.father.name.setLastName(fatherSurname);
         }
         if (motherForename || motherSurname) {
           parents.mother = {};
-          parents.mother.name = new WtsName();
+          parents.mother.name = new NameObj();
           parents.mother.name.setForenames(motherForename);
           parents.mother.name.setLastName(motherSurname);
         }

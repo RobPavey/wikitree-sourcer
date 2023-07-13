@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, dateQualifiers, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 const RECORD_TYPES = {
   B: RT.BirthRegistration,
@@ -75,7 +75,7 @@ function convertDate(date) {
   const day = parseInt(dateMatch[1]);
   const month = parseInt(dateMatch[2]);
   const year = parseInt(dateMatch[3]);
-  return WTS_Date.getDateStringFromYearMonthDay(year, month, day);
+  return DateUtils.getDateStringFromYearMonthDay(year, month, day);
 }
 
 // This function generalizes the data (ed) extracted from the web page.
@@ -137,7 +137,7 @@ function generalizeData(input) {
   } else if (recordData.recordType === "S") {
     result.setLastNameAndForenames(recordData.husbandLastName, recordData.husbandFirstName);
     const spouse = result.addSpouse();
-    spouse.name = new WtsName();
+    spouse.name = new NameObj();
     spouse.name.setLastName(recordData.wifeLastName);
     spouse.name.setForenames(recordData.wifeFirstName);
     if (recordData.date) {

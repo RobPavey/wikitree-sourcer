@@ -39,7 +39,7 @@ const fullMonths = [
   "December",
 ];
 
-const WTS_Date = {
+const DateUtils = {
   monthStringToMonthNum: function (string) {
     if (!string || string.length < 1) {
       return 0;
@@ -149,7 +149,7 @@ const WTS_Date = {
       if (isNaN(yearNum) || !yearNum) {
         return result;
       }
-      let monthNum = WTS_Date.monthStringToMonthNum(monthString);
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
       if (monthNum == 0) {
         return result;
       }
@@ -168,7 +168,7 @@ const WTS_Date = {
       if (isNaN(yearNum) || !yearNum) {
         return result;
       }
-      let monthNum = WTS_Date.monthStringToMonthNum(monthString);
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
       if (monthNum == 0) {
         return result;
       }
@@ -194,7 +194,7 @@ const WTS_Date = {
       if (isNaN(yearNum) || !yearNum) {
         return result;
       }
-      let monthNum = WTS_Date.monthStringToMonthNum(monthString);
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
       if (monthNum == 0) {
         return result;
       }
@@ -223,7 +223,7 @@ const WTS_Date = {
       if (isNaN(yearNum) || !yearNum) {
         return result;
       }
-      let monthNum = WTS_Date.monthStringToMonthNum(monthString);
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
       if (monthNum == 0) {
         return result;
       }
@@ -261,7 +261,7 @@ const WTS_Date = {
       if (isNaN(yearNum) || !yearNum) {
         return result;
       }
-      let monthNum = WTS_Date.monthStringToMonthNum(monthString);
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
       if (monthNum == 0) {
         return result;
       }
@@ -324,7 +324,7 @@ const WTS_Date = {
       if (isNaN(yearNum) || !yearNum) {
         return result;
       }
-      let monthNum = WTS_Date.monthStringToMonthNum(monthString);
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
       if (monthNum == 0) {
         return result;
       }
@@ -361,16 +361,16 @@ const WTS_Date = {
   },
 
   getStdShortFormDateString: function (parsedDate) {
-    return WTS_Date.getStdDateString(parsedDate, threeLetterMonths);
+    return DateUtils.getStdDateString(parsedDate, threeLetterMonths);
   },
 
   getStdLongFormDateString: function (parsedDate) {
-    return WTS_Date.getStdDateString(parsedDate, fullMonths);
+    return DateUtils.getStdDateString(parsedDate, fullMonths);
   },
 
   getUsLongFormDateString: function (parsedDate) {
     if (!parsedDate.hasDay || !parsedDate.hasMonth || parsedDate.isRange) {
-      return WTS_Date.getStdDateString(parsedDate, fullMonths);
+      return DateUtils.getStdDateString(parsedDate, fullMonths);
     }
 
     let string = fullMonths[parsedDate.monthNum - 1] + " " + parsedDate.dayNum.toString();
@@ -412,12 +412,12 @@ const WTS_Date = {
 
   getStdNthFormDateString: function (parsedDate) {
     if (!parsedDate.hasDay || !parsedDate.hasMonth || parsedDate.isRange) {
-      return WTS_Date.getStdDateString(parsedDate, fullMonths);
+      return DateUtils.getStdDateString(parsedDate, fullMonths);
     }
 
-    let dayString = WTS_Date.getDayNumberNthString(parsedDate.dayNum);
+    let dayString = DateUtils.getDayNumberNthString(parsedDate.dayNum);
     if (!dayString) {
-      return WTS_Date.getStdDateString(parsedDate, fullMonths);
+      return DateUtils.getStdDateString(parsedDate, fullMonths);
     }
 
     let string = "the " + dayString + " of " + fullMonths[parsedDate.monthNum - 1];
@@ -427,12 +427,12 @@ const WTS_Date = {
 
   getUsNthFormDateString: function (parsedDate) {
     if (!parsedDate.hasDay || !parsedDate.hasMonth || parsedDate.isRange) {
-      return WTS_Date.getStdDateString(parsedDate, fullMonths);
+      return DateUtils.getStdDateString(parsedDate, fullMonths);
     }
 
-    let dayString = WTS_Date.getDayNumberNthString(parsedDate.dayNum);
+    let dayString = DateUtils.getDayNumberNthString(parsedDate.dayNum);
     if (!dayString) {
-      return WTS_Date.getStdDateString(parsedDate, fullMonths);
+      return DateUtils.getStdDateString(parsedDate, fullMonths);
     }
 
     let string = fullMonths[parsedDate.monthNum - 1] + " " + dayString;
@@ -458,15 +458,15 @@ const WTS_Date = {
   },
 
   getWholeYearsBetweenDateStrings: function (dateString1, dateString2) {
-    let parsedDate1 = WTS_Date.parseDateString(dateString1);
-    let parsedDate2 = WTS_Date.parseDateString(dateString2);
+    let parsedDate1 = DateUtils.parseDateString(dateString1);
+    let parsedDate2 = DateUtils.parseDateString(dateString2);
 
     if (!parsedDate1.isValid || !parsedDate2.isValid) {
       return 0;
     }
 
-    let date1Days = WTS_Date.getParsedDateInDays(parsedDate1);
-    let date2Days = WTS_Date.getParsedDateInDays(parsedDate2);
+    let date1Days = DateUtils.getParsedDateInDays(parsedDate1);
+    let date2Days = DateUtils.getParsedDateInDays(parsedDate2);
 
     let diffInDays = date2Days - date1Days;
     return Math.floor(diffInDays / 365);
@@ -477,18 +477,18 @@ const WTS_Date = {
       return 0;
     }
 
-    let date1Days = WTS_Date.getParsedDateInDays(parsedDate1);
-    let date2Days = WTS_Date.getParsedDateInDays(parsedDate2);
+    let date1Days = DateUtils.getParsedDateInDays(parsedDate1);
+    let date2Days = DateUtils.getParsedDateInDays(parsedDate2);
 
     let diffInDays = date2Days - date1Days;
     return diffInDays;
   },
 
   getDaysBetweenDateStrings: function (dateString1, dateString2) {
-    let parsedDate1 = WTS_Date.parseDateString(dateString1);
-    let parsedDate2 = WTS_Date.parseDateString(dateString2);
+    let parsedDate1 = DateUtils.parseDateString(dateString1);
+    let parsedDate2 = DateUtils.parseDateString(dateString2);
 
-    return WTS_Date.getDaysBetweenParsedDates(parsedDate1, parsedDate2);
+    return DateUtils.getDaysBetweenParsedDates(parsedDate1, parsedDate2);
   },
 
   getYearNumFromYearString: function (yearString) {
@@ -563,8 +563,8 @@ const WTS_Date = {
   compareParsedDates: function (parsedDateA, parsedDateB) {
     if (parsedDateA.isValid) {
       if (parsedDateB.isValid) {
-        let dateADays = WTS_Date.getParsedDateInDays(parsedDateA);
-        let dateBDays = WTS_Date.getParsedDateInDays(parsedDateB);
+        let dateADays = DateUtils.getParsedDateInDays(parsedDateA);
+        let dateBDays = DateUtils.getParsedDateInDays(parsedDateB);
 
         return dateADays - dateBDays;
       } else {
@@ -579,11 +579,11 @@ const WTS_Date = {
   },
 
   compareDateStrings: function (dateStringA, dateStringB) {
-    let parsedDateA = WTS_Date.parseDateString(dateStringA);
-    let parsedDateB = WTS_Date.parseDateString(dateStringB);
+    let parsedDateA = DateUtils.parseDateString(dateStringA);
+    let parsedDateB = DateUtils.parseDateString(dateStringB);
 
-    return WTS_Date.compareParsedDates(parsedDateA, parsedDateB);
+    return DateUtils.compareParsedDates(parsedDateA, parsedDateB);
   },
 };
 
-export { WTS_Date };
+export { DateUtils };

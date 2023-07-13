@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class bgUriBuilder {
   constructor() {
@@ -66,30 +66,30 @@ class bgUriBuilder {
   }
 
   addSurname(string, exact) {
-    this.addSearchParameter("FamilyName", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("FamilyName", StringUtils.removeExtendedAsciiCharacters(string));
     this.addSearchParameter("FamilyNameExact", exact);
   }
 
   addGivenNames(string, exact) {
-    this.addSearchParameter("GivenNames", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("GivenNames", StringUtils.removeExtendedAsciiCharacters(string));
     this.addSearchParameter("GivenNamesExact", exact);
   }
 
   addMaidenName(string, exact) {
-    this.addSearchParameter("MaidenName", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("MaidenName", StringUtils.removeExtendedAsciiCharacters(string));
     this.addSearchParameter("MaidenNameExact", exact);
   }
 
   addCemeteryCountry(string) {
-    this.addSearchParameter("cemetery_country", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("cemetery_country", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addCemeteryCounty(string) {
-    this.addSearchParameter("cemetery_county", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("cemetery_county", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addCemeteryState(string) {
-    this.addSearchParameter("cemetery_state", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("cemetery_state", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addBirthYear(string, range) {
@@ -111,7 +111,7 @@ class bgUriBuilder {
   }
 
   addCountry(string) {
-    this.addSearchParameter("Country", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Country", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   getUri() {

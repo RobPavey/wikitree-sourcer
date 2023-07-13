@@ -26,9 +26,9 @@ import {
   GeneralizedData,
   GD,
   dateQualifiers,
-  WtsPlace,
-  WtsName,
-  WtsDate,
+  PlaceObj,
+  NameObj,
+  DateObj,
 } from "../../../base/core/generalize_data_utils.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 import { RT, Role } from "../../../base/core/record_type.mjs";
@@ -927,7 +927,7 @@ function generalizeDataGivenRecordType(ed, result) {
     if (result.role && result.role == Role.Parent) {
       let spouseName = getCleanValueForRecordDataList(ed, ["Spouse"]);
       if (spouseName) {
-        let name = new WtsName();
+        let name = new NameObj();
 
         if (spouseName) {
           name.name = spouseName;
@@ -1321,7 +1321,7 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     if ((spouseName || result.eventDate) && (!result.role || result.role == Role.Primary)) {
-      let name = new WtsName();
+      let name = new NameObj();
 
       if (spouseName) {
         name.name = spouseName;
@@ -1412,7 +1412,7 @@ function generalizeDataGivenRecordType(ed, result) {
       }
     }
     if (spouseName || result.eventDate) {
-      let name = new WtsName();
+      let name = new NameObj();
 
       if (spouseName) {
         name.name = spouseName;

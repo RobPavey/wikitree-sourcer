@@ -24,14 +24,14 @@ SOFTWARE.
 
 import { ScotpUriBuilder } from "./scotp_uri_builder.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { WtsPlace, GeneralizedData } from "../../../base/core/generalize_data_utils.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { PlaceObj, GeneralizedData } from "../../../base/core/generalize_data_utils.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { ScotpRecordType, SpField, SpFeature, SpEventClass } from "./scotp_record_type.mjs";
-import { getSearchCountyFromWtsPlace } from "./scotp_county_data.mjs";
+import { getSearchCountyFromPlaceObj } from "./scotp_county_data.mjs";
 import { getPlaceSearchTerms } from "./scotp_place_search_terms.mjs";
 
 function addNumToYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     yearNum += num;
     return yearNum.toString();
@@ -41,7 +41,7 @@ function addNumToYearString(yearString, num) {
 }
 
 function subtractNumFromYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     yearNum -= num;
     if (yearNum < 0) {
@@ -54,9 +54,9 @@ function subtractNumFromYearString(yearString, num) {
 }
 
 function isYearInDateRange(dates, yearString) {
-  let startNum = WTS_Date.getYearNumFromYearString(dates.startYear);
-  let endNum = WTS_Date.getYearNumFromYearString(dates.endYear);
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let startNum = DateUtils.getYearNumFromYearString(dates.startYear);
+  let endNum = DateUtils.getYearNumFromYearString(dates.endYear);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum && startNum && endNum) {
     if (yearNum >= startNum && yearNum <= endNum) {
       return true;
@@ -92,7 +92,7 @@ function constrainYear(yearString, scotpRecordType) {
     maxYear = currentYear;
   }
 
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     if (yearNum < minYear) {
       yearNum = minYear;
@@ -155,7 +155,7 @@ function getSourceDataEventClass(gd) {
   return SpEventClass.other;
 }
 
-function adjustCountyForSpecialCases(countyName, scotpRecordType, wtsPlace, dates) {
+function adjustCountyForSpecialCases(countyName, scotpRecordType, placeObj, dates) {
   const statutoryDistrictRecordTypes = ["stat_births", "stat_marriages", "stat_deaths", "stat_civilpartnerships"];
 
   // FORFAR and ANGUS are a special case. FORFAR was renamed to ANGUS in 1928 but Scotland's People
@@ -164,13 +164,13 @@ function adjustCountyForSpecialCases(countyName, scotpRecordType, wtsPlace, date
   if (countyName == "FORFAR" || countyName == "ANGUS") {
     // if this is a statutory record
     if (statutoryDistrictRecordTypes.includes(scotpRecordType)) {
-      // we only use Forfar for certain districts so use the wtsPlace to determin district
+      // we only use Forfar for certain districts so use the placeObj to determin district
       let districtName = "";
 
       {
-        let firstCommaIndex = wtsPlace.placeString.indexOf(",");
+        let firstCommaIndex = placeObj.placeString.indexOf(",");
         if (firstCommaIndex != -1) {
-          let townName = wtsPlace.placeString.substring(0, firstCommaIndex).trim();
+          let townName = placeObj.placeString.substring(0, firstCommaIndex).trim();
           let searchTerms = getPlaceSearchTerms(townName, "statutory", false);
           if (searchTerms && Array.isArray(searchTerms) && searchTerms.length > 0) {
             // this is a valid district name
@@ -180,7 +180,7 @@ function adjustCountyForSpecialCases(countyName, scotpRecordType, wtsPlace, date
       }
 
       if (!districtName) {
-        let townName = wtsPlace.inferTown();
+        let townName = placeObj.inferTown();
         if (townName) {
           let searchTerms = getPlaceSearchTerms(townName, "statutory", false);
           if (searchTerms && Array.isArray(searchTerms) && searchTerms.length > 0) {
@@ -458,32 +458,32 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
   let searchEventClass = ScotpRecordType.getEventClass(scotpRecordType);
   let sourceDataEventClass = getSourceDataEventClass(gd);
 
-  let wtsPlace = undefined;
+  let placeObj = undefined;
   if (searchEventClass == SpEventClass.birth) {
     if (gd.birthPlace) {
-      wtsPlace = gd.birthPlace;
+      placeObj = gd.birthPlace;
     } else {
       let birthPlaceString = gd.inferBirthPlace();
       if (birthPlaceString) {
-        wtsPlace = new WtsPlace();
-        wtsPlace.placeString = birthPlaceString;
+        placeObj = new PlaceObj();
+        placeObj.placeString = birthPlaceString;
       }
     }
   } else if (searchEventClass == SpEventClass.death) {
     if (gd.deathPlace) {
-      wtsPlace = gd.deathPlace;
+      placeObj = gd.deathPlace;
     } else {
       let deathPlaceString = gd.inferDeathPlace();
       if (deathPlaceString) {
-        wtsPlace = new WtsPlace();
-        wtsPlace.placeString = deathPlaceString;
+        placeObj = new PlaceObj();
+        placeObj.placeString = deathPlaceString;
       }
     }
   } else if (searchEventClass == SpEventClass.marriage && parameters.spouseIndex != -1) {
     if (gd.spouses && parameters.spouseIndex != -1 && parameters.spouseIndex < gd.spouses.length) {
       let spouse = gd.spouses[parameters.spouseIndex];
       if (spouse.marriagePlace) {
-        wtsPlace = spouse.marriagePlace;
+        placeObj = spouse.marriagePlace;
       }
     }
   } else if (searchEventClass == SpEventClass.census) {
@@ -491,12 +491,12 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
       if (parameters.collection == gd.inferEventYear()) {
         // the source record is a census for the same year so use the event place
         if (gd.eventPlace) {
-          wtsPlace = gd.eventPlace;
+          placeObj = gd.eventPlace;
         } else {
           let eventPlaceString = gd.inferEventPlace();
           if (eventPlaceString) {
-            wtsPlace = new WtsPlace();
-            wtsPlace.placeString = eventPlaceString;
+            placeObj = new PlaceObj();
+            placeObj.placeString = eventPlaceString;
           }
         }
       }
@@ -505,10 +505,10 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
 
   let countySearchParam = ScotpRecordType.getSearchParam(scotpRecordType, SpField.county);
   if (countySearchParam) {
-    if (wtsPlace) {
-      let countyName = getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace);
+    if (placeObj) {
+      let countyName = getSearchCountyFromPlaceObj(scotpRecordType, placeObj);
 
-      countyName = adjustCountyForSpecialCases(countyName, scotpRecordType, wtsPlace, dates);
+      countyName = adjustCountyForSpecialCases(countyName, scotpRecordType, placeObj, dates);
 
       builder.addSearchParameter(countySearchParam, countyName);
     }
@@ -528,7 +528,7 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
 
     if (
       !addedPlace &&
-      wtsPlace &&
+      placeObj &&
       (gd.recordType == RT.BirthRegistration || gd.recordType == RT.Birth) &&
       !gd.registrationDistrict
     ) {
@@ -536,9 +536,9 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
       // sometimes the place string is something like:
       // "Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom"
       // and inferTown will get "Edinburgh" but we want "Saint George"
-      let firstCommaIndex = wtsPlace.placeString.indexOf(",");
+      let firstCommaIndex = placeObj.placeString.indexOf(",");
       if (firstCommaIndex != -1) {
-        let districtName = wtsPlace.placeString.substring(0, firstCommaIndex).trim();
+        let districtName = placeObj.placeString.substring(0, firstCommaIndex).trim();
         if (builder.addRdName(districtName, false)) {
           addedPlace = true;
         }
@@ -547,8 +547,8 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
 
     // say we are coming from a WikiTree profile. Do we want to use the place name to find the RD?
     // Example where it would fail: https://www.wikitree.com/wiki/Black-16695
-    if (!addedPlace && wtsPlace && (gd.recordType == RT.BirthRegistration || gd.recordType == RT.Birth)) {
-      let townName = wtsPlace.inferTown();
+    if (!addedPlace && placeObj && (gd.recordType == RT.BirthRegistration || gd.recordType == RT.Birth)) {
+      let townName = placeObj.inferTown();
       if (townName) {
         if (builder.addRdName(townName, false)) {
           addedPlace = true;
@@ -567,8 +567,8 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
       }
     }
 
-    if (!addedPlace && wtsPlace) {
-      let townName = wtsPlace.inferTown();
+    if (!addedPlace && placeObj) {
+      let townName = placeObj.inferTown();
       if (townName) {
         if (builder.addOprParishName(townName, false)) {
           addedPlace = true;
@@ -585,8 +585,8 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
       }
     }
 
-    if (!addedPlace && wtsPlace) {
-      let townName = wtsPlace.inferTown();
+    if (!addedPlace && placeObj) {
+      let townName = placeObj.inferTown();
       if (townName) {
         if (builder.addCatholicParishName(townName, false)) {
           addedPlace = true;

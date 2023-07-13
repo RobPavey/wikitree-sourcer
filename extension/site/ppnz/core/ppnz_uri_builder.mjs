@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class PpnzUriBuilder {
   constructor() {
@@ -65,7 +65,7 @@ class PpnzUriBuilder {
     // however, this doesn't seem to make a difference and if we replace space with + here
     // it ends up puting %2B in the URL which is an actual +
     string = string.trim();
-    this.addSearchParameter("query", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("query", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {

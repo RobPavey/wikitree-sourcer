@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, dateQualifiers, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 function processDates(ed, result) {
   if (!ed.pageInfo) {
@@ -59,10 +59,10 @@ function processDates(ed, result) {
   }
   result.setEventDate(eventDate);
 
-  let parsedFromDate = WTS_Date.parseDateString(fromDate);
-  let fromDateInDays = WTS_Date.getParsedDateInDays(parsedFromDate);
-  let parsedToDate = WTS_Date.parseDateString(toDate);
-  let toDateInDays = WTS_Date.getParsedDateInDays(parsedToDate);
+  let parsedFromDate = DateUtils.parseDateString(fromDate);
+  let fromDateInDays = DateUtils.getParsedDateInDays(parsedFromDate);
+  let parsedToDate = DateUtils.parseDateString(toDate);
+  let toDateInDays = DateUtils.getParsedDateInDays(parsedToDate);
 
   let eventInRange = undefined;
   for (let event of ed.registerEvents) {
@@ -81,10 +81,10 @@ function processDates(ed, result) {
       rangeTo = rangeTo.replace(/\./g, "");
     }
 
-    let parsedRangeFrom = WTS_Date.parseDateString(rangeFrom);
-    let rangeFromInDays = WTS_Date.getParsedDateInDays(parsedRangeFrom);
-    let parsedRangeTo = WTS_Date.parseDateString(rangeTo);
-    let rangeToInDays = WTS_Date.getParsedDateInDays(parsedRangeTo);
+    let parsedRangeFrom = DateUtils.parseDateString(rangeFrom);
+    let rangeFromInDays = DateUtils.getParsedDateInDays(parsedRangeFrom);
+    let parsedRangeTo = DateUtils.parseDateString(rangeTo);
+    let rangeToInDays = DateUtils.getParsedDateInDays(parsedRangeTo);
 
     if (fromDateInDays > rangeToInDays || toDateInDays < rangeFromInDays) {
       // no overlap ignore

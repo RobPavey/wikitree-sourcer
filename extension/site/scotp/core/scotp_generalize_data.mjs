@@ -26,11 +26,11 @@ import {
   GD,
   GeneralizedData,
   dateQualifiers,
-  WtsPlace,
-  WtsName,
-  WtsDate,
+  PlaceObj,
+  NameObj,
+  DateObj,
 } from "../../../base/core/generalize_data_utils.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { getRecordType } from "./scotp_utils.mjs";
 import { getRegistrationDistrict, getCountyDisplayName } from "./scotp_registration_districts.mjs";
@@ -50,16 +50,16 @@ function getCleanValueForRecordDataList(ed, fieldNames) {
 
 function standardizePlaceName(placeName) {
   let stdName = placeName;
-  if (WTS_String.isAllUppercase(placeName)) {
-    stdName = WTS_String.toInitialCapsEachWord(placeName);
+  if (StringUtils.isAllUppercase(placeName)) {
+    stdName = StringUtils.toInitialCapsEachWord(placeName);
   }
   return stdName;
 }
 
 function standardizeCountyName(countyName) {
   let stdName = countyName;
-  if (WTS_String.isAllUppercase(countyName)) {
-    stdName = WTS_String.toInitialCapsEachWord(countyName);
+  if (StringUtils.isAllUppercase(countyName)) {
+    stdName = StringUtils.toInitialCapsEachWord(countyName);
   }
   return stdName;
 }
@@ -135,9 +135,9 @@ function standardizeName(string) {
 
   // if the string is already mixed case do not change it.
   // Unless it is something like "BAIRD or MCGREGOR"
-  if (!WTS_String.isAllUppercase(resultString)) {
+  if (!StringUtils.isAllUppercase(resultString)) {
     let partialString = resultString.replace(/\s+or\s+/g, "");
-    if (!WTS_String.isAllUppercase(partialString)) {
+    if (!StringUtils.isAllUppercase(partialString)) {
       return originalStringClean;
     }
   }
@@ -436,7 +436,7 @@ function getCountyNameFromOtherParishAndCongregationName(ed, parishName, congreg
 }
 
 function createScotlandPlace() {
-  let place = new WtsPlace();
+  let place = new PlaceObj();
   place.country = "Scotland";
   return place;
 }
@@ -530,8 +530,8 @@ function buildPlaceWithRcParishCongregationName(placeName, ed) {
   //   "DUNFERMLINE - ST MARGARET'S UNITED SECESSION",
   //   "Airdrie, St Margaret's"
 
-  if (WTS_String.isAllUppercase(placeName)) {
-    placeName = WTS_String.toInitialCapsEachWord(placeName);
+  if (StringUtils.isAllUppercase(placeName)) {
+    placeName = StringUtils.toInitialCapsEachWord(placeName);
   }
 
   let congregationName = "";
@@ -568,8 +568,8 @@ function buildPlaceWithOtherParishCongregationName(parishAndCongregationName, ed
   //   "DUNFERMLINE - ST MARGARET'S UNITED SECESSION",
   //   "Airdrie, St Margaret's"
 
-  if (WTS_String.isAllUppercase(parishAndCongregationName)) {
-    parishAndCongregationName = WTS_String.toInitialCapsEachWord(parishAndCongregationName);
+  if (StringUtils.isAllUppercase(parishAndCongregationName)) {
+    parishAndCongregationName = StringUtils.toInitialCapsEachWord(parishAndCongregationName);
   }
 
   let parishName = "";
@@ -615,7 +615,7 @@ function buildPlaceWithCourtName(ed, result, court, eventYear) {
   if (court.toLowerCase().startsWith("non-")) {
     // e.g. "non-Scottish Court"
     result.courtName = court.trim();
-    let place = new WtsPlace();
+    let place = new PlaceObj();
     place.placeString = "a non-Scottish court";
     return place;
   }
@@ -697,7 +697,7 @@ function setResultFieldFromRecordDataField(ed, dataKey, result, resultKey, toIni
   if (value) {
     if (!/^\-+$/.test(value)) {
       if (toInitialCaps) {
-        value = WTS_String.toInitialCapsEachWord(value);
+        value = StringUtils.toInitialCapsEachWord(value);
       }
       result[resultKey] = value;
     }
@@ -734,7 +734,7 @@ function cleanDdMonthYyyyDate(dateString) {
   // After 22 Nov 2022, sometimes, rather than 23 FEBRUARY 1854 we have 23/FEBRUARY/1854
   dateString = dateString.replace(/\s*\/\s*/g, " ");
 
-  return WTS_String.toInitialCapsEachWord(dateString);
+  return StringUtils.toInitialCapsEachWord(dateString);
 }
 
 function cleanDdMmYyyyDate(dateString) {
@@ -964,7 +964,7 @@ function setOprCommonFields(ed, result, date) {
 function setMarriageData(ed, result, spouseSurname, spouseForenames, isFullName) {
   spouseSurname = standardizeName(spouseSurname);
   spouseForenames = standardizeName(spouseForenames);
-  let spouseName = new WtsName();
+  let spouseName = new NameObj();
   if (isFullName) {
     spouseName.name = spouseSurname;
   } else {
@@ -991,7 +991,7 @@ function setMarriageData(ed, result, spouseSurname, spouseForenames, isFullName)
 function setDivorceData(ed, result, spouseSurname, spouseForenames, marriageDate) {
   spouseSurname = standardizeName(spouseSurname);
   spouseForenames = standardizeName(spouseForenames);
-  let spouseName = new WtsName();
+  let spouseName = new NameObj();
   if (spouseForenames) {
     spouseName.forenames = spouseForenames;
   }

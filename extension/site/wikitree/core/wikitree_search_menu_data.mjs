@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WtsPlace } from "../../../base/core/generalize_data_utils.mjs";
+import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 
 const categories = [
   { value: "wikitree_person_search", text: "WikiTree Person Search" },
@@ -70,7 +70,7 @@ function buildSelectValuesForPlace(placeString, countries) {
 
   addValue(placeString);
 
-  let place = new WtsPlace();
+  let place = new PlaceObj();
   place.placeString = placeString;
   let placeParts = place.separatePlaceIntoParts();
 

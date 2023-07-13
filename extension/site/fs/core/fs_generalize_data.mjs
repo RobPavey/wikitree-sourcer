@@ -26,12 +26,12 @@ import {
   GeneralizedData,
   GD,
   dateQualifiers,
-  WtsName,
-  WtsDate,
-  WtsPlace,
+  NameObj,
+  DateObj,
+  PlaceObj,
 } from "../../../base/core/generalize_data_utils.mjs";
 import { RT, Role } from "../../../base/core/record_type.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 const factTypeToRecordType = [
   {
@@ -320,7 +320,7 @@ function cleanOccupation(text) {
   let newText = text;
   if (text && /^[^a-z]+$/.test(text)) {
     // there are no lowercase characters
-    newText = WTS_String.toInitialCapsEachWord(text);
+    newText = StringUtils.toInitialCapsEachWord(text);
   }
   return newText;
 }
@@ -514,7 +514,7 @@ function generalizeDataGivenRecordType(ed, result) {
       if (ed.spouseFullName || ed.spouseSurname || ed.spouseGivenName) {
         result.spouses = [];
         let resultSpouse = {};
-        resultSpouse.name = new WtsName();
+        resultSpouse.name = new NameObj();
 
         if (ed.spouseFullName) {
           resultSpouse.name.name = ed.spouseFullName;
@@ -561,7 +561,7 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     if (ed.spouseFullName || ed.spouseSurname || ed.spouseGivenName) {
-      resultSpouse.name = new WtsName();
+      resultSpouse.name = new NameObj();
 
       if (ed.spouseFullName) {
         resultSpouse.name.name = ed.spouseFullName;
@@ -582,7 +582,7 @@ function generalizeDataGivenRecordType(ed, result) {
         resultSpouse.age = ed.spouseAge;
       }
     } else if (ed.relatedPersonSpouseFullName || ed.relatedPersonSpouseSurname || ed.relatedPersonSpouseGivenName) {
-      resultSpouse.name = new WtsName();
+      resultSpouse.name = new NameObj();
       if (ed.relatedPersonSpouseFullName) {
         resultSpouse.name.name = ed.relatedPersonSpouseFullName;
       }
@@ -603,7 +603,7 @@ function generalizeDataGivenRecordType(ed, result) {
     // the marriage record can contain an actual marriage date as well as the event date
     // If so it is probably more accurate
     if (ed.recordData["Marriage Date"] || ed.recordData["Marriage Date (Original)"] || ed.recordData["Marriage Year"]) {
-      let marriageDate = new WtsDate();
+      let marriageDate = new DateObj();
       let dateString = selectDate(ed.recordData["Marriage Date"], ed.recordData["Marriage Date (Original)"]);
       if (dateString) {
         marriageDate.dateString = dateString;
@@ -622,7 +622,7 @@ function generalizeDataGivenRecordType(ed, result) {
     let resultSpouse = {};
 
     if (ed.spouseFullName || ed.spouseSurname || ed.spouseGivenName) {
-      resultSpouse.name = new WtsName();
+      resultSpouse.name = new NameObj();
 
       let spouseFullName = ed.spouseFullName;
       if (spouseFullName == ed.spouseSurname) {
@@ -667,7 +667,7 @@ function generalizeDataGivenRecordType(ed, result) {
 
     // the marriage registration can contain an actual marriage date
     if (ed.recordData["Marriage Date"] || ed.recordData["Marriage Date (Original)"] || ed.recordData["Marriage Year"]) {
-      let marriageDate = new WtsDate();
+      let marriageDate = new DateObj();
       let dateString = selectDate(ed.recordData["Marriage Date"], ed.recordData["Marriage Date (Original)"]);
       if (dateString) {
         marriageDate.setDateAndQualifierFromString(dateString);
@@ -859,18 +859,18 @@ function generalizeDataForPerson(ed, result) {
       let resultSpouse = {};
 
       if (spouse.fullName || spouse.surname || spouse.givenName) {
-        resultSpouse.name = new WtsName();
+        resultSpouse.name = new NameObj();
         setName(spouse, resultSpouse);
       }
 
       if (spouse.marriageDate || spouse.marriageDateOriginal) {
         let marriageDate = selectDate(spouse.marriageDate, spouse.marriageDateOriginal);
-        resultSpouse.marriageDate = new WtsDate();
+        resultSpouse.marriageDate = new DateObj();
         resultSpouse.marriageDate.setDateAndQualifierFromString(marriageDate);
       }
 
       if (spouse.marriagePlace || spouse.marriagePlaceOriginal) {
-        resultSpouse.marriagePlace = new WtsPlace();
+        resultSpouse.marriagePlace = new PlaceObj();
         resultSpouse.marriagePlace.placeString = selectPlace(spouse.marriagePlace, spouse.marriagePlaceOriginal);
       }
 
@@ -1051,7 +1051,7 @@ function generalizeData(input) {
       if (yearsMarried) {
         let censusDate = result.inferEventDate();
         let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, yearsMarried);
-        let marriageYear = WTS_String.getLastWord(marriageDateString);
+        let marriageYear = StringUtils.getLastWord(marriageDateString);
         if (marriageYear) {
           result.spouses[0].marriageDate.yearString = marriageYear;
         }

@@ -161,15 +161,15 @@ function getCountyListForRecordType(scotpRecordType) {
   return countyList;
 }
 
-function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
+function getSearchCountyFromPlaceObj(scotpRecordType, placeObj) {
   let countyList = getCountyListForRecordType(scotpRecordType);
 
   if (!countyList) {
     return "";
   }
 
-  let placeCountyName = wtsPlace.inferCounty();
-  //console.log("getSearchCountyFromWtsPlace: placeCountyName : " + placeCountyName);
+  let placeCountyName = placeObj.inferCounty();
+  //console.log("getSearchCountyFromPlaceObj: placeCountyName : " + placeCountyName);
 
   if (!placeCountyName) {
     return "";
@@ -190,7 +190,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
     // we are done unless there is a possible city match where the city name and county name are the same
     // the only time this is a case is for ABERDEEN
     if (countyList === statutoryCountyNames) {
-      let placeString = wtsPlace.placeString;
+      let placeString = placeObj.placeString;
       if (!placeString) {
         return placeCountyName;
       }
@@ -226,7 +226,7 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
   // now deal with special cases
   if (countyList === statutoryCountyNames) {
     // have to deal with cities. There are three cases: "DUNDEE CITY", "EDINBURGH CITY", "GLASGOW CITY",
-    let placeString = wtsPlace.placeString;
+    let placeString = placeObj.placeString;
     if (!placeString) {
       return "";
     }
@@ -255,4 +255,4 @@ function getSearchCountyFromWtsPlace(scotpRecordType, wtsPlace) {
   return "";
 }
 
-export { getSearchCountyFromWtsPlace };
+export { getSearchCountyFromPlaceObj };

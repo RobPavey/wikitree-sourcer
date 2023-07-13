@@ -24,9 +24,9 @@ SOFTWARE.
 
 import { CD } from "../../../base/core/country_data.mjs";
 import { Role } from "../../../base/core/record_type.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
-import { WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { getFieldsUsedInNarrative } from "../../../base/core/narrative_builder.mjs";
 
 function attemptToMergeSourceIntoPriorFact(source, result, type) {
@@ -51,8 +51,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       return dateA;
     }
 
-    let parsedDateA = WTS_Date.parseDateString(dateA);
-    let parsedDateB = WTS_Date.parseDateString(dateB);
+    let parsedDateA = DateUtils.parseDateString(dateA);
+    let parsedDateB = DateUtils.parseDateString(dateB);
 
     if (parsedDateA.isValid && parsedDateB.isValid) {
       if (parsedDateA.yearNum == parsedDateB.yearNum) {
@@ -118,7 +118,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     let fullNameB = nameObjB.inferFullName();
 
     if (fullNameA == fullNameB) {
-      return WtsName.createFromPlainObject(nameObjA);
+      return NameObj.createFromPlainObject(nameObjA);
     }
 
     // check for special case where one of the names is a single name
@@ -143,7 +143,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       } else {
         // nameA is single name
         if (doesFullNameMatchSingleName(fullNameB, fullNameA)) {
-          return WtsName.createFromPlainObject(nameObjB);
+          return NameObj.createFromPlainObject(nameObjB);
         } else {
           return undefined;
         }
@@ -151,7 +151,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     } else if (nameBSpaceIndex == -1) {
       // nameB is single name
       if (doesFullNameMatchSingleName(fullNameA, fullNameB)) {
-        return WtsName.createFromPlainObject(nameObjA);
+        return NameObj.createFromPlainObject(nameObjA);
       } else {
         return undefined;
       }
@@ -196,13 +196,13 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
         if (middleNamesB) {
           if (middleNamesA == middleNamesB) {
             // must be something else different but allow it
-            return WtsName.createFromPlainObject(nameObjA);
+            return NameObj.createFromPlainObject(nameObjA);
           }
         } else {
-          return WtsName.createFromPlainObject(nameObjA);
+          return NameObj.createFromPlainObject(nameObjA);
         }
       } else {
-        return WtsName.createFromPlainObject(nameObjB);
+        return NameObj.createFromPlainObject(nameObjB);
       }
     }
 
@@ -308,7 +308,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       if (nameARemainder) {
         if (nameBRemainder) {
           if (nameARemainder == nameBRemainder) {
-            let name = new WtsName();
+            let name = new NameObj();
             name.name = mergedFirstName + " " + nameARemainder + " " + mergedLastName;
             name.firstName = mergedFirstName;
             name.middleNames = nameARemainder;
@@ -316,7 +316,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
             return name;
           }
         } else {
-          let name = new WtsName();
+          let name = new NameObj();
           name.name = mergedFirstName + " " + nameARemainder + " " + mergedLastName;
           name.firstName = mergedFirstName;
           name.middleNames = nameARemainder;
@@ -324,14 +324,14 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
           return name;
         }
       } else if (nameBRemainder) {
-        let name = new WtsName();
+        let name = new NameObj();
         name.name = mergedFirstName + " " + nameBRemainder + " " + mergedLastName;
         name.firstName = mergedFirstName;
         name.middleNames = nameBRemainder;
         name.lastName = mergedLastName;
         return name;
       } else {
-        let name = new WtsName();
+        let name = new NameObj();
         name.name = mergedFirstName + " " + mergedLastName;
         name.firstName = mergedFirstName;
         name.lastName = mergedLastName;

@@ -27,7 +27,7 @@ import { DataString } from "../../../base/core/data_string.mjs";
 import { getRecordType } from "./scotp_utils.mjs";
 import { ScotpUriBuilder } from "./scotp_uri_builder.mjs";
 import { ScotpRecordType, SpField, SpFeature } from "./scotp_record_type.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function getRefTitle(ed, gd) {
@@ -158,10 +158,10 @@ function createCitationUrl(ed, gd, options) {
           }
 
           name = name.replace(/[.]/g, "");
-          let count = WTS_String.countWords(name);
+          let count = StringUtils.countWords(name);
           if (count > 2) {
-            let name1 = WTS_String.getFirstWord(name);
-            let name2 = WTS_String.getLastWord(name);
+            let name1 = StringUtils.getFirstWord(name);
+            let name2 = StringUtils.getLastWord(name);
             name = name1 + " " + name2;
           }
           return name;
@@ -439,7 +439,7 @@ function buildValuationRollDataString(ed, gd, dataStyle, builder) {
   if (ed.recordData) {
     let placeString = ed.recordData["Place"];
     if (placeString) {
-      place = WTS_String.toInitialCapsEachWord(placeString);
+      place = StringUtils.toInitialCapsEachWord(placeString);
     }
   }
 

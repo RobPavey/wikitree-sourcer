@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 //import { FBMD } from "./freebmd_utils.mjs";
 
 function buildFreebmdUrl(ed, builder) {
@@ -53,8 +53,8 @@ function getQuarterName(ed) {
 function getCorrectlyCasedName(name, options) {
   if (options.citation_freebmd_changeNamesToInitialCaps) {
     // the option says "Change any person and place names in all caps to initial caps"
-    if (WTS_String.isWordAllUpperCase(name)) {
-      name = WTS_String.toInitialCaps(name);
+    if (StringUtils.isWordAllUpperCase(name)) {
+      name = StringUtils.toInitialCaps(name);
     }
   }
   return name;
@@ -63,8 +63,8 @@ function getCorrectlyCasedName(name, options) {
 function getCorrectlyCasedNames(name, options) {
   if (options.citation_freebmd_changeNamesToInitialCaps) {
     // the option says "Change any person and place names in all caps to initial caps"
-    if (WTS_String.isWordAllUpperCase(name)) {
-      name = WTS_String.toInitialCapsEachWord(name, true);
+    if (StringUtils.isWordAllUpperCase(name)) {
+      name = StringUtils.toInitialCapsEachWord(name, true);
     }
   }
   return name;

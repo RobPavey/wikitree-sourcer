@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 function fixupLocation(location) {
   let result = location.trim();
@@ -177,7 +177,7 @@ class AncestryUriBuilder {
       string += fixupLocation(location);
     }
     if (string != "") {
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(uniqueTitle, StringUtils.removeExtendedAsciiCharacters(string));
     }
   }
 
@@ -192,7 +192,7 @@ class AncestryUriBuilder {
       name += lastName.trim().replace(/\s+/g, "+");
     }
     if (name != "") {
-      this.addSearchParameter(uniqueTitle, WTS_String.removeExtendedAsciiCharacters(name));
+      this.addSearchParameter(uniqueTitle, StringUtils.removeExtendedAsciiCharacters(name));
     }
   }
 

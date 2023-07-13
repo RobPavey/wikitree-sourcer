@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { countyNameToCountyCode } from "../../freecen/core/freecen_chapman_codes.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
@@ -48,7 +48,7 @@ function addStartAndEndYearFromEventYear(gd, options, eventYear, dateQualifier, 
       } else if (optYearRange == "10") {
         range = 10;
       }
-      let yearNum = WTS_Date.getYearNumFromYearString(eventYear);
+      let yearNum = DateUtils.getYearNumFromYearString(eventYear);
       if (yearNum) {
         startAndEndDates.startYear = yearNum - range;
         startAndEndDates.endYear = yearNum + range;

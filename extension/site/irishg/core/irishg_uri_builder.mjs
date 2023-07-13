@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 // An example search:
 // https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=mary&namel=malone&location=&yyfrom=&yyto=&submit=Search
@@ -108,15 +108,15 @@ class IrishgUriBuilder {
   }
 
   addSurname(string) {
-    this.addSearchParameter("namel", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("namel", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("namefm", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("namefm", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addLocation(string) {
-    this.addSearchParameter("location", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("location", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addLocation(string) {

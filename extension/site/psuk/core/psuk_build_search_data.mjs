@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { RT } from "../../../base/core/record_type.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 function buildSearchData(input) {
   const gd = input.generalizedData;
@@ -55,7 +55,7 @@ function buildSearchData(input) {
   // stage 2
 
   let deathDate = gd.inferDeathDate();
-  let parsedDeathDate = WTS_Date.parseDateString(deathDate);
+  let parsedDeathDate = DateUtils.parseDateString(deathDate);
   if (parsedDeathDate.isValid) {
     if (parsedDeathDate.hasMonth) {
       let month = parsedDeathDate.monthNum.toString();
@@ -75,7 +75,7 @@ function buildSearchData(input) {
 
   if (gd.recordType == RT.Probate) {
     let probateDate = gd.inferEventDate();
-    let parsedProbateDate = WTS_Date.parseDateString(probateDate);
+    let parsedProbateDate = DateUtils.parseDateString(probateDate);
     if (parsedProbateDate.isValid) {
       let year = parsedProbateDate.yearNum.toString();
       stage2TextFieldData.yearofprobate = year;

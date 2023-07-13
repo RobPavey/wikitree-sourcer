@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 // Example FMP search string:
 // https://www.findmypast.co.uk/search/results
@@ -122,7 +122,7 @@ class FmpUriBuilder {
     if (name != undefined && name != "") {
       name = name.trim().replace(/\s+/g, "+");
 
-      this.addSearchParameter(title, WTS_String.removeExtendedAsciiCharacters(name));
+      this.addSearchParameter(title, StringUtils.removeExtendedAsciiCharacters(name));
 
       if (nameVariants) {
         this.addSearchParameter(title + "_variants", "true");
@@ -140,7 +140,7 @@ class FmpUriBuilder {
   addPlace(title, location, proximity = 5) {
     if (location != undefined && location != "") {
       let string = location;
-      this.addSearchParameter(title, WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(title, StringUtils.removeExtendedAsciiCharacters(string));
 
       this.addSearchParameter(title + "_proximity", proximity);
     }

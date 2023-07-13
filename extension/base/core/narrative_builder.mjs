@@ -23,10 +23,10 @@ SOFTWARE.
 */
 
 import { RT, RecordSubtype } from "./record_type.mjs";
-import { GeneralizedData, WtsDate } from "./generalize_data_utils.mjs";
+import { GeneralizedData, DateObj } from "./generalize_data_utils.mjs";
 import { Role } from "./record_type.mjs";
-import { WTS_String } from "./wts_string.mjs";
-import { WTS_Date } from "./wts_date.mjs";
+import { StringUtils } from "./string_utils.mjs";
+import { DateUtils } from "./date_utils.mjs";
 import { getChildTerm, getPrimaryPersonChildTerm, getPrimaryPersonSpouseTerm } from "./narrative_or_sentence_utils.mjs";
 import { RC } from "./record_collections.mjs";
 
@@ -231,7 +231,7 @@ class NarrativeBuilder {
     }
 
     placeString = this.improveAndAbbreviatePlaceString(placeString);
-    let preposition = WTS_String.getPrepositionForPlaceString(placeString);
+    let preposition = StringUtils.getPrepositionForPlaceString(placeString);
     return preposition + " " + placeString;
   }
 
@@ -326,8 +326,8 @@ class NarrativeBuilder {
       // NOTE: we could perhaps centralise the code in scotp that does name casing.
       if (gd.sourceOfData != "scotp") {
         // For now, rather than the complex code in scotp we only change case if it is in all uppercase
-        if (WTS_String.isAllUppercase(result.nameOrPronoun)) {
-          result.nameOrPronoun = WTS_String.toInitialCapsEachWord(result.nameOrPronoun, true);
+        if (StringUtils.isAllUppercase(result.nameOrPronoun)) {
+          result.nameOrPronoun = StringUtils.toInitialCapsEachWord(result.nameOrPronoun, true);
         }
       }
     }
@@ -457,7 +457,7 @@ class NarrativeBuilder {
   }
 
   highlightDate(dateString) {
-    return WTS_String.highlightString(dateString, this.options.narrative_general_dateHighlight);
+    return StringUtils.highlightString(dateString, this.options.narrative_general_dateHighlight);
   }
 
   getParentSeparator() {
@@ -523,7 +523,7 @@ class NarrativeBuilder {
 
   formatDate(dateString, addPreposition, prepSuffix = "") {
     // for cases where we don't have a date object
-    let dateObj = new WtsDate();
+    let dateObj = new DateObj();
     dateObj.dateString = dateString;
     let format = this.options.narrative_general_dateFormat;
     let highlight = this.options.narrative_general_dateHighlight;
@@ -671,7 +671,7 @@ class NarrativeBuilder {
     } else if (this.options.narrative_general_occupationFormat == "titleCase") {
       // Sometimes there are parens like this: "Pattern Maker (Artz)"
       // toInitialCapsEachWord keeps that OK now
-      occupationText = WTS_String.toInitialCapsEachWord(occupationText);
+      occupationText = StringUtils.toInitialCapsEachWord(occupationText);
     }
 
     return occupationText;
@@ -740,12 +740,12 @@ class NarrativeBuilder {
     if (occupationText) {
       if (headRelation) {
         this.narrative += " " + this.getPossessivePronounInitialCaps() + " " + headRelation + " was ";
-        this.narrative += WTS_String.getIndefiniteArticle(occupationText);
+        this.narrative += StringUtils.getIndefiniteArticle(occupationText);
         this.narrative += " " + occupationText;
         this.narrative += ".";
       } else {
         this.narrative += " " + this.getPronounInitialCaps() + " was ";
-        this.narrative += WTS_String.getIndefiniteArticle(occupationText);
+        this.narrative += StringUtils.getIndefiniteArticle(occupationText);
         this.narrative += " " + occupationText;
         this.narrative += ".";
       }
@@ -791,7 +791,7 @@ class NarrativeBuilder {
       // sometimes there is no event date but there is a marriage date
       if (!dateObj) {
         if (typeString == "marriage" && this.eventGd.marriageDate) {
-          dateObj = new WtsDate();
+          dateObj = new DateObj();
           dateObj.dateString = this.eventGd.marriageDate;
           dateString = this.eventGd.marriageDate;
           year = dateObj.getYearString();
@@ -854,7 +854,7 @@ class NarrativeBuilder {
         let year = this.eventGd.inferEventYear();
         if (year) {
           if (quarter == "Jan-Feb-Mar") {
-            let yearNum = WTS_Date.getYearNumFromYearString(year);
+            let yearNum = DateUtils.getYearNumFromYearString(year);
             if (yearNum) {
               yearNum -= 1;
               this.narrative += " in late " + yearNum + "/early " + year;
@@ -1118,7 +1118,7 @@ class NarrativeBuilder {
     }
 
     if (spouseName) {
-      spouseName = WTS_String.toInitialCapsEachWord(spouseName, true);
+      spouseName = StringUtils.toInitialCapsEachWord(spouseName, true);
       this.narrative += " " + spouseName;
       this.addAgeForMainSentence(spouseAge);
     }
@@ -1129,7 +1129,7 @@ class NarrativeBuilder {
 
     if (this.eventGd.marriageDate) {
       // sometimes there is a specific marriage date
-      dateObj = new WtsDate();
+      dateObj = new DateObj();
       dateObj.dateString = this.eventGd.marriageDate;
       this.narrative += " " + this.formatDateObj(dateObj, true);
     } else if (dateObj) {
@@ -1999,7 +1999,7 @@ class NarrativeBuilder {
     }
 
     if (spouseName) {
-      spouseName = WTS_String.toInitialCapsEachWord(spouseName, true);
+      spouseName = StringUtils.toInitialCapsEachWord(spouseName, true);
 
       this.narrative += " was divorced from " + spouseName;
     } else {

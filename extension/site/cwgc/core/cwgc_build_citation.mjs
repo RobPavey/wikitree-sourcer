@@ -23,19 +23,19 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { getCountry } from "./cwgc_nationalities.mjs";
 
 function getCorrectlyCasedName(name, options) {
   if (options.citation_cwgc_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name);
+    name = StringUtils.toInitialCaps(name);
   }
   return name;
 }
 
 function getCorrectlyCasedNames(name, options) {
   if (options.citation_cwgc_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCapsEachWord(name, true);
+    name = StringUtils.toInitialCapsEachWord(name, true);
   }
   return name;
 }

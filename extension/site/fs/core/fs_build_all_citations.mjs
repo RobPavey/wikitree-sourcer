@@ -25,7 +25,7 @@ SOFTWARE.
 import { RC } from "../../../base/core/record_collections.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { Role } from "../../../base/core/record_type.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 import { buildNarrative } from "../../../base/core/narrative_builder.mjs";
 
@@ -149,7 +149,7 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
   }
 
   if (eventDateA && eventDateB) {
-    let result = WTS_Date.compareDateStrings(eventDateA, eventDateB);
+    let result = DateUtils.compareDateStrings(eventDateA, eventDateB);
     if (result == 0) {
       // dates are equal, sort by record type
       let priorityA = getEventPriority(sourceA);

@@ -25,11 +25,11 @@ SOFTWARE.
 import {
   GeneralizedData,
   dateQualifiers,
-  WtsPlace,
-  WtsName,
-  WtsDate,
+  PlaceObj,
+  NameObj,
+  DateObj,
 } from "../../../base/core/generalize_data_utils.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function freebmdQuarterToGdQuarter(quarter) {
@@ -95,7 +95,7 @@ function generalizeData(input) {
     collectionId = "marriages";
 
     if (ed.spouse) {
-      let name = new WtsName();
+      let name = new NameObj();
       name.name = ed.spouse;
       let spouse = {
         name: name,

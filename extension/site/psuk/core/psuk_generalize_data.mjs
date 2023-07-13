@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { GeneralizedData, dateQualifiers, NameObj } from "../../../base/core/generalize_data_utils.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 // This function generalizes the data (ed) extracted from the web page.
@@ -47,8 +47,8 @@ function generalizeData(input) {
 
   if (ed.digitalRecordData) {
     // This is a digital result
-    let lastName = WTS_String.toInitialCapsEachWord(ed.digitalRecordData["Last name"]);
-    let forenames = WTS_String.toInitialCapsEachWord(ed.digitalRecordData["First name"]);
+    let lastName = StringUtils.toInitialCapsEachWord(ed.digitalRecordData["Last name"]);
+    let forenames = StringUtils.toInitialCapsEachWord(ed.digitalRecordData["First name"]);
     result.setLastNameAndForenames(lastName, forenames);
 
     result.setDeathDate(ed.digitalRecordData["Date of death"]);
@@ -70,7 +70,7 @@ function generalizeData(input) {
     result.setLastNameAndForenames(lastName, forenames);
 
     function buildDate(year, month, day) {
-      return WTS_Date.getDateStringFromYearMonthDay(year, month, day);
+      return DateUtils.getDateStringFromYearMonthDay(year, month, day);
     }
 
     let deathYear = ed.searchData["Year of death"];

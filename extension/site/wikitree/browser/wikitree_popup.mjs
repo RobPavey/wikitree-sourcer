@@ -52,8 +52,8 @@ import { GeneralizedData, dateQualifiers } from "/base/core/generalize_data_util
 
 import { options } from "/base/browser/options/options_loader.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 function convertTimestampDiffToText(timeStamp) {
   if (!timeStamp) {
@@ -110,11 +110,11 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   }
 
   function standardizeDate(dateString) {
-    let parsedDate = WTS_Date.parseDateString(dateString);
+    let parsedDate = DateUtils.parseDateString(dateString);
     if (!parsedDate.isValid) {
       return dateString;
     }
-    return WTS_Date.getStdShortFormDateString(parsedDate);
+    return DateUtils.getStdShortFormDateString(parsedDate);
   }
 
   function standardizePlace(placeString, dateString) {
@@ -145,7 +145,7 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
       newCountryString = country.stdName;
       // special case of UK, may generalize this via CD if popular
       if (country.stdName == "England" || country.stdName == "Wales" || country.stdName == "Scotland") {
-        let parsedDate = WTS_Date.parseDateString(dateString);
+        let parsedDate = DateUtils.parseDateString(dateString);
         if (parsedDate.isValid && parsedDate.yearNum >= 1801) {
           // if the input date had UK or something like it on end then add "United Kingdom"
 
@@ -372,8 +372,8 @@ function updateAfterCheckWtPersonData(data, wtPersonData) {
 
   if (splitForenames) {
     let forenames = wtPersonData.firstName;
-    wtPersonData.firstName = WTS_String.getFirstWord(forenames);
-    wtPersonData.middleName = WTS_String.getWordsAfterFirstWord(forenames);
+    wtPersonData.firstName = StringUtils.getFirstWord(forenames);
+    wtPersonData.middleName = StringUtils.getWordsAfterFirstWord(forenames);
   }
 }
 
@@ -765,7 +765,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
 
     let birthPlace = personGd.inferBirthPlace();
     if (birthPlace) {
-      let preposition = WTS_String.getPrepositionForPlaceString(birthPlace);
+      let preposition = StringUtils.getPrepositionForPlaceString(birthPlace);
       birthPlace = preposition + " " + birthPlace;
     }
 

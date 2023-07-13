@@ -25,11 +25,11 @@ SOFTWARE.
 import {
   GeneralizedData,
   dateQualifiers,
-  WtsPlace,
-  WtsName,
-  WtsDate,
+  PlaceObj,
+  NameObj,
+  DateObj,
 } from "../../../base/core/generalize_data_utils.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function cleanRegistrationDistrictName(name) {
@@ -41,7 +41,7 @@ function cleanRegistrationDistrictName(name) {
 
   newName = newName.replace(/^OF /, "");
 
-  return WTS_String.toInitialCapsEachWord(newName);
+  return StringUtils.toInitialCapsEachWord(newName);
 }
 
 // This function generalizes the data (ed) extracted from the GRO page.
@@ -66,7 +66,7 @@ function generalizeData(input) {
   result.setEventQuarter(ed.eventQuarter); // this is 1-4
 
   if (ed.eventYear) {
-    result.eventDate = new WtsDate();
+    result.eventDate = new DateObj();
 
     result.eventDate.yearString = ed.eventYear.toString();
     if (ed.eventQuarter) {
@@ -75,9 +75,9 @@ function generalizeData(input) {
   }
 
   // most strings in extractedData are in all caps. Change them to mixed case
-  let lastName = WTS_String.toInitialCapsEachWord(ed.lastName, true);
-  let forenames = WTS_String.toInitialCapsEachWord(ed.forenames, true);
-  let mothersMaidenName = WTS_String.toInitialCapsEachWord(ed.mothersMaidenName, true);
+  let lastName = StringUtils.toInitialCapsEachWord(ed.lastName, true);
+  let forenames = StringUtils.toInitialCapsEachWord(ed.forenames, true);
+  let mothersMaidenName = StringUtils.toInitialCapsEachWord(ed.mothersMaidenName, true);
   let registrationDistrict = cleanRegistrationDistrictName(ed.registrationDistrict);
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
@@ -97,7 +97,7 @@ function generalizeData(input) {
     result.deathDate = result.eventDate;
 
     if (ed.birthYear) {
-      result.birthDate = new WtsDate();
+      result.birthDate = new DateObj();
       result.birthDate.yearString = ed.birthYear.toString();
     }
 

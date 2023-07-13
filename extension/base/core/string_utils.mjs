@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const WTS_String = {
+const StringUtils = {
   isWordAllUpperCase: function (string) {
     if (!string) {
       return false;
@@ -353,4 +353,4 @@ const WTS_String = {
   },
 };
 
-export { WTS_String };
+export { StringUtils };

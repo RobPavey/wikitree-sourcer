@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { ScotpRecordType, SpField } from "./scotp_record_type.mjs";
 import { getPlaceSearchTerms } from "./scotp_place_search_terms.mjs";
 
@@ -110,7 +110,7 @@ class ScotpUriBuilder {
       }
     }
 
-    this.addSearchParameter("surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
     this.addSearchOption("surname", searchOption);
   }
 
@@ -124,12 +124,12 @@ class ScotpUriBuilder {
       }
     }
 
-    this.addSearchParameter(forenameParam, WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter(forenameParam, StringUtils.removeExtendedAsciiCharacters(string));
     this.addSearchOption(forenameParam, searchOption);
   }
 
   addFullName(string, searchOption) {
-    this.addSearchParameter("name", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("name", StringUtils.removeExtendedAsciiCharacters(string));
     this.addSearchOption("name", searchOption);
   }
 
@@ -137,7 +137,7 @@ class ScotpUriBuilder {
     let surnameParam = ScotpRecordType.getSearchParam(this.recordType, SpField.spouseSurname);
 
     if (surnameParam) {
-      this.addSearchParameter(surnameParam, WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(surnameParam, StringUtils.removeExtendedAsciiCharacters(string));
       this.addSearchOption(surnameParam, searchOption);
     }
   }
@@ -146,7 +146,7 @@ class ScotpUriBuilder {
     let forenameParam = ScotpRecordType.getSearchParam(this.recordType, SpField.spouseForename);
 
     if (forenameParam) {
-      this.addSearchParameter(forenameParam, WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(forenameParam, StringUtils.removeExtendedAsciiCharacters(string));
       this.addSearchOption(forenameParam, searchOption);
     }
   }
@@ -155,7 +155,7 @@ class ScotpUriBuilder {
     let fullNameParam = ScotpRecordType.getSearchParam(this.recordType, SpField.spouseFullName);
 
     if (fullNameParam) {
-      this.addSearchParameter(fullNameParam, WTS_String.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter(fullNameParam, StringUtils.removeExtendedAsciiCharacters(string));
       this.addSearchOption(fullNameParam, searchOption);
     }
   }

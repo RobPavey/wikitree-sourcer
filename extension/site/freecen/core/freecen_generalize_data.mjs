@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { GeneralizedData, GD, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { getCountryFromCountyCode, getCountryFromCountyName } from "./freecen_chapman_codes.mjs";
 
 function getCountyAndCountry(ed) {
@@ -161,7 +161,7 @@ function buildHouseholdArray(ed, result) {
           if (householdMember.name) {
             householdMember.name += " ";
           }
-          surname = WTS_String.toInitialCapsEachWord(surname, true);
+          surname = StringUtils.toInitialCapsEachWord(surname, true);
           householdMember.name += surname;
         }
         let yearsMarried = member["Years Married"];
@@ -275,7 +275,7 @@ function generalizeData(input) {
     selectedMember = ed.householdMembers[0];
   }
 
-  let surname = WTS_String.toInitialCapsEachWord(selectedMember["Surname"], true);
+  let surname = StringUtils.toInitialCapsEachWord(selectedMember["Surname"], true);
   let forenames = selectedMember["Forenames"];
 
   result.setLastNameAndForenames(surname, forenames);

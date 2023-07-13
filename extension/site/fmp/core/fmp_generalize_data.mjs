@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, dateQualifiers, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 
 function determineRecordType(extractedData) {
@@ -813,7 +813,7 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     if (spouseLastName || result.eventDate) {
-      let name = new WtsName();
+      let name = new NameObj();
       name.setFirstNames(spouseFirstNames);
       name.setLastName(spouseLastName);
       let spouse = {
@@ -958,7 +958,7 @@ function generalizeDataGivenRecordType(ed, result) {
     if (spouseLastName) {
       let spouseFirstNames = getRecordDataValueForList(ed, ["Spouse's first name(s)", "Spouse's first name"]);
 
-      let name = new WtsName();
+      let name = new NameObj();
       name.setFirstNames(spouseFirstNames);
       name.setLastName(spouseLastName);
       let spouse = {

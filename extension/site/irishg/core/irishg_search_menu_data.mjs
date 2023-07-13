@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { RT } from "../../../base/core/record_type.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 const categories = [
   { value: "civil", text: "Civil Records" },
@@ -226,7 +226,7 @@ const IrishgData = {
       for (let member of generalizedData.householdArray) {
         if (!member.isSelected) {
           let name = member.name;
-          let firstName = WTS_String.getFirstWord(name);
+          let firstName = StringUtils.getFirstWord(name);
           let text = firstName + " (" + member.age + ", " + member.relationship + ")";
           result.push({ value: firstName, text: text });
         }

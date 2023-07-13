@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class CwgcUriBuilder {
   constructor() {
@@ -58,61 +58,61 @@ class CwgcUriBuilder {
   }
 
   addSurname(string, searchOption) {
-    this.addSearchParameter("Surname", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Surname", StringUtils.removeExtendedAsciiCharacters(string));
     if (searchOption) {
       this.addSearchParameter("SurnameExact", searchOption);
     }
   }
 
   addForename(string, searchOption) {
-    this.addSearchParameter("Forename", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Forename", StringUtils.removeExtendedAsciiCharacters(string));
     if (searchOption) {
       this.addSearchParameter("ForenameExact", searchOption);
     }
   }
 
   addInitials(string) {
-    this.addSearchParameter("Initials", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Initials", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addServiceNumber(string, searchOption) {
-    this.addSearchParameter("ServiceNum", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("ServiceNum", StringUtils.removeExtendedAsciiCharacters(string));
     this.addSearchParameter("ServiceNumExact", searchOption);
   }
 
   addRegiment(string, searchOption) {
-    this.addSearchParameter("Regiment", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Regiment", StringUtils.removeExtendedAsciiCharacters(string));
     if (searchOption) {
       this.addSearchParameter("RegimentExact", searchOption);
     }
   }
 
   addServedWith(string) {
-    this.addSearchParameter("ServedWith", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("ServedWith", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addServedIn(string) {
-    this.addSearchParameter("ServedIn", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("ServedIn", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addCountryCommemoratedIn(string) {
-    this.addSearchParameter("CountryCommemoratedIn", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("CountryCommemoratedIn", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addCemetery(string) {
-    this.addSearchParameter("Cemetery", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Cemetery", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addUnit(string) {
-    this.addSearchParameter("Unit", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Unit", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addRank(string) {
-    this.addSearchParameter("Rank", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Rank", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addSecondaryRegiment(string) {
-    this.addSearchParameter("SecondaryRegiment", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("SecondaryRegiment", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addAgeOfDeath(string) {
@@ -136,11 +136,11 @@ class CwgcUriBuilder {
   }
 
   addRankHouners(string) {
-    this.addSearchParameter("Rank", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Rank", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addAdditionalInfo(string) {
-    this.addSearchParameter("AdditionalInfo", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("AdditionalInfo", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   getUri() {

@@ -80,7 +80,7 @@ $Surname(ic)$, $forename1(ic)$ $OtherForenames(ic)$ (Mother's maiden name: $MMN(
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { GroUriBuilder } from "./gro_uri_builder.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { getUkbmdDistrictPageUrl } from "./gro_to_ukbmd.mjs";
 
 function buildGroSearchUrl(ed) {
@@ -106,7 +106,7 @@ function buildGroSearchUrl(ed) {
   }
 
   builder.addFirstForename(ed.firstName);
-  builder.addSecondForename(WTS_String.getFirstWord(ed.middleNames));
+  builder.addSecondForename(StringUtils.getFirstWord(ed.middleNames));
 
   if (ed.personGender == "male") {
     builder.addGenderMale();
@@ -162,14 +162,14 @@ function getQuarterName(ed) {
 
 function getCorrectlyCasedName(name, options) {
   if (options.citation_gro_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCaps(name);
+    name = StringUtils.toInitialCaps(name);
   }
   return name;
 }
 
 function getCorrectlyCasedNames(name, options, isName = false) {
   if (options.citation_gro_changeNamesToInitialCaps) {
-    name = WTS_String.toInitialCapsEachWord(name, isName);
+    name = StringUtils.toInitialCapsEachWord(name, isName);
   }
   return name;
 }

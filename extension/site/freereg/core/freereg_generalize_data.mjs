@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, GD, dateQualifiers, WtsName } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, dateQualifiers, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { getCountryFromCountyName } from "../../freecen/core/freecen_chapman_codes.mjs";
 
 function getCountyAndCountry(ed) {
@@ -76,7 +76,7 @@ function buildFullName(ed, forenameKeys, surnameKeys) {
   let forename = getRecordDataValueForKeys(ed, forenameKeys);
   let surname = getRecordDataValueForKeys(ed, surnameKeys);
 
-  surname = WTS_String.toInitialCapsEachWord(surname, true);
+  surname = StringUtils.toInitialCapsEachWord(surname, true);
 
   if (forename && surname) {
     return forename + " " + surname;
@@ -88,12 +88,12 @@ function buildFullName(ed, forenameKeys, surnameKeys) {
 }
 
 function setMarriageData(ed, result, input) {
-  let surname = WTS_String.toInitialCapsEachWord(input.surname, true);
+  let surname = StringUtils.toInitialCapsEachWord(input.surname, true);
   result.setLastNameAndForenames(surname, input.forenames);
   result.setFieldIfValueExists("ageAtEvent", input.age);
 
-  let spouseSurname = WTS_String.toInitialCapsEachWord(input.spouseSurname, true);
-  let spouseName = new WtsName();
+  let spouseSurname = StringUtils.toInitialCapsEachWord(input.spouseSurname, true);
+  let spouseName = new NameObj();
   if (input.spouseForenames) {
     spouseName.forenames = input.spouseForenames;
   }
@@ -133,7 +133,7 @@ function generalizeDataForBaptism(ed, result) {
 
   let forenames = getRecordDataValueForKeys(ed, ["Person forename"]);
   let surname = getRecordDataValueForKeys(ed, ["Person surname", "Father surname", "Mother surname"]);
-  surname = WTS_String.toInitialCapsEachWord(surname, true);
+  surname = StringUtils.toInitialCapsEachWord(surname, true);
   result.lastNameAtBirth = surname;
   result.setLastNameAndForenames(surname, forenames);
 
@@ -168,7 +168,7 @@ function generalizeDataForBurial(ed, result) {
 
   let forenames = getRecordDataValueForKeys(ed, ["Burial person forename"]);
   let surname = getRecordDataValueForKeys(ed, ["Burial person surname"]);
-  surname = WTS_String.toInitialCapsEachWord(surname, true);
+  surname = StringUtils.toInitialCapsEachWord(surname, true);
   result.lastNameAtDeath = surname;
   result.setLastNameAndForenames(surname, forenames);
 }

@@ -24,11 +24,11 @@ SOFTWARE.
 
 import { CwgcUriBuilder } from "./cwgc_uri_builder.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { optionsRegistry } from "../../../base/core/options/options_registry.mjs";
 
 function addNumToYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     yearNum += num;
     return yearNum.toString();
@@ -38,7 +38,7 @@ function addNumToYearString(yearString, num) {
 }
 
 function subtractNumFromYearString(yearString, num) {
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     yearNum -= num;
     return yearNum.toString();
@@ -55,7 +55,7 @@ function constrainYear(yearString) {
     return yearString;
   }
 
-  let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+  let yearNum = DateUtils.getYearNumFromYearString(yearString);
   if (yearNum) {
     if (yearNum < minCwgcYear) {
       yearNum = minCwgcYear;

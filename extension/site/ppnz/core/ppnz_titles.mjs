@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_Date } from "../../../base/core/wts_date.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 const titleDatabase = [
   {
@@ -1260,7 +1260,7 @@ const titleDatabase = [
 ];
 
 function titleToPlace(title, dateString) {
-  let parsedDate = WTS_Date.parseDateString(dateString);
+  let parsedDate = DateUtils.parseDateString(dateString);
 
   let yearNum = 0;
   if (parsedDate.isValid) {

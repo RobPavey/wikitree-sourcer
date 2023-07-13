@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { RC } from "./record_collections.mjs";
 import { RT } from "./record_type.mjs";
-import { WTS_String } from "./wts_string.mjs";
+import { StringUtils } from "./string_utils.mjs";
 import { CD } from "./country_data.mjs";
 
 class TableBuilder {
@@ -85,7 +85,7 @@ class TableBuilder {
         return value;
       },
       relationship: function (gd, value) {
-        value = WTS_String.toInitialCaps(value);
+        value = StringUtils.toInitialCaps(value);
         return value;
       },
       maritalStatus: function (gd, value) {
@@ -93,7 +93,7 @@ class TableBuilder {
           value = gd.getTermForUnmarried();
         }
 
-        value = WTS_String.toInitialCaps(value);
+        value = StringUtils.toInitialCaps(value);
         return value;
       },
     };

@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class OpccornUriBuilder {
   constructor() {
@@ -58,11 +58,11 @@ class OpccornUriBuilder {
   }
 
   addSurname(string) {
-    this.addSearchParameter("surname1", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("surname1", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("forename1", WTS_String.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("forename1", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {

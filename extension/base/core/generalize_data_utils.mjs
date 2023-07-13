@@ -24,8 +24,8 @@ SOFTWARE.
 
 import { CD } from "./country_data.mjs";
 import { RC } from "./record_collections.mjs";
-import { WTS_String } from "./wts_string.mjs";
-import { WTS_Date } from "./wts_date.mjs";
+import { StringUtils } from "./string_utils.mjs";
+import { DateUtils } from "./date_utils.mjs";
 import { RT, RecordSubtype, Role } from "./record_type.mjs";
 
 const possibleLifeSpan = 120;
@@ -49,7 +49,7 @@ const GD = {
     }
     // Not a standard form date string, try parsing
     if (!result) {
-      let parsedDate = WTS_Date.parseDateString(date);
+      let parsedDate = DateUtils.parseDateString(date);
       if (!parsedDate.isValid || !parsedDate.yearNum) {
         return result;
       }
@@ -459,7 +459,7 @@ const GD = {
   },
 };
 
-class WtsDate {
+class DateObj {
   constructor() {
     // Fields are only set if from the record/profile, methods can infer/extract
     // possible fields are:
@@ -474,7 +474,7 @@ class WtsDate {
       return undefined;
     }
 
-    let classObj = new WtsDate();
+    let classObj = new DateObj();
     const keys = Object.keys(obj);
     for (let key of keys) {
       classObj[key] = obj[key];
@@ -568,7 +568,7 @@ class WtsDate {
     let dateString = this.getDateString();
     let qualifier = this.qualifier;
 
-    let parsedDate = WTS_Date.parseDateString(dateString);
+    let parsedDate = DateUtils.parseDateString(dateString);
     if (!parsedDate.isValid) {
       if (addPreposition) {
         let preposition = "on";
@@ -587,21 +587,21 @@ class WtsDate {
 
     let newString = "";
     if (format == "short") {
-      newString = WTS_Date.getStdShortFormDateString(parsedDate);
+      newString = DateUtils.getStdShortFormDateString(parsedDate);
     } else if (format == "long") {
-      newString = WTS_Date.getStdLongFormDateString(parsedDate);
+      newString = DateUtils.getStdLongFormDateString(parsedDate);
     } else if (format == "theNth") {
-      newString = WTS_Date.getStdNthFormDateString(parsedDate);
+      newString = DateUtils.getStdNthFormDateString(parsedDate);
     } else if (format == "monthComma") {
-      newString = WTS_Date.getUsLongFormDateString(parsedDate);
+      newString = DateUtils.getUsLongFormDateString(parsedDate);
     } else if (format == "monthCommaNth") {
-      newString = WTS_Date.getUsNthFormDateString(parsedDate);
+      newString = DateUtils.getUsNthFormDateString(parsedDate);
     } else {
       console.log("unknown date format: " + format);
-      newString = WTS_Date.getStdLongFormDateString(parsedDate);
+      newString = DateUtils.getStdLongFormDateString(parsedDate);
     }
 
-    newString = WTS_String.highlightString(newString, highlightOption);
+    newString = StringUtils.highlightString(newString, highlightOption);
 
     let preposition = "on";
     if (!parsedDate.hasDay) {
@@ -629,7 +629,7 @@ class WtsDate {
 }
 
 // NOTE: Is Location of Place the best term? All the sites (including wikitree) use "Place"
-class WtsPlace {
+class PlaceObj {
   constructor() {
     // Fields are only set if from the record/profile, methods can infer/extract
     // possible fields are:
@@ -643,7 +643,7 @@ class WtsPlace {
       return undefined;
     }
 
-    let classObj = new WtsPlace();
+    let classObj = new PlaceObj();
     const keys = Object.keys(obj);
     for (let key of keys) {
       classObj[key] = obj[key];
@@ -822,7 +822,7 @@ class WtsPlace {
   }
 }
 
-class WtsName {
+class NameObj {
   constructor() {
     // Note, all strings have all white space replaced with single spaces and are trimmed
     // possible fields are:
@@ -844,7 +844,7 @@ class WtsName {
       return undefined;
     }
 
-    let classObj = new WtsName();
+    let classObj = new NameObj();
     const keys = Object.keys(obj);
     for (let key of keys) {
       classObj[key] = obj[key];
@@ -869,7 +869,7 @@ class WtsName {
       return 0;
     }
 
-    let wordCount = WTS_String.countWords(name);
+    let wordCount = StringUtils.countWords(name);
 
     if (isFull) {
       if (wordCount < 3) {
@@ -881,13 +881,13 @@ class WtsName {
       }
     }
 
-    let firstWord = WTS_String.getFirstWord(name);
+    let firstWord = StringUtils.getFirstWord(name);
 
     const titles = ["mr", "mrs", "miss", "ms", "mx"];
     let lcFirstWord = firstWord.toLowerCase();
     if (titles.includes(lcFirstWord)) {
       // remove the title
-      return WTS_String.getWordsAfterFirstWord(name);
+      return StringUtils.getWordsAfterFirstWord(name);
     }
 
     return name;
@@ -1000,20 +1000,20 @@ class WtsName {
       return this.middleName;
     }
     if (this.middleNames) {
-      return WTS_String.getFirstWord(this.middleNames);
+      return StringUtils.getFirstWord(this.middleNames);
     }
     if (this.forenames) {
-      let middleNames = WTS_String.getWordsAfterFirstWord(this.forenames);
+      let middleNames = StringUtils.getWordsAfterFirstWord(this.forenames);
       if (middleNames) {
-        return WTS_String.getFirstWord(middleNames);
+        return StringUtils.getFirstWord(middleNames);
       }
     }
     if (this.name) {
-      let forenames = WTS_String.getWordsBeforeLastWord(this.name);
+      let forenames = StringUtils.getWordsBeforeLastWord(this.name);
       if (forenames) {
-        let middleNames = WTS_String.getWordsAfterFirstWord(forenames);
+        let middleNames = StringUtils.getWordsAfterFirstWord(forenames);
         if (middleNames) {
-          return WTS_String.getFirstWord(middleNames);
+          return StringUtils.getFirstWord(middleNames);
         }
       }
     }
@@ -1060,7 +1060,7 @@ class WtsName {
       if (this.forenames && this.forenames == this.name) {
         return ""; // full name is just forenames, no last name known
       }
-      return WTS_String.getLastWord(this.name);
+      return StringUtils.getLastWord(this.name);
     }
   }
 
@@ -1069,16 +1069,16 @@ class WtsName {
       return this.firstName;
     }
     if (this.firstNames) {
-      return WTS_String.getFirstWord(this.firstNames);
+      return StringUtils.getFirstWord(this.firstNames);
     }
     if (this.forenames) {
-      return WTS_String.getFirstWord(this.forenames);
+      return StringUtils.getFirstWord(this.forenames);
     }
     if (this.name) {
       if (this.lastName && this.lastName == this.name) {
         return ""; // full name is just last name, no forenames known
       }
-      return WTS_String.getFirstWord(this.name);
+      return StringUtils.getFirstWord(this.name);
     }
   }
 
@@ -1087,13 +1087,13 @@ class WtsName {
       return this.middleName;
     }
     if (this.middleNames) {
-      return WTS_String.getFirstWord(this.middleNames);
+      return StringUtils.getFirstWord(this.middleNames);
     }
     if (this.forenames) {
-      return WTS_String.getSecondWord(this.forenames);
+      return StringUtils.getSecondWord(this.forenames);
     }
     if (this.name) {
-      return WTS_String.getMiddleWord(this.name);
+      return StringUtils.getMiddleWord(this.name);
     }
   }
 
@@ -1101,14 +1101,14 @@ class WtsName {
     let result = "";
 
     if (this.firstNames) {
-      result = WTS_String.getSecondWord(this.firstNames);
+      result = StringUtils.getSecondWord(this.firstNames);
       if (result) {
         return result;
       }
     }
 
     if (this.forenames) {
-      result = WTS_String.getSecondWord(this.forenames);
+      result = StringUtils.getSecondWord(this.forenames);
       if (result) {
         return result;
       }
@@ -1117,14 +1117,14 @@ class WtsName {
       return this.middleName;
     }
     if (this.middleNames) {
-      return WTS_String.getFirstWord(this.middleNames);
+      return StringUtils.getFirstWord(this.middleNames);
     }
     if (this.name) {
       if (this.lastName && this.lastName == this.name) {
         return ""; // full name is just last name, no forenames known
       }
 
-      return WTS_String.getMiddleWord(this.name);
+      return StringUtils.getMiddleWord(this.name);
     }
   }
 
@@ -1136,13 +1136,13 @@ class WtsName {
       return this.middleName;
     }
     if (this.forenames) {
-      return WTS_String.getWordsAfterFirstWord(this.forenames);
+      return StringUtils.getWordsAfterFirstWord(this.forenames);
     }
     if (this.name) {
       if (this.lastName && this.lastName == this.name) {
         return ""; // full name is just last name, no forenames known
       }
-      return WTS_String.getMiddleWords(this.name);
+      return StringUtils.getMiddleWords(this.name);
     }
   }
 
@@ -1168,7 +1168,7 @@ class WtsName {
       if (this.lastName && this.lastName == this.name) {
         return ""; // full name is just last name, no forenames known
       }
-      return WTS_String.getWordsBeforeLastWord(this.name);
+      return StringUtils.getWordsBeforeLastWord(this.name);
     }
   }
 
@@ -1202,28 +1202,28 @@ class GeneralizedData {
     // sourceOfData : must be one of the supported site names
     // sourceType: A string either "record" or "profile"
     // recordType: A string, if a record this is something like "BirthRegistration" or "Census"
-    // birthDate: a WtsDate object
-    // deathDate: a WtsDate object
-    // eventDate: a WtsDate object
+    // birthDate: a DateObj object
+    // deathDate: a DateObj object
+    // eventDate: a DateObj object
     // ageAtEvent: a string
     // ageAtDeath: a string
     // lastNameAtBirth: string
     // lastNameAtDeath: string
     // mothersMaidenName: string
-    // name: WtsName object, the name from the record/profile. For a profile this would include the LNAB as lastName
-    // birthPlace: a WtsPlace object
-    // deathPlace: a WtsPlace object
-    // eventPlace: a WtsPlace object
-    // residencePlace: a WtsPlace object
+    // name: NameObj object, the name from the record/profile. For a profile this would include the LNAB as lastName
+    // birthPlace: a PlaceObj object
+    // deathPlace: a PlaceObj object
+    // eventPlace: a PlaceObj object
+    // residencePlace: a PlaceObj object
     // registrationDistrict: a string
     // personGender: a lowerface string, either "male", "female" or not defined
     // parents: an object with father and mother fields
     // spouses: an array of objects
     // primaryPerson: used if role is not Primary
-    //    name: a WtsName object
+    //    name: a NameObj object
     //    gender
-    //    birthDate: a WtsDate object
-    //    deathDate: a WtsDate object
+    //    birthDate: a DateObj object
+    //    deathDate: a DateObj object
   }
 
   static createFromPlainObject(obj) {
@@ -1235,18 +1235,18 @@ class GeneralizedData {
     const keys = Object.keys(obj);
     for (let key of keys) {
       if (key == "eventDate" || key == "birthDate" || key == "deathDate") {
-        classObj[key] = WtsDate.createFromPlainObject(obj[key]);
+        classObj[key] = DateObj.createFromPlainObject(obj[key]);
       } else if (key == "name") {
-        classObj[key] = WtsName.createFromPlainObject(obj[key]);
+        classObj[key] = NameObj.createFromPlainObject(obj[key]);
       } else if (key == "birthPlace" || key == "deathPlace" || key == "eventPlace" || key == "residencePlace") {
-        classObj[key] = WtsPlace.createFromPlainObject(obj[key]);
+        classObj[key] = PlaceObj.createFromPlainObject(obj[key]);
       } else if (key == "parents") {
         classObj[key] = {};
         if (obj.parents.father) {
           let father = obj.parents.father;
           classObj[key].father = {};
           if (father.name) {
-            classObj[key].father.name = WtsName.createFromPlainObject(father.name);
+            classObj[key].father.name = NameObj.createFromPlainObject(father.name);
           }
           if (father.lastNameAtBirth) {
             classObj[key].father.lastNameAtBirth = father.lastNameAtBirth;
@@ -1259,7 +1259,7 @@ class GeneralizedData {
           let mother = obj.parents.mother;
           classObj[key].mother = {};
           if (mother.name) {
-            classObj[key].mother.name = WtsName.createFromPlainObject(mother.name);
+            classObj[key].mother.name = NameObj.createFromPlainObject(mother.name);
           }
           if (mother.lastNameAtBirth) {
             classObj[key].mother.lastNameAtBirth = mother.lastNameAtBirth;
@@ -1273,7 +1273,7 @@ class GeneralizedData {
         for (let spouse of obj.spouses) {
           let newSpouse = {};
           if (spouse.name) {
-            newSpouse.name = WtsName.createFromPlainObject(spouse.name);
+            newSpouse.name = NameObj.createFromPlainObject(spouse.name);
           }
           if (spouse.lastNameAtBirth) {
             newSpouse.lastNameAtBirth = spouse.lastNameAtBirth;
@@ -1282,10 +1282,10 @@ class GeneralizedData {
             newSpouse.lastNameAtBirth = spouse.lastNameAtBirth;
           }
           if (spouse.marriageDate) {
-            newSpouse.marriageDate = WtsDate.createFromPlainObject(spouse.marriageDate);
+            newSpouse.marriageDate = DateObj.createFromPlainObject(spouse.marriageDate);
           }
           if (spouse.marriagePlace) {
-            newSpouse.marriagePlace = WtsPlace.createFromPlainObject(spouse.marriagePlace);
+            newSpouse.marriagePlace = PlaceObj.createFromPlainObject(spouse.marriagePlace);
           }
           if (spouse.age) {
             newSpouse.age = spouse.age;
@@ -1295,13 +1295,13 @@ class GeneralizedData {
       } else if (key == "primaryPerson") {
         classObj[key] = {};
         if (obj.primaryPerson.name) {
-          classObj[key].name = WtsName.createFromPlainObject(obj.primaryPerson.name);
+          classObj[key].name = NameObj.createFromPlainObject(obj.primaryPerson.name);
         }
         if (obj.primaryPerson.birthDate) {
-          classObj[key].birthDate = WtsDate.createFromPlainObject(obj.primaryPerson.birthDate);
+          classObj[key].birthDate = DateObj.createFromPlainObject(obj.primaryPerson.birthDate);
         }
         if (obj.primaryPerson.deathDate) {
-          classObj[key].deathDate = WtsDate.createFromPlainObject(obj.primaryPerson.deathDate);
+          classObj[key].deathDate = DateObj.createFromPlainObject(obj.primaryPerson.deathDate);
         }
         if (obj.primaryPerson.age) {
           classObj[key].age = obj.primaryPerson.age;
@@ -1339,19 +1339,19 @@ class GeneralizedData {
   }
 
   static getAgeAtDate(birthDate, otherDate) {
-    let years = WTS_Date.getWholeYearsBetweenDateStrings(birthDate, otherDate);
+    let years = DateUtils.getWholeYearsBetweenDateStrings(birthDate, otherDate);
     return years;
   }
 
   static getSubtractAgeFromDate(dateString, age) {
-    let parsedDate = WTS_Date.parseDateString(dateString);
+    let parsedDate = DateUtils.parseDateString(dateString);
     if (!parsedDate.isValid) {
       return dateString;
     }
 
     parsedDate.yearNum -= age;
 
-    return WTS_Date.getStdShortFormDateString(parsedDate);
+    return DateUtils.getStdShortFormDateString(parsedDate);
   }
 
   static getSubtractAgeFromDateYear(dateYear, age) {
@@ -1412,7 +1412,7 @@ class GeneralizedData {
 
   createNameIfNeeded() {
     if (!this.name) {
-      this.name = new WtsName();
+      this.name = new NameObj();
     }
   }
 
@@ -1446,7 +1446,7 @@ class GeneralizedData {
 
   createBirthDateIfNeeded() {
     if (!this.birthDate) {
-      this.birthDate = new WtsDate();
+      this.birthDate = new DateObj();
     }
   }
 
@@ -1465,7 +1465,7 @@ class GeneralizedData {
   }
 
   setBirthDateFromYearMonthDay(year, month, day) {
-    let dateString = WTS_Date.getDateStringFromYearMonthDay(year, month, day);
+    let dateString = DateUtils.getDateStringFromYearMonthDay(year, month, day);
 
     if (dateString) {
       this.createBirthDateIfNeeded();
@@ -1475,7 +1475,7 @@ class GeneralizedData {
 
   createBirthPlaceIfNeeded() {
     if (!this.birthPlace) {
-      this.birthPlace = new WtsPlace();
+      this.birthPlace = new PlaceObj();
     }
   }
 
@@ -1488,7 +1488,7 @@ class GeneralizedData {
 
   createDeathDateIfNeeded() {
     if (!this.deathDate) {
-      this.deathDate = new WtsDate();
+      this.deathDate = new DateObj();
     }
   }
 
@@ -1508,7 +1508,7 @@ class GeneralizedData {
 
   createDeathPlaceIfNeeded() {
     if (!this.deathPlace) {
-      this.deathPlace = new WtsPlace();
+      this.deathPlace = new PlaceObj();
     }
   }
 
@@ -1521,7 +1521,7 @@ class GeneralizedData {
 
   createEventDateIfNeeded() {
     if (!this.eventDate) {
-      this.eventDate = new WtsDate();
+      this.eventDate = new DateObj();
     }
   }
 
@@ -1548,7 +1548,7 @@ class GeneralizedData {
 
   createEventPlaceIfNeeded() {
     if (!this.eventPlace) {
-      this.eventPlace = new WtsPlace();
+      this.eventPlace = new PlaceObj();
     }
   }
 
@@ -1575,7 +1575,7 @@ class GeneralizedData {
 
   createResidencePlaceIfNeeded() {
     if (!this.residencePlace) {
-      this.residencePlace = new WtsPlace();
+      this.residencePlace = new PlaceObj();
     }
   }
 
@@ -1632,9 +1632,9 @@ class GeneralizedData {
     }
 
     let spouse = {};
-    spouse.name = new WtsName();
-    spouse.marriageDate = new WtsDate();
-    spouse.marriagePlace = new WtsPlace();
+    spouse.name = new NameObj();
+    spouse.marriageDate = new DateObj();
+    spouse.marriagePlace = new PlaceObj();
 
     this.spouses.push(spouse);
 
@@ -1663,7 +1663,7 @@ class GeneralizedData {
     }
 
     if (this.parents.mother.name == undefined) {
-      this.parents.mother.name = new WtsName();
+      this.parents.mother.name = new NameObj();
     }
 
     return this.parents.mother;
@@ -1698,7 +1698,7 @@ class GeneralizedData {
     }
 
     if (this.parents.father.name == undefined) {
-      this.parents.father.name = new WtsName();
+      this.parents.father.name = new NameObj();
     }
 
     return this.parents.father;
@@ -1768,7 +1768,7 @@ class GeneralizedData {
       }
       if (!isNaN(yearsMarried)) {
         let marriageDateString = GeneralizedData.getSubtractAgeFromDate(eventDate, yearsMarried);
-        let marriageYear = WTS_String.getLastWord(marriageDateString);
+        let marriageYear = StringUtils.getLastWord(marriageDateString);
         if (marriageYear) {
           spouse.marriageDate.yearString = marriageYear;
         }
@@ -1916,7 +1916,7 @@ class GeneralizedData {
   createPrimaryPersonIfNeeded() {
     if (!this.primaryPerson) {
       this.primaryPerson = {};
-      this.primaryPerson.name = new WtsName();
+      this.primaryPerson.name = new NameObj();
     }
   }
 
@@ -1949,7 +1949,7 @@ class GeneralizedData {
   createPrimaryPersonBirthDateIfNeeded() {
     this.createPrimaryPersonIfNeeded();
     if (!this.primaryPerson.birthDate) {
-      this.primaryPerson.birthDate = new WtsDate();
+      this.primaryPerson.birthDate = new DateObj();
     }
   }
 
@@ -1970,7 +1970,7 @@ class GeneralizedData {
   createPrimaryPersonDeathDateIfNeeded() {
     this.createPrimaryPersonIfNeeded();
     if (!this.primaryPerson.deathDate) {
-      this.primaryPerson.deathDate = new WtsDate();
+      this.primaryPerson.deathDate = new DateObj();
     }
   }
 
@@ -2171,13 +2171,13 @@ class GeneralizedData {
       for (let spouse of this.spouses) {
         if (spouse.marriageDate) {
           let marriageDate = spouse.marriageDate.getDateString();
-          let marriageParsedDate = WTS_Date.parseDateString(marriageDate);
+          let marriageParsedDate = DateUtils.parseDateString(marriageDate);
           if (marriageParsedDate.isValid) {
             if (!lastMarriageDate) {
               lastMarriageDate = marriageParsedDate;
               lastSpouseLastName = getSpouseLnab(spouse);
             } else {
-              let diff = WTS_Date.getDaysBetweenParsedDates(lastMarriageDate, marriageParsedDate);
+              let diff = DateUtils.getDaysBetweenParsedDates(lastMarriageDate, marriageParsedDate);
               if (diff > 0) {
                 lastMarriageDate = marriageParsedDate;
                 let spouseLnab = getSpouseLnab(spouse);
@@ -2239,8 +2239,8 @@ class GeneralizedData {
         let deathDateString = this.deathDate.getDateString();
 
         let dateString = GeneralizedData.getSubtractAgeFromDate(deathDateString, this.ageAtDeath);
-        let yearString = WTS_String.getLastWord(dateString);
-        let dateObj = new WtsDate();
+        let yearString = StringUtils.getLastWord(dateString);
+        let dateObj = new DateObj();
         dateObj.yearString = yearString;
         dateObj.qualifier = dateQualifiers.ABOUT;
         return dateObj;
@@ -2254,15 +2254,15 @@ class GeneralizedData {
     if (this.eventDate && this.ageAtEvent) {
       let eventDateString = this.eventDate.getDateString();
       let dateString = GeneralizedData.getSubtractAgeFromDate(eventDateString, this.ageAtEvent);
-      let yearString = WTS_String.getLastWord(dateString);
-      let dateObj = new WtsDate();
+      let yearString = StringUtils.getLastWord(dateString);
+      let dateObj = new DateObj();
       dateObj.yearString = yearString;
       dateObj.qualifier = dateQualifiers.ABOUT;
       return dateObj;
     }
     if (this.eventDate && !this.role) {
       if (this.recordType == RT.Baptism) {
-        let dateObj = new WtsDate();
+        let dateObj = new DateObj();
         dateObj.dateString = this.eventDate.dateString;
         dateObj.qualifier = dateQualifiers.BEFORE;
         return dateObj;
@@ -2300,7 +2300,7 @@ class GeneralizedData {
         return this.eventDate;
       }
       if (this.recordType == RT.Burial) {
-        let dateObj = new WtsDate();
+        let dateObj = new DateObj();
         dateObj.dateString = this.eventDate.dateString;
         dateObj.qualifier = dateQualifiers.BEFORE;
         return dateObj;
@@ -2712,14 +2712,14 @@ class GeneralizedData {
   }
 
   inferLastNameOnDate(targetDate, allowMultiple = false) {
-    let targetParsedDate = WTS_Date.parseDateString(targetDate);
+    let targetParsedDate = DateUtils.parseDateString(targetDate);
     let bestMatchName = "";
     let howCloseIsBestMatch = -1;
     for (let spouse of this.spouses) {
       if (spouse.marriageDate) {
         let marriageDate = spouse.marriageDate.getDateString();
-        let marriageParsedDate = WTS_Date.parseDateString(marriageDate);
-        let diff = WTS_Date.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
+        let marriageParsedDate = DateUtils.parseDateString(marriageDate);
+        let diff = DateUtils.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
         if (diff >= 0) {
           let howClose = diff;
           if (!bestMatchName || howClose <= howCloseIsBestMatch) {
@@ -2810,14 +2810,14 @@ class GeneralizedData {
           if (!targetDate) {
             targetDate = collection.dates.year.toString();
           }
-          let targetParsedDate = WTS_Date.parseDateString(targetDate);
+          let targetParsedDate = DateUtils.parseDateString(targetDate);
           let bestMatchName = "";
           let howCloseIsBestMatch = -1;
           for (let spouse of this.spouses) {
             if (spouse.marriageDate) {
               let marriageDate = spouse.marriageDate.getDateString();
-              let marriageParsedDate = WTS_Date.parseDateString(marriageDate);
-              let diff = WTS_Date.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
+              let marriageParsedDate = DateUtils.parseDateString(marriageDate);
+              let diff = DateUtils.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
               if (diff >= 0) {
                 let howClose = diff;
                 if (!bestMatchName || howClose <= howCloseIsBestMatch) {
@@ -3288,7 +3288,7 @@ class GeneralizedData {
       return;
     }
 
-    let yearNum = WTS_Date.getYearNumFromYearString(yearString);
+    let yearNum = DateUtils.getYearNumFromYearString(yearString);
     if (!yearNum) {
       return;
     }
@@ -3336,19 +3336,19 @@ class GeneralizedData {
       endYear = 3000;
     }
 
-    let birthYearNum = WTS_Date.getYearNumFromYearString(this.inferBirthYear());
+    let birthYearNum = DateUtils.getYearNumFromYearString(this.inferBirthYear());
     if (birthYearNum) {
       return birthYearNum >= startYear && birthYearNum <= endYear;
     }
 
-    let deathYearNum = WTS_Date.getYearNumFromYearString(this.inferDeathYear());
+    let deathYearNum = DateUtils.getYearNumFromYearString(this.inferDeathYear());
     if (deathYearNum) {
       let lastestBirthYearNum = deathYearNum;
       let earliestBirthYearNum = deathYearNum - maxLifeSpan;
       return lastestBirthYearNum >= startYear && earliestBirthYearNum <= endYear;
     }
 
-    let eventYearNum = WTS_Date.getYearNumFromYearString(this.inferEventYear());
+    let eventYearNum = DateUtils.getYearNumFromYearString(this.inferEventYear());
     if (eventYearNum) {
       let lastestBirthYearNum = eventYearNum + maxLifeSpan;
       let earliestBirthYearNum = eventYearNum - maxLifeSpan;
@@ -3366,8 +3366,8 @@ class GeneralizedData {
       endYear = 3000;
     }
 
-    let birthYearNum = WTS_Date.getYearNumFromYearString(this.inferBirthYear());
-    let deathYearNum = WTS_Date.getYearNumFromYearString(this.inferDeathYear());
+    let birthYearNum = DateUtils.getYearNumFromYearString(this.inferBirthYear());
+    let deathYearNum = DateUtils.getYearNumFromYearString(this.inferDeathYear());
     let ageAtDeath = this.inferAgeAtDeath();
 
     //console.log("couldPersonHaveMarriedInDateRange: birthYearNum is: " + birthYearNum + ", deathYearNum is: " + deathYearNum);
@@ -3387,7 +3387,7 @@ class GeneralizedData {
       return deathYearNum >= startYear + 16;
     }
 
-    let eventYearNum = WTS_Date.getYearNumFromYearString(this.inferEventYear());
+    let eventYearNum = DateUtils.getYearNumFromYearString(this.inferEventYear());
     //console.log("couldPersonHaveMarriedInDateRange: eventYearNum is: " + eventYearNum);
 
     if (eventYearNum) {
@@ -3407,19 +3407,19 @@ class GeneralizedData {
       endYear = 3000;
     }
 
-    let deathYearNum = WTS_Date.getYearNumFromYearString(this.inferDeathYear());
+    let deathYearNum = DateUtils.getYearNumFromYearString(this.inferDeathYear());
     if (deathYearNum) {
       return deathYearNum >= startYear && deathYearNum <= endYear;
     }
 
-    let birthYearNum = WTS_Date.getYearNumFromYearString(this.inferBirthYear());
+    let birthYearNum = DateUtils.getYearNumFromYearString(this.inferBirthYear());
     if (birthYearNum) {
       let lastestDeathYearNum = birthYearNum + maxLifespan;
       let earliestDeathYearNum = birthYearNum;
       return lastestDeathYearNum >= startYear && earliestDeathYearNum <= endYear;
     }
 
-    let eventYearNum = WTS_Date.getYearNumFromYearString(this.inferEventYear());
+    let eventYearNum = DateUtils.getYearNumFromYearString(this.inferEventYear());
     if (eventYearNum) {
       let lastestDeathYearNum = eventYearNum + maxLifespan;
       let earliestDeathYearNum = eventYearNum - maxLifespan;
@@ -3437,8 +3437,8 @@ class GeneralizedData {
       endYear = 3000;
     }
 
-    let birthYearNum = WTS_Date.getYearNumFromYearString(this.inferBirthYear());
-    let deathYearNum = WTS_Date.getYearNumFromYearString(this.inferDeathYear());
+    let birthYearNum = DateUtils.getYearNumFromYearString(this.inferBirthYear());
+    let deathYearNum = DateUtils.getYearNumFromYearString(this.inferDeathYear());
 
     //console.log("couldPersonHaveLivedInDateRange: birthYearNum is: " + birthYearNum + ", deathYearNum is: " + deathYearNum);
     //console.log("couldPersonHaveLivedInDateRange: startYear is: " + startYear + ", endYear is: " + endYear);
@@ -3451,7 +3451,7 @@ class GeneralizedData {
       return deathYearNum >= startYear;
     }
 
-    let eventYearNum = WTS_Date.getYearNumFromYearString(this.inferEventYear());
+    let eventYearNum = DateUtils.getYearNumFromYearString(this.inferEventYear());
     //console.log("couldPersonHaveLivedInDateRange: eventYearNum is: " + eventYearNum);
 
     if (eventYearNum) {
@@ -3471,9 +3471,9 @@ class GeneralizedData {
     let currentDate = new Date();
     let currentYear = currentDate.getFullYear();
 
-    let birthYearNum = WTS_Date.getYearNumFromYearString(birthYear);
-    let deathYearNum = WTS_Date.getYearNumFromYearString(deathYear);
-    let eventYearNum = WTS_Date.getYearNumFromYearString(eventYear);
+    let birthYearNum = DateUtils.getYearNumFromYearString(birthYear);
+    let deathYearNum = DateUtils.getYearNumFromYearString(deathYear);
+    let eventYearNum = DateUtils.getYearNumFromYearString(eventYear);
 
     let range = {
       startYear: undefined,
@@ -3638,4 +3638,4 @@ class GeneralizedData {
   }
 }
 
-export { GeneralizedData, GD, WtsName, WtsDate, WtsPlace, dateQualifiers, RT };
+export { GeneralizedData, GD, NameObj, DateObj, PlaceObj, dateQualifiers, RT };
