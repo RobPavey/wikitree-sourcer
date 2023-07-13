@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Death",
   "name": {
-    "forenames": "Milvina Gillard",
-    "lastName": "Smith"
+    "lastName": "Smith",
+    "forenames": "Milvina Gillard"
   },
   "eventDate": {
     "yearString": "1900",

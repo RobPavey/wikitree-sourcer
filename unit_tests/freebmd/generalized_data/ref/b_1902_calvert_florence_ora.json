@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "forenames": "Florence",
-    "lastName": "Calvert"
+    "lastName": "Calvert",
+    "forenames": "Florence"
   },
   "eventDate": {
     "yearString": "1902",

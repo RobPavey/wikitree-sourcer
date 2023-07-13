@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Marriage",
   "name": {
-    "forenames": "David",
-    "lastName": "Davis"
+    "lastName": "Davis",
+    "forenames": "David"
   },
   "eventDate": {
     "yearString": "1801",
@@ -18,8 +18,8 @@
   "spouses": [
     {
       "name": {
-        "forenames": "Mary",
-        "lastName": "Rawlin"
+        "lastName": "Rawlin",
+        "forenames": "Mary"
       },
       "marriageDate": {
         "yearString": "1801",

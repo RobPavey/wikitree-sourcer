@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Birth",
   "name": {
-    "forenames": "Francis Frederick William George",
-    "lastName": "Smith"
+    "lastName": "Smith",
+    "forenames": "Francis Frederick William George"
   },
   "eventDate": {
     "yearString": "1919",
@@ -24,14 +24,14 @@
   "parents": {
     "father": {
       "name": {
-        "forenames": "Frederick George William",
-        "lastName": "Smith"
+        "lastName": "Smith",
+        "forenames": "Frederick George William"
       }
     },
     "mother": {
       "name": {
-        "forenames": "Daisy Irene",
-        "lastName": "Smith"
+        "lastName": "Smith",
+        "forenames": "Daisy Irene"
       }
     }
   },

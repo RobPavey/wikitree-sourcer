@@ -2,24 +2,24 @@
   "sourceOfData": "freecen",
   "sourceType": "record",
   "recordType": "Census",
-  "eventPlace": {
-    "placeString": "Luxborough, Somerset, England"
-  },
-  "registrationDistrict": "Williton",
-  "eventDate": {
-    "yearString": "1911"
-  },
   "name": {
     "lastName": "Taylor",
     "forenames": "Elizabeth"
   },
-  "ageAtEvent": "69",
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "Luxborough, Somerset, England"
+  },
   "birthPlace": {
     "placeString": "Withycombe, Somerset, England"
   },
+  "ageAtEvent": "69",
+  "registrationDistrict": "Williton",
   "relationshipToHead": "wife",
   "maritalStatus": "married",
-  "personGender": "female",
   "householdArrayFields": [
     "name",
     "relationship",

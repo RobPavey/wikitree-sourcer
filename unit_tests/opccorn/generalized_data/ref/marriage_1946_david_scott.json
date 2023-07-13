@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Marriage",
   "name": {
-    "forenames": "David Farquharson",
-    "lastName": "Scott"
+    "lastName": "Scott",
+    "forenames": "David Farquharson"
   },
   "eventDate": {
     "yearString": "1946",
@@ -19,8 +19,8 @@
   "spouses": [
     {
       "name": {
-        "forenames": "Muriel May",
-        "lastName": "Gardner"
+        "lastName": "Gardner",
+        "forenames": "Muriel May"
       },
       "marriageDate": {
         "yearString": "1946",

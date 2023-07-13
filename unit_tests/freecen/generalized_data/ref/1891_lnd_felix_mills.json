@@ -2,25 +2,25 @@
   "sourceOfData": "freecen",
   "sourceType": "record",
   "recordType": "Census",
-  "eventPlace": {
-    "placeString": "9 Courthope Road, St Pancras, Pancras, London (City), England",
-    "streetAddress": "9 Courthope Road"
-  },
-  "registrationDistrict": "Pancras",
-  "eventDate": {
-    "yearString": "1891"
-  },
   "name": {
     "lastName": "Mills",
     "forenames": "Felix"
   },
-  "ageAtEvent": "37",
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1891"
+  },
+  "eventPlace": {
+    "placeString": "9 Courthope Road, St Pancras, Pancras, London (City), England",
+    "streetAddress": "9 Courthope Road"
+  },
   "birthPlace": {
     "placeString": "Bury, Lancashire, England"
   },
+  "ageAtEvent": "37",
+  "registrationDistrict": "Pancras",
   "relationshipToHead": "head",
   "maritalStatus": "married",
-  "personGender": "male",
   "occupation": "Collectrparochialrates (employee)",
   "householdArrayFields": [
     "name",

@@ -2,25 +2,25 @@
   "sourceOfData": "freecen",
   "sourceType": "record",
   "recordType": "Census",
-  "eventPlace": {
-    "placeString": "23 Blenheim Gardens, Minehead, Somerset, England",
-    "streetAddress": "23 Blenheim Gardens"
-  },
-  "registrationDistrict": "Williton",
-  "eventDate": {
-    "yearString": "1911"
-  },
   "name": {
     "lastName": "Jones",
     "forenames": "Beatrice Florence"
   },
-  "ageAtEvent": "32",
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "23 Blenheim Gardens, Minehead, Somerset, England",
+    "streetAddress": "23 Blenheim Gardens"
+  },
   "birthPlace": {
     "placeString": "Handsworth, Staffordshire, England"
   },
+  "ageAtEvent": "32",
+  "registrationDistrict": "Williton",
   "relationshipToHead": "boarder",
   "maritalStatus": "married",
-  "personGender": "female",
   "occupation": "Private Means",
   "householdArrayFields": [
     "name",

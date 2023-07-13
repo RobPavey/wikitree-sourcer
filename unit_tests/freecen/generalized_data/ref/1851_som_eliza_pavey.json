@@ -2,25 +2,25 @@
   "sourceOfData": "freecen",
   "sourceType": "record",
   "recordType": "Census",
-  "eventPlace": {
-    "placeString": "Kent Street, Cheddar, Axbridge, Somerset, England",
-    "streetAddress": "Kent Street"
-  },
-  "registrationDistrict": "Axbridge",
-  "eventDate": {
-    "yearString": "1851"
-  },
   "name": {
     "lastName": "Pavey",
     "forenames": "Eliza"
   },
-  "ageAtEvent": "38",
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "eventPlace": {
+    "placeString": "Kent Street, Cheddar, Axbridge, Somerset, England",
+    "streetAddress": "Kent Street"
+  },
   "birthPlace": {
     "placeString": "Yatton, Somerset, England"
   },
+  "ageAtEvent": "38",
+  "registrationDistrict": "Axbridge",
   "relationshipToHead": "wife",
   "maritalStatus": "married",
-  "personGender": "female",
   "householdArrayFields": [
     "name",
     "relationship",

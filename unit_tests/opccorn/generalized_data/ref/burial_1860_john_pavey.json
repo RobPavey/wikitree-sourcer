@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Burial",
   "name": {
-    "forenames": "John",
-    "lastName": "Pavey"
+    "lastName": "Pavey",
+    "forenames": "John"
   },
   "eventDate": {
     "yearString": "1860",

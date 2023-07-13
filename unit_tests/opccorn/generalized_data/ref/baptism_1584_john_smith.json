@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Baptism",
   "name": {
-    "forenames": "John",
-    "lastName": "Smith"
+    "lastName": "Smith",
+    "forenames": "John"
   },
   "personGender": "male",
   "eventDate": {

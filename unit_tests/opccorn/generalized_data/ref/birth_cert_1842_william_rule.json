@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Birth",
   "name": {
-    "forenames": "William Charles Jones",
-    "lastName": "Rule"
+    "lastName": "Rule",
+    "forenames": "William Charles Jones"
   },
   "eventDate": {
     "yearString": "1842",
@@ -23,14 +23,14 @@
   "parents": {
     "father": {
       "name": {
-        "forenames": "James",
-        "lastName": "Rule"
+        "lastName": "Rule",
+        "forenames": "James"
       }
     },
     "mother": {
       "name": {
-        "forenames": "Mary",
-        "lastName": "Jones"
+        "lastName": "Jones",
+        "forenames": "Mary"
       }
     }
   },

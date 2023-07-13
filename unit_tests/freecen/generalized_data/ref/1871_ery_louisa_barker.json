@@ -2,25 +2,25 @@
   "sourceOfData": "freecen",
   "sourceType": "record",
   "recordType": "Census",
-  "eventPlace": {
-    "placeString": "Scoreby W Stamford Bridge West, Scoreby Wth Stamford, York, Yorkshire, East Riding, England",
-    "streetAddress": "Scoreby W Stamford Bridge West"
-  },
-  "registrationDistrict": "York",
-  "eventDate": {
-    "yearString": "1871"
-  },
   "name": {
     "lastName": "Barker",
     "forenames": "Louisa"
   },
-  "ageAtEvent": "21",
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "eventPlace": {
+    "placeString": "Scoreby W Stamford Bridge West, Scoreby Wth Stamford, York, Yorkshire, East Riding, England",
+    "streetAddress": "Scoreby W Stamford Bridge West"
+  },
   "birthPlace": {
     "placeString": "Stockton Forest, Yorkshire, England"
   },
+  "ageAtEvent": "21",
+  "registrationDistrict": "York",
   "relationshipToHead": "wife",
   "maritalStatus": "married",
-  "personGender": "female",
   "householdArrayFields": [
     "name",
     "relationship",

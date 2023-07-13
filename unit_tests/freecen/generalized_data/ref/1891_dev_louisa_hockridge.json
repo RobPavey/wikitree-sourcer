@@ -2,25 +2,25 @@
   "sourceOfData": "freecen",
   "sourceType": "record",
   "recordType": "Census",
-  "eventPlace": {
-    "placeString": "13 Looe Street, Plymouth Charles, Plymouth, Devon, England",
-    "streetAddress": "13 Looe Street"
-  },
-  "registrationDistrict": "Plymouth",
-  "eventDate": {
-    "yearString": "1891"
-  },
   "name": {
     "lastName": "Hockridge",
     "forenames": "Louisa"
   },
-  "ageAtEvent": "15",
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1891"
+  },
+  "eventPlace": {
+    "placeString": "13 Looe Street, Plymouth Charles, Plymouth, Devon, England",
+    "streetAddress": "13 Looe Street"
+  },
   "birthPlace": {
     "placeString": "Oreston, Devon, England"
   },
+  "ageAtEvent": "15",
+  "registrationDistrict": "Plymouth",
   "relationshipToHead": "daughter",
   "maritalStatus": "single",
-  "personGender": "female",
   "householdArrayFields": [
     "name",
     "relationship",

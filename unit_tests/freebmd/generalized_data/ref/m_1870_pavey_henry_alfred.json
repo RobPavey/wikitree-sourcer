@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "MarriageRegistration",
   "name": {
-    "forenames": "Henry Alfred",
-    "lastName": "PAVEY"
+    "lastName": "PAVEY",
+    "forenames": "Henry Alfred"
   },
   "eventDate": {
     "yearString": "1870",

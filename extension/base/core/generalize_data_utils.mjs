@@ -1626,6 +1626,13 @@ class GeneralizedData {
     }
   }
 
+  setHousehold(household) {
+    if (household && household.fields && household.members) {
+      this.householdArrayFields = household.fields;
+      this.householdArray = household.members;
+    }
+  }
+
   addSpouse() {
     if (this.spouses == undefined) {
       this.spouses = [];

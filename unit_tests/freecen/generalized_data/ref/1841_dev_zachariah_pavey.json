@@ -2,23 +2,23 @@
   "sourceOfData": "freecen",
   "sourceType": "record",
   "recordType": "Census",
-  "eventPlace": {
-    "placeString": "Axminster Union Workhouse, Axminster, Devon, England",
-    "streetAddress": "Axminster Union Workhouse"
-  },
-  "registrationDistrict": "Axminster",
-  "eventDate": {
-    "yearString": "1841"
-  },
   "name": {
     "lastName": "Pavey",
     "forenames": "Zachariah"
   },
-  "ageAtEvent": "80",
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1841"
+  },
+  "eventPlace": {
+    "placeString": "Axminster Union Workhouse, Axminster, Devon, England",
+    "streetAddress": "Axminster Union Workhouse"
+  },
   "birthPlace": {
     "placeString": "Devon, England"
   },
-  "personGender": "male",
+  "ageAtEvent": "80",
+  "registrationDistrict": "Axminster",
   "occupation": "Pauper",
   "householdArrayFields": [
     "name",

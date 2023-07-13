@@ -60,31 +60,16 @@ class FreebmdEdReader extends ExtractedDataReader {
     }
   }
 
-  getEventDateObj() {
-    return this.makeDateObjFromYearAndQuarter(this.ed.eventYear, freebmdQuarterToGdQuarter(this.ed.eventQuarter));
-  }
-
-  getBirthDateObj() {
-    if (this.ed.eventType == "birth") {
-      return this.getEventDateObj();
-    }
-
-    if (this.ed.eventType == "death") {
-      let date = this.ed.birthDate;
-      if (date) {
-        return this.makeDateObjFromDateString(date);
-      }
-    }
-  }
-
-  getDeathDateObj() {
-    if (this.ed.eventType == "death") {
-      return this.getEventDateObj();
-    }
-  }
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Overrides of the relevant get functions used in commonGeneralizeData
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   getNameObj() {
     return this.makeNameObjFromForenamesAndLastName(this.ed.givenNames, this.ed.surname);
+  }
+
+  getEventDateObj() {
+    return this.makeDateObjFromYearAndQuarter(this.ed.eventYear, freebmdQuarterToGdQuarter(this.ed.eventQuarter));
   }
 
   getLastNameAtBirth() {
@@ -108,6 +93,25 @@ class FreebmdEdReader extends ExtractedDataReader {
     return "";
   }
 
+  getBirthDateObj() {
+    if (this.ed.eventType == "birth") {
+      return this.getEventDateObj();
+    }
+
+    if (this.ed.eventType == "death") {
+      let date = this.ed.birthDate;
+      if (date) {
+        return this.makeDateObjFromDateString(date);
+      }
+    }
+  }
+
+  getDeathDateObj() {
+    if (this.ed.eventType == "death") {
+      return this.getEventDateObj();
+    }
+  }
+
   getAgeAtDeath() {
     let age = "";
 
@@ -128,6 +132,32 @@ class FreebmdEdReader extends ExtractedDataReader {
   getSpouseObj(eventDateObj, eventPlaceObj) {
     if (this.ed.spouse) {
       return this.makeSpouseObj(this.makeNameObjFromFullName(this.ed.spouse), eventDateObj, eventPlaceObj);
+    }
+  }
+
+  getCollectionData() {
+    let collectionId = undefined;
+    if (this.ed.eventType == "birth") {
+      collectionId = "births";
+    } else if (this.ed.eventType == "marriage") {
+      collectionId = "marriages";
+    } else if (this.ed.eventType == "death") {
+      collectionId = "deaths";
+    }
+
+    // Collection
+    if (collectionId) {
+      let collectionData = {
+        id: collectionId,
+      };
+      if (this.ed.referenceVolume) {
+        collectionData.volume = this.ed.referenceVolume;
+      }
+      if (this.ed.referencePage) {
+        collectionData.page = this.ed.referencePage;
+      }
+
+      return collectionData;
     }
   }
 }

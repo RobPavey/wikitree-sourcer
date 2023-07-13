@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Burial",
   "name": {
-    "forenames": "Jane",
-    "lastName": "Owens"
+    "lastName": "Owens",
+    "forenames": "Jane"
   },
   "eventDate": {
     "yearString": "1906",

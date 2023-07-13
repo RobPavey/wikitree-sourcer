@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { GD } from "./generalize_data_utils.mjs";
+
 function commonGeneralizeData(edReader, result) {
   function setField(key, value) {
     if (value) {
@@ -29,11 +31,17 @@ function commonGeneralizeData(edReader, result) {
     }
   }
 
+  function setStandardizedField(key, value, standarizeFunction) {
+    if (value) {
+      result[key] = standarizeFunction(value);
+    }
+  }
+
   setField("recordType", edReader.recordType);
   setField("recordSubtype", edReader.recordSubtype);
 
   setField("name", edReader.getNameObj());
-  setField("personGender", edReader.getGender());
+  setStandardizedField("personGender", edReader.getGender(), GD.standardizeGender);
 
   setField("eventDate", edReader.getEventDateObj());
   setField("eventPlace", edReader.getEventPlaceObj());
@@ -44,16 +52,31 @@ function commonGeneralizeData(edReader, result) {
   setField("mothersMaidenName", edReader.getMothersMaidenName());
 
   setField("birthDate", edReader.getBirthDateObj());
+  setField("birthPlace", edReader.getBirthPlaceObj());
+
   setField("deathDate", edReader.getDeathDateObj());
+  setField("deathPlace", edReader.getDeathPlaceObj());
 
   setField("ageAtEvent", edReader.getAgeAtEvent());
   setField("ageAtDeath", edReader.getAgeAtDeath());
 
   setField("registrationDistrict", edReader.getRegistrationDistrict());
 
+  setStandardizedField("relationshipToHead", edReader.getRelationshipToHead(), GD.standardizeRelationshipToHead);
+  setStandardizedField("maritalStatus", edReader.getMaritalStatus(), GD.standardizeMaritalStatus);
+  setStandardizedField("occupation", edReader.getOccupation(), GD.standardizeOccupation);
+
   result.addSpouseObj(edReader.getSpouseObj(result.eventDate, result.eventPlace));
 
   setField("parents", edReader.getParents());
+
+  result.setHousehold(edReader.getHousehold());
+  // We can also determine parents and spouse from household table in some cases
+  result.addSpouseOrParentsForSelectedHouseholdMember();
+
+  setField("collectionData", edReader.getCollectionData());
+
+  result.hasValidData = true;
 }
 
 export { commonGeneralizeData };

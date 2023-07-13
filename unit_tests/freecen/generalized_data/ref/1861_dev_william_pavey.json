@@ -2,25 +2,25 @@
   "sourceOfData": "freecen",
   "sourceType": "record",
   "recordType": "Census",
-  "eventPlace": {
-    "placeString": "Village, Stockland, Chardstock, Devon, England",
-    "streetAddress": "Village"
-  },
-  "registrationDistrict": "Chardstock",
-  "eventDate": {
-    "yearString": "1861"
-  },
   "name": {
     "lastName": "Pavey",
     "forenames": "William"
   },
-  "ageAtEvent": "73",
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1861"
+  },
+  "eventPlace": {
+    "placeString": "Village, Stockland, Chardstock, Devon, England",
+    "streetAddress": "Village"
+  },
   "birthPlace": {
     "placeString": "Stockland, Devon, England"
   },
+  "ageAtEvent": "73",
+  "registrationDistrict": "Chardstock",
   "relationshipToHead": "head",
   "maritalStatus": "married",
-  "personGender": "male",
   "occupation": "Sawyer",
   "householdArrayFields": [
     "name",

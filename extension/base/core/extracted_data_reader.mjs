@@ -43,23 +43,19 @@ class ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Functions that are typically overridden when the site can provide this data
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+  getNameObj() {
+    return undefined;
+  }
+
+  getGender() {
+    return "";
+  }
+
   getEventDateObj() {
     return undefined;
   }
 
-  getBirthDateObj() {
-    return undefined;
-  }
-
-  getDeathDateObj() {
-    return undefined;
-  }
-
   getEventPlaceObj() {
-    return undefined;
-  }
-
-  getNameObj() {
     return undefined;
   }
 
@@ -75,6 +71,22 @@ class ExtractedDataReader {
     return "";
   }
 
+  getBirthDateObj() {
+    return undefined;
+  }
+
+  getBirthPlaceObj() {
+    return undefined;
+  }
+
+  getDeathDateObj() {
+    return undefined;
+  }
+
+  getDeathPlaceObj() {
+    return undefined;
+  }
+
   getAgeAtEvent() {
     return "";
   }
@@ -83,11 +95,19 @@ class ExtractedDataReader {
     return "";
   }
 
-  getGender() {
+  getRegistrationDistrict() {
     return "";
   }
 
-  getRegistrationDistrict() {
+  getRelationshipToHead() {
+    return "";
+  }
+
+  getMaritalStatus() {
+    return "";
+  }
+
+  getOccupation() {
     return "";
   }
 
@@ -96,6 +116,14 @@ class ExtractedDataReader {
   }
 
   getParents() {
+    return undefined;
+  }
+
+  getHousehold() {
+    return undefined;
+  }
+
+  getCollectionData() {
     return undefined;
   }
 
@@ -114,8 +142,8 @@ class ExtractedDataReader {
   makeNameObjFromForenamesAndLastName(forenames, lastName) {
     if (forenames || lastName) {
       let nameObj = new NameObj();
-      nameObj.setForenames(forenames);
       nameObj.setLastName(lastName);
+      nameObj.setForenames(forenames);
       return nameObj;
     }
   }
@@ -128,6 +156,14 @@ class ExtractedDataReader {
     }
   }
 
+  makeDateObjFromYear(yearString) {
+    if (yearString) {
+      let dateObj = new DateObj();
+      dateObj.yearString = yearString;
+      return dateObj;
+    }
+  }
+
   makeDateObjFromYearAndQuarter(yearString, quarterNum) {
     if (yearString) {
       let dateObj = new DateObj();
@@ -136,6 +172,14 @@ class ExtractedDataReader {
         dateObj.quarter = quarterNum;
       }
       return dateObj;
+    }
+  }
+
+  makePlaceObjFromFullPlaceName(placeString) {
+    if (placeString) {
+      let placeObj = new PlaceObj();
+      placeObj.placeString = placeString;
+      return placeObj;
     }
   }
 
@@ -183,6 +227,17 @@ class ExtractedDataReader {
       parents.father.name = this.makeNameObjFromFullName(fatherFullName);
       return parents;
     }
+  }
+
+  getFirstFoundProperty(dataObject, fieldNames) {
+    let result = undefined;
+    for (let fieldName of fieldNames) {
+      result = dataObject[fieldName];
+      if (result) {
+        break;
+      }
+    }
+    return result;
   }
 }
 

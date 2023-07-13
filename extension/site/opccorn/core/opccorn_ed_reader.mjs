@@ -213,6 +213,10 @@ class OpccornEdReader extends ExtractedDataReader {
     }
   }
 
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Helper functions
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
   cleanLastName(nameString) {
     let cleanName = nameString;
 
@@ -254,6 +258,50 @@ class OpccornEdReader extends ExtractedDataReader {
     return cleanString;
   }
 
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Overrides of the relevant get functions used in commonGeneralizeData
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getNameObj() {
+    let forename = "";
+    let surname = "";
+
+    if (this.recordType == RT.Marriage) {
+      forename = this.ed.recordData["Groom Fn"];
+      surname = this.ed.recordData["Groom Sn"];
+    } else {
+      forename = this.ed.recordData["Forename"];
+      surname = this.ed.recordData["Surname"];
+    }
+
+    surname = this.cleanLastName(surname);
+
+    let nameObj = this.makeNameObjFromForenamesAndLastName(forename, surname);
+
+    return nameObj;
+  }
+
+  getGender() {
+    let gender = "";
+
+    switch (this.urlRecordType) {
+      case "baptisms":
+        {
+          let sex = this.ed.recordData["Sex"];
+          if (sex) {
+            let lcSex = sex.toLowerCase();
+            if (lcSex == "son") {
+              gender = "male";
+            } else if (lcSex == "dau") {
+              gender == "female";
+            }
+          }
+        }
+        break;
+    }
+    return gender;
+  }
+
   getEventDateObj() {
     let dateObj = new DateObj();
     let year = this.ed.recordData["Year"];
@@ -287,18 +335,6 @@ class OpccornEdReader extends ExtractedDataReader {
       }
     }
     return dateObj;
-  }
-
-  getBirthDateObj() {
-    if (this.typeData.eventDateIsBirthDate) {
-      return this.getEventDateObj();
-    }
-  }
-
-  getDeathDateObj() {
-    if (this.typeData.eventDateIsDeathDate) {
-      return this.getEventDateObj();
-    }
   }
 
   getEventPlaceObj() {
@@ -367,25 +403,6 @@ class OpccornEdReader extends ExtractedDataReader {
     return placeObj;
   }
 
-  getNameObj() {
-    let forename = "";
-    let surname = "";
-
-    if (this.recordType == RT.Marriage) {
-      forename = this.ed.recordData["Groom Fn"];
-      surname = this.ed.recordData["Groom Sn"];
-    } else {
-      forename = this.ed.recordData["Forename"];
-      surname = this.ed.recordData["Surname"];
-    }
-
-    surname = this.cleanLastName(surname);
-
-    let nameObj = this.makeNameObjFromForenamesAndLastName(forename, surname);
-
-    return nameObj;
-  }
-
   getLastNameAtBirth() {
     if (this.typeData.surnameIsLnab) {
       let nameObj = this.getNameObj();
@@ -412,6 +429,18 @@ class OpccornEdReader extends ExtractedDataReader {
     return mmn;
   }
 
+  getBirthDateObj() {
+    if (this.typeData.eventDateIsBirthDate) {
+      return this.getEventDateObj();
+    }
+  }
+
+  getDeathDateObj() {
+    if (this.typeData.eventDateIsDeathDate) {
+      return this.getEventDateObj();
+    }
+  }
+
   getAgeAtEvent() {
     let age = "";
 
@@ -436,27 +465,6 @@ class OpccornEdReader extends ExtractedDataReader {
     age = this.cleanAge(age);
 
     return age;
-  }
-
-  getGender() {
-    let gender = "";
-
-    switch (this.urlRecordType) {
-      case "baptisms":
-        {
-          let sex = this.ed.recordData["Sex"];
-          if (sex) {
-            let lcSex = sex.toLowerCase();
-            if (lcSex == "son") {
-              gender = "male";
-            } else if (lcSex == "dau") {
-              gender == "female";
-            }
-          }
-        }
-        break;
-    }
-    return gender;
   }
 
   getSpouseObj(eventDateObj, eventPlaceObj) {
@@ -487,6 +495,10 @@ class OpccornEdReader extends ExtractedDataReader {
     }
     return parents;
   }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Reader functions specific to this site
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   getSearchDatabaseUrl() {
     const typeData = this.typeData;

@@ -2,24 +2,24 @@
   "sourceOfData": "freecen",
   "sourceType": "record",
   "recordType": "Census",
-  "eventPlace": {
-    "placeString": "Launceston, Cornwall, England"
-  },
-  "registrationDistrict": "Launceston",
-  "eventDate": {
-    "yearString": "1901"
-  },
   "name": {
     "lastName": "Jonas",
     "forenames": "Elizabeth S"
   },
-  "ageAtEvent": "20",
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "Launceston, Cornwall, England"
+  },
   "birthPlace": {
     "placeString": "Lewannick, Cornwall, England"
   },
+  "ageAtEvent": "20",
+  "registrationDistrict": "Launceston",
   "relationshipToHead": "servant",
   "maritalStatus": "single",
-  "personGender": "female",
   "occupation": "Cook Domestic",
   "householdArrayFields": [
     "name",

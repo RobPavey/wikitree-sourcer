@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "DeathRegistration",
   "name": {
-    "forenames": "Amelia E",
-    "lastName": "PAVEY"
+    "lastName": "PAVEY",
+    "forenames": "Amelia E"
   },
   "eventDate": {
     "yearString": "1938",

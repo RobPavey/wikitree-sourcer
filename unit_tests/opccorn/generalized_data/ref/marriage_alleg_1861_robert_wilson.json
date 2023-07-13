@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Marriage",
   "name": {
-    "forenames": "Robert Parker",
-    "lastName": "Wilson"
+    "lastName": "Wilson",
+    "forenames": "Robert Parker"
   },
   "eventDate": {
     "yearString": "1861",
@@ -19,8 +19,8 @@
   "spouses": [
     {
       "name": {
-        "forenames": "Victoria Rebecca",
-        "lastName": "Edwards"
+        "lastName": "Edwards",
+        "forenames": "Victoria Rebecca"
       },
       "marriageDate": {
         "yearString": "1861",

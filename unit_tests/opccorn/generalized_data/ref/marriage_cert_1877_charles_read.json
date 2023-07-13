@@ -3,8 +3,8 @@
   "sourceType": "record",
   "recordType": "Marriage",
   "name": {
-    "forenames": "Charles Richard",
-    "lastName": "Read"
+    "lastName": "Read",
+    "forenames": "Charles Richard"
   },
   "eventDate": {
     "yearString": "1877",
@@ -19,8 +19,8 @@
   "spouses": [
     {
       "name": {
-        "forenames": "Elizabeth Fanny Weymouth",
-        "lastName": "Johns"
+        "lastName": "Johns",
+        "forenames": "Elizabeth Fanny Weymouth"
       },
       "marriageDate": {
         "yearString": "1877",

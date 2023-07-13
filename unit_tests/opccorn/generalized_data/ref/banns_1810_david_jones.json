@@ -4,8 +4,8 @@
   "recordType": "Marriage",
   "recordSubtype": "Banns",
   "name": {
-    "forenames": "David",
-    "lastName": "Jones"
+    "lastName": "Jones",
+    "forenames": "David"
   },
   "eventDate": {
     "yearString": "1810",
@@ -19,8 +19,8 @@
   "spouses": [
     {
       "name": {
-        "forenames": "Ann",
-        "lastName": "Tucker"
+        "lastName": "Tucker",
+        "forenames": "Ann"
       },
       "marriageDate": {
         "yearString": "1810",

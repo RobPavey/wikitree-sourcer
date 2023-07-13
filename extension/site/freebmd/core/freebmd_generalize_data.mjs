@@ -22,34 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  GeneralizedData,
-  dateQualifiers,
-  PlaceObj,
-  NameObj,
-  DateObj,
-} from "../../../base/core/generalize_data_utils.mjs";
-import { StringUtils } from "../../../base/core/string_utils.mjs";
-import { RT } from "../../../base/core/record_type.mjs";
+import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
 
 import { FreebmdEdReader } from "./freebmd_ed_reader.mjs";
 
-function freebmdQuarterToGdQuarter(quarter) {
-  let string = quarter.toLowerCase();
-  switch (string) {
-    case "mar":
-      return 1;
-    case "jun":
-      return 2;
-    case "sep":
-      return 3;
-    case "dec":
-      return 4;
-    default:
-      return 1;
-  }
-}
 // This function generalizes the data (ed) extracted from the GRO page.
 // We know what fields can be there. And we knw the ones we want in generalizedData.
 function generalizeData(input) {
@@ -66,30 +43,6 @@ function generalizeData(input) {
 
   let edReader = new FreebmdEdReader(input.extractedData);
   commonGeneralizeData(edReader, result);
-
-  let collectionId = undefined;
-  if (ed.eventType == "birth") {
-    collectionId = "births";
-  } else if (ed.eventType == "marriage") {
-    collectionId = "marriages";
-  } else if (ed.eventType == "death") {
-    collectionId = "deaths";
-  }
-
-  // Collection
-  if (collectionId) {
-    result.collectionData = {
-      id: collectionId,
-    };
-    if (ed.referenceVolume) {
-      result.collectionData.volume = ed.referenceVolume;
-    }
-    if (ed.referencePage) {
-      result.collectionData.page = ed.referencePage;
-    }
-  }
-
-  result.hasValidData = true;
 
   //console.log("freebmd; generalizeData: result is:");
   //console.log(result);

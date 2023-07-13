@@ -39,7 +39,6 @@ function generalizeData(input) {
   //console.log("opccorn; generalizeData: result is:");
   //console.log(result);
 
-  result.hasValidData = true;
   return result;
 }
 
