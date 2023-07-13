@@ -23,11 +23,11 @@ SOFTWARE.
 */
 
 import { CD } from "./country_data.mjs";
-import { WtsDate } from "./generalize_data_utils.mjs";
+import { DateObj } from "./generalize_data_utils.mjs";
 import { RT, Role, RecordSubtype } from "./record_type.mjs";
 import { RC } from "./record_collections.mjs";
-import { WTS_Date } from "./wts_date.mjs";
-import { WTS_String } from "./wts_string.mjs";
+import { DateUtils } from "./date_utils.mjs";
+import { StringUtils } from "./string_utils.mjs";
 import { getPrimaryPersonChildTerm, getPrimaryPersonSpouseTerm } from "./narrative_or_sentence_utils.mjs";
 import { GroUriBuilder } from "../../site/gro/core/gro_uri_builder.mjs";
 
@@ -41,7 +41,7 @@ function getQuarterName(quarterNumber) {
 }
 
 function getPlaceWithPreposition(placeString) {
-  let preposition = WTS_String.getPrepositionForPlaceString(placeString);
+  let preposition = StringUtils.getPrepositionForPlaceString(placeString);
   return preposition + " " + placeString;
 }
 
@@ -71,7 +71,7 @@ function getDateWithPreposition(dateObj, prepSuffix = "") {
 
 function getDateFromStringWithPreposition(dateString, prepSuffix = "") {
   if (dateString) {
-    let dateObj = new WtsDate();
+    let dateObj = new DateObj();
     dateObj.dateString = dateString;
 
     return dateObj.getDataStringFormat(true, prepSuffix);
@@ -517,7 +517,7 @@ function addRegistrationPlace(gd, options) {
   let registrationDistrict = gd.registrationDistrict;
 
   if (gd.isRecordInCountry("Ireland") && registrationDistrict) {
-    let eventYearNum = WTS_Date.getYearNumFromYearString(gd.inferEventYear());
+    let eventYearNum = DateUtils.getYearNumFromYearString(gd.inferEventYear());
     if (eventYearNum && eventYearNum >= 1864) {
       placeString = " in the " + registrationDistrict + " Superintendent Registrar's district";
     } else {
@@ -685,7 +685,7 @@ function getMarriageRegistrationString(gd, options) {
 
   let date = gd.inferEventDateObj();
   if (!date && gd.marriageDate) {
-    date = new WtsDate();
+    date = new DateObj();
     date.dateString = gd.marriageDate;
   }
   if (date) {
@@ -969,7 +969,7 @@ function getMarriageString(gd, options) {
   }
 
   if (gd.marriageDate) {
-    let date = new WtsDate();
+    let date = new DateObj();
     date.dateString = gd.marriageDate;
     dataString += " " + getDateWithPreposition(date);
   } else {
