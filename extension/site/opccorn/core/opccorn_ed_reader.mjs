@@ -27,6 +27,9 @@ import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
+// this is keyed off the type in the record URL
+// e.g. in the URL : https://www.cornwall-opc-database.org/search-database/more-info/?t=banns&id=90065
+// the t=banns means the type is banns
 const typeData = {
   unknown: {
     recordType: RT.Unclassified,

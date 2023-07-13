@@ -29,21 +29,12 @@ import { OpccornEdReader } from "./opccorn_ed_reader.mjs";
 
 // This function generalizes the data (ed) extracted from the web page.
 function generalizeData(input) {
-  let ed = input.extractedData;
-
   let result = new GeneralizedData();
   result.sourceOfData = "opccorn";
-
-  if (!ed.success) {
-    return result; // the extract failed
-  }
-
   result.sourceType = "record";
 
-  let edReader = new OpccornEdReader(ed);
-
-  input.edReader = edReader;
-  commonGeneralizeData(input, result);
+  let edReader = new OpccornEdReader(input.extractedData);
+  commonGeneralizeData(edReader, result);
 
   //console.log("opccorn; generalizeData: result is:");
   //console.log(result);

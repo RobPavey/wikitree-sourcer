@@ -22,14 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function commonGeneralizeData(input, result) {
+function commonGeneralizeData(edReader, result) {
   function setField(key, value) {
     if (value) {
       result[key] = value;
     }
   }
-
-  let edReader = input.edReader;
 
   setField("recordType", edReader.recordType);
   setField("recordSubtype", edReader.recordSubtype);
