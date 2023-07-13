@@ -25,6 +25,7 @@ SOFTWARE.
 import { WtsName, WtsDate, WtsPlace } from "../../../base/core/generalize_data_utils.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { WTS_String } from "../../../base/core/wts_string.mjs";
+import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
 const typeData = {
   unknown: {
@@ -175,15 +176,14 @@ const typeData = {
   },
 };
 
-class OpccornEdReader {
+class OpccornEdReader extends ExtractedDataReader {
   constructor(ed) {
-    this.ed = ed;
+    super(ed);
     this.urlRecordType = "unknown";
     this.typeData = typeData[this.urlRecordType];
 
     // url is of the form:
     // "https://www.cornwall-opc-database.org/search-database/more-info/?t=baptisms&id=1797543",
-    this.recordType = RT.Unclassified;
     let urlQueryIndex = ed.url.indexOf("?");
     if (urlQueryIndex != -1) {
       let urlQuery = ed.url.substring(urlQueryIndex + 1);
@@ -212,9 +212,11 @@ class OpccornEdReader {
 
   cleanLastName(nameString) {
     let cleanName = nameString;
+
     if (WTS_String.isWordAllUpperCase(cleanName)) {
       cleanName = WTS_String.toInitialCaps(cleanName);
     }
+
     return cleanName;
   }
 
