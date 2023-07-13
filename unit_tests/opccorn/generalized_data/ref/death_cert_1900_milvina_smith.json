@@ -16,11 +16,11 @@
     "country": "England"
   },
   "lastNameAtDeath": "Smith",
-  "ageAtDeath": "52",
-  "ageAtEvent": "52",
   "deathDate": {
     "yearString": "1900",
     "dateString": "26 Jan 1900"
   },
+  "ageAtEvent": "52",
+  "ageAtDeath": "52",
   "hasValidData": true
 }

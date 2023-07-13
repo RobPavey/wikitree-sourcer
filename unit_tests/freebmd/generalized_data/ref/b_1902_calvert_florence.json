@@ -2,13 +2,13 @@
   "sourceOfData": "freebmd",
   "sourceType": "record",
   "recordType": "BirthRegistration",
+  "name": {
+    "forenames": "Florence",
+    "lastName": "Calvert"
+  },
   "eventDate": {
     "yearString": "1902",
     "quarter": 1
-  },
-  "name": {
-    "lastName": "Calvert",
-    "forenames": "Florence"
   },
   "lastNameAtBirth": "Calvert",
   "birthDate": {

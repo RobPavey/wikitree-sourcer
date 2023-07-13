@@ -31,6 +31,9 @@ import {
 } from "../../../base/core/generalize_data_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
+import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
+
+import { FreebmdEdReader } from "./freebmd_ed_reader.mjs";
 
 function freebmdQuarterToGdQuarter(quarter) {
   let string = quarter.toLowerCase();
@@ -55,69 +58,23 @@ function generalizeData(input) {
   let result = new GeneralizedData();
 
   result.sourceOfData = "freebmd";
-
-  let collectionId = undefined;
-
-  if (!ed.success == undefined || !ed.eventYear) {
-    return result; //the extract failed
-  }
-
   result.sourceType = "record";
 
-  switch (ed.eventType) {
-    case "birth":
-      result.recordType = RT.BirthRegistration;
-      break;
-    case "marriage":
-      result.recordType = RT.MarriageRegistration;
-      break;
-    case "death":
-      result.recordType = RT.DeathRegistration;
-      break;
-    default:
-      return;
+  if (!ed.eventYear) {
+    return result; //the extract failed to get enough useful data
   }
 
-  result.setEventYear(ed.eventYear);
-  result.setEventQuarter(freebmdQuarterToGdQuarter(ed.eventQuarter));
+  let edReader = new FreebmdEdReader(input.extractedData);
+  commonGeneralizeData(edReader, result);
 
-  // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setLastNameAndForenames(ed.surname, ed.givenNames);
-
+  let collectionId = undefined;
   if (ed.eventType == "birth") {
     collectionId = "births";
-    result.lastNameAtBirth = ed.surname;
-    result.birthDate = result.eventDate;
-    if (ed.mother) {
-      result.mothersMaidenName = ed.mothersMaidenName;
-    }
   } else if (ed.eventType == "marriage") {
     collectionId = "marriages";
-
-    if (ed.spouse) {
-      let name = new NameObj();
-      name.name = ed.spouse;
-      let spouse = {
-        name: name,
-        marriageDate: result.eventDate,
-        marriagePlace: ed.district,
-      };
-
-      result.spouses = [spouse];
-    }
   } else if (ed.eventType == "death") {
     collectionId = "deaths";
-    result.lastNameAtDeath = ed.surname;
-    result.deathDate = result.eventDate;
-
-    if (ed.ageAtDeath) {
-      result.ageAtDeath = ed.ageAtDeath;
-    } else if (ed.birthDate) {
-      result.setBirthDate(ed.birthDate);
-    }
   }
-
-  result.registrationDistrict = ed.registrationDistrict;
 
   // Collection
   if (collectionId) {

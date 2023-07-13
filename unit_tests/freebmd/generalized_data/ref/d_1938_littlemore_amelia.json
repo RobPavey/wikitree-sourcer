@@ -2,13 +2,13 @@
   "sourceOfData": "freebmd",
   "sourceType": "record",
   "recordType": "DeathRegistration",
+  "name": {
+    "forenames": "Amelia E",
+    "lastName": "PAVEY"
+  },
   "eventDate": {
     "yearString": "1938",
     "quarter": 1
-  },
-  "name": {
-    "lastName": "PAVEY",
-    "forenames": "Amelia E"
   },
   "lastNameAtDeath": "PAVEY",
   "deathDate": {

@@ -368,8 +368,6 @@ class OpccornEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let nameObj = new NameObj();
-
     let forename = "";
     let surname = "";
 
@@ -383,8 +381,7 @@ class OpccornEdReader extends ExtractedDataReader {
 
     surname = this.cleanLastName(surname);
 
-    nameObj.setForenames(forename);
-    nameObj.setLastName(surname);
+    let nameObj = this.makeNameObjFromForenamesAndLastName(forename, surname);
 
     return nameObj;
   }
@@ -469,23 +466,8 @@ class OpccornEdReader extends ExtractedDataReader {
     let surname = this.ed.recordData["Bride Sn"];
 
     if (forename || surname) {
-      spouseObj = {};
-      let nameObj = new NameObj();
-      surname = this.cleanLastName(surname);
-      nameObj.setForenames(forename);
-      nameObj.setLastName(surname);
-      spouseObj.name = nameObj;
-      if (eventDateObj) {
-        spouseObj.marriageDate = eventDateObj;
-      }
-      if (eventPlaceObj) {
-        spouseObj.marriagePlace = eventPlaceObj;
-      }
-
-      let age = this.ed.recordData["Bride Age"];
-      if (age) {
-        spouseObj.age = age;
-      }
+      let nameObj = this.makeNameObjFromForenamesAndLastName(forename, this.cleanLastName(surname));
+      spouseObj = this.makeSpouseObj(nameObj, eventDateObj, eventPlaceObj, this.ed.recordData["Bride Age"]);
     }
     return spouseObj;
   }
@@ -495,32 +477,13 @@ class OpccornEdReader extends ExtractedDataReader {
 
     if (this.urlRecordType == "marriages") {
       let fatherName = this.ed.recordData["Groom Father Name"];
-      if (fatherName) {
-        parents = {};
-        parents.father = {};
-        parents.father.name = new NameObj();
-        parents.father.name.setFullName(fatherName);
-      }
+      parents = this.makeParentsFromFatherFullName(fatherName);
     } else {
       let fatherForename = this.ed.recordData["Father Forename"];
       let fatherSurname = this.ed.recordData["Father Surname"];
       let motherForename = this.ed.recordData["Mother Forename"];
       let motherSurname = this.ed.recordData["Mother Surname"];
-      if (fatherForename || fatherSurname || motherForename || motherSurname) {
-        parents = {};
-        if (fatherForename || fatherSurname) {
-          parents.father = {};
-          parents.father.name = new NameObj();
-          parents.father.name.setForenames(fatherForename);
-          parents.father.name.setLastName(fatherSurname);
-        }
-        if (motherForename || motherSurname) {
-          parents.mother = {};
-          parents.mother.name = new NameObj();
-          parents.mother.name.setForenames(motherForename);
-          parents.mother.name.setLastName(motherSurname);
-        }
-      }
+      parents = this.makeParentsFromForenamesAndLastNames(fatherForename, fatherSurname, motherForename, motherSurname);
     }
     return parents;
   }

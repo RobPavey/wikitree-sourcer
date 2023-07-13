@@ -43,10 +43,13 @@ function commonGeneralizeData(edReader, result) {
 
   setField("mothersMaidenName", edReader.getMothersMaidenName());
 
-  setField("ageAtDeath", edReader.getAgeAtDeath());
-  setField("ageAtEvent", edReader.getAgeAtEvent());
   setField("birthDate", edReader.getBirthDateObj());
   setField("deathDate", edReader.getDeathDateObj());
+
+  setField("ageAtEvent", edReader.getAgeAtEvent());
+  setField("ageAtDeath", edReader.getAgeAtDeath());
+
+  setField("registrationDistrict", edReader.getRegistrationDistrict());
 
   result.addSpouseObj(edReader.getSpouseObj(result.eventDate, result.eventPlace));
 

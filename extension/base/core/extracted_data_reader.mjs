@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { RT } from "./record_type.mjs";
+import { NameObj, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
 
 // This is the base class for the EdReader for each site (that uses this pattern)
 // The main reason for the base class is so that if the derived class doesn't define one of these functions
@@ -39,6 +40,9 @@ class ExtractedDataReader {
     this.recordType = RT.Unclassified;
   }
 
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Functions that are typically overridden when the site can provide this data
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
   getEventDateObj() {
     return undefined;
   }
@@ -83,6 +87,10 @@ class ExtractedDataReader {
     return "";
   }
 
+  getRegistrationDistrict() {
+    return "";
+  }
+
   getSpouseObj(eventDateObj, eventPlaceObj) {
     return undefined;
   }
@@ -91,8 +99,90 @@ class ExtractedDataReader {
     return undefined;
   }
 
-  getSearchDatabaseUrl() {
-    return "";
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Helper functions to reduce code in derived classes
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  makeNameObjFromFullName(fullNameString) {
+    if (fullNameString) {
+      let nameObj = new NameObj();
+      nameObj.setFullName(fullNameString);
+      return nameObj;
+    }
+  }
+
+  makeNameObjFromForenamesAndLastName(forenames, lastName) {
+    if (forenames || lastName) {
+      let nameObj = new NameObj();
+      nameObj.setForenames(forenames);
+      nameObj.setLastName(lastName);
+      return nameObj;
+    }
+  }
+
+  makeDateObjFromDateString(dateString) {
+    if (dateString) {
+      let dateObj = new DateObj();
+      dateObj.dateString = fullNadateStringmeString;
+      return dateObj;
+    }
+  }
+
+  makeDateObjFromYearAndQuarter(yearString, quarterNum) {
+    if (yearString) {
+      let dateObj = new DateObj();
+      dateObj.yearString = yearString;
+      if (quarterNum) {
+        dateObj.quarter = quarterNum;
+      }
+      return dateObj;
+    }
+  }
+
+  makeSpouseObj(spouseNameObj, marriageDateObj, marriagePlaceObj, spouseAge) {
+    let spouseObj = undefined;
+
+    if (spouseNameObj || marriageDateObj || marriagePlaceObj) {
+      spouseObj = {};
+
+      if (spouseNameObj) {
+        spouseObj.name = spouseNameObj;
+      }
+      if (marriageDateObj) {
+        spouseObj.marriageDate = marriageDateObj;
+      }
+      if (marriagePlaceObj) {
+        spouseObj.marriagePlace = marriagePlaceObj;
+      }
+      if (spouseAge) {
+        spouseObj.age = spouseAge;
+      }
+    }
+    return spouseObj;
+  }
+
+  makeParentsFromForenamesAndLastNames(fatherForenames, fatherLastName, motherForenames, motherLastName) {
+    if (fatherForenames || fatherLastName || motherForenames || motherLastName) {
+      let parents = {};
+      if (fatherForenames || fatherLastName) {
+        parents.father = {};
+        parents.father.name = this.makeNameObjFromForenamesAndLastName(fatherForenames, fatherLastName);
+      }
+      if (motherForenames || motherLastName) {
+        parents.mother = {};
+        parents.mother.name = this.makeNameObjFromForenamesAndLastName(motherForenames, motherLastName);
+      }
+      return parents;
+    }
+  }
+
+  makeParentsFromFatherFullName(fatherFullName) {
+    if (fatherFullName) {
+      let parents = {};
+      parents.father = {};
+      parents.father.name = this.makeNameObjFromFullName(fatherFullName);
+      return parents;
+    }
   }
 }
 
