@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
-
 import { OpccornEdReader } from "./opccorn_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.

@@ -22,9 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
-
 import { FreebmdEdReader } from "./freebmd_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.
@@ -33,4 +31,4 @@ function generalizeData(input) {
   return commonGeneralizeData("freebmd", edReader);
 }
 
-export { generalizeData, GeneralizedData, dateQualifiers };
+export { generalizeData };

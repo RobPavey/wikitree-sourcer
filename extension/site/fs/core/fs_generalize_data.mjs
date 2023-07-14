@@ -1100,4 +1100,4 @@ function generalizeData(input) {
   return result;
 }
 
-export { generalizeData, generalizeDataGivenRecordType, GeneralizedData, dateQualifiers };
+export { generalizeData, generalizeDataGivenRecordType };

@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { FsUriBuilder } from "./fs_uri_builder.mjs";
-import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
