@@ -181,6 +181,7 @@ function createSiteFilesFromTemplates(parameters) {
 
     { root: "extension/site", mid: "core", end: "_build_citation.mjs" },
     { root: "extension/site", mid: "core", end: "_build_search_url.mjs" },
+    { root: "extension/site", mid: "core", end: "_ed_reader.mjs" },
     { root: "extension/site", mid: "core", end: "_extract_data.mjs" },
     { root: "extension/site", mid: "core", end: "_generalize_data.mjs" },
     { root: "extension/site", mid: "core", end: "_options.mjs" },
