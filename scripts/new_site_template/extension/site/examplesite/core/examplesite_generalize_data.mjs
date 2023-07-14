@@ -25,11 +25,10 @@ SOFTWARE.
 import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
 import { ExamplesiteEdReader } from "./examplesite_ed_reader.mjs";
 
-// This function generalizes the data (ed) extracted from the web page.
-// We know what fields can be there. And we know the ones we want in generalizedData.
+// This function generalizes the data extracted from the page content.
 function generalizeData(input) {
   let edReader = new ExamplesiteEdReader(input.extractedData);
-  return commonGeneralizeData("freecen", edReader);
+  return commonGeneralizeData("examplesite", edReader);
 }
 
 export { generalizeData };
