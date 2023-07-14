@@ -1,24 +1,24 @@
 {
   "sourceOfData": "freereg",
   "sourceType": "record",
-  "eventPlace": {
-    "placeString": "Rochester, Kent, England"
-  },
   "recordType": "Marriage",
-  "eventDate": {
-    "dateString": "01 Sep 1894"
-  },
-  "personGender": "male",
   "name": {
     "lastName": "Smith",
     "forenames": "Francis Patrick"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "01 Sep 1894"
+  },
+  "eventPlace": {
+    "placeString": "Rochester, Kent, England"
   },
   "ageAtEvent": "32",
   "spouses": [
     {
       "name": {
-        "forenames": "Julia",
-        "lastName": "Loughrey"
+        "lastName": "Loughrey",
+        "forenames": "Julia"
       },
       "marriageDate": {
         "dateString": "01 Sep 1894"

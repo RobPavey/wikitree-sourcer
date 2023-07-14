@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GD } from "./generalize_data_utils.mjs";
+import { GeneralizedData, GD } from "./generalize_data_utils.mjs";
 
-function commonGeneralizeData(edReader, result) {
+function commonGeneralizeData(sourceOfData, edReader) {
+  let result = new GeneralizedData();
+
   function setField(key, value) {
     if (value) {
       result[key] = value;
@@ -36,6 +38,13 @@ function commonGeneralizeData(edReader, result) {
       result[key] = standarizeFunction(value);
     }
   }
+
+  if (!edReader.hasValidData()) {
+    return result;
+  }
+
+  result.sourceOfData = sourceOfData;
+  result.sourceType = edReader.getSourceType();
 
   setField("recordType", edReader.recordType);
   setField("recordSubtype", edReader.recordSubtype);
@@ -77,6 +86,8 @@ function commonGeneralizeData(edReader, result) {
   setField("collectionData", edReader.getCollectionData());
 
   result.hasValidData = true;
+
+  return result;
 }
 
 export { commonGeneralizeData };

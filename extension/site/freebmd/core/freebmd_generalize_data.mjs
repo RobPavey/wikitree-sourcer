@@ -27,27 +27,10 @@ import { commonGeneralizeData } from "../../../base/core/generalize_data_creatio
 
 import { FreebmdEdReader } from "./freebmd_ed_reader.mjs";
 
-// This function generalizes the data (ed) extracted from the GRO page.
-// We know what fields can be there. And we knw the ones we want in generalizedData.
+// This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let ed = input.extractedData;
-
-  let result = new GeneralizedData();
-
-  result.sourceOfData = "freebmd";
-  result.sourceType = "record";
-
-  if (!ed.eventYear) {
-    return result; //the extract failed to get enough useful data
-  }
-
   let edReader = new FreebmdEdReader(input.extractedData);
-  commonGeneralizeData(edReader, result);
-
-  //console.log("freebmd; generalizeData: result is:");
-  //console.log(result);
-
-  return result;
+  return commonGeneralizeData("freebmd", edReader);
 }
 
 export { generalizeData, GeneralizedData, dateQualifiers };

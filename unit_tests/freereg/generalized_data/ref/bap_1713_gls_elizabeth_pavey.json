@@ -1,20 +1,20 @@
 {
   "sourceOfData": "freereg",
   "sourceType": "record",
-  "eventPlace": {
-    "placeString": "Dursley, Gloucestershire, England"
-  },
   "recordType": "Baptism",
-  "eventDate": {
-    "dateString": "28 Sep 1713"
-  },
-  "birthPlace": {
-    "placeString": "Dursley, Gloucestershire, England"
-  },
-  "lastNameAtBirth": "Pavey",
   "name": {
     "lastName": "Pavey",
     "forenames": "Elizabeth"
+  },
+  "eventDate": {
+    "dateString": "28 Sep 1713"
+  },
+  "eventPlace": {
+    "placeString": "Dursley, Gloucestershire, England"
+  },
+  "lastNameAtBirth": "Pavey",
+  "birthPlace": {
+    "placeString": "Dursley, Gloucestershire, England"
   },
   "parents": {
     "father": {

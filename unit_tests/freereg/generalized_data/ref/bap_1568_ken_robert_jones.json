@@ -1,20 +1,21 @@
 {
   "sourceOfData": "freereg",
   "sourceType": "record",
-  "eventPlace": {
-    "placeString": "Warehorne, Kent, England"
-  },
   "recordType": "Baptism",
-  "eventDate": {
-    "dateString": "13 Jun 1568"
-  },
-  "birthPlace": {
-    "placeString": "Warehorne, Kent, England"
-  },
-  "lastNameAtBirth": "Jones",
   "name": {
     "lastName": "Jones",
     "forenames": "Robert"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "13 Jun 1568"
+  },
+  "eventPlace": {
+    "placeString": "Warehorne, Kent, England"
+  },
+  "lastNameAtBirth": "Jones",
+  "birthPlace": {
+    "placeString": "Warehorne, Kent, England"
   },
   "parents": {
     "father": {
@@ -23,6 +24,5 @@
       }
     }
   },
-  "personGender": "male",
   "hasValidData": true
 }

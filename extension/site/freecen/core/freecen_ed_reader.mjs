@@ -88,6 +88,21 @@ class FreecenEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+  hasValidData() {
+    if (!this.ed.success) {
+      return false; //the extract failed, GeneralizedData is not even normally called in this case
+    }
+
+    if (!this.ed.censusDetails || !this.ed.householdHeadings || !this.ed.householdMembers) {
+      console.log("freecen: generalizeData: censusDetails, householdHeadings or householdMembers is missing");
+      return result; // defensive
+    }
+
+    if (!this.selectedMember) {
+      return false;
+    }
+    return true;
+  }
 
   getNameObj() {
     let surname = StringUtils.toInitialCapsEachWord(this.selectedMember["Surname"], true);

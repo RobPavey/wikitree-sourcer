@@ -1,23 +1,23 @@
 {
   "sourceOfData": "freereg",
   "sourceType": "record",
-  "eventPlace": {
-    "placeString": "St Helier, Jersey"
-  },
   "recordType": "Baptism",
+  "name": {
+    "lastName": "Jordan",
+    "forenames": "Philip John Marett"
+  },
   "eventDate": {
     "dateString": "14 Jun 1874"
   },
+  "eventPlace": {
+    "placeString": "St Helier, Jersey"
+  },
+  "lastNameAtBirth": "Jordan",
   "birthDate": {
     "dateString": "25 Feb 1674"
   },
   "birthPlace": {
     "placeString": "St Helier, Jersey"
-  },
-  "lastNameAtBirth": "Jordan",
-  "name": {
-    "lastName": "Jordan",
-    "forenames": "Philip John Marett"
   },
   "parents": {
     "father": {

@@ -22,13 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  GeneralizedData,
-  dateQualifiers,
-  PlaceObj,
-  NameObj,
-  DateObj,
-} from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, DateObj } from "../../../base/core/generalize_data_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
@@ -130,4 +124,4 @@ function generalizeData(input) {
   return result;
 }
 
-export { generalizeData, GeneralizedData, dateQualifiers };
+export { generalizeData };

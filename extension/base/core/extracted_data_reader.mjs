@@ -43,6 +43,18 @@ class ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Functions that are typically overridden when the site can provide this data
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+  hasValidData() {
+    if (!this.ed.success) {
+      return false; //the extract failed, GeneralizedData is not even normally called in this case
+    }
+
+    return true;
+  }
+
+  getSourceType() {
+    return "record";
+  }
+
   getNameObj() {
     return undefined;
   }
@@ -151,7 +163,7 @@ class ExtractedDataReader {
   makeDateObjFromDateString(dateString) {
     if (dateString) {
       let dateObj = new DateObj();
-      dateObj.dateString = fullNadateStringmeString;
+      dateObj.dateString = dateString;
       return dateObj;
     }
   }
@@ -220,6 +232,21 @@ class ExtractedDataReader {
     }
   }
 
+  makeParentsFromFullNames(fatherName, motherName) {
+    if (fatherName || motherName) {
+      let parents = {};
+      if (fatherName) {
+        parents.father = {};
+        parents.father.name = this.makeNameObjFromFullName(fatherName);
+      }
+      if (motherName) {
+        parents.mother = {};
+        parents.mother.name = this.makeNameObjFromFullName(motherName);
+      }
+      return parents;
+    }
+  }
+
   makeParentsFromFatherFullName(fatherFullName) {
     if (fatherFullName) {
       let parents = {};
@@ -238,6 +265,17 @@ class ExtractedDataReader {
       }
     }
     return result;
+  }
+
+  getRecordDataValueForKeys(keys) {
+    if (keys && keys.length > 0) {
+      for (let key of keys) {
+        let value = this.ed.recordData[key];
+        if (value) {
+          return value;
+        }
+      }
+    }
   }
 }
 

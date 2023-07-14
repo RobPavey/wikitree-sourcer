@@ -1,23 +1,23 @@
 {
   "sourceOfData": "freereg",
   "sourceType": "record",
-  "eventPlace": {
-    "placeString": "Gunthorpe, Norfolk, England"
-  },
   "recordType": "Marriage",
-  "eventDate": {
-    "dateString": "1700"
-  },
-  "personGender": "male",
   "name": {
     "lastName": "Musset",
     "forenames": "James"
   },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1700"
+  },
+  "eventPlace": {
+    "placeString": "Gunthorpe, Norfolk, England"
+  },
   "spouses": [
     {
       "name": {
-        "forenames": "Susan",
-        "lastName": "Taylor"
+        "lastName": "Taylor",
+        "forenames": "Susan"
       },
       "marriageDate": {
         "dateString": "1700"

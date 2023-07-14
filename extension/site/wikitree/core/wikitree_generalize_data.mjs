@@ -304,4 +304,4 @@ function generalizeData(input) {
   return result;
 }
 
-export { generalizeData, GeneralizedData, dateQualifiers };
+export { generalizeData };

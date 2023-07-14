@@ -22,9 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
-import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
-import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
 function freebmdQuarterToGdQuarter(quarter) {
@@ -63,6 +61,13 @@ class FreebmdEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  hasValidData() {
+    if (!this.ed.eventYear) {
+      return false; //the extract failed to get enough useful data
+    }
+    return true;
+  }
 
   getNameObj() {
     return this.makeNameObjFromForenamesAndLastName(this.ed.givenNames, this.ed.surname);

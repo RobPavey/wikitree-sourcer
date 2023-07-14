@@ -1,20 +1,20 @@
 {
   "sourceOfData": "freereg",
   "sourceType": "record",
-  "eventPlace": {
-    "placeString": "Strichen, Aberdeenshire"
-  },
   "recordType": "Burial",
-  "eventDate": {
-    "dateString": "30 Aug 1755"
-  },
-  "deathPlace": {
-    "placeString": "Bougenjon, Strichen, Aberdeenshire"
-  },
-  "lastNameAtDeath": "Taylor",
   "name": {
     "lastName": "Taylor",
     "forenames": "Alexander"
+  },
+  "eventDate": {
+    "dateString": "30 Aug 1755"
+  },
+  "eventPlace": {
+    "placeString": "Strichen, Aberdeenshire"
+  },
+  "lastNameAtDeath": "Taylor",
+  "deathPlace": {
+    "placeString": "Bougenjon, Strichen, Aberdeenshire"
   },
   "hasValidData": true
 }

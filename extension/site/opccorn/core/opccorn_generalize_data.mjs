@@ -22,24 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
 
 import { OpccornEdReader } from "./opccorn_ed_reader.mjs";
 
-// This function generalizes the data (ed) extracted from the web page.
+// This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let result = new GeneralizedData();
-  result.sourceOfData = "opccorn";
-  result.sourceType = "record";
-
   let edReader = new OpccornEdReader(input.extractedData);
-  commonGeneralizeData(edReader, result);
-
-  //console.log("opccorn; generalizeData: result is:");
-  //console.log(result);
-
-  return result;
+  return commonGeneralizeData("opccorn", edReader);
 }
 
-export { generalizeData, GeneralizedData, dateQualifiers };
+export { generalizeData };
