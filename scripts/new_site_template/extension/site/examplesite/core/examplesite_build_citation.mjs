@@ -26,7 +26,7 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 
 function buildExamplesiteUrl(ed, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
-  return ed.citationUrl;
+  return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {

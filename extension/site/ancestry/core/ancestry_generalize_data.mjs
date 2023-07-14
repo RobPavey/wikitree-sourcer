@@ -1037,14 +1037,14 @@ function generalizeDataGivenRecordType(ed, result) {
       const stdFieldNames = [
         {
           stdName: "name",
-          ancestryHeadings: ["Name", "Household Members", "Household Member(s)", "Household Members (Name)"],
+          siteHeadings: ["Name", "Household Members", "Household Member(s)", "Household Members (Name)"],
         },
-        { stdName: "age", ancestryHeadings: ["Age"] },
-        { stdName: "relationship", ancestryHeadings: ["Relationship"] },
+        { stdName: "age", siteHeadings: ["Age"] },
+        { stdName: "relationship", siteHeadings: ["Relationship"] },
       ];
       function headingToStdName(heading) {
         for (let entry of stdFieldNames) {
-          if (entry.ancestryHeadings.includes(heading)) {
+          if (entry.siteHeadings.includes(heading)) {
             return entry.stdName;
           }
         }

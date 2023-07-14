@@ -43,6 +43,8 @@ class ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Functions that are typically overridden when the site can provide this data
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // If this returns false none of the functions below will be called in commonGeneralizeData
   hasValidData() {
     if (!this.ed.success) {
       return false; //the extract failed, GeneralizedData is not even normally called in this case

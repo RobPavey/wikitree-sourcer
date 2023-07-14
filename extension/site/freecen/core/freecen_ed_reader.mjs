@@ -66,7 +66,7 @@ class FreecenEdReader extends ExtractedDataReader {
     super(ed);
     this.recordType = RT.Census;
 
-    this.censusYear = this.getFirstFoundProperty(this.ed.censusDetails, ["Census", "Census Year"]);
+    this.censusYear = this.getCensusDetail(["Census", "Census Year"]);
 
     this.selectedMember = findSelectedMember(ed);
     if (!this.selectedMember) {
@@ -215,15 +215,15 @@ class FreecenEdReader extends ExtractedDataReader {
 
   getHousehold() {
     const stdFieldNames = [
-      { stdName: "age", ancestryHeadings: ["Age"] },
-      { stdName: "relationship", ancestryHeadings: ["Relationship"] },
-      { stdName: "maritalStatus", ancestryHeadings: ["Marital Status"] },
-      { stdName: "occupation", ancestryHeadings: ["Occupation"] },
-      { stdName: "gender", ancestryHeadings: ["Sex"] },
+      { stdName: "age", siteHeadings: ["Age"] },
+      { stdName: "relationship", siteHeadings: ["Relationship"] },
+      { stdName: "maritalStatus", siteHeadings: ["Marital Status"] },
+      { stdName: "occupation", siteHeadings: ["Occupation"] },
+      { stdName: "gender", siteHeadings: ["Sex"] },
     ];
     function headingToStdName(heading) {
       for (let entry of stdFieldNames) {
-        if (entry.ancestryHeadings.includes(heading)) {
+        if (entry.siteHeadings.includes(heading)) {
           return entry.stdName;
         }
       }
