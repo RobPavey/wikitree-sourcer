@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wiewaswie.nl/nl/detail/54339285 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>\nGerryt J baptism.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Gerryt was baptised.<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wiewaswie.nl/nl/detail/54339285 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>\nGerryt J baptism.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.wiewaswie.nl/nl/detail/54339285 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>Gerryt J baptism.",
+    "type": "source"
+  }
+}

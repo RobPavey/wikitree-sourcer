@@ -1,0 +1,103 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/54339285",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Dopeling",
+        "value": "Gerryt J."
+      },
+      {
+        "label": "Birth date",
+        "value": "08-08-1789",
+        "dataKey": "SourceDetail.BirthDate"
+      }
+    ],
+    [
+      {
+        "label": "Father",
+        "value": "Hendrik Goudemond"
+      }
+    ],
+    [
+      {
+        "label": "Mother",
+        "value": "Grietie Coremans"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Doop",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "14-08-1789",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Event place",
+      "value": "Leeuwarden",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "DTB Dopen",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "AlleFriezen",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Leeuwarden",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Friesland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "28",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "0950",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Registration date",
+      "value": "14-08-1789",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Leeuwarden",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Archiefnaam: Collectie doop-, trouw-, lidmaten- begraafboeken - Tresoar, Deel: 0950, Periode: 178...",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Doopboek Herv. gem. Leeuwarden",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "Doop vond plaats in de Westerkerk",
+      "dataKey": "Comment"
+    }
+  ]
+}

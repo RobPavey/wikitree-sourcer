@@ -1,6 +1,9 @@
 {
   "sourceOfData": "wiewaswie",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Baptism",
+  "name": {
+    "forenames": "Gerryt J"
+  },
   "hasValidData": true
 }

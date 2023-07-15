@@ -23,40 +23,147 @@ SOFTWARE.
 */
 
 import { RT } from "../../../base/core/record_type.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
+const FT = {
+  forenames: "forenames",
+  fullName: "fullName",
+  personFather: "personFather",
+};
+
 // Document types
-// BS Overlijden - BS Death (Death certificates)
-// BS Geboorte - BS Birth (Birth certificates)
-// BS Huwelijk - BS Marriage (Marriage certificates)
-//
-// DTB Dopen - DTB Baptism (Baptismal registers)
-// DTB Trouwen - DTB Marriage (Marriage registers)
-// DTB Begraven - DTB Buried (Burial registers)
-// DTB Overig (Church membership register)
-//
-// Bevolkingsregister - Population register
-// Militairen - Military (Military sources)
-// Tweede Wereldoorlog (World War II)
-// Misdaad en straf - Crime and punishment
-// Vestiging en vertrek - Settlement and departure (Migration)
+const typeData = {
+  "BS Geboorte": {
+    // Birth certificates
+    recordType: RT.BirthRegistration,
+  },
+  "BS Huwelijk": {
+    // Marriage certificates
+    recordType: RT.MarriageRegistration,
+    fixedGender: "male", // the primary person is always the groom
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Groom"],
+      },
+      nl: {
+        fullName: ["Bruidegom"],
+      },
+    },
+  },
+  "BS Overlijden": {
+    // Death certificate
+    recordType: RT.DeathRegistration,
+  },
 
-// Familieadvertenties - Family announcements
-// Memories van Successie - Memories of Succession (Memories of succession)
+  "DTB Dopen": {
+    // Baptismal registers
+    recordType: RT.Baptism,
+    nameFormat: "forenamesOnly",
+    labels: {
+      en: {
+        forenames: ["Dopeling"],
+        personFather: ["Father"],
+      },
+      nl: {
+        forenames: ["Dopeling"],
+        personFather: ["Vader"],
+      },
+    },
+  },
+  "DTB Trouwen": {
+    // Marriage registers
+    recordType: RT.Marriage,
+  },
+  "DTB Begraven": {
+    // Burial registers
+    recordType: RT.Burial,
+  },
+  "DTB Overig": {
+    // Church membership register
+    recordType: RT.OtherChurchEvent,
+  },
 
-// Fiscaal en financieel - Fiscal and financial (Tax and financial records)
-// Beroep en bedrijf - Profession and business (Profession and company)
-// Onroerend goed (Real estate)
-// Notariële archieven - Notarial archives
-// Rechterlijke archieven - Court records (Court registers)
+  // other document types in alphabetical order
+  "Beroep en bedrijf": {
+    // Profession and business
+    recordType: RT.Employment,
+  },
+  Bevolkingsregister: {
+    // Population register
+    recordType: RT.Census,
+  },
+  Bidprentjes: {
+    // Prayer cards (Faire-parts)
+    recordType: RT.OtherChurchEvent,
+  },
+  Familieadvertenties: {
+    // Family announcements
+    recordType: RT.Unclassified,
+  },
+  "Fiscaal en financieel": {
+    // Tax and financial records
+    recordType: RT.Unclassified,
+  },
+  Familieadvertenties: {
+    // Family announcements
+    recordType: RT.Unclassified,
+  },
+  Instellingsregister: {
+    // Institutional register
+    recordType: RT.Unclassified,
+  },
+  "Memories van Successie": {
+    // Memories of succession
+    recordType: RT.Unclassified,
+  },
+  Militairen: {
+    // Military sources
+    recordType: RT.Military,
+  },
+  "Misdaad en straf": {
+    // Crime and punishment
+    recordType: RT.Unclassified,
+  },
+  "Notariële archieven": {
+    // Notarial archives
+    recordType: RT.Unclassified,
+  },
+  "Onroerend goed": {
+    // Real estate
+    recordType: RT.Unclassified,
+  },
+  "Rechterlijke archieven": {
+    // Court registers
+    recordType: RT.Unclassified,
+  },
+  "Sociale zorg": {
+    // Social care
+    recordType: RT.Unclassified,
+  },
+  Slavernijbronnen: {
+    // Slavery records
+    recordType: RT.Unclassified,
+  },
+  "Tweede Wereldoorlog": {
+    // World War II
+    recordType: RT.Unclassified,
+  },
+  "Vestiging en vertrek": {
+    // Migration
+    recordType: RT.Unclassified,
+  },
+  "VOC Opvarenden": {
+    // VOC Passengers (United East India Company Passengers) or (Dutch East India Company passengers)
+    recordType: RT.Unclassified,
+  },
+};
 
-// Bidprentjes - Prayer cards (Faire-parts)
-// Sociale zorg (Social care)
-// Slavernijbronnen - Slavery Resources (Slavery records)
-// Instellingsregister - Settings register [Institutional register]
-// VOC Opvarenden - VOC Passengers [United East India Company Passengers] or Dutch East India Company
-
-// Collecties - Collections (Miscellaneous collections)
+function fullNameToLastName(fullName) {
+  // NOTE: need to handle "van" or "v. "
+  return StringUtils.getLastWord(fullName);
+}
 
 class WiewaswieEdReader extends ExtractedDataReader {
   constructor(ed) {
@@ -67,26 +174,95 @@ class WiewaswieEdReader extends ExtractedDataReader {
     this.eventType = this.extractEventFieldByDataKey("Event");
 
     if (this.documentType) {
+      this.typeData = typeData[this.documentType];
+      if (this.typeData) {
+        this.recordType = this.typeData.recordType;
+      }
+    }
+
+    // determine if the record is in English or Dutch
+    this.lang = "";
+    const urlPrefix = "https://www.wiewaswie.nl/";
+    if (ed.url && ed.url.startsWith(urlPrefix)) {
+      let urlRemainder = ed.url.substring(urlPrefix.length);
+      if (urlRemainder.startsWith("en")) {
+        this.lang = "en";
+      } else if (urlRemainder.startsWith("nl")) {
+        this.lang = "nl";
+      }
     }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Helper functions
   ////////////////////////////////////////////////////////////////////////////////////////////////////
-  extractSourceFieldByDataKey(lastPartOfDataKey) {
+  extractFieldByDataKey(fieldArray, lastPartOfDataKey) {
     const dataKey = "SourceDetail." + lastPartOfDataKey;
-    for (let field of this.ed.sourceList) {
+    for (let field of fieldArray) {
       if (field.dataKey == dataKey) {
         return field.value;
       }
     }
   }
 
+  extractSourceFieldByDataKey(lastPartOfDataKey) {
+    return this.extractFieldByDataKey(this.ed.sourceList, lastPartOfDataKey);
+  }
+
   extractEventFieldByDataKey(lastPartOfDataKey) {
-    const dataKey = "SourceDetail." + lastPartOfDataKey;
-    for (let field of this.ed.eventList) {
-      if (field.dataKey == dataKey) {
-        return field.value;
+    return this.extractFieldByDataKey(this.ed.eventList, lastPartOfDataKey);
+  }
+
+  extractFieldByFieldType(fieldArray, fieldType) {
+    let labels = [];
+    if (this.typeData.labels && this.typeData.labels[this.lang]) {
+      if (this.typeData.labels[this.lang][fieldType]) {
+        labels = this.typeData.labels[this.lang][fieldType];
+      }
+    }
+
+    if (labels && labels.length > 0) {
+      for (let field of fieldArray) {
+        for (let label of labels) {
+          if (field.label == label) {
+            return field.value;
+          }
+        }
+      }
+    }
+  }
+
+  extractPersonFieldByFieldType(person, fieldType) {
+    return this.extractFieldByFieldType(person, fieldType);
+  }
+
+  extractIndexedPersonFieldByFieldType(personIndex, fieldType) {
+    if (this.ed.people.length <= personIndex) {
+      return;
+    }
+    let person = this.ed.people[personIndex];
+    return this.extractPersonFieldByFieldType(person, fieldType);
+  }
+
+  findPersonByFirstFieldType(fieldType) {
+    if (!this.ed.people || !this.ed.people.length) {
+      return;
+    }
+
+    let labels = [];
+    if (this.typeData.labels && this.typeData.labels[this.lang]) {
+      if (this.typeData.labels[this.lang][fieldType]) {
+        labels = this.typeData.labels[this.lang][fieldType];
+      }
+    }
+
+    if (labels && labels.length > 0) {
+      for (let person of this.ed.people) {
+        for (let label of labels) {
+          if (person[0].label == label) {
+            return person;
+          }
+        }
       }
     }
   }
@@ -104,6 +280,14 @@ class WiewaswieEdReader extends ExtractedDataReader {
       return false;
     }
 
+    if (!this.lang) {
+      return false;
+    }
+
+    if (!this.typeData) {
+      return false;
+    }
+
     return true;
   }
 
@@ -112,10 +296,20 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    return undefined;
+    if (this.typeData.nameFormat == "full") {
+      let name = this.extractIndexedPersonFieldByFieldType(0, FT.fullName);
+      return this.makeNameObjFromFullName(name);
+    } else if (this.typeData.nameFormat == "forenamesOnly") {
+      let forenames = this.extractIndexedPersonFieldByFieldType(0, FT.forenames);
+      return this.makeNameObjFromForenames(forenames);
+    }
   }
 
   getGender() {
+    if (this.typeData.fixedGender) {
+      return this.typeData.fixedGender;
+    }
+
     return "";
   }
 
@@ -184,6 +378,18 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getParents() {
+    /*
+      let father = this.findPersonByFirstFieldType(FT.personFather);
+      if (father) {
+        let fatherName = this.extractPersonFieldByFieldType(father, FT.personFather);
+        let fatherLastName = fullNameToLastName(fatherName);
+
+        if (forenames && fatherLastName) {
+          return this.makeNameObjFromForenamesAndLastName(forenames, fatherLastName);
+        }
+      }
+
+    */
     return undefined;
   }
 

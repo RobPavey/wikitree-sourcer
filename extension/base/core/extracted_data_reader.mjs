@@ -162,6 +162,14 @@ class ExtractedDataReader {
     }
   }
 
+  makeNameObjFromForenames(forenames) {
+    if (forenames) {
+      let nameObj = new NameObj();
+      nameObj.setForenames(forenames);
+      return nameObj;
+    }
+  }
+
   makeDateObjFromDateString(dateString) {
     if (dateString) {
       let dateObj = new DateObj();

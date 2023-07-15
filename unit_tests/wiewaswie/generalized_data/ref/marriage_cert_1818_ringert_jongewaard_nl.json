@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "name": "Ringert Jongewaard"
+  },
+  "personGender": "male",
+  "hasValidData": true
+}

@@ -32,8 +32,20 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    caseName: "marriage_1818_ringert_jongewaard",
+    caseName: "baptism_1789_gerryt_goudemond_en",
+    url: "https://www.wiewaswie.nl/en/detail/54339285",
+  },
+  {
+    caseName: "baptism_1789_gerryt_goudemond_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/54339285",
+  },
+  {
+    caseName: "marriage_cert_1818_ringert_jongewaard_en",
     url: "https://www.wiewaswie.nl/en/detail/31877498",
+  },
+  {
+    caseName: "marriage_cert_1818_ringert_jongewaard_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/31877498",
   },
 ];
 

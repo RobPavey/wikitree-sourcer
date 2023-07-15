@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wiewaswie.nl/nl/detail/31877498 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>\nRingert Jongewaard marriage.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ringert married.<ref>\n'''Marriage Registration''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wiewaswie.nl/nl/detail/31877498 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>\nRingert Jongewaard marriage.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.wiewaswie.nl/nl/detail/31877498 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>Ringert Jongewaard marriage.",
+    "type": "source"
+  }
+}
