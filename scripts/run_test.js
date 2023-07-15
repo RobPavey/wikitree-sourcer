@@ -47,6 +47,7 @@ import "../unit_tests/scotp/scotp_test.mjs";
 import "../unit_tests/trove/trove_test.mjs";
 import "../unit_tests/wikitree/wikitree_test.mjs";
 import "../unit_tests/opccorn/opccorn_test.mjs";
+import "../unit_tests/wiewaswie/wiewaswie_test.mjs";
 
 function testSuiteEnabled(parameters, testSuiteName) {
   return parameters.testSuiteName == "" || parameters.testSuiteName == testSuiteName;

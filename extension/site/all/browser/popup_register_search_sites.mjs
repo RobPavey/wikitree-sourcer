@@ -48,3 +48,4 @@ import "/site/psuk/browser/psuk_popup_search.mjs";
 import "/site/scotp/browser/scotp_popup_search.mjs";
 import "/site/trove/browser/trove_popup_search.mjs";
 import "/site/wikitree/browser/wikitree_popup_search.mjs";
+import "/site/wiewaswie/browser/wiewaswie_popup_search.mjs";

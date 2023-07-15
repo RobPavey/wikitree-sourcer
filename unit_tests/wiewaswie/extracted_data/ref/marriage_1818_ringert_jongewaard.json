@@ -1,0 +1,136 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/31877498",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Groom",
+        "value": "Ringert Jongewaard"
+      },
+      {
+        "label": "Profession",
+        "value": "arbeider",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Age",
+        "value": "24",
+        "dataKey": "SourceDetail.Age"
+      }
+    ],
+    [
+      {
+        "label": "Bride",
+        "value": "Trijntje Jacobs Water"
+      },
+      {
+        "label": "Profession",
+        "value": "dienstmaagd",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Age",
+        "value": "24",
+        "dataKey": "SourceDetail.Age"
+      }
+    ],
+    [
+      {
+        "label": "Father of the groom",
+        "value": "Cornelis Jongewaard"
+      }
+    ],
+    [
+      {
+        "label": "Mother of the groom",
+        "value": "Neeltje de Reus"
+      }
+    ],
+    [
+      {
+        "label": "Father of the bride",
+        "value": "Jacob Water"
+      }
+    ],
+    [
+      {
+        "label": "Mother of the bride",
+        "value": "Geertje Jacobs Voorn"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Huwelijk",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "20-09-1818",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Event place",
+      "value": "Berkhout",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "BS Huwelijk",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Noord-Hollands Archief",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Haarlem",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Noord-Holland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "358.19",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "21818",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Sourcenumber",
+      "value": "6",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "20-09-1818",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Berkhout",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "burgerlijke stand van de gemeente Berkhout, Archiefdeel van (dubbele) registers van de",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Huwelijksakten van de gemeente Berkhout, 1818",
+      "dataKey": "SourceDetail.Book"
+    }
+  ]
+}
