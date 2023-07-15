@@ -375,17 +375,19 @@ function extractIdFromFsUrl(url, prefixList, terminatorList) {
   // the recordUrl should look like:
   // https://www.familysearch.org/ark:/61903/1:1:XZDY-NHM
 
-  for (let prefix of prefixList) {
-    let prefixIndex = url.indexOf(prefix);
-    if (prefixIndex != -1) {
-      let id = url.substring(prefixIndex + prefix.length);
-      for (let terminator of terminatorList) {
-        let terminatorIndex = id.indexOf(terminator);
-        if (terminatorIndex != -1) {
-          id = id.substring(0, terminatorIndex);
+  if (url) {
+    for (let prefix of prefixList) {
+      let prefixIndex = url.indexOf(prefix);
+      if (prefixIndex != -1) {
+        let id = url.substring(prefixIndex + prefix.length);
+        for (let terminator of terminatorList) {
+          let terminatorIndex = id.indexOf(terminator);
+          if (terminatorIndex != -1) {
+            id = id.substring(0, terminatorIndex);
+          }
         }
+        return id;
       }
-      return id;
     }
   }
 
@@ -427,6 +429,9 @@ function buildCoreCitation(ed, gd, builder) {
   builder.sourceTitle = ed.collectionTitle;
 
   var recordUrl = ed.personRecordUrl;
+  if (!recordUrl) {
+    recordUrl = ed.url;
+  }
 
   if ((ed.fsImageUrl || ed.externalImageUrl) && ed.externalImageUrl != "bad") {
     let text = "";
