@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { RT } from "./record_type.mjs";
 import { NameObj, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
+import { DateUtils } from "./date_utils.mjs";
 
 // This is the base class for the EdReader for each site (that uses this pattern)
 // The main reason for the base class is so that if the derived class doesn't define one of these functions
@@ -175,6 +176,39 @@ class ExtractedDataReader {
       let dateObj = new DateObj();
       dateObj.dateString = dateString;
       return dateObj;
+    }
+  }
+
+  makeDateObjFromDdmmyyyyDate(ddmmyyyyDate, separator) {
+    if (ddmmyyyyDate) {
+      let parts = ddmmyyyyDate.split(separator);
+      if (parts.length != 3) {
+        return;
+      }
+
+      let day = parts[0];
+      let month = parts[1];
+      let year = parts[2];
+
+      if (day.length != 2 || month.length != 2 || year.length != 4) {
+        return;
+      }
+
+      let dayNum = parseInt(day);
+      let monthNum = parseInt(month);
+      let yearNum = parseInt(year);
+
+      if (isNaN(day) || isNaN(month) || isNaN(year)) {
+        return;
+      }
+
+      let dateString = DateUtils.getDateStringFromYearMonthDay(yearNum, monthNum, dayNum);
+
+      if (dateString) {
+        let dateObj = new DateObj();
+        dateObj.dateString = dateString;
+        return dateObj;
+      }
     }
   }
 

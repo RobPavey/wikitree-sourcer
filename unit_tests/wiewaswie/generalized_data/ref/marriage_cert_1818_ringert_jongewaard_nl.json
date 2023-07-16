@@ -6,5 +6,38 @@
     "name": "Ringert Jongewaard"
   },
   "personGender": "male",
+  "eventDate": {
+    "dateString": "20 Sep 1818"
+  },
+  "eventPlace": {
+    "placeString": "Berkhout, Noord-Holland, Netherlands"
+  },
+  "ageAtEvent": "24",
+  "spouses": [
+    {
+      "name": {
+        "name": "Trijntje Jacobs Water"
+      },
+      "marriageDate": {
+        "dateString": "20 Sep 1818"
+      },
+      "marriagePlace": {
+        "placeString": "Berkhout, Noord-Holland, Netherlands"
+      },
+      "age": "24"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Cornelis Jongewaard"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Neeltje de Reus"
+      }
+    }
+  },
   "hasValidData": true
 }

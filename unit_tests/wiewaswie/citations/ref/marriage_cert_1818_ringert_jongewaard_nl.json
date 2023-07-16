@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wiewaswie.nl/nl/detail/31877498 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>\nRingert Jongewaard marriage.\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wiewaswie.nl/nl/detail/31877498 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>\nRingert Jongewaard (24) marriage to Trijntje Jacobs Water (24) on 20 Sep 1818 in Berkhout, Noord-Holland, Netherlands.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Ringert married.<ref>\n'''Marriage Registration''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wiewaswie.nl/nl/detail/31877498 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>\nRingert Jongewaard marriage.\n</ref>",
+    "citation": "Ringert, son of Cornelis Jongewaard & Neeltje de Reus, (age 24) married Trijntje Jacobs Water (age 24) on 20 September 1818 in Berkhout, Noord-Holland, Netherlands.<ref>\n'''Marriage Registration''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wiewaswie.nl/nl/detail/31877498 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>\nRingert Jongewaard (24) marriage to Trijntje Jacobs Water (24) on 20 Sep 1818 in Berkhout, Noord-Holland, Netherlands.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage Registration''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.wiewaswie.nl/nl/detail/31877498 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>Ringert Jongewaard marriage.",
+    "citation": "* '''Marriage Registration''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.wiewaswie.nl/nl/detail/31877498 WieWasWie (NL) Record] (accessed 6 May 2021)<br/>Ringert Jongewaard (24) marriage to Trijntje Jacobs Water (24) on 20 Sep 1818 in Berkhout, Noord-Holland, Netherlands.",
     "type": "source"
   }
 }

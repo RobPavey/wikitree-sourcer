@@ -29,7 +29,10 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 const FT = {
   forenames: "forenames",
   fullName: "fullName",
+  age: "age",
   personFather: "personFather",
+  personMother: "personMother",
+  personBride: "personBride",
 };
 
 // Document types
@@ -46,9 +49,17 @@ const typeData = {
     labels: {
       en: {
         fullName: ["Groom"],
+        age: ["Age"],
+        personBride: ["Bride"],
+        personFather: ["Father of the groom"],
+        personMother: ["Mother of the groom"],
       },
       nl: {
         fullName: ["Bruidegom"],
+        age: ["Leeftijd"],
+        personBride: ["Bruid"],
+        personFather: ["Vader van de bruidegom"],
+        personMother: ["Moeder van de bruidegom"],
       },
     },
   },
@@ -65,10 +76,12 @@ const typeData = {
       en: {
         forenames: ["Dopeling"],
         personFather: ["Father"],
+        personMother: ["Mother"],
       },
       nl: {
         forenames: ["Dopeling"],
         personFather: ["Vader"],
+        personMother: ["Moeder"],
       },
     },
   },
@@ -244,6 +257,18 @@ class WiewaswieEdReader extends ExtractedDataReader {
     return this.extractPersonFieldByFieldType(person, fieldType);
   }
 
+  extractPersonFieldByDataKey(person, lastPartOfDataKey) {
+    return this.extractFieldByDataKey(person, lastPartOfDataKey);
+  }
+
+  extractIndexedPersonFieldByDataKey(personIndex, lastPartOfDataKey) {
+    if (this.ed.people.length <= personIndex) {
+      return;
+    }
+    let person = this.ed.people[personIndex];
+    return this.extractPersonFieldByDataKey(person, lastPartOfDataKey);
+  }
+
   findPersonByFirstFieldType(fieldType) {
     if (!this.ed.people || !this.ed.people.length) {
       return;
@@ -314,11 +339,43 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    return undefined;
+    let ddmmyyyDate = this.extractEventFieldByDataKey("EventDate");
+    return this.makeDateObjFromDdmmyyyyDate(ddmmyyyDate, "-");
   }
 
   getEventPlaceObj() {
-    return undefined;
+    let eventPlace = this.extractEventFieldByDataKey("EventPlace");
+    let documentPlace = this.extractSourceFieldByDataKey("DocumentPlace");
+    let region = this.extractSourceFieldByDataKey("CollectionRegion");
+
+    let placeString = "";
+    if (eventPlace) {
+      if (documentPlace) {
+        if (eventPlace != documentPlace) {
+          placeString += eventPlace + ", " + documentPlace;
+        } else {
+          placeString += eventPlace;
+        }
+      } else {
+        placeString += eventPlace;
+      }
+    } else if (documentPlace) {
+      placeString += documentPlace;
+    }
+
+    if (region && !placeString.endsWith(region)) {
+      if (placeString) {
+        placeString += ", ";
+      }
+      placeString += region;
+    }
+
+    if (placeString) {
+      placeString += ", ";
+    }
+    placeString += "Netherlands";
+
+    return this.makePlaceObjFromFullPlaceName(placeString);
   }
 
   getLastNameAtBirth() {
@@ -334,7 +391,8 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    return undefined;
+    let ddmmyyyDate = this.extractIndexedPersonFieldByDataKey(0, "BirthDate");
+    return this.makeDateObjFromDdmmyyyyDate(ddmmyyyDate, "-");
   }
 
   getBirthPlaceObj() {
@@ -350,7 +408,7 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
-    return "";
+    return this.extractIndexedPersonFieldByFieldType(0, FT.age);
   }
 
   getAgeAtDeath() {
@@ -374,23 +432,28 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getSpouseObj(eventDateObj, eventPlaceObj) {
-    return undefined;
+    let bride = this.findPersonByFirstFieldType(FT.personBride);
+    if (bride) {
+      let brideName = this.extractPersonFieldByFieldType(bride, FT.personBride);
+      let spouseNameObj = this.makeNameObjFromFullName(brideName);
+      let age = this.extractPersonFieldByFieldType(bride, FT.age);
+      return this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age);
+    }
   }
 
   getParents() {
-    /*
-      let father = this.findPersonByFirstFieldType(FT.personFather);
-      if (father) {
-        let fatherName = this.extractPersonFieldByFieldType(father, FT.personFather);
-        let fatherLastName = fullNameToLastName(fatherName);
+    let fatherName = "";
+    let motherName = "";
+    let father = this.findPersonByFirstFieldType(FT.personFather);
+    if (father) {
+      fatherName = this.extractPersonFieldByFieldType(father, FT.personFather);
+    }
+    let mother = this.findPersonByFirstFieldType(FT.personMother);
+    if (mother) {
+      motherName = this.extractPersonFieldByFieldType(mother, FT.personMother);
+    }
 
-        if (forenames && fatherLastName) {
-          return this.makeNameObjFromForenamesAndLastName(forenames, fatherLastName);
-        }
-      }
-
-    */
-    return undefined;
+    return this.makeParentsFromFullNames(fatherName, motherName);
   }
 
   getHousehold() {
