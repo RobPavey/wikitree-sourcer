@@ -112,6 +112,18 @@ function extractData(document, url) {
 
   extractDataForRow(row, result);
 
+  let originalSourceLink = container.querySelector("div.buttons > a.sourcedigital");
+  if (!originalSourceLink) {
+    // o the dutch page it is different
+    originalSourceLink = container.querySelector("div.buttons > div.scan.logo > a");
+  }
+
+  if (originalSourceLink) {
+    let href = originalSourceLink.getAttribute("href");
+    if (href) {
+      result.originalSourceLink = href;
+    }
+  }
   result.success = true;
 
   //console.log(result);

@@ -468,13 +468,15 @@ class NarrativeBuilder {
     }
   }
 
-  addParentageForMainSentence() {
+  addParentageForMainSentenceGivenParentsAndGender(parentNames, personGender) {
+    if (!parentNames) {
+      return;
+    }
+
     let includeParentage = this.getSubcatOption("includeParentage");
     let parentageFormat = this.getSubcatOption("parentageFormat");
 
     if (includeParentage == "inMainSentence") {
-      let parentNames = this.eventGd.inferParentNamesForDataString();
-
       if (parentNames.fatherName || parentNames.motherName) {
         if (!this.narrative.endsWith(",")) {
           this.narrative += ",";
@@ -483,7 +485,7 @@ class NarrativeBuilder {
         if (parentageFormat == "theTwoCommas") {
           this.narrative += "the ";
         }
-        this.narrative += getChildTerm(this.eventGd.personGender) + " of ";
+        this.narrative += getChildTerm(personGender) + " of ";
         if (parentNames.fatherName) {
           this.narrative += parentNames.fatherName;
         }
@@ -498,15 +500,23 @@ class NarrativeBuilder {
     }
   }
 
-  addParentageAsSeparateSentence() {
+  addParentageForMainSentence() {
+    let parentNames = this.eventGd.inferParentNamesForDataString();
+    this.addParentageForMainSentenceGivenParentsAndGender(parentNames, this.eventGd.personGender);
+  }
+
+  addSpouseParentageForMainSentence() {
+    let parentNames = this.eventGd.inferParentNamesForDataString();
+    this.addParentageForMainSentenceGivenParentsAndGender(parentNames, this.eventGd.personGender);
+  }
+
+  addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, personGender) {
     let includeParentage = this.getSubcatOption("includeParentage");
 
     if (includeParentage == "inSeparateSentence") {
-      let parentNames = this.eventGd.inferParentNamesForDataString();
-
       if (parentNames.fatherName || parentNames.motherName) {
         this.narrative += " " + this.getPronounAndPastTenseInitialCaps() + " the ";
-        this.narrative += getChildTerm(this.eventGd.personGender) + " of ";
+        this.narrative += getChildTerm(personGender) + " of ";
         if (parentNames.fatherName) {
           this.narrative += parentNames.fatherName;
         }
@@ -519,6 +529,11 @@ class NarrativeBuilder {
         this.narrative += ".";
       }
     }
+  }
+
+  addParentageAsSeparateSentence() {
+    let parentNames = this.eventGd.inferParentNamesForDataString();
+    this.addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, this.eventGd.personGender);
   }
 
   formatDate(dateString, addPreposition, prepSuffix = "") {
@@ -801,6 +816,8 @@ class NarrativeBuilder {
 
     let spouseName = "";
     let spouseAge = "";
+    let spouseParents = undefined;
+    let spouseGender = "";
     if (this.eventGd.spouses && this.eventGd.spouses.length == 1) {
       let spouse = this.eventGd.spouses[0];
       if (spouse.name) {
@@ -808,6 +825,12 @@ class NarrativeBuilder {
       }
       if (spouse.age) {
         spouseAge = spouse.age;
+      }
+      if (spouse.parents) {
+        spouseParents = this.eventGd.inferSpouseParentNamesForDataString(spouse);
+      }
+      if (spouse.personGender) {
+        spouseGender = spouse.personGender;
       }
     }
     const toPast = { birth: "was born", marriage: "married", death: "died" };
@@ -902,11 +925,11 @@ class NarrativeBuilder {
         this.narrative += " " + pastTense;
       } else {
         this.narrative += this.getPersonNameOrPronoun();
-        this.addParentageForMainSentence();
 
         if (ageAtEvent && typeString == "marriage") {
           this.addAgeForMainSentence(ageAtEvent);
         }
+        this.addParentageForMainSentence();
         this.narrative += " " + pastTense;
         if (ageAtEvent && typeString != "marriage") {
           this.addAgeForMainSentence(ageAtEvent);
@@ -917,6 +940,7 @@ class NarrativeBuilder {
         if (spouseName) {
           this.narrative += " " + spouseName;
           this.addAgeForMainSentence(spouseAge);
+          this.addParentageForMainSentenceGivenParentsAndGender(spouseParents, spouseGender);
         }
       }
 
@@ -1097,13 +1121,21 @@ class NarrativeBuilder {
 
     let spouseName = "";
     let spouseAge = "";
-    if (this.eventGd.spouses && gd.spouses.length == 1) {
-      let spouse = gd.spouses[0];
+    let spouseParents = undefined;
+    let spouseGender = "";
+    if (this.eventGd.spouses && this.eventGd.spouses.length == 1) {
+      let spouse = this.eventGd.spouses[0];
       if (spouse.name) {
         spouseName = spouse.name.inferFullName();
       }
       if (spouse.age) {
         spouseAge = spouse.age;
+      }
+      if (spouse.parents) {
+        spouseParents = this.eventGd.inferSpouseParentNamesForDataString(spouse);
+      }
+      if (spouse.personGender) {
+        spouseGender = spouse.personGender;
       }
     }
 
@@ -1121,6 +1153,7 @@ class NarrativeBuilder {
       spouseName = StringUtils.toInitialCapsEachWord(spouseName, true);
       this.narrative += " " + spouseName;
       this.addAgeForMainSentence(spouseAge);
+      this.addParentageForMainSentenceGivenParentsAndGender(spouseParents, spouseGender);
     }
 
     if (gd.recordSubtype && gd.recordSubtype == RecordSubtype.Banns && (dateObj || place)) {

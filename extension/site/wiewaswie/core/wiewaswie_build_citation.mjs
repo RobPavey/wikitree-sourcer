@@ -23,31 +23,39 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { WiewaswieEdReader } from "./wiewaswie_ed_reader.mjs";
 
 function buildWiewaswieUrl(ed, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
   return ed.url;
 }
 
-function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+function buildSourceTitle(ed, gd, edReader, builder) {
+  builder.sourceTitle += edReader.getSourceTitle();
 }
 
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+function buildSourceReference(ed, gd, edReader, builder) {
+  builder.sourceReference += edReader.getSourceReference();
 }
 
-function buildRecordLink(ed, gd, builder) {
+function buildRecordLink(ed, gd, edReader, builder) {
   var wiewaswieUrl = buildWiewaswieUrl(ed, builder);
 
-  let recordLink = "[" + wiewaswieUrl + " WieWasWie (NL) Record]";
+  let recordLink = "[" + wiewaswieUrl + " WieWasWie Record]";
   builder.recordLinkOrTemplate = recordLink;
+
+  let externalLink = edReader.getExternalLink();
+  if (externalLink.link) {
+    builder.externalSiteLink = "[" + externalLink.link + " " + externalLink.text + "]";
+  }
 }
 
 function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
+  let edReader = new WiewaswieEdReader(ed);
+
+  buildSourceTitle(ed, gd, edReader, builder);
+  buildSourceReference(ed, gd, edReader, builder);
+  buildRecordLink(ed, gd, edReader, builder);
   builder.addStandardDataString(gd);
 }
 

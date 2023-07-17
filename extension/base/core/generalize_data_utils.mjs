@@ -1226,6 +1226,37 @@ class GeneralizedData {
     //    deathDate: a DateObj object
   }
 
+  static createParentsFromPlainObject(parents) {
+    let classParents = {};
+    if (parents.father) {
+      let father = parents.father;
+      classParents.father = {};
+      if (father.name) {
+        classParents.father.name = NameObj.createFromPlainObject(father.name);
+      }
+      if (father.lastNameAtBirth) {
+        classParents.father.lastNameAtBirth = father.lastNameAtBirth;
+      }
+      if (father.lastNameAtDeath) {
+        classParents.father.lastNameAtDeath = father.lastNameAtDeath;
+      }
+    }
+    if (parents.mother) {
+      let mother = parents.mother;
+      classParents.mother = {};
+      if (mother.name) {
+        classParents.mother.name = NameObj.createFromPlainObject(mother.name);
+      }
+      if (mother.lastNameAtBirth) {
+        classParents.mother.lastNameAtBirth = mother.lastNameAtBirth;
+      }
+      if (mother.lastNameAtDeath) {
+        classParents.mother.lastNameAtDeath = mother.lastNameAtDeath;
+      }
+    }
+    return classParents;
+  }
+
   static createFromPlainObject(obj) {
     if (!obj) {
       return undefined;
@@ -1241,33 +1272,7 @@ class GeneralizedData {
       } else if (key == "birthPlace" || key == "deathPlace" || key == "eventPlace" || key == "residencePlace") {
         classObj[key] = PlaceObj.createFromPlainObject(obj[key]);
       } else if (key == "parents") {
-        classObj[key] = {};
-        if (obj.parents.father) {
-          let father = obj.parents.father;
-          classObj[key].father = {};
-          if (father.name) {
-            classObj[key].father.name = NameObj.createFromPlainObject(father.name);
-          }
-          if (father.lastNameAtBirth) {
-            classObj[key].father.lastNameAtBirth = father.lastNameAtBirth;
-          }
-          if (father.lastNameAtDeath) {
-            classObj[key].father.lastNameAtDeath = father.lastNameAtDeath;
-          }
-        }
-        if (obj.parents.mother) {
-          let mother = obj.parents.mother;
-          classObj[key].mother = {};
-          if (mother.name) {
-            classObj[key].mother.name = NameObj.createFromPlainObject(mother.name);
-          }
-          if (mother.lastNameAtBirth) {
-            classObj[key].mother.lastNameAtBirth = mother.lastNameAtBirth;
-          }
-          if (mother.lastNameAtDeath) {
-            classObj[key].mother.lastNameAtDeath = mother.lastNameAtDeath;
-          }
-        }
+        classObj[key] = this.createParentsFromPlainObject(obj.parents);
       } else if (key == "spouses") {
         classObj[key] = [];
         for (let spouse of obj.spouses) {
@@ -1289,6 +1294,12 @@ class GeneralizedData {
           }
           if (spouse.age) {
             newSpouse.age = spouse.age;
+          }
+          if (spouse.personGender) {
+            newSpouse.personGender = spouse.personGender;
+          }
+          if (spouse.parents) {
+            newSpouse.parents = this.createParentsFromPlainObject(spouse.parents);
           }
           classObj[key].push(newSpouse);
         }
@@ -3215,6 +3226,27 @@ class GeneralizedData {
       }
       if (this.parents.mother && this.parents.mother.name) {
         motherName = this.parents.mother.name.inferFullName();
+      }
+    }
+
+    return { fatherName: fatherName, motherName: motherName };
+  }
+
+  inferSpouseParentNamesForDataString(spouseObj) {
+    // we used to only use the forenames if the last names were the same, this can be confusing for an example
+    // like: https://www.ancestry.com/discoveryui-content/view/12946595:60143
+    // Where the mother has a middle name (possibly maiden name) that looks like a surname.
+    // Also, user's may want to make the parent links to their profiles so a full name is better for that.
+
+    let fatherName = "";
+    let motherName = "";
+
+    if (spouseObj.parents) {
+      if (spouseObj.parents.father && spouseObj.parents.father.name) {
+        fatherName = spouseObj.parents.father.name.inferFullName();
+      }
+      if (spouseObj.parents.mother && spouseObj.parents.mother.name) {
+        motherName = spouseObj.parents.mother.name.inferFullName();
       }
     }
 

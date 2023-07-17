@@ -33,6 +33,8 @@ const FT = {
   personFather: "personFather",
   personMother: "personMother",
   personBride: "personBride",
+  personBrideFather: "personBrideFather",
+  personBrideMother: "personBrideMother",
 };
 
 // Document types
@@ -43,7 +45,7 @@ const typeData = {
   },
   "BS Huwelijk": {
     // Marriage certificates
-    recordType: RT.MarriageRegistration,
+    recordType: RT.Marriage,
     fixedGender: "male", // the primary person is always the groom
     nameFormat: "full",
     labels: {
@@ -53,6 +55,8 @@ const typeData = {
         personBride: ["Bride"],
         personFather: ["Father of the groom"],
         personMother: ["Mother of the groom"],
+        personBrideFather: ["Father of the bride"],
+        personBrideMother: ["Mother of the bride"],
       },
       nl: {
         fullName: ["Bruidegom"],
@@ -60,6 +64,8 @@ const typeData = {
         personBride: ["Bruid"],
         personFather: ["Vader van de bruidegom"],
         personMother: ["Moeder van de bruidegom"],
+        personBrideFather: ["Vader van de bruid"],
+        personBrideMother: ["Moeder van de bruid"],
       },
     },
   },
@@ -373,7 +379,7 @@ class WiewaswieEdReader extends ExtractedDataReader {
     if (placeString) {
       placeString += ", ";
     }
-    placeString += "Netherlands";
+    placeString += "Nederland";
 
     return this.makePlaceObjFromFullPlaceName(placeString);
   }
@@ -437,7 +443,28 @@ class WiewaswieEdReader extends ExtractedDataReader {
       let brideName = this.extractPersonFieldByFieldType(bride, FT.personBride);
       let spouseNameObj = this.makeNameObjFromFullName(brideName);
       let age = this.extractPersonFieldByFieldType(bride, FT.age);
-      return this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age);
+      let spouseObj = this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age);
+
+      if (spouseObj) {
+        spouseObj.personGender = "female";
+
+        let fatherName = "";
+        let motherName = "";
+        let father = this.findPersonByFirstFieldType(FT.personBrideFather);
+        if (father) {
+          fatherName = this.extractPersonFieldByFieldType(father, FT.personBrideFather);
+        }
+        let mother = this.findPersonByFirstFieldType(FT.personBrideMother);
+        if (mother) {
+          motherName = this.extractPersonFieldByFieldType(mother, FT.personBrideMother);
+        }
+        let brideParents = this.makeParentsFromFullNames(fatherName, motherName);
+        if (brideParents) {
+          spouseObj.parents = brideParents;
+        }
+      }
+
+      return spouseObj;
     }
   }
 
@@ -462,6 +489,55 @@ class WiewaswieEdReader extends ExtractedDataReader {
 
   getCollectionData() {
     return undefined;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Functions to support build citation
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getSourceTitle() {
+    let collection = this.extractSourceFieldByDataKey("Collection");
+
+    const prefix = "Archiefnaam: ";
+    if (collection.startsWith(prefix)) {
+      collection = collection.substring(prefix.length);
+    }
+    let remainderIndex = collection.search(/\,\s+[^,:]+\:/);
+    if (remainderIndex != -1) {
+      collection = collection.substring(0, remainderIndex);
+    }
+
+    return collection;
+  }
+
+  getSourceReference() {
+    let registrationNumber = this.extractSourceFieldByDataKey("RegistrationNumber");
+    let book = this.extractSourceFieldByDataKey("Book");
+    let institution = this.extractSourceFieldByDataKey("HeritageInstitutionName");
+
+    if (institution && registrationNumber && book) {
+      let string = institution + ", Registration number: " + registrationNumber + ", Book: " + book;
+      return string;
+    }
+  }
+
+  getExternalLink() {
+    let externalLink = {
+      link: "",
+      text: "",
+    };
+
+    if (this.ed.originalSourceLink) {
+      externalLink.link = this.ed.originalSourceLink;
+
+      externalLink.text = "External Record";
+      let institution = this.extractSourceFieldByDataKey("HeritageInstitutionName");
+      if (institution) {
+        externalLink.text = institution + " Record";
+      }
+
+      return externalLink;
+    }
   }
 }
 

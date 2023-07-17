@@ -1,7 +1,7 @@
 {
   "sourceOfData": "wiewaswie",
   "sourceType": "record",
-  "recordType": "MarriageRegistration",
+  "recordType": "Marriage",
   "name": {
     "name": "Ringert Jongewaard"
   },
@@ -10,7 +10,7 @@
     "dateString": "20 Sep 1818"
   },
   "eventPlace": {
-    "placeString": "Berkhout, Noord-Holland, Netherlands"
+    "placeString": "Berkhout, Noord-Holland, Nederland"
   },
   "ageAtEvent": "24",
   "spouses": [
@@ -22,9 +22,22 @@
         "dateString": "20 Sep 1818"
       },
       "marriagePlace": {
-        "placeString": "Berkhout, Noord-Holland, Netherlands"
+        "placeString": "Berkhout, Noord-Holland, Nederland"
       },
-      "age": "24"
+      "age": "24",
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "Jacob Water"
+          }
+        },
+        "mother": {
+          "name": {
+            "name": "Geertje Jacobs Voorn"
+          }
+        }
+      }
     }
   ],
   "parents": {
