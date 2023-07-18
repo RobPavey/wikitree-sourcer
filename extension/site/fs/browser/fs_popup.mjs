@@ -33,6 +33,7 @@ import {
   doAsyncActionWithCatch,
   closePopup,
   keepPopupOpenForDebug,
+  displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
@@ -193,15 +194,15 @@ async function fsGetAllCitationsAction(data) {
       // https://www.ancestry.com/discoveryui-content/view/2221897:60527
       // This is not considered an error there just will be no sharing link
       const message = "An error occurred geting sources.";
-      displayMessageWithIconThenClosePopup("warning", message, "");
+      displayMessageWithIcon("warning", message, response.errorMessage);
     }
   } catch (e) {
     console.log("fsGetAllCitationsAction caught exception on fsGetAllCitations:");
     console.log(e);
     keepPopupOpenForDebug();
 
-    const message = "An exception occurred geting sources.";
-    displayMessageWithIconThenClosePopup("warning", message, "");
+    const message = "An exception occurred getfing sources.";
+    displayMessageWithIcon("warning", message, "");
   }
 }
 
@@ -218,12 +219,15 @@ async function fsGetAllCitationsForSavePersonData(data) {
 
       data.allCitationsString = response.citationsString;
       data.allCitationsType = response.citationsStringType;
+      return { success: true };
     } else {
-      // If it fails we just don't get an all citations string
+      // If it fails we want to let the user know
+      return { success: false, errorMessage: response.errorMessage };
     }
   } catch (e) {
     console.log("fsGetAllCitationsForSavePersonData caught exception on fsGetAllCitations:");
     console.log(e);
+    return { success: false, errorMessage: e.message };
   }
 }
 

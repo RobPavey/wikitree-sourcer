@@ -22,7 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, displayMessageWithIconThenClosePopup, keepPopupOpenForDebug } from "./popup_menu_building.mjs";
+import {
+  addMenuItem,
+  displayMessageWithIconThenClosePopup,
+  displayMessageWithIcon,
+  keepPopupOpenForDebug,
+} from "./popup_menu_building.mjs";
 import { options } from "../options/options_loader.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,7 +49,12 @@ async function getLatestPersonData() {
 async function savePersonData(data, getAllCitationsFunction) {
   if (getAllCitationsFunction) {
     if (options.addMerge_addPerson_includeAllCitations || options.addMerge_mergeEdit_includeAllCitations) {
-      await getAllCitationsFunction(data);
+      let response = await getAllCitationsFunction(data);
+      if (!response.success) {
+        const message = "Could not save person data because could not build all citations.";
+        displayMessageWithIcon("warning", message, response.errorMessage);
+        return;
+      }
     }
   }
 

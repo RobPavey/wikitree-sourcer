@@ -315,6 +315,8 @@ async function fsGetAllCitations(input) {
     }
 
     result.success = true;
+  } else {
+    result.errorMessage = "Could not get list of sources. Try running from the 'SOURCES' page.";
   }
 
   return result;
