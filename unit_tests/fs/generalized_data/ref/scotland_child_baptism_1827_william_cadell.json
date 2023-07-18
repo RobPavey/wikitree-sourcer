@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "role": "Grandparent",
+  "primaryPerson": {
+    "name": {
+      "name": "Alexander Cadell",
+      "lastName": "Cadell",
+      "forenames": "Alexander"
+    },
+    "gender": "male"
+  },
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "William Cadell",
+    "lastName": "Cadell",
+    "forenames": "William"
+  },
+  "eventDate": {
+    "dateString": "29 Sep 1827",
+    "yearString": "1827"
+  },
+  "eventPlace": {
+    "placeString": "Tranent, Haddingtonshire, Scotland, United Kingdom"
+  },
+  "collectionData": {
+    "id": "1771030"
+  },
+  "hasValidData": true
+}

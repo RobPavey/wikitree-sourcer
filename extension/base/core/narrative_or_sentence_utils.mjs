@@ -76,6 +76,17 @@ function getPrimaryPersonSpouseTerm(gd) {
   return getSpouseTerm(spouseGender);
 }
 
+function getPrimaryPersonTermAndName(gd) {
+  let string = gd.getRelationshipOfPrimaryPersonToThisPerson();
+
+  let primaryPersonName = gd.inferPrimaryPersonFullName();
+  if (primaryPersonName) {
+    string += " " + primaryPersonName;
+  }
+
+  return string;
+}
+
 export {
   getChildTerm,
   getPrimaryPersonChildTerm,
@@ -83,4 +94,5 @@ export {
   getPrimaryPersonParentTerm,
   getSpouseTerm,
   getPrimaryPersonSpouseTerm,
+  getPrimaryPersonTermAndName,
 };

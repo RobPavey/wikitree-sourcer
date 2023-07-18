@@ -27,7 +27,7 @@ import { GeneralizedData, DateObj } from "./generalize_data_utils.mjs";
 import { Role } from "./record_type.mjs";
 import { StringUtils } from "./string_utils.mjs";
 import { DateUtils } from "./date_utils.mjs";
-import { getChildTerm, getPrimaryPersonChildTerm, getPrimaryPersonSpouseTerm } from "./narrative_or_sentence_utils.mjs";
+import { getChildTerm, getPrimaryPersonChildTerm } from "./narrative_or_sentence_utils.mjs";
 import { RC } from "./record_collections.mjs";
 
 class NarrativeBuilder {
@@ -374,21 +374,17 @@ class NarrativeBuilder {
     return isMidSentence ? "their" : "Their";
   }
 
-  getPossessiveNamePlusChild(isMidSentence = false) {
+  getPossessiveNamePlusPrimaryPerson(isMidSentence = false) {
     const gd = this.eventGd;
-    let string = this.getPossessiveName(isMidSentence);
-    string += " " + getPrimaryPersonChildTerm(gd);
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (primaryPersonName) {
-      string += " " + primaryPersonName;
+    let string = "";
+    if (gd.role == Role.Other) {
+      string = this.getPersonNameOrPronoun(isMidSentence);
+      string += " was in the record for another person who";
+    } else {
+      string = this.getPossessiveName(isMidSentence);
+      let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
+      string += " " + relationship;
     }
-    return string;
-  }
-
-  getPossessiveNamePlusSpouse(isMidSentence = false) {
-    const gd = this.eventGd;
-    let string = this.getPossessiveName(isMidSentence);
-    string += " " + getPrimaryPersonSpouseTerm(gd);
     let primaryPersonName = gd.inferPrimaryPersonFullName();
     if (primaryPersonName) {
       string += " " + primaryPersonName;
@@ -841,10 +837,8 @@ class NarrativeBuilder {
 
       if (sentenceStructure == "oneSentence") {
         // One sentence format
-        if (gd.role && gd.role == Role.Parent) {
-          this.narrative += "The " + typeString + " of " + this.getPossessiveNamePlusChild();
-        } else if (gd.role && gd.role == Role.Spouse) {
-          this.narrative += "The " + typeString + " of " + this.getPossessiveNamePlusSpouse();
+        if (gd.role && gd.role != Role.Primary) {
+          this.narrative += "The " + typeString + " of " + this.getPossessiveNamePlusPrimaryPerson();
         } else {
           let possessiveName = this.getPossessiveName();
           this.narrative += possessiveName + " " + typeString;
@@ -860,10 +854,8 @@ class NarrativeBuilder {
       } else {
         // Two sentence format
         let pastTense = toPast[typeString];
-        if (gd.role && gd.role == Role.Parent) {
-          this.narrative += this.getPossessiveNamePlusChild();
-        } else if (gd.role && gd.role == Role.Spouse) {
-          this.narrative += this.getPossessiveNamePlusSpouse();
+        if (gd.role && gd.role != Role.Primary) {
+          this.narrative += this.getPossessiveNamePlusPrimaryPerson();
         } else {
           this.narrative += this.getPersonNameOrPronoun();
           this.addAgeForMainSentence(ageAtEvent);
@@ -917,11 +909,8 @@ class NarrativeBuilder {
 
       let pastTense = toPast[typeString];
 
-      if (gd.role && gd.role == Role.Parent) {
-        this.narrative += this.getPossessiveNamePlusChild();
-        this.narrative += " " + pastTense;
-      } else if (gd.role && gd.role == Role.Spouse) {
-        this.narrative += this.getPossessiveNamePlusSpouse();
+      if (gd.role && gd.role != Role.Primary) {
+        this.narrative += this.getPossessiveNamePlusPrimaryPerson();
         this.narrative += " " + pastTense;
       } else {
         this.narrative += this.getPersonNameOrPronoun();
@@ -994,13 +983,17 @@ class NarrativeBuilder {
     this.narrative = this.getPersonNameOrPronoun();
 
     let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (gd.role && gd.role == Role.Parent && primaryPersonName) {
-      // This is a record for one of the parents
-      // "X and X's child Z"
-      if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
-        this.narrative += " and " + gd.spouses[0].name.name;
+    if (gd.role && gd.role != Role.Primary) {
+      if (gd.role == Role.Parent && primaryPersonName) {
+        // This is a record for one of the parents
+        // "X and X's child Z"
+        if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
+          this.narrative += " and " + gd.spouses[0].name.name;
+        }
+        this.narrative += "'s " + getPrimaryPersonChildTerm(gd) + " " + primaryPersonName;
+      } else {
+        this.narrative += this.getPossessiveNamePlusPrimaryPerson();
       }
-      this.narrative += "'s " + getPrimaryPersonChildTerm(gd) + " " + primaryPersonName;
       // inferBirthDate will not return the date of the primary person's birth
       dateObj = gd.inferEventDateObj();
       place = gd.inferEventPlace();
@@ -1026,13 +1019,8 @@ class NarrativeBuilder {
     let dateObj = gd.inferDeathDateObj();
     let place = gd.inferDeathPlace();
 
-    if (gd.role && gd.role == Role.Parent) {
-      this.narrative += this.getPossessiveNamePlusChild();
-      // inferDeathDate will not return the date of the primary person's death
-      dateObj = gd.inferEventDateObj();
-      place = gd.inferEventPlace();
-    } else if (gd.role && gd.role == Role.Spouse) {
-      this.narrative += this.getPossessiveNamePlusSpouse();
+    if (gd.role && gd.role != Role.Primary) {
+      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
       // inferDeathDate will not return the date of the primary person's death
       dateObj = gd.inferEventDateObj();
       place = gd.inferEventPlace();
@@ -1073,14 +1061,13 @@ class NarrativeBuilder {
       baptisedString = "baptized";
     }
 
-    if (gd.role && gd.role == Role.Parent) {
-      this.narrative += this.getPossessiveNamePlusChild();
-      this.narrative += " was ";
+    if (gd.role && gd.role != Role.Primary) {
+      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
     } else {
       this.narrative += this.getPersonNameOrPronoun();
       this.addParentageForMainSentence();
-      this.narrative += " was ";
     }
+    this.narrative += " was ";
 
     if (gd.birthDate && this.options.narrative_baptism_includeBirthDate) {
       this.narrative += "born " + this.formatDateObj(gd.birthDate, true);
@@ -1139,8 +1126,8 @@ class NarrativeBuilder {
       }
     }
 
-    if (gd.role && gd.role == Role.Parent) {
-      this.narrative += this.getPossessiveNamePlusChild();
+    if (gd.role && gd.role != Role.Primary) {
+      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
       this.narrative += " married";
     } else {
       this.narrative += this.getPersonNameOrPronoun();
@@ -1189,11 +1176,8 @@ class NarrativeBuilder {
 
     let place = gd.inferFullEventPlace();
 
-    if (gd.role && gd.role == Role.Parent) {
-      this.narrative += this.getPossessiveNamePlusChild();
-      deathDate = gd.inferPrimaryPersonDeathDateObj();
-    } else if (gd.role && gd.role == Role.Spouse) {
-      this.narrative += this.getPossessiveNamePlusSpouse();
+    if (gd.role && gd.role != Role.Primary) {
+      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
       deathDate = gd.inferPrimaryPersonDeathDateObj();
     } else {
       this.narrative += this.getPersonNameOrPronoun();
@@ -1298,7 +1282,7 @@ class NarrativeBuilder {
     this.narrative += this.getPersonNameOrPronoun();
     this.addParentageForMainSentence();
 
-    if (gd.role) {
+    if (gd.role && gd.role != Role.Primary) {
       let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
       let otherName = gd.inferPrimaryPersonFullName();
       if (relationship || otherName) {
@@ -1358,14 +1342,13 @@ class NarrativeBuilder {
       baptisedString = "baptized";
     }
 
-    if (gd.role && gd.role == Role.Parent) {
-      this.narrative += this.getPossessiveNamePlusChild();
-      this.narrative += " was born or " + baptisedString;
+    if (gd.role && gd.role != Role.Primary) {
+      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
     } else {
       this.narrative += this.getPersonNameOrPronoun();
       this.addParentageForMainSentence();
-      this.narrative += " was born or " + baptisedString;
     }
+    this.narrative += " was born or " + baptisedString;
 
     if (dateObj) {
       this.narrative += " " + this.formatDateObj(dateObj, true);
@@ -1871,14 +1854,11 @@ class NarrativeBuilder {
 
     if (!gd.recordSubtype || gd.recordSubtype == "Probate") {
       if (role && role != Role.Primary) {
-        if (role == Role.Child) {
-          this.narrative = possessiveName + " parent's will passed probate";
-        } else if (role == Role.Parent) {
-          this.narrative = possessiveName + " child's will passed probate";
-        } else if (role == Role.Spouse) {
-          this.narrative = possessiveName + " spouse's will passed probate";
-        } else if (role == Role.Witness) {
+        if (role == Role.Witness) {
           this.narrative = this.getPersonNameOrPronoun() + " witnessed a will that passed probate";
+        } else {
+          let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
+          this.narrative = possessiveName + " " + relationship + "'s will passed probate";
         }
       } else {
         if (gd.courtName && gd.courtName != "non-Scottish Court") {
@@ -1949,13 +1929,8 @@ class NarrativeBuilder {
 
     if (deathDateObj) {
       if (role && role != Role.Primary) {
-        if (role == Role.Child) {
-          this.narrative = possessiveName + " parent died";
-        } else if (role == Role.Parent) {
-          this.narrative = possessiveName + " child died";
-        } else if (role == Role.Spouse) {
-          this.narrative = possessiveName + " spouse died";
-        }
+        let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
+        this.narrative = possessiveName + " " + relationship + " died";
       } else {
         this.narrative += this.getPersonNameOrPronoun(true);
         this.narrative += " died";
@@ -1993,14 +1968,11 @@ class NarrativeBuilder {
       }
     } else {
       if (role && role != Role.Primary) {
-        if (role == Role.Child) {
-          this.narrative = possessiveName + " parent's will passed probate";
-        } else if (role == Role.Parent) {
-          this.narrative = possessiveName + " child's will passed probate";
-        } else if (role == Role.Spouse) {
-          this.narrative = possessiveName + " spouse's will passed probate";
-        } else if (role == Role.Witness) {
+        if (role == Role.Witness) {
           this.narrative = this.getPersonNameOrPronoun() + " witnessed a will that passed probate";
+        } else {
+          let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
+          this.narrative = possessiveName + " " + relationship + "'s will passed probate";
         }
       } else {
         this.narrative = possessiveName + " will passed probate";
@@ -2264,8 +2236,8 @@ class NarrativeBuilder {
     let dateObj = gd.inferEventDateObj();
     let place = gd.inferFullEventPlace();
 
-    if (gd.role && gd.role == Role.Parent) {
-      this.narrative += this.getPossessiveNamePlusChild();
+    if (gd.role && gd.role != Role.Primary) {
+      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
     } else {
       this.narrative += this.getPersonNameOrPronoun(false, true);
     }

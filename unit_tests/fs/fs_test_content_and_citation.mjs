@@ -201,6 +201,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VBPV-BM1?from=lynx1UIV8&treeref=MSGJ-7PP",
   },
   {
+    caseName: "scotland_child_baptism_1827_william_cadell",
+    url: "https://www.familysearch.org/ark:/61903/1:1:C9C5-WQT2",
+  },
+  {
     caseName: "scotland_marriage_1764_archbald_saunders",
     url: "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5?count=20&f.recordType=1&q.givenName=archibald&q.recordCountry=Scotland&q.recordSubcountry=Scotland%2CDumfriesshire&q.surname=saunders",
   },

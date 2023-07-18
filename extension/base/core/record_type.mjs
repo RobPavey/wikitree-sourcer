@@ -90,7 +90,12 @@ const Role = {
   Child: `Child`,
   Sibling: `Sibling`,
   Spouse: `Spouse`,
+  Grandparent: `Grandparent`,
+  Grandchild: `Grandchild`,
+  ParentOfSpouse: `ParentOfSpouse`,
+  SpouseOfChild: `SpouseOfChild`,
   Witness: `Witness`,
+  Other: `Other`,
 };
 
 export { RT, RecordSubtype, Role };

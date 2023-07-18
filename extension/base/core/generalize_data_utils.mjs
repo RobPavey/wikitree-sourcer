@@ -2891,6 +2891,38 @@ class GeneralizedData {
         } else if (primaryPersonGender == "female") {
           relationship = "sister";
         }
+      } else if (this.role == Role.Grandparent) {
+        relationship = "grandchild";
+        if (primaryPersonGender == "male") {
+          relationship = "grandson";
+        } else if (primaryPersonGender == "female") {
+          relationship = "granddaughter";
+        }
+      } else if (this.role == Role.Grandchild) {
+        relationship = "grandparent";
+        if (primaryPersonGender == "male") {
+          relationship = "grandfather";
+        } else if (primaryPersonGender == "female") {
+          relationship = "grandmother";
+        }
+      } else if (this.role == Role.ParentOfSpouse) {
+        relationship = "in-law";
+        if (primaryPersonGender == "male") {
+          relationship = "son-in-law";
+        } else if (primaryPersonGender == "female") {
+          relationship = "daughter-in-law";
+        }
+      } else if (this.role == Role.SpouseOfChild) {
+        relationship = "in-law";
+        if (primaryPersonGender == "male") {
+          relationship = "father-in-law";
+        } else if (primaryPersonGender == "female") {
+          relationship = "mother-in-law";
+        }
+      } else if (this.role == Role.Other) {
+        relationship = "another person";
+      } else {
+        relationship = "another person";
       }
     }
     return relationship;
