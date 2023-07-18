@@ -303,6 +303,16 @@ function determineRecordTypeAndRole(extractedData, result) {
         result.role = Role.Child;
       } else if (extractedData.relationshipToFactPerson == "Spouse") {
         result.role = Role.Spouse;
+      } else if (extractedData.relationshipToFactPerson == "Grandparent") {
+        result.role = Role.Grandparent;
+      } else if (extractedData.relationshipToFactPerson == "Grandchild") {
+        result.role = Role.Grandchild;
+      } else if (extractedData.relationshipToFactPerson == "ParentOfSpouse") {
+        result.role = Role.ParentOfSpouse;
+      } else if (extractedData.relationshipToFactPerson == "SpouseOfChild") {
+        result.role = Role.SpouseOfChild;
+      } else {
+        result.role = Role.Other;
       }
       result.setPrimaryPersonFullName(extractedData.relatedPersonFullName);
       result.setPrimaryPersonLastNameAndForeNames(
@@ -310,6 +320,8 @@ function determineRecordTypeAndRole(extractedData, result) {
         extractedData.relatedPersonGivenName
       );
       result.setPrimaryPersonGender(extractedData.relatedPersonGender);
+    } else {
+      result.role = Role.Other;
     }
   }
 

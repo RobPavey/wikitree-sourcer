@@ -28,7 +28,11 @@ import { RT, Role, RecordSubtype } from "./record_type.mjs";
 import { RC } from "./record_collections.mjs";
 import { WTS_Date } from "./wts_date.mjs";
 import { WTS_String } from "./wts_string.mjs";
-import { getPrimaryPersonChildTerm, getPrimaryPersonSpouseTerm } from "./narrative_or_sentence_utils.mjs";
+import {
+  getPrimaryPersonChildTerm,
+  getPrimaryPersonSpouseTerm,
+  getPrimaryPersonTermAndName,
+} from "./narrative_or_sentence_utils.mjs";
 import { GroUriBuilder } from "../../site/gro/core/gro_uri_builder.mjs";
 
 function getQuarterName(quarterNumber) {
@@ -542,19 +546,23 @@ function getBirthRegistrationString(gd, options) {
   let dataString = "";
 
   // generic birth registration
-  if (gd.role && gd.role == Role.Parent) {
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (primaryPersonName) {
-      dataString += primaryPersonName;
+  if (gd.role && gd.role != Role.Primary) {
+    if (gd.role == Role.Parent) {
+      let primaryPersonName = gd.inferPrimaryPersonFullName();
+      if (primaryPersonName) {
+        dataString += primaryPersonName;
+      } else {
+        dataString += "child";
+      }
+
+      dataString += " born to ";
+
+      dataString += getFullName(gd);
+      if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
+        dataString += " and " + gd.spouses[0].name.name;
+      }
     } else {
-      dataString += "child";
-    }
-
-    dataString += " born to ";
-
-    dataString += getFullName(gd);
-    if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
-      dataString += " and " + gd.spouses[0].name.name;
+      dataString += getFullName(gd) + " in record for birth of " + getPrimaryPersonTermAndName(gd);
     }
 
     let date = gd.inferEventDateObj();
@@ -619,19 +627,8 @@ function getDeathRegistrationString(gd, options) {
 
   // generic death registration
   let dataString = getFullName(gd);
-  if (gd.role == Role.Parent) {
-    dataString += " in death record for " + getPrimaryPersonChildTerm(gd);
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (primaryPersonName) {
-      dataString += " " + primaryPersonName + ",";
-    }
-    deathDate = gd.inferEventDateObj();
-  } else if (gd.role == Role.Spouse) {
-    dataString += " in death record for " + getPrimaryPersonSpouseTerm(gd);
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (primaryPersonName) {
-      dataString += " " + primaryPersonName + ",";
-    }
+  if (gd.role && gd.role != Role.Primary) {
+    dataString += " in death record for " + getPrimaryPersonTermAndName(gd);
     deathDate = gd.inferEventDateObj();
   } else {
     dataString += " death";
@@ -664,8 +661,12 @@ function getMarriageRegistrationString(gd, options) {
     dataString += " (" + age + ")";
   }
 
-  if (gd.role && gd.role == Role.Parent) {
-    dataString += " child";
+  if (gd.role && gd.role != Role.Primary) {
+    if (gd.role == Role.Parent) {
+      dataString += " child";
+    } else {
+      dataString += " " + getPrimaryPersonTermAndName(gd);
+    }
   }
 
   dataString += " marriage";
@@ -700,22 +701,26 @@ function getMarriageRegistrationString(gd, options) {
 function getBirthString(gd, options) {
   let dataString = "";
 
-  if (gd.role && gd.role == Role.Parent) {
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (primaryPersonName) {
-      dataString += primaryPersonName;
-    } else {
-      dataString += "child";
-    }
+  if (gd.role && gd.role != Role.Primary) {
+    if (gd.role == Role.Parent) {
+      let primaryPersonName = gd.inferPrimaryPersonFullName();
+      if (primaryPersonName) {
+        dataString += primaryPersonName;
+      } else {
+        dataString += "child";
+      }
 
-    if (gd.recordType == RT.Birth) {
-      dataString += " born to ";
+      if (gd.recordType == RT.Birth) {
+        dataString += " born to ";
+      } else {
+        dataString += " born or baptised to ";
+      }
+      dataString += getFullName(gd);
+      if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
+        dataString += " and " + gd.spouses[0].name.name;
+      }
     } else {
-      dataString += " born or baptised to ";
-    }
-    dataString += getFullName(gd);
-    if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
-      dataString += " and " + gd.spouses[0].name.name;
+      dataString += getFullName(gd) + " in record of birth of " + getPrimaryPersonTermAndName(gd);
     }
 
     let date = gd.inferEventDateObj();
@@ -773,19 +778,8 @@ function getDeathString(gd, options) {
 
   let deathDate = gd.inferDeathDateObj();
 
-  if (gd.role == Role.Parent) {
-    dataString += " in death record for " + getPrimaryPersonChildTerm(gd);
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (primaryPersonName) {
-      dataString += " " + primaryPersonName + ",";
-    }
-    deathDate = gd.inferEventDateObj();
-  } else if (gd.role == Role.Spouse) {
-    dataString += " in death record for " + getPrimaryPersonSpouseTerm(gd);
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (primaryPersonName) {
-      dataString += " " + primaryPersonName + ",";
-    }
+  if (gd.role && gd.role != Role.Primary) {
+    dataString += " in death record for " + getPrimaryPersonTermAndName(gd);
     deathDate = gd.inferEventDateObj();
   } else {
     dataString += " death";
@@ -868,12 +862,8 @@ function getDeathString(gd, options) {
 function getBaptismString(gd, options) {
   let dataString = getFullName(gd);
 
-  if (gd.role && gd.role == Role.Parent) {
-    dataString += "'s " + getPrimaryPersonChildTerm(gd);
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (primaryPersonName) {
-      dataString += " " + primaryPersonName;
-    }
+  if (gd.role && gd.role != Role.Primary) {
+    dataString += "'s " + getPrimaryPersonTermAndName(gd);
   }
 
   dataString += " baptism";
@@ -931,17 +921,21 @@ function getBaptismString(gd, options) {
 function getMarriageString(gd, options) {
   let dataString = "";
 
-  if (gd.role && gd.role == Role.Parent) {
-    let possessiveName = getFullName(gd) + "'s";
-    dataString += possessiveName + " " + getPrimaryPersonChildTerm(gd);
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    if (primaryPersonName) {
-      dataString += " " + primaryPersonName;
-    }
+  if (gd.role && gd.role != Role.Primary) {
+    if (gd.role == Role.Parent) {
+      let possessiveName = getFullName(gd) + "'s";
+      dataString += possessiveName + " " + getPrimaryPersonChildTerm(gd);
+      let primaryPersonName = gd.inferPrimaryPersonFullName();
+      if (primaryPersonName) {
+        dataString += " " + primaryPersonName;
+      }
 
-    let age = cleanAge(gd.primaryPersonAge);
-    if (age) {
-      dataString += " (" + age + ")";
+      let age = cleanAge(gd.primaryPersonAge);
+      if (age) {
+        dataString += " (" + age + ")";
+      }
+    } else {
+      dataString += getFullName(gd) + " in record for another person's";
     }
   } else {
     dataString += getFullName(gd);
@@ -993,17 +987,21 @@ function getMarriageString(gd, options) {
 
 function getBurialString(gd, options) {
   let dataString = getFullName(gd);
-  if (gd.role && gd.role == Role.Parent) {
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    dataString += "'s " + getPrimaryPersonChildTerm(gd);
-    if (primaryPersonName) {
-      dataString += " " + primaryPersonName;
-    }
-  } else if (gd.role && gd.role == Role.Spouse) {
-    let primaryPersonName = gd.inferPrimaryPersonFullName();
-    dataString += "'s " + getPrimaryPersonSpouseTerm(gd);
-    if (primaryPersonName) {
-      dataString += " " + primaryPersonName;
+  if (gd.role && gd.role != Role.Primary) {
+    if (gd.role == Role.Parent) {
+      let primaryPersonName = gd.inferPrimaryPersonFullName();
+      dataString += "'s " + getPrimaryPersonChildTerm(gd);
+      if (primaryPersonName) {
+        dataString += " " + primaryPersonName;
+      }
+    } else if (gd.role == Role.Spouse) {
+      let primaryPersonName = gd.inferPrimaryPersonFullName();
+      dataString += "'s " + getPrimaryPersonSpouseTerm(gd);
+      if (primaryPersonName) {
+        dataString += " " + primaryPersonName;
+      }
+    } else {
+      dataString += "'s " + getPrimaryPersonTermAndName(gd);
     }
   } else {
     if (gd.parents) {
