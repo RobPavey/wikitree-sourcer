@@ -59,6 +59,8 @@ function buildFsPlainCitations(result, ed, type, options) {
   result.citationsString = citationsString;
   result.citationsStringType = type;
   result.citationCount = result.sources.length;
+
+  result.success = true;
 }
 
 function inferBestEventDateForCompare(gd) {
@@ -338,11 +340,12 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
   let includedCitation = false;
   let includedNotes = false;
 
+  // If it is an FS Source then we only want the full FS citation and not the title.
+  const isFsSource = /^https?\:\/\/familysearch\.org\/ark\:\/\d+\/1\:1\:[A-Z0-1\-]+.*$/.test(source.uri);
+
   let citationText = "";
 
-  // Harry A Pavey in the 1871 England Census
-
-  if (cleanTitleText.includes(" in the ")) {
+  if (isFsSource || cleanTitleText.includes(" in the ")) {
     citationText += cleanCitationText;
     includedCitation = true;
   } else {
@@ -382,7 +385,7 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     }
   }
 
-  if (!includedTitle && !citationText.includes(cleanTitleText)) {
+  if (!isFsSource && !includedTitle && !citationText.includes(cleanTitleText)) {
     addSeparationWithinBody(", ");
     citationText += cleanTitleText;
   }
@@ -558,45 +561,94 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
 }
 
 async function buildSourcerCitations(result, type, options) {
-  if (options.addMerge_fsAllCitations_excludeOtherRoleSources) {
-    let newSources = [];
-    for (let source of result.sources) {
-      if (source.citationObject) {
-        const gd = source.generalizedData;
-        if (gd && gd.role && gd.role != Role.Primary) {
-          // exclude this one
+  try {
+    if (options.addMerge_fsAllCitations_excludeOtherRoleSources) {
+      let newSources = [];
+      for (let source of result.sources) {
+        if (source.citationObject) {
+          const gd = source.generalizedData;
+          if (gd && gd.role && gd.role != Role.Primary) {
+            // exclude this one
+          } else {
+            newSources.push(source);
+          }
         } else {
           newSources.push(source);
         }
-      } else {
-        newSources.push(source);
       }
+      result.sources = newSources;
     }
-    result.sources = newSources;
-  }
 
-  sortSourcesUsingFsSortKeysAndFetchedRecords(result);
+    if (options.addMerge_fsAllCitations_excludeRetiredSources != "never") {
+      let newSources = [];
+      for (let source of result.sources) {
+        let removeSource = false;
+        let ed = source.extractedData;
+        // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
+        if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
+          if (options.addMerge_fsAllCitations_excludeRetiredSources == "always") {
+            removeSource = true;
+          } else {
+            // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
+            // but the current URL is store in either forwardPersonToArk or extData in this case.
+            let currentSourceUrl = ed.forwardPersonToArk;
+            if (!currentSourceUrl) {
+              if (ed.extData && ed.extData.startsWith("http")) {
+                currentSourceUrl = ed.extData;
+              }
+            }
 
-  if (type == "source") {
-    generateSourcerCitationsStringForTypeSource(result, options);
-  } else {
-    let groupCitations = options.addMerge_fsAllCitations_groupCitations;
+            if (currentSourceUrl) {
+              currentSourceUrl = currentSourceUrl.replace("www.familysearch.org", "familysearch.org");
 
-    if (groupCitations) {
-      groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative
-      sortFacts(result);
-      generateSourcerCitationsStringForFacts(result, type, options);
+              //console.log("currentSourceUrl = " + currentSourceUrl);
+
+              for (let otherSource of result.sources) {
+                //console.log("otherSource.uri = " + otherSource.uri);
+                if (otherSource.uri == currentSourceUrl) {
+                  removeSource = true;
+                  //console.log("removing duplicate source");
+                  break;
+                }
+              }
+            }
+          }
+        }
+
+        if (!removeSource) {
+          newSources.push(source);
+        }
+      }
+      result.sources = newSources;
+    }
+
+    sortSourcesUsingFsSortKeysAndFetchedRecords(result);
+
+    if (type == "source") {
+      generateSourcerCitationsStringForTypeSource(result, options);
     } else {
-      if (type == "inline") {
-        generateSourcerCitationsStringForTypeInline(result, options);
+      let groupCitations = options.addMerge_fsAllCitations_groupCitations;
+
+      if (groupCitations) {
+        groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative
+        sortFacts(result);
+        generateSourcerCitationsStringForFacts(result, type, options);
       } else {
-        // must be narrative
-        generateSourcerCitationsStringForTypeNarrative(result, options);
+        if (type == "inline") {
+          generateSourcerCitationsStringForTypeInline(result, options);
+        } else {
+          // must be narrative
+          generateSourcerCitationsStringForTypeNarrative(result, options);
+        }
       }
     }
-  }
 
-  result.citationsStringType = type;
+    result.citationsStringType = type;
+    result.success = true;
+  } catch (error) {
+    result.success = false;
+    result.errorMessage = error.message;
+  }
 }
 
 export { buildSourcerCitations, buildFsPlainCitations };

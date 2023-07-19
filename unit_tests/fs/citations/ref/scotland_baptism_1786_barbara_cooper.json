@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper, 1786.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper, 1786.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>Barbara Cooper, 1786.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper baptism on 6 Apr 1786 (born 14 Apr 1786), daughter of William Cooper & Barbara Cooper, in Liberton, Midlothian, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper baptism on 6 Apr 1786 (born 14 Apr 1786), daughter of William Cooper & Barbara Cooper, in Liberton, Midlothian, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>Barbara Cooper baptism on 6 Apr 1786 (born 14 Apr 1786), daughter of William Cooper & Barbara Cooper, in Liberton, Midlothian, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nName: Barbara Cooper; Christening Date: 6 Apr 1786; Christening Place: Liberton, Midlothian, Scotland; Birth Date: 14 Apr 1786; [https://familysearch.org/ark:/61903/1:2:MBNY-X3Z Forward To Ark]; Forward To Unique Id: 1000464475077.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nName: Barbara Cooper; Christening Date: 6 Apr 1786; Christening Place: Liberton, Midlothian, Scotland; Birth Date: 14 Apr 1786; [https://familysearch.org/ark:/61903/1:2:MBNY-X3Z Forward To Ark]; Forward To Unique Id: 1000464475077.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>Name: Barbara Cooper; Christening Date: 6 Apr 1786; Christening Place: Liberton, Midlothian, Scotland; Birth Date: 14 Apr 1786; [https://familysearch.org/ark:/61903/1:2:MBNY-X3Z Forward To Ark]; Forward To Unique Id: 1000464475077.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Barbara Cooper\n|-\n| Christening Date || 6 Apr 1786\n|-\n| Christening Place || Liberton, Midlothian, Scotland\n|-\n| Birth Date || 14 Apr 1786\n|-\n| Forward To Ark || https://familysearch.org/ark:/61903/1:2:MBNY-X3Z\n|-\n| Forward To Unique Id || 1000464475077\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Barbara Cooper\n|-\n| Christening Date || 6 Apr 1786\n|-\n| Christening Place || Liberton, Midlothian, Scotland\n|-\n| Birth Date || 14 Apr 1786\n|-\n| Forward To Ark || https://familysearch.org/ark:/61903/1:2:MBNY-X3Z\n|-\n| Forward To Unique Id || 1000464475077\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>Name: Barbara Cooper; Christening Date: 6 Apr 1786; Christening Place: Liberton, Midlothian, Scotland; Birth Date: 14 Apr 1786; [https://familysearch.org/ark:/61903/1:2:MBNY-X3Z Forward To Ark]; Forward To Unique Id: 1000464475077.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper, 1786.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper, 1786.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>Barbara Cooper, 1786.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper baptism on 6 Apr 1786 (born 14 Apr 1786), daughter of William Cooper & Barbara Cooper, in Liberton, Midlothian, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper baptism on 6 Apr 1786 (born 14 Apr 1786), daughter of William Cooper & Barbara Cooper, in Liberton, Midlothian, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>Barbara Cooper baptism on 6 Apr 1786 (born 14 Apr 1786), daughter of William Cooper & Barbara Cooper, in Liberton, Midlothian, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper, 1786.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>\nBarbara Cooper, 1786.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)<br/>Barbara Cooper, 1786.",
+    "type": "source"
+  }
+}

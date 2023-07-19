@@ -75,6 +75,11 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:F3VH-9VV",
   },
   {
+    // this is a "retired" source with a forward URL in extData
+    caseName: "england_baptism_1838_george_newberry",
+    url: "https://www.familysearch.org/ark:/61903/1:1:J9VK-1JB",
+  },
+  {
     caseName: "england_baptism_1902_ella_giles",
     url: "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW",
   },
@@ -187,6 +192,11 @@ const regressionData = [
   {
     caseName: "puerto_rico_marriage_1928_leonida_vega",
     url: "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9?from=lynx1UIV8&treeref=L8PL-J4M",
+  },
+  {
+    // this is a "retired" source
+    caseName: "scotland_baptism_1786_barbara_cooper",
+    url: "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQT",
   },
   {
     caseName: "scotland_baptism_1854_david_hunter",

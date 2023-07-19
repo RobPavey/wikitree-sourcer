@@ -227,94 +227,96 @@ async function fsGetAllCitations(input) {
   let result = { success: false };
 
   if (sourcesObj.success) {
-    let sources = sourcesObj.dataObj.sources;
+    try {
+      let sources = sourcesObj.dataObj.sources;
 
-    result.sources = [];
+      result.sources = [];
 
-    for (let source of sources) {
-      //console.log("FS source is:");
-      //console.log(source);
+      for (let source of sources) {
+        //console.log("FS source is:");
+        //console.log(source);
 
-      let sourceObj = {};
+        let sourceObj = {};
 
-      function addField(fieldName) {
-        if (source[fieldName]) {
-          sourceObj[fieldName] = source[fieldName];
+        function addField(fieldName) {
+          if (source[fieldName]) {
+            sourceObj[fieldName] = source[fieldName];
+          }
         }
-      }
-      addField("citation");
-      addField("title");
-      addField("id");
-      addField("notes");
+        addField("citation");
+        addField("title");
+        addField("id");
+        addField("notes");
 
-      if (source.uri && source.uri.uri) {
-        sourceObj.uri = source.uri.uri;
+        if (source.uri && source.uri.uri) {
+          sourceObj.uri = source.uri.uri;
 
-        if (source.uriUpdatedOn) {
-          let date = new Date(source.uriUpdatedOn);
-          const options = { day: "numeric", month: "long", year: "numeric" };
-          sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
+          if (source.uriUpdatedOn) {
+            let date = new Date(source.uriUpdatedOn);
+            const options = { day: "numeric", month: "long", year: "numeric" };
+            sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
+          }
         }
-      }
 
-      if (options.addMerge_fsAllCitations_excludeNonFsSources) {
-        // could check whether uri is of right form instead
-        if (source.sourceType != "FSREADONLY") {
+        if (options.addMerge_fsAllCitations_excludeNonFsSources) {
+          // could check whether uri is of right form instead
+          if (source.sourceType != "FSREADONLY") {
+            continue;
+          }
+          if (!sourceObj.uri) {
+            continue;
+          }
+          let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
+          if (validLinkIndex == -1) {
+            continue;
+          }
+        }
+
+        // ignore some useless sources
+        if (source.citation == "Ancestry Family Tree" && source.title == "Ancestry Family Trees" && !source.notes) {
           continue;
         }
-        if (!sourceObj.uri) {
-          continue;
+
+        if (source.event) {
+          if (source.event.sortKey) {
+            sourceObj.sortKey = source.event.sortKey;
+          }
+          if (source.event.sortYear) {
+            sourceObj.sortYear = source.event.sortYear;
+          }
+          if (source.event.displayDate) {
+            sourceObj.eventDate = source.event.displayDate;
+          }
         }
-        let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
-        if (validLinkIndex == -1) {
-          continue;
+
+        if (!sourceObj.eventDate && !sourceObj.sortYear) {
+          const inferredEventDate = inferEventDate(source);
+          if (inferredEventDate) {
+            sourceObj.eventDate = inferredEventDate;
+          }
         }
+
+        result.sources.push(sourceObj);
       }
 
-      // ignore some useless sources
-      if (source.citation == "Ancestry Family Tree" && source.title == "Ancestry Family Trees" && !source.notes) {
-        continue;
-      }
+      let citationType = options.addMerge_fsAllCitations_citationType;
 
-      if (source.event) {
-        if (source.event.sortKey) {
-          sourceObj.sortKey = source.event.sortKey;
-        }
-        if (source.event.sortYear) {
-          sourceObj.sortYear = source.event.sortYear;
-        }
-        if (source.event.displayDate) {
-          sourceObj.eventDate = source.event.displayDate;
-        }
+      switch (citationType) {
+        case "fsPlainInline":
+          buildFsPlainCitations(result, ed, "inline", options);
+          break;
+        case "fsPlainSource":
+          buildFsPlainCitations(result, ed, "source", options);
+          break;
+        case "narrative":
+        case "inline":
+        case "source":
+          await getSourcerCitations(result, ed, gd, citationType, options);
+          break;
       }
-
-      if (!sourceObj.eventDate && !sourceObj.sortYear) {
-        const inferredEventDate = inferEventDate(source);
-        if (inferredEventDate) {
-          sourceObj.eventDate = inferredEventDate;
-        }
-      }
-
-      result.sources.push(sourceObj);
+    } catch (error) {
+      result.errorMessage = error.message;
     }
-
-    let citationType = options.addMerge_fsAllCitations_citationType;
-
-    switch (citationType) {
-      case "fsPlainInline":
-        buildFsPlainCitations(result, ed, "inline", options);
-        break;
-      case "fsPlainSource":
-        buildFsPlainCitations(result, ed, "source", options);
-        break;
-      case "narrative":
-      case "inline":
-      case "source":
-        await getSourcerCitations(result, ed, gd, citationType, options);
-        break;
-    }
-
-    result.success = true;
   } else {
     result.errorMessage = "Could not get list of sources. Try running from the 'SOURCES' page.";
   }

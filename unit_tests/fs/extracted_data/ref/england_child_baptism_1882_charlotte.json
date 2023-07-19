@@ -16,6 +16,7 @@
   "relatedPersonGivenName": "Charles",
   "relatedPersonSurname": "Plume",
   "relatedPersonGender": "male",
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"St. Andrew, Enfield, Middlesex, England\", \"EVENT_DATE_ALT_ORIG\": \"28 May 1882\", \"PR_SEX_CODE_ALT_ORIG\": \"M\"}",
   "referenceData": {
     "digitalFilmNumber": "007568829",
     "filmNumber": "2214171",

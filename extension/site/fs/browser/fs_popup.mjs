@@ -201,7 +201,7 @@ async function fsGetAllCitationsAction(data) {
     console.log(e);
     keepPopupOpenForDebug();
 
-    const message = "An exception occurred getfing sources.";
+    const message = "An exception occurred getting sources.";
     displayMessageWithIcon("warning", message, "");
   }
 }

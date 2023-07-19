@@ -1413,7 +1413,7 @@ function addRecordDataForFact(result, fact, factType) {
 }
 
 // Identifying a field:
-//  fieldFsType, fieldGcType
+//  fieldFsType, fieldGcType, fieldCdsType
 //  fieldFsTypePrefix, fieldGcTypePrefix
 //  sourceSection - the section containing fields ("topLevel", "primaryPerson", "primaryFact", "otherFact", "relationship")
 // Selecting a value in the field (if none specified first is used)
@@ -1425,7 +1425,7 @@ function addRecordDataForFact(result, fact, factType) {
 //  dataField
 //  referenceDataField
 // if none of the above exist then the field is ignored
-// As soon a a match is found later entries in fieldData are ignored?
+// As soon as a match is found later entries in fieldData are ignored?
 
 const fieldData = [
   // data and record data fields
@@ -1455,6 +1455,8 @@ const fieldData = [
   { fieldFsType: "ExtRecordId", dataField: "externalRecordId" },
   { fieldFsType: "ExtRecordType", dataField: "externalRecordType" },
   { fieldFsType: "ExtUir", dataField: "externalUir" },
+  { fieldFsType: "ExtData", dataField: "extData" },
+  { fieldCdsType: "ForwardPersonToArk", dataField: "forwardPersonToArk" },
 
   { fieldFsType: "ImageArk", dataField: "fsImageUrl" },
   { fieldFsType: "ImageNumber", dataField: "fsImageNumber" },
@@ -1562,7 +1564,6 @@ const fieldData = [
   { fieldFsType: "RelationshipToHeadCode" },
   { fieldFsType: "SourceHouseholdId" },
 
-  { fieldFsType: "ExtData" },
   { fieldFsType: "ExtLineNbrSuf" },
   { fieldFsType: "ExtOccupationCode" },
   { fieldFsType: "ExtPrBirPlaceCode" },
@@ -1647,6 +1648,21 @@ function doesFieldDataMatch(entry, result, field, sourceSection) {
     if (field.type && field.type.startsWith(fsTypePrefix)) {
       let fieldFsType = field.type.substring(fsTypePrefix.length);
       if (fieldFsType == entry.fieldFsType) {
+        match = true;
+      }
+    }
+    if (!match) {
+      return false;
+    }
+  }
+
+  if (entry.fieldCdsType) {
+    let match = false;
+    // e.g. https://cds.familysearch.org/ForwardPersonToArk
+    const fsCdsTypePrefix = "https://cds.familysearch.org/";
+    if (field.type && field.type.startsWith(fsCdsTypePrefix)) {
+      let fieldCdsType = field.type.substring(fsCdsTypePrefix.length);
+      if (fieldCdsType == entry.fieldCdsType) {
         match = true;
       }
     }

@@ -177,8 +177,11 @@ const GD = {
 
       // grandchildren
       grandchild: "grandchild",
+      "grand child": "grandchild",
       granddaughter: "granddaughter",
+      "grand daughter": "granddaughter",
       grndau: "granddaughter",
+      "grand son": "grandson",
       grandson: "grandson",
       grnson: "grandson",
       // parents
@@ -202,8 +205,10 @@ const GD = {
       stpma: "stepmother",
       // grandparents
       grandfather: "grandfather",
+      "grand father": "grandfather",
       granpa: "grandfather",
       grandmother: "grandmother",
+      "grand mother": "grandmother",
       granma: "grandmother",
 
       // siblings

@@ -1,0 +1,951 @@
+{
+  "id" : "r_686304092",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MB4H-23S?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MB4H-23S?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MB4H-23S"
+    }
+  },
+  "description" : "#sd_p_10859131946",
+  "persons" : [ {
+    "id" : "p_10859131946",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "e587b644-05d3-43b0-9abb-dad03558b47a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female"
+        }, {
+          "id" : "8d2e5870-a218-44e1-8cc8-bc70d02c4eec",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1631734328803
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/XTTZ-SQT?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/MB4H-23S?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQT" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Barbara Cooper",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Barbara",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "aceb5d85-52eb-4446-9e6b-cabc6df3e551",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "BARBARA"
+            }, {
+              "id" : "a9e40b8d-fe0c-449a-b894-4d29482ef51b",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1631734328769
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Barbara"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Cooper",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "451bc82e-30cf-43ce-bab4-4990851dbafe",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "COOPER"
+            }, {
+              "id" : "e7077f5e-778b-43fe-81af-70b277651466",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1631734328769
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Cooper"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "6c9e5d6f-dc94-42e1-8c61-36286fe48ad6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1631734328764
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "BARBARA COOPER"
+          }, {
+            "id" : "04d05d20-3323-453e-86f0-0ed8ca85839d",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1631734328769
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Barbara Cooper"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Christening",
+      "date" : {
+        "original" : "6 Apr 1786",
+        "formal" : "+1786-04-06",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "6e7be94b-3d83-4b49-b825-ebfb686c067e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1631734328762
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "6 4 1786"
+          }, {
+            "id" : "a29e12dd-887a-4f9c-b316-f17c61a8a887",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1581456555075
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "6 Apr 1786",
+            "resource" : "+1786-04-06"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "15660f3b-4ba2-4efa-8895-584168352444",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "4"
+          }, {
+            "id" : "0bce7749-f89b-4597-bef1-fd7ce0404920",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1581456555075
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "4"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "d89bfbb1-371c-4957-b0c0-9ae6b81ee5a9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "6"
+          }, {
+            "id" : "5cfe2712-da7c-476e-a015-0c971615a159",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1581456555075
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "f1a7b2d0-4c78-414f-af16-15e29dec17d9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1786"
+          }, {
+            "id" : "e2d749dc-5522-4be9-ae4f-6b8210ece2de",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1581456555075
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1786"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Liberton, Midlothian, Scotland",
+        "description" : "#place_1617609",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "fe6e7800-559f-4f54-aba5-a412f767f818",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_SUP",
+            "text" : "Liberton, M-Loth County, Scotland",
+            "qualifiers" : [ {
+              "value" : "SUP",
+              "name" : "http://familysearch.org/types/qualifiers/Info"
+            } ]
+          }, {
+            "id" : "bfad7df7-d20d-421a-b133-661ef9c9cabe",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Liberton, Midlothian, Scotland"
+          }, {
+            "id" : "7fedee5a-9b9a-4c43-bd46-a8c01568a212",
+            "confidence" : "http://confidence/100",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1631802105107
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Liberton, Midlothian, Scotland",
+            "resource" : "https://www.familysearch.org/platform/places/description/1617609",
+            "qualifiers" : [ {
+              "value" : "913, 926, 910",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "e3808876-db5f-4c33-89e0-2d44c1ed05fc",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Christening"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "14 Apr 1786",
+        "formal" : "+1786-04-14",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "df01b115-ef4c-4612-a6e3-a3c79c596a97",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1631734328763
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "14 4 1786"
+          }, {
+            "id" : "7e5bf3ce-caf3-4b57-a67f-631effa47953",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1631734328763
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "14 Apr 1786",
+            "resource" : "+1786-04-14"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "39e5d260-84bd-42bc-8a63-6cdf41337538",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "4"
+          }, {
+            "id" : "4de7abd0-be21-4f9f-863a-ff39ac238ef6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1631734328764
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_MONTH",
+            "text" : "4"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "a70e18b0-ce07-4618-b8a7-f247d9e82495",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "14"
+          }, {
+            "id" : "5c9f242d-d869-48c1-bf8a-77171beecc00",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1631734328764
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DAY",
+            "text" : "14"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "a336d1bc-8af4-4ccd-9c75-8dfdcec7a9c7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1786"
+          }, {
+            "id" : "71d177c1-0d92-41d8-847b-9d0b364620ee",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1631734328764
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1786"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "type" : "https://cds.familysearch.org/ForwardPersonToArk",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "FS_PERSON_ARK_FW",
+        "text" : "https://www.familysearch.org/ark:/61903/1:1:X1B6-5ZQ"
+      } ]
+    } ]
+  }, {
+    "id" : "p_10859131947",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "43012b6e-7a4f-4c9c-804e-7ff0e6dd4989",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1581456555098
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/XTTZ-SQY?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/MB4H-23S?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQY" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "William Cooper",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "27adfc2a-b6f8-4938-88c6-22becc905f0e",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "WILLIAM"
+            }, {
+              "id" : "d8cfe22e-bdf2-4a83-9301-a46f4aba840a",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1631734328774
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "William"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Cooper",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "6c3eeddd-0eab-4201-ba61-319d99df7e8f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "COOPER"
+            }, {
+              "id" : "ccd9ba12-239a-42d4-af40-f05f3988350b",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1631734328774
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Cooper"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "6a87a0d3-1fd3-44aa-9124-a3aa42184797",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1631734328769
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "WILLIAM COOPER"
+          }, {
+            "id" : "0250f38f-1cfb-477c-ba7f-110a192c6118",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1631734328774
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "William Cooper"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "type" : "https://cds.familysearch.org/ForwardPersonToArk",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "FS_PERSON_ARK_FW",
+        "text" : "https://www.familysearch.org/ark:/61903/1:1:X1B6-5Z7"
+      } ]
+    } ]
+  }, {
+    "id" : "p_10859131948",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "7a29d1e6-5f4a-467a-9463-337c3aac0d9c",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1581456555098
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/XTTZ-SQB?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/MB4H-23S?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQB" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Barbara Cooper",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Barbara",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "49c80ccf-9dc7-4bd6-b714-4fc14c8d9495",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "BARBARA"
+            }, {
+              "id" : "b5401edd-c081-491b-8c09-11fff5e3524a",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1631734328779
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Barbara"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Cooper",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "f364c5d3-4456-462a-a1ad-9cc14e2212d9",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "COOPER"
+            }, {
+              "id" : "e868094e-2afa-4c19-89c5-3139261c5373",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1631734328779
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Cooper"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "6cd435da-38a1-42a7-8e8b-32f2391dbaa6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1631734328774
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "BARBARA COOPER"
+          }, {
+            "id" : "82d2b8b9-69f6-4934-bf45-85e6980a2823",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1631734328779
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Barbara Cooper"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "type" : "https://cds.familysearch.org/ForwardPersonToArk",
+      "values" : [ {
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "FS_PERSON_ARK_FW",
+        "text" : "https://www.familysearch.org/ark:/61903/1:1:X1B6-5ZW"
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/P7X2-3RCS",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_10859131947",
+      "resourceId" : "p_10859131947"
+    },
+    "person2" : {
+      "resource" : "#p_10859131946",
+      "resourceId" : "p_10859131946"
+    }
+  }, {
+    "id" : "MM9.1.6/P7X2-3RC3",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_10859131948",
+      "resourceId" : "p_10859131948"
+    },
+    "person2" : {
+      "resource" : "#p_10859131946",
+      "resourceId" : "p_10859131946"
+    }
+  }, {
+    "id" : "MM9.1.6/P7X2-3RCQ",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_10859131947",
+      "resourceId" : "p_10859131947"
+    },
+    "person2" : {
+      "resource" : "#p_10859131948",
+      "resourceId" : "p_10859131948"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1771030",
+    "about" : "https://www.familysearch.org/platform/records/collections/1771030",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223587081,
+    "modified" : 1658155900533,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Scotland",
+        "description" : "#place_1986318"
+      },
+      "temporal" : {
+        "original" : "1564/1950",
+        "formal" : "1564/1950"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Scotland Births and Baptisms, 1564-1950"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1771030" ]
+    }
+  }, {
+    "id" : "src_r_686304092",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:MB4H-23S",
+    "componentOf" : {
+      "description" : "#sd_c_1771030"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1581456555594,
+    "modified" : 1658155900533,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Liberton, Midlothian, Scotland",
+        "description" : "#place_1617609"
+      },
+      "temporal" : {
+        "original" : "6 Apr 1786"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "replacedBy" : "https://familysearch.org/ark:/61903/1:2:MBNY-X3Z",
+    "citations" : [ {
+      "value" : "\"Scotland Births and Baptisms, 1564-1950\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:MB4H-23S : 16 September 2021), Entry for Barbara Cooper, 1786."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Barbara Cooper, \"Scotland Births and Baptisms, 1564-1950\""
+    } ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1000236464131" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:MB4H-23S" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1771030?arkName=1:2:MB4H-23S"
+    },
+    "statuses" : [ "http://gedcomx.org/Deprecated" ]
+  }, {
+    "id" : "sd_p_10859131946",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQT",
+    "componentOf" : {
+      "description" : "#src_r_686304092"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "replacedBy" : "https://www.familysearch.org/ark:/61903/1:1:X1B6-5ZQ",
+    "citations" : [ {
+      "value" : "\"Scotland Births and Baptisms, 1564-1950\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQT : 16 September 2021), Barbara Cooper, 1786."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Barbara Cooper, \"Scotland Births and Baptisms, 1564-1950\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQT" ]
+    },
+    "statuses" : [ "http://gedcomx.org/Deprecated" ]
+  }, {
+    "id" : "sd_p_10859131947",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQY",
+    "componentOf" : {
+      "description" : "#src_r_686304092"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "replacedBy" : "https://www.familysearch.org/ark:/61903/1:1:X1B6-5Z7",
+    "citations" : [ {
+      "value" : "\"Scotland Births and Baptisms, 1564-1950\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQY : 16 September 2021), William Cooper in entry for Barbara Cooper, 1786."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "William Cooper in entry for Barbara Cooper, \"Scotland Births and Baptisms, 1564-1950\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQY" ]
+    },
+    "statuses" : [ "http://gedcomx.org/Deprecated" ]
+  }, {
+    "id" : "sd_p_10859131948",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQB",
+    "componentOf" : {
+      "description" : "#src_r_686304092"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "replacedBy" : "https://www.familysearch.org/ark:/61903/1:1:X1B6-5ZW",
+    "citations" : [ {
+      "value" : "\"Scotland Births and Baptisms, 1564-1950\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQB : 16 September 2021), Barbara Cooper in entry for Barbara Cooper, 1786."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Barbara Cooper in entry for Barbara Cooper, \"Scotland Births and Baptisms, 1564-1950\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQB" ]
+    },
+    "statuses" : [ "http://gedcomx.org/Deprecated" ]
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/1617609",
+      "resourceId" : "place_1617609"
+    }
+  }, {
+    "id" : "place_1986318",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986318" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "a62c31a9-003a-4489-94fd-64f747328dca",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{ \"EVENT_PLACE_ALT_ORIG\": \", LIBERTON, MIDLOTHIAN, SCOTLAND\", \"EVENT_DATE_ALT_ORIG\": \"06 Apr 1786\", \"PR_BIR_DATE_ALT_ORIG\": \"14 Mar 1786\", \"PR_SEX_CODE_ALT_ORIG\": \"F\", \"FS_FILM_NBR_ALT_ORIG\": \"1067783\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "4a2f928f-e746-4f3a-9456-7c786482cbce",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Liberton, Midlothian, Scotland"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "18a63fb5-9056-4095-b787-73ea4daa4a17",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "1771030"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "f4580b03-8df6-4bf8-94a8-6985551234ed",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "8059437"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "id" : "032fed87-0c79-4c00-98dc-11514515b3b4",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "103146"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "ebf2a905-d70e-4196-839d-ca368d7c1c70",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ForwardToArk",
+    "values" : [ {
+      "id" : "a36c2b11-c5a0-4083-9e45-0616774b033d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ARK_FW",
+      "text" : "https://familysearch.org/ark:/61903/1:2:MBNY-X3Z"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "b3c53831-77d2-4422-8b50-8d77ada40dfb",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "Scotland-VR"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "id" : "9405241b-dbd4-4c01-b9cf-794294624907",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "14633913"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "dd7d600c-ac70-490b-9465-31b4ee1187cc",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0103146_C11693-6X_1786_04_06_1000236464131"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfOrigin",
+    "values" : [ {
+      "id" : "87f01ea2-10c0-4a39-9b74-95ce5e2ba5ff",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_ORIGIN",
+      "text" : "VR"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
+    "values" : [ {
+      "id" : "26e94562-a67f-481f-8c44-7f37f0901773",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "C11693-6"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "61d5554f-00e9-440b-8ba4-658a90b5553b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "1000236464131"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ForwardToUniqueId",
+    "values" : [ {
+      "id" : "f92db83c-b334-469e-9927-87cfe0b01c23",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID_FW",
+      "text" : "1000464475077"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "a2a760c1-760a-464c-beea-0114b2733950",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "DEPRECATED"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceComposite",
+    "values" : [ {
+      "id" : "4e09c662-7b20-4cf2-b9cb-ff9395cd5ce2",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_COMPOSITE_ORIG",
+      "text" : "2:185F6XP"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "2017bff1-32ab-4511-ad8a-043ce29f3217",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "7"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "id" : "dc359429-133f-4d12-ab15-940293dfd369",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "1067783"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "10"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "64488"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

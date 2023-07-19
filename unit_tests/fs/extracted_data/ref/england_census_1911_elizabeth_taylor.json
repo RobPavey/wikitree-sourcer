@@ -32,6 +32,7 @@
   "birthYear": "1842",
   "birthPlace": "Withycombe, Somersetshire",
   "age": "69",
+  "extData": "{\"address\": \"DITCH COTTAGE LUXBOROUGH WASHFORD\", \"name_concat\": \"EDWARD,TAYLOR|ELIZABETH,TAYLOR|RICHARD,TAYLOR\", \"no_of_rooms\": \"3 ROOMS\", \"image_upp_id\": \"GBC/1911/RG14/14131/0031\", \"rg14_look_up\": \"14131 0031 0031_03 00001\", \"rg78_look_up\": \"00844 0097 0108_60 00005\", \"year_of_birth\": \" 1842\", \"keywords_place\": \"WILLITON,LUXBOROUGH,DUNSTER,ENGLAND,Somerset\", \"where_born_full\": \"SOMERSET WITHYCOMBE\", \"working_at_home\": \"N\", \"census_reference\": \"RG14PN14131 RG78PN844 RD302 SD2 ED9 SN16\", \"rg78_code_number\": \" 844.0\", \"type_of_building\": \"PRIVATE HOUSE\", \"year_of_marriage\": \" 1864\", \"address_house_name\": \"DITCH COTTAGE\", \"image_upp_id_rg14_cover\": \"GBC/1911/RG14/14131/0000\", \"image_upp_id_rg78_cover\": \"GBC/1911/RG78/00844/0000\", \"piece_number_and_suffix\": \"14131\", \"image_upp_id_rg78_totals\": \"GBC/1911/RG78/00844/0097-TOTAL\", \"image_upp_id_rg14_address\": \"GBC/1911/RG14/14131/0032\", \"image_upp_id_rg78_details\": \"GBC/1911/RG78/00844/0097-DETAIL\", \"image_upp_id_rg78_summary\": \"GBC/1911/RG78/00844/0108\", \"image_upp_id_rg78_description\": \"GBC/1911/RG78/00844/0097-DESC\"}",
   "externalImageId": "GBC/1911/RG14/14131/0031&parentid=GBC/1911/RG14/14131/0031/2",
   "externalRecordId": "GBC/1911/RG14/14131/0031/2",
   "externalUir": "141310031",

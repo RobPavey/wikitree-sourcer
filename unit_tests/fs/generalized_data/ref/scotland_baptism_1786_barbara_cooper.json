@@ -1,0 +1,42 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Barbara Cooper",
+    "lastName": "Cooper",
+    "forenames": "Barbara"
+  },
+  "birthDate": {
+    "dateString": "14 Apr 1786",
+    "yearString": "1786"
+  },
+  "eventDate": {
+    "dateString": "6 Apr 1786",
+    "yearString": "1786"
+  },
+  "eventPlace": {
+    "placeString": "Liberton, Midlothian, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Cooper",
+        "forenames": "William",
+        "lastName": "Cooper"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Barbara Cooper",
+        "forenames": "Barbara",
+        "lastName": "Cooper"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1771030"
+  },
+  "hasValidData": true
+}

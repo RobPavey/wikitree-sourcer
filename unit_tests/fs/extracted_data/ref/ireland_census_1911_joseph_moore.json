@@ -28,6 +28,7 @@
   "birthYear": "1888",
   "birthPlace": "Belfast",
   "age": "23",
+  "extData": "023",
   "externalImageId": "nai001442165/",
   "extImageUrl": "http://www.census.nationalarchives.ie/reels/nai001442165/",
   "household": {
