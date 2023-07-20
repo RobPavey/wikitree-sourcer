@@ -34,6 +34,8 @@ import {
   isSafari,
 } from "./popup_menu_building.mjs";
 
+import { setupOptionsPageMenu } from "./popup_options.mjs";
+
 import { buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 var detectedSupportedSite = false;
@@ -74,6 +76,21 @@ function setupUnrecognizedSiteMenu() {
   message += "\n\nTry browsing to a wikitree.com person profile or a record page and try the extension there.";
 
   buildMinimalMenuWithMessage(message, {}, backFunction);
+}
+
+function setupUnrecogizedSiteOrOptionsPageMenu(activeTab) {
+  chrome.tabs.sendMessage(activeTab.id, { type: "isOptionsPage" }, function (response) {
+    let isOptions = false;
+    if (!chrome.runtime.lastError && response && response.success) {
+      isOptions = true;
+    }
+
+    if (isOptions) {
+      setupOptionsPageMenu(activeTab.id);
+    } else {
+      setupUnrecognizedSiteMenu();
+    }
+  });
 }
 
 function doesUrlMatchPattern(urlParts, patternParts) {
@@ -262,7 +279,7 @@ function initPopupGivenActiveTab(activeTab) {
 
   if (!siteName) {
     // the url will be blank if we don't have permission to the tab so we can't get site name
-    setupUnrecognizedSiteMenu();
+    setupUnrecogizedSiteOrOptionsPageMenu(activeTab);
     return;
   }
 

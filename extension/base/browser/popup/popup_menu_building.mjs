@@ -1189,17 +1189,19 @@ function setupDebugSubmenuMenu(data, backFunction) {
     setupDebugSubmenuMenu(data, backFunction);
   };
 
-  addMenuItem(menu, "Show extracted data", function (element) {
-    displayExtractedData(data, toHereBackFunction);
-  });
+  if (data) {
+    addMenuItem(menu, "Show extracted data", function (element) {
+      displayExtractedData(data, toHereBackFunction);
+    });
 
-  addMenuItem(menu, "Show generalized data", function (element) {
-    displayGeneralizedData(data, toHereBackFunction);
-  });
+    addMenuItem(menu, "Show generalized data", function (element) {
+      displayGeneralizedData(data, toHereBackFunction);
+    });
 
-  addMenuItem(menu, "Show saved person data", function (element) {
-    displaySavedPersonData(data, toHereBackFunction);
-  });
+    addMenuItem(menu, "Show saved person data", function (element) {
+      displaySavedPersonData(data, toHereBackFunction);
+    });
+  }
 
   if (!keepPopupOpen) {
     addMenuItem(menu, "Keep popup open for inspect", function (element) {
