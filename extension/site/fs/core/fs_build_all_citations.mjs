@@ -263,7 +263,9 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
       let priorityB = getEventPriority(sourceB);
       result = priorityA - priorityB;
     }
-    return result;
+    if (result != 0) {
+      return result;
+    }
   }
 
   // if one has a date and the other doesn't then the one with the date comes first
@@ -287,9 +289,30 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
     return 1;
   }
 
-  // to get consistent sorting sort by .uri
+  // to get consistent sorting sort by citation, then, title then uri
   // It is unlikely to get here if all sources have a sort key
   let result = 0;
+
+  if (sourceA.citation) {
+    if (sourceB.citation) {
+      result = sourceA.citation.localeCompare(sourceB.citation);
+    } else {
+      return -1;
+    }
+  } else if (sourceB.citation) {
+    return 1;
+  }
+
+  if (sourceA.title) {
+    if (sourceB.title) {
+      result = sourceA.title.localeCompare(sourceB.title);
+    } else {
+      return -1;
+    }
+  } else if (sourceB.title) {
+    return 1;
+  }
+
   if (sourceA.uri) {
     if (sourceB.uri) {
       result = sourceA.uri.localeCompare(sourceB.uri);

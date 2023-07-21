@@ -49,6 +49,7 @@ import {
   buildHouseholdTableString,
   buildCitationObjectForTable,
 } from "/base/browser/popup/popup_citation.mjs";
+import { getDefaultOptions } from "/base/core/options/options_database.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -193,6 +194,15 @@ async function fsGetAllCitationsAction(data) {
     let input = Object.assign({}, data);
     input.options = options;
     input.runDate = new Date();
+
+    if (saveUnitTestData) {
+      // if saving unit test data we don't want to exclude any sources
+      let testOptions = getDefaultOptions();
+      testOptions.addMerge_fsAllCitations_excludeRetiredSources = "never";
+      testOptions.addMerge_fsAllCitations_excludeNonFsSources = false;
+      testOptions.addMerge_fsAllCitations_excludeOtherRoleSources = false;
+      input.options = testOptions;
+    }
 
     let response = await fsGetAllCitations(input);
 

@@ -242,6 +242,12 @@ const regressionData = [
           addMerge_fsAllCitations_groupCitations: false,
         },
       },
+      {
+        variantName: "no_exclude_retired_sources",
+        optionOverrides: {
+          addMerge_fsAllCitations_excludeRetiredSources: "never",
+        },
+      },
     ],
   },
   {

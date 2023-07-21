@@ -1,0 +1,30 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": {
+    "name": {
+      "name": "Sally Wolstenholme",
+      "lastName": "Wolstenholme",
+      "forenames": "Sally"
+    },
+    "gender": "female"
+  },
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Mary",
+    "forenames": "Mary"
+  },
+  "eventDate": {
+    "dateString": "27 Mar 1831",
+    "yearString": "1831"
+  },
+  "eventPlace": {
+    "placeString": "Radcliffe, Lancashire, England, United Kingdom"
+  },
+  "collectionData": {
+    "id": "1473014"
+  },
+  "hasValidData": true
+}

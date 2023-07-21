@@ -7,19 +7,7 @@
 </ref>
 
 <ref>
-"Vermont Vital Records, 1760-1954", database with images, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:XF4B-51F : 19 February 2021), Edmund Prince and Jane Young, 1907.
-</ref>
-
-<ref>
-"Vermont, Town Clerk, Vital and Town Records, 1732-2005," database with images, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:QPQL-8HQ8 : 3 March 2021), Edmond Prince and Jane Young, 17 Jun 1907; citing Marriage, Vermont, United States, various town clerks and records divisions, Vermont; FHL microfilm 005487739.
-</ref>
-
-<ref>
-"Vermont, Town Clerk, Vital and Town Records, 1732-2005," database with images, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:QPQL-ZW54 : 3 March 2021), Edmond Prince and Jane Young, 17 Jun 1907; citing Marriage, Vermont, United States, various town clerks and records divisions, Vermont; FHL microfilm 005487739.
-</ref>
-
-<ref>
-"Vermont Vital Records, 1760-1954", database with images, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:XF7M-LMN : 19 February 2021), Edmund Prince and Jane Young, 1907.
+"Vermont, Town Clerk, Vital and Town Records, 1732-2005," database with images, ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:QPQ2-1PQD : 27 October 2022), Edmond Prince and Jeanne Lajeunesse or Gong, 17 Jun 1907; citing Marriage, Burlington, Chittenden, Vermont, United States, various town clerks and records divisions, Vermont; FHL microfilm 005487754.
 </ref>
 
 <ref>
@@ -27,7 +15,19 @@
 </ref>
 
 <ref>
-"Vermont, Town Clerk, Vital and Town Records, 1732-2005," database with images, ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:QPQ2-1PQD : 27 October 2022), Edmond Prince and Jeanne Lajeunesse or Gong, 17 Jun 1907; citing Marriage, Burlington, Chittenden, Vermont, United States, various town clerks and records divisions, Vermont; FHL microfilm 005487754.
+"Vermont Vital Records, 1760-1954", database with images, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:XF7M-LMN : 19 February 2021), Edmund Prince and Jane Young, 1907.
+</ref>
+
+<ref>
+"Vermont, Town Clerk, Vital and Town Records, 1732-2005," database with images, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:QPQL-ZW54 : 3 March 2021), Edmond Prince and Jane Young, 17 Jun 1907; citing Marriage, Vermont, United States, various town clerks and records divisions, Vermont; FHL microfilm 005487739.
+</ref>
+
+<ref>
+"Vermont, Town Clerk, Vital and Town Records, 1732-2005," database with images, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:QPQL-8HQ8 : 3 March 2021), Edmond Prince and Jane Young, 17 Jun 1907; citing Marriage, Vermont, United States, various town clerks and records divisions, Vermont; FHL microfilm 005487739.
+</ref>
+
+<ref>
+"Vermont Vital Records, 1760-1954", database with images, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:XF4B-51F : 19 February 2021), Edmund Prince and Jane Young, 1907.
 </ref>
 
 <ref>
@@ -63,5 +63,5 @@ Jeanne Lajeunesse Prince in entry for Roland Adelard Prince, "Massachusetts Stat
 </ref>
 
 <ref>
-"United States Census, 1940", database with images, ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940. (https://familysearch.org/ark:/61903/1:1:K7BT-DJ3 : 14 August 2018)
+"United States Census, 1940", database with images, ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940. (https://familysearch.org/ark:/61903/1:1:K7BT-DJ3 : 14 August 2018)
 </ref>

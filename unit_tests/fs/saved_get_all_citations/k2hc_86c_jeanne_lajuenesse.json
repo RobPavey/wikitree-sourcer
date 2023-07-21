@@ -1,33 +1,33 @@
 {
   "fsSources": [
     {
-      "id": "9BSQ-SN4",
-      "title": "Jeanne Lajeunesse in entry for Dorina M. Prince, \"Massachusetts State Vital Records, 1841-1925\"",
+      "id": "SMXX-NN5",
+      "title": "Jeanne Lajeunesse in entry for Marie Angelina Lauretta Prince, \"Massachusetts State Vital Records, 1841-1925\"",
       "titleUserContributed": false,
       "tombstoned": false,
-      "titleUpdatedBy": "cis.user.MM9V-5V2R",
-      "titleSubmittedBy": "cis.user.MM9V-5V2R",
-      "titleUpdatedOn": 1526766080035,
-      "citation": "\"Massachusetts State Vital Records, 1841-1925\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:FXVB-9NT : 15 November 2022), Jeanne Lajeunesse in entry for Dorina M. Prince, 1914.",
-      "citationUpdatedBy": "cis.user.MM9V-5V2R",
-      "citationSubmittedBy": "cis.user.MM9V-5V2R",
-      "citationUpdatedOn": 1526766080035,
+      "titleUpdatedBy": "cis.user.MM92-8YB3",
+      "titleSubmittedBy": "cis.user.MM92-8YB3",
+      "titleUpdatedOn": 1534257956333,
+      "citation": "\"Massachusetts State Vital Records, 1841-1925\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:23YJ-6JB : 1 September 2021), Jeanne Lajeunesse in entry for Marie Angelina Lauretta Prince, 1918.",
+      "citationUpdatedBy": "cis.user.MM92-8YB3",
+      "citationSubmittedBy": "cis.user.MM92-8YB3",
+      "citationUpdatedOn": 1534257956333,
       "uri": {
-        "uri": "https://familysearch.org/ark:/61903/1:1:FXVB-9NT"
+        "uri": "https://familysearch.org/ark:/61903/1:1:23YJ-6JB"
       },
-      "uriUpdatedBy": "cis.user.MM9V-5V2R",
-      "uriSubmittedBy": "cis.user.MM9V-5V2R",
-      "uriUpdatedOn": 1526766080035,
-      "notesUpdatedBy": "cis.user.MM9V-5V2R",
-      "notesSubmittedBy": "cis.user.MM9V-5V2R",
-      "notesUpdatedOn": 1526766080035,
-      "updatedOn": 1526766080035,
-      "updatedBy": "cis.user.MM9V-5V2R",
-      "submittedBy": "cis.user.MM9V-5V2R",
-      "createdOn": 1526766080035,
-      "createdBy": "cis.user.MM9V-5V2R",
+      "uriUpdatedBy": "cis.user.MM92-8YB3",
+      "uriSubmittedBy": "cis.user.MM92-8YB3",
+      "uriUpdatedOn": 1534257956333,
+      "notesUpdatedBy": "cis.user.MM92-8YB3",
+      "notesSubmittedBy": "cis.user.MM92-8YB3",
+      "notesUpdatedOn": 1534257956333,
+      "updatedOn": 1534257956333,
+      "updatedBy": "cis.user.MM92-8YB3",
+      "submittedBy": "cis.user.MM92-8YB3",
+      "createdOn": 1534257956333,
+      "createdBy": "cis.user.MM92-8YB3",
       "sourceType": "FSREADONLY",
-      "lang": "en_US",
+      "lang": "en_US,EN;Q=0.9",
       "evidence": {
         "facts": [
           {
@@ -48,11 +48,11 @@
         ]
       },
       "event": {
-        "originalDate": "+1914-09-14",
-        "displayDate": "14 September 1914",
-        "eventDate": "+1914-09-14",
-        "sortYear": "1914",
-        "sortKey": "C19140914GC19140914",
+        "originalDate": "+1918-04-29",
+        "displayDate": "29 April 1918",
+        "eventDate": "+1918-04-29",
+        "sortYear": "1918",
+        "sortKey": "C19180429GC19180429",
         "eventPlace": "New Bedford, Bristol, Massachusetts, United States",
         "factType": "Birth"
       },
@@ -140,7 +140,7 @@
       "titleUpdatedBy": "cis.user.MM92-8YB3",
       "titleSubmittedBy": "cis.user.MM92-8YB3",
       "titleUpdatedOn": 1534261893433,
-      "citation": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940.",
+      "citation": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940.",
       "citationUpdatedBy": "cis.user.MM92-8YB3",
       "citationSubmittedBy": "cis.user.MM92-8YB3",
       "citationUpdatedOn": 1534261893433,
@@ -222,11 +222,6 @@
             "factType": "Birth"
           },
           {
-            "factType": "Age",
-            "fieldType": "Original",
-            "value": "50"
-          },
-          {
             "factType": "OTHER",
             "fieldType": "Interpreted",
             "value": "{\"IMS_IMAGE_ID\":\"005461386_00042\"}"
@@ -265,6 +260,11 @@
             "factType": "OTHER",
             "fieldType": "Interpreted",
             "value": "65"
+          },
+          {
+            "factType": "Age",
+            "fieldType": "Original",
+            "value": "50"
           }
         ]
       },
@@ -869,6 +869,65 @@
       "maaiHDUpdatedOn": 1687830914834
     },
     {
+      "id": "9BSQ-SN4",
+      "title": "Jeanne Lajeunesse in entry for Dorina M. Prince, \"Massachusetts State Vital Records, 1841-1925\"",
+      "titleUserContributed": false,
+      "tombstoned": false,
+      "titleUpdatedBy": "cis.user.MM9V-5V2R",
+      "titleSubmittedBy": "cis.user.MM9V-5V2R",
+      "titleUpdatedOn": 1526766080035,
+      "citation": "\"Massachusetts State Vital Records, 1841-1925\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:FXVB-9NT : 15 November 2022), Jeanne Lajeunesse in entry for Dorina M. Prince, 1914.",
+      "citationUpdatedBy": "cis.user.MM9V-5V2R",
+      "citationSubmittedBy": "cis.user.MM9V-5V2R",
+      "citationUpdatedOn": 1526766080035,
+      "uri": {
+        "uri": "https://familysearch.org/ark:/61903/1:1:FXVB-9NT"
+      },
+      "uriUpdatedBy": "cis.user.MM9V-5V2R",
+      "uriSubmittedBy": "cis.user.MM9V-5V2R",
+      "uriUpdatedOn": 1526766080035,
+      "notesUpdatedBy": "cis.user.MM9V-5V2R",
+      "notesSubmittedBy": "cis.user.MM9V-5V2R",
+      "notesUpdatedOn": 1526766080035,
+      "updatedOn": 1526766080035,
+      "updatedBy": "cis.user.MM9V-5V2R",
+      "submittedBy": "cis.user.MM9V-5V2R",
+      "createdOn": 1526766080035,
+      "createdBy": "cis.user.MM9V-5V2R",
+      "sourceType": "FSREADONLY",
+      "lang": "en_US",
+      "evidence": {
+        "facts": [
+          {
+            "factType": "Name",
+            "fieldType": "Original",
+            "value": "Jeanne Lajeunesse"
+          },
+          {
+            "factType": "Name",
+            "fieldType": "Interpreted",
+            "value": "Jeanne Lajeunesse"
+          },
+          {
+            "factType": "Gender",
+            "fieldType": "Interpreted",
+            "value": "Female"
+          }
+        ]
+      },
+      "event": {
+        "originalDate": "+1914-09-14",
+        "displayDate": "14 September 1914",
+        "eventDate": "+1914-09-14",
+        "sortYear": "1914",
+        "sortKey": "C19140914GC19140914",
+        "eventPlace": "New Bedford, Bristol, Massachusetts, United States",
+        "factType": "Birth"
+      },
+      "eventUserContributed": false,
+      "maaiHintDismissed": false
+    },
+    {
       "id": "SMXX-N5M",
       "title": "Marie J. Lajeunesse in entry for Mary Florida M. Prince, \"Massachusetts State Vital Records, 1841-1925\"",
       "titleUserContributed": false,
@@ -1208,65 +1267,6 @@
         "sortKey": "C19200000GC19209999",
         "eventPlace": "City Of New Bedford Part Of Precinct 2 Families Out On 1st Visit Part Of Ward 1, ED 114, Bristol, Massachusetts, United States",
         "factType": "Census"
-      },
-      "eventUserContributed": false,
-      "maaiHintDismissed": false
-    },
-    {
-      "id": "SMXX-NN5",
-      "title": "Jeanne Lajeunesse in entry for Marie Angelina Lauretta Prince, \"Massachusetts State Vital Records, 1841-1925\"",
-      "titleUserContributed": false,
-      "tombstoned": false,
-      "titleUpdatedBy": "cis.user.MM92-8YB3",
-      "titleSubmittedBy": "cis.user.MM92-8YB3",
-      "titleUpdatedOn": 1534257956333,
-      "citation": "\"Massachusetts State Vital Records, 1841-1925\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:23YJ-6JB : 1 September 2021), Jeanne Lajeunesse in entry for Marie Angelina Lauretta Prince, 1918.",
-      "citationUpdatedBy": "cis.user.MM92-8YB3",
-      "citationSubmittedBy": "cis.user.MM92-8YB3",
-      "citationUpdatedOn": 1534257956333,
-      "uri": {
-        "uri": "https://familysearch.org/ark:/61903/1:1:23YJ-6JB"
-      },
-      "uriUpdatedBy": "cis.user.MM92-8YB3",
-      "uriSubmittedBy": "cis.user.MM92-8YB3",
-      "uriUpdatedOn": 1534257956333,
-      "notesUpdatedBy": "cis.user.MM92-8YB3",
-      "notesSubmittedBy": "cis.user.MM92-8YB3",
-      "notesUpdatedOn": 1534257956333,
-      "updatedOn": 1534257956333,
-      "updatedBy": "cis.user.MM92-8YB3",
-      "submittedBy": "cis.user.MM92-8YB3",
-      "createdOn": 1534257956333,
-      "createdBy": "cis.user.MM92-8YB3",
-      "sourceType": "FSREADONLY",
-      "lang": "en_US,EN;Q=0.9",
-      "evidence": {
-        "facts": [
-          {
-            "factType": "Name",
-            "fieldType": "Original",
-            "value": "Jeanne Lajeunesse"
-          },
-          {
-            "factType": "Name",
-            "fieldType": "Interpreted",
-            "value": "Jeanne Lajeunesse"
-          },
-          {
-            "factType": "Gender",
-            "fieldType": "Interpreted",
-            "value": "Female"
-          }
-        ]
-      },
-      "event": {
-        "originalDate": "+1918-04-29",
-        "displayDate": "29 April 1918",
-        "eventDate": "+1918-04-29",
-        "sortYear": "1918",
-        "sortKey": "C19180429GC19180429",
-        "eventPlace": "New Bedford, Bristol, Massachusetts, United States",
-        "factType": "Birth"
       },
       "eventUserContributed": false,
       "maaiHintDismissed": false
@@ -26730,7 +26730,7 @@
             "about": "https://www.familysearch.org/platform/records/collections/1488411",
             "resourceType": "http://gedcomx.org/Collection",
             "created": 1382223726484,
-            "modified": 1689889385878,
+            "modified": 1689974693713,
             "coverage": [
               {
                 "spatial": {
@@ -26796,7 +26796,7 @@
             },
             "resourceType": "http://gedcomx.org/Record",
             "created": 1391211900754,
-            "modified": 1689889385878,
+            "modified": 1689974693713,
             "coverage": [
               {
                 "spatial": {
@@ -31944,8 +31944,8 @@
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Gender?version=1.0.3"
                         },
-                        "modified": 1689041396002,
-                        "created": 1689041396002
+                        "modified": 1689807333912,
+                        "created": 1689807333912
                       },
                       "type": "http://gedcomx.org/Interpreted",
                       "labelId": "PR_SEX_CODE",
@@ -31991,49 +31991,6 @@
                     "fullText": "Israel Burke",
                     "parts": [
                       {
-                        "id": "d7210e53-6b0c-42b7-84ae-bb948b7ff24f",
-                        "type": "http://gedcomx.org/Given",
-                        "value": "Israel",
-                        "fields": [
-                          {
-                            "id": "23f78421-bee9-4705-8323-7e719e17ee25",
-                            "attribution": {
-                              "modified": 1666941290971,
-                              "created": 1666941290971
-                            },
-                            "type": "http://gedcomx.org/Given",
-                            "values": [
-                              {
-                                "id": "6cba1c45-8ced-424b-9db8-be119dbe3d68",
-                                "type": "http://gedcomx.org/Original",
-                                "labelId": "PR_NAME_GN_ORIG",
-                                "text": "Israel"
-                              },
-                              {
-                                "id": "6cba1c45-8ced-424b-9db8-be119dbe3d68",
-                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                                "attribution": {
-                                  "contributor": {
-                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
-                                  },
-                                  "modified": 0,
-                                  "created": 0
-                                },
-                                "type": "http://gedcomx.org/Interpreted",
-                                "labelId": "PR_NAME_GN",
-                                "text": "Israel",
-                                "qualifiers": [
-                                  {
-                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
-                                    "name": "StdQualifier"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
                         "id": "ffe135c7-3e00-4b69-b5ac-992d3e2bf344",
                         "type": "http://gedcomx.org/Surname",
                         "value": "Burke",
@@ -32075,11 +32032,54 @@
                             ]
                           }
                         ]
+                      },
+                      {
+                        "id": "d7210e53-6b0c-42b7-84ae-bb948b7ff24f",
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Israel",
+                        "fields": [
+                          {
+                            "id": "23f78421-bee9-4705-8323-7e719e17ee25",
+                            "attribution": {
+                              "modified": 1666941290971,
+                              "created": 1666941290971
+                            },
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "6cba1c45-8ced-424b-9db8-be119dbe3d68",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "Israel"
+                              },
+                              {
+                                "id": "6cba1c45-8ced-424b-9db8-be119dbe3d68",
+                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                                  },
+                                  "modified": 0,
+                                  "created": 0
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Israel",
+                                "qualifiers": [
+                                  {
+                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                                    "name": "StdQualifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ],
                     "fields": [
                       {
-                        "id": "3cce38e4-04b7-48e8-bcf6-b6bb9507782a",
+                        "id": "66261f7d-718f-4b42-a21b-fd8330cd82ea",
                         "attribution": {
                           "contributor": {
                             "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -32090,7 +32090,7 @@
                         "type": "http://gedcomx.org/Name",
                         "values": [
                           {
-                            "id": "1ce84ea2-6441-4d1c-9e0a-580f917f6889",
+                            "id": "b4040b38-d215-47b8-b13f-a0083a95d0b6",
                             "attribution": {
                               "contributor": {
                                 "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -32103,7 +32103,7 @@
                             "text": "Israel Burke"
                           },
                           {
-                            "id": "1ce84ea2-6441-4d1c-9e0a-580f917f6889",
+                            "id": "b4040b38-d215-47b8-b13f-a0083a95d0b6",
                             "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                             "attribution": {
                               "contributor": {
@@ -32315,8 +32315,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_RES_PLACE_ORIG",
@@ -32578,8 +32578,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "EVENT_PLACE_ORIG",
@@ -32617,8 +32617,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Interpreted",
                           "labelId": "EVENT_PLACE",
@@ -32686,7 +32686,23 @@
                   "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                   "fields": [
                     {
-                      "id": "62efdfa3-1586-41ec-8f50-4808a0dbf23a",
+                      "id": "5a6981d4-4ae3-4b0c-8868-7aa349e6a1be",
+                      "attribution": {
+                        "modified": 1666941290971,
+                        "created": 1666941290971
+                      },
+                      "type": "http://gedcomx.org/Year",
+                      "values": [
+                        {
+                          "id": "08d0698e-dca8-4b44-a900-f61cf73a248f",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_BIR_YEAR_ORIG",
+                          "text": "1871"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "0e191d79-6246-4374-8f82-881d17b2b3c5",
                       "attribution": {
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Date?version=1.3.1"
@@ -32695,13 +32711,13 @@
                       "type": "http://gedcomx.org/Date",
                       "values": [
                         {
-                          "id": "a257c87b-db91-4758-b303-d3d9a327918e",
+                          "id": "ed85f61d-e07b-46bd-8954-f3f7e70efb4a",
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_BIR_DATE_ORIG",
                           "text": "1871"
                         },
                         {
-                          "id": "a257c87b-db91-4758-b303-d3d9a327918e",
+                          "id": "ed85f61d-e07b-46bd-8954-f3f7e70efb4a",
                           "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                           "attribution": {
                             "contributor": {
@@ -32718,22 +32734,6 @@
                               "name": "StdQualifier"
                             }
                           ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "5a6981d4-4ae3-4b0c-8868-7aa349e6a1be",
-                      "attribution": {
-                        "modified": 1666941290971,
-                        "created": 1666941290971
-                      },
-                      "type": "http://gedcomx.org/Year",
-                      "values": [
-                        {
-                          "id": "08d0698e-dca8-4b44-a900-f61cf73a248f",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_BIR_YEAR_ORIG",
-                          "text": "1871"
                         }
                       ]
                     }
@@ -32764,55 +32764,6 @@
               }
             ],
             "fields": [
-              {
-                "id": "ca856325-804f-4aac-96d8-f20403819fc1",
-                "attribution": {
-                  "modified": 1666941290971,
-                  "created": 1666941290971
-                },
-                "type": "http://gedcomx.org/Age",
-                "values": [
-                  {
-                    "id": "a202b95d-e4ef-4adc-b84a-b28dcbded5ed",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_AGE_ORIG",
-                    "text": "69"
-                  },
-                  {
-                    "id": "a202b95d-e4ef-4adc-b84a-b28dcbded5ed",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "69"
-                  },
-                  {
-                    "id": "a202b95d-e4ef-4adc-b84a-b28dcbded5ed",
-                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
-                      },
-                      "modified": 1689041396002,
-                      "created": 1689041396002
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "69 years",
-                    "resource": "P69Y",
-                    "qualifiers": [
-                      {
-                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ],
-                "qualifiers": [
-                  {
-                    "value": "5ee9f3ad-86f3-45ac-a932-3a6ac1940c60",
-                    "name": "AgeIdentifier"
-                  }
-                ]
-              },
               {
                 "id": "b4f4d4f3-c2e9-4d3b-b52f-06c9ce0c4f2c",
                 "attribution": {
@@ -32946,6 +32897,55 @@
                     "text": "{\"IMAGE_NBR\":\"00042\"}"
                   }
                 ]
+              },
+              {
+                "id": "ca856325-804f-4aac-96d8-f20403819fc1",
+                "attribution": {
+                  "modified": 1666941290971,
+                  "created": 1666941290971
+                },
+                "type": "http://gedcomx.org/Age",
+                "values": [
+                  {
+                    "id": "a202b95d-e4ef-4adc-b84a-b28dcbded5ed",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_AGE_ORIG",
+                    "text": "69"
+                  },
+                  {
+                    "id": "a202b95d-e4ef-4adc-b84a-b28dcbded5ed",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "69"
+                  },
+                  {
+                    "id": "a202b95d-e4ef-4adc-b84a-b28dcbded5ed",
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+                      },
+                      "modified": 1689807333912,
+                      "created": 1689807333912
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "69 years",
+                    "resource": "P69Y",
+                    "qualifiers": [
+                      {
+                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ],
+                "qualifiers": [
+                  {
+                    "value": "5ee9f3ad-86f3-45ac-a932-3a6ac1940c60",
+                    "name": "AgeIdentifier"
+                  }
+                ]
               }
             ],
             "display": {
@@ -32987,8 +32987,8 @@
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Gender?version=1.0.3"
                         },
-                        "modified": 1689041396002,
-                        "created": 1689041396002
+                        "modified": 1689807333912,
+                        "created": 1689807333912
                       },
                       "type": "http://gedcomx.org/Interpreted",
                       "labelId": "PR_SEX_CODE",
@@ -33034,49 +33034,6 @@
                     "fullText": "Jane Burke",
                     "parts": [
                       {
-                        "id": "c3567f69-b775-4bfd-ad1f-e93d810e075c",
-                        "type": "http://gedcomx.org/Given",
-                        "value": "Jane",
-                        "fields": [
-                          {
-                            "id": "13e2dc4e-ac6d-4c9f-ba09-a989e44a4014",
-                            "attribution": {
-                              "modified": 1666941290971,
-                              "created": 1666941290971
-                            },
-                            "type": "http://gedcomx.org/Given",
-                            "values": [
-                              {
-                                "id": "c6dc59f2-7177-42dd-b4d0-4fca5c8e1c94",
-                                "type": "http://gedcomx.org/Original",
-                                "labelId": "PR_NAME_GN_ORIG",
-                                "text": "Jane"
-                              },
-                              {
-                                "id": "c6dc59f2-7177-42dd-b4d0-4fca5c8e1c94",
-                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                                "attribution": {
-                                  "contributor": {
-                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
-                                  },
-                                  "modified": 0,
-                                  "created": 0
-                                },
-                                "type": "http://gedcomx.org/Interpreted",
-                                "labelId": "PR_NAME_GN",
-                                "text": "Jane",
-                                "qualifiers": [
-                                  {
-                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
-                                    "name": "StdQualifier"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
                         "id": "5f3301c1-31d2-457c-bad9-ed314175a134",
                         "type": "http://gedcomx.org/Surname",
                         "value": "Burke",
@@ -33118,11 +33075,54 @@
                             ]
                           }
                         ]
+                      },
+                      {
+                        "id": "c3567f69-b775-4bfd-ad1f-e93d810e075c",
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Jane",
+                        "fields": [
+                          {
+                            "id": "13e2dc4e-ac6d-4c9f-ba09-a989e44a4014",
+                            "attribution": {
+                              "modified": 1666941290971,
+                              "created": 1666941290971
+                            },
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "c6dc59f2-7177-42dd-b4d0-4fca5c8e1c94",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "Jane"
+                              },
+                              {
+                                "id": "c6dc59f2-7177-42dd-b4d0-4fca5c8e1c94",
+                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                                  },
+                                  "modified": 0,
+                                  "created": 0
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Jane",
+                                "qualifiers": [
+                                  {
+                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                                    "name": "StdQualifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ],
                     "fields": [
                       {
-                        "id": "3a9e4a20-0f60-46fa-a407-fce851bb34a6",
+                        "id": "1d51dbaf-737c-4a57-a1f8-94e7a2a11685",
                         "attribution": {
                           "contributor": {
                             "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -33133,7 +33133,7 @@
                         "type": "http://gedcomx.org/Name",
                         "values": [
                           {
-                            "id": "296112d9-e97b-4e90-a6c3-6e26d9395e15",
+                            "id": "83fdf1fa-af6c-4390-a871-704f9ae68b12",
                             "attribution": {
                               "contributor": {
                                 "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -33146,7 +33146,7 @@
                             "text": "Jane Burke"
                           },
                           {
-                            "id": "296112d9-e97b-4e90-a6c3-6e26d9395e15",
+                            "id": "83fdf1fa-af6c-4390-a871-704f9ae68b12",
                             "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                             "attribution": {
                               "contributor": {
@@ -33413,8 +33413,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "EVENT_PLACE_ORIG",
@@ -33452,8 +33452,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Interpreted",
                           "labelId": "EVENT_PLACE",
@@ -33684,8 +33684,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_RES_PLACE_ORIG",
@@ -33728,7 +33728,7 @@
                   "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                   "fields": [
                     {
-                      "id": "16cf2b84-df43-40d9-87df-dfd679965d95",
+                      "id": "2ff5ee33-dfa7-4f56-bca0-27c0b9ce69ad",
                       "attribution": {
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Date?version=1.3.1"
@@ -33737,13 +33737,13 @@
                       "type": "http://gedcomx.org/Date",
                       "values": [
                         {
-                          "id": "07260159-b64c-41f0-9352-16a462925301",
+                          "id": "87aa276b-e992-4d0c-aa8b-9bb762e0e485",
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_BIR_DATE_ORIG",
                           "text": "1890"
                         },
                         {
-                          "id": "07260159-b64c-41f0-9352-16a462925301",
+                          "id": "87aa276b-e992-4d0c-aa8b-9bb762e0e485",
                           "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                           "attribution": {
                             "contributor": {
@@ -33806,55 +33806,6 @@
               }
             ],
             "fields": [
-              {
-                "id": "be8346c9-0650-4785-8b54-fabb4c96edc5",
-                "attribution": {
-                  "modified": 1666941290971,
-                  "created": 1666941290971
-                },
-                "type": "http://gedcomx.org/Age",
-                "values": [
-                  {
-                    "id": "a202c004-7c15-45a6-b005-ae5f30d6dfed",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_AGE_ORIG",
-                    "text": "50"
-                  },
-                  {
-                    "id": "a202c004-7c15-45a6-b005-ae5f30d6dfed",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "50"
-                  },
-                  {
-                    "id": "a202c004-7c15-45a6-b005-ae5f30d6dfed",
-                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
-                      },
-                      "modified": 1689041396002,
-                      "created": 1689041396002
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "50 years",
-                    "resource": "P50Y",
-                    "qualifiers": [
-                      {
-                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ],
-                "qualifiers": [
-                  {
-                    "value": "b6b073d8-4be4-41b0-b700-4210859e9eca",
-                    "name": "AgeIdentifier"
-                  }
-                ]
-              },
               {
                 "id": "de6bd751-e09b-4e87-a23f-9fe7f1bebeb2",
                 "attribution": {
@@ -33988,6 +33939,55 @@
                     "text": "65"
                   }
                 ]
+              },
+              {
+                "id": "be8346c9-0650-4785-8b54-fabb4c96edc5",
+                "attribution": {
+                  "modified": 1666941290971,
+                  "created": 1666941290971
+                },
+                "type": "http://gedcomx.org/Age",
+                "values": [
+                  {
+                    "id": "a202c004-7c15-45a6-b005-ae5f30d6dfed",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_AGE_ORIG",
+                    "text": "50"
+                  },
+                  {
+                    "id": "a202c004-7c15-45a6-b005-ae5f30d6dfed",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "50"
+                  },
+                  {
+                    "id": "a202c004-7c15-45a6-b005-ae5f30d6dfed",
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+                      },
+                      "modified": 1689807333912,
+                      "created": 1689807333912
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "50 years",
+                    "resource": "P50Y",
+                    "qualifiers": [
+                      {
+                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ],
+                "qualifiers": [
+                  {
+                    "value": "b6b073d8-4be4-41b0-b700-4210859e9eca",
+                    "name": "AgeIdentifier"
+                  }
+                ]
               }
             ],
             "display": {
@@ -34029,8 +34029,8 @@
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Gender?version=1.0.3"
                         },
-                        "modified": 1689041396002,
-                        "created": 1689041396002
+                        "modified": 1689807333912,
+                        "created": 1689807333912
                       },
                       "type": "http://gedcomx.org/Interpreted",
                       "labelId": "PR_SEX_CODE",
@@ -34076,49 +34076,6 @@
                     "fullText": "Edgar Burke",
                     "parts": [
                       {
-                        "id": "93bd61f4-8059-46c7-8889-d741aba8256b",
-                        "type": "http://gedcomx.org/Given",
-                        "value": "Edgar",
-                        "fields": [
-                          {
-                            "id": "ae38f55b-fa2f-4b81-977e-fafb3caa3dd4",
-                            "attribution": {
-                              "modified": 1666941290971,
-                              "created": 1666941290971
-                            },
-                            "type": "http://gedcomx.org/Given",
-                            "values": [
-                              {
-                                "id": "72aa98ab-20e6-4a4f-ac29-9fae78e19f0b",
-                                "type": "http://gedcomx.org/Original",
-                                "labelId": "PR_NAME_GN_ORIG",
-                                "text": "Edgar"
-                              },
-                              {
-                                "id": "72aa98ab-20e6-4a4f-ac29-9fae78e19f0b",
-                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                                "attribution": {
-                                  "contributor": {
-                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
-                                  },
-                                  "modified": 0,
-                                  "created": 0
-                                },
-                                "type": "http://gedcomx.org/Interpreted",
-                                "labelId": "PR_NAME_GN",
-                                "text": "Edgar",
-                                "qualifiers": [
-                                  {
-                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
-                                    "name": "StdQualifier"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
                         "id": "2e7ad848-a948-4fa6-a77e-c35dcdf8f11f",
                         "type": "http://gedcomx.org/Surname",
                         "value": "Burke",
@@ -34160,11 +34117,54 @@
                             ]
                           }
                         ]
+                      },
+                      {
+                        "id": "93bd61f4-8059-46c7-8889-d741aba8256b",
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Edgar",
+                        "fields": [
+                          {
+                            "id": "ae38f55b-fa2f-4b81-977e-fafb3caa3dd4",
+                            "attribution": {
+                              "modified": 1666941290971,
+                              "created": 1666941290971
+                            },
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "72aa98ab-20e6-4a4f-ac29-9fae78e19f0b",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "Edgar"
+                              },
+                              {
+                                "id": "72aa98ab-20e6-4a4f-ac29-9fae78e19f0b",
+                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                                  },
+                                  "modified": 0,
+                                  "created": 0
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Edgar",
+                                "qualifiers": [
+                                  {
+                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                                    "name": "StdQualifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ],
                     "fields": [
                       {
-                        "id": "390364cb-8f46-4f01-8e38-80117e068e14",
+                        "id": "b8a92561-7bbe-4eb1-8221-ecfe3aa0aa34",
                         "attribution": {
                           "contributor": {
                             "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -34175,7 +34175,7 @@
                         "type": "http://gedcomx.org/Name",
                         "values": [
                           {
-                            "id": "aa85f066-a7dc-4b07-a4c1-0184c1e7dae9",
+                            "id": "f858a2ce-287c-4d18-a5d5-dfbd04ae1ae7",
                             "attribution": {
                               "contributor": {
                                 "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -34188,7 +34188,7 @@
                             "text": "Edgar Burke"
                           },
                           {
-                            "id": "aa85f066-a7dc-4b07-a4c1-0184c1e7dae9",
+                            "id": "f858a2ce-287c-4d18-a5d5-dfbd04ae1ae7",
                             "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                             "attribution": {
                               "contributor": {
@@ -34394,8 +34394,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_RES_PLACE_ORIG",
@@ -34476,7 +34476,7 @@
                       ]
                     },
                     {
-                      "id": "fcf68d44-0ffe-4026-963c-a3ff8d088ee1",
+                      "id": "43781f88-0f2a-47e0-9880-c12492177fbb",
                       "attribution": {
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Date?version=1.3.1"
@@ -34485,13 +34485,13 @@
                       "type": "http://gedcomx.org/Date",
                       "values": [
                         {
-                          "id": "97fa66a4-474c-4d20-a6ea-74f245b655b2",
+                          "id": "63b757a7-d07b-45cf-868e-f78951fc7bb1",
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_BIR_DATE_ORIG",
                           "text": "1923"
                         },
                         {
-                          "id": "97fa66a4-474c-4d20-a6ea-74f245b655b2",
+                          "id": "63b757a7-d07b-45cf-868e-f78951fc7bb1",
                           "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                           "attribution": {
                             "contributor": {
@@ -34628,8 +34628,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "EVENT_PLACE_ORIG",
@@ -34667,8 +34667,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Interpreted",
                           "labelId": "EVENT_PLACE",
@@ -34849,55 +34849,6 @@
             ],
             "fields": [
               {
-                "id": "6e836c29-3bb0-4ac7-8560-3b6dac17d51d",
-                "attribution": {
-                  "modified": 1666941290971,
-                  "created": 1666941290971
-                },
-                "type": "http://gedcomx.org/Age",
-                "values": [
-                  {
-                    "id": "3f6aba61-008a-4868-a1a0-84a820fc303b",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_AGE_ORIG",
-                    "text": "17"
-                  },
-                  {
-                    "id": "3f6aba61-008a-4868-a1a0-84a820fc303b",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "17"
-                  },
-                  {
-                    "id": "3f6aba61-008a-4868-a1a0-84a820fc303b",
-                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
-                      },
-                      "modified": 1689041396002,
-                      "created": 1689041396002
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "17 years",
-                    "resource": "P17Y",
-                    "qualifiers": [
-                      {
-                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ],
-                "qualifiers": [
-                  {
-                    "value": "34c77f7f-7760-486b-8e93-739641d07a3c",
-                    "name": "AgeIdentifier"
-                  }
-                ]
-              },
-              {
                 "id": "0481c992-827e-47aa-949c-514a950b3483",
                 "attribution": {
                   "modified": 1666941290971,
@@ -35030,6 +34981,55 @@
                     "text": "3"
                   }
                 ]
+              },
+              {
+                "id": "6e836c29-3bb0-4ac7-8560-3b6dac17d51d",
+                "attribution": {
+                  "modified": 1666941290971,
+                  "created": 1666941290971
+                },
+                "type": "http://gedcomx.org/Age",
+                "values": [
+                  {
+                    "id": "3f6aba61-008a-4868-a1a0-84a820fc303b",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_AGE_ORIG",
+                    "text": "17"
+                  },
+                  {
+                    "id": "3f6aba61-008a-4868-a1a0-84a820fc303b",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "17"
+                  },
+                  {
+                    "id": "3f6aba61-008a-4868-a1a0-84a820fc303b",
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+                      },
+                      "modified": 1689807333912,
+                      "created": 1689807333912
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "17 years",
+                    "resource": "P17Y",
+                    "qualifiers": [
+                      {
+                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ],
+                "qualifiers": [
+                  {
+                    "value": "34c77f7f-7760-486b-8e93-739641d07a3c",
+                    "name": "AgeIdentifier"
+                  }
+                ]
               }
             ],
             "display": {
@@ -35071,8 +35071,8 @@
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Gender?version=1.0.3"
                         },
-                        "modified": 1689041396002,
-                        "created": 1689041396002
+                        "modified": 1689807333912,
+                        "created": 1689807333912
                       },
                       "type": "http://gedcomx.org/Interpreted",
                       "labelId": "PR_SEX_CODE",
@@ -35118,49 +35118,6 @@
                     "fullText": "Roland Prince",
                     "parts": [
                       {
-                        "id": "a7ce2652-5cad-4d8f-ac39-92b5806a27b8",
-                        "type": "http://gedcomx.org/Given",
-                        "value": "Roland",
-                        "fields": [
-                          {
-                            "id": "78ff95a9-3896-4955-bd3b-56d3c7e0517d",
-                            "attribution": {
-                              "modified": 1666941290971,
-                              "created": 1666941290971
-                            },
-                            "type": "http://gedcomx.org/Given",
-                            "values": [
-                              {
-                                "id": "f0a9c02e-4052-4dc7-b3fa-50377178be1b",
-                                "type": "http://gedcomx.org/Original",
-                                "labelId": "PR_NAME_GN_ORIG",
-                                "text": "Roland"
-                              },
-                              {
-                                "id": "f0a9c02e-4052-4dc7-b3fa-50377178be1b",
-                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                                "attribution": {
-                                  "contributor": {
-                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
-                                  },
-                                  "modified": 0,
-                                  "created": 0
-                                },
-                                "type": "http://gedcomx.org/Interpreted",
-                                "labelId": "PR_NAME_GN",
-                                "text": "Roland",
-                                "qualifiers": [
-                                  {
-                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
-                                    "name": "StdQualifier"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
                         "id": "af275500-8d1d-4eb1-b46a-1e5f6369e496",
                         "type": "http://gedcomx.org/Surname",
                         "value": "Prince",
@@ -35202,11 +35159,54 @@
                             ]
                           }
                         ]
+                      },
+                      {
+                        "id": "a7ce2652-5cad-4d8f-ac39-92b5806a27b8",
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Roland",
+                        "fields": [
+                          {
+                            "id": "78ff95a9-3896-4955-bd3b-56d3c7e0517d",
+                            "attribution": {
+                              "modified": 1666941290971,
+                              "created": 1666941290971
+                            },
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "f0a9c02e-4052-4dc7-b3fa-50377178be1b",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "Roland"
+                              },
+                              {
+                                "id": "f0a9c02e-4052-4dc7-b3fa-50377178be1b",
+                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                                  },
+                                  "modified": 0,
+                                  "created": 0
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Roland",
+                                "qualifiers": [
+                                  {
+                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                                    "name": "StdQualifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ],
                     "fields": [
                       {
-                        "id": "cdff0012-39bf-403d-a49c-08c333f92315",
+                        "id": "0c2d8ae5-2ccd-4c3a-bc8e-63051a88e5c5",
                         "attribution": {
                           "contributor": {
                             "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -35217,7 +35217,7 @@
                         "type": "http://gedcomx.org/Name",
                         "values": [
                           {
-                            "id": "63c6dbb0-9ecd-4260-b49d-5db8db7d469a",
+                            "id": "4602a14d-ff3e-4b9f-a6b7-ad6816e266cc",
                             "attribution": {
                               "contributor": {
                                 "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -35230,7 +35230,7 @@
                             "text": "Roland Prince"
                           },
                           {
-                            "id": "63c6dbb0-9ecd-4260-b49d-5db8db7d469a",
+                            "id": "4602a14d-ff3e-4b9f-a6b7-ad6816e266cc",
                             "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                             "attribution": {
                               "contributor": {
@@ -35349,7 +35349,7 @@
                   "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                   "fields": [
                     {
-                      "id": "c526e77d-74fe-4034-b7a7-aa2515ebea91",
+                      "id": "d1baee6d-ad79-48db-a700-466501a5b7b2",
                       "attribution": {
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Date?version=1.3.1"
@@ -35358,13 +35358,13 @@
                       "type": "http://gedcomx.org/Date",
                       "values": [
                         {
-                          "id": "54eea915-6770-4251-bc72-acdad778ac5e",
+                          "id": "bbfbad95-b5ed-4ba0-8525-e813dddeefb4",
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_BIR_DATE_ORIG",
                           "text": "1924"
                         },
                         {
-                          "id": "54eea915-6770-4251-bc72-acdad778ac5e",
+                          "id": "bbfbad95-b5ed-4ba0-8525-e813dddeefb4",
                           "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                           "attribution": {
                             "contributor": {
@@ -35532,8 +35532,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_RES_PLACE_ORIG",
@@ -35734,8 +35734,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "EVENT_PLACE_ORIG",
@@ -35773,8 +35773,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Interpreted",
                           "labelId": "EVENT_PLACE",
@@ -35890,55 +35890,6 @@
               }
             ],
             "fields": [
-              {
-                "id": "ee7885f2-e166-4f4a-a501-759ad81d00fb",
-                "attribution": {
-                  "modified": 1666941290971,
-                  "created": 1666941290971
-                },
-                "type": "http://gedcomx.org/Age",
-                "values": [
-                  {
-                    "id": "dab649d2-67d9-49d5-9957-e61b2a3680d1",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_AGE_ORIG",
-                    "text": "16"
-                  },
-                  {
-                    "id": "dab649d2-67d9-49d5-9957-e61b2a3680d1",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "16"
-                  },
-                  {
-                    "id": "dab649d2-67d9-49d5-9957-e61b2a3680d1",
-                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
-                      },
-                      "modified": 1689041396002,
-                      "created": 1689041396002
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "16 years",
-                    "resource": "P16Y",
-                    "qualifiers": [
-                      {
-                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ],
-                "qualifiers": [
-                  {
-                    "value": "3b4b2e15-f5cb-48bd-b345-ff4a3f0f76a8",
-                    "name": "AgeIdentifier"
-                  }
-                ]
-              },
               {
                 "id": "aa5ea3b7-8b3a-4e03-947d-e6926dd8aed2",
                 "attribution": {
@@ -36072,6 +36023,55 @@
                     "text": "005461386_00042_12"
                   }
                 ]
+              },
+              {
+                "id": "ee7885f2-e166-4f4a-a501-759ad81d00fb",
+                "attribution": {
+                  "modified": 1666941290971,
+                  "created": 1666941290971
+                },
+                "type": "http://gedcomx.org/Age",
+                "values": [
+                  {
+                    "id": "dab649d2-67d9-49d5-9957-e61b2a3680d1",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_AGE_ORIG",
+                    "text": "16"
+                  },
+                  {
+                    "id": "dab649d2-67d9-49d5-9957-e61b2a3680d1",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "16"
+                  },
+                  {
+                    "id": "dab649d2-67d9-49d5-9957-e61b2a3680d1",
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+                      },
+                      "modified": 1689807333912,
+                      "created": 1689807333912
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "16 years",
+                    "resource": "P16Y",
+                    "qualifiers": [
+                      {
+                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ],
+                "qualifiers": [
+                  {
+                    "value": "3b4b2e15-f5cb-48bd-b345-ff4a3f0f76a8",
+                    "name": "AgeIdentifier"
+                  }
+                ]
               }
             ],
             "display": {
@@ -36113,8 +36113,8 @@
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Gender?version=1.0.3"
                         },
-                        "modified": 1689041396002,
-                        "created": 1689041396002
+                        "modified": 1689807333912,
+                        "created": 1689807333912
                       },
                       "type": "http://gedcomx.org/Interpreted",
                       "labelId": "PR_SEX_CODE",
@@ -36160,49 +36160,6 @@
                     "fullText": "Ernest Prince",
                     "parts": [
                       {
-                        "id": "4c336681-e8e1-43ab-9cdd-7081298ffeba",
-                        "type": "http://gedcomx.org/Given",
-                        "value": "Ernest",
-                        "fields": [
-                          {
-                            "id": "a1ee84e2-6fb3-4772-8069-849e85734fdd",
-                            "attribution": {
-                              "modified": 1666941290971,
-                              "created": 1666941290971
-                            },
-                            "type": "http://gedcomx.org/Given",
-                            "values": [
-                              {
-                                "id": "1ea7248a-1949-43fb-bf56-117010679f39",
-                                "type": "http://gedcomx.org/Original",
-                                "labelId": "PR_NAME_GN_ORIG",
-                                "text": "Ernest"
-                              },
-                              {
-                                "id": "1ea7248a-1949-43fb-bf56-117010679f39",
-                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                                "attribution": {
-                                  "contributor": {
-                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
-                                  },
-                                  "modified": 0,
-                                  "created": 0
-                                },
-                                "type": "http://gedcomx.org/Interpreted",
-                                "labelId": "PR_NAME_GN",
-                                "text": "Ernest",
-                                "qualifiers": [
-                                  {
-                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
-                                    "name": "StdQualifier"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
                         "id": "266090a6-14e7-4309-ac4d-435a39772bc2",
                         "type": "http://gedcomx.org/Surname",
                         "value": "Prince",
@@ -36244,11 +36201,54 @@
                             ]
                           }
                         ]
+                      },
+                      {
+                        "id": "4c336681-e8e1-43ab-9cdd-7081298ffeba",
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Ernest",
+                        "fields": [
+                          {
+                            "id": "a1ee84e2-6fb3-4772-8069-849e85734fdd",
+                            "attribution": {
+                              "modified": 1666941290971,
+                              "created": 1666941290971
+                            },
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "1ea7248a-1949-43fb-bf56-117010679f39",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "Ernest"
+                              },
+                              {
+                                "id": "1ea7248a-1949-43fb-bf56-117010679f39",
+                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                                  },
+                                  "modified": 0,
+                                  "created": 0
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Ernest",
+                                "qualifiers": [
+                                  {
+                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                                    "name": "StdQualifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ],
                     "fields": [
                       {
-                        "id": "468bac33-88e2-4d80-951e-69ebb840bf7f",
+                        "id": "e2794f75-94ee-43d1-a54b-9dac15d3447d",
                         "attribution": {
                           "contributor": {
                             "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -36259,7 +36259,7 @@
                         "type": "http://gedcomx.org/Name",
                         "values": [
                           {
-                            "id": "84e060ec-b3c9-4b73-96bf-6d4b875d0726",
+                            "id": "762eb6b5-e2ca-4e06-9adb-55387bcc9fa3",
                             "attribution": {
                               "contributor": {
                                 "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -36272,7 +36272,7 @@
                             "text": "Ernest Prince"
                           },
                           {
-                            "id": "84e060ec-b3c9-4b73-96bf-6d4b875d0726",
+                            "id": "762eb6b5-e2ca-4e06-9adb-55387bcc9fa3",
                             "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                             "attribution": {
                               "contributor": {
@@ -36446,8 +36446,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_RES_PLACE_ORIG",
@@ -36544,7 +36544,23 @@
                   "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                   "fields": [
                     {
-                      "id": "ac101c82-a01c-4c9b-aad6-327a345890e8",
+                      "id": "27cbe710-1604-45ce-9476-05e27073def0",
+                      "attribution": {
+                        "modified": 1666941290971,
+                        "created": 1666941290971
+                      },
+                      "type": "http://gedcomx.org/Year",
+                      "values": [
+                        {
+                          "id": "bf6cf484-50b8-43e4-a63a-e1ad2bb79725",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_BIR_YEAR_ORIG",
+                          "text": "1925"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "9d97f7a0-eea0-4002-b2b9-832fc4075b97",
                       "attribution": {
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Date?version=1.3.1"
@@ -36553,13 +36569,13 @@
                       "type": "http://gedcomx.org/Date",
                       "values": [
                         {
-                          "id": "4b96865d-09b8-41d5-91e8-511d24ca6f1e",
+                          "id": "1460d7d7-b87c-4ade-a0c2-5799e139c554",
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_BIR_DATE_ORIG",
                           "text": "1925"
                         },
                         {
-                          "id": "4b96865d-09b8-41d5-91e8-511d24ca6f1e",
+                          "id": "1460d7d7-b87c-4ade-a0c2-5799e139c554",
                           "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                           "attribution": {
                             "contributor": {
@@ -36576,22 +36592,6 @@
                               "name": "StdQualifier"
                             }
                           ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "27cbe710-1604-45ce-9476-05e27073def0",
-                      "attribution": {
-                        "modified": 1666941290971,
-                        "created": 1666941290971
-                      },
-                      "type": "http://gedcomx.org/Year",
-                      "values": [
-                        {
-                          "id": "bf6cf484-50b8-43e4-a63a-e1ad2bb79725",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_BIR_YEAR_ORIG",
-                          "text": "1925"
                         }
                       ]
                     }
@@ -36798,8 +36798,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "EVENT_PLACE_ORIG",
@@ -36837,8 +36837,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Interpreted",
                           "labelId": "EVENT_PLACE",
@@ -36932,55 +36932,6 @@
               }
             ],
             "fields": [
-              {
-                "id": "44e5cd0f-64a6-41a5-b0e8-875efc212cf1",
-                "attribution": {
-                  "modified": 1666941290971,
-                  "created": 1666941290971
-                },
-                "type": "http://gedcomx.org/Age",
-                "values": [
-                  {
-                    "id": "cbe76afc-0b94-42b0-83a2-16c6007974ee",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_AGE_ORIG",
-                    "text": "15"
-                  },
-                  {
-                    "id": "cbe76afc-0b94-42b0-83a2-16c6007974ee",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "15"
-                  },
-                  {
-                    "id": "cbe76afc-0b94-42b0-83a2-16c6007974ee",
-                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
-                      },
-                      "modified": 1689041396002,
-                      "created": 1689041396002
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "15 years",
-                    "resource": "P15Y",
-                    "qualifiers": [
-                      {
-                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ],
-                "qualifiers": [
-                  {
-                    "value": "ead9a933-82da-4366-8a3d-35c96e967fb3",
-                    "name": "AgeIdentifier"
-                  }
-                ]
-              },
               {
                 "id": "5335dafb-82fe-428f-bddd-c6ac3a974fdb",
                 "attribution": {
@@ -37114,6 +37065,55 @@
                     "text": "{\"SHEET_NUMBER_LETTER\":\"3A\"}"
                   }
                 ]
+              },
+              {
+                "id": "44e5cd0f-64a6-41a5-b0e8-875efc212cf1",
+                "attribution": {
+                  "modified": 1666941290971,
+                  "created": 1666941290971
+                },
+                "type": "http://gedcomx.org/Age",
+                "values": [
+                  {
+                    "id": "cbe76afc-0b94-42b0-83a2-16c6007974ee",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_AGE_ORIG",
+                    "text": "15"
+                  },
+                  {
+                    "id": "cbe76afc-0b94-42b0-83a2-16c6007974ee",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "15"
+                  },
+                  {
+                    "id": "cbe76afc-0b94-42b0-83a2-16c6007974ee",
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+                      },
+                      "modified": 1689807333912,
+                      "created": 1689807333912
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "15 years",
+                    "resource": "P15Y",
+                    "qualifiers": [
+                      {
+                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ],
+                "qualifiers": [
+                  {
+                    "value": "ead9a933-82da-4366-8a3d-35c96e967fb3",
+                    "name": "AgeIdentifier"
+                  }
+                ]
               }
             ],
             "display": {
@@ -37155,8 +37155,8 @@
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Gender?version=1.0.3"
                         },
-                        "modified": 1689041396002,
-                        "created": 1689041396002
+                        "modified": 1689807333912,
+                        "created": 1689807333912
                       },
                       "type": "http://gedcomx.org/Interpreted",
                       "labelId": "PR_SEX_CODE",
@@ -37202,49 +37202,6 @@
                     "fullText": "Dorina Lussier",
                     "parts": [
                       {
-                        "id": "d43526f1-33e7-475c-8438-68f99031744f",
-                        "type": "http://gedcomx.org/Given",
-                        "value": "Dorina",
-                        "fields": [
-                          {
-                            "id": "b431ceda-7636-4081-8670-7565ec17d15b",
-                            "attribution": {
-                              "modified": 1666941290971,
-                              "created": 1666941290971
-                            },
-                            "type": "http://gedcomx.org/Given",
-                            "values": [
-                              {
-                                "id": "7c2b55e3-dc5b-41b2-89eb-78234a4391fc",
-                                "type": "http://gedcomx.org/Original",
-                                "labelId": "PR_NAME_GN_ORIG",
-                                "text": "Dorina"
-                              },
-                              {
-                                "id": "7c2b55e3-dc5b-41b2-89eb-78234a4391fc",
-                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                                "attribution": {
-                                  "contributor": {
-                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
-                                  },
-                                  "modified": 0,
-                                  "created": 0
-                                },
-                                "type": "http://gedcomx.org/Interpreted",
-                                "labelId": "PR_NAME_GN",
-                                "text": "Dorina",
-                                "qualifiers": [
-                                  {
-                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
-                                    "name": "StdQualifier"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
                         "id": "3c204ecf-f92f-4a9a-84ff-47b02007230a",
                         "type": "http://gedcomx.org/Surname",
                         "value": "Lussier",
@@ -37286,11 +37243,54 @@
                             ]
                           }
                         ]
+                      },
+                      {
+                        "id": "d43526f1-33e7-475c-8438-68f99031744f",
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Dorina",
+                        "fields": [
+                          {
+                            "id": "b431ceda-7636-4081-8670-7565ec17d15b",
+                            "attribution": {
+                              "modified": 1666941290971,
+                              "created": 1666941290971
+                            },
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "7c2b55e3-dc5b-41b2-89eb-78234a4391fc",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "Dorina"
+                              },
+                              {
+                                "id": "7c2b55e3-dc5b-41b2-89eb-78234a4391fc",
+                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                                  },
+                                  "modified": 0,
+                                  "created": 0
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Dorina",
+                                "qualifiers": [
+                                  {
+                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                                    "name": "StdQualifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ],
                     "fields": [
                       {
-                        "id": "1efed68c-3fd5-4254-a354-ec93760307aa",
+                        "id": "e05f7323-5e50-4783-bb4e-f183a56b079e",
                         "attribution": {
                           "contributor": {
                             "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -37301,7 +37301,7 @@
                         "type": "http://gedcomx.org/Name",
                         "values": [
                           {
-                            "id": "d28bba2a-b17f-44ed-b37c-51d266c38f7b",
+                            "id": "f28c6232-8c5a-4329-a936-68e193a3fcd3",
                             "attribution": {
                               "contributor": {
                                 "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -37314,7 +37314,7 @@
                             "text": "Dorina Lussier"
                           },
                           {
-                            "id": "d28bba2a-b17f-44ed-b37c-51d266c38f7b",
+                            "id": "f28c6232-8c5a-4329-a936-68e193a3fcd3",
                             "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                             "attribution": {
                               "contributor": {
@@ -37526,8 +37526,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_RES_PLACE_ORIG",
@@ -37586,7 +37586,7 @@
                   "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                   "fields": [
                     {
-                      "id": "401b2992-f2a0-4911-a4c4-41f363d7cfd4",
+                      "id": "ef9a6cd4-c876-4e51-acb9-6fb65b3b75de",
                       "attribution": {
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Date?version=1.3.1"
@@ -37595,13 +37595,13 @@
                       "type": "http://gedcomx.org/Date",
                       "values": [
                         {
-                          "id": "7842b3d6-1506-4d9a-81a8-9ddc6637d984",
+                          "id": "2c5c93bd-42a3-4387-ae8e-da1cbb946c3d",
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_BIR_DATE_ORIG",
                           "text": "1915"
                         },
                         {
-                          "id": "7842b3d6-1506-4d9a-81a8-9ddc6637d984",
+                          "id": "2c5c93bd-42a3-4387-ae8e-da1cbb946c3d",
                           "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                           "attribution": {
                             "contributor": {
@@ -37872,8 +37872,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "EVENT_PLACE_ORIG",
@@ -37911,8 +37911,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Interpreted",
                           "labelId": "EVENT_PLACE",
@@ -37974,55 +37974,6 @@
               }
             ],
             "fields": [
-              {
-                "id": "64b983a3-a3ea-46cd-94ac-00df30aca701",
-                "attribution": {
-                  "modified": 1666941290971,
-                  "created": 1666941290971
-                },
-                "type": "http://gedcomx.org/Age",
-                "values": [
-                  {
-                    "id": "0a8154ec-91c1-4050-86c9-579f6c5638a3",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_AGE_ORIG",
-                    "text": "25"
-                  },
-                  {
-                    "id": "0a8154ec-91c1-4050-86c9-579f6c5638a3",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "25"
-                  },
-                  {
-                    "id": "0a8154ec-91c1-4050-86c9-579f6c5638a3",
-                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
-                      },
-                      "modified": 1689041396002,
-                      "created": 1689041396002
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "25 years",
-                    "resource": "P25Y",
-                    "qualifiers": [
-                      {
-                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ],
-                "qualifiers": [
-                  {
-                    "value": "161c7d1b-bc1f-48ff-a448-8d7ff97e2f2d",
-                    "name": "AgeIdentifier"
-                  }
-                ]
-              },
               {
                 "id": "5b14470f-6273-4267-bfa3-c1b53fecbbbb",
                 "attribution": {
@@ -38156,6 +38107,55 @@
                     "text": "15"
                   }
                 ]
+              },
+              {
+                "id": "64b983a3-a3ea-46cd-94ac-00df30aca701",
+                "attribution": {
+                  "modified": 1666941290971,
+                  "created": 1666941290971
+                },
+                "type": "http://gedcomx.org/Age",
+                "values": [
+                  {
+                    "id": "0a8154ec-91c1-4050-86c9-579f6c5638a3",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_AGE_ORIG",
+                    "text": "25"
+                  },
+                  {
+                    "id": "0a8154ec-91c1-4050-86c9-579f6c5638a3",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "25"
+                  },
+                  {
+                    "id": "0a8154ec-91c1-4050-86c9-579f6c5638a3",
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+                      },
+                      "modified": 1689807333912,
+                      "created": 1689807333912
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "25 years",
+                    "resource": "P25Y",
+                    "qualifiers": [
+                      {
+                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ],
+                "qualifiers": [
+                  {
+                    "value": "161c7d1b-bc1f-48ff-a448-8d7ff97e2f2d",
+                    "name": "AgeIdentifier"
+                  }
+                ]
               }
             ],
             "display": {
@@ -38197,8 +38197,8 @@
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Gender?version=1.0.3"
                         },
-                        "modified": 1689041396002,
-                        "created": 1689041396002
+                        "modified": 1689807333912,
+                        "created": 1689807333912
                       },
                       "type": "http://gedcomx.org/Interpreted",
                       "labelId": "PR_SEX_CODE",
@@ -38244,49 +38244,6 @@
                     "fullText": "Arthur Lussier",
                     "parts": [
                       {
-                        "id": "7e791f40-48c8-478e-aab1-bb748cc21513",
-                        "type": "http://gedcomx.org/Given",
-                        "value": "Arthur",
-                        "fields": [
-                          {
-                            "id": "0c4ae881-86e1-4204-8529-d6c8d147e063",
-                            "attribution": {
-                              "modified": 1666941290971,
-                              "created": 1666941290971
-                            },
-                            "type": "http://gedcomx.org/Given",
-                            "values": [
-                              {
-                                "id": "9b4a0a99-dffe-44ce-b023-b83310251567",
-                                "type": "http://gedcomx.org/Original",
-                                "labelId": "PR_NAME_GN_ORIG",
-                                "text": "Arthur"
-                              },
-                              {
-                                "id": "9b4a0a99-dffe-44ce-b023-b83310251567",
-                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                                "attribution": {
-                                  "contributor": {
-                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
-                                  },
-                                  "modified": 0,
-                                  "created": 0
-                                },
-                                "type": "http://gedcomx.org/Interpreted",
-                                "labelId": "PR_NAME_GN",
-                                "text": "Arthur",
-                                "qualifiers": [
-                                  {
-                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
-                                    "name": "StdQualifier"
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
                         "id": "f2cd1420-7664-4149-9276-13ce44dcf5b4",
                         "type": "http://gedcomx.org/Surname",
                         "value": "Lussier",
@@ -38328,11 +38285,54 @@
                             ]
                           }
                         ]
+                      },
+                      {
+                        "id": "7e791f40-48c8-478e-aab1-bb748cc21513",
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Arthur",
+                        "fields": [
+                          {
+                            "id": "0c4ae881-86e1-4204-8529-d6c8d147e063",
+                            "attribution": {
+                              "modified": 1666941290971,
+                              "created": 1666941290971
+                            },
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "9b4a0a99-dffe-44ce-b023-b83310251567",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "Arthur"
+                              },
+                              {
+                                "id": "9b4a0a99-dffe-44ce-b023-b83310251567",
+                                "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                                  },
+                                  "modified": 0,
+                                  "created": 0
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Arthur",
+                                "qualifiers": [
+                                  {
+                                    "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                                    "name": "StdQualifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ],
                     "fields": [
                       {
-                        "id": "f4f1cbb7-a6e3-40bd-933a-cc33a913d919",
+                        "id": "8c85f71b-fc4f-402f-baae-38d127ee69d5",
                         "attribution": {
                           "contributor": {
                             "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -38343,7 +38343,7 @@
                         "type": "http://gedcomx.org/Name",
                         "values": [
                           {
-                            "id": "1cb06ea4-16da-4193-9cdf-4891feda1968",
+                            "id": "d8070af9-1599-4102-a979-a3790af6c868",
                             "attribution": {
                               "contributor": {
                                 "resource": "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
@@ -38356,7 +38356,7 @@
                             "text": "Arthur Lussier"
                           },
                           {
-                            "id": "1cb06ea4-16da-4193-9cdf-4891feda1968",
+                            "id": "d8070af9-1599-4102-a979-a3790af6c868",
                             "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                             "attribution": {
                               "contributor": {
@@ -38527,7 +38527,23 @@
                   "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                   "fields": [
                     {
-                      "id": "5547772f-6ded-4340-89a2-52931880fd3f",
+                      "id": "12c90242-62fa-4499-aeaf-8ab0122b7412",
+                      "attribution": {
+                        "modified": 1666941290971,
+                        "created": 1666941290971
+                      },
+                      "type": "http://gedcomx.org/Year",
+                      "values": [
+                        {
+                          "id": "a6617cfb-0352-44c8-b9ec-637fdbedeab4",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_BIR_YEAR_ORIG",
+                          "text": "1936"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "13e01c45-8462-45d3-99ad-f34b05f5e25c",
                       "attribution": {
                         "contributor": {
                           "resource": "http://familysearch.org/treatments/sls/Date?version=1.3.1"
@@ -38536,13 +38552,13 @@
                       "type": "http://gedcomx.org/Date",
                       "values": [
                         {
-                          "id": "3e333a6f-6964-4c36-989c-f1381a4b2696",
+                          "id": "24bc8e11-99b0-40e8-8da4-802c87b91a22",
                           "type": "http://gedcomx.org/Original",
                           "labelId": "PR_BIR_DATE_ORIG",
                           "text": "1936"
                         },
                         {
-                          "id": "3e333a6f-6964-4c36-989c-f1381a4b2696",
+                          "id": "24bc8e11-99b0-40e8-8da4-802c87b91a22",
                           "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
                           "attribution": {
                             "contributor": {
@@ -38559,22 +38575,6 @@
                               "name": "StdQualifier"
                             }
                           ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "12c90242-62fa-4499-aeaf-8ab0122b7412",
-                      "attribution": {
-                        "modified": 1666941290971,
-                        "created": 1666941290971
-                      },
-                      "type": "http://gedcomx.org/Year",
-                      "values": [
-                        {
-                          "id": "a6617cfb-0352-44c8-b9ec-637fdbedeab4",
-                          "type": "http://gedcomx.org/Original",
-                          "labelId": "PR_BIR_YEAR_ORIG",
-                          "text": "1936"
                         }
                       ]
                     }
@@ -38733,8 +38733,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Original",
                           "labelId": "EVENT_PLACE_ORIG",
@@ -38772,8 +38772,8 @@
                             "contributor": {
                               "resource": "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
                             },
-                            "modified": 1689041396002,
-                            "created": 1689041396002
+                            "modified": 1689807333912,
+                            "created": 1689807333912
                           },
                           "type": "http://gedcomx.org/Interpreted",
                           "labelId": "EVENT_PLACE",
@@ -38916,55 +38916,6 @@
             ],
             "fields": [
               {
-                "id": "a38c76c9-b712-4308-a3ae-944703f9b05a",
-                "attribution": {
-                  "modified": 1666941290971,
-                  "created": 1666941290971
-                },
-                "type": "http://gedcomx.org/Age",
-                "values": [
-                  {
-                    "id": "7816db84-5c98-4ad8-a31a-b2f07d5f6b51",
-                    "type": "http://gedcomx.org/Original",
-                    "labelId": "PR_AGE_ORIG",
-                    "text": "4"
-                  },
-                  {
-                    "id": "7816db84-5c98-4ad8-a31a-b2f07d5f6b51",
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "4"
-                  },
-                  {
-                    "id": "7816db84-5c98-4ad8-a31a-b2f07d5f6b51",
-                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
-                    "attribution": {
-                      "contributor": {
-                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
-                      },
-                      "modified": 1689041396002,
-                      "created": 1689041396002
-                    },
-                    "type": "http://gedcomx.org/Interpreted",
-                    "labelId": "PR_AGE",
-                    "text": "4 years",
-                    "resource": "P4Y",
-                    "qualifiers": [
-                      {
-                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
-                        "name": "StdQualifier"
-                      }
-                    ]
-                  }
-                ],
-                "qualifiers": [
-                  {
-                    "value": "8c031b63-4893-4842-84ce-f64f23dd3e9a",
-                    "name": "AgeIdentifier"
-                  }
-                ]
-              },
-              {
                 "id": "287071d0-0769-4e0f-a6fa-3a7c564290bb",
                 "attribution": {
                   "modified": 1666941290971,
@@ -39097,6 +39048,55 @@
                     "text": "{\"EVENT_PLACE_LEVEL_2_TYPE\":\"County\"}"
                   }
                 ]
+              },
+              {
+                "id": "a38c76c9-b712-4308-a3ae-944703f9b05a",
+                "attribution": {
+                  "modified": 1666941290971,
+                  "created": 1666941290971
+                },
+                "type": "http://gedcomx.org/Age",
+                "values": [
+                  {
+                    "id": "7816db84-5c98-4ad8-a31a-b2f07d5f6b51",
+                    "type": "http://gedcomx.org/Original",
+                    "labelId": "PR_AGE_ORIG",
+                    "text": "4"
+                  },
+                  {
+                    "id": "7816db84-5c98-4ad8-a31a-b2f07d5f6b51",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "4"
+                  },
+                  {
+                    "id": "7816db84-5c98-4ad8-a31a-b2f07d5f6b51",
+                    "confidence": "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+                    "attribution": {
+                      "contributor": {
+                        "resource": "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+                      },
+                      "modified": 1689807333912,
+                      "created": 1689807333912
+                    },
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "PR_AGE",
+                    "text": "4 years",
+                    "resource": "P4Y",
+                    "qualifiers": [
+                      {
+                        "value": "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+                        "name": "StdQualifier"
+                      }
+                    ]
+                  }
+                ],
+                "qualifiers": [
+                  {
+                    "value": "8c031b63-4893-4842-84ce-f64f23dd3e9a",
+                    "name": "AgeIdentifier"
+                  }
+                ]
               }
             ],
             "display": {
@@ -39104,6 +39104,56 @@
               "gender": "Male",
               "birthDate": "1936",
               "birthPlace": "Connecticut"
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "id": "95123d65-f81a-4d08-905f-18e12362f921",
+            "attribution": {
+              "modified": 1666941290971,
+              "created": 1666941290971
+            },
+            "type": "http://gedcomx.org/ParentChild",
+            "person1": {
+              "resource": "#p_13995893312",
+              "resourceId": "p_13995893312"
+            },
+            "person2": {
+              "resource": "#p_13995893314",
+              "resourceId": "p_13995893314"
+            }
+          },
+          {
+            "id": "396e6878-17ae-46a0-8be8-594624213de4",
+            "attribution": {
+              "modified": 1666941290971,
+              "created": 1666941290971
+            },
+            "type": "http://gedcomx.org/Couple",
+            "person1": {
+              "resource": "#p_13995893312",
+              "resourceId": "p_13995893312"
+            },
+            "person2": {
+              "resource": "#p_13995893313",
+              "resourceId": "p_13995893313"
+            }
+          },
+          {
+            "id": "7092158d-4dac-454d-acf7-b2261781e4b3",
+            "attribution": {
+              "modified": 1666941290971,
+              "created": 1666941290971
+            },
+            "type": "http://gedcomx.org/ParentChild",
+            "person1": {
+              "resource": "#p_13995893313",
+              "resourceId": "p_13995893313"
+            },
+            "person2": {
+              "resource": "#p_13995893314",
+              "resourceId": "p_13995893314"
             }
           }
         ],
@@ -39118,7 +39168,7 @@
             },
             "resourceType": "http://gedcomx.org/Record",
             "created": 1384075122356,
-            "modified": 1689197395180,
+            "modified": 1689904516157,
             "coverage": [
               {
                 "spatial": {
@@ -39134,7 +39184,7 @@
             ],
             "citations": [
               {
-                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
+                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
               }
             ],
             "sources": [
@@ -39292,7 +39342,7 @@
             "resourceType": "http://gedcomx.org/Person",
             "citations": [
               {
-                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
+                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
               }
             ],
             "titles": [
@@ -39316,7 +39366,7 @@
             "resourceType": "http://gedcomx.org/Person",
             "citations": [
               {
-                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
+                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
               }
             ],
             "titles": [
@@ -39340,7 +39390,7 @@
             "resourceType": "http://gedcomx.org/Person",
             "citations": [
               {
-                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
+                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
               }
             ],
             "titles": [
@@ -39364,7 +39414,7 @@
             "resourceType": "http://gedcomx.org/Person",
             "citations": [
               {
-                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
+                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
               }
             ],
             "titles": [
@@ -39388,7 +39438,7 @@
             "resourceType": "http://gedcomx.org/Person",
             "citations": [
               {
-                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
+                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
               }
             ],
             "titles": [
@@ -39412,7 +39462,7 @@
             "resourceType": "http://gedcomx.org/Person",
             "citations": [
               {
-                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
+                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
               }
             ],
             "titles": [
@@ -39436,7 +39486,7 @@
             "resourceType": "http://gedcomx.org/Person",
             "citations": [
               {
-                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Wed Jul 12 21:29:55 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
+                "value": "\"United States Census, 1940\", database with images, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7BT-DJS : Fri Jul 21 01:55:16 UTC 2023), Entry for Israel Burke and Jane Burke, 1940."
               }
             ],
             "titles": [

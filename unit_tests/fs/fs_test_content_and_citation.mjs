@@ -71,6 +71,11 @@ const regressionData = [
     url: "",
   },
   {
+    // this is a "retired" source with a forward URL for a separate person
+    caseName: "england_baptism_1831_mary",
+    url: "https://www.familysearch.org/ark:/61903/1:1:NFJQ-3Z5",
+  },
+  {
     caseName: "england_baptism_1838_ann_wyatt",
     url: "https://www.familysearch.org/ark:/61903/1:1:F3VH-9VV",
   },
