@@ -1,0 +1,2550 @@
+{
+  "fsSources": [
+    {
+      "id": "S1QG-5WZ",
+      "title": "Marriage record, Horace Cleaves and Almina M. Stoddard, page 1, volume 1, Sheboygan County, Wisconsin",
+      "titleUserContributed": true,
+      "tombstoned": false,
+      "titleUpdatedBy": "cis.user.MM98-Y8DF",
+      "titleSubmittedBy": "cis.user.MM98-Y8DF",
+      "titleUpdatedOn": 1606062548190,
+      "citation": "Wisconsin Historical Society, Madison",
+      "citationUpdatedBy": "cis.user.MM98-Y8DF",
+      "citationSubmittedBy": "cis.user.MM98-Y8DF",
+      "citationUpdatedOn": 1606062503031,
+      "uri": {
+        "uri": "http://shop.wisconhistory.org"
+      },
+      "uriUpdatedBy": "cis.user.MM98-Y8DF",
+      "uriSubmittedBy": "cis.user.MM98-Y8DF",
+      "uriUpdatedOn": 1606062503031,
+      "notes": "Place of marriage Greenbush, Sheboygan County; date 22 September 1852; groom Horace Cleaves, birthplace Elbridge, Onandagua County, New York; parents John and Susan Cleaves; bride Almina M. Stoddard, parents David and Abigail Stoddard.",
+      "notesUpdatedBy": "cis.user.MM98-Y8DF",
+      "notesSubmittedBy": "cis.user.MM98-Y8DF",
+      "notesUpdatedOn": 1606062751759,
+      "updatedOn": 1606062751759,
+      "updatedBy": "cis.user.MM98-Y8DF",
+      "submittedBy": "cis.user.MM98-Y8DF",
+      "createdOn": 1606062503031,
+      "createdBy": "cis.user.MM98-Y8DF",
+      "sourceType": "DEFAULT",
+      "lang": "en",
+      "event": {
+        "originalDate": "1852",
+        "displayDate": "1852",
+        "eventDate": "+1852",
+        "sortYear": "1852",
+        "sortKey": "C18520000GC18529999"
+      },
+      "eventUserContributed": false,
+      "eventUpdatedBy": "cis.user.MM98-Y8DF",
+      "eventSubmittedBy": "cis.user.MM98-Y8DF",
+      "eventUpdatedOn": 1606062751759,
+      "maaiHintDismissed": false,
+      "maaiHDUpdatedBy": "cis.user.MM98-Y8DF",
+      "maaiHDSubmittedBy": "cis.user.MM98-Y8DF",
+      "maaiHDUpdatedOn": 1606062503031
+    },
+    {
+      "id": "SKNV-SG1",
+      "title": "Susan Cleaves in entry for Horace Cleaves, \"Wisconsin Marriages, 1836-1930\"",
+      "titleUserContributed": false,
+      "tombstoned": false,
+      "titleUpdatedBy": "cis.user.MMMM-6XT6",
+      "titleSubmittedBy": "cis.user.MMMM-6XT6",
+      "titleUpdatedOn": 1585762290631,
+      "citation": "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XRXL-SQN : 30 January 2020), Susan Cleaves in entry for Horace Cleaves, 1852.",
+      "citationUpdatedBy": "cis.user.MMMM-6XT6",
+      "citationSubmittedBy": "cis.user.MMMM-6XT6",
+      "citationUpdatedOn": 1585762290631,
+      "uri": {
+        "uri": "https://familysearch.org/ark:/61903/1:1:XRXL-SQN"
+      },
+      "uriUpdatedBy": "cis.user.MMMM-6XT6",
+      "uriSubmittedBy": "cis.user.MMMM-6XT6",
+      "uriUpdatedOn": 1585762290631,
+      "notesUpdatedBy": "cis.user.MMMM-6XT6",
+      "notesSubmittedBy": "cis.user.MMMM-6XT6",
+      "notesUpdatedOn": 1585762290631,
+      "updatedOn": 1585762290631,
+      "updatedBy": "cis.user.MMMM-6XT6",
+      "submittedBy": "cis.user.MMMM-6XT6",
+      "createdOn": 1585762290631,
+      "createdBy": "cis.user.MMMM-6XT6",
+      "sourceType": "FSREADONLY",
+      "lang": "en",
+      "evidence": {
+        "facts": [
+          {
+            "factType": "Name",
+            "fieldType": "Original",
+            "value": "Susan Cleaves"
+          },
+          {
+            "factType": "Name",
+            "fieldType": "Interpreted",
+            "value": "Susan Cleaves"
+          },
+          {
+            "factType": "Gender",
+            "fieldType": "Interpreted",
+            "value": "Female"
+          }
+        ]
+      },
+      "event": {
+        "originalDate": "+1852-09-22",
+        "displayDate": "22 September 1852",
+        "eventDate": "+1852-09-22",
+        "sortYear": "1852",
+        "sortKey": "C18520922GC18520922",
+        "eventPlace": "Greenbush, Sheboygan, Wisconsin, United States",
+        "factType": "Marriage"
+      },
+      "eventUserContributed": false,
+      "eventUpdatedBy": "cis.user.MMMM-6XT6",
+      "eventSubmittedBy": "cis.user.MMMM-6XT6",
+      "eventUpdatedOn": 1585762290631,
+      "maaiHintDismissed": false,
+      "maaiHDUpdatedBy": "cis.user.MMMM-6XT6",
+      "maaiHDSubmittedBy": "cis.user.MMMM-6XT6",
+      "maaiHDUpdatedOn": 1585762290631
+    },
+    {
+      "id": "3NHH-W2X",
+      "title": "Susanna Sands in entry for John Cleaves, \"Maine Marriages, 1771-1907\"",
+      "titleUserContributed": false,
+      "tombstoned": false,
+      "titleUpdatedBy": "cis.user.MMMZ-RX17",
+      "titleSubmittedBy": "cis.user.MMMZ-RX17",
+      "titleUpdatedOn": 1642442639211,
+      "citation": "\"Maine Marriages, 1771-1907\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:F4D1-F9J : 14 January 2020), Susanna Sands in entry for John Cleaves, 1813.",
+      "citationUpdatedBy": "cis.user.MMMZ-RX17",
+      "citationSubmittedBy": "cis.user.MMMZ-RX17",
+      "citationUpdatedOn": 1642442639211,
+      "uri": {
+        "uri": "https://familysearch.org/ark:/61903/1:1:F4D1-F9J"
+      },
+      "uriUpdatedBy": "cis.user.MMMZ-RX17",
+      "uriSubmittedBy": "cis.user.MMMZ-RX17",
+      "uriUpdatedOn": 1642442639211,
+      "notesUpdatedBy": "cis.user.MMMZ-RX17",
+      "notesSubmittedBy": "cis.user.MMMZ-RX17",
+      "notesUpdatedOn": 1642442639211,
+      "updatedOn": 1642442639211,
+      "updatedBy": "cis.user.MMMZ-RX17",
+      "submittedBy": "cis.user.MMMZ-RX17",
+      "createdOn": 1642442639211,
+      "createdBy": "cis.user.MMMZ-RX17",
+      "sourceType": "FSREADONLY",
+      "lang": "en",
+      "evidence": {
+        "facts": [
+          {
+            "factType": "Name",
+            "fieldType": "Original",
+            "value": "Susanna Sands"
+          },
+          {
+            "factType": "Name",
+            "fieldType": "Interpreted",
+            "value": "Susanna Sands"
+          },
+          {
+            "factType": "Gender",
+            "fieldType": "Original",
+            "value": "Female"
+          }
+        ]
+      },
+      "event": {
+        "originalDate": "+1813-06-06",
+        "displayDate": "6 June 1813",
+        "eventDate": "+1813-06-06",
+        "sortYear": "1813",
+        "sortKey": "C18130606GC18130606",
+        "eventPlace": "Buxton, York, Maine, United States",
+        "factType": "Marriage"
+      },
+      "eventUserContributed": false,
+      "eventUpdatedBy": "cis.user.MMMZ-RX17",
+      "eventSubmittedBy": "cis.user.MMMZ-RX17",
+      "eventUpdatedOn": 1642442639211,
+      "maaiHintDismissed": false,
+      "maaiHDUpdatedBy": "cis.user.MMMZ-RX17",
+      "maaiHDSubmittedBy": "cis.user.MMMZ-RX17",
+      "maaiHDUpdatedOn": 1642442639211
+    }
+  ],
+  "sourceData": {
+    "https://familysearch.org/ark:/61903/1:1:F4D1-F9J": {
+      "dataObj": {
+        "id": "r_314360517",
+        "lang": "en",
+        "links": {
+          "next": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:MDBS-16Y?seek=next"
+          },
+          "prev": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:MDBS-16Y?seek=prev"
+          },
+          "self": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:MDBS-16Y"
+          }
+        },
+        "description": "#sd_p_11115616547",
+        "persons": [
+          {
+            "id": "p_11115616548",
+            "extracted": true,
+            "principal": true,
+            "gender": {
+              "type": "http://gedcomx.org/Male",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "07bb3d2a-38cd-4de0-b25a-523f9e0d8d8e",
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_SEX_CODE_ORIG",
+                      "text": "Male"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/F4D1-F9V?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/MDBS-16Y?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F4D1-F9V"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "John Cleaves",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "John",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "dfa8be04-d12f-4fec-9faf-10d905cbcfb6",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "John"
+                              },
+                              {
+                                "id": "eedfa640-ae15-4f4a-a094-c36cc82e1523",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1579027648519
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "John"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Cleaves",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "97f9109a-9ef2-4c4e-8e9d-e58f8d2babe8",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_SURN_ORIG",
+                                "text": "Cleaves"
+                              },
+                              {
+                                "id": "8d7326a2-7100-423a-a78b-6db231b5da0e",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1579027648519
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_SURN",
+                                "text": "Cleaves"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1579027648514
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "PR_NAME_ORIG",
+                            "text": "John Cleaves"
+                          },
+                          {
+                            "id": "3225e91c-ea6c-438e-a68b-5c7d02e57ff7",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1579027648519
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "PR_NAME",
+                            "text": "John Cleaves"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p_11115616547",
+            "extracted": true,
+            "principal": false,
+            "gender": {
+              "type": "http://gedcomx.org/Female",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "3a6129a7-180f-4d54-929d-9e4633a743a2",
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "SP_SEX_CODE_ORIG",
+                      "text": "Female"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/F4D1-F9J?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/MDBS-16Y?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F4D1-F9J"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "Susanna Sands",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Susanna",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "6e3c07be-1773-485c-9914-062abdf1ca96",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "SP_NAME_GN_ORIG",
+                                "text": "Susanna"
+                              },
+                              {
+                                "id": "9e6cc40f-de7a-4616-bb25-7c3018079551",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1579027648526
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "SP_NAME_GN",
+                                "text": "Susanna"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Sands",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "12412122-39c4-4702-b7e5-7e42130be8d9",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "SP_NAME_SURN_ORIG",
+                                "text": "Sands"
+                              },
+                              {
+                                "id": "37b168c2-390a-4ae2-bc54-2ceadccb866e",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1579027648526
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "SP_NAME_SURN",
+                                "text": "Sands"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1579027648519
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "SP_NAME_ORIG",
+                            "text": "Susanna Sands"
+                          },
+                          {
+                            "id": "25dcd5ea-8d5d-44b4-a5f8-d512d3b4747b",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1579027648526
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "SP_NAME",
+                            "text": "Susanna Sands"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "id": "MM9.1.6/HKK9-8WNL",
+            "type": "http://gedcomx.org/Couple",
+            "person1": {
+              "resource": "#p_11115616548",
+              "resourceId": "p_11115616548"
+            },
+            "person2": {
+              "resource": "#p_11115616547",
+              "resourceId": "p_11115616547"
+            },
+            "facts": [
+              {
+                "type": "http://gedcomx.org/Marriage",
+                "date": {
+                  "original": "6 Jun 1813",
+                  "formal": "+1813-06-06",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Date",
+                      "values": [
+                        {
+                          "id": "4c951c09-af34-4f50-94f5-7e21b1cbf260",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "EVENT_DATE_ORIG",
+                          "text": "06 Jun 1813"
+                        },
+                        {
+                          "id": "648ba783-ab5b-4bc7-ab80-d56ae0d33c61",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1579027648514
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_DATE",
+                          "text": "6 Jun 1813",
+                          "resource": "+1813-06-06"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Month",
+                      "values": [
+                        {
+                          "id": "d6d35e08-e0aa-4ba2-8279-f09ce634c92b",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1579027648514
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_MONTH",
+                          "text": "6"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Day",
+                      "values": [
+                        {
+                          "id": "0806eb31-72e4-4a54-989e-a648973407b8",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1579027648514
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_DAY",
+                          "text": "6"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Year",
+                      "values": [
+                        {
+                          "id": "344605a9-822e-4e72-a2ed-4dca5e20e1f4",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "EVENT_YEAR_ORIG",
+                          "text": "1813"
+                        },
+                        {
+                          "id": "d432ad1a-23ff-4c2c-a290-82863a2b7a77",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1579027648514
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_YEAR",
+                          "text": "1813"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "place": {
+                  "original": "Buxton, York, Maine, United States",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Place",
+                      "values": [
+                        {
+                          "id": "8c09fde0-7221-498e-8e0b-68e4633cd29a",
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE_SUP",
+                          "text": "Buxton, York, Maine, United States",
+                          "qualifiers": [
+                            {
+                              "value": "SUP",
+                              "name": "http://familysearch.org/types/qualifiers/Info"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "afbbbe09-55c3-4369-b58e-477c0b33cf63",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "EVENT_PLACE_ORIG",
+                          "text": "Buxton, York, Maine, United States"
+                        },
+                        {
+                          "id": "4b26d2af-a4a6-46b8-b802-9a8fd708c207",
+                          "confidence": "http://confidence/100",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/LocalityTreatment/ver/1"
+                            },
+                            "modified": 1579027648532
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE",
+                          "text": "Buxton, York, Maine, United States",
+                          "resource": "https://www.familysearch.org/platform/places/description/4272551",
+                          "qualifiers": [
+                            {
+                              "value": "1010, 1013",
+                              "name": "StdQualifier"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "primary": true,
+                "fields": [
+                  {
+                    "type": "http://familysearch.org/types/fields/EventType",
+                    "values": [
+                      {
+                        "id": "d53522f5-e11f-42eb-88b1-7b932ccf5185",
+                        "type": "http://gedcomx.org/Original",
+                        "labelId": "EVENT_TYPE_ORIG",
+                        "text": "marriage"
+                      },
+                      {
+                        "id": "9530b33b-7c8d-4588-abfc-93f54a6da56d",
+                        "type": "http://gedcomx.org/Interpreted",
+                        "labelId": "EVENT_TYPE",
+                        "text": "Marriage"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sourceDescriptions": [
+          {
+            "id": "sd_c_1674915",
+            "about": "https://www.familysearch.org/platform/records/collections/1674915",
+            "resourceType": "http://gedcomx.org/Collection",
+            "created": 1382223384684,
+            "modified": 1658155544386,
+            "coverage": [
+              {
+                "spatial": {
+                  "original": "Maine, United States of America",
+                  "description": "#place_1-16"
+                },
+                "temporal": {
+                  "original": "1771/1907",
+                  "formal": "1771/1907"
+                },
+                "recordType": "http://gedcomx.org/Vital"
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en_US",
+                "value": "Maine Marriages, 1771-1907"
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://www.familysearch.org/platform/records/collections/1674915"]
+            }
+          },
+          {
+            "id": "src_r_314360517",
+            "mediaType": "image/jpeg",
+            "about": "https://www.familysearch.org/ark:/61903/1:2:MDBS-16Y",
+            "componentOf": {
+              "description": "#sd_c_1674915"
+            },
+            "resourceType": "http://gedcomx.org/Record",
+            "created": 1579027648541,
+            "modified": 1658155544386,
+            "coverage": [
+              {
+                "spatial": {
+                  "original": "Buxton, York, Maine, United States"
+                },
+                "temporal": {
+                  "original": "6 Jun 1813"
+                },
+                "recordType": "http://gedcomx.org/Vital"
+              }
+            ],
+            "citations": [
+              {
+                "value": "\"Maine Marriages, 1771-1907\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:MDBS-16Y : 14 January 2020), Entry for John Cleaves, 1813."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Entry for John Cleaves, \"Maine Marriages, 1771-1907\""
+              }
+            ],
+            "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+            "identifiers": {
+              "$": ["https://www.familysearch.org/platform/externalId/easy/196738974"],
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:MDBS-16Y"]
+            },
+            "descriptor": {
+              "resource": "https://www.familysearch.org/service/cds/recapi/collections/1674915?arkName=1:2:MDBS-16Y"
+            }
+          },
+          {
+            "id": "sd_p_11115616548",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:F4D1-F9V",
+            "componentOf": {
+              "description": "#src_r_314360517"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"Maine Marriages, 1771-1907\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:F4D1-F9V : 14 January 2020), John Cleaves, 1813."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "John Cleaves, \"Maine Marriages, 1771-1907\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F4D1-F9V"]
+            }
+          },
+          {
+            "id": "sd_p_11115616547",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:F4D1-F9J",
+            "componentOf": {
+              "description": "#src_r_314360517"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"Maine Marriages, 1771-1907\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:F4D1-F9J : 14 January 2020), Susanna Sands in entry for John Cleaves, 1813."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Susanna Sands in entry for John Cleaves, \"Maine Marriages, 1771-1907\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:F4D1-F9J"]
+            }
+          }
+        ],
+        "places": [
+          {
+            "id": "place_1-16",
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/16?context=1"]
+            }
+          }
+        ],
+        "fields": [
+          {
+            "type": "http://familysearch.org/types/fields/ExtData",
+            "values": [
+              {
+                "id": "ab8cea87-c450-4130-8a67-c4129cf5a791",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "EXT_DATA",
+                "text": "{ \"EVENT_PLACE_ALT_ORIG\": \"Buxton, York, Maine\", \"EVENT_DATE_ALT_ORIG\": \"6 Jun 1813\"}"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/BatchId",
+            "values": [
+              {
+                "id": "032ed60f-327c-43e5-bf94-809eaa799b09",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_BATCH_ID",
+                "text": "285087"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/BatchLocality",
+            "values": [
+              {
+                "id": "90f57603-447a-4c93-bfd3-e9664871aa3b",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_BATCH_LOCALITY",
+                "text": "Buxton, York, Maine, United States"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+            "values": [
+              {
+                "id": "b9842b23-135f-4748-bbdf-d76b1160dec1",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_DIGITAL_FILM_NBR",
+                "text": "007592510"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/FilmNumber",
+            "values": [
+              {
+                "id": "a5735a3b-96e6-428c-ba13-90e43921fbed",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_FILM_NBR",
+                "text": "10594"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/ImageNumber",
+            "values": [
+              {
+                "id": "b1ae1885-6a7e-473b-9d01-12e498131cc6",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_IMAGE_NBR",
+                "text": "00463"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/PacketLetter",
+            "values": [
+              {
+                "id": "f3e2a89e-724b-4223-b899-f8a2cd7242ef",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_PACKET_LTR",
+                "text": "A"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordGroup",
+            "values": [
+              {
+                "id": "1a2b4661-4be2-4a98-9d9f-7ec3d05b9604",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_GROUP",
+                "text": "Maine-EASy"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordNumber",
+            "values": [
+              {
+                "id": "21a2dc32-516b-4e04-98b7-5f83d5fd2ad8",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_NBR",
+                "text": "505"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SortKey",
+            "values": [
+              {
+                "id": "1f609110-aff0-480e-ae2a-fc0501ba14ea",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_SORT_KEY",
+                "text": "0010594_I00864-6X_1813_06_06_0000196738974"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SystemOfOrigin",
+            "values": [
+              {
+                "id": "52921692-9e1b-4500-98fc-ea50576db299",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_SYSTEM_OF_ORIGIN",
+                "text": "EASY"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UdeBatchNumber",
+            "values": [
+              {
+                "id": "eceb6c78-89ef-4bcf-abe5-b3e10c308539",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_UDE_BATCH_NBR",
+                "text": "I00864-6"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UniqueId",
+            "values": [
+              {
+                "id": "5b51a09d-1c67-4bb0-9e67-9efbb6dfc0dc",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_UNIQUE_ID",
+                "text": "196738974"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SourceComposite",
+            "values": [
+              {
+                "id": "1abba0be-1376-46b7-9082-febf5018c049",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "SOURCE_COMPOSITE_ORIG",
+                "text": "bk 3, pg 56"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordVersion",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_VERSION",
+                "text": "3"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UserModified",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_USER_MODIFIED",
+                "text": "false"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/CdsBatchId",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_CDS_BATCH_ID",
+                "text": "51629"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/PublicationStatus",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_PUB_STATUS",
+                "text": "Production"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "https://familysearch.org/ark:/61903/1:1:XRXL-SQN": {
+      "dataObj": {
+        "id": "r_364172910",
+        "lang": "en",
+        "links": {
+          "next": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:MX1J-TJM?seek=next"
+          },
+          "prev": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:MX1J-TJM?seek=prev"
+          },
+          "self": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:MX1J-TJM"
+          }
+        },
+        "description": "#sd_p_10825408936",
+        "persons": [
+          {
+            "id": "p_10825408934",
+            "extracted": true,
+            "principal": true,
+            "gender": {
+              "type": "http://gedcomx.org/Male",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "06e9e2fb-3080-43a3-8a48-be6574025a3e",
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_SEX_CODE_ORIG",
+                      "text": "Male"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/XRXL-SQX?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/MX1J-TJM?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQX"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "Horace Cleaves",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Horace",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "85f71bbe-3082-4405-9cbe-531da49f52e3",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "Horace"
+                              },
+                              {
+                                "id": "c80f3857-bff5-4310-98cf-ff4b3b89c4a2",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531858
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Horace"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Cleaves",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "5c1c45ce-746e-47f0-a453-137400f5f97c",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_SURN_ORIG",
+                                "text": "Cleaves"
+                              },
+                              {
+                                "id": "640ad13a-220f-4c6f-906e-f7ce9c7b7e25",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531858
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_SURN",
+                                "text": "Cleaves"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531850
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "PR_NAME_ORIG",
+                            "text": "Horace Cleaves"
+                          },
+                          {
+                            "id": "0d799b0e-bef3-4c27-ad38-20390e61e0f3",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531858
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "PR_NAME",
+                            "text": "Horace Cleaves"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "facts": [
+              {
+                "type": "http://gedcomx.org/Birth",
+                "place": {
+                  "original": "Elbridge, Onandagua, N. Y.",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Place",
+                      "values": [
+                        {
+                          "id": "de8bd9d7-60fb-48fb-a605-ff12c82dab82",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_BIR_PLACE_ORIG",
+                          "text": "Elbridge, Onandagua, N. Y."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "http://gedcomx.org/Ethnicity",
+                "value": "American",
+                "fields": [
+                  {
+                    "type": "http://gedcomx.org/Ethnicity",
+                    "values": [
+                      {
+                        "id": "f8710af7-694b-4b43-984d-8d228767e88f",
+                        "type": "http://gedcomx.org/Original",
+                        "labelId": "PR_ETHNICITY_ORIG",
+                        "text": "American"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Race",
+                "value": "White",
+                "fields": [
+                  {
+                    "type": "http://gedcomx.org/Race",
+                    "values": [
+                      {
+                        "id": "c15e2566-b74c-43fb-8397-83ca43ccc9c3",
+                        "type": "http://gedcomx.org/Original",
+                        "labelId": "PR_RACE_OR_COLOR_ORIG",
+                        "text": "White"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p_10825408935",
+            "extracted": true,
+            "principal": false,
+            "gender": {
+              "type": "http://gedcomx.org/Male",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "f80e99a3-e3e6-4764-880c-ca4dae20acf7",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/CvGenderTreatment/ver/1"
+                        },
+                        "modified": 1580402531895
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_FTHR_SEX_CODE",
+                      "text": "Male",
+                      "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/XRXL-SQF?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/MX1J-TJM?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQF"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "John Cleaves",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "John",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "6c3a569a-3923-4488-8843-9068b1732d0b",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_FTHR_NAME_GN_ORIG",
+                                "text": "John"
+                              },
+                              {
+                                "id": "7de9b2de-7756-417b-96ed-b4e61a20f596",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531863
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_FTHR_NAME_GN",
+                                "text": "John"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Cleaves",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "135092a3-34e6-4c3f-a06c-a24e004d35a9",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_FTHR_NAME_SURN_ORIG",
+                                "text": "Cleaves"
+                              },
+                              {
+                                "id": "f8443c8a-d449-4472-a040-054895e0e70c",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531863
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_FTHR_NAME_SURN",
+                                "text": "Cleaves"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531858
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "PR_FTHR_NAME_ORIG",
+                            "text": "John Cleaves"
+                          },
+                          {
+                            "id": "7edc1b63-3dec-4b65-98e4-f171f82c9489",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531863
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "PR_FTHR_NAME",
+                            "text": "John Cleaves"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p_10825408936",
+            "extracted": true,
+            "principal": false,
+            "gender": {
+              "type": "http://gedcomx.org/Female",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "521fd1d7-e70e-4626-94bb-146d7a25312f",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/CvGenderTreatment/ver/1"
+                        },
+                        "modified": 1580402531895
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_MTHR_SEX_CODE",
+                      "text": "Female",
+                      "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/XRXL-SQN?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/MX1J-TJM?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQN"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "Susan Cleaves",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Susan",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "b250637e-cc94-4428-9d94-9c6591142ab3",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_MTHR_NAME_GN_ORIG",
+                                "text": "Susan"
+                              },
+                              {
+                                "id": "930410fe-d177-47d4-bcc4-cec9a35921b3",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531870
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_MTHR_NAME_GN",
+                                "text": "Susan"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Cleaves",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "c3fdc85f-10a5-4932-aabf-2dc04124f648",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_MTHR_NAME_SURN_ORIG",
+                                "text": "Cleaves"
+                              },
+                              {
+                                "id": "ac267bea-9887-46c4-9649-3af7c5d9e737",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531870
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_MTHR_NAME_SURN",
+                                "text": "Cleaves"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531863
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "PR_MTHR_NAME_ORIG",
+                            "text": "Susan Cleaves"
+                          },
+                          {
+                            "id": "46b9c389-0f7e-46b2-b38d-74f916bf29a9",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531870
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "PR_MTHR_NAME",
+                            "text": "Susan Cleaves"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p_10825408931",
+            "extracted": true,
+            "principal": false,
+            "gender": {
+              "type": "http://gedcomx.org/Female",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "27249de9-44cd-4cb9-aeb0-2214bd1340bb",
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "SP_SEX_CODE_ORIG",
+                      "text": "Female"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/XRXL-SQ8?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/MX1J-TJM?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQ8"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "Almina M. Stoddard",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Almina M.",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "24e64d8d-def8-4727-9b0a-0d2cbd521270",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "SP_NAME_GN_ORIG",
+                                "text": "Almina M."
+                              },
+                              {
+                                "id": "597a915d-0896-4e9a-8ea7-34c76ebe87ee",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531877
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "SP_NAME_GN",
+                                "text": "Almina M."
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Stoddard",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "3a6f9103-e3a3-4bd6-ba90-8370718b323d",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "SP_NAME_SURN_ORIG",
+                                "text": "Stoddard"
+                              },
+                              {
+                                "id": "a177c046-b478-4c72-b16b-b56153291fff",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531877
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "SP_NAME_SURN",
+                                "text": "Stoddard"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531870
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "SP_NAME_ORIG",
+                            "text": "Almina M. Stoddard"
+                          },
+                          {
+                            "id": "f2ff9613-75e4-4ef5-8fb4-caf22d6956b9",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531877
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "SP_NAME",
+                            "text": "Almina M. Stoddard"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "facts": [
+              {
+                "type": "http://gedcomx.org/Ethnicity",
+                "value": "American",
+                "fields": [
+                  {
+                    "type": "http://gedcomx.org/Ethnicity",
+                    "values": [
+                      {
+                        "id": "63fa9ba8-ee67-4c83-bb4d-98940cbb099c",
+                        "type": "http://gedcomx.org/Original",
+                        "labelId": "SP_ETHNICITY_ORIG",
+                        "text": "American"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Race",
+                "value": "White",
+                "fields": [
+                  {
+                    "type": "http://gedcomx.org/Race",
+                    "values": [
+                      {
+                        "id": "a13fcc81-483c-4120-9608-04dead60e9eb",
+                        "type": "http://gedcomx.org/Original",
+                        "labelId": "SP_RACE_OR_COLOR_ORIG",
+                        "text": "White"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p_10825408932",
+            "extracted": true,
+            "principal": false,
+            "gender": {
+              "type": "http://gedcomx.org/Male",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "42e2deae-7676-4a94-b42f-00d5b3915fff",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/CvGenderTreatment/ver/1"
+                        },
+                        "modified": 1580402531895
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "SP_FTHR_SEX_CODE",
+                      "text": "Male",
+                      "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/XRXL-SQD?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/MX1J-TJM?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQD"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "David Stoddard",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "David",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "4101a792-8024-46e9-aa94-7b11bc17b068",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "SP_FTHR_NAME_GN_ORIG",
+                                "text": "David"
+                              },
+                              {
+                                "id": "ff81d66e-85c1-4861-a031-6d4b81201390",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531886
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "SP_FTHR_NAME_GN",
+                                "text": "David"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Stoddard",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "4c8f3cf3-5a34-4af4-a0f5-fc181d1e0919",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "SP_FTHR_NAME_SURN_ORIG",
+                                "text": "Stoddard"
+                              },
+                              {
+                                "id": "d984affb-f00b-4c47-9c0d-52428ea83e79",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531886
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "SP_FTHR_NAME_SURN",
+                                "text": "Stoddard"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531877
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "SP_FTHR_NAME_ORIG",
+                            "text": "David Stoddard"
+                          },
+                          {
+                            "id": "cda6cb36-7262-46ff-8942-5b45485c5116",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531886
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "SP_FTHR_NAME",
+                            "text": "David Stoddard"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p_10825408933",
+            "extracted": true,
+            "principal": false,
+            "gender": {
+              "type": "http://gedcomx.org/Female",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "7c858896-7ad2-4131-8f72-6f0611b1efde",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/CvGenderTreatment/ver/1"
+                        },
+                        "modified": 1580402531895
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "SP_MTHR_SEX_CODE",
+                      "text": "Female",
+                      "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/XRXL-SQ6?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/MX1J-TJM?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQ6"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "Abigail Stoddard",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Abigail",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "35bd6e84-57cc-45f6-a17f-2fca9f95f891",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "SP_MTHR_NAME_GN_ORIG",
+                                "text": "Abigail"
+                              },
+                              {
+                                "id": "9f14d723-c24f-40a5-ab09-ab9a916f56b2",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531894
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "SP_MTHR_NAME_GN",
+                                "text": "Abigail"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Stoddard",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "1dcdba47-7f67-429e-8044-45a031a1c8c0",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "SP_MTHR_NAME_SURN_ORIG",
+                                "text": "Stoddard"
+                              },
+                              {
+                                "id": "512a1528-8fa3-490e-933f-a42e28c82df3",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1580402531894
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "SP_MTHR_NAME_SURN",
+                                "text": "Stoddard"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531887
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "SP_MTHR_NAME_ORIG",
+                            "text": "Abigail Stoddard"
+                          },
+                          {
+                            "id": "43e1d591-4cbe-4636-8817-9ca61f59b175",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1580402531894
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "SP_MTHR_NAME",
+                            "text": "Abigail Stoddard"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "id": "MM9.1.6/Z7CH-4329",
+            "type": "http://gedcomx.org/ParentChild",
+            "person1": {
+              "resource": "#p_10825408935",
+              "resourceId": "p_10825408935"
+            },
+            "person2": {
+              "resource": "#p_10825408934",
+              "resourceId": "p_10825408934"
+            }
+          },
+          {
+            "id": "MM9.1.6/Z7CH-43P8",
+            "type": "http://gedcomx.org/ParentChild",
+            "person1": {
+              "resource": "#p_10825408936",
+              "resourceId": "p_10825408936"
+            },
+            "person2": {
+              "resource": "#p_10825408934",
+              "resourceId": "p_10825408934"
+            }
+          },
+          {
+            "id": "MM9.1.6/Z7CH-43TL",
+            "type": "http://gedcomx.org/Couple",
+            "person1": {
+              "resource": "#p_10825408935",
+              "resourceId": "p_10825408935"
+            },
+            "person2": {
+              "resource": "#p_10825408936",
+              "resourceId": "p_10825408936"
+            }
+          },
+          {
+            "id": "MM9.1.6/Z7CH-4QM9",
+            "type": "http://gedcomx.org/Couple",
+            "person1": {
+              "resource": "#p_10825408934",
+              "resourceId": "p_10825408934"
+            },
+            "person2": {
+              "resource": "#p_10825408931",
+              "resourceId": "p_10825408931"
+            },
+            "facts": [
+              {
+                "type": "http://gedcomx.org/Marriage",
+                "date": {
+                  "original": "22 Sep 1852",
+                  "formal": "+1852-09-22",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Date",
+                      "values": [
+                        {
+                          "id": "ebeb1188-94d7-40dc-abfc-b52973e0c251",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "EVENT_DATE_ORIG",
+                          "text": "22 Sep 1852"
+                        },
+                        {
+                          "id": "f68b51fb-18f1-406f-b69e-06a81885e89a",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1580402531850
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_DATE",
+                          "text": "22 Sep 1852",
+                          "resource": "+1852-09-22"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Month",
+                      "values": [
+                        {
+                          "id": "a9e6e89a-75b0-4a6b-b60e-9cc9582cbd93",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1580402531850
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_MONTH",
+                          "text": "9"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Day",
+                      "values": [
+                        {
+                          "id": "f22048d5-0395-4c90-b7da-4d311c33509a",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1580402531850
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_DAY",
+                          "text": "22"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Year",
+                      "values": [
+                        {
+                          "id": "53da209b-2b8f-4353-afe1-e860746e85ea",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "EVENT_YEAR_ORIG",
+                          "text": "1852"
+                        },
+                        {
+                          "id": "a24c58a0-71b6-4aba-b6ee-b22e269656e2",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1580402531850
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_YEAR",
+                          "text": "1852"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "place": {
+                  "original": "Greenbush, Sheboygan, Wisconsin, United States",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Place",
+                      "values": [
+                        {
+                          "id": "8be26a0d-3d36-4908-b3a3-8e35f3a856cb",
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE_SUP",
+                          "text": "Sheboygan, Wisconsin, United States",
+                          "qualifiers": [
+                            {
+                              "value": "SUP",
+                              "name": "http://familysearch.org/types/qualifiers/Info"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "54439a92-5ff6-4f8f-be85-edc0e0b1b667",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "EVENT_PLACE_ORIG",
+                          "text": "Greenbush, Sheboygan, Wisconsin, United States"
+                        },
+                        {
+                          "id": "da8e74ca-165c-43be-a1ed-4d3ab307be18",
+                          "confidence": "http://confidence/100",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/LocalityTreatment/ver/1"
+                            },
+                            "modified": 1580402531902
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE",
+                          "text": "Greenbush, Sheboygan, Wisconsin, United States",
+                          "resource": "https://www.familysearch.org/platform/places/description/5523618",
+                          "qualifiers": [
+                            {
+                              "value": "1026, 1013, 1010",
+                              "name": "StdQualifier"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "primary": true,
+                "fields": [
+                  {
+                    "type": "http://familysearch.org/types/fields/EventType",
+                    "values": [
+                      {
+                        "id": "bcdba1f7-97f5-4109-82a8-cd30b4fd276f",
+                        "type": "http://gedcomx.org/Original",
+                        "labelId": "EVENT_TYPE_ORIG",
+                        "text": "marriage"
+                      },
+                      {
+                        "id": "7ee72fc4-7a09-4f38-b34a-9f91a82066e0",
+                        "type": "http://gedcomx.org/Interpreted",
+                        "labelId": "EVENT_TYPE",
+                        "text": "Marriage"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "MM9.1.6/Z7CH-4Q38",
+            "type": "http://gedcomx.org/ParentChild",
+            "person1": {
+              "resource": "#p_10825408932",
+              "resourceId": "p_10825408932"
+            },
+            "person2": {
+              "resource": "#p_10825408931",
+              "resourceId": "p_10825408931"
+            }
+          },
+          {
+            "id": "MM9.1.6/Z7CH-4QWL",
+            "type": "http://gedcomx.org/ParentChild",
+            "person1": {
+              "resource": "#p_10825408933",
+              "resourceId": "p_10825408933"
+            },
+            "person2": {
+              "resource": "#p_10825408931",
+              "resourceId": "p_10825408931"
+            }
+          },
+          {
+            "id": "MM9.1.6/Z7CH-4QZ9",
+            "type": "http://gedcomx.org/Couple",
+            "person1": {
+              "resource": "#p_10825408932",
+              "resourceId": "p_10825408932"
+            },
+            "person2": {
+              "resource": "#p_10825408933",
+              "resourceId": "p_10825408933"
+            }
+          }
+        ],
+        "sourceDescriptions": [
+          {
+            "id": "sd_c_1708704",
+            "about": "https://www.familysearch.org/platform/records/collections/1708704",
+            "resourceType": "http://gedcomx.org/Collection",
+            "created": 1382223802522,
+            "modified": 1658156108392,
+            "coverage": [
+              {
+                "spatial": {
+                  "original": "Wisconsin, United States of America",
+                  "description": "#place_1-59"
+                },
+                "temporal": {
+                  "original": "1836/1930",
+                  "formal": "1836/1930"
+                },
+                "recordType": "http://gedcomx.org/Vital"
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en_US",
+                "value": "Wisconsin Marriages, 1836-1930"
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://www.familysearch.org/platform/records/collections/1708704"]
+            }
+          },
+          {
+            "id": "src_r_364172910",
+            "mediaType": "image/jpeg",
+            "about": "https://www.familysearch.org/ark:/61903/1:2:MX1J-TJM",
+            "componentOf": {
+              "description": "#sd_c_1708704"
+            },
+            "resourceType": "http://gedcomx.org/Record",
+            "created": 1580402532575,
+            "modified": 1658156108392,
+            "coverage": [
+              {
+                "spatial": {
+                  "original": "Greenbush, Sheboygan, Wisconsin, United States"
+                },
+                "temporal": {
+                  "original": "22 Sep 1852"
+                },
+                "recordType": "http://gedcomx.org/Vital"
+              }
+            ],
+            "citations": [
+              {
+                "value": "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:MX1J-TJM : 30 January 2020), Entry for Horace Cleaves, 1852."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Entry for Horace Cleaves, \"Wisconsin Marriages, 1836-1930\""
+              }
+            ],
+            "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+            "identifiers": {
+              "$": ["https://www.familysearch.org/platform/externalId/easy/114709620"],
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:MX1J-TJM"]
+            },
+            "descriptor": {
+              "resource": "https://www.familysearch.org/service/cds/recapi/collections/1708704?arkName=1:2:MX1J-TJM"
+            }
+          },
+          {
+            "id": "sd_p_10825408934",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:XRXL-SQX",
+            "componentOf": {
+              "description": "#src_r_364172910"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XRXL-SQX : 30 January 2020), Horace Cleaves, 1852."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Horace Cleaves, \"Wisconsin Marriages, 1836-1930\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQX"]
+            }
+          },
+          {
+            "id": "sd_p_10825408935",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:XRXL-SQF",
+            "componentOf": {
+              "description": "#src_r_364172910"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XRXL-SQF : 30 January 2020), John Cleaves in entry for Horace Cleaves, 1852."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "John Cleaves in entry for Horace Cleaves, \"Wisconsin Marriages, 1836-1930\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQF"]
+            }
+          },
+          {
+            "id": "sd_p_10825408936",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:XRXL-SQN",
+            "componentOf": {
+              "description": "#src_r_364172910"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XRXL-SQN : 30 January 2020), Susan Cleaves in entry for Horace Cleaves, 1852."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Susan Cleaves in entry for Horace Cleaves, \"Wisconsin Marriages, 1836-1930\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQN"]
+            }
+          },
+          {
+            "id": "sd_p_10825408931",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:XRXL-SQ8",
+            "componentOf": {
+              "description": "#src_r_364172910"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XRXL-SQ8 : 30 January 2020), Almina M. Stoddard in entry for Horace Cleaves, 1852."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Almina M. Stoddard in entry for Horace Cleaves, \"Wisconsin Marriages, 1836-1930\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQ8"]
+            }
+          },
+          {
+            "id": "sd_p_10825408932",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:XRXL-SQD",
+            "componentOf": {
+              "description": "#src_r_364172910"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XRXL-SQD : 30 January 2020), David Stoddard in entry for Horace Cleaves, 1852."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "David Stoddard in entry for Horace Cleaves, \"Wisconsin Marriages, 1836-1930\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQD"]
+            }
+          },
+          {
+            "id": "sd_p_10825408933",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:XRXL-SQ6",
+            "componentOf": {
+              "description": "#src_r_364172910"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:XRXL-SQ6 : 30 January 2020), Abigail Stoddard in entry for Horace Cleaves, 1852."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Abigail Stoddard in entry for Horace Cleaves, \"Wisconsin Marriages, 1836-1930\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:XRXL-SQ6"]
+            }
+          }
+        ],
+        "places": [
+          {
+            "id": "place_1-59",
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/59?context=1"]
+            }
+          }
+        ],
+        "fields": [
+          {
+            "type": "http://familysearch.org/types/fields/ExtData",
+            "values": [
+              {
+                "id": "b2197d12-de9e-4983-bf2a-0220de007741",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "EXT_DATA",
+                "text": "{ \"EVENT_PLACE_ALT_ORIG\": \"Greenbush, Sheboygan, Wisconsin\", \"EVENT_DATE_ALT_ORIG\": \"22 Sep 1852\"}"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/BatchId",
+            "values": [
+              {
+                "id": "b8c304f1-37fb-4f39-bb47-662d162abdce",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_BATCH_ID",
+                "text": "242649"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/BatchLocality",
+            "values": [
+              {
+                "id": "c80032fd-3882-41d7-b2f6-456d839e12e2",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_BATCH_LOCALITY",
+                "text": "Sheboygan, Wisconsin, United States"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+            "values": [
+              {
+                "id": "78030ca2-53d6-4582-81ac-60e71e00a2a6",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_DIGITAL_FILM_NBR",
+                "text": "007622467"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/FilmNumber",
+            "values": [
+              {
+                "id": "5bbe18bc-8686-456c-a887-2d837cdf27c6",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_FILM_NBR",
+                "text": "1275566"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/PacketLetter",
+            "values": [
+              {
+                "id": "30c8c527-92d2-4904-bfb9-675458a00116",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_PACKET_LTR",
+                "text": "A"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordGroup",
+            "values": [
+              {
+                "id": "f74fd137-b5b1-4977-b2d9-b9931e202da5",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_GROUP",
+                "text": "Wisconsin-EASy"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordNumber",
+            "values": [
+              {
+                "id": "5adbf6a0-caad-41f9-9279-ed9fe5381e93",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_NBR",
+                "text": "3"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SortKey",
+            "values": [
+              {
+                "id": "71775790-1baf-46ac-ac62-d6cccdf95a2e",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_SORT_KEY",
+                "text": "1275566_M00861-0X_1852_09_22_0000114709620"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SystemOfOrigin",
+            "values": [
+              {
+                "id": "5af25b48-ef24-4d4a-ae35-cfa5bde511ad",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_SYSTEM_OF_ORIGIN",
+                "text": "EASY"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UdeBatchNumber",
+            "values": [
+              {
+                "id": "a409aa8f-9dff-418b-aab8-93aca4239e96",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_UDE_BATCH_NBR",
+                "text": "M00861-0"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UniqueId",
+            "values": [
+              {
+                "id": "7931df48-9aca-4439-9775-ec06dc4975a8",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_UNIQUE_ID",
+                "text": "114709620"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/AdditionalRelativesFlag",
+            "values": [
+              {
+                "id": "d19a7357-63e0-47ce-b227-ce4bc29521ee",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "MISC_FLAG_ADDL_RELATIVES_ORIG",
+                "text": "X",
+                "qualifiers": [
+                  {
+                    "value": "MISC",
+                    "name": "http://familysearch.org/types/qualifiers/Info"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SourceComposite",
+            "values": [
+              {
+                "id": "a36d201b-2869-4663-9f74-6da965c8ade1",
+                "type": "http://gedcomx.org/Original",
+                "labelId": "SOURCE_COMPOSITE_ORIG",
+                "text": "vol 1, p 1"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordVersion",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_VERSION",
+                "text": "6"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UserModified",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_USER_MODIFIED",
+                "text": "false"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/CdsBatchId",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_CDS_BATCH_ID",
+                "text": "51967"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/PublicationStatus",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_PUB_STATUS",
+                "text": "Production"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

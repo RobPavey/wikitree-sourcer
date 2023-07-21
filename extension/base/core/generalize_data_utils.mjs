@@ -181,9 +181,11 @@ const GD = {
       granddaughter: "granddaughter",
       "grand daughter": "granddaughter",
       grndau: "granddaughter",
+      "step-granddaughter": "step-granddaughter",
       "grand son": "grandson",
       grandson: "grandson",
       grnson: "grandson",
+      "step-grandson": "step-grandson",
       // parents
       father: "father",
       mother: "mother",

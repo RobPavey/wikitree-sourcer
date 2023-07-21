@@ -31,7 +31,112 @@ import { buildNarrative } from "../../../base/core/narrative_builder.mjs";
 
 import { groupSourcesIntoFacts } from "./fs_group_into_facts.mjs";
 
-function buildFsPlainCitations(result, ed, type, options) {
+import { extractDataFromFetch } from "./fs_extract_data.mjs";
+import { generalizeData } from "./fs_generalize_data.mjs";
+import { buildCitation } from "./fs_build_citation.mjs";
+import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
+
+function inferEventDate(source) {
+  // there is no date, this can cause sort issues. Sometime we can infer one
+
+  if (source.notes && source.notes == "Source created by RecordSeek.com") {
+    if (source.citation) {
+      let title = source.citation.replace(/^"([^"]+)".*$/, "$1");
+      if (title && title != source.citation) {
+        // get any years in title
+        let years = title.match(/\d\d\d\d/);
+        if (years && years.length == 1) {
+          return years[0];
+        }
+      }
+    }
+  }
+
+  if (source.title) {
+    // get any years in title
+    let years = source.title.match(/\d\d\d\d/g);
+    if (years && years.length == 1) {
+      return years[0];
+    }
+  }
+
+  return "";
+}
+
+function filterAndEnhanceFsSourcesIntoSources(result, options) {
+  let sources = result.fsSources;
+
+  result.sources = [];
+
+  for (let source of sources) {
+    //console.log("FS source is:");
+    //console.log(source);
+
+    let sourceObj = {};
+
+    function addField(fieldName) {
+      if (source[fieldName]) {
+        sourceObj[fieldName] = source[fieldName];
+      }
+    }
+    addField("citation");
+    addField("title");
+    addField("id");
+    addField("notes");
+
+    if (source.uri && source.uri.uri) {
+      sourceObj.uri = source.uri.uri;
+
+      if (source.uriUpdatedOn) {
+        let date = new Date(source.uriUpdatedOn);
+        const options = { day: "numeric", month: "long", year: "numeric" };
+        sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
+      }
+    }
+
+    if (options.addMerge_fsAllCitations_excludeNonFsSources) {
+      // could check whether uri is of right form instead
+      if (source.sourceType != "FSREADONLY") {
+        continue;
+      }
+      if (!sourceObj.uri) {
+        continue;
+      }
+      let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
+      if (validLinkIndex == -1) {
+        continue;
+      }
+    }
+
+    // ignore some useless sources
+    if (source.citation == "Ancestry Family Tree" && source.title == "Ancestry Family Trees" && !source.notes) {
+      continue;
+    }
+
+    if (source.event) {
+      if (source.event.sortKey) {
+        sourceObj.sortKey = source.event.sortKey;
+      }
+      if (source.event.sortYear) {
+        sourceObj.sortYear = source.event.sortYear;
+      }
+      if (source.event.displayDate) {
+        sourceObj.eventDate = source.event.displayDate;
+      }
+    }
+
+    if (!sourceObj.eventDate && !sourceObj.sortYear) {
+      const inferredEventDate = inferEventDate(source);
+      if (inferredEventDate) {
+        sourceObj.eventDate = inferredEventDate;
+      }
+    }
+
+    result.sources.push(sourceObj);
+  }
+}
+
+function buildFsPlainCitations(result, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -560,6 +665,115 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
   result.citationCount = result.sources.length;
 }
 
+function doesCitationWantHouseholdTable(citationType, generalizedData, options) {
+  if (!generalizedData.hasHouseholdTable()) {
+    return false;
+  }
+
+  let optionsWantCitation = false;
+
+  let autoTableOpt = options.table_general_autoGenerate;
+
+  if (autoTableOpt != "none" && autoTableOpt != "citationInTableCaption") {
+    optionsWantCitation = true;
+    if (citationType == "source") {
+      if (autoTableOpt != "withinRefOrSource") {
+        optionsWantCitation = false;
+      }
+    }
+  } else if (citationType == "narrative") {
+    let includeHouseholdOpt = options.narrative_census_includeHousehold;
+    if (includeHouseholdOpt != "no") {
+      let householdFormatOpt = options.narrative_census_householdPartFormat;
+      if (householdFormatOpt == "withFamily") {
+        optionsWantCitation = true;
+      }
+    }
+  }
+
+  if (optionsWantCitation) {
+    return true;
+  }
+
+  return false;
+}
+
+function buildSourcerCitation(sourceDataObjects, source, type, options) {
+  if (sourceDataObjects) {
+    source.dataObjects = sourceDataObjects;
+
+    let extractedData = extractDataFromFetch(undefined, source.dataObjects, "record", options);
+    if (extractedData && extractedData.pageType) {
+      source.extractedData = extractedData;
+
+      let generalizedData = generalizeData({ extractedData: extractedData });
+      if (generalizedData && generalizedData.hasValidData) {
+        source.generalizedData = generalizedData;
+
+        let householdTableString = "";
+        if (doesCitationWantHouseholdTable(type, generalizedData, options)) {
+          const tableInput = {
+            extractedData: extractedData,
+            generalizedData: generalizedData,
+            dataCache: undefined,
+            options: options,
+          };
+
+          const tableObject = buildHouseholdTable(tableInput);
+          householdTableString = tableObject.tableString;
+        }
+
+        const input = {
+          extractedData: extractedData,
+          generalizedData: generalizedData,
+          runDate: new Date(),
+          type: type,
+          dataCache: undefined,
+          options: options,
+          householdTableString: householdTableString,
+        };
+        const citationObject = buildCitation(input);
+        citationObject.generalizedData = generalizedData;
+        source.citationObject = citationObject;
+      }
+    }
+  }
+
+  if (!source.citationObject) {
+    // we don't have an FS fetch object, or it wasn't a record object we could process,
+    // see what we can do by parsing FS citation string
+
+    //console.log("getSourcerCitation: could not fetch, source is:");
+    //console.log(source);
+
+    if (/^"[^"]+"\s+\d\d\d\d http/.test(source.citation)) {
+      let year = source.citation.replace(/^"[^"]+"\s+(\d\d\d\d) http.*$/, "$1");
+      if (year && year != source.citation) {
+        source.sortYear = year;
+      }
+      let firstSentence = source.citation.replace(/^"([^"]+)"\s+\d\d\d\d http.*$/, "$1");
+      if (firstSentence && firstSentence != source.citation) {
+        source.firstSentence = firstSentence;
+      }
+      let link = source.citation.replace(/^"[^"]+"\s+\d\d\d\d (http.*)\. Accessed.*$/, "$1");
+      if (link && link != source.citation) {
+        source.link = link;
+      }
+
+      let title = source.title;
+      if (!title) {
+        title = source.firstSentence;
+      }
+      if (title) {
+        let joinIndex = title.search(/[\s\n]+in\s+the\s+/);
+        if (joinIndex != -1) {
+          source.prefName = title.substring(0, joinIndex);
+        }
+      }
+    }
+  }
+}
+
 async function buildSourcerCitations(result, type, options) {
   try {
     if (options.addMerge_fsAllCitations_excludeOtherRoleSources) {
@@ -651,4 +865,4 @@ async function buildSourcerCitations(result, type, options) {
   }
 }
 
-export { buildSourcerCitations, buildFsPlainCitations };
+export { filterAndEnhanceFsSourcesIntoSources, buildSourcerCitation, buildSourcerCitations, buildFsPlainCitations };

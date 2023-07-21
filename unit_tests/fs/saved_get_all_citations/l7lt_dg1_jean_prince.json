@@ -1,0 +1,170 @@
+{
+  "fsSources": [
+    {
+      "id": "Q9VK-J57",
+      "title": "1845 Marriage M.14 of Jean Baptiste Prince and Josephte Proulx",
+      "titleUserContributed": true,
+      "tombstoned": false,
+      "titleUpdatedBy": "cis.user.MMM7-SS8Q",
+      "titleSubmittedBy": "cis.user.MMM7-SS8Q",
+      "titleUpdatedOn": 1671839917279,
+      "citation": "\"Canada, Québec, registres paroissiaux catholiques, 1621-1979,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/3:1:3QSQ-G99Q-MT46?cc=1321742&wc=HCX8-L29%3A22080801%2C22080802%2C22080803 : 16 July 2014), Saint-Norbert-d'Arthabaska > Saint-Norbert-d'Arthabaska > Baptêmes, mariages, sépultures 1845-1861 > image 46 of 547; Archives Nationales du Quebec (National Archives of Quebec), Montreal.\n",
+      "citationUpdatedBy": "cis.user.MMM7-SS8Q",
+      "citationSubmittedBy": "cis.user.MMM7-SS8Q",
+      "citationUpdatedOn": 1671839917279,
+      "uri": {
+        "uri": "https://familysearch.org/ark:/61903/3:1:3QSQ-G99Q-MT46"
+      },
+      "uriUpdatedBy": "cis.user.MMM7-SS8Q",
+      "uriSubmittedBy": "cis.user.MMM7-SS8Q",
+      "uriUpdatedOn": 1671839917279,
+      "notesUpdatedBy": "cis.user.MMM7-SS8Q",
+      "notesSubmittedBy": "cis.user.MMM7-SS8Q",
+      "notesUpdatedOn": 1671839917279,
+      "updatedOn": 1671839917279,
+      "updatedBy": "cis.user.MMM7-SS8Q",
+      "submittedBy": "cis.user.MMM7-SS8Q",
+      "createdOn": 1671839917279,
+      "createdBy": "cis.user.MMM7-SS8Q",
+      "sourceType": "FSREADONLY",
+      "lang": "en",
+      "eventUserContributed": false,
+      "eventUpdatedBy": "cis.user.MMM7-SS8Q",
+      "eventSubmittedBy": "cis.user.MMM7-SS8Q",
+      "eventUpdatedOn": 1671839917279,
+      "maaiHintDismissed": false,
+      "maaiHDUpdatedBy": "cis.user.MMM7-SS8Q",
+      "maaiHDSubmittedBy": "cis.user.MMM7-SS8Q",
+      "maaiHDUpdatedOn": 1671839917279
+    },
+    {
+      "id": "SD7C-NXF",
+      "title": "Jean- Jacques Prince, 'Geni World Family Tree' on MyHeritage",
+      "titleUserContributed": false,
+      "tombstoned": false,
+      "titleUpdatedBy": "cis.user.MM9G-5R5B",
+      "titleSubmittedBy": "cis.user.MM9G-5R5B",
+      "titleUpdatedOn": 1567187062250,
+      "citation": "Geni World Family Tree\nMyHeritage.com [online database]. Lehi, UT, USA: MyHeritage (USA) Inc.\nJean- Jacques Prince",
+      "citationUpdatedBy": "cis.user.MM9G-5R5B",
+      "citationSubmittedBy": "cis.user.MM9G-5R5B",
+      "citationUpdatedOn": 1567187062250,
+      "uri": {
+        "uri": "https://www.myheritage.com/research/record-40000-136977240/jean-jacques-prince-in-geni-world-family-tree"
+      },
+      "uriUpdatedBy": "cis.user.MM9G-5R5B",
+      "uriSubmittedBy": "cis.user.MM9G-5R5B",
+      "uriUpdatedOn": 1567187062250,
+      "notes": "Jean- Jacques Prince\nBirth: May 20 1809 - Québec, Canada\nDeath: Jan 28 1877 - Saint Valère, Arthabaska, Québec, Canada\nFather: Jean- Baptiste Prince\nMother: Elisabeth Prince (born Hebert)\nWives: Marie- Josephine (born Proulx), Cecile Prince (born Provencher)\nChildren: Theodule Prince, Elisabeth Goudreau (born Prince), Louise Simoneau (born Prince), Hermenegilde Sevigny (born Prince), Leonard Prince, Joseph Edmond Prince, Louis Prince, Celina Simoneau (born Prince), Jean Georges-Vital Prince, Marie Allard (born Prince)",
+      "notesUpdatedBy": "cis.user.MM9G-5R5B",
+      "notesSubmittedBy": "cis.user.MM9G-5R5B",
+      "notesUpdatedOn": 1567187062250,
+      "updatedOn": 1567187062250,
+      "updatedBy": "cis.user.MM9G-5R5B",
+      "submittedBy": "cis.user.MM9G-5R5B",
+      "createdOn": 1567187062250,
+      "createdBy": "cis.user.MM9G-5R5B",
+      "sourceType": "DEFAULT",
+      "lang": "en",
+      "eventUserContributed": false,
+      "eventUpdatedBy": "cis.user.MM9G-5R5B",
+      "eventSubmittedBy": "cis.user.MM9G-5R5B",
+      "eventUpdatedOn": 1567187062250,
+      "maaiHintDismissed": false,
+      "maaiHDUpdatedBy": "cis.user.MM9G-5R5B",
+      "maaiHDSubmittedBy": "cis.user.MM9G-5R5B",
+      "maaiHDUpdatedOn": 1567187062250
+    }
+  ],
+  "sourceData": {
+    "https://familysearch.org/ark:/61903/3:1:3QSQ-G99Q-MT46": {
+      "dataObj": {
+        "name": "005470614_00046",
+        "apid": "TH-1942-28020-23623-72",
+        "childCount": 0,
+        "streamCount": 7,
+        "lastMod": 1625324245742,
+        "link": [
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72",
+            "rel": "node",
+            "type": "application/json"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/parents",
+            "rel": "parents",
+            "type": "application/json"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/deepzoomcloud/dz/v1/TH-1942-28020-23623-72/image.xml",
+            "rel": "deepzoom",
+            "type": "application/xml"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/permission",
+            "rel": "permission",
+            "type": "application/json"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/name",
+            "rel": "name",
+            "type": "application/json"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/dist.jpg",
+            "rel": "stream-image-dist",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/thumb_16.jpg",
+            "rel": "stream-image-thumb_16",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/thumb_32.jpg",
+            "rel": "stream-image-thumb_32",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/thumb_64.jpg",
+            "rel": "stream-image-thumb_64",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/thumb_128.jpg",
+            "rel": "stream-image-thumb_128",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/thumb_p200.jpg",
+            "rel": "stream-image-thumb_p200",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-1942-28020-23623-72/artifactmetadata.xml",
+            "rel": "stream-meta-artifactmetadata",
+            "type": "application/xml"
+          }
+        ],
+        "templates": [
+          {
+            "name": "das-image",
+            "template": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/{id}/{image}"
+          },
+          {
+            "name": "dz-image",
+            "template": "https://sg30p0.familysearch.org/service/records/storage/deepzoomcloud/dz/v1/{id}/{image}"
+          },
+          {
+            "name": "external-das-image",
+            "template": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/{id}/{image}"
+          },
+          {
+            "name": "external-dz-image",
+            "template": "https://sg30p0.familysearch.org/service/records/storage/deepzoomcloud/dz/v1/{id}/{image}"
+          }
+        ]
+      }
+    }
+  }
+}

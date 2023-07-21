@@ -1180,6 +1180,11 @@ function keepPopupOpenForDebug() {
   keepPopupOpen = true;
 }
 
+var saveUnitTestData = false;
+function enableSaveUnitTestData() {
+  saveUnitTestData = true;
+}
+
 function setupDebugSubmenuMenu(data, backFunction) {
   let menu = beginMainMenu();
 
@@ -1206,6 +1211,12 @@ function setupDebugSubmenuMenu(data, backFunction) {
   if (!keepPopupOpen) {
     addMenuItem(menu, "Keep popup open for inspect", function (element) {
       keepPopupOpenForDebug();
+    });
+  }
+
+  if (!saveUnitTestData) {
+    addMenuItem(menu, "Save unit test data", function (element) {
+      enableSaveUnitTestData();
     });
   }
 
@@ -1458,4 +1469,6 @@ export {
   isFirefox,
   keepPopupOpen,
   keepPopupOpenForDebug,
+  saveUnitTestData,
+  enableSaveUnitTestData,
 };

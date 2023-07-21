@@ -69,6 +69,22 @@ function getTestFilePath(siteName, dataDir, testData) {
   return getRefOrTestFilePath("test", siteName, dataDir, testData);
 }
 
+function getRefOrTestTextFilePath(type, siteName, dataDir, testData, variantName = "") {
+  let fileName = testData.caseName;
+  if (variantName) {
+    fileName += "_" + variantName;
+  }
+  return "./unit_tests/" + siteName + "/" + dataDir + "/" + type + "/" + fileName + ".txt";
+}
+
+function getRefTextFilePath(siteName, dataDir, testData, variantName = "") {
+  return getRefOrTestTextFilePath("ref", siteName, dataDir, testData, variantName);
+}
+
+function getTestTextFilePath(siteName, dataDir, testData, variantName = "") {
+  return getRefOrTestTextFilePath("test", siteName, dataDir, testData, variantName);
+}
+
 function writeTestOutputFile(testResultObject, siteName, dataDir, testData, logger) {
   createFolderIfNeeded("test", siteName, dataDir);
 
@@ -88,6 +104,23 @@ function writeTestOutputFile(testResultObject, siteName, dataDir, testData, logg
   return true;
 }
 
+function writeTestOutputTextFile(testResultText, siteName, dataDir, testData, variantName, logger) {
+  createFolderIfNeeded("test", siteName, dataDir);
+
+  // write out result file.
+  let resultPath = getTestTextFilePath(siteName, dataDir, testData, variantName);
+  try {
+    fs.writeFileSync(resultPath, testResultText, { mode: 0o755 });
+  } catch (err) {
+    // An error occurred
+    //console.error(err);
+    logger.logError(testData, "Failed to write output test file: " + resultPath);
+    return false;
+  }
+
+  return true;
+}
+
 function createRefFile(testResultObject, siteName, dataDir, testData, logger) {
   createFolderIfNeeded("ref", siteName, dataDir);
 
@@ -97,6 +130,23 @@ function createRefFile(testResultObject, siteName, dataDir, testData, logger) {
   let resultJsonString = JSON.stringify(testResultObject, null, 2);
   try {
     fs.writeFileSync(resultPath, resultJsonString, { mode: 0o755 });
+  } catch (err) {
+    // An error occurred
+    //console.error(err);
+    logger.logError(testData, "Failed to create ref file: " + resultPath);
+    return false;
+  }
+
+  return true;
+}
+
+function createRefTextFile(testResultText, siteName, dataDir, testData, variantName = "", logger) {
+  createFolderIfNeeded("ref", siteName, dataDir);
+
+  // write out result file.
+  let resultPath = getRefTextFilePath(siteName, dataDir, testData, variantName);
+  try {
+    fs.writeFileSync(resultPath, testResultText, { mode: 0o755 });
   } catch (err) {
     // An error occurred
     //console.error(err);
@@ -138,6 +188,21 @@ function readRefFile(initData, siteName, dataDir, testData, logger) {
   return refObject;
 }
 
+function readRefTextFile(initText, siteName, dataDir, testData, variantName, logger) {
+  // read in the reference result
+  let refPath = getRefTextFilePath(siteName, dataDir, testData, variantName);
+  var refText;
+  try {
+    refText = fs.readFileSync(refPath, "utf8");
+  } catch (e) {
+    //console.log('Error:', e.stack);
+    console.log("Creating ref file: " + refPath);
+    createRefTextFile(initText, siteName, dataDir, testData, variantName, logger);
+    return undefined;
+  }
+  return refText;
+}
+
 function readInputFile(siteName, dataDir, testData, logger) {
   let inputSubPath = siteName + "/" + dataDir + "/ref/" + testData.caseName;
   if (testData.inputPath) {
@@ -147,4 +212,15 @@ function readInputFile(siteName, dataDir, testData, logger) {
   return readFile(inputSubPath, testData, logger);
 }
 
-export { writeTestOutputFile, readRefFile, readInputFile, readFile, getRefFilePath, getTestFilePath };
+export {
+  writeTestOutputFile,
+  readRefFile,
+  readInputFile,
+  readFile,
+  getRefFilePath,
+  getTestFilePath,
+  getRefTextFilePath,
+  getTestTextFilePath,
+  writeTestOutputTextFile,
+  readRefTextFile,
+};
