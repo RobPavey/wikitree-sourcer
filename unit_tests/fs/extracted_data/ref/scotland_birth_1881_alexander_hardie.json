@@ -27,6 +27,7 @@
     "givenName": "Mary",
     "surname": "Grant"
   },
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Edinburgh, St George, Scotland\", \"EVENT_DATE_ALT_ORIG\": \"10 Jan 1881\", \"PR_SEX_CODE_ALT_ORIG\": \"M\"}",
   "referenceData": {
     "filmNumber": "232685",
     "packetLetter": "A",

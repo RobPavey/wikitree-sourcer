@@ -1,0 +1,47 @@
+{
+  "recordData": {
+    "Name": "Barbara Cooper",
+    "Christening Date": "6 Apr 1786",
+    "Christening Place": "Liberton, Midlothian, Scotland",
+    "Birth Date": "14 Apr 1786",
+    "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:MBNY-X3Z",
+    "Forward To Unique Id": "1000464475077"
+  },
+  "fullName": "Barbara Cooper",
+  "givenName": "Barbara",
+  "surname": "Cooper",
+  "gender": "female",
+  "factType": "Christening",
+  "eventDateOriginal": "6 Apr 1786",
+  "eventDate": "6 Apr 1786",
+  "eventYear": "1786",
+  "eventPlaceOriginal": "Liberton, Midlothian, Scotland",
+  "eventPlace": "Liberton, Midlothian, Scotland",
+  "birthDateOriginal": "14 Apr 1786",
+  "birthDate": "14 4 1786",
+  "birthYear": "1786",
+  "forwardPersonToArk": "https://www.familysearch.org/ark:/61903/1:1:X1B6-5ZQ",
+  "father": {
+    "fullName": "William Cooper",
+    "givenName": "William",
+    "surname": "Cooper"
+  },
+  "mother": {
+    "fullName": "Barbara Cooper",
+    "givenName": "Barbara",
+    "surname": "Cooper"
+  },
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \", LIBERTON, MIDLOTHIAN, SCOTLAND\", \"EVENT_DATE_ALT_ORIG\": \"06 Apr 1786\", \"PR_BIR_DATE_ALT_ORIG\": \"14 Mar 1786\", \"PR_SEX_CODE_ALT_ORIG\": \"F\", \"FS_FILM_NBR_ALT_ORIG\": \"1067783\"}",
+  "fsCollectionId": "1771030",
+  "referenceData": {
+    "digitalFilmNumber": "7",
+    "filmNumber": "1067783",
+    "recordNumber": "14633913"
+  },
+  "collectionTitle": "Scotland Births and Baptisms, 1564-1950",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MB4H-23S",
+  "citation": "\"Scotland Births and Baptisms, 1564-1950\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQT : 16 September 2021), Barbara Cooper, 1786.",
+  "sourceTitleForPerson": "Barbara Cooper, \"Scotland Births and Baptisms, 1564-1950\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQT",
+  "pageType": "record"
+}

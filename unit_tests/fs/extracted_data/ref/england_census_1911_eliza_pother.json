@@ -31,6 +31,7 @@
   "birthYear": "1865",
   "birthPlace": "Wood Norton Nfk",
   "age": "46",
+  "extData": "{\"address\": \"WOOD NORTON E DEREHAM\", \"name_concat\": \"ELIZA,POTHER|JOHN,POTHER|LEONARD,MITCHELL|MARK,NEWMAN|ROSSANNA,MITCHELL\", \"no_of_rooms\": \"5\", \"image_upp_id\": \"GBC/1911/RG14/11203/0315\", \"rg14_look_up\": \"11203 0315 0315_03 00001\", \"rg78_look_up\": \"00610 0025 0038_61 00033\", \"year_of_birth\": \" 1865\", \"keywords_place\": \"AYLSHAM,WOOD NORTON,EYNSFORD,ENGLAND,Norfolk\", \"where_born_full\": \"WOOD NORTON NFK\", \"working_at_home\": \"N\", \"census_reference\": \"RG14PN11203 RG78PN610 RD223 SD1 ED3 SN156\", \"rg78_code_number\": \" 610.0\", \"type_of_building\": \"FARM HOUSE\", \"year_of_marriage\": \" 1908\", \"image_upp_id_rg14_cover\": \"GBC/1911/RG14/11203/0000\", \"image_upp_id_rg78_cover\": \"GBC/1911/RG78/00610/0000\", \"piece_number_and_suffix\": \"11203\", \"image_upp_id_rg78_totals\": \"GBC/1911/RG78/00610/0025-TOTAL\", \"image_upp_id_rg14_address\": \"GBC/1911/RG14/11203/0316\", \"image_upp_id_rg78_details\": \"GBC/1911/RG78/00610/0025-DETAIL\", \"image_upp_id_rg78_summary\": \"GBC/1911/RG78/00610/0038\", \"image_upp_id_rg78_description\": \"GBC/1911/RG78/00610/0025-DESC\"}",
   "externalImageId": "GBC/1911/RG14/11203/0315&parentid=GBC/1911/RG14/11203/0315/2",
   "externalRecordId": "GBC/1911/RG14/11203/0315/2",
   "externalUir": "112030315",

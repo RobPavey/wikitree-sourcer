@@ -140,7 +140,6 @@ const citationOptionsGroup = {
         },
       ],
       defaultValue: "string",
-      unitTestValue: "fsCitation",
     },
     {
       optionName: "includeExternalImageLink",
@@ -215,6 +214,17 @@ const addMergeFsAllCitationsOptionsGroup = {
       label:
         "For Sourcer style citations, exclude sources where the source person is not a primary person for the event",
       defaultValue: false,
+    },
+    {
+      optionName: "excludeRetiredSources",
+      type: "select",
+      label: "For Sourcer style citations, exclude sources that are marked as retired duplicate sources",
+      values: [
+        { value: "never", text: "Never" },
+        { value: "ifDuplicate", text: "If the current source is also in source list" },
+        { value: "always", text: "Always" },
+      ],
+      defaultValue: "ifDuplicate",
     },
   ],
 };

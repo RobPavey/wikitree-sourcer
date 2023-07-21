@@ -29,6 +29,7 @@
     "givenName": "Ebenezer George",
     "surname": "Fairchild"
   },
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Saint Catherine, Liverpool, Lancashire, England\", \"EVENT_DATE_ALT_ORIG\": \"19 FEB 1902\", \"PR_AGE_ALT_ORIG\": \"32\", \"SP_AGE_ALT_ORIG\": \"28\"}",
   "referenceData": {
     "digitalFilmNumber": "004484303",
     "filmNumber": "1546076",

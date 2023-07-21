@@ -1,0 +1,36 @@
+{
+  "recordData": {
+    "Name": "Mary",
+    "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HBK-R7B",
+    "Forward To Unique Id": "1000551693661"
+  },
+  "eventDateOriginal": "27 Mar 1831",
+  "eventDate": "27 Mar 1831",
+  "eventYear": "1831",
+  "eventPlaceOriginal": "Radcliffe, Lancashire, England, United Kingdom",
+  "eventPlace": "Radcliffe, Lancashire, England, United Kingdom",
+  "fullName": "Mary",
+  "givenName": "Mary",
+  "gender": "female",
+  "relatedPersonFactType": "Christening",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Sally Wolstenholme",
+  "relatedPersonGivenName": "Sally",
+  "relatedPersonSurname": "Wolstenholme",
+  "relatedPersonGender": "female",
+  "extData": "https://familysearch.org/ark:/61903/1:1:JQRG-RXV",
+  "fsCollectionId": "1473014",
+  "referenceData": {
+    "digitalFilmNumber": "004007124",
+    "filmNumber": "1545745",
+    "packetLetter": "I",
+    "recordNumber": "92"
+  },
+  "fsImageNumber": "00637",
+  "collectionTitle": "England Births and Christenings, 1538-1975",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9WQN-W11",
+  "citation": "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:NFJQ-3Z5 : 5 February 2023), Mary in entry for Sally Wolstenholme, 1831.",
+  "sourceTitleForPerson": "Mary in entry for Sally Wolstenholme, \"England Births and Christenings, 1538-1975\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:NFJQ-3Z5",
+  "pageType": "record"
+}

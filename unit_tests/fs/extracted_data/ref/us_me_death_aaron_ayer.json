@@ -12,6 +12,7 @@
   "eventPlace": "Buxton, York, Maine, United States",
   "spouseFullName": "Ruth",
   "spouseGivenName": "Ruth",
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Buxton, York, Maine\", \"EVENT_DATE_ALT_ORIG\": \"\", \"PR_SEX_CODE_ALT_ORIG\": \"M\"}",
   "referenceData": {
     "digitalFilmNumber": "007592510",
     "filmNumber": "10594",

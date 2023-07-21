@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| John Forster || Head ||  || M || 23 ||  || Lancashire, England\n|-\n| '''Mary Ann Forster''' || '''Wife''' ||  || '''F''' || '''34''' ||  || '''Lancashire, England'''\n|-\n| Jonathan Lester || Son ||  || M || 8 ||  || Lancashire, England\n|-\n| Ellen Forster || Daughter ||  || F || 4 ||  || Lancashire, England\n|-\n| James Forster || Son ||  || M || 3 ||  || Lancashire, England\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| John Forster || Head ||  || M || 23 ||  || Lancashire, England\n|-\n| '''Mary Ann Forster''' || '''Wife''' ||  || '''F''' || '''34''' ||  || '''Lancashire, England'''\n|-\n| Jonathan Lester || Son ||  || M || 8 ||  || Lancashire, England\n|-\n| Ellen Forster || Daughter ||  || F || 4 ||  || Lancashire, England\n|-\n| James Forster || Son ||  || M || 3 ||  || Lancashire, England\n|}"
   }
 }

@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Status || Relation || Occupation || Birth Place\n|-\n| '''Addie Bullock''' || '''F''' || '''31''' || '''Married''' || '''Head''' ||  || '''Mississippi'''\n|-\n| Hazel Bullock || F || 12 || Single || Daughter ||  || Mississippi\n|-\n| Mavis Bullock || F || 10 || Single || Daughter ||  || Mississippi\n|-\n| Emma Gene Bullock || F || 7 || Single || Daughter ||  || Mississippi\n|-\n| Ivanora Bullock || F || 5 || Single || Daughter ||  || Mississippi\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Status || Relation || Occupation || Birth Place\n|-\n| '''Addie Bullock''' || '''F''' || '''31''' || '''Married''' || '''Head''' ||  || '''Mississippi'''\n|-\n| Hazel Bullock || F || 12 || Single || Daughter ||  || Mississippi\n|-\n| Mavis Bullock || F || 10 || Single || Daughter ||  || Mississippi\n|-\n| Emma Gene Bullock || F || 7 || Single || Daughter ||  || Mississippi\n|-\n| Ivanora Bullock || F || 5 || Single || Daughter ||  || Mississippi\n|}"
   }
 }

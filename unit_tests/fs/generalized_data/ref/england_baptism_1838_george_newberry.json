@@ -1,0 +1,31 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": {
+    "name": {
+      "name": "George Newberry",
+      "lastName": "Newberry",
+      "forenames": "George"
+    },
+    "gender": "male"
+  },
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "George Newberry",
+    "lastName": "Newberry",
+    "forenames": "George"
+  },
+  "eventDate": {
+    "dateString": "29 Jul 1838",
+    "yearString": "1838"
+  },
+  "eventPlace": {
+    "placeString": "Carisbrooke, Hampshire, England, United Kingdom"
+  },
+  "collectionData": {
+    "id": "1473014"
+  },
+  "hasValidData": true
+}

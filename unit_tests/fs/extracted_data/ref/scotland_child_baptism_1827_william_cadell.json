@@ -17,6 +17,7 @@
   "relatedPersonGivenName": "Alexander",
   "relatedPersonSurname": "Cadell",
   "relatedPersonGender": "male",
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \", TRANENT, EAST LOTHIAN, SCOTLAND\", \"EVENT_DATE_ALT_ORIG\": \"29 Sep 1827\", \"PR_BIR_DATE_ALT_ORIG\": \"19 Aug 1827\", \"PR_SEX_CODE_ALT_ORIG\": \"M\"}",
   "referenceData": {
     "digitalFilmNumber": "007909057",
     "filmNumber": "1067862",

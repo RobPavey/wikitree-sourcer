@@ -28,6 +28,7 @@
   "birthYear": "1849",
   "birthPlace": "Swanage, Dorsetshire",
   "age": "62",
+  "extData": "{\"address\": \"FAIRFIELD HOUSE HIGH STREET STAINES\", \"name_concat\": \"FRANCES,HAWKERS|JULIA,DELAMOTTE|MARJORIE,DELAMOTTE|PETER,DELAMOTTE\", \"no_of_rooms\": \"10 ROOMS\", \"image_upp_id\": \"GBC/1911/RG14/06751/0025\", \"rg14_look_up\": \"06751 0025 0025_03 00001\", \"rg78_look_up\": \"00336 0107 0117_62 00013\", \"year_of_birth\": \" 1849\", \"address_street\": \"HIGH STREET\", \"keywords_place\": \"STAINES,STAINES,STAINES,ENGLAND,Middlesex\", \"occupation_code\": \"431\", \"where_born_code\": \"360\", \"where_born_full\": \"SWANAGE DORSET\", \"working_at_home\": \"N\", \"census_reference\": \"RG14PN6751 RG78PN336 RD126 SD2 ED8 SN13\", \"rg78_code_number\": \" 336.0\", \"type_of_building\": \"PRIVATE HOUSE\", \"year_of_marriage\": \" 1878\", \"address_house_name\": \"FAIRFIELD HOUSE\", \"pr_res_address_exomit\": \"HIGH STREET\", \"image_upp_id_rg14_cover\": \"GBC/1911/RG14/06751/0000\", \"image_upp_id_rg78_cover\": \"GBC/1911/RG78/00336/0000\", \"piece_number_and_suffix\": \"6751\", \"image_upp_id_rg78_totals\": \"GBC/1911/RG78/00336/0107-TOTAL\", \"image_upp_id_rg14_address\": \"GBC/1911/RG14/06751/0026\", \"image_upp_id_rg78_details\": \"GBC/1911/RG78/00336/0107-DETAIL\", \"image_upp_id_rg78_summary\": \"GBC/1911/RG78/00336/0117\", \"pr_res_address_orig_exomit\": \"HIGH STREET\", \"image_upp_id_rg78_description\": \"GBC/1911/RG78/00336/0107-DESC\"}",
   "externalImageId": "67510025_1_0",
   "referenceData": {
     "externalLineNumber": "0",

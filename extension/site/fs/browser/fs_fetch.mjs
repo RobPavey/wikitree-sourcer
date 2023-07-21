@@ -39,6 +39,8 @@ async function fetchFsSourcesJson(sourceIdList) {
     fetchUrl += sourceId;
   }
 
+  fetchUrl += "?readExternalData=true";
+
   //console.log("fetchUrl is");
   //console.log(fetchUrl);
 

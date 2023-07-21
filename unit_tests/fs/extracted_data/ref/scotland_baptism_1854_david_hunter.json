@@ -28,6 +28,7 @@
     "givenName": "Ann",
     "surname": "Christie"
   },
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"SAINT NICHOLAS,ABERDEEN,ABERDEEN,SCOTLAND\", \"EVENT_DATE_ALT_ORIG\": \"22 NOV 1854\", \"PR_BIR_DATE_ALT_ORIG\": \"01 SEP 1854\", \"PR_SEX_CODE_ALT_ORIG\": \"M\", \"FS_FILM_NBR_ALT_ORIG\": \"991204\"}",
   "fsCollectionId": "1771030",
   "referenceData": {
     "digitalFilmNumber": "8",

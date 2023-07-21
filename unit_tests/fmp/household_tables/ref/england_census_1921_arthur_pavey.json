@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Sex || Status || Age || Birth Place || Occupation || Employer\n|-\n| '''Arthur Pavey''' || '''Head''' || '''M''' || '''Married''' || '''36''' || '''London, Middlesex, England''' || '''Theological Student''' || \n|-\n| Emmeline Pavey || Wife || F ||  || 34 || Wilnecote, Warwickshire, England || Home Duties || \n|-\n| Reginald Pavey || Son || M ||  || 6 || Birmingham, Warwickshire, England ||  || \n|-\n| Margaret Pavey || Daughter || F ||  || 1 || Birmingham, Warwickshire, England ||  || \n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Sex || Status || Age || Birth Place || Occupation || Employer\n|-\n| '''Arthur Pavey''' || '''Head''' || '''M''' || '''Married''' || '''36''' || '''London, Middlesex, England''' || '''Theological Student''' || \n|-\n| Emmeline Pavey || Wife || F ||  || 34 || Wilnecote, Warwickshire, England || Home Duties || \n|-\n| Reginald Pavey || Son || M ||  || 6 || Birmingham, Warwickshire, England ||  || \n|-\n| Margaret Pavey || Daughter || F ||  || 1 || Birmingham, Warwickshire, England ||  || \n|}"
   }
 }

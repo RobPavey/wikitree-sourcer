@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary in entry for Sally Wolstenholme, 1831.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary in entry for Sally Wolstenholme, 1831.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>Mary in entry for Sally Wolstenholme, 1831.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary's daughter Sally Wolstenholme baptism on 27 Mar 1831 in Radcliffe, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary's daughter Sally Wolstenholme baptism on 27 Mar 1831 in Radcliffe, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>Mary's daughter Sally Wolstenholme baptism on 27 Mar 1831 in Radcliffe, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nName: Mary; [https://familysearch.org/ark:/61903/1:2:9HBK-R7B Forward To Ark]; Forward To Unique Id: 1000551693661.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nName: Mary; [https://familysearch.org/ark:/61903/1:2:9HBK-R7B Forward To Ark]; Forward To Unique Id: 1000551693661.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>Name: Mary; [https://familysearch.org/ark:/61903/1:2:9HBK-R7B Forward To Ark]; Forward To Unique Id: 1000551693661.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary\n|-\n| Forward To Ark || https://familysearch.org/ark:/61903/1:2:9HBK-R7B\n|-\n| Forward To Unique Id || 1000551693661\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mary\n|-\n| Forward To Ark || https://familysearch.org/ark:/61903/1:2:9HBK-R7B\n|-\n| Forward To Unique Id || 1000551693661\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>Name: Mary; [https://familysearch.org/ark:/61903/1:2:9HBK-R7B Forward To Ark]; Forward To Unique Id: 1000551693661.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary in entry for Sally Wolstenholme, 1831.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary in entry for Sally Wolstenholme, 1831.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>Mary in entry for Sally Wolstenholme, 1831.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary's daughter Sally Wolstenholme baptism on 27 Mar 1831 in Radcliffe, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary's daughter Sally Wolstenholme baptism on 27 Mar 1831 in Radcliffe, Lancashire, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>Mary's daughter Sally Wolstenholme baptism on 27 Mar 1831 in Radcliffe, Lancashire, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary in entry for Sally Wolstenholme, 1831.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>\nMary in entry for Sally Wolstenholme, 1831.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)<br/>Mary in entry for Sally Wolstenholme, 1831.",
+    "type": "source"
+  }
+}

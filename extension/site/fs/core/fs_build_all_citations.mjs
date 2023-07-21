@@ -31,7 +31,112 @@ import { buildNarrative } from "../../../base/core/narrative_builder.mjs";
 
 import { groupSourcesIntoFacts } from "./fs_group_into_facts.mjs";
 
-function buildFsPlainCitations(result, ed, type, options) {
+import { extractDataFromFetch } from "./fs_extract_data.mjs";
+import { generalizeData } from "./fs_generalize_data.mjs";
+import { buildCitation } from "./fs_build_citation.mjs";
+import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
+
+function inferEventDate(source) {
+  // there is no date, this can cause sort issues. Sometime we can infer one
+
+  if (source.notes && source.notes == "Source created by RecordSeek.com") {
+    if (source.citation) {
+      let title = source.citation.replace(/^"([^"]+)".*$/, "$1");
+      if (title && title != source.citation) {
+        // get any years in title
+        let years = title.match(/\d\d\d\d/);
+        if (years && years.length == 1) {
+          return years[0];
+        }
+      }
+    }
+  }
+
+  if (source.title) {
+    // get any years in title
+    let years = source.title.match(/\d\d\d\d/g);
+    if (years && years.length == 1) {
+      return years[0];
+    }
+  }
+
+  return "";
+}
+
+function filterAndEnhanceFsSourcesIntoSources(result, options) {
+  let sources = result.fsSources;
+
+  result.sources = [];
+
+  for (let source of sources) {
+    //console.log("FS source is:");
+    //console.log(source);
+
+    let sourceObj = {};
+
+    function addField(fieldName) {
+      if (source[fieldName]) {
+        sourceObj[fieldName] = source[fieldName];
+      }
+    }
+    addField("citation");
+    addField("title");
+    addField("id");
+    addField("notes");
+
+    if (source.uri && source.uri.uri) {
+      sourceObj.uri = source.uri.uri;
+
+      if (source.uriUpdatedOn) {
+        let date = new Date(source.uriUpdatedOn);
+        const options = { day: "numeric", month: "long", year: "numeric" };
+        sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
+      }
+    }
+
+    if (options.addMerge_fsAllCitations_excludeNonFsSources) {
+      // could check whether uri is of right form instead
+      if (source.sourceType != "FSREADONLY") {
+        continue;
+      }
+      if (!sourceObj.uri) {
+        continue;
+      }
+      let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
+      if (validLinkIndex == -1) {
+        continue;
+      }
+    }
+
+    // ignore some useless sources
+    if (source.citation == "Ancestry Family Tree" && source.title == "Ancestry Family Trees" && !source.notes) {
+      continue;
+    }
+
+    if (source.event) {
+      if (source.event.sortKey) {
+        sourceObj.sortKey = source.event.sortKey;
+      }
+      if (source.event.sortYear) {
+        sourceObj.sortYear = source.event.sortYear;
+      }
+      if (source.event.displayDate) {
+        sourceObj.eventDate = source.event.displayDate;
+      }
+    }
+
+    if (!sourceObj.eventDate && !sourceObj.sortYear) {
+      const inferredEventDate = inferEventDate(source);
+      if (inferredEventDate) {
+        sourceObj.eventDate = inferredEventDate;
+      }
+    }
+
+    result.sources.push(sourceObj);
+  }
+}
+
+function buildFsPlainCitations(result, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -59,6 +164,8 @@ function buildFsPlainCitations(result, ed, type, options) {
   result.citationsString = citationsString;
   result.citationsStringType = type;
   result.citationCount = result.sources.length;
+
+  result.success = true;
 }
 
 function inferBestEventDateForCompare(gd) {
@@ -156,7 +263,9 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
       let priorityB = getEventPriority(sourceB);
       result = priorityA - priorityB;
     }
-    return result;
+    if (result != 0) {
+      return result;
+    }
   }
 
   // if one has a date and the other doesn't then the one with the date comes first
@@ -172,7 +281,6 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
     } else if (sourceA.sortKey > sourceB.sortKey) {
       return 1;
     }
-    return 0;
   }
 
   if (sourceA.sortKey) {
@@ -181,7 +289,41 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
     return 1;
   }
 
-  return 0;
+  // to get consistent sorting sort by citation, then, title then uri
+  // It is unlikely to get here if all sources have a sort key
+  let result = 0;
+
+  if (sourceA.citation) {
+    if (sourceB.citation) {
+      result = sourceA.citation.localeCompare(sourceB.citation);
+    } else {
+      return -1;
+    }
+  } else if (sourceB.citation) {
+    return 1;
+  }
+
+  if (sourceA.title) {
+    if (sourceB.title) {
+      result = sourceA.title.localeCompare(sourceB.title);
+    } else {
+      return -1;
+    }
+  } else if (sourceB.title) {
+    return 1;
+  }
+
+  if (sourceA.uri) {
+    if (sourceB.uri) {
+      result = sourceA.uri.localeCompare(sourceB.uri);
+    } else {
+      return -1;
+    }
+  } else if (sourceB.uri) {
+    return 1;
+  }
+
+  return result;
 }
 
 function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
@@ -201,31 +343,12 @@ function sortFacts(result) {
   //console.log("sortFacts");
   //console.log(result);
 
-  /*
-  let oldOrder = [];
-  for (let fact of result.facts) {
-    oldOrder.push(fact);
-  }
-  */
-
   function compareFunction(a, b) {
     return compareGdsAndSources(a.generalizedData, b.generalizedData, a.sources[0], b.sources[0]);
   }
 
   // sort the sources
   result.facts.sort(compareFunction);
-
-  /*
-  if (oldOrder.length != result.facts.length) {
-    console.log("length changed");
-  } else {
-    for (let factIndex = 0; factIndex < result.facts.length; factIndex++) {
-      if (oldOrder[factIndex] != result.facts[factIndex]) {
-        console.log("fact order different at indes " + factIndex);
-      }
-    }
-  }
-  */
 }
 
 function buildNarrativeForPlainCitation(source, options) {
@@ -338,11 +461,12 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
   let includedCitation = false;
   let includedNotes = false;
 
+  // If it is an FS Source then we only want the full FS citation and not the title.
+  const isFsSource = /^https?\:\/\/familysearch\.org\/ark\:\/\d+\/1\:1\:[A-Z0-1\-]+.*$/.test(source.uri);
+
   let citationText = "";
 
-  // Harry A Pavey in the 1871 England Census
-
-  if (cleanTitleText.includes(" in the ")) {
+  if (isFsSource || cleanTitleText.includes(" in the ")) {
     citationText += cleanCitationText;
     includedCitation = true;
   } else {
@@ -382,7 +506,7 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     }
   }
 
-  if (!includedTitle && !citationText.includes(cleanTitleText)) {
+  if (!isFsSource && !includedTitle && !citationText.includes(cleanTitleText)) {
     addSeparationWithinBody(", ");
     citationText += cleanTitleText;
   }
@@ -557,46 +681,204 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
   result.citationCount = result.sources.length;
 }
 
+function doesCitationWantHouseholdTable(citationType, generalizedData, options) {
+  if (!generalizedData.hasHouseholdTable()) {
+    return false;
+  }
+
+  let optionsWantCitation = false;
+
+  let autoTableOpt = options.table_general_autoGenerate;
+
+  if (autoTableOpt != "none" && autoTableOpt != "citationInTableCaption") {
+    optionsWantCitation = true;
+    if (citationType == "source") {
+      if (autoTableOpt != "withinRefOrSource") {
+        optionsWantCitation = false;
+      }
+    }
+  } else if (citationType == "narrative") {
+    let includeHouseholdOpt = options.narrative_census_includeHousehold;
+    if (includeHouseholdOpt != "no") {
+      let householdFormatOpt = options.narrative_census_householdPartFormat;
+      if (householdFormatOpt == "withFamily") {
+        optionsWantCitation = true;
+      }
+    }
+  }
+
+  if (optionsWantCitation) {
+    return true;
+  }
+
+  return false;
+}
+
+function buildSourcerCitation(runDate, sourceDataObjects, source, type, options) {
+  if (sourceDataObjects) {
+    source.dataObjects = sourceDataObjects;
+
+    let extractedData = extractDataFromFetch(undefined, source.dataObjects, "record", options);
+    if (extractedData && extractedData.pageType) {
+      source.extractedData = extractedData;
+
+      let generalizedData = generalizeData({ extractedData: extractedData });
+      if (generalizedData && generalizedData.hasValidData) {
+        source.generalizedData = generalizedData;
+
+        let householdTableString = "";
+        if (doesCitationWantHouseholdTable(type, generalizedData, options)) {
+          const tableInput = {
+            extractedData: extractedData,
+            generalizedData: generalizedData,
+            dataCache: undefined,
+            options: options,
+          };
+
+          const tableObject = buildHouseholdTable(tableInput);
+          householdTableString = tableObject.tableString;
+        }
+
+        const input = {
+          extractedData: extractedData,
+          generalizedData: generalizedData,
+          runDate: runDate,
+          type: type,
+          dataCache: undefined,
+          options: options,
+          householdTableString: householdTableString,
+        };
+        const citationObject = buildCitation(input);
+        citationObject.generalizedData = generalizedData;
+        source.citationObject = citationObject;
+      }
+    }
+  }
+
+  if (!source.citationObject) {
+    // we don't have an FS fetch object, or it wasn't a record object we could process,
+    // see what we can do by parsing FS citation string
+
+    //console.log("getSourcerCitation: could not fetch, source is:");
+    //console.log(source);
+
+    if (/^"[^"]+"\s+\d\d\d\d http/.test(source.citation)) {
+      let year = source.citation.replace(/^"[^"]+"\s+(\d\d\d\d) http.*$/, "$1");
+      if (year && year != source.citation) {
+        source.sortYear = year;
+      }
+      let firstSentence = source.citation.replace(/^"([^"]+)"\s+\d\d\d\d http.*$/, "$1");
+      if (firstSentence && firstSentence != source.citation) {
+        source.firstSentence = firstSentence;
+      }
+      let link = source.citation.replace(/^"[^"]+"\s+\d\d\d\d (http.*)\. Accessed.*$/, "$1");
+      if (link && link != source.citation) {
+        source.link = link;
+      }
+
+      let title = source.title;
+      if (!title) {
+        title = source.firstSentence;
+      }
+      if (title) {
+        let joinIndex = title.search(/[\s\n]+in\s+the\s+/);
+        if (joinIndex != -1) {
+          source.prefName = title.substring(0, joinIndex);
+        }
+      }
+    }
+  }
+}
+
 async function buildSourcerCitations(result, type, options) {
-  if (options.addMerge_fsAllCitations_excludeOtherRoleSources) {
-    let newSources = [];
-    for (let source of result.sources) {
-      if (source.citationObject) {
-        const gd = source.generalizedData;
-        if (gd && gd.role && gd.role != Role.Primary) {
-          // exclude this one
+  try {
+    if (options.addMerge_fsAllCitations_excludeOtherRoleSources) {
+      let newSources = [];
+      for (let source of result.sources) {
+        if (source.citationObject) {
+          const gd = source.generalizedData;
+          if (gd && gd.role && gd.role != Role.Primary) {
+            // exclude this one
+          } else {
+            newSources.push(source);
+          }
         } else {
           newSources.push(source);
         }
-      } else {
-        newSources.push(source);
       }
+      result.sources = newSources;
     }
-    result.sources = newSources;
-  }
 
-  sortSourcesUsingFsSortKeysAndFetchedRecords(result);
+    if (options.addMerge_fsAllCitations_excludeRetiredSources != "never") {
+      let newSources = [];
+      for (let source of result.sources) {
+        let removeSource = false;
+        let ed = source.extractedData;
+        // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
+        if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
+          if (options.addMerge_fsAllCitations_excludeRetiredSources == "always") {
+            removeSource = true;
+          } else {
+            // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
+            // but the current URL is store in either forwardPersonToArk or extData in this case.
+            let currentSourceUrl = ed.forwardPersonToArk;
+            if (!currentSourceUrl) {
+              if (ed.extData && ed.extData.startsWith("http")) {
+                currentSourceUrl = ed.extData;
+              }
+            }
 
-  if (type == "source") {
-    generateSourcerCitationsStringForTypeSource(result, options);
-  } else {
-    let groupCitations = options.addMerge_fsAllCitations_groupCitations;
+            if (currentSourceUrl) {
+              currentSourceUrl = currentSourceUrl.replace("www.familysearch.org", "familysearch.org");
 
-    if (groupCitations) {
-      groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative
-      sortFacts(result);
-      generateSourcerCitationsStringForFacts(result, type, options);
+              //console.log("currentSourceUrl = " + currentSourceUrl);
+
+              for (let otherSource of result.sources) {
+                //console.log("otherSource.uri = " + otherSource.uri);
+                if (otherSource.uri == currentSourceUrl) {
+                  removeSource = true;
+                  //console.log("removing duplicate source");
+                  break;
+                }
+              }
+            }
+          }
+        }
+
+        if (!removeSource) {
+          newSources.push(source);
+        }
+      }
+      result.sources = newSources;
+    }
+
+    sortSourcesUsingFsSortKeysAndFetchedRecords(result);
+
+    if (type == "source") {
+      generateSourcerCitationsStringForTypeSource(result, options);
     } else {
-      if (type == "inline") {
-        generateSourcerCitationsStringForTypeInline(result, options);
+      let groupCitations = options.addMerge_fsAllCitations_groupCitations;
+
+      if (groupCitations) {
+        groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative
+        sortFacts(result);
+        generateSourcerCitationsStringForFacts(result, type, options);
       } else {
-        // must be narrative
-        generateSourcerCitationsStringForTypeNarrative(result, options);
+        if (type == "inline") {
+          generateSourcerCitationsStringForTypeInline(result, options);
+        } else {
+          // must be narrative
+          generateSourcerCitationsStringForTypeNarrative(result, options);
+        }
       }
     }
-  }
 
-  result.citationsStringType = type;
+    result.citationsStringType = type;
+    result.success = true;
+  } catch (error) {
+    result.success = false;
+    result.errorMessage = error.message;
+  }
 }
 
-export { buildSourcerCitations, buildFsPlainCitations };
+export { filterAndEnhanceFsSourcesIntoSources, buildSourcerCitation, buildSourcerCitations, buildFsPlainCitations };

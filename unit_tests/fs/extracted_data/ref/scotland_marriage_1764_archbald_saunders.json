@@ -14,6 +14,7 @@
   "eventPlaceOriginal": "Applegarth Town, Dumfriesshire, Scotland",
   "eventPlace": "Applegarth Town, Dumfriesshire, Scotland",
   "factType": "Marriage",
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Applegarth,Dumfries,Scotland\", \"EVENT_DATE_ALT_ORIG\": \"22 APR 1764\"}",
   "referenceData": {
     "digitalFilmNumber": "007909297",
     "filmNumber": "1067956"

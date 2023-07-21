@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Occupation || Birth Place\n|-\n| '''Jas Willson''' || '''M''' || '''47''' || '''Farmer''' || '''Geor'''\n|-\n| Katharine Willson ||  || 40 ||  || \n|-\n| Abner Willson ||  || 22 ||  || \n|-\n| John Willson ||  || 17 ||  || \n|-\n| Sam Willson ||  || 13 ||  || \n|-\n| Caroline Willson ||  || 12 ||  || \n|-\n| Nancy Willson ||  || 11 ||  || \n|-\n| Frances Willson ||  || 8 ||  || \n|-\n| Katharine Willson ||  || 4 ||  || \n|-\n| Cirus Willson ||  || 2 ||  || \n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Occupation || Birth Place\n|-\n| '''Jas Willson''' || '''M''' || '''47''' || '''Farmer''' || '''Geor'''\n|-\n| Katharine Willson ||  || 40 ||  || \n|-\n| Abner Willson ||  || 22 ||  || \n|-\n| John Willson ||  || 17 ||  || \n|-\n| Sam Willson ||  || 13 ||  || \n|-\n| Caroline Willson ||  || 12 ||  || \n|-\n| Nancy Willson ||  || 11 ||  || \n|-\n| Frances Willson ||  || 8 ||  || \n|-\n| Katharine Willson ||  || 4 ||  || \n|-\n| Cirus Willson ||  || 2 ||  || \n|}"
   }
 }

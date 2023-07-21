@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| '''William Pavey''' || '''Head''' || '''Married''' || '''M''' || '''73''' || '''Sawyer''' || '''Stockland, Devon'''\n|-\n| Mary Pavey || Wife || Married || F || 68 || Washerwoman || Membury, Devon\n|-\n| James Pavey || Son || Unmarried || M || 34 || Sawyer || Stockland, Devon\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| '''William Pavey''' || '''Head''' || '''Married''' || '''M''' || '''73''' || '''Sawyer''' || '''Stockland, Devon'''\n|-\n| Mary Pavey || Wife || Married || F || 68 || Washerwoman || Membury, Devon\n|-\n| James Pavey || Son || Unmarried || M || 34 || Sawyer || Stockland, Devon\n|}"
   }
 }

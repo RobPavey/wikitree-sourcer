@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Age\n|-\n| R C Jones || 35\n|-\n| '''M A Jones''' || '''34'''\n|-\n| Rosa Jones || 13\n|-\n| J E Jones || 11\n|-\n| J M Jones || 9\n|-\n| G M Jones || 6m\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Age\n|-\n| R C Jones || 35\n|-\n| '''M A Jones''' || '''34'''\n|-\n| Rosa Jones || 13\n|-\n| J E Jones || 11\n|-\n| J M Jones || 9\n|-\n| G M Jones || 6m\n|}"
   }
 }

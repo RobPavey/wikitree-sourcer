@@ -38,13 +38,17 @@ function deepObjectEquals(object1, object2) {
   const keys2 = Object.keys(object2);
 
   if (keys1.length !== keys2.length) {
-    console.log(
-      "Failed compare: diff number of keys. object1 has " + keys1.length + " and object2 has " + keys2.length
-    );
+    let failedCompare = false;
 
     let outputHeading = false;
     for (let key of keys1) {
-      if (!keys2.includes(key)) {
+      if (!keys2.includes(key) && object1[key] !== undefined) {
+        if (!failedCompare) {
+          failedCompare = true;
+          console.log(
+            "Failed compare: diff number of keys. object1 has " + keys1.length + " and object2 has " + keys2.length
+          );
+        }
         if (!outputHeading) {
           console.log("object1 has these extra keys:");
           outputHeading = true;
@@ -54,7 +58,13 @@ function deepObjectEquals(object1, object2) {
     }
     outputHeading = false;
     for (let key of keys2) {
-      if (!keys1.includes(key)) {
+      if (!keys1.includes(key) && object2[key] !== undefined) {
+        if (!failedCompare) {
+          failedCompare = true;
+          console.log(
+            "Failed compare: diff number of keys. object1 has " + keys1.length + " and object2 has " + keys2.length
+          );
+        }
         if (!outputHeading) {
           console.log("object2 has these extra keys:");
           outputHeading = true;
@@ -62,7 +72,7 @@ function deepObjectEquals(object1, object2) {
         console.log(key);
       }
     }
-    return false;
+    return !failedCompare;
   }
 
   for (let keyIndex = 0; keyIndex < keys1.length; keyIndex++) {

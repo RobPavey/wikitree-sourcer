@@ -22,6 +22,7 @@
   "factType": "Census",
   "birthPlace": "Warrington, Lancashire",
   "age": "0",
+  "extData": "{\" ext_image_id_alt\": \"GBC/1871/0011845253\", \"event_reg_district\": \"Warrington\"}",
   "externalImageId": "GBC/1871/3907/0156",
   "referenceData": {
     "sourceEntryNbr": "6",

@@ -27,6 +27,7 @@
     "givenName": "Ann",
     "surname": "Orchard"
   },
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Elk, Sanilac, Michigan\", \"EVENT_DATE_ALT_ORIG\": \"16 OCT 1885\", \"PR_SEX_CODE_ALT_ORIG\": \"F\"}",
   "referenceData": {
     "digitalFilmNumber": "005191148",
     "filmNumber": "979465"

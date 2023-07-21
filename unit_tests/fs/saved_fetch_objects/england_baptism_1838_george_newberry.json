@@ -1,0 +1,800 @@
+{
+  "id" : "r_871176920",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:97RF-5Z2?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:97RF-5Z2?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:97RF-5Z2"
+    }
+  },
+  "description" : "#sd_p_12432419638",
+  "persons" : [ {
+    "id" : "p_12432419637",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "7fe45191-1283-45a1-bada-4a575cd1be0d",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/J9VK-1JY?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/97RF-5Z2?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:J9VK-1JY" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "George Newberry",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "George",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "5d9a318a-ef52-47e2-a0db-65abe6906272",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "George"
+            }, {
+              "id" : "6bbb70ee-ba12-42b4-bb71-8b7ebb86af2b",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1584844246970
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "George"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Newberry",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "812b9982-7502-4db9-a090-a7f20adcf40c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Newberry"
+            }, {
+              "id" : "748d544c-e591-45d4-aed5-9b7b8d070f08",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1584844246970
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Newberry"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "9d6f39f5-481f-44e7-8044-7242b18ac49f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1584844246963
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "George Newberry"
+          }, {
+            "id" : "62cb7546-96f2-4ae7-9013-e21b4bbb28a0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1584844246970
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "George Newberry"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Christening",
+      "date" : {
+        "original" : "29 Jul 1838",
+        "formal" : "+1838-07-29",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "8932f037-0bb6-4823-9bed-f29ba58ed333",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "29 Jul 1838"
+          }, {
+            "id" : "18ec9327-0af4-44eb-9f04-d6acd3520f1a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1584844246963
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "29 Jul 1838",
+            "resource" : "+1838-07-29"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "59b45300-7db1-4fd7-b8ad-d50efd0a5ed7",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1584844246963
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "7"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "dc654a1f-4143-4c2a-8bbd-70eaacb2922d",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1584844246963
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "29"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "427fbe54-2632-4411-ac52-b7fe4ae82086",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1838"
+          }, {
+            "id" : "7afc7526-f8f8-49cf-93ed-76c9c86e1c77",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1584844246963
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1838"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Carisbrooke, Hampshire, England, United Kingdom",
+        "description" : "#place_2972553",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "743735e7-5789-4686-ae7e-25b7a181fb0c",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE_SUP",
+            "text" : "Carisbrooke, Hampshire, England",
+            "qualifiers" : [ {
+              "value" : "SUP",
+              "name" : "http://familysearch.org/types/qualifiers/Info"
+            } ]
+          }, {
+            "id" : "36f495e7-7b9d-48a5-8934-b0628997d9ad",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Carisbrooke, Southampton, England"
+          }, {
+            "id" : "8e615d31-6059-402e-8bc6-ab58a2572c89",
+            "confidence" : "http://confidence/94",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1584844247005
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Carisbrooke, Hampshire, England, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/2972553",
+            "qualifiers" : [ {
+              "value" : "1013, 1014, 1010, 1026",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "56ae0d1f-8ea9-487d-b12c-2d48e4cd62a5",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Christening"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_12432419638",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "10ed85e7-44af-41bb-93f3-89cd654cf46a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1584844246990
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/J9VK-1JB?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/97RF-5Z2?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:J9VK-1JB" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "George Newberry",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "George",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "3cc0c56d-033d-40c6-80ca-7c70ef2e6830",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "George"
+            }, {
+              "id" : "e3665eac-becf-4663-9e70-cc344d22e9fb",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1584844246980
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "George"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Newberry",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "3b500603-84cf-44bc-ad76-ecfe1f9193b5",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Newberry"
+            }, {
+              "id" : "cc6eee54-8017-4299-adef-df8b98e8a3de",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1584844246980
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Newberry"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "f8404cbb-a983-4449-8953-b4041b91f033",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1584844246971
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "George Newberry"
+          }, {
+            "id" : "e4486abf-4bfd-4fa6-aeb7-841575216da4",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1584844246980
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "George Newberry"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_12432419639",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "f0b849af-9b47-4ae8-bcaa-7983988882de",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1584844246990
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/J9VK-1J1?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/97RF-5Z2?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:J9VK-1J1" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Charlotte",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Charlotte",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "808d9040-d35a-431e-96d0-58e0a5997518",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Charlotte"
+            }, {
+              "id" : "51173685-5eb7-4f73-b922-bf516ea76333",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1584844246990
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Charlotte"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "9c035266-fa61-4cb1-97e5-9de0d0bee570",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1584844246980
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "Charlotte"
+          }, {
+            "id" : "c1b770bb-41a8-4c14-9917-720c768b77cd",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1584844246990
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Charlotte"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/PF6V-ZKPC",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_12432419638",
+      "resourceId" : "p_12432419638"
+    },
+    "person2" : {
+      "resource" : "#p_12432419637",
+      "resourceId" : "p_12432419637"
+    }
+  }, {
+    "id" : "MM9.1.6/PF6V-ZKPZ",
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_12432419639",
+      "resourceId" : "p_12432419639"
+    },
+    "person2" : {
+      "resource" : "#p_12432419637",
+      "resourceId" : "p_12432419637"
+    }
+  }, {
+    "id" : "MM9.1.6/PF6V-G8Z9",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_12432419638",
+      "resourceId" : "p_12432419638"
+    },
+    "person2" : {
+      "resource" : "#p_12432419639",
+      "resourceId" : "p_12432419639"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1473014",
+    "about" : "https://www.familysearch.org/platform/records/collections/1473014",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223556137,
+    "modified" : 1689407073597,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "England",
+        "description" : "#place_1986340"
+      },
+      "temporal" : {
+        "original" : "1538/1975",
+        "formal" : "1538/1975"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "England Births and Christenings, 1538-1975"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1473014" ]
+    }
+  }, {
+    "id" : "src_r_871176920",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:97RF-5Z2",
+    "componentOf" : {
+      "description" : "#sd_c_1473014"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1584844247107,
+    "modified" : 1689407073597,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Carisbrooke, Hampshire, England, United Kingdom",
+        "description" : "#place_2972553"
+      },
+      "temporal" : {
+        "original" : "29 Jul 1838"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "replacedBy" : "https://familysearch.org/ark:/61903/1:2:9HX4-RHR",
+    "citations" : [ {
+      "value" : "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:97RF-5Z2 : 5 February 2023), Entry for George Newberry, 1838."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for George Newberry, \"England Births and Christenings, 1538-1975\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/150356227" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:97RF-5Z2" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1473014?arkName=1:2:97RF-5Z2"
+    },
+    "statuses" : [ "http://gedcomx.org/Deprecated" ]
+  }, {
+    "id" : "sd_p_12432419637",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:J9VK-1JY",
+    "componentOf" : {
+      "description" : "#src_r_871176920"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "replacedBy" : "https://familysearch.org/ark:/61903/1:2:9HX4-RHR",
+    "citations" : [ {
+      "value" : "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:J9VK-1JY : 5 February 2023), George Newberry, 1838."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "George Newberry, \"England Births and Christenings, 1538-1975\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:J9VK-1JY" ]
+    }
+  }, {
+    "id" : "sd_p_12432419638",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:J9VK-1JB",
+    "componentOf" : {
+      "description" : "#src_r_871176920"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "replacedBy" : "https://familysearch.org/ark:/61903/1:2:9HX4-RHR",
+    "citations" : [ {
+      "value" : "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:J9VK-1JB : 5 February 2023), George Newberry in entry for George Newberry, 1838."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "George Newberry in entry for George Newberry, \"England Births and Christenings, 1538-1975\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:J9VK-1JB" ]
+    }
+  }, {
+    "id" : "sd_p_12432419639",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:J9VK-1J1",
+    "componentOf" : {
+      "description" : "#src_r_871176920"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "replacedBy" : "https://familysearch.org/ark:/61903/1:2:9HX4-RHR",
+    "citations" : [ {
+      "value" : "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:J9VK-1J1 : 5 February 2023), Charlotte in entry for George Newberry, 1838."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Charlotte in entry for George Newberry, \"England Births and Christenings, 1538-1975\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:J9VK-1J1" ]
+    }
+  } ],
+  "places" : [ {
+    "place" : {
+      "resource" : "https://www.familysearch.org/platform/places/description/2972553",
+      "resourceId" : "place_2972553"
+    }
+  }, {
+    "id" : "place_1986340",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/1986340" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "4245cc7d-4a82-4dce-b277-a2a40a61437f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "https://familysearch.org/ark:/61903/1:1:N2FV-W31"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "9d838075-b37a-4329-8256-7a0e3d6e26d0",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "243874"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "718f48e5-34ed-4fba-b300-1cfaabf43962",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Carisbrooke, Hampshire, England"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "1a7f2e3a-643f-4b10-8a6a-e8f05d2df759",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "1473014"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "28ffbb14-50ce-4ba8-a0ab-ed54a8dc13a7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007566545"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "id" : "4b0d6098-5961-4416-984c-14ebfd10c4af",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "1470803"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PacketLetter",
+    "values" : [ {
+      "id" : "b2e652a6-ade3-477d-a58a-7f52681b92f3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PACKET_LTR",
+      "text" : "N"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ForwardToArk",
+    "values" : [ {
+      "id" : "9a33dc98-294b-4d4a-a52c-9a6955679b97",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ARK_FW",
+      "text" : "https://familysearch.org/ark:/61903/1:2:9HX4-RHR"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "7a72b58b-fbb2-44bd-b081-6442b5d101cc",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "England-EASy"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "id" : "81d6172e-dc7a-44f5-ab9e-c5386648d427",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "260"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "e86757d6-0c8c-4921-832a-f24605fdc682",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "5"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "06ec81eb-546c-41a3-842d-7a7e2f6aa26d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "1470803_C00813-6X_1838_07_29_0000150356227"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfOrigin",
+    "values" : [ {
+      "id" : "beb16ba3-b278-41fd-b185-bfe6a15f3f03",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_ORIGIN",
+      "text" : "EASY"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
+    "values" : [ {
+      "id" : "7814e266-36c5-47fe-9c40-cec442c6bf17",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "C00813-6"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "00b02a57-f3f8-42ee-9647-e172be812c2b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "150356227"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ForwardToUniqueId",
+    "values" : [ {
+      "id" : "4a9b95f8-265b-47ce-b6f9-839021b3f513",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID_FW",
+      "text" : "1000541706019"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "0a8fb326-566a-4fdb-a5d4-b75d0354f4d2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "DEPRECATED"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceComposite",
+    "values" : [ {
+      "id" : "f5cec1e7-7078-4fb9-a5cc-7970dd36c6c9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_COMPOSITE",
+      "text" : "item 26 p 187"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "a86b20a2-7454-4624-8c05-a0405786bb53",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "https://familysearch.org/ark:/61903/1:1:N2FV-WQM"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "462a59fc-eac7-4533-ae20-89e9e4a917b1",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "https://familysearch.org/ark:/61903/1:1:N2FV-WQ9"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "6"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "52964"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}
