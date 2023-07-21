@@ -205,7 +205,7 @@ const regressionData = [
     url: "https://www.familysearch.org/tree/person/details/G7MJ-Y7W",
     optionVariants: [
       {
-        variantName: "no_includeNotes",
+        variantName: "no_include_notes",
         optionOverrides: {
           addMerge_fsAllCitations_citationType: "fsPlainSource",
           addMerge_fsAllCitations_includeNotes: false,
@@ -218,9 +218,15 @@ const regressionData = [
     url: "https://www.familysearch.org/tree/person/details/K2HC-86C",
     optionVariants: [
       {
-        variantName: "excludeOtherRoleSources",
+        variantName: "exclude_other_role_sources",
         optionOverrides: {
           addMerge_fsAllCitations_excludeOtherRoleSources: true,
+        },
+      },
+      {
+        variantName: "include_tables",
+        optionOverrides: {
+          table_general_autoGenerate: "afterRef",
         },
       },
     ],
@@ -284,7 +290,7 @@ const regressionData = [
     url: "https://www.familysearch.org/tree/person/details/LJJH-F8B",
     optionVariants: [
       {
-        variantName: "excludeOtherRoleSources",
+        variantName: "exclude_other_role_sources",
         optionOverrides: {
           addMerge_fsAllCitations_excludeOtherRoleSources: true,
         },
@@ -313,13 +319,13 @@ const optionVariants = [
     },
   },
   {
-    variantName: "fsPlainInline",
+    variantName: "fs_plain_inline",
     optionOverrides: {
       addMerge_fsAllCitations_citationType: "fsPlainInline",
     },
   },
   {
-    variantName: "fsPlainSource",
+    variantName: "fs_plain_source",
     optionOverrides: {
       addMerge_fsAllCitations_citationType: "fsPlainSource",
     },
