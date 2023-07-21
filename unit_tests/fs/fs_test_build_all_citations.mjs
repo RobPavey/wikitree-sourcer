@@ -39,15 +39,15 @@ import {
   buildFsPlainCitations,
 } from "../../extension/site/fs/core/fs_build_all_citations.mjs";
 
-async function testGetSourcerCitation(savedData, source, type, options) {
+async function testGetSourcerCitation(runDate, savedData, source, type, options) {
   let uri = source.uri;
 
   let sourceDataObjects = savedData.sourceData[uri];
 
-  buildSourcerCitation(sourceDataObjects, source, type, options);
+  buildSourcerCitation(runDate, sourceDataObjects, source, type, options);
 }
 
-async function testGetSourcerCitations(savedData, result, type, options) {
+async function testGetSourcerCitations(runDate, savedData, result, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -55,7 +55,7 @@ async function testGetSourcerCitations(savedData, result, type, options) {
   }
 
   for (let source of result.sources) {
-    await testGetSourcerCitation(savedData, source, type, options);
+    await testGetSourcerCitation(runDate, savedData, source, type, options);
   }
 
   buildSourcerCitations(result, type, options);
@@ -64,6 +64,7 @@ async function testGetSourcerCitations(savedData, result, type, options) {
 async function fsTestGetAllCitations(input) {
   let savedData = input.savedData;
   let options = input.options;
+  let runDate = input.runDate;
 
   let result = { success: false };
 
@@ -84,7 +85,7 @@ async function fsTestGetAllCitations(input) {
       case "narrative":
       case "inline":
       case "source":
-        await testGetSourcerCitations(savedData, result, citationType, options);
+        await testGetSourcerCitations(runDate, savedData, result, citationType, options);
         break;
     }
   }
@@ -129,7 +130,7 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
 
     // to save setting the run date on every test case
     if (!testData.runDate) {
-      testData.runDate = new Date("6 May 2021");
+      testData.runDate = new Date("20 July 2023");
     }
 
     const input = {

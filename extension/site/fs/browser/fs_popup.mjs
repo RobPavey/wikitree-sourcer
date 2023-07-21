@@ -192,6 +192,7 @@ async function fsGetAllCitationsAction(data) {
   try {
     let input = Object.assign({}, data);
     input.options = options;
+    input.runDate = new Date();
 
     let response = await fsGetAllCitations(input);
 

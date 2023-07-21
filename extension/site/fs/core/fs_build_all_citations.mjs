@@ -279,7 +279,6 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
     } else if (sourceA.sortKey > sourceB.sortKey) {
       return 1;
     }
-    return 0;
   }
 
   if (sourceA.sortKey) {
@@ -288,7 +287,20 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
     return 1;
   }
 
-  return 0;
+  // to get consistent sorting sort by .uri
+  // It is unlikely to get here if all sources have a sort key
+  let result = 0;
+  if (sourceA.uri) {
+    if (sourceB.uri) {
+      result = sourceA.uri.localeCompare(sourceB.uri);
+    } else {
+      return -1;
+    }
+  } else if (sourceB.uri) {
+    return 1;
+  }
+
+  return result;
 }
 
 function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
@@ -308,31 +320,12 @@ function sortFacts(result) {
   //console.log("sortFacts");
   //console.log(result);
 
-  /*
-  let oldOrder = [];
-  for (let fact of result.facts) {
-    oldOrder.push(fact);
-  }
-  */
-
   function compareFunction(a, b) {
     return compareGdsAndSources(a.generalizedData, b.generalizedData, a.sources[0], b.sources[0]);
   }
 
   // sort the sources
   result.facts.sort(compareFunction);
-
-  /*
-  if (oldOrder.length != result.facts.length) {
-    console.log("length changed");
-  } else {
-    for (let factIndex = 0; factIndex < result.facts.length; factIndex++) {
-      if (oldOrder[factIndex] != result.facts[factIndex]) {
-        console.log("fact order different at indes " + factIndex);
-      }
-    }
-  }
-  */
 }
 
 function buildNarrativeForPlainCitation(source, options) {
@@ -698,7 +691,7 @@ function doesCitationWantHouseholdTable(citationType, generalizedData, options) 
   return false;
 }
 
-function buildSourcerCitation(sourceDataObjects, source, type, options) {
+function buildSourcerCitation(runDate, sourceDataObjects, source, type, options) {
   if (sourceDataObjects) {
     source.dataObjects = sourceDataObjects;
 
@@ -726,7 +719,7 @@ function buildSourcerCitation(sourceDataObjects, source, type, options) {
         const input = {
           extractedData: extractedData,
           generalizedData: generalizedData,
-          runDate: new Date(),
+          runDate: runDate,
           type: type,
           dataCache: undefined,
           options: options,

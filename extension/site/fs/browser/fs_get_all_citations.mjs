@@ -34,7 +34,7 @@ import {
   buildFsPlainCitations,
 } from "../core/fs_build_all_citations.mjs";
 
-async function getSourcerCitation(source, type, options, updateStatusFunction) {
+async function getSourcerCitation(runDate, source, type, options, updateStatusFunction) {
   let uri = source.uri;
 
   let fetchResult = { success: false };
@@ -57,10 +57,10 @@ async function getSourcerCitation(source, type, options, updateStatusFunction) {
     sourceDataObjects = fetchResult.dataObjects;
   }
 
-  buildSourcerCitation(sourceDataObjects, source, type, options);
+  buildSourcerCitation(runDate, sourceDataObjects, source, type, options);
 }
 
-async function getSourcerCitations(result, type, options) {
+async function getSourcerCitations(runDate, result, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -79,7 +79,7 @@ async function getSourcerCitations(result, type, options) {
   async function requestFunction(input, updateStatusFunction) {
     updateStatusFunction("fetching...");
     let newResponse = { success: true };
-    await getSourcerCitation(input, type, options, updateStatusFunction);
+    await getSourcerCitation(runDate, input, type, options, updateStatusFunction);
     return newResponse;
   }
 
@@ -93,6 +93,7 @@ async function getSourcerCitations(result, type, options) {
 async function fsGetAllCitations(input) {
   let ed = input.extractedData;
   let options = input.options;
+  let runDate = input.runDate;
 
   let sourcesObj = await fetchFsSourcesJson(ed.sourceIds);
   let retryCount = 0;
@@ -122,7 +123,7 @@ async function fsGetAllCitations(input) {
         case "narrative":
         case "inline":
         case "source":
-          await getSourcerCitations(result, citationType, options);
+          await getSourcerCitations(runDate, result, citationType, options);
           break;
       }
     } catch (error) {
