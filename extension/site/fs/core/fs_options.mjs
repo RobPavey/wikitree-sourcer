@@ -140,7 +140,6 @@ const citationOptionsGroup = {
         },
       ],
       defaultValue: "string",
-      unitTestValue: "fsCitation",
     },
     {
       optionName: "includeExternalImageLink",

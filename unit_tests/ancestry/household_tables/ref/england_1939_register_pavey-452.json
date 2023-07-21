@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Status || Sex || Birth Date || Occupation\n|-\n| '''Mary E More''' || '''Widowed''' || '''F''' || '''1 Nov 1871''' || '''Unpaid Domestic Duties'''\n|-\n| Maisie C More ||  ||  ||  || \n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Status || Sex || Birth Date || Occupation\n|-\n| '''Mary E More''' || '''Widowed''' || '''F''' || '''1 Nov 1871''' || '''Unpaid Domestic Duties'''\n|-\n| Maisie C More ||  ||  ||  || \n|}"
   }
 }

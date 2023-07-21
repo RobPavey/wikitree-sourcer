@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| John Pavey || Head || Married || M || 39 || Carpenter || Cheddar, Somerset\n|-\n| '''Eliza Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''38''' ||  || '''Yatton, Somerset'''\n|-\n| George Pavey || Son || Unmarried || M || 18 || Farmer 18 Acres || Yatton, Somerset\n|-\n| Mary A Pavey || Daughter || Unmarried || F || 16 ||  || Cheddar, Somerset\n|-\n| Maria Pavey || Daughter ||  || F || 3 ||  || Cheddar, Somerset\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| John Pavey || Head || Married || M || 39 || Carpenter || Cheddar, Somerset\n|-\n| '''Eliza Pavey''' || '''Wife''' || '''Married''' || '''F''' || '''38''' ||  || '''Yatton, Somerset'''\n|-\n| George Pavey || Son || Unmarried || M || 18 || Farmer 18 Acres || Yatton, Somerset\n|-\n| Mary A Pavey || Daughter || Unmarried || F || 16 ||  || Cheddar, Somerset\n|-\n| Maria Pavey || Daughter ||  || F || 3 ||  || Cheddar, Somerset\n|}"
   }
 }

@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Status || Relation || Occupation || Birth Place\n|-\n| William Miller || M || 31 || Married || Head || Farmer || Indiana, United States\n|-\n| '''Alice Miller''' || '''F''' || '''25''' || '''Married''' || '''Wife''' || '''Keeping House''' || '''Indiana, United States'''\n|-\n| Alonzo Miller || M || 8 || Single || Son ||  || Indiana, United States\n|-\n| Charley Miller || M || 6 || Single || Son ||  || Indiana, United States\n|-\n| James Miller || M || 4 || Single || Son ||  || Indiana, United States\n|-\n| Arnold Miller || M || 1 || Single || Son ||  || Indiana, United States\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Status || Relation || Occupation || Birth Place\n|-\n| William Miller || M || 31 || Married || Head || Farmer || Indiana, United States\n|-\n| '''Alice Miller''' || '''F''' || '''25''' || '''Married''' || '''Wife''' || '''Keeping House''' || '''Indiana, United States'''\n|-\n| Alonzo Miller || M || 8 || Single || Son ||  || Indiana, United States\n|-\n| Charley Miller || M || 6 || Single || Son ||  || Indiana, United States\n|-\n| James Miller || M || 4 || Single || Son ||  || Indiana, United States\n|-\n| Arnold Miller || M || 1 || Single || Son ||  || Indiana, United States\n|}"
   }
 }

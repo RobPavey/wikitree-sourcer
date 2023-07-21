@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Mary Tarr || Head || Married || F || 71 || Lodging House Keeper || Woodford, Somerset\n|-\n| Alice Elizabeth Tarr || Daughter || Single || F || 32 || Assistant || Crowcombe, Somerset\n|-\n| Alice Farmer || Servant || Single || F || 21 || General Servant (Domestic) || Carhampton, Somerset\n|-\n| '''Beatrice Florence Jones''' || '''Boarder''' || '''Married''' || '''F''' || '''32''' || '''Private Means''' || '''Handsworth, Staffordshire'''\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Mary Tarr || Head || Married || F || 71 || Lodging House Keeper || Woodford, Somerset\n|-\n| Alice Elizabeth Tarr || Daughter || Single || F || 32 || Assistant || Crowcombe, Somerset\n|-\n| Alice Farmer || Servant || Single || F || 21 || General Servant (Domestic) || Carhampton, Somerset\n|-\n| '''Beatrice Florence Jones''' || '''Boarder''' || '''Married''' || '''F''' || '''32''' || '''Private Means''' || '''Handsworth, Staffordshire'''\n|}"
   }
 }

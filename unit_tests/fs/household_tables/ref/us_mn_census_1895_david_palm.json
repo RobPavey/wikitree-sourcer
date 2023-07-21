@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Birth Place\n|-\n| Louis Palm || M || 40y || Sweden\n|-\n| Inga Palm || F || 40y || Sweden\n|-\n| Mary Palm || F || 16y || Sweden\n|-\n| Willie Palm || M || 12y || Minnesota\n|-\n| Sam Palm || M || 10y || Minnesota\n|-\n| '''David Palm''' || '''M''' || '''8y''' || '''Minnesota'''\n|-\n| Andrew Palm || M || 5y || Minnesota\n|-\n| Peter Palm || M || 3y || Minnesota\n|-\n| Louis Palm || M || 1y || Minnesota\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Birth Place\n|-\n| Louis Palm || M || 40y || Sweden\n|-\n| Inga Palm || F || 40y || Sweden\n|-\n| Mary Palm || F || 16y || Sweden\n|-\n| Willie Palm || M || 12y || Minnesota\n|-\n| Sam Palm || M || 10y || Minnesota\n|-\n| '''David Palm''' || '''M''' || '''8y''' || '''Minnesota'''\n|-\n| Andrew Palm || M || 5y || Minnesota\n|-\n| Peter Palm || M || 3y || Minnesota\n|-\n| Louis Palm || M || 1y || Minnesota\n|}"
   }
 }

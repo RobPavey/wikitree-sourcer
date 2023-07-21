@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Age || Sex || Relation || Status || Occupation\n|-\n| Bryan McGuire || 28 || M || Head || Married || Labourer\n|-\n| '''Elenor McGuire''' || '''21''' || '''F''' || '''Wife''' || '''Married''' || '''None'''\n|-\n| Jams McGuire || 6 months || M || Son ||  || None\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Age || Sex || Relation || Status || Occupation\n|-\n| Bryan McGuire || 28 || M || Head || Married || Labourer\n|-\n| '''Elenor McGuire''' || '''21''' || '''F''' || '''Wife''' || '''Married''' || '''None'''\n|-\n| Jams McGuire || 6 months || M || Son ||  || None\n|}"
   }
 }

@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Age\n|-\n| Thomas Goggin || 31\n|-\n| Beffy Goggin || 30\n|-\n| '''James Goggin''' || '''10'''\n|-\n| Michael Goggin || 5\n|-\n| Thomas Goggin || 3\n|-\n| Katy Goggin || 8\n|-\n| Anna Goggin || 6\n|-\n| July Goggin || 5 M\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Age\n|-\n| Thomas Goggin || 31\n|-\n| Beffy Goggin || 30\n|-\n| '''James Goggin''' || '''10'''\n|-\n| Michael Goggin || 5\n|-\n| Thomas Goggin || 3\n|-\n| Katy Goggin || 8\n|-\n| Anna Goggin || 6\n|-\n| July Goggin || 5 M\n|}"
   }
 }

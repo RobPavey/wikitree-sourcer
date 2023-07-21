@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Occupation || Birth Place\n|-\n| John Smith ||  || 48 ||  || \n|-\n| Margret Smith ||  || 24 ||  || \n|-\n| Hester Smith ||  || 13 ||  || \n|-\n| Susan Smith ||  || 10 ||  || \n|-\n| Calvin Smith ||  || 6 ||  || \n|-\n| '''G H Smith''' || '''M''' || '''8/12''' || '''At Home''' || '''Kentucky'''\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Occupation || Birth Place\n|-\n| John Smith ||  || 48 ||  || \n|-\n| Margret Smith ||  || 24 ||  || \n|-\n| Hester Smith ||  || 13 ||  || \n|-\n| Susan Smith ||  || 10 ||  || \n|-\n| Calvin Smith ||  || 6 ||  || \n|-\n| '''G H Smith''' || '''M''' || '''8/12''' || '''At Home''' || '''Kentucky'''\n|}"
   }
 }

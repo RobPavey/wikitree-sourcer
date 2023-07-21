@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Occupation || Birth Place\n|-\n| '''Paul Potter''' || '''M''' || '''48''' || '''Farm Laborer''' || '''Tennessee'''\n|-\n| Isabella Potter ||  || 43 ||  || \n|-\n| Virginia Potter ||  ||  ||  || \n|-\n| Benjamin Potter ||  || 19 ||  || \n|-\n| Angeline Potter ||  || 17 ||  || \n|-\n| Patience C Potter ||  || 15 ||  || \n|-\n| Robert Potter ||  || 13 ||  || \n|-\n| Mary E Potter ||  || 11 ||  || \n|-\n| Sarah E Potter ||  || 6 ||  || \n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Occupation || Birth Place\n|-\n| '''Paul Potter''' || '''M''' || '''48''' || '''Farm Laborer''' || '''Tennessee'''\n|-\n| Isabella Potter ||  || 43 ||  || \n|-\n| Virginia Potter ||  ||  ||  || \n|-\n| Benjamin Potter ||  || 19 ||  || \n|-\n| Angeline Potter ||  || 17 ||  || \n|-\n| Patience C Potter ||  || 15 ||  || \n|-\n| Robert Potter ||  || 13 ||  || \n|-\n| Mary E Potter ||  || 11 ||  || \n|-\n| Sarah E Potter ||  || 6 ||  || \n|}"
   }
 }

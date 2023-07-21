@@ -957,7 +957,6 @@ const tableTableOptionsGroup = {
       type: "checkbox",
       label: "Include padding in the table cells",
       defaultValue: true,
-      unitTestValue: false,
     },
     {
       optionName: "fullWidth",
