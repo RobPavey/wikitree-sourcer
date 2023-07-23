@@ -216,7 +216,13 @@ async function fsGetAllCitationsAction(data) {
           fsSaveUnitTestDataForAllCitations(input, response);
         } else {
           let message = response.citationCount + " citations";
-          writeToClipboard(response.citationsString, message);
+          let message2 = "";
+          if (response.citationsStringType == "source" || response.citationsStringType == "fsPlainSource") {
+            message2 = "\nThese are source type citations and should be pasted after the Sources heading.";
+          } else {
+            message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
+          }
+          writeToClipboard(response.citationsString, message, false, message2);
         }
       } else {
         const message = "All sources were excluded due to option settings.";

@@ -28,9 +28,9 @@ import {
   emptyMenu,
 } from "./popup_menu_building.mjs";
 
-function writeToClipboardSuccessMessage(objectName, internalSave) {
+function writeToClipboardSuccessMessage(objectName, internalSave, extraMessage = "") {
   let message1 = objectName + " saved to clipboard.";
-  let message2 = "";
+  let message2 = extraMessage;
   if (internalSave) {
     message2 = "It is also saved internally.";
   }
@@ -101,7 +101,7 @@ async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
   document.getElementById("menu").appendChild(fragment);
 }
 
-async function userWriteToClipboard(text, objectName, internalSave = false) {
+async function userWriteToClipboard(text, objectName, internalSave = false, extraMessage = "") {
   function addBreak(fragment) {
     let br = document.createElement("br");
     fragment.appendChild(br);
@@ -141,7 +141,7 @@ async function userWriteToClipboard(text, objectName, internalSave = false) {
   saveButton.onclick = async function (element) {
     try {
       await navigator.clipboard.writeText(text);
-      writeToClipboardSuccessMessage(objectName, internalSave);
+      writeToClipboardSuccessMessage(objectName, internalSave, extraMessage);
     } catch (error) {
       console.log("Clipboard write failed in userWriteToClipboard.");
       console.log(error);
@@ -158,15 +158,15 @@ async function userWriteToClipboard(text, objectName, internalSave = false) {
   document.getElementById("menu").appendChild(fragment);
 }
 
-async function writeToClipboard(text, objectName, internalSave) {
+async function writeToClipboard(text, objectName, internalSave, extraMessage = "") {
   try {
     await navigator.clipboard.writeText(text);
-    writeToClipboardSuccessMessage(objectName, internalSave);
+    writeToClipboardSuccessMessage(objectName, internalSave, extraMessage);
     //console.log("Clipboard set");
   } catch (error) {
     console.log("Clipboard write failed. Using dialog instead.");
     //console.log(error);
-    userWriteToClipboard(text, objectName, internalSave);
+    userWriteToClipboard(text, objectName, internalSave, extraMessage);
   }
 }
 
