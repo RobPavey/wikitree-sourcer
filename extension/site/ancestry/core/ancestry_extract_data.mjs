@@ -109,6 +109,10 @@ function extractDbAndRecordId(result, url) {
   //console.log("location href is");
   //console.log(url);
 
+  if (!url) {
+    return;
+  }
+
   let dbId = "";
   let recordId = "";
   const dbIdStr = "dbid="; // could have & or ? before dbid
@@ -300,11 +304,13 @@ function extractRecordData(document, result) {
                   let linkNode = cell.querySelector("a");
                   if (linkNode) {
                     let link = linkNode.getAttribute("href");
-                    let extractResult = {};
-                    extractDbAndRecordId(extractResult, link);
-                    member.dbId = extractResult.dbId;
-                    member.recordId = extractResult.recordId;
-                    member.link = link; // used to fetch additional records if needed
+                    if (link) {
+                      let extractResult = {};
+                      extractDbAndRecordId(extractResult, link);
+                      member.dbId = extractResult.dbId;
+                      member.recordId = extractResult.recordId;
+                      member.link = link; // used to fetch additional records if needed
+                    }
                   }
                 }
               }
