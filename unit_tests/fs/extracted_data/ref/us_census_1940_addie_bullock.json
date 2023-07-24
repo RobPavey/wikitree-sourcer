@@ -13,7 +13,6 @@
     "Relationship To Head": "Head",
     "Age": "31",
     "Ims Ctl File Id": "679344",
-    "Digital Film Nbr": "005449684",
     "System Of Record": "SLS"
   },
   "eventDateOriginal": "1940",
@@ -36,7 +35,8 @@
     "sourceLineNbr": "56",
     "sheetLetter": "B",
     "sheetNumber": "2",
-    "externalPublicationNumber": "T627"
+    "externalPublicationNumber": "T627",
+    "digitalFilmNumber": "005449684"
   },
   "age": "31",
   "household": {

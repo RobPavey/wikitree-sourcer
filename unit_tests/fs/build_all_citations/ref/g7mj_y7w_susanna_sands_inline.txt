@@ -1,7 +1,7 @@
 <ref>
 '''Marriage''':
 "Maine Marriages, 1771-1907"<br/>
-citing FHL microfilm: 10594; Record number: 505;<br/>
+citing Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 505; Packet letter: A<br/>
 {{FamilySearch Record|F4D1-F9J}} (accessed 20 July 2023)<br/>
 Susanna Sands marriage to John Cleaves on 6 Jun 1813 in Buxton, York, Maine, United States.
 </ref>
@@ -16,7 +16,7 @@ Wisconsin Historical Society, Madison<br/>
 <ref>
 '''Marriage of son Horace Cleaves''':
 "Wisconsin Marriages, 1836-1930"<br/>
-citing FHL microfilm: 1275566; Record number: 3;<br/>
+citing Digital film/folder number: 007622467; FHL microfilm: 1275566; Record number: 3; Packet letter: A<br/>
 {{FamilySearch Record|XRXL-SQN}} (accessed 20 July 2023)<br/>
 Susan Cleaves's son Horace Cleaves marriage to Almina M. Stoddard on 22 Sep 1852 in Greenbush, Sheboygan, Wisconsin, United States.
 </ref>

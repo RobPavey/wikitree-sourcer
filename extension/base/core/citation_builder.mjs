@@ -94,13 +94,13 @@ class CitationBuilder {
   addBreakNewlineOrAlternatives(oldCitation, separatorChar = ",") {
     let citation = oldCitation;
 
+    if (citation.endsWith(";") || citation.endsWith(",") || citation.endsWith(".")) {
+      citation = citation.substring(0, citation.length - 1).trim();
+    }
+
     if (this.options.citation_general_addBreaksWithinBody) {
       citation += "<br/>";
     } else {
-      if (citation.endsWith(";") || citation.endsWith(",") || citation.endsWith(".")) {
-        citation = citation.substring(0, citation.length - 1);
-      }
-
       if (this.options.citation_general_commaInsideQuotes && citation.endsWith('"')) {
         citation = citation.substring(0, citation.length - 1);
         citation += separatorChar + '"';

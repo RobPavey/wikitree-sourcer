@@ -28,8 +28,7 @@
     "Misc Code C11950Census": "469",
     "Misc Code C21950Census": "1",
     "Age": "40 years",
-    "System Of Record": "SLS",
-    "Digital Film Nbr": "108923927"
+    "System Of Record": "SLS"
   },
   "eventDateOriginal": "10 April 1950",
   "eventDate": "10 April 1950",
@@ -46,6 +45,7 @@
   "referenceData": {
     "sourceLineNbr": "15",
     "sourcePageNbr": "10",
+    "digitalFilmNumber": "108923927",
     "imageNumber": "9"
   },
   "age": "40 years",

@@ -13,7 +13,6 @@
     "Relationship To Head": "WIFE",
     "Age": "32",
     "Ims Ctl File Id": "681166",
-    "Digital Film Nbr": "005461583",
     "System Of Record": "SLS"
   },
   "eventDateOriginal": "1940",
@@ -34,7 +33,8 @@
     "sheetNumber": "15",
     "sourceLineNbr": "64",
     "sheetLetter": "B",
-    "externalPublicationNumber": "T627"
+    "externalPublicationNumber": "T627",
+    "digitalFilmNumber": "005461583"
   },
   "age": "32",
   "household": {

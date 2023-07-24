@@ -1,14 +1,14 @@
 {
   "dataStyle_fsShort_fsCitation_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin.<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore in entry for Jacob Moore, 1911.\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore in entry for Jacob Moore, 1911.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_fsCitation_narrative": {
-    "citation": "In the 1911 census Joseph (age 23), Salesman Book Trade, was the single son of Jacob Moore in Street, County Longford, Ireland.<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin.<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore in entry for Jacob Moore, 1911.\n</ref>",
+    "citation": "In the 1911 census Joseph (age 23), Salesman Book Trade, was the single son of Jacob Moore in Street, County Longford, Ireland.<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore in entry for Jacob Moore, 1911.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_fsCitation_source": {
-    "citation": "* '''1911 Census''': \"Ireland Census, 1911\"<br/>citing Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin.<br/>{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>Joseph Moore in entry for Jacob Moore, 1911.",
+    "citation": "* '''1911 Census''': \"Ireland Census, 1911\"<br/>citing Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin<br/>{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>Joseph Moore in entry for Jacob Moore, 1911.",
     "type": "source"
   },
   "dataStyle_record_string_inline": {
@@ -72,27 +72,27 @@
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin.<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore (23), single son, Salesman Book Trade, in household of Jacob Moore (52) in Street, County Longford, Ireland. Born in Belfast.\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore (23), single son, Salesman Book Trade, in household of Jacob Moore (52) in Street, County Longford, Ireland. Born in Belfast.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_string_narrative": {
-    "citation": "In the 1911 census Joseph (age 23), Salesman Book Trade, was the single son of Jacob Moore in Street, County Longford, Ireland.<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin.<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore (23), single son, Salesman Book Trade, in household of Jacob Moore (52) in Street, County Longford, Ireland. Born in Belfast.\n</ref>",
+    "citation": "In the 1911 census Joseph (age 23), Salesman Book Trade, was the single son of Jacob Moore in Street, County Longford, Ireland.<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore (23), single son, Salesman Book Trade, in household of Jacob Moore (52) in Street, County Longford, Ireland. Born in Belfast.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_string_source": {
-    "citation": "* '''1911 Census''': \"Ireland Census, 1911\"<br/>citing Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin.<br/>{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>Joseph Moore (23), single son, Salesman Book Trade, in household of Jacob Moore (52) in Street, County Longford, Ireland. Born in Belfast.",
+    "citation": "* '''1911 Census''': \"Ireland Census, 1911\"<br/>citing Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin<br/>{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>Joseph Moore (23), single son, Salesman Book Trade, in household of Jacob Moore (52) in Street, County Longford, Ireland. Born in Belfast.",
     "type": "source"
   },
   "dataStyle_fsLong_fsCitation_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin.<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore in entry for Jacob Moore, 1911.\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore in entry for Jacob Moore, 1911.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsLong_fsCitation_narrative": {
-    "citation": "In the 1911 census Joseph (age 23), Salesman Book Trade, was the single son of Jacob Moore in Street, County Longford, Ireland.<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin.<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore in entry for Jacob Moore, 1911.\n</ref>",
+    "citation": "In the 1911 census Joseph (age 23), Salesman Book Trade, was the single son of Jacob Moore in Street, County Longford, Ireland.<ref>\n'''1911 Census''':\n\"Ireland Census, 1911\"<br/>\nciting Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin<br/>\n{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>\n[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>\nJoseph Moore in entry for Jacob Moore, 1911.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsLong_fsCitation_source": {
-    "citation": "* '''1911 Census''': \"Ireland Census, 1911\"<br/>citing Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin.<br/>{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>Joseph Moore in entry for Jacob Moore, 1911.",
+    "citation": "* '''1911 Census''': \"Ireland Census, 1911\"<br/>citing Street, County Longford, Ireland, Census, National Archives of Ireland, Dublin<br/>{{FamilySearch Record|QYCX-NXN2}} (accessed 6 May 2021)<br/>[http://www.census.nationalarchives.ie/reels/nai001442165/ External Image]<br/>Joseph Moore in entry for Jacob Moore, 1911.",
     "type": "source"
   }
 }

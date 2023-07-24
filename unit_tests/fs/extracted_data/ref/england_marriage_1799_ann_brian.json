@@ -23,10 +23,11 @@
   "spouseFullName": "John Skellet",
   "spouseGivenName": "John",
   "spouseSurname": "Skellet",
-  "fsCollectionId": "2821293",
   "referenceData": {
+    "externalRepositoryName": "The Record Office For Leicestershire, Leicester & Rutland",
     "digitalFilmNumber": "102302752"
   },
+  "fsCollectionId": "2821293",
   "fsImageNumber": "00039",
   "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-CSHR-P92R-N",
   "collectionTitle": "England, Rutland Parish Registers, 1538-1991",

@@ -1,13 +1,14 @@
 <ref>
 '''Baptism''':
 "England, Devon, Parish Registers, 1538-1912"<br/>
+citing Page: 143; Digital film/folder number: 004634287<br/>
 {{FamilySearch Record|KC98-1RD}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|939N-QW1Y-L}} Image number 00146<br/>
 Harry Alfred Pavey baptism in 1855 in Devon, England, United Kingdom.
 </ref><ref>
 '''Baptism''':
 "England, Devon Bishop's Transcripts, 1558-1887"<br/>
-citing Baptism, The Devon Record Office, Exeter.<br/>
+citing Baptism, The Devon Record Office, Exeter<br/>
 {{FamilySearch Record|Q2MS-BJDK}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|3QS7-L9Q5-99M3-9}} Image number 00008<br/>
 Harry Alfred Pavey baptism in Mar 1855, son of William Henry Pavey & Elizabeth Pavey, in Plymouth, Devon, England.
@@ -16,7 +17,7 @@ Harry Alfred Pavey baptism in Mar 1855, son of William Henry Pavey & Elizabeth P
 <ref>
 '''Marriage Registration''':
 "England and Wales Marriage Registration Index, 1837-2005"<br/>
-citing 1870, quarter 4, vol. 1B, p. 263, Pancras, London, England, General Register Office, Southport, England.<br/>
+citing 1870, quarter 4, vol. 1B, p. 263, Pancras, London, England, General Register Office, Southport, England<br/>
 {{FamilySearch Record|2D25-D4J}} (accessed 20 July 2023)<br/>
 Henry Alfred Pavey marriage registered Oct-Nov-Dec 1870 in Pancras.
 </ref>
@@ -37,13 +38,13 @@ Harry A Parey (20), married, Blue Dye Maker, head of household in St Pancras, Mi
 <ref>
 '''1881 Census''':
 "England and Wales Census, 1881"<br/>
-citing p. 31, PRO RG 11/220 / 19, The National Archives, Kew, Surrey; FHL microfilm 1,341,048.<br/>
+citing p. 31, PRO RG 11/220 / 19, The National Archives, Kew, Surrey; FHL microfilm 1,341,048<br/>
 {{FamilySearch Record|X3GY-82V}} (accessed 20 July 2023)<br/>
 Harry A Pavey (28), married, Picture Framemarer, head of household in St Pancras, Middlesex, England. Born in Plymouth, Devon, England.
 </ref><ref>
 '''1881 Census''':
 "England and Wales Census, 1881"<br/>
-citing p. 31, Piece/Folio 220/19, The National Archives, Kew, Surrey; FHL microfilm 101,774,361.<br/>
+citing p. 31, Piece/Folio 220/19, The National Archives, Kew, Surrey; FHL microfilm 101,774,361<br/>
 {{FamilySearch Record|Q273-14Q7}} (accessed 20 July 2023)<br/>
 [https://search.findmypast.co.uk/record?id=GBC/1881/4299948/00881&parentid=GBC/1881/0001078020 FindMyPast Image] (subscription required)<br/>
 Harry A Pavey (28), married, Picture Framemarer, head of household in St Pancras, London in Pancras registration district in Middlesex, England. Born in Plymouth, Devon, England.
@@ -52,6 +53,7 @@ Harry A Pavey (28), married, Picture Framemarer, head of household in St Pancras
 <ref>
 '''1890 Electoral Register''':
 "England, London Electoral Registers, 1847-1913"<br/>
+citing Digital film/folder number: 007591796; FHL microfilm: 002326888<br/>
 {{FamilySearch Record|QJN3-PRBT}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|3QSQ-G9FL-QJSW}} Image number 00374<br/>
 Name: Harry Alfred Pavey; Voter Registration Date: 1890; Voter Registration Place: London, England, United Kingdom.
@@ -60,7 +62,7 @@ Name: Harry Alfred Pavey; Voter Registration Date: 1890; Voter Registration Plac
 <ref>
 '''1891 Census''':
 "England and Wales Census, 1891"<br/>
-citing PRO RG 12, London county,  subdistrict, The National Archives of the UK, Kew, Surrey.<br/>
+citing PRO RG 12, London county,  subdistrict, The National Archives of the UK, Kew, Surrey<br/>
 {{FamilySearch Record|Q7LV-YMM}} (accessed 20 July 2023)<br/>
 [https://search.findmypast.co.uk/record?id=GBC/1891/0137/0386&parentid=GBC/1891/0001240718 FindMyPast Image] (subscription required)<br/>
 Harry A Pavey (38), married, Picture Frame Maker, head of household in Saint Pancras in Pancras registration district in London, England. Born in Devonshire, England.
@@ -69,7 +71,7 @@ Harry A Pavey (38), married, Picture Frame Maker, head of household in Saint Pan
 <ref>
 '''1901 Census''':
 "England and Wales Census, 1901"<br/>
-citing Kentish Town subdistrict, PRO RG 13, The National Archives, Kew, Surrey.<br/>
+citing Kentish Town subdistrict, PRO RG 13, The National Archives, Kew, Surrey<br/>
 {{FamilySearch Record|X9ZG-VLL}} (accessed 20 July 2023)<br/>
 [https://search.findmypast.co.uk/record?id=GBC/1901/0157-0158/0095&parentid=GBC/1901/0005222323 FindMyPast Image] (subscription required)<br/>
 Harry Alf Pavey (59), married, Picture Frame Maker, head of household in St Pancras registration district in Middlesex, England. Born in Plymouth, Devonshire.
@@ -78,7 +80,7 @@ Harry Alf Pavey (59), married, Picture Frame Maker, head of household in St Panc
 <ref>
 '''1911 Census''':
 "England and Wales Census, 1911"<br/>
-citing PRO RG 14, The National Archives of the UK, Kew, Surrey.<br/>
+citing PRO RG 14, The National Archives of the UK, Kew, Surrey<br/>
 {{FamilySearch Record|XWLP-S75}} (accessed 20 July 2023)<br/>
 [https://search.findmypast.co.uk/record?id=GBC/1911/RG14/00802/0395&parentid=GBC/1911/RG14/00802/0395/1 FindMyPast Image] (subscription required)<br/>
 Harry Pavey (58), married, Picture Frame Maker, head of household in Islington registration district in London, England. Born in Plymouth, Devonshire.
@@ -87,7 +89,7 @@ Harry Pavey (58), married, Picture Frame Maker, head of household in Islington r
 <ref>
 '''Death Registration''':
 "England and Wales Death Registration Index 1837-2007"<br/>
-citing Death, Hampstead, London, England, General Register Office, Southport, England.<br/>
+citing Death, Hampstead, London, England, General Register Office, Southport, England<br/>
 {{FamilySearch Record|2JM3-KBF}} (accessed 20 July 2023)<br/>
 Harry A Pavey death registered Jan-Feb-Mar 1914 in Hampstead (age 60).
 </ref>

@@ -281,8 +281,8 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
 
     if (dataString) {
       dataString = "citing " + dataString;
+      return dataString;
     }
-    return dataString;
   }
 
   // not a special case, just add everything that could be part of reference
@@ -292,20 +292,29 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
     addValue("Piece/Folio", refData.sourcePieceFolio);
     addValue("Page", refData.sourcePageNbr);
 
+    addValue("Affiliate Name", refData.externalRepositoryName);
     addValue("Affiliate Publication Title", refData.externalPublicationTitle);
     addValue("Affiliate Publication Number", refData.externalPublicationNumber);
     addValue("Affiliate Film Number", refData.externalFilmNumber);
 
-    if (refData.sourceLineNbr) {
-      addValue("Line", refData.sourceLineNbr);
-    } else {
+    addValue("Line", refData.sourceLineNbr);
+    if (refData.externalLineNumber != refData.sourceLineNbr) {
       addValue("Affiliate Line Number", refData.externalLineNumber);
+    }
+    if (refData.sourceLineNbr != refData.sourceLineNbr && refData.sourceLineNbr != refData.externalLineNumber) {
+      addValue("Source line number", refData.sourceLineNbr);
     }
     addValue("Entry", refData.sourceEntryNbr);
 
     addValue("Reference", refData.referenceId);
+    addValue("Digital film/folder number", refData.digitalFilmNumber);
     addValue("FHL microfilm", refData.filmNumber);
+    addValue("Image number", refData.imageNumber);
     addValue("Record number", refData.recordNumber);
+    addValue("Sheet number", refData.sheetNumber);
+    addValue("Sheet letter", refData.sheetLetter);
+    addValue("Packet letter", refData.packetLetter);
+    addValue("Indexing batch", refData.indexingBatchNumber);
   }
 
   if (dataString) {
