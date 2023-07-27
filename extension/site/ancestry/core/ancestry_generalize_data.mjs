@@ -264,6 +264,8 @@ function determineRecordType(extractedData) {
         "Navy Registers of Seamen's Services",
         "Confederate Pensions",
         "War Pension",
+        "Royal Naval Reserve Service Records",
+        "Marine Corps Muster",
       ],
     },
     { type: RT.Military, matches: ["War"], secondMatches: ["Pension"] },
