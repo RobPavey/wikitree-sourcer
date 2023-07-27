@@ -215,6 +215,11 @@ const regressionData = [
     ],
   },
   {
+    // found a bug in mergeDates, has marriage sources with no date
+    caseName: "k2b7_nsv_vinnie_shubert",
+    url: "https://www.familysearch.org/tree/person/details/K2B7-NSV",
+  },
+  {
     caseName: "k2hc_86c_jeanne_lajuenesse",
     url: "https://www.familysearch.org/tree/person/details/K2HC-86C",
     optionVariants: [
