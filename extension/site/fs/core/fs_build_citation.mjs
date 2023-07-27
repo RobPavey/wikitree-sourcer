@@ -429,6 +429,15 @@ function buildFsImageLink(imageUrl) {
 
   if (imageId.length > 5) {
     imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "}}";
+  } else {
+    // There are also examples like: https://www.familysearch.org/ark:/61903/3:2:77T2-KFDJ
+    imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:2:", "ark:/61903/3:3:", "ark:/61903/3:4:"], ["/", "?"]);
+    if (imageId.length > 5) {
+      let secondNumber = imageUrl.replace(/^.*ark:\/61903\/3:(\d):.*$/, "$1");
+      if (secondNumber && secondNumber.length == 1) {
+        imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "|" + secondNumber + "}}";
+      }
+    }
   }
 
   return imageLinkOrTemplate;
