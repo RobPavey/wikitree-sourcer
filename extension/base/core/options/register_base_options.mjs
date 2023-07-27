@@ -188,6 +188,18 @@ const citationOptionsGroup = {
       label: "Add <br/>s within the citation between sections (for readability in read mode)",
       defaultValue: true,
     },
+    {
+      optionName: "dataStringInItalics",
+      type: "checkbox",
+      label: "Put the 'data string' part of the citation in italics",
+      defaultValue: false,
+    },
+    {
+      optionName: "dataStringIndented",
+      type: "checkbox",
+      label: "Indent the 'data string' part of the citation (inline citations only)",
+      defaultValue: false,
+    },
   ],
 };
 

@@ -152,7 +152,58 @@ const regressionData = [
         variantName: "narrative_3",
         thisTypeOnly: "narrative",
         optionOverrides: {
+          citation_ancestry_dataStyle: "string",
           narrative_birthRegReg_includeMmn: "inSeparateSentence",
+        },
+      },
+      {
+        variantName: "dataStringInItalics",
+        optionOverrides: {
+          citation_ancestry_dataStyle: "string",
+          citation_general_dataStringInItalics: true,
+        },
+      },
+      {
+        variantName: "dataStringIndented",
+        optionOverrides: {
+          citation_ancestry_dataStyle: "string",
+          citation_general_dataStringIndented: true,
+        },
+      },
+      {
+        variantName: "dataStringInItalicsAndIndented",
+        optionOverrides: {
+          citation_ancestry_dataStyle: "string",
+          citation_general_dataStringInItalics: true,
+          citation_general_dataStringIndented: true,
+        },
+      },
+      {
+        variantName: "dataStringInItalicsAndIndentedNoNewlinesOrBreaks",
+        optionOverrides: {
+          citation_ancestry_dataStyle: "string",
+          citation_general_dataStringInItalics: true,
+          citation_general_dataStringIndented: true,
+          citation_general_addNewlinesWithinBody: false,
+          citation_general_addBreaksWithinBody: false,
+        },
+      },
+      {
+        variantName: "dataStringInItalicsAndIndentedNoBreaks",
+        optionOverrides: {
+          citation_ancestry_dataStyle: "string",
+          citation_general_dataStringInItalics: true,
+          citation_general_dataStringIndented: true,
+          citation_general_addBreaksWithinBody: false,
+        },
+      },
+      {
+        variantName: "dataStringInItalicsAndIndentedNoNewlines",
+        optionOverrides: {
+          citation_ancestry_dataStyle: "string",
+          citation_general_dataStringInItalics: true,
+          citation_general_dataStringIndented: true,
+          citation_general_addNewlinesWithinBody: false,
         },
       },
     ],
