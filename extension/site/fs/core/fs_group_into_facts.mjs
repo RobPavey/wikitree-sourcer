@@ -600,12 +600,12 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
         mergedSpouse.name = mergedName;
       }
       if (mergedDate) {
-        let mergedDateObj = new WtsDate();
+        let mergedDateObj = new DateObj();
         mergedDateObj.dateString = mergedDate;
         mergedSpouse.marriageDate = mergedDateObj;
       }
       if (mergedPlace) {
-        let mergedPlaceObj = new WtsPlace();
+        let mergedPlaceObj = new PlaceObj();
         mergedPlaceObj.placeString = mergedPlace;
         mergedSpouse.marriagePlace = mergedPlaceObj;
       }
