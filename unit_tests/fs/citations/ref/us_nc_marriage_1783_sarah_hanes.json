@@ -1,98 +1,98 @@
 {
   "dataStyle_fsShort_fsCitation_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_fsCitation_narrative": {
-    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
+    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_fsCitation_source": {
-    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.",
+    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.",
     "type": "source"
   },
   "dataStyle_record_string_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes marriage in 1783 in North Carolina, United States.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes marriage in 1783 in North Carolina, United States.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_string_narrative": {
-    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes marriage in 1783 in North Carolina, United States.\n</ref>",
+    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes marriage in 1783 in North Carolina, United States.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_string_source": {
-    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing FHL microfilm: 000422158; Record number: 128;<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes marriage in 1783 in North Carolina, United States.",
+    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes marriage in 1783 in North Carolina, United States.",
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nName: Sarah Hanes; Marriage Notice Date: 1783; Marriage Notice Place: North Carolina, United States; Event Place Parent Jur: 1; Misc Note: Page 8 on index.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nName: Sarah Hanes; Marriage Notice Date: 1783; Marriage Notice Place: North Carolina, United States; Event Place Parent Jur: 1; Misc Note: Page 8 on index.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nName: Sarah Hanes; Marriage Notice Date: 1783; Marriage Notice Place: North Carolina, United States; Event Place Parent Jur: 1; Misc Note: Page 8 on index.\n</ref>",
+    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nName: Sarah Hanes; Marriage Notice Date: 1783; Marriage Notice Place: North Carolina, United States; Event Place Parent Jur: 1; Misc Note: Page 8 on index.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing FHL microfilm: 000422158; Record number: 128;<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Name: Sarah Hanes; Marriage Notice Date: 1783; Marriage Notice Place: North Carolina, United States; Event Place Parent Jur: 1; Misc Note: Page 8 on index.",
+    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Name: Sarah Hanes; Marriage Notice Date: 1783; Marriage Notice Place: North Carolina, United States; Event Place Parent Jur: 1; Misc Note: Page 8 on index.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214\n{| border=\"1\"\n| Name || Sarah Hanes\n|-\n| Marriage Notice Date || 1783\n|-\n| Marriage Notice Place || North Carolina, United States\n|-\n| Event Place Parent Jur || 1\n|-\n| Misc Note || Page 8 on index\n|}\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214\n{| border=\"1\"\n| Name || Sarah Hanes\n|-\n| Marriage Notice Date || 1783\n|-\n| Marriage Notice Place || North Carolina, United States\n|-\n| Event Place Parent Jur || 1\n|-\n| Misc Note || Page 8 on index\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_table_narrative": {
-    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214\n{| border=\"1\"\n| Name || Sarah Hanes\n|-\n| Marriage Notice Date || 1783\n|-\n| Marriage Notice Place || North Carolina, United States\n|-\n| Event Place Parent Jur || 1\n|-\n| Misc Note || Page 8 on index\n|}\n</ref>",
+    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214\n{| border=\"1\"\n| Name || Sarah Hanes\n|-\n| Marriage Notice Date || 1783\n|-\n| Marriage Notice Place || North Carolina, United States\n|-\n| Event Place Parent Jur || 1\n|-\n| Misc Note || Page 8 on index\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing FHL microfilm: 000422158; Record number: 128;<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Name: Sarah Hanes; Marriage Notice Date: 1783; Marriage Notice Place: North Carolina, United States; Event Place Parent Jur: 1; Misc Note: Page 8 on index.",
+    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Name: Sarah Hanes; Marriage Notice Date: 1783; Marriage Notice Place: North Carolina, United States; Event Place Parent Jur: 1; Misc Note: Page 8 on index.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_fsCitation_narrative": {
-    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
+    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_fsCitation_source": {
-    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing FHL microfilm: 000422158; Record number: 128;<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.",
+    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.",
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting FHL microfilm: 000422158; Record number: 128;<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214.\n</ref>",
+    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing FHL microfilm: 000422158; Record number: 128;<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214.",
+    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing Digital film/folder number: 004364068; FHL microfilm: 000422158; Record number: 128; Packet letter: G<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes marriage in 1783 in North Carolina, United States.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes marriage in 1783 in North Carolina, United States.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_string_narrative": {
-    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes marriage in 1783 in North Carolina, United States.\n</ref>",
+    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes marriage in 1783 in North Carolina, United States.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_string_source": {
-    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes marriage in 1783 in North Carolina, United States.",
+    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes marriage in 1783 in North Carolina, United States.",
     "type": "source"
   },
   "dataStyle_fsLong_fsCitation_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsLong_fsCitation_narrative": {
-    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
+    "citation": "Sarah married in 1783 in North Carolina, United States.<ref>\n'''Marriage''':\n\"North Carolina, County Marriages, 1762-1979\"<br/>\nciting North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158<br/>\n{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>\nSarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsLong_fsCitation_source": {
-    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158.<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.",
+    "citation": "* '''Marriage''': \"North Carolina, County Marriages, 1762-1979\"<br/>citing North Carolina, United States, p. p69, North Carolina State Archives Division of Archives and History; FHL microfilm 422,158<br/>{{FamilySearch Record|Q2R1-ZVMS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-XXX7-HZK}} Image number 00214<br/>Sarah Hanes and MM9.1.1/Q2R1-ZVMQ:, 1783.",
     "type": "source"
   }
 }

@@ -94,13 +94,13 @@ class CitationBuilder {
   addBreakNewlineOrAlternatives(oldCitation, separatorChar = ",") {
     let citation = oldCitation;
 
+    if (citation.endsWith(";") || citation.endsWith(",") || citation.endsWith(".")) {
+      citation = citation.substring(0, citation.length - 1).trim();
+    }
+
     if (this.options.citation_general_addBreaksWithinBody) {
       citation += "<br/>";
     } else {
-      if (citation.endsWith(";") || citation.endsWith(",") || citation.endsWith(".")) {
-        citation = citation.substring(0, citation.length - 1);
-      }
-
       if (this.options.citation_general_commaInsideQuotes && citation.endsWith('"')) {
         citation = citation.substring(0, citation.length - 1);
         citation += separatorChar + '"';
@@ -428,10 +428,21 @@ class CitationBuilder {
     if (this.dataString) {
       if (!this.dataString.startsWith("{|")) {
         citation = this.addBreakNewlineOrAlternatives(citation);
+        if (this.type != "source" && this.options.citation_general_dataStringIndented) {
+          if (!this.options.citation_general_addNewlinesWithinBody) {
+            citation += "\n";
+          }
+          citation += ":";
+        }
+        if (this.options.citation_general_dataStringInItalics) {
+          citation += "''" + this.dataString + "''";
+        } else {
+          citation += this.dataString;
+        }
       } else {
         citation += "\n"; // always need a newline before table
+        citation += this.dataString;
       }
-      citation += this.dataString;
     }
 
     if (this.sourceReference && this.options.citation_general_referencePosition == "atEnd") {
@@ -447,7 +458,7 @@ class CitationBuilder {
       citation = citation.substring(0, citation.length - 1).trim();
     }
 
-    if (!(citation.endsWith(".") || citation.endsWith("}"))) {
+    if (!(citation.endsWith(".") || citation.endsWith("}") || citation.endsWith(".''"))) {
       // doesn't end with a period already and doesn't end in template or table
       // However, it could end with accessed date if there is no data section, or just
       // a bare link and we don't want a period then. There are various ways we could test

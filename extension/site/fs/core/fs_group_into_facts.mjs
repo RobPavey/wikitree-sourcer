@@ -26,7 +26,7 @@ import { CD } from "../../../base/core/country_data.mjs";
 import { Role } from "../../../base/core/record_type.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 
-import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
+import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 import { getFieldsUsedInNarrative } from "../../../base/core/narrative_builder.mjs";
 
 function attemptToMergeSourceIntoPriorFact(source, result, type) {
@@ -600,10 +600,14 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
         mergedSpouse.name = mergedName;
       }
       if (mergedDate) {
-        mergedSpouse.marriageDate = mergedDate;
+        let mergedDateObj = new WtsDate();
+        mergedDateObj.dateString = mergedDate;
+        mergedSpouse.marriageDate = mergedDateObj;
       }
       if (mergedPlace) {
-        mergedSpouse.marriagePlace = mergedPlace;
+        let mergedPlaceObj = new WtsPlace();
+        mergedPlaceObj.placeString = mergedPlace;
+        mergedSpouse.marriagePlace = mergedPlaceObj;
       }
       if (mergedAge && mergedAge.value) {
         mergedSpouse.age = mergedAge.value;

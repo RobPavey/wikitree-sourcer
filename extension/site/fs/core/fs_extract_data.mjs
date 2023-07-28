@@ -1508,8 +1508,12 @@ const fieldData = [
   { fieldFsType: "FileNumber", referenceDataField: "fileNumber" },
 
   { fieldFsType: "DigitalFilmNumber", referenceDataField: "digitalFilmNumber" },
-  { fieldFsType: "FilmNumber", referenceDataField: "filmNumber" },
+  { fieldFsType: "DigitalFilmNbr", referenceDataField: "digitalFilmNumber" },
+  { fieldFsType: "FilmNumber", referenceDataField: "filmNumber" }, // e.g. https://www.familysearch.org/ark:/61903/1:1:N493-65L
+  { fieldFsType: "FilmNbr", referenceDataField: "filmNumber" }, // e.g. https://www.familysearch.org/ark:/61903/1:1:M2Z2-T24
   { fieldFsType: "ImageNbr", referenceDataField: "imageNumber" },
+  { fieldFsType: "ExtRepositoryName", referenceDataField: "externalRepositoryName" },
+  { fieldFsType: "UdeBatchNbr", referenceDataField: "indexingBatchNumber" },
 
   { fieldFsType: "PacketLtr", referenceDataField: "packetLetter" },
   { fieldFsType: "PacketLetter", referenceDataField: "packetLetter" },

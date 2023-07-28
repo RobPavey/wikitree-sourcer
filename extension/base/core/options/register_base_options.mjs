@@ -188,6 +188,18 @@ const citationOptionsGroup = {
       label: "Add <br/>s within the citation between sections (for readability in read mode)",
       defaultValue: true,
     },
+    {
+      optionName: "dataStringInItalics",
+      type: "checkbox",
+      label: "Put the 'data string' part of the citation in italics",
+      defaultValue: false,
+    },
+    {
+      optionName: "dataStringIndented",
+      type: "checkbox",
+      label: "Indent the 'data string' part of the citation (inline citations only)",
+      defaultValue: false,
+    },
   ],
 };
 
@@ -1124,9 +1136,15 @@ const addMergeAddPersonOptionsGroup = {
       defaultValue: false,
     },
     {
+      optionName: "addDiedYoung",
+      type: "checkbox",
+      label: "Include Died Young sticker if person died aged 15 or less and no known spouse",
+      defaultValue: false,
+    },
+    {
       optionName: "generateIntro",
       type: "select",
-      label: "Create an intro in the biography (Notes) field",
+      label: "Create a birth/parentage line in the biography",
       values: [
         { value: "none", text: "No" },
         {
@@ -1147,13 +1165,19 @@ const addMergeAddPersonOptionsGroup = {
     {
       optionName: "includeLinks",
       type: "checkbox",
-      label: "Include WikiTree person links in intro if available",
+      label: "Include WikiTree person link for parents in birth/parentage if available",
       defaultValue: false,
     },
     {
-      optionName: "addDiedYoung",
+      optionName: "includeMarriageLines",
       type: "checkbox",
-      label: "Include Died Young sticker if person died aged 15 or less and no known spouse",
+      label: "Include a line in bio for each known marriage (if not already including narratives or inline citations)",
+      defaultValue: false,
+    },
+    {
+      optionName: "includeDeathLine",
+      type: "checkbox",
+      label: "Include a line in bio for any known death info (if not already including narratives or inline citations)",
       defaultValue: false,
     },
   ],

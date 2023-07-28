@@ -1,98 +1,98 @@
 {
   "dataStyle_fsShort_fsCitation_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa.<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_fsCitation_narrative": {
-    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa.<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
+    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_fsCitation_source": {
-    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing p. 5, Library and Archives of Canada, Ottawa.<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.",
+    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing p. 5, Library and Archives of Canada, Ottawa<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.",
     "type": "source"
   },
   "dataStyle_record_string_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_string_narrative": {
-    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.\n</ref>",
+    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_string_source": {
-    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76;<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.",
+    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.",
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nName: James Mcdonald; Census Date: 31 Mar 1901; Census Place: Toronto (east/est) (city/cité), Ontario, Canada; Birth Date: 1856; Birth Place: Ontario; Ethnicity: Scotch; Marital Status: Married; Nationality: Canadian; Religion: Methodist; Age: 45; Relationship To Head: Head.\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nName: James Mcdonald; Census Date: 31 Mar 1901; Census Place: Toronto (east/est) (city/cité), Ontario, Canada; Birth Date: 1856; Birth Place: Ontario; Ethnicity: Scotch; Marital Status: Married; Nationality: Canadian; Religion: Methodist; Age: 45; Relationship To Head: Head.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nName: James Mcdonald; Census Date: 31 Mar 1901; Census Place: Toronto (east/est) (city/cité), Ontario, Canada; Birth Date: 1856; Birth Place: Ontario; Ethnicity: Scotch; Marital Status: Married; Nationality: Canadian; Religion: Methodist; Age: 45; Relationship To Head: Head.\n</ref>",
+    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nName: James Mcdonald; Census Date: 31 Mar 1901; Census Place: Toronto (east/est) (city/cité), Ontario, Canada; Birth Date: 1856; Birth Place: Ontario; Ethnicity: Scotch; Marital Status: Married; Nationality: Canadian; Religion: Methodist; Age: 45; Relationship To Head: Head.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76;<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>Name: James Mcdonald; Census Date: 31 Mar 1901; Census Place: Toronto (east/est) (city/cité), Ontario, Canada; Birth Date: 1856; Birth Place: Ontario; Ethnicity: Scotch; Marital Status: Married; Nationality: Canadian; Religion: Methodist; Age: 45; Relationship To Head: Head.",
+    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>Name: James Mcdonald; Census Date: 31 Mar 1901; Census Place: Toronto (east/est) (city/cité), Ontario, Canada; Birth Date: 1856; Birth Place: Ontario; Ethnicity: Scotch; Marital Status: Married; Nationality: Canadian; Religion: Methodist; Age: 45; Relationship To Head: Head.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279\n{| border=\"1\"\n| Name || James Mcdonald\n|-\n| Census Date || 31 Mar 1901\n|-\n| Census Place || Toronto (east/est) (city/cité), Ontario, Canada\n|-\n| Birth Date || 1856\n|-\n| Birth Place || Ontario\n|-\n| Ethnicity || Scotch\n|-\n| Marital Status || Married\n|-\n| Nationality || Canadian\n|-\n| Religion || Methodist\n|-\n| Age || 45\n|-\n| Relationship To Head || Head\n|}\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279\n{| border=\"1\"\n| Name || James Mcdonald\n|-\n| Census Date || 31 Mar 1901\n|-\n| Census Place || Toronto (east/est) (city/cité), Ontario, Canada\n|-\n| Birth Date || 1856\n|-\n| Birth Place || Ontario\n|-\n| Ethnicity || Scotch\n|-\n| Marital Status || Married\n|-\n| Nationality || Canadian\n|-\n| Religion || Methodist\n|-\n| Age || 45\n|-\n| Relationship To Head || Head\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_table_narrative": {
-    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279\n{| border=\"1\"\n| Name || James Mcdonald\n|-\n| Census Date || 31 Mar 1901\n|-\n| Census Place || Toronto (east/est) (city/cité), Ontario, Canada\n|-\n| Birth Date || 1856\n|-\n| Birth Place || Ontario\n|-\n| Ethnicity || Scotch\n|-\n| Marital Status || Married\n|-\n| Nationality || Canadian\n|-\n| Religion || Methodist\n|-\n| Age || 45\n|-\n| Relationship To Head || Head\n|}\n</ref>",
+    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279\n{| border=\"1\"\n| Name || James Mcdonald\n|-\n| Census Date || 31 Mar 1901\n|-\n| Census Place || Toronto (east/est) (city/cité), Ontario, Canada\n|-\n| Birth Date || 1856\n|-\n| Birth Place || Ontario\n|-\n| Ethnicity || Scotch\n|-\n| Marital Status || Married\n|-\n| Nationality || Canadian\n|-\n| Religion || Methodist\n|-\n| Age || 45\n|-\n| Relationship To Head || Head\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76;<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>Name: James Mcdonald; Census Date: 31 Mar 1901; Census Place: Toronto (east/est) (city/cité), Ontario, Canada; Birth Date: 1856; Birth Place: Ontario; Ethnicity: Scotch; Marital Status: Married; Nationality: Canadian; Religion: Methodist; Age: 45; Relationship To Head: Head.",
+    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>Name: James Mcdonald; Census Date: 31 Mar 1901; Census Place: Toronto (east/est) (city/cité), Ontario, Canada; Birth Date: 1856; Birth Place: Ontario; Ethnicity: Scotch; Marital Status: Married; Nationality: Canadian; Religion: Methodist; Age: 45; Relationship To Head: Head.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_fsCitation_narrative": {
-    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
+    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_fsCitation_source": {
-    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76;<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.",
+    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.",
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279.\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76;<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279.\n</ref>",
+    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76;<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279.",
+    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing Page: 5; Affiliate Film Number: CC1901_76; Digital film/folder number: 101692810<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa.<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_string_narrative": {
-    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa.<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.\n</ref>",
+    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_string_source": {
-    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing p. 5, Library and Archives of Canada, Ottawa.<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.",
+    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing p. 5, Library and Archives of Canada, Ottawa<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald (45), married head of household in Toronto (east/est) (city/cité), Ontario, Canada. Born in Ontario.",
     "type": "source"
   },
   "dataStyle_fsLong_fsCitation_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa.<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsLong_fsCitation_narrative": {
-    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa.<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
+    "citation": "In the 1901 census James (age 45) was the married head of household in Toronto (east/est) (city/cité), Ontario, Canada.<ref>\n'''1901 Census''':\n\"Canada Census, 1901\"<br/>\nciting p. 5, Library and Archives of Canada, Ottawa<br/>\n{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>\nJames Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsLong_fsCitation_source": {
-    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing p. 5, Library and Archives of Canada, Ottawa.<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.",
+    "citation": "* '''1901 Census''': \"Canada Census, 1901\"<br/>citing p. 5, Library and Archives of Canada, Ottawa<br/>{{FamilySearch Record|KHGF-SX6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSS1-LW3B-D}} Image number 01279<br/>James Mcdonald, Toronto (east/est) (city/cité), Ontario, Canada.",
     "type": "source"
   }
 }

@@ -1,98 +1,98 @@
 {
   "dataStyle_fsShort_fsCitation_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey.<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_fsCitation_narrative": {
-    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey.<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
+    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_fsCitation_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey.<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton, Marston, Cheshire, England.",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton, Marston, Cheshire, England.",
     "type": "source"
   },
   "dataStyle_record_string_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_string_narrative": {
-    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.\n</ref>",
+    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_string_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.",
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nName: John Swinton; Census Date: 1851; Census Place: Marston, Cheshire, England; Birth Date: 1795; Birth Place: Appleton, Cheshire; Marital Status: Married; Occupation: Farmer Of 123 Acres; Age: 56; Relationship To Head: Head.\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nName: John Swinton; Census Date: 1851; Census Place: Marston, Cheshire, England; Birth Date: 1795; Birth Place: Appleton, Cheshire; Marital Status: Married; Occupation: Farmer Of 123 Acres; Age: 56; Relationship To Head: Head.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nName: John Swinton; Census Date: 1851; Census Place: Marston, Cheshire, England; Birth Date: 1795; Birth Place: Appleton, Cheshire; Marital Status: Married; Occupation: Farmer Of 123 Acres; Age: 56; Relationship To Head: Head.\n</ref>",
+    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nName: John Swinton; Census Date: 1851; Census Place: Marston, Cheshire, England; Birth Date: 1795; Birth Place: Appleton, Cheshire; Marital Status: Married; Occupation: Farmer Of 123 Acres; Age: 56; Relationship To Head: Head.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>Name: John Swinton; Census Date: 1851; Census Place: Marston, Cheshire, England; Birth Date: 1795; Birth Place: Appleton, Cheshire; Marital Status: Married; Occupation: Farmer Of 123 Acres; Age: 56; Relationship To Head: Head.",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>Name: John Swinton; Census Date: 1851; Census Place: Marston, Cheshire, England; Birth Date: 1795; Birth Place: Appleton, Cheshire; Marital Status: Married; Occupation: Farmer Of 123 Acres; Age: 56; Relationship To Head: Head.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Swinton\n|-\n| Census Date || 1851\n|-\n| Census Place || Marston, Cheshire, England\n|-\n| Birth Date || 1795\n|-\n| Birth Place || Appleton, Cheshire\n|-\n| Marital Status || Married\n|-\n| Occupation || Farmer Of 123 Acres\n|-\n| Age || 56\n|-\n| Relationship To Head || Head\n|}\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Swinton\n|-\n| Census Date || 1851\n|-\n| Census Place || Marston, Cheshire, England\n|-\n| Birth Date || 1795\n|-\n| Birth Place || Appleton, Cheshire\n|-\n| Marital Status || Married\n|-\n| Occupation || Farmer Of 123 Acres\n|-\n| Age || 56\n|-\n| Relationship To Head || Head\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_table_narrative": {
-    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Swinton\n|-\n| Census Date || 1851\n|-\n| Census Place || Marston, Cheshire, England\n|-\n| Birth Date || 1795\n|-\n| Birth Place || Appleton, Cheshire\n|-\n| Marital Status || Married\n|-\n| Occupation || Farmer Of 123 Acres\n|-\n| Age || 56\n|-\n| Relationship To Head || Head\n|}\n</ref>",
+    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Swinton\n|-\n| Census Date || 1851\n|-\n| Census Place || Marston, Cheshire, England\n|-\n| Birth Date || 1795\n|-\n| Birth Place || Appleton, Cheshire\n|-\n| Marital Status || Married\n|-\n| Occupation || Farmer Of 123 Acres\n|-\n| Age || 56\n|-\n| Relationship To Head || Head\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>Name: John Swinton; Census Date: 1851; Census Place: Marston, Cheshire, England; Birth Date: 1795; Birth Place: Appleton, Cheshire; Marital Status: Married; Occupation: Farmer Of 123 Acres; Age: 56; Relationship To Head: Head.",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>Name: John Swinton; Census Date: 1851; Census Place: Marston, Cheshire, England; Birth Date: 1795; Birth Place: Appleton, Cheshire; Marital Status: Married; Occupation: Farmer Of 123 Acres; Age: 56; Relationship To Head: Head.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_fsCitation_narrative": {
-    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
+    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_fsCitation_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton, Marston, Cheshire, England.",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton, Marston, Cheshire, England.",
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6;<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey.<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_string_narrative": {
-    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey.<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.\n</ref>",
+    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_string_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey.<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing Marston, Cheshire, England, p. 22; citing PRO HO 107, The National Archives of the UK, Kew, Surrey<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton (56), married, Farmer Of 123 Acres, head of household in Marston in Northwich registration district in Cheshire, England. Born in Appleton, Cheshire.",
     "type": "source"
   },
   "dataStyle_fsLong_fsCitation_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22, from \"1851 England, Scotland and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO HO 107, The National Archives of the UK, Kew, Surrey.<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22, from \"1851 England, Scotland and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO HO 107, The National Archives of the UK, Kew, Surrey<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsLong_fsCitation_narrative": {
-    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22, from \"1851 England, Scotland and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO HO 107, The National Archives of the UK, Kew, Surrey.<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
+    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting Marston, Cheshire, England, p. 22, from \"1851 England, Scotland and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO HO 107, The National Archives of the UK, Kew, Surrey<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>\nJohn Swinton, Marston, Cheshire, England.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsLong_fsCitation_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing Marston, Cheshire, England, p. 22, from \"1851 England, Scotland and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO HO 107, The National Archives of the UK, Kew, Surrey.<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton, Marston, Cheshire, England.",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing Marston, Cheshire, England, p. 22, from \"1851 England, Scotland and Wales census,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d.); citing PRO HO 107, The National Archives of the UK, Kew, Surrey<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)<br/>John Swinton, Marston, Cheshire, England.",
     "type": "source"
   }
 }

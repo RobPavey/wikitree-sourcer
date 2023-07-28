@@ -73,7 +73,7 @@ const displayCountyNames = [
   { search_county: "Perth", display_county: "Perthshire" },
   { search_county: "Perth and Kinross", display_county: "Perth and Kinross" },
   { search_county: "Renfrew", display_county: "Renfrewshire" },
-  { search_county: "Ross & Cromarty", display_county: "Ross & Cromerty" },
+  { search_county: "Ross & Cromarty", display_county: "Ross & Cromarty" },
   { search_county: "Roxburgh", display_county: "Roxburghshire" },
   { search_county: "Selkirk", display_county: "Selkirkshire" },
   { search_county: "Shetland", display_county: "Shetland Isles" },

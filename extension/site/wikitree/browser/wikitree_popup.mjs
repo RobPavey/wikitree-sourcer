@@ -92,6 +92,77 @@ function convertTimestampDiffToText(timeStamp) {
   return timeText;
 }
 
+function getPersonNameOrPronoun(gd, options) {
+  let nameOption = options["narrative_general_nameOrPronoun"];
+
+  let nameOrPronoun = "";
+
+  function tryFirstName() {
+    let name = gd.inferFirstName();
+    if (name) {
+      nameOrPronoun = name;
+      return true;
+    }
+    return false;
+  }
+
+  function tryForenames() {
+    let name = gd.inferForenames();
+    if (name) {
+      nameOrPronoun = name;
+      return true;
+    }
+    return false;
+  }
+
+  function tryFullName() {
+    let name = gd.inferFullName();
+    if (name) {
+      nameOrPronoun = name;
+      return true;
+    }
+    return false;
+  }
+
+  function tryPronoun() {
+    let gender = gd.personGender;
+    if (gender == "male") {
+      nameOrPronoun = "He";
+      return true;
+    } else if (gender == "female") {
+      nameOrPronoun = "She";
+      return true;
+    }
+    return false;
+  }
+
+  if (nameOption == "firstName") {
+    if (!tryFirstName()) {
+      if (!tryFullName()) {
+        tryPronoun();
+      }
+    }
+  } else if (nameOption == "forenames") {
+    if (!tryForenames()) {
+      if (!tryFullName()) {
+        tryPronoun();
+      }
+    }
+  } else if (nameOption == "fullName") {
+    if (!tryFullName()) {
+      tryPronoun();
+    }
+  } else if (nameOption == "pronoun") {
+    if (!tryPronoun()) {
+      if (!tryFirstName()) {
+        tryFullName();
+      }
+    }
+  }
+
+  return nameOrPronoun;
+}
+
 function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   function qualifierToStatus(qualifier) {
     switch (qualifier) {
@@ -724,34 +795,39 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
 
   let result = getWikiTreeAddMergeData(data, personEd, personGd, citationObject);
 
+  // Check whether to add {{Died Young}} sticker.
+  let addDiedYoung = false;
+  if (options.addMerge_addPerson_addDiedYoung) {
+    let ageAtDeath = personGd.inferAgeAtDeath();
+    if (ageAtDeath !== undefined) {
+      if (typeof ageAtDeath == "string") {
+        let ageNum = parseInt(ageAtDeath);
+        if (ageNum != NaN) {
+          ageAtDeath = ageNum;
+        } else {
+          ageAtDeath = undefined;
+        }
+      }
+      if (ageAtDeath !== undefined) {
+        if (ageAtDeath <= 15) {
+          if (!personGd.spouses) {
+            addDiedYoung = true;
+          }
+        }
+      }
+    }
+  }
+
+  let intro = "";
+  if (addDiedYoung) {
+    intro += "{{Died Young}}\n";
+  }
+
   // possibly add intro
   const addIntroOpt = options.addMerge_addPerson_generateIntro;
   if (addIntroOpt != "none") {
     // Example intro:
     // Cornelius Seddon was born in 1864 in Ashton in Makerfield, Lancashire, England, the son of Joseph Seddon and Ellen Tootell.
-
-    // Check whether to add {{Died Young}} sticker.
-    let addDiedYoung = false;
-    if (options.addMerge_addPerson_addDiedYoung) {
-      let ageAtDeath = personGd.inferAgeAtDeath();
-      if (ageAtDeath !== undefined) {
-        if (typeof ageAtDeath == "string") {
-          let ageNum = parseInt(ageAtDeath);
-          if (ageNum != NaN) {
-            ageAtDeath = ageNum;
-          } else {
-            ageAtDeath = undefined;
-          }
-        }
-        if (ageAtDeath !== undefined) {
-          if (ageAtDeath <= 15) {
-            if (!personGd.spouses) {
-              addDiedYoung = true;
-            }
-          }
-        }
-      }
-    }
 
     let fullName = personGd.inferFullName();
 
@@ -769,14 +845,15 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
       birthPlace = preposition + " " + birthPlace;
     }
 
-    let intro = "";
-    if (addDiedYoung) {
-      intro += "{{Died Young}}\n";
-    }
     result.parentLine = generateParentsLine(fullName, birthDateString, birthPlace);
     intro += result.parentLine;
+  }
+
+  if (intro) {
     result.notes = intro;
   }
+
+  let canIncludeMarriageAndDeathLines = true;
 
   if (citationObject && options.addMerge_addPerson_includeCitation) {
     let type = citationObject.type;
@@ -792,6 +869,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
         }
 
         result.notes += citationText;
+        canIncludeMarriageAndDeathLines = false;
       }
     }
   }
@@ -811,6 +889,77 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
           }
 
           result.notes += allCitationsText;
+          canIncludeMarriageAndDeathLines = false;
+        }
+      }
+    }
+  }
+
+  if (canIncludeMarriageAndDeathLines) {
+    let nameOrPronoun = getPersonNameOrPronoun(personGd, options);
+
+    if (nameOrPronoun) {
+      // we want to follow some of the narrative options here but can't use NarrativeBuilder because
+      // we don't (necessarily) have an eventGd.
+      if (options.addMerge_addPerson_includeMarriageLines && personGd.spouses) {
+        for (let spouse of personGd.spouses) {
+          let spouseName = spouse.name.inferFullName();
+          let marriageDateString = "";
+          let marriageDateObj = spouse.marriageDate;
+          if (marriageDateObj) {
+            let format = options.narrative_general_dateFormat;
+            let highlight = options.narrative_general_dateHighlight;
+            marriageDateString = personGd.getNarrativeDateFormat(marriageDateObj, format, highlight, true);
+          }
+          let marriagePlaceString = "";
+          let marriagePlaceObj = spouse.marriagePlace;
+          if (marriagePlaceObj) {
+            let preposition = WTS_String.getPrepositionForPlaceString(marriagePlaceObj.placeString);
+            marriagePlaceString = preposition + " " + marriagePlaceObj.placeString;
+          }
+
+          if (spouseName && marriageDateString) {
+            let marriageString = nameOrPronoun + " married " + spouseName + " " + marriageDateString;
+            if (marriagePlaceString) {
+              marriageString += " " + marriagePlaceString;
+            }
+            if (!result.notes) {
+              result.notes = "";
+            } else {
+              result.notes += "\n\n";
+            }
+            result.notes += marriageString + ".";
+          }
+        }
+      }
+
+      if (options.addMerge_addPerson_includeDeathLine) {
+        let deathDateString = "";
+        let deathDateObj = personGd.inferDeathDateObj();
+        if (deathDateObj) {
+          let format = options.narrative_general_dateFormat;
+          let highlight = options.narrative_general_dateHighlight;
+          deathDateString = personGd.getNarrativeDateFormat(deathDateObj, format, highlight, true);
+        }
+
+        let deathPlace = personGd.inferDeathPlace();
+        if (deathPlace) {
+          let preposition = WTS_String.getPrepositionForPlaceString(deathPlace);
+          deathPlace = preposition + " " + deathPlace;
+        }
+
+        if (deathDateString) {
+          let deathString = nameOrPronoun + " died " + deathDateString;
+          if (deathPlace) {
+            deathString += " " + deathPlace;
+          }
+          if (!result.notes) {
+            result.notes = "";
+          } else {
+            result.notes += "\n\n";
+          }
+
+          result.notes += deathString + ".";
         }
       }
     }

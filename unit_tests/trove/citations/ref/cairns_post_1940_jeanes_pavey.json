@@ -1,26 +1,26 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY.<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088?searchTerm=pavey Trove Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088?searchTerm=pavey Trove Article] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the Cairns Post on 6 August 1940 in Queensland, Australia.<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY.<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088?searchTerm=pavey Trove Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the Cairns Post on 6 August 1940 in Queensland, Australia.<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088?searchTerm=pavey Trove Article] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1940 Newspaper''': \"Trove, National Library of Australia\"<br/>Cairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY.<br/>[https://trove.nla.gov.au/newspaper/article/42260088?searchTerm=pavey Trove Article] (accessed 6 May 2021)",
+    "citation": "* '''1940 Newspaper''': \"Trove, National Library of Australia\"<br/>Cairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY<br/>[https://trove.nla.gov.au/newspaper/article/42260088?searchTerm=pavey Trove Article] (accessed 6 May 2021)",
     "type": "source"
   },
   "doNotIncludeQuery_inline": {
-    "citation": "<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY.<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088 Trove Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088 Trove Article] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "doNotIncludeQuery_narrative": {
-    "citation": "This person was mentioned in the Cairns Post on 6 August 1940 in Queensland, Australia.<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY.<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088 Trove Article] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the Cairns Post on 6 August 1940 in Queensland, Australia.<ref>\n'''1940 Newspaper''':\n\"Trove, National Library of Australia\"<br/>\nCairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY<br/>\n[https://trove.nla.gov.au/newspaper/article/42260088 Trove Article] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "doNotIncludeQuery_source": {
-    "citation": "* '''1940 Newspaper''': \"Trove, National Library of Australia\"<br/>Cairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY.<br/>[https://trove.nla.gov.au/newspaper/article/42260088 Trove Article] (accessed 6 May 2021)",
+    "citation": "* '''1940 Newspaper''': \"Trove, National Library of Australia\"<br/>Cairns Post (Qld. : 1909 - 1954), Tue 6 Aug 1940, Page 7 : JEAMES—PAVEY<br/>[https://trove.nla.gov.au/newspaper/article/42260088 Trove Article] (accessed 6 May 2021)",
     "type": "source"
   }
 }

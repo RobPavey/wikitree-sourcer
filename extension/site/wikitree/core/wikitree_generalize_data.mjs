@@ -118,8 +118,10 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
     if (lastSpaceIndex == -1) {
       // unlikely that there are no spaces at all in the name
       object.nameObj.lastName = name;
-      object.lastNameAtBirth = lnabFromId;
-      object.lastNameAtDeath = object.lastNameAtBirth;
+      if (lnabFromId && lnabFromId != "Unknown") {
+        object.lastNameAtBirth = lnabFromId;
+        object.lastNameAtDeath = object.lastNameAtBirth;
+      }
       return;
     }
 
@@ -142,8 +144,10 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
 
     object.nameObj.lastName = lastName;
     object.nameObj.forenames = name.substring(0, spaceBeforeLastNameIndex);
-    object.lastNameAtBirth = lastName;
-    object.lastNameAtDeath = object.lastNameAtBirth;
+    if (lastName && lastName != "Unknown") {
+      object.lastNameAtBirth = lastName;
+      object.lastNameAtDeath = object.lastNameAtBirth;
+    }
   } else {
     object.nameObj.forenames = name.substring(0, parenIndex).trim();
 
@@ -158,16 +162,23 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
       console.log("LNAB in name '" + name + "' does not match LNAB in wikiId '" + wikiId + "'");
     }
 
-    object.lastNameAtBirth = name.substring(parenIndex + 1, closeParenIndex).trim();
+    if (lnab && lnab != "Unknown") {
+      object.lastNameAtBirth = lnab;
+    }
 
     // the part after the close paren could have suffixes. We could in some cases know the
     // spouses LNAB but they are not guaranteed to be the *last* husband
     let lastNameAtDeath = name.substring(closeParenIndex + 1).trim();
     lastNameAtDeath = removeSuffixes(lastNameAtDeath);
 
-    object.lastNameAtDeath = lastNameAtDeath;
-
-    object.nameObj.lastName = object.lastNameAtBirth;
+    if (lastNameAtDeath && lastNameAtDeath != "Unknown") {
+      object.lastNameAtDeath = lastNameAtDeath;
+    }
+    if (object.lastNameAtBirth) {
+      object.nameObj.lastName = object.lastNameAtBirth;
+    } else if (object.lastNameAtDeath) {
+      object.nameObj.lastName = object.lastNameAtDeath;
+    }
     object.nameObj.name = object.nameObj.forenames + " " + object.nameObj.lastName;
   }
 
@@ -202,11 +213,21 @@ function generalizeData(input) {
     result.name.otherLastNames = ed.otherLastNames;
   }
   // WT doesn't have a last name as such but every profile has a LNAB
-  result.name.lastName = ed.lnab;
+  if (ed.lnab && ed.lnab != "Unknown") {
+    result.lastNameAtBirth = ed.lnab;
+  }
+  if (ed.currentLastName && ed.currentLastName != "Unknown") {
+    result.lastNameAtDeath = ed.currentLastName;
+  }
+  if (result.lastNameAtBirth) {
+    result.name.lastName = result.lastNameAtBirth;
+  } else if (result.lastNameAtDeath) {
+    result.name.lastName = result.lastNameAtDeath;
+  }
 
-  result.lastNameAtBirth = ed.lnab;
-  result.lastNameAtDeath = ed.currentLastName;
-  result.mothersMaidenName = ed.mothersMaidenName;
+  if (ed.mothersMaidenName && ed.mothersMaidenName != "Unknown") {
+    result.mothersMaidenName = ed.mothersMaidenName;
+  }
 
   result.setPersonGender(ed.personGender);
 
@@ -255,22 +276,26 @@ function generalizeData(input) {
       let name = ed.parents.father.name;
       if (name) {
         let obj = getPartsFromWikiTreeName(name, ed.parents.father.wikiId);
-        result.parents.father = {
-          name: obj.nameObj,
-          lastNameAtBirth: obj.lastNameAtBirth,
-          lastNameAtDeath: obj.lastNameAtDeath,
-        };
+        result.parents.father = { name: obj.nameObj };
+        if (obj.lastNameAtBirth && obj.lastNameAtBirth != "Unknown") {
+          result.parents.father.lastNameAtBirth = obj.lastNameAtBirth;
+        }
+        if (obj.lastNameAtDeath && obj.lastNameAtDeath != "Unknown") {
+          result.parents.father.lastNameAtDeath = obj.lastNameAtDeath;
+        }
       }
     }
     if (ed.parents.mother) {
       let name = ed.parents.mother.name;
       if (name) {
         let obj = getPartsFromWikiTreeName(name, ed.parents.mother.wikiId);
-        result.parents.mother = {
-          name: obj.nameObj,
-          lastNameAtBirth: obj.lastNameAtBirth,
-          lastNameAtDeath: obj.lastNameAtDeath,
-        };
+        result.parents.mother = { name: obj.nameObj };
+        if (obj.lastNameAtBirth && obj.lastNameAtBirth != "Unknown") {
+          result.parents.mother.lastNameAtBirth = obj.lastNameAtBirth;
+        }
+        if (obj.lastNameAtDeath && obj.lastNameAtDeath != "Unknown") {
+          result.parents.mother.lastNameAtDeath = obj.lastNameAtDeath;
+        }
       }
     }
   }

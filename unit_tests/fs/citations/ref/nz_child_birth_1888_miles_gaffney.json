@@ -1,14 +1,14 @@
 {
   "dataStyle_fsShort_fsCitation_inline": {
-    "citation": "<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nMiles Gaffney in entry for Catherine Lucy Gaffney, 1888.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nMiles Gaffney in entry for Catherine Lucy Gaffney, 1888.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_fsCitation_narrative": {
-    "citation": "The birth of Miles's child Catherine Lucy Gaffney was registered in 1888 in New Zealand.<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nMiles Gaffney in entry for Catherine Lucy Gaffney, 1888.\n</ref>",
+    "citation": "The birth of Miles's child Catherine Lucy Gaffney was registered in 1888 in New Zealand.<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nMiles Gaffney in entry for Catherine Lucy Gaffney, 1888.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_fsCitation_source": {
-    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Miles Gaffney in entry for Catherine Lucy Gaffney, 1888.",
+    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Miles Gaffney in entry for Catherine Lucy Gaffney, 1888.",
     "type": "source"
   },
   "dataStyle_record_string_inline": {
@@ -72,27 +72,27 @@
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {
-    "citation": "<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nCatherine Lucy Gaffney born to Miles Gaffney in 1888 in New Zealand.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nCatherine Lucy Gaffney born to Miles Gaffney in 1888 in New Zealand.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_string_narrative": {
-    "citation": "The birth of Miles's child Catherine Lucy Gaffney was registered in 1888 in New Zealand.<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nCatherine Lucy Gaffney born to Miles Gaffney in 1888 in New Zealand.\n</ref>",
+    "citation": "The birth of Miles's child Catherine Lucy Gaffney was registered in 1888 in New Zealand.<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nCatherine Lucy Gaffney born to Miles Gaffney in 1888 in New Zealand.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_string_source": {
-    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Catherine Lucy Gaffney born to Miles Gaffney in 1888 in New Zealand.",
+    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Catherine Lucy Gaffney born to Miles Gaffney in 1888 in New Zealand.",
     "type": "source"
   },
   "dataStyle_fsLong_fsCitation_inline": {
-    "citation": "<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nMiles Gaffney in entry for Catherine Lucy Gaffney, 1888.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nMiles Gaffney in entry for Catherine Lucy Gaffney, 1888.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsLong_fsCitation_narrative": {
-    "citation": "The birth of Miles's child Catherine Lucy Gaffney was registered in 1888 in New Zealand.<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nMiles Gaffney in entry for Catherine Lucy Gaffney, 1888.\n</ref>",
+    "citation": "The birth of Miles's child Catherine Lucy Gaffney was registered in 1888 in New Zealand.<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\nciting Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nMiles Gaffney in entry for Catherine Lucy Gaffney, 1888.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsLong_fsCitation_source": {
-    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington.<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Miles Gaffney in entry for Catherine Lucy Gaffney, 1888.",
+    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>citing Birth, New Zealand, registration number 1888/8036, Archives of New Zealand, Wellington<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Miles Gaffney in entry for Catherine Lucy Gaffney, 1888.",
     "type": "source"
   }
 }
