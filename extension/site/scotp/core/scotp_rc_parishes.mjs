@@ -400,7 +400,7 @@ const rc_parishes = [
     mp_code: "MP",
     mp_no: "18",
     rc_parish: "DORNIE, ST DUTHAC",
-    county: "Ross and Cromerty",
+    county: "Ross and Cromarty",
   },
   {
     mp_code: "MP",
