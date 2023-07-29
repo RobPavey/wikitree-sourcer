@@ -1,0 +1,118 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/109854388",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Man:",
+        "value": "Reinder Harmens van der Meulen"
+      },
+      {
+        "label": "Gender",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "Place of residence",
+        "value": "Arum",
+        "dataKey": "SourceDetail.PlaceOfResidence"
+      }
+    ],
+    [
+      {
+        "label": "Wife",
+        "value": "Trijntje Luitsens"
+      },
+      {
+        "label": "Gender",
+        "value": "Vrouw",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "Place of residence",
+        "value": "Arum",
+        "dataKey": "SourceDetail.PlaceOfResidence"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "DTB Lidmaten inschrijving",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "1825",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Event place",
+      "value": "Wonseradeel",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "DTB Overig",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "AlleFriezen",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Leeuwarden",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Friesland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "28",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "797",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Page",
+      "value": "106",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "1825",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Wonseradeel",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Archiefnaam: Collectie doop-, trouw-, lidmaten- begraafboeken - Tresoar, Deel: 797, Periode: 1772...",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Lidmatenregister Herv. Gemeente Arum",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "In 1825 lidmaat In november 1827 hij overleden In augustus 1841 zij vertrokken naar Achlum",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "http://allefriezen.nl/zoeken/deeds/b319628e-3082-485a-aa5b-7a711898d92a"
+}

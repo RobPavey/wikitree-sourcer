@@ -1,0 +1,135 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/10662653",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Bruidegom",
+        "value": "Jan Peter Janssen N.N."
+      },
+      {
+        "label": "Woonplaats",
+        "value": "Dorst",
+        "dataKey": "SourceDetail.PlaceOfResidence"
+      },
+      {
+        "label": "diversen",
+        "value": "weduwnaar",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Bruid",
+        "value": "Nelleken Janssen"
+      },
+      {
+        "label": "Woonplaats",
+        "value": "Dorst",
+        "dataKey": "SourceDetail.PlaceOfResidence"
+      },
+      {
+        "label": "diversen",
+        "value": "weduwe",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Eerdere man",
+        "value": "Joost Janssen"
+      }
+    ],
+    [
+      {
+        "label": "Eerdere vrouw",
+        "value": "Lysken Peters"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "Trouwen",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "21-06-1676",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Religie",
+      "value": "Nederduits Gereformeerd",
+      "dataKey": "SourceDetail.Religion"
+    },
+    {
+      "label": "Gebeurtenisplaats",
+      "value": "Oosterhout",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "DTB Trouwen",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "Brabants Historisch Informatie Centrum",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "'s-Hertogenbosch",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Noord-Brabant",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archief",
+      "value": "8089",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "28",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Pagina",
+      "value": "4",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "21-06-1676",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Akteplaats",
+      "value": "Oosterhout",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collectie",
+      "value": "Archiefnaam: Regionaal Archief Tilburg, Bron: boek, Deel: 28, Periode: 1676-1687",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Boek",
+      "value": "Nederduits Gereformeerd trouwboek 1676-1687",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "Datum ondertrouw: 30-05-1676",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "https://www.bhic.nl/memorix/genealogy/search/deeds/b576f38c-4cb2-490b-0029-d64ae7477873"
+}

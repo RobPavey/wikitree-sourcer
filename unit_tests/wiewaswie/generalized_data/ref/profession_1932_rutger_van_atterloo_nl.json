@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Employment",
+  "name": {
+    "name": "Rutger Antony van Atterloo"
+  },
+  "eventDate": {
+    "yearString": "1932"
+  },
+  "eventPlace": {
+    "placeString": "Noord-Holland, Nederland"
+  },
+  "birthDate": {
+    "yearString": "1932"
+  },
+  "hasValidData": true
+}

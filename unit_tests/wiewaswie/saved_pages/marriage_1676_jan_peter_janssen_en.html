@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://www.wiewaswie.nl/en/detail/10662653 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>  - Brabants Historisch Informatie Centrum</title>
+    <!--<base href="https://www.wiewaswie.nl/">--><base href=".">
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="System.String[]">
+    <meta name="robots" content="">
+
+    <link href="https://www.wiewaswie.nl/highresIcon.png" rel="icon" sizes="192x192">
+    <link href="https://www.wiewaswie.nl/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <link href="./marriage_1676_jan_peter_janssen_en_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./marriage_1676_jan_peter_janssen_en_files/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="./marriage_1676_jan_peter_janssen_en_files/style.min.css" rel="stylesheet">
+    <link href="./marriage_1676_jan_peter_janssen_en_files/cbg.css" rel="stylesheet">
+
+    
+
+
+
+    <script async="" src="./marriage_1676_jan_peter_janssen_en_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-24952765-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+    <script>
+        window.addEventListener("message", function(e){
+            //console.log("Received message: ", e);
+            if (e.origin === 'https://account.cbg.nl') {
+                //console.log('message: ', e.data);
+                if (e.data.jwtToken !== null && e.data.payload !== undefined) {
+                    //console.log('cognitousername: ', e.data.payload['cognito:username']);
+                    //console.log('user: ', e.data);
+                    //console.log(SHA1.hex(e.data.jwtToken));
+                    //console.log(document.getElementById('accesstokenhash').value);
+                    // user is logged on via SSO but either not on wiewaswie (accesslevel == 0) or he is but the subscription level has changed so we need to update:
+                    if (document.getElementById("accesslevel").value != e.data.payload['wiewaswie.nl'] || document.getElementById("sub").value != e.data.payload['sub']) {
+                        document.location = 'https://account.cbg.nl/authorize?client_id=2qosgmhhvkfhbrhb4pg42kkmr3&lang=nl&redirect_uri=https://www.wiewaswie.nl/sso&response_type=code&scope=email%20profile%20openid&state=/en/detail/?id=10662653';
+                    }
+                } else
+                {
+                    //console.log('Niet meer ingelogd via Oauth');
+                    if (document.getElementById("accesslevel").value != "0") {
+                        document.location = '/sso?logout==localonly&redirect_uri=/en/detail/?id=10662653';
+                    }
+                }
+            }
+        }, false);
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden){
+                //console.log("Browser tab is hidden");
+//                document.querySelector('body').dataset.accessLevel = 0;
+            } else {
+                //console.log("Browser tab is visible");
+                document.getElementById('frame').src += '';
+            }
+        });
+    </script>
+</head>
+<body data-culture="en-US">
+    
+
+<header>
+    <button class="btn btn-black mobile-menu">Menu</button>
+    <div class="pulldown" style="display:none;">
+        <a href="https://cbg.nl/" class="a a-gold" target="_blank">CBG.nl</a>
+        <a href="https://cbgbibliotheek.nl/" class="a a-orange" target="_blank">Bibliotheek</a>
+        <a href="https://cbgverzamelingen.nl/" class="a a-purple" target="_blank">Verzamelingen</a>
+        <a href="https://cbgfamilienamen.nl/" class="a a-red" target="_blank">Familienamen</a>
+        <a href="https://cbgfamiliewapens.nl/" class="a a-blue" target="_blank">Familiewapens</a>
+        <a href="https://stamboomnederland.nl/" class="a a-green" target="_blank">Stambomen</a>
+    </div>
+    <button class="btn pulldown-toggle">CBG sources</button>
+    <div class="navbar">
+        <div class="container">
+            <div class="navbar-header" style="float:left">
+                <div class="navbar-brand">
+                    <a href="https://www.wiewaswie.nl/">
+                        <img src="./marriage_1676_jan_peter_janssen_en_files/logo.png">
+                        <span class="navbar-slogan">
+                            <b>
+Everyone                            </b> has a history
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-mijncbg navbar-right">
+                <ul class="nav navbar-nav navbar-top">
+                        <li>
+                            <a class="btn btn-corporate btn-logged-out" href="https://oauth.cbg.nl/oauth2/authorize?response_type=code&amp;scope=email+profile+openid&amp;redirect_uri=https://www.wiewaswie.nl/sso&amp;client_id=5640lkja0fbr39q5g3lj9q39lq&amp;lang=en&amp;state=/en/detail/?id=10662653">
+                                <span class="logged-out">My CBG</span>
+                            </a>
+                        </li>
+                </ul>
+            </div>
+            <div class="navbar-collapse navbar-right collapse">
+                <ul class="nav navbar-nav navbar-top">
+                    <li class="language">
+                                <a href="https://www.wiewaswie.nl/nl/" class="">NL</a>
+                                <a href="https://www.wiewaswie.nl/en/" class="active">EN</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-bottom">
+                        <li><a href="https://www.wiewaswie.nl/en/search/" target="_self">Search</a></li>
+                        <li><a href="https://www.wiewaswie.nl/en/sources/" target="_self">Sources</a></li>
+                        <li><a href="https://www.wiewaswie.nl/en/news/" target="_self">News</a></li>
+                        <li><a href="https://www.wiewaswie.nl/en/help/" target="_self">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="navbar-mobile">
+    <ul class="nav">
+            <li><a href="https://www.wiewaswie.nl/en/search/" target="_self">Search</a></li>
+            <li><a href="https://www.wiewaswie.nl/en/sources/" target="_self">Sources</a></li>
+            <li><a href="https://www.wiewaswie.nl/en/news/" target="_self">News</a></li>
+            <li><a href="https://www.wiewaswie.nl/en/help/" target="_self">Help</a></li>
+            </ul>
+
+    <ul class="nav nav-white">
+        <li class="language">
+                <a href="https://www.wiewaswie.nl/nl/" class="">NL</a>
+                <a href="https://www.wiewaswie.nl/en/" class="active">EN</a>
+        </li>
+    </ul>
+
+    <ul class="nav nav-inline">
+        <li><a href="https://cbg.nl/" class="a a-gold" target="_blank">CBG.nl</a></li>
+        <li><a href="https://cbgbibliotheek.nl/" class="a a-orange" target="_blank">Bibliotheek</a></li>
+        <li><a href="https://cbgverzamelingen.nl/" class="a a-purple" target="_blank">Verzamelingen</a></li>
+        <li><a href="https://cbgfamilienamen.nl/" class="a a-red" target="_blank">Familienamen</a></li>
+        <li><a href="https://cbgfamiliewapens.nl/" class="a a-blue" target="_blank">Familiewapens</a></li>
+        <li><a href="https://stamboomnederland.nl/" class="a a-green" target="_blank">Stambomen</a></li>
+    </ul>
+</div>
+    
+
+<div class="container sourcedetail-themepage">
+        <div class="split"></div>
+        <div class="col-md-12">
+            <h2>DTB Trouwen met Jan Peter Janssen N.N.</h2>
+        </div>
+        <div class="split"></div>
+        <div class="col-md-9">
+            <div class="row">
+
+                <div class="col-md-5">
+                    <div class="left-column">
+                            <div class="person">
+                                <dl class="dl-horizontal">
+                                    <dt>Groom</dt>
+                                        <dd><a href="https://www.wiewaswie.nl/en/search/?q=Jan%20Peter%20Janssen%20N.N." target="_blank">Jan Peter Janssen N.N.</a></dd>
+                                                                                                                                                                                                                                                            
+                                                                            <dt data-dictionary="SourceDetail.PlaceOfResidence">Place of residence</dt>
+                                        <dd>Dorst</dd>
+                                                                                <dt data-dictionary="Comment">diversen</dt>
+                                            <dd>weduwnaar</dd>
+                                </dl>
+                            </div>
+                            <div class="person">
+                                <dl class="dl-horizontal">
+                                    <dt>Bride</dt>
+                                        <dd><a href="https://www.wiewaswie.nl/en/search/?q=Nelleken%20Janssen" target="_blank">Nelleken Janssen</a></dd>
+                                                                                                                                                                                                                                                            
+                                                                            <dt data-dictionary="SourceDetail.PlaceOfResidence">Place of residence</dt>
+                                        <dd>Dorst</dd>
+                                                                                <dt data-dictionary="Comment">diversen</dt>
+                                            <dd>weduwe</dd>
+                                </dl>
+                            </div>
+                            <div class="person">
+                                <dl class="dl-horizontal">
+                                    <dt>Eerdere man</dt>
+                                        <dd><a href="https://www.wiewaswie.nl/en/search/?q=Joost%20Janssen" target="_blank">Joost Janssen</a></dd>
+                                                                                                                                                                                                                                                            
+                                                                                                        </dl>
+                            </div>
+                            <div class="person">
+                                <dl class="dl-horizontal">
+                                    <dt>Eerdere vrouw</dt>
+                                        <dd><a href="https://www.wiewaswie.nl/en/search/?q=Lysken%20Peters" target="_blank">Lysken Peters</a></dd>
+                                                                                                                                                                                                                                                            
+                                                                                                        </dl>
+                            </div>
+                                                    <div class="gebeurtenis">
+                                <dl class="dl-horizontal">
+                                        <dt data-dictionary="SourceDetail.Event">Event</dt>
+                                        <dd>Trouwen</dd>
+                                                                            <dt data-dictionary="SourceDetail.EventDate">Event date</dt>
+                                        <dd>21-06-1676</dd>
+                                                                            <dt data-dictionary="SourceDetail.Religion">Religion</dt>
+                                        <dd>Nederduits Gereformeerd</dd>
+                                                                            <dt data-dictionary="SourceDetail.EventPlace">Event place</dt>
+                                        <dd>
+
+
+                                            Oosterhout
+                                        </dd>
+                                                                    </dl>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="right-column akte">
+                        <dl class="dl-horizontal">
+                                <dt data-dictionary="SourceDetail.DocumentType">Document type</dt>
+                                    <dd>DTB Trouwen</dd>
+                                                            <dt data-dictionary="SourceDetail.HeritageInstitutionName">Heritage institution</dt>
+                                    <dd>Brabants Historisch Informatie Centrum</dd>
+                                                            <dt data-dictionary="SourceDetail.HeritageInstitutionPlace">Institution place</dt>
+                                <dd>'s-Hertogenbosch</dd>
+                                                            <dt data-dictionary="SourceDetail.CollectionRegion">Collection region</dt>
+                                <dd>Noord-Brabant</dd>
+                                                            <dt data-dictionary="SourceDetail.Archive">Archive</dt>
+                                <dd>8089</dd>
+                                                            <dt data-dictionary="SourceDetail.RegistrationNumber">Registration number</dt>
+                                <dd>28</dd>
+                                                                                        <dt data-dictionary="SourceDetail.Page">Page</dt>
+                                <dd>4</dd>
+                                                            <dt data-dictionary="SourceDetail.RegistrationDate">Registration date</dt>
+                                <dd>
+                                    21-06-1676
+                                </dd>
+                                                            <dt data-dictionary="SourceDetail.CertificatePlace">Document place</dt>
+                                <dd>Oosterhout</dd>
+                                                            <dt data-dictionary="SourceDetail.Collection">Collection</dt>
+                                <dd>Archiefnaam: Regionaal Archief Tilburg, Bron: boek, Deel: 28, Periode: 1676-1687</dd>
+                                                            <dt data-dictionary="SourceDetail.Book">Book</dt>
+                                <dd>Nederduits Gereformeerd trouwboek 1676-1687</dd>
+                                                                <dt data-dictionary="Comment">Opmerking</dt>
+                                    <dd>Datum ondertrouw: 30-05-1676</dd>
+                        </dl>
+                    </div>
+                </div>
+                            </div>
+        </div>
+        <div class="col-md-3">
+                <div class="buttons">
+                    <div class="showurl">
+                        <button class="link btn btn-black"><span class="glyphicon glyphicon-link"></span> Copy URL</button>
+                        <input type="text" onclick="this.select()" value="https://www.wiewaswie.nl/en/detail/10662653">
+                    </div>
+                    <a href="https://www.wiewaswie.nl/en/detail/print/10662653" target="_blank" class="a a-black"><span class="glyphicon glyphicon-print"></span> Print</a>
+
+                            <a href="https://www.bhic.nl/memorix/genealogy/search/deeds/b576f38c-4cb2-490b-0029-d64ae7477873" target="_blank" class="sourcedigital a a-black"><span class="glyphicon glyphicon-share"></span> Go to source</a>
+                </div>
+        </div>
+                <div class="split"></div>
+</div>
+
+    <footer>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Receive newsletter?</h3>
+
+                
+<form action="https://www.wiewaswie.nl/en/detail/?id=10662653" enctype="multipart/form-data" method="post">    <div class="mailchimp-subscription">
+        <div class="input-group subscribe">
+            <input name="__RequestVerificationToken" type="hidden" value="7-diAqGExn2IjkVzh7fEPbtJNyiBJyhlvPHhIXSalxv-f-83LVWoIHWzlHIMc7EWPW_cuqwSZAT1MyefCQx0bLk5EfGGYTEOjYEyqxLOj4M1">
+            <input class="form-control" id="EmailAddress" name="EmailAddress" placeholder="Your e-mail address..." type="email" value="">
+            <span class="input-group-btn">
+                <button class="btn btn-black" type="submit"><span class="glyphicon glyphicon-envelope"></span></button>
+            </span>
+        <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"><template shadowrootmode="open"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" data-lastpass-icon="true" style="position: absolute; cursor: pointer; height: 22px; max-height: 22px; width: 22px; max-width: 22px; top: -14.625px; left: -79px; z-index: auto; color: rgb(215, 64, 58);"><rect x="0.680176" y="0.763062" width="22.6392" height="22.4737" rx="4" fill="currentColor"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M19.7935 7.9516C19.7935 7.64414 20.0427 7.3949 20.3502 7.3949C20.6576 7.3949 20.9069 7.64414 20.9069 7.9516V16.0487C20.9069 16.3562 20.6576 16.6054 20.3502 16.6054C20.0427 16.6054 19.7935 16.3562 19.7935 16.0487V7.9516Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.76288 13.6577C5.68525 13.6577 6.43298 12.9154 6.43298 11.9998C6.43298 11.0842 5.68525 10.3419 4.76288 10.3419C3.8405 10.3419 3.09277 11.0842 3.09277 11.9998C3.09277 12.9154 3.8405 13.6577 4.76288 13.6577Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.3298 13.6577C11.2521 13.6577 11.9999 12.9154 11.9999 11.9998C11.9999 11.0842 11.2521 10.3419 10.3298 10.3419C9.4074 10.3419 8.65967 11.0842 8.65967 11.9998C8.65967 12.9154 9.4074 13.6577 10.3298 13.6577Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M15.8964 13.6577C16.8188 13.6577 17.5665 12.9154 17.5665 11.9998C17.5665 11.0842 16.8188 10.3419 15.8964 10.3419C14.974 10.3419 14.2263 11.0842 14.2263 11.9998C14.2263 12.9154 14.974 13.6577 15.8964 13.6577Z" fill="white"></path></svg></template></div></div>
+    </div>
+<input name="ufprt" type="hidden" value="AA494890819EC27AF527BA7C2E5E2753370049FE96CF2792B481303E4CA17B65D03F37AE7C7FA83013C88939F6FB309DD4C3CFAE137F7D359419BC6311D798B02053AC8AFF89A3A2B35FD4CA21D1E542F9EF1B5164BA3F2CE82534D9B569477D04FF50C9E1EB312CDEAB54B30019C19310F61B71549D212C88CF0402195771FC496036C3447115AA804B891443645139B1AB10317F8B3DFEFFFAE644A6A7F1114F0BD27C4BD20155B803670ACD3B82D79E17A1DBF50DC408F3C8BDF6C1A45A0F5A72DA95F53850CA6B35801ED31A1CA7BA3ED983A8BE39A793AD3A3DF0DFB5525A2FF44EAE30A71D46BF6A14A15D73A5059DBA080F31BB0BE5BDF8ACB86A395F"></form>
+
+                <div class="strech-brand">
+                    <img src="./marriage_1676_jan_peter_janssen_en_files/logo-alt.png">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h3>Service &amp; Contact</h3>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/en/contact/" target="_self">Contact</a></li>
+                        <li><a href="https://www.facebook.com/WieWasWie" target="_blank">Facebook</a></li>
+                        <li><a href="https://twitter.com/WieWasWie" target="_blank">Twitter</a></li>
+                </ul>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/en/report-infringing-material/" target="_self">Report infringing material</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>About WieWasWie</h3>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/en/participating-institutions/" target="_self">Participating institutions</a></li>
+                        <li><a href="https://www.wiewaswie.nl/en/about-us/" target="_self">About us</a></li>
+                        <li><a href="https://cbg.nl/order/" target="_blank">Become a CBG-friend!</a></li>
+                </ul>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/en/disclaimer/" target="_self">Disclaimer</a></li>
+                        <li><a href="https://cbg.nl/documents/178/Algemene_Voorwaarden_2020-09-15.pdf" target="_blank">Terms of Service</a></li>
+                        <li><a href="https://cbg.nl/documents/179/Privacyverklaring_2020-09-15.pdf" target="_blank">My privacy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>More CBG websites</h3>
+                <ul>
+                        <li><a href="https://cbg.nl/" target="_blank">CBG.nl</a></li>
+                        <li><a href="https://cbgverzamelingen.nl/" target="_blank">CBG Verzamelingen</a></li>
+                        <li><a href="https://cbgfamiliewapens.nl/" target="_blank">CBG Familiewapens</a></li>
+                        <li><a href="https://cbgfamilienamen.nl/" target="_blank">CBG Familienamen</a></li>
+                        <li><a href="https://stamboomnederland.nl/" target="_blank">CBG Stambomen</a></li>
+                        <li><a href="https://cbgbibliotheek.nl/" target="_blank">CBG Bibliotheek</a></li>
+                </ul>
+                <ul>
+                        <li><a href="https://cbg.nl/over-het-cbg/gen-magazine/" target="_blank">Gen.magazine</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <div class="scripts">
+        <script src="./marriage_1676_jan_peter_janssen_en_files/UmbracoDictionary.js"></script>
+<script src="./marriage_1676_jan_peter_janssen_en_files/jquery.min.js"></script>
+<script src="./marriage_1676_jan_peter_janssen_en_files/bootstrap.min.js"></script>
+<script src="./marriage_1676_jan_peter_janssen_en_files/respond.min.js"></script>
+<script src="./marriage_1676_jan_peter_janssen_en_files/perfect-scrollbar.jquery.min.js"></script>
+<script src="./marriage_1676_jan_peter_janssen_en_files/wiewaswie.js"></script>
+<script src="./marriage_1676_jan_peter_janssen_en_files/angular.min.js"></script>
+<script>window.angular || document.write('<script src="js/angular.min.js">\x3C/script>')</script>
+        
+        
+    </div>
+
+    <div class="modal fade" id="message-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.btn-logged-in').click(function () {
+                $('.btn-menu').toggleClass("menu-active");
+            });
+        });
+
+    </script>
+    <input type="hidden" id="accesslevel" name="accesslevel" value="0">
+    <input type="hidden" id="sub" name="sub" value="">
+    <iframe id="frame" style="position: absolute; width: 1px;height: 1px; inset: -9999px; display: none;" src="./marriage_1676_jan_peter_janssen_en_files/iframe.html">
+</body>
+</html></iframe><div data-lastpass-root="" style="position: absolute !important; top: 0px !important; left: 0px !important; height: 0px !important; width: 0px !important;"><div data-lastpass-infield="true" style="position: absolute !important; top: 0px !important; left: 0px !important;"><template shadowrootmode="open"><div style="position: absolute; height: 100vh; width: 100vw; z-index: 2147483647; border-radius: 4px; top: 0px; left: 0px; max-height: 0px; max-width: 280px; min-width: auto; margin-top: 10px;"><div style="left: -1px; display: none; position: absolute; overflow: hidden; bottom: 100%; width: 20px; height: 10px;"><div data-lastpass-infield-caret="true" style="position: absolute; width: 16px; height: 16px; border-radius: 2px; border-color: rgb(213, 217, 222); border-style: solid; border-width: 1px 0px 0px 1px; box-sizing: border-box; top: 4px; left: 2px; background: linear-gradient(0deg, rgb(255, 219, 219) 10.47%, rgb(251, 235, 235) 6.47%); transform: rotate(45deg);"></div></div><iframe data-lastpass-iframe="true" allow="clipboard-write" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/webclient-infield.html" style="border: none; height: 100%; width: 100%;"></iframe></div></template></div></div></body></html>

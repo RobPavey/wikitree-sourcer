@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "Jan van der Wijk"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "8 Nov 1811"
+  },
+  "eventPlace": {
+    "placeString": "Friesland, Nederland"
+  },
+  "birthDate": {
+    "dateString": "8 Nov 1811"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Jan Luitsens"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Bieke Egberts"
+      }
+    }
+  },
+  "hasValidData": true
+}

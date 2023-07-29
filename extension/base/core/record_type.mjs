@@ -82,6 +82,7 @@ const RT = {
 const RecordSubtype = {
   Banns: `Banns`,
   MarriageOrBanns: `MarriageOrBanns`,
+  MemberRegistration: `MemberRegistration`,
 };
 
 const Role = {

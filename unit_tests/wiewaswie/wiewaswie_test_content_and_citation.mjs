@@ -40,12 +40,84 @@ const regressionData = [
     url: "https://www.wiewaswie.nl/nl/detail/54339285",
   },
   {
+    caseName: "birth_cert_1811_jan_van_der_wijk_en",
+    url: "https://www.wiewaswie.nl/en/detail/15425329",
+  },
+  {
+    caseName: "birth_cert_1811_jan_van_der_wijk_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/15425329",
+  },
+  {
+    caseName: "burial_1694_peter_hillebrandts_en",
+    url: "https://www.wiewaswie.nl/en/detail/55850616",
+  },
+  {
+    caseName: "burial_1694_peter_hillebrandts_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/55850616",
+  },
+  {
+    caseName: "burial_1776_maria_van_den_berg_en",
+    url: "https://www.wiewaswie.nl/en/detail/35327513",
+  },
+  {
+    caseName: "burial_1776_maria_van_den_berg_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/35327513",
+  },
+  {
+    caseName: "burial_1786_ruud_scheltus_en",
+    url: "https://www.wiewaswie.nl/en/detail/55438226",
+  },
+  {
+    caseName: "burial_1786_ruud_scheltus_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/55438226",
+  },
+  {
+    caseName: "burial_1797_sarah_ammersfoort_en",
+    url: "https://www.wiewaswie.nl/en/detail/36565702",
+  },
+  {
+    caseName: "burial_1797_sarah_ammersfoort_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/36565702",
+  },
+  {
+    caseName: "church_member_1825_reinder_van_der_meulen_en",
+    url: "https://www.wiewaswie.nl/en/detail/109854388",
+  },
+  {
+    caseName: "church_member_1825_reinder_van_der_meulen_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/109854388",
+  },
+  {
+    caseName: "death_cert_1815_jan_huisman_en",
+    url: "https://www.wiewaswie.nl/en/detail/8941780",
+  },
+  {
+    caseName: "death_cert_1815_jan_huisman_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/8941780",
+  },
+  {
+    caseName: "marriage_1676_jan_peter_janssen_en",
+    url: "https://www.wiewaswie.nl/en/detail/10662653",
+  },
+  {
+    caseName: "marriage_1676_jan_peter_janssen_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/10662653",
+  },
+  {
     caseName: "marriage_cert_1818_ringert_jongewaard_en",
     url: "https://www.wiewaswie.nl/en/detail/31877498",
   },
   {
     caseName: "marriage_cert_1818_ringert_jongewaard_nl",
     url: "https://www.wiewaswie.nl/nl/detail/31877498",
+  },
+  {
+    caseName: "profession_1932_rutger_van_atterloo_en",
+    url: "https://www.wiewaswie.nl/en/detail/103397261",
+  },
+  {
+    caseName: "profession_1932_rutger_van_atterloo_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/103397261",
   },
 ];
 

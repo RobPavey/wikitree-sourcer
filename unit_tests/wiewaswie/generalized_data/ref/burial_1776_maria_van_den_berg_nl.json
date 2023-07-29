@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "Maria van den Berg"
+  },
+  "eventDate": {
+    "dateString": "25 Apr 1776"
+  },
+  "eventPlace": {
+    "placeString": "Princenhage, Noord-Brabant, Nederland"
+  },
+  "hasValidData": true
+}

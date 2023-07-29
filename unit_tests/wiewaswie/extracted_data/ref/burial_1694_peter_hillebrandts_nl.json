@@ -1,0 +1,104 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/55850616",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Overledene",
+        "value": "Peter"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "een van een tweeling",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Vader",
+        "value": "Hindrick Hillebrandts"
+      }
+    ],
+    [
+      {
+        "label": "Moeder",
+        "value": "Grietjen Wichers"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "Begraven",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "13-02-1694",
+      "dataKey": "SourceDetail.EventDate"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "DTB Begraven",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "Groninger Archieven",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "Groningen",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Groningen",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archief",
+      "value": "124",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "284",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Pagina",
+      "value": "38",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "11-02-1694",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Akteplaats",
+      "value": "Kerkelijke gemeente Mensingeweer en Maarslag",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collectie",
+      "value": "Archiefnaam: Doop-, trouw- en begraafboeken enz. in de provincie Groningen, Bron: boek, Deel: 284...",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Boek",
+      "value": "Doop-, trouw- en begraafboek 1674-1811",
+      "dataKey": "SourceDetail.Book"
+    }
+  ],
+  "originalSourceLink": "http://allegroningers.nl/zoeken-op-naam/deeds/af24c35f-9fcf-0132-af86-0cd84ad15db5"
+}

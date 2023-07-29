@@ -1,0 +1,130 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/8941780",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Overledene",
+        "value": "Jan Bartelds Huisman"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "Leeftijd",
+        "value": "79 jaar",
+        "dataKey": "SourceDetail.Age"
+      },
+      {
+        "label": "diversen",
+        "value": "gehuwd",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Vader",
+        "value": "Barteld Klases"
+      }
+    ],
+    [
+      {
+        "label": "Moeder",
+        "value": "Sytske Jans"
+      }
+    ],
+    [
+      {
+        "label": "Relatie",
+        "value": "Wybrigjen Luitsens"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Vrouw",
+        "dataKey": "SourceDetail.Gender"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "Overlijden",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "17-02-1815",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Gebeurtenisplaats",
+      "value": "Lippenhuizen",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "BS Overlijden",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "AlleFriezen",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "Leeuwarden",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Friesland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archief",
+      "value": "30-28",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "3005",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Pagina",
+      "value": "002",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "20-02-1815",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Akteplaats",
+      "value": "Opsterland",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collectie",
+      "value": "Archiefnaam: Burgerlijke Stand Opsterland - Tresoar, Bron: boek, Deel: 3005, Periode: 1815",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Boek",
+      "value": "Overlijdensregister 1815 Lippenhuizen",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "<i><b>Verkeerde akte? Gebruik \"Volgende\" rechtsboven op afbeeldingsscherm.</b></i>",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "http://allefriezen.nl/zoeken/deeds/034e7de7-24cc-6d54-d435-98c38c0b44c7"
+}

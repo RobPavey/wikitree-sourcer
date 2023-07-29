@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"DTB Begraven\"<br/>\nBrabants Historisch Informatie Centrum, Collection: Stadsarchief Breda, Registration number: 146, Book: Nederduits Gereformeerd begraafboek 1757-1788<br/>\n[https://www.wiewaswie.nl/en/detail/35327513 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://www.bhic.nl/memorix/genealogy/search/deeds/6565f0eb-6ea8-bdc2-13cb-65755d44c7c4 Brabants Historisch Informatie Centrum Record]<br/>\nMaria van den Berg burial on 25 Apr 1776 in Princenhage, Noord-Brabant, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Maria was buried on 25 April 1776 in Princenhage, Noord-Brabant, Nederland.<ref>\n'''Burial''':\n\"DTB Begraven\"<br/>\nBrabants Historisch Informatie Centrum, Collection: Stadsarchief Breda, Registration number: 146, Book: Nederduits Gereformeerd begraafboek 1757-1788<br/>\n[https://www.wiewaswie.nl/en/detail/35327513 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://www.bhic.nl/memorix/genealogy/search/deeds/6565f0eb-6ea8-bdc2-13cb-65755d44c7c4 Brabants Historisch Informatie Centrum Record]<br/>\nMaria van den Berg burial on 25 Apr 1776 in Princenhage, Noord-Brabant, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"DTB Begraven\"<br/>Brabants Historisch Informatie Centrum, Collection: Stadsarchief Breda, Registration number: 146, Book: Nederduits Gereformeerd begraafboek 1757-1788<br/>[https://www.wiewaswie.nl/en/detail/35327513 WieWasWie Record] (accessed 6 May 2021)<br/>[https://www.bhic.nl/memorix/genealogy/search/deeds/6565f0eb-6ea8-bdc2-13cb-65755d44c7c4 Brabants Historisch Informatie Centrum Record]<br/>Maria van den Berg burial on 25 Apr 1776 in Princenhage, Noord-Brabant, Nederland.",
+    "type": "source"
+  }
+}

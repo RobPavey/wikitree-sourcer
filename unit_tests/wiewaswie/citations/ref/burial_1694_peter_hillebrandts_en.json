@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"DTB Begraven\"<br/>\nGroninger Archieven, Collection: Doop-, trouw- en begraafboeken enz. in de provincie Groningen, Registration number: 284, Book: Doop-, trouw- en begraafboek 1674-1811<br/>\n[https://www.wiewaswie.nl/en/detail/55850616 WieWasWie Record] (accessed 6 May 2021)<br/>\n[http://allegroningers.nl/zoeken-op-naam/deeds/af24c35f-9fcf-0132-af86-0cd84ad15db5 Groninger Archieven Record]<br/>\nPeter, son of Hindrick Hillebrandts & Grietjen Wichers, burial on 13 Feb 1694 in Groningen, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Peter, son of Hindrick Hillebrandts & Grietjen Wichers, was buried on 13 February 1694 in Groningen, Nederland.<ref>\n'''Burial''':\n\"DTB Begraven\"<br/>\nGroninger Archieven, Collection: Doop-, trouw- en begraafboeken enz. in de provincie Groningen, Registration number: 284, Book: Doop-, trouw- en begraafboek 1674-1811<br/>\n[https://www.wiewaswie.nl/en/detail/55850616 WieWasWie Record] (accessed 6 May 2021)<br/>\n[http://allegroningers.nl/zoeken-op-naam/deeds/af24c35f-9fcf-0132-af86-0cd84ad15db5 Groninger Archieven Record]<br/>\nPeter, son of Hindrick Hillebrandts & Grietjen Wichers, burial on 13 Feb 1694 in Groningen, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"DTB Begraven\"<br/>Groninger Archieven, Collection: Doop-, trouw- en begraafboeken enz. in de provincie Groningen, Registration number: 284, Book: Doop-, trouw- en begraafboek 1674-1811<br/>[https://www.wiewaswie.nl/en/detail/55850616 WieWasWie Record] (accessed 6 May 2021)<br/>[http://allegroningers.nl/zoeken-op-naam/deeds/af24c35f-9fcf-0132-af86-0cd84ad15db5 Groninger Archieven Record]<br/>Peter, son of Hindrick Hillebrandts & Grietjen Wichers, burial on 13 Feb 1694 in Groningen, Nederland.",
+    "type": "source"
+  }
+}

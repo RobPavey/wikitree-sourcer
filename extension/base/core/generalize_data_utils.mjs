@@ -3156,6 +3156,7 @@ class GeneralizedData {
       {
         type: RT.OtherChurchEvent,
         defaultTitle: "Other Church Event",
+        subtypes: [{ title: "Church Member Registration", subtype: RecordSubtype.MemberRegistration }],
       },
     ];
 

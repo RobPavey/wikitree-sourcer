@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "Peter"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "13 Feb 1694"
+  },
+  "eventPlace": {
+    "placeString": "Groningen, Nederland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Hindrick Hillebrandts"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Grietjen Wichers"
+      }
+    }
+  },
+  "hasValidData": true
+}

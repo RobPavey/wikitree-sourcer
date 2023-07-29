@@ -183,6 +183,14 @@ class ExtractedDataReader {
     if (ddmmyyyyDate) {
       let parts = ddmmyyyyDate.split(separator);
       if (parts.length != 3) {
+        if (parts.length == 1) {
+          // could be year only
+          if (/^\d\d\d\d$/.test(ddmmyyyyDate)) {
+            let dateObj = new DateObj();
+            dateObj.yearString = ddmmyyyyDate;
+            return dateObj;
+          }
+        }
         return;
       }
 

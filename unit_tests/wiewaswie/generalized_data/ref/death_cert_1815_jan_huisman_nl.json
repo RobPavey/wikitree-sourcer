@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "Jan Bartelds Huisman"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "17 Feb 1815"
+  },
+  "eventPlace": {
+    "placeString": "Lippenhuizen, Friesland, Nederland"
+  },
+  "ageAtEvent": "79",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Barteld Klases"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Sytske Jans"
+      }
+    }
+  },
+  "hasValidData": true
+}

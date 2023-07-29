@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "OtherChurchEvent",
+  "recordSubtype": "MemberRegistration",
+  "name": {
+    "name": "Reinder Harmens van der Meulen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1825"
+  },
+  "eventPlace": {
+    "placeString": "Wonseradeel, Friesland, Nederland"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Trijntje Luitsens"
+      }
+    }
+  ],
+  "hasValidData": true
+}

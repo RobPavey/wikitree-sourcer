@@ -1,0 +1,92 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/55438226",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Deceased",
+        "value": "Ruud Scheltus"
+      },
+      {
+        "label": "Gender",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Vermeld",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "08-12-1786",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Event place",
+      "value": "Opsterland",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "DTB Begraven",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "AlleFriezen",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Leeuwarden",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Friesland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "245-04",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "108",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Registration date",
+      "value": "08-12-1786",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Opsterland",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Archiefnaam: Hervormde gemeente Beetsterzwaag-Beets-Otterterp - Tresoar, Deel: 108, Periode: 1766...",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Diaconierekeningboek Beetsterzwaag",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "Ontvangen wegens collecte £ -:7:12 Citaat: bij het begraven van Ruud Scheltus in de bekken versamelt",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "http://allefriezen.nl/zoeken/deeds/580d2c74-9c37-4394-977b-dbe8f6ee4211"
+}

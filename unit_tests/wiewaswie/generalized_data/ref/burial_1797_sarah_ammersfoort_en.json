@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "Sarah Ammersfoort"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "17 Mar 1797"
+  },
+  "eventPlace": {
+    "placeString": "Zeist, Utrecht, Nederland"
+  },
+  "ageAtEvent": "71",
+  "spouses": [
+    {
+      "name": {
+        "name": "Gerardus van Wees"
+      }
+    }
+  ],
+  "hasValidData": true
+}

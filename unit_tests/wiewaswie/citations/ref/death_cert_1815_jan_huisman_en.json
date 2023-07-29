@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"BS Overlijden\"<br/>\nAlleFriezen, Collection: Burgerlijke Stand Opsterland - Tresoar, Registration number: 3005, Book: Overlijdensregister 1815 Lippenhuizen<br/>\n[https://www.wiewaswie.nl/en/detail/8941780 WieWasWie Record] (accessed 6 May 2021)<br/>\n[http://allefriezen.nl/zoeken/deeds/034e7de7-24cc-6d54-d435-98c38c0b44c7 AlleFriezen Record]<br/>\nJan Bartelds Huisman death 17 Feb 1815 in Lippenhuizen, Friesland, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jan, son of Barteld Klases & Sytske Jans, died (age 79) on 17 February 1815 in Lippenhuizen, Friesland, Nederland.<ref>\n'''Death Registration''':\n\"BS Overlijden\"<br/>\nAlleFriezen, Collection: Burgerlijke Stand Opsterland - Tresoar, Registration number: 3005, Book: Overlijdensregister 1815 Lippenhuizen<br/>\n[https://www.wiewaswie.nl/en/detail/8941780 WieWasWie Record] (accessed 6 May 2021)<br/>\n[http://allefriezen.nl/zoeken/deeds/034e7de7-24cc-6d54-d435-98c38c0b44c7 AlleFriezen Record]<br/>\nJan Bartelds Huisman death 17 Feb 1815 in Lippenhuizen, Friesland, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"BS Overlijden\"<br/>AlleFriezen, Collection: Burgerlijke Stand Opsterland - Tresoar, Registration number: 3005, Book: Overlijdensregister 1815 Lippenhuizen<br/>[https://www.wiewaswie.nl/en/detail/8941780 WieWasWie Record] (accessed 6 May 2021)<br/>[http://allefriezen.nl/zoeken/deeds/034e7de7-24cc-6d54-d435-98c38c0b44c7 AlleFriezen Record]<br/>Jan Bartelds Huisman death 17 Feb 1815 in Lippenhuizen, Friesland, Nederland.",
+    "type": "source"
+  }
+}

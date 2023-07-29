@@ -1,0 +1,109 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/15425329",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Kind",
+        "value": "Jan van der Wijk"
+      },
+      {
+        "label": "Geboortedatum",
+        "value": "08-11-1811",
+        "dataKey": "SourceDetail.BirthDate"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      }
+    ],
+    [
+      {
+        "label": "Vader",
+        "value": "Jan Luitsens"
+      }
+    ],
+    [
+      {
+        "label": "Moeder",
+        "value": "Bieke Egberts"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "Geboorte",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "08-11-1811",
+      "dataKey": "SourceDetail.EventDate"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "BS Geboorte",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "AlleFriezen",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "Leeuwarden",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Friesland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archief",
+      "value": "30-28",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "1001",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Pagina",
+      "value": "062",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "09-11-1811",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Akteplaats",
+      "value": "Opsterland",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collectie",
+      "value": "Archiefnaam: Burgerlijke Stand Opsterland - Tresoar, Bron: boek, Deel: 1001, Periode: 1811",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Boek",
+      "value": "Geboorteregister 1811",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "Familienaam vader niet vermeld in de akte, maar later vermeld als \"van der Wijk\" <i><b>Verkeerde akte? Gebruik toets \"Volgende\" rechtsboven op afbeeldingsscherm.</b></i>",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "http://allefriezen.nl/zoeken/deeds/920ffe70-6378-e93b-71a0-58a1e1237e3f"
+}

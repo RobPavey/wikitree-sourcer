@@ -1,0 +1,108 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/36565702",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Overledene",
+        "value": "Sarah Ammersfoort"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Vrouw",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "Leeftijd",
+        "value": "71",
+        "dataKey": "SourceDetail.Age"
+      }
+    ],
+    [
+      {
+        "label": "Weduwe",
+        "value": "Gerardus van Wees"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "Begraven",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "17-03-1797",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Religie",
+      "value": "EBG",
+      "dataKey": "SourceDetail.Religion"
+    },
+    {
+      "label": "Gebeurtenisplaats",
+      "value": "Zeist",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "DTB Begraven",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "Het Utrechts Archief",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "Utrecht",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Utrecht",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archief",
+      "value": "1004",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "1451",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Pagina",
+      "value": "216",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "17-03-1797",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Akteplaats",
+      "value": "Zeist",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collectie",
+      "value": "Evangelische Broedergemeente te Zeist, predikant en oudstenraad",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Boek",
+      "value": "Zeist EBG Dopen, Trouwen, Begraven, 1746-1811",
+      "dataKey": "SourceDetail.Book"
+    }
+  ],
+  "originalSourceLink": "https://hetutrechtsarchief.nl/collectie/2C2AEA906D6545858E77AF7EE5C795EB"
+}

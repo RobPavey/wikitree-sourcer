@@ -1,0 +1,98 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/35327513",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Deceased",
+        "value": "Maria van den Berg"
+      }
+    ],
+    [
+      {
+        "label": "Relation",
+        "value": "Peter van"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Begraven",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "25-04-1776",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Religion",
+      "value": "Nederduits Gereformeerd",
+      "dataKey": "SourceDetail.Religion"
+    },
+    {
+      "label": "Event place",
+      "value": "Princenhage",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "DTB Begraven",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Brabants Historisch Informatie Centrum",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "'s-Hertogenbosch",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Noord-Brabant",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "8020",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "146",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Page",
+      "value": "3079",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "25-04-1776",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Breda",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Archiefnaam: Stadsarchief Breda, Bron: boek, Deel: 146, Periode: 1757-1788",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Nederduits Gereformeerd begraafboek 1757-1788",
+      "dataKey": "SourceDetail.Book"
+    }
+  ],
+  "originalSourceLink": "https://www.bhic.nl/memorix/genealogy/search/deeds/6565f0eb-6ea8-bdc2-13cb-65755d44c7c4"
+}

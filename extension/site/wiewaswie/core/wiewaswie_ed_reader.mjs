@@ -22,19 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { RT } from "../../../base/core/record_type.mjs";
+import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
 const FT = {
   forenames: "forenames",
   fullName: "fullName",
+  gender: "gender",
   age: "age",
   personFather: "personFather",
   personMother: "personMother",
   personBride: "personBride",
   personBrideFather: "personBrideFather",
   personBrideMother: "personBrideMother",
+  personSpouse: "personSpouse",
 };
 
 // Document types
@@ -42,6 +44,21 @@ const typeData = {
   "BS Geboorte": {
     // Birth certificates
     recordType: RT.BirthRegistration,
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Child"],
+        gender: ["Gender"],
+        personFather: ["Father"],
+        personMother: ["Mother"],
+      },
+      nl: {
+        fullName: ["Kind"],
+        gender: ["Geslacht"],
+        personFather: ["Vader"],
+        personMother: ["Moeder"],
+      },
+    },
   },
   "BS Huwelijk": {
     // Marriage certificates
@@ -72,6 +89,23 @@ const typeData = {
   "BS Overlijden": {
     // Death certificate
     recordType: RT.DeathRegistration,
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Deceased"],
+        gender: ["Gender"],
+        age: ["Age"],
+        personFather: ["Father"],
+        personMother: ["Mother"],
+      },
+      nl: {
+        fullName: ["Overledene"],
+        gender: ["Geslacht"],
+        age: ["Leeftijd"],
+        personFather: ["Vader"],
+        personMother: ["Moeder"],
+      },
+    },
   },
 
   "DTB Dopen": {
@@ -94,20 +128,88 @@ const typeData = {
   "DTB Trouwen": {
     // Marriage registers
     recordType: RT.Marriage,
+    fixedGender: "male", // the primary person is always the groom
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Groom"],
+        age: ["Age"],
+        personBride: ["Bride"],
+        personFather: ["Father of the groom"],
+        personMother: ["Mother of the groom"],
+        personBrideFather: ["Father of the bride"],
+        personBrideMother: ["Mother of the bride"],
+      },
+      nl: {
+        fullName: ["Bruidegom"],
+        age: ["Leeftijd"],
+        personBride: ["Bruid"],
+        personFather: ["Vader van de bruidegom"],
+        personMother: ["Moeder van de bruidegom"],
+        personBrideFather: ["Vader van de bruid"],
+        personBrideMother: ["Moeder van de bruid"],
+      },
+    },
   },
   "DTB Begraven": {
     // Burial registers
     recordType: RT.Burial,
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Deceased"],
+        gender: ["Gender"],
+        age: ["Age"],
+        personSpouse: ["Widow"],
+        personFather: ["Father"], // Note can have an entry "Vader/moeder" but can't parse them apart
+        personMother: ["Mother"],
+      },
+      nl: {
+        fullName: ["Overledene"],
+        gender: ["Geslacht"],
+        age: ["Leeftijd"],
+        personSpouse: ["Weduwe"],
+        personFather: ["Vader"],
+        personMother: ["Moeder"],
+      },
+    },
   },
   "DTB Overig": {
     // Church membership register
     recordType: RT.OtherChurchEvent,
+    recordSubtype: RecordSubtype.MemberRegistration,
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Man:"],
+        gender: ["Gender"],
+        personSpouse: ["Wife"],
+      },
+      nl: {
+        fullName: ["Man:"],
+        gender: ["Geslacht"],
+        personSpouse: ["Vrouw"],
+      },
+    },
   },
 
   // other document types in alphabetical order
   "Beroep en bedrijf": {
     // Profession and business
     recordType: RT.Employment,
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Registered", "Opvarende"],
+        gender: ["Gender"],
+        personSpouse: ["Wife"],
+      },
+      nl: {
+        fullName: ["Geregistreerde", "Opvarende"],
+        gender: ["Geslacht"],
+        personSpouse: ["Vrouw"],
+      },
+    },
   },
   Bevolkingsregister: {
     // Population register
@@ -184,6 +286,22 @@ function fullNameToLastName(fullName) {
   return StringUtils.getLastWord(fullName);
 }
 
+function cleanAge(age) {
+  if (!age) {
+    return "";
+  }
+
+  age = age.trim();
+  age = age.replace("dagen", "days");
+  age = age.replace("jaar", "years");
+
+  if (age.endsWith(" years")) {
+    age = age.substring(0, age.length - 6).trim();
+  }
+
+  return age;
+}
+
 class WiewaswieEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
@@ -196,6 +314,7 @@ class WiewaswieEdReader extends ExtractedDataReader {
       this.typeData = typeData[this.documentType];
       if (this.typeData) {
         this.recordType = this.typeData.recordType;
+        this.recordSubtype = this.typeData.recordSubtype;
       }
     }
 
@@ -341,6 +460,14 @@ class WiewaswieEdReader extends ExtractedDataReader {
       return this.typeData.fixedGender;
     }
 
+    let gender = this.extractIndexedPersonFieldByFieldType(0, FT.gender);
+
+    if (gender == "Man") {
+      return "male";
+    } else if (gender == "Vrouw") {
+      return "female";
+    }
+
     return "";
   }
 
@@ -414,7 +541,8 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
-    return this.extractIndexedPersonFieldByFieldType(0, FT.age);
+    let age = this.extractIndexedPersonFieldByFieldType(0, FT.age);
+    return cleanAge(age);
   }
 
   getAgeAtDeath() {
@@ -466,6 +594,15 @@ class WiewaswieEdReader extends ExtractedDataReader {
 
       return spouseObj;
     }
+
+    // for a death or burial or other records it can give the spouse
+    let spouse = this.findPersonByFirstFieldType(FT.personSpouse);
+    if (spouse) {
+      let spouseName = this.extractPersonFieldByFieldType(spouse, FT.personSpouse);
+      let spouseNameObj = this.makeNameObjFromFullName(spouseName);
+      let spouseObj = this.makeSpouseObj(spouseNameObj);
+      return spouseObj;
+    }
   }
 
   getParents() {
@@ -496,8 +633,16 @@ class WiewaswieEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   getSourceTitle() {
-    let collection = this.extractSourceFieldByDataKey("Collection");
+    let documentType = this.extractSourceFieldByDataKey("DocumentType");
+    return documentType;
+  }
 
+  getSourceReference() {
+    let registrationNumber = this.extractSourceFieldByDataKey("RegistrationNumber");
+    let book = this.extractSourceFieldByDataKey("Book");
+    let institution = this.extractSourceFieldByDataKey("HeritageInstitutionName");
+
+    let collection = this.extractSourceFieldByDataKey("Collection");
     const prefix = "Archiefnaam: ";
     if (collection.startsWith(prefix)) {
       collection = collection.substring(prefix.length);
@@ -507,16 +652,15 @@ class WiewaswieEdReader extends ExtractedDataReader {
       collection = collection.substring(0, remainderIndex);
     }
 
-    return collection;
-  }
-
-  getSourceReference() {
-    let registrationNumber = this.extractSourceFieldByDataKey("RegistrationNumber");
-    let book = this.extractSourceFieldByDataKey("Book");
-    let institution = this.extractSourceFieldByDataKey("HeritageInstitutionName");
-
-    if (institution && registrationNumber && book) {
-      let string = institution + ", Registration number: " + registrationNumber + ", Book: " + book;
+    if (institution && collection && registrationNumber && book) {
+      let string =
+        institution +
+        ", Collection: " +
+        collection +
+        ", Registration number: " +
+        registrationNumber +
+        ", Book: " +
+        book;
       return string;
     }
   }
