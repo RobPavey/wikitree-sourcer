@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "name": "Jan Zuidhof"
+  },
+  "eventDate": {
+    "dateString": "17 Jun 2017"
+  },
+  "eventPlace": {
+    "placeString": "Venray, Limburg, Nederland"
+  },
+  "birthDate": {
+    "dateString": "11 Mar 1935"
+  },
+  "birthPlace": {
+    "placeString": "Ovezande"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Jeanne Huige"
+      }
+    }
+  ],
+  "hasValidData": true
+}

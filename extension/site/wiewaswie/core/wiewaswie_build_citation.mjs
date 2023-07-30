@@ -45,7 +45,7 @@ function buildRecordLink(ed, gd, edReader, builder) {
   builder.recordLinkOrTemplate = recordLink;
 
   let externalLink = edReader.getExternalLink();
-  if (externalLink.link) {
+  if (externalLink && externalLink.link) {
     builder.externalSiteLink = "[" + externalLink.link + " " + externalLink.text + "]";
   }
 }

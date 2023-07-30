@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "name": "Helena van Zwolgen"
+  },
+  "eventDate": {
+    "dateString": "10 Dec 1898"
+  },
+  "eventPlace": {
+    "placeString": "Noord-Brabant, Nederland"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,229 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/90176744",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Bewoner",
+        "value": "Fokke Meer"
+      },
+      {
+        "label": "Beroep",
+        "value": "bijzitter",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "Post 1 - In 1748 hoofdbewoner - In 1758 overleden",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Bewoner",
+        "value": "Gerrit Klazes"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "Post 2 - In 1748 inwonend - In 1749 naar Bergum 204, Tietjerksteradeel",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Bewoner",
+        "value": "Johan Peter Stervinger"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "Post 3 - In 1758 hoofdbewoner, ingekomen van Bergum 135, Tietjerksteradeel - In 1765 naar Leeuwarden",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Bewoner",
+        "value": "Gerk Andries"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "Post 4 - In 1765 hoofdbewoner, ingekomen van Bergum 250, Tietjerksteradeel - In 1770 naar Bergum 187, Tietjerksteradeel - Opm.: 1766: zoon met vrouw naar Oost-Friesland",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Bewoner",
+        "value": "Johannes Jans"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "Post 5 - In 1770 hoofdbewoner, ingekomen van Bergum 198, Tietjerksteradeel - In 1772 naar Eestrum, Tietjerksteradeel",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Bewoner",
+        "value": "Willem Jans"
+      },
+      {
+        "label": "Beroep",
+        "value": "Assistent",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "Post 6 - In 1772 hoofdbewoner, ingekomen van Bergum 178, Tietjerksteradeel - In 1779 naar Bergum 128, Tietjerksteradeel",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Bewoner",
+        "value": "Meinert Johannes"
+      },
+      {
+        "label": "Beroep",
+        "value": "Assistent",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "Post 7 - In 1779 hoofdbewoner, ingekomen van Bergum 187, Tietjerksteradeel - In 1783 naar Bergum 171, Tietjerksteradeel",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Bewoner",
+        "value": "Andries Goslings"
+      },
+      {
+        "label": "Beroep",
+        "value": "executeur (1783-1802)",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Geslacht",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "Post 8 - In 1783 hoofdbewoner, ingekomen van Bergum 188, Tietjerksteradeel - In 1805 nog alhier",
+        "dataKey": "Comment"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "Tietjerksteradeel speciekohieren inschrijving",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "1748",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Gebeurtenisplaats",
+      "value": "Bergum",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "Fiscaal en financieel",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "AlleFriezen",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "Leeuwarden",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Friesland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archief",
+      "value": "1731",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "1",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "1748",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Akteplaats",
+      "value": "Tietjerksteradeel",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collectie",
+      "value": "Archiefnaam: Speciekohieren Tietjerksteradeel - Tresoar, Deel: 1, Periode: 1748-1805",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Boek",
+      "value": "Lijst van bewoners per perceel",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "Locatie: 207<br />Gemeente: 207",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "http://allefriezen.nl/zoeken/deeds/34068609-8c3e-4205-b7a2-a7e8e62957f1"
+}

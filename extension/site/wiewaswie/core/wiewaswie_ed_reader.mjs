@@ -218,37 +218,69 @@ const typeData = {
     labels: {
       en: {
         fullName: ["Registered", "Persoon in bevolkingsregister"],
-        gender: ["Gender"],
       },
       nl: {
         fullName: ["Geregistreerde", "Persoon in bevolkingsregister"],
-        gender: ["Geslacht"],
       },
     },
   },
   Bidprentjes: {
     // Prayer cards (Faire-parts)
-    recordType: RT.OtherChurchEvent,
+    recordType: RT.Death,
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Deceased"],
+        personSpouse: ["Partner"],
+      },
+      nl: {
+        fullName: ["Overledene"],
+        personSpouse: ["Partner"],
+      },
+    },
   },
   Familieadvertenties: {
     // Family announcements
-    recordType: RT.Unclassified,
+    recordTypeFromEvent: { Geboorte: RT.Birth, Overlijden: RT.Death },
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Main character"],
+      },
+      nl: {
+        fullName: ["Hoofdpersoon"],
+      },
+    },
   },
   "Fiscaal en financieel": {
     // Tax and financial records
-    recordType: RT.Unclassified,
-  },
-  Familieadvertenties: {
-    // Family announcements
-    recordType: RT.Unclassified,
+    recordTypeFromEvent: { Haardstedegeld: RT.Tax, patentvermelding: RT.Patent, Grondschatting: RT.LandTax },
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Vermeld", "Aangeslagene", "Resident"],
+      },
+      nl: {
+        fullName: ["Vermeld", "Aangeslagene", "Bewoner"],
+      },
+    },
   },
   Instellingsregister: {
-    // Institutional register
+    // Institutional register - I can no longer find any examples
     recordType: RT.Unclassified,
   },
   "Memories van Successie": {
     // Memories of succession
-    recordType: RT.Unclassified,
+    recordType: RT.Death,
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Deceased"],
+      },
+      nl: {
+        fullName: ["Overledene"],
+      },
+    },
   },
   Militairen: {
     // Military sources
@@ -292,11 +324,6 @@ const typeData = {
   },
 };
 
-function fullNameToLastName(fullName) {
-  // NOTE: need to handle "van" or "v. "
-  return StringUtils.getLastWord(fullName);
-}
-
 function cleanAge(age) {
   if (!age) {
     return "";
@@ -326,6 +353,19 @@ class WiewaswieEdReader extends ExtractedDataReader {
       if (this.typeData) {
         this.recordType = this.typeData.recordType;
         this.recordSubtype = this.typeData.recordSubtype;
+
+        if (!this.recordType) {
+          if (this.typeData.recordTypeFromEvent && this.eventType) {
+            this.recordType = this.typeData.recordTypeFromEvent[this.eventType];
+          }
+        }
+        if (!this.recordType) {
+          this.recordType = this.typeData.recordTypeDefault;
+        }
+
+        if (!this.recordType) {
+          this.recordType = RT.Unclassified;
+        }
       }
     }
 
@@ -471,7 +511,11 @@ class WiewaswieEdReader extends ExtractedDataReader {
       return this.typeData.fixedGender;
     }
 
-    let gender = this.extractIndexedPersonFieldByFieldType(0, FT.gender);
+    let gender = this.extractIndexedPersonFieldByFieldType(0, "Gender");
+
+    if (!gender) {
+      gender = this.extractIndexedPersonFieldByFieldType(0, FT.gender);
+    }
 
     if (gender == "Man") {
       return "male";
@@ -708,13 +752,15 @@ class WiewaswieEdReader extends ExtractedDataReader {
     let institution = this.extractSourceFieldByDataKey("HeritageInstitutionName");
 
     let collection = this.extractSourceFieldByDataKey("Collection");
-    const prefix = "Archiefnaam: ";
-    if (collection.startsWith(prefix)) {
-      collection = collection.substring(prefix.length);
-    }
-    let remainderIndex = collection.search(/\,\s+[^,:]+\:/);
-    if (remainderIndex != -1) {
-      collection = collection.substring(0, remainderIndex);
+    if (collection) {
+      const prefix = "Archiefnaam: ";
+      if (collection.startsWith(prefix)) {
+        collection = collection.substring(prefix.length);
+      }
+      let remainderIndex = collection.search(/\,\s+[^,:]+\:/);
+      if (remainderIndex != -1) {
+        collection = collection.substring(0, remainderIndex);
+      }
     }
 
     if (institution && collection) {

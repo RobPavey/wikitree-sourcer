@@ -1,0 +1,72 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/46002199",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Hoofdpersoon",
+        "value": "Jan Willem Frederik Zylker"
+      }
+    ],
+    [
+      {
+        "label": "Vermelding",
+        "value": "van der Vegte"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "Geboorte",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "30-08-1954",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Gebeurtenisplaats",
+      "value": "Waardenburg",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "Familieadvertenties",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "CBG|Centrum voor familiegeschiedenis",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "Den Haag",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Nederland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "VFADNL136748-22",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "30-08-1954",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Opmerking",
+      "value": "Geboorteadvertentie",
+      "dataKey": "Comment"
+    }
+  ]
+}

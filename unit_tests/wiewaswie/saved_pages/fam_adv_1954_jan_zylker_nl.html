@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://www.wiewaswie.nl/nl/detail/46002199 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>Akte  - CBG|Centrum voor familiegeschiedenis</title>
+    <!--<base href="https://www.wiewaswie.nl/">--><base href=".">
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="System.String[]">
+    <meta name="robots" content="noindex,nofollow">
+
+    <link href="https://www.wiewaswie.nl/highresIcon.png" rel="icon" sizes="192x192">
+    <link href="https://www.wiewaswie.nl/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <link href="./fam_adv_1954_jan_zylker_nl_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./fam_adv_1954_jan_zylker_nl_files/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="./fam_adv_1954_jan_zylker_nl_files/style.min.css" rel="stylesheet">
+    <link href="./fam_adv_1954_jan_zylker_nl_files/cbg.css" rel="stylesheet">
+
+    
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./fam_adv_1954_jan_zylker_nl_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FK0922MW7B');
+</script>
+
+<meta name="google-site-verification" content="5kQT_p8g47VkMZ1ntPywnRkwWxhwRPzohpjCwViGIpA">
+
+    <script>
+        window.addEventListener("message", function(e){
+            //console.log("Received message: ", e);
+            if (e.origin === 'https://account.cbg.nl') {
+                //console.log('message: ', e.data);
+                if (e.data.jwtToken !== null && e.data.payload !== undefined) {
+                    //console.log('cognitousername: ', e.data.payload['cognito:username']);
+                    //console.log('user: ', e.data);
+                    //console.log(SHA1.hex(e.data.jwtToken));
+                    //console.log(document.getElementById('accesstokenhash').value);
+                    // user is logged on via SSO but either not on wiewaswie (accesslevel == 0) or he is but the subscription level has changed so we need to update:
+                    if (document.getElementById("accesslevel").value != e.data.payload['wiewaswie.nl'] || document.getElementById("sub").value != e.data.payload['sub']) {
+                        document.location = 'https://account.cbg.nl/authorize?client_id=2qosgmhhvkfhbrhb4pg42kkmr3&lang=nl&redirect_uri=https://www.wiewaswie.nl/sso&response_type=code&scope=email%20profile%20openid&state=/nl/detail/?id=46002199';
+                    }
+                } else
+                {
+                    //console.log('Niet meer ingelogd via Oauth');
+                    if (document.getElementById("accesslevel").value != "0") {
+                        document.location = '/sso?logout==localonly&redirect_uri=/nl/detail/?id=46002199';
+                    }
+                }
+            }
+        }, false);
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden){
+                //console.log("Browser tab is hidden");
+//                document.querySelector('body').dataset.accessLevel = 0;
+            } else {
+                //console.log("Browser tab is visible");
+                document.getElementById('frame').src += '';
+            }
+        });
+    </script>
+</head>
+<body data-culture="nl-NL">
+    
+
+<header>
+    <button class="btn btn-black mobile-menu">Menu</button>
+    <div class="pulldown" style="display:none;">
+        <a href="https://cbg.nl/" class="a a-gold" target="_blank">CBG.nl</a>
+        <a href="https://cbgbibliotheek.nl/" class="a a-orange" target="_blank">Bibliotheek</a>
+        <a href="https://cbgverzamelingen.nl/" class="a a-purple" target="_blank">Verzamelingen</a>
+        <a href="https://cbgfamilienamen.nl/" class="a a-red" target="_blank">Familienamen</a>
+        <a href="https://cbgfamiliewapens.nl/" class="a a-blue" target="_blank">Familiewapens</a>
+        <a href="https://stamboomnederland.nl/" class="a a-green" target="_blank">Stambomen</a>
+    </div>
+    <button class="btn pulldown-toggle">CBG bronnen</button>
+    <div class="navbar">
+        <div class="container">
+            <div class="navbar-header" style="float:left">
+                <div class="navbar-brand">
+                    <a href="https://www.wiewaswie.nl/">
+                        <img src="./fam_adv_1954_jan_zylker_nl_files/logo.png">
+                        <span class="navbar-slogan">
+                            <b>
+Iedereen                            </b> heeft een geschiedenis
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-mijncbg navbar-right">
+                <ul class="nav navbar-nav navbar-top">
+                        <li>
+                            <a class="btn btn-corporate btn-logged-out" href="https://oauth.cbg.nl/oauth2/authorize?response_type=code&amp;scope=email+profile+openid&amp;redirect_uri=https://www.wiewaswie.nl/sso&amp;client_id=5640lkja0fbr39q5g3lj9q39lq&amp;lang=nl&amp;state=/nl/detail/?id=46002199">
+                                <span class="logged-out">Mijn CBG</span>
+                            </a>
+                        </li>
+                </ul>
+            </div>
+            <div class="navbar-collapse navbar-right collapse">
+                <ul class="nav navbar-nav navbar-top">
+                    <li class="language">
+                                <a href="https://www.wiewaswie.nl/nl/" class="active">NL</a>
+                                <a href="https://www.wiewaswie.nl/en/" class="">EN</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-bottom">
+                        <li><a href="https://www.wiewaswie.nl/nl/zoeken/" target="_self">Zoeken</a></li>
+                        <li><a href="https://www.wiewaswie.nl/nl/bronnen/" target="_self">Bronnen</a></li>
+                        <li><a href="https://www.wiewaswie.nl/nl/nieuws/" target="_self">Nieuws</a></li>
+                        <li><a href="https://www.wiewaswie.nl/nl/wiewaswie/" target="_self">Hulp nodig?</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="navbar-mobile">
+    <ul class="nav">
+            <li><a href="https://www.wiewaswie.nl/nl/zoeken/" target="_self">Zoeken</a></li>
+            <li><a href="https://www.wiewaswie.nl/nl/bronnen/" target="_self">Bronnen</a></li>
+            <li><a href="https://www.wiewaswie.nl/nl/nieuws/" target="_self">Nieuws</a></li>
+            <li><a href="https://www.wiewaswie.nl/nl/wiewaswie/" target="_self">Hulp nodig?</a></li>
+            </ul>
+
+    <ul class="nav nav-white">
+        <li class="language">
+                <a href="https://www.wiewaswie.nl/nl/" class="active">NL</a>
+                <a href="https://www.wiewaswie.nl/en/" class="">EN</a>
+        </li>
+    </ul>
+
+    <ul class="nav nav-inline">
+        <li><a href="https://cbg.nl/" class="a a-gold" target="_blank">CBG.nl</a></li>
+        <li><a href="https://cbgbibliotheek.nl/" class="a a-orange" target="_blank">Bibliotheek</a></li>
+        <li><a href="https://cbgverzamelingen.nl/" class="a a-purple" target="_blank">Verzamelingen</a></li>
+        <li><a href="https://cbgfamilienamen.nl/" class="a a-red" target="_blank">Familienamen</a></li>
+        <li><a href="https://cbgfamiliewapens.nl/" class="a a-blue" target="_blank">Familiewapens</a></li>
+        <li><a href="https://stamboomnederland.nl/" class="a a-green" target="_blank">Stambomen</a></li>
+    </ul>
+</div>
+    
+
+<div class="container sourcedetail-themepage">
+            <div class="col-md-12">
+                <div class="infoaddons">
+                        <div class="infoaddon">
+                            <div class="alert" role="alert">
+                                <div class="flex-inline">
+                                    <div class="title"><strong>Let op:</strong></div>
+                                    <div class="information"><p>Je kunt helaas niet direct doorklikken naar de familieadvertenties om deze te bekijken of te downloaden. Je kunt de familieadvertenties wel bekijken via <a href="https://cbgverzamelingen.nl/" target="_blank" title="cbgverzamelingen.nl">CBG Verzamelingen</a>.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        <div class="split"></div>
+        <div class="col-md-12">
+            <h2>Familieadvertenties met Jan Willem Frederik Zylker</h2>
+        </div>
+        <div class="split"></div>
+        <div class="col-md-9">
+            <div class="row">
+
+                <div class="col-md-5">
+                    <div class="left-column">
+                            <div class="person">
+                                <dl class="dl-horizontal">
+                                    <dt>Hoofdpersoon</dt>
+                                        <dd><a href="https://www.wiewaswie.nl/nl/zoeken/?q=Jan%20Willem%20Frederik%20Zylker" target="_blank">Jan Willem Frederik Zylker</a></dd>
+                                                                                                                                                                                                                                                            
+                                                                                                        </dl>
+                            </div>
+                            <div class="person">
+                                <dl class="dl-horizontal">
+                                    <dt>Vermelding</dt>
+                                        <dd><a href="https://www.wiewaswie.nl/nl/zoeken/?q=%20van%20der%20Vegte" target="_blank"> van der Vegte</a></dd>
+                                                                                                                                                                                                                                                            
+                                                                                                        </dl>
+                            </div>
+                                                    <div class="gebeurtenis">
+                                <dl class="dl-horizontal">
+                                        <dt data-dictionary="SourceDetail.Event">Gebeurtenis</dt>
+                                        <dd> Geboorte</dd>
+                                                                            <dt data-dictionary="SourceDetail.EventDate">Datum</dt>
+                                        <dd>30-08-1954</dd>
+                                                                                                                <dt data-dictionary="SourceDetail.EventPlace">Gebeurtenisplaats</dt>
+                                        <dd>
+
+
+                                            Waardenburg
+                                        </dd>
+                                                                    </dl>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="right-column akte">
+                        <dl class="dl-horizontal">
+                                <dt data-dictionary="SourceDetail.DocumentType">Documenttype</dt>
+                                    <dd>Familieadvertenties</dd>
+                                                            <dt data-dictionary="SourceDetail.HeritageInstitutionName">Erfgoedinstelling</dt>
+                                    <dd><a href="https://www.wiewaswie.nl/nl/deelnemende-instellingen/cbg-centrum-voor-familiegeschiedenis/" target="_blank">CBG|Centrum voor familiegeschiedenis</a></dd>
+                                                            <dt data-dictionary="SourceDetail.HeritageInstitutionPlace">Plaats instelling</dt>
+                                <dd>Den Haag</dd>
+                                                            <dt data-dictionary="SourceDetail.CollectionRegion">Collectiegebied</dt>
+                                <dd>Nederland</dd>
+                                                                                        <dt data-dictionary="SourceDetail.RegistrationNumber">Registratienummer</dt>
+                                <dd>VFADNL136748-22</dd>
+                                                                                                                    <dt data-dictionary="SourceDetail.RegistrationDate">Registratiedatum</dt>
+                                <dd>
+                                    30-08-1954
+                                </dd>
+                                                                                                                                                    <dt data-dictionary="Comment">Opmerking</dt>
+                                    <dd>Geboorteadvertentie</dd>
+                        </dl>
+                    </div>
+                </div>
+                            </div>
+        </div>
+        <div class="col-md-3">
+                <div class="buttons">
+                    <div class="showurl">
+                        <button class="link btn btn-black"><span class="glyphicon glyphicon-link"></span> Kopiëren URL</button>
+                        <input type="text" onclick="this.select()" value="https://www.wiewaswie.nl/nl/detail/46002199">
+                    </div>
+                    <a href="https://www.wiewaswie.nl/nl/detail/print/46002199" target="_blank" class="a a-black"><span class="glyphicon glyphicon-print"></span> Afdrukken</a>
+
+                            <a href="https://www.wiewaswie.nl/nl/deelnemende-instellingen/cbg-centrum-voor-familiegeschiedenis/" target="_blank">
+                                <img class="full-width" src="./fam_adv_1954_jan_zylker_nl_files/cbg.png">
+                            </a>
+                </div>
+                <div class="scan">
+
+                </div>
+        </div>
+                <div class="split"></div>
+</div>
+
+    <footer>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Nieuwsbrief ontvangen?</h3>
+
+                
+<form action="https://www.wiewaswie.nl/nl/detail/?id=46002199" enctype="multipart/form-data" method="post">    <div class="mailchimp-subscription">
+        <div class="input-group subscribe">
+            <input name="__RequestVerificationToken" type="hidden" value="OaUWBYkVmGPMoDtt2P8BGrlo40H-rxczOz9BoGujKLsN76UsaSbKhB8cFGvU_Jbt8Flk0lrdnHMfRLjL-UJnGoyTk_mv_Rkh6sDRP4uFRuU1">
+            <input class="form-control" id="EmailAddress" name="EmailAddress" placeholder="Je e-mailadres..." type="email" value="">
+            <span class="input-group-btn">
+                <button class="btn btn-black" type="submit"><span class="glyphicon glyphicon-envelope"></span></button>
+            </span>
+        <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"><template shadowrootmode="open"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" data-lastpass-icon="true" style="position: absolute; cursor: pointer; height: 22px; max-height: 22px; width: 22px; max-width: 22px; top: -14.625px; left: -79px; z-index: auto; color: rgb(215, 64, 58);"><rect x="0.680176" y="0.763062" width="22.6392" height="22.4737" rx="4" fill="currentColor"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M19.7935 7.9516C19.7935 7.64414 20.0427 7.3949 20.3502 7.3949C20.6576 7.3949 20.9069 7.64414 20.9069 7.9516V16.0487C20.9069 16.3562 20.6576 16.6054 20.3502 16.6054C20.0427 16.6054 19.7935 16.3562 19.7935 16.0487V7.9516Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.76288 13.6577C5.68525 13.6577 6.43298 12.9154 6.43298 11.9998C6.43298 11.0842 5.68525 10.3419 4.76288 10.3419C3.8405 10.3419 3.09277 11.0842 3.09277 11.9998C3.09277 12.9154 3.8405 13.6577 4.76288 13.6577Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.3298 13.6577C11.2521 13.6577 11.9999 12.9154 11.9999 11.9998C11.9999 11.0842 11.2521 10.3419 10.3298 10.3419C9.4074 10.3419 8.65967 11.0842 8.65967 11.9998C8.65967 12.9154 9.4074 13.6577 10.3298 13.6577Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M15.8964 13.6577C16.8188 13.6577 17.5665 12.9154 17.5665 11.9998C17.5665 11.0842 16.8188 10.3419 15.8964 10.3419C14.974 10.3419 14.2263 11.0842 14.2263 11.9998C14.2263 12.9154 14.974 13.6577 15.8964 13.6577Z" fill="white"></path></svg></template></div></div>
+    </div>
+<input name="ufprt" type="hidden" value="85936A5A4A9D29520BDE7AA856DD052EFC1FBF72DB69A2DA9A40898E637E240B8300C1D4F314664B1B0A99BFB4BFEE8D4BE39E426634D1B0F2B9485A5747A6F9F39F2FD41C569A5F9210AAF2B71EB40F5DAF51009B9ED9DA8F74106FB6AD2DEC987B4456CD750AEF2C14EA3BB6917DADC606EFA0F610916A1503BA7A6C70BB99E5D033F771060B49AF9909B62549A0DEBC25690DF7BE0AB29DE5F1E226947F1865B28E53ED7DB5C6A6C68289F64C6C4C880E161C00D94474132BF94D066F809E1CBF77015896AE57C178BA86B8C8C28E169BD7A35D983DAA4CA37869B4C7CA642C72CDA38343A9F4FD560B86E925701678C7541A633004A6E7579CDD0B9EFEF7"></form>
+
+                <div class="strech-brand">
+                    <img src="./fam_adv_1954_jan_zylker_nl_files/logo-alt.png">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h3>Service &amp; contact</h3>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/nl/contact/" target="_self">Contact</a></li>
+                        <li><a href="https://www.facebook.com/WieWasWie" target="_blank">Facebook</a></li>
+                        <li><a href="https://twitter.com/WieWasWie" target="_blank">Twitter</a></li>
+                </ul>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/nl/melding-inbreuk-materiaal/" target="_self">Melding inbreuk materiaal</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>Over WieWasWie</h3>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/nl/over-wiewaswie/" target="_self">Over WieWasWie</a></li>
+                        <li><a href="https://cbg.nl/bestellen/" target="_blank">Premiumtoegang afsluiten</a></li>
+                        <li><a href="https://www.wiewaswie.nl/nl/deelnemende-instellingen/" target="_self">Deelnemende instellingen</a></li>
+                </ul>
+                <ul>
+                        <li><a href="https://cbg.nl/documents/178/Algemene_Voorwaarden_2020-09-15.pdf" target="_blank">Algemene voorwaarden</a></li>
+                        <li><a href="https://www.wiewaswie.nl/nl/disclaimer/" target="_self">Disclaimer</a></li>
+                        <li><a href="https://cbg.nl/over-het-cbg/privacyverklaring/" target="_blank">Mijn privacy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>Meer CBG-websites</h3>
+                <ul>
+                        <li><a href="https://cbg.nl/" target="_blank">CBG.nl</a></li>
+                        <li><a href="https://cbgbibliotheek.nl/" target="_blank">CBG Bibliotheek</a></li>
+                        <li><a href="https://cbgverzamelingen.nl/" target="_blank">CBG Verzamelingen</a></li>
+                        <li><a href="https://cbgfamilienamen.nl/" target="_blank">CBG Familienamen</a></li>
+                        <li><a href="https://cbgfamiliewapens.nl/" target="_blank">CBG Familiewapens</a></li>
+                        <li><a href="https://stamboomnederland.nl/" target="_blank">CBG Stambomen</a></li>
+                </ul>
+                <ul>
+                        <li><a href="https://cbg.nl/over-het-cbg/gen-magazine/" target="_blank">Gen.magazine</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <div class="scripts">
+        <script src="./fam_adv_1954_jan_zylker_nl_files/UmbracoDictionary.js"></script>
+<script src="./fam_adv_1954_jan_zylker_nl_files/jquery.min.js"></script>
+<script src="./fam_adv_1954_jan_zylker_nl_files/bootstrap.min.js"></script>
+<script src="./fam_adv_1954_jan_zylker_nl_files/respond.min.js"></script>
+<script src="./fam_adv_1954_jan_zylker_nl_files/perfect-scrollbar.jquery.min.js"></script>
+<script src="./fam_adv_1954_jan_zylker_nl_files/wiewaswie.js"></script>
+<script src="./fam_adv_1954_jan_zylker_nl_files/angular.min.js"></script>
+<script>window.angular || document.write('<script src="js/angular.min.js">\x3C/script>')</script>
+        
+        
+    </div>
+
+    <div class="modal fade" id="message-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.btn-logged-in').click(function () {
+                $('.btn-menu').toggleClass("menu-active");
+            });
+        });
+
+    </script>
+    <input type="hidden" id="accesslevel" name="accesslevel" value="0">
+    <input type="hidden" id="sub" name="sub" value="">
+    <iframe id="frame" style="position: absolute; width: 1px;height: 1px; inset: -9999px; display: none;" src="./fam_adv_1954_jan_zylker_nl_files/iframe.html">
+</body>
+</html></iframe><div data-lastpass-root="" style="position: absolute !important; top: 0px !important; left: 0px !important; height: 0px !important; width: 0px !important;"><div data-lastpass-infield="true" style="position: absolute !important; top: 0px !important; left: 0px !important;"><template shadowrootmode="open"><div style="position: absolute; height: 100vh; width: 100vw; z-index: 2147483647; border-radius: 4px; top: 0px; left: 0px; max-height: 0px; max-width: 280px; min-width: auto; margin-top: 10px;"><div style="left: -1px; display: none; position: absolute; overflow: hidden; bottom: 100%; width: 20px; height: 10px;"><div data-lastpass-infield-caret="true" style="position: absolute; width: 16px; height: 16px; border-radius: 2px; border-color: rgb(213, 217, 222); border-style: solid; border-width: 1px 0px 0px 1px; box-sizing: border-box; top: 4px; left: 2px; background: linear-gradient(0deg, rgb(255, 219, 219) 10.47%, rgb(251, 235, 235) 6.47%); transform: rotate(45deg);"></div></div><iframe data-lastpass-iframe="true" allow="clipboard-write" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/webclient-infield.html" style="border: none; height: 100%; width: 100%;"></iframe></div></template></div></div></body></html>

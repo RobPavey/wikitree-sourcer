@@ -1,0 +1,77 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/57385038",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Overledene",
+        "value": "Helena van Zwolgen"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "Overlijden",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "10-12-1898",
+      "dataKey": "SourceDetail.EventDate"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "Memories van Successie",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "Brabants Historisch Informatie Centrum",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "'s-Hertogenbosch",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Noord-Brabant",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "34",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Aktenummer",
+      "value": "194",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "10-12-1898",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Akteplaats",
+      "value": "Oss",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collectie",
+      "value": "Bron: boek, Deel: 34",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Boek",
+      "value": "Memories van successie Oss deel 34",
+      "dataKey": "SourceDetail.Book"
+    }
+  ],
+  "originalSourceLink": "https://www.bhic.nl/memorix/genealogy/search/deeds/42897238-21bf-2157-970f-3b70daf2da2f"
+}

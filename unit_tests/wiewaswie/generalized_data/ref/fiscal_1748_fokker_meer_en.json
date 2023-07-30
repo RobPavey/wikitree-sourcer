@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Fokke Meer"
+  },
+  "eventDate": {
+    "yearString": "1748"
+  },
+  "eventPlace": {
+    "placeString": "Bergum, Friesland, Nederland"
+  },
+  "occupation": "bijzitter",
+  "hasValidData": true
+}

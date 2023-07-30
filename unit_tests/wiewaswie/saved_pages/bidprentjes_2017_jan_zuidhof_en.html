@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.wiewaswie.nl/en/detail/111067287 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>  - Gemeentearchief Venray</title>
+    <!--<base href="https://www.wiewaswie.nl/">--><base href=".">
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="System.String[]">
+    <meta name="robots" content="">
+
+    <link href="https://www.wiewaswie.nl/highresIcon.png" rel="icon" sizes="192x192">
+    <link href="https://www.wiewaswie.nl/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <link href="./bidprentjes_2017_jan_zuidhof_en_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./bidprentjes_2017_jan_zuidhof_en_files/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="./bidprentjes_2017_jan_zuidhof_en_files/style.min.css" rel="stylesheet">
+    <link href="./bidprentjes_2017_jan_zuidhof_en_files/cbg.css" rel="stylesheet">
+
+    
+
+
+
+    <script async="" src="./bidprentjes_2017_jan_zuidhof_en_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-24952765-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+    <script>
+        window.addEventListener("message", function(e){
+            //console.log("Received message: ", e);
+            if (e.origin === 'https://account.cbg.nl') {
+                //console.log('message: ', e.data);
+                if (e.data.jwtToken !== null && e.data.payload !== undefined) {
+                    //console.log('cognitousername: ', e.data.payload['cognito:username']);
+                    //console.log('user: ', e.data);
+                    //console.log(SHA1.hex(e.data.jwtToken));
+                    //console.log(document.getElementById('accesstokenhash').value);
+                    // user is logged on via SSO but either not on wiewaswie (accesslevel == 0) or he is but the subscription level has changed so we need to update:
+                    if (document.getElementById("accesslevel").value != e.data.payload['wiewaswie.nl'] || document.getElementById("sub").value != e.data.payload['sub']) {
+                        document.location = 'https://account.cbg.nl/authorize?client_id=2qosgmhhvkfhbrhb4pg42kkmr3&lang=nl&redirect_uri=https://www.wiewaswie.nl/sso&response_type=code&scope=email%20profile%20openid&state=/en/detail/?id=111067287';
+                    }
+                } else
+                {
+                    //console.log('Niet meer ingelogd via Oauth');
+                    if (document.getElementById("accesslevel").value != "0") {
+                        document.location = '/sso?logout==localonly&redirect_uri=/en/detail/?id=111067287';
+                    }
+                }
+            }
+        }, false);
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden){
+                //console.log("Browser tab is hidden");
+//                document.querySelector('body').dataset.accessLevel = 0;
+            } else {
+                //console.log("Browser tab is visible");
+                document.getElementById('frame').src += '';
+            }
+        });
+    </script>
+</head>
+<body data-culture="en-US">
+    
+
+<header>
+    <button class="btn btn-black mobile-menu">Menu</button>
+    <div class="pulldown" style="display:none;">
+        <a href="https://cbg.nl/" class="a a-gold" target="_blank">CBG.nl</a>
+        <a href="https://cbgbibliotheek.nl/" class="a a-orange" target="_blank">Bibliotheek</a>
+        <a href="https://cbgverzamelingen.nl/" class="a a-purple" target="_blank">Verzamelingen</a>
+        <a href="https://cbgfamilienamen.nl/" class="a a-red" target="_blank">Familienamen</a>
+        <a href="https://cbgfamiliewapens.nl/" class="a a-blue" target="_blank">Familiewapens</a>
+        <a href="https://stamboomnederland.nl/" class="a a-green" target="_blank">Stambomen</a>
+    </div>
+    <button class="btn pulldown-toggle">CBG sources</button>
+    <div class="navbar">
+        <div class="container">
+            <div class="navbar-header" style="float:left">
+                <div class="navbar-brand">
+                    <a href="https://www.wiewaswie.nl/">
+                        <img src="./bidprentjes_2017_jan_zuidhof_en_files/logo.png">
+                        <span class="navbar-slogan">
+                            <b>
+Everyone                            </b> has a history
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-mijncbg navbar-right">
+                <ul class="nav navbar-nav navbar-top">
+                        <li>
+                            <a class="btn btn-corporate btn-logged-out" href="https://oauth.cbg.nl/oauth2/authorize?response_type=code&amp;scope=email+profile+openid&amp;redirect_uri=https://www.wiewaswie.nl/sso&amp;client_id=5640lkja0fbr39q5g3lj9q39lq&amp;lang=en&amp;state=/en/detail/?id=111067287">
+                                <span class="logged-out">My CBG</span>
+                            </a>
+                        </li>
+                </ul>
+            </div>
+            <div class="navbar-collapse navbar-right collapse">
+                <ul class="nav navbar-nav navbar-top">
+                    <li class="language">
+                                <a href="https://www.wiewaswie.nl/nl/" class="">NL</a>
+                                <a href="https://www.wiewaswie.nl/en/" class="active">EN</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-bottom">
+                        <li><a href="https://www.wiewaswie.nl/en/search/" target="_self">Search</a></li>
+                        <li><a href="https://www.wiewaswie.nl/en/sources/" target="_self">Sources</a></li>
+                        <li><a href="https://www.wiewaswie.nl/en/news/" target="_self">News</a></li>
+                        <li><a href="https://www.wiewaswie.nl/en/help/" target="_self">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="navbar-mobile">
+    <ul class="nav">
+            <li><a href="https://www.wiewaswie.nl/en/search/" target="_self">Search</a></li>
+            <li><a href="https://www.wiewaswie.nl/en/sources/" target="_self">Sources</a></li>
+            <li><a href="https://www.wiewaswie.nl/en/news/" target="_self">News</a></li>
+            <li><a href="https://www.wiewaswie.nl/en/help/" target="_self">Help</a></li>
+            </ul>
+
+    <ul class="nav nav-white">
+        <li class="language">
+                <a href="https://www.wiewaswie.nl/nl/" class="">NL</a>
+                <a href="https://www.wiewaswie.nl/en/" class="active">EN</a>
+        </li>
+    </ul>
+
+    <ul class="nav nav-inline">
+        <li><a href="https://cbg.nl/" class="a a-gold" target="_blank">CBG.nl</a></li>
+        <li><a href="https://cbgbibliotheek.nl/" class="a a-orange" target="_blank">Bibliotheek</a></li>
+        <li><a href="https://cbgverzamelingen.nl/" class="a a-purple" target="_blank">Verzamelingen</a></li>
+        <li><a href="https://cbgfamilienamen.nl/" class="a a-red" target="_blank">Familienamen</a></li>
+        <li><a href="https://cbgfamiliewapens.nl/" class="a a-blue" target="_blank">Familiewapens</a></li>
+        <li><a href="https://stamboomnederland.nl/" class="a a-green" target="_blank">Stambomen</a></li>
+    </ul>
+</div>
+    
+
+<div class="container sourcedetail-themepage">
+        <div class="split"></div>
+        <div class="col-md-12">
+            <h2>Bidprentjes met Jan Zuidhof</h2>
+        </div>
+        <div class="split"></div>
+        <div class="col-md-9">
+            <div class="row">
+
+                <div class="col-md-5">
+                    <div class="left-column">
+                            <div class="person">
+                                <dl class="dl-horizontal">
+                                    <dt>Deceased</dt>
+                                        <dd><a href="https://www.wiewaswie.nl/en/search/?q=Jan%20Zuidhof" target="_blank">Jan Zuidhof</a></dd>
+                                                                                                                <dt data-dictionary="SourceDetail.BirthDate">Birth date</dt>
+                                        <dd>11-03-1935</dd>
+                                                                            <dt data-dictionary="SourceDetail.BirthPlace">Place of birth</dt>
+                                        <dd>Ovezande</dd>
+                                                                            <dt data-dictionary="SourceDetail.Gender">Gender</dt>
+                                        <dd>Man</dd>
+                                                                                                            
+                                                                                                                    <dt data-dictionary="Comment">diversen</dt>
+                                            <dd>Gecremeerd te Venray</dd>
+                                </dl>
+                            </div>
+                            <div class="person">
+                                <dl class="dl-horizontal">
+                                    <dt>Partner</dt>
+                                        <dd><a href="https://www.wiewaswie.nl/en/search/?q=Jeanne%20Huige" target="_blank">Jeanne Huige</a></dd>
+                                                                                                                                                                                                                                                            
+                                                                                                        </dl>
+                            </div>
+                                                    <div class="gebeurtenis">
+                                <dl class="dl-horizontal">
+                                        <dt data-dictionary="SourceDetail.Event">Event</dt>
+                                        <dd> Bidprentjes</dd>
+                                                                            <dt data-dictionary="SourceDetail.EventDate">Event date</dt>
+                                        <dd>17-06-2017</dd>
+                                                                                                                <dt data-dictionary="SourceDetail.EventPlace">Event place</dt>
+                                        <dd>
+
+
+                                            Venray
+                                        </dd>
+                                                                    </dl>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="right-column akte">
+                        <dl class="dl-horizontal">
+                                <dt data-dictionary="SourceDetail.DocumentType">Document type</dt>
+                                    <dd>Bidprentjes</dd>
+                                                            <dt data-dictionary="SourceDetail.HeritageInstitutionName">Heritage institution</dt>
+                                    <dd>Gemeentearchief Venray</dd>
+                                                            <dt data-dictionary="SourceDetail.HeritageInstitutionPlace">Institution place</dt>
+                                <dd>Venray</dd>
+                                                            <dt data-dictionary="SourceDetail.CollectionRegion">Collection region</dt>
+                                <dd>Limburg</dd>
+                                                                                                                                                                            <dt data-dictionary="SourceDetail.RegistrationDate">Registration date</dt>
+                                <dd>
+                                    11-03-1935
+                                </dd>
+                                                            <dt data-dictionary="SourceDetail.CertificatePlace">Document place</dt>
+                                <dd>Onbekend</dd>
+                                                                                        <dt data-dictionary="SourceDetail.Book">Book</dt>
+                                <dd>Bidprentjes</dd>
+                                                                <dt data-dictionary="Comment">Opmerking</dt>
+                                    <dd>U kunt een scan van een bidprentje aanvragen via "Fout melden".&lt;br /&gt;Kinderen: Ja&lt;br /&gt;Portret: Ja&lt;br /&gt;Archiefnummer: 23357</dd>
+                        </dl>
+                    </div>
+                </div>
+                            </div>
+        </div>
+        <div class="col-md-3">
+                <div class="buttons">
+                    <div class="showurl">
+                        <button class="link btn btn-black"><span class="glyphicon glyphicon-link"></span> Copy URL</button>
+                        <input type="text" onclick="this.select()" value="https://www.wiewaswie.nl/en/detail/111067287">
+                    </div>
+                    <a href="https://www.wiewaswie.nl/en/detail/print/111067287" target="_blank" class="a a-black"><span class="glyphicon glyphicon-print"></span> Print</a>
+
+                            <a href="https://rooynet.nl/voorouders/deeds/59422985-a071-944d-9596-f7c7a716464a" target="_blank" class="sourcedigital a a-black"><span class="glyphicon glyphicon-share"></span> Go to source</a>
+                </div>
+        </div>
+                <div class="split"></div>
+</div>
+
+    <footer>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Receive newsletter?</h3>
+
+                
+<form action="https://www.wiewaswie.nl/en/detail/?id=111067287" enctype="multipart/form-data" method="post">    <div class="mailchimp-subscription">
+        <div class="input-group subscribe">
+            <input name="__RequestVerificationToken" type="hidden" value="6xC5ZJ2Y591Xnnkcms9EPqADg0hSCFbubzKRLKVYgK1dDRLp3gIvRu5bIztDlScsIRcrYzT0jZyU15GyDdhBTNEm8uLXt0oz3iZeZB5r92c1">
+            <input class="form-control" id="EmailAddress" name="EmailAddress" placeholder="Your e-mail address..." type="email" value="">
+            <span class="input-group-btn">
+                <button class="btn btn-black" type="submit"><span class="glyphicon glyphicon-envelope"></span></button>
+            </span>
+        <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"><template shadowrootmode="open"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" data-lastpass-icon="true" style="position: absolute; cursor: pointer; height: 22px; max-height: 22px; width: 22px; max-width: 22px; top: -14.625px; left: -79px; z-index: auto; color: rgb(215, 64, 58);"><rect x="0.680176" y="0.763062" width="22.6392" height="22.4737" rx="4" fill="currentColor"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M19.7935 7.9516C19.7935 7.64414 20.0427 7.3949 20.3502 7.3949C20.6576 7.3949 20.9069 7.64414 20.9069 7.9516V16.0487C20.9069 16.3562 20.6576 16.6054 20.3502 16.6054C20.0427 16.6054 19.7935 16.3562 19.7935 16.0487V7.9516Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.76288 13.6577C5.68525 13.6577 6.43298 12.9154 6.43298 11.9998C6.43298 11.0842 5.68525 10.3419 4.76288 10.3419C3.8405 10.3419 3.09277 11.0842 3.09277 11.9998C3.09277 12.9154 3.8405 13.6577 4.76288 13.6577Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.3298 13.6577C11.2521 13.6577 11.9999 12.9154 11.9999 11.9998C11.9999 11.0842 11.2521 10.3419 10.3298 10.3419C9.4074 10.3419 8.65967 11.0842 8.65967 11.9998C8.65967 12.9154 9.4074 13.6577 10.3298 13.6577Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M15.8964 13.6577C16.8188 13.6577 17.5665 12.9154 17.5665 11.9998C17.5665 11.0842 16.8188 10.3419 15.8964 10.3419C14.974 10.3419 14.2263 11.0842 14.2263 11.9998C14.2263 12.9154 14.974 13.6577 15.8964 13.6577Z" fill="white"></path></svg></template></div></div>
+    </div>
+<input name="ufprt" type="hidden" value="22A00E751F8BD8316597B9B18BB018B4CFB1A741DA9D15D7E3710AD716C99E17AA3A77FFD7CAA462C824D70C3D9127243CDBE1DF54B31FFB95B5C63F2A6F27DFEC6F724F7E8140F2EEEFAE6C3A7004D651ADD00F592FCF30747C1D6391ABC0C908E3101C30BBC72C0A44626B253CDE156C197333D50D62A7A70F01E50C62B2A0E145087D89326C4470F710E460EAE29858DAC96E7A92BE50B56EFB9DC1DC8050B6D21EFBE1C67C1047EC5C903C01F90491520FBFBC67C5D564C001B8FF5821A8D233DC047DCA84773DEB428DD301B9BEE6422C4AC92E73BFE0D6EE5EAC694AAE5C4B302EC551B4C954600F36A00E2EA9496809E75B435306B235356CB261EC1B"></form>
+
+                <div class="strech-brand">
+                    <img src="./bidprentjes_2017_jan_zuidhof_en_files/logo-alt.png">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h3>Service &amp; Contact</h3>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/en/contact/" target="_self">Contact</a></li>
+                        <li><a href="https://www.facebook.com/WieWasWie" target="_blank">Facebook</a></li>
+                        <li><a href="https://twitter.com/WieWasWie" target="_blank">Twitter</a></li>
+                </ul>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/en/report-infringing-material/" target="_self">Report infringing material</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>About WieWasWie</h3>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/en/participating-institutions/" target="_self">Participating institutions</a></li>
+                        <li><a href="https://www.wiewaswie.nl/en/about-us/" target="_self">About us</a></li>
+                        <li><a href="https://cbg.nl/order/" target="_blank">Become a CBG-friend!</a></li>
+                </ul>
+                <ul>
+                        <li><a href="https://www.wiewaswie.nl/en/disclaimer/" target="_self">Disclaimer</a></li>
+                        <li><a href="https://cbg.nl/documents/178/Algemene_Voorwaarden_2020-09-15.pdf" target="_blank">Terms of Service</a></li>
+                        <li><a href="https://cbg.nl/documents/179/Privacyverklaring_2020-09-15.pdf" target="_blank">My privacy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3>More CBG websites</h3>
+                <ul>
+                        <li><a href="https://cbg.nl/" target="_blank">CBG.nl</a></li>
+                        <li><a href="https://cbgverzamelingen.nl/" target="_blank">CBG Verzamelingen</a></li>
+                        <li><a href="https://cbgfamiliewapens.nl/" target="_blank">CBG Familiewapens</a></li>
+                        <li><a href="https://cbgfamilienamen.nl/" target="_blank">CBG Familienamen</a></li>
+                        <li><a href="https://stamboomnederland.nl/" target="_blank">CBG Stambomen</a></li>
+                        <li><a href="https://cbgbibliotheek.nl/" target="_blank">CBG Bibliotheek</a></li>
+                </ul>
+                <ul>
+                        <li><a href="https://cbg.nl/over-het-cbg/gen-magazine/" target="_blank">Gen.magazine</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <div class="scripts">
+        <script src="./bidprentjes_2017_jan_zuidhof_en_files/UmbracoDictionary.js"></script>
+<script src="./bidprentjes_2017_jan_zuidhof_en_files/jquery.min.js"></script>
+<script src="./bidprentjes_2017_jan_zuidhof_en_files/bootstrap.min.js"></script>
+<script src="./bidprentjes_2017_jan_zuidhof_en_files/respond.min.js"></script>
+<script src="./bidprentjes_2017_jan_zuidhof_en_files/perfect-scrollbar.jquery.min.js"></script>
+<script src="./bidprentjes_2017_jan_zuidhof_en_files/wiewaswie.js"></script>
+<script src="./bidprentjes_2017_jan_zuidhof_en_files/angular.min.js"></script>
+<script>window.angular || document.write('<script src="js/angular.min.js">\x3C/script>')</script>
+        
+        
+    </div>
+
+    <div class="modal fade" id="message-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.btn-logged-in').click(function () {
+                $('.btn-menu').toggleClass("menu-active");
+            });
+        });
+
+    </script>
+    <input type="hidden" id="accesslevel" name="accesslevel" value="0">
+    <input type="hidden" id="sub" name="sub" value="">
+    <iframe id="frame" style="position: absolute; width: 1px;height: 1px; inset: -9999px; display: none;" src="./bidprentjes_2017_jan_zuidhof_en_files/iframe.html">
+</body>
+</html></iframe><div data-lastpass-root="" style="position: absolute !important; top: 0px !important; left: 0px !important; height: 0px !important; width: 0px !important;"><div data-lastpass-infield="true" style="position: absolute !important; top: 0px !important; left: 0px !important;"><template shadowrootmode="open"><div style="position: absolute; height: 100vh; width: 100vw; z-index: 2147483647; border-radius: 4px; top: 0px; left: 0px; max-height: 0px; max-width: 280px; min-width: auto; margin-top: 10px;"><div style="left: -1px; display: none; position: absolute; overflow: hidden; bottom: 100%; width: 20px; height: 10px;"><div data-lastpass-infield-caret="true" style="position: absolute; width: 16px; height: 16px; border-radius: 2px; border-color: rgb(213, 217, 222); border-style: solid; border-width: 1px 0px 0px 1px; box-sizing: border-box; top: 4px; left: 2px; background: linear-gradient(0deg, rgb(255, 219, 219) 10.47%, rgb(251, 235, 235) 6.47%); transform: rotate(45deg);"></div></div><iframe data-lastpass-iframe="true" allow="clipboard-write" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/webclient-infield.html" style="border: none; height: 100%; width: 100%;"></iframe></div></template></div></div></body></html>

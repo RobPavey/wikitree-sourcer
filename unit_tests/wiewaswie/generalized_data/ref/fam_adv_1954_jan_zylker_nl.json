@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "name": "Jan Willem Frederik Zylker"
+  },
+  "eventDate": {
+    "dateString": "30 Aug 1954"
+  },
+  "eventPlace": {
+    "placeString": "Waardenburg, Nederland, Nederland"
+  },
+  "hasValidData": true
+}

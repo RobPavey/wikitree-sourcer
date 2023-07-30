@@ -1,0 +1,98 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/111067287",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Deceased",
+        "value": "Jan Zuidhof"
+      },
+      {
+        "label": "Birth date",
+        "value": "11-03-1935",
+        "dataKey": "SourceDetail.BirthDate"
+      },
+      {
+        "label": "Place of birth",
+        "value": "Ovezande",
+        "dataKey": "SourceDetail.BirthPlace"
+      },
+      {
+        "label": "Gender",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "diversen",
+        "value": "Gecremeerd te Venray",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Partner",
+        "value": "Jeanne Huige"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Bidprentjes",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "17-06-2017",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Event place",
+      "value": "Venray",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "Bidprentjes",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Gemeentearchief Venray",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Venray",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Limburg",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Registration date",
+      "value": "11-03-1935",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Onbekend",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Book",
+      "value": "Bidprentjes",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "U kunt een scan van een bidprentje aanvragen via \"Fout melden\".<br />Kinderen: Ja<br />Portret: Ja<br />Archiefnummer: 23357",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "https://rooynet.nl/voorouders/deeds/59422985-a071-944d-9596-f7c7a716464a"
+}

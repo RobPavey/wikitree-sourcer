@@ -39,6 +39,16 @@ const regressionData = [
     caseName: "baptism_1789_gerryt_goudemond_nl",
     url: "https://www.wiewaswie.nl/nl/detail/54339285",
   },
+
+  {
+    caseName: "bidprentjes_2017_jan_zuidhof_en",
+    url: "https://www.wiewaswie.nl/en/detail/111067287",
+  },
+  {
+    caseName: "bidprentjes_2017_jan_zuidhof_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/111067287",
+  },
+
   {
     caseName: "birth_cert_1811_jan_van_der_wijk_en",
     url: "https://www.wiewaswie.nl/en/detail/15425329",
@@ -79,6 +89,7 @@ const regressionData = [
     caseName: "burial_1797_sarah_ammersfoort_nl",
     url: "https://www.wiewaswie.nl/nl/detail/36565702",
   },
+
   {
     caseName: "church_member_1825_reinder_van_der_meulen_en",
     url: "https://www.wiewaswie.nl/en/detail/109854388",
@@ -87,6 +98,7 @@ const regressionData = [
     caseName: "church_member_1825_reinder_van_der_meulen_nl",
     url: "https://www.wiewaswie.nl/nl/detail/109854388",
   },
+
   {
     caseName: "death_cert_1815_jan_huisman_en",
     url: "https://www.wiewaswie.nl/en/detail/8941780",
@@ -95,6 +107,25 @@ const regressionData = [
     caseName: "death_cert_1815_jan_huisman_nl",
     url: "https://www.wiewaswie.nl/nl/detail/8941780",
   },
+
+  {
+    caseName: "fam_adv_1954_jan_zylker_en",
+    url: "https://www.wiewaswie.nl/en/detail/46002199",
+  },
+  {
+    caseName: "fam_adv_1954_jan_zylker_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/46002199",
+  },
+
+  {
+    caseName: "fiscal_1748_fokker_meer_en",
+    url: "https://www.wiewaswie.nl/en/detail/90176744",
+  },
+  {
+    caseName: "fiscal_1748_fokker_meer_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/90176744",
+  },
+
   {
     caseName: "marriage_1676_jan_peter_janssen_en",
     url: "https://www.wiewaswie.nl/en/detail/10662653",
@@ -111,6 +142,16 @@ const regressionData = [
     caseName: "marriage_cert_1818_ringert_jongewaard_nl",
     url: "https://www.wiewaswie.nl/nl/detail/31877498",
   },
+
+  {
+    caseName: "memory_1898_helena_van_zwolgen_en",
+    url: "https://www.wiewaswie.nl/en/detail/57385038",
+  },
+  {
+    caseName: "memory_1898_helena_van_zwolgen_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/57385038",
+  },
+
   {
     caseName: "pop_reg_1815_jan_sties_en",
     url: "https://www.wiewaswie.nl/en/detail/93944073",
@@ -135,6 +176,7 @@ const regressionData = [
     caseName: "pop_reg_1854_pieter_van_gaard_nl",
     url: "https://www.wiewaswie.nl/nl/detail/79820963",
   },
+
   {
     caseName: "profession_1932_rutger_van_atterloo_en",
     url: "https://www.wiewaswie.nl/en/detail/103397261",

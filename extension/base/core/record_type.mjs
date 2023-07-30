@@ -78,6 +78,7 @@ const RT = {
   OtherChurchEvent: `OtherChurchEvent`, // other than baptism, marriage, burial etc. e.g. Confirmation, Seat Rents
   Heraldry: `Heraldry`,
   Bastardy: `Bastardy`,
+  Patent: `Patent`,
 };
 
 const RecordSubtype = {
