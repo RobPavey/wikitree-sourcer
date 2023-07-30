@@ -1,0 +1,107 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/79820963",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Geregistreerde",
+        "value": "Pieter Gerardus Herms van Gaard"
+      },
+      {
+        "label": "Geboortedatum",
+        "value": "30-10-1854",
+        "dataKey": "SourceDetail.BirthDate"
+      },
+      {
+        "label": "Geboorteplaats",
+        "value": "Amsterdam",
+        "dataKey": "SourceDetail.BirthPlace"
+      },
+      {
+        "label": "diversen",
+        "value": "Buurtcode: AA Adres: Amsterdam Nieuwe Looijerstraat 318 Houtk Hofje",
+        "dataKey": "Comment"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "Registratie",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "30-10-1854",
+      "dataKey": "SourceDetail.EventDate"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "Bevolkingsregister",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "Stadsarchief Amsterdam",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "Amsterdam",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Noord-Holland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archief",
+      "value": "5000",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "644",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "30-10-1854",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Akteplaats",
+      "value": "Amsterdam",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collectie",
+      "value": "Deel: 644, Periode: 1851-1863",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Boek",
+      "value": "Bevolkingsregister 1853-1863",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "<a href=\"https://archief.amsterdam/archief/5000/644\" target=\"_blank\" title=\"https://archief.amsterdam/archief/5000/644\">https://archief.amsterdam/archief/5000/644</a>",
+      "dataKey": "Comment"
+    },
+    {
+      "label": "AkteSoort",
+      "value": "Registratie",
+      "dataKey": "Comment"
+    },
+    {
+      "label": "filename",
+      "value": "BRGC00066000218",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "https://archief.amsterdam/indexen/deeds/63a0d46f-94b3-4a93-a886-cf9980fdb4ff"
+}

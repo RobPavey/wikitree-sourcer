@@ -3012,6 +3012,10 @@ class GeneralizedData {
         addYear: true,
       },
       {
+        type: RT.PopulationRegister,
+        defaultTitle: "Population Register",
+      },
+      {
         type: RT.ElectoralRegister,
         defaultTitle: "Electoral Register",
         addYear: true,

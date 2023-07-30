@@ -67,7 +67,7 @@ async function simplePopupBuildCitation(data) {
     return;
   }
 
-  //console.log("simplePopupBuildCitation");
+  console.log("simplePopupBuildCitation");
 
   let householdTableString = buildHouseholdTableString(
     data.extractedData,
@@ -75,6 +75,8 @@ async function simplePopupBuildCitation(data) {
     data.type,
     simplePopupFunctions.buildHouseholdTableFunction
   );
+
+  console.log(householdTableString);
 
   doAsyncActionWithCatch("Building Citation", data, async function () {
     const input = {

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Population Register''':\n\"Bevolkingsregister\"<br/>\nStadsarchief Amsterdam, Collection: Deel: 644, Registration number: 644, Book: Bevolkingsregister 1853-1863<br/>\n[https://www.wiewaswie.nl/nl/detail/79820963 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://archief.amsterdam/indexen/deeds/63a0d46f-94b3-4a93-a886-cf9980fdb4ff Stadsarchief Amsterdam Record]<br/>\nPieter Gerardus Herms van Gaard in Noord-Holland, Nederland. Born on 30 Oct 1854 in Amsterdam.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Pieter was recorded in a population register on 30 October 1854 in Noord-Holland, Nederland. They were was born on 30 October 1854 in Noord-Holland, Nederland.<ref>\n'''Population Register''':\n\"Bevolkingsregister\"<br/>\nStadsarchief Amsterdam, Collection: Deel: 644, Registration number: 644, Book: Bevolkingsregister 1853-1863<br/>\n[https://www.wiewaswie.nl/nl/detail/79820963 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://archief.amsterdam/indexen/deeds/63a0d46f-94b3-4a93-a886-cf9980fdb4ff Stadsarchief Amsterdam Record]<br/>\nPieter Gerardus Herms van Gaard in Noord-Holland, Nederland. Born on 30 Oct 1854 in Amsterdam.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Population Register''': \"Bevolkingsregister\"<br/>Stadsarchief Amsterdam, Collection: Deel: 644, Registration number: 644, Book: Bevolkingsregister 1853-1863<br/>[https://www.wiewaswie.nl/nl/detail/79820963 WieWasWie Record] (accessed 6 May 2021)<br/>[https://archief.amsterdam/indexen/deeds/63a0d46f-94b3-4a93-a886-cf9980fdb4ff Stadsarchief Amsterdam Record]<br/>Pieter Gerardus Herms van Gaard in Noord-Holland, Nederland. Born on 30 Oct 1854 in Amsterdam.",
+    "type": "source"
+  }
+}

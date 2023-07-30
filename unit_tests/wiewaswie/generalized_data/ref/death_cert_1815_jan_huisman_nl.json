@@ -12,6 +12,9 @@
   "eventPlace": {
     "placeString": "Lippenhuizen, Friesland, Nederland"
   },
+  "deathDate": {
+    "dateString": "17 Feb 1815"
+  },
   "ageAtEvent": "79",
   "parents": {
     "father": {

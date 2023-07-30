@@ -26,6 +26,7 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/wiewaswie_generalize_data.mjs";
 import { buildCitation } from "../core/wiewaswie_build_citation.mjs";
+import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 async function setupWiewaswiePopupMenu(extractedData) {
   let input = {
@@ -35,6 +36,7 @@ async function setupWiewaswiePopupMenu(extractedData) {
     generalizeFailedMessage: "It looks like a WieWasWie (NL) page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
+    buildHouseholdTableFunction: buildHouseholdTable,
     siteNameToExcludeFromSearch: "wiewaswie",
   };
   setupSimplePopupMenu(input);

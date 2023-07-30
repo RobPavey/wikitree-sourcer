@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Population Register''':\n\"Bevolkingsregister\"<br/>\nRegionaal Historisch Centrum Vecht en Venen, Collection: Bevolkingsregistratie Waverveen en Waveren, deel 1, staat van inwoners, 1815, Registration number: 404<br/>\n[https://www.wiewaswie.nl/en/detail/93944073 WieWasWie Record] (accessed 6 May 2021)<br/>\n[http://www.rhcvechtenvenen.nl/collectie?mivast=386&miadt=386&miaet=54&micode=1202-404&minr=956928&miview=ldt Regionaal Historisch Centrum Vecht en Venen Record]<br/>\nJan Sties in Waverveen en Waveren, Noord-Holland, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jan was recorded in a population register in 1815 in Waverveen en Waveren, Noord-Holland, Nederland.<ref>\n'''Population Register''':\n\"Bevolkingsregister\"<br/>\nRegionaal Historisch Centrum Vecht en Venen, Collection: Bevolkingsregistratie Waverveen en Waveren, deel 1, staat van inwoners, 1815, Registration number: 404<br/>\n[https://www.wiewaswie.nl/en/detail/93944073 WieWasWie Record] (accessed 6 May 2021)<br/>\n[http://www.rhcvechtenvenen.nl/collectie?mivast=386&miadt=386&miaet=54&micode=1202-404&minr=956928&miview=ldt Regionaal Historisch Centrum Vecht en Venen Record]<br/>\nJan Sties in Waverveen en Waveren, Noord-Holland, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Population Register''': \"Bevolkingsregister\"<br/>Regionaal Historisch Centrum Vecht en Venen, Collection: Bevolkingsregistratie Waverveen en Waveren, deel 1, staat van inwoners, 1815, Registration number: 404<br/>[https://www.wiewaswie.nl/en/detail/93944073 WieWasWie Record] (accessed 6 May 2021)<br/>[http://www.rhcvechtenvenen.nl/collectie?mivast=386&miadt=386&miaet=54&micode=1202-404&minr=956928&miview=ldt Regionaal Historisch Centrum Vecht en Venen Record]<br/>Jan Sties in Waverveen en Waveren, Noord-Holland, Nederland.",
+    "type": "source"
+  }
+}

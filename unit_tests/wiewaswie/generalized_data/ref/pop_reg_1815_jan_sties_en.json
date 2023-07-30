@@ -1,0 +1,42 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "PopulationRegister",
+  "name": {
+    "name": "Jan Sties"
+  },
+  "eventDate": {
+    "yearString": "1815"
+  },
+  "eventPlace": {
+    "placeString": "Waverveen en Waveren, Noord-Holland, Nederland"
+  },
+  "householdArrayFields": [
+    "name",
+    "birthDate"
+  ],
+  "householdArray": [
+    {
+      "name": "Jan Sties"
+    },
+    {
+      "name": "Jacobus van den Coolwijk",
+      "birthDate": "20 Mar 1752"
+    },
+    {
+      "name": "Willem van Gaard",
+      "birthDate": "1769"
+    },
+    {
+      "name": "Jan C van Bremen"
+    },
+    {
+      "name": "Adrieanes Lammering",
+      "birthDate": "1763"
+    },
+    {
+      "name": "Hendrik Meijjer"
+    }
+  ],
+  "hasValidData": true
+}

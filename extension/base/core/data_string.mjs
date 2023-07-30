@@ -416,6 +416,33 @@ function getCensusString(gd, options) {
   return getOtherCensusString(gd, options);
 }
 
+function getPopulationRegisterString(gd, options) {
+  let dataString = getFullName(gd);
+
+  let occupation = gd.occupation;
+  if (occupation) {
+    dataString += ", " + occupation + ",";
+  }
+
+  let place = gd.inferFullEventPlace();
+  if (place) {
+    dataString += " " + getPlaceWithPreposition(place);
+  }
+
+  let birthDateObj = gd.birthDate;
+  let birthPlace = gd.inferBirthPlace();
+  if (birthDateObj) {
+    dataString += ". Born " + getDateWithPreposition(birthDateObj);
+    if (birthPlace) {
+      dataString += " " + getPlaceWithPreposition(birthPlace);
+    }
+  } else if (birthPlace) {
+    dataString += ". Born " + getPlaceWithPreposition(birthPlace);
+  }
+
+  return dataString;
+}
+
 function getUkRegistrationString(gd, options, type) {
   let dataString = getFullName(gd);
   dataString += " " + type;
@@ -1340,6 +1367,10 @@ const DataString = {
       }
       case RT.Census: {
         dataString = getCensusString(gd, options);
+        break;
+      }
+      case RT.PopulationRegister: {
+        dataString = getPopulationRegisterString(gd, options);
         break;
       }
       case RT.Probate: {

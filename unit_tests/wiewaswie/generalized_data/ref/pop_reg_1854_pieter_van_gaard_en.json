@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "PopulationRegister",
+  "name": {
+    "name": "Pieter Gerardus Herms van Gaard"
+  },
+  "eventDate": {
+    "dateString": "30 Oct 1854"
+  },
+  "eventPlace": {
+    "placeString": "Noord-Holland, Nederland"
+  },
+  "birthDate": {
+    "dateString": "30 Oct 1854"
+  },
+  "birthPlace": {
+    "placeString": "Amsterdam"
+  },
+  "hasValidData": true
+}

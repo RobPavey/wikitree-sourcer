@@ -1,0 +1,122 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/93944073",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Registered",
+        "value": "Jan Sties"
+      }
+    ],
+    [
+      {
+        "label": "Registered",
+        "value": "Jacobus van den Coolwijk"
+      },
+      {
+        "label": "Birth date",
+        "value": "20-03-1752",
+        "dataKey": "SourceDetail.BirthDate"
+      }
+    ],
+    [
+      {
+        "label": "Registered",
+        "value": "Willem van Gaard"
+      },
+      {
+        "label": "Birth date",
+        "value": "1769",
+        "dataKey": "SourceDetail.BirthDate"
+      }
+    ],
+    [
+      {
+        "label": "Registered",
+        "value": "Jan C van Bremen"
+      }
+    ],
+    [
+      {
+        "label": "Registered",
+        "value": "Adrieanes Lammering"
+      },
+      {
+        "label": "Birth date",
+        "value": "1763",
+        "dataKey": "SourceDetail.BirthDate"
+      }
+    ],
+    [
+      {
+        "label": "Registered",
+        "value": "Hendrik Meijjer"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Registratie",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event place",
+      "value": "Waverveen en Waveren",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "Bevolkingsregister",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Regionaal Historisch Centrum Vecht en Venen",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Breukelen en Weesp",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Noord-Holland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "1202",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "404",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Page",
+      "value": "17",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "1815",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Waverveen en Waveren",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Bevolkingsregistratie Waverveen en Waveren, deel 1, staat van inwoners, 1815",
+      "dataKey": "SourceDetail.Collection"
+    }
+  ],
+  "originalSourceLink": "http://www.rhcvechtenvenen.nl/collectie?mivast=386&miadt=386&miaet=54&micode=1202-404&minr=956928&miview=ldt"
+}

@@ -1786,6 +1786,46 @@ class NarrativeBuilder {
     this.addOccupationAsSeparateSentence(occupation, relationship);
   }
 
+  buildPopulationRegisterString() {
+    let gd = this.eventGd;
+
+    let eventDateObj = this.eventGd.inferEventDateObj();
+    let eventPlace = gd.inferFullEventPlace();
+
+    this.narrative = this.getPersonNameOrPronoun();
+
+    let occupationText = this.getOccupationPart(gd.occupation);
+    if (occupationText) {
+      this.narrative += ", " + occupationText + ",";
+    }
+
+    this.narrative += " was recorded in a population register";
+
+    if (eventDateObj) {
+      this.narrative += " " + this.formatDateObj(eventDateObj, true);
+    }
+
+    if (eventPlace) {
+      this.narrative += " " + this.getPlaceWithPreposition(eventPlace);
+    }
+
+    let birthDateObj = this.eventGd.inferBirthDateObj();
+    let birthPlace = this.eventGd.inferBirthPlace();
+
+    if (birthDateObj) {
+      this.narrative += ". " + this.getPronounAndPastTenseInitialCaps() + " was born ";
+      this.narrative += this.formatDateObj(birthDateObj, true);
+      if (birthPlace) {
+        this.narrative += " " + this.getPlaceWithPreposition(eventPlace);
+      }
+    } else if (birthPlace) {
+      this.narrative += ". " + this.getPronounAndPastTenseInitialCaps() + " was born ";
+      this.narrative += this.getPlaceWithPreposition(eventPlace);
+    }
+
+    this.narrative += ".";
+  }
+
   buildProbateString() {
     let eventDateObj = this.eventGd.inferEventDateObj();
     let deathDateObj = this.eventGd.inferDeathDateObj();
@@ -2323,6 +2363,10 @@ class NarrativeBuilder {
       case RT.Census: {
         this.buildFunction = this.buildCensusString;
         this.optionsSubcategory = "census";
+        break;
+      }
+      case RT.PopulationRegister: {
+        this.buildFunction = this.buildPopulationRegisterString;
         break;
       }
       case RT.Probate: {

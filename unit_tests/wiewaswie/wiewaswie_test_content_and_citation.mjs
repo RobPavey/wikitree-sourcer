@@ -112,6 +112,30 @@ const regressionData = [
     url: "https://www.wiewaswie.nl/nl/detail/31877498",
   },
   {
+    caseName: "pop_reg_1815_jan_sties_en",
+    url: "https://www.wiewaswie.nl/en/detail/93944073",
+  },
+  {
+    caseName: "pop_reg_1815_jan_sties_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/93944073",
+  },
+  {
+    caseName: "pop_reg_1850_david_van_zwyndregt_en",
+    url: "https://www.wiewaswie.nl/en/detail/109473861",
+  },
+  {
+    caseName: "pop_reg_1850_david_van_zwyndregt_en",
+    url: "https://www.wiewaswie.nl/en/detail/109473861",
+  },
+  {
+    caseName: "pop_reg_1854_pieter_van_gaard_en",
+    url: "https://www.wiewaswie.nl/en/detail/79820963",
+  },
+  {
+    caseName: "pop_reg_1854_pieter_van_gaard_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/79820963",
+  },
+  {
     caseName: "profession_1932_rutger_van_atterloo_en",
     url: "https://www.wiewaswie.nl/en/detail/103397261",
   },

@@ -213,7 +213,18 @@ const typeData = {
   },
   Bevolkingsregister: {
     // Population register
-    recordType: RT.Census,
+    recordType: RT.PopulationRegister,
+    nameFormat: "full",
+    labels: {
+      en: {
+        fullName: ["Registered", "Persoon in bevolkingsregister"],
+        gender: ["Gender"],
+      },
+      nl: {
+        fullName: ["Geregistreerde", "Persoon in bevolkingsregister"],
+        gender: ["Geslacht"],
+      },
+    },
   },
   Bidprentjes: {
     // Prayer cards (Faire-parts)
@@ -277,7 +288,7 @@ const typeData = {
   },
   "VOC Opvarenden": {
     // VOC Passengers (United East India Company Passengers) or (Dutch East India Company passengers)
-    recordType: RT.Unclassified,
+    recordType: RT.PassengerList,
   },
 };
 
@@ -473,6 +484,9 @@ class WiewaswieEdReader extends ExtractedDataReader {
 
   getEventDateObj() {
     let ddmmyyyDate = this.extractEventFieldByDataKey("EventDate");
+    if (!ddmmyyyDate) {
+      ddmmyyyDate = this.extractSourceFieldByDataKey("RegistrationDate");
+    }
     return this.makeDateObjFromDdmmyyyyDate(ddmmyyyDate, "-");
   }
 
@@ -529,15 +543,26 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getBirthPlaceObj() {
-    return undefined;
+    let place = this.extractIndexedPersonFieldByDataKey(0, "BirthPlace");
+    let placeObj = this.makePlaceObjFromFullPlaceName(place);
+    return placeObj;
   }
 
   getDeathDateObj() {
-    return undefined;
+    let ddmmyyyDate = this.extractIndexedPersonFieldByDataKey(0, "DeathDate");
+
+    if (!ddmmyyyDate) {
+      if (this.documentType == "BS Overlijden") {
+        ddmmyyyDate = this.extractEventFieldByDataKey("EventDate");
+      }
+    }
+    return this.makeDateObjFromDdmmyyyyDate(ddmmyyyDate, "-");
   }
 
   getDeathPlaceObj() {
-    return undefined;
+    let place = this.extractIndexedPersonFieldByDataKey(0, "DeathPlace");
+    let placeObj = this.makePlaceObjFromFullPlaceName(place);
+    return placeObj;
   }
 
   getAgeAtEvent() {
@@ -562,7 +587,8 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getOccupation() {
-    return "";
+    let occupation = this.extractIndexedPersonFieldByDataKey(0, "Profession");
+    return occupation;
   }
 
   getSpouseObj(eventDateObj, eventPlaceObj) {
@@ -621,6 +647,46 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getHousehold() {
+    if (this.documentType == "Bevolkingsregister") {
+      if (this.ed.people.length > 1) {
+        let householdArray = [];
+        let fields = ["name"];
+
+        for (let person of this.ed.people) {
+          let name = this.extractPersonFieldByFieldType(person, FT.fullName);
+          if (name) {
+            let householdMember = { name: name };
+
+            function addMemberField(reader, dataKey, fieldName, isDate = false) {
+              let value = reader.extractPersonFieldByDataKey(person, dataKey);
+              if (value) {
+                if (isDate) {
+                  let dateObj = reader.makeDateObjFromDdmmyyyyDate(value, "-");
+                  if (dateObj) {
+                    value = dateObj.getDateString();
+                  }
+                }
+                householdMember[fieldName] = value;
+                if (!fields.includes(fieldName)) {
+                  fields.push(fieldName);
+                }
+              }
+            }
+
+            addMemberField(this, "Profession", "profession");
+            addMemberField(this, "BirthDate", "birthDate", true);
+            addMemberField(this, "BirthPlace", "birthPlace");
+
+            householdArray.push(householdMember);
+          }
+        }
+
+        let result = {};
+        result.members = householdArray;
+        result.fields = fields;
+        return result;
+      }
+    }
     return undefined;
   }
 
@@ -633,8 +699,7 @@ class WiewaswieEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   getSourceTitle() {
-    let documentType = this.extractSourceFieldByDataKey("DocumentType");
-    return documentType;
+    return this.documentType;
   }
 
   getSourceReference() {
@@ -652,15 +717,15 @@ class WiewaswieEdReader extends ExtractedDataReader {
       collection = collection.substring(0, remainderIndex);
     }
 
-    if (institution && collection && registrationNumber && book) {
-      let string =
-        institution +
-        ", Collection: " +
-        collection +
-        ", Registration number: " +
-        registrationNumber +
-        ", Book: " +
-        book;
+    if (institution && collection) {
+      let string = institution + ", Collection: " + collection;
+
+      if (registrationNumber) {
+        string += ", Registration number: " + registrationNumber;
+      }
+      if (book) {
+        string += ", Book: " + book;
+      }
       return string;
     }
   }

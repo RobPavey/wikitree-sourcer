@@ -1,0 +1,207 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/109473861",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Persoon in bevolkingsregister",
+        "value": "David van Zwyndregt"
+      },
+      {
+        "label": "Profession",
+        "value": "Scheepstimmerman",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Birth date",
+        "value": "15-12-1806",
+        "dataKey": "SourceDetail.BirthDate"
+      },
+      {
+        "label": "Place of birth",
+        "value": "Vlissingen",
+        "dataKey": "SourceDetail.BirthPlace"
+      }
+    ],
+    [
+      {
+        "label": "Persoon in bevolkingsregister",
+        "value": "Jacoba Elisabeth Heyl"
+      },
+      {
+        "label": "Profession",
+        "value": "geen",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Birth date",
+        "value": "23-04-1805",
+        "dataKey": "SourceDetail.BirthDate"
+      },
+      {
+        "label": "Place of birth",
+        "value": "Veere",
+        "dataKey": "SourceDetail.BirthPlace"
+      }
+    ],
+    [
+      {
+        "label": "Persoon in bevolkingsregister",
+        "value": "Rokus van Zwyndregt"
+      },
+      {
+        "label": "Profession",
+        "value": "Kleermakersleerling",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Birth date",
+        "value": "28-10-1835",
+        "dataKey": "SourceDetail.BirthDate"
+      },
+      {
+        "label": "Place of birth",
+        "value": "Vlissingen",
+        "dataKey": "SourceDetail.BirthPlace"
+      }
+    ],
+    [
+      {
+        "label": "Persoon in bevolkingsregister",
+        "value": "Jan Hendrik van Zwyndregt"
+      },
+      {
+        "label": "Profession",
+        "value": "geen",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Birth date",
+        "value": "17-08-1839",
+        "dataKey": "SourceDetail.BirthDate"
+      },
+      {
+        "label": "Place of birth",
+        "value": "Vlissingen",
+        "dataKey": "SourceDetail.BirthPlace"
+      }
+    ],
+    [
+      {
+        "label": "Persoon in bevolkingsregister",
+        "value": "Catharina van Zwyndregt"
+      },
+      {
+        "label": "Profession",
+        "value": "geen",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Birth date",
+        "value": "15-10-1837",
+        "dataKey": "SourceDetail.BirthDate"
+      },
+      {
+        "label": "Place of birth",
+        "value": "Vlissingen",
+        "dataKey": "SourceDetail.BirthPlace"
+      }
+    ],
+    [
+      {
+        "label": "Persoon in bevolkingsregister",
+        "value": "Jozina Arinksen"
+      },
+      {
+        "label": "Profession",
+        "value": "geen",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Birth date",
+        "value": "24-04-1777",
+        "dataKey": "SourceDetail.BirthDate"
+      },
+      {
+        "label": "Place of birth",
+        "value": "Vlissingen",
+        "dataKey": "SourceDetail.BirthPlace"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Registratie",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "1850",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Event place",
+      "value": "Vlissingen",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "Bevolkingsregister",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Zeeuws Archief",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Middelburg",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Zeeland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "7434",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "481",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Page",
+      "value": "202",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "1850",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Vlissingen",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Burgerlijke Stand en Bevolking Gemeente Vlissingen, 1810-1994",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Vlissingen, wijkregister 1850-1858 deel H",
+      "dataKey": "SourceDetail.Book"
+    }
+  ],
+  "originalSourceLink": "https://hdl.handle.net/21.12113/A1278296E9C64A759A1505DFC1244C95"
+}

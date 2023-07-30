@@ -39,6 +39,7 @@ const RT = {
   DeathOrBurial: `DeathOrBurial`,
   Census: `Census`,
   NonpopulationCensus: `NonpopulationCensus`,
+  PopulationRegister: `PopulationRegister`,
   ElectoralRegister: `ElectoralRegister`,
   Probate: `Probate`,
   Will: `Will`,
