@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Familieadvertenties\"<br/>\nundefined<br/>\n[https://www.wiewaswie.nl/nl/detail/46002199 WieWasWie Record] (accessed 6 May 2021)<br/>\nJan Willem Frederik Zylker born on 30 Aug 1954 in Waardenburg, Nederland, Nederland.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Familieadvertenties (Family Announcements)\"<br/>\nundefined<br/>\n[https://www.wiewaswie.nl/nl/detail/46002199 WieWasWie Record] (accessed 6 May 2021)<br/>\nJan Willem Frederik Zylker born on 30 Aug 1954 in Waardenburg, Nederland, Nederland.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Jan was born on 30 August 1954 in Waardenburg, Nederland, Nederland.<ref>\n'''Birth''':\n\"Familieadvertenties\"<br/>\nundefined<br/>\n[https://www.wiewaswie.nl/nl/detail/46002199 WieWasWie Record] (accessed 6 May 2021)<br/>\nJan Willem Frederik Zylker born on 30 Aug 1954 in Waardenburg, Nederland, Nederland.\n</ref>",
+    "citation": "Jan was born on 30 August 1954 in Waardenburg, Nederland, Nederland.<ref>\n'''Birth''':\n\"Familieadvertenties (Family Announcements)\"<br/>\nundefined<br/>\n[https://www.wiewaswie.nl/nl/detail/46002199 WieWasWie Record] (accessed 6 May 2021)<br/>\nJan Willem Frederik Zylker born on 30 Aug 1954 in Waardenburg, Nederland, Nederland.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth''': \"Familieadvertenties\"<br/>undefined<br/>[https://www.wiewaswie.nl/nl/detail/46002199 WieWasWie Record] (accessed 6 May 2021)<br/>Jan Willem Frederik Zylker born on 30 Aug 1954 in Waardenburg, Nederland, Nederland.",
+    "citation": "* '''Birth''': \"Familieadvertenties (Family Announcements)\"<br/>undefined<br/>[https://www.wiewaswie.nl/nl/detail/46002199 WieWasWie Record] (accessed 6 May 2021)<br/>Jan Willem Frederik Zylker born on 30 Aug 1954 in Waardenburg, Nederland, Nederland.",
     "type": "source"
   }
 }

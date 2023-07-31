@@ -1,0 +1,88 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/96299604",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Geregistreerde",
+        "value": "Leonora Walen"
+      },
+      {
+        "label": "diversen",
+        "value": "juffrouw",
+        "dataKey": "Comment"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Gebeurtenis",
+      "value": "transportakte",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Datum",
+      "value": "1649",
+      "dataKey": "SourceDetail.EventDate"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Documenttype",
+      "value": "Onroerend goed",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Erfgoedinstelling",
+      "value": "Gemeentearchief Tholen",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Plaats instelling",
+      "value": "Tholen",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collectiegebied",
+      "value": "Zeeland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archief",
+      "value": "GAT_026",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registratienummer",
+      "value": "5294",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Pagina",
+      "value": "108v",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registratiedatum",
+      "value": "1649",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Akteplaats",
+      "value": "Sint-Maartensdijk",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collectie",
+      "value": "Bron: boek, Deel: 5294, Periode: 1640-1656",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Boek",
+      "value": "RAZE 5294 Register van transporten, 1640-1656",
+      "dataKey": "SourceDetail.Book"
+    }
+  ],
+  "originalSourceLink": "https://archieftholen.nl/onze-bronnen/voorouders/deeds/7326e47f-1eef-4e11-82d4-6a4e8be9e1f5",
+  "title": "Onroerend goed met Leonora Walen"
+}

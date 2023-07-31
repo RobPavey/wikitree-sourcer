@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Notariële archieven (Notarial Archives)\"<br/>\nHet Utrechts Archief, Collection: Notarissen in de stad Utrecht 1560-1905, Registration number: 2321, Book: M. J. VAN BUUREN<br/>\n[https://www.wiewaswie.nl/en/detail/107874851 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD Het Utrechts Archief Record]\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "de was in a record on 16 January 1803 in Utrecht, Nederland.<ref>\n'''Unclassified''':\n\"Notariële archieven (Notarial Archives)\"<br/>\nHet Utrechts Archief, Collection: Notarissen in de stad Utrecht 1560-1905, Registration number: 2321, Book: M. J. VAN BUUREN<br/>\n[https://www.wiewaswie.nl/en/detail/107874851 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD Het Utrechts Archief Record]\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Unclassified''': \"Notariële archieven (Notarial Archives)\"<br/>Het Utrechts Archief, Collection: Notarissen in de stad Utrecht 1560-1905, Registration number: 2321, Book: M. J. VAN BUUREN<br/>[https://www.wiewaswie.nl/en/detail/107874851 WieWasWie Record] (accessed 6 May 2021)<br/>[https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD Het Utrechts Archief Record]",
+    "type": "source"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/107874851",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Protesteerder",
+        "value": "de erfgenamen van + Nicolaas Hendrik van der Wal, wedr. van Cornelia Weydom:"
+      },
+      {
+        "label": "Opmerking",
+        "value": "Nicolaas Hendrik van der Wal is op 15-01-1803 ab intestato overleden te Utrecht; Nicolaas Hendrik van der Wal was in leven meester metzelaar te Utrecht",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Jan Corvezee"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Hendrik Hester"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Anthony Tollenaar"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Gijsbertus van Duren"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Geertruy van der Wal, dochter van Jan van der Wal, broer"
+      },
+      {
+        "label": "Opmerking",
+        "value": "Johannes Coensen verblijft sedert 8 jaar in het buitenland",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Nicolaas van der Wal, zoon van Jan van der Wal, broer"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Willem van der Wal, zoon van Jan van der Wal, broer"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Cornelia van der Wal, enige nagelaten dochter van + Hendrik van der Wal, broer, en Mechteltje van Es"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Lammertje Mensburg, dochter van Pieternella van der Wal, zuster, en + Anthony Mensburg"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Pieter van den Hoorn"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Jan Mensburg, zoon van Pieternella van der Wal, zuster, en + Anthony Mensburg"
+      }
+    ],
+    [
+      {
+        "label": "Protesteerder",
+        "value": "Adrianus Smorenburg, enige nagelaten zoon van + Judith van der Wal, zuster, en + Cornelis Smorenburg"
+      },
+      {
+        "label": "Place of residence",
+        "value": "Amsterdam",
+        "dataKey": "SourceDetail.PlaceOfResidence"
+      }
+    ],
+    [
+      {
+        "label": "Notaris",
+        "value": "M. J. VAN BUUREN"
+      },
+      {
+        "label": "Profession",
+        "value": "notaris",
+        "dataKey": "SourceDetail.Profession"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Notariële akte",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "16-01-1803",
+      "dataKey": "SourceDetail.EventDate"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "Notariële archieven",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Het Utrechts Archief",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Utrecht",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Utrecht",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "34-4",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "2321",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Sourcenumber",
+      "value": "7",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Page",
+      "value": "21-24",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "16-01-1803",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Collection",
+      "value": "Notarissen in de stad Utrecht 1560-1905",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "M. J. VAN BUUREN",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "tevens verzegeling",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD",
+  "title": "Notariële archieven met  de erfgenamen van + Nicolaas Hendrik van der Wal, wedr. van Cornelia Weydom:"
+}

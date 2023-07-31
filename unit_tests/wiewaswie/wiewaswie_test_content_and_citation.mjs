@@ -100,6 +100,24 @@ const regressionData = [
   },
 
   {
+    caseName: "court_1780_erven_pekstok_en",
+    url: "https://www.wiewaswie.nl/en/detail/91447572",
+  },
+  {
+    caseName: "court_1780_erven_pekstok_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/91447572",
+  },
+
+  {
+    caseName: "crime_1944_erik_von_altenstadt_en",
+    url: "https://www.wiewaswie.nl/en/detail/89726253",
+  },
+  {
+    caseName: "crime_1944_erik_von_altenstadt_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/89726253",
+  },
+
+  {
     caseName: "death_cert_1815_jan_huisman_en",
     url: "https://www.wiewaswie.nl/en/detail/8941780",
   },
@@ -153,6 +171,24 @@ const regressionData = [
   },
 
   {
+    caseName: "military_1817_hendk_van_zyl_en",
+    url: "https://www.wiewaswie.nl/en/detail/103513211",
+  },
+  {
+    caseName: "military_1817_hendk_van_zyl_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/103513211",
+  },
+
+  {
+    caseName: "notary_1803_van_der_wal_en",
+    url: "https://www.wiewaswie.nl/en/detail/107874851",
+  },
+  {
+    caseName: "notary_1803_van_der_wal_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/107874851",
+  },
+
+  {
     caseName: "pop_reg_1815_jan_sties_en",
     url: "https://www.wiewaswie.nl/en/detail/93944073",
   },
@@ -184,6 +220,24 @@ const regressionData = [
   {
     caseName: "profession_1932_rutger_van_atterloo_nl",
     url: "https://www.wiewaswie.nl/nl/detail/103397261",
+  },
+
+  {
+    caseName: "real_estate_1649_leonora_walen_en",
+    url: "https://www.wiewaswie.nl/en/detail/96299604",
+  },
+  {
+    caseName: "real_estate_1649_leonora_walen_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/96299604",
+  },
+
+  {
+    caseName: "social_1759_gerhard_haesebroek_nl",
+    url: "https://www.wiewaswie.nl/en/detail/109836193",
+  },
+  {
+    caseName: "social_1759_gerhard_haesebroek_en",
+    url: "https://www.wiewaswie.nl/nl/detail/109836193",
   },
 ];
 

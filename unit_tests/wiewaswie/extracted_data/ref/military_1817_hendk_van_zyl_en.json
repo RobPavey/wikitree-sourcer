@@ -1,0 +1,98 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/103513211",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Registered",
+        "value": "Hend.k van Zyl"
+      },
+      {
+        "label": "diversen",
+        "value": "Rang: halvemaanblazer Legeronderdeel: Jagers Legersubonderdeel: Bataljon Jagers No. 16",
+        "dataKey": "Comment"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Registratie",
+      "dataKey": "SourceDetail.Event"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "Militairen",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Stadsarchief Amsterdam",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Amsterdam",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Noord-Holland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "355",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "717",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Page",
+      "value": "nr. 557",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "01-01-1817",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Amsterdam",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Deel: 717, Periode: 1817-1818",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Waterloo gratificaties 1815",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "<a href=\"https://archief.amsterdam/archief/355/717\" target=\"_blank\" title=\"https://archief.amsterdam/archief/355/717\">https://archief.amsterdam/archief/355/717</a>",
+      "dataKey": "Comment"
+    },
+    {
+      "label": "AkteSoort",
+      "value": "Registratie",
+      "dataKey": "Comment"
+    },
+    {
+      "label": "filename",
+      "value": "A30318000014",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "https://archief.amsterdam/indexen/deeds/fcc20ced-a114-4042-960e-31d18b678f5d",
+  "title": "Militairen met Hend.k van Zyl"
+}

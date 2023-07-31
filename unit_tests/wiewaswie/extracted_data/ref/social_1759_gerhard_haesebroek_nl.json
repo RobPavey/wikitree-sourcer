@@ -1,0 +1,165 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/109836193",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Gerhard Haesebroek"
+      },
+      {
+        "label": "diversen",
+        "value": "Curator",
+        "dataKey": "Comment"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Isaac van der Meer de Walchren"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Theodorus Marcus Ex alto d' Almaras"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Frans Hendrik Adam Ex alto d'Almaras"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Aaron Ex alto d'Almaras"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Johanna Geertruid Bronkhorst"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Louis Meijs"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Gerhardina Elizabeth van Santbergen"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Gerharda Ex alto d'Almaras"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Adam van Trier"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Huinink"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Cornet Cremer"
+      }
+    ],
+    [
+      {
+        "label": "Weeskamer geregistreerde",
+        "value": "Peter Wesseling"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Weeskamer inschrijvingen",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "11-07-1759",
+      "dataKey": "SourceDetail.EventDate"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "Sociale zorg",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Regionaal Archief Zutphen",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Zutphen",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Gelderland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "137",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "14",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Page",
+      "value": "308-309 -310 - 310v",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "11-07-1759",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Zutphen",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Archiefnaam: 0137_0014, Deel: 14, Periode: 1749-1763",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Protocol Weeskamer Zutphen, boek XIV",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "Zie ook pag :213 , 168-169-169v , 264- 265 - 265v .",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "https://erfgoedcentrumzutphen.nl/onderzoeken/genealogie/deeds/2bfd442d-f6fc-381a-2eaf-bcd849185156",
+  "title": "Sociale zorg met Gerhard Haesebroek"
+}

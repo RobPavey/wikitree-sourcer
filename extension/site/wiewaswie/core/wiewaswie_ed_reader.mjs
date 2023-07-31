@@ -43,6 +43,7 @@ const FT = {
 const typeData = {
   "BS Geboorte": {
     // Birth certificates
+    enDocumentType: "Birth certificates",
     recordType: RT.BirthRegistration,
     nameFormat: "full",
     labels: {
@@ -62,6 +63,7 @@ const typeData = {
   },
   "BS Huwelijk": {
     // Marriage certificates
+    enDocumentType: "Marriage certificates",
     recordType: RT.Marriage,
     fixedGender: "male", // the primary person is always the groom
     nameFormat: "full",
@@ -87,7 +89,8 @@ const typeData = {
     },
   },
   "BS Overlijden": {
-    // Death certificate
+    // Death certificates
+    enDocumentType: "Death certificates",
     recordType: RT.DeathRegistration,
     nameFormat: "full",
     labels: {
@@ -110,6 +113,7 @@ const typeData = {
 
   "DTB Dopen": {
     // Baptismal registers
+    enDocumentType: "Baptismal Registers",
     recordType: RT.Baptism,
     nameFormat: "forenamesOnly",
     labels: {
@@ -127,6 +131,7 @@ const typeData = {
   },
   "DTB Trouwen": {
     // Marriage registers
+    enDocumentType: "Marriage Registers",
     recordType: RT.Marriage,
     fixedGender: "male", // the primary person is always the groom
     nameFormat: "full",
@@ -153,6 +158,7 @@ const typeData = {
   },
   "DTB Begraven": {
     // Burial registers
+    enDocumentType: "Burial Registers",
     recordType: RT.Burial,
     nameFormat: "full",
     labels: {
@@ -176,6 +182,7 @@ const typeData = {
   },
   "DTB Overig": {
     // Church membership register
+    enDocumentType: "Church Membership Registers",
     recordType: RT.OtherChurchEvent,
     recordSubtype: RecordSubtype.MemberRegistration,
     nameFormat: "full",
@@ -196,6 +203,7 @@ const typeData = {
   // other document types in alphabetical order
   "Beroep en bedrijf": {
     // Profession and business
+    enDocumentType: "Profession and Business",
     recordType: RT.Employment,
     nameFormat: "full",
     labels: {
@@ -213,6 +221,7 @@ const typeData = {
   },
   Bevolkingsregister: {
     // Population register
+    enDocumentType: "Population Registers",
     recordType: RT.PopulationRegister,
     nameFormat: "full",
     labels: {
@@ -226,6 +235,7 @@ const typeData = {
   },
   Bidprentjes: {
     // Prayer cards (Faire-parts)
+    enDocumentType: "Prayer Cards",
     recordType: RT.Death,
     nameFormat: "full",
     labels: {
@@ -241,10 +251,12 @@ const typeData = {
   },
   Collecties: {
     // Miscellaneous collections
+    enDocumentType: "Miscellaneous Collections",
     recordType: RT.Unclassified,
   },
   Familieadvertenties: {
     // Family announcements
+    enDocumentType: "Family Announcements",
     recordTypeFromEvent: { Geboorte: RT.Birth, Overlijden: RT.Death },
     nameFormat: "full",
     labels: {
@@ -258,6 +270,7 @@ const typeData = {
   },
   "Fiscaal en financieel": {
     // Tax and financial records
+    enDocumentType: "Tax and Financial Registers",
     recordTypeFromEvent: { Haardstedegeld: RT.Tax, patentvermelding: RT.Patent, Grondschatting: RT.LandTax },
     nameFormat: "full",
     labels: {
@@ -271,10 +284,12 @@ const typeData = {
   },
   Instellingsregister: {
     // Institutional register - I can no longer find any examples
+    enDocumentType: "Institutional Registers",
     recordType: RT.Unclassified,
   },
   "Memories van Successie": {
-    // Memories of succession
+    // Memories of succession - Death duties file
+    enDocumentType: "Death Duties Files",
     recordType: RT.Death,
     nameFormat: "full",
     labels: {
@@ -288,42 +303,52 @@ const typeData = {
   },
   Militairen: {
     // Military sources
+    enDocumentType: "Military sources",
     recordType: RT.Military,
   },
   "Misdaad en straf": {
     // Crime and punishment
-    recordType: RT.Unclassified,
+    enDocumentType: "Crime and Punishment",
+    recordType: RT.CriminalRegister,
   },
   "Notariële archieven": {
     // Notarial archives
+    enDocumentType: "Notarial Archives",
     recordType: RT.Unclassified,
   },
   "Onroerend goed": {
     // Real estate
+    enDocumentType: "Real Estate",
     recordType: RT.Unclassified,
   },
   "Rechterlijke archieven": {
     // Court registers
+    enDocumentType: "Court Registers",
     recordType: RT.Unclassified,
   },
   "Sociale zorg": {
     // Social care
+    enDocumentType: "Social Care",
     recordType: RT.Unclassified,
   },
   Slavernijbronnen: {
     // Slavery records
+    enDocumentType: "Slavery Records",
     recordType: RT.Unclassified,
   },
   "Tweede Wereldoorlog": {
     // World War II
-    recordType: RT.Unclassified,
+    enDocumentType: "World War II",
+    recordType: RT.Military,
   },
   "Vestiging en vertrek": {
     // Migration
+    enDocumentType: "Migration",
     recordTypeFromEvent: { Vertrek: RT.Emigration },
   },
   "VOC Opvarenden": {
-    // VOC Passengers (United East India Company Passengers) or (Dutch East India Company passengers)
+    // VOC Passengers (United East India Company Passengers or Dutch East India Company passengers)
+    enDocumentType: "Dutch East India Company Passengers",
     recordType: RT.PassengerList,
   },
 };
@@ -762,7 +787,11 @@ class WiewaswieEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   getSourceTitle() {
-    return this.documentType;
+    let title = this.documentType;
+    if (this.typeData && this.typeData.enDocumentType) {
+      title += " (" + this.typeData.enDocumentType + ")";
+    }
+    return title;
   }
 
   getSourceReference() {

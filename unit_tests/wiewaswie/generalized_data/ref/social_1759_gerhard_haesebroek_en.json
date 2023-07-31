@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Gerhard Haesebroek"
+  },
+  "eventDate": {
+    "dateString": "11 Jul 1759"
+  },
+  "eventPlace": {
+    "placeString": "Gelderland, Nederland"
+  },
+  "hasValidData": true
+}

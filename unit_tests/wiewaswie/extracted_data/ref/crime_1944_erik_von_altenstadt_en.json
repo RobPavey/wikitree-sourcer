@@ -1,0 +1,88 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/89726253",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Registered",
+        "value": "Erik von Schmit Von Altenstadt"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Registratie",
+      "dataKey": "SourceDetail.Event"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "Misdaad en straf",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Stadsarchief Amsterdam",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Amsterdam",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Noord-Holland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "5225",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "6181",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Registration date",
+      "value": "01-01-1944",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Amsterdam",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Deel: 6181, Periode: 1944",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Politierapporten '40-'45",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "Rapportnummer: 60 Wijkbureau: Leidseplein <a href=\"https://archief.amsterdam/archief/5225/6181\" target=\"_blank\" title=\"https://archief.amsterdam/archief/5225/6181\">https://archief.amsterdam/archief/5225/6181</a>",
+      "dataKey": "Comment"
+    },
+    {
+      "label": "AkteSoort",
+      "value": "Registratie",
+      "dataKey": "Comment"
+    },
+    {
+      "label": "filename",
+      "value": "EVOPR0006200106",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "https://archief.amsterdam/indexen/deeds/10c6fa1a-2c23-4a84-b865-cd4ba8c0c72f",
+  "title": "Misdaad en straf met Erik von Schmit Von Altenstadt"
+}

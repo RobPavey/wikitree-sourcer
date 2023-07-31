@@ -1,0 +1,99 @@
+{
+  "url": "https://www.wiewaswie.nl/nl/detail/91447572",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Verkoper",
+        "value": "Erven Johanna Maria Pekstok wed. Curtius van Weijler"
+      }
+    ],
+    [
+      {
+        "label": "Koper",
+        "value": "Ds. Aäron le Grand"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Registratie",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "28-11-1780",
+      "dataKey": "SourceDetail.EventDate"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "Rechterlijke archieven",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Stadsarchief Amsterdam",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Amsterdam",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Noord-Holland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "5062",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "154",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Registration date",
+      "value": "28-11-1780",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Amsterdam",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Collection",
+      "value": "Deel: 154, Periode: 1780",
+      "dataKey": "SourceDetail.Collection"
+    },
+    {
+      "label": "Book",
+      "value": "Kwijtscheldingen",
+      "dataKey": "SourceDetail.Book"
+    },
+    {
+      "label": "Opmerking",
+      "value": "Omschrijving: Huis en erf, het vierde huis benoorden de Reestraat\nLocatie in bron: Keizersgracht (WZ)\nLocatie: Keizersgracht\n<a href=\"https://archief.amsterdam/archief/5062/154\" target=\"_blank\" title=\"https://archief.amsterdam/archief/5062/154\">https://archief.amsterdam/archief/5062/154</a>",
+      "dataKey": "Comment"
+    },
+    {
+      "label": "AkteSoort",
+      "value": "Registratie",
+      "dataKey": "Comment"
+    },
+    {
+      "label": "filename",
+      "value": "A11653000161",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "https://archief.amsterdam/indexen/deeds/01e3f05f-c0d9-4e6d-9554-2b767b9c7d05",
+  "title": "Rechterlijke archieven met Erven Johanna Maria Pekstok wed. Curtius van Weijler"
+}

@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "name": "Hendk van Zyl"
+  },
+  "eventDate": {
+    "dateString": "1 Jan 1817"
+  },
+  "eventPlace": {
+    "placeString": "Noord-Holland, Nederland"
+  },
+  "hasValidData": true
+}
