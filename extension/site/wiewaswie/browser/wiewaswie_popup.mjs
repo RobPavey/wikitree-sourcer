@@ -32,8 +32,8 @@ async function setupWiewaswiePopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
     extractFailedMessage:
-      "It looks like a WieWasWie (NL) page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
-    generalizeFailedMessage: "It looks like a WieWasWie (NL) page but does not contain the required data.",
+      "It looks like a WieWasWie page but either not a detail page or not a search results page with an entry expanded.\n\nOn the search results page it will use the first expanded result.",
+    generalizeFailedMessage: "It looks like a WieWasWie page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     buildHouseholdTableFunction: buildHouseholdTable,

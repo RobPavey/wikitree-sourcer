@@ -239,6 +239,10 @@ const typeData = {
       },
     },
   },
+  Collecties: {
+    // Miscellaneous collections
+    recordType: RT.Unclassified,
+  },
   Familieadvertenties: {
     // Family announcements
     recordTypeFromEvent: { Geboorte: RT.Birth, Overlijden: RT.Death },
@@ -316,7 +320,7 @@ const typeData = {
   },
   "Vestiging en vertrek": {
     // Migration
-    recordType: RT.Unclassified,
+    recordTypeFromEvent: { Vertrek: RT.Emigration },
   },
   "VOC Opvarenden": {
     // VOC Passengers (United East India Company Passengers) or (Dutch East India Company passengers)
@@ -497,13 +501,28 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
+    let nameObj = undefined;
     if (this.typeData.nameFormat == "full") {
       let name = this.extractIndexedPersonFieldByFieldType(0, FT.fullName);
-      return this.makeNameObjFromFullName(name);
+      nameObj = this.makeNameObjFromFullName(name);
     } else if (this.typeData.nameFormat == "forenamesOnly") {
       let forenames = this.extractIndexedPersonFieldByFieldType(0, FT.forenames);
-      return this.makeNameObjFromForenames(forenames);
+      nameObj = this.makeNameObjFromForenames(forenames);
     }
+
+    if (!nameObj) {
+      // can't find name in person fields, extract it from the title
+      let title = this.ed.title;
+      if (title) {
+        const prefix = this.documentType + " met ";
+        if (title.startsWith(prefix)) {
+          let name = title.substring(prefix.length);
+          nameObj = this.makeNameObjFromFullName(name);
+        }
+      }
+    }
+
+    return nameObj;
   }
 
   getGender() {

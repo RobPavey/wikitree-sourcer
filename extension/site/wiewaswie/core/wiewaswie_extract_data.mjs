@@ -100,9 +100,37 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  const container = document.querySelector("body > div.sourcedetail-themepage");
+  let container = document.querySelector("body > div.sourcedetail-themepage");
+
   if (!container) {
-    return result;
+    const visibleDocs = document.querySelectorAll(
+      "div.ng-scope[ng-if='vm.VisibleSourceDocumentList[loPerson.PersonId] == true'] > iframe"
+    );
+
+    //console.log("visibleDocs.length is : " + visibleDocs.length);
+    //console.log(visibleDocs);
+
+    if (visibleDocs.length == 0) {
+      return result;
+    }
+
+    let iframe = visibleDocs[0];
+    container = iframe.contentWindow.document.body.querySelector("div.sourcedetail-themepage");
+
+    if (!container) {
+      return result;
+    }
+
+    let urlNode = container.querySelector("div.showurl input");
+    if (!urlNode) {
+      return result;
+    }
+
+    let url = urlNode.value;
+    if (!url) {
+      return result;
+    }
+    result.url = url;
   }
 
   const row = container.querySelector("div.row");
@@ -124,6 +152,12 @@ function extractData(document, url) {
       result.originalSourceLink = href;
     }
   }
+
+  const title = container.querySelector("div > h2");
+  if (title) {
+    result.title = title.textContent;
+  }
+
   result.success = true;
 
   //console.log(result);
