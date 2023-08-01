@@ -1813,13 +1813,13 @@ class NarrativeBuilder {
     let birthPlace = this.eventGd.inferBirthPlace();
 
     if (birthDateObj) {
-      this.narrative += ". " + this.getPronounAndPastTenseInitialCaps() + " was born ";
+      this.narrative += ". " + this.getPronounAndPastTenseInitialCaps() + " born ";
       this.narrative += this.formatDateObj(birthDateObj, true);
       if (birthPlace) {
         this.narrative += " " + this.getPlaceWithPreposition(eventPlace);
       }
     } else if (birthPlace) {
-      this.narrative += ". " + this.getPronounAndPastTenseInitialCaps() + " was born ";
+      this.narrative += ". " + this.getPronounAndPastTenseInitialCaps() + " born ";
       this.narrative += this.getPlaceWithPreposition(eventPlace);
     }
 

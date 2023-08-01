@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Profession || Birth Date || Birth Place\n|-\n| David van Zwyndregt || Scheepstimmerman || 15 Dec 1806 || Vlissingen\n|-\n| Jacoba Elisabeth Heyl || geen || 23 Apr 1805 || Veere\n|-\n| Rokus van Zwyndregt || Kleermakersleerling || 28 Oct 1835 || Vlissingen\n|-\n| Jan Hendrik van Zwyndregt || geen || 17 Aug 1839 || Vlissingen\n|-\n| Catharina van Zwyndregt || geen || 15 Oct 1837 || Vlissingen\n|-\n| Jozina Arinksen || geen || 24 Apr 1777 || Vlissingen\n|}"
+  }
+}

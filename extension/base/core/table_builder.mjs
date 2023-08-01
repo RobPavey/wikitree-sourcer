@@ -67,6 +67,7 @@ class TableBuilder {
       birthDate: "Birth Date",
       birthYear: "Birth Year",
       occupation: "Occupation",
+      profession: "Profession",
       employer: "Employer",
       birthPlace: "Birth Place",
     };

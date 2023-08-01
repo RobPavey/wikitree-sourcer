@@ -1,7 +1,7 @@
 {
   "sourceOfData": "wiewaswie",
   "sourceType": "record",
-  "recordType": "BirthRegistration",
+  "recordType": "Birth",
   "name": {
     "name": "Jan van der Wijk",
     "forenames": "Jan",

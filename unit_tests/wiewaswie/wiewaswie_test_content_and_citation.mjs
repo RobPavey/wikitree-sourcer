@@ -209,8 +209,8 @@ const regressionData = [
     url: "https://www.wiewaswie.nl/en/detail/109473861",
   },
   {
-    caseName: "pop_reg_1850_david_van_zwyndregt_en",
-    url: "https://www.wiewaswie.nl/en/detail/109473861",
+    caseName: "pop_reg_1850_david_van_zwyndregt_nl",
+    url: "https://www.wiewaswie.nl/nl/detail/109473861",
   },
   {
     caseName: "pop_reg_1854_pieter_van_gaard_en",

@@ -22,18 +22,33 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { registerTest } from "../test_utils/test_registry.mjs";
+import { buildHouseholdTable } from "../../extension/base/core/table_builder.mjs";
+import { buildCitation } from "../../extension/site/wiewaswie/core/wiewaswie_build_citation.mjs";
+import { runBuildHouseholdTableTests } from "../test_utils/test_build_household_table_utils.mjs";
 
-import * as test_content_and_citation from "./wiewaswie_test_content_and_citation.mjs";
-import * as test_build_search_data from "./wiewaswie_test_build_search_data.mjs";
-import * as test_build_household_table from "./wiewaswie_test_build_household_table.mjs";
+const regressionData = [
+  {
+    caseName: "pop_reg_1815_jan_sties_en",
+  },
+  {
+    caseName: "pop_reg_1815_jan_sties_nl",
+  },
+  {
+    caseName: "pop_reg_1850_david_van_zwyndregt_en",
+  },
+  {
+    caseName: "pop_reg_1850_david_van_zwyndregt_nl",
+  },
+  {
+    caseName: "pop_reg_1854_pieter_van_gaard_en",
+  },
+  {
+    caseName: "pop_reg_1854_pieter_van_gaard_nl",
+  },
+];
 
 async function runTests(testManager) {
-  await test_content_and_citation.runTests(testManager);
-  await test_build_household_table.runTests(testManager);
-  await test_build_search_data.runTests(testManager);
+  await runBuildHouseholdTableTests("wiewaswie", buildHouseholdTable, buildCitation, regressionData, testManager);
 }
-
-registerTest("wiewaswie", runTests);
 
 export { runTests };

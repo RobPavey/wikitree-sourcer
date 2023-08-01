@@ -1,0 +1,68 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "PopulationRegister",
+  "name": {
+    "name": "David van Zwyndregt",
+    "forenames": "David",
+    "lastName": "van Zwyndregt"
+  },
+  "eventDate": {
+    "yearString": "1850"
+  },
+  "eventPlace": {
+    "placeString": "Vlissingen, Zeeland, Nederland"
+  },
+  "birthDate": {
+    "dateString": "15 Dec 1806"
+  },
+  "birthPlace": {
+    "placeString": "Vlissingen"
+  },
+  "occupation": "Scheepstimmerman",
+  "householdArrayFields": [
+    "name",
+    "profession",
+    "birthDate",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "David van Zwyndregt",
+      "profession": "Scheepstimmerman",
+      "birthDate": "15 Dec 1806",
+      "birthPlace": "Vlissingen"
+    },
+    {
+      "name": "Jacoba Elisabeth Heyl",
+      "profession": "geen",
+      "birthDate": "23 Apr 1805",
+      "birthPlace": "Veere"
+    },
+    {
+      "name": "Rokus van Zwyndregt",
+      "profession": "Kleermakersleerling",
+      "birthDate": "28 Oct 1835",
+      "birthPlace": "Vlissingen"
+    },
+    {
+      "name": "Jan Hendrik van Zwyndregt",
+      "profession": "geen",
+      "birthDate": "17 Aug 1839",
+      "birthPlace": "Vlissingen"
+    },
+    {
+      "name": "Catharina van Zwyndregt",
+      "profession": "geen",
+      "birthDate": "15 Oct 1837",
+      "birthPlace": "Vlissingen"
+    },
+    {
+      "name": "Jozina Arinksen",
+      "profession": "geen",
+      "birthDate": "24 Apr 1777",
+      "birthPlace": "Vlissingen"
+    }
+  ],
+  "hasValidData": true
+}

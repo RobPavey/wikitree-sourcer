@@ -44,8 +44,8 @@ const FT = {
 const typeData = {
   "BS Geboorte": {
     // Birth certificates
-    enDocumentType: "Birth certificates",
-    recordType: RT.BirthRegistration,
+    enDocumentType: "Birth Certificates",
+    recordType: RT.Birth,
     nameFormat: "full",
     labels: {
       en: {
@@ -64,7 +64,7 @@ const typeData = {
   },
   "BS Huwelijk": {
     // Marriage certificates
-    enDocumentType: "Marriage certificates",
+    enDocumentType: "Marriage Certificates",
     recordType: RT.Marriage,
     fixedGender: "male", // the primary person is always the groom
     nameFormat: "full",
@@ -91,8 +91,8 @@ const typeData = {
   },
   "BS Overlijden": {
     // Death certificates
-    enDocumentType: "Death certificates",
-    recordType: RT.DeathRegistration,
+    enDocumentType: "Death Certificates",
+    recordType: RT.Death,
     nameFormat: "full",
     labels: {
       en: {
