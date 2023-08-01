@@ -33,7 +33,21 @@ function separateLastNameIntoParts(inputName) {
 
   lastName = inputName.trim();
 
-  const prefixes = ["de ", "den ", "der ", "ten ", "ter ", "van ", "ver ", "von ", "Klein ", "Groot "];
+  const prefixes = [
+    "de ",
+    "den ",
+    "der ",
+    "'t ",
+    "t' ",
+    "te ",
+    "ten ",
+    "ter ",
+    "van ",
+    "ver ",
+    "von ",
+    "Klein ",
+    "Groot ",
+  ];
 
   let possiblePrefixes = true;
   while (possiblePrefixes) {
@@ -51,7 +65,7 @@ function separateLastNameIntoParts(inputName) {
     }
   }
 
-  const noSpacePrefixes = ["de", "den", "der", "d'", "ten", "ter", "van", "ver", "von", "klein", "droot"];
+  const noSpacePrefixes = ["de", "den", "der", "d'", "ten", "ter", "'t", "t'", "van", "ver", "von", "klein", "droot"];
   possiblePrefixes = true;
   while (possiblePrefixes) {
     let foundPrefix = false;

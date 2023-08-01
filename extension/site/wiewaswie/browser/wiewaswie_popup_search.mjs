@@ -32,8 +32,8 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const wiewaswieStartYear = 1100;
-const wiewaswieEndYear = 2023;
+const wiewaswieStartYear = 1000; // I have seem lots of dates like 1039 and some of 1000
+const wiewaswieEndYear = 2040;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -47,7 +47,12 @@ async function wiewaswieSearch(generalizedData) {
 
     let fieldData = buildResult.fieldData;
 
-    const searchUrl = "https://www.wiewaswie.nl/en/search/?advancedsearch=1";
+    let searchUrl = "https://www.wiewaswie.nl/en/search/?advancedsearch=1";
+    let lang = options.search_wiewaswie_searchLang;
+    if (lang && lang == "nl") {
+      searchUrl = "https://www.wiewaswie.nl/nl/zoeken/?advancedsearch=1";
+    }
+
     try {
       const wiewaswieSearchData = {
         timeStamp: Date.now(),

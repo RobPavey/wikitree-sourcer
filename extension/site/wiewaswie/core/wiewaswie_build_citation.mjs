@@ -26,8 +26,17 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 import { WiewaswieEdReader } from "./wiewaswie_ed_reader.mjs";
 
 function buildWiewaswieUrl(ed, builder) {
-  // could provide option to use a search style URL but don't see any reason to so far
-  return ed.url;
+  let url = ed.url;
+
+  // url is like this: https://www.wiewaswie.nl/en/detail/77973687
+
+  let lang = builder.options.citation_wiewaswie_languageVersionToCite;
+
+  if (lang != "page") {
+    url = url.replace(/\/\w\w\/detail\//, "/" + lang + "/detail/");
+  }
+
+  return url;
 }
 
 function buildSourceTitle(ed, gd, edReader, builder) {

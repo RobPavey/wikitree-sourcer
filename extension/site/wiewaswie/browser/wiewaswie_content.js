@@ -44,7 +44,7 @@ async function checkForPendingSearch() {
     return;
   }
 
-  if (/https\:\/\/www\.wiewaswie\.nl\/\w\w\/search\/\?advancedsearch=1/.test(document.URL)) {
+  if (/https\:\/\/www\.wiewaswie\.nl\/\w\w\/\w+\/\?advancedsearch=1/.test(document.URL)) {
     //console.log("checkForPendingSearch: URL matches");
 
     let wiewaswieSearchData = await getPendingSearch();
@@ -70,21 +70,22 @@ async function checkForPendingSearch() {
         //console.log(fieldData);
 
         let searchContainer = document.querySelector("div.row.search-advanced");
+        if (searchContainer) {
+          for (var key in fieldData) {
+            //console.log("checkForPendingSearch: key is: " + key);
+            if (key) {
+              let value = fieldData[key];
+              //console.log("checkForPendingSearch: value is: " + value);
 
-        for (var key in fieldData) {
-          //console.log("checkForPendingSearch: key is: " + key);
-          if (key) {
-            let value = fieldData[key];
-            //console.log("checkForPendingSearch: value is: " + value);
+              let selector = "input[ng-model='" + key + "']";
+              let inputElement = searchContainer.querySelector(selector);
+              if (inputElement) {
+                //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
+                inputElement.value = value;
 
-            let selector = "input[ng-model='" + key + "']";
-            let inputElement = searchContainer.querySelector(selector);
-            if (inputElement) {
-              //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
-              inputElement.value = value;
-
-              var event = new Event("change");
-              inputElement.dispatchEvent(event);
+                var event = new Event("change");
+                inputElement.dispatchEvent(event);
+              }
             }
           }
         }

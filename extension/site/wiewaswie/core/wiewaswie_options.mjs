@@ -24,9 +24,30 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchOptionsGroup = {
+  category: "search",
+  subcategory: "wiewaswie",
+  tab: "search",
+  subsection: "wiewaswie",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "searchLang",
+      type: "select",
+      label: "Which language verion of the search page to use",
+      values: [
+        { value: "en", text: "en" },
+        { value: "nl", text: "nl" },
+      ],
+      defaultValue: "en",
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -35,16 +56,23 @@ const citationOptionsGroup = {
   subsection: "wiewaswie",
   options: [
     {
-      optionName: "changeNamesToInitialCaps",
-      type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
-      defaultValue: true,
+      optionName: "languageVersionToCite",
+      type: "select",
+      label: "Which language version of the WiewasWie details page to cite",
+      values: [
+        { value: "page", text: "Use the language of the current page" },
+        { value: "en", text: "en" },
+        { value: "nl", text: "nl" },
+      ],
+      defaultValue: "page",
     },
   ],
 };
 
 registerSubsectionForOptions("search", "wiewaswie", "WieWasWie (NL)");
 registerSiteSearchPopupOptionsGroup("wiewaswie", 7, 7);
+registerSubheadingForOptions("search", "wiewaswie", "parameters", "Search Parameters");
+registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "wiewaswie", "WieWasWie (NL)");
 registerOptionsGroup(citationOptionsGroup);

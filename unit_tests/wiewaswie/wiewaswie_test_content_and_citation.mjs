@@ -34,6 +34,14 @@ const regressionData = [
   {
     caseName: "baptism_1789_gerryt_goudemond_en",
     url: "https://www.wiewaswie.nl/en/detail/54339285",
+    optionVariants: [
+      {
+        variantName: "lang_nl",
+        optionOverrides: {
+          citation_wiewaswie_languageVersionToCite: "nl",
+        },
+      },
+    ],
   },
   {
     caseName: "baptism_1789_gerryt_goudemond_nl",
