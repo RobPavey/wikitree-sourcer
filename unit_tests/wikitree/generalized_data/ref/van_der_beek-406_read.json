@@ -1,0 +1,57 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "George Frans",
+    "lastName": "van der Beek"
+  },
+  "lastNameAtBirth": "van der Beek",
+  "lastNameAtDeath": "van der Beek",
+  "mothersMaidenName": "Broekman",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "17 Dec 1861",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Waardhuizen, Noord-Brabant, Nederland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Gijsbert van der Beek",
+        "lastName": "Beek",
+        "forenames": "Gijsbert van der"
+      },
+      "lastNameAtBirth": "Beek",
+      "lastNameAtDeath": "Beek"
+    },
+    "mother": {
+      "name": {
+        "name": "Adriana Broekman",
+        "lastName": "Broekman",
+        "forenames": "Adriana"
+      },
+      "lastNameAtBirth": "Broekman",
+      "lastNameAtDeath": "Broekman"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Hendrika Christina Verweij",
+        "lastName": "Verweij",
+        "forenames": "Hendrika Christina"
+      },
+      "lastNameAtBirth": "Verweij",
+      "lastNameAtDeath": "Verweij",
+      "marriageDate": {
+        "dateString": "5 Mar 1886"
+      },
+      "marriagePlace": {
+        "placeString": "Haarlemmermeer, North Holland, Netherlands"
+      }
+    }
+  ],
+  "hasValidData": true
+}

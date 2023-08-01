@@ -3,7 +3,9 @@
   "sourceType": "record",
   "recordType": "Death",
   "name": {
-    "name": "Helena van Zwolgen"
+    "name": "Helena van Zwolgen",
+    "forenames": "Helena",
+    "lastName": "van Zwolgen"
   },
   "eventDate": {
     "dateString": "10 Dec 1898"

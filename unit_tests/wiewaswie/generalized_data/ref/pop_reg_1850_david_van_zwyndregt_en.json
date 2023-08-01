@@ -3,7 +3,9 @@
   "sourceType": "record",
   "recordType": "PopulationRegister",
   "name": {
-    "name": "David van Zwyndregt"
+    "name": "David van Zwyndregt",
+    "forenames": "David",
+    "lastName": "van Zwyndregt"
   },
   "eventDate": {
     "yearString": "1850"

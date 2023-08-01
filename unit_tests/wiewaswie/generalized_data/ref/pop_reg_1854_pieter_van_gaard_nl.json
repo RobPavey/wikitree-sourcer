@@ -3,7 +3,9 @@
   "sourceType": "record",
   "recordType": "PopulationRegister",
   "name": {
-    "name": "Pieter Gerardus Herms van Gaard"
+    "name": "Pieter Gerardus Herms van Gaard",
+    "forenames": "Pieter Gerardus Herms",
+    "lastName": "van Gaard"
   },
   "eventDate": {
     "dateString": "30 Oct 1854"

@@ -3,7 +3,9 @@
   "sourceType": "record",
   "recordType": "Burial",
   "name": {
-    "name": "Maria van den Berg"
+    "name": "Maria van den Berg",
+    "forenames": "Maria",
+    "lastName": "van den Berg"
   },
   "eventDate": {
     "dateString": "25 Apr 1776"

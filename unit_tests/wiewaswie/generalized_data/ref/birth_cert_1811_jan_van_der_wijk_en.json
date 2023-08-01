@@ -3,7 +3,9 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "name": "Jan van der Wijk"
+    "name": "Jan van der Wijk",
+    "forenames": "Jan",
+    "lastName": "van der Wijk"
   },
   "personGender": "male",
   "eventDate": {

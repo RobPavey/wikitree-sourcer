@@ -16,7 +16,9 @@
   "spouses": [
     {
       "name": {
-        "name": "Gerardus van Wees"
+        "name": "Gerardus van Wees",
+        "forenames": "Gerardus",
+        "lastName": "van Wees"
       }
     }
   ],

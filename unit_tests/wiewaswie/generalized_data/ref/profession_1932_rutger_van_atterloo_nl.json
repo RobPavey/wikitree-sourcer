@@ -3,7 +3,9 @@
   "sourceType": "record",
   "recordType": "Employment",
   "name": {
-    "name": "Rutger Antony van Atterloo"
+    "name": "Rutger Antony van Atterloo",
+    "forenames": "Rutger Antony",
+    "lastName": "van Atterloo"
   },
   "eventDate": {
     "yearString": "1932"

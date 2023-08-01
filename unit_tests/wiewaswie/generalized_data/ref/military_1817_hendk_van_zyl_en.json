@@ -3,7 +3,9 @@
   "sourceType": "record",
   "recordType": "Military",
   "name": {
-    "name": "Hendk van Zyl"
+    "name": "Hendk van Zyl",
+    "forenames": "Hendk",
+    "lastName": "van Zyl"
   },
   "eventDate": {
     "dateString": "1 Jan 1817"

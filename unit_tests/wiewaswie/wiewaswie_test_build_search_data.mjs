@@ -26,12 +26,18 @@ import { buildSearchData } from "../../extension/site/wiewaswie/core/wiewaswie_b
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+  {
+    caseName: "wikitree_van_der_beek-406_read",
+    inputPath: "wikitree/generalized_data/ref/van_der_beek-406_read",
+    optionVariants: [
+      {
+        variantName: "lang_nl",
+        optionOverrides: {
+          search_wiewaswie_searchLang: "nl",
+        },
+      },
+    ],
   },
-  */
 ];
 
 async function runTests(testManager) {

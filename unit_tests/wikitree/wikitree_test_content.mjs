@@ -122,6 +122,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Peffers-331",
   },
   {
+    // To test search on cwgc
+    caseName: "peffers-436_read",
+    url: "https://www.wikitree.com/wiki/Peffers-436",
+  },
+  {
     caseName: "spencer-1038_read",
     url: "https://www.wikitree.com/wiki/Spencer-1038",
   },
@@ -131,9 +136,9 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Winbush-11",
   },
   {
-    // To test search on cwgc
-    caseName: "peffers-436_read",
-    url: "https://www.wikitree.com/wiki/Peffers-436",
+    // To test search on wiewaswie
+    caseName: "van_der_beek-406_read",
+    url: "https://www.wikitree.com/wiki/Van_der_Beek-406",
   },
 ];
 

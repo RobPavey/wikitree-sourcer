@@ -4,7 +4,9 @@
   "recordType": "OtherChurchEvent",
   "recordSubtype": "MemberRegistration",
   "name": {
-    "name": "Reinder Harmens van der Meulen"
+    "name": "Reinder Harmens van der Meulen",
+    "forenames": "Reinder Harmens",
+    "lastName": "van der Meulen"
   },
   "personGender": "male",
   "eventDate": {

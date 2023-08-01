@@ -23,8 +23,9 @@ SOFTWARE.
 */
 
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
-import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
+import { separateFullNameIntoParts } from "./wiewaswie_name_utils.mjs";
 
 const FT = {
   forenames: "forenames",
@@ -494,6 +495,70 @@ class WiewaswieEdReader extends ExtractedDataReader {
           }
         }
       }
+    }
+  }
+
+  makeNameObjFromFullName(fullNameString) {
+    if (fullNameString) {
+      let nameObj = new NameObj();
+
+      fullNameString = fullNameString.trim();
+
+      // sometimes there is a prefix on the start of the name. e.g:
+      //   de erfgenamen van + Nicolaas Hendrik van der Wal, wedr. van Cornelia Weydom
+      // which translates to:
+      //   the heirs of + Nicolaas Hendrik van der Wal, wedr. by Cornelia Weydom
+      // Maybe this should be handled at a higher level? But it works here for now.
+      const sentencePrefixes = ["de erfgenamen van ", "+ "];
+      for (let prefix of sentencePrefixes) {
+        if (fullNameString.startsWith(prefix)) {
+          let newFullName = fullNameString.substring(prefix.length).trim();
+          if (newFullName) {
+            fullNameString = newFullName;
+          }
+        }
+      }
+
+      // sometimes the name that was extracted is actially several peoples names
+      // e.g.: "Erven Johanna Maria Pekstok wed. Curtius van Weijler"
+      const nameSeparators = [" wed ", " wed. ", " wedr ", "wedr. ", ", "];
+      for (let nameSeparator of nameSeparators) {
+        let separatorIndex = fullNameString.indexOf(nameSeparator);
+        if (separatorIndex != -1) {
+          let newFullName = fullNameString.substring(0, separatorIndex).trim();
+          if (newFullName) {
+            fullNameString = newFullName;
+          }
+        }
+      }
+
+      // remove endings that can be left - like , or .
+      const endingsToRemove = [",", "."];
+      for (let ending of endingsToRemove) {
+        if (fullNameString.endsWith(ending)) {
+          let newFullName = fullNameString.substring(0, fullNameString.length - ending.length).trim();
+          if (newFullName) {
+            fullNameString = newFullName;
+          }
+        }
+      }
+
+      nameObj.setFullName(fullNameString);
+
+      // in order to search *from* wiewaswie it halps to be smart about how to separate
+      // the forenames and last name when using name prefixes. I guess this code could be in
+      // generalizeDataUtils and used in Dutch profiles
+      let parts = separateFullNameIntoParts(fullNameString);
+      if (parts) {
+        if (parts.forenames) {
+          nameObj.setForenames(parts.forenames);
+        }
+        if (parts.lastName) {
+          nameObj.setLastName(parts.lastName);
+        }
+      }
+
+      return nameObj;
     }
   }
 

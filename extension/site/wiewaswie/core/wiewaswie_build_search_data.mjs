@@ -22,78 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function separateLastNameIntoParts(inputName) {
-  let lastNamePrefix = "";
-  let lastName = "";
-  let patronym = "";
-
-  if (!inputName) {
-    return { lastName: lastName, lastNamePrefix: lastNamePrefix, patronym: patronym };
-  }
-
-  lastName = inputName.trim();
-
-  const prefixes = [
-    "de ",
-    "den ",
-    "der ",
-    "'t ",
-    "t' ",
-    "te ",
-    "ten ",
-    "ter ",
-    "van ",
-    "ver ",
-    "von ",
-    "Klein ",
-    "Groot ",
-  ];
-
-  let possiblePrefixes = true;
-  while (possiblePrefixes) {
-    let foundPrefix = false;
-    for (let prefix of prefixes) {
-      if (lastName.startsWith(prefix)) {
-        lastName = lastName.substring(prefix.length);
-        lastNamePrefix += prefix;
-        foundPrefix = true;
-      }
-    }
-
-    if (!foundPrefix) {
-      possiblePrefixes = false;
-    }
-  }
-
-  const noSpacePrefixes = ["de", "den", "der", "d'", "ten", "ter", "'t", "t'", "van", "ver", "von", "klein", "droot"];
-  possiblePrefixes = true;
-  while (possiblePrefixes) {
-    let foundPrefix = false;
-    for (let prefix of noSpacePrefixes) {
-      if (lastName.toLowerCase().startsWith(prefix)) {
-        if (lastName.length > prefix.length) {
-          let nextLetter = lastName[prefix.length];
-          if (nextLetter == nextLetter.toUpperCase()) {
-            let previousLetter = lastName[prefix.length - 1];
-            if (previousLetter == previousLetter.toLowerCase()) {
-              lastName = lastName.substring(prefix.length);
-              lastNamePrefix += prefix + " ";
-              foundPrefix = true;
-            }
-          }
-        }
-      }
-    }
-
-    if (!foundPrefix) {
-      possiblePrefixes = false;
-    }
-  }
-
-  lastNamePrefix = lastNamePrefix.trim();
-
-  return { lastName: lastName, lastNamePrefix: lastNamePrefix, patronym: patronym };
-}
+import { separateLastNameIntoParts } from "./wiewaswie_name_utils.mjs";
 
 function buildSearchData(input) {
   const gd = input.generalizedData;

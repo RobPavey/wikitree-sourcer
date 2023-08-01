@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "George Frans",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "van der Beek",
+  "currentLastName": "van der Beek",
+  "mothersMaidenName": "Broekman",
+  "birthDate": "17 Dec 1861",
+  "birthDateStatus": "none",
+  "deathDate": "",
+  "deathDateStatus": "none",
+  "birthLocation": "Waardhuizen, Noord-Brabant, Nederland",
+  "deathLocation": "",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Verweij-419",
+      "name": "Hendrika Christina Verweij",
+      "marriageString": "5 Mar 1886 in Haarlemmermeer, North Holland, Netherlands",
+      "marriageDate": "5 Mar 1886",
+      "marriagePlace": "Haarlemmermeer, North Holland, Netherlands"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Van_der_Beek-406",
+  "currentTabText": "George Frans van der Beek's Profile",
+  "pageType": "read",
+  "wikiId": "Van_der_Beek-406",
+  "name": "George Frans van der Beek",
+  "parents": {
+    "father": {
+      "wikiId": "Van%20der%20Beek-400",
+      "name": "Gijsbert van der Beek"
+    },
+    "mother": {
+      "wikiId": "Broekman-234",
+      "name": "Adriana Broekman"
+    }
+  }
+}

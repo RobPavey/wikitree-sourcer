@@ -3,7 +3,9 @@
   "sourceType": "record",
   "recordType": "Unclassified",
   "name": {
-    "name": "de erfgenamen van + Nicolaas Hendrik van der Wal, wedr van Cornelia Weydom:"
+    "name": "Nicolaas Hendrik van der Wal",
+    "forenames": "Nicolaas Hendrik",
+    "lastName": "van der Wal"
   },
   "eventDate": {
     "dateString": "16 Jan 1803"

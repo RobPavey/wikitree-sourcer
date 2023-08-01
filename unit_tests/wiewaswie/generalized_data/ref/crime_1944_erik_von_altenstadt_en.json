@@ -3,7 +3,9 @@
   "sourceType": "record",
   "recordType": "CriminalRegister",
   "name": {
-    "name": "Erik von Schmit Von Altenstadt"
+    "name": "Erik von Schmit Von Altenstadt",
+    "forenames": "Erik",
+    "lastName": "von Schmit Von Altenstadt"
   },
   "eventDate": {
     "dateString": "1 Jan 1944"

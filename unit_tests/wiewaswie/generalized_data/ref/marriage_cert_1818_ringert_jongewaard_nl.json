@@ -49,7 +49,9 @@
     },
     "mother": {
       "name": {
-        "name": "Neeltje de Reus"
+        "name": "Neeltje de Reus",
+        "forenames": "Neeltje",
+        "lastName": "de Reus"
       }
     }
   },
