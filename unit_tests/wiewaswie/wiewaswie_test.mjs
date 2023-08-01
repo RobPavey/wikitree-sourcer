@@ -25,11 +25,11 @@ SOFTWARE.
 import { registerTest } from "../test_utils/test_registry.mjs";
 
 import * as test_content_and_citation from "./wiewaswie_test_content_and_citation.mjs";
-import * as test_build_search_url from "./wiewaswie_test_build_search_url.mjs";
+import * as test_build_search_data from "./wiewaswie_test_build_search_data.mjs";
 
 async function runTests(testManager) {
   await test_content_and_citation.runTests(testManager);
-  await test_build_search_url.runTests(testManager);
+  await test_build_search_data.runTests(testManager);
 }
 
 registerTest("wiewaswie", runTests);

@@ -22,35 +22,51 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addSameRecordMenuItem,
-  addBackMenuItem,
-  addMenuItem,
-  beginMainMenu,
-  endMainMenu,
-  doAsyncActionWithCatch,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
-  doSearch,
   registerSearchMenuItemFunction,
   testFilterForDatesAndCountries,
+  openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const wiewaswieStartYear = 1837;
-const wiewaswieEndYear = 1992;
+const wiewaswieStartYear = 1100;
+const wiewaswieEndYear = 2023;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function wiewaswieSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+async function wiewaswieSearch(generalizedData) {
+  const input = { generalizedData: generalizedData, options: options };
   doAsyncActionWithCatch("WieWasWie (NL) Search", input, async function () {
-    let loadedModule = await import(`../core/wiewaswie_build_search_url.mjs`);
-    doSearch(loadedModule, input);
+    let loadedModule = await import(`../core/wiewaswie_build_search_data.mjs`);
+    let buildResult = loadedModule.buildSearchData(input);
+
+    let fieldData = buildResult.fieldData;
+
+    const searchUrl = "https://www.wiewaswie.nl/en/search/?advancedsearch=1";
+    try {
+      const wiewaswieSearchData = {
+        timeStamp: Date.now(),
+        url: searchUrl,
+        fieldData: fieldData,
+      };
+
+      // this stores the search data in local storage which is then picked up by the
+      // content script in the new tab/window
+      chrome.storage.local.set({ wiewaswieSearchData: wiewaswieSearchData }, function () {
+        //console.log('saved wiewaswieSearchData, wiewaswieSearchData is:');
+        //console.log(wiewaswieSearchData);
+      });
+    } catch (ex) {
+      console.log("storeDataCache failed");
+    }
+
+    openUrlInNewTab(searchUrl);
+    closePopup();
   });
 }
 
@@ -62,7 +78,7 @@ function addWiewaswieDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addWiewaswieDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "England and Wales";
+  const stdCountryName = "Netherlands";
 
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, wiewaswieStartYear, wiewaswieEndYear, [stdCountryName])) {
@@ -98,85 +114,15 @@ function addWiewaswieDefaultSearchMenuItem(menu, data, backFunction, filter) {
   }
 
   addMenuItem(menu, "Search WieWasWie (NL)...", function (element) {
-    setupWiewaswieSearchSubMenu(data, backFunction, filter);
+    wiewaswieSearch(data.generalizedData);
   });
 
   return true;
 }
 
-async function addWiewaswieSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "wiewaswie", function (element) {
-    wiewaswieSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addWiewaswieSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      wiewaswieStartYear,
-      wiewaswieEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search WieWasWie (NL) Births", function (element) {
-    wiewaswieSearch(data.generalizedData, "Births");
-  });
-}
-
-function addWiewaswieSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      wiewaswieStartYear,
-      wiewaswieEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search WieWasWie (NL) Marriages", function (element) {
-    wiewaswieSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addWiewaswieSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      wiewaswieStartYear,
-      wiewaswieEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search WieWasWie (NL) Deaths", function (element) {
-    wiewaswieSearch(data.generalizedData, "Deaths");
-  });
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupWiewaswieSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  await addWiewaswieSameRecordMenuItem(menu, data, filter);
-  addWiewaswieSearchBirthsMenuItem(menu, data, filter);
-  addWiewaswieSearchMarriagesMenuItem(menu, data, filter);
-  addWiewaswieSearchDeathsMenuItem(menu, data, filter);
-
-  endMainMenu(menu);
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
