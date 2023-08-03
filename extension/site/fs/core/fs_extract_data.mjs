@@ -2622,7 +2622,7 @@ function extractPersonDataFromFetch(document, dataObj, options) {
   return result;
 }
 
-function extractDataFromFetch(document, dataObjects, fetchType, options) {
+function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
   usedLabelIds = {};
 
   let result = {};

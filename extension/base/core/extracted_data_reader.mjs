@@ -206,7 +206,7 @@ class ExtractedDataReader {
       let monthNum = parseInt(month);
       let yearNum = parseInt(year);
 
-      if (isNaN(day) || isNaN(month) || isNaN(year)) {
+      if (isNaN(dayNum) || isNaN(monthNum) || isNaN(yearNum)) {
         return;
       }
 

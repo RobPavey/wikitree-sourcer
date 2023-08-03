@@ -1,0 +1,403 @@
+/*
+MIT License
+
+Copyright (c) 2020 Robert M Pavey
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+import { RT } from "../../../base/core/record_type.mjs";
+import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
+import { placeData } from "./openarch_place_data.mjs";
+
+const typeData = {
+  "DTB Dopen": {
+    // Baptismal registers
+    enDocumentType: "Baptismal Registers",
+    recordType: RT.Baptism,
+  },
+};
+
+class OpenarchEdReader extends ExtractedDataReader {
+  constructor(ed) {
+    super(ed);
+
+    if (ed.dataObj && ed.dataObj.A2A) {
+      this.a2a = ed.dataObj.A2A;
+
+      this.a2aSourceType = this.extractSourceFieldByKey("a2a:SourceType");
+      this.a2aEventType = this.extractEventFieldByKey("a2a:EventType");
+
+      if (this.a2aSourceType) {
+        this.typeData = typeData[this.a2aSourceType];
+        if (this.typeData) {
+          this.recordType = this.typeData.recordType;
+        }
+      }
+    }
+
+    let url = ed.url;
+    // Example record URL
+    // https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
+    if (/^https\:\/\/www\.openarch\.nl\/\w+\:[a-z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
+      let archive = url.replace(/^https\:\/\/www\.openarch\.nl\/(\w+)\:[a-z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
+      if (archive && archive != url) {
+        this.urlArchive = archive;
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Helper functions
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  makeNameObjFromA2aName(a2aName) {
+    // e.g. "a2a:PersonName": { "a2a:PersonNameFirstName": "Hendrik", "a2a:PersonNameLastName": "Goudemond" },
+
+    if (a2aName) {
+      let nameObj = new NameObj();
+
+      let firstName = a2aName["a2a:PersonNameFirstName"];
+      let lastName = a2aName["a2a:PersonNameLastName"];
+
+      if (firstName) {
+        nameObj.setForenames(firstName);
+      }
+      if (lastName) {
+        nameObj.setLastName(lastName);
+      }
+
+      return nameObj;
+    }
+  }
+
+  makeDateObjFromA2aDate(a2aDate) {
+    // e.g.       "a2a:EventDate": { "a2a:Year": "1789", "a2a:Month": "8", "a2a:Day": "14" },
+    if (a2aDate) {
+      let day = a2aDate["a2a:Day"];
+      let month = a2aDate["a2a:Month"];
+      let year = a2aDate["a2a:Year"];
+
+      if (day.length > 2 || month.length > 2 || year.length > 4) {
+        return;
+      }
+
+      let dayNum = parseInt(day);
+      let monthNum = parseInt(month);
+      let yearNum = parseInt(year);
+
+      if (isNaN(dayNum) || isNaN(monthNum) || isNaN(yearNum)) {
+        return;
+      }
+
+      let dateString = DateUtils.getDateStringFromYearMonthDay(yearNum, monthNum, dayNum);
+
+      if (dateString) {
+        let dateObj = new DateObj();
+        dateObj.dateString = dateString;
+        return dateObj;
+      }
+    }
+  }
+
+  makePlaceObjFromA2aPlace(a2aPlace) {
+    // e.g.       "a2a:EventDate": { "a2a:Year": "1789", "a2a:Month": "8", "a2a:Day": "14" },
+    if (a2aPlace) {
+      let place = a2aPlace["a2a:Place"];
+
+      if (place) {
+        let placeString = place;
+        let placeInfo = placeData[place];
+        if (placeInfo) {
+          placeString += ", " + placeInfo.province + ", " + placeInfo.country;
+        } else {
+          placeString += ", Nederland";
+        }
+
+        let placeObj = new PlaceObj();
+        placeObj.placeString = placeString;
+        return placeObj;
+      }
+    }
+  }
+
+  makeParentsFromPersonObjects(father, mother) {
+    if (father || mother) {
+      let parents = {};
+      if (father) {
+        parents.father = {};
+        parents.father.name = this.makeNameObjFromA2aName(father["a2a:PersonName"]);
+      }
+      if (mother) {
+        parents.mother = {};
+        parents.mother.name = this.makeNameObjFromA2aName(mother["a2a:PersonName"]);
+      }
+      return parents;
+    }
+  }
+
+  extractEventFieldByKey(key) {
+    let event = this.a2a["a2a:Event"];
+    if (event) {
+      return event[key];
+    }
+  }
+
+  extractSourceFieldByKey(key) {
+    let source = this.a2a["a2a:Source"];
+    if (source) {
+      return source[key];
+    }
+  }
+
+  extractPersonFieldByKey(personId, key) {
+    return "";
+  }
+
+  extractIndexedPersonFieldByKey(personIndex, key) {
+    let personArray = this.a2a["a2a:Person"];
+    if (personArray && personArray.length > personIndex) {
+      let person = personArray[personIndex];
+      return person[key];
+    }
+  }
+
+  findRelationshipByType(relationType) {
+    let relationshipArray = this.a2a["a2a:RelationEP"];
+    for (let relation of relationshipArray) {
+      let type = relation["a2a:RelationType"];
+      if (type == relationType) {
+        return relation;
+      }
+    }
+  }
+
+  findPersonById(pid) {
+    let personArray = this.a2a["a2a:Person"];
+    for (let person of personArray) {
+      let personPid = person["@pid"];
+      if (personPid == pid) {
+        return person;
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Overrides of the relevant get functions used in commonGeneralizeData
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  hasValidData() {
+    if (!this.ed.success) {
+      return false; //the extract failed, GeneralizedData is not even normally called in this case
+    }
+
+    return true;
+  }
+
+  getSourceType() {
+    return "record";
+  }
+
+  getNameObj() {
+    let a2aName = this.extractIndexedPersonFieldByKey(0, "a2a:PersonName");
+    return this.makeNameObjFromA2aName(a2aName);
+  }
+
+  getGender() {
+    let a2aGender = this.extractIndexedPersonFieldByKey(0, "a2a:Gender");
+    if (a2aGender == "Man") {
+      return "male";
+    } else if (a2aGender == "Vrouw") {
+      return "female";
+    }
+
+    return "";
+  }
+
+  getEventDateObj() {
+    let a2aDate = this.extractEventFieldByKey("a2a:EventDate");
+    return this.makeDateObjFromA2aDate(a2aDate);
+  }
+
+  getEventPlaceObj() {
+    let a2aPlace = this.extractEventFieldByKey("a2a:EventPlace");
+    return this.makePlaceObjFromA2aPlace(a2aPlace);
+  }
+
+  getLastNameAtBirth() {
+    return "";
+  }
+
+  getLastNameAtDeath() {
+    return "";
+  }
+
+  getMothersMaidenName() {
+    return "";
+  }
+
+  getBirthDateObj() {
+    let a2aDate = this.extractIndexedPersonFieldByKey(0, "a2a:BirthDate");
+    return this.makeDateObjFromA2aDate(a2aDate);
+  }
+
+  getBirthPlaceObj() {
+    return undefined;
+  }
+
+  getDeathDateObj() {
+    return undefined;
+  }
+
+  getDeathPlaceObj() {
+    return undefined;
+  }
+
+  getAgeAtEvent() {
+    return "";
+  }
+
+  getAgeAtDeath() {
+    return "";
+  }
+
+  getRegistrationDistrict() {
+    return "";
+  }
+
+  getRelationshipToHead() {
+    return "";
+  }
+
+  getMaritalStatus() {
+    return "";
+  }
+
+  getOccupation() {
+    return "";
+  }
+
+  getSpouseObj(eventDateObj, eventPlaceObj) {
+    return undefined;
+  }
+
+  getParents() {
+    let father = undefined;
+    let fatherRelation = this.findRelationshipByType("Vader");
+    if (fatherRelation) {
+      let fatherKeyRef = fatherRelation["a2a:PersonKeyRef"];
+      if (fatherKeyRef) {
+        father = this.findPersonById(fatherKeyRef);
+      }
+    }
+
+    let mother = undefined;
+    let motherRelation = this.findRelationshipByType("Moeder");
+    if (motherRelation) {
+      let motherKeyRef = motherRelation["a2a:PersonKeyRef"];
+      if (motherKeyRef) {
+        mother = this.findPersonById(motherKeyRef);
+      }
+    }
+
+    return this.makeParentsFromPersonObjects(father, mother);
+  }
+
+  getHousehold() {
+    return undefined;
+  }
+
+  getCollectionData() {
+    return undefined;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Functions to support build citation
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getSourceTitle() {
+    let title = this.a2aSourceType;
+    if (this.typeData && this.typeData.enDocumentType) {
+      title += " (" + this.typeData.enDocumentType + ")";
+    }
+    return title;
+  }
+
+  getSourceReference() {
+    let reference = this.extractSourceFieldByKey("a2a:SourceReference");
+    if (!reference) {
+      return "";
+    }
+
+    let registrationNumber = reference["a2a:RegistryNumber"];
+    let book = reference["a2a:Book"];
+    let institution = reference["a2a:InstitutionName"];
+    let collection = reference["a2a:Collection"];
+    if (collection) {
+      const prefix = "Archiefnaam: ";
+      if (collection.startsWith(prefix)) {
+        collection = collection.substring(prefix.length);
+      }
+      let remainderIndex = collection.search(/\,\s+[^,:]+\:/);
+      if (remainderIndex != -1) {
+        collection = collection.substring(0, remainderIndex);
+      }
+    }
+
+    if (institution && collection) {
+      let string = institution + ", Collection: " + collection;
+
+      if (registrationNumber) {
+        string += ", Registration number: " + registrationNumber;
+      }
+      if (book) {
+        string += ", Book: " + book;
+      }
+      return string;
+    }
+  }
+
+  getExternalLink() {
+    let externalLink = {
+      link: "",
+      text: "",
+    };
+
+    let originalSourceLink = this.extractSourceFieldByKey("a2a:SourceDigitalOriginal");
+
+    if (originalSourceLink) {
+      externalLink.link = originalSourceLink;
+
+      externalLink.text = "External Record";
+      let reference = this.extractSourceFieldByKey("a2a:SourceReference");
+      if (reference) {
+        let institution = reference["a2a:InstitutionName"];
+        if (institution) {
+          externalLink.text = institution + " Record";
+        }
+      }
+
+      return externalLink;
+    }
+  }
+}
+
+export { OpenarchEdReader };

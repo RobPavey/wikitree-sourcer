@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "forenames": "Gerryt J"
+  },
+  "eventDate": {
+    "dateString": "14 Aug 1789"
+  },
+  "eventPlace": {
+    "placeString": "Leeuwarden, Friesland, Nederland"
+  },
+  "birthDate": {
+    "dateString": "8 Aug 1789"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Hendrik",
+        "lastName": "Goudemond"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Grietie",
+        "lastName": "Coremans"
+      }
+    }
+  },
+  "hasValidData": true
+}

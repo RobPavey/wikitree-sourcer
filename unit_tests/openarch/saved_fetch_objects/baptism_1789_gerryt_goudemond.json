@@ -1,0 +1,71 @@
+{
+  "A2A": {
+    "@Version": "1.7",
+    "a2a:Person": [
+      {
+        "@pid": "Person:6cd92dc6-d7a2-44c9-9fd8-9293ecdc423c",
+        "a2a:PersonName": { "a2a:PersonNameFirstName": "Gerryt J." },
+        "a2a:Gender": "Onbekend",
+        "a2a:BirthDate": { "a2a:Year": "1789", "a2a:Month": "8", "a2a:Day": "8" }
+      },
+      {
+        "@pid": "Person:7860e943-4135-4a40-b198-081177afe766",
+        "a2a:PersonName": { "a2a:PersonNameFirstName": "Hendrik", "a2a:PersonNameLastName": "Goudemond" },
+        "a2a:Gender": "Man"
+      },
+      {
+        "@pid": "Person:5e813d09-e44d-483c-b759-a0cfac809838",
+        "a2a:PersonName": { "a2a:PersonNameFirstName": "Grietie", "a2a:PersonNameLastName": "Coremans" },
+        "a2a:Gender": "Vrouw"
+      }
+    ],
+    "a2a:Event": {
+      "@eid": "Event1",
+      "a2a:EventType": "Doop",
+      "a2a:EventDate": { "a2a:Year": "1789", "a2a:Month": "8", "a2a:Day": "14" },
+      "a2a:EventPlace": { "a2a:Place": "Leeuwarden" }
+    },
+    "a2a:RelationEP": [
+      {
+        "a2a:PersonKeyRef": "Person:6cd92dc6-d7a2-44c9-9fd8-9293ecdc423c",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Dopeling"
+      },
+      {
+        "a2a:PersonKeyRef": "Person:7860e943-4135-4a40-b198-081177afe766",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Vader"
+      },
+      {
+        "a2a:PersonKeyRef": "Person:5e813d09-e44d-483c-b759-a0cfac809838",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Moeder"
+      }
+    ],
+    "a2a:Source": {
+      "a2a:SourcePlace": { "a2a:Place": "Leeuwarden" },
+      "a2a:SourceIndexDate": { "a2a:From": "1789-08-14", "a2a:To": "1789-08-14" },
+      "a2a:SourceDate": { "a2a:Year": "1789", "a2a:Month": "8", "a2a:Day": "14" },
+      "a2a:SourceType": "DTB Dopen",
+      "a2a:SourceReference": {
+        "a2a:Place": "Leeuwarden",
+        "a2a:InstitutionName": "AlleFriezen",
+        "a2a:Archive": "28",
+        "a2a:Collection": "Archiefnaam: Collectie doop-, trouw-, lidmaten- begraafboeken - Tresoar, Deel: 0950, Periode: 178...",
+        "a2a:Book": "Doopboek Herv. gem. Leeuwarden",
+        "a2a:RegistryNumber": "0950"
+      },
+      "a2a:SourceLastChangeDate": "2022-08-10",
+      "a2a:SourceDigitalOriginal": "http://allefriezen.nl/zoeken/deeds/ddbcbbb4-6c3a-4fca-a222-505a70ac75bf",
+      "a2a:RecordGUID": "{ddbcbbb4-6c3a-4fca-a222-505a70ac75bf}",
+      "a2a:SourceRemark": [
+        { "@Key": "Opmerking", "a2a:Value": "Doop vond plaats in de Westerkerk" },
+        {
+          "@Key": "Opmerking",
+          "a2a:Value": "Familysearch1: <b>Klik <a href= \"https://www.genealogiewerkbalk.nl/fs/?p=Leeuwarden&j=&t=&q=dopen#results\"target =\"_blank\">hier</a> voor suggesties scans.</b>"
+        },
+        { "@Key": "Provenance", "a2a:Value": "A2Acollection oai-pmh_20220919_5150_00005150.xml van FRL" }
+      ]
+    }
+  }
+}

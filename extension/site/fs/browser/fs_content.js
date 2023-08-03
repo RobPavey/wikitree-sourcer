@@ -208,7 +208,7 @@ async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, 
   }
 
   // Extract the data.
-  let extractedData = loadedExtractDataModule.extractDataFromFetch(document, dataObjects, fetchType, options);
+  let extractedData = loadedExtractDataModule.extractDataFromFetch(document, "", dataObjects, fetchType, options);
 
   // respond with the type of content and the extracted data
   sendResponse({

@@ -37,6 +37,7 @@
     "*://www.census.nationalarchives.ie/*",
     "*://*.nli.ie/*",
     "*://*.newspapers.com/*",
+    "*://*.openarch.nl/*",
     "*://paperspast.natlib.govt.nz/*",
     "*://probatesearch.service.gov.uk/*",
     "*://www.scotlandspeople.gov.uk/*",
@@ -163,6 +164,11 @@
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
     {
+      "matches": ["*://*.openarch.nl/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/openarch/browser/openarch_content.js"]
+    },
+    {
       "matches": ["*://paperspast.natlib.govt.nz/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
@@ -286,6 +292,10 @@
     {
       "resources": ["site/np/core/np_extract_data.mjs"],
       "matches": ["*://*.newspapers.com/*"]
+    },
+    {
+      "resources": ["site/openarch/core/openarch_extract_data.mjs"],
+      "matches": ["*://*.openarch.nl/*"]
     },
     {
       "resources": ["site/ppnz/core/ppnz_extract_data.mjs"],
